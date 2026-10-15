@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:golden_spear",
+    "minecraft:golden_shovel",
+    {
+      "id": "tools_complement:gold_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:golden_knife",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "slimeknights.tconstruct.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AbstractArrowAccessor",
+    "ItemStackLoadMixin",
+    "MaterialItemRarityMixin",
+    "ServerPlayerGameModeMixin",
+    "ThrownTridentAccessor"
+  ],
+  "client": [
+    "client.CreativeModeInventoryScreenMixin",
+    "client.EquipmentLayerRendererMixin",
+    "client.HumanoidArmorLayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

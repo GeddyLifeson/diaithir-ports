@@ -1,0 +1,77 @@
+package slimeknights.tconstruct.smeltery.block;
+
+import lombok.Getter;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition.Builder;
+import net.minecraft.world.phys.HitResult;
+import net.neoforged.neoforge.fluids.FluidStack;
+import slimeknights.tconstruct.library.utils.NBTTags;
+import slimeknights.tconstruct.smeltery.block.component.SearedTankBlock;
+import slimeknights.tconstruct.smeltery.block.entity.ITankBlockEntity;
+import slimeknights.tconstruct.smeltery.block.entity.LanternBlockEntity;
+import slimeknights.tconstruct.smeltery.block.entity.component.TankBlockEntity;
+import slimeknights.tconstruct.smeltery.block.entity.component.TankBlockEntity.ITankBlock;
+
+import javax.annotation.Nullable;
+
+import static slimeknights.tconstruct.smeltery.block.component.SearedTankBlock.LIGHT;
+
+public class SearedLanternBlock extends LanternBlock implements ITankBlock, EntityBlock {
+  @Getter
+  private final int capacity;
+  public SearedLanternBlock(Properties properties, int capacity) {
+    super(properties);
+    this.capacity = capacity;
+    registerDefaultState(defaultBlockState().setValue(LIGHT, 0));
+  }
+
+  @Override
+  protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+    super.createBlockStateDefinition(builder);
+    builder.add(LIGHT);
+  }
+
+  @Nullable
+  @Override
+  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+    return new LanternBlockEntity(pos, state, this);
+  }
+
+  @Nullable
+  @Override
+  public BlockState getStateForPlacement(BlockPlaceContext context) {
+    BlockState state = super.getStateForPlacement(context);
+    if (state != null) {
+      return SearedTankBlock.setLightLevel(state, context);
+    }
+    return null;
+  }
+
+  @SuppressWarnings("deprecation")
+  @Deprecated
+  public boolean hasAnalogOutputSignal(BlockState state) {
+    return true;
+  }
+
+  @SuppressWarnings("deprecation")
+  @Deprecated
+  public int getAnalogOutputSignal(BlockState blockState, Level worldIn, BlockPos pos) {
+    return ITankBlockEntity.getComparatorInputOverride(worldIn, pos);
+  }
+
+  @Override
+  public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData, Player player) {
+    return ITankBlockEntity.getCloneItemStack(new ItemStack(this), world, pos);
+  }
+}

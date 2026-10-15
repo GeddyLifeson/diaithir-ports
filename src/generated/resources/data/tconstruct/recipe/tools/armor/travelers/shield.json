@@ -1,0 +1,35 @@
+{
+  "type": "tconstruct:crafting_shaped_materials",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:rods/wooden"
+    },
+    "B": {
+      "neoforge:ingredient_type": "tconstruct:material_value",
+      "material": {
+        "type": "tconstruct:stat_type",
+        "stat_type": "tconstruct:shield_core"
+      },
+      "value": 1
+    },
+    "C": {
+      "neoforge:ingredient_type": "tconstruct:material_value",
+      "material": {
+        "type": "tconstruct:stat_type",
+        "stat_type": "tconstruct:cuirass"
+      },
+      "value": 1
+    }
+  },
+  "parts": "BC",
+  "pattern": [
+    "ABA",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tconstruct:travelers_shield"
+  }
+}

@@ -1,0 +1,104 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/dagger",
+            "textures": {
+                "head": "tconstruct:item/tool/dagger/blade",
+                "crossguard": "tconstruct:item/tool/dagger/crossguard"
+            },
+            "parts": [
+                {
+                    "name": "head",
+                    "index": 0
+                },
+                {
+                    "name": "crossguard",
+                    "index": 1
+                }
+            ],
+            "broken_textures": {
+                "head": "tconstruct:item/tool/dagger/blade_broken",
+                "crossguard": "tconstruct:item/tool/dagger/crossguard"
+            },
+            "modifier_maps": [
+                "tconstruct:dagger"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:dagger_broken",
+                "tconstruct:dagger"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.75
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/dagger/tool/dagger/throwing",
+                    "textures": {
+                        "head": "tconstruct:item/tool/dagger/blade",
+                        "crossguard": "tconstruct:item/tool/dagger/crossguard"
+                    },
+                    "parts": [
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "crossguard",
+                            "index": 1
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/dagger/blade_broken",
+                        "crossguard": "tconstruct:item/tool/dagger/crossguard"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:dagger"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:dagger_broken",
+                        "tconstruct:dagger"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/dagger/tool/dagger/blocking",
+                    "textures": {
+                        "head": "tconstruct:item/tool/dagger/blade",
+                        "crossguard": "tconstruct:item/tool/dagger/crossguard"
+                    },
+                    "parts": [
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "crossguard",
+                            "index": 1
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/dagger/blade_broken",
+                        "crossguard": "tconstruct:item/tool/dagger/crossguard"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:dagger"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:dagger_broken",
+                        "tconstruct:dagger"
+                    ]
+                }
+            }
+        ]
+    }
+}

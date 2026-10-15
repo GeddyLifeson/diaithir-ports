@@ -1,0 +1,6 @@
+{
+  "condition": {
+    "type": "neoforge:always"
+  },
+  "craftable": false
+}

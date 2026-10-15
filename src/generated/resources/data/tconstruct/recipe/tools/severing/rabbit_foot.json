@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:ageable_severing",
+  "adult_result": {
+    "id": "minecraft:rabbit_foot"
+  },
+  "entity": {
+    "type": "minecraft:rabbit"
+  },
+  "looting_bonus": 0.01,
+  "per_level_chance": 0.05
+}

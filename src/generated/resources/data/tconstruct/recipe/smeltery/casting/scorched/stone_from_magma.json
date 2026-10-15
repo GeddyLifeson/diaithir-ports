@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "neoforge:ingredient_type": "mantle:or",
+    "ingredients": [
+      "minecraft:basalt",
+      "minecraft:gravel"
+    ]
+  },
+  "cast_consumed": true,
+  "cooling_time": 99,
+  "fluid": {
+    "amount": 500,
+    "tag": "c:magma"
+  },
+  "result": {
+    "id": "tconstruct:scorched_stone"
+  }
+}

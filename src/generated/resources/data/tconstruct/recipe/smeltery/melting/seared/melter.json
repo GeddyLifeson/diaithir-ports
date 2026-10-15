@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1250,
+      "id": "tconstruct:molten_glass"
+    }
+  ],
+  "ingredient": "tconstruct:seared_melter",
+  "result": {
+    "amount": 2250,
+    "id": "tconstruct:seared_stone"
+  },
+  "temperature": 600,
+  "time": 187
+}

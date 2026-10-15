@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:enchantment_converting",
+  "inputs": [
+    {
+      "ingredient": "tconstruct:ichor_slime_crystal"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:gems/diamond"
+    }
+  ],
+  "match_book": true,
+  "modifier_predicate": {
+    "type": "tconstruct:slot_type",
+    "slot": "abilities"
+  },
+  "name": "abilities",
+  "return_unenchanted": false
+}

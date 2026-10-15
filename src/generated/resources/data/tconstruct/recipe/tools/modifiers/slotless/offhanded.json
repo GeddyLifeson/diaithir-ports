@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "ingredient": "minecraft:leather"
+    },
+    {
+      "ingredient": "minecraft:fire_charge"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:slimeball/ichor"
+    }
+  ],
+  "level": {
+    "max": 2
+  },
+  "result": "tconstruct:offhanded",
+  "tools": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "tconstruct:modifiable/interactable/charge/modifier"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Kum Kalıbı Üretimi",
+  "grid": [[[
+    "minecraft:sand",
+    "minecraft:red_sand"
+  ]]],
+  "result": [
+    { "ingredient": "tconstruct:blank_sand_cast", "amount_needed": 4 },
+    { "ingredient": "tconstruct:blank_red_sand_cast", "amount_needed": 4 }
+  ],
+  "grid_size": "small"
+}

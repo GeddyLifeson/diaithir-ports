@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "minecraft:wooden_fences"
+  },
+  "cast_consumed": true,
+  "cooling_time": 111,
+  "fluid": {
+    "amount": 250,
+    "tag": "tconstruct:molten_obsidian"
+  },
+  "result": {
+    "id": "tconstruct:nahuatl_fence"
+  }
+}

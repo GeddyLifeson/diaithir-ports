@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 25,
+      "id": "tconstruct:molten_quartz"
+    },
+    {
+      "amount": 30,
+      "tag": "c:molten_iron"
+    }
+  ],
+  "ingredient": {
+    "neoforge:ingredient_type": "tconstruct:no_container",
+    "match": "tconstruct:scorched_lantern"
+  },
+  "result": {
+    "amount": 500,
+    "id": "tconstruct:scorched_stone"
+  },
+  "temperature": 500,
+  "time": 50
+}

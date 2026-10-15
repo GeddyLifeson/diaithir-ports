@@ -1,0 +1,35 @@
+{
+    "model": {
+        "type": "tconstruct:tool",
+        "parent": "tconstruct:item/native/travelers_leggings",
+        "textures": {
+            "cuirass": "tconstruct:item/tool/armor/travelers/pants/cuirass",
+            "metal": "tconstruct:item/tool/armor/travelers/pants/metal"
+        },
+        "parts": [
+            {
+                "name": "cuirass",
+                "index": 1
+            },
+            {
+                "name": "metal",
+                "index": 0
+            }
+        ],
+        "broken_textures": {
+            "cuirass": "tconstruct:item/tool/armor/travelers/pants/cuirass_broken",
+            "metal": "tconstruct:item/tool/armor/travelers/pants/metal_broken"
+        },
+        "first_modifiers": [
+            "tconstruct:dyed",
+            "tconstruct:trim"
+        ],
+        "modifier_maps": [
+            "tconstruct:travelers/pants"
+        ],
+        "broken_modifier_maps": [
+            "tconstruct:travelers/pants_broken",
+            "tconstruct:travelers/pants"
+        ]
+    }
+}

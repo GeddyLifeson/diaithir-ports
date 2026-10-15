@@ -1,0 +1,405 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/earth_staff",
+            "textures": {
+                "tool": "tconstruct:item/tool/staff/earth",
+                "large_tool": "tconstruct:item/tool/staff/earth_large"
+            },
+            "broken_textures": {
+                "tool": "tconstruct:item/tool/staff/earth_broken",
+                "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+            },
+            "large": true,
+            "first_modifiers": [
+                "tconstruct:dyed",
+                "tconstruct:embellishment"
+            ],
+            "modifier_maps": [
+                "tconstruct:staff/earth",
+                "tconstruct:staff"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:staff/earth/broken",
+                "tconstruct:staff/earth",
+                "tconstruct:staff/broken",
+                "tconstruct:staff"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_1",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_1"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/1",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.4
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_2",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_2"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/2",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.7
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_3",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_3"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/3",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.9
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_4",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_4"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/4",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_5",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_5"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/5",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large"
+                    },
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.05
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking_1",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_1",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_1"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/1",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.4
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking_2",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_2",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_2"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/2",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.7
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking_3",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_3",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_3"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/3",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.9
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking_4",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_4",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_4"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/4",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/earth_staff/tool/staff/earth/blocking_5",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_5",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_5"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/earth_broken",
+                        "large_tool": "tconstruct:item/tool/staff/earth_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/earth/5",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/earth/broken",
+                        "tconstruct:staff/earth",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            }
+        ]
+    }
+}

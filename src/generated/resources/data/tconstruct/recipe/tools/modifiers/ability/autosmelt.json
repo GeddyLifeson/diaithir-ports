@@ -1,0 +1,43 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:raw_materials"
+    },
+    {
+      "ingredient": "minecraft:blast_furnace"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:ingots"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:storage_blocks/coal"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:storage_blocks/coal"
+    }
+  ],
+  "level": 1,
+  "result": "tconstruct:autosmelt",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "neoforge:ingredient_type": "neoforge:compound",
+    "children": [
+      {
+        "neoforge:ingredient_type": "mantle:item_tag",
+        "tag": "tconstruct:modifiable/harvest"
+      },
+      {
+        "neoforge:ingredient_type": "mantle:item_tag",
+        "tag": "tconstruct:modifiable/fishing_rods"
+      }
+    ]
+  }
+}

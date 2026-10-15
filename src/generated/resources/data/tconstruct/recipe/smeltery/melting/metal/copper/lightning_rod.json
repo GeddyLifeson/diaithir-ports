@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "neoforge:ingredient_type": "mantle:or",
+    "ingredients": [
+      "minecraft:lightning_rod",
+      "minecraft:exposed_lightning_rod",
+      "minecraft:weathered_lightning_rod",
+      "minecraft:oxidized_lightning_rod",
+      "minecraft:waxed_lightning_rod",
+      "minecraft:waxed_exposed_lightning_rod",
+      "minecraft:waxed_weathered_lightning_rod",
+      "minecraft:waxed_oxidized_lightning_rod"
+    ]
+  },
+  "result": {
+    "amount": 270,
+    "tag": "c:molten_copper"
+  },
+  "temperature": 500,
+  "time": 86
+}

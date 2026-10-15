@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": "minecraft:skeleton_skull",
+  "cast_consumed": true,
+  "cooling_time": 96,
+  "fluid": {
+    "amount": 1000,
+    "tag": "tconstruct:venom"
+  },
+  "result": {
+    "id": "tconstruct:venombone_head"
+  }
+}

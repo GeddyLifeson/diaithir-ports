@@ -1,0 +1,46 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:bottles/splash"
+    },
+    {
+      "neoforge:ingredient_type": "tconstruct:no_container",
+      "match": {
+        "neoforge:ingredient_type": "mantle:item_tag",
+        "tag": "tconstruct:tanks"
+      }
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:bottles/splash"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:ingots/copper"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:ingots/copper"
+    }
+  ],
+  "result": "tconstruct:splashing",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "neoforge:ingredient_type": "neoforge:intersection",
+    "children": [
+      {
+        "neoforge:ingredient_type": "mantle:item_tag",
+        "tag": "tconstruct:modifiable/durability"
+      },
+      {
+        "neoforge:ingredient_type": "mantle:item_tag",
+        "tag": "tconstruct:modifiable/interactable"
+      }
+    ]
+  }
+}

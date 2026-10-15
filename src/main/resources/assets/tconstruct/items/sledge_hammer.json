@@ -1,0 +1,120 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/sledge_hammer",
+            "textures": {
+                "head": "tconstruct:item/tool/sledge_hammer/head",
+                "handle": "tconstruct:item/tool/sledge_hammer/handle",
+                "back": "tconstruct:item/tool/sledge_hammer/back",
+                "front": "tconstruct:item/tool/sledge_hammer/front",
+                "large_head": "tconstruct:item/tool/sledge_hammer/large/head",
+                "large_handle": "tconstruct:item/tool/sledge_hammer/large/handle",
+                "large_back": "tconstruct:item/tool/sledge_hammer/large/back",
+                "large_front": "tconstruct:item/tool/sledge_hammer/large/front"
+            },
+            "parts": [
+                {
+                    "name": "handle",
+                    "index": 1
+                },
+                {
+                    "name": "head",
+                    "index": 0
+                },
+                {
+                    "name": "back",
+                    "index": 2
+                },
+                {
+                    "name": "front",
+                    "index": 3
+                }
+            ],
+            "broken_textures": {
+                "head": "tconstruct:item/tool/sledge_hammer/head_broken",
+                "handle": "tconstruct:item/tool/sledge_hammer/handle",
+                "back": "tconstruct:item/tool/sledge_hammer/back_broken",
+                "front": "tconstruct:item/tool/sledge_hammer/front_broken",
+                "large_head": "tconstruct:item/tool/sledge_hammer/large/head_broken",
+                "large_handle": "tconstruct:item/tool/sledge_hammer/large/handle",
+                "large_back": "tconstruct:item/tool/sledge_hammer/large/back_broken",
+                "large_front": "tconstruct:item/tool/sledge_hammer/large/front_broken"
+            },
+            "large": true,
+            "large_offset": [
+                -2,
+                2
+            ],
+            "modifier_maps": [
+                "tconstruct:sledge_hammer"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:sledge_hammer_broken",
+                "tconstruct:sledge_hammer"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/sledge_hammer/tool/sledge_hammer/blocking",
+                    "textures": {
+                        "head": "tconstruct:item/tool/sledge_hammer/head",
+                        "handle": "tconstruct:item/tool/sledge_hammer/handle",
+                        "back": "tconstruct:item/tool/sledge_hammer/back",
+                        "front": "tconstruct:item/tool/sledge_hammer/front",
+                        "large_head": "tconstruct:item/tool/sledge_hammer/large/head",
+                        "large_handle": "tconstruct:item/tool/sledge_hammer/large/handle",
+                        "large_back": "tconstruct:item/tool/sledge_hammer/large/back",
+                        "large_front": "tconstruct:item/tool/sledge_hammer/large/front"
+                    },
+                    "parts": [
+                        {
+                            "name": "handle",
+                            "index": 1
+                        },
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "back",
+                            "index": 2
+                        },
+                        {
+                            "name": "front",
+                            "index": 3
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/sledge_hammer/head_broken",
+                        "handle": "tconstruct:item/tool/sledge_hammer/handle",
+                        "back": "tconstruct:item/tool/sledge_hammer/back_broken",
+                        "front": "tconstruct:item/tool/sledge_hammer/front_broken",
+                        "large_head": "tconstruct:item/tool/sledge_hammer/large/head_broken",
+                        "large_handle": "tconstruct:item/tool/sledge_hammer/large/handle",
+                        "large_back": "tconstruct:item/tool/sledge_hammer/large/back_broken",
+                        "large_front": "tconstruct:item/tool/sledge_hammer/large/front_broken"
+                    },
+                    "large": true,
+                    "large_offset": [
+                        -2,
+                        2
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:sledge_hammer"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:sledge_hammer_broken",
+                        "tconstruct:sledge_hammer"
+                    ]
+                }
+            }
+        ]
+    }
+}

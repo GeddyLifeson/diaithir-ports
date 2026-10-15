@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:table_casting_part_swapping",
+  "index": 1,
+  "item_cost": 2,
+  "tools": {
+    "neoforge:ingredient_type": "mantle:or",
+    "ingredients": [
+      "tconstruct:travelers_boots",
+      "tconstruct:travelers_shield"
+    ]
+  }
+}

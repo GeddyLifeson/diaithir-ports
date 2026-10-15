@@ -1,0 +1,18 @@
+{
+  "values": [
+    "minecraft:copper_pickaxe",
+    "minecraft:copper_axe",
+    {
+      "id": "#c:tools/pickaxes/copper",
+      "required": false
+    },
+    {
+      "id": "#c:tools/axes/copper",
+      "required": false
+    },
+    {
+      "id": "tools_complement:copper_sickle",
+      "required": false
+    }
+  ]
+}

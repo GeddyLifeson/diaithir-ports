@@ -1,0 +1,11 @@
+{
+  "type": "mantle:empty_item",
+  "fluid": {
+    "amount": 250,
+    "id": "tconstruct:meat_soup"
+  },
+  "input": "tconstruct:meat_soup",
+  "result": {
+    "id": "minecraft:bowl"
+  }
+}

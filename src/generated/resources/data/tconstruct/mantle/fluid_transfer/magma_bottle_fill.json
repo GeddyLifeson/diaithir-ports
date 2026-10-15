@@ -1,0 +1,11 @@
+{
+  "type": "mantle:fill_item",
+  "fluid": {
+    "amount": 250,
+    "tag": "c:magma"
+  },
+  "input": "minecraft:glass_bottle",
+  "result": {
+    "id": "tconstruct:magma_bottle"
+  }
+}

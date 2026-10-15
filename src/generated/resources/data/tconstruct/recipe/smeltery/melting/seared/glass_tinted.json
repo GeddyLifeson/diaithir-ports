@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "byproducts": [
+    {
+      "amount": 1000,
+      "id": "tconstruct:molten_glass"
+    },
+    {
+      "amount": 200,
+      "id": "tconstruct:molten_amethyst"
+    }
+  ],
+  "ingredient": "tconstruct:seared_tinted_glass",
+  "result": {
+    "amount": 1000,
+    "id": "tconstruct:seared_stone"
+  },
+  "temperature": 600,
+  "time": 107
+}

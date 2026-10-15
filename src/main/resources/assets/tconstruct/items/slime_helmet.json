@@ -1,0 +1,34 @@
+{
+    "model": {
+        "type": "tconstruct:tool",
+        "parent": "tconstruct:item/native/slime_helmet",
+        "textures": {
+            "slime": "tconstruct:item/tool/armor/slime/helmet/slime",
+            "skull": "tconstruct:item/tool/armor/slime/helmet/skull"
+        },
+        "parts": [
+            {
+                "name": "skull",
+                "index": 0
+            },
+            {
+                "name": "slime",
+                "index": 1
+            }
+        ],
+        "broken_textures": {
+            "slime": "tconstruct:item/tool/armor/slime/helmet/slime_broken",
+            "skull": "tconstruct:item/tool/armor/slime/helmet/skull"
+        },
+        "first_modifiers": [
+            "tconstruct:trim"
+        ],
+        "modifier_maps": [
+            "tconstruct:slime/helmet"
+        ],
+        "broken_modifier_maps": [
+            "tconstruct:slime/helmet_broken",
+            "tconstruct:slime/helmet"
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "redirect": [
+    {
+      "id": "tconstruct:full",
+      "condition": {
+        "type": "neoforge:never"
+      }
+    },
+    {
+      "id": "tconstruct:minimal",
+      "condition": {
+        "type": "neoforge:always"
+      }
+    }
+  ]
+}

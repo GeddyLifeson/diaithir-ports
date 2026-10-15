@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "inputs": [
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:music_discs"
+    }
+  ],
+  "level": 1,
+  "result": "tconstruct:harmonious",
+  "tools": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "tconstruct:modifiable/bonus_slots"
+  }
+}

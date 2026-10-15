@@ -1,0 +1,120 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/vein_hammer",
+            "textures": {
+                "head": "tconstruct:item/tool/vein_hammer/head",
+                "handle": "tconstruct:item/tool/vein_hammer/handle",
+                "grip": "tconstruct:item/tool/vein_hammer/grip",
+                "front": "tconstruct:item/tool/vein_hammer/front",
+                "large_head": "tconstruct:item/tool/vein_hammer/large/head",
+                "large_handle": "tconstruct:item/tool/vein_hammer/large/handle",
+                "large_grip": "tconstruct:item/tool/vein_hammer/large/grip",
+                "large_front": "tconstruct:item/tool/vein_hammer/large/front"
+            },
+            "parts": [
+                {
+                    "name": "handle",
+                    "index": 1
+                },
+                {
+                    "name": "head",
+                    "index": 0
+                },
+                {
+                    "name": "grip",
+                    "index": 2
+                },
+                {
+                    "name": "front",
+                    "index": 3
+                }
+            ],
+            "broken_textures": {
+                "head": "tconstruct:item/tool/vein_hammer/head_broken",
+                "handle": "tconstruct:item/tool/vein_hammer/handle",
+                "grip": "tconstruct:item/tool/vein_hammer/grip",
+                "front": "tconstruct:item/tool/vein_hammer/front_broken",
+                "large_head": "tconstruct:item/tool/vein_hammer/large/head_broken",
+                "large_handle": "tconstruct:item/tool/vein_hammer/large/handle",
+                "large_grip": "tconstruct:item/tool/vein_hammer/large/grip",
+                "large_front": "tconstruct:item/tool/vein_hammer/large/front_broken"
+            },
+            "large": true,
+            "large_offset": [
+                -2,
+                2
+            ],
+            "modifier_maps": [
+                "tconstruct:vein_hammer"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:vein_hammer_broken",
+                "tconstruct:vein_hammer"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/vein_hammer/tool/vein_hammer/blocking",
+                    "textures": {
+                        "head": "tconstruct:item/tool/vein_hammer/head",
+                        "handle": "tconstruct:item/tool/vein_hammer/handle",
+                        "grip": "tconstruct:item/tool/vein_hammer/grip",
+                        "front": "tconstruct:item/tool/vein_hammer/front",
+                        "large_head": "tconstruct:item/tool/vein_hammer/large/head",
+                        "large_handle": "tconstruct:item/tool/vein_hammer/large/handle",
+                        "large_grip": "tconstruct:item/tool/vein_hammer/large/grip",
+                        "large_front": "tconstruct:item/tool/vein_hammer/large/front"
+                    },
+                    "parts": [
+                        {
+                            "name": "handle",
+                            "index": 1
+                        },
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "grip",
+                            "index": 2
+                        },
+                        {
+                            "name": "front",
+                            "index": 3
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/vein_hammer/head_broken",
+                        "handle": "tconstruct:item/tool/vein_hammer/handle",
+                        "grip": "tconstruct:item/tool/vein_hammer/grip",
+                        "front": "tconstruct:item/tool/vein_hammer/front_broken",
+                        "large_head": "tconstruct:item/tool/vein_hammer/large/head_broken",
+                        "large_handle": "tconstruct:item/tool/vein_hammer/large/handle",
+                        "large_grip": "tconstruct:item/tool/vein_hammer/large/grip",
+                        "large_front": "tconstruct:item/tool/vein_hammer/large/front_broken"
+                    },
+                    "large": true,
+                    "large_offset": [
+                        -2,
+                        2
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:vein_hammer"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:vein_hammer_broken",
+                        "tconstruct:vein_hammer"
+                    ]
+                }
+            }
+        ]
+    }
+}

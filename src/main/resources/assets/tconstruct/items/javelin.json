@@ -1,0 +1,179 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/javelin",
+            "textures": {
+                "head": "tconstruct:item/tool/javelin/head",
+                "guard": "tconstruct:item/tool/javelin/guard",
+                "handle": "tconstruct:item/tool/javelin/handle",
+                "grip": "tconstruct:item/tool/javelin/grip",
+                "large_head": "tconstruct:item/tool/javelin/large/head",
+                "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                "large_grip": "tconstruct:item/tool/javelin/large/grip"
+            },
+            "parts": [
+                {
+                    "name": "handle",
+                    "index": 1
+                },
+                {
+                    "name": "grip",
+                    "index": 3
+                },
+                {
+                    "name": "head",
+                    "index": 0
+                },
+                {
+                    "name": "guard",
+                    "index": 2
+                }
+            ],
+            "broken_textures": {
+                "head": "tconstruct:item/tool/javelin/head_broken",
+                "guard": "tconstruct:item/tool/javelin/guard",
+                "handle": "tconstruct:item/tool/javelin/handle",
+                "grip": "tconstruct:item/tool/javelin/grip",
+                "large_head": "tconstruct:item/tool/javelin/large/head_broken",
+                "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                "large_grip": "tconstruct:item/tool/javelin/large/grip"
+            },
+            "large": true,
+            "large_offset": [
+                -2,
+                2
+            ],
+            "modifier_maps": [
+                "tconstruct:javelin"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:javelin_broken",
+                "tconstruct:javelin"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.75
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/javelin/tool/javelin/throwing",
+                    "textures": {
+                        "head": "tconstruct:item/tool/javelin/head",
+                        "guard": "tconstruct:item/tool/javelin/guard",
+                        "handle": "tconstruct:item/tool/javelin/handle",
+                        "grip": "tconstruct:item/tool/javelin/grip",
+                        "large_head": "tconstruct:item/tool/javelin/large/head",
+                        "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                        "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                        "large_grip": "tconstruct:item/tool/javelin/large/grip"
+                    },
+                    "parts": [
+                        {
+                            "name": "handle",
+                            "index": 1
+                        },
+                        {
+                            "name": "grip",
+                            "index": 3
+                        },
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "guard",
+                            "index": 2
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/javelin/head_broken",
+                        "guard": "tconstruct:item/tool/javelin/guard",
+                        "handle": "tconstruct:item/tool/javelin/handle",
+                        "grip": "tconstruct:item/tool/javelin/grip",
+                        "large_head": "tconstruct:item/tool/javelin/large/head_broken",
+                        "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                        "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                        "large_grip": "tconstruct:item/tool/javelin/large/grip"
+                    },
+                    "large": true,
+                    "large_offset": [
+                        -2,
+                        2
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:javelin"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:javelin_broken",
+                        "tconstruct:javelin"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/javelin/tool/javelin/blocking",
+                    "textures": {
+                        "head": "tconstruct:item/tool/javelin/head",
+                        "guard": "tconstruct:item/tool/javelin/guard",
+                        "handle": "tconstruct:item/tool/javelin/handle",
+                        "grip": "tconstruct:item/tool/javelin/grip",
+                        "large_head": "tconstruct:item/tool/javelin/large/head",
+                        "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                        "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                        "large_grip": "tconstruct:item/tool/javelin/large/grip"
+                    },
+                    "parts": [
+                        {
+                            "name": "handle",
+                            "index": 1
+                        },
+                        {
+                            "name": "grip",
+                            "index": 3
+                        },
+                        {
+                            "name": "head",
+                            "index": 0
+                        },
+                        {
+                            "name": "guard",
+                            "index": 2
+                        }
+                    ],
+                    "broken_textures": {
+                        "head": "tconstruct:item/tool/javelin/head_broken",
+                        "guard": "tconstruct:item/tool/javelin/guard",
+                        "handle": "tconstruct:item/tool/javelin/handle",
+                        "grip": "tconstruct:item/tool/javelin/grip",
+                        "large_head": "tconstruct:item/tool/javelin/large/head_broken",
+                        "large_guard": "tconstruct:item/tool/javelin/large/guard",
+                        "large_handle": "tconstruct:item/tool/javelin/large/handle",
+                        "large_grip": "tconstruct:item/tool/javelin/large/grip"
+                    },
+                    "large": true,
+                    "large_offset": [
+                        -2,
+                        2
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:javelin"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:javelin_broken",
+                        "tconstruct:javelin"
+                    ]
+                }
+            }
+        ]
+    }
+}

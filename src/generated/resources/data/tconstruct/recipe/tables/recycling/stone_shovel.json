@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:part_builder_recycling",
+  "pattern": "tconstruct:venom_bottle",
+  "results": {
+    "tconstruct:block": {
+      "id": "minecraft:cobblestone"
+    }
+  },
+  "tool": {
+    "neoforge:ingredient_type": "mantle:or",
+    "ingredients": [
+      "minecraft:stone_shovel",
+      "minecraft:stone_spear"
+    ]
+  }
+}

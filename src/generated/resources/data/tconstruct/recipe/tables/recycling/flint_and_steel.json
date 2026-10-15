@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:part_builder_recycling",
+  "pattern": "tconstruct:venom_bottle",
+  "results": {
+    "tconstruct:ingot": {
+      "id": "minecraft:iron_ingot"
+    },
+    "tconstruct:shard": {
+      "id": "minecraft:flint"
+    }
+  },
+  "tool": "minecraft:flint_and_steel"
+}

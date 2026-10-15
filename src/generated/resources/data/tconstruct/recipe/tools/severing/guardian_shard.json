@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:severing",
+  "entity": {
+    "types": [
+      "minecraft:elder_guardian",
+      "minecraft:guardian"
+    ]
+  },
+  "looting_bonus": 0.01,
+  "per_level_chance": 0.05,
+  "result": {
+    "count": 2,
+    "id": "minecraft:prismarine_shard"
+  }
+}

@@ -1,0 +1,133 @@
+[
+  {
+    "name": "intro",
+    "data": "sections/introduction.json",
+    "icon": {
+      "item": "tconstruct:pick_head_cast"
+    }
+  },
+  {
+    "name": "smeltery",
+    "data": "sections/smeltery.json",
+    "icon": {
+      "item": "tconstruct:smeltery_controller"
+    }
+  },
+  {
+    "name": "entity_melting",
+    "data": "sections/entitymelting.json",
+    "icon": {
+      "item": "minecraft:creeper_head"
+    }
+  },
+  {
+    "name": "melee_harvest_materials",
+    "data": "no-load",
+    "extraData": { "tconstruct:material_tier": { "type": "tconstruct:melee_harvest", "tier": 3, "predicate": { "type": "mantle:inverted", "inverted_type": "mantle:tag", "tag": "tconstruct:book/distant" }}},
+    "icon": {
+      "item": {
+        "id": "tconstruct:hammer_head",
+        "components": {
+          "minecraft:custom_data": { "Material": "tconstruct:slimesteel"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "ranged_materials",
+    "data": "no-load",
+    "extraData": { "tconstruct:material_tier": { "type": "tconstruct:ranged", "tier": 3, "predicate": { "type": "mantle:inverted", "inverted_type": "mantle:tag", "tag": "tconstruct:book/distant" }}},
+    "icon": {
+      "item": {
+        "id": "tconstruct:bow_limb",
+        "components": {
+          "minecraft:custom_data": { "Material": "tconstruct:nahuatl"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "armor_materials",
+    "data": "no-load",
+    "extraData": { "tconstruct:material_tier": { "type": "tconstruct:armor", "tier": 3, "predicate": { "type": "mantle:inverted", "inverted_type": "mantle:tag", "tag": "tconstruct:book/distant" }}},
+    "icon": {
+      "item": {
+        "id": "tconstruct:chestplate_plating",
+        "components": {
+          "minecraft:custom_data": { "Material": "tconstruct:obsidian"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "tools",
+    "icon": {
+      "item": {
+        "id": "tconstruct:cleaver",
+        "components": {
+          "minecraft:custom_data": {
+            "tic_broken": false,
+            "tic_display": true,
+            "Damage": 0,
+            "tic_materials": [
+              "tconstruct:ui_render#head",
+              "tconstruct:ui_render#handle",
+              "tconstruct:ui_render#extra",
+              "tconstruct:ui_render#large"
+            ]
+
+          }
+        }
+      }
+    },
+    "data": "sections/tools.json"
+  },
+  {
+    "name": "armor",
+    "icon": {
+      "item": "minecraft:diamond_chestplate"
+    },
+    "condition": {
+      "type": "mantle:tag_filled",
+      "registry": "minecraft:item",
+      "tag": "tconstruct:modifiable/book_armor/mighty_smelting"
+    },
+    "data": "no-load",
+    "extraData": {
+      "tconstruct:load_tools": { "tag": "tconstruct:modifiable/book_armor/mighty_smelting", "path": "armor", "sort": false }
+    }
+  },
+  {
+    "name": "abilities",
+    "data": "sections/abilities.json",
+    "icon": {
+      "item": {
+        "id": "tconstruct:creative_slot",
+        "components": {
+          "minecraft:custom_data": {
+            "slot": "abilities"
+
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "defense",
+    "data": "sections/defense.json",
+    "icon": {
+      "item": {
+        "id": "tconstruct:creative_slot",
+        "components": {
+          "minecraft:custom_data": {
+            "slot": "defense"
+
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,405 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/ichor_staff",
+            "textures": {
+                "tool": "tconstruct:item/tool/staff/ichor",
+                "large_tool": "tconstruct:item/tool/staff/ichor_large"
+            },
+            "broken_textures": {
+                "tool": "tconstruct:item/tool/staff/ichor_broken",
+                "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+            },
+            "large": true,
+            "first_modifiers": [
+                "tconstruct:dyed",
+                "tconstruct:embellishment"
+            ],
+            "modifier_maps": [
+                "tconstruct:staff/ichor",
+                "tconstruct:staff"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:staff/ichor/broken",
+                "tconstruct:staff/ichor",
+                "tconstruct:staff/broken",
+                "tconstruct:staff"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_1",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_1"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/1",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.4
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_2",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_2"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/2",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.7
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_3",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_3"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/3",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 0.9
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_4",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_4"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/4",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 1.0,
+                    "tconstruct:charge": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/base/staff_charging",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_5",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_5"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/5",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large"
+                    },
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.05
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking_1",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_1",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_1"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/1",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.4
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking_2",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_2",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_2"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/2",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.7
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking_3",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_3",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_3"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/3",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 0.9
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking_4",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_4",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_4"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/4",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            },
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0,
+                    "tconstruct:charge": 1.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/ichor_staff/tool/staff/ichor/blocking_5",
+                    "textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_5",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_5"
+                    },
+                    "large": true,
+                    "first_modifiers": [
+                        "tconstruct:dyed",
+                        "tconstruct:embellishment"
+                    ],
+                    "broken_textures": {
+                        "tool": "tconstruct:item/tool/staff/ichor_broken",
+                        "large_tool": "tconstruct:item/tool/staff/ichor_large_broken"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:staff/ichor/5",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:staff/ichor/broken",
+                        "tconstruct:staff/ichor",
+                        "tconstruct:staff/broken",
+                        "tconstruct:staff"
+                    ]
+                }
+            }
+        ]
+    }
+}

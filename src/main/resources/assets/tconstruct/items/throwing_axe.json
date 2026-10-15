@@ -1,0 +1,23 @@
+{
+    "model": {
+        "type": "tconstruct:tool",
+        "parent": "tconstruct:item/native/throwing_axe",
+        "textures": {
+            "head": "tconstruct:item/tool/ammo/axe_head",
+            "shaft": "tconstruct:item/tool/ammo/arrow_shaft"
+        },
+        "parts": [
+            {
+                "name": "shaft",
+                "index": 1
+            },
+            {
+                "name": "head",
+                "index": 0
+            }
+        ],
+        "modifier_maps": [
+            "tconstruct:throwing_axe"
+        ]
+    }
+}

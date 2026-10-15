@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+ - name: SlimeKnights Discord
+   url: https://discord.gg/njGrvuh
+   about: Join our discord to discuss new features or to discuss behavior that may not be a bug.
+ - name: FAQ
+   url: https://slimeknights.github.io/faq/
+   about: Answers to frequently asked questions about our mods
+ - name: Roadmap
+   url: https://slimeknights.github.io/docs/roadmap/
+   about: Read about current plans for the mod
+ - name: What's New in Tinkers' Construct 3?
+   url: https://slimeknights.github.io/docs/whats-new/
+   about: Read about what recent versions of the mod have or will change overall

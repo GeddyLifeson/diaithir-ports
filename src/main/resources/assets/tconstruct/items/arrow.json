@@ -1,0 +1,31 @@
+{
+    "model": {
+        "type": "tconstruct:tool",
+        "parent": "tconstruct:item/native/arrow",
+        "textures": {
+            "head": "tconstruct:item/tool/ammo/arrow_head",
+            "shaft": "tconstruct:item/tool/ammo/arrow_shaft",
+            "feather": "tconstruct:item/tool/ammo/arrow_feather"
+        },
+        "parts": [
+            {
+                "name": "shaft",
+                "index": 1
+            },
+            {
+                "name": "head",
+                "index": 0
+            },
+            {
+                "name": "feather",
+                "index": 2
+            }
+        ],
+        "first_modifiers": [
+            "tconstruct:dyed"
+        ],
+        "modifier_maps": [
+            "tconstruct:arrow"
+        ]
+    }
+}

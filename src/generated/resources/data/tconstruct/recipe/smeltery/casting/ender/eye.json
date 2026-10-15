@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": "minecraft:blaze_powder",
+  "cast_consumed": true,
+  "cooling_time": 82,
+  "fluid": {
+    "amount": 250,
+    "tag": "c:ender"
+  },
+  "result": {
+    "id": "minecraft:ender_eye"
+  }
+}

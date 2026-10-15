@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:modifier",
+  "allow_crystal": true,
+  "check_trait_level": true,
+  "inputs": [
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "minecraft:planks"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "c:ingots/steel"
+    },
+    {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "minecraft:planks"
+    }
+  ],
+  "level": 1,
+  "result": "tconstruct:parrying",
+  "slots": {
+    "abilities": 1
+  },
+  "tools": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "tconstruct:modifiable/melee/parry"
+  }
+}

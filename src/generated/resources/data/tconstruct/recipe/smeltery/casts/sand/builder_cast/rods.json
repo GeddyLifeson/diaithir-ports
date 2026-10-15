@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:rod",
+  "pattern_item": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "tconstruct:casts/sand"
+  },
+  "result": {
+    "id": "tconstruct:rod_sand_cast"
+  },
+  "title_key": "tconstruct:sand_cast"
+}

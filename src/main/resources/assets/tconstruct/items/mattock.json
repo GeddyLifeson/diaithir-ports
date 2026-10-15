@@ -1,0 +1,82 @@
+{
+    "model": {
+        "type": "tconstruct:overrides",
+        "base": {
+            "type": "tconstruct:tool",
+            "parent": "tconstruct:item/native/mattock",
+            "textures": {
+                "axe": "tconstruct:item/tool/mattock/axe",
+                "pick": "tconstruct:item/tool/mattock/pick",
+                "handle": "tconstruct:item/tool/pickaxe/handle"
+            },
+            "parts": [
+                {
+                    "name": "handle",
+                    "index": 1
+                },
+                {
+                    "name": "axe",
+                    "index": 0
+                },
+                {
+                    "name": "pick",
+                    "index": 2
+                }
+            ],
+            "broken_textures": {
+                "axe": "tconstruct:item/tool/mattock/axe_broken",
+                "pick": "tconstruct:item/tool/mattock/pick_broken",
+                "handle": "tconstruct:item/tool/pickaxe/handle"
+            },
+            "modifier_maps": [
+                "tconstruct:mattock"
+            ],
+            "broken_modifier_maps": [
+                "tconstruct:mattock_broken",
+                "tconstruct:mattock"
+            ]
+        },
+        "overrides": [
+            {
+                "predicate": {
+                    "tconstruct:charging": 2.0
+                },
+                "model": {
+                    "type": "tconstruct:tool",
+                    "parent": "tconstruct:item/native/overrides/mattock/tool/mattock/blocking",
+                    "textures": {
+                        "axe": "tconstruct:item/tool/mattock/axe",
+                        "pick": "tconstruct:item/tool/mattock/pick",
+                        "handle": "tconstruct:item/tool/pickaxe/handle"
+                    },
+                    "parts": [
+                        {
+                            "name": "handle",
+                            "index": 1
+                        },
+                        {
+                            "name": "axe",
+                            "index": 0
+                        },
+                        {
+                            "name": "pick",
+                            "index": 2
+                        }
+                    ],
+                    "broken_textures": {
+                        "axe": "tconstruct:item/tool/mattock/axe_broken",
+                        "pick": "tconstruct:item/tool/mattock/pick_broken",
+                        "handle": "tconstruct:item/tool/pickaxe/handle"
+                    },
+                    "modifier_maps": [
+                        "tconstruct:mattock"
+                    ],
+                    "broken_modifier_maps": [
+                        "tconstruct:mattock_broken",
+                        "tconstruct:mattock"
+                    ]
+                }
+            }
+        ]
+    }
+}

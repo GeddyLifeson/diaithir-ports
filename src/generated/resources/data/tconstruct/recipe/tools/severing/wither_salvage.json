@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:severing",
+  "entity": {
+    "type": "minecraft:wither"
+  },
+  "looting_bonus": 0.02,
+  "per_level_chance": 0.1,
+  "result": {
+    "id": "minecraft:wither_skeleton_skull"
+  }
+}

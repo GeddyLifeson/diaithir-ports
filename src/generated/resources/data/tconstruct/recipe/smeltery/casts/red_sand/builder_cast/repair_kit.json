@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:item_part_builder",
+  "pattern": "tconstruct:repair_kit",
+  "pattern_item": {
+    "neoforge:ingredient_type": "mantle:item_tag",
+    "tag": "tconstruct:casts/red_sand"
+  },
+  "result": {
+    "id": "tconstruct:repair_kit_red_sand_cast"
+  },
+  "title_key": "tconstruct:sand_cast"
+}

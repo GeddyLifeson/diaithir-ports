@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tconstruct:enderslime",
+  "result": {
+    "amount": 250,
+    "id": "tconstruct:ender_slime"
+  },
+  "temperature": 70
+}

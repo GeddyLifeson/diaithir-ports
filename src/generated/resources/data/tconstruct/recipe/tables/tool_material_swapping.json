@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:tool_material_swapping",
+  "tools": {
+    "neoforge:ingredient_type": "neoforge:difference",
+    "base": {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "tconstruct:modifiable/multipart"
+    },
+    "subtracted": {
+      "neoforge:ingredient_type": "mantle:item_tag",
+      "tag": "tconstruct:modifiable/unswappable/tools"
+    }
+  }
+}
