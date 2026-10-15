@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithircompat"
+version = "${version}"
+displayName = "Diaithir Compat"
+description = "Pack glue for Diaithir: upgrades recipe data written for Minecraft 1.21.1 so it loads on 26.1.2."
+
+[[dependencies.diaithircompat]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
