@@ -1,0 +1,227 @@
+1.21-6.0.11:
+- Updated and expanded the Patchouli manual documentation
+
+1.21-6.0.10:
+- Api changes for RFToolsDimensions
+
+1.21-6.0.9:
+- Implemented codec and stream codec for Paramater
+
+1.21-6.0.8:
+- Changes for the upcoming RFTools Storage release
+
+1.21-6.0.7:
+- Fixed a crash bug in the crafting card
+- Fixed a crashing problem with the tablet
+
+1.21-6.0.6:
+- Some various fixes and improvements
+
+1.21-6.0.5:
+- Fixed several crafting card related problems
+
+1.21-6.0.4:
+- The machine infuser will now correctly remember it's state when the world is reloaded and also when the block is broken and placed again
+
+1.21-6.0.3:
+- Fixed a bug in the filter module where it would not remember it's settings when changes were made in the GUI
+
+1.21-6.0.2:
+- Update to latest McJtyLib
+
+1.21-6.0.1:
+- Fixed generation of dimensional shards in the world
+
+1.21-6.0.0:
+- Port to 1.21
+
+1.20-5.0.5:
+- A fix from Dertiende for XNet
+
+1.20-5.0.4:
+- Some changes from Dertiende for the upcoming XNet release
+
+1.20-5.0.3:
+- Some changes from Dertiende for the upcoming XNet release
+
+1.20-5.0.2:
+- Fixed patchouli integration
+
+1.20-5.0.1:
+- Fixed a bug with rendering (block selection)
+
+1.20-5.0.0:
+- Port to 1.20
+
+1.19-4.1.7:
+- Update for latest McJtyLib fixing the registryAccess() problem
+
+1.19-4.1.6:
+- Update to 1.19.4
+
+1.19.1-4.1.5:
+- Pasting to an advanced connector with a direction different from default would not correctly set that direction
+
+1.19.1-4.1.4:
+- Fixed a problem where the machine infuser could infuse multiple machines at the same time
+
+1.19.1-4.1.3:
+- 1.19.3 compatibility fix in McJtyLib
+
+1.19.1-4.1.2:
+- Added forge:ores/dimensional_shard tag to the dimensional shard ores
+
+1.19.1-4.1.1:
+- Fixed problem with mining dimensional shard ore
+
+1.19.1-4.1.0:
+- Updated to Latest McJtyLib and made compatible with 1.19.3
+- Fixed oregen in nether and end
+
+1.19.1-4.0.4:
+- Improved feature registration
+
+1.19.1-4.0.3:
+- Moved the Parameter class from RFToolsControl to the API
+
+1.19.1-4.0.2:
+- Fixed keybindings
+- You can again change the side of an advanced connector (in the gui)
+
+1.19.1-4.0.1:
+- Fix for 1.19.1
+
+1.19-4.0.0:
+- Port to 1.19
+
+1.18-3.0.9:
+- Fixed a problem with the machine infuser no longer accepting machines to infuse
+
+1.18-3.0.8:
+- Added dimensional shards to the forge:dusts tag
+- Fixed the machine infuser so that automation will put shards and machines in the right slots
+- Added dimensional shards to the new rftoolsbase:shards tag so that other mods can also add dimensional shards
+- Added the smart wrench to the forge:tools/wrench tag
+
+1.18-3.0.7:
+- Port to 1.18.2
+
+1.18-3.0.6:
+- Explosis updated the dimensional shard ore textures
+
+1.18-3.0.5:
+- New API for RFToolsDimensions
+
+1.18-3.0.4:
+- Fixes to the Patchouli manual
+
+1.18-3.0.3:
+- Fixed a problem with dimensional shards in the nether/end
+
+1.18-3.0.2:
+- Fixed a problem with items not getting restored when breaking and placing blocks
+- Fixed a crash bug when clicking outside the filter gui
+
+1.18-3.0.1:
+- Updates for McJtyLib and fixes
+
+1.18-3.0.0:
+- First release in 1.18
+
+1.16-2.1.1:
+- Updated to latest version of McJtyLib
+
+1.16-2.1.0:
+- Updated to latest version of McJtyLib
+- Fix information screen capability (the information screen was broken)
+
+1.16-2.0.11:
+- Small fix for mojang mappings
+
+1.16-2.0.10:
+- Moved oregen config for dimensional shards from SERVER to COMMON so it can be configured
+
+1.16-2.0.9:
+- Dimensional shard ore is now attached to the forge:ores tag
+
+1.16-2.0.8:
+- Re-added some XNet API classes
+- Dimensional shards now generate properly in the overworld, end, and nether
+
+1.16-2.0.7:
+- Fixed truetype rendering
+
+1.16-2.0.6:
+- Fixed a problem with the itemfilter which had broken tag support
+
+1.16-2.0.5:
+- Update to latest McJtyLib
+
+1.16-2.0.4-beta:
+- Update to latest McJtyLib
+
+2.0.3-beta:
+- Fixed a problem on servers
+
+2.0.2-beta:
+- Safer client-side registrations (thread-safety)
+- Various cleanups and fixes
+
+2.0.1-beta:
+- Fixed a potential exploit which could be used to attack a server
+
+2.0.0-beta:
+- First port to 1.16.2
+
+1.1.4:
+- Fixed a potential exploit which could be used to attack a server
+
+1.1.3-beta:
+- New 'tick order' system for the endergenic power generator
+
+1.1.2-beta:
+- Update for latest McJtyLib
+
+1.1.1-beta:
+- Dependency fix
+
+1.1.0-beta:
+- Better tooltips for many blocks and items
+- The filter module now supports an alternative for the ore dictionary where it will try to match blocks using common known tags
+- The filter module is now unlimited and has full support for tags. It is also whitelist mode by default now
+- The Tablet is back! It now supports four different slots and can switch between them using the '[' and ']' keys (by default)
+- New tag 'forge:wrench' which the Smart Wrench uses
+- Fixed the recipes for the vanilla recipe book
+- Moved most of the configs from common to server (so that they are saved with the world and synced to the client)
+
+1.0.1-alpha:
+- Ported the filter module (for storage, builder, ...)
+
+0.0.12:
+- Updates to latest McJtyLib
+
+0.0.11:
+- Information Screen from RFTools Power has been moved to RFTools Base
+- The information screen will now remember the 'mode' when it is broken
+- Right clicking the information screen will activate the block behind it instead
+- The XNet API is now part of RFToolsBase
+
+0.0.10:
+- Fixed a serious networking problem which could cause 'invalid discriminator spam' on servers
+
+0.0.9:
+- Fixed a networking problem on servers
+
+0.0.8:
+- API changes for the storage scanner
+- Update to latest McJtyLib
+
+0.0.7:
+- The Machine infuser actually works
+- Reintroduced infused diamond and enderpearls as crafting ingredients
+
+0.0.3:
+- Update to latest Forge
+
+0.0.2:
+- Update to 1.14.4

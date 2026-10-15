@@ -1,0 +1,22 @@
+package mcjty.rftoolsbase.api.dimension;
+
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.Level;
+
+/**
+ * Get a reference to an implementation of this interface by calling:
+ *         FMLInterModComms.sendFunctionMessage(RFTOOLSDIMENSIONS, GET_DIMENSION_MANAGER, "<whatever>.YourClass$GetDimensionManager");
+ */
+public interface IDimensionManager {
+
+    String RFTOOLSDIMENSIONS = "rftoolsdim";
+    String GET_DIMENSION_MANAGER = "getDimensionManager";
+
+    /**
+     * Get the dimension information. If the id doesn't represent an RFTools
+     * dimension this just returns null.
+     * Only call this server-side
+     * @param world is a reference to any world (overworld is fine)
+     */
+    IDimensionInformation getDimensionInformation(Level world, Identifier id);
+}

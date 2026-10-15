@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+group = 'com.github.mcjty'
+base.archivesName = mod_id
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories {
+    maven { url = 'https://maven.blamejared.com' } // JEI
+}
+
+neoForge {
+    version = '26.1.2.109'
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'mezz.jei:jei-26.1.2-common-api:29.47.0.109'
+    compileOnly 'mezz.jei:jei-26.1.2-neoforge-api:29.47.0.109'
+    compileOnly files('../mcjtylib/build/libs/mcjtylib-1.21-9.0.21.jar')
+
+}
+
+jar {
+    manifest.attributes('Implementation-Version': project.version)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '5000']
+}

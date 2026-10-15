@@ -1,0 +1,50 @@
+package mcjty.rftoolsbase.api.screens;
+
+import mcjty.lib.client.RenderHelper;
+import net.minecraft.resources.Identifier;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.ItemStack;
+
+/**
+ * Class containing various things useful for rendering your module. You get an instance of this
+ * in IClientScreenModule.render()
+ */
+public class ModuleRenderInfo {
+
+    // A factor representing the size of the screen (1, 2, or 3)
+    public final float factor;
+
+    // The position of the screen block
+    public final BlockPos pos;
+
+    // If the mouse is pointing at this module then this is the relative x inside the module
+    public final int hitx;
+
+    // If the mouse is pointing at this module then this is the relative y inside the module
+    public final int hity;
+
+    // True if this should be rendered with truetype
+    public final boolean truetype;
+
+    // The fontId to use for truetype rendering
+    public final Identifier fontId;
+
+    private final boolean fullbright;
+
+    public final ItemStack moduleStack;
+
+    public ModuleRenderInfo(float factor, BlockPos pos, int hitx, int hity, boolean truetype, boolean fullbright, Identifier fontId, ItemStack moduleStack) {
+        this.factor = factor;
+        this.pos = pos;
+        this.hitx = hitx;
+        this.hity = hity;
+        this.truetype = truetype;
+        this.fullbright = fullbright;
+        this.fontId = fontId;
+        this.moduleStack = moduleStack;
+    }
+
+    public int getLightmapValue() {
+        return fullbright ? RenderHelper.MAX_BRIGHTNESS : 140;
+    }
+}

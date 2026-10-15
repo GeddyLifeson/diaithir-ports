@@ -1,0 +1,71 @@
+package mcjty.rftoolsbase.modules.filter;
+
+import mcjty.lib.modules.IModule;
+import mcjty.lib.varia.SafeClientTools;
+import mcjty.rftoolsbase.modules.crafting.data.CraftingCardData;
+import mcjty.rftoolsbase.modules.filter.client.GuiFilterModule;
+import mcjty.rftoolsbase.modules.filter.data.FilterModuleData;
+import mcjty.rftoolsbase.modules.filter.items.FilterModuleContainer;
+import mcjty.rftoolsbase.modules.filter.items.FilterModuleItem;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.Items;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+
+import java.util.function.Supplier;
+
+import static mcjty.rftoolsbase.RFToolsBase.tab;
+import static mcjty.rftoolsbase.setup.Registration.*;
+
+public class FilterModule implements IModule {
+
+    public static final DeferredItem<FilterModuleItem> FILTER_MODULE = ITEMS.register("filter_module", tab(FilterModuleItem::new));
+    public static final Supplier<MenuType<FilterModuleContainer>> CONTAINER_FILTER_MODULE = CONTAINERS.register("filter_module", FilterModule::createFilterModuleContainer);
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<FilterModuleData>> ITEM_FILTERMODULE_DATA = COMPONENTS.registerComponentType(
+            "filtermodule_data",
+            builder -> builder
+                    .persistent(FilterModuleData.CODEC)
+                    .networkSynchronized(FilterModuleData.STREAM_CODEC));
+
+
+    private static MenuType<FilterModuleContainer> createFilterModuleContainer() {
+        return IMenuTypeExtension.create((windowId, inv, data) -> {
+            Player player = SafeClientTools.getClientPlayer();
+            FilterModuleContainer container = new FilterModuleContainer(windowId, player.blockPosition(), player);
+            container.setupInventories(null, inv);
+            return container;
+        });
+    }
+
+    public FilterModule(IEventBus bus) {
+        bus.addListener(this::registerMenuScreens);
+    }
+
+    @Override
+    public void init(FMLCommonSetupEvent event) {
+
+    }
+
+    @Override
+    public void initClient(FMLClientSetupEvent event) {
+    }
+
+    public void registerMenuScreens(RegisterMenuScreensEvent event) {
+        GuiFilterModule.register(event);
+    }
+
+    @Override
+    public void initConfig(IEventBus bus) {
+
+    }
+
+}
