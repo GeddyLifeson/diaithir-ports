@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "rftoolsbase:block/base/machinebottom",
+    "side": "rftoolspower:block/blazing/blazing_agitator_side",
+    "top": "rftoolsbase:block/base/machinetop"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lower=false,upper=false": {
+      "model": "rftoolspower:block/cell1_both"
+    },
+    "lower=false,upper=true": {
+      "model": "rftoolspower:block/cell1_lower"
+    },
+    "lower=true,upper=false": {
+      "model": "rftoolspower:block/cell1_upper"
+    },
+    "lower=true,upper=true": {
+      "model": "rftoolspower:block/cell1_middle"
+    }
+  }
+}

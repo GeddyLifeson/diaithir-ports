@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "rftoolspower:block/powercell/cellmiddle_t1",
+    "north": "rftoolspower:block/powercell/cellmiddle_t1",
+    "south": "rftoolspower:block/powercell/cellmiddle_t1",
+    "east": "rftoolspower:block/powercell/cellmiddle_t1",
+    "west": "rftoolspower:block/powercell/cellmiddle_t1",
+    "up": "rftoolspower:block/powercell/cellhoriz_t1",
+    "down": "rftoolspower:block/powercell/cellhoriz_t1"
+  }
+}

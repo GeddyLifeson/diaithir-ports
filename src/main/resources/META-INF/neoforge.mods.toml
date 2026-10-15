@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT License https://github.com/McJtyMods/RFToolsPower/blob/1.21_neo/LICENCE"
+issueTrackerURL="http://github.com/McJtyMods/RFToolsPower/issues"
+displayURL="http://github.com/McJtyMods/RFToolsPower/"
+#logoFile="examplemod.png" #optional
+#credits="Thanks for this example mod goes to Java" #optional
+authors="McJty"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
+[[mods]]
+modId="rftoolspower"
+version="${file.jarVersion}"
+displayName="RFToolsPower"
+#updateJSONURL="http://myurl.me/" #optional
+
+description='''
+Everything related to power generation
+'''
+[[dependencies.rftoolspower]]
+    modId="neoforge"
+    type="required"
+    versionRange="[26.1.2.109,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rftoolspower]]
+    modId="mcjtylib"
+    mandatory=true
+    versionRange="[1.21-9.0.21,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.rftoolspower]]
+    modId="rftoolsbase"
+    mandatory=true
+    versionRange="[1.21-6.0.11,)"
+    ordering="AFTER"
+    side="BOTH"

@@ -1,0 +1,178 @@
+1.21-7.0.6:
+- Updated and expanded the Patchouli manual documentation
+
+1.21-7.0.5:
+- Small fix for the blazing agitator
+
+1.21-7.0.4:
+- BONNe fixed a problem with the ender monitor not working properly
+
+1.21-7.0.3:
+- Small changes
+
+1.21-7.0.2:
+- Fixed a problem with the blazing agitator 'lock' buttons not working properly
+
+1.21-7.0.1:
+- Updates for latest McJtyLib
+
+1.21-7.0.0:
+- Port to 1.21
+
+1.20-6.0.1:
+- Fixed patchouli integration
+
+1.20-6.0.0:
+- Port to 1.20
+
+1.19-5.1.2:
+- Update to 1.19.4
+
+1.19-5.1.1:
+- Fixed a crash when hitting the endergenic with a wrench
+
+1.19-5.1.0:
+- Updated to Latest McJtyLib and made compatible with 1.19.3
+
+1.19-5.0.3:
+- If the blazing infuser has no room to output a new rod it would stop trying and the rod would get stuck
+
+1.19-5.0.2:
+- The endergenic rendering is fixed again. Including the HUD
+
+1.19-5.0.1:
+- Powercells would not keep power when broken and the tooltip was wrong
+
+1.19-5.0.0:
+- Port to 1.19
+
+1.18-4.0.5:
+- Fixed a bug with the dimensional cells where you could duplicate power by removing and inserting powercell cards
+
+1.18-4.0.4:
+- Port to 1.18.2
+
+1.18-4.0.3:
+- Fixed a crash bug with the power level block when it was broken
+- The power level block also didn't work properly anymore. Now it works again
+
+1.18-4.0.2:
+- Fixed a problem with items not getting restored when breaking and placing blocks
+
+1.18-4.0.1:
+- Updates for McJtyLib and fixes
+
+1.18-4.0.0:
+- First release in 1.18
+
+1.16-3.0.11:
+- Updated to latest version of McJtyLib
+
+1.16-3.0.10:
+- Updated to latest version of McJtyLib
+
+1.16-3.0.9:
+- Small fix for mojang mappings
+
+1.16-3.0.8:
+- When the powercells or dimensional cells are upgraded they will keep their current settings
+
+1.16-3.0.7:
+- Fixed the powercell link icon no longer working
+
+1.16-3.0.6:
+- Fixed a problem with missing loot tables
+- Update to latest McJtyLib
+
+1.16-3.0.5-beta:
+- Update to latest McJtyLib
+
+3.0.4-beta:
+- Fixed a problem on servers
+
+3.0.3-beta:
+- Safer client-side registrations (thread-safety)
+- Various cleanups and fixes
+
+3.0.2-beta:
+- Fixed a client access problem on server side
+
+3.0.1-beta:
+- Fixed a potential exploit which could be used to attack a server
+
+3.0.0-beta:
+- First port to 1.16.2
+
+2.2.2:
+- Fixed a potential exploit which could be used to attack a server
+
+2.2.1:
+- Fully infusing a Blazing Generator will now give a 10% power production bonus
+- Updated the Endergenic and Blazing Generator manuals
+
+2.2.0-beta:
+- New Power Monitor block (replacement of the old RF Monitor). This is a logic block and is more flexible
+- New Power Level block that shows a digit representation of the amount of power in a machine
+- The Endergenic has been ported!
+- New Blazing Generator!
+
+2.1.1-beta:
+- Dependency fix
+
+2.1.0-beta:
+- Item tooltip improvements
+- Fixed the recipes for the vanilla recipe book
+- Moved most of the configs from common to server (so that they are saved with the world and synced to the client)
+
+2.0.1-alpha:
+- Fixed a problem with the powercell crashing on recent forge
+
+2.0.0-alpha:
+- Removed the obsolete information screen (it's now in RFTools Base)
+
+1.2.12:
+- Updates to latest McJtyLib
+
+1.2.11:
+- Information Screen from RFTools Power has been moved to RFTools Base
+- The dimensional cells now also have support for the information screen
+
+1.2.10:
+- Avoid a rare crash during model registration
+- The coal generator no longer accepts any item for power generation
+- Fixed a serious networking problem which could cause 'invalid discriminator spam' on servers
+
+1.2.9:
+- Added recipe for the powercell card
+- A linked powercell card now has a different texture
+- Fixed the dimensional cells to work properly again
+
+1.2.8:
+- Updates to the latest McJtyLib
+
+1.2.3:
+- Update to latest Forge
+
+1.2.2:
+- Update to 1.14.4
+
+1.2.0:
+- Depends on McJtyLib 3.5.0!
+- Added some crash protection that shouldn't be needed but apparently is
+
+1.1.2:
+- Needs McJtyLib 3.1.0
+- Support for COFH RF API is removed. Only Forge Energy is supported now
+- Various cleanups
+
+1.1.1:
+- Fix problem with network packet doing things on the wrong thread
+- Fix a lot of console spam if things go wrong and added a bit more diagnostics
+
+1.1.0:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions
+
+1.1.0alpha:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions
