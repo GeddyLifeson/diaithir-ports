@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:iron_bars",
+    "A": "#mekanism:alloys/infused",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    "S#S",
+    "#A#",
+    "S#S"
+  ],
+  "result": {
+    "id": "mekanism:pressure_disperser"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "mekanism:sawing",
+  "input": {
+    "count": 1,
+    "ingredient": "#minecraft:wooden_buttons"
+  },
+  "main_output": {
+    "id": "mekanism:sawdust"
+  },
+  "secondary_chance": 0.25,
+  "secondary_output": {
+    "id": "mekanism:sawdust"
+  }
+}

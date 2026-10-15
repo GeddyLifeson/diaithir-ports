@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/infused",
+    "C": "#c:circuits/basic"
+  },
+  "pattern": [
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:advanced_control_circuit"
+  }
+}

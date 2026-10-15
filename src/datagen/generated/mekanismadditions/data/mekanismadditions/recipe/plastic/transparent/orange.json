@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "mekanism:hdpe_sheet",
+    "D": "#c:dyes/orange"
+  },
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "mekanismadditions:orange_plastic_transparent"
+  }
+}

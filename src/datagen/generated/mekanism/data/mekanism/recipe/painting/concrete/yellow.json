@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:yellow"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/concrete",
+      "subtracted": "minecraft:yellow_concrete"
+    }
+  },
+  "output": {
+    "id": "minecraft:yellow_concrete"
+  },
+  "per_tick_usage": false
+}

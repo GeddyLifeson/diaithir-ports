@@ -1,0 +1,36 @@
+package mekanism.additions.common.registries;
+
+import java.util.EnumMap;
+import java.util.Map;
+import mekanism.additions.common.MekanismAdditions;
+import mekanism.additions.common.item.ItemBalloon;
+import mekanism.additions.common.item.ItemWalkieTalkie;
+import mekanism.api.text.EnumColor;
+import mekanism.common.registration.impl.ItemDeferredRegister;
+import mekanism.common.registration.impl.ItemRegistryObject;
+import mekanism.common.util.EnumUtils;
+import net.minecraft.world.item.SpawnEggItem;
+
+public class AdditionsItems {
+
+    private AdditionsItems() {
+    }
+
+    public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(MekanismAdditions.MODID);
+
+    public static final ItemRegistryObject<SpawnEggItem> BABY_BOGGED_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_BOGGED);
+    public static final ItemRegistryObject<SpawnEggItem> BABY_CREEPER_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_CREEPER);
+    public static final ItemRegistryObject<SpawnEggItem> BABY_ENDERMAN_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_ENDERMAN);
+    public static final ItemRegistryObject<SpawnEggItem> BABY_SKELETON_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_SKELETON);
+    public static final ItemRegistryObject<SpawnEggItem> BABY_STRAY_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_STRAY);
+    public static final ItemRegistryObject<SpawnEggItem> BABY_WITHER_SKELETON_SPAWN_EGG = ITEMS.registerSpawnEgg(AdditionsEntityTypes.BABY_WITHER_SKELETON);
+    public static final ItemRegistryObject<ItemWalkieTalkie> WALKIE_TALKIE = ITEMS.registerItem("walkie_talkie", ItemWalkieTalkie::new);
+
+    public static final Map<EnumColor, ItemRegistryObject<ItemBalloon>> BALLOONS = new EnumMap<>(EnumColor.class);
+
+    static {
+        for (EnumColor color : EnumUtils.COLORS) {
+            BALLOONS.put(color, ITEMS.registerItem(color.getRegistryPrefix() + "_balloon", properties -> new ItemBalloon(properties, color)));
+        }
+    }
+}

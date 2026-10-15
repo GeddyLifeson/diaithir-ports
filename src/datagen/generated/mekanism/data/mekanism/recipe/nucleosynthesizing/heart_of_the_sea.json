@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 5,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 1250,
+  "item_input": {
+    "count": 1,
+    "ingredient": "#c:nether_stars"
+  },
+  "output": {
+    "id": "minecraft:heart_of_the_sea"
+  },
+  "per_tick_usage": false
+}

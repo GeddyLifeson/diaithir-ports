@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_blocks/cheap",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    " S ",
+    "SGS",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "mekanism:structural_glass"
+  }
+}

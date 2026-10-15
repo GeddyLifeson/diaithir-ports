@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:light_gray"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/wool",
+      "subtracted": "minecraft:light_gray_wool"
+    }
+  },
+  "output": {
+    "id": "minecraft:light_gray_wool"
+  },
+  "per_tick_usage": false
+}

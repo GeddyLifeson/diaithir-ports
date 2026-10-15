@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:sawing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:bamboo_door"
+  },
+  "main_output": {
+    "count": 2,
+    "id": "minecraft:bamboo_planks"
+  }
+}

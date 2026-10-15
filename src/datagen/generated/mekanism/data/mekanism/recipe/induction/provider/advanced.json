@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:advanced_energy_cube",
+    "C": "#c:circuits/advanced",
+    "P": "mekanism:basic_induction_provider"
+  },
+  "pattern": [
+    "CPC",
+    "P#P",
+    "CPC"
+  ],
+  "result": {
+    "id": "mekanism:advanced_induction_provider"
+  }
+}

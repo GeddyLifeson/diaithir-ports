@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/reinforced",
+    "E": "mekanism:energy_tablet",
+    "I": "#c:ingots/gold",
+    "P": "mekanism:advanced_energy_cube"
+  },
+  "pattern": [
+    "AEA",
+    "IPI",
+    "AEA"
+  ],
+  "result": {
+    "id": "mekanism:elite_energy_cube"
+  }
+}

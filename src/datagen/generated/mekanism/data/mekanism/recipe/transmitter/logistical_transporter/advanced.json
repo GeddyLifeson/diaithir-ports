@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/infused",
+    "P": "mekanism:basic_logistical_transporter"
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "mekanism:advanced_logistical_transporter"
+  }
+}

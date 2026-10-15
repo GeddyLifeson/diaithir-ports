@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:dusts/refined_obsidian"
+  },
+  "output": {
+    "id": "mekanism:enriched_refined_obsidian"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": "#mekanism:personal_storage",
+    "C": "#c:circuits/ultimate",
+    "G": "#c:glass_panes",
+    "I": "#c:ender_pearls",
+    "T": "mekanism:teleportation_core"
+  },
+  "pattern": [
+    "TGT",
+    "C#C",
+    "TIT"
+  ],
+  "result": {
+    "id": "mekanism:qio_drive_array"
+  }
+}

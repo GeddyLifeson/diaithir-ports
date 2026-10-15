@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:plastic_slabs/transparent",
+      "subtracted": "mekanismadditions:gray_plastic_transparent_slab"
+    },
+    "D": "#c:dyes/gray"
+  },
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "mekanismadditions:gray_plastic_transparent_slab"
+  }
+}

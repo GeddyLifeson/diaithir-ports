@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "mekanism:block_bronze"
+  ],
+  "result": {
+    "count": 9,
+    "id": "mekanism:ingot_bronze"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:pink"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/carpets",
+      "subtracted": "minecraft:pink_carpet"
+    }
+  },
+  "output": {
+    "id": "minecraft:pink_carpet"
+  },
+  "per_tick_usage": false
+}

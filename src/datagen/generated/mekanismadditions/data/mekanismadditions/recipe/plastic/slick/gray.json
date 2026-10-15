@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "mekanismadditions:gray_plastic",
+    "S": "#c:slime_balls"
+  },
+  "pattern": [
+    " # ",
+    "#S#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "id": "mekanismadditions:gray_slick_plastic"
+  }
+}

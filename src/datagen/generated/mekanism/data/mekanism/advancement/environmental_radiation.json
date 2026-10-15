@@ -1,0 +1,31 @@
+{
+  "parent": "mekanism:waste_removal",
+  "criteria": {
+    "use_geiger_counter": {
+      "conditions": {
+        "item": {
+          "items": "mekanism:geiger_counter"
+        }
+      },
+      "trigger": "minecraft:using_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.mekanism.environmental_radiation.description"
+    },
+    "icon": {
+      "id": "mekanism:geiger_counter"
+    },
+    "title": {
+      "translate": "advancements.mekanism.environmental_radiation.title"
+    }
+  },
+  "requirements": [
+    [
+      "use_geiger_counter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

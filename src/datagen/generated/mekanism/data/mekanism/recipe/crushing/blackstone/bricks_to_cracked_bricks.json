@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:polished_blackstone_bricks"
+  },
+  "output": {
+    "id": "minecraft:cracked_polished_blackstone_bricks"
+  }
+}

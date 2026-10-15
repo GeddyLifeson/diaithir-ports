@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:smooth_quartz_stairs"
+  },
+  "output": {
+    "id": "minecraft:quartz_stairs"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": [
+      "biomesoplenty:white_lavender",
+      "biomesoplenty:white_petals"
+    ]
+  },
+  "output": {
+    "count": 2,
+    "id": "minecraft:white_dye"
+  }
+}

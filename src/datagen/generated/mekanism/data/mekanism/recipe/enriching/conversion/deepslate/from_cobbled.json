@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:cobblestones/deepslate"
+  },
+  "output": {
+    "id": "minecraft:deepslate"
+  }
+}

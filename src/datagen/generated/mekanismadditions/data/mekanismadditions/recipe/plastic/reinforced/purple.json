@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "mekanismadditions:purple_plastic",
+    "O": "#c:dusts/osmium"
+  },
+  "pattern": [
+    " # ",
+    "#O#",
+    " # "
+  ],
+  "result": {
+    "count": 4,
+    "id": "mekanismadditions:purple_reinforced_plastic"
+  }
+}

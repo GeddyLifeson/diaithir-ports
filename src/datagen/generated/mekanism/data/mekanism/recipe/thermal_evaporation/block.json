@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/copper",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    " S ",
+    "SIS",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "mekanism:thermal_evaporation_block"
+  }
+}

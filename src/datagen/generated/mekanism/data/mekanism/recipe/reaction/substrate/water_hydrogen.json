@@ -1,0 +1,23 @@
+{
+  "type": "mekanism:reaction",
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:hydrogen"
+  },
+  "chemical_output": {
+    "amount": 300,
+    "id": "mekanism:ethene"
+  },
+  "duration": 100,
+  "fluid_input": {
+    "amount": 10,
+    "ingredient": "#minecraft:water"
+  },
+  "item_input": {
+    "count": 2,
+    "ingredient": "#c:fuels/bio"
+  },
+  "item_output": {
+    "id": "mekanism:substrate"
+  }
+}

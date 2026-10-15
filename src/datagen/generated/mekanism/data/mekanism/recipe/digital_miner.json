@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/atomic",
+    "C": "#c:circuits/basic",
+    "R": "mekanism:robit",
+    "S": "mekanism:logistical_sorter",
+    "T": "mekanism:teleportation_core",
+    "X": "mekanism:steel_casing"
+  },
+  "pattern": [
+    "ACA",
+    "SRS",
+    "TXT"
+  ],
+  "result": {
+    "id": "mekanism:digital_miner"
+  }
+}

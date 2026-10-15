@@ -1,0 +1,97 @@
+package mekanism.additions.client;
+
+import java.util.Map;
+import mekanism.additions.client.model.AdditionsModelCache;
+import mekanism.additions.client.model.ModelBabyCreeper;
+import mekanism.additions.client.model.ModelBabyEnderman;
+import mekanism.additions.client.render.entity.RenderBabyCreeper;
+import mekanism.additions.client.render.entity.RenderBabyEnderman;
+import mekanism.additions.client.render.entity.RenderBalloon;
+import mekanism.additions.common.MekanismAdditions;
+import mekanism.additions.common.registries.AdditionsBlocks;
+import mekanism.additions.common.registries.AdditionsEntityTypes;
+import mekanism.api.text.EnumColor;
+import mekanism.client.ClientRegistrationUtil;
+import mekanism.common.registration.impl.BlockRegistryObject;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.monster.enderman.EndermanModel;
+import net.minecraft.client.renderer.entity.BoggedRenderer;
+import net.minecraft.client.renderer.entity.SkeletonRenderer;
+import net.minecraft.client.renderer.entity.StrayRenderer;
+import net.minecraft.client.renderer.entity.TntRenderer;
+import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+
+@EventBusSubscriber(modid = MekanismAdditions.MODID, value = Dist.CLIENT)
+public class AdditionsClientRegistration {
+
+    private AdditionsClientRegistration() {
+    }
+
+    @SubscribeEvent
+    public static void registerKeybindings(RegisterKeyMappingsEvent event) {
+        AdditionsKeyHandler.registerKeybindings(event);
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        //Register entity rendering handlers
+        event.registerEntityRenderer(AdditionsEntityTypes.OBSIDIAN_TNT.get(), TntRenderer::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BALLOON.get(), RenderBalloon::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_BOGGED.get(), BoggedRenderer::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_CREEPER.get(), RenderBabyCreeper::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_ENDERMAN.get(), RenderBabyEnderman::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_SKELETON.get(), SkeletonRenderer::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_STRAY.get(), StrayRenderer::new);
+        event.registerEntityRenderer(AdditionsEntityTypes.BABY_WITHER_SKELETON.get(), WitherSkeletonRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ModelBabyCreeper.CREEPER_LAYER, () -> ModelBabyCreeper.createBodyLayer(CubeDeformation.NONE));
+        //Note: Use 1 instead of 2 for size
+        event.registerLayerDefinition(ModelBabyCreeper.ARMOR_LAYER, () -> ModelBabyCreeper.createBodyLayer(new CubeDeformation(1)));
+
+        event.registerLayerDefinition(ModelBabyEnderman.BABY_ENDERMAN_LAYER, () -> EndermanModel.createBodyLayer().apply(ModelBabyEnderman.BABY_MODEL_TRANSFORM));
+    }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        ClientRegistrationUtil.registerBlockExtensions(event, AdditionsBlocks.BLOCKS);
+    }
+
+    @SubscribeEvent
+    public static void registerAdditionalModels(ModelEvent.RegisterStandalone event) {
+        AdditionsModelCache.INSTANCE.setup(event);
+    }
+
+    @SubscribeEvent
+    public static void onModelBake(ModelEvent.BakingCompleted event) {
+        AdditionsModelCache.INSTANCE.onBake(event);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColorHandlers(RegisterColorHandlersEvent.BlockTintSources event) {
+        registerBlockColorHandles(event, AdditionsBlocks.GLOW_PANELS, AdditionsBlocks.PLASTIC_BLOCKS,
+              AdditionsBlocks.SLICK_PLASTIC_BLOCKS, AdditionsBlocks.PLASTIC_GLOW_BLOCKS, AdditionsBlocks.REINFORCED_PLASTIC_BLOCKS, AdditionsBlocks.PLASTIC_ROADS,
+              AdditionsBlocks.TRANSPARENT_PLASTIC_BLOCKS, AdditionsBlocks.PLASTIC_STAIRS, AdditionsBlocks.PLASTIC_SLABS, AdditionsBlocks.PLASTIC_FENCES,
+              AdditionsBlocks.PLASTIC_FENCE_GATES, AdditionsBlocks.PLASTIC_GLOW_STAIRS, AdditionsBlocks.PLASTIC_GLOW_SLABS, AdditionsBlocks.TRANSPARENT_PLASTIC_STAIRS,
+              AdditionsBlocks.TRANSPARENT_PLASTIC_SLABS);
+    }
+
+    @SafeVarargs
+    private static void registerBlockColorHandles(RegisterColorHandlersEvent event, Map<EnumColor, ? extends BlockRegistryObject<?, ?>>... blocks) {
+        for (Map<EnumColor, ? extends BlockRegistryObject<?, ?>> blockMap : blocks) {
+            for (BlockRegistryObject<?, ?> block : blockMap.values()) {
+                ClientRegistrationUtil.registerIColoredBlockHandler(event, block);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "count": 1,
+    "ingredient": {
+      "type": "neoforge:or",
+      "values": [
+        "#c:dusts/charcoal",
+        "minecraft:charcoal"
+      ]
+    }
+  },
+  "output": {
+    "amount": 20,
+    "id": "mekanism:carbon"
+  }
+}

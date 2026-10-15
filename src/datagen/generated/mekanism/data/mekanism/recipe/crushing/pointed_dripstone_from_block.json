@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:dripstone_block"
+  },
+  "output": {
+    "count": 4,
+    "id": "minecraft:pointed_dripstone"
+  }
+}

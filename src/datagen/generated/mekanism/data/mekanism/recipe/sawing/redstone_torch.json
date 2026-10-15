@@ -1,0 +1,14 @@
+{
+  "type": "mekanism:sawing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:redstone_torch"
+  },
+  "main_output": {
+    "id": "minecraft:stick"
+  },
+  "secondary_chance": 1.0,
+  "secondary_output": {
+    "id": "minecraft:redstone"
+  }
+}

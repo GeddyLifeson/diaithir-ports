@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/atomic",
+    "C": "#c:circuits/ultimate",
+    "I": "#c:gems/diamond",
+    "P": "mekanism:elite_enriching_factory"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:ultimate_enriching_factory"
+  }
+}

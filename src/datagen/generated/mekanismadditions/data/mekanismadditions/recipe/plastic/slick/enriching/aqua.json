@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "mekanismadditions:aqua_plastic"
+  },
+  "output": {
+    "id": "mekanismadditions:aqua_slick_plastic"
+  }
+}
