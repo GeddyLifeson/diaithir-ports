@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "appliedsoul"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "megacells:mega_soul_cell_housing",
+    "megacells:cell_component_16m"
+  ],
+  "result": {
+    "id": "megacells:soul_storage_cell_16m"
+  }
+}

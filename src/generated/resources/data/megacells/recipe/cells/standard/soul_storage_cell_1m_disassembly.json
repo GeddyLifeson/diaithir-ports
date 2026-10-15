@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "appliedsoul"
+    }
+  ],
+  "type": "ae2:storage_cell_disassembly",
+  "cell": "megacells:soul_storage_cell_1m",
+  "cell_disassembly_items": [
+    {
+      "id": "megacells:cell_component_1m"
+    },
+    {
+      "id": "megacells:mega_soul_cell_housing"
+    }
+  ]
+}

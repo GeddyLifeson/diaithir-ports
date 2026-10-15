@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "appex"
+    }
+  ],
+  "type": "ae2:storage_cell_disassembly",
+  "cell": "megacells:portable_experience_cell_256m",
+  "cell_disassembly_items": [
+    {
+      "id": "megacells:cell_component_256m"
+    },
+    {
+      "id": "megacells:mega_experience_cell_housing"
+    },
+    {
+      "id": "ae2:me_chest"
+    },
+    {
+      "id": "ae2:dense_energy_cell"
+    }
+  ]
+}
