@@ -1,0 +1,159 @@
+package vectorwing.farmersdelight.common.block.entity;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.core.Vec3i;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Container;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.ContainerUser;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
+import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
+import vectorwing.farmersdelight.common.registry.ModSounds;
+import vectorwing.farmersdelight.common.utility.TextUtils;
+
+@EventBusSubscriber(modid = FarmersDelight.MODID)
+public class CabinetBlockEntity extends RandomizableContainerBlockEntity
+{
+	private NonNullList<ItemStack> contents = NonNullList.withSize(27, ItemStack.EMPTY);
+	private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter()
+	{
+		@Override
+		protected void onOpen(Level level, BlockPos pos, BlockState state) {
+			CabinetBlockEntity.this.playSound(state, ModSounds.BLOCK_CABINET_OPEN.get());
+			CabinetBlockEntity.this.updateBlockState(state, true);
+		}
+
+		@Override
+		protected void onClose(Level level, BlockPos pos, BlockState state) {
+			CabinetBlockEntity.this.playSound(state, ModSounds.BLOCK_CABINET_CLOSE.get());
+			CabinetBlockEntity.this.updateBlockState(state, false);
+		}
+
+		@Override
+		protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int previous, int current) {
+		}
+
+		@Override
+		public boolean isOwnContainer(Player player) {
+			if (player.containerMenu instanceof ChestMenu) {
+				Container container = ((ChestMenu) player.containerMenu).getContainer();
+				return container == CabinetBlockEntity.this;
+			} else {
+				return false;
+			}
+		}
+	};
+
+	public CabinetBlockEntity(BlockPos pos, BlockState state) {
+		super(ModBlockEntityTypes.CABINET.get(), pos, state);
+	}
+
+	@SubscribeEvent
+	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+		event.registerBlockEntity(
+			Capabilities.Item.BLOCK,
+			ModBlockEntityTypes.CABINET.get(),
+			(blockEntity, _) -> VanillaContainerWrapper.of(blockEntity)
+		);
+	}
+
+	@Override
+	public void loadAdditional(ValueInput input) {
+		super.loadAdditional(input);
+		contents = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
+		if (!tryLoadLootTable(input)) {
+			ContainerHelper.loadAllItems(input, contents);
+		}
+	}
+
+	@Override
+	public void saveAdditional(ValueOutput output) {
+		super.saveAdditional(output);
+		if (!trySaveLootTable(output)) {
+			ContainerHelper.saveAllItems(output, contents);
+		}
+	}
+
+	@Override
+	public int getContainerSize() {
+		return 27;
+	}
+
+	@Override
+	protected NonNullList<ItemStack> getItems() {
+		return contents;
+	}
+
+	@Override
+	protected void setItems(NonNullList<ItemStack> itemsIn) {
+		contents = itemsIn;
+	}
+
+	@Override
+	protected Component getDefaultName() {
+		return TextUtils.container("cabinet");
+	}
+
+	@Override
+	protected AbstractContainerMenu createMenu(int id, Inventory player) {
+		return ChestMenu.threeRows(id, player, this);
+	}
+
+	@Override
+	public void startOpen(ContainerUser containerUser) {
+		if (!this.remove && !containerUser.getLivingEntity().isSpectator()) {
+			this.openersCounter.incrementOpeners(
+				containerUser.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState(), containerUser.getContainerInteractionRange()
+			);
+		}
+	}
+
+	@Override
+	public void stopOpen(ContainerUser containerUser) {
+		if (!this.remove && !containerUser.getLivingEntity().isSpectator()) {
+			this.openersCounter.decrementOpeners(containerUser.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState());
+		}
+	}
+
+	public void recheckOpen() {
+		if (level != null && !this.remove) {
+			this.openersCounter.recheckOpeners(level, this.getBlockPos(), this.getBlockState());
+		}
+	}
+
+	void updateBlockState(BlockState state, boolean open) {
+		if (level != null) {
+			this.level.setBlock(this.getBlockPos(), state.setValue(CabinetBlock.OPEN, open), 3);
+		}
+	}
+
+	private void playSound(BlockState state, SoundEvent sound) {
+		if (level == null) return;
+
+		Vec3i cabinetFacingVector = state.getValue(CabinetBlock.FACING).getUnitVec3i();
+		double x = (double) worldPosition.getX() + 0.5D + (double) cabinetFacingVector.getX() / 2.0D;
+		double y = (double) worldPosition.getY() + 0.5D + (double) cabinetFacingVector.getY() / 2.0D;
+		double z = (double) worldPosition.getZ() + 0.5D + (double) cabinetFacingVector.getZ() / 2.0D;
+		level.playSound(null, x, y, z, sound, SoundSource.BLOCKS, 0.5F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+	}
+}

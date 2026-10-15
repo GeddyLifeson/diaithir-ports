@@ -1,0 +1,93 @@
+package vectorwing.farmersdelight.common.block;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import javax.annotation.Nullable;
+
+public class SafetyNetBlock extends Block implements SimpleWaterloggedBlock
+{
+	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+	protected static final VoxelShape SHAPE = Block.box(0.0D, 7.0D, 0.0D, 16.0D, 9.0D, 16.0D);
+
+	public SafetyNetBlock(BlockBehaviour.Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(WATERLOGGED);
+	}
+
+	@Nullable
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		FluidState fluid = context.getLevel().getFluidState(context.getClickedPos());
+		return this.defaultBlockState().setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
+	}
+
+	@Override
+	protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos, Direction directionToNeighbour, BlockPos neighbourPos, BlockState neighbourState, RandomSource random) {
+		if (state.getValue(WATERLOGGED)) {
+			ticks.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+		}
+
+		return super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
+	}
+
+	@Override
+	public FluidState getFluidState(BlockState state) {
+		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return SHAPE;
+	}
+
+	@Override
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
+		if (entity.isSuppressingBounce()) {
+			super.fallOn(level, state, pos, entity, fallDistance);
+		} else {
+			entity.causeFallDamage(fallDistance, 0.0F, level.damageSources().fall());
+		}
+	}
+
+	@Override
+	public void updateEntityMovementAfterFallOn(BlockGetter level, Entity entity) {
+		if (entity.isSuppressingBounce()) {
+			super.updateEntityMovementAfterFallOn(level, entity);
+		} else {
+			this.bounceEntity(entity);
+		}
+	}
+
+	private void bounceEntity(Entity entity) {
+		Vec3 vec3d = entity.getDeltaMovement();
+		if (vec3d.y < 0.0D) {
+			double entityWeightOffset = entity instanceof LivingEntity ? 0.6D : 0.8D;
+			entity.setDeltaMovement(vec3d.x, -vec3d.y * entityWeightOffset, vec3d.z);
+		}
+	}
+}
