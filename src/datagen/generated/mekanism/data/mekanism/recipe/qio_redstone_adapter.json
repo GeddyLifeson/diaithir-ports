@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "#c:circuits/ultimate",
+    "I": "#c:ender_pearls",
+    "R": "#c:dusts/redstone",
+    "T": "mekanism:teleportation_core",
+    "W": "minecraft:redstone_torch"
+  },
+  "pattern": [
+    "IWI",
+    "CRC",
+    "ITI"
+  ],
+  "result": {
+    "id": "mekanism:qio_redstone_adapter"
+  }
+}

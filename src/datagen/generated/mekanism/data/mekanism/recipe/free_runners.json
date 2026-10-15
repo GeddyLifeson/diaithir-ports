@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/infused",
+    "C": "#c:circuits/basic",
+    "E": "mekanism:energy_tablet"
+  },
+  "pattern": [
+    "C C",
+    "A A",
+    "E E"
+  ],
+  "result": {
+    "id": "mekanism:free_runners"
+  }
+}

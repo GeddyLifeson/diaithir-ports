@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:metallurgic_infusing",
+  "chemical_input": {
+    "amount": 10,
+    "tag": "mekanism:bio"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:dirt"
+  },
+  "output": {
+    "id": "minecraft:podzol"
+  },
+  "per_tick_usage": false
+}

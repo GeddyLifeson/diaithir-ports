@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:deepslate_tile_slab"
+  },
+  "output": {
+    "id": "minecraft:cobbled_deepslate_slab"
+  }
+}

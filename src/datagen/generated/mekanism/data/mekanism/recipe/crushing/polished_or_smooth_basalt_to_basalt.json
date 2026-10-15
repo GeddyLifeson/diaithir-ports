@@ -1,0 +1,13 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": [
+      "minecraft:polished_basalt",
+      "minecraft:smooth_basalt"
+    ]
+  },
+  "output": {
+    "id": "minecraft:basalt"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:laser",
+    "A": "#c:pellets/polonium",
+    "C": "#c:circuits/ultimate",
+    "c": "#c:ingots/copper"
+  },
+  "pattern": [
+    "ccc",
+    "C#C",
+    "AAA"
+  ],
+  "result": {
+    "id": "mekanism:supercharged_coil"
+  }
+}

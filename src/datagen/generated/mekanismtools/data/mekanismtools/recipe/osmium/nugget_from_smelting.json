@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "mekanismtools:osmium_helmet",
+    "mekanismtools:osmium_chestplate",
+    "mekanismtools:osmium_leggings",
+    "mekanismtools:osmium_boots",
+    "mekanismtools:osmium_sword",
+    "mekanismtools:osmium_pickaxe",
+    "mekanismtools:osmium_axe",
+    "mekanismtools:osmium_shovel",
+    "mekanismtools:osmium_hoe",
+    "mekanismtools:osmium_paxel"
+  ],
+  "result": {
+    "id": "mekanism:nugget_osmium"
+  }
+}

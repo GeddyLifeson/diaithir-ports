@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:orange"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:plastic_slabs/transparent",
+      "subtracted": "mekanismadditions:orange_plastic_transparent_slab"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:orange_plastic_transparent_slab"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "mekanism:item/free_runners_armored",
+    "model": {
+      "type": "mekanism:free_runner",
+      "armor_type": "ARMORED"
+    }
+  }
+}

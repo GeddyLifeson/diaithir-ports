@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:dark_red"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:plastic_stairs/transparent",
+      "subtracted": "mekanismadditions:dark_red_plastic_transparent_stairs"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:dark_red_plastic_transparent_stairs"
+  },
+  "per_tick_usage": false
+}

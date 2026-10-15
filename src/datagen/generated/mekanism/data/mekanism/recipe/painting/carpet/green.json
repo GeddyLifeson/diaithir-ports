@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:green"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/carpets",
+      "subtracted": "minecraft:green_carpet"
+    }
+  },
+  "output": {
+    "id": "minecraft:green_carpet"
+  },
+  "per_tick_usage": false
+}

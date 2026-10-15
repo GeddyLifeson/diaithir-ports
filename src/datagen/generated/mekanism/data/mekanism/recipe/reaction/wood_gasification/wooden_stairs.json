@@ -1,0 +1,26 @@
+{
+  "type": "mekanism:reaction",
+  "chemical_input": {
+    "amount": 15,
+    "chemical": "mekanism:oxygen"
+  },
+  "chemical_output": {
+    "amount": 15,
+    "id": "mekanism:hydrogen"
+  },
+  "duration": 22,
+  "fluid_input": {
+    "amount": 15,
+    "ingredient": "#minecraft:water"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "type": "neoforge:or",
+      "values": [
+        "#minecraft:wooden_stairs",
+        "minecraft:bamboo_mosaic_stairs"
+      ]
+    }
+  }
+}

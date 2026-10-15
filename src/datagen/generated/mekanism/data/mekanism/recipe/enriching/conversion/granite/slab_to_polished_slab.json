@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:granite_slab"
+  },
+  "output": {
+    "id": "minecraft:polished_granite_slab"
+  }
+}

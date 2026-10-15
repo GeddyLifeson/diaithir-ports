@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:white"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "mekanism:dye_base"
+  },
+  "output": {
+    "id": "minecraft:white_dye"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:pink"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/concrete_powder",
+      "subtracted": "minecraft:pink_concrete_powder"
+    }
+  },
+  "output": {
+    "id": "minecraft:pink_concrete_powder"
+  },
+  "per_tick_usage": false
+}

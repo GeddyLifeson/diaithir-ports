@@ -1,0 +1,40 @@
+package mekanism.client.render.item;
+
+import mekanism.common.registration.impl.BlockRegistryObject;
+import mekanism.common.util.MekanismUtils;
+import mekanism.common.util.MekanismUtils.ResourceType;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.IItemDecorator;
+import net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent;
+
+public class TransmitterTypeDecorator implements IItemDecorator {
+
+    public static void registerDecorators(RegisterItemDecorationsEvent event, BlockRegistryObject<?, ?>... blocks) {
+        for (BlockRegistryObject<?, ?> block : blocks) {
+            event.register(block, new TransmitterTypeDecorator(block.getId()));
+        }
+    }
+
+    private final Identifier texture;
+
+    private TransmitterTypeDecorator(Identifier blockId) {
+        this.texture = MekanismUtils.getResource(ResourceType.GUI_ICONS, blockId.getPath() + ".png");
+    }
+
+    @Override
+    public boolean render(GuiGraphicsExtractor guiGraphics, Font font, ItemStack stack, int xOffset, int yOffset) {
+        if (stack.isEmpty()) {
+            return false;
+        }
+        //PoseStack pose = guiGraphics.pose();
+        //pose.pushPose();
+        //pose.translate(0, 0, 200);
+        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, texture, xOffset, yOffset, 0, 0, 16, 16, 16, 16);
+        //pose.popPose();
+        return true;
+    }
+}

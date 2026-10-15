@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:red"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/glass",
+      "subtracted": "minecraft:red_stained_glass"
+    }
+  },
+  "output": {
+    "id": "minecraft:red_stained_glass"
+  },
+  "per_tick_usage": false
+}

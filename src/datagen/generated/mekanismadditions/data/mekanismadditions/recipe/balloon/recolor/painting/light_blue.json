@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:light_blue"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:balloons",
+      "subtracted": "mekanismadditions:light_blue_balloon"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:light_blue_balloon"
+  },
+  "per_tick_usage": false
+}

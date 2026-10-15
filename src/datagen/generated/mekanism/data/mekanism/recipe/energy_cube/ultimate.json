@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/atomic",
+    "E": "mekanism:energy_tablet",
+    "I": "#c:gems/diamond",
+    "P": "mekanism:elite_energy_cube"
+  },
+  "pattern": [
+    "AEA",
+    "IPI",
+    "AEA"
+  ],
+  "result": {
+    "id": "mekanism:ultimate_energy_cube"
+  }
+}

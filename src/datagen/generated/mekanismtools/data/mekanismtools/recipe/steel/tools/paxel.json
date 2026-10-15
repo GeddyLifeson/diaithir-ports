@@ -1,0 +1,18 @@
+{
+  "type": "mekanismtools:paxel",
+  "category": "equipment",
+  "key": {
+    "A": "mekanismtools:steel_axe",
+    "P": "mekanismtools:steel_pickaxe",
+    "R": "#c:ingots/iron",
+    "S": "mekanismtools:steel_shovel"
+  },
+  "pattern": [
+    "APS",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "id": "mekanismtools:steel_paxel"
+  }
+}

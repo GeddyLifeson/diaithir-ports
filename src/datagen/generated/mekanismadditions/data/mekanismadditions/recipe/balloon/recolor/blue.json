@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:balloons",
+      "subtracted": "mekanismadditions:blue_balloon"
+    },
+    "#c:dyes/blue"
+  ],
+  "result": {
+    "id": "mekanismadditions:blue_balloon"
+  }
+}

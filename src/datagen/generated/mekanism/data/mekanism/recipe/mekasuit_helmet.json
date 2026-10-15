@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:netherite_helmet",
+    "A": "#c:pellets/polonium",
+    "C": "#c:circuits/ultimate",
+    "E": "mekanism:basic_induction_cell",
+    "P": "mekanism:hdpe_sheet"
+  },
+  "pattern": [
+    "PCP",
+    "P#P",
+    "AEA"
+  ],
+  "result": {
+    "id": "mekanism:mekasuit_helmet"
+  }
+}

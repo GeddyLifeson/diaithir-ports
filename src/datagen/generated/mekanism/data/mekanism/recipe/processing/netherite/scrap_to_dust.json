@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:metallurgic_infusing",
+  "chemical_input": {
+    "amount": 40,
+    "tag": "mekanism:gold"
+  },
+  "item_input": {
+    "count": 4,
+    "ingredient": "minecraft:netherite_scrap"
+  },
+  "output": {
+    "id": "mekanism:dust_netherite"
+  },
+  "per_tick_usage": false
+}

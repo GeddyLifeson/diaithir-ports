@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/infused",
+    "E": "mekanism:energy_tablet",
+    "G": "#c:glass_blocks/cheap",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    " G ",
+    "AEA",
+    " S "
+  ],
+  "result": {
+    "id": "mekanism:network_reader"
+  }
+}

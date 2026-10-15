@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "mekanism:item/scuba_tank",
+    "model": {
+      "type": "mekanism:scuba_tank"
+    }
+  }
+}

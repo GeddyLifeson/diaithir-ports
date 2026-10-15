@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "type": "mekanism:special/transmitter",
+      "model": "mekanism:block/transmitter/small/pressurized_tube/elite"
+    }
+  }
+}

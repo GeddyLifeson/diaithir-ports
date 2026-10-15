@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:sawing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:note_block"
+  },
+  "main_output": {
+    "count": 8,
+    "id": "minecraft:oak_planks"
+  },
+  "secondary_chance": 1.0,
+  "secondary_output": {
+    "id": "minecraft:redstone"
+  }
+}

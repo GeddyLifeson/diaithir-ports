@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "mekanism:atomic_disassembler",
+    "A": "#c:pellets/polonium",
+    "C": "#c:circuits/ultimate",
+    "E": "mekanism:basic_induction_cell",
+    "P": "mekanism:hdpe_sheet",
+    "o": "mekanism:configurator"
+  },
+  "pattern": [
+    "CoC",
+    "P#P",
+    "AEA"
+  ],
+  "result": {
+    "id": "mekanism:meka_tool"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 10,
+    "ingredient": "#minecraft:leaves"
+  },
+  "output": {
+    "id": "mekanism:bio_fuel"
+  }
+}

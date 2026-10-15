@@ -1,0 +1,241 @@
+package mekanism.api.recipes.ingredients.creator;
+
+import java.util.List;
+import java.util.Objects;
+import mekanism.api.recipes.ingredients.ItemStackIngredient;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.TypedInstance;
+import net.minecraft.core.component.DataComponentPatch;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import net.neoforged.neoforge.registries.holdersets.OrHolderSet;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+
+public interface IItemStackIngredientCreator extends IIngredientCreator<Item, ItemStack, ItemStackIngredient> {
+
+    /// @implNote If the stack has any non-default data components, a non-strict component matching those additions will be used.
+    @Override
+    default ItemStackIngredient from(ItemStack instance) {
+        Objects.requireNonNull(instance, "ItemStackIngredients cannot be created from a null ItemStack.");
+        return from(instance, instance.count());
+    }
+
+    /// Creates an Item Stack Ingredient that matches a given item stack with a specified amount.
+    ///
+    /// @param stack  Item stack to match.
+    /// @param amount Amount needed.
+    ///
+    /// @apiNote If the amount needed is the same as the stack's size, [#from(ItemStack)] can be used instead.
+    /// @implNote If the stack has any non-default data components, a non-strict component matching those additions will be used.
+    default ItemStackIngredient from(ItemStack stack, int amount) {
+        Objects.requireNonNull(stack, "ItemStackIngredients cannot be created from a null ItemStack.");
+        if (stack.isEmpty()) {
+            throw new IllegalArgumentException("ItemStackIngredients cannot be created using the empty stack.");
+        }
+        //Support Components that are on the stack in case it matters
+        // Note: Only bother making it a data component ingredient if the stack has non-default data, otherwise there is no point in doing the extra checks
+        DataComponentPatch componentsPatch = stack.getComponentsPatch();
+        if (!componentsPatch.isEmpty()) {
+            return from(DataComponentIngredient.of(false, componentsPatch, stack.typeHolder()), amount);
+        }
+        return from(Ingredient.of(stack.getItem()), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a provided item.
+    ///
+    /// @param item Item provider that provides the item to match.
+    ///
+    /// @implNote This wraps via [#from(ItemStack)] so if there are any default components it will be included in the ingredient. If this is not desired, manually create
+    /// an ingredient and call [#from(Ingredient)].
+    /// @since 10.5.0
+    default ItemStackIngredient fromHolder(Holder<Item> item) {
+        return fromHolder(item, 1);
+    }
+
+    @Override
+    default ItemStackIngredient fromHolder(Holder<Item> instance, int amount) {
+        return from(instance.value(), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a provided item.
+    ///
+    /// @param item Item provider that provides the item to match.
+    ///
+    /// @implNote This wraps via [#from(Ingredient)] so if there are any default components it will **NOT** be included in the ingredient. If this is not desired,
+    /// manually create the ingredient via [DataComponentIngredient] and call [#from(Ingredient)].
+    default ItemStackIngredient from(ItemLike item) {
+        return from(item, 1);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a provided item and amount.
+    ///
+    /// @param item   Item provider that provides the item to match.
+    /// @param amount Amount needed.
+    ///
+    /// @implNote This wraps via [#from(Ingredient, int)] so if there are any default components it will **NOT** be included in the ingredient. If this is not desired,
+    /// manually create the ingredient via [DataComponentIngredient] and call [#from(Ingredient, int)].
+    default ItemStackIngredient from(ItemLike item, int amount) {
+        return from(Ingredient.of(item), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a provided items.
+    ///
+    /// @param items Item providers that provides the items to match.
+    ///
+    /// @throws IllegalArgumentException if no items are passed.
+    /// @implNote This wraps via [#from(Ingredient)] so if there are any default components it will **NOT** be included in the ingredient. If this is not desired,
+    /// manually create the ingredients via [DataComponentIngredient] and call [#from(Ingredient)].
+    /// @since 10.6.0
+    default ItemStackIngredient from(ItemLike... items) {
+        return from(1, items);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a provided items and amount.
+    ///
+    /// @param amount Amount needed.
+    /// @param items  Item providers that provides the items to match.
+    ///
+    /// @throws IllegalArgumentException if no items are passed.
+    /// @implNote This wraps via [#from(Ingredient, int)] so if there are any default components it will **NOT** be included in the ingredient. If this is not desired,
+    /// manually create the ingredients via [DataComponentIngredient] and call [#from(Ingredient, int)].
+    /// @since 10.6.0
+    default ItemStackIngredient from(int amount, ItemLike... items) {
+        if (items.length == 0) {
+            throw new IllegalArgumentException("Attempted to create an ItemStackIngredient with no items.");
+        }
+        return from(Ingredient.of(items), amount);
+    }
+
+    /// Creates an Ingredient that matches a provided type and amount.
+    ///
+    /// @param item   Type to match.
+    /// @param amount Amount needed.
+    ///
+    /// @throws NullPointerException     if the given instance is null.
+    /// @throws IllegalArgumentException if the given instance is empty or an amount smaller than one.
+    default ItemStackIngredient from(Item item, int amount) {
+        return from(Ingredient.of(item), amount);
+    }
+
+    /// Creates an Ingredient that matches any of the provided types.
+    ///
+    /// @param amount Amount needed.
+    /// @param items  Types to match.
+    ///
+    /// @throws NullPointerException     if the given instance is null.
+    /// @throws IllegalArgumentException if the given instance is empty or an amount smaller than one; or if no types are passed.
+    /// @implNote This wraps via [#from(Ingredient)] so if there are any default components it will **NOT** be included in the ingredient. If this is not desired,
+    /// manually create the ingredient via [DataComponentIngredient] and call [#from(Ingredient)].
+    /// @since 10.6.0
+    default ItemStackIngredient from(int amount, Item... items) {
+        if (items.length == 0) {
+            throw new IllegalArgumentException("Attempted to create an ItemStackIngredient with no items.");
+        }
+        return from(Ingredient.of(items), amount);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    default ItemStackIngredient fromHolders(int amount, Holder<Item>... items) {
+        if (items.length == 0) {
+            throw new IllegalArgumentException("Attempted to create a ItemStackIngredient with no items.");
+        }
+        return from(Ingredient.of(HolderSet.direct(List.of(items))), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a given Item tag.
+    ///
+    /// @param tag Tag to match.
+    default ItemStackIngredient from(HolderGetter<Item> lookup, TagKey<Item> tag) {
+        return from(lookup, tag, 1);
+    }
+
+    @Override
+    default ItemStackIngredient from(HolderGetter<Item> lookup, TagKey<Item> tag, int amount) {
+        Objects.requireNonNull(tag, "ItemStackIngredients cannot be created from a null tag.");
+        return from(Ingredient.of(lookup.getOrThrow(tag)), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches any of the given Item tags.
+    ///
+    /// @param tags Tag to match.
+    ///
+    /// @throws NullPointerException     if the list of tags is null.
+    /// @throws IllegalArgumentException if the list of tags is empty.
+    /// @since 10.7.11
+    default ItemStackIngredient from(HolderGetter<Item> lookup, int amount, List<TagKey<Item>> tags) {//TODO - 26.1: Add docs for lookup param
+        if (tags.isEmpty()) {
+            throw new IllegalArgumentException("Attempted to create an ItemStackIngredient with no tags.");
+        } else if (tags.size() == 1) {
+            return from(lookup, tags.getFirst(), amount);
+        }
+        List<HolderSet<Item>> combinedTags = tags.stream().<HolderSet<Item>>map(lookup::getOrThrow).toList();
+        return from(Ingredient.of(new OrHolderSet<>(combinedTags)), amount);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a given ingredient.
+    ///
+    /// @param ingredient Ingredient to match.
+    default ItemStackIngredient from(Ingredient ingredient) {
+        return from(ingredient, 1);
+    }
+
+    /// Creates an Item Stack Ingredient that matches a given ingredient and amount.
+    ///
+    /// @param ingredient Ingredient to match.
+    /// @param amount     Amount needed.
+    ///
+    /// @throws NullPointerException     if the given instance is null.
+    /// @throws IllegalArgumentException if the given instance is empty or an amount smaller than one.
+    default ItemStackIngredient from(Ingredient ingredient, int amount) {
+        Objects.requireNonNull(ingredient, "ItemStackIngredients cannot be created from a null ingredient.");
+        return from(new SizedIngredient(ingredient, amount));
+    }
+
+    /// Creates an Item Stack Ingredient that matches a given ingredient and amount.
+    ///
+    /// @param ingredient Sized ingredient to match.
+    ///
+    /// @throws NullPointerException     if the given instance is null.
+    /// @throws IllegalArgumentException if the given instance is empty.
+    /// @since 10.6.0
+    default ItemStackIngredient from(SizedIngredient ingredient) {
+        return ItemStackIngredient.of(ingredient);
+    }
+
+    /// Creates an Item Stack Ingredient from a holder lookup given the item's id.
+    ///
+    /// @param registries Holder lookup to find the item in.
+    /// @param itemId     Item ID of the item to look up.
+    ///
+    /// @throws NullPointerException  if the given registries or item id are null.
+    /// @throws IllegalStateException if the item does not exist.
+    /// @since 10.6.7
+    default ItemStackIngredient from(HolderLookup.Provider registries, Identifier itemId) {
+        return fromHolder(registries.lookupOrThrow(Registries.ITEM).getOrThrow(ResourceKey.create(Registries.ITEM, itemId)));
+    }
+
+    @Override
+    default ItemStack createStack(TypedInstance<Item> instance) {
+        Objects.requireNonNull(instance, "Instance cannot be null.");
+        return switch (instance) {
+            case ItemStack stackIn -> stackIn;
+            case ItemStackTemplate template -> template.create();
+            case ItemResource resource -> resource.toStack();
+            //TODO: Is there a decent way to grab any potential components patch?
+            default -> new ItemStack(instance.typeHolder());
+        };
+    }
+}

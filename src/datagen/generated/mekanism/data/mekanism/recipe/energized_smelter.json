@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/basic",
+    "C": "#c:circuits/basic",
+    "G": "#c:glass_blocks/cheap",
+    "X": "mekanism:steel_casing"
+  },
+  "pattern": [
+    "ACA",
+    "GXG",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:energized_smelter"
+  }
+}
