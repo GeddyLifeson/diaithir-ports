@@ -1,0 +1,118 @@
+package slimeknights.mantle.fluid.transfer;
+
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonSerializationContext;
+import com.mojang.serialization.JsonOps;
+import lombok.RequiredArgsConstructor;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
+import org.apache.commons.lang3.function.TriFunction;
+import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.Mantle;
+import slimeknights.mantle.recipe.helper.FluidOutput;
+import slimeknights.mantle.recipe.helper.ItemOutput;
+import slimeknights.mantle.data.loadable.common.IngredientLoadable;
+import slimeknights.mantle.util.JsonHelper;
+
+import java.lang.reflect.Type;
+import java.util.function.Consumer;
+
+/** Fluid transfer info that empties a fluid from an item */
+@RequiredArgsConstructor
+public class EmptyFluidContainerTransfer implements IFluidContainerTransfer {
+  public static final Identifier ID = Mantle.getResource("empty_item");
+
+  protected final Ingredient input;
+  protected final ItemOutput result;
+  protected final FluidOutput fluid;
+
+  /** @deprecated use {@link #EmptyFluidContainerTransfer(Ingredient, ItemOutput, FluidOutput)} */
+  @Deprecated(forRemoval = true)
+  public EmptyFluidContainerTransfer(Ingredient input, ItemOutput result, FluidStack fluid) {
+    this(input, result, FluidOutput.fromStack(fluid));
+  }
+
+  @Override
+  public void addRepresentativeItems(Consumer<Item> consumer) {
+    IFluidContainerTransfer.addIngredientItems(input, consumer);
+  }
+
+  @Override
+  public boolean matches(ItemStack stack, FluidStack fluid) {
+    return input.test(stack);
+  }
+
+  /** Gets the contained fluid in the given stack */
+  protected FluidStack getFluid(ItemStack stack) {
+    return fluid.get();
+  }
+
+  @Nullable
+  @Override
+  public TransferResult transfer(ItemStack stack, FluidStack fluid, ResourceHandler<FluidResource> handler, TransferDirection direction) {
+    if (!direction.canEmpty()) {
+      return null;
+    }
+    FluidStack contained = getFluid(stack);
+    if (contained.isEmpty()) {
+      return null;
+    }
+    try (Transaction transaction = Transaction.openRoot()) {
+      int inserted = handler.insert(FluidResource.of(contained), contained.getAmount(), transaction);
+      if (inserted == contained.getAmount()) {
+        transaction.commit();
+        return new TransferResult(result.copy(), contained, false);
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public JsonObject serialize(JsonSerializationContext context) {
+    JsonObject json = new JsonObject();
+    json.addProperty("type", ID.toString());
+    json.add("input", Ingredient.CODEC.encodeStart(JsonOps.INSTANCE, input).getOrThrow());
+    if (!result.isEmpty()) {
+      json.add("result", result.serialize(false));
+    }
+    json.add("fluid", FluidOutput.Loadable.REQUIRED.serialize(fluid));
+    return json;
+  }
+
+  /** Unique loader instance */
+  public static final JsonDeserializer<EmptyFluidContainerTransfer> DESERIALIZER = new Deserializer<>(EmptyFluidContainerTransfer::new);
+
+  /** Gets the result for the fluid transfer. */
+  static ItemOutput getResult(JsonObject json) {
+    String key = "result";
+    if (!json.has(key) && json.has("filled")) {
+      Mantle.logger.warn("Using deprecated field 'filled' for fluid container transfer, use 'result' instead.");
+      key = "filled";
+    }
+    return ItemOutput.Loadable.OPTIONAL_ITEM.getOrEmpty(json, key);
+  }
+
+  /**
+   * Generic deserializer
+   */
+  public record Deserializer<T extends EmptyFluidContainerTransfer>(TriFunction<Ingredient,ItemOutput,FluidOutput,T> factory) implements JsonDeserializer<T> {
+    @Override
+    public T deserialize(JsonElement element, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+      JsonObject json = element.getAsJsonObject();
+      Ingredient input = IngredientLoadable.DISALLOW_EMPTY.convert(JsonHelper.getElement(json, "input"), "input");
+      ItemOutput result = getResult(json);
+      FluidOutput fluid = FluidOutput.Loadable.REQUIRED.getIfPresent(json, "fluid");
+      return factory.apply(input, result, fluid);
+    }
+  }
+}
