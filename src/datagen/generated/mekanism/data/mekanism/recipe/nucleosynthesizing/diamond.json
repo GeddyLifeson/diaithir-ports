@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 4,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 1000,
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:coal"
+  },
+  "output": {
+    "id": "minecraft:diamond"
+  },
+  "per_tick_usage": false
+}

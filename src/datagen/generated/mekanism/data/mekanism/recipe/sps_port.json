@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:sps_casing",
+    "C": "#c:circuits/ultimate"
+  },
+  "pattern": [
+    " # ",
+    "#C#",
+    " # "
+  ],
+  "result": {
+    "id": "mekanism:sps_port"
+  }
+}

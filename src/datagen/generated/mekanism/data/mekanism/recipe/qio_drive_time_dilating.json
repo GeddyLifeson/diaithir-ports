@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": "#c:pellets/polonium",
+    "I": "#c:pellets/plutonium",
+    "P": "mekanism:qio_drive_hyper_dense"
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "id": "mekanism:qio_drive_time_dilating"
+  }
+}

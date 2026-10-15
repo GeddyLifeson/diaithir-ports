@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanismgenerators:heat_generator",
+    "A": "#c:alloys/elite",
+    "H": "#c:pellets/polonium",
+    "P": "mekanism:module_base"
+  },
+  "pattern": [
+    "A#A",
+    "APA",
+    "HHH"
+  ],
+  "result": {
+    "id": "mekanismgenerators:module_geothermal_generator_unit"
+  }
+}

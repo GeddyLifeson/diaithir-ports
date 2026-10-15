@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:sticky_piston",
+    "A": "#c:ender_pearls",
+    "C": "#c:circuits/ultimate",
+    "I": "#c:ingots/lead",
+    "T": "mekanism:teleportation_core"
+  },
+  "pattern": [
+    "ITI",
+    "ACA",
+    " # "
+  ],
+  "result": {
+    "id": "mekanism:qio_importer"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "#c:circuits/basic",
+    "G": "#c:glass_blocks/cheap",
+    "P": "#c:chests/wooden",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    "SGS",
+    "PCP",
+    "SSS"
+  ],
+  "result": {
+    "id": "mekanism:personal_chest"
+  }
+}

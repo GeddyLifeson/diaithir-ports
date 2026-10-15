@@ -1,0 +1,55 @@
+package mekanism.client.texture;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import mekanism.api.MekanismAPI;
+import mekanism.api.chemical.Chemical;
+import net.minecraft.client.renderer.texture.atlas.sources.DirectoryLister;
+import net.minecraft.client.renderer.texture.atlas.sources.SingleFile;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.neoforged.neoforge.client.data.SpriteSourceProvider;
+
+public abstract class BaseSpriteSourceProvider extends SpriteSourceProvider {
+
+    private final Set<Identifier> trackedSingles = new HashSet<>();
+
+    protected BaseSpriteSourceProvider(PackOutput output, String modid, CompletableFuture<Provider> lookupProvider) {
+        super(output, lookupProvider, modid);
+    }
+
+    protected void addFiles(SourceList atlas, List<Identifier> resourceLocations) {
+        addFiles(atlas, resourceLocations.stream().sorted(Identifier::compareNamespaced).toArray(Identifier[]::new));
+    }
+
+    protected void addFiles(SourceList atlas, Identifier... resourceLocations) {
+        for (Identifier rl : resourceLocations) {
+            //Only add this source if we haven't already added it as a direct single file source
+            if (trackedSingles.add(rl)) {
+                atlas.addSource(new SingleFile(rl, Optional.empty()));
+            }
+        }
+    }
+
+    //TODO - 26.1: Re-evaluate doing this
+    protected void addChemicalSprites(SourceList atlas) {
+        List<Identifier> icons = new ArrayList<>();
+        for (Map.Entry<ResourceKey<Chemical>, Chemical> entry : MekanismAPI.CHEMICAL_REGISTRY.entrySet()) {
+            if (entry.getKey().identifier().getNamespace().equals(modid)) {
+                icons.add(entry.getValue().getIcon());
+            }
+        }
+        addFiles(atlas, icons);
+    }
+
+    protected void addDirectory(SourceList atlas, String directory, String spritePrefix) {
+        atlas.addSource(new DirectoryLister(directory, spritePrefix));
+    }
+}

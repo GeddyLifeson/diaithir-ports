@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:injecting",
+  "chemical_input": {
+    "amount": 1,
+    "tag": "mekanism:water_vapor"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:cyan_concrete_powder"
+  },
+  "output": {
+    "id": "minecraft:cyan_concrete"
+  },
+  "per_tick_usage": true
+}

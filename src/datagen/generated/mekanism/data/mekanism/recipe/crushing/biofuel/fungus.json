@@ -1,0 +1,13 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": [
+      "minecraft:crimson_fungus",
+      "minecraft:warped_fungus"
+    ]
+  },
+  "output": {
+    "id": "mekanism:bio_fuel"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "#mekanism:clumps/uranium"
+  },
+  "output": {
+    "id": "mekanism:dirty_dust_uranium"
+  }
+}

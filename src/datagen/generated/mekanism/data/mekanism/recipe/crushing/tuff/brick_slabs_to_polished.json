@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:tuff_brick_slab"
+  },
+  "output": {
+    "id": "minecraft:polished_tuff_slab"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:mushrooms"
+  },
+  "output": {
+    "id": "mekanism:bio_fuel"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:polished_tuff_slab"
+  },
+  "output": {
+    "id": "minecraft:tuff_brick_slab"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:orange"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:balloons",
+      "subtracted": "mekanismadditions:orange_balloon"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:orange_balloon"
+  },
+  "per_tick_usage": false
+}

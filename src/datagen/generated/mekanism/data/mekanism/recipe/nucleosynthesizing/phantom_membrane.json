@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 3,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 750,
+  "item_input": {
+    "count": 1,
+    "ingredient": "#c:leathers"
+  },
+  "output": {
+    "id": "minecraft:phantom_membrane"
+  },
+  "per_tick_usage": false
+}

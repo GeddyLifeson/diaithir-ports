@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:paper",
+    "#c:circuits/basic"
+  ],
+  "result": {
+    "id": "mekanism:crafting_formula"
+  }
+}

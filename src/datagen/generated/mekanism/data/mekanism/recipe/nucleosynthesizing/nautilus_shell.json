@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 3,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 750,
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:flower_pot"
+  },
+  "output": {
+    "id": "minecraft:nautilus_shell"
+  },
+  "per_tick_usage": false
+}

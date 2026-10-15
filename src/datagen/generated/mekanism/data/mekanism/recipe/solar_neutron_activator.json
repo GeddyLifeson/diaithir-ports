@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:hdpe_sheet",
+    "A": "#mekanism:alloys/reinforced",
+    "C": "#c:circuits/elite",
+    "I": "#c:ingots/bronze",
+    "X": "mekanism:steel_casing"
+  },
+  "pattern": [
+    "A#A",
+    "CXC",
+    "III"
+  ],
+  "result": {
+    "id": "mekanism:solar_neutron_activator"
+  }
+}

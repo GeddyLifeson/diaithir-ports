@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "#c:ender_pearls",
+    "G": "#c:glass_panes",
+    "I": "#c:ingots/lead",
+    "T": "mekanism:teleportation_core"
+  },
+  "pattern": [
+    "IAI",
+    "AGA",
+    "ITI"
+  ],
+  "result": {
+    "id": "mekanism:qio_dashboard"
+  }
+}

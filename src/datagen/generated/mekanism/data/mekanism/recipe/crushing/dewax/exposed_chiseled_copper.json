@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:waxed_exposed_chiseled_copper"
+  },
+  "output": {
+    "id": "minecraft:exposed_chiseled_copper"
+  }
+}

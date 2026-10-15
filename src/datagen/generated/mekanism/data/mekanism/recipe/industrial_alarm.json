@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "minecraft:redstone_lamp",
+    "C": "#c:circuits/basic",
+    "I": "#c:ingots/lead"
+  },
+  "pattern": [
+    "III",
+    "C#C",
+    "III"
+  ],
+  "result": {
+    "id": "mekanism:industrial_alarm"
+  }
+}

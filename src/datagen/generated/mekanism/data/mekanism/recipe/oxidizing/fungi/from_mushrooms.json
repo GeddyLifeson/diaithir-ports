@@ -1,0 +1,30 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "count": 1,
+    "ingredient": {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:or",
+          "values": [
+            "#c:mushrooms"
+          ]
+        },
+        {
+          "type": "neoforge:or",
+          "values": [
+            [
+              "minecraft:warped_fungus",
+              "minecraft:crimson_fungus"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "output": {
+    "amount": 10,
+    "id": "mekanism:fungi"
+  }
+}

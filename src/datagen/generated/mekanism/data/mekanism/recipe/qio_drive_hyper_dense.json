@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:teleportation_core",
+    "I": "#c:pellets/plutonium",
+    "P": "mekanism:qio_drive_base"
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "id": "mekanism:qio_drive_hyper_dense"
+  }
+}

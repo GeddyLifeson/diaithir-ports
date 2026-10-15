@@ -1,0 +1,30 @@
+{
+  "type": "mekanism:reaction",
+  "chemical_input": {
+    "amount": 1000,
+    "chemical": "mekanism:oxygen"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "mekanism:hydrogen"
+  },
+  "duration": 900,
+  "fluid_input": {
+    "amount": 1000,
+    "ingredient": "#minecraft:water"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "type": "neoforge:or",
+      "values": [
+        "#c:storage_blocks/coal",
+        "#c:storage_blocks/charcoal"
+      ]
+    }
+  },
+  "item_output": {
+    "count": 9,
+    "id": "mekanism:dust_sulfur"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:deepslate_brick_wall"
+  },
+  "output": {
+    "id": "minecraft:deepslate_tile_wall"
+  }
+}

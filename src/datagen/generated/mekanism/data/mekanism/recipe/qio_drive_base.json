@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:ender_pearls",
+    "C": "mekanism:ultimate_control_circuit",
+    "I": "#c:ingots/lead"
+  },
+  "pattern": [
+    "ICI",
+    "C#C",
+    "ICI"
+  ],
+  "result": {
+    "id": "mekanism:qio_drive_base"
+  }
+}

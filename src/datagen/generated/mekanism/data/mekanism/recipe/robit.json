@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/atomic",
+    "E": "mekanism:energy_tablet",
+    "I": "#c:ingots/refined_obsidian",
+    "P": "#mekanism:personal_storage",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    " S ",
+    "EAE",
+    "IPI"
+  ],
+  "result": {
+    "id": "mekanism:robit"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:black"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/candle",
+      "subtracted": "minecraft:black_candle"
+    }
+  },
+  "output": {
+    "id": "minecraft:black_candle"
+  },
+  "per_tick_usage": false
+}

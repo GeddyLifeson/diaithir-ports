@@ -1,0 +1,106 @@
+package mekanism.tools.common.material.impl;
+
+import mekanism.common.tags.MekanismTags;
+import mekanism.tools.common.ToolsTags;
+import mekanism.tools.common.material.BaseMekanismMaterial;
+import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.block.Block;
+
+public class RefinedObsidianMaterialDefaults implements BaseMekanismMaterial {
+
+    @Override
+    public int getShieldDurability() {
+        return 1_680;
+    }
+
+    @Override
+    public float getAxeDamage() {
+        return 7;
+    }
+
+    @Override
+    public float getAxeAtkSpeed() {
+        return -2.9F;
+    }
+
+    @Override
+    public int getDurability() {
+        return 4_096;
+    }
+
+    @Override
+    public float getSpeed() {
+        return 12;
+    }
+
+    @Override
+    public float getAttackDamageBonus() {
+        return 8;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return 18;
+    }
+
+    @Override
+    public boolean burnsInFire() {
+        return false;
+    }
+
+    @Override
+    public float toughness() {
+        return 5;
+    }
+
+    @Override
+    public int getDurabilityForType(ArmorType armorType) {
+        return switch (armorType) {
+            case BOOTS -> 975;
+            case LEGGINGS -> 1_125;
+            case CHESTPLATE, BODY -> 1_200;
+            case HELMET -> 825;
+        };
+    }
+
+    @Override
+    public int getDefense(ArmorType armorType) {
+        return switch (armorType) {
+            case BOOTS -> 5;
+            case LEGGINGS -> 8;
+            case CHESTPLATE -> 12;
+            case HELMET -> 6;
+            default -> 0;
+        };
+    }
+
+    @Override
+    public String getRegistryPrefix() {
+        return "refined_obsidian";
+    }
+
+    @Override
+    public TagKey<Block> incorrectBlocksForDrops() {
+        return ToolsTags.Blocks.INCORRECT_FOR_REFINED_OBSIDIAN_TOOL;
+    }
+
+    @Override
+    public Holder<SoundEvent> equipSound() {
+        return SoundEvents.ARMOR_EQUIP_IRON;
+    }
+
+    @Override
+    public TagKey<Item> getRepairItems() {
+        return MekanismTags.Items.INGOTS_REFINED_OBSIDIAN;
+    }
+
+    @Override
+    public float knockbackResistance() {
+        return 0.2F;
+    }
+}

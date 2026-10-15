@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    "mekanismtools:steel_helmet",
+    "mekanismtools:steel_chestplate",
+    "mekanismtools:steel_leggings",
+    "mekanismtools:steel_boots",
+    "mekanismtools:steel_sword",
+    "mekanismtools:steel_pickaxe",
+    "mekanismtools:steel_axe",
+    "mekanismtools:steel_shovel",
+    "mekanismtools:steel_hoe",
+    "mekanismtools:steel_paxel"
+  ],
+  "result": {
+    "id": "mekanism:nugget_steel"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:green"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/terracotta",
+      "subtracted": "minecraft:green_terracotta"
+    }
+  },
+  "output": {
+    "id": "minecraft:green_terracotta"
+  },
+  "per_tick_usage": false
+}

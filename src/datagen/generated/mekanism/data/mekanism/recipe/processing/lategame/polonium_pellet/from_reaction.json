@@ -1,0 +1,23 @@
+{
+  "type": "mekanism:reaction",
+  "chemical_input": {
+    "amount": 1000,
+    "chemical": "mekanism:polonium"
+  },
+  "chemical_output": {
+    "amount": 1000,
+    "id": "mekanism:spent_nuclear_waste"
+  },
+  "duration": 100,
+  "fluid_input": {
+    "amount": 1000,
+    "ingredient": "#minecraft:water"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "#c:dusts/fluorite"
+  },
+  "item_output": {
+    "id": "mekanism:pellet_polonium"
+  }
+}
