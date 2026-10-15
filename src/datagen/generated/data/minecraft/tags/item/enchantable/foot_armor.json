@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "equivox:dm_boots",
+    "equivox:rm_boots",
+    "equivox:gem_boots"
+  ],
+  "values": []
+}

@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "equivox:curios/empty_klein_star"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "equivox:dm_chestplate",
+    "equivox:rm_chestplate",
+    "equivox:gem_chestplate"
+  ],
+  "values": []
+}

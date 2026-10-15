@@ -1,0 +1,10 @@
+{
+  "remove": [
+    "equivox:dm_sword",
+    "equivox:rm_sword",
+    "equivox:dm_axe",
+    "equivox:rm_axe",
+    "equivox:rm_katar"
+  ],
+  "values": []
+}

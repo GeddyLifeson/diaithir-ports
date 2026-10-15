@@ -1,0 +1,7 @@
+{
+  "equivox:plugin": {
+    "initializer": "com.yaskulsky.equivox.integration.wthit.PEWTHITPlugin",
+    "side": "*",
+    "required": []
+  }
+}

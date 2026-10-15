@@ -1,0 +1,28 @@
+{
+  "values": [
+    "equivox:alchemical_chest",
+    "equivox:alchemical_coal_block",
+    "equivox:mobius_fuel_block",
+    "equivox:aeternalis_fuel_block",
+    "equivox:collector_mk1",
+    "equivox:collector_mk2",
+    "equivox:collector_mk3",
+    "equivox:condenser_mk1",
+    "equivox:condenser_mk2",
+    "equivox:dm_pedestal",
+    "equivox:rm_pedestal",
+    "equivox:dm_furnace",
+    "equivox:rm_furnace",
+    "equivox:dark_matter_block",
+    "equivox:red_matter_block",
+    "equivox:transmutation_table",
+    "equivox:relay_mk1",
+    "equivox:relay_mk2",
+    "equivox:relay_mk3",
+    "equivox:entropy_sink",
+    "equivox:entropy_sink_dark",
+    "equivox:entropy_sink_red",
+    "equivox:stellar_condenser",
+    "equivox:transmutation_provider"
+  ]
+}

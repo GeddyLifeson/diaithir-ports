@@ -1,0 +1,17 @@
+{
+  "remove": [
+    "equivox:dm_helmet",
+    "equivox:rm_helmet",
+    "equivox:gem_helmet",
+    "equivox:dm_chestplate",
+    "equivox:rm_chestplate",
+    "equivox:gem_chestplate",
+    "equivox:dm_leggings",
+    "equivox:rm_leggings",
+    "equivox:gem_leggings",
+    "equivox:dm_boots",
+    "equivox:rm_boots",
+    "equivox:gem_boots"
+  ],
+  "values": []
+}

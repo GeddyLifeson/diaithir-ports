@@ -1,0 +1,17 @@
+{
+  "remove": [
+    "equivox:dm_axe",
+    "equivox:rm_axe",
+    "equivox:dm_pick",
+    "equivox:rm_pick",
+    "equivox:dm_shovel",
+    "equivox:rm_shovel",
+    "equivox:dm_hoe",
+    "equivox:rm_hoe",
+    "equivox:dm_hammer",
+    "equivox:rm_hammer",
+    "equivox:rm_katar",
+    "equivox:rm_morning_star"
+  ],
+  "values": []
+}
