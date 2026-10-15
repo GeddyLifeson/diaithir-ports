@@ -1,0 +1,104 @@
+package sonar.fluxnetworks.client.gui.button;
+
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.util.Mth;
+import sonar.fluxnetworks.api.gui.EnumNetworkColor;
+import sonar.fluxnetworks.client.gui.basic.GuiButtonCore;
+import sonar.fluxnetworks.client.gui.basic.GuiFocusable;
+import sonar.fluxnetworks.common.util.FluxUtils;
+
+/**
+ * A simple switch button with sliding thumb and track.
+ */
+public class SwitchButton extends GuiButtonCore {
+
+    private static final int WIDTH = 16;
+    private static final int HEIGHT = 8;
+
+    // switch on/off
+    private boolean mChecked = false;
+
+    // thumb offset, fraction (0..1)
+    private float mOffset;
+
+    private int mColor;
+
+    // default check state skips the animation
+
+    public SwitchButton(GuiFocusable screen, int x, int y, boolean checked) {
+        this(screen, x, y, checked, EnumNetworkColor.BLUE.getRGB());
+    }
+
+    public SwitchButton(GuiFocusable screen, int x, int y, boolean checked, int color) {
+        super(screen, x, y, WIDTH, HEIGHT);
+        if (checked) {
+            mChecked = true;
+            mOffset = 1;
+        }
+        mColor = color;
+    }
+
+    @Override
+    protected void drawButton(GuiGraphicsExtractor gr, int mouseX, int mouseY, float deltaTicks) {
+        // Calculate animation
+        // 1000ms=20ticks, so animation duration is (1000/20*4)=200ms
+        float delta = deltaTicks / 4f;
+        mOffset = Mth.clamp(mChecked ? mOffset + delta : mOffset - delta, 0, 1);
+
+        GuiFocusable.setTexture(GuiFocusable.ICON);
+
+        float r = FluxUtils.getRed(mColor);
+        float g = FluxUtils.getGreen(mColor);
+        float b = FluxUtils.getBlue(mColor);
+
+        final float thumbOffset = mOffset * height;
+
+        if (mClickable) {
+            GuiFocusable.setColor(r, g, b, 0.9F);
+        } else {
+            GuiFocusable.setColor(r * 0.5F, g * 0.5F, b * 0.5F, 0.9F);
+        }
+        // Background
+        GuiFocusable.blitF(gr, x, y, thumbOffset * 2, height, 320, 256, thumbOffset * 8, 32);
+
+        if (mClickable) {
+            if (isMouseHovered(mouseX, mouseY)) {
+            } else if (mChecked) {
+                GuiFocusable.setColor(0.85F, 0.85F, 0.85F, 1.0F);
+            } else {
+                GuiFocusable.setColor(0.7F, 0.7F, 0.7F, 1.0F);
+            }
+        } else {
+            GuiFocusable.setColor(0.5F, 0.5F, 0.5F, 1.0F);
+        }
+        // Track
+        GuiFocusable.blitF(gr, x, y, width, height, 256, 256, 64, 32);
+
+        if (mClickable) {
+            if (mChecked || isMouseHovered(mouseX, mouseY)) {
+            } else {
+                GuiFocusable.setColor(0.7F, 0.7F, 0.7F, 1.0F);
+            }
+        } else {
+            GuiFocusable.setColor(0.5F, 0.5F, 0.5F, 1.0F);
+        }
+        // Thumb
+        GuiFocusable.blitF(gr, x + thumbOffset, y, width / 2f, height, 256, 288, 32, 32);
+    }
+
+    public void toggle() {
+        setChecked(!isChecked());
+    }
+
+    public boolean isChecked() {
+        return mChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        mChecked = checked;
+    }
+
+    public void setColor(int color) {
+        mColor = color;
+    }
+}

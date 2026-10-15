@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "fluxnetworks:item/basic_flux_storage"
+  }
+}
