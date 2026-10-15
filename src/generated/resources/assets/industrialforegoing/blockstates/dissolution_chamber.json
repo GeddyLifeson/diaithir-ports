@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "subfacing=east": {
+      "model": "industrialforegoing:block/dissolution_chamber",
+      "y": 90
+    },
+    "subfacing=north": {
+      "model": "industrialforegoing:block/dissolution_chamber"
+    },
+    "subfacing=south": {
+      "model": "industrialforegoing:block/dissolution_chamber",
+      "y": 180
+    },
+    "subfacing=west": {
+      "model": "industrialforegoing:block/dissolution_chamber",
+      "y": 270
+    }
+  }
+}

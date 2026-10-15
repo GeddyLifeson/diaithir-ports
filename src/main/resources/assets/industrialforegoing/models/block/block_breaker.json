@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/block_destroyer_back",
+    "west": "industrialforegoing:block/block_destroyer_side",
+    "east": "industrialforegoing:block/block_destroyer_side",
+    "north": "industrialforegoing:block/block_destroyer_side"
+  }
+}

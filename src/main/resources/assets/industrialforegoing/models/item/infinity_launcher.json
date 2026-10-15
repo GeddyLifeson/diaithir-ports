@@ -1,0 +1,12 @@
+{
+  "credit": "Made with Blockbench",
+  "texture_size": [
+    64,
+    64
+  ],
+  "textures": {
+    "0": "industrialforegoing:item/infinity_launcher",
+    "1": "industrialforegoing:item/infinity_launcher_projectile",
+    "particle": "industrialforegoing:item/infinity_launcher"
+  }
+}

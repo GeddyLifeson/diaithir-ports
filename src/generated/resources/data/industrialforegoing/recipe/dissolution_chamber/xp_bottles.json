@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "minecraft:experience_bottle"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [],
+  "inputFluid": {
+    "ingredient": "#c:experience",
+    "amount": 250
+  },
+  "output": {
+    "count": 1,
+    "id": "minecraft:experience_bottle"
+  },
+  "processingTime": 5
+}

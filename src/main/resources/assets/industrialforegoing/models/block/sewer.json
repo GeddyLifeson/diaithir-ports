@@ -1,0 +1,10 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/sewer_side",
+    "south": "industrialforegoing:block/sewer_side",
+    "west": "industrialforegoing:block/sewer_side",
+    "east": "industrialforegoing:block/sewer_side",
+    "up": "industrialforegoing:block/sewer_top"
+  }
+}

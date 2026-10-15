@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:range_addon_tier_3"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "minecraft:iron_nugget",
+    "minecraft:iron_nugget",
+    "minecraft:iron_nugget",
+    "minecraft:iron_nugget"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Range": 3.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:range_addon_tier_3"
+  },
+  "processingTime": 200
+}

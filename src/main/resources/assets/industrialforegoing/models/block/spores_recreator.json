@@ -1,0 +1,7 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/spores_recreator_front",
+    "up": "industrialforegoing:block/spores_recreator_top"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/crop_recolector_back",
+    "west": "industrialforegoing:block/crop_recolector_side",
+    "east": "industrialforegoing:block/crop_recolector_side",
+    "north": "industrialforegoing:block/crop_recolector_side"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "loader": "neoforge:fluid_container",
+  "fluid": "industrialforegoing:raw_ore_meat"
+}

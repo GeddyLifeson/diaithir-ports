@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:speed_addon_tier_2"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "#c:gears/diamond",
+    "#c:gears/diamond",
+    "minecraft:sugar",
+    "minecraft:sugar"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Speed": 3.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:speed_addon_tier_2"
+  },
+  "processingTime": 200
+}

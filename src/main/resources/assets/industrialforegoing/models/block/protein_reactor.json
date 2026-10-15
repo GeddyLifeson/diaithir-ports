@@ -1,0 +1,10 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/proteinreactor_side",
+    "west": "industrialforegoing:block/proteinreactor_side",
+    "east": "industrialforegoing:block/proteinreactor_side",
+    "north": "industrialforegoing:block/proteinreactor_side",
+    "up": "industrialforegoing:block/proteinreactor_top"
+  }
+}

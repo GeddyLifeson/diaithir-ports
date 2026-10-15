@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:light_blue_laser_lens"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:dyes/light_blue"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 250
+  },
+  "output": {
+    "count": 1,
+    "id": "industrialforegoing:light_blue_laser_lens"
+  },
+  "processingTime": 100
+}

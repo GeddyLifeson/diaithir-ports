@@ -1,0 +1,6 @@
+{
+  "parent": "industrialforegoing:item/transporter",
+  "textures": {
+    "0": "industrialforegoing:block/transporters/fluid"
+  }
+}

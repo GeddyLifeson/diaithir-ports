@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/hydrator_side",
+    "south": "industrialforegoing:block/hydrator_side",
+    "west": "industrialforegoing:block/hydrator_side",
+    "east": "industrialforegoing:block/hydrator_side"
+  }
+}

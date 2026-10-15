@@ -1,0 +1,140 @@
+/*
+ * This file is part of Industrial Foregoing.
+ *
+ * Copyright 2021, Buuz135
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+package com.buuz135.industrial.block.generator.mycelial;
+
+import com.buuz135.industrial.plugin.jei.generator.MycelialGeneratorRecipe;
+import com.buuz135.industrial.utils.IndustrialTags;
+import com.hrznstudio.titanium.component.inventory.SidedInventoryComponent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.RegistryAccess;
+import com.hrznstudio.titanium.recipe.generator.TitaniumShapedRecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.ExplosionDamageCalculator;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.fluids.FluidStack;
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
+public class ExplosiveGeneratorType implements IMycelialGeneratorType {
+    @Override
+    public String getName() {
+        return "explosive";
+    }
+
+    @Override
+    public Input[] getInputs() {
+        return new Input[]{Input.SLOT};
+    }
+
+    @Override
+    public List<BiPredicate<ItemStack, Integer>> getSlotInputPredicates() {
+        return Arrays.asList((stack, integer) -> stack.getItem() == Items.GUNPOWDER || stack.getItem() == Items.TNT);
+    }
+
+    @Override
+    public List<Predicate<FluidStack>> getTankInputPredicates() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public boolean canStart(Object[] inputs) {
+        return inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0;
+    }
+
+    @Override
+    public Pair<Integer, Integer> getTimeAndPowerGeneration(Object[] inputs) {
+        if (inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0) {
+            ItemStack stack = ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).copy();
+            ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).shrink(1);
+            return calculate(stack);
+        }
+        return Pair.of(0, 80);
+    }
+
+    @Override
+    public DyeColor[] getInputColors() {
+        return new DyeColor[]{DyeColor.RED};
+    }
+
+    @Override
+    public Item getDisplay() {
+        return Items.TNT;
+    }
+
+    @Override
+    public int getSlotSize() {
+        return 64;
+    }
+
+    @Override
+    public List<MycelialGeneratorRecipe> getRecipes(RegistryAccess registryAccess) {
+        List<MycelialGeneratorRecipe> recipes = new ArrayList<>();
+        for (Item item : new Item[]{Items.TNT, Items.GUNPOWDER}) {
+            ItemStack stack = new ItemStack(item);
+            Pair<Integer, Integer> power = calculate(stack);
+            recipes.add(new MycelialGeneratorRecipe(Collections.singletonList(Collections.singletonList(Ingredient.of(stack.getItem()))), new ArrayList<>(), power.getLeft(), power.getRight()));
+        }
+        return recipes;
+    }
+
+    private Pair<Integer, Integer> calculate(ItemStack stack) {
+        if (stack.getItem() == Items.TNT) return Pair.of(160 * 20, 160);
+        return Pair.of(20 * 20, 160);
+    }
+
+    @Override
+    public TitaniumShapedRecipeBuilder addIngredients(TitaniumShapedRecipeBuilder recipeBuilder) {
+        recipeBuilder = recipeBuilder.define('B', Blocks.TNT)
+                .define('C', Items.REDSTONE_TORCH)
+                .define('M', IndustrialTags.Items.MACHINE_FRAME_ADVANCED);
+        return recipeBuilder;
+    }
+
+    @Override
+    public void onTick(Level world, BlockPos pos) {
+        if (world.getRandom().nextBoolean()) {
+            world.explode(null, world.damageSources().generic(), new ExplosionDamageCalculator() {
+                @Override
+                public boolean shouldBlockExplode(Explosion explosion, BlockGetter reader, BlockPos pos, BlockState state, float power) {
+                    return false;
+                }
+            }, pos.getX(), pos.getY(), pos.getZ(), 3, false, Level.ExplosionInteraction.NONE);
+        }
+    }
+
+}

@@ -1,0 +1,185 @@
+/*
+ * This file is part of Industrial Foregoing.
+ *
+ * Copyright 2021, Buuz135
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+package com.buuz135.industrial.block.generator.mycelial;
+
+import com.buuz135.industrial.plugin.jei.generator.MycelialGeneratorRecipe;
+import com.buuz135.industrial.utils.IndustrialTags;
+import com.hrznstudio.titanium.component.inventory.SidedInventoryComponent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.component.DataComponents;
+import com.hrznstudio.titanium.recipe.generator.TitaniumShapedRecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.FireworkExplosion;
+import net.minecraft.world.item.component.Fireworks;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.neoforged.neoforge.fluids.FluidStack;
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
+public class FireworkGeneratorType implements IMycelialGeneratorType {
+
+
+    @Override
+    public String getName() {
+        return "rocket";
+    }
+
+    @Override
+    public Input[] getInputs() {
+        return new Input[]{Input.SLOT};
+    }
+
+    public static FireworkExplosion.Shape get(int indexIn) {
+        return indexIn >= 0 && indexIn < FireworkExplosion.Shape.values().length ? FireworkExplosion.Shape.values()[indexIn] : FireworkExplosion.Shape.SMALL_BALL;
+    }
+
+    @Override
+    public List<Predicate<FluidStack>> getTankInputPredicates() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public boolean canStart(Object[] inputs) {
+        return inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0;
+    }
+
+    @Override
+    public Pair<Integer, Integer> getTimeAndPowerGeneration(Object[] inputs) {
+        if (inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0) {
+            ItemStack stack = ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0);
+            Pair<Integer, Integer> power = calculate(stack);
+            stack.shrink(1);
+            return power;
+        }
+        return Pair.of(0, 80);
+    }
+
+    @Override
+    public DyeColor[] getInputColors() {
+        return new DyeColor[]{DyeColor.RED};
+    }
+
+    @Override
+    public Item getDisplay() {
+        return Items.FIREWORK_ROCKET;
+    }
+
+    @Override
+    public int getSlotSize() {
+        return 64;
+    }
+
+    @Override
+    public List<BiPredicate<ItemStack, Integer>> getSlotInputPredicates() {
+        return Arrays.asList((stack, slot) -> stack.getItem() instanceof FireworkRocketItem && stack.has(DataComponents.FIREWORKS));
+    }
+
+    @Override
+    public List<MycelialGeneratorRecipe> getRecipes(RegistryAccess registryAccess) {
+        List<MycelialGeneratorRecipe> recipes = new ArrayList<>();
+        for (Item item : new Item[]{Items.FIREWORK_ROCKET}) {
+            for (int flight = 1; flight < 4; flight++) {
+                ItemStack stack = new ItemStack(item);
+                Fireworks fireworks = new Fireworks(flight, new ArrayList<>());
+                stack.set(DataComponents.FIREWORKS, fireworks);
+                Pair<Integer, Integer> power = calculate(stack);
+                recipes.add(new MycelialGeneratorRecipe(Collections.singletonList(Collections.singletonList(Ingredient.of(stack.getItem()))), new ArrayList<>(), power.getLeft(), power.getRight()));
+            }
+        }
+        return recipes;
+    }
+
+    private Pair<Integer, Integer> calculate(ItemStack stack) {
+        if (stack.getItem() instanceof FireworkRocketItem && stack.has(DataComponents.FIREWORKS)) {
+            Fireworks fireworksData = stack.get(DataComponents.FIREWORKS);
+            if (fireworksData != null) {
+                int flight = fireworksData.flightDuration();
+                double power = 1;
+                List<FireworkExplosion> explosions = fireworksData.explosions();
+                if (!explosions.isEmpty()) {
+                    for (FireworkExplosion explosion : explosions) {
+                        var shape = explosion.shape();
+                        power *= getShapeModifier(shape);
+                        var colors = explosion.colors();
+                        power *= (1 + colors.size() / 100D);
+                        var fadeColors = explosion.fadeColors();
+                        power *= (1 + fadeColors.size() / 90D);
+                        if (explosion.hasTrail()) {
+                            power *= 1.6;
+                        }
+                        if (explosion.hasTwinkle()) {
+                            power *= 1.4;
+                        }
+                    }
+                }
+                return Pair.of((int) (80 * power), 60 * flight);
+            }
+        }
+        return Pair.of(0, 0);
+    }
+
+    private double getShapeModifier(FireworkExplosion.Shape shape) {
+        switch (shape) {
+            case STAR:
+                return 1.2;
+            case BURST:
+                return 1.05;
+            case CREEPER:
+                return 1.5;
+            case LARGE_BALL:
+                return 1.1;
+            default:
+                return 1.01;
+        }
+    }
+
+    @Override
+    public TitaniumShapedRecipeBuilder addIngredients(TitaniumShapedRecipeBuilder recipeBuilder) {
+        recipeBuilder = recipeBuilder.define('B', Items.GUNPOWDER)
+                .define('C', Items.PAPER)
+                .define('M', IndustrialTags.Items.MACHINE_FRAME_ADVANCED);
+        return recipeBuilder;
+    }
+
+    @Override
+    public void onTick(Level world, BlockPos pos) {
+        AABB area = new AABB(pos.getX() - 3, pos.getY() - 3, pos.getZ() - 3, pos.getX() + 3, pos.getY() + 3, pos.getZ() + 3);
+        for (LivingEntity livingEntity : world.getEntitiesOfClass(LivingEntity.class, area)) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 10, 2));
+        }
+    }
+}
+

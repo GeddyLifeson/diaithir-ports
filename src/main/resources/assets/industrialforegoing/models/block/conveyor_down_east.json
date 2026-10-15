@@ -1,0 +1,7 @@
+{
+  "parent": "industrialforegoing:block/conveyor_ramp",
+  "textures": {
+    "2": "industrialforegoing:block/conveyor_color"
+  },
+  "render_type": "minecraft:cutout"
+}

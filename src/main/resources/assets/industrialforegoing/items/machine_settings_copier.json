@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "industrialforegoing:settings_copier",
+    "ignore_default": true,
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "industrialforegoing:item/machine_settings_copier_stored"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "industrialforegoing:item/machine_settings_copier_empty"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "industrialforegoing:block/base/advanced/top",
+    "front": "industrialforegoing:block/base/advanced/side",
+    "side": "industrialforegoing:block/base/advanced/side",
+    "bottom": "industrialforegoing:block/base/advanced/bottom"
+  }
+}

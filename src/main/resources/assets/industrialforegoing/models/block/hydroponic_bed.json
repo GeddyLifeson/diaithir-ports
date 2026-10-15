@@ -1,0 +1,10 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/hydroponic_bed_side",
+    "west": "industrialforegoing:block/hydroponic_bed_side",
+    "east": "industrialforegoing:block/hydroponic_bed_side",
+    "north": "industrialforegoing:block/hydroponic_bed_side",
+    "up": "industrialforegoing:block/hydroponic_bed_top"
+  }
+}

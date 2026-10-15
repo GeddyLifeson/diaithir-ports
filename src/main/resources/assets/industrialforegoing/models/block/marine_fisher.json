@@ -1,0 +1,10 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/water_resources_collector_side",
+    "west": "industrialforegoing:block/water_resources_collector_side",
+    "east": "industrialforegoing:block/water_resources_collector_side",
+    "north": "industrialforegoing:block/water_resources_collector_side",
+    "down": "industrialforegoing:block/water_resources_collector_bottom"
+  }
+}

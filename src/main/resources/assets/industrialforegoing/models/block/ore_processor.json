@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/ore_processor_front",
+    "south": "industrialforegoing:block/ore_processor_side",
+    "west": "industrialforegoing:block/ore_processor_side",
+    "east": "industrialforegoing:block/ore_processor_side"
+  }
+}

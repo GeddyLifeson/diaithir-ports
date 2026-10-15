@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:infinity_hammer"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:diamond_block",
+    "minecraft:diamond_sword",
+    "minecraft:diamond_block",
+    "minecraft:diamond_axe",
+    "industrialforegoing:range_addon_tier_11",
+    "#c:gears/gold",
+    "#c:gears/gold",
+    "#c:gears/gold"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:pink_slime",
+    "amount": 2000
+  },
+  "output": {
+    "components": {
+      "industrialforegoing:infinity_can_charge": true,
+      "industrialforegoing:infinity_hammer_beheading": 0,
+      "industrialforegoing:infinity_item_power": 0,
+      "industrialforegoing:infinity_item_selected_tier": "poor",
+      "industrialforegoing:infinity_item_special": false
+    },
+    "count": 1,
+    "id": "industrialforegoing:infinity_hammer"
+  },
+  "processingTime": 400
+}

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:infinity_nuke"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:tnt",
+    "minecraft:tnt",
+    "minecraft:tnt",
+    "minecraft:tnt",
+    "industrialforegoing:range_addon_tier_11",
+    "minecraft:diamond_block",
+    "minecraft:nether_star",
+    "minecraft:nether_star"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:ether_gas",
+    "amount": 2000
+  },
+  "output": {
+    "components": {
+      "industrialforegoing:infinity_can_charge": true,
+      "industrialforegoing:infinity_item_power": 0,
+      "industrialforegoing:infinity_item_selected_tier": "poor",
+      "industrialforegoing:infinity_item_special": false
+    },
+    "count": 1,
+    "id": "industrialforegoing:infinity_nuke"
+  },
+  "processingTime": 400
+}

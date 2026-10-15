@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/item_splitter",
+    "south": "industrialforegoing:block/item_splitter",
+    "west": "industrialforegoing:block/item_splitter",
+    "east": "industrialforegoing:block/item_splitter"
+  }
+}

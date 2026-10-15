@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:range_addon_tier_0"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "minecraft:cobblestone",
+    "minecraft:cobblestone",
+    "minecraft:cobblestone",
+    "minecraft:cobblestone"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Range": 0.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:range_addon_tier_0"
+  },
+  "processingTime": 200
+}

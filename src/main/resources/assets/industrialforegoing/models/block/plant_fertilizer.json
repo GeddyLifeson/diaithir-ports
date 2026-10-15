@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/plant_fertilizer_back",
+    "west": "industrialforegoing:block/plant_fertilizer_side",
+    "east": "industrialforegoing:block/plant_fertilizer_side",
+    "north": "industrialforegoing:block/plant_fertilizer_side"
+  }
+}

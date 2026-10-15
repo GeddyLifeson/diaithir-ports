@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:yellow_laser_lens"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:glass_panes",
+    "#c:dyes/yellow"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 250
+  },
+  "output": {
+    "count": 1,
+    "id": "industrialforegoing:yellow_laser_lens"
+  },
+  "processingTime": 100
+}

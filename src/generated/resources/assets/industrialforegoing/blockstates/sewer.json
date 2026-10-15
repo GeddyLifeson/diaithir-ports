@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "subfacing=east": {
+      "model": "industrialforegoing:block/sewer",
+      "y": 90
+    },
+    "subfacing=north": {
+      "model": "industrialforegoing:block/sewer"
+    },
+    "subfacing=south": {
+      "model": "industrialforegoing:block/sewer",
+      "y": 180
+    },
+    "subfacing=west": {
+      "model": "industrialforegoing:block/sewer",
+      "y": 270
+    }
+  }
+}

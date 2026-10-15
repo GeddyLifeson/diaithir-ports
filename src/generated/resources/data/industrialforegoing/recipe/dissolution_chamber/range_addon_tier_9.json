@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:range_addon_tier_9"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "minecraft:diamond",
+    "minecraft:diamond",
+    "minecraft:diamond",
+    "minecraft:diamond"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Range": 9.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:range_addon_tier_9"
+  },
+  "processingTime": 200
+}

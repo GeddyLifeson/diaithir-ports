@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "industrialforegoing:item/itemstack_transfer_addon_pull_up"
+  }
+}

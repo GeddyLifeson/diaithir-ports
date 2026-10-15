@@ -1,0 +1,11 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "industrialforegoing:item/infinity_nuke",
+    "tints": [
+      {
+        "type": "industrialforegoing:infinity_tier"
+      }
+    ]
+  }
+}

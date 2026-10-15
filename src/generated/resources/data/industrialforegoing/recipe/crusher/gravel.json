@@ -1,0 +1,5 @@
+{
+  "type": "industrialforegoing:crusher",
+  "input": "#c:gravels",
+  "output": "minecraft:sand"
+}

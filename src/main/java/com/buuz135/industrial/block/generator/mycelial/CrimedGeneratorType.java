@@ -1,0 +1,127 @@
+/*
+ * This file is part of Industrial Foregoing.
+ *
+ * Copyright 2021, Buuz135
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+package com.buuz135.industrial.block.generator.mycelial;
+
+import com.buuz135.industrial.plugin.jei.generator.MycelialGeneratorRecipe;
+import com.buuz135.industrial.utils.IndustrialTags;
+import com.hrznstudio.titanium.component.inventory.SidedInventoryComponent;
+import net.minecraft.core.RegistryAccess;
+import com.hrznstudio.titanium.recipe.generator.TitaniumShapedRecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.fluids.FluidStack;
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
+public class CrimedGeneratorType implements IMycelialGeneratorType {
+    @Override
+    public String getName() {
+        return "crimed";
+    }
+
+    @Override
+    public Input[] getInputs() {
+        return new Input[]{Input.SLOT};
+    }
+
+    @Override
+    public List<BiPredicate<ItemStack, Integer>> getSlotInputPredicates() {
+        return Arrays.asList((stack, integer) -> calculate(stack).getLeft() > 0);
+    }
+
+    @Override
+    public List<Predicate<FluidStack>> getTankInputPredicates() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public boolean canStart(Object[] inputs) {
+        return inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0;
+    }
+
+    @Override
+    public Pair<Integer, Integer> getTimeAndPowerGeneration(Object[] inputs) {
+        if (inputs.length > 0 && inputs[0] instanceof SidedInventoryComponent && ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).getCount() > 0) {
+            ItemStack stack = ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).copy();
+            ((SidedInventoryComponent<?>) inputs[0]).getStackInSlot(0).shrink(1);
+            return calculate(stack);
+        }
+        return Pair.of(0, 80);
+    }
+
+    @Override
+    public DyeColor[] getInputColors() {
+        return new DyeColor[]{DyeColor.CYAN};
+    }
+
+    @Override
+    public Item getDisplay() {
+        return Items.WARPED_FUNGUS;
+    }
+
+    @Override
+    public int getSlotSize() {
+        return 64;
+    }
+
+    @Override
+    public List<MycelialGeneratorRecipe> getRecipes(RegistryAccess registryAccess) {
+        List<MycelialGeneratorRecipe> recipes = new ArrayList<>();
+        for (Item item : new Item[]{Items.CRIMSON_FUNGUS, Items.CRIMSON_ROOTS, Items.WEEPING_VINES, Items.WARPED_FUNGUS, Items.WARPED_ROOTS, Items.NETHER_SPROUTS, Items.TWISTING_VINES, Items.SHROOMLIGHT, Items.NETHER_WART_BLOCK, Items.WARPED_WART_BLOCK}) {
+            ItemStack stack = new ItemStack(item);
+            Pair<Integer, Integer> power = calculate(stack);
+            recipes.add(new MycelialGeneratorRecipe(Collections.singletonList(Collections.singletonList(Ingredient.of(stack.getItem()))), new ArrayList<>(), power.getLeft(), power.getRight()));
+        }
+        return recipes;
+    }
+
+    @Override
+    public TitaniumShapedRecipeBuilder addIngredients(TitaniumShapedRecipeBuilder recipeBuilder) {
+        recipeBuilder = recipeBuilder.define('B', Blocks.NETHER_WART_BLOCK)
+                .define('C', Blocks.CRIMSON_FUNGUS)
+                .define('M', IndustrialTags.Items.MACHINE_FRAME_ADVANCED);
+        return recipeBuilder;
+    }
+
+    private Pair<Integer, Integer> calculate(ItemStack stack) {
+        if (stack.getItem() == Items.CRIMSON_FUNGUS || stack.getItem() == Items.CRIMSON_ROOTS || stack.getItem() == Items.WEEPING_VINES
+                || stack.getItem() == Items.WARPED_FUNGUS || stack.getItem() == Items.WARPED_ROOTS || stack.getItem() == Items.NETHER_SPROUTS || stack.getItem() == Items.TWISTING_VINES)
+            return Pair.of(10 * 20, 20);
+        if (stack.getItem() == Items.SHROOMLIGHT) return Pair.of(10 * 20, 40);
+        if (stack.getItem() == Items.NETHER_WART_BLOCK || stack.getItem() == Items.WARPED_WART_BLOCK)
+            return Pair.of(20 * 20, 40);
+        return Pair.of(0, 80);
+    }
+
+}

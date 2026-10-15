@@ -1,0 +1,40 @@
+{
+  "type": "industrialforegoing:laser_drill_ore",
+  "catalyst": "industrialforegoing:black_laser_lens",
+  "output": {
+    "ingredient": "minecraft:coal_ore",
+    "count": 1
+  },
+  "rarity": [
+    {
+      "biome_filter": {
+        "blacklist": [],
+        "whitelist": []
+      },
+      "depth_max": 132,
+      "depth_min": 5,
+      "dimension_filter": {
+        "blacklist": [
+          "minecraft:the_end"
+        ],
+        "whitelist": []
+      },
+      "weight": 10
+    },
+    {
+      "biome_filter": {
+        "blacklist": [],
+        "whitelist": []
+      },
+      "depth_max": 255,
+      "depth_min": 0,
+      "dimension_filter": {
+        "blacklist": [
+          "minecraft:the_end"
+        ],
+        "whitelist": []
+      },
+      "weight": 4
+    }
+  ]
+}

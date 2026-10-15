@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "industrialforegoing:item/fluid_transfer_addon_pull_up"
+  }
+}

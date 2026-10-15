@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:range_addon_tier_7"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Range": 7.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:range_addon_tier_7"
+  },
+  "processingTime": 200
+}

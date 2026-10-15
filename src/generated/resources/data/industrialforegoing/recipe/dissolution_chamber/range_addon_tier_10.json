@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:range_addon_tier_10"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "minecraft:popped_chorus_fruit",
+    "minecraft:popped_chorus_fruit",
+    "minecraft:popped_chorus_fruit",
+    "minecraft:popped_chorus_fruit"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Range": 10.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:range_addon_tier_10"
+  },
+  "processingTime": 200
+}

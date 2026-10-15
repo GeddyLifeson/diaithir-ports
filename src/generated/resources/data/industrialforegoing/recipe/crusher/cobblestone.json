@@ -1,0 +1,5 @@
+{
+  "type": "industrialforegoing:crusher",
+  "input": "#c:cobblestones/normal",
+  "output": "minecraft:gravel"
+}

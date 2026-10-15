@@ -1,0 +1,13 @@
+{
+  "type": "industrialforegoing:fluid_extractor",
+  "breakChance": 0.01,
+  "defaultRecipe": true,
+  "input": "#minecraft:logs",
+  "output": {
+    "amount": 1,
+    "id": "industrialforegoing:latex"
+  },
+  "result": {
+    "Name": "minecraft:air"
+  }
+}

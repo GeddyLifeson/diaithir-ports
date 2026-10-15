@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "subfacing=east": {
+      "model": "industrialforegoing:block/latex_processing_unit",
+      "y": 90
+    },
+    "subfacing=north": {
+      "model": "industrialforegoing:block/latex_processing_unit"
+    },
+    "subfacing=south": {
+      "model": "industrialforegoing:block/latex_processing_unit",
+      "y": 180
+    },
+    "subfacing=west": {
+      "model": "industrialforegoing:block/latex_processing_unit",
+      "y": 270
+    }
+  }
+}

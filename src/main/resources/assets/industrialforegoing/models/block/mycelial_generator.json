@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/generators/generator_side",
+    "south": "industrialforegoing:block/generators/generator_side",
+    "west": "industrialforegoing:block/generators/generator_side",
+    "east": "industrialforegoing:block/generators/generator_side"
+  }
+}

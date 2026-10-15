@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:mycelial_reactor"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "#c:plastics",
+    "#industrialforegoing:machine_frame/supreme",
+    "#c:plastics",
+    "minecraft:netherite_ingot",
+    "minecraft:netherite_ingot",
+    "#c:gears/diamond",
+    "minecraft:nether_star",
+    "#c:gears/diamond"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:ether_gas",
+    "amount": 500
+  },
+  "output": {
+    "count": 1,
+    "id": "industrialforegoing:mycelial_reactor"
+  },
+  "processingTime": 600
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/mycelial_generator",
+  "textures": {
+    "north": "industrialforegoing:block/generators/generator_front_meatallurgic",
+    "south": "industrialforegoing:block/generators/generator_side_meatallurgic",
+    "east": "industrialforegoing:block/generators/generator_side_meatallurgic",
+    "west": "industrialforegoing:block/generators/generator_side_meatallurgic"
+  }
+}

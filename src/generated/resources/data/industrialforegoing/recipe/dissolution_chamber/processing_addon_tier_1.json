@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:processing_addon_tier_1"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "#c:gears/gold",
+    "#c:gears/gold",
+    "minecraft:furnace",
+    "minecraft:crafting_table"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Processing": 2.0
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:processing_addon_tier_1"
+  },
+  "processingTime": 200
+}

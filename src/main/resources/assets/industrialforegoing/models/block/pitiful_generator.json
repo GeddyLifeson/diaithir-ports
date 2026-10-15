@@ -1,0 +1,11 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/pitiful_fuel_generator_front",
+    "south": "industrialforegoing:block/base/side_pity",
+    "west": "industrialforegoing:block/base/side_pity",
+    "east": "industrialforegoing:block/base/side_pity",
+    "up": "industrialforegoing:block/base/top_pity",
+    "down": "industrialforegoing:block/base/bottom_pity"
+  }
+}

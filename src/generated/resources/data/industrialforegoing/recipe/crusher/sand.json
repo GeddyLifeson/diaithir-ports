@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:silicon"
+      }
+    }
+  ],
+  "type": "industrialforegoing:crusher",
+  "input": "#c:sands",
+  "output": "#c:silicon"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/enchantment_invoker_front",
+    "south": "industrialforegoing:block/enchantment_invoker_front",
+    "west": "industrialforegoing:block/enchantment_invoker_side",
+    "east": "industrialforegoing:block/enchantment_invoker_side",
+    "up": "industrialforegoing:block/enchantment_invoker_top"
+  }
+}

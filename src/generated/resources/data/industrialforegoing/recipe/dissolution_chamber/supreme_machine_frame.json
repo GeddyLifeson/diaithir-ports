@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:machine_frame_supreme"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "#c:plastics",
+    "#industrialforegoing:machine_frame/advanced",
+    "#c:plastics",
+    "minecraft:netherite_ingot",
+    "minecraft:netherite_ingot",
+    "#c:gems/diamond",
+    "#c:gears/diamond",
+    "#c:gems/diamond"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:ether_gas",
+    "amount": 135
+  },
+  "output": {
+    "count": 1,
+    "id": "industrialforegoing:machine_frame_supreme"
+  },
+  "processingTime": 300
+}

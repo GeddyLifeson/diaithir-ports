@@ -1,0 +1,6 @@
+{
+  "parent": "industrialforegoing:item/item",
+  "textures": {
+    "layer0": "industrialforegoing:item/conveyor_dropping_upgrade"
+  }
+}

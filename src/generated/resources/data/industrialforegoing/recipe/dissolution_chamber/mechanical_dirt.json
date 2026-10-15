@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:mechanical_dirt"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:dirt",
+    "minecraft:dirt",
+    "minecraft:rotten_flesh",
+    "minecraft:rotten_flesh",
+    "#industrialforegoing:machine_frame/pity"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:meat",
+    "amount": 1000
+  },
+  "output": {
+    "count": 1,
+    "id": "industrialforegoing:mechanical_dirt"
+  },
+  "processingTime": 100
+}

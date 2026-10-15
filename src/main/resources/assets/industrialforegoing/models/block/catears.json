@@ -1,0 +1,10 @@
+{
+  "parent": "neoforge:item/default",
+  "loader": "neoforge:obj",
+  "model": "industrialforegoing:models/block/catears.obj",
+  "ambientToFullbright": true,
+  "textures": {
+    "qr": "minecraft:block/oak_planks",
+    "particle": "block/oak_planks"
+  }
+}

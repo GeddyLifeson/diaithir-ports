@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "subfacing=east": {
+      "model": "industrialforegoing:block/mycelial_disenchantment",
+      "y": 90
+    },
+    "subfacing=north": {
+      "model": "industrialforegoing:block/mycelial_disenchantment"
+    },
+    "subfacing=south": {
+      "model": "industrialforegoing:block/mycelial_disenchantment",
+      "y": 180
+    },
+    "subfacing=west": {
+      "model": "industrialforegoing:block/mycelial_disenchantment",
+      "y": 270
+    }
+  }
+}

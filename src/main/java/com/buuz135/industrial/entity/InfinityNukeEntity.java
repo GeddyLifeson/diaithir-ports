@@ -1,0 +1,254 @@
+/*
+ * This file is part of Industrial Foregoing.
+ *
+ * Copyright 2021, Buuz135
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+package com.buuz135.industrial.entity;
+
+import com.buuz135.industrial.proxy.client.sound.NukeSounds;
+
+import net.minecraft.nbt.NbtOps;
+
+import com.buuz135.industrial.item.infinity.item.ItemInfinityNuke;
+import com.buuz135.industrial.module.ModuleTool;
+import com.buuz135.industrial.utils.IFAttachments;
+import com.buuz135.industrial.utils.explosion.ExplosionTickHandler;
+import com.buuz135.industrial.utils.explosion.ProcessExplosion;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+
+import javax.annotation.Nullable;
+
+public class InfinityNukeEntity extends Entity {
+
+    private static final EntityDataAccessor<Integer> RADIUS = SynchedEntityData.defineId(InfinityNukeEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> EXPLODING = SynchedEntityData.defineId(InfinityNukeEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> ARMED = SynchedEntityData.defineId(InfinityNukeEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> TICKS = SynchedEntityData.defineId(InfinityNukeEntity.class, EntityDataSerializers.INT);
+
+    @Nullable
+    private LivingEntity placedBy;
+    private ItemStack original;
+    private boolean exploding = false;
+    private boolean armed = false;
+    private int radius = 1;
+    private int ticksExploding = 1;
+    private ProcessExplosion explosionHelper;
+
+    public InfinityNukeEntity(EntityType<? extends InfinityNukeEntity> entityTypeIn, Level worldIn) {
+        super(entityTypeIn, worldIn);
+        this.original = new ItemStack(ModuleTool.INFINITY_NUKE.get());
+        this.blocksBuilding = true;
+    }
+
+    public InfinityNukeEntity(Level worldIn, LivingEntity owner, ItemStack original) {
+        this((EntityType<? extends InfinityNukeEntity>) ModuleTool.INFINITY_NUKE_ENTITY_TYPE.value(), worldIn);
+        this.placedBy = owner;
+        this.original = original;
+        this.radius = ItemInfinityNuke.getRadius(original);
+        this.entityData.set(RADIUS, this.radius);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.isNoGravity()) {
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
+        }
+        this.move(MoverType.SELF, this.getDeltaMovement());
+        this.setDeltaMovement(this.getDeltaMovement().scale(0.98D));
+        if (this.onGround()) {
+            this.setDeltaMovement(this.getDeltaMovement().multiply(0.7D, -0.5D, 0.7D));
+        }
+        if (exploding) {
+            if (level() instanceof ServerLevel && explosionHelper == null) {
+                explosionHelper = new ProcessExplosion(this.blockPosition(), getRadius(), (ServerLevel) this.level(), 39, placedBy != null ? placedBy.getDisplayName().getString() : "");
+                ExplosionTickHandler.processExplosionList.add(explosionHelper);
+            }
+            setTicksExploding(this.getTicksExploding() + 1);
+        }
+        if (this.level().isClientSide() && this.getEntityData().get(EXPLODING)) {
+            if (this.level().isClientSide()) {
+                this.level().addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 1.1D, this.getZ(), 0.0D, 0.0D, 0.0D);
+                this.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, this.level().getBlockState(this.blockPosition().below())), this.getX() + this.level().getRandom().nextDouble() - 0.5, this.getY(), this.getZ() + this.level().getRandom().nextDouble() - 0.5, 0.0D, 0.0D, 0.0D);
+            }
+        }
+        if (explosionHelper != null && explosionHelper.isDead) {
+            this.remove(RemovalReason.KILLED);
+            this.onClientRemoval();
+        }
+        if (level().isClientSide()) {
+            NukeSounds.tick(this);
+        }
+    }
+
+
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        builder.define(RADIUS, 1);
+        builder.define(EXPLODING, false);
+        builder.define(ARMED, false);
+        builder.define(TICKS, 1);
+    }
+
+    @Override
+    protected void addAdditionalSaveData(ValueOutput output) {
+        output.store("Original", ItemStack.OPTIONAL_CODEC, this.getOriginal());
+        output.putBoolean("Exploding", this.isExploding());
+        output.putBoolean("Armed", this.isArmed());
+        output.putInt("TicksExploding", this.getTicksExploding());
+        output.putInt("Radius", this.getRadius());
+    }
+
+    @Override
+    protected void readAdditionalSaveData(ValueInput input) {
+        this.setArmed(input.getBooleanOr("Armed", false));
+        this.setExploding(input.getBooleanOr("Exploding", false));
+        this.setOriginal(input.read("Original", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY));
+        this.setTicksExploding(input.getIntOr("TicksExploding", 0));
+        this.setRadius(input.getIntOr("Radius", 0));
+    }
+
+    @Override
+    public boolean hurtServer(ServerLevel level, DamageSource source, float damage) {
+        return false;
+    }
+
+    @Override
+    public InteractionResult interact(Player player, InteractionHand hand, Vec3 location) {
+        if (this.isExploding()) return InteractionResult.SUCCESS;
+        if (player.level().isClientSide() && hand == InteractionHand.MAIN_HAND && player.getItemInHand(hand).isEmpty()) {
+            NukeSounds.arm(this);
+        }
+        if (!player.level().isClientSide() && hand == InteractionHand.MAIN_HAND) {
+            if (player.getItemInHand(hand).isEmpty()) {
+                if (player.isShiftKeyDown()) {
+                    ItemHandlerHelper.giveItemToPlayer(player, this.original);
+                    this.remove(RemovalReason.KILLED);
+                    this.onClientRemoval();
+                    return InteractionResult.SUCCESS;
+                } else {
+                    this.setArmed(!isArmed());
+                    return InteractionResult.SUCCESS;
+                }
+            }
+            if (!this.isExploding() && this.isArmed() && player.getItemInHand(hand).getItem().equals(Items.FLINT_AND_STEEL)) {
+                this.setExploding(true);
+                this.setNoGravity(true);
+                player.getItemInHand(hand).hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+                return InteractionResult.SUCCESS;
+            }
+        }
+        return super.interact(player, hand, location);
+    }
+
+
+    @Override
+    protected MovementEmission getMovementEmission() {
+        return MovementEmission.EVENTS;
+    }
+
+    @Override
+    public boolean isPickable() {
+        return this.isAlive();
+    }
+
+    public ItemStack getOriginal() {
+        return original;
+    }
+
+    public void setOriginal(ItemStack original) {
+        this.original = original;
+    }
+
+    /** The synced exploding state, which clients see. */
+    public boolean isExplodingSynced() {
+        return this.getEntityData().get(EXPLODING);
+    }
+
+    public boolean isExploding() {
+        return exploding;
+    }
+
+    public void setExploding(boolean exploding) {
+        this.exploding = exploding;
+        this.getEntityData().set(EXPLODING, exploding);
+    }
+
+    public boolean isArmed() {
+        return armed;
+    }
+
+    public void setArmed(boolean armed) {
+        this.armed = armed;
+        this.getEntityData().set(ARMED, armed);
+    }
+
+    public int getRadius() {
+        return this.getEntityData().get(RADIUS);
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+        this.getEntityData().set(RADIUS, radius);
+    }
+
+    public boolean isDataArmed() {
+        return this.getEntityData().get(ARMED);
+    }
+
+    public boolean isDataExploding() {
+        return this.getEntityData().get(EXPLODING);
+    }
+
+    public int getTicksExploding() {
+        return ticksExploding;
+    }
+
+    public void setTicksExploding(int ticksExploding) {
+        this.ticksExploding = ticksExploding;
+        this.getEntityData().set(TICKS, ticksExploding);
+    }
+
+    public int getDataTicksExploding() {
+        return this.getEntityData().get(TICKS);
+    }
+
+}

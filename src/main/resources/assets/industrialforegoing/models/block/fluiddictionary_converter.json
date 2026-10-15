@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "north": "industrialforegoing:block/fluiddictionary_side",
+    "south": "industrialforegoing:block/fluiddictionary_side",
+    "west": "industrialforegoing:block/fluiddictionary_side",
+    "east": "industrialforegoing:block/fluiddictionary_side"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "industrialforegoing:efficiency_addon_tier_2"
+    }
+  ],
+  "type": "industrialforegoing:dissolution_chamber",
+  "input": [
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "minecraft:glass_pane",
+    "minecraft:glass_pane",
+    "#c:gears/diamond",
+    "#c:gears/diamond",
+    "minecraft:blaze_rod",
+    "minecraft:blaze_rod"
+  ],
+  "inputFluid": {
+    "ingredient": "industrialforegoing:latex",
+    "amount": 1000
+  },
+  "output": {
+    "components": {
+      "titanium:augments": {
+        "Efficiency": 0.8
+      }
+    },
+    "count": 1,
+    "id": "industrialforegoing:efficiency_addon_tier_2"
+  },
+  "processingTime": 200
+}

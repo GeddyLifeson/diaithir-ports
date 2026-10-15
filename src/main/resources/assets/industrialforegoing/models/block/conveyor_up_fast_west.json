@@ -1,0 +1,7 @@
+{
+  "parent": "industrialforegoing:block/conveyor_ramp_inverted",
+  "textures": {
+    "2": "industrialforegoing:block/conveyor_color_inverted_fast"
+  },
+  "render_type": "minecraft:cutout"
+}

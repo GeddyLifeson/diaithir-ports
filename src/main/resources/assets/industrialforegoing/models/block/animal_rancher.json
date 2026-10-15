@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/animal_resource_harvester_back",
+    "west": "industrialforegoing:block/animal_resource_harvester_side",
+    "east": "industrialforegoing:block/animal_resource_harvester_side",
+    "north": "industrialforegoing:block/animal_resource_harvester_side"
+  }
+}

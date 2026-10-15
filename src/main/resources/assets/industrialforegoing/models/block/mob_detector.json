@@ -1,0 +1,9 @@
+{
+  "parent": "industrialforegoing:block/base_block",
+  "textures": {
+    "south": "industrialforegoing:block/mob_detector_back",
+    "west": "industrialforegoing:block/mob_detector_side",
+    "east": "industrialforegoing:block/mob_detector_side",
+    "north": "industrialforegoing:block/mob_detector_side"
+  }
+}

@@ -1,0 +1,142 @@
+/*
+ * This file is part of Industrial Foregoing.
+ *
+ * Copyright 2021, Buuz135
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies
+ * or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+package com.buuz135.industrial.block.resourceproduction.tile;
+
+import com.buuz135.industrial.utils.ValidatedFluidTank;
+
+import com.buuz135.industrial.utils.TankOps;
+
+import com.buuz135.industrial.block.tile.IndustrialProcessingTile;
+import com.buuz135.industrial.config.machine.resourceproduction.WashingFactoryConfig;
+import com.buuz135.industrial.fluid.OreTitaniumFluidType;
+import com.buuz135.industrial.module.ModuleCore;
+import com.buuz135.industrial.module.ModuleResourceProduction;
+import com.buuz135.industrial.utils.ItemStackUtils;
+import com.hrznstudio.titanium.annotation.Save;
+import com.hrznstudio.titanium.api.IFactory;
+import com.hrznstudio.titanium.component.energy.EnergyStorageComponent;
+import com.hrznstudio.titanium.component.fluid.FluidTankComponent;
+import com.hrznstudio.titanium.component.fluid.SidedFluidTankComponent;
+import com.hrznstudio.titanium.component.inventory.SidedInventoryComponent;
+import com.hrznstudio.titanium.container.addon.IContainerAddon;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+
+import javax.annotation.Nonnull;
+import java.util.Collections;
+import java.util.List;
+
+public class WashingFactoryTile extends IndustrialProcessingTile<WashingFactoryTile> {
+
+    @Save
+    private SidedInventoryComponent<WashingFactoryTile> input;
+    @Save
+    private SidedFluidTankComponent<WashingFactoryTile> meatInput;
+    @Save
+    private SidedFluidTankComponent<WashingFactoryTile> meatOutput;
+
+    public WashingFactoryTile(BlockPos blockPos, BlockState blockState) {
+        super(ModuleResourceProduction.WASHING_FACTORY, 100, 40, blockPos, blockState);
+        addInventory(this.input = (SidedInventoryComponent<WashingFactoryTile>) new SidedInventoryComponent<WashingFactoryTile>("input", 40, 40, 1, 0)
+                .setColor(DyeColor.BLUE)
+                .setInputFilter((stack, integer) -> {
+                    if (!stack.is(Tags.Items.RAW_MATERIALS)) return false;
+
+                    for (Identifier resourceLocation : stack.tags().map(TagKey::location).toList()) {
+                        if (resourceLocation.toString().startsWith("c:raw_materials/") && OreTitaniumFluidType.isValid(resourceLocation)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                })
+        );
+        addTank(this.meatInput = (SidedFluidTankComponent<WashingFactoryTile>) new ValidatedFluidTank<WashingFactoryTile>("meat", WashingFactoryConfig.maxTankSize, 70, 20, 1)
+                .setColor(DyeColor.BROWN)
+                .setTankAction(FluidTankComponent.Action.FILL)
+                .setValidator(fluidStack -> fluidStack.getFluid().isSame(ModuleCore.MEAT.getSourceFluid().get()))
+        );
+        addTank(this.meatOutput = (SidedFluidTankComponent<WashingFactoryTile>) new ValidatedFluidTank<WashingFactoryTile>("output", WashingFactoryConfig.maxOutputSize, 135, 20, 2) {
+                    @Override
+                    protected void onContentsChanged(int index, FluidStack previousContents) {
+                        syncObject(WashingFactoryTile.this.meatOutput);
+                    }
+
+                    @Override
+                    public List<IFactory<? extends IContainerAddon>> getContainerAddons() {
+                        return Collections.emptyList();
+                    }
+                }
+                        .setColor(DyeColor.ORANGE)
+                        .setTankAction(FluidTankComponent.Action.DRAIN)
+        );
+    }
+
+    @Override
+    public boolean canIncrease() {
+        if (this.input.getStackInSlot(0).isEmpty()) return false;
+        Identifier resourceLocation = ItemStackUtils.getOreTag(this.input.getStackInSlot(0));
+        if (resourceLocation == null) return false;
+        FluidStack output = OreTitaniumFluidType.getFluidWithTag(ModuleCore.RAW_ORE_MEAT, 100, resourceLocation);
+        return this.meatInput.getFluidAmount() >= 100 && TankOps.fillForced(this.meatOutput, output, IFluidHandler.FluidAction.SIMULATE) == 100;
+    }
+
+    @Override
+    public Runnable onFinish() {
+        return () -> {
+            if (!this.input.getStackInSlot(0).isEmpty()) {
+                Identifier resourceLocation = ItemStackUtils.getOreTag(this.input.getStackInSlot(0));
+                TankOps.drainForced(this.meatInput, 100, IFluidHandler.FluidAction.EXECUTE);
+                FluidStack output = OreTitaniumFluidType.getFluidWithTag(ModuleCore.RAW_ORE_MEAT, 100, resourceLocation);
+                this.input.getStackInSlot(0).shrink(1);
+                TankOps.fillForced(this.meatOutput, output, IFluidHandler.FluidAction.EXECUTE);
+            }
+        };
+    }
+
+    @Override
+    public int getMaxProgress() {
+        return WashingFactoryConfig.maxProgress;
+    }
+
+    @Override
+    protected int getTickPower() {
+        return WashingFactoryConfig.powerPerTick;
+    }
+
+    @Nonnull
+    @Override
+    public WashingFactoryTile getSelf() {
+        return this;
+    }
+
+    @Override
+    protected EnergyStorageComponent<WashingFactoryTile> createEnergyStorage() {
+        return new EnergyStorageComponent<>(WashingFactoryConfig.maxStoredPower, 10, 20);
+    }
+
+}

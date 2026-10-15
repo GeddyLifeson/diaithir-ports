@@ -1,0 +1,10 @@
+---
+name: Feature request
+about: PLEASE USE THE DISCUSSION TAB FOR FEATURE REQUESTS
+title: 'PLEASE USE THE DISCUSSION TAB FOR FEATURE REQUESTS'
+labels: 'type: feature, version: 1.16'
+assignees: ''
+
+---
+
+**PLEASE USE THE DISCUSSION TAB FOR FEATURE REQUESTS.**
