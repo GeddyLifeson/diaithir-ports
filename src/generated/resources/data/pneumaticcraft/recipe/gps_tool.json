@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "#c:gems/diamond",
+    "G": "#c:glass_panes",
+    "P": "#pneumaticcraft:plastic_sheets",
+    "R": "minecraft:redstone_torch"
+  },
+  "pattern": [
+    " R ",
+    "PGP",
+    "PDP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:gps_tool"
+  }
+}

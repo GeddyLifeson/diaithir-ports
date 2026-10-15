@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:iron_bars",
+    "C": "pneumaticcraft:advanced_air_compressor",
+    "P": "#pneumaticcraft:plastic_sheets",
+    "R": "pneumaticcraft:turbine_rotor"
+  },
+  "pattern": [
+    "BPB",
+    "PRP",
+    "BCB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:electrostatic_compressor"
+  }
+}

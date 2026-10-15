@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+group = 'me.desht.pneumaticcraft'
+version = '8.2.23'
+base.archivesName = 'pneumaticcraft-repressurized'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories {
+    maven { url = 'https://maven.blamejared.com' } // JEI
+}
+
+sourceSets.main {
+    java.srcDir 'src/api/java'
+    resources.srcDir 'src/generated/resources'
+}
+
+neoForge {
+    version = '26.1.2.109'
+    mods {
+        pneumaticcraft {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'mezz.jei:jei-26.1.2-common-api:29.47.0.109'
+    compileOnly 'mezz.jei:jei-26.1.2-neoforge-api:29.47.0.109'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '5000']
+}

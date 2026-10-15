@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "pneumaticcraft:pnc_model/heat_pipe",
+		"all": "pneumaticcraft:pnc_model/heat_pipe"
+	},
+	"elements": [
+		{
+			"from": [4, 12, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [4, 0, 12, 4], "texture": "#all"},
+				"east": {"uv": [4, 12, 12, 16], "texture": "#all"},
+				"south": {"uv": [4, 12, 12, 16], "texture": "#all"},
+				"west": {"uv": [4, 0, 12, 4], "texture": "#all"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#all", "cullface": "up"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#all", "cullface": "down"}
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "pneumaticcraft:heat_frame_cooling",
+  "input": {
+    "fluid": {
+      "tag": "minecraft:water",
+      "amount": 1000
+    }
+  },
+  "output": {
+    "count": 1,
+    "id": "minecraft:ice"
+  },
+  "temperature": 273
+}

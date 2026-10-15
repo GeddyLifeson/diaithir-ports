@@ -1,0 +1,17 @@
+{
+  "type": "pneumaticcraft:crafting_shaped_pressurizable",
+  "category": "misc",
+  "key": {
+    "A": "pneumaticcraft:compressed_iron_boots",
+    "C": "pneumaticcraft:air_canister",
+    "P": "pneumaticcraft:printed_circuit_board"
+  },
+  "pattern": [
+    "CPC",
+    "CAC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:pneumatic_boots"
+  }
+}

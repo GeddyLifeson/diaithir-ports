@@ -1,0 +1,20 @@
+{
+  "layers": {
+    "wings": [
+      {
+        "texture": "minecraft:elytra",
+        "use_player_texture": true
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "pneumaticcraft:pneumatic"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "pneumaticcraft:pneumatic"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "neoforge:ingredient_type": "pneumaticcraft:fluid_container",
+      "fluid": {
+        "tag": "c:lubricant",
+        "amount": 1000
+      }
+    },
+    "L": "#pneumaticcraft:upgrade_components",
+    "X": "pneumaticcraft:glycerol"
+  },
+  "pattern": [
+    "LXL",
+    "XCX",
+    "LXL"
+  ],
+  "result": {
+    "count": 2,
+    "id": "pneumaticcraft:speed_upgrade"
+  }
+}

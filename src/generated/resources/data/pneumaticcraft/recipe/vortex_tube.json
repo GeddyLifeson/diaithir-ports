@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:ingots/copper",
+    "I": "#c:ingots/compressed_iron",
+    "T": "pneumaticcraft:pressure_tube"
+  },
+  "pattern": [
+    "ITI",
+    "GTG",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:vortex_tube"
+  }
+}
