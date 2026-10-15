@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "modern_industrialization:advanced_machine_hull",
+    "V": "modern_industrialization:aluminum_tank"
+  },
+  "pattern": [
+    "U",
+    "V"
+  ],
+  "result": {
+    "id": "modern_industrialization:advanced_fluid_output_hatch"
+  }
+}

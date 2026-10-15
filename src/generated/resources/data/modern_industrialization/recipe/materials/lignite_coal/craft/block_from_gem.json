@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:lignite_coal",
+    "y": "modern_industrialization:lignite_coal"
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modern_industrialization:lignite_coal_block"
+  }
+}

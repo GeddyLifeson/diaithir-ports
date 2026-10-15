@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:tiny_dusts/silicon",
+    "y": "modern_industrialization:silicon_tiny_dust"
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modern_industrialization:silicon_dust"
+  }
+}

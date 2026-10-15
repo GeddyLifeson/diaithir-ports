@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "modern_industrialization:aluminum_cable",
+    "V": "modern_industrialization:turbo_machine_hull"
+  },
+  "pattern": [
+    "U",
+    "V"
+  ],
+  "result": {
+    "id": "modern_industrialization:hv_energy_input_hatch"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:ingots/chromium",
+    "y": "modern_industrialization:chromium_ingot"
+  },
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modern_industrialization:chromium_block"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "modern_industrialization:nickel_dust"
+  ],
+  "result": {
+    "count": 9,
+    "id": "modern_industrialization:nickel_tiny_dust"
+  }
+}

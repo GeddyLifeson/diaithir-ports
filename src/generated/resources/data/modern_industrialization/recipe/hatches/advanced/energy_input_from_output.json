@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "modern_industrialization:mv_energy_output_hatch"
+  },
+  "pattern": [
+    "U"
+  ],
+  "result": {
+    "id": "modern_industrialization:mv_energy_input_hatch"
+  }
+}

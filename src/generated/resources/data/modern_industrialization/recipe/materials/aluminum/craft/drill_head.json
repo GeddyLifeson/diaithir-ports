@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:gears/aluminum",
+    "R": "#c:rods/aluminum",
+    "b": "modern_industrialization:aluminum_bolt",
+    "c": "modern_industrialization:aluminum_curved_plate",
+    "p": "#c:plates/aluminum"
+  },
+  "pattern": [
+    "bcp",
+    "GRc",
+    "bGb"
+  ],
+  "result": {
+    "id": "modern_industrialization:aluminum_drill_head"
+  }
+}

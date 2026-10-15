@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:plates/aluminum",
+    "G": "#c:glass_blocks"
+  },
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "result": {
+    "id": "modern_industrialization:aluminum_tank"
+  }
+}

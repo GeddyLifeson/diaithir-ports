@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.08,
+  "ingredient": "modern_industrialization:cupronickel_tiny_dust",
+  "result": {
+    "id": "modern_industrialization:cupronickel_nugget"
+  }
+}

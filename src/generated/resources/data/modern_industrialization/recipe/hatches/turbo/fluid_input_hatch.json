@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "modern_industrialization:stainless_steel_tank",
+    "V": "modern_industrialization:turbo_machine_hull"
+  },
+  "pattern": [
+    "U",
+    "V"
+  ],
+  "result": {
+    "id": "modern_industrialization:turbo_fluid_input_hatch"
+  }
+}

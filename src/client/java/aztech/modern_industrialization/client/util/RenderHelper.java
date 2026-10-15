@@ -1,0 +1,277 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 Azercoco & Technici4n
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package aztech.modern_industrialization.client.util;
+
+import aztech.modern_industrialization.MI;
+import aztech.modern_industrialization.client.compat.sodium.SodiumCompat;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.QuadInstance;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.ShapeRenderer;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.client.renderer.block.FluidModel;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.data.AtlasIds;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.ARGB;
+import net.minecraft.util.FormattedCharSequence;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.client.ClientHooks;
+import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.model.quad.BakedColors;
+import net.neoforged.neoforge.client.model.quad.BakedNormals;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
+import org.joml.Vector3f;
+import org.jspecify.annotations.Nullable;
+
+public class RenderHelper {
+    private static final QuadCube overlayQuads = new QuadCube(MI.id("block/hatch_placement_overlay"));
+
+    // TODO 26.1
+//    public static void drawOverlay(PoseStack ms, MultiBufferSource vcp, int overlay) {
+//        VertexConsumer vc = vcp.getBuffer(MIRenderTypes.cutoutHighlight());
+//        for (BakedQuad overlayQuad : overlayQuads.getQuads()) {
+//            vc.putBulkData(ms.last(), overlayQuad, 1.0f, 1.0f, 1.0f, 1.0f, LightTexture.FULL_BRIGHT, /* not used by shader */ overlay);
+//        }
+//    }
+
+    private static final QuadCube whiteQuads = new QuadCube(Identifier.fromNamespaceAndPath("neoforge", "white"));
+
+    // TODO 26.1
+//    public static void drawCube(PoseStack ms, MultiBufferSource vcp, float r, float g, float b, int light, int overlay) {
+//        VertexConsumer vc = vcp.getBuffer(MIRenderTypes.cutoutHighlight());
+//        for (BakedQuad cubeQuad : whiteQuads.getQuads()) {
+//            vc.putBulkData(ms.last(), cubeQuad, r, g, b, 1.0f, light, overlay);
+//        }
+//    }
+
+    /**
+     * Return the render handler for the passed fluid, if available, or the default instance otherwise.
+     */
+    private static FluidModel getModel(FluidResource resource) {
+        return Minecraft.getInstance().getModelManager().getFluidStateModelSet().get(resource.getFluid().defaultFluidState());
+    }
+
+    /**
+     * Return the still sprite that should be used to render the passed fluid resource, or null if it's not available.
+     * The sprite should be rendered using the color returned by {@link #getFluidColor}.
+     */
+    @Nullable
+    public static TextureAtlasSprite getFluidSprite(FluidResource fluidResource) {
+        if (fluidResource.isEmpty()) {
+            return null;
+        }
+        return getModel(fluidResource).stillMaterial().sprite();
+    }
+
+    /**
+     * Return the position-independent color that should be used to render {@linkplain #getFluidSprite the sprite} of the passed fluid variant.
+     */
+    public static int getFluidColor(FluidResource fluidResource) {
+        var tintSource = getModel(fluidResource).fluidTintSource();
+        return tintSource == null ? -1 : tintSource.colorAsStack(fluidResource.toStack(1));
+    }
+
+    /**
+     * Return the position-dependent color that should be used to render {@linkplain #getFluidSprite the sprite} of the passed fluid variant.
+     */
+    public static int getFluidColor(FluidResource fluidResource, @Nullable BlockAndTintGetter level, BlockPos pos) {
+        if (level == null) {
+            return getFluidColor(fluidResource);
+        }
+        var tintSource = getModel(fluidResource).fluidTintSource();
+        return tintSource == null ? -1 : tintSource.colorInWorld(fluidResource.getFluid().defaultFluidState().createLegacyBlock(), level, pos);
+    }
+
+    private static final float TANK_W = 1 / 16f + 0.001f;
+    public static final int FULL_LIGHT = 0x00F0_00F0;
+
+    public static void drawFluidInTank(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, FluidResource fluid, float fillLevel, int color) {
+        submitNodeCollector.submitCustomGeometry(poseStack, Sheets.translucentBlockItemSheet(), (pose, vc) -> {
+            TextureAtlasSprite sprite = getFluidSprite(fluid);
+            if (sprite == null) {
+                return;
+            }
+
+            SodiumCompat.markSpriteActive(sprite);
+
+            // Make sure fill is within [TANK_W, 1 - TANK_W]
+            float fill = fillLevel;
+            fill = TANK_W + (1 - 2 * TANK_W) * Math.min(1, Math.max(fill, 0));
+            // Top and bottom positions of the fluid inside the tank
+            float topHeight = fill;
+            float bottomHeight = TANK_W;
+            // Render gas from top to bottom
+            if (fluid.getFluid().getFluidType().isLighterThanAir()) {
+                topHeight = 1 - TANK_W;
+                bottomHeight = 1 - fill;
+            }
+
+            var quadInstance = new QuadInstance();
+            quadInstance.setColor(ARGB.opaque(color));
+
+            for (Direction direction : Direction.values()) {
+                Vector3f[] pos = new Vector3f[] { new Vector3f(), new Vector3f(), new Vector3f(), new Vector3f() };
+                if (direction.getAxis().isVertical()) {
+                    ModelHelper.square(pos, direction, TANK_W, TANK_W, 1 - TANK_W, 1 - TANK_W, direction == Direction.UP ? 1 - topHeight : bottomHeight);
+                } else {
+                    ModelHelper.square(pos, direction, TANK_W, bottomHeight, 1 - TANK_W, topHeight, TANK_W);
+                }
+
+                long[] uv = ModelHelper.bakeUvs(pos, sprite, direction);
+
+                var info = BakedQuad.MaterialInfo.of(
+                        new Material.Baked(sprite, false),
+                        sprite.transparency(), -1, true, 0, true);
+                var quad = new BakedQuad(
+                        pos[0], pos[1], pos[2], pos[3],
+                        uv[0], uv[1], uv[2], uv[3],
+                        direction, info,
+                        BakedNormals.of(BakedNormals.pack(direction.getUnitVec3f())), BakedColors.DEFAULT);
+
+                vc.putBakedQuad(pose, quad, quadInstance);
+            }
+        });
+    }
+
+    public static void drawFluidInGui(GuiGraphicsExtractor guiGraphics, FluidResource fluid, int x0, int y0) {
+        drawFluidInGui(guiGraphics, fluid, x0, y0, 16, 1);
+    }
+
+    public static void drawFluidInGui(GuiGraphicsExtractor guiGraphics, FluidResource fluid, int x0, int y0, int scale, float fractionUp) {
+        TextureAtlasSprite sprite = getFluidSprite(fluid);
+        int color = getFluidColor(fluid);
+
+        if (sprite == null)
+            return;
+
+        int x1 = x0 + scale;
+        int y1 = y0 + Math.round(scale * fractionUp);
+        float u0 = sprite.getU0();
+        float v1 = sprite.getV1();
+        float v0 = v1 + (sprite.getV0() - v1) * fractionUp;
+        float u1 = sprite.getU1();
+
+        guiGraphics.innerBlit(RenderPipelines.GUI_TEXTURED, TextureAtlas.LOCATION_BLOCKS, x0, x1, y0, y1, u0, u1, v0, v1, color | 0xFF000000);
+
+        SodiumCompat.markSpriteActive(sprite);
+    }
+
+    /**
+     * Return whether the point is within the passed rectangle.
+     */
+    public static boolean isPointWithinRectangle(int xStart, int yStart, int width, int height, double pointX, double pointY) {
+        return pointX >= (double) (xStart - 1) && pointX < (double) (xStart + width + 1) && pointY >= (double) (yStart - 1)
+                && pointY < (double) (yStart + height + 1);
+    }
+
+    private static final SpriteId LOCKED_TEXTURE_LOCATION = new SpriteId(AtlasIds.BLOCKS, MI.id("block/locked"));
+
+    public static void drawLockedTexture(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int colorRgb) {
+        submitNodeCollector.submitCustomGeometry(poseStack, Sheets.cutoutBlockSheet(), (pose, vc) -> {
+            var sprite = Minecraft.getInstance().getAtlasManager().get(LOCKED_TEXTURE_LOCATION);
+            // draw the sprite on each face
+
+            var quadInstance = new QuadInstance();
+            quadInstance.setColor(ARGB.opaque(colorRgb));
+
+            for (Direction direction : Direction.values()) {
+                if (direction.getAxis().isVertical()) {
+                    // TODO 26.1: it would be nice to restore this?
+//            // Note: level can be null from builtin item renderer
+//                    entity.getLevel() != null && !Block.shouldRenderFace(state, entity.getLevel(), pos,
+//                            direction.getOpposite(), pos.relative(direction.getOpposite()))) {
+                    continue;
+                }
+
+                Vector3f[] pos = new Vector3f[] { new Vector3f(), new Vector3f(), new Vector3f(), new Vector3f() };
+                ModelHelper.square(pos, direction, 1, 0, 0, 1, 1.015f);
+
+                long[] uv = ModelHelper.bakeUvs(pos, sprite, direction);
+
+                var info = BakedQuad.MaterialInfo.of(
+                        new Material.Baked(sprite, false),
+                        sprite.transparency(), -1, true, 0, true);
+                var quad = new BakedQuad(
+                        pos[0], pos[1], pos[2], pos[3],
+                        uv[0], uv[1], uv[2], uv[3],
+                        direction, info,
+                        BakedNormals.of(BakedNormals.pack(direction.getUnitVec3f())), BakedColors.DEFAULT);
+
+                vc.putBakedQuad(pose, quad, quadInstance);
+            }
+        });
+    }
+
+    public static void renderVoxelShape(PoseStack poseStack, VertexConsumer consumer, VoxelShape shape, double x, double y, double z, float red,
+            float green, float blue, float alpha) {
+        for (AABB aabb : shape.toAabbs()) {
+            ShapeRenderer.renderShape(poseStack, consumer, Shapes.create(aabb), x, y, z, ARGB.colorFromFloat(alpha, red, green, blue), Minecraft.getInstance().getWindow().getAppropriateLineWidth());
+        }
+    }
+
+    public static void renderAndDecorateItem(GuiGraphicsExtractor guiGraphics, ItemStack stack, int x, int y) {
+        renderAndDecorateItem(guiGraphics, Minecraft.getInstance().font, stack, x, y);
+    }
+
+    public static void renderAndDecorateItem(GuiGraphicsExtractor guiGraphics, Font font, ItemStack stack, int x, int y) {
+        renderAndDecorateItem(guiGraphics, font, stack, x, y, null);
+    }
+
+    public static void renderAndDecorateItem(GuiGraphicsExtractor guiGraphics, Font font, ItemStack stack, int x, int y, @Nullable String text) {
+        guiGraphics.item(stack, x, y);
+        guiGraphics.itemDecorations(font, stack, x, y, text);
+    }
+
+    public static List<FormattedCharSequence> splitTooltip(List<Component> components) {
+        List<FormattedCharSequence> charSequences = new ArrayList<>();
+        for (var component : components) {
+            charSequences.addAll(Tooltip.splitTooltip(Minecraft.getInstance(), component));
+        }
+        return charSequences;
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "#c:dyes/purple",
+    "p": "#modern_industrialization:item_pipes"
+  },
+  "pattern": [
+    "pd"
+  ],
+  "result": {
+    "id": "modern_industrialization:purple_item_pipe"
+  }
+}

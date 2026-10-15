@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "#c:plates/invar",
+    "R": "modern_industrialization:invar_ring",
+    "b": "modern_industrialization:invar_bolt"
+  },
+  "pattern": [
+    "PbP",
+    "bRb",
+    "PbP"
+  ],
+  "result": {
+    "id": "modern_industrialization:invar_gear"
+  }
+}

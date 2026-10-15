@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "#c:dyes/pink",
+    "p": "#modern_industrialization:fluid_pipes"
+  },
+  "pattern": [
+    "pd"
+  ],
+  "result": {
+    "id": "modern_industrialization:pink_fluid_pipe"
+  }
+}

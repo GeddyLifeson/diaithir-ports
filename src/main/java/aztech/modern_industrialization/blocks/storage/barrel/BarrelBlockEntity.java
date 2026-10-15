@@ -1,0 +1,70 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 Azercoco & Technici4n
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package aztech.modern_industrialization.blocks.storage.barrel;
+
+import aztech.modern_industrialization.MIComponents;
+import aztech.modern_industrialization.blocks.storage.AbstractStorageBlockEntity;
+import aztech.modern_industrialization.blocks.storage.ResourceStorage;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+
+public class BarrelBlockEntity extends AbstractStorageBlockEntity<ItemResource> {
+    public BarrelBlockEntity(BlockEntityType type,
+            BlockPos pos,
+            BlockState state) {
+        super(type, pos, state);
+    }
+
+    @Override
+    public DataComponentType<ResourceStorage<ItemResource>> componentType() {
+        return MIComponents.ITEM_STORAGE.get();
+    }
+
+    @Override
+    public ItemResource getEmptyResource() {
+        return ItemResource.EMPTY;
+    }
+
+    @Override
+    public void removeComponentsFromTag(ValueOutput output) {
+        super.removeComponentsFromTag(output);
+        output.discard("item");
+    }
+
+    @Override
+    public ItemResource loadResource(ValueInput input) {
+        return input.read("item", ItemResource.OPTIONAL_CODEC).orElse(ItemResource.EMPTY);
+    }
+
+    @Override
+    public void saveResource(ItemResource resource, ValueOutput output) {
+        output.store("item", ItemResource.OPTIONAL_CODEC, resource);
+    }
+}

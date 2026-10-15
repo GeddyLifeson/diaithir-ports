@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:plates/steel",
+    "b": "#c:barrels/wooden"
+  },
+  "pattern": [
+    "###",
+    "#b#",
+    "###"
+  ],
+  "result": {
+    "id": "modern_industrialization:steel_barrel"
+  }
+}

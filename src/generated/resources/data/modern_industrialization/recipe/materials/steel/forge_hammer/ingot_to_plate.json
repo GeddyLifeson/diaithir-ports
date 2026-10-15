@@ -1,0 +1,8 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "count": 2,
+  "ingredient": "#c:ingots/steel",
+  "result": {
+    "id": "modern_industrialization:steel_plate"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "modern_industrialization:mixer",
+  "duration": 100,
+  "eu": 2,
+  "item_inputs": [
+    {
+      "amount": 6,
+      "ingredient": "#c:dusts/iron"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:dusts/chromium"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:dusts/nickel"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:dusts/manganese"
+    }
+  ],
+  "item_outputs": [
+    {
+      "amount": 9,
+      "id": "modern_industrialization:stainless_steel_dust"
+    }
+  ]
+}

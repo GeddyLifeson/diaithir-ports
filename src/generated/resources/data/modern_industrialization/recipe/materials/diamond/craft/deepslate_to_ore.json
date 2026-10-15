@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:deepslate_diamond_ore"
+  ],
+  "result": {
+    "id": "minecraft:diamond_ore"
+  }
+}

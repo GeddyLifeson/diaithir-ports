@@ -1,0 +1,7 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "ingredient": "#c:ingots/gold",
+  "result": {
+    "id": "modern_industrialization:gold_rod"
+  }
+}

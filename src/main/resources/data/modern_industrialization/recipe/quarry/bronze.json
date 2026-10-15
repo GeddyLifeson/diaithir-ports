@@ -1,0 +1,63 @@
+{
+  "type": "modern_industrialization:quarry",
+  "eu": 4,
+  "duration": 600,
+  "item_inputs": {
+    "ingredient": "modern_industrialization:bronze_drill",
+    "amount": 1,
+    "probability": 0.04
+  },
+  "item_outputs": [
+    {
+      "id": "minecraft:iron_ore",
+      "amount": 1,
+      "probability": 0.4
+    },
+    {
+      "id": "minecraft:coal_ore",
+      "amount": 1,
+      "probability": 0.4
+    },
+    {
+      "id": "modern_industrialization:lignite_coal_ore",
+      "amount": 1,
+      "probability": 0.24
+    },
+    {
+      "id": "minecraft:copper_ore",
+      "amount": 1,
+      "probability": 0.2
+    },
+    {
+      "id": "modern_industrialization:tin_ore",
+      "amount": 1,
+      "probability": 0.3
+    },
+    {
+      "id": "minecraft:gold_ore",
+      "amount": 1,
+      "probability": 0.15
+    },
+    {
+      "id": "minecraft:redstone_ore",
+      "amount": 1,
+      "probability": 0.2
+    },
+    {
+      "neoforge:conditions": [
+        { "type": "neoforge:mod_loaded", "modid": "create" }
+      ],
+      "id": "create:zinc_ore",
+      "amount": 1,
+      "probability": 0.08
+    },
+    {
+      "neoforge:conditions": [
+        { "type": "neoforge:mod_loaded", "modid": "mekanism" }
+      ],
+      "id": "mekanism:osmium_ore",
+      "amount": 1,
+      "probability": 0.12
+    }
+  ]
+}

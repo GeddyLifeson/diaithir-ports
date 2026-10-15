@@ -1,0 +1,8 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "damage": 40,
+  "ingredient": "#c:ingots/tin",
+  "result": {
+    "id": "modern_industrialization:tin_curved_plate"
+  }
+}

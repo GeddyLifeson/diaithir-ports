@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "modern_industrialization:nickel_ingot"
+  ],
+  "result": {
+    "count": 9,
+    "id": "modern_industrialization:nickel_nugget"
+  }
+}

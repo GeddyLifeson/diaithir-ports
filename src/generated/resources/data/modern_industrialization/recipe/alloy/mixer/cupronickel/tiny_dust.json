@@ -1,0 +1,21 @@
+{
+  "type": "modern_industrialization:mixer",
+  "duration": 100,
+  "eu": 2,
+  "item_inputs": [
+    {
+      "amount": 1,
+      "ingredient": "#c:tiny_dusts/copper"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:tiny_dusts/nickel"
+    }
+  ],
+  "item_outputs": [
+    {
+      "amount": 2,
+      "id": "modern_industrialization:cupronickel_tiny_dust"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "modern_industrialization:titanium_blade",
+    "R": "modern_industrialization:titanium_ring",
+    "b": "modern_industrialization:titanium_bolt"
+  },
+  "pattern": [
+    "bBb",
+    "BRB",
+    "bBb"
+  ],
+  "result": {
+    "id": "modern_industrialization:titanium_rotor"
+  }
+}

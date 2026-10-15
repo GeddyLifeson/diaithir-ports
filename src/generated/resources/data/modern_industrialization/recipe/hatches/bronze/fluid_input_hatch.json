@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "modern_industrialization:bronze_tank",
+    "V": "modern_industrialization:bronze_machine_casing"
+  },
+  "pattern": [
+    "U",
+    "V"
+  ],
+  "result": {
+    "id": "modern_industrialization:bronze_fluid_input_hatch"
+  }
+}

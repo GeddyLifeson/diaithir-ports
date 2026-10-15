@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "modern_industrialization:platinum_dust"
+  ],
+  "result": {
+    "count": 9,
+    "id": "modern_industrialization:platinum_tiny_dust"
+  }
+}

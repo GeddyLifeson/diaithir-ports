@@ -1,0 +1,52 @@
+{
+  "type": "modern_industrialization:quarry",
+  "eu": 4,
+  "duration": 600,
+  "item_inputs": {
+    "ingredient": "modern_industrialization:copper_drill",
+    "amount": 1,
+    "probability": 0.1
+  },
+  "item_outputs": [
+    {
+      "id": "minecraft:cobblestone",
+      "amount": 32,
+      "probability": 0.5
+    },
+    {
+      "id": "minecraft:diorite",
+      "amount": 16,
+      "probability": 0.25
+    },
+    {
+      "id": "minecraft:andesite",
+      "amount": 16,
+      "probability": 0.25
+    },
+    {
+      "id": "minecraft:granite",
+      "amount": 16,
+      "probability": 0.25
+    },
+    {
+      "id": "minecraft:dirt",
+      "amount": 10,
+      "probability": 0.5
+    },
+    {
+      "id": "minecraft:gravel",
+      "amount": 10,
+      "probability": 0.5
+    },
+    {
+      "id": "minecraft:cobbled_deepslate",
+      "amount": 16,
+      "probability": 0.25
+    },
+    {
+      "id": "minecraft:tuff",
+      "amount": 16,
+      "probability": 0.25
+    }
+  ]
+}

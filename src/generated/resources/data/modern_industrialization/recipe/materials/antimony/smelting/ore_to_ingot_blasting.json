@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": "modern_industrialization:antimony_ore",
+  "result": {
+    "id": "modern_industrialization:antimony_ingot"
+  }
+}

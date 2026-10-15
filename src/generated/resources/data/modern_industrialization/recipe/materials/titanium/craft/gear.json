@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "#c:plates/titanium",
+    "R": "modern_industrialization:titanium_ring",
+    "b": "modern_industrialization:titanium_bolt"
+  },
+  "pattern": [
+    "PbP",
+    "bRb",
+    "PbP"
+  ],
+  "result": {
+    "id": "modern_industrialization:titanium_gear"
+  }
+}

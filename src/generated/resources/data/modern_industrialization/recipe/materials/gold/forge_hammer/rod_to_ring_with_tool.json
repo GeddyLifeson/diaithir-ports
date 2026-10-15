@@ -1,0 +1,8 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "damage": 20,
+  "ingredient": "#c:rods/gold",
+  "result": {
+    "id": "modern_industrialization:gold_ring"
+  }
+}

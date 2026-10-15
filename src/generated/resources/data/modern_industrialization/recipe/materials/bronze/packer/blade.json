@@ -1,0 +1,21 @@
+{
+  "type": "modern_industrialization:packer",
+  "duration": 100,
+  "eu": 2,
+  "item_inputs": [
+    {
+      "amount": 2,
+      "ingredient": "modern_industrialization:bronze_curved_plate"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:rods/bronze"
+    }
+  ],
+  "item_outputs": [
+    {
+      "amount": 4,
+      "id": "modern_industrialization:bronze_blade"
+    }
+  ]
+}

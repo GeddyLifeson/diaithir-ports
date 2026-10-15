@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "modern_industrialization:copper_blade",
+    "R": "modern_industrialization:copper_ring",
+    "b": "modern_industrialization:copper_bolt"
+  },
+  "pattern": [
+    "bBb",
+    "BRB",
+    "bBb"
+  ],
+  "result": {
+    "id": "modern_industrialization:copper_rotor"
+  }
+}

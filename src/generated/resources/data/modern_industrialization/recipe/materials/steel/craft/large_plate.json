@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:plates/steel"
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modern_industrialization:steel_large_plate"
+  }
+}

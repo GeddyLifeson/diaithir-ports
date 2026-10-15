@@ -1,0 +1,485 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2020 Azercoco & Technici4n
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+package aztech.modern_industrialization.pipes.item;
+
+import static aztech.modern_industrialization.pipes.api.PipeEndpointType.*;
+
+import aztech.modern_industrialization.MIComponents;
+import aztech.modern_industrialization.MIItem;
+import aztech.modern_industrialization.MIText;
+import aztech.modern_industrialization.api.datamaps.MIDataMaps;
+import aztech.modern_industrialization.config.MIServerConfig;
+import aztech.modern_industrialization.pipes.api.PipeEndpointType;
+import aztech.modern_industrialization.pipes.api.PipeMenuProvider;
+import aztech.modern_industrialization.pipes.api.PipeNetworkNode;
+import aztech.modern_industrialization.pipes.api.PipeNetworkType;
+import aztech.modern_industrialization.pipes.gui.PipeScreenHandlerHelper;
+import aztech.modern_industrialization.pipes.impl.PipeBlockEntity;
+import aztech.modern_industrialization.pipes.impl.PipeNetworks;
+import aztech.modern_industrialization.util.TransferHelper;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import java.util.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import org.jspecify.annotations.Nullable;
+
+public class ItemNetworkNode extends PipeNetworkNode {
+    final List<ItemConnection> connections = new ArrayList<>();
+    int inactiveTicks = 0;
+
+    @Override
+    public void updateConnections(Level world, BlockPos pos) {
+        // Remove the connection to the outside world if a connection to another pipe is made.
+        var levelNetworks = PipeNetworks.get((ServerLevel) world);
+        connections.removeIf(connection -> {
+            for (var type : PipeNetworkType.getTypes().values()) {
+                var manager = levelNetworks.getOptionalManager(type);
+                if (manager != null && manager.hasLink(pos, connection.direction)) {
+                    connection.dropUpgrades(world, pos);
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    private boolean canConnect(Level world, BlockPos pos, Direction direction) {
+        BlockPos adjPos = pos.relative(direction);
+        return world.getCapability(Capabilities.Item.BLOCK, adjPos, direction.getOpposite()) != null;
+    }
+
+    @Override
+    public @Nullable PipeEndpointType[] getConnections(BlockPos pos) {
+        PipeEndpointType[] connections = new PipeEndpointType[6];
+        for (Direction direction : network.manager.getNodeLinks(pos)) {
+            connections[direction.get3DDataValue()] = PIPE;
+        }
+        for (ItemConnection connection : this.connections) {
+            connections[connection.direction.get3DDataValue()] = connection.type;
+        }
+        return connections;
+    }
+
+    @Override
+    public void removeConnection(Level world, BlockPos pos, Direction direction) {
+        // Cycle if it exists
+        for (int i = 0; i < connections.size(); i++) {
+            ItemConnection conn = connections.get(i);
+            if (conn.direction == direction) {
+                if (conn.type == BLOCK_IN)
+                    conn.type = BLOCK_IN_OUT;
+                else if (conn.type == BLOCK_IN_OUT)
+                    conn.type = BLOCK_OUT;
+                else {
+                    conn.dropUpgrades(world, pos);
+                    connections.remove(i);
+                }
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void addConnection(PipeBlockEntity pipe, Player player, Level world, BlockPos pos, Direction direction) {
+        // Refuse if it already exists
+        for (ItemConnection connection : connections) {
+            if (connection.direction == direction) {
+                return;
+            }
+        }
+        // Otherwise try to connect
+        if (canConnect(world, pos, direction)) {
+            var conn = new ItemConnection(direction, BLOCK_IN, 0, -10);
+            connections.add(conn);
+            // Apply memory card in the off-hand.
+            var offHandItem = player.getOffhandItem();
+            if (MIItem.CONFIG_CARD.is(offHandItem)) {
+                conn.applyConfig(pipe, offHandItem.get(MIComponents.SAVED_CONFIG), player);
+            }
+        }
+    }
+
+    @Override
+    public void save(ValueOutput output) {
+        for (ItemConnection connection : connections) {
+            CompoundTag connectionTag = new CompoundTag();
+            connectionTag.putByte("connections", (byte) encodeConnectionType(connection.type));
+            connectionTag.putBoolean("whitelist", connection.whitelist);
+            connectionTag.putInt("insertPriority", connection.insertPriority);
+            connectionTag.putInt("extractPriority", connection.extractPriority);
+            for (int i = 0; i < ItemPipeInterface.SLOTS; i++) {
+                connectionTag.store(Integer.toString(i), ItemStack.OPTIONAL_CODEC, connection.stacks[i]);
+            }
+            connectionTag.store("upgradeStack", ItemStack.OPTIONAL_CODEC, connection.upgradeStack);
+            output.store(connection.direction.toString(), CompoundTag.CODEC, connectionTag);
+        }
+        output.putInt("inactiveTicks", inactiveTicks);
+    }
+
+    @Override
+    public void read(ValueInput input) {
+        var keySet = input.keySet();
+        for (Direction direction : Direction.values()) {
+            if (keySet.contains(direction.toString())) {
+                CompoundTag connectionTag = input.read(direction.toString(), CompoundTag.CODEC).orElseThrow();
+                int insertPriority = connectionTag.getIntOr("insertPriority", 0);
+                int extractPriority = connectionTag.getIntOr("extractPriority", 0);
+                ItemConnection connection = new ItemConnection(direction, decodeConnectionType(connectionTag.getByteOr("connections", (byte) 0)),
+                        insertPriority, extractPriority);
+                connection.whitelist = connectionTag.getBooleanOr("whitelist", false);
+                for (int i = 0; i < ItemPipeInterface.SLOTS; i++) {
+                    connection.stacks[i] = connectionTag.read(Integer.toString(i), ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+                    if (!connection.stacks[i].isEmpty()) {
+                        connection.stacks[i].setCount(1);
+                    }
+                }
+                connection.refreshStacksCache();
+                connection.upgradeStack = connectionTag.read("upgradeStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+                connections.add(connection);
+            }
+        }
+        inactiveTicks = input.getIntOr("inactiveTicks", 0);
+    }
+
+    public static PipeEndpointType decodeConnectionType(int i) {
+        return i == 0 ? BLOCK_IN : i == 1 ? BLOCK_IN_OUT : BLOCK_OUT;
+    }
+
+    public static int encodeConnectionType(PipeEndpointType connection) {
+        return connection == BLOCK_IN ? 0 : connection == BLOCK_IN_OUT ? 1 : 2;
+    }
+
+    public static final Codec<PipeEndpointType> CONNECTION_TYPE_CODEC = Codec.INT.comapFlatMap(
+            i -> switch (i) {
+                case 0 -> DataResult.success(BLOCK_IN);
+                case 1 -> DataResult.success(BLOCK_IN_OUT);
+                case 2 -> DataResult.success(BLOCK_OUT);
+                default -> DataResult.error(() -> "Unknown item pipe connection type: " + i);
+            },
+            ItemNetworkNode::encodeConnectionType);
+
+    @Override
+    public PipeMenuProvider getConnectionGui(Direction guiDirection, PipeScreenHandlerHelper helper) {
+        for (ItemConnection connection : connections) {
+            if (connection.direction == guiDirection) {
+                return connection.new ScreenHandlerFactory(helper, getType().getIdentifier());
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void appendDroppedStacks(List<ItemStack> droppedStacks) {
+        for (ItemConnection conn : connections) {
+            if (!conn.upgradeStack.isEmpty()) {
+                droppedStacks.add(conn.upgradeStack);
+                conn.upgradeStack = ItemStack.EMPTY;
+            }
+        }
+    }
+
+    @Override
+    public boolean customUse(PipeBlockEntity pipe, Player player, InteractionHand hand, @Nullable Direction hitDirection) {
+        for (ItemConnection conn : connections) {
+            if (conn.direction != hitDirection) {
+                continue;
+            }
+
+            var stack = player.getItemInHand(hand);
+            if (!MIItem.CONFIG_CARD.is(stack)) {
+                return false;
+            }
+
+            if (player.isShiftKeyDown()) {
+                stack.remove(MIComponents.CAMOUFLAGE);
+                stack.set(MIComponents.SAVED_CONFIG, conn.getConfig());
+                player.sendOverlayMessage(MIText.ConfigCardSet.text());
+            } else if (stack.has(MIComponents.SAVED_CONFIG)) {
+                conn.applyConfig(pipe, stack.get(MIComponents.SAVED_CONFIG), player);
+                player.sendOverlayMessage(MIText.ConfigCardApplied.text());
+            }
+            return true;
+        }
+        return false;
+    }
+
+    class ItemConnection {
+        final Direction direction;
+        private PipeEndpointType type;
+        boolean whitelist = true;
+        int insertPriority, extractPriority;
+        final ItemStack[] stacks = new ItemStack[ItemPipeInterface.SLOTS];
+        final Map<Item, List<ItemStack>> stacksCache = new IdentityHashMap<>();
+        private ItemStack upgradeStack = ItemStack.EMPTY;
+        @Nullable
+        BlockCapabilityCache<ResourceHandler<ItemResource>, @Nullable Direction> cache = null;
+
+        private ItemConnection(Direction direction, PipeEndpointType type, int insertPriority, int extractPriority) {
+            this.direction = direction;
+            this.type = type;
+            this.insertPriority = insertPriority;
+            this.extractPriority = extractPriority;
+            for (int i = 0; i < ItemPipeInterface.SLOTS; i++) {
+                stacks[i] = ItemStack.EMPTY;
+            }
+        }
+
+        private void refreshStacksCache() {
+            stacksCache.clear();
+            for (ItemStack stack : stacks) {
+                if (!stack.isEmpty()) {
+                    stacksCache.computeIfAbsent(stack.getItem(), k -> new ArrayList<>()).add(stack);
+                }
+            }
+        }
+
+        private boolean isInCache(ItemResource resource) {
+            var list = stacksCache.get(resource.getItem());
+            if (list == null) {
+                return false;
+            }
+            for (ItemStack cachedStack : list) {
+                if (resource.matches(cachedStack)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        boolean canInsert() {
+            return type == BLOCK_IN || type == BLOCK_IN_OUT;
+        }
+
+        boolean canExtract() {
+            return type == BLOCK_OUT || type == BLOCK_IN_OUT;
+        }
+
+        boolean canMoveThrough(ItemResource resource) {
+            return isInCache(resource) == whitelist;
+        }
+
+        int getMoves() {
+            var upgradeData = upgradeStack.typeHolder().getData(MIDataMaps.ITEM_PIPE_UPGRADES);
+            int extraExtractedItems = upgradeData == null ? 0 : upgradeData.maxExtractedItems();
+            return MIServerConfig.INSTANCE.baseItemPipeTransfer.getAsInt() + (extraExtractedItems * upgradeStack.getCount());
+        }
+
+        private void dropUpgrades(Level world, BlockPos pos) {
+            if (!upgradeStack.isEmpty()) {
+                world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), upgradeStack));
+                upgradeStack = ItemStack.EMPTY;
+            }
+        }
+
+        SavedItemPipeConfig getConfig() {
+            List<ItemStack> filters = new ArrayList<>();
+            for (ItemStack itemStack : stacks) {
+                filters.add(itemStack.copy());
+            }
+            return new SavedItemPipeConfig(
+                    type,
+                    whitelist,
+                    insertPriority,
+                    extractPriority,
+                    filters,
+                    upgradeStack.copy());
+        }
+
+        void applyConfig(PipeBlockEntity pipe, @Nullable SavedItemPipeConfig config, Player player) {
+            if (config == null) {
+                return;
+            }
+            boolean remesh = config.connectionType() != type;
+            type = config.connectionType();
+            whitelist = config.whitelist();
+            insertPriority = config.insertPriority();
+            extractPriority = config.extractPriority();
+            List<ItemStack> filterStacks = config.filter();
+            for (int i = 0; i < ItemPipeInterface.SLOTS; i++) {
+                stacks[i] = filterStacks.get(i).copy();
+                if (!stacks[i].isEmpty()) {
+                    stacks[i].setCount(1);
+                }
+            }
+            refreshStacksCache();
+
+            ItemStack requestedUpgrade = config.upgrade().copy();
+            if (player.getAbilities().instabuild) {
+                // Creative mode -> apply upgrades immediately
+                upgradeStack = requestedUpgrade;
+            } else {
+                // Otherwise -> try to grab the upgrades from the player's inventory, and deposit the old one.
+                ItemResource requestedVariant = ItemResource.of(requestedUpgrade);
+
+                if (requestedVariant.matches(upgradeStack)) {
+                    int delta = requestedUpgrade.getCount() - upgradeStack.getCount();
+                    if (delta > 0) {
+                        upgradeStack.grow(fetchItems(player, requestedVariant, delta));
+                    } else {
+                        player.getInventory().placeItemBackInInventory(upgradeStack.split(-delta));
+                    }
+                } else {
+                    player.getInventory().placeItemBackInInventory(upgradeStack);
+                    upgradeStack = requestedVariant.toStack(fetchItems(player, requestedVariant, requestedUpgrade.getCount()));
+                }
+            }
+
+            pipe.setChanged();
+            if (remesh) {
+                pipe.sync();
+            }
+        }
+
+        private int fetchItems(Player player, ItemResource what, int maxAmount) {
+            return TransferHelper.extractMatching(player.getInventory(), what::matches, maxAmount, false).getCount();
+        }
+
+        private class ScreenHandlerFactory implements PipeMenuProvider {
+            private final ItemPipeInterface iface;
+            private final Identifier pipeType;
+
+            private ScreenHandlerFactory(PipeScreenHandlerHelper helper, Identifier pipeType) {
+                this.iface = new ItemPipeInterface() {
+                    @Override
+                    public boolean isWhitelist() {
+                        return whitelist;
+                    }
+
+                    @Override
+                    public void setWhitelist(boolean whitelist) {
+                        ItemConnection.this.whitelist = whitelist;
+                        helper.callMarkDirty();
+                    }
+
+                    @Override
+                    public ItemStack getStack(int slot) {
+                        return stacks[slot];
+                    }
+
+                    @Override
+                    public void setStack(int slot, ItemStack stack) {
+                        stacks[slot] = stack;
+                        refreshStacksCache();
+                        helper.callMarkDirty();
+                    }
+
+                    @Override
+                    public ItemStack getUpgradeStack() {
+                        return upgradeStack;
+                    }
+
+                    @Override
+                    public void setUpgradeStack(ItemStack stack) {
+                        upgradeStack = stack;
+                        helper.callMarkDirty();
+                    }
+
+                    @Override
+                    public int getConnectionType() {
+                        return encodeConnectionType(type);
+                    }
+
+                    @Override
+                    public void setConnectionType(int type) {
+                        if (0 <= type && type < 3) {
+                            ItemConnection.this.type = decodeConnectionType(type);
+                            helper.callMarkDirty();
+                            helper.callSync();
+                        }
+                    }
+
+                    @Override
+                    public int getPriority(int channel) {
+                        return channel == 0 ? insertPriority : extractPriority;
+                    }
+
+                    @Override
+                    public void setPriority(int channel, int priority) {
+                        if (channel == 0) {
+                            ItemConnection.this.insertPriority = priority;
+                        } else {
+                            ItemConnection.this.extractPriority = priority;
+                        }
+                        helper.callMarkDirty();
+                    }
+
+                    @Override
+                    public boolean canUse(Player player) {
+                        // Check that the BE is within distance
+                        if (!helper.isWithinUseDistance(player)) {
+                            return false;
+                        }
+                        // Check that this connection still exists
+                        return helper.doesNodeStillExist(ItemNetworkNode.this) && connections.contains(ItemConnection.this);
+                    }
+                };
+                this.pipeType = pipeType;
+            }
+
+            @Override
+            public Component getDisplayName() {
+                return Component.translatable("item." + pipeType.getNamespace() + "." + pipeType.getPath());
+            }
+
+            @Override
+            public AbstractContainerMenu createMenu(int syncId, Inventory inv, Player player) {
+                return new ItemPipeScreenHandler(syncId, inv, iface);
+            }
+
+            @Override
+            public void writeAdditionalData(RegistryFriendlyByteBuf packetByteBuf) {
+                iface.toBuf(packetByteBuf);
+            }
+        }
+    }
+
+    // Used in the Waila plugin
+    public InGameInfo collectNetworkInfo() {
+        var itemNetwork = (ItemNetwork) network;
+        return new InGameInfo(itemNetwork.lastMovedItems, itemNetwork.inactiveTicks);
+    }
+
+    public record InGameInfo(long movedItems, int pulse) {}
+}

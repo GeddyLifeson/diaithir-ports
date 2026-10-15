@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "#c:dyes/yellow",
+    "p": "#modern_industrialization:item_pipes"
+  },
+  "pattern": [
+    "ppp",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "count": 8,
+    "id": "modern_industrialization:yellow_item_pipe"
+  }
+}

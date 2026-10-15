@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "#c:dyes/light_gray",
+    "p": "#modern_industrialization:fluid_pipes"
+  },
+  "pattern": [
+    "ppp",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "count": 8,
+    "id": "modern_industrialization:light_gray_fluid_pipe"
+  }
+}

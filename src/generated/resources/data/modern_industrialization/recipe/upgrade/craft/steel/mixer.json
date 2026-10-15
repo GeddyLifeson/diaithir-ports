@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "modern_industrialization:bronze_mixer",
+    "modern_industrialization:steel_upgrade"
+  ],
+  "result": {
+    "id": "modern_industrialization:steel_mixer"
+  }
+}

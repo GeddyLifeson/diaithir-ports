@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:plates/carbon"
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modern_industrialization:carbon_large_plate"
+  }
+}

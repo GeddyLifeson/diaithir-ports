@@ -1,0 +1,21 @@
+{
+  "type": "modern_industrialization:mixer",
+  "duration": 100,
+  "eu": 2,
+  "item_inputs": [
+    {
+      "amount": 1,
+      "ingredient": "#c:dyes/white"
+    },
+    {
+      "amount": 1,
+      "ingredient": "#c:shulker_boxes"
+    }
+  ],
+  "item_outputs": [
+    {
+      "amount": 1,
+      "id": "minecraft:white_shulker_box"
+    }
+  ]
+}

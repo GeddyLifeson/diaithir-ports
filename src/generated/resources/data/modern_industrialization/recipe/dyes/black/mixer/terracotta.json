@@ -1,0 +1,21 @@
+{
+  "type": "modern_industrialization:mixer",
+  "duration": 100,
+  "eu": 2,
+  "item_inputs": [
+    {
+      "amount": 1,
+      "ingredient": "#c:dyes/black"
+    },
+    {
+      "amount": 8,
+      "ingredient": "#minecraft:terracotta"
+    }
+  ],
+  "item_outputs": [
+    {
+      "amount": 8,
+      "id": "minecraft:black_terracotta"
+    }
+  ]
+}

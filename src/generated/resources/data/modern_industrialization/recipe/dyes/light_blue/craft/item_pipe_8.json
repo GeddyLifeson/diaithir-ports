@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "#c:dyes/light_blue",
+    "p": "#modern_industrialization:item_pipes"
+  },
+  "pattern": [
+    "ppp",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "count": 8,
+    "id": "modern_industrialization:light_blue_item_pipe"
+  }
+}

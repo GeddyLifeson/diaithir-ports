@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:gears/copper",
+    "R": "#c:rods/copper",
+    "b": "modern_industrialization:copper_bolt",
+    "c": "modern_industrialization:copper_curved_plate",
+    "p": "#c:plates/copper"
+  },
+  "pattern": [
+    "bcp",
+    "GRc",
+    "bGb"
+  ],
+  "result": {
+    "id": "modern_industrialization:copper_drill_head"
+  }
+}

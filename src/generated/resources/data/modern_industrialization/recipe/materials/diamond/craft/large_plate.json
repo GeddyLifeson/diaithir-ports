@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:plates/diamond"
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modern_industrialization:diamond_large_plate"
+  }
+}

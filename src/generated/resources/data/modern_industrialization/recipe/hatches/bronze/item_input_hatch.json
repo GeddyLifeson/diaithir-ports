@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "U": "minecraft:hopper",
+    "V": "modern_industrialization:bronze_machine_casing"
+  },
+  "pattern": [
+    "U",
+    "V"
+  ],
+  "result": {
+    "id": "modern_industrialization:bronze_item_input_hatch"
+  }
+}

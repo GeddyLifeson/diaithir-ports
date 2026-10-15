@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": "#c:plates/invar"
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modern_industrialization:invar_large_plate"
+  }
+}

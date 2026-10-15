@@ -1,0 +1,7 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "ingredient": "modern_industrialization:copper_double_ingot",
+  "result": {
+    "id": "modern_industrialization:copper_plate"
+  }
+}

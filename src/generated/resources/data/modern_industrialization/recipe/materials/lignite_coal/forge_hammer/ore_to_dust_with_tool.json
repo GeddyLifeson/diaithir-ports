@@ -1,0 +1,9 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "damage": 50,
+  "ingredient": "#c:ores/lignite_coal",
+  "result": {
+    "count": 4,
+    "id": "modern_industrialization:lignite_coal_dust"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:gears/stainless_steel",
+    "R": "#c:rods/stainless_steel",
+    "b": "modern_industrialization:stainless_steel_bolt",
+    "c": "modern_industrialization:stainless_steel_curved_plate",
+    "p": "#c:plates/stainless_steel"
+  },
+  "pattern": [
+    "bcp",
+    "GRc",
+    "bGb"
+  ],
+  "result": {
+    "id": "modern_industrialization:stainless_steel_drill_head"
+  }
+}

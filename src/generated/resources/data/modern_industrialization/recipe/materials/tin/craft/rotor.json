@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "modern_industrialization:tin_blade",
+    "R": "modern_industrialization:tin_ring",
+    "b": "modern_industrialization:tin_bolt"
+  },
+  "pattern": [
+    "bBb",
+    "BRB",
+    "bBb"
+  ],
+  "result": {
+    "id": "modern_industrialization:tin_rotor"
+  }
+}

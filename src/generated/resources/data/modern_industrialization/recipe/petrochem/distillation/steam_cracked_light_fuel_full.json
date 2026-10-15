@@ -1,0 +1,33 @@
+{
+  "type": "modern_industrialization:distillation_tower",
+  "duration": 200,
+  "eu": 125,
+  "fluid_inputs": [
+    {
+      "amount": 1000,
+      "ingredient": "modern_industrialization:steam_cracked_light_fuel"
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "amount": 200,
+      "id": "modern_industrialization:methane"
+    },
+    {
+      "amount": 100,
+      "id": "modern_industrialization:acetylene"
+    },
+    {
+      "amount": 300,
+      "id": "modern_industrialization:ethylene"
+    },
+    {
+      "amount": 200,
+      "id": "modern_industrialization:butadiene"
+    },
+    {
+      "amount": 200,
+      "id": "modern_industrialization:benzene"
+    }
+  ]
+}

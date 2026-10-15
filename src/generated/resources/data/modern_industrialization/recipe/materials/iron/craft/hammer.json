@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "modern_industrialization:iron_large_plate",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "ppp",
+    "psp",
+    " s "
+  ],
+  "result": {
+    "id": "modern_industrialization:iron_hammer"
+  }
+}

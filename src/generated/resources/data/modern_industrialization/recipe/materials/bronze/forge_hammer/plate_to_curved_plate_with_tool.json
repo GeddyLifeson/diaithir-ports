@@ -1,0 +1,8 @@
+{
+  "type": "modern_industrialization:forge_hammer",
+  "damage": 20,
+  "ingredient": "#c:plates/bronze",
+  "result": {
+    "id": "modern_industrialization:bronze_curved_plate"
+  }
+}

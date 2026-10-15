@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "modern_industrialization:he_mox_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "modern_industrialization:he_mox_ingot"
+  }
+}
