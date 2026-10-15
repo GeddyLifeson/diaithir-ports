@@ -1,0 +1,148 @@
+package mcjty.lib.varia;
+
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import mcjty.lib.gui.GuiParser;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.TagParser;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.items.IItemHandler;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
+public class ItemStackTools {
+
+    private static Set<TagKey<Item>> commonTags = null;
+
+    /**
+     * Extract itemstack out of a slot and return a new stack.
+     */
+    @Nonnull
+    public static ItemStack extractItem(@Nullable BlockEntity tileEntity, int slot, int amount) {
+        if (tileEntity == null) {
+            return ItemStack.EMPTY;
+        }
+        IItemHandler handler = CapabilityTools.items(tileEntity.getLevel(), tileEntity.getBlockPos(), null);
+        if (handler != null) {
+            return handler.extractItem(slot, amount, false);
+        } else {
+            return ItemStack.EMPTY;
+        }
+    }
+
+    /**
+     * Get an item from an inventory
+     */
+    @Nonnull
+    public static ItemStack getStack(@Nullable BlockEntity tileEntity, int slot) {
+        if (tileEntity == null) {
+            return ItemStack.EMPTY;
+        }
+        IItemHandler h = CapabilityTools.items(tileEntity.getLevel(), tileEntity.getBlockPos(), null);
+        if (h != null) {
+            return h.getStackInSlot(slot);
+        } else {
+            return ItemStack.EMPTY;
+        }
+    }
+
+    public static GuiParser.GuiCommand itemStackToGuiCommand(String name, ItemStack item) {
+        GuiParser.GuiCommand object = new GuiParser.GuiCommand(name);
+        object.parameter(Tools.getId(item).toString());
+        object.parameter(item.getCount());
+        return object;
+    }
+
+    public static ItemStack guiCommandToItemStack(GuiParser.GuiCommand obj) {
+        String itemName = obj.getOptionalPar(0, "minecraft:stick");
+        Item item = Tools.getItem(Identifier.parse(itemName));
+        int amount = obj.getOptionalPar(1, 1);
+        return new ItemStack(item, amount);
+    }
+
+    public static void addCommonTags(Collection<TagKey<Item>> fromItem, Set<TagKey<Item>> tags) {
+        findCommonTags();
+        for (TagKey<Item> id : fromItem) {
+            if (commonTags.contains(id)) {
+                tags.add(id);
+            }
+        }
+    }
+
+    public static boolean hasCommonTag(Collection<TagKey<Item>> fromItem) {
+        findCommonTags();
+        for (TagKey<Item> id : fromItem) {
+            if (commonTags.contains(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void findCommonTags() {
+        if (commonTags == null) {
+            commonTags = new HashSet<>();
+            commonTags.add(ItemTags.SAND);
+            commonTags.add(ItemTags.FENCES);
+            commonTags.add(ItemTags.SAPLINGS);
+            commonTags.add(ItemTags.LEAVES);
+            commonTags.add(ItemTags.LOGS);
+            commonTags.add(ItemTags.RAILS);
+            commonTags.add(ItemTags.SLABS);
+            commonTags.add(ItemTags.WOOL);
+            commonTags.add(ItemTags.WOOL_CARPETS);
+            commonTags.add(ItemTags.PLANKS);
+            commonTags.add(ItemTags.STAIRS);
+            commonTags.add(ItemTags.DIRT);
+            commonTags.add(Tags.Items.CROPS);
+            commonTags.add(Tags.Items.GLASS_BLOCKS);
+            commonTags.add(Tags.Items.GLASS_PANES);
+            commonTags.add(Tags.Items.CHESTS);
+            commonTags.add(Tags.Items.COBBLESTONES);
+            commonTags.add(Tags.Items.NETHERRACKS);
+            commonTags.add(Tags.Items.OBSIDIANS);
+            commonTags.add(Tags.Items.GRAVELS);
+            commonTags.add(Tags.Items.SANDS);
+            commonTags.add(Tags.Items.END_STONES);
+            commonTags.add(Tags.Items.STONES);
+
+            commonTags.add(Tags.Items.ORES_COAL);
+            commonTags.add(Tags.Items.ORES_DIAMOND);
+            commonTags.add(Tags.Items.ORES_EMERALD);
+            commonTags.add(Tags.Items.ORES_GOLD);
+            commonTags.add(Tags.Items.ORES_REDSTONE);
+            commonTags.add(Tags.Items.ORES_QUARTZ);
+            commonTags.add(Tags.Items.ORES_IRON);
+            commonTags.add(Tags.Items.ORES_LAPIS);
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "ores/copper")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "ores/tin")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "ores/silver")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "ores/manganese")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "ores/platinum")));
+
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_COAL);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_DIAMOND);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_EMERALD);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_GOLD);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_REDSTONE);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_IRON);
+            commonTags.add(Tags.Items.STORAGE_BLOCKS_LAPIS);
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "storage_blocks/copper")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "storage_blocks/tin")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "storage_blocks/silver")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "storage_blocks/manganese")));
+            commonTags.add(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "storage_blocks/platinum")));
+        }
+    }
+}

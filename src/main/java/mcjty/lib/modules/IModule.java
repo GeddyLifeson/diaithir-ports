@@ -1,0 +1,14 @@
+package mcjty.lib.modules;
+
+import net.minecraft.core.HolderLookup;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+
+public interface IModule {
+
+    void init(FMLCommonSetupEvent event);
+    void initClient(FMLClientSetupEvent event);
+    void initConfig(IEventBus bus);
+
+}

@@ -1,0 +1,183 @@
+package mcjty.lib.gui;
+
+import net.minecraft.client.input.MouseButtonEvent;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import mcjty.lib.gui.icons.IconManager;
+import mcjty.lib.gui.widgets.AbstractContainerWidget;
+import mcjty.lib.gui.widgets.Widget;
+import mcjty.lib.client.GuiTools;
+import mcjty.lib.tileentity.GenericTileEntity;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.Screen;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+/**
+ * Use a window manager if you need multipole windows and/or want icon support
+ */
+public class WindowManager {
+
+    private final IconManager iconManager = new IconManager(this);
+    private final Screen gui;
+
+    private final List<Window> windows = new ArrayList<>();
+    private final List<Window> modalWindows = new ArrayList<>();
+
+    // If -1 it is not this window manager that manages the mousewheel but
+    // the window itself
+    private int mouseWheelX = -1;
+    private int mouseWheelY = -1;
+
+    public WindowManager(Screen gui) {
+        this.gui = gui;
+    }
+
+    public Screen getGui() {
+        return gui;
+    }
+
+    public IconManager getIconManager() {
+        return iconManager;
+    }
+
+    public void clearFocus() {
+        Stream.concat(windows.stream(), modalWindows.stream()).forEach(w -> w.setFocus(null));
+    }
+
+    public void setFocus(Widget<?> w) {
+        clearFocus();
+        Stream.concat(windows.stream(), modalWindows.stream())
+                .filter(window -> window.isWidgetOnWindow(w))
+                .findFirst()
+                .ifPresent(window -> window.setTextFocus(w));
+    }
+
+    public Widget<?> getTextFocus() {
+        return getInteractableWindows().map(Window::getTextFocus).filter(Objects::nonNull).findFirst().orElse(null);
+    }
+
+    public WindowManager addWindow(Window w) {
+        windows.add(w);
+        w.setWindowManager(this);
+        return this;
+    }
+
+    public WindowManager addModalWindow(Window w) {
+        modalWindows.add(w);
+        w.setWindowManager(this);
+        return this;
+    }
+
+    public Window createModalWindow(AbstractContainerWidget<?> topLevel) {
+        Window w = new Window(gui, topLevel);
+        addModalWindow(w);
+        return w;
+    }
+
+    public void closeWindow(Window window) {
+        if (windows.contains(window)) {
+            windows.remove(window);
+        } else if (modalWindows.contains(window)) {
+            modalWindows.remove(window);
+        }
+    }
+
+    public int getMouseWheelX() {
+        return mouseWheelX;
+    }
+
+    public int getMouseWheelY() {
+        return mouseWheelY;
+    }
+
+    public <T extends GenericTileEntity> void syncBindings(T te) {
+        windows.forEach(window -> window.syncBindings(te));
+        modalWindows.forEach(window -> window.syncBindings(te));
+    }
+
+    public void draw(GuiGraphicsExtractor graphics) {
+        mouseWheelX = 0;// @todo 1.14 Mouse.getDWheel();
+        mouseWheelY = 0;// @todo 1.14 Mouse.getDWheel();
+        windows.forEach(window -> window.draw(graphics));
+        modalWindows.forEach(window -> window.draw(graphics));
+        iconManager.draw(gui, graphics);
+    }
+
+    private Stream<Window> getInteractableWindows() {
+        if (modalWindows.isEmpty()) {
+            return windows.stream();
+        } else {
+            Window window = modalWindows.get(modalWindows.size() - 1);
+            return Stream.<Window> builder()
+                    .add(window)
+                    .build();
+        }
+    }
+
+    public List<Window> getWindows() {
+        return windows;
+    }
+
+    public Stream<Window> getModalWindows() {
+        return modalWindows.stream();
+    }
+
+    public void drawTooltips(GuiGraphicsExtractor graphics) {
+        int x = GuiTools.getRelativeX(gui);
+        int y = GuiTools.getRelativeY(gui);
+
+        getInteractableWindows().forEach(w -> {
+            List<String> tooltips = w.getTooltips();
+            if (tooltips != null) {
+                GenericGuiContainer<?,?> gui = (GenericGuiContainer<?,?>) this.gui;
+                gui.drawHoveringText(graphics, tooltips, w.getTooltipItems(), x - gui.getGuiLeft(), y - gui.getGuiTop(), gui.getMinecraft().font);
+            }
+        });
+        
+    }
+
+    public Optional<Widget<?>> findWidgetAtPosition(double x, double y) {
+        Stream<Widget<?>> s = windows.stream().map(w -> w.getWidgetAtPosition(x, y));
+        return s.filter(Objects::nonNull).findFirst();
+    }
+
+    public void mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        if ((!iconManager.isClickHoldToDrag()) && iconManager.isDragging()) {
+            if (event.button() == 1) {
+                iconManager.cancelDragging();
+            } else {
+                iconManager.stopDragging(event.x(), event.y());
+            }
+            return;
+        }
+        getInteractableWindows().forEach(w -> w.mouseClicked(event, doubleClick));
+    }
+
+    public void mouseDragged(double x, double y, int button) {
+        getInteractableWindows().forEach(w -> w.mouseDragged(x, y, button));
+    }
+
+    public void mouseScrolled(double x, double y, double dx, double dy) {
+        getInteractableWindows().forEach(w -> w.mouseScrolled(x, y, dx, dy));
+    }
+
+    public void mouseReleased(MouseButtonEvent event) {
+        if (iconManager.isClickHoldToDrag() && iconManager.isDragging()) {
+            iconManager.stopDragging(event.x(), event.y());
+        }
+        getInteractableWindows().forEach(w -> w.mouseReleased(event));
+    }
+
+    public boolean keyTyped(int keyCode, int scanCode) {
+        return getInteractableWindows().noneMatch(w -> w.keyTyped(keyCode, scanCode));
+    }
+
+    public boolean charTyped(char codePoint) {
+        return getInteractableWindows().noneMatch(w -> w.charTyped(codePoint));
+    }
+}

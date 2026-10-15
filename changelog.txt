@@ -1,0 +1,459 @@
+1.21-9.0.21:
+- Updated manual helper support for the Patchouli documentation updates
+
+1.21-9.0.20:
+- Fixed log spawm when the open manual key was not bound
+- Fixed proper translation key to display what key is bound to open manual in the tooltips
+- Removed the 'open manual' line in tooltips in case the key is not bound
+- Fixed "forge:tools/wrench" tag to "c:tools/wrench"
+
+1.21-9.0.19:
+- Fixed F1 key showing in game manual in inventories
+
+1.21-9.0.18:
+- Changes for RFTools Dimensions
+
+1.21-9.0.17:
+- Fixes for FancyTrinkets
+
+1.21-9.0.16:
+- Fixed mousewheel in gui's
+
+1.21-9.0.15:
+- Fixed the inventory trigger 'has' function for datagen
+
+1.21-9.0.14:
+- Fixed a problem with the tank not saving correctly
+
+1.21-9.0.13:
+- Fixed a bug with blocks storing items potentially not saving their contents properly. Thanks to Penma and Raoul
+
+1.21-9.0.12:
+- Fixed a server side crash when opening the storage scanner through the tablet
+
+1.21-9.0.11:
+- Fixed rendering for the endergenic HUD and the Not Enough Wands light
+
+1.21-9.0.10:
+- Changes for the upcoming RFTools Storage release
+
+1.21-9.0.9:
+- Fix in the no texture custom render type
+
+1.21-9.0.8:
+- Tooltips now appear in front of stuff
+
+1.21-9.0.7:
+- Fixed a bug serializing player preferences
+
+1.21-9.0.6:
+- Small NBT recipe fix
+- Various module API changes
+
+1.21-9.0.5:
+- Various updates
+
+1.21-9.0.4:
+- Bug fix in creative mode with pick block functionality on various blocks
+
+1.21-9.0.3:
+- Bug fix on servers with the loading of configs
+
+1.21-9.0.2:
+- Various updates for 1.21
+
+1.21-9.0.1:
+- Updates
+
+1.21-9.0.0:
+- Port to 1.21
+
+1.20-8.0.6:
+- Fixed a problem with the wrench not properly rotating blocks anymore
+
+1.20-8.0.5:
+- Some changes for XNet by Dertiende
+
+1.20-8.0.4:
+- Fixed a problem with the hud renderer having wrong orientation
+- Various changes by Dertiende for the upcoming XNet release
+- Many changes to make porting to 1.20.4 Neo easier
+
+1.20-8.0.3:
+- Fixed patchouli integration
+
+1.20-8.0.2:
+- Fixed a bug with rendering (affected the mover for example)
+
+1.20-8.0.1:
+- Fixed a bug with rendering labels on itemstacks. Affected for example the RFTools Storage scanner
+- Fixed several recipes (storage modules, powercells, ...)
+
+1.20-8.0.0:
+- Port to 1.20
+
+1.19.4-7.2.6:
+- Fixed a problem with the recipe system
+
+1.19.4-7.2.5:
+- Fixed a problem in the tag selector window where it was possible to get a crash when selecting beyond the end of the list
+
+1.19.4-7.2.4:
+- Tools.makeCustomRegistry() will now make a registry that is synchronized to the client
+
+1.19.4-7.2.3:
+- Fixed a problem with rendering the text on itemstacks
+
+1.19.4-7.2.2:
+- Change api to avoid problem with level.registryAccess() being different between 1.19.2 and 1.19.3/4
+
+1.19.4-7.2.1:
+- New SpawnCanceler class
+
+1.19.4-7.2.0:
+- New item transparency renderer from XFactHD
+- Better support for item based guis
+- Better error reporting for bad gui files
+- Various tools for 1.19.4
+
+1.19.3-7.1.5:
+- New api feature for slot specific slot limit
+
+1.19.3-7.1.4:
+- Fixed a few problems with compatibility between 1.19.2 and 1.19.3
+
+1.19.3-7.1.3:
+- Fixed nbt reading on client for 1.19.3
+
+1.19.3-7.1.2:
+- Fixed a problem with the obfuscated name of Screen.render() being different between 1.19.2 and 1.19.3
+
+1.19.3-7.1.1:
+- Small fixes
+
+1.19.3-7.1.0:
+- 1.19.3 version of McJtyLib
+
+1.19-7.0.7:
+- Small fix in BaseBlock.rotate()
+- New mininum/maximum for integerfield
+
+1.19-7.0.6:
+- Fixed a few render issues
+
+1.19-7.0.5:
+- Fixed a problem with rendering itemstacks with durability
+
+1.19-7.0.4:
+- Fixed a problem with rendering of very large itemstacks. This manifested itself in the RFTools Storage storage scanner
+
+1.19-7.0.3:
+- Fixed durability bar on item rendering
+
+1.19-7.0.2:
+- Fixed keybindings
+
+1.19-7.0.1:
+- Fixed a problem where the builder with the pump card would not replace lava with dirt
+
+1.19-7.0.0:
+- Port to 1.19
+
+1.18-6.0.15:
+- Created ComponentFactory to help with porting to 1.19
+- Created Tools.getId() to make porting to 1.19 easier
+
+1.18-6.0.14:
+- New GuiPopupTools (moved from RFTools Control)
+- Changed the wrench tag from forge:wrench to forge:tools/wrench
+
+1.18-6.0.13:
+- Undo of capability invalidation as it breaks loot tables
+
+1.18-6.0.12:
+- Implemented proper invalidation of capabilities when block entities are removed/unloaded
+
+1.18-6.0.11:
+- Port to 1.18.2
+
+1.18-6.0.10:
+- Additions to the delayed rendering system
+
+1.18-6.0.9:
+- Delayed rendering system
+
+1.18-6.0.8:
+- Various small changes
+
+1.18-6.0.7:
+- Fixed the DIRT tag to be compatible with latest Forge
+
+1.18-6.0.6:
+- Fixed a problem with items not getting restored when breaking and placing blocks
+
+1.18-6.0.5:
+- Fixed a crash in modal dialogs (caused things like XNet to crash)
+
+1.18-6.0.4:
+- Many cleanups
+- Fixed a crash problem with rendering hilighted blocks as well as XNet cables
+
+1.18-6.0.3:
+- Bugfix for sub-dialogs
+
+1.18-6.0.2:
+- Small helper for datagen
+
+1.18-6.0.1:
+- Small fix for recipe manager
+
+1.18-6.0.0:
+- First port to 1.18
+
+1.16-5.1.2:
+- Preporting to 1.18: introducted saveAdditional() into GenericTileEntity
+- Preporting to 1.18: rename a few writeXxx and readXxx into saveXxx and loadXxx
+- Preporting to 1.18: introduced TickingTileEntity with tickServer() and tickClient()
+- Removed a test on duplicate command registration as this could cause issues
+- Removed LogicTileEntity. Instead logic blocks work with the new LogicSupport helper class
+- Renamed readClientInfo and writeClientInfo
+
+1.16-5.1.1:
+- Fixed some data communication errors that (for example) manifested itself when opening the gui for a fresh matter transmitter
+
+1.16-5.1.0:
+- Cleanups of some now obsolete classes (DimensionId and GlobalCoordinate)
+- Massive changes to various syncing systems in McJtyLib
+- New @ServerCommand annotation to implement server-side commands that can be initiated client-side
+- New @GuiValue annotation to automatically sync values (fields) between client and server (when a container is open)
+- New @Cap annotation to make it easier to attach capabilities
+- New IntegerField and FloatField widgets
+
+1.16-5.0.23:
+- A few small improvements
+
+1.16-5.0.22:
+- Support for better fake player system
+
+1.16-5.0.21:
+- Weird fix for a weird missing method error
+
+1.16-5.0.20:
+- Safety for getting item or fluid handler from a tile entity. Avoids log spam with fluid module for removed block
+- Updates for custom crafting recipes
+
+1.16-5.0.19:
+- New tool for getting modname
+
+1.16-5.0.18:
+- Fix for RFTools Control
+
+1.16-5.0.17:
+- Small change for containers
+
+1.16-5.0.16:
+- Small changes for RFTools Dimensions
+- Fixes for tooltip rendering
+
+1.16-5.0.15:
+- Small DimensionId update
+- Small fix in the custom tank code
+
+1.16-5.0.14:
+- Fixes for truetype rendering
+
+1.16-5.0.13:
+- New method for rendering
+
+1.16-5.0.12:
+- Fixed a potential problem with RFTools/XNet blocks placed by automatic placers that don't supply a fake player
+
+1.16-5.0.11:
+- Fixed a problem with item icon rendering in tooltips
+- Fixed a problem with icons rendering under modal windows
+
+1.16-5.0.10:
+- Fixed a problem with teleporting to other dimensions
+
+1.16-5.0.9:
+- Fixed a problem with picking up blocks that would cause the Builder to duplicate blocks
+
+1.16-5.0.8:
+- Fixed a serious dupe glitch in many inventories throughout the RFTools and XNet mods!
+
+1.16-5.0.7:
+- New module system for mods
+- Refactored lots of internal code to make containers more consistent and work better
+
+1.16-5.0.6:
+- New online help system. Use F1 key (default) when hovering over item tooltip
+
+1.16-5.0.5:
+- Fixed a potential issue when reading owner UUID
+
+5.0.4:
+- Fixed a problem on servers
+
+5.0.3:
+- Safer client-side registrations (thread-safety)
+- Various cleanups and fixes
+
+5.0.2:
+- Fixed a potential exploit which could be used to attack a server
+
+5.0.1:
+- Fixed a problem with gui's showing some random text
+- Fixed handling of dimensions. Fixing this fixes lots of things throughout the game
+
+5.0.0:
+- First port to 1.16.2
+
+4.1.5:
+- Fixed a potential exploit which could be used to attack a server
+
+4.1.4:
+- Tag selector windows were ignoring the type. As a consequence they only showed block tags and not items tags
+
+4.1.3-beta:
+- Datagen changes
+- Small updates
+
+4.1.2-beta:
+- Fixed a bug when rendering empty fluids in the gui (RFTools Control processor for example)
+- Better lighting for baked models for XNet and Ariente cables, RFTools Power PowerCell and RFTools Utility tank
+
+4.1.1-beta:
+- Fixed potential crashes in key handling
+
+4.1.0-beta:
+- Small fix for block placement (as used by the builder)
+- Support for better item tooltip system
+- Many cleanups and fixes for logic blocks
+- Much better handling of modal windows and general window manager refactor
+- Working support for the mouse wheel in McJtyLib gui's
+- New 'tag' selector to be used by blocks/items that used to use the old oredictionary
+- JEI will now again properly avoid side windows and the help/style buttons on McJtyLib guis
+- Greatly cleaned up the McJtyLib code. Removed all outdated code
+- Improved the wrench detector
+- All McJtyLib based GUI's will now properly check if the tile entity is near enough and not removed. Avoids potential dupes
+- Moved most of the configs from common to server (so that they are saved with the world and synced to the client)
+
+4.0.3-alpha:
+- Helpers for blockstate generation
+- Fixes for the logic blocks
+
+4.0.2-alpha:
+- Helper for big itemstack sending
+- Fixed a problem with itemstack tooltips not rendering properly in gui's
+- Fixed a problem with tooltips in gui's not rendering at the correct 'z' level
+- Fixed a crash when a gui is open and the MC window is minimized/iconified
+
+4.0.1-alpha:
+- Small GenericContainer refactoring. Removed unused code
+- Fix in how itemstacks are rendered
+
+4.0.0-alpha:
+- First release for 1.15.2
+
+4.0.0:
+- Elec332 fixed a problem in TE client data not being correct in some cases after a player joins the world
+
+3.5.17:
+- hnOsmium0001 did some improvements on text editing in McJtyLib gui's. For example, you can now use ctrl-arrow to move between words
+- Some further improvements on input handling
+
+3.5.16:
+- Various changes and fixes
+
+3.5.15:
+- Fixed bugs in the way automation/gui handles itemhandlers
+- Fixed a problem in guis where there is supposed to be a player inventory but the block itself has no inventory
+
+3.5.14:
+- Fixed a bug in the rotate functionality of the wrench
+- Extracting from machines with output slots should now only extract from those slots
+
+3.5.13:
+- Fixed a serious networking problem which could cause 'invalid discriminator spam' on servers
+
+3.5.12:
+- Fixed a networking problem on servers
+
+3.5.11:
+- Fixed tracking of integers by splitting them into shorts. This fixes the energy display in guis
+- Made AbstractWorldData usage safer/cleaner by passing in a world instance as much as possible
+- Various networking cleanups and fixes
+
+3.5.10:
+- Fixes to the infusing system
+
+3.5.6:
+- Update to latest Forge
+
+3.5.5:
+- Update to 1.14.4
+
+3.5.3:
+- Added withRotation() to BaseBlock making all McJtyLib based blocks rotatable
+- Osmium0001 added a way to copy/paste selections in all McJtyLib textfields (use shift arrow keys to make selections)
+- Osmium0001 fixed logging for McJtyLib so it is tagged with the correct mod
+
+3.5.2:
+- Small change for HoloGui
+
+3.5.1:
+- Small change for Ariente
+
+3.5.0:
+- Major changes to how mods using McJtyLib are structured. Preparations for 1.13/1.14 porting
+- 1.13 like config system
+- 1.13 like networking system
+- New methods for rendering quads and general API cleanup in the RenderHelper
+- New multipart system (currently only used by Ariente)
+
+3.1.1:
+- Fixed a client-side dependency problem
+
+3.1.0:
+- Joseph fixed tooltips sometimes rendering partially offscreen.
+- Removal of COFH RF API support. Only Forge Energy is supported now!
+- New helper classes for cleaner proxy support in mods using McJtyLib
+
+3.0.7:
+- Zarkov removed an old fix for teleporting out of the end.
+
+3.0.6:
+- Joseph Fixed a crash in cases where a warning was supposed to be printed
+- Added support for rendering itemstacks in gui tooltips
+
+3.0.5:
+- Joseph fixed a crash when dragging the mouse outside of a color picker
+- Added support for fixing problems with early client->server packets that would sometimes fire before the server had a chance to setup networking for that client
+- Worked around a bug in Mekanism which would cause the XNet network data to load too early causing it to be destroyed again at the time the server starts (the event for which occurs after loading the world). This cleanup has now moved to right before the server starts to load anything
+
+3.0.4:
+- WARNING: Do not load any worlds with McJtyLib 3.0.3 or earlier if you last saved them with McJtyLib 3.0.4 or later!
+- Joseph fixed log warnings due to tile entities being registered with names like "minecraft:xnet_controller" instead of "xnet:controller".
+- Joseph made a bug in NEI just log an error and not crash us
+- Various changes for Ariente
+
+3.0.3:
+- Again a fix with opaqueness. It was not done correctly last time
+- A few new features for the upcoming Ariente mod
+- Joseph tried to work around an issue with NEI sometimes causing the GUI's from McJtyLib to fail. This is not fixed yet but now it should crash earlier. If you have this problem a lot remove NEI for now
+
+3.0.2:
+- Fixed a problem with default opaqueness of all blocks
+
+3.0.1:
+- Various blocks in RFTools could no longer be infused and also didn't show their current infusion value (already infused blocks would still do their bonus however)
+
+3.0.0:
+- Major refactoring and changes. Updating McJtyLib will require an update of all mods that need it
+- New more flexible color picker widget
+- New ‘tallChunkFriendly’ config in McJtyLib which changes to a less efficient way to encode positions but one that is more friendly towards mods that increase the maximum build height
+
+3.0.0alpha:
+- Major refactoring and changes. Updating McJtyLib will require an update of all mods that need it
+- New more flexible color picker widget
+- New ‘tallChunkFriendly’ config in McJtyLib which changes to a less efficient way to encode positions but one that is more friendly towards mods that increase the maximum build height
