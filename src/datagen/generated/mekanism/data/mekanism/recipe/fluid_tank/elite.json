@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/reinforced",
+    "I": "#c:ingots/iron",
+    "P": "mekanism:advanced_fluid_tank"
+  },
+  "pattern": [
+    "AIA",
+    "IPI",
+    "AIA"
+  ],
+  "result": {
+    "id": "mekanism:elite_fluid_tank"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/lead",
+    "S": "#c:ingots/steel"
+  },
+  "pattern": [
+    "SIS",
+    "I I",
+    "SIS"
+  ],
+  "result": {
+    "id": "mekanism:radioactive_waste_barrel"
+  }
+}

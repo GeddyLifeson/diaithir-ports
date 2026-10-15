@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "mekanismadditions:aqua_plastic",
+    "mekanismadditions:aqua_plastic",
+    "mekanismadditions:aqua_plastic",
+    "#c:dusts/glowstone"
+  ],
+  "result": {
+    "count": 3,
+    "id": "mekanismadditions:aqua_plastic_glow"
+  }
+}

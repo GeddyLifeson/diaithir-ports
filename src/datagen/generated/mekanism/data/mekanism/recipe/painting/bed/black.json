@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:black"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/beds",
+      "subtracted": "minecraft:black_bed"
+    }
+  },
+  "output": {
+    "id": "minecraft:black_bed"
+  },
+  "per_tick_usage": false
+}

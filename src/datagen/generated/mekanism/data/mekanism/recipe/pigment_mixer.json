@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:hdpe_rod",
+    "A": "#mekanism:alloys/reinforced",
+    "C": "#c:circuits/elite",
+    "X": "mekanism:steel_casing"
+  },
+  "pattern": [
+    "ACA",
+    "#X#",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:pigment_mixer"
+  }
+}

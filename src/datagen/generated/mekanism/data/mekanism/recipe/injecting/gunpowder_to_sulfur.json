@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:injecting",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "mekanism:hydrogen_chloride"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "#c:gunpowders"
+  },
+  "output": {
+    "id": "mekanism:dust_sulfur"
+  },
+  "per_tick_usage": true
+}

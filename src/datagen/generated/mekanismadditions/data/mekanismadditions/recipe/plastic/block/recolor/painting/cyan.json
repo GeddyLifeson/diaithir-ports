@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 64,
+    "chemical": "mekanism:cyan"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:plastic_blocks/plastic",
+      "subtracted": "mekanismadditions:cyan_plastic"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:cyan_plastic"
+  },
+  "per_tick_usage": false
+}

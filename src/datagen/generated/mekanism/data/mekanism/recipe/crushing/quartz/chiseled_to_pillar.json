@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:chiseled_quartz_block"
+  },
+  "output": {
+    "id": "minecraft:quartz_pillar"
+  }
+}

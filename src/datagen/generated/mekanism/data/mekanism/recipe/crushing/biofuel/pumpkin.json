@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:crops/pumpkin"
+  },
+  "output": {
+    "count": 6,
+    "id": "mekanism:bio_fuel"
+  }
+}

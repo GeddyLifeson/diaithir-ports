@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomesoplenty"
+    }
+  ],
+  "type": "mekanism:pigment_extracting",
+  "input": {
+    "count": 1,
+    "ingredient": "biomesoplenty:purple_wildflowers"
+  },
+  "output": {
+    "amount": 768,
+    "id": "mekanism:magenta"
+  }
+}

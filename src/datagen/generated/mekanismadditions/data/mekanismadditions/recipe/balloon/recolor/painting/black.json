@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:black"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:balloons",
+      "subtracted": "mekanismadditions:black_balloon"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:black_balloon"
+  },
+  "per_tick_usage": false
+}

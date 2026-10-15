@@ -1,0 +1,32 @@
+{
+  "parent": "mekanism:infused_alloy",
+  "criteria": {
+    "configurator": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mekanism:configurator"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.mekanism.configurator.description"
+    },
+    "icon": {
+      "id": "mekanism:configurator"
+    },
+    "title": {
+      "translate": "advancements.mekanism.configurator.title"
+    }
+  },
+  "requirements": [
+    [
+      "configurator"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

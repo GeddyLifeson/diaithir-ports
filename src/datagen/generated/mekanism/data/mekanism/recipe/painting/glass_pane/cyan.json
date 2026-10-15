@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 32,
+    "chemical": "mekanism:cyan"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/glass_panes",
+      "subtracted": "minecraft:cyan_stained_glass_pane"
+    }
+  },
+  "output": {
+    "id": "minecraft:cyan_stained_glass_pane"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "mekanism:thermal_evaporation_block",
+    "C": "#c:circuits/advanced"
+  },
+  "pattern": [
+    " # ",
+    "#C#",
+    " # "
+  ],
+  "result": {
+    "id": "mekanism:thermal_evaporation_valve"
+  }
+}

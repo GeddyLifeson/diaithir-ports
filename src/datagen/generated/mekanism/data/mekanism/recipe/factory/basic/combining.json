@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": "#mekanism:alloys/basic",
+    "C": "#c:circuits/basic",
+    "I": "#c:ingots/iron",
+    "P": "mekanism:combiner"
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:basic_combining_factory"
+  }
+}

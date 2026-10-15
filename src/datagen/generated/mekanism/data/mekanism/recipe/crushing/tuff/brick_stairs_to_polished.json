@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:tuff_brick_stairs"
+  },
+  "output": {
+    "id": "minecraft:polished_tuff_stairs"
+  }
+}

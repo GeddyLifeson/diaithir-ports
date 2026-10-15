@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:injecting",
+  "chemical_input": {
+    "amount": 3,
+    "tag": "mekanism:water_vapor"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:dead_fire_coral"
+  },
+  "output": {
+    "id": "minecraft:fire_coral"
+  },
+  "per_tick_usage": true
+}

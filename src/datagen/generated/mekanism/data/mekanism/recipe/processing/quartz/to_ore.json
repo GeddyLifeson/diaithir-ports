@@ -1,0 +1,14 @@
+{
+  "type": "mekanism:combining",
+  "extra_input": {
+    "count": 1,
+    "ingredient": "minecraft:netherrack"
+  },
+  "main_input": {
+    "count": 14,
+    "ingredient": "#c:dusts/quartz"
+  },
+  "output": {
+    "id": "minecraft:nether_quartz_ore"
+  }
+}

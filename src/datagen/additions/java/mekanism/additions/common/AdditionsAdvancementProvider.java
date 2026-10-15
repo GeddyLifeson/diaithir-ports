@@ -1,0 +1,90 @@
+package mekanism.additions.common;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+import mekanism.additions.common.advancements.AdditionsAdvancements;
+import mekanism.additions.common.registries.AdditionsBlocks;
+import mekanism.additions.common.registries.AdditionsEntityTypes;
+import mekanism.additions.common.registries.AdditionsItems;
+import mekanism.api.datagen.recipe.RecipeCriterion;
+import mekanism.api.text.EnumColor;
+import mekanism.common.advancements.BaseAdvancementProvider;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.criterion.DamagePredicate;
+import net.minecraft.advancements.criterion.EntityHurtPlayerTrigger;
+import net.minecraft.advancements.criterion.EntityPredicate;
+import net.minecraft.advancements.criterion.KilledTrigger;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+
+public class AdditionsAdvancementProvider extends BaseAdvancementProvider {
+
+    @Override
+    public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer) {
+        HolderGetter<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+        HolderGetter<EntityType<?>> entityTypeLookup = registries.lookupOrThrow(Registries.ENTITY_TYPE);
+        advancement(AdditionsAdvancements.BALLOON)
+              .display(AdditionsItems.BALLOONS.get(EnumColor.AQUA), AdvancementType.TASK, false)
+              .addCriterion("balloon", hasItems(itemLookup, AdditionsTags.Items.BALLOONS))
+              .save(consumer);
+        advancement(AdditionsAdvancements.POP_POP)
+              .display(AdditionsItems.BALLOONS.get(EnumColor.RED), null, AdvancementType.GOAL, true, false, true)
+              .addCriterion("pop", kill(entityTypeLookup, AdditionsEntityTypes.BALLOON))
+              .save(consumer);
+        advancement(AdditionsAdvancements.GLOW_IN_THE_DARK)
+              .display(AdditionsBlocks.GLOW_PANELS.get(EnumColor.ORANGE), AdvancementType.TASK, false)
+              .addCriterion("glow_panel", hasItems(itemLookup, AdditionsTags.Items.GLOW_PANELS))
+              .save(consumer);
+        advancement(AdditionsAdvancements.HURT_BY_BABIES)
+              .display(Items.CREEPER_HEAD, null, AdvancementType.GOAL, true, true, true)
+              .andCriteria(
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_BOGGED),
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_CREEPER),
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_ENDERMAN),
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_SKELETON),
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_STRAY),
+                    damagedCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_WITHER_SKELETON)
+              ).save(consumer);
+        advancement(AdditionsAdvancements.NOT_THE_BABIES)
+              .display(Items.WITHER_SKELETON_SKULL, AdvancementType.GOAL, false)
+              .orCriteria(
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_BOGGED),
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_CREEPER),
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_ENDERMAN),
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_SKELETON),
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_STRAY),
+                    killCriterion(entityTypeLookup, AdditionsEntityTypes.BABY_WITHER_SKELETON)
+              ).save(consumer);
+    }
+
+    private RecipeCriterion killCriterion(HolderGetter<EntityType<?>> entityTypeLookup, Holder<EntityType<?>> type) {
+        return new RecipeCriterion(getName(type), kill(entityTypeLookup, type));
+    }
+
+    private Criterion<KilledTrigger.TriggerInstance> kill(HolderGetter<EntityType<?>> entityTypeLookup, Holder<EntityType<?>> type) {
+        return KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(entityTypeLookup, type.value()));
+    }
+
+    private RecipeCriterion damagedCriterion(HolderGetter<EntityType<?>> entityTypeLookup, Holder<EntityType<?>> type) {
+        return new RecipeCriterion(getName(type), damaged(entityTypeLookup, type));
+    }
+
+    private String getName(Holder<?> holder) {
+        return Objects.requireNonNull(holder.getKey()).identifier().getPath();
+    }
+
+    private Criterion<EntityHurtPlayerTrigger.TriggerInstance> damaged(HolderGetter<EntityType<?>> entityTypeLookup, Holder<EntityType<?>> type) {
+        //Damaged by entity and not blocked
+        return EntityHurtPlayerTrigger.TriggerInstance.entityHurtPlayer(DamagePredicate.Builder.damageInstance()
+              .sourceEntity(EntityPredicate.Builder.entity().of(entityTypeLookup, type.value()).build())
+              .blocked(false)
+        );
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:cyan"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanismadditions:balloons",
+      "subtracted": "mekanismadditions:cyan_balloon"
+    }
+  },
+  "output": {
+    "id": "mekanismadditions:cyan_balloon"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "mekanism:item/jetpack",
+    "model": {
+      "type": "mekanism:jetpack",
+      "armor_type": "UNARMORED"
+    }
+  }
+}

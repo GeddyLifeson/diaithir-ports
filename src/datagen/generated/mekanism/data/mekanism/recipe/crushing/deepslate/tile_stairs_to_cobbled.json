@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:deepslate_tile_stairs"
+  },
+  "output": {
+    "id": "minecraft:cobbled_deepslate_stairs"
+  }
+}

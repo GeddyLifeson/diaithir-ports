@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 2,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 500,
+  "item_input": {
+    "count": 1,
+    "ingredient": "minecraft:blue_wool"
+  },
+  "output": {
+    "id": "minecraft:lapis_block"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "#c:gems/emerald"
+  },
+  "output": {
+    "id": "mekanism:dust_emerald"
+  }
+}

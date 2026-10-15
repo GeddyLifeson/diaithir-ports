@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:painting",
+  "chemical_input": {
+    "amount": 256,
+    "chemical": "mekanism:yellow"
+  },
+  "item_input": {
+    "count": 1,
+    "ingredient": {
+      "neoforge:ingredient_type": "neoforge:difference",
+      "base": "#mekanism:colorable/candle",
+      "subtracted": "minecraft:yellow_candle"
+    }
+  },
+  "output": {
+    "id": "minecraft:yellow_candle"
+  },
+  "per_tick_usage": false
+}

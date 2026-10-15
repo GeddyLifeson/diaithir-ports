@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.6,
+  "ingredient": [
+    "mekanism:uranium_ore",
+    "mekanism:deepslate_uranium_ore"
+  ],
+  "result": {
+    "id": "mekanism:ingot_uranium"
+  }
+}

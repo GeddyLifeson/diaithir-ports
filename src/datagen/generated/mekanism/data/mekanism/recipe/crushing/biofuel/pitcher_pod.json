@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "ingredient": "minecraft:pitcher_pod"
+  },
+  "output": {
+    "id": "mekanism:bio_fuel"
+  }
+}

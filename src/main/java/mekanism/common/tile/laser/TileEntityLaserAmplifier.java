@@ -1,0 +1,310 @@
+package mekanism.common.tile.laser;
+
+import com.google.common.primitives.Ints;
+import com.mojang.serialization.Codec;
+import io.netty.buffer.ByteBuf;
+import java.util.Locale;
+import java.util.function.IntFunction;
+import mekanism.api.IContentsListener;
+import mekanism.api.IIncrementalEnum;
+import mekanism.api.SerializationConstants;
+import mekanism.api.energy.IEnergyContainer;
+import mekanism.api.functions.ConstantPredicates;
+import mekanism.api.text.IHasTranslationKey.IHasEnumNameTranslationKey;
+import mekanism.api.text.ILangEntry;
+import mekanism.common.MekanismLang;
+import mekanism.common.capabilities.energy.BasicEnergyContainer;
+import mekanism.common.capabilities.energy.LaserEnergyContainer;
+import mekanism.common.capabilities.holder.single.ISingleContainerHolder;
+import mekanism.common.component.containers.type.ContainerType;
+import mekanism.common.component.containers.type.IContainerType;
+import mekanism.common.config.MekanismConfig;
+import mekanism.common.integration.computer.ComputerException;
+import mekanism.common.integration.computer.annotation.ComputerMethod;
+import mekanism.common.inventory.container.MekanismContainer;
+import mekanism.common.inventory.container.sync.SyncableEnum;
+import mekanism.common.inventory.container.sync.SyncableInt;
+import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.registries.MekanismDataComponents;
+import mekanism.common.tile.interfaces.IHasMode;
+import mekanism.common.util.MekanismUtils;
+import mekanism.common.util.NBTUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.ByIdMap;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.redstone.Redstone;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+
+public class TileEntityLaserAmplifier extends TileEntityLaserReceptor implements IHasMode {
+
+    private int minThreshold = 0;
+    private int maxThreshold = Ints.saturatedCast(MekanismConfig.storage.laserAmplifier.get());
+    private int ticks = 0;
+    private int delay = 0;
+    private boolean emittingRedstone;
+    private RedstoneOutput outputMode = RedstoneOutput.OFF;
+
+    public TileEntityLaserAmplifier(BlockPos pos, BlockState state) {
+        super(MekanismBlocks.LASER_AMPLIFIER, pos, state);
+    }
+
+    @Override
+    protected ISingleContainerHolder<IEnergyContainer> getInitialEnergyContainer(IContentsListener listener) {
+        energyContainer = LaserEnergyContainer.create(ConstantPredicates.alwaysTrue(), BasicEnergyContainer.internalOnly, this, listener);
+        return _ -> energyContainer;
+    }
+
+    @Override
+    protected boolean onUpdateServer(ServerLevel level) {
+        setEmittingRedstone(false);
+        if (ticks < delay) {
+            ticks++;
+        } else {
+            ticks = 0;
+        }
+        boolean sendUpdatePacket = super.onUpdateServer(level);
+        if (outputMode != RedstoneOutput.ENTITY_DETECTION) {
+            setEmittingRedstone(false);
+        }
+        return sendUpdatePacket;
+    }
+
+    @Override
+    protected void setEmittingRedstone(boolean foundEntity) {
+        emittingRedstone = foundEntity;
+    }
+
+    @Override
+    protected int toFire() {
+        if (ticks >= delay && canFunction()) {
+            return Math.clamp(super.toFire(), minThreshold, maxThreshold);
+        }
+        return 0;
+    }
+
+    @Override
+    public int getRedstoneLevel() {
+        if (outputMode == RedstoneOutput.ENERGY_CONTENTS) {
+            return MekanismUtils.redstoneLevelFromContents(energyContainer.getAmountAsLong(), energyContainer.getCapacityAsLong());
+        }
+        return emittingRedstone ? Redstone.SIGNAL_MAX : Redstone.SIGNAL_NONE;
+    }
+
+    @Override
+    protected boolean makesComparatorDirty(IContainerType<?, ?> type) {
+        return type == ContainerType.ENERGY;
+    }
+
+    @Override
+    protected void notifyComparatorChange(Level level) {
+        //Notify neighbors instead of just comparators as we also allow for direct redstone levels
+        level.updateNeighborsAt(getBlockPos(), getBlockState().getBlock());
+    }
+
+    public void setDelay(int delay) {
+        delay = Math.max(0, delay);
+        if (this.delay != delay) {
+            this.delay = delay;
+            markForSave();
+        }
+    }
+
+    @Override
+    public void nextMode() {
+        outputMode = outputMode.getNext();
+        setChanged();
+    }
+
+    @Override
+    public void previousMode() {
+        outputMode = outputMode.getPrevious();
+        setChanged();
+    }
+
+    public void setMinThresholdFromPacket(int target) {
+        if (updateMinThreshold(target)) {
+            markForSave();
+        }
+    }
+
+    public void setMaxThresholdFromPacket(int target) {
+        if (updateMaxThreshold(target)) {
+            markForSave();
+        }
+    }
+
+    private boolean updateMinThreshold(int target) {
+        int threshold = getThreshold(target);
+        if (minThreshold != threshold) {
+            minThreshold = threshold;
+            //If the min threshold is greater than the max threshold, update max threshold
+            if (minThreshold > maxThreshold) {
+                maxThreshold = minThreshold;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private boolean updateMaxThreshold(int target) {
+        //Cap threshold at max energy capacity
+        int threshold = getThreshold(target);
+        if (maxThreshold != threshold) {
+            maxThreshold = threshold;
+            //If the max threshold is smaller than the min threshold, update min threshold
+            if (maxThreshold < minThreshold) {
+                minThreshold = maxThreshold;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private int getThreshold(int target) {
+        return Math.min(target, energyContainer.getCapacityAsInt());
+    }
+
+    @Override
+    public void readSustainedData(ValueInput input) {
+        super.readSustainedData(input);
+        input.getInt(SerializationConstants.MIN).ifPresent(this::updateMinThreshold);
+        input.getInt(SerializationConstants.MAX).ifPresent(this::updateMaxThreshold);
+        //TODO - 26.1: Re-evaluate all the cases we have an or that support optional if we should just use the optional
+        delay = input.getIntOr(SerializationConstants.TIME, delay);
+        NBTUtils.setEnumIfPresent(input, SerializationConstants.OUTPUT_MODE, RedstoneOutput.BY_ID, mode -> outputMode = mode);
+    }
+
+    @Override
+    public void writeSustainedData(ValueOutput output) {
+        super.writeSustainedData(output);
+        output.putInt(SerializationConstants.MIN, minThreshold);
+        output.putInt(SerializationConstants.MAX, maxThreshold);
+        output.putInt(SerializationConstants.TIME, delay);
+        NBTUtils.writeEnum(output, SerializationConstants.OUTPUT_MODE, outputMode);
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter input) {
+        super.applyImplicitComponents(input);
+        updateMinThreshold(input.getOrDefault(MekanismDataComponents.MIN_THRESHOLD, minThreshold));
+        updateMaxThreshold(input.getOrDefault(MekanismDataComponents.MAX_THRESHOLD, maxThreshold));
+        setDelay(input.getOrDefault(MekanismDataComponents.DELAY, delay));
+        outputMode = input.getOrDefault(MekanismDataComponents.REDSTONE_OUTPUT, outputMode);
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+        builder.set(MekanismDataComponents.MIN_THRESHOLD, minThreshold);
+        builder.set(MekanismDataComponents.MAX_THRESHOLD, maxThreshold);
+        builder.set(MekanismDataComponents.DELAY, delay);
+        builder.set(MekanismDataComponents.REDSTONE_OUTPUT, outputMode);
+    }
+
+    @Override
+    public boolean supportsMode(RedstoneControl mode) {
+        return true;
+    }
+
+    @ComputerMethod(nameOverride = "getRedstoneOutputMode")
+    public RedstoneOutput getOutputMode() {
+        return outputMode;
+    }
+
+    @ComputerMethod
+    public int getDelay() {
+        return delay;
+    }
+
+    @ComputerMethod
+    public int getMinThreshold() {
+        return minThreshold;
+    }
+
+    @ComputerMethod
+    public int getMaxThreshold() {
+        return maxThreshold;
+    }
+
+    @Override
+    public void addContainerTrackers(MekanismContainer container) {
+        super.addContainerTrackers(container);
+        container.track(SyncableInt.create(this::getMinThreshold, value -> minThreshold = value));
+        container.track(SyncableInt.create(this::getMaxThreshold, value -> maxThreshold = value));
+        container.track(SyncableInt.create(this::getDelay, value -> delay = value));
+        container.track(SyncableEnum.create(RedstoneOutput.BY_ID, RedstoneOutput.OFF, this::getOutputMode, value -> outputMode = value));
+    }
+
+    //Methods relating to IComputerTile
+    @ComputerMethod(requiresPublicSecurity = true)
+    void setRedstoneOutputMode(RedstoneOutput mode) throws ComputerException {
+        validateSecurityIsPublic();
+        if (outputMode != mode) {
+            outputMode = mode;
+            setChanged();
+        }
+    }
+
+    @ComputerMethod(nameOverride = "setDelay", requiresPublicSecurity = true)
+    void computerSetDelay(int delay) throws ComputerException {
+        validateSecurityIsPublic();
+        if (delay < 0) {
+            throw new ComputerException("Delay cannot be negative. Received: %d", delay);
+        }
+        setDelay(delay);
+    }
+
+    @ComputerMethod(requiresPublicSecurity = true)
+    void setMinThreshold(int threshold) throws ComputerException {
+        validateSecurityIsPublic();
+        setMinThresholdFromPacket(threshold);
+    }
+
+    @ComputerMethod(requiresPublicSecurity = true)
+    void setMaxThreshold(int threshold) throws ComputerException {
+        validateSecurityIsPublic();
+        setMaxThresholdFromPacket(threshold);
+    }
+    //End methods IComputerTile
+
+    public enum RedstoneOutput implements IIncrementalEnum<RedstoneOutput>, IHasEnumNameTranslationKey, StringRepresentable {
+        OFF(MekanismLang.OFF),
+        ENTITY_DETECTION(MekanismLang.ENTITY_DETECTION),
+        ENERGY_CONTENTS(MekanismLang.ENERGY_CONTENTS);
+
+        public static final Codec<RedstoneOutput> CODEC = StringRepresentable.fromEnum(RedstoneOutput::values);
+        public static final IntFunction<RedstoneOutput> BY_ID = ByIdMap.continuous(RedstoneOutput::ordinal, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
+        public static final StreamCodec<ByteBuf, RedstoneOutput> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, RedstoneOutput::ordinal);
+
+        private final String serializedName;
+        private final ILangEntry langEntry;
+
+        RedstoneOutput(ILangEntry langEntry) {
+            this.serializedName = name().toLowerCase(Locale.ROOT);
+            this.langEntry = langEntry;
+        }
+
+        @Override
+        public String getTranslationKey() {
+            return langEntry.getTranslationKey();
+        }
+
+        @Override
+        public RedstoneOutput byIndex(int index) {
+            return BY_ID.apply(index);
+        }
+
+        @Override
+        public String getSerializedName() {
+            return serializedName;
+        }
+    }
+}

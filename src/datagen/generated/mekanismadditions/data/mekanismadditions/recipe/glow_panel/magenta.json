@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": "#c:dyes/magenta",
+    "G": "#c:dusts/glowstone",
+    "H": "mekanism:hdpe_sheet",
+    "P": "#c:glass_panes"
+  },
+  "pattern": [
+    "PHP",
+    "HDH",
+    "GHG"
+  ],
+  "result": {
+    "count": 2,
+    "id": "mekanismadditions:magenta_glow_panel"
+  }
+}
