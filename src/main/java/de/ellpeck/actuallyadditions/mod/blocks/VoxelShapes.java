@@ -1,0 +1,354 @@
+package de.ellpeck.actuallyadditions.mod.blocks;
+
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.stream.Stream;
+
+public class VoxelShapes {
+    static final VoxelShape CANOLA_PRESS_SHAPE = Stream.of(Block.box(0.5, 8, 0.5, 3.5, 10, 3.5),
+            Block.box(1, 2, 1, 3, 14, 3),
+            Block.box(2, 0, 2, 14, 6, 14),
+            Block.box(3, 6, 3, 13, 9, 13),
+            Block.box(12.5, 14, 12.5, 15.5, 16, 15.5),
+            Block.box(2, 9, 2, 14, 15, 14),
+            Block.box(13, 2, 1, 15, 14, 3),
+            Block.box(1, 2, 13, 3, 14, 15),
+            Block.box(13, 2, 13, 15, 14, 15),
+            Block.box(12.5, 14, 0.5, 15.5, 16, 3.5),
+            Block.box(0.5, 14, 0.5, 3.5, 16, 3.5),
+            Block.box(0.5, 14, 12.5, 3.5, 16, 15.5),
+            Block.box(12.5, 8, 12.5, 15.5, 10, 15.5),
+            Block.box(12.5, 8, 0.5, 15.5, 10, 3.5),
+            Block.box(0.5, 8, 12.5, 3.5, 10, 15.5),
+            Block.box(0.5, 5, 12.5, 3.5, 7, 15.5),
+            Block.box(0.5, 5, 0.5, 3.5, 7, 3.5),
+            Block.box(12.5, 5, 0.5, 15.5, 7, 3.5),
+            Block.box(12.5, 5, 12.5, 15.5, 7, 15.5),
+            Block.box(12.5, -0.01, 0.5, 15.5, 1.99, 3.5),
+            Block.box(0.5, -0.01, 0.5, 3.5, 1.99, 3.5),
+            Block.box(0.5, -0.01, 12.5, 3.5, 1.99, 15.5),
+            Block.box(12.5, -0.01, 12.5, 15.5, 1.99, 15.5)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape BATBOX_SHAPE = Stream.of(
+            Block.box(0, 0, 0, 16, 1, 16),
+            Block.box(2, 2, 2, 14, 5, 14),
+            Block.box(1, 1, 14, 2, 6, 15),
+            Block.box(14, 1, 14, 15, 6, 15),
+            Block.box(1, 1, 1, 2, 6, 2),
+            Block.box(14, 1, 1, 15, 6, 2),
+            Block.box(1, 5, 2, 2, 6, 14),
+            Block.box(14, 1, 2, 15, 2, 14),
+            Block.box(14, 5, 2, 15, 6, 14),
+            Block.box(1, 1, 2, 2, 2, 14),
+            Block.box(2, 5, 14, 14, 6, 15),
+            Block.box(2, 1, 1, 14, 2, 2),
+            Block.box(2, 5, 1, 14, 6, 2),
+            Block.box(2, 1, 14, 14, 2, 15),
+            Block.box(5, 5, 5, 11, 7, 11)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape SIMPLE_STAND_SHAPE = Stream.of(
+            Block.box(0, 0, 0, 16, 8, 16),
+            Block.box(5, 8, 5, 11, 9, 11)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape BARREL_SHAPE = Stream.of(
+            Block.box(2, 1, 1, 14, 15, 2),
+            Block.box(2, 1, 14, 14, 15, 15),
+            Block.box(2, 0, 2, 14, 1, 14),
+            Block.box(2, 13, 2, 14, 14, 14),
+            Block.box(1, 1, 2, 2, 15, 14),
+            Block.box(14, 1, 2, 15, 15, 14)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape FIREWORKS_BOX_SHAPE = Stream.of(
+            Block.box(0, 0, 0, 1, 1, 16),
+            Block.box(1, 0, 15, 15, 1, 16),
+            Block.box(15, 0, 0, 16, 1, 16),
+            Block.box(1, 0, 0, 15, 1, 1),
+            Block.box(0, 15, 0, 1, 16, 16),
+            Block.box(15, 15, 0, 16, 16, 16),
+            Block.box(1, 15, 0, 15, 16, 1),
+            Block.box(1, 15, 15, 15, 16, 16),
+            Block.box(0, 1, 15, 1, 15, 16),
+            Block.box(15, 1, 15, 16, 15, 16),
+            Block.box(15, 1, 0, 16, 15, 1),
+            Block.box(0, 1, 0, 1, 15, 1),
+            Block.box(4, 15, 4, 6, 16, 6),
+            Block.box(1, 0, 1, 15, 15, 15),
+            Block.box(7, 15, 4, 9, 16, 6),
+            Block.box(10, 15, 4, 12, 16, 6),
+            Block.box(10, 15, 7, 12, 16, 9),
+            Block.box(7, 15, 7, 9, 16, 9),
+            Block.box(4, 15, 7, 6, 16, 9),
+            Block.box(4, 15, 10, 6, 16, 12),
+            Block.box(7, 15, 10, 9, 16, 12),
+            Block.box(10, 15, 10, 12, 16, 12)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape GLASS_SHAPE = Stream.of(
+            Block.box(15, 0, 1, 16, 1, 15),
+            Block.box(1, 1, 1, 15, 15, 15),
+            Block.box(0, 0, 0, 16, 1, 1),
+            Block.box(0, 0, 15, 16, 1, 16),
+            Block.box(0, 15, 0, 16, 16, 1),
+            Block.box(0, 15, 15, 16, 16, 16),
+            Block.box(0, 0, 1, 1, 1, 15),
+            Block.box(0, 15, 1, 1, 16, 15),
+            Block.box(15, 15, 1, 16, 16, 15),
+            Block.box(0, 1, 0, 1, 15, 1),
+            Block.box(0, 1, 15, 1, 15, 16),
+            Block.box(15, 1, 15, 16, 15, 16),
+            Block.box(15, 1, 0, 16, 15, 1)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape HEAT_COLLECTOR_SHAPE = Stream.of(
+            Block.box(15, 4, 4, 16, 5, 12),
+            Block.box(0, 0, 0, 1, 1, 16),
+            Block.box(1, 0, 15, 15, 1, 16),
+            Block.box(15, 0, 0, 16, 1, 16),
+            Block.box(1, 0, 0, 15, 1, 1),
+            Block.box(0, 15, 0, 1, 16, 16),
+            Block.box(15, 15, 0, 16, 16, 16),
+            Block.box(1, 15, 0, 15, 16, 1),
+            Block.box(1, 15, 15, 15, 16, 16),
+            Block.box(0, 1, 15, 1, 15, 16),
+            Block.box(15, 1, 15, 16, 15, 16),
+            Block.box(15, 1, 0, 16, 15, 1),
+            Block.box(0, 1, 0, 1, 15, 1),
+            Block.box(4, 13, 4, 12, 14, 12),
+            Block.box(15, 10, 4, 16, 11, 12),
+            Block.box(15, 6, 4, 16, 7, 12),
+            Block.box(15, 8, 4, 16, 9, 12),
+            Block.box(4, 10, 15, 12, 11, 16),
+            Block.box(4, 8, 15, 12, 9, 16),
+            Block.box(4, 6, 15, 12, 7, 16),
+            Block.box(4, 4, 15, 12, 5, 16),
+            Block.box(0, 10, 4, 1, 11, 12),
+            Block.box(0, 4, 4, 1, 5, 12),
+            Block.box(0, 6, 4, 1, 7, 12),
+            Block.box(0, 8, 4, 1, 9, 12),
+            Block.box(4, 10, 0, 12, 11, 1),
+            Block.box(4, 8, 0, 12, 9, 1),
+            Block.box(4, 6, 0, 12, 7, 1),
+            Block.box(4, 4, 0, 12, 5, 1),
+            Block.box(2, 14, 2, 5, 15, 14),
+            Block.box(5, 14, 2, 11, 15, 5),
+            Block.box(5, 14, 11, 11, 15, 14),
+            Block.box(11, 14, 2, 14, 15, 14),
+            Block.box(2, 0, 2, 14, 1, 14),
+            Block.box(1, 0, 2, 2, 15, 14),
+            Block.box(14, 0, 2, 15, 15, 14),
+            Block.box(1, 0, 1, 15, 15, 2),
+            Block.box(1, 0, 14, 15, 15, 15)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape HOPPING_ITEM_VIEWER_SHAPE = Stream.of(
+            Block.box(0, 10, 0, 16, 11, 16),
+            Block.box(1, 11, 1, 2, 15, 15),
+            Block.box(14, 11, 1, 15, 15, 15),
+            Block.box(2, 11, 1, 14, 15, 2),
+            Block.box(2, 11, 14, 14, 15, 15),
+            Block.box(4, 4, 4, 12, 10, 12),
+            Block.box(6, 0, 6, 10, 4, 10),
+            Block.box(0, 15, 0, 16, 16, 1),
+            Block.box(0, 15, 15, 16, 16, 16),
+            Block.box(15, 15, 1, 16, 16, 15),
+            Block.box(0, 15, 1, 1, 16, 15),
+            Block.box(0, 11, 0, 1, 15, 1),
+            Block.box(0, 11, 15, 1, 15, 16),
+            Block.box(15, 11, 15, 16, 15, 16),
+            Block.box(15, 11, 0, 16, 15, 1)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape BOOSTER_SHAPE = Block.box(5, 0 , 5, 11, 16, 11);
+
+    static final VoxelShape SUPPRESSOR_SHAPE = Stream.of(
+            Block.box(0, 0, 0, 1, 1, 16),
+            Block.box(1, 0, 15, 15, 1, 16),
+            Block.box(15, 0, 0, 16, 1, 16),
+            Block.box(1, 0, 0, 15, 1, 1),
+            Block.box(0, 15, 0, 1, 16, 16),
+            Block.box(15, 15, 0, 16, 16, 16),
+            Block.box(1, 15, 0, 15, 16, 1),
+            Block.box(1, 15, 15, 15, 16, 16),
+            Block.box(0, 1, 15, 1, 15, 16),
+            Block.box(15, 1, 15, 16, 15, 16),
+            Block.box(15, 1, 0, 16, 15, 1),
+            Block.box(0, 1, 0, 1, 15, 1),
+            Block.box(1, 14, 1, 15, 15, 15),
+            Block.box(1, 0, 1, 15, 2, 15),
+            Block.box(9, 2, 3, 13, 14, 7),
+            Block.box(9, 15, 3, 13, 16, 7),
+            Block.box(3, 15, 3, 7, 16, 7),
+            Block.box(9, 2, 9, 13, 14, 13),
+            Block.box(9, 15, 9, 13, 16, 13),
+            Block.box(3, 2, 9, 7, 14, 13),
+            Block.box(3, 15, 9, 7, 16, 13),
+            Block.box(3, 2, 3, 7, 14, 7)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static final VoxelShape SIMPLE_GENERATOR_SHAPE = Stream.of(
+            Block.box(1, 0, 1, 15, 15, 15), // Inner Cube
+            Block.box(0, 15, 0, 16, 16, 16), // Top Plate
+            Block.box(0, 0, 0, 1, 15, 1),
+            Block.box(0, 0, 15, 1, 15, 16),
+            Block.box(15, 0, 0, 16, 15, 1),
+            Block.box(15, 0, 15, 16, 15, 16)
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+    static class CoffeeMachineShapes {
+        static final VoxelShape NORTH = Stream.of(
+                Block.box(13, 2, 4, 14, 3, 5),
+                Block.box(1, 0, 1, 15, 1, 15),
+                Block.box(7, 1, 8, 14, 9, 14),
+                Block.box(6, 9, 3, 15, 11, 15),
+                Block.box(8, 11, 8, 13, 13, 13),
+                Block.box(10, 8, 4, 11, 9, 5),
+                Block.box(12, 2, 2, 13, 7, 7),
+                Block.box(13, 11, 7, 14, 14, 14),
+                Block.box(8, 11, 7, 13, 14, 8),
+                Block.box(14, 1, 7, 15, 9, 8),
+                Block.box(3, 3, 10, 4, 5, 11),
+                Block.box(3, 2, 10, 7, 3, 11),
+                Block.box(3, 3, 12, 4, 5, 13),
+                Block.box(2, 5, 9, 5, 11, 14),
+                Block.box(2, 11, 11, 4, 12, 13),
+                Block.box(1, 1, 11, 2, 12, 13),
+                Block.box(9, 2, 6, 12, 7, 7),
+                Block.box(8, 1, 2, 13, 2, 7),
+                Block.box(13, 5, 4, 14, 6, 5),
+                Block.box(14, 2, 4, 15, 6, 5),
+                Block.box(7, 11, 7, 8, 14, 14),
+                Block.box(8, 11, 13, 13, 14, 14),
+                Block.box(14, 1, 14, 15, 9, 15),
+                Block.box(6, 1, 14, 7, 9, 15),
+                Block.box(6, 1, 7, 7, 9, 8),
+                Block.box(3, 2, 12, 7, 3, 13),
+                Block.box(8, 2, 2, 9, 7, 7),
+                Block.box(9, 2, 2, 12, 7, 3)
+        ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+        static final VoxelShape EAST = VoxelShapeUtils.rotate(NORTH, Rotation.CLOCKWISE_90);
+        static final VoxelShape SOUTH = VoxelShapeUtils.rotate(NORTH, Rotation.CLOCKWISE_180);
+        static final VoxelShape WEST = VoxelShapeUtils.rotate(NORTH, Rotation.COUNTERCLOCKWISE_90);
+    }
+
+    static final class LaserRelayShapes {
+        static final VoxelShape SHAPE_U = Stream.of(
+                Block.box(1, 0, 1, 15, 1, 15),
+                Block.box(4, 2, 4, 12, 4, 12),
+                Block.box(6, 4, 6, 7, 5, 7),
+                Block.box(9, 4, 9, 10, 5, 10),
+                Block.box(6, 4, 9, 7, 5, 10),
+                Block.box(3, 1, 12, 4, 5, 13),
+                Block.box(12, 1, 12, 13, 5, 13),
+                Block.box(3, 1, 3, 4, 5, 4),
+                Block.box(12, 1, 3, 13, 5, 4),
+                Block.box(3, 4, 4, 4, 5, 12),
+                Block.box(3, 1, 4, 4, 2, 12),
+                Block.box(12, 4, 4, 13, 5, 12),
+                Block.box(12, 1, 4, 13, 2, 12),
+                Block.box(4, 4, 12, 12, 5, 13),
+                Block.box(4, 4, 3, 12, 5, 4),
+                Block.box(4, 1, 12, 12, 2, 13),
+                Block.box(4, 1, 3, 12, 2, 4),
+                Block.box(9, 4, 6, 10, 5, 7),
+                Block.box(7, 4, 7, 9, 6, 9),
+                Block.box(7, 6, 7, 9, 11, 9),
+                Block.box(6, 5, 6, 10, 6, 10),
+                Block.box(6, 7, 6, 10, 8, 10),
+                Block.box(6, 9, 6, 10, 10, 10)
+        ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+        static final VoxelShape SHAPE_D = VoxelShapeUtils.rotate(SHAPE_U, Direction.UP);
+        static final VoxelShape SHAPE_N = VoxelShapeUtils.rotate(SHAPE_D, Direction.NORTH);
+        static final VoxelShape SHAPE_E = VoxelShapeUtils.rotate(SHAPE_D, Direction.EAST);
+        static final VoxelShape SHAPE_S = VoxelShapeUtils.rotate(SHAPE_D, Direction.SOUTH);
+        static final VoxelShape SHAPE_W = VoxelShapeUtils.rotate(SHAPE_D, Direction.WEST);
+    }
+
+    static final class TinyTorchShapes {
+        static final VoxelShape STANDING_AABB = Block.box(7, 0, 7, 9, 5, 9);
+        static final VoxelShape TORCH_NORTH_AABB = Block.box(7, 4, 13, 9, 9, 16);
+        static final VoxelShape TORCH_SOUTH_AABB = Block.box(7, 4, 0, 9, 9, 3);
+        static final VoxelShape TORCH_WEST_AABB = Block.box(13, 4, 7, 16, 9, 9);
+        static final VoxelShape TORCH_EAST_AABB = Block.box(0, 4, 7, 3, 9, 9);
+    }
+
+    static final class CrystalClusterShapes {
+        static final VoxelShape SHAPE_U = Stream.of(
+                Block.box(4, 6, 4, 8, 10, 8),
+                Block.box(6, 2, 6, 10, 14, 10),
+                Block.box(4, 0, 4, 14, 2, 14),
+                Block.box(2, 0, 2, 8, 6, 8),
+                Block.box(8, 2, 8, 12, 8, 12),
+                Block.box(8, 0, 2, 12, 4, 6)
+        ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+
+        static final VoxelShape SHAPE_D = VoxelShapeUtils.rotate(SHAPE_U, Direction.UP);
+        static final VoxelShape SHAPE_N = VoxelShapeUtils.rotate(SHAPE_D, Direction.NORTH);
+        static final VoxelShape SHAPE_E = VoxelShapeUtils.rotate(SHAPE_D, Direction.EAST);
+        static final VoxelShape SHAPE_S = VoxelShapeUtils.rotate(SHAPE_D, Direction.SOUTH);
+        static final VoxelShape SHAPE_W = VoxelShapeUtils.rotate(SHAPE_D, Direction.WEST);
+    }
+
+    // All of these methods inside VoxelShapeUtils are taken from Mekanism
+    // Thank you, Mekanism, for providing this wonderful code:
+    // https://github.com/mekanism/Mekanism/blob/46bc2dc05ece7e891ee38838c0e45f6a11029187/src/main/java/mekanism/common/util/VoxelShapeUtils.java#L17
+    static final class VoxelShapeUtils {
+        private static final Vec3 fromOrigin = new Vec3(-0.5, -0.5, -0.5);
+
+        static AABB rotate(AABB box, Direction side) {
+            return switch (side) {
+                case DOWN -> box;
+                case UP -> new AABB(box.minX, -box.minY, -box.minZ, box.maxX, -box.maxY, -box.maxZ);
+                case NORTH -> new AABB(box.minX, -box.minZ, box.minY, box.maxX, -box.maxZ, box.maxY);
+                case SOUTH -> new AABB(-box.minX, -box.minZ, -box.minY, -box.maxX, -box.maxZ, -box.maxY);
+                case WEST -> new AABB(box.minY, -box.minZ, -box.minX, box.maxY, -box.maxZ, -box.maxX);
+                case EAST -> new AABB(-box.minY, -box.minZ, box.minX, -box.maxY, -box.maxZ, box.maxX);
+            };
+        }
+
+        public static AABB rotate(AABB box, Rotation rotation) {
+            return switch (rotation) {
+                case NONE -> box;
+                case CLOCKWISE_90 -> new AABB(-box.minZ, box.minY, box.minX, -box.maxZ, box.maxY, box.maxX);
+                case CLOCKWISE_180 -> new AABB(-box.minX, box.minY, -box.minZ, -box.maxX, box.maxY, -box.maxZ);
+                case COUNTERCLOCKWISE_90 -> new AABB(box.minZ, box.minY, -box.minX, box.maxZ, box.maxY, -box.maxX);
+            };
+        }
+
+        public static VoxelShape rotate(VoxelShape shape, Direction side) {
+            return rotate(shape, side, VoxelShapeUtils::rotate);
+        }
+
+        public static VoxelShape rotate(VoxelShape shape, Rotation rotation) {
+            return rotate(shape, rotation, VoxelShapeUtils::rotate);
+        }
+
+        public static <D> VoxelShape rotate(VoxelShape shape, D data, BiFunction<AABB, D, AABB> rotateFunction) {
+            List<VoxelShape> rotatedPieces = new ArrayList<>();
+            //Explode the voxel shape into bounding boxes
+            List<AABB> sourceBoundingBoxes = shape.toAabbs();
+            //Rotate them and convert them each back into a voxel shape
+            for (AABB sourceBoundingBox : sourceBoundingBoxes) {
+                //Make the bounding box be centered around the middle, and then move it back after rotating
+                rotatedPieces.add(Shapes.create(rotateFunction.apply(sourceBoundingBox.move(fromOrigin.x, fromOrigin.y, fromOrigin.z), data)
+                        .move(-fromOrigin.x, -fromOrigin.z, -fromOrigin.z)));
+            }
+            //return the recombined rotated voxel shape
+            return rotatedPieces.stream().reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
+        }
+    }
+}

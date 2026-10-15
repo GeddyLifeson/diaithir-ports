@@ -1,0 +1,161 @@
+/*
+ * This file ("ActuallyAdditions.java") is part of the Actually Additions mod for Minecraft.
+ * It is created and owned by Ellpeck and distributed
+ * under the Actually Additions License to be found at
+ * http://ellpeck.de/actaddlicense
+ * View the source code at https://github.com/Ellpeck/ActuallyAdditions
+ *
+ * © 2015-2017 Ellpeck
+ */
+
+package de.ellpeck.actuallyadditions.mod;
+
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
+
+import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+
+import de.ellpeck.actuallyadditions.api.ActuallyAdditionsAPI;
+import de.ellpeck.actuallyadditions.api.ActuallyTags;
+import de.ellpeck.actuallyadditions.api.farmer.IFarmerBehavior;
+import de.ellpeck.actuallyadditions.mod.blocks.ActuallyBlocks;
+import de.ellpeck.actuallyadditions.mod.components.ActuallyComponents;
+import de.ellpeck.actuallyadditions.mod.config.ClientConfig;
+import de.ellpeck.actuallyadditions.mod.config.CommonConfig;
+import de.ellpeck.actuallyadditions.mod.crafting.ActuallyRecipes;
+import de.ellpeck.actuallyadditions.mod.data.WorldData;
+import de.ellpeck.actuallyadditions.mod.entity.InitEntities;
+import de.ellpeck.actuallyadditions.mod.event.CommonEvents;
+import de.ellpeck.actuallyadditions.mod.fluids.InitFluids;
+import de.ellpeck.actuallyadditions.mod.gen.ActuallyBiomeModifiers;
+import de.ellpeck.actuallyadditions.mod.inventory.ActuallyContainers;
+import de.ellpeck.actuallyadditions.mod.items.ActuallyItems;
+import de.ellpeck.actuallyadditions.mod.items.Worm;
+import de.ellpeck.actuallyadditions.mod.lootmodifier.ActuallyLootModifiers;
+import de.ellpeck.actuallyadditions.mod.misc.apiimpl.LaserRelayConnectionHandler;
+import de.ellpeck.actuallyadditions.mod.misc.apiimpl.MethodHandler;
+import de.ellpeck.actuallyadditions.mod.network.PacketHandler;
+import de.ellpeck.actuallyadditions.mod.particle.ActuallyParticles;
+import de.ellpeck.actuallyadditions.mod.util.ResourceReloader;
+import de.ellpeck.actuallyadditions.mod.util.Util;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.config.ModConfigEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartedEvent;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Mod(ActuallyAdditions.MODID)
+public class ActuallyAdditions {
+
+    public static final String MODID = ActuallyAdditionsAPI.MOD_ID;
+
+    @Deprecated
+    public static final String NAME = "Actually Additions";
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+
+    public static boolean commonCapsLoaded;
+
+    public ActuallyAdditions(IEventBus eventBus, ModContainer container, Dist dist) {
+        container.registerConfig(ModConfig.Type.COMMON, CommonConfig.COMMON_CONFIG);
+        if (dist.isClient())
+            container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.CLIENT_CONFIG);
+
+        ActuallyBlocks.init(eventBus);
+        ActuallyItems.init(eventBus);
+        ActuallyTabs.init(eventBus);
+        ActuallyRecipes.init(eventBus);
+        AASounds.init(eventBus);
+        ActuallyComponents.init(eventBus);
+        ActuallyLootModifiers.init(eventBus);
+        ActuallyContainers.init(eventBus);
+        InitEntities.init(eventBus);
+        InitFluids.init(eventBus);
+        ActuallyBiomeModifiers.init(eventBus);
+        ActuallyParticles.init(eventBus);
+        ActuallyTags.init();
+        eventBus.addListener(this::onConfigReload);
+
+        // clients only get the recipe types the server sends; JEI and the machines' client screens read these
+        NeoForge.EVENT_BUS.addListener((OnDatapackSyncEvent event) -> event.sendRecipes(ActuallyRecipes.Types.FERMENTING.get(), ActuallyRecipes.Types.LASER.get(), ActuallyRecipes.Types.EMPOWERING.get(), ActuallyRecipes.Types.COFFEE_INGREDIENT.get(), ActuallyRecipes.Types.PRESSING.get(), ActuallyRecipes.Types.CRUSHING.get(), ActuallyRecipes.Types.MINING_LENS.get(), ActuallyRecipes.Types.COLOR_CHANGE.get(), ActuallyRecipes.Types.LIQUID_FUEL.get()));
+        NeoForge.EVENT_BUS.addListener(this::serverStarted);
+        NeoForge.EVENT_BUS.addListener(this::serverStopped);
+        NeoForge.EVENT_BUS.register(new CommonEvents());
+//        NeoForge.EVENT_BUS.register(new DungeonLoot());
+        NeoForge.EVENT_BUS.addListener(ActuallyAdditions::reloadEvent);
+        NeoForge.EVENT_BUS.addListener(Worm::onHoe);
+
+        eventBus.addListener(PacketHandler::register);
+        eventBus.addListener(this::setup);
+
+        if (dist.isClient()) {
+            ActuallyAdditionsClient.init(eventBus);
+            container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+            eventBus.addListener(ActuallyAdditionsClient::setup);
+            eventBus.addListener(ActuallyAdditionsClient::setupMenus);
+            eventBus.addListener(ActuallyAdditionsClient::setupSpecialRenders);
+            eventBus.addListener(ActuallyAdditionsClient::registerParticleFactories);
+        }
+        IFarmerBehavior.initBehaviors();
+
+        Util.curiosLoaded = ModList.get().isLoaded("curios");
+    }
+
+    private static void reloadEvent(AddServerReloadListenersEvent event) {
+        event.addListener(ActuallyAdditions.modLoc("recipes"), new ResourceReloader(event.getServerResources()));
+    }
+
+    private void setup(FMLCommonSetupEvent event) {
+        ActuallyAdditionsAPI.methodHandler = new MethodHandler();
+        ActuallyAdditionsAPI.connectionHandler = new LaserRelayConnectionHandler();
+        //Lenses.init();
+//        CompatUtil.registerCraftingTweaks();
+
+        commonCapsLoaded = false; // Loader.isModLoaded("commoncapabilities");
+
+//        new UpdateChecker();
+    }
+
+    private void onConfigReload(ModConfigEvent event) {
+        if (event.getConfig().getType() == ModConfig.Type.COMMON) {
+            CommonConfig.Other.redstoneConfigureItem =
+                    BuiltInRegistries.ITEM.getOptional(Identifier.tryParse(CommonConfig.Other.REDSTONECONFIGURATOR.get())).orElse(Items.AIR);
+            CommonConfig.Other.relayConfigureItem =
+                    BuiltInRegistries.ITEM.getOptional(Identifier.tryParse(CommonConfig.Other.RELAYCONFIGURATOR.get())).orElse(Items.AIR);
+            CommonConfig.Other.farmerConfigureItem =
+                    BuiltInRegistries.ITEM.getOptional(Identifier.tryParse(CommonConfig.Other.FARMERCONFIG.get())).orElse(Items.AIR);
+        }
+    }
+
+    public void serverStarted(ServerStartedEvent event) {
+        // TODO: [port] check if this is needed
+
+        //        if (event.getServer() != null) {
+        //            World world = event.getServer().getWorld(OVERWORLD);
+        //            if (world != null && !world.isRemote) {
+        //                WorldData.get(world, true).markDirty();
+        //            }
+        //        }
+    }
+
+    public void serverStopped(ServerStoppedEvent event) {
+        // TODO: [port] check if this is needed
+        WorldData.clear();
+    }
+
+    public static Identifier modLoc(String path) {
+        return Identifier.fromNamespaceAndPath(MODID, path);
+    }
+}

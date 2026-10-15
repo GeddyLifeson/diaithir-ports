@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "actuallyadditions:refined_canola_oil",
+  "loader": "neoforge:fluid_container"
+}

@@ -1,0 +1,305 @@
+plugins {
+    id 'idea'
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.148'
+    id "me.modmuss50.mod-publish-plugin" version "1.0.0"
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+version = "$mod_version+mc${game_version}"
+group = "de.ellpeck"
+
+base {
+    archivesName = "actuallyadditions"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', "actuallyadditions"
+            programArguments.addAll '--width=1280', '--height=720'
+        }
+
+        client2 {
+            client()
+
+            programArguments.addAll '--username', 'Dev2'
+
+            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
+            systemProperty 'neoforge.enabledGameTestNamespaces', "actuallyadditions"
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', "actuallyadditions"
+        }
+
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', "actuallyadditions"
+        }
+
+        data {
+            data()
+            programArguments.addAll '--mod', "actuallyadditions", '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach { run ->
+            logLevel = org.slf4j.event.Level.DEBUG
+            jvmArgument '-Xmx4G'
+
+            if (run.project.javaToolchains.launcherFor(java.toolchain).map { it.metadata.vendor }.getOrElse("").contains("JetBrains")) {
+                run.jvmArgument("-XX:+AllowEnhancedClassRedefinition")
+            }
+        }
+    }
+
+    mods {
+        "actuallyadditions" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+configurations {
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+repositories {
+    maven {
+        url = "https://maven.neoforged.net/releases"
+    }
+    maven {
+        url = "https://maven.blamejared.com"
+    }
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
+dependencies {
+    compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
+
+    localRuntime "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
+
+
+    // Immersive Engineering, mainly for compat datagen
+    localRuntime "blusunrize.immersiveengineering:ImmersiveEngineering:1.21.1-${ie_version}:api"
+
+    compileOnly files("E:/MCTest-ports/server/mods/curios-neoforge-15.0.0+26.1.2.jar")
+}
+
+jar {
+    group = 'artifact'
+    manifest {
+        attributes(["Specification-Title"     : "Actually Additions",
+                    "Specification-Version"   : "1",
+                    "Implementation-Title"    : base.archivesName.get(),
+                    "Implementation-Version"  : project.version,
+                    "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    "Modloader": "Neoforge",
+                    "Modloader-Version": project.neo_version,
+        ])
+    }
+
+    from sourceSets.main.output
+}
+
+var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : game_version,
+            minecraft_version_range: game_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            mod_id                 : "actuallyadditions",
+            mod_name               : "Actually Additions",
+            mod_version            : mod_version,
+    ]
+
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from "src/main/templates"
+    into "build/generated/sources/modMetadata"
+}
+
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.register('apiJar', Jar) {
+    from sourceSets.main.output
+    from sourceSets.main.java
+    archiveClassifier.set('api')
+    include 'de/ellpeck/actuallyadditions/api/**'
+}
+
+javadoc {
+    include 'de/ellpeck/actuallyadditions/api/**'
+}
+
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
+    from 'build/docs/javadoc'
+    archiveClassifier.set('javadoc')
+}
+
+tasks.register('sourcesJar', Jar) {
+    from sourceSets.main.java
+    archiveClassifier.set('sources')
+}
+
+artifacts {
+    archives sourcesJar, apiJar, javadocJar
+}
+
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            from components.java
+
+            // Add sources and javadoc to the publication
+            artifact sourcesJar
+            artifact apiJar
+            artifact javadocJar
+        }
+    }
+
+    repositories {
+        def token = providers.environmentVariable("MAVEN_TOKEN")
+        if (token.isPresent()) {
+            maven {
+                url "https://maven.saps.dev/releases"
+                credentials {
+                    username = "ell"
+                    password = token.get()
+                }
+            }
+        }
+    }
+}
+
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+/**
+ * Seek out the changelog for the current version and return it as a string.
+ */
+def createChangelog = () -> {
+    def changelogText = new File(project.rootDir, "CHANGELOG.md").text
+    def changelog = ""
+
+    def lines = changelogText.split("\n")
+    def inChangelog = false
+    for (int i = 0; i < lines.size(); i++) {
+        def line = lines[i]
+        if (line.startsWith("# ")) {
+            if (inChangelog) {
+                break
+            } else {
+                if (line.contains(mod_version)) {
+                    inChangelog = true
+                }
+            }
+        }
+
+        if (inChangelog) {
+            changelog += line + "\n"
+        }
+    }
+
+    def output = changelog.trim()
+    return output.empty ? "No changelog found" : output
+}
+
+def cfToken = providers.environmentVariable("CF_TOKEN")
+def mrToken = providers.environmentVariable("MR_TOKEN")
+def ghToken = providers.environmentVariable("GITHUB_TOKEN")
+
+publishMods {
+    dryRun = !cfToken.isPresent() || !mrToken.isPresent() || !ghToken.isPresent()
+    changelog = createChangelog().trim()
+    version = mod_version
+    displayName = "Actually Additions ${mod_version}"
+    type = BETA;
+
+    file = jar.archiveFile
+
+    additionalFiles.from apiJar.archiveFile
+    additionalFiles.from javadocJar.archiveFile
+    additionalFiles.from sourcesJar.archiveFile
+
+    modLoaders.add("neoforge")
+
+    curseforge {
+        accessToken = cfToken
+        projectId = "228404"
+        minecraftVersions.add(game_version)
+        javaVersions.add(JavaVersion.VERSION_21)
+        clientRequired = true
+        serverRequired = true
+        requires("patchouli")
+        optional("jei")
+        optional("curios")
+    }
+
+    modrinth {
+        accessToken = mrToken
+        projectId = "4K7Q3nqd"
+        minecraftVersions.add(game_version)
+        requires("patchouli")
+        optional("jei")
+        optional("curios")
+    }
+
+    github {
+        repository = "Ellpeck/ActuallyAdditions"
+        accessToken = ghToken
+        commitish = providers.environmentVariable("GITHUB_SHA").orElse("dryRun")
+        tagName = providers.environmentVariable("GITHUB_REF_NAME").orElse("dryRun")
+    }
+}
+
+// 26.1 port: datagen is not ported (the shipped JSON in src/generated is used as is)
+tasks.withType(JavaCompile).configureEach { options.compilerArgs += ["-Xmaxerrs", "100000"] }
+sourceSets.main.java.exclude 'de/ellpeck/actuallyadditions/data/**'
+// Patchouli has no 26.1 build; its 1.21.1 API does not compile against 26.1
+sourceSets.main.java.exclude 'de/ellpeck/actuallyadditions/mod/patchouli/**'
+// datagen-only world gen bootstraps, and the engineer villager (26.1 trades are data-driven trade sets; not ported yet)
+sourceSets.main.java.exclude 'de/ellpeck/actuallyadditions/mod/gen/ActuallyConfiguredFeatures.java', 'de/ellpeck/actuallyadditions/mod/gen/ActuallyPlacedFeatures.java', 'de/ellpeck/actuallyadditions/mod/gen/ActuallyVillages.java', 'de/ellpeck/actuallyadditions/mod/gen/village/**',
+    'de/ellpeck/actuallyadditions/mod/util/NoAdvRecipeOutput.java', 'de/ellpeck/actuallyadditions/mod/util/RecipeInjector.java'
+// contributor cosmetics: they fetch a player list from the internet at runtime
+sourceSets.main.java.exclude 'de/ellpeck/actuallyadditions/mod/misc/special/**'
+
+// Ship the licence notice inside the jar
+tasks.named('jar') { from(file('LICENSE')) { rename { 'actuallyadditions_LICENSE' } } }

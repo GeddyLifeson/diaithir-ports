@@ -1,0 +1,268 @@
+/*
+ * This file ("TileEntityMiner.java") is part of the Actually Additions mod for Minecraft.
+ * It is created and owned by Ellpeck and distributed
+ * under the Actually Additions License to be found at
+ * http://ellpeck.de/actaddlicense
+ * View the source code at https://github.com/Ellpeck/ActuallyAdditions
+ *
+ * © 2015-2017 Ellpeck
+ */
+
+package de.ellpeck.actuallyadditions.mod.tile;
+
+import net.neoforged.neoforge.transfer.energy.EnergyHandler;
+
+import de.ellpeck.actuallyadditions.mod.blocks.ActuallyBlocks;
+import de.ellpeck.actuallyadditions.mod.config.CommonConfig;
+import de.ellpeck.actuallyadditions.mod.inventory.ContainerMiner;
+import de.ellpeck.actuallyadditions.mod.items.ActuallyItems;
+import de.ellpeck.actuallyadditions.mod.network.PacketHelperServer;
+import de.ellpeck.actuallyadditions.mod.network.gui.IButtonReactor;
+import de.ellpeck.actuallyadditions.mod.util.ItemStackHandlerAA.IAcceptor;
+import de.ellpeck.actuallyadditions.mod.util.StackUtil;
+import de.ellpeck.actuallyadditions.mod.util.WorldUtil;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
+import net.neoforged.neoforge.energy.IEnergyStorage;
+
+import javax.annotation.Nullable;
+import java.util.List;
+
+public class TileEntityVerticalDigger extends TileEntityInventoryBase implements IButtonReactor, IEnergyDisplay, MenuProvider {
+
+    public static final int ENERGY_USE_PER_BLOCK = 650;
+    public static final int DEFAULT_RANGE = 2;
+    public final CustomEnergyStorage storage = new CustomEnergyStorage(200000, 2000, 0);
+    public boolean onlyMineOres;
+    public int checkX;
+    public int checkY;
+    public int checkZ;
+    private int oldEnergy;
+    private int oldCheckX;
+    private int oldCheckY;
+    private int oldCheckZ;
+
+    public TileEntityVerticalDigger(BlockPos pos, BlockState state) {
+        super(ActuallyBlocks.VERTICAL_DIGGER.getTileEntityType(), pos, state, 9);
+    }
+
+    @Override
+    public void writeSyncableNBT(CompoundTag compound, HolderLookup.Provider lookupProvider, NBTType type) {
+        super.writeSyncableNBT(compound, lookupProvider, type);
+        this.storage.writeToNBT(compound);
+        if (type != NBTType.SAVE_BLOCK) {
+            compound.putInt("CheckX", this.checkX);
+            compound.putInt("CheckY", this.checkY);
+            compound.putInt("CheckZ", this.checkZ);
+        }
+        if (type != NBTType.SAVE_BLOCK || this.onlyMineOres) {
+            compound.putBoolean("OnlyOres", this.onlyMineOres);
+        }
+    }
+
+    @Override
+    public void readSyncableNBT(CompoundTag compound, HolderLookup.Provider lookupProvider, NBTType type) {
+        super.readSyncableNBT(compound, lookupProvider, type);
+        this.storage.readFromNBT(compound);
+        if (type != NBTType.SAVE_BLOCK) {
+            this.checkX = compound.getIntOr("CheckX", 0);
+            this.checkY = compound.getIntOr("CheckY", 0);
+            this.checkZ = compound.getIntOr("CheckZ", 0);
+        }
+        this.onlyMineOres = compound.getBooleanOr("OnlyOres", false);
+    }
+
+    public static <T extends BlockEntity> void clientTick(Level level, BlockPos pos, BlockState state, T t) {
+        if (t instanceof TileEntityVerticalDigger tile) {
+            tile.clientTick();
+        }
+    }
+
+    public static <T extends BlockEntity> void serverTick(Level level, BlockPos pos, BlockState state, T t) {
+        if (t instanceof TileEntityVerticalDigger tile) {
+            tile.serverTick();
+
+            if (!tile.isRedstonePowered && tile.ticksElapsed % 5 == 0) {
+                int minHeight = level.getMinY();
+                if (tile.checkY != minHeight) {
+                    int range = TileEntityPhantomface.upgradeRange(DEFAULT_RANGE, level, pos);
+                    if (tile.checkY < minHeight) {
+                        tile.checkY = tile.worldPosition.getY() - 1;
+                        tile.checkX = -range;
+                        tile.checkZ = -range;
+                    }
+
+                    if (tile.checkY > minHeight) {
+                        if (tile.mine()) {
+                            tile.checkX++;
+                            if (tile.checkX > range) {
+                                tile.checkX = -range;
+                                tile.checkZ++;
+                                if (tile.checkZ > range) {
+                                    tile.checkZ = -range;
+                                    tile.checkY--;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if ((tile.oldEnergy != tile.storage.getEnergyStored() || tile.oldCheckX != tile.checkX || tile.oldCheckY != tile.checkY || tile.oldCheckZ != tile.checkZ) && tile.sendUpdateWithInterval()) {
+                tile.oldEnergy = tile.storage.getEnergyStored();
+                tile.oldCheckX = tile.checkX;
+                tile.oldCheckY = tile.checkY;
+                tile.oldCheckZ = tile.checkZ;
+            }
+        }
+    }
+
+    private boolean mine() {
+        int actualUse = ENERGY_USE_PER_BLOCK * (this.onlyMineOres
+            ? 3
+            : 1);
+        if (this.storage.getEnergyStored() >= actualUse) {
+            BlockPos pos = new BlockPos(this.worldPosition.getX() + this.checkX, this.checkY, this.worldPosition.getZ() + this.checkZ);
+            ItemStack fakePickaxe = new ItemStack(ActuallyItems.NETHERITE_AIOT.get());
+
+            BlockState state = this.level.getBlockState(pos);
+            Block block = state.getBlock();
+            ItemStack stack = state.getCloneItemStack(pos, this.level, false, FakePlayerFactory.getMinecraft((ServerLevel) this.level));
+            if (!state.isAir()) {
+                if (fakePickaxe.isCorrectToolForDrops(state) && state.getDestroySpeed(this.level, pos) >= 0F && this.isMinable(state, stack)) {
+                    List<ItemStack> drops = Block.getDrops(state, (ServerLevel) this.level, pos, this.level.getBlockEntity(pos));
+                    float chance = WorldUtil.fireFakeHarvestEventsForDropChance(this, this.level, pos);
+
+                    if (chance > 0 && this.level.getRandom().nextFloat() <= chance) {
+                        if (StackUtil.canAddAll(this.inv, drops, false)) {
+                            this.level.levelEvent(2001, pos, Block.getId(state));
+                            this.level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+
+                            StackUtil.addAll(this.inv, drops, false);
+                            this.setChanged();
+
+                            this.storage.extractEnergyInternal(actualUse, false);
+                            this.shootParticles(pos.getX(), pos.getY(), pos.getZ());
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isMinable(BlockState state, ItemStack stack) {
+        Block block = state.getBlock();
+        if (!state.isEmpty()) {
+            if (!this.isBlacklisted(block)) {
+                if (!this.onlyMineOres) {
+                    return true;
+                } else {
+                    if (!stack.isEmpty()) {
+                        if (stack.is(Tags.Items.ORES) || state.is(Tags.Blocks.ORES)) { // Check both the block and item tags
+                            return true;
+                        }
+                        String reg = BuiltInRegistries.BLOCK.getKey(block).toString();
+                        if (!reg.isEmpty()) {
+                            for (String string : CommonConfig.Machines.MINER_EXTRA_WHITELIST.get()) {
+                                if (reg.equals(string)) {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private void shootParticles(int endX, int endY, int endZ) {
+        PacketHelperServer.spawnLaserWithTimeServer((ServerLevel) this.level, this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ(), endX, endY, endZ, 0x429602, 10, 120, 0.1F, 0.8F);
+    }
+
+    private boolean isBlacklisted(Block block) {
+        String reg = BuiltInRegistries.BLOCK.getKey(block).toString();
+        if (!reg.isEmpty()) {
+            for (String string : CommonConfig.Machines.MINER_BLACKLIST.get()) {
+                if (reg.equals(string)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public IAcceptor getAcceptor() {
+        return (stack, slot, automation) -> !automation;
+    }
+
+    @Override
+    public void onButtonPressed(int buttonID, Player player) {
+        if (buttonID == 0) {
+            this.onlyMineOres = !this.onlyMineOres;
+            this.sendUpdate();
+        } else if (buttonID == 1) {
+            this.checkX = 0;
+            this.checkY = player.level().getMinY() - 1;
+            this.checkZ = 0;
+        }
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (this.level != null)
+            this.checkY = level.getMinY() - 1;
+    }
+
+    @Override
+    public CustomEnergyStorage getEnergyStorage() {
+        return this.storage;
+    }
+
+    @Override
+    public boolean needsHoldShift() {
+        return false;
+    }
+
+    @Override
+    public EnergyHandler getEnergyStorage(Direction facing) {
+        return this.storage;
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("container.actuallyadditions.vertical_digger");
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player player) {
+        return new ContainerMiner(windowId, playerInventory, this);
+    }
+}

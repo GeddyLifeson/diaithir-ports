@@ -1,0 +1,92 @@
+# Remove
+- [x] Lush caves
+- [x] 11 lens (lens of disruption)
+- [x] Smiley cloud
+- [x] Occasional solidified XP drop from mobs
+- [x] Treasure chests
+- [x] Composter and bio-mash, biomass, bio coal and fertilizer
+- [x] Charcoal blocks
+- [x] Ender pearl blocks
+- [x] ESDs
+- [x] Fishing nets
+- [x] Solar panels
+- [X] Item repairers
+- [x] Knife (food can just be crafted normally)
+- [X] Black lotuses and black dye
+- [x] Chest to storage crate upgrade (makes little sense with the way they are being changed), keep the other ones though
+- [x] Ring of liquid banning
+- [x] Emerald and obsidian armor and tools
+- [x] Black quartz armor and tools
+- [x] Crystal armor and tools (why did I ever make this)
+- [x] Resonant rice (this was an in-joke a long time ago)
+- [x] Jam villager and jams
+- [x] Potion rings
+- [x] Fur balls
+- [x] The food (except for stuff used elsewhere like the coffee)
+- [x] The weird rainbow colored item names, except for the crystals which should keep their color-matching names
+- [X] Storage crates
+
+# Change
+- [ ] Make crystal clusters spawn in amethyst nodes in 1.18, leave unused in 1.16 (same with crystal shards)
+- [ ] Possibly make the bio reactor generate more CF, but with the same mechanics
+- [ ] Improve the UI of the firework box (it's missing the gradient background, and it should also have a texture)
+- [ ] Make fluid laser relays have a reasonable cap (maybe 2048mb per tick or something? Possibly check other mods for reference)
+- [ ] Change "whitelist" and "blacklist" in item filters to "allow" and "deny" or something similar
+- [ ] Change the recipe for the XP solidifier so that it's craftable even with solidified XP removed from mobs
+- [ ] Add off-hand slots to energizer and enervator
+- [x] Change the recipe of casings (the lava factory ones) to give only 4, and rename them to "Lava Factory Casing"
+- [x] Make coal generator create half as much CF, we don't want this to be a main power source for people( Flanks: already dropped to 20fe/t)
+- [x] Make black quartz drop the items directly, unless silk-touched
+- [ ] Rename powered furnace to double powered furnace and add a second block which is a single powered furnace, make recipes work similarly to crusher and double crusher
+- [ ] Make greenhouse glass less OP and potentially more difficult to craft
+- [ ] Improve the coffee maker's ui by putting the water meter actually into the ui
+- [x] Rename phantom boosters to range boosters (since they work for other stuff too)
+- [x] Make worms use that new forge event/hook to keep the ground watered instead of trying to re-water it every few ticks
+- [x] Give ender star an enchantment glint
+- [ ] Make miner lens far more expensive to use, mmm power creep
+- [x] Make coffee beans and seeds be the same item or I might get killed by someone finally
+
+# Keep As Is
+- [X] Battery box
+- [x] Item interfaces and item laser system
+- [x] Farmer
+- [x] Empowerer and display stands
+- [x] Tiny torch
+- [x] Shock absorber
+- [x] Player interface
+- [x] Vertical digger
+- [x] Atomic reconstructor
+- [x] Ranged collector
+- [x] Breakers, placers and long-range breakers, as well as fluid variants
+- [x] Leaf-eating generator
+- [ ] Lamps and lamp controller
+- [x] Lava factory controller
+- [x] The entire canola system
+- [x] Phantomfaces and their variants
+- [x] Feeder
+- [x] Crusher and double crusher
+- [x] Heat collectors
+- [x] Precision dropper
+- [x] Engineer's goggles
+- [ ] Laser relay modifiers and wrench
+- [x] Handheld filler
+- [x] Sacks
+- [x] Player probe
+- [x] Item filter
+- [x] Water bowl
+- [x] Tiny coal and charcoal
+- [x] Rice slimeballs
+- [ ] Storage crate keeper
+- [x] Color, detonation, certain death, killer and disenchanting lenses
+- [ ] Storage crate upgrades, except for the "chest to storage crate" one
+- [x] Ring of growth
+- [x] Ring of magnetization
+- [x] Teleport staff
+- [ ] Wings of the Bats and wing items dropped from bats
+- [x] Drills and drill upgrades
+- [x] Batteries
+- [x] Crafting table on a stick
+- [x] Leaf blowers
+- [ ] The book
+- [x] The Crystal Flux name and rainbow effect
+- [x] Engineer's village house and engineer villager

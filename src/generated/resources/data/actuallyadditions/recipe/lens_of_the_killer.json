@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_sword"
+    },
+    {
+      "item": "actuallyadditions:lens_of_certain_death"
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:components",
+      "items": "minecraft:enchanted_book",
+      "components": {
+        "minecraft:stored_enchantments": {
+          "minecraft:sharpness": 5
+        }
+      },
+      "strict": false
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "actuallyadditions:lens_of_the_killer"
+  }
+}

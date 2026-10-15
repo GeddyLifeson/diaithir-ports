@@ -1,0 +1,215 @@
+/*
+ * This file ("DefaultFarmerBehavior.java") is part of the Actually Additions mod for Minecraft.
+ * It is created and owned by Ellpeck and distributed
+ * under the Actually Additions License to be found at
+ * http://ellpeck.de/actaddlicense
+ * View the source code at https://github.com/Ellpeck/ActuallyAdditions
+ *
+ * © 2015-2017 Ellpeck
+ */
+
+package de.ellpeck.actuallyadditions.mod.misc.apiimpl.farmer;
+
+import de.ellpeck.actuallyadditions.api.farmer.FarmerResult;
+import de.ellpeck.actuallyadditions.api.farmer.IFarmerBehavior;
+import de.ellpeck.actuallyadditions.api.internal.IFarmer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.SpecialPlantable;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DefaultFarmerBehavior implements IFarmerBehavior {
+
+    public static boolean defaultPlant(Level world, BlockPos pos, BlockState toPlant, IFarmer farmer, int use) {
+        if (toPlant != null) {
+            BlockPos farmland = pos.below();
+            BlockState targetBlockstate = world.getBlockState(farmland);
+            if (!(targetBlockstate.getBlock() instanceof FarmlandBlock) && (targetBlockstate.is(BlockTags.DIRT) || targetBlockstate.is(Blocks.GRASS_BLOCK))) {
+                world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+                useHoeAt(world, farmland);
+                world.playSound(null, farmland, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                farmer.extractEnergy(use);
+            }
+
+            if (tryPlant(toPlant, world, pos)) {
+                farmer.extractEnergy(use);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean tryPlant(BlockState toPlant, Level world, BlockPos pos) {
+        if (toPlant.canSurvive(world, pos)) {
+            SoundType sound = toPlant.getSoundType(world, pos, null);
+            world.setBlockAndUpdate(pos, toPlant);
+            world.playSound(null, pos, sound.getPlaceSound(), SoundSource.BLOCKS, (sound.getVolume() + 1.0F) / 2.0F, sound.getPitch() * 0.8F);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public FarmerResult tryPlantSeed(ItemStack seed, Level world, BlockPos pos, IFarmer farmer) {
+        int use = 350;
+        if (farmer.getEnergy() >= use * 2) {
+            var plantable = getSpecialPlantable(seed); //TODO: Should figure out what else to call in here (Farmland stuff etc)
+            if (plantable != null && plantable.canPlacePlantAtPosition(seed, world, pos, Direction.DOWN)) {
+                plantable.spawnPlantAtPosition(seed, world, pos, Direction.DOWN);
+                farmer.extractEnergy(use);
+                return FarmerResult.SUCCESS;
+            } else {
+                if (isPlantable(seed)) {
+                    if (defaultPlant(world, pos, ((BlockItem)seed.getItem()).getBlock().defaultBlockState(), farmer, use)) {
+                        return FarmerResult.SUCCESS;
+                    }
+                }
+            }
+        }
+        return FarmerResult.FAIL;
+    }
+
+    private boolean isPlantable(ItemStack seed) {
+        if (seed.is(Tags.Items.SEEDS)  && seed.getItem() instanceof BlockItem) {
+            return true;
+        } else return seed.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof CropBlock;
+    }
+
+    @Override
+    public FarmerResult tryHarvestPlant(ServerLevel world, BlockPos pos, IFarmer farmer) {
+        int use = 250;
+        if (farmer.getEnergy() >= use) {
+            BlockState state = world.getBlockState(pos);
+            Block block = state.getBlock();
+
+            if (block instanceof CropBlock) {
+                if (((CropBlock) block).isMaxAge(state)) {
+                    return this.doFarmerStuff(state, world, pos, farmer);
+                }
+            }
+            else if (state.hasProperty(BlockStateProperties.AGE_7)) {
+                if (state.getValue(BlockStateProperties.AGE_7) >= 7 && !(block instanceof StemBlock)) {
+                    return this.doFarmerStuff(state, world, pos, farmer);
+                }
+            }
+        }
+        return FarmerResult.FAIL;
+    }
+
+    private FarmerResult doFarmerStuff(BlockState state, ServerLevel serverLevel, BlockPos pos, IFarmer farmer) {
+        List<ItemStack> seeds = new ArrayList<>();
+        List<ItemStack> other = new ArrayList<>();
+        List<ItemStack> drops = state.getDrops((new LootParams.Builder(serverLevel))
+                .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
+                .withParameter(LootContextParams.TOOL, ItemStack.EMPTY));
+        if (drops.isEmpty())
+            return FarmerResult.FAIL;
+        for (ItemStack stack : drops) {
+            if (this.getSpecialPlantable(stack) != null || isPlantable(stack)) {
+                seeds.add(stack);
+            } else {
+                other.add(stack);
+            }
+        }
+
+        boolean addSeeds = true;
+        if (!farmer.canAddToSeeds(seeds)) {
+            other.addAll(seeds);
+            addSeeds = false;
+        }
+
+        if (farmer.canAddToOutput(other)) {
+            farmer.addToOutput(other);
+
+            if (addSeeds) {
+                farmer.addToSeeds(seeds);
+            }
+
+            serverLevel.levelEvent(2001, pos, Block.getId(state));
+            serverLevel.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+
+            farmer.extractEnergy(250);
+            return FarmerResult.SUCCESS;
+        }
+        return FarmerResult.FAIL;
+    }
+
+    @Override
+    public int getPriority() {
+        return 0;
+    }
+
+    private SpecialPlantable getSpecialPlantable(ItemStack stack) {
+        Item item = stack.getItem();
+        if (item instanceof SpecialPlantable plantable) {
+            return plantable;
+        } else if (item instanceof BlockItem) {
+            Block block = Block.byItem(item);
+            if (block instanceof SpecialPlantable plantable) {
+                return plantable;
+            }
+        }
+        return null;
+    }
+
+    private static ItemStack hoe = ItemStack.EMPTY;
+
+    private static ItemStack getHoeStack() {
+        if (hoe.isEmpty()) {
+            hoe = new ItemStack(Items.DIAMOND_HOE);
+        }
+        return hoe;
+    }
+
+    public static InteractionResult useHoeAt(Level world, BlockPos pos) {
+
+        Player player = FakePlayerFactory.getMinecraft((ServerLevel) world); //TODO we need our own fakeplayer for the mod.
+
+        ItemStack itemstack = getHoeStack();
+
+        if (!player.mayUseItemAt(pos.relative(Direction.UP), Direction.UP, itemstack)) { //TODO this does nothing. -Flanks
+            return InteractionResult.FAIL;
+        } else {
+//            UseOnContext dummyContext = new UseOnContext(world, player, InteractionHand.MAIN_HAND, itemstack, new BlockHitResult(new Vec3(0.5, 0.5, 0.5), Direction.UP, pos, false));
+//            int hook = net.minecraftforge.event.ForgeEventFactory.onHoeUse(dummyContext);
+//            if (hook != 0) {
+//                return hook > 0
+//                    ? InteractionResult.SUCCESS
+//                    : InteractionResult.FAIL;
+//            } TODO: Fire event for hoe use?
+
+            if (world.isEmptyBlock(pos.above())) {
+                BlockState state = world.getBlockState(pos);
+                UseOnContext context = new UseOnContext(world, player, InteractionHand.MAIN_HAND, itemstack, new BlockHitResult(new Vec3(0.5, 0.5, 0.5), Direction.UP, pos, false));
+                if (state.is(Blocks.GRASS_BLOCK) || state.is(Blocks.DIRT_PATH) || state.is(BlockTags.DIRT)) {
+                    return itemstack.useOn(context);
+                }
+            }
+            return InteractionResult.PASS;
+        }
+    }
+}

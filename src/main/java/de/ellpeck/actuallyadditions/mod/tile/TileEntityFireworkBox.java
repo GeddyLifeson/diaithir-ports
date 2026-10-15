@@ -1,0 +1,307 @@
+/*
+ * This file ("TileEntityFireworkBox.java") is part of the Actually Additions mod for Minecraft.
+ * It is created and owned by Ellpeck and distributed
+ * under the Actually Additions License to be found at
+ * http://ellpeck.de/actaddlicense
+ * View the source code at https://github.com/Ellpeck/ActuallyAdditions
+ *
+ * © 2015-2017 Ellpeck
+ */
+
+package de.ellpeck.actuallyadditions.mod.tile;
+
+import net.neoforged.neoforge.transfer.energy.EnergyHandler;
+
+import de.ellpeck.actuallyadditions.mod.blocks.ActuallyBlocks;
+import de.ellpeck.actuallyadditions.mod.inventory.ContainerFireworkBox;
+import de.ellpeck.actuallyadditions.mod.network.gui.INumberReactor;
+import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
+import net.minecraft.util.random.WeightedRandom;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.FireworkRocketEntity;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.FireworkExplosion;
+import net.minecraft.world.item.component.Fireworks;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.energy.IEnergyStorage;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TileEntityFireworkBox extends TileEntityBase implements IEnergyDisplay, INumberReactor, MenuProvider {
+
+    public static final int USE_PER_SHOT = 500;
+    public final CustomEnergyStorage storage = new CustomEnergyStorage(20000, 200, 0);
+    public int intValuePlay = 2;
+    public int chargeAmount = 2;
+    public int flightTime = 2;
+    public float trailOrFlickerChance = 0.65F;
+    public float flickerChance = 0.25F;
+    public int colorAmount = 3;
+    public float typeChance0 = 1F;
+    public float typeChance1 = 0F;
+    public float typeChance2 = 0F;
+    public float typeChance3 = 0F;
+    public float typeChance4 = 0F;
+    public int areaOfEffect = 2;
+    private int timeUntilNextFirework;
+    private int oldEnergy;
+
+    public TileEntityFireworkBox(BlockPos pos, BlockState state) {
+        super(ActuallyBlocks.FIREWORK_BOX.getTileEntityType(), pos, state);
+    }
+
+    @Override
+    public void writeSyncableNBT(CompoundTag compound, HolderLookup.Provider lookupProvider, NBTType type) {
+        super.writeSyncableNBT(compound, lookupProvider, type);
+        this.storage.writeToNBT(compound);
+
+        if (type != NBTType.SAVE_BLOCK) {
+            compound.putInt("Play", this.intValuePlay);
+            compound.putInt("ChargeAmount", this.chargeAmount);
+            compound.putInt("FlightTime", this.flightTime);
+            compound.putFloat("TrailFlickerChance", this.trailOrFlickerChance);
+            compound.putFloat("FlickerChance", this.flickerChance);
+            compound.putInt("ColorAmount", this.colorAmount);
+            compound.putFloat("TypeChance0", this.typeChance0);
+            compound.putFloat("TypeChance1", this.typeChance1);
+            compound.putFloat("TypeChance2", this.typeChance2);
+            compound.putFloat("TypeChance3", this.typeChance3);
+            compound.putFloat("TypeChance4", this.typeChance4);
+            compound.putInt("Area", this.areaOfEffect);
+        }
+    }
+
+    @Override
+    public void readSyncableNBT(CompoundTag compound, HolderLookup.Provider lookupProvider, NBTType type) {
+        super.readSyncableNBT(compound, lookupProvider, type);
+        this.storage.readFromNBT(compound);
+
+        if (type != NBTType.SAVE_BLOCK) {
+            this.intValuePlay = compound.getIntOr("Play", 0);
+            this.chargeAmount = compound.getIntOr("ChargeAmount", 0);
+            this.flightTime = compound.getIntOr("FlightTime", 0);
+            this.trailOrFlickerChance = compound.getFloatOr("TrailFlickerChance", 0f);
+            this.flickerChance = compound.getFloatOr("FlickerChance", 0f);
+            this.colorAmount = compound.getIntOr("ColorAmount", 0);
+            this.typeChance0 = compound.getFloatOr("TypeChance0", 0f);
+            this.typeChance1 = compound.getFloatOr("TypeChance1", 0f);
+            this.typeChance2 = compound.getFloatOr("TypeChance2", 0f);
+            this.typeChance3 = compound.getFloatOr("TypeChance3", 0f);
+            this.typeChance4 = compound.getFloatOr("TypeChance4", 0f);
+            this.areaOfEffect = compound.getIntOr("Area", 0);
+        }
+    }
+
+    @Override
+    public void onNumberReceived(double number, int id, Player player) {
+        switch (id) {
+            case 0:
+                this.intValuePlay = (int) number;
+                break;
+            case 1:
+                this.chargeAmount = (int) number;
+                break;
+            case 2:
+                this.flightTime = (int) number;
+                break;
+            case 3:
+                this.trailOrFlickerChance = (float) number;
+                break;
+            case 4:
+                this.flickerChance = (float) number;
+                break;
+            case 5:
+                this.colorAmount = (int) number;
+                break;
+            case 6:
+                this.typeChance0 = (float) number;
+                break;
+            case 7:
+                this.typeChance1 = (float) number;
+                break;
+            case 8:
+                this.typeChance2 = (float) number;
+                break;
+            case 9:
+                this.typeChance3 = (float) number;
+                break;
+            case 10:
+                this.typeChance4 = (float) number;
+                break;
+            case 11:
+                this.areaOfEffect = (int) number;
+                break;
+        }
+
+        this.setChanged();
+        this.sendUpdate();
+    }
+
+    public void spawnFireworks(Level world, double x, double y, double z) {
+        ItemStack firework = this.makeFirework();
+
+        double newX = x + this.getRandomAoe();
+        double newZ = z + this.getRandomAoe();
+
+        if (world.hasChunkAt(BlockPos.containing(newX, y, newZ))) {
+            FireworkRocketEntity rocket = new FireworkRocketEntity(world, newX, y + 1, newZ, firework);
+            world.addFreshEntity(rocket);
+        }
+    }
+
+    private double getRandomAoe() {
+        if (this.areaOfEffect <= 0) {
+            return 0.5;
+        } else {
+            return Mth.nextDouble(this.level.getRandom(), 0, this.areaOfEffect * 2) - this.areaOfEffect;
+        }
+    }
+
+    private ItemStack makeFirework() {
+        List<FireworkExplosion> explosions = new ArrayList<>();
+        for (int i = 0; i < this.getRandomWithPlay(this.chargeAmount); i++) {
+            explosions.add(this.makeFireworkCharge());
+        }
+
+        ItemStack firework = new ItemStack(Items.FIREWORK_ROCKET);
+        Fireworks fireworks = new Fireworks(1, explosions);
+        firework.set(DataComponents.FIREWORKS, fireworks);
+
+        return firework;
+    }
+
+    private FireworkExplosion makeFireworkCharge() {
+        boolean flicker = false;
+        boolean trail = false;
+
+        if (this.level.getRandom().nextFloat() <= this.trailOrFlickerChance) {
+            if (this.level.getRandom().nextFloat() <= this.flickerChance) {
+                flicker = true;
+            } else {
+                trail = true;
+            }
+        }
+
+        // TODO: [port] Validate this is the correct way to get colors
+        int[] colors = new int[this.getRandomWithPlay(this.colorAmount)];
+        for (int i = 0; i < colors.length; i++) {
+            colors[i] = DyeColor.values()[this.level.getRandom().nextInt(DyeColor.values().length)].getFireworkColor();
+        }
+
+        return new FireworkExplosion(FireworkExplosion.Shape.byId((byte) this.getRandomType()), IntList.of(colors), IntList.of(), trail, flicker);
+    }
+
+    private int getRandomWithPlay(int value) {
+        return Mth.clamp(Mth.nextInt(this.level.getRandom(), value - this.intValuePlay, value + this.intValuePlay), 1, 6);
+    }
+
+    private int getRandomType() {
+        List<WeightedFireworkType> possible = new ArrayList<>();
+
+        possible.add(new WeightedFireworkType(0, this.typeChance0));
+        possible.add(new WeightedFireworkType(1, this.typeChance1));
+        possible.add(new WeightedFireworkType(2, this.typeChance2));
+        possible.add(new WeightedFireworkType(3, this.typeChance3));
+        possible.add(new WeightedFireworkType(4, this.typeChance4));
+
+        int weight = WeightedRandom.getTotalWeight(possible, t -> t.weight);
+        if (weight <= 0) {
+            return 0;
+        } else {
+            return WeightedRandom.getRandomItem(this.level.getRandom(), possible, weight, t -> t.weight).map(weightedFireworkType -> weightedFireworkType.type).orElse(0);
+        }
+    }
+
+    public static <T extends BlockEntity> void clientTick(Level level, BlockPos pos, BlockState state, T t) {
+        if (t instanceof TileEntityFireworkBox tile) {
+            tile.clientTick();
+        }
+    }
+
+    public static <T extends BlockEntity> void serverTick(Level level, BlockPos pos, BlockState state, T t) {
+        if (t instanceof TileEntityFireworkBox tile) {
+            tile.serverTick();
+
+            if (!tile.isRedstonePowered && !tile.isPulseMode) {
+                if (tile.timeUntilNextFirework > 0) {
+                    tile.timeUntilNextFirework--;
+                    if (tile.timeUntilNextFirework <= 0) {
+                        tile.doWork();
+                    }
+                } else {
+                    tile.timeUntilNextFirework = 100;
+                }
+            }
+
+            if (tile.oldEnergy != tile.storage.getEnergyStored() && tile.sendUpdateWithInterval()) {
+                tile.oldEnergy = tile.storage.getEnergyStored();
+            }
+        }
+    }
+
+    private void doWork() {
+        if (this.storage.getEnergyStored() >= USE_PER_SHOT) {
+            this.spawnFireworks(this.level, this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ());
+
+            this.storage.extractEnergyInternal(USE_PER_SHOT, false);
+        }
+    }
+
+    @Override
+    public boolean isRedstoneToggle() {
+        return true;
+    }
+
+    @Override
+    public void activateOnPulse() {
+        this.doWork();
+    }
+
+    @Override
+    public CustomEnergyStorage getEnergyStorage() {
+        return this.storage;
+    }
+
+    @Override
+    public boolean needsHoldShift() {
+        return false;
+    }
+
+    @Override
+    public EnergyHandler getEnergyStorage(Direction facing) {
+        return this.storage;
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("container.actuallyadditions.fireworkBox");
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player p_createMenu_3_) {
+        return new ContainerFireworkBox(windowId, playerInventory, this);
+    }
+
+    private record WeightedFireworkType(int type, int weight) {
+        WeightedFireworkType(int type, float chance) {
+            this(type, (int) (chance * 100F));
+        }
+    }
+}

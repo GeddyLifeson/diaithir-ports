@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "powah"
+    }
+  ],
+  "type": "actuallyadditions:mining_lens",
+  "ingredient": {
+    "tag": "actuallyadditions:stone_ore_replaceables"
+  },
+  "result": {
+    "count": 1,
+    "id": "powah:uraninite_ore"
+  },
+  "weight": 200
+}

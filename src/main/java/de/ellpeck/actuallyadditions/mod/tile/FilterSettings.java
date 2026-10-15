@@ -1,0 +1,237 @@
+/*
+ * This file ("FilterSettings.java") is part of the Actually Additions mod for Minecraft.
+ * It is created and owned by Ellpeck and distributed
+ * under the Actually Additions License to be found at
+ * http://ellpeck.de/actaddlicense
+ * View the source code at https://github.com/Ellpeck/ActuallyAdditions
+ *
+ * © 2015-2017 Ellpeck
+ */
+
+package de.ellpeck.actuallyadditions.mod.tile;
+
+import de.ellpeck.actuallyadditions.mod.util.ValueIoNbt;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import de.ellpeck.actuallyadditions.mod.components.ActuallyComponents;
+import de.ellpeck.actuallyadditions.mod.inventory.ContainerFilter;
+import de.ellpeck.actuallyadditions.mod.inventory.slot.SlotFilter;
+import de.ellpeck.actuallyadditions.mod.items.DrillItem;
+import de.ellpeck.actuallyadditions.mod.items.ItemTag;
+import de.ellpeck.actuallyadditions.mod.util.ItemStackHandlerAA;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
+
+public class FilterSettings {
+
+    public final ItemStackHandlerAA filterInventory;
+    public boolean isWhitelist;
+    public boolean respectMod;
+    public boolean matchDamage;
+    public boolean matchNBT;
+    private boolean lastWhitelist;
+    private boolean lastRespectMod;
+    private boolean lastMatchDamage;
+    private boolean lastMatchNBT;
+
+    public static final Codec<FilterSettings> CODEC = RecordCodecBuilder.create($ -> $.group(
+            Codec.INT.fieldOf("slots").forGetter(fs -> fs.filterInventory.getSlots()),
+            Codec.INT.fieldOf("settings").forGetter(FilterSettings::getPackedSettings),
+            ItemStackHandlerAA.CODEC.fieldOf("contents").forGetter(fs -> fs.filterInventory)
+    ).apply($, FilterSettings::of));
+
+    public static final StreamCodec<RegistryFriendlyByteBuf, FilterSettings> STREAM_CODEC = StreamCodec.composite(
+            ByteBufCodecs.INT, $ -> $.filterInventory.getSlots(),
+            ByteBufCodecs.INT, FilterSettings::getPackedSettings,
+            ItemStackHandlerAA.STREAM_CODEC, $ -> $.filterInventory,
+            FilterSettings::of);
+
+    public enum Buttons {
+        WHITELIST,
+        MOD,
+        DAMAGE,
+        NBT
+    }
+
+    public FilterSettings(int slots, boolean defaultWhitelist, boolean defaultRespectMod, boolean defaultMatchDamage, boolean defaultMatchNBT) {
+        this.filterInventory = new ItemStackHandlerAA(slots) {
+            @Override
+            protected void onContentsChanged(int slot) {
+                super.onContentsChanged(slot);
+                FilterSettings.this.onContentsChanged();
+            }
+        };
+
+        this.isWhitelist = defaultWhitelist;
+        this.respectMod = defaultRespectMod;
+        this.matchDamage = defaultMatchDamage;
+        this.matchNBT = defaultMatchNBT;
+    }
+
+    public FilterSettings(int slots, int packedSettings) {
+        this(slots, (packedSettings & 1) != 0, (packedSettings & 2) != 0, (packedSettings & 4) != 0, (packedSettings & 8) != 0);
+    }
+
+    public static FilterSettings of(int slots, int packedSettings, ItemStackHandlerAA contents) {
+        FilterSettings settings = new FilterSettings(slots, packedSettings);
+        for (int i = 0; i < slots; i++) {
+            settings.filterInventory.setStackInSlot(i, i < contents.getSlots()? contents.getStackInSlot(i): ItemStack.EMPTY);
+        }
+        return settings;
+    }
+
+    public List<ItemStack> getStacks() {
+        return this.filterInventory.getItems();
+    }
+
+    public int getPackedSettings() {
+        return (this.isWhitelist? 1 : 0) | (this.respectMod? 2 : 0) | (this.matchDamage? 4 : 0) | (this.matchNBT? 8 : 0);
+    }
+
+    public void onContentsChanged() {}
+
+    public static boolean check(ItemStack stack, ItemStackHandlerAA filter, boolean whitelist, boolean mod, boolean damage, boolean nbt) {
+        if (!stack.isEmpty()) {
+            for (int i = 0; i < filter.getSlots(); i++) {
+                ItemStack slot = filter.getStackInSlot(i);
+
+                if (!slot.isEmpty()) {
+                    if (SlotFilter.isFilter(slot)) {
+                        ItemStackHandlerAA inv = new ItemStackHandlerAA(ContainerFilter.SLOT_AMOUNT);
+                        DrillItem.loadSlotsFromNBT(inv, slot);
+                        for (int k = 0; k < inv.getSlots(); k++) {
+                            ItemStack filterSlot = inv.getStackInSlot(k);
+                            if (!filterSlot.isEmpty() && areEqualEnough(filterSlot, stack, mod, damage, nbt)) {
+                                return whitelist;
+                            }
+                        }
+                    }
+                    else if (slot.getItem() instanceof ItemTag) {
+                        var tagLocation = slot.get(ActuallyComponents.ITEM_TAG);
+                        if (tagLocation != null) {
+                            var tag = TagKey.create(Registries.ITEM,tagLocation);
+                            if (stack.is(tag)) {
+                                return whitelist;
+                            }
+                        }
+                    }
+                    else if (areEqualEnough(slot, stack, mod, damage, nbt)) {
+                        return whitelist;
+                    }
+                }
+            }
+        }
+        return !whitelist;
+    }
+
+    private static boolean areEqualEnough(ItemStack first, ItemStack second, boolean mod, boolean damage, boolean nbt) {
+        if (mod)
+            return checkMod(first, second) && checkDamage(first, second, damage);
+
+        return checkItem(first, second, nbt) && checkDamage(first, second, damage);
+    }
+
+    public static boolean checkDamage(ItemStack first, ItemStack second, boolean damage) {
+        return !damage || first.getDamageValue() == second.getDamageValue();
+    }
+
+    public static boolean checkItem(ItemStack first, ItemStack second, boolean nbt) {
+        return nbt? ItemStack.isSameItemSameComponents(first, second) : ItemStack.isSameItem(first, second);
+    }
+
+    public static boolean checkMod(ItemStack first, ItemStack second) {
+        return BuiltInRegistries.ITEM.getKey(first.getItem()).getNamespace().equals(BuiltInRegistries.ITEM.getKey(second.getItem()).getNamespace());
+    }
+
+    public void writeToNBT(HolderLookup.Provider provider, CompoundTag tag, String name) {
+        CompoundTag compound = new CompoundTag();
+        compound.putBoolean("Whitelist", this.isWhitelist);
+        compound.putBoolean("Mod", this.respectMod);
+        compound.putBoolean("Damage", this.matchDamage);
+        compound.putBoolean("NBT", this.matchNBT);
+        compound.put("Items", ValueIoNbt.save(filterInventory, provider));
+        tag.put(name, compound);
+    }
+
+    public void readFromNBT(HolderLookup.Provider provider, CompoundTag tag, String name) {
+        CompoundTag compound = tag.getCompoundOrEmpty(name);
+        this.isWhitelist = compound.getBooleanOr("Whitelist", false);
+        this.respectMod = compound.getBooleanOr("Mod", false);
+        this.matchDamage = compound.getBooleanOr("Damage", false);
+        this.matchNBT = compound.getBooleanOr("NBT", false);
+        ValueIoNbt.load(this.filterInventory, provider, compound.getCompoundOrEmpty("Items"));
+    }
+
+    public boolean needsUpdateSend() {
+        return this.lastWhitelist != this.isWhitelist || this.lastRespectMod != this.respectMod || this.lastMatchDamage != this.matchDamage || this.lastMatchNBT != this.matchNBT;
+    }
+
+    public void updateLasts() {
+        this.lastWhitelist = this.isWhitelist;
+        this.lastRespectMod = this.respectMod;
+        this.lastMatchDamage = this.matchDamage;
+        this.lastMatchNBT = this.matchNBT;
+    }
+
+    public void onButtonPressed(int id) {
+        if (id == Buttons.WHITELIST.ordinal()) {
+            this.isWhitelist = !this.isWhitelist;
+        } else if (id == Buttons.MOD.ordinal()) {
+            this.respectMod = !this.respectMod;
+        } else if (id == Buttons.DAMAGE.ordinal()) {
+            this.matchDamage = !this.matchDamage;
+        } else if (id == Buttons.NBT.ordinal()) {
+            this.matchNBT = !this.matchNBT;
+        }
+    }
+
+    public boolean check(ItemStack stack) {
+        return !this.needsCheck() || check(stack, this.filterInventory, this.isWhitelist, this.respectMod, this.matchDamage, this.matchNBT);
+    }
+
+    public boolean needsCheck() {
+        for (int i = 0; i < this.filterInventory.getSlots(); i++) {
+            if (!this.filterInventory.getStackInSlot(i).isEmpty()) {
+                return true;
+            }
+        }
+        return this.isWhitelist;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        } else {
+            if (o instanceof FilterSettings filter) {
+                if (isWhitelist != filter.isWhitelist || respectMod != filter.respectMod || matchDamage != filter.matchDamage || matchNBT != filter.matchNBT) {
+                    return false;
+                }
+                return ItemStack.listMatches(this.filterInventory.getItems(), filter.filterInventory.getItems());
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = getPackedSettings();
+
+        for (ItemStack stack : this.filterInventory.getItems()) {
+            hash = 31 * hash + stack.hashCode();
+        }
+
+        return hash;
+    }
+}

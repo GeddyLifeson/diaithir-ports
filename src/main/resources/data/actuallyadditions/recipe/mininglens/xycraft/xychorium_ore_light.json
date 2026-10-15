@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "xycraft_world"
+    }
+  ],
+  "type": "actuallyadditions:mining_lens",
+  "ingredient": {
+    "tag": "actuallyadditions:stone_ore_replaceables"
+  },
+  "result": {
+    "count": 1,
+    "id": "xycraft_world:xychorium_ore_stone_light"
+  },
+  "weight": 300
+}
