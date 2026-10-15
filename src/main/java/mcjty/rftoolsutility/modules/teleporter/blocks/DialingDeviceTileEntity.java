@@ -1,0 +1,345 @@
+package mcjty.rftoolsutility.modules.teleporter.blocks;
+
+import net.minecraft.core.component.DataComponentGetter;
+
+import mcjty.lib.api.container.DefaultContainerProvider;
+import mcjty.lib.api.infusable.DefaultInfusable;
+import mcjty.lib.api.infusable.IInfusable;
+import mcjty.lib.blockcommands.Command;
+import mcjty.lib.blockcommands.ListCommand;
+import mcjty.lib.blockcommands.ResultCommand;
+import mcjty.lib.blockcommands.ServerCommand;
+import mcjty.lib.container.GenericContainer;
+import mcjty.lib.tileentity.Cap;
+import mcjty.lib.tileentity.CapType;
+import mcjty.lib.tileentity.GenericEnergyStorage;
+import mcjty.lib.tileentity.GenericTileEntity;
+import mcjty.lib.typed.Key;
+import mcjty.lib.typed.Type;
+import mcjty.lib.typed.TypedMap;
+import mcjty.lib.varia.LevelTools;
+import mcjty.lib.varia.OrientationTools;
+import mcjty.rftoolsutility.compat.RFToolsDimCompat;
+import mcjty.rftoolsutility.modules.teleporter.TeleportConfiguration;
+import mcjty.rftoolsutility.modules.teleporter.TeleportationTools;
+import mcjty.rftoolsutility.modules.teleporter.TeleporterModule;
+import mcjty.rftoolsutility.modules.teleporter.client.GuiDialingDevice;
+import mcjty.rftoolsutility.modules.teleporter.data.*;
+import mcjty.rftoolsutility.playerprops.FavoriteDestinationsProperties;
+import mcjty.rftoolsutility.playerprops.PlayerExtendedProperties;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.GlobalPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
+
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.function.Function;
+
+import static mcjty.lib.api.container.DefaultContainerProvider.empty;
+import static mcjty.rftoolsutility.modules.teleporter.TeleporterModule.CONTAINER_DIALING_DEVICE;
+
+public class DialingDeviceTileEntity extends GenericTileEntity {
+
+    public static final Key<Integer> PARAM_STATUS = new Key<>("status", Type.INTEGER);
+
+//    public static final String CMD_CHECKSTATUS = "checkStatus";
+    public static final int DIAL_RECEIVER_BLOCKED_MASK = 0x1;       // One value for blocked or not on receiver side
+    public static final int DIAL_TRANSMITTER_BLOCKED_MASK = 0x2;    // One value for blocked or not on transmitter side
+    public static final int DIAL_INVALID_DESTINATION_MASK = 0x4;    // The destination is somehow invalid
+    public static final int DIAL_DIALER_POWER_LOW_MASK = 0x8;       // The dialer itself is low on power
+    public static final int DIAL_RECEIVER_POWER_LOW_MASK = 0x10;    // The receiver is low on power
+    public static final int DIAL_TRANSMITTER_NOACCESS = 0x20;       // No access to transmitter
+    public static final int DIAL_RECEIVER_NOACCESS = 0x40;          // No access to receiver
+    public static final int DIAL_INTERRUPTED = 0x80;                // The dial was interrupted
+    public static final int DIAL_INVALID_SOURCE_MASK = 0x100;       // The source is somehow invalid
+    public static final int DIAL_DIMENSION_POWER_LOW_MASK = 0x200;  // The destination dimension is low on power
+    public static final int DIAL_INVALID_TRANSMITTER = 0x400;       // The transmitter is gone!
+    public static final int DIAL_OK = 0;                            // All is ok
+    public static final String COMPONENT_NAME = "dialing_device";
+
+    private final GenericEnergyStorage energyStorage = new GenericEnergyStorage(this, true, TeleportConfiguration.DIALER_MAXENERGY.get(), TeleportConfiguration.DIALER_RECEIVEPERTICK.get());
+    @Cap(type = CapType.ENERGY)
+    private static final Function<DialingDeviceTileEntity, GenericEnergyStorage> ENERGY_CAP = tile -> tile.energyStorage;
+
+    @Cap(type = CapType.CONTAINER)
+    private static final Function<DialingDeviceTileEntity, MenuProvider> screenHandler = tile -> new DefaultContainerProvider<GenericContainer>("Dialing Device")
+            .containerSupplier(empty(CONTAINER_DIALING_DEVICE, tile))
+            .energyHandler(() -> tile.energyStorage)
+            .setupSync(tile);
+
+    private final DefaultInfusable infusable = new DefaultInfusable(DialingDeviceTileEntity.this);
+    @Cap(type = CapType.INFUSABLE)
+    private static final Function<DialingDeviceTileEntity, IInfusable> INFUSABLE_CAP = tile -> tile.infusable;
+
+    public DialingDeviceTileEntity(BlockPos pos, BlockState state) {
+        super(TeleporterModule.DIALING_DEVICE.be().get(), pos, state);
+    }
+
+    /**
+     * Calculate the distance (in string form) between a transmitter and receiver.
+     * @return the distance or else 'dimension warp' in case it is another dimension.
+     */
+    public static String calculateDistance(Level world, TransmitterInfo transmitterInfo, TeleportDestination teleportDestination) {
+        if (!world.dimension().equals(teleportDestination.getDimension())) {
+            return "dimension warp";
+        } else {
+            BlockPos c1 = transmitterInfo.getCoordinate();
+            BlockPos c2 = teleportDestination.getCoordinate();
+            double dist = new Vec3(c1.getX(), c1.getY(), c1.getZ()).distanceTo(new Vec3(c2.getX(), c2.getY(), c2.getZ()));
+            return Integer.toString((int) dist);
+        }
+    }
+
+    public static boolean isMatterBoosterAvailable(Level world, BlockPos pos) {
+        for (Direction facing : OrientationTools.DIRECTION_VALUES) {
+            if (TeleporterModule.MATTER_BOOSTER.get().equals(world.getBlockState(pos.relative(facing)).getBlock())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static boolean isDestinationAnalyzerAvailable(Level world, BlockPos pos) {
+        for (Direction facing : OrientationTools.DIRECTION_VALUES) {
+            if (TeleporterModule.DESTINATION_ANALYZER.get().equals(world.getBlockState(pos.relative(facing)).getBlock())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public DefaultInfusable getInfusable() {
+        return infusable;
+    }
+
+    public boolean isShowOnlyFavorites() {
+        return getData(TeleporterModule.DIALINGDEVICE_DATA).showFav();
+    }
+
+    public void setShowOnlyFavorites(boolean showOnlyFavorites) {
+        DialingDeviceData data = getData(TeleporterModule.DIALINGDEVICE_DATA);
+        data = data.withShowFav(showOnlyFavorites);
+        setData(TeleporterModule.DIALINGDEVICE_DATA, data);
+    }
+
+    @Override
+    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadAdditional(tag, provider);
+        energyStorage.load(tag, "energy", provider);
+        infusable.load(tag, "infusable");
+    }
+
+    @Override
+    public void saveAdditional(@Nonnull CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveAdditional(tag, provider);
+        energyStorage.save(tag, "energy", provider);
+        infusable.save(tag, "infusable");
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter input) {
+        super.applyImplicitComponents(input);
+        var data = input.get(TeleporterModule.ITEM_DIALINGDEVICE_DATA);
+        if (data != null) {
+            setData(TeleporterModule.DIALINGDEVICE_DATA, data);
+        }
+        energyStorage.applyImplicitComponents(input.get(mcjty.lib.setup.Registration.ITEM_ENERGY));
+        infusable.applyImplicitComponents(input.get(mcjty.lib.setup.Registration.ITEM_INFUSABLE));
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+        builder.set(TeleporterModule.ITEM_DIALINGDEVICE_DATA, getData(TeleporterModule.DIALINGDEVICE_DATA));
+        energyStorage.collectImplicitComponents(builder);
+        infusable.collectImplicitComponents(builder);
+    }
+
+    private List<TeleportDestinationClientInfo> searchReceivers(UUID player) {
+        TeleportDestinations destinations = TeleportDestinations.get(level);
+        return new ArrayList<>(destinations.getValidDestinations(level, player));
+    }
+
+    public List<TransmitterInfo> searchTransmitters() {
+        int x = getBlockPos().getX();
+        int y = getBlockPos().getY();
+        int z = getBlockPos().getZ();
+
+        int hrange = TeleportConfiguration.horizontalDialerRange.get();
+        int vrange = TeleportConfiguration.verticalDialerRange.get();
+
+        List<TransmitterInfo> transmitters = new ArrayList<>();
+        for (int dy = -vrange; dy <= vrange; dy++) {
+            int yy = y + dy;
+            if (yy >= level.getMinY() && yy < level.getMaxY() + 1) {
+                for (int dz = -hrange; dz <= hrange; dz++) {
+                    int zz = z + dz;
+                    for (int dx = -hrange; dx <= hrange; dx++) {
+                        int xx = x + dx;
+                        if (dx != 0 || dy != 0 || dz != 0) {
+                            BlockPos c = new BlockPos(xx, yy, zz);
+                            BlockState state = level.getBlockState(c);
+                            BlockEntity tileEntity = level.getBlockEntity(c);
+                            if (tileEntity instanceof MatterTransmitterTileEntity transmitter) {
+                                transmitters.add(new TransmitterInfo(c, transmitter.getName(), transmitter.getTeleportDestination()));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return transmitters;
+    }
+
+    // Server side only.
+    private void changeFavorite(String playerName, BlockPos receiver, ResourceKey<Level> dimension, boolean favorite) {
+        List<ServerPlayer> list = ServerLifecycleHooks.getCurrentServer().getPlayerList().getPlayers();
+        for (ServerPlayer entity : list) {
+            if (playerName.equals(entity.getName().getString())) {
+                FavoriteDestinationsProperties favoriteDestinations = PlayerExtendedProperties.getFavoriteDestinations(entity);
+                if (favoriteDestinations != null) {
+                    favoriteDestinations.setDestinationFavorite(GlobalPos.of(dimension, receiver), favorite);
+                    PlayerExtendedProperties.setFavoriteDestinations(entity, favoriteDestinations);
+                }
+                return;
+            }
+        }
+    }
+
+
+    // Server side only
+    private int dial(UUID player, BlockPos transmitter, ResourceKey<Level> transDim, BlockPos coordinate, ResourceKey<Level> dimension, boolean once) {
+        return TeleportationTools.dial(level, this, player, transmitter, transDim, coordinate, dimension, once);
+    }
+
+    // Server side only
+    private int checkStatus(BlockPos c, ResourceKey<Level> dim) {
+        int s;
+        int defaultCost = TeleportConfiguration.rfPerCheck.get();
+        int cost = (int) (defaultCost * (2.0f - infusable.getInfusedFactor()) / 2.0f);
+        if (energyStorage.getEnergy() < cost) {
+            s = DialingDeviceTileEntity.DIAL_DIALER_POWER_LOW_MASK;
+        } else {
+            energyStorage.consumeEnergy(cost);
+            s = 0;
+        }
+        if (s != 0) {
+            return s;
+        }
+
+        Level w = LevelTools.getLevel(dim);
+        if (w == null) {
+            TeleportDestinations destinations = TeleportDestinations.get(level);
+            destinations.cleanupInvalid();
+            return DialingDeviceTileEntity.DIAL_INVALID_DESTINATION_MASK;
+        }
+
+        BlockEntity tileEntity = w.getBlockEntity(c);
+        if (!(tileEntity instanceof MatterReceiverTileEntity matterReceiver)) {
+            TeleportDestinations destinations = TeleportDestinations.get(level);
+            destinations.cleanupInvalid();
+            return DialingDeviceTileEntity.DIAL_INVALID_DESTINATION_MASK;
+        }
+
+        int powerPercentage = RFToolsDimCompat.getPowerPercentage(level, dim.identifier());
+        System.out.println("powerPercentage = " + powerPercentage);
+        if (powerPercentage >= 0) {
+            if (powerPercentage < TeleportConfiguration.DIMENSION_WARN_PERCENTAGE.get()) {
+                return DialingDeviceTileEntity.DIAL_DIMENSION_POWER_LOW_MASK;
+            }
+        }
+
+        return matterReceiver.checkStatus();
+    }
+
+    public static final Key<UUID> PARAM_PLAYER_UUID = new Key<>("playerUuid", Type.UUID);
+
+    @ServerCommand(type = TeleportDestinationClientInfo.class, serializer = TeleportDestinationClientInfo.Serializer.class)
+    public static final ListCommand<?, ?> CMD_GETRECEIVERS = ListCommand.<DialingDeviceTileEntity, TeleportDestinationClientInfo>create("rftoolsutility.dialer.getReceivers",
+            (te, player, params) -> te.searchReceivers(params.get(PARAM_PLAYER_UUID)),
+            (te, player, params, list) -> GuiDialingDevice.fromServer_receivers = list);
+
+    @ServerCommand(type = TransmitterInfo.class, serializer = TransmitterInfo.Serializer.class)
+    public static final ListCommand<?, ?> CMD_GETTRANSMITTERS = ListCommand.<DialingDeviceTileEntity, TransmitterInfo>create("rftoolsutility.dialer.getTransmitters",
+            (te, player, params) -> te.searchTransmitters(),
+            (te, player, params, list) -> GuiDialingDevice.fromServer_transmitters = list);
+
+
+    public static final Key<String> PARAM_PLAYER = new Key<>("player", Type.STRING);
+    public static final Key<BlockPos> PARAM_POS = new Key<>("pos", Type.BLOCKPOS);
+    public static final Key<String> PARAM_DIMENSION = new Key<>("dimension", Type.STRING);
+    public static final Key<BlockPos> PARAM_TRANSMITTER = new Key<>("transmitter", Type.BLOCKPOS);
+    public static final Key<String> PARAM_TRANS_DIMENSION = new Key<>("transDimension", Type.STRING);
+    public static final Key<Boolean> PARAM_FAVORITE = new Key<>("favorite", Type.BOOLEAN);
+
+    @ServerCommand
+    public static final Command<?> CMD_FAVORITE = Command.<DialingDeviceTileEntity>create("dialer.favorite",
+            (te, p, params) -> {
+                String player = params.get(PARAM_PLAYER);
+                BlockPos receiver = params.get(PARAM_POS);
+                String dimension = params.get(PARAM_DIMENSION);
+                boolean favorite = params.get(PARAM_FAVORITE);
+                te.changeFavorite(player, receiver, LevelTools.getId(dimension), favorite);
+            });
+
+    @ServerCommand
+    public static final Command<?> CMD_SHOWFAVORITE = Command.<DialingDeviceTileEntity>create("dialer.showFavorite",
+            (te, player, params) -> te.setShowOnlyFavorites(params.get(PARAM_FAVORITE)));
+
+    @ServerCommand
+    public static final ResultCommand<?> CMD_CHECKSTATUS = ResultCommand.<DialingDeviceTileEntity>create("checkStatus",
+            (te, player, params) -> {
+                BlockPos c = params.get(PARAM_POS);
+                String dim = params.get(PARAM_DIMENSION);
+                return TypedMap.builder().put(PARAM_STATUS, te.checkStatus(c, LevelTools.getId(dim))).build();
+            },
+            (te, player, params) -> {
+                GuiDialingDevice.setReceiverStatus(params.get(PARAM_STATUS));
+            });
+
+    @ServerCommand
+    public static final ResultCommand<?> CMD_DIAL = ResultCommand.<DialingDeviceTileEntity>create("dial",
+            (te, player, params) -> {
+                UUID playerUUID = params.get(PARAM_PLAYER_UUID);
+                BlockPos transmitter = params.get(PARAM_TRANSMITTER);
+                String transDim = params.get(PARAM_TRANS_DIMENSION);
+                BlockPos c = params.get(PARAM_POS);
+                String dim = params.get(PARAM_DIMENSION);
+                return TypedMap.builder().put(PARAM_STATUS, te.dial(playerUUID, transmitter,
+                        LevelTools.getId(transDim), c,
+                        LevelTools.getId(dim), false)).build();
+            },
+            (te, player, params) -> {
+                GuiDialingDevice.setDialResult(params.get(PARAM_STATUS));
+            });
+
+    @ServerCommand
+    public static final ResultCommand<?> CMD_DIALONCE = ResultCommand.<DialingDeviceTileEntity>create("dialOnce",
+            (te, player, params) -> {
+                UUID playerUUID = params.get(PARAM_PLAYER_UUID);
+                BlockPos transmitter = params.get(PARAM_TRANSMITTER);
+                String transDim = params.get(PARAM_TRANS_DIMENSION);
+                BlockPos c = params.get(PARAM_POS);
+                String dim = params.get(PARAM_DIMENSION);
+                return TypedMap.builder().put(PARAM_STATUS, te.dial(playerUUID, transmitter,
+                        LevelTools.getId(transDim), c,
+                        LevelTools.getId(dim), true)).build();
+            },
+            (te, player, params) -> {
+                GuiDialingDevice.setDialResult(params.get(PARAM_STATUS));
+            });
+}

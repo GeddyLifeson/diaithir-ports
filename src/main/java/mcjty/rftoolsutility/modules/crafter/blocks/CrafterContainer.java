@@ -1,0 +1,116 @@
+package mcjty.rftoolsutility.modules.crafter.blocks;
+
+import mcjty.lib.container.*;
+import mcjty.lib.tileentity.GenericTileEntity;
+import mcjty.rftoolsbase.modules.filter.items.FilterModuleItem;
+import mcjty.rftoolsutility.modules.crafter.CrafterModule;
+import mcjty.rftoolsutility.modules.crafter.data.CrafterData;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerInput;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.items.IItemHandler;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static mcjty.lib.container.SlotDefinition.*;
+import static mcjty.rftoolsutility.modules.crafter.CrafterModule.CONTAINER_CRAFTER;
+
+public class CrafterContainer extends GenericContainer {
+
+    public static final int SLOT_CRAFTINPUT = 0;
+    public static final int SLOT_CRAFTOUTPUT = 9;
+    public static final int SLOT_BUFFER = 10;
+    public static final int BUFFER_SIZE = (13*2);
+    public static final int SLOT_BUFFEROUT = SLOT_BUFFER + BUFFER_SIZE;
+    public static final int BUFFEROUT_SIZE = 4;
+    public static final int SLOT_FILTER_MODULE = SLOT_BUFFEROUT + BUFFEROUT_SIZE;
+
+    public static final Lazy<ContainerFactory> CONTAINER_FACTORY = Lazy.of(() -> new ContainerFactory(10 +BUFFER_SIZE + BUFFEROUT_SIZE + 1)
+            .box(ghost(), SLOT_CRAFTINPUT, 193, 7, 3, 3)
+            .slot(ghostOut(), SLOT_CRAFTOUTPUT, 193, 65)
+            .box(generic().in(), SLOT_BUFFER, 13, 97, 13, 2)
+            .box(generic().out(), SLOT_BUFFEROUT, 31, 142, 2, 2)
+            .slot(specific(stack -> stack.getItem() instanceof FilterModuleItem), SLOT_FILTER_MODULE, 157, 43)
+            .playerSlots(85, 142));
+
+
+    public CrafterContainer(int id, ContainerFactory factory, BlockPos pos, @Nullable GenericTileEntity te, @Nonnull Player player) {
+        super(CONTAINER_CRAFTER.get(), id, factory, pos, te, player);
+//        generateSlots();
+    }
+
+    @Override
+    protected Slot createSlot(SlotFactory slotFactory, Player playerEntity, IItemHandler inventory, int index, int x, int y, SlotType slotType) {
+        CrafterBaseTE c = (CrafterBaseTE) be;
+        if (index >= SLOT_BUFFER && index < SLOT_BUFFEROUT && slotType == SlotType.SLOT_GENERIC) {
+            return new BaseSlot(inventory, be, index, x, y) {
+                @Override
+                public boolean mayPlace(@Nonnull ItemStack stack) {
+                    if (!c.isItemValidForSlot(getSlotIndex(), stack)) {
+                        return false;
+                    }
+                    return super.mayPlace(stack);
+                }
+
+                @Override
+                public void setChanged() {
+                    c.noRecipesWork = false;
+                    super.setChanged();
+                }
+            };
+        } else if (index >= SLOT_BUFFEROUT && index < SLOT_FILTER_MODULE && slotType == SlotType.SLOT_GENERIC) {
+            return new BaseSlot(inventory, be, index, x, y) {
+                @Override
+                public boolean mayPlace(@Nonnull ItemStack stack) {
+                    if (!c.isItemValidForSlot(getSlotIndex(), stack)) {
+                        return false;
+                    }
+                    return super.mayPlace(stack);
+                }
+
+                @Override
+                public void setChanged() {
+                    c.noRecipesWork = false;
+                    super.setChanged();
+                }
+            };
+        }
+        return super.createSlot(slotFactory, playerEntity, inventory, index, x, y, slotType);
+    }
+
+    @Override
+    public void clicked(int index, int button, @Nonnull ContainerInput mode, @Nonnull Player player) {
+        // Allow replacing input slot ghost items by shift-clicking.
+        if (mode == ContainerInput.QUICK_MOVE &&
+            index >= CrafterContainer.SLOT_BUFFER &&
+            index < CrafterContainer.SLOT_BUFFEROUT) {
+
+            CrafterBaseTE c = (CrafterBaseTE) be;
+
+            int offset = index - CrafterContainer.SLOT_BUFFER;
+            List<ItemStack> ghostSlots = new ArrayList<>(c.getGhostSlots());
+            ItemStack ghostSlot = ghostSlots.get(offset);
+            ItemStack clickedWith = getCarried();
+            if (!ghostSlot.isEmpty() && !ItemStack.isSameItem(ghostSlot, clickedWith)) {
+                ItemStack copy = clickedWith.copy();
+                copy.setCount(1);
+                if (be instanceof CrafterBaseTE) {
+                    CrafterData data = be.getData(CrafterModule.CRAFTER_DATA);
+                    ghostSlots.set(offset, copy);
+                    be.setData(CrafterModule.CRAFTER_DATA, data.withGhostSlots(ghostSlots));
+                }
+                broadcastChanges();
+                return;
+            }
+        }
+
+        super.clicked(index, button, mode, player);
+    }
+}

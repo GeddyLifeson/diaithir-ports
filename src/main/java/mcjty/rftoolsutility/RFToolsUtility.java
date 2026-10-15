@@ -1,0 +1,96 @@
+package mcjty.rftoolsutility;
+
+import mcjty.lib.varia.LegacyEnergyHandler;
+import mcjty.lib.modules.Modules;
+import mcjty.rftoolsbase.api.screens.IScreenModuleRegistry;
+import mcjty.rftoolsbase.api.teleportation.ITeleportationManager;
+import mcjty.rftoolsutility.apiimpl.teleportation.TeleportationManager;
+import mcjty.rftoolsutility.modules.crafter.CrafterModule;
+import mcjty.rftoolsutility.modules.environmental.EnvironmentalModule;
+import mcjty.rftoolsutility.modules.logic.LogicBlockModule;
+import mcjty.rftoolsutility.modules.screen.ScreenModule;
+import mcjty.rftoolsutility.modules.screen.ScreenModuleRegistry;
+import mcjty.rftoolsutility.modules.spawner.SpawnerModule;
+import mcjty.rftoolsutility.modules.tank.TankModule;
+import mcjty.rftoolsutility.modules.teleporter.TeleporterModule;
+import mcjty.rftoolsutility.modules.teleporter.items.porter.ChargedPorterItem;
+import mcjty.rftoolsutility.setup.*;
+import net.minecraft.world.item.Item;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.InterModProcessEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+@Mod(RFToolsUtility.MODID)
+public class RFToolsUtility {
+
+    public static final String MODID = "rftoolsutility";
+
+    @SuppressWarnings("PublicField")
+    public static final ModSetup setup = new ModSetup();
+
+    public static RFToolsUtility instance;
+    private final Modules modules = new Modules();
+    public static final ScreenModuleRegistry screenModuleRegistry = new ScreenModuleRegistry();
+
+    public RFToolsUtility(ModContainer mod, IEventBus bus, Dist dist) {
+        instance = this;
+        setupModules(bus, dist);
+
+        Config.register(mod, bus, modules);
+        Registration.register(bus);
+
+        bus.addListener(setup::init);
+        bus.addListener(modules::init);
+        bus.addListener(this::processIMC);
+        bus.addListener(RFToolsUtilityMessages::registerMessages);
+        bus.addListener(setup.getBlockCapabilityRegistrar(Registration.RBLOCKS));
+        bus.addListener(this::onRegisterCapabilities);
+
+        if (dist.isClient()) {
+            bus.addListener(modules::initClient);
+            bus.addListener(ClientSetup::registerGuiLayers);
+        }
+    }
+
+    public static <T extends Item> Supplier<T> tab(Supplier<T> supplier) {
+        return instance.setup.tab(supplier);
+    }
+
+    private void processIMC(final InterModProcessEvent event) {
+        event.getIMCStream().forEach(message -> {
+            if ("getTeleportationManager".equals(message.method())) {
+                Supplier<Function<ITeleportationManager, Void>> supplier = (Supplier<Function<ITeleportationManager, Void>>) message.messageSupplier();
+                supplier.get().apply(new TeleportationManager());
+            } else if ("getScreenModuleRegistry".equalsIgnoreCase(message.method())) {
+                Supplier<Function<IScreenModuleRegistry, Void>> supplier = (Supplier<Function<IScreenModuleRegistry, Void>>) message.messageSupplier();
+                supplier.get().apply(screenModuleRegistry);
+            }
+        });
+    }
+
+    private void setupModules(IEventBus bus, Dist dist) {
+        modules.register(new CrafterModule(bus));
+        modules.register(new LogicBlockModule(bus));
+        modules.register(new ScreenModule(bus));
+        modules.register(new SpawnerModule(bus));
+        modules.register(new TankModule(bus, dist));
+        modules.register(new TeleporterModule(bus));
+        modules.register(new EnvironmentalModule(bus, dist));
+    }
+
+    private void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
+        Registration.ITEMS.getRegister().getEntries().forEach(entry -> {
+            Item item = entry.get();
+            if (item instanceof ChargedPorterItem porter) {
+                event.registerItem(Capabilities.Energy.ITEM, (stack, access) -> new LegacyEnergyHandler(porter.createEnergyStorage(stack)), item);
+            }
+        });
+    }
+}

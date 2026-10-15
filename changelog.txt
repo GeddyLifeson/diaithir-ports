@@ -1,0 +1,411 @@
+1.21-7.0.13:
+- Fixed english description for the redstone receiver
+
+1.21-7.0.12:
+- Updated and expanded the Patchouli manual documentation
+
+1.21-7.0.11:
+- Fixed the simple dialer
+- Fixed the inventory screen module. It wasn't rendering anything
+- Fixed the gui updating correctly for the logic block
+- Fixed a problem with the cursor not appearing in the gui's for screen modules
+- Fixed a few bugs in the fluid module, counter module and machine information module
+
+1.21-7.0.10:
+- Api changes for RFToolsDimensions
+
+1.21-7.0.9:
+- Fixed a bug with crafters not being treated well in Refined Storage. Thanks to Penma and Raoul
+
+1.21-7.0.8:
+- Fixed the redstone module so that you can actually change the text and color
+- Fixed the energy module so that you can modify the text and color and other settings
+- Fixed the screen link module in combination with the tablet
+
+1.21-7.0.7:
+- Fixed the redstone module. It was not working properly
+- The machine information module will no longer crash if it is put in the screen without any connected machine
+
+1.21-7.0.6:
+- Fixed a crash bug with putting an empty syringe in the spawner
+
+1.21-7.0.5:
+- Fixed patchouli integration
+
+1.21-7.0.4:
+- Fixed a bug with the inventory module. It was not possible to set the items in the four slots
+- Screen api has changed for RFTools Storage
+
+1.21-7.0.3:
+- Fixed a bug where upgrading a crafter would not extend the number of recipes properly
+- The charged porter was not able to be charged in energy chargers from other mods
+- Fixed a crashing problem with screens in some situations
+- Fixed a crashing problem with the dialing device when a receiver was removed
+- Fixed the button module not correctly setting the channel
+- Fixed a crash with the redstone screen module
+- The screen now longer crashes if you hit it with something
+
+1.21-7.0.2:
+- Fixed a bug with the crafter and recipes smaller then 3x3
+- The crafter can now also handle special recipes like fireworks
+- The wireless redstone transmitter and receiver now no longer forget their settings when they are broken and placed again. This makes them actually usable
+
+1.21-7.0.1:
+- Fixed a bug with the crafter where the output of the recipe wasn't updated correctly
+
+1.21-7.0.0:
+- Port to 1.21
+
+1.20-6.0.5:
+- Fixed rendering of the screen when used through a tablet. Also fixed interaction with potential buttons on that screen
+
+1.20-6.0.4:
+- Fixed the crafter GUI
+
+1.20-6.0.3:
+- Fixed patchouli integration
+
+1.20-6.0.2:
+- Fixed a visual problem with the syringe which would appear full on first crafting
+
+1.20-6.0.1:
+- Fixed a bug with rendering (environmental controller)
+
+1.20-6.0.0:
+- Port to 1.20
+
+1.19-5.1.7:
+- Fixed a problem in the inventory checker. The clear button wouldn't work properly
+
+1.19-5.1.6:
+- Update for latest McJtyLib fixing the registryAccess() problem
+
+1.19-5.1.5:
+- Fixed a wrong teleportation warning with the matter receiver on 1.19.3 and higher
+- Update to 1.19.4
+
+1.19-5.1.4:
+- Fixed a potential crash in the teleportation system in some rare cases
+
+1.19-5.1.3:
+- 1.19.3 compatibility fix in McJtyLib
+
+1.19-5.1.2:
+- Deleting a player from the matter receiver and transmitter player list will now also work based on selection
+- Sciguyryan implemented a persistant tag on entities that are spawned by the RFTools spawner (boolean tag rftoolsutility:spawner)
+- New feature for sensors. They can now also trigger on amount of items (as entities)
+- The gui for the advanced porter now shows the most useful part of the receiver name by setting the cursor at the beginning
+
+1.19-5.1.1:
+- The charged ported gui works again in 1.19.3
+
+1.19-5.1.0:
+- Updated to Latest McJtyLib and made compatible with 1.19.3
+
+1.19-5.0.4:
+- Removed the now obsolete elevator module
+
+1.19-5.0.3:
+- Greatly improved the input of the environmental controller. It was very hard to type negative numbers
+
+1.19-5.0.2:
+- Fixed the tank updating when the contents changed
+
+1.19-5.0.1:
+- The dialing device is infusable again
+- Fixed the counter module to work again (fix partially done by joelra)
+
+1.19-5.0.0:
+- Port to 1.19
+
+1.18-4.0.16:
+- Fixed the blindness module recipe
+- Added protection for division by zero in the spawner of the gui
+- Small improvement on inputting min height for the environmental controller
+
+1.18-4.0.15:
+- Fixed missing recipe for the destination analyzer
+
+1.18-4.0.14:
+- Fixed larger screens not refreshing correctly when the chunk got unloaded
+
+1.18-4.0.13:
+- Implemented a way for the redstone transmitter and receiver to reset the channel (through the GUI)
+
+1.18-4.0.12:
+- Fixed the rendering of the environmental controller buffs
+- The screen controller is now infusable again
+- The crafter is now infusable again
+- Fixed some mod interaction with screens
+
+1.18-4.0.11:
+- Port to 1.18.2
+
+1.18-4.0.10:
+- Added protection for something that should not be possible in the digit renderer
+
+1.18-4.0.9:
+- Fixed a crash bug in the environmental controller when used with mobs and a module that gives a potion effect
+
+1.18-4.0.8:
+- The Destination Analyzer will now check for low dimension power again (RFTools Dimensions) for both the 'check' button in the dialer as well as the color of the matter transmitter beam
+
+1.18-4.0.7:
+- Fixed a rendering issue with the ghost items in the crafter. They were not faded
+- Fixed a bug when remembering items in the crafter. This would also lock some of the player inventory slots
+- Fixed a bug in the crafter where manually inputting a recipe (as opposed to letting it be done by JEI) didn't work properly
+
+1.18-4.0.6:
+- Fixed a crash in the digit block
+
+1.18-4.0.5:
+- Fixed a problem with items not getting restored when breaking and placing blocks
+
+1.18-4.0.4:
+- Fixed a bad capability in RFToolsUtility
+
+1.18-4.0.3:
+- Made the dialer more performant by also putting the access information in the teleportation data so that we don't need to get the matter receiver(s)
+- Fixed inter-dimensional teleportation
+- The screen didn't work properly below 0
+- The screen controller couldn't detect screens below 0
+- The dialing device was not correctly finding transmitters below 0
+
+1.18-4.0.2:
+- Updates for McJtyLib and fixes
+- Screens render correctly now
+
+1.18-4.0.1:
+- Small fix for recipe manager
+- Fixed a bug in the redstone information module
+- Fixed the tablet
+
+1.18-4.0.0:
+- First release in 1.18
+
+1.16-3.1.7:
+- Fixed crash when linking the charged porter on a server
+- Fixed a bug where the environmental controller only started working as soon as something like the radius is changed
+
+1.16-3.1.6:
+- Big fixes on the crafter. It works much cleaner now, will actually remember recipes and works properly with JEI (instead of only now and then)
+- The matter transmitter and receiver private modes now work correctly even if the receiver and/or transmitter is in another dimension
+
+1.16-3.1.5:
+- Added a new 'cleanupreceivers' command that you can use to clean up receivers that no longer exist. This can be used after removing a dimension to get rid of the destination in the dialer
+
+1.16-3.1.4:
+- Updated to latest version of McJtyLib
+- Fixed a few bugs in the matter booster en destination analyzer
+- Made the timer and sequencer integer inputs less annoying to edit
+- The tablet also works on the creative screen now
+- Added TOP support for spawner
+- Fixed tooltips for matter receiver and transmitter
+
+1.16-3.1.3:
+- Fixed the peaceful module in the environmental controller
+
+1.16-3.1.2:
+- Fixed the sensor and environmental controller to consider more mobs as passive (like villagers)
+
+1.16-3.1.1:
+- Fixed a crash with the environmental controller which could cause crashes for non living entities (i.e. arrows or items)
+- Fixed the 'noteleport' module in the environmental controller. It wouldn't actually do anything. Now it prevents enderman and shulkers as well as enderpearls
+
+1.16-3.1.0:
+- Ported the environmental controller (WIP)
+
+1.16-3.0.26:
+- Fixed integration between RFTools Control and RFTools Storage for the screen modules
+
+1.16-3.0.25:
+- The matter receiver and transmitter are now actually infusable
+
+1.16-3.0.24:
+- Fixed a problem with a potential crash in the matter receiver
+
+1.16-3.0.23:
+- The Analog works again
+
+1.16-3.0.22:
+- Fixed a bug in the simple dialer. It would not remember settings
+- Fixed the tooltip for the Syringe
+- Made the crafter gui slightly less confusing and fixed JEI integration in some cases
+
+1.16-3.0.21:
+- Bring back the ITeleportationManager API for RFTools Dimensions
+
+1.16-3.0.20:
+- Completely rewrote how the spawner handles the configuration of the spawner. These are now regular recipes that can be altered using a resourcepack
+
+1.16-3.0.19:
+- The tank works better (updates visually better when it's empty or not)
+- Improved the item model for the tank
+
+1.16-3.0.18:
+- Truetype rendering works again for the screen
+- Added a new 'forceNoTruetype' flag with which you can force truetype rendering to be disabled in all cases
+
+1.16-3.0.17:
+- Fixed a potential null-crash with the dimension dialer in some cases
+
+1.16-3.0.16:
+- Fixed a problem with the crafter where remembered slots were not rendered correctly
+
+1.16-3.0.15:
+- The redstone screen module works again
+
+1.16-3.0.14:
+- Fixed the broken counter again
+
+1.16-3.0.13:
+- Fixed the broken counter (wouldn't keep state on reload)
+
+1.16-3.0.12:
+- Phit fixed a problem with the spawner configuration
+
+1.16-3.0.11:
+- When the crafter is upgraded it will keep it's current settings
+
+1.16-3.0.10:
+- Made the spawner code a bit more robust (and no longer crashing) in case of an invalid syringe
+
+1.16-3.0.9:
+- Fixed the charged porter and syringe durability indicators no longer working
+
+1.16-3.0.8:
+- Syringe no longer appears in every creative tab
+- Correct translation for Syringe
+- Forgot the recipe for the syringe
+- Update to latest McJtyLib
+
+1.16-3.0.7-beta:
+- Fixed a crash in the inventory checker when setting illegal slot values
+- Fixed a potential issue with restoring the player with a matter transmitter
+
+1.16-3.0.6-beta:
+- Update to Forge 33.0.22
+
+3.0.5-beta:
+- Fixed a problem on servers
+
+3.0.4-beta:
+- Safer client-side registrations (thread-safety)
+- Various cleanups and fixes
+- Fixed a problem with spawner configuration loading on servers
+
+3.0.3-beta:
+- Fixed a client access problem on server side
+
+3.0.2-beta:
+- Added a few more 1.16 mods to the spawner configuration
+- Fixed a potential exploit which could be used to attack a server
+
+2.1.7:
+- Spawner configuration is now a server config (located in <world>/serverconfig/rftoolsutility-mobdata.toml)
+
+3.0.0-beta:
+- First port to 1.16.2 (spawner is still broken)
+
+2.1.6:
+- The Spawner is back!
+
+2.1.5-beta:
+- Use the new tick order handler system in RFToolsBase
+- Fixed a problem with the shield template being partially invisible when a smaller block was adjacent to it
+
+2.1.4-beta:
+- Fixed a potential problem in the dialer in case a dimension was missing
+- Fixed a memory leak in the shield projector when the world is unloaded (fake player)
+- Fixed a problem with the shield projector where it would crash if it gives player damage to a mob that retaliates to the player in some way (like vindicators)
+- The private settings in matter transmitter and receiver work again
+
+2.1.3-beta:
+- Fixed a problem with the crafter where automation could insert and extract the item filter (using a hopper for example)
+
+2.1.2-beta:
+- Fixed a problem with the tablet making an ugly sound when opening the gui. Thanks Darkere!
+- Fixed a crash in the crafter
+
+2.1.1-beta:
+- Dependency fix
+- Fixed a hard dependency on TOP
+
+2.1.0-beta:
+- Re-added TOP support for the screen, matter receiver, matter transmitter and the simple dialer
+- Various model and language file fixes
+- Better item tooltips
+- The simple dialer actually works now
+- Ported all the logic blocks
+- The inventory checker now supports the new tags instead of ore dictionary
+- The 'dump storage' screen module works now
+- The crafter should now support 'tags' better (for crafting)
+- Moved the dump and storage control modules from RFTools Utility to RFTools Storage
+- The [ and ] keys work again for changing the advanced porter target
+- New 'Redstone Information' item that can be used to access wireless redstone channels through the tablet
+- New 'Screen Link' item that can be linked to a screen and put in the tablet
+- Redstone channels can now have names. Use the new gui of the redstone transmitter to set the name
+- Fixed the recipes for the vanilla recipe book
+- Moved most of the configs from common to server (so that they are saved with the world and synced to the client)
+
+2.0.1-alpha:
+- Fixed the simple dialer model
+- Fixed a problem in the crafter where the filter slot would accept anything with item automation
+- Re-implemented the filter module for the crafter
+
+1.2.14:
+- Disabled truetype for now until the forge bug has been resolved
+
+1.2.13:
+- Updates to latest McJtyLib
+
+1.2.12:
+- Fixed how automation/gui item handling works for the crafter. Should fix all corner cases
+- Fixed the filter slot in the crafter being mapped to the first output slot
+
+1.2.11:
+- Inserting/extracting from the crafter (using hopper or whatever) should now be correct
+
+1.2.10:
+- The advanced porter gui works again
+- The teleportprobe gui works again
+- Avoid a rare crash during model registration
+- Fixed a serious networking problem which could cause 'invalid discriminator spam' on servers
+
+1.2.9-alpha:
+- Fixed a networking problem on servers
+
+1.2.8-alpha:
+- Updates to the latest McJtyLib
+- The Storage Control module works again in combination with the Storage Scanner
+- Fixed language files
+
+1.2.4-alpha:
+- Update to latest Forge
+
+1.2.3:
+- Update to latest Forge
+
+1.2.2:
+- Update to 1.14.4
+
+1.2.0:
+- Depends on McJtyLib 3.5.0!
+- Added some crash protection that shouldn't be needed but apparently is
+
+1.1.2:
+- Needs McJtyLib 3.1.0
+- Support for COFH RF API is removed. Only Forge Energy is supported now
+- Various cleanups
+
+1.1.1:
+- Fix problem with network packet doing things on the wrong thread
+- Fix a lot of console spam if things go wrong and added a bit more diagnostics
+
+1.1.0:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions
+
+1.1.0alpha:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions

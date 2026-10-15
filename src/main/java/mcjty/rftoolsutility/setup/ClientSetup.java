@@ -1,0 +1,35 @@
+package mcjty.rftoolsutility.setup;
+
+
+import mcjty.rftoolsutility.RFToolsUtility;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import mcjty.rftoolsutility.client.RenderGameOverlayEventHandler;
+import mcjty.rftoolsutility.modules.logic.client.DigitRenderer;
+import net.minecraft.resources.Identifier;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static mcjty.rftoolsutility.modules.spawner.client.MatterBeamerRenderer.BLUEGLOW;
+import static mcjty.rftoolsutility.modules.spawner.client.MatterBeamerRenderer.REDGLOW;
+import static mcjty.rftoolsutility.modules.teleporter.client.BeamRenderer.*;
+
+public class ClientSetup {
+
+    public static List<Identifier> onTextureStitch() {
+        List<Identifier> result = new ArrayList<>();
+        result.add(BEAM_OK);
+        result.add(BEAM_WARN);
+        result.add(BEAM_UNKNOWN);
+        Collections.addAll(result, DigitRenderer.DIGITS);
+        result.add(BLUEGLOW);
+        result.add(REDGLOW);
+        return result;
+    }
+
+    public static void registerGuiLayers(RegisterGuiLayersEvent event) {
+        event.registerAboveAll(Identifier.fromNamespaceAndPath(RFToolsUtility.MODID, "buffs"), (graphics, deltaTracker) -> RenderGameOverlayEventHandler.renderBuffs(graphics));
+    }
+
+}

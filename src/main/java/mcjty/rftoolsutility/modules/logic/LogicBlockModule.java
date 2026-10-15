@@ -1,0 +1,244 @@
+package mcjty.rftoolsutility.modules.logic;
+
+import mcjty.lib.blocks.LogicSlabBlock;
+import mcjty.lib.blocks.RBlock;
+import mcjty.lib.container.GenericContainer;
+import mcjty.lib.modules.IModule;
+import mcjty.lib.varia.SafeClientTools;
+import mcjty.rftoolsbase.modules.tablet.items.TabletItem;
+import mcjty.rftoolsutility.modules.logic.blocks.*;
+import mcjty.rftoolsutility.modules.logic.client.*;
+import mcjty.rftoolsutility.modules.logic.data.*;
+import mcjty.rftoolsutility.modules.logic.items.RedstoneInformationContainer;
+import mcjty.rftoolsutility.modules.logic.items.RedstoneInformationItem;
+import mcjty.rftoolsutility.modules.screen.client.GuiTabletScreen;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.BlockItem;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.attachment.AttachmentType;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredItem;
+
+import java.util.function.Supplier;
+
+import static mcjty.rftoolsutility.RFToolsUtility.tab;
+import static mcjty.rftoolsutility.setup.Registration.*;
+
+public class LogicBlockModule implements IModule {
+
+    public static final RBlock<LogicSlabBlock, BlockItem, AnalogTileEntity> ANALOG = RBLOCKS.registerBlock("analog",
+            AnalogTileEntity.class,
+            AnalogTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            AnalogTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_ANALOG = CONTAINERS.register("analog", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, CounterTileEntity> COUNTER = RBLOCKS.registerBlock("counter",
+            CounterTileEntity.class,
+            CounterTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            CounterTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_COUNTER = CONTAINERS.register("counter", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, DigitTileEntity> DIGIT = RBLOCKS.registerBlock("digit",
+            DigitTileEntity.class,
+            DigitTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            DigitTileEntity::new);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, InvCheckerTileEntity> INVCHECKER = RBLOCKS.registerBlock("invchecker",
+            InvCheckerTileEntity.class,
+            InvCheckerTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            InvCheckerTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_INVCHECKER = CONTAINERS.register("invchecker", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, SensorTileEntity> SENSOR = RBLOCKS.registerBlock("sensor",
+            SensorTileEntity.class,
+            SensorTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            SensorTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_SENSOR = CONTAINERS.register("sensor", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, SequencerTileEntity> SEQUENCER = RBLOCKS.registerBlock("sequencer",
+            SequencerTileEntity.class,
+            SequencerTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            SequencerTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_SEQUENCER = CONTAINERS.register("sequencer", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, ThreeLogicTileEntity> LOGIC = RBLOCKS.registerBlock("logic",
+            ThreeLogicTileEntity.class,
+            ThreeLogicTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            ThreeLogicTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_LOGIC = CONTAINERS.register("logic", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, TimerTileEntity> TIMER = RBLOCKS.registerBlock("timer",
+            TimerTileEntity.class,
+            TimerTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            TimerTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_TIMER = CONTAINERS.register("timer", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, WireTileEntity> WIRE = RBLOCKS.registerBlock("wire",
+            WireTileEntity.class,
+            WireTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            WireTileEntity::new);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, RedstoneReceiverTileEntity> REDSTONE_RECEIVER = RBLOCKS.registerBlock("redstone_receiver",
+            RedstoneReceiverTileEntity.class,
+            RedstoneReceiverTileEntity::createBlock,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            RedstoneReceiverTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_REDSTONE_RECEIVER = CONTAINERS.register("redstone_receiver", GenericContainer::createContainerType);
+
+    public static final RBlock<LogicSlabBlock, BlockItem, RedstoneTransmitterTileEntity> REDSTONE_TRANSMITTER = RBLOCKS.registerBlock("redstone_transmitter",
+            RedstoneTransmitterTileEntity.class,
+            RedstoneTransmitterBlock::new,
+            block -> new BlockItem(block.get(), createStandardProperties()),
+            RedstoneTransmitterTileEntity::new);
+    public static final Supplier<MenuType<GenericContainer>> CONTAINER_REDSTONE_TRANSMITTER = CONTAINERS.register("redstone_transmitter", GenericContainer::createContainerType);
+
+    public static final DeferredItem<RedstoneInformationItem> REDSTONE_INFORMATION = ITEMS.register("redstone_information", tab(RedstoneInformationItem::new));
+    public static final Supplier<MenuType<RedstoneInformationContainer>> CONTAINER_REDSTONE_INFORMATION = CONTAINERS.register("redstone_information",
+            () -> IMenuTypeExtension.create((windowId, inv, data) -> new RedstoneInformationContainer(windowId, null, SafeClientTools.getClientPlayer())));
+    public static final DeferredItem<TabletItem> TABLET_REDSTONE = ITEMS.register("tablet_redstone", tab(TabletItem::new));
+
+    public static final Supplier<AttachmentType<AnalogData>> ANALOG_DATA = ATTACHMENT_TYPES.register(
+            "analog_data", () -> AttachmentType.builder(AnalogData::createDefault)
+                    .serialize(AnalogData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<AnalogData>> ITEM_ANALOG_DATA = COMPONENTS.registerComponentType(
+            "analog_data",
+            builder -> builder
+                    .persistent(AnalogData.CODEC)
+                    .networkSynchronized(AnalogData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<CounterData>> COUNTER_DATA = ATTACHMENT_TYPES.register(
+            "counter_data", () -> AttachmentType.builder(CounterData::createDefault)
+                    .serialize(CounterData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<CounterData>> ITEM_COUNTER_DATA = COMPONENTS.registerComponentType(
+            "counter_data",
+            builder -> builder
+                    .persistent(CounterData.CODEC)
+                    .networkSynchronized(CounterData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<IncCheckerData>> INVCHECKER_DATA = ATTACHMENT_TYPES.register(
+            "invchecker_data", () -> AttachmentType.builder(IncCheckerData::createDefault)
+                    .serialize(IncCheckerData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<IncCheckerData>> ITEM_INVCHECKER_DATA = COMPONENTS.registerComponentType(
+            "invchecker_data",
+            builder -> builder
+                    .persistent(IncCheckerData.CODEC)
+                    .networkSynchronized(IncCheckerData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<RedstoneChannelData>> REDSTONECHANNEL_DATA = ATTACHMENT_TYPES.register(
+            "redstonechannel_data", () -> AttachmentType.builder(RedstoneChannelData::createDefault)
+                    .serialize(RedstoneChannelData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<RedstoneChannelData>> ITEM_REDSTONECHANNEL_DATA = COMPONENTS.registerComponentType(
+            "redstonechannel_data",
+            builder -> builder
+                    .persistent(RedstoneChannelData.CODEC)
+                    .networkSynchronized(RedstoneChannelData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<RedstoneReceiverData>> REDSTONERECEIVER_DATA = ATTACHMENT_TYPES.register(
+            "redstonereceiver_data", () -> AttachmentType.builder(RedstoneReceiverData::createDefault)
+                    .serialize(RedstoneReceiverData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<RedstoneReceiverData>> ITEM_REDSTONERECEIVER_DATA = COMPONENTS.registerComponentType(
+            "redstonereceiver_data",
+            builder -> builder
+                    .persistent(RedstoneReceiverData.CODEC)
+                    .networkSynchronized(RedstoneReceiverData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<SensorData>> SENSOR_DATA = ATTACHMENT_TYPES.register(
+            "sensor_data", () -> AttachmentType.builder(SensorData::createDefault)
+                    .serialize(SensorData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<SensorData>> ITEM_SENSOR_DATA = COMPONENTS.registerComponentType(
+            "sensor_data",
+            builder -> builder
+                    .persistent(SensorData.CODEC)
+                    .networkSynchronized(SensorData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<SequencerData>> SEQUENCER_DATA = ATTACHMENT_TYPES.register(
+            "sequencer_data", () -> AttachmentType.builder(SequencerData::createDefault)
+                    .serialize(SequencerData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<SequencerData>> ITEM_SEQUENCER_DATA = COMPONENTS.registerComponentType(
+            "sequencer_data",
+            builder -> builder
+                    .persistent(SequencerData.CODEC)
+                    .networkSynchronized(SequencerData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<ThreeLogicData>> THREELOGIC_DATA = ATTACHMENT_TYPES.register(
+            "threelogic_data", () -> AttachmentType.builder(ThreeLogicData::createDefault)
+                    .serialize(ThreeLogicData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ThreeLogicData>> ITEM_THREELOGIC_DATA = COMPONENTS.registerComponentType(
+            "threelogic_data",
+            builder -> builder
+                    .persistent(ThreeLogicData.CODEC)
+                    .networkSynchronized(ThreeLogicData.STREAM_CODEC));
+
+    public static final Supplier<AttachmentType<TimerData>> TIMER_DATA = ATTACHMENT_TYPES.register(
+            "timer_data", () -> AttachmentType.builder(TimerData::createDefault)
+                    .serialize(TimerData.CODEC.fieldOf("value"))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<TimerData>> ITEM_TIMER_DATA = COMPONENTS.registerComponentType(
+            "timer_data",
+            builder -> builder
+                    .persistent(TimerData.CODEC)
+                    .networkSynchronized(TimerData.STREAM_CODEC));
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<RedstoneInformationData>> ITEM_REDSTONE_INFORMATION_DATA = COMPONENTS.registerComponentType(
+            "redstone_information_data",
+            builder -> builder
+                    .persistent(RedstoneInformationData.CODEC)
+                    .networkSynchronized(RedstoneInformationData.STREAM_CODEC));
+
+    public LogicBlockModule(IEventBus bus) {
+        bus.addListener(this::registerMenuScreens);
+    }
+
+    @Override
+    public void init(FMLCommonSetupEvent event) {
+
+    }
+
+    public void registerMenuScreens(RegisterMenuScreensEvent event) {
+        GuiAnalog.register(event);
+        GuiCounter.register(event);
+        GuiInvChecker.register(event);
+        GuiSensor.register(event);
+        GuiSequencer.register(event);
+        GuiThreeLogic.register(event);
+        GuiTimer.register(event);
+        GuiRedstoneReceiver.register(event);
+        GuiRedstoneTransmitter.register(event);
+        GuiRedstoneInformation.register(event);
+        GuiTabletScreen.register(event);
+    }
+
+    @Override
+    public void initClient(FMLClientSetupEvent event) {
+        DigitRenderer.register();
+    }
+
+
+    @Override
+    public void initConfig(IEventBus bus) {
+
+    }
+
+}

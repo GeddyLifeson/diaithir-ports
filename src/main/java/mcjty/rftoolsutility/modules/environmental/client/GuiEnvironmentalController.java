@@ -1,0 +1,206 @@
+package mcjty.rftoolsutility.modules.environmental.client;
+
+import mcjty.lib.base.StyleConfig;
+import mcjty.lib.container.GenericContainer;
+import mcjty.lib.gui.GenericGuiContainer;
+import mcjty.lib.gui.Window;
+import mcjty.lib.gui.layout.HorizontalAlignment;
+import mcjty.lib.gui.widgets.*;
+import mcjty.lib.network.Networking;
+import mcjty.lib.network.PacketGetListFromServer;
+import mcjty.lib.typed.TypedMap;
+import mcjty.rftoolsbase.tools.ManualHelper;
+import mcjty.rftoolsutility.RFToolsUtility;
+import mcjty.rftoolsutility.modules.environmental.EnvironmentalModule;
+import mcjty.rftoolsutility.modules.environmental.blocks.EnvironmentalControllerTileEntity;
+import mcjty.rftoolsutility.modules.environmental.blocks.EnvironmentalMode;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.player.Inventory;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static mcjty.rftoolsutility.modules.environmental.blocks.EnvironmentalControllerTileEntity.*;
+
+public class GuiEnvironmentalController extends GenericGuiContainer<EnvironmentalControllerTileEntity, GenericContainer> {
+
+    public static final String BLACKLIST = "BL";
+    public static final String WHITELIST = "WL";
+    public static final String HOSTILE = "Host";
+    public static final String PASSIVE = "Pass";
+    public static final String MOBS = "Mobs";
+    public static final String ALL = "All";
+
+    // A copy of the players we're currently showing.
+    private List<String> players = null;
+    private int listDirty = 0;
+    private int updateInhibit = 0;  // If > 0 we don't update from the server to avoid the cursor resetting after typing something
+    private EnergyBar energyBar;
+
+    private IntegerField minyTextField;
+    private IntegerField maxyTextField;
+    private TextField nameField;
+    private WidgetList playersList;
+    private ChoiceLabel modeLabel;
+
+    public GuiEnvironmentalController(GenericContainer container, Inventory inventory, Component title) {
+        super(container, inventory, title, ManualHelper.create("rftoolsbase:machines/environmental"));
+    }
+
+    public static void register(RegisterMenuScreensEvent event) {
+        event.register(EnvironmentalModule.CONTAINER_ENVIRONENTAL_CONTROLLER.get(), GuiEnvironmentalController::new);
+    }
+
+    @Override
+    public void init() {
+        window = new Window(this, getBE(), Identifier.fromNamespaceAndPath(RFToolsUtility.MODID, "gui/environmental.gui"));
+        super.init();
+
+        initializeFields();
+        setupEvents();
+
+        listDirty = 0;
+        requestPlayers();
+    }
+
+    private void initializeFields() {
+        energyBar = window.findChild("energybar");
+
+        playersList = window.findChild("players");
+
+        minyTextField = window.findChild("miny");
+        maxyTextField = window.findChild("maxy");
+        nameField = window.findChild("name");
+        modeLabel = window.findChild("mode");
+    }
+
+    private void updateFields() {
+        if (window == null) {
+            return;
+        }
+        EnvironmentalControllerTileEntity tileEntity = getBE();
+        ((ImageChoiceLabel)window.findChild("redstone")).setCurrentChoice(tileEntity.getRSMode().ordinal());
+
+        int r = tileEntity.getRadius();
+        if (r < 5) {
+            r = 5;
+        } else if (r > 100) {
+            r = 100;
+        }
+        if (updateInhibit <= 0) {
+            ((ScrollableLabel) window.findChild("radius")).realValue(r);
+            minyTextField.integer(tileEntity.getMiny());
+            maxyTextField.integer(tileEntity.getMaxy());
+        } else {
+            updateInhibit--;
+        }
+        switch (tileEntity.getMode()) {
+            case MODE_BLACKLIST -> modeLabel.choice(BLACKLIST);
+            case MODE_WHITELIST -> modeLabel.choice(WHITELIST);
+            case MODE_HOSTILE -> modeLabel.choice(HOSTILE);
+            case MODE_PASSIVE -> modeLabel.choice(PASSIVE);
+            case MODE_MOBS -> modeLabel.choice(MOBS);
+            case MODE_ALL -> modeLabel.choice(ALL);
+        }
+
+        updateEnergyBar(energyBar);
+    }
+
+    private void setupEvents() {
+        window.event("add", (source, params) -> addPlayer());
+        window.event("del", (source, params) -> delPlayer());
+        window.event("mode", (source, params) -> changeMode(params.get(ChoiceLabel.PARAM_CHOICE)));
+        window.event("miny", (source, params) -> sendBounds());
+        window.event("maxy", (source, params) -> sendBounds());
+    }
+
+
+    private void changeMode(String newAccess) {
+        EnvironmentalMode newmode;
+        if (ALL.equals(newAccess)) {
+            newmode = EnvironmentalMode.MODE_ALL;
+        } else if (BLACKLIST.equals(newAccess)) {
+            newmode = EnvironmentalMode.MODE_BLACKLIST;
+        } else if (WHITELIST.equals(newAccess)) {
+            newmode = EnvironmentalMode.MODE_WHITELIST;
+        } else if (MOBS.equals(newAccess)) {
+            newmode = EnvironmentalMode.MODE_MOBS;
+        } else if (PASSIVE.equals(newAccess)) {
+            newmode = EnvironmentalMode.MODE_PASSIVE;
+        } else {
+            newmode = EnvironmentalMode.MODE_HOSTILE;
+        }
+        sendServerCommandTyped(EnvironmentalControllerTileEntity.CMD_SETMODE,
+            TypedMap.builder()
+                    .put(PARAM_MODE, newmode.ordinal())
+                    .build());
+    }
+
+    private void addPlayer() {
+        sendServerCommandTyped(EnvironmentalControllerTileEntity.CMD_ADDPLAYER,
+                TypedMap.builder().put(PARAM_NAME, nameField.getText()).build());
+        listDirty = 0;
+    }
+
+    private void delPlayer() {
+        sendServerCommandTyped(EnvironmentalControllerTileEntity.CMD_DELPLAYER,
+                TypedMap.builder().put(PARAM_NAME, players.get(playersList.getSelected())).build());
+        listDirty = 0;
+    }
+
+    private void requestPlayers() {
+        EnvironmentalControllerTileEntity tileEntity = getBE();
+        Networking.sendToServer(PacketGetListFromServer.create(tileEntity.getBlockPos(), EnvironmentalControllerTileEntity.CMD_GETPLAYERS.name()));
+    }
+
+    private void populatePlayers() {
+        EnvironmentalControllerTileEntity tileEntity = getBE();
+        players = new ArrayList<>(tileEntity.getPlayersAsList());
+        players.sort(null);
+        playersList.removeChildren();
+        for (String player : players) {
+            playersList.children(new Label().text(player).color(StyleConfig.colorTextInListNormal).horizontalAlignment(HorizontalAlignment.ALIGN_LEFT));
+        }
+    }
+
+
+    private void requestListsIfNeeded() {
+        listDirty--;
+        if (listDirty <= 0) {
+            requestPlayers();
+            listDirty = 20;
+        }
+    }
+
+    private void sendBounds() {
+        int miny = minyTextField.getInt();
+        int maxy = maxyTextField.getInt();
+        updateInhibit = 10;
+
+        sendServerCommandTyped(EnvironmentalControllerTileEntity.CMD_SETBOUNDS,
+                TypedMap.builder()
+                        .put(PARAM_MIN, miny)
+                        .put(PARAM_MAX, maxy)
+                        .build());
+    }
+
+    @Override
+    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+        updateFields();
+        requestListsIfNeeded();
+        populatePlayers();
+        enableButtons();
+
+        drawWindow(graphics, partialTicks, mouseX, mouseY);
+    }
+
+    private void enableButtons() {
+        window.setFlag("selected", playersList.getSelected() != -1);
+        String name = nameField.getText();
+        window.setFlag("name", name != null && !name.isEmpty());
+    }
+}

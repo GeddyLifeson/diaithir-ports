@@ -1,0 +1,57 @@
+package mcjty.rftoolsutility.modules.spawner.client;
+
+import mcjty.lib.container.GenericContainer;
+import mcjty.lib.gui.GenericGuiContainer;
+import mcjty.lib.gui.Window;
+import mcjty.lib.gui.layout.PositionalLayout;
+import mcjty.lib.gui.widgets.EnergyBar;
+import mcjty.lib.gui.widgets.Panel;
+import mcjty.rftoolsutility.RFToolsUtility;
+import mcjty.rftoolsutility.modules.spawner.SpawnerModule;
+import mcjty.rftoolsutility.modules.spawner.blocks.MatterBeamerTileEntity;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.Identifier;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+
+import java.awt.*;
+
+public class GuiMatterBeamer extends GenericGuiContainer<MatterBeamerTileEntity, GenericContainer> {
+    private static final int BEAMER_WIDTH = 180;
+    private static final int BEAMER_HEIGHT = 152;
+
+    private EnergyBar energyBar;
+
+    private static final Identifier iconLocation = Identifier.fromNamespaceAndPath(RFToolsUtility.MODID, "textures/gui/matterbeamer.png");
+
+    public GuiMatterBeamer(GenericContainer container, Inventory inventory, Component title) {
+        super(container, inventory, title, SpawnerModule.MATTER_BEAMER.block().get().getManualEntry());
+
+        imageWidth = BEAMER_WIDTH;
+        imageHeight = BEAMER_HEIGHT;
+    }
+
+    public static void register(RegisterMenuScreensEvent event) {
+        event.register(SpawnerModule.CONTAINER_MATTER_BEAMER.get(), GuiMatterBeamer::new);
+    }
+
+    @Override
+    public void init() {
+        super.init();
+
+        energyBar = new EnergyBar().vertical().hint(10, 7, 8, 54).showText(false);
+
+        Panel toplevel = new Panel().background(iconLocation).layout(new PositionalLayout()).children(energyBar);
+        toplevel.setBounds(new Rectangle(leftPos, topPos, imageWidth, imageHeight));
+
+        window = new Window(this, toplevel);
+    }
+
+    @Override
+    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTicks) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTicks);
+        drawWindow(graphics, partialTicks, mouseX, mouseY);
+        updateEnergyBar(energyBar);
+    }
+}

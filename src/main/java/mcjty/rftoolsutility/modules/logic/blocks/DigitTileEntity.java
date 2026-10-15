@@ -1,0 +1,57 @@
+package mcjty.rftoolsutility.modules.logic.blocks;
+
+
+import mcjty.lib.blocks.LogicSlabBlock;
+import mcjty.lib.builder.BlockBuilder;
+import mcjty.lib.tileentity.GenericTileEntity;
+import mcjty.lib.tileentity.LogicSupport;
+import mcjty.rftoolsutility.modules.logic.LogicBlockModule;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+
+import static mcjty.lib.builder.TooltipBuilder.header;
+import static mcjty.lib.builder.TooltipBuilder.key;
+
+public class DigitTileEntity extends GenericTileEntity {
+
+    private final LogicSupport support = new LogicSupport();
+
+    public DigitTileEntity(BlockPos pos, BlockState state) {
+        super(LogicBlockModule.DIGIT.be().get(), pos, state);
+    }
+
+    public static LogicSlabBlock createBlock() {
+        return new LogicSlabBlock(new BlockBuilder()
+                .info(key("message.rftoolsutility.shiftmessage"))
+                .infoShift(header())
+                .tileEntitySupplier(DigitTileEntity::new));
+    }
+
+    @Override
+    public void saveClientDataToNBT(CompoundTag tag, HolderLookup.Provider provider) {
+        tag.putByte("powered", (byte) powerLevel);
+    }
+
+    @Override
+    public void loadClientDataFromNBT(CompoundTag tag, HolderLookup.Provider provider) {
+        if (tag.contains("powered")) {
+            powerLevel = tag.getByteOr("powered", (byte) 0);
+        }
+    }
+
+    @Override
+    public void checkRedstone(Level world, BlockPos pos) {
+        support.checkRedstone(this, world, pos);
+    }
+
+    @Override
+    public void setPowerInput(int powered) {
+        if (powerLevel != powered) {
+            powerLevel = (byte) powered;
+            markDirtyClient();
+        }
+    }
+}

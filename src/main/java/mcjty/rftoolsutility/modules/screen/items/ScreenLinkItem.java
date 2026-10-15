@@ -1,0 +1,175 @@
+package mcjty.rftoolsutility.modules.screen.items;
+
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import mcjty.lib.varia.CapabilityTools;
+
+import mcjty.lib.builder.TooltipBuilder;
+import mcjty.lib.client.GuiTools;
+import mcjty.lib.tileentity.GenericTileEntity;
+import mcjty.lib.varia.ComponentFactory;
+import mcjty.lib.varia.Logging;
+import mcjty.lib.varia.ModuleTools;
+import mcjty.lib.varia.Tools;
+import mcjty.rftoolsbase.api.various.ITabletSupport;
+import mcjty.rftoolsutility.RFToolsUtility;
+import mcjty.rftoolsutility.modules.screen.ScreenModule;
+import mcjty.rftoolsutility.modules.screen.blocks.ScreenContainer;
+import mcjty.rftoolsutility.modules.screen.blocks.ScreenTileEntity;
+import mcjty.lib.tooltips.ITooltipSettings;
+import mcjty.lib.gui.ManualEntry;
+import mcjty.rftoolsbase.tools.ManualHelper;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.common.util.Lazy;
+import net.neoforged.neoforge.items.IItemHandler;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import static mcjty.lib.builder.TooltipBuilder.*;
+
+public class ScreenLinkItem extends Item implements ITabletSupport, ITooltipSettings {
+
+    private final Lazy<TooltipBuilder> tooltipBuilder = Lazy.of(() -> new TooltipBuilder()
+            .info(key("message.rftoolsutility.shiftmessage"))
+            .infoShift(header(), gold(),
+                    parameter("info", this::getInfoString)));
+
+    protected String getInfoString(ItemStack stack) {
+        return ModuleTools.getTargetString(stack);
+    }
+
+    public ScreenLinkItem() {
+        super(RFToolsUtility.setup.defaultProperties().durability(1));
+    }
+
+    @Override
+    public void appendHoverText(@Nonnull ItemStack itemStack, @Nullable Item.TooltipContext context, TooltipDisplay display, @Nonnull Consumer<Component> list, @Nonnull TooltipFlag flag) {
+        super.appendHoverText(itemStack, context, display, list, flag);
+        tooltipBuilder.get().makeTooltip(Tools.getId(this), itemStack, list, flag);
+    }
+
+    @Override
+    public Item getInstalledTablet() {
+        return ScreenModule.TABLET_SCREEN.get();
+    }
+
+    @Override
+    public void openGui(@Nonnull Player player, @Nonnull ItemStack tabletItem, @Nonnull ItemStack containingItem) {
+        BlockPos pos = ModuleTools.getPositionFromModule(containingItem);
+        ResourceKey<Level> dimensionType = ModuleTools.getDimensionFromModule(containingItem);
+//        World world = player.getEntityWorld();
+//        if (dimensionType != null) {
+//            world = WorldTools.getWorld(world, dimensionType);
+//        }
+//        if (!WorldTools.isLoaded(world, pos)) {
+//            player.sendStatusMessage(new StringTextComponent(TextFormatting.RED + "Screen is not loaded!"), false);
+//            return;
+//        }
+//        BlockEntity te = world.getBlockEntity(pos);
+//        if (!(te instanceof ScreenTileEntity)) {
+//            player.sendStatusMessage(new StringTextComponent(TextFormatting.RED + "Screen is missing!"), false);
+//            return;
+//        }
+//        NetworkHooks.openScreen((ServerPlayerEntity) player, new INamedContainerProvider() {
+//            @Override
+//            public ITextComponent getDisplayName() {
+//                return new StringTextComponent("Screen Module");
+//            }
+//
+//            @Override
+//            public Container createMenu(int id, PlayerInventory playerInventory, PlayerEntity player) {
+//                return new ScreenTabletContainer(id, pos, (ScreenTileEntity) te, player);
+//            }
+//        }, pos);
+
+
+        GuiTools.openRemoteGui(player, dimensionType, pos, te -> new MenuProvider() {
+            @Nonnull
+            @Override
+            public Component getDisplayName() {
+                return ComponentFactory.literal("Remote Screen");
+            }
+
+            @Override
+            public AbstractContainerMenu createMenu(int id, @Nonnull Inventory inventory, @Nonnull Player player) {
+                boolean creative = false;
+                if (te instanceof ScreenTileEntity screenTe) {
+                    creative = screenTe.isCreative();
+                }
+                ScreenContainer container = creative ?
+                        ScreenContainer.createRemoteCreative(id, pos, (GenericTileEntity) te, player) :
+                        ScreenContainer.createRemote(id, pos, (GenericTileEntity) te, player);
+                IItemHandler h = CapabilityTools.items(te.getLevel(), te.getBlockPos(), null);
+                if (h != null) {
+                    container.setupInventories(h, inventory);
+                }
+                return container;
+            }
+        });
+
+    }
+
+    @Nonnull
+    @Override
+    public InteractionResult use(Level world, Player player, @Nonnull InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+        if (!world.isClientSide()) {
+            openGui(player, stack, stack);
+            return InteractionResult.SUCCESS;
+        }
+        return InteractionResult.SUCCESS;
+    }
+
+    @Nonnull
+    @Override
+    public InteractionResult useOn(UseOnContext context) {
+        ItemStack stack = context.getItemInHand();
+        Level world = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        Direction facing = context.getClickedFace();
+        Player player = context.getPlayer();
+        BlockEntity te = world.getBlockEntity(pos);
+        if (te instanceof ScreenTileEntity) {
+            String name = "<invalid>";
+            if (!world.getBlockState(pos).isAir()) {
+                name = Tools.getReadableName(world, pos);
+            }
+            ModuleTools.setPositionInModule(stack, world.dimension(), pos, name);
+            if (world.isClientSide()) {
+                Logging.message(player, "Screen link is set to block '" + name + "'");
+            }
+        } else {
+            ModuleTools.clearPositionInModule(stack);
+            if (world.isClientSide()) {
+                Logging.message(player, "Screen link is cleared");
+            }
+        }
+        return InteractionResult.SUCCESS;
+    }
+
+
+    @Override
+    public ManualEntry getManualEntry() {
+        return ManualHelper.create("rftoolsutility:machines/screen_link");
+    }
+
+}

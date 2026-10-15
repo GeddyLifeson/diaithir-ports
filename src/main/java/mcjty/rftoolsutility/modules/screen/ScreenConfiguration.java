@@ -1,0 +1,109 @@
+package mcjty.rftoolsutility.modules.screen;
+
+
+import net.minecraft.resources.Identifier;
+import net.neoforged.neoforge.common.ModConfigSpec;
+
+public class ScreenConfiguration {
+
+    public static final String CATEGORY_SCREEN = "screen";
+
+    public static ModConfigSpec.IntValue CONTROLLER_MAXENERGY; //60000;
+    public static ModConfigSpec.IntValue CONTROLLER_RECEIVEPERTICK; //1000;
+    public static ModConfigSpec.IntValue BUTTON_RFPERTICK; //0;
+    public static ModConfigSpec.IntValue CLOCK_RFPERTICK; //1;
+    public static ModConfigSpec.IntValue COMPUTER_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue COUNTER_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue DIMENSION_RFPERTICK; //6;
+    public static ModConfigSpec.IntValue ENERGY_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue FLUID_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue ITEMSTACK_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue MACHINEINFO_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue REDSTONE_RFPERTICK; //4;
+    public static ModConfigSpec.IntValue TEXT_RFPERTICK; //0;
+    public static ModConfigSpec.IntValue SCREEN_REFRESH_TIMING; //500;
+
+    public static ModConfigSpec.BooleanValue useTruetype;
+    public static ModConfigSpec.BooleanValue forceNoTruetype;
+    public static ModConfigSpec.ConfigValue<String> font;
+    public static ModConfigSpec.DoubleValue fontSize;
+    public static ModConfigSpec.ConfigValue<String> additionalCharacters;
+
+    public static Identifier trueTypeFont = null;
+
+    public static void init(ModConfigSpec.Builder SERVER_BUILDER, ModConfigSpec.Builder CLIENT_BUILDER) {
+        SERVER_BUILDER.comment("Settings for the screen system").push(CATEGORY_SCREEN);
+        CLIENT_BUILDER.comment("Settings for the screen system").push(CATEGORY_SCREEN);
+
+        CONTROLLER_MAXENERGY = SERVER_BUILDER
+                .comment("Maximum RF storage that the screen controller can hold")
+                .defineInRange("screenControllerMaxRF", 60000, 0, Integer.MAX_VALUE);
+        CONTROLLER_RECEIVEPERTICK = SERVER_BUILDER
+                .comment("RF per tick that the the screen controller can receive")
+                .defineInRange("screenControllerRFPerTick", 1000, 0, Integer.MAX_VALUE);
+
+        BUTTON_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the button module")
+                .defineInRange("buttonRFPerTick", 9, 0, Integer.MAX_VALUE);
+        CLOCK_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the clock module")
+                .defineInRange("clockRFPerTick", 1, 0, Integer.MAX_VALUE);
+        COMPUTER_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the computer module")
+                .defineInRange("computerRFPerTick", 4, 0, Integer.MAX_VALUE);
+        COUNTER_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the counter module")
+                .defineInRange("counterRFPerTick", 4, 0, Integer.MAX_VALUE);
+        DIMENSION_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the dimension module")
+                .defineInRange("dimensionRFPerTick", 6, 0, Integer.MAX_VALUE);
+        ENERGY_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the energy module")
+                .defineInRange("energyRFPerTick", 4, 0, Integer.MAX_VALUE);
+        FLUID_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the fluid module")
+                .defineInRange("fluidRFPerTick", 4, 0, Integer.MAX_VALUE);
+        ITEMSTACK_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the itemstack module")
+                .defineInRange("itemstackRFPerTick", 4, 0, Integer.MAX_VALUE);
+        MACHINEINFO_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the machine information module")
+                .defineInRange("machineInfoRFPerTick", 4, 0, Integer.MAX_VALUE);
+        REDSTONE_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the redstone module")
+                .defineInRange("redstoneRFPerTick", 4, 0, Integer.MAX_VALUE);
+        TEXT_RFPERTICK = SERVER_BUILDER
+                .comment("RF per tick/per block for the text module")
+                .defineInRange("textRFPerTick", 0, 0, Integer.MAX_VALUE);
+
+        useTruetype = CLIENT_BUILDER
+                .comment("Set to true for TrueType font, set to false for vanilla font")
+                .define("useTruetype", false);
+        forceNoTruetype = CLIENT_BUILDER
+                .comment("Set to true for force TrueType to be disabled in all cases. Use this in case the truetype font is causing issues")
+                .define("forceNoTruetype", false);
+        font = CLIENT_BUILDER
+                .comment("The default truetype font to use")
+                .define("fontName", "rftoolsutility:ubuntu");
+        fontSize = CLIENT_BUILDER
+                .comment("The size of the font")
+                .defineInRange("fontSize", 40.0, 0, 1000000);
+        additionalCharacters = CLIENT_BUILDER
+                .comment("Additional characters that should be supported by the truetype system")
+                .define("additionalCharacters", "");
+
+        SCREEN_REFRESH_TIMING = SERVER_BUILDER
+                .comment("How many times the screen will update. Higher numbers make the screens less accurate but better for network bandwidth")
+                .defineInRange("screenRefreshTiming", 500, 0, Integer.MAX_VALUE);
+
+        CLIENT_BUILDER.pop();
+        SERVER_BUILDER.pop();
+    }
+
+    public static Identifier getTrueTypeFont() {
+        if (trueTypeFont == null) {
+            trueTypeFont = Identifier.parse(font.get());
+        }
+        return trueTypeFont;
+    }
+}
