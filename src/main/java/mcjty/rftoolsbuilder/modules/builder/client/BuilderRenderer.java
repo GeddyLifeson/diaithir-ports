@@ -1,0 +1,38 @@
+package mcjty.rftoolsbuilder.modules.builder.client;
+
+import mcjty.lib.client.LegacyBlockEntityRenderer;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import mcjty.rftoolsbase.modules.hud.client.HudRenderer;
+import mcjty.rftoolsbuilder.modules.builder.BuilderConfiguration;
+import mcjty.rftoolsbuilder.modules.builder.BuilderModule;
+import mcjty.rftoolsbuilder.modules.builder.blocks.BuilderTileEntity;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.world.phys.AABB;
+
+import javax.annotation.Nonnull;
+
+
+public class BuilderRenderer extends LegacyBlockEntityRenderer<BuilderTileEntity> {
+
+    public BuilderRenderer(BlockEntityRendererProvider.Context context) {
+    }
+
+    @Override
+    protected void render(@Nonnull BuilderTileEntity te, float v, @Nonnull PoseStack matrixStack, @Nonnull MultiBufferSource buffer, int i, int i1) {
+        if (BuilderConfiguration.showProgressHud.get()) {
+            HudRenderer.renderHud(matrixStack, buffer, te);
+        }
+    }
+
+    public static void register() {
+        BlockEntityRenderers.register(BuilderModule.BUILDER.be().get(), BuilderRenderer::new);
+    }
+
+    @Override
+    public AABB getRenderBoundingBox(BuilderTileEntity blockEntity) {
+        return new AABB(blockEntity.getBlockPos().getCenter(), blockEntity.getBlockPos().offset(1, 2, 1).getCenter());
+    }
+}

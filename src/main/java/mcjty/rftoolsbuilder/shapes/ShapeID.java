@@ -1,0 +1,123 @@
+package mcjty.rftoolsbuilder.shapes;
+
+import mcjty.lib.varia.LevelTools;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
+import java.util.Optional;
+
+/// ID to identify a shape for a player/projector/scanner/...
+public final class ShapeID {
+    private final ResourceKey<Level> dimension;
+    @Nullable private final BlockPos pos;     // null if there is a scanId (shapecard in hand or projector)
+    private final int scanId;
+    private final boolean grayscale;
+    private final boolean solid;
+
+    public static final StreamCodec<FriendlyByteBuf, ShapeID> STREAM_CODEC = StreamCodec.composite(
+            ResourceKey.streamCodec(Registries.DIMENSION), s -> s.dimension,
+            ByteBufCodecs.optional(BlockPos.STREAM_CODEC), s -> Optional.ofNullable(s.pos),
+            ByteBufCodecs.INT, s -> s.scanId,
+            ByteBufCodecs.BOOL, s -> s.grayscale,
+            ByteBufCodecs.BOOL, s -> s.solid,
+            (dimension, pos, scanId, grayscale, solid) -> new ShapeID(dimension, pos.orElse(null), scanId, grayscale, solid)
+    );
+
+    public ShapeID(ResourceKey<Level> dimension, @Nullable BlockPos pos, int scanId, boolean grayscale, boolean solid) {
+        this.dimension = dimension;
+        this.pos = pos;
+        this.scanId = scanId;
+        this.grayscale = grayscale;
+        this.solid = solid;
+    }
+
+    public ShapeID(FriendlyByteBuf buf) {
+        ResourceKey<Level> dim = Level.OVERWORLD;
+        BlockPos p = null;
+        if (buf.readBoolean()) {
+            dim = LevelTools.getId(buf.readIdentifier());
+            p = buf.readBlockPos();
+        }
+        scanId = buf.readInt();
+        grayscale = buf.readBoolean();
+        solid = buf.readBoolean();
+        pos = p;
+        dimension = dim;
+    }
+
+    public void toBytes(FriendlyByteBuf buf) {
+        if (getPos() == null) {
+            buf.writeBoolean(false);
+        } else {
+            buf.writeBoolean(true);
+            buf.writeIdentifier(getDimension().identifier());
+            buf.writeBlockPos(getPos());
+        }
+        buf.writeInt(scanId);
+        buf.writeBoolean(grayscale);
+        buf.writeBoolean(solid);
+    }
+
+    public ResourceKey<Level> getDimension() {
+        return dimension;
+    }
+
+    @Nullable
+    public BlockPos getPos() {
+        return pos;
+    }
+
+    public int getScanId() {
+        return scanId;
+    }
+
+    public boolean isGrayscale() {
+        return grayscale;
+    }
+
+    public boolean isSolid() {
+        return solid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ShapeID shapeID = (ShapeID) o;
+
+        if (!dimension.equals(shapeID.dimension)) return false;
+        if (scanId != shapeID.scanId) return false;
+        if (grayscale != shapeID.grayscale) return false;
+        if (solid != shapeID.solid) return false;
+        return pos != null ? pos.equals(shapeID.pos) : shapeID.pos == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = dimension.hashCode();
+        result = 31 * result + (pos != null ? pos.hashCode() : 0);
+        result = 31 * result + scanId;
+        result = 31 * result + (grayscale ? 1 : 0);
+        result = 31 * result + (solid ? 1 : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "ShapeID{" +
+                "dimension=" + dimension +
+                ", pos=" + pos +
+                ", scanId=" + scanId +
+                ", grayscale=" + grayscale +
+                ", solid=" + solid +
+                '}';
+    }
+}

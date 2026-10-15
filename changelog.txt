@@ -1,0 +1,314 @@
+1.21-7.0.7:
+- The mover, vehicle builder, and mover controller where not available in JEI or the creative inventory. This has been fixed
+
+1.21-7.0.6:
+- Fixed a crash in the scanner in some rare situations
+- 'derrickmehaffy' fixed a bug in the shape card on servers when manually selecting the corners with a dimension that exceeds 512
+
+1.21-7.0.5:
+- Updated and expanded the Patchouli manual documentation
+- Added the new Scanner, Projector, and Composer
+- The Scanner, Projector, and Composer are still beta and may have bugs
+
+1.21-7.0.4:
+- Fixed a rendering bug with the shape card user interface for the voiding buttons
+
+1.21-7.0.3:
+- Fixed a bug in the Builder when handling tanks
+
+1.21-7.0.2:
+- Changes for RFToolsBase
+
+1.21-7.0.1:
+- Fixed a bug when opening the shape card gui from within the builder gui
+
+1.21-7.0.0:
+- First port to 1.21!
+
+1.20-6.0.8:
+- Now fix the loottables for real!
+
+1.20-6.0.7:
+- Fixed a problem where all loottables didn't generate which caused (for example) the Builder to not drop when mined
+
+1.20-6.0.6:
+- PHOBOSS fixed liquids (tested on lava and water) melting shield projections
+- PHOBOSS added a block blacklist/whitelist configuration option to allow NBT transfer of selected blocks
+
+1.20-6.0.5:
+- Update to latest McJtyLib
+
+1.20-6.0.4:
+- Lennyservant added a fix so that the builder's fake player gets used correctly in all cases
+
+1.20-6.0.3:
+- Fixed a problem with the shield projector crashing in some situations
+
+1.20-6.0.2:
+- Fixed a serious dupe bug with the builder and a space chamber
+
+1.20-6.0.1:
+- Fixed patchouli integration
+
+1.20-6.0.0:
+- Port to 1.20
+
+1.19-5.2.8:
+- Fixed a problem with the builder crashing in case of redstone mode
+
+1.19-5.2.7:
+- Fixed a problem with the mover when there are platforms with no name
+
+1.19-5.2.6:
+- Fixed a potential crash with the mover
+
+1.19-5.2.5:
+- There was still an issue with the shape card not accepting heights more than 256
+
+1.19-5.2.4:
+- Update to 1.19.4
+
+1.19.1-5.2.3:
+- 1.19.3 compatibility fix in McJtyLib
+
+1.19.1-5.2.2:
+- Fixed a problem with the shield projector doing damage on 1.19.3
+
+1.19.1-5.2.1:
+- The shape card and space chamber gui works again in 1.19.3
+
+1.19.1-5.2.0:
+- Updated to Latest McJtyLib and made compatible with 1.19.3
+
+1.19.1-5.1.1:
+- Server side problem
+
+1.19.1-5.1.0:
+- The Mover!
+
+1.19.1-5.0.4:
+- When the Builder encounters a block that it can't possibly harvest because it's hardness/power exceeds the maximum power of the Builder then it will skip this block
+
+1.19.1-5.0.3:
+- Fixed a server side problem with shape cards
+
+1.19.1-5.0.2:
+- Shapecard height was still limited to 256
+- Fixed keybindings
+
+1.19.1-5.0.1:
+- Fix for 1.19.1
+
+1.19-5.0.0:
+- Port to 1.19
+
+1.18-4.0.13:
+- Fixed a problem with the builder when copying a wither structure it would duplicate one wither skull
+- Blocks with the tag 'dontremoveme' didn't let the Builder consume power
+- Fixed the shield not updating when redstone is toggled
+
+1.18-4.0.12:
+- Fixed a problem on servers
+
+1.18-4.0.11:
+- Added a new block tag rftoolsbuilder:dontremoveme which the Builder will respect and in which case the Builder will not remove the block (or replace with dirt)
+
+1.18-4.0.10:
+- Fixed the support block causing blocks to be placed wrong in copy mode. Support blocks now have material STRUCTURAL_AIR
+- Fixed the translated name for the support block
+
+1.18-4.0.9:
+- When manually clearing builder support blocks they will now also check diagonally
+- To prevent support blocks from not being cleared support mode is now automatically disabled when changing the settings on the shape card
+
+1.18-4.0.8:
+- Port to 1.18.2
+
+1.18-4.0.7:
+- Fixed a bug with the shield on some locales (Turkish)
+
+1.18-4.0.6:
+- Fix where preview of the support blocks would break due to wrong side
+
+1.18-4.0.5:
+- Fixed the DIRT tag to be compatible with latest Forge
+
+1.18-4.0.4:
+- Fixed a problem with items not getting restored when breaking and placing blocks
+
+1.18-4.0.3:
+- Fixed another spot where the shield was not working below 0
+
+1.18-4.0.2:
+- Fixed shield being able to go below 0
+
+1.18-4.0.1:
+- Updates for McJtyLib and fixes
+- Some fixes to the shield rendering
+- The Builder can now quarry below 0 and above 255
+
+1.18-4.0.0:
+- First release on 1.18
+
+1.16-3.1.4:
+- Updated to latest version of McJtyLib
+
+1.16-3.1.3:
+- Updated to latest version of McJtyLib
+- The hud for the Builder is full bright again making it easier to read
+
+1.16-3.1.2:
+- Fixed the shield so that it blocks more passive creatures (like villagers)
+
+1.16-3.1.1:
+- The builder and shield projector use a better fake player that matches the name of the real player if online
+- Fixed xray problem with the support blocks
+- The Builder will now also support the filter module for item collection
+
+1.16-3.1.0:
+- Small fix for mojang mappings
+- The space chamber has been ported
+- The Builder chunkloads again
+- Added TOP support for the Builder, the Shield Projector and the Space Chamber Controller
+
+1.16-3.0.17:
+- The Builder and Shield will now (if possible) use a fake player with the same UUID as the player that placed the builder
+
+1.16-3.0.16:
+- Fix for McJtyLib update
+
+1.16-3.0.15:
+- Fixed a problem with the builder which was no longer able to break blocks
+
+1.16-3.0.14:
+- The Builder will now give a warning when it can't quarry a block to remind people that they might need to enable fake players
+
+1.16-3.0.13:
+- Fixed the shield template recipe. It only gave one template per craft
+
+1.16-3.0.12:
+- Fixed a problem with shapecards becoming somewhat inconsistant if they are upgraded in the middle of selecting an area using the two corner points
+
+1.16-3.0.11:
+- Fixed crashes with the Builder in combination with liquids
+
+1.16-3.0.10:
+- Fixed the shield. All render modes were broken
+
+1.16-3.0.9:
+- Safety fix for the builder so that it will no longer crash on blocks that do weird things (like the banner). Mining a banner caused a crash on servers
+
+1.16-3.0.8:
+- The shield projector is now infusable again
+- When the shield projector is upgraded it will keep the current settings
+
+1.16-3.0.7:
+- Fixed the lockup that happened when someone tried to open the shapecard gui from within the Builder gui. Also closing the shapecard gui will now reopen the Builder gui
+
+1.16-3.0.6:
+- Fixed the shield projector no longer accepting power
+
+1.16-3.0.5:
+- Update to latest McJtyLib
+
+1.16-3.0.4-beta:
+- Update to latest McJtyLib
+
+3.0.3-beta:
+- Fixed a problem on servers
+
+3.0.2-beta:
+- Safer client-side registrations (thread-safety)
+- Various cleanups and fixes
+
+3.0.1-beta:
+- Fixed a potential exploit which could be used to attack a server
+
+3.0.0-beta:
+- First port to 1.16.2
+
+2.1.6:
+- Fixed a potential exploit which could be used to attack a server
+
+2.1.5-beta:
+- Update for latest McJtyLib
+
+2.1.4-beta:
+- Update for latest McJtyLib
+
+2.1.3-beta:
+- Fixed the builder so it no longer voids items if there are no suitable storages
+
+2.1.2-beta:
+- The Builder can build in water again
+- Fixed a problem with the energy level not showing in the shield projector GUI (it worked fine, it just didn't show)
+- Fixed a potential crash with the shape card gui when it is openened from the Builder
+- The shield will now also consider dolphins, bees, squids, and other neutral creatures as passive
+- Some small protection fix
+- Fixed a bug with the Builder where replacing a shape card would not trigger the recalculation of certain internal settings. This could cause settings like fortune or silk touch to be ignored
+- Fixed a bug with the Builder where fortune wasn't working at all
+
+2.1.1-beta:
+- Dependency fix
+
+2.1.0-beta:
+- Fixed the Builder to cope better with 'unplacable' blocks. Everything is better compared to crashing.
+- Better tooltips for items and blocks
+- The 'oredict' support for voidable blocks in the shape card has been replaced with 'tag matching'
+- The shapecard gui can open from within the gui of the Builder
+- Fixed the recipes for the vanilla recipe book
+- Moved most of the configs from common to server (so that they are saved with the world and synced to the client)
+
+2.0.2-alpha:
+- Michael Hillcox added some protection to the builder to prevent it from crashing in weird situations
+
+2.0.1-alpha:
+- Fixed a problem where the shield wasn't decomposed properly if the projector block was broken
+- Re-implemented the filter module for the Builder
+
+1.2.12:
+- Fixed power bar display in the GUI of the shield
+- Fixed cleanup of shapecard previews
+- When the shield projector is destroyed by an explosion the shield template blocks will be restored first
+
+1.2.11:
+- Updates to latest McJtyLib
+- The shield has been ported!
+
+1.2.9:
+- Fixed a serious networking problem which could cause 'invalid discriminator spam' on servers
+
+1.2.8:
+- Fixed a networking problem on servers
+
+1.2.7:
+- Updates to the latest McJtyLib
+- Better creative tab icon (uses the builder now instead of dirt)
+- The Builder will now use the container int tracking system to communicate the current level
+
+1.2.3:
+- Update to latest Forge
+
+1.2.2:
+- Update to 1.14.4
+
+1.2.0:
+- Depends on McJtyLib 3.5.0!
+- Added some crash protection that shouldn't be needed but apparently is
+
+1.1.2:
+- Needs McJtyLib 3.1.0
+- Support for COFH RF API is removed. Only Forge Energy is supported now
+- Various cleanups
+
+1.1.1:
+- Fix problem with network packet doing things on the wrong thread
+- Fix a lot of console spam if things go wrong and added a bit more diagnostics
+
+1.1.0:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions
+
+1.1.0alpha:
+- Made compatible with the latest McJtyLib (3.0.0)
+- Bugfix with a rare crash that could occur when switching dimensions

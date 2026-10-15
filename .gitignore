@@ -1,0 +1,49 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
+# Gradle/NeoForge generated output
+.gradle/
+build/
+out/
+bin/
+run/
+runs/
+logs/
+crash-reports/
+src/generated/resources/.cache/
+
+# Java/build artifacts and logs
+*.class
+*.log
+*.tmp
+*.bak
+*.orig
+hs_err_pid*
+
+# Local machine/config files
+local.properties
+.env
+.env.*
