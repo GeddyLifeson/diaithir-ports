@@ -220,7 +220,7 @@ public record PlayMessageType<T extends AbstractUnsidedPlayMessage>(Type<T> id,
     {
         if (client != null && server != null)
         {
-            registry.playBidirectional(id, codec, this::onBidirectional);
+            registry.playBidirectional(id, codec, this::onBidirectional, this::onBidirectional);  // .116: the 3-arg form is server-only
         }
         else if (client != null)
         {
