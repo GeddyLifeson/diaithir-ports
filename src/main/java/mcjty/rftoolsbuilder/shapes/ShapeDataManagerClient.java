@@ -32,7 +32,7 @@ public class ShapeDataManagerClient {
     }
 
     // @todo 1.20 correct?
-    public static void cleanupOldRenderers(RenderLevelStageEvent event) {
+    public static void cleanupOldRenderers(RenderLevelStageEvent.AfterLevel event) {
         // @todo 1.15 is this still the correct way?
         cleanupCounter--;
         if (cleanupCounter >= 0) {
