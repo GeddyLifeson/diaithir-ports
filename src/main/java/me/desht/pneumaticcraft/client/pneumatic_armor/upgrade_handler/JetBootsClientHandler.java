@@ -57,10 +57,13 @@ import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 import static me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.xlate;
 
 public class JetBootsClientHandler extends IArmorUpgradeClientHandler.SimpleToggleableHandler<JetBootsHandler> {
-    private static final ItemStack PICK = new ItemStack(Items.DIAMOND_PICKAXE);
-    private static final ItemStack ROTOR = new ItemStack(ModItems.TURBINE_ROTOR.get());
-    private static final ItemStack ELYTRA = new ItemStack(Items.ELYTRA);
-    private static final ItemStack FEATHER = new ItemStack(Items.FEATHER);
+    // Built on first draw: at class load (client setup) item components are not bound yet.
+    private static final class Icons {
+        static final ItemStack PICK = new ItemStack(Items.DIAMOND_PICKAXE);
+        static final ItemStack ROTOR = new ItemStack(ModItems.TURBINE_ROTOR.get());
+        static final ItemStack ELYTRA = new ItemStack(Items.ELYTRA);
+        static final ItemStack FEATHER = new ItemStack(Items.FEATHER);
+    }
 
     private static final String[] HEADINGS = new String[] { "S", "SW", "W", "NW", "N", "NE", "E", "SE" };
 
@@ -176,19 +179,19 @@ public class JetBootsClientHandler extends IArmorUpgradeClientHandler.SimpleTogg
             }
             int iconX = xr - 30;
             if (builderMode) {
-                graphics.item(PICK, iconX, jbStat.getBaseY());
+                graphics.item(Icons.PICK, iconX, jbStat.getBaseY());
                 iconX -= 16;
             }
             if (flightStabilizers) {
-                graphics.item(ROTOR, iconX, jbStat.getBaseY());
+                graphics.item(Icons.ROTOR, iconX, jbStat.getBaseY());
                 iconX -= 16;
             }
             if (ClientUtils.getClientPlayer().isFallFlying()) {
-                graphics.item(ELYTRA, iconX, jbStat.getBaseY());
+                graphics.item(Icons.ELYTRA, iconX, jbStat.getBaseY());
                 iconX -= 16;
             }
             if (smartHover) {
-                graphics.item(FEATHER, iconX, jbStat.getBaseY());
+                graphics.item(Icons.FEATHER, iconX, jbStat.getBaseY());
 //                iconX -= 16;
             }
         }

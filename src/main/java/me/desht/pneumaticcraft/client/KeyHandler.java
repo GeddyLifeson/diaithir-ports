@@ -76,7 +76,10 @@ public enum KeyHandler {
                 KeyModifier.NONE, InputConstants.Type.KEYSYM,  GLFW.GLFW_KEY_SPACE, category(Names.PNEUMATIC_KEYBINDING_CATEGORY_MAIN)));
     }
 
-    private static final Map<String, KeyMapping.Category> CATEGORIES = new HashMap<>();
+    // Held in a nested class: an enum's own static fields are still null while INSTANCE's constructor calls category().
+    private static final class Categories {
+        static final Map<String, KeyMapping.Category> MAP = new HashMap<>();
+    }
 
     /**
      * 26.1 key categories are registered objects rather than lang-key strings; map the old string to one, creating it on demand.
@@ -84,7 +87,7 @@ public enum KeyHandler {
      */
     @SuppressWarnings("deprecation")
     public static KeyMapping.Category category(String oldLangKey) {
-        return CATEGORIES.computeIfAbsent(oldLangKey, k -> {
+        return Categories.MAP.computeIfAbsent(oldLangKey, k -> {
             String prefix = "key." + Names.MOD_ID + ".category.";
             String path = k.startsWith(prefix) ? k.substring(prefix.length()) : k.replaceAll("[^a-z0-9_]", "_").toLowerCase(java.util.Locale.ROOT);
             return KeyMapping.Category.register(Identifier.fromNamespaceAndPath(Names.MOD_ID, path));
