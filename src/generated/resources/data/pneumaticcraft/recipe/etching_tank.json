@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_panes",
+    "O": "#c:obsidians",
+    "S": "pneumaticcraft:reinforced_brick_slab",
+    "T": "pneumaticcraft:small_tank",
+    "W": "pneumaticcraft:reinforced_brick_wall"
+  },
+  "pattern": [
+    "OGO",
+    "WTW",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:etching_tank"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": "minecraft:hopper",
+    "T": "pneumaticcraft:small_tank"
+  },
+  "pattern": [
+    "T",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:liquid_hopper"
+  }
+}

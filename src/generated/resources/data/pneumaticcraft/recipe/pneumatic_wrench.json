@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:crafting_shaped_pressurizable",
+  "category": "misc",
+  "key": {
+    "C": "pneumaticcraft:air_canister",
+    "D": "#c:dyes/orange",
+    "I": "#c:ingots/compressed_iron",
+    "L": "minecraft:lever"
+  },
+  "pattern": [
+    "IDI",
+    "C  ",
+    "ILI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:pneumatic_wrench"
+  }
+}

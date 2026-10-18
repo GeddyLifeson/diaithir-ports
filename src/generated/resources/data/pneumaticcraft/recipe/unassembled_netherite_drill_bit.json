@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "pneumaticcraft:drill_bit_diamond",
+    "#c:ingots/netherite"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:unassembled_netherite_drill_bit"
+  }
+}

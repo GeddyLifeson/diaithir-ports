@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/compressed_iron",
+    "L": "#pneumaticcraft:upgrade_components",
+    "R": "mekanism:module_radiation_shielding_unit"
+  },
+  "pattern": [
+    "LIL",
+    "IRI",
+    "LIL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:radiation_shielding_upgrade"
+  }
+}

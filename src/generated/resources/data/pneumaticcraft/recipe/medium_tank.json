@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:ingots/gold",
+    "P": "#pneumaticcraft:plastic_sheets",
+    "S": "pneumaticcraft:small_tank",
+    "T": "pneumaticcraft:pressure_tube"
+  },
+  "pattern": [
+    "PSP",
+    "ITI",
+    "PSP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:medium_tank"
+  }
+}

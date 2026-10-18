@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "pneumaticcraft:pneumatic"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "pneumaticcraft:pneumatic"
+      }
+    ]
+  }
+}

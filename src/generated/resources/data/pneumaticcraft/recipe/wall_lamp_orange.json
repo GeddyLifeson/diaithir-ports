@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "#c:dyes/orange",
+    "G": "minecraft:glowstone",
+    "I": "#c:ingots/compressed_iron",
+    "R": "#c:dusts/redstone"
+  },
+  "pattern": [
+    " R ",
+    "IGI",
+    " D "
+  ],
+  "result": {
+    "count": 4,
+    "id": "pneumaticcraft:wall_lamp_orange"
+  }
+}

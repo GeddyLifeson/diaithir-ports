@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "fluid": {
+      "ingredient": "#c:gasoline",
+      "amount": 100
+    }
+  },
+  "outputs": {
+    "fluid_output": {
+      "amount": 80,
+      "id": "pneumaticcraft:lpg"
+    }
+  },
+  "pressure": 2.0,
+  "temperature": {
+    "min": 573
+  }
+}

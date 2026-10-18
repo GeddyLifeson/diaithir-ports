@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": "#pneumaticcraft:plastic_bricks",
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:plastic"
+  }
+}

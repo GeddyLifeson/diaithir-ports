@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "pneumaticcraft:compressed_iron"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "pneumaticcraft:compressed_iron"
+      }
+    ]
+  }
+}

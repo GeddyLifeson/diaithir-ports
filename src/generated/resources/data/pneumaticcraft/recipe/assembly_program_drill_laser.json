@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "pneumaticcraft:assembly_program_laser",
+    "pneumaticcraft:assembly_program_drill"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:assembly_program_drill_laser"
+  }
+}

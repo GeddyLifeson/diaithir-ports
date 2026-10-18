@@ -1,0 +1,14 @@
+{
+  "type": "pneumaticcraft:thermo_plant",
+  "inputs": {
+    "item": "#c:crops"
+  },
+  "outputs": {
+    "fluid_output": {
+      "amount": 20,
+      "id": "pneumaticcraft:vegetable_oil"
+    }
+  },
+  "pressure": 2.0,
+  "speed": 0.5
+}

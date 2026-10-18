@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:small_tank",
+    "G": "#c:glass_panes",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    " I ",
+    "G G",
+    "IBI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:kerosene_lamp"
+  }
+}
