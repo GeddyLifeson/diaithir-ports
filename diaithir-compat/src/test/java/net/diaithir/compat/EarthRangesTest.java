@@ -55,8 +55,8 @@ class EarthRangesTest {
         // cave lion: Europe and North America yes, Africa no
         assertTrue(r.allows("untamedwilds:big_cat", 0, "cave_lion", 52.5, 13.4));
         assertFalse(r.allows("untamedwilds:big_cat", 0, "cave_lion", -1.3, 36.8));
-        // a species with no entry for its entity (cat variant without a range) and an unlisted entity are unaffected
-        assertTrue(r.allows("untamedwilds:big_cat", 4, "marsupial_lion", -25, 135));
+        // a species with no range of its own (an unlisted cat variant) and an unlisted entity are unaffected
+        assertTrue(r.allows("untamedwilds:big_cat", 99, "some_unlisted_cat", -25, 135));
         assertTrue(r.allows("untamedwilds:tarantula", 0, "black", 0, 0));
         assertTrue(r.allows("minecraft:zombie", -1, null, 0, 0));
         // Steller's sea cow wraps the antimeridian
@@ -75,6 +75,27 @@ class EarthRangesTest {
         assertFalse(r.allows("x:y", 1, "a", 55, 55));
         assertTrue(r.allows("x:y", 2, "b", 55, 55));
         assertFalse(r.allows("x:y", 2, "b", 5, 5));
+    }
+
+    @Test
+    void emptyBoxesMeanNeverOnEarth() throws Exception {
+        EarthRanges r = shipped();
+        for (double[] ll : new double[][] {{41.9, -87.6}, {52.5, 13.4}, {-1.3, 36.8}, {0, 0}}) {
+            assertFalse(r.allows("untamedwilds:bear", 3, "cave", ll[0], ll[1]));
+            assertFalse(r.allows("untamedwilds:bear", 1, "blind", ll[0], ll[1]));
+            assertFalse(r.allows("untamedwilds:big_cat", 4, "marsupial_lion", ll[0], ll[1]));
+            assertFalse(r.allows("untamedwilds:hyena", 4, "shortface", ll[0], ll[1]));
+            assertFalse(r.allows("untamedwilds:camel", 0, "bactrian", ll[0], ll[1]));
+            assertFalse(r.allows("untamedwilds:camel", 1, "dromedary", ll[0], ll[1]));
+        }
+        // the wild Bactrian keeps its box, and an empty-box range does not affect other species of the entity
+        assertTrue(r.allows("untamedwilds:camel", 2, "wild_bactrian", 42, 95));
+        assertFalse(r.allows("untamedwilds:camel", 2, "wild_bactrian", 52.5, 13.4));
+        assertTrue(r.allows("untamedwilds:bear", 2, "brown", 52.5, 13.4));
+        EarthRanges only = new EarthRanges();
+        only.replace(EarthRanges.parse(JsonParser.parseString("{\"entity\":\"a:b\",\"variant\":1,\"boxes\":[]}"), m -> fail(m)));
+        assertFalse(only.allows("a:b", 1, null, 0, 0));
+        assertTrue(only.allows("a:b", 2, null, 0, 0));
     }
 
     @Test

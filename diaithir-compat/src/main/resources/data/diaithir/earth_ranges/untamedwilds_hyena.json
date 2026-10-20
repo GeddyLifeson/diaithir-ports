@@ -3,6 +3,13 @@
  "ranges": [
   {
    "entity": "untamedwilds:hyena",
+   "species": "shortface",
+   "regions": [],
+   "note": "Pachycrocuta brevirostris: extinct about 0.4 Ma, never on Earth",
+   "boxes": []
+  },
+  {
+   "entity": "untamedwilds:hyena",
    "species": "aardwolf",
    "regions": [
     "Africa south of the Sahara"

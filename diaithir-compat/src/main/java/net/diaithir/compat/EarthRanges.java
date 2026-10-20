@@ -19,6 +19,7 @@ import java.util.function.Consumer;
  * { "entity": "untamedwilds:big_cat", "variant": 9, "species": "american_lion",
  *   "boxes": [ { "lat": [min, max], "lon": [min, max] } ] }
  * </pre>
+ * An empty {@code boxes} list means the entity never spawns naturally on Earth.
  * {@code variant} (an integer) and {@code species} (a lower-case species name) are optional and narrow the range to one
  * species variant of the entity. A box whose {@code lon} minimum is above its maximum wraps across the antimeridian.
  *
@@ -137,10 +138,6 @@ public final class EarthRanges {
                 JsonArray lat = bo.getAsJsonArray("lat");
                 JsonArray lon = bo.getAsJsonArray("lon");
                 boxes.add(new Box(lat.get(0).getAsDouble(), lat.get(1).getAsDouble(), lon.get(0).getAsDouble(), lon.get(1).getAsDouble()));
-            }
-            if (boxes.isEmpty()) {
-                onError.accept("range for " + entity + " has no boxes");
-                return;
             }
             out.add(new Entry(entity, variant, species, List.copyOf(boxes)));
         } catch (RuntimeException e) {

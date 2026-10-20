@@ -3,6 +3,20 @@
  "ranges": [
   {
    "entity": "untamedwilds:camel",
+   "species": "bactrian",
+   "regions": [],
+   "note": "domestic Bactrian camel, domesticated around 3000 BC (Age II at the earliest), never on Earth in Age I",
+   "boxes": []
+  },
+  {
+   "entity": "untamedwilds:camel",
+   "species": "dromedary",
+   "regions": [],
+   "note": "domestic dromedary, domesticated around 3000 BC (Age II at the earliest), never on Earth in Age I",
+   "boxes": []
+  },
+  {
+   "entity": "untamedwilds:camel",
    "species": "wild_bactrian",
    "regions": [
     "Wild Bactrian range"

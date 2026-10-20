@@ -23,6 +23,20 @@
   },
   {
    "entity": "untamedwilds:bear",
+   "species": "cave",
+   "regions": [],
+   "note": "Ursus spelaeus: extinct before Age I, never on Earth",
+   "boxes": []
+  },
+  {
+   "entity": "untamedwilds:bear",
+   "species": "blind",
+   "regions": [],
+   "note": "Speleoarctos cavernicola: fictional, never on Earth",
+   "boxes": []
+  },
+  {
+   "entity": "untamedwilds:bear",
    "species": "brown",
    "regions": [
     "N America",

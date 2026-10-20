@@ -5,7 +5,7 @@ Region boxes reproduce region() of DiaithirRPG tools/earth/age1_layers.py as uni
 (check: python3 gen_earth_ranges.py --check <path to age1_layers.py>). Species lists come from AGE_I_FAUNA.csv regions
 (Age I, 14.8-9.5 ka) plus today's native range for species that also lived in Age I. Sources: UW_SPECIES.csv and the
 species pages cited there. Species not listed here (fish, sharks, whales, invertebrates, amphibians, most reptiles and
-species extinct before Age I) have no entry and spawn by biome only.
+species extinct before Age I, apart from those listed with an empty region list) have no entry and spawn by biome only.
 """
 import json, os, sys
 
@@ -40,6 +40,8 @@ R = dict(REG, **EXTRA)
 S = {
  "bear": [
   ("black", ["N America"], "CSV Ursus americanus: N America"),
+  ("cave", [], "Ursus spelaeus: extinct before Age I, never on Earth"),
+  ("blind", [], "Speleoarctos cavernicola: fictional, never on Earth"),
   ("brown", ["N America", "Europe", "N Asia", "SW Asia", "E/S Asia"], "CSV Ursus arctos: N America, Europe, N Asia; modern range adds SW and E/S Asia"),
   ("polar", ["Arctic"], "Ursus maritimus, Arctic"),
   ("panda", ["Giant panda range"], "Ailuropoda melanoleuca, modern range"),
@@ -54,6 +56,7 @@ S = {
   ("leopard", ["Africa", "SW Asia", "E/S Asia", "SE Asia/Sunda"], "Panthera pardus, modern range"),
   ("lion", ["Africa", "SW Asia", "E/S Asia"], "Panthera leo, modern and Holocene range"),
   ("puma", ["N America", "C America", "S America"], "CSV Puma concolor: N America; modern range adds C and S America"),
+  ("marsupial_lion", [], "Thylacoleo carnifex: extinct about 40 ka, before Age I, never on Earth"),
   ("sabertooth", ["S America"], "Smilodon populator, South America"),
   ("snow_leopard", ["E/S Asia", "N Asia"], "Panthera uncia, modern range"),
   ("tiger", ["E/S Asia", "SE Asia/Sunda", "SW Asia"], "Panthera tigris, modern and Holocene range"),
@@ -77,10 +80,13 @@ S = {
   ("long_nosed", ["N America"], "CSV Mylohyus fossilis: N America"),
  ],
  "camel": [
+  ("bactrian", [], "domestic Bactrian camel, domesticated around 3000 BC (Age II at the earliest), never on Earth in Age I"),
+  ("dromedary", [], "domestic dromedary, domesticated around 3000 BC (Age II at the earliest), never on Earth in Age I"),
   ("wild_bactrian", ["Wild Bactrian range"], "Camelus ferus, modern range"),
   ("western", ["N America"], "CSV Camelops hesternus: N America"),
  ],
  "hyena": [
+  ("shortface", [], "Pachycrocuta brevirostris: extinct about 0.4 Ma, never on Earth"),
   ("aardwolf", ["Africa south of the Sahara"], "Proteles cristata, modern range"),
   ("brown", ["Africa south of the Sahara"], "Parahyaena brunnea, modern range"),
   ("spotted", ["Africa south of the Sahara"], "Crocuta crocuta, Africa only in Age I"),
