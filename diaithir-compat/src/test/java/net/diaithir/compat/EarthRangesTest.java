@@ -99,6 +99,25 @@ class EarthRangesTest {
     }
 
     @Test
+    void bodyPlanSpeciesAndVanillaHorseAndWolf() throws Exception {
+        EarthRanges r = shipped();
+        // woolly mammoth: Europe yes, Africa no; African elephant the other way round
+        assertTrue(r.allows("untamedwilds:elephantid", 0, "woolly", 52.5, 13.4));
+        assertFalse(r.allows("untamedwilds:elephantid", 0, "woolly", -1.3, 36.8));
+        assertTrue(r.allows("untamedwilds:elephantid", 5, "african", -1.3, 36.8));
+        assertFalse(r.allows("untamedwilds:elephantid", 5, "african", 52.5, 13.4));
+        // vanilla horse and wolf: Europe yes, South America and Africa no
+        assertTrue(r.allows("minecraft:horse", -1, null, 52.5, 13.4));
+        assertFalse(r.allows("minecraft:horse", -1, null, -34.6, -58.4));
+        assertFalse(r.allows("minecraft:horse", -1, null, -1.3, 36.8));
+        assertTrue(r.allows("minecraft:wolf", -1, null, 60.0, 100.0));
+        assertFalse(r.allows("minecraft:wolf", -1, null, -34.6, -58.4));
+        // przewalski only on the Mongolian steppe
+        assertTrue(r.allows("untamedwilds:equid", 1, "przewalski", 45.0, 100.0));
+        assertFalse(r.allows("untamedwilds:equid", 1, "przewalski", 52.5, 13.4));
+    }
+
+    @Test
     void badEntriesAreReportedAndSkipped() {
         List<String> errors = new ArrayList<>();
         List<EarthRanges.Entry> e = EarthRanges.parse(JsonParser.parseString("{\"ranges\":[{\"entity\":\"a:b\"},{\"entity\":\"a:c\",\"boxes\":[{\"lat\":[0,1],\"lon\":[0,1]}]}]}"), errors::add);
