@@ -6,7 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
@@ -70,7 +70,7 @@ public class SpeciesDataHolder {
         this.health = health;
         this.activityType = activityType;
         this.favouriteFood_input = favourite_food;
-    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.tryParse(this.favouriteFood_input)));
+    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
         this.growing_time = growing_time;
         this.offspring = offspring;
         this.skins = skins;
@@ -234,11 +234,11 @@ public class SpeciesDataHolder {
             boolean result = switch (this.type) {
                 case BIOME_TAG -> isMatchingBiomeTag(biomekey, this.key);
                 case REGISTRY_NAME -> {
-                    ResourceLocation rl = ResourceLocation.tryParse(this.key);
+                    Identifier rl = Identifier.tryParse(this.key);
                     if (rl == null) {
-                        rl = ResourceLocation.tryParse("minecraft:" + this.key);
+                        rl = Identifier.tryParse("minecraft:" + this.key);
                     }
-                    yield rl != null && biomekey.unwrapKey().isPresent() && biomekey.unwrapKey().get().location().equals(rl);
+                    yield rl != null && biomekey.unwrapKey().isPresent() && biomekey.unwrapKey().get().identifier().equals(rl);
                 }
             };
             if (this.modifier == ConditionModifiers.INVERTED) {
@@ -248,9 +248,9 @@ public class SpeciesDataHolder {
         }
 
         private static boolean isMatchingBiomeTag(Holder<Biome> biomekey, String key) {
-            List<ResourceLocation> candidates = new ArrayList<>();
+            List<Identifier> candidates = new ArrayList<>();
             if (key.contains(":")) {
-                ResourceLocation explicit = ResourceLocation.tryParse(key);
+                Identifier explicit = Identifier.tryParse(key);
                 if (explicit != null) {
                     candidates.add(explicit);
                 }
@@ -261,7 +261,7 @@ public class SpeciesDataHolder {
                 }
             }
 
-            for (ResourceLocation candidate : candidates) {
+            for (Identifier candidate : candidates) {
                 if (biomekey.is(TagKey.create(Registries.BIOME, candidate))) {
                     return true;
                 }
@@ -269,15 +269,15 @@ public class SpeciesDataHolder {
             return false;
         }
 
-        private static void addTagCandidates(List<ResourceLocation> candidates, String key) {
+        private static void addTagCandidates(List<Identifier> candidates, String key) {
             addCandidate(candidates, "minecraft:" + key);
             addCandidate(candidates, "untamedwilds:" + key);
             addCandidate(candidates, "c:" + key);
             addCandidate(candidates, "forge:" + key);
         }
 
-        private static void addCandidate(List<ResourceLocation> candidates, String id) {
-            ResourceLocation rl = ResourceLocation.tryParse(id);
+        private static void addCandidate(List<Identifier> candidates, String id) {
+            Identifier rl = Identifier.tryParse(id);
             if (rl != null) {
                 candidates.add(rl);
             }

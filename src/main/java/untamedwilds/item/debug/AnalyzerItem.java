@@ -25,7 +25,7 @@ public class AnalyzerItem extends Item {
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player playerIn, LivingEntity target, InteractionHand hand) {
     Level world = target.level();
-    if (world.isClientSide) return InteractionResult.PASS;
+    if (world.isClientSide()) return InteractionResult.PASS;
         if (target instanceof ComplexMob) {
             ComplexMob entity = (ComplexMob)target;
             String entityName = entity instanceof ISpecies ? ((ISpecies) entity).getSpeciesName() : entity.getName().getString();

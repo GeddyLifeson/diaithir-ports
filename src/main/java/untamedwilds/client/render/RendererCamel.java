@@ -1,11 +1,11 @@
 package untamedwilds.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.EntityModel;
+import untamedwilds.client.render.compat.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.resources.ResourceLocation;
+import untamedwilds.client.render.compat.MobRenderer;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import untamedwilds.client.model.ModelCamel;
 import untamedwilds.client.model.ModelCamelCalf;
@@ -34,7 +34,7 @@ public class RendererCamel extends MobRenderer<EntityCamel, EntityModel<EntityCa
         this.shadowRadius = f * 0.9F;
     }
 
-    public @NotNull ResourceLocation getTextureLocation(EntityCamel entity) {
+    public @NotNull Identifier getTextureLocation(EntityCamel entity) {
         return entity.getTexture();
     }
 }

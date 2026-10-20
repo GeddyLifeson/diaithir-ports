@@ -29,7 +29,7 @@ public class LardBlock extends Block {
 
     public void fallOn(Level worldIn, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
         entityIn.playSound(SoundEvents.HONEY_BLOCK_SLIDE, 1.0F, 1.0F);
-        if (!worldIn.isClientSide) {
+        if (!worldIn.isClientSide()) {
             worldIn.broadcastEntityEvent(entityIn, (byte)54);
         }
 
@@ -39,9 +39,9 @@ public class LardBlock extends Block {
         }
     }
 
-    public void updateEntityAfterFallOn(BlockGetter getter, Entity entityIn) {
+    public void updateEntityMovementAfterFallOn(BlockGetter getter, Entity entityIn) {
         if (entityIn.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(getter, entityIn);
+            super.updateEntityMovementAfterFallOn(getter, entityIn);
         } else {
             //showJumpParticles(entityIn);
             this.bounceUp(entityIn);
@@ -57,13 +57,13 @@ public class LardBlock extends Block {
         }
     }
 
-    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier amApplier, boolean amPrecise) {
         if (this.isSlidingDown(pos, entityIn)) {
             this.doSlideMovement(entityIn);
             showSlideParticles(entityIn, worldIn, pos);
         }
 
-        super.entityInside(state, worldIn, pos, entityIn);
+        super.entityInside(state, worldIn, pos, entityIn, amApplier, amPrecise);
     }
 
     private void doSlideMovement(Entity entityIn) {
@@ -102,7 +102,7 @@ public class LardBlock extends Block {
     }
 
     private static void showParticles(Entity entity, Level world, BlockPos pos, int p_53990_) {
-        if (world.isClientSide) {
+        if (world.isClientSide()) {
             BlockState blockstate = world.getBlockState(pos);
 
             for(int i = 0; i < p_53990_; ++i) {

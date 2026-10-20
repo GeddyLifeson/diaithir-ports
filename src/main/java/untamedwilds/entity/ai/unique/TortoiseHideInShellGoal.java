@@ -21,7 +21,7 @@ public class TortoiseHideInShellGoal<T extends LivingEntity> extends Goal {
         this.taskOwner = entityIn;
         this.classToAvoid = classToAvoidIn;
         this.avoidDistance = avoidDistanceIn;
-        this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector(targetSelector);
+        this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector((t_, l_) -> targetSelector.test(t_));
         this.setFlags(EnumSet.of(Flag.MOVE));
     }
 
@@ -34,7 +34,7 @@ public class TortoiseHideInShellGoal<T extends LivingEntity> extends Goal {
             return false;
         }
 
-    List<T> list = this.taskOwner.level().getNearbyEntities(classToAvoid, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
+    List<T> list = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(classToAvoid, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
         if (list.isEmpty()) {
             this.taskOwner.setSitting(false);
             return false;
@@ -55,7 +55,7 @@ public class TortoiseHideInShellGoal<T extends LivingEntity> extends Goal {
 
     public void tick() {
         if (this.taskOwner.getRandom().nextInt(40) == 0) {
-            List<T> list = this.taskOwner.level().getNearbyEntities(classToAvoid, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
+            List<T> list = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(classToAvoid, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
             if (list.isEmpty()) {
                 this.taskOwner.setSitting(false);
             }

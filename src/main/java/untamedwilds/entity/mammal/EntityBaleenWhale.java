@@ -1,5 +1,7 @@
 package untamedwilds.entity.mammal;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -102,7 +104,7 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.level().getGameTime() % 4000 == 0) {
                 this.heal(1.0F);
             }
@@ -210,14 +212,14 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
     public boolean hasLongFins(){ return (this.entityData.get(LONG_FINS)); }
     private void setLongFins(boolean long_fins){ this.entityData.set(LONG_FINS, long_fins); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("hasLongFins", this.hasLongFins());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setLongFins(compound.getBoolean("hasLongFins"));
+        this.setLongFins(compound.getBooleanOr("hasLongFins", false));
     }
 
 
@@ -241,7 +243,7 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
     }
 
     public boolean attackEntityPartFrom(EntityWhalePart whale_part, DamageSource source, float amount) {
-        return this.hurt(source, amount);
+        return this.hurtOrSimulate(source, amount);
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
@@ -250,7 +252,7 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
             if (!this.level().isClientSide()) {
                 this.setFeeding(!this.isFeeding());
             }
-            return InteractionResult.sidedSuccess(this.level().isClientSide());
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -299,18 +301,18 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
             return true;
         }
 
-        public boolean hurt(DamageSource source, float amount) {
-            return !this.isInvulnerableTo(source) && this.getParent().attackEntityPartFrom(this, source, amount);
+        public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
+            return !this.isInvulnerableToBase(source) && this.getParent().attackEntityPartFrom(this, source, amount);
         }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) { }
 
         @Override
-        protected void readAdditionalSaveData(CompoundTag compound) { }
+        protected void readAdditionalSaveData(ValueInput compound) { }
 
         @Override
-        protected void addAdditionalSaveData(CompoundTag compound) { }
+        protected void addAdditionalSaveData(ValueOutput compound) { }
 
 
         public boolean is(Entity entityIn) {

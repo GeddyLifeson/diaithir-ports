@@ -1,5 +1,7 @@
 package untamedwilds.entity.reptile;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -87,9 +89,9 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
         this.targetSelector.addGoal(3, new HuntMobTarget<>(this, LivingEntity.class, true, 30, false, input -> getEcoLevel(input) < getEcoLevel(this)));
     }
 
-    public boolean wantsToBeOnLand() { return this.level().getDayTime() > 4500 && this.level().getDayTime() < 7500; }
+    public boolean wantsToBeOnLand() { return this.level().getOverworldClockTime() > 4500 && this.level().getOverworldClockTime() < 7500; }
 
-    public boolean wantsToBeInWater() { return !(this.level().getDayTime() > 4500 && this.level().getDayTime() < 7500); }
+    public boolean wantsToBeInWater() { return !(this.level().getOverworldClockTime() > 4500 && this.level().getOverworldClockTime() < 7500); }
 
     public boolean isPushedByFluid() {
         return false;
@@ -98,7 +100,7 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
     public void die(DamageSource cause) {
         if ("anvil".equals(cause.getMsgId()) && !this.isBaby()) {
             // Advancement Trigger: "Unethical Soup"
-            ItemEntity entityitem = this.spawnAtLocation(new ItemStack(ModItems.FOOD_TURTLE_SOUP.get()), 0.2F);
+            ItemEntity entityitem = spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ModItems.FOOD_TURTLE_SOUP.get()), 0.2F);
             if (entityitem != null) {
                 entityitem.getItem().setCount(1);
             }
@@ -108,7 +110,7 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
 
     public void tick() {
         super.tick();
-    if (this.level().isClientSide && this.isInWater() && this.getDeltaMovement().lengthSqr() > 0.03D) {
+    if (this.level().isClientSide() && this.isInWater() && this.getDeltaMovement().lengthSqr() > 0.03D) {
             Vec3 vec3 = this.getViewVector(0.0F);
             float f = Mth.cos(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
             float f1 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
@@ -134,7 +136,7 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
     public void aiStep() {
         super.aiStep();
 
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.level().getGameTime() % 4000 == 0) {
                 this.heal(1.0F);
             }
@@ -177,7 +179,7 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
 
         if (itemstack.isEmpty() && this.isAlive()) {
             EntityUtils.turnEntityIntoItem(this, "spawn_softshell_turtle");
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -207,13 +209,13 @@ public class EntitySoftshellTurtle extends ComplexMobAmphibious implements ISpec
         return this.level().isEmptyBlock(pos) && this.level().getBlockState(pos.below()).is(ModTags.ModBlockTags.VALID_REPTILE_NEST) && this.getNestType().defaultBlockState().canSurvive(this.level(), pos);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 }

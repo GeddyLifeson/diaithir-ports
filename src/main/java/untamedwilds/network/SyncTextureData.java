@@ -4,7 +4,7 @@ import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
@@ -15,12 +15,12 @@ import untamedwilds.util.EntityUtils;
 
 import java.util.HashMap;
 
-public record SyncTextureData(ResourceLocation entityName, String speciesName, int skinsData, int id) implements CustomPacketPayload {
+public record SyncTextureData(Identifier entityName, String speciesName, int skinsData, int id) implements CustomPacketPayload {
 
-    public static final CustomPacketPayload.Type<SyncTextureData> TYPE = new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(UntamedWilds.MOD_ID, "sync_texture"));
+    public static final CustomPacketPayload.Type<SyncTextureData> TYPE = new CustomPacketPayload.Type<>(Identifier.fromNamespaceAndPath(UntamedWilds.MOD_ID, "sync_texture"));
 
     public static final StreamCodec<ByteBuf, SyncTextureData> STREAM_CODEC = StreamCodec.composite(
-        ResourceLocation.STREAM_CODEC,
+        Identifier.STREAM_CODEC,
         SyncTextureData::entityName,
         ByteBufCodecs.STRING_UTF8,
         SyncTextureData::speciesName,
@@ -36,7 +36,7 @@ public record SyncTextureData(ResourceLocation entityName, String speciesName, i
             if (UntamedWilds.DEBUG) {
                 UntamedWilds.LOGGER.info("Handling texture data for entity: " + data.entityName + " with species: " + data.speciesName);
             }
-            EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.get(data.entityName);
+            EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.getValue(data.entityName);
             if (!ComplexMob.CLIENT_DATA_HASH.containsKey(type)) {
                 ComplexMob.CLIENT_DATA_HASH.put(type, new EntityDataHolderClient(new HashMap<>(), new HashMap<>()));
             }

@@ -1,10 +1,10 @@
 package untamedwilds.init;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import untamedwilds.UntamedWilds;
 
 public class ModLootTables {
-    public static ResourceLocation LOOT_DIGGING = ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":gameplay/digging");
+    public static Identifier LOOT_DIGGING = Identifier.tryParse(UntamedWilds.MOD_ID + ":gameplay/digging");
 
     public static void init() {
     }

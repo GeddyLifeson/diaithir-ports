@@ -2,9 +2,9 @@ package untamedwilds.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.model.EntityModel;
-import net.minecraft.resources.ResourceLocation;
+import untamedwilds.client.render.compat.MobRenderer;
+import untamedwilds.client.render.compat.EntityModel;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import untamedwilds.client.model.ModelWhaleShark;
 import untamedwilds.entity.fish.EntityWhaleShark;
@@ -22,7 +22,7 @@ public class RendererWhaleShark extends MobRenderer<EntityWhaleShark, EntityMode
         this.shadowRadius = f;
     }
 
-    public @NotNull ResourceLocation getTextureLocation(EntityWhaleShark entity) {
+    public @NotNull Identifier getTextureLocation(EntityWhaleShark entity) {
         return entity.getTexture();
     }
 }

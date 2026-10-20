@@ -1,5 +1,7 @@
 package untamedwilds.entity.mollusk;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -62,7 +64,7 @@ public class EntityGiantClam extends ComplexMob implements ISpecies, INewSkins {
     public void baseTick() {
         int i = this.getAirSupply();
         super.baseTick();
-        if (this.isAlive() && !this.isInWaterOrBubble()) {
+        if (this.isAlive() && !this.isInWater()) {
             --i;
             this.setAirSupply(i);
 
@@ -89,7 +91,7 @@ public class EntityGiantClam extends ComplexMob implements ISpecies, INewSkins {
                     this.breed();
                 }
             }
-            this.setOpen(this.level().isDay());
+            this.setOpen(this.level().isBrightOutside());
         }
         if (this.level().isClientSide()) {
             if (!this.isOpen() && this.closeProgress < 200) {
@@ -128,9 +130,9 @@ public class EntityGiantClam extends ComplexMob implements ISpecies, INewSkins {
 
         if (itemstack.getItem() instanceof ShovelItem && this.isAlive() && hand == InteractionHand.MAIN_HAND) {
             if (this.random.nextInt(4) == 0) {
-                this.level().playSound(null, this.blockPosition(), SoundEvents.SHIELD_BLOCK, SoundSource.BLOCKS, 1.0F, 0.8F);
+                this.level().playSound(null, this.blockPosition(), SoundEvents.SHIELD_BLOCK.value(), SoundSource.BLOCKS, 1.0F, 0.8F);
                 EntityUtils.turnEntityIntoItem(this, "spawn_giant_clam");
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
             else {
                 this.level().playSound(null, this.blockPosition(), SoundEvents.SHULKER_HURT_CLOSED, SoundSource.BLOCKS, 1.0F, 0.8F);
@@ -144,13 +146,13 @@ public class EntityGiantClam extends ComplexMob implements ISpecies, INewSkins {
     private boolean isOpen(){ return (this.entityData.get(CLAM_OPEN)); }
     private void setOpen(boolean open){ this.entityData.set(CLAM_OPEN, open); }
 
-    public void addAdditionalSaveData(CompoundTag compound){ // Write NBT Tags
+    public void addAdditionalSaveData(ValueOutput compound){ // Write NBT Tags
         super.addAdditionalSaveData(compound);
         compound.putBoolean("isOpen", this.isOpen());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){ // Read NBT Tags
+    public void readAdditionalSaveData(ValueInput compound){ // Read NBT Tags
         super.readAdditionalSaveData(compound);
-        this.setOpen(compound.getBoolean("isOpen"));
+        this.setOpen(compound.getBooleanOr("isOpen", false));
     }
 }

@@ -1,13 +1,15 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -122,7 +124,7 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
     }
 
     public void aiStep() {
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.herd == null && EntityUtils.getPackSize(this.getType(), this.getVariant()) > 1) {
                 IPackEntity.initPack(this);
             }
@@ -174,16 +176,16 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
         if (this.getAnimation() == IDLE_TALK && this.getAnimationTick() == 1 && this.getAmbientSound() != null) {
             this.playSound(this.getAmbientSound(), this.getSoundVolume(), this.getVoicePitch());
         }
-        if (this.level().isClientSide && this.isAngry() && this.aggroProgress < 40) {
+        if (this.level().isClientSide() && this.isAngry() && this.aggroProgress < 40) {
             this.aggroProgress++;
-        } else if (this.level().isClientSide && !this.isAngry() && this.aggroProgress > 0) {
+        } else if (this.level().isClientSide() && !this.isAngry() && this.aggroProgress > 0) {
             this.aggroProgress--;
         }
         super.aiStep();
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.WOLF_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.WOLF_STEP.value(), 0.15F, 1.0F);
     }
 
     protected void reassessTameGoals() {
@@ -229,8 +231,8 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
         return super.mobInteract(player, hand);
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation(entityIn);
             this.setAnimation(anim);
@@ -239,15 +241,15 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         float f = this.getHealth();
-        if (!this.level().isClientSide && !this.isNoAi() && this.getTarget() == damageSource.getEntity() && amount < f && (damageSource.getEntity() != null || damageSource.getDirectEntity() != null) && damageSource.getEntity() instanceof LivingEntity && (damageSource.getEntity() instanceof TamableAnimal tamable && tamable.getOwner() != null)) {
+        if (!this.level().isClientSide() && !this.isNoAi() && this.getTarget() == damageSource.getEntity() && amount < f && (damageSource.getEntity() != null || damageSource.getDirectEntity() != null) && damageSource.getEntity() instanceof LivingEntity && (damageSource.getEntity() instanceof TamableAnimal tamable && tamable.getOwner() != null)) {
             if (this.hasLineOfSight(damageSource.getEntity()) && !damageSource.getEntity().isInvulnerable() && this.getAnimation() == NO_ANIMATION) {
-                this.doHurtTarget(damageSource.getEntity());
+                doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), damageSource.getEntity());
             }
         }
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     private Animation chooseAttackAnimation(Entity target) {
@@ -282,27 +284,27 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
     public boolean hasFluffyTail(){ return (this.entityData.get(FLUFFY_TAIL)); }
     private void setFluffyTail(boolean fluffy_tail){ this.entityData.set(FLUFFY_TAIL, fluffy_tail); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("hasDimorphism", this.hasDimorphism());
         compound.putBoolean("fluffy", this.hasFluffyTail());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setDimorphism(compound.getBoolean("hasDimorphism"));
-        this.setFluffyTail(compound.getBoolean("fluffy"));
+        this.setDimorphism(compound.getBooleanOr("hasDimorphism", false));
+        this.setFluffyTail(compound.getBooleanOr("fluffy", false));
     }
 
-    public ResourceLocation getTexture() {
-        ResourceLocation texture_path = EntityUtils.getSkinFromEntity(this);
+    public Identifier getTexture() {
+        Identifier texture_path = EntityUtils.getSkinFromEntity(this);
         // Derive dimorphism from data as a fallback for command-spawned mobs where post-update may not have run yet.
         boolean dimorphic =
             this.hasDimorphism() ||
             getEntityData(this.getType()).getFlags(this.getVariant(), "dimorphism") == 1;
         if (dimorphic) {
             String trimmed_path = texture_path.getPath().substring(0, texture_path.getPath().lastIndexOf('.'));
-            return ResourceLocation.tryParse(
+            return Identifier.tryParse(
                 UntamedWilds.MOD_ID + ":" + trimmed_path + "_" + this.getGenderString() + ".png"
             );
         }

@@ -1,8 +1,10 @@
 package untamedwilds.entity.fish;
 
-import com.github.alexthe666.citadel.animation.Animation;
-import com.github.alexthe666.citadel.animation.AnimationHandler;
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
+import untamedwilds.citadel.animation.AnimationHandler;
+import untamedwilds.citadel.animation.IAnimatedEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
@@ -73,7 +75,7 @@ public class EntityShark extends ComplexMobAquatic implements ISpecies, IAnimate
     public void aiStep() {
         super.aiStep();
         AnimationHandler.INSTANCE.updateAnimations(this);
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             this.setAngry(this.getTarget() != null);
             if (this.tickCount % 1000 == 0) {
                 if (this.wantsToBreed() && !this.isMale()) {
@@ -145,8 +147,8 @@ public class EntityShark extends ComplexMobAquatic implements ISpecies, IAnimate
         return SoundEvents.COD_FLOP;
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             this.setAnimation(ATTACK_THRASH);
         }
@@ -173,13 +175,13 @@ public class EntityShark extends ComplexMobAquatic implements ISpecies, IAnimate
     public boolean hasShortFins(){ return (this.entityData.get(SHORT_FINS)); }
     private void setShortFins(boolean short_fins){ this.entityData.set(SHORT_FINS, short_fins); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("hasShortFins", this.hasShortFins());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setShortFins(compound.getBoolean("hasShortFins"));
+        this.setShortFins(compound.getBooleanOr("hasShortFins", false));
     }
 }

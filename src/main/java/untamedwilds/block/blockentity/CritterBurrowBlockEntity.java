@@ -1,5 +1,8 @@
 package untamedwilds.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
 import com.google.common.collect.Lists;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -58,12 +61,12 @@ public class CritterBurrowBlockEntity extends BlockEntity {
             BlockPos blockpos = this.getBlockPos();
             if (worldIn.hasNearbyAlivePlayer((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.5D, (double)blockpos.getZ() + 0.5D, ConfigMobControl.critterSpawnRange.get())) {
                 if (!this.getInhabitants().isEmpty()) {
-                    int i = worldIn.random.nextInt(this.inhabitants.size());
+                    int i = worldIn.getRandom().nextInt(this.inhabitants.size());
                     Entity spawn = this.getEntityType().create(worldIn, (e) -> {
                         if (this.inhabitants.get(i).entityData != null && this.inhabitants.get(i).entityData.contains("EntityTag")) {
-                            e.load(this.inhabitants.get(i).entityData.getCompound("EntityTag"));
+                            e.load(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, worldIn.registryAccess(), this.inhabitants.get(i).entityData.getCompoundOrEmpty("EntityTag")));
                         }
-                    }, blockpos, MobSpawnType.DISPENSER, true, false);
+                    }, blockpos, EntitySpawnReason.DISPENSER, true, false);
                     if (spawn != null) {
                         worldIn.addFreshEntityWithPassengers(spawn);
                         this.inhabitants.remove(i);
@@ -72,12 +75,12 @@ public class CritterBurrowBlockEntity extends BlockEntity {
                 }
                 else if (this.getCount() > 0 && this.getEntityType() != null) {
                     // Turns out that calling EntityType.create(...) will fucking crash the game if it pulls an invalid variant
-                    //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, MobSpawnType.CHUNK_GENERATION, true, false);
-                    Entity spawn = this.getEntityType().create(worldIn);
+                    //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, EntitySpawnReason.CHUNK_GENERATION, true, false);
+                    Entity spawn = this.getEntityType().create(worldIn, EntitySpawnReason.CHUNK_GENERATION);
                     if (spawn != null) {
-                        spawn.moveTo(blockpos.getX() + 0.5D, blockpos.getY(), blockpos.getZ() + 0.5D, Mth.wrapDegrees(worldIn.random.nextFloat() * 360.0F), 0.0F);
+                        spawn.snapTo(blockpos.getX() + 0.5D, blockpos.getY(), blockpos.getZ() + 0.5D, Mth.wrapDegrees(worldIn.getRandom().nextFloat() * 360.0F), 0.0F);
                         if (spawn instanceof Mob mobSpawn) {
-                            mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), MobSpawnType.CHUNK_GENERATION, null);
+                            mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), EntitySpawnReason.CHUNK_GENERATION, null);
                         }
                         if (spawn instanceof ComplexMob entitySpawn) {
                             entitySpawn.setVariant(EntityUtils.getClampedNumberOfSpecies(this.variant, this.entityType));
@@ -111,36 +114,36 @@ public class CritterBurrowBlockEntity extends BlockEntity {
     public EntityType<?> getEntityType() { return this.entityType; }
 
     @Override
-    protected void loadAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.loadAdditional(compound, registries);
+    protected void loadAdditional(ValueInput compound) {
+        super.loadAdditional(compound);
         this.inhabitants.clear();
-        ListTag listnbt = compound.getList("Inhabitants", 10);
-        this.setVariant(compound.getInt("Variant"));
-        this.setCount(compound.getInt("Count"));
-        if (compound.contains("entityType")) {
-            this.setEntityType(EntityType.byString(compound.getString("entityType")).orElse(null));
+        java.util.List<CompoundTag> listnbt = compound.read("Inhabitants", CompoundTag.CODEC.listOf()).orElse(java.util.List.of());
+        this.setVariant(compound.getIntOr("Variant", 0));
+        this.setCount(compound.getIntOr("Count", 0));
+        if (NbtUtil.has(compound, "entityType")) {
+            this.setEntityType(EntityType.byString(compound.getStringOr("entityType", "")).orElse(null));
         }
 
         for(int i = 0; i < listnbt.size(); ++i) {
-            CompoundTag CompoundTag = listnbt.getCompound(i);
-            Inhabitants beehivetileentity$bee = new Inhabitants(CompoundTag.getCompound("EntityData"));
+            CompoundTag CompoundTag = listnbt.get(i);
+            Inhabitants beehivetileentity$bee = new Inhabitants(CompoundTag.getCompoundOrEmpty("EntityData"));
             this.inhabitants.add(beehivetileentity$bee);
         }
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.saveAdditional(compound, registries);
-        compound.put("Inhabitants", this.getInhabitants());
+    protected void saveAdditional(ValueOutput compound) {
+        super.saveAdditional(compound);
+        compound.store("Inhabitants", CompoundTag.CODEC.listOf(), this.getInhabitants());
         compound.putInt("Count", this.getCount());
         compound.putInt("Variant", this.getVariant());
         if (this.getEntityType() != null) {
-            compound.putString("entityType", this.getEntityType().builtInRegistryHolder().key().location().toString());
+            compound.putString("entityType", this.getEntityType().builtInRegistryHolder().key().identifier().toString());
         }
     }
 
-    public ListTag getInhabitants() {
-        ListTag inhabitants = new ListTag();
+    public java.util.List<CompoundTag> getInhabitants() {
+        java.util.List<CompoundTag> inhabitants = new java.util.ArrayList<>();
 
         for(Inhabitants inhabitant : this.inhabitants) {
             CompoundTag CompoundTag = new CompoundTag();

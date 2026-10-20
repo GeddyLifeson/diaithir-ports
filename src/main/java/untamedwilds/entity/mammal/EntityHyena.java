@@ -1,6 +1,6 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
@@ -87,7 +87,7 @@ public class EntityHyena extends ComplexMobTerrestrial implements INewSkins, ISp
 
     @Override
     public void aiStep() {
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.herd == null) {
                 IPackEntity.initPack(this);
             }
@@ -136,8 +136,8 @@ public class EntityHyena extends ComplexMobTerrestrial implements INewSkins, ISp
         super.aiStep();
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
@@ -146,7 +146,7 @@ public class EntityHyena extends ComplexMobTerrestrial implements INewSkins, ISp
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.WOLF_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.WOLF_STEP.value(), 0.15F, 1.0F);
     }
 
     private Animation chooseAttackAnimation() {

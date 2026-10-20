@@ -1,5 +1,7 @@
 package untamedwilds.entity.fish;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -69,7 +71,7 @@ public class EntityFootballFish extends ComplexMobAquatic implements ISpecies, I
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.tickCount % 1000 == 0) {
                 if (this.wantsToBreed() && !this.isMale()) {
                     this.breed();
@@ -111,7 +113,7 @@ public class EntityFootballFish extends ComplexMobAquatic implements ISpecies, I
                 this.setAttachedMale(false);
                 this.hurt(player.damageSources().mobAttack(player), 1);
             }
-            return InteractionResult.sidedSuccess(this.level().isClientSide());
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -142,13 +144,13 @@ public class EntityFootballFish extends ComplexMobAquatic implements ISpecies, I
     public boolean hasAttachedMale(){ return (this.entityData.get(HAS_MALE)); }
     private void setAttachedMale(boolean attachedMale){ this.entityData.set(HAS_MALE, attachedMale); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("hasMale", this.hasAttachedMale());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setAttachedMale(compound.getBoolean("hasMale"));
+        this.setAttachedMale(compound.getBooleanOr("hasMale", false));
     }
 }

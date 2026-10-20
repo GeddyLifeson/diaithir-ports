@@ -95,7 +95,7 @@ public class LookThroughSpyglassEvent {
             name.append(getThreatLevel(target, playerIn));
             name.append(")");
         }
-        playerIn.displayClientMessage(name, true);
+        playerIn.sendOverlayMessage(name);
     }
 
     private static MutableComponent getHealthState(int health) {

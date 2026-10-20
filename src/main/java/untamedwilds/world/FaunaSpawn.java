@@ -108,7 +108,7 @@ public class FaunaSpawn {
 
     public static boolean performWorldGenSpawning(EntityType<?> entityType, SpawnPlacementType spawnType, @Nullable Heightmap.Types heightMap, ServerLevelAccessor worldIn, BlockPos pos, RandomSource random, int groupSize) {
         //UntamedWilds.LOGGER.info(entityType);
-        if (ConfigMobControl.dimensionBlacklist.get().contains(worldIn.getLevel().dimension().location().toString()))
+        if (ConfigMobControl.dimensionBlacklist.get().contains(worldIn.getLevel().dimension().identifier().toString()))
             return false;
 
         if (entityType != null && !worldIn.isClientSide()) {
@@ -125,7 +125,7 @@ public class FaunaSpawn {
                 //worldIn.setBlockState(pos, Blocks.TORCH.defaultBlockState(), 2);
             }
 
-            if (random.nextFloat() < UntamedWildsGenerator.getBioDiversityLevel(Objects.requireNonNull(worldIn.getBiome(pos).unwrapKey().get().location()))) {
+            if (random.nextFloat() < UntamedWildsGenerator.getBioDiversityLevel(Objects.requireNonNull(worldIn.getBiome(pos).unwrapKey().get().identifier()))) {
                 int k = 1; // This variable will be changed after the mob spawns
                 int species = -1;
 
@@ -168,18 +168,18 @@ public class FaunaSpawn {
                             }
                             Entity entity;
                             try {
-                                entity = entityType.create(worldIn.getLevel());
+                                entity = entityType.create(worldIn.getLevel(), net.minecraft.world.entity.EntitySpawnReason.NATURAL);
                             } catch (Exception exception) {
                                 UntamedWilds.LOGGER.warn("Failed to create mob", exception);
                                 continue;
                             }
 
                             assert entity != null;
-                            entity.moveTo(blockpos.getX(), blockpos.getY(), blockpos.getZ(), random.nextFloat() * 360.0F, 0.0F);
+                            entity.snapTo(blockpos.getX(), blockpos.getY(), blockpos.getZ(), random.nextFloat() * 360.0F, 0.0F);
                             if (entity instanceof Mob mobEntity) {
                                 // NeoForge 1.21.1: ForgeHooks.canEntitySpawn removed, just use checkSpawnRules
-                                if (mobEntity.checkSpawnRules(worldIn, MobSpawnType.CHUNK_GENERATION) && worldIn.noCollision(entity)) {
-                                    mobEntity.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(mobEntity.blockPosition()), MobSpawnType.CHUNK_GENERATION, null);
+                                if (mobEntity.checkSpawnRules(worldIn, EntitySpawnReason.CHUNK_GENERATION) && worldIn.noCollision(entity)) {
+                                    mobEntity.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(mobEntity.blockPosition()), EntitySpawnReason.CHUNK_GENERATION, null);
                                     if (mobEntity instanceof ComplexMob && mobEntity.isAlive()) {
                                         if (mobEntity instanceof ISpecies) {
                                             if (species == -1) {

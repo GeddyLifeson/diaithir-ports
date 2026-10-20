@@ -1,6 +1,8 @@
 package untamedwilds.entity.reptile;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -86,10 +88,10 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.tickCount % 1000 == 0) {
                 if (this.random.nextInt(40) == 0) {
-                    this.spawnAtLocation(new ItemStack(ModItems.MATERIAL_SNAKE_SKIN.get()), 0.2F);
+                    spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ModItems.MATERIAL_SNAKE_SKIN.get()), 0.2F);
                 }
             }
             if (this.level().getGameTime() % 4000 == 0) {
@@ -153,7 +155,7 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
 
         if (itemstack.isEmpty() && this.isAlive()) {
             EntityUtils.turnEntityIntoItem(this,"spawn_snake");
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -163,9 +165,9 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
         return new Animation[]{NO_ANIMATION, ANIMATION_TONGUE};
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
         float f = (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-    boolean flag = entityIn.hurt(this.damageSources().mobAttack(this), f);
+    boolean flag = entityIn.hurtOrSimulate(this.damageSources().mobAttack(this), f);
         if (flag && this.getVenomStrength() > 0) {
             if (entityIn instanceof LivingEntity) {
                 ((LivingEntity)entityIn).addEffect(new MobEffectInstance(MobEffects.POISON, 140, this.getVenomStrength() - 1));
@@ -176,15 +178,15 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
         Entity entity = source.getDirectEntity();
         if (entity instanceof Player player) {
             if (player.getMainHandItem().getItem() instanceof ShovelItem) {
             //if (player.getMainHandItem().isCorrectToolForDrops(Blocks.DIRT.defaultBlockState())) {
-                    return super.hurt(source, this.getHealth());
+                    return super.hurtServer(amLevel, source, this.getHealth());
             }
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(amLevel, source, amount);
     }
 
     // Flags Parameters
@@ -199,7 +201,7 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
     private void setRattler(boolean dimorphism){ this.entityData.set(RATTLER, dimorphism); }
 
     public boolean attackEntityPartFrom(DamageSource source, float amount) {
-        return this.hurt(source, amount);
+        return this.hurtOrSimulate(source, amount);
     }
 
     @Override
@@ -222,15 +224,15 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
     return this.level().isEmptyBlock(pos) && this.level().getBlockState(pos.below()).is(ModTags.ModBlockTags.VALID_REPTILE_NEST) && this.getNestType().defaultBlockState().canSurvive(this.level(), pos);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("rattler", this.isRattler());
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setRattler(compound.getBoolean("rattler"));
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setRattler(compound.getBooleanOr("rattler", false));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 }

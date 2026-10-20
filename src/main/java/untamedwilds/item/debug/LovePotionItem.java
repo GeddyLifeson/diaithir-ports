@@ -17,7 +17,7 @@ public class LovePotionItem extends Item {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player playerIn, LivingEntity target, InteractionHand hand) {
-    if (target.level().isClientSide) return InteractionResult.PASS;
+    if (target.level().isClientSide()) return InteractionResult.PASS;
         if (target instanceof Player/* || !target.isNonBoss()*/) return InteractionResult.FAIL;
         if (target instanceof ComplexMob) {
             if (((ComplexMob) target).getAge() > 0) {

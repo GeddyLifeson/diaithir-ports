@@ -1,5 +1,7 @@
 package untamedwilds.entity.fish;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
@@ -79,7 +81,7 @@ public class EntityWhaleShark extends ComplexMobAquatic implements ISpecies, INe
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.level().getGameTime() % 4000 == 0) {
                 this.heal(1.0F);
             }
@@ -181,7 +183,7 @@ public class EntityWhaleShark extends ComplexMobAquatic implements ISpecies, INe
     }
 
     public boolean attackEntityPartFrom(EntityWhaleSharkPart whale_shark_part, DamageSource source, float amount) {
-        return this.hurt(source, amount);
+        return this.hurtOrSimulate(source, amount);
     }
 
     // Flags Parameters
@@ -222,17 +224,17 @@ public class EntityWhaleShark extends ComplexMobAquatic implements ISpecies, INe
             return true;
         }
 
-        public boolean hurt(DamageSource source, float amount) {
-            return !this.isInvulnerableTo(source) && this.getParent().attackEntityPartFrom(this, source, amount);
+        public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
+            return !this.isInvulnerableToBase(source) && this.getParent().attackEntityPartFrom(this, source, amount);
         }
 
     protected void defineSynchedData(net.minecraft.network.syncher.SynchedEntityData.Builder builder) { }
 
         @Override
-        protected void readAdditionalSaveData(CompoundTag compound) { }
+        protected void readAdditionalSaveData(ValueInput compound) { }
 
         @Override
-        protected void addAdditionalSaveData(CompoundTag compound) { }
+        protected void addAdditionalSaveData(ValueOutput compound) { }
 
 
         public boolean is(Entity entityIn) {

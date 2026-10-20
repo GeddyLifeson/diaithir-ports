@@ -1,6 +1,9 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -115,9 +118,9 @@ public class EntityAardvark extends ComplexMobTerrestrial implements ISpecies, I
                 if (rand == 0) {
                     List<ItemStack> result = EntityUtils.getItemFromLootTable(ModLootTables.LOOT_DIGGING, this.level());
                     for (ItemStack itemstack : result)
-                        this.spawnAtLocation(itemstack);
+                        spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), itemstack);
                 } else if (rand == 1) {
-                    this.spawnAtLocation(new ItemStack(ModItems.VEGETABLE_AARDVARK_CUCUMBER.get()));
+                    spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ModItems.VEGETABLE_AARDVARK_CUCUMBER.get()));
                 }
             }
         }
@@ -134,8 +137,8 @@ public class EntityAardvark extends ComplexMobTerrestrial implements ISpecies, I
     }
 
     @Override
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             this.setAnimation(ATTACK);
             this.setAnimationTick(0);
@@ -153,7 +156,7 @@ public class EntityAardvark extends ComplexMobTerrestrial implements ISpecies, I
         return create_offspring(new EntityAardvark(ModEntity.AARDVARK.get(), this.level()));
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         if (this.lastDugPos != null) {
             compound.putInt("DugPosX", this.lastDugPos.getX());
@@ -161,10 +164,10 @@ public class EntityAardvark extends ComplexMobTerrestrial implements ISpecies, I
         }
     }
 
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("LastDugPos")) {
-            this.lastDugPos = new BlockPos(compound.getInt("DugPosX"), 0, compound.getInt("DugPosZ"));
+        if (NbtUtil.has(compound, "LastDugPos")) {
+            this.lastDugPos = new BlockPos(compound.getIntOr("DugPosX", 0), 0, compound.getIntOr("DugPosZ", 0));
         }
     }
 }

@@ -21,7 +21,7 @@ public class ProtectChildrenTarget<T extends LivingEntity> extends HuntMobTarget
     }
 
     protected boolean isValidTarget(LivingEntity entity, @Nullable Predicate<LivingEntity> predicate) {
-    if (entity instanceof Creeper || entity.equals(this.mob) || (!ConfigGamerules.attackUndead.get() && entity.getType().is(net.minecraft.tags.EntityTypeTags.UNDEAD)) || (predicate != null && !predicate.test(entity))) {
+    if (entity instanceof Creeper || entity.equals(this.mob) || (!ConfigGamerules.attackUndead.get() && entity.typeHolder().is(net.minecraft.tags.EntityTypeTags.UNDEAD)) || (predicate != null && !predicate.test(entity))) {
             return false;
         }
         if (ComplexMob.getEcoLevel(entity) < ComplexMob.getEcoLevel(this.mob) && this.mob.getClass() == entity.getClass() && this.mob instanceof ComplexMob attacker && entity instanceof ComplexMob defender) {

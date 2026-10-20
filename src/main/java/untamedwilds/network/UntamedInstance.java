@@ -17,6 +17,11 @@ public class UntamedInstance {
             SyncTextureData.STREAM_CODEC,
             SyncTextureData::handleClient
         );
+        registrar.playToClient(
+            AnimationMessage.TYPE,
+            AnimationMessage.STREAM_CODEC,
+            AnimationMessage::handleClient
+        );
     }
 
     public static void sendToClient(net.minecraft.network.protocol.common.custom.CustomPacketPayload packet, ServerPlayer player) {

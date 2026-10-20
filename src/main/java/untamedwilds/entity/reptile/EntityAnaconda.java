@@ -1,5 +1,7 @@
 package untamedwilds.entity.reptile;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -116,10 +118,10 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
 
     public void aiStep() {
         super.aiStep();
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.tickCount % 1000 == 0) {
                 if (this.random.nextInt(40) == 0) {
-                    this.spawnAtLocation(new ItemStack(ModItems.MATERIAL_SNAKE_SKIN.get()), 0.2F);
+                    spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ModItems.MATERIAL_SNAKE_SKIN.get()), 0.2F);
                 }
             }
             if (this.level().getGameTime() % 4000 == 0) {
@@ -255,9 +257,9 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
         return null;
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
         float f = (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-    boolean flag = entityIn.hurt(this.damageSources().mobAttack(this), f);
+    boolean flag = entityIn.hurtOrSimulate(this.damageSources().mobAttack(this), f);
         if (flag) {
             if (this.huntingCooldown == 0 && entityIn instanceof LivingEntity && !(entityIn instanceof Player) && entityIn.getBbWidth() * entityIn.getBbHeight() < 1.2F && (entityIn instanceof TamableAnimal && !((TamableAnimal) entityIn).isTame())) {
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.BEEHIVE_ENTER, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -272,7 +274,7 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
     }
 
     public boolean attackEntityPartFrom(EntityAnacondaPart anaconda_part, DamageSource source, float amount) {
-        return this.hurt(source, amount);
+        return this.hurtOrSimulate(source, amount);
     }
 
     // Flags Parameters
@@ -304,14 +306,14 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
     return this.level().isEmptyBlock(pos) && this.level().getBlockState(pos.below()).is(ModTags.ModBlockTags.VALID_REPTILE_NEST) && this.getNestType().defaultBlockState().canSurvive(this.level(), pos);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 
     @Override
@@ -352,18 +354,18 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
             return true;
         }
 
-        public boolean hurt(DamageSource source, float amount) {
-            return !this.isInvulnerableTo(source) && this.getParent().attackEntityPartFrom(this, source, amount);
+        public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
+            return !this.isInvulnerableToBase(source) && this.getParent().attackEntityPartFrom(this, source, amount);
         }
 
         @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) { }
 
         @Override
-        protected void readAdditionalSaveData(CompoundTag compound) { }
+        protected void readAdditionalSaveData(ValueInput compound) { }
 
         @Override
-        protected void addAdditionalSaveData(CompoundTag compound) { }
+        protected void addAdditionalSaveData(ValueOutput compound) { }
 
         public boolean is(Entity entityIn) {
             return this == entityIn || this.getParent() == entityIn;

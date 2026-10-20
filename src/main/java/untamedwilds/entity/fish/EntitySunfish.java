@@ -49,7 +49,7 @@ public class EntitySunfish extends ComplexMobAquatic implements ISpecies, INewSk
 
     public void aiStep() {
         super.aiStep();
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.tickCount % 1000 == 0) {
                 if (this.wantsToBreed() && !this.isMale()) {
                     this.breed();
@@ -59,9 +59,9 @@ public class EntitySunfish extends ComplexMobAquatic implements ISpecies, INewSk
                 this.heal(1.0F);
             }
         }
-        if (this.level().isClientSide && !this.level().isWaterAt(this.blockPosition().above(2)) && this.baskProgress < 100) {
+        if (this.level().isClientSide() && !this.level().isWaterAt(this.blockPosition().above(2)) && this.baskProgress < 100) {
             this.baskProgress++;
-        } else if (this.level().isClientSide && this.level().isWaterAt(this.blockPosition().above(2)) && this.baskProgress > 0) {
+        } else if (this.level().isClientSide() && this.level().isWaterAt(this.blockPosition().above(2)) && this.baskProgress > 0) {
             this.baskProgress--;
         }
     }

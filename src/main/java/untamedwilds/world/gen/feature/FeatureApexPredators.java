@@ -34,11 +34,11 @@ public class FeatureApexPredators extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.level().getRandom();
         BlockPos pos = context.origin();
         WorldGenLevel world = context.level();
-        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         for (int i = 0; i < 3; i++) {
-            Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.APEX_PRED));
+            Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.APEX_PRED), e -> e.itemWeight);
             if (entry.isPresent()) {
                 EntityType<?> type = entry.get().entityType;
                 if (type != null) {

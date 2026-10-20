@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.core.registries.BuiltInRegistries;
 import untamedwilds.UntamedWilds;
 import untamedwilds.entity.ComplexMobTerrestrial;
@@ -58,7 +58,7 @@ public class EntityDataHolder {
         this.activityType = activityType;
 
         this.favouriteFood_input = favouriteFood;
-    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.tryParse(this.favouriteFood_input)));
+    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
         this.growing_time = growing_time;
         this.offspring = offspring;
         this.breeding_season = breeding;
@@ -124,7 +124,7 @@ public class EntityDataHolder {
     }
 
     public ItemStack getFavouriteFood(int i) {
-        if (this.speciesData.get(i).getFavouriteFood().getItem().builtInRegistryHolder().key().location().toString().equals("minecraft:air")) {
+        if (this.speciesData.get(i).getFavouriteFood().getItem().builtInRegistryHolder().key().identifier().toString().equals("minecraft:air")) {
             return this.favouriteFood;
         }
         return this.speciesData.get(i).getFavouriteFood();

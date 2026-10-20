@@ -1,11 +1,11 @@
 package untamedwilds.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.EntityModel;
+import untamedwilds.client.render.compat.EntityModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.resources.ResourceLocation;
+import untamedwilds.client.render.compat.MobRenderer;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import untamedwilds.client.model.MonsterSpitter;
 import untamedwilds.client.model.MonsterSpitterLarva;
@@ -40,7 +40,7 @@ public class RendererSpitter extends MobRenderer<EntitySpitter, EntityModel<Enti
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(EntitySpitter entity) {
+    public @NotNull Identifier getTextureLocation(EntitySpitter entity) {
         return entity.getTexture();
     }
 }

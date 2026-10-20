@@ -32,7 +32,7 @@ public class SmartLookAtGoal extends Goal {
         this.chance = chanceIn;
         this.setFlags(EnumSet.of(Goal.Flag.LOOK));
         if (targetClass == Player.class) {
-            this.SHOULD_LOOK = TargetingConditions.forNonCombat().range(maxDistance).selector((p_25531_) -> EntitySelector.notRiding(entityIn).test(p_25531_));
+            this.SHOULD_LOOK = TargetingConditions.forNonCombat().range(maxDistance).selector((p_25531_, l_) -> EntitySelector.notRiding(entityIn).test(p_25531_));
         } else {
             this.SHOULD_LOOK = TargetingConditions.forNonCombat().range(maxDistance);
         }
@@ -51,9 +51,9 @@ public class SmartLookAtGoal extends Goal {
             }
 
             if (this.watchedClass == Player.class) {
-                this.closestEntity = this.taskOwner.level().getNearestPlayer(this.SHOULD_LOOK, this.taskOwner, this.taskOwner.getX(), this.taskOwner.getY() + (double)this.taskOwner.getEyeHeight(), this.taskOwner.getZ());
+                this.closestEntity = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearestPlayer(this.SHOULD_LOOK, this.taskOwner, this.taskOwner.getX(), this.taskOwner.getY() + (double)this.taskOwner.getEyeHeight(), this.taskOwner.getZ());
             } else {
-                this.closestEntity = this.taskOwner.level().getNearestEntity(this.watchedClass, this.SHOULD_LOOK, this.taskOwner, this.taskOwner.getX(), this.taskOwner.getY() + (double)this.taskOwner.getEyeHeight(), this.taskOwner.getZ(), this.taskOwner.getBoundingBox().inflate(this.maxDistance, 3.0D, this.maxDistance));
+                this.closestEntity = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearestEntity(this.watchedClass, this.SHOULD_LOOK, this.taskOwner, this.taskOwner.getX(), this.taskOwner.getY() + (double)this.taskOwner.getEyeHeight(), this.taskOwner.getZ(), this.taskOwner.getBoundingBox().inflate(this.maxDistance, 3.0D, this.maxDistance));
             }
 
             return this.closestEntity != null || this.taskOwner.getRandom().nextInt(20) != 0;

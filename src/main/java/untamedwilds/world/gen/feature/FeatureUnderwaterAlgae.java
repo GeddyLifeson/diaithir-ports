@@ -34,7 +34,7 @@ public class FeatureUnderwaterAlgae extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.level().getRandom();
         BlockPos pos = context.origin();
         WorldGenLevel world = context.level();
-        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         boolean flag = false;

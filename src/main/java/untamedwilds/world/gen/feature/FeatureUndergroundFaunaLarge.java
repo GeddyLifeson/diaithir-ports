@@ -49,7 +49,7 @@ public class FeatureUndergroundFaunaLarge extends Feature<NoneFeatureConfigurati
         final int horiz = 2;
         final int vert = 2;
 
-        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         for(int i = -horiz; i < horiz + 1; i++)
@@ -60,7 +60,7 @@ public class FeatureUndergroundFaunaLarge extends Feature<NoneFeatureConfigurati
                     if (world.isStateAtPosition(setPos, BlockState::isAir)) {
                         for (int l = 0; l < 5; l++) {
                             if (entry.isEmpty())
-                                entry = WeightedRandom.getRandomItem(rng, FaunaHandler.getSpawnableList(FaunaHandler.animalType.LARGE_UNDERGROUND));
+                                entry = WeightedRandom.getRandomItem(rng, FaunaHandler.getSpawnableList(FaunaHandler.animalType.LARGE_UNDERGROUND), e -> e.itemWeight);
                             if (entry.isPresent()) {
                                 EntityType<?> type = entry.get().entityType;
                                 if (type != null) {

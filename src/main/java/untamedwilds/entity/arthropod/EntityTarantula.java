@@ -18,8 +18,8 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
-import net.minecraft.world.entity.animal.horse.AbstractHorse;
-import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.animal.equine.AbstractHorse;
+import net.minecraft.world.entity.monster.spider.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -154,7 +154,7 @@ public class EntityTarantula extends ComplexMob implements ISpecies, INewSkins {
         if (itemstack.getItem() == Items.GLASS_BOTTLE && this.isAlive()) {
             EntityUtils.turnEntityIntoItem(this, "bottle_tarantula");
             itemstack.shrink(1);
-            return InteractionResult.sidedSuccess(this.level().isClientSide());
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -163,9 +163,9 @@ public class EntityTarantula extends ComplexMob implements ISpecies, INewSkins {
         return false;
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
         float f = (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-    boolean flag = entityIn.hurt(this.damageSources().mobAttack(this), f);
+    boolean flag = entityIn.hurtOrSimulate(this.damageSources().mobAttack(this), f);
         if (flag) {
             if (entityIn instanceof LivingEntity) {
                 ((LivingEntity)entityIn).addEffect(new MobEffectInstance(MobEffects.POISON, 80, 0));

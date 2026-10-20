@@ -16,7 +16,7 @@ public class EraserItem extends Item {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player playerIn, LivingEntity target, InteractionHand hand) {
-    if (target.level().isClientSide) return InteractionResult.PASS;
+    if (target.level().isClientSide()) return InteractionResult.PASS;
         target.remove(Entity.RemovalReason.DISCARDED);
         return InteractionResult.SUCCESS;
     }

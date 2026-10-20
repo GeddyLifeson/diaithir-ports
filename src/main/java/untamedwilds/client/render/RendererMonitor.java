@@ -1,10 +1,10 @@
 package untamedwilds.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.EntityModel;
+import untamedwilds.client.render.compat.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.resources.ResourceLocation;
+import untamedwilds.client.render.compat.MobRenderer;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import untamedwilds.client.model.ModelMonitor;
 import untamedwilds.entity.reptile.EntityMonitor;
@@ -21,7 +21,7 @@ public class RendererMonitor extends MobRenderer<EntityMonitor, EntityModel<Enti
         matrixStackIn.scale(f, f, f);
     }
 
-    public @NotNull ResourceLocation getTextureLocation(EntityMonitor entity) {
+    public @NotNull Identifier getTextureLocation(EntityMonitor entity) {
         return entity.getTexture();
     }
 }

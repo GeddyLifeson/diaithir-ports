@@ -1,5 +1,8 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import org.joml.Vector3f;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -48,7 +51,7 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
    public static final IntegerProperty PROPERTY_STAGE = BlockStateProperties.STAGE;
 
    public TitanArumBlock(Properties properties) {
-      super(properties);
+      super(properties.offsetType(BlockBehaviour.OffsetType.XZ));
       this.registerDefaultState(this.stateDefinition.any().setValue(PROPERTY_AGE, 0).setValue(PROPERTY_STAGE, 0));
    }
 
@@ -56,15 +59,11 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
       builder.add(PROPERTY_AGE, PROPERTY_STAGE);
    }
 
-   public OffsetType getOffsetType() {
-      return OffsetType.XZ;
-   }
-
    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
       if (state.getValue(PROPERTY_AGE) == 0) {
          return SHAPE_CORM;
       }
-      Vec3 vector3d = state.getOffset(worldIn, pos);
+      Vec3 vector3d = state.getOffset(pos);
       VoxelShape shape = state.getValue(PROPERTY_AGE) == 1 && state.getValue(PROPERTY_STAGE) == 1 ? SHAPE_NORMAL : SHAPE_SPATHE;
       return shape.move(vector3d.x, vector3d.y, vector3d.z);
    }
@@ -100,9 +99,9 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
       if (state.getValue(PROPERTY_STAGE) == 0 && random.nextInt(8) == 0) {
          if (worldIn.isEmptyBlock(pos.above()) && worldIn.getLightEmission(pos.above()) >= 9) {
             int i = this.getNumReedBlocksBelow(worldIn, pos) + 1;
-            if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(3) == 0)) {
+            if (i < 4 && net.neoforged.neoforge.common.CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(3) == 0)) {
                this.grow(state, worldIn, pos, random, i);
-               net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+               net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(worldIn, pos, state);
             }
          }
       }
@@ -123,12 +122,12 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
       return worldIn.getBlockState(pos.below()).is(ModBlockTags.REEDS_PLANTABLE_ON) || worldIn.getBlockState(pos.below()).getBlock() == ModBlock.TITAN_ARUM.get();
    }
 
-   public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+   public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
       if (!stateIn.canSurvive(worldIn, currentPos)) {
-         worldIn.scheduleTick(currentPos, this, 1);
+         amTicks.scheduleTick(currentPos, this, 1);
       }
 
-      return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+      return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
    }
 
    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
@@ -180,7 +179,7 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
    }
 
    public float getDestroyProgress(BlockState state, Player player, BlockGetter worldIn, BlockPos pos) {
-     boolean can = player.getMainHandItem().canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SWORD_DIG);
+     boolean can = player.getMainHandItem().is(net.minecraft.tags.ItemTags.SWORDS);
      return can ? 1.0F : super.getDestroyProgress(state, player, worldIn, pos);
    }
 
@@ -205,7 +204,7 @@ public class TitanArumBlock extends Block implements BonemealableBlock, IPostGen
       areaeffectcloudentity.setRadiusOnUse(-0.2F);
       areaeffectcloudentity.setWaitTime(10);
       areaeffectcloudentity.setRadiusPerTick(-areaeffectcloudentity.getRadius() / ((float)areaeffectcloudentity.getDuration() * 0.5F));
-      areaeffectcloudentity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0, true, false));
+      areaeffectcloudentity.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 80, 0, true, false));
 
       worldIn.addFreshEntity(areaeffectcloudentity);
    }

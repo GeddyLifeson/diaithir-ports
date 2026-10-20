@@ -38,7 +38,7 @@ public class FeatureVegetation extends Feature<ProbabilityFeatureConfiguration> 
         RandomSource rand = context.level().getRandom();
         WorldGenLevel world = context.level();
         BlockPos genPos = world.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, context.origin());
-        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         boolean flag = false;

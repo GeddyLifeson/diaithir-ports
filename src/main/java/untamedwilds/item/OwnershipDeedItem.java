@@ -7,7 +7,6 @@ import net.minecraft.network.chat.MutableComponent;
 import java.util.List;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,8 +16,6 @@ import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,8 +27,8 @@ public class OwnershipDeedItem extends Item {
         super(properties);
     }
 
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display_, java.util.function.Consumer<Component> adder_, TooltipFlag flagIn) {
+        List<Component> tooltip = new untamedwilds.util.TooltipAdapter(adder_);
         CompoundTag tag = stack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
         if (tag != null) {
             tooltip.add(net.minecraft.network.chat.Component.translatable("item.untamedwilds.ownership_deed_desc_4", tag.getString("entityname")).withStyle(ChatFormatting.GRAY));
@@ -48,7 +45,7 @@ public class OwnershipDeedItem extends Item {
     }
 
     @Nonnull
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack itemstack = playerIn.getItemInHand(handIn);
 
         CompoundTag tag = itemstack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
@@ -56,13 +53,13 @@ public class OwnershipDeedItem extends Item {
             if (!tag.getString("entityid").isEmpty()) {
                 List<LivingEntity> list = worldIn.getEntitiesOfClass(LivingEntity.class, playerIn.getBoundingBox().inflate(8.0D));
                 for(LivingEntity entity : list) {
-                    if (entity.getUUID().equals(UUID.fromString(tag.getString("entityid")))) {
+                    if (entity.getUUID().equals(UUID.fromString(tag.getStringOr("entityid", "")))) {
                         entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 80, 0, false, false));
                     }
                 }
             }
         }
-        return new InteractionResultHolder<>(InteractionResult.SUCCESS, itemstack);
+        return InteractionResult.SUCCESS;
     }
 
 

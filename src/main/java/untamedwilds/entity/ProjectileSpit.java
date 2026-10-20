@@ -63,7 +63,7 @@ public class ProjectileSpit extends Projectile {
         this.updateRotation();
         if (this.level().getBlockStates(this.getBoundingBox()).noneMatch(BlockBehaviour.BlockStateBase::isAir)) {
             this.discard();
-        } else if (this.isInWaterOrBubble()) {
+        } else if (this.isInWater()) {
             this.discard();
         } else {
             this.setDeltaMovement(vec3.scale(0.99F));
@@ -90,7 +90,7 @@ public class ProjectileSpit extends Projectile {
 
     protected void onHitBlock(BlockHitResult p_37239_) {
         super.onHitBlock(p_37239_);
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             this.discard();
         }
     }
@@ -102,9 +102,10 @@ public class ProjectileSpit extends Projectile {
 
     public void recreateFromPacket(ClientboundAddEntityPacket p_150162_) {
         super.recreateFromPacket(p_150162_);
-        double d0 = p_150162_.getXa();
-        double d1 = p_150162_.getYa();
-        double d2 = p_150162_.getZa();
+        net.minecraft.world.phys.Vec3 mv_ = p_150162_.getMovement();
+        double d0 = mv_.x;
+        double d1 = mv_.y;
+        double d2 = mv_.z;
 
         for(int i = 0; i < 7; ++i) {
             double d3 = 0.4D + 0.1D * (double)i;

@@ -15,8 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import untamedwilds.entity.ComplexMob;
 import untamedwilds.util.EntityUtils;
 import untamedwilds.util.ModCreativeModeTab;
@@ -34,8 +32,8 @@ public class MobBucketedItem extends BucketItem {
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display_, java.util.function.Consumer<Component> adder_, TooltipFlag flagIn) {
+        List<Component> tooltip = new untamedwilds.util.TooltipAdapter(adder_);
         if (ComplexMob.ENTITY_DATA_HASH.containsKey(this.entity.get())) {
             EntityUtils.buildTooltipData(stack, tooltip, this.entity.get(), EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
         }
@@ -43,7 +41,7 @@ public class MobBucketedItem extends BucketItem {
 
     public Component getName(ItemStack stack) {
         if (ComplexMob.ENTITY_DATA_HASH.containsKey(this.entity.get())) {
-            return net.minecraft.network.chat.Component.translatable("item.untamedwilds.bucket_" + this.entity.get().builtInRegistryHolder().key().location().getPath() + "_" + EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
+            return net.minecraft.network.chat.Component.translatable("item.untamedwilds.bucket_" + this.entity.get().builtInRegistryHolder().key().identifier().getPath() + "_" + EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
         }
         return super.getName(stack);
     }
@@ -70,10 +68,10 @@ public class MobBucketedItem extends BucketItem {
     private int getSpecies(ItemStack itemIn) {
         CompoundTag tag = itemIn.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
         if (tag != null && tag.contains("CustomModelData")) {
-            return tag.getInt("CustomModelData");
+            return tag.getIntOr("CustomModelData", 0);
         }
         if (tag != null && tag.contains("variant")) {
-            return tag.getInt("variant");
+            return tag.getIntOr("variant", 0);
         }
         return 0;
     }

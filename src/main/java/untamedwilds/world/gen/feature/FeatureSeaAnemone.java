@@ -30,7 +30,7 @@ public class FeatureSeaAnemone extends Feature<CountConfiguration> {
         RandomSource rand = context.level().getRandom();
         WorldGenLevel world = context.level();
         BlockPos pos = world.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, context.origin());
-        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         if (pos.getY() > 44 && pos.getY() < 62) {

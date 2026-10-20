@@ -1,6 +1,8 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -134,7 +136,7 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
             }
             // Bearserk
             if (this.getHealth() < this.getMaxHealth() / 2) {
-                this.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0, true, true));
+                this.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 1200, 0, true, true));
                 this.forceSleep = -1200;
             }
 
@@ -228,8 +230,8 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 1.0F);
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
@@ -238,14 +240,15 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate II: Mob will strike back when attacked by any mob
         performRetaliation(damageSource, this.getHealth(), amount, false);
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
-    public boolean isInvulnerableTo(DamageSource source) {
-        return super.isInvulnerableTo(source) || source.is(DamageTypes.SWEET_BERRY_BUSH);
+    @Override
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel amLevel, DamageSource source) {
+        return super.isInvulnerableTo(amLevel, source) || source.is(DamageTypes.SWEET_BERRY_BUSH);
     }
 
     private Animation chooseAttackAnimation() {
@@ -307,7 +310,7 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
     private void setHump(boolean hump){ this.entityData.set(BACK_HUMP, hump); }
 
     // TODO: Very shitty hardcoded solution for Blind Cave Bears to keep spawning
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, EntitySpawnReason reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         SpawnGroupData data = super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
         if (this.getY() < 53) {
             this.setVariant(1);
@@ -315,15 +318,15 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
         return data;
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("hasShortSnout", this.hasShortSnout());
         compound.putBoolean("hasHump", this.hasHump());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setShortSnout(compound.getBoolean("hasShortSnout"));
-        this.setHump(compound.getBoolean("hasHump"));
+        this.setShortSnout(compound.getBooleanOr("hasShortSnout", false));
+        this.setHump(compound.getBooleanOr("hasHump", false));
     }
 }

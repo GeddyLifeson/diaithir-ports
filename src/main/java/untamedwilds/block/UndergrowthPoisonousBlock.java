@@ -1,5 +1,7 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -35,7 +37,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 public class UndergrowthPoisonousBlock extends UndergrowthBlock implements BonemealableBlock, IPostGenUpdate, net.neoforged.neoforge.common.IShearable {
 
     public static final MapCodec<UndergrowthPoisonousBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> 
-        instance.group(propertiesCodec()).apply(instance, props -> new UndergrowthPoisonousBlock(props, OffsetType.NONE)));
+        instance.group(propertiesCodec()).apply(instance, props -> new UndergrowthPoisonousBlock(props, BlockBehaviour.OffsetType.NONE)));
 
     @Override
     public MapCodec<? extends UndergrowthBlock> codec() {
@@ -44,10 +46,9 @@ public class UndergrowthPoisonousBlock extends UndergrowthBlock implements Bonem
 
     public static final IntegerProperty PROPERTY_AGE = BlockStateProperties.AGE_2;
 
-    public UndergrowthPoisonousBlock(Properties properties, OffsetType type) {
-        super(properties);
+    public UndergrowthPoisonousBlock(Properties properties, BlockBehaviour.OffsetType type) {
+        super(properties, type);
         this.registerDefaultState(this.stateDefinition.any().setValue(PROPERTY_AGE, 0));
-        this.offset = type;
     }
 
     @Override
@@ -56,7 +57,7 @@ public class UndergrowthPoisonousBlock extends UndergrowthBlock implements Bonem
     }
 
     @Override
-    protected void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+    protected void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier amApplier, boolean amPrecise) {
         if (entityIn instanceof LivingEntity && !entityIn.isSteppingCarefully() && entityIn.getBbHeight() > 1) {
             ((LivingEntity)entityIn).addEffect(new MobEffectInstance(MobEffects.POISON, 100, 1));
             entityIn.makeStuckInBlock(state, new Vec3(0.95F, 1D, 0.95F));
@@ -116,12 +117,12 @@ public class UndergrowthPoisonousBlock extends UndergrowthBlock implements Bonem
     }
 
     @Override
-    protected BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    protected BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
         if (!stateIn.canSurvive(worldIn, currentPos)) {
-            worldIn.scheduleTick(currentPos, this, 1);
+            amTicks.scheduleTick(currentPos, this, 1);
         }
 
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
     }
 
     @Override
@@ -160,7 +161,7 @@ public class UndergrowthPoisonousBlock extends UndergrowthBlock implements Bonem
 
     @Override
     public float getDestroyProgress(BlockState state, Player player, BlockGetter worldIn, BlockPos pos) {
-        boolean can = player.getMainHandItem().canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SWORD_DIG);
+        boolean can = player.getMainHandItem().is(net.minecraft.tags.ItemTags.SWORDS);
         return can ? 1.0F : super.getDestroyProgress(state, player, worldIn, pos);
     }
 
@@ -187,7 +188,7 @@ public class UndergrowthPoisonousBlock extends UndergrowthBlock implements Bonem
 
     // IShearable implementation - NeoForge 1.21.1
     @Override
-    public List<ItemStack> onSheared(Player player, ItemStack item, Level world, BlockPos pos, int fortune) {
+    public List<ItemStack> onSheared(@org.jetbrains.annotations.Nullable Player player, ItemStack item, Level world, BlockPos pos) {
         return List.of(new ItemStack(this.asItem()));
     }
 }

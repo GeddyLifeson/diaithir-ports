@@ -1,6 +1,6 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -129,8 +129,8 @@ public class EntityCamel extends ComplexMobTerrestrial implements INewSkins, ISp
         super.aiStep();
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
@@ -138,11 +138,11 @@ public class EntityCamel extends ComplexMobTerrestrial implements INewSkins, ISp
         return flag;
     }
 
-    public boolean hurt(DamageSource p_19946_, float p_19947_) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource p_19946_, float p_19947_) {
         if (p_19946_.is(DamageTypes.CACTUS)) {
             return false;
         }
-        return super.hurt(p_19946_, p_19947_);
+        return super.hurtServer(amLevel, p_19946_, p_19947_);
     }
 
     private Animation chooseAttackAnimation() {
@@ -186,7 +186,7 @@ public class EntityCamel extends ComplexMobTerrestrial implements INewSkins, ISp
     public Animation getAnimationEat() { return NO_ANIMATION; }
 
     public void performRangedAttack(LivingEntity entityIn, float p_33318_) {
-    ProjectileSpit camel_spit = new ProjectileSpit(this.level(), this, new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+    ProjectileSpit camel_spit = new ProjectileSpit(this.level(), this, new MobEffectInstance(MobEffects.NAUSEA, 200, 0));
         if (this.getAnimation() == NO_ANIMATION)
             this.setAnimation(ATTACK_SPIT);
         double d0 = entityIn.getX() - this.getX();

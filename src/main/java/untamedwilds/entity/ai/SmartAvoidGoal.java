@@ -24,7 +24,7 @@ public class SmartAvoidGoal <T extends LivingEntity> extends AvoidEntityGoal<T> 
         super(entityIn, classToAvoidIn, avoidDistanceIn, farSpeedIn, nearSpeedIn, EntitySelector.NO_CREATIVE_OR_SPECTATOR::test);
         this.taskOwner = entityIn;
         this.avoidDistance = avoidDistanceIn;
-        this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector(targetSelector);
+        this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector((t_, l_) -> targetSelector.test(t_));
         this.setFlags(EnumSet.of(Goal.Flag.MOVE));
     }
 
@@ -37,7 +37,7 @@ public class SmartAvoidGoal <T extends LivingEntity> extends AvoidEntityGoal<T> 
             return false;
         }
 
-    List<T> list = this.taskOwner.level().getNearbyEntities(avoidClass, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
+    List<T> list = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(avoidClass, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
         if (list.isEmpty()) {
             return false;
         } else {

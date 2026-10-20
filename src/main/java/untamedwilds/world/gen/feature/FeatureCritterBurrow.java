@@ -38,22 +38,22 @@ public class FeatureCritterBurrow extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.level().getRandom();
         BlockPos pos = context.origin();
         WorldGenLevel world = context.level();
-        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         int i = rand.nextInt(8) - rand.nextInt(8);
         int j = rand.nextInt(8) - rand.nextInt(8);
         int k = world.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX() + i, pos.getZ() + j);
         pos = new BlockPos(pos.getX() + i, k, pos.getZ() + j);
-        Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.CRITTER));
+        Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.CRITTER), e -> e.itemWeight);
         if (entry.isPresent()) {
-            Entity entity = entry.get().entityType.create(world.getLevel());
+            Entity entity = entry.get().entityType.create(world.getLevel(), net.minecraft.world.entity.EntitySpawnReason.NATURAL);
             int variant = -1;
             if (entity != null && isReplaceablePlant(world, pos)) {
                 if (!world.getFluidState(pos).isEmpty() && !(entity instanceof ComplexMobAmphibious))
                     return false;
                 if (entity instanceof ISpecies) {
-                    variant = ((ISpecies) entity).setSpeciesByBiome(world.getBiome(pos), MobSpawnType.CHUNK_GENERATION);
+                    variant = ((ISpecies) entity).setSpeciesByBiome(world.getBiome(pos), EntitySpawnReason.CHUNK_GENERATION);
                     if (variant == 99) {
                         entity.discard();
                         return false;

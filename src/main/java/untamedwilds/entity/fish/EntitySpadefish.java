@@ -47,7 +47,7 @@ public class EntitySpadefish extends ComplexMobAquatic implements ISpecies, IPac
     }
 
     public void aiStep() {
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.herd == null) {
                 IPackEntity.initPack(this);
             }
@@ -71,7 +71,7 @@ public class EntitySpadefish extends ComplexMobAquatic implements ISpecies, IPac
         if (hand == InteractionHand.MAIN_HAND) {
             if (itemstack.getItem().equals(Items.WATER_BUCKET) && this.isAlive()) {
                 EntityUtils.mutateEntityIntoItem(this, player, hand, "bucket_spadefish", itemstack);
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

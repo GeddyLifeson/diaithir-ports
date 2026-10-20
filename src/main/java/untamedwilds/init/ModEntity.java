@@ -1,5 +1,6 @@
 package untamedwilds.init;
 
+import net.neoforged.fml.common.EventBusSubscriber;
 import java.util.List;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -10,7 +11,6 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraftforge.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
@@ -87,7 +87,7 @@ import untamedwilds.entity.reptile.EntityTortoise;
 import untamedwilds.item.UntamedSpawnEggItem;
 import untamedwilds.world.FaunaHandler;
 
-@Mod.EventBusSubscriber(modid = UntamedWilds.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = UntamedWilds.MOD_ID)
 public class ModEntity {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(
@@ -387,12 +387,12 @@ public class ModEntity {
         float sizeX,
         float sizeY
     ) {
-        DeferredHolder<EntityType<?>, EntityType<T>> type = ENTITIES.register(name, () ->
+        DeferredHolder<EntityType<?>, EntityType<T>> type = ENTITIES.register(name, id ->
             EntityType.Builder.of(factory, MobCategory.MISC)
                 .sized(sizeX, sizeY)
                 .setTrackingRange(trackingRange)
                 .setShouldReceiveVelocityUpdates(sendsVelocityUpdates)
-                .build(name)
+                .build(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, id))
         );
 
         return type;
@@ -421,15 +421,15 @@ public class ModEntity {
         int maincolor,
         int backcolor
     ) {
-        DeferredHolder<EntityType<?>, EntityType<T>> type = ENTITIES.register(name, () ->
+        DeferredHolder<EntityType<?>, EntityType<T>> type = ENTITIES.register(name, id ->
             EntityType.Builder.of(factory, classification)
                 .sized(sizeX, sizeY)
                 .setTrackingRange(trackingRange)
                 .setShouldReceiveVelocityUpdates(sendsVelocityUpdates)
-                .build(name)
+                .build(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, id))
         );
-        ModItems.ITEMS.register(name + "_spawn_egg", () ->
-            new UntamedSpawnEggItem(type::get, maincolor, backcolor, new Item.Properties())
+        ModItems.ITEMS.registerItem(name + "_spawn_egg", props ->
+            new UntamedSpawnEggItem(type::get, maincolor, backcolor, props)
         );
         return type;
     }

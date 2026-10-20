@@ -1,8 +1,8 @@
 package untamedwilds.entity.arthropod;
 
-import com.github.alexthe666.citadel.animation.Animation;
-import com.github.alexthe666.citadel.animation.AnimationHandler;
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
+import untamedwilds.citadel.animation.Animation;
+import untamedwilds.citadel.animation.AnimationHandler;
+import untamedwilds.citadel.animation.IAnimatedEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -96,7 +96,7 @@ public class EntityKingCrab extends ComplexMobAmphibious implements ISpecies, IN
     public void aiStep() {
         super.aiStep();
         AnimationHandler.INSTANCE.updateAnimations(this);
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.tickCount % 1000 == 0) {
                 if (this.wantsToBreed() && !this.isMale()) {
                     this.breed();
@@ -159,7 +159,7 @@ public class EntityKingCrab extends ComplexMobAmphibious implements ISpecies, IN
         if (hand == InteractionHand.MAIN_HAND) {
             if (itemstack.getItem().equals(Items.WATER_BUCKET) && this.isAlive()) {
                 EntityUtils.mutateEntityIntoItem(this, player, hand, "bucket_king_crab", itemstack);
-                return InteractionResult.sidedSuccess(this.level().isClientSide);
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

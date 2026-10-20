@@ -1,5 +1,7 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.BlockSource;
@@ -47,8 +49,6 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import untamedwilds.block.blockentity.CageBlockEntity;
 import untamedwilds.init.ModBlock;
 import untamedwilds.util.EntityUtils;
@@ -75,14 +75,14 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
 
     public BlockState playerWillDestroy(Level worldIn, BlockPos pos, BlockState state, Player player) {
         this.spawnDestroyParticles(worldIn, player, pos, state);
-        if (!worldIn.isClientSide) {
+        if (!worldIn.isClientSide()) {
             BlockEntity tileentity = worldIn.getBlockEntity(pos);
             if (tileentity instanceof CageBlockEntity te) {
                 ItemStack itemstack = new ItemStack(ModBlock.TRAP_CAGE.get());
                 if (te.hasTagCompound() && te.isLocked()) {
                     CompoundTag compound = new CompoundTag();
                     compound.putBoolean("closed", te.isLocked());
-                    compound.put("EntityTag", te.getTagCompound().getCompound("EntityTag"));
+                    compound.put("EntityTag", te.getTagCompound().getCompoundOrEmpty("EntityTag"));
                     itemstack.set(DataComponents.CUSTOM_DATA, CustomData.of(compound));
                 }
                 popResource(worldIn, pos, itemstack);
@@ -111,7 +111,7 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
     public void setPlacedBy(Level worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         super.setPlacedBy(worldIn, pos, state, placer, stack);
         CompoundTag custom = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
-        CompoundTag entityTag = custom.contains("EntityTag") ? custom.getCompound("EntityTag") : null;
+        CompoundTag entityTag = custom.contains("EntityTag") ? custom.getCompoundOrEmpty("EntityTag") : null;
         if (entityTag != null) {
             BlockEntity te = worldIn.getBlockEntity(pos);
                 if (te instanceof CageBlockEntity blockEntity) {
@@ -125,7 +125,7 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
     }
 
     public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-        if (!worldIn.isClientSide) {
+        if (!worldIn.isClientSide()) {
             if (worldIn.hasNeighborSignal(pos)) {
                 trySpawningEntity(state, (ServerLevel) worldIn, pos);
             }
@@ -136,17 +136,17 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
         if (stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            amTicks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
 
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player playerIn, InteractionHand hand, BlockHitResult hit) {
 
-        if (playerIn.isSteppingCarefully() || worldIn.isClientSide || state.getValue(OPEN)) {
+        if (playerIn.isSteppingCarefully() || worldIn.isClientSide() || state.getValue(OPEN)) {
             return InteractionResult.FAIL;
         }
         else {
@@ -184,9 +184,9 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
 
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier amApplier, boolean amPrecise) {
         CageBlockEntity te = (CageBlockEntity)world.getBlockEntity(pos);
-        if (!world.isClientSide && !(entity instanceof Player) && entity.isAlive() && entity instanceof LivingEntity) {
+        if (!world.isClientSide() && !(entity instanceof Player) && entity.isAlive() && entity instanceof LivingEntity) {
             if (te != null && !te.isLocked() && entity instanceof Mob) {
                 if (te.cageEntity((Mob) entity)) {
                     world.playSound(null, pos, SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON, SoundSource.BLOCKS, 0.3F, 0.8F);
@@ -197,13 +197,12 @@ public class CageBlock extends Block implements SimpleWaterloggedBlock, EntityBl
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
         CompoundTag custom = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (custom.contains("EntityTag")) {
             EntityType<?> type = EntityUtils.getEntityTypeFromTag(custom, null);
             if (type != null) {
-                EntityUtils.buildTooltipData(stack, tooltip, type, EntityUtils.getVariantName(type, custom.getCompound("EntityTag").getInt("Variant")));
+                EntityUtils.buildTooltipData(stack, tooltip, type, EntityUtils.getVariantName(type, custom.getCompoundOrEmpty("EntityTag").getIntOr("Variant", 0)));
             }
         }
         else {

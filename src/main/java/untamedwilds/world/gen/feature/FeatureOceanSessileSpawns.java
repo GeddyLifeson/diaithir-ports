@@ -28,11 +28,11 @@ public class FeatureOceanSessileSpawns extends Feature<NoneFeatureConfiguration>
         RandomSource rand = context.level().getRandom();
         BlockPos pos = context.origin();
         WorldGenLevel world = context.level();
-        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigMobControl.dimensionBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         for (int i = 0; i < 5; i++) {
-            Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.BENTHOS));
+            Optional<FaunaHandler.SpawnListEntry> entry = WeightedRandom.getRandomItem(rand, FaunaHandler.getSpawnableList(FaunaHandler.animalType.BENTHOS), e -> e.itemWeight);
             if (entry.isPresent()) {
                 if (FaunaSpawn.performWorldGenSpawning(entry.get().entityType, FaunaSpawn.SpawnType.IN_WATER, Heightmap.Types.OCEAN_FLOOR_WG, world, pos, rand, entry.get().getGroupCount())) {
                     return true;

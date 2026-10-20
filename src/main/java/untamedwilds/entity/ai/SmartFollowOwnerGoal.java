@@ -107,7 +107,7 @@ public class SmartFollowOwnerGoal extends Goal {
         } else if (!this.canTeleportTo(new BlockPos(p_25304_, p_25305_, p_25306_))) {
             return false;
         } else {
-            this.taskOwner.moveTo((double)p_25304_ + 0.5D, p_25305_, (double)p_25306_ + 0.5D, this.taskOwner.getYRot(), this.taskOwner.getXRot());
+            this.taskOwner.snapTo((double)p_25304_ + 0.5D, p_25305_, (double)p_25306_ + 0.5D, this.taskOwner.getYRot(), this.taskOwner.getXRot());
             this.taskOwner.getNavigation().stop();
             return true;
         }

@@ -1,8 +1,10 @@
 package untamedwilds.entity;
 
-import com.github.alexthe666.citadel.animation.Animation;
-import com.github.alexthe666.citadel.animation.AnimationHandler;
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
+import untamedwilds.citadel.animation.AnimationHandler;
+import untamedwilds.citadel.animation.IAnimatedEntity;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
@@ -119,9 +121,9 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
                         EntityUtils.spawnParticlesOnEntity(this.level(), this, ParticleTypes.HEART, 7, 1);
                     }
                     this.setAnimation(this.getAnimationEat());
-                    this.playSound(SoundEvents.GENERIC_EAT, 1F, 1);
+                    this.playSound(SoundEvents.GENERIC_EAT.value(), 1F, 1);
                 }
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
 
@@ -141,7 +143,7 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
         if (type == ActivityType.CATHEMERAL) {
             return this.tickCount % 17000 < 3000;
         }
-    long time = this.level().getDayTime();
+    long time = this.level().getOverworldClockTime();
         if (!times.getFirst().equals(times.getSecond())) {
             if (times.getFirst() > times.getSecond()) {
                 return time > times.getFirst() || time < times.getSecond();
@@ -202,7 +204,7 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
         this.setHunger((i > 200) ? 200 : (Math.max(i, 0)));
     }
 
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
         if (this.isSitting()) {
             this.setSitting(false);
         }
@@ -210,7 +212,7 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
             this.setSleeping(false);
             this.forceSleep = -4000;
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(amLevel, source, amount);
     }
 
     public void die(DamageSource p_70645_1_) {
@@ -263,7 +265,7 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
 
     public Animation getAnimationEat() { return this.NO_ANIMATION; }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("Sleeping", this.isSleeping());
         compound.putInt("SleepingTicks", this.forceSleep);
@@ -271,12 +273,12 @@ public abstract class ComplexMobTerrestrial extends ComplexMob implements IAnima
         compound.putInt("Hunger", this.getHunger());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setSleeping(compound.getBoolean("Sleeping"));
-        this.forceSleep = compound.getInt("SleepingTicks");
-        this.setSitting(compound.getBoolean("Sitting"));
-        this.setHunger(compound.getInt("Hunger"));
+        this.setSleeping(compound.getBooleanOr("Sleeping", false));
+        this.forceSleep = compound.getIntOr("SleepingTicks", 0);
+        this.setSitting(compound.getBooleanOr("Sitting", false));
+        this.setHunger(compound.getIntOr("Hunger", 0));
     }
 
     /*static class MoveHelperController extends MoveControl {

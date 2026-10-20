@@ -1,5 +1,6 @@
 package untamedwilds.world;
 
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -12,7 +13,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
@@ -29,13 +30,10 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorTy
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.JsonCodecProvider;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraft.core.registries.Registries;
 import untamedwilds.UntamedWilds;
 import untamedwilds.config.ConfigFeatureControl;
@@ -47,7 +45,7 @@ import java.util.stream.Collectors;
 
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.*;
 
-@Mod.EventBusSubscriber(modid = UntamedWilds.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = UntamedWilds.MOD_ID)
 public class UntamedWildsGenerator {
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, UntamedWilds.MOD_ID);
@@ -83,8 +81,8 @@ public class UntamedWildsGenerator {
         return UntamedWildsGenerator.FEATURES.register(name, supplier);
     }
 
-    public static Map<ResourceLocation, BiomeModifier> generateModifierByLocation(RegistryOps<JsonElement> registryOps) {
-        Map<ResourceLocation, BiomeModifier> map = new HashMap<>();
+    public static Map<Identifier, BiomeModifier> generateModifierByLocation(RegistryOps<JsonElement> registryOps) {
+        Map<Identifier, BiomeModifier> map = new HashMap<>();
         addFeature(map, "sessile", new Builder(registryOps, new ConfiguredFeature<>(SESSILE.get(), FeatureConfiguration.NONE), "")
             .placementModifier(RarityFilter.onAverageOnceEvery(ConfigFeatureControl.freqSessile.get()))
             .tag(Arrays.asList(BiomeTags.IS_OCEAN)).decoration(TOP_LAYER_MODIFICATION));
@@ -100,16 +98,16 @@ public class UntamedWildsGenerator {
             .tag(Arrays.asList(BiomeTags.IS_JUNGLE)).decoration(GenerationStep.Decoration.VEGETAL_DECORATION));
         addFeature(map, "reeds", new Builder(registryOps, new ConfiguredFeature<>(REEDS.get(), FeatureConfiguration.NONE), "gencontrol.reeds")
             .placementModifier(RarityFilter.onAverageOnceEvery(ConfigFeatureControl.freqReeds.get()))
-            .blacklist(ConfigFeatureControl.reedBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, ResourceLocation.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
+            .blacklist(ConfigFeatureControl.reedBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, Identifier.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
             .decoration(GenerationStep.Decoration.VEGETAL_DECORATION));
 
         addFeature(map, "algae", new Builder(registryOps, new ConfiguredFeature<>(ALGAE.get(), FeatureConfiguration.NONE), "gencontrol.algae")
             .placementModifier(RarityFilter.onAverageOnceEvery(ConfigFeatureControl.freqAlgae.get()))
-            .blacklist(ConfigFeatureControl.algaeBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, ResourceLocation.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
+            .blacklist(ConfigFeatureControl.algaeBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, Identifier.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
             .decoration(GenerationStep.Decoration.VEGETAL_DECORATION));
         addFeature(map, "vegetation", new Builder(registryOps, new ConfiguredFeature<>(VEGETATION.get(), new ProbabilityFeatureConfiguration(1f / 4)), "gencontrol.bush")
             .placementModifier(RarityFilter.onAverageOnceEvery(ConfigFeatureControl.freqFlora.get()))
-            .blacklist(ConfigFeatureControl.floraBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, ResourceLocation.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
+            .blacklist(ConfigFeatureControl.floraBlacklist.get().stream().map(s -> ResourceKey.create(Registries.BIOME, Identifier.tryParse(s.contains(":" ) ? s : ("minecraft:" + s)))).collect(Collectors.toList()))
             .decoration(GenerationStep.Decoration.VEGETAL_DECORATION));
 
         addFeature(map, "dense_water", new Builder(registryOps, new ConfiguredFeature<>(DENSE_WATER.get(), FeatureConfiguration.NONE), "")
@@ -202,35 +200,14 @@ public class UntamedWildsGenerator {
         }
     }
 
-    private static void addFeature(Map<ResourceLocation, BiomeModifier> map, String placedFeatureName, Builder builder) {
+    private static void addFeature(Map<Identifier, BiomeModifier> map, String placedFeatureName, Builder builder) {
         BiomeModifier modifier = builder.build();
-    ResourceLocation location = ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":" + placedFeatureName);
+    Identifier location = Identifier.tryParse(UntamedWilds.MOD_ID + ":" + placedFeatureName);
         map.put(location, modifier);
     }
 
-    @SubscribeEvent
-    public static void data(GatherDataEvent event) {
-        DataGenerator gen = event.getGenerator();
-        ExistingFileHelper helper = event.getExistingFileHelper();
-        // In 1.21.1, data generation for biome modifiers is handled differently
-        // For now, comment out until we can properly implement it
-        // TODO: Implement biome modifier data generation for 1.21.1
-        /*
-        Map<ResourceLocation, BiomeModifier> featureGenMap = generateModifierByLocation(RegistryOps.create(JsonOps.INSTANCE, event.getLookupProvider()));
-        JsonCodecProvider<BiomeModifier> jsonCodecProvider = JsonCodecProvider.forDatapackRegistry(
-            gen.getPackOutput(), 
-            helper, 
-            UntamedWilds.MOD_ID, 
-            event.getLookupProvider(), 
-            NeoForgeRegistries.Keys.BIOME_MODIFIERS, 
-            featureGenMap
-        );
-        gen.addProvider(event.includeServer(), jsonCodecProvider);
-        */
-    }
-
     // Returns the biodiversity level of a biome. Values are data-driven, defaulting to 0.6 if no key is found.
-    public static float getBioDiversityLevel(ResourceLocation biome) {
+    public static float getBioDiversityLevel(Identifier biome) {
         String key = biome.toString();
         if (biodiversity_levels.containsKey(key)) {
             return biodiversity_levels.get(key);

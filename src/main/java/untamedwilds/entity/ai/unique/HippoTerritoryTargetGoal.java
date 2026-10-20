@@ -16,7 +16,7 @@ public class HippoTerritoryTargetGoal<T extends LivingEntity> extends HuntMobTar
                 return false;
             }
             else {
-                return TargetingConditions.forCombat().test(creature, entity) && this.canAttack(entity, TargetingConditions.DEFAULT);
+                return TargetingConditions.forCombat().test((net.minecraft.server.level.ServerLevel)creature.level(), creature, entity) && this.canAttack(entity, TargetingConditions.DEFAULT);
             }
         };
     }

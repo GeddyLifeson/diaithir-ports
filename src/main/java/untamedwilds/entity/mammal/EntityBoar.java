@@ -1,6 +1,9 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -112,7 +115,7 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
 
     @Override
     public void aiStep() {
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             this.setAngry(this.getTarget() != null);
             if (this.level().getGameTime() % 1000 == 0) {
                 this.addHunger(-10);
@@ -146,7 +149,7 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
                 if (this.getAnimationTick() == 64 && this.random.nextInt(5) == 0) {
                     List<ItemStack> result = EntityUtils.getItemFromLootTable(ModLootTables.LOOT_DIGGING, this.level());
                     for (ItemStack itemstack : result)
-                        this.spawnAtLocation(itemstack);
+                        spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), itemstack);
                 }
             }
             if (this.getAnimation() == TALK && this.getAnimationTick() == 1 && this.getAmbientSound() != null) {
@@ -190,15 +193,15 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
                     player.setXRot(this.getXRot());
                     player.startRiding(this);
                 }
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);
     }
 
     @Override
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             this.setAnimation(ATTACK);
             this.setAnimationTick(0);
@@ -206,10 +209,10 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         performRetaliation(damageSource, this.getHealth(), amount, true);
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     @Override
@@ -232,7 +235,7 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
     public boolean isWarthog(){ return (this.entityData.get(WARTHOG)); }
     private void setWarthog(boolean warthog){ this.entityData.set(WARTHOG, warthog); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("isWarthog", this.isWarthog());
         if (this.lastDugPos != null) {
@@ -241,11 +244,11 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
         }
     }
 
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        this.setWarthog(compound.getBoolean("isWarthog"));
-        if (compound.contains("LastDugPos")) {
-            this.lastDugPos = new BlockPos(compound.getInt("DugPosX"), 0, compound.getInt("DugPosZ"));
+        this.setWarthog(compound.getBooleanOr("isWarthog", false));
+        if (NbtUtil.has(compound, "LastDugPos")) {
+            this.lastDugPos = new BlockPos(compound.getIntOr("DugPosX", 0), 0, compound.getIntOr("DugPosZ", 0));
         }
     }
 

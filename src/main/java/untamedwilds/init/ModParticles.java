@@ -23,13 +23,12 @@ public class ModParticles {
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> CHUM_DISPERSE = PARTICLES.register("chum", () -> new SimpleParticleType(false));
 
-    @EventBusSubscriber(modid = UntamedWilds.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = UntamedWilds.MOD_ID, value = Dist.CLIENT)
     public static class RegisterParticleFactories {
 
         @SubscribeEvent
         public static void registerParticleTypes(RegisterParticleProvidersEvent event) {
-            ParticleEngine particleManager = Minecraft.getInstance().particleEngine;
-              particleManager.register((ParticleType<SimpleParticleType>)CHUM_DISPERSE.get(), (ParticleProvider<SimpleParticleType>)(type, world, x, y, z, xSpeed, ySpeed, zSpeed) -> new ChumParticle((ClientLevel) world, x, y, z, xSpeed, ySpeed, zSpeed, null));
+            event.registerSpriteSet(CHUM_DISPERSE.get(), ChumParticle.Provider::new);
         }
     }
 }

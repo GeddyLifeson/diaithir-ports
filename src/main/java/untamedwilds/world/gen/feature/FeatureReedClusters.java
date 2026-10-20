@@ -31,7 +31,7 @@ public class FeatureReedClusters extends Feature<NoneFeatureConfiguration> {
         boolean flag = false;
         RandomSource rand = context.level().getRandom();
         WorldGenLevel world = context.level();
-        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         BlockPos basePos = world.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, context.origin());

@@ -24,12 +24,12 @@ public class ModEntityRightClickEvent {
     Player playerIn = event.getEntity();
     Entity target = event.getTarget();
     InteractionHand hand = event.getHand();
-        if (/*!event.getWorld().isClientSide && hand == InteractionHand.MAIN_HAND &&*/ playerIn.getItemInHand(InteractionHand.MAIN_HAND).getItem() == ModItems.OWNERSHIP_DEED.get()) {
+        if (/*!event.getWorld().isClientSide() && hand == InteractionHand.MAIN_HAND &&*/ playerIn.getItemInHand(InteractionHand.MAIN_HAND).getItem() == ModItems.OWNERSHIP_DEED.get()) {
             ItemStack itemstack = playerIn.getItemInHand(hand);
             if (target instanceof TamableAnimal) {
                 TamableAnimal entity_target = (TamableAnimal) target;
                 if (entity_target.isTame()) {
-            if (Objects.equals(entity_target.getOwnerUUID(), playerIn.getUUID()) && !itemstack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
+            if (Objects.equals((entity_target.getOwnerReference() == null ? null : entity_target.getOwnerReference().getUUID()), playerIn.getUUID()) && !itemstack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA)) {
                 CompoundTag nbt = new CompoundTag();
                 nbt.putString("ownername", playerIn.getName().getString());
                 nbt.putString("entityname", entity_target.getName().getString());
@@ -46,8 +46,8 @@ public class ModEntityRightClickEvent {
                     else {
                         CompoundTag tag = itemstack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
                         if (tag != null) {
-                            if (entity_target.getOwnerUUID().toString().equals(tag.getString("ownerid")) && entity_target.getUUID().toString().equals(tag.getString("entityid"))) {
-                                entity_target.setOwnerUUID(playerIn.getUUID());
+                            if ((entity_target.getOwnerReference() == null ? null : entity_target.getOwnerReference().getUUID()).toString().equals(tag.getStringOr("ownerid", "")) && entity_target.getUUID().toString().equals(tag.getStringOr("entityid", ""))) {
+                                entity_target.setOwner(playerIn);
                                 if (!playerIn.isCreative()) {
                                     itemstack.shrink(1);
                                 }

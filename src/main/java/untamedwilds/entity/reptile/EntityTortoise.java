@@ -1,5 +1,7 @@
 package untamedwilds.entity.reptile;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -74,7 +76,7 @@ public class EntityTortoise extends ComplexMobTerrestrial implements ISpecies, I
     public void die(DamageSource cause) {
         if ("anvil".equals(cause.getMsgId()) && !this.isBaby()) {
             // Advancement Trigger: "Unethical Soup"
-            ItemEntity entityitem = this.spawnAtLocation(new ItemStack(ModItems.FOOD_TURTLE_SOUP.get()), 0.2F);
+            ItemEntity entityitem = spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ModItems.FOOD_TURTLE_SOUP.get()), 0.2F);
             if (entityitem != null) {
                 entityitem.getItem().setCount(1);
             }
@@ -85,7 +87,7 @@ public class EntityTortoise extends ComplexMobTerrestrial implements ISpecies, I
     public void aiStep() {
         super.aiStep();
 
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.level().getGameTime() % 4000 == 0) {
                 this.heal(1.0F);
             }
@@ -118,18 +120,18 @@ public class EntityTortoise extends ComplexMobTerrestrial implements ISpecies, I
 
         if (itemstack.isEmpty() && this.isAlive()) {
             EntityUtils.turnEntityIntoItem(this, "spawn_tortoise");
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
 
         return super.mobInteract(player, hand);
     }
 
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource source, float amount) {
         // DamageSource.fall() helper removed; compare by message id to detect fall damage
         if ((source.getMsgId() == null || !source.getMsgId().equals("fall")) && this.sitProgress > 0) {
             amount = amount * 0.2F;
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(amLevel, source, amount);
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -157,13 +159,13 @@ public class EntityTortoise extends ComplexMobTerrestrial implements ISpecies, I
         return this.level().isEmptyBlock(pos) && this.level().getBlockState(pos.below()).is(ModTags.ModBlockTags.VALID_REPTILE_NEST) && this.getNestType().defaultBlockState().canSurvive(this.level(), pos);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 }

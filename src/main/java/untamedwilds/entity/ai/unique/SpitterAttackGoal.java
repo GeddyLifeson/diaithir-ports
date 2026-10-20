@@ -1,6 +1,6 @@
 package untamedwilds.entity.ai.unique;
 
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
+import untamedwilds.citadel.animation.IAnimatedEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.player.Player;
@@ -70,7 +70,7 @@ public class SpitterAttackGoal extends Goal {
             return false;
         } else if (!this.longMemory) {
             return !this.attacker.getNavigation().isDone();
-        } else if (!this.attacker.isWithinRestriction(livingentity.blockPosition())) {
+        } else if (!this.attacker.isWithinHome(livingentity.blockPosition())) {
             return false;
         }
         else {
@@ -95,7 +95,7 @@ public class SpitterAttackGoal extends Goal {
 
     public void stop() {
         /*LivingEntity livingentity = this.attacker.getTarget();
-        if (!TargetingConditions.forCombat().test(this.attacker, livingentity)) {
+        if (!TargetingConditions.forCombat().test((net.minecraft.server.level.ServerLevel)this.attacker.level(), this.attacker, livingentity)) {
             this.attacker.setTarget(null);
         }*/
         this.attacker.setTarget(null); // <- Edited
@@ -157,7 +157,7 @@ public class SpitterAttackGoal extends Goal {
         double d0 = this.getAttackReachSqr(enemy);
         if (this.attacker.hasLineOfSight(enemy) && distToEnemySqr <= d0 && (this.attackTick <= 0 || (this.attackTick <= 10 && this.attacker.getAnimation() == IAnimatedEntity.NO_ANIMATION))) {
             this.attackTick = 20;
-            this.attacker.doHurtTarget(enemy);
+            this.attacker.doHurtTarget((net.minecraft.server.level.ServerLevel) this.attacker.level(), enemy);
         }
 
     }

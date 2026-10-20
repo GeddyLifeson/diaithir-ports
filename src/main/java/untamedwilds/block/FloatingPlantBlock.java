@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.animal.fish.WaterAnimal;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -30,20 +30,20 @@ import untamedwilds.entity.ComplexMobAquatic;
 
 import java.util.Random;
 
-public class FloatingPlantBlock extends BushBlock implements BonemealableBlock {
+public class FloatingPlantBlock extends LegacyBushBlock implements BonemealableBlock {
     public static final MapCodec<FloatingPlantBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(propertiesCodec()).apply(instance, FloatingPlantBlock::new));
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<? extends LegacyBushBlock> codec() {
         return CODEC;
     }
     protected static final VoxelShape SHAPE_NORMAL = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 12D, 13.0D);
 
     public FloatingPlantBlock(BlockBehaviour.Properties builder) {
-        super(builder);
+        super(builder.offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
-    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier amApplier, boolean amPrecise) {
         if (entityIn instanceof LivingEntity && !(entityIn instanceof WaterAnimal) && !(entityIn instanceof ComplexMobAquatic) && entityIn.isInWater() && !entityIn.isSteppingCarefully()) {
             entityIn.makeStuckInBlock(state, new Vec3(0.98F, 1D, 0.98F));
             if (worldIn.getRandom().nextInt(20) == 0) {
@@ -52,12 +52,8 @@ public class FloatingPlantBlock extends BushBlock implements BonemealableBlock {
         }
     }
 
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
-    }
-
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-        Vec3 vector3d = state.getOffset(worldIn, pos);
+        Vec3 vector3d = state.getOffset(pos);
         return SHAPE_NORMAL.move(vector3d.x, vector3d.y, vector3d.z);
     }
 

@@ -100,14 +100,14 @@ public class BearRaidChestsGoal extends Goal {
                         ItemStack taken = stack.copy();
                         this.targetInventory.setItem(slot, ItemStack.EMPTY);
 
-                        FoodProperties fp = taken.getItem().getFoodProperties(taken, this.taskOwner);
+                        FoodProperties fp = taken.get(net.minecraft.core.component.DataComponents.FOOD);
                         if (fp != null) {
                             this.taskOwner.playSound(SoundEvents.PLAYER_BURP, 1, 1);
                             this.taskOwner.addHunger((fp.nutrition() * 10 * taken.getCount()));
                             // Effects on food are now represented via item components; use helper to extract instances
                             for (MobEffectInstance effectinstance : untamedwilds.util.EntityUtils.getMobEffectsFromItem(taken)) {
                                 if (effectinstance.getEffect().value().isInstantenous()) {
-                                    effectinstance.getEffect().value().applyInstantenousEffect(this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
+                                    effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
                                 } else {
                                     this.taskOwner.addEffect(new MobEffectInstance(effectinstance));
                                 }
@@ -120,7 +120,7 @@ public class BearRaidChestsGoal extends Goal {
                             this.taskOwner.addHunger(10);
                             for (MobEffectInstance effectinstance : untamedwilds.util.EntityUtils.getMobEffectsFromItem(taken)) {
                                 if (effectinstance.getEffect().value().isInstantenous()) {
-                                    effectinstance.getEffect().value().applyInstantenousEffect(this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
+                                    effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
                                 } else {
                                     this.taskOwner.addEffect(new MobEffectInstance(effectinstance));
                                 }
@@ -128,7 +128,7 @@ public class BearRaidChestsGoal extends Goal {
                             return false;
                         }
 
-                        this.taskOwner.spawnAtLocation(stack, 0.2f);
+                        this.taskOwner.spawnAtLocation((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), stack, 0.2f);
                         return true;
                     }
                 }
@@ -143,13 +143,13 @@ public class BearRaidChestsGoal extends Goal {
                         this.targetInventory.setItem(k, ItemStack.EMPTY);
                         this.taskOwner.setAnimation(EntityBear.ATTACK_SWIPE);
 
-                        FoodProperties fp = taken.getItem().getFoodProperties(taken, this.taskOwner);
+                        FoodProperties fp = taken.get(net.minecraft.core.component.DataComponents.FOOD);
                         if (fp != null) {
                             this.taskOwner.playSound(SoundEvents.PLAYER_BURP, 1, 1);
                             this.taskOwner.addHunger((fp.nutrition() * 10 * taken.getCount()));
                             for (MobEffectInstance effectinstance : untamedwilds.util.EntityUtils.getMobEffectsFromItem(taken)) {
                                 if (effectinstance.getEffect().value().isInstantenous()) {
-                                    effectinstance.getEffect().value().applyInstantenousEffect(this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
+                                    effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
                                 } else {
                                     this.taskOwner.addEffect(new MobEffectInstance(effectinstance));
                                 }
@@ -158,11 +158,11 @@ public class BearRaidChestsGoal extends Goal {
                         }
 
                         if (!untamedwilds.util.EntityUtils.getMobEffectsFromItem(taken).isEmpty()) {
-                            this.taskOwner.playSound(SoundEvents.GENERIC_DRINK, 1, 1);
+                            this.taskOwner.playSound(SoundEvents.GENERIC_DRINK.value(), 1, 1);
                             this.taskOwner.addHunger(10);
                             for (MobEffectInstance effectinstance : untamedwilds.util.EntityUtils.getMobEffectsFromItem(taken)) {
                                 if (effectinstance.getEffect().value().isInstantenous()) {
-                                    effectinstance.getEffect().value().applyInstantenousEffect(this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
+                                    effectinstance.getEffect().value().applyInstantenousEffect((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), this.taskOwner, this.taskOwner, this.taskOwner, effectinstance.getAmplifier(), 1.0D);
                                 } else {
                                     this.taskOwner.addEffect(new MobEffectInstance(effectinstance));
                                 }
@@ -170,7 +170,7 @@ public class BearRaidChestsGoal extends Goal {
                             return false;
                         }
 
-                        this.taskOwner.spawnAtLocation(stack, 0.2f);
+                        this.taskOwner.spawnAtLocation((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), stack, 0.2f);
                         return true;
                     }
                 }

@@ -1,6 +1,6 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -107,7 +107,7 @@ public class EntityBison extends ComplexMobTerrestrial implements INewSkins, ISp
 
     @Override
     public void aiStep() {
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.herd == null) {
                 IPackEntity.initPack(this);
             }
@@ -137,23 +137,23 @@ public class EntityBison extends ComplexMobTerrestrial implements INewSkins, ISp
         super.aiStep();
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
             if (!this.isCharging()) {
                 this.playSound(SoundEvents.ZOGLIN_ATTACK, 1.0F, this.getVoicePitch());
-                HoglinBase.hurtAndThrowTarget(this, (LivingEntity)entityIn);
+                HoglinBase.hurtAndThrowTarget((net.minecraft.server.level.ServerLevel) this.level(), this, (LivingEntity)entityIn);
             }
         }
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         performRetaliation(damageSource, this.getHealth(), amount, true);
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -195,7 +195,7 @@ public class EntityBison extends ComplexMobTerrestrial implements INewSkins, ISp
                     player.setXRot(this.getXRot());
                     player.startRiding(this);
                 }
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

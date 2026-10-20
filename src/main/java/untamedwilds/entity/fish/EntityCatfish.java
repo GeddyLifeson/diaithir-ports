@@ -56,7 +56,7 @@ public class EntityCatfish extends ComplexMobAquatic implements ISpecies, INewSk
     }
 
     public void aiStep() {
-    if (!this.level().isClientSide) {
+    if (!this.level().isClientSide()) {
             if (this.isInWater()) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.003D, 0.0D));
             }
@@ -85,7 +85,7 @@ public class EntityCatfish extends ComplexMobAquatic implements ISpecies, INewSk
         if (hand == InteractionHand.MAIN_HAND) {
             if (itemstack.getItem().equals(Items.WATER_BUCKET) && this.isAlive()) {
                 EntityUtils.mutateEntityIntoItem(this, player, hand, "bucket_catfish", itemstack);
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

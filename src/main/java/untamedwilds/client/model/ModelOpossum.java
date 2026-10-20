@@ -1,10 +1,10 @@
 package untamedwilds.client.model;
 
-import com.github.alexthe666.citadel.animation.IAnimatedEntity;
-import com.github.alexthe666.citadel.client.model.AdvancedEntityModel;
-import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
-import com.github.alexthe666.citadel.client.model.ModelAnimator;
-import com.github.alexthe666.citadel.client.model.basic.BasicModelPart;
+import untamedwilds.citadel.animation.IAnimatedEntity;
+import untamedwilds.citadel.client.model.AdvancedEntityModel;
+import untamedwilds.citadel.client.model.AdvancedModelBox;
+import untamedwilds.citadel.client.model.ModelAnimator;
+import untamedwilds.citadel.client.model.basic.BasicModelPart;
 import com.google.common.collect.ImmutableList;
 import untamedwilds.entity.mammal.EntityOpossum;
 

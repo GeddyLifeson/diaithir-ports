@@ -1,5 +1,8 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -7,7 +10,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
@@ -46,7 +48,7 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
    public static final IntegerProperty PROPERTY_STAGE = BlockStateProperties.STAGE;
 
    public TallPlantBlock(Properties properties) {
-      super(properties);
+      super(properties.offsetType(BlockBehaviour.OffsetType.XZ));
       this.registerDefaultState(this.stateDefinition.any().setValue(PROPERTY_AGE, 0).setValue(PROPERTY_STAGE, 0));
    }
 
@@ -54,11 +56,7 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
       builder.add(PROPERTY_AGE, PROPERTY_STAGE);
    }
 
-   public OffsetType getOffsetType() {
-      return OffsetType.XZ;
-   }
-
-   public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+   public boolean propagatesSkylightDown(BlockState state) {
       return true;
    }
 
@@ -66,7 +64,7 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
       if (state.getValue(PROPERTY_STAGE) == 1) {
          return SHAPE_FLOWERING;
       }
-      Vec3 vector3d = state.getOffset(worldIn, pos);
+      Vec3 vector3d = state.getOffset(pos);
       VoxelShape shape = state.getValue(PROPERTY_AGE) == 1 && state.getValue(PROPERTY_STAGE) == 1 ? SHAPE_STEM : SHAPE_TRUNK;
       return shape.move(vector3d.x, vector3d.y, vector3d.z);
    }
@@ -102,9 +100,9 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
       if (state.getValue(PROPERTY_STAGE) == 0 && random.nextInt(8) == 0) {
          if (worldIn.isEmptyBlock(pos.above()) && worldIn.getLightEmission(pos.above()) >= 9) {
             int i = this.getNumReedBlocksBelow(worldIn, pos) + 1;
-            if (i < 4 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, random.nextInt(3) == 0)) {
+            if (i < 4 && net.neoforged.neoforge.common.CommonHooks.canCropGrow(worldIn, pos, state, random.nextInt(3) == 0)) {
                this.grow(worldIn, pos, random, i);
-               net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+               net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(worldIn, pos, state);
             }
          }
       }
@@ -114,12 +112,12 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
       return worldIn.getBlockState(pos.below()).is(ModBlockTags.ALOE_PLANTABLE_ON) || worldIn.getBlockState(pos.below()).getBlock() == ModBlock.ZIMBABWE_ALOE.get();
    }
 
-   public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+   public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
       if (!stateIn.canSurvive(worldIn, currentPos)) {
-         worldIn.scheduleTick(currentPos, this, 1);
+         amTicks.scheduleTick(currentPos, this, 1);
       }
 
-      return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+      return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
    }
 
    public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
@@ -166,7 +164,7 @@ public class TallPlantBlock extends Block implements BonemealableBlock, IPostGen
    }
 
    public float getDestroyProgress(BlockState state, Player player, BlockGetter worldIn, BlockPos pos) {
-     boolean can = player.getMainHandItem().canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SWORD_DIG);
+     boolean can = player.getMainHandItem().is(net.minecraft.tags.ItemTags.SWORDS);
      return can ? 1.0F : super.getDestroyProgress(state, player, worldIn, pos);
    }
 

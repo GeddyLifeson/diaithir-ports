@@ -1,5 +1,8 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -69,15 +72,15 @@ public class StrangeEggBlock extends Block implements SimpleWaterloggedBlock, En
         return !state.getCollisionShape(worldIn, pos).getFaceShape(Direction.UP).isEmpty();
     }
 
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
         if (stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            amTicks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
         if (!canSurvive(stateIn, worldIn, currentPos)) {
-            worldIn.destroyBlock(currentPos, false);
+            return Blocks.AIR.defaultBlockState();
         }
 
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
     }
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {

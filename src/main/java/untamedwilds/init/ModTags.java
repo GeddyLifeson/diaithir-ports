@@ -2,7 +2,7 @@ package untamedwilds.init;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
@@ -14,15 +14,15 @@ import untamedwilds.UntamedWilds;
 public class ModTags {
     public static class EntityTags {
         // The CAGE_BLACKLIST is provided for mod packs and/or data pack makers, nothing is there by default (players are hard-blacklisted since they will crash the game)
-    public static final TagKey<EntityType<?>> CAGE_BLACKLIST = TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":cage_trap_blacklist"));
+    public static final TagKey<EntityType<?>> CAGE_BLACKLIST = TagKey.create(Registries.ENTITY_TYPE, Identifier.tryParse(UntamedWilds.MOD_ID + ":cage_trap_blacklist"));
     }
 
     public static class ModBlockTags {
-    public static final TagKey<Block> REEDS_PLANTABLE_ON = BlockTags.create(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":reeds_plantable_on"));
-    public static final TagKey<Block> ALOE_PLANTABLE_ON = BlockTags.create(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":aloe_plantable_on"));
-    public static final TagKey<Block> GRAZEABLE_BLOCKS = BlockTags.create(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":grazeable_blocks"));
-    public static final TagKey<Block> GRAZEABLE_ALGAE = BlockTags.create(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":grazeable_algae"));
-    public static final TagKey<Block> VALID_REPTILE_NEST = BlockTags.create(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":valid_reptile_nest"));
+    public static final TagKey<Block> REEDS_PLANTABLE_ON = BlockTags.create(Identifier.tryParse(UntamedWilds.MOD_ID + ":reeds_plantable_on"));
+    public static final TagKey<Block> ALOE_PLANTABLE_ON = BlockTags.create(Identifier.tryParse(UntamedWilds.MOD_ID + ":aloe_plantable_on"));
+    public static final TagKey<Block> GRAZEABLE_BLOCKS = BlockTags.create(Identifier.tryParse(UntamedWilds.MOD_ID + ":grazeable_blocks"));
+    public static final TagKey<Block> GRAZEABLE_ALGAE = BlockTags.create(Identifier.tryParse(UntamedWilds.MOD_ID + ":grazeable_algae"));
+    public static final TagKey<Block> VALID_REPTILE_NEST = BlockTags.create(Identifier.tryParse(UntamedWilds.MOD_ID + ":valid_reptile_nest"));
     }
     
     public static class ModBiomeTags {
@@ -43,7 +43,7 @@ public class ModTags {
         public static final TagKey<Biome> IS_UNDERGROUND = create("is_underground");
         
         private static TagKey<Biome> create(String name) {
-            return TagKey.create(Registries.BIOME, ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":" + name));
+            return TagKey.create(Registries.BIOME, Identifier.tryParse(UntamedWilds.MOD_ID + ":" + name));
         }
     }
 }

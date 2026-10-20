@@ -2,7 +2,7 @@ package untamedwilds.entity.ai;
 
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.Level;
 import untamedwilds.config.ConfigGamerules;
 import untamedwilds.entity.ComplexMob;
@@ -62,7 +62,7 @@ public class SmartMateGoal extends Goal {
         if (this.spawnBabyDelay >= 100 && this.taskOwner.distanceToSqr(this.targetMate) < 9.0D) {
             this.taskOwner.resetLove();
             this.targetMate.resetLove();
-            if (this.world.getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
+            if (this.world instanceof net.minecraft.server.level.ServerLevel sl_ && sl_.getGameRules().get(GameRules.MOB_DROPS)) {
                 this.world.addFreshEntity(new ExperienceOrb(this.world, this.taskOwner.getX(), this.taskOwner.getY(), this.taskOwner.getZ(), this.taskOwner.getRandom().nextInt(7) + 1));
             }
             // Positive Growing Age is used as pregnancy counter (handled in ComplexMob)

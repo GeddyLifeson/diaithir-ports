@@ -1,7 +1,9 @@
 package untamedwilds.entity;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.Util;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -9,7 +11,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -51,12 +53,11 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public abstract class ComplexMob extends TamableAnimal {
 
-    public static HashMap<String, HashMap<Integer, ArrayList<ResourceLocation>>> TEXTURES_COMMON = new HashMap<>();
-    public static HashMap<String, HashMap<Integer, ArrayList<ResourceLocation>>> TEXTURES_RARE = new HashMap<>();
+    public static HashMap<String, HashMap<Integer, ArrayList<Identifier>>> TEXTURES_COMMON = new HashMap<>();
+    public static HashMap<String, HashMap<Integer, ArrayList<Identifier>>> TEXTURES_RARE = new HashMap<>();
 
     private static final EntityDataAccessor<BlockPos> HOME_POS = SynchedEntityData.defineId(ComplexMob.class, EntityDataSerializers.BLOCK_POS);
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(ComplexMob.class, EntityDataSerializers.INT);
@@ -133,7 +134,7 @@ public abstract class ComplexMob extends TamableAnimal {
         return EntityUtils.getSound(this.getType(), this.getVariant(), "threat");
     }
 
-    public boolean checkSpawnRules(LevelAccessor worldIn, MobSpawnType spawnReasonIn) {
+    public boolean checkSpawnRules(LevelAccessor worldIn, EntitySpawnReason spawnReasonIn) {
         return true;
     }
 
@@ -182,8 +183,8 @@ public abstract class ComplexMob extends TamableAnimal {
     public int getSkin(){ return (this.entityData.get(SKIN)); }
     public void setSkin(int skin){ this.entityData.set(SKIN, skin); }
     public <T extends ComplexMob> void chooseSkinForSpecies(T entityIn, boolean allowRares) {
-        if (entityIn.getType().builtInRegistryHolder().key().location() != null && this instanceof INewSkins && !this.level().isClientSide()) {
-            String name = entityIn.getType().builtInRegistryHolder().key().location().getPath();
+        if (entityIn.getType().builtInRegistryHolder().key().identifier() != null && this instanceof INewSkins && !this.level().isClientSide()) {
+            String name = entityIn.getType().builtInRegistryHolder().key().identifier().getPath();
             if (!TEXTURES_COMMON.get(name).isEmpty()) {
                 boolean isRare = allowRares && TEXTURES_RARE.get(name).containsKey(this.getVariant()) && this.random.nextFloat() < ConfigGamerules.rareSkinChance.get();
                 int skin = this.random.nextInt(isRare ? TEXTURES_RARE.get(name).get(this.getVariant()).size() : TEXTURES_COMMON.get(name).get(this.getVariant()).size()) + (isRare ? 100 : 0);
@@ -233,13 +234,13 @@ public abstract class ComplexMob extends TamableAnimal {
                 child.setGender(this.random.nextInt(2));
                 child.setRandomMobSize();
                 child.setBaby(true);
-                child.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+                child.snapTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
                 if (this.getOwner() != null)
                     child.tame((Player) this.getOwner());
                 if (this instanceof INeedsPostUpdate) {
                     ((INeedsPostUpdate) child).updateAttributes();
                 }
-                if (TEXTURES_COMMON.containsKey(child.getType().builtInRegistryHolder().key().location().getPath())) {
+                if (TEXTURES_COMMON.containsKey(child.getType().builtInRegistryHolder().key().identifier().getPath())) {
                     chooseSkinForSpecies(child, true);
                 }
                 //((ServerLevel)this.level()).addFreshEntityWithPassengers(child);
@@ -314,7 +315,7 @@ public abstract class ComplexMob extends TamableAnimal {
         }
     }
 
-    public ResourceLocation getTexture() {
+    public Identifier getTexture() {
         return EntityUtils.getSkinFromEntity(this);
     }
 
@@ -378,7 +379,7 @@ public abstract class ComplexMob extends TamableAnimal {
         }
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         if (this.getHome() != BlockPos.ZERO) {
             compound.putInt("HomePosX", this.getHome().getX());
@@ -396,34 +397,34 @@ public abstract class ComplexMob extends TamableAnimal {
         compound.putInt("PeacefulTicks", this.huntingCooldown);
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        if (compound.contains("HomePosX")) {
-            int i = compound.getInt("HomePosX");
-            int j = compound.getInt("HomePosY");
-            int k = compound.getInt("HomePosZ");
+        if (NbtUtil.has(compound, "HomePosX")) {
+            int i = compound.getIntOr("HomePosX", 0);
+            int j = compound.getIntOr("HomePosY", 0);
+            int k = compound.getIntOr("HomePosZ", 0);
             this.setHome(new BlockPos(i, j, k));
         }
-        if (compound.contains("OwnerUUID")) {
-            this.setCommandInt(compound.getInt("Command"));
+        if (NbtUtil.has(compound, "OwnerUUID")) {
+            this.setCommandInt(compound.getIntOr("Command", 0));
         }
-        this.setVariant(EntityUtils.getClampedNumberOfSpecies(compound.getInt("Variant"), this.getType()));
-        //this.setVariant(compound.getInt("Variant"));
-        this.setSkin(compound.getInt("Skin"));
-        if (compound.contains("Size")) {
-            this.setMobSize(compound.getFloat("Size"));
+        this.setVariant(EntityUtils.getClampedNumberOfSpecies(compound.getIntOr("Variant", 0), this.getType()));
+        //this.setVariant(compound.getIntOr("Variant", 0));
+        this.setSkin(compound.getIntOr("Skin", 0));
+        if (NbtUtil.has(compound, "Size")) {
+            this.setMobSize(compound.getFloatOr("Size", 0.0F));
         } else if (this.entityData.get(SIZE) <= 0F) {
             // Missing legacy/new-spawn size tag should not collapse model scale to zero.
             this.setMobSize(this.getModelScale());
         }
-        this.setGender(compound.getInt("Gender"));
-        this.setAngry(compound.getBoolean("isAngry"));
-        this.huntingCooldown = compound.getInt("PeacefulTicks");
+        this.setGender(compound.getIntOr("Gender", 0));
+        this.setAngry(compound.getBooleanOr("isAngry", false));
+        this.huntingCooldown = compound.getIntOr("PeacefulTicks", 0);
     }
 
     @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
-        if (reason != MobSpawnType.DISPENSER && reason != MobSpawnType.BUCKET && reason != MobSpawnType.BREEDING) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, EntitySpawnReason reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
+        if (reason != EntitySpawnReason.DISPENSER && reason != EntitySpawnReason.BUCKET && reason != EntitySpawnReason.BREEDING) {
             if (this instanceof ISpecies) {
                     Holder<Biome> optional = worldIn.getBiome(BlockPos.containing(this.position()));
                 int i = ((ISpecies)this).setSpeciesByBiome(optional, reason);
@@ -435,7 +436,7 @@ public abstract class ComplexMob extends TamableAnimal {
             }
             this.setGender(this.random.nextInt(2));
             this.setRandomMobSize();
-            if (TEXTURES_COMMON.containsKey(this.getType().builtInRegistryHolder().key().location().getPath())) {
+            if (TEXTURES_COMMON.containsKey(this.getType().builtInRegistryHolder().key().identifier().getPath())) {
                 chooseSkinForSpecies(this, ConfigGamerules.wildRareSkins.get());
             }
             if (this instanceof INeedsPostUpdate) {
@@ -467,7 +468,7 @@ public abstract class ComplexMob extends TamableAnimal {
                     ComplexMob creature = this.herd.creatureList.get(i);
                     creature.addEffect(new MobEffectInstance(MobEffects.GLOWING, 80, 0));
                 }
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
 
             // Command handler for tamed mobs, includes Food/Potion consumption
@@ -484,7 +485,7 @@ public abstract class ComplexMob extends TamableAnimal {
                 } else {
                     EntityUtils.consumeItemStack(this, itemstack);
                 }
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

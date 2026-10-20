@@ -61,11 +61,11 @@ public abstract class ComplexMobAmphibious extends ComplexMobTerrestrial {
 
         public boolean isStableDestination(BlockPos destinationIn) {
             if (this.entityIn.wantsToBeInWater()) {
-                return !this.entityIn.level().getBlockState(destinationIn).isSolidRender(this.entityIn.level(), destinationIn) && this.entityIn.level().getFluidState(destinationIn) != null;
+                return !this.entityIn.level().getBlockState(destinationIn).isSolidRender() && this.entityIn.level().getFluidState(destinationIn) != null;
             }
             else if (this.entityIn.wantsToBeOnLand()) {
                 BlockPos blockpos = destinationIn.below();
-                return this.entityIn.level().getBlockState(blockpos).isSolidRender(this.entityIn.level(), blockpos);
+                return this.entityIn.level().getBlockState(blockpos).isSolidRender();
             }
             return !this.entityIn.level().getBlockState(destinationIn.below()).isAir();
         }

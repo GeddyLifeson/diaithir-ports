@@ -74,7 +74,7 @@ public class GrazeGoal extends Goal {
         this.eatingGrassTimer = Math.max(0, this.eatingGrassTimer - 1);
         if (this.eatingGrassTimer == 4) {
             if (this.entityWorld.getBlockState(this.testpos).is(ModTags.ModBlockTags.GRAZEABLE_BLOCKS)) {
-                if (this.entityWorld.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING) && ConfigGamerules.grazerGriefing.get()) {
+                if ((this.entityWorld instanceof net.minecraft.server.level.ServerLevel amSL && amSL.getGameRules().get(net.minecraft.world.level.gamerules.GameRules.MOB_GRIEFING)) && ConfigGamerules.grazerGriefing.get()) {
                     this.entityWorld.destroyBlock(this.testpos, false);
                 }
                 this.taskOwner.addHunger(16);
@@ -82,7 +82,7 @@ public class GrazeGoal extends Goal {
             } else {
                 BlockPos blockpos1 = this.testpos.below();
                 if (this.entityWorld.getBlockState(blockpos1).getBlock() == Blocks.GRASS_BLOCK) {
-                    if (this.entityWorld.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING)) {
+                    if ((this.entityWorld instanceof net.minecraft.server.level.ServerLevel amSL && amSL.getGameRules().get(net.minecraft.world.level.gamerules.GameRules.MOB_GRIEFING))) {
                         this.entityWorld.globalLevelEvent(2001, blockpos1, Block.getId(Blocks.GRASS_BLOCK.defaultBlockState()));
                         if (ConfigGamerules.grazerGriefing.get()) {
                             this.entityWorld.setBlock(blockpos1, Blocks.DIRT.defaultBlockState(), 2);

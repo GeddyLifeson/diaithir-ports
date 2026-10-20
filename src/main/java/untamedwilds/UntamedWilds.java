@@ -66,7 +66,7 @@ public class UntamedWilds {
             ModEntity.registerSpawnPlacements(event)
         );
         modBus.addListener(UntamedInstance::registerMessages);
-        if (FMLEnvironment.dist == Dist.CLIENT) {
+        if (FMLEnvironment.getDist().isClient()) {
             modBus.addListener(this::registerEntityRenderers);
         }
 
@@ -87,7 +87,6 @@ public class UntamedWilds {
     }
 
     private void setupClient(final FMLClientSetupEvent event) {
-        ModBlock.registerRendering();
         //ModBlock.registerBlockColors();
         //ModParticles.setupParticles();
 

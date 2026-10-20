@@ -26,7 +26,7 @@ public class FeatureFloatingPlants extends Feature<NoneFeatureConfiguration> {
         RandomSource rand = context.level().getRandom();
         WorldGenLevel world = context.level();
         BlockPos pos = world.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR, context.origin());
-        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().location().toString()))
+        if (ConfigFeatureControl.dimensionFeatureBlacklist.get().contains(world.getLevel().dimension().identifier().toString()))
             return false;
 
         for(int i = 0; i < 64; ++i) {

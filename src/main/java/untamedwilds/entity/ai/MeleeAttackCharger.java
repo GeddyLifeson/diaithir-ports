@@ -83,10 +83,10 @@ public class MeleeAttackCharger extends Goal {
                 ((ServerWorld)this.taskOwner.world).spawnParticle(ParticleTypes.SOUL_FIRE_FLAME, offset_box.minX, offset_box.minY, offset_box.minZ, 1, 0, 0, 0, 0.05D);
                 ((ServerWorld)this.taskOwner.world).spawnParticle(ParticleTypes.SOUL_FIRE_FLAME, offset_box.maxX, offset_box.maxY, offset_box.maxZ, 1, 0, 0, 0, 0.05D);
             }*/
-            List<LivingEntity> entitiesHit = this.taskOwner.level().getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
+            List<LivingEntity> entitiesHit = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
             for (LivingEntity entityHit : entitiesHit) {
                 if (!(entityHit instanceof EntityRhino) && !entityHit.equals(this.taskOwner) && this.taskOwner.hasLineOfSight(entityHit)) {
-                    this.taskOwner.doHurtTarget(entityHit);
+                    this.taskOwner.doHurtTarget((net.minecraft.server.level.ServerLevel) this.taskOwner.level(), entityHit);
                 }
             }
         }

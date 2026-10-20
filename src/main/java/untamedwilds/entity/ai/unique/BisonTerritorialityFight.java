@@ -88,7 +88,7 @@ public class BisonTerritorialityFight extends Goal {
             }
         } else { // AABB checking
                 AABB offset_box = this.taskOwner.getBoundingBox().move(Math.cos(Math.toRadians(this.taskOwner.getYRot() + 90)) * 1.2, 0, Math.sin(Math.toRadians(this.taskOwner.getYRot() + 90)) * 1.2);
-            List<LivingEntity> entitiesHit = this.taskOwner.level().getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
+            List<LivingEntity> entitiesHit = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
             for (LivingEntity entityHit : entitiesHit) {
                 if (!entityHit.equals(this.taskOwner) && this.taskOwner.hasLineOfSight(entityHit)) {
                     if (entityHit.equals(this.targetAnimal)) {
@@ -158,7 +158,7 @@ public class BisonTerritorialityFight extends Goal {
                 }
             } else { // AABB checking
                 AABB offset_box = this.taskOwner.getBoundingBox().move(Math.cos(Math.toRadians(this.taskOwner.getYRot() + 90)) * 1.2, 0, Math.sin(Math.toRadians(this.taskOwner.getYRot() + 90)) * 1.2);
-                List<LivingEntity> entitiesHit = this.taskOwner.level().getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
+                List<LivingEntity> entitiesHit = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), this.taskOwner, offset_box);
                 for (LivingEntity entityHit : entitiesHit) {
                     if (!entityHit.equals(this.taskOwner) && this.taskOwner.hasLineOfSight(entityHit)) {
                         if (entityHit.equals(this.targetAnimal)) {

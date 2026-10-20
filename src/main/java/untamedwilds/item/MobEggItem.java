@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,8 +19,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import untamedwilds.entity.ComplexMob;
 import untamedwilds.entity.INeedsPostUpdate;
 import untamedwilds.util.EntityUtils;
@@ -40,8 +38,8 @@ public class MobEggItem extends Item {
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display_, java.util.function.Consumer<Component> adder_, TooltipFlag flagIn) {
+        List<Component> tooltip = new untamedwilds.util.TooltipAdapter(adder_);
         tooltip.add(net.minecraft.network.chat.Component.translatable("mobspawn.tooltip.unknown").withStyle(ChatFormatting.GRAY));
     }
 
@@ -60,7 +58,7 @@ public class MobEggItem extends Item {
 
             CompoundTag tag = itemStack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
             EntityType<?> entity = EntityUtils.getEntityTypeFromTag(tag, this.entity.get());
-            Entity spawn = entity.create((ServerLevel) worldIn, null, spawnPos, MobSpawnType.BUCKET, true, !Objects.equals(pos, spawnPos) && facing == Direction.UP);
+            Entity spawn = entity.create((ServerLevel) worldIn, null, spawnPos, EntitySpawnReason.BUCKET, true, !Objects.equals(pos, spawnPos) && facing == Direction.UP);
             if (spawn instanceof ComplexMob) {
                 ComplexMob entitySpawn = (ComplexMob) spawn;
                 entitySpawn.setVariant(this.getSpecies(itemStack, entitySpawn));
@@ -81,14 +79,15 @@ public class MobEggItem extends Item {
         return InteractionResult.CONSUME;
     }
 
-    public String getDescriptionId() {
-    return net.minecraft.network.chat.Component.translatable("item.untamedwilds.egg_" + this.entity.get().builtInRegistryHolder().key().location().getPath()).getString();
+    @Override
+    public Component getName(ItemStack stack) {
+    return net.minecraft.network.chat.Component.translatable("item.untamedwilds.egg_" + this.entity.get().builtInRegistryHolder().key().identifier().getPath());
     }
 
     private int getSpecies(ItemStack itemIn, ComplexMob entityIn) {
         CompoundTag tag = itemIn.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
         if (tag != null && tag.contains("variant")) {
-            return tag.getInt("variant");
+            return tag.getIntOr("variant", 0);
         }
         return entityIn.getVariant();
     }
@@ -113,7 +112,7 @@ public class MobEggItem extends Item {
         ItemStack itemstack = entityItem.getItem();
         Level worldIn = entityItem.world;
 
-        if (entityItem.world.isClientSide || entityItem.tickCount < this.getHatchingTime(itemstack)) {
+        if (entityItem.world.isClientSide() || entityItem.tickCount < this.getHatchingTime(itemstack)) {
             return super.onEntityItemUpdate(entityItem);
         }
 

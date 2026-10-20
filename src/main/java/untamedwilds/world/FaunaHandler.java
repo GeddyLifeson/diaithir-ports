@@ -3,8 +3,7 @@ package untamedwilds.world;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.random.WeightedEntry;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.core.registries.BuiltInRegistries;
 
@@ -75,7 +74,7 @@ public abstract class FaunaHandler {
         spawnApexPred.clear();
     }
 
-    public static class SpawnListEntry extends WeightedEntry.IntrusiveBase {
+    public static class SpawnListEntry {
         public static final Codec<FaunaHandler.SpawnListEntry> CODEC = RecordCodecBuilder.create((p_237051_0_) -> p_237051_0_.group(
                 Codec.STRING.fieldOf("type").orElse("").forGetter((p_237056_0_) -> p_237056_0_.entityName),
                 Codec.INT.fieldOf("weight").orElse(0).forGetter((p_237054_0_) -> p_237054_0_.itemWeight),
@@ -90,15 +89,13 @@ public abstract class FaunaHandler {
         public int maxGroupCount;
 
         public SpawnListEntry(String entityName, Integer weight, Integer minGroupCount, Integer maxGroupCount) {
-            super(weight);
-            this.entityType = BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.tryParse(entityName));
+            this.entityType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.tryParse(entityName));
             this.itemWeight = weight;
             this.minGroupCount = minGroupCount;
             this.maxGroupCount = maxGroupCount;
         }
 
         public SpawnListEntry(EntityType<?> entityTypeIn, int weight, int minGroupCount, int maxGroupCount) {
-            super(weight);
             this.entityType = entityTypeIn;
             this.itemWeight = weight;
             this.minGroupCount = minGroupCount;

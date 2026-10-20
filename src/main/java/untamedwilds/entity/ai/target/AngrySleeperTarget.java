@@ -54,7 +54,7 @@ public class AngrySleeperTarget<T extends LivingEntity> extends TargetGoal {
                 if (player.isSteppingCarefully() || player.isCreative() || player.isSpectator())
                     return false;
             }
-            return TargetingConditions.forCombat().test(this.taskOwner, entity) && this.canAttack(entity, TargetingConditions.DEFAULT);
+            return TargetingConditions.forCombat().test((net.minecraft.server.level.ServerLevel)this.taskOwner.level(), this.taskOwner, entity) && this.canAttack(entity, TargetingConditions.DEFAULT);
         };
     }
 

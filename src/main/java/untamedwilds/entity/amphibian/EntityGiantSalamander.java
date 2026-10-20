@@ -1,6 +1,6 @@
 package untamedwilds.entity.amphibian;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -84,7 +84,7 @@ public class EntityGiantSalamander extends ComplexMobAmphibious implements ISpec
     public void aiStep() {
         super.aiStep();
 
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.isInWater()) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.003D, 0.0D));
                 if (!this.isNotMoving() && this.random.nextInt(5) == 0 && this.getDeltaMovement().horizontalDistance() > 0.08) {
@@ -136,9 +136,9 @@ public class EntityGiantSalamander extends ComplexMobAmphibious implements ISpec
         return false;
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
         float f = (float)this.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-    boolean flag = entityIn.hurt(this.damageSources().mobAttack(this), f);
+    boolean flag = entityIn.hurtOrSimulate(this.damageSources().mobAttack(this), f);
         if (flag) {
                 if (entityIn instanceof LivingEntity && entityIn.getBbWidth() * entityIn.getBbHeight() < 0.4F && !(entityIn instanceof TamableAnimal && ((TamableAnimal) entityIn).isTame())) {
                 this.setAnimation(ATTACK_SWALLOW);
@@ -166,7 +166,7 @@ public class EntityGiantSalamander extends ComplexMobAmphibious implements ISpec
         if (hand == InteractionHand.MAIN_HAND) {
             if (itemstack.getItem().equals(Items.WATER_BUCKET) && this.isAlive()) {
                 EntityUtils.mutateEntityIntoItem(this, player, hand, "bucket_giant_salamander", itemstack);
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
         return super.mobInteract(player, hand);

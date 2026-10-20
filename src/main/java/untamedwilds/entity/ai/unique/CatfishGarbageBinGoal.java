@@ -40,7 +40,7 @@ public class CatfishGarbageBinGoal extends Goal {
         }
     List<ItemEntity> list = this.taskOwner.level().getEntitiesOfClass(ItemEntity.class, this.getTargettableArea(distance));
 
-    list.removeIf((ItemEntity item) -> item.getItem().getItem().getFoodProperties(item.getItem(), this.taskOwner) == null);
+    list.removeIf((ItemEntity item) -> item.getItem().get(net.minecraft.core.component.DataComponents.FOOD) == null);
         if (!list.isEmpty()) {
             list.sort(this.sorter);
             this.targetItem = list.get(0);

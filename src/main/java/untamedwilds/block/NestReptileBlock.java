@@ -1,9 +1,12 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -72,15 +75,15 @@ public class NestReptileBlock extends Block implements SimpleWaterloggedBlock, E
         return !state.getCollisionShape(worldIn, pos).getFaceShape(Direction.UP).isEmpty();
     }
 
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
         if (stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            amTicks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
         if (!canSurvive(stateIn, worldIn, currentPos)) {
-            worldIn.destroyBlock(currentPos, false);
+            return Blocks.AIR.defaultBlockState();
         }
 
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
     }
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -107,7 +110,7 @@ public class NestReptileBlock extends Block implements SimpleWaterloggedBlock, E
     }
 
     public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player playerIn, InteractionHand hand, BlockHitResult hit) {
-        if (worldIn.isClientSide || hand.equals(InteractionHand.OFF_HAND)) {
+        if (worldIn.isClientSide() || hand.equals(InteractionHand.OFF_HAND)) {
             return InteractionResult.FAIL;
         }
         else {
@@ -119,7 +122,7 @@ public class NestReptileBlock extends Block implements SimpleWaterloggedBlock, E
                 else {
                     te.removeEggs(worldIn, 1);
                     CompoundTag baseTag = new CompoundTag();
-                    ItemStack item = new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":egg_" + te.getEntityType().builtInRegistryHolder().key().location().getPath())));
+                    ItemStack item = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(UntamedWilds.MOD_ID + ":egg_" + te.getEntityType().builtInRegistryHolder().key().identifier().getPath())));
                     baseTag.putInt("variant", te.getVariant());
                     baseTag.putInt("CustomModelData", te.getVariant());
                     item.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(baseTag));

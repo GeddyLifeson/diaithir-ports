@@ -71,7 +71,7 @@ public class EntityManatee extends ComplexMobAquatic implements ISpecies, INewSk
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.isEating()) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0, -0.01F, 0));
             }
@@ -216,7 +216,7 @@ public class EntityManatee extends ComplexMobAquatic implements ISpecies, INewSk
                     Level worldIn = this.taskOwner.level();
                     this.taskOwner.getLookControl().setLookAt(this.targetPos.getX(), this.targetPos.getY(), this.targetPos.getZ());
                     if (worldIn.getBlockState(this.targetPos).is(ModTags.ModBlockTags.GRAZEABLE_ALGAE)) {
-                        if (worldIn.getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING)) {
+                        if ((worldIn instanceof net.minecraft.server.level.ServerLevel amSL && amSL.getGameRules().get(net.minecraft.world.level.gamerules.GameRules.MOB_GRIEFING))) {
                             //worldIn.globalLevelEvent(2001, this.targetPos, Block.getId(Blocks.SEAGRASS.defaultBlockState()));
                             if (ConfigGamerules.grazerGriefing.get()) {
                                 worldIn.destroyBlock(this.targetPos, false);
@@ -224,7 +224,7 @@ public class EntityManatee extends ComplexMobAquatic implements ISpecies, INewSk
                         }
                     }
                     this.taskOwner.ate();
-                    this.taskOwner.playSound(SoundEvents.GENERIC_EAT, 1F, 1);
+                    this.taskOwner.playSound(SoundEvents.GENERIC_EAT.value(), 1F, 1);
                     this.taskComplete = true;
                 }
             }

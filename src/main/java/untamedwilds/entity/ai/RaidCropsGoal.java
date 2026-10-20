@@ -6,7 +6,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.FarmlandBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import untamedwilds.entity.ComplexMobTerrestrial;
@@ -28,7 +28,7 @@ public class RaidCropsGoal extends Goal {
 
     @Override
     public boolean canUse() {
-    if (this.taskOwner.isTame() || !this.taskOwner.level().getGameRules().getBoolean(net.minecraft.world.level.GameRules.RULE_MOBGRIEFING)) {
+    if (this.taskOwner.isTame() || !(this.taskOwner.level() instanceof net.minecraft.server.level.ServerLevel amSL && amSL.getGameRules().get(net.minecraft.world.level.gamerules.GameRules.MOB_GRIEFING))) {
             return false;
         }
         if (this.taskOwner.getHunger() > 80 || this.taskOwner.getTarget() != null) {
@@ -80,7 +80,7 @@ public class RaidCropsGoal extends Goal {
         int Y = 3;
         //List<BlockPos> inventories = new ArrayList<>();
         for (BlockPos blockpos : BlockPos.betweenClosed(roomCenter.offset(-X, -Y, -X), roomCenter.offset(X, Y, X))) {
-            if (this.taskOwner.level().getBlockState(blockpos).getBlock() instanceof FarmBlock) {
+            if (this.taskOwner.level().getBlockState(blockpos).getBlock() instanceof FarmlandBlock) {
                 if (this.hasPlantedCrop(this.taskOwner.level(), blockpos)) {
                     return blockpos.above();
                 }

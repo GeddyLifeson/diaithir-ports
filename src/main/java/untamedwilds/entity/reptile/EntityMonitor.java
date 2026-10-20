@@ -1,6 +1,8 @@
 package untamedwilds.entity.reptile;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -106,7 +108,7 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
     public void aiStep() {
         super.aiStep();
 
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.isInWater()) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.003D, 0.0D));
                 if (!this.isNotMoving() && this.random.nextInt(5) == 0 && this.getDeltaMovement().horizontalDistance() > 0.08) {
@@ -134,7 +136,7 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
                 else if (i > 2900) {
                     if (this.isVehicle() && this.getFirstPassenger() != null) {
                         this.setAnimation(ATTACK_THRASH);
-                        doHurtTarget(this.getFirstPassenger());
+                        doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), this.getFirstPassenger());
                     }
                     else {
                         this.setAnimation(IDLE_TONGUE);
@@ -179,8 +181,8 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
         return false;
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             this.setAnimation(ATTACK_THRASH);
             this.setAnimationTick(0);
@@ -219,7 +221,7 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
 
         if (itemstack.isEmpty() && this.isAlive() && hand.equals(InteractionHand.MAIN_HAND)) {
             this.setAnimation(ATTACK_THRASH);
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -236,10 +238,10 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
         this.playSound(soundevent, 0.15F, 1.0F);
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         performRetaliation(damageSource, this.getHealth(), amount, true);
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     public Animation[] getAnimations() { return new Animation[]{NO_ANIMATION, IDLE_TONGUE, ATTACK_THRASH}; }
@@ -271,13 +273,13 @@ public class EntityMonitor extends ComplexMobAmphibious implements ISpecies, INe
         return this.level().isEmptyBlock(pos) && this.level().getBlockState(pos.below()).is(ModTags.ModBlockTags.VALID_REPTILE_NEST) && this.getNestType().defaultBlockState().canSurvive(this.level(), pos);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 }

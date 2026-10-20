@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,8 +18,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import untamedwilds.entity.ComplexMob;
 import untamedwilds.entity.INeedsPostUpdate;
 import untamedwilds.util.EntityUtils;
@@ -39,13 +37,13 @@ public class MobSpawnItem extends Item {
     }
 
     @Override
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display_, java.util.function.Consumer<Component> adder_, TooltipFlag flagIn) {
+        List<Component> tooltip = new untamedwilds.util.TooltipAdapter(adder_);
         EntityUtils.buildTooltipData(stack, tooltip, this.entity.get(), EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
     }
 
     public Component getName(ItemStack stack) {
-    return net.minecraft.network.chat.Component.translatable("entity.untamedwilds." + this.entity.get().builtInRegistryHolder().key().location().getPath() + "_" + EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
+    return net.minecraft.network.chat.Component.translatable("entity.untamedwilds." + this.entity.get().builtInRegistryHolder().key().identifier().getPath() + "_" + EntityUtils.getVariantName(this.entity.get(), this.getSpecies(stack)));
         //return new TranslatableComponent("entity.untamedwilds." + this.entity.getRegistryName().getPath() + "_" + ComplexMob.getEntityData(this.entity).getSpeciesData().get(this.getSpecies(stack)).getName()).getString();
     }
 
@@ -79,10 +77,10 @@ public class MobSpawnItem extends Item {
     private int getSpecies(ItemStack itemIn) {
         CompoundTag tag = itemIn.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
         if (tag != null && tag.contains("CustomModelData")) {
-            return tag.getInt("CustomModelData");
+            return tag.getIntOr("CustomModelData", 0);
         }
         if (tag != null && tag.contains("variant")) {
-            return tag.getInt("variant");
+            return tag.getIntOr("variant", 0);
         }
         return 0;
     }

@@ -1,6 +1,6 @@
 package untamedwilds.util;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 
 import java.util.HashMap;
@@ -50,7 +50,7 @@ public class EntityDataHolderClient {
         }
     }
 
-    public void addSoundData(int id, String sound_type, ResourceLocation sound) {
+    public void addSoundData(int id, String sound_type, Identifier sound) {
         if (!this.sounds.containsKey(id)) {
             this.sounds.put(id, new HashMap<>());
         }

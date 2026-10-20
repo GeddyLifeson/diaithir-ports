@@ -1,6 +1,6 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
@@ -76,7 +76,7 @@ public class EntityHippo extends ComplexMobAmphibious implements INewSkins, ISpe
 
     @Override
     public void aiStep() {
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.isInWater() && this.getTarget() == null) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.01D, 0.0D));
             }
@@ -119,9 +119,9 @@ public class EntityHippo extends ComplexMobAmphibious implements INewSkins, ISpe
                 this.playSound(this.getAmbientSound(), this.getSoundVolume(), this.getVoicePitch());
             }
         }
-        if (this.level().isClientSide && this.isAngry() && this.angryProgress < 40) {
+        if (this.level().isClientSide() && this.isAngry() && this.angryProgress < 40) {
             this.angryProgress += 4;
-        } else if (this.level().isClientSide && !this.isAngry() && this.angryProgress > 0) {
+        } else if (this.level().isClientSide() && !this.isAngry() && this.angryProgress > 0) {
             this.angryProgress -= 4;
         }
         super.aiStep();
@@ -137,8 +137,8 @@ public class EntityHippo extends ComplexMobAmphibious implements INewSkins, ISpe
         return !this.isActive();
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
@@ -146,10 +146,10 @@ public class EntityHippo extends ComplexMobAmphibious implements INewSkins, ISpe
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         performRetaliation(damageSource, this.getHealth(), amount, true);
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     private Animation chooseAttackAnimation() {

@@ -90,7 +90,7 @@ public class MeleeAttackCircle extends Goal {
 
     public void stop() {
         LivingEntity livingentity = this.attacker.getTarget();
-        if (livingentity == null || !TargetingConditions.forCombat().test(this.attacker, livingentity)) {
+        if (livingentity == null || !TargetingConditions.forCombat().test((net.minecraft.server.level.ServerLevel)this.attacker.level(), this.attacker, livingentity)) {
             this.attacker.setTarget(null);
         }
         this.attacker.setAggressive(false);
@@ -153,7 +153,7 @@ public class MeleeAttackCircle extends Goal {
         double d0 = this.getAttackReachSqr(enemy);
         if (this.attacker.hasLineOfSight(enemy) && distToEnemySqr <= d0 && this.attackTick <= 0) {
             this.attackTick = 20;
-            this.attacker.doHurtTarget(enemy);
+            this.attacker.doHurtTarget((net.minecraft.server.level.ServerLevel) this.attacker.level(), enemy);
             this.attacker.getLookControl().setLookAt(enemy, 30.0F, 30.0F);
         }
     }

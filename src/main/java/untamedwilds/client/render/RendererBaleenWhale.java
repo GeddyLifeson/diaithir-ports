@@ -1,10 +1,10 @@
 package untamedwilds.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.EntityModel;
+import untamedwilds.client.render.compat.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.resources.ResourceLocation;
+import untamedwilds.client.render.compat.MobRenderer;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import untamedwilds.client.model.ModelBaleenWhale;
 import untamedwilds.entity.mammal.EntityBaleenWhale;
@@ -22,7 +22,7 @@ public class RendererBaleenWhale extends MobRenderer<EntityBaleenWhale, EntityMo
         this.shadowRadius = f;
     }
 
-    public @NotNull ResourceLocation getTextureLocation(EntityBaleenWhale entity) {
+    public @NotNull Identifier getTextureLocation(EntityBaleenWhale entity) {
         return entity.getTexture();
     }
 }

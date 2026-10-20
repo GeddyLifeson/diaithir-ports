@@ -1,5 +1,7 @@
 package untamedwilds.block;
 
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -23,8 +25,8 @@ public class CarpetBlock extends Block {
         return SHAPE;
     }
 
-    public BlockState updateShape(BlockState state, Direction direction, BlockState p_196271_3_, LevelAccessor p_196271_4_, BlockPos p_196271_5_, BlockPos p_196271_6_) {
-        return !state.canSurvive(p_196271_4_, p_196271_5_) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, p_196271_3_, p_196271_4_, p_196271_5_, p_196271_6_);
+    public BlockState updateShape(BlockState state, LevelReader p_196271_4_, ScheduledTickAccess amTicks, BlockPos p_196271_5_, Direction direction, BlockPos p_196271_6_, BlockState p_196271_3_, RandomSource amRandom) {
+        return !state.canSurvive(p_196271_4_, p_196271_5_) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, p_196271_4_, amTicks, p_196271_5_, direction, p_196271_6_, p_196271_3_, amRandom);
     }
 
     public boolean canSurvive(BlockState p_196260_1_, LevelReader p_196260_2_, BlockPos p_196260_3_) {

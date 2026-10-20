@@ -1,5 +1,8 @@
 package untamedwilds.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -14,7 +17,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -56,12 +59,12 @@ public class ReptileNestBlockEntity extends BlockEntity {
                     float offsetZ = rand.nextFloat();
                     if (this.getEggCount() > 0 && this.getEntityType() != null && worldIn.noCollision(untamedwilds.util.EntityUtils.getEntityTypeAABB(this.getEntityType(), blockpos.getX() + offsetX, blockpos.getY(), blockpos.getZ() + offsetZ).deflate(this.getEntityType().getWidth() / 4).move(0, 4, 0))) {
                         // Turns out that calling EntityType.create(...) will fucking crash the game if it pulls an invalid variant
-                        //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, MobSpawnType.CHUNK_GENERATION, true, false);
-                        Entity spawn = this.getEntityType().create(worldIn);
+                        //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, EntitySpawnReason.CHUNK_GENERATION, true, false);
+                        Entity spawn = this.getEntityType().create(worldIn, net.minecraft.world.entity.EntitySpawnReason.BREEDING);
                         if (spawn != null) {
-                            spawn.moveTo(blockpos.getX() + offsetX, blockpos.getY(), blockpos.getZ() + offsetZ, Mth.wrapDegrees(rand.nextFloat() * 360.0F), 0.0F);
+                            spawn.snapTo(blockpos.getX() + offsetX, blockpos.getY(), blockpos.getZ() + offsetZ, Mth.wrapDegrees(rand.nextFloat() * 360.0F), 0.0F);
                             if (spawn instanceof Mob mobSpawn) {
-                                mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), MobSpawnType.BREEDING, null);
+                                mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), EntitySpawnReason.BREEDING, null);
                             }
                             if (spawn instanceof ComplexMob entitySpawn) {
                                 entitySpawn.setVariant(EntityUtils.getClampedNumberOfSpecies(this.variant, this.entityType));
@@ -87,7 +90,7 @@ public class ReptileNestBlockEntity extends BlockEntity {
     }
 
     public void trampleOnNest(Level worldIn, BlockPos posIn, BlockState stateIn) {
-        worldIn.playSound(null, posIn, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
+        worldIn.playSound(null, posIn, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.getRandom().nextFloat() * 0.2F);
         removeEggs(worldIn, Math.min(worldIn.getRandom().nextInt(2), this.getEggCount() / 2) + 1);
         worldIn.levelEvent(2001, posIn, Block.getId(stateIn));
     }
@@ -122,22 +125,22 @@ public class ReptileNestBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.loadAdditional(compound, registries);
-        this.setVariant(compound.getInt("Variant"));
-        this.setEggCount(compound.getInt("Count"));
-        if (compound.contains("EntityType")) {
-            this.setEntityType(EntityType.byString(compound.getString("EntityType")).orElse(null));
+    protected void loadAdditional(ValueInput compound) {
+        super.loadAdditional(compound);
+        this.setVariant(compound.getIntOr("Variant", 0));
+        this.setEggCount(compound.getIntOr("Count", 0));
+        if (NbtUtil.has(compound, "EntityType")) {
+            this.setEntityType(EntityType.byString(compound.getStringOr("EntityType", "")).orElse(null));
         }
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.saveAdditional(compound, registries);
+    protected void saveAdditional(ValueOutput compound) {
+        super.saveAdditional(compound);
         compound.putInt("Count", this.getEggCount());
         compound.putInt("Variant", this.getVariant());
-        if (this.getEntityType() != null && this.getEntityType().builtInRegistryHolder().key().location() != null) {
-            compound.putString("EntityType", this.getEntityType().builtInRegistryHolder().key().location().toString());
+        if (this.getEntityType() != null && this.getEntityType().builtInRegistryHolder().key().identifier() != null) {
+            compound.putString("EntityType", this.getEntityType().builtInRegistryHolder().key().identifier().toString());
         }
     }
 }

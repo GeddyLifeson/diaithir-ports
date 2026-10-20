@@ -37,21 +37,17 @@ public class CustomGrassBlock extends FlowerBlock implements BonemealableBlock {
     }
 
     public CustomGrassBlock(Holder<MobEffect> p_53512_, int p_53513_, BlockBehaviour.Properties p_53514_) {
-        super(p_53512_, p_53513_, p_53514_);
+        super(p_53512_, p_53513_, p_53514_.offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
     // Convenience ctor for codec/property-only construction
     public CustomGrassBlock(BlockBehaviour.Properties props) {
-        super(MobEffects.MOVEMENT_SPEED, 0, props);
+        super(MobEffects.SPEED, 0, props.offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
     public VoxelShape getShape(BlockState p_53517_, BlockGetter p_53518_, BlockPos p_53519_, CollisionContext p_53520_) {
-        Vec3 vec3 = p_53517_.getOffset(p_53518_, p_53519_);
+        Vec3 vec3 = p_53517_.getOffset(p_53519_);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
-    }
-
-    public BlockBehaviour.OffsetType getOffsetType() {
-        return BlockBehaviour.OffsetType.XZ;
     }
 
     public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {

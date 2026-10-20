@@ -1,5 +1,6 @@
 package untamedwilds.block;
 
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -23,18 +24,18 @@ import org.jetbrains.annotations.Nullable;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-public class AlgaeBlock extends BushBlock implements BonemealableBlock, LiquidBlockContainer, net.minecraftforge.common.IForgeShearable {
+public class AlgaeBlock extends LegacyBushBlock implements BonemealableBlock, LiquidBlockContainer, net.neoforged.neoforge.common.IShearable {
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
     public static final MapCodec<AlgaeBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(propertiesCodec()).apply(instance, AlgaeBlock::new));
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<? extends LegacyBushBlock> codec() {
         return CODEC;
     }
 
     public AlgaeBlock(BlockBehaviour.Properties properties) {
-        super(properties);
+        super(properties.offsetType(BlockBehaviour.OffsetType.XZ));
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
@@ -51,10 +52,10 @@ public class AlgaeBlock extends BushBlock implements BonemealableBlock, LiquidBl
         return fluidstate.is(FluidTags.WATER) && fluidstate.getAmount() == 8 ? super.getStateForPlacement(context) : null;
     }
 
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
-        BlockState blockstate = super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+    public BlockState updateShape(BlockState stateIn, LevelReader worldIn, ScheduledTickAccess amTicks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, RandomSource amRandom) {
+        BlockState blockstate = super.updateShape(stateIn, worldIn, amTicks, currentPos, facing, facingPos, facingState, amRandom);
         if (!blockstate.isAir()) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            amTicks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
 
         return blockstate;
@@ -82,12 +83,8 @@ public class AlgaeBlock extends BushBlock implements BonemealableBlock, LiquidBl
         return Fluids.WATER.getSource(false);
     }
 
-    public OffsetType getOffsetType() {
-        return OffsetType.XZ;
-    }
-
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
+    public boolean canPlaceLiquid(@org.jetbrains.annotations.Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {
         return false;
     }
 
@@ -97,12 +94,12 @@ public class AlgaeBlock extends BushBlock implements BonemealableBlock, LiquidBl
     }
 
     @Override
-    public java.util.List<net.minecraft.world.item.ItemStack> onSheared(net.minecraft.world.item.ItemStack item, Level world, BlockPos pos, int fortune) {
+    public java.util.List<net.minecraft.world.item.ItemStack> onSheared(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, net.minecraft.world.item.ItemStack item, Level world, BlockPos pos) {
         return java.util.List.of(new net.minecraft.world.item.ItemStack(this.asItem()));
     }
 
     @Override
-    public boolean isShearable(net.minecraft.world.item.ItemStack item, Level world, BlockPos pos) {
+    public boolean isShearable(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, net.minecraft.world.item.ItemStack item, Level world, BlockPos pos) {
         return true;
     }
 }

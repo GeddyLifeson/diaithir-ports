@@ -12,6 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.Vec3;
@@ -24,26 +25,22 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import java.util.List;
 
-public class UndergrowthBlock extends BushBlock implements BonemealableBlock, net.neoforged.neoforge.common.IShearable {
+public class UndergrowthBlock extends LegacyBushBlock implements BonemealableBlock, net.neoforged.neoforge.common.IShearable {
 
     public static final MapCodec<UndergrowthBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> 
         instance.group(propertiesCodec()).apply(instance, UndergrowthBlock::new));
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<? extends LegacyBushBlock> codec() {
         return CODEC;
     }
 
-    protected OffsetType offset;
-
     public UndergrowthBlock(Properties properties) {
         super(properties);
-        this.offset = OffsetType.NONE;
     }
 
-    public UndergrowthBlock(Properties properties, OffsetType type) {
-        super(properties);
-        this.offset = type;
+    public UndergrowthBlock(Properties properties, BlockBehaviour.OffsetType type) {
+        super(properties.offsetType(type));
     }
 
     @Override
@@ -57,7 +54,7 @@ public class UndergrowthBlock extends BushBlock implements BonemealableBlock, ne
     }
 
     @Override
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+    public boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 
@@ -67,17 +64,13 @@ public class UndergrowthBlock extends BushBlock implements BonemealableBlock, ne
     }
 
     @Override
-    protected void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+    protected void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (entityIn instanceof Player && !entityIn.isSteppingCarefully()) {
             entityIn.makeStuckInBlock(state, new Vec3(0.95F, 1D, 0.95F));
             if (worldIn.getRandom().nextInt(20) == 0) {
                 worldIn.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.GRASS_STEP, SoundSource.AMBIENT, 1, 1, true);
             }
         }
-    }
-
-    public OffsetType getOffsetType() {
-        return this.offset;
     }
 
     // BonemealableBlock implementation - 1.21.1 signature
@@ -107,7 +100,7 @@ public class UndergrowthBlock extends BushBlock implements BonemealableBlock, ne
     }
 
     // IShearable implementation - NeoForge 1.21.1
-    public List<ItemStack> onSheared(Player player, ItemStack item, Level world, BlockPos pos, int fortune) {
+    public List<ItemStack> onSheared(@org.jetbrains.annotations.Nullable Player player, ItemStack item, Level world, BlockPos pos) {
         return List.of(new ItemStack(this.asItem()));
     }
 }

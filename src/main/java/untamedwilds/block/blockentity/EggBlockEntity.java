@@ -1,5 +1,8 @@
 package untamedwilds.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.util.NbtUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -12,7 +15,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -43,12 +46,12 @@ public class EggBlockEntity extends BlockEntity {
             if (worldIn.hasNearbyAlivePlayer((double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.5D, (double)blockpos.getZ() + 0.5D, ConfigMobControl.critterSpawnRange.get())) {
                 if (this.getEntityType() != null) {
                     // Turns out that calling EntityType.create(...) will fucking crash the game if it pulls an invalid variant
-                    //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, MobSpawnType.CHUNK_GENERATION, true, false);
-                    Entity spawn = this.getEntityType().create(worldIn);
+                    //Entity spawn = this.getEntityType().create(worldIn, null, null, null, blockpos, EntitySpawnReason.CHUNK_GENERATION, true, false);
+                    Entity spawn = this.getEntityType().create(worldIn, EntitySpawnReason.BREEDING);
                     if (spawn != null) {
-                        spawn.moveTo(blockpos.getX() + 0.5D, blockpos.getY(), blockpos.getZ() + 0.5D, Mth.wrapDegrees(worldIn.random.nextFloat() * 360.0F), 0.0F);
+                        spawn.snapTo(blockpos.getX() + 0.5D, blockpos.getY(), blockpos.getZ() + 0.5D, Mth.wrapDegrees(worldIn.getRandom().nextFloat() * 360.0F), 0.0F);
                         if (spawn instanceof Mob mobSpawn) {
-                            mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), MobSpawnType.BREEDING, null);
+                            mobSpawn.finalizeSpawn(worldIn, worldIn.getCurrentDifficultyAt(blockpos), EntitySpawnReason.BREEDING, null);
                         }
                         if (spawn instanceof ComplexMob entitySpawn) {
                             entitySpawn.setVariant(EntityUtils.getClampedNumberOfSpecies(this.variant, this.entityType));
@@ -96,22 +99,22 @@ public class EggBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.loadAdditional(compound, registries);
-        this.setVariant(compound.getInt("Variant"));
-        this.setCanSpawn(compound.getBoolean("CanSpawn"));
-        if (compound.contains("entityType")) {
-            this.setEntityType(EntityType.byString(compound.getString("entityType")).orElse(null));
+    protected void loadAdditional(ValueInput compound) {
+        super.loadAdditional(compound);
+        this.setVariant(compound.getIntOr("Variant", 0));
+        this.setCanSpawn(compound.getBooleanOr("CanSpawn", false));
+        if (NbtUtil.has(compound, "entityType")) {
+            this.setEntityType(EntityType.byString(compound.getStringOr("entityType", "")).orElse(null));
         }
     }
 
     @Override
-    protected void saveAdditional(CompoundTag compound, HolderLookup.Provider registries) {
-        super.saveAdditional(compound, registries);
+    protected void saveAdditional(ValueOutput compound) {
+        super.saveAdditional(compound);
         compound.putBoolean("CanSpawn", this.getCanSpawn());
         compound.putInt("Variant", this.getVariant());
         if (this.getEntityType() != null) {
-            compound.putString("entityType", this.getEntityType().builtInRegistryHolder().key().location().toString());
+            compound.putString("entityType", this.getEntityType().builtInRegistryHolder().key().identifier().toString());
         }
     }
 }

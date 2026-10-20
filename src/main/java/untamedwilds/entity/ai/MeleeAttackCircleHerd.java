@@ -93,7 +93,7 @@ public class MeleeAttackCircleHerd extends Goal {
             return false;
         } else if (!this.longMemory) {
             return !this.attacker.getNavigation().isDone();
-        } else if (!this.attacker.isWithinRestriction(livingentity.blockPosition())) {
+        } else if (!this.attacker.isWithinHome(livingentity.blockPosition())) {
             return false;
         }
         else {
@@ -109,7 +109,7 @@ public class MeleeAttackCircleHerd extends Goal {
 
     public void stop() {
         LivingEntity livingentity = this.attacker.getTarget();
-        if (!TargetingConditions.forCombat().test(this.attacker, livingentity)) {
+        if (!TargetingConditions.forCombat().test((net.minecraft.server.level.ServerLevel)this.attacker.level(), this.attacker, livingentity)) {
             this.attacker.setTarget(null);
         }
         this.attacker.setAggressive(false);
@@ -174,7 +174,7 @@ public class MeleeAttackCircleHerd extends Goal {
                         Optional<Vec3> jump_vec = this.calculateOptimalJumpVector(this.attacker, Vec3.atCenterOf(forwardFarPos));
                         if (jump_vec.isPresent()) {
                             double d1 = jump_vec.get().length();
-                            double d2 = 1 + d1 + (this.attacker.hasEffect(MobEffects.JUMP) ? (double)(0.1F * (float)(this.attacker.getEffect(MobEffects.JUMP).getAmplifier() + 1)) : 0.0D);
+                            double d2 = 1 + d1 + (this.attacker.hasEffect(MobEffects.JUMP_BOOST) ? (double)(0.1F * (float)(this.attacker.getEffect(MobEffects.JUMP_BOOST).getAmplifier() + 1)) : 0.0D);
                             this.attacker.setDeltaMovement(jump_vec.get().x * d2 / d1, jump_vec.get().y, jump_vec.get().z * d2 / d1);
                             this.attacker.getNavigation().stop();
                             break;
@@ -192,7 +192,7 @@ public class MeleeAttackCircleHerd extends Goal {
         double d0 = this.getAttackReachSqr(enemy);
         if (this.attacker.hasLineOfSight(enemy) && distToEnemySqr <= d0 && this.attackTick <= 0) {
             this.attackTick = 20;
-            this.attacker.doHurtTarget(enemy);
+            this.attacker.doHurtTarget((net.minecraft.server.level.ServerLevel) this.attacker.level(), enemy);
         }
     }
 

@@ -10,11 +10,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -30,8 +29,6 @@ import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.Item;
 import untamedwilds.entity.ComplexMob;
@@ -50,15 +47,15 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
     private final Supplier<? extends EntityType<? extends Mob>> entityType;
 
     public UntamedSpawnEggItem(Supplier<? extends EntityType<? extends Mob>> typeIn, int primaryColorIn, int secondaryColorIn, Item.Properties builder) {
-        super(typeIn.get(), primaryColorIn, secondaryColorIn, builder);
+        super(builder.spawnEgg(typeIn.get()));
         this.currentSpecies = 0;
         this.entityType = typeIn;
         this.isCached = false;
     }
 
     @Override
-    // @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display_, java.util.function.Consumer<Component> adder_, TooltipFlag flagIn) {
+        List<Component> tooltip = new untamedwilds.util.TooltipAdapter(adder_);
         tooltip.add(net.minecraft.network.chat.Component.translatable("item.untamedwilds.spawn_egg_info").withStyle(ChatFormatting.GRAY));
         tooltip.add(net.minecraft.network.chat.Component.translatable("item.untamedwilds.spawn_egg_current", this.getCurrentSpeciesName(stack)).withStyle(ChatFormatting.ITALIC, ChatFormatting.GRAY));
     }
@@ -67,7 +64,7 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
         if (!this.isCached) {
             CompoundTag custom = stack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
             if (custom != null && custom.contains("EntityTag")) {
-                this.currentSpecies = custom.getCompound("EntityTag").getInt("Variant");
+                this.currentSpecies = custom.getCompoundOrEmpty("EntityTag").getIntOr("Variant", 0);
                 this.isCached = true;
             }
         }
@@ -81,14 +78,14 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack itemstack = playerIn.getItemInHand(handIn);
         if (!(worldIn instanceof ServerLevel)) {
-            return InteractionResultHolder.success(itemstack);
+            return InteractionResult.SUCCESS;
         }
         if (playerIn.isSteppingCarefully()) {
             this.increaseSpeciesNumber(this.currentSpecies + 1);
-        playerIn.displayClientMessage(net.minecraft.network.chat.Component.translatable("item.untamedwilds.spawn_egg_change", this.getCurrentSpeciesName(itemstack)), true);
+        playerIn.sendOverlayMessage(net.minecraft.network.chat.Component.translatable("item.untamedwilds.spawn_egg_change", this.getCurrentSpeciesName(itemstack)));
 
             CompoundTag base = new CompoundTag();
             if (this.currentSpecies != 0) {
@@ -97,25 +94,25 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
                 base.put("EntityTag", entityNBT);
             }
             itemstack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(base));
-            return InteractionResultHolder.pass(itemstack);
+            return InteractionResult.PASS;
         }
 
         BlockHitResult raytraceresult = getPlayerPOVHitResult(worldIn, playerIn, ClipContext.Fluid.SOURCE_ONLY);
         if (raytraceresult.getType() != BlockHitResult.Type.BLOCK) {
-            return InteractionResultHolder.pass(itemstack);
+            return InteractionResult.PASS;
         } else {
             BlockPos blockpos = raytraceresult.getBlockPos();
             if (!(worldIn.getBlockState(blockpos).getBlock() instanceof LiquidBlock)) {
-                return InteractionResultHolder.pass(itemstack);
+                return InteractionResult.PASS;
             } else if (worldIn.mayInteract(playerIn, blockpos) && playerIn.mayUseItemAt(blockpos, raytraceresult.getDirection(), itemstack)) {
                 Integer species = this.currentSpecies - 1 < 0 ? null : this.currentSpecies - 1;
                 EntityUtils.createMobFromItem((ServerLevel) worldIn, itemstack, this.entityType.get(), species, blockpos, playerIn, false, true);
 
                 playerIn.awardStat(Stats.ITEM_USED.get(this));
                 worldIn.gameEvent(playerIn, GameEvent.ENTITY_PLACE, blockpos);
-                return InteractionResultHolder.consume(itemstack);
+                return InteractionResult.CONSUME;
             } else {
-                return InteractionResultHolder.fail(itemstack);
+                return InteractionResult.FAIL;
             }
         }
     }
@@ -140,7 +137,7 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
                     abstractspawner.setEntityId(entitytype1, world, world.getRandom(), blockpos);
 
                     CompoundTag entityNBT_2 = new CompoundTag();
-                    entityNBT_2.putString("id", entitytype1.builtInRegistryHolder().key().location().toString());
+                    entityNBT_2.putString("id", entitytype1.builtInRegistryHolder().key().identifier().toString());
                     if (this.currentSpecies - 1 >= 0) {
                         entityNBT_2.putInt("Variant", this.currentSpecies - 1);
                         entityNBT_2.putFloat("Size", ComplexMob.getEntityData(entitytype1).getScale(this.currentSpecies - 1));
@@ -167,7 +164,7 @@ public class UntamedSpawnEggItem extends SpawnEggItem {
             if (!itemstack.has(net.minecraft.core.component.DataComponents.CUSTOM_DATA))
                 itemstack.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(new CompoundTag()));
             CompoundTag customTag = itemstack.getOrDefault(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.EMPTY).copyTag();
-            Entity spawn = this.entityType.get().create((ServerLevel) world, null, blockpos, MobSpawnType.SPAWN_EGG, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP);
+            Entity spawn = this.entityType.get().create((ServerLevel) world, null, blockpos, EntitySpawnReason.SPAWN_ITEM_USE, true, !Objects.equals(blockpos, blockpos1) && direction == Direction.UP);
             if (spawn == null) {
                 return InteractionResult.PASS;
             }

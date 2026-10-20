@@ -1,6 +1,8 @@
 package untamedwilds.entity.relict;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -255,8 +257,8 @@ public class EntitySpitter extends ComplexMobTerrestrial implements ISpecies, IN
         return super.mobInteract(player, hand);
     }
 
-    public boolean doHurtTarget(Entity entityIn) {
-        boolean flag = super.doHurtTarget(entityIn);
+    public boolean doHurtTarget(net.minecraft.server.level.ServerLevel amLevel, Entity entityIn) {
+        boolean flag = super.doHurtTarget(amLevel, entityIn);
         if (flag && this.getAnimation() == NO_ANIMATION && !this.isBaby()) {
             Animation anim = chooseAttackAnimation();
             this.setAnimation(anim);
@@ -265,15 +267,15 @@ public class EntitySpitter extends ComplexMobTerrestrial implements ISpecies, IN
         return flag;
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         // Retaliate I: Mob will strike back when attacked by its current target
         float f = this.getHealth();
     if (!this.level().isClientSide() && !this.isNoAi() && this.getTarget() == damageSource.getEntity() && amount < f && (damageSource.getEntity() != null || damageSource.getDirectEntity() != null) && damageSource.getEntity() instanceof LivingEntity && (damageSource.getEntity() instanceof TamableAnimal tamable && tamable.getOwner() != null)) {
             if (this.hasLineOfSight(damageSource.getEntity()) && !damageSource.getEntity().isInvulnerable() && this.getAnimation() == NO_ANIMATION) {
-                this.doHurtTarget(damageSource.getEntity());
+                doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), damageSource.getEntity());
             }
         }
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     private Animation chooseAttackAnimation() {
@@ -310,16 +312,16 @@ public class EntitySpitter extends ComplexMobTerrestrial implements ISpecies, IN
         this.entityData.set(HAS_EGG, status);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("canGrow", this.getWantsToGrow());
         compound.putBoolean("has_egg", this.wantsToLayEggs());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setWantsToGrow(compound.getBoolean("canGrow"));
-        this.setEggStatus(compound.getBoolean("has_egg"));
+        this.setWantsToGrow(compound.getBooleanOr("canGrow", false));
+        this.setEggStatus(compound.getBooleanOr("has_egg", false));
     }
 
     public void performRangedAttack(LivingEntity entityIn, float p_33318_) {

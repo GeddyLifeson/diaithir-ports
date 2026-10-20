@@ -1,12 +1,12 @@
 package untamedwilds.util;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import untamedwilds.UntamedWilds;
 import untamedwilds.entity.ComplexMob;
@@ -59,8 +59,8 @@ public class EntityDataListenerEvent {
     public static EntityDataHolder SPITTER;
 
     @SubscribeEvent
-    public static void onAddReloadListeners(AddReloadListenerEvent event) {
-        event.addListener(ENTITY_DATA_HOLDERS);
+    public static void onAddReloadListeners(AddServerReloadListenersEvent event) {
+        event.addListener(Identifier.fromNamespaceAndPath(UntamedWilds.MOD_ID, "entities"), ENTITY_DATA_HOLDERS);
         registerData();
     }
 
@@ -111,7 +111,7 @@ public class EntityDataListenerEvent {
         registerData();
 
         for (EntityType<?> types : ComplexMob.ENTITY_DATA_HASH.keySet()) {
-            ResourceLocation entityName = types.builtInRegistryHolder().key().location();
+            Identifier entityName = types.builtInRegistryHolder().key().identifier();
             int size = 0;
 
             for (SpeciesDataHolder speciesData : ComplexMob.ENTITY_DATA_HASH.get(types).getSpeciesData()) {
@@ -121,8 +121,8 @@ public class EntityDataListenerEvent {
     }
 
     public static EntityDataHolder registerEntityData(EntityType<?> typeIn) {
-        String nameIn = Objects.requireNonNull(typeIn.builtInRegistryHolder().key().location()).getPath();
-        ResourceLocation key = ResourceLocation.tryParse(UntamedWilds.MOD_ID + ":" + nameIn);
+        String nameIn = Objects.requireNonNull(typeIn.builtInRegistryHolder().key().identifier()).getPath();
+        Identifier key = Identifier.tryParse(UntamedWilds.MOD_ID + ":" + nameIn);
         if (key != null && ENTITY_DATA_HOLDERS.getData(key) != null) {
             EntityDataHolder data = ENTITY_DATA_HOLDERS.getData(key);
             processData(data, typeIn);
@@ -139,7 +139,7 @@ public class EntityDataListenerEvent {
      */
     private static void processData(EntityDataHolder dataIn, EntityType<?> typeIn) {
         ComplexMob.ENTITY_DATA_HASH.put(typeIn, dataIn);
-        processSkins(dataIn, typeIn.builtInRegistryHolder().key().location().getPath());
+        processSkins(dataIn, typeIn.builtInRegistryHolder().key().identifier().getPath());
         for (SpeciesDataHolder speciesData : ComplexMob.ENTITY_DATA_HASH.get(typeIn).getSpeciesData()) {
             if (!ComplexMob.CLIENT_DATA_HASH.containsKey(typeIn)) {
                 ComplexMob.CLIENT_DATA_HASH.put(typeIn, new EntityDataHolderClient(new HashMap<>(), new HashMap<>()));

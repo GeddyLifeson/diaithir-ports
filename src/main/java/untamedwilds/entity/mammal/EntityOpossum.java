@@ -1,6 +1,8 @@
 package untamedwilds.entity.mammal;
 
-import com.github.alexthe666.citadel.animation.Animation;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
+import untamedwilds.citadel.animation.Animation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -118,13 +120,13 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
                         child.setGender(this.random.nextInt(2));
                         child.setRandomMobSize();
                         child.setBaby(true);
-                        child.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+                        child.snapTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
                         if (this.getOwner() != null)
                             child.tame((Player) this.getOwner());
                         if (this instanceof INeedsPostUpdate) {
                             ((INeedsPostUpdate) child).updateAttributes();
                         }
-                        if (TEXTURES_COMMON.containsKey(child.getType().builtInRegistryHolder().key().location().getPath())) {
+                        if (TEXTURES_COMMON.containsKey(child.getType().builtInRegistryHolder().key().identifier().getPath())) {
                             chooseSkinForSpecies(child, true);
                         }
                         //((ServerLevel)this.level()).addFreshEntityWithPassengers(child);
@@ -177,7 +179,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
 
         if (itemstack.isEmpty() && this.isAlive() && hand.equals(InteractionHand.MAIN_HAND)) {
                 this.setAnimation(THREAT_BACK_OFF);
-            return InteractionResult.sidedSuccess(this.level().isClientSide);
+            return InteractionResult.SUCCESS;
         }
         return super.mobInteract(player, hand);
     }
@@ -187,7 +189,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
     return create_offspring(new EntityOpossum(ModEntity.OPOSSUM.get(), this.level()));
     }
 
-    public boolean hurt(DamageSource damageSource, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel amLevel, DamageSource damageSource, float amount) {
         if (!this.isPlayingDead()) {
             if (damageSource.getEntity() instanceof Mob aggressor) {
                 // TODO: null target doesn't work
@@ -197,7 +199,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
                 this.forceSleep = 600;
             }
         }
-        return super.hurt(damageSource, amount);
+        return super.hurtServer(amLevel, damageSource, amount);
     }
 
     public boolean canBeAffected(MobEffectInstance potionEffectIn) {
@@ -211,7 +213,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
         linger_cloud.setRadiusOnUse(-0.2F);
         linger_cloud.setWaitTime(10);
         linger_cloud.setRadiusPerTick(-linger_cloud.getRadius() / ((float)linger_cloud.getDuration() * 0.2F));
-        linger_cloud.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0, true, false));
+        linger_cloud.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 80, 0, true, false));
 
         worldIn.addFreshEntity(linger_cloud);
     }
@@ -224,16 +226,16 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
     public int getJoeys(){ return (this.entityData.get(JOEYS)); }
     private void setJoeys(int joeys){ this.entityData.set(JOEYS, joeys); }
 
-    public void addAdditionalSaveData(CompoundTag compound){
+    public void addAdditionalSaveData(ValueOutput compound){
         super.addAdditionalSaveData(compound);
         compound.putBoolean("playing_dead", this.isPlayingDead());
         compound.putInt("joeys", this.getJoeys());
     }
 
-    public void readAdditionalSaveData(CompoundTag compound){
+    public void readAdditionalSaveData(ValueInput compound){
         super.readAdditionalSaveData(compound);
-        this.setPlayingDead(compound.getBoolean("playing_dead"));
-        this.setJoeys(compound.getInt("joeys"));
+        this.setPlayingDead(compound.getBooleanOr("playing_dead", false));
+        this.setJoeys(compound.getIntOr("joeys", 0));
     }
 
     public static class OpossumBackOffGoal<T extends LivingEntity> extends AvoidEntityGoal<T> {
@@ -246,7 +248,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
             super(entityIn, classToAvoidIn, avoidDistanceIn, farSpeedIn, nearSpeedIn, EntitySelector.NO_CREATIVE_OR_SPECTATOR::test);
             this.taskOwner = entityIn;
             this.avoidDistance = avoidDistanceIn;
-            this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector(targetSelector);
+            this.builtTargetSelector = TargetingConditions.forCombat().range(avoidDistanceIn).selector((t_, l_) -> targetSelector.test(t_));
             this.setFlags(EnumSet.of(Goal.Flag.MOVE));
         }
 
@@ -259,7 +261,7 @@ public class EntityOpossum extends ComplexMobTerrestrial implements ISpecies, IN
                 return false;
             }
 
-            List<T> list = this.taskOwner.level().getNearbyEntities(avoidClass, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
+            List<T> list = ((net.minecraft.server.level.ServerLevel)this.taskOwner.level()).getNearbyEntities(avoidClass, this.builtTargetSelector, this.taskOwner, this.taskOwner.getBoundingBox().inflate(avoidDistance, 4f, avoidDistance));
             if (list.isEmpty()) {
                 return false;
             } else {

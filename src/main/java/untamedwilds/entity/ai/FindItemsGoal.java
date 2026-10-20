@@ -52,7 +52,7 @@ public class FindItemsGoal extends Goal {
     List<ItemEntity> list = this.taskOwner.level().getEntitiesOfClass(ItemEntity.class, this.getTargettableArea(distance));
 
     // ItemStack.isEdible() signature changed; consider edible if the item has food properties
-    list.removeIf((ItemEntity item) -> item.getItem().getItem().getFoodProperties(item.getItem(), this.taskOwner) == null);
+    list.removeIf((ItemEntity item) -> item.getItem().get(net.minecraft.core.component.DataComponents.FOOD) == null);
         if (!list.isEmpty()) {
             if (this.hyperCarnivore) {
                 list.removeIf((ItemEntity item) -> !isMeat(item.getItem().getItem()));
@@ -62,7 +62,7 @@ public class FindItemsGoal extends Goal {
             if (!list.isEmpty()) {
                 list.sort(this.sorter);
                 this.targetItem = list.get(0);
-                this.targetItemStack = this.targetItem.getItem().getItem().getFoodProperties(this.targetItem.getItem(), this.taskOwner);
+                this.targetItemStack = this.targetItem.getItem().get(net.minecraft.core.component.DataComponents.FOOD);
                 return true;
             }
         }
@@ -74,7 +74,7 @@ public class FindItemsGoal extends Goal {
     }
 
     private boolean isMeat(Item item) {
-        if (item.getDefaultInstance().getItem().getFoodProperties(item.getDefaultInstance(), this.taskOwner) == null) {
+        if (item.getDefaultInstance().get(net.minecraft.core.component.DataComponents.FOOD) == null) {
             return false;
         }
         // FoodProperties#isMeat() was removed in 1.21; fall back to tag-based heuristic for now
