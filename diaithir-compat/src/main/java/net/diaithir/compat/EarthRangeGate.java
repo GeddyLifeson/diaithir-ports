@@ -101,6 +101,16 @@ public final class EarthRangeGate {
         }
     }
 
+    /** True when the entry {@code id} allows the block column; always true off the Earth dimension or when the id has no entry. */
+    static boolean allowsAt(Object generator, String id, double blockX, double blockZ) {
+        if (!RANGES.hasEntity(id) || !TellusBridge.isEarthGenerator(generator)) {
+            return true;
+        }
+        TellusBridge bridge = bridge(generator);
+        double[] ll = bridge == null ? null : bridge.latLon(generator, blockX, blockZ);
+        return ll == null || RANGES.allows(id, -1, null, ll[0], ll[1]);
+    }
+
     private static TellusBridge bridge(Object generator) {
         if (cachedGenerator != generator) {
             cachedBridge = TellusBridge.forGenerator(generator);

@@ -136,6 +136,44 @@ class EarthRangesTest {
     }
 
     @Test
+    void wildFloraRanges() throws Exception {
+        EarthRanges r = shipped();
+        String ns = "diaithircompat:";
+        // wild cereals and pulses: SW Asia only (Gobekli Tepe region yes; Berlin, Chicago, Cairo-Nile delta west no)
+        for (String c : new String[] {"wild_einkorn", "wild_emmer", "wild_barley", "wild_lentil", "wild_pea", "wild_fig"}) {
+            assertTrue(r.allows(ns + c, -1, null, 37.2, 38.9), c);
+            assertFalse(r.allows(ns + c, -1, null, 52.5, 13.4), c);
+            assertFalse(r.allows(ns + c, -1, null, 41.9, -87.6), c);
+            assertFalse(r.allows(ns + c, -1, null, -1.3, 36.8), c);
+        }
+        // the chickpea is southeast Anatolia only: Diyarbakir yes, Jordan Valley no
+        assertTrue(r.allows(ns + "wild_chickpea", -1, null, 37.9, 40.2));
+        assertFalse(r.allows(ns + "wild_chickpea", -1, null, 32.0, 35.5));
+        // indicator plants of the CSV regions
+        assertTrue(r.allows(ns + "dryas_octopetala", -1, null, 60.0, 10.0));
+        assertFalse(r.allows(ns + "dryas_octopetala", -1, null, -30.0, 140.0));
+        assertTrue(r.allows(ns + "betula_nana", -1, null, 65.0, 100.0));
+        assertTrue(r.allows(ns + "empetrum_nigrum", -1, null, 50.0, -100.0));
+        assertTrue(r.allows(ns + "calluna_vulgaris", -1, null, 55.0, -3.0));
+        assertFalse(r.allows(ns + "calluna_vulgaris", -1, null, 41.9, -87.6));
+        assertTrue(r.allows(ns + "cembra_pine", -1, null, 47.0, 10.0));
+        assertFalse(r.allows(ns + "cembra_pine", -1, null, 41.9, -87.6));
+    }
+
+    @Test
+    void everyFloraPlacedFeatureHasARangeFile() {
+        File dir = new File(System.getProperty("ranges.dir"));
+        File placed = new File(dir, "../../diaithircompat/worldgen/placed_feature");
+        File[] features = placed.listFiles((d, n) -> n.endsWith(".json"));
+        assertNotNull(features);
+        assertTrue(features.length >= 17);
+        for (File f : features) {
+            String id = f.getName().replace(".json", "");
+            assertTrue(new File(dir, "flora_" + id + ".json").exists(), id);
+        }
+    }
+
+    @Test
     void badEntriesAreReportedAndSkipped() {
         List<String> errors = new ArrayList<>();
         List<EarthRanges.Entry> e = EarthRanges.parse(JsonParser.parseString("{\"ranges\":[{\"entity\":\"a:b\"},{\"entity\":\"a:c\",\"boxes\":[{\"lat\":[0,1],\"lon\":[0,1]}]}]}"), errors::add);

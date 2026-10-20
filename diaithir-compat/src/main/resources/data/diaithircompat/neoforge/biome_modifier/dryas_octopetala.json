@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:snowy_taiga",
+    "minecraft:snowy_slopes",
+    "minecraft:grove",
+    "minecraft:meadow",
+    "minecraft:stony_peaks",
+    "minecraft:frozen_peaks",
+    "minecraft:jagged_peaks",
+    "minecraft:taiga"
+  ],
+  "features": "diaithircompat:dryas_octopetala",
+  "step": "vegetal_decoration"
+}

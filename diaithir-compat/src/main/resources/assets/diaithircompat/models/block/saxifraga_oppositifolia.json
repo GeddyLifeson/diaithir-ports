@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "diaithircompat:block/saxifraga_oppositifolia"
+  }
+}

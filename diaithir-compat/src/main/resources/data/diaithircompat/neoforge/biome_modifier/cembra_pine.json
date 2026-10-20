@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:taiga",
+    "minecraft:old_growth_pine_taiga",
+    "minecraft:old_growth_spruce_taiga",
+    "minecraft:grove",
+    "minecraft:snowy_taiga"
+  ],
+  "features": "diaithircompat:cembra_pine",
+  "step": "vegetal_decoration"
+}

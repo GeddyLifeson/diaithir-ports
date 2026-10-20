@@ -6,6 +6,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.world.item.crafting.Recipe;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
@@ -17,7 +18,8 @@ import org.slf4j.Logger;
 public final class DiaithirCompat {
     private static final Logger LOG = LogUtils.getLogger();
 
-    public DiaithirCompat() {
+    public DiaithirCompat(IEventBus modBus) {
+        Flora.register(modBus);
         // HIGHEST: upgrade before Almost Unified and other listeners read the recipe JSON, so they see 26.1 shapes.
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, DiaithirCompat::upgradeLegacyRecipes);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class, EarthRangeGate::onAddReloadListeners);

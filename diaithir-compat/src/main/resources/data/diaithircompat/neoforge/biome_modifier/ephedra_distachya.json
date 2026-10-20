@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:desert",
+    "minecraft:windswept_savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:plains",
+    "minecraft:badlands",
+    "minecraft:windswept_hills",
+    "minecraft:meadow",
+    "minecraft:savanna",
+    "minecraft:stony_shore"
+  ],
+  "features": "diaithircompat:ephedra_distachya",
+  "step": "vegetal_decoration"
+}

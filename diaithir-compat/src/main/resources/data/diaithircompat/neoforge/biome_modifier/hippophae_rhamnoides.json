@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:meadow",
+    "minecraft:taiga",
+    "minecraft:windswept_hills",
+    "minecraft:old_growth_pine_taiga"
+  ],
+  "features": "diaithircompat:hippophae_rhamnoides",
+  "step": "vegetal_decoration"
+}
