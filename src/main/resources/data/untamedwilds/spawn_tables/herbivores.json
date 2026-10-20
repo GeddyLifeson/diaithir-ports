@@ -36,6 +36,12 @@
       "weight": 3,
       "size_min": 3,
       "size_max": 6
+    },
+    {
+      "type": "untamedwilds:cervid",
+      "weight": 5,
+      "size_min": 3,
+      "size_max": 8
     }
   ]
 }

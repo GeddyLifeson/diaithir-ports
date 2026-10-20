@@ -70,6 +70,7 @@ import untamedwilds.entity.mammal.EntityBaleenWhale;
 import untamedwilds.entity.mammal.EntityBear;
 import untamedwilds.entity.mammal.EntityBigCat;
 import untamedwilds.entity.mammal.EntityElephantid;
+import untamedwilds.entity.mammal.EntityCervid;
 import untamedwilds.entity.mammal.EntityBison;
 import untamedwilds.entity.mammal.EntityBoar;
 import untamedwilds.entity.mammal.EntityCamel;
@@ -248,6 +249,14 @@ public class ModEntity {
         3.0F,
         0x5A3B26,
         0xD8CDB0
+    );
+    public static DeferredHolder<EntityType<?>, EntityType<EntityCervid>> CERVID = createEntity(
+        EntityCervid::new,
+        "cervid",
+        1.2F,
+        1.9F,
+        0x8A5C3A,
+        0xD9C7A2
     );
     public static DeferredHolder<EntityType<?>, EntityType<EntityManatee>> MANATEE = createEntity(
         EntityManatee::new,
@@ -466,6 +475,7 @@ public class ModEntity {
         event.put(BISON.get(), EntityBison.registerAttributes().build());
         event.put(CAMEL.get(), EntityCamel.registerAttributes().build());
         event.put(ELEPHANTID.get(), EntityElephantid.registerAttributes().build());
+        event.put(CERVID.get(), EntityCervid.registerAttributes().build());
         event.put(MANATEE.get(), EntityManatee.registerAttributes().build());
         event.put(BALEEN_WHALE.get(), EntityBaleenWhale.registerAttributes().build());
         event.put(OPOSSUM.get(), EntityOpossum.registerAttributes().build());
@@ -639,6 +649,13 @@ public class ModEntity {
         );
         event.register(
             ELEPHANTID.get(),
+            SpawnPlacementTypes.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            RegisterSpawnPlacementsEvent.Operation.REPLACE
+        );
+        event.register(
+            CERVID.get(),
             SpawnPlacementTypes.ON_GROUND,
             Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
             Animal::checkAnimalSpawnRules,

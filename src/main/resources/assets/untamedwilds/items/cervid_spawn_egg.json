@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/cervid_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9067578
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 14272418
+      }
+    ]
+  }
+}

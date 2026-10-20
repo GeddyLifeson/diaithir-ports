@@ -1,0 +1,226 @@
+{
+  "name": "cervid",
+  "breeding": "MID_AUTUMN",
+  "growing_time": 8,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+  },
+  "flags": {
+    "groupCount": 8
+  },
+  "species": [
+    {
+      "name": "megaloceros",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 9,
+      "health": 40,
+      "flags": {
+        "groupCount": 3
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "reindeer",
+      "variant": 1,
+      "scale": 0.44,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 22,
+      "flags": {
+        "groupCount": 8
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "moose",
+      "variant": 2,
+      "scale": 0.72,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:apple",
+      "attack": 8,
+      "health": 38,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "red_deer",
+      "variant": 3,
+      "scale": 0.48,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 5,
+      "health": 22,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "wapiti",
+      "variant": 4,
+      "scale": 0.52,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 6,
+      "health": 30,
+      "flags": {
+        "groupCount": 8
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "stag_moose",
+      "variant": 5,
+      "scale": 0.72,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:apple",
+      "attack": 8,
+      "health": 38,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "white_tailed",
+      "variant": 6,
+      "scale": 0.36,
+      "rarity": 5,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:apple",
+      "attack": 3,
+      "health": 14,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "mule",
+      "variant": 7,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:wheat",
+      "attack": 3,
+      "health": 16,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "roe",
+      "variant": 8,
+      "scale": 0.26,
+      "rarity": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:sweet_berries",
+      "attack": 2,
+      "health": 10,
+      "flags": {
+        "groupCount": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    }
+  ]
+}
