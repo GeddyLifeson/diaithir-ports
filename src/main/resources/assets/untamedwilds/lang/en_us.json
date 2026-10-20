@@ -675,5 +675,13 @@
   "entity.untamedwilds.cervid_mule": "Mule Deer",
   "entity.untamedwilds.cervid_mule.sciname": "Odocoileus hemionus",
   "entity.untamedwilds.cervid_roe": "Roe Deer",
-  "entity.untamedwilds.cervid_roe.sciname": "Capreolus capreolus"
+  "entity.untamedwilds.cervid_roe.sciname": "Capreolus capreolus",
+  "item.untamedwilds.equid_spawn_egg": "Equid Spawn Egg",
+  "entity.untamedwilds.equid": "Equid",
+  "entity.untamedwilds.equid_wild_horse": "Wild Horse",
+  "entity.untamedwilds.equid_wild_horse.sciname": "Equus ferus",
+  "entity.untamedwilds.equid_przewalski": "Przewalski's Horse",
+  "entity.untamedwilds.equid_przewalski.sciname": "Equus ferus przewalskii",
+  "entity.untamedwilds.equid_hemione": "Hemione",
+  "entity.untamedwilds.equid_hemione.sciname": "Equus hemionus"
 }

@@ -1,0 +1,88 @@
+{
+  "name": "equid",
+  "breeding": "MID_SPRING",
+  "growing_time": 10,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "minecraft:entity.horse.ambient",
+    "hurt": "minecraft:entity.horse.hurt",
+    "death": "minecraft:entity.horse.death"
+  },
+  "flags": {
+    "groupCount": 7
+  },
+  "species": [
+    {
+      "name": "wild_horse",
+      "variant": 0,
+      "scale": 0.63,
+      "rarity": 5,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 5,
+      "health": 25,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "przewalski",
+      "variant": 1,
+      "scale": 0.59,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 22,
+      "flags": {
+        "groupCount": 5
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "hemione",
+      "variant": 2,
+      "scale": 0.53,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 18,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    }
+  ]
+}
