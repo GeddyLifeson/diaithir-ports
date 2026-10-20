@@ -33,6 +33,7 @@ EXTRA = {  # finer boxes where a whole region would be too coarse
  "S Mexico": [([13, 22], [-100, -85])],
  "N Africa coast": [([28, 37], [-10, 35])],
  "Africa south of the Sahara": [([-40, 15], [-20, 52])],
+ "W N America": [([22, 60], [-130, -95])],
  "Channel Islands": [([33, 35], [-121, -118])],
 }
 R = dict(REG, **EXTRA)
@@ -122,6 +123,17 @@ S = {
   ("pygmy", ["Channel Islands"], "CSV Mammuthus exilis: Channel Islands, California (N America)"),
   ("african", ["Africa south of the Sahara"], "Loxodonta africana, modern range (sub-Saharan Africa)"),
   ("asian", ["E/S Asia", "SE Asia/Sunda"], "Elephas maximus, modern native range (Indian subcontinent to Borneo)"),
+ ],
+ "cervid": [
+  ("megaloceros", ["Europe", "N Asia"], "CSV Megaloceros giganteus: Europe, N Asia"),
+  ("reindeer", ["Europe", "N America", "N Asia"], "CSV Rangifer tarandus: Europe, N America; modern circumpolar range adds N Asia"),
+  ("moose", ["Europe", "N America", "N Asia"], "CSV Alces alces: Europe, N America, N Asia"),
+  ("red_deer", ["Europe", "N Asia", "SW Asia", "N Africa coast"], "CSV Cervus elaphus: Europe, N Asia, SW Asia; native range also includes the Atlas Mountains"),
+  ("wapiti", ["N America", "N Asia", "E/S Asia"], "CSV Cervus elaphus canadensis: N America, N Asia, Europe; modern range N America and Central, East and North Asia"),
+  ("stag_moose", ["N America"], "CSV Cervalces scotti: N America"),
+  ("white_tailed", ["N America", "C America", "S America"], "CSV Odocoileus virginianus: N America; native range also Central and South America"),
+  ("mule", ["W N America"], "CSV Odocoileus hemionus: N America; native range is western and central North America"),
+  ("roe", ["Europe", "SW Asia", "N Asia"], "CSV Capreolus capreolus: Europe; Capreolus pygargus: N Asia; range to northern Iran"),
  ],
 }
 
