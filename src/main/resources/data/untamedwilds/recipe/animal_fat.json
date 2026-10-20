@@ -6,9 +6,7 @@
     "##"
   ],
   "key": {
-    "#": {
-      "item": "untamedwilds:material_fat"
-    }
+    "#": "untamedwilds:material_fat"
   },
   "result": {
     "id": "untamedwilds:block_lard",

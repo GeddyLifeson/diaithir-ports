@@ -6,9 +6,7 @@
     "#"
   ],
   "key": {
-    "#": {
-      "item": "untamedwilds:flora_common_reed"
-    }
+    "#": "untamedwilds:flora_common_reed"
   },
   "result": {
     "id": "minecraft:stick"

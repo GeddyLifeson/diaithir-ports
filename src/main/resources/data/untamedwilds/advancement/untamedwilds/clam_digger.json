@@ -2,7 +2,7 @@
   "parent": "untamedwilds:untamedwilds/root",
   "display": {
     "icon": {
-      "item": "untamedwilds:material_pearl"
+      "id": "untamedwilds:material_pearl"
     },
     "title": {
       "translate": "advancements.untamedwilds.clam_digger.title"

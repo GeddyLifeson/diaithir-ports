@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "untamedwilds:food_bear_raw"
-  },
+  "ingredient": "untamedwilds:food_bear_raw",
   "result": {
     "id": "untamedwilds:food_bear_cooked"
   },

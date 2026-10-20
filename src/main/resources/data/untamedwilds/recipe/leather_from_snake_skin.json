@@ -6,9 +6,7 @@
     "##"
   ],
   "key": {
-    "#": {
-      "item": "untamedwilds:material_snake_skin"
-    }
+    "#": "untamedwilds:material_snake_skin"
   },
   "result": {
     "id": "minecraft:leather"

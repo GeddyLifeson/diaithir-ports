@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/manatee_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4866112
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 7894646
+      }
+    ]
+  }
+}

@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "forge:tallow"
-    },
-    {
-      "tag": "forge:cooked_fish_and_meats"
-    },
-    {
-      "tag": "forge:cooked_fish_and_meats"
-    },
-    {
-      "tag": "forge:berries"
-    }
+    "#c:tallow",
+    "#c:cooked_fish_and_meats",
+    "#c:cooked_fish_and_meats",
+    "#c:berries"
   ],
   "result": {
     "id": "untamedwilds:food_pemmican",

@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/big_cat_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12951365
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 3682593
+      }
+    ]
+  }
+}

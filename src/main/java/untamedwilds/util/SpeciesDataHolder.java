@@ -51,7 +51,7 @@ public class SpeciesDataHolder {
     private final float health;
     private final ComplexMobTerrestrial.ActivityType activityType;
     private final String favouriteFood_input;
-    private final ItemStack favouriteFood;
+    private ItemStack favouriteFood;
     private final int growing_time;
     private final int offspring;
     private final int skins;
@@ -70,7 +70,6 @@ public class SpeciesDataHolder {
         this.health = health;
         this.activityType = activityType;
         this.favouriteFood_input = favourite_food;
-    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
         this.growing_time = growing_time;
         this.offspring = offspring;
         this.skins = skins;
@@ -133,6 +132,10 @@ public class SpeciesDataHolder {
 
     @Nullable
     public ItemStack getFavouriteFood() {
+        if (this.favouriteFood == null) {
+            // Built lazily: item components are not bound yet while datapack entries are being decoded
+            this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
+        }
         return this.favouriteFood;
     }
 

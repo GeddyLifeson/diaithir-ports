@@ -5,9 +5,7 @@
     "##"
   ],
   "key": {
-    "#": {
-      "item": "untamedwilds:hide_bigcat_lion"
-    }
+    "#": "untamedwilds:hide_bigcat_lion"
   },
   "result": {
     "id": "untamedwilds:carpet_bigcat_lion",

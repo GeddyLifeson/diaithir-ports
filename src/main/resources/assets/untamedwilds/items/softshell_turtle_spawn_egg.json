@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/softshell_turtle_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8553540
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 2500907
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/bear_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 2102027
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 5655621
+      }
+    ]
+  }
+}

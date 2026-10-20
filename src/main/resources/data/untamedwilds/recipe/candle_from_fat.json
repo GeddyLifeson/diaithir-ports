@@ -5,12 +5,8 @@
     "S"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:string"
-    },
-    "S": {
-      "item": "untamedwilds:material_fat"
-    }
+    "#": "minecraft:string",
+    "S": "untamedwilds:material_fat"
   },
   "result": {
     "id": "minecraft:candle",

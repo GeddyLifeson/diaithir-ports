@@ -7,15 +7,9 @@
     "x#x"
   ],
   "key": {
-    "#": {
-      "tag": "minecraft:planks"
-    },
-    "x": {
-      "item": "minecraft:iron_bars"
-    },
-    "y": {
-      "tag": "minecraft:trapdoors"
-    }
+    "#": "#minecraft:planks",
+    "x": "minecraft:iron_bars",
+    "y": "#minecraft:trapdoors"
   },
   "result": {
     "id": "untamedwilds:trap_cage",

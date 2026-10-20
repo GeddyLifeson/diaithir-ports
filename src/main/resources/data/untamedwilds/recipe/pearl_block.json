@@ -7,9 +7,7 @@
     "###"
   ],
   "key": {
-    "#": {
-      "tag": "forge:gems/pearl"
-    }
+    "#": "#c:gems/pearl"
   },
   "result": {
     "id": "untamedwilds:block_pearl",

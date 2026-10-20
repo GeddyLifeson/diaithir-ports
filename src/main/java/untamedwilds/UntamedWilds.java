@@ -61,10 +61,6 @@ public class UntamedWilds {
         // Register lifecycle event listeners
         modBus.addListener(this::setupCommon);
         modBus.addListener(this::setupClient);
-        modBus.addListener((EntityAttributeCreationEvent event) -> ModEntity.bakeAttributes(event));
-        modBus.addListener((net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent event) ->
-            ModEntity.registerSpawnPlacements(event)
-        );
         modBus.addListener(UntamedInstance::registerMessages);
         if (FMLEnvironment.getDist().isClient()) {
             modBus.addListener(this::registerEntityRenderers);

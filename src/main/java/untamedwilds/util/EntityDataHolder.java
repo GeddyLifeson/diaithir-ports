@@ -40,7 +40,7 @@ public class EntityDataHolder {
     private final float health;
     private final ComplexMobTerrestrial.ActivityType activityType;
     private final String favouriteFood_input;
-    private final ItemStack favouriteFood;
+    private ItemStack favouriteFood;
     private final int growing_time;
     private final int offspring;
     private final String breeding_season;
@@ -58,7 +58,6 @@ public class EntityDataHolder {
         this.activityType = activityType;
 
         this.favouriteFood_input = favouriteFood;
-    this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
         this.growing_time = growing_time;
         this.offspring = offspring;
         this.breeding_season = breeding;
@@ -125,6 +124,10 @@ public class EntityDataHolder {
 
     public ItemStack getFavouriteFood(int i) {
         if (this.speciesData.get(i).getFavouriteFood().getItem().builtInRegistryHolder().key().identifier().toString().equals("minecraft:air")) {
+            if (this.favouriteFood == null) {
+                // Built lazily: item components are not bound yet while datapack entries are being decoded
+                this.favouriteFood = new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.tryParse(this.favouriteFood_input)));
+            }
             return this.favouriteFood;
         }
         return this.speciesData.get(i).getFavouriteFood();

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "untamedwilds:food_pachyderm_raw"
-  },
+  "ingredient": "untamedwilds:food_pachyderm_raw",
   "result": {
     "id": "untamedwilds:food_pachyderm_cooked"
   },

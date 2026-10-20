@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/snake_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14198098
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 6042917
+      }
+    ]
+  }
+}

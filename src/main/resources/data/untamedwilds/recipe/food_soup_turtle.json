@@ -1,21 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "untamedwilds:food_turtle_cooked"
-    },
-    {
-      "item": "minecraft:brown_mushroom"
-    },
-    {
-      "item": "minecraft:dried_kelp"
-    },
-    {
-      "item": "minecraft:carrot"
-    }
+    "minecraft:bowl",
+    "untamedwilds:food_turtle_cooked",
+    "minecraft:brown_mushroom",
+    "minecraft:dried_kelp",
+    "minecraft:carrot"
   ],
   "result": {
     "id": "untamedwilds:food_turtle_soup"

@@ -2,7 +2,7 @@
   "parent": "untamedwilds:untamedwilds/root",
   "display": {
     "icon": {
-      "item": "minecraft:porkchop"
+      "id": "minecraft:porkchop"
     },
     "title": {
       "translate": "advancements.untamedwilds.hog_wild.title"

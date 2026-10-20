@@ -1,12 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:name_tag"
-    }
+    "minecraft:paper",
+    "minecraft:name_tag"
   ],
   "result": {
     "id": "untamedwilds:ownership_deed"

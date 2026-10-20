@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/newt_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 2302755
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 16747776
+      }
+    ]
+  }
+}

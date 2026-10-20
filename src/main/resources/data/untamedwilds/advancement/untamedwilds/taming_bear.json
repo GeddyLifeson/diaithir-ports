@@ -2,7 +2,7 @@
   "parent": "untamedwilds:untamedwilds/root",
   "display": {
     "icon": {
-      "item": "untamedwilds:hide_bear_black"
+      "id": "untamedwilds:hide_bear_black"
     },
     "title": {
       "translate": "advancements.untamedwilds.taming_bear.title"

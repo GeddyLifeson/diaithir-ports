@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/large_snake_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 6647884
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 4335898
+      }
+    ]
+  }
+}

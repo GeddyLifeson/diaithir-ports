@@ -2,7 +2,7 @@
   "parent": "untamedwilds:untamedwilds/root",
   "display": {
     "icon": {
-      "item": "untamedwilds:egg_spitter"
+      "id": "untamedwilds:egg_spitter"
     },
     "title": {
       "translate": "advancements.untamedwilds.discovered_spitter.title"

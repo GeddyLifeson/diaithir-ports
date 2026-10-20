@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/bison_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8674091
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 4797482
+      }
+    ]
+  }
+}

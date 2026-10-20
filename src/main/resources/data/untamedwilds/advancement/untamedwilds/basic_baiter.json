@@ -2,7 +2,7 @@
   "parent": "untamedwilds:untamedwilds/root",
   "display": {
     "icon": {
-      "item": "untamedwilds:chum"
+      "id": "untamedwilds:chum"
     },
     "title": {
       "translate": "advancements.untamedwilds.basic_baiter.title"

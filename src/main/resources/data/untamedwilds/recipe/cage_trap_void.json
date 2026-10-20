@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "untamedwilds:trap_cage"
-    }
+    "untamedwilds:trap_cage"
   ],
   "result": {
     "id": "untamedwilds:trap_cage",

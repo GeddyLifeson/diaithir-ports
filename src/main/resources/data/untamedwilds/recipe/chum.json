@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "forge:raw_fishes"
-    },
-    {
-      "tag": "forge:raw_fishes"
-    },
-    {
-      "item": "minecraft:rotten_flesh"
-    }
+    "#c:raw_fishes",
+    "#c:raw_fishes",
+    "minecraft:rotten_flesh"
   ],
   "result": {
     "id": "untamedwilds:chum",

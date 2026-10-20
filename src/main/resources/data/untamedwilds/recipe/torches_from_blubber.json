@@ -5,12 +5,8 @@
     "#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "S": {
-      "item": "untamedwilds:material_blubber"
-    }
+    "#": "minecraft:stick",
+    "S": "untamedwilds:material_blubber"
   },
   "result": {
     "id": "minecraft:torch",
