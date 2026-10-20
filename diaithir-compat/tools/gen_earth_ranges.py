@@ -39,6 +39,10 @@ EXTRA = {  # finer boxes where a whole region would be too coarse
  "Kazakh steppe": [([44, 55], [45, 90])],
  "Alps": [([43, 48], [5, 16])],
  "NW N America": [([43, 63], [-140, -105])],
+ "N America south of 42N": [([13, 42], [-180, -30])],
+ "S US": [([25, 41], [-125, -80])],
+ "Southern Cone": [([-42, -15], [-70, -45])],
+ "Patagonia and Pampas": [([-55, -18], [-75, -52])],
  "Channel Islands": [([33, 35], [-121, -118])],
 }
 R = dict(REG, **EXTRA)
@@ -152,6 +156,10 @@ S = {
   ("ibex", ["Alps"], "CSV Capra ibex: Europe; native to the Alps"),
   ("bighorn", ["W N America"], "CSV Ovis canadensis: N America; Rocky Mountain, Sierra Nevada and desert populations of western North America"),
   ("mountain_goat", ["NW N America"], "CSV Oreamnos americanus: N America; Rockies and Cascades from Washington to southern Yukon and SE Alaska"),
+ ],
+ "canid": [
+  ("grey_wolf", ["N America", "Europe", "N Asia", "SW Asia", "E/S Asia"], "CSV Canis lupus: N America, Europe; modern Holarctic range adds N, SW and E/S Asia"),
+  ("dire_wolf", ["N America south of 42N", "S America"], "CSV Canis dirus / Aenocyon dirus: N America; fossils from North and South America, rarely north of 42 N"),
  ],
 }
 
