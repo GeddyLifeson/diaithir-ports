@@ -683,5 +683,19 @@
   "entity.untamedwilds.equid_przewalski": "Przewalski's Horse",
   "entity.untamedwilds.equid_przewalski.sciname": "Equus ferus przewalskii",
   "entity.untamedwilds.equid_hemione": "Hemione",
-  "entity.untamedwilds.equid_hemione.sciname": "Equus hemionus"
+  "entity.untamedwilds.equid_hemione.sciname": "Equus hemionus",
+  "item.untamedwilds.bovid_spawn_egg": "Bovid Spawn Egg",
+  "entity.untamedwilds.bovid": "Bovid",
+  "entity.untamedwilds.bovid_aurochs": "Aurochs",
+  "entity.untamedwilds.bovid_aurochs.sciname": "Bos primigenius",
+  "entity.untamedwilds.bovid_muskox": "Muskox",
+  "entity.untamedwilds.bovid_muskox.sciname": "Ovibos moschatus",
+  "entity.untamedwilds.bovid_saiga": "Saiga",
+  "entity.untamedwilds.bovid_saiga.sciname": "Saiga tatarica",
+  "entity.untamedwilds.bovid_ibex": "Alpine Ibex",
+  "entity.untamedwilds.bovid_ibex.sciname": "Capra ibex",
+  "entity.untamedwilds.bovid_bighorn": "Bighorn Sheep",
+  "entity.untamedwilds.bovid_bighorn.sciname": "Ovis canadensis",
+  "entity.untamedwilds.bovid_mountain_goat": "Mountain Goat",
+  "entity.untamedwilds.bovid_mountain_goat.sciname": "Oreamnos americanus"
 }

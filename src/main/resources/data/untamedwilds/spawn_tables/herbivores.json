@@ -48,6 +48,12 @@
       "weight": 5,
       "size_min": 3,
       "size_max": 7
+    },
+    {
+      "type": "untamedwilds:bovid",
+      "weight": 5,
+      "size_min": 3,
+      "size_max": 8
     }
   ]
 }

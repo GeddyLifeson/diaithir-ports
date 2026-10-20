@@ -1,0 +1,151 @@
+{
+  "name": "bovid",
+  "breeding": "MID_AUTUMN",
+  "growing_time": 9,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+  },
+  "flags": {
+    "groupCount": 8
+  },
+  "species": [
+    {
+      "name": "aurochs",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 9,
+      "health": 38,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "muskox",
+      "variant": 1,
+      "scale": 0.61,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 7,
+      "health": 30,
+      "flags": {
+        "groupCount": 8
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "saiga",
+      "variant": 2,
+      "scale": 0.33,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 2,
+      "health": 12,
+      "flags": {
+        "groupCount": 8
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "ibex",
+      "variant": 3,
+      "scale": 0.41,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 16,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "bighorn",
+      "variant": 4,
+      "scale": 0.42,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 5,
+      "health": 18,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "mountain_goat",
+      "variant": 5,
+      "scale": 0.47,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 16,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    }
+  ]
+}

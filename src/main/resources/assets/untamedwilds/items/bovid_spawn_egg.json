@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/bovid_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4864558
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 13616032
+      }
+    ]
+  }
+}
