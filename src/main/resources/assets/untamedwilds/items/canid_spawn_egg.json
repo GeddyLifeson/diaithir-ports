@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/canid_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7236198
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 13222840
+      }
+    ]
+  }
+}

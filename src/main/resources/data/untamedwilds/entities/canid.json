@@ -1,0 +1,68 @@
+{
+  "name": "canid",
+  "breeding": "MID_WINTER",
+  "growing_time": 5,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "minecraft:entity.wolf.ambient",
+    "hurt": "minecraft:entity.wolf.hurt",
+    "death": "minecraft:entity.wolf.death",
+    "threat": "minecraft:entity.wolf.growl"
+  },
+  "flags": {
+    "groupCount": 8
+  },
+  "species": [
+    {
+      "name": "grey_wolf",
+      "variant": 0,
+      "scale": 0.57,
+      "rarity": 5,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "attack": 6,
+      "health": 20,
+      "flags": {
+        "groupCount": 8
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "dire_wolf",
+      "variant": 1,
+      "scale": 0.63,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "attack": 8,
+      "health": 30,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    }
+  ]
+}

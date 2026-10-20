@@ -697,5 +697,11 @@
   "entity.untamedwilds.bovid_bighorn": "Bighorn Sheep",
   "entity.untamedwilds.bovid_bighorn.sciname": "Ovis canadensis",
   "entity.untamedwilds.bovid_mountain_goat": "Mountain Goat",
-  "entity.untamedwilds.bovid_mountain_goat.sciname": "Oreamnos americanus"
+  "entity.untamedwilds.bovid_mountain_goat.sciname": "Oreamnos americanus",
+  "item.untamedwilds.canid_spawn_egg": "Canid Spawn Egg",
+  "entity.untamedwilds.canid": "Canid",
+  "entity.untamedwilds.canid_grey_wolf": "Grey Wolf",
+  "entity.untamedwilds.canid_grey_wolf.sciname": "Canis lupus",
+  "entity.untamedwilds.canid_dire_wolf": "Dire Wolf",
+  "entity.untamedwilds.canid_dire_wolf.sciname": "Aenocyon dirus"
 }

@@ -56,6 +56,7 @@ public class EntityDataListenerEvent {
     public static EntityDataHolder CERVID;
     public static EntityDataHolder EQUID;
     public static EntityDataHolder BOVID;
+    public static EntityDataHolder CANID;
     public static EntityDataHolder MANATEE;
     public static EntityDataHolder BALEEN_WHALE;
     public static EntityDataHolder OPOSSUM;
@@ -106,6 +107,7 @@ public class EntityDataListenerEvent {
         CERVID = registerEntityData(ModEntity.CERVID.get());
         EQUID = registerEntityData(ModEntity.EQUID.get());
         BOVID = registerEntityData(ModEntity.BOVID.get());
+        CANID = registerEntityData(ModEntity.CANID.get());
         MANATEE = registerEntityData(ModEntity.MANATEE.get());
         BALEEN_WHALE = registerEntityData(ModEntity.BALEEN_WHALE.get());
         OPOSSUM = registerEntityData(ModEntity.OPOSSUM.get());
