@@ -43,6 +43,57 @@
           "tag|is_forest"
         ]
       ]
+    },
+    {
+      "name": "steppe",
+      "variant": 2,
+      "scale": 1.5,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "untamedwilds:flora_junegrass",
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "ancient",
+      "variant": 3,
+      "scale": 1.5,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "untamedwilds:flora_junegrass",
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "long_horned",
+      "variant": 4,
+      "scale": 1.7,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "untamedwilds:flora_junegrass",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
     }
   ]
 }

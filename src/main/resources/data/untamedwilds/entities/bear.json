@@ -203,6 +203,54 @@
           "tag|is_jungle"
         ]
       ]
+    },
+    {
+      "name": "short_faced",
+      "variant": 8,
+      "scale": 1.4,
+      "rarity": 1,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:beef",
+      "attack": 10,
+      "health": 55,
+      "breeding": "MID_SUMMER",
+      "growing_time": 10,
+      "offspring": 1,
+      "flags": {
+        "hasShortSnout": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "florida_spectacled",
+      "variant": 9,
+      "scale": 1.0,
+      "rarity": 1,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:apple",
+      "attack": 6,
+      "health": 35,
+      "breeding": "LATE_WET",
+      "growing_time": 8,
+      "offspring": 1,
+      "flags": {
+        "hasShortSnout": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
     }
   ]
 }

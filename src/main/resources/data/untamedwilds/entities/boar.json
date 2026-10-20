@@ -77,6 +77,39 @@
           "category|savanna"
         ]
       ]
+    },
+    {
+      "name": "flat_headed",
+      "variant": 4,
+      "scale": 1.1,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beetroot",
+      "flags": {
+        "groupCount": 5
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "long_nosed",
+      "variant": 5,
+      "scale": 1.0,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:apple",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
     }
   ]
 }

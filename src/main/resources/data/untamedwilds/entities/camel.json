@@ -60,6 +60,25 @@
           "tag|is_desert"
         ]
       ]
+    },
+    {
+      "name": "western",
+      "variant": 3,
+      "scale": 1.1,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
     }
   ]
 }
