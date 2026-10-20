@@ -255,8 +255,8 @@ P = {
 
 TREES = {
  "cembra_pine": dict(name="Swiss Stone Pine", sci="Pinus cembra", leaves=sprite_leaves_cembra, sapling=sprite_sapling_cembra, log="spruce_log",
-    regions=["Europe"], biomes=["taiga", "old_growth_pine_taiga", "old_growth_spruce_taiga", "grove", "snowy_taiga"], rarity=3,
-    drop=("cembra_pine_nuts", 0.04), shape="spruce", note="Pinus cembra 84 sites, Europe 1000 occurrences (CSV)"),
+    regions=["Alps and Carpathians"], biomes=["taiga", "old_growth_pine_taiga", "old_growth_spruce_taiga", "grove", "snowy_taiga"], rarity=3,
+    drop=("cembra_pine_nuts", 0.04), shape="spruce", note="Pinus cembra 84 sites, Europe 1000 occurrences (CSV); the species grows in the Alps and Carpathians, the Siberian stone pine is Pinus sibirica and gets no block"),
  "wild_fig": dict(name="Wild Fig", sci="Ficus carica", leaves=sprite_leaves_fig, sapling=sprite_sapling_fig, log="oak_log",
     regions=["SW Asia"], biomes=["forest", "plains", "savanna", "windswept_savanna", "windswept_hills", "savanna_plateau"], rarity=5,
     drop=("wild_figs", 0.08), shape="oak", note="Ficus-type 19 occurrences in SW Asia (CSV); the common fig is native to SW Asia"),
@@ -265,6 +265,7 @@ TREES = {
 # regions that gen_earth_ranges does not have
 G.EXTRA["Fertile Crescent"] = [([31, 40], [34, 48])]
 G.EXTRA["SE Anatolia"] = [([36, 39], [37, 42])]
+G.EXTRA["Alps and Carpathians"] = [([43, 50], [5, 27])]
 G.R = dict(G.REG, **G.EXTRA)
 
 def jdump(path, obj):

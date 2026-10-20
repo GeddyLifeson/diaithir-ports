@@ -4,28 +4,18 @@
     {
       "entity": "diaithircompat:cembra_pine",
       "regions": [
-        "Europe"
+        "Alps and Carpathians"
       ],
-      "note": "Pinus cembra 84 sites, Europe 1000 occurrences (CSV)",
+      "note": "Pinus cembra 84 sites, Europe 1000 occurrences (CSV); the species grows in the Alps and Carpathians, the Siberian stone pine is Pinus sibirica and gets no block",
       "boxes": [
         {
           "lat": [
-            45,
-            90
+            43,
+            50
           ],
           "lon": [
-            -30,
-            60
-          ]
-        },
-        {
-          "lat": [
-            35,
-            45
-          ],
-          "lon": [
-            -30,
-            26
+            5,
+            27
           ]
         }
       ]

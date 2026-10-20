@@ -158,6 +158,9 @@ class EarthRangesTest {
         assertFalse(r.allows(ns + "calluna_vulgaris", -1, null, 41.9, -87.6));
         assertTrue(r.allows(ns + "cembra_pine", -1, null, 47.0, 10.0));
         assertFalse(r.allows(ns + "cembra_pine", -1, null, 41.9, -87.6));
+        assertTrue(r.allows(ns + "cembra_pine", -1, null, 46.0, 25.0));
+        assertFalse(r.allows(ns + "cembra_pine", -1, null, 62.0, 10.0));
+        assertFalse(r.allows(ns + "cembra_pine", -1, null, 56.0, 90.0));
     }
 
     @Test
