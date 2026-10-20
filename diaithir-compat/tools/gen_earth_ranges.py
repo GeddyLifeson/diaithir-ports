@@ -161,6 +161,18 @@ S = {
   ("grey_wolf", ["N America", "Europe", "N Asia", "SW Asia", "E/S Asia"], "CSV Canis lupus: N America, Europe; modern Holarctic range adds N, SW and E/S Asia"),
   ("dire_wolf", ["N America south of 42N", "S America"], "CSV Canis dirus / Aenocyon dirus: N America; fossils from North and South America, rarely north of 42 N"),
  ],
+ "ground_sloth": [
+  ("nothrotheriops", ["S US"], "CSV Nothrotheriops shastensis: N America; southwestern US and Florida (Wikipedia Shasta_ground_sloth)"),
+  ("paramylodon", ["N America"], "CSV Paramylodon harlani: N America"),
+  ("megalonyx", ["N America"], "CSV Megalonyx jeffersonii: N America"),
+  ("megatherium", ["Southern Cone"], "Megatherium americanum: Pampas, northern Patagonia and neighbouring lowlands (Wikipedia Megatherium)"),
+  ("mylodon", ["Patagonia and Pampas"], "Mylodon darwinii: southern South America to ~52 S (Wikipedia Mylodon)"),
+ ],
+ "glyptodont": [
+  ("glyptodon", ["S America"], "Glyptodon clavipes: lowland Pampas to the Andes, north to central Colombia (Wikipedia Glyptodon)"),
+  ("doedicurus", ["Southern Cone"], "Doedicurus clavicaudatus: Chaco-Pampean plains of Argentina, Brazil and Uruguay (Wikipedia Doedicurus)"),
+  ("holmesina", ["S US"], "CSV Holmesina septentrionalis: N America; fossils mostly in Texas and Florida (Wikipedia Holmesina)"),
+ ],
 }
 
 V = {  # vanilla entities: whole-entity ranges (no species), file minecraft_<name>.json
