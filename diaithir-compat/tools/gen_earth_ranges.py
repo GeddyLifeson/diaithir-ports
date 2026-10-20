@@ -33,6 +33,7 @@ EXTRA = {  # finer boxes where a whole region would be too coarse
  "S Mexico": [([13, 22], [-100, -85])],
  "N Africa coast": [([28, 37], [-10, 35])],
  "Africa south of the Sahara": [([-40, 15], [-20, 52])],
+ "Channel Islands": [([33, 35], [-121, -118])],
 }
 R = dict(REG, **EXTRA)
 
@@ -113,6 +114,15 @@ S = {
   ("common", ["N America", "C America", "S America"], "CSV Didelphis marsupialis: N America; modern range to Bolivia"),
  ],
  "aardvark": [("common", ["Africa south of the Sahara"], "Orycteropus afer, modern range")],
+ "elephantid": [
+  ("woolly", ["N America", "Europe", "N Asia"], "CSV Mammuthus primigenius: N America, Europe, N Asia"),
+  ("columbian", ["N America"], "CSV Mammuthus columbi: N America"),
+  ("mastodon", ["N America"], "CSV Mammut americanum: N America"),
+  ("notiomastodon", ["S America"], "CSV Notiomastodon platensis: S America"),
+  ("pygmy", ["Channel Islands"], "CSV Mammuthus exilis: Channel Islands, California (N America)"),
+  ("african", ["Africa south of the Sahara"], "Loxodonta africana, modern range (sub-Saharan Africa)"),
+  ("asian", ["E/S Asia", "SE Asia/Sunda"], "Elephas maximus, modern native range (Indian subcontinent to Borneo)"),
+ ],
 }
 
 def boxes(names):
