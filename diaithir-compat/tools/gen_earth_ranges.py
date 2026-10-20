@@ -43,6 +43,7 @@ EXTRA = {  # finer boxes where a whole region would be too coarse
  "S US": [([25, 41], [-125, -80])],
  "Southern Cone": [([-42, -15], [-70, -45])],
  "Patagonia and Pampas": [([-55, -18], [-75, -52])],
+ "S and SE Asia": [([5, 30], [65, 125])],
  "Channel Islands": [([33, 35], [-121, -118])],
 }
 R = dict(REG, **EXTRA)
@@ -177,6 +178,17 @@ S = {
 
 V = {  # vanilla entities: whole-entity ranges (no species), file minecraft_<name>.json
  "horse": ("minecraft:horse", ["Europe", "N Asia", "N America", "E/S Asia", "N Africa coast"], "Equus ferus, Late Pleistocene range from Western Europe and North Africa to Siberia and East Asia (Wikipedia Wild_horse); CSV Equus ferus: Europe, N America"),
+ "pig": ("minecraft:pig", ["Europe", "SW Asia", "E/S Asia", "SE Asia/Sunda", "N Africa coast"], "Wild boar range (Eurasia and North Africa), as for untamedwilds:boar eurasian"),
+ "chicken": ("minecraft:chicken", ["S and SE Asia", "SE Asia/Sunda"], "Red junglefowl range, South and Southeast Asia (Wikipedia List_of_domesticated_animals: origin India and Southeast Asia)"),
+ "goat": ("minecraft:goat", ["Europe", "SW Asia", "E/S Asia", "N Asia", "N Africa coast"], "Wild goat and ibex mountains of Eurasia and North Africa (CSV Capra ibex, Capra pyrenaica, Capra aegagrus)"),
+ "cow": ("minecraft:cow", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "sheep": ("minecraft:sheep", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "mule": ("minecraft:mule", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "donkey": ("minecraft:donkey", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "llama": ("minecraft:llama", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "trader_llama": ("minecraft:trader_llama", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "camel": ("minecraft:camel", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
+ "cat": ("minecraft:cat", [], "Never on Earth in Age I natural spawns: Domestic form; domestication dates in Wikipedia List_of_domesticated_animals (cattle ~8500 BCE, sheep 11000-9000 BCE, goat ~8000 BCE, pig ~9400 BCE, chicken ~6000 BCE, donkey ~5000 BCE, llama ~2400 BCE, dromedary ~4000 BCE, Bactrian camel ~2500 BCE, cat 8000-7500 BCE). Early herding belongs in site templates, not wild spawns"),
  "wolf": ("minecraft:wolf", ["N America", "Europe", "N Asia", "SW Asia", "E/S Asia"], "Canis lupus, Holarctic: CSV Canis lupus: N America, Europe; modern native range adds N and SW and E/S Asia"),
 }
 

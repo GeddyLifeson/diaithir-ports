@@ -118,6 +118,24 @@ class EarthRangesTest {
     }
 
     @Test
+    void vanillaDomesticsNeverAndPigChickenGoatRestricted() throws Exception {
+        EarthRanges r = shipped();
+        for (String e : new String[] {"cow", "sheep", "mule", "donkey", "llama", "trader_llama", "camel", "cat"}) {
+            assertFalse(r.allows("minecraft:" + e, -1, null, 52.5, 13.4), e);
+            assertFalse(r.allows("minecraft:" + e, -1, null, 31.0, 40.0), e);
+        }
+        assertTrue(r.allows("minecraft:pig", -1, null, 52.5, 13.4));
+        assertFalse(r.allows("minecraft:pig", -1, null, 41.9, -87.6));
+        assertTrue(r.allows("minecraft:chicken", -1, null, 15.0, 100.0));
+        assertFalse(r.allows("minecraft:chicken", -1, null, 52.5, 13.4));
+        assertTrue(r.allows("minecraft:goat", -1, null, 46.0, 8.0));
+        assertFalse(r.allows("minecraft:goat", -1, null, 41.9, -87.6));
+        // unlisted vanilla animals stay unaffected
+        assertTrue(r.allows("minecraft:rabbit", -1, null, 41.9, -87.6));
+        assertTrue(r.allows("minecraft:fox", -1, null, 41.9, -87.6));
+    }
+
+    @Test
     void badEntriesAreReportedAndSkipped() {
         List<String> errors = new ArrayList<>();
         List<EarthRanges.Entry> e = EarthRanges.parse(JsonParser.parseString("{\"ranges\":[{\"entity\":\"a:b\"},{\"entity\":\"a:c\",\"boxes\":[{\"lat\":[0,1],\"lon\":[0,1]}]}]}"), errors::add);
