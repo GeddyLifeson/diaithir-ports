@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/elephantid_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 5913382
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 14208432
+      }
+    ]
+  }
+}

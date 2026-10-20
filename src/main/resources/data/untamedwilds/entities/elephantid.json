@@ -1,0 +1,178 @@
+{
+  "name": "elephantid",
+  "breeding": "MID_SUMMER",
+  "growing_time": 16,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "untamedwilds:entity.hippo.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
+  },
+  "flags": {
+    "groupCount": 6
+  },
+  "species": [
+    {
+      "name": "woolly",
+      "variant": 0,
+      "scale": 0.92,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 12,
+      "health": 90,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "columbian",
+      "variant": 1,
+      "scale": 1.28,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 14,
+      "health": 110,
+      "flags": {
+        "groupCount": 5
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "mastodon",
+      "variant": 2,
+      "scale": 0.99,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:apple",
+      "attack": 12,
+      "health": 90,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "notiomastodon",
+      "variant": 3,
+      "scale": 0.85,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 11,
+      "health": 80,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "pygmy",
+      "variant": 4,
+      "scale": 0.64,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 6,
+      "health": 40,
+      "flags": {
+        "groupCount": 3
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "african",
+      "variant": 5,
+      "scale": 0.99,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 13,
+      "health": 100,
+      "flags": {
+        "groupCount": 6
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "asian",
+      "variant": 6,
+      "scale": 0.89,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:sugar_cane",
+      "attack": 11,
+      "health": 85,
+      "flags": {
+        "groupCount": 5
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    }
+  ]
+}

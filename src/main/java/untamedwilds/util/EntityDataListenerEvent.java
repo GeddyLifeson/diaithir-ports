@@ -52,6 +52,7 @@ public class EntityDataListenerEvent {
     public static EntityDataHolder BIG_CAT;
     public static EntityDataHolder BISON;
     public static EntityDataHolder CAMEL;
+    public static EntityDataHolder ELEPHANTID;
     public static EntityDataHolder MANATEE;
     public static EntityDataHolder BALEEN_WHALE;
     public static EntityDataHolder OPOSSUM;
@@ -98,6 +99,7 @@ public class EntityDataListenerEvent {
         HIPPO = registerEntityData(ModEntity.HIPPO.get());
         BISON = registerEntityData(ModEntity.BISON.get());
         CAMEL = registerEntityData(ModEntity.CAMEL.get());
+        ELEPHANTID = registerEntityData(ModEntity.ELEPHANTID.get());
         MANATEE = registerEntityData(ModEntity.MANATEE.get());
         BALEEN_WHALE = registerEntityData(ModEntity.BALEEN_WHALE.get());
         OPOSSUM = registerEntityData(ModEntity.OPOSSUM.get());

@@ -639,5 +639,21 @@
   "entity.untamedwilds.boar_long_nosed": "Long-nosed Peccary",
   "entity.untamedwilds.boar_long_nosed.sciname": "Mylohyus fossilis",
   "entity.untamedwilds.opossum_common": "Common Opossum",
-  "entity.untamedwilds.opossum_common.sciname": "Didelphis marsupialis"
+  "entity.untamedwilds.opossum_common.sciname": "Didelphis marsupialis",
+  "item.untamedwilds.elephantid_spawn_egg": "Elephantid Spawn Egg",
+  "entity.untamedwilds.elephantid": "Elephantid",
+  "entity.untamedwilds.elephantid_woolly": "Woolly Mammoth",
+  "entity.untamedwilds.elephantid_woolly.sciname": "Mammuthus primigenius",
+  "entity.untamedwilds.elephantid_columbian": "Columbian Mammoth",
+  "entity.untamedwilds.elephantid_columbian.sciname": "Mammuthus columbi",
+  "entity.untamedwilds.elephantid_mastodon": "American Mastodon",
+  "entity.untamedwilds.elephantid_mastodon.sciname": "Mammut americanum",
+  "entity.untamedwilds.elephantid_notiomastodon": "South American Gomphothere",
+  "entity.untamedwilds.elephantid_notiomastodon.sciname": "Notiomastodon platensis",
+  "entity.untamedwilds.elephantid_pygmy": "Pygmy Mammoth",
+  "entity.untamedwilds.elephantid_pygmy.sciname": "Mammuthus exilis",
+  "entity.untamedwilds.elephantid_african": "African Bush Elephant",
+  "entity.untamedwilds.elephantid_african.sciname": "Loxodonta africana",
+  "entity.untamedwilds.elephantid_asian": "Asian Elephant",
+  "entity.untamedwilds.elephantid_asian.sciname": "Elephas maximus"
 }
