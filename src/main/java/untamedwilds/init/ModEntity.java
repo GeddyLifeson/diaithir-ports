@@ -74,6 +74,8 @@ import untamedwilds.entity.mammal.EntityCervid;
 import untamedwilds.entity.mammal.EntityEquid;
 import untamedwilds.entity.mammal.EntityBovid;
 import untamedwilds.entity.mammal.EntityCanid;
+import untamedwilds.entity.mammal.EntityGroundSloth;
+import untamedwilds.entity.mammal.EntityGlyptodont;
 import untamedwilds.entity.mammal.EntityBison;
 import untamedwilds.entity.mammal.EntityBoar;
 import untamedwilds.entity.mammal.EntityCamel;
@@ -284,6 +286,22 @@ public class ModEntity {
         1.0F,
         0x6E6A66,
         0xC9C3B8
+    );
+    public static DeferredHolder<EntityType<?>, EntityType<EntityGroundSloth>> GROUND_SLOTH = createEntity(
+        EntityGroundSloth::new,
+        "ground_sloth",
+        1.6F,
+        1.8F,
+        0x7A5C40,
+        0xD4C8B0
+    );
+    public static DeferredHolder<EntityType<?>, EntityType<EntityGlyptodont>> GLYPTODONT = createEntity(
+        EntityGlyptodont::new,
+        "glyptodont",
+        1.6F,
+        1.3F,
+        0x8A7A5C,
+        0x4C4236
     );
     public static DeferredHolder<EntityType<?>, EntityType<EntityManatee>> MANATEE = createEntity(
         EntityManatee::new,
@@ -506,6 +524,8 @@ public class ModEntity {
         event.put(EQUID.get(), EntityEquid.registerAttributes().build());
         event.put(BOVID.get(), EntityBovid.registerAttributes().build());
         event.put(CANID.get(), EntityCanid.registerAttributes().build());
+        event.put(GROUND_SLOTH.get(), EntityGroundSloth.registerAttributes().build());
+        event.put(GLYPTODONT.get(), EntityGlyptodont.registerAttributes().build());
         event.put(MANATEE.get(), EntityManatee.registerAttributes().build());
         event.put(BALEEN_WHALE.get(), EntityBaleenWhale.registerAttributes().build());
         event.put(OPOSSUM.get(), EntityOpossum.registerAttributes().build());
@@ -707,6 +727,20 @@ public class ModEntity {
         );
         event.register(
             CANID.get(),
+            SpawnPlacementTypes.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            RegisterSpawnPlacementsEvent.Operation.REPLACE
+        );
+        event.register(
+            GROUND_SLOTH.get(),
+            SpawnPlacementTypes.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            Animal::checkAnimalSpawnRules,
+            RegisterSpawnPlacementsEvent.Operation.REPLACE
+        );
+        event.register(
+            GLYPTODONT.get(),
             SpawnPlacementTypes.ON_GROUND,
             Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
             Animal::checkAnimalSpawnRules,

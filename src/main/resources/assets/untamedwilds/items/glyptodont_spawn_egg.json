@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/glyptodont_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9075292
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 4997686
+      }
+    ]
+  }
+}

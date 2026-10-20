@@ -1,0 +1,82 @@
+{
+  "name": "glyptodont",
+  "breeding": "MID_SPRING",
+  "growing_time": 12,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "minecraft:entity.armadillo.ambient",
+    "hurt": "minecraft:entity.armadillo.hurt",
+    "death": "minecraft:entity.armadillo.death"
+  },
+  "flags": {
+    "groupCount": 2
+  },
+  "species": [
+    {
+      "name": "glyptodon",
+      "variant": 0,
+      "scale": 0.78,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 5,
+      "health": 50,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "doedicurus",
+      "variant": 1,
+      "scale": 1.17,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 10,
+      "health": 70,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "holmesina",
+      "variant": 2,
+      "scale": 0.65,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "attack": 4,
+      "health": 30,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    }
+  ]
+}

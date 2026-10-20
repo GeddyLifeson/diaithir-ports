@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "untamedwilds:item/ground_sloth_spawn_egg",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8019008
+      },
+      {
+        "type": "minecraft:constant",
+        "value": 13945008
+      }
+    ]
+  }
+}

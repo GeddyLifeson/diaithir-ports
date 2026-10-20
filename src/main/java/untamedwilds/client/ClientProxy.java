@@ -38,6 +38,8 @@ public class ClientProxy {
         event.registerEntityRenderer(ModEntity.EQUID.get(), RendererEquid::new);
         event.registerEntityRenderer(ModEntity.BOVID.get(), RendererBovid::new);
         event.registerEntityRenderer(ModEntity.CANID.get(), RendererCanid::new);
+        event.registerEntityRenderer(ModEntity.GROUND_SLOTH.get(), RendererGroundSloth::new);
+        event.registerEntityRenderer(ModEntity.GLYPTODONT.get(), RendererGlyptodont::new);
         event.registerEntityRenderer(ModEntity.MANATEE.get(), RendererManatee::new);
         event.registerEntityRenderer(ModEntity.BALEEN_WHALE.get(), RendererBaleenWhale::new);
         event.registerEntityRenderer(ModEntity.OPOSSUM.get(), RendererOpossum::new);

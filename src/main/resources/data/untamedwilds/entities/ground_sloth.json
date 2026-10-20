@@ -1,0 +1,137 @@
+{
+  "name": "ground_sloth",
+  "breeding": "MID_SPRING",
+  "growing_time": 14,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "untamedwilds:entity.bear.ambient",
+    "hurt": "untamedwilds:entity.bear.hurt",
+    "death": "untamedwilds:entity.bear.death",
+    "threat": "untamedwilds:entity.bear.warning"
+  },
+  "flags": {
+    "groupCount": 2
+  },
+  "species": [
+    {
+      "name": "nothrotheriops",
+      "variant": 0,
+      "scale": 0.52,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:cactus",
+      "attack": 7,
+      "health": 30,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "paramylodon",
+      "variant": 1,
+      "scale": 0.53,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:potato",
+      "attack": 8,
+      "health": 40,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "megalonyx",
+      "variant": 2,
+      "scale": 0.56,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:oak_leaves",
+      "attack": 9,
+      "health": 45,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "megatherium",
+      "variant": 3,
+      "scale": 1.13,
+      "rarity": 2,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:oak_leaves",
+      "attack": 13,
+      "health": 80,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mylodon",
+      "variant": 4,
+      "scale": 0.66,
+      "rarity": 2,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:wheat",
+      "attack": 9,
+      "health": 50,
+      "flags": {
+        "groupCount": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    }
+  ]
+}
