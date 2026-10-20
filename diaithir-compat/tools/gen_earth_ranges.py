@@ -35,6 +35,10 @@ EXTRA = {  # finer boxes where a whole region would be too coarse
  "Africa south of the Sahara": [([-40, 15], [-20, 52])],
  "W N America": [([22, 60], [-130, -95])],
  "Mongolian steppe": [([38, 52], [75, 125])],
+ "Beringia": [([55, 72], [-170, -110])],
+ "Kazakh steppe": [([44, 55], [45, 90])],
+ "Alps": [([43, 48], [5, 16])],
+ "NW N America": [([43, 63], [-140, -105])],
  "Channel Islands": [([33, 35], [-121, -118])],
 }
 R = dict(REG, **EXTRA)
@@ -140,6 +144,14 @@ S = {
   ("wild_horse", ["Europe", "N Asia", "N America", "E/S Asia", "N Africa coast"], "CSV Equus ferus: Europe, N America; E. caballus: N Asia; Late Pleistocene range from Western Europe and North Africa to Siberia and East Asia"),
   ("przewalski", ["Mongolian steppe"], "Przewalski's horse, historic range in the Dzungarian Basin and Mongolia (Wikipedia Przewalski's_horse)"),
   ("hemione", ["SW Asia", "E/S Asia", "N Asia"], "CSV Equus hemionus: E/S Asia; historic range from the Levant and Arabia to southern Siberia"),
+ ],
+ "bovid": [
+  ("aurochs", ["Europe", "SW Asia", "N Africa coast", "E/S Asia"], "CSV Bos primigenius: Europe; range also North Africa, Mesopotamia, the Caucasus, the Indian subcontinent and East Asia (Wikipedia Aurochs)"),
+  ("muskox", ["Arctic"], "CSV Ovibos moschatus: N America, Europe; native range Arctic Canada, Alaska and Greenland"),
+  ("saiga", ["Europe", "N Asia", "Beringia", "Kazakh steppe"], "CSV Saiga tatarica: Europe, N America; Last-glacial range from the British Isles through Central Asia to Alaska and Yukon (Wikipedia Saiga_antelope)"),
+  ("ibex", ["Alps"], "CSV Capra ibex: Europe; native to the Alps"),
+  ("bighorn", ["W N America"], "CSV Ovis canadensis: N America; Rocky Mountain, Sierra Nevada and desert populations of western North America"),
+  ("mountain_goat", ["NW N America"], "CSV Oreamnos americanus: N America; Rockies and Cascades from Washington to southern Yukon and SE Alaska"),
  ],
 }
 
