@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/male/0.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/male/1.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/male/2.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/female/0.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/female/1.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/sahul/female/2.png",
+    "profession": "diaithircompat:sahul",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

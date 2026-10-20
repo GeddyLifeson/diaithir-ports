@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/male/0.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/male/1.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/male/2.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/female/0.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/female/1.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/arctic_beringia/female/2.png",
+    "profession": "diaithircompat:arctic_beringia",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -11,7 +11,9 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.ModifyRecipeJsonsEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
 @Mod("diaithircompat")
@@ -24,6 +26,9 @@ public final class DiaithirCompat {
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, DiaithirCompat::upgradeLegacyRecipes);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class, EarthRangeGate::onAddReloadListeners);
         NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, EarthRangeGate::onEntityJoin);
+        NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, SitePeople::onEntityJoin);
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, SitePeople::onRegisterCommands);
+        NeoForge.EVENT_BUS.addListener(ServerStartingEvent.class, SitePeople::onServerStarting);
     }
 
     // A recipe is only replaced when it fails to decode as shipped and its upgraded copy decodes, so working recipes are never touched.

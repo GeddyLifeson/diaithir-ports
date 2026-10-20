@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/male/0.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/male/1.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/male/2.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/female/0.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/female/1.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tropical_forager/female/2.png",
+    "profession": "diaithircompat:tropical_forager",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

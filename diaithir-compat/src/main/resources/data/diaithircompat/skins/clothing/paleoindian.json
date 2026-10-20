@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/male/0.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/male/1.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/male/2.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/female/0.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/female/1.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleoindian/female/2.png",
+    "profession": "diaithircompat:paleoindian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

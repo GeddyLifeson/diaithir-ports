@@ -1,0 +1,2015 @@
+{
+  "_comment": "Written by diaithir-compat/tools/gen_people.py from DiaithirRPG world/earth/age1; edit those.",
+  "counts": {
+    "hunter_camp": [
+      2,
+      4
+    ],
+    "shell_midden": [
+      2,
+      3
+    ],
+    "knapping_site": [
+      1,
+      2
+    ],
+    "rock_shelter": [
+      2,
+      4
+    ],
+    "pit_house": [
+      3,
+      5
+    ],
+    "ppnb_house": [
+      4,
+      6
+    ],
+    "mammoth_bone_dwelling": [
+      3,
+      5
+    ],
+    "natufian_house": [
+      3,
+      6
+    ],
+    "ppna_house": [
+      3,
+      6
+    ],
+    "gobekli_enclosure": [
+      6,
+      10
+    ],
+    "jericho_tower": [
+      6,
+      10
+    ]
+  },
+  "kits": {
+    "african_lsa": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/african_lsa/male/0.png",
+          "diaithircompat:skins/clothing/normal/african_lsa/male/1.png",
+          "diaithircompat:skins/clothing/normal/african_lsa/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/african_lsa/female/0.png",
+          "diaithircompat:skins/clothing/normal/african_lsa/female/1.png",
+          "diaithircompat:skins/clothing/normal/african_lsa/female/2.png"
+        ]
+      }
+    },
+    "american_forager": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/american_forager/male/0.png",
+          "diaithircompat:skins/clothing/normal/american_forager/male/1.png",
+          "diaithircompat:skins/clothing/normal/american_forager/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/american_forager/female/0.png",
+          "diaithircompat:skins/clothing/normal/american_forager/female/1.png",
+          "diaithircompat:skins/clothing/normal/american_forager/female/2.png"
+        ]
+      }
+    },
+    "arctic_beringia": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/arctic_beringia/male/0.png",
+          "diaithircompat:skins/clothing/normal/arctic_beringia/male/1.png",
+          "diaithircompat:skins/clothing/normal/arctic_beringia/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/arctic_beringia/female/0.png",
+          "diaithircompat:skins/clothing/normal/arctic_beringia/female/1.png",
+          "diaithircompat:skins/clothing/normal/arctic_beringia/female/2.png"
+        ]
+      }
+    },
+    "east_asia_pottery": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/0.png",
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/1.png",
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/0.png",
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/1.png",
+          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/2.png"
+        ]
+      }
+    },
+    "forest_mesolithic": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/0.png",
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/1.png",
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/0.png",
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/1.png",
+          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/2.png"
+        ]
+      }
+    },
+    "levant_archer": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/levant_archer/male/0.png",
+          "diaithircompat:skins/clothing/normal/levant_archer/male/1.png",
+          "diaithircompat:skins/clothing/normal/levant_archer/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/levant_archer/female/0.png",
+          "diaithircompat:skins/clothing/normal/levant_archer/female/1.png",
+          "diaithircompat:skins/clothing/normal/levant_archer/female/2.png"
+        ]
+      }
+    },
+    "levant_village": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/levant_village/male/0.png",
+          "diaithircompat:skins/clothing/normal/levant_village/male/1.png",
+          "diaithircompat:skins/clothing/normal/levant_village/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/levant_village/female/0.png",
+          "diaithircompat:skins/clothing/normal/levant_village/female/1.png",
+          "diaithircompat:skins/clothing/normal/levant_village/female/2.png"
+        ]
+      }
+    },
+    "magdalenian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/magdalenian/male/0.png",
+          "diaithircompat:skins/clothing/normal/magdalenian/male/1.png",
+          "diaithircompat:skins/clothing/normal/magdalenian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/magdalenian/female/0.png",
+          "diaithircompat:skins/clothing/normal/magdalenian/female/1.png",
+          "diaithircompat:skins/clothing/normal/magdalenian/female/2.png"
+        ]
+      }
+    },
+    "north_africa": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/north_africa/male/0.png",
+          "diaithircompat:skins/clothing/normal/north_africa/male/1.png",
+          "diaithircompat:skins/clothing/normal/north_africa/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/north_africa/female/0.png",
+          "diaithircompat:skins/clothing/normal/north_africa/female/1.png",
+          "diaithircompat:skins/clothing/normal/north_africa/female/2.png"
+        ]
+      }
+    },
+    "paleoindian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/paleoindian/male/0.png",
+          "diaithircompat:skins/clothing/normal/paleoindian/male/1.png",
+          "diaithircompat:skins/clothing/normal/paleoindian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/paleoindian/female/0.png",
+          "diaithircompat:skins/clothing/normal/paleoindian/female/1.png",
+          "diaithircompat:skins/clothing/normal/paleoindian/female/2.png"
+        ]
+      }
+    },
+    "reindeer_hunters": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/0.png",
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/1.png",
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/0.png",
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/1.png",
+          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/2.png"
+        ]
+      }
+    },
+    "sahul": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/sahul/male/0.png",
+          "diaithircompat:skins/clothing/normal/sahul/male/1.png",
+          "diaithircompat:skins/clothing/normal/sahul/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/sahul/female/0.png",
+          "diaithircompat:skins/clothing/normal/sahul/female/1.png",
+          "diaithircompat:skins/clothing/normal/sahul/female/2.png"
+        ]
+      }
+    },
+    "steppe_mammoth": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/0.png",
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/1.png",
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/0.png",
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/1.png",
+          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/2.png"
+        ]
+      }
+    },
+    "tropical_forager": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/tropical_forager/male/0.png",
+          "diaithircompat:skins/clothing/normal/tropical_forager/male/1.png",
+          "diaithircompat:skins/clothing/normal/tropical_forager/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/tropical_forager/female/0.png",
+          "diaithircompat:skins/clothing/normal/tropical_forager/female/1.png",
+          "diaithircompat:skins/clothing/normal/tropical_forager/female/2.png"
+        ]
+      }
+    }
+  },
+  "cultures": {
+    "Abriense, Tequendamense and El Jobo": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Ahrensburgian": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Amotape complex": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Andean puna hunters (Lauricocha, Junin)": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Azilian": {
+      "kit": "magdalenian",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Balangoda culture": {
+      "kit": "tropical_forager",
+      "mainhand": "minecraft:stone_axe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:bamboo",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "Bromme (Lyngby) culture": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Capsian": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Central African Late Stone Age (Tshitolian)": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Central Brazilian highland hunter-gatherers (Lagoa Santa, Itaparica)": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Clovis": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Creswellian": {
+      "kit": "magdalenian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Dalton tradition": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Dyuktai culture": {
+      "kit": "arctic_beringia",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Early Archaic Eastern North America": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Early Holocene Sahara foragers (Early Acacus)": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Early Mesolithic Britain (Star Carr)": {
+      "kit": "forest_mesolithic",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Early pottery foragers of S China and the Yangtze (Yuchanyan, Xianrendong)": {
+      "kit": "east_asia_pottery",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:cembra_pine_nuts",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Eastern Paleoindian fluted-point groups (Gainey, Barnes, Cumberland, Debert)": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Eburran": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Epipalaeolithic Egypt (Isnan, Afian, Qarunian)": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Federmesser group (Tjongerian, Havelte)": {
+      "kit": "magdalenian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Final Epigravettian": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Fishtail point tradition": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Folsom": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Fosna-Hensbacka culture": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Geometric Kebaran": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Hamburgian": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Harifian": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Hoabinhian": {
+      "kit": "tropical_forager",
+      "mainhand": "minecraft:stone_axe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:bamboo",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "Iberomaurusian": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Incipient Jomon": {
+      "kit": "east_asia_pottery",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:cembra_pine_nuts",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Indian Mesolithic microlithic foragers (Bhimbetka, Sarai Nahar Rai)": {
+      "kit": "tropical_forager",
+      "mainhand": "minecraft:stone_axe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:bamboo",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "Khiamian": {
+      "kit": "levant_archer",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_emmer_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_peas",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_chickpeas",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Komsa culture": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Kunda culture": {
+      "kit": "forest_mesolithic",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Las Vegas culture": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Late Paleoindian and Early Archaic of Mesoamerica (Lerma, Santa Marta)": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Magdalenian": {
+      "kit": "magdalenian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Maglemosian": {
+      "kit": "forest_mesolithic",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Magosian (obsolete term)": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Monte Verde II": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Mureybetian": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Nanzhuangtou": {
+      "kit": "east_asia_pottery",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:cembra_pine_nuts",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    },
+    "Natufian": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Nenana complex": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "New Guinea Highlands foragers and early Kuk agriculture": {
+      "kit": "tropical_forager",
+      "mainhand": "minecraft:stone_axe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:bamboo",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "North China late Palaeolithic microblade groups (Shuidonggou, Xiachuan)": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Oakhurst industry": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Paijan culture": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Paleo-Arctic tradition": {
+      "kit": "arctic_beringia",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Paleocoastal Pacific (Channel Islands, Pacific Northwest)": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        },
+        {
+          "item": "minecraft:nautilus_shell",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Pedra Pintada (Lower Amazon)": {
+      "kit": "american_forager",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:string",
+          "count": 2
+        },
+        {
+          "item": "minecraft:fishing_rod",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Plano complex (Agate Basin, Hell Gap, Cody)": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Pre-Pottery Neolithic A": {
+      "kit": "levant_archer",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_emmer_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_peas",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_chickpeas",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Pre-Pottery Neolithic B": {
+      "kit": "levant_archer",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_emmer_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_peas",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_chickpeas",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Qadan": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Robberg industry": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Russian Plain, Volga and Urals Final Palaeolithic and Early Mesolithic foragers": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Sahul Pleistocene core-tool and scraper tradition": {
+      "kit": "sahul",
+      "mainhand": "minecraft:wooden_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Sebilian": {
+      "kit": "north_africa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Sumnagin culture": {
+      "kit": "arctic_beringia",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Sundaland and Wallacea Pleistocene-Holocene foragers": {
+      "kit": "tropical_forager",
+      "mainhand": "minecraft:stone_axe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:bamboo",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:jungle"
+    },
+    "Swiderian": {
+      "kit": "reindeer_hunters",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Tasmanian late Pleistocene foragers (Kutikina, Warreen)": {
+      "kit": "sahul",
+      "mainhand": "minecraft:wooden_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Transbaikal and Mongolian late Palaeolithic microblade groups": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Trialetian": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Upper Tigris Epipalaeolithic-Protoneolithic (Hallan Cemi, Kortik Tepe)": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Ushki Lake (Kamchatka)": {
+      "kit": "arctic_beringia",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "West African Late Stone Age and early pottery foragers (Iwo Eleru, Ounjougou)": {
+      "kit": "african_lsa",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        }
+      ],
+      "villager_type": "minecraft:savanna"
+    },
+    "Western Stemmed Tradition": {
+      "kit": "paleoindian",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:plains"
+    },
+    "Yenisei Upper Palaeolithic (Afontova Gora, Kokorevo)": {
+      "kit": "steppe_mammoth",
+      "mainhand": "minecraft:stone_spear",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:leather",
+          "count": 1
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:snow"
+    },
+    "Zarzian": {
+      "kit": "levant_village",
+      "mainhand": "minecraft:stone_hoe",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "diaithircompat:wild_einkorn_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_barley_grain",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_lentils",
+          "count": 1
+        },
+        {
+          "item": "diaithircompat:wild_figs",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:desert"
+    },
+    "Zengpiyan": {
+      "kit": "east_asia_pottery",
+      "mainhand": "minecraft:bow",
+      "carried": [
+        {
+          "item": "minecraft:flint",
+          "count": 4
+        },
+        {
+          "item": "minecraft:bone",
+          "count": 2
+        },
+        {
+          "item": "minecraft:arrow",
+          "count": 8
+        },
+        {
+          "item": "diaithircompat:cembra_pine_nuts",
+          "count": 1
+        }
+      ],
+      "villager_type": "minecraft:taiga"
+    }
+  }
+}

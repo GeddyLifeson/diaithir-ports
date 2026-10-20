@@ -1,14 +1,21 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-license = "MIT"
+license = "MIT; the site people clothing textures (assets/diaithircompat/skins) are GPL-3.0, from MCA Reborn"
 
 [[mods]]
 modId = "diaithircompat"
 version = "${version}"
 displayName = "Diaithir Compat"
-description = "Pack glue for Diaithir: upgrades recipe data written for Minecraft 1.21.1 so it loads on 26.1.2, and keeps natural spawns inside the geographic ranges in data/*/earth_ranges on the Tellus Earth dimension. Adds the Age I wild plants and wild cereals and pulses the pack lacks, placed by biome and region."
+description = "Pack glue for Diaithir: upgrades recipe data written for Minecraft 1.21.1 so it loads on 26.1.2, and keeps natural spawns inside the geographic ranges in data/*/earth_ranges on the Tellus Earth dimension. Adds the Age I wild plants and wild cereals and pulses the pack lacks, placed by biome and region. Raises the people of Age I sites for the city engine (/sitepeople): MCA Reborn villagers in their culture's dress when MCA Reborn is loaded, vanilla villagers otherwise."
 
 [[dependencies.diaithircompat]]
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithircompat]]
+modId = "mca"
+type = "optional"
+versionRange = "[8.1.11,)"
+ordering = "NONE"
+side = "BOTH"

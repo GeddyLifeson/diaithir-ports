@@ -1,0 +1,4 @@
+The clothing textures under this folder are MCA Reborn's own clothing textures (Minecraft Comes Alive Reborn,
+https://github.com/Luke100000/minecraft-comes-alive, GPL-3.0), recoloured by diaithir-compat/tools/gen_people.py.
+They are licensed under the GNU General Public License version 3 (https://www.gnu.org/licenses/gpl-3.0.txt),
+not under the MIT licence of the rest of Diaithir Compat. The licence text is in GPL-3.0.txt next to this file.

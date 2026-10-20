@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/male/0.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/male/1.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/male/2.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/female/0.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/female/1.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_archer/female/2.png",
+    "profession": "diaithircompat:levant_archer",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

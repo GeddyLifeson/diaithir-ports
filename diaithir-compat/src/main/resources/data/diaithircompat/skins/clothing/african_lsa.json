@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/male/0.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/male/1.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/male/2.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/female/0.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/female/1.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/african_lsa/female/2.png",
+    "profession": "diaithircompat:african_lsa",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

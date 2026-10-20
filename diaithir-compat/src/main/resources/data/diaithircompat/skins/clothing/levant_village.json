@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/male/0.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/male/1.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/male/2.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/female/0.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/female/1.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/levant_village/female/2.png",
+    "profession": "diaithircompat:levant_village",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]
