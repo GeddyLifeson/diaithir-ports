@@ -6,7 +6,7 @@ license = "MIT"
 modId = "diaithircompat"
 version = "${version}"
 displayName = "Diaithir Compat"
-description = "Pack glue for Diaithir: upgrades recipe data written for Minecraft 1.21.1 so it loads on 26.1.2."
+description = "Pack glue for Diaithir: upgrades recipe data written for Minecraft 1.21.1 so it loads on 26.1.2, and keeps natural spawns inside the geographic ranges in data/*/earth_ranges on the Tellus Earth dimension."
 
 [[dependencies.diaithircompat]]
 modId = "neoforge"

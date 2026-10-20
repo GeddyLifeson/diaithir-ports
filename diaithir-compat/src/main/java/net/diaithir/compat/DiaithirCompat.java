@@ -8,7 +8,9 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.ModifyRecipeJsonsEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import org.slf4j.Logger;
 
 @Mod("diaithircompat")
@@ -18,6 +20,8 @@ public final class DiaithirCompat {
     public DiaithirCompat() {
         // HIGHEST: upgrade before Almost Unified and other listeners read the recipe JSON, so they see 26.1 shapes.
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, DiaithirCompat::upgradeLegacyRecipes);
+        NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class, EarthRangeGate::onAddReloadListeners);
+        NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, EarthRangeGate::onEntityJoin);
     }
 
     // A recipe is only replaced when it fails to decode as shipped and its upgraded copy decodes, so working recipes are never touched.
