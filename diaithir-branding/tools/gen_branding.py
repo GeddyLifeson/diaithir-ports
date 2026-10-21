@@ -4,6 +4,7 @@
   python3 tools/gen_branding.py [--theme-dir DIR]
 
 - assets/minecraft/textures/gui/title/minecraft.png, minceraft.png, edition.png: the title screen wordmark in Uncial Antiqua
+- assets/diaithirbranding/icons/icon_*.png: the window and taskbar icon (read by MinecraftMixin)
 - assets/diaithirbranding/textures/gui/loading_logo.png: the resource loading wordmark (read by LogoTextureMixin)
 - assets/minecraft/font/default.json + assets/diaithirbranding/font/pixelify_sans.ttf: Pixelify Sans as the game font,
   ahead of vanilla's providers, which still cover any glyph it lacks
@@ -66,6 +67,9 @@ LANG = {
     "advancements.story.root.title": "Diaithir",
     "fml.menu.mods": "Credits",
     "fml.menu.mods.title": "Credits",
+    "fml.menu.mods.openmodsfolder": "Open pack folder",
+    "fml.menu.mods.config": "Settings",
+    "fml.menu.modoptions": "Pack options...",
     "fml.menu.multiplayer.compatible": "Ready to join\n{0,choice,1#1 part|1<%1$s parts} of the pack",
     "fml.menu.multiplayer.incompatible": "Different pack version",
     "fml.menu.multiplayer.incompatible.extra": "Different pack version\n%1$s",
@@ -130,6 +134,12 @@ def loading_logo():
     square.paste(wide.crop((0, 0, 512, 256)), (0, 0))
     square.paste(wide.crop((512, 0, 1024, 256)), (0, 256))
     save(square, NS, "textures", "gui", "loading_logo.png")
+
+
+def window_icons():
+    hearth = Image.open(os.path.join(SRC, "hearth.png")).convert("RGBA")
+    for size in (16, 32, 48, 128, 256):
+        save(hearth.resize((size, size), Image.LANCZOS), NS, "icons", f"icon_{size}.png")
 
 
 def game_font():
@@ -210,6 +220,7 @@ if __name__ == "__main__":
     args = ap.parse_args()
     title_textures()
     loading_logo()
+    window_icons()
     game_font()
     texts()
     if args.theme_dir:

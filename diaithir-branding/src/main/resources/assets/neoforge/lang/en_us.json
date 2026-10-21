@@ -1,6 +1,9 @@
 {
   "fml.menu.mods": "Credits",
   "fml.menu.mods.title": "Credits",
+  "fml.menu.mods.openmodsfolder": "Open pack folder",
+  "fml.menu.mods.config": "Settings",
+  "fml.menu.modoptions": "Pack options...",
   "fml.menu.multiplayer.compatible": "Ready to join\n{0,choice,1#1 part|1<%1$s parts} of the pack",
   "fml.menu.multiplayer.incompatible": "Different pack version",
   "fml.menu.multiplayer.incompatible.extra": "Different pack version\n%1$s",
