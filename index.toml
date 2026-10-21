@@ -983,8 +983,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
 hash = "75020fde8404fb55f2e633ca8c8374de5b611ee2bad0fc68fae81387d8a244b0"
 
 [[files]]
-file = "mods/diaithir-branding-neoforge-26.1.2-1.0.2.pw.toml"
-hash = "467c59bdbdc29c82a43e359e2a2264a8239b128499b14155e3031c0e34b64930"
+file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
+hash = "edcc00e0961af9a07edb6c16ec1c9d1d2fe87b814ca3d1c203b0366c2fddfa78"
 metafile = true
 
 [[files]]

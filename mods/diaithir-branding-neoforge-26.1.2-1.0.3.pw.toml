@@ -1,0 +1,8 @@
+name = "diaithir-branding-neoforge"
+filename = "diaithir-branding-neoforge-26.1.2-1.0.3.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/client/diaithir-branding-neoforge-26.1.2-1.0.3.jar"
+hash-format = "sha256"
+hash = "b2286a846d31e2cc6e80f1949c862446dafb3313cc74a860a3774e564d7cc020"
