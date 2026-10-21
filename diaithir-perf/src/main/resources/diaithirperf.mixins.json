@@ -7,6 +7,9 @@
     "TemplateSourceMixin"
   ],
   "client": [
+    "FaceBakeryMixin",
+    "ModelBakeryInternerMixin",
+    "ModelBakeryMixin",
     "compat.ctm.StandardCTMOverlayTableMixin"
   ],
   "injectors": {

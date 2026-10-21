@@ -18,6 +18,10 @@ Cloud client, full pack (331 mods), software GL under Xvfb, -Xmx8G, `bench/clien
 |---|---|
 | baseline | 3,677 MB |
 | fix 2 | 2,541 MB |
+| fix 2 + 3 | 2,360 MB |
 
 ## Fix 2: CTM overlay tables on demand
 CTM (connected textures, used by Chisel) built all 6 x 625 overlay patterns of every connected-texture model at load, each as an ArrayList in an unmodifiable wrapper: 14.6 million lists. They are now built the first time a block needs one, as compact immutable lists: -1,136 MB (-31%). The mixin applies only when CTM is installed (`MixinPlugin`).
+
+## Fix 3: shared baked quads
+Many block models bake to identical quads (shared parents, variants). Quads from `FaceBakery` are interned for the duration of a bake and the table is dropped when baking finishes: 5.24 M -> 2.84 M quads, -181 MB.
