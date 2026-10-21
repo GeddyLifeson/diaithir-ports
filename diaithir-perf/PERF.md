@@ -27,9 +27,13 @@ Same copy of the bench world (no forced chunks), `JOIN=1 bench/client.sh`, live 
 |---|---|
 | baseline | 7,712 MB (of an 8 GB cap) |
 | fixes 1-3 | 5,794 MB |
+| fixes 1-4 | 5,405 MB |
 
 ## Fix 2: CTM overlay tables on demand
 CTM (connected textures, used by Chisel) built all 6 x 625 overlay patterns of every connected-texture model at load, each as an ArrayList in an unmodifiable wrapper: 14.6 million lists. They are now built the first time a block needs one, as compact immutable lists: -1,136 MB (-31%). The mixin applies only when CTM is installed (`MixinPlugin`).
 
 ## Fix 3: shared baked quads
 Many block models bake to identical quads (shared parents, variants). Quads from `FaceBakery` are interned for the duration of a bake and the table is dropped when baking finishes: 5.24 M -> 2.84 M quads, -181 MB.
+
+## Fix 4: JEI anvil recipes at top level only
+JEI simulated the anvil for every enchantable item with every enchantment at every level and kept each result: 1.65 M item stacks and 947 K enchantment maps in world. Each item and enchantment pair now shows one recipe at the top level: 0.93 M stacks, -389 MB in world. The redirect is optional (`require = 0`), so a JEI update that renames the lambda only switches it off.

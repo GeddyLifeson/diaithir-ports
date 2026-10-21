@@ -10,7 +10,9 @@
     "FaceBakeryMixin",
     "ModelBakeryInternerMixin",
     "ModelBakeryMixin",
-    "compat.ctm.StandardCTMOverlayTableMixin"
+    "compat.ctm.StandardCTMOverlayTableMixin",
+    "compat.jei.AnvilRecipeMakerMixin",
+    "compat.jei.EnchantmentDataAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
