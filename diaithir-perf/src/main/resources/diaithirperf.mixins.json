@@ -2,7 +2,7 @@
   "required": true,
   "package": "net.diaithir.perf.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": ["TemplateSourceMixin"],
   "client": [],
   "injectors": { "defaultRequire": 1 }
 }
