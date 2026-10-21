@@ -1,6 +1,34 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/fml.toml"
+hash = "7f273673f5c20aa969a85ab0b8346056661e5e9626cebbc0c0a0dff1a4c4ccf1"
+
+[[files]]
+file = "config/fml/PixelifySans.ttf"
+hash = "b9d7f7ca296c53c97fb1356630fe23212b76f309e94ca78e05b21796c0d9cab9"
+
+[[files]]
+file = "config/fml/diaithir_bar_bg.png"
+hash = "60afa9a9648079ba43cd1fee334e1404267e49797d87ede4cdcf8e47da79817b"
+
+[[files]]
+file = "config/fml/diaithir_bar_fg.png"
+hash = "35be0390f1da484f562fb08070925e3ce0d4250fe5c8cff020844b8308b1148d"
+
+[[files]]
+file = "config/fml/diaithir_icon.png"
+hash = "05d84a4329e4a4d20ec12b33c4efa499f413dc27bbd1ca10c60bf8e3555b69da"
+
+[[files]]
+file = "config/fml/diaithir_logo.png"
+hash = "2a2f884e5aa650c63deca70e9201b2438927d6b33da2767c36486dd36f5e5989"
+
+[[files]]
+file = "config/fml/theme-diaithir.json"
+hash = "2cacce5d49afb4aa43f91af0083da14f47c6de4a38584f5db19d696da98066c2"
+
+[[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
 hash = "922dfa13915438d5c2da9e6bd71a3bbeafb705fc4660128aec21b46bee5334cd"
 
@@ -935,8 +963,18 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
 hash = "75020fde8404fb55f2e633ca8c8374de5b611ee2bad0fc68fae81387d8a244b0"
 
 [[files]]
+file = "mods/diaithir-branding-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "9178f88525f476393fc5d2bd85995f629d359906ec0ecf04e7159b250f099491"
+metafile = true
+
+[[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
 hash = "8dcf36d5ca191e00689fc42de39e835f864c4a806384de27689a4ab18e6337c1"
+
+[[files]]
+file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.0.pw.toml"
+hash = "1e7146225de5dc131832f89e855994fb18389179a3206a39a9d881bc05116777"
+metafile = true
 
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
