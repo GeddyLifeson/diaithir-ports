@@ -267,7 +267,7 @@ final class ErrorWindow {
             ctx.fillRect(x, y, BUTTON_W, BUTTON_H, border);
             ctx.fillRect(x + 2, y + 2, BUTTON_W - 4, BUTTON_H - 4, primary && active ? 0xFF7A1F0E : PANEL);
             float tx = x + (BUTTON_W - font.stringWidth(label)) / 2f;
-            text(ctx, tx, y + (BUTTON_H - font.lineSpacing()) / 2f + 2, label, active ? TEXT : MUTED);
+            text(ctx, tx, y + (BUTTON_H - font.lineSpacing()) / 2f - 2, label, active ? TEXT : MUTED);
         }
     }
 }
