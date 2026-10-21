@@ -1,0 +1,138 @@
+{
+ "music.age1.title": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/title",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c1_gift": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c1_gift",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c2_slab": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c2_slab",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c3_grove": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c3_grove",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c4_gold": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c4_gold",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c5_white": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c5_white",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c5_bran": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c5_bran",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c5_black": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c5_black",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c6_red": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c6_red",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.c7_rainbow": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/c7_rainbow",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_valley": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_valley",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_forest": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_forest",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_high": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_high",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_sea": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_sea",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_river": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_river",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_marsh": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_marsh",
+    "stream": true
+   }
+  ]
+ },
+ "music.age1.amb_deep": {
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/amb_deep",
+    "stream": true
+   }
+  ]
+ }
+}

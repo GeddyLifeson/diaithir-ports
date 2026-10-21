@@ -1,0 +1,11 @@
+{
+ "music.menu": {
+  "replace": true,
+  "sounds": [
+   {
+    "name": "diaithir:music/age1/title",
+    "stream": true
+   }
+  ]
+ }
+}

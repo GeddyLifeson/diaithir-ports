@@ -1,6 +1,198 @@
 hash-format = "sha256"
 
 [[files]]
+file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
+hash = "922dfa13915438d5c2da9e6bd71a3bbeafb705fc4660128aec21b46bee5334cd"
+
+[[files]]
+file = "kubejs/assets/deepworlds/textures/item/blueprint.png"
+hash = "b9651ee66db7d0dcec573ecbd2041d1a9200baa97c80337ae38eaf4c55ae2753"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds.json"
+hash = "6152b8801c70134f8a85dafbdf27c82270126975d31ff5d6ef075d94af7d1b73"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_deep.ogg"
+hash = "9f166a06aec97d836d3f8dc6946064baf370194cb1ff5815ae48e894da55bb7b"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_forest.ogg"
+hash = "785323321ad416e903d0c20f657a8417942afd5add849b8369f0921240c1809b"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_high.ogg"
+hash = "b250881755e2efd823254683a646e122e6b33a4842227dc8e63be341d234747d"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_marsh.ogg"
+hash = "7e05ea5e2e9bcdc58d3dad21136cf58e0d74ed5463278a2bbc83bddffc515e14"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_river.ogg"
+hash = "39fc9a07c2be8f40c202d11cbb4f88f5f156d211ff296e970cf44fa23d6978a4"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_sea.ogg"
+hash = "dd67eb0c5891ae02e4f8bada02e12b05640e914659b99bec04505f645b95636b"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/amb_valley.ogg"
+hash = "af4e763e918fb68fc705673133b77c3953d19cf2a9be89056933597342e44024"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c1_gift.ogg"
+hash = "3d91bb09e217755e330aff58602ed6fcd005ba8ba017adb33f462df21c8e8fe3"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c2_slab.ogg"
+hash = "bc04789c6e813de35d0eaf4ec091ff2c143a4a34560f7d3e3c85712b7ba1e695"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c3_grove.ogg"
+hash = "ab51ad7efd75fd1ffabd7786edaf912c5e1b1142de649e85eb134382ac9ed76b"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c4_gold.ogg"
+hash = "a98dd01a1993139196306bebe54f59f7d6e49c9440a58c6b2348add6145a1059"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c5_black.ogg"
+hash = "221424b340287b3ee9c0a2784ae36bc79809bd8f5f74990216f61d5497a41066"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c5_bran.ogg"
+hash = "74ebb2b091faf3d9c257ef0ab186b98b10ef130c32e5a1f0268046acfd0eebe7"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c5_white.ogg"
+hash = "20279fd47de2a1670f05070cabbb4fd7963bde14bc444900bec995bdb0ce32ef"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c6_red.ogg"
+hash = "3eeedfd322050f15008e6290790e7d44039f925e36f8d9c8b4b1583a451e1fa6"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/c7_rainbow.ogg"
+hash = "11ae159551781e0d567c9e17f951a5037373030d05859e24a77ee35d07ada7b9"
+
+[[files]]
+file = "kubejs/assets/diaithir/sounds/music/age1/title.ogg"
+hash = "3f647ebd4a5c1dfb948925db13ff86e46e7e50f8dd452a43343dd834fa201aea"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/black_coal_ore.png"
+hash = "857d5fdc57d8ff62461113b8d3de660aa7d0bbe8304fa40826b45d4a9cef12cd"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/fire_coal_ore.png"
+hash = "e1453c55b54561dc1c896ebe301d320b4568b7601d62445a7985dc30b6b1100c"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/gold_coal_ore.png"
+hash = "b524fc022d0e7c3f65d5bdc90ddff789b294847d06528e112eabebe9707f9ade"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/rainbow_coal_ore.png"
+hash = "1f554e12147709eb8441f6671b8bbca298d826def735875e25797a130abcf8f8"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/red_brown_coal_ore.png"
+hash = "bac06f221e4f261ff93bd5574096360b4e3d88e276d67443ff2f6823f01a6d35"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/silver_coal_ore.png"
+hash = "6c82ca3836d8161549246f6ca62352224d925a0de2e34143cd61ba3cdd7dfaef"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/block/white_coal_ore.png"
+hash = "8e65ef68451721c00156f3093da9aca078d9d22e71f99d341b5215b856d8ef7b"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/black_coal.png"
+hash = "4e2c5861da02276011bcf870dc7a6baa965b4706772288201c764e2e14d43a69"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/coal_dust.png"
+hash = "2c458cd0aa4e1e62d1f5c285fc7e88234d38f71a54f15dda8b37d81e395e691b"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/culoare_adevarata.png"
+hash = "e82383d2d07c6d1fc1b1eaea66c65e51cf391bf8a0a5f89a24ad01f7f4064636"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/dubhan_fuel_cell.png"
+hash = "37acc36176cd9781e7a16e244e53de07e7369973cb52d0bc570b3b4810830c79"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/fire_coal.png"
+hash = "1c911f36fca6908ceb3fc2cf87dd10ca22678fc9f76fad86d2df1e3e54d19e4c"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/fuel_ledger.png"
+hash = "257acf08307ae96882f558dabc103e377a6bd2e835c9c77ab3be3aa4f20c4a07"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/gold_coal.png"
+hash = "cb00a31dfaaa30adc0b27183e7f586ee2b47c9ffa068e85b41ca5974767be5b8"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/rainbow_coal.png"
+hash = "f875851ae5b6d407176cc502f99632d7bdfb74c5858857dcb5c844bb688f3621"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/red_brown_coal.png"
+hash = "c86956cd98a527f433438b5e9dfef1e58246b54357e757a0dbc497ed5638e422"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/silence_bell.png"
+hash = "521e8d1c12f889bec10ce0817cd91cbdf49983209d6def6bbe0a505e2be9180c"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/silver_coal.png"
+hash = "16e0e25298e7b974aa1744c8a5a9afd9dbc44593fd6bb15542cf03bed5dd1c23"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/storm_sigil.png"
+hash = "cabe73a73a2fc7510b747ffe764a0857fc1c4d65f51bd7eb6cc80f7d95fda340"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/the_chord.png"
+hash = "ae082d1a9ed3e33e04163cb5728fa4e52458edb68250e330a545eb9e4546524c"
+
+[[files]]
+file = "kubejs/assets/diaithir/textures/item/white_coal.png"
+hash = "f480d84b433e561bcee3865669109c0472db48405923459b17ad2b3b90b2a3c2"
+
+[[files]]
+file = "kubejs/assets/minecraft/sounds.json"
+hash = "0b00d4e6403ff18d2114722b5b86915a7a4bf075f8695077d85a95d614013e20"
+
+[[files]]
+file = "kubejs/startup_scripts/deepworlds/works.js"
+hash = "145eeb21e610cbde493d9e075933c35a3f954698f848f690d20bbc0a6b137986"
+
+[[files]]
+file = "kubejs/startup_scripts/diaithir/coals.js"
+hash = "c289e80c63dc8ae31bec523017ecefc52a8087c982d52f2d05a5e31877263688"
+
+[[files]]
+file = "kubejs/startup_scripts/diaithir/mekanism_processing.js"
+hash = "acbda732d2abe7eb58258d997c00622059c8509ff59bef80b3b460984f131eed"
+
+[[files]]
+file = "kubejs/startup_scripts/diaithir/recipes_261.js"
+hash = "555dcdbd9e06d488d18316dafa6406121db4c92463a32aa6315920ea7428d507"
+
+[[files]]
+file = "kubejs/startup_scripts/diaithir/unify_families.js"
+hash = "64991bffa80630dbaa13a593000023da345ecfb3c4039b5f4b2701c3f1fb5a18"
+
+[[files]]
+file = "kubejs/startup_scripts/economy/items.js"
+hash = "82fbaa00c3a79b9ef92033c67f852bd5e13ed19ddd230c5bba76e6a47bc2971c"
+
+[[files]]
 file = "mods/AE2NetworkAnalyzer-26.1-1.0.0-neoforge.pw.toml"
 hash = "ca701669645c7a4f97922a8e4c4584e835a0e975a367dc942d3b39762920fe3b"
 metafile = true
