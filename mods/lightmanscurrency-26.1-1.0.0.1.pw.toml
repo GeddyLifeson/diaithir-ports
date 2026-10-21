@@ -1,0 +1,12 @@
+name = "lightmanscurrency"
+filename = "lightmanscurrency-26.1-1.0.0.1.jar"
+side = "client"
+
+[download]
+url = "https://edge.forgecdn.net/files/9132/333/lightmanscurrency-26.1-1.0.0.1.jar"
+hash-format = "sha256"
+hash = "eec7d7994888f22c2f4788797b85ab6bd78a60de550d204e0a6947015c0d95a0"
+
+[update.curseforge]
+project-id = 472521
+file-id = 9132333

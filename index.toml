@@ -585,6 +585,10 @@ hash = "cc8ac46841ace7a0ab99712be9cf50e38090194713846cbf4b1bb0adf5b69fa7"
 metafile = true
 
 [[files]]
+file = "mods/blockui-1.0.0-diaithir.jar"
+hash = "603d4242c746c42cf9cbe64fae7c4045bb71f657eea1797af9e9d3ae227932eb"
+
+[[files]]
 file = "mods/buildinggadgets2-1.4.6.pw.toml"
 hash = "708c867c294379c1d2ce3e12c02a661099fa4a77a2e750e3dbd6c47db21b537d"
 metafile = true
@@ -733,6 +737,10 @@ metafile = true
 file = "mods/deimos-26.1.2-neoforge-2.7.pw.toml"
 hash = "646cff771abe8dc80a9e1d1e70a821a1e25504417ee335a511b86b61ba74f6f6"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
+hash = "292522f732564bc997c86fa47c7d3dfd44c310ed8444f80c7f660e22aebbac96"
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
@@ -1037,6 +1045,10 @@ hash = "c0c0e55c7898dd099300fee78f460b175e3ef750412d8f3890c34bf8c1d01904"
 metafile = true
 
 [[files]]
+file = "mods/kubejs-neoforge-26.1.2-8.0.6-diaithir.1.jar"
+hash = "10a5e30ffc6a3dff85230aab3ecccdf62118513f96f50b35055943a64acbc511"
+
+[[files]]
 file = "mods/kubeui-0.4.0.pw.toml"
 hash = "93ab50c6e3ad2369acffb1ba927b491e5ebdd9ac2fe8b6e94c5ac0dab38accde"
 metafile = true
@@ -1049,6 +1061,11 @@ metafile = true
 [[files]]
 file = "mods/laserio-1.10.2.pw.toml"
 hash = "485d23d2748fb2fe844a24038d4aa406647600c1f9cc8283de02c23607492a6a"
+metafile = true
+
+[[files]]
+file = "mods/lightmanscurrency-26.1-1.0.0.1.pw.toml"
+hash = "b5dcc0b5f52470573272949c2bb54723ee349a43bfd87dfeb9b1de98199aa7ac"
 metafile = true
 
 [[files]]
@@ -1234,6 +1251,10 @@ hash = "b59b6ca24c0b59955e5a9e107518d9ab596b28a74fb4f96c3f15e8aa99a7fd8a"
 metafile = true
 
 [[files]]
+file = "mods/pneumaticcraft-repressurized-8.2.23.jar"
+hash = "b5e5672397990e4fabee0b29d24b01d53866c6d0862221228ae702614642df92"
+
+[[files]]
 file = "mods/potentials-neoforge-26.1.2-0.11.1.pw.toml"
 hash = "aed1f4c4ecca627fb149c7814dd914252dfdb31178812c8e80241126001e92a1"
 metafile = true
@@ -1333,6 +1354,10 @@ file = "mods/rftoolsbase-1.21-6.0.11.jar"
 hash = "a133203d8b4f9e1adf7ed68c970b874205c56b89b11f1386f432911a07cb1802"
 
 [[files]]
+file = "mods/rftoolsbuilder-1.21-7.0.7.jar"
+hash = "62108f95a0901c4ba4d16e460f9b673f6cf4d65246aefea5dac015029e62e3e9"
+
+[[files]]
 file = "mods/rftoolspower-1.21-7.0.6.jar"
 hash = "9c7f99deee1a83adfc60691ff966fb854ae235dfa963c8030db48863d42b9bdd"
 
@@ -1361,9 +1386,17 @@ hash = "c3f461f53c4fe9bd9fd745c67aec1dc7c4cc8bf34721c39baf21085c078dbe82"
 metafile = true
 
 [[files]]
+file = "mods/securitycraft-1.10.2.1-diaithir.jar"
+hash = "3bc490470103065ec44dc023c3b722cb623f8934ebdb831e97abeee9f1f7558e"
+
+[[files]]
 file = "mods/servercore-neoforge-1.5.19_26.1.2.pw.toml"
 hash = "31f0f7dc9e2bd9e9c86b98a4e6cb207197cadea2b49a34151a24104cf78aa392"
 metafile = true
+
+[[files]]
+file = "mods/sfm-26.1.2-4.34.0-diaithir.jar"
+hash = "fe1d9bbbf76a6797d225491bf16d579012a01df6a11358c5072c5a2d8f81b192"
 
 [[files]]
 file = "mods/sgearmetalworks-26.1.2-1.6.0.pw.toml"
