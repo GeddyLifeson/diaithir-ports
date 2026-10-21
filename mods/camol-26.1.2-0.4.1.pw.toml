@@ -1,0 +1,12 @@
+name = "camol"
+filename = "camol-26.1.2-0.4.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8080/581/camol-26.1.2-0.4.1.jar"
+hash-format = "sha256"
+hash = "22494862533706c849809f2e5358ba69d83718ee823290d9ed5073ef0c19b712"
+
+[update.curseforge]
+file-id = 8080581
+project-id = 1214396

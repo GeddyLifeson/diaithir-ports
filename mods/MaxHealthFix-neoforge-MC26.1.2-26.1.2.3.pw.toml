@@ -1,0 +1,12 @@
+name = "MaxHealthFix-neoforge-MC"
+filename = "MaxHealthFix-neoforge-MC26.1.2-26.1.2.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8269/733/MaxHealthFix-neoforge-MC26.1.2-26.1.2.3.jar"
+hash-format = "sha256"
+hash = "be097ef2e628d999ad43f8f93f904f348f39af1c902186bd299f413e5cadb0fa"
+
+[update.curseforge]
+file-id = 8269733
+project-id = 492246

@@ -1,0 +1,12 @@
+name = "ftb-library-neoforge"
+filename = "ftb-library-neoforge-26.1.2.9.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9008/066/ftb-library-neoforge-26.1.2.9.jar"
+hash-format = "sha256"
+hash = "4b7108293d3a190b4a1e06055343143cfba740ca13b83794d9f8933c8de84851"
+
+[update.curseforge]
+file-id = 9008066
+project-id = 404465

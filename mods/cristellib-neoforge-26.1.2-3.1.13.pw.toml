@@ -1,0 +1,12 @@
+name = "cristellib-neoforge"
+filename = "cristellib-neoforge-26.1.2-3.1.13.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8921/443/cristellib-neoforge-26.1.2-3.1.13.jar"
+hash-format = "sha256"
+hash = "8ed042b876b54e85d98b9493d197b94df87570b54dfc55f5f7c15cb8ea0b5edf"
+
+[update.curseforge]
+file-id = 8921443
+project-id = 856996

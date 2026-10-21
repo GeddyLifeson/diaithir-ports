@@ -1,0 +1,12 @@
+name = "laserbridges"
+filename = "laserbridges-26.1.2-neoforge-6.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9039/788/laserbridges-26.1.2-neoforge-6.1.jar"
+hash-format = "sha256"
+hash = "c03ab51b5db62553cb3ad8222dfa6e0e7b219add2cc4cea36e5e10c050d4456d"
+
+[update.curseforge]
+file-id = 9039788
+project-id = 776337

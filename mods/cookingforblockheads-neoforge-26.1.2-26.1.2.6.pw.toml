@@ -1,0 +1,12 @@
+name = "cookingforblockheads-neoforge"
+filename = "cookingforblockheads-neoforge-26.1.2-26.1.2.6.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9035/235/cookingforblockheads-neoforge-26.1.2-26.1.2.6.jar"
+hash-format = "sha256"
+hash = "6a6ea0ff7536665ae4643d3bf3c5bce334616efc63aadffb403fe561d40dfddd"
+
+[update.curseforge]
+file-id = 9035235
+project-id = 231484

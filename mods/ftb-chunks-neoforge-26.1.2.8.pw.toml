@@ -1,0 +1,12 @@
+name = "ftb-chunks-neoforge"
+filename = "ftb-chunks-neoforge-26.1.2.8.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8791/100/ftb-chunks-neoforge-26.1.2.8.jar"
+hash-format = "sha256"
+hash = "5b889dc013133a9ecef9b84105a1085d421b6b442cacbe59e0b5fb8018ebc4db"
+
+[update.curseforge]
+file-id = 8791100
+project-id = 314906

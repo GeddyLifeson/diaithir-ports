@@ -1,0 +1,12 @@
+name = "auroral"
+filename = "auroral-26.1.2-1.5.9.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/atxUWJdN/versions/7fojBnjm/auroral-26.1.2-1.5.9.jar"
+hash-format = "sha256"
+hash = "20f1f222137d2ea32b91b620abc3467a6d7039796bb6dec33f3e1afde041be51"
+
+[update.modrinth]
+mod-id = "atxUWJdN"
+version = "7fojBnjm"

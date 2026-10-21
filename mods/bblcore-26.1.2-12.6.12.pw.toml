@@ -1,0 +1,12 @@
+name = "bblcore"
+filename = "bblcore-26.1.2-12.6.12.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8940/984/bblcore-26.1.2-12.6.12.jar"
+hash-format = "sha256"
+hash = "d36258f401c07a19decd4cf9e41992c2bd1cf75f04583362c7c3accfadcac6c3"
+
+[update.curseforge]
+file-id = 8940984
+project-id = 1135181

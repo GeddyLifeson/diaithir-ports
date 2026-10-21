@@ -1,0 +1,12 @@
+name = "t_and_t-fabric-neoforge"
+filename = "t_and_t-fabric-neoforge-1.13.11.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7886/369/t_and_t-fabric-neoforge-1.13.11.jar"
+hash-format = "sha256"
+hash = "13b38f18cff6103b02f2b7d768b0d495edb8969df724e1538e13ce5bcc05f8be"
+
+[update.curseforge]
+file-id = 7886369
+project-id = 626761

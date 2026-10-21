@@ -1,0 +1,12 @@
+name = "mcw-furniture"
+filename = "mcw-furniture-3.4.2-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/936/mcw-furniture-3.4.2-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "f3c8abf38c6eda3127ee72db968c5b7f5880aab3aef3d4853eb2c45084b39227"
+
+[update.curseforge]
+file-id = 7809936
+project-id = 359540

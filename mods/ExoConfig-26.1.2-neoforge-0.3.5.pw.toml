@@ -1,0 +1,12 @@
+name = "ExoConfig"
+filename = "ExoConfig-26.1.2-neoforge-0.3.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QsXGZyhd/versions/GcgXGPpP/ExoConfig-26.1.2-neoforge-0.3.5.jar"
+hash-format = "sha256"
+hash = "652befa53e9ff237761ef0e2e242f9412dc50981ca50c236d6f3ae3bc5d26ba7"
+
+[update.modrinth]
+mod-id = "QsXGZyhd"
+version = "GcgXGPpP"

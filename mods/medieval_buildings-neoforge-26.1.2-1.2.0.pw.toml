@@ -1,0 +1,12 @@
+name = "medieval_buildings-neoforge"
+filename = "medieval_buildings-neoforge-26.1.2-1.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sc9lpPiU/versions/KgMnFK2S/medieval_buildings-neoforge-26.1.2-1.2.0.jar"
+hash-format = "sha256"
+hash = "9b7f91e56979aaac38eb1b00f35946ff0b108adf2e27ab0d8d4987e09b0157bc"
+
+[update.modrinth]
+mod-id = "sc9lpPiU"
+version = "KgMnFK2S"

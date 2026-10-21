@@ -1,0 +1,12 @@
+name = "refined-types"
+filename = "refined-types-26.1.2-1.0.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WvQIise1/versions/zlDx5Y9O/refined-types-26.1.2-1.0.2.jar"
+hash-format = "sha256"
+hash = "0c31b887d322183fdf15f167b7694ec492bdb63afd14b9887b7abfaab0ae70ef"
+
+[update.modrinth]
+mod-id = "WvQIise1"
+version = "zlDx5Y9O"

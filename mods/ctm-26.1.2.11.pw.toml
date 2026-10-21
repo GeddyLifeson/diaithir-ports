@@ -1,0 +1,12 @@
+name = "ctm"
+filename = "ctm-26.1.2.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QWVAzrUc/versions/mv2OqN0c/ctm-26.1.2.11.jar"
+hash-format = "sha256"
+hash = "8efeb6b3aef1c496467e1af83f481180d8fd51c4eca51e5836985420fcf2a738"
+
+[update.modrinth]
+mod-id = "QWVAzrUc"
+version = "mv2OqN0c"

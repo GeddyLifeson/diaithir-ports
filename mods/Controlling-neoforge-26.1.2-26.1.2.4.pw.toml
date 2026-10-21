@@ -1,0 +1,12 @@
+name = "Controlling-neoforge"
+filename = "Controlling-neoforge-26.1.2-26.1.2.4.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/xv94TkTM/versions/PXjsU1RU/Controlling-neoforge-26.1.2-26.1.2.4.jar"
+hash-format = "sha256"
+hash = "16289226a72a8709d77e2f477beaf276d4a90583efc712c6114811fd1a3a3f51"
+
+[update.modrinth]
+mod-id = "xv94TkTM"
+version = "PXjsU1RU"

@@ -1,0 +1,12 @@
+name = "simplemagnets"
+filename = "simplemagnets-1.1.12-neoforge-mc26.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8370/420/simplemagnets-1.1.12-neoforge-mc26.1.jar"
+hash-format = "sha256"
+hash = "6507558401e5f3b6f7e74b1d0a5a7a0373b8d9fc02ebb6dc5576e30f2dc6a31f"
+
+[update.curseforge]
+file-id = 8370420
+project-id = 394140

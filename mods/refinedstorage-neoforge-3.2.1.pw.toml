@@ -1,0 +1,12 @@
+name = "refinedstorage-neoforge"
+filename = "refinedstorage-neoforge-3.2.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8211/383/refinedstorage-neoforge-3.2.1.jar"
+hash-format = "sha256"
+hash = "689916dbd53de7215175cbe89c3904b326db3d28460827d8c03d2694e5762ccf"
+
+[update.curseforge]
+file-id = 8211383
+project-id = 243076

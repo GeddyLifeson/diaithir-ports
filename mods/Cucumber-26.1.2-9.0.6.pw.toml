@@ -1,0 +1,12 @@
+name = "Cucumber"
+filename = "Cucumber-26.1.2-9.0.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Rw1NrDzF/versions/ZkLAGLIj/Cucumber-26.1.2-9.0.6.jar"
+hash-format = "sha256"
+hash = "ad82d0a19f97086b8913029f2fbf10ad25ff591de4ac11e0776caa6dd1e8f9ed"
+
+[update.modrinth]
+mod-id = "Rw1NrDzF"
+version = "ZkLAGLIj"

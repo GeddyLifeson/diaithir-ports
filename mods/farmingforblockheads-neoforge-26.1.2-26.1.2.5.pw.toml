@@ -1,0 +1,12 @@
+name = "farmingforblockheads-neoforge"
+filename = "farmingforblockheads-neoforge-26.1.2-26.1.2.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8969/797/farmingforblockheads-neoforge-26.1.2-26.1.2.5.jar"
+hash-format = "sha256"
+hash = "80bee92c3e6fcb87d659ffe45baee08aad412e1ed4bf72e916b5aea7b3d389e4"
+
+[update.curseforge]
+file-id = 8969797
+project-id = 261924

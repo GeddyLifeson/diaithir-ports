@@ -1,0 +1,12 @@
+name = "cabletiers-neoforge"
+filename = "cabletiers-neoforge-26.1.2-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9115/770/cabletiers-neoforge-26.1.2-1.0.3.jar"
+hash-format = "sha256"
+hash = "9a14c886005b9f2476d56451c90ee126e787ed60e64c803e477ce744b4138829"
+
+[update.curseforge]
+file-id = 9115770
+project-id = 454382

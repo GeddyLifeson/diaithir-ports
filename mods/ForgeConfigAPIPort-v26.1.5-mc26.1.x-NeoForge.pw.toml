@@ -1,0 +1,12 @@
+name = "ForgeConfigAPIPort"
+filename = "ForgeConfigAPIPort-v26.1.5-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8218/662/ForgeConfigAPIPort-v26.1.5-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "2dbbd0a4f81ba8764b674af9a3521bc5a5f4f806e756133b3b99efadd031fc0b"
+
+[update.curseforge]
+file-id = 8218662
+project-id = 547434

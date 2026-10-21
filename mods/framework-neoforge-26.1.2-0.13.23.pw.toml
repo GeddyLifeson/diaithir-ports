@@ -1,0 +1,12 @@
+name = "framework-neoforge"
+filename = "framework-neoforge-26.1.2-0.13.23.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7964/506/framework-neoforge-26.1.2-0.13.23.jar"
+hash-format = "sha256"
+hash = "5c5a51df7236e456fe5e62c757839e3e13a34c8ba96c306139114f1a4b7a8b71"
+
+[update.curseforge]
+file-id = 7964506
+project-id = 549225

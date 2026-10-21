@@ -1,0 +1,12 @@
+name = "cupboard"
+filename = "cupboard-26.1-4.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8749/797/cupboard-26.1-4.1.jar"
+hash-format = "sha256"
+hash = "ad4317f0ca53e3c88503a413715aaa1c9ae6a4cec0a81fc74e31da5a7d49a521"
+
+[update.curseforge]
+file-id = 8749797
+project-id = 326652

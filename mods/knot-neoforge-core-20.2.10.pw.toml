@@ -1,0 +1,12 @@
+name = "knot-neoforge-core"
+filename = "knot-neoforge-core-20.2.10.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/V9WxBDCZ/versions/4hgg3iwP/knot-neoforge-core-20.2.10.jar"
+hash-format = "sha256"
+hash = "00f4b53d4a71770305bccd7c91e8ceebeaeea8765d237615eddd531cf546f18e"
+
+[update.modrinth]
+mod-id = "V9WxBDCZ"
+version = "4hgg3iwP"

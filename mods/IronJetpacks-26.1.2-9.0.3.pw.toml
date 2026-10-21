@@ -1,0 +1,12 @@
+name = "IronJetpacks"
+filename = "IronJetpacks-26.1.2-9.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/DWIEOniQ/versions/P27aMXqx/IronJetpacks-26.1.2-9.0.3.jar"
+hash-format = "sha256"
+hash = "cf8df68bbde624ade6b47733c30c4b34faee1e6f26ead4220b77cf32de9b01f8"
+
+[update.modrinth]
+mod-id = "DWIEOniQ"
+version = "P27aMXqx"

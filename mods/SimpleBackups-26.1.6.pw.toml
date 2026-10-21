@@ -1,0 +1,12 @@
+name = "SimpleBackups"
+filename = "SimpleBackups-26.1.6.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/fzSKSXVK/versions/CXxrVNUV/SimpleBackups-26.1.6.jar"
+hash-format = "sha256"
+hash = "bada710b2def5bfa96a28e7818629c09cb7ee4025897bccc8d52930eb0fa9c73"
+
+[update.modrinth]
+mod-id = "fzSKSXVK"
+version = "CXxrVNUV"

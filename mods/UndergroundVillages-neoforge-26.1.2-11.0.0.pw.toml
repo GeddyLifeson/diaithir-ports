@@ -1,0 +1,12 @@
+name = "UndergroundVillages-neoforge"
+filename = "UndergroundVillages-neoforge-26.1.2-11.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7936/881/UndergroundVillages-neoforge-26.1.2-11.0.0.jar"
+hash-format = "sha256"
+hash = "2ef3c4471ed91f99b8f8333461455558c4b6d69386dc92016347ed9ae7d2cf1a"
+
+[update.curseforge]
+file-id = 7936881
+project-id = 606989

@@ -1,0 +1,12 @@
+name = "productivefarming"
+filename = "productivefarming-26.1.2-0.13.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9128/676/productivefarming-26.1.2-0.13.0.jar"
+hash-format = "sha256"
+hash = "e02d8f265b385c4b9cc7b81c0f56627035a9736d0f71e31bb71b5d2d1a27e157"
+
+[update.curseforge]
+file-id = 9128676
+project-id = 944463

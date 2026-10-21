@@ -1,0 +1,12 @@
+name = "ToolBelt"
+filename = "ToolBelt-26.1.2-2.9.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7927/463/ToolBelt-26.1.2-2.9.5.jar"
+hash-format = "sha256"
+hash = "5df697905865a66f681c7c0f74cc4c44e5ed1b03c1a5bf64901b25d6e9c439e2"
+
+[update.curseforge]
+file-id = 7927463
+project-id = 260262

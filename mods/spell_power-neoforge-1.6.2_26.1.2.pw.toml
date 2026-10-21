@@ -1,0 +1,12 @@
+name = "spell_power-neoforge"
+filename = "spell_power-neoforge-1.6.2+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8ooWzSQP/versions/O9s0d40b/spell_power-neoforge-1.6.2%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "0f9cf2758a190d9975ecf64be1156b5a9b95c70c638eab35408d43b3d51d19e3"
+
+[update.modrinth]
+mod-id = "8ooWzSQP"
+version = "O9s0d40b"

@@ -1,0 +1,12 @@
+name = "AdditionalEnchantedMiner"
+filename = "AdditionalEnchantedMiner-26.1.2-neoforge-26.12.160.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/jhxX1zVW/versions/mK5rX5za/AdditionalEnchantedMiner-26.1.2-neoforge-26.12.160.jar"
+hash-format = "sha256"
+hash = "905b0c1ea644923cf97a8c55a5187233214ca274371a066439fd5a56ed0056e8"
+
+[update.modrinth]
+mod-id = "jhxX1zVW"
+version = "mK5rX5za"

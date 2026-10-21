@@ -1,0 +1,12 @@
+name = "ExtraDisks"
+filename = "ExtraDisks-26.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Tlo2tahX/versions/fx8hDg3a/ExtraDisks-26.1.1.jar"
+hash-format = "sha256"
+hash = "fe255ab9c87ae4d4b56b5a21c2c5f7161560ed35f5f76295a272261b9b0795e8"
+
+[update.modrinth]
+mod-id = "Tlo2tahX"
+version = "fx8hDg3a"

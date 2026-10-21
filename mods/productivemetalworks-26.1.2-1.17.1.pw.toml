@@ -1,0 +1,12 @@
+name = "productivemetalworks"
+filename = "productivemetalworks-26.1.2-1.17.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8764/957/productivemetalworks-26.1.2-1.17.1.jar"
+hash-format = "sha256"
+hash = "c3968070aba0b4d7ba793d952bd3cf8df52f2e0cfe575566c663e35472edb73c"
+
+[update.curseforge]
+file-id = 8764957
+project-id = 1184570

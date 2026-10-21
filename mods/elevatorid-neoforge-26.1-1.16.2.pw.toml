@@ -1,0 +1,12 @@
+name = "elevatorid-neoforge"
+filename = "elevatorid-neoforge-26.1-1.16.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7830/638/elevatorid-neoforge-26.1-1.16.2.jar"
+hash-format = "sha256"
+hash = "f367a6eb009c595fa051368d61473a028fa7f3e1c76d55300a06ab546d3b1bad"
+
+[update.curseforge]
+file-id = 7830638
+project-id = 250832

@@ -1,0 +1,12 @@
+name = "mcw-doors"
+filename = "mcw-doors-1.1.5-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/925/mcw-doors-1.1.5-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "17ae91a6552538d9b63a37321d42cc29d08ae8def75e2bfeb2dcb699644870f5"
+
+[update.curseforge]
+file-id = 7809925
+project-id = 378646

@@ -1,0 +1,12 @@
+name = "BiomesOPlenty-neoforge"
+filename = "BiomesOPlenty-neoforge-26.1.2-26.1.2.0.21.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8239/932/BiomesOPlenty-neoforge-26.1.2-26.1.2.0.21.jar"
+hash-format = "sha256"
+hash = "557a95bc2eb26a07b41d4e3961184cf9545a148e785f4c871b98e06aca660f0e"
+
+[update.curseforge]
+file-id = 8239932
+project-id = 220318

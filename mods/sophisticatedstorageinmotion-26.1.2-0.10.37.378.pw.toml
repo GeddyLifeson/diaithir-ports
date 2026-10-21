@@ -1,0 +1,12 @@
+name = "sophisticatedstorageinmotion"
+filename = "sophisticatedstorageinmotion-26.1.2-0.10.37.378.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9155/368/sophisticatedstorageinmotion-26.1.2-0.10.37.378.jar"
+hash-format = "sha256"
+hash = "7a56da85afdace031065a514a10dea8ca12cb266dbd8b57c103467d01499f599"
+
+[update.curseforge]
+file-id = 9155368
+project-id = 1166930

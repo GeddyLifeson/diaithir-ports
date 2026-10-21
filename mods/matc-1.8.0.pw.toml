@@ -1,0 +1,12 @@
+name = "matc"
+filename = "matc-1.8.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8219/089/matc-1.8.0.jar"
+hash-format = "sha256"
+hash = "e38d08da7a43249d281dbc4aabae37cca59e980a925c4a52f5a830950386c777"
+
+[update.curseforge]
+file-id = 8219089
+project-id = 299045

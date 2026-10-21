@@ -1,0 +1,12 @@
+name = "functionalstorage"
+filename = "functionalstorage-26.1.2-1.6.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9164/277/functionalstorage-26.1.2-1.6.3.jar"
+hash-format = "sha256"
+hash = "2bc725766abf275f4b421bd17574aac46b663905250ac32492b1173e579340e4"
+
+[update.curseforge]
+file-id = 9164277
+project-id = 556861

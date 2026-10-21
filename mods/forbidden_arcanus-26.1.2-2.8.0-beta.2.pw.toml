@@ -1,0 +1,12 @@
+name = "forbidden_arcanus"
+filename = "forbidden_arcanus-26.1.2-2.8.0-beta.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/MdlnLS7Q/versions/sJkHLj3l/forbidden_arcanus-26.1.2-2.8.0-beta.2.jar"
+hash-format = "sha256"
+hash = "237adb29214982835c8d776b48ffa8fd5c06b7cda328bd106e56fc6c941b5242"
+
+[update.modrinth]
+mod-id = "MdlnLS7Q"
+version = "sJkHLj3l"

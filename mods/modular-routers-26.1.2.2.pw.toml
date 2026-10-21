@@ -1,0 +1,12 @@
+name = "modular-routers"
+filename = "modular-routers-26.1.2.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/EuTS81Z3/versions/Rn0lLXiD/modular-routers-26.1.2.2.jar"
+hash-format = "sha256"
+hash = "525bcd265b3dd878193882c70db5d18f553380678dad59f60e424d8e7ff60cb9"
+
+[update.modrinth]
+mod-id = "EuTS81Z3"
+version = "Rn0lLXiD"

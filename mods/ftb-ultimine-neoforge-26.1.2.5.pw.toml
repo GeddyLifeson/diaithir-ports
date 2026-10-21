@@ -1,0 +1,12 @@
+name = "ftb-ultimine-neoforge"
+filename = "ftb-ultimine-neoforge-26.1.2.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8231/335/ftb-ultimine-neoforge-26.1.2.5.jar"
+hash-format = "sha256"
+hash = "2c5169a6f082338359f8c1249288a8420a87f9cdeec96fd1c2d983b17236c88f"
+
+[update.curseforge]
+file-id = 8231335
+project-id = 386134

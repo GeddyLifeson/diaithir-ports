@@ -1,0 +1,12 @@
+name = "getittogetherdrops-neoforge"
+filename = "getittogetherdrops-neoforge-26.1.1-1.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7884/707/getittogetherdrops-neoforge-26.1.1-1.5.jar"
+hash-format = "sha256"
+hash = "fc9c0b5ca81feb7a2c6f92fecbad0bf42f6d3b11c5d24ff3d1a2648457413d07"
+
+[update.curseforge]
+file-id = 7884707
+project-id = 411045

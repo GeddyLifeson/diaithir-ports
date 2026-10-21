@@ -1,0 +1,12 @@
+name = "YungsBetterJungleTemples"
+filename = "YungsBetterJungleTemples-26.1.2-NeoForge-4.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/z9Ve58Ih/versions/ECcz9HDe/YungsBetterJungleTemples-26.1.2-NeoForge-4.1.1.jar"
+hash-format = "sha256"
+hash = "bfa0788c38e7096d4961aa0d1e86d3a6e7213b3333f406bbbbec37e480e3382d"
+
+[update.modrinth]
+mod-id = "z9Ve58Ih"
+version = "ECcz9HDe"

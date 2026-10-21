@@ -1,0 +1,12 @@
+name = "Glodium"
+filename = "Glodium-26.1-1.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/UhW5uCKw/versions/t0p0CUPy/Glodium-26.1-1.2-neoforge.jar"
+hash-format = "sha256"
+hash = "522b6898cf76f3636cdd1b71ac55ce1eb7d0b47b793c5cb146374759b1d4a107"
+
+[update.modrinth]
+mod-id = "UhW5uCKw"
+version = "t0p0CUPy"

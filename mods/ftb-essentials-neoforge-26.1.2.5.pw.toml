@@ -1,0 +1,12 @@
+name = "ftb-essentials-neoforge"
+filename = "ftb-essentials-neoforge-26.1.2.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9068/345/ftb-essentials-neoforge-26.1.2.5.jar"
+hash-format = "sha256"
+hash = "6c7d1c092177b95279a51b1d86e6954b24f0e5a5db024e77fce56e5b38c886db"
+
+[update.curseforge]
+file-id = 9068345
+project-id = 410811

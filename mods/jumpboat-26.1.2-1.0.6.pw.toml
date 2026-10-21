@@ -1,0 +1,12 @@
+name = "jumpboat"
+filename = "jumpboat-26.1.2-1.0.6.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7931/619/jumpboat-26.1.2-1.0.6.jar"
+hash-format = "sha256"
+hash = "d7726ccab025ecf7b7767e5a12c4afd3b981b26dcce9eacd6b0c3387353f44d6"
+
+[update.curseforge]
+file-id = 7931619
+project-id = 542110

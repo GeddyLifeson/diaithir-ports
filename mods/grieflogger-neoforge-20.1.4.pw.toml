@@ -1,0 +1,12 @@
+name = "grieflogger-neoforge"
+filename = "grieflogger-neoforge-20.1.4.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/8oGVUFuX/versions/P8pPh0Yw/grieflogger-neoforge-20.1.4.jar"
+hash-format = "sha256"
+hash = "1d5a8286a519d2f25ceef6d73cd6f7674f8b2aebda22babb8194bbf325b0a436"
+
+[update.modrinth]
+mod-id = "8oGVUFuX"
+version = "P8pPh0Yw"

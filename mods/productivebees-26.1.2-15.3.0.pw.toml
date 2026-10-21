@@ -1,0 +1,12 @@
+name = "productivebees"
+filename = "productivebees-26.1.2-15.3.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9124/455/productivebees-26.1.2-15.3.0.jar"
+hash-format = "sha256"
+hash = "d6e1582f76f5914f6cf5ff4abf7e90edbd4feaf3a751d0a333f6fcfcdf19df50"
+
+[update.curseforge]
+file-id = 9124455
+project-id = 377897

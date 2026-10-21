@@ -1,0 +1,12 @@
+name = "mcw-fences"
+filename = "mcw-fences-1.2.1-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/939/mcw-fences-1.2.1-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "f48d53e896f6344b6424afe2f94807eeb8826b9b523bd076ddf10719c4e49cbb"
+
+[update.curseforge]
+file-id = 7809939
+project-id = 453925

@@ -1,0 +1,12 @@
+name = "morered"
+filename = "morered-26.1.2.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8415/352/morered-26.1.2.3.jar"
+hash-format = "sha256"
+hash = "23e355981d95da057f6ee8c5ba4c939c824d84a009ad3b487447a3f4b8ac55d3"
+
+[update.curseforge]
+file-id = 8415352
+project-id = 387638

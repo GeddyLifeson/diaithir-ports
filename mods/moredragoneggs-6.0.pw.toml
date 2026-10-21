@@ -1,0 +1,12 @@
+name = "moredragoneggs"
+filename = "moredragoneggs-6.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7945/781/moredragoneggs-6.0.jar"
+hash-format = "sha256"
+hash = "844256efc5cc2688cbb85ba80518dc58ce4d2bcd9babaad633c15260315a873b"
+
+[update.curseforge]
+file-id = 7945781
+project-id = 358700

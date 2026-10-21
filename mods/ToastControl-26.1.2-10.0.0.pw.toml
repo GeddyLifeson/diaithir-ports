@@ -1,0 +1,12 @@
+name = "ToastControl"
+filename = "ToastControl-26.1.2-10.0.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/CnOG2wlS/versions/V1YU5Xyx/ToastControl-26.1.2-10.0.0.jar"
+hash-format = "sha256"
+hash = "49360b62f67194edac35342fc44d3413ae84392cafe341ba4de1ebac6fa95242"
+
+[update.modrinth]
+mod-id = "CnOG2wlS"
+version = "V1YU5Xyx"

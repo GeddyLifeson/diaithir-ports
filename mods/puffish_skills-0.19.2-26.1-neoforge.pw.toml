@@ -1,0 +1,12 @@
+name = "puffish_skills"
+filename = "puffish_skills-0.19.2-26.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9101/394/puffish_skills-0.19.2-26.1-neoforge.jar"
+hash-format = "sha256"
+hash = "ff23330c554f65e3fd9cf348e4f1b7893dc2c9430c40cb6dbf95599728804a55"
+
+[update.curseforge]
+file-id = 9101394
+project-id = 835091

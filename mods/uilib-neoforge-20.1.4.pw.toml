@@ -1,0 +1,12 @@
+name = "uilib-neoforge"
+filename = "uilib-neoforge-20.1.4.jar"
+side = "client"
+
+[download]
+url = "https://edge.forgecdn.net/files/8371/384/uilib-neoforge-20.1.4.jar"
+hash-format = "sha256"
+hash = "c7fe250bbbcb4abd4e4b92f31e37f52bb99afd5b0c44c99108b21e14b83d5441"
+
+[update.curseforge]
+project-id = 933200
+file-id = 8371384

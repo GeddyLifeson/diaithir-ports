@@ -1,0 +1,12 @@
+name = "packetfixer-neoforge"
+filename = "packetfixer-neoforge-3.3.4-26.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7812/297/packetfixer-neoforge-3.3.4-26.1.jar"
+hash-format = "sha256"
+hash = "20b292a42573995efb6b1842114476dd934c3b8edfe478a0af3327a21419c69a"
+
+[update.curseforge]
+file-id = 7812297
+project-id = 689467

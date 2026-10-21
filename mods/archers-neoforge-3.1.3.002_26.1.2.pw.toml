@@ -1,0 +1,12 @@
+name = "archers-neoforge"
+filename = "archers-neoforge-3.1.3.002+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QgooUXAJ/versions/P6oURMhk/archers-neoforge-3.1.3.002%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "ec1c9f213a3c9b4725ebfdd471b9ce54e2be448dec4e840e28fa3850c2e0087f"
+
+[update.modrinth]
+mod-id = "QgooUXAJ"
+version = "P6oURMhk"

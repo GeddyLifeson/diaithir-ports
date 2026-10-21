@@ -1,0 +1,12 @@
+name = "silentgems"
+filename = "silentgems-26.1.2-neoforge-5.1.4.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8103/909/silentgems-26.1.2-neoforge-5.1.4.jar"
+hash-format = "sha256"
+hash = "ea09456e5e30721fefbf4c65c6583f806679ceb3bbc529a57a4d1b66fc70ed1e"
+
+[update.curseforge]
+file-id = 8103909
+project-id = 220311

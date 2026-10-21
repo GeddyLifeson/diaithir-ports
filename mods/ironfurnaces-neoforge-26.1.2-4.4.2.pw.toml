@@ -1,0 +1,12 @@
+name = "ironfurnaces-neoforge"
+filename = "ironfurnaces-neoforge-26.1.2-4.4.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8321/123/ironfurnaces-neoforge-26.1.2-4.4.2.jar"
+hash-format = "sha256"
+hash = "5f15a230b541c75a8d5992f845488ca4137562866dab3af3493eada2ed8f426d"
+
+[update.curseforge]
+file-id = 8321123
+project-id = 237664

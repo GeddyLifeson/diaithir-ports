@@ -1,0 +1,12 @@
+name = "deimos"
+filename = "deimos-26.1.2-neoforge-2.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WQaxNzFg/versions/7mbGgUSb/deimos-26.1.2-neoforge-2.7.jar"
+hash-format = "sha256"
+hash = "e3e1082545ddd1487db56d796252f44ea471f2a4607718f6223273f754c4081e"
+
+[update.modrinth]
+mod-id = "WQaxNzFg"
+version = "7mbGgUSb"

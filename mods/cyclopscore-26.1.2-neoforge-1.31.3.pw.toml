@@ -1,0 +1,12 @@
+name = "cyclopscore"
+filename = "cyclopscore-26.1.2-neoforge-1.31.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Z9DM0LJ4/versions/ayu2xhVV/cyclopscore-26.1.2-neoforge-1.31.3.jar"
+hash-format = "sha256"
+hash = "6d44cc8d4611f06a9b86d3df794cc01a325e5349cbe9c64682d730f5d70622b0"
+
+[update.modrinth]
+mod-id = "Z9DM0LJ4"
+version = "ayu2xhVV"

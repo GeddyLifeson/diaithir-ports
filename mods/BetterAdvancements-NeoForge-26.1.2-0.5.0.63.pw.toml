@@ -1,0 +1,12 @@
+name = "BetterAdvancements-NeoForge"
+filename = "BetterAdvancements-NeoForge-26.1.2-0.5.0.63.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/Q2OqKxDG/versions/pll7WOgl/BetterAdvancements-NeoForge-26.1.2-0.5.0.63.jar"
+hash-format = "sha256"
+hash = "5ee4b839a6a72d63549369b50a26dd91c9850b3b2fb423e7842ab711946a3382"
+
+[update.modrinth]
+mod-id = "Q2OqKxDG"
+version = "pll7WOgl"

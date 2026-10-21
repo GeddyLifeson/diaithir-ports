@@ -1,0 +1,12 @@
+name = "potentials-neoforge"
+filename = "potentials-neoforge-26.1.2-0.11.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/J9pKOkxP/versions/yyUOAD5U/potentials-neoforge-26.1.2-0.11.1.jar"
+hash-format = "sha256"
+hash = "70b68390b9dc86c48128cbcb8883d31c63cc8ba6f60f61e534acd3fa106d8b32"
+
+[update.modrinth]
+mod-id = "J9pKOkxP"
+version = "yyUOAD5U"

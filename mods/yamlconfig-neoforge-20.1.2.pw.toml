@@ -1,0 +1,12 @@
+name = "yamlconfig-neoforge"
+filename = "yamlconfig-neoforge-20.1.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8188/610/yamlconfig-neoforge-20.1.2.jar"
+hash-format = "sha256"
+hash = "d3232f50c86983308b5c755b45f8617aae558315df04960431264599fcadf0bd"
+
+[update.curseforge]
+file-id = 8188610
+project-id = 1128669

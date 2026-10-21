@@ -1,0 +1,12 @@
+name = "epherolib-neoforge"
+filename = "epherolib-neoforge-26.1-1.3.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7937/982/epherolib-neoforge-26.1-1.3.0.jar"
+hash-format = "sha256"
+hash = "209dd8b39fc56ca251963c93060f688683f43706c007653d37fd2a8273763069"
+
+[update.curseforge]
+file-id = 7937982
+project-id = 885449

@@ -1,0 +1,12 @@
+name = "reliquary"
+filename = "reliquary-26.1.2-2.0.92.1563.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8661/858/reliquary-26.1.2-2.0.92.1563.jar"
+hash-format = "sha256"
+hash = "c7ed0c327ea9487c24eb1110aa81226db7ce036d6c7cd86efaadce86e6166097"
+
+[update.curseforge]
+file-id = 8661858
+project-id = 241319

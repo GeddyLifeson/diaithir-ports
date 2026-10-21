@@ -1,0 +1,12 @@
+name = "sgearmetalworks"
+filename = "sgearmetalworks-26.1.2-1.6.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8764/961/sgearmetalworks-26.1.2-1.6.0.jar"
+hash-format = "sha256"
+hash = "816ec8f0fadbc5de26bb2cca86b84cee78913f2634b1a93a57a2b1e46a72d6d6"
+
+[update.curseforge]
+file-id = 8764961
+project-id = 1199188

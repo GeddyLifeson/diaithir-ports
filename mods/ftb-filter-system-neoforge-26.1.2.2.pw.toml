@@ -1,0 +1,12 @@
+name = "ftb-filter-system-neoforge"
+filename = "ftb-filter-system-neoforge-26.1.2.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8300/191/ftb-filter-system-neoforge-26.1.2.2.jar"
+hash-format = "sha256"
+hash = "7c3f61db2858c0ae6fbc351a569018137a1c8831766da2f163b2e3a69e814a2d"
+
+[update.curseforge]
+file-id = 8300191
+project-id = 943925

@@ -1,0 +1,12 @@
+name = "agritechevolved"
+filename = "agritechevolved-2.2.0.6+neoforge-mc26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9155/589/agritechevolved-2.2.0.6%2Bneoforge-mc26.1.2.jar"
+hash-format = "sha256"
+hash = "af8f6960476f08bb3d650c86dc1cb61f904fea804577103588aeb4466d7791da"
+
+[update.curseforge]
+file-id = 9155589
+project-id = 1287394

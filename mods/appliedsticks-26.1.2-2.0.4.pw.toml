@@ -1,0 +1,12 @@
+name = "appliedsticks"
+filename = "appliedsticks-26.1.2-2.0.4.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8642/543/appliedsticks-26.1.2-2.0.4.jar"
+hash-format = "sha256"
+hash = "443e2f6599326aa72e7ac814dcb0b2b04cd9bb9ab145233cbd163bce859c3779"
+
+[update.curseforge]
+file-id = 8642543
+project-id = 1452253

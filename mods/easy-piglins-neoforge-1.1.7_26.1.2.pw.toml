@@ -1,0 +1,12 @@
+name = "easy-piglins-neoforge"
+filename = "easy-piglins-neoforge-1.1.7+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/l6n94pax/versions/xfaJhTPC/easy-piglins-neoforge-1.1.7%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "d1106966cc5c9a8903979ef1f216341883a0ea61b63d6e5e28ef477b32d775c0"
+
+[update.modrinth]
+mod-id = "l6n94pax"
+version = "xfaJhTPC"

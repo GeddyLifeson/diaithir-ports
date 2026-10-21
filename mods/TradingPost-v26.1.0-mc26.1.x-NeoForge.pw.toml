@@ -1,0 +1,12 @@
+name = "TradingPost"
+filename = "TradingPost-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/8pcjMDgj/versions/KyKEGOeC/TradingPost-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "406d32da7baea21ed193c3f77387b4c18deb5ed2ac52aed28d12c4f3a7003482"
+
+[update.modrinth]
+mod-id = "8pcjMDgj"
+version = "KyKEGOeC"

@@ -1,0 +1,12 @@
+name = "croptopia-neoforge"
+filename = "croptopia-neoforge-26.1.2-4.3.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8908/643/croptopia-neoforge-26.1.2-4.3.2.jar"
+hash-format = "sha256"
+hash = "b1b47117d91f4aabd7732600660ebb56ade6a3d258f1e3f6d7a1621e41c22fc3"
+
+[update.curseforge]
+file-id = 8908643
+project-id = 415438

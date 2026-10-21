@@ -1,0 +1,12 @@
+name = "MysticalCustomization"
+filename = "MysticalCustomization-26.1.2-7.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/lNK9A4rh/versions/sVOE9EtV/MysticalCustomization-26.1.2-7.0.0.jar"
+hash-format = "sha256"
+hash = "ea7f648450f980c1535a5b8d90105e0eff4eea4affbec827ffef61efc10d0814"
+
+[update.modrinth]
+mod-id = "lNK9A4rh"
+version = "sVOE9EtV"

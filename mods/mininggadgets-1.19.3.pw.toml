@@ -1,0 +1,12 @@
+name = "mininggadgets"
+filename = "mininggadgets-1.19.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8417/455/mininggadgets-1.19.3.jar"
+hash-format = "sha256"
+hash = "40423957c456cd17e833413baf72749cdf9ff72ed443ce2141bb9467c55811fb"
+
+[update.curseforge]
+file-id = 8417455
+project-id = 351748

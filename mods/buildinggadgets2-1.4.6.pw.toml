@@ -1,0 +1,12 @@
+name = "buildinggadgets"
+filename = "buildinggadgets2-1.4.6.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7964/119/buildinggadgets2-1.4.6.jar"
+hash-format = "sha256"
+hash = "67c02d3a822ddd785692c581ae05b93a1b88767846bb6c89d20498b5598b72ca"
+
+[update.curseforge]
+file-id = 7964119
+project-id = 298187

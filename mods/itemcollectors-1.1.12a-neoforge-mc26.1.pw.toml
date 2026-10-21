@@ -1,0 +1,12 @@
+name = "itemcollectors"
+filename = "itemcollectors-1.1.12a-neoforge-mc26.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8393/515/itemcollectors-1.1.12a-neoforge-mc26.1.jar"
+hash-format = "sha256"
+hash = "40385594f4de64b3e633b248ca0fbaec32b13ff92bc93e2d92be533399574717"
+
+[update.curseforge]
+file-id = 8393515
+project-id = 395620

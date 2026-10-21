@@ -1,0 +1,12 @@
+name = "solcarrot"
+filename = "solcarrot-26.1-1.19.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7810/780/solcarrot-26.1-1.19.0.jar"
+hash-format = "sha256"
+hash = "fae331045f5729808641891dee1d312a6bdc7a85312ef0a05ecff42efacd2b0d"
+
+[update.curseforge]
+file-id = 7810780
+project-id = 277616

@@ -1,0 +1,12 @@
+name = "irons_lib"
+filename = "irons_lib-26.1.2-2.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9nfaJPtX/versions/jckjV2ei/irons_lib-26.1.2-2.2.0.jar"
+hash-format = "sha256"
+hash = "da9807860837fae923b5e2a91fd42bb1168c62fa922e80f0b6459a7c043bc173"
+
+[update.modrinth]
+mod-id = "9nfaJPtX"
+version = "jckjV2ei"

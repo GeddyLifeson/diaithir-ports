@@ -1,0 +1,12 @@
+name = "twilightforest"
+filename = "twilightforest-26.1.2-4.9.3817-universal.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9217/704/twilightforest-26.1.2-4.9.3817-universal.jar"
+hash-format = "sha256"
+hash = "21218d758d5a9f7bee04cebdbb96bada439794242a77bb28b0983eae21c72e50"
+
+[update.curseforge]
+project-id = 227639
+file-id = 9217704

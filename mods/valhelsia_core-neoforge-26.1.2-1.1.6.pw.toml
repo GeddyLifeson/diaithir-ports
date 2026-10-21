@@ -1,0 +1,12 @@
+name = "valhelsia_core-neoforge"
+filename = "valhelsia_core-neoforge-26.1.2-1.1.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HsdNFinx/versions/l4EKYaUc/valhelsia_core-neoforge-26.1.2-1.1.6.jar"
+hash-format = "sha256"
+hash = "d130c1e93f019c8dac5e3704ad299033f24b030681c1f8afe3127716c03b1446"
+
+[update.modrinth]
+mod-id = "HsdNFinx"
+version = "l4EKYaUc"

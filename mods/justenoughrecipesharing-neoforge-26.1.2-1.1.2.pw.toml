@@ -1,0 +1,12 @@
+name = "justenoughrecipesharing-neoforge"
+filename = "justenoughrecipesharing-neoforge-26.1.2-1.1.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8570/331/justenoughrecipesharing-neoforge-26.1.2-1.1.2.jar"
+hash-format = "sha256"
+hash = "f5f08427fc8e1ede0a3bae973cb51a1b74f7444478353eaa04f30eb6dd8f67d4"
+
+[update.curseforge]
+file-id = 8570331
+project-id = 1511109

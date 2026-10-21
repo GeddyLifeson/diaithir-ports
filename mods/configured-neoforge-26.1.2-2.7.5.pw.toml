@@ -1,0 +1,12 @@
+name = "configured-neoforge"
+filename = "configured-neoforge-26.1.2-2.7.5.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7943/180/configured-neoforge-26.1.2-2.7.5.jar"
+hash-format = "sha256"
+hash = "2cdba40e2b06429a5b705c5aa7e54aaac466325b62bad34ad8eed76cee17e8ff"
+
+[update.curseforge]
+file-id = 7943180
+project-id = 457570

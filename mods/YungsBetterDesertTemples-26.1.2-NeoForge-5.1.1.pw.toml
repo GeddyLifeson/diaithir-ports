@@ -1,0 +1,12 @@
+name = "YungsBetterDesertTemples"
+filename = "YungsBetterDesertTemples-26.1.2-NeoForge-5.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/XNlO7sBv/versions/c5C5dZJ8/YungsBetterDesertTemples-26.1.2-NeoForge-5.1.1.jar"
+hash-format = "sha256"
+hash = "7b010dbce306694ef746fd112329bc1650b952fb8f75ff1dcb9949f7a9e0df24"
+
+[update.modrinth]
+mod-id = "XNlO7sBv"
+version = "c5C5dZJ8"

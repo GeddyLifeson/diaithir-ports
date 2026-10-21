@@ -1,0 +1,12 @@
+name = "mcw-paths"
+filename = "mcw-paths-1.1.1-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/974/mcw-paths-1.1.1-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "b690d1cc8ed79847ff80cd229e0f2986ee53bfc308520de32984e10466cb01d3"
+
+[update.curseforge]
+file-id = 7809974
+project-id = 629153

@@ -1,0 +1,12 @@
+name = "FastWorkbench"
+filename = "FastWorkbench-26.1.2-10.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8171/004/FastWorkbench-26.1.2-10.0.0.jar"
+hash-format = "sha256"
+hash = "c5542f1ab607966bb6db55fa4b579f7798043ffb3e761a637390d129d929a4ac"
+
+[update.curseforge]
+file-id = 8171004
+project-id = 288885

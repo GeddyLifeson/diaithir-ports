@@ -1,0 +1,12 @@
+name = "[Neoforge]ctov"
+filename = "[Neoforge]ctov-26-4.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8547/422/%5BNeoforge%5Dctov-26-4.0.0.jar"
+hash-format = "sha256"
+hash = "b13869d9ac397eb9afec8de21f153a3bf12a083fa6bc253d457643fe11767033"
+
+[update.curseforge]
+file-id = 8547422
+project-id = 623908

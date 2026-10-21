@@ -1,0 +1,12 @@
+name = "mcw-bridges"
+filename = "mcw-bridges-3.1.2-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/923/mcw-bridges-3.1.2-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "549b356c503647fbbe0406d6bab4c8ba9ba5286471ee470a4afd831204574c90"
+
+[update.curseforge]
+file-id = 7809923
+project-id = 351725

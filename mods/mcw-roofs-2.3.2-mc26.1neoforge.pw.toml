@@ -1,0 +1,12 @@
+name = "mcw-roofs"
+filename = "mcw-roofs-2.3.2-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/972/mcw-roofs-2.3.2-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "ba4bcdbfab3c0330f919ff92f22a9aa4e7808afca43f4a24f086ce24ee04700f"
+
+[update.curseforge]
+file-id = 7809972
+project-id = 352039

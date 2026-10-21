@@ -1,0 +1,12 @@
+name = "nomorecraters"
+filename = "nomorecraters-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8048/925/nomorecraters-1.0.0.jar"
+hash-format = "sha256"
+hash = "d1df3fc2aa24d4732069e249ae78ebb0452cf1d9e8dbb1ba48e0f61fffc89076"
+
+[update.curseforge]
+file-id = 8048925
+project-id = 1535626

@@ -1,0 +1,12 @@
+name = "ExtremeSoundMuffler"
+filename = "ExtremeSoundMuffler-3.58.1_NeoForge-26.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/5IIKsxiL/versions/iPv2kvbH/ExtremeSoundMuffler-3.58.1_NeoForge-26.1.jar"
+hash-format = "sha256"
+hash = "100feaf657c4fe0390a10a6469afb23a5086b9802f54ba871fc9e45a9989e781"
+
+[update.modrinth]
+mod-id = "5IIKsxiL"
+version = "iPv2kvbH"

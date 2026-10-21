@@ -1,0 +1,12 @@
+name = "utilitarian"
+filename = "utilitarian-26.1.2-0.22.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8216/931/utilitarian-26.1.2-0.22.0.jar"
+hash-format = "sha256"
+hash = "5a235c4af817ac64ab6a05531045537697ae264bd0c7f2dd65b28e98263c80e9"
+
+[update.curseforge]
+file-id = 8216931
+project-id = 929559

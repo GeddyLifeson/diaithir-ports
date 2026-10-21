@@ -1,0 +1,12 @@
+name = "easy-villagers-neoforge"
+filename = "easy-villagers-neoforge-1.1.47+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Kaov2qgi/versions/TeB6839y/easy-villagers-neoforge-1.1.47%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "0265c9e35322583f50e4b81b19f277f1c8d7320228de6c916886c8e67c39dae6"
+
+[update.modrinth]
+mod-id = "Kaov2qgi"
+version = "TeB6839y"

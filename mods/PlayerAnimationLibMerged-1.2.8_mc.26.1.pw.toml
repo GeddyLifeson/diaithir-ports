@@ -1,0 +1,12 @@
+name = "PlayerAnimationLibMerged"
+filename = "PlayerAnimationLibMerged-1.2.8+mc.26.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ha1mEyJS/versions/QmAdOGjK/PlayerAnimationLibMerged-1.2.8%2Bmc.26.1.jar"
+hash-format = "sha256"
+hash = "6d863d3a5e81ba59b004342756e7bd50720058d16e113e87eb97603b523dfb51"
+
+[update.modrinth]
+mod-id = "ha1mEyJS"
+version = "QmAdOGjK"

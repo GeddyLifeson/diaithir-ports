@@ -1,0 +1,12 @@
+name = "MoogsNetherStructures-universal"
+filename = "MoogsNetherStructures-universal-1.21-3.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nGUXvjTa/versions/OLTqXnsN/MoogsNetherStructures-universal-1.21-3.1.1.jar"
+hash-format = "sha256"
+hash = "46e0506264bd66df1ec6fb031f75d6b7f4660ad5f874b5df446dc1a3beebe7f6"
+
+[update.modrinth]
+mod-id = "nGUXvjTa"
+version = "OLTqXnsN"

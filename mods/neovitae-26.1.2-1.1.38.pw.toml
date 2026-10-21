@@ -1,0 +1,12 @@
+name = "neovitae"
+filename = "neovitae-26.1.2-1.1.38.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/rvaW4C93/versions/hTUXIyo0/neovitae-26.1.2-1.1.38.jar"
+hash-format = "sha256"
+hash = "ff64cbb7046569472bdb28f19fd2af84b485617135290d99fb7153b9584aa0cb"
+
+[update.modrinth]
+mod-id = "rvaW4C93"
+version = "hTUXIyo0"

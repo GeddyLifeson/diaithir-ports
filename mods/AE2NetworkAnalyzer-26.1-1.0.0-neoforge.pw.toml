@@ -1,0 +1,12 @@
+name = "AE"
+filename = "AE2NetworkAnalyzer-26.1-1.0.0-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8127/472/AE2NetworkAnalyzer-26.1-1.0.0-neoforge.jar"
+hash-format = "sha256"
+hash = "ef3c4c7c326e429d725108226299da0fe91bbff0bf9fe8fe2bfc287a2c66fca3"
+
+[update.curseforge]
+file-id = 8127472
+project-id = 961856

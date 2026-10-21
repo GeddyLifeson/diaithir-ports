@@ -1,0 +1,12 @@
+name = "tlc-neoforge"
+filename = "tlc-neoforge-26.1-2.1.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8066/461/tlc-neoforge-26.1-2.1.1.jar"
+hash-format = "sha256"
+hash = "f295acadfe1e56fc8fb150d4e823d9da632c8dfc3b5e8c5dfc92a13331ed5de2"
+
+[update.curseforge]
+file-id = 8066461
+project-id = 687118

@@ -1,0 +1,8 @@
+name = "JustEnoughProfessions-neoforge"
+filename = "JustEnoughProfessions-neoforge-26.1.2-11.0.2.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7966/706/JustEnoughProfessions-neoforge-26.1.2-11.0.2.jar"
+hash-format = "sha256"
+hash = "b0103242eef5c20e802f8a46ce8f408032f859406aa0f329eed9105f9a419f12"

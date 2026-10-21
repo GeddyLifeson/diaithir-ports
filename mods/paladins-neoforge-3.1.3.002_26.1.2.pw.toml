@@ -1,0 +1,12 @@
+name = "paladins-neoforge"
+filename = "paladins-neoforge-3.1.3.002+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FxXkHaLe/versions/85ctJoZB/paladins-neoforge-3.1.3.002%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "b28276744c5d41fa3a9b62ee20584c617b1a30962f19152d2fecf4b5e111bf59"
+
+[update.modrinth]
+mod-id = "FxXkHaLe"
+version = "85ctJoZB"

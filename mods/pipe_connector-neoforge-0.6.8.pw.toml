@@ -1,0 +1,12 @@
+name = "pipe_connector-neoforge"
+filename = "pipe_connector-neoforge-0.6.8.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/XrnRgQJw/versions/1M28AM7V/pipe_connector-neoforge-0.6.8.jar"
+hash-format = "sha256"
+hash = "d266a139569808910f1f8b155950b7e6b05f8b55e4b2cbc6e40bc11b4f45365e"
+
+[update.modrinth]
+mod-id = "XrnRgQJw"
+version = "1M28AM7V"

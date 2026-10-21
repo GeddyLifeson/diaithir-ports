@@ -1,0 +1,12 @@
+name = "mcw-stairs"
+filename = "mcw-stairs-1.0.2-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/966/mcw-stairs-1.0.2-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "80c94be8f8514fa51201c001236a6aa6a9274564d2dc1ef3ffd312c1c230de3e"
+
+[update.curseforge]
+file-id = 7809966
+project-id = 1119394

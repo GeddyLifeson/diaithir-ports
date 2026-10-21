@@ -1,0 +1,12 @@
+name = "classicpipes-neoforge"
+filename = "classicpipes-neoforge-26.1.2-1.1.7.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8668/755/classicpipes-neoforge-26.1.2-1.1.7.jar"
+hash-format = "sha256"
+hash = "81d5874d9cc27324260942d712ce1f089a8d7b3e82ef87b5384511355c7a77b3"
+
+[update.curseforge]
+file-id = 8668755
+project-id = 1351745

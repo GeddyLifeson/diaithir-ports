@@ -1,0 +1,12 @@
+name = "yeetusexperimentus-neoforge"
+filename = "yeetusexperimentus-neoforge-99.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7830/957/yeetusexperimentus-neoforge-99.0.0.jar"
+hash-format = "sha256"
+hash = "07b036a10cba8c9752e5791920b63f106620a183431d5bd1dc2129a5bc05aacd"
+
+[update.curseforge]
+file-id = 7830957
+project-id = 635427

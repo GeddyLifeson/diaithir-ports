@@ -1,0 +1,13 @@
+name = "Diaithir"
+author = "Marlon Lee"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "9ce81e25db4e62cf4bd9ae455287d150aae8ff8a5a9fe243b0278268188c58f6"
+
+[versions]
+minecraft = "26.1.2"
+neoforge = "26.1.2.116"

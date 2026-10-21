@@ -1,0 +1,12 @@
+name = "BadOptimizations"
+filename = "BadOptimizations-2.4.1-26.1-forge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/g96Z4WVZ/versions/MZd0Pqsf/BadOptimizations-2.4.1-26.1-forge.jar"
+hash-format = "sha256"
+hash = "210a6bbd2d3a4f65748fa56d4559efeb9939fea0876ca2882dd49323b6e2a1c4"
+
+[update.modrinth]
+mod-id = "g96Z4WVZ"
+version = "MZd0Pqsf"

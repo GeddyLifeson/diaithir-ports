@@ -1,0 +1,12 @@
+name = "sophisticatedstorage"
+filename = "sophisticatedstorage-26.1.2-1.5.120.2173.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9154/789/sophisticatedstorage-26.1.2-1.5.120.2173.jar"
+hash-format = "sha256"
+hash = "4f21b34527735b38132c270a35c4a26671060371a28ac6ac25d84d8c8c721516"
+
+[update.curseforge]
+file-id = 9154789
+project-id = 619320

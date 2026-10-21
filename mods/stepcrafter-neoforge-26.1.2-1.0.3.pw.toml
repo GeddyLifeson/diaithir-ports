@@ -1,0 +1,12 @@
+name = "stepcrafter-neoforge"
+filename = "stepcrafter-neoforge-26.1.2-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8822/030/stepcrafter-neoforge-26.1.2-1.0.3.jar"
+hash-format = "sha256"
+hash = "78a5392cf562e75bf803937f6f41d28b51aba3c474e1c95f5aab5ec265abee30"
+
+[update.curseforge]
+file-id = 8822030
+project-id = 1398054

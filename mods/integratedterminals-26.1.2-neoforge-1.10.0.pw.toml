@@ -1,0 +1,12 @@
+name = "integratedterminals"
+filename = "integratedterminals-26.1.2-neoforge-1.10.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8862/903/integratedterminals-26.1.2-neoforge-1.10.0.jar"
+hash-format = "sha256"
+hash = "1bfe5551ef575e7d402a6642f80b3e9e986f631b7d25a608799acd1d5af142b1"
+
+[update.curseforge]
+file-id = 8862903
+project-id = 295910

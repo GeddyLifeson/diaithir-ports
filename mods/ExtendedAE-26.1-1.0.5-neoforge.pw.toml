@@ -1,0 +1,12 @@
+name = "ExtendedAE"
+filename = "ExtendedAE-26.1-1.0.5-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9129/055/ExtendedAE-26.1-1.0.5-neoforge.jar"
+hash-format = "sha256"
+hash = "2db0d95459aec2ce9640455179a3f5c7036f2151ef14a1fc862c7080321f3170"
+
+[update.curseforge]
+file-id = 9129055
+project-id = 892005

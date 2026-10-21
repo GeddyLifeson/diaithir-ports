@@ -1,0 +1,12 @@
+name = "keybindbundles"
+filename = "keybindbundles-2.0.0.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8012/008/keybindbundles-2.0.0.jar"
+hash-format = "sha256"
+hash = "8e16eb32f49d55e7b106d6fd406bdd395d56ad0d04e9ffba3af0446e04d0078b"
+
+[update.curseforge]
+file-id = 8012008
+project-id = 1172594

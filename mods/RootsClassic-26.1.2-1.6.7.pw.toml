@@ -1,0 +1,12 @@
+name = "RootsClassic"
+filename = "RootsClassic-26.1.2-1.6.7.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8757/288/RootsClassic-26.1.2-1.6.7.jar"
+hash-format = "sha256"
+hash = "1768b172c938de0aa457771e60af9286bcca754e083ebc96f8a229cfe2a95a0d"
+
+[update.curseforge]
+file-id = 8757288
+project-id = 295780

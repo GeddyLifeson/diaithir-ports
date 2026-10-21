@@ -1,0 +1,12 @@
+name = "Explorify"
+filename = "Explorify v1.6.5.mod.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HSfsxuTo/versions/CuBdAr31/Explorify%20v1.6.5.mod.jar"
+hash-format = "sha256"
+hash = "2dc76398b48b2aae9b4024642da098b0880125572de160cb5ecf91d102890cad"
+
+[update.modrinth]
+mod-id = "HSfsxuTo"
+version = "CuBdAr31"

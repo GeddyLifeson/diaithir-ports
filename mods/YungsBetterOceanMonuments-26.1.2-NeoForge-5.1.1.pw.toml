@@ -1,0 +1,12 @@
+name = "YungsBetterOceanMonuments"
+filename = "YungsBetterOceanMonuments-26.1.2-NeoForge-5.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3dT9sgt4/versions/HwZo1wRg/YungsBetterOceanMonuments-26.1.2-NeoForge-5.1.1.jar"
+hash-format = "sha256"
+hash = "b5dddb9cd13db393c8bef060f0f4f2cbd8f975450ff45c49b919fa51a3c13c5c"
+
+[update.modrinth]
+mod-id = "3dT9sgt4"
+version = "HwZo1wRg"

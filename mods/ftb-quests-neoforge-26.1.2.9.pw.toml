@@ -1,0 +1,12 @@
+name = "ftb-quests-neoforge"
+filename = "ftb-quests-neoforge-26.1.2.9.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9088/796/ftb-quests-neoforge-26.1.2.9.jar"
+hash-format = "sha256"
+hash = "5cfb90c8dde51645142bcd4160687e87103f79c92ce14a06a0379691f6481a54"
+
+[update.curseforge]
+file-id = 9088796
+project-id = 289412

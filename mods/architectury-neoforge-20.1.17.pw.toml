@@ -1,0 +1,12 @@
+name = "architectury-neoforge"
+filename = "architectury-neoforge-20.1.17.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/lhGA9TYQ/versions/fyNzvIcr/architectury-neoforge-20.1.17.jar"
+hash-format = "sha256"
+hash = "3b425ea322750cb62ca66ff5d090a6ab8381b218dc9fd961bd98cf3a148422ad"
+
+[update.modrinth]
+mod-id = "lhGA9TYQ"
+version = "fyNzvIcr"

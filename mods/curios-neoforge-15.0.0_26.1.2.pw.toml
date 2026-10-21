@@ -1,0 +1,12 @@
+name = "curios-neoforge"
+filename = "curios-neoforge-15.0.0+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/vvuO3ImH/versions/dRnRThvD/curios-neoforge-15.0.0%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "ea1e92cd9dbfb93d2d363e2aced406a1749a4ed3e47bf06cce463903a99fd267"
+
+[update.modrinth]
+mod-id = "vvuO3ImH"
+version = "dRnRThvD"

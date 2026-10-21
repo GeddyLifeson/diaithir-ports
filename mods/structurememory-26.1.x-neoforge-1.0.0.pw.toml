@@ -1,0 +1,12 @@
+name = "structurememory"
+filename = "structurememory-26.1.x-neoforge-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BUE1I3ga/versions/ViFK5DEJ/structurememory-26.1.x-neoforge-1.0.0.jar"
+hash-format = "sha256"
+hash = "96876481bfd9ebb10ca2ee863d9f97e1fec088615a03e0b31dd68ea42471da3f"
+
+[update.modrinth]
+mod-id = "BUE1I3ga"
+version = "ViFK5DEJ"

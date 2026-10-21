@@ -1,0 +1,12 @@
+name = "bettercaravans-neoforge"
+filename = "bettercaravans-neoforge-26.1.2-1.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/AfYuWICz/versions/LmqAm18K/bettercaravans-neoforge-26.1.2-1.1.2.jar"
+hash-format = "sha256"
+hash = "d99df724dc53aad3b032645cdbfd725df75e83ddfc459eeb7ab8f36277d0193f"
+
+[update.modrinth]
+mod-id = "AfYuWICz"
+version = "LmqAm18K"

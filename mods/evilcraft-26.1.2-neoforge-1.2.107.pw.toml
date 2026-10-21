@@ -1,0 +1,12 @@
+name = "evilcraft"
+filename = "evilcraft-26.1.2-neoforge-1.2.107.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3ANq2btA/versions/9XdwQoOu/evilcraft-26.1.2-neoforge-1.2.107.jar"
+hash-format = "sha256"
+hash = "01481890bf8e3ccc38edf26348f789ed28147f1ea07b9ddafb0a85eb1b442982"
+
+[update.modrinth]
+mod-id = "3ANq2btA"
+version = "9XdwQoOu"

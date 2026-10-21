@@ -1,0 +1,12 @@
+name = "YungsBetterMineshafts"
+filename = "YungsBetterMineshafts-26.1.2-NeoForge-6.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HjmxVlSr/versions/MXPxqNif/YungsBetterMineshafts-26.1.2-NeoForge-6.1.1.jar"
+hash-format = "sha256"
+hash = "76f4e7e2ff5ae35e408db09cc0536cffa83efa9ef50fbd5983072841093a6c70"
+
+[update.modrinth]
+mod-id = "HjmxVlSr"
+version = "MXPxqNif"

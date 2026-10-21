@@ -1,0 +1,12 @@
+name = "flickerfix"
+filename = "flickerfix-26.1-7.0.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/KSyWOxT5/versions/ZmfVE3VX/flickerfix-26.1-7.0.0.jar"
+hash-format = "sha256"
+hash = "3743715e4d7f6303c258b1f81bbd621e88a3f6bb45591284543063c35ccf3f12"
+
+[update.modrinth]
+mod-id = "KSyWOxT5"
+version = "ZmfVE3VX"

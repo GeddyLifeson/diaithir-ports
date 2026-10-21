@@ -1,0 +1,12 @@
+name = "EnchantmentDescriptions-neoforge-MC"
+filename = "EnchantmentDescriptions-neoforge-MC26.1.2-26.1.2.6.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8692/947/EnchantmentDescriptions-neoforge-MC26.1.2-26.1.2.6.jar"
+hash-format = "sha256"
+hash = "cc86e80d23fb771097441dee77be5d971b4955cafa604690e61cc010083e5dd8"
+
+[update.curseforge]
+file-id = 8692947
+project-id = 250419

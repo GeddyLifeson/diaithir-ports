@@ -1,0 +1,12 @@
+name = "mcw-trapdoors"
+filename = "mcw-trapdoors-1.1.5-mc26.1neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7809/970/mcw-trapdoors-1.1.5-mc26.1neoforge.jar"
+hash-format = "sha256"
+hash = "1c49ed1bbfa39d4ba6a1f5c26db2ecd8a62c9d6f7664a3e6f5ea16bb99ad8efd"
+
+[update.curseforge]
+file-id = 7809970
+project-id = 400933

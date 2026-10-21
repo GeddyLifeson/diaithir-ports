@@ -1,0 +1,12 @@
+name = "energizedpower"
+filename = "energizedpower-3.0.1+26.1.x-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8932/481/energizedpower-3.0.1%2B26.1.x-neoforge.jar"
+hash-format = "sha256"
+hash = "09df0adc4ab9d7fdde1ce6fb8b441e79d54f91d7d54e6db91f4d0b5f3f8ed877"
+
+[update.curseforge]
+file-id = 8932481
+project-id = 782147

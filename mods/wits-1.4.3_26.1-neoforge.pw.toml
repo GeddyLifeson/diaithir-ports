@@ -1,0 +1,12 @@
+name = "wits"
+filename = "wits-1.4.3+26.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/AVo2esap/versions/Bj3LVDPo/wits-1.4.3%2B26.1-neoforge.jar"
+hash-format = "sha256"
+hash = "35080c1c1c7fee340df7484a1764e74f65ecfb6be13377f7db7bbedf1f73e607"
+
+[update.modrinth]
+mod-id = "AVo2esap"
+version = "Bj3LVDPo"

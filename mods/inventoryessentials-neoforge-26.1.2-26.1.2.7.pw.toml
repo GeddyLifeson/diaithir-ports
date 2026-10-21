@@ -1,0 +1,12 @@
+name = "inventoryessentials-neoforge"
+filename = "inventoryessentials-neoforge-26.1.2-26.1.2.7.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/9035/228/inventoryessentials-neoforge-26.1.2-26.1.2.7.jar"
+hash-format = "sha256"
+hash = "1d7d835b4da44975bfc2810568bfd4ad8f8e895c7309ce197098e4ef81837454"
+
+[update.curseforge]
+file-id = 9035228
+project-id = 368825

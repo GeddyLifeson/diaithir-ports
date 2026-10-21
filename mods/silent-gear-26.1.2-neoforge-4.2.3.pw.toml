@@ -1,0 +1,12 @@
+name = "silent-gear"
+filename = "silent-gear-26.1.2-neoforge-4.2.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/73mSSnCf/versions/eG4f2c3T/silent-gear-26.1.2-neoforge-4.2.3.jar"
+hash-format = "sha256"
+hash = "2e08d9822ccf78fad669a82f341987ba498289f60e0d12a863402527ae6742bf"
+
+[update.modrinth]
+mod-id = "73mSSnCf"
+version = "eG4f2c3T"

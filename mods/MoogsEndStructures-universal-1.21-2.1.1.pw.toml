@@ -1,0 +1,12 @@
+name = "MoogsEndStructures-universal"
+filename = "MoogsEndStructures-universal-1.21-2.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/r4PuRGfV/versions/S7bUhX4n/MoogsEndStructures-universal-1.21-2.1.1.jar"
+hash-format = "sha256"
+hash = "00726445a0b2aaa9ab61ac5fa8a165280a45a0e22f1d67898d0b4934614729d5"
+
+[update.modrinth]
+mod-id = "r4PuRGfV"
+version = "S7bUhX4n"

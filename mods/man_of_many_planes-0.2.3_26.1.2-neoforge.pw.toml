@@ -1,0 +1,12 @@
+name = "man_of_many_planes"
+filename = "man_of_many_planes-0.2.3+26.1.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9qdTHi0q/versions/vPUnN27W/man_of_many_planes-0.2.3%2B26.1.2-neoforge.jar"
+hash-format = "sha256"
+hash = "470ae3f14ac791c548ee1fee5694b333e0c2d12bf51707b981bb7a49c00d47b4"
+
+[update.modrinth]
+mod-id = "9qdTHi0q"
+version = "vPUnN27W"

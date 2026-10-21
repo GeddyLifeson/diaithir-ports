@@ -1,0 +1,12 @@
+name = "ftb-ranks-neoforge"
+filename = "ftb-ranks-neoforge-26.1.2.4.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8878/546/ftb-ranks-neoforge-26.1.2.4.jar"
+hash-format = "sha256"
+hash = "1ce0bc64fb6c94cb8058618ed47dad7419d03f68c332150bf55b30741b47b019"
+
+[update.curseforge]
+file-id = 8878546
+project-id = 314905

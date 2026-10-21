@@ -1,0 +1,12 @@
+name = "spark"
+filename = "spark-1.10.187-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/l6YH9Als/versions/HwHxykP9/spark-1.10.187-neoforge.jar"
+hash-format = "sha256"
+hash = "88e7cc1a9ecd4c9ad22434fe2f168155baeb0ce2afba0a30269e542602e9d442"
+
+[update.modrinth]
+mod-id = "l6YH9Als"
+version = "HwHxykP9"

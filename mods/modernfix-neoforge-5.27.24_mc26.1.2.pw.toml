@@ -1,0 +1,12 @@
+name = "modernfix-neoforge"
+filename = "modernfix-neoforge-5.27.24+mc26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/nmDcB62a/versions/mKbwUMKg/modernfix-neoforge-5.27.24%2Bmc26.1.2.jar"
+hash-format = "sha256"
+hash = "120b3ce5a19263fd4e546029af0cb125b3d0529faf23facd8c71eba17516c734"
+
+[update.modrinth]
+mod-id = "nmDcB62a"
+version = "mKbwUMKg"

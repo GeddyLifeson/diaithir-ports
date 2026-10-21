@@ -1,0 +1,12 @@
+name = "appleskin-neoforge-mc"
+filename = "appleskin-neoforge-mc26.1-3.0.9.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/EsAfCjCV/versions/i8MiVItH/appleskin-neoforge-mc26.1-3.0.9.jar"
+hash-format = "sha256"
+hash = "32bfe1ed3dea0684259568dbf2b6fe02e939bf398e54af383238bb3b8cac4da6"
+
+[update.modrinth]
+mod-id = "EsAfCjCV"
+version = "i8MiVItH"

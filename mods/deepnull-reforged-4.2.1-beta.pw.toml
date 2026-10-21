@@ -1,0 +1,12 @@
+name = "deepnull-reforged"
+filename = "deepnull-reforged-4.2.1-beta.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/yYjkmjge/versions/TONzZghu/deepnull-reforged-4.2.1-beta.jar"
+hash-format = "sha256"
+hash = "9a1e95e3fd792e31f9c076f64defa0503d3a66478bd247dc59aaeca174582317"
+
+[update.modrinth]
+mod-id = "yYjkmjge"
+version = "TONzZghu"

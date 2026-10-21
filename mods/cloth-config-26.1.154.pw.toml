@@ -1,0 +1,12 @@
+name = "cloth-config"
+filename = "cloth-config-26.1.154.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9s6osm5g/versions/TimoYzse/cloth-config-26.1.154.jar"
+hash-format = "sha256"
+hash = "d9147c8549fedad478bd18e2ddeef172ef290a081f80bd4d242d54e027ecd9d8"
+
+[update.modrinth]
+mod-id = "9s6osm5g"
+version = "TimoYzse"

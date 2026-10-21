@@ -1,0 +1,12 @@
+name = "skill_tree-neoforge"
+filename = "skill_tree-neoforge-1.6.2+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/PjDhruSC/versions/HMTe58Nf/skill_tree-neoforge-1.6.2%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "3946b7bfeb28e23ebb9b2aad7791cf87f5f960df2f2b1c04b2ffd70ed6f05f2e"
+
+[update.modrinth]
+mod-id = "PjDhruSC"
+version = "HMTe58Nf"

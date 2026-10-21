@@ -1,0 +1,12 @@
+name = "YungsBetterNetherFortresses"
+filename = "YungsBetterNetherFortresses-26.1.2-NeoForge-4.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Z2mXHnxP/versions/CXSmjEju/YungsBetterNetherFortresses-26.1.2-NeoForge-4.1.1.jar"
+hash-format = "sha256"
+hash = "2b9b5d3cd9df59e16e8738ebcab117391a697fbb2dc131b4f15e17568783ff66"
+
+[update.modrinth]
+mod-id = "Z2mXHnxP"
+version = "CXSmjEju"

@@ -1,0 +1,12 @@
+name = "enderio"
+filename = "enderio-9.0.6-alpha.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/49ZofO4f/versions/SNsMXOPB/enderio-9.0.6-alpha.jar"
+hash-format = "sha256"
+hash = "166b8ae6f86b7bd9f7c1ebb48ca80ff4e4ee12e910db3dc29f09ea87e94bcb0d"
+
+[update.modrinth]
+mod-id = "49ZofO4f"
+version = "SNsMXOPB"

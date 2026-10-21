@@ -1,0 +1,12 @@
+name = "ae"
+filename = "ae2importexportcard-26.1.2-2.3.1.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8961/643/ae2importexportcard-26.1.2-2.3.1.jar"
+hash-format = "sha256"
+hash = "4edabdd02315bdc7bae73bf9ac122642e52ac0fc3f8c759642d5c2768a18d6a1"
+
+[update.curseforge]
+file-id = 8961643
+project-id = 982512

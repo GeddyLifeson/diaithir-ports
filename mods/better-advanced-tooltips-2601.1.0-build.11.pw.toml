@@ -1,0 +1,12 @@
+name = "better-advanced-tooltips"
+filename = "better-advanced-tooltips-2601.1.0-build.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/iHLDc0eo/versions/DKhR2dA5/better-advanced-tooltips-2601.1.0-build.11.jar"
+hash-format = "sha256"
+hash = "f47aa29dae8f2c0b2616b28590153bae19fa3b56833704e0fef595cd0f4e8374"
+
+[update.modrinth]
+mod-id = "iHLDc0eo"
+version = "DKhR2dA5"

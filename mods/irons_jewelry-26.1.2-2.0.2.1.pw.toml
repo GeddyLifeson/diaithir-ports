@@ -1,0 +1,12 @@
+name = "irons_jewelry"
+filename = "irons_jewelry-26.1.2-2.0.2.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cTagjDuu/versions/H4YV2yG3/irons_jewelry-26.1.2-2.0.2.1.jar"
+hash-format = "sha256"
+hash = "8ce73663502ac70f958a1613be1d6d4059bfdd1366f2b2a0309d5e563d5dfcf9"
+
+[update.modrinth]
+mod-id = "cTagjDuu"
+version = "H4YV2yG3"

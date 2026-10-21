@@ -1,0 +1,12 @@
+name = "YungsBetterWitchHuts"
+filename = "YungsBetterWitchHuts-26.1.2-NeoForge-5.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/t5FRdP87/versions/FuqDSl5q/YungsBetterWitchHuts-26.1.2-NeoForge-5.1.1.jar"
+hash-format = "sha256"
+hash = "d684d11a9d5047fc92764d29df56544e030fa50c6cd00104bfa1184c70f11459"
+
+[update.modrinth]
+mod-id = "t5FRdP87"
+version = "FuqDSl5q"

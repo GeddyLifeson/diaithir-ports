@@ -1,0 +1,12 @@
+name = "FastFurnace"
+filename = "FastFurnace-26.1.2-10.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9X0318ev/versions/rdeBAwZw/FastFurnace-26.1.2-10.0.0.jar"
+hash-format = "sha256"
+hash = "c3fa81c5725a9ea7d33f5e925e1d458df5f8cb21c4301cab0e1d551cd0fc95bc"
+
+[update.modrinth]
+mod-id = "9X0318ev"
+version = "rdeBAwZw"

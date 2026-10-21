@@ -1,0 +1,12 @@
+name = "refurbished_furniture-neoforge"
+filename = "refurbished_furniture-neoforge-26.1.2-1.0.23.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/7943/178/refurbished_furniture-neoforge-26.1.2-1.0.23.jar"
+hash-format = "sha256"
+hash = "99a37904af456655e05737b64e38211a36167c4d907c4d2d05fa9a877a5c6abf"
+
+[update.curseforge]
+file-id = 7943178
+project-id = 897116
