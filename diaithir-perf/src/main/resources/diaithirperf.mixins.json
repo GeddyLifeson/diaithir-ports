@@ -1,8 +1,15 @@
 {
   "required": true,
   "package": "net.diaithir.perf.mixin",
+  "plugin": "net.diaithir.perf.mixin.MixinPlugin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["TemplateSourceMixin"],
-  "client": [],
-  "injectors": { "defaultRequire": 1 }
+  "mixins": [
+    "TemplateSourceMixin"
+  ],
+  "client": [
+    "compat.ctm.StandardCTMOverlayTableMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
