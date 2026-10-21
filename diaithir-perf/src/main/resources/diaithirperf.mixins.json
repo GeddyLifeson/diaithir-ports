@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "net.diaithir.perf.mixin",
+  "plugin": "net.diaithir.perf.mixin.MixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FilePackResourcesMixin",
+    "SharedZipFileAccessAccessor",
+    "TemplateSourceMixin"
+  ],
+  "client": [
+    "FaceBakeryMixin",
+    "ModelBakeryInternerMixin",
+    "ModelBakeryMixin",
+    "compat.ctm.StandardCTMOverlayTableMixin",
+    "compat.jei.AnvilRecipeMakerMixin",
+    "compat.jei.EnchantmentDataAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
