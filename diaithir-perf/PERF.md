@@ -44,3 +44,21 @@ Java 25 can shrink every object header from 12 to 8 bytes (`-XX:+UseCompactObjec
 
 ## Fix 5: indexed mod-jar resource listing (0.3.0)
 Each resource listing (tags and data maps for every registry, registry entries) walked every entry of every mod jar: 62% of server startup CPU in a JFR profile (`bench/startup.sh`). ModernFix's own index for this is not taking effect on 26.1. Each pack now keeps a sorted list of its file names per pack type, built on first use and dropped when the pack closes. Server load 268 s -> 127 s; same 47,035 recipes, 2,054 advancements and tag warnings as before.
+
+## Real world type: Tellus Earth (0.3.0)
+Same bench on `level-type=tellus:diaithir_age_1` (Y -2032 to 2031, 254 sections per chunk, Tellus 0.8.3-diaithir.3), structure cache warm. Server load 125 s, heap idle 1,283 MB, heap with 1,024 chunks loaded 2,496 MB, 1,024 chunks generated in 70 s, then tick median 6.5 ms / p95 12.4 ms / max 26.9 ms over 1 min, 20 TPS. Tellus logs HTTP 404 from the ETH canopy-height tile service in the cloud and falls back to biome trees; that is Tellus/network, not this mod.
+
+## Scout candidate: ScalableLux (server A/B, vanilla-type world, 0.3.0 on both sides)
+| | without | with |
+|---|---|---|
+| 1,024 chunks | 79 s | 73 s |
+| tick median | 23.3 ms | 21.3 ms |
+| tick p95 | 39 ms | 35 ms |
+| worst tick | 102 ms | 47 ms |
+It wins on lighting, so it is recommended for the pack (side both). Caveats: 0.3.0-alpha.0.18, and on a dedicated server it logs 2,325 harmless "Failed to analyze class BlockState for dynamic lighting" traces at boot. The client-only scout mods (More Culling, Particle Core, Cut Through) can only be checked for a clean load in the cloud (software GL, no real FPS); Let Me Despawn changes gameplay, so it is left to the design threads.
+
+## Existing optimizers: keep them
+Nothing in this mod duplicates ModernFix, FerriteCore, Lithium-style ports, Sodium or EntityCulling; the five fixes above are for costs those mods don't touch (structure upgrades, CTM tables, quad duplication, JEI anvil pages, mod-jar resource scans). Removing any of them would lose more than this mod adds, so none are removed. Sodium and EntityCulling licences don't allow folding their code in.
+
+## Recommended client setting
+diaithir-perf 0.3.0 + `-XX:+UseCompactObjectHeaders`: in-world client heap 7,712 MB -> 4,629 MB. Prism max memory 6144 MB leaves ~1.5 GB headroom.

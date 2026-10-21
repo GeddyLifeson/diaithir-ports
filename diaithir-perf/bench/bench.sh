@@ -18,7 +18,7 @@ t1=$(date +%s)
 for a in "-256 -256 -1 -1" "0 -256 255 -1" "-256 0 -1 255" "0 0 255 255"; do cmd "forceload add $a"; done
 until [ $(grep -c 'chunks in Overworld from' $LOG) -ge 4 ] || [ $(( $(date +%s)-t1 )) -gt 1500 ]; do sleep 1; done
 echo "forceload_1024_chunks_s $(( $(date +%s)-t1 ))" >> $OUT/result.txt
-sleep 60; cmd "spark tps"; cmd "spark health"; sleep 5
+sleep 60; cmd "spark tps"; sleep 5
 jcmd $PID GC.run >/dev/null; sleep 3; jcmd $PID GC.heap_info > $OUT/heap_loaded.txt; histo loaded
 cmd "spark profiler stop --save-to-file"; sleep 15
 cmd stop; sleep 30; pkill -f "tail -f $IN"
