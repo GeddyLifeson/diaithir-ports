@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/actuallyadditions-common.toml"
+hash = "c1b91664337503158c7b64da0741ab500fea1bd082554c67f5372fc5f0933f5a"
+
+[[files]]
 file = "config/fml.toml"
 hash = "7f273673f5c20aa969a85ab0b8346056661e5e9626cebbc0c0a0dff1a4c4ccf1"
 
@@ -27,6 +31,22 @@ hash = "2a2f884e5aa650c63deca70e9201b2438927d6b33da2767c36486dd36f5e5989"
 [[files]]
 file = "config/fml/theme-diaithir.json"
 hash = "2cacce5d49afb4aa43f91af0083da14f47c6de4a38584f5db19d696da98066c2"
+
+[[files]]
+file = "config/integrateddynamics-common.toml"
+hash = "afd73d64ac978202fcfadf461cb60294cd54cf1a194bb9a3fdd5da466b9e8846"
+
+[[files]]
+file = "config/modern_industrialization-server.toml"
+hash = "aa57943a7c0edc242de06fc0a3d008b081259ce1e8ee6ed4d8a51af076185aa7"
+
+[[files]]
+file = "config/silentgear-common.toml"
+hash = "49fb3b31a84488631484f196a401b0d34603c13d55c331e5acd26a086fa253bd"
+
+[[files]]
+file = "config/tconstruct-common.toml"
+hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
 
 [[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"

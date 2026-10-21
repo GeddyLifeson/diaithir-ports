@@ -1,6 +1,6 @@
 # Join Diaithir
 
-Diaithir is a free Minecraft modpack for NeoForge 26.1.2. You need Minecraft Java Edition and about 10 GB of free RAM for the game.
+Diaithir is a free Minecraft modpack for NeoForge 26.1.2. You need Minecraft Java Edition and a PC with 16 GB of RAM. The game gets 7 GB of it.
 
 ## Install
 
@@ -19,7 +19,7 @@ The server is already in your multiplayer list as **Diaithir**. If it is missing
 ## If something goes wrong
 
 - **The game says a mod is missing or a version is wrong:** close the game and launch it again. The update runs before every start.
-- **Out of memory:** in Prism, right-click the instance, choose **Edit**, then **Settings** and **Java**, and lower the maximum memory to what your PC has, no less than 6144 MB.
+- **Out of memory:** in Prism, right-click the instance, choose **Edit**, then **Settings** and **Java**, and set the maximum memory to 8192 MB. Close browsers and other big programs while you play.
 - **The download stops:** launch again. Files that finished are kept.
 
 ## What gets installed
