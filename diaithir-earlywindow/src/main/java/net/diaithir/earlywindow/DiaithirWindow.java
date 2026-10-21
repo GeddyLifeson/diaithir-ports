@@ -11,6 +11,11 @@ import org.lwjgl.opengl.GL;
  * Selected by {@code earlyWindowProvider = "diaithir"} in config/fml.toml.
  */
 public class DiaithirWindow extends DisplayWindow {
+    public DiaithirWindow() {
+        // FML closes the early service jars before it reports a fatal error, so the error window's classes are loaded now.
+        ErrorWindow.preload();
+    }
+
     @Override
     public String name() {
         return "diaithir";

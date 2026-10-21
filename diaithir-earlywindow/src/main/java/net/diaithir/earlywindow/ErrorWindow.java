@@ -30,6 +30,7 @@ import net.neoforged.fml.i18n.FMLTranslations;
 import net.neoforged.fml.loading.FMLPaths;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11C;
+import org.lwjgl.system.Callback;
 
 /** The window shown when mods fail to load, in Diaithir's colours, with a link to the pack's help page. */
 final class ErrorWindow {
@@ -93,12 +94,16 @@ final class ErrorWindow {
         issues.stream().filter(i -> i.severity() != ModLoadingIssue.Severity.ERROR).forEach(this::addIssue);
     }
 
+    static void preload() {
+        Button.class.getName();
+    }
+
     static void show(long window, List<ModLoadingIssue> issues, Path logFile, Path crashReportFile) {
-        for (var callback : List.of(
+        for (Callback callback : new Callback[] {
                 GLFW.glfwSetWindowCloseCallback(window, null), GLFW.glfwSetCursorPosCallback(window, null),
                 GLFW.glfwSetScrollCallback(window, null), GLFW.glfwSetMouseButtonCallback(window, null),
                 GLFW.glfwSetKeyCallback(window, null), GLFW.glfwSetCharCallback(window, null),
-                GLFW.glfwSetFramebufferSizeCallback(window, null), GLFW.glfwSetWindowSizeCallback(window, null))) {
+                GLFW.glfwSetFramebufferSizeCallback(window, null), GLFW.glfwSetWindowSizeCallback(window, null)}) {
             if (callback != null) callback.close();
         }
         var screen = new ErrorWindow(window, issues, logFile, crashReportFile);
