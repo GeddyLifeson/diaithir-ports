@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirnemesis"
+version = "${version}"
+displayName = "Diaithir Nemesis"
+description = "A monster that kills a player is named, ranked and remembered. It holds a grudge against that player and their House, comes back to ambush them away from spawn, may escape death once with a scar, and passes the grudge to an heir at each Age Turn. Server-side only."
+
+[[dependencies.diaithirnemesis]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
