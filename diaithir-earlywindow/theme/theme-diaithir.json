@@ -2,7 +2,7 @@
   "version": 1,
   "windowIcon": "diaithir_icon.png",
   "fonts": {
-    "default": "Monocraft.ttf"
+    "default": "PixelifySans.ttf"
   },
   "shaders": {
     "gui": {
@@ -74,55 +74,58 @@
   },
   "loadingScreen": {
     "background": {
-      "centerHorizontally": false,
-      "centerVertically": false,
-      "font": "default",
-      "maintainAspectRatio": true,
       "type": "image",
-      "visible": false
+      "visible": false,
+      "font": "default"
     },
     "performance": {
       "visible": true,
       "maintainAspectRatio": true,
+      "centerHorizontally": false,
+      "centerVertically": false,
+      "font": "default",
       "left": 220.0,
       "top": 10.0,
-      "right": 220.0,
-      "centerHorizontally": false,
-      "centerVertically": false,
-      "font": "default"
+      "right": 220.0
     },
     "progressBars": {
-      "labelGap": 4,
-      "barGap": 5,
       "visible": true,
       "maintainAspectRatio": false,
+      "centerHorizontally": false,
+      "centerVertically": false,
+      "font": "default",
+      "labelGap": 4,
+      "barGap": 5,
       "left": 220.0,
       "top": 250.0,
-      "right": 220.0,
-      "centerHorizontally": false,
-      "centerVertically": false,
-      "font": "default"
+      "right": 220.0
     },
     "startupLog": {
-      "visible": true,
+      "visible": false,
       "maintainAspectRatio": true,
-      "left": 10.0,
-      "bottom": 10.0,
       "centerHorizontally": false,
       "centerVertically": false,
-      "font": "default"
+      "font": "default",
+      "left": 10.0,
+      "bottom": 10.0
     },
     "mojangLogo": {
       "visible": false,
       "maintainAspectRatio": true,
-      "top": 96.0,
       "centerHorizontally": true,
       "centerVertically": false,
-      "font": "default"
+      "font": "default",
+      "top": 96.0
     },
     "decoration": {
       "logo": {
+        "visible": true,
+        "maintainAspectRatio": true,
+        "centerHorizontally": true,
+        "centerVertically": false,
+        "font": "default",
         "type": "image",
+        "top": 60.0,
         "texture": {
           "resource": "diaithir_logo.png",
           "scaling": {
@@ -131,13 +134,7 @@
             "height": 160,
             "linearScaling": true
           }
-        },
-        "visible": true,
-        "maintainAspectRatio": true,
-        "top": 60.0,
-        "centerHorizontally": true,
-        "centerVertically": false,
-        "font": "default"
+        }
       }
     }
   }

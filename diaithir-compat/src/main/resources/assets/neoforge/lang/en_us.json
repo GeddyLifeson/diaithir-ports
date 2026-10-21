@@ -1,0 +1,13 @@
+{
+  "fml.menu.mods": "Credits",
+  "fml.menu.mods.title": "Credits",
+  "fml.menu.multiplayer.compatible": "Ready to join\n{0,choice,1#1 part|1<%1$s parts} of the pack",
+  "fml.menu.multiplayer.incompatible": "Different pack version",
+  "fml.menu.multiplayer.incompatible.extra": "Different pack version\n%1$s",
+  "fml.menu.multiplayer.vanilla": "Not a Diaithir server",
+  "fml.menu.multiplayer.vanilla.incompatible": "Not a Diaithir server",
+  "fml.menu.multiplayer.serveroutdated": "The server runs an older pack. Ask the host to update.",
+  "fml.menu.multiplayer.clientoutdated": "Your pack is older than the server's. Launch again to update.",
+  "fml.menu.multiplayer.extraservermods": "The server has parts your pack lacks. Launch again to update.",
+  "fml.menu.multiplayer.modsincompatible": "Your pack does not match the server's. Launch again to update."
+}

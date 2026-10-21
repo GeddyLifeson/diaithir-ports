@@ -1,0 +1,14 @@
+{
+  "accessibility.onboarding.screen.title": "Welcome to Diaithir!\n\nWould you like to turn on the Narrator or open the Accessibility Settings?",
+  "gui.loadingMinecraft": "Loading Diaithir",
+  "outOfMemory.message": "Diaithir has run out of memory.\n\nClose other programs, or give the game more memory in Prism: Edit, Settings, Java.\n\nThe game stopped to keep your world safe. Try launching again, or go back to the title screen and join again.",
+  "selectServer.defaultName": "Diaithir Server",
+  "selectWorld.locked": "Open in another Diaithir window.",
+  "pack.dropConfirm": "Add these packs to Diaithir?",
+  "advancements.story.root.title": "Diaithir",
+  "diaithir.menu.help": "Get help",
+  "diaithir.menu.join_page": "Join page",
+  "diaithir.warnings.title": "Diaithir started with warnings",
+  "diaithir.warnings.subtitle": "The game still works. If something looks wrong, press Get help.",
+  "diaithir.warnings.continue": "Continue"
+}
