@@ -1,4 +1,4 @@
-package net.diaithir.compat;
+package net.diaithir.branding;
 
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
@@ -14,14 +14,14 @@ import net.neoforged.neoforge.client.gui.LoadingErrorScreen;
 import net.neoforged.neoforge.common.NeoForge;
 
 /** Puts Diaithir's own buttons where vanilla and NeoForge link to Realms, Mojang feedback and the NeoForge warnings screen. */
-@Mod(value = "diaithircompat", dist = Dist.CLIENT)
-public final class DiaithirClient {
+@Mod(value = "diaithirbranding", dist = Dist.CLIENT)
+public final class DiaithirBranding {
     static final String JOIN_PAGE = "https://github.com/GeddyLifeson/diaithir-ports/blob/claude/project-thread-ysjkxr/README.md";
     static final String HELP_PAGE = JOIN_PAGE + "#if-something-goes-wrong";
 
-    public DiaithirClient() {
-        NeoForge.EVENT_BUS.addListener(ScreenEvent.Init.Post.class, DiaithirClient::onScreenInit);
-        NeoForge.EVENT_BUS.addListener(ScreenEvent.Opening.class, DiaithirClient::onScreenOpening);
+    public DiaithirBranding() {
+        NeoForge.EVENT_BUS.addListener(ScreenEvent.Init.Post.class, DiaithirBranding::onScreenInit);
+        NeoForge.EVENT_BUS.addListener(ScreenEvent.Opening.class, DiaithirBranding::onScreenOpening);
     }
 
     private static void onScreenInit(ScreenEvent.Init.Post event) {

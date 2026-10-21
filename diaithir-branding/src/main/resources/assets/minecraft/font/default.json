@@ -2,7 +2,7 @@
   "providers": [
     {
       "type": "ttf",
-      "file": "diaithircompat:pixelify_sans.ttf",
+      "file": "diaithirbranding:pixelify_sans.ttf",
       "size": 10.0,
       "oversample": 4.0,
       "shift": [

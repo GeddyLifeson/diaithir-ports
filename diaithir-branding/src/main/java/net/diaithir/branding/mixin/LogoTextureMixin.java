@@ -1,4 +1,4 @@
-package net.diaithir.compat.mixin;
+package net.diaithir.branding.mixin;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Vanilla reads the loading screen logo from its own jar only; this reads Diaithir's wordmark from the mod. */
 @Mixin(targets = "net.minecraft.client.gui.screens.LoadingOverlay$LogoTexture")
 abstract class LogoTextureMixin {
-    private static final Identifier LOGO = Identifier.fromNamespaceAndPath("diaithircompat", "textures/gui/loading_logo.png");
+    private static final Identifier LOGO = Identifier.fromNamespaceAndPath("diaithirbranding", "textures/gui/loading_logo.png");
 
     @Inject(method = "loadContents", at = @At("HEAD"), cancellable = true)
     private void diaithir$logo(ResourceManager resourceManager, CallbackInfoReturnable<TextureContents> cir) throws IOException {

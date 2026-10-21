@@ -1,4 +1,4 @@
-package net.diaithir.compat.mixin;
+package net.diaithir.branding.mixin;
 
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;

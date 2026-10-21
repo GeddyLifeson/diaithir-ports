@@ -1,4 +1,4 @@
-package net.diaithir.compat;
+package net.diaithir.branding;
 
 import java.lang.reflect.Field;
 import net.minecraft.client.Minecraft;
@@ -42,7 +42,7 @@ final class WarningsScreen extends Screen {
         int buttonWidth = Math.min(150, (width - 50) / 3);
         int x = width / 2 - (buttonWidth * 3 + 10) / 2;
         addRenderableWidget(Button.builder(Component.translatable("diaithir.warnings.continue"), b -> next.run()).bounds(x, height - 50, buttonWidth, 20).build());
-        addRenderableWidget(Button.builder(Component.translatable("diaithir.menu.help"), b -> Util.getPlatform().openUri(DiaithirClient.HELP_PAGE)).bounds(x + buttonWidth + 5, height - 50, buttonWidth, 20).build());
+        addRenderableWidget(Button.builder(Component.translatable("diaithir.menu.help"), b -> Util.getPlatform().openUri(DiaithirBranding.HELP_PAGE)).bounds(x + buttonWidth + 5, height - 50, buttonWidth, 20).build());
         addRenderableWidget(Button.builder(Component.translatable("menu.quit"), b -> minecraft.stop()).bounds(x + 2 * (buttonWidth + 5), height - 50, buttonWidth, 20).build());
     }
 

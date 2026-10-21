@@ -1,4 +1,4 @@
-package net.diaithir.compat.mixin;
+package net.diaithir.branding.mixin;
 
 import java.util.function.IntSupplier;
 import net.minecraft.client.gui.screens.LoadingOverlay;

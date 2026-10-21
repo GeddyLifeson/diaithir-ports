@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.diaithir.compat.mixin",
+  "package": "net.diaithir.branding.mixin",
   "client": [
     "BrandingControlMixin",
     "DebugEntryVersionMixin",

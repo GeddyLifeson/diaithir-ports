@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Writes Diaithir's client branding into the mod's resources and the early window theme:
+"""Writes Diaithir's client branding into this mod's resources and the early window theme:
 
   python3 tools/gen_branding.py [--theme-dir DIR]
 
 - assets/minecraft/textures/gui/title/minecraft.png, minceraft.png, edition.png: the title screen wordmark in Uncial Antiqua
-- assets/diaithircompat/textures/gui/loading_logo.png: the resource loading wordmark (read by LogoTextureMixin)
-- assets/minecraft/font/default.json + assets/diaithircompat/font/pixelify_sans.ttf: Pixelify Sans as the game font,
+- assets/diaithirbranding/textures/gui/loading_logo.png: the resource loading wordmark (read by LogoTextureMixin)
+- assets/minecraft/font/default.json + assets/diaithirbranding/font/pixelify_sans.ttf: Pixelify Sans as the game font,
   ahead of vanilla's providers, which still cover any glyph it lacks
 - assets/minecraft/texts/splashes.txt and assets/minecraft/lang/en_us.json: splash lines and UI strings
 - --theme-dir: the FML early window theme (theme-diaithir.json and its images) for the pack's config/fml folder
@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "branding")
 ROOT = os.path.join(HERE, "..", "src", "main", "resources", "assets")
 MC = os.path.join(ROOT, "minecraft")
-NS = os.path.join(ROOT, "diaithircompat")
+NS = os.path.join(ROOT, "diaithirbranding")
 
 BONE, GOLD, EMBER, NIGHT, SHADOW = (0xF3, 0xE3, 0xB5), (0xC9, 0xA2, 0x4A), (0xF5, 0x9A, 0x23), (0x1B, 0x1D, 0x2A), (0x3A, 0x22, 0x10)
 UNCIAL = os.path.join(SRC, "UncialAntiqua-Regular.ttf")
@@ -138,7 +138,7 @@ def game_font():
     shutil.copy(os.path.join(SRC, "OFL-PixelifySans.txt"), os.path.join(ROOT, "..", "OFL-PixelifySans.txt"))
     # Pixelify Sans draws on a grid of about 90 units per pixel and a 700 unit cap height, so size 10 puts its caps at
     # vanilla's 7 pixels; oversample keeps the edges crisp at GUI scales 2 to 4.
-    provider = {"type": "ttf", "file": "diaithircompat:pixelify_sans.ttf", "size": 10.0, "oversample": 4.0, "shift": [0.0, 0.5]}
+    provider = {"type": "ttf", "file": "diaithirbranding:pixelify_sans.ttf", "size": 10.0, "oversample": 4.0, "shift": [0.0, 0.5]}
     save_json({"providers": [provider]}, MC, "font", "default.json")
 
 
