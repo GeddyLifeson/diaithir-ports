@@ -138,6 +138,7 @@ public final class DiaithirNemesis {
         arm(mob, data, n);
         n.seen = seen(mob);
         data.setDirty();
+        NeoForge.EVENT_BUS.post(new NemesisEvent("rise", n, 0));
         String rank = RULES.title(n) + " of " + n.warband;
         broadcast(server, killed ? player.getName().getString() + " was slain by " + n.fullName() + ", now " + rank + "." + took
                 : n.fullName() + " will not forget " + player.getName().getString() + ". It is now " + rank + ".");
@@ -165,6 +166,7 @@ public final class DiaithirNemesis {
         boolean ledBand = data.chief(n.warband) == n;
         List<String> freed = data.shaken.entrySet().stream().filter(e -> e.getValue() == n.id).map(Map.Entry::getKey).toList();
         data.remove(n);
+        NeoForge.EVENT_BUS.post(new NemesisEvent("fall", n, 0));
         for (String p : freed) {
             ServerPlayer sp = server.getPlayerList().getPlayer(UUID.fromString(p));
             if (sp != null) sp.removeEffect(MobEffects.WEAKNESS);
@@ -328,6 +330,7 @@ public final class DiaithirNemesis {
             Nemesis heir = RULES.heir(sire, data.nextId++, newAge, RANDOM);
             data.inherit(sire, heir);
             data.nemeses.add(heir);
+            NeoForge.EVENT_BUS.post(new NemesisEvent("heir", heir, sire.id));
         }
         data.age = newAge;
         data.setDirty();
