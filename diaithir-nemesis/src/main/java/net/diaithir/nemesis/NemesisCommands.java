@@ -75,6 +75,7 @@ final class NemesisCommands {
         DiaithirNemesis.despawn(c.getSource().getServer(), n);
         data.remove(n);
         data.setDirty();
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new NemesisEvent("fall", n, 0));
         c.getSource().sendSuccess(() -> Component.literal("Forgot " + n.fullName()), true);
         return 1;
     }
