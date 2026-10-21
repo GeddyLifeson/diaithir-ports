@@ -1,8 +1,0 @@
-name = "diaithir-earlywindow-neoforge"
-filename = "diaithir-earlywindow-neoforge-26.1.2-1.0.0.jar"
-side = "client"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/client/diaithir-earlywindow-neoforge-26.1.2-1.0.0.jar"
-hash-format = "sha256"
-hash = "8ef6a36203277c18bb061862912e05a95d6af6d9dc2abd2960045cd001905016"

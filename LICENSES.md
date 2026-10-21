@@ -19,7 +19,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | diaithir-ages-neoforge-26.1.2-0.1.0.jar | Diaithir engine, ours; free to play with the pack | not published |
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
 | client/diaithir-branding-neoforge-26.1.2-1.0.1.jar | MIT; its Pixelify Sans font is SIL OFL 1.1 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-branding) |
-| client/diaithir-earlywindow-neoforge-26.1.2-1.0.0.jar | LGPL-2.1-only (its error window is adapted from NeoForged FancyModLoader) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-earlywindow) |
+| client/diaithir-earlywindow-neoforge-26.1.2-1.0.1.jar | LGPL-2.1-only (its error window is adapted from NeoForged FancyModLoader) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-earlywindow) |
 | config/fml/PixelifySans.ttf | SIL OFL 1.1 | [Pixelify Sans](https://github.com/eifetx/Pixelify-Sans) |
 | domum_ornamentum-1.0.0-diaithir.jar | GPL3 | [source](source/domum_ornamentum-1.0.0-diaithir-source.tar.gz) |
 | industrialforegoing-26.1.2-3.6.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/industrialforegoing) |

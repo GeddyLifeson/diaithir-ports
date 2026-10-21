@@ -972,8 +972,8 @@ file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
 hash = "8dcf36d5ca191e00689fc42de39e835f864c4a806384de27689a4ab18e6337c1"
 
 [[files]]
-file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.0.pw.toml"
-hash = "1e7146225de5dc131832f89e855994fb18389179a3206a39a9d881bc05116777"
+file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
+hash = "8ff7ce86e2e0bc333ae90e464bcf7124a6abb3ab4f4c7afb17ad64e763d06ab1"
 metafile = true
 
 [[files]]
