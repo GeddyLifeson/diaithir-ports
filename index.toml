@@ -997,6 +997,10 @@ hash = "8ff7ce86e2e0bc333ae90e464bcf7124a6abb3ab4f4c7afb17ad64e763d06ab1"
 metafile = true
 
 [[files]]
+file = "mods/diaithir-perf-neoforge-26.1.2-0.1.0.jar"
+hash = "1384b3fb7c36b0fd22dc9d8832cd7888aaeedd9f4be74d573b8ef7207cef7b2d"
+
+[[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
 hash = "cb4a4ce59ceb5018b3a3eb02ced19df1f389fd90d648867e51f1c02c5de540d4"
 
