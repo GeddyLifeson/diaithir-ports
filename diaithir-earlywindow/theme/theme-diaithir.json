@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "windowIcon": "diaithir_icon.png",
+  "fonts": {
+    "default": "PixelifySans.ttf"
+  },
+  "shaders": {
+    "gui": {
+      "vertexShader": "gui.vert",
+      "fragmentShader": "gui.frag"
+    },
+    "font": {
+      "vertexShader": "gui.vert",
+      "fragmentShader": "gui_font.frag"
+    },
+    "color": {
+      "vertexShader": "gui.vert",
+      "fragmentShader": "gui_color.frag"
+    }
+  },
+  "colorScheme": {
+    "screenBackground": "#1b1d2a",
+    "text": "#f3e3b5",
+    "memoryLowColor": "#c9a24a",
+    "memoryHighColor": "#d9481c"
+  },
+  "sprites": {
+    "progressBarBackground": {
+      "resource": "diaithir_bar_bg.png",
+      "scaling": {
+        "type": "nine_slice",
+        "width": 40,
+        "height": 20,
+        "left": 2,
+        "top": 2,
+        "right": 2,
+        "bottom": 2,
+        "stretchHorizontalFill": true,
+        "stretchVerticalFill": true,
+        "linearScaling": false
+      }
+    },
+    "progressBarForeground": {
+      "resource": "diaithir_bar_fg.png",
+      "scaling": {
+        "type": "nine_slice",
+        "width": 40,
+        "height": 20,
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "stretchHorizontalFill": true,
+        "stretchVerticalFill": true,
+        "linearScaling": false
+      }
+    },
+    "progressBarIndeterminate": {
+      "resource": "diaithir_bar_fg.png",
+      "scaling": {
+        "type": "nine_slice",
+        "width": 40,
+        "height": 20,
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4,
+        "stretchHorizontalFill": true,
+        "stretchVerticalFill": true,
+        "linearScaling": false
+      }
+    },
+    "progressBarIndeterminateBounces": false
+  },
+  "loadingScreen": {
+    "background": {
+      "type": "image",
+      "visible": false,
+      "font": "default"
+    },
+    "performance": {
+      "visible": true,
+      "maintainAspectRatio": true,
+      "centerHorizontally": false,
+      "centerVertically": false,
+      "font": "default",
+      "left": 220.0,
+      "top": 10.0,
+      "right": 220.0
+    },
+    "progressBars": {
+      "visible": true,
+      "maintainAspectRatio": false,
+      "centerHorizontally": false,
+      "centerVertically": false,
+      "font": "default",
+      "labelGap": 4,
+      "barGap": 5,
+      "left": 220.0,
+      "top": 250.0,
+      "right": 220.0
+    },
+    "startupLog": {
+      "visible": false,
+      "maintainAspectRatio": true,
+      "centerHorizontally": false,
+      "centerVertically": false,
+      "font": "default",
+      "left": 10.0,
+      "bottom": 10.0
+    },
+    "mojangLogo": {
+      "visible": false,
+      "maintainAspectRatio": true,
+      "centerHorizontally": true,
+      "centerVertically": false,
+      "font": "default",
+      "top": 96.0
+    },
+    "decoration": {
+      "logo": {
+        "visible": true,
+        "maintainAspectRatio": true,
+        "centerHorizontally": true,
+        "centerVertically": false,
+        "font": "default",
+        "type": "image",
+        "top": 60.0,
+        "texture": {
+          "resource": "diaithir_logo.png",
+          "scaling": {
+            "type": "stretch",
+            "width": 160,
+            "height": 160,
+            "linearScaling": true
+          }
+        }
+      }
+    }
+  }
+}
