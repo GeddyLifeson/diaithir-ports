@@ -12,5 +12,17 @@
   "fml.menu.multiplayer.serveroutdated": "The server runs an older pack. Ask the host to update.",
   "fml.menu.multiplayer.clientoutdated": "Your pack is older than the server's. Launch again to update.",
   "fml.menu.multiplayer.extraservermods": "The server has parts your pack lacks. Launch again to update.",
-  "fml.menu.multiplayer.modsincompatible": "Your pack does not match the server's. Launch again to update."
+  "fml.menu.multiplayer.modsincompatible": "Your pack does not match the server's. Launch again to update.",
+  "fml.menu.accessdenied.title": "Server closed to Diaithir",
+  "fml.menu.accessdenied.message": "Diaithir could not join this server.\nThe server %1$s only allows unchanged games.",
+  "fml.modmismatchscreen.missingmods.client": "Your pack lacks parts this server needs. Launch again to update, then join:",
+  "fml.modmismatchscreen.missingmods.server": "Your pack has parts this server lacks. Launch again to update, then join:",
+  "fml.modmismatchscreen.mismatchedmods": "These parts of your pack differ from the server's. Launch again to update, then join:",
+  "fml.modmismatchscreen.homepage": "Open this part's home page",
+  "fml.modmismatchscreen.table.visit.mod_page": "Open the home page of the part that adds %s",
+  "fml.resources.modresources": "Art and sound from %1$s parts of the pack",
+  "fml.resources.moddata": "Rules and recipes from %1$s parts of the pack",
+  "pack.neoforge.description": "Diaithir core resources",
+  "neoforge.network.negotiation.failure.vanilla.client.not_supported": "This server runs Diaithir. Join it from the Diaithir launcher (version %s).",
+  "neoforge.network.negotiation.failure.vanilla.server.not_supported": "This server does not run Diaithir, so Diaithir cannot join it."
 }

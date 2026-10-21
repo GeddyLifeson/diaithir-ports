@@ -65,6 +65,14 @@ LANG = {
     "selectWorld.locked": "Open in another Diaithir window.",
     "pack.dropConfirm": "Add these packs to Diaithir?",
     "advancements.story.root.title": "Diaithir",
+    "multiplayer.downloadingTerrain": "Raising the land...",
+    "resourcePack.vanilla.description": "The base look of Diaithir",
+    "dataPack.vanilla.description": "The base rules of Diaithir",
+    "pack.incompatible.new": "(Made for a newer game version)",
+    "pack.incompatible.old": "(Made for an older game version)",
+    "pack.incompatible.confirm.new": "This pack was made for a newer game version and may not work correctly.",
+    "pack.incompatible.confirm.old": "This pack was made for an older game version and may no longer work correctly.",
+    "pack.incompatible.confirm.unknown": "This pack is broken or made for an unknown game version and may not work correctly.",
     "fml.menu.mods": "Credits",
     "fml.menu.mods.title": "Credits",
     "fml.menu.mods.openmodsfolder": "Open pack folder",
@@ -79,6 +87,22 @@ LANG = {
     "fml.menu.multiplayer.clientoutdated": "Your pack is older than the server's. Launch again to update.",
     "fml.menu.multiplayer.extraservermods": "The server has parts your pack lacks. Launch again to update.",
     "fml.menu.multiplayer.modsincompatible": "Your pack does not match the server's. Launch again to update.",
+    "fml.menu.accessdenied.title": "Server closed to Diaithir",
+    "fml.menu.accessdenied.message": "Diaithir could not join this server.\nThe server %1$s only allows unchanged games.",
+    "fml.modmismatchscreen.missingmods.client": "Your pack lacks parts this server needs. Launch again to update, then join:",
+    "fml.modmismatchscreen.missingmods.server": "Your pack has parts this server lacks. Launch again to update, then join:",
+    "fml.modmismatchscreen.mismatchedmods": "These parts of your pack differ from the server's. Launch again to update, then join:",
+    "fml.modmismatchscreen.homepage": "Open this part's home page",
+    "fml.modmismatchscreen.table.visit.mod_page": "Open the home page of the part that adds %s",
+    "fml.resources.modresources": "Art and sound from %1$s parts of the pack",
+    "fml.resources.moddata": "Rules and recipes from %1$s parts of the pack",
+    "pack.neoforge.description": "Diaithir core resources",
+    "neoforge.network.negotiation.failure.vanilla.client.not_supported": "This server runs Diaithir. Join it from the Diaithir launcher (version %s).",
+    "neoforge.network.negotiation.failure.vanilla.server.not_supported": "This server does not run Diaithir, so Diaithir cannot join it.",
+    "diaithir.pack.mod_resources": "Diaithir Resources",
+    "diaithir.pack.mod_data": "Diaithir Data",
+    "diaithir.pack.programmer_art.description": "The oldest block art, from before the Ages",
+    "diaithir.pack.high_contrast.description": "Sharper menus and text, easier to read",
     "diaithir.menu.help": "Get help",
     "diaithir.menu.join_page": "Join page",
     "diaithir.warnings.title": "Diaithir started with warnings",
@@ -164,8 +188,8 @@ def texts():
     with open(os.path.join(MC, "texts", "splashes.txt"), "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(SPLASHES) + "\n")
     # NeoForge's own keys only lose to a file in its namespace from a pack loaded after it (mods.toml orders us AFTER neoforge).
-    save_json({k: v for k, v in LANG.items() if not k.startswith("fml.")}, MC, "lang", "en_us.json")
-    save_json({k: v for k, v in LANG.items() if k.startswith("fml.")}, ROOT, "neoforge", "lang", "en_us.json")
+    save_json({k: v for k, v in LANG.items() if not k.startswith(("fml.", "neoforge.", "pack.neoforge"))}, MC, "lang", "en_us.json")
+    save_json({k: v for k, v in LANG.items() if k.startswith(("fml.", "neoforge.", "pack.neoforge"))}, ROOT, "neoforge", "lang", "en_us.json")
 
 
 def theme(out):

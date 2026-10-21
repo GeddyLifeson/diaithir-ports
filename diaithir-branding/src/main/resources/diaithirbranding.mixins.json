@@ -6,7 +6,9 @@
     "DebugEntryVersionMixin",
     "LoadingOverlayMixin",
     "LogoTextureMixin",
-    "MinecraftMixin"
+    "MinecraftMixin",
+    "LevelLoadingScreenMixin",
+    "PackMixin"
   ],
   "injectors": {
     "defaultRequire": 1
