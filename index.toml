@@ -664,7 +664,7 @@ metafile = true
 
 [[files]]
 file = "mods/actuallyadditions-1.3.26+mc26.1.2.jar"
-hash = "0111510b3360230239d8568eb1437a9ce8396c68a3c566c84b8a09f0919bce0c"
+hash = "efdab0d86c2e3dab837e9c2b67232afed9262a895b1e22218c0491b42b3f2956"
 
 [[files]]
 file = "mods/ae2importexportcard-26.1.2-2.3.1.pw.toml"
