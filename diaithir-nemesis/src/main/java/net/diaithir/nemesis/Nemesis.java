@@ -23,12 +23,14 @@ public final class Nemesis {
     /** UUID of the entity carrying this nemesis now, or empty while it is away. */
     public String entity;
     public boolean cheated;
+    /** Game time of its last ambush; not saved, so a restart only resets the cooldown. */
     public long lastAmbush;
+    public final String warband;
     /** Where it was last seen, as "x, z", or empty. */
     public String seen;
 
     public Nemesis(int id, String name, String epithet, String type, String age, int rank, int generation, int kills,
-                   List<String> traits, List<String> players, List<String> houses, String sire, String entity, boolean cheated, long lastAmbush, String seen) {
+                   List<String> traits, List<String> players, List<String> houses, String sire, String entity, boolean cheated, String warband, String seen) {
         this.id = id;
         this.name = name;
         this.epithet = epithet;
@@ -43,7 +45,7 @@ public final class Nemesis {
         this.sire = sire;
         this.entity = entity;
         this.cheated = cheated;
-        this.lastAmbush = lastAmbush;
+        this.warband = warband;
         this.seen = seen;
     }
 

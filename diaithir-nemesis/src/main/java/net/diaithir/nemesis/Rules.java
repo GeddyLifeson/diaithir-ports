@@ -12,7 +12,7 @@ import java.util.Set;
 
 /** Tunables and per-Age names, ranks and traits from data/diaithirnemesis/nemesis.json. An Age with no entry uses Age I's. */
 public final class Rules {
-    public record Age(List<String> names, List<String> epithets, List<String> ranks, List<String> traits, String heir) {}
+    public record Age(List<String> names, List<String> epithets, List<String> ranks, List<String> warbands, List<String> traits, String heir) {}
 
     public int safeRadius;
     public int ambushCheckTicks;
@@ -20,6 +20,14 @@ public final class Rules {
     public long ambushCooldownTicks;
     public double cheatDeathChance;
     public int maxPerPlayer;
+    /** Grudge points (damage either way between a player and a monster) for each hostility tier; the last makes a nemesis. */
+    public List<Integer> grudgeTiers;
+    public List<String> tierNames;
+    public int feudTicks;
+    public int chronicleLength;
+    /** A nemesis below this share of its health can be interrogated (sneak and use on it); it lies this often. */
+    public double interrogateBelow;
+    public double lieChance;
     public Map<String, Age> ages;
 
     /** The trait ids Traits gives an effect to; an Age listing any other is rejected at load. */
@@ -33,8 +41,8 @@ public final class Rules {
             throw new IllegalStateException("data/diaithirnemesis/nemesis.json missing or broken", e);
         }
         rules.ages.forEach((id, a) -> {
-            if (a.names().isEmpty() || a.epithets().isEmpty() || a.ranks().isEmpty() || !TRAITS.containsAll(a.traits()))
-                throw new IllegalStateException("nemesis.json Age " + id + " needs names, epithets and ranks, and only known traits");
+            if (a.names().isEmpty() || a.epithets().isEmpty() || a.ranks().isEmpty() || a.warbands().isEmpty() || !TRAITS.containsAll(a.traits()))
+                throw new IllegalStateException("nemesis.json Age " + id + " needs names, epithets, ranks and warbands, and only known traits");
         });
         return rules;
     }
@@ -48,19 +56,39 @@ public final class Rules {
 
     public Nemesis promote(int id, String type, String age, String player, String house, Random r) {
         Age a = age(age);
-        Nemesis n = new Nemesis(id, pick(a.names(), r), pick(a.epithets(), r), type, age, 1, 1, 1,
-                List.of(), List.of(player), house.isEmpty() ? List.of() : List.of(house), "", "", false, 0L, "");
+        Nemesis n = new Nemesis(id, pick(a.names(), r), pick(a.epithets(), r), type, age, 1, 1, 0,
+                List.of(), List.of(player), house.isEmpty() ? List.of() : List.of(house), "", "", false, pick(a.warbands(), r), "");
         addTrait(n, r);
         return n;
     }
 
-    /** Another kill: up one rank (to the Age's top) and one more trait, and the victim joins the grudge. */
+    /** Another kill: it rises, and the victim joins the grudge. */
     public void rankUp(Nemesis n, String player, String house, Random r) {
         n.kills++;
-        n.rank = Math.min(n.rank + 1, age(n.age).ranks().size());
-        addTrait(n, r);
+        rise(n, r);
         if (!n.players.contains(player)) n.players.add(player);
         if (!house.isEmpty() && !n.houses.contains(house)) n.houses.add(house);
+    }
+
+    /** Up one rank (to the Age's top) and one more trait. */
+    public void rise(Nemesis n, Random r) {
+        n.rank = Math.min(n.rank + 1, age(n.age).ranks().size());
+        addTrait(n, r);
+    }
+
+    /** Two nemeses of feuding warbands clash: the higher rank is likelier to win. The winner rises; the loser drops a rank, to 0 if it falls. */
+    public Nemesis feud(Nemesis a, Nemesis b, Random r) {
+        Nemesis win = r.nextInt(a.rank + b.rank) < a.rank ? a : b, lose = win == a ? b : a;
+        rise(win, r);
+        lose.rank--;
+        return win;
+    }
+
+    /** Index of the hostility tier a grudge score has reached, or -1. */
+    public int tier(float score) {
+        int t = -1;
+        for (int i = 0; i < grudgeTiers.size(); i++) if (score >= grudgeTiers.get(i)) t = i;
+        return t;
     }
 
     /** Adds a trait the nemesis lacks that its Age allows, if any is left. */
@@ -78,7 +106,7 @@ public final class Rules {
         while (traits.size() > (sire.traits.size() + 1) / 2) traits.remove(r.nextInt(traits.size()));
         traits.retainAll(age(newAge).traits());
         return new Nemesis(id, pick(names, r), sire.epithet, sire.type, newAge, Math.clamp(sire.rank - 1, 1, age(newAge).ranks().size()), sire.generation + 1, 0,
-                traits, sire.players, sire.houses, sire.fullName(), "", false, 0L, "");
+                traits, sire.players, sire.houses, sire.fullName(), "", false, sire.warband, "");
     }
 
     private static String pick(List<String> list, Random r) { return list.get(r.nextInt(list.size())); }

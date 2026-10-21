@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import java.util.List;
 
-/** /nemesis roster for every player; list, forget, ambush and turn for operators; selftest for owners. */
+/** /nemesis roster and chronicle for every player; list, forget, ambush and turn for operators; selftest for owners. */
 final class NemesisCommands {
     private NemesisCommands() {}
 
@@ -21,6 +21,12 @@ final class NemesisCommands {
         d.register(Commands.literal("nemesis")
                 .then(Commands.literal("roster").executes(c -> show(c, NemesisData.get(c.getSource().getServer())
                         .against(c.getSource().getPlayerOrException().getStringUUID()), "No one hunts you yet.")))
+                .then(Commands.literal("chronicle").executes(c -> {
+                    List<String> lines = NemesisData.get(c.getSource().getServer()).chronicle;
+                    if (lines.isEmpty()) c.getSource().sendSuccess(() -> Component.literal("Nothing told yet."), false);
+                    for (String line : lines) c.getSource().sendSuccess(() -> Component.literal(line), false);
+                    return lines.size();
+                }))
                 .then(Commands.literal("list").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
                         .executes(c -> show(c, NemesisData.get(c.getSource().getServer()).nemeses, "No nemeses.")))
                 .then(Commands.literal("forget").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
@@ -47,7 +53,8 @@ final class NemesisCommands {
         if (list.isEmpty()) c.getSource().sendSuccess(() -> Component.literal(none), false);
         for (Nemesis n : list) {
             ItemStack trophy = data.trophy(n);
-            String line = "#" + n.id + " " + n.fullName() + ", " + DiaithirNemesis.RULES.title(n) + " (" + n.type + "), kills " + n.kills
+            String line = "#" + n.id + " " + n.fullName() + ", " + DiaithirNemesis.RULES.title(n) + " of " + n.warband
+                    + (data.chief(n.warband) == n ? " (its chief)" : "") + " (" + n.type + "), kills " + n.kills
                     + (n.traits.isEmpty() ? "" : ", " + String.join(", ", n.traits).replace('_', ' '))
                     + (n.sire.isEmpty() ? "" : ", " + DiaithirNemesis.RULES.age(n.age).heir() + " " + n.sire)
                     + (n.cheated ? ", scarred" : "")

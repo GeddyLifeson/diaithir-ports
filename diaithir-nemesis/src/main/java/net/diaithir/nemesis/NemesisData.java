@@ -9,8 +9,10 @@ import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /** Every living nemesis, the current Age and each player's House, as the diaithir-ages story events reported them. */
 public final class NemesisData extends SavedData {
@@ -30,7 +32,7 @@ public final class NemesisData extends SavedData {
             Codec.STRING.optionalFieldOf("sire", "").forGetter(n -> n.sire),
             Codec.STRING.optionalFieldOf("entity", "").forGetter(n -> n.entity),
             Codec.BOOL.optionalFieldOf("cheated", false).forGetter(n -> n.cheated),
-            Codec.LONG.optionalFieldOf("lastAmbush", 0L).forGetter(n -> n.lastAmbush),
+            Codec.STRING.optionalFieldOf("warband", "").forGetter(n -> n.warband),
             Codec.STRING.optionalFieldOf("seen", "").forGetter(n -> n.seen)
     ).apply(i, Nemesis::new));
 
@@ -40,7 +42,9 @@ public final class NemesisData extends SavedData {
             Codec.unboundedMap(Codec.STRING, Codec.STRING).optionalFieldOf("houses", Map.of()).forGetter(d -> d.houses),
             NEMESIS.listOf().optionalFieldOf("nemeses", List.of()).forGetter(d -> d.nemeses),
             Codec.unboundedMap(Codec.STRING, ItemStack.CODEC).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies),
-            Codec.unboundedMap(Codec.STRING, Codec.INT).optionalFieldOf("shaken", Map.of()).forGetter(d -> d.shaken)
+            Codec.unboundedMap(Codec.STRING, Codec.INT).optionalFieldOf("shaken", Map.of()).forGetter(d -> d.shaken),
+            Codec.STRING.listOf().optionalFieldOf("chronicle", List.of()).forGetter(d -> d.chronicle),
+            Codec.STRING.listOf().optionalFieldOf("settlers", List.of()).forGetter(d -> List.copyOf(d.settlers))
     ).apply(i, NemesisData::new));
     public static final SavedDataType<NemesisData> TYPE =
             new SavedDataType<>(Identifier.fromNamespaceAndPath(DiaithirNemesis.ID, "nemeses"), NemesisData::new, CODEC);
@@ -53,16 +57,23 @@ public final class NemesisData extends SavedData {
     public final Map<String, ItemStack> trophies;
     /** Players left Shaken (weakened) by a nemesis, by player UUID to nemesis id, until it falls. */
     public final Map<String, Integer> shaken;
+    /** Recent nemesis events, oldest first. */
+    public final List<String> chronicle;
+    /** Players at the Settler Standing, who opt out of nemeses. */
+    public final Set<String> settlers;
 
-    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of(), Map.of()); }
+    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of(), Map.of(), List.of(), List.of()); }
 
-    private NemesisData(int nextId, String age, Map<String, String> houses, List<Nemesis> nemeses, Map<String, ItemStack> trophies, Map<String, Integer> shaken) {
+    private NemesisData(int nextId, String age, Map<String, String> houses, List<Nemesis> nemeses, Map<String, ItemStack> trophies, Map<String, Integer> shaken,
+                        List<String> chronicle, List<String> settlers) {
         this.nextId = nextId;
         this.age = age;
         this.houses = new HashMap<>(houses);
         this.nemeses = new ArrayList<>(nemeses);
         this.trophies = new HashMap<>(trophies);
         this.shaken = new HashMap<>(shaken);
+        this.chronicle = new ArrayList<>(chronicle);
+        this.settlers = new HashSet<>(settlers);
     }
 
     public static NemesisData get(MinecraftServer server) {
@@ -88,6 +99,19 @@ public final class NemesisData extends SavedData {
     }
 
     private static String key(Nemesis n) { return Integer.toString(n.id); }
+
+    public void record(String line, int keep) {
+        chronicle.add(line);
+        while (chronicle.size() > keep) chronicle.removeFirst();
+        setDirty();
+    }
+
+    /** The warband's chief: its highest rank, the oldest on a tie. */
+    public Nemesis chief(String warband) {
+        Nemesis best = null;
+        for (Nemesis n : nemeses) if (n.warband.equals(warband) && (best == null || n.rank > best.rank)) best = n;
+        return best;
+    }
 
     public String house(String player) { return houses.getOrDefault(player, ""); }
 

@@ -81,9 +81,30 @@ final class NemesisSelfTest {
         check(fails, heirs == 1 && heir.sire.equals(sire.fullName()) && heir.generation == sire.generation + 1
                 && heir.players.equals(sire.players) && "II".equals(data.age), "Age Turn passes the grudge to an heir");
 
+        Mob ravager = EntityType.RAVAGER.spawn(level, at.north(3), EntitySpawnReason.COMMAND);
+        for (int i = 0; i < 3; i++) {
+            ravager.invulnerableTime = 0;
+            ravager.hurtServer(level, level.damageSources().playerAttack(victim), 7F);
+        }
+        Nemesis bearer = DiaithirNemesis.find(data, ravager);
+        check(fails, bearer != null && bearer.kills == 0 && ravager.isAlive(), "a grudge without a kill makes a nemesis");
+
+        int told = data.chronicle.size();
+        boolean clashed = false;
+        for (int i = 0; i < 8 && !clashed; i++) {
+            Nemesis rival = DiaithirNemesis.RULES.promote(data.nextId++, "minecraft:zombie", data.age, victim.getStringUUID(), "", new java.util.Random(i));
+            data.nemeses.add(rival);
+            clashed = DiaithirNemesis.feud(server, data);
+        }
+        check(fails, clashed && data.chronicle.size() > told && data.chronicle.getLast().contains(" beat ")
+                || data.chronicle.getLast().contains(" now leads ") || data.chronicle.getLast().contains(" is dead."), "warbands feud and the chronicle records it");
+        Nemesis any = data.nemeses.getFirst();
+        check(fails, DiaithirNemesis.interrogate(data, any).contains(any.warband), "interrogation names the warband");
+
         data.nemeses.clear();
         data.trophies.clear();
         data.shaken.clear();
+        data.chronicle.clear();
         data.age = oldAge;
         data.houses.remove(victim.getStringUUID());
         data.setDirty();

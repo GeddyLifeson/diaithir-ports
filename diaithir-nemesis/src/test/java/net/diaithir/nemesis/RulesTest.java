@@ -43,4 +43,21 @@ class RulesTest {
         assertEquals(2, heir.generation);
         assertEquals("II", heir.age);
     }
+
+    @Test
+    void feudRaisesTheWinnerAndLowersTheLoser() {
+        Nemesis a = rules.promote(1, "minecraft:zombie", "I", "p1", "", r), b = rules.promote(2, "minecraft:zombie", "I", "p2", "", r);
+        Nemesis win = rules.feud(a, b, r);
+        Nemesis lose = win == a ? b : a;
+        assertEquals(2, win.rank);
+        assertEquals(0, lose.rank);
+        assertFalse(a.warband.isEmpty());
+    }
+
+    @Test
+    void grudgeTiersClimbWithDamage() {
+        assertEquals(-1, rules.tier(5));
+        assertEquals(0, rules.tier(6));
+        assertEquals(2, rules.tier(25));
+    }
 }

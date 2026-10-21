@@ -3,17 +3,20 @@ package net.diaithir.nemesis;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.item.ItemStack;
@@ -27,11 +30,14 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -43,6 +49,7 @@ public final class DiaithirNemesis {
     private static final Logger LOG = LogUtils.getLogger();
     static final Rules RULES = Rules.load();
     static final Random RANDOM = new Random();
+    private static final String GRUDGE = "diaithirnemesis_grudge", FOE = "diaithirnemesis_foe";
 
     public DiaithirNemesis() {
         NeoForge.EVENT_BUS.addListener(LivingDeathEvent.class, DiaithirNemesis::onDeath);
@@ -50,6 +57,7 @@ public final class DiaithirNemesis {
         NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, DiaithirNemesis::onJoin);
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, DiaithirNemesis::onTick);
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerRespawnEvent.class, DiaithirNemesis::onRespawn);
+        NeoForge.EVENT_BUS.addListener(PlayerInteractEvent.EntityInteract.class, DiaithirNemesis::onInteract);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> NemesisCommands.register(e.getDispatcher()));
         listenToAges();
     }
@@ -83,6 +91,7 @@ public final class DiaithirNemesis {
             case "age" -> { if (!value.equals(data.age)) succession(server, value); }
             case "house_found", "house_join" -> data.houses.put(key, value);
             case "house_leave" -> data.houses.remove(key);
+            case "created", "standing" -> { if ("settler".equals(value)) data.settlers.add(key); else data.settlers.remove(key); }
             default -> { return; }
         }
         data.setDirty();
@@ -93,37 +102,45 @@ public final class DiaithirNemesis {
         if (server == null) return;
         if (event.getEntity() instanceof ServerPlayer player
                 && event.getSource().getEntity() instanceof Mob killer && killer instanceof Enemy && killer.isAlive()) {
-            promote(server, NemesisData.get(server), killer, player);
+            promote(server, NemesisData.get(server), killer, player, true);
         } else if (event.getEntity() instanceof Mob mob && idOf(mob) > 0) {
             NemesisData data = NemesisData.get(server);
             if (data.byId(idOf(mob)) instanceof Nemesis n) fall(server, data, mob, n, event);
         }
     }
 
-    private static void promote(MinecraftServer server, NemesisData data, Mob killer, ServerPlayer player) {
+    /** A kill, or a grudge that reached its last tier, makes the monster a nemesis; a kill by one already a nemesis ranks it up. */
+    private static void promote(MinecraftServer server, NemesisData data, Mob mob, ServerPlayer player, boolean killed) {
         String uuid = player.getStringUUID(), house = data.house(uuid);
-        Nemesis n = find(data, killer);
+        if (data.settlers.contains(uuid)) return;
+        Nemesis n = find(data, mob);
         if (n != null) {
+            if (!killed) return;
             RULES.rankUp(n, uuid, house, RANDOM);
         } else {
             if (data.nemeses.stream().filter(x -> x.players.contains(uuid)).count() >= RULES.maxPerPlayer) return;
-            n = RULES.promote(data.nextId++, BuiltInRegistries.ENTITY_TYPE.getKey(killer.getType()).toString(), data.age, uuid, house, RANDOM);
-            n.entity = killer.getStringUUID();
+            n = RULES.promote(data.nextId++, BuiltInRegistries.ENTITY_TYPE.getKey(mob.getType()).toString(), data.age, uuid, house, RANDOM);
+            if (killed) n.kills = 1;
+            n.entity = mob.getStringUUID();
             data.nemeses.add(n);
         }
         String took = "";
-        if (data.trophy(n).isEmpty() && !player.getMainHandItem().isEmpty()) {
-            ItemStack stack = player.getMainHandItem().copy();
-            player.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
-            data.setTrophy(n, stack);
-            took = " It took their " + stack.getHoverName().getString() + ".";
+        if (killed) {
+            if (data.trophy(n).isEmpty() && !player.getMainHandItem().isEmpty()) {
+                ItemStack stack = player.getMainHandItem().copy();
+                player.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                data.setTrophy(n, stack);
+                took = " It took their " + stack.getHoverName().getString() + ".";
+            }
+            data.shaken.put(uuid, n.id);
         }
-        Traits.apply(killer, n, RULES);
-        arm(killer, data, n);
-        n.seen = seen(killer);
-        data.shaken.put(uuid, n.id);
+        Traits.apply(mob, n, RULES);
+        arm(mob, data, n);
+        n.seen = seen(mob);
         data.setDirty();
-        broadcast(server, player.getName().getString() + " was slain by " + n.fullName() + ", now " + RULES.title(n) + "." + took);
+        String rank = RULES.title(n) + " of " + n.warband;
+        broadcast(server, killed ? player.getName().getString() + " was slain by " + n.fullName() + ", now " + rank + "." + took
+                : n.fullName() + " will not forget " + player.getName().getString() + ". It is now " + rank + ".");
     }
 
     private static void fall(MinecraftServer server, NemesisData data, Mob mob, Nemesis n, LivingDeathEvent event) {
@@ -136,22 +153,104 @@ public final class DiaithirNemesis {
             mob.discard();
             broadcast(server, n.fullName() + " escapes, scarred. It will be back.");
         } else {
-            List<String> freed = data.shaken.entrySet().stream().filter(e -> e.getValue() == n.id).map(Map.Entry::getKey).toList();
-            data.remove(n);
-            for (String p : freed) {
-                ServerPlayer sp = server.getPlayerList().getPlayer(UUID.fromString(p));
-                if (sp != null) sp.removeEffect(MobEffects.WEAKNESS);
-            }
             Entity by = event.getSource().getEntity();
             broadcast(server, n.fullName() + " has fallen" + (by instanceof ServerPlayer p ? " to " + p.getName().getString() : "") + ".");
+            fallen(server, data, n);
+        }
+        data.setDirty();
+    }
+
+    /** Forgets a fallen nemesis, frees those it shook, and if it led its warband the strongest left rises to lead. */
+    private static void fallen(MinecraftServer server, NemesisData data, Nemesis n) {
+        boolean ledBand = data.chief(n.warband) == n;
+        List<String> freed = data.shaken.entrySet().stream().filter(e -> e.getValue() == n.id).map(Map.Entry::getKey).toList();
+        data.remove(n);
+        for (String p : freed) {
+            ServerPlayer sp = server.getPlayerList().getPlayer(UUID.fromString(p));
+            if (sp != null) sp.removeEffect(MobEffects.WEAKNESS);
+        }
+        Nemesis heir = ledBand ? data.chief(n.warband) : null;
+        if (heir != null) {
+            RULES.rise(heir, RANDOM);
+            if (loaded(server, heir) instanceof Mob m) Traits.apply(m, heir, RULES);
+            broadcast(server, heir.fullName() + " now leads " + n.warband + ".");
         }
         data.setDirty();
     }
 
     private static void onDamage(LivingDamageEvent.Post event) {
-        if (!(event.getSource().getEntity() instanceof Mob attacker) || idOf(attacker) < 0) return;
-        MinecraftServer server = attacker.level().getServer();
-        if (server != null && NemesisData.get(server).byId(idOf(attacker)) instanceof Nemesis n) Traits.onHit(attacker, event.getEntity(), n);
+        Entity source = event.getSource().getEntity();
+        LivingEntity target = event.getEntity();
+        MinecraftServer server = target.level().getServer();
+        if (server == null) return;
+        if (source instanceof Mob attacker && idOf(attacker) > 0) {
+            if (NemesisData.get(server).byId(idOf(attacker)) instanceof Nemesis n) Traits.onHit(attacker, target, n);
+        } else if (source instanceof Mob attacker && attacker instanceof Enemy && target instanceof ServerPlayer player) {
+            grudge(server, attacker, player, event.getHealthDamage());
+        } else if (source instanceof ServerPlayer player && target instanceof Mob mob && mob instanceof Enemy && mob.isAlive() && idOf(mob) < 0) {
+            grudge(server, mob, player, event.getHealthDamage());
+        }
+    }
+
+    // Hidden grudge score on the monster: damage either way between it and one player. Each tier is shown to that player.
+    private static void grudge(MinecraftServer server, Mob mob, ServerPlayer player, float damage) {
+        CompoundTag tag = mob.getPersistentData();
+        String foe = player.getStringUUID();
+        float before = foe.equals(tag.getStringOr(FOE, "")) ? tag.getFloatOr(GRUDGE, 0F) : 0F;
+        float after = before + damage;
+        tag.putString(FOE, foe);
+        tag.putFloat(GRUDGE, after);
+        int was = RULES.tier(before), now = RULES.tier(after);
+        if (now <= was) return;
+        if (now == RULES.grudgeTiers.size() - 1) promote(server, NemesisData.get(server), mob, player, false);
+        else player.sendSystemMessage(mob.getName().copy().append(" turns " + RULES.tierNames.get(now) + "."), true);
+    }
+
+    // Sneak and use on a beaten nemesis: it names its chief and where it was last seen, sometimes falsely, then flees.
+    private static void onInteract(PlayerInteractEvent.EntityInteract event) {
+        if (event.getHand() != InteractionHand.MAIN_HAND || !(event.getEntity() instanceof ServerPlayer player) || !player.isShiftKeyDown()
+                || !(event.getTarget() instanceof Mob mob) || idOf(mob) < 0 || mob.getHealth() > mob.getMaxHealth() * RULES.interrogateBelow) return;
+        NemesisData data = NemesisData.get(player.level().getServer());
+        if (!(data.byId(idOf(mob)) instanceof Nemesis n)) return;
+        player.sendSystemMessage(Component.literal(interrogate(data, n)));
+        n.entity = "";
+        n.seen = seen(mob);
+        mob.discard();
+        data.setDirty();
+        event.setCanceled(true);
+    }
+
+    static String interrogate(NemesisData data, Nemesis n) {
+        Nemesis chief = data.chief(n.warband);
+        if (chief == n) return n.fullName() + " spits: \"I lead " + n.warband + ". Find me if you dare.\"";
+        String where = RANDOM.nextDouble() < RULES.lieChance || chief.seen.isEmpty()
+                ? (RANDOM.nextInt(4000) - 2000) + ", " + (RANDOM.nextInt(4000) - 2000) : chief.seen;
+        return n.fullName() + " gasps: \"" + chief.fullName() + " leads " + n.warband + ". Last I saw, near " + where + ".\"";
+    }
+
+    /** Two nemeses of different warbands clash out of sight; the chronicle records it. */
+    static boolean feud(MinecraftServer server, NemesisData data) {
+        List<Nemesis> all = new ArrayList<>(data.nemeses);
+        Collections.shuffle(all, RANDOM);
+        for (Nemesis a : all) {
+            for (Nemesis b : all) {
+                if (a.warband.equals(b.warband)) continue;
+                Nemesis win = RULES.feud(a, b, RANDOM), lose = win == a ? b : a;
+                broadcast(server, win.fullName() + " of " + win.warband + " beat " + lose.fullName() + " of " + lose.warband + ".");
+                if (loaded(server, win) instanceof Mob m) Traits.apply(m, win, RULES);
+                if (lose.rank > 0) {
+                    if (loaded(server, lose) instanceof Mob m) Traits.apply(m, lose, RULES);
+                } else {
+                    if (data.trophy(win).isEmpty() && !data.trophy(lose).isEmpty()) data.setTrophy(win, data.trophy(lose));
+                    despawn(server, lose);
+                    broadcast(server, lose.fullName() + " is dead.");
+                    fallen(server, data, lose);
+                }
+                data.setDirty();
+                return true;
+            }
+        }
+        return false;
     }
 
     // A copy left in an unloaded chunk after its nemesis died, escaped or ambushed elsewhere is dropped when it loads.
@@ -165,10 +264,11 @@ public final class DiaithirNemesis {
     private static void onTick(ServerTickEvent.Post event) {
         MinecraftServer server = event.getServer();
         long now = server.overworld().getGameTime();
+        if (now % RULES.feudTicks == 0) feud(server, NemesisData.get(server));
         if (now % RULES.ambushCheckTicks != 0) return;
         NemesisData data = NemesisData.get(server);
         for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-            if (player.isSpectator() || player.isCreative() || nearSpawn(player)) continue;
+            if (player.isSpectator() || player.isCreative() || nearSpawn(player) || data.settlers.contains(player.getStringUUID())) continue;
             for (Nemesis n : data.against(player.getStringUUID())) {
                 Entity body = loaded(server, n);
                 if (body != null) n.seen = seen(body);
@@ -288,5 +388,6 @@ public final class DiaithirNemesis {
 
     private static void broadcast(MinecraftServer server, String text) {
         server.getPlayerList().broadcastSystemMessage(Component.literal(text), false);
+        NemesisData.get(server).record(text, RULES.chronicleLength);
     }
 }
