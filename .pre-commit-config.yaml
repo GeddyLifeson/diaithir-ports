@@ -1,0 +1,10 @@
+# Same token check as DiaithirRPG. Runs on PRs through pre-commit.ci (free for public repos, no Actions):
+#   pip install pre-commit && pre-commit install      once per clone
+repos:
+  - repo: local
+    hooks:
+      - id: no-tokens
+        name: no committed tokens
+        entry: detect-secrets-hook --disable-plugin HexHighEntropyString --disable-plugin Base64HighEntropyString
+        language: python
+        additional_dependencies: [detect-secrets==1.5.0]
