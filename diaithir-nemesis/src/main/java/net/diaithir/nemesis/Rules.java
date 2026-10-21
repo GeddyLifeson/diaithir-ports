@@ -49,7 +49,7 @@ public final class Rules {
     public Nemesis promote(int id, String type, String age, String player, String house, Random r) {
         Age a = age(age);
         Nemesis n = new Nemesis(id, pick(a.names(), r), pick(a.epithets(), r), type, age, 1, 1, 1,
-                List.of(), List.of(player), house.isEmpty() ? List.of() : List.of(house), "", "", false, 0L);
+                List.of(), List.of(player), house.isEmpty() ? List.of() : List.of(house), "", "", false, 0L, "");
         addTrait(n, r);
         return n;
     }
@@ -78,7 +78,7 @@ public final class Rules {
         while (traits.size() > (sire.traits.size() + 1) / 2) traits.remove(r.nextInt(traits.size()));
         traits.retainAll(age(newAge).traits());
         return new Nemesis(id, pick(names, r), sire.epithet, sire.type, newAge, Math.clamp(sire.rank - 1, 1, age(newAge).ranks().size()), sire.generation + 1, 0,
-                traits, sire.players, sire.houses, sire.fullName(), "", false, 0L);
+                traits, sire.players, sire.houses, sire.fullName(), "", false, 0L, "");
     }
 
     private static String pick(List<String> list, Random r) { return list.get(r.nextInt(list.size())); }

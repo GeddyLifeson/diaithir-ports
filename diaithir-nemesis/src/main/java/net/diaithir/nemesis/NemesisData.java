@@ -30,7 +30,8 @@ public final class NemesisData extends SavedData {
             Codec.STRING.optionalFieldOf("sire", "").forGetter(n -> n.sire),
             Codec.STRING.optionalFieldOf("entity", "").forGetter(n -> n.entity),
             Codec.BOOL.optionalFieldOf("cheated", false).forGetter(n -> n.cheated),
-            Codec.LONG.optionalFieldOf("lastAmbush", 0L).forGetter(n -> n.lastAmbush)
+            Codec.LONG.optionalFieldOf("lastAmbush", 0L).forGetter(n -> n.lastAmbush),
+            Codec.STRING.optionalFieldOf("seen", "").forGetter(n -> n.seen)
     ).apply(i, Nemesis::new));
 
     public static final Codec<NemesisData> CODEC = RecordCodecBuilder.create(i -> i.group(
@@ -38,7 +39,8 @@ public final class NemesisData extends SavedData {
             Codec.STRING.optionalFieldOf("age", "I").forGetter(d -> d.age),
             Codec.unboundedMap(Codec.STRING, Codec.STRING).optionalFieldOf("houses", Map.of()).forGetter(d -> d.houses),
             NEMESIS.listOf().optionalFieldOf("nemeses", List.of()).forGetter(d -> d.nemeses),
-            Codec.unboundedMap(Codec.STRING, ItemStack.CODEC).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies)
+            Codec.unboundedMap(Codec.STRING, ItemStack.CODEC).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies),
+            Codec.unboundedMap(Codec.STRING, Codec.INT).optionalFieldOf("shaken", Map.of()).forGetter(d -> d.shaken)
     ).apply(i, NemesisData::new));
     public static final SavedDataType<NemesisData> TYPE =
             new SavedDataType<>(Identifier.fromNamespaceAndPath(DiaithirNemesis.ID, "nemeses"), NemesisData::new, CODEC);
@@ -49,15 +51,18 @@ public final class NemesisData extends SavedData {
     public final List<Nemesis> nemeses;
     /** The item each nemesis took from a player it killed, by nemesis id; it is dropped when the nemesis falls. */
     public final Map<String, ItemStack> trophies;
+    /** Players left Shaken (weakened) by a nemesis, by player UUID to nemesis id, until it falls. */
+    public final Map<String, Integer> shaken;
 
-    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of()); }
+    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of(), Map.of()); }
 
-    private NemesisData(int nextId, String age, Map<String, String> houses, List<Nemesis> nemeses, Map<String, ItemStack> trophies) {
+    private NemesisData(int nextId, String age, Map<String, String> houses, List<Nemesis> nemeses, Map<String, ItemStack> trophies, Map<String, Integer> shaken) {
         this.nextId = nextId;
         this.age = age;
         this.houses = new HashMap<>(houses);
         this.nemeses = new ArrayList<>(nemeses);
         this.trophies = new HashMap<>(trophies);
+        this.shaken = new HashMap<>(shaken);
     }
 
     public static NemesisData get(MinecraftServer server) {
@@ -68,15 +73,18 @@ public final class NemesisData extends SavedData {
 
     public void setTrophy(Nemesis n, ItemStack stack) { trophies.put(key(n), stack); }
 
-    public void moveTrophy(Nemesis from, Nemesis to) {
+    /** Hands the trophy and the Shaken players on to an heir. */
+    public void inherit(Nemesis from, Nemesis to) {
         ItemStack t = trophies.remove(key(from));
         if (t != null) trophies.put(key(to), t);
+        shaken.replaceAll((p, id) -> id == from.id ? to.id : id);
     }
 
-    /** Forgets a nemesis and its trophy. */
+    /** Forgets a nemesis, its trophy and whom it shook. */
     public void remove(Nemesis n) {
         nemeses.remove(n);
         trophies.remove(key(n));
+        shaken.values().removeIf(id -> id == n.id);
     }
 
     private static String key(Nemesis n) { return Integer.toString(n.id); }

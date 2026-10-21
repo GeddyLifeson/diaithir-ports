@@ -12,7 +12,7 @@ Part of the Diaithir modpack for NeoForge 26.1.2. Source: https://github.com/Ged
 
 # Diaithir Nemesis
 
-A monster that kills a player becomes a nemesis: it gets a name and epithet from the Age's pool, a rank, one trait, and it never despawns. It holds a grudge against that player and their House, and takes the item in the player's hand as a trophy, carried in its off hand and dropped when it falls. Each further kill raises its rank (Age I: Prowler, Stalker, Hunter of the Folk, Dread of the Fire, Bane of the Hearths) and adds a trait: hardy, swift, brutal, thick hide, venomous, frostbite, fire thief, bloodfed or caller (brings its kind to an ambush).
+A monster that kills a player becomes a nemesis: it gets a name and epithet from the Age's pool, a rank, one trait, and it never despawns. It holds a grudge against that player and their House, and takes the item in the player's hand as a trophy, carried in its off hand and dropped when it falls. The player respawns Shaken (Weakness with no end) until that nemesis falls, and `/nemesis roster` shows where each one was last seen. Each further kill raises its rank (Age I: Prowler, Stalker, Hunter of the Folk, Dread of the Fire, Bane of the Hearths) and adds a trait: hardy, swift, brutal, thick hide, venomous, frostbite, fire thief, bloodfed or caller (brings its kind to an ambush).
 
 Every 5 minutes, each player more than 200 blocks from spawn may be ambushed (25%, at most once per nemesis every 30 minutes) by a nemesis holding a grudge against them or their House. The first time a nemesis dies it may escape with a scar and a new trait (50%). At an Age Turn every nemesis is succeeded by its heir: a new name under the same epithet, one rank lower, half the traits, the same grudges and trophy.
 

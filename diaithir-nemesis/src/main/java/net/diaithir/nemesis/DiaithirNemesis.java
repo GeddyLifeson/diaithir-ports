@@ -9,6 +9,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -24,12 +26,14 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -45,6 +49,7 @@ public final class DiaithirNemesis {
         NeoForge.EVENT_BUS.addListener(LivingDamageEvent.Post.class, DiaithirNemesis::onDamage);
         NeoForge.EVENT_BUS.addListener(EntityJoinLevelEvent.class, DiaithirNemesis::onJoin);
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, DiaithirNemesis::onTick);
+        NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerRespawnEvent.class, DiaithirNemesis::onRespawn);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> NemesisCommands.register(e.getDispatcher()));
         listenToAges();
     }
@@ -115,6 +120,8 @@ public final class DiaithirNemesis {
         }
         Traits.apply(killer, n, RULES);
         arm(killer, data, n);
+        n.seen = seen(killer);
+        data.shaken.put(uuid, n.id);
         data.setDirty();
         broadcast(server, player.getName().getString() + " was slain by " + n.fullName() + ", now " + RULES.title(n) + "." + took);
     }
@@ -125,10 +132,16 @@ public final class DiaithirNemesis {
             n.cheated = true;
             RULES.addTrait(n, RANDOM);
             n.entity = "";
+            n.seen = seen(mob);
             mob.discard();
             broadcast(server, n.fullName() + " escapes, scarred. It will be back.");
         } else {
+            List<String> freed = data.shaken.entrySet().stream().filter(e -> e.getValue() == n.id).map(Map.Entry::getKey).toList();
             data.remove(n);
+            for (String p : freed) {
+                ServerPlayer sp = server.getPlayerList().getPlayer(UUID.fromString(p));
+                if (sp != null) sp.removeEffect(MobEffects.WEAKNESS);
+            }
             Entity by = event.getSource().getEntity();
             broadcast(server, n.fullName() + " has fallen" + (by instanceof ServerPlayer p ? " to " + p.getName().getString() : "") + ".");
         }
@@ -157,11 +170,24 @@ public final class DiaithirNemesis {
         for (ServerPlayer player : server.getPlayerList().getPlayers()) {
             if (player.isSpectator() || player.isCreative() || nearSpawn(player)) continue;
             for (Nemesis n : data.against(player.getStringUUID())) {
-                if (now - n.lastAmbush < RULES.ambushCooldownTicks || loaded(server, n) != null) continue;
+                Entity body = loaded(server, n);
+                if (body != null) n.seen = seen(body);
+                if (now - n.lastAmbush < RULES.ambushCooldownTicks || body != null) continue;
                 if (RANDOM.nextDouble() < RULES.ambushChance && ambush(server, data, n, player)) break;
             }
         }
     }
+
+    // Shaken: weakened until the nemesis that last killed you falls. Death clears effects, so it is put back on every respawn.
+    private static void onRespawn(PlayerEvent.PlayerRespawnEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player && player.level().getServer() instanceof MinecraftServer server
+                && NemesisData.get(server).shaken.containsKey(player.getStringUUID())) {
+            player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, MobEffectInstance.INFINITE_DURATION));
+            player.sendSystemMessage(Component.literal("You are Shaken until the one who felled you falls."));
+        }
+    }
+
+    static String seen(Entity e) { return e.getBlockX() + ", " + e.getBlockZ(); }
 
     private static boolean nearSpawn(ServerPlayer player) {
         BlockPos spawn = player.level().getRespawnData().pos();
@@ -177,6 +203,7 @@ public final class DiaithirNemesis {
         despawn(server, n);
         if (!(type.spawn(level, pos, EntitySpawnReason.EVENT) instanceof Mob mob)) return false;
         n.entity = mob.getStringUUID();
+        n.seen = seen(mob);
         n.lastAmbush = server.overworld().getGameTime();
         Traits.apply(mob, n, RULES);
         arm(mob, data, n);
@@ -199,7 +226,7 @@ public final class DiaithirNemesis {
         for (Nemesis sire : sires) {
             despawn(server, sire);
             Nemesis heir = RULES.heir(sire, data.nextId++, newAge, RANDOM);
-            data.moveTrophy(sire, heir);
+            data.inherit(sire, heir);
             data.nemeses.add(heir);
         }
         data.age = newAge;

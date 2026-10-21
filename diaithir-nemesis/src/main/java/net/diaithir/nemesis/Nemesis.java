@@ -24,9 +24,11 @@ public final class Nemesis {
     public String entity;
     public boolean cheated;
     public long lastAmbush;
+    /** Where it was last seen, as "x, z", or empty. */
+    public String seen;
 
     public Nemesis(int id, String name, String epithet, String type, String age, int rank, int generation, int kills,
-                   List<String> traits, List<String> players, List<String> houses, String sire, String entity, boolean cheated, long lastAmbush) {
+                   List<String> traits, List<String> players, List<String> houses, String sire, String entity, boolean cheated, long lastAmbush, String seen) {
         this.id = id;
         this.name = name;
         this.epithet = epithet;
@@ -42,6 +44,7 @@ public final class Nemesis {
         this.entity = entity;
         this.cheated = cheated;
         this.lastAmbush = lastAmbush;
+        this.seen = seen;
     }
 
     public String fullName() { return name + " " + epithet; }

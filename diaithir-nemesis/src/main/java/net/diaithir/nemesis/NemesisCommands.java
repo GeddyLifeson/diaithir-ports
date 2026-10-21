@@ -51,6 +51,7 @@ final class NemesisCommands {
                     + (n.traits.isEmpty() ? "" : ", " + String.join(", ", n.traits).replace('_', ' '))
                     + (n.sire.isEmpty() ? "" : ", " + DiaithirNemesis.RULES.age(n.age).heir() + " " + n.sire)
                     + (n.cheated ? ", scarred" : "")
+                    + (n.seen.isEmpty() ? "" : ", last seen near " + n.seen)
                     + (trophy.isEmpty() ? "" : ", carries " + trophy.getHoverName().getString());
             c.getSource().sendSuccess(() -> Component.literal(line), false);
         }

@@ -50,6 +50,7 @@ final class NemesisSelfTest {
         check(fails, zombie.hasCustomName() && zombie.isPersistenceRequired(), "nemesis is named and kept");
         check(fails, zombie.getMaxHealth() > baseHealth, "rank raises max health");
         check(fails, n.houses.contains("Selftest House"), "grudge holds the House");
+        check(fails, data.shaken.get(victim.getStringUUID()) == n.id && !n.seen.isEmpty(), "victim is Shaken and the nemesis was seen");
         check(fails, victim.getMainHandItem().isEmpty() && zombie.getOffhandItem().is(Items.STONE_AXE), "nemesis takes the weapon");
         var ops = level.registryAccess().createSerializationContext(NbtOps.INSTANCE);
         NemesisData copy = NemesisData.CODEC.parse(ops, NemesisData.CODEC.encodeStart(ops, data).getOrThrow()).getOrThrow();
@@ -68,6 +69,7 @@ final class NemesisSelfTest {
             if (body instanceof Mob m) m.hurtServer(level, level.damageSources().playerAttack(victim), 100_000F);
         }
         check(fails, data.byId(n.id) == null, "nemesis falls at the latest on its second death");
+        check(fails, !data.shaken.containsKey(victim.getStringUUID()), "its fall frees the Shaken");
 
         NeoForge.EVENT_BUS.post(new LivingDeathEvent(victim, level.damageSources().mobAttack(EntityType.SKELETON.spawn(level, at.west(2), EntitySpawnReason.COMMAND))));
         Nemesis sire = data.nemeses.getLast();
@@ -75,11 +77,13 @@ final class NemesisSelfTest {
         int heirs = DiaithirNemesis.succession(server, "II");
         Nemesis heir = data.nemeses.getLast();
         check(fails, data.trophies.isEmpty() || !data.trophy(heir).isEmpty(), "trophy passes to the heir");
+        check(fails, data.shaken.get(victim.getStringUUID()) == heir.id, "the heir keeps them Shaken");
         check(fails, heirs == 1 && heir.sire.equals(sire.fullName()) && heir.generation == sire.generation + 1
                 && heir.players.equals(sire.players) && "II".equals(data.age), "Age Turn passes the grudge to an heir");
 
         data.nemeses.clear();
         data.trophies.clear();
+        data.shaken.clear();
         data.age = oldAge;
         data.houses.remove(victim.getStringUUID());
         data.setDirty();
