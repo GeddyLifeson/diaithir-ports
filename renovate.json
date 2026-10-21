@@ -19,7 +19,8 @@
       ],
       "depNameTemplate": "net.neoforged:neoforge",
       "datasourceTemplate": "maven",
-      "registryUrlTemplate": "https://maven.neoforged.net/releases"
+      "registryUrlTemplate": "https://maven.neoforged.net/releases",
+      "versioningTemplate": "maven"
     }
   ],
   "packageRules": [
