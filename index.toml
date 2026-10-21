@@ -608,6 +608,11 @@ hash = "1ec2662393d02accef5651d9cd6f37e8cff31714a40a0bd31d70aef0195726c7"
 metafile = true
 
 [[files]]
+file = "mods/ScalableLux-neoforge-0.3.0-alpha.0.18-all.pw.toml"
+hash = "1b5bf0b1421356e6411f32ea80f26973a75eee0f3b26936a6335349d1ec2efcd"
+metafile = true
+
+[[files]]
 file = "mods/Searchables-neoforge-26.1.2-1.0.2.pw.toml"
 hash = "1b5af811ef62844c4a339e2394801cd67e5ea339f474f1fbc22b9a09a58cbf36"
 metafile = true
@@ -997,8 +1002,8 @@ hash = "8ff7ce86e2e0bc333ae90e464bcf7124a6abb3ab4f4c7afb17ad64e763d06ab1"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-perf-neoforge-26.1.2-0.1.0.jar"
-hash = "b4a2d4b255020ab7046cee27671e32b05e564c739c11406c20b26171c9462da6"
+file = "mods/diaithir-perf-neoforge-26.1.2-0.3.0.jar"
+hash = "1f92060ccb86e5a8b9406f9e75502fb0fff9e964e6fa1125325bab4f235e80e5"
 
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
