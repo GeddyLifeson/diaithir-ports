@@ -20,6 +20,14 @@ Cloud client, full pack (331 mods), software GL under Xvfb, -Xmx8G, `bench/clien
 | fix 2 | 2,541 MB |
 | fix 2 + 3 | 2,360 MB |
 
+### In world (singleplayer, client + integrated server)
+Same copy of the bench world (no forced chunks), `JOIN=1 bench/client.sh`, live heap after a full GC 3 minutes after joining.
+
+| run | heap in world |
+|---|---|
+| baseline | 7,712 MB (of an 8 GB cap) |
+| fixes 1-3 | 5,794 MB |
+
 ## Fix 2: CTM overlay tables on demand
 CTM (connected textures, used by Chisel) built all 6 x 625 overlay patterns of every connected-texture model at load, each as an ArrayList in an unmodifiable wrapper: 14.6 million lists. They are now built the first time a block needs one, as compact immutable lists: -1,136 MB (-31%). The mixin applies only when CTM is installed (`MixinPlugin`).
 
