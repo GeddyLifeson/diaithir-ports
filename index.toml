@@ -37,6 +37,10 @@ file = "config/integrateddynamics-common.toml"
 hash = "afd73d64ac978202fcfadf461cb60294cd54cf1a194bb9a3fdd5da466b9e8846"
 
 [[files]]
+file = "config/mca.json"
+hash = "11188b6e6d0dc994381cbecd969e1fd85aa06389aa1ef0b2c4275069b42c5b0f"
+
+[[files]]
 file = "config/modern_industrialization-server.toml"
 hash = "aa57943a7c0edc242de06fc0a3d008b081259ce1e8ee6ed4d8a51af076185aa7"
 
@@ -261,6 +265,11 @@ hash = "4f7b18f1a50e59fdaa684995259076ce29bcb911ee61af161b83403031837c95"
 metafile = true
 
 [[files]]
+file = "mods/AmbientSounds_NEOFORGE_v6.3.6_mc26.1.2.pw.toml"
+hash = "c0a8b61e3708d022fea23739588014c611df7b4cabe8f2bf46366fef8ac0313c"
+metafile = true
+
+[[files]]
 file = "mods/Apotheosis-26.1.2-9.1.0.pw.toml"
 hash = "090947eb34881503796f279ee9828423f73cd9f61799e7998209e97fc18da424"
 metafile = true
@@ -326,8 +335,18 @@ hash = "57392887384f10c78d22986e323a7622396c72b73f4f0d9b53c4c5495488d5a8"
 metafile = true
 
 [[files]]
+file = "mods/CreativeCore_NEOFORGE_v2.14.16_mc26.1.2.pw.toml"
+hash = "9c3e8ef10e9776a57dd101e52059c57935b1aaf51fb62ea68d2904e3295f66bd"
+metafile = true
+
+[[files]]
 file = "mods/Cucumber-26.1.2-9.0.6.pw.toml"
 hash = "5eff80cc39f7a702fe256de57b2240c9d0ed86e783ac3c06d8b172651091ba14"
+metafile = true
+
+[[files]]
+file = "mods/CutThrough-v26.1.0-mc26.1.x-NeoForge.pw.toml"
+hash = "5ed7f69784c96ef50903b48d845c3916b7e4560e3ee8e8cff4b7a202aa13aad5"
 metafile = true
 
 [[files]]
@@ -413,6 +432,11 @@ file = "mods/FluxNetworks-26.1.2-8.1.0-SNAPSHOT.jar"
 hash = "35a3e9de65b2446c44c6263bb828bba07f8a6529b1920611b0faef8dfe1c16af"
 
 [[files]]
+file = "mods/FoodEffectTooltips-2.1.2_26.1.pw.toml"
+hash = "84e40b806251d9393958c17a68c07a4f8293748f48c3380af2ac9a0f84f09bf5"
+metafile = true
+
+[[files]]
 file = "mods/ForgeConfigAPIPort-v26.1.5-mc26.1.x-NeoForge.pw.toml"
 hash = "03c1991d90ff334795a7ec0082b4ce96a9a5595277457eb572c084775477b7db"
 metafile = true
@@ -475,6 +499,11 @@ metafile = true
 [[files]]
 file = "mods/Ksyxis-1.4.6.pw.toml"
 hash = "097af67d29608441c9295b03620d13b1149c162e85962fabc566c730f5d514e9"
+metafile = true
+
+[[files]]
+file = "mods/LeaveMyBarsAlone-v26.1.0-mc26.1.x-NeoForge.pw.toml"
+hash = "ff139ca05e21a27af0f67d165e39b453ad080f6c0ae3a35ac58d6e8b2cc7e58b"
 metafile = true
 
 [[files]]
@@ -745,6 +774,11 @@ hash = "a930c1c5fd8b1b925497a5868bf3f30a028a053f32b194027e5b782d667811fa"
 metafile = true
 
 [[files]]
+file = "mods/animal_feeding_trough-1.2.1_26.1.2-neoforge.pw.toml"
+hash = "7db6d56ca48c2817e9e6d54ccf878f4d9c095b85354605e0e4093833c78e294d"
+metafile = true
+
+[[files]]
 file = "mods/appleskin-neoforge-mc26.1-3.0.9.pw.toml"
 hash = "54576d3b70ef9f37bd3e11a77feedffc087111838201506e1e91a69912cfb9bb"
 metafile = true
@@ -874,6 +908,11 @@ hash = "0bf8805e0413aeaec554379bbe1c681ae3510ea5b3dc30040515940009905880"
 metafile = true
 
 [[files]]
+file = "mods/chat_heads-1.3.2-neoforge-26.1.pw.toml"
+hash = "abc40b847618b0795a951f622ccf6d7eb9795b234d2f473ffbe459753737a3a8"
+metafile = true
+
+[[files]]
 file = "mods/chisel-26.1.2.19.pw.toml"
 hash = "701c703e83d135d0997d7abe1ab15ea30ae365a6a3c77071410fdfef47315a92"
 metafile = true
@@ -881,6 +920,11 @@ metafile = true
 [[files]]
 file = "mods/classicpipes-neoforge-26.1.2-1.1.7.pw.toml"
 hash = "c3dd6a1fabd7ad7e057a1dc39704b71adc8408cbe7c2a9136404eedbcb7f5139"
+metafile = true
+
+[[files]]
+file = "mods/clientsort-neoforge-3.102.8_26.1.2.pw.toml"
+hash = "b36e4df331a29fbfd0b2daf6ead9a84e1ed8634edb5f73a46131a77c1889343b"
 metafile = true
 
 [[files]]
@@ -966,6 +1010,11 @@ metafile = true
 [[files]]
 file = "mods/curios-neoforge-15.0.0_26.1.2.pw.toml"
 hash = "f1fe2774adf29d2e50c21328a30a92f77ed4a9bc94b1f20e53c9e5018df97040"
+metafile = true
+
+[[files]]
+file = "mods/cwb-4.1.0_26.1.pw.toml"
+hash = "0d68a7e299e3f0e50605f6ab1710edb06342c83ab8fcb0c1f9997a84d7021476"
 metafile = true
 
 [[files]]
@@ -1259,6 +1308,11 @@ hash = "efc3e2cd5e8b781631840a470c5492a4efbcd4f7773560902b843cc46cdd0230"
 metafile = true
 
 [[files]]
+file = "mods/jamlib-neoforge-2.3.1_26.1.x.pw.toml"
+hash = "8d85843c6f8e8d748effc52c30046f41d1fbfb7d7865e66597e99b90d3662dca"
+metafile = true
+
+[[files]]
 file = "mods/jei-26.1.2-neoforge-29.47.0.109.pw.toml"
 hash = "f3c5abb3700dd48a2ce094596fe19ce0813db7caa756745cd43569b22683eb66"
 metafile = true
@@ -1286,6 +1340,11 @@ metafile = true
 [[files]]
 file = "mods/justdirethings-1.6.11.pw.toml"
 hash = "634da4a38f6b8056af754a9231235e23a44b2a71792691a12f7650c0c523aa7d"
+metafile = true
+
+[[files]]
+file = "mods/justenoughbreeding-neoforge-26.1-3.4.1.pw.toml"
+hash = "494578bce7af81d56885364cca0fe1737a2c3cacf0f580fd8473d447c0d4db3a"
 metafile = true
 
 [[files]]
@@ -1360,6 +1419,11 @@ metafile = true
 [[files]]
 file = "mods/matc-1.8.0.pw.toml"
 hash = "a55cd4c06c710ceccaf2bad3aecd77fe2b87865d2de0d0654eb33d5d76431f7c"
+metafile = true
+
+[[files]]
+file = "mods/mca-neoforge-8.1.11_26.1.2.pw.toml"
+hash = "685c73b841bac227ddf39272dcc163377265557d98910ac8d5272112e7101d7e"
 metafile = true
 
 [[files]]
@@ -1630,6 +1694,11 @@ hash = "668a4e4ae5992b60963e701349120a782b87f8e90382495be101108247f9892d"
 metafile = true
 
 [[files]]
+file = "mods/rightclickharvest-neoforge-4.6.2_26.1.x.pw.toml"
+hash = "9af043169ffe01f98668ca4500f988e6204c0d94cd647144960a0c735e0f011d"
+metafile = true
+
+[[files]]
 file = "mods/rogues-neoforge-3.1.3.002_26.1.2.pw.toml"
 hash = "1ee3d03464a4e2c826a4f1c7b8d41015114831260e63d9a02524eed9b70d0d1d"
 metafile = true
@@ -1730,6 +1799,11 @@ metafile = true
 [[files]]
 file = "mods/sophisticatedstorageinmotion-26.1.2-0.10.37.378.pw.toml"
 hash = "b1290898a787173f19f64bcfaf252e0c9242c1af510ff0a14fd21cf1caec9939"
+metafile = true
+
+[[files]]
+file = "mods/sound-physics-remastered-neoforge-1.5.2_26.1.2.pw.toml"
+hash = "dd0484be8723f015c0f3caa9224cd66c5e483418265242fb6fcdb6f73cdf86f7"
 metafile = true
 
 [[files]]
@@ -1884,4 +1958,9 @@ metafile = true
 [[files]]
 file = "mods/zfastnoise-1.0.40_26.1.2_neoforge.pw.toml"
 hash = "dc5d933d65b4d63e072ad33f6b9c412f62e7ffac033bd9ee3468a4571f42076c"
+metafile = true
+
+[[files]]
+file = "resourcepacks/diaithir-sounds.pw.toml"
+hash = "8c3d4b9a6b51416e51d9249f3f15e768acbfc04e0f73d55f08538b44c21672b9"
 metafile = true

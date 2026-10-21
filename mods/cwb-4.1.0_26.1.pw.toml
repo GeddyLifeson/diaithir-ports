@@ -1,0 +1,12 @@
+name = "cwb"
+filename = "cwb-4.1.0+26.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/ETlrkaYF/versions/izb7HEM9/cwb-4.1.0%2B26.1.jar"
+hash-format = "sha256"
+hash = "3d126c9c7a5ecd80a5f302ff12086072d24d7c193463816afc6ed4d7158ebba6"
+
+[update.modrinth]
+mod-id = "ETlrkaYF"
+version = "izb7HEM9"

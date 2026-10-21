@@ -1,0 +1,12 @@
+name = "FoodEffectTooltips"
+filename = "FoodEffectTooltips-2.1.2+26.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/GGfyJWnG/versions/znxxRVTP/FoodEffectTooltips-2.1.2%2B26.1.jar"
+hash-format = "sha256"
+hash = "83e3c4a36cef00272bef883723cef0a9b38b8325b45d0b129addf05920b979bf"
+
+[update.modrinth]
+mod-id = "GGfyJWnG"
+version = "znxxRVTP"

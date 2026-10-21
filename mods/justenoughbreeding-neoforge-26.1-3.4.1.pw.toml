@@ -1,0 +1,12 @@
+name = "justenoughbreeding-neoforge"
+filename = "justenoughbreeding-neoforge-26.1-3.4.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/9Pk89J3g/versions/OGW4Lold/justenoughbreeding-neoforge-26.1-3.4.1.jar"
+hash-format = "sha256"
+hash = "f41ab79043d0debabd0504e4d985aa07f7a31f3686c487fbb0799dde6ec916b7"
+
+[update.modrinth]
+mod-id = "9Pk89J3g"
+version = "OGW4Lold"

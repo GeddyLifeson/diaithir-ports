@@ -37,4 +37,6 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | sfm-26.1.2-4.34.0-diaithir.jar | Mozilla Public License Version 2.0 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/sfm) |
 | structurize-1.0.0-diaithir.jar | GPL 3.0 | [source](source/structurize-1.0.0-diaithir-source.tar.gz) |
 
+client/resourcepacks/diaithir-sounds.zip (the Diaithir Sounds resource pack) holds CC0, CC-BY, OGA-BY and CC-BY-SA music and sound; the credits are in CREDITS.md inside the zip.
+
 packwiz-installer-bootstrap (inside Diaithir.zip) is MIT, https://github.com/packwiz/packwiz-installer-bootstrap.

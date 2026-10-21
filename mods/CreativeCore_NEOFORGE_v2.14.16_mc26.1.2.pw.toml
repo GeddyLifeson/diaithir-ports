@@ -1,0 +1,12 @@
+name = "CreativeCore_NEOFORGE"
+filename = "CreativeCore_NEOFORGE_v2.14.16_mc26.1.2.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/OsZiaDHq/versions/OqoUKynf/CreativeCore_NEOFORGE_v2.14.16_mc26.1.2.jar"
+hash-format = "sha256"
+hash = "db2596754d9b1ae49997d57030dafe0cad47b07e00a1314ff3522c553c14b5bc"
+
+[update.modrinth]
+mod-id = "OsZiaDHq"
+version = "OqoUKynf"

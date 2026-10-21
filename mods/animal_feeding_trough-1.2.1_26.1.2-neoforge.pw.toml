@@ -1,0 +1,12 @@
+name = "animal_feeding_trough"
+filename = "animal_feeding_trough-1.2.1+26.1.2-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/bRFWnJ87/versions/CNejDxr9/animal_feeding_trough-1.2.1%2B26.1.2-neoforge.jar"
+hash-format = "sha256"
+hash = "550daedc51292cca1fd6024220235a3a297df124eefbb153f3b3bc371b24a1db"
+
+[update.modrinth]
+mod-id = "bRFWnJ87"
+version = "CNejDxr9"

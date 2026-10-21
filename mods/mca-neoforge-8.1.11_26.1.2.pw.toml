@@ -1,0 +1,12 @@
+name = "mca-neoforge"
+filename = "mca-neoforge-8.1.11+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/1W98a849/versions/c8r806tu/mca-neoforge-8.1.11%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "74c23f4e07903a385bd909bc6136f3019b4a2359d61ace5bd5d8c2c3a3b1b736"
+
+[update.modrinth]
+mod-id = "1W98a849"
+version = "c8r806tu"
