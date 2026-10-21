@@ -41,3 +41,6 @@ JEI simulated the anvil for every enchantable item with every enchantment at eve
 
 ## Launcher flag: compact object headers
 Java 25 can shrink every object header from 12 to 8 bytes (`-XX:+UseCompactObjectHeaders`, a product flag since JDK 25). With this pack's tens of millions of small objects it saves another 548 MB in world. It is a JVM argument, so it goes in the Prism instance, not in the mod.
+
+## Fix 5: indexed mod-jar resource listing (0.3.0)
+Each resource listing (tags and data maps for every registry, registry entries) walked every entry of every mod jar: 62% of server startup CPU in a JFR profile (`bench/startup.sh`). ModernFix's own index for this is not taking effect on 26.1. Each pack now keeps a sorted list of its file names per pack type, built on first use and dropped when the pack closes. Server load 268 s -> 127 s; same 47,035 recipes, 2,054 advancements and tag warnings as before.

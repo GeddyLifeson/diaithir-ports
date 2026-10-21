@@ -4,6 +4,8 @@
   "plugin": "net.diaithir.perf.mixin.MixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "FilePackResourcesMixin",
+    "SharedZipFileAccessAccessor",
     "TemplateSourceMixin"
   ],
   "client": [
