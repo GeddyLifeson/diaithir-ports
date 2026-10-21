@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "gradle",
+    "gradle-wrapper",
+    "custom.regex"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)gradle\\.properties$/"
+      ],
+      "matchStrings": [
+        "neo_version=(?<currentValue>\\S+)"
+      ],
+      "depNameTemplate": "net.neoforged:neoforge",
+      "datasourceTemplate": "maven",
+      "registryUrlTemplate": "https://maven.neoforged.net/releases",
+      "versioningTemplate": "maven"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "net.neoforged:neoforge"
+      ],
+      "allowedVersions": "/^26\\.1\\.2\\./"
+    },
+    {
+      "matchManagers": [
+        "gradle",
+        "gradle-wrapper",
+        "custom.regex"
+      ],
+      "groupName": "NeoForge and Gradle"
+    }
+  ],
+  "automerge": false,
+  "osvVulnerabilityAlerts": true
+}
