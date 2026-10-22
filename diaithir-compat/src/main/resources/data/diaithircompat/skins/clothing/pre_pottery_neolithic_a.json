@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/0.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/1.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/2.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/ruler.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/warrior.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/priest.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/0.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/1.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/2.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/ruler.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/warrior.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/priest.png",
+    "profession": "diaithircompat:pre_pottery_neolithic_a",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

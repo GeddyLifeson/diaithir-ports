@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/0.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/1.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/2.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/ruler.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/warrior.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/priest.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/0.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/1.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/2.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/ruler.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/warrior.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/priest.png",
+    "profession": "diaithircompat:west_african_late_stone_age_and_early_po",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

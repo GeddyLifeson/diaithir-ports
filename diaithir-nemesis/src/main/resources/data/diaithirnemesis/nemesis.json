@@ -1,0 +1,24 @@
+{
+ "safeRadius": 200,
+ "ambushCheckTicks": 6000,
+ "ambushChance": 0.25,
+ "ambushCooldownTicks": 36000,
+ "cheatDeathChance": 0.5,
+ "maxPerPlayer": 5,
+ "grudgeTiers": [6, 12, 20],
+ "tierNames": ["resentful", "vengeful", "murderous"],
+ "feudTicks": 36000,
+ "chronicleLength": 30,
+ "interrogateBelow": 0.25,
+ "lieChance": 0.2,
+ "ages": {
+  "I": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw"],
+   "ranks": ["Prowler", "Stalker", "Hunter of the Folk", "Dread of the Fire", "Bane of the Hearths"],
+   "warbands": ["the Frost Pack", "the Hollow Ones", "the Bone-Gnawers", "the Ash Walkers"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "get of"
+  }
+ }
+}

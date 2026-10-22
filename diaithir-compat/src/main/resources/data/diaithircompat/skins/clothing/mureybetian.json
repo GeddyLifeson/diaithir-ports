@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/0.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/1.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/2.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/ruler.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/warrior.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/male/priest.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/0.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/1.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/2.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/ruler.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/warrior.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/mureybetian/female/priest.png",
+    "profession": "diaithircompat:mureybetian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

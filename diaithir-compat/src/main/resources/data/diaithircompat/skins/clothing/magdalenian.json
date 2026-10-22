@@ -18,6 +18,24 @@
     "gender": "male"
   },
   {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/male/ruler.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/male/warrior.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/male/priest.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
     "id": "diaithircompat:skins/clothing/normal/magdalenian/female/0.png",
     "profession": "diaithircompat:magdalenian",
     "chance": 1.0,
@@ -31,6 +49,24 @@
   },
   {
     "id": "diaithircompat:skins/clothing/normal/magdalenian/female/2.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/female/ruler.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/female/warrior.png",
+    "profession": "diaithircompat:magdalenian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magdalenian/female/priest.png",
     "profession": "diaithircompat:magdalenian",
     "chance": 1.0,
     "gender": "female"

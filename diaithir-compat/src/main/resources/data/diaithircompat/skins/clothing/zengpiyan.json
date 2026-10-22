@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/0.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/1.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/2.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/ruler.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/warrior.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/male/priest.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/0.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/1.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/2.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/ruler.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/warrior.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/zengpiyan/female/priest.png",
+    "profession": "diaithircompat:zengpiyan",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

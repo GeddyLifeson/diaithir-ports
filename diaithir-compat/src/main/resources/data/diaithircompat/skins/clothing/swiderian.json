@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/0.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/1.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/2.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/ruler.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/warrior.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/male/priest.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/0.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/1.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/2.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/ruler.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/warrior.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/swiderian/female/priest.png",
+    "profession": "diaithircompat:swiderian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

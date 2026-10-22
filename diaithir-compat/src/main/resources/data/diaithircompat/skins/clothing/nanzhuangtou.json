@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/0.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/1.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/2.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/ruler.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/warrior.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/priest.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/0.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/1.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/2.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/ruler.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/warrior.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/priest.png",
+    "profession": "diaithircompat:nanzhuangtou",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

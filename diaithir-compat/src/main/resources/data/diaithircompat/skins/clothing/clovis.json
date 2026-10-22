@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/0.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/1.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/2.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/ruler.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/warrior.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/male/priest.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/0.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/1.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/2.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/ruler.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/warrior.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/clovis/female/priest.png",
+    "profession": "diaithircompat:clovis",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

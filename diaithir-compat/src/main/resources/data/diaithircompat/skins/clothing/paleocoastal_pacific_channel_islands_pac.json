@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/0.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/1.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/2.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/ruler.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/warrior.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/priest.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/0.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/1.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/2.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/ruler.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/warrior.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/priest.png",
+    "profession": "diaithircompat:paleocoastal_pacific_channel_islands_pac",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

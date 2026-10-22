@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/0.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/1.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/2.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/ruler.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/warrior.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/priest.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/0.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/1.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/2.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/ruler.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/warrior.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/priest.png",
+    "profession": "diaithircompat:magosian_obsolete_term",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]
