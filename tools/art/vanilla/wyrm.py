@@ -49,7 +49,7 @@ def preview(tex_root):
     out = {}
     for k, (layer, skins, hide, rules, hooves) in table(tex_root).items():
         keep = [s for s in skins if (re.search(r'_4$', s) if 'dragon' in k else not re.search(r'blink|sleeping|injured|aggressive', s))]
-        out[k] = (layer, keep, hide, rules, hooves)
+        out[k] = (layer, keep[:2] if 'dragon' in k else keep, hide, rules, hooves)   # page size: two colours per dragon
     return out
 
 

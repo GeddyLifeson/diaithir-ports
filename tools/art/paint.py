@@ -73,6 +73,14 @@ def height(kind, h, w, rng, s):
     if kind == 'horn':
         yy = np.mgrid[0:h, 0:w][0].astype(np.float32)
         return 0.5 * np.sin(yy / (1.5 * s) * np.pi) + 0.3 * blur(n, 2 * s, 0)
+    if kind == 'pelt':                                     # short tufted fur in overlapping layers (vanilla-size boxes)
+        yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        warp = (soft(rng.random((h, w)), s) - 0.5) * 6 * s
+        tufts = ((yy + warp) % (2.5 * s)) / (2.5 * s)
+        strands = blur(n, max(1, int(0.8 * s)), 0)
+        strands = (strands - strands.mean()) * (1.6 * s + 1) ** 0.5
+        clumps = soft(rng.random((h, w)), 2 * s)
+        return 0.2 * (1 - tufts) + 0.4 * strands + 0.6 * (clumps - clumps.mean()) / (clumps.std() + 1e-6) * 0.25 + 0.1 * n
     if kind == 'skin':                                     # bare skin: soft mottling, fine pores, a few bristles
         pores = n - soft(n, 1)
         bristle = np.clip(blur(rng.random((h, w)) ** 30, s, 0) * 4, 0, 1)
@@ -120,16 +128,18 @@ def light(H, strength):
     return nrm @ LIGHT
 
 
-def paint_face(base, alpha, kind, ao, rng, s, low):
+def paint_face(base, alpha, kind, ao, rng, s, low, depth=1.0):
     h, w = alpha.shape
     H = height(kind, h, w, rng, s)
-    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0, 'skin': 1.5, 'cloth': 1.5, 'bone': 1.8, 'chitin': 2.0, 'gel': 1.0, 'stone': 2.5, 'metal': 2.0, 'wood': 2.0, 'feather': 2.5, 'wool': 2.0}.get(kind, 1.2))
+    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0, 'skin': 1.5, 'pelt': 1.8, 'cloth': 1.5, 'bone': 1.8, 'chitin': 2.0, 'gel': 1.0, 'stone': 2.5, 'metal': 2.0, 'wood': 2.0, 'feather': 2.5, 'wool': 2.0}.get(kind, 1.2))
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     form = 1.1 - 0.22 * yy / max(h - 1, 1) - 0.08 * xx / max(w - 1, 1)  # face lit from its upper left
     edge = np.ones((h, w), np.float32)
     k = max(1, s // 2)
     edge[:k, :] *= 1.12; edge[:, :k] *= 1.06; edge[-k:, :] *= 0.72; edge[:, -k:] *= 0.8  # bevel
-    col = base * (0.55 + 0.6 * lit)[..., None] * (form * edge)[..., None]
+    col = base * ((1.15 - 0.6 * depth) + 0.6 * depth * lit)[..., None] * (form * edge)[..., None]
+    if depth != 1.0:   # tone follows the relief too: dark gaps between strands, scales and folds
+        col *= (1 + 0.16 * (depth - 1) / 0.35 * np.clip((H - H.mean()) / (H.std() + 1e-6), -2, 2))[..., None]
     if kind == 'shell':
         col *= (0.75 + 0.35 * np.clip(H, 0, 1))[..., None]
     if kind in ('horn', 'chitin', 'gel', 'metal'):

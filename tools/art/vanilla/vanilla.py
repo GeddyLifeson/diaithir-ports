@@ -9,7 +9,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from paint import paint_face, grade, soft
+from paint import paint_face, grade, soft, blur
+
+DEPTH = 1.35   # stronger relief than the Untamed Wilds set: vanilla boxes are bigger and flatter, so the surface must carry the detail
 
 HERE = Path(__file__).resolve().parent
 HOOVES = r'leg'
@@ -98,8 +100,8 @@ def material(rules, part, cube):
     key = f'{part}#{cube}'
     for rx, mat in rules:
         if re.search(rx, key):
-            return mat
-    return 'fur'
+            return 'pelt' if mat == 'fur' else mat
+    return 'pelt'
 
 
 def components(mask):
@@ -143,10 +145,27 @@ def features(orig, face, s):
     return face
 
 
+def furry(img, s, kind, rng):
+    """Upscaled colour with crisp markings: patch edges are broken along the strands instead of blurred into smears."""
+    h, w = img.shape[:2]
+    if h < 2 or w < 2:
+        return img
+    n1, n2 = rng.random((h, w)), rng.random((h, w))
+    along = 1 if w > h * 1.3 else 0
+    amp = {'fur': 0.9, 'pelt': 0.9, 'shaggy': 1.4, 'wool': 0.8, 'feather': 0.6}.get(kind, 0.35) * s
+    dx = (blur(n1, s, along) - 0.5) * amp * 4; dy = (blur(n2, s, along) - 0.5) * amp * 4
+    if kind == 'shaggy':
+        dy = np.abs(dy) * 1.5   # hair hangs down
+    yy, xx = np.mgrid[0:h, 0:w]
+    sy = np.clip(np.round(yy + dy).astype(int), 0, h - 1); sx = np.clip(np.round(xx + dx).astype(int), 0, w - 1)
+    out = img[sy, sx]
+    return soft(out, max(1, s // 3))
+
+
 def two(base, a, kinds, occl, rng, s, legs, ref, orig):
     """'skin|cloth': texels close to the skin colour get the first material, the rest the second."""
     k1, k2 = kinds.split('|')
-    f1 = paint_face(base, a, k1, occl, rng, s, legs); f2 = paint_face(base, a, k2, occl, rng, s, legs)
+    f1 = paint_face(base, a, k1, occl, rng, s, legs, DEPTH); f2 = paint_face(base, a, k2, occl, rng, s, legs, DEPTH)
     near = np.linalg.norm(orig[..., :3] - ref, axis=2) < 45
     m = soft(near.astype(np.float32).repeat(s, 0).repeat(s, 1), max(1, s // 2))[..., None]
     return f1 * m + f2 * (1 - m)
@@ -185,7 +204,7 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
             continue
         kind = material(rules, f['part'], f['cube'])
         P = np.array([v[:3] for v in f['v']]); n = np.cross(P[1] - P[0], P[2] - P[0]); n /= np.linalg.norm(n) + 1e-9
-        base = np.maximum(soft(big[sl][..., :3], s), 26)  # very dark skins still show their grain
+        base = np.maximum(furry(big[sl][..., :3], s, kind, rng), 26)  # very dark skins still show their grain
         if kind in ('horn', 'hoof'):  # one flat colour, the grain comes from the height field
             base = np.broadcast_to(big[sl][..., :3][a > 0].mean(0), base.shape)
         flat = min(f['box']) < 0.01
@@ -194,10 +213,12 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
         if '|' in kind:
             face = two(base, a, kind, occl, rng, s, legs, ref if ref is not None else base.reshape(-1, 3).mean(0), src[y0:y1, x0:x1])
         else:
-            face = paint_face(base, a, kind, occl, rng, s, legs)
+            face = paint_face(base, a, kind, occl, rng, s, legs, DEPTH)
+        tone = soft(rng.random(a.shape), 3 * s)   # broad light and dark across big faces, so they never read as flat
+        face = face * (1 + 0.5 * (tone - tone.mean()) / (tone.std() + 1e-6) * 0.08)[..., None]
         if hooves and legs and abs(n[1]) < 0.5:   # hoof band: the bottom of each leg's side faces
             hb = max(s, (y1 - y0) * s // 6)
-            hoof = paint_face(np.broadcast_to(np.array([58, 48, 40], np.float32), (hb, (x1 - x0) * s, 3)), a[-hb:], 'hoof', occl[-hb:], rng, s, False)
+            hoof = paint_face(np.broadcast_to(np.array([58, 48, 40], np.float32), (hb, (x1 - x0) * s, 3)), a[-hb:], 'hoof', occl[-hb:], rng, s, False, DEPTH)
             face[-hb:] = hoof
         if re.search(r'head|nose|snout|mouth|beak', f['part']) and n[2] < -0.7:   # forward-facing face of the head
             face = features(src[y0:y1, x0:x1], face, s)
@@ -205,13 +226,13 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
     # texels no face of this layer uses (other variants' parts): painted too, each block as its own face
     left = (big[..., 3] > 0) & ~covered
     small = left[::s, ::s]
-    default = rules[-1][1] if rules and rules[-1][0] == r'.' else 'fur'
+    default = rules[-1][1] if rules and rules[-1][0] == r'.' else 'pelt'
     for comp in components(small):
         ys = [p[0] for p in comp]; xs = [p[1] for p in comp]
         sl = (slice(min(ys) * s, (max(ys) + 1) * s), slice(min(xs) * s, (max(xs) + 1) * s))
         a = big[sl][..., 3]
         kind = default.split('|')[-1]
-        face = paint_face(soft(big[sl][..., :3], s), a, kind, np.full(a.shape, 0.85, np.float32), rng, s, False)
+        face = paint_face(furry(big[sl][..., :3], s, kind, rng), a, kind, np.full(a.shape, 0.85, np.float32), rng, s, False, DEPTH)
         m = left[sl][..., None]
         out[sl] = np.where(m, np.dstack([grade(face), a]), out[sl])
     paint_mob.uncovered = float(small.sum()) / max(1, (big[::s, ::s, 3] > 0).sum())

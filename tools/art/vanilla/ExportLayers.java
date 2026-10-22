@@ -13,7 +13,7 @@ public class ExportLayers {
         try (var jar = new java.util.zip.ZipFile(System.getProperty("mcjar"))) {
             for (var en : Collections.list(jar.entries())) {
                 String n = en.getName();
-                if (!n.startsWith("net/minecraft/client/model/") || !n.endsWith(".class")) continue;
+                if (!n.startsWith(System.getProperty("prefix", "net/minecraft/client/model/")) || !n.endsWith(".class")) continue;
                 String cn = n.substring(0, n.length() - 6).replace('/', '.');
                 try {
                     Class<?> c = Class.forName(cn, false, ExportLayers.class.getClassLoader());
