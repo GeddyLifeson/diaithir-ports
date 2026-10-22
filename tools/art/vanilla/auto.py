@@ -31,6 +31,8 @@ PARTS = [(r'wing', 'wing'), (r'horn|tusk|claw|beak|antler|stinger|tooth|teeth|fa
 
 def score(layer, img):
     """How well a layer's UV faces fit a skin's painted texels (F1 of coverage)."""
+    if not layer['tw'] or not layer['th']:
+        return 0.0
     k = img.shape[1] / layer['tw']
     if k not in (1, 2, 4) or img.shape[0] != layer['th'] * k:
         return 0.0
