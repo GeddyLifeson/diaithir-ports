@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "ewewukek.musketmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "AbstractClientPlayerMixin",
+    "HumanoidModelMixin",
+    "LocalPlayerMixin",
+    "MinecraftMixin",
+    "MultiPlayerGameModeMixin",
+    "PlayerMixin",
+    "SkeletonModelMixin"
+  ],
+  "mixins": [
+    "AbstractSkeletonMixin",
+    "EntityMixin",
+    "GunItemMixin",
+    "PillagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
