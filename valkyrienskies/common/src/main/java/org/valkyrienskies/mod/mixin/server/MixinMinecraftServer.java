@@ -393,11 +393,11 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         at = @At("RETURN")
     )
     private void postStopServer(final CallbackInfo ci) {
-        // With synchronizePhysics the physics thread sleeps until the next game tick; give it one
-        // so it sees deleteResources and exits, otherwise the server JVM never terminates.
-        if (vsPipeline != null) {
-            vsPipeline.postTickGame();
-        }
+        // With synchronizePhysics the vs-core physics thread (non-daemon) waits for a game tick
+        // that never comes after shutdown, which kept the server JVM alive; wake it so it ends.
+        Thread.getAllStackTraces().keySet().stream()
+            .filter(thread -> "Physics thread".equals(thread.getName()))
+            .forEach(Thread::interrupt);
         dimensionToLevelMap.clear();
         if (shipWorld != null) {
             shipWorld.setGameServer(null);
