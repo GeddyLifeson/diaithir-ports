@@ -29,6 +29,15 @@ public class ExportLayers {
                         }
                         if (!ok) continue;
                         md.setAccessible(true);
+                        if (Arrays.asList(pt).contains(float.class)) {  // float args are offsets or scales: also export with 1
+                            Object[] one = args.clone();
+                            for (int i = 0; i < pt.length; i++) if (pt[i] == float.class) one[i] = 1f;
+                            try {
+                                Object r = md.invoke(null, one);
+                                if (r instanceof MeshDefinition mesh) r = LayerDefinition.create(mesh, 64, cn.contains("Feline") || cn.contains("Wolf") ? 32 : 64);
+                                roots.putIfAbsent(c.getSimpleName() + "#" + md.getName() + "@1", (LayerDefinition) r);
+                            } catch (Throwable t) { System.err.println("skip " + cn + "." + md.getName() + "@1: " + t.getCause()); }
+                        }
                         try { Object r = md.invoke(null, args);
                               if (r instanceof MeshDefinition mesh) r = LayerDefinition.create(mesh, 64, cn.contains("Feline") || cn.contains("Wolf") ? 32 : 64);
                               roots.putIfAbsent(c.getSimpleName() + "#" + md.getName(), (LayerDefinition) r); }

@@ -74,7 +74,7 @@ function tex(url) {
 function build(plan, sp, old) {
   const mat = new THREE.MeshLambertMaterial({ map: tex(old ? sp.old : sp.tex), alphaTest: 0.1, side: THREE.DoubleSide });
   const hide = plan.hide === '-' ? null : new RegExp(plan.hide), pos = [], uvs = [];
-  for (const f of plan.faces) {
+  for (const f of sp.faces || plan.faces) {
     if (hide && hide.test(f.part)) continue;
     for (const i of [0, 1, 2, 0, 2, 3]) { const v = f.v[i]; pos.push(v[0] * 16, v[1] * 16, v[2] * 16); uvs.push(v[3] / plan.tw, 1 - v[4] / plan.th); }
   }

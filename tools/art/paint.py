@@ -77,6 +77,27 @@ def height(kind, h, w, rng, s):
         pores = n - soft(n, 1)
         bristle = np.clip(blur(rng.random((h, w)) ** 30, s, 0) * 4, 0, 1)
         return 0.5 * (soft(n, 2 * s) - 0.5) * 4 + 0.25 * pores + 0.4 * bristle
+    if kind == 'cloth':                                    # woven cloth with soft folds
+        yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        weave = np.sin(xx * np.pi / max(1, s // 2)) * np.sin(yy * np.pi / max(1, s // 2))
+        folds = blur(rng.random((h, w)), 3 * s, 0)
+        return 0.15 * weave + 1.5 * (folds - folds.mean()) * (6 * s + 1) ** 0.5 * 0.2 + 0.1 * n
+    if kind == 'bone':                                     # smooth bone with pits and hairline cracks
+        cracks = np.clip(1 - np.abs(soft(n, s) - 0.5) * 40, 0, 1)
+        return 0.3 * (soft(n, 2 * s) - 0.5) * 3 - 0.5 * cracks - 0.2 * (n > 0.97)
+    if kind == 'chitin':                                   # hard glossy plates
+        yy = np.mgrid[0:h, 0:w][0].astype(np.float32)
+        return 0.6 * ((yy % (3 * s)) / (3 * s)) + 0.1 * soft(n, 1)
+    if kind == 'gel':                                      # wobbly jelly
+        return 0.8 * (soft(n, 3 * s) - 0.5) * 4
+    if kind == 'stone':                                    # chipped rock
+        return 0.6 * (soft(n, s) - 0.5) * 4 + 0.3 * (soft(n, 3 * s) - 0.5) * 6 + 0.15 * n
+    if kind == 'metal':                                    # worn plate, brushed, a few dents
+        return 0.15 * blur(n, 3 * s, 1) * (6 * s + 1) ** 0.5 - 0.6 * (soft(n, 2 * s) > 0.56)
+    if kind == 'wood':                                     # grain along the long axis
+        along = 1 if w > h else 0
+        g = blur(n, 4 * s, along) * (8 * s + 1) ** 0.5
+        return 0.5 * (g - g.mean()) + 0.1 * n
     if kind == 'feather':                                  # overlapping rows of scalloped feather tips
         yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
         row = 2 * s
@@ -102,7 +123,7 @@ def light(H, strength):
 def paint_face(base, alpha, kind, ao, rng, s, low):
     h, w = alpha.shape
     H = height(kind, h, w, rng, s)
-    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0, 'skin': 1.5, 'feather': 2.5, 'wool': 2.0}.get(kind, 1.2))
+    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0, 'skin': 1.5, 'cloth': 1.5, 'bone': 1.8, 'chitin': 2.0, 'gel': 1.0, 'stone': 2.5, 'metal': 2.0, 'wood': 2.0, 'feather': 2.5, 'wool': 2.0}.get(kind, 1.2))
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     form = 1.1 - 0.22 * yy / max(h - 1, 1) - 0.08 * xx / max(w - 1, 1)  # face lit from its upper left
     edge = np.ones((h, w), np.float32)
@@ -111,7 +132,7 @@ def paint_face(base, alpha, kind, ao, rng, s, low):
     col = base * (0.55 + 0.6 * lit)[..., None] * (form * edge)[..., None]
     if kind == 'shell':
         col *= (0.75 + 0.35 * np.clip(H, 0, 1))[..., None]
-    if kind == 'horn':
+    if kind in ('horn', 'chitin', 'gel', 'metal'):
         col += 40 * np.clip(lit - 0.9, 0, 1)[..., None] * 4  # waxy shine
     col *= (0.38 + 0.62 * ao)[..., None]
     dust = soft(rng.random((h, w)), 2 * s)

@@ -15,15 +15,15 @@ HERE = Path(__file__).resolve().parent
 HOOVES = r'leg'
 # mob: layer, textures, hidden parts, [(regex on 'part#cube', material)], hooves on the legs
 MOBS = {
-    'cow': ('CowModel#createBodyLayer', ['cow/cow_temperate', 'cow/cow_cold', 'cow/cow_warm', 'cow/mooshroom_red', 'cow/mooshroom_brown'], '-',
+    'cow': ('CowModel#createBodyLayer', ['cow/cow_temperate', 'cow/cow_cold@ColdCowModel#createBodyLayer', 'cow/cow_warm@WarmCowModel#createBodyLayer', 'cow/mooshroom_red', 'cow/mooshroom_brown'], '-',
             [(r'/head#[23]', 'horn'), (r'/body#1', 'skin')], True),
-    'pig': ('PigModel#createBodyLayer', ['pig/pig_temperate', 'pig/pig_cold', 'pig/pig_warm'], '-', [(r'.', 'skin')], True),
+    'pig': ('PigModel#createBodyLayer', ['pig/pig_temperate', 'pig/pig_cold@ColdPigModel#createBodyLayer', 'pig/pig_warm'], '-', [(r'.', 'skin')], True),
     'sheep': ('SheepModel#createBodyLayer', ['sheep/sheep'], '-', [(r'/head#0', 'skin')], True),
     'sheep_wool': ('SheepFurModel#createFurLayer', ['sheep/sheep_wool'], '-', [(r'.', 'wool')], False),
-    'chicken': ('AdultChickenModel#createBodyLayer', ['chicken/chicken_temperate', 'chicken/chicken_cold', 'chicken/chicken_warm'], '-',
+    'chicken': ('AdultChickenModel#createBodyLayer', ['chicken/chicken_temperate', 'chicken/chicken_cold@ColdChickenModel#createBodyLayer', 'chicken/chicken_warm'], '-',
                 [(r'beak|_leg', 'horn'), (r'red_thing', 'skin'), (r'.', 'feather')], False),
     'horse': ('AbstractEquineModel#createBodyMesh', ['horse/horse_brown', 'horse/horse_white', 'horse/horse_black', 'horse/horse_chestnut',
-              'horse/horse_creamy', 'horse/horse_darkbrown', 'horse/horse_gray', 'horse/donkey', 'horse/mule'], '-',
+              'horse/horse_creamy', 'horse/horse_darkbrown', 'horse/horse_gray', 'horse/donkey@DonkeyModel#createBodyLayer@1', 'horse/mule@DonkeyModel#createBodyLayer@1'], r'chest',
               [(r'mane|tail', 'shaggy')], True),
     'wolf': ('AdultWolfModel#createBodyLayer', ['wolf/wolf', 'wolf/wolf_ashen', 'wolf/wolf_black', 'wolf/wolf_chestnut', 'wolf/wolf_rusty',
              'wolf/wolf_snowy', 'wolf/wolf_spotted', 'wolf/wolf_striped', 'wolf/wolf_woods'], '-', [(r'upper_body|tail', 'shaggy')], False),
@@ -48,6 +48,42 @@ MOBS = {
     'axolotl': ('AdultAxolotlModel#createBodyLayer', ['axolotl/axolotl_wild', 'axolotl/axolotl_lucy', 'axolotl/axolotl_gold', 'axolotl/axolotl_cyan', 'axolotl/axolotl_blue'],
                 '-', [(r'gills', 'wing'), (r'.', 'skin')], False),
 }
+H = r'/(hat|jacket|left_sleeve|right_sleeve|left_pants|right_pants)$'   # overlay shells: left out of the AO bake
+MONSTERS = {
+    'zombie': ('HumanoidModel#createMesh', ['zombie/zombie', 'zombie/husk'], H, [(r'head', 'skin'), (r'.', 'skin|cloth')], False),
+    'drowned': ('DrownedModel#createBodyLayer', ['zombie/drowned'], H, [(r'head', 'skin'), (r'.', 'skin|cloth')], False),
+    'skeleton': ('SkeletonModel#createBodyLayer', ['skeleton/skeleton', 'skeleton/stray', 'skeleton/wither_skeleton', 'skeleton/bogged'], H,
+                 [(r'.', 'bone')], False),
+    'creeper': ('CreeperModel#createBodyLayer', ['creeper/creeper'], '-', [(r'.', 'skin')], False),
+    'spider': ('SpiderModel#createSpiderBodyLayer', ['spider/spider', 'spider/cave_spider'], '-', [(r'leg', 'chitin'), (r'.', 'fur')], False),
+    'enderman': ('EndermanModel#createBodyLayer', ['enderman/enderman'], H, [(r'.', 'skin')], False),
+    'slime': ('SlimeModel#createOuterBodyLayer', ['slime/slime'], '-', [(r'.', 'gel')], False),
+    'magma_cube': ('MagmaCubeModel#createBodyLayer', ['slime/magmacube'], '-', [(r'.', 'stone')], False),
+    'blaze': ('BlazeModel#createBodyLayer', ['blaze/blaze'], '-', [(r'head', 'stone'), (r'.', 'metal')], False),
+    'ghast': ('GhastModel#createBodyLayer', ['ghast/ghast', 'ghast/ghast_shooting'], '-', [(r'.', 'skin')], False),
+    'phantom': ('PhantomModel#createBodyLayer', ['phantom/phantom'], '-', [(r'wing', 'wing'), (r'.', 'hide')], False),
+    'witch': ('WitchModel#createBodyLayer', ['witch/witch'], r'jacket', [(r'hat', 'cloth'), (r'head|nose', 'skin'), (r'.', 'skin|cloth')], False),
+    'illager': ('IllagerModel#createBodyLayer', ['illager/pillager', 'illager/vindicator', 'illager/evoker', 'illager/illusioner'], r'^/(left|right)_arm$|hat',
+                [(r'head|nose', 'skin'), (r'.', 'skin|cloth')], False),
+    'ravager': ('RavagerModel#createBodyLayer', ['illager/ravager'], '-', [(r'horn', 'horn'), (r'.', 'hide')], True),
+    'vex': ('VexModel#createBodyLayer', ['illager/vex'], '-', [(r'wing', 'wing'), (r'.', 'skin')], False),
+    'guardian': ('GuardianModel#createBodyLayer', ['guardian/guardian', 'guardian/guardian_elder'], '-', [(r'spike', 'horn'), (r'.', 'chitin')], False),
+    'silverfish': ('SilverfishModel#createBodyLayer', ['silverfish/silverfish'], '-', [(r'.', 'chitin')], False),
+    'endermite': ('EndermiteModel#createBodyLayer', ['endermite/endermite'], '-', [(r'.', 'chitin')], False),
+    'warden': ('WardenModel#createBodyLayer', ['warden/warden'], '-', [(r'tendril', 'skin'), (r'.', 'skin')], False),
+    'piglin': ('AdultPiglinModel#createBodyLayer', ['piglin/piglin', 'piglin/piglin_brute'], H, [(r'head|ear', 'skin'), (r'.', 'skin|cloth')], False),
+    'zombified_piglin': ('AdultZombifiedPiglinModel#createBodyLayer', ['piglin/zombified_piglin'], H, [(r'head|ear', 'skin'), (r'.', 'skin|cloth')], False),
+    'hoglin': ('HoglinModel#createBodyLayer', ['hoglin/hoglin', 'hoglin/zoglin'], '-', [(r'horn', 'horn'), (r'mane', 'shaggy'), (r'.', 'skin')], True),
+    'strider': ('AdultStriderModel#createBodyLayer', ['strider/strider', 'strider/strider_cold'], '-', [(r'bristle', 'shaggy'), (r'.', 'skin')], False),
+    'shulker': ('ShulkerModel#createBodyLayer', ['shulker/shulker'] + [f'shulker/shulker_{c}' for c in ('black', 'blue', 'brown', 'cyan', 'gray', 'green', 'light_blue',
+                'light_gray', 'lime', 'magenta', 'orange', 'pink', 'purple', 'red', 'white', 'yellow')], '-', [(r'head', 'gel'), (r'.', 'stone')], False),
+    'breeze': ('BreezeModel#createBodyLayer', ['breeze/breeze'], r'wind', [(r'.', 'gel')], False),
+    'creaking': ('CreakingModel#createBodyLayer', ['creaking/creaking'], '-', [(r'.', 'wood')], False),
+    'wither': ('WitherBossModel#createBodyLayer', ['wither/wither'], '-', [(r'.', 'bone')], False),
+    'iron_golem': ('IronGolemModel#createBodyLayer', ['iron_golem/iron_golem'], '-', [(r'.', 'metal')], False),
+    'snow_golem': ('SnowGolemModel#createBodyLayer', ['snow_golem/snow_golem'], '-', [(r'arm', 'wood'), (r'.', 'stone')], False),
+}
+MOBS.update(MONSTERS)
 
 
 def material(rules, part, cube):
@@ -99,6 +135,15 @@ def features(orig, face, s):
     return face
 
 
+def two(base, a, kinds, occl, rng, s, legs, ref, orig):
+    """'skin|cloth': texels close to the skin colour get the first material, the rest the second."""
+    k1, k2 = kinds.split('|')
+    f1 = paint_face(base, a, k1, occl, rng, s, legs); f2 = paint_face(base, a, k2, occl, rng, s, legs)
+    near = np.linalg.norm(orig[..., :3] - ref, axis=2) < 45
+    m = soft(near.astype(np.float32).repeat(s, 0).repeat(s, 1), max(1, s // 2))[..., None]
+    return f1 * m + f2 * (1 - m)
+
+
 def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
     tw, th = layer['tw'], layer['th']
     src = np.asarray(src.convert('RGBA').resize((tw, th), Image.NEAREST) if src.size != (tw, th) else src.convert('RGBA'), np.float32)
@@ -106,10 +151,17 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
     ao = np.asarray(ao.convert('L'), np.float32) / 255
     out = big.copy(); out[..., :3] = grade(out[..., :3])   # texels no face uses keep the original, graded
     rng = np.random.default_rng(zlib.crc32(json.dumps(rules).encode()))
-    done = set()
+    done = set(); ref = None
+    covered = np.zeros(big.shape[:2], bool)
+    for f in layer['faces']:   # skin colour: the middle of the head's front face
+        P = np.array([v[:3] for v in f['v']]); n = np.cross(P[1] - P[0], P[2] - P[0])
+        if re.search(r'head$', f['part']) and n[2] < -0.1 * np.linalg.norm(n) and f['cube'] == 0:
+            us = [v[3] for v in f['v']]; vs = [v[4] for v in f['v']]
+            crop = src[int(min(vs)):int(max(vs)), int(min(us)):int(max(us))]
+            if (crop[..., 3] > 0).any():
+                ref = np.median(crop[crop[..., 3] > 0][:, :3], 0); break
     for f in layer['faces']:
-        if hide != '-' and re.search(hide, f['part']):
-            continue
+        hidden = hide != '-' and re.search(hide, f['part'])
         us = [v[3] for v in f['v']]; vs = [v[4] for v in f['v']]
         x0, x1, y0, y1 = (int(round(t)) for t in (min(us), max(us), min(vs), max(vs)))
         if x1 <= x0 or y1 <= y0 or (x0, y0, x1, y1) in done:
@@ -121,20 +173,36 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
             continue
         kind = material(rules, f['part'], f['cube'])
         P = np.array([v[:3] for v in f['v']]); n = np.cross(P[1] - P[0], P[2] - P[0]); n /= np.linalg.norm(n) + 1e-9
-        base = soft(big[sl][..., :3], s)
-        if kind in ('horn', 'hoof'):
+        base = np.maximum(soft(big[sl][..., :3], s), 26)  # very dark skins still show their grain
+        if kind in ('horn', 'hoof'):  # one flat colour, the grain comes from the height field
             base = np.broadcast_to(big[sl][..., :3][a > 0].mean(0), base.shape)
         flat = min(f['box']) < 0.01
-        occl = np.maximum(ao[sl], 0.75) if flat else ao[sl]
+        occl = np.full(a.shape, 0.85, np.float32) if hidden else np.maximum(ao[sl], 0.75) if flat else ao[sl]
         legs = bool(re.search(r'leg', f['part']))
-        face = paint_face(base, a, kind, occl, rng, s, legs)
+        if '|' in kind:
+            face = two(base, a, kind, occl, rng, s, legs, ref if ref is not None else base.reshape(-1, 3).mean(0), src[y0:y1, x0:x1])
+        else:
+            face = paint_face(base, a, kind, occl, rng, s, legs)
         if hooves and legs and abs(n[1]) < 0.5:   # hoof band: the bottom of each leg's side faces
             hb = max(s, (y1 - y0) * s // 6)
             hoof = paint_face(np.broadcast_to(np.array([58, 48, 40], np.float32), (hb, (x1 - x0) * s, 3)), a[-hb:], 'hoof', occl[-hb:], rng, s, False)
             face[-hb:] = hoof
         if re.search(r'head|nose|snout|mouth|beak', f['part']) and n[2] < -0.7:   # forward-facing face of the head
             face = features(src[y0:y1, x0:x1], face, s)
-        out[sl] = np.dstack([grade(face), a])
+        out[sl] = np.dstack([grade(face), a]); covered[sl] = True
+    # texels no face of this layer uses (other variants' parts): painted too, each block as its own face
+    left = (big[..., 3] > 0) & ~covered
+    small = left[::s, ::s]
+    default = rules[-1][1] if rules and rules[-1][0] == r'.' else 'fur'
+    for comp in components(small):
+        ys = [p[0] for p in comp]; xs = [p[1] for p in comp]
+        sl = (slice(min(ys) * s, (max(ys) + 1) * s), slice(min(xs) * s, (max(xs) + 1) * s))
+        a = big[sl][..., 3]
+        kind = default.split('|')[-1]
+        face = paint_face(soft(big[sl][..., :3], s), a, kind, np.full(a.shape, 0.85, np.float32), rng, s, False)
+        m = left[sl][..., None]
+        out[sl] = np.where(m, np.dstack([grade(face), a]), out[sl])
+    paint_mob.uncovered = float(small.sum()) / max(1, (big[::s, ::s, 3] > 0).sum())
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
 
 
@@ -147,6 +215,12 @@ if __name__ == '__main__':
         ao = outdir / f'_ao_{mob}.png'
         subprocess.run([blender, str(HERE / 'poly_ao.py'), layers_json, key, '4', hide, str(ao)], check=True, capture_output=True)
         for t in textures:
+            t, _, k = t.partition('@')
+            a2 = ao
+            if k:   # this skin has its own model (cold cow horns, donkey chests)
+                a2 = outdir / f'_ao_{mob}_{k.split("#")[0]}.png'
+                subprocess.run([blender, str(HERE / 'poly_ao.py'), layers_json, k, '4', hide, str(a2)], check=True, capture_output=True)
             dst = outdir / f'{t}.png'; dst.parent.mkdir(parents=True, exist_ok=True)
-            paint_mob(layers[key], rules, hide, hooves, Image.open(Path(tex) / f'{t}.png'), Image.open(ao)).save(dst)
+            paint_mob(layers[k or key], rules, hide, hooves, Image.open(Path(tex) / f'{t}.png'), Image.open(a2)).save(dst)
+            print(f'  {t}: {paint_mob.uncovered:.0%} of texels outside the model', flush=True)
         print(mob, len(textures), flush=True)

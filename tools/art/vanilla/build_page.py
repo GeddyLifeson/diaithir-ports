@@ -6,13 +6,18 @@ layers_json, tex, painted, dest, title, group, *mobs = sys.argv[1:]
 L = json.load(open(layers_json))
 b64 = lambda p: 'data:image/png;base64,' + base64.b64encode(open(p, 'rb').read()).decode()
 nice = lambda t: t.split('/')[-1].replace('_', ' ').capitalize()
+def lay(t):
+    k = t.partition('@')[2]
+    return [dict(part=f['part'], v=[[round(x, 5) for x in v] for v in f['v']]) for f in L[k]['faces']] if k else None
+
+
 out = []
 for mob in mobs:
     key, textures, hide, rules, hooves = MOBS[mob]
     m = L[key]
     faces = [dict(part=f['part'], v=[[round(x, 5) for x in v] for v in f['v']]) for f in m['faces']]
     out.append(dict(plan=mob.replace('_', ' ').capitalize(), group=group, tw=m['tw'], th=m['th'], hide=hide, faces=faces,
-                    species=[dict(name=nice(t), tex=b64(f'{painted}/{t}.png'), old=b64(f'{tex}/{t}.png')) for t in textures]))
+                    species=[dict(name=nice(t.split('@')[0]), tex=b64(f"{painted}/{t.split('@')[0]}.png"), old=b64(f"{tex}/{t.split('@')[0]}.png"), faces=lay(t)) for t in textures]))
     if mob == 'sheep':  # the wool coat is its own layer over the body
         k2, t2 = MOBS['sheep_wool'][0], MOBS['sheep_wool'][1][0]
         out[-1]['overlay'] = dict(tw=L[k2]['tw'], th=L[k2]['th'], faces=[dict(v=[[round(x, 5) for x in v] for v in f['v']]) for f in L[k2]['faces']],
