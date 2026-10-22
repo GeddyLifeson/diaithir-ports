@@ -130,7 +130,7 @@ def uwjava(path):
     t = open(path).read()
     tw = int(re.search(r'texWidth = (\d+)', t).group(1)); th = int(re.search(r'texHeight = (\d+)', t).group(1))
     parts = {}
-    for m in re.finditer(r'this\.(\w+) = new \w*ModelBox\w*\(this, (\d+), (\d+)\)', t):
+    for m in re.finditer(r'this\.(\w+) = new \w*Model(?:Box|Renderer)\w*\(this, (-?\d+), (-?\d+)\)', t):
         parts[m[1]] = dict(uv=[int(m[2]), int(m[3])], pivot=[0, 0, 0], rot=[0, 0, 0], boxes=[], mirror=False, children=[])
     for m in re.finditer(r'this\.(\w+)\.mirror = true', t):
         if m[1] in parts:
