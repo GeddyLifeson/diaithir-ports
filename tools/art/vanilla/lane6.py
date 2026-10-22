@@ -13,7 +13,7 @@ from PIL import Image
 from auto import NAMES, PARTS, score, named
 from vanilla import run
 
-SKIP = (r'spit|stinger|creeper_armor|exploding|_sleep|evoker_fangs|color_palettes|/markers/|sage_chest|_collar|_saddle|/saddle|'
+SKIP = (r'spit|stinger|creeper_armor|exploding|evoker_fangs|color_palettes|/markers/|sage_chest|_collar|_saddle|/saddle|'
         r'1bit_elite_blaze_(sword|core)|lightwell|daemonium_animaris_charging|old_zombie_piglin|guardian_familiar_(christmas|tree)|controlled_zombie|slimebeetle|terracube|wingnis|blook|moa_baby_base|bee_golem_flash')
 VILLAGER = r'(^|/)(villager|zombie_villager|wandering_trader)/'
 WORDS = r'wolf|horse|slime|zombie|cow|pig|chicken|illager|pillager|skeleton|spider'
