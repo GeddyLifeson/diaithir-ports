@@ -20,7 +20,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
 | diaithir-nemesis-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis) |
 | diaithir-perf-neoforge-26.1.2-0.3.0.jar | LGPL-3.0-only | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-t61szp/diaithir-perf) |
-| untamedwilds-26.1.2-3.0.1.jar | GPL-3.0 (Untamed Wilds by RazorDevs; Diaithir art) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/untamedwilds) |
+| untamedwilds-26.1.2-3.0.1.jar | GPL-3.0-only (Untamed Wilds by RayTrace082 and Raguto; Diaithir art and port) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/untamedwilds) |
 | client/diaithir-branding-neoforge-26.1.2-1.0.3.jar | MIT; its Pixelify Sans font is SIL OFL 1.1 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-branding) |
 | client/diaithir-earlywindow-neoforge-26.1.2-1.0.1.jar | LGPL-2.1-only (its error window is adapted from NeoForged FancyModLoader) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-earlywindow) |
 | config/fml/PixelifySans.ttf | SIL OFL 1.1 | [Pixelify Sans](https://github.com/eifetx/Pixelify-Sans) |
