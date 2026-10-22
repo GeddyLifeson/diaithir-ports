@@ -111,7 +111,6 @@ final class NemesisSelfTest {
         return fails;
     }
 
-    // Loads the chunks an ambush can land in, as a real player's view distance would.
     // ambushes need dry ground past the safe radius; on the Earth map a fixed spot can be open sea
     private static BlockPos dryLand(ServerLevel level) {
         BlockPos spawn = level.getRespawnData().pos();
@@ -123,6 +122,7 @@ final class NemesisSelfTest {
         return surface(level, spawn.getX() + 1000, spawn.getZ());
     }
 
+    // Loads the chunks an ambush can land in, as a real player's view distance would.
     private static BlockPos surface(ServerLevel level, int x, int z) {
         for (int cx = -2; cx <= 2; cx++) for (int cz = -2; cz <= 2; cz++) level.getChunk((x >> 4) + cx, (z >> 4) + cz);
         return new BlockPos(x, level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z), z);
