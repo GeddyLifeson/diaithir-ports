@@ -1,0 +1,57 @@
+architectury {
+    common(rootProject.enabled_platforms.split(","))
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/vs_eureka.accesswidener")
+}
+
+dependencies {
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:$mixin_extras_version"))
+
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+    // fabric loader purely for the @Environment compile-time annotations (architectury client/server
+    // stripping). loom-no-remap: no `mod` prefix needed - nothing to remap.
+    implementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+
+    // NeoForge on the compile classpath (for NeoForge-only API referenced from common).
+    compileOnly("net.neoforged:neoforge:$rootProject.neoforge_version")
+
+    // VS2 26.2 fork - published to mavenLocal from ../vs2-core. The common artifact is dev-classified.
+    api("org.valkyrienskies:valkyrienskies-26-2-common:${rootProject.vs2_version}:dev")
+
+    // Config screen infra
+    api("me.shedaniel.cloth:cloth-config:${rootProject.cloth_config_version}")
+
+    // vs-core (version-independent physics engine, prebuilt artifact)
+    compileOnly("org.valkyrienskies.core:api:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:internal:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:util:${rootProject.vs_core_version}")
+    compileOnly("org.valkyrienskies.core:impl:${rootProject.vs_core_version}")
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    api "org.jetbrains.kotlin:kotlin-reflect"
+}
+
+publishing {
+    publications {
+        mavenCommon(MavenPublication) {
+            groupId = "org.valkyrienskies.eureka"
+            version = project.version
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            from components.java
+        }
+    }
+
+    repositories {
+        if (project.vs_maven_username && project.vs_maven_password) {
+            maven {
+                url = project.vs_maven_url
+                credentials {
+                    username = project.vs_maven_username
+                    password = project.vs_maven_password
+                }
+            }
+        }
+    }
+}

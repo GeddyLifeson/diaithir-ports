@@ -1,0 +1,41 @@
+modLoader = "kotlinforforge"
+loaderVersion = "[5.3,)"
+issueTrackerURL = "https://github.com/ValkyrienSkies/Eureka/issues"
+license = "Apache-2.0"
+
+[[mods]]
+modId = "vs_eureka"
+version = "${version}"
+displayName = "VS Eureka Mod"
+authors = ["Tri0de", "ewoudje", "millennIumAMbiguity", "VS2 Discord Artists"]
+description = '''
+Basically Archimedes Ships, but with VS2 as the backend!
+'''
+logoFile = "icon.png"
+
+[[mixins]]
+config = "vs_eureka-common.mixins.json"
+
+[[mixins]]
+config = "vs_eureka.mixins.json"
+
+[[dependencies.vs_eureka]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vs_eureka]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.vs_eureka]]
+modId = "valkyrienskies"
+type = "required"
+versionRange = "[${vs2_version},)"
+ordering = "AFTER"
+side = "BOTH"
