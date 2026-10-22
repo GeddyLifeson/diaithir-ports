@@ -139,7 +139,7 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
 
     @Inject(
         at = @At("TAIL"),
-        method = "checkInsideBlocks"
+        method = "checkInsideBlocks(Ljava/util/List;Lnet/minecraft/world/entity/InsideBlockEffectApplier$StepBasedCollector;)V"
     )
     private void afterCheckInside(final CallbackInfo ci) {
         final AABBd boundingBox = toJOML(getBoundingBox());

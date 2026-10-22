@@ -146,7 +146,6 @@
     "feature.sound.client.MixinSimpleSoundInstance",
     "feature.sound.client.MixinSoundEngine",
     "feature.transform_particles.MixinClientLevel",
-    "feature.world_weather.MixinClientLevel",
     "feature.world_weather.MixinWeatherEffectRenderer",
     "feature.transform_particles.MixinParticle",
     "mod_compat.sound_physics_remastered.MixinSoundPhysics",

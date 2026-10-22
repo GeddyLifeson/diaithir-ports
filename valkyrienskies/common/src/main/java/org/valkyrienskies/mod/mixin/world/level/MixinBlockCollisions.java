@@ -3,7 +3,7 @@ package org.valkyrienskies.mod.mixin.world.level;
 import java.util.function.BiFunction;
 import net.minecraft.core.Cursor3D;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.BlockCollisions;
 import net.minecraft.world.level.CollisionGetter;
 import net.minecraft.world.phys.AABB;
@@ -36,8 +36,11 @@ public class MixinBlockCollisions {
     @Mutable
     private VoxelShape entityShape;
 
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void postInit(CollisionGetter collisionGetter, Entity entity, AABB aabb, boolean bl, BiFunction biFunction, CallbackInfo ci) {
+    @Inject(
+        method = "<init>(Lnet/minecraft/world/level/CollisionGetter;Lnet/minecraft/world/phys/shapes/CollisionContext;Lnet/minecraft/world/phys/AABB;ZLjava/util/function/BiFunction;)V",
+        at = @At("RETURN")
+    )
+    private void postInit(CollisionGetter collisionGetter, CollisionContext context, AABB aabb, boolean bl, BiFunction biFunction, CallbackInfo ci) {
         if (BugFixUtil.INSTANCE.isCollisionBoxTooBig(aabb)) {
             final AABB newBox = new AABB(aabb.minX, aabb.minY, aabb.minZ, aabb.minX, aabb.minY, aabb.minZ);
             this.entityShape = Shapes.create(newBox);

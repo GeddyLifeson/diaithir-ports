@@ -2,14 +2,14 @@ package org.valkyrienskies.mod.mixin.mod_compat.vanilla_renderer;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.SectionOcclusionGraph;
 import net.minecraft.client.renderer.ViewArea;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
+import net.minecraft.client.renderer.LevelRenderer;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,23 +22,16 @@ import org.valkyrienskies.mod.mixinducks.client.render.IVSViewAreaMethods;
 /**
  * Lets {@link ViewArea} manage render sections for ship chunks.
  *
- * <p>26.2 rewrite: the ViewArea constructor no longer takes a {@code Level}/{@code LevelRenderer}
- * (it now takes {@code (SectionRenderDispatcher, int minY, int maxY, int, int, int, SectionOcclusionGraph)}),
- * the {@code level}/{@code sectionGridSizeY} fields are gone, {@code setDirty(int,int,int,boolean)} was
- * removed, and {@code SectionRenderDispatcher.RenderSection} is now constructed from a packed
- * {@code sectionNode} long ({@code SectionPos.asLong}) instead of x/y/z, with no {@code setDirty}/
- * {@code releaseBuffers} (use {@code reset()}). Ship sections are keyed by their (shipyard-space)
- * sectionNode; compilation is driven by {@code MixinLevelRendererVanilla} via
- * {@code RenderRegionCache.createRegion} + {@code compileSync}, not by the ViewArea.
+ * <p>Ship sections are kept out of the view grid, keyed by their shipyard-space section node
+ * ({@code SectionPos.asLong}); compilation is driven by {@code MixinLevelRendererVanilla}, not by
+ * the ViewArea.
  */
 @Mixin(ViewArea.class)
 public abstract class MixinViewAreaVanilla implements IVSViewAreaMethods {
 
     @Shadow
-    public abstract int minSectionY();
-
-    @Shadow
-    public abstract int maxSectionY();
+    @Final
+    protected Level level;
 
     // Ship render sections, keyed by their shipyard-space section node (SectionPos.asLong).
     @Unique
@@ -55,15 +48,9 @@ public abstract class MixinViewAreaVanilla implements IVSViewAreaMethods {
     private int vs$nextShipSectionIndex = 0x40000000;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void vs$captureDispatcher(final SectionRenderDispatcher sectionRenderDispatcher, final int minY,
-        final int maxY, final int i, final int j, final int viewDistance,
-        final SectionOcclusionGraph sectionOcclusionGraph, final CallbackInfo ci) {
+    private void vs$captureDispatcher(final SectionRenderDispatcher sectionRenderDispatcher, final Level level,
+        final int viewDistance, final LevelRenderer levelRenderer, final CallbackInfo ci) {
         this.vs$sectionRenderDispatcher = sectionRenderDispatcher;
-    }
-
-    @Unique
-    private static Level vs$clientLevel() {
-        return Minecraft.getInstance().level;
     }
 
     /**
@@ -72,7 +59,7 @@ public abstract class MixinViewAreaVanilla implements IVSViewAreaMethods {
     @Inject(method = "getRenderSectionAt", at = @At("HEAD"), cancellable = true)
     private void vs$preGetRenderSectionAt(final BlockPos pos,
         final CallbackInfoReturnable<SectionRenderDispatcher.RenderSection> cir) {
-        final Level level = vs$clientLevel();
+        final Level level = this.level;
         if (level == null) {
             return;
         }
@@ -104,7 +91,7 @@ public abstract class MixinViewAreaVanilla implements IVSViewAreaMethods {
 
     @Override
     public void valkyrienskies$unloadChunk(final int chunkX, final int chunkZ) {
-        for (int sectionY = minSectionY(); sectionY <= maxSectionY(); sectionY++) {
+        for (int sectionY = level.getMinSectionY(); sectionY <= level.getMaxSectionY(); sectionY++) {
             final SectionRenderDispatcher.RenderSection section =
                 vs$shipRenderSections.remove(SectionPos.asLong(chunkX, sectionY, chunkZ));
             if (section != null) {

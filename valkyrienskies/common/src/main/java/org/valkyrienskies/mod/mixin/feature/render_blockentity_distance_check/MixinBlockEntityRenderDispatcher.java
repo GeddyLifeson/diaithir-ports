@@ -30,9 +30,9 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
  * ship was assembled. When the vanilla test fails, re-test using the block's position transformed
  * into world space by the ship's render transform.
  *
- * <p>26.2 notes: the cull moved from {@code render} into {@code tryExtractRenderState} - and into
- * the 5-arg Frustum overload NeoForge patches in, since the 4-arg one is only a delegate, so the
- * descriptor has to name the 5-arg version. The dispatcher also lost its {@code level}/{@code
+ * <p>26.1 notes: the cull moved from {@code render} into {@code tryExtractRenderState} - and into
+ * the Frustum overload NeoForge patches in, since the 3-arg one is only a delegate, so the
+ * descriptor has to name the Frustum version. The dispatcher also lost its {@code level}/{@code
  * camera} fields, so the level comes from {@link Minecraft} and the camera position from the wrapped
  * call's own argument. {@code BlockEntityRenderer} is now {@code <T, S>}, hence the wildcard.
  */
@@ -52,7 +52,7 @@ public class MixinBlockEntityRenderDispatcher {
      * render transform.
      */
     @WrapOperation(
-        method = "tryExtractRenderState(Lnet/minecraft/world/level/block/entity/BlockEntity;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;ZLnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;",
+        method = "tryExtractRenderState(Lnet/minecraft/world/level/block/entity/BlockEntity;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/renderer/culling/Frustum;isVisible(Lnet/minecraft/world/phys/AABB;)Z"
@@ -100,7 +100,7 @@ public class MixinBlockEntityRenderDispatcher {
     }
 
     @WrapOperation(
-        method = "tryExtractRenderState(Lnet/minecraft/world/level/block/entity/BlockEntity;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;ZLnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;",
+        method = "tryExtractRenderState(Lnet/minecraft/world/level/block/entity/BlockEntity;FLnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;Lnet/minecraft/client/renderer/culling/Frustum;)Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderer;shouldRender(Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/phys/Vec3;)Z"

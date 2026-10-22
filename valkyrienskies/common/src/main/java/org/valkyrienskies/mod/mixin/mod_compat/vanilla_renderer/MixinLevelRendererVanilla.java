@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -326,34 +327,34 @@ public abstract class MixinLevelRendererVanilla implements LevelRendererDuck, Le
     /**
      * Draws the block selection outline for a targeted ship block at the ship's transform.
      *
-     * <p>Same shape as the block entity case below: {@code submitBlockOutline} does
-     * {@code poseStack.translate(outlineState.pos() - cameraPos)} before submitting the hit outline,
-     * which puts a targeted ship block's outline out in shipyard space instead of on the ship. The
-     * crosshair already resolves ship blocks correctly (they can be placed on, broken and
-     * right-clicked), so only the draw transform was wrong.
+     * <p>{@code renderBlockOutline} hands {@code renderHitOutline} the camera position, and the
+     * outline is drawn at {@code outlineState.pos() - camera}, which puts a targeted ship block's
+     * outline out in shipyard space instead of on the ship. Move the pose onto the ship block and
+     * pass the block position as the camera, so the outline is drawn at the pose origin.
      */
     @WrapOperation(
-        method = "submitBlockOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/LevelRenderState;)V",
-        at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(DDD)V")
+        method = "renderBlockOutline",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/renderer/LevelRenderer;renderHitOutline(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;DDDLnet/minecraft/client/renderer/state/level/BlockOutlineRenderState;IF)V"
+        )
     )
-    private void vs$transformShipBlockOutline(final PoseStack poseStack, final double x, final double y,
-        final double z, final Operation<Void> original,
-        @Local(argsOnly = true) final LevelRenderState levelRenderState) {
+    private void vs$transformShipBlockOutline(final LevelRenderer instance, final PoseStack poseStack,
+        final VertexConsumer consumer, final double camX, final double camY, final double camZ,
+        final BlockOutlineRenderState outline, final int color, final float width, final Operation<Void> original) {
         final ClientLevel level = Minecraft.getInstance().level;
-        final BlockOutlineRenderState outline =
-            levelRenderState == null ? null : levelRenderState.blockOutlineRenderState;
-        final BlockPos pos = outline == null ? null : outline.pos();
-        final ClientShip ship = level == null || pos == null
-            ? null : VSGameUtilsKt.getShipObjectManagingPos(level, pos);
+        final BlockPos pos = outline.pos();
+        final ClientShip ship = level == null ? null : VSGameUtilsKt.getShipObjectManagingPos(level, pos);
         if (ship == null) {
-            original.call(poseStack, x, y, z);
+            original.call(instance, poseStack, consumer, camX, camY, camZ, outline, color, width);
             return;
         }
+        poseStack.pushPose();
         VSClientGameUtils.transformRenderWithShip(
-            ship.getRenderTransform(), poseStack,
-            pos.getX(), pos.getY(), pos.getZ(),
-            pos.getX() - x, pos.getY() - y, pos.getZ() - z
-        );
+            ship.getRenderTransform(), poseStack, pos.getX(), pos.getY(), pos.getZ(), camX, camY, camZ);
+        original.call(instance, poseStack, consumer, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
+            outline, color, width);
+        poseStack.popPose();
     }
 
     /**
@@ -372,7 +373,7 @@ public abstract class MixinLevelRendererVanilla implements LevelRendererDuck, Le
      * arguments, which are {@code blockPos - camera}, so no extra locals are needed.
      */
     @WrapOperation(
-        method = "submitBlockEntities(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/state/level/LevelRenderState;Lnet/minecraft/client/renderer/SubmitNodeCollector;)V",
+        method = "submitBlockEntities(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/state/level/LevelRenderState;Lnet/minecraft/client/renderer/SubmitNodeStorage;)V",
         at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/vertex/PoseStack;translate(DDD)V")
     )
     private void vs$transformShipBlockEntity(final PoseStack poseStack, final double x, final double y,

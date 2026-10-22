@@ -25,6 +25,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.valkyrienskies.core.api.ships.LoadedServerShip;
 import org.valkyrienskies.core.api.ships.ServerShip;
 import org.valkyrienskies.core.impl.config.VSCoreConfig;
@@ -116,7 +117,7 @@ public abstract class MixinExplosion {
     }
 
     @Inject(at = @At("TAIL"), method = "explode")
-    private void afterExplode(final CallbackInfo ci) {
+    private void afterExplode(final CallbackInfoReturnable<Integer> cir) {
         if (isModifyingExplosion) {
             doExplodeForce();
             return;
@@ -162,13 +163,13 @@ public abstract class MixinExplosion {
     // Don't raytrace the shipyard
     // getEntities already gives shipyard entities
     @WrapOperation(
-        method = "explode",
+        method = "hurtEntities(Ljava/util/List;)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/Level;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;"
+            target = "Lnet/minecraft/server/level/ServerLevel;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;"
         )
     )
-    private List<Entity> noRayTrace(final Level instance, final Entity entity, final AABB aabb,
+    private List<Entity> noRayTrace(final ServerLevel instance, final Entity entity, final AABB aabb,
         final Operation<List<Entity>> getEntities) {
         if (isModifyingExplosion) {
             return Collections.emptyList();

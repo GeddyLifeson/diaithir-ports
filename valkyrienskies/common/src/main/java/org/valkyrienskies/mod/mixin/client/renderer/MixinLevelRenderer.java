@@ -1,15 +1,9 @@
 package org.valkyrienskies.mod.mixin.client.renderer;
 
-import com.mojang.blaze3d.buffers.GpuBufferSlice;
-import com.mojang.blaze3d.resource.GraphicsResourceAllocator;
 import net.minecraft.client.Camera;
-import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.SectionOcclusionGraph;
-import net.minecraft.client.renderer.state.level.CameraRenderState;
-import org.joml.Matrix4fc;
-import org.joml.Vector4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -41,11 +35,8 @@ public abstract class MixinLevelRenderer {
      * block-damage-distance constant) is dropped: that constant no longer lives in the level render
      * method in 26.2 (block breaking moved onto the SubmitNodeCollector path).
      */
-    @Inject(method = "render", at = @At("HEAD"))
-    private void valkyrienskies$preRender(final GraphicsResourceAllocator graphicsResourceAllocator,
-        final DeltaTracker deltaTracker, final boolean bl, final CameraRenderState cameraRenderState,
-        final Matrix4fc matrix4fc, final GpuBufferSlice gpuBufferSlice, final Vector4f vector4f,
-        final boolean bl2, final CallbackInfo ci) {
+    @Inject(method = "renderLevel", at = @At("HEAD"))
+    private void valkyrienskies$preRender(final CallbackInfo ci) {
         final Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
         if (camera == null) {
             return;
