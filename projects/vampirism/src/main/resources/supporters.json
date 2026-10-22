@@ -1,0 +1,251 @@
+[
+  {
+    "playerId": "3103dae8-be9d-4c28-819a-b84c4b85f774",
+    "player": "lilcatgod",
+    "faction": "vampirism:hunter",
+    "name": "Commander Sam",
+    "status": "Temporary",
+    "appearance": {
+      "hat": "hat_1",
+      "type": "1",
+      "main_hand": "vampirism:pitchfork"
+    }
+  },
+  {
+    "playerId": "21383d75-4e47-4af9-8a51-3c1841448274",
+    "player": "mistadon",
+    "faction": "vampirism:hunter",
+    "name": "Dreaded Mistadon",
+    "status": "Dev",
+    "appearance": {
+      "hat": "hat_0",
+      "head": "vampirism:hunter_hat_broad"
+    }
+  },
+  {
+    "playerId": "0901c870-aa68-4453-8061-42ff2e9172c8",
+    "player": "the_rebel_t",
+    "faction": "vampirism:hunter",
+    "name": "Marcus Walker",
+    "status": "Contributor",
+    "appearance": {
+      "hat": "none",
+      "type": "2"
+    }
+  },
+  {
+    "playerId": "d4e6b6cb-1371-4486-bbf3-5d71a53a9c50",
+    "player": "pendragon",
+    "faction": "vampirism:hunter",
+    "name": "Pendragon Helsing",
+    "status": "Contributor",
+    "appearance": {
+      "hat": "hat_1",
+      "type": "1",
+      "head": "vampirism:hunter_hat_tall"
+    }
+  },
+  {
+    "playerId": "aa08a4a9-50a9-443f-9e4f-0b26fe6ed771",
+    "player": "cheaterpaul",
+    "faction": "vampirism:hunter",
+    "name": "Perilous Paul",
+    "status": "Dev",
+    "appearance": {
+      "hat": "hat_0",
+      "equipment": "axe_stake",
+      "type": "1",
+      "main_hand": "vampirism:hunter_axe_normal",
+      "head": "vampirism:hunter_hat_broad"
+    }
+  },
+  {
+    "playerId": "38569199-2eb7-426e-aea3-d949bd1f520c",
+    "player": "piklach",
+    "faction": "vampirism:hunter",
+    "name": "Pyromaniac Pik",
+    "status": "Contributor",
+    "bookId": "piklach",
+    "book": "vampirism:pyromaniacs_diary",
+    "appearance": {
+      "hat": "hat_0",
+      "main_hand": "vampirism:stake",
+      "head": "vampirism:hunter_hat_broad"
+    }
+  },
+  {
+    "playerId": "f496ee4c-630f-48dc-a5cd-ea35fc4dc417",
+    "player": "edelvveiss",
+    "faction": "vampirism:hunter",
+    "name": "Forsaken Edelweiss",
+    "status": "Temporary",
+    "appearance": {
+      "hat": "hat_1",
+      "equipment": "axe",
+      "hasCloak": "false",
+      "body": "14",
+      "type": "15",
+      "main_hand": "vampirism:hunter_axe_normal",
+      "head": "vampirism:hunter_hat_tall"
+    }
+  },
+  {
+    "playerId": "51a6f56a-1bd8-4a34-a975-c4a0a9bc2b91",
+    "player": "bronzeshadow",
+    "faction": "vampirism:vampire",
+    "name": "Adrian DraxWind",
+    "status": "Contributor",
+    "appearance": {
+      "eye": "13",
+      "type": "15",
+      "eyes": "17"
+    }
+  },
+  {
+    "playerId": "84b8aa9f-cfc4-4154-abae-37faa82745b5",
+    "player": "s_olace",
+    "faction": "vampirism:vampire",
+    "name": "Sinister Solace",
+    "status": "Contributor",
+    "bookId": "s_olace",
+    "book": "vampirism:sinister_intentions",
+    "appearance": {
+      "eye": "15",
+      "type": "15",
+      "eyes": "15"
+    }
+  },
+  {
+    "playerId": "8bfeb5a4-fb9e-46fc-a236-712df8b4e3f6",
+    "player": "cournbread",
+    "faction": "vampirism:vampire",
+    "name": "Cultist Courn",
+    "status": "Contributor",
+    "appearance": {
+      "eye": "15",
+      "type": "15",
+      "eyes": "15"
+    }
+  },
+  {
+    "playerId": "a4041e31-7601-4b26-abf3-4f3e35bdc350",
+    "player": "spade",
+    "faction": "vampirism:vampire",
+    "name": "Marchioness Spade",
+    "status": "Contributor",
+    "appearance": {
+      "eye": "15",
+      "type": "15",
+      "eyes": "15"
+    }
+  },
+  {
+    "playerId": "ab237a8b-4a25-4990-9e86-c456377fa219",
+    "player": "mazdallier",
+    "faction": "vampirism:vampire",
+    "name": "Mazdallier",
+    "status": "Contributor",
+    "appearance": {
+      "eye": "1",
+      "eyes": "1"
+    }
+  },
+  {
+    "playerId": "aa7ac607-8b88-48f2-aa32-c65c9f74debe",
+    "player": "supermike",
+    "faction": "vampirism:vampire",
+    "name": "Merciless Mike",
+    "status": "Contributor",
+    "appearance": {
+      "eye": "13",
+      "type": "13",
+      "eyes": "18"
+    }
+  },
+  {
+    "playerId": "4df6f103-62db-4d9e-a611-49e6a09da6a7",
+    "player": "special_krab",
+    "faction": "vampirism:vampire",
+    "name": "The nightmarish Krab",
+    "status": "Contributor",
+    "bookId": null,
+    "appearance": {
+      "eye": "13",
+      "type": "13",
+      "eyes": "16"
+    }
+  },
+  {
+    "playerId": "c3d43f97-991f-4441-854d-37184149a3c6",
+    "player": "wildbill",
+    "faction": "vampirism:vampire",
+    "name": "The powerful Bill",
+    "status": "Dev",
+    "bookId": null,
+    "appearance": {
+      "eye": "15",
+      "type": "15",
+      "eyes": "2"
+    }
+  },
+  {
+    "playerId": "945989ba-96c9-45db-b92d-b83007fbc924",
+    "player": "volqonah",
+    "faction": "vampirism:vampire",
+    "name": "Valorous Vol",
+    "status": "Temporary",
+    "bookId": "volqonah",
+    "book": "vampirism:valorous_tale",
+    "appearance": {
+      "eye": "15",
+      "type": "15",
+      "eyes": "15"
+    }
+  },
+  {
+    "playerId": "2f1ce3cf-ad0c-4e75-9251-7c892a4468ff",
+    "player": "zinny",
+    "faction": "vampirism:vampire",
+    "name": "Zin",
+    "status": "Contributor",
+    "bookId": null,
+    "appearance": {
+      "eye": "16",
+      "type": "15",
+      "eyes": "15"
+    }
+  },
+  {
+    "playerId": "052ef844-4947-452c-867d-902c8fa1cd94",
+    "player": "gridexpert",
+    "faction": "vampirism:hunter",
+    "name": "Marcus Grid",
+    "status": "Dev",
+    "appearance": {
+      "hat": "hat_1",
+      "hasCloak": "true",
+      "body": "12",
+      "equipment": "double_axe",
+      "type": "1",
+      "main_hand": "vampirism:hunter_axe_normal",
+      "off_hand": "vampirism:hunter_axe_normal",
+      "head": "vampirism:hunter_hat_tall"
+    }
+  },
+  {
+    "playerId": "74b02afe-732d-437f-872f-1db520772c04",
+    "player": "random",
+    "faction": "vampirism:hunter",
+    "name": "One-Eyed Rand",
+    "status": "Contributor",
+    "bookId": null,
+    "appearance": {
+      "hat": "none",
+      "equipment": "crossbow",
+      "hasCloak": "true",
+      "body": "8",
+      "type": "1",
+      "main_hand": "vampirism:enhanced_crossbow"
+    }
+  }
+]

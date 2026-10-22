@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/entity/MobCategory",
+      "name": "VAMPIRISM_HUNTER",
+      "constructor": "(Ljava/lang/String;IZZI)V",
+      "parameters": {
+        "class": "de/teamlapen/vampirism/api/VEnums",
+        "field": "HUNTER_CATEGORY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/entity/MobCategory",
+      "name": "VAMPIRISM_VAMPIRE",
+      "constructor": "(Ljava/lang/String;IZZI)V",
+      "parameters": {
+        "class": "de/teamlapen/vampirism/api/VEnums",
+        "field": "VAMPIRE_CATEGORY"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "VAMPIRISM_DOUBLE_CROSSBOW_CHARGE",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "de/teamlapen/vampirism/client/core/ModClientEnums",
+        "field": "DOUBLE_CROSSBOW_CHARGE"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "VAMPIRISM_DOUBLE_CROSSBOW_HOLD",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "de/teamlapen/vampirism/client/core/ModClientEnums",
+        "field": "DOUBLE_CROSSBOW_HOLD"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "VAMPIRISM_SOVEREIGN",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "de/teamlapen/vampirism/api/VEnums",
+        "field": "SOVEREIGN"
+      }
+    }
+  ]
+}

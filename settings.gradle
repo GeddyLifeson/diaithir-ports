@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name= "Vampirism"
+
+// Enable multi-project build: separate mods/modules
+
+include(
+        ':faction-api',
+        ':faction',
+        ':vampirism-api',
+        ':vampirism-processor',
+        ':vampirism'
+)
+
+project(':faction-api').projectDir = file("projects/faction-api")
+project(':faction').projectDir = file("projects/faction")
+project(':vampirism-api').projectDir = file("projects/vampirism-api")
+project(':vampirism-processor').projectDir = file("projects/vampirism/processor")
+project(':vampirism').projectDir = file("projects/vampirism")

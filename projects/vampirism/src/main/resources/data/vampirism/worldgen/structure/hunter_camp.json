@@ -1,0 +1,16 @@
+{
+  "type": "vampirism:hunter_camp",
+  "biomes": {
+    "type": "neoforge:and",
+    "values": [
+      "#vampirism:has_structure/hunter_tent",
+      {
+        "type": "neoforge:not",
+        "value": "#vampirism:has_faction"
+      }
+    ]
+  },
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin"
+}
