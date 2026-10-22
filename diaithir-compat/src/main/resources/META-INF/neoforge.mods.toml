@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-license = "MIT; the site people clothing textures (assets/diaithircompat/skins) are GPL-3.0, from MCA Reborn"
+license = "MIT"
 
 [[mods]]
 modId = "diaithircompat"
