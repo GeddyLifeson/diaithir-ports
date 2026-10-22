@@ -272,6 +272,8 @@ shadowJar {
     dependsOn jar
     mainSpec.sourcePaths.clear()
     from(zipTree(tasks.named("jar").get().archiveFile))
+    from(rootProject.file("LICENSE")) { rename { "valkyrienskies_LICENSE" } }
+    from(rootProject.file("NOTICE")) { rename { "valkyrienskies_NOTICE" } }
 
     exclude "fabric.mod.json"
     exclude "architectury.common.json"
