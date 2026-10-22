@@ -12,17 +12,7 @@ plugins {
     id "com.modrinth.minotaur" version "2.4.3" apply false
 }
 
-// Determine the version
-if (project.hasProperty("CustomReleaseVersion")) {
-    version = project.property("CustomReleaseVersion").replaceFirst("^release/", "")
-} else {
-    try {
-        String gitRevision = "git rev-parse HEAD".execute().text.trim()
-        version = eureka_version + '+' + gitRevision.substring(0, 10)
-    } catch (Exception e) {
-        version = eureka_version
-    }
-}
+version = eureka_version
 
 architectury {
     minecraft = rootProject.minecraft_version
