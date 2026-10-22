@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/0.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/1.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/2.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/ruler.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/warrior.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/male/priest.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/0.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/1.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/2.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/ruler.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/warrior.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/ahrensburgian/female/priest.png",
+    "profession": "diaithircompat:ahrensburgian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

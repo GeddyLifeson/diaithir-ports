@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/0.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/1.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/2.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/ruler.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/warrior.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/priest.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/0.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/1.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/2.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/ruler.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/warrior.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/priest.png",
+    "profession": "diaithircompat:tasmanian_late_pleistocene_foragers_kuti",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/0.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/1.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/2.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/ruler.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/warrior.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/male/priest.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/0.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/1.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/2.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/ruler.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/warrior.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/incipient_jomon/female/priest.png",
+    "profession": "diaithircompat:incipient_jomon",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

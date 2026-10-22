@@ -184,7 +184,7 @@ public final class SitePeople {
             if (!(entityType.create(level, EntitySpawnReason.COMMAND) instanceof Mob mob)) continue;
             mob.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, random.nextFloat() * 360F, 0F);
             mob.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.COMMAND, null);
-            dress(level, mob, people, kit, female, random);
+            dress(level, mob, people, kit, female, i == 0 && count >= 3 ? "warrior" : null, random); // a camp of three or more keeps a hunter in paint
             mob.addTag(TAG);
             mob.addTag("site_" + site);
             mob.setPersistenceRequired();
@@ -195,19 +195,19 @@ public final class SitePeople {
     }
 
     /**
-     * Dresses one mob in a culture's kit, as a site's people are dressed; diaithir-ages calls it by reflection for town rulers
-     * and followers. Returns false for a culture with no kit.
+     * Dresses one mob in a culture's kit, as a site's people are dressed, in a role's outfit (ruler, warrior or priest; anything
+     * else is everyday dress). diaithir-ages calls it by reflection for town rulers and followers. False for a culture with no kit.
      */
-    public static boolean dressAs(Mob mob, String culture, boolean female) {
+    public static boolean dressAs(Mob mob, String culture, boolean female, String role) {
         JsonObject d = data();
         JsonObject cultures = d.getAsJsonObject("cultures"), kits = d.getAsJsonObject("kits");
         if (cultures == null || kits == null || culture == null || !cultures.has(culture) || !(mob.level() instanceof ServerLevel level)) return false;
         JsonObject people = cultures.getAsJsonObject(culture);
-        dress(level, mob, people, kits.getAsJsonObject(people.get("kit").getAsString()), female, RandomSource.create(mob.getUUID().hashCode()));
+        dress(level, mob, people, kits.getAsJsonObject(people.get("kit").getAsString()), female, role, RandomSource.create(mob.getUUID().hashCode()));
         return true;
     }
 
-    private static void dress(ServerLevel level, Mob mob, JsonObject people, JsonObject kit, boolean female, RandomSource random) {
+    private static void dress(ServerLevel level, Mob mob, JsonObject people, JsonObject kit, boolean female, String role, RandomSource random) {
         if (mob instanceof Villager villager) {
             var vtype = ResourceKey.create(Registries.VILLAGER_TYPE, Identifier.parse(people.get("villager_type").getAsString()));
             var data = villager.getVillagerData().withProfession(level.registryAccess(), VillagerProfession.NITWIT);
@@ -222,8 +222,12 @@ public final class SitePeople {
         }
         Item hand = item(people.get("mainhand").getAsString());
         if (hand != null) mob.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(hand));
+        JsonObject roles = kit.getAsJsonObject("roles");
         JsonArray clothes = kit.getAsJsonObject("clothing").getAsJsonArray(female ? "female" : "male");
-        if (clothes != null && !clothes.isEmpty()) {
+        if (roles != null && role != null && roles.has(role)) {
+            call(mob, "setClothes", String.class, roles.getAsJsonObject(role).get(female ? "female" : "male").getAsString());
+            call(mob, "setClothingLocked", boolean.class, true);
+        } else if (clothes != null && !clothes.isEmpty()) {
             String id = clothes.get(random.nextInt(clothes.size())).getAsString();
             call(mob, "setClothes", String.class, id);
             call(mob, "setClothingLocked", boolean.class, true);

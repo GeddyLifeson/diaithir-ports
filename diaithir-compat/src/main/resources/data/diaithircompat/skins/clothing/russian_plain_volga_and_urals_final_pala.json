@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/0.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/1.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/2.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/ruler.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/warrior.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/priest.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/0.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/1.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/2.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/ruler.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/warrior.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/priest.png",
+    "profession": "diaithircompat:russian_plain_volga_and_urals_final_pala",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

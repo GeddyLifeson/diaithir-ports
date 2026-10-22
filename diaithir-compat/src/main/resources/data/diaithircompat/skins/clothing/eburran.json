@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/0.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/1.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/2.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/ruler.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/warrior.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/male/priest.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/0.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/1.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/2.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/ruler.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/warrior.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/eburran/female/priest.png",
+    "profession": "diaithircompat:eburran",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

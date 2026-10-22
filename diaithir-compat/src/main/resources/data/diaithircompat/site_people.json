@@ -1,5 +1,5 @@
 {
-  "_comment": "Written by diaithir-compat/tools/gen_people.py from DiaithirRPG world/earth/age1; edit those.",
+  "_comment": "Written by diaithir-compat/tools/gen_people.py from DiaithirRPG world/earth/age1 and tools/culture_dress.csv; edit those.",
   "counts": {
     "hunter_camp": [
       2,
@@ -47,102 +47,1068 @@
     ]
   },
   "kits": {
-    "african_lsa": {
+    "abriense_tequendamense_and_el_jobo": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/african_lsa/male/0.png",
-          "diaithircompat:skins/clothing/normal/african_lsa/male/1.png",
-          "diaithircompat:skins/clothing/normal/african_lsa/male/2.png"
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/0.png",
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/1.png",
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/african_lsa/female/0.png",
-          "diaithircompat:skins/clothing/normal/african_lsa/female/1.png",
-          "diaithircompat:skins/clothing/normal/african_lsa/female/2.png"
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/0.png",
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/1.png",
+          "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/abriense_tequendamense_and_el_jobo/female/priest.png"
+        }
       }
     },
-    "american_forager": {
+    "ahrensburgian": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/american_forager/male/0.png",
-          "diaithircompat:skins/clothing/normal/american_forager/male/1.png",
-          "diaithircompat:skins/clothing/normal/american_forager/male/2.png"
+          "diaithircompat:skins/clothing/normal/ahrensburgian/male/0.png",
+          "diaithircompat:skins/clothing/normal/ahrensburgian/male/1.png",
+          "diaithircompat:skins/clothing/normal/ahrensburgian/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/american_forager/female/0.png",
-          "diaithircompat:skins/clothing/normal/american_forager/female/1.png",
-          "diaithircompat:skins/clothing/normal/american_forager/female/2.png"
+          "diaithircompat:skins/clothing/normal/ahrensburgian/female/0.png",
+          "diaithircompat:skins/clothing/normal/ahrensburgian/female/1.png",
+          "diaithircompat:skins/clothing/normal/ahrensburgian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/ahrensburgian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/ahrensburgian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/ahrensburgian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/ahrensburgian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/ahrensburgian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/ahrensburgian/female/priest.png"
+        }
       }
     },
-    "arctic_beringia": {
+    "amotape_complex": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/arctic_beringia/male/0.png",
-          "diaithircompat:skins/clothing/normal/arctic_beringia/male/1.png",
-          "diaithircompat:skins/clothing/normal/arctic_beringia/male/2.png"
+          "diaithircompat:skins/clothing/normal/amotape_complex/male/0.png",
+          "diaithircompat:skins/clothing/normal/amotape_complex/male/1.png",
+          "diaithircompat:skins/clothing/normal/amotape_complex/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/arctic_beringia/female/0.png",
-          "diaithircompat:skins/clothing/normal/arctic_beringia/female/1.png",
-          "diaithircompat:skins/clothing/normal/arctic_beringia/female/2.png"
+          "diaithircompat:skins/clothing/normal/amotape_complex/female/0.png",
+          "diaithircompat:skins/clothing/normal/amotape_complex/female/1.png",
+          "diaithircompat:skins/clothing/normal/amotape_complex/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/amotape_complex/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/amotape_complex/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/amotape_complex/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/amotape_complex/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/amotape_complex/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/amotape_complex/female/priest.png"
+        }
       }
     },
-    "east_asia_pottery": {
+    "andean_puna_hunters_lauricocha_junin": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/0.png",
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/1.png",
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/male/2.png"
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/0.png",
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/1.png",
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/0.png",
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/1.png",
-          "diaithircompat:skins/clothing/normal/east_asia_pottery/female/2.png"
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/0.png",
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/1.png",
+          "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/andean_puna_hunters_lauricocha_junin/female/priest.png"
+        }
       }
     },
-    "forest_mesolithic": {
+    "azilian": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/0.png",
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/1.png",
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/male/2.png"
+          "diaithircompat:skins/clothing/normal/azilian/male/0.png",
+          "diaithircompat:skins/clothing/normal/azilian/male/1.png",
+          "diaithircompat:skins/clothing/normal/azilian/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/0.png",
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/1.png",
-          "diaithircompat:skins/clothing/normal/forest_mesolithic/female/2.png"
+          "diaithircompat:skins/clothing/normal/azilian/female/0.png",
+          "diaithircompat:skins/clothing/normal/azilian/female/1.png",
+          "diaithircompat:skins/clothing/normal/azilian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/azilian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/azilian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/azilian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/azilian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/azilian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/azilian/female/priest.png"
+        }
       }
     },
-    "levant_archer": {
+    "balangoda_culture": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/levant_archer/male/0.png",
-          "diaithircompat:skins/clothing/normal/levant_archer/male/1.png",
-          "diaithircompat:skins/clothing/normal/levant_archer/male/2.png"
+          "diaithircompat:skins/clothing/normal/balangoda_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/balangoda_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/balangoda_culture/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/levant_archer/female/0.png",
-          "diaithircompat:skins/clothing/normal/levant_archer/female/1.png",
-          "diaithircompat:skins/clothing/normal/levant_archer/female/2.png"
+          "diaithircompat:skins/clothing/normal/balangoda_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/balangoda_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/balangoda_culture/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/balangoda_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/balangoda_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/balangoda_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/balangoda_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/balangoda_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/balangoda_culture/female/priest.png"
+        }
       }
     },
-    "levant_village": {
+    "bromme_lyngby_culture": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/levant_village/male/0.png",
-          "diaithircompat:skins/clothing/normal/levant_village/male/1.png",
-          "diaithircompat:skins/clothing/normal/levant_village/male/2.png"
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/levant_village/female/0.png",
-          "diaithircompat:skins/clothing/normal/levant_village/female/1.png",
-          "diaithircompat:skins/clothing/normal/levant_village/female/2.png"
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/bromme_lyngby_culture/female/priest.png"
+        }
+      }
+    },
+    "capsian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/capsian/male/0.png",
+          "diaithircompat:skins/clothing/normal/capsian/male/1.png",
+          "diaithircompat:skins/clothing/normal/capsian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/capsian/female/0.png",
+          "diaithircompat:skins/clothing/normal/capsian/female/1.png",
+          "diaithircompat:skins/clothing/normal/capsian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/capsian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/capsian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/capsian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/capsian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/capsian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/capsian/female/priest.png"
+        }
+      }
+    },
+    "central_african_late_stone_age_tshitolia": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/0.png",
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/1.png",
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/0.png",
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/1.png",
+          "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/central_african_late_stone_age_tshitolia/female/priest.png"
+        }
+      }
+    },
+    "central_brazilian_highland_hunter_gather": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/0.png",
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/1.png",
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/0.png",
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/1.png",
+          "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/central_brazilian_highland_hunter_gather/female/priest.png"
+        }
+      }
+    },
+    "clovis": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/clovis/male/0.png",
+          "diaithircompat:skins/clothing/normal/clovis/male/1.png",
+          "diaithircompat:skins/clothing/normal/clovis/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/clovis/female/0.png",
+          "diaithircompat:skins/clothing/normal/clovis/female/1.png",
+          "diaithircompat:skins/clothing/normal/clovis/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/clovis/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/clovis/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/clovis/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/clovis/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/clovis/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/clovis/female/priest.png"
+        }
+      }
+    },
+    "creswellian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/creswellian/male/0.png",
+          "diaithircompat:skins/clothing/normal/creswellian/male/1.png",
+          "diaithircompat:skins/clothing/normal/creswellian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/creswellian/female/0.png",
+          "diaithircompat:skins/clothing/normal/creswellian/female/1.png",
+          "diaithircompat:skins/clothing/normal/creswellian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/creswellian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/creswellian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/creswellian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/creswellian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/creswellian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/creswellian/female/priest.png"
+        }
+      }
+    },
+    "dalton_tradition": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/dalton_tradition/male/0.png",
+          "diaithircompat:skins/clothing/normal/dalton_tradition/male/1.png",
+          "diaithircompat:skins/clothing/normal/dalton_tradition/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/dalton_tradition/female/0.png",
+          "diaithircompat:skins/clothing/normal/dalton_tradition/female/1.png",
+          "diaithircompat:skins/clothing/normal/dalton_tradition/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/dalton_tradition/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/dalton_tradition/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/dalton_tradition/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/dalton_tradition/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/dalton_tradition/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/dalton_tradition/female/priest.png"
+        }
+      }
+    },
+    "dyuktai_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/dyuktai_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/dyuktai_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/dyuktai_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/dyuktai_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/dyuktai_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/dyuktai_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/dyuktai_culture/female/priest.png"
+        }
+      }
+    },
+    "early_archaic_eastern_north_america": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/0.png",
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/1.png",
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/0.png",
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/1.png",
+          "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/early_archaic_eastern_north_america/female/priest.png"
+        }
+      }
+    },
+    "early_holocene_sahara_foragers_early_aca": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/0.png",
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/1.png",
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/0.png",
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/1.png",
+          "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/early_holocene_sahara_foragers_early_aca/female/priest.png"
+        }
+      }
+    },
+    "early_mesolithic_britain_star_carr": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/0.png",
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/1.png",
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/0.png",
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/1.png",
+          "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/early_mesolithic_britain_star_carr/female/priest.png"
+        }
+      }
+    },
+    "early_pottery_foragers_of_s_china_and_th": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/0.png",
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/1.png",
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/0.png",
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/1.png",
+          "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/priest.png"
+        }
+      }
+    },
+    "eastern_paleoindian_fluted_point_groups": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/0.png",
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/1.png",
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/0.png",
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/1.png",
+          "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/eastern_paleoindian_fluted_point_groups/female/priest.png"
+        }
+      }
+    },
+    "eburran": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/eburran/male/0.png",
+          "diaithircompat:skins/clothing/normal/eburran/male/1.png",
+          "diaithircompat:skins/clothing/normal/eburran/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/eburran/female/0.png",
+          "diaithircompat:skins/clothing/normal/eburran/female/1.png",
+          "diaithircompat:skins/clothing/normal/eburran/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/eburran/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/eburran/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/eburran/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/eburran/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/eburran/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/eburran/female/priest.png"
+        }
+      }
+    },
+    "epipalaeolithic_egypt_isnan_afian_qaruni": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/0.png",
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/1.png",
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/0.png",
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/1.png",
+          "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/epipalaeolithic_egypt_isnan_afian_qaruni/female/priest.png"
+        }
+      }
+    },
+    "federmesser_group_tjongerian_havelte": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/0.png",
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/1.png",
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/0.png",
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/1.png",
+          "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/federmesser_group_tjongerian_havelte/female/priest.png"
+        }
+      }
+    },
+    "final_epigravettian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/final_epigravettian/male/0.png",
+          "diaithircompat:skins/clothing/normal/final_epigravettian/male/1.png",
+          "diaithircompat:skins/clothing/normal/final_epigravettian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/final_epigravettian/female/0.png",
+          "diaithircompat:skins/clothing/normal/final_epigravettian/female/1.png",
+          "diaithircompat:skins/clothing/normal/final_epigravettian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/final_epigravettian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/final_epigravettian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/final_epigravettian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/final_epigravettian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/final_epigravettian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/final_epigravettian/female/priest.png"
+        }
+      }
+    },
+    "fishtail_point_tradition": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/0.png",
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/1.png",
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/0.png",
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/1.png",
+          "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/fishtail_point_tradition/female/priest.png"
+        }
+      }
+    },
+    "folsom": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/folsom/male/0.png",
+          "diaithircompat:skins/clothing/normal/folsom/male/1.png",
+          "diaithircompat:skins/clothing/normal/folsom/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/folsom/female/0.png",
+          "diaithircompat:skins/clothing/normal/folsom/female/1.png",
+          "diaithircompat:skins/clothing/normal/folsom/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/folsom/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/folsom/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/folsom/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/folsom/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/folsom/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/folsom/female/priest.png"
+        }
+      }
+    },
+    "fosna_hensbacka_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/fosna_hensbacka_culture/female/priest.png"
+        }
+      }
+    },
+    "geometric_kebaran": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/male/0.png",
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/male/1.png",
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/female/0.png",
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/female/1.png",
+          "diaithircompat:skins/clothing/normal/geometric_kebaran/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/geometric_kebaran/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/geometric_kebaran/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/geometric_kebaran/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/geometric_kebaran/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/geometric_kebaran/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/geometric_kebaran/female/priest.png"
+        }
+      }
+    },
+    "hamburgian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/hamburgian/male/0.png",
+          "diaithircompat:skins/clothing/normal/hamburgian/male/1.png",
+          "diaithircompat:skins/clothing/normal/hamburgian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/hamburgian/female/0.png",
+          "diaithircompat:skins/clothing/normal/hamburgian/female/1.png",
+          "diaithircompat:skins/clothing/normal/hamburgian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/hamburgian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/hamburgian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/hamburgian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/hamburgian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/hamburgian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/hamburgian/female/priest.png"
+        }
+      }
+    },
+    "harifian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/harifian/male/0.png",
+          "diaithircompat:skins/clothing/normal/harifian/male/1.png",
+          "diaithircompat:skins/clothing/normal/harifian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/harifian/female/0.png",
+          "diaithircompat:skins/clothing/normal/harifian/female/1.png",
+          "diaithircompat:skins/clothing/normal/harifian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/harifian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/harifian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/harifian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/harifian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/harifian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/harifian/female/priest.png"
+        }
+      }
+    },
+    "hoabinhian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/hoabinhian/male/0.png",
+          "diaithircompat:skins/clothing/normal/hoabinhian/male/1.png",
+          "diaithircompat:skins/clothing/normal/hoabinhian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/hoabinhian/female/0.png",
+          "diaithircompat:skins/clothing/normal/hoabinhian/female/1.png",
+          "diaithircompat:skins/clothing/normal/hoabinhian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/hoabinhian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/hoabinhian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/hoabinhian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/hoabinhian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/hoabinhian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/hoabinhian/female/priest.png"
+        }
+      }
+    },
+    "iberomaurusian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/iberomaurusian/male/0.png",
+          "diaithircompat:skins/clothing/normal/iberomaurusian/male/1.png",
+          "diaithircompat:skins/clothing/normal/iberomaurusian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/iberomaurusian/female/0.png",
+          "diaithircompat:skins/clothing/normal/iberomaurusian/female/1.png",
+          "diaithircompat:skins/clothing/normal/iberomaurusian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/iberomaurusian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/iberomaurusian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/iberomaurusian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/iberomaurusian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/iberomaurusian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/iberomaurusian/female/priest.png"
+        }
+      }
+    },
+    "incipient_jomon": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/incipient_jomon/male/0.png",
+          "diaithircompat:skins/clothing/normal/incipient_jomon/male/1.png",
+          "diaithircompat:skins/clothing/normal/incipient_jomon/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/incipient_jomon/female/0.png",
+          "diaithircompat:skins/clothing/normal/incipient_jomon/female/1.png",
+          "diaithircompat:skins/clothing/normal/incipient_jomon/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/incipient_jomon/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/incipient_jomon/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/incipient_jomon/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/incipient_jomon/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/incipient_jomon/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/incipient_jomon/female/priest.png"
+        }
+      }
+    },
+    "indian_mesolithic_microlithic_foragers_b": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/0.png",
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/1.png",
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/0.png",
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/1.png",
+          "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/indian_mesolithic_microlithic_foragers_b/female/priest.png"
+        }
+      }
+    },
+    "khiamian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/khiamian/male/0.png",
+          "diaithircompat:skins/clothing/normal/khiamian/male/1.png",
+          "diaithircompat:skins/clothing/normal/khiamian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/khiamian/female/0.png",
+          "diaithircompat:skins/clothing/normal/khiamian/female/1.png",
+          "diaithircompat:skins/clothing/normal/khiamian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/khiamian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/khiamian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/khiamian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/khiamian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/khiamian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/khiamian/female/priest.png"
+        }
+      }
+    },
+    "komsa_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/komsa_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/komsa_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/komsa_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/komsa_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/komsa_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/komsa_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/komsa_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/komsa_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/komsa_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/komsa_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/komsa_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/komsa_culture/female/priest.png"
+        }
+      }
+    },
+    "kunda_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/kunda_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/kunda_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/kunda_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/kunda_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/kunda_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/kunda_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/kunda_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/kunda_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/kunda_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/kunda_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/kunda_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/kunda_culture/female/priest.png"
+        }
+      }
+    },
+    "las_vegas_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/las_vegas_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/las_vegas_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/las_vegas_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/las_vegas_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/las_vegas_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/las_vegas_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/las_vegas_culture/female/priest.png"
+        }
+      }
+    },
+    "late_paleoindian_and_early_archaic_of_me": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/0.png",
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/1.png",
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/0.png",
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/1.png",
+          "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/late_paleoindian_and_early_archaic_of_me/female/priest.png"
+        }
       }
     },
     "magdalenian": {
@@ -157,96 +1123,1006 @@
           "diaithircompat:skins/clothing/normal/magdalenian/female/1.png",
           "diaithircompat:skins/clothing/normal/magdalenian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/magdalenian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/magdalenian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/magdalenian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/magdalenian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/magdalenian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/magdalenian/female/priest.png"
+        }
       }
     },
-    "north_africa": {
+    "maglemosian": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/north_africa/male/0.png",
-          "diaithircompat:skins/clothing/normal/north_africa/male/1.png",
-          "diaithircompat:skins/clothing/normal/north_africa/male/2.png"
+          "diaithircompat:skins/clothing/normal/maglemosian/male/0.png",
+          "diaithircompat:skins/clothing/normal/maglemosian/male/1.png",
+          "diaithircompat:skins/clothing/normal/maglemosian/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/north_africa/female/0.png",
-          "diaithircompat:skins/clothing/normal/north_africa/female/1.png",
-          "diaithircompat:skins/clothing/normal/north_africa/female/2.png"
+          "diaithircompat:skins/clothing/normal/maglemosian/female/0.png",
+          "diaithircompat:skins/clothing/normal/maglemosian/female/1.png",
+          "diaithircompat:skins/clothing/normal/maglemosian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/maglemosian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/maglemosian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/maglemosian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/maglemosian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/maglemosian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/maglemosian/female/priest.png"
+        }
       }
     },
-    "paleoindian": {
+    "magosian_obsolete_term": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/paleoindian/male/0.png",
-          "diaithircompat:skins/clothing/normal/paleoindian/male/1.png",
-          "diaithircompat:skins/clothing/normal/paleoindian/male/2.png"
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/0.png",
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/1.png",
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/paleoindian/female/0.png",
-          "diaithircompat:skins/clothing/normal/paleoindian/female/1.png",
-          "diaithircompat:skins/clothing/normal/paleoindian/female/2.png"
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/0.png",
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/1.png",
+          "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/magosian_obsolete_term/female/priest.png"
+        }
       }
     },
-    "reindeer_hunters": {
+    "monte_verde_ii": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/0.png",
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/1.png",
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/male/2.png"
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/male/0.png",
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/male/1.png",
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/0.png",
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/1.png",
-          "diaithircompat:skins/clothing/normal/reindeer_hunters/female/2.png"
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/female/0.png",
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/female/1.png",
+          "diaithircompat:skins/clothing/normal/monte_verde_ii/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/monte_verde_ii/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/monte_verde_ii/female/priest.png"
+        }
       }
     },
-    "sahul": {
+    "mureybetian": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/sahul/male/0.png",
-          "diaithircompat:skins/clothing/normal/sahul/male/1.png",
-          "diaithircompat:skins/clothing/normal/sahul/male/2.png"
+          "diaithircompat:skins/clothing/normal/mureybetian/male/0.png",
+          "diaithircompat:skins/clothing/normal/mureybetian/male/1.png",
+          "diaithircompat:skins/clothing/normal/mureybetian/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/sahul/female/0.png",
-          "diaithircompat:skins/clothing/normal/sahul/female/1.png",
-          "diaithircompat:skins/clothing/normal/sahul/female/2.png"
+          "diaithircompat:skins/clothing/normal/mureybetian/female/0.png",
+          "diaithircompat:skins/clothing/normal/mureybetian/female/1.png",
+          "diaithircompat:skins/clothing/normal/mureybetian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/mureybetian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/mureybetian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/mureybetian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/mureybetian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/mureybetian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/mureybetian/female/priest.png"
+        }
       }
     },
-    "steppe_mammoth": {
+    "nanzhuangtou": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/0.png",
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/1.png",
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/male/2.png"
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/male/0.png",
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/male/1.png",
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/0.png",
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/1.png",
-          "diaithircompat:skins/clothing/normal/steppe_mammoth/female/2.png"
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/female/0.png",
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/female/1.png",
+          "diaithircompat:skins/clothing/normal/nanzhuangtou/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/nanzhuangtou/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/nanzhuangtou/female/priest.png"
+        }
       }
     },
-    "tropical_forager": {
+    "natufian": {
       "clothing": {
         "male": [
-          "diaithircompat:skins/clothing/normal/tropical_forager/male/0.png",
-          "diaithircompat:skins/clothing/normal/tropical_forager/male/1.png",
-          "diaithircompat:skins/clothing/normal/tropical_forager/male/2.png"
+          "diaithircompat:skins/clothing/normal/natufian/male/0.png",
+          "diaithircompat:skins/clothing/normal/natufian/male/1.png",
+          "diaithircompat:skins/clothing/normal/natufian/male/2.png"
         ],
         "female": [
-          "diaithircompat:skins/clothing/normal/tropical_forager/female/0.png",
-          "diaithircompat:skins/clothing/normal/tropical_forager/female/1.png",
-          "diaithircompat:skins/clothing/normal/tropical_forager/female/2.png"
+          "diaithircompat:skins/clothing/normal/natufian/female/0.png",
+          "diaithircompat:skins/clothing/normal/natufian/female/1.png",
+          "diaithircompat:skins/clothing/normal/natufian/female/2.png"
         ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/natufian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/natufian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/natufian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/natufian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/natufian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/natufian/female/priest.png"
+        }
+      }
+    },
+    "nenana_complex": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/nenana_complex/male/0.png",
+          "diaithircompat:skins/clothing/normal/nenana_complex/male/1.png",
+          "diaithircompat:skins/clothing/normal/nenana_complex/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/nenana_complex/female/0.png",
+          "diaithircompat:skins/clothing/normal/nenana_complex/female/1.png",
+          "diaithircompat:skins/clothing/normal/nenana_complex/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/nenana_complex/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/nenana_complex/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/nenana_complex/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/nenana_complex/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/nenana_complex/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/nenana_complex/female/priest.png"
+        }
+      }
+    },
+    "new_guinea_highlands_foragers_and_early": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/0.png",
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/1.png",
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/0.png",
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/1.png",
+          "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/new_guinea_highlands_foragers_and_early/female/priest.png"
+        }
+      }
+    },
+    "north_china_late_palaeolithic_microblade": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/0.png",
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/1.png",
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/0.png",
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/1.png",
+          "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/north_china_late_palaeolithic_microblade/female/priest.png"
+        }
+      }
+    },
+    "oakhurst_industry": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/male/0.png",
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/male/1.png",
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/female/0.png",
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/female/1.png",
+          "diaithircompat:skins/clothing/normal/oakhurst_industry/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/oakhurst_industry/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/oakhurst_industry/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/oakhurst_industry/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/oakhurst_industry/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/oakhurst_industry/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/oakhurst_industry/female/priest.png"
+        }
+      }
+    },
+    "paijan_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/paijan_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/paijan_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/paijan_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/paijan_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/paijan_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/paijan_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/paijan_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/paijan_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/paijan_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/paijan_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/paijan_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/paijan_culture/female/priest.png"
+        }
+      }
+    },
+    "paleo_arctic_tradition": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/0.png",
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/1.png",
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/0.png",
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/1.png",
+          "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/paleo_arctic_tradition/female/priest.png"
+        }
+      }
+    },
+    "paleocoastal_pacific_channel_islands_pac": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/0.png",
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/1.png",
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/0.png",
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/1.png",
+          "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/paleocoastal_pacific_channel_islands_pac/female/priest.png"
+        }
+      }
+    },
+    "pedra_pintada_lower_amazon": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/0.png",
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/1.png",
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/0.png",
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/1.png",
+          "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/pedra_pintada_lower_amazon/female/priest.png"
+        }
+      }
+    },
+    "plano_complex_agate_basin_hell_gap_cody": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/0.png",
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/1.png",
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/0.png",
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/1.png",
+          "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/plano_complex_agate_basin_hell_gap_cody/female/priest.png"
+        }
+      }
+    },
+    "pre_pottery_neolithic_a": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/0.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/1.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/0.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/1.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_a/female/priest.png"
+        }
+      }
+    },
+    "pre_pottery_neolithic_b": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/0.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/1.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/0.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/1.png",
+          "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/pre_pottery_neolithic_b/female/priest.png"
+        }
+      }
+    },
+    "qadan": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/qadan/male/0.png",
+          "diaithircompat:skins/clothing/normal/qadan/male/1.png",
+          "diaithircompat:skins/clothing/normal/qadan/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/qadan/female/0.png",
+          "diaithircompat:skins/clothing/normal/qadan/female/1.png",
+          "diaithircompat:skins/clothing/normal/qadan/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/qadan/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/qadan/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/qadan/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/qadan/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/qadan/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/qadan/female/priest.png"
+        }
+      }
+    },
+    "robberg_industry": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/robberg_industry/male/0.png",
+          "diaithircompat:skins/clothing/normal/robberg_industry/male/1.png",
+          "diaithircompat:skins/clothing/normal/robberg_industry/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/robberg_industry/female/0.png",
+          "diaithircompat:skins/clothing/normal/robberg_industry/female/1.png",
+          "diaithircompat:skins/clothing/normal/robberg_industry/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/robberg_industry/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/robberg_industry/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/robberg_industry/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/robberg_industry/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/robberg_industry/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/robberg_industry/female/priest.png"
+        }
+      }
+    },
+    "russian_plain_volga_and_urals_final_pala": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/0.png",
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/1.png",
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/0.png",
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/1.png",
+          "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/russian_plain_volga_and_urals_final_pala/female/priest.png"
+        }
+      }
+    },
+    "sahul_pleistocene_core_tool_and_scraper": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/0.png",
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/1.png",
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/0.png",
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/1.png",
+          "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/sahul_pleistocene_core_tool_and_scraper/female/priest.png"
+        }
+      }
+    },
+    "sebilian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/sebilian/male/0.png",
+          "diaithircompat:skins/clothing/normal/sebilian/male/1.png",
+          "diaithircompat:skins/clothing/normal/sebilian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/sebilian/female/0.png",
+          "diaithircompat:skins/clothing/normal/sebilian/female/1.png",
+          "diaithircompat:skins/clothing/normal/sebilian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/sebilian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/sebilian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/sebilian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/sebilian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/sebilian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/sebilian/female/priest.png"
+        }
+      }
+    },
+    "sumnagin_culture": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/male/0.png",
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/male/1.png",
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/female/0.png",
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/female/1.png",
+          "diaithircompat:skins/clothing/normal/sumnagin_culture/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/sumnagin_culture/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/sumnagin_culture/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/sumnagin_culture/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/sumnagin_culture/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/sumnagin_culture/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/sumnagin_culture/female/priest.png"
+        }
+      }
+    },
+    "sundaland_and_wallacea_pleistocene_holoc": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/0.png",
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/1.png",
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/0.png",
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/1.png",
+          "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/sundaland_and_wallacea_pleistocene_holoc/female/priest.png"
+        }
+      }
+    },
+    "swiderian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/swiderian/male/0.png",
+          "diaithircompat:skins/clothing/normal/swiderian/male/1.png",
+          "diaithircompat:skins/clothing/normal/swiderian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/swiderian/female/0.png",
+          "diaithircompat:skins/clothing/normal/swiderian/female/1.png",
+          "diaithircompat:skins/clothing/normal/swiderian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/swiderian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/swiderian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/swiderian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/swiderian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/swiderian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/swiderian/female/priest.png"
+        }
+      }
+    },
+    "tasmanian_late_pleistocene_foragers_kuti": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/0.png",
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/1.png",
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/0.png",
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/1.png",
+          "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/tasmanian_late_pleistocene_foragers_kuti/female/priest.png"
+        }
+      }
+    },
+    "transbaikal_and_mongolian_late_palaeolit": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/0.png",
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/1.png",
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/0.png",
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/1.png",
+          "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/priest.png"
+        }
+      }
+    },
+    "trialetian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/trialetian/male/0.png",
+          "diaithircompat:skins/clothing/normal/trialetian/male/1.png",
+          "diaithircompat:skins/clothing/normal/trialetian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/trialetian/female/0.png",
+          "diaithircompat:skins/clothing/normal/trialetian/female/1.png",
+          "diaithircompat:skins/clothing/normal/trialetian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/trialetian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/trialetian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/trialetian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/trialetian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/trialetian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/trialetian/female/priest.png"
+        }
+      }
+    },
+    "upper_tigris_epipalaeolithic_protoneolit": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/0.png",
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/1.png",
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/0.png",
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/1.png",
+          "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/upper_tigris_epipalaeolithic_protoneolit/female/priest.png"
+        }
+      }
+    },
+    "ushki_lake_kamchatka": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/0.png",
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/1.png",
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/0.png",
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/1.png",
+          "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/ushki_lake_kamchatka/female/priest.png"
+        }
+      }
+    },
+    "west_african_late_stone_age_and_early_po": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/0.png",
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/1.png",
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/0.png",
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/1.png",
+          "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/west_african_late_stone_age_and_early_po/female/priest.png"
+        }
+      }
+    },
+    "western_stemmed_tradition": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/0.png",
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/1.png",
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/0.png",
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/1.png",
+          "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/western_stemmed_tradition/female/priest.png"
+        }
+      }
+    },
+    "yenisei_upper_palaeolithic_afontova_gora": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/0.png",
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/1.png",
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/0.png",
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/1.png",
+          "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/yenisei_upper_palaeolithic_afontova_gora/female/priest.png"
+        }
+      }
+    },
+    "zarzian": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/zarzian/male/0.png",
+          "diaithircompat:skins/clothing/normal/zarzian/male/1.png",
+          "diaithircompat:skins/clothing/normal/zarzian/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/zarzian/female/0.png",
+          "diaithircompat:skins/clothing/normal/zarzian/female/1.png",
+          "diaithircompat:skins/clothing/normal/zarzian/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/zarzian/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/zarzian/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/zarzian/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/zarzian/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/zarzian/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/zarzian/female/priest.png"
+        }
+      }
+    },
+    "zengpiyan": {
+      "clothing": {
+        "male": [
+          "diaithircompat:skins/clothing/normal/zengpiyan/male/0.png",
+          "diaithircompat:skins/clothing/normal/zengpiyan/male/1.png",
+          "diaithircompat:skins/clothing/normal/zengpiyan/male/2.png"
+        ],
+        "female": [
+          "diaithircompat:skins/clothing/normal/zengpiyan/female/0.png",
+          "diaithircompat:skins/clothing/normal/zengpiyan/female/1.png",
+          "diaithircompat:skins/clothing/normal/zengpiyan/female/2.png"
+        ]
+      },
+      "roles": {
+        "ruler": {
+          "male": "diaithircompat:skins/clothing/normal/zengpiyan/male/ruler.png",
+          "female": "diaithircompat:skins/clothing/normal/zengpiyan/female/ruler.png"
+        },
+        "warrior": {
+          "male": "diaithircompat:skins/clothing/normal/zengpiyan/male/warrior.png",
+          "female": "diaithircompat:skins/clothing/normal/zengpiyan/female/warrior.png"
+        },
+        "priest": {
+          "male": "diaithircompat:skins/clothing/normal/zengpiyan/male/priest.png",
+          "female": "diaithircompat:skins/clothing/normal/zengpiyan/female/priest.png"
+        }
       }
     }
   },
   "cultures": {
     "Abriense, Tequendamense and El Jobo": {
-      "kit": "paleoindian",
+      "kit": "abriense_tequendamense_and_el_jobo",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -265,7 +2141,7 @@
       "villager_type": "minecraft:plains"
     },
     "Ahrensburgian": {
-      "kit": "reindeer_hunters",
+      "kit": "ahrensburgian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -292,7 +2168,7 @@
       "villager_type": "minecraft:snow"
     },
     "Amotape complex": {
-      "kit": "american_forager",
+      "kit": "amotape_complex",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -315,7 +2191,7 @@
       "villager_type": "minecraft:plains"
     },
     "Andean puna hunters (Lauricocha, Junin)": {
-      "kit": "paleoindian",
+      "kit": "andean_puna_hunters_lauricocha_junin",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -334,7 +2210,7 @@
       "villager_type": "minecraft:plains"
     },
     "Azilian": {
-      "kit": "magdalenian",
+      "kit": "azilian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -361,7 +2237,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Balangoda culture": {
-      "kit": "tropical_forager",
+      "kit": "balangoda_culture",
       "mainhand": "minecraft:stone_axe",
       "carried": [
         {
@@ -380,7 +2256,7 @@
       "villager_type": "minecraft:jungle"
     },
     "Bromme (Lyngby) culture": {
-      "kit": "reindeer_hunters",
+      "kit": "bromme_lyngby_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -407,7 +2283,7 @@
       "villager_type": "minecraft:snow"
     },
     "Capsian": {
-      "kit": "north_africa",
+      "kit": "capsian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -430,7 +2306,7 @@
       "villager_type": "minecraft:desert"
     },
     "Central African Late Stone Age (Tshitolian)": {
-      "kit": "african_lsa",
+      "kit": "central_african_late_stone_age_tshitolia",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -453,7 +2329,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Central Brazilian highland hunter-gatherers (Lagoa Santa, Itaparica)": {
-      "kit": "american_forager",
+      "kit": "central_brazilian_highland_hunter_gather",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -476,7 +2352,7 @@
       "villager_type": "minecraft:plains"
     },
     "Clovis": {
-      "kit": "paleoindian",
+      "kit": "clovis",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -495,7 +2371,7 @@
       "villager_type": "minecraft:plains"
     },
     "Creswellian": {
-      "kit": "magdalenian",
+      "kit": "creswellian",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -522,7 +2398,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Dalton tradition": {
-      "kit": "paleoindian",
+      "kit": "dalton_tradition",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -541,7 +2417,7 @@
       "villager_type": "minecraft:plains"
     },
     "Dyuktai culture": {
-      "kit": "arctic_beringia",
+      "kit": "dyuktai_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -564,7 +2440,7 @@
       "villager_type": "minecraft:snow"
     },
     "Early Archaic Eastern North America": {
-      "kit": "american_forager",
+      "kit": "early_archaic_eastern_north_america",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -587,7 +2463,7 @@
       "villager_type": "minecraft:plains"
     },
     "Early Holocene Sahara foragers (Early Acacus)": {
-      "kit": "north_africa",
+      "kit": "early_holocene_sahara_foragers_early_aca",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -610,7 +2486,7 @@
       "villager_type": "minecraft:desert"
     },
     "Early Mesolithic Britain (Star Carr)": {
-      "kit": "forest_mesolithic",
+      "kit": "early_mesolithic_britain_star_carr",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -637,7 +2513,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Early pottery foragers of S China and the Yangtze (Yuchanyan, Xianrendong)": {
-      "kit": "east_asia_pottery",
+      "kit": "early_pottery_foragers_of_s_china_and_th",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -660,7 +2536,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Eastern Paleoindian fluted-point groups (Gainey, Barnes, Cumberland, Debert)": {
-      "kit": "paleoindian",
+      "kit": "eastern_paleoindian_fluted_point_groups",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -679,7 +2555,7 @@
       "villager_type": "minecraft:plains"
     },
     "Eburran": {
-      "kit": "african_lsa",
+      "kit": "eburran",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -702,7 +2578,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Epipalaeolithic Egypt (Isnan, Afian, Qarunian)": {
-      "kit": "north_africa",
+      "kit": "epipalaeolithic_egypt_isnan_afian_qaruni",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -725,7 +2601,7 @@
       "villager_type": "minecraft:desert"
     },
     "Federmesser group (Tjongerian, Havelte)": {
-      "kit": "magdalenian",
+      "kit": "federmesser_group_tjongerian_havelte",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -752,7 +2628,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Final Epigravettian": {
-      "kit": "steppe_mammoth",
+      "kit": "final_epigravettian",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -775,7 +2651,7 @@
       "villager_type": "minecraft:snow"
     },
     "Fishtail point tradition": {
-      "kit": "paleoindian",
+      "kit": "fishtail_point_tradition",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -794,7 +2670,7 @@
       "villager_type": "minecraft:plains"
     },
     "Folsom": {
-      "kit": "paleoindian",
+      "kit": "folsom",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -813,7 +2689,7 @@
       "villager_type": "minecraft:plains"
     },
     "Fosna-Hensbacka culture": {
-      "kit": "reindeer_hunters",
+      "kit": "fosna_hensbacka_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -840,7 +2716,7 @@
       "villager_type": "minecraft:snow"
     },
     "Geometric Kebaran": {
-      "kit": "levant_village",
+      "kit": "geometric_kebaran",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -871,7 +2747,7 @@
       "villager_type": "minecraft:desert"
     },
     "Hamburgian": {
-      "kit": "reindeer_hunters",
+      "kit": "hamburgian",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -898,7 +2774,7 @@
       "villager_type": "minecraft:snow"
     },
     "Harifian": {
-      "kit": "levant_village",
+      "kit": "harifian",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -929,7 +2805,7 @@
       "villager_type": "minecraft:desert"
     },
     "Hoabinhian": {
-      "kit": "tropical_forager",
+      "kit": "hoabinhian",
       "mainhand": "minecraft:stone_axe",
       "carried": [
         {
@@ -948,7 +2824,7 @@
       "villager_type": "minecraft:jungle"
     },
     "Iberomaurusian": {
-      "kit": "north_africa",
+      "kit": "iberomaurusian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -971,7 +2847,7 @@
       "villager_type": "minecraft:desert"
     },
     "Incipient Jomon": {
-      "kit": "east_asia_pottery",
+      "kit": "incipient_jomon",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -994,7 +2870,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Indian Mesolithic microlithic foragers (Bhimbetka, Sarai Nahar Rai)": {
-      "kit": "tropical_forager",
+      "kit": "indian_mesolithic_microlithic_foragers_b",
       "mainhand": "minecraft:stone_axe",
       "carried": [
         {
@@ -1013,7 +2889,7 @@
       "villager_type": "minecraft:jungle"
     },
     "Khiamian": {
-      "kit": "levant_archer",
+      "kit": "khiamian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1048,7 +2924,7 @@
       "villager_type": "minecraft:desert"
     },
     "Komsa culture": {
-      "kit": "reindeer_hunters",
+      "kit": "komsa_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1075,7 +2951,7 @@
       "villager_type": "minecraft:snow"
     },
     "Kunda culture": {
-      "kit": "forest_mesolithic",
+      "kit": "kunda_culture",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1102,7 +2978,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Las Vegas culture": {
-      "kit": "american_forager",
+      "kit": "las_vegas_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1125,7 +3001,7 @@
       "villager_type": "minecraft:plains"
     },
     "Late Paleoindian and Early Archaic of Mesoamerica (Lerma, Santa Marta)": {
-      "kit": "american_forager",
+      "kit": "late_paleoindian_and_early_archaic_of_me",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1175,7 +3051,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Maglemosian": {
-      "kit": "forest_mesolithic",
+      "kit": "maglemosian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1202,7 +3078,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Magosian (obsolete term)": {
-      "kit": "african_lsa",
+      "kit": "magosian_obsolete_term",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1225,7 +3101,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Monte Verde II": {
-      "kit": "american_forager",
+      "kit": "monte_verde_ii",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1248,7 +3124,7 @@
       "villager_type": "minecraft:plains"
     },
     "Mureybetian": {
-      "kit": "levant_village",
+      "kit": "mureybetian",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -1279,7 +3155,7 @@
       "villager_type": "minecraft:desert"
     },
     "Nanzhuangtou": {
-      "kit": "east_asia_pottery",
+      "kit": "nanzhuangtou",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1302,7 +3178,7 @@
       "villager_type": "minecraft:taiga"
     },
     "Natufian": {
-      "kit": "levant_village",
+      "kit": "natufian",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -1333,7 +3209,7 @@
       "villager_type": "minecraft:desert"
     },
     "Nenana complex": {
-      "kit": "paleoindian",
+      "kit": "nenana_complex",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1352,7 +3228,7 @@
       "villager_type": "minecraft:plains"
     },
     "New Guinea Highlands foragers and early Kuk agriculture": {
-      "kit": "tropical_forager",
+      "kit": "new_guinea_highlands_foragers_and_early",
       "mainhand": "minecraft:stone_axe",
       "carried": [
         {
@@ -1371,7 +3247,7 @@
       "villager_type": "minecraft:jungle"
     },
     "North China late Palaeolithic microblade groups (Shuidonggou, Xiachuan)": {
-      "kit": "steppe_mammoth",
+      "kit": "north_china_late_palaeolithic_microblade",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1394,7 +3270,7 @@
       "villager_type": "minecraft:snow"
     },
     "Oakhurst industry": {
-      "kit": "african_lsa",
+      "kit": "oakhurst_industry",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1417,7 +3293,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Paijan culture": {
-      "kit": "american_forager",
+      "kit": "paijan_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1440,7 +3316,7 @@
       "villager_type": "minecraft:plains"
     },
     "Paleo-Arctic tradition": {
-      "kit": "arctic_beringia",
+      "kit": "paleo_arctic_tradition",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1463,7 +3339,7 @@
       "villager_type": "minecraft:snow"
     },
     "Paleocoastal Pacific (Channel Islands, Pacific Northwest)": {
-      "kit": "american_forager",
+      "kit": "paleocoastal_pacific_channel_islands_pac",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1490,7 +3366,7 @@
       "villager_type": "minecraft:plains"
     },
     "Pedra Pintada (Lower Amazon)": {
-      "kit": "american_forager",
+      "kit": "pedra_pintada_lower_amazon",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1513,7 +3389,7 @@
       "villager_type": "minecraft:plains"
     },
     "Plano complex (Agate Basin, Hell Gap, Cody)": {
-      "kit": "paleoindian",
+      "kit": "plano_complex_agate_basin_hell_gap_cody",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1532,7 +3408,7 @@
       "villager_type": "minecraft:plains"
     },
     "Pre-Pottery Neolithic A": {
-      "kit": "levant_archer",
+      "kit": "pre_pottery_neolithic_a",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1567,7 +3443,7 @@
       "villager_type": "minecraft:desert"
     },
     "Pre-Pottery Neolithic B": {
-      "kit": "levant_archer",
+      "kit": "pre_pottery_neolithic_b",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1602,7 +3478,7 @@
       "villager_type": "minecraft:desert"
     },
     "Qadan": {
-      "kit": "north_africa",
+      "kit": "qadan",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1625,7 +3501,7 @@
       "villager_type": "minecraft:desert"
     },
     "Robberg industry": {
-      "kit": "african_lsa",
+      "kit": "robberg_industry",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1648,7 +3524,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Russian Plain, Volga and Urals Final Palaeolithic and Early Mesolithic foragers": {
-      "kit": "steppe_mammoth",
+      "kit": "russian_plain_volga_and_urals_final_pala",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1671,7 +3547,7 @@
       "villager_type": "minecraft:snow"
     },
     "Sahul Pleistocene core-tool and scraper tradition": {
-      "kit": "sahul",
+      "kit": "sahul_pleistocene_core_tool_and_scraper",
       "mainhand": "minecraft:wooden_spear",
       "carried": [
         {
@@ -1686,7 +3562,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Sebilian": {
-      "kit": "north_africa",
+      "kit": "sebilian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1709,7 +3585,7 @@
       "villager_type": "minecraft:desert"
     },
     "Sumnagin culture": {
-      "kit": "arctic_beringia",
+      "kit": "sumnagin_culture",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1732,7 +3608,7 @@
       "villager_type": "minecraft:snow"
     },
     "Sundaland and Wallacea Pleistocene-Holocene foragers": {
-      "kit": "tropical_forager",
+      "kit": "sundaland_and_wallacea_pleistocene_holoc",
       "mainhand": "minecraft:stone_axe",
       "carried": [
         {
@@ -1751,7 +3627,7 @@
       "villager_type": "minecraft:jungle"
     },
     "Swiderian": {
-      "kit": "reindeer_hunters",
+      "kit": "swiderian",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1778,7 +3654,7 @@
       "villager_type": "minecraft:snow"
     },
     "Tasmanian late Pleistocene foragers (Kutikina, Warreen)": {
-      "kit": "sahul",
+      "kit": "tasmanian_late_pleistocene_foragers_kuti",
       "mainhand": "minecraft:wooden_spear",
       "carried": [
         {
@@ -1793,7 +3669,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Transbaikal and Mongolian late Palaeolithic microblade groups": {
-      "kit": "steppe_mammoth",
+      "kit": "transbaikal_and_mongolian_late_palaeolit",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1816,7 +3692,7 @@
       "villager_type": "minecraft:snow"
     },
     "Trialetian": {
-      "kit": "steppe_mammoth",
+      "kit": "trialetian",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1839,7 +3715,7 @@
       "villager_type": "minecraft:snow"
     },
     "Upper Tigris Epipalaeolithic-Protoneolithic (Hallan Cemi, Kortik Tepe)": {
-      "kit": "levant_village",
+      "kit": "upper_tigris_epipalaeolithic_protoneolit",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -1870,7 +3746,7 @@
       "villager_type": "minecraft:desert"
     },
     "Ushki Lake (Kamchatka)": {
-      "kit": "arctic_beringia",
+      "kit": "ushki_lake_kamchatka",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1893,7 +3769,7 @@
       "villager_type": "minecraft:snow"
     },
     "West African Late Stone Age and early pottery foragers (Iwo Eleru, Ounjougou)": {
-      "kit": "african_lsa",
+      "kit": "west_african_late_stone_age_and_early_po",
       "mainhand": "minecraft:bow",
       "carried": [
         {
@@ -1916,7 +3792,7 @@
       "villager_type": "minecraft:savanna"
     },
     "Western Stemmed Tradition": {
-      "kit": "paleoindian",
+      "kit": "western_stemmed_tradition",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1935,7 +3811,7 @@
       "villager_type": "minecraft:plains"
     },
     "Yenisei Upper Palaeolithic (Afontova Gora, Kokorevo)": {
-      "kit": "steppe_mammoth",
+      "kit": "yenisei_upper_palaeolithic_afontova_gora",
       "mainhand": "minecraft:stone_spear",
       "carried": [
         {
@@ -1958,7 +3834,7 @@
       "villager_type": "minecraft:snow"
     },
     "Zarzian": {
-      "kit": "levant_village",
+      "kit": "zarzian",
       "mainhand": "minecraft:stone_hoe",
       "carried": [
         {
@@ -1989,7 +3865,7 @@
       "villager_type": "minecraft:desert"
     },
     "Zengpiyan": {
-      "kit": "east_asia_pottery",
+      "kit": "zengpiyan",
       "mainhand": "minecraft:bow",
       "carried": [
         {

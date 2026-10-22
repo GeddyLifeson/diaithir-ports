@@ -33,6 +33,7 @@ class SitePeopleDataTest {
         JsonObject data = read(RES.resolve("data/diaithircompat/site_people.json")).getAsJsonObject();
         JsonObject kits = data.getAsJsonObject("kits"), cultures = data.getAsJsonObject("cultures");
         assertEquals(74, cultures.size());
+        assertEquals(74, kits.size(), "every culture dresses in its own kit");
         assertEquals(SITE_TYPES, data.getAsJsonObject("counts").keySet());
         for (Map.Entry<String, JsonElement> e : data.getAsJsonObject("counts").entrySet()) {
             JsonArray r = e.getValue().getAsJsonArray();
@@ -53,6 +54,14 @@ class SitePeopleDataTest {
                 assertEquals("diaithircompat:" + e.getKey(), o.get("profession").getAsString());
                 listed.add(o.get("id").getAsString());
             }
+            JsonObject roles = e.getValue().getAsJsonObject().getAsJsonObject("roles");
+            assertEquals(Set.of("ruler", "warrior", "priest"), roles.keySet(), e.getKey());
+            for (String role : roles.keySet())
+                for (String gender : new String[]{"male", "female"}) {
+                    String s = roles.getAsJsonObject(role).get(gender).getAsString();
+                    assertTrue(s.contains("/" + gender + "/" + role + ".png") && listed.contains(s), s);
+                    assertTrue(Files.isRegularFile(RES.resolve("assets/diaithircompat/" + s.substring("diaithircompat:".length()))), s);
+                }
             JsonObject clothing = e.getValue().getAsJsonObject().getAsJsonObject("clothing");
             for (String gender : new String[]{"male", "female"}) {
                 assertFalse(clothing.getAsJsonArray(gender).isEmpty(), e.getKey() + " " + gender);

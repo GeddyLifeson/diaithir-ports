@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/0.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/1.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/2.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/ruler.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/warrior.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/male/priest.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/0.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/1.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/2.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/ruler.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/warrior.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/maglemosian/female/priest.png",
+    "profession": "diaithircompat:maglemosian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

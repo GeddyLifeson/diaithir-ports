@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/0.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/1.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/2.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/ruler.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/warrior.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/male/priest.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/0.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/1.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/2.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/ruler.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/warrior.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/transbaikal_and_mongolian_late_palaeolit/female/priest.png",
+    "profession": "diaithircompat:transbaikal_and_mongolian_late_palaeolit",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

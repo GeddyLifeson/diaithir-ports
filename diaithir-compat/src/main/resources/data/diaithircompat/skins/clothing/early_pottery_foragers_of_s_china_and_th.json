@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/0.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/1.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/2.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/ruler.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/warrior.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/male/priest.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/0.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/1.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/2.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/ruler.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/warrior.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/early_pottery_foragers_of_s_china_and_th/female/priest.png",
+    "profession": "diaithircompat:early_pottery_foragers_of_s_china_and_th",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]

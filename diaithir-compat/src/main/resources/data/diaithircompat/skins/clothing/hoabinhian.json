@@ -1,0 +1,74 @@
+[
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/0.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/1.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/2.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/ruler.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/warrior.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/male/priest.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "male"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/0.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/1.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/2.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/ruler.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/warrior.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  },
+  {
+    "id": "diaithircompat:skins/clothing/normal/hoabinhian/female/priest.png",
+    "profession": "diaithircompat:hoabinhian",
+    "chance": 1.0,
+    "gender": "female"
+  }
+]
