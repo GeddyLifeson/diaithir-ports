@@ -10,7 +10,6 @@ import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
@@ -29,14 +28,15 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
+import net.minecraft.world.entity.projectile.hurtingprojectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -78,7 +78,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
             .clientTrackingRange(64)
             .updateInterval(20);
         MusketMod.disableVelocityUpdate(builder);
-        ENTITY_TYPE = builder.build("bullet");
+        ENTITY_TYPE = builder.build(ResourceKey.create(Registries.ENTITY_TYPE, MusketMod.resource("bullet")));
         helper.accept("bullet", ENTITY_TYPE);
     }
 
@@ -145,7 +145,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
         Vec3 to = from.add(velocity);
 
         Vec3 waterPos = Vec3.ZERO;
-        wasTouchingWater = updateFluidHeightAndDoFluidPushing(FluidTags.WATER, 0);
+        wasTouchingWater = level.getFluidState(blockPosition()).is(FluidTags.WATER);
         if (wasTouchingWater) {
             waterPos = from;
             velocity = velocity.scale(WATER_FRICTION);
@@ -196,7 +196,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
                     to = from.add(velocity);
                     setDeltaMovement(velocity);
 
-                    if (level.isClientSide && fluidHitResult.getType() != HitResult.Type.MISS) {
+                    if (level.isClientSide() && fluidHitResult.getType() != HitResult.Type.MISS) {
                         double yv = fluidHitResult.getDirection() == Direction.UP ? 0.02 : 0;
                         createHitParticles(ParticleTypes.SPLASH, waterPos, new Vec3(0.0, yv, 0.0));
                         playHitSound(Sounds.BULLET_WATER_HIT, waterPos);
@@ -214,13 +214,13 @@ public class BulletEntity extends AbstractHurtingProjectile {
             touchedWater = true;
             extinguishFire();
         }
-        if (!level.isClientSide) setSharedFlagOnFire(getRemainingFireTicks() > 0);
+        if (!level.isClientSide()) setSharedFlagOnFire(getRemainingFireTicks() > 0);
 
         if (hitResult.getType() != HitResult.Type.MISS) {
             if (touchedWater) {
                 damage *= calculateEnergyFraction();
             }
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 onHit(hitResult);
                 if (hitResult.getType() == HitResult.Type.BLOCK) {
                     float destroyProbability = calculateEnergyFraction();
@@ -231,7 +231,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
                         BlockState blockState = level().getBlockState(blockPos);
 
                         if (blockState.is(Blocks.TNT)) {
-                            TntBlock.explode(level(), blockPos);
+                            blockState.onCaughtFire(level, blockPos, null, getOwner() instanceof LivingEntity living ? living : null);
                             level.removeBlock(blockPos, false);
 
                         } else if (blockState.is(DESTROYED_BY_BULLETS)) {
@@ -260,7 +260,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
                 playHitSound(blockState.getSoundType().getBreakSound(), pos);
                 discard();
             }
-        } else if (level.isClientSide && !wasTouchingWater && soundEffectRoll()) {
+        } else if (level.isClientSide() && !wasTouchingWater && soundEffectRoll()) {
             double length = velocity.length();
             Vec3 dir = velocity.scale(1.0 / length);
             float volume = calculateEnergyFraction();
@@ -282,7 +282,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
             }
         }
 
-        if (level.isClientSide && wasTouchingWater) {
+        if (level.isClientSide() && wasTouchingWater) {
             double length = velocity.length();
             Vec3 step = velocity.scale(1 / length);
             Vec3 pos = waterPos.add(step.scale(0.5));
@@ -301,7 +301,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
         setDeltaMovement(velocity.subtract(0, gravity, 0));
         setPos(to);
         distanceTravelled += to.subtract(from).length();
-        checkInsideBlocks();
+        applyEffectsFromBlocks();
     }
 
     @Override
@@ -345,7 +345,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
     }
 
     public boolean checkHeadshot(Entity entity, AABB aabb, Vec3 start, Vec3 end) {
-        if (pelletCount() > 1 || !entity.getType().is(HEADSHOTABLE)) {
+        if (pelletCount() > 1 || !entity.typeHolder().is(HEADSHOTABLE)) {
             return false;
         }
         double width = (aabb.maxX - aabb.minX + aabb.maxZ - aabb.minZ) / 2;
@@ -391,7 +391,7 @@ public class BulletEntity extends AbstractHurtingProjectile {
         // entity may become dead on client side before
         // this check occurs due to packet order
         Level level = level();
-        return level.isClientSide && entity instanceof LivingEntity;
+        return level.isClientSide() && entity instanceof LivingEntity;
     }
 
     public void createHitParticles(ParticleOptions particle, Vec3 position, Vec3 velocity) {
@@ -441,16 +441,16 @@ public class BulletEntity extends AbstractHurtingProjectile {
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    protected void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        damage = compound.getFloat("damage");
-        distanceTravelled = compound.getFloat("distanceTravelled");
-        entityData.set(DROP_REDUCTION, compound.getFloat("dropReduction"));
-        entityData.set(PELLET_COUNT, compound.getByte("pelletCount"));
+        damage = compound.getFloatOr("damage", 0f);
+        distanceTravelled = compound.getFloatOr("distanceTravelled", 0f);
+        entityData.set(DROP_REDUCTION, compound.getFloatOr("dropReduction", 0f));
+        entityData.set(PELLET_COUNT, compound.getByteOr("pelletCount", (byte) 0));
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    protected void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putFloat("damage", damage);
         compound.putFloat("distanceTravelled", distanceTravelled);
@@ -476,14 +476,13 @@ public class BulletEntity extends AbstractHurtingProjectile {
     @Override
     public void recreateFromPacket(ClientboundAddEntityPacket packet) {
         super.recreateFromPacket(packet);
-        Vec3 packetVelocity = new Vec3(packet.getXa(), packet.getYa(), packet.getZa());
-        setDeltaMovement(packetVelocity.scale(1.0 / 3.9));
+        setDeltaMovement(packet.getMovement().scale(1.0 / 3.9));
     }
 
     @Override
     public void onSyncedDataUpdated(EntityDataAccessor<?> accessor) {
         super.onSyncedDataUpdated(accessor);
-        if (INITIAL_SPEED.equals(accessor) && level().isClientSide && !packetSpeedReceived) {
+        if (INITIAL_SPEED.equals(accessor) && level().isClientSide() && !packetSpeedReceived) {
             setDeltaMovement(getDeltaMovement().scale(entityData.get(INITIAL_SPEED)));
             packetSpeedReceived = true;
         }

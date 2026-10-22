@@ -1,29 +1,22 @@
 package ewewukek.musketmod;
 
 import java.nio.file.Path;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.packs.resources.PreparableReloadListener;
-import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.util.Unit;
-import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLPaths;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -37,14 +30,12 @@ public class MusketMod {
     public static final String MODID = "musketmod";
     public static final Path CONFIG_PATH = FMLPaths.CONFIGDIR.get().resolve("musketmod.txt");
 
-    public static ResourceLocation resource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+    public static Identifier resource(String path) {
+        return Identifier.fromNamespaceAndPath(MODID, path);
     }
 
     public MusketMod(IEventBus bus, ModContainer modContainer) {
         Config.load();
-        ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class,
-            () -> (container, parent) -> ClothConfigScreen.build(parent));
 
         bus.addListener(this::register);
         bus.addListener(this::creativeTabs);
@@ -61,7 +52,7 @@ public class MusketMod {
             event.register(Registries.ITEM, resource(path), () -> item);
         });
         Sounds.register((sound) -> {
-            event.register(Registries.SOUND_EVENT, sound.getLocation(), () -> sound);
+            event.register(Registries.SOUND_EVENT, sound.location(), () -> sound);
         });
         event.register(Registries.ENTITY_TYPE, helper -> {
             BulletEntity.register((string, entityType) -> {
@@ -80,7 +71,7 @@ public class MusketMod {
 
     public void worldTick(final LevelTickEvent.Post event) {
         Level level = event.getLevel();
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             DeferredDamage.apply();
         }
     }
@@ -98,18 +89,8 @@ public class MusketMod {
         );
     }
 
-    public void reload(final AddReloadListenerEvent event) {
-        event.addListener(new PreparableReloadListener() {
-            @Override
-            public CompletableFuture<Void> reload(PreparationBarrier stage, ResourceManager resourceManager,
-                ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler, Executor backgroundExecutor,
-                Executor gameExecutor) {
-
-                return stage.wait(Unit.INSTANCE).thenRunAsync(() -> {
-                    Config.load();
-                }, gameExecutor);
-            }
-        });
+    public void reload(final AddServerReloadListenersEvent event) {
+        event.addListener(resource("config"), (ResourceManagerReloadListener) resourceManager -> Config.load());
     }
 
     public static void disableVelocityUpdate(EntityType.Builder<?> builder) {
@@ -119,6 +100,6 @@ public class MusketMod {
     public static void sendSmokeEffect(ServerLevel level, Vec3 origin, Vec3 direction) {
         SmokeEffectPacket packet = SmokeEffectPacket.fromVec3(origin, direction);
         BlockPos blockPos = BlockPos.containing(origin.x, origin.y, origin.z);
-        PacketDistributor.sendToPlayersTrackingChunk(level, new ChunkPos(blockPos), packet);
+        PacketDistributor.sendToPlayersTrackingChunk(level, ChunkPos.containing(blockPos), packet);
     }
 }

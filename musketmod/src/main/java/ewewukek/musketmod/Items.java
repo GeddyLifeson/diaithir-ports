@@ -4,32 +4,28 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SmithingTemplateItem;
 
 public class Items {
-    public static final Item MUSKET = new MusketItem(new Item.Properties()
-        .durability(Config.musketDurability));
-    public static final Item MUSKET_WITH_BAYONET = new MusketItem(new Item.Properties()
-        .durability(Config.musketDurability)
+    public static final Item MUSKET = new MusketItem(gun("musket", Config.musketDurability));
+    public static final Item MUSKET_WITH_BAYONET = new MusketItem(gun("musket_with_bayonet", Config.musketDurability)
         .attributes(MusketItem.createBayonetAttributes()));
-    public static final Item MUSKET_WITH_SCOPE = new ScopedMusketItem(new Item.Properties()
-        .durability(Config.scopedMusketDurability));
-    public static final Item BLUNDERBUSS = new BlunderbussItem(new Item.Properties()
-        .durability(Config.blunderbussDurability));
-    public static final Item PISTOL = new PistolItem(new Item.Properties()
-        .durability(Config.pistolDurability));
-    public static final Item CARTRIDGE = new CartridgeItem(new Item.Properties());
+    public static final Item MUSKET_WITH_SCOPE = new ScopedMusketItem(gun("musket_with_scope", Config.scopedMusketDurability));
+    public static final Item BLUNDERBUSS = new BlunderbussItem(gun("blunderbuss", Config.blunderbussDurability));
+    public static final Item PISTOL = new PistolItem(gun("pistol", Config.pistolDurability));
+    public static final Item CARTRIDGE = new CartridgeItem(properties("cartridge"));
 
-    public static final ResourceLocation EMPTY_SLOT_MUSKET = MusketMod.resource("item/empty_slot_musket");
-    public static final ResourceLocation EMPTY_SLOT_SPYGLASS = ResourceLocation.withDefaultNamespace("item/empty_slot_spyglass");
+    public static final Identifier EMPTY_SLOT_MUSKET = MusketMod.resource("container/slot/musket");
+    public static final Identifier EMPTY_SLOT_SPYGLASS = MusketMod.resource("container/slot/spyglass");
 
     public static final Item MUSKET_UPGRADE = new SmithingTemplateItem(
         Component.translatable(Util.makeDescriptionId("item",
@@ -39,15 +35,21 @@ public class Items {
             MusketMod.resource("musket_upgrade.ingredients")))
             .withStyle(SmithingTemplateItem.DESCRIPTION_FORMAT),
         Component.translatable(Util.makeDescriptionId("item",
-            MusketMod.resource("musket_upgrade")))
-            .withStyle(SmithingTemplateItem.TITLE_FORMAT),
-        Component.translatable(Util.makeDescriptionId("item",
             MusketMod.resource("musket_upgrade.base_slot_description"))),
         Component.translatable(Util.makeDescriptionId("item",
             MusketMod.resource("musket_upgrade.additions_slot_description"))),
         List.of(EMPTY_SLOT_MUSKET),
-        List.of(SmithingTemplateItem.EMPTY_SLOT_SWORD, EMPTY_SLOT_SPYGLASS)
+        List.of(SmithingTemplateItem.EMPTY_SLOT_SWORD, EMPTY_SLOT_SPYGLASS),
+        properties("musket_upgrade_smithing_template")
     );
+
+    private static Item.Properties properties(String path) {
+        return new Item.Properties().setId(ResourceKey.create(Registries.ITEM, MusketMod.resource(path)));
+    }
+
+    private static Item.Properties gun(String path, int durability) {
+        return properties(path).durability(durability).enchantable(14);
+    }
 
     public static void registerDataComponentTypes(BiConsumer<String, DataComponentType<?>> helper) {
         helper.accept("loaded", GunItem.LOADED);

@@ -8,8 +8,7 @@
     "LocalPlayerMixin",
     "MinecraftMixin",
     "MultiPlayerGameModeMixin",
-    "PlayerMixin",
-    "SkeletonModelMixin"
+    "PlayerMixin"
   ],
   "mixins": [
     "AbstractSkeletonMixin",

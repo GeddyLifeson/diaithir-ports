@@ -5,45 +5,31 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+
 import ewewukek.musketmod.ClientUtilities;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.HumanoidModel.ArmPose;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.world.entity.HumanoidArm;
 
 @Mixin(HumanoidModel.class)
 abstract class HumanoidModelMixin {
-    private LivingEntity entity;
-    private ArmPose leftArmPose;
-    private ArmPose rightArmPose;
+    private static final String SETUP_ANIM = "setupAnim(Lnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V";
 
-    @Inject(method = "setupAnim", at = @At("HEAD"))
-    private void setupAnimHead(LivingEntity entity, float f, float g, float h, float i, float j, CallbackInfo ci) {
-        this.entity = entity;
-        HumanoidModel<?> model = (HumanoidModel<?>)(Object)this;
-        leftArmPose = model.leftArmPose;
-        rightArmPose = model.rightArmPose;
+    @Inject(method = SETUP_ANIM, at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/client/model/HumanoidModel;setupAttackAnimation(Lnet/minecraft/client/renderer/entity/state/HumanoidRenderState;)V"))
+    private void poseGunArms(HumanoidRenderState state, CallbackInfo ci) {
+        ClientUtilities.poseGunArms((HumanoidModel<?>)(Object)this, state);
     }
 
-    @Inject(method = "poseRightArm", at = @At("TAIL"))
-    private void poseRightArm(CallbackInfo ci) {
-        HumanoidModel<?> model = (HumanoidModel<?>)(Object)this;
-        if (entity != null && ClientUtilities.poseArm(entity, model, model.rightArm)) {
-            model.rightArmPose = ArmPose.SPYGLASS; // to disable AnimationUtils.bobModelPart call
+    // aiming arms stay still, like the spyglass pose
+    @WrapOperation(method = SETUP_ANIM, at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/client/model/AnimationUtils;bobModelPart(Lnet/minecraft/client/model/geom/ModelPart;FF)V"))
+    private void bobModelPart(ModelPart part, float ageInTicks, float scale, Operation<Void> original, HumanoidRenderState state) {
+        if (ClientUtilities.gunPose(state, scale > 0 ? HumanoidArm.RIGHT : HumanoidArm.LEFT) == ClientUtilities.GunPose.NONE) {
+            original.call(part, ageInTicks, scale);
         }
-    }
-
-    @Inject(method = "poseLeftArm", at = @At("TAIL"))
-    private void poseLeftArm(CallbackInfo ci) {
-        HumanoidModel<?> model = (HumanoidModel<?>)(Object)this;
-        if (entity != null && ClientUtilities.poseArm(entity, model, model.leftArm)) {
-            model.leftArmPose = ArmPose.SPYGLASS; // to disable AnimationUtils.bobModelPart call
-        }
-    }
-
-    @Inject(method = "setupAnim", at = @At("TAIL"))
-    private void setupAnimTail(CallbackInfo ci) {
-        HumanoidModel<?> model = (HumanoidModel<?>)(Object)this;
-        model.rightArmPose = rightArmPose;
-        model.leftArmPose = leftArmPose;
     }
 }
