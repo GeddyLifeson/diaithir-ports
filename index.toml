@@ -652,8 +652,8 @@ hash = "de14f3900239830d16f8e57d2d060f38de8041c0b2317daa6bcf6215a92f83de"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.3.jar"
-hash = "045a26db8e0484b24f10f4fcac504ecd3569f2667e16a87fa45b09d6bac2b20d"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.12.jar"
+hash = "b06c33e68665e665b754c1bfa5cd8648b0becb9b5e4606326a8619fe5db2dece"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"
@@ -1034,7 +1034,7 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
-hash = "75020fde8404fb55f2e633ca8c8374de5b611ee2bad0fc68fae81387d8a244b0"
+hash = "f7caf1d8e89e41c24afd8e4ecf48de0933fea85b7d1ea6be0d1b0e96ce442876"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
@@ -1043,12 +1043,16 @@ metafile = true
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
-hash = "8dcf36d5ca191e00689fc42de39e835f864c4a806384de27689a4ab18e6337c1"
+hash = "e5861ffe272d26c23cb89963161e63d0cccb550486bd87aa0954022e6bc870af"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
 hash = "8ff7ce86e2e0bc333ae90e464bcf7124a6abb3ab4f4c7afb17ad64e763d06ab1"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-nemesis-neoforge-26.1.2-1.0.0.jar"
+hash = "bcd3ff3cee4cc3efa0d9eeed3538dc11ef05eb6567ed9a9d0594851e9824f0e3"
 
 [[files]]
 file = "mods/diaithir-perf-neoforge-26.1.2-0.3.0.jar"

@@ -12,12 +12,13 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | MekanismAdditions-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismadditions) |
 | MekanismGenerators-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismgenerators) |
 | MekanismTools-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismtools) |
-| Tellus-neoforge-26.1.2-0.8.3-diaithir.3.jar | LGPL-3.0-only | [source](source/Tellus-0.8.3-diaithir.3-source.tar.gz) |
+| Tellus-neoforge-26.1.2-0.8.3-diaithir.12.jar | LGPL-3.0-only | [source](source/Tellus-0.8.3-diaithir.12-source.tar.gz) |
 | TinkersConstruct-26.1.2-3.12.13.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct) |
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
 | diaithir-ages-neoforge-26.1.2-0.1.0.jar | Diaithir engine, ours; free to play with the pack | not published |
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
+| diaithir-nemesis-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis) |
 | diaithir-perf-neoforge-26.1.2-0.3.0.jar | LGPL-3.0-only | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-t61szp/diaithir-perf) |
 | client/diaithir-branding-neoforge-26.1.2-1.0.3.jar | MIT; its Pixelify Sans font is SIL OFL 1.1 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-branding) |
 | client/diaithir-earlywindow-neoforge-26.1.2-1.0.1.jar | LGPL-2.1-only (its error window is adapted from NeoForged FancyModLoader) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-dpvoq6/diaithir-earlywindow) |
