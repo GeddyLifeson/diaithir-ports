@@ -2,7 +2,7 @@
 
 Creatures for the Diaithir modpack (NeoForge 26.1.2) that are written as datapack JSON, so a new creature needs no Java. Each creature picks one of five behaviour presets, gets a GeckoLib model, texture and animations, its own size and stats, and optional spawn rules, loot, taming, riding, fuel and boss settings.
 
-Requires GeckoLib 5.5 or later. Licence: MIT (see LICENSE). No code was copied from other mods; see CREDITS.md.
+Requires GeckoLib 5.5 or later. Optional: diaithir-ages, for the world's current Age. Licence: MIT (see LICENSE). No code was copied from other mods; see CREDITS.md.
 
 ## Presets
 
@@ -58,9 +58,10 @@ Put one file per creature at `data/<namespace>/diaithirbestiary/creature/<name>.
 | `spawn.weight` | int | 10 | 1 to 100, see below. |
 | `spawn.min_group`, `spawn.max_group` | int | 1, 1 | Group size. |
 | `spawn.max_light` | int | 15 | Only spawns at this light level or darker (4 for a night horror). |
+| `spawn.min_age` | Age | 1 | Only spawns naturally once the world's current Age is at least this: a numeral `"I"` to `"VII"`, `"Rodos"` (counts as 8), or a number 1 to 8. Summons ignore it. |
 | `loot_table` | id | none | Loot table dropped on death, for example `data/<namespace>/loot_table/entities/<name>.json`. |
 
-Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance that one of them (picked by weight) spawns there. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
+Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance that one of them (picked by weight) spawns there. The current Age comes from diaithir-ages (its saved story) when that mod is installed; without it the Age is I, so creatures with a `min_age` above I never spawn naturally. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
 
 ## Animations
 
@@ -70,17 +71,17 @@ The model's animation file should have `idle`, `walk` and `attack`; flying creat
 
 - `/bestiary list`: every loaded creature with its preset and name.
 - `/bestiary summon <id> [pos]`: summons a creature (operators).
-- `/bestiary selftest`: on a test world, spawns each creature of this mod's own datapack at x 3000, z 3000, lets them run two seconds and checks that each spawns with its size and health, ticks, takes damage, that mechs and flyers take a fake player as pilot and are steered by it (and refuse strangers before taming), mech fuel, the avatar's boss bar and phase two, the stalker's gaze rule, spawn candidates for its biome tag and loot. Prints `bestiary selftest PASS` or the list of failures (server owners only).
+- `/bestiary selftest`: on a test world, spawns each creature of this mod's own datapack at x 3000, z 3000, lets them run two seconds and checks that each spawns with its size and health, ticks, takes damage, that mechs and flyers take a fake player as pilot and are steered by it (and refuse strangers before taming), mech fuel, the avatar's boss bar and phase two, the stalker's gaze rule, spawn candidates for its biome tag (allowed at its `min_age`, blocked one Age below), where the current Age comes from, and loot. Prints `bestiary selftest PASS` or the list of failures (server owners only).
 
 ## Example creatures
 
 | Id | Preset | What it is |
 | --- | --- | --- |
-| `diaithirbestiary:bumblesnout` | beast | A round, friendly cartoon critter of the plains. Tame with sweet berries and ride it. |
-| `diaithirbestiary:emberwyrm` | flyer | A red mountain dragon. Tame with blaze rods, then fly it. |
+| `diaithirbestiary:bumblesnout` | beast | A round, friendly cartoon critter of the plains from Age III. Tame with sweet berries and ride it. |
+| `diaithirbestiary:emberwyrm` | flyer | A red mountain dragon, from Age III. Tame with blaze rods, then fly it. |
 | `diaithirbestiary:ironstrider` | mech | A two-legged walker that burns coal. Summon only. |
 | `diaithirbestiary:aurelith` | avatar | Aurelith, Avatar of the Dawn: a haloed god avatar boss. Summon only. |
-| `diaithirbestiary:hollowmourn` | stalker | A pale-faced forest horror that comes out in the dark and only moves when unseen. |
+| `diaithirbestiary:hollowmourn` | stalker | A pale-faced forest horror that comes out in the dark from Age III and only moves when unseen. |
 
 Their models, animations and textures are cube-based placeholders written by `tools/gen_examples.py` (needs Pillow); edit the bone lists there and run `python3 tools/gen_examples.py` from this folder to rebuild them, or replace them with Blockbench exports.
 

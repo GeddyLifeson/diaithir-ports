@@ -17,3 +17,8 @@ versionRange = "[26.1.2.109,)"
 modId = "geckolib"
 type = "required"
 versionRange = "[5.5,)"
+
+[[dependencies.diaithirbestiary]]
+modId = "diaithir_ages"
+type = "optional"
+versionRange = "[0,)"

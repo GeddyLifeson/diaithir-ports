@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.fml.ModList;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 
@@ -94,10 +95,15 @@ final class SelfTest {
             def.spawn().ifPresent(s -> {
                 var biomes = level.registryAccess().lookupOrThrow(Registries.BIOME).getTagOrEmpty(s.biomes()).iterator();
                 Holder<Biome> biome = biomes.hasNext() ? biomes.next() : null;
-                check(r, biome != null && Spawner.candidates(DiaithirBestiary.creatures(level), biome, 0, false).stream().anyMatch(e -> e.getKey().equals(id)),
-                        id + " is a spawn candidate in its biome tag");
+                check(r, biome != null && candidate(level, biome, id, s.minAge()), id + " is a spawn candidate in its biome tag at Age " + Ages.name(s.minAge()));
+                check(r, s.minAge() == 1 || biome != null && !candidate(level, biome, id, s.minAge() - 1), id + " does not spawn before Age " + Ages.name(s.minAge()));
             });
         }
+        check(r, Ages.parse("III") == 3 && Ages.parse("rodos") == Ages.RODOS && Ages.parse("5") == 5 && Ages.parse("IX") == -1, "Age names parse");
+        int age = Ages.current(server);
+        if (ModList.get().isLoaded("diaithir_ages")) check(r, Ages.linked(), "the Age is read from diaithir-ages (Age " + Ages.name(age) + ")");
+        else check(r, age == 1, "without diaithir-ages the Age is I");
+        LOG.info("bestiary selftest: world Age {} ({})", Ages.name(age), Ages.linked() ? "diaithir-ages" : "no diaithir-ages");
         check(r, r.creatures.size() >= 5, "at least five example creatures load (found " + r.creatures.size() + ")");
         run = r;
         source.sendSuccess(() -> Component.literal("bestiary selftest running with " + r.creatures.size() + " creatures"), false);
@@ -114,6 +120,10 @@ final class SelfTest {
             r.creatures.forEach((id, c) -> lastChecks(r, id, c));
             finish(r);
         }
+    }
+
+    private static boolean candidate(ServerLevel level, Holder<Biome> biome, Identifier id, int age) {
+        return Spawner.candidates(DiaithirBestiary.creatures(level), biome, 0, false, age).stream().anyMatch(e -> e.getKey().equals(id));
     }
 
     private static void firstChecks(Run r, Identifier id, Creature c) {

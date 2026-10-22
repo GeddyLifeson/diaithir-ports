@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Natural spawns for creatures with a spawn entry. Every 10 seconds each player gets one try at a spot 24 to 48 blocks away:
  * the creatures whose biome tag and light limit fit that spot are summed by weight, and that sum is the percent chance that one
- * of them (picked by weight) spawns there as a group.
+ * of them (picked by weight) spawns there as a group. A creature with a min_age waits until the world's Age reaches it.
  */
 final class Spawner {
     static final int INTERVAL = 200, CAP = 6;
@@ -32,6 +32,7 @@ final class Spawner {
         if (level.getGameTime() % INTERVAL != 0 || !level.getGameRules().get(GameRules.SPAWN_MOBS)) return;
         Registry<CreatureDef> creatures = DiaithirBestiary.creatures(level);
         RandomSource random = level.getRandom();
+        int age = Ages.current(level.getServer());
         for (ServerPlayer player : level.players()) {
             if (player.isSpectator() || level.getEntitiesOfClass(Creature.class, player.getBoundingBox().inflate(64)).size() >= CAP) continue;
             float angle = random.nextFloat() * Mth.TWO_PI;
@@ -41,7 +42,7 @@ final class Spawner {
             BlockPos pos = level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, column);
             if (!level.getFluidState(pos.below()).isEmpty()) continue;
             List<Map.Entry<Identifier, CreatureDef>> fits = candidates(creatures, level.getBiome(pos), level.getMaxLocalRawBrightness(pos),
-                    level.getDifficulty() == Difficulty.PEACEFUL);
+                    level.getDifficulty() == Difficulty.PEACEFUL, age);
             int total = fits.stream().mapToInt(e -> e.getValue().spawn().get().weight()).sum();
             if (total == 0 || random.nextInt(100) >= total) continue;
             int roll = random.nextInt(total);
@@ -56,9 +57,9 @@ final class Spawner {
         }
     }
 
-    static List<Map.Entry<Identifier, CreatureDef>> candidates(Registry<CreatureDef> creatures, Holder<Biome> biome, int light, boolean peaceful) {
+    static List<Map.Entry<Identifier, CreatureDef>> candidates(Registry<CreatureDef> creatures, Holder<Biome> biome, int light, boolean peaceful, int age) {
         return creatures.entrySet().stream()
-                .filter(e -> e.getValue().spawn().filter(s -> biome.is(s.biomes()) && light <= s.maxLight()).isPresent())
+                .filter(e -> e.getValue().spawn().filter(s -> biome.is(s.biomes()) && light <= s.maxLight() && age >= s.minAge()).isPresent())
                 .filter(e -> !peaceful || !e.getValue().isHostile())
                 .map(e -> Map.entry(e.getKey().identifier(), e.getValue()))
                 .toList();

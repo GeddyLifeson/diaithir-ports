@@ -3,6 +3,6 @@
   "width": 0.7,
   "height": 2.6,
   "stats": { "health": 50, "armor": 4, "damage": 9, "speed": 0.45, "follow_range": 48 },
-  "spawn": { "biomes": "minecraft:is_forest", "weight": 2, "max_light": 4 },
+  "spawn": { "biomes": "minecraft:is_forest", "weight": 2, "max_light": 4, "min_age": "III" },
   "loot_table": "diaithirbestiary:entities/hollowmourn"
 }
