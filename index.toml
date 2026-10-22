@@ -1925,6 +1925,10 @@ hash = "7be1bb2f25fced12414b14135b23dbb1b45160ea7f184fa51929b1b71ac6f7ad"
 metafile = true
 
 [[files]]
+file = "mods/untamedwilds-26.1.2-3.0.1.jar"
+hash = "fc70169bde0167662bd76cf74159a3100bd975b39d227aef0cbcea193e79540b"
+
+[[files]]
 file = "mods/utilitarian-26.1.2-0.22.0.pw.toml"
 hash = "a546d25f3279cb83dcafe5d8e523d15556db5bfc82f4e366170cecbebd583da3"
 metafile = true
