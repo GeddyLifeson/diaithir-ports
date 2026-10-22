@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.tocraft.remorphed.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "PlayerEntityMixin"
+  ],
+  "client": [
+    "client.accessor.ClientPlayerAccessor",
+    "client.accessor.ScreenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
