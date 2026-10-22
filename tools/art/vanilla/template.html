@@ -1,0 +1,146 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one large turntable viewer up top, a grid of body-plan cards under it. */
+:root {
+  --bg: #eef1f0; --panel: #ffffff; --fg: #1d2522; --muted: #5d6b66; --line: #d3dbd8;
+  --accent: #2f6d73; --stage: #dfe6e4;
+  --display: "Fraunces", Georgia, serif; --body: "Public Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121817; --panel: #1a2220; --fg: #e3ebe8; --muted: #93a39e; --line: #2c3835; --accent: #79bcc2; --stage: #1f2927; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #121817; --panel: #1a2220; --fg: #e3ebe8; --muted: #93a39e; --line: #2c3835; --accent: #79bcc2; --stage: #1f2927; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--body); }
+main { max-width: 1100px; margin: 0 auto; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 24px; }
+h1 { font: 600 clamp(26px, 4vw, 38px)/1.1 var(--display); margin: 0; text-wrap: balance; }
+header p { margin: 6px 0 0; color: var(--muted); max-width: 65ch; }
+.viewer { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stage { position: relative; background: var(--stage); aspect-ratio: 4 / 3; max-width: 100%; touch-action: none; cursor: grab; }
+.stage canvas { width: 100%; height: 100%; display: block; }
+.hint { position: absolute; left: 12px; bottom: 10px; font: 12px var(--mono); color: var(--muted); }
+.side { padding: 18px; display: grid; align-content: start; gap: 14px; min-width: 0; }
+.side h2 { font: 600 22px/1.2 var(--display); margin: 0; }
+.sci { font-style: italic; color: var(--muted); margin: 2px 0 0; }
+.label { font: 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button, .cards button { font: inherit; color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+.chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--panel); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.facts { font: 12px var(--mono); color: var(--muted); display: grid; gap: 2px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.cards button { border-radius: 8px; padding: 0; display: grid; text-align: left; overflow: hidden; background: var(--panel); }
+.cards button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.cards img { width: 100%; aspect-ratio: 1; object-fit: contain; background: var(--stage); display: block; }
+.cards span { padding: 8px 10px; font-weight: 600; }
+.cards small { display: block; font-weight: 400; color: var(--muted); }
+@media (max-width: 720px) { .viewer { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<main>
+  <header>
+    <h1>__TITLE__</h1>
+    <p>__INTRO__</p>
+  </header>
+  <section class="viewer">
+    <div class="stage" id="stage"><canvas id="cv"></canvas><span class="hint">drag to rotate</span></div>
+    <div class="side">
+      <div><div class="label" id="plan"></div><h2 id="name"></h2><p class="sci" id="sci"></p></div>
+      <div><div class="label">Look</div><div class="chips" id="looks"><button id="look-new" aria-pressed="true">Factorio 64x</button><button id="look-old" aria-pressed="false">Original 16x</button></div></div>
+      <div><div class="label">Skins</div><div class="chips" id="chips"></div></div>
+      <div class="facts" id="facts"></div>
+    </div>
+  </section>
+  <div class="label">__GRID__</div>
+  <div class="cards" id="cards"></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const DATA = __DATA__;
+const cv = document.getElementById('cv'), stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f8c, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 0.55); sun.position.set(3, 5, 4); scene.add(sun);
+const camera = new THREE.PerspectiveCamera(30, 4 / 3, 1, 2000);
+const pivot = new THREE.Group(); scene.add(pivot);
+const texCache = {};
+let oldLook = false, cur = [0, 0];
+function tex(url) {
+  if (!texCache[url]) { const t = new THREE.Texture(IMG[url]); t.needsUpdate = true; t.magFilter = t.minFilter = THREE.NearestFilter; texCache[url] = t; }
+  return texCache[url];
+}
+function build(plan, sp, old) {
+  const mat = new THREE.MeshLambertMaterial({ map: tex(old ? sp.old : sp.tex), alphaTest: 0.1, side: THREE.DoubleSide });
+  const hide = plan.hide === '-' ? null : new RegExp(plan.hide), pos = [], uvs = [];
+  for (const f of plan.faces) {
+    if (hide && hide.test(f.part)) continue;
+    for (const i of [0, 1, 2, 0, 2, 3]) { const v = f.v[i]; pos.push(v[0] * 16, v[1] * 16, v[2] * 16); uvs.push(v[3] / plan.tw, 1 - v[4] / plan.th); }
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+  geo.computeVertexNormals();
+  const root = new THREE.Group(); root.add(new THREE.Mesh(geo, mat));
+  if (plan.overlay) {  // a second layer drawn over the body, such as sheep wool
+    const o = plan.overlay, p2 = [], u2 = [];
+    for (const f of o.faces) for (const i of [0, 1, 2, 0, 2, 3]) { const v = f.v[i]; p2.push(v[0] * 16, v[1] * 16, v[2] * 16); u2.push(v[3] / o.tw, 1 - v[4] / o.th); }
+    const g2 = new THREE.BufferGeometry();
+    g2.setAttribute('position', new THREE.Float32BufferAttribute(p2, 3)); g2.setAttribute('uv', new THREE.Float32BufferAttribute(u2, 2)); g2.computeVertexNormals();
+    root.add(new THREE.Mesh(g2, new THREE.MeshLambertMaterial({ map: tex(old ? o.old : o.tex), alphaTest: 0.1, side: THREE.DoubleSide })));
+  }
+  root.rotation.z = Math.PI; // model space is y-down, as Minecraft draws it
+  const holder = new THREE.Group(); holder.add(root);
+  holder.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(holder), c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+  root.position.sub(c);
+  return { holder, size: s };
+}
+let yaw = Math.PI - 0.75, current = null;
+function frame(size) {
+  const r = Math.max(size.x, size.y, size.z) * 0.62 + 4;
+  const dist = r / Math.sin(THREE.MathUtils.degToRad(camera.fov / 2));
+  camera.position.set(0, dist * 0.32, dist); camera.lookAt(0, 0, 0);
+}
+function draw() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (cv.width !== Math.round(w * renderer.getPixelRatio())) { renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  pivot.rotation.y = yaw; renderer.render(scene, camera);
+}
+function show(pi, si) {
+  cur = [pi, si];
+  const plan = DATA[pi], sp = plan.species[si];
+  pivot.clear(); current = build(plan, sp, oldLook); pivot.add(current.holder); frame(current.size);
+  document.getElementById('plan').textContent = plan.group;
+  document.getElementById('name').textContent = plan.plan;
+  document.getElementById('sci').textContent = sp.name;
+  const chips = document.getElementById('chips'); chips.replaceChildren();
+  plan.species.forEach((s, i) => { const b = document.createElement('button'); b.textContent = s.name; b.setAttribute('aria-pressed', i === si); b.onclick = () => show(pi, i); chips.append(b); });
+  document.getElementById('facts').innerHTML = `<span>texture ${plan.tw * (oldLook ? 1 : 4)} &times; ${plan.th * (oldLook ? 1 : 4)} px</span><span>${plan.faces.length} faces, from the game's own model code</span>`;
+  document.querySelectorAll('.cards button').forEach((b, i) => b.setAttribute('aria-pressed', i === pi));
+  draw();
+}
+// drag to rotate
+let drag = null;
+stage.addEventListener('pointerdown', e => { drag = e.clientX; stage.setPointerCapture(e.pointerId); stage.style.cursor = 'grabbing'; });
+stage.addEventListener('pointermove', e => { if (drag === null) return; yaw += (e.clientX - drag) * 0.01; drag = e.clientX; draw(); });
+stage.addEventListener('pointerup', () => { drag = null; stage.style.cursor = ''; });
+addEventListener('resize', draw);
+// thumbnails for the card grid, rendered with the same renderer
+const cards = document.getElementById('cards');
+function thumbs() {
+  DATA.forEach((plan, pi) => {
+    show(pi, 0);
+    const b = document.createElement('button'), img = new Image();
+    img.src = cv.toDataURL('image/png'); img.alt = plan.species[0].name;
+    const sp = document.createElement('span'); sp.innerHTML = `${plan.plan}<small>${plan.species.length} skin${plan.species.length > 1 ? 's' : ''}</small>`;
+    b.append(img, sp); b.onclick = () => show(pi, 0); cards.append(b);
+  });
+  show(0, 0);
+}
+for (const [id, v] of [['look-new', false], ['look-old', true]]) document.getElementById(id).onclick = () => { oldLook = v; document.getElementById('look-new').setAttribute('aria-pressed', !v); document.getElementById('look-old').setAttribute('aria-pressed', v); show(...cur); };
+const IMG = {}, urls = DATA.flatMap(p => p.species.flatMap(s => [s.tex, s.old]).concat(p.overlay ? [p.overlay.tex, p.overlay.old] : []));
+let loaded = 0;
+urls.forEach(u => { const i = IMG[u] = new Image(); i.onload = i.onerror = () => { if (++loaded === urls.length) thumbs(); }; i.src = u; });
+</script>

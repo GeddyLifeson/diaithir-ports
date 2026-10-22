@@ -73,6 +73,22 @@ def height(kind, h, w, rng, s):
     if kind == 'horn':
         yy = np.mgrid[0:h, 0:w][0].astype(np.float32)
         return 0.5 * np.sin(yy / (1.5 * s) * np.pi) + 0.3 * blur(n, 2 * s, 0)
+    if kind == 'skin':                                     # bare skin: soft mottling, fine pores, a few bristles
+        pores = n - soft(n, 1)
+        bristle = np.clip(blur(rng.random((h, w)) ** 30, s, 0) * 4, 0, 1)
+        return 0.5 * (soft(n, 2 * s) - 0.5) * 4 + 0.25 * pores + 0.4 * bristle
+    if kind == 'feather':                                  # overlapping rows of scalloped feather tips
+        yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+        row = 2 * s
+        off = (yy // row) % 2 * 0.75 * s
+        t = (yy + 0.5 * s * np.abs(np.sin((xx + off) * np.pi / (1.5 * s)))) % row / row
+        return 0.8 * (1 - t) + 0.15 * blur(n, s, 0)
+    if kind == 'wool':                                     # tight curls
+        curls = soft(n, s) - soft(n, 3 * s)
+        return 2.5 * curls / (curls.std() + 1e-6) * 0.3 + 0.1 * n
+    if kind == 'wing':                                     # thin membrane with veins
+        xx = np.mgrid[0:h, 0:w][1].astype(np.float32)
+        return 0.25 * np.cos(xx / (2 * s) * np.pi) ** 8 + 0.05 * soft(n, 1)
     return 0.3 * blur(n, 2 * s, 0)                        # hoof, eye: smooth keratin
 
 
@@ -86,7 +102,7 @@ def light(H, strength):
 def paint_face(base, alpha, kind, ao, rng, s, low):
     h, w = alpha.shape
     H = height(kind, h, w, rng, s)
-    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0}.get(kind, 1.2))
+    lit = light(H, {'shell': 3.0, 'horn': 1.5, 'hide': 2.0, 'skin': 1.5, 'feather': 2.5, 'wool': 2.0}.get(kind, 1.2))
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
     form = 1.1 - 0.22 * yy / max(h - 1, 1) - 0.08 * xx / max(w - 1, 1)  # face lit from its upper left
     edge = np.ones((h, w), np.float32)
