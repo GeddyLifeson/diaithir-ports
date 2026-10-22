@@ -1,0 +1,56 @@
+{
+  "entity_type": "friendsandfoes:tuff_golem",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "Color": "red"
+      },
+      "1": {
+        "Color": "black"
+      },
+      "2": {
+        "Color": "blue"
+      },
+      "3": {
+        "Color": "brown"
+      },
+      "4": {
+        "Color": "cyan"
+      },
+      "5": {
+        "Color": "grey"
+      },
+      "6": {
+        "Color": "green"
+      },
+      "7": {
+        "Color": "light_blue"
+      },
+      "8": {
+        "Color": "light_grey"
+      },
+      "9": {
+        "Color": "lime"
+      },
+      "10": {
+        "Color": "magenta"
+      },
+      "11": {
+        "Color": "orange"
+      },
+      "12": {
+        "Color": "pink"
+      },
+      "13": {
+        "Color": "purple"
+      },
+      "14": {
+        "Color": "white"
+      },
+      "15": {
+        "Color": "yellow"
+      }
+    }
+  }
+}

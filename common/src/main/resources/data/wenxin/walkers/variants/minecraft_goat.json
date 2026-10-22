@@ -1,0 +1,48 @@
+{
+  "entity_type": "minecraft:goat",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "HasLeftHorn": true,
+        "HasRightHorn": true,
+        "IsScreamingGoat": true
+      },
+      "1": {
+        "HasLeftHorn": true,
+        "HasRightHorn": true,
+        "IsScreamingGoat": false
+      },
+      "2": {
+        "HasLeftHorn": true,
+        "HasRightHorn": false,
+        "IsScreamingGoat": true
+      },
+      "3": {
+        "HasLeftHorn": true,
+        "HasRightHorn": false,
+        "IsScreamingGoat": false
+      },
+      "4": {
+        "HasLeftHorn": false,
+        "HasRightHorn": true,
+        "IsScreamingGoat": true
+      },
+      "5": {
+        "HasLeftHorn": false,
+        "HasRightHorn": true,
+        "IsScreamingGoat": false
+      },
+      "6": {
+        "HasLeftHorn": false,
+        "HasRightHorn": false,
+        "IsScreamingGoat": true
+      },
+      "7": {
+        "HasLeftHorn": false,
+        "HasRightHorn": false,
+        "IsScreamingGoat": false
+      }
+    }
+  }
+}

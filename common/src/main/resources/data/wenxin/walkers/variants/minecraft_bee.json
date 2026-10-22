@@ -1,0 +1,24 @@
+{
+  "entity_type": "minecraft:bee",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "HasNectar": true,
+        "HasStung": true
+      },
+      "1": {
+        "HasNectar": true,
+        "HasStung": false
+      },
+      "2": {
+        "HasNectar": false,
+        "HasStung": true
+      },
+      "3": {
+        "HasNectar": false,
+        "HasStung": false
+      }
+    }
+  }
+}

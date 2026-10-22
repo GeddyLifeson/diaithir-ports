@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "walkers",
+  "version": "${version}",
+  "name": "Walkers",
+  "icon": "pack.png",
+  "description": "Play as your favorite entities!",
+  "authors": [
+    "To_Craft"
+  ],
+  "contributors": [
+    "Draylar"
+  ],
+  "contact": {
+    "issues": "https://github.com/ToCraft/woodwalkers-mod/issues",
+    "sources": "https://github.com/ToCraft/woodwalkers-mod"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.tocraft.walkers.Walkers::initialize"
+    ],
+    "client": [
+      "dev.tocraft.walkers.WalkersClient::initialize"
+    ]
+  },
+  "mixins": [
+    "walkers.mixins.json",
+    "walkers-fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": ">=${minecraft_version}",
+    "fabricloader": ">=0.8.7+build.201",
+    "craftedcore": ">=${craftedcore_version}"
+  }
+}

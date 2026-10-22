@@ -1,0 +1,15 @@
+{
+  "required_mod": "guardvillagers",
+  "entity_type": "guardvillagers:guard",
+  "type_provider": {
+    "range": 1,
+    "variants": {
+      "0": {
+        "SpawnWithAmor": 0
+      },
+      "1": {
+        "SpawnWithAmor": 1
+      }
+    }
+  }
+}

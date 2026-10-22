@@ -1,0 +1,15 @@
+{
+  "required_mod": "unusualfishmod",
+  "entity_type": "unusualfishmod:copperflame",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "Variant": 0
+      },
+      "1": {
+        "Variant": 1
+      }
+    }
+  }
+}

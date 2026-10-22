@@ -1,0 +1,69 @@
+{
+  "required_mod": "moremobvariants",
+  "entity_type": "minecraft:pig",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "VariantID": "moremobvariants:default",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "1": {
+        "VariantID": "moremobvariants:mottled",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "2": {
+        "VariantID": "moremobvariants:piebald",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "3": {
+        "VariantID": "moremobvariants:pink_footed",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "4": {
+        "VariantID": "moremobvariants:sooty",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "5": {
+        "VariantID": "moremobvariants:spotted",
+        "IsMuddy": true,
+        "MuddyTimeLeft": -1
+      },
+      "6": {
+        "VariantID": "moremobvariants:default",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      },
+      "7": {
+        "VariantID": "moremobvariants:mottled",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      },
+      "8": {
+        "VariantID": "moremobvariants:piebald",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      },
+      "9": {
+        "VariantID": "moremobvariants:pink_footed",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      },
+      "10": {
+        "VariantID": "moremobvariants:sooty",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      },
+      "11": {
+        "VariantID": "moremobvariants:spotted",
+        "IsMuddy": false,
+        "MuddyTimeLeft": -1
+      }
+    }
+  }
+}

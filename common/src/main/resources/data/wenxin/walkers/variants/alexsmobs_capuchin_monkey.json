@@ -1,0 +1,18 @@
+{
+  "required_mod": "alexsmobs",
+  "entity_type": "alexsmobs:capuchin_monkey",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "Variant": 0
+      },
+      "1": {
+        "Variant": 1
+      },
+      "2": {
+        "Variant": 2
+      }
+    }
+  }
+}

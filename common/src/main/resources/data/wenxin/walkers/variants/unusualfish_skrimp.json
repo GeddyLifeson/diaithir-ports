@@ -1,0 +1,18 @@
+{
+  "required_mod": "unusualfishmod",
+  "entity_type": "unusualfishmod:skrimp",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "Variant": 0
+      },
+      "1": {
+        "Variant": 1
+      },
+      "2": {
+        "Variant": 2
+      }
+    }
+  }
+}

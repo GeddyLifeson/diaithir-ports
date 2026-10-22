@@ -1,0 +1,15 @@
+{
+  "required_mod": "alexsmobs",
+  "entity_type": "alexsmobs:flying_fish",
+  "type_provider": {
+    "fallback": 0,
+    "variants": {
+      "0": {
+        "Variant": 0
+      },
+      "1": {
+        "Variant": 1
+      }
+    }
+  }
+}

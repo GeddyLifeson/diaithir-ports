@@ -1,0 +1,19 @@
+{
+  "entity_type": "friendsandfoes:copper_golem",
+  "required_mod": "friendsandfoes",
+  "type_provider": {
+    "fallback": 0,
+    "range": 3,
+    "variants": {
+      "0": {
+        "OxidationLevel": 0
+      },
+      "1": {
+        "OxidationLevel": 1
+      },
+      "2": {
+        "OxidationLevel": 2
+      }
+    }
+  }
+}
