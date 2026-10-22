@@ -4,7 +4,7 @@ plugins {
     // Minecraft 26.1+ removed obfuscation, so architectury-loom's classic remap pipeline has no
     // mappings to work with; use the `loom-no-remap` variant (needs architectury-plugin 3.5-SNAPSHOT),
     // matching the VS2 26.2 fork.
-    id "architectury-plugin" version "3.5-SNAPSHOT"
+    id "architectury-plugin" version "3.5.170"
     id "dev.architectury.loom-no-remap" version "1.17.491" apply false
     // Kotlin 2.4.0 to match kotlinforforge-neoforge 6.3.0's compiler metadata.
     id "org.jetbrains.kotlin.jvm" version "2.4.0" apply false
@@ -33,7 +33,7 @@ subprojects {
     apply plugin: "org.jetbrains.kotlin.jvm"
 
     repositories {
-        // The VS2 26.2 fork is consumed from mavenLocal (publishToMavenLocal from ../vs2-core).
+        // Valkyrien Skies (Diaithir 26.1.2 port) comes from mavenLocal: publishToMavenLocal on the valkyrienskies branch.
         mavenLocal()
         mavenCentral()
         maven {

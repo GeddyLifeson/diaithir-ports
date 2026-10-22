@@ -18,7 +18,7 @@ dependencies {
     compileOnly("net.neoforged:neoforge:$rootProject.neoforge_version")
 
     // VS2 26.2 fork - published to mavenLocal from ../vs2-core. The common artifact is dev-classified.
-    api("org.valkyrienskies:valkyrienskies-26-2-common:${rootProject.vs2_version}:dev")
+    api("org.valkyrienskies:valkyrienskies-26-1-2-common:${rootProject.vs2_version}:dev")
 
     // Config screen infra
     api("me.shedaniel.cloth:cloth-config:${rootProject.cloth_config_version}")

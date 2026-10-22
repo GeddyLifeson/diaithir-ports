@@ -43,8 +43,6 @@ object EurekaBlockEntities {
     private infix fun <T : BlockEntity> Block.withBE(blockEntity: (BlockPos, BlockState) -> T) = Pair(this, blockEntity)
     private infix fun <T : BlockEntity> Pair<Set<RegistrySupplier<out Block>>, (BlockPos, BlockState) -> T>.byName(name: String): RegistrySupplier<BlockEntityType<T>> =
         BLOCKENTITIES.register(name) {
-            // 26.2: BlockEntityType.Builder was removed; construct BlockEntityType directly
-            // (BlockEntitySupplier + vararg Block). The datafixer choice type is no longer a ctor arg.
             BlockEntityType(
                 this.second,
                 this.first.map { it.get() }.toSet()

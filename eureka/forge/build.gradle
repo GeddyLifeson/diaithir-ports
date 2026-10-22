@@ -34,7 +34,7 @@ dependencies {
 
     // VS2 26.2 fork forge (published to mavenLocal; plain main jar which shades vs-core). transitive
     // false so we control exactly what reaches the runtime classpath.
-    implementation("org.valkyrienskies:valkyrienskies-26-2-forge:${rootProject.vs2_version}") { transitive = false }
+    implementation("org.valkyrienskies:valkyrienskies-26-1-2-forge:${rootProject.vs2_version}") { transitive = false }
 
     // vs-core must be on the dev RUNTIME classpath too: the VS2 fork's published forge jar does
     // NOT shade it (its POM carries vs-core as runtime-scope deps, which the transitive=false
@@ -70,9 +70,25 @@ tasks.runServer.configure {
 // Copy the common access widener into generated resources so processResources picks it up.
 def generatedResourcesDir = layout.buildDirectory.dir("generated/resources")
 
-tasks.register("copyAccessWidener", Copy) {
-    from(project(":common").file("src/main/resources/vs_eureka.accesswidener"))
-    into(generatedResourcesDir)
+// NeoForge reads access transformers, not access wideners: convert the common access widener.
+tasks.register("accessTransformerFromWidener") {
+    def aw = project(":common").file("src/main/resources/vs_eureka.accesswidener")
+    def at = generatedResourcesDir.map { it.file("META-INF/accesstransformer.cfg") }
+    inputs.file(aw)
+    outputs.file(at)
+    doLast {
+        def entries = new LinkedHashMap<String, Boolean>()
+        aw.readLines().drop(1).each { line ->
+            def p = line.replaceAll(/#.*/, "").trim().split(/\s+/)
+            if (p.length < 3) return
+            def owner = p[2].replace('/', '.')
+            def key = p[1] == "class" ? owner : p[1] == "field" ? "$owner ${p[3]}" : "$owner ${p[3]}${p[4]}"
+            entries[key] = (entries[key] ?: false) || p[0] == "mutable"
+        }
+        def out = at.get().asFile
+        out.parentFile.mkdirs()
+        out.text = entries.collect { k, mutable -> (mutable ? "public-f " : "public ") + k }.join("\n") + "\n"
+    }
 }
 
 sourceSets {
@@ -93,7 +109,7 @@ sourceSets {
 }
 
 processResources {
-    dependsOn("copyAccessWidener")
+    dependsOn("accessTransformerFromWidener")
     inputs.property "version", project.version
     inputs.property "vs2_version", project.vs2_version
 
@@ -134,7 +150,7 @@ compileKotlin.compilerOptions.jvmTarget = JvmTarget.JVM_21
 compileKotlin.destinationDirectory.set(compileJava.destinationDirectory)
 
 sourcesJar {
-    dependsOn("copyAccessWidener")
+    dependsOn("accessTransformerFromWidener")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
