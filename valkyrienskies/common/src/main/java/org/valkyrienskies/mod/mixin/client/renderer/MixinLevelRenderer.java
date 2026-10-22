@@ -46,7 +46,7 @@ public abstract class MixinLevelRenderer {
         final DeltaTracker deltaTracker, final boolean bl, final CameraRenderState cameraRenderState,
         final Matrix4fc matrix4fc, final GpuBufferSlice gpuBufferSlice, final Vector4f vector4f,
         final boolean bl2, final CallbackInfo ci) {
-        final Camera camera = Minecraft.getInstance().gameRenderer.mainCamera();
+        final Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
         if (camera == null) {
             return;
         }

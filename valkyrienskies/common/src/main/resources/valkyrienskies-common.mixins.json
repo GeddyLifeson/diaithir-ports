@@ -150,7 +150,7 @@
     "feature.world_weather.MixinWeatherEffectRenderer",
     "feature.transform_particles.MixinParticle",
     "mod_compat.sound_physics_remastered.MixinSoundPhysics",
-    "mod_compat.vanilla_renderer.MixinLevelExtractorVanilla",
+    "mod_compat.vanilla_renderer.MixinLevelRendererExtractVanilla",
     "mod_compat.vanilla_renderer.MixinLevelRendererVanilla",
     "mod_compat.vanilla_renderer.MixinResortTransparencyTaskVanilla",
     "mod_compat.vanilla_renderer.MixinViewAreaVanilla",

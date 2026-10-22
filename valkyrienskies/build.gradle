@@ -14,7 +14,7 @@ plugins {
     // The community-verified path is the `loom-no-remap` plugin variant, which requires the
     // 3.5-SNAPSHOT architectury-plugin. This is bleeding-edge/unofficial tooling, not a stable
     // release - flagged here in case it needs re-evaluating later.
-    id "architectury-plugin" version "3.5-SNAPSHOT"
+    id "architectury-plugin" version "3.5.170"
     id "dev.architectury.loom-no-remap" version "1.17.491" apply false
     // loom-vineflower removed: Architectury Loom 1.17 ships Vineflower as its built-in decompiler.
     // Bumped from 2.2.20 to 2.4.0 to match kotlinforforge-neoforge 6.3.0's own compiler version
@@ -94,70 +94,13 @@ subprojects {
 
         mavenCentral()
         if (!project.block_external_repositories) {
-            maven {
-                url = "https://maven.realrobotix.me/master/"
-            }
-            mavenLocal()
-            maven {
-                name = "ParchmentMC"
-                url = "https://maven.parchmentmc.org"
-            }
-            maven { url = "https://cursemaven.com" }
-            maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
-            maven {
-                name = 'Kotlin for Forge'
-                url = 'https://thedarkcolour.github.io/KotlinForForge/'
-            }
-            maven {
-                name = 'tterrag maven'
-                url = 'https://maven.tterrag.com/'
-            }
-            maven { url = "https://modmaven.dev/" } // Twilight Forest
-            maven { url = "https://api.modrinth.com/maven" } // LazyDFU, Suggestion Tweaker, Create Big Cannons
-            maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
+            maven { url = "https://maven.parchmentmc.org" }
+            maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+            maven { url = "https://maven.shedaniel.me/" } // Cloth Config
             maven { url = "https://maven.architectury.dev/" }
-            maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
-            maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate mirror
-            maven { url = "https://mvn.devos.one/snapshots/" } // Fabric Create, Porting Lib, Forge Tags, Milk Lib
-            maven { url = "https://mvn.devos.one/releases/" }
+            maven { url = "https://maven.neoforged.net/releases" }
+            maven { url = "https://maven.fabricmc.net/" }
             maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // Forge Config API Port
-            maven { url = "https://maven.cafeteria.dev/releases" } // Fake Player API
-            maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
-            maven { url = "https://maven.realrobotix.me/createbigcannons/" } // Create Big Cannons
-            maven {
-                name = "CC-Tweaked"
-                url = "https://maven.squiddev.cc"
-                content {
-                    includeGroup("cc.tweaked")
-                }
-            }
-            maven {
-                name = "FTB Stuffs"
-                url = "https://maven.ftb.dev/releases"
-                content {
-                    includeGroup("dev.ftb.mods")
-                }
-            }
-            maven {
-                name = "NeoForged"
-                url = "https://maven.neoforged.net/releases"
-            }
-            maven { // Hexcasting
-                url = "https://maven.blamejared.com"
-            }
-            maven { // Hexal
-                url = uri("https://maven.hexxy.media")
-            }
-            // Jitpack is last because it's slow and should only be used as fallback.
-            maven { url = "https://jitpack.io" }
-            maven {
-                name = "Fuzs Mod Resources"
-                url = uri("https://raw.githubusercontent.com/Fuzss/modresources/main/maven/")
-            }
-            maven {
-                url = "https://maven.ryanhcode.dev/releases"
-                name = "RyanHCode Maven"
-            }
         }
         maven {
             name = "Valkyrien Skies Internal"

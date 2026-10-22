@@ -10,9 +10,9 @@ import java.util.function.Supplier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientChunkCache;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.multiplayer.ClientLevel.ClientLevelData;
 import net.minecraft.client.multiplayer.ClientPacketListener;
-import net.minecraft.client.renderer.extract.LevelExtractor;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -90,11 +90,9 @@ public abstract class MixinClientLevel implements IShipObjectWorldClientProvider
     @Unique
     private final Long2LongOpenHashMap vs$chunksToUnload = new Long2LongOpenHashMap();
 
-    // 26.2: ClientLevel ctor changed - the Supplier<ProfilerFiller> param was removed, the
-    // LevelRenderer param became a LevelExtractor, and a trailing int was added.
     @Inject(method = "<init>", at = @At("TAIL"))
     private void postInit(ClientPacketListener clientPacketListener, ClientLevelData clientLevelData,
-        ResourceKey resourceKey, Holder holder, int i, int j, LevelExtractor levelExtractor,
+        ResourceKey resourceKey, Holder holder, int i, int j, LevelRenderer levelRenderer,
         boolean bl, long l, int k, CallbackInfo ci) {
         if (getShipObjectWorld() != null) {
             DimensionParametersResolver.Parameters params = DimensionParametersResolver.INSTANCE.getDimensionMap().get(

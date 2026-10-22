@@ -9,7 +9,6 @@ import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.ViewArea;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import net.minecraft.client.renderer.culling.Frustum;
-import net.minecraft.client.renderer.extract.LevelExtractor;
 import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.core.BlockPos;
 import org.joml.Vector3d;
@@ -39,8 +38,8 @@ import org.valkyrienskies.mod.mixinducks.client.render.LevelRendererVanillaDuck;
  * MixinLevelRendererVanilla} already recompiles any ship section whose mesh has no renderable
  * layers, so resetting hands it straight back to the existing compile path.
  */
-@Mixin(LevelExtractor.class)
-public abstract class MixinLevelExtractorVanilla {
+@Mixin(LevelRenderer.class)
+public abstract class MixinLevelRendererExtractVanilla {
 
     /**
      * Makes sure ship render sections are in {@code visibleSections} before block entities are

@@ -18,7 +18,6 @@ import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.ViewArea;
 import net.minecraft.client.renderer.chunk.ChunkSectionsToRender;
 import net.minecraft.client.renderer.chunk.RenderRegionCache;
-import net.minecraft.client.renderer.chunk.RenderSectionRegion;
 import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.client.renderer.state.level.BlockOutlineRenderState;
@@ -196,7 +195,7 @@ public abstract class MixinLevelRendererVanilla implements LevelRendererDuck, Le
         // while plain ship blocks kept rendering, because the render half re-adds the sections.
         Vec3 cameraPos = null;
         try {
-            cameraPos = Minecraft.getInstance().gameRenderer.mainCamera().position();
+            cameraPos = Minecraft.getInstance().gameRenderer.getMainCamera().position();
         } catch (final Throwable ignored) {
             // No camera this phase - fall through and skip the distance sort below.
         }
@@ -224,11 +223,7 @@ public abstract class MixinLevelRendererVanilla implements LevelRendererDuck, Le
                         // Shipyard chunk content is client-loaded (MixinClientChunkCache), and all
                         // worldgen stages are skipped for shipyard chunks, so this is cheap.
                         try {
-                            final RenderSectionRegion region = new RenderRegionCache()
-                                .createRegion(level, SectionPos.asLong(x, sectionY, z));
-                            if (region != null) {
-                                renderSection.compileSync(region);
-                            }
+                            renderSection.compileSync(new RenderRegionCache());
                         } catch (final Throwable ignored) {
                             // Chunk data not available client-side yet; retry next frame.
                         }
@@ -306,7 +301,7 @@ public abstract class MixinLevelRendererVanilla implements LevelRendererDuck, Le
             return original.call(modelView, x, y, z, visibility, atlasWidth, atlasHeight);
         }
 
-        final Camera camera = Minecraft.getInstance().gameRenderer.mainCamera();
+        final Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
         final Vec3 camPos = camera.position();
         final BlockPos camBlock = camera.blockPosition();
         final BlockPos origin = renderSection.getRenderOrigin(); // shipyard-space section origin

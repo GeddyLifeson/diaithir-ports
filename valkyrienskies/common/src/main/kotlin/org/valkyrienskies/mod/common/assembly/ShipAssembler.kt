@@ -711,22 +711,13 @@ object ShipAssembler {
         return 1
     }
 
-    // 26.2: StructureProcessor is now an interface. Its abstract-in-spirit override point is the
-    // (now @Deprecated but still functional) 6-param processBlock(level, targetPosition,
-    // referencePos, templateRelativePos, processedBlockInfo, settings) default method - simpler to
-    // match exactly than the newer 7-param process(...) overload (which carries a jspecify
-    // @Nullable annotation on one param that made Kotlin's override resolution fail outright rather
-    // than just warn). VS2's original body never used the "original" block info anyway, so nothing
-    // is lost. getType() was replaced by an abstract codec(): since this processor is only ever
-    // used programmatically (never round-tripped through a datapack, same as the old getType()
-    // returning null said), codec() just throws.
     class ICopyableProcessor(
         val oldShipIdToNewShipId: Map<ShipId, ShipId>,
         val centerPositions: Map<Long, Pair<Vector3d, Vector3d>>
-    ): StructureProcessor {
+    ): StructureProcessor() {
         override fun processBlock(
-            level: LevelReader, targetPosition: BlockPos, referencePos: BlockPos, templateRelativePos: BlockPos,
-            processedBlockInfo: StructureTemplate.StructureBlockInfo, settings: StructurePlaceSettings
+            level: LevelReader, targetPosition: BlockPos, referencePos: BlockPos,
+            originalBlockInfo: StructureTemplate.StructureBlockInfo, processedBlockInfo: StructureTemplate.StructureBlockInfo, settings: StructurePlaceSettings
         ): StructureTemplate.StructureBlockInfo? {
             val block = processedBlockInfo.state.block
             if (block !is ICopyableBlock) return processedBlockInfo
@@ -734,8 +725,7 @@ object ShipAssembler {
             return processedBlockInfo
         }
 
-        override fun codec(): com.mojang.serialization.MapCodec<out StructureProcessor> =
-            throw UnsupportedOperationException("ICopyableProcessor is used programmatically only, never serialized to a datapack")
+        override fun getType(): StructureProcessorType<*> = throw UnsupportedOperationException("used in code only, never from a datapack")
     }
 
     // Pre-computed "all sky light 15" DataLayer template (2048 bytes, every nibble = 0xF).
