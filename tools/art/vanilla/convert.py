@@ -117,6 +117,14 @@ def tabula(path):
     return tree(parts, roots, t['textureWidth'], t['textureHeight'])
 
 
+def fnum(x):
+    """A literal from Java code; a variable (such as a model scale passed in) counts as 0."""
+    try:
+        return float(x.strip().rstrip('Ff'))
+    except ValueError:
+        return 0.0
+
+
 def uwjava(path):
     num = r'(-?[\d.]+)F?'
     t = open(path).read()
@@ -125,16 +133,23 @@ def uwjava(path):
     for m in re.finditer(r'this\.(\w+) = new \w*ModelBox\w*\(this, (\d+), (\d+)\)', t):
         parts[m[1]] = dict(uv=[int(m[2]), int(m[3])], pivot=[0, 0, 0], rot=[0, 0, 0], boxes=[], mirror=False, children=[])
     for m in re.finditer(r'this\.(\w+)\.mirror = true', t):
-        parts[m[1]]['mirror'] = True
-    for m in re.finditer(r'this\.(\w+)\.setRotationPoint\(' + ', '.join([num] * 3) + r'\)', t):
-        parts[m[1]]['pivot'] = [float(m[i]) for i in (2, 3, 4)]
+        if m[1] in parts:
+            parts[m[1]]['mirror'] = True
+    for m in re.finditer(r'this\.(\w+)\.(?:setRotationPoint|setPos)\(' + ', '.join([num] * 3) + r'\)', t):
+        if m[1] in parts:
+            parts[m[1]]['pivot'] = [float(m[i]) for i in (2, 3, 4)]
     for m in re.finditer(r'this\.(\w+)\.addBox\(([^)]*)\)', t):
-        parts[m[1]]['boxes'].append([float(x.strip().rstrip('Ff')) for x in m[2].split(',')][:7])
-    for m in re.finditer(r'setRotateAngle\(this\.(\w+)|setRotateAngle\((\w+), ' + ', '.join([num] * 3) + r'\)', t):
-        if m[2]:
-            parts[m[2]]['rot'] = [float(m[i]) for i in (3, 4, 5)]
+        if m[1] in parts:
+            parts[m[1]]['boxes'].append([fnum(x) for x in m[2].split(',')][:7])
+    for m in re.finditer(r'setRotateAngle\((?:this\.)?(\w+), ' + ', '.join([num] * 3) + r'\)', t):
+        if m[1] in parts:
+            parts[m[1]]['rot'] = [float(m[i]) for i in (2, 3, 4)]
+    for m in re.finditer(r'this\.(\w+)\.rotateAngle([XYZ]) = ' + num, t):
+        if m[1] in parts:
+            parts[m[1]]['rot']['XYZ'.index(m[2])] = float(m[3])
     for m in re.finditer(r'this\.(\w+)\.addChild\(this\.(\w+)\)', t):
-        parts[m[1]]['children'].append(m[2])
+        if m[1] in parts and m[2] in parts:
+            parts[m[1]]['children'].append(m[2])
     roots = [p for p in parts if not any(p in q['children'] for q in parts.values())]
     return tree(parts, roots, tw, th)
 
@@ -146,6 +161,9 @@ if __name__ == '__main__':
     except FileNotFoundError:
         data = {}
     for name, path in zip(rest[::2], rest[1::2]):
-        data[name] = {'geo': geo, 'tabula': tabula, 'uwjava': uwjava}[kind](path)
-        print(name, len(data[name]['faces']))
+        try:
+            data[name] = {'geo': geo, 'tabula': tabula, 'uwjava': uwjava}[kind](path)
+            print(name, len(data[name]['faces']))
+        except Exception as e:
+            print(name, 'skipped:', e)
     json.dump(data, open(out, 'w'))

@@ -84,6 +84,14 @@ MONSTERS = {
     'snow_golem': ('SnowGolemModel#createBodyLayer', ['snow_golem/snow_golem'], '-', [(r'arm', 'wood'), (r'.', 'stone')], False),
 }
 MOBS.update(MONSTERS)
+BESTIARY = {   # Diaithir Bestiary (GeckoLib), converted with convert.py geo
+    'aurelith': ('aurelith', ['diaithirbestiary/aurelith'], '-', [(r'halo|arm', 'metal'), (r'head', 'skin'), (r'.', 'cloth')], False),
+    'bumblesnout': ('bumblesnout', ['diaithirbestiary/bumblesnout'], '-', [(r'snout', 'skin'), (r'.', 'fur')], True),
+    'emberwyrm': ('emberwyrm', ['diaithirbestiary/emberwyrm'], '-', [(r'wing', 'wing'), (r'.', 'shell')], False),
+    'hollowmourn': ('hollowmourn', ['diaithirbestiary/hollowmourn'], '-', [(r'head', 'bone'), (r'.', 'cloth')], False),
+    'ironstrider': ('ironstrider', ['diaithirbestiary/ironstrider'], '-', [(r'.', 'metal')], False),
+}
+MOBS.update(BESTIARY)
 
 
 def material(rules, part, cube):
@@ -145,6 +153,10 @@ def two(base, a, kinds, occl, rng, s, legs, ref, orig):
 
 
 def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
+    k = src.size[0] // layer['tw']
+    if k > 1 and src.size == (layer['tw'] * k, layer['th'] * k):   # a hi-res skin: keep its detail, scale the UVs instead
+        layer = dict(tw=layer['tw'] * k, th=layer['th'] * k, faces=[dict(f, v=[[*v[:3], v[3] * k, v[4] * k] for v in f['v']]) for f in layer['faces']])
+        s = max(1, s // k)
     tw, th = layer['tw'], layer['th']
     src = np.asarray(src.convert('RGBA').resize((tw, th), Image.NEAREST) if src.size != (tw, th) else src.convert('RGBA'), np.float32)
     big = src.repeat(s, 0).repeat(s, 1)
@@ -206,12 +218,10 @@ def paint_mob(layer, rules, hide, hooves, src, ao, s=4):
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
 
 
-if __name__ == '__main__':
-    blender, layers_json, tex, outdir = sys.argv[1:5]
-    names = sys.argv[5:] or list(MOBS)
+def run(table, blender, layers_json, tex, outdir, names):
     layers = json.load(open(layers_json)); outdir = Path(outdir); outdir.mkdir(parents=True, exist_ok=True)
     for mob in names:
-        key, textures, hide, rules, hooves = MOBS[mob]
+        key, textures, hide, rules, hooves = table[mob]
         ao = outdir / f'_ao_{mob}.png'
         subprocess.run([blender, str(HERE / 'poly_ao.py'), layers_json, key, '4', hide, str(ao)], check=True, capture_output=True)
         for t in textures:
@@ -224,3 +234,8 @@ if __name__ == '__main__':
             paint_mob(layers[k or key], rules, hide, hooves, Image.open(Path(tex) / f'{t}.png'), Image.open(a2)).save(dst)
             print(f'  {t}: {paint_mob.uncovered:.0%} of texels outside the model', flush=True)
         print(mob, len(textures), flush=True)
+
+
+if __name__ == '__main__':
+    blender, layers_json, tex, outdir = sys.argv[1:5]
+    run(MOBS, blender, layers_json, tex, outdir, sys.argv[5:] or list(MOBS))

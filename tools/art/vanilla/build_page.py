@@ -3,6 +3,10 @@ import base64, json, sys
 from pathlib import Path
 from vanilla import MOBS
 layers_json, tex, painted, dest, title, group, *mobs = sys.argv[1:]
+if mobs and mobs[0].startswith('--table='):   # another creature table, e.g. --table=wyrm (preview subset)
+    import importlib
+    mod = importlib.import_module(mobs.pop(0)[8:])
+    MOBS = mod.preview(tex)
 L = json.load(open(layers_json))
 b64 = lambda p: 'data:image/png;base64,' + base64.b64encode(open(p, 'rb').read()).decode()
 nice = lambda t: t.split('/')[-1].replace('_', ' ').capitalize()
