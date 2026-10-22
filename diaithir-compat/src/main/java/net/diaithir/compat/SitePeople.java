@@ -194,6 +194,19 @@ public final class SitePeople {
         return out;
     }
 
+    /**
+     * Dresses one mob in a culture's kit, as a site's people are dressed; diaithir-ages calls it by reflection for town rulers
+     * and followers. Returns false for a culture with no kit.
+     */
+    public static boolean dressAs(Mob mob, String culture, boolean female) {
+        JsonObject d = data();
+        JsonObject cultures = d.getAsJsonObject("cultures"), kits = d.getAsJsonObject("kits");
+        if (cultures == null || kits == null || culture == null || !cultures.has(culture) || !(mob.level() instanceof ServerLevel level)) return false;
+        JsonObject people = cultures.getAsJsonObject(culture);
+        dress(level, mob, people, kits.getAsJsonObject(people.get("kit").getAsString()), female, RandomSource.create(mob.getUUID().hashCode()));
+        return true;
+    }
+
     private static void dress(ServerLevel level, Mob mob, JsonObject people, JsonObject kit, boolean female, RandomSource random) {
         if (mob instanceof Villager villager) {
             var vtype = ResourceKey.create(Registries.VILLAGER_TYPE, Identifier.parse(people.get("villager_type").getAsString()));
