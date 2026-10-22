@@ -71,6 +71,9 @@ public class RemorphedNeoForge {
     }
 
     private static PermissionNode<@NotNull Boolean> node(String permission) {
-        return PermissionCheckerImpl.createNode(Remorphed.MODID, PermissionManager.node(permission));
+        String path = PermissionManager.node(permission);
+        // CraftedCore 8.x returns its map's previous node (null the first time), so the second call hands back the first; the equal second node stays in its map
+        PermissionCheckerImpl.createNode(Remorphed.MODID, path);
+        return PermissionCheckerImpl.createNode(Remorphed.MODID, path);
     }
 }
