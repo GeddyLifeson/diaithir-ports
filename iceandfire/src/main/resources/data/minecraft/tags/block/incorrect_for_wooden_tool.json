@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "iceandfire:sapphire_ore",
+    "iceandfire:silver_ore",
+    "iceandfire:deepslate_silver_ore"
+  ]
+}

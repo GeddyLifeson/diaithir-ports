@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "iceandfire:deathworm_chitin_yellow"
+  },
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "iceandfire:deathworm_yellow_chestplate"
+  },
+  "show_notification": true
+}

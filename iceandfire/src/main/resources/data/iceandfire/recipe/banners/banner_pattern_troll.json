@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "iceandfire:troll_tusk",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "iceandfire:banner_pattern_troll",
+    "count": 1
+  }
+}

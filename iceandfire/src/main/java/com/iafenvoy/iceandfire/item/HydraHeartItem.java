@@ -1,0 +1,57 @@
+package com.iafenvoy.iceandfire.item;
+
+import com.iafenvoy.iceandfire.config.IafCommonConfig;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
+import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+
+import java.util.function.Consumer;
+
+public class HydraHeartItem extends Item {
+    public HydraHeartItem() {
+        super(new Properties().stacksTo(1));
+    }
+
+    @Override
+    public void inventoryTick(@NotNull ItemStack stack, @NotNull ServerLevel world, @NotNull Entity entity, EquipmentSlot slot) {
+        if (entity instanceof Player player && player.getInventory().getNonEquipmentItems().subList(0, 9).stream().anyMatch(hotbarStack -> hotbarStack == stack)) {
+            double healthPercentage = player.getHealth() / Math.max(1, player.getMaxHealth());
+            if (healthPercentage < 1.0D) {
+                int level = 0;
+                if (IafCommonConfig.INSTANCE.tools.hydraHeartNerfedBrackets.getValue()) {
+                    if (healthPercentage < 0.25D) level = 2;
+                    else if (healthPercentage < 0.5D) level = 1;
+                    else if (healthPercentage < 0.75D) level = 0;
+                    else return;
+                } else {
+                    if (healthPercentage < 0.25D) level = 3;
+                    else if (healthPercentage < 0.5D) level = 2;
+                    else if (healthPercentage < 0.75D) level = 1;
+                }
+                //Consider using EffectInstance.combine
+                if (!player.hasEffect(MobEffects.REGENERATION) || player.getEffect(MobEffects.REGENERATION).getAmplifier() < level)
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, IafCommonConfig.INSTANCE.tools.hydraHeartRegenDuration.getValue(), level, true, false));
+            }
+            //In hotbar
+        }
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull TooltipDisplay display, @NonNull Consumer<Component> tooltip, @NotNull TooltipFlag type) {
+        super.appendHoverText(stack, context, display, tooltip, type);
+        tooltip.accept(Component.translatable("item.iceandfire.legendary_weapon.desc").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.iceandfire.hydra_heart.desc_0").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.iceandfire.hydra_heart.desc_1").withStyle(ChatFormatting.GRAY));
+    }
+}

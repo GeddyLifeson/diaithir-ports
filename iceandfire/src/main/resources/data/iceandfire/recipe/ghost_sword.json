@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "iceandfire:dragonbone_sword",
+    "iceandfire:ghost_ingot"
+  ],
+  "result": {
+    "id": "iceandfire:ghost_sword"
+  }
+}
