@@ -160,13 +160,13 @@ public class ModelBovid extends AdvancedEntityModel<EntityBovid> {
         this.head_snout = new AdvancedModelBox(this, 98, 52);
         this.head_snout.setRotationPoint(0F, 1.5F, -7F);
         this.head_snout.addBox(-2.5F, -2.5F, -5F, 5F, 5F, 5F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 122, 83);
+        this.eye_left = new AdvancedModelBox(this, 108, 0);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(3.02F, -2F, -4F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 122, 83);
+        this.eye_left.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 108, 0);
         this.eye_right.setRotationPoint(-3.02F, -2F, -4F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 72, 83);
         this.head_ear_left.setRotationPoint(2.5F, -2.5F, 1.5F);
         this.head_ear_left.addBox(0F, -1.5F, 0F, 1F, 3F, 2F, 0F);

@@ -105,13 +105,13 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
         this.head_snout = new AdvancedModelBox(this, 60, 90);
         this.head_snout.setRotationPoint(0F, 0.5F, -7F);
         this.head_snout.addBox(-2F, -2F, -4F, 4F, 4F, 4F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 20, 69);
+        this.eye_left = new AdvancedModelBox(this, 116, 0);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(2.52F, -1.5F, -4.5F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 20, 69);
+        this.eye_left.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 116, 0);
         this.eye_right.setRotationPoint(-2.52F, -1.5F, -4.5F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 14, 69);
         this.head_ear_left.setRotationPoint(2F, -1.5F, 0F);
         this.head_ear_left.addBox(0F, -1F, 0F, 1F, 2F, 2F, 0F);

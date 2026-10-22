@@ -102,13 +102,13 @@ public class ModelGlyptodont extends AdvancedEntityModel<EntityGlyptodont> {
         this.head_snout = new AdvancedModelBox(this, 48, 96);
         this.head_snout.setRotationPoint(0F, 0.8F, -4F);
         this.head_snout.addBox(-1.5F, -1.5F, -3F, 3F, 3F, 3F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 76, 96);
+        this.eye_left = new AdvancedModelBox(this, 88, 0);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(2.52F, -1.25F, -1F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 76, 96);
+        this.eye_left.addBox(0F, -1F, -1.5F, 0F, 2F, 3F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 88, 0);
         this.eye_right.setRotationPoint(-2.52F, -1.25F, -1F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -1F, -1.5F, 0F, 2F, 3F, 0F);
         this.tail = new AdvancedModelBox(this, 64, 37);
         this.tail.setRotationPoint(0F, -1.5F, 9.5F);
         this.tail.addBox(-2.5F, 0F, -2.5F, 5F, 16F, 5F, 0F);

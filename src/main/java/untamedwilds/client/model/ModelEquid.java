@@ -110,13 +110,13 @@ public class ModelEquid extends AdvancedEntityModel<EntityEquid> {
         this.head_snout.setRotationPoint(0F, 1.5F, -8F);
         this.head_snout.addBox(-2F, -2.5F, -6F, 4F, 5F, 6F, 0F);
         this.setRotateAngle(head_snout, 0.05F, 0F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 124, 61);
+        this.eye_left = new AdvancedModelBox(this, 114, 0);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(2.52F, -1.75F, -5F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 124, 61);
+        this.eye_left.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 114, 0);
         this.eye_right.setRotationPoint(-2.52F, -1.75F, -5F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 110, 61);
         this.head_ear_left.setRotationPoint(2F, -2F, 1.5F);
         this.head_ear_left.addBox(0F, -2F, 0F, 1F, 4F, 2F, 0F);

@@ -101,13 +101,13 @@ public class ModelCanid extends AdvancedEntityModel<EntityCanid> {
         this.head_snout = new AdvancedModelBox(this, 84, 25);
         this.head_snout.setRotationPoint(0F, 1.2F, -5F);
         this.head_snout.addBox(-1.75F, -1.75F, -5F, 3.5F, 3.5F, 5F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 14, 38);
+        this.eye_left = new AdvancedModelBox(this, 108, 0);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(3.02F, -1.5F, -2F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 14, 38);
+        this.eye_left.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 108, 0);
         this.eye_right.setRotationPoint(-3.02F, -1.5F, -2F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -1.5F, -1.5F, 0F, 3F, 3F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 102, 25);
         this.head_ear_left.setRotationPoint(2.5F, -1.5F, 1.5F);
         this.head_ear_left.addBox(0F, -2F, 0F, 1F, 4F, 3F, 0F);

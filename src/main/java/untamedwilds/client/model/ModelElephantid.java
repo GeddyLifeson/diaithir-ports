@@ -110,13 +110,13 @@ public class ModelElephantid extends AdvancedEntityModel<EntityElephantid> {
         this.head_main.setRotationPoint(0F, 0F, -5F);
         this.head_main.addBox(-7F, -8F, -12F, 14F, 16F, 13F, 0F);
         this.setRotateAngle(head_main, 0.3F, 0F, 0F);
-        this.eye_left = new AdvancedModelBox(this, 72, 97);
+        this.eye_left = new AdvancedModelBox(this, 194, 29);
         this.eye_left.mirror = true;
         this.eye_left.setRotationPoint(7.02F, -4F, -10F);
-        this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
-        this.eye_right = new AdvancedModelBox(this, 72, 97);
+        this.eye_left.addBox(0F, -2F, -2.5F, 0F, 4F, 5F, 0F);
+        this.eye_right = new AdvancedModelBox(this, 194, 29);
         this.eye_right.setRotationPoint(-7.02F, -4F, -10F);
-        this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
+        this.eye_right.addBox(0F, -2F, -2.5F, 0F, 4F, 5F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 72, 60);
         this.head_ear_left.setRotationPoint(6.5F, -6.5F, 1.5F);
         this.head_ear_left.addBox(0F, -6F, 0F, 1F, 12F, 9F, 0F);
