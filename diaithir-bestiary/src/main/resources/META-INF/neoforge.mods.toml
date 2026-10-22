@@ -1,0 +1,19 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbestiary"
+version = "${version}"
+displayName = "Diaithir Bestiary"
+description = "Creatures defined by datapack JSON with GeckoLib models: beasts, rideable flyers, piloted mechs, two-phase avatar bosses and stalkers that only move unseen. Five example creatures included."
+
+[[dependencies.diaithirbestiary]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirbestiary]]
+modId = "geckolib"
+type = "required"
+versionRange = "[5.5,)"

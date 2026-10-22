@@ -1,0 +1,9 @@
+{
+  "preset": "flyer",
+  "width": 2.2,
+  "height": 1.8,
+  "stats": { "health": 60, "armor": 6, "damage": 8, "speed": 0.3, "flying_speed": 0.6, "follow_range": 40 },
+  "tame": { "item": "minecraft:blaze_rod", "chance": 0.25 },
+  "spawn": { "biomes": "minecraft:is_mountain", "weight": 3 },
+  "loot_table": "diaithirbestiary:entities/emberwyrm"
+}
