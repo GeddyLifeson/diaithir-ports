@@ -48,6 +48,15 @@ public class ValkyrienCommonMixinConfigPlugin implements IMixinConfigPlugin {
         }
     }
 
+    // Looks a class up as a resource so that mixin classes are never loaded here.
+    private static boolean resourceExists(final String path) {
+        final ClassLoader loader = ValkyrienCommonMixinConfigPlugin.class.getClassLoader();
+        if (loader != null && loader.getResource(path) != null) {
+            return true;
+        }
+        return ClassLoader.getSystemResource(path) != null;
+    }
+
     @Override
     public void onLoad(final String s) {
         MixinExtrasBootstrap.init();
@@ -62,6 +71,12 @@ public class ValkyrienCommonMixinConfigPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(final String s, final String mixinClassName) {
         final VSRenderer renderer = getVSRenderer();
+
+        if (mixinClassName.equals(
+            "org.valkyrienskies.mod.mixin.feature.shipyard_entities.MixinPersistentEntitySectionManagerUnloads")) {
+            // C2ME overwrites PersistentEntitySectionManager.processUnloads; skip our replacement when it is present.
+            return !resourceExists("com/ishland/c2me/rewrites/chunksystem/mixin/fixes/MixinServerEntityManager.class");
+        }
 
         if (mixinClassName.contains("org.valkyrienskies.mod.mixin.mod_compat.immersive_portals")) {
             return LoadedMods.getImmersivePortals(); // Only load this mixin if immersive portals is present

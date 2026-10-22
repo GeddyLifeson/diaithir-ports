@@ -7,7 +7,6 @@
     "entity.MixinContainerEntity",
     "feature.fix_tp_ships_cross_dimension.MixinLevelChunk",
     "feature.forge_interact.MixinIForgePlayer",
-    "feature.shipyard_entities.MixinPersistentEntitySectionManager",
     "world.level.block.FireMixin"
   ],
   "client": [],

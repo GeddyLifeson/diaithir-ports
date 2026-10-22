@@ -51,4 +51,4 @@ ordering = "NONE"
 side = "BOTH"
 
 ["lithium:options"]
-mixin.ai.poi = false
+"mixin.ai.poi" = false

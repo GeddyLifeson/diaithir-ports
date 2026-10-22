@@ -66,6 +66,7 @@
     "feature.shipyard_entities.MixinEntitySection",
     "feature.shipyard_entities.MixinEntitySectionStorage",
     "feature.shipyard_entities.MixinPersistentEntitySectionManager",
+    "feature.shipyard_entities.MixinPersistentEntitySectionManagerUnloads",
     "feature.shipyard_entities.MixinProjectile",
     "feature.shipyard_entities.MixinServerLevel",
     "feature.shipyard_entities.MixinTransientEntitySectionManager",
