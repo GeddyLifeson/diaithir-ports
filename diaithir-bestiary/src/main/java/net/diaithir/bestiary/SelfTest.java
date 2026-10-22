@@ -7,9 +7,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.server.level.ClientInformation;
+import net.minecraft.server.network.CommonListenerCookie;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -17,13 +22,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.util.FakePlayer;
-import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,16 +43,25 @@ final class SelfTest {
 
     private SelfTest() {}
 
+    /** A fake player that, unlike NeoForge's FakePlayer, may mount: it is never added to the level and its connection goes nowhere. */
+    private static final class Rider extends ServerPlayer {
+        Rider(ServerLevel level) {
+            super(level.getServer(), level, new GameProfile(UUID.randomUUID(), "bestiary_selftest"), ClientInformation.createDefault());
+            new ServerGamePacketListenerImpl(level.getServer(), new net.minecraft.network.Connection(PacketFlow.SERVERBOUND), this,
+                    CommonListenerCookie.createInitial(getGameProfile(), false));
+        }
+    }
+
     private static final class Run {
         final CommandSourceStack source;
         final ServerLevel level;
-        final FakePlayer fake;
+        final ServerPlayer fake;
         final Map<Identifier, Creature> creatures = new LinkedHashMap<>();
         final List<String> fails = new ArrayList<>();
         final int start;
         int stage;
 
-        Run(CommandSourceStack source, ServerLevel level, FakePlayer fake, int start) {
+        Run(CommandSourceStack source, ServerLevel level, ServerPlayer fake, int start) {
             this.source = source;
             this.level = level;
             this.fake = fake;
@@ -66,7 +77,7 @@ final class SelfTest {
         MinecraftServer server = source.getServer();
         ServerLevel level = server.overworld();
         forceChunks(level, true);
-        FakePlayer fake = FakePlayerFactory.get(level, new GameProfile(UUID.randomUUID(), "bestiary_selftest"));
+        ServerPlayer fake = new Rider(level);
         Run r = new Run(source, level, fake, server.getTickCount());
         int i = 0;
         for (var entry : DiaithirBestiary.creatures(level).entrySet()) {
@@ -123,13 +134,13 @@ final class SelfTest {
             r.fake.snapTo(s.getX() + 8, s.getY(), s.getZ(), 90F, 0F);
             r.fake.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES, eye);
             boolean looking = s.isWatchedBy(r.fake);
-            r.fake.setYRot(r.fake.getYRot() + 180F);
+            r.fake.setYHeadRot(r.fake.getYHeadRot() + 180F);
             check(r, looking && !s.isWatchedBy(r.fake), id + " knows when it is watched");
         }
     }
 
     private static void rideChecks(Run r, Identifier id, Creature c) {
-        FakePlayer fake = r.fake;
+        ServerPlayer fake = r.fake;
         fake.snapTo(c.getX() + 1, c.getY(), c.getZ(), 0F, 0F);
         fake.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
         if (!(c instanceof Mech)) {
