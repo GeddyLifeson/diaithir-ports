@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "testmod",
+  "version": "0.1",
+  "name": "TestMod",
+  "description": "Mod to test CraftedCore",
+  "authors": [
+    "To_Craft"
+  ],
+  "license": "LGPL-3.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.tocraft.craftedcore.testmod.TestMod::initialize"
+    ]
+  }
+}

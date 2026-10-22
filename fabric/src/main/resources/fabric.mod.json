@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "craftedcore",
+  "version": "${version}",
+  "name": "CraftedCore",
+  "icon": "pack.png",
+  "description": "My library mod to make mods more compatible with mod loaders",
+  "authors": [
+    "To_Craft"
+  ],
+  "contact": {
+    "issues": "https://github.com/ToCraft/craftedcore/issues",
+    "sources": "https://github.com/ToCraft/craftedcore"
+  },
+  "license": "LGPL-3.0",
+  "environment": "*",
+  "mixins": [
+    "craftedcore.mixins.json",
+    "craftedcore-fabric.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "dev.tocraft.craftedcore.fabric.CraftedCoreFabric"
+    ],
+    "client": [
+      "dev.tocraft.craftedcore.fabric.client.CraftedCoreFabricClient"
+    ],
+    "modmenu": [
+      "dev.tocraft.craftedcore.fabric.CraftedCoreModMenu"
+    ]
+  },
+  "depends": {
+    "minecraft": ">=${minecraft}",
+    "fabricloader": ">=0.8.7+build.201",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config": ">=${clothConfig}"
+  }
+}

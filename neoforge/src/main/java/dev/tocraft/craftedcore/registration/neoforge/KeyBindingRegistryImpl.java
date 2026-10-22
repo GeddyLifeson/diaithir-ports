@@ -1,0 +1,40 @@
+package dev.tocraft.craftedcore.registration.neoforge;
+
+import com.mojang.logging.LogUtils;
+import dev.tocraft.craftedcore.registration.KeyBindingRegistryService;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Options;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import org.apache.commons.lang3.ArrayUtils;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressWarnings("unused")
+@Environment(EnvType.CLIENT)
+public final class KeyBindingRegistryImpl implements KeyBindingRegistryService {
+    private static final Logger LOGGER = LogUtils.getLogger();
+    private static final List<KeyMapping> MAPPINGS = new ArrayList<>();
+    private static boolean eventCalled = false;
+
+    @Override
+    public void register(KeyMapping mapping) {
+        if (eventCalled) {
+            Options options = Minecraft.getInstance().options;
+            options.keyMappings = ArrayUtils.add(options.keyMappings, mapping);
+            LOGGER.warn("Key mapping {} registered after event", mapping.getName(), new RuntimeException());
+        } else {
+            MAPPINGS.add(mapping);
+        }
+    }
+
+    public static void event(@NotNull RegisterKeyMappingsEvent event) {
+        MAPPINGS.forEach(event::register);
+        eventCalled = true;
+    }
+}

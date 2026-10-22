@@ -1,0 +1,118 @@
+package dev.tocraft.craftedcore.gui;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.AbstractScrollArea;
+import net.minecraft.client.gui.components.MultiLineTextWidget;
+import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
+import net.minecraft.client.gui.narration.NarratedElementType;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.sounds.SoundManager;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.TextColor;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressWarnings("unused")
+public class LongTextWidget extends AbstractScrollArea {
+    protected final List<MultiLineTextWidget> text = new ArrayList<>();
+    protected final boolean separators;
+    private final int row_width;
+
+    public LongTextWidget(int x, int y, int width, int height, boolean separators, int row_width) {
+        super(x, y, width, height, Component.nullToEmpty(""), AbstractScrollArea.defaultSettings(SCROLLBAR_WIDTH));
+        this.separators = separators;
+        this.row_width = row_width;
+    }
+
+    @Override
+    protected int contentHeight() {
+        int i = 8; // 4 space below and on top of the text
+
+        for (MultiLineTextWidget widget : text) {
+            i += widget.getHeight();
+        }
+
+        return i;
+    }
+
+    public void addText(Component text) {
+        this.addText(text, Minecraft.getInstance().font, -1);
+    }
+
+    public void addText(Component text, Font font, int color) {
+        Component styled = (color != -1) ? text.copy().withStyle(s -> s.withColor(TextColor.fromRgb(color & 0xFFFFFF))) : text;
+        this.text.add(new MultiLineTextWidget(styled, font));
+    }
+
+    protected int textWidth() {
+        return row_width;
+    }
+
+    @Override
+    protected double scrollRate() {
+        return (double) contentHeight() / text.size() / 2;
+    }
+
+    @Override
+    protected int scrollBarX() {
+        return super.scrollBarX() - (getWidth() - textWidth()) / 2;
+    }
+
+    @Override
+    protected void extractWidgetRenderState(@NotNull GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float delta) {
+        guiGraphics.enableScissor(this.getX(), this.getY(), this.getRight(), this.getBottom());
+
+        int x = this.getX() + (getWidth() - textWidth()) / 2;
+        int y = getY() - (int) scrollAmount() + 4; // 4 space on top
+        for (MultiLineTextWidget widget : this.text) {
+            widget.setPosition(x, y);
+            widget.setMaxWidth(textWidth());
+            widget.extractRenderState(guiGraphics, mouseX, mouseY, delta);
+
+            y += widget.getHeight();
+        }
+
+        guiGraphics.disableScissor();
+        extractScrollbar(guiGraphics, mouseX, mouseY);
+
+        if (separators) {
+            renderSeparators(guiGraphics);
+        }
+    }
+
+    protected void renderSeparators(@NotNull GuiGraphicsExtractor guiGraphics) {
+        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, Screen.INWORLD_HEADER_SEPARATOR, this.getX(), this.getY() - 2, 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, Screen.INWORLD_FOOTER_SEPARATOR, this.getX(), this.getBottom(), 0.0F, 0.0F, this.getWidth(), 2, 32, 2);
+    }
+
+
+    public void updateSize(int width, @NotNull HeaderAndFooterLayout layout) {
+        this.updateSizeAndPosition(width, layout.getContentHeight(), layout.getHeaderHeight());
+    }
+
+    public void updateSizeAndPosition(int width, int height, int y) {
+        this.setSize(width, height);
+        this.setPosition(0, y);
+        this.refreshScrollAmount();
+    }
+
+    @Override
+    protected void updateWidgetNarration(@NotNull NarrationElementOutput narrationElementOutput) {
+        MutableComponent narration = Component.empty();
+        for (MultiLineTextWidget widget : text) {
+            narration.append(widget.getMessage());
+        }
+        narrationElementOutput.add(NarratedElementType.TITLE, narration);
+    }
+
+    @Override
+    public void playDownSound(SoundManager handler) {
+    }
+}

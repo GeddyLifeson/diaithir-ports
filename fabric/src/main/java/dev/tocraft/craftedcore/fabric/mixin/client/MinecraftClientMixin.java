@@ -1,0 +1,24 @@
+package dev.tocraft.craftedcore.fabric.mixin.client;
+
+import dev.tocraft.craftedcore.event.client.ClientPlayerEvents;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import org.jetbrains.annotations.ApiStatus;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@SuppressWarnings("unused")
+@ApiStatus.Internal
+@Environment(EnvType.CLIENT)
+@Mixin(Minecraft.class)
+public abstract class MinecraftClientMixin {
+    @Inject(method = "disconnect(Lnet/minecraft/client/gui/screens/Screen;ZZ)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/GameNarrator;clear()V"))
+    private void onDisconnect(Screen screen, boolean retainDownloadedPacks, boolean dropClientLevel, CallbackInfo ci) {
+        ClientPlayerEvents.CLIENT_PLAYER_QUIT.invoke().quit(Minecraft.getInstance().player);
+    }
+}

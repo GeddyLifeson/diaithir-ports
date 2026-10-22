@@ -1,0 +1,33 @@
+package dev.tocraft.craftedcore.event.client;
+
+import dev.tocraft.craftedcore.event.Event;
+import dev.tocraft.craftedcore.event.EventFactory;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.Nullable;
+
+@SuppressWarnings({"unused", "SameReturnValue"})
+@Environment(EnvType.CLIENT)
+public final class RenderEvents {
+    public static final Event<HUDRendering> HUD_RENDERING = EventFactory.createWithVoid();
+    public static final Event<OverlayRendering> RENDER_HEALTH = EventFactory.createWithInteractionResult();
+    public static final Event<OverlayRendering> RENDER_FOOD = EventFactory.createWithInteractionResult();
+    public static final Event<OverlayRendering> RENDER_BREATH = EventFactory.createWithInteractionResult();
+    public static final Event<OverlayRendering> RENDER_MOUNT_HEALTH = EventFactory.createWithInteractionResult();
+
+    @Environment(EnvType.CLIENT)
+    @FunctionalInterface
+    public interface HUDRendering {
+        void extractRenderState(GuiGraphicsExtractor graphics, DeltaTracker tickCounter);
+    }
+
+    @Environment(EnvType.CLIENT)
+    @FunctionalInterface
+    public interface OverlayRendering {
+        InteractionResult render(@Nullable GuiGraphicsExtractor graphics, Player player);
+    }
+}

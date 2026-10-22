@@ -1,0 +1,51 @@
+[![Build](https://img.shields.io/github/actions/workflow/status/ToCraft/craftedcore/build.yml?style=for-the-badge)](https://github.com/ToCraft/craftedcore/actions/workflows/build.yml)
+[![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fmaven.tocraft.dev%2Fpublic%2Fdev%2Ftocraft%2Fcraftedcore%2Fmaven-metadata.xml&style=for-the-badge&label=CraftedCore)](https://maven.tocraft.dev/#/public/dev/tocraft/craftedcore)
+[![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/ToCraft)
+
+# CraftedCore
+
+This mod is my basic library mod, so my mods would work across mod loader, and it won't take me that long to port my
+mods.
+
+## Legal Note
+
+This mod is massively inspired by Architectury API and integrates the Mixin Trace mod by comp500, which is licensed
+under MIT.
+Everything not licensed under LGPL-3.0 is marked as such.
+
+## How to use?
+
+Use the following maven:
+
+```Groovy
+maven {
+    name "tocraftMavenPublic"
+    url "https://maven.tocraft.dev/public"
+}
+```
+
+And the following mod-dependency:
+
+```Groovy
+modApi "dev.tocraft:craftedcore:${minecraft}-${craftedcore_version}"
+```
+
+#### e.g. for fabric and forge projects, which use a common-project:
+
+common:
+
+```Groovy
+modApi "dev.tocraft:craftedcore:8.0"
+```
+
+fabric:
+
+```Groovy
+modApi "dev.tocraft:craftedcore-fabric:8.0"
+```
+
+neoforge:
+
+```Groovy
+modApi "dev.tocraft:craftedcore-neoforge:8.0"
+```
