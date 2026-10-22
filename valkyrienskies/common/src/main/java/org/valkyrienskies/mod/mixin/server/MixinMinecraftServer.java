@@ -150,8 +150,14 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         );
     }
 
+    /**
+     * Runs at the start of tickChildren, not at the head of tickServer: when the server is empty for
+     * pause-when-empty-seconds, vanilla tickServer returns early (autosave + tickConnection only) and
+     * never reaches tickChildren or the TAIL hook below. A HEAD hook there ran preTickGame without a
+     * matching postTickGame, and vs-core's stage constraints then crashed the server on the next tick.
+     */
     @Inject(
-        method = "tickServer",
+        method = "tickChildren",
         at = @At("HEAD")
     )
     private void preTick(final CallbackInfo ci) {
