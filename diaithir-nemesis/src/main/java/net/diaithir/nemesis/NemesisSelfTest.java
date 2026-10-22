@@ -35,7 +35,7 @@ final class NemesisSelfTest {
         NemesisData data = NemesisData.get(server);
         if (!data.nemeses.isEmpty()) return List.of("this world already has nemeses; run the self test on a test world");
         FakePlayer victim = FakePlayerFactory.get(level, new GameProfile(UUID.randomUUID(), "nemesis_selftest"));
-        BlockPos at = surface(level, 1000, 1000);
+        BlockPos at = dryLand(level);
         victim.snapTo(at.getX(), at.getY(), at.getZ(), 0F, 0F);
         victim.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_AXE));
         data.houses.put(victim.getStringUUID(), "Selftest House");
@@ -109,6 +109,17 @@ final class NemesisSelfTest {
         data.houses.remove(victim.getStringUUID());
         data.setDirty();
         return fails;
+    }
+
+    // ambushes need dry ground past the safe radius; on the Earth map a fixed spot can be open sea
+    private static BlockPos dryLand(ServerLevel level) {
+        BlockPos spawn = level.getRespawnData().pos();
+        for (int deg = 0; deg < 360; deg += 30) {
+            double a = Math.toRadians(deg);
+            BlockPos at = surface(level, spawn.getX() + (int) (1000 * Math.cos(a)), spawn.getZ() + (int) (1000 * Math.sin(a)));
+            if (level.getFluidState(at.below()).isEmpty()) return at;
+        }
+        return surface(level, spawn.getX() + 1000, spawn.getZ());
     }
 
     // Loads the chunks an ambush can land in, as a real player's view distance would.
