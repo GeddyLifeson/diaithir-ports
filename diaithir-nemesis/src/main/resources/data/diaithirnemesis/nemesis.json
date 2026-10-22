@@ -13,12 +13,60 @@
  "lieChance": 0.2,
  "ages": {
   "I": {
-   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan"],
-   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw"],
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Bran", "Cnamh", "Faol", "Madadh", "Sionnach", "Torc", "Breac", "Ciar", "Croman", "Daol", "Dearg", "Feannag", "Fraoch", "Garran", "Olc", "Riabhach", "Scread", "Tarbh", "Teine", "Toll", "Easog", "Fiadh", "Corr", "Bradan", "Leamhan", "Gaoth", "Neimh", "Rocan", "Eilid", "Gruag", "Lon", "Cnoc", "Speach", "Cuilean", "Dris", "Fuar", "Ceo", "Lasair", "Coire", "Searbh"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Stone-Fang", "the Unburied", "Marrow-Eater", "the Weeping", "Flint-Claw", "the Lean", "Mist-Born", "Hearth-Eater", "the Drowned", "Elk-Killer", "the Crooked", "Tusk-Bearer", "Moss-Back", "the Gaunt", "Blood-Snout", "the Pale", "Cave-Dweller", "Snow-Stalker", "the Howler", "Spear-Breaker", "Reed-Lurker", "the Mournful", "Ember-Eye", "the Many-Legged", "Hide-Ripper"],
    "ranks": ["Prowler", "Stalker", "Hunter of the Folk", "Dread of the Fire", "Bane of the Hearths"],
-   "warbands": ["the Frost Pack", "the Hollow Ones", "the Bone-Gnawers", "the Ash Walkers"],
+   "warbands": ["the Frost Pack", "the Hollow Ones", "the Bone-Gnawers", "the Ash Walkers", "the Cave Brood", "the Marrow Eaters", "the Weeping Kin", "the Flint Fangs"],
    "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
    "heir": "get of"
+  },
+  "II": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Arracht", "Bodhar", "Breac", "Cealg", "Cnamhan", "Corrach", "Dorcan", "Eascann", "Faolchu", "Fuathan", "Gearan", "Glas", "Greim", "Iorrach", "Lomthach", "Madra", "Mallach", "Neimhe", "Ochras", "Pocan", "Ruacan", "Saobh", "Scread", "Sionnach", "Smolach", "Tarbh", "Torc", "Uaigneach", "Urchar", "Bradan", "Ciar", "Cnoc", "Dian", "Easog", "Fraoch", "Gallan", "Leamh", "Mionnan", "Racan", "Sceach"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Flint-Tooth", "Cairn-Robber", "Fold-Breaker", "Field-Burner", "Barrow-Born", "Calf-Taker", "Grain-Spoiler", "the Unburied", "Tomb-Dweller", "Bog-Born", "Ox-Gorer", "Hearth-Robber", "the Gaunt", "Stone-Skin", "Boar-Tusk", "Mound-Waker", "the Red-Handed", "Pot-Breaker", "Sheep-Thief", "the Ravener", "Flint-Eye", "Peat-Black", "the Restless", "Byre-Burner", "Axe-Breaker"],
+   "ranks": ["Fold-Prowler", "Field-Stalker", "Taker of the Herds", "Dread of the Steadings", "Bane of the Cairn-Folk"],
+   "warbands": ["the Cairn Haunters", "the Fold Breakers", "the Barrow Kin", "the Flint Pack", "the Bog Walkers", "the Field Burners", "the Mound Dwellers", "the Herd Takers"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "seed of"
+  },
+  "III": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Arracht", "Bodhar", "Cnamh", "Dealg", "Eascu", "Faolchu", "Gealt", "Iarann", "Lann", "Madra", "Neimhe", "Oghmar", "Riabhach", "Sceach", "Tarbh", "Uaigneach", "Bearach", "Cearbh", "Dorchan", "Fearg", "Gairbheal", "Imreas", "Lochar", "Meirge", "Nodhan", "Orrach", "Feannog", "Rodhan", "Sleagh", "Tormach", "Ulchabh", "Bruid", "Cuilean", "Dubhlach", "Eitre", "Fuilteach", "Glasan", "Learg", "Muirgeach", "Scolb"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Torc-Taker", "the Unblessed", "Grove-Burner", "Cairn-Robber", "the Oath-Breaker", "Bronze-Tooth", "Iron-Hide", "the Unhallowed", "Well-Fouler", "Spear-Eater", "Chariot-Bane", "the Cursed", "Druid-Slayer", "King-Taker", "the Outcast", "Mound-Dweller", "Blood-Drinker", "Cauldron-Thief", "the Unburied", "Shield-Splitter", "Ford-Watcher", "Barrow-Born", "Stone-Breaker", "Geis-Breaker", "the Hound-Killer"],
+   "ranks": ["Ford-Lurker", "Raider of the Herds", "Terror of the Tuath", "Cursed by the Druids", "Foe of the High Kings"],
+   "warbands": ["the Grave-Wakers", "the Torc-Takers", "the Grove-Burners", "the Barrow Host", "the Cairn Pack", "the Oathless", "the Spear-Eaters", "the Iron Fangs"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "blood of"
+  },
+  "IV": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Bearach", "Cathal", "Ciar", "Dalach", "Faolan", "Fearghal", "Gall", "Lochlann", "Muireadhach", "Ronan", "Scolb", "Teimhean", "Uaine", "Breac", "Dorchadh", "Fraoch", "Glas", "Iarann", "Lann", "Meirg", "Smior", "Tarbh", "Cnamh", "Eagla", "Fuil", "Bodach", "Cruach", "Dealg", "Feannog", "Gearr", "Mallach", "Rionn", "Saobh", "Searbh", "Tolg", "Ulchabh", "Sionnach", "Easog", "Brath", "Cailbhe"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Iron-Jaw", "Rust-Blade", "the Exile", "Bell-Breaker", "Wall-Climber", "Cairn-Robber", "the Oathbreaker", "Plague-Bearer", "Ford-Keeper", "Mail-Render", "the Gallows-Born", "Torch-Eater", "the Branded", "Crown-Hater", "Abbey-Burner", "Ditch-Crawler", "the Unshriven", "Spear-Taker", "Mill-Haunter", "the Forsworn", "Salt-Tongue", "Ring-Thief", "the Outlaw", "Ship-Wrecker", "Bog-Born"],
+   "ranks": ["Skulker", "Brigand", "Scourge of the Roads", "Terror of the Parish", "Bane of Kings"],
+   "warbands": ["the Iron Host", "the Rust Company", "the Gallows Kin", "the Exiled", "the Bell-Breakers", "the Wall Reavers", "the Forsworn", "the Cairn Watch"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "blood-heir of"
+  },
+  "V": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Bearach", "Cathal", "Daire", "Eochaidh", "Fearghal", "Garrach", "Iarla", "Labhras", "Muireadhach", "Neachtan", "Odhran", "Ronan", "Sionnach", "Torcan", "Ultan", "Aodhan", "Baoth", "Cearbhall", "Dalach", "Eachann", "Feichin", "Gobhann", "Iarnan", "Lasair", "Mairtin", "Niadh", "Olcan", "Piaras", "Rodan", "Sgairt", "Teimhean", "Uaine", "Breasal", "Ciar", "Deaglan", "Earcan", "Flann", "Gualan", "Mianach", "Toit"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Soot-Hand", "the Stoker", "Rail-Walker", "Gas-Eye", "Coal-Tooth", "Rust-Jaw", "Pit-Crawler", "the Furnace", "Steam-Breath", "Mill-Haunter", "Lamp-Snuffer", "Cinder-Back", "Smoke-Born", "Chimney-Climber", "Slag-Hide", "Brass-Eye", "Canal-Drowner", "Spindle-Leg", "Rivet-Tooth", "the Overseer", "Wick-Eater", "Tar-Skin", "Pick-Breaker", "the Whistler", "Fog-Walker"],
+   "ranks": ["Footpad", "Lane-Stalker", "Terror of the Pits", "Scourge of the Mills", "Bane of the Cities"],
+   "warbands": ["the Soot Gang", "the Night Shift", "the Pit Rats", "the Lamp-Snuffers", "the Rail Wolves", "the Cinder Crew", "the Furnace Brood", "the Fog Walkers"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "apprenticed to"
+  },
+  "VI": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Bradan", "Cearban", "Dorcha", "Eitig", "Faolchu", "Gruaim", "Iarann", "Lasair", "Marbhan", "Neimh", "Oillt", "Piast", "Rongach", "Stracair", "Tairneach", "Uamhas", "Badhbh", "Caoranach", "Ciar", "Dranndan", "Fearg", "Feannag", "Gaothair", "Glas", "Gual", "Ladhar", "Meirg", "Mucan", "Ruaimneach", "Sgreuch", "Smal", "Toirneal", "Urchair", "Ceard", "Dealan", "Cruadal", "Fuathas", "Sionnach", "Garlach", "Clamhan"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Rail-Walker", "the Gassed", "Wire-Cutter", "Rust-Jaw", "Coal-Lung", "Lamp-Breaker", "the Unburied", "Trench-Rat", "Siren-Caller", "Road-Haunter", "Tin-Tooth", "the Deserter", "Iron-Lung", "Barbed-Hide", "Signal-Thief", "Static-Voice", "Petrol-Reek", "Concrete-Fist", "Pylon-Climber", "Night-Shift", "the Blackout", "Smoke-Throat", "the Rationed", "Shell-Born", "Grid-Breaker"],
+   "ranks": ["Nuisance", "Menace", "Wanted Killer", "Public Enemy", "Terror of the Kingdom"],
+   "warbands": ["the Wire Pack", "the Rail Gang", "the Blackout Crew", "the Trench Rats", "the Rust Brigade", "the Night Shift", "the Siren Choir", "the Coal Column"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "blood of"
+  },
+  "VII": {
+   "names": ["Odhar", "Dubhan", "Fiach", "Gormal", "Lorcan", "Mael", "Ruadh", "Seang", "Tadhg", "Uathach", "Brocc", "Conn", "Donn", "Garbh", "Iolar", "Liath", "Nathair", "Sgian", "Tuireann", "Mathan", "Ailbhe", "Bran", "Cathal", "Ciar", "Daire", "Dorcha", "Eochaidh", "Faolan", "Fearghal", "Goll", "Iarlaith", "Laoch", "Lughaidh", "Madadh", "Muirne", "Neasa", "Breac", "Cnamh", "Dall", "Fraoch", "Glas", "Ialtog", "Lochlann", "Marbh", "Odran", "Raibhne", "Sionnach", "Teine", "Torc", "Uaine", "Ultan", "Searbh", "Caoch", "Dubhghall", "Criofan", "Earc", "Fiodh", "Gruagach", "Mongan", "Tarbh"],
+   "epithets": ["the Grey", "Frost-Eye", "Bone-Breaker", "the Hollow", "Night-Walker", "Cold-Tooth", "the Gnawer", "Ash-Hide", "the Silent", "Herd-Bane", "the Starved", "Ice-Born", "Fire-Thief", "the Patient", "Long-Claw", "Wire-Gnawer", "the Static", "Signal-Eater", "Grid-Bane", "Rust-Hide", "Glass-Breaker", "the Blackout", "Siren-Caller", "Neon-Eye", "Asphalt-Walker", "the Untracked", "Tower-Climber", "Flood-Born", "Engine-Biter", "Lens-Breaker", "Fence-Cutter", "Battery-Thief", "Road-Hound", "Concrete-Fist", "Pylon-Crawler", "the Last Bus", "Flare-Eye", "Camera-Shy", "the Drowned", "Smoke-Lung"],
+   "ranks": ["Reported Sighting", "Local Menace", "Wanted Beast", "Public Danger", "National Emergency"],
+   "warbands": ["the Static Pack", "the Blackout Crew", "the Wire-Gnawers", "the Night Shift", "the Signal Hounds", "the Ring Road Pack", "the Grid Breakers", "the Dead Zone"],
+   "traits": ["hardy", "swift", "brutal", "thick_hide", "venomous", "frostbite", "fire_thief", "bloodfed", "caller"],
+   "heir": "blood of"
   }
  }
 }
