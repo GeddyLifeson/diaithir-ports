@@ -35,6 +35,14 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
     private final AdvancedModelBox skirt_left;
     private final AdvancedModelBox skirt_right;
     private final AdvancedModelBox mane;
+    private final AdvancedModelBox tail_tip;
+    private final AdvancedModelBox body_hips;
+    private final AdvancedModelBox claw_left_1;
+    private final AdvancedModelBox claw_left_2;
+    private final AdvancedModelBox claw_left_3;
+    private final AdvancedModelBox claw_right_1;
+    private final AdvancedModelBox claw_right_2;
+    private final AdvancedModelBox claw_right_3;
 
     public ModelGroundSloth() {
         this.texWidth = 128;
@@ -65,7 +73,7 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
         this.arm_right_3.setRotationPoint(0F, 9F, 0F);
         this.arm_right_3.addBox(-2F, 0F, -7F, 4F, 3F, 8F, 0F);
         this.leg_left_1 = new AdvancedModelBox(this, 24, 36);
-        this.leg_left_1.setRotationPoint(3.7F, 5F, 7.5F);
+        this.leg_left_1.setRotationPoint(4.5F, 5F, 8F);
         this.leg_left_1.addBox(-3F, 0F, -3F, 6F, 13F, 6F, 0F);
         this.setRotateAngle(leg_left_1, 0.05F, 0F, 0F);
         this.leg_left_2 = new AdvancedModelBox(this, 0, 56);
@@ -76,7 +84,7 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
         this.leg_left_3.addBox(-2.5F, 0F, -6F, 5F, 3F, 8F, 0F);
         this.leg_right_1 = new AdvancedModelBox(this, 24, 36);
         this.leg_right_1.mirror = true;
-        this.leg_right_1.setRotationPoint(-3.7F, 5F, 7.5F);
+        this.leg_right_1.setRotationPoint(-4.5F, 5F, 8F);
         this.leg_right_1.addBox(-3F, 0F, -3F, 6F, 13F, 6F, 0F);
         this.setRotateAngle(leg_right_1, 0.05F, 0F, 0F);
         this.leg_right_2 = new AdvancedModelBox(this, 0, 56);
@@ -88,35 +96,69 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
         this.leg_right_3.setRotationPoint(0F, 7F, 0F);
         this.leg_right_3.addBox(-2.5F, 0F, -6F, 5F, 3F, 8F, 0F);
         this.head_neck = new AdvancedModelBox(this, 84, 36);
-        this.head_neck.setRotationPoint(0F, 0F, -10F);
-        this.head_neck.addBox(-3.5F, -4F, -6F, 7F, 8F, 6F, 0F);
+        this.head_neck.setRotationPoint(0F, -1F, -10F);
+        this.head_neck.addBox(-3F, -3.5F, -6F, 6F, 7F, 6F, 0F);
         this.head_main = new AdvancedModelBox(this, 20, 56);
         this.head_main.setRotationPoint(0F, 0F, -5F);
-        this.head_main.addBox(-3F, -3F, -6F, 6F, 6F, 7F, 0F);
-        this.setRotateAngle(head_main, 0.5F, 0F, 0F);
-        this.head_snout = new AdvancedModelBox(this, 0, 69);
-        this.head_snout.setRotationPoint(0F, 1F, -6F);
-        this.head_snout.addBox(-1.75F, -1.75F, -3F, 3.5F, 3.5F, 3F, 0F);
+        this.head_main.addBox(-2.5F, -3F, -7F, 5F, 5F, 8F, 0F);
+        this.setRotateAngle(head_main, 0.3F, 0F, 0F);
+        this.head_snout = new AdvancedModelBox(this, 60, 90);
+        this.head_snout.setRotationPoint(0F, 0.5F, -7F);
+        this.head_snout.addBox(-2F, -2F, -4F, 4F, 4F, 4F, 0F);
         this.eye_left = new AdvancedModelBox(this, 20, 69);
         this.eye_left.mirror = true;
-        this.eye_left.setRotationPoint(3.02F, -1.5F, -3F);
+        this.eye_left.setRotationPoint(2.52F, -1.5F, -4.5F);
         this.eye_left.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
         this.eye_right = new AdvancedModelBox(this, 20, 69);
-        this.eye_right.setRotationPoint(-3.02F, -1.5F, -3F);
+        this.eye_right.setRotationPoint(-2.52F, -1.5F, -4.5F);
         this.eye_right.addBox(0F, -0.5F, -1F, 0F, 1F, 2F, 0F);
         this.head_ear_left = new AdvancedModelBox(this, 14, 69);
-        this.head_ear_left.setRotationPoint(2.5F, -1.5F, 1.5F);
+        this.head_ear_left.setRotationPoint(2F, -1.5F, 0F);
         this.head_ear_left.addBox(0F, -1F, 0F, 1F, 2F, 2F, 0F);
         this.setRotateAngle(head_ear_left, 0F, 0.2F, 0F);
         this.head_ear_right = new AdvancedModelBox(this, 14, 69);
         this.head_ear_right.mirror = true;
-        this.head_ear_right.setRotationPoint(-2.5F, -1.5F, 1.5F);
+        this.head_ear_right.setRotationPoint(-2F, -1.5F, 0F);
         this.head_ear_right.addBox(-1F, -1F, 0F, 1F, 2F, 2F, 0F);
         this.setRotateAngle(head_ear_right, 0F, -0.2F, 0F);
-        this.tail = new AdvancedModelBox(this, 0, 36);
-        this.tail.setRotationPoint(0F, -5F, 10.5F);
-        this.tail.addBox(-3F, 0F, -3F, 6F, 14F, 6F, 0F);
-        this.setRotateAngle(tail, 0.9F, 0F, 0F);
+        this.tail = new AdvancedModelBox(this, 0, 109);
+        this.tail.setRotationPoint(0F, -2F, 15F);
+        this.tail.addBox(-4F, 0F, -4F, 8F, 11F, 8F, 0F);
+        this.setRotateAngle(tail, 0.75F, 0F, 0F);
+        this.tail_tip = new AdvancedModelBox(this, 32, 109);
+        this.tail_tip.setRotationPoint(0F, 10F, 0F);
+        this.tail_tip.addBox(-2.5F, 0F, -2.5F, 5F, 9F, 5F, 0F);
+        this.setRotateAngle(tail_tip, 0.35F, 0F, 0F);
+        this.body_hips = new AdvancedModelBox(this, 0, 80);
+        this.body_hips.setRotationPoint(0F, 0F, 0F);
+        this.body_hips.addBox(-8F, -8.5F, 1F, 16F, 16F, 13F, 0F);
+        this.claw_left_1 = new AdvancedModelBox(this, 60, 80);
+        this.claw_left_1.setRotationPoint(-1.3F, 1.5F, -6.5F);
+        this.claw_left_1.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_left_1, 0.6F, -0.15F, 0F);
+        this.claw_left_2 = new AdvancedModelBox(this, 60, 80);
+        this.claw_left_2.setRotationPoint(0F, 1.5F, -6.5F);
+        this.claw_left_2.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_left_2, 0.6F, 0F, 0F);
+        this.claw_left_3 = new AdvancedModelBox(this, 60, 80);
+        this.claw_left_3.setRotationPoint(1.3F, 1.5F, -6.5F);
+        this.claw_left_3.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_left_3, 0.6F, 0.15F, 0F);
+        this.claw_right_1 = new AdvancedModelBox(this, 60, 80);
+        this.claw_right_1.mirror = true;
+        this.claw_right_1.setRotationPoint(-1.3F, 1.5F, -6.5F);
+        this.claw_right_1.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_right_1, 0.6F, -0.15F, 0F);
+        this.claw_right_2 = new AdvancedModelBox(this, 60, 80);
+        this.claw_right_2.mirror = true;
+        this.claw_right_2.setRotationPoint(0F, 1.5F, -6.5F);
+        this.claw_right_2.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_right_2, 0.6F, 0F, 0F);
+        this.claw_right_3 = new AdvancedModelBox(this, 60, 80);
+        this.claw_right_3.mirror = true;
+        this.claw_right_3.setRotationPoint(1.3F, 1.5F, -6.5F);
+        this.claw_right_3.addBox(-0.5F, -0.5F, -4F, 1F, 1F, 4F, 0F);
+        this.setRotateAngle(claw_right_3, 0.6F, 0.15F, 0F);
         this.skirt_left = new AdvancedModelBox(this, 72, 0);
         this.skirt_left.setRotationPoint(7.3F, 3F, 0F);
         this.skirt_left.addBox(0F, 0F, -11F, 0F, 12F, 22F, 0F);
@@ -147,6 +189,14 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
         this.head_main.addChild(this.head_ear_left);
         this.head_main.addChild(this.head_ear_right);
         this.body_main.addChild(this.tail);
+        this.tail.addChild(this.tail_tip);
+        this.body_main.addChild(this.body_hips);
+        this.arm_left_3.addChild(this.claw_left_1);
+        this.arm_left_3.addChild(this.claw_left_2);
+        this.arm_left_3.addChild(this.claw_left_3);
+        this.arm_right_3.addChild(this.claw_right_1);
+        this.arm_right_3.addChild(this.claw_right_2);
+        this.arm_right_3.addChild(this.claw_right_3);
         this.body_main.addChild(this.skirt_left);
         this.body_main.addChild(this.skirt_right);
         this.head_neck.addChild(this.mane);
@@ -184,7 +234,15 @@ public class ModelGroundSloth extends AdvancedEntityModel<EntityGroundSloth> {
             tail,
             skirt_left,
             skirt_right,
-            mane
+            mane,
+            tail_tip,
+            body_hips,
+            claw_left_1,
+            claw_left_2,
+            claw_left_3,
+            claw_right_1,
+            claw_right_2,
+            claw_right_3
         );
     }
 
