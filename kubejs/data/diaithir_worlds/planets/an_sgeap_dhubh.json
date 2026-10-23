@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.an_sgeap_dhubh",
+ "dimension": "diaithir_worlds:an_sgeap_dhubh",
+ "gravity": 11.2,
+ "has_oxygen": true,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 34,
+  "nightTimeTemperature": 30
+ }
+}

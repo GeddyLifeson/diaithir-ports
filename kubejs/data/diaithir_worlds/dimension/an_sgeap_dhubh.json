@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:an_sgeap_dhubh",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:an_sgeap_dhubh",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:an_sgeap_dhubh"
+  }
+ }
+}

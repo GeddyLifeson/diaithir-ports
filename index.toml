@@ -33,6 +33,10 @@ file = "config/fml/theme-diaithir.json"
 hash = "2cacce5d49afb4aa43f91af0083da14f47c6de4a38584f5db19d696da98066c2"
 
 [[files]]
+file = "config/iceandfire/iaf-common.json"
+hash = "4ffb2c6358283ff77e5f3fb9e37b34cd29e359e8799b2438318e1218d2fe3d9a"
+
+[[files]]
 file = "config/integrateddynamics-common.toml"
 hash = "afd73d64ac978202fcfadf461cb60294cd54cf1a194bb9a3fdd5da466b9e8846"
 
@@ -217,8 +221,184 @@ file = "kubejs/assets/diaithir/textures/item/white_coal.png"
 hash = "f480d84b433e561bcee3865669109c0472db48405923459b17ad2b3b90b2a3c2"
 
 [[files]]
+file = "kubejs/assets/diaithir_worlds/lang/en_us.json"
+hash = "634bdb98d805ead067103aed1c51bded488178504d4ef9e860170efaf6b3bf99"
+
+[[files]]
 file = "kubejs/assets/minecraft/sounds.json"
 hash = "0b00d4e6403ff18d2114722b5b86915a7a4bf075f8695077d85a95d614013e20"
+
+[[files]]
+file = "kubejs/assets/mutantmonsters/lang/en_us.json"
+hash = "4d8b854ecb06f5f4fe1917a209de28be3ea20d74feef0fd13838f57f7c3713d9"
+
+[[files]]
+file = "kubejs/assets/neoorigins/lang/en_us.json"
+hash = "d9f1a089a0d21a9fe8d20f56b41722ca9370d9b0c550739f7146aa8fff1af384"
+
+[[files]]
+file = "kubejs/assets/pointblank/lang/en_us.json"
+hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/an_fhainne_mhor.json"
+hash = "a327c9bf20b559206d355ab6a42ecd156e55de9d97dd7edc0d06f78a5584d092"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/an_sgeap_dhubh.json"
+hash = "c4d9d52c89199eb7ca7a84dea72a49a13ced9ca900d44201e275edf42f56c743"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/ard_bhaile.json"
+hash = "f9734688ed8d354114d4872c803306f3da2f2856a1fa9fd37d67db86f8c97467"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/fasach_an_luis.json"
+hash = "79fd2ea370614a3492fd4a584fcbaf5b7afac97cf0aef2718e29ea85f8441cc6"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/gealach_an_fhuamhaire.json"
+hash = "cc895d2f79addbb502b04a38ab8f89e19f850e6fb59b4d6dce4bb6a86117c842"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/muir_gun_chrioch.json"
+hash = "ebaac6cae37b0d81e714e88078d62bac84b7e9ee1e3d444f1c56e80af00c6699"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/saoghal_nan_inneal.json"
+hash = "a5db6e410d667046759d95e6b7c3c0e63200b7268c74b7443bd40bdf975d038c"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension/talamh_reota.json"
+hash = "a8888c00e89ceae326958da6b36850837c6cfe282519c5daef11882a5dcfc5e4"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/an_fhainne_mhor.json"
+hash = "d7f193a3e74deafa848847f2dcc2a4481266ecaa82327ced6c5fad025c5423cb"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/an_sgeap_dhubh.json"
+hash = "707a9dd8d61bf59428ef01862d8eb7cc371755152c5b67de494d1e236c4ca750"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/ard_bhaile.json"
+hash = "69ba6de02bcbf600f0c756ede7a14ecdd5277b8e9bbbe56159ae723a6d3ec14c"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/fasach_an_luis.json"
+hash = "f37380faf2b4fe8b230c490e7443ab880d3d2a91669f8c49e3fb36589398906e"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/gealach_an_fhuamhaire.json"
+hash = "629d652aeee247df4fa33638e9e524b98be7bbb772fc943a5b03a9c5ca581ec3"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/muir_gun_chrioch.json"
+hash = "2e61690c2167a726a8fd0815e1de0a58c702746ed5b11ed98333b2dd3addb7c7"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/saoghal_nan_inneal.json"
+hash = "546c12dc05266985122e7cb7ba1630b75ec4a5ba487b0223762a6b5843b1d5f8"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/dimension_type/talamh_reota.json"
+hash = "dc3e46077369b203a6e95e8403497464a7697accbce4942edce7a0331bec8035"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/an_fhainne_mhor.json"
+hash = "dc2d0d365e11e063767b3f9c1cb2071de4aa94ad956cb14022b972f5fabadb53"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/an_sgeap_dhubh.json"
+hash = "5e6f1c516d6697cfdf34f9e12848740ebeed15008a4b2d2d61f4a42399686edc"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/ard_bhaile.json"
+hash = "012f7b5b5ab5adb49a76aa42e2e415f70ea9d97de55c6d15f7a93800225e6851"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/fasach_an_luis.json"
+hash = "5a753578174c3494fcf3ad8dee0cd16b98234f2b70f98599f22ee9807203e4dd"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/gealach_an_fhuamhaire.json"
+hash = "1e044cc9f57ba00de513ceb780c0ad813cfe09ad056e2d39249723f2f6492ace"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/muir_gun_chrioch.json"
+hash = "0a43511034920f599942c6a906efb481f544b89ac1ee94549bfbc1552322382d"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/saoghal_nan_inneal.json"
+hash = "d7c0a569b46f8c902e7895656992d6548861904811a713e0399a57cad49127ae"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/planets/talamh_reota.json"
+hash = "7a1fef3f5b134648deec7e6e73f42247c602075124c93e329bf36b5a38a70182"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/an_fhainne_mhor.json"
+hash = "c4cc4e59a02aa66b44ece3883c2411a467fd7ad4d5814a2b902df094ff1bfcae"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/an_sgeap_dhubh.json"
+hash = "edbde86e3b01f8973ccd98b1f5dc7526d04fb502fd99cddf3e4275f6676a1918"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/ard_bhaile.json"
+hash = "53483e2479647b8fe5fe46643bd2bdbffa0f90a5f4f7a01f1b3fa12b4b5d932f"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/fasach_an_luis.json"
+hash = "790ae09f8b60e728afe0d65bcc8ada357cee15295e8bcd5f8b4099fa6bbec191"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/gealach_an_fhuamhaire.json"
+hash = "18757ffcceb9d57cb3490782b68334ad560f460da85d362a6e7fd2bf6a3350e2"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/muir_gun_chrioch.json"
+hash = "0fd58c97356904b22627af5e6fce7366bc5e354eef85d71dc264a3a24f4a9cb4"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/saoghal_nan_inneal.json"
+hash = "7e29e6a934c2a2ec1136c6a3c10317a60edae9951ec091d3e2d564756b385075"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/biome/talamh_reota.json"
+hash = "884f6f56871e5ce39e882ca26bad138aafc374963a756c91053ea46031d13489"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/an_fhainne_mhor.json"
+hash = "521fbec24ab0b556dcda8f9087ac52a520ec9a5c9e7af4d622af54130a66d819"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/an_sgeap_dhubh.json"
+hash = "7c53f992f11d6cb888d5158332576c091d1aa2c66adfa740c013aa124b8cd59c"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/fasach_an_luis.json"
+hash = "b4dadf75bce2388aa7daa30ab6659cba41b9c5fdca60079c08baa34b76c8a1c4"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/gealach_an_fhuamhaire.json"
+hash = "de0ac70bc998e1b8c963443c217695b97a5f2c803a3197388408762ca7628b93"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/muir_gun_chrioch.json"
+hash = "89da4ddaf74367b1b904e258e59d118e24901911b8a297c26a18f8125d8782a3"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/saoghal_nan_inneal.json"
+hash = "4bbe02a45956c3c1ae02a6108c269509c0ec99ba3f6cf18a3bcd23681e819155"
+
+[[files]]
+file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/talamh_reota.json"
+hash = "ecd7675541a32ce6354b6ff4dea3667c08145cb3ba6890a552cda30aea3311da"
+
+[[files]]
+file = "kubejs/server_scripts/speuran/age_gate.js"
+hash = "9cb52a13b4d369298f4bba04201330bc2f98554986dfeeed90eb72aa0e17682f"
 
 [[files]]
 file = "kubejs/startup_scripts/deepworlds/works.js"
@@ -365,6 +545,11 @@ hash = "62be8718bace2a1e3710b8d0ec47e5d5adb567aaca614e4d308652a587a63ca1"
 metafile = true
 
 [[files]]
+file = "mods/Ecologics-NeoFab-26.1.2-2.5.5.pw.toml"
+hash = "128f750594a6d2efe559f1d78f99c8ac05941b5a05ab646fc70293c402779131"
+metafile = true
+
+[[files]]
 file = "mods/EdivadLib-26.1.2-4.0.1.pw.toml"
 hash = "7ef57e87d3d83c9c723c40e68c43f3bf7e91f6dda9363c3ab9fab1aac6e87e6e"
 metafile = true
@@ -406,6 +591,11 @@ metafile = true
 [[files]]
 file = "mods/ExtremeSoundMuffler-3.58.1_NeoForge-26.1.pw.toml"
 hash = "05e9285e3f4d1a2646b6941c6f3a79f4ee405f5f4a24cde7f12bb8350982afdc"
+metafile = true
+
+[[files]]
+file = "mods/FactionApi-26.1.2-1.0.0-alpha.3.pw.toml"
+hash = "3d60cad0a1aa3595769a1e31f20bd89cd5fa00682ccb5ad963608103f6014592"
 metafile = true
 
 [[files]]
@@ -474,6 +664,11 @@ metafile = true
 [[files]]
 file = "mods/ImmediatelyFast-NeoForge-1.15.3_26.1.pw.toml"
 hash = "0d917901f9f6df099122c394592cdcc4288b193bab132ef1d33b649ef1909e0a"
+metafile = true
+
+[[files]]
+file = "mods/Immersive_Vehicles-26.1-24.0.0.pw.toml"
+hash = "635e05b9066dac400223cc36e765e8f6a52310f9254bbb785ff57f6773a2532e"
 metafile = true
 
 [[files]]
@@ -567,6 +762,11 @@ hash = "32f37565656392f94edd8948f4e957e9df777a703936b4b0954d00f5cf239d5b"
 metafile = true
 
 [[files]]
+file = "mods/MutantMonsters-v26.1.3-mc26.1.x-NeoForge.pw.toml"
+hash = "324262602a292b142c6f7e4b3a64f60630ffb7956a2c90228a2a656798b0b267"
+metafile = true
+
+[[files]]
 file = "mods/MysticalAgradditions-26.1.2-9.0.4.pw.toml"
 hash = "dded9abfc589f19dbae56567894f41da7f65c625882518fae07eaac6b6471333"
 metafile = true
@@ -599,6 +799,11 @@ metafile = true
 [[files]]
 file = "mods/Nullscape_26.1.2_v1.2.20.pw.toml"
 hash = "01d8ddde43c26a9634798f26145813a9e2bf773eb1f5b44867873b693a6ecfbf"
+metafile = true
+
+[[files]]
+file = "mods/PWIC-V0.3TD_21_fix.pw.toml"
+hash = "7fc3ab805d5d0d9a2078be01cafe23a6c4a5b75f4e310c6160d8d64122d814df"
 metafile = true
 
 [[files]]
@@ -680,9 +885,18 @@ hash = "bd6cc7303c08fefd01911e946dcaa0cf1f5de62f1ce0410436ffa2484951af28"
 metafile = true
 
 [[files]]
+file = "mods/UndeadNights-2.2.5-NeoForge-mc26.1.pw.toml"
+hash = "083cb8d10afe2717f72df4665732def80342d3baf7d6e03adc0d79f14b6c2ee1"
+metafile = true
+
+[[files]]
 file = "mods/UndergroundVillages-neoforge-26.1.2-11.0.0.pw.toml"
 hash = "6729a392eb04f939ae34183413e2185e7f4e8bd8beea15d909a0cf7aff051a42"
 metafile = true
+
+[[files]]
+file = "mods/Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar"
+hash = "f223c7a3a06d9efa7ce6de4c9a4126f2e58ef20c8724575bac0df37eaafb9bea"
 
 [[files]]
 file = "mods/WitherSkeletonTweaks-26.1.2-11.0.1.pw.toml"
@@ -824,6 +1038,11 @@ hash = "c55ebca2a737d5cee3ad3827f013abd4fe1a817fce35d0a791d21c3a725c9718"
 metafile = true
 
 [[files]]
+file = "mods/aviator_dreams_reloaded-neoforge-1.3.4_26.1.2.pw.toml"
+hash = "9fc0e7005b03371defdf7c912e27cc835b41881370213b45fe1a539aa2d52d06"
+metafile = true
+
+[[files]]
 file = "mods/balm-neoforge-26.1.2-26.1.2.15.pw.toml"
 hash = "229589feafee870ef3326a7e19a9011f88617e117fa83c2824a2e796a7470f63"
 metafile = true
@@ -846,6 +1065,11 @@ metafile = true
 [[files]]
 file = "mods/better-compatability-checker-neoforge-26.1.2.1.pw.toml"
 hash = "d4015c35bc297f0c72ffbf54bbeff964b8543d864088712399e2966946ade477"
+metafile = true
+
+[[files]]
+file = "mods/betterarcheology-neoforge-26.1.2-1.3.9.pw.toml"
+hash = "ac54b7f841c50fe5dbc27753cf6bd16c0722f59cf725abb38e970caf3c0c9e68"
 metafile = true
 
 [[files]]
@@ -963,6 +1187,10 @@ hash = "9997ead642a41014b64a2aa98b31eaa1c1a11ffb259715a11c64465c9c1485e4"
 metafile = true
 
 [[files]]
+file = "mods/craftedcore-neoforge-8.1-diaithir.1.jar"
+hash = "ee1345f4c017722df9e130517f327b4d0d7dacc116d9c3b0e768291aae4517cb"
+
+[[files]]
 file = "mods/crafting_on_a_stick-neoforge-26.1-1.1.pw.toml"
 hash = "66114441a32af7f759c48867250e4f447b21325e872ae7a2c14356318b8354c1"
 metafile = true
@@ -1037,6 +1265,10 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
 hash = "f7caf1d8e89e41c24afd8e4ecf48de0933fea85b7d1ea6be0d1b0e96ce442876"
 
 [[files]]
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.2.0.jar"
+hash = "05a898ad0fac29b6c604deaf3e7671535284820736a3c826899b0870c06c7054"
+
+[[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
 hash = "edcc00e0961af9a07edb6c16ec1c9d1d2fe87b814ca3d1c203b0366c2fddfa78"
 metafile = true
@@ -1080,6 +1312,21 @@ metafile = true
 [[files]]
 file = "mods/easy-villagers-neoforge-1.1.47_26.1.2.pw.toml"
 hash = "d0a640b11823b3497853ec4e11c6cffe32d21d87c22064c2ff40c4bad5dae783"
+metafile = true
+
+[[files]]
+file = "mods/easy_npc-neoforge-26.1.2-7.16.0.pw.toml"
+hash = "57e030ef3d7cc814514b21d4661e09ece0458328d46a187f6a0c84b5b3875e80"
+metafile = true
+
+[[files]]
+file = "mods/easy_npc_bundle-neoforge-26.1.2-7.16.0.pw.toml"
+hash = "4d9dfbaba0fcab93ddd11ee32d3b3051421a6b90c05ddbdb5e31ab7fa4506bef"
+metafile = true
+
+[[files]]
+file = "mods/easy_npc_config_ui-neoforge-26.1.2-7.16.0.pw.toml"
+hash = "4b25d6714882366141610cc314d80e8580eed3ff72d3c287e85fa74b3b620708"
 metafile = true
 
 [[files]]
@@ -1131,6 +1378,10 @@ metafile = true
 file = "mods/epitaphs-2.4.0_26.1.2.pw.toml"
 hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
+
+[[files]]
+file = "mods/eureka-26-1-2-1.6.3-diaithir.1.jar"
+hash = "ae4e665fbff022b97caf9387c402c51bd42fb6ae1d505b1bcb751e28394d460a"
 
 [[files]]
 file = "mods/evilcraft-26.1.2-neoforge-1.2.107.pw.toml"
@@ -1243,6 +1494,10 @@ hash = "44e041549c8c25919c53a22dc598d2a5712bc10b355d6c3751ac46a601038276"
 metafile = true
 
 [[files]]
+file = "mods/iceandfire-2.2-beta.4-diaithir.1.jar"
+hash = "0f94aa6f21c016e7b59dbc9679fd8b5a7bb9c762a2bbf65ee5785f9470482a61"
+
+[[files]]
 file = "mods/illager_arena-1.0.0_Neoforge_26.1.2.pw.toml"
 hash = "75cd305c14abe5fb7fda379df509e2331627dcc401cb019b26ef30473432d33e"
 metafile = true
@@ -1342,6 +1597,10 @@ hash = "8e018faadf34cf69bccccfcb13207de0767018a7dc8c7b5cdaef515ea37df10a"
 metafile = true
 
 [[files]]
+file = "mods/jupiter-2.4.3-26.1.2-universal-diaithir.1.jar"
+hash = "8390608c4e31a9f4d92545f008ac6c2f33faafa9beb9a76b2ff337e3208e00db"
+
+[[files]]
 file = "mods/justdirethings-1.6.11.pw.toml"
 hash = "634da4a38f6b8056af754a9231235e23a44b2a71792691a12f7650c0c523aa7d"
 metafile = true
@@ -1364,6 +1623,11 @@ metafile = true
 [[files]]
 file = "mods/knot-neoforge-core-20.2.10.pw.toml"
 hash = "c0c0e55c7898dd099300fee78f460b175e3ef750412d8f3890c34bf8c1d01904"
+metafile = true
+
+[[files]]
+file = "mods/kotlinforforge-6.3.0-all.pw.toml"
+hash = "0baadde4370b6a9936429445eca31baaecd20d6f33d426c19eae495b01655169"
 metafile = true
 
 [[files]]
@@ -1533,6 +1797,15 @@ hash = "464fc190217779b688ec19f103fe9dfaef220492384654053c70da6b959e54eb"
 metafile = true
 
 [[files]]
+file = "mods/musketmod-neoforge-26.1.2-1.5.4-diaithir.1.jar"
+hash = "55926657f392a8d62b2b1a2ef417aa3d390bed487f3f862c6d53db9943c22e41"
+
+[[files]]
+file = "mods/neoorigins-2.2.30_26.1.pw.toml"
+hash = "fe6c9d5b271819c4c1a28f4d863c21540b33f430c30050dbfe2dcb0af00d212e"
+metafile = true
+
+[[files]]
 file = "mods/neovitae-26.1.2-1.1.38.pw.toml"
 hash = "8c7ec650111a1da9053a1fb68703809955623c0eca5fe88cbd4f4420cd415553"
 metafile = true
@@ -1580,6 +1853,11 @@ metafile = true
 [[files]]
 file = "mods/pneumaticcraft-repressurized-8.2.23.jar"
 hash = "b5e5672397990e4fabee0b29d24b01d53866c6d0862221228ae702614642df92"
+
+[[files]]
+file = "mods/pointblank-neoforge-26.1.2-2.2.0.pw.toml"
+hash = "020c9f7bf8d3e2a210040d67cf69818aceba01e4200d3611fffc7513a3892865"
+metafile = true
 
 [[files]]
 file = "mods/potentials-neoforge-26.1.2-0.11.1.pw.toml"
@@ -1677,6 +1955,10 @@ hash = "7a1509c9f159ec85546090c054305885ee23d97727aba75c332002fba3773e35"
 metafile = true
 
 [[files]]
+file = "mods/remorphed-neoforge-8.0-diaithir.2.jar"
+hash = "8daa1e3e8ca1d64f3c6d858ed57f8d000821943905627411e52610a1d4bbcd39"
+
+[[files]]
 file = "mods/rftoolsbase-1.21-6.0.11.jar"
 hash = "a133203d8b4f9e1adf7ed68c970b874205c56b89b11f1386f432911a07cb1802"
 
@@ -1766,8 +2048,8 @@ hash = "8936983d944a59a78a594e1017b5f25c96d58046286c8084ed74b84800eebf2e"
 metafile = true
 
 [[files]]
-file = "mods/sky_aesthetics-neoforge-2.1.4.pw.toml"
-hash = "8657cbaabd69207a28de7038f92793d47f3c28fe81b6b3e3b7f1c7f81e850f38"
+file = "mods/sky_aesthetics-neoforge-2.2.0.pw.toml"
+hash = "e98149a395698a273c52f689c2d72cdc4c8f66f22662d0bef08a720c4bfc5828"
 metafile = true
 
 [[files]]
@@ -1826,8 +2108,8 @@ hash = "a895b8566eb57f85565ee4c247c8d60d970e8bb6b0118bbb75c0daf731f1df09"
 metafile = true
 
 [[files]]
-file = "mods/stellaris-26.1.2-neoforge-2.0.7.pw.toml"
-hash = "d87ad6a0cbe8e19744d2bb8d2df0d1b32a3ddd06091b74fbdb747c87fee9df88"
+file = "mods/stellaris-26.1.2-neoforge-2.0.9.pw.toml"
+hash = "df8cd52046d76c625693a225ab55f6022d47c111066d699e36a55ea5022bc8e1"
 metafile = true
 
 [[files]]
@@ -1929,6 +2211,10 @@ file = "mods/untamedwilds-26.1.2-3.0.1.jar"
 hash = "fc70169bde0167662bd76cf74159a3100bd975b39d227aef0cbcea193e79540b"
 
 [[files]]
+file = "mods/uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar"
+hash = "6793e7cb78adfb98421b1b8b55bf382eb04d89c0320a031f45d00ccd5b45cadb"
+
+[[files]]
 file = "mods/utilitarian-26.1.2-0.22.0.pw.toml"
 hash = "a546d25f3279cb83dcafe5d8e523d15556db5bfc82f4e366170cecbebd583da3"
 metafile = true
@@ -1937,6 +2223,14 @@ metafile = true
 file = "mods/valhelsia_core-neoforge-26.1.2-1.1.6.pw.toml"
 hash = "b2e8b3121b5f6a61bf54895870453117c27928059c4472a517ea0ccf4bb849e8"
 metafile = true
+
+[[files]]
+file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.5.jar"
+hash = "7f7e46ef5b6b187aee8ac39c5c89815b71f6558ebebb1bef170ccbc0ae70b9b7"
+
+[[files]]
+file = "mods/walkers-neoforge-8.2-diaithir.1.jar"
+hash = "04c0a33ffd259397a86f28fb4c942b90e74c210f316f181c00f1792306ce091a"
 
 [[files]]
 file = "mods/waystones-neoforge-26.1.2-26.1.2.16.pw.toml"

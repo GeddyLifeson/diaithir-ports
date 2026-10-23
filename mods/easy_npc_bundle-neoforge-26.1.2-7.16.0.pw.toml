@@ -1,0 +1,12 @@
+name = "easy_npc_bundle-neoforge"
+filename = "easy_npc_bundle-neoforge-26.1.2-7.16.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/CgGEe1h3/versions/9sJSt9VU/easy_npc_bundle-neoforge-26.1.2-7.16.0.jar"
+hash-format = "sha256"
+hash = "4e4f480d3769d20351fbcbebc42cdc228c13a4da6d09d7f3b32f0e674bf5ad2f"
+
+[update.modrinth]
+mod-id = "CgGEe1h3"
+version = "9sJSt9VU"

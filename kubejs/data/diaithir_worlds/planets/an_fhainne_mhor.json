@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.an_fhainne_mhor",
+ "dimension": "diaithir_worlds:an_fhainne_mhor",
+ "gravity": 9.81,
+ "has_oxygen": true,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 22,
+  "nightTimeTemperature": 22
+ }
+}

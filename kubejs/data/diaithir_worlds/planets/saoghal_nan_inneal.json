@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.saoghal_nan_inneal",
+ "dimension": "diaithir_worlds:saoghal_nan_inneal",
+ "gravity": 9.0,
+ "has_oxygen": false,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 40,
+  "nightTimeTemperature": 12
+ }
+}

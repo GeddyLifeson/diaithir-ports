@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:saoghal_nan_inneal",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:saoghal_nan_inneal",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:saoghal_nan_inneal"
+  }
+ }
+}

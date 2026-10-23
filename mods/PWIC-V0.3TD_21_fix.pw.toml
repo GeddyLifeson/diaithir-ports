@@ -1,0 +1,12 @@
+name = "PWIC-V"
+filename = "PWIC-V0.3TD_21_fix.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Dr4Ms3g7/versions/3xDKgtvk/PWIC-V0.3TD_21_fix.jar"
+hash-format = "sha256"
+hash = "9afd5fa4ae9f115421bea3e4d6e96385322eb6befaa93b8486571d75625ef5d3"
+
+[update.modrinth]
+mod-id = "Dr4Ms3g7"
+version = "3xDKgtvk"

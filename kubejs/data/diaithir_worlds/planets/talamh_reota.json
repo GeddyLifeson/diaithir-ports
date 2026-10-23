@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.talamh_reota",
+ "dimension": "diaithir_worlds:talamh_reota",
+ "gravity": 6.1,
+ "has_oxygen": false,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": -120,
+  "nightTimeTemperature": -185
+ }
+}

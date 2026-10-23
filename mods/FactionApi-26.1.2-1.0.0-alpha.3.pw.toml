@@ -1,0 +1,8 @@
+name = "FactionApi"
+filename = "FactionApi-26.1.2-1.0.0-alpha.3.jar"
+side = "both"
+
+[download]
+url = "https://maven.maxanier.de/snapshots/de/teamlapen/faction/FactionApi/26.1.2-1.0.0-alpha.3/FactionApi-26.1.2-1.0.0-alpha.3.jar"
+hash-format = "sha256"
+hash = "d50d948149a3ba3dd87fd9be3f5a0cb958b1c2df2af611c30d09c210bda50e87"

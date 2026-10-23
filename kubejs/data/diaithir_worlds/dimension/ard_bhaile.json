@@ -1,0 +1,34 @@
+{
+ "type": "diaithir_worlds:ard_bhaile",
+ "generator": {
+  "type": "minecraft:flat",
+  "settings": {
+   "biome": "diaithir_worlds:ard_bhaile",
+   "features": false,
+   "lakes": false,
+   "structure_overrides": [],
+   "layers": [
+    {
+     "block": "minecraft:bedrock",
+     "height": 1
+    },
+    {
+     "block": "minecraft:deepslate",
+     "height": 40
+    },
+    {
+     "block": "minecraft:deepslate_tiles",
+     "height": 8
+    },
+    {
+     "block": "minecraft:polished_blackstone_bricks",
+     "height": 3
+    },
+    {
+     "block": "minecraft:smooth_stone",
+     "height": 1
+    }
+   ]
+  }
+ }
+}

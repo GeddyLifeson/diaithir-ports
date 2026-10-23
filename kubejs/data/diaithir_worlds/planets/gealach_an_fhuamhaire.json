@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.gealach_an_fhuamhaire",
+ "dimension": "diaithir_worlds:gealach_an_fhuamhaire",
+ "gravity": 1.8,
+ "has_oxygen": false,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": -110,
+  "nightTimeTemperature": -160
+ }
+}

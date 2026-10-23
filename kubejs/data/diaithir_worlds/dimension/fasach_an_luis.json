@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:fasach_an_luis",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:fasach_an_luis",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:fasach_an_luis"
+  }
+ }
+}

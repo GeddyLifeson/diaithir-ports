@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:talamh_reota",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:talamh_reota",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:talamh_reota"
+  }
+ }
+}

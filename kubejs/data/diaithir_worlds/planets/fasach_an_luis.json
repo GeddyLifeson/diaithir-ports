@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.fasach_an_luis",
+ "dimension": "diaithir_worlds:fasach_an_luis",
+ "gravity": 8.6,
+ "has_oxygen": true,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 58,
+  "nightTimeTemperature": -12
+ }
+}

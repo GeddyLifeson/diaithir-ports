@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:muir_gun_chrioch",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:muir_gun_chrioch",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:muir_gun_chrioch"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+name = "easy_npc-neoforge"
+filename = "easy_npc-neoforge-26.1.2-7.16.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Epm6R3P2/versions/kE7XEpsf/easy_npc-neoforge-26.1.2-7.16.0.jar"
+hash-format = "sha256"
+hash = "17f740341ee8f41cafacd5e6f0c2514d94a57d316820357702837a38c003d503"
+
+[update.modrinth]
+mod-id = "Epm6R3P2"
+version = "kE7XEpsf"

@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.muir_gun_chrioch",
+ "dimension": "diaithir_worlds:muir_gun_chrioch",
+ "gravity": 10.4,
+ "has_oxygen": true,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 24,
+  "nightTimeTemperature": 16
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "translation_key": "planet.diaithir_worlds.ard_bhaile",
+ "dimension": "diaithir_worlds:ard_bhaile",
+ "gravity": 9.81,
+ "has_oxygen": true,
+ "planet_bar": "stellaris:textures/planet_bar/moon_planet_bar.png",
+ "temperature": {
+  "dayTimeTemperature": 21,
+  "nightTimeTemperature": 14
+ }
+}

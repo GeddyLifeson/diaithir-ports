@@ -38,6 +38,11 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | securitycraft-1.10.2.1-diaithir.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/securitycraft) |
 | sfm-26.1.2-4.34.0-diaithir.jar | Mozilla Public License Version 2.0 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/sfm) |
 | structurize-1.0.0-diaithir.jar | GPL 3.0 | [source](source/structurize-1.0.0-diaithir-source.tar.gz) |
+| musketmod-neoforge-26.1.2-1.5.4-diaithir.1.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/pull/7) |
+| remorphed-neoforge-8.0-diaithir.2.jar | LGPL-3.0 (ReMorphed by ToCraft, permission node fixes) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/remorphed/remorphed) |
+| walkers-neoforge-8.2-diaithir.1.jar | MIT (Woodwalkers by ToCraft, player renderer fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/woodwalkers) |
+| craftedcore-neoforge-8.1-diaithir.1.jar | LGPL-3.0 (CraftedCore by ToCraft, synced registry fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/craftedcore) |
+| Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar | LGPL-3.0 (Vampirism by TeamLapen, splash list fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/vampirism) |
 
 client/resourcepacks/diaithir-sounds.zip (the Diaithir Sounds resource pack) holds CC0, CC-BY, OGA-BY and CC-BY-SA music and sound; the credits are in CREDITS.md inside the zip.
 

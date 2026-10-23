@@ -1,0 +1,12 @@
+name = "UndeadNights"
+filename = "UndeadNights-2.2.5-NeoForge-mc26.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/g0mmcQV2/versions/a0Lh4LC0/UndeadNights-2.2.5-NeoForge-mc26.1.jar"
+hash-format = "sha256"
+hash = "6e85098a02061d4b98a283d92b71f750ff982f5eca37f0fb7561e0a8666ff22d"
+
+[update.modrinth]
+mod-id = "g0mmcQV2"
+version = "a0Lh4LC0"

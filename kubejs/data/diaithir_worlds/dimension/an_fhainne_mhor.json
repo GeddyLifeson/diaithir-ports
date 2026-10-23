@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:an_fhainne_mhor",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:an_fhainne_mhor",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:an_fhainne_mhor"
+  }
+ }
+}

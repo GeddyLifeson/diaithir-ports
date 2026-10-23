@@ -1,0 +1,11 @@
+{
+ "type": "diaithir_worlds:gealach_an_fhuamhaire",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "diaithir_worlds:gealach_an_fhuamhaire",
+  "biome_source": {
+   "type": "minecraft:fixed",
+   "biome": "diaithir_worlds:gealach_an_fhuamhaire"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+name = "pointblank-neoforge"
+filename = "pointblank-neoforge-26.1.2-2.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/og4KPYmA/versions/XAvbl4Gc/pointblank-neoforge-26.1.2-2.2.0.jar"
+hash-format = "sha256"
+hash = "9f0acd69141d70ffcebf2b6d80300e0b02e38aaf956ebe4b6e817aa9b7b9d51a"
+
+[update.modrinth]
+mod-id = "og4KPYmA"
+version = "XAvbl4Gc"
