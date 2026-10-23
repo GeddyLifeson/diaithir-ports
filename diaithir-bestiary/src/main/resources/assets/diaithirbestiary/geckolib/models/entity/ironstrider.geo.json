@@ -1,0 +1,205 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.ironstrider",
+    "texture_width": 128,
+    "texture_height": 128,
+    "visible_bounds_width": 2.8,
+    "visible_bounds_height": 3.9,
+    "visible_bounds_offset": [
+     0,
+     1.44,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "cabin",
+     "pivot": [
+      0,
+      30,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -10,
+        30,
+        -9
+       ],
+       "size": [
+        20,
+        16,
+        18
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "gun_l",
+     "pivot": [
+      10,
+      38,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        10,
+        34,
+        -12
+       ],
+       "size": [
+        4,
+        4,
+        16
+       ],
+       "uv": [
+        76,
+        0
+       ]
+      }
+     ],
+     "parent": "cabin"
+    },
+    {
+     "name": "gun_r",
+     "pivot": [
+      -10,
+      38,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -14,
+        34,
+        -12
+       ],
+       "size": [
+        4,
+        4,
+        16
+       ],
+       "uv": [
+        0,
+        34
+       ]
+      }
+     ],
+     "parent": "cabin"
+    },
+    {
+     "name": "leg_l",
+     "pivot": [
+      6,
+      30,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        3,
+        3,
+        -3
+       ],
+       "size": [
+        6,
+        27,
+        6
+       ],
+       "uv": [
+        40,
+        34
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_r",
+     "pivot": [
+      -6,
+      30,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -9,
+        3,
+        -3
+       ],
+       "size": [
+        6,
+        27,
+        6
+       ],
+       "uv": [
+        64,
+        34
+       ]
+      }
+     ]
+    },
+    {
+     "name": "foot_l",
+     "pivot": [
+      6,
+      3,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        2,
+        0,
+        -6
+       ],
+       "size": [
+        8,
+        3,
+        10
+       ],
+       "uv": [
+        88,
+        34
+       ]
+      }
+     ]
+    },
+    {
+     "name": "foot_r",
+     "pivot": [
+      -6,
+      3,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -10,
+        0,
+        -6
+       ],
+       "size": [
+        8,
+        3,
+        10
+       ],
+       "uv": [
+        0,
+        67
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,180 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.hollowmourn",
+    "texture_width": 64,
+    "texture_height": 64,
+    "visible_bounds_width": 1.8,
+    "visible_bounds_height": 3.7,
+    "visible_bounds_offset": [
+     0,
+     1.34,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "leg_l",
+     "pivot": [
+      2,
+      22,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        1,
+        0,
+        -1
+       ],
+       "size": [
+        2,
+        22,
+        2
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_r",
+     "pivot": [
+      -2,
+      22,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3,
+        0,
+        -1
+       ],
+       "size": [
+        2,
+        22,
+        2
+       ],
+       "uv": [
+        8,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "torso",
+     "pivot": [
+      0,
+      22,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        22,
+        -2
+       ],
+       "size": [
+        8,
+        14,
+        4
+       ],
+       "uv": [
+        16,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "arm_l",
+     "pivot": [
+      5,
+      35,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        4,
+        12,
+        -1
+       ],
+       "size": [
+        2,
+        23,
+        2
+       ],
+       "uv": [
+        40,
+        0
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "arm_r",
+     "pivot": [
+      -5,
+      35,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -6,
+        12,
+        -1
+       ],
+       "size": [
+        2,
+        23,
+        2
+       ],
+       "uv": [
+        48,
+        0
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "head",
+     "pivot": [
+      0,
+      36,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3,
+        36,
+        -3
+       ],
+       "size": [
+        6,
+        7,
+        6
+       ],
+       "uv": [
+        0,
+        25
+       ]
+      }
+     ],
+     "parent": "torso"
+    }
+   ]
+  }
+ ]
+}
