@@ -1261,8 +1261,8 @@ hash = "646cff771abe8dc80a9e1d1e70a821a1e25504417ee335a511b86b61ba74f6f6"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0.jar"
-hash = "f7caf1d8e89e41c24afd8e4ecf48de0933fea85b7d1ea6be0d1b0e96ce442876"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar"
+hash = "137f93d3a70b51366799f726ee81c3c77684fe9da8264a1de9b5e115635c07fc"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.2.0.jar"
