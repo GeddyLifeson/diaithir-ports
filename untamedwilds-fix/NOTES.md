@@ -1,4 +1,4 @@
-# Untamed Wilds 3.0.1-diaithir.1 (UNTESTED at runtime so far)
+# Untamed Wilds 3.0.1-diaithir.1
 
 Licence: GPL-3.0-only (neoforge.mods.toml). Modification and redistribution allowed; source must be offered (upstream https://github.com/RayTrace082/untamedwilds, plus the patch here).
 
@@ -8,4 +8,4 @@ Change: EntityBigCat.getTexture null-checks the data holder and falls back to th
 
 Not fixed: baleen_whale / thrown_shimmer_spear ShapeType NPE noise (harmless log noise, from another mod's shape query).
 
-Test: pending. Harness in /home/user/uwtest (minimal server and client, ports 25601/25602, display :93) is ready but was not run because free memory was about 3 GB while the Valkyrien Skies flight test held the host.
+Test: minimal dedicated server plus headless client (only this jar, NeoForge 26.1.2.116, Xvfb) in /home/user/uwtest. Joined as Tester, summoned three untamedwilds:big_cat (variants 0, 2, 4) 4 to 5 blocks away. Client rendered all three with no NullPointerException and no crash report (test-render-cats.png, client-test-latest.log). One variant shows the missing-texture magenta because the mod ships no cave_lion.png (upstream asset gap, a warning, not a crash). The unpatched control run was not repeated; the cause matches the original crash logs. The full 341-mod pack was not booted with this jar.
