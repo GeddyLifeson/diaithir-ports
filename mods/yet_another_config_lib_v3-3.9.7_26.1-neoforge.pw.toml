@@ -1,0 +1,12 @@
+name = "yet_another_config_lib"
+filename = "yet_another_config_lib_v3-3.9.7+26.1-neoforge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/1eAoo2KR/versions/B1mfgQmD/yet_another_config_lib_v3-3.9.7%2B26.1-neoforge.jar"
+hash-format = "sha256"
+hash = "44fa4df4c94606360fbd4a7dcc7feecae9632e12770e71812a70de92d240d004"
+
+[update.modrinth]
+mod-id = "1eAoo2KR"
+version = "B1mfgQmD"

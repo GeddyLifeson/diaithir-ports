@@ -57,6 +57,10 @@ file = "config/tconstruct-common.toml"
 hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
 
 [[files]]
+file = "kubejs/assets/betterf3/lang/en_us.json"
+hash = "87bfd11e1db402c2381c3099c2e42b6aae97e3f229d4620acbcbc7e62845ff98"
+
+[[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
 hash = "922dfa13915438d5c2da9e6bd71a3bbeafb705fc4660128aec21b46bee5334cd"
 
@@ -494,6 +498,11 @@ hash = "89027cc74c13211be55ded3fa94500634f78190b6b491305cd9197678ac9612e"
 metafile = true
 
 [[files]]
+file = "mods/BetterF3-18.0.2-NeoForge-26.1.pw.toml"
+hash = "cb691f5cd0802796d954babb0fd3c484ab803e6102a2c0fb889cb9e57951b013"
+metafile = true
+
+[[files]]
 file = "mods/BiomesOPlenty-neoforge-26.1.2-26.1.2.0.21.pw.toml"
 hash = "a520d0be02389ef18c8a363000dc39c6944c7f5bdd5300fa0369aa6336c5d8d4"
 metafile = true
@@ -696,6 +705,11 @@ hash = "7b420c6705fc92981bda6796170b981035179173a2843be321fbe36802c92752"
 metafile = true
 
 [[files]]
+file = "mods/KotlinLangForge-2.16.0-k2.4.21-3.1_neoforge.pw.toml"
+hash = "95cc788558de4db109291b25b2cf70611f19e36701d17679755f1f9a9d018a57"
+metafile = true
+
+[[files]]
 file = "mods/Ksyxis-1.4.6.pw.toml"
 hash = "097af67d29608441c9295b03620d13b1149c162e85962fabc566c730f5d514e9"
 metafile = true
@@ -861,6 +875,11 @@ hash = "de14f3900239830d16f8e57d2d060f38de8041c0b2317daa6bcf6215a92f83de"
 metafile = true
 
 [[files]]
+file = "mods/Stoneworks-v26.1.0-mc26.1.x-NeoForge.pw.toml"
+hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
+metafile = true
+
+[[files]]
 file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.12.jar"
 hash = "b06c33e68665e665b754c1bfa5cd8648b0becb9b5e4606326a8619fe5db2dece"
 
@@ -870,8 +889,8 @@ hash = "d3fc20d331c40b1c91eebeca6a36c7928ed50154f1f6e79c738e50da74feb4b5"
 metafile = true
 
 [[files]]
-file = "mods/TinkersConstruct-26.1.2-3.12.13.jar"
-hash = "bb2463e1693103ac149aa8fa8a2ffb1d5f9622741ce3c79fa0bf2a2f17c4bd46"
+file = "mods/TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar"
+hash = "ff07116b28b252f8ae29d33812e8cd403ed632558b6ec7ff981c381dd895666b"
 
 [[files]]
 file = "mods/ToastControl-26.1.2-10.0.0.pw.toml"
@@ -1572,7 +1591,7 @@ metafile = true
 
 [[files]]
 file = "mods/jamlib-neoforge-2.3.1_26.1.x.pw.toml"
-hash = "8d85843c6f8e8d748effc52c30046f41d1fbfb7d7865e66597e99b90d3662dca"
+hash = "b90538a8f45ea979d12d606c8263fc38e7de857e7f231eaf7dd41ec6e49b2c9e"
 metafile = true
 
 [[files]]
@@ -1989,7 +2008,7 @@ metafile = true
 
 [[files]]
 file = "mods/rightclickharvest-neoforge-4.6.2_26.1.x.pw.toml"
-hash = "9af043169ffe01f98668ca4500f988e6204c0d94cd647144960a0c735e0f011d"
+hash = "ecc2657ed4da50764991a11ec27cb2d208f8087d5fc5684fa73ce6a2bd4a2a08"
 metafile = true
 
 [[files]]
@@ -2215,8 +2234,8 @@ hash = "7be1bb2f25fced12414b14135b23dbb1b45160ea7f184fa51929b1b71ac6f7ad"
 metafile = true
 
 [[files]]
-file = "mods/untamedwilds-26.1.2-3.0.1.jar"
-hash = "fc70169bde0167662bd76cf74159a3100bd975b39d227aef0cbcea193e79540b"
+file = "mods/untamedwilds-26.1.2-3.0.1-diaithir.1.jar"
+hash = "46aad1058073c82e867c4da8408395d2f2d49df817681f2f76840eb9f5026200"
 
 [[files]]
 file = "mods/uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar"
@@ -2233,8 +2252,8 @@ hash = "b2e8b3121b5f6a61bf54895870453117c27928059c4472a517ea0ccf4bb849e8"
 metafile = true
 
 [[files]]
-file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.5.jar"
-hash = "7f7e46ef5b6b187aee8ac39c5c89815b71f6558ebebb1bef170ccbc0ae70b9b7"
+file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.7.jar"
+hash = "6fca18783b40af985ac28b5f9dcb356fb7841da91024b472d20a27d5b5722c70"
 
 [[files]]
 file = "mods/walkers-neoforge-8.2-diaithir.1.jar"
@@ -2266,8 +2285,18 @@ hash = "83656f3b6edb10bbce7af0a61b6060419772bdf443b0f1b2fe2500a78663e82d"
 metafile = true
 
 [[files]]
+file = "mods/yet_another_config_lib_v3-3.9.7_26.1-neoforge.pw.toml"
+hash = "eae63565770b3bb3eddaf967829f5adae22bbe7a1b76749c3b8a5ce6bf704323"
+metafile = true
+
+[[files]]
 file = "mods/zfastnoise-1.0.40_26.1.2_neoforge.pw.toml"
 hash = "dc5d933d65b4d63e072ad33f6b9c412f62e7ffac033bd9ee3468a4571f42076c"
+metafile = true
+
+[[files]]
+file = "mods/zoomify-2.17.0_mc26.1.2-universal.pw.toml"
+hash = "f6ba90cc1346f8df8d123eedb06385e96885d10b353d2a39a835dc37fa6956f7"
 metafile = true
 
 [[files]]

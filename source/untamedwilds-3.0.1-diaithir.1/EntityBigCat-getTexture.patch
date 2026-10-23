@@ -1,0 +1,15 @@
+--- /tmp/claude-0/-home-user/6ab363b7-20ca-5d60-ace6-c1fa3d9a83da/scratchpad/EntityBigCat.java.base	2026-10-23 19:21:31.352963144 +0000
++++ /tmp/claude-0/-home-user/6ab363b7-20ca-5d60-ace6-c1fa3d9a83da/scratchpad/src/untamedwilds/entity/mammal/EntityBigCat.java	2026-10-23 19:21:31.384342185 +0000
+@@ -331,7 +331,11 @@
+ 
+    public Identifier getTexture() {
+       Identifier texture_path = EntityUtils.getSkinFromEntity(this);
+-      boolean dimorphic = this.hasDimorphism() || getEntityData(this.getType()).getFlags(this.getVariant(), "dimorphism") == 1;
++      // Diaithir fix: species data is only loaded on the logical server; on a client connected to a
++      // dedicated server getEntityData() returns null. The synched DIMORPHISM flag is already
++      // authoritative, so only consult the data holder when it exists.
++      untamedwilds.util.EntityDataHolder data = getEntityData(this.getType());
++      boolean dimorphic = this.hasDimorphism() || (data != null && data.getFlags(this.getVariant(), "dimorphism") == 1);
+       if (dimorphic) {
+          String trimmed_path = texture_path.getPath().substring(0, texture_path.getPath().lastIndexOf(46));
+          return Identifier.tryParse("untamedwilds:" + trimmed_path + "_" + this.getGenderString() + ".png");
