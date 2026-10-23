@@ -241,6 +241,10 @@ file = "kubejs/assets/pointblank/lang/en_us.json"
 hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
 
 [[files]]
+file = "kubejs/assets/roulettecasino/lang/en_us.json"
+hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
+
+[[files]]
 file = "kubejs/data/diaithir_worlds/dimension/an_fhainne_mhor.json"
 hash = "a327c9bf20b559206d355ab6a42ecd156e55de9d97dd7edc0d06f78a5584d092"
 
@@ -1761,6 +1765,10 @@ hash = "f33b3fd18aa8141176f44c4a534c734ec198c30d858807752847f96243a52cae"
 file = "mods/millager-neoforge-26.1.2-0.7.7.pw.toml"
 hash = "f4dd478902c6358c798d88a52158f30209e8e493169de7ecec025a4c2a277769"
 metafile = true
+
+[[files]]
+file = "mods/minevegas-casino-neoforge-26.1.2-1.0.4-diaithir.1.jar"
+hash = "cb65f63ba188feb168301369133c138163f1ee9a41cc27fd877944ee701228aa"
 
 [[files]]
 file = "mods/mininggadgets-1.19.3.pw.toml"
