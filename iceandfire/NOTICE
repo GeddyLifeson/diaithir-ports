@@ -1,0 +1,15 @@
+Wyrmlore (mod id iceandfire), Diaithir build for NeoForge 26.1.2.116.
+
+Source: IceAndFire-CE by IAFEnvoy and contributors, https://github.com/IAFEnvoy/IceAndFire-CE
+(branch master, commit c67d907), itself a fork of Ice and Fire by Alexthe666 and contributors,
+https://github.com/AlexModGuy/Ice_and_Fire. Code and assets: LGPL-3.0 (see LICENSE).
+
+Required at runtime: Uranus 3.0-alpha.1 (../uranus, https://github.com/IAFEnvoy/Uranus, LGPL-3.0)
+and Jupiter 2.4.3 (../jupiter, https://github.com/IAFEnvoy/Jupiter, LGPL-3.0). Integration 0.2
+(IAFEnvoy, jar-in-jar) comes from JitPack. Curios and Jade are optional.
+
+Diaithir changes: NeoForge 26.1.2.116; player-facing name Wyrmlore instead of the original
+franchise-derived title; two franchise splash lines removed; the mod's own title screen is off
+by default (config customMainMenu).
+
+Build (JDK 25): ./gradlew build in each of uranus, jupiter (./gradlew :26.1.2:build), iceandfire.
