@@ -1,7 +1,12 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/motor_side"
+  "particle": "create:block/motor_side",
+  "t1": "create:block/motor_top",
+  "t2": "create:block/motor_bottom",
+  "t3": "create:block/cog_hub",
+  "t4": "create:block/shaft",
+  "t5": "create:block/shaft_end"
  },
  "elements": [
   {
@@ -17,22 +22,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/motor_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/motor_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/motor_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/motor_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/motor_top"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/motor_bottom"
+     "texture": "#t2"
     }
    }
   },
@@ -49,22 +54,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     }
    }
   },
@@ -81,7 +86,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -90,7 +95,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -99,7 +104,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -108,7 +113,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -117,7 +122,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t5",
      "uv": [
       0,
       0,

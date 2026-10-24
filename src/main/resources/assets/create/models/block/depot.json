@@ -1,7 +1,8 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/depot_side"
+  "particle": "create:block/depot_side",
+  "t1": "create:block/depot_top"
  },
  "elements": [
   {
@@ -17,22 +18,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/depot_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/depot_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/depot_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/depot_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/depot_top"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/depot_side"
+     "texture": "#particle"
     }
    }
   }

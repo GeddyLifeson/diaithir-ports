@@ -1,7 +1,10 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/mixer_side"
+  "particle": "create:block/mixer_side",
+  "t1": "create:block/mixer_top",
+  "t2": "create:block/basin_rim",
+  "t3": "create:block/cog_hub"
  },
  "elements": [
   {
@@ -17,22 +20,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/mixer_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/mixer_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/mixer_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/mixer_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/mixer_top"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/basin_rim"
+     "texture": "#t2"
     }
    }
   },
@@ -49,22 +52,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t3"
     }
    }
   }

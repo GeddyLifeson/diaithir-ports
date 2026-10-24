@@ -1,7 +1,8 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/blade_steel"
+  "particle": "create:block/blade_steel",
+  "t1": "create:block/cog_hub"
  },
  "elements": [
   {
@@ -17,7 +18,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -26,7 +27,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -35,7 +36,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -44,7 +45,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -53,7 +54,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -62,7 +63,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -85,7 +86,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -94,7 +95,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -103,7 +104,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -112,7 +113,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -121,7 +122,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -130,7 +131,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -153,7 +154,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -162,7 +163,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -171,7 +172,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -180,7 +181,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -189,7 +190,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -198,7 +199,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -230,7 +231,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -239,7 +240,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -248,7 +249,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -257,7 +258,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -266,7 +267,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -275,7 +276,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/blade_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -307,22 +308,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     },
     "south": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     },
     "east": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     },
     "west": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     },
     "up": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/cog_hub"
+     "texture": "#t1"
     }
    }
   }

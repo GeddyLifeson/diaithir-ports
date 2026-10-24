@@ -1,7 +1,11 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/press_side"
+  "particle": "create:block/press_side",
+  "t1": "create:block/press_top",
+  "t2": "create:block/press_head_side",
+  "t3": "create:block/press_post",
+  "t4": "create:block/press_head_face"
  },
  "elements": [
   {
@@ -17,22 +21,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/press_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/press_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/press_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/press_top"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     }
    }
   },
@@ -49,22 +53,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     }
    }
   },
@@ -81,22 +85,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     }
    }
   },
@@ -113,22 +117,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     }
    }
   },
@@ -145,22 +149,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/press_post"
+     "texture": "#t3"
     }
    }
   },
@@ -177,22 +181,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     },
     "south": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     },
     "east": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     },
     "west": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     },
     "up": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t2"
     },
     "down": {
-     "texture": "create:block/press_head_face"
+     "texture": "#t4"
     }
    }
   }

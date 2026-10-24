@@ -1,7 +1,12 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/cog_steel"
+  "particle": "create:block/cog_steel",
+  "t1": "create:block/cog_hub",
+  "t2": "create:block/cog_hub_end",
+  "t3": "create:block/shaft",
+  "t4": "create:block/shaft_end",
+  "t5": "create:block/shaft_collar"
  },
  "elements": [
   {
@@ -17,7 +22,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -26,7 +31,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -35,7 +40,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -44,7 +49,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -53,7 +58,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -62,7 +67,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -85,7 +90,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -94,7 +99,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -103,7 +108,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -112,7 +117,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -121,7 +126,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -130,7 +135,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -162,7 +167,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -171,7 +176,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -180,7 +185,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -189,7 +194,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -198,7 +203,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -207,7 +212,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -230,7 +235,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -239,7 +244,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -248,7 +253,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -257,7 +262,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -266,7 +271,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -275,7 +280,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -298,7 +303,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -307,7 +312,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -316,7 +321,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -325,7 +330,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -334,7 +339,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -343,7 +348,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -375,7 +380,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -384,7 +389,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -393,7 +398,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -402,7 +407,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       6,
@@ -411,7 +416,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -420,7 +425,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_steel",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -452,7 +457,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/cog_hub",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -461,7 +466,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/cog_hub",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -470,7 +475,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/cog_hub",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -479,7 +484,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/cog_hub",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -488,7 +493,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/cog_hub_end",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -497,7 +502,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/cog_hub_end",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -520,7 +525,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -529,7 +534,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -538,7 +543,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -547,7 +552,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -556,7 +561,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -565,7 +570,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -588,7 +593,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -597,7 +602,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -606,7 +611,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -615,7 +620,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -624,7 +629,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -633,7 +638,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -656,7 +661,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -665,7 +670,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -674,7 +679,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -683,7 +688,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -692,7 +697,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -701,7 +706,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -724,7 +729,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -733,7 +738,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -742,7 +747,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -751,7 +756,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t5",
      "uv": [
       0,
       0,
@@ -760,7 +765,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,
@@ -769,7 +774,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t4",
      "uv": [
       0,
       0,

@@ -20,7 +20,56 @@ PARTIALS = [l.strip() for l in open(HERE + "/data/partials.txt") if l.strip()]
 BLOCKS = {b["id"]: b for b in REG["blocks"]}
 ITEMS = {i["id"]: i for i in REG["items"]}
 
+FUV = {
+    "up": lambda x0, y0, z0, x1, y1, z1: (x0, z0, x1, z1),
+    "down": lambda x0, y0, z0, x1, y1, z1: (x0, 16 - z1, x1, 16 - z0),
+    "north": lambda x0, y0, z0, x1, y1, z1: (16 - x1, 16 - y1, 16 - x0, 16 - y0),
+    "south": lambda x0, y0, z0, x1, y1, z1: (x0, 16 - y1, x1, 16 - y0),
+    "west": lambda x0, y0, z0, x1, y1, z1: (z0, 16 - y1, z1, 16 - y0),
+    "east": lambda x0, y0, z0, x1, y1, z1: (16 - z1, 16 - y1, 16 - z0, 16 - y0),
+}
+
+def _span(a, b):
+    if a >= 0 and b <= 16 and a <= b:
+        return a, b
+    lo, hi = min(a, b), max(a, b)
+    if hi - lo >= 16:
+        lo, hi = 0, 16
+    else:
+        w = hi - lo
+        lo = min(max(lo, 0), 16 - w); hi = lo + w
+    return (lo, hi) if a <= b else (hi, lo)
+
+def fit_uv(face, e):
+    u0, v0, u1, v1 = FUV[face](*e["from"], *e["to"])
+    u0, u1 = _span(u0, u1)
+    v0, v1 = _span(v0, v1)
+    return [round(u0, 3), round(v0, 3), round(u1, 3), round(v1, 3)]
+
+def slotify(obj):
+    """26.1 only resolves face textures given as #slot; turn literal ids into slots."""
+    if not isinstance(obj, dict) or "elements" not in obj:
+        return obj
+    tex = obj.setdefault("textures", {})
+    rev = {}
+    for k, v in tex.items():
+        if isinstance(v, str) and not v.startswith("#"):
+            rev.setdefault(v, k)
+    for e in obj["elements"]:
+        for fn, fd in e.get("faces", {}).items():
+            if "uv" not in fd and (min(e["from"]) < 0 or max(e["to"]) > 16):
+                fd["uv"] = fit_uv(fn, e)
+            t = fd.get("texture")
+            if isinstance(t, str) and not t.startswith("#"):
+                if t not in rev:
+                    rev[t] = "t%d" % len(rev)
+                    tex[rev[t]] = t
+                fd["texture"] = "#" + rev[t]
+    return obj
+
 def wj(path, obj):
+    if "/models/" in path:
+        obj = slotify(obj)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     json.dump(obj, open(path, "w"), indent=1)
 
@@ -469,10 +518,13 @@ def gen_other(id, b):
 FLAT_BLOCK_KINDS = ("pane", "ladder", "sdoor", "trapdoor")
 HANDHELD = ("wrench", "sword", "whisk", "sand_paper", "potato", "wand", "worldshaper", "extendo", "schematic_and_quill")
 
+# unobtainable items whose special models are fetched by block entity renderers at load time
+RENDERER_BOUND = {"potato_cannon", "extendo_grip", "linked_controller", "handheld_worldshaper", "wand_of_symmetry"}
+
 def gen_items():
     me = sys.modules[__name__]
     for id, it in ITEMS.items():
-        if not design.shipped_item(me, id):
+        if not design.shipped_item(me, id) and id not in RENDERER_BOUND:
             idef(id, {"model": {"type": "minecraft:model", "model": "minecraft:item/barrier"}})
             continue
         if it.get("blockItem"):

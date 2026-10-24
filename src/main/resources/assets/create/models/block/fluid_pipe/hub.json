@@ -17,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/pipe"
+     "texture": "#particle"
     }
    }
   }

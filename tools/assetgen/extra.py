@@ -7,15 +7,12 @@ def run(g):
     A = g.A
     # fluids: still + flow textures
     cols = {"honey": (240, 190, 40), "tea": (150, 90, 40), "potion": (90, 130, 220), "chocolate": (100, 60, 40), "milk": (240, 240, 236)}
+    import art
     for f, c in cols.items():
+        lo = tuple(int(v * 0.82) for v in c)
+        hi = tuple(min(255, int(v * 1.12)) for v in c)
         for k in ("still", "flow"):
-            im = speckle(c, f + k, 0.06)
-            r = rng(f + k + "w")
-            for y in range(16):
-                for x in range(16):
-                    if ((x + y * (2 if k == "flow" else 1)) % 7) == 0:
-                        px(im, x, y, shade(c, 1.15))
-            g.wtex(f"block/{f}_{k}", im)
+            g.wtex(f"block/{f}_{k}", art.fluid_tex(f + k, lo, hi, k == "flow"))
     # item sub-models used by custom item renderers
     subs = {"extendo_grip": ("thin_short", "wide_short", "thin_long", "wide_long"),
             "handheld_worldshaper": ("core_glow", "accelerator"),

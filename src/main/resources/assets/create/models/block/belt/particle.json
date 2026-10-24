@@ -17,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/belt_edge"
+     "texture": "#particle"
     }
    }
   }

@@ -1,7 +1,10 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/press_side"
+  "particle": "create:block/press_side",
+  "t1": "create:block/press_head_side",
+  "t2": "create:block/press_head_face",
+  "t3": "create:block/press_rod"
  },
  "elements": [
   {
@@ -17,22 +20,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t1"
     },
     "south": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t1"
     },
     "east": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t1"
     },
     "west": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t1"
     },
     "up": {
-     "texture": "create:block/press_head_side"
+     "texture": "#t1"
     },
     "down": {
-     "texture": "create:block/press_head_face"
+     "texture": "#t2"
     }
    }
   },
@@ -49,22 +52,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     },
     "south": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     },
     "east": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     },
     "west": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     },
     "up": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     },
     "down": {
-     "texture": "create:block/press_rod"
+     "texture": "#t3"
     }
    }
   }

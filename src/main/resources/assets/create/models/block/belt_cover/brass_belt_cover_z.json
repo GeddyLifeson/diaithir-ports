@@ -17,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/brass_belt_cover"
+     "texture": "#particle"
     }
    }
   }

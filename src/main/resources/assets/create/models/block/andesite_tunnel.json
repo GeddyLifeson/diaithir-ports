@@ -17,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     }
    }
   },
@@ -49,22 +49,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     }
    }
   },
@@ -81,22 +81,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/andesite_tunnel_side"
+     "texture": "#particle"
     }
    }
   }

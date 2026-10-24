@@ -1,7 +1,10 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/shaft"
+  "particle": "create:block/shaft",
+  "t1": "create:block/shaft_end",
+  "t2": "create:block/shaft_collar",
+  "t3": "create:block/powered_band"
  },
  "elements": [
   {
@@ -17,7 +20,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -26,7 +29,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -35,7 +38,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -44,7 +47,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft",
+     "texture": "#particle",
      "uv": [
       0,
       0,
@@ -53,7 +56,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -62,7 +65,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -85,7 +88,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -94,7 +97,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -103,7 +106,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -112,7 +115,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -121,7 +124,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -130,7 +133,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -153,7 +156,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -162,7 +165,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -171,7 +174,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -180,7 +183,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -189,7 +192,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -198,7 +201,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -221,7 +224,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -230,7 +233,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -239,7 +242,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -248,7 +251,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/shaft_collar",
+     "texture": "#t2",
      "uv": [
       0,
       0,
@@ -257,7 +260,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -266,7 +269,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/shaft_end",
+     "texture": "#t1",
      "uv": [
       0,
       0,
@@ -289,7 +292,7 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -298,7 +301,7 @@
      ]
     },
     "south": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -307,7 +310,7 @@
      ]
     },
     "east": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -316,7 +319,7 @@
      ]
     },
     "west": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -325,7 +328,7 @@
      ]
     },
     "up": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,
@@ -334,7 +337,7 @@
      ]
     },
     "down": {
-     "texture": "create:block/powered_band",
+     "texture": "#t3",
      "uv": [
       0,
       0,

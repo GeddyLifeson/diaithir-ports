@@ -1,7 +1,9 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "particle": "create:block/brass_funnel_side"
+  "particle": "create:block/brass_funnel_side",
+  "t1": "create:block/brass_funnel_mouth",
+  "t2": "create:block/chute_top"
  },
  "elements": [
   {
@@ -17,22 +19,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "down": {
-     "texture": "create:block/brass_funnel_mouth"
+     "texture": "#t1"
     }
    }
   },
@@ -49,22 +51,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "south": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "east": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "west": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     },
     "up": {
-     "texture": "create:block/chute_top"
+     "texture": "#t2"
     },
     "down": {
-     "texture": "create:block/brass_funnel_side"
+     "texture": "#particle"
     }
    }
   }
