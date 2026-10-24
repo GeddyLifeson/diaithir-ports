@@ -21,6 +21,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.fml.ModList;
 import org.jspecify.annotations.Nullable;
@@ -146,9 +147,19 @@ final class SelfTest {
         }
         if (c instanceof Stalker s) {
             Vec3 eye = s.position().add(0, s.getBbHeight() * 0.5, 0);
-            r.fake.snapTo(s.getX() + 8, s.getY(), s.getZ(), 90F, 0F);
-            r.fake.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES, eye);
-            boolean looking = s.isWatchedBy(r.fake);
+            // trees and hills can block the line of sight, so try a few spots around and above the stalker and keep the first that sees it
+            boolean looking = false;
+            int[][] spots = {{4, 0, 3}, {-4, 0, 3}, {0, 4, 3}, {0, -4, 3}, {3, 3, 12}, {-3, -3, 12}, {1, 0, 24}};
+            for (int[] o : spots) {
+                int gx = Mth.floor(s.getX()) + o[0], gz = Mth.floor(s.getZ()) + o[1];
+                double gy = Math.max(s.getY(), r.level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, gx, gz));
+                r.fake.snapTo(gx + 0.5, gy + o[2], gz + 0.5, 90F, 0F);
+                r.fake.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES, eye);
+                if (s.isWatchedBy(r.fake)) {
+                    looking = true;
+                    break;
+                }
+            }
             r.fake.setYHeadRot(r.fake.getYHeadRot() + 180F);
             check(r, looking && !s.isWatchedBy(r.fake), id + " knows when it is watched");
         }
