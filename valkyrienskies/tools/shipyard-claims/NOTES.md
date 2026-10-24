@@ -29,3 +29,15 @@ FQ.postTickGame <- MixinMinecraftServer.postTick). Reproduced on .7 by creating 
 start of tickServer.
 Fix: PendingDimensions queues addDimension after startup and registers new levels right after
 preTickGame of the next tick; MixinServerLevel.postTick skips a level that is still pending.
+
+# Unregistered levels (2.5.0-diaithir.9)
+
+Root cause of the NPE in vs-core Et.i (postTickGame) on the PC: only the overworld was registered
+with the ship world (MixinMinecraftServer.postCreateLevels); the per-level addDimension in
+MixinServerLevel.onInit is skipped for levels built inside createLevels (the ship world does not
+exist yet) and the registration loop in preTick was commented out. Et.i looks up the
+dimension's world ship id for every terrain update and NPEs on a missing entry, so the first
+chunk loaded in the Nether, End or any modded dimension (Twilight Forest, Backrooms, DH, ...)
+killed the tick loop. Reproduced on .8 with `execute in minecraft:the_nether run forceload add 0 0`.
+Fix: PendingDimensions tracks registered ids; preTick registers every missing level right after
+preTickGame; MixinServerLevel.postTick skips unregistered levels.
