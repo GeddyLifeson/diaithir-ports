@@ -84,7 +84,7 @@ The model's animation file should have `idle`, `walk` and `attack`; flying creat
 | `diaithirbestiary:aurelith` | avatar | Aurelith, Avatar of the Dawn: a haloed god avatar boss. Summon only. |
 | `diaithirbestiary:hollowmourn` | stalker | A pale-faced forest horror that comes out in the dark from Age III and only moves when unseen. |
 
-Their models, animations and textures are cube-based placeholders written by `tools/gen_examples.py` (needs Pillow); edit the bone lists there and run `python3 tools/gen_examples.py` from this folder to rebuild them, or replace them with Blockbench exports.
+Their models, animations, 64x textures and glow masks are built by the procedural art toolkit in `tools/art` (needs numpy and Pillow; one module per creature in `tools/art/creatures`). Edit a creature module and run `python3 tools/art/build.py <name>` from this folder, or replace the files with Blockbench exports.
 
 ## Building
 
@@ -92,7 +92,7 @@ Their models, animations and textures are cube-based placeholders written by `to
 
 ## Creatures added in 0.3.0
 
-All fourteen are written by `tools/gen_content.py` (which also writes their creature JSON, loot tables and names). **The models and textures are cube placeholders** (flat shaded, 16 texels per block) and are marked as such here and in the generator. They are working creatures; replace the art with Blockbench models and 64x textures in the Diaithir style (DiaithirRPG `tools/art/blender/docs/STYLE.md`) and keep the ids.
+All fourteen are written by `tools/gen_content.py` (which also writes their creature JSON, loot tables and names). Their models and 64x textures come from `tools/art` (Celtic knotwork and enamel for the gods, riveted industrial plate for the mechs, bone, burlap and gauze for the stalkers, soft cel shading for the toons). Glowing parts use `<id>_glowmask.png` through GeckoLib's auto glow layer. Replace the art with Blockbench exports at any time and keep the ids.
 
 | Id | Preset | From Age | Where |
 | --- | --- | --- | --- |

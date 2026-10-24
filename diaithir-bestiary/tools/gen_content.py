@@ -1,10 +1,10 @@
-"""Writes the 0.3.0 creatures: models, animations, placeholder textures, creature JSON, loot tables and lang entries.
+"""Writes the 0.3.0 content: creature JSON, loot tables and lang entries, and builds the art for all 19 creatures.
 
-Run from diaithir-bestiary/: python3 tools/gen_content.py     (needs Pillow; gen_examples.py supplies the cube painter)
+Run from diaithir-bestiary/: python3 tools/gen_content.py     (needs numpy and Pillow)
 
-ART STATUS: every model and texture here is a cube-based PLACEHOLDER (flat shaded, 16 texels per block). They are real,
-working creatures, but the art is to be replaced by Blockbench models and 64x Factorio-style textures
-(tools/art/blender/docs/STYLE.md in DiaithirRPG) before a creature is advertised. Replace the files, keep the ids.
+ART: models, animations, 64x textures and emissive glow masks come from the procedural toolkit in tools/art
+(one module per creature in tools/art/creatures/). The cube specs below (C) are the legacy first-pass geometry and are
+no longer written; the J, L and LOOT tables are still the source for the creature JSON, loot and lang.
 """
 import json
 import sys
@@ -293,10 +293,16 @@ def loot_json(entries):
     return {"type": "minecraft:entity", "pools": pools}
 
 
+ART = ["aurelith", "ironstrider", "hollowmourn", "bumblesnout", "emberwyrm", "verdanai", "orsolune", "ashenvar", "marenoth",
+       "brassjack", "siegewarden", "tinkerspider", "pallidgaunt", "marrowcrawl", "veilstitch", "puddlepip", "grumblebun",
+       "twirlfin", "mossmop"]
+
+
 def main():
-    g.CREATURES.clear()
-    g.CREATURES.update(C)
-    g.main()
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "art"))
+    import build as art_build  # noqa: E402
+    for n in ART:
+        art_build.build(n)
     for name, data in J.items():
         p = DATA / "diaithirbestiary/creature" / (name + ".json")
         p.parent.mkdir(parents=True, exist_ok=True)

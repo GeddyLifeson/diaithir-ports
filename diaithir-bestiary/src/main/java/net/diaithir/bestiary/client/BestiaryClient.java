@@ -2,6 +2,7 @@ package net.diaithir.bestiary.client;
 
 import com.geckolib.renderer.GeoEntityRenderer;
 import com.geckolib.renderer.base.GeoRenderState;
+import com.geckolib.renderer.layer.builtin.AutoGlowingGeoLayer;
 import net.diaithir.bestiary.Creature;
 import net.diaithir.bestiary.DiaithirBestiary;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -25,6 +26,9 @@ public final class BestiaryClient {
     }
 
     private static <R extends LivingEntityRenderState & GeoRenderState> GeoEntityRenderer<Creature, R> renderer(EntityRendererProvider.Context context) {
-        return new GeoEntityRenderer<>(context, new CreatureModel());
+        GeoEntityRenderer<Creature, R> renderer = new GeoEntityRenderer<>(context, new CreatureModel());
+        // emissive parts come from textures/entity/<id>_glowmask.png, where one exists
+        renderer.withRenderLayer(AutoGlowingGeoLayer::new);
+        return renderer;
     }
 }
