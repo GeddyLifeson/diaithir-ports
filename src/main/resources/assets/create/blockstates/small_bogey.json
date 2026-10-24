@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create:block/small_bogey",
+   "x": 90,
+   "y": 90
+  },
+  "axis=z": {
+   "model": "create:block/small_bogey",
+   "x": 90
+  }
+ }
+}

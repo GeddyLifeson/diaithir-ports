@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/black_sail",
+  "end": "create:block/black_sail_end"
+ }
+}

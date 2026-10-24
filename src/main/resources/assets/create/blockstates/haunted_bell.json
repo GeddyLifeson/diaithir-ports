@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/haunted_bell"
+  },
+  "facing=south": {
+   "model": "create:block/haunted_bell",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/haunted_bell",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/haunted_bell",
+   "y": 90
+  }
+ }
+}

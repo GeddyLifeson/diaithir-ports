@@ -17,6 +17,9 @@ import java.nio.file.Path;
 public class DevDump {
     @SubscribeEvent
     public void onStarted(ServerStartedEvent event) {
+        if (System.getProperty("create.loadMixinTargets") != null) {
+            loadMixinTargets();
+        }
         String target = System.getProperty("create.dumpRegistries");
         if (target == null) {
             return;
@@ -84,5 +87,75 @@ public class DevDump {
             }
         }
         return a;
+    }
+
+    /** Developer aid: force-applies every Create mixin by loading its target classes, printing failures as MIXINFAIL lines. */
+    private static void loadMixinTargets() {
+        ClassLoader cl = DevDump.class.getClassLoader();
+        int count = 0;
+        for (String cfgName : new String[]{"create.mixins.json", "create.client.mixins.json"}) {
+            try (var in = DevDump.class.getClassLoader().getResourceAsStream(cfgName)) {
+                if (in == null) {
+                    continue;
+                }
+                JsonObject cfg = com.google.gson.JsonParser.parseReader(new java.io.InputStreamReader(in)).getAsJsonObject();
+                String pkg = cfg.get("package").getAsString();
+                java.util.List<String> names = new java.util.ArrayList<>();
+                try (var jar = new java.util.jar.JarFile(new java.io.File(DevDump.class.getProtectionDomain().getCodeSource().getLocation().toURI()))) {
+                    String prefix = pkg.replace('.', '/') + "/";
+                    jar.stream().map(java.util.zip.ZipEntry::getName).filter(n -> n.startsWith(prefix) && n.endsWith(".class") && n.indexOf('/', prefix.length()) < 0)
+                        .forEach(n -> names.add(n.substring(prefix.length(), n.length() - 6)));
+                }
+                for (String n : names) {
+                    String res = (pkg + "." + n).replace('.', '/') + ".class";
+                    try (var cin = DevDump.class.getClassLoader().getResourceAsStream(res)) {
+                        if (cin == null) {
+                            continue;
+                        }
+                        var reader = new org.objectweb.asm.ClassReader(cin);
+                        java.util.List<String> targets = new java.util.ArrayList<>();
+                        reader.accept(new org.objectweb.asm.ClassVisitor(org.objectweb.asm.Opcodes.ASM9) {
+                            @Override
+                            public org.objectweb.asm.AnnotationVisitor visitAnnotation(String desc, boolean visible) {
+                                if (!desc.equals("Lorg/spongepowered/asm/mixin/Mixin;")) {
+                                    return null;
+                                }
+                                return new org.objectweb.asm.AnnotationVisitor(org.objectweb.asm.Opcodes.ASM9) {
+                                    @Override
+                                    public org.objectweb.asm.AnnotationVisitor visitArray(String name) {
+                                        return new org.objectweb.asm.AnnotationVisitor(org.objectweb.asm.Opcodes.ASM9) {
+                                            @Override
+                                            public void visit(String n2, Object value) {
+                                                if (value instanceof org.objectweb.asm.Type t) {
+                                                    targets.add(t.getClassName());
+                                                } else if (value instanceof String str) {
+                                                    targets.add(str);
+                                                }
+                                            }
+                                        };
+                                    }
+                                };
+                            }
+                        }, org.objectweb.asm.ClassReader.SKIP_CODE);
+                        for (String t : targets) {
+                            count++;
+                            if (System.getProperty("create.loadMixinTargets").equals("v")) System.out.println("MIXINLOAD " + t);
+                            try {
+                                Class.forName(t, false, cl);
+                            } catch (Throwable e) {
+                                Throwable c = e;
+                                while (c.getCause() != null) {
+                                    c = c.getCause();
+                                }
+                                System.out.println("MIXINFAIL " + n + " " + t + " :: " + e.getClass().getSimpleName() + " :: " + String.valueOf(c.getMessage()).replace('\n', ' '));
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("MIXINFAIL cfg " + cfgName + " " + e);
+            }
+        }
+        System.out.println("MIXINFAIL-DONE " + count);
     }
 }

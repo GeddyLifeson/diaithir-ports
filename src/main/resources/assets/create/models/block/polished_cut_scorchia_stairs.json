@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/stairs",
+ "textures": {
+  "bottom": "create:block/scorchia_polished",
+  "top": "create:block/scorchia_polished",
+  "side": "create:block/scorchia_polished"
+ }
+}

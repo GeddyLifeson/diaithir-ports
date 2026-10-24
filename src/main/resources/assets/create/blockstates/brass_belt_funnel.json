@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/brass_belt_funnel"
+  },
+  "facing=south": {
+   "model": "create:block/brass_belt_funnel",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/brass_belt_funnel",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/brass_belt_funnel",
+   "y": 90
+  }
+ }
+}

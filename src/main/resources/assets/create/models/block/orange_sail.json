@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/orange_sail",
+  "end": "create:block/orange_sail_end"
+ }
+}

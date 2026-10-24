@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/metal_girder_encased_shaft",
+  "end": "create:block/metal_girder_encased_shaft_end"
+ }
+}

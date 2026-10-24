@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/steam_whistle"
+  },
+  "facing=south": {
+   "model": "create:block/steam_whistle",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/steam_whistle",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/steam_whistle",
+   "y": 90
+  }
+ }
+}

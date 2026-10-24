@@ -1,0 +1,7 @@
+{
+ "variants": {
+  "": {
+   "model": "create:block/steam_whistle_extension"
+  }
+ }
+}

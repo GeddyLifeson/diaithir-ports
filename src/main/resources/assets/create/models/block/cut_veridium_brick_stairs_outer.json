@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "create:block/veridium_bricks",
+  "top": "create:block/veridium_bricks",
+  "side": "create:block/veridium_bricks"
+ }
+}

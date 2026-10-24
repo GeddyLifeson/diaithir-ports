@@ -22,6 +22,11 @@ public class NeoEvents {
     }
 
     @SubscribeEvent
+    public void onEnteringSection(net.neoforged.neoforge.event.entity.EntityEvent.EnteringSection event) {
+        com.zurrtum.create.content.trains.entity.CarriageEntityHandler.onEntityEnterSection(event.getEntity(), event.getPackedOldPos(), event.getPackedNewPos());
+    }
+
+    @SubscribeEvent
     public void onServerReloadListeners(AddServerReloadListenersEvent event) {
         event.addListener(Identifier.fromNamespaceAndPath(Create.MOD_ID, "recipe_finder"), RecipeFinder.LISTENER);
         event.addListener(Identifier.fromNamespaceAndPath(Create.MOD_ID, "recipe_trie_finder"), RecipeTrieFinder.LISTENER);

@@ -1,0 +1,41 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "0": "create:block/partial_generic",
+  "particle": "create:block/partial_generic"
+ },
+ "elements": [
+  {
+   "from": [
+    1,
+    0,
+    1
+   ],
+   "to": [
+    15,
+    2,
+    15
+   ],
+   "faces": {
+    "north": {
+     "texture": "#0"
+    },
+    "south": {
+     "texture": "#0"
+    },
+    "east": {
+     "texture": "#0"
+    },
+    "west": {
+     "texture": "#0"
+    },
+    "up": {
+     "texture": "#0"
+    },
+    "down": {
+     "texture": "#0"
+    }
+   }
+  }
+ ]
+}

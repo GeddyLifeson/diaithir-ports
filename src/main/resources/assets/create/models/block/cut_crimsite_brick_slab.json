@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "create:block/crimsite_bricks",
+  "top": "create:block/crimsite_bricks",
+  "side": "create:block/crimsite_bricks"
+ }
+}

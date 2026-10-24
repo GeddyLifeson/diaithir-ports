@@ -16,7 +16,10 @@ import static com.zurrtum.create.Create.MOD_ID;
 
 public class AllRenderPipelines {
     // Own pipelines reuse the vanilla entity shader, so the pack ships no custom shader sources.
-    public static final RenderPipeline.Snippet GLOWING_SNIPPET = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET).buildSnippet();
+    public static final RenderPipeline.Snippet GLOWING_SNIPPET = RenderPipeline.builder(RenderPipelines.MATRICES_FOG_LIGHT_DIR_SNIPPET)
+        .withVertexShader("core/entity").withFragmentShader("core/entity").withSampler("Sampler0")
+        .withShaderDefine("NO_OVERLAY").withShaderDefine("EMISSIVE")
+        .withVertexFormat(DefaultVertexFormat.ENTITY, VertexFormat.Mode.QUADS).withDepthStencilState(DepthStencilState.DEFAULT).buildSnippet();
     public static final RenderPipeline ADDITIVE = register(
         "additive",
         RenderPipeline.builder(RenderPipelines.BLOCK_SNIPPET)

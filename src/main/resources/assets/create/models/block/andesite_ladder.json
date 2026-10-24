@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/ladder",
+ "textures": {
+  "particle": "create:block/andesite_ladder",
+  "texture": "create:block/andesite_ladder"
+ }
+}

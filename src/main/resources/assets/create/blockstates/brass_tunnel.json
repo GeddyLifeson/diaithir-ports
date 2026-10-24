@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create:block/brass_tunnel",
+   "x": 90,
+   "y": 90
+  },
+  "axis=z": {
+   "model": "create:block/brass_tunnel",
+   "x": 90
+  }
+ }
+}

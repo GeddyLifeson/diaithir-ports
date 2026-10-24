@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/controls"
+  },
+  "facing=south": {
+   "model": "create:block/controls",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/controls",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/controls",
+   "y": 90
+  }
+ }
+}

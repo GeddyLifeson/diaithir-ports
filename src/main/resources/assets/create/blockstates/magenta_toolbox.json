@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/magenta_toolbox"
+  },
+  "facing=south": {
+   "model": "create:block/magenta_toolbox",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/magenta_toolbox",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/magenta_toolbox",
+   "y": 90
+  }
+ }
+}

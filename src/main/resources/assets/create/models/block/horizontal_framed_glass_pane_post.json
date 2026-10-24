@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_post",
+ "textures": {
+  "pane": "create:block/horizontal_framed_glass_pane",
+  "edge": "create:block/horizontal_framed_glass_pane"
+ }
+}

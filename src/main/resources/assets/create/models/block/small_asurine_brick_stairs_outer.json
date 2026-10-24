@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "create:block/asurine_small",
+  "top": "create:block/asurine_small",
+  "side": "create:block/asurine_small"
+ }
+}

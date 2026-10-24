@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/inner_stairs",
+ "textures": {
+  "bottom": "create:block/crimsite_polished",
+  "top": "create:block/crimsite_polished",
+  "side": "create:block/crimsite_polished"
+ }
+}

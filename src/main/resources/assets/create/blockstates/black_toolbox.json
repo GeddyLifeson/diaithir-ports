@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/black_toolbox"
+  },
+  "facing=south": {
+   "model": "create:block/black_toolbox",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/black_toolbox",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/black_toolbox",
+   "y": 90
+  }
+ }
+}

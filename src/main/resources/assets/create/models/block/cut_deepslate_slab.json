@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "create:block/deepslate_cut",
+  "top": "create:block/deepslate_cut",
+  "side": "create:block/deepslate_cut"
+ }
+}

@@ -47,7 +47,6 @@
     "NewMinecartBehaviorMixin",
     "ObserverBlockMixin",
     "OldMinecartBehaviorMixin",
-    "PersistentEntitySectionManagerCallbackMixin",
     "PersistentEntitySectionManagerMixin",
     "PistonHeadBlockMixin",
     "PlayerListMixin",

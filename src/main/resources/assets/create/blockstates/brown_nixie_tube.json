@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/brown_nixie_tube"
+  },
+  "facing=south": {
+   "model": "create:block/brown_nixie_tube",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/brown_nixie_tube",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/brown_nixie_tube",
+   "y": 90
+  }
+ }
+}

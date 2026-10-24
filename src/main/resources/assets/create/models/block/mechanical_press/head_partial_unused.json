@@ -1,0 +1,9 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "0": "create:block/press",
+  "1": "create:block/press_head",
+  "particle": "create:block/press"
+ },
+ "elements": []
+}

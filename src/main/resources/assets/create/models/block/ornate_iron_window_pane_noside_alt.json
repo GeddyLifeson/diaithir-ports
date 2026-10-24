@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_noside_alt",
+ "textures": {
+  "pane": "create:block/ornate_iron_window_pane",
+  "edge": "create:block/ornate_iron_window_pane"
+ }
+}

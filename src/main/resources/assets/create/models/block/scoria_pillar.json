@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/scoria_pillar_side",
+  "end": "create:block/scoria_pillar_top"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/pulse_repeater"
+  },
+  "facing=south": {
+   "model": "create:block/pulse_repeater",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/pulse_repeater",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/pulse_repeater",
+   "y": 90
+  }
+ }
+}

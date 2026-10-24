@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/powered_latch"
+  },
+  "facing=south": {
+   "model": "create:block/powered_latch",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/powered_latch",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/powered_latch",
+   "y": 90
+  }
+ }
+}

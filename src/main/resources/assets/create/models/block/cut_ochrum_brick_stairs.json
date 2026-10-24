@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/stairs",
+ "textures": {
+  "bottom": "create:block/ochrum_bricks",
+  "top": "create:block/ochrum_bricks",
+  "side": "create:block/ochrum_bricks"
+ }
+}

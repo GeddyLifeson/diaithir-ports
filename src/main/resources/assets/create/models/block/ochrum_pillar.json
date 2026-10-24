@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/ochrum_pillar_side",
+  "end": "create:block/ochrum_pillar_top"
+ }
+}

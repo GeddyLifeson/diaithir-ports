@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_glass_pane_side",
+ "textures": {
+  "pane": "create:block/acacia_window_pane",
+  "edge": "create:block/acacia_window_pane"
+ }
+}

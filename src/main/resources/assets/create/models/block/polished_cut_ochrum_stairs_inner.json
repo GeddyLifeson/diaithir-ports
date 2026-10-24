@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/inner_stairs",
+ "textures": {
+  "bottom": "create:block/ochrum_polished",
+  "top": "create:block/ochrum_polished",
+  "side": "create:block/ochrum_polished"
+ }
+}

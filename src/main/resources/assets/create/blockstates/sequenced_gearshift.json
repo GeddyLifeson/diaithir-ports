@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create:block/sequenced_gearshift",
+   "x": 90,
+   "y": 90
+  },
+  "axis=z": {
+   "model": "create:block/sequenced_gearshift",
+   "x": 90
+  }
+ }
+}

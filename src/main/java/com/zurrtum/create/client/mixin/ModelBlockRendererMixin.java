@@ -26,19 +26,6 @@ import java.util.List;
 
 @Mixin(ModelBlockRenderer.class)
 public class ModelBlockRendererMixin {
-    @WrapOperation(method = "tesselateBlock(Lnet/minecraft/client/renderer/block/BlockQuadOutput;FFFLnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/renderer/block/dispatch/BlockStateModel;J)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getLightEmission()I"))
-    private int getLuminance(
-        BlockState state,
-        Operation<Integer> original,
-        @Local(argsOnly = true) BlockAndTintGetter world,
-        @Local(argsOnly = true) BlockPos pos
-    ) {
-        if (state.getBlock() instanceof CopycatBlock block) {
-            return block.getLuminance(world, pos);
-        }
-        return original.call(state);
-    }
-
     @Inject(method = "tesselateFlat(Lnet/minecraft/client/renderer/block/BlockQuadOutput;FFFLjava/util/List;Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)V", at = @At("HEAD"))
     private void initLightState(
         BlockQuadOutput output,
@@ -93,23 +80,6 @@ public class ModelBlockRendererMixin {
     ) {
         if (output instanceof VanillinMeshEmitterManager meshEmitter) {
             meshEmitter.prepareForModelLayer(false);
-        }
-    }
-
-    @WrapOperation(method = "tesselateBlock(Lnet/minecraft/client/renderer/block/BlockQuadOutput;FFFLnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/client/renderer/block/dispatch/BlockStateModel;J)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/block/dispatch/BlockStateModel;collectParts(Lnet/minecraft/util/RandomSource;Ljava/util/List;)V"))
-    private void collectParts(
-        BlockStateModel model,
-        RandomSource random,
-        List<BlockStateModelPart> output,
-        Operation<Void> original,
-        @Local(argsOnly = true) BlockAndTintGetter level,
-        @Local(argsOnly = true) BlockPos pos,
-        @Local(argsOnly = true) BlockState state
-    ) {
-        if (model instanceof WrapperBlockStateModel wrapper) {
-            wrapper.addPartsWithInfo(level, pos, state, random, output);
-        } else {
-            original.call(model, random, output);
         }
     }
 }

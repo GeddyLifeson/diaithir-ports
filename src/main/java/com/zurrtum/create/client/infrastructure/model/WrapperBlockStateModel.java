@@ -122,6 +122,21 @@ public abstract class WrapperBlockStateModel implements BlockStateModel, BlockSt
         model.collectParts(random, parts);
     }
 
+    @Override
+    public void collectParts(BlockAndTintGetter level, BlockPos pos, BlockState state, RandomSource random, List<BlockStateModelPart> parts) {
+        addPartsWithInfo(level, pos, state, random, parts);
+    }
+
+    @Override
+    public Material.Baked particleMaterial(BlockAndTintGetter level, BlockPos pos, BlockState state) {
+        return particleMaterialWithInfo(level, pos, state);
+    }
+
+    @Override
+    public Object createGeometryKey(BlockAndTintGetter level, BlockPos pos, BlockState state, RandomSource random) {
+        return null;
+    }
+
     public boolean needUpdateTerrainParticle() {
         return false;
     }

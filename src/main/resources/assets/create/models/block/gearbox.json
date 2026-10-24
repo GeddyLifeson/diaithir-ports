@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/gearbox",
+  "end": "create:block/gearbox_end"
+ }
+}

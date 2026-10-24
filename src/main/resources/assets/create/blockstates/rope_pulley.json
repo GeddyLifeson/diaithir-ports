@@ -1,0 +1,13 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create:block/rope_pulley",
+   "x": 90,
+   "y": 90
+  },
+  "axis=z": {
+   "model": "create:block/rope_pulley",
+   "x": 90
+  }
+ }
+}

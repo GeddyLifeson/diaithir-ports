@@ -18,7 +18,10 @@ public class PonderRenderPipelines {
         CompareOp.LESS_THAN_OR_EQUAL,
         false
     );
-    public static final Snippet ENTITY_BLOCK_SNIPPET = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET).buildSnippet();
+    public static final Snippet ENTITY_BLOCK_SNIPPET = RenderPipeline.builder(RenderPipelines.MATRICES_FOG_LIGHT_DIR_SNIPPET)
+        .withVertexShader("core/entity").withFragmentShader("core/entity").withSampler("Sampler0").withSampler("Sampler2")
+        .withShaderDefine("NO_OVERLAY")
+        .withVertexFormat(DefaultVertexFormat.ENTITY, VertexFormat.Mode.QUADS).withDepthStencilState(DepthStencilState.DEFAULT).buildSnippet();
     public static final Snippet ENTITY_BLOCK_LIGHT_SNIPPET = RenderPipeline.builder(RenderPipelines.BLOCK_SNIPPET).buildSnippet();
     public static final RenderPipeline ENTITY_BLOCK_SOLID = register(
         "entity_block_solid",

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/andesite_encased_cogwheel",
+  "end": "create:block/andesite_encased_cogwheel_end"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/inner_stairs",
+ "textures": {
+  "bottom": "create:block/asurine_polished",
+  "top": "create:block/asurine_polished",
+  "side": "create:block/asurine_polished"
+ }
+}

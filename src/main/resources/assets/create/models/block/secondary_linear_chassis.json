@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/secondary_linear_chassis",
+  "end": "create:block/secondary_linear_chassis_end"
+ }
+}

@@ -1,0 +1,470 @@
+{
+ "saw_activate_stone": {
+  "sounds": [
+   "create:saw_activate_stone"
+  ],
+  "subtitle": "create.subtitle.saw_activate_stone"
+ },
+ "chiff": {
+  "sounds": [
+   "create:chiff"
+  ],
+  "subtitle": "create.subtitle.chiff"
+ },
+ "whistle_train_manual_low_end": {
+  "sounds": [
+   "create:whistle_train_manual_low_end"
+  ],
+  "subtitle": "create.subtitle.whistle_train_manual_low_end"
+ },
+ "confirm": {
+  "sounds": [
+   "create:confirm"
+  ],
+  "subtitle": "create.subtitle.confirm"
+ },
+ "stock_ticker_request": {
+  "sounds": [
+   "create:stock_ticker_request"
+  ],
+  "subtitle": "create.subtitle.stock_ticker_request"
+ },
+ "potato_hit": {
+  "sounds": [
+   "create:potato_hit"
+  ],
+  "subtitle": "create.subtitle.potato_hit"
+ },
+ "mechanical_press_activation": {
+  "sounds": [
+   "create:mechanical_press_activation"
+  ],
+  "subtitle": "create.subtitle.mechanical_press_activation"
+ },
+ "cogs": {
+  "sounds": [
+   "create:cogs"
+  ],
+  "subtitle": "create.subtitle.cogs"
+ },
+ "frogport_close": {
+  "sounds": [
+   "create:frogport_close"
+  ],
+  "subtitle": "create.subtitle.frogport_close"
+ },
+ "frogport_deposit": {
+  "sounds": [
+   "create:frogport_deposit"
+  ],
+  "subtitle": "create.subtitle.frogport_deposit"
+ },
+ "whistle_train": {
+  "sounds": [
+   "create:whistle_train"
+  ],
+  "subtitle": "create.subtitle.whistle_train"
+ },
+ "deny": {
+  "sounds": [
+   "create:deny"
+  ],
+  "subtitle": "create.subtitle.deny"
+ },
+ "peculiar_bell_use": {
+  "sounds": [
+   "create:peculiar_bell_use"
+  ],
+  "subtitle": "create.subtitle.peculiar_bell_use"
+ },
+ "worldshaper_place": {
+  "sounds": [
+   "create:worldshaper_place"
+  ],
+  "subtitle": "create.subtitle.worldshaper_place"
+ },
+ "saw_activate_wood": {
+  "sounds": [
+   "create:saw_activate_wood"
+  ],
+  "subtitle": "create.subtitle.saw_activate_wood"
+ },
+ "frogport_catch": {
+  "sounds": [
+   "create:frogport_catch"
+  ],
+  "subtitle": "create.subtitle.frogport_catch"
+ },
+ "crafter_click_compounded_1": {
+  "sounds": [
+   "create:crafter_click"
+  ],
+  "subtitle": "create.subtitle.crafter_click"
+ },
+ "package_pop": {
+  "sounds": [
+   "create:package_pop"
+  ],
+  "subtitle": "create.subtitle.package_pop"
+ },
+ "mixing_compounded_1": {
+  "sounds": [
+   "create:mixing"
+  ],
+  "subtitle": "create.subtitle.mixing"
+ },
+ "depot_slide": {
+  "sounds": [
+   "create:depot_slide"
+  ],
+  "subtitle": "create.subtitle.depot_slide"
+ },
+ "frogport_open": {
+  "sounds": [
+   "create:frogport_open"
+  ],
+  "subtitle": "create.subtitle.frogport_open"
+ },
+ "train": {
+  "sounds": [
+   "create:train"
+  ],
+  "subtitle": "create.subtitle.train"
+ },
+ "whistle_train_manual_end": {
+  "sounds": [
+   "create:whistle_train_manual_end"
+  ],
+  "subtitle": "create.subtitle.whistle_train_manual_end"
+ },
+ "contraption_assemble": {
+  "sounds": [
+   "create:contraption_assemble"
+  ],
+  "subtitle": "create.subtitle.contraption_assemble"
+ },
+ "train2": {
+  "sounds": [
+   "create:train2"
+  ],
+  "subtitle": "create.subtitle.train2"
+ },
+ "train3": {
+  "sounds": [
+   "create:train3"
+  ],
+  "subtitle": "create.subtitle.train3"
+ },
+ "contraption_assemble_compounded_1": {
+  "sounds": [
+   "create:contraption_assemble"
+  ],
+  "subtitle": "create.subtitle.contraption_assemble"
+ },
+ "mechanical_press_activation_belt_compounded_1": {
+  "sounds": [
+   "create:mechanical_press_activation_belt"
+  ],
+  "subtitle": "create.subtitle.mechanical_press_activation_belt"
+ },
+ "crafter_craft": {
+  "sounds": [
+   "create:crafter_craft"
+  ],
+  "subtitle": "create.subtitle.crafter_craft"
+ },
+ "wrench_remove": {
+  "sounds": [
+   "create:wrench_remove"
+  ],
+  "subtitle": "create.subtitle.wrench_remove"
+ },
+ "sanding_long": {
+  "sounds": [
+   "create:sanding_long"
+  ],
+  "subtitle": "create.subtitle.sanding_long"
+ },
+ "potato_hit_compounded_1": {
+  "sounds": [
+   "create:potato_hit"
+  ],
+  "subtitle": "create.subtitle.potato_hit"
+ },
+ "spout": {
+  "sounds": [
+   "create:spout"
+  ],
+  "subtitle": "create.subtitle.spout"
+ },
+ "desk_bell": {
+  "sounds": [
+   "create:desk_bell"
+  ],
+  "subtitle": "create.subtitle.desk_bell"
+ },
+ "controller_put": {
+  "sounds": [
+   "create:controller_put"
+  ],
+  "subtitle": "create.subtitle.controller_put"
+ },
+ "stock_ticker_trade": {
+  "sounds": [
+   "create:stock_ticker_trade"
+  ],
+  "subtitle": "create.subtitle.stock_ticker_trade"
+ },
+ "blaze_munch": {
+  "sounds": [
+   "create:blaze_munch"
+  ],
+  "subtitle": "create.subtitle.blaze_munch"
+ },
+ "cranking": {
+  "sounds": [
+   "create:cranking"
+  ],
+  "subtitle": "create.subtitle.cranking"
+ },
+ "sanding_short": {
+  "sounds": [
+   "create:sanding_short"
+  ],
+  "subtitle": "create.subtitle.sanding_short"
+ },
+ "crafter_click": {
+  "sounds": [
+   "create:crafter_click"
+  ],
+  "subtitle": "create.subtitle.crafter_click"
+ },
+ "mechanical_press_activation_belt": {
+  "sounds": [
+   "create:mechanical_press_activation_belt"
+  ],
+  "subtitle": "create.subtitle.mechanical_press_activation_belt"
+ },
+ "cranking_compounded_1": {
+  "sounds": [
+   "create:cranking"
+  ],
+  "subtitle": "create.subtitle.cranking"
+ },
+ "funnel_flap_compounded_1": {
+  "sounds": [
+   "create:funnel_flap"
+  ],
+  "subtitle": "create.subtitle.funnel_flap"
+ },
+ "packager": {
+  "sounds": [
+   "create:packager"
+  ],
+  "subtitle": "create.subtitle.packager"
+ },
+ "scroll_value": {
+  "sounds": [
+   "create:scroll_value"
+  ],
+  "subtitle": "create.subtitle.scroll_value"
+ },
+ "mechanical_press_activation_compounded_1": {
+  "sounds": [
+   "create:mechanical_press_activation"
+  ],
+  "subtitle": "create.subtitle.mechanical_press_activation"
+ },
+ "funnel_flap": {
+  "sounds": [
+   "create:funnel_flap"
+  ],
+  "subtitle": "create.subtitle.funnel_flap"
+ },
+ "haunted_bell_use": {
+  "sounds": [
+   "create:haunted_bell_use"
+  ],
+  "subtitle": "create.subtitle.haunted_bell_use"
+ },
+ "stock_link": {
+  "sounds": [
+   "create:stock_link"
+  ],
+  "subtitle": "create.subtitle.stock_link"
+ },
+ "slime_added": {
+  "sounds": [
+   "create:slime_added"
+  ],
+  "subtitle": "create.subtitle.slime_added"
+ },
+ "steam": {
+  "sounds": [
+   "create:steam"
+  ],
+  "subtitle": "create.subtitle.steam"
+ },
+ "depot_plop": {
+  "sounds": [
+   "create:depot_plop"
+  ],
+  "subtitle": "create.subtitle.depot_plop"
+ },
+ "fwoomp": {
+  "sounds": [
+   "create:fwoomp"
+  ],
+  "subtitle": "create.subtitle.fwoomp"
+ },
+ "controller_click": {
+  "sounds": [
+   "create:controller_click"
+  ],
+  "subtitle": "create.subtitle.controller_click"
+ },
+ "package_pop_compounded_1": {
+  "sounds": [
+   "create:package_pop"
+  ],
+  "subtitle": "create.subtitle.package_pop"
+ },
+ "whistle_train_low": {
+  "sounds": [
+   "create:whistle_train_low"
+  ],
+  "subtitle": "create.subtitle.whistle_train_low"
+ },
+ "controller_take": {
+  "sounds": [
+   "create:controller_take"
+  ],
+  "subtitle": "create.subtitle.controller_take"
+ },
+ "clipboard_erase": {
+  "sounds": [
+   "create:clipboard_erase"
+  ],
+  "subtitle": "create.subtitle.clipboard_erase"
+ },
+ "whistle_low": {
+  "sounds": [
+   "create:whistle_low"
+  ],
+  "subtitle": "create.subtitle.whistle_low"
+ },
+ "confirm_2": {
+  "sounds": [
+   "create:confirm_2"
+  ],
+  "subtitle": "create.subtitle.confirm_2"
+ },
+ "item_hatch_compounded_1": {
+  "sounds": [
+   "create:item_hatch"
+  ],
+  "subtitle": "create.subtitle.item_hatch"
+ },
+ "whistle_train_manual_low": {
+  "sounds": [
+   "create:whistle_train_manual_low"
+  ],
+  "subtitle": "create.subtitle.whistle_train_manual_low"
+ },
+ "whistle": {
+  "sounds": [
+   "create:whistle"
+  ],
+  "subtitle": "create.subtitle.whistle"
+ },
+ "haunted_bell_convert": {
+  "sounds": [
+   "create:haunted_bell_convert"
+  ],
+  "subtitle": "create.subtitle.haunted_bell_convert"
+ },
+ "whistle_train_manual": {
+  "sounds": [
+   "create:whistle_train_manual"
+  ],
+  "subtitle": "create.subtitle.whistle_train_manual"
+ },
+ "item_hatch": {
+  "sounds": [
+   "create:item_hatch"
+  ],
+  "subtitle": "create.subtitle.item_hatch"
+ },
+ "cardboard_bonk": {
+  "sounds": [
+   "create:cardboard_bonk"
+  ],
+  "subtitle": "create.subtitle.cardboard_bonk"
+ },
+ "clipboard_check": {
+  "sounds": [
+   "create:clipboard_check"
+  ],
+  "subtitle": "create.subtitle.clipboard_check"
+ },
+ "wrench_remove_compounded_1": {
+  "sounds": [
+   "create:wrench_remove"
+  ],
+  "subtitle": "create.subtitle.wrench_remove"
+ },
+ "crushing_3": {
+  "sounds": [
+   "create:crushing_3"
+  ],
+  "subtitle": "create.subtitle.crushing_3"
+ },
+ "crushing_2": {
+  "sounds": [
+   "create:crushing_2"
+  ],
+  "subtitle": "create.subtitle.crushing_2"
+ },
+ "crushing_1": {
+  "sounds": [
+   "create:crushing_1"
+  ],
+  "subtitle": "create.subtitle.crushing_1"
+ },
+ "whistle_high": {
+  "sounds": [
+   "create:whistle_high"
+  ],
+  "subtitle": "create.subtitle.whistle_high"
+ },
+ "contraption_disassemble": {
+  "sounds": [
+   "create:contraption_disassemble"
+  ],
+  "subtitle": "create.subtitle.contraption_disassemble"
+ },
+ "schematicannon_finish": {
+  "sounds": [
+   "create:schematicannon_finish"
+  ],
+  "subtitle": "create.subtitle.schematicannon_finish"
+ },
+ "schematicannon_launch_block": {
+  "sounds": [
+   "create:schematicannon_launch_block"
+  ],
+  "subtitle": "create.subtitle.schematicannon_launch_block"
+ },
+ "mixing": {
+  "sounds": [
+   "create:mixing"
+  ],
+  "subtitle": "create.subtitle.mixing"
+ },
+ "wrench_rotate": {
+  "sounds": [
+   "create:wrench_rotate"
+  ],
+  "subtitle": "create.subtitle.wrench_rotate"
+ }
+}

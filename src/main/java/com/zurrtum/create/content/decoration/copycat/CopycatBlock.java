@@ -367,6 +367,11 @@ public abstract class CopycatBlock extends Block implements IBE<CopycatBlockEnti
     }
 
     @Override
+    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        return getLuminance(level, pos);
+    }
+
+    @Override
     public float getResistance(BlockGetter level, BlockPos pos) {
         return getMaterial(level, pos).getBlock().getExplosionResistance();
     }

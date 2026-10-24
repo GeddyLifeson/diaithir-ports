@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "create:block/pink_postbox"
+  },
+  "facing=south": {
+   "model": "create:block/pink_postbox",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "create:block/pink_postbox",
+   "y": 270
+  },
+  "facing=east": {
+   "model": "create:block/pink_postbox",
+   "y": 90
+  }
+ }
+}

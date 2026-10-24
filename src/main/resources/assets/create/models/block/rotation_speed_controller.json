@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "create:block/rotation_speed_controller",
+  "end": "create:block/rotation_speed_controller_end"
+ }
+}

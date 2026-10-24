@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=x": {
+   "model": "create:block/adjustable_chain_gearshift",
+   "x": 90,
+   "y": 90
+  },
+  "axis=y": {
+   "model": "create:block/adjustable_chain_gearshift"
+  },
+  "axis=z": {
+   "model": "create:block/adjustable_chain_gearshift",
+   "x": 90
+  }
+ }
+}
