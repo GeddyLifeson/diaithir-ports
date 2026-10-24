@@ -7,7 +7,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 
-@Mod(Create.MOD_ID)
+@Mod("diaithir_create")
 public class CreateNeoForge {
     public CreateNeoForge(IEventBus modBus, ModContainer container) {
         new Create().onInitialize();

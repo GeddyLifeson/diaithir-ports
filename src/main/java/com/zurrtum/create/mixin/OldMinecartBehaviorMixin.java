@@ -1,6 +1,5 @@
 package com.zurrtum.create.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import com.zurrtum.create.foundation.block.MinecartPassBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -19,8 +18,11 @@ public abstract class OldMinecartBehaviorMixin extends MinecartBehavior {
         super(minecart);
     }
 
-    @Inject(method = "moveAlongTrack(Lnet/minecraft/server/level/ServerLevel;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/vehicle/minecart/OldMinecartBehavior;setDeltaMovement(DDD)V", ordinal = 0, shift = At.Shift.BY, by = 2))
-    private void onMinecartPass(ServerLevel world, CallbackInfo ci, @Local BlockPos pos, @Local BlockState state) {
+    // Anchored at HEAD (not at a call inside the method) so other mods that also rewrite moveAlongTrack, such as Railcraft, cannot break the injection.
+    @Inject(method = "moveAlongTrack(Lnet/minecraft/server/level/ServerLevel;)V", at = @At("HEAD"))
+    private void onMinecartPass(ServerLevel world, CallbackInfo ci) {
+        BlockPos pos = this.minecart.getCurrentBlockPosOrRailBelow();
+        BlockState state = world.getBlockState(pos);
         if (state.getBlock() instanceof MinecartPassBlock block) {
             block.onMinecartPass(state, world, pos, this.minecart);
         }

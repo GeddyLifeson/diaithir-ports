@@ -25,11 +25,11 @@ public final class ModContainer {
         }
 
         public String getName() {
-            return ModList.get() == null ? id : ModList.get().getModContainerById(id).map(c -> c.getModInfo().getDisplayName()).orElse(id);
+            return ModList.get() == null ? id : ModList.get().getModContainerById(id.equals("create") ? "diaithir_create" : id).map(c -> c.getModInfo().getDisplayName()).orElse(id);
         }
 
         public Version getVersion() {
-            String v = ModList.get() == null ? "0" : ModList.get().getModContainerById(id).map(c -> c.getModInfo().getVersion().toString()).orElse("0");
+            String v = ModList.get() == null ? "0" : ModList.get().getModContainerById(id.equals("create") ? "diaithir_create" : id).map(c -> c.getModInfo().getVersion().toString()).orElse("0");
             return new Version(v);
         }
     }

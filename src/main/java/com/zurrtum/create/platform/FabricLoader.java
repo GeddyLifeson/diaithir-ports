@@ -25,7 +25,7 @@ public final class FabricLoader {
     public boolean isModLoaded(String id) {
         ModList list = ModList.get();
         if (list == null) {
-            return FMLLoader.getCurrent().getLoadingModList().getModFileById(id) != null;
+            return FMLLoader.getCurrent().getLoadingModList().getModFileById(id.equals("create") ? "diaithir_create" : id) != null;
         }
         return list.isLoaded(id);
     }

@@ -61,7 +61,13 @@ public record PotionRecipe(FluidStack result, FluidIngredient fluidIngredient,
         if (data == null) {
             return;
         }
-        PotionBrewing potionBrewing = PotionBrewing.bootstrap(data.enabledFeatures);
+        PotionBrewing potionBrewing;
+        try {
+            potionBrewing = PotionBrewing.bootstrap(data.enabledFeatures);
+        } catch (RuntimeException e) {
+            // another mod's RegisterBrewingRecipesEvent listener failed during data reload; skip generated potion recipes
+            return;
+        }
         int recipeIndex = 0;
         List<Item> allowedSupportedContainers = new ArrayList<>();
         for (Ingredient container : potionBrewing.containers) {

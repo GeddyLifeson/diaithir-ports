@@ -3,7 +3,7 @@ loaderVersion="[1,)"
 license="MIT (code and data); assets are original to the Diaithir pack (see LICENSE.md)"
 
 [[mods]]
-modId="create"
+modId="diaithir_create"
 version="6.0.9-diaithir.1"
 displayName="Create (Diaithir port)"
 authors="The Create Team (code, MIT); ZurrTum (Create Fly port, CC0); Diaithir pack (NeoForge port and all art)"
@@ -15,14 +15,14 @@ config="create.mixins.json"
 [[mixins]]
 config="create.client.mixins.json"
 
-[[dependencies.create]]
+[[dependencies.diaithir_create]]
 modId="neoforge"
 type="required"
 versionRange="[26.1.2.30-beta,)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.create]]
+[[dependencies.diaithir_create]]
 modId="minecraft"
 type="required"
 versionRange="[26.1.2]"
