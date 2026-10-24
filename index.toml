@@ -1692,9 +1692,8 @@ hash = "485d23d2748fb2fe844a24038d4aa406647600c1f9cc8283de02c23607492a6a"
 metafile = true
 
 [[files]]
-file = "mods/lightmanscurrency-26.1-1.0.0.1.pw.toml"
-hash = "b5dcc0b5f52470573272949c2bb54723ee349a43bfd87dfeb9b1de98199aa7ac"
-metafile = true
+file = "mods/lightmanscurrency-26.1-1.0.0.1-diaithir.1.jar"
+hash = "f8563e15ca71bac0a8da54a8aef4944f30671d91faaf6b19023b724c9573d1db"
 
 [[files]]
 file = "mods/lithium-neoforge-0.24.7_mc26.1.2.pw.toml"

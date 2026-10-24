@@ -29,6 +29,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | domum_ornamentum-1.0.0-diaithir.jar | GPL3 | [source](source/domum_ornamentum-1.0.0-diaithir-source.tar.gz) |
 | industrialforegoing-26.1.2-3.6.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/industrialforegoing) |
 | kubejs-neoforge-26.1.2-8.0.6-diaithir.1.jar | GNU LGPLv3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/kubejs) |
+| lightmanscurrency-26.1-1.0.0.1-diaithir.1.jar | Apache-2.0 (Lightman's Currency by Lightman314, as declared in the jar; three client event classes marked client-only so the jar loads on a dedicated server; changed files: WalletClientEvents, LCClientRecipeCache, ClientAdminMode) | [upstream source](https://github.com/Lightman314/LightmansCurrency), patch: [source/lightmanscurrency-26.1-1.0.0.1-diaithir.1](source/lightmanscurrency-26.1-1.0.0.1-diaithir.1), branch [claude/lightmans-currency](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/lightmans-currency) |
 | mcjtylib-1.21-9.0.21.jar | MIT License | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mcjtylib) |
 | megacells-26.1-local.jar | LGPLv3.0 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/megacells) |
 | modern-industrialization-26.1.2-local.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/modern_industrialization) |
