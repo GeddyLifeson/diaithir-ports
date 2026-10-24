@@ -1,6 +1,7 @@
 package com.zurrtum.create.client.content.kinetics.waterwheel;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.PoseStack.Pose;
 import com.zurrtum.create.catnip.registry.RegisteredObjectsHelper;
 import com.zurrtum.create.client.AllPartialModels;
 import com.zurrtum.create.client.catnip.render.*;
@@ -54,6 +55,8 @@ public class WaterWheelRenderer implements BlockEntityRenderer<WaterWheelBlockEn
     public static final StitchedSprite OAK_PLANKS_TEMPLATE = new StitchedSprite(Identifier.parse("block/oak_planks"));
     public static final StitchedSprite OAK_LOG_TEMPLATE = new StitchedSprite(Identifier.parse("block/oak_log"));
     public static final StitchedSprite OAK_LOG_TOP_TEMPLATE = new StitchedSprite(Identifier.parse("block/oak_log_top"));
+
+    public static final float LARGE_SCALE = 1.7f;
 
     protected ModelKey key;
 
@@ -116,8 +119,17 @@ public class WaterWheelRenderer implements BlockEntityRenderer<WaterWheelBlockEn
         } else {
             dir = current.state.getValue(WaterWheelBlock.FACING);
         }
-        return SuperBufferFactory.getInstance()
-            .createForBlock(model, Blocks.AIR.defaultBlockState(), CachedBuffers.rotateToFaceVertical(dir));
+        Pose pose = CachedBuffers.rotateToFaceVertical(dir);
+        if (current.large) {
+            // the large wheel is the standard wheel model drawn 1.7 times bigger about the block centre (5 blocks across)
+            Pose scaled = new Pose();
+            scaled.translate(0.5f, 0.5f, 0.5f);
+            scaled.scale(LARGE_SCALE, LARGE_SCALE, LARGE_SCALE);
+            scaled.translate(-0.5f, -0.5f, -0.5f);
+            scaled.mulPose(pose.pose());
+            pose = scaled;
+        }
+        return SuperBufferFactory.getInstance().createForBlock(model, Blocks.AIR.defaultBlockState(), pose);
     }
 
     public static BlockStateModel generateModel(ModelKey key) {

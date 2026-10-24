@@ -491,7 +491,7 @@ def gen_other(id, b):
     if id in ("cogwheel", "large_cogwheel"):
         bstate(id, rot_variants(id, f"create:block/{id}")); return
     if id in ("water_wheel", "large_water_wheel"):
-        bstate(id, rot_variants(id, f"create:block/{id}/block")); return
+        bstate(id, rot_variants(id, f"create:block/{id}/block" if id == "water_wheel" else "create:block/large_water_wheel/static")); return
     if id == "water_wheel_structure":
         model("block/water_wheel_structure", {"parent": "minecraft:block/air"}); bstate(id, {"variants": {"": {"model": "minecraft:block/air"}}}); return
     if id == "mechanical_press":

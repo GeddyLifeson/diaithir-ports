@@ -192,8 +192,10 @@ def run(g):
     model("block/water_wheel/wheel", emodel(wood, wheel))
     model("block/water_wheel/block", emodel(wood, blk))
     model("block/water_wheel/item", emodel(wood, wheel))
-    model("block/large_water_wheel/block", emodel(wood, blk))
-    model("block/large_water_wheel/block_extension", emodel(wood, blk))
+    # large wheel: the partial drawn by the renderer is the wheel itself (scaled up 1.7x by WaterWheelRenderer), the placed block only shows the axle
+    model("block/large_water_wheel/block", emodel(wood, wheel_elems()))
+    model("block/large_water_wheel/block_extension", emodel(wood, wheel_elems()))
+    model("block/large_water_wheel/static", emodel(wood, blk))
     model("block/large_water_wheel/item", emodel(wood, wheel))
 
     # ------------------------------------------------------------------ press

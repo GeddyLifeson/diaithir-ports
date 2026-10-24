@@ -1,15 +1,15 @@
 {
  "variants": {
   "axis=x": {
-   "model": "create:block/large_water_wheel/block",
+   "model": "create:block/large_water_wheel/static",
    "x": 90,
    "y": 90
   },
   "axis=y": {
-   "model": "create:block/large_water_wheel/block"
+   "model": "create:block/large_water_wheel/static"
   },
   "axis=z": {
-   "model": "create:block/large_water_wheel/block",
+   "model": "create:block/large_water_wheel/static",
    "x": 90
   }
  }
