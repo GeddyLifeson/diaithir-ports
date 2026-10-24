@@ -108,19 +108,19 @@ public abstract class LevelRendererMixin {
         }
     }
 
-    @Inject(method = "lambda$addMainPass$0(Lcom/mojang/blaze3d/buffers/GpuBufferSlice;Lnet/minecraft/client/renderer/state/level/LevelRenderState;Lnet/minecraft/util/profiling/ProfilerFiller;Lnet/minecraft/client/renderer/chunk/ChunkSectionsToRender;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;ZLorg/joml/Matrix4fc;)V", at = @At("TAIL"))
+    @Inject(method = "lambda$addMainPass$0(Lcom/mojang/blaze3d/buffers/GpuBufferSlice;Lnet/minecraft/client/renderer/state/level/LevelRenderState;Lnet/minecraft/util/profiling/ProfilerFiller;Lnet/minecraft/client/renderer/chunk/ChunkSectionsToRender;Lorg/joml/Matrix4fc;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Lcom/mojang/blaze3d/resource/ResourceHandle;Z)V", at = @At("TAIL"))
     private void renderAfterParticles(
         GpuBufferSlice terrainFog,
         LevelRenderState levelRenderState,
         ProfilerFiller profiler,
         ChunkSectionsToRender chunkSectionsToRender,
+        Matrix4fc modelViewMatrix,
         ResourceHandle<RenderTarget> entityOutlineTarget,
         ResourceHandle<RenderTarget> translucentTarget,
         ResourceHandle<RenderTarget> mainTarget,
         ResourceHandle<RenderTarget> itemEntityTarget,
         ResourceHandle<RenderTarget> particleTarget,
         boolean renderOutline,
-        Matrix4fc modelViewMatrix,
         CallbackInfo ci,
         @Local Vec3 cameraPos,
         @Local PoseStack ms
@@ -214,19 +214,6 @@ public abstract class LevelRendererMixin {
         )) {
             ci.cancel();
         }
-    }
-
-    @WrapOperation(method = "getLightCoords(Lnet/minecraft/client/renderer/LevelRenderer$BrightnessGetter;Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;)I", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getLightEmission()I"))
-    private static int getLuminance(
-        BlockState state,
-        Operation<Integer> original,
-        @Local(argsOnly = true) BlockAndLightGetter world,
-        @Local(argsOnly = true) BlockPos pos
-    ) {
-        if (state.getBlock() instanceof CopycatBlock block) {
-            return block.getLuminance(world, pos);
-        }
-        return original.call(state);
     }
 
     @Inject(method = "extractBlockDestroyAnimation(Lnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/state/level/LevelRenderState;)V", at = @At("HEAD"))

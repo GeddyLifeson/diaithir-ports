@@ -234,4 +234,9 @@ public class EjectorBlock extends HorizontalKineticBlock implements IBE<EjectorB
     protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
         return false;
     }
+
+    @Override
+    public float getFriction(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.LevelReader level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.Entity entity) {
+        return getSlipperiness(level, pos);
+    }
 }

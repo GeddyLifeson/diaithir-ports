@@ -68,18 +68,6 @@ public class GuiMixin {
         RemainingAirOverlay.render(minecraft, context);
     }
 
-    @WrapOperation(method = "extractHotbarAndDecorations(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;nextContextualInfoState()Lnet/minecraft/client/gui/Gui$ContextualInfo;"))
-    private ContextualInfo renderMainHud(
-        Gui instance,
-        Operation<ContextualInfo> original,
-        @Local(argsOnly = true) GuiGraphicsExtractor context,
-        @Local(argsOnly = true) DeltaTracker tickCounter
-    ) {
-        if (TrainHUD.renderOverlay(minecraft, context, tickCounter)) {
-            return ContextualInfo.EMPTY;
-        }
-        return original.call(instance);
-    }
 
     @WrapOperation(method = "extractCameraOverlays(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Gui;extractTextureOverlay(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/resources/Identifier;F)V", ordinal = 0))
     private void renderMiscOverlays(

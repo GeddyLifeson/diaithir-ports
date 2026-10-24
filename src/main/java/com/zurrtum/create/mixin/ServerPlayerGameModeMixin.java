@@ -147,27 +147,4 @@ public class ServerPlayerGameModeMixin {
         return result;
     }
 
-    @WrapOperation(method = "destroyBlock(Lnet/minecraft/core/BlockPos;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;removeBlock(Lnet/minecraft/core/BlockPos;Z)Z"))
-    private boolean removeBlock(
-        ServerLevel world,
-        BlockPos pos,
-        boolean move,
-        Operation<Boolean> original,
-        @Local(ordinal = 0) BlockState state,
-        @Local Block block
-    ) {
-        if (block instanceof BreakControlBlock controlBlock && !controlBlock.onDestroyedByPlayer(
-            state,
-            world,
-            pos,
-            player
-        )) {
-            return false;
-        }
-        boolean remove = original.call(world, pos, move);
-        if (remove) {
-            SymmetryHandler.onBlockDestroyed(player, pos, state);
-        }
-        return remove;
-    }
 }

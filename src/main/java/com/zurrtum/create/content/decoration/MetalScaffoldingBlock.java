@@ -96,4 +96,9 @@ public class MetalScaffoldingBlock extends ScaffoldingBlock implements IWrenchab
     //        return dir.getAxis() != Axis.Y;
     //    }
 
+
+    @Override
+    public boolean isScaffolding(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.LevelReader level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.LivingEntity entity) {
+        return true;
+    }
 }

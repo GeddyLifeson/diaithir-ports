@@ -23,36 +23,4 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemStack.class)
 public class ItemStackMixin {
-    @Inject(method = "useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Item;useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;"))
-    private void cacheState(
-        UseOnContext context,
-        CallbackInfoReturnable<InteractionResult> cir,
-        @Local Item item,
-        @Share("place") LocalRef<BlockPlaceContext> place
-    ) {
-        if (item instanceof BlockItem) {
-            Level world = context.getLevel();
-            if (!world.isClientSide()) {
-                place.set(new BlockPlaceContext(context));
-            }
-        }
-    }
-
-    @Inject(method = "useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/InteractionResult$Success;wasItemInteraction()Z"))
-    private void useOnBlock(
-        UseOnContext context,
-        CallbackInfoReturnable<InteractionResult> cir,
-        @Local Player player,
-        @Share("place") LocalRef<BlockPlaceContext> place
-    ) {
-        BlockPlaceContext placementContext = place.get();
-        if (placementContext != null) {
-            ServerLevel world = (ServerLevel) context.getLevel();
-            BlockPos pos = placementContext.getClickedPos();
-            SuperGlueHandler.glueListensForBlockPlacement(world, player, pos);
-            if (!context.getItemInHand().components.has(DataComponents.CONSUMABLE)) {
-                SymmetryHandler.onBlockPlaced(world, player, pos, placementContext);
-            }
-        }
-    }
 }

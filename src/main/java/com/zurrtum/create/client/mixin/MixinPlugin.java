@@ -15,6 +15,9 @@ public class MixinPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {
         mixins = new ArrayList<>();
+        if (!net.neoforged.fml.loading.FMLLoader.getCurrent().getDist().isClient()) {
+            return;
+        }
         FabricLoader loader = FabricLoader.getInstance();
         if (loader.isModLoaded("sodium")) {
             mixins.add("QuadRenderHelperMixin");

@@ -63,45 +63,6 @@ public abstract class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
-    @WrapOperation(method = "travelInAir(Lnet/minecraft/world/phys/Vec3;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;getFriction()F"))
-    private float getSlipperiness(Block block, Operation<Float> original, @Local BlockPos pos) {
-        if (block instanceof SlipperinessControlBlock controlBlock) {
-            return controlBlock.getSlipperiness(level(), pos);
-        }
-        return original.call(block);
-    }
-
-    @WrapOperation(method = "baseTick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isEyeInFluid(Lnet/minecraft/tags/TagKey;)Z"))
-    private boolean breatheInLava(
-        LivingEntity entity,
-        TagKey<Fluid> tagKey,
-        Operation<Boolean> original,
-        @Local ServerLevel serverWorld
-    ) {
-        if (original.call(entity, tagKey)) {
-            return true;
-        }
-        if (entity instanceof ServerPlayer serverPlayer && !serverPlayer.getAbilities().invulnerable && entity.isInLava()) {
-            DivingHelmetItem.breatheInLava(serverPlayer, serverWorld);
-        }
-        return false;
-    }
-
-    @WrapOperation(method = "baseTick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/effect/MobEffectUtil;hasWaterBreathing(Lnet/minecraft/world/entity/LivingEntity;)Z"))
-    private boolean canBreatheInWater(
-        LivingEntity entity,
-        Operation<Boolean> original,
-        @Local ServerLevel serverWorld
-    ) {
-        if (original.call(entity)) {
-            return true;
-        }
-        if (entity instanceof ServerPlayer serverPlayer && !serverPlayer.getAbilities().invulnerable) {
-            return DivingHelmetItem.breatheUnderwater(serverPlayer, serverWorld);
-        }
-        return false;
-    }
-
     @Inject(method = "collectEquipmentChanges()Ljava/util/Map;", at = @At(value = "INVOKE", target = "Ljava/util/Map;entrySet()Ljava/util/Set;"))
     private void onLivingEquipmentChange(CallbackInfoReturnable<Map<EquipmentSlot, ItemStack>> cir) {
         if (((Object) this) instanceof Player player) {
@@ -226,22 +187,4 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
-    @WrapOperation(method = "handleOnClimbable(Lnet/minecraft/world/phys/Vec3;)Lnet/minecraft/world/phys/Vec3;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z"))
-    private boolean isScaffolding(BlockState state, Object block, Operation<Boolean> original) {
-        return original.call(state, block) || state.getBlock() instanceof ScaffoldingControlBlock;
-    }
-
-    @WrapOperation(method = "playBlockFallSound()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getSoundType()Lnet/minecraft/world/level/block/SoundType;"))
-    private SoundType getBlockFallSound(
-        BlockState state,
-        Operation<SoundType> original,
-        @Local(ordinal = 0) int x,
-        @Local(ordinal = 1) int y,
-        @Local(ordinal = 2) int z
-    ) {
-        if (state.getBlock() instanceof SoundControlBlock block) {
-            return block.getSoundGroup(level(), new BlockPos(x, y, z));
-        }
-        return original.call(state);
-    }
 }

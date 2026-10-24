@@ -26,37 +26,6 @@ public class BlockItemMixin {
         return original.call(context);
     }
 
-    @WrapOperation(method = "place(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/InteractionResult;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getSoundType()Lnet/minecraft/world/level/block/SoundType;"))
-    private SoundType checkSound(
-        BlockState instance,
-        Operation<SoundType> original,
-        @Local(argsOnly = true) BlockPlaceContext ctx,
-        @Share("group") LocalRef<ItemPlacementSoundContext> group
-    ) {
-        if (ctx instanceof ItemPlacementSoundContext context) {
-            group.set(context);
-            return null;
-        }
-        return original.call(instance);
-    }
-
-    @WrapOperation(method = "place(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/InteractionResult;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/BlockItem;getPlaceSound(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/sounds/SoundEvent;"))
-    private SoundEvent getGroup(
-        BlockItem instance,
-        BlockState state,
-        Operation<SoundEvent> original,
-        @Share("group") LocalRef<ItemPlacementSoundContext> group
-    ) {
-        ItemPlacementSoundContext context = group.get();
-        if (context != null) {
-            SoundEvent sound = context.getSound();
-            if (sound != null) {
-                return sound;
-            }
-        }
-        return original.call(instance, state);
-    }
-
     @WrapOperation(method = "place(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/InteractionResult;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/SoundType;getVolume()F"))
     private float getVolume(
         SoundType instance,

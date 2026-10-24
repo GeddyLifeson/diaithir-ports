@@ -17,13 +17,13 @@ public class EntityFluidInteractionMixin implements FluidInteractionPredicate {
     @Unique
     private boolean inModFluid;
 
-    @Inject(method = "update(Lnet/minecraft/world/entity/Entity;Z)V", at = @At("HEAD"))
-    private void clear(Entity entity, boolean ignoreCurrent, CallbackInfo ci) {
+    @Inject(method = "update(Lnet/minecraft/world/entity/Entity;Ljava/util/function/Predicate;)V", at = @At("HEAD"))
+    private void clear(Entity entity, java.util.function.Predicate<?> ignoreCurrent, CallbackInfo ci) {
         inModFluid = false;
     }
 
-    @Inject(method = "update(Lnet/minecraft/world/entity/Entity;Z)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos$MutableBlockPos;getY()I"))
-    private void update(Entity entity, boolean ignoreCurrent, CallbackInfo ci, @Local FluidState state) {
+    @Inject(method = "update(Lnet/minecraft/world/entity/Entity;Ljava/util/function/Predicate;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/material/FluidState;getType()Lnet/minecraft/world/level/material/Fluid;"))
+    private void update(Entity entity, java.util.function.Predicate<?> ignoreCurrent, CallbackInfo ci, @Local FluidState state) {
         if (!inModFluid) {
             inModFluid = state.getType() instanceof FlowableFluid;
         }

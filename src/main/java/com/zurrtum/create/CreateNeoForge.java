@@ -11,6 +11,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 public class CreateNeoForge {
     public CreateNeoForge(IEventBus modBus, ModContainer container) {
         new Create().onInitialize();
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(new NeoEvents());
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
             modBus.addListener(FMLClientSetupEvent.class, event -> new com.zurrtum.create.client.Create().onInitializeClient());
         }

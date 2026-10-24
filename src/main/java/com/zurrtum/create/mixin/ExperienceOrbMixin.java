@@ -17,11 +17,4 @@ public abstract class ExperienceOrbMixin extends Entity {
         super(type, world);
     }
 
-    @WrapOperation(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/Block;getFriction()F"))
-    private float getSlipperiness(Block block, Operation<Float> original) {
-        if (block instanceof SlipperinessControlBlock controlBlock) {
-            return controlBlock.getSlipperiness(level(), getBlockPosBelowThatAffectsMyMovement());
-        }
-        return original.call(block);
-    }
 }

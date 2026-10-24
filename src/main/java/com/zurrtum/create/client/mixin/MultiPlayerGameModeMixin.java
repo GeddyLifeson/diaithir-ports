@@ -147,7 +147,7 @@ public class MultiPlayerGameModeMixin {
         return original.call(instance, pos);
     }
 
-    @WrapOperation(method = "lambda$startDestroyBlock$1(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;I)Lnet/minecraft/network/protocol/Packet;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/MultiPlayerGameMode;destroyBlock(Lnet/minecraft/core/BlockPos;)Z"))
+    @WrapOperation(method = "lambda$startDestroyBlock$1(Lnet/minecraft/world/level/block/state/BlockState;Lnet/neoforged/neoforge/event/entity/player/PlayerInteractEvent$LeftClickBlock;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;I)Lnet/minecraft/network/protocol/Packet;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/MultiPlayerGameMode;destroyBlock(Lnet/minecraft/core/BlockPos;)Z"))
     private boolean onLeftClick2(
         MultiPlayerGameMode instance,
         BlockPos pos,
@@ -245,36 +245,4 @@ public class MultiPlayerGameModeMixin {
         return original.call(player, entity, hand, location);
     }
 
-    @WrapOperation(method = "destroyBlock(Lnet/minecraft/core/BlockPos;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"))
-    private boolean breakBlock(
-        Level world,
-        BlockPos pos,
-        BlockState newState,
-        int flags,
-        Operation<Boolean> original,
-        @Local BlockState state,
-        @Local Block block
-    ) {
-        if (block instanceof BreakControlBlock controlBlock && !controlBlock.onDestroyedByPlayer(
-            state,
-            world,
-            pos,
-            minecraft.player
-        )) {
-            return false;
-        }
-        return original.call(world, pos, newState, flags);
-    }
-
-    @WrapOperation(method = "continueDestroyBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;getSoundType()Lnet/minecraft/world/level/block/SoundType;"))
-    private SoundType getHitSound(
-        BlockState state,
-        Operation<SoundType> original,
-        @Local(argsOnly = true) BlockPos pos
-    ) {
-        if (state.getBlock() instanceof SoundControlBlock block) {
-            return block.getSoundGroup(minecraft.level, pos);
-        }
-        return original.call(state);
-    }
 }
