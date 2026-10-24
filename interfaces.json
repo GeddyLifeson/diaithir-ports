@@ -1,0 +1,4 @@
+{
+  "net/minecraft/world/Container": ["com/zurrtum/create/infrastructure/items/ContainerExtension"],
+  "net/minecraft/world/WorldlyContainer": ["com/zurrtum/create/infrastructure/items/WorldlyContainerExtension"]
+}

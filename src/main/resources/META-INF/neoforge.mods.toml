@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT (code and data); assets are original to the Diaithir pack (see LICENSE.md)"
+
+[[mods]]
+modId="create"
+version="6.0.9-diaithir.1"
+displayName="Create (Diaithir port)"
+authors="The Create Team (code, MIT); ZurrTum (Create Fly port, CC0); Diaithir pack (NeoForge port and all art)"
+description='''Kinetic machinery. NeoForge 26.1.2 port of the MIT-licensed Create code with entirely new original art, sounds and text.'''
+
+[[mixins]]
+config="create.mixins.json"
+
+[[mixins]]
+config="create.client.mixins.json"
+
+[[dependencies.create]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.create]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"

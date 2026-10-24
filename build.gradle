@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = "${minecraft_version}-${mod_version}"
+group = 'com.zurrtum'
+
+base { archivesName = 'create-neoforge' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories {
+    maven { url = 'https://maven.createmod.net' }
+    maven { url = 'https://maven.shedaniel.me/' }
+}
+
+neoForge {
+    version = project.neo_version
+    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+    interfaceInjectionData.from(file('interfaces.json'))
+    runs {
+        server { server() }
+        client { client() }
+    }
+    mods {
+        "${mod_id}" { sourceSet(sourceSets.main) }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            exclude 'com/zurrtum/create/compat/**'
+            exclude 'com/zurrtum/create/client/compat/**'
+            exclude 'com/zurrtum/create/mixin/ArchitecturyMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/Iris*'
+            exclude 'com/zurrtum/create/client/mixin/Rrv*'
+            exclude 'com/zurrtum/create/client/mixin/Eiv*'
+            exclude 'com/zurrtum/create/client/mixin/FabricEIVMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/BuiltInReliableRecipeViewerClientIntegrationMixin.java'
+            exclude 'com/zurrtum/create/client/flywheel/impl/compat/**'
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '100000']
+}
+
+tasks.named('jar', Jar) {
+    from('LICENSE.md')
+    from('licenses') { into 'licenses' }
+}
