@@ -519,15 +519,47 @@ def run_shapes(g):
     if "millstone" in B:
         bstate("millstone", {"variants": {"": {"model": "create:block/millstone"}}})
 
-    # ---------- crushing wheel (axle along y, rotated by the blockstate): two toothed rollers
+    # ---------- crushing wheel (axle along y, rotated by the blockstate): ribbed roller with staggered studs, hazard side plates, axle collars
     wtex("crusher", cog_face_tex("crush", (86, 88, 94)))
-    els = plane_disc("xz", T("crusher"), 10, 4.0, 8.0, 3.4, [("x", 0), ("z", 0), ("x", 45), ("z", 45)], (0, 45))
+    c = Cv(sh(STEEL, 0.9)); c.bevel(0.5, 0.5, 63.5, 63.5, STEEL, 2.4, True)
+    c.hazard(6, 6, 58, 58, 6.0); c.rivets4(0, 0, 64, 64, 3.2, 1.3, STEEL)
+    wtex("crusher_plate", c.finish("crushplate", 0.5, 0.1, 0.04, 0.1))
+    c = Cv(sh(STEEL_D, 1.0)); c.bevel(0.5, 0.5, 63.5, 63.5, STEEL_D, 2.0, True)
+    for k in range(6): c.line(0, 6 + k * 10.4, 64, 6 + k * 10.4, sh(STEEL_D, 0.6), 1.2)
+    wtex("crusher_rib", c.finish("crushrib", 0.55, 0.12, 0.05, 0.0))
+    CR, CP, CRB = T("crusher"), T("crusher_plate"), T("crusher_rib")
+    hubt = T("cog_hub")
+
+    def octa(y0, y1, s_, tex_side, tex_cap, k0):
+        out = []
+        for i, a_ in enumerate((0, 45)):
+            t = {f: (tex_side, FULL) for f in ("north", "south", "east", "west")} | {"up": (tex_cap, FULL), "down": (tex_cap, FULL)}
+            out.append(box([8 - s_, y0 + 0.003 * (k0 + i), 8 - s_], [8 + s_, y1 - 0.003 * (k0 + i), 8 + s_], t, R(a_) if a_ else None))
+        return out
+
+    def studs(y0, y1, angs, L, wt, k0):
+        out = []
+        for i, a_ in enumerate(angs):
+            j = 0.003 * (k0 + i)
+            tf = {f: (CR, FULL) for f in FACES}
+            out.append(box([8 - L, y0 + j, 8 - wt / 2], [8 + L, y1 - j, 8 + wt / 2], tf, R(a_) if a_ else None))
+            out.append(box([8 - wt / 2, y0 + j + 0.002, 8 - L], [8 + wt / 2, y1 - j - 0.002, 8 + L], tf, R(a_) if a_ else None))
+        return out
+
+    els = octa(3.4, 12.6, 5.4, CRB, CR, 1)                      # drum body
+    els += octa(7.7, 8.3, 6.0, CP, CP, 3)                       # centre rib ring
+    els += studs(3.6, 7.5, (0, 45), 7.95, 2.4, 5)               # lower studs, 8 around
+    els += studs(8.5, 12.4, (22.5, -22.5), 7.95, 2.4, 9)        # upper studs offset by 22.5 degrees
+    els += octa(1.6, 3.4, 6.6, CR, CP, 13)                      # hazard side plates
+    els += octa(12.6, 14.4, 6.6, CR, CP, 15)
     capt = {f: (T("cog_hub_end"), FULL) for f in FACES}
-    els += [box([3.5, 2.6, 3.5], [12.5, 3.2, 12.5], capt), box([3.5, 12.8, 3.5], [12.5, 13.4, 12.5], capt)]
-    hubc = box([5, 1, 5], [11, 15, 11], {f: (T("cog_hub"), FULL) for f in ("north", "south", "east", "west")} | {"up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)})
-    model("block/crushing_wheel/block", emodel({"particle": T("crusher")}, els + [hubc]))
+    hubc = box([5.2, 0, 5.2], [10.8, 16, 10.8], {f: (T("shaft"), FULL) for f in ("north", "south", "east", "west")} | {"up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)})
+    cols = [box([4.2, 0, 4.2], [11.8, 1.6, 11.8], {f: (hubt, FULL) for f in FACES} | {"up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)}),
+            box([4.2, 14.4, 4.2], [11.8, 16, 11.8], {f: (hubt, FULL) for f in FACES} | {"up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)})]
+    els += cols
+    model("block/crushing_wheel/block", emodel({"particle": CR}, els + [hubc]))
     if "crushing_wheel" in B:
-        model("block/crushing_wheel", emodel({"particle": T("crusher")}, els[:] + [hubc]))
+        model("block/crushing_wheel", emodel({"particle": CR}, els[:] + [hubc]))
         bstate("crushing_wheel", rotv("crushing_wheel", "create:block/crushing_wheel"))
     if "crushing_wheel_controller" in B:
         bstate("crushing_wheel_controller", {"variants": {"": {"model": "minecraft:block/air"}}})

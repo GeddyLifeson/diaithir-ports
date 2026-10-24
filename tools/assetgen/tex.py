@@ -184,7 +184,7 @@ def tiles(color, name):
     return im
 
 def tint_oxid(level):
-    return [(160, 94, 62), (150, 106, 80), (86, 128, 108), (66, 122, 114)][level]
+    return [(150, 96, 68), (142, 106, 84), (102, 110, 94), (82, 100, 92)][level]
 
 def glyph(im, name, color, x0=5, y0=5, n=6):
     """Deterministic 6x6 mirrored mark so each machine block is visually distinguishable."""
