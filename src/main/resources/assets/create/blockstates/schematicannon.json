@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/schematicannon"
+   "model": "minecraft:block/air"
   }
  }
 }

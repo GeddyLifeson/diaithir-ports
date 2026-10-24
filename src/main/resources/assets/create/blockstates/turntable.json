@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/turntable"
+   "model": "minecraft:block/air"
   }
  }
 }

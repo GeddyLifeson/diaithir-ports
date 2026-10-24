@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/controller_rail"
+   "model": "minecraft:block/air"
   }
  }
 }

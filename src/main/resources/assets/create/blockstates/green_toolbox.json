@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/green_toolbox"
-  },
-  "facing=south": {
-   "model": "create:block/green_toolbox",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/green_toolbox",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/green_toolbox",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

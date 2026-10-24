@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/item_hatch"
-  },
-  "facing=south": {
-   "model": "create:block/item_hatch",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/item_hatch",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/item_hatch",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

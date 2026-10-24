@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/sticker"
+  "model": "minecraft:item/barrier"
  }
 }

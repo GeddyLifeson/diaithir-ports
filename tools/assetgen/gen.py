@@ -5,7 +5,11 @@ that the code requires (they are discovered from registry and partial-model dump
 import json, os, re, sys, shutil, itertools
 sys.path.insert(0, os.path.dirname(__file__))
 from tex import *
+from look import *
+import art
 import icons
+import icons64
+import design
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(HERE + "/../..")
@@ -99,10 +103,9 @@ MAKE = {}
 def ensure_stone_textures():
     for pal, col in STONES.items():
         for kind in ("raw", "cut", "polished", "bricks", "small", "layered"):
-            k = "raw" if kind == "raw" else kind
-            wtex(f"{pal}_{kind}", stone(col, f"{pal}{kind}", "cut" if kind in ("raw",) else kind) if kind != "raw" else speckle(col, pal + "raw", 0.08))
-        wtex(f"{pal}_pillar_side", stone(col, pal, "pillar_side"))
-        wtex(f"{pal}_pillar_top", stone(col, pal, "pillar_top"))
+            wtex(f"{pal}_{kind}", art.stone_tex(f"{pal}{kind}", col, "raw" if kind == "raw" else kind))
+        wtex(f"{pal}_pillar_side", art.stone_tex(pal + "ps", col, "pillar_side"))
+        wtex(f"{pal}_pillar_top", art.stone_tex(pal + "pt", col, "pillar_top"))
 
 def block_color(id):
     cname, rest = colour_of(id)
@@ -126,11 +129,12 @@ def tex_for_block(id):
     if "casing" in id: return casing(col, id)
     if "glass" in id or "window" in id:
         return glass(PAL["steel"] if "iron" not in id else shade(col, 0.9) if "weathered" not in id else col, id,
-                     "tiled" if "tiled" in id else "h" if "horizontal" in id else "v" if "vertical" in id else "frame") if "oak" not in id and "spruce" not in id else wood_window(id)
+                     "tiled" if "tiled" in id else "h" if "horizontal" in id else "v" if "vertical" in id else "frame") if not id.endswith(("oak_window", "oak_window_pane")) and not any(id.startswith(w + "_window") for w in ("spruce","birch","jungle","acacia","mangrove","crimson","warped","cherry","bamboo")) else wood_window(id)
     if "table_cloth" in id or "sail" in id: return weave(col, id)
     if "shingle" in id: return shingles(shade_ox(id), id)
     if "copper_tile" in id: return tiles(shade_ox(id), id)
     if "ore" in id: return ore((70, 70, 74) if "deepslate" in id else (128, 128, 128), id, PAL["zinc"])
+    if id == "raw_zinc_block": return art.ore_tex(id, (118, 126, 134), (176, 190, 204))
     if id.endswith("_block") or id in ("andesite_alloy_block",): return plate(col, id, False)
     if "pipe" in id: return pipe_tex(col if "copper" in id or "fluid" in id else PAL["copper"], id)
     if "gear" in id or "cog" in id: return gear_tex(col, id)
@@ -344,7 +348,11 @@ def base_tex_ref(id):
 def gen_blocks():
     ensure_stone_textures()
     done_tex = set()
+    me = sys.modules[__name__]
     for id, b in BLOCKS.items():
+        if not design.shipped_block(me, id):
+            bstate(id, {"variants": {"": {"model": "minecraft:block/air"}}})
+            continue
         kind = classify(id)
         props = b["props"]
         s = stone_info(base_of(id))
@@ -462,14 +470,18 @@ FLAT_BLOCK_KINDS = ("pane", "ladder", "sdoor", "trapdoor")
 HANDHELD = ("wrench", "sword", "whisk", "sand_paper", "potato", "wand", "worldshaper", "extendo", "schematic_and_quill")
 
 def gen_items():
+    me = sys.modules[__name__]
     for id, it in ITEMS.items():
+        if not design.shipped_item(me, id):
+            idef(id, {"model": {"type": "minecraft:model", "model": "minecraft:item/barrier"}})
+            continue
         if it.get("blockItem"):
             if id not in BLOCKS:
                 alias = {"vertical_gearbox": "gearbox", "empty_blaze_burner": "blaze_burner"}.get(id)
                 if alias:
                     idef(id, {"model": {"type": "minecraft:model", "model": f"create:block/{alias}"}})
                 else:
-                    wtex("item/" + id, icons.make_icon("belt_connector_item") if False else icons.coupling(PAL["rubber"], id))
+                    wtex("item/" + id, icons64.make(id))
                     model(f"item/{id}", {"parent": "minecraft:item/generated", "textures": {"layer0": f"create:item/{id}"}})
                     idef(id, {"model": {"type": "minecraft:model", "model": f"create:item/{id}"}})
                 continue
@@ -494,7 +506,7 @@ def gen_items():
             idef(id, {"model": {"type": "minecraft:model", "model": mdl}})
             continue
         # plain items
-        wtex("item/" + id, icons.make_icon(id))
+        wtex("item/" + id, icons64.make(id))
         if os.path.exists(f"{A}/models/item/{id}.json"):
             idef(id, {"model": {"type": "minecraft:model", "model": f"create:item/{id}"}}); continue
         par = "minecraft:item/handheld" if any(k in id for k in HANDHELD) else "minecraft:item/generated"
@@ -514,10 +526,10 @@ def gen_items():
                 "handheld_worldshaper": "handheld_worldshaper", "wand_of_symmetry": "wand_of_symmetry"}[nm]
         model(f"item/{nm}/item", {"parent": "minecraft:item/handheld", "textures": {"layer0": f"create:item/{base}"}})
         for sub in ("gear", "cog", "core", "bits", "button", "torch"):
-            wtex(f"item/{nm}_{sub}", icons.gear(PAL["brass"], nm + sub))
+            wtex(f"item/{nm}_{sub}", icons64.generic_gear(art.BRASS, nm + sub))
             model(f"item/{nm}/{sub}", {"parent": "minecraft:item/generated", "textures": {"layer0": f"create:item/{nm}_{sub}"}})
     for id in ("honey", "chocolate"):
-        wtex("item/" + id, icons.bucket(material_color_f(id), id))
+        wtex("item/" + id, icons64.make(id + "_bucket"))
         model(f"item/{id}", {"parent": "minecraft:item/generated", "textures": {"layer0": f"create:item/{id}"}})
 
 def material_color_f(id): return icons.material_color(id)
@@ -591,8 +603,11 @@ def title(s): return " ".join(w.capitalize() for w in s.replace("_", " ").split(
 
 def gen_lang():
     lang = {}
-    for id in BLOCKS: lang[f"block.create.{id}"] = title(id)
-    for id, it in ITEMS.items(): lang[f"item.create.{id}"] = title(id)
+    me = sys.modules[__name__]
+    for id in BLOCKS:
+        if design.shipped_block(me, id): lang[f"block.create.{id}"] = title(id)
+    for id, it in ITEMS.items():
+        if design.shipped_item(me, id): lang[f"item.create.{id}"] = title(id)
     for e in REG["entities"]: lang[f"entity.create.{e}"] = title(e)
     for f in REG["fluids"]: lang[f"fluid_type.create.{f}"] = title(f)
     lang["itemGroup.create.base"] = "Create: Industrial"
@@ -648,14 +663,22 @@ def gen_particles():
         wtex(f"particle/{p}", im)
         wj(f"{A}/particles/{p}.json", {"textures": [f"create:{p}"]})
 
+def write_shipped():
+    me = sys.modules[__name__]
+    ids = sorted(i for i in ITEMS if design.shipped_item(me, i))
+    out = RES + "/data/create/shipped_items.txt"
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write("\n".join(ids) + "\n")
+
 def main():
     if os.path.isdir(A): shutil.rmtree(A)
     os.makedirs(A)
-    gen_kinetic_models()
     gen_blocks()
     gen_partials()
     gen_items()
+    design.run(sys.modules[__name__])
     gen_lang()
+    write_shipped()
     gen_particles()
     if "--nosound" not in sys.argv: gen_sounds()
     import extra

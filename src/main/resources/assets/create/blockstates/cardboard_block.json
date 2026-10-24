@@ -1,13 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/cardboard_block",
-   "x": 90,
-   "y": 90
-  },
-  "axis=z": {
-   "model": "create:block/cardboard_block",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

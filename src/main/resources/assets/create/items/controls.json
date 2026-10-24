@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/controls"
+  "model": "minecraft:item/barrier"
  }
 }

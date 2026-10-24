@@ -1,6 +1,104 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/brass_tunnel"
- }
+  "particle": "create:block/brass_tunnel_side"
+ },
+ "elements": [
+  {
+   "from": [
+    1,
+    9,
+    0
+   ],
+   "to": [
+    15,
+    16,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "south": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "east": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "west": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "up": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "down": {
+     "texture": "create:block/brass_tunnel_side"
+    }
+   }
+  },
+  {
+   "from": [
+    1,
+    0,
+    0
+   ],
+   "to": [
+    3,
+    9,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "south": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "east": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "west": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "up": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "down": {
+     "texture": "create:block/brass_tunnel_side"
+    }
+   }
+  },
+  {
+   "from": [
+    13,
+    0,
+    0
+   ],
+   "to": [
+    15,
+    9,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "south": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "east": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "west": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "up": {
+     "texture": "create:block/brass_tunnel_side"
+    },
+    "down": {
+     "texture": "create:block/brass_tunnel_side"
+    }
+   }
+  }
+ ]
 }

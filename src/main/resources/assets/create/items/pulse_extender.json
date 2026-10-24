@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/pulse_extender"
+  "model": "minecraft:item/barrier"
  }
 }

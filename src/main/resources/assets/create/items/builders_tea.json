@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/builders_tea"
+  "model": "minecraft:item/barrier"
  }
 }

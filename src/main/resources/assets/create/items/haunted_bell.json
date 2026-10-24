@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/haunted_bell"
+  "model": "minecraft:item/barrier"
  }
 }

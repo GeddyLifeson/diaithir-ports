@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/blue_table_cloth"
+   "model": "minecraft:block/air"
   }
  }
 }

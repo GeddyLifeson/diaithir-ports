@@ -1,40 +1,278 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/water_wheel",
-  "1": "create:block/shaft",
-  "particle": "create:block/water_wheel"
+  "particle": "create:block/wheel_planks"
  },
  "elements": [
   {
    "from": [
-    5.0,
+    6,
     0,
-    5.0
+    6
    ],
    "to": [
-    11.0,
+    10,
     16,
-    11.0
+    10
    ],
    "faces": {
     "north": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    0,
+    5.5
+   ],
+   "to": [
+    10.5,
+    1.75,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    7.1,
+    5.5
+   ],
+   "to": [
+    10.5,
+    8.9,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    14.25,
+    5.5
+   ],
+   "to": [
+    10.5,
+    16,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   }

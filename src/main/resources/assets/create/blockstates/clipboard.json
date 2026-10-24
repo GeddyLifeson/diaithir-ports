@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/clipboard"
-  },
-  "facing=south": {
-   "model": "create:block/clipboard",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/clipboard",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/clipboard",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

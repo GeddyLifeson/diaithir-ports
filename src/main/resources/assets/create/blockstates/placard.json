@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/placard"
-  },
-  "facing=south": {
-   "model": "create:block/placard",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/placard",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/placard",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

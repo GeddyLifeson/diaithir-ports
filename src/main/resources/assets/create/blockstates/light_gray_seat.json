@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/light_gray_seat"
+   "model": "minecraft:block/air"
   }
  }
 }

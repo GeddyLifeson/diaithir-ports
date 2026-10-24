@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/powered_latch"
+  "model": "minecraft:item/barrier"
  }
 }

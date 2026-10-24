@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/smart_fluid_pipe"
-  },
-  "facing=south": {
-   "model": "create:block/smart_fluid_pipe",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/smart_fluid_pipe",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/smart_fluid_pipe",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

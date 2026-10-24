@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/stockpile_switch"
+  "model": "minecraft:item/barrier"
  }
 }

@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/rare_kryppers_package"
+  "model": "minecraft:item/barrier"
  }
 }

@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "side": "create:block/brass_encased_cogwheel",
-  "end": "create:block/brass_encased_cogwheel_end"
+  "side": "create:block/brass_casing",
+  "end": "create:block/brass_casing_end"
  }
 }

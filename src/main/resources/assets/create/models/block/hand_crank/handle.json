@@ -1,39 +1,102 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/partial_generic",
-  "particle": "create:block/partial_generic"
+  "particle": "create:block/crank_metal"
  },
  "elements": [
   {
    "from": [
-    3,
-    3,
-    3
+    7,
+    5,
+    7
    ],
    "to": [
-    13,
-    13,
-    13
+    9,
+    7,
+    16
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
+    }
+   }
+  },
+  {
+   "from": [
+    7,
+    3,
+    14
+   ],
+   "to": [
+    9,
+    9,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/crank_metal"
+    },
+    "south": {
+     "texture": "create:block/crank_metal"
+    },
+    "east": {
+     "texture": "create:block/crank_metal"
+    },
+    "west": {
+     "texture": "create:block/crank_metal"
+    },
+    "up": {
+     "texture": "create:block/crank_metal"
+    },
+    "down": {
+     "texture": "create:block/crank_metal"
+    }
+   }
+  },
+  {
+   "from": [
+    6.4,
+    4.4,
+    5.4
+   ],
+   "to": [
+    9.6,
+    7.6,
+    8.6
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub"
+    },
+    "south": {
+     "texture": "create:block/cog_hub"
+    },
+    "east": {
+     "texture": "create:block/cog_hub"
+    },
+    "west": {
+     "texture": "create:block/cog_hub"
+    },
+    "up": {
+     "texture": "create:block/cog_hub"
+    },
+    "down": {
+     "texture": "create:block/cog_hub"
     }
    }
   }

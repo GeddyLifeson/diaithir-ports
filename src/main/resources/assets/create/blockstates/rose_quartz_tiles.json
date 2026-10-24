@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/rose_quartz_tiles"
+   "model": "minecraft:block/air"
   }
  }
 }

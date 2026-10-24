@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/andesite_table_cloth"
+   "model": "minecraft:block/air"
   }
  }
 }

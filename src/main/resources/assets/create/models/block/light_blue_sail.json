@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create:block/light_blue_sail",
-  "end": "create:block/light_blue_sail_end"
- }
-}

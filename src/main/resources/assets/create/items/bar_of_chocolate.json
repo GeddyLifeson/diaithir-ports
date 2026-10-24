@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/bar_of_chocolate"
+  "model": "minecraft:item/barrier"
  }
 }

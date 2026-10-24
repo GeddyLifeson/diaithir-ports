@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/orange_postbox"
-  },
-  "facing=south": {
-   "model": "create:block/orange_postbox",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/orange_postbox",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/orange_postbox",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

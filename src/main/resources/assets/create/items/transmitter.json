@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/transmitter"
+  "model": "minecraft:item/barrier"
  }
 }

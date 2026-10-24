@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/display_board"
-  },
-  "facing=south": {
-   "model": "create:block/display_board",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/display_board",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/display_board",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

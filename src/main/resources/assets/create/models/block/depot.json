@@ -1,6 +1,40 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/depot"
- }
+  "particle": "create:block/depot_side"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/depot_side"
+    },
+    "south": {
+     "texture": "create:block/depot_side"
+    },
+    "east": {
+     "texture": "create:block/depot_side"
+    },
+    "west": {
+     "texture": "create:block/depot_side"
+    },
+    "up": {
+     "texture": "create:block/depot_top"
+    },
+    "down": {
+     "texture": "create:block/depot_side"
+    }
+   }
+  }
+ ]
 }

@@ -1,7 +1,131 @@
 {
- "parent": "minecraft:block/cube_column",
+ "parent": "minecraft:block/block",
  "textures": {
-  "side": "create:block/creative_motor",
-  "end": "create:block/creative_motor_end"
- }
+  "particle": "create:block/motor_side"
+ },
+ "elements": [
+  {
+   "from": [
+    1,
+    0,
+    1
+   ],
+   "to": [
+    15,
+    13,
+    15
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/motor_side"
+    },
+    "south": {
+     "texture": "create:block/motor_side"
+    },
+    "east": {
+     "texture": "create:block/motor_side"
+    },
+    "west": {
+     "texture": "create:block/motor_side"
+    },
+    "up": {
+     "texture": "create:block/motor_top"
+    },
+    "down": {
+     "texture": "create:block/motor_bottom"
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    13,
+    5.5
+   ],
+   "to": [
+    10.5,
+    14,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub"
+    },
+    "south": {
+     "texture": "create:block/cog_hub"
+    },
+    "east": {
+     "texture": "create:block/cog_hub"
+    },
+    "west": {
+     "texture": "create:block/cog_hub"
+    },
+    "up": {
+     "texture": "create:block/cog_hub"
+    },
+    "down": {
+     "texture": "create:block/cog_hub"
+    }
+   }
+  },
+  {
+   "from": [
+    6,
+    14,
+    6
+   ],
+   "to": [
+    10,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  }
+ ]
 }

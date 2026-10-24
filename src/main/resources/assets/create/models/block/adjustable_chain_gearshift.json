@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create:block/adjustable_chain_gearshift",
-  "end": "create:block/adjustable_chain_gearshift_end"
- }
-}

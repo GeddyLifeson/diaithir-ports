@@ -1,42 +1,9 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/basin",
-  "particle": "create:block/basin"
+  "particle": "create:block/basin_side"
  },
  "elements": [
-  {
-   "from": [
-    2,
-    0,
-    2
-   ],
-   "to": [
-    14,
-    2,
-    14
-   ],
-   "faces": {
-    "north": {
-     "texture": "#0"
-    },
-    "south": {
-     "texture": "#0"
-    },
-    "east": {
-     "texture": "#0"
-    },
-    "west": {
-     "texture": "#0"
-    },
-    "up": {
-     "texture": "#0"
-    },
-    "down": {
-     "texture": "#0"
-    }
-   }
-  },
   {
    "from": [
     0,
@@ -50,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/basin_inner"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/basin_rim"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     }
    }
   },
@@ -82,22 +49,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/basin_inner"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/basin_rim"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     }
    }
   },
@@ -114,22 +81,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/basin_inner"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/basin_rim"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     }
    }
   },
@@ -146,22 +113,182 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/basin_inner"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/basin_rim"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/basin_side"
+    }
+   }
+  },
+  {
+   "from": [
+    2,
+    0,
+    2
+   ],
+   "to": [
+    14,
+    3,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/basin_side"
+    },
+    "south": {
+     "texture": "create:block/basin_side"
+    },
+    "east": {
+     "texture": "create:block/basin_side"
+    },
+    "west": {
+     "texture": "create:block/basin_side"
+    },
+    "up": {
+     "texture": "create:block/basin_inner"
+    },
+    "down": {
+     "texture": "create:block/basin_side"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    3,
+    2,
+    3
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/basin_side"
+    },
+    "south": {
+     "texture": "create:block/basin_side"
+    },
+    "east": {
+     "texture": "create:block/basin_side"
+    },
+    "west": {
+     "texture": "create:block/basin_side"
+    },
+    "up": {
+     "texture": "create:block/basin_side"
+    },
+    "down": {
+     "texture": "create:block/basin_side"
+    }
+   }
+  },
+  {
+   "from": [
+    13,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    2,
+    3
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/basin_side"
+    },
+    "south": {
+     "texture": "create:block/basin_side"
+    },
+    "east": {
+     "texture": "create:block/basin_side"
+    },
+    "west": {
+     "texture": "create:block/basin_side"
+    },
+    "up": {
+     "texture": "create:block/basin_side"
+    },
+    "down": {
+     "texture": "create:block/basin_side"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    13
+   ],
+   "to": [
+    3,
+    2,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/basin_side"
+    },
+    "south": {
+     "texture": "create:block/basin_side"
+    },
+    "east": {
+     "texture": "create:block/basin_side"
+    },
+    "west": {
+     "texture": "create:block/basin_side"
+    },
+    "up": {
+     "texture": "create:block/basin_side"
+    },
+    "down": {
+     "texture": "create:block/basin_side"
+    }
+   }
+  },
+  {
+   "from": [
+    13,
+    0,
+    13
+   ],
+   "to": [
+    16,
+    2,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/basin_side"
+    },
+    "south": {
+     "texture": "create:block/basin_side"
+    },
+    "east": {
+     "texture": "create:block/basin_side"
+    },
+    "west": {
+     "texture": "create:block/basin_side"
+    },
+    "up": {
+     "texture": "create:block/basin_side"
+    },
+    "down": {
+     "texture": "create:block/basin_side"
     }
    }
   }

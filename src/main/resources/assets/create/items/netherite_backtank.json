@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/netherite_backtank"
+  "model": "minecraft:item/barrier"
  }
 }

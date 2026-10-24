@@ -34,6 +34,11 @@ public abstract class FlowableFluid extends WaterFluid {
     }
 
     @Override
+    public net.neoforged.neoforge.fluids.FluidType getFluidType() {
+        return entry.type;
+    }
+
+    @Override
     public Fluid getFlowing() {
         return entry.flowing;
     }

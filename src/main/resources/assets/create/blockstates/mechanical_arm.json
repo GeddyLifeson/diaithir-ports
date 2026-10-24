@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/mechanical_arm"
+   "model": "minecraft:block/air"
   }
  }
 }

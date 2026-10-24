@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/controller_rail"
+  "model": "minecraft:item/barrier"
  }
 }

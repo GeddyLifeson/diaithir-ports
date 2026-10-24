@@ -1,0 +1,40 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "particle": "create:block/pipe"
+ },
+ "elements": [
+  {
+   "from": [
+    4.5,
+    4.5,
+    4.5
+   ],
+   "to": [
+    11.5,
+    11.5,
+    11.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/pipe"
+    },
+    "south": {
+     "texture": "create:block/pipe"
+    },
+    "east": {
+     "texture": "create:block/pipe"
+    },
+    "west": {
+     "texture": "create:block/pipe"
+    },
+    "up": {
+     "texture": "create:block/pipe"
+    },
+    "down": {
+     "texture": "create:block/pipe"
+    }
+   }
+  }
+ ]
+}

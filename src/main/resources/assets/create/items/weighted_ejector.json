@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/weighted_ejector"
+  "model": "minecraft:item/barrier"
  }
 }

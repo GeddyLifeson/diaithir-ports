@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/creative_fluid_tank"
+  "model": "minecraft:item/barrier"
  }
 }

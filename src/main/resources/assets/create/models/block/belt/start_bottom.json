@@ -1,9 +1,7 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/belt",
-  "1": "create:block/belt_end",
-  "particle": "create:block/belt"
+  "particle": "create:block/belt_edge"
  },
  "elements": [
   {
@@ -19,22 +17,60 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/belt_edge"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/belt_edge"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/belt_edge"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/belt_edge"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/belt",
+     "uv": [
+      2,
+      0,
+      14,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/belt_edge"
+    }
+   }
+  },
+  {
+   "from": [
+    2.5,
+    0.5,
+    0
+   ],
+   "to": [
+    13.5,
+    4,
+    3
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/belt_end"
+    },
+    "south": {
+     "texture": "create:block/belt_end"
+    },
+    "east": {
+     "texture": "create:block/belt_end"
+    },
+    "west": {
+     "texture": "create:block/belt_end"
+    },
+    "up": {
+     "texture": "create:block/belt_end"
+    },
+    "down": {
+     "texture": "create:block/belt_end"
     }
    }
   }

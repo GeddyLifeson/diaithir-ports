@@ -23,6 +23,10 @@ public class AllFluids {
         ResourceKey<Fluid> still_key = ResourceKey.create(Registries.FLUID, id);
         ResourceKey<Fluid> flowing_key = ResourceKey.create(Registries.FLUID, id.withPrefix("flowing_"));
         FluidEntry entry = new FluidEntry();
+        entry.type = new net.neoforged.neoforge.fluids.FluidType(
+            net.neoforged.neoforge.fluids.FluidType.Properties.create().descriptionId("fluid." + MOD_ID + "." + name)
+        );
+        Registry.register(net.neoforged.neoforge.registries.NeoForgeRegistries.FLUID_TYPES, id, entry.type);
         entry.still = new FlowableFluid.Still(entry);
         entry.flowing = new FlowableFluid.Flowing(entry);
         Registry.register(BuiltInRegistries.FLUID, still_key, entry.still);

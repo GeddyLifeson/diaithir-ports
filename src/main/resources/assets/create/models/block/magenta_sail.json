@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create:block/magenta_sail",
-  "end": "create:block/magenta_sail_end"
- }
-}

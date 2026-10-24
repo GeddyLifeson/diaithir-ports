@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/train_door"
+  "model": "minecraft:item/barrier"
  }
 }

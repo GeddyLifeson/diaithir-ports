@@ -1,39 +1,106 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/partial_generic",
-  "particle": "create:block/partial_generic"
+  "particle": "create:block/crank_metal"
  },
  "elements": [
   {
    "from": [
-    3,
-    3,
-    3
+    3.5,
+    0,
+    3.5
    ],
    "to": [
-    13,
-    13,
-    13
+    12.5,
+    3,
+    12.5
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/crank_metal"
+    }
+   }
+  },
+  {
+   "from": [
+    6,
+    3,
+    6
+   ],
+   "to": [
+    10,
+    7,
+    10
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   }

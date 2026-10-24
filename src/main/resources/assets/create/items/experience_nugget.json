@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/experience_nugget"
+  "model": "minecraft:item/barrier"
  }
 }

@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/sail_frame"
+  "model": "minecraft:item/barrier"
  }
 }

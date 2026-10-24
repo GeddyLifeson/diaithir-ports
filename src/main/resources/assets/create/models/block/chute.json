@@ -1,6 +1,104 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/chute"
- }
+  "particle": "create:block/chute_side"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    0,
+    3
+   ],
+   "to": [
+    13,
+    16,
+    13
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/chute_side"
+    },
+    "south": {
+     "texture": "create:block/chute_side"
+    },
+    "east": {
+     "texture": "create:block/chute_side"
+    },
+    "west": {
+     "texture": "create:block/chute_side"
+    },
+    "up": {
+     "texture": "create:block/chute_top"
+    },
+    "down": {
+     "texture": "create:block/chute_top"
+    }
+   }
+  },
+  {
+   "from": [
+    2,
+    14,
+    2
+   ],
+   "to": [
+    14,
+    16,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/press_post"
+    },
+    "south": {
+     "texture": "create:block/press_post"
+    },
+    "east": {
+     "texture": "create:block/press_post"
+    },
+    "west": {
+     "texture": "create:block/press_post"
+    },
+    "up": {
+     "texture": "create:block/chute_top"
+    },
+    "down": {
+     "texture": "create:block/press_post"
+    }
+   }
+  },
+  {
+   "from": [
+    2,
+    0,
+    2
+   ],
+   "to": [
+    14,
+    2,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/press_post"
+    },
+    "south": {
+     "texture": "create:block/press_post"
+    },
+    "east": {
+     "texture": "create:block/press_post"
+    },
+    "west": {
+     "texture": "create:block/press_post"
+    },
+    "up": {
+     "texture": "create:block/press_post"
+    },
+    "down": {
+     "texture": "create:block/chute_top"
+    }
+   }
+  }
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "parent": "minecraft:block/cube_column",
  "textures": {
-  "side": "create:block/andesite_encased_shaft",
-  "end": "create:block/andesite_encased_shaft_end"
+  "side": "create:block/andesite_casing",
+  "end": "create:block/andesite_casing_end"
  }
 }

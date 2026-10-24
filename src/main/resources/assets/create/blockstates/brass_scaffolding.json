@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/brass_scaffolding"
+   "model": "minecraft:block/air"
   }
  }
 }

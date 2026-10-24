@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/item_vault"
+  "model": "minecraft:item/barrier"
  }
 }

@@ -1,6 +1,72 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/andesite_belt_funnel"
- }
+  "particle": "create:block/andesite_funnel_side"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    0,
+    3
+   ],
+   "to": [
+    13,
+    12,
+    13
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "south": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "east": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "west": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "up": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "down": {
+     "texture": "create:block/andesite_funnel_mouth"
+    }
+   }
+  },
+  {
+   "from": [
+    1,
+    11,
+    1
+   ],
+   "to": [
+    15,
+    16,
+    15
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "south": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "east": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "west": {
+     "texture": "create:block/andesite_funnel_side"
+    },
+    "up": {
+     "texture": "create:block/chute_top"
+    },
+    "down": {
+     "texture": "create:block/andesite_funnel_side"
+    }
+   }
+  }
+ ]
 }

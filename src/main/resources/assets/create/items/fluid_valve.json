@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/fluid_valve"
+  "model": "minecraft:item/barrier"
  }
 }

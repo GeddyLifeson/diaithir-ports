@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/white_postbox"
-  },
-  "facing=south": {
-   "model": "create:block/white_postbox",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/white_postbox",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/white_postbox",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

@@ -1,16 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/glass_fluid_pipe",
-   "x": 90,
-   "y": 90
-  },
-  "axis=y": {
-   "model": "create:block/glass_fluid_pipe"
-  },
-  "axis=z": {
-   "model": "create:block/glass_fluid_pipe",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/gray_nixie_tube"
-  },
-  "facing=south": {
-   "model": "create:block/gray_nixie_tube",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/gray_nixie_tube",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/gray_nixie_tube",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

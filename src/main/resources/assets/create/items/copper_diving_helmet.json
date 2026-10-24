@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:item/copper_diving_helmet"
+  "model": "minecraft:item/barrier"
  }
 }

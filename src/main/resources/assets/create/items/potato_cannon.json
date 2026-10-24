@@ -1,5 +1,6 @@
 {
  "model": {
-  "type": "create:model/potato_cannon"
+  "type": "minecraft:model",
+  "model": "minecraft:item/barrier"
  }
 }

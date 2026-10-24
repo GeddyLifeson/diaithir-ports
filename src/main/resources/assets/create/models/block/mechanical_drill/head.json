@@ -1,39 +1,166 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/partial_generic",
-  "particle": "create:block/partial_generic"
+  "particle": "create:block/drill_steel"
  },
  "elements": [
   {
    "from": [
     3,
-    3,
+    0,
     3
    ],
    "to": [
     13,
-    13,
+    4,
     13
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/drill_steel"
+    }
+   }
+  },
+  {
+   "from": [
+    4.5,
+    4,
+    4.5
+   ],
+   "to": [
+    11.5,
+    8,
+    11.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/drill_steel"
+    },
+    "south": {
+     "texture": "create:block/drill_steel"
+    },
+    "east": {
+     "texture": "create:block/drill_steel"
+    },
+    "west": {
+     "texture": "create:block/drill_steel"
+    },
+    "up": {
+     "texture": "create:block/drill_steel"
+    },
+    "down": {
+     "texture": "create:block/drill_steel"
+    }
+   }
+  },
+  {
+   "from": [
+    6,
+    8,
+    6
+   ],
+   "to": [
+    10,
+    12,
+    10
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/drill_steel"
+    },
+    "south": {
+     "texture": "create:block/drill_steel"
+    },
+    "east": {
+     "texture": "create:block/drill_steel"
+    },
+    "west": {
+     "texture": "create:block/drill_steel"
+    },
+    "up": {
+     "texture": "create:block/drill_steel"
+    },
+    "down": {
+     "texture": "create:block/drill_steel"
+    }
+   }
+  },
+  {
+   "from": [
+    7.2,
+    12,
+    7.2
+   ],
+   "to": [
+    8.8,
+    16,
+    8.8
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/drill_steel"
+    },
+    "south": {
+     "texture": "create:block/drill_steel"
+    },
+    "east": {
+     "texture": "create:block/drill_steel"
+    },
+    "west": {
+     "texture": "create:block/drill_steel"
+    },
+    "up": {
+     "texture": "create:block/drill_steel"
+    },
+    "down": {
+     "texture": "create:block/drill_steel"
+    }
+   }
+  },
+  {
+   "from": [
+    2.6,
+    0,
+    2.6
+   ],
+   "to": [
+    13.4,
+    1.4,
+    13.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub"
+    },
+    "south": {
+     "texture": "create:block/cog_hub"
+    },
+    "east": {
+     "texture": "create:block/cog_hub"
+    },
+    "west": {
+     "texture": "create:block/cog_hub"
+    },
+    "up": {
+     "texture": "create:block/cog_hub"
+    },
+    "down": {
+     "texture": "create:block/cog_hub"
     }
    }
   }

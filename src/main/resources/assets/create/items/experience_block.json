@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/experience_block"
+  "model": "minecraft:item/barrier"
  }
 }

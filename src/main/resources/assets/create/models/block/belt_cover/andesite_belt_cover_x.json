@@ -1,8 +1,7 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/andesite_casing",
-  "particle": "create:block/andesite_casing"
+  "particle": "create:block/andesite_belt_cover"
  },
  "elements": [
   {
@@ -18,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/andesite_belt_cover"
     }
    }
   }

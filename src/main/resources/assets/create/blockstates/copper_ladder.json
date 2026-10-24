@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/copper_ladder"
-  },
-  "facing=south": {
-   "model": "create:block/copper_ladder",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/copper_ladder",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/copper_ladder",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

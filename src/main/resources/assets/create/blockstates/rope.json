@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/rope"
+   "model": "minecraft:block/air"
   }
  }
 }

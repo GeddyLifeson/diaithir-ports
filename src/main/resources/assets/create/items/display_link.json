@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/display_link"
+  "model": "minecraft:item/barrier"
  }
 }

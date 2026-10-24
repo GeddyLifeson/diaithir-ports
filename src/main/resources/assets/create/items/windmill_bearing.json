@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/windmill_bearing"
+  "model": "minecraft:item/barrier"
  }
 }

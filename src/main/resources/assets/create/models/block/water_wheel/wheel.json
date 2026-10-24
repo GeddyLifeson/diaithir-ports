@@ -1,72 +1,70 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/water_wheel",
-  "1": "create:block/shaft",
-  "particle": "create:block/water_wheel"
+  "particle": "create:block/wheel_planks"
  },
  "elements": [
   {
    "from": [
-    -14,
-    6,
-    6.5
+    -13,
+    6.8,
+    6.9
    ],
    "to": [
-    30,
-    10,
-    9.5
+    29,
+    9.2,
+    9.1
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     }
    }
   },
   {
    "from": [
-    -14,
-    6,
-    6.5
+    -13,
+    6.8,
+    6.9
    ],
    "to": [
-    30,
-    10,
-    9.5
+    29,
+    9.2,
+    9.1
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     }
    },
    "rotation": {
@@ -81,74 +79,65 @@
   },
   {
    "from": [
-    -14,
-    6,
-    6.5
+    6.9,
+    6.8,
+    -13
    ],
    "to": [
-    30,
-    10,
-    9.5
+    9.1,
+    9.2,
+    29
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     }
-   },
-   "rotation": {
-    "origin": [
-     8,
-     8,
-     8
-    ],
-    "axis": "y",
-    "angle": 90
    }
   },
   {
    "from": [
-    -14,
-    6,
-    6.5
+    -13,
+    6.8,
+    6.9
    ],
    "to": [
-    30,
-    10,
-    9.5
+    29,
+    9.2,
+    9.1
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks"
     }
    },
    "rotation": {
@@ -163,197 +152,1189 @@
   },
   {
    "from": [
-    11.419035512031975,
+    28.2,
     5,
-    26.825349715248308
+    2.8
    ],
    "to": [
-    21.419035512031975,
+    30.8,
     11,
-    29.825349715248308
+    13.2
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
-   },
-   "rotation": {
-    "origin": [
-     16.419035512031975,
-     8,
-     28.325349715248308
-    ],
-    "axis": "y",
-    "angle": 0
    }
   },
   {
    "from": [
-    -5.419035512031973,
+    21.9028,
     5,
-    26.825349715248308
+    18.0028
    ],
    "to": [
-    4.580964487968027,
+    24.5028,
     11,
-    29.825349715248308
+    28.4028
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    },
    "rotation": {
     "origin": [
-     -0.4190355120319733,
+     23.202795795510774,
      8,
-     28.325349715248308
+     23.20279579551077
     ],
     "axis": "y",
-    "angle": 0
+    "angle": -45
    }
   },
   {
    "from": [
-    -5.41903551203197,
+    2.8,
     5,
-    -13.825349715248311
+    28.2
    ],
    "to": [
-    4.58096448796803,
+    13.2,
     11,
-    -10.825349715248311
+    30.8
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    -8.5028,
+    5,
+    18.0028
+   ],
+   "to": [
+    -5.9028,
+    11,
+    28.4028
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    },
    "rotation": {
     "origin": [
-     -0.41903551203196976,
+     -7.20279579551077,
      8,
-     -12.325349715248311
+     23.202795795510774
     ],
     "axis": "y",
-    "angle": 0
+    "angle": 45
    }
   },
   {
    "from": [
-    11.419035512031982,
+    -14.8,
     5,
-    -13.825349715248304
+    2.8
    ],
    "to": [
-    21.419035512031982,
+    -12.2,
     11,
-    -10.825349715248304
+    13.2
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    -8.5028,
+    5,
+    -12.4028
+   ],
+   "to": [
+    -5.9028,
+    11,
+    -2.0028
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    },
    "rotation": {
     "origin": [
-     16.419035512031982,
+     -7.2027957955107755,
      8,
-     -12.325349715248304
+     -7.20279579551077
     ],
     "axis": "y",
-    "angle": 0
+    "angle": -45
    }
   },
   {
    "from": [
-    5.0,
+    2.8,
+    5,
+    -14.8
+   ],
+   "to": [
+    13.2,
+    11,
+    -12.2
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    21.9028,
+    5,
+    -12.4028
+   ],
+   "to": [
+    24.5028,
+    11,
+    -2.0028
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/wheel_planks",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/wheel_iron",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     23.202795795510767,
+     8,
+     -7.2027957955107755
+    ],
+    "axis": "y",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    19.7,
+    6.2,
+    2.8
+   ],
+   "to": [
+    21.3,
+    9.8,
+    13.2
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   }
+  },
+  {
+   "from": [
+    16.0388,
+    6.2,
+    11.6388
+   ],
+   "to": [
+    17.6388,
+    9.8,
+    22.0388
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   },
+   "rotation": {
+    "origin": [
+     16.838834764831844,
+     8,
+     16.838834764831844
+    ],
+    "axis": "y",
+    "angle": -45
+   }
+  },
+  {
+   "from": [
+    2.8,
+    6.2,
+    19.7
+   ],
+   "to": [
+    13.2,
+    9.8,
+    21.3
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   }
+  },
+  {
+   "from": [
+    -1.6388,
+    6.2,
+    11.6388
+   ],
+   "to": [
+    -0.0388,
+    9.8,
+    22.0388
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   },
+   "rotation": {
+    "origin": [
+     -0.8388347648318426,
+     8,
+     16.838834764831844
+    ],
+    "axis": "y",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    -5.3,
+    6.2,
+    2.8
+   ],
+   "to": [
+    -3.7,
+    9.8,
+    13.2
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   }
+  },
+  {
+   "from": [
+    -1.6388,
+    6.2,
+    -6.0388
+   ],
+   "to": [
+    -0.0388,
+    9.8,
+    4.3612
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   },
+   "rotation": {
+    "origin": [
+     -0.8388347648318462,
+     8,
+     -0.8388347648318426
+    ],
+    "axis": "y",
+    "angle": -45
+   }
+  },
+  {
+   "from": [
+    2.8,
+    6.2,
+    -5.3
+   ],
+   "to": [
+    13.2,
+    9.8,
+    -3.7
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   }
+  },
+  {
+   "from": [
+    16.0388,
+    6.2,
+    -6.0388
+   ],
+   "to": [
+    17.6388,
+    9.8,
+    4.3612
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/wheel_iron"
+    },
+    "down": {
+     "texture": "create:block/wheel_iron"
+    }
+   },
+   "rotation": {
+    "origin": [
+     16.838834764831844,
+     8,
+     -0.8388347648318462
+    ],
+    "axis": "y",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    5,
+    4.5,
+    5
+   ],
+   "to": [
+    11,
+    11.5,
+    11
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/wheel_iron"
+    },
+    "south": {
+     "texture": "create:block/wheel_iron"
+    },
+    "east": {
+     "texture": "create:block/wheel_iron"
+    },
+    "west": {
+     "texture": "create:block/wheel_iron"
+    },
+    "up": {
+     "texture": "create:block/cog_hub_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_hub_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    6,
     0,
-    5.0
+    6
    ],
    "to": [
-    11.0,
+    10,
     16,
-    11.0
+    10
    ],
    "faces": {
     "north": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#1"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    0,
+    5.5
+   ],
+   "to": [
+    10.5,
+    1.75,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    7.1,
+    5.5
+   ],
+   "to": [
+    10.5,
+    8.9,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    14.25,
+    5.5
+   ],
+   "to": [
+    10.5,
+    16,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   }

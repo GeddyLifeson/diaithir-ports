@@ -1,72 +1,346 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/shaft",
-  "1": "create:block/powered_band",
   "particle": "create:block/shaft"
  },
  "elements": [
   {
    "from": [
-    6.0,
+    6,
     0,
-    6.0
+    6
    ],
    "to": [
-    10.0,
+    10,
     16,
-    10.0
+    10
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   },
   {
    "from": [
-    5,
-    4,
-    5
+    5.5,
+    0,
+    5.5
    ],
    "to": [
-    11,
-    12,
-    11
+    10.5,
+    1.75,
+    10.5
    ],
    "faces": {
     "north": {
-     "texture": "#1"
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#1"
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#1"
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#1"
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#1"
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    7.1,
+    5.5
+   ],
+   "to": [
+    10.5,
+    8.9,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    14.25,
+    5.5
+   ],
+   "to": [
+    10.5,
+    16,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft_collar",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    4.6,
+    3.5,
+    4.6
+   ],
+   "to": [
+    11.4,
+    12.5,
+    11.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/powered_band",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   }

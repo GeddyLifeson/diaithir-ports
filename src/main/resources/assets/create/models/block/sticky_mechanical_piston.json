@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create:block/sticky_mechanical_piston",
-  "end": "create:block/sticky_mechanical_piston_end"
- }
-}

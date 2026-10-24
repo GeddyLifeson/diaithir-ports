@@ -1,7 +1,57 @@
 {
- "variants": {
-  "": {
-   "model": "create:block/fluid_pipe"
+ "multipart": [
+  {
+   "apply": {
+    "model": "create:block/fluid_pipe/hub"
+   }
+  },
+  {
+   "when": {
+    "north": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_north"
+   }
+  },
+  {
+   "when": {
+    "south": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_south"
+   }
+  },
+  {
+   "when": {
+    "west": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_west"
+   }
+  },
+  {
+   "when": {
+    "east": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_east"
+   }
+  },
+  {
+   "when": {
+    "down": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_down"
+   }
+  },
+  {
+   "when": {
+    "up": "true"
+   },
+   "apply": {
+    "model": "create:block/fluid_pipe/arm_up"
+   }
   }
- }
+ ]
 }

@@ -1,5 +1,6 @@
 {
  "model": {
-  "type": "create:model/handheld_worldshaper"
+  "type": "minecraft:model",
+  "model": "minecraft:item/barrier"
  }
 }

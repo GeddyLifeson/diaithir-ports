@@ -28,13 +28,13 @@ public class AllCreativeModeTabs {
             BuiltInRegistries.CREATIVE_MODE_TAB,
             BASE_GROUP,
             CreativeModeTab.builder(null, -1).title(Component.translatable("itemGroup.create.base"))
-                .icon(() -> new ItemStack(AllBlocks.COGWHEEL)).displayItems(AllCreativeModeTabs::base).build()
+                .icon(() -> new ItemStack(AllBlocks.COGWHEEL)).displayItems((p, o) -> base(p, Shipped.filter(o))).build()
         );
         Registry.register(
             BuiltInRegistries.CREATIVE_MODE_TAB,
             PALETTES_GROUP,
             CreativeModeTab.builder(null, -1).title(Component.translatable("itemGroup.create.palettes"))
-                .icon(() -> new ItemStack(AllBlocks.ORNATE_IRON_WINDOW)).displayItems(AllCreativeModeTabs::palettes)
+                .icon(() -> new ItemStack(AllBlocks.ORNATE_IRON_WINDOW)).displayItems((p, o) -> palettes(p, Shipped.filter(o)))
                 .build()
         );
     }

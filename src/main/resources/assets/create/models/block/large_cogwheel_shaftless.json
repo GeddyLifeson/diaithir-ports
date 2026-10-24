@@ -1,135 +1,219 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/cogwheel",
-  "particle": "create:block/cogwheel"
+  "particle": "create:block/cog_bronze"
  },
  "elements": [
   {
    "from": [
-    -0.5,
-    6.5,
-    -0.5
+    -3.0,
+    6.7,
+    -3.0
    ],
    "to": [
-    16.5,
-    9.5,
-    16.5
+    19.0,
+    9.3,
+    19.0
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   },
   {
    "from": [
-    -3,
-    6.5,
-    6
+    -3.0,
+    6.704,
+    -3.0
    ],
    "to": [
-    19,
-    9.5,
-    10
+    19.0,
+    9.296,
+    19.0
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": 22.5
    }
   },
   {
    "from": [
-    6,
-    6.5,
-    -3
+    -3.0,
+    6.708,
+    -3.0
    ],
    "to": [
-    10,
-    9.5,
-    19
+    19.0,
+    9.292,
+    19.0
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
-    }
-   }
-  },
-  {
-   "from": [
-    -2.5,
-    6.5,
-    6
-   ],
-   "to": [
-    18.5,
-    9.5,
-    10
-   ],
-   "faces": {
-    "north": {
-     "texture": "#0"
-    },
-    "south": {
-     "texture": "#0"
-    },
-    "east": {
-     "texture": "#0"
-    },
-    "west": {
-     "texture": "#0"
-    },
-    "up": {
-     "texture": "#0"
-    },
-    "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    },
    "rotation": {
@@ -144,33 +228,69 @@
   },
   {
    "from": [
-    -2.5,
-    6.5,
-    6
+    -3.0,
+    6.712,
+    -3.0
    ],
    "to": [
-    18.5,
-    9.5,
-    10
+    19.0,
+    9.288,
+    19.0
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    },
    "rotation": {
@@ -180,7 +300,673 @@
      8
     ],
     "axis": "y",
-    "angle": -45
+    "angle": -22.5
+   }
+  },
+  {
+   "from": [
+    -8.0,
+    6.703,
+    6.6
+   ],
+   "to": [
+    24.0,
+    9.297,
+    9.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    -8.0,
+    6.706,
+    6.6
+   ],
+   "to": [
+    24.0,
+    9.294,
+    9.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": 22.5
+   }
+  },
+  {
+   "from": [
+    -8.0,
+    6.709,
+    6.6
+   ],
+   "to": [
+    24.0,
+    9.291,
+    9.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    -8.0,
+    6.712,
+    6.6
+   ],
+   "to": [
+    24.0,
+    9.288,
+    9.4
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": -22.5
+   }
+  },
+  {
+   "from": [
+    6.6,
+    6.715,
+    -8.0
+   ],
+   "to": [
+    9.4,
+    9.285,
+    24.0
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    6.6,
+    6.718,
+    -8.0
+   ],
+   "to": [
+    9.4,
+    9.282,
+    24.0
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": 22.5
+   }
+  },
+  {
+   "from": [
+    6.6,
+    6.721,
+    -8.0
+   ],
+   "to": [
+    9.4,
+    9.279,
+    24.0
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    6.6,
+    6.724,
+    -8.0
+   ],
+   "to": [
+    9.4,
+    9.276,
+    24.0
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      6,
+      16,
+      10
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_bronze",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "y",
+    "angle": -22.5
+   }
+  },
+  {
+   "from": [
+    4.8,
+    5.4,
+    4.8
+   ],
+   "to": [
+    11.2,
+    10.6,
+    11.2
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_hub",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_hub",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_hub",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_hub_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_hub_end",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
    }
   }
  ]

@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/pulley_magnet"
+   "model": "minecraft:block/air"
   }
  }
 }

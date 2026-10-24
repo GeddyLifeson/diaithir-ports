@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/lit_blaze_burner"
+   "model": "minecraft:block/air"
   }
  }
 }

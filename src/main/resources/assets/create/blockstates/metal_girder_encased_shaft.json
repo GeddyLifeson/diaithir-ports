@@ -1,13 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/metal_girder_encased_shaft",
-   "x": 90,
-   "y": 90
-  },
-  "axis=z": {
-   "model": "create:block/metal_girder_encased_shaft",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

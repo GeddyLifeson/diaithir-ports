@@ -1,6 +1,136 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/fluid_pipe"
- }
+  "particle": "create:block/pipe"
+ },
+ "elements": [
+  {
+   "from": [
+    4.5,
+    4.5,
+    4.5
+   ],
+   "to": [
+    11.5,
+    11.5,
+    11.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/pipe"
+    },
+    "south": {
+     "texture": "create:block/pipe"
+    },
+    "east": {
+     "texture": "create:block/pipe"
+    },
+    "west": {
+     "texture": "create:block/pipe"
+    },
+    "up": {
+     "texture": "create:block/pipe"
+    },
+    "down": {
+     "texture": "create:block/pipe"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    5,
+    0
+   ],
+   "to": [
+    11,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/pipe"
+    },
+    "south": {
+     "texture": "create:block/pipe"
+    },
+    "east": {
+     "texture": "create:block/pipe"
+    },
+    "west": {
+     "texture": "create:block/pipe"
+    },
+    "up": {
+     "texture": "create:block/pipe"
+    },
+    "down": {
+     "texture": "create:block/pipe"
+    }
+   }
+  },
+  {
+   "from": [
+    4,
+    4,
+    0
+   ],
+   "to": [
+    12,
+    12,
+    1.8
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/pipe_flange"
+    },
+    "south": {
+     "texture": "create:block/pipe_flange"
+    },
+    "east": {
+     "texture": "create:block/pipe_flange"
+    },
+    "west": {
+     "texture": "create:block/pipe_flange"
+    },
+    "up": {
+     "texture": "create:block/pipe_flange"
+    },
+    "down": {
+     "texture": "create:block/pipe_flange"
+    }
+   }
+  },
+  {
+   "from": [
+    4,
+    4,
+    14.2
+   ],
+   "to": [
+    12,
+    12,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/pipe_flange"
+    },
+    "south": {
+     "texture": "create:block/pipe_flange"
+    },
+    "east": {
+     "texture": "create:block/pipe_flange"
+    },
+    "west": {
+     "texture": "create:block/pipe_flange"
+    },
+    "up": {
+     "texture": "create:block/pipe_flange"
+    },
+    "down": {
+     "texture": "create:block/pipe_flange"
+    }
+   }
+  }
+ ]
 }

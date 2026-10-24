@@ -1,15 +1,13 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/press",
-  "1": "create:block/press_head",
-  "particle": "create:block/press"
+  "particle": "create:block/press_side"
  },
  "elements": [
   {
    "from": [
     0,
-    10,
+    9,
     0
    ],
    "to": [
@@ -19,22 +17,22 @@
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/press_side"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/press_side"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/press_side"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/press_side"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/press_top"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/press_head_side"
     }
    }
   },
@@ -46,27 +44,27 @@
    ],
    "to": [
     3,
-    10,
+    9,
     3
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     }
    }
   },
@@ -78,27 +76,27 @@
    ],
    "to": [
     16,
-    10,
+    9,
     3
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     }
    }
   },
@@ -110,27 +108,27 @@
    ],
    "to": [
     3,
-    10,
+    9,
     16
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     }
    }
   },
@@ -142,59 +140,59 @@
    ],
    "to": [
     16,
-    10,
+    9,
     16
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/press_post"
     }
    }
   },
   {
    "from": [
     3,
-    4,
+    3,
     3
    ],
    "to": [
     13,
-    10,
+    9,
     13
    ],
    "faces": {
     "north": {
-     "texture": "#1"
+     "texture": "create:block/press_head_side"
     },
     "south": {
-     "texture": "#1"
+     "texture": "create:block/press_head_side"
     },
     "east": {
-     "texture": "#1"
+     "texture": "create:block/press_head_side"
     },
     "west": {
-     "texture": "#1"
+     "texture": "create:block/press_head_side"
     },
     "up": {
-     "texture": "#1"
+     "texture": "create:block/press_head_side"
     },
     "down": {
-     "texture": "#1"
+     "texture": "create:block/press_head_face"
     }
    }
   }

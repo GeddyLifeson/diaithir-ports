@@ -1,30 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/packager",
-   "x": 90
-  },
-  "facing=east": {
-   "model": "create:block/packager",
-   "x": 90,
-   "y": 90
-  },
-  "facing=south": {
-   "model": "create:block/packager",
-   "x": 90,
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/packager",
-   "x": 90,
-   "y": 270
-  },
-  "facing=up": {
-   "model": "create:block/packager"
-  },
-  "facing=down": {
-   "model": "create:block/packager",
-   "x": 180
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

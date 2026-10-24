@@ -1,16 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/rose_quartz_block",
-   "x": 90,
-   "y": 90
-  },
-  "axis=y": {
-   "model": "create:block/rose_quartz_block"
-  },
-  "axis=z": {
-   "model": "create:block/rose_quartz_block",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

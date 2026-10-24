@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/rope_pulley"
+  "model": "minecraft:item/barrier"
  }
 }

@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/contraption_controls"
-  },
-  "facing=south": {
-   "model": "create:block/contraption_controls",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/contraption_controls",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/contraption_controls",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

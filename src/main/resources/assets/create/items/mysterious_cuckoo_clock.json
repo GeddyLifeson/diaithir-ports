@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/mysterious_cuckoo_clock"
+  "model": "minecraft:item/barrier"
  }
 }

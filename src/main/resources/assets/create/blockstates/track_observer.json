@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/track_observer"
+   "model": "minecraft:block/air"
   }
  }
 }

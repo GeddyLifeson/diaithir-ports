@@ -1,16 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/metal_girder",
-   "x": 90,
-   "y": 90
-  },
-  "axis=y": {
-   "model": "create:block/metal_girder"
-  },
-  "axis=z": {
-   "model": "create:block/metal_girder",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

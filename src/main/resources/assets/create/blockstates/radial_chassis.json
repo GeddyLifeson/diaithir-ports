@@ -1,16 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/radial_chassis",
-   "x": 90,
-   "y": 90
-  },
-  "axis=y": {
-   "model": "create:block/radial_chassis"
-  },
-  "axis=z": {
-   "model": "create:block/radial_chassis",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

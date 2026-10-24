@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/copper_scaffolding"
+   "model": "minecraft:block/air"
   }
  }
 }

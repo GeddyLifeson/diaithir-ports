@@ -8,4 +8,5 @@ public class FluidEntry {
     public FlowableFluid still = null;
     public @Nullable BucketItem bucket = null;
     public @Nullable FluidBlock block = null;
+    public net.neoforged.neoforge.fluids.FluidType type = null;
 }

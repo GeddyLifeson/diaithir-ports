@@ -1,16 +1,7 @@
 {
  "variants": {
-  "axis=x": {
-   "model": "create:block/secondary_linear_chassis",
-   "x": 90,
-   "y": 90
-  },
-  "axis=y": {
-   "model": "create:block/secondary_linear_chassis"
-  },
-  "axis=z": {
-   "model": "create:block/secondary_linear_chassis",
-   "x": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }

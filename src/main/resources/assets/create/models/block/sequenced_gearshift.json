@@ -2,6 +2,6 @@
  "parent": "minecraft:block/cube_column",
  "textures": {
   "side": "create:block/sequenced_gearshift",
-  "end": "create:block/sequenced_gearshift_end"
+  "end": "create:block/gearbox_end"
  }
 }

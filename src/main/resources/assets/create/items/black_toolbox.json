@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/black_toolbox"
+  "model": "minecraft:item/barrier"
  }
 }

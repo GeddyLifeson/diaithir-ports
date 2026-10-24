@@ -1,6 +1,72 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/mechanical_mixer"
- }
+  "particle": "create:block/mixer_side"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    4,
+    0
+   ],
+   "to": [
+    16,
+    16,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/mixer_side"
+    },
+    "south": {
+     "texture": "create:block/mixer_side"
+    },
+    "east": {
+     "texture": "create:block/mixer_side"
+    },
+    "west": {
+     "texture": "create:block/mixer_side"
+    },
+    "up": {
+     "texture": "create:block/mixer_top"
+    },
+    "down": {
+     "texture": "create:block/basin_rim"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    0,
+    5
+   ],
+   "to": [
+    11,
+    4,
+    11
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub"
+    },
+    "south": {
+     "texture": "create:block/cog_hub"
+    },
+    "east": {
+     "texture": "create:block/cog_hub"
+    },
+    "west": {
+     "texture": "create:block/cog_hub"
+    },
+    "up": {
+     "texture": "create:block/cog_hub"
+    },
+    "down": {
+     "texture": "create:block/cog_hub"
+    }
+   }
+  }
+ ]
 }

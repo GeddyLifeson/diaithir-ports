@@ -1,7 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "create:block/steam_engine",
-  "end": "create:block/steam_engine_end"
- }
-}

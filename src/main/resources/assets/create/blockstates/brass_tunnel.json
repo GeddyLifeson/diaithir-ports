@@ -1,13 +1,46 @@
 {
  "variants": {
-  "axis=x": {
+  "axis=x,shape=straight": {
    "model": "create:block/brass_tunnel",
-   "x": 90,
    "y": 90
   },
-  "axis=z": {
+  "axis=x,shape=window": {
    "model": "create:block/brass_tunnel",
-   "x": 90
+   "y": 90
+  },
+  "axis=x,shape=closed": {
+   "model": "create:block/brass_tunnel",
+   "y": 90
+  },
+  "axis=x,shape=t_left": {
+   "model": "create:block/brass_tunnel",
+   "y": 90
+  },
+  "axis=x,shape=t_right": {
+   "model": "create:block/brass_tunnel",
+   "y": 90
+  },
+  "axis=x,shape=cross": {
+   "model": "create:block/brass_tunnel",
+   "y": 90
+  },
+  "axis=z,shape=straight": {
+   "model": "create:block/brass_tunnel"
+  },
+  "axis=z,shape=window": {
+   "model": "create:block/brass_tunnel"
+  },
+  "axis=z,shape=closed": {
+   "model": "create:block/brass_tunnel"
+  },
+  "axis=z,shape=t_left": {
+   "model": "create:block/brass_tunnel"
+  },
+  "axis=z,shape=t_right": {
+   "model": "create:block/brass_tunnel"
+  },
+  "axis=z,shape=cross": {
+   "model": "create:block/brass_tunnel"
   }
  }
 }

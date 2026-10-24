@@ -1,39 +1,242 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/partial_generic",
-  "particle": "create:block/partial_generic"
+  "particle": "create:block/shaft"
  },
  "elements": [
   {
    "from": [
+    6,
     3,
-    3,
-    3
+    6
    ],
    "to": [
-    13,
-    13,
-    13
+    10,
+    9,
+    10
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/cog_hub"
+    }
+   }
+  },
+  {
+   "from": [
+    2,
+    0,
+    7
+   ],
+   "to": [
+    14,
+    5,
+    9
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    7,
+    0,
+    2
+   ],
+   "to": [
+    9,
+    5,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/cog_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    6.5,
+    8,
+    6.5
+   ],
+   "to": [
+    9.5,
+    16,
+    9.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/shaft",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     }
    }
   }

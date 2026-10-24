@@ -1,7 +1,7 @@
 {
  "variants": {
   "": {
-   "model": "create:block/copper_table_cloth"
+   "model": "minecraft:block/air"
   }
  }
 }

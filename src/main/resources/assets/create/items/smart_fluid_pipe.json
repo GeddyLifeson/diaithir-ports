@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/smart_fluid_pipe"
+  "model": "minecraft:item/barrier"
  }
 }

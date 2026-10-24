@@ -1,6 +1,197 @@
 {
- "parent": "minecraft:block/cube_all",
+ "parent": "minecraft:block/block",
  "textures": {
-  "all": "create:block/millstone"
- }
+  "particle": "create:block/millstone_side"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    5,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/press_post"
+    },
+    "south": {
+     "texture": "create:block/press_post"
+    },
+    "east": {
+     "texture": "create:block/press_post"
+    },
+    "west": {
+     "texture": "create:block/press_post"
+    },
+    "up": {
+     "texture": "create:block/press_post"
+    },
+    "down": {
+     "texture": "create:block/press_post"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    5,
+    0
+   ],
+   "to": [
+    16,
+    13,
+    2
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/millstone_side"
+    },
+    "south": {
+     "texture": "create:block/millstone_side"
+    },
+    "east": {
+     "texture": "create:block/millstone_side"
+    },
+    "west": {
+     "texture": "create:block/millstone_side"
+    },
+    "up": {
+     "texture": "create:block/millstone_side"
+    },
+    "down": {
+     "texture": "create:block/millstone_side"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    5,
+    14
+   ],
+   "to": [
+    16,
+    13,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/millstone_side"
+    },
+    "south": {
+     "texture": "create:block/millstone_side"
+    },
+    "east": {
+     "texture": "create:block/millstone_side"
+    },
+    "west": {
+     "texture": "create:block/millstone_side"
+    },
+    "up": {
+     "texture": "create:block/millstone_side"
+    },
+    "down": {
+     "texture": "create:block/millstone_side"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    5,
+    2
+   ],
+   "to": [
+    2,
+    13,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/millstone_side"
+    },
+    "south": {
+     "texture": "create:block/millstone_side"
+    },
+    "east": {
+     "texture": "create:block/millstone_side"
+    },
+    "west": {
+     "texture": "create:block/millstone_side"
+    },
+    "up": {
+     "texture": "create:block/millstone_side"
+    },
+    "down": {
+     "texture": "create:block/millstone_side"
+    }
+   }
+  },
+  {
+   "from": [
+    14,
+    5,
+    2
+   ],
+   "to": [
+    16,
+    13,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/millstone_side"
+    },
+    "south": {
+     "texture": "create:block/millstone_side"
+    },
+    "east": {
+     "texture": "create:block/millstone_side"
+    },
+    "west": {
+     "texture": "create:block/millstone_side"
+    },
+    "up": {
+     "texture": "create:block/millstone_side"
+    },
+    "down": {
+     "texture": "create:block/millstone_side"
+    }
+   }
+  },
+  {
+   "from": [
+    2,
+    5,
+    2
+   ],
+   "to": [
+    14,
+    8,
+    14
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/millstone_side"
+    },
+    "south": {
+     "texture": "create:block/millstone_side"
+    },
+    "east": {
+     "texture": "create:block/millstone_side"
+    },
+    "west": {
+     "texture": "create:block/millstone_side"
+    },
+    "up": {
+     "texture": "create:block/millstone_top"
+    }
+   }
+  }
+ ]
 }

@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/analog_lever"
+  "model": "minecraft:item/barrier"
  }
 }

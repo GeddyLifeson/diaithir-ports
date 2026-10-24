@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/cart_assembler"
+  "model": "minecraft:item/barrier"
  }
 }

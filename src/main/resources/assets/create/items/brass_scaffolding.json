@@ -1,6 +1,6 @@
 {
  "model": {
   "type": "minecraft:model",
-  "model": "create:block/brass_scaffolding"
+  "model": "minecraft:item/barrier"
  }
 }

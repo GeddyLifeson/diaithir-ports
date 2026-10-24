@@ -1,39 +1,328 @@
 {
  "parent": "minecraft:block/block",
  "textures": {
-  "0": "create:block/partial_rope",
-  "particle": "create:block/partial_rope"
+  "particle": "create:block/blade_steel"
  },
  "elements": [
   {
    "from": [
-    7,
-    0,
-    7
+    0.4,
+    6.7,
+    7.306
    ],
    "to": [
-    9,
-    16,
-    9
+    15.6,
+    9.3,
+    8.694
    ],
    "faces": {
     "north": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "south": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "east": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "west": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "up": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
     },
     "down": {
-     "texture": "#0"
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    6.7,
+    0.4,
+    7.309
+   ],
+   "to": [
+    9.3,
+    15.6,
+    8.691
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   }
+  },
+  {
+   "from": [
+    0.4,
+    6.7,
+    7.312
+   ],
+   "to": [
+    15.6,
+    9.3,
+    8.688
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "z",
+    "angle": 45
+   }
+  },
+  {
+   "from": [
+    0.4,
+    6.7,
+    7.315
+   ],
+   "to": [
+    15.6,
+    9.3,
+    8.685
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "south": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "east": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "west": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "up": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    },
+    "down": {
+     "texture": "create:block/blade_steel",
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ]
+    }
+   },
+   "rotation": {
+    "origin": [
+     8,
+     8,
+     8
+    ],
+    "axis": "z",
+    "angle": -45
+   }
+  },
+  {
+   "from": [
+    6,
+    6,
+    5.5
+   ],
+   "to": [
+    10,
+    10,
+    10.5
+   ],
+   "faces": {
+    "north": {
+     "texture": "create:block/cog_hub"
+    },
+    "south": {
+     "texture": "create:block/cog_hub"
+    },
+    "east": {
+     "texture": "create:block/cog_hub"
+    },
+    "west": {
+     "texture": "create:block/cog_hub"
+    },
+    "up": {
+     "texture": "create:block/cog_hub"
+    },
+    "down": {
+     "texture": "create:block/cog_hub"
     }
    }
   }

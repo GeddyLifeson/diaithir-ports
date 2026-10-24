@@ -1,19 +1,7 @@
 {
  "variants": {
-  "facing=north": {
-   "model": "create:block/lectern_controller"
-  },
-  "facing=south": {
-   "model": "create:block/lectern_controller",
-   "y": 180
-  },
-  "facing=west": {
-   "model": "create:block/lectern_controller",
-   "y": 270
-  },
-  "facing=east": {
-   "model": "create:block/lectern_controller",
-   "y": 90
+  "": {
+   "model": "minecraft:block/air"
   }
  }
 }
