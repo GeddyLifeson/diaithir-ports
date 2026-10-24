@@ -12,7 +12,7 @@ def make():
     teal = mats.scales((86, 196, 186), size=4.0, tone=0.62, lo=0.45, hi=1.35)
     teal_d = mats.scales((52, 148, 156), size=4.0, tone=0.56, lo=0.45, hi=1.35)
     cream = mats.cel((252, 238, 204), tone=0.68, grad=0.14)
-    wingm = mats.fin((250, 236, 200), ribs=3.0, lo=0.5, hi=1.15)
+    wingm = mats.cel((250, 232, 190), tone=0.66, grad=0.2)
     redm = mats.cel((228, 78, 70), tone=0.6, grad=0.14)
     redm_d = mats.cel((180, 52, 52), tone=0.55, grad=0.12)
     yellow = mats.cel((252, 214, 80), tone=0.66, grad=0.12)
@@ -44,8 +44,11 @@ def make():
     tf.cube([-0.6, 9.4, 14.8], [1.2, 3.6, 2.4], redm_d)
     for s_, sg in (("l", 1), ("r", -1)):
         w = m.bone("wing_" + s_, [sg * 4.6, 13.5, 1.0], "body")
-        w.cube([sg * 4.6 + (0 if sg > 0 else -10.0), 13.0, -3.6], [10.0, 0.9, 8.0], wingm, rot=[0, 0, sg * -8], pivot=[sg * 4.6, 13.5, 1.0])
-        w.cube([sg * 4.6 + (0 if sg > 0 else -1.4), 12.7, -3.8], [1.4, 1.8, 8.4], cream)
+        # a rounded paddle fin built from four tapering slices, thick enough to read from the front
+        for x0, x1, d, zc in ((0.0, 3.2, 8.4, 0.2), (3.2, 6.6, 8.0, 0.8), (6.6, 9.6, 6.4, 1.6), (9.6, 11.4, 3.6, 2.4)):
+            lo_, hi_ = sorted((sg * (4.6 + x0), sg * (4.6 + x1)))
+            w.cube([lo_, 12.9, zc - d / 2], [hi_ - lo_, 1.4, d], wingm, rot=[0, 0, sg * -20], pivot=[sg * 4.6, 13.5, 1.0])
+        w.cube([sg * 4.6 + (0 if sg > 0 else -1.4), 12.6, -3.6], [1.4, 1.9, 8.0], cream)
     cap = m.bone("cap", [0, 16.8, -7], "head")
     T.rbox(cap, [-3.6, 16.4, -9.8], [7.2, 2.6, 5.6], redm, r=1.2)
     cap.cube([-3.7, 16.9, -9.9], [7.4, 0.9, 5.8], yellow, hide=("up", "down"))

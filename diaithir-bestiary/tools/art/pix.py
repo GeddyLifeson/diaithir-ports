@@ -29,6 +29,11 @@ def ramp(base, lo=0.40, hi=1.40, cool=(-16, -9, 20), warm=(18, 11, -14)):
             c = c + np.array(cool) * (1 - f) / (1 - lo)
         else:
             c = c + np.array(warm) * (f - 1) / (hi - 1)
+        mx = c.max()
+        if mx > 255:    # keep the hue: scale down and mix toward white instead of letting one channel clip (gold went lime)
+            ex = (mx - 255) / 255.0
+            c = c * (255.0 / mx)
+            c = c + (255.0 - c) * min(1.0, ex * 1.1)
         out.append(np.clip(c, 0, 255))
     return np.array(out)
 

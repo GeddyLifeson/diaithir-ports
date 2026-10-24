@@ -9,6 +9,7 @@ from model import Model, Anim
 from pix import ramp, ramp_of
 
 NAME = "emberwyrm"
+YS = 1.0   # sign of the y rotation in the renderer's convention
 
 
 def make():
@@ -17,8 +18,8 @@ def make():
     belly = mats.scales((242, 188, 110), size=5.0, tone=0.62, lo=0.4, hi=1.3, outline=True)
     horn = mats.horn((226, 208, 170), ring=2.6)
     spike = mats.horn((70, 30, 28), ring=2.6, lo=0.3, hi=1.6)
-    mem = mats.membrane((214, 84, 40), M.GLOW_AMBER, ribs=4, scallops=4)
-    mem_o = mats.membrane((228, 110, 46), M.GLOW_AMBER, ribs=3, scallops=3)
+    mem = mats.membrane2((200, 74, 38))
+    mem_o = mats.membrane2((222, 100, 44))
     EM = M.GLOW_AMBER
 
     def face(f):
@@ -77,17 +78,50 @@ def make():
     t4.cube([-1.2, 13.4, 25.2], [2.4, 2.8, 4.4], red_d)
     t4.cube([-1.4, 12.0, 28.8], [2.8, 5.0, 3.4], mats.flame(M.GLOW_AMBER), rot=[0, 0, 0])
     t4.cube([-0.9, 12.6, 31.2], [1.8, 3.4, 2.2], mats.flame(M.GLOW_RED))
-    # wings: arm, wrist, finger spars and two membrane panels
+    # wings: arm (shoulder, elbow, wrist), four curved finger spars fanning back from the wrist, and a membrane
+    # stretched between them as stepped slices (narrow near the hub, wide at the rim) so it reads as a real bat wing
+    WY = 18.8
+    S_, E_, W_ = (4.5, -3.0), (11.0, -6.0), (17.5, -3.0)
+    FING = [[(24.0, -7.5), (31.0, -9.0)], [(25.0, -1.0), (32.5, 3.0)], [(22.0, 5.0), (26.5, 12.5)], [(18.0, 8.5), (19.0, 16.5)]]
+    B_ = (4.5, 12.0)
+    ang = lambda p0, p1: math.degrees(math.atan2(p1[0] - p0[0], p1[1] - p0[1]))
+
+    def spar(bn, p0, p1, t, mat, sg, y=WY - 0.4, th=None):
+        dx, dz = (p1[0] - p0[0]) * sg, p1[1] - p0[1]
+        L = math.hypot(dx, dz) + 0.4
+        cx, cz = (p0[0] + p1[0]) / 2 * sg, (p0[1] + p1[1]) / 2
+        bn.cube([cx - t / 2, y, cz - L / 2], [t, th or t, L], mat, rot=[0, YS * math.degrees(math.atan2(dx, dz)), 0], pivot=[cx, y, cz])
+
+    def panel(bn, hub, ta, tb, mat, sg):
+        mid = ((ta[0] + tb[0]) / 2, (ta[1] + tb[1]) / 2)
+        dx, dz = (mid[0] - hub[0]) * sg, mid[1] - hub[1]
+        L = math.hypot(dx, dz)
+        chord = math.hypot(ta[0] - tb[0], ta[1] - tb[1])
+        ry = YS * math.degrees(math.atan2(dx, dz))
+        ux, uz = dx / L, dz / L
+        for f0, f1, wf in ((0.0, 0.4, 0.34), (0.4, 0.72, 0.68), (0.72, 1.0, 0.98)):
+            l = (f1 - f0) * L
+            c = (f0 + f1) / 2 * L
+            cx, cz = hub[0] * sg + ux * c, hub[1] + uz * c
+            bn.cube([cx - chord * wf / 2, WY - 0.55, cz - l / 2], [chord * wf, 0.45, l], mat, rot=[0, ry, 0], pivot=[cx, WY - 0.55, cz])
+
     for s, sg in (("l", 1), ("r", -1)):
-        w1 = m.bone("wing_" + s, [sg * 4.5, 18.5, -3.0], "body", rot=[0, 0, sg * -16])
-        w1.cube([sg * 4.5 + (0 if sg > 0 else -9.0), 17.4, -4.4], [9.0, 2.4, 2.8], red_d)
-        w1.cube([sg * 4.5 + (0 if sg > 0 else -9.0), 17.9, -1.6], [9.0, 0.5, 14.0], mem)
-        w2 = m.bone("wing2_" + s, [sg * 13.5, 18.8, -3.0], "wing_" + s)
-        w2.cube([sg * 13.5 + (0 if sg > 0 else -11.0), 17.8, -4.0], [11.0, 1.8, 2.0], red_d, rot=[0, sg * -14, 0], pivot=[sg * 13.5, 18.8, -3.0])
-        w2.cube([sg * 13.5 + (0 if sg > 0 else -13.0), 18.2, -2.4], [13.0, 0.5, 17.0], mem_o, rot=[0, sg * -14, 0], pivot=[sg * 13.5, 18.8, -3.0])
-        for k, (zz, L) in enumerate(((2.0, 11.0), (7.0, 9.0), (11.0, 6.5))):
-            w2.cube([sg * 13.5 + (0 if sg > 0 else -L), 18.0, zz - 0.4], [L, 0.9, 0.9], horn, rot=[0, sg * -14, 0], pivot=[sg * 13.5, 18.8, -3.0])
-        w2.cube([sg * 24.0 - 1.0, 17.4, -4.6], [2.0, 2.0, 2.4], horn)
+        w1 = m.bone("wing_" + s, [sg * 4.5, 18.5, -3.0], "body", rot=[0, 0, sg * -14])
+        spar(w1, S_, E_, 2.6, red_d, sg, y=WY - 1.1, th=2.4)
+        panel(w1, S_, E_, B_, mem, sg)
+        panel(w1, E_, W_, B_, mem, sg) if False else None
+        w2 = m.bone("wing2_" + s, [sg * 11.0, 18.8, -6.0], "wing_" + s)
+        spar(w2, E_, W_, 2.2, red_d, sg, y=WY - 1.0, th=2.0)
+        w2.cube([sg * W_[0] - 1.1, WY - 1.4, W_[1] - 1.1], [2.2, 2.6, 2.2], horn)           # wrist knuckle
+        tips = [f[-1] for f in FING]
+        for i in range(len(FING) - 1):
+            panel(w2, W_, tips[i], tips[i + 1], mem_o, sg)
+        panel(w2, W_, tips[-1], B_, mem, sg)
+        for f in FING:
+            spar(w2, W_, f[0], 1.5, horn, sg, y=WY - 0.7, th=1.1)
+            spar(w2, f[0], f[1], 1.0, horn, sg, y=WY - 0.7, th=0.9)
+            spar(w2, f[0], f[1], 0.0 + 0.7, mats.glow(EM, core=False), sg, y=WY - 0.2, th=0.35)
+        w2.cube([sg * FING[0][1][0] - 0.8, WY - 1.0, FING[0][1][1] - 1.4], [1.6, 1.4, 1.8], spike)  # thumb claw at the leading tip
     # legs
     for nm, z in (("f", -5.0), ("b", 5.0)):
         for s, sg in (("l", 1), ("r", -1)):

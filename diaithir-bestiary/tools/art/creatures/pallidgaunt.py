@@ -59,6 +59,10 @@ def make():
     head = m.bone("head", [0, 47, 0], "neck", rot=[0, 0, 6])
     head.cube([-2.8, 46.8, -2.8], [5.6, 11, 5.6], pale, deco={"north": head_front})
     head.cube([-2.6, 56.6, -2.6], [5.2, 1.6, 5.2], pale_d)
+    lank = mats.hair((26, 24, 30), tone=0.5, strand=1.6, contrast=0.25)
+    for i, (x, ln) in enumerate(((-2.2, 16), (-0.9, 22), (0.5, 19), (1.9, 14))):       # lank black strands trailing from the skull
+        head.cube([x - 0.45, 56.6 - ln, 2.8 + 0.3 * (i % 2)], [0.9, ln, 0.9], lank)
+        head.cube([x - 0.45, 56.6, 2.8 + 0.3 * (i % 2)], [0.9, 1.0, 0.9], lank)
     for s, sg in (("l", 1), ("r", -1)):
         ua = m.bone("uarm_" + s, [sg * 5.2, 40, 0], "torso", rot=[0, 0, sg * -3])
         ua.cube([sg * 5.2 - 1.0, 25.5, -1.0], [2.0, 15, 2.0], pale_d)

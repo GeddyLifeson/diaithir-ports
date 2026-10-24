@@ -60,10 +60,10 @@ def metal_hammered(rp, cell=6.0, dome=0.55, tone=0.58, streak=True):
         f.paint(None, rp, tone + r[cid] + sheen, H)
         if streak and w > 8 and h > 8:
             rr = np.random.default_rng(s + 8)
-            for _ in range(max(1, int(w * h / 500))):
+            for _ in range(max(1, int(w * h / 900))):
                 x, y = rr.uniform(0, w), rr.uniform(0, h)
-                L = rr.uniform(2, 5)
-                f.paint(f.line([(x, y), (x + L, y - L * 0.6)], 1.0, ss=1), rp, 0.92, None)
+                L = rr.uniform(2, 4)
+                f.paint(f.line([(x, y), (x + L, y - L * 0.6)], 1.0, ss=1), rp, 0.84, None)
     fn.rp = rp
     return fn
 
@@ -508,16 +508,20 @@ def shroud(base, tone=0.5, rag=7, fold=2.0, lo=0.34, hi=1.6, hem=True, thread=Tr
 
 
 def gauze(base=(190, 190, 196), holes=0.35):
-    """A torn veil: a loose weave with holes."""
+    """A torn veil: fine checker translucency (every other pixel cut), soft vertical folds and a ragged hem."""
     rp = ramp(base, 0.4, 1.2)
 
     def fn(f):
         h, w, s = f.h, f.w, f.seed
-        wv = ((f.gx % 3 == 0) | (f.gy % 3 == 0))
         n = fbm(h, w, 5, s, 2)
-        f.paint(None, rp, 0.62, 0.0)
-        f.paint(~wv | (n > 1 - holes), rp, cut=True)
-        f.paint(wv & (n < 0.5), rp, 0.5, 0.2)
+        fold = 0.5 + 0.12 * np.sin(f.gx * 0.9 + 2.5 * n)
+        f.paint(None, rp, fold, 0.0)
+        f.paint(n > 0.62, rp, 0.42, 0.1)                      # shadowed folds
+        chk = ((f.gx + f.gy) % 2 == 0)
+        f.paint(chk, rp, cut=True)
+        hem = f.gy > h - 2 - 4 * vnoise(h, w, 2.5, s + 9)       # ragged torn hem
+        f.paint(hem & (n > 0.35), rp, cut=True)
+        f.paint((n > 1 - holes * 0.5) & ~chk, rp, cut=True)    # a few real holes
     fn.rp = rp
     return fn
 
@@ -568,5 +572,19 @@ def membrane(base, vein, ribs=4, tone=0.6, lo=0.4, hi=1.4, scallops=4, scallop_d
                 cx = (k + 0.5) * sc
                 d = np.hypot((f.gx + 0.5 - cx) / (sc / 2), (f.gy + 0.5 - (0 if trailing == "top" else h)) / scallop_depth)
                 f.paint(d < 1.0, rp, cut=True)
+    fn.rp = rp
+    return fn
+
+
+def membrane2(base, tone=0.62, lo=0.38, hi=1.4):
+    """Wing skin: warm translucent-looking leather, darker toward one edge, with faint ember streaks."""
+    rp = ramp(base, lo, hi)
+
+    def fn(f):
+        h, w, s = f.h, f.w, f.seed
+        n = fbm(h, w, 7, s, 2)
+        st = vnoise(h, w, 3.0, s + 3, aspect=5.0)
+        f.paint(None, rp, tone + 0.14 * (n - 0.5) * 2 - 0.12 * (f.gy / max(1, h)), 0.2 * n)
+        f.paint(st > 0.72, rp, 0.86, 0.5, emit=True)
     fn.rp = rp
     return fn
