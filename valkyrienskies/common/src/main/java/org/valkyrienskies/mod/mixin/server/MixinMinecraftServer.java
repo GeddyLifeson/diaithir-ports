@@ -142,6 +142,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
 
         VSGameEvents.INSTANCE.getRegistriesCompleted().emit(Unit.INSTANCE);
 
+        org.valkyrienskies.mod.util.PendingDimensions.markRegistered(VSGameUtilsKt.getDimensionId(overworld()));
         getShipObjectWorld().addDimension(
             VSGameUtilsKt.getDimensionId(overworld()),
             VSGameUtilsKt.getYRange(overworld()),
@@ -184,6 +185,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
 
         for (final String oldLoadedLevelId : loadedLevels) {
             if (!newLoadedLevels.containsKey(oldLoadedLevelId)) {
+                org.valkyrienskies.mod.util.PendingDimensions.unregister(oldLoadedLevelId);
                 shipWorld.removeDimension(oldLoadedLevelId);
                 dimensionToLevelMap.remove(oldLoadedLevelId);
             }
@@ -193,6 +195,23 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
 
         vsPipeline.preTickGame();
         org.valkyrienskies.mod.util.PendingDimensions.drainAfterPreTick();
+        // Levels created before the ship world existed (nether, end, every modded dimension made in createLevels)
+        // were never registered; vs-core then NPEs in postTickGame as soon as one of them has terrain updates.
+        for (final ServerLevel level : getAllLevels()) {
+            final String dimensionId = VSGameUtilsKt.getDimensionId(level);
+            if (!org.valkyrienskies.mod.util.PendingDimensions.isRegistered(dimensionId)) {
+                org.valkyrienskies.mod.util.PendingDimensions.markRegistered(dimensionId);
+                final var params = org.valkyrienskies.mod.common.config.DimensionParametersResolver.INSTANCE.getDimensionMap().get(dimensionId);
+                if (params != null) {
+                    shipWorld.addDimension(dimensionId, VSGameUtilsKt.getYRange(level),
+                        params.getGravity(), params.getSeaLevel(), params.getMaxY());
+                } else {
+                    shipWorld.addDimension(dimensionId, VSGameUtilsKt.getYRange(level),
+                        McMathUtilKt.getDEFAULT_WORLD_GRAVITY(), AerodynamicUtils.DEFAULT_SEA_LEVEL,
+                        AerodynamicUtils.DEFAULT_MAX);
+                }
+            }
+        }
     }
 
     /**

@@ -1,6 +1,8 @@
 package org.valkyrienskies.mod.util;
 
+import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.Set;
 import java.util.Map;
 
 /**
@@ -13,6 +15,7 @@ import java.util.Map;
 public final class PendingDimensions {
     private static final Object LOCK = new Object();
     private static final Map<String, Runnable> PENDING = new LinkedHashMap<>();
+    private static final Set<String> REGISTERED = new HashSet<>();
     private static boolean started = false;
 
     private PendingDimensions() {}
@@ -24,6 +27,7 @@ public final class PendingDimensions {
                 PENDING.put(dimensionId, register);
                 return;
             }
+            REGISTERED.add(dimensionId);
         }
         register.run();
     }
@@ -40,12 +44,26 @@ public final class PendingDimensions {
         synchronized (LOCK) {
             started = true;
             toRun = PENDING.values().toArray(new Runnable[0]);
+            REGISTERED.addAll(PENDING.keySet());
             PENDING.clear();
         }
         for (final Runnable r : toRun) r.run();
     }
 
+    /** Dimension ids that vs-core's ship world knows about. */
+    public static boolean isRegistered(final String dimensionId) {
+        synchronized (LOCK) { return REGISTERED.contains(dimensionId); }
+    }
+
+    public static void markRegistered(final String dimensionId) {
+        synchronized (LOCK) { REGISTERED.add(dimensionId); }
+    }
+
+    public static void unregister(final String dimensionId) {
+        synchronized (LOCK) { REGISTERED.remove(dimensionId); PENDING.remove(dimensionId); }
+    }
+
     public static void reset() {
-        synchronized (LOCK) { PENDING.clear(); started = false; }
+        synchronized (LOCK) { PENDING.clear(); REGISTERED.clear(); started = false; }
     }
 }

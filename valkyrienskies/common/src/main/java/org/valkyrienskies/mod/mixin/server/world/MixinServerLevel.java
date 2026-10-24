@@ -336,7 +336,7 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
         final VsiServerShipWorld shipObjectWorld = VSGameUtilsKt.getShipObjectWorld(self);
         // Dynamic level created this tick, not yet registered with vs-core: nothing to update yet
         if (shipObjectWorld == null
-            || org.valkyrienskies.mod.util.PendingDimensions.isPending(VSGameUtilsKt.getDimensionId(self))) return;
+            || !org.valkyrienskies.mod.util.PendingDimensions.isRegistered(VSGameUtilsKt.getDimensionId(self))) return;
         // Find newly loaded chunks
         final ChunkMapAccessor chunkMapAccessor = (ChunkMapAccessor) chunkSource.chunkMap;
 
