@@ -17,3 +17,15 @@ ships never become visible or seatable.
 Existing worlds with ships at the old claims will lose them. Alternative: run Tellus with a
 different -Dtellus.experimentalHeight.coordinateProfile and keep unpatched claims.
 Verified: assemble -> seat at Eureka helm -> W+Space flight on the pack server.
+
+# Runtime-created levels (2.5.0-diaithir.8)
+
+A level created while the server runs (a mod registering a dynamic dimension, e.g. via
+Vampirism's DimensionManager or a world-per-player mod) called ShipWorld.addDimension from the
+ServerLevel constructor at an arbitrary point of the tick. vs-core enforces a stage order per
+tick (PRE_TICK, UPDATE_*, POST_TICK_*), so this ended in "Constraints failed" or an NPE inside
+postTickGame, killing the server (seen in the integrated server as an NPE in
+FQ.postTickGame <- MixinMinecraftServer.postTick). Reproduced on .7 by creating a level at the
+start of tickServer.
+Fix: PendingDimensions queues addDimension after startup and registers new levels right after
+preTickGame of the next tick; MixinServerLevel.postTick skips a level that is still pending.

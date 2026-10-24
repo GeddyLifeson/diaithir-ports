@@ -155,26 +155,20 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
 
         // This only happens when overworld gets loaded on startup, we have a mixin in MixinMinecraftServer for this specific case
         if (getShipObjectWorld() != null) {
-            DimensionParametersResolver.Parameters params = DimensionParametersResolver.INSTANCE.getDimensionMap().get(
-                VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this)
-            );
-            if (params != null) {
-                getShipObjectWorld().addDimension(
-                    VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this),
-                    VSGameUtilsKt.getYRange((ServerLevel) (Object) this),
-                    params.getGravity(),
-                    params.getSeaLevel(),
-                    params.getMaxY()
-                );
-                return;
-            }
-            getShipObjectWorld().addDimension(
-                VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this),
-                VSGameUtilsKt.getYRange((ServerLevel) (Object) this),
-                McMathUtilKt.getDEFAULT_WORLD_GRAVITY(),
-                AerodynamicUtils.DEFAULT_SEA_LEVEL,
-                AerodynamicUtils.DEFAULT_MAX
-            );
+            final ServerLevel vs$self = (ServerLevel) (Object) this;
+            final String vs$id = VSGameUtilsKt.getDimensionId(vs$self);
+            org.valkyrienskies.mod.util.PendingDimensions.registerOrDefer(vs$id, () -> {
+                final DimensionParametersResolver.Parameters params =
+                    DimensionParametersResolver.INSTANCE.getDimensionMap().get(vs$id);
+                if (params != null) {
+                    getShipObjectWorld().addDimension(vs$id, VSGameUtilsKt.getYRange(vs$self),
+                        params.getGravity(), params.getSeaLevel(), params.getMaxY());
+                } else {
+                    getShipObjectWorld().addDimension(vs$id, VSGameUtilsKt.getYRange(vs$self),
+                        McMathUtilKt.getDEFAULT_WORLD_GRAVITY(), AerodynamicUtils.DEFAULT_SEA_LEVEL,
+                        AerodynamicUtils.DEFAULT_MAX);
+                }
+            });
         }
     }
 
@@ -340,6 +334,9 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
     private void postTick(final BooleanSupplier shouldKeepTicking, final CallbackInfo ci) {
         final ServerLevel self = ServerLevel.class.cast(this);
         final VsiServerShipWorld shipObjectWorld = VSGameUtilsKt.getShipObjectWorld(self);
+        // Dynamic level created this tick, not yet registered with vs-core: nothing to update yet
+        if (shipObjectWorld == null
+            || org.valkyrienskies.mod.util.PendingDimensions.isPending(VSGameUtilsKt.getDimensionId(self))) return;
         // Find newly loaded chunks
         final ChunkMapAccessor chunkMapAccessor = (ChunkMapAccessor) chunkSource.chunkMap;
 

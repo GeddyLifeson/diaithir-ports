@@ -109,6 +109,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         at = @At("TAIL")
     )
     private void postCreateLevels(final CallbackInfo ci) {
+        org.valkyrienskies.mod.util.PendingDimensions.reset();
         // Register blocks
         if (!MassDatapackResolver.INSTANCE.getRegisteredBlocks()) {
             final List<BlockState> blockStateList = new ArrayList<>(Block.BLOCK_STATE_REGISTRY.size());
@@ -191,6 +192,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         // endregion
 
         vsPipeline.preTickGame();
+        org.valkyrienskies.mod.util.PendingDimensions.drainAfterPreTick();
     }
 
     /**
