@@ -184,10 +184,8 @@ class Model:
             json.dumps({"format_version": "1.8.0", "animations": {k: v.json() if hasattr(v, "json") else v for k, v in anims.items()}}, indent=1) + "\n")
         Image.fromarray(self.atlas, "RGBA").save(root / "textures/entity" / (self.name + ".png"), optimize=True)
         gp = root / "textures/entity" / (self.name + "_glowmask.png")
-        if self.glow[..., 3].any():
-            Image.fromarray(self.glow, "RGBA").save(gp, optimize=True)
-        elif gp.exists():
-            gp.unlink()
+        # always written, even when empty: GeckoLib's auto glow layer asks for <name>_glowmask.png and a missing file draws magenta
+        Image.fromarray(self.glow, "RGBA").save(gp, optimize=True)
 
 
 class Pair:
