@@ -13,11 +13,12 @@ import java.util.Map;
 
 @Mixin(ModelManager.class)
 public class ModelManagerMixin {
-    @Inject(method = "discoverModelDependencies", at = @At(value = "NEW", target = "(Lnet/minecraft/client/resources/model/ResolvedModel;Ljava/util/Map;)Lnet/minecraft/client/resources/model/ModelManager$ResolvedModels;"))
+    @Inject(method = "discoverModelDependencies(Ljava/util/Map;Lnet/minecraft/client/resources/model/BlockStateModelLoader$LoadedModels;Lnet/minecraft/client/resources/model/ClientItemInfoLoader$LoadedClientInfos;Lnet/neoforged/neoforge/client/model/standalone/StandaloneModelLoader$LoadedModels;)Lnet/minecraft/client/resources/model/ModelManager$ResolvedModels;", at = @At(value = "NEW", target = "(Lnet/minecraft/client/resources/model/ResolvedModel;Ljava/util/Map;)Lnet/minecraft/client/resources/model/ModelManager$ResolvedModels;"))
     private static void collect(
         Map<Identifier, UnbakedModel> modelMap,
         BlockStateModelLoader.LoadedModels stateDefinition,
         ClientItemInfoLoader.LoadedClientInfos result,
+        net.neoforged.neoforge.client.model.standalone.StandaloneModelLoader.LoadedModels standalone,
         CallbackInfoReturnable<ModelManager.ResolvedModels> cir,
         @Local ModelDiscovery collector
     ) {

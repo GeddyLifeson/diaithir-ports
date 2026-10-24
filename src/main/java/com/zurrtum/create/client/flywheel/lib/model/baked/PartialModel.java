@@ -33,6 +33,10 @@ public final class PartialModel {
         return ALL.computeIfAbsent(modelLocation, PartialModel::new);
     }
 
+    public static java.util.Set<Identifier> allLocations() {
+        return new java.util.TreeSet<>(ALL.keySet());
+    }
+
     @UnknownNullability
     public BlockStateModel get() {
         return blockStateModel;

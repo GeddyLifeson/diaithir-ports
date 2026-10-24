@@ -12,7 +12,10 @@ public class CreateNeoForge {
     public CreateNeoForge(IEventBus modBus, ModContainer container) {
         new Create().onInitialize();
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(new NeoEvents());
+        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(new DevDump());
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
+            modBus.addListener(net.neoforged.neoforge.client.event.RegisterPictureInPictureRenderersEvent.class, com.zurrtum.create.client.NeoClientEvents::registerPip);
+            modBus.addListener(net.neoforged.neoforge.client.event.AddClientReloadListenersEvent.class, com.zurrtum.create.client.NeoClientEvents::registerReloadListeners);
             modBus.addListener(FMLClientSetupEvent.class, event -> new com.zurrtum.create.client.Create().onInitializeClient());
         }
     }

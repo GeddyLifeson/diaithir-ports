@@ -69,9 +69,6 @@ public class MixinPlugin implements IMixinConfigPlugin {
         if (loader.isModLoaded("fabric-block-api-v1")) {
             mixins.add("ConnectedTextureBehaviourMixin");
         }
-        if (!loader.isModLoaded("fabric-model-loading-api-v1")) {
-            mixins.add("LoadBlockModelMixin");
-        }
     }
 
     @Override

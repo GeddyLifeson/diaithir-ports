@@ -34,7 +34,7 @@ public class Create {
     public static SchematicHandler SCHEMATIC_HANDLER;
     public static SchematicAndQuillHandler SCHEMATIC_AND_QUILL_HANDLER;
     public static ZapperRenderHandler ZAPPER_RENDER_HANDLER;
-    public static ClientResourceReloadListener RESOURCE_RELOAD_LISTENER;
+    public static ClientResourceReloadListener RESOURCE_RELOAD_LISTENER = new ClientResourceReloadListener();
 
     public void onInitializeClient() {
         new Flywheel().onInitializeClient();
@@ -49,7 +49,6 @@ public class Create {
         SCHEMATIC_HANDLER = new SchematicHandler();
         SCHEMATIC_AND_QUILL_HANDLER = new SchematicAndQuillHandler();
         ZAPPER_RENDER_HANDLER = new ZapperRenderHandler();
-        RESOURCE_RELOAD_LISTENER = new ClientResourceReloadListener();
         AllConfigs.register();
         AllFluidConfigs.register();
         AllHandle.register();
@@ -77,6 +76,14 @@ public class Create {
         CameraAngleAnimationService.register();
         PonderIndex.addPlugin(new CreatePonderPlugin());
         CompatMod.register();
+        String dump = System.getProperty("create.dumpPartials");
+        if (dump != null) {
+            try {
+                java.nio.file.Files.writeString(java.nio.file.Path.of(dump), String.join("\n", com.zurrtum.create.client.flywheel.lib.model.baked.PartialModel.allLocations().stream().map(Object::toString).toList()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static Identifier asResource(String path) {

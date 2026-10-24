@@ -20,14 +20,18 @@ public class KeyboardHandlerMixin {
     @Final
     private Minecraft minecraft;
 
-    @Inject(method = "keyPress(JILnet/minecraft/client/input/KeyEvent;)V", at = @At(value = "RETURN", ordinal = 5))
+    @Inject(method = "keyPress(JILnet/minecraft/client/input/KeyEvent;)V", at = @At(value = "HEAD"))
     private void onKeyReleased(long window, int action, KeyEvent input, CallbackInfo ci) {
-        onKey(input, false);
+        if (action == 0) {
+            onKey(input, false);
+        }
     }
 
     @Inject(method = "keyPress(JILnet/minecraft/client/input/KeyEvent;)V", at = @At(value = "TAIL"))
     private void onKey(long window, int action, KeyEvent input, CallbackInfo ci) {
-        onKey(input, true);
+        if (action != 0) {
+            onKey(input, true);
+        }
     }
 
     @Unique

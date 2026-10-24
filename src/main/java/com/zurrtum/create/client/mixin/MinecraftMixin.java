@@ -129,11 +129,6 @@ public abstract class MinecraftMixin {
 
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/Window;updateVsync(Z)V"))
     private void register(GameConfig args, CallbackInfo ci) {
-        resourceManager.registerReloadListener(ObjLoader.INSTANCE);
-        resourceManager.registerReloadListener(FlwProgramsReloader.INSTANCE);
-        resourceManager.registerReloadListener(Create.RESOURCE_RELOAD_LISTENER);
-        resourceManager.registerReloadListener(TrainHatInfoReloadListener.LISTENER);
-        resourceManager.registerReloadListener(Ponder.RESOURCE_RELOAD_LISTENER);
     }
 
     @Inject(method = "onGameLoadFinished(Lnet/minecraft/client/Minecraft$GameLoadCookie;)V", at = @At("HEAD"))

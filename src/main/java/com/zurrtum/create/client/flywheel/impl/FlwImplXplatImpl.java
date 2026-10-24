@@ -21,7 +21,7 @@ public class FlwImplXplatImpl implements FlwImplXplat {
 
     @Override
     public String getVersionStr() {
-        return Flywheel.version().getFriendlyString();
+        return Flywheel.version();
     }
 
     @Override

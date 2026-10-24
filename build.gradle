@@ -21,7 +21,10 @@ neoForge {
     accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
     interfaceInjectionData.from(file('interfaces.json'))
     runs {
-        server { server() }
+        server {
+            server()
+            jvmArguments.add('-Dcreate.dumpRegistries=' + file('run/registries.json').absolutePath)
+        }
         client { client() }
     }
     mods {
