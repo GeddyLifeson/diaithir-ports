@@ -19,27 +19,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
             return;
         }
         FabricLoader loader = FabricLoader.getInstance();
-        if (loader.isModLoaded("sodium")) {
-            mixins.add("QuadRenderHelperMixin");
-        }
-        if (loader.isModLoaded("iris")) {
-            mixins.add("IrisPipelinesMixin");
-        }
-        if (loader.isModLoaded("eiv")) {
-            mixins.add("EivItemSlotMixin");
-            mixins.add("FabricEIVMixin");
-            mixins.add("EivRecipeViewMenuMixin");
-            mixins.add("EivViewTypeButtonMixin");
-            mixins.add("EivFluidItemSpecialRendererMixin");
-            mixins.add("EivRecipeViewScreenMixin");
-            mixins.add("EivCraftingViewRecipeAccessor");
-        }
-        if (loader.isModLoaded("rrv")) {
-            mixins.add("RrvRecipeViewMenuMixin");
-            mixins.add("RrvFluidItemSpecialRenderer");
-            mixins.add("RrvRecipeViewScreenMixin");
-            mixins.add("BuiltInReliableRecipeViewerClientIntegrationMixin");
-        }
+        // the Sodium, Iris, EIV and RRV mixins are not part of this build (their classes are excluded), so they are never requested
         if (!loader.isModLoaded("fabric-creative-tab-api-v1")) {
             mixins.add("CreativeModeInventoryScreenMixin");
         }
