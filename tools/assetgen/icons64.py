@@ -7,7 +7,7 @@ from art import *
 OUT_C = (30, 22, 20)
 
 
-def _finish(c, grime=0.0):
+def _finish(c, grime=0.0, wear=0.65):
     im = c.im.resize((S, S), Image.LANCZOS)
     a = np.array(im).astype(np.float32)
     alpha = a[..., 3]
@@ -16,6 +16,7 @@ def _finish(c, grime=0.0):
     pad = np.pad(mask, 1)
     near = pad[:-2, 1:-1] | pad[2:, 1:-1] | pad[1:-1, :-2] | pad[1:-1, 2:]
     ring = near & ~mask
+    a[..., :3] = weather(a[..., :3], alpha, "icon" + str(int(a[..., :3].sum()) % 9973), wear, border=False)
     out = a.copy()
     out[ring] = [OUT_C[0], OUT_C[1], OUT_C[2], 235]
     ys, xs = np.where(out[..., 3] > 40)
@@ -89,7 +90,7 @@ def flour(color, name="flour"):
     c.poly(pts, color)
     c.poly([(16, 40), (22, 28), (30, 21), (32, 26), (24, 38)], sh(color, 1.2))
     c.poly([(40, 48), (50, 40), (54, 44), (44, 52)], sh(color, 0.8))
-    return _finish(c)
+    return _finish(c, wear=0.15)
 
 
 def dough(color, name="dough"):
@@ -100,7 +101,7 @@ def dough(color, name="dough"):
     c.ellipse(22, 25, 30, 29, sh(color, 1.38))
     for (x, y) in ((40, 38), (30, 42), (22, 40)):
         c.ellipse(x - 2, y - 1.2, x + 2, y + 1.2, sh(color, 0.8))
-    return _finish(c)
+    return _finish(c, wear=0.15)
 
 
 def bucket(fluid, name="bucket"):
@@ -184,7 +185,7 @@ def sandpaper(color, name="sandpaper"):
         t, u = r.random(), r.random()
         x = 10 + 36 * t + 10 * u; y = 16 - 8 * t + 36 * u
         c.rect(x, y, x + 1.3, y + 1.3, sh(base, 0.6 + r.random() * 0.9))
-    return _finish(c)
+    return _finish(c, wear=0.15)
 
 
 def propeller(color, name="prop"):
@@ -234,7 +235,7 @@ def quartz(color, name="quartz"):
         c.poly([(14, 34), (30, 36), (24, 56)], sh(col, 0.95))
         c.poly([(30, 36), (36, 18), (46, 36), (40, 56), (24, 56)], sh(col, 0.7))
         c.poly([(22, 14), (28, 18), (22, 30), (18, 32)], (255, 226, 232), 130)
-    return _finish(c)
+    return _finish(c, wear=0.15)
 
 
 def tube(color, name="tube"):
@@ -256,7 +257,7 @@ MAKERS = [
 
 
 def color_of(name):
-    for k, v in (("zinc", ZINC), ("brass", BRASS), ("copper", COPPER), ("golden", (236, 196, 60)), ("gold", (236, 196, 60)), ("iron", (186, 188, 192)), ("andesite", (150, 156, 146)),
+    for k, v in (("zinc", ZINC), ("brass", BRASS), ("copper", COPPER), ("golden", (196, 160, 58)), ("gold", (196, 160, 58)), ("iron", (186, 188, 192)), ("andesite", (150, 156, 146)),
                  ("osmium", (120, 156, 196)), ("platinum", (196, 234, 238)), ("silver", (214, 218, 224)), ("tin", (206, 200, 178)), ("lead", (92, 96, 124)),
                  ("quicksilver", (176, 172, 206)), ("aluminum", (172, 196, 218)), ("uranium", (114, 166, 62)), ("nickel", (176, 186, 154)), ("flour", (236, 228, 200)),
                  ("dough", (226, 204, 152)), ("honey", (240, 176, 40)), ("chocolate", (104, 62, 40))):

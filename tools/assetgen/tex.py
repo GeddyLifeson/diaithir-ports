@@ -11,18 +11,18 @@ def shade(c, f): return tuple(clamp(x * f) for x in c[:3])
 def mix(a, b, t): return tuple(clamp(a[i] * (1 - t) + b[i] * t) for i in range(3))
 
 PAL = dict(
-    steel=(92, 94, 96), dark_steel=(60, 62, 66), paint_yellow=(196, 152, 40), copper=(196, 104, 56),
-    brass=(190, 150, 70), andesite=(128, 130, 126), zinc=(150, 160, 168), iron=(176, 176, 178),
-    wood=(150, 112, 66), rubber=(40, 40, 44), gold=(232, 196, 60), glass=(180, 210, 220),
+    steel=(92, 94, 96), dark_steel=(60, 62, 66), paint_yellow=(200, 150, 30), copper=(160, 94, 62),
+    brass=(152, 122, 66), andesite=(128, 130, 126), zinc=(150, 160, 168), iron=(176, 176, 178),
+    wood=(150, 112, 66), rubber=(40, 40, 44), gold=(196, 160, 58), glass=(180, 210, 220),
 )
 DYES = dict(white=(236, 236, 236), orange=(240, 130, 30), magenta=(190, 70, 180), light_blue=(80, 160, 224),
             yellow=(230, 200, 40), lime=(110, 190, 30), pink=(238, 140, 170), gray=(80, 86, 90),
             light_gray=(158, 158, 152), cyan=(30, 140, 150), purple=(120, 50, 170), blue=(50, 60, 160),
             brown=(110, 70, 40), green=(80, 110, 40), red=(170, 40, 40), black=(24, 24, 28))
 STONES = dict(granite=(150, 100, 86), diorite=(190, 190, 190), andesite=(136, 138, 134), calcite=(224, 224, 218),
-              dripstone=(134, 106, 86), deepslate=(78, 78, 84), tuff=(108, 110, 98), asurine=(70, 100, 170),
-              crimsite=(150, 52, 56), limestone=(206, 192, 150), ochrum=(214, 168, 56), scoria=(96, 60, 52),
-              scorchia=(66, 56, 54), veridium=(70, 150, 120))
+              dripstone=(134, 106, 86), deepslate=(78, 78, 84), tuff=(108, 110, 98), asurine=(62, 84, 132),
+              crimsite=(120, 52, 54), limestone=(176, 164, 130), ochrum=(164, 134, 62), scoria=(96, 60, 52),
+              scorchia=(66, 56, 54), veridium=(64, 118, 98))
 
 def img(size=16, fill=(0, 0, 0, 0)):
     return Image.new("RGBA", (size, size), fill)
@@ -184,7 +184,7 @@ def tiles(color, name):
     return im
 
 def tint_oxid(level):
-    return [(196, 104, 56), (184, 120, 84), (96, 150, 120), (70, 160, 150)][level]
+    return [(160, 94, 62), (150, 106, 80), (86, 128, 108), (66, 122, 114)][level]
 
 def glyph(im, name, color, x0=5, y0=5, n=6):
     """Deterministic 6x6 mirrored mark so each machine block is visually distinguishable."""

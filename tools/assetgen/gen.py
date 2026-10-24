@@ -50,6 +50,8 @@ def slotify(obj):
     """26.1 only resolves face textures given as #slot; turn literal ids into slots."""
     if not isinstance(obj, dict) or "elements" not in obj:
         return obj
+    import copy
+    obj = copy.deepcopy(obj)
     tex = obj.setdefault("textures", {})
     rev = {}
     for k, v in tex.items():

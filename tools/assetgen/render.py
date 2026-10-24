@@ -13,6 +13,15 @@ BUILTIN = {
     "minecraft:block/cube_bottom_top": lambda t: {"elements": [_cube({"up": "#top", "down": "#bottom", "north": "#side", "south": "#side", "east": "#side", "west": "#side"})], "textures": t},
     "minecraft:block/cube": lambda t: {"elements": [_cube({k: "#" + k for k in FACES})], "textures": t},
 }
+def _el(f, t, m): return {"from": f, "to": t, "faces": {k: {"texture": v} for k, v in m.items()}}
+_SIDES = {"north": "#side", "south": "#side", "east": "#side", "west": "#side"}
+BUILTIN.update({
+    "minecraft:block/slab": lambda t: {"elements": [_el([0, 0, 0], [16, 8, 16], {**_SIDES, "up": "#top", "down": "#bottom"})], "textures": t},
+    "minecraft:block/stairs": lambda t: {"elements": [_el([0, 0, 0], [16, 8, 16], {**_SIDES, "up": "#top", "down": "#bottom"}),
+                                                      _el([8, 8, 0], [16, 16, 16], {**_SIDES, "up": "#top", "down": "#bottom"})], "textures": t},
+    "minecraft:block/wall_inventory": lambda t: {"elements": [_el([4, 0, 4], [12, 16, 12], {**_SIDES, "up": "#wall", "down": "#wall"}) if False else _el([4, 0, 4], [12, 16, 12], {k: "#wall" for k in FACES})], "textures": t},
+    "minecraft:block/template_glass_pane_post": lambda t: {"elements": [_el([0, 0, 7], [16, 16, 9], {"north": "#pane", "south": "#pane", "east": "#edge", "west": "#edge", "up": "#edge", "down": "#edge"})], "textures": t},
+})
 FACES = ("north", "south", "east", "west", "up", "down")
 
 
@@ -221,7 +230,7 @@ def sheet(entries, out, cols=6, cell=256, label=True):
     for i, (lab, (kind, ref)) in enumerate(entries):
         x, y = (i % cols) * cell, (i // cols) * (cell + 18)
         if kind == "model":
-            im = render(ref, cell)
+            im = render(ref, cell, scale=(cell / 62.0 if 'water_wheel' in ref else None))
         else:
             p = f"{ASSETS}/textures/item/{ref}.png"
             im = Image.new("RGBA", (cell, cell), (36, 36, 40, 255))

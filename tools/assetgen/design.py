@@ -68,11 +68,13 @@ def run(g):
         c = Cv(body)
         c.rect(0, 0, 64, 64, body)
         for r_ in (14, 24):
-            c.ellipse(32 - r_, 32 - r_, 32 + r_, 32 + r_, sh(body, 0.88)); c.ellipse(32 - r_ + 1.2, 32 - r_ + 1.2, 32 + r_ - 1.2, 32 + r_ - 1.2, body)
-        return c.finish(name, 0.4, 0.06, 0.05, 0.0)
+            c.ellipse(32 - r_, 32 - r_, 32 + r_, 32 + r_, sh(body, 0.62)); c.ellipse(32 - r_ + 1.4, 32 - r_ + 1.4, 32 + r_ - 1.4, 32 + r_ - 1.4, body)
+        for k in range(8):
+            c.rivet(32 + 19 * math.cos(math.radians(k * 45)), 32 + 19 * math.sin(math.radians(k * 45)), 1.6, body)
+        return c.finish(name, 0.4, 0.06, 0.02, 0.0)
 
     wtex("cog_steel", cog_face("cogs", sh(STEEL, 1.02), STEEL_D))
-    wtex("cog_bronze", cog_face("cogb", sh(BRASS, 0.92), BRASS))
+    wtex("cog_bronze", cog_face("cogb", (112, 92, 58), BRASS))
     c = Cv(None); c.cyl_v(0, 0, 64, 64, sh(BRASS, 1.0)); c.rect(0, 0, 64, 2, sh(BRASS, 1.4)); c.rect(0, 62, 64, 64, sh(BRASS, 0.5))
     wtex("cog_hub", c.finish("hub", 0.2, 0, 0.02, 0))
     c = Cv(sh(BRASS, 0.8)); c.ellipse(6, 6, 58, 58, sh(BRASS, 1.1)); c.ellipse(14, 14, 50, 50, sh(STEEL_D, 0.6)); c.ellipse(22, 22, 42, 42, STEEL)
@@ -132,50 +134,55 @@ def run(g):
 
     # ------------------------------------------------------------------ water wheels
     wtex("wheel_planks", planks("wheelp", WOOD, False, True))
+    wtex("wheel_planks_h", planks("wheelh", WOOD, False, False))
     c = Cv(STEEL); c.bevel(0.5, 0.5, 63.5, 63.5, STEEL, 3.0, True)
-    for x in (10, 32, 54): c.rivet(x, 32, 2.0, STEEL)
+    for x in (10, 32, 54): c.rivet(x, 32, 2.2, STEEL)
+    c.hazard(4, 8, 60, 14, 3.5)
     wtex("wheel_iron", c.finish("wiron", 0.4, 0.1, 0.04, 0.1))
     wood = {"particle": T("wheel_planks")}
-    PL, IR = T("wheel_planks"), T("wheel_iron")
+    PL, PH, IR = T("wheel_planks"), T("wheel_planks_h"), T("wheel_iron")
+
+    def spoke(angle, wd=2.6, th=2.4):
+        """one plank spoke through the axle, built from tiles of at most 16 so the grain is never stretched"""
+        els = []
+        y0, y1 = 8 - th / 2, 8 + th / 2
+        for (a0, a1) in ((-13, 3), (3, 19), (19, 29)):
+            ln = a1 - a0
+            f = {"north": (PH, [0, 3, ln, 3 + th]), "south": (PH, [0, 3, ln, 3 + th]), "up": (PH, [0, 0, ln, wd]), "down": (PH, [0, 0, ln, wd]),
+                 "east": (PH, [0, 0, wd, th]), "west": (PH, [0, 0, wd, th])}
+            els.append(box([a0, y0, 8 - wd / 2], [a1, y1, 8 + wd / 2], f, R(angle) if angle else None))
+        for ax in (-8.0, 14.5):   # bolted iron clamps
+            cf = {k: (IR, [0, 0, 16, 16]) for k in FACES}
+            els.append(box([8 + ax - 1.0, y0 - 0.35, 8 - wd / 2 - 0.35], [8 + ax + 1.0, y1 + 0.35, 8 + wd / 2 + 0.35], cf, R(angle) if angle else None))
+        return els
 
     def wheel_elems():
         els = []
-        # four spokes (planks) through the axle
         for a in (0, 45, 90, 135):
-            rot = None
-            fr, to = [-13, 6.8, 6.9], [29, 9.2, 9.1]
-            if a == 90:
-                fr, to = [6.9, 6.8, -13], [9.1, 9.2, 29]
-            elif a == 45:
-                rot = R(45)
-            elif a == 135:
-                rot = R(-45)
-            els.append(box(fr, to, {f: (PL, [0, 0, 16, 4]) if f not in ("up", "down") else (PL, [0, 0, 16, 16]) for f in FACES} if False else PL, rot))
-        # eight paddles on the rim, each a plank with an iron cap
+            els += spoke(a if a != 135 else -45)
+        # eight paddles on the rim: bolted planks with two iron straps
         for k in range(8):
             ang = k * 45
             cx, cz = 8 + 21.5 * math.cos(math.radians(ang)), 8 + 21.5 * math.sin(math.radians(ang))
-            if ang % 180 == 0:
-                fr, to, rot = [cx - 1.3, 5, cz - 5.2], [cx + 1.3, 11, cz + 5.2], None
-            elif ang % 180 == 90:
-                fr, to, rot = [cx - 5.2, 5, cz - 1.3], [cx + 5.2, 11, cz + 1.3], None
+            rot = None
+            if ang % 180 == 45:
+                rot = R(-45, (cx, 8, cz))
+            elif ang % 180 == 135:
+                rot = R(45, (cx, 8, cz))
+            if ang % 180 == 90:
+                hx, hz = 5.2, 1.3
             else:
-                fr, to = [cx - 1.3, 5, cz - 5.2], [cx + 1.3, 11, cz + 5.2]
-                rot = R(-45 if ang % 180 == 45 else 45, (cx, 8, cz))
-            if all(-16 <= v <= 32 for v in fr + to):
-                els.append(box(fr, to, {"north": (PL, FULL), "south": (PL, FULL), "east": (PL, FULL), "west": (PL, FULL), "up": (IR, [0, 0, 16, 16]), "down": (IR, [0, 0, 16, 16])}, rot))
-        # iron band ring (octagon of thin plates) and the hub
-        for k in range(8):
-            ang = k * 45
-            cx, cz = 8 + 12.5 * math.cos(math.radians(ang)), 8 + 12.5 * math.sin(math.radians(ang))
-            if ang % 180 == 0:
-                fr, to, rot = [cx - 0.8, 6.2, cz - 5.2], [cx + 0.8, 9.8, cz + 5.2], None
-            elif ang % 180 == 90:
-                fr, to, rot = [cx - 5.2, 6.2, cz - 0.8], [cx + 5.2, 9.8, cz + 0.8], None
-            else:
-                fr, to = [cx - 0.8, 6.2, cz - 5.2], [cx + 0.8, 9.8, cz + 5.2]
-                rot = R(-45 if ang % 180 == 45 else 45, (cx, 8, cz))
-            els.append(box(fr, to, IR, rot))
+                hx, hz = 1.3, 5.2
+            pf = {"north": (PL, [2.8, 5, 13.2, 11]), "south": (PL, [2.8, 5, 13.2, 11]), "east": (PL, [0, 5, 2.6, 11]), "west": (PL, [0, 5, 2.6, 11]),
+                  "up": (PL, [0, 0, 2.6, 10.4]), "down": (PL, [0, 0, 2.6, 10.4])}
+            if hx > hz:
+                pf = {"north": (PL, [0, 5, 2.6, 11]), "south": (PL, [0, 5, 2.6, 11]), "east": (PL, [2.8, 5, 13.2, 11]), "west": (PL, [2.8, 5, 13.2, 11]),
+                      "up": (PL, [0, 0, 10.4, 2.6]), "down": (PL, [0, 0, 10.4, 2.6])}
+            if all(-16 <= v <= 32 for v in (cx - hx, cx + hx, cz - hz, cz + hz)):
+                els.append(box([cx - hx, 5, cz - hz], [cx + hx, 11, cz + hz], pf, rot))
+                for (ya, yb) in ((5.4, 6.6), (9.4, 10.6)):
+                    sf = {kk: (IR, [0, 0, 16, 16]) for kk in FACES}
+                    els.append(box([cx - hx - 0.35, ya, cz - hz - 0.35], [cx + hx + 0.35, yb, cz + hz + 0.35], sf, rot))
         els.append(box([5, 4.5, 5], [11, 11.5, 11], {"north": IR, "south": IR, "east": IR, "west": IR, "up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)}))
         return els
 
@@ -266,7 +273,8 @@ def run(g):
                     ("middle_bottom", [bed()]), ("start_bottom", [bed(), drum_s]), ("end_bottom", [bed(), drum_e])):
         model(f"block/belt/{nm}", emodel(bt, els))
     for nm in ("diagonal_middle", "diagonal_start", "diagonal_end"):
-        model(f"block/belt/{nm}", emodel(bt, [box([2, -2, -6], [14, 1, 22], {"up": (BT, [2, 0, 14, 16]), "down": BE, "north": BE, "south": BE, "east": BE, "west": BE}, R(45, (8, 0, 8), "x"))]))
+        rail = lambda x0, x1: box([x0, -2, -6], [x1, 2.2, 22], {"up": (BE, [0, 0, 2, 16]), "down": (BE, [0, 0, 2, 16]), "north": (BE, [0, 0, 2, 4]), "south": (BE, [0, 0, 2, 4]), "east": (BE, [0, 0, 16, 4]), "west": (BE, [0, 0, 16, 4])}, R(45, (8, 0, 8), "x"))
+        model(f"block/belt/{nm}", emodel(bt, [box([2, -2, -6], [14, 1, 22], {"up": (BT, [2, 0, 14, 16]), "down": BE, "north": BE, "south": BE, "east": BE, "west": BE}, R(45, (8, 0, 8), "x")), rail(1, 2.8), rail(13.2, 15)]))
     model("block/belt_pulley", emodel(bt, [box([2, 0, 0], [14, 4, 4], BD), box([4, 4, 1], [12, 10, 3], BE)]))
     for cc, col in (("andesite", ANDESITE), ("brass", BRASS)):
         wtex(f"{cc}_belt_cover", casing_tex(f"{cc}cover", col))
@@ -283,6 +291,7 @@ def run(g):
         c.outline_rect(26, 11, 38, 53, OUTL, 0.8, 255)
         c.rect(24, 9, 40, 11, sh(STEEL, 1.3)); c.rect(24, 53, 40, 55, sh(STEEL, 0.6))
         c.rivets4(0, 0, 64, 64, 3.2, 1.3, STEEL)
+        c.hazard(8, 56, 56, 61, 3.5)
         for y in (20, 44):
             c.rect(10, y, 22, y + 1.4, sh(STEEL_D, 0.7)); c.rect(42, y, 54, y + 1.4, sh(STEEL_D, 0.7))
         return c.finish(name, 0.5, 0.0)
@@ -299,7 +308,14 @@ def run(g):
     bstate("creative_motor", rotv("creative_motor", "create:block/creative_motor"))
 
     # ------------------------------------------------------------------ mixer
-    wtex("mixer_side", machine_emblem_face("mxs", "whisk", STEEL, BRASS))
+    c = Cv(sh(STEEL, 0.78)); c.bevel(0.5, 0.5, 63.5, 63.5, sh(STEEL, 0.82), 2.2, True)
+    c.bevel(5, 5, 59, 38, sh(STEEL, 0.95), 1.4, True)
+    for x in range(10, 56, 8):
+        c.rect(x, 9, x + 3.5, 34, sh(STEEL_D, 0.55)); c.rect(x + 3.5, 9, x + 4.6, 34, sh(STEEL, 1.15))
+    c.rivets4(5, 5, 59, 38, 3.0, 1.2, STEEL)
+    c.hazard(5, 42, 59, 50, 4.0)
+    c.gauge(14, 57, 3.6); c.lamp(32, 57, 1.8, HAZ_Y); c.lamp(42, 57, 1.8, (110, 220, 130)); c.rivet(54, 57, 1.4, STEEL)
+    wtex("mixer_side", c.finish("mxs", 0.6, 0.18))
     wtex("mixer_top", casing_tex("mxt", BRASS))
     wtex("mixer_pole", shaft_side("mxp"))
     MX, MXT = T("mixer_side"), T("mixer_top")
@@ -324,15 +340,20 @@ def run(g):
     bstate("depot", {"variants": {"": {"model": "create:block/depot"}}})
 
     # ------------------------------------------------------------------ chute (down facing tube) and funnels, tunnels
-    c = Cv(sh(STEEL, 0.8)); c.bevel(0.5, 0.5, 63.5, 63.5, STEEL, 2.2, True); c.rect(0, 8, 64, 14, sh(STEEL_D, 0.9)); c.rect(0, 50, 64, 56, sh(STEEL_D, 0.9)); c.rivets4(0, 0, 64, 64, 3.0, 1.2, STEEL)
-    c.rect(26, 18, 38, 46, (20, 20, 24), 120); c.rect(28, 22, 36, 44, (10, 10, 12), 140)
-    wtex("chute_side", c.finish("chs", 0.5, 0.15))
+    c = Cv(sh(STEEL, 0.8)); c.bevel(0.5, 0.5, 63.5, 63.5, STEEL, 2.2, True)
+    c.rect(30, 0, 34, 64, sh(STEEL_D, 0.7))                 # welded seam
+    for y in (14, 28, 42, 56): c.rivet(8, y, 1.5, STEEL); c.rivet(56, y, 1.5, STEEL)
+    c.hazard(0, 20, 64, 28, 4.0); c.hazard(0, 44, 64, 52, 4.0)
+    wtex("chute_side", c.finish("chs", 0.7, 0.2))
     c = Cv(sh(STEEL, 0.9)); c.bevel(0.5, 0.5, 63.5, 63.5, sh(STEEL, 1.1), 2.6, True); c.bevel(10, 10, 54, 54, (14, 14, 16), 3.0, False)
-    wtex("chute_top", c.finish("cht", 0.3, 0.0))
+    for k in range(8):
+        c.rivet(32 + 27 * math.cos(math.radians(k * 45 + 22.5)), 32 + 27 * math.sin(math.radians(k * 45 + 22.5)), 1.6, STEEL)
+    wtex("chute_top", c.finish("cht", 0.4, 0.1))
     CS, CT = T("chute_side"), T("chute_top")
     model("block/chute", emodel({"particle": CS}, [box([3, 0, 3], [13, 16, 13], {"north": CS, "south": CS, "east": CS, "west": CS, "up": CT, "down": CT}),
                                                        box([2, 14, 2], [14, 16, 14], {"north": T("press_post"), "south": T("press_post"), "east": T("press_post"), "west": T("press_post"), "up": CT, "down": T("press_post")}),
-                                                       box([2, 0, 2], [14, 2, 14], {"north": T("press_post"), "south": T("press_post"), "east": T("press_post"), "west": T("press_post"), "down": CT, "up": T("press_post")})]))
+                                                       box([2, 0, 2], [14, 2, 14], {"north": T("press_post"), "south": T("press_post"), "east": T("press_post"), "west": T("press_post"), "down": CT, "up": T("press_post")}),
+                                                       box([2.4, 6.5, 2.4], [13.6, 8.5, 13.6], {"north": T("press_post"), "south": T("press_post"), "east": T("press_post"), "west": T("press_post"), "up": T("press_post"), "down": T("press_post")})]))
     for sh_ in ("intersection", "window", "normal", "encased"):
         pass
     bstate("chute", {"variants": {"": {"model": "create:block/chute"}}})
@@ -500,7 +521,9 @@ def run_shapes(g):
 
     # ---------- crushing wheel (axle along y, rotated by the blockstate): two toothed rollers
     wtex("crusher", cog_face_tex("crush", (86, 88, 94)))
-    els = plane_disc("xz", T("crusher"), 10, 5.0, 8.0, 2.6, [("x", 0), ("z", 0), ("x", 45), ("z", 45), ("x", 22.5), ("z", 22.5), ("x", -22.5), ("z", -22.5)], (0, 45))
+    els = plane_disc("xz", T("crusher"), 10, 4.0, 8.0, 3.4, [("x", 0), ("z", 0), ("x", 45), ("z", 45)], (0, 45))
+    capt = {f: (T("cog_hub_end"), FULL) for f in FACES}
+    els += [box([3.5, 2.6, 3.5], [12.5, 3.2, 12.5], capt), box([3.5, 12.8, 3.5], [12.5, 13.4, 12.5], capt)]
     hubc = box([5, 1, 5], [11, 15, 11], {f: (T("cog_hub"), FULL) for f in ("north", "south", "east", "west")} | {"up": (T("cog_hub_end"), FULL), "down": (T("cog_hub_end"), FULL)})
     model("block/crushing_wheel/block", emodel({"particle": T("crusher")}, els + [hubc]))
     if "crushing_wheel" in B:
@@ -528,7 +551,8 @@ def run_shapes(g):
 
     # ---------- fluid pipe: hub with flanged arms
     wtex("pipe", pipe_tex("pipe", COPPER))
-    c = Cv(sh(BRASS, 0.8)); c.bevel(0.5, 0.5, 63.5, 63.5, BRASS, 3.0, True); c.rivets4(0, 0, 64, 64, 4, 1.4, BRASS)
+    c = Cv(sh(STEEL_D, 1.1)); c.bevel(0.5, 0.5, 63.5, 63.5, sh(STEEL, 0.95), 3.0, True)
+    for k in range(8): c.rivet(32 + 24 * math.cos(math.radians(k * 45 + 22.5)), 32 + 24 * math.sin(math.radians(k * 45 + 22.5)), 3.0, STEEL)
     wtex("pipe_flange", c.finish("flange", 0.3, 0.0, 0.03, 0.1))
     PI, PF = T("pipe"), T("pipe_flange")
     model("block/fluid_pipe/hub", emodel({"particle": PI}, [box([4.5, 4.5, 4.5], [11.5, 11.5, 11.5], PI)]))

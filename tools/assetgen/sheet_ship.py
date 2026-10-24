@@ -8,13 +8,16 @@ ents = []
 for b in gen.BLOCKS:
     if not design.shipped_block(me, b): continue
     kind = gen.classify(b)
-    if kind in ("stairs", "slab", "wall", "pane"): continue
     m = first_model(b)
+    if kind == "wall": m = f"create:block/{b}_inventory"
+    if kind == "pane": m = f"create:block/{b}_post"
+    if kind == "slab": m = f"create:block/{b}"
+    if b in ("crushing_wheel_controller", "water_wheel_structure"): continue
     if b in ("mechanical_press","water_wheel","large_water_wheel","basin","belt","mechanical_mixer"):
         m = {"mechanical_press":"create:block/mechanical_press/item","water_wheel":"create:block/water_wheel/item","large_water_wheel":"create:block/large_water_wheel/item","basin":"create:block/basin/block","belt":"create:block/belt/start","mechanical_mixer":"create:block/mechanical_mixer/block"}[b]
     if m: ents.append((b[:30], ("model", m)))
-part = int(sys.argv[1]); n = int(sys.argv[2]) if len(sys.argv) > 2 else 48
-if part >= 0:
+n = int(sys.argv[1]) if len(sys.argv) > 1 else 48
+for part in range((len(ents) + n - 1) // n):
     sheet(ents[part*n:(part+1)*n], f"/tmp/ship_{part}.png", cols=8, cell=192)
 print(len(ents))
 its = [(i[:26], ("icon", i)) for i in gen.ITEMS if not gen.ITEMS[i].get("blockItem") and design.shipped_item(me, i)]

@@ -9,17 +9,17 @@ S = 64
 SS = 4
 N = S * SS
 OUTL = (28, 26, 30)
-STEEL = (124, 128, 134)
-STEEL_L = (176, 181, 188)
-STEEL_D = (68, 70, 76)
-HAZ_Y = (212, 164, 38)
+STEEL = (108, 114, 122)
+STEEL_L = (156, 163, 172)
+STEEL_D = (56, 60, 68)
+HAZ_Y = (204, 152, 28)
 HAZ_K = (34, 32, 34)
-RUST = (132, 70, 34)
-BRASS = (196, 154, 66)
-COPPER = (200, 108, 58)
-ANDESITE = (136, 140, 132)
-ZINC = (156, 166, 176)
-WOOD = (150, 108, 62)
+RUST = (142, 72, 30)
+BRASS = (152, 122, 66)
+COPPER = (158, 92, 60)
+ANDESITE = (116, 120, 114)
+ZINC = (138, 148, 158)
+WOOD = (116, 84, 52)
 RUBBER = (44, 44, 50)
 GLASS = (140, 196, 214)
 GLOW = (255, 190, 80)
@@ -53,6 +53,73 @@ def vnoise(name, n=S, cell=8):
     fx = xf[None, :]
     fy = xf[:, None]
     return (a * (1 - fx) + b * fx) * (1 - fy) + (c * (1 - fx) + d * fx) * fy
+
+
+
+def _blur(a, rad):
+    out = np.empty_like(a)
+    for i in range(a.shape[2]):
+        out[..., i] = np.array(Image.fromarray(np.clip(a[..., i], 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(rad))).astype(np.float32)
+    return out
+
+
+def weather(rgb, alpha, name, k=1.0, border=True):
+    """Factorio style wear: crevice darkening, grime blotches, oil streaks, rust on edges and corners, scuffed bare metal, scratches."""
+    if k <= 0:
+        return rgb
+    r = np.random.RandomState(int(hashlib.md5((name + "wear").encode()).hexdigest()[:8], 16))
+    h, w = alpha.shape
+    m = alpha > 40
+    # local contrast: crevices (darker than surroundings) get darker, ridges slightly lighter
+    bl = _blur(rgb, 1.4)
+    lum = rgb.mean(axis=2, keepdims=True)
+    dl = lum - bl.mean(axis=2, keepdims=True)
+    rgb = rgb + (rgb - bl) * 0.55 * k
+    rgb = rgb * (1 + np.clip(dl, -40, 0) / 255.0 * 1.4 * k)
+    # muted palette
+    g = rgb.mean(axis=2, keepdims=True)
+    rgb = (rgb * (1 - 0.14 * k) + g * 0.14 * k) * (1 - 0.06 * k)
+    # distance to the silhouette or tile border
+    yy, xx = np.mgrid[0:h, 0:w]
+    e = np.minimum(np.minimum(xx, w - 1 - xx), np.minimum(yy, h - 1 - yy)).astype(np.float32) if border else np.full((h, w), 99.0, dtype=np.float32)
+    cur = m.copy()
+    for it in range(1, 8):
+        p = np.pad(cur, 1, constant_values=border)
+        er = cur & p[:-2, 1:-1] & p[2:, 1:-1] & p[1:-1, :-2] & p[1:-1, 2:]
+        e = np.where(cur & ~er, np.minimum(e, it - 1), e)
+        cur = er
+    edge = np.clip(1 - e / 6.0, 0, 1) ** 1.2
+    n1 = vnoise(name + "w1", S, 8) * 0.55 + vnoise(name + "w2", S, 16) * 0.45
+    n2 = r.rand(h, w)
+    # grime blotches
+    gm = np.clip((n1 - 0.5) * 3.2, 0, 1) * 0.42 * k
+    rgb = rgb * (1 - gm[..., None] * 0.5) + np.array([40, 34, 28], dtype=np.float32) * gm[..., None] * 0.18
+    # rust on edges and corners
+    rm = np.clip(((n1 * 0.88 + n2 * 0.12) - 0.52) * 6, 0, 1) * edge * 0.9 * k
+    rust = np.array(RUST, dtype=np.float32)[None, None, :] * (0.7 + 0.5 * r.rand(h, w, 1))
+    rgb = rgb * (1 - rm[..., None]) + rust * rm[..., None]
+    # scuffed bare metal on edges
+    sm = ((n2 > 0.93) & (edge > 0.35) & (rm < 0.2)).astype(np.float32) * 0.35 * k
+    rgb = rgb * (1 - sm[..., None]) + np.array([190, 192, 196], dtype=np.float32) * sm[..., None]
+    # oil and rust streaks running down
+    col = np.array(Image.fromarray((r.rand(1, w) * 255).astype(np.uint8)).resize((w, 1))).astype(np.float32)[0] / 255
+    colb = np.convolve(np.pad(col, 1, mode="wrap"), np.ones(3) / 3, mode="valid")
+    start = r.rand(w) * h * 0.6
+    ramp = np.clip((yy - start[None, :]) / (h * 0.5), 0, 1) * (1 - np.clip((yy - start[None, :]) / (h * 0.9), 0, 1) * 0.6)
+    st = (colb[None, :] > 0.74).astype(np.float32) * ramp * 0.5 * k
+    oil = np.array([26, 22, 20], dtype=np.float32)
+    rgb = rgb * (1 - st[..., None]) + oil * st[..., None]
+    # scratches
+    sc = Image.new("L", (w, h), 0)
+    sd = ImageDraw.Draw(sc)
+    for _ in range(int(9 * k)):
+        x0, y0 = r.rand() * w, r.rand() * h
+        a = r.rand() * math.pi
+        ln = 3 + r.rand() * 8
+        sd.line([x0, y0, x0 + math.cos(a) * ln, y0 + math.sin(a) * ln], fill=int(70 + r.rand() * 60), width=1)
+    scm = np.array(sc).astype(np.float32) / 255.0 * k
+    rgb = rgb * (1 - scm[..., None] * 0.6) + np.array([205, 206, 210], dtype=np.float32) * scm[..., None] * 0.6
+    return np.where(m[..., None], rgb, rgb * 0 + rgb)
 
 
 class Cv:
@@ -172,7 +239,7 @@ class Cv:
         arr = np.repeat(arr, w, axis=1).astype(np.uint8)
         self.im.paste(Image.fromarray(arr, "RGB"), (int(x0 * SS), int(y0 * SS)))
 
-    def finish(self, name, grime=0.5, rust=0.0, brushed=0.06, ao=0.22, keep_alpha=False):
+    def finish(self, name, grime=0.5, rust=0.0, brushed=0.06, ao=0.22, keep_alpha=False, wear=1.0):
         im = self.im.resize((S, S), Image.LANCZOS)
         a = np.array(im).astype(np.float32)
         alpha = a[..., 3]
@@ -197,6 +264,7 @@ class Cv:
             yy = np.linspace(0.25, 1.0, S)[:, None]
             m = np.clip((n * yy - 0.52) * 7, 0, 1) * rust
             rgb = rgb * (1 - m[..., None]) + np.array(RUST, dtype=np.float32) * m[..., None] * (0.8 + 0.4 * r.rand(S, S)[..., None])
+        rgb = weather(rgb, alpha, name, wear)
         out = np.dstack([np.clip(rgb, 0, 255), alpha]).astype(np.uint8)
         return Image.fromarray(out, "RGBA")
 
@@ -219,7 +287,8 @@ def casing_tex(name, base, trim=STEEL_D):
     for (x0, y0, x1, y1) in ((5, 5, 31, 31), (33, 5, 59, 31), (5, 33, 31, 59), (33, 33, 59, 59)):
         c.bevel(x0, y0, x1, y1, base, 1.6, True)
         c.rivets4(x0, y0, x1, y1, 3.4, 1.0, base)
-    for (x, y) in ((3.2, 3.2), (60.8, 3.2), (3.2, 60.8), (60.8, 60.8)):
+    c.hazard(8, 60.2, 56, 63.2, 3.0)
+    for (x, y) in ((3.2, 3.2), (60.8, 3.2), (3.2, 60.8), (60.8, 60.8), (32, 3.2), (3.2, 32), (60.8, 32)):
         c.rivet(x, y, 1.5, trim)
     return c.finish(name, 0.45, 0.0)
 
@@ -338,7 +407,6 @@ def stone_tex(name, base, kind):
         c.bevel(0.5, 0.5, 63.5, 63.5, sh(base, 1.0), 2.4, True, True, False)
     elif kind == "polished":
         c.bevel(0.5, 0.5, 63.5, 63.5, sh(base, 1.04), 3.0, True, True, False)
-        c.poly([(8, 20), (22, 8), (30, 8), (8, 30)], (255, 255, 255), 28)
     elif kind in ("bricks", "small"):
         rows = 4 if kind == "bricks" else 8
         h = 64 / rows
@@ -357,7 +425,7 @@ def stone_tex(name, base, kind):
     elif kind == "pillar_top":
         c.bevel(0.5, 0.5, 63.5, 63.5, sh(base, 0.95), 2.4, True)
         c.bevel(10, 10, 54, 54, sh(base, 1.05), 2.0, False)
-    return c.finish(name + kind, 0.5, 0.0, 0.0, 0.2)
+    return c.finish(name + kind, 0.5, 0.0, 0.0, 0.2, wear=0.8)
 
 
 def ore_tex(name, base, fleck):
@@ -400,7 +468,7 @@ def glass_tex(name, frame=STEEL, pattern="frame"):
     if pattern in ("v", "tiled"): c.bevel(30.5, 5, 33.5, 59, frame, 1.0, True)
     c.poly([(9, 28), (28, 9), (34, 9), (9, 34)], (255, 255, 255), 70)
     c.rivets4(0, 0, 64, 64, 3.0, 1.1, frame)
-    return c.finish(name, 0.2, 0, 0.02, 0.0)
+    return c.finish(name, 0.2, 0, 0.02, 0.0, wear=0.5)
 
 
 def shingle_tex(name, base):
@@ -428,7 +496,11 @@ def pipe_tex(name, base=COPPER):
     c.cyl_h(0, 0, 64, 64, base)
     for x in (2, 30, 62):
         c.rect(x - 1.4, 0, x + 1.4, 64, sh(base, 0.58)); c.rect(x - 1.4, 0, x - 0.4, 64, sh(base, 1.35), 150)
-    return c.finish(name, 0.3, 0.0, 0.03, 0.0)
+    for x in (12, 44):
+        c.bevel(x - 3, 0, x + 3, 64, sh(STEEL_D, 1.1), 1.2, True)
+        for y in (10, 32, 54):
+            c.rivet(x, y, 1.3, STEEL)
+    return c.finish(name, 0.4, 0.0, 0.03, 0.0)
 
 
 def crate_tex(name, base):
@@ -566,6 +638,9 @@ def machine_emblem_face(name, emblem_kind, base=STEEL, accent=HAZ_Y):
         c.rivet(x, y, 1.4, base)
     c.bevel(6, 6, 58, 58, base, 1.5, True)
     emblem(c, emblem_kind)
-    c.rect(14, 51, 50, 54, sh(accent, 0.9)); c.outline_rect(14, 51, 50, 54, OUTL, 0.6, 200)
-    c.lamp(20, 58, 1.6, accent); c.lamp(44, 58, 1.6, (110, 220, 130))
+    if emblem_kind in ("saw", "drill", "fan", "press", "cog"):
+        c.hazard(12, 51, 52, 56, 3.5)
+    else:
+        c.rect(14, 51, 50, 54, sh(accent, 0.9)); c.outline_rect(14, 51, 50, 54, OUTL, 0.6, 200)
+    c.lamp(20, 59, 1.5, accent); c.lamp(44, 59, 1.5, (110, 220, 130))
     return c.finish(name, 0.55, 0.12)
