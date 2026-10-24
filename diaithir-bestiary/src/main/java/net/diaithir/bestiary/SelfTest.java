@@ -48,8 +48,10 @@ final class SelfTest {
     private static final class Rider extends ServerPlayer {
         Rider(ServerLevel level) {
             super(level.getServer(), level, new GameProfile(UUID.randomUUID(), "bestiary_selftest"), ClientInformation.createDefault());
-            new ServerGamePacketListenerImpl(level.getServer(), new net.minecraft.network.Connection(PacketFlow.SERVERBOUND), this,
-                    CommonListenerCookie.createInitial(getGameProfile(), false));
+            // an embedded channel gives the connection a real channel, so mods that read synced player data (attachments) do not fail on the fake rider
+            net.minecraft.network.Connection connection = new net.minecraft.network.Connection(PacketFlow.SERVERBOUND);
+            new io.netty.channel.embedded.EmbeddedChannel(connection);
+            new ServerGamePacketListenerImpl(level.getServer(), connection, this, CommonListenerCookie.createInitial(getGameProfile(), false));
         }
     }
 
@@ -60,7 +62,7 @@ final class SelfTest {
         final Map<Identifier, Creature> creatures = new LinkedHashMap<>();
         final List<String> fails = new ArrayList<>();
         final int start;
-        int stage;
+        int stage, checkedAt;
 
         Run(CommandSourceStack source, ServerLevel level, ServerPlayer fake, int start) {
             this.source = source;
@@ -84,7 +86,7 @@ final class SelfTest {
         for (var entry : DiaithirBestiary.creatures(level).entrySet()) {
             Identifier id = entry.getKey().identifier();
             if (!id.getNamespace().equals(DiaithirBestiary.ID)) continue;
-            Creature c = DiaithirBestiary.spawn(level, id, surface(level, CX + 8 * i++, CZ), EntitySpawnReason.COMMAND);
+            Creature c = DiaithirBestiary.spawn(level, id, surface(level, CX + 8 * (i % 8), CZ + 8 * (i++ / 8)), EntitySpawnReason.COMMAND); // rows of eight, inside the forced chunks
             check(r, c != null, id + " spawns");
             if (c == null) continue;
             r.creatures.put(id, c);
@@ -113,10 +115,13 @@ final class SelfTest {
         Run r = run;
         if (r == null) return;
         int age = server.getTickCount() - r.start;
-        if (r.stage == 0 && age >= 40) {
+        // a heavy pack can run far slower than 20 ticks a second, so wait until every creature has really ticked (at most 60 s) instead of counting server ticks
+        boolean ticked = r.creatures.values().stream().allMatch(c -> c.isAlive() && c.tickCount >= 35);
+        if (r.stage == 0 && age >= 40 && (ticked || age >= 1200)) {
             r.stage = 1;
+            r.checkedAt = age;
             r.creatures.forEach((id, c) -> firstChecks(r, id, c));
-        } else if (r.stage == 1 && age >= 60) {
+        } else if (r.stage == 1 && age >= r.checkedAt + 20) {
             r.creatures.forEach((id, c) -> lastChecks(r, id, c));
             finish(r);
         }
@@ -130,14 +135,14 @@ final class SelfTest {
         check(r, c.isAlive() && c.tickCount >= 35, id + " ticks (" + c.tickCount + " ticks)");
         float before = c.getHealth();
         c.invulnerableTime = 0;
-        c.hurtServer(r.level, r.level.damageSources().playerAttack(r.fake), 2F);
+        c.hurtServer(r.level, r.level.damageSources().generic(), 2F);
         check(r, c.getHealth() < before, id + " takes damage");
         if (c.def().isFlying()) check(r, c.isNoGravity() && c.getNavigation().getClass().getSimpleName().contains("Flying"), id + " flies");
         if (c.def().isRideable()) rideChecks(r, id, c);
         if (c instanceof Avatar a) {
             check(r, a.bossEvent().isVisible() && a.phase() == 1, id + " has a boss bar and starts in phase one");
             a.invulnerableTime = 0;
-            a.hurtServer(r.level, r.level.damageSources().playerAttack(r.fake), a.getHealth() - a.getMaxHealth() * 0.3F);
+            a.hurtServer(r.level, r.level.damageSources().generic(), a.getHealth() - a.getMaxHealth() * 0.3F);
         }
         if (c instanceof Stalker s) {
             Vec3 eye = s.position().add(0, s.getBbHeight() * 0.5, 0);
@@ -177,14 +182,14 @@ final class SelfTest {
         if (c instanceof Mech m && m.needsFuel()) check(r, !m.isVehicle() && m.fuel() > 0, id + " keeps its fuel when empty");
         if (c.def().lootTable().isPresent()) {
             c.invulnerableTime = 0;
-            c.hurtServer(r.level, r.level.damageSources().playerAttack(r.fake), Float.MAX_VALUE);
+            c.hurtServer(r.level, r.level.damageSources().generic(), Float.MAX_VALUE);
             check(r, !c.isAlive() && !r.level.getEntitiesOfClass(ItemEntity.class, c.getBoundingBox().inflate(3)).isEmpty(), id + " drops its loot");
         }
     }
 
     private static void finish(Run r) {
         r.creatures.values().forEach(c -> c.discard());
-        r.level.getEntitiesOfClass(ItemEntity.class, new net.minecraft.world.phys.AABB(CX - 8, r.level.getMinY(), CZ - 8, CX + 64, r.level.getMaxY(), CZ + 8)).forEach(ItemEntity::discard);
+        r.level.getEntitiesOfClass(ItemEntity.class, new net.minecraft.world.phys.AABB(CX - 8, r.level.getMinY(), CZ - 8, CX + 64, r.level.getMaxY(), CZ + 40)).forEach(ItemEntity::discard);
         forceChunks(r.level, false);
         run = null;
         String result = r.fails.isEmpty() ? "bestiary selftest PASS (" + r.creatures.size() + " creatures)" : "bestiary selftest FAIL: " + String.join("; ", r.fails);

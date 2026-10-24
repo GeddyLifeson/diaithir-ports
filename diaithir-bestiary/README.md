@@ -58,10 +58,11 @@ Put one file per creature at `data/<namespace>/diaithirbestiary/creature/<name>.
 | `spawn.weight` | int | 10 | 1 to 100, see below. |
 | `spawn.min_group`, `spawn.max_group` | int | 1, 1 | Group size. |
 | `spawn.max_light` | int | 15 | Only spawns at this light level or darker (4 for a night horror). |
+| `spawn.rare` | bool | false | A rare spawn counts a twentieth of its weight: weight 2 means a 0.1% chance per 10 second try instead of 2%. For bosses and derelict mechs. |
 | `spawn.min_age` | Age | 1 | Only spawns naturally once the world's current Age is at least this: a numeral `"I"` to `"VII"`, `"Rodos"` (counts as 8), or a number 1 to 8. Summons ignore it. |
 | `loot_table` | id | none | Loot table dropped on death, for example `data/<namespace>/loot_table/entities/<name>.json`. |
 
-Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance that one of them (picked by weight) spawns there. The current Age comes from diaithir-ages (its saved story) when that mod is installed; without it the Age is I, so creatures with a `min_age` above I never spawn naturally. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
+Natural spawning: every 10 seconds each player gets one try at a spot 24 to 48 blocks away on the surface (not on water). The creatures whose biome tag and light limit fit that spot add up their weights, and that sum is the percent chance (a `rare` creature counts a twentieth of its weight) that one of them (picked by weight) spawns there. The current Age comes from diaithir-ages (its saved story) when that mod is installed; without it the Age is I, so creatures with a `min_age` above I never spawn naturally. No try is made while 6 or more bestiary creatures are within 64 blocks of the player, while the `spawn_mobs` game rule is off, or (for hostile creatures) on Peaceful.
 
 ## Animations
 
@@ -88,3 +89,24 @@ Their models, animations and textures are cube-based placeholders written by `to
 ## Building
 
 `./gradlew build` with JDK 25. GeckoLib comes from the Modrinth Maven.
+
+## Creatures added in 0.3.0
+
+All fourteen are written by `tools/gen_content.py` (which also writes their creature JSON, loot tables and names). **The models and textures are cube placeholders** (flat shaded, 16 texels per block) and are marked as such here and in the generator. They are working creatures; replace the art with Blockbench models and 64x textures in the Diaithir style (DiaithirRPG `tools/art/blender/docs/STYLE.md`) and keep the ids.
+
+| Id | Preset | From Age | Where |
+| --- | --- | --- | --- |
+| `verdanai` Avatar of the Wild Green | avatar | III | forests, rare |
+| `orsolune` Avatar of the Hushed Moon | avatar | IV | taiga at night, rare |
+| `ashenvar` Avatar of the Ember Hour | avatar | IV | badlands, rare |
+| `marenoth` Avatar of the Deep Tide | avatar | III | beaches, rare |
+| `brassjack` | mech | V | derelict in deserts, rare; coal |
+| `siegewarden` | mech | VI | derelict in badlands, rare; coal |
+| `tinkerspider` | mech | V | derelict in deserts, rare; redstone |
+| `pallidgaunt` | stalker | IV | forests in the dark |
+| `marrowcrawl` | stalker | IV | swamps in the dark |
+| `veilstitch` | stalker | III | plains in the dark |
+| `puddlepip` | beast, friendly | IV | rivers, groups; tame with seeds |
+| `grumblebun` | beast, friendly | V | forests; tame with carrots |
+| `twirlfin` | flyer, friendly | V | plains; tame with cod, then fly it |
+| `mossmop` | beast, friendly | IV | swamps; tame with wheat |

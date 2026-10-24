@@ -1,0 +1,194 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.marrowcrawl",
+    "texture_width": 64,
+    "texture_height": 64,
+    "visible_bounds_width": 2.9,
+    "visible_bounds_height": 1.9,
+    "visible_bounds_offset": [
+     0,
+     0.47,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "body",
+     "pivot": [
+      0,
+      8,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -5,
+        6,
+        -10
+       ],
+       "size": [
+        10,
+        6,
+        20
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      },
+      {
+       "origin": [
+        -1,
+        12,
+        -6
+       ],
+       "size": [
+        2,
+        3,
+        12
+       ],
+       "uv": [
+        0,
+        26
+       ]
+      }
+     ]
+    },
+    {
+     "name": "head",
+     "pivot": [
+      0,
+      9,
+      -10
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3,
+        7,
+        -15
+       ],
+       "size": [
+        6,
+        6,
+        6
+       ],
+       "uv": [
+        28,
+        26
+       ]
+      }
+     ],
+     "parent": "body"
+    },
+    {
+     "name": "arm_f_l",
+     "pivot": [
+      5,
+      9,
+      -7
+     ],
+     "cubes": [
+      {
+       "origin": [
+        5,
+        0,
+        -8
+       ],
+       "size": [
+        2,
+        10,
+        2
+       ],
+       "uv": [
+        52,
+        26
+       ]
+      }
+     ]
+    },
+    {
+     "name": "arm_f_r",
+     "pivot": [
+      -5,
+      9,
+      -7
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -7,
+        0,
+        -8
+       ],
+       "size": [
+        2,
+        10,
+        2
+       ],
+       "uv": [
+        0,
+        41
+       ]
+      }
+     ]
+    },
+    {
+     "name": "arm_b_l",
+     "pivot": [
+      5,
+      9,
+      7
+     ],
+     "cubes": [
+      {
+       "origin": [
+        5,
+        0,
+        6
+       ],
+       "size": [
+        2,
+        10,
+        2
+       ],
+       "uv": [
+        8,
+        41
+       ]
+      }
+     ]
+    },
+    {
+     "name": "arm_b_r",
+     "pivot": [
+      -5,
+      9,
+      7
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -7,
+        0,
+        6
+       ],
+       "size": [
+        2,
+        10,
+        2
+       ],
+       "uv": [
+        16,
+        41
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.siegewarden",
+    "texture_width": 256,
+    "texture_height": 128,
+    "visible_bounds_width": 4.2,
+    "visible_bounds_height": 3.9,
+    "visible_bounds_offset": [
+     0,
+     1.44,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "hull",
+     "pivot": [
+      0,
+      24,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -20,
+        24,
+        -16
+       ],
+       "size": [
+        40,
+        14,
+        32
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "turret",
+     "pivot": [
+      0,
+      38,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -8,
+        38,
+        -8
+       ],
+       "size": [
+        16,
+        8,
+        16
+       ],
+       "uv": [
+        144,
+        0
+       ]
+      }
+     ],
+     "parent": "hull"
+    },
+    {
+     "name": "barrel",
+     "pivot": [
+      0,
+      42,
+      -8
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -2,
+        41,
+        -26
+       ],
+       "size": [
+        4,
+        4,
+        18
+       ],
+       "uv": [
+        208,
+        0
+       ]
+      }
+     ],
+     "parent": "turret"
+    },
+    {
+     "name": "leg_f_l",
+     "pivot": [
+      16,
+      24,
+      -10
+     ],
+     "cubes": [
+      {
+       "origin": [
+        13,
+        0,
+        -13
+       ],
+       "size": [
+        6,
+        24,
+        6
+       ],
+       "uv": [
+        0,
+        46
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_f_r",
+     "pivot": [
+      -16,
+      24,
+      -10
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -19,
+        0,
+        -13
+       ],
+       "size": [
+        6,
+        24,
+        6
+       ],
+       "uv": [
+        24,
+        46
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_b_l",
+     "pivot": [
+      16,
+      24,
+      10
+     ],
+     "cubes": [
+      {
+       "origin": [
+        13,
+        0,
+        7
+       ],
+       "size": [
+        6,
+        24,
+        6
+       ],
+       "uv": [
+        48,
+        46
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_b_r",
+     "pivot": [
+      -16,
+      24,
+      10
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -19,
+        0,
+        7
+       ],
+       "size": [
+        6,
+        24,
+        6
+       ],
+       "uv": [
+        72,
+        46
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

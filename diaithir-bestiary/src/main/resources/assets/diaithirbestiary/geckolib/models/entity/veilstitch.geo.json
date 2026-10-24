@@ -1,0 +1,223 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.veilstitch",
+    "texture_width": 64,
+    "texture_height": 64,
+    "visible_bounds_width": 3.2,
+    "visible_bounds_height": 3.8,
+    "visible_bounds_offset": [
+     0,
+     1.41,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "leg_l",
+     "pivot": [
+      2,
+      16,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        0.5,
+        0,
+        -1.5
+       ],
+       "size": [
+        3,
+        16,
+        3
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_r",
+     "pivot": [
+      -2,
+      16,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3.5,
+        0,
+        -1.5
+       ],
+       "size": [
+        3,
+        16,
+        3
+       ],
+       "uv": [
+        12,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "torso",
+     "pivot": [
+      0,
+      16,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        16,
+        -2
+       ],
+       "size": [
+        8,
+        16,
+        4
+       ],
+       "uv": [
+        24,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "arm_l",
+     "pivot": [
+      4,
+      30,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        4,
+        28,
+        -1
+       ],
+       "size": [
+        14,
+        2,
+        2
+       ],
+       "uv": [
+        0,
+        20
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "arm_r",
+     "pivot": [
+      -4,
+      30,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -18,
+        28,
+        -1
+       ],
+       "size": [
+        14,
+        2,
+        2
+       ],
+       "uv": [
+        32,
+        20
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "head",
+     "pivot": [
+      0,
+      32,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        32,
+        -4
+       ],
+       "size": [
+        8,
+        8,
+        8
+       ],
+       "uv": [
+        0,
+        24
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "hat",
+     "pivot": [
+      0,
+      40,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -6,
+        40,
+        -6
+       ],
+       "size": [
+        12,
+        1,
+        12
+       ],
+       "uv": [
+        0,
+        40
+       ]
+      },
+      {
+       "origin": [
+        -3,
+        41,
+        -3
+       ],
+       "size": [
+        6,
+        4,
+        6
+       ],
+       "uv": [
+        0,
+        53
+       ]
+      }
+     ],
+     "parent": "head"
+    }
+   ]
+  }
+ ]
+}

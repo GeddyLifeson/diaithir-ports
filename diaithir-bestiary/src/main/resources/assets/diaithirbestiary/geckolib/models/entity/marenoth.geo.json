@@ -1,0 +1,331 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.marenoth",
+    "texture_width": 64,
+    "texture_height": 256,
+    "visible_bounds_width": 4.2,
+    "visible_bounds_height": 4.6,
+    "visible_bounds_offset": [
+     0,
+     1.78,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "leg_l",
+     "pivot": [
+      2,
+      28,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        0.5,
+        0,
+        -2
+       ],
+       "size": [
+        3,
+        28,
+        4
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_r",
+     "pivot": [
+      -2,
+      28,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3.5,
+        0,
+        -2
+       ],
+       "size": [
+        3,
+        28,
+        4
+       ],
+       "uv": [
+        14,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "torso",
+     "pivot": [
+      0,
+      28,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -7,
+        28,
+        -3
+       ],
+       "size": [
+        14,
+        20,
+        6
+       ],
+       "uv": [
+        0,
+        32
+       ]
+      }
+     ]
+    },
+    {
+     "name": "sash",
+     "pivot": [
+      0,
+      28,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -7.5,
+        27,
+        -3.5
+       ],
+       "size": [
+        15,
+        3,
+        7
+       ],
+       "uv": [
+        0,
+        58
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "arm_l",
+     "pivot": [
+      9,
+      46,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        7,
+        26,
+        -2
+       ],
+       "size": [
+        4,
+        22,
+        4
+       ],
+       "uv": [
+        44,
+        58
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "arm_r",
+     "pivot": [
+      -9,
+      46,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -11,
+        26,
+        -2
+       ],
+       "size": [
+        4,
+        22,
+        4
+       ],
+       "uv": [
+        0,
+        84
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "head",
+     "pivot": [
+      0,
+      48,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        48,
+        -4
+       ],
+       "size": [
+        8,
+        9,
+        8
+       ],
+       "uv": [
+        16,
+        84
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "fin_l",
+     "pivot": [
+      4,
+      52,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        4,
+        51,
+        -1
+       ],
+       "size": [
+        5,
+        5,
+        1
+       ],
+       "uv": [
+        48,
+        84
+       ]
+      }
+     ],
+     "parent": "head"
+    },
+    {
+     "name": "fin_r",
+     "pivot": [
+      -4,
+      52,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -9,
+        51,
+        -1
+       ],
+       "size": [
+        5,
+        5,
+        1
+       ],
+       "uv": [
+        0,
+        110
+       ]
+      }
+     ],
+     "parent": "head"
+    },
+    {
+     "name": "tailfin",
+     "pivot": [
+      0,
+      28,
+      3
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -1,
+        12,
+        3
+       ],
+       "size": [
+        2,
+        18,
+        5
+       ],
+       "uv": [
+        12,
+        110
+       ]
+      }
+     ],
+     "parent": "torso"
+    },
+    {
+     "name": "spear",
+     "pivot": [
+      -9,
+      30,
+      -2
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -9.5,
+        28,
+        -22
+       ],
+       "size": [
+        1,
+        1,
+        30
+       ],
+       "uv": [
+        0,
+        133
+       ]
+      },
+      {
+       "origin": [
+        -10.5,
+        27,
+        -26
+       ],
+       "size": [
+        3,
+        3,
+        4
+       ],
+       "uv": [
+        0,
+        164
+       ]
+      }
+     ],
+     "parent": "arm_r"
+    }
+   ]
+  }
+ ]
+}

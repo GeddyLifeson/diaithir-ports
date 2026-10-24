@@ -1,0 +1,286 @@
+{
+ "format_version": "1.12.0",
+ "minecraft:geometry": [
+  {
+   "description": {
+    "identifier": "geometry.grumblebun",
+    "texture_width": 64,
+    "texture_height": 64,
+    "visible_bounds_width": 2.4,
+    "visible_bounds_height": 2.8,
+    "visible_bounds_offset": [
+     0,
+     0.88,
+     0
+    ]
+   },
+   "bones": [
+    {
+     "name": "body",
+     "pivot": [
+      0,
+      5,
+      0
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -5,
+        5,
+        -6
+       ],
+       "size": [
+        10,
+        9,
+        12
+       ],
+       "uv": [
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    {
+     "name": "head",
+     "pivot": [
+      0,
+      12,
+      -6
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        12,
+        -11
+       ],
+       "size": [
+        8,
+        7,
+        7
+       ],
+       "uv": [
+        0,
+        21
+       ]
+      }
+     ],
+     "parent": "body"
+    },
+    {
+     "name": "brow",
+     "pivot": [
+      0,
+      17,
+      -11
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -4,
+        17,
+        -11.5
+       ],
+       "size": [
+        8,
+        1,
+        1
+       ],
+       "uv": [
+        30,
+        21
+       ]
+      }
+     ],
+     "parent": "head"
+    },
+    {
+     "name": "ear_l",
+     "pivot": [
+      2,
+      19,
+      -8
+     ],
+     "cubes": [
+      {
+       "origin": [
+        1,
+        19,
+        -8
+       ],
+       "size": [
+        2,
+        9,
+        1
+       ],
+       "uv": [
+        48,
+        21
+       ]
+      }
+     ],
+     "parent": "head"
+    },
+    {
+     "name": "ear_r",
+     "pivot": [
+      -2,
+      19,
+      -8
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -3,
+        19,
+        -8
+       ],
+       "size": [
+        2,
+        9,
+        1
+       ],
+       "uv": [
+        54,
+        21
+       ]
+      }
+     ],
+     "parent": "head"
+    },
+    {
+     "name": "leg_f_l",
+     "pivot": [
+      3,
+      5,
+      -4
+     ],
+     "cubes": [
+      {
+       "origin": [
+        2,
+        0,
+        -5
+       ],
+       "size": [
+        3,
+        5,
+        3
+       ],
+       "uv": [
+        0,
+        35
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_f_r",
+     "pivot": [
+      -3,
+      5,
+      -4
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -5,
+        0,
+        -5
+       ],
+       "size": [
+        3,
+        5,
+        3
+       ],
+       "uv": [
+        12,
+        35
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_b_l",
+     "pivot": [
+      4,
+      6,
+      4
+     ],
+     "cubes": [
+      {
+       "origin": [
+        3,
+        0,
+        2
+       ],
+       "size": [
+        3,
+        6,
+        5
+       ],
+       "uv": [
+        24,
+        35
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg_b_r",
+     "pivot": [
+      -4,
+      6,
+      4
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -6,
+        0,
+        2
+       ],
+       "size": [
+        3,
+        6,
+        5
+       ],
+       "uv": [
+        40,
+        35
+       ]
+      }
+     ]
+    },
+    {
+     "name": "tail",
+     "pivot": [
+      0,
+      8,
+      6
+     ],
+     "cubes": [
+      {
+       "origin": [
+        -1.5,
+        7,
+        6
+       ],
+       "size": [
+        3,
+        3,
+        3
+       ],
+       "uv": [
+        0,
+        46
+       ]
+      }
+     ],
+     "parent": "body"
+    }
+   ]
+  }
+ ]
+}

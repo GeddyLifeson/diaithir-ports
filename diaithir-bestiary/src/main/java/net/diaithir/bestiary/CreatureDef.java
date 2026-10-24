@@ -56,14 +56,15 @@ public record CreatureDef(Preset preset, Optional<String> name, Optional<Identif
         ).apply(i, Boss::new));
     }
 
-    public record Spawn(TagKey<Biome> biomes, int weight, int minGroup, int maxGroup, int maxLight, int minAge) {
+    public record Spawn(TagKey<Biome> biomes, int weight, int minGroup, int maxGroup, int maxLight, int minAge, boolean rare) {
         static final Codec<Spawn> CODEC = RecordCodecBuilder.create(i -> i.group(
                 TagKey.codec(Registries.BIOME).fieldOf("biomes").forGetter(Spawn::biomes),
                 Codec.intRange(1, 100).optionalFieldOf("weight", 10).forGetter(Spawn::weight),
                 Codec.intRange(1, 16).optionalFieldOf("min_group", 1).forGetter(Spawn::minGroup),
                 Codec.intRange(1, 16).optionalFieldOf("max_group", 1).forGetter(Spawn::maxGroup),
                 Codec.intRange(0, 15).optionalFieldOf("max_light", 15).forGetter(Spawn::maxLight),
-                Ages.CODEC.optionalFieldOf("min_age", 1).forGetter(Spawn::minAge)
+                Ages.CODEC.optionalFieldOf("min_age", 1).forGetter(Spawn::minAge),
+                Codec.BOOL.optionalFieldOf("rare", false).forGetter(Spawn::rare)
         ).apply(i, Spawn::new));
     }
 

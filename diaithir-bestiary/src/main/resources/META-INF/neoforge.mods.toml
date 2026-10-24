@@ -6,7 +6,7 @@ license = "MIT"
 modId = "diaithirbestiary"
 version = "${version}"
 displayName = "Diaithir Bestiary"
-description = "Creatures defined by datapack JSON with GeckoLib models: beasts, rideable flyers, piloted mechs, two-phase avatar bosses and stalkers that only move unseen. Five example creatures included."
+description = "Creatures defined by datapack JSON with GeckoLib models: beasts, rideable flyers, piloted mechs, two-phase avatar bosses and stalkers that only move unseen. Nineteen creatures included: five examples plus fourteen from 0.3.0 (avatars, derelict mechs, stalkers and friendly cartoon beasts), all with placeholder cube art."
 
 [[dependencies.diaithirbestiary]]
 modId = "neoforge"
