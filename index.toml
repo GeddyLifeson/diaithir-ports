@@ -1292,8 +1292,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar"
 hash = "137f93d3a70b51366799f726ee81c3c77684fe9da8264a1de9b5e115635c07fc"
 
 [[files]]
-file = "mods/diaithir-bestiary-neoforge-26.1.2-0.2.0.jar"
-hash = "05a898ad0fac29b6c604deaf3e7671535284820736a3c826899b0870c06c7054"
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.0.jar"
+hash = "9f897755a409da07c27e55ee4dc6b1daad0a6e54d02d361a5da10e8f15e30e5a"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
