@@ -1,0 +1,165 @@
+diff --git a/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/MixinMinecraftServer.java b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/MixinMinecraftServer.java
+index f68d20b..aebce3a 100644
+--- a/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/MixinMinecraftServer.java
++++ b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/MixinMinecraftServer.java
+@@ -109,6 +109,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
+         at = @At("TAIL")
+     )
+     private void postCreateLevels(final CallbackInfo ci) {
++        org.valkyrienskies.mod.util.PendingDimensions.reset();
+         // Register blocks
+         if (!MassDatapackResolver.INSTANCE.getRegisteredBlocks()) {
+             final List<BlockState> blockStateList = new ArrayList<>(Block.BLOCK_STATE_REGISTRY.size());
+@@ -191,6 +192,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
+         // endregion
+ 
+         vsPipeline.preTickGame();
++        org.valkyrienskies.mod.util.PendingDimensions.drainAfterPreTick();
+     }
+ 
+     /**
+diff --git a/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/world/MixinServerLevel.java b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/world/MixinServerLevel.java
+index f1f6b01..34b12b8 100644
+--- a/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/world/MixinServerLevel.java
++++ b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/mixin/server/world/MixinServerLevel.java
+@@ -155,26 +155,20 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
+ 
+         // This only happens when overworld gets loaded on startup, we have a mixin in MixinMinecraftServer for this specific case
+         if (getShipObjectWorld() != null) {
+-            DimensionParametersResolver.Parameters params = DimensionParametersResolver.INSTANCE.getDimensionMap().get(
+-                VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this)
+-            );
+-            if (params != null) {
+-                getShipObjectWorld().addDimension(
+-                    VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this),
+-                    VSGameUtilsKt.getYRange((ServerLevel) (Object) this),
+-                    params.getGravity(),
+-                    params.getSeaLevel(),
+-                    params.getMaxY()
+-                );
+-                return;
+-            }
+-            getShipObjectWorld().addDimension(
+-                VSGameUtilsKt.getDimensionId((ServerLevel) (Object) this),
+-                VSGameUtilsKt.getYRange((ServerLevel) (Object) this),
+-                McMathUtilKt.getDEFAULT_WORLD_GRAVITY(),
+-                AerodynamicUtils.DEFAULT_SEA_LEVEL,
+-                AerodynamicUtils.DEFAULT_MAX
+-            );
++            final ServerLevel vs$self = (ServerLevel) (Object) this;
++            final String vs$id = VSGameUtilsKt.getDimensionId(vs$self);
++            org.valkyrienskies.mod.util.PendingDimensions.registerOrDefer(vs$id, () -> {
++                final DimensionParametersResolver.Parameters params =
++                    DimensionParametersResolver.INSTANCE.getDimensionMap().get(vs$id);
++                if (params != null) {
++                    getShipObjectWorld().addDimension(vs$id, VSGameUtilsKt.getYRange(vs$self),
++                        params.getGravity(), params.getSeaLevel(), params.getMaxY());
++                } else {
++                    getShipObjectWorld().addDimension(vs$id, VSGameUtilsKt.getYRange(vs$self),
++                        McMathUtilKt.getDEFAULT_WORLD_GRAVITY(), AerodynamicUtils.DEFAULT_SEA_LEVEL,
++                        AerodynamicUtils.DEFAULT_MAX);
++                }
++            });
+         }
+     }
+ 
+@@ -340,6 +334,9 @@ public abstract class MixinServerLevel implements IShipObjectWorldServerProvider
+     private void postTick(final BooleanSupplier shouldKeepTicking, final CallbackInfo ci) {
+         final ServerLevel self = ServerLevel.class.cast(this);
+         final VsiServerShipWorld shipObjectWorld = VSGameUtilsKt.getShipObjectWorld(self);
++        // Dynamic level created this tick, not yet registered with vs-core: nothing to update yet
++        if (shipObjectWorld == null
++            || org.valkyrienskies.mod.util.PendingDimensions.isPending(VSGameUtilsKt.getDimensionId(self))) return;
+         // Find newly loaded chunks
+         final ChunkMapAccessor chunkMapAccessor = (ChunkMapAccessor) chunkSource.chunkMap;
+ 
+diff --git a/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/util/PendingDimensions.java b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/util/PendingDimensions.java
+new file mode 100644
+index 0000000..b7e1484
+--- /dev/null
++++ b/valkyrienskies/common/src/main/java/org/valkyrienskies/mod/util/PendingDimensions.java
+@@ -0,0 +1,51 @@
++package org.valkyrienskies.mod.util;
++
++import java.util.LinkedHashMap;
++import java.util.Map;
++
++/**
++ * Levels created at runtime (dynamic dimensions) while the server is running must not be registered with
++ * vs-core's ship world at an arbitrary point of the tick: vs-core enforces a stage order per tick
++ * (PRE_TICK, then dimension/chunk updates, then POST_TICK...) and addDimension at the wrong time makes
++ * postTickGame throw ("Constraints failed" / NPE) and crashes the server. Once the first tick has started,
++ * new levels are queued and registered right after preTickGame of the next tick.
++ */
++public final class PendingDimensions {
++    private static final Object LOCK = new Object();
++    private static final Map<String, Runnable> PENDING = new LinkedHashMap<>();
++    private static boolean started = false;
++
++    private PendingDimensions() {}
++
++    /** Run now (during startup), or queue until after the next preTickGame. */
++    public static void registerOrDefer(final String dimensionId, final Runnable register) {
++        synchronized (LOCK) {
++            if (started) {
++                PENDING.put(dimensionId, register);
++                return;
++            }
++        }
++        register.run();
++    }
++
++    public static boolean isPending(final String dimensionId) {
++        synchronized (LOCK) {
++            return PENDING.containsKey(dimensionId);
++        }
++    }
++
++    /** Called right after preTickGame. */
++    public static void drainAfterPreTick() {
++        final Runnable[] toRun;
++        synchronized (LOCK) {
++            started = true;
++            toRun = PENDING.values().toArray(new Runnable[0]);
++            PENDING.clear();
++        }
++        for (final Runnable r : toRun) r.run();
++    }
++
++    public static void reset() {
++        synchronized (LOCK) { PENDING.clear(); started = false; }
++    }
++}
+diff --git a/valkyrienskies/gradle.properties b/valkyrienskies/gradle.properties
+index 1ac6ad9..066bac8 100644
+--- a/valkyrienskies/gradle.properties
++++ b/valkyrienskies/gradle.properties
+@@ -6,7 +6,7 @@ kotlin.jvm.target.validation.mode=warning
+ minecraft_version=26.1.2
+ enabled_platforms=neoforge
+ archives_base_name=valkyrienskies-26-1-2
+-mod_version=2.5.0-diaithir.7
++mod_version=2.5.0-diaithir.8
+ maven_group=org.valkyrienskies.mod
+ 
+ # https://maven.architectury.dev/dev/architectury/architectury/
+diff --git a/valkyrienskies/tools/shipyard-claims/NOTES.md b/valkyrienskies/tools/shipyard-claims/NOTES.md
+index 203cadf..ad12b7f 100644
+--- a/valkyrienskies/tools/shipyard-claims/NOTES.md
++++ b/valkyrienskies/tools/shipyard-claims/NOTES.md
+@@ -17,3 +17,15 @@ ships never become visible or seatable.
+ Existing worlds with ships at the old claims will lose them. Alternative: run Tellus with a
+ different -Dtellus.experimentalHeight.coordinateProfile and keep unpatched claims.
+ Verified: assemble -> seat at Eureka helm -> W+Space flight on the pack server.
++
++# Runtime-created levels (2.5.0-diaithir.8)
++
++A level created while the server runs (a mod registering a dynamic dimension, e.g. via
++Vampirism's DimensionManager or a world-per-player mod) called ShipWorld.addDimension from the
++ServerLevel constructor at an arbitrary point of the tick. vs-core enforces a stage order per
++tick (PRE_TICK, UPDATE_*, POST_TICK_*), so this ended in "Constraints failed" or an NPE inside
++postTickGame, killing the server (seen in the integrated server as an NPE in
++FQ.postTickGame <- MixinMinecraftServer.postTick). Reproduced on .7 by creating a level at the
++start of tickServer.
++Fix: PendingDimensions queues addDimension after startup and registers new levels right after
++preTickGame of the next tick; MixinServerLevel.postTick skips a level that is still pending.

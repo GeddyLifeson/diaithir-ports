@@ -1292,8 +1292,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar"
 hash = "137f93d3a70b51366799f726ee81c3c77684fe9da8264a1de9b5e115635c07fc"
 
 [[files]]
-file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.0.jar"
-hash = "060587a9f11c4c77085ce0c627f4025d39a1e5cbf5338b03238385e8328404cb"
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.2.0.jar"
+hash = "05a898ad0fac29b6c604deaf3e7671535284820736a3c826899b0870c06c7054"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
@@ -2281,8 +2281,8 @@ hash = "b2e8b3121b5f6a61bf54895870453117c27928059c4472a517ea0ccf4bb849e8"
 metafile = true
 
 [[files]]
-file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.7.jar"
-hash = "6fca18783b40af985ac28b5f9dcb356fb7841da91024b472d20a27d5b5722c70"
+file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.8.jar"
+hash = "f08ea3ec30a0524b65ce30d970bcbae58ea123606f77d80b2ad76bdacabb4c8d"
 
 [[files]]
 file = "mods/walkers-neoforge-8.2-diaithir.1.jar"
