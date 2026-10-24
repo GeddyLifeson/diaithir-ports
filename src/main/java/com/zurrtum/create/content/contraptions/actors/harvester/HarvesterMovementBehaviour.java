@@ -170,7 +170,7 @@ public class HarvesterMovementBehaviour extends MovementBehaviour {
             if (!newState.is(block)) {
                 return newState;
             }
-            IntegerProperty ageProperty = crop.getAgeProperty();
+            IntegerProperty ageProperty = ((com.zurrtum.create.mixin.CropBlockAccessor) crop).create$getAgeProperty();
             return state.setValue(ageProperty, 0);
         }
         if (block == Blocks.SWEET_BERRY_BUSH) {

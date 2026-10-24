@@ -111,7 +111,7 @@ public class SawRenderer implements BlockEntityRenderer<SawBlockEntity, SawRende
         } else {
             state.shaft = CachedBuffers.partialFacing(
                 AllPartialModels.SHAFT_HALF,
-                state.blockState.getBlock().rotate(state.blockState, Rotation.CLOCKWISE_180)
+                state.blockState.rotate(Rotation.CLOCKWISE_180)
             ).cardinalLighting(cardinalLighting).light(state.lightCoords).color(getTintColor(be)).extractRenderState();
             if (speed > 0) {
                 partial = AllPartialModels.SAW_BLADE_HORIZONTAL_ACTIVE;

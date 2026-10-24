@@ -494,7 +494,7 @@ public class VirtualRenderWorld extends Level implements VisualizationLevel, Blo
     }
 
     @Override
-    public Collection<EnderDragonPart> dragonParts() {
+    public Collection<? extends net.neoforged.neoforge.entity.PartEntity<?>> dragonParts() {
         return level.dragonParts();
     }
 

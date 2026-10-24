@@ -32,31 +32,6 @@ public class BuiltInPackSourceMixin {
     @Inject(method = "loadPacks(Ljava/util/function/Consumer;)V", at = @At("TAIL"))
     private void addDataPack(Consumer<Pack> consumer, CallbackInfo ci) {
         if ((Object) this instanceof ServerPacksSource) {
-            FabricLoader loader = FabricLoader.getInstance();
-            if (!loader.isModLoaded("fabric-api")) {
-                String directory = PackType.SERVER_DATA.getDirectory();
-                ModContainer mod = loader.getModContainer(MOD_ID).orElseThrow();
-                List<Path> paths = mod.getRootPaths();
-                addDataPack(
-                    consumer,
-                    createInfo("fabric-convention-tags-v2", "Fabric Convention Tags (v2)", "2.15.2+d9a8963096"),
-                    paths,
-                    Component.nullToEmpty("fabric-convention-tags-v2-2.15.2+d9a8963096"),
-                    directory + "/fabric",
-                    "c"
-                );
-                ModMetadata metadata = mod.getMetadata();
-                addDataPack(
-                    consumer,
-                    createInfo(MOD_ID, metadata.getName(), metadata.getVersion().getFriendlyString()),
-                    paths,
-                    Component.translatable("advancement.create.root"),
-                    directory,
-                    MOD_ID,
-                    "minecraft",
-                    "c"
-                );
-            }
             DynamicPack dynamicPack = new DynamicPack(
                 "create:dynamic_data",
                 Component.translatable("advancement.create.root"),

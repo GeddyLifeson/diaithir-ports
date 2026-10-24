@@ -85,7 +85,7 @@ public class SawMovementRenderBehaviour implements MovementRenderBehaviour {
             if (axis.isHorizontal()) {
                 shaft = CachedBuffers.partialFacing(
                     AllPartialModels.SHAFT_HALF,
-                    blockState.getBlock().rotate(blockState, Rotation.CLOCKWISE_180)
+                    blockState.rotate(Rotation.CLOCKWISE_180)
                 );
             } else {
                 boolean alongFirst = blockState.getValue(DirectionalAxisKineticBlock.AXIS_ALONG_FIRST_COORDINATE);

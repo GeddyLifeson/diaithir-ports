@@ -11,6 +11,7 @@ base { archivesName = 'create-neoforge' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
     maven { url = 'https://maven.createmod.net' }
     maven { url = 'https://maven.shedaniel.me/' }
 }
@@ -31,17 +32,45 @@ neoForge {
 sourceSets {
     main {
         java {
-            exclude 'com/zurrtum/create/compat/**'
-            exclude 'com/zurrtum/create/client/compat/**'
+            exclude 'com/zurrtum/create/compat/computercraft/implementation/**'
+            exclude 'com/zurrtum/create/compat/computercraft/AllComputerPeripherals.java'
+            exclude 'com/zurrtum/create/compat/computercraft/ComputerIntegration.java'
+            exclude 'com/zurrtum/create/compat/computercraft/AllComputerDisplaySource.java'
+            exclude 'com/zurrtum/create/compat/eiv/**'
+            exclude 'com/zurrtum/create/compat/rei/**'
+            exclude 'com/zurrtum/create/compat/fabric/**'
+            exclude 'com/zurrtum/create/compat/trinkets/**'
+            exclude 'com/zurrtum/create/client/compat/eiv/**'
+            exclude 'com/zurrtum/create/client/compat/jei/**'
+            exclude 'com/zurrtum/create/client/compat/rei/**'
+            exclude 'com/zurrtum/create/client/compat/rrv/**'
+            exclude 'com/zurrtum/create/client/compat/fabric/**'
+            exclude 'com/zurrtum/create/client/compat/trinkets/**'
             exclude 'com/zurrtum/create/mixin/ArchitecturyMixin.java'
             exclude 'com/zurrtum/create/client/mixin/Iris*'
             exclude 'com/zurrtum/create/client/mixin/Rrv*'
             exclude 'com/zurrtum/create/client/mixin/Eiv*'
             exclude 'com/zurrtum/create/client/mixin/FabricEIVMixin.java'
             exclude 'com/zurrtum/create/client/mixin/BuiltInReliableRecipeViewerClientIntegrationMixin.java'
-            exclude 'com/zurrtum/create/client/flywheel/impl/compat/**'
+            exclude 'com/zurrtum/create/client/mixin/QuadRenderHelperMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/ConnectedTextureBehaviourMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/Copycat*Mixin.java'
+            exclude 'com/zurrtum/create/client/mixin/WrapperBlockStateModel*Mixin.java'
+            exclude 'com/zurrtum/create/client/mixin/WrapperBlockStateModelAccessor.java'
+            exclude 'com/zurrtum/create/client/mixin/ModelRenderHelperMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/ItemModelRenderHelperMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/Buffer*EmitterMixin.java'
+            exclude 'com/zurrtum/create/client/mixin/SymmetryWandModelMixin.java'
         }
     }
+}
+
+dependencies {
+    // compile-time only: referenced by code paths that the NeoForge build never takes (see MixinPlugin)
+    compileOnly 'net.fabricmc.fabric-api:fabric-renderer-api-v1:13.0.3+c80601bb4c'
+    compileOnly 'net.fabricmc.fabric-api:fabric-api-base:2.0.3+ece063234c'
+    compileOnly 'net.fabricmc.fabric-api:fabric-model-loading-api-v1:8.0.6+c80601bb4c'
+    compileOnly 'net.fabricmc:fabric-loader:0.19.2'
 }
 
 tasks.withType(JavaCompile).configureEach {

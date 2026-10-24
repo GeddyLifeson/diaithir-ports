@@ -9,8 +9,6 @@ import com.zurrtum.create.client.infrastructure.fluid.FogDistanceSupplier;
 import com.zurrtum.create.infrastructure.fluids.FlowableFluid;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.fabricmc.fabric.api.transfer.v1.client.fluid.FluidVariantRendering;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import com.zurrtum.create.platform.FabricLoader;
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
@@ -43,7 +41,7 @@ public class AllFluidConfigs {
     public static final FluidModel.Unbaked MILK = model(AllFluids.MILK);
     public static final FluidModel.Unbaked HONEY = model(AllFluids.HONEY);
     public static final FluidModel.Unbaked CHOCOLATE = model(AllFluids.CHOCOLATE);
-    public static final boolean HAS_RENDER = FabricLoader.getInstance().isModLoaded("fabric-transfer-api-v1");
+    public static final boolean HAS_RENDER = false;
 
     public static FluidModel.Unbaked model(FlowingFluid fluid) {
         Identifier id = BuiltInRegistries.FLUID.getKey(fluid);
@@ -83,7 +81,7 @@ public class AllFluidConfigs {
         }
         BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
         if (HAS_RENDER) {
-            return FluidVariantRendering.getColor(FluidVariant.of(fluid, components), level, pos);
+            return 0;
         }
         BlockTintSource blockTintSource = model.tintSource();
         if (blockTintSource == null) {
@@ -112,7 +110,7 @@ public class AllFluidConfigs {
         }
         BlockPos pos = new BlockPos((int) x, (int) y, (int) z);
         if (HAS_RENDER) {
-            return FluidVariantRendering.getColor(FluidVariant.of(fluid, components), level, pos);
+            return 0;
         }
         return getBlockTint(level, pos, blockState, model.tintSource());
     }
@@ -130,7 +128,7 @@ public class AllFluidConfigs {
             return fluidTintSource.get(fluid, components);
         }
         if (HAS_RENDER) {
-            return FluidVariantRendering.getColor(FluidVariant.of(fluid, components), level, pos);
+            return 0;
         }
         return getBlockTint(level, pos, blockState, model.tintSource());
     }

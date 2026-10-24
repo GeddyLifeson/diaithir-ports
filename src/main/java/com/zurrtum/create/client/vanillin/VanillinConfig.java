@@ -24,28 +24,6 @@ public class VanillinConfig {
         var blockEntities = new ArrayList<VisualOverride>();
         var entities = new ArrayList<VisualOverride>();
 
-        for (ModContainer container : FabricLoader.getInstance().getAllMods()) {
-            ModMetadata meta = container.getMetadata();
-            var modid = meta.getId();
-
-            if (meta.containsCustomValue(VANILLIN_OVERRIDES)) {
-                CustomValue overridesValue = meta.getCustomValue(VANILLIN_OVERRIDES);
-
-                if (overridesValue.getType() != CustomValue.CvType.OBJECT) {
-                    Vanillin.CONFIG_LOGGER.warn(
-                        "Mod '{}' attempted to override options with an invalid value, ignoring",
-                        modid
-                    );
-                    continue;
-                }
-
-                var overrides = overridesValue.getAsObject();
-
-                readSection(blockEntities, modid, overrides, "block_entities", "block entity");
-                readSection(entities, modid, overrides, "entities", "entity");
-            }
-        }
-
         return new ModOverrides(blockEntities, entities);
     }
 
