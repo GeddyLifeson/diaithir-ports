@@ -15,11 +15,8 @@ import net.minecraft.resources.Identifier;
 import static com.zurrtum.create.Create.MOD_ID;
 
 public class AllRenderPipelines {
-    public static final Identifier GLOWING_ID = Identifier.fromNamespaceAndPath(MOD_ID, "core/glowing_shader");
-    public static final RenderPipeline.Snippet GLOWING_SNIPPET = RenderPipeline.builder(RenderPipelines.MATRICES_FOG_SNIPPET)
-        .withVertexShader(GLOWING_ID).withFragmentShader(GLOWING_ID).withSampler("Sampler0").withSampler("Sampler2")
-        .withVertexFormat(DefaultVertexFormat.ENTITY, VertexFormat.Mode.QUADS)
-        .withDepthStencilState(DepthStencilState.DEFAULT).buildSnippet();
+    // Own pipelines reuse the vanilla entity shader, so the pack ships no custom shader sources.
+    public static final RenderPipeline.Snippet GLOWING_SNIPPET = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET).buildSnippet();
     public static final RenderPipeline ADDITIVE = register(
         "additive",
         RenderPipeline.builder(RenderPipelines.BLOCK_SNIPPET)

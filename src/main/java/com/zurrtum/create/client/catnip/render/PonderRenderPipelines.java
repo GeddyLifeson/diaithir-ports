@@ -18,15 +18,8 @@ public class PonderRenderPipelines {
         CompareOp.LESS_THAN_OR_EQUAL,
         false
     );
-    private static final Identifier ENTITY_BLOCK_ID = Identifier.fromNamespaceAndPath(MOD_ID, "entity_block");
-    public static final Snippet ENTITY_BLOCK_SNIPPET = RenderPipeline.builder(RenderPipelines.MATRICES_FOG_SNIPPET)
-        .withVertexShader(ENTITY_BLOCK_ID).withFragmentShader(ENTITY_BLOCK_ID).withSampler("Sampler0")
-        .withSampler("Sampler2").withVertexFormat(DefaultVertexFormat.ENTITY, VertexFormat.Mode.QUADS)
-        .withDepthStencilState(DepthStencilState.DEFAULT).buildSnippet();
-    public static final Snippet ENTITY_BLOCK_LIGHT_SNIPPET = RenderPipeline.builder(RenderPipelines.MATRICES_FOG_SNIPPET)
-        .withVertexShader(ENTITY_BLOCK_ID).withFragmentShader(ENTITY_BLOCK_ID).withSampler("Sampler0")
-        .withSampler("Sampler2").withVertexFormat(DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS)
-        .withDepthStencilState(DepthStencilState.DEFAULT).buildSnippet();
+    public static final Snippet ENTITY_BLOCK_SNIPPET = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET).buildSnippet();
+    public static final Snippet ENTITY_BLOCK_LIGHT_SNIPPET = RenderPipeline.builder(RenderPipelines.BLOCK_SNIPPET).buildSnippet();
     public static final RenderPipeline ENTITY_BLOCK_SOLID = register(
         "entity_block_solid",
         RenderPipeline.builder(ENTITY_BLOCK_SNIPPET).withShaderDefine("OVERWORLD")
