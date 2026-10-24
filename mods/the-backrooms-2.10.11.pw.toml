@@ -1,0 +1,12 @@
+name = "the-backrooms"
+filename = "the-backrooms-2.10.11.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/SWbt79T9/versions/J2doRvZe/the-backrooms-2.10.11.jar"
+hash-format = "sha256"
+hash = "3aa11bae147f1dd53fe1ea9f7f1a19ed5ee01cf9d05298dff506c48423e53ce4"
+
+[update.modrinth]
+mod-id = "SWbt79T9"
+version = "J2doRvZe"

@@ -1,0 +1,12 @@
+name = "l"
+filename = "l2library-26.1.2.1+2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4Vh3BQ3F/versions/CE92Otiu/l2library-26.1.2.1%2B2.jar"
+hash-format = "sha256"
+hash = "3337fae954f30ab6f05944e5b234616b30ee83aaa3128c1522a63cd075f202f6"
+
+[update.modrinth]
+mod-id = "4Vh3BQ3F"
+version = "CE92Otiu"

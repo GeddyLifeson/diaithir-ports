@@ -57,6 +57,10 @@ file = "config/tconstruct-common.toml"
 hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
 
 [[files]]
+file = "kubejs/assets/backrooms/lang/en_us.json"
+hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
+
+[[files]]
 file = "kubejs/assets/betterf3/lang/en_us.json"
 hash = "87bfd11e1db402c2381c3099c2e42b6aae97e3f229d4620acbcbc7e62845ff98"
 
@@ -1288,8 +1292,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar"
 hash = "137f93d3a70b51366799f726ee81c3c77684fe9da8264a1de9b5e115635c07fc"
 
 [[files]]
-file = "mods/diaithir-bestiary-neoforge-26.1.2-0.2.0.jar"
-hash = "05a898ad0fac29b6c604deaf3e7671535284820736a3c826899b0870c06c7054"
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.0.jar"
+hash = "060587a9f11c4c77085ce0c627f4025d39a1e5cbf5338b03238385e8328404cb"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
@@ -1316,6 +1320,11 @@ hash = "1f92060ccb86e5a8b9406f9e75502fb0fff9e964e6fa1125325bab4f235e80e5"
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
 hash = "cb4a4ce59ceb5018b3a3eb02ced19df1f389fd90d648867e51f1c02c5de540d4"
+
+[[files]]
+file = "mods/drones-neoforge-26.1.2-1.3.2.pw.toml"
+hash = "0b807a66ac042413dc76e208152323542be0fa09c4afc11fbc861208e4a91221"
+metafile = true
 
 [[files]]
 file = "mods/dungeons-and-taverns-5.2.0.pw.toml"
@@ -1595,6 +1604,11 @@ hash = "b90538a8f45ea979d12d606c8263fc38e7de857e7f231eaf7dd41ec6e49b2c9e"
 metafile = true
 
 [[files]]
+file = "mods/jdturrets-neoforge-26.1.2-1.0.2.pw.toml"
+hash = "4d328031c88c02569dd65fdde61f52314d2ad99c04fb13d81460810d2fb540b2"
+metafile = true
+
+[[files]]
 file = "mods/jei-26.1.2-neoforge-29.47.0.109.pw.toml"
 hash = "f3c5abb3700dd48a2ce094596fe19ce0813db7caa756745cd43569b22683eb66"
 metafile = true
@@ -1660,6 +1674,11 @@ hash = "10a5e30ffc6a3dff85230aab3ecccdf62118513f96f50b35055943a64acbc511"
 [[files]]
 file = "mods/kubeui-0.4.0.pw.toml"
 hash = "93ab50c6e3ad2369acffb1ba927b491e5ebdd9ac2fe8b6e94c5ac0dab38accde"
+metafile = true
+
+[[files]]
+file = "mods/l2library-26.1.2.1_2.pw.toml"
+hash = "058f2671d534a0ce38b095ef4bfc6889a6a318362d5b23b21922e8019d96266b"
 metafile = true
 
 [[files]]
@@ -1811,6 +1830,11 @@ metafile = true
 [[files]]
 file = "mods/modular-routers-26.1.2.2.pw.toml"
 hash = "9446a6b0bece8dabcc53a66b581f8461dffac12577e0a31b16cbd29e0f637fc6"
+metafile = true
+
+[[files]]
+file = "mods/modulargolems-26.1.2.3.pw.toml"
+hash = "464a7474e08a617fb574612bb7ae5da0c447a074763943a94083c2723d66eba6"
 metafile = true
 
 [[files]]
@@ -2186,6 +2210,11 @@ metafile = true
 [[files]]
 file = "mods/tectonic-3.0.28-neoforge-26.1.pw.toml"
 hash = "87084383cdf823596feec3123b598b24f2be39f3467a6e62b521333ed38e9566"
+metafile = true
+
+[[files]]
+file = "mods/the-backrooms-2.10.11.pw.toml"
+hash = "6d297e0de70153d51411f4308acf24a2be12f72f27ba05289121e745d8387675"
 metafile = true
 
 [[files]]

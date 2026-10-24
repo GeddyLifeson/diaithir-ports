@@ -45,7 +45,22 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | walkers-neoforge-8.2-diaithir.1.jar | MIT (Woodwalkers by ToCraft, player renderer fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/woodwalkers) |
 | craftedcore-neoforge-8.1-diaithir.1.jar | LGPL-3.0 (CraftedCore by ToCraft, synced registry fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/craftedcore) |
 | Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar | LGPL-3.0 (Vampirism by TeamLapen, splash list fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/vampirism) |
+| diaithir-bestiary-neoforge-26.1.2-0.3.0.jar | MIT (our own mod; GeckoLib is a separate dependency) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/bestiary-0.3/diaithir-bestiary) |
 
 client/resourcepacks/diaithir-sounds.zip (the Diaithir Sounds resource pack) holds CC0, CC-BY, OGA-BY and CC-BY-SA music and sound; the credits are in CREDITS.md inside the zip.
 
 packwiz-installer-bootstrap (inside Diaithir.zip) is MIT, https://github.com/packwiz/packwiz-installer-bootstrap.
+
+## Third-party mods added in pack update 2 (linked, never hosted here)
+
+Each downloads from its author's Modrinth CDN with the sha256 in its `.pw.toml`. Licence read from the jar's `neoforge.mods.toml` and the Modrinth page on 2026-10-24; none is All Rights Reserved or NC-ND.
+
+| Mod | Version | Licence | Source |
+|---|---|---|---|
+| Modular Golems | 26.1.2.3 | LGPL-2.1-only | https://github.com/Minecraft-LightLand/ModularGolems |
+| L2 Library (required by Modular Golems) | 26.1.2.1+2 | LGPL-2.1-only | https://github.com/Minecraft-LightLand/L2Library |
+| Jungdab's Turrets | 1.0.2 | MIT | https://github.com/Jungdab/JungdabsTurrets |
+| Modular Drones | 1.3.2 | CC-BY-4.0 (credit: KesslerCascade) | https://github.com/KesslerCascade/modular-drones |
+| The Backrooms (legacy) | 2.10.11 | MIT (a data pack in a jar, by Aria976 and bellfish) | https://modrinth.com/datapack/the-backrooms |
+
+Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
