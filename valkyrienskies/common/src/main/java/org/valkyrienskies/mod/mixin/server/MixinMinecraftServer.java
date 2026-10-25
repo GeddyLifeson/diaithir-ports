@@ -193,6 +193,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         loadedLevels = newLoadedLevels.keySet();
         // endregion
 
+        org.valkyrienskies.mod.util.PhysicsThreadPolicy.apply();
         vsPipeline.preTickGame();
         org.valkyrienskies.mod.util.PendingDimensions.drainAfterPreTick();
         // Levels created before the ship world existed (nether, end, every modded dimension made in createLevels)
@@ -239,7 +240,12 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         at = @At("TAIL")
     )
     private void postTick(final CallbackInfo ci) {
-        vsPipeline.postTickGame();
+        org.valkyrienskies.mod.util.PhysicsWaitReport.begin();
+        try {
+            vsPipeline.postTickGame();
+        } finally {
+            org.valkyrienskies.mod.util.PhysicsWaitReport.end();
+        }
         // Only drag entities after we have updated the ship positions
         for (final ServerLevel level : getAllLevels()) {
             EntityDragger.INSTANCE.dragEntitiesWithShips(level.getAllEntities(), false);

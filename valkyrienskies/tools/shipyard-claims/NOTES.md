@@ -41,3 +41,23 @@ chunk loaded in the Nether, End or any modded dimension (Twilight Forest, Backro
 killed the tick loop. Reproduced on .8 with `execute in minecraft:the_nether run forceload add 0 0`.
 Fix: PendingDimensions tracks registered ids; preTick registers every missing level right after
 preTickGame; MixinServerLevel.postTick skips unregistered levels.
+
+# Native worker pool churn (2.5.0-diaithir.10)
+
+Symptom on the production server (Windows, 32 logical cores, ~90 registered levels): within minutes of a fresh world
+going live the Server thread sat in FQ.postTickGame (parked on a ReentrantLock) with "Can't keep up" warnings of 6-16 s.
+Not a deadlock: with synchronizePhysics (forced on in ValkyrienSkiesModForge) FM.run holds the lock while it runs
+physicsTicksPerGameTick native steps, and postTickGame needs that lock, so the game tick takes as long as the steps.
+The Physics thread was in kotlinx runBlocking (FN.a -> FN$d awaiting the CompletableFutures that
+KrunchNativePhysicsThreadPoolReference.simulateMultipleWorlds returns), and the thread dump showed native
+"KrunchWorkerThread" threads TERMINATED 0.1 s after creation with thread ids past 220,000 after 5.5 minutes.
+
+Cause: vs-core defaults physics.physicsThreads to max(cores - 4, 0) (28 on that box) and FN$d submits one
+simulateMultipleWorlds call per registered world every step; with threads > 0 each call starts and tears down
+native workers that attach to the JVM. About 90 worlds x 3 steps per game tick = thousands of thread attaches per tick
+(reproduced on Linux with -Dvs.physicsThreads=28: 4,000 thread ids per second, 35-40 s behind).
+The valkyrienskies-core-server.toml value is not read back, so the config file cannot be used to turn it off.
+
+Fix: PhysicsThreadPolicy forces physicsThreads to 0 (vs-core's "run on the calling thread" mode) at mod init and
+before every tick; -Dvs.physicsThreads=N opts back in. PhysicsWaitReport logs the Physics thread's stack when the game
+thread has waited more than 1.5 s in postTickGame (at most every 30 s).

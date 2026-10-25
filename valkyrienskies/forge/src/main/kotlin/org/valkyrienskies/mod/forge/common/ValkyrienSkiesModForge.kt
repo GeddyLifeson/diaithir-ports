@@ -98,6 +98,7 @@ object ValkyrienSkiesModForge {
         try {
             val pt = org.valkyrienskies.core.impl.config.VSCoreConfig.SERVER.pt
             pt.synchronizePhysics = true
+            org.valkyrienskies.mod.util.PhysicsThreadPolicy.apply()
             org.valkyrienskies.core.impl.config.VSCoreConfig.SERVER.physics.shipLoadFreezeSeconds = 0.0
             org.slf4j.LoggerFactory.getLogger("VS2").info(
                 "VS2: synchronizePhysics=true, shipLoadFreezeSeconds=0.0 set at mod init, physicsTicksPerGameTick={}",
