@@ -1,0 +1,165 @@
+diff --git a/src/main/java/untamedwilds/entity/ComplexMob.java b/src/main/java/untamedwilds/entity/ComplexMob.java
+index 3033ea7..1a7c99f 100644
+--- a/src/main/java/untamedwilds/entity/ComplexMob.java
++++ b/src/main/java/untamedwilds/entity/ComplexMob.java
+@@ -193,7 +193,15 @@ public abstract class ComplexMob extends TamableAnimal {
+         }
+     }
+ 
+-    public float getModelScale() { return getEntityData(this.getType()).getScale(this.getVariant()); }
++    public float getModelScale() {
++        EntityDataHolder data = getEntityData(this.getType());
++        return data == null ? 1.0F : data.getScale(this.getVariant()); // species data is server-side only: clients build entities (and their multiparts) without it
++    }
++
++    public static int safeFlags(EntityType<?> typeIn, int variant, String key) {
++        EntityDataHolder data = getEntityData(typeIn);
++        return data == null ? 0 : data.getFlags(variant, key);
++    }
+     public float getMobSize(){
+         return Math.max(0.1F, this.entityData.get(SIZE));
+     }
+diff --git a/src/main/java/untamedwilds/entity/amphibian/EntityNewt.java b/src/main/java/untamedwilds/entity/amphibian/EntityNewt.java
+index 63b21d2..e5f98b4 100644
+--- a/src/main/java/untamedwilds/entity/amphibian/EntityNewt.java
++++ b/src/main/java/untamedwilds/entity/amphibian/EntityNewt.java
+@@ -71,7 +71,7 @@ public class EntityNewt extends ComplexMobAmphibious implements ISpecies, INewSk
+     }
+ 
+     private boolean isAquatic() {
+-        return getEntityData(this.getType()).getFlags(this.getVariant(), "isAquatic") == 1;
++        return safeFlags(this.getType(), this.getVariant(), "isAquatic") == 1;
+     }
+ 
+     public boolean wantsToBeOnLand() { return !this.isAquatic(); }
+diff --git a/src/main/java/untamedwilds/entity/fish/EntityShark.java b/src/main/java/untamedwilds/entity/fish/EntityShark.java
+index 3818c43..f32cf12 100644
+--- a/src/main/java/untamedwilds/entity/fish/EntityShark.java
++++ b/src/main/java/untamedwilds/entity/fish/EntityShark.java
+@@ -162,14 +162,14 @@ public class EntityShark extends ComplexMobAquatic implements ISpecies, IAnimate
+     public Animation[] getAnimations() { return new Animation[]{NO_ANIMATION, ATTACK_THRASH}; }
+ 
+     // Flags Parameters
+-    public boolean isBottomDweller() { return getEntityData(this.getType()).getFlags(this.getVariant(), "bottomDweller") == 1; }
++    public boolean isBottomDweller() { return safeFlags(this.getType(), this.getVariant(), "bottomDweller") == 1; }
+ 
+     @Override
+     public void updateAttributes() {
+         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getAttack());
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getHealth());
+         this.setHealth(this.getMaxHealth());
+-        this.setShortFins(getEntityData(this.getType()).getFlags(this.getVariant(), "shortFins") == 1);
++        this.setShortFins(safeFlags(this.getType(), this.getVariant(), "shortFins") == 1);
+     }
+ 
+     public boolean hasShortFins(){ return (this.entityData.get(SHORT_FINS)); }
+diff --git a/src/main/java/untamedwilds/entity/mammal/EntityBaleenWhale.java b/src/main/java/untamedwilds/entity/mammal/EntityBaleenWhale.java
+index 525cdde..d78b216 100644
+--- a/src/main/java/untamedwilds/entity/mammal/EntityBaleenWhale.java
++++ b/src/main/java/untamedwilds/entity/mammal/EntityBaleenWhale.java
+@@ -233,7 +233,7 @@ public class EntityBaleenWhale extends ComplexMobAquatic implements ISpecies, IN
+         for (int i = 0; i < this.length; i++) {
+             this.whale_parts[i] = new EntityWhalePart(this, this.getBbWidth(), this.getBbHeight());
+         }
+-        this.setLongFins(getEntityData(this.getType()).getFlags(this.getVariant(), "hasLongFins") == 1);
++        this.setLongFins(safeFlags(this.getType(), this.getVariant(), "hasLongFins") == 1);
+     }
+ 
+     @Nullable
+diff --git a/src/main/java/untamedwilds/entity/mammal/EntityBear.java b/src/main/java/untamedwilds/entity/mammal/EntityBear.java
+index 3d61322..fde6a94 100644
+--- a/src/main/java/untamedwilds/entity/mammal/EntityBear.java
++++ b/src/main/java/untamedwilds/entity/mammal/EntityBear.java
+@@ -292,7 +292,7 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
+ 
+     // Flags Parameters
+     public boolean isPanda() {
+-        return getEntityData(this.getType()).getFlags(this.getVariant(), "isPanda") == 1;
++        return safeFlags(this.getType(), this.getVariant(), "isPanda") == 1;
+     }
+ 
+     @Override
+@@ -300,8 +300,8 @@ public class EntityBear extends ComplexMobTerrestrial implements ISpecies, INewS
+         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getAttack());
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getHealth());
+         this.setHealth(this.getMaxHealth());
+-        this.setShortSnout(getEntityData(this.getType()).getFlags(this.getVariant(), "hasShortSnout") == 1);
+-        this.setHump(getEntityData(this.getType()).getFlags(this.getVariant(), "hasHump") == 1);
++        this.setShortSnout(safeFlags(this.getType(), this.getVariant(), "hasShortSnout") == 1);
++        this.setHump(safeFlags(this.getType(), this.getVariant(), "hasHump") == 1);
+     }
+ 
+     public boolean hasShortSnout(){ return (this.entityData.get(SHORT_SNOUT)); }
+diff --git a/src/main/java/untamedwilds/entity/mammal/EntityBigCat.java b/src/main/java/untamedwilds/entity/mammal/EntityBigCat.java
+index 59301b1..ebf9566 100644
+--- a/src/main/java/untamedwilds/entity/mammal/EntityBigCat.java
++++ b/src/main/java/untamedwilds/entity/mammal/EntityBigCat.java
+@@ -274,8 +274,8 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
+         this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getAttack());
+         this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(getEntityData(this.getType()).getSpeciesData().get(this.getVariant()).getHealth());
+         this.setHealth(this.getMaxHealth());
+-        this.setDimorphism(getEntityData(this.getType()).getFlags(this.getVariant(), "dimorphism") == 1);
+-        this.setFluffyTail(getEntityData(this.getType()).getFlags(this.getVariant(), "fluffyTail") == 1);
++        this.setDimorphism(safeFlags(this.getType(), this.getVariant(), "dimorphism") == 1);
++        this.setFluffyTail(safeFlags(this.getType(), this.getVariant(), "fluffyTail") == 1);
+     }
+ 
+     public boolean hasDimorphism(){ return (this.entityData.get(DIMORPHISM)); }
+@@ -301,7 +301,7 @@ public class EntityBigCat extends ComplexMobTerrestrial implements ISpecies, INe
+         // Derive dimorphism from data as a fallback for command-spawned mobs where post-update may not have run yet.
+         boolean dimorphic =
+             this.hasDimorphism() ||
+-            getEntityData(this.getType()).getFlags(this.getVariant(), "dimorphism") == 1;
++            safeFlags(this.getType(), this.getVariant(), "dimorphism") == 1;
+         if (dimorphic) {
+             String trimmed_path = texture_path.getPath().substring(0, texture_path.getPath().lastIndexOf('.'));
+             return Identifier.tryParse(
+diff --git a/src/main/java/untamedwilds/entity/mammal/EntityBoar.java b/src/main/java/untamedwilds/entity/mammal/EntityBoar.java
+index 6260dcd..5d08297 100644
+--- a/src/main/java/untamedwilds/entity/mammal/EntityBoar.java
++++ b/src/main/java/untamedwilds/entity/mammal/EntityBoar.java
+@@ -229,7 +229,7 @@ public class EntityBoar extends ComplexMobTerrestrial implements ISpecies, INewS
+ 
+     @Override
+     public void updateAttributes() {
+-        this.setWarthog(getEntityData(this.getType()).getFlags(this.getVariant(), "isWarthog") == 1);
++        this.setWarthog(safeFlags(this.getType(), this.getVariant(), "isWarthog") == 1);
+     }
+ 
+     public boolean isWarthog(){ return (this.entityData.get(WARTHOG)); }
+diff --git a/src/main/java/untamedwilds/entity/reptile/EntityAnaconda.java b/src/main/java/untamedwilds/entity/reptile/EntityAnaconda.java
+index 1b4efcd..24f74d8 100644
+--- a/src/main/java/untamedwilds/entity/reptile/EntityAnaconda.java
++++ b/src/main/java/untamedwilds/entity/reptile/EntityAnaconda.java
+@@ -279,11 +279,11 @@ public class EntityAnaconda extends ComplexMobAmphibious implements ISpecies, IN
+ 
+     // Flags Parameters
+     public boolean isEggLayer() {
+-        return getEntityData(this.getType()).getFlags(this.getVariant(), "eggLayer") == 1;
++        return safeFlags(this.getType(), this.getVariant(), "eggLayer") == 1;
+     }
+     public int getMultiparts() {
+         return 3; // TODO: Unused parameter, as all Large Snakes have the same length. Need to consider how to handle multiparts
+-        //return getEntityData(this.getType()).getFlags(this.getVariant(), "parts");
++        //return safeFlags(this.getType(), this.getVariant(), "parts");
+     }
+ 
+     @Override
+diff --git a/src/main/java/untamedwilds/entity/reptile/EntitySnake.java b/src/main/java/untamedwilds/entity/reptile/EntitySnake.java
+index fd100ba..1ca2f63 100644
+--- a/src/main/java/untamedwilds/entity/reptile/EntitySnake.java
++++ b/src/main/java/untamedwilds/entity/reptile/EntitySnake.java
+@@ -190,11 +190,11 @@ public class EntitySnake extends ComplexMobTerrestrial implements ISpecies, INew
+     }
+ 
+     // Flags Parameters
+-    public Integer getVenomStrength() { return getEntityData(this.getType()).getFlags(this.getVariant(), "venom");}
++    public Integer getVenomStrength() { return safeFlags(this.getType(), this.getVariant(), "venom");}
+ 
+     @Override
+     public void updateAttributes() {
+-        this.setRattler(getEntityData(this.getType()).getFlags(this.getVariant(), "rattler") == 1);
++        this.setRattler(safeFlags(this.getType(), this.getVariant(), "rattler") == 1);
+     }
+ 
+     public boolean isRattler(){ return (this.entityData.get(RATTLER)); }
