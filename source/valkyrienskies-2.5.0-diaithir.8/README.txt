@@ -4,3 +4,5 @@ This folder holds the changes made after diaithir.5, which was the last version 
 - PatchClaims.java, patch-claims.sh, NOTES.md: the post-build ASM step that moves the ship claim area inside Tellus' coordinate limits (diaithir.7).
 - PendingDimensions.java, MixinServerLevel.java and diaithir.8-over-diaithir.7.patch: runtime-created levels are registered with the ship world only at a legal tick stage (diaithir.8). NOTES.md describes both changes.
 The jar bundles the closed vs-core and Krunch physics binaries unchanged, as the official Valkyrien Skies releases do.
+
+Update 7 (2026-10-25): Valkyrien Skies and Eureka are no longer distributed with the Diaithir pack (the jars are removed from mods/). This folder stays as the source offer for the diaithir builds that were distributed earlier. The full source is on the valkyrienskies branch (up to diaithir.9).

@@ -1412,10 +1412,6 @@ hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
 
 [[files]]
-file = "mods/eureka-26-1-2-1.6.3-diaithir.1.jar"
-hash = "ae4e665fbff022b97caf9387c402c51bd42fb6ae1d505b1bcb751e28394d460a"
-
-[[files]]
 file = "mods/evilcraft-26.1.2-neoforge-1.2.107.pw.toml"
 hash = "27af705089a31b0f234b41260751799170b8e1e9acb974a1da7d3905cfe546d0"
 metafile = true
@@ -1660,11 +1656,6 @@ metafile = true
 [[files]]
 file = "mods/knot-neoforge-core-20.2.10.pw.toml"
 hash = "c0c0e55c7898dd099300fee78f460b175e3ef750412d8f3890c34bf8c1d01904"
-metafile = true
-
-[[files]]
-file = "mods/kotlinforforge-6.3.0-all.pw.toml"
-hash = "0baadde4370b6a9936429445eca31baaecd20d6f33d426c19eae495b01655169"
 metafile = true
 
 [[files]]
@@ -2278,10 +2269,6 @@ metafile = true
 file = "mods/valhelsia_core-neoforge-26.1.2-1.1.6.pw.toml"
 hash = "b2e8b3121b5f6a61bf54895870453117c27928059c4472a517ea0ccf4bb849e8"
 metafile = true
-
-[[files]]
-file = "mods/valkyrienskies-26-1-2-2.5.0-diaithir.9.jar"
-hash = "7b8057111d14a916b433fd04b3428adf9865f0426a7a377e6751d32894ee7ae4"
 
 [[files]]
 file = "mods/walkers-neoforge-8.2-diaithir.1.jar"
