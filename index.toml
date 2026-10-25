@@ -1233,6 +1233,10 @@ hash = "5ae188ee00c257bde7330af03a137034b3dd96bc7e25ddf89a59c93a4be8e0e4"
 metafile = true
 
 [[files]]
+file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.4.jar"
+hash = "cd0fe320daf5f56820b857afd4f145d835e110a66c3227bd8fea7438c9d38d4a"
+
+[[files]]
 file = "mods/cristellib-neoforge-26.1.2-3.1.13.pw.toml"
 hash = "068720d77426f70fa0b25722166a7d7fc5d6f9866a6c79e8669a36ca1f9381a2"
 metafile = true
