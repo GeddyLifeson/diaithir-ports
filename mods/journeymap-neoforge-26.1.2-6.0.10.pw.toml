@@ -1,6 +1,6 @@
 name = "journeymap-neoforge"
 filename = "journeymap-neoforge-26.1.2-6.0.10.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://cdn.modrinth.com/data/lfHFW1mp/versions/9CsaQLo2/journeymap-neoforge-26.1.2-6.0.10.jar"

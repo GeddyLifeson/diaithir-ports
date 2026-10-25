@@ -553,7 +553,7 @@ metafile = true
 
 [[files]]
 file = "mods/DistantHorizons-3.3.3-26.1.2-fabric-neoforge.pw.toml"
-hash = "3ac1c14ddd8037becf2036fbe9bc8be601dc70c6a68975c2b963519201dee7b8"
+hash = "1d220fcc76880c073e7dce75c77749d6d2cc3f915e733c63e0905af211ac561d"
 metafile = true
 
 [[files]]
@@ -729,7 +729,7 @@ hash = "55fa393c6d9eeb6c88656ca57170093030b5046d893f918601ab5e24e253e03c"
 
 [[files]]
 file = "mods/MapFrontiers-26.1.2-neoforge-3.0.0-beta.13.pw.toml"
-hash = "95b499e79086ff5e1d6a08dbfc63b2e8e7fc14f21ce2c1b951b63b42afffd2aa"
+hash = "ddce448c06e98de2f0e8ec18e28264bd2f23e5750d0dbf2a0c2a9caa8bd4f2df"
 metafile = true
 
 [[files]]
@@ -1205,7 +1205,7 @@ metafile = true
 
 [[files]]
 file = "mods/configured-neoforge-26.1.2-2.7.5.pw.toml"
-hash = "00f3551e09668a7dab2d1aa26897ed60ae3c432aa2439c6781a7f6ff5c986723"
+hash = "cb81d80612e15051ae576e7a474070ea5b17e3966f5937ac689565b63b51c5e3"
 metafile = true
 
 [[files]]
@@ -1620,7 +1620,7 @@ metafile = true
 
 [[files]]
 file = "mods/journeymap-neoforge-26.1.2-6.0.10.pw.toml"
-hash = "21f12c9062468269339d9734158553e0643d0340b59f51966e6da91eee09c99b"
+hash = "961c1d3563e40b1e5a64a02636c578cf69392a6146508741a3b383357b2f92d3"
 metafile = true
 
 [[files]]
