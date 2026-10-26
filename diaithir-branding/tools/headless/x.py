@@ -7,6 +7,10 @@ def click(x, y):
     xtest.fake_input(d, X.MotionNotify, x=x, y=y); d.sync(); time.sleep(0.2)
     xtest.fake_input(d, X.ButtonPress, 1); d.sync(); time.sleep(0.1)
     xtest.fake_input(d, X.ButtonRelease, 1); d.sync()
+def rclick(x, y):
+    xtest.fake_input(d, X.MotionNotify, x=x, y=y); d.sync(); time.sleep(0.2)
+    xtest.fake_input(d, X.ButtonPress, 3); d.sync(); time.sleep(0.1)
+    xtest.fake_input(d, X.ButtonRelease, 3); d.sync()
 def key(name):
     k = d.keysym_to_keycode(XK.string_to_keysym(name))
     xtest.fake_input(d, X.KeyPress, k); d.sync(); time.sleep(0.1)
@@ -24,6 +28,7 @@ def typ(text):
         d.sync(); time.sleep(0.02)
 for a in sys.argv[1:]:
     if a.startswith('t'): typ(a[1:]); continue
-    if a.startswith('c'): x, y = a[1:].split(','); click(int(x), int(y))
+    if a.startswith('r'): x, y = a[1:].split(','); rclick(int(x), int(y))
+    elif a.startswith('c'): x, y = a[1:].split(','); click(int(x), int(y))
     elif a.startswith('k'): key(a[1:])
     elif a.startswith('w'): time.sleep(float(a[1:]))
