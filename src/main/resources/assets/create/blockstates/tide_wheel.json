@@ -1,29 +1,55 @@
 {
  "variants": {
-  "facing=north": {
+  "facing=north,lit=false": {
    "model": "create:block/tide_wheel",
    "x": 90
   },
-  "facing=east": {
+  "facing=north,lit=true": {
+   "model": "create:block/tide_wheel_lit",
+   "x": 90
+  },
+  "facing=east,lit=false": {
    "model": "create:block/tide_wheel",
    "x": 90,
    "y": 90
   },
-  "facing=south": {
+  "facing=east,lit=true": {
+   "model": "create:block/tide_wheel_lit",
+   "x": 90,
+   "y": 90
+  },
+  "facing=south,lit=false": {
    "model": "create:block/tide_wheel",
    "x": 90,
    "y": 180
   },
-  "facing=west": {
+  "facing=south,lit=true": {
+   "model": "create:block/tide_wheel_lit",
+   "x": 90,
+   "y": 180
+  },
+  "facing=west,lit=false": {
    "model": "create:block/tide_wheel",
    "x": 90,
    "y": 270
   },
-  "facing=up": {
+  "facing=west,lit=true": {
+   "model": "create:block/tide_wheel_lit",
+   "x": 90,
+   "y": 270
+  },
+  "facing=up,lit=false": {
    "model": "create:block/tide_wheel"
   },
-  "facing=down": {
+  "facing=up,lit=true": {
+   "model": "create:block/tide_wheel_lit"
+  },
+  "facing=down,lit=false": {
    "model": "create:block/tide_wheel",
+   "x": 180
+  },
+  "facing=down,lit=true": {
+   "model": "create:block/tide_wheel_lit",
    "x": 180
   }
  }
