@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivetrees"},{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:liquefaction","category":"misc","ingredient":"productivetrees:coconut","result":{"type":"theurgy:item","id":"theurgy:alchemical_sulfur_coconut"},"solvent":{"amount":10,"ingredient":"theurgy:sal_ammoniac"},"time":100}

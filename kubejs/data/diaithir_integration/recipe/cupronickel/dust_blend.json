@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"modern_industrialization"}],"type":"minecraft:crafting_shapeless","category":"misc","ingredients":["#c:dusts/copper","#c:dusts/nickel"],"result":{"id":"modern_industrialization:cupronickel_dust","count":2}}

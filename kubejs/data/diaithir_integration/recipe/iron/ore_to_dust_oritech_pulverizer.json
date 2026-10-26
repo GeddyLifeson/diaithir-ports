@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"occultism"},{"type":"neoforge:mod_loaded","modid":"oritech"},{"type":"neoforge:not","value":{"type":"neoforge:tag_empty","tag":"c:ores/iron"}}],"type":"oritech:pulverizer","itemInputs":["#c:ores/iron"],"itemResults":[{"id":"occultism:iron_dust","count":2}],"time":100}

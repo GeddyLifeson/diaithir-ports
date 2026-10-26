@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"neovitae"}],"type":"neovitae:flask_effect","baseDuration":1800,"effect":"minecraft:saturation","input":["neovitae:simple_catalyst","minecraft:pitcher_plant"],"syphon":500,"ticks":200,"upgradeLevel":1}

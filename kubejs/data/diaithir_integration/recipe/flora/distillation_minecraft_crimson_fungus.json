@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:distillation","category":"misc","ingredient":{"count":2,"ingredient":"minecraft:crimson_fungus"},"result":{"id":"theurgy:mercury_shard"},"time":100}

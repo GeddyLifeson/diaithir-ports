@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"neovitae"}],"type":"neovitae:flask_effect","baseDuration":1800,"effect":"minecraft:water_breathing","input":["neovitae:simple_catalyst","minecraft:lily_of_the_valley"],"syphon":500,"ticks":200,"upgradeLevel":1}

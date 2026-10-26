@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"mekanism"},{"type":"neoforge:mod_loaded","modid":"oritech"}],"type":"oritech:pulverizer","itemInputs":["#c:ingots/osmium"],"itemResults":[{"id":"mekanism:dust_osmium"}],"time":100}

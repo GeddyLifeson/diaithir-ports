@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"productivetrees"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:mahogany_fence_gate","result":{"id":"productivetrees:mahogany_fence_gate","count":1}}

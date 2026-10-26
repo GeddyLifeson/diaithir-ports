@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"croptopia"},{"type":"neoforge:mod_loaded","modid":"neovitae"}],"type":"neovitae:flask_effect","baseDuration":1800,"effect":"minecraft:glowing","input":["neovitae:simple_catalyst","croptopia:mango"],"syphon":500,"ticks":200,"upgradeLevel":1}

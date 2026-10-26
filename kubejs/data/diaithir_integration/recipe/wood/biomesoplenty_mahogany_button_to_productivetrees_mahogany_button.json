@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"productivetrees"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:mahogany_button","result":{"id":"productivetrees:mahogany_button","count":1}}

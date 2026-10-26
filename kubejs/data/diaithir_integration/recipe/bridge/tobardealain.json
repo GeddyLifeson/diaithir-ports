@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"diaithirbridges"}],"type":"minecraft:crafting_shaped","category":"misc","pattern":["SSS","TMT","SSS"],"key":{"S":"#c:plates/steel","T":"#c:ingots/copper","M":"#diaithir_integration:herb_dusts"},"result":{"id":"diaithirbridges:tobardealain"}}

@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"productivetrees"}],"type":"minecraft:stonecutting","ingredient":"productivetrees:mahogany_door","result":{"id":"biomesoplenty:mahogany_door","count":1}}
