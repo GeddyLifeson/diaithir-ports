@@ -25,8 +25,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * Every resource listing (each registry's tags, data maps, registry entries) walked every entry of every mod jar.
  * With 316 jars that was 62% of server startup CPU. Each pack now keeps a sorted list of its file names per pack
  * type, built on first use and dropped on close, and a listing is a binary search.
+ *
+ * ModernFix (perf.resourcepacks) also injects at HEAD of listResources/close. Priority 500 makes this mixin run before it, so
+ * ownership is deterministic (PERF.md: ModernFix's own index does not take effect on 26.1, ours does). Disable the duplicate with
+ * mixin.perf.resourcepacks=false in config/modernfix-mixins.properties so the two never both emit a listing.
  */
-@Mixin(FilePackResources.class)
+@Mixin(value = FilePackResources.class, priority = 500)
 abstract class FilePackResourcesMixin {
     @Unique private static final Logger diaithirperf$LOG = LogUtils.getLogger();
     @Shadow @Final private FilePackResources.SharedZipFileAccess zipFileAccess;
