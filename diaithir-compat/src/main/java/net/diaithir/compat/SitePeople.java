@@ -170,7 +170,7 @@ public final class SitePeople {
             if (!tag.startsWith("site_")) continue;
             String site = tag.substring(5);
             // ruined, or left over from before the site was re-raised (its people carry an older generation)
-            if (RUINED.contains(site) || gen != GEN.getOrDefault(site, 0)) {
+            if (RUINED.contains(site) || (genReadable && gen != GEN.getOrDefault(site, 0))) {
                 event.setCanceled(true);
                 return;
             }
