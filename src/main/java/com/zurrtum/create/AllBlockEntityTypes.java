@@ -58,6 +58,7 @@ import com.zurrtum.create.content.kinetics.mechanicalArm.ArmBlockEntity;
 import com.zurrtum.create.content.kinetics.millstone.MillstoneBlockEntity;
 import com.zurrtum.create.content.kinetics.mixer.MechanicalMixerBlockEntity;
 import com.zurrtum.create.content.kinetics.motor.CreativeMotorBlockEntity;
+import com.zurrtum.create.content.kinetics.motor.TideWheelBlockEntity;
 import com.zurrtum.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.zurrtum.create.content.kinetics.saw.SawBlockEntity;
 import com.zurrtum.create.content.kinetics.simpleRelays.BracketedKineticBlockEntity;
@@ -136,6 +137,11 @@ public class AllBlockEntityTypes {
         "motor",
         CreativeMotorBlockEntity::new,
         AllBlocks.CREATIVE_MOTOR
+    );
+    public static final BlockEntityType<TideWheelBlockEntity> TIDE_WHEEL = register(
+        "tide_wheel",
+        TideWheelBlockEntity::new,
+        AllBlocks.TIDE_WHEEL
     );
     public static final BlockEntityType<SequencedGearshiftBlockEntity> SEQUENCED_GEARSHIFT = register("sequenced_gearshift",
         SequencedGearshiftBlockEntity::new,

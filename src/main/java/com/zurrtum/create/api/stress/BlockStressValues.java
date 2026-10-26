@@ -75,5 +75,6 @@ public class BlockStressValues {
         BlockStressValues.setGeneratorSpeed(AllBlocks.BLACK_VALVE_HANDLE, 32);
         BlockStressValues.setGeneratorSpeed(AllBlocks.STEAM_ENGINE, 64, true);
         BlockStressValues.setGeneratorSpeed(AllBlocks.CREATIVE_MOTOR, 256, true);
+        BlockStressValues.setGeneratorSpeed(AllBlocks.TIDE_WHEEL, 32);
     }
 }

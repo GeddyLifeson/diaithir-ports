@@ -75,6 +75,7 @@ import com.zurrtum.create.content.kinetics.mechanicalArm.ArmBlock;
 import com.zurrtum.create.content.kinetics.millstone.MillstoneBlock;
 import com.zurrtum.create.content.kinetics.mixer.MechanicalMixerBlock;
 import com.zurrtum.create.content.kinetics.motor.CreativeMotorBlock;
+import com.zurrtum.create.content.kinetics.motor.TideWheelBlock;
 import com.zurrtum.create.content.kinetics.press.MechanicalPressBlock;
 import com.zurrtum.create.content.kinetics.saw.SawBlock;
 import com.zurrtum.create.content.kinetics.simpleRelays.CogWheelBlock;
@@ -211,6 +212,11 @@ public class AllBlocks {
         "creative_motor",
         CreativeMotorBlock::new,
         BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.COLOR_PURPLE).forceSolidOn()
+    );
+    public static final TideWheelBlock TIDE_WHEEL = register(
+        "tide_wheel",
+        TideWheelBlock::new,
+        BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.COLOR_CYAN).forceSolidOn()
     );
     public static final SpeedControllerBlock ROTATION_SPEED_CONTROLLER = register(
         "rotation_speed_controller",
@@ -3644,5 +3650,6 @@ public class AllBlocks {
         CStress.setCapacity(WINDMILL_BEARING, 512.0);
         CStress.setCapacity(STEAM_ENGINE, 1024.0);
         CStress.setCapacity(CREATIVE_MOTOR, 16384.0);
+        CStress.setCapacity(TIDE_WHEEL, 128.0);
     }
 }

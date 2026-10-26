@@ -80,6 +80,7 @@ import com.zurrtum.create.client.content.kinetics.millstone.MillstoneVisual;
 import com.zurrtum.create.client.content.kinetics.mixer.MechanicalMixerRenderer;
 import com.zurrtum.create.client.content.kinetics.mixer.MixerVisual;
 import com.zurrtum.create.client.content.kinetics.motor.CreativeMotorRenderer;
+import com.zurrtum.create.client.content.kinetics.motor.TideWheelRenderer;
 import com.zurrtum.create.client.content.kinetics.press.MechanicalPressRenderer;
 import com.zurrtum.create.client.content.kinetics.press.PressVisual;
 import com.zurrtum.create.client.content.kinetics.saw.SawRenderer;
@@ -194,6 +195,11 @@ public class AllBlockEntityRenders {
         visual(
             AllBlockEntityTypes.MOTOR,
             CreativeMotorRenderer::new,
+            OrientedRotatingVisual.of(AllPartialModels.SHAFT_HALF)
+        );
+        visual(
+            AllBlockEntityTypes.TIDE_WHEEL,
+            TideWheelRenderer::new,
             OrientedRotatingVisual.of(AllPartialModels.SHAFT_HALF)
         );
         visual(AllBlockEntityTypes.ROTATION_SPEED_CONTROLLER, ShaftRenderer::new, SingleAxisRotatingVisual::shaft);

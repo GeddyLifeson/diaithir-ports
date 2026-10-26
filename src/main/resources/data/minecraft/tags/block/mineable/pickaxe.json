@@ -19,6 +19,7 @@
     "create:belt",
     "create:chain_conveyor",
     "create:creative_motor",
+    "create:tide_wheel",
     "create:water_wheel",
     "create:large_water_wheel",
     "create:water_wheel_structure",

@@ -62,6 +62,7 @@ public class AllCreativeModeTabs {
         entries.accept(AllItems.BELT_CONNECTOR);
         entries.accept(AllItems.CHAIN_CONVEYOR);
         entries.accept(AllItems.CREATIVE_MOTOR);
+        entries.accept(AllItems.TIDE_WHEEL);
         entries.accept(AllItems.WATER_WHEEL);
         entries.accept(AllItems.LARGE_WATER_WHEEL);
         entries.accept(AllItems.ENCASED_FAN);
