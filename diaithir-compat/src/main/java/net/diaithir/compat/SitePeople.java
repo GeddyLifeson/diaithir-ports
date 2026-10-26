@@ -45,6 +45,7 @@ import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -123,13 +124,17 @@ public final class SitePeople {
         return server.getWorldPath(LevelResource.DATA).resolve(GEN_FILE);
     }
 
-    private static void saveGens() {
+    private static boolean saveGens() {
         try {
             Path file = genFile();
             Files.createDirectories(file.getParent());
-            Files.write(file, new TreeMap<>(GEN).entrySet().stream().map(e -> e.getKey() + "=" + e.getValue()).toList());
+            Path tmp = file.resolveSibling(GEN_FILE + ".tmp");
+            Files.write(tmp, new TreeMap<>(GEN).entrySet().stream().map(e -> e.getKey() + "=" + e.getValue()).toList());
+            Files.move(tmp, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+            return true;
         } catch (IOException e) {
             LOG.warn("Could not write {}", GEN_FILE, e);
+            return false;
         }
     }
 
@@ -219,7 +224,10 @@ public final class SitePeople {
         if (kit == null) return out;
         if (RUINED.remove(site)) saveRuined();
         int generation = GEN.merge(site, 1, Integer::sum); // people still in unloaded chunks now carry an older generation
-        saveGens();
+        if (!saveGens()) {
+            GEN.merge(site, -1, Integer::sum); // unpersisted generation: keep the old one and spawn nobody
+            return out;
+        }
         removeLoaded(level.getServer(), site);
 
         RandomSource random = RandomSource.create(site.hashCode() * 31L + type.hashCode());
