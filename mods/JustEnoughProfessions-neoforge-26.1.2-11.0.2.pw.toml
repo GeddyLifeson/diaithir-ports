@@ -1,6 +1,6 @@
 name = "JustEnoughProfessions-neoforge"
 filename = "JustEnoughProfessions-neoforge-26.1.2-11.0.2.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://edge.forgecdn.net/files/7966/706/JustEnoughProfessions-neoforge-26.1.2-11.0.2.jar"

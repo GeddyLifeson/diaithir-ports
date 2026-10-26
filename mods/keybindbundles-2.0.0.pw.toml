@@ -1,6 +1,6 @@
 name = "keybindbundles"
 filename = "keybindbundles-2.0.0.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://edge.forgecdn.net/files/8012/008/keybindbundles-2.0.0.jar"

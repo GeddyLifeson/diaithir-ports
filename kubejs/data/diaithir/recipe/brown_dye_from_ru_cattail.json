@@ -1,0 +1,8 @@
+{
+  "neoforge:conditions": [{ "type": "neoforge:mod_loaded", "modid": "regions_unexplored" }],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "brown_dye",
+  "ingredients": ["regions_unexplored:cattail"],
+  "result": { "id": "minecraft:brown_dye" }
+}

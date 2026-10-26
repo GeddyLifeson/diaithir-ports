@@ -1,6 +1,6 @@
 README.md
 LICENSES.md
 Diaithir.zip
-source/
-client/
+/source/
+/client/
 .gitattributes

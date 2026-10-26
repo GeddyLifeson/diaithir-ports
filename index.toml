@@ -41,6 +41,10 @@ file = "config/integrateddynamics-common.toml"
 hash = "afd73d64ac978202fcfadf461cb60294cd54cf1a194bb9a3fdd5da466b9e8846"
 
 [[files]]
+file = "config/jei/client/default/jei-client.ini"
+hash = "688c28298f685513a6451c3298564d51ddd24da2dce05e77cefcdf4ab71cbb6c"
+
+[[files]]
 file = "config/mca.json"
 hash = "11188b6e6d0dc994381cbecd969e1fd85aa06389aa1ef0b2c4275069b42c5b0f"
 
@@ -253,6 +257,18 @@ file = "kubejs/assets/roulettecasino/lang/en_us.json"
 hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
 
 [[files]]
+file = "kubejs/client_scripts/diaithir/chisel_jei.js"
+hash = "57b0bad32b9f9484f6b6e88414162d4109fe28de1173309c3761aee12b5db42f"
+
+[[files]]
+file = "kubejs/data/diaithir/recipe/brown_dye_from_bop_cattail.json"
+hash = "d5a91a765394ed4a474f8edccad0f0747bd94750c0f681a55a89a5be37201232"
+
+[[files]]
+file = "kubejs/data/diaithir/recipe/brown_dye_from_ru_cattail.json"
+hash = "0bce65ae934ce60f8d30494edbb46447eb237ed001004f46997b8ac1ed56d9f0"
+
+[[files]]
 file = "kubejs/data/diaithir_worlds/dimension/an_fhainne_mhor.json"
 hash = "a327c9bf20b559206d355ab6a42ecd156e55de9d97dd7edc0d06f78a5584d092"
 
@@ -409,8 +425,40 @@ file = "kubejs/data/diaithir_worlds/worldgen/noise_settings/talamh_reota.json"
 hash = "ecd7675541a32ce6354b6ff4dea3667c08145cb3ba6890a552cda30aea3311da"
 
 [[files]]
+file = "kubejs/data/minecraft/enchantment/sharpness.json"
+hash = "168579f9ec168e6a0033d52cc9eb21bee995b1efc084c8b7e23b75e23e51b6ea"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/desert_pyramid.json"
+hash = "6773a5416886ac67e2c3069a765ee24d3e751d5631c296eee6803b39d733dd76"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_desert.json"
+hash = "554ea45e8b272f6d39f87376d528b0e71f810bf5bbd8ef2702cad7e2f9ddcc77"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_plains.json"
+hash = "f3954dcd477fc40f1d94a9c8c69c09e5c9fc625ba94792e13d40f2cbe9925d7f"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_savanna.json"
+hash = "92b3b7ecc1fe5ef5c00b7b7e0fe8b29d22a1b176fdbd852eac901e48396411fb"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_snowy.json"
+hash = "22e3abaf8566cbdb2c687294e64b49d5986a28f4a3d05abf566e2be25105ff02"
+
+[[files]]
+file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_taiga.json"
+hash = "8fb73f898b952d7aaed8cc3b54f0afc02137f6171f9c6e541bf07f69586c5493"
+
+[[files]]
+file = "kubejs/server_scripts/diaithir/worldgen_diag.js"
+hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
+
+[[files]]
 file = "kubejs/server_scripts/speuran/age_gate.js"
-hash = "9cb52a13b4d369298f4bba04201330bc2f98554986dfeeed90eb72aa0e17682f"
+hash = "1286a28174044b239a9fd41f59fc5fc7ac73a62f82da0c6de8f9bb7b9b953317"
 
 [[files]]
 file = "kubejs/startup_scripts/deepworlds/works.js"
@@ -435,6 +483,10 @@ hash = "64991bffa80630dbaa13a593000023da345ecfb3c4039b5f4b2701c3f1fb5a18"
 [[files]]
 file = "kubejs/startup_scripts/economy/items.js"
 hash = "82fbaa00c3a79b9ef92033c67f852bd5e13ed19ddd230c5bba76e6a47bc2971c"
+
+[[files]]
+file = "kubejs/startup_scripts/speuran/age_gate_state.js"
+hash = "82a864c5da0faededc27702dda5bd8d9a3b7ca2bfd770ae172aaac6529d36294"
 
 [[files]]
 file = "mods/AE2NetworkAnalyzer-26.1-1.0.0-neoforge.pw.toml"
@@ -573,7 +625,7 @@ metafile = true
 
 [[files]]
 file = "mods/EnchantmentDescriptions-neoforge-MC26.1.2-26.1.2.6.pw.toml"
-hash = "f7625adb1eb50a76b3720139c3625688f9246984f6fb644843a6836f29445439"
+hash = "f954236ba6ea57c64039dc031d510dea15fccf388a2da1a668a04fb8239e1472"
 metafile = true
 
 [[files]]
@@ -704,7 +756,7 @@ metafile = true
 
 [[files]]
 file = "mods/JustEnoughProfessions-neoforge-26.1.2-11.0.2.pw.toml"
-hash = "7b420c6705fc92981bda6796170b981035179173a2843be321fbe36802c92752"
+hash = "af45fdd863e55b248536034de0cd2aa8a8e77250a65c6a4a1cc36246d31610cc"
 metafile = true
 
 [[files]]
@@ -1653,7 +1705,7 @@ metafile = true
 
 [[files]]
 file = "mods/keybindbundles-2.0.0.pw.toml"
-hash = "db7e0dd11d07042950d58712c9d693aee252974c76d0a1da4ff3a2099943df30"
+hash = "1f69e3dfbe750134ce2a9cf977115650f731667551f7500060150d03ab11c207"
 metafile = true
 
 [[files]]
@@ -1970,7 +2022,7 @@ metafile = true
 
 [[files]]
 file = "mods/refinedstorage-jei-integration-neoforge-2.0.1.pw.toml"
-hash = "63362dcd57686350cf69bd46f4ca07250a7a3f383a2e3eb85fe1dbf4aef14f86"
+hash = "4b90ffa8cce568b2f8d17cd53ce247c997d16c5b528da12fa1a3c142251f1ea7"
 metafile = true
 
 [[files]]
@@ -2178,7 +2230,7 @@ metafile = true
 
 [[files]]
 file = "mods/structurememory-26.1.x-neoforge-1.0.0.pw.toml"
-hash = "58fb8834c5b4e8d0db566e81040292815dfffd823badfbb494634a46220ef321"
+hash = "007e8f293a557519663148c9e46f2e788b7db43575c1de915c9459d8af448daa"
 metafile = true
 
 [[files]]

@@ -1,6 +1,6 @@
 name = "EnchantmentDescriptions-neoforge-MC"
 filename = "EnchantmentDescriptions-neoforge-MC26.1.2-26.1.2.6.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://edge.forgecdn.net/files/8692/947/EnchantmentDescriptions-neoforge-MC26.1.2-26.1.2.6.jar"
