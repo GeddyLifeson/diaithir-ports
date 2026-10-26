@@ -71,6 +71,7 @@ public final class SitePeople {
     private static final String GEN_TAG = "sitegen_";
     /** The current generation of each re-raised site; people of an older generation are dropped when their chunk loads. */
     private static final Map<String, Integer> GEN = new ConcurrentHashMap<>();
+    private static volatile boolean genReadable = true;
     private static JsonObject data;
     private static MinecraftServer server;
 
@@ -93,6 +94,7 @@ public final class SitePeople {
         server = event.getServer();
         RUINED.clear();
         GEN.clear();
+        genReadable = true;
         try {
             Path gens = genFile();
             if (Files.exists(gens)) for (String line : Files.readAllLines(gens)) {
@@ -106,7 +108,8 @@ public final class SitePeople {
                 }
             }
         } catch (IOException e) {
-            LOG.warn("Could not read {}", GEN_FILE, e);
+            LOG.warn("Could not read {}; not overwriting it until the next start", GEN_FILE, e);
+            genReadable = false;
         }
         try {
             Path file = ruinedFile();
@@ -125,6 +128,7 @@ public final class SitePeople {
     }
 
     private static boolean saveGens() {
+        if (!genReadable) return false; // GEN is incomplete after a failed read; keep the file on disk
         try {
             Path file = genFile();
             Files.createDirectories(file.getParent());
@@ -222,12 +226,12 @@ public final class SitePeople {
         JsonObject people = cultures.getAsJsonObject(culture);
         JsonObject kit = kits == null ? null : kits.getAsJsonObject(people.get("kit").getAsString());
         if (kit == null) return out;
-        if (RUINED.remove(site)) saveRuined();
         int generation = GEN.merge(site, 1, Integer::sum); // people still in unloaded chunks now carry an older generation
         if (!saveGens()) {
             GEN.merge(site, -1, Integer::sum); // unpersisted generation: keep the old one and spawn nobody
             return out;
         }
+        if (RUINED.remove(site)) saveRuined();
         removeLoaded(level.getServer(), site);
 
         RandomSource random = RandomSource.create(site.hashCode() * 31L + type.hashCode());
