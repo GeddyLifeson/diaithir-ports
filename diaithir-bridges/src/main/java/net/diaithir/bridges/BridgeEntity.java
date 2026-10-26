@@ -36,6 +36,7 @@ public final class BridgeEntity extends BlockEntity implements WorldlyContainer 
     static final int RATE = 80;            // FE per tick while a reagent burns
     static final int OUT_PER_TICK = 2000;  // most the source pushes to neighbours per tick
     static final int COST = 20_000;        // FE per Duslachluibhe made by the charger
+    static final TagKey<Item> HERB = TagKey.create(Registries.ITEM, Identifier.parse("diaithir_integration:herb_dusts"));
     static final String OUT_ITEM = "diaithir_integration:duslachluibhe";
 
     private final NonNullList<ItemStack> slot = NonNullList.withSize(1, ItemStack.EMPTY);
@@ -61,7 +62,7 @@ public final class BridgeEntity extends BlockEntity implements WorldlyContainer 
     /** FE a stack of fuel is worth per item, or empty when it is not a magic reagent. */
     static OptionalInt fuelValue(ItemStack s) {
         if (s.isEmpty() || !s.is(FUEL)) return OptionalInt.empty();
-        return OptionalInt.of(s.is(BuiltInRegistries.ITEM.getValue(Identifier.parse(OUT_ITEM))) ? 4_000 : 16_000);
+        return OptionalInt.of(s.is(HERB) || s.is(BuiltInRegistries.ITEM.getValue(Identifier.parse(OUT_ITEM))) ? 4_000 : 16_000);
     }
 
     void serverTick() {
