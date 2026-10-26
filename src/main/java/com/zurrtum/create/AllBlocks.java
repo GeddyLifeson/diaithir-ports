@@ -218,6 +218,21 @@ public class AllBlocks {
         TideWheelBlock::new,
         BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.COLOR_CYAN).forceSolidOn()
     );
+    public static final TideWheelBlock TIDE_WHEEL_BRASS = register(
+        "tide_wheel_brass",
+        properties -> new TideWheelBlock(properties, 2),
+        BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.TERRACOTTA_YELLOW).forceSolidOn()
+    );
+    public static final TideWheelBlock TIDE_WHEEL_GOLD = register(
+        "tide_wheel_gold",
+        properties -> new TideWheelBlock(properties, 3),
+        BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.GOLD).forceSolidOn()
+    );
+    public static final TideWheelBlock TIDE_WHEEL_SILVER = register(
+        "tide_wheel_silver",
+        properties -> new TideWheelBlock(properties, 4),
+        BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.COLOR_LIGHT_GRAY).forceSolidOn()
+    );
     public static final SpeedControllerBlock ROTATION_SPEED_CONTROLLER = register(
         "rotation_speed_controller",
         SpeedControllerBlock::new,
@@ -3651,5 +3666,8 @@ public class AllBlocks {
         CStress.setCapacity(STEAM_ENGINE, 1024.0);
         CStress.setCapacity(CREATIVE_MOTOR, 16384.0);
         CStress.setCapacity(TIDE_WHEEL, 128.0);
+        CStress.setCapacity(TIDE_WHEEL_BRASS, 192.0);
+        CStress.setCapacity(TIDE_WHEEL_GOLD, 256.0);
+        CStress.setCapacity(TIDE_WHEEL_SILVER, 384.0);
     }
 }

@@ -1,7 +1,6 @@
 package com.zurrtum.create.content.kinetics.motor;
 
 import com.zurrtum.create.AllBlockEntityTypes;
-import com.zurrtum.create.AllBlocks;
 import com.zurrtum.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +21,6 @@ import net.minecraft.world.level.storage.ValueOutput;
 public class TideWheelBlockEntity extends GeneratingKineticBlockEntity implements WorldlyContainer {
 
     public static final TagKey<Item> FUEL = TagKey.create(Registries.ITEM, Identifier.parse("diaithir_integration:magic_fuel"));
-    public static final int SPEED = 32;
     public static final int TICKS_PER_ITEM = 3000;
     public static final int MAX_BURN = TICKS_PER_ITEM * 8;
 
@@ -61,7 +59,7 @@ public class TideWheelBlockEntity extends GeneratingKineticBlockEntity implement
 
     private void setLit(boolean lit) {
         BlockState state = getBlockState();
-        if (level != null && state.is(AllBlocks.TIDE_WHEEL) && state.getValue(TideWheelBlock.LIT) != lit) {
+        if (level != null && state.getBlock() instanceof TideWheelBlock && state.getValue(TideWheelBlock.LIT) != lit) {
             level.setBlock(worldPosition, state.setValue(TideWheelBlock.LIT, lit), 3);
         }
     }
@@ -93,7 +91,8 @@ public class TideWheelBlockEntity extends GeneratingKineticBlockEntity implement
         if (speed == 0 && !hasSource()) {
             updateGeneratedRotation(); // fuel arrived with the saved data, after the first initialize
         }
-        if (--burn == 0) {
+        burn = Math.max(0, burn - ((TideWheelBlock) getBlockState().getBlock()).burnPerTick());
+        if (burn == 0) {
             updateGeneratedRotation();
             setLit(false);
             sendData();
@@ -102,10 +101,10 @@ public class TideWheelBlockEntity extends GeneratingKineticBlockEntity implement
 
     @Override
     public float getGeneratedSpeed() {
-        if (!getBlockState().is(AllBlocks.TIDE_WHEEL) || burn <= 0) {
+        if (!(getBlockState().getBlock() instanceof TideWheelBlock wheel) || burn <= 0) {
             return 0;
         }
-        return convertToDirection(SPEED, getBlockState().getValue(TideWheelBlock.FACING));
+        return convertToDirection(wheel.speed(), getBlockState().getValue(TideWheelBlock.FACING));
     }
 
     @Override

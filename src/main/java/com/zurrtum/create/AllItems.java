@@ -111,6 +111,9 @@ public class AllItems {
         new Item.Properties().rarity(Rarity.EPIC)
     );
     public static final BlockItem TIDE_WHEEL = register(AllBlocks.TIDE_WHEEL);
+    public static final BlockItem TIDE_WHEEL_BRASS = register(AllBlocks.TIDE_WHEEL_BRASS);
+    public static final BlockItem TIDE_WHEEL_GOLD = register(AllBlocks.TIDE_WHEEL_GOLD);
+    public static final BlockItem TIDE_WHEEL_SILVER = register(AllBlocks.TIDE_WHEEL_SILVER);
     public static final BlockItem ROTATION_SPEED_CONTROLLER = register(AllBlocks.ROTATION_SPEED_CONTROLLER);
     public static final BlockItem GEARBOX = register(AllBlocks.GEARBOX);
     public static final BlockItem WATER_WHEEL = register(AllBlocks.WATER_WHEEL);

@@ -141,7 +141,10 @@ public class AllBlockEntityTypes {
     public static final BlockEntityType<TideWheelBlockEntity> TIDE_WHEEL = register(
         "tide_wheel",
         TideWheelBlockEntity::new,
-        AllBlocks.TIDE_WHEEL
+        AllBlocks.TIDE_WHEEL,
+        AllBlocks.TIDE_WHEEL_BRASS,
+        AllBlocks.TIDE_WHEEL_GOLD,
+        AllBlocks.TIDE_WHEEL_SILVER
     );
     public static final BlockEntityType<SequencedGearshiftBlockEntity> SEQUENCED_GEARSHIFT = register("sequenced_gearshift",
         SequencedGearshiftBlockEntity::new,

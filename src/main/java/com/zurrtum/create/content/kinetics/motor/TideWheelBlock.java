@@ -27,14 +27,43 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
-/** Muileannmara, the tide wheel: burns magic reagents (tag diaithir_integration:magic_fuel) and turns a shaft. */
+/**
+ * Cuibhleseòlmara, the tide wheel: burns magic reagents (tag diaithir_integration:magic_fuel) and turns a shaft. Four tiers: the same wheel in
+ * brass, gold and silver trim turns faster (32, 64, 128, 256 RPM), burns faster (1, 2, 4, 8 times) and carries more stress per RPM.
+ */
 public class TideWheelBlock extends DirectionalKineticBlock implements IBE<TideWheelBlockEntity> {
 
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
+    /** Tier 1 to 4: RPM, burn speed and stress capacity per RPM are in {@link #TIERS}. */
+    public static final int[][] TIERS = {{32, 1, 128}, {64, 2, 192}, {128, 4, 256}, {256, 8, 384}};
+
+    private final int tier;
+
     public TideWheelBlock(Properties properties) {
+        this(properties, 1);
+    }
+
+    public TideWheelBlock(Properties properties, int tier) {
         super(properties);
+        this.tier = tier;
         registerDefaultState(defaultBlockState().setValue(LIT, false));
+    }
+
+    public int tier() {
+        return tier;
+    }
+
+    public int speed() {
+        return TIERS[tier - 1][0];
+    }
+
+    public int burnPerTick() {
+        return TIERS[tier - 1][1];
+    }
+
+    public float stressPerRpm() {
+        return TIERS[tier - 1][2];
     }
 
     @Override
