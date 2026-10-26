@@ -684,9 +684,8 @@ hash = "0d917901f9f6df099122c394592cdcc4288b193bab132ef1d33b649ef1909e0a"
 metafile = true
 
 [[files]]
-file = "mods/Immersive_Vehicles-26.1-24.0.0.pw.toml"
-hash = "635e05b9066dac400223cc36e765e8f6a52310f9254bbb785ff57f6773a2532e"
-metafile = true
+file = "mods/Immersive_Vehicles-26.1-24.0.0-diaithir.1.jar"
+hash = "a38add7c66c9254931f39190e2e20670fa9ee8ed2771c341d69932808d41074c"
 
 [[files]]
 file = "mods/IronJetpacks-26.1.2-9.0.3.pw.toml"
