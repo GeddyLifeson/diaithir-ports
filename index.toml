@@ -1,8 +1,16 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/DistantHorizons.toml"
+hash = "57351f129e403022cf5370a56c096d3d9aaadf8acb52cd07313384f3bc0ef6bc"
+
+[[files]]
 file = "config/actuallyadditions-common.toml"
 hash = "c1b91664337503158c7b64da0741ab500fea1bd082554c67f5372fc5f0933f5a"
+
+[[files]]
+file = "config/entityculling.json"
+hash = "cbeb4e48dd022c17b38f8f0d8a2135233f10f13a0a58810d3e574b338846e932"
 
 [[files]]
 file = "config/fml.toml"
@@ -3981,6 +3989,18 @@ file = "kubejs/data/diaithir_integration/recipe/aluminum/ingot_to_dust_oritech_p
 hash = "1ea8c7b2ecadd9fc1386a59be3d315928c1a74d220284f449201939a992ee444"
 
 [[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/aibhnedealain.json"
+hash = "19824bc5846c222e43b4d29cf6d9c91588087047b88ff11bd918243ed55043d3"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/aibhnedealainoir.json"
+hash = "cb30e53b814e69076ec61dce424a874eb4346fbe1013e34a6acc37e3b3ff2dc0"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/aibhnedealainumha.json"
+hash = "a66cfaee7ac409a4546bfd83bc95c5cf0429e8bd9250099fe578a4b502fa2020"
+
+[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/arrow_cross.json"
 hash = "06a9dbe24a6120f88b4085179dba71a57eb1b22526e10c000a65ca20594adcaf"
 
@@ -5257,16 +5277,40 @@ file = "kubejs/data/diaithir_integration/recipe/bridge/lochrandraoidheachd.json"
 hash = "de73da58c257c0ed1de2e7c9774e2900bea9bfac72a885a4e1c42492d6892c6b"
 
 [[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/lochrandraoidheachdumha.json"
+hash = "feccd81c73f1578154bf0ab93ad75b842540030fa32c37db27c2208441b4800c"
+
+[[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/scale_plate.json"
 hash = "478b49a8d0197b82e7edceb3e3efa62844d9c2bf6207c66a31c5466460ee677d"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/tide_wheel.json"
-hash = "5c2d253240e0c400657a68cebb7fc55c348fd2bcf15a8c47b7750819c088a8eb"
+hash = "7cf363b278d417cd9b6e03864b252e6926f75d4f196dfe5e78bc1de43c7aaa45"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/tide_wheel_brass.json"
+hash = "813a1d87613cc320cdb54326de069f2611bc56843bc0f0654009b752976c3aba"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/tide_wheel_gold.json"
+hash = "1eb4cc8eeef5bb71280bbcc9e307dc48d12740517a68eb257bcb54d815d8ea08"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/tide_wheel_silver.json"
+hash = "34523b82b99fb94ebb331bd86fcb2486c189303474ed73a1751a78fdae3eb4ed"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/tobardealain.json"
 hash = "5d352a7891241163c316aef50eb1f39ef4dc79ce07b71b4da3038c8b3e4fe3b2"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/tobardealainoir.json"
+hash = "b53c61a1c9506aba522b747d2ffcd3887190900730e7a82be7d7f74ed2944a77"
+
+[[files]]
+file = "kubejs/data/diaithir_integration/recipe/bridge/tobardealainumha.json"
+hash = "7c0348467743fae90d996036b1abbc3d91de18bf6f9b9c339a5a8864c7991443"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bronze/dust_blend.json"
@@ -5318,7 +5362,7 @@ hash = "fc8c5cb26933cc4ed29f044dd036d02e77700ebb617861f15312f07c2f448169"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/copper/ore_to_dust_create_crushing.json"
-hash = "7555d6aa7aa350ee64ac6c2e21b1bc21c906dda8a9a0aedc418d8733ba177f50"
+hash = "f648de62ad732a55793a16e9205ced3d30e88022af0bcec93f29dd9052b2c6b3"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/copper/ore_to_dust_enderio_sag_milling.json"
@@ -9282,7 +9326,7 @@ hash = "c5c08e9e7bdb5a0ddf0339a03c31a5094010a29d4ff575262a51c66898bcb5d1"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/gold/ore_to_dust_create_crushing.json"
-hash = "3b0305d9b92adbed1c302422d0f530afb02527099dc67686d8e9cf3dad0ee45e"
+hash = "23e9399d9bc995bac245845f0d8df070b9e174ae597cf141978a7771fc3014d1"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/gold/ore_to_dust_enderio_sag_milling.json"
@@ -9354,7 +9398,7 @@ hash = "3da84cb8a8d6242200d42fa21d6d3a530a3badcd8fe3771ab3f9e8869435acfd"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/iridium/ore_to_dust_create_crushing.json"
-hash = "09cdf7809b577373bf4b378bacfecc495f1a2e489bcd9519eaf9df93bd0fd0aa"
+hash = "025c8091cce8c35147dbf878af968aad6042830fb20deb1f4c4e2d4a29db3931"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/iridium/ore_to_dust_enderio_sag_milling.json"
@@ -9402,7 +9446,7 @@ hash = "49ffd9bb3d30e8386a0cce02a5dd39839e9f9687f31cdbd732e2aaaeebd377ad"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/iron/ore_to_dust_create_crushing.json"
-hash = "04cff11be188f10412d0d84f6da04758d08242c762f5818208fed3bc43f742bb"
+hash = "77ad491267814ed1a349d739e129aaa78c490ada1325f14130bd2db0e2b26294"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/iron/ore_to_dust_enderio_sag_milling.json"
@@ -9446,7 +9490,7 @@ hash = "4c864eef5830a8fe99f7bdc4369f05a69e811943b2b22b9e58bf7bc9ea92ffc4"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/lead/ore_to_dust_create_crushing.json"
-hash = "55e702d9ed8836fd01874775102ec13c0ad8ce7326fddccc9e91254767588cbb"
+hash = "83d2f2c899d0842e397ac5a0a0ea72216b53ba323250892e9023f69db5881aa6"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/lead/ore_to_dust_enderio_sag_milling.json"
@@ -9674,7 +9718,7 @@ hash = "bcfdec2d77b834e4a50ad249676d800708f0eac56a0358567a6527707c517616"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/nickel/ore_to_dust_create_crushing.json"
-hash = "336296068282853acfc7905264155907e71fce88d71e5116b45e764781ce050d"
+hash = "6ff4df94c313f5fef00b832b7f12f2f068e5c008597e3081bd8c0d95f59d475e"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/nickel/ore_to_dust_enderio_sag_milling.json"
@@ -9718,7 +9762,7 @@ hash = "c939776da7a94844d18c9f5eaa698ee2be57aeecc5240e6e56e3f7e627c49e19"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/osmium/ore_to_dust_create_crushing.json"
-hash = "44ac8df4d7802262070b611c8d788f5d69814d5faecd432f2863aa4ed65217ee"
+hash = "4b3d36b36d7d696e71afe7c771425eaa7eb03caba0e759505affb9f137678c89"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/osmium/ore_to_dust_enderio_sag_milling.json"
@@ -9762,7 +9806,7 @@ hash = "23bc2850942eb258df02fcbaf0260aaccb82de3ce5e7fdacec12c5581f473e15"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/platinum/ore_to_dust_create_crushing.json"
-hash = "d5b5a8b61a26c97b85f0e2bf8a7a7e42b1a71267e9a50b1b702b5f5108ec0b2b"
+hash = "07b206b50fe5a7fe3d35b18278e038b9f96f5d0ff2fa8ea5827599a97efccb8c"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/platinum/ore_to_dust_enderio_sag_milling.json"
@@ -9810,7 +9854,7 @@ hash = "e010ed6a743bca2c9e838167a986ccc046bbf44a56792a56a51fd0655f046aba"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/silver/ore_to_dust_create_crushing.json"
-hash = "1a8b1a97402fe61b74286e82082d404d0a3caecaa1e88abbf06ab11dc53ff27d"
+hash = "9a5a6b84c617176e9a14b0640b0256865a694a5e08c4e8eca5d2e41179004043"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/silver/ore_to_dust_enderio_sag_milling.json"
@@ -9938,7 +9982,7 @@ hash = "e859817b405bee50adaab4d76d579d95f191f04bc9e741a6fc9117a0c8392dd7"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/tin/ore_to_dust_create_crushing.json"
-hash = "76a93d38fdc7227aca2be4966c0b26ad4d8f003d3a5d1472448584b968f7af06"
+hash = "f4ef9c9f412ef8746a0549324f529bdd8fa6c86c39fb6415c370b88f3bfa4037"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/tin/ore_to_dust_enderio_sag_milling.json"
@@ -9994,7 +10038,7 @@ hash = "b55d2c7b2c2f8e2a37da523fc94ddbbb58dfa8974883d20baf2d9146b16105eb"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/titanium/ore_to_dust_create_crushing.json"
-hash = "bff2b81444a8dca9135269cb5c10f16a91fab1ec1650c3f3b16460ea4bcc3a9f"
+hash = "f4b002e0f8283032d1679c2b5fed7df809547f2247231423b65160212d6aa5a3"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/titanium/ore_to_dust_enderio_sag_milling.json"
@@ -10050,7 +10094,7 @@ hash = "4dab5df7afba8ef64478749fcfc005dcfd563c12052c7061a3c07daed1030853"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/tungsten/ore_to_dust_create_crushing.json"
-hash = "5ee93df172c07aa669826254086b736f6000dac9bba9840e87e343f7ddafd57a"
+hash = "eb844b8359f1bfc26b8bd8e8e0bf74684837cb93f7a5c14fcec63b7cb0227ea7"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/tungsten/ore_to_dust_enderio_sag_milling.json"
@@ -10094,7 +10138,7 @@ hash = "336650071b97ddf28c7176a731f0396ab824386550d9d744a3f09842469fdae6"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/uranium/ore_to_dust_create_crushing.json"
-hash = "cc7c0379975d9a13a96f105041268229b1719454b14238e21ba21d49143fdb67"
+hash = "28a9f6e25fe96690e57b445fd83a4825ea0ee2545082e5f8f8855f7a1fec4a00"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/uranium/ore_to_dust_enderio_sag_milling.json"
@@ -10603,6 +10647,10 @@ hash = "22e3abaf8566cbdb2c687294e64b49d5986a28f4a3d05abf566e2be25105ff02"
 [[files]]
 file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_taiga.json"
 hash = "8fb73f898b952d7aaed8cc3b54f0afc02137f6171f9c6e541bf07f69586c5493"
+
+[[files]]
+file = "kubejs/data/modern_industrialization/tags/item/p2p_attunements/energy_p2p_tunnel.json"
+hash = "079b89f1b95b95b5e065eb3cd0dd9024f07cfb7dff103fc1f136f29812692a47"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_feast.js"
@@ -11451,8 +11499,8 @@ hash = "5ae188ee00c257bde7330af03a137034b3dd96bc7e25ddf89a59c93a4be8e0e4"
 metafile = true
 
 [[files]]
-file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.5.jar"
-hash = "673cfe1a430187eae05f1699cf8060d23d63daaea89697d35558467087ee5867"
+file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.6.jar"
+hash = "4302588cbb1f6fb07bd60d99b805a2b638d7321b90c180614079bc6d2bc42ac7"
 
 [[files]]
 file = "mods/cristellib-neoforge-26.1.2-3.1.13.pw.toml"
@@ -11510,21 +11558,21 @@ hash = "646cff771abe8dc80a9e1d1e70a821a1e25504417ee335a511b86b61ba74f6f6"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar"
-hash = "137f93d3a70b51366799f726ee81c3c77684fe9da8264a1de9b5e115635c07fc"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.2.jar"
+hash = "e90b509b4dd7c39f9f2baeab1943ca35191e5246d02aa6d927713a5cc76b33e8"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.0.jar"
 hash = "9f897755a409da07c27e55ee4dc6b1daad0a6e54d02d361a5da10e8f15e30e5a"
 
 [[files]]
-file = "mods/diaithir-branding-neoforge-26.1.2-1.0.3.pw.toml"
-hash = "edcc00e0961af9a07edb6c16ec1c9d1d2fe87b814ca3d1c203b0366c2fddfa78"
+file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
+hash = "4d3dd3836893f1454d887389bf2b31a6cab70bfeefb469cac52e7d6c6a22eefd"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-bridges-neoforge-26.1.2-1.0.0.jar"
-hash = "ead226cdf8131ec9f44d8fcfe1e001831ec49da48e6356dfdb4bba1b744d22ee"
+file = "mods/diaithir-bridges-neoforge-26.1.2-1.1.0.jar"
+hash = "85f6b727014d997515eb27f91e8235138fe316141836c69b0284f81bf7c90466"
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
@@ -12429,9 +12477,8 @@ hash = "32838486814de98aae6e914cc003e689715ada61d401165f9ae08e6ae46b42b7"
 metafile = true
 
 [[files]]
-file = "mods/trashcans-1.1.1a-neoforge-mc26.1.pw.toml"
-hash = "52a69a425d204d8a698eb9f5f2da5c9295d0e94199d020e6102808b01c5924c2"
-metafile = true
+file = "mods/trashcans-1.1.1a-neoforge-mc26.1-diaithir.1.jar"
+hash = "e7eb6694fb1f4abbe2992a9c3aab00d801d8395e2265f83ac40d083706c68866"
 
 [[files]]
 file = "mods/trashslot-neoforge-26.1.2-26.1.2.4.pw.toml"
@@ -12459,8 +12506,8 @@ hash = "7be1bb2f25fced12414b14135b23dbb1b45160ea7f184fa51929b1b71ac6f7ad"
 metafile = true
 
 [[files]]
-file = "mods/untamedwilds-26.1.2-3.0.1-diaithir.1.jar"
-hash = "46aad1058073c82e867c4da8408395d2f2d49df817681f2f76840eb9f5026200"
+file = "mods/untamedwilds-26.1.2-3.0.1-diaithir.2.jar"
+hash = "396749f6d36d5d4097908ff92ada55f164ac90ceb1692f1d468751e9b966dc44"
 
 [[files]]
 file = "mods/uranus-3.0-alpha.1-neoforge-26.1.2-diaithir.1.jar"
@@ -12523,4 +12570,9 @@ metafile = true
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
 hash = "8c3d4b9a6b51416e51d9249f3f15e768acbfc04e0f73d55f08538b44c21672b9"
+metafile = true
+
+[[files]]
+file = "resourcepacks/diaithir-ui.pw.toml"
+hash = "89a8bd8e0674f2b7a8f1f6421cdc59627fac4a8c864a10047438d6f5476bc6ca"
 metafile = true

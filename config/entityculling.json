@@ -1,0 +1,11 @@
+{
+  "configVersion": 9,
+  "entityWhitelist": [
+    "botania:mana_burst",
+    "drg_flares:drg_flares",
+    "quark:soul_bead",
+    "mts:builder_existing",
+    "mts:builder_rendering",
+    "mts:builder_seat"
+  ]
+}
