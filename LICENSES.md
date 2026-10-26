@@ -16,7 +16,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar | MIT (Tinkers' Construct by SlimeKnights; registry lookup fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct), patch: [source/TinkersConstruct-3.12.13-diaithir.1](source/TinkersConstruct-3.12.13-diaithir.1) |
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
-| diaithir-ages-neoforge-26.1.2-0.1.0.jar | Diaithir engine, ours; free to play with the pack | not published |
+| diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.1.jar | Diaithir engine, ours; free to play with the pack | not published |
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
 | diaithir-nemesis-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis) |
 | diaithir-perf-neoforge-26.1.2-0.3.0.jar | LGPL-3.0-only | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/project-thread-t61szp/diaithir-perf) |
@@ -46,6 +46,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | walkers-neoforge-8.2-diaithir.1.jar | MIT (Woodwalkers by ToCraft, player renderer fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/woodwalkers) |
 | craftedcore-neoforge-8.1-diaithir.1.jar | LGPL-3.0 (CraftedCore by ToCraft, synced registry fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/craftedcore) |
 | Vampirism-26.1.2-2.0.0-alpha.2-diaithir.1.jar | LGPL-3.0 (Vampirism by TeamLapen, splash list fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/vampirism) |
+| create-neoforge-26.1.2-6.0.9-diaithir.4.jar | MIT (Create and Create Fly code and data, copyright the Create and Create Fly authors); Create Fly's own additions CC0; all art, sounds and language files are ours (original generated work, same licence as the rest of this repository); no All Rights Reserved Create art is included | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/create), notes: [source/create-26.1.2-6.0.9-diaithir.4](source/create-26.1.2-6.0.9-diaithir.4) |
 
 client/resourcepacks/diaithir-sounds.zip (the Diaithir Sounds resource pack) holds CC0, CC-BY, OGA-BY and CC-BY-SA music and sound; the credits are in CREDITS.md inside the zip.
 
@@ -64,7 +65,6 @@ Each downloads from its author's Modrinth CDN with the sha256 in its `.pw.toml`.
 | The Backrooms (legacy) | 2.10.11 | MIT (a data pack in a jar, by Aria976 and bellfish) | https://modrinth.com/datapack/the-backrooms |
 
 Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
-| create-neoforge-26.1.2-6.0.9-diaithir.4.jar | MIT (Create and Create Fly code and data, copyright the Create and Create Fly authors); Create Fly's own additions CC0; all art, sounds and language files are ours (original generated work, same licence as the rest of this repository); no All Rights Reserved Create art is included | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/create), notes: [source/create-26.1.2-6.0.9-diaithir.4](source/create-26.1.2-6.0.9-diaithir.4) |
 
 ## No longer distributed
 
