@@ -41,10 +41,6 @@ file = "config/integrateddynamics-common.toml"
 hash = "afd73d64ac978202fcfadf461cb60294cd54cf1a194bb9a3fdd5da466b9e8846"
 
 [[files]]
-file = "config/jei/client/default/jei-client.ini"
-hash = "688c28298f685513a6451c3298564d51ddd24da2dce05e77cefcdf4ab71cbb6c"
-
-[[files]]
 file = "config/mca.json"
 hash = "11188b6e6d0dc994381cbecd969e1fd85aa06389aa1ef0b2c4275069b42c5b0f"
 
@@ -255,10 +251,6 @@ hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
 [[files]]
 file = "kubejs/assets/roulettecasino/lang/en_us.json"
 hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
-
-[[files]]
-file = "kubejs/client_scripts/diaithir/chisel_jei.js"
-hash = "57b0bad32b9f9484f6b6e88414162d4109fe28de1173309c3761aee12b5db42f"
 
 [[files]]
 file = "kubejs/data/diaithir/recipe/brown_dye_from_bop_cattail.json"
@@ -474,7 +466,7 @@ hash = "c289e80c63dc8ae31bec523017ecefc52a8087c982d52f2d05a5e31877263688"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/mekanism_processing.js"
-hash = "acbda732d2abe7eb58258d997c00622059c8509ff59bef80b3b460984f131eed"
+hash = "30d198a5ea764ddae477ddc81a4be97941412670c8da8c9d74c8d30afc1ec296"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/recipes_261.js"
@@ -756,11 +748,6 @@ metafile = true
 [[files]]
 file = "mods/Jade-mc26.1-NeoForge-26.1.12.pw.toml"
 hash = "8da7017f425f634b3c2619f100548c05afa705391df2459674702068a911d189"
-metafile = true
-
-[[files]]
-file = "mods/JustEnoughProfessions-neoforge-26.1.2-11.0.2.pw.toml"
-hash = "af45fdd863e55b248536034de0cd2aa8a8e77250a65c6a4a1cc36246d31610cc"
 metafile = true
 
 [[files]]
@@ -1664,11 +1651,6 @@ hash = "4d328031c88c02569dd65fdde61f52314d2ad99c04fb13d81460810d2fb540b2"
 metafile = true
 
 [[files]]
-file = "mods/jei-26.1.2-neoforge-29.47.0.109.pw.toml"
-hash = "f3c5abb3700dd48a2ce094596fe19ce0813db7caa756745cd43569b22683eb66"
-metafile = true
-
-[[files]]
 file = "mods/jewelry-neoforge-2.5.1_26.1.2.pw.toml"
 hash = "5929fb0d5d7aedf9fc7c6ebecdc3ccbbb3ee1e2d784e22bab010ecd53c146a5d"
 metafile = true
@@ -1695,16 +1677,6 @@ hash = "8390608c4e31a9f4d92545f008ac6c2f33faafa9beb9a76b2ff337e3208e00db"
 [[files]]
 file = "mods/justdirethings-1.6.11.pw.toml"
 hash = "634da4a38f6b8056af754a9231235e23a44b2a71792691a12f7650c0c523aa7d"
-metafile = true
-
-[[files]]
-file = "mods/justenoughbreeding-neoforge-26.1-3.4.1.pw.toml"
-hash = "494578bce7af81d56885364cca0fe1737a2c3cacf0f580fd8473d447c0d4db3a"
-metafile = true
-
-[[files]]
-file = "mods/justenoughrecipesharing-neoforge-26.1.2-1.1.2.pw.toml"
-hash = "d54079421e4bc7b7e211f76197efaf829253d0ec72526c2839bb7c432ebb9a99"
 metafile = true
 
 [[files]]
@@ -2022,11 +1994,6 @@ metafile = true
 [[files]]
 file = "mods/refinedstorage-curios-integration-2.0.1.pw.toml"
 hash = "49fe4200aaee8c954e8bd5c227394e10d0bf31b05279719ad6ae247cd435a06f"
-metafile = true
-
-[[files]]
-file = "mods/refinedstorage-jei-integration-neoforge-2.0.1.pw.toml"
-hash = "4b90ffa8cce568b2f8d17cd53ce247c997d16c5b528da12fa1a3c142251f1ea7"
 metafile = true
 
 [[files]]
