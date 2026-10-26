@@ -454,7 +454,7 @@ hash = "8fb73f898b952d7aaed8cc3b54f0afc02137f6171f9c6e541bf07f69586c5493"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/unify.js"
-hash = "af296b4e2417987d087affb423643cd153f0b8299fff19f4fe089ed941fee889"
+hash = "90cf22e88574447f9d7d1b2b5b7f41de01793c68444d0b3aa3c3e18cdb874fba"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/worldgen_diag.js"
