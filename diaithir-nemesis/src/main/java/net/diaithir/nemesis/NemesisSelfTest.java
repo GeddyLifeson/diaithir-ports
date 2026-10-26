@@ -104,7 +104,7 @@ final class NemesisSelfTest {
         data.nemeses.clear();
         data.trophies.clear();
         data.shaken.clear();
-        data.unshake.clear();
+        data.unshake.remove(victim.getStringUUID());
         data.chronicle.clear();
         data.age = oldAge;
         data.houses.remove(victim.getStringUUID());
