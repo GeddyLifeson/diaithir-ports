@@ -1,6 +1,10 @@
 package net.diaithir.nemesis;
 
+import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.Decoder;
+import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
@@ -16,6 +20,7 @@ import java.util.Set;
 
 /** Every living nemesis, the current Age and each player's House, as the diaithir-ages story events reported them. */
 public final class NemesisData extends SavedData {
+    private static final org.slf4j.Logger LOG = com.mojang.logging.LogUtils.getLogger();
     // Kept here, not on Nemesis, so the rules stay testable without Minecraft on the classpath.
     static final Codec<Nemesis> NEMESIS = RecordCodecBuilder.create(i -> i.group(
             Codec.INT.fieldOf("id").forGetter(n -> n.id),
@@ -36,12 +41,26 @@ public final class NemesisData extends SavedData {
             Codec.STRING.optionalFieldOf("seen", "").forGetter(n -> n.seen)
     ).apply(i, Nemesis::new));
 
+    /**
+     * A trophy whose item no longer exists (a removed or renamed mod) decodes to empty instead of failing the whole save;
+     * the constructor then drops it, so one bad trophy never costs every nemesis, House and chronicle entry.
+     */
+    static final Codec<ItemStack> LENIENT_STACK = Codec.of(ItemStack.CODEC, new Decoder<ItemStack>() {
+        @Override
+        public <T> DataResult<Pair<ItemStack, T>> decode(DynamicOps<T> ops, T input) {
+            DataResult<Pair<ItemStack, T>> r = ItemStack.CODEC.decode(ops, input);
+            if (r.result().isPresent()) return r;
+            LOG.warn("Dropping an unreadable nemesis trophy: {}", r.error().map(DataResult.Error::message).orElse("?"));
+            return DataResult.success(Pair.of(ItemStack.EMPTY, input));
+        }
+    }, "LenientItemStack");
+
     public static final Codec<NemesisData> CODEC = RecordCodecBuilder.create(i -> i.group(
             Codec.INT.optionalFieldOf("nextId", 1).forGetter(d -> d.nextId),
             Codec.STRING.optionalFieldOf("age", "I").forGetter(d -> d.age),
             Codec.unboundedMap(Codec.STRING, Codec.STRING).optionalFieldOf("houses", Map.of()).forGetter(d -> d.houses),
             NEMESIS.listOf().optionalFieldOf("nemeses", List.of()).forGetter(d -> d.nemeses),
-            Codec.unboundedMap(Codec.STRING, ItemStack.CODEC).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies),
+            Codec.unboundedMap(Codec.STRING, LENIENT_STACK).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies),
             Codec.unboundedMap(Codec.STRING, Codec.INT).optionalFieldOf("shaken", Map.of()).forGetter(d -> d.shaken),
             Codec.STRING.listOf().optionalFieldOf("chronicle", List.of()).forGetter(d -> d.chronicle),
             Codec.STRING.listOf().optionalFieldOf("settlers", List.of()).forGetter(d -> List.copyOf(d.settlers)),
@@ -74,6 +93,7 @@ public final class NemesisData extends SavedData {
         this.houses = new HashMap<>(houses);
         this.nemeses = new ArrayList<>(nemeses);
         this.trophies = new HashMap<>(trophies);
+        this.trophies.values().removeIf(ItemStack::isEmpty);
         this.shaken = new HashMap<>(shaken);
         this.chronicle = new ArrayList<>(chronicle);
         this.settlers = new HashSet<>(settlers);

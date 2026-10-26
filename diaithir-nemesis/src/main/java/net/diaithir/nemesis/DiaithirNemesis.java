@@ -106,7 +106,8 @@ public final class DiaithirNemesis {
             promote(server, NemesisData.get(server), killer, player, true);
         } else if (event.getEntity() instanceof Mob mob && idOf(mob) > 0) {
             NemesisData data = NemesisData.get(server);
-            if (data.byId(idOf(mob)) instanceof Nemesis n) fall(server, data, mob, n, event);
+            // only the body the record points at can end it; a stale copy (its UUID no longer in n.entity) dies without effect
+            if (data.byId(idOf(mob)) instanceof Nemesis n && n.entity.equals(mob.getStringUUID())) fall(server, data, mob, n, event);
         }
     }
 
@@ -316,8 +317,9 @@ public final class DiaithirNemesis {
         EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.getOptional(Identifier.parse(n.type)).orElse(null);
         BlockPos pos = spotNear(level, player.blockPosition());
         if (type == null || pos == null) return false;
-        despawn(server, n);
-        if (!(type.spawn(level, pos, EntitySpawnReason.EVENT) instanceof Mob mob)) return false;
+        Entity old = loaded(server, n);
+        if (!(type.spawn(level, pos, EntitySpawnReason.EVENT) instanceof Mob mob)) return false; // keep the old body if the new one cannot spawn
+        if (old != null) old.discard();
         n.entity = mob.getStringUUID();
         n.seen = seen(mob);
         n.lastAmbush = server.overworld().getGameTime();
