@@ -11102,8 +11102,8 @@ hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.13.jar"
-hash = "41aff71ef35a1f202ae1929659a1e721cce3e842dd8cd7f7d48e04c7c19ebaa9"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.15.jar"
+hash = "c3af1a3f05b9f047529a754e92d592ed87000b5a16a107005f5aaa8d08fe37df"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"
