@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithirbridges:block/tobardealainumha_top",
+    "bottom": "diaithirbridges:block/tobardealainumha_bottom",
+    "side": "diaithirbridges:block/tobardealainumha_side"
+  }
+}

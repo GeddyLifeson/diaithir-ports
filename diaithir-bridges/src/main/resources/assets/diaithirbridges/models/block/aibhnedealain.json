@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "diaithirbridges:block/aibhnedealain_top",
+    "bottom": "diaithirbridges:block/aibhnedealain_bottom",
+    "side": "diaithirbridges:block/aibhnedealain_side"
+  }
+}
