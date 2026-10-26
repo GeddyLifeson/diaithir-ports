@@ -453,6 +453,10 @@ file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_taiga.js
 hash = "8fb73f898b952d7aaed8cc3b54f0afc02137f6171f9c6e541bf07f69586c5493"
 
 [[files]]
+file = "kubejs/server_scripts/diaithir/unify.js"
+hash = "af296b4e2417987d087affb423643cd153f0b8299fff19f4fe089ed941fee889"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/worldgen_diag.js"
 hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 
@@ -462,7 +466,7 @@ hash = "1286a28174044b239a9fd41f59fc5fc7ac73a62f82da0c6de8f9bb7b9b953317"
 
 [[files]]
 file = "kubejs/startup_scripts/deepworlds/works.js"
-hash = "145eeb21e610cbde493d9e075933c35a3f954698f848f690d20bbc0a6b137986"
+hash = "c6a4785311f85767de828687fcb21a0f6e1929325ed32bc4eb5b04f43845a8c0"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/coals.js"

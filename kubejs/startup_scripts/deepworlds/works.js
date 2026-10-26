@@ -1,5 +1,5 @@
-// The Works: blueprints and the charter stone. Requirements, surveying and holdings live in
-// server_scripts/deepworlds/works.js; ids here must match DW_PROJECTS there.
+// The Works: blueprints and the charter stone. The server-side requirements and surveying are not in this pack yet;
+// until they land the items exist but do nothing.
 
 const DW_BLUEPRINTS = [
   ['keep', 'Keep'], ['foundry', 'Foundry'], ['power_plant', 'Power Plant'], ['factory', 'Factory'],
