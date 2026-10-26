@@ -12,7 +12,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | MekanismAdditions-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismadditions) |
 | MekanismGenerators-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismgenerators) |
 | MekanismTools-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismtools) |
-| Tellus-neoforge-26.1.2-0.8.3-diaithir.12.jar | LGPL-3.0-only | [source](source/Tellus-0.8.3-diaithir.12-source.tar.gz) |
+| Tellus-neoforge-26.1.2-0.8.3-diaithir.16.jar | LGPL-3.0-only | [source](source/Tellus-0.8.3-diaithir.12-source.tar.gz) is the .12 tree; the .16 tree (earth timeline, fantasy biomes, underground work) is the DiaithirRPG Tellus branches and is not yet tarred here |
 | TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar | MIT (Tinkers' Construct by SlimeKnights; registry lookup fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct), patch: [source/TinkersConstruct-3.12.13-diaithir.1](source/TinkersConstruct-3.12.13-diaithir.1) |
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
@@ -68,6 +68,16 @@ Each downloads from its author's Modrinth CDN with the sha256 in its `.pw.toml`.
 | Jungdab's Turrets | 1.0.2 | MIT | https://github.com/Jungdab/JungdabsTurrets |
 | Modular Drones | 1.3.2 | CC-BY-4.0 (credit: KesslerCascade) | https://github.com/KesslerCascade/modular-drones |
 | The Backrooms (legacy) | 2.10.11 | MIT (a data pack in a jar, by Aria976 and bellfish) | https://modrinth.com/datapack/the-backrooms |
+
+## Third-party mod added with Tellus diaithir.16 (linked, never hosted here)
+
+Downloads from the author's Modrinth CDN (sha256 in its `.pw.toml`). Licence read from the jar's `neoforge.mods.toml` (`LGPLv3`) on 2026-10-26.
+
+| Mod | Version | Licence | Source |
+|---|---|---|---|
+| YUNG's Better Caves | 26.1.2-NeoForge-4.1.2 | LGPL-3.0 | https://github.com/yungnickyoung/YUNGs-Better-Caves |
+
+The scaled carver `kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json` is our own data file that overrides the mod's default carver for Tellus' deep columns.
 
 Looked at and not added in update 2: LambDynamicLights 4.11.2 (Lambda License: binaries may be shared only with the original authors' written approval), Terralith (Stardust Labs licence; Tellus owns terrain), Server-Side Horror (MIT, but it burns builds, strikes players with lightning and fakes player joins), DarkFear and Ender Zoology (MIT/CC0, not needed), Power Armor (CC-BY-NC-ND), Gamingbarn's Guns and Zombies (CC-BY-NC-ND), Friends and Foes (CC-BY-NC-ND). Details in REPORT.md.
 

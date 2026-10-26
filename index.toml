@@ -765,6 +765,10 @@ file = "kubejs/assets/roulettecasino/lang/en_us.json"
 hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
 
 [[files]]
+file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
+hash = "86ae65651753a394e41ed4d6efd6fdc4de636f0682cfc21ad49ff5d710dc9fdd"
+
+[[files]]
 file = "kubejs/data/c/tags/item/crops/rice.json"
 hash = "dce84b58381040338f8be656d564de077590194892058abed1a5b5234f94c133"
 
@@ -11150,8 +11154,8 @@ hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.15.jar"
-hash = "c3af1a3f05b9f047529a754e92d592ed87000b5a16a107005f5aaa8d08fe37df"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16.jar"
+hash = "f5c5c4ad1d2f4f71094ea7d226cd9ba8be515e4477fd1df7ad6a5be1893490dc"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"
@@ -11199,6 +11203,11 @@ metafile = true
 [[files]]
 file = "mods/YungsApi-26.1.2-NeoForge-6.1.3.pw.toml"
 hash = "41a7ce36033903aea8fd850ee6bd2589ba299419c1e58cc7a447ddf293682714"
+metafile = true
+
+[[files]]
+file = "mods/YungsBetterCaves-26.1.2-NeoForge-4.1.2.pw.toml"
+hash = "8a1b3baaf9ebca3559a0d5cf7488d3067a3c64ee8deec71afbe7463bd2282e41"
 metafile = true
 
 [[files]]
