@@ -44,7 +44,8 @@ public final class NemesisData extends SavedData {
             Codec.unboundedMap(Codec.STRING, ItemStack.CODEC).optionalFieldOf("trophies", Map.of()).forGetter(d -> d.trophies),
             Codec.unboundedMap(Codec.STRING, Codec.INT).optionalFieldOf("shaken", Map.of()).forGetter(d -> d.shaken),
             Codec.STRING.listOf().optionalFieldOf("chronicle", List.of()).forGetter(d -> d.chronicle),
-            Codec.STRING.listOf().optionalFieldOf("settlers", List.of()).forGetter(d -> List.copyOf(d.settlers))
+            Codec.STRING.listOf().optionalFieldOf("settlers", List.of()).forGetter(d -> List.copyOf(d.settlers)),
+            Codec.STRING.listOf().optionalFieldOf("unshake", List.of()).forGetter(d -> List.copyOf(d.unshake))
     ).apply(i, NemesisData::new));
     public static final SavedDataType<NemesisData> TYPE =
             new SavedDataType<>(Identifier.fromNamespaceAndPath(DiaithirNemesis.ID, "nemeses"), NemesisData::new, CODEC);
@@ -61,11 +62,13 @@ public final class NemesisData extends SavedData {
     public final List<String> chronicle;
     /** Players at the Settler Standing, who opt out of nemeses. */
     public final Set<String> settlers;
+    /** Players freed from Shaken while offline; Weakness is lifted when they next log in. */
+    public final Set<String> unshake;
 
-    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of(), Map.of(), List.of(), List.of()); }
+    private NemesisData() { this(1, "I", Map.of(), List.of(), Map.of(), Map.of(), List.of(), List.of(), List.of()); }
 
     private NemesisData(int nextId, String age, Map<String, String> houses, List<Nemesis> nemeses, Map<String, ItemStack> trophies, Map<String, Integer> shaken,
-                        List<String> chronicle, List<String> settlers) {
+                        List<String> chronicle, List<String> settlers, List<String> unshake) {
         this.nextId = nextId;
         this.age = age;
         this.houses = new HashMap<>(houses);
@@ -74,6 +77,7 @@ public final class NemesisData extends SavedData {
         this.shaken = new HashMap<>(shaken);
         this.chronicle = new ArrayList<>(chronicle);
         this.settlers = new HashSet<>(settlers);
+        this.unshake = new HashSet<>(unshake);
     }
 
     public static NemesisData get(MinecraftServer server) {

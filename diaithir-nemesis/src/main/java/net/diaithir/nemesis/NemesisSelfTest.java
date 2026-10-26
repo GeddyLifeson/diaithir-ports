@@ -96,14 +96,15 @@ final class NemesisSelfTest {
             data.nemeses.add(rival);
             clashed = DiaithirNemesis.feud(server, data);
         }
-        check(fails, clashed && data.chronicle.size() > told && data.chronicle.getLast().contains(" beat ")
-                || data.chronicle.getLast().contains(" now leads ") || data.chronicle.getLast().contains(" is dead."), "warbands feud and the chronicle records it");
+        check(fails, clashed && data.chronicle.size() > told && (data.chronicle.getLast().contains(" beat ")
+                || data.chronicle.getLast().contains(" now leads ") || data.chronicle.getLast().contains(" is dead.")), "warbands feud and the chronicle records it");
         Nemesis any = data.nemeses.getFirst();
         check(fails, DiaithirNemesis.interrogate(data, any).contains(any.warband), "interrogation names the warband");
 
         data.nemeses.clear();
         data.trophies.clear();
         data.shaken.clear();
+        data.unshake.clear();
         data.chronicle.clear();
         data.age = oldAge;
         data.houses.remove(victim.getStringUUID());
