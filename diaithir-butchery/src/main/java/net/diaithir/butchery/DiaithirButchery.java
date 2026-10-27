@@ -38,7 +38,7 @@ public final class DiaithirButchery {
         carcass.set(Butchery.SPECIES.get(), species);
         carcass.set(Butchery.BODY.get(), body);
         carcass.set(Butchery.KILLED.get(), e.level().getGameTime());
-        carcass.set(net.minecraft.core.component.DataComponents.ITEM_NAME, Component.translatable("item.diaithirbutchery.carcass_of", e.getType().getDescription()));
+        carcass.set(net.minecraft.core.component.DataComponents.ITEM_NAME, Component.translatable("item.diaithirbutchery.carcass_of", Component.translatableWithFallback("diaithirbutchery.species." + species.replace(':', '.'), e.getType().getDescription().getString())));
         event.getDrops().add(new ItemEntity(e.level(), e.getX(), e.getY(), e.getZ(), carcass));
     }
 

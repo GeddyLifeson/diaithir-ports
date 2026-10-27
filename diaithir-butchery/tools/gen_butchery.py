@@ -91,6 +91,8 @@ def texture(name):
 
 lang = {"item.diaithirbutchery.carcass_of": names.CARCASS_OF, "block.diaithirbutchery.meat_hook": names.item("meat_hook"), "item.diaithirbutchery.meat_hook": names.item("meat_hook"),
         "message.diaithirbutchery.started": "Work has started; finish it with a knife.", "message.diaithirbutchery.unknown": "This carcass cannot be cut."}
+for sp, nm in names.SPECIES.items():
+    lang[f"diaithirbutchery.species.minecraft.{sp}"] = nm
 for n in ITEMS:
     texture(n)
     w(f"{A}/items/{n}.json", {"model": {"type": "minecraft:model", "model": f"{MOD}:item/{n}"}})

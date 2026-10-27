@@ -1,8 +1,8 @@
 """Diaithiris display names (ids never change). Words come from diaithiris-archaic/LEXICON_EN.md; compounds follow the lexicon's own (skianfeòla)."""
 NAMES = {
-    "carcass": "Klosach", "butcher_knife": "Skianfeòladuir", "butcher_cleaver": "Skianfeòla", "meat_hook": "Dubunfeòla",
+    "carcass": "Klosach", "butcher_knife": "Skianfeòladuir", "butcher_cleaver": "Skianfeòlad", "meat_hook": "Dubunfeòlad",
     "raw_hide": "Kraikend", "sinew": "Fèitlùtaid", "tallow": "Saild", "blood_flask": "Foilsierrag", "marrow_bone": "Smiurknàim",
-    "haunch": "Sliasaidi", "shoulder": "Guoluind", "loin": "Kùlfeòla", "ribs": "Ausna", "flank": "Slius", "tenderloin": "Kùlfeòlamaed",
+    "haunch": "Sliasaidi", "shoulder": "Guoluind", "loin": "Kùlfeòlad", "ribs": "Ausna", "flank": "Slius", "tenderloin": "Kùlfeòladmaed",
     "neck": "Amachu", "tail": "Ierbuld", "hock": "Speira", "fish_fillet": "Sliseg", "bird_breast": "Broildech", "drumstick": "Kasein",
     "wing": "Skiad", "scraps": "Foidlech", "liver": "Grùtun", "heart": "Kridi", "kidney": "Dubag", "tripe": "Staumag", "tongue": "Tienga", "brain": "Ienchuind",
 }
@@ -22,3 +22,11 @@ def body(k):
     if k in ("predator", "reptile", "monster_hide"):
         return "Klosach " + CLASS[k]
     return "Klosach " + CLASS[p[0]] + " " + SIZES[p[1]]
+
+SPECIES = {
+    "cow": "Bòi", "mooshroom": "Bòibalgunbuochuir", "pig": "Muk", "sheep": "Kaera", "goat": "Gobur", "horse": "Iech", "donkey": "Asul", "mule": "Moileid",
+    "llama": "Lauma", "trader_llama": "Lauma", "camel": "Kàmul", "camel_husk": "Kàmul", "chicken": "Kierk", "rabbit": "Koinenach", "cod": "Trosk",
+    "salmon": "Bradun", "tropical_fish": "Iaskachiumadatach", "squid": "Gibernach", "glow_squid": "Gibernachloisni", "turtle": "Sligenach",
+    "fox": "Siondach", "polar_bear": "Matungiel", "ocelot": "Kat", "hoglin": "Tork", "frog": "Loskund", "dolphin": "Leimaduir", "nautilus": "Seòladuirsligi",
+    "ravager": "Oilebeist", "spider": "Damunuldaid", "armadillo": "Aurmachdbietach", "sniffer": "Snòtaduir", "strider": "Srutteinibietach",
+}
