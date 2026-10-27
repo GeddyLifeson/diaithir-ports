@@ -6,16 +6,14 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.ItemDisplayContext;
 
-public class GatekeeperFireballRenderer extends ThrownItemRenderer<GatekeeperFireball> {
-	private final ItemRenderer itemRenderer;
+public class GatekeeperFireballRenderer extends ESEntityRenderer<GatekeeperFireball> {
 
 	public GatekeeperFireballRenderer(EntityRendererProvider.Context context) {
-		super(context, 3.0f, true);
-		this.itemRenderer = context.getItemRenderer();
+		super(context);
 	}
 
 	@Override
@@ -26,7 +24,7 @@ public class GatekeeperFireballRenderer extends ThrownItemRenderer<GatekeeperFir
 			poseStack.scale(scale, scale, scale);
 			poseStack.mulPose(ESRender.cameraOrientation());
 			poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));
-			this.itemRenderer.renderStatic(entity.getItem(), ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, entity.level(), entity.getId());
+			ESRender.submitItem(this.collector, entity.getItem(), ItemDisplayContext.GROUND, poseStack, packedLight, OverlayTexture.NO_OVERLAY, entity.level(), null, entity.getId());
 			poseStack.popPose();
 		}
 	}

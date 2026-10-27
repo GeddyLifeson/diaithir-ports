@@ -81,7 +81,7 @@ public class ClientSideHelper extends ClientHelper {
 			Entity rider = Minecraft.getInstance().level.getEntity(packet.riderId());
 			Entity vehicle = Minecraft.getInstance().level.getEntity(packet.vehicleId());
 			if (rider != null && vehicle != null) {
-				rider.startRiding(vehicle, true);
+				rider.startRiding(vehicle, true, false);
 			}
 		}
 	}
@@ -150,14 +150,14 @@ public class ClientSideHelper extends ClientHelper {
 		}
 		changedEntries.removeAll(newEntries);
 		if (newEntries.size() > 3) {
-			Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
+			Minecraft.getInstance().getToastManager().addToast(new SimpleTextToast(
 				Component.translatable("book." + EternalStarlight.ID + ".unlock"),
 				Component.translatable("book." + EternalStarlight.ID + ".unlock.multiple"),
 				ESItems.BOOK.get().getDefaultInstance()
 			));
 		} else {
 			for (IndexBookComponent.Entry entry : newEntries) {
-				Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
+				Minecraft.getInstance().getToastManager().addToast(new SimpleTextToast(
 					Component.translatable("book." + EternalStarlight.ID + ".unlock"),
 					entry.getText(),
 					entry.getIcon()
@@ -165,14 +165,14 @@ public class ClientSideHelper extends ClientHelper {
 			}
 		}
 		if (changedEntries.size() > 3) {
-			Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
+			Minecraft.getInstance().getToastManager().addToast(new SimpleTextToast(
 				Component.translatable("book." + EternalStarlight.ID + ".update"),
 				Component.translatable("book." + EternalStarlight.ID + ".unlock.multiple"),
 				ESItems.BOOK.get().getDefaultInstance()
 			));
 		} else {
 			for (IndexBookComponent.Entry entry : changedEntries) {
-				Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
+				Minecraft.getInstance().getToastManager().addToast(new SimpleTextToast(
 					Component.translatable("book." + EternalStarlight.ID + ".update"),
 					entry.getText(),
 					entry.getIcon()

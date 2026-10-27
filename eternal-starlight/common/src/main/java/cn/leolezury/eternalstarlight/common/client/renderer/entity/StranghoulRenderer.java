@@ -47,7 +47,7 @@ public class StranghoulRenderer extends HumanoidMobRenderer<Stranghoul, Strangho
 		ItemStack stack = entity.getItemInHand(InteractionHand.MAIN_HAND);
 		if (entity.getMainArm() == arm && entity.isAggressive()) {
 			if (stack.getItem() instanceof SpearItem) {
-				return HumanoidModel.ArmPose.THROW_SPEAR;
+				return HumanoidModel.ArmPose.SPEAR;
 			}
 			if (stack.getItem() instanceof SeedsLauncherItem
 				|| (ESPlatform.INSTANCE.getLoader() == ESPlatform.Loader.FABRIC && stack.is(Items.BOW))

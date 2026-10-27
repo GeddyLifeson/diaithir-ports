@@ -53,7 +53,7 @@ public class SolarStrikeRenderer extends ESEntityRenderer<SolarStrikeEntity> {
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
 		Vec3 camPos = camera.position();
 
-		VertexConsumer vertexConsumer = buffer.getBuffer(ESRenderType.dragonRaysQuads());
+		VertexConsumer vertexConsumer = bufferSource.getBuffer(ESRenderType.dragonRaysQuads());
 		PoseStack.Pose pose = stack.last();
 
 		Vec3 end = entity.getBeamTarget();

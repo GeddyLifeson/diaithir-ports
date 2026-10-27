@@ -27,7 +27,6 @@ import cn.leolezury.eternalstarlight.common.client.particle.environment.MeteorPa
 import cn.leolezury.eternalstarlight.common.client.renderer.blockentity.*;
 import cn.leolezury.eternalstarlight.common.client.renderer.entity.*;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.accessory.*;
-import cn.leolezury.eternalstarlight.common.client.shader.ESShaders;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailManager;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailStyles;
 import cn.leolezury.eternalstarlight.common.client.trail.emitter.GatekeeperTrailEmitter;

@@ -4,7 +4,6 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.posteffect.PostEffectRenderer;
 import cn.leolezury.eternalstarlight.common.client.posteffect.WorldPostEffectManager;
 import cn.leolezury.eternalstarlight.common.client.resource.ESBookLoader;
-import cn.leolezury.eternalstarlight.common.client.shader.ESShaders;
 import cn.leolezury.eternalstarlight.common.client.sound.BossMusicSoundInstance;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailManager;
 import cn.leolezury.eternalstarlight.common.client.visual.DelayedMultiBufferSource;
@@ -24,19 +23,16 @@ import cn.leolezury.eternalstarlight.common.registry.*;
 import cn.leolezury.eternalstarlight.common.util.ESBlockUtil;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import com.mojang.blaze3d.opengl.GlStateManager;
-import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.AttackIndicatorStatus;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.LerpingBossEvent;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.fog.FogRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -141,7 +137,7 @@ public class ESClientHandler {
 			}
 
 			// weather
-			if (!Minecraft.getInstance().isPaused() && ClientWeatherState.weather != null && Minecraft.getInstance().level.dimension().location().equals(ESDimensions.STARLIGHT_KEY.location())) {
+			if (!Minecraft.getInstance().isPaused() && ClientWeatherState.weather != null && Minecraft.getInstance().level.dimension().equals(ESDimensions.STARLIGHT_KEY)) {
 				ClientWeatherState.weather.clientTick();
 			}
 
@@ -228,7 +224,7 @@ public class ESClientHandler {
 			fogStartDecrement -= 0.5f;
 			fogEndDecrement -= 0.5f;
 			Holder<Biome> biomeHolder = player.level().getBiome(player.blockPosition());
-			if (camera.getFluidInCamera() == FogType.NONE && player.level().getBlockState(camera.getBlockPosition()).getFluidState().isEmpty()) {
+			if (camera.getFluidInCamera() == FogType.NONE && player.level().getBlockState(camera.blockPosition()).getFluidState().isEmpty()) {
 				if (biomeHolder.is(ESTags.Biomes.PERMAFROST)) {
 					fogStartDecrement += (0.5f + 0.75f);
 					fogEndDecrement += (0.5f + 0.5f);
@@ -267,7 +263,7 @@ public class ESClientHandler {
 			tearyEffect = false;
 		}
 		if (oldTearyEffect != tearyEffect) {
-			Minecraft.getInstance().gameRenderer.checkEntityPostEffect(Minecraft.getInstance().cameraEntity);
+			Minecraft.getInstance().gameRenderer.checkEntityPostEffect(Minecraft.getInstance().getCameraEntity());
 		}
 	}
 

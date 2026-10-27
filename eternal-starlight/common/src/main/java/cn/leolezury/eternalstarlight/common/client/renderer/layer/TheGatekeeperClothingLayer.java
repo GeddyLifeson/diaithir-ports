@@ -17,8 +17,8 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.world.entity.player.PlayerModelType;
 import net.minecraft.world.entity.player.PlayerSkin;
-import net.minecraft.client.resources.SkinManager;
 import net.minecraft.resources.Identifier;
 
 import java.util.Optional;
@@ -39,11 +39,11 @@ public class TheGatekeeperClothingLayer<T extends TheGatekeeper> extends ESRende
 	public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 		TheGatekeeperModel<T> model = normalModel;
 		Identifier texture = OVERLAY_TEXTURE;
-		SkinManager skinManager = Minecraft.getInstance().getSkinManager();
 		Optional<GameProfile> profile = TheGatekeeperRenderer.getGameProfile(entity);
 		if (profile.isPresent()) {
-			texture = skinManager.getInsecureSkin(profile.get()).model() == PlayerSkin.Model.SLIM ? SLIM_OVERLAY_TEXTURE : OVERLAY_TEXTURE;
-			model = skinManager.getInsecureSkin(profile.get()).model() == PlayerSkin.Model.SLIM ? slimModel : normalModel;
+			boolean slim = TheGatekeeperRenderer.getSkin(profile.get()).map(PlayerSkin::model).orElse(PlayerModelType.WIDE) == PlayerModelType.SLIM;
+			texture = slim ? SLIM_OVERLAY_TEXTURE : OVERLAY_TEXTURE;
+			model = slim ? slimModel : normalModel;
 		}
 		if (!entity.isInvisible()) {
 			model.alphaFactor = getParentModel().alphaFactor;

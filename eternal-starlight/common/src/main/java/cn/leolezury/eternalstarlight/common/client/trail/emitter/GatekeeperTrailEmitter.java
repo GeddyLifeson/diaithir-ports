@@ -81,7 +81,7 @@ public class GatekeeperTrailEmitter implements TrailEmitter<TheGatekeeper> {
 			trail.clear();
 			return;
 		}
-		float tick = animation.getAccumulatedTime() / 50f;
+		float tick = animation.getTimeInMillis(entity.tickCount + partialTicks) / 50f;
 		if (state != entity.lastBladeTrailState) {
 			entity.lastBladeTrailState = state;
 			entity.lastBladeTrailTick = tick - SAMPLE_INTERVAL;

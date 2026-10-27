@@ -98,7 +98,7 @@ public class TrailManager {
 			TrailPoint head = emitter.getHeadPoint(entity, partialTicks);
 			trail.prepareRender(head, partialTicks);
 			boolean solid = emitter.isSolid(entity, trail);
-			VertexConsumer consumer = (solid ? source : buffer).getBuffer(renderType);
+			VertexConsumer consumer = source.getBuffer(renderType);
 			TrailRenderer.render(trail, consumer, stack, false, solid, emitter.getLight(entity, partialTicks));
 		}
 	}

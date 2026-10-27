@@ -56,14 +56,25 @@ public class PlayerAnimator {
 
 		}
 
+		private static void copy(ModelPart to, ModelPart from) {
+			to.x = from.x;
+			to.y = from.y;
+			to.z = from.z;
+			to.xRot = from.xRot;
+			to.yRot = from.yRot;
+			to.zRot = from.zRot;
+			to.xScale = from.xScale;
+			to.yScale = from.yScale;
+			to.zScale = from.zScale;
+		}
+
 		@Override
 		public void postAnimate(PlayerAnimationState state, AbstractClientPlayer player, PlayerModel model) {
-			model.hat.copyFrom(model.head);
-			model.jacket.copyFrom(model.body);
-			model.leftSleeve.copyFrom(model.leftArm);
-			model.rightSleeve.copyFrom(model.rightArm);
-			model.leftPants.copyFrom(model.leftLeg);
-			model.rightPants.copyFrom(model.rightLeg);
+			copy(model.jacket, model.body);
+			copy(model.leftSleeve, model.leftArm);
+			copy(model.rightSleeve, model.rightArm);
+			copy(model.leftPants, model.leftLeg);
+			copy(model.rightPants, model.rightLeg);
 		}
 
 		@Override

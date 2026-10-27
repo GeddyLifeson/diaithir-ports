@@ -25,11 +25,9 @@ public class EyeOfSeekingRenderer extends ESEntityRenderer<EyeOfSeeking> {
 	private static final float MIN_CAMERA_DISTANCE_SQUARED = 12.25F;
 	private static final Identifier LINE_TEXTURE = EternalStarlight.id("textures/entity/blank.png");
 	private static final int[] LINE_BLOCK_COLORS = {0xBAE3EA, 0xA368AD, 0x5E3F7A, 0x220B3D};
-	private final ItemRenderer itemRenderer;
 
 	public EyeOfSeekingRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.itemRenderer = context.getItemRenderer();
 	}
 
 	@Override
@@ -53,7 +51,7 @@ public class EyeOfSeekingRenderer extends ESEntityRenderer<EyeOfSeeking> {
 		}
 		if (entity.tickCount >= 2 || !(this.entityRenderDispatcher.camera.entity().distanceToSqr(entity) < MIN_CAMERA_DISTANCE_SQUARED)) {
 			poseStack.mulPose(ESRender.cameraOrientation());
-			this.itemRenderer.renderStatic(entity.getItem(), ItemDisplayContext.GROUND, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.level(), entity.getId());
+			ESRender.submitItem(this.collector, entity.getItem(), ItemDisplayContext.GROUND, poseStack, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, entity.level(), null, entity.getId());
 		}
 		poseStack.popPose();
 		super.render(entity, yaw, partialTicks, poseStack, buffer, packedLight);

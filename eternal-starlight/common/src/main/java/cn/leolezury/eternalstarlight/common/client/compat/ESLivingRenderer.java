@@ -15,6 +15,7 @@ import net.minecraft.world.entity.LivingEntity;
  */
 public abstract class ESLivingRenderer<T extends LivingEntity, M extends ESModel<T>> extends LivingEntityRenderer<T, ESRenderState, M> {
 	protected SubmitNodeCollector collector;
+	protected CameraRenderState camera;
 	private ESRenderState currentState;
 
 	protected ESLivingRenderer(EntityRendererProvider.Context context, M model, float shadow) {
@@ -51,6 +52,7 @@ public abstract class ESLivingRenderer<T extends LivingEntity, M extends ESModel
 		currentState = state;
 		super.submit(state, poseStack, collector, camera);
 		this.collector = collector;
+		this.camera = camera;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(cast(state), state.entityYaw, state.partialTicks, poseStack, source, state.lightCoords));
 	}
 
@@ -92,5 +94,18 @@ public abstract class ESLivingRenderer<T extends LivingEntity, M extends ESModel
 
 	protected float getFlipDegrees(T entity) {
 		return super.getFlipDegrees();
+	}
+
+	@Override
+	protected final float getShadowRadius(ESRenderState state) {
+		return state.entity != null ? getShadowRadius(cast(state)) : super.getShadowRadius(state);
+	}
+
+	protected float getShadowRadius(T entity) {
+		return this.shadowRadius;
+	}
+
+	protected boolean isBodyVisible(T entity) {
+		return !entity.isInvisible();
 	}
 }

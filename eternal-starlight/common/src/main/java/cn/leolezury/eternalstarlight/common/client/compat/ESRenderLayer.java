@@ -13,6 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
  */
 public abstract class ESRenderLayer<T extends LivingEntity, M extends EntityModel<ESRenderState>> extends RenderLayer<ESRenderState, M> {
 	protected SubmitNodeCollector collector;
+	protected ESRenderState state;
 
 	protected ESRenderLayer(RenderLayerParent<ESRenderState, M> parent) {
 		super(parent);
@@ -23,6 +24,7 @@ public abstract class ESRenderLayer<T extends LivingEntity, M extends EntityMode
 	public final void submit(PoseStack poseStack, SubmitNodeCollector collector, int lightCoords, ESRenderState state, float yRot, float xRot) {
 		T entity = (T) state.entity;
 		this.collector = collector;
+		this.state = state;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(poseStack, source, lightCoords, entity, state.walkAnimationPos, state.walkAnimationSpeed, state.partialTicks, state.ageInTicks, yRot, xRot));
 	}
 

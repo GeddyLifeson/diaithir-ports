@@ -46,7 +46,7 @@ public class SeekerRenderer<T extends Seeker> extends ESMobRenderer<T, SeekerMod
 	public void render(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
 		super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
 		if (this.isBodyVisible(entity) && entity.isAlive() && entity.attackAnimationState.isStarted()) {
-			float length = Seeker.TENTACLE_LENGTH * Mth.clamp(1 - Mth.abs(entity.attackAnimationState.getAccumulatedTime() - 1000f) / 120f, 0, 1);
+			float length = Seeker.TENTACLE_LENGTH * Mth.clamp(1 - Mth.abs(entity.attackAnimationState.getTimeInMillis(entity.tickCount + partialTicks) - 1000f) / 120f, 0, 1);
 			Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
 			Vec3 sight = camera.position().subtract(entity.position().add(0, entity.getBbHeight() / 2, 0));
 			Vec3 start = new Vec3(0, entity.getBbHeight() / 2, 0);

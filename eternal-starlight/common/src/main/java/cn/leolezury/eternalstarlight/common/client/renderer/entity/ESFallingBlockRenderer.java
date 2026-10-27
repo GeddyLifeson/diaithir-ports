@@ -1,46 +1,51 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
-import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESFallingBlock;
-import cn.leolezury.eternalstarlight.common.platform.ESClientPlatform;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.entity.state.FallingBlockRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ESFallingBlockRenderer extends ESEntityRenderer<ESFallingBlock> {
-	private final BlockRenderDispatcher dispatcher;
-
+public class ESFallingBlockRenderer extends EntityRenderer<ESFallingBlock, FallingBlockRenderState> {
 	public ESFallingBlockRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.dispatcher = context.getBlockRenderDispatcher();
+		this.shadowRadius = 0.5F;
 	}
 
 	@Override
-	public void render(ESFallingBlock block, float yaw, float delta, PoseStack stack, MultiBufferSource bufferSource, int packedLight) {
-		BlockState state = block.getBlockState();
-		if (state == null) return;
-		if (state.getRenderShape() == RenderShape.MODEL) {
-			Level level = block.level();
-			if (state.getRenderShape() != RenderShape.INVISIBLE) {
-				stack.pushPose();
-				BlockPos pos = BlockPos.containing(block.getX(), block.getBoundingBox().maxY, block.getZ());
-				stack.translate(-0.5, 0.0, -0.5);
-				ESClientPlatform.INSTANCE.renderBlock(dispatcher, stack, bufferSource, level, state, pos, state.getSeed(block.getStartPos()));
-				stack.popPose();
-				super.render(block, yaw, delta, stack, bufferSource, packedLight);
-			}
+	public void submit(FallingBlockRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
+		BlockState blockState = state.movingBlockRenderState.blockState;
+		if (blockState != null && blockState.getRenderShape() == RenderShape.MODEL) {
+			poseStack.pushPose();
+			poseStack.translate(-0.5, 0.0, -0.5);
+			collector.submitMovingBlock(poseStack, state.movingBlockRenderState);
+			poseStack.popPose();
+			super.submit(state, poseStack, collector, camera);
 		}
 	}
 
 	@Override
-	public Identifier getTextureLocation(ESFallingBlock block) {
-		return TextureAtlas.LOCATION_BLOCKS;
+	public FallingBlockRenderState createRenderState() {
+		return new FallingBlockRenderState();
+	}
+
+	@Override
+	public void extractRenderState(ESFallingBlock entity, FallingBlockRenderState state, float partialTicks) {
+		super.extractRenderState(entity, state, partialTicks);
+		BlockPos pos = BlockPos.containing(entity.getX(), entity.getBoundingBox().maxY, entity.getZ());
+		state.movingBlockRenderState.randomSeedPos = entity.getStartPos();
+		state.movingBlockRenderState.blockPos = pos;
+		state.movingBlockRenderState.blockState = entity.getBlockState();
+		if (entity.level() instanceof ClientLevel clientLevel) {
+			state.movingBlockRenderState.biome = clientLevel.getBiome(pos);
+			state.movingBlockRenderState.cardinalLighting = clientLevel.cardinalLighting();
+			state.movingBlockRenderState.lightEngine = clientLevel.getLightEngine();
+		}
 	}
 }

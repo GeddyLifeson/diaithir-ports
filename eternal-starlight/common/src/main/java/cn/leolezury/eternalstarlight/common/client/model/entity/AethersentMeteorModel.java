@@ -6,6 +6,7 @@ import cn.leolezury.eternalstarlight.common.entity.projectile.AethersentMeteor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
+import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AethersentMeteorModel<T extends AethersentMeteor> extends ESModel<T> {
+public class AethersentMeteorModel<T extends AethersentMeteor> extends ESModel<T> implements AnimatedModel {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("aethersent_meteor"), "main");
 	public final ModelPart root;
 	public final ModelPart rotator;

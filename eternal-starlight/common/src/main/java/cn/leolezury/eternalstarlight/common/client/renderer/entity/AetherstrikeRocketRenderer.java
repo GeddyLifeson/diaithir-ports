@@ -13,11 +13,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemDisplayContext;
 
 public class AetherstrikeRocketRenderer extends ESEntityRenderer<AetherstrikeRocketEntity> {
-	private final ItemRenderer itemRenderer;
 
 	public AetherstrikeRocketRenderer(EntityRendererProvider.Context context) {
 		super(context);
-		this.itemRenderer = context.getItemRenderer();
 	}
 
 	@Override
@@ -30,7 +28,7 @@ public class AetherstrikeRocketRenderer extends ESEntityRenderer<AetherstrikeRoc
 			poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
 		}
 
-		this.itemRenderer.renderStatic(rocket.getItem(), ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, buffer, rocket.level(), rocket.getId());
+		ESRender.submitItem(this.collector, rocket.getItem(), ItemDisplayContext.GROUND, poseStack, packedLight, OverlayTexture.NO_OVERLAY, rocket.level(), null, rocket.getId());
 		poseStack.popPose();
 		super.render(rocket, yaw, partialTick, poseStack, buffer, packedLight);
 	}

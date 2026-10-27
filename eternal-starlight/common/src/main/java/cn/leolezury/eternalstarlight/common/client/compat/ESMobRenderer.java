@@ -15,7 +15,8 @@ import net.minecraft.world.entity.Mob;
  */
 public abstract class ESMobRenderer<T extends Mob, M extends ESModel<T>> extends MobRenderer<T, ESRenderState, M> {
 	protected SubmitNodeCollector collector;
-	private ESRenderState currentState;
+	protected CameraRenderState camera;
+	protected ESRenderState currentState;
 
 	protected ESMobRenderer(EntityRendererProvider.Context context, M model, float shadow) {
 		super(context, model, shadow);
@@ -51,6 +52,7 @@ public abstract class ESMobRenderer<T extends Mob, M extends ESModel<T>> extends
 		currentState = state;
 		super.submit(state, poseStack, collector, camera);
 		this.collector = collector;
+		this.camera = camera;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(cast(state), state.entityYaw, state.partialTicks, poseStack, source, state.lightCoords));
 	}
 
@@ -92,5 +94,18 @@ public abstract class ESMobRenderer<T extends Mob, M extends ESModel<T>> extends
 
 	protected float getFlipDegrees(T entity) {
 		return super.getFlipDegrees();
+	}
+
+	@Override
+	protected final float getShadowRadius(ESRenderState state) {
+		return state.entity != null ? getShadowRadius(cast(state)) : super.getShadowRadius(state);
+	}
+
+	protected float getShadowRadius(T entity) {
+		return this.shadowRadius;
+	}
+
+	protected boolean isBodyVisible(T entity) {
+		return !entity.isInvisible();
 	}
 }

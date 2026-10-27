@@ -84,4 +84,12 @@ public final class ESRender {
 		submitEntity(dispatcher, entity, partialTick, 0.0, 0.0, 0.0, poseStack, collector, camera, light);
 		poseStack.popPose();
 	}
+
+	/** TNT style block, optionally flashing white. */
+	public static void submitWhiteSolidBlock(SubmitNodeCollector collector, BlockState blockState, PoseStack poseStack, int light, boolean white) {
+		BlockModelRenderState state = new BlockModelRenderState();
+		new net.minecraft.client.renderer.block.BlockModelResolver(Minecraft.getInstance().getModelManager()).update(state, blockState, net.minecraft.client.renderer.block.model.BlockDisplayContext.create());
+		int overlay = white ? OverlayTexture.pack(OverlayTexture.u(1.0F), 10) : OverlayTexture.NO_OVERLAY;
+		state.submit(poseStack, collector, light, overlay, 0);
+	}
 }

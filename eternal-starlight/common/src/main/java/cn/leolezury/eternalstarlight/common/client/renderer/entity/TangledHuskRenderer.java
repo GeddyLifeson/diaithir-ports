@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
 import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.attack.TangledHusk;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
@@ -47,7 +48,7 @@ public class TangledHuskRenderer extends ESEntityRenderer<TangledHusk> {
 				float xz = (1.0F + swell * 0.4F) * factor;
 				float y = (1.0F + swell * 0.1F) / factor;
 				poseStack.scale(xz, y, xz);
-				entityRenderer.render(entity.cachedPlayerDisplay, 0, 0, 0, 0, partialTicks, poseStack, buffer, packedLight);
+				ESRender.submitEntity(entityRenderer, entity.cachedPlayerDisplay, partialTicks, 0, 0, 0, poseStack, this.collector, this.camera, packedLight);
 				poseStack.popPose();
 			}
 		}

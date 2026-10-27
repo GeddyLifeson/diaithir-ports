@@ -15,6 +15,7 @@ import net.minecraft.world.entity.Entity;
  */
 public abstract class ESEntityRenderer<T extends Entity> extends EntityRenderer<T, ESRenderState> {
 	protected SubmitNodeCollector collector;
+	protected CameraRenderState camera;
 	protected ESEntityRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -37,6 +38,7 @@ public abstract class ESEntityRenderer<T extends Entity> extends EntityRenderer<
 	public void submit(ESRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		T entity = (T) state.entity;
 		this.collector = collector;
+		this.camera = camera;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(entity, state.entityYaw, state.partialTicks, poseStack, source, state.lightCoords));
 		super.submit(state, poseStack, collector, camera);
 	}

@@ -9,7 +9,13 @@
       }
     },
     "minecraft:gameplay/nether_portal_spawns_piglin": false,
-    "minecraft:gameplay/respawn_anchor_works": true
+    "minecraft:gameplay/respawn_anchor_works": true,
+    "neoforge:custom_skybox": "eternal_starlight:starlight",
+    "minecraft:visual/sky_color": "#0a0b26",
+    "minecraft:visual/fog_color": "#17142f",
+    "minecraft:visual/star_brightness": 1.0,
+    "minecraft:visual/sky_light_factor": 0.35,
+    "minecraft:visual/sky_light_color": "#8f8fd0"
   },
   "coordinate_scale": 1.0,
   "has_ceiling": false,

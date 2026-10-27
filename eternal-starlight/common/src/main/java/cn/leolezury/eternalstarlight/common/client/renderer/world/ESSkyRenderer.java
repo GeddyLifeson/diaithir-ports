@@ -2,24 +2,37 @@ package cn.leolezury.eternalstarlight.common.client.renderer.world;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.weather.ClientWeatherState;
-import com.mojang.blaze3d.opengl.GlStateManager;
+import com.mojang.blaze3d.buffers.GpuBuffer;
+import com.mojang.blaze3d.buffers.GpuBufferSlice;
+import com.mojang.blaze3d.systems.RenderPass;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-import net.minecraft.client.Camera;
+import com.mojang.blaze3d.textures.GpuTextureView;
+import com.mojang.blaze3d.vertex.BufferBuilder;
+import com.mojang.blaze3d.vertex.ByteBufferBuilder;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.MeshData;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.fog.FogRenderer;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.SkyRenderer;
+import net.minecraft.client.renderer.state.level.LevelRenderState;
+import net.minecraft.client.renderer.state.level.SkyRenderState;
+import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.material.FogType;
-import net.minecraft.world.phys.Vec3;
+import org.joml.Matrix3f;
 import org.joml.Matrix4f;
-import org.joml.Quaternionf;
+import org.joml.Matrix4fStack;
+import org.joml.Matrix4fc;
 import org.joml.Vector3f;
+import org.joml.Vector4f;
+
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 
 public class ESSkyRenderer {
 	private static final Identifier DEAD_STAR_LOCATION = EternalStarlight.id("textures/environment/dead_star.png");
@@ -33,161 +46,138 @@ public class ESSkyRenderer {
 	private static final float STAR_FALLOFF_END_RADIUS = DEAD_STAR_HALF_SIZE;
 	private static final float STAR_HOLE_ANGLE = (float) Mth.atan2(STAR_HOLE_RADIUS, STAR_SPHERE_RADIUS);
 	private static final float STAR_FALLOFF_END_ANGLE = (float) Mth.atan2(STAR_FALLOFF_END_RADIUS, STAR_SPHERE_RADIUS);
-	private static VertexBuffer starBuffer;
 
-	public static boolean renderSky(ClientLevel level, Matrix4f modelViewMatrix, Matrix4f matrix, float partialTicks, Camera camera, Runnable setupFog) {
+	private static GpuBuffer starBuffer;
+	private static GpuBuffer deadStarBuffer;
+	private static int starIndexCount;
+	private static final RenderSystem.AutoStorageIndexBuffer QUAD_INDICES = RenderSystem.getSequentialBuffer(VertexFormat.Mode.QUADS);
+
+	public static boolean renderSky(LevelRenderState levelRenderState, SkyRenderState skyRenderState, Matrix4fc modelViewMatrix, Runnable setupFog) {
 		Minecraft minecraft = Minecraft.getInstance();
-		LevelRenderer levelRenderer = minecraft.levelRenderer;
+		ClientLevel level = minecraft.level;
+		SkyRenderer vanillaSky = minecraft.levelRenderer.skyRenderer;
+		if (level == null || vanillaSky == null) {
+			return false;
+		}
 		setupFog.run();
-
 		if (starBuffer == null) {
-			createStars();
+			createBuffers();
 		}
 
-		FogType fogType = camera.getFluidInCamera();
-		if (fogType != FogType.POWDER_SNOW && fogType != FogType.LAVA && !levelRenderer.doesMobEffectBlockSky(camera)) {
-			PoseStack poseStack = new PoseStack();
-			poseStack.mulPose(modelViewMatrix);
+		vanillaSky.renderSkyDisc(skyRenderState.skyColor);
 
-			Vec3 vec3 = level.getSkyColor(minecraft.gameRenderer.getMainCamera().position(), partialTicks);
-			float g = (float) vec3.x;
-			float h = (float) vec3.y;
-			float i = (float) vec3.z;
-			FogRenderer.levelFogColor();
-			Tesselator tesselator = Tesselator.getInstance();
-			RenderSystem.depthMask(false);
-			RenderSystem.setShaderColor(g, h, i, 1.0F);
-			ShaderInstance shaderInstance = RenderSystem.getShader();
-			levelRenderer.skyBuffer.bind();
-			levelRenderer.skyBuffer.drawWithShader(poseStack.last().pose(), matrix, shaderInstance);
-			VertexBuffer.unbind();
-			float[] fs = level.effects().getSunriseColor(FIXED_TIME, partialTicks);
-			float j;
-			float l;
-			float p;
-			float q;
-			float r;
-			if (fs != null) {
-				RenderSystem.setShader(GameRenderer::getPositionColorShader);
-				RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-				poseStack.pushPose();
-				poseStack.mulPose(com.mojang.math.Axis.XP.rotationDegrees(90.0F));
-				j = Mth.sin(level.getSunAngle(partialTicks)) < 0.0F ? 180.0F : 0.0F;
-				poseStack.mulPose(com.mojang.math.Axis.ZP.rotationDegrees(j));
-				poseStack.mulPose(com.mojang.math.Axis.ZP.rotationDegrees(90.0F));
-				float k = fs[0];
-				l = fs[1];
-				float m = fs[2];
-				Matrix4f matrix4f3 = poseStack.last().pose();
-				BufferBuilder bufferBuilder = tesselator.begin(VertexFormat.Mode.TRIANGLE_FAN, DefaultVertexFormat.POSITION_COLOR);
-				bufferBuilder.addVertex(matrix4f3, 0.0F, 100.0F, 0.0F).setColor(k, l, m, fs[3]);
-
-				for (int o = 0; o <= 16; ++o) {
-					p = (float) o * 6.2831855F / 16.0F;
-					q = Mth.sin(p);
-					r = Mth.cos(p);
-					bufferBuilder.addVertex(matrix4f3, q * 120.0F, r * 120.0F, -r * 40.0F * fs[3]).setColor(fs[0], fs[1], fs[2], 0.0F);
-				}
-
-				BufferUploader.drawWithShader(bufferBuilder.buildOrThrow());
-				poseStack.popPose();
-			}
-
-			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-			poseStack.pushPose();
-
-			float rainLevel = level.getRainLevel(partialTicks);
-			if (ClientWeatherState.weather != null) {
-				rainLevel = ClientWeatherState.weather.modifyRainLevel(rainLevel);
-			} else {
-				ClientWeatherState.levelTarget = rainLevel;
-				rainLevel = ClientWeatherState.getRainLevel(partialTicks);
-			}
-
-			j = 1.0F - rainLevel;
-			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, j);
-			poseStack.mulPose(com.mojang.math.Axis.YP.rotationDegrees(-90.0F));
-			poseStack.mulPose(com.mojang.math.Axis.XP.rotationDegrees(FIXED_TIME * 360.0F));
-			Matrix4f matrix4f4 = poseStack.last().pose();
-			l = DEAD_STAR_HALF_SIZE;
-			RenderSystem.setShader(GameRenderer::getPositionTexShader);
-			RenderSystem.setShaderTexture(0, DEAD_STAR_LOCATION);
-			BufferBuilder bufferBuilder2 = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-			bufferBuilder2.addVertex(matrix4f4, -l, 100.0F, -l).setUv(0.0F, 0.0F);
-			bufferBuilder2.addVertex(matrix4f4, l, 100.0F, -l).setUv(1.0F, 0.0F);
-			bufferBuilder2.addVertex(matrix4f4, l, 100.0F, l).setUv(1.0F, 1.0F);
-			bufferBuilder2.addVertex(matrix4f4, -l, 100.0F, l).setUv(0.0F, 1.0F);
-			BufferUploader.drawWithShader(bufferBuilder2.buildOrThrow());
-
-			float v = 1.0f/*level.getStarBrightness(partialTicks) * j*/;
-			RenderSystem.setShaderColor(v, v, v, v);
-			FogRenderer.setupNoFog();
-			starBuffer.bind();
-			starBuffer.drawWithShader(poseStack.last().pose(), matrix, GameRenderer.getPositionShader());
-			VertexBuffer.unbind();
-			setupFog.run();
-
-			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-			poseStack.popPose();
-			RenderSystem.setShaderColor(0.0F, 0.0F, 0.0F, 1.0F);
-
-			/*double d = minecraft.player.getEyePosition(partialTicks).y - level.getLevelData().getHorizonHeight(level);
-			if (d < 0.0) {
-				poseStack.pushPose();
-				poseStack.translate(0.0F, 12.0F, 0.0F);
-				levelRenderer.darkBuffer.bind();
-				levelRenderer.darkBuffer.drawWithShader(poseStack.last().pose(), matrix, shaderInstance);
-				VertexBuffer.unbind();
-				poseStack.popPose();
-			}*/
-
-			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-			RenderSystem.depthMask(true);
+		float rainLevel = level.getRainLevel(minecraft.getDeltaTracker().getGameTimeDeltaPartialTick(false));
+		if (ClientWeatherState.weather != null) {
+			rainLevel = ClientWeatherState.weather.modifyRainLevel(rainLevel);
+		} else {
+			ClientWeatherState.levelTarget = rainLevel;
+			rainLevel = ClientWeatherState.getRainLevel(minecraft.getDeltaTracker().getGameTimeDeltaPartialTick(false));
 		}
+		float alpha = 1.0F - rainLevel;
 
+		PoseStack poseStack = new PoseStack();
+		poseStack.mulPose(Axis.YP.rotationDegrees(-90.0F));
+		poseStack.mulPose(Axis.XP.rotationDegrees(FIXED_TIME * 360.0F));
+
+		renderStars(poseStack, 1.0F);
+		renderDeadStar(poseStack, alpha);
 		return true;
 	}
 
-	private static void createStars() {
+	private static void renderStars(PoseStack poseStack, float brightness) {
+		Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
+		modelViewStack.pushMatrix();
+		modelViewStack.mul(poseStack.last().pose());
+		GpuTextureView color = Minecraft.getInstance().getMainRenderTarget().getColorTextureView();
+		GpuTextureView depth = Minecraft.getInstance().getMainRenderTarget().getDepthTextureView();
+		GpuBuffer indexBuffer = QUAD_INDICES.getBuffer(starIndexCount);
+		GpuBufferSlice transforms = RenderSystem.getDynamicUniforms().writeTransform(modelViewStack, new Vector4f(brightness, brightness, brightness, brightness), new Vector3f(), new Matrix4f());
+		try (RenderPass pass = RenderSystem.getDevice().createCommandEncoder().createRenderPass(() -> "ES stars", color, OptionalInt.empty(), depth, OptionalDouble.empty())) {
+			pass.setPipeline(RenderPipelines.STARS);
+			RenderSystem.bindDefaultUniforms(pass);
+			pass.setUniform("DynamicTransforms", transforms);
+			pass.setVertexBuffer(0, starBuffer);
+			pass.setIndexBuffer(indexBuffer, QUAD_INDICES.type());
+			pass.drawIndexed(0, 0, starIndexCount, 1);
+		}
+		modelViewStack.popMatrix();
+	}
+
+	private static void renderDeadStar(PoseStack poseStack, float alpha) {
+		AbstractTexture texture = Minecraft.getInstance().getTextureManager().getTexture(DEAD_STAR_LOCATION);
+		Matrix4fStack modelViewStack = RenderSystem.getModelViewStack();
+		modelViewStack.pushMatrix();
+		modelViewStack.mul(poseStack.last().pose());
+		modelViewStack.translate(0.0F, 100.0F, 0.0F);
+		modelViewStack.scale(DEAD_STAR_HALF_SIZE, 1.0F, DEAD_STAR_HALF_SIZE);
+		GpuTextureView color = Minecraft.getInstance().getMainRenderTarget().getColorTextureView();
+		GpuTextureView depth = Minecraft.getInstance().getMainRenderTarget().getDepthTextureView();
+		GpuBuffer indexBuffer = QUAD_INDICES.getBuffer(6);
+		GpuBufferSlice transforms = RenderSystem.getDynamicUniforms().writeTransform(modelViewStack, new Vector4f(1.0F, 1.0F, 1.0F, alpha), new Vector3f(), new Matrix4f());
+		try (RenderPass pass = RenderSystem.getDevice().createCommandEncoder().createRenderPass(() -> "ES dead star", color, OptionalInt.empty(), depth, OptionalDouble.empty())) {
+			pass.setPipeline(RenderPipelines.CELESTIAL);
+			RenderSystem.bindDefaultUniforms(pass);
+			pass.setUniform("DynamicTransforms", transforms);
+			pass.bindTexture("Sampler0", texture.getTextureView(), texture.getSampler());
+			pass.setVertexBuffer(0, deadStarBuffer);
+			pass.setIndexBuffer(indexBuffer, QUAD_INDICES.type());
+			pass.drawIndexed(0, 0, 6, 1);
+		}
+		modelViewStack.popMatrix();
+	}
+
+	private static void createBuffers() {
 		if (starBuffer != null) {
 			starBuffer.close();
 		}
-
-		starBuffer = new VertexBuffer(VertexBuffer.Usage.STATIC);
-		starBuffer.bind();
-		starBuffer.upload(drawStars(Tesselator.getInstance()));
-		VertexBuffer.unbind();
-	}
-
-	private static MeshData drawStars(Tesselator tesselator) {
-		RandomSource randomSource = RandomSource.create(10842L);
-		RandomSource densityRandom = RandomSource.create(336103L);
-		BufferBuilder bufferBuilder = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
-
-		for (int j = 0; j < 3000; ++j) {
-			float g = randomSource.nextFloat() * 2.0F - 1.0F;
-			float h = randomSource.nextFloat() * 2.0F - 1.0F;
-			float k = randomSource.nextFloat() * 2.0F - 1.0F;
-			float l = 0.15F + randomSource.nextFloat() * 0.1F;
-			float m = Mth.lengthSquared(g, h, k);
-			if (!(m <= 0.010000001F) && !(m >= 1.0F)) {
-				Vector3f vector3f = (new Vector3f(g, h, k)).normalize(STAR_SPHERE_RADIUS);
-				float n = (float) (randomSource.nextDouble() * 3.1415927410125732 * 2.0);
-				Quaternionf quaternionf = (new Quaternionf()).rotateTo(new Vector3f(0.0F, 0.0F, -1.0F), vector3f).rotateZ(n);
-				// Drop stars that would be drawn over the dead star's opaque disk (centered at local +Y),
-				// fading the density back to normal around it so the sky still looks natural.
-				float dot = h / Mth.sqrt(m);
-				float angle = (float) Math.acos(Mth.clamp(dot, -1.0F, 1.0F));
-				float keepChance = (float) Mth.smoothstep(Mth.clampedMap(angle, STAR_HOLE_ANGLE, STAR_FALLOFF_END_ANGLE, 0.0F, 1.0F));
-				if (densityRandom.nextFloat() < keepChance) {
-					bufferBuilder.addVertex(vector3f.add((new Vector3f(l, -l, 0.0F)).rotate(quaternionf)));
-					bufferBuilder.addVertex(vector3f.add((new Vector3f(l, l, 0.0F)).rotate(quaternionf)));
-					bufferBuilder.addVertex(vector3f.add((new Vector3f(-l, l, 0.0F)).rotate(quaternionf)));
-					bufferBuilder.addVertex(vector3f.add((new Vector3f(-l, -l, 0.0F)).rotate(quaternionf)));
-				}
+		if (deadStarBuffer != null) {
+			deadStarBuffer.close();
+		}
+		starBuffer = buildStars();
+		try (ByteBufferBuilder builder = ByteBufferBuilder.exactlySized(4 * DefaultVertexFormat.POSITION_TEX.getVertexSize())) {
+			BufferBuilder bufferBuilder = new BufferBuilder(builder, VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
+			bufferBuilder.addVertex(-1.0F, 0.0F, -1.0F).setUv(0.0F, 0.0F);
+			bufferBuilder.addVertex(1.0F, 0.0F, -1.0F).setUv(1.0F, 0.0F);
+			bufferBuilder.addVertex(1.0F, 0.0F, 1.0F).setUv(1.0F, 1.0F);
+			bufferBuilder.addVertex(-1.0F, 0.0F, 1.0F).setUv(0.0F, 1.0F);
+			try (MeshData mesh = bufferBuilder.buildOrThrow()) {
+				deadStarBuffer = RenderSystem.getDevice().createBuffer(() -> "ES dead star quad", 32, mesh.vertexBuffer());
 			}
 		}
+	}
 
-		return bufferBuilder.buildOrThrow();
+	private static GpuBuffer buildStars() {
+		RandomSource randomSource = RandomSource.create(10842L);
+		RandomSource densityRandom = RandomSource.create(336103L);
+		try (ByteBufferBuilder builder = ByteBufferBuilder.exactlySized(DefaultVertexFormat.POSITION.getVertexSize() * 3000 * 4)) {
+			BufferBuilder bufferBuilder = new BufferBuilder(builder, VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
+			for (int j = 0; j < 3000; ++j) {
+				float g = randomSource.nextFloat() * 2.0F - 1.0F;
+				float h = randomSource.nextFloat() * 2.0F - 1.0F;
+				float k = randomSource.nextFloat() * 2.0F - 1.0F;
+				float l = 0.15F + randomSource.nextFloat() * 0.1F;
+				float m = Mth.lengthSquared(g, h, k);
+				if (!(m <= 0.010000001F) && !(m >= 1.0F)) {
+					Vector3f center = new Vector3f(g, h, k).normalize(STAR_SPHERE_RADIUS);
+					float n = (float) (randomSource.nextDouble() * Math.PI * 2.0);
+					Matrix3f rotation = new Matrix3f().rotateTowards(new Vector3f(center).negate(), new Vector3f(0.0F, 1.0F, 0.0F)).rotateZ(-n);
+					// Drop stars that would be drawn over the dead star's opaque disk (centered at local +Y),
+					// fading the density back to normal around it so the sky still looks natural.
+					float dot = h / Mth.sqrt(m);
+					float angle = (float) Math.acos(Mth.clamp(dot, -1.0F, 1.0F));
+					float keepChance = (float) Mth.smoothstep(Mth.clampedMap(angle, STAR_HOLE_ANGLE, STAR_FALLOFF_END_ANGLE, 0.0F, 1.0F));
+					if (densityRandom.nextFloat() < keepChance) {
+						bufferBuilder.addVertex(new Vector3f(l, -l, 0.0F).mul(rotation).add(center));
+						bufferBuilder.addVertex(new Vector3f(l, l, 0.0F).mul(rotation).add(center));
+						bufferBuilder.addVertex(new Vector3f(-l, l, 0.0F).mul(rotation).add(center));
+						bufferBuilder.addVertex(new Vector3f(-l, -l, 0.0F).mul(rotation).add(center));
+					}
+				}
+			}
+			try (MeshData mesh = bufferBuilder.buildOrThrow()) {
+				starIndexCount = mesh.drawState().indexCount();
+				return RenderSystem.getDevice().createBuffer(() -> "ES stars", 40, mesh.vertexBuffer());
+			}
+		}
 	}
 }
