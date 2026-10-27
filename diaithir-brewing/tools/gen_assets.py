@@ -79,7 +79,7 @@ make("fermenting_barrel", (112, 78, 46), (6, 29, 53))
 NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel")}
 lang = {}
 for n, (dia, _en) in NAMES.items():
-    lang[f"block.{NS}.{n}"] = _en  # English main name; the Diaithiris name is shown in grey by the pack (diaithirbrewing-names in tools/diaithiris_names.json)
+    lang[f"block.{NS}.{n}"] = _en  # English main name; the Diaithiris name is shown in grey by the pack (assets/diaithirbrewing/diaithir_names/names.json, written by the names thread)
     put(f"assets/{NS}/models/block/{n}.json", {
         "parent": "minecraft:block/cube_bottom_top",
         "textures": {"bottom": f"{NS}:block/{n}_bottom", "side": f"{NS}:block/{n}_side", "top": f"{NS}:block/{n}_top"}})
@@ -90,7 +90,7 @@ for n, (dia, _en) in NAMES.items():
         "pools": [{"rolls": 1, "bonus_rolls": 0, "conditions": [{"condition": "minecraft:survives_explosion"}],
                    "entries": [{"type": "minecraft:item", "name": f"{NS}:{n}"}]}]})
 lang[f"block.{NS}.ready"] = "%2$s x %1$s ready to draw"
-lang[f"block.{NS}.fermenting"] = "Fermenting: %s%%"
+lang[f"block.{NS}.fermenting"] = "Fermenting: %s%% (cellar %s/%s)"
 lang[f"block.{NS}.filling"] = "Contents: %s / %s"
 put(f"assets/{NS}/lang/en_us.json", lang)
 

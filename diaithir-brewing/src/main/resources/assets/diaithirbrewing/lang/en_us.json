@@ -2,6 +2,6 @@
  "block.diaithirbrewing.keg": "Keg",
  "block.diaithirbrewing.fermenting_barrel": "Fermenting Barrel",
  "block.diaithirbrewing.ready": "%2$s x %1$s ready to draw",
- "block.diaithirbrewing.fermenting": "Fermenting: %s%%",
+ "block.diaithirbrewing.fermenting": "Fermenting: %s%% (cellar %s/%s)",
  "block.diaithirbrewing.filling": "Contents: %s / %s"
 }

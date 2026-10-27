@@ -29,7 +29,8 @@ public final class BrewVesselEntity extends BlockEntity {
     Item base = Items.AIR;
     final Map<Item, Integer> held = new HashMap<>();
     BrewRecipe active;
-    int progress;
+    int progress; // quarter-ticks: a good cellar ferments up to 1.5 times faster
+    int score = -1;
     int settle = -1;
     static final int SETTLE_TICKS = 100;
     ItemStack drink = ItemStack.EMPTY;
@@ -99,8 +100,9 @@ public final class BrewVesselEntity extends BlockEntity {
         sync();
     }
 
-    void finish() {
-        drink = new ItemStack(active.drink(), active.servings());
+    void finish(int score) {
+        Item out = level != null && Cellar.spoils(active, score, level.getRandom()) ? active.spoiled() : active.drink();
+        drink = new ItemStack(out, active.servings());
         container = active.container();
         held.clear();
         base = Items.AIR;
@@ -133,8 +135,12 @@ public final class BrewVesselEntity extends BlockEntity {
 
     static void tick(Level level, BlockPos pos, BlockState state, BrewVesselEntity be) {
         if (be.active != null) {
-            if (++be.progress >= be.active.ticks()) {
-                be.finish();
+            if (level.getGameTime() % 20 == 0 || be.score < 0) {
+                be.score = Cellar.score(level, pos);
+            }
+            be.progress += Cellar.rate(be.score);
+            if (be.progress >= be.active.ticks() * 4) {
+                be.finish(be.score);
             }
         } else if (be.settle > 0 && --be.settle == 0) {
             be.startNow();

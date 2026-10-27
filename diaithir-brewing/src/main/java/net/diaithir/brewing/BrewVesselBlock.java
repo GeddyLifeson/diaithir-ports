@@ -111,7 +111,7 @@ public final class BrewVesselBlock extends BaseEntityBlock {
             return Component.translatable("block.diaithirbrewing.ready", be.drink.getHoverName(), be.drink.getCount());
         }
         if (be.busy()) {
-            return Component.translatable("block.diaithirbrewing.fermenting", 100 * be.progress / be.active.ticks());
+            return Component.translatable("block.diaithirbrewing.fermenting", 25 * be.progress / be.active.ticks(), Math.max(be.score, 0), Cellar.BEST);
         }
         return Component.translatable("block.diaithirbrewing.filling", be.count(), be.capacity());
     }
