@@ -124,8 +124,8 @@ public class SampleDrillBlockEntity extends SmartBlockEntity implements IDrill {
 		if (progress >= DRILL_TIME) {
 			if (vein != null) {
 				ItemStack is = player.getItemInHand(hand);
-				if (is.getItem() == Registration.VEIN_ATLAS_ITEM.get()) {
-					Registration.VEIN_ATLAS_ITEM.get().addVein(player, is, vein, new DimChunkPos(level, worldPosition), data.getRandomMul());
+				if (is.getItem() == com.diaithir.addons.oreexcavation.Registration.VEIN_ATLAS_ITEM.get()) {
+					com.diaithir.addons.oreexcavation.Registration.VEIN_ATLAS_ITEM.get().addVein(player, is, vein, new DimChunkPos(level, worldPosition), data.getRandomMul());
 					return true;
 				}
 				player.sendOverlayMessage(Component.translatable("chat.coe.sampleDrill.noAtlas"));
@@ -156,7 +156,7 @@ public class SampleDrillBlockEntity extends SmartBlockEntity implements IDrill {
 
 	@Override
 	public ItemStack getDrill() {
-		return new ItemStack(Registration.NORMAL_DRILL_ITEM.get());
+		return new ItemStack(com.diaithir.addons.oreexcavation.Registration.NORMAL_DRILL_ITEM.get());
 	}
 
 	@Override

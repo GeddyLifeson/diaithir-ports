@@ -1,0 +1,27 @@
+{
+ "variants": {
+  "shaft=north": {
+   "model": "createoreexcavation:block/kinetic_shaft"
+  },
+  "shaft=east": {
+   "model": "createoreexcavation:block/kinetic_shaft",
+   "y": 90
+  },
+  "shaft=south": {
+   "model": "createoreexcavation:block/kinetic_shaft",
+   "y": 180
+  },
+  "shaft=west": {
+   "model": "createoreexcavation:block/kinetic_shaft",
+   "y": 270
+  },
+  "shaft=up": {
+   "model": "createoreexcavation:block/kinetic_shaft",
+   "x": 270
+  },
+  "shaft=down": {
+   "model": "createoreexcavation:block/kinetic_shaft",
+   "x": 90
+  }
+ }
+}

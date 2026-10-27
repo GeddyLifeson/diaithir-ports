@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="diaithir_create_ore_excavation"
+version="${version}"
+displayName="Create Ore Excavation (Diaithir port)"
+authors="tom5454 (original, MIT); Diaithir pack (NeoForge 26.1.2 port, art, integration)"
+description='''Veins of ore under the world, found with a sample drill and worked with rotational machinery. Port of Create Ore Excavation (MIT) to the Diaithir Create port.'''
+
+[[dependencies.diaithir_create_ore_excavation]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_ore_excavation]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_ore_excavation]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

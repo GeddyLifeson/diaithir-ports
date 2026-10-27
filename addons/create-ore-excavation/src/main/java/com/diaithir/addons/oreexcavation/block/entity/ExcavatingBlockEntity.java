@@ -229,10 +229,10 @@ public abstract class ExcavatingBlockEntity<R extends ExcavatingRecipe> extends 
 
 	public InteractionResult onClick(Player player, InteractionHand hand) {
 		ItemStack item = player.getItemInHand(hand);
-		if (item.getItem() == Registration.VEIN_ATLAS_ITEM.get()) {
+		if (item.getItem() == com.diaithir.addons.oreexcavation.Registration.VEIN_ATLAS_ITEM.get()) {
 			if(!level.isClientSide()) {
 				if (completedOneCycle) {
-					Registration.VEIN_ATLAS_ITEM.get().addVein(player, item, vein, new DimChunkPos(level, worldPosition), data.getRandomMul());
+					com.diaithir.addons.oreexcavation.Registration.VEIN_ATLAS_ITEM.get().addVein(player, item, vein, new DimChunkPos(level, worldPosition), data.getRandomMul());
 				} else {
 					player.sendOverlayMessage(Component.translatable("chat.coe.sampleDrill.notDone"));
 				}

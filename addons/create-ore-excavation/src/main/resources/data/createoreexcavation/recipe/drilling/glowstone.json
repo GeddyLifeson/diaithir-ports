@@ -1,0 +1,13 @@
+{
+ "type": "createoreexcavation:drilling",
+ "drill": "#createoreexcavation:drills",
+ "priority": 0,
+ "stress": 256,
+ "ticks": 1200,
+ "veinId": "createoreexcavation:ore_vein_type/glowstone",
+ "output": [
+  {
+   "id": "minecraft:glowstone_dust"
+  }
+ ]
+}

@@ -44,8 +44,10 @@ import com.diaithir.addons.oreexcavation.recipe.DrillingRecipe;
 import com.diaithir.addons.oreexcavation.recipe.ExtractorRecipe;
 import com.diaithir.addons.oreexcavation.recipe.VeinRecipe;
 
-@Mod(CreateOreExcavation.MODID)
+@Mod(CreateOreExcavation.MOD_ID)
 public class CreateOreExcavation {
+	public static final String MOD_ID = "diaithir_create_ore_excavation";
+	/** Registry namespace kept from upstream so the existing datapacks keep working. */
 	public static final String MODID = "createoreexcavation";
 	public static final Logger LOGGER = LogUtils.getLogger();
 

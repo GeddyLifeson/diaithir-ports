@@ -38,7 +38,7 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 	public ThreeState finite;
 	public float amountMultiplierMin, amountMultiplierMax;
 	public RandomSpreadStructurePlacement placement;
-	public ItemStack icon;
+	public net.minecraft.world.item.ItemStackTemplate icon;
 	protected boolean isNet;
 
 	public VeinRecipe() {
@@ -46,7 +46,7 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 
 	public VeinRecipe(Component veinName, int priority, Optional<TagKey<Biome>> biomeWhitelist, Optional<TagKey<Biome>> biomeBlacklist,
 			ThreeState finite, float amountMultiplierMin, float amountMultiplierMax,
-			RandomSpreadStructurePlacement placement, ItemStack icon) {
+			RandomSpreadStructurePlacement placement, net.minecraft.world.item.ItemStackTemplate icon) {
 		this.veinName = veinName;
 		this.priority = priority;
 		this.biomeWhitelist = biomeWhitelist.orElse(null);
@@ -139,6 +139,10 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 	}
 
 	public ItemStack getIcon() {
+		return icon.create();
+	}
+
+	public net.minecraft.world.item.ItemStackTemplate getIconTemplate() {
 		return icon;
 	}
 
@@ -154,7 +158,7 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 			r.finite = buffer.readBoolean() ? ThreeState.ALWAYS : ThreeState.NEVER;
 			r.amountMultiplierMin = buffer.readFloat();
 			r.amountMultiplierMax = buffer.readFloat();
-			r.icon = ItemStack.STREAM_CODEC.decode(buffer);
+			r.icon = net.minecraft.world.item.ItemStackTemplate.STREAM_CODEC.decode(buffer);
 			r.isNet = true;
 			r.placement = new RandomSpreadStructurePlacement(2, 1, RandomSpreadType.LINEAR, 0);
 			return r;
@@ -174,7 +178,7 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 			buffer.writeBoolean(recipe.finite == ThreeState.DEFAULT ? !Config.defaultInfinite : recipe.finite == ThreeState.ALWAYS);
 			buffer.writeFloat(recipe.amountMultiplierMin * Config.finiteAmountBase);
 			buffer.writeFloat(recipe.amountMultiplierMax * Config.finiteAmountBase);
-			ItemStack.STREAM_CODEC.encode(buffer, recipe.icon);
+			net.minecraft.world.item.ItemStackTemplate.STREAM_CODEC.encode(buffer, recipe.icon);
 		}
 
 		private static void write(TagKey<Biome> tag, FriendlyByteBuf buffer) {
@@ -191,7 +195,7 @@ public class VeinRecipe implements CreateRecipe<NoInput> {
 					Codec.FLOAT.fieldOf("amountMultiplierMin").forGetter(VeinRecipe::getMinAmount),
 					Codec.FLOAT.fieldOf("amountMultiplierMax").forGetter(VeinRecipe::getMaxAmount),
 					RandomSpreadStructurePlacement.CODEC.fieldOf("placement").forGetter(VeinRecipe::getPlacement),
-					ItemStack.CODEC.fieldOf("icon").forGetter(VeinRecipe::getIcon)
+					net.minecraft.world.item.ItemStackTemplate.CODEC.fieldOf("icon").forGetter(VeinRecipe::getIconTemplate)
 					).apply(b, VeinRecipe::new);
 		});
 

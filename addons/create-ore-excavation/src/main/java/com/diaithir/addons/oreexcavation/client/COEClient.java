@@ -11,7 +11,7 @@ import com.diaithir.addons.oreexcavation.Registration;
 import com.diaithir.addons.oreexcavation.menu.OreVeinAtlasScreen;
 import com.diaithir.addons.oreexcavation.recipe.OreRecipes;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = CreateOreExcavation.MODID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = CreateOreExcavation.MOD_ID)
 public class COEClient {
 
 	@SubscribeEvent

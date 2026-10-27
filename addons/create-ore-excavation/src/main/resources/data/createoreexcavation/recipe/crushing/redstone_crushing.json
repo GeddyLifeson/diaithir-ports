@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "ingredient": "createoreexcavation:raw_redstone",
+ "processing_time": 250,
+ "results": [
+  {
+   "count": 4,
+   "id": "minecraft:redstone"
+  }
+ ]
+}
