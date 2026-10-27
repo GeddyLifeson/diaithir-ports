@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
@@ -57,7 +56,4 @@ public class OreRecipes {
 		return veins(level).stream().map(OreRecipes::idOf).collect(Collectors.toList());
 	}
 
-	public static Level clientLevel() {
-		return Minecraft.getInstance().level;
-	}
 }

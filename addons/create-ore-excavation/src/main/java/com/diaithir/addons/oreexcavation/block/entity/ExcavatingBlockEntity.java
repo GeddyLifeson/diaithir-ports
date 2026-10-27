@@ -11,7 +11,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.zurrtum.create.client.catnip.lang.FontHelper.Palette;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
