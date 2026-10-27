@@ -97,7 +97,7 @@ public class DeepOneBarterGoal extends Goal {
             mob.getLookControl().setLookAt(center.x, center.y, center.z, 10.0F, (float) this.mob.getMaxHeadXRot());
         }
         if (distance > 3) {
-            mob.getNavigation().snapTo(altarPos.getX() + 0.5F, altarPos.getY(), altarPos.getZ() + 0.5F, 1);
+            mob.getNavigation().moveTo(altarPos.getX() + 0.5F, altarPos.getY(), altarPos.getZ() + 0.5F, 1);
         } else {
             mob.setLastAltarPos(altarPos);
             mob.setTradingLockedTime(50);

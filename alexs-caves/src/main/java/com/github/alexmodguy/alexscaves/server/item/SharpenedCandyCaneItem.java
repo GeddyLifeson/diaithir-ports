@@ -41,7 +41,7 @@ public class SharpenedCandyCaneItem extends Item {
         }
         hurtEntity.knockback(0.15F, hurtEntity.getX() - player.getX(), hurtEntity.getZ() - player.getZ());
         if(!hurtEntity.level().isClientSide() && hurtEntity.level() instanceof ServerLevel serverLevel){
-            ItemParticleOption itemParticleOption = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ACItemRegistry.SHARPENED_CANDY_CANE.get()));
+            ItemParticleOption itemParticleOption = new ItemParticleOption(ParticleTypes.ITEM, ACItemRegistry.SHARPENED_CANDY_CANE.get());
             Vec3 hurtCenter = hurtEntity.position().add(0, hurtEntity.getBbHeight() * 0.5F, 0);
             Vec3 playerCenter = player.position().add(0, player.getBbHeight() * 0.5F, 0);
             Vec3 particlePos = playerCenter.subtract(hurtCenter).normalize().scale(hurtEntity.getBbWidth() * 0.6F).add(hurtCenter);

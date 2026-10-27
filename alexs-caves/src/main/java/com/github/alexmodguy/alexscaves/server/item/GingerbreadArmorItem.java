@@ -25,7 +25,6 @@ public class GingerbreadArmorItem extends Item {
     private final ItemAttributeModifiers defaultItemAttributes;
     private final ACArmorMaterial acMaterial;
     private final net.minecraft.world.item.equipment.ArmorType armorType;
-    private final net.minecraft.world.item.equipment.ArmorType armorType;
 
     public GingerbreadArmorItem(ACArmorMaterial armorMaterial, net.minecraft.world.item.equipment.ArmorType slot) {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().humanoidArmor(armorMaterial.material(), slot));

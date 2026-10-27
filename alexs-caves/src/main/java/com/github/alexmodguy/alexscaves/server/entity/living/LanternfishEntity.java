@@ -275,7 +275,7 @@ public class LanternfishEntity extends WaterAnimal implements Bucketable {
 
     public void moveToGroupLeader() {
         if (this.hasGroupLeader()) {
-            this.getNavigation().snapTo(this.groupLeader.getX(), this.groupLeader.getY(), this.groupLeader.getZ(), 1.0D);
+            this.getNavigation().moveTo(this.groupLeader.getX(), this.groupLeader.getY(), this.groupLeader.getZ(), 1.0D);
         }
 
     }
@@ -359,7 +359,7 @@ public class LanternfishEntity extends WaterAnimal implements Bucketable {
             if (fish.circlePos != null && fish.circleTime <= fish.maxCircleTime) {
                 fish.circleTime++;
                 Vec3 movePos = orbitAroundPos(fish.circlePos);
-                fish.getNavigation().snapTo(movePos.x(), movePos.y(), movePos.z(), this.fish.circleSpeed);
+                fish.getNavigation().moveTo(movePos.x(), movePos.y(), movePos.z(), this.fish.circleSpeed);
             } else if (this.fish.isGroupLeader()) {
                 if (fish.baitballCooldown == 0) {
                     fish.baitballCooldown = 100 + this.fish.random.nextInt(150);
@@ -374,7 +374,7 @@ public class LanternfishEntity extends WaterAnimal implements Bucketable {
                 }
             } else if (fish.random.nextInt(40) == 0 || fish.hasNoLeader()) {
                 Vec3 result = Vec3.atCenterOf(findSwimToPos(6));
-                fish.getNavigation().snapTo(result.x, result.y, result.z, 1.0F);
+                fish.getNavigation().moveTo(result.x, result.y, result.z, 1.0F);
             } else if (fish.hasGroupLeader() && fish.groupLeader.circlePos != null) {
                 if (fish.circlePos == null) {
                     fish.circlePos = fish.groupLeader.circlePos;

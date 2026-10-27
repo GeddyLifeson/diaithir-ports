@@ -121,7 +121,7 @@ public class MobTargetItemGoal<T extends ItemEntity> extends TargetGoal {
         if (walkCooldown > 0) {
             walkCooldown--;
         } else {
-            this.mob.getNavigation().snapTo(this.targetEntity.getX(), this.targetEntity.getY(), this.targetEntity.getZ(), 1);
+            this.mob.getNavigation().moveTo(this.targetEntity.getX(), this.targetEntity.getY(), this.targetEntity.getZ(), 1);
             this.mob.lookAt(EntityAnchorArgument.Anchor.EYES, targetEntity.position());
             walkCooldown = 30 + this.mob.getRandom().nextInt(40);
         }

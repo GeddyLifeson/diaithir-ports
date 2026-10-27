@@ -87,7 +87,7 @@ public class NotorHologramGoal extends Goal {
                 }
             }
             if (moveTarget != null && moveTarget.distanceTo(notor.position()) >= 4) {
-                notor.getNavigation().snapTo(moveTarget.x, moveTarget.y, moveTarget.z, 1.2F);
+                notor.getNavigation().moveTo(moveTarget.x, moveTarget.y, moveTarget.z, 1.2F);
             }
         } else {
             double distToMonster = monster.distanceTo(notor);
@@ -119,13 +119,13 @@ public class NotorHologramGoal extends Goal {
                     notor.setShowingHologram(true);
                     hologramTime++;
                 } else {
-                    notor.getNavigation().snapTo(monster.getX(), monster.getY(1.0F) + 1, monster.getZ(), 1.2F);
+                    notor.getNavigation().moveTo(monster.getX(), monster.getY(1.0F) + 1, monster.getZ(), 1.2F);
                 }
             } else {
                 notor.setShowingHologram(false);
                 if (hologram instanceof Player player && !player.isCreative()) {
-                    monster.getNavigation().snapTo(notor.getX(), notor.getY(), notor.getZ(), 1.2F);
-                    notor.getNavigation().snapTo(player.getX(), player.getY(1.0F) + 2, player.getZ(), 1.2F);
+                    monster.getNavigation().moveTo(notor.getX(), notor.getY(), notor.getZ(), 1.2F);
+                    notor.getNavigation().moveTo(player.getX(), player.getY(1.0F) + 2, player.getZ(), 1.2F);
                     monster.setTarget(player);
                     if (distMonsterToPlayer < Math.min(monster.getAttributeValue(Attributes.FOLLOW_RANGE) - 15, 10)) {
                         notor.setHologramUUID(null);

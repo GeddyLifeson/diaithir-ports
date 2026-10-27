@@ -64,7 +64,7 @@ public class VesperFlyAndHangGoal extends Goal {
         this.entity.setFlying(true);
         entity.setHanging(false);
         hangCheckIn = 0;
-        entity.getNavigation().snapTo(this.x, this.y, this.z, 1F);
+        entity.getNavigation().moveTo(this.x, this.y, this.z, 1F);
     }
 
     public void tick() {

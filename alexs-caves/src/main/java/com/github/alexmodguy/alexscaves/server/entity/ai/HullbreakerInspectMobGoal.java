@@ -97,14 +97,14 @@ public class HullbreakerInspectMobGoal extends Goal {
                     entity.getNavigation().stop();
                 } else if (entity.getNavigation().isDone()) {
                     Vec3 frontVision = inspectingTarget.getEyePosition().add(inspectingTarget.getLookAngle().scale(12.0F));
-                    entity.getNavigation().snapTo(frontVision.x, frontVision.y, frontVision.z, 1.0F);
+                    entity.getNavigation().moveTo(frontVision.x, frontVision.y, frontVision.z, 1.0F);
                 }
             } else {
                 if (startCirclingAt == null) {
                     startCirclingAt = inspectingTarget.getEyePosition();
                 }
                 Vec3 circle = orbitAroundPos(inspectingTarget.getEyePosition(), 12 + Math.min(0, 5 - entity.getInterestLevel()) * 3);
-                entity.getNavigation().snapTo(circle.x, circle.y, circle.z, 1.4F);
+                entity.getNavigation().moveTo(circle.x, circle.y, circle.z, 1.4F);
                 entity.setYHeadRot(entity.yBodyRot + (clockwise ? 30 : -30));
 
             }

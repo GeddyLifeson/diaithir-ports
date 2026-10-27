@@ -76,7 +76,7 @@ public class HologramProjectorBlock extends BaseEntityBlock implements SimpleWat
                 CompoundTag tag = customData.copyTag();
                 if (tag.contains("BoundEntityTag")) {
                     CompoundTag entity = tag.getCompoundOrEmpty("BoundEntityTag");
-                    Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf(entity);
+                    Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf((CompoundTag) entity);
                     if (optional.isPresent()) {
                         entityType = optional.get();
                         entityTag = entity;

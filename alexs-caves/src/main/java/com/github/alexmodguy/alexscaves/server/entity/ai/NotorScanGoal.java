@@ -76,7 +76,7 @@ public class NotorScanGoal extends Goal {
         double dist = scanTarget.distanceTo(notor);
         notor.lookAt(EntityAnchorArgument.Anchor.EYES, scanTarget.getEyePosition());
         if (dist > 8) {
-            notor.getNavigation().snapTo(scanTarget.getX(), scanTarget.getY(1.0F) + 1, scanTarget.getZ(), 1.2F);
+            notor.getNavigation().moveTo(scanTarget.getX(), scanTarget.getY(1.0F) + 1, scanTarget.getZ(), 1.2F);
             if (dist > 15) {
                 notor.setScanningId(-1);
             }

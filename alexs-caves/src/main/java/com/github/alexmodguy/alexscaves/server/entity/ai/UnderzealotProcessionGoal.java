@@ -45,7 +45,7 @@ public class UnderzealotProcessionGoal extends Goal {
             if (distanceTo > this.entity.getBbWidth() + 0.5F) {
                 Vec3 vec3;
                 vec3 = (new Vec3(priorPackMember.getX() - this.entity.getX(), priorPackMember.getY() - this.entity.getY(), priorPackMember.getZ() - this.entity.getZ())).normalize().scale(Math.max(distanceTo - 1.0D, 0.0D));
-                this.entity.getNavigation().snapTo(this.entity.getX() + vec3.x, this.entity.getY() + vec3.y, this.entity.getZ() + vec3.z, this.speedModifier);
+                this.entity.getNavigation().moveTo(this.entity.getX() + vec3.x, this.entity.getY() + vec3.y, this.entity.getZ() + vec3.z, this.speedModifier);
             }
             if (distanceTo > 8) {
                 attemptToFollowTicks++;

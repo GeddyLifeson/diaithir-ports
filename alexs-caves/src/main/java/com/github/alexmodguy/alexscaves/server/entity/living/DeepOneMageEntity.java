@@ -217,7 +217,7 @@ public class DeepOneMageEntity extends DeepOneBaseEntity {
                     strafeTarget = possible;
                 }
             } else {
-                this.getNavigation().snapTo(strafeTarget.x, strafeTarget.y, strafeTarget.z, 1.5F);
+                this.getNavigation().moveTo(strafeTarget.x, strafeTarget.y, strafeTarget.z, 1.5F);
             }
             if (rangedCooldown <= 0 && this.getAnimation() == NO_ANIMATION && hasLineOfSight(target)) {
                 this.setAnimation(ANIMATION_ATTACK);

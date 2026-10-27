@@ -44,7 +44,7 @@ public class AnimalRandomlySwimGoal extends Goal {
 
     public void start() {
         goal = findSwimToPos();
-        mob.getNavigation().snapTo(goal.getX(), goal.getY(), goal.getZ(), speed);
+        mob.getNavigation().moveTo(goal.getX(), goal.getY(), goal.getZ(), speed);
     }
 
     public boolean isTargetBlocked(Vec3 target) {

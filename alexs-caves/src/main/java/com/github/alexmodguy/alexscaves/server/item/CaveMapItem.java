@@ -146,7 +146,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
                 CompoundTag innerTag = listTag.getCompoundOrEmpty(i);
                 integerByteMap.put(innerTag.getByteOr("BiomeHash", (byte) 0), innerTag.getIntOr("BiomeID", 0));
             }
-            byte[] byteArray = tag.getByteArray("MapBiomes").orElse(new byte[0]).orElse(new byte[0]);
+            byte[] byteArray = tag.getByteArray("MapBiomes").orElse(new byte[0]);
             int[] intArray = new int[128 * 128];
             int j = Math.min(intArray.length, byteArray.length);
             if (j > 0) {

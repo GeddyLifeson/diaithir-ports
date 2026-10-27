@@ -681,7 +681,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
                 int dist = VallumraptorEntity.this.getHideFor() > 0 ? 4 : 8;
                 Vec3 vec3 = LandRandomPos.getPosAway(VallumraptorEntity.this, dist, dist, VallumraptorEntity.this.fleeFromPosition);
                 if (vec3 != null) {
-                    VallumraptorEntity.this.getNavigation().snapTo(vec3.x, vec3.y, vec3.z, 1.0F);
+                    VallumraptorEntity.this.getNavigation().moveTo(vec3.x, vec3.y, vec3.z, 1.0F);
                 }
             }
         }

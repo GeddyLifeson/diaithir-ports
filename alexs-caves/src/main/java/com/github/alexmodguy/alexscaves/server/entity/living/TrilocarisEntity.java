@@ -309,7 +309,7 @@ public class TrilocarisEntity extends WaterAnimal implements Bucketable {
 
         public void tick() {
             TrilocarisEntity.this.crawling = isCrawling;
-            TrilocarisEntity.this.getNavigation().snapTo(this.x, this.y, this.z, 1F);
+            TrilocarisEntity.this.getNavigation().moveTo(this.x, this.y, this.z, 1F);
         }
 
         public BlockPos findWaterBlock() {

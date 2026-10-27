@@ -57,7 +57,7 @@ public class CorrodentAttackGoal extends Goal {
                 if (this.entity.getNavigation().isDone()) {
                     Vec3 vec3 = generateEvadePosition(target.blockPosition());
                     if (vec3 != null) {
-                        this.entity.getNavigation().snapTo(vec3.x, vec3.y, vec3.z, 1.0D);
+                        this.entity.getNavigation().moveTo(vec3.x, vec3.y, vec3.z, 1.0D);
                     }
                 }
             } else if (burrowing) {

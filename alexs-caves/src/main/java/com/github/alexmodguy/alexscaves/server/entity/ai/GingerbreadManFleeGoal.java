@@ -50,7 +50,7 @@ public class GingerbreadManFleeGoal extends Goal {
         }
         if(runToTarget != null){
             double speed = distance > 5 ? 1.0F : 1.5F;
-            gingerbreadMan.getNavigation().snapTo(runToTarget.x, runToTarget.y, runToTarget.z, speed);
+            gingerbreadMan.getNavigation().moveTo(runToTarget.x, runToTarget.y, runToTarget.z, speed);
         }
     }
 }

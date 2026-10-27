@@ -138,12 +138,12 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         Vec3 vec3 = hitResult.getLocation();
         if (controlledEntity instanceof Mob mob) {
             PathNavigation pathNavigation = mob.getNavigation();
-            pathNavigation.snapTo(vec3.x, vec3.y, vec3.z, time * speed);
+            pathNavigation.moveTo(vec3.x, vec3.y, vec3.z, time * speed);
             if (ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SIGHTLESS, stack) > 0) {
                 controlledEntity.setGlowingTag(true);
             }
         } else {
-            boolean flying = controlledEntity instanceof FlyingAnimal || controlledEntity instanceof FlyingMob;
+            boolean flying = controlledEntity instanceof FlyingAnimal;
             Vec3 vec31 = vec3.subtract(controlledEntity.position());
             boolean jumpFlag = false;
             if (!flying && controlledEntity.horizontalCollision && controlledEntity.onGround() && vec31.y > 0) {
@@ -226,7 +226,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         if (!tag.isEmpty()) {
             Tag entity = tag.get("BoundEntityTag");
             if (entity instanceof CompoundTag) {
-                Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf(entity);
+                Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf((CompoundTag) entity);
                 if (optional.isPresent()) {
                     Component untranslated = optional.get().getDescription().copy().withStyle(ChatFormatting.GRAY);
                     tooltip.accept(untranslated);

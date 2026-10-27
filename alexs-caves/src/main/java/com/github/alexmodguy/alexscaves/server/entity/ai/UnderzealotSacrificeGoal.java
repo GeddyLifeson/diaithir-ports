@@ -152,7 +152,7 @@ public class UnderzealotSacrificeGoal extends Goal {
                 float f = getPackPosition() / ((float) entity.getPackSize() - 1);
                 Vec3 offset = new Vec3(2, 0, 0).yRot(f * ((float) Math.PI * 2F));
                 Vec3 at = groundOf(Vec3.atCenterOf(center).add(offset));
-                entity.getNavigation().snapTo(at.x, at.y, at.z, 1);
+                entity.getNavigation().moveTo(at.x, at.y, at.z, 1);
                 if (entity.isPraying()) {
                     attemptToFollowTicks = 0;
                 } else if ((entity.getNavigation().isStuck() || attemptToFollowTicks > 60) && this.entity.distanceToSqr(at) > 8) {
@@ -201,7 +201,7 @@ public class UnderzealotSacrificeGoal extends Goal {
                 } else {
                     this.entity.setWorshipTime(0);
                 }
-                entity.getNavigation().snapTo(center.getX(), center.getY(), center.getZ(), 1);
+                entity.getNavigation().moveTo(center.getX(), center.getY(), center.getZ(), 1);
             }
         }
     }

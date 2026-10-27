@@ -44,7 +44,7 @@ public class CorrodentDigRandomlyGoal extends Goal {
 
     public void start() {
         entity.setDigging(true);
-        entity.getNavigation().snapTo(this.x, this.y, this.z, 1F);
+        entity.getNavigation().moveTo(this.x, this.y, this.z, 1F);
     }
 
     public boolean canContinueToUse() {

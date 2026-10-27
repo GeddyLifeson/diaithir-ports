@@ -26,7 +26,7 @@ public class HolocoderItem extends Item {
         if (!tag.isEmpty()) {
             Tag entity = tag.get("BoundEntityTag");
             if (entity instanceof CompoundTag) {
-                Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf(entity);
+                Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf((CompoundTag) entity);
                 if (optional.isPresent()) {
                     Component untranslated = optional.get().getDescription().copy().withStyle(ChatFormatting.GRAY);
                     tooltip.accept(untranslated);

@@ -61,7 +61,7 @@ public class VesperAttackGoal extends Goal {
                 orbitTime++;
                 float zoomIn = 1F - orbitTime / (float) maxOrbitTime;
                 Vec3 orbitPos = orbitAroundPos(3.0F + zoomIn * 5.0F).add(0, 4 + zoomIn * 3, 0);
-                entity.getNavigation().snapTo(orbitPos.x, orbitPos.y, orbitPos.z, entity.isFlying() ? 2.5D : 1D);
+                entity.getNavigation().moveTo(orbitPos.x, orbitPos.y, orbitPos.z, entity.isFlying() ? 2.5D : 1D);
                 entity.lookAt(EntityAnchorArgument.Anchor.EYES, orbitPos);
             } else {
                 orbitTime = 0;

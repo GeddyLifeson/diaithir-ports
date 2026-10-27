@@ -209,7 +209,7 @@ public class DeepOneReactToPlayerGoal extends Goal {
                     deepOne.setDeepOneSwimming(deepOne.isInWater());
                 }
                 float mageUp = deepOne instanceof DeepOneMageEntity ? 2 : 0;
-                deepOne.getNavigation().snapTo(moveTarget.x, moveTarget.y + mageUp, moveTarget.z, isBeingLookedAt ? 2F : 1F);
+                deepOne.getNavigation().moveTo(moveTarget.x, moveTarget.y + mageUp, moveTarget.z, isBeingLookedAt ? 2F : 1F);
             }
         }
     }
