@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-ships-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs { server { server(); programArgument '--nogui' } }
+    mods { valkyrienskies { sourceSet(sourceSets.main) } }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.valkyrienskies.org/' }
+    maven { url = 'https://thedarkcolour.github.io/KotlinForForge/' }
+}
+
+dependencies {
+    ['api', 'internal', 'util'].each { implementation "org.valkyrienskies.core:${it}:${vs_core_version}" }
+    runtimeOnly "org.valkyrienskies.core:impl:${vs_core_version}"
+}
+
+kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25 } }
+tasks.withType(JavaCompile).configureEach { options.release = 25 }
