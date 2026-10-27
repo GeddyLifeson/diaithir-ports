@@ -18,13 +18,13 @@ import java.util.Map;
  * Sent from the server to the client with a map of
  * Identifier IDs and Offerings
  **/
-public record SOfferingPacket(Map<Identifier, Offering> data) implements CustomPacketPayload {
+public record SOfferingPacket(int index, int total, Map<Identifier, Offering> data) implements CustomPacketPayload {
 
     public static final Type<SOfferingPacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(RPGGods.MODID, "offering"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SOfferingPacket> STREAM_CODEC =
-            ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Offering.CODEC))
-                    .map(SOfferingPacket::new, SOfferingPacket::data);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, SOfferingPacket::index, ByteBufCodecs.VAR_INT, SOfferingPacket::total,
+                    ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Offering.CODEC)), SOfferingPacket::data, SOfferingPacket::new);
 
     @Override
     public Type<SOfferingPacket> type() {
@@ -35,6 +35,6 @@ public record SOfferingPacket(Map<Identifier, Offering> data) implements CustomP
      * Handles the packet when it is received on the client (main thread).
      */
     public static void handlePacket(final SOfferingPacket message, final IPayloadContext context) {
-        RGData.updateOfferings(message.data());
+        ChunkBuffer.accept(TYPE, message.index(), message.total(), message.data(), RGData::updateOfferings);
     }
 }

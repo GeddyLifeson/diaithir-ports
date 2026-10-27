@@ -18,13 +18,13 @@ import java.util.Map;
  * Sent from the server to the client with a map of
  * Identifier IDs and Perks
  **/
-public record SPerkPacket(Map<Identifier, Perk> data) implements CustomPacketPayload {
+public record SPerkPacket(int index, int total, Map<Identifier, Perk> data) implements CustomPacketPayload {
 
     public static final Type<SPerkPacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(RPGGods.MODID, "perk"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SPerkPacket> STREAM_CODEC =
-            ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Perk.CODEC))
-                    .map(SPerkPacket::new, SPerkPacket::data);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, SPerkPacket::index, ByteBufCodecs.VAR_INT, SPerkPacket::total,
+                    ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Perk.CODEC)), SPerkPacket::data, SPerkPacket::new);
 
     @Override
     public Type<SPerkPacket> type() {
@@ -35,6 +35,6 @@ public record SPerkPacket(Map<Identifier, Perk> data) implements CustomPacketPay
      * Handles the packet when it is received on the client (main thread).
      */
     public static void handlePacket(final SPerkPacket message, final IPayloadContext context) {
-        RGData.updatePerks(message.data());
+        ChunkBuffer.accept(TYPE, message.index(), message.total(), message.data(), RGData::updatePerks);
     }
 }

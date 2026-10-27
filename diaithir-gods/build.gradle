@@ -11,7 +11,7 @@ neoForge {
     version = project.neo_version
     runs {
         server { server(); programArgument '--nogui' }
-        client { client(); if (project.hasProperty('quickplay')) { programArguments.addAll('--quickPlaySingleplayer', project.property('quickplay')) } }
+        client { client(); if (project.hasProperty('quickmp')) { programArguments.addAll('--quickPlayMultiplayer', project.property('quickmp')) }; if (project.hasProperty('quickplay')) { programArguments.addAll('--quickPlaySingleplayer', project.property('quickplay')) } }
         configureEach { logLevel = org.slf4j.event.Level.INFO }
     }
     mods { "${mod_id}" { sourceSet(sourceSets.main) } }

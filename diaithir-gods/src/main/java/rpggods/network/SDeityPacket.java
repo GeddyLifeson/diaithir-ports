@@ -18,13 +18,13 @@ import java.util.Map;
  * Sent from the server to the client with a map of
  * Identifier IDs and Deitys
  **/
-public record SDeityPacket(Map<Identifier, Deity> data) implements CustomPacketPayload {
+public record SDeityPacket(int index, int total, Map<Identifier, Deity> data) implements CustomPacketPayload {
 
     public static final Type<SDeityPacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(RPGGods.MODID, "deity"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SDeityPacket> STREAM_CODEC =
-            ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Deity.CODEC))
-                    .map(SDeityPacket::new, SDeityPacket::data);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, SDeityPacket::index, ByteBufCodecs.VAR_INT, SDeityPacket::total,
+                    ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Deity.CODEC)), SDeityPacket::data, SDeityPacket::new);
 
     @Override
     public Type<SDeityPacket> type() {
@@ -35,6 +35,6 @@ public record SDeityPacket(Map<Identifier, Deity> data) implements CustomPacketP
      * Handles the packet when it is received on the client (main thread).
      */
     public static void handlePacket(final SDeityPacket message, final IPayloadContext context) {
-        RGData.updateDeities(message.data());
+        ChunkBuffer.accept(TYPE, message.index(), message.total(), message.data(), RGData::updateDeities);
     }
 }

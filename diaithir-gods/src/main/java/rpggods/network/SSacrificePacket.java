@@ -18,13 +18,13 @@ import java.util.Map;
  * Sent from the server to the client with a map of
  * Identifier IDs and Sacrifices
  **/
-public record SSacrificePacket(Map<Identifier, Sacrifice> data) implements CustomPacketPayload {
+public record SSacrificePacket(int index, int total, Map<Identifier, Sacrifice> data) implements CustomPacketPayload {
 
     public static final Type<SSacrificePacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(RPGGods.MODID, "sacrifice"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SSacrificePacket> STREAM_CODEC =
-            ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Sacrifice.CODEC))
-                    .map(SSacrificePacket::new, SSacrificePacket::data);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, SSacrificePacket::index, ByteBufCodecs.VAR_INT, SSacrificePacket::total,
+                    ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Sacrifice.CODEC)), SSacrificePacket::data, SSacrificePacket::new);
 
     @Override
     public Type<SSacrificePacket> type() {
@@ -35,6 +35,6 @@ public record SSacrificePacket(Map<Identifier, Sacrifice> data) implements Custo
      * Handles the packet when it is received on the client (main thread).
      */
     public static void handlePacket(final SSacrificePacket message, final IPayloadContext context) {
-        RGData.updateSacrifices(message.data());
+        ChunkBuffer.accept(TYPE, message.index(), message.total(), message.data(), RGData::updateSacrifices);
     }
 }

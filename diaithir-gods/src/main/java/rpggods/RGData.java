@@ -60,12 +60,17 @@ public final class RGData {
             // integrated server: the client shares the static maps
             return;
         }
-        PacketDistributor.sendToPlayer(player,
-                new SDeityPacket(RPGGods.DEITY_JSON_MANAGER.getData()),
-                new SAltarPacket(RPGGods.ALTAR_JSON_MANAGER.getData()),
-                new SOfferingPacket(RPGGods.OFFERING_JSON_MANAGER.getData()),
-                new SSacrificePacket(RPGGods.SACRIFICE_JSON_MANAGER.getData()),
-                new SPerkPacket(RPGGods.PERK_JSON_MANAGER.getData()));
+        // each data set is split in chunks to stay below the NBT and payload size limits
+        var deities = rpggods.network.ChunkBuffer.split(RPGGods.DEITY_JSON_MANAGER.getData());
+        for (int i = 0; i < deities.size(); i++) PacketDistributor.sendToPlayer(player, new SDeityPacket(i, deities.size(), deities.get(i)));
+        var altars = rpggods.network.ChunkBuffer.split(RPGGods.ALTAR_JSON_MANAGER.getData());
+        for (int i = 0; i < altars.size(); i++) PacketDistributor.sendToPlayer(player, new SAltarPacket(i, altars.size(), altars.get(i)));
+        var offerings = rpggods.network.ChunkBuffer.split(RPGGods.OFFERING_JSON_MANAGER.getData());
+        for (int i = 0; i < offerings.size(); i++) PacketDistributor.sendToPlayer(player, new SOfferingPacket(i, offerings.size(), offerings.get(i)));
+        var sacrifices = rpggods.network.ChunkBuffer.split(RPGGods.SACRIFICE_JSON_MANAGER.getData());
+        for (int i = 0; i < sacrifices.size(); i++) PacketDistributor.sendToPlayer(player, new SSacrificePacket(i, sacrifices.size(), sacrifices.get(i)));
+        var perks = rpggods.network.ChunkBuffer.split(RPGGods.PERK_JSON_MANAGER.getData());
+        for (int i = 0; i < perks.size(); i++) PacketDistributor.sendToPlayer(player, new SPerkPacket(i, perks.size(), perks.get(i)));
     }
 
     /**

@@ -18,13 +18,13 @@ import java.util.Map;
  * Sent from the server to the client with a map of
  * Identifier IDs and Altars
  **/
-public record SAltarPacket(Map<Identifier, Altar> data) implements CustomPacketPayload {
+public record SAltarPacket(int index, int total, Map<Identifier, Altar> data) implements CustomPacketPayload {
 
     public static final Type<SAltarPacket> TYPE = new Type<>(Identifier.fromNamespaceAndPath(RPGGods.MODID, "altar"));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, SAltarPacket> STREAM_CODEC =
-            ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Altar.CODEC))
-                    .map(SAltarPacket::new, SAltarPacket::data);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, SAltarPacket::index, ByteBufCodecs.VAR_INT, SAltarPacket::total,
+                    ByteBufCodecs.fromCodecWithRegistries(Codec.unboundedMap(Identifier.CODEC, Altar.CODEC)), SAltarPacket::data, SAltarPacket::new);
 
     @Override
     public Type<SAltarPacket> type() {
@@ -35,6 +35,6 @@ public record SAltarPacket(Map<Identifier, Altar> data) implements CustomPacketP
      * Handles the packet when it is received on the client (main thread).
      */
     public static void handlePacket(final SAltarPacket message, final IPayloadContext context) {
-        RGData.updateAltars(message.data());
+        ChunkBuffer.accept(TYPE, message.index(), message.total(), message.data(), RGData::updateAltars);
     }
 }
