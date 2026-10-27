@@ -2,12 +2,13 @@ package com.otectus.immersivetanning.client.screen;
 
 import com.otectus.immersivetanning.hide.HideData;
 import com.otectus.immersivetanning.leather.Finish;
-import com.otectus.immersivetanning.network.ModNetwork;
 import com.otectus.immersivetanning.network.packet.OpenFinishPacket;
 import com.otectus.immersivetanning.network.packet.SelectFinishPacket;
 import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.util.Scores;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.input.KeyEvent;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
@@ -67,7 +68,7 @@ public class FinishSelectScreen extends WorkshopScreen {
     }
 
     private void choose(Finish finish) {
-        ModNetwork.CHANNEL.sendToServer(new SelectFinishPacket(request.pos(), finish));
+        ClientPacketDistributor.sendToServer(new SelectFinishPacket(request.pos(), finish));
         TanningGui.playUi(ModSounds.RACK_MOUNT.get(), 0.9F, 0.6F);
         onClose();
     }
@@ -83,7 +84,8 @@ public class FinishSelectScreen extends WorkshopScreen {
     }
 
     @Override
-    public boolean keyPressed(int key, int scanCode, int modifiers) {
+    public boolean keyPressed(KeyEvent event) {
+        int key = event.key();
         if (key >= GLFW.GLFW_KEY_1 && key <= GLFW.GLFW_KEY_3) {
             choose(Finish.byOrdinal(key - GLFW.GLFW_KEY_1));
             return true;
@@ -92,7 +94,7 @@ public class FinishSelectScreen extends WorkshopScreen {
             choose(request.last());
             return true;
         }
-        return super.keyPressed(key, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
@@ -101,10 +103,10 @@ public class FinishSelectScreen extends WorkshopScreen {
     }
 
     @Override
-    protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
+    protected void renderPanel(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
         VanillaGui.panel(g, left, top, panelWidth, panelHeight);
         Component title = Component.translatable("screen.immersive_tanning.finish.title");
-        g.drawString(font, VanillaGui.clipped(font, title, panelWidth - 16), left + 8, top + 7, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, title, panelWidth - 16), left + 8, top + 7, VanillaGui.LABEL, false);
         // The grade and trait keep their own colours, which are chosen for dark backgrounds.
         VanillaGui.readout(g, font, info, left + 8, top + 18, panelWidth - 16, 2);
         int hovered = cardAt(mouseX, mouseY);
@@ -118,14 +120,14 @@ public class FinishSelectScreen extends WorkshopScreen {
                 && mouseY >= top + 5 && mouseY < top + 17) tooltip(title);
     }
 
-    private void renderCard(GuiGraphics g, Finish finish, int index, int x, int y, boolean hovered) {
+    private void renderCard(GuiGraphicsExtractor g, Finish finish, int index, int x, int y, boolean hovered) {
         int color = 0xFF000000 | finish.leatherColor();
         VanillaGui.row(g, x, y, cardWidth, cardHeight, true, hovered);
         VanillaGui.display(g, x + 5, y + 5, cardWidth - 10, 46);
         renderPose(g, finish, x + 12, y + 8, cardWidth - 24, 40, color);
         int textX = x + 6, textY = y + 56, textW = cardWidth - 12;
         Component name = Component.translatable("screen.immersive_tanning.finish.card", index + 1, finish.displayName());
-        g.drawString(font, VanillaGui.clipped(font, name, textW), textX, textY, 0xFF000000 | finish.textColor(), true);
+        g.text(font, VanillaGui.clipped(font, name, textW), textX, textY, 0xFF000000 | finish.textColor(), true);
         VanillaGui.wrapped(g, font, finish.tagline(), textX, textY + 11, textW, VanillaGui.ROW_TEXT, 2, true);
         int bottom = y + cardHeight - 4 - (finish == request.last() ? 11 : 0);
         int lines = Math.max(0, (bottom - (textY + 34)) / 10);
@@ -133,12 +135,12 @@ public class FinishSelectScreen extends WorkshopScreen {
         clipped[index] = VanillaGui.isWrapClipped(font, finish.description(), textW, lines);
         if (finish == request.last()) {
             Component last = Component.translatable("screen.immersive_tanning.finish.last");
-            g.drawString(font, last, x + cardWidth - 6 - font.width(last), y + cardHeight - 14, 0xFFFFFFA0, true);
+            g.text(font, last, x + cardWidth - 6 - font.width(last), y + cardHeight - 14, 0xFFFFFFA0, true);
         }
     }
 
     /** The hide's posture in the frame: loose and sagging, tensioned, or stretched taut. */
-    private void renderPose(GuiGraphics g, Finish finish, int x, int y, int w, int h, int color) {
+    private void renderPose(GuiGraphicsExtractor g, Finish finish, int x, int y, int w, int h, int color) {
         g.fill(x, y, x + 2, y + h, TanningGui.FRAME);
         g.fill(x + w - 2, y, x + w, y + h, TanningGui.FRAME);
         g.fill(x, y, x + w, y + 2, TanningGui.FRAME);

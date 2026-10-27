@@ -10,15 +10,14 @@ import com.otectus.immersivetanning.leather.LeatherworkData;
 import com.otectus.immersivetanning.util.Scores;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ import java.util.Optional;
  * The leatherwork tooltip. The important information is the word identity: the name reads "Fine Supple Leather
  * Boots", the next line says what Supple means. Scores and effect details follow; Shift shows the numbers.
  */
-@Mod.EventBusSubscriber(modid = ImmersiveTanning.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ImmersiveTanning.MOD_ID, value = Dist.CLIENT)
 public final class ClientEvents {
 
     @SubscribeEvent
@@ -37,19 +36,16 @@ public final class ClientEvents {
         Optional<LeatherworkData> found = LeatherworkData.get(stack);
         List<Component> tooltip = event.getToolTip();
         if (found.isEmpty()) {
-            Level level = Minecraft.getInstance().level;
-            if (level != null) {
-                HideItems.recipe(level, stack).ifPresent(recipe -> tooltip.add(Math.min(1, tooltip.size()),
-                        Component.translatable("tooltip.immersive_tanning.mountable", recipe.size().displayName()).withStyle(ChatFormatting.DARK_GRAY)));
-            }
-            if (FieldRepair.isRepairable(stack) && Screen.hasShiftDown()) {
+            HideItems.mounting(stack).ifPresent(recipe -> tooltip.add(Math.min(1, tooltip.size()),
+                    Component.translatable("tooltip.immersive_tanning.mountable", recipe.size().displayName()).withStyle(ChatFormatting.DARK_GRAY)));
+            if (FieldRepair.isRepairable(stack) && Minecraft.getInstance().hasShiftDown()) {
                 tooltip.add(Math.min(1, tooltip.size()), Component.translatable("tooltip.immersive_tanning.field_repairable").withStyle(ChatFormatting.DARK_GRAY));
             }
             return;
         }
         LeatherworkData data = found.get();
         Finish finish = data.finish();
-        if (!tooltip.isEmpty() && !stack.hasCustomHoverName()) {
+        if (!tooltip.isEmpty() && !stack.has(DataComponents.CUSTOM_NAME)) {
             tooltip.set(0, Component.translatable("tooltip.immersive_tanning.named", data.quality().displayName(), finish.displayName(),
                     stack.getHoverName()).withStyle(stack.getRarity().getStyleModifier()));
         }
@@ -61,10 +57,10 @@ public final class ClientEvents {
         if (data.trait() != null) {
             lines.add(Component.translatable("tooltip.immersive_tanning.trait", data.trait().displayName()).withStyle(ChatFormatting.GRAY));
         }
-        if (Screen.hasShiftDown()) {
+        if (Minecraft.getInstance().hasShiftDown()) {
             double efficacy = LeatherworkEffects.efficacy(data);
             lines.add(Component.translatable("tooltip.immersive_tanning.durability", percent(LeatherworkEffects.durability(data))).withStyle(ChatFormatting.DARK_GRAY));
-            boolean wearable = stack.getItem() instanceof ArmorItem;
+            boolean wearable = stack.has(DataComponents.EQUIPPABLE);
             switch (finish) {
                 case SUPPLE -> {
                     if (wearable) {
@@ -72,7 +68,7 @@ public final class ClientEvents {
                                 oneDecimal(ServerConfig.get(ServerConfig.SUPPLE_SPEED_PER_PIECE) * efficacy * 100)).withStyle(ChatFormatting.DARK_GRAY));
                         lines.add(Component.translatable("tooltip.immersive_tanning.effect.supple_quiet",
                                 Math.round(ServerConfig.get(ServerConfig.SUPPLE_VISIBILITY_PER_PIECE) * efficacy * 100)).withStyle(ChatFormatting.DARK_GRAY));
-                        if (stack.getItem() instanceof ArmorItem armor && armor.getType() == ArmorItem.Type.BOOTS
+                        if (stack.get(DataComponents.EQUIPPABLE).slot() == EquipmentSlot.FEET
                                 && ServerConfig.get(ServerConfig.SUPPLE_BOOTS_MUFFLE_STEPS)) {
                             lines.add(Component.translatable("tooltip.immersive_tanning.effect.supple_steps").withStyle(ChatFormatting.DARK_GRAY));
                         }

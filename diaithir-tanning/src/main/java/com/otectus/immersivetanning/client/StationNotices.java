@@ -2,20 +2,21 @@ package com.otectus.immersivetanning.client;
 
 import com.otectus.immersivetanning.ImmersiveTanning;
 import com.otectus.immersivetanning.config.ClientConfig;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.util.Mth;
 import net.neoforged.api.distmarker.Dist;
-import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.client.gui.overlay.ForgeGui;
-import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.List;
  * out the reason the player is reading. Every notice is also narrated when the narrator reads system messages. With
  * {@code stationNotices} off, messages go to the vanilla action bar as before.
  */
-@Mod.EventBusSubscriber(modid = ImmersiveTanning.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ImmersiveTanning.MOD_ID, value = Dist.CLIENT)
 public final class StationNotices {
     private static final int MAX_NOTICES = 3;
     private static final int MAX_LINES = 2;
@@ -47,7 +48,7 @@ public final class StationNotices {
             NOTICES.addLast(new Notice(text, failure, Util.getMillis()));
             while (NOTICES.size() > MAX_NOTICES) NOTICES.removeFirst();
         }
-        mc.getNarrator().say(text);
+        mc.getNarrator().saySystemQueued(text);
     }
 
     public static void clear() {
@@ -59,13 +60,16 @@ public final class StationNotices {
         return NOTICES.size();
     }
 
-    static void register(RegisterGuiOverlaysEvent event) {
-        event.registerAbove(VanillaGuiOverlay.RECORD_OVERLAY.id(), "station_notices", StationNotices::render);
+    @SubscribeEvent
+    public static void register(RegisterGuiLayersEvent event) {
+        event.registerAbove(VanillaGuiLayers.OVERLAY_MESSAGE, ImmersiveTanning.id("station_notices"), StationNotices::render);
     }
 
-    private static void render(ForgeGui gui, GuiGraphics g, float partialTick, int width, int height) {
+    private static void render(GuiGraphicsExtractor g, DeltaTracker deltaTracker) {
         if (NOTICES.isEmpty()) return;
         Minecraft mc = Minecraft.getInstance();
+        int width = g.guiWidth();
+        int height = g.guiHeight();
         long now = Util.getMillis();
         long lifetime = ClientConfig.get(ClientConfig.NOTICE_SECONDS) * 1000L;
         NOTICES.removeIf(n -> now - n.shownMs() > lifetime);
@@ -73,7 +77,7 @@ public final class StationNotices {
         Font font = mc.font;
         int wrap = Math.max(80, Math.min(width - 16, 340));
         // Above the action bar and whatever the HUD stacked above the hotbar (health, armour, air, mounts).
-        int bottom = height - Math.max(84, Math.max(gui.leftHeight, gui.rightHeight) + 24);
+        int bottom = height - Math.max(84, Math.max(mc.gui.leftHeight, mc.gui.rightHeight) + 24);
         List<Notice> newestFirst = new ArrayList<>(NOTICES);
         java.util.Collections.reverse(newestFirst);
         // Older notices stop short of the crosshair; the newest is always drawn.
@@ -95,7 +99,7 @@ public final class StationNotices {
             int color = notice.failure() ? failureColor() : 0xFFFFFF;
             for (int i = 0; i < lines.size(); i++) {
                 FormattedCharSequence line = lines.get(i);
-                g.drawString(font, line, (width - font.width(line)) / 2, top + i * 10, (alpha << 24) | color, true);
+                g.text(font, line, (width - font.width(line)) / 2, top + i * 10, (alpha << 24) | color, true);
             }
             y = top - 4;
         }

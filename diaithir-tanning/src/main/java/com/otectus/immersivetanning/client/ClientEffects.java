@@ -10,7 +10,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.ItemStack;
 
 /** Spawns station effects on the client, scaled by the client's particle setting. */
 public final class ClientEffects {
@@ -25,7 +24,7 @@ public final class ClientEffects {
         switch (type) {
             case StationEffects.SCRAPE -> {
                 int count = ClientConfig.scaleParticles(2 + Math.round(strength * 40F));
-                ItemParticleOption flesh = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ModItems.rawHide(com.otectus.immersivetanning.hide.HideSize.SMALL)));
+                ItemParticleOption flesh = new ItemParticleOption(ParticleTypes.ITEM, ModItems.rawHide(com.otectus.immersivetanning.hide.HideSize.SMALL));
                 for (int i = 0; i < Math.min(count, 8); i++) {
                     level.addParticle(flesh, x + (random.nextDouble() - 0.5) * 0.6, y + 0.6, z + (random.nextDouble() - 0.5) * 0.6,
                             (random.nextDouble() - 0.5) * 0.08, 0.05, (random.nextDouble() - 0.5) * 0.08);
@@ -46,7 +45,7 @@ public final class ClientEffects {
             }
             case StationEffects.FINISHED -> {
                 int count = ClientConfig.scaleParticles(6 + Math.round(strength * 8F));
-                ItemParticleOption leather = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ModItems.leather(Finish.HARNESS)));
+                ItemParticleOption leather = new ItemParticleOption(ParticleTypes.ITEM, ModItems.leather(Finish.HARNESS));
                 for (int i = 0; i < count; i++) {
                     level.addParticle(leather, x + (random.nextDouble() - 0.5) * 0.5, y + 1.05, z + (random.nextDouble() - 0.5) * 0.5,
                             (random.nextDouble() - 0.5) * 0.1, 0.12, (random.nextDouble() - 0.5) * 0.1);

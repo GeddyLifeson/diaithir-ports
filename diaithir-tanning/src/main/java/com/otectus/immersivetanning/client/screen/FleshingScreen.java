@@ -3,7 +3,6 @@ package com.otectus.immersivetanning.client.screen;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.otectus.immersivetanning.config.ClientConfig;
 import com.otectus.immersivetanning.minigame.FleshingSurface;
-import com.otectus.immersivetanning.network.ModNetwork;
 import com.otectus.immersivetanning.network.packet.CancelSessionPacket;
 import com.otectus.immersivetanning.network.packet.FinishFleshingPacket;
 import com.otectus.immersivetanning.network.packet.FleshStrokePacket;
@@ -11,14 +10,17 @@ import com.otectus.immersivetanning.network.packet.OpenFleshingPacket;
 import com.otectus.immersivetanning.network.packet.SessionResultPacket;
 import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.util.Scores;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
@@ -76,8 +78,9 @@ public class FleshingScreen extends WorkshopScreen {
         this.surface = new FleshingSurface(session.size(), session.seed());
         this.clientStartMs = Util.getMillis() + session.readyDelayMs();
         this.image = new NativeImage(NativeImage.Format.RGBA, FleshingSurface.W, FleshingSurface.H, false);
-        this.texture = new DynamicTexture(image);
-        this.textureId = Minecraft.getInstance().getTextureManager().register("immersive_tanning_fleshing", texture);
+        this.texture = new DynamicTexture(() -> "immersive_tanning_fleshing", image);
+        this.textureId = com.otectus.immersivetanning.ImmersiveTanning.id("fleshing_" + session.sessionId());
+        Minecraft.getInstance().getTextureManager().register(textureId, texture);
     }
 
     public int sessionId() {
@@ -146,15 +149,15 @@ public class FleshingScreen extends WorkshopScreen {
         net.minecraft.client.player.LocalPlayer player = Minecraft.getInstance().player;
         if (player == null) return 0;
         int n = 0;
-        for (net.minecraft.world.item.ItemStack stack : player.getInventory().items) {
-            if (com.otectus.immersivetanning.hide.HideItems.isMountable(player.level(), stack)) n += stack.getCount();
+        for (net.minecraft.world.item.ItemStack stack : player.getInventory().getNonEquipmentItems()) {
+            if (com.otectus.immersivetanning.hide.HideItems.isMountable(stack)) n += stack.getCount();
         }
         return n;
     }
 
     private void nextHide() {
         if (stage != Stage.RESULT || rawHidesCarried() == 0) return;
-        ModNetwork.CHANNEL.sendToServer(new com.otectus.immersivetanning.network.packet.FleshNextPacket(session.pos()));
+        ClientPacketDistributor.sendToServer(new com.otectus.immersivetanning.network.packet.FleshNextPacket(session.pos()));
         nextButton.active = false;
     }
 
@@ -230,7 +233,7 @@ public class FleshingScreen extends WorkshopScreen {
                 if (surface.isComplete()) {
                     // Declare the hide done so the server finishes at once with its own replayed score.
                     release();
-                    ModNetwork.CHANNEL.sendToServer(new FinishFleshingPacket(session.sessionId()));
+                    ClientPacketDistributor.sendToServer(new FinishFleshingPacket(session.sessionId()));
                     stage = Stage.WAITING;
                     updateButtons();
                 }
@@ -266,7 +269,7 @@ public class FleshingScreen extends WorkshopScreen {
             xs[i] = (short) pending.get(i)[0];
             ys[i] = (short) pending.get(i)[1];
         }
-        ModNetwork.CHANNEL.sendToServer(new FleshStrokePacket(session.sessionId(), ++sequence, pendingBegin, pendingEnd, Math.max(0, elapsed()), xs, ys));
+        ClientPacketDistributor.sendToServer(new FleshStrokePacket(session.sessionId(), ++sequence, pendingBegin, pendingEnd, Math.max(0, elapsed()), xs, ys));
         pending.clear();
         pendingBegin = false;
         pendingEnd = false;
@@ -277,13 +280,14 @@ public class FleshingScreen extends WorkshopScreen {
         if (stage != Stage.PLAYING) return;
         release();
         flush(true);
-        ModNetwork.CHANNEL.sendToServer(new FinishFleshingPacket(session.sessionId()));
+        ClientPacketDistributor.sendToServer(new FinishFleshingPacket(session.sessionId()));
         stage = Stage.WAITING;
         updateButtons();
     }
 
     @Override
-    public boolean keyPressed(int key, int scanCode, int modifiers) {
+    public boolean keyPressed(KeyEvent event) {
+        int key = event.key();
         if ((key == GLFW.GLFW_KEY_ENTER || key == GLFW.GLFW_KEY_KP_ENTER) && stage == Stage.PLAYING && surface.coverage() > 0F) {
             finishEarly();
             return true;
@@ -296,7 +300,7 @@ public class FleshingScreen extends WorkshopScreen {
             onClose();
             return true;
         }
-        return super.keyPressed(key, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     private boolean timeUp() {
@@ -327,7 +331,7 @@ public class FleshingScreen extends WorkshopScreen {
 
     @Override
     public void removed() {
-        if (stage != Stage.RESULT && !closedByServer) ModNetwork.CHANNEL.sendToServer(new CancelSessionPacket(session.sessionId()));
+        if (stage != Stage.RESULT && !closedByServer) ClientPacketDistributor.sendToServer(new CancelSessionPacket(session.sessionId()));
         Minecraft.getInstance().getTextureManager().release(textureId);
         super.removed();
     }
@@ -335,17 +339,17 @@ public class FleshingScreen extends WorkshopScreen {
     // ------------------------------------------------------------------ rendering
 
     @Override
-    protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
+    protected void renderPanel(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
         VanillaGui.panel(g, left, top, panelWidth, panelHeight);
         Component title = Component.translatable("screen.immersive_tanning.fleshing.title", session.size().displayName());
         int titleWidth = panelWidth - 16;
-        g.drawString(font, VanillaGui.clipped(font, title, titleWidth), left + 8, top + 7, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, title, titleWidth), left + 8, top + 7, VanillaGui.LABEL, false);
 
         VanillaGui.display(g, areaX - 2, areaY - 2, areaW + 4, areaH + 4);
         // The beam under the hide.
         g.fillGradient(areaX, areaY + areaH / 2 - areaH / 10, areaX + areaW, areaY + areaH / 2 + areaH / 10, 0x405A3C26, 0x20000000);
         refreshTexture();
-        g.blit(textureId, areaX, areaY, areaW, areaH, 0, 0, FleshingSurface.W, FleshingSurface.H, FleshingSurface.W, FleshingSurface.H);
+        g.blit(RenderPipelines.GUI_TEXTURED, textureId, areaX, areaY, 0F, 0F, areaW, areaH, FleshingSurface.W, FleshingSurface.H, FleshingSurface.W, FleshingSurface.H);
 
         switch (stage) {
             case READY -> {
@@ -380,7 +384,7 @@ public class FleshingScreen extends WorkshopScreen {
         for (int y = 0; y < FleshingSurface.H; y++) {
             for (int x = 0; x < FleshingSurface.W; x++) {
                 if (!surface.isHide(x, y)) {
-                    image.setPixelRGBA(x, y, 0);
+                    image.setPixel(x, y, 0);
                     continue;
                 }
                 int noise = ((x * 7349 + y * 1931 + (x * y) * 17) >> 2) & 7;
@@ -402,7 +406,7 @@ public class FleshingScreen extends WorkshopScreen {
                 } else if (surface.region(x, y) >= 0) {
                     rgb = TanningGui.darken(0xFFEAD6B4, 1F - noise * 0.01F); // freshly scraped: a little paler
                 }
-                image.setPixelRGBA(x, y, toAbgr(rgb));
+                image.setPixel(x, y, toAbgr(rgb));
             }
         }
         texture.upload();
@@ -424,20 +428,17 @@ public class FleshingScreen extends WorkshopScreen {
         return (a << 24) | (b << 16) | (g << 8) | r;
     }
 
-    private void renderKnife(GuiGraphics g, int mouseX, int mouseY) {
+    private void renderKnife(GuiGraphicsExtractor g, int mouseX, int mouseY) {
         if (!inArea(mouseX, mouseY)) return;
-        g.pose().pushPose();
-        g.pose().translate(0, 0, 200);
         float radius = FleshingSurface.BLADE_RADIUS * areaW / FleshingSurface.W;
         TanningGui.ring(g, mouseX, mouseY, radius, pressing ? 0xC0FFF2D0 : 0x70FFF2D0);
         // A small tanner's knife: bone handle and a curved steel edge.
         g.fill(mouseX + 3, mouseY - 9, mouseX + 5, mouseY - 3, 0xFFE8DCC0);
         g.fill(mouseX - 4, mouseY - 2, mouseX + 7, mouseY, 0xFFB8C4C8);
         g.fill(mouseX - 3, mouseY, mouseX + 6, mouseY + 1, 0xFF6F7E86);
-        g.pose().popPose();
     }
 
-    private void renderResult(GuiGraphics g) {
+    private void renderResult(GuiGraphicsExtractor g) {
         g.fill(areaX, areaY, areaX + areaW, areaY + areaH, 0xB0000000);
         int cx = areaX + areaW / 2;
         int width = areaW - 16;
@@ -465,22 +466,22 @@ public class FleshingScreen extends WorkshopScreen {
                 Component.translatable("screen.immersive_tanning.measure." + word));
     }
 
-    private void renderSidebar(GuiGraphics g, int mouseX, int mouseY) {
+    private void renderSidebar(GuiGraphicsExtractor g, int mouseX, int mouseY) {
         int sx = sidebarX();
         int sw = sidebarWidth();
         int y = top + 20;
-        g.drawString(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.fleshing.step"), sw), sx, y, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.fleshing.step"), sw), sx, y, VanillaGui.LABEL, false);
         y += 16;
-        g.drawString(font, Component.translatable("screen.immersive_tanning.time"), sx, y, VanillaGui.LABEL, false);
+        g.text(font, Component.translatable("screen.immersive_tanning.time"), sx, y, VanillaGui.LABEL, false);
         int now = stage == Stage.READY ? 0 : Math.max(0, elapsed());
         Component seconds = Component.translatable("screen.immersive_tanning.seconds_short", Math.max(0, (session.allowedMs() - now + 999) / 1000));
-        g.drawString(font, seconds, sx + sw - font.width(seconds), y, VanillaGui.LABEL, false);
+        g.text(font, seconds, sx + sw - font.width(seconds), y, VanillaGui.LABEL, false);
         TanningGui.timeBar(g, sx + 1, y + 12, sw - 2, 5, stage == Stage.RESULT ? 0F : 1F - now / (float) Math.max(1, session.allowedMs()));
         y += 26;
-        g.drawString(font, Component.translatable("screen.immersive_tanning.fleshing.cleaned"), sx, y, VanillaGui.LABEL, false);
+        g.text(font, Component.translatable("screen.immersive_tanning.fleshing.cleaned"), sx, y, VanillaGui.LABEL, false);
         float coverage = result != null ? result.coverage() : surface.coverage();
         Component percent = Component.literal(Math.round(coverage * 100F) + "%");
-        g.drawString(font, percent, sx + sw - font.width(percent), y, VanillaGui.LABEL, false);
+        g.text(font, percent, sx + sw - font.width(percent), y, VanillaGui.LABEL, false);
         TanningGui.bar(g, sx + 1, y + 12, sw - 2, 5, coverage, TanningGui.goodColor());
         y += 28;
         if (session.trait() != null) {

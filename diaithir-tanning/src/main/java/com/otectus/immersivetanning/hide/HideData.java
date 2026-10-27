@@ -2,6 +2,9 @@ package com.otectus.immersivetanning.hide;
 
 import com.otectus.immersivetanning.trait.TraitRef;
 import com.otectus.immersivetanning.util.StackNbt;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.component.CustomModelData;
+import java.util.List;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
@@ -70,6 +73,8 @@ public record HideData(HideSize size, int integrity, @Nullable TraitRef trait) {
             for (String key : new String[]{"Trait", "TraitEffect", "TraitStrength", "TraitColor"}) root.remove(key);
             if (trait != null) trait.save(root);
         });
+        // The item model picks the small, medium or large texture from this float.
+        stack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(List.of((float) size.ordinal()), List.of(), List.of(), List.of()));
         return stack;
     }
 

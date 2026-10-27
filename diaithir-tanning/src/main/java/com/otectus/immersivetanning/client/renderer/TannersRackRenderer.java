@@ -9,21 +9,26 @@ import com.otectus.immersivetanning.blockentity.TannersRackBlockEntity;
 import com.otectus.immersivetanning.hide.HideData;
 import com.otectus.immersivetanning.hide.HideSize;
 import com.otectus.immersivetanning.leather.Finish;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
+import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Shows the hide's state physically. A raw hide drapes over the fleshing beam, flesh side out. A wet hide is laced
  * upright into the frame: Supple hangs loose and sags, Harness is tensioned, Hardened is stretched taut to every
  * corner. The wet hide lightens toward its finished colour as it dries and settles once it is done.
  */
-public class TannersRackRenderer implements BlockEntityRenderer<TannersRackBlockEntity> {
+public class TannersRackRenderer implements BlockEntityRenderer<TannersRackBlockEntity, TannersRackRenderer.RackRenderState> {
     public static final Identifier RAW = ImmersiveTanning.id("textures/entity/hide_raw.png");
     public static final Identifier LEATHER = ImmersiveTanning.id("textures/entity/hide_leather.png");
     public static final int WET_COLOR = 0x4A2E1C;
@@ -37,35 +42,66 @@ public class TannersRackRenderer implements BlockEntityRenderer<TannersRackBlock
         return 64;
     }
 
+    /** What the rack draws, copied from the block entity at extraction time. */
+    public static class RackRenderState extends BlockEntityRenderState {
+        public boolean visible;
+        public Direction facing = Direction.NORTH;
+        public TannersRackBlockEntity.Mode mode = TannersRackBlockEntity.Mode.EMPTY;
+        public HideSize size = HideSize.SMALL;
+        public Finish finish = Finish.SUPPLE;
+        public float progress;
+        public boolean settled;
+        public int color;
+    }
+
     @Override
-    public void render(TannersRackBlockEntity rack, float partialTick, PoseStack pose, MultiBufferSource buffers, int light, int overlay) {
+    public RackRenderState createRenderState() {
+        return new RackRenderState();
+    }
+
+    @Override
+    public void extractRenderState(TannersRackBlockEntity rack, RackRenderState state, float partialTick, Vec3 cameraPos,
+                                   ModelFeatureRenderer.@Nullable CrumblingOverlay crumbling) {
+        BlockEntityRenderer.super.extractRenderState(rack, state, partialTick, cameraPos, crumbling);
         HideData hide = rack.hide();
-        if (hide == null || rack.mode() == TannersRackBlockEntity.Mode.EMPTY) return;
-        BlockState state = rack.getBlockState();
-        Direction facing = state.getBlock() instanceof TannersRackBlock ? state.getValue(TannersRackBlock.FACING) : Direction.NORTH;
+        state.visible = hide != null && rack.mode() != TannersRackBlockEntity.Mode.EMPTY;
+        if (!state.visible) return;
+        BlockState blockState = rack.getBlockState();
+        state.facing = blockState.getBlock() instanceof TannersRackBlock ? blockState.getValue(TannersRackBlock.FACING) : Direction.NORTH;
+        state.mode = rack.mode();
+        state.size = hide.size();
+        state.finish = rack.finish();
+        long time = rack.getLevel() != null ? rack.getLevel().getGameTime() : 0L;
+        state.progress = rack.dryProgress(time);
+        state.settled = rack.isSettled();
+        state.color = MeshUtil.mix(WET_COLOR, state.finish.leatherColor(), state.progress * state.progress * (3F - 2F * state.progress));
+    }
+
+    @Override
+    public void submit(RackRenderState state, PoseStack pose, SubmitNodeCollector collector, CameraRenderState camera) {
+        if (!state.visible) return;
         pose.pushPose();
         pose.translate(0.5, 0, 0.5);
-        pose.mulPose(Axis.YP.rotationDegrees(-((facing.get2DDataValue() + 2) % 4) * 90F));
+        pose.mulPose(Axis.YP.rotationDegrees(-((state.facing.get2DDataValue() + 2) % 4) * 90F));
         pose.translate(-0.5, 0, -0.5);
-        float width = switch (hide.size()) {
+        float width = switch (state.size) {
             case SMALL -> 7F;
             case MEDIUM -> 9F;
             case LARGE -> 10.6F;
         };
-        if (rack.mode() == TannersRackBlockEntity.Mode.RAW) {
-            renderDraped(pose, buffers.getBuffer(RenderType.entityCutoutNoCull(RAW)), width, hide.size(), light);
+        int light = state.lightCoords;
+        if (state.mode == TannersRackBlockEntity.Mode.RAW) {
+            collector.submitCustomGeometry(pose, RenderTypes.entityCutout(RAW),
+                    (last, buffer) -> renderDraped(last, buffer, width, state.size, light));
         } else {
-            long time = rack.getLevel() != null ? rack.getLevel().getGameTime() : 0L;
-            float progress = rack.dryProgress(time);
-            int color = MeshUtil.mix(WET_COLOR, rack.finish().leatherColor(), progress * progress * (3F - 2F * progress));
-            VertexConsumer buffer = buffers.getBuffer(RenderType.entityCutoutNoCull(LEATHER));
-            renderStretched(pose, buffer, rack.finish(), width, hide.size(), progress, rack.isSettled(), color, light);
+            collector.submitCustomGeometry(pose, RenderTypes.entityCutout(LEATHER),
+                    (last, buffer) -> renderStretched(last, buffer, state.finish, width, state.size, state.progress, state.settled, state.color, light));
         }
         pose.popPose();
     }
 
     /** The hide over the beam: up the back, over the top, and hanging down the front. */
-    private void renderDraped(PoseStack pose, VertexConsumer buffer, float width, HideSize size, int light) {
+    private void renderDraped(PoseStack.Pose pose, VertexConsumer buffer, float width, HideSize size, int light) {
         int rows = 9;
         int cols = 5;
         float[][][] pos = new float[rows][cols][];
@@ -85,7 +121,7 @@ public class TannersRackRenderer implements BlockEntityRenderer<TannersRackBlock
     }
 
     /** The hide laced into the frame, posed by finish. */
-    private void renderStretched(PoseStack pose, VertexConsumer buffer, Finish finish, float width, HideSize size, float progress,
+    private void renderStretched(PoseStack.Pose pose, VertexConsumer buffer, Finish finish, float width, HideSize size, float progress,
                                  boolean settled, int color, int light) {
         float scale = width / 10.6F;
         float halfW;

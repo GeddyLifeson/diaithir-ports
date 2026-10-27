@@ -1,8 +1,9 @@
 package com.otectus.immersivetanning.client.screen;
 
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.FormattedCharSequence;
@@ -18,8 +19,11 @@ import java.util.List;
 public final class VanillaGui {
     public static final Identifier PANEL = Identifier.parse("textures/gui/demo_background.png");
     public static final Identifier SLOTS = Identifier.parse("textures/gui/container/generic_54.png");
-    public static final Identifier WIDGETS = Identifier.parse("textures/gui/widgets.png");
-    public static final Identifier SCROLLER = Identifier.parse("textures/gui/container/creative_inventory/tabs.png");
+    public static final Identifier BUTTON = Identifier.withDefaultNamespace("widget/button");
+    public static final Identifier BUTTON_DISABLED = Identifier.withDefaultNamespace("widget/button_disabled");
+    public static final Identifier BUTTON_HIGHLIGHTED = Identifier.withDefaultNamespace("widget/button_highlighted");
+    public static final Identifier SCROLLER = Identifier.withDefaultNamespace("container/creative_inventory/scroller");
+    public static final Identifier SCROLLER_DISABLED = Identifier.withDefaultNamespace("container/creative_inventory/scroller_disabled");
 
     /** Container titles and labels (vanilla {@code 0x404040}). */
     public static final int LABEL = 0xFF404040;
@@ -36,12 +40,26 @@ public final class VanillaGui {
     public static final int DISPLAY_HEADING = 0xFFFFD66B;
 
     /** A vanilla container panel of any size: the standard bevelled light grey frame. */
-    public static void panel(GuiGraphics g, int x, int y, int w, int h) {
-        g.blitNineSliced(PANEL, x, y, w, h, 4, 248, 166, 0, 0);
+    public static void panel(GuiGraphicsExtractor g, int x, int y, int w, int h) {
+        final int b = 4, tw = 248, th = 166;
+        int mw = w - 2 * b, mh = h - 2 * b;
+        g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x, y, 0, 0, b, b, 256, 256);
+        g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + w - b, y, tw - b, 0, b, b, 256, 256);
+        g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x, y + h - b, 0, th - b, b, b, 256, 256);
+        g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + w - b, y + h - b, tw - b, th - b, b, b, 256, 256);
+        if (mw > 0) {
+            g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + b, y, b, 0, mw, b, tw - 2 * b, b, 256, 256);
+            g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + b, y + h - b, b, th - b, mw, b, tw - 2 * b, b, 256, 256);
+        }
+        if (mh > 0) {
+            g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x, y + b, 0, b, b, mh, b, th - 2 * b, 256, 256);
+            g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + w - b, y + b, tw - b, b, b, mh, b, th - 2 * b, 256, 256);
+        }
+        if (mw > 0 && mh > 0) g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + b, y + b, b, b, mw, mh, tw - 2 * b, th - 2 * b, 256, 256);
     }
 
     /** A recessed field in the colours of a vanilla slot (dark top-left edge, white bottom-right edge). */
-    public static void inset(GuiGraphics g, int x, int y, int w, int h) {
+    public static void inset(GuiGraphicsExtractor g, int x, int y, int w, int h) {
         g.fill(x, y, x + w, y + h, 0xFF8B8B8B);
         g.fill(x, y, x + w - 1, y + 1, 0xFF373737);
         g.fill(x, y, x + 1, y + h - 1, 0xFF373737);
@@ -50,7 +68,7 @@ public final class VanillaGui {
     }
 
     /** A recessed dark display for gameplay surfaces that need contrast (the fleshing beam, the stitching board). */
-    public static void display(GuiGraphics g, int x, int y, int w, int h) {
+    public static void display(GuiGraphicsExtractor g, int x, int y, int w, int h) {
         inset(g, x, y, w, h);
         g.fill(x + 1, y + 1, x + w - 1, y + h - 1, 0xFF262626);
     }
@@ -59,7 +77,7 @@ public final class VanillaGui {
      * Text in a dark display sized to it: for readouts whose colours (quality grades, datapack trait colours) are
      * chosen for dark backgrounds and would lose contrast on the light panel. Returns the height used.
      */
-    public static int readout(GuiGraphics g, Font font, Component text, int x, int y, int w, int maxLines) {
+    public static int readout(GuiGraphicsExtractor g, Font font, Component text, int x, int y, int w, int maxLines) {
         int lines = Math.max(1, Math.min(maxLines, font.split(text, w - 8).size()));
         display(g, x, y, w, 8 + lines * 10);
         wrapped(g, font, text, x + 4, y + 5, w - 8, DISPLAY_TEXT, lines);
@@ -67,22 +85,21 @@ public final class VanillaGui {
     }
 
     /** The standard 18 px item slot. */
-    public static void slot(GuiGraphics g, int x, int y) {
-        g.blit(SLOTS, x, y, 7, 17, 18, 18);
+    public static void slot(GuiGraphicsExtractor g, int x, int y) {
+        g.blit(RenderPipelines.GUI_TEXTURED, SLOTS, x, y, 7, 17, 18, 18, 256, 256);
     }
 
     /** A list row or card drawn as a vanilla button: disabled, normal, or highlighted (hovered). */
-    public static void row(GuiGraphics g, int x, int y, int w, int h, boolean active, boolean highlighted) {
-        int v = !active ? 46 : highlighted ? 86 : 66;
-        g.blitNineSliced(WIDGETS, x, y, w, h, 20, 4, 200, 20, 0, v);
+    public static void row(GuiGraphicsExtractor g, int x, int y, int w, int h, boolean active, boolean highlighted) {
+        g.blitSprite(RenderPipelines.GUI_TEXTURED, !active ? BUTTON_DISABLED : highlighted ? BUTTON_HIGHLIGHTED : BUTTON, x, y, w, h);
     }
 
     /** A vanilla scroll bar: a recessed track and the creative inventory's scroller handle. */
-    public static void scrollbar(GuiGraphics g, int x, int y, int h, float position, boolean enabled) {
+    public static void scrollbar(GuiGraphicsExtractor g, int x, int y, int h, float position, boolean enabled) {
         inset(g, x, y, 14, h);
         int travel = Math.max(0, h - 17);
         int thumb = y + 1 + Math.round(travel * Math.max(0F, Math.min(1F, position)));
-        g.blit(SCROLLER, x + 1, thumb, enabled ? 232 : 244, 0, 12, 15);
+        g.blitSprite(RenderPipelines.GUI_TEXTURED, enabled ? SCROLLER : SCROLLER_DISABLED, x + 1, thumb, 12, 15);
     }
 
     /** True when (mx, my) is on a scroll bar drawn with {@link #scrollbar}. */
@@ -91,7 +108,7 @@ public final class VanillaGui {
     }
 
     /** A vanilla-style bar: recessed track, flat fill and a one-pixel highlight on top. */
-    public static void bar(GuiGraphics g, int x, int y, int w, int h, float fraction, int color) {
+    public static void bar(GuiGraphicsExtractor g, int x, int y, int w, int h, float fraction, int color) {
         inset(g, x - 1, y - 1, w + 2, h + 2);
         g.fill(x, y, x + w, y + h, 0xFF373737);
         int filled = Math.round(w * Math.max(0F, Math.min(1F, fraction)));
@@ -116,7 +133,7 @@ public final class VanillaGui {
     }
 
     /** Wrapped text, at most {@code maxLines} lines; a clipped last line ends in "...". Returns the lines drawn. */
-    public static int wrapped(GuiGraphics g, Font font, Component text, int x, int y, int width, int color, int maxLines, boolean shadow) {
+    public static int wrapped(GuiGraphicsExtractor g, Font font, Component text, int x, int y, int width, int color, int maxLines, boolean shadow) {
         List<FormattedCharSequence> lines = font.split(text, width);
         int n = Math.min(lines.size(), Math.max(0, maxLines));
         for (int i = 0; i < n; i++) {
@@ -127,15 +144,15 @@ public final class VanillaGui {
                     return true;
                 });
                 String clipped = font.plainSubstrByWidth(sb.toString(), Math.max(0, width - font.width("..."))) + "...";
-                g.drawString(font, clipped, x, y + i * 10, color, shadow);
+                g.text(font, clipped, x, y + i * 10, color, shadow);
             } else {
-                g.drawString(font, lines.get(i), x, y + i * 10, color, shadow);
+                g.text(font, lines.get(i), x, y + i * 10, color, shadow);
             }
         }
         return n;
     }
 
-    public static int wrapped(GuiGraphics g, Font font, Component text, int x, int y, int width, int color, int maxLines) {
+    public static int wrapped(GuiGraphicsExtractor g, Font font, Component text, int x, int y, int width, int color, int maxLines) {
         return wrapped(g, font, text, x, y, width, color, maxLines, false);
     }
 
@@ -145,16 +162,16 @@ public final class VanillaGui {
     }
 
     /** Centred wrapped text; returns the number of lines drawn. */
-    public static int wrappedCentered(GuiGraphics g, Font font, Component text, int centerX, int y, int width, int color, boolean shadow) {
+    public static int wrappedCentered(GuiGraphicsExtractor g, Font font, Component text, int centerX, int y, int width, int color, boolean shadow) {
         List<FormattedCharSequence> lines = font.split(text, width);
         for (int i = 0; i < lines.size(); i++) {
-            g.drawString(font, lines.get(i), centerX - font.width(lines.get(i)) / 2, y + i * 10, color, shadow);
+            g.text(font, lines.get(i), centerX - font.width(lines.get(i)) / 2, y + i * 10, color, shadow);
         }
         return lines.size();
     }
 
-    public static void centered(GuiGraphics g, Font font, Component text, int centerX, int y, int color) {
-        g.drawString(font, text, centerX - font.width(text) / 2, y, color, false);
+    public static void centered(GuiGraphicsExtractor g, Font font, Component text, int centerX, int y, int color) {
+        g.text(font, text, centerX - font.width(text) / 2, y, color, false);
     }
 
     private VanillaGui() {}

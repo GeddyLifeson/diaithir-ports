@@ -6,7 +6,6 @@ import com.otectus.immersivetanning.leather.TanningQuality;
 import com.otectus.immersivetanning.minigame.PressGate;
 import com.otectus.immersivetanning.minigame.StitchPattern;
 import com.otectus.immersivetanning.minigame.StitchRun;
-import com.otectus.immersivetanning.network.ModNetwork;
 import com.otectus.immersivetanning.network.packet.CancelSessionPacket;
 import com.otectus.immersivetanning.network.packet.OpenBenchPacket;
 import com.otectus.immersivetanning.network.packet.SelectBenchRecipePacket;
@@ -17,14 +16,16 @@ import com.otectus.immersivetanning.network.packet.StitchStartPacket;
 import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.trait.TraitRef;
 import com.otectus.immersivetanning.util.Scores;
-import net.minecraft.Util;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.util.Util;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
@@ -194,7 +195,7 @@ public class LeatherworkScreen extends WorkshopScreen {
             int row = rowAt(mouseX, mouseY);
             if (row >= 0) {
                 OpenBenchPacket.Entry e = offer.entries().get(row);
-                ModNetwork.CHANNEL.sendToServer(new SelectBenchRecipePacket(offer.sessionId(), e.recipe(), e.finish(),
+                ClientPacketDistributor.sendToServer(new SelectBenchRecipePacket(offer.sessionId(), e.recipe(), e.finish(),
                         e.trait() == null ? null : e.trait().id()));
                 stage = Stage.WAITING;
                 return true;
@@ -209,7 +210,8 @@ public class LeatherworkScreen extends WorkshopScreen {
     }
 
     @Override
-    public boolean keyPressed(int key, int scanCode, int modifiers) {
+    public boolean keyPressed(KeyEvent event) {
+        int key = event.key();
         long wall = Util.getMillis();
         if (key == GLFW.GLFW_KEY_SPACE && stage == Stage.PLAYING) {
             if (gate.keyDown(key, wall)) press();
@@ -222,13 +224,13 @@ public class LeatherworkScreen extends WorkshopScreen {
             if (fresh && wall - resultShownMs >= RESULT_KEY_GRACE_MS) onClose();
             return true;
         }
-        return super.keyPressed(key, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     @Override
-    public boolean keyReleased(int key, int scanCode, int modifiers) {
-        gate.keyUp(key);
-        return super.keyReleased(key, scanCode, modifiers);
+    public boolean keyReleased(KeyEvent event) {
+        gate.keyUp(event.key());
+        return super.keyReleased(event);
     }
 
     @Override
@@ -263,7 +265,7 @@ public class LeatherworkScreen extends WorkshopScreen {
         if (now < 0 || run.isComplete()) return;
         StitchRun.Press press = run.press(now);
         int seq = ++sequence;
-        ModNetwork.CHANNEL.sendToServer(new StitchPressPacket(offer.sessionId(), seq, now));
+        ClientPacketDistributor.sendToServer(new StitchPressPacket(offer.sessionId(), seq, now));
         if (press.outcome() == StitchRun.Outcome.IGNORED) {
             // Too early to count: nothing is scored or used up, and the player is told so instead of pressing into silence.
             earlyMs = Util.getMillis();
@@ -291,19 +293,19 @@ public class LeatherworkScreen extends WorkshopScreen {
 
     @Override
     public void removed() {
-        if (stage != Stage.RESULT && !closedByServer) ModNetwork.CHANNEL.sendToServer(new CancelSessionPacket(offer.sessionId()));
+        if (stage != Stage.RESULT && !closedByServer) ClientPacketDistributor.sendToServer(new CancelSessionPacket(offer.sessionId()));
         super.removed();
     }
 
     // ------------------------------------------------------------------ rendering
 
     @Override
-    protected void renderPanel(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
+    protected void renderPanel(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
         VanillaGui.panel(g, left, top, panelWidth, panelHeight);
         Component title = start == null ? Component.translatable("screen.immersive_tanning.bench.select")
                 : Component.translatable("screen.immersive_tanning.bench.title", start.finish().displayName(), start.result().getHoverName());
         int titleWidth = panelWidth - 16;
-        g.drawString(font, VanillaGui.clipped(font, title, titleWidth), left + 8, top + 7, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, title, titleWidth), left + 8, top + 7, VanillaGui.LABEL, false);
         switch (stage) {
             case SELECT -> renderSelect(g, mouseX, mouseY);
             case WAITING -> VanillaGui.centered(g, font, Component.translatable("screen.immersive_tanning.bench.cutting"),
@@ -364,7 +366,7 @@ public class LeatherworkScreen extends WorkshopScreen {
         return index < offer.entries().size() ? index : -1;
     }
 
-    private void renderSelect(GuiGraphics g, int mouseX, int mouseY) {
+    private void renderSelect(GuiGraphicsExtractor g, int mouseX, int mouseY) {
         int x = listX();
         int y = listTop();
         int w = listWidth();
@@ -379,17 +381,17 @@ public class LeatherworkScreen extends WorkshopScreen {
             OpenBenchPacket.Entry e = entries.get(index);
             int ry = y + r * ROW_HEIGHT;
             VanillaGui.row(g, x, ry, w, ROW_INNER, true, index == hovered);
-            g.renderItem(e.result(), x + 4, ry + 4);
+            g.item(e.result(), x + 4, ry + 4);
             MutableComponent name = Component.translatable("screen.immersive_tanning.bench.entry", e.finish().displayName(), e.result().getHoverName());
             if (e.trait() != null) name = Component.translatable("screen.immersive_tanning.bench.entry_trait", name, e.trait().displayName());
             int textW = w - 30 - auxWidth(e);
-            g.drawString(font, VanillaGui.clipped(font, name, textW), x + 24, ry + 3, VanillaGui.ROW_TEXT, true);
+            g.text(font, VanillaGui.clipped(font, name, textW), x + 24, ry + 3, VanillaGui.ROW_TEXT, true);
             Component detail = Component.translatable("screen.immersive_tanning.bench.detail", e.leather(), Scores.label(e.integrity()));
-            g.drawString(font, VanillaGui.clipped(font, detail, textW), x + 24, ry + 13, VanillaGui.ROW_TEXT_DIM, true);
+            g.text(font, VanillaGui.clipped(font, detail, textW), x + 24, ry + 13, VanillaGui.ROW_TEXT_DIM, true);
             int ax = x + w - 4 - auxWidth(e);
             for (ItemStack aux : e.auxiliary().stream().limit(4).toList()) {
-                g.renderItem(aux, ax, ry + 4);
-                g.renderItemDecorations(font, aux, ax, ry + 4);
+                g.item(aux, ax, ry + 4);
+                g.itemDecorations(font, aux, ax, ry + 4);
                 ax += 17;
             }
         }
@@ -417,7 +419,7 @@ public class LeatherworkScreen extends WorkshopScreen {
 
     // --- stitching
 
-    private void renderStitching(GuiGraphics g) {
+    private void renderStitching(GuiGraphicsExtractor g) {
         int ax = areaX();
         int ay = areaY();
         int aw = areaW();
@@ -468,7 +470,7 @@ public class LeatherworkScreen extends WorkshopScreen {
         renderSidebar(g, now);
     }
 
-    private void renderStitches(GuiGraphics g, int now) {
+    private void renderStitches(GuiGraphicsExtractor g, int now) {
         StitchPattern pattern = start.pattern();
         float scale = TanningGui.markerScale();
         for (int i = 0; i < run.count(); i++) {
@@ -530,27 +532,24 @@ public class LeatherworkScreen extends WorkshopScreen {
         return StitchPattern.pointAt(pattern.seams().get(stitchSeams[count - 1]), Mth.lerp(t, stitchArc[count - 1], 1F));
     }
 
-    private void renderNeedle(GuiGraphics g, int now) {
+    private void renderNeedle(GuiGraphicsExtractor g, int now) {
         float[] p = needleAt(now);
         float px = sx(p[0]);
         float py = sy(p[1]);
         float scale = TanningGui.markerScale();
-        g.pose().pushPose();
-        g.pose().translate(0, 0, 200);
         TanningGui.disc(g, px, py, 2.6F * scale, 0xFF101010);
         TanningGui.disc(g, px, py, 1.6F * scale, 0xFFD8DEE2);
         TanningGui.line(g, px, py, px + 6 * scale, py - 7 * scale, 1, 1, 1, 0xFFD8DEE2);
-        g.pose().popPose();
     }
 
-    private void drawKnife(GuiGraphics g, float x, float y) {
+    private void drawKnife(GuiGraphicsExtractor g, float x, float y) {
         int px = Math.round(x);
         int py = Math.round(y);
         g.fill(px - 1, py - 7, px + 1, py - 1, 0xFFE8DCC0);
         g.fill(px - 3, py - 1, px + 4, py + 1, 0xFFB8C4C8);
     }
 
-    private void renderResult(GuiGraphics g) {
+    private void renderResult(GuiGraphicsExtractor g) {
         int ax = areaX();
         int ay = areaY();
         int aw = areaW();
@@ -558,11 +557,11 @@ public class LeatherworkScreen extends WorkshopScreen {
         g.fill(ax, ay, ax + aw, ay + ah, 0xB0000000);
         int cx = ax + aw / 2;
         int y = ay + ah / 2 - 44;
-        g.pose().pushPose();
-        g.pose().translate(cx - 16, y, 0);
-        g.pose().scale(2F, 2F, 1F);
-        g.renderItem(start.result(), 0, 0);
-        g.pose().popPose();
+        g.pose().pushMatrix();
+        g.pose().translate(cx - 16, y);
+        g.pose().scale(2F, 2F);
+        g.item(start.result(), 0, 0);
+        g.pose().popMatrix();
         y += 38;
         int overall = TanningQuality.overallScore(start.integrity(), result.score());
         Component name = Component.translatable("tooltip.immersive_tanning.named", TanningQuality.fromScore(overall).displayName(),
@@ -574,19 +573,19 @@ public class LeatherworkScreen extends WorkshopScreen {
         VanillaGui.wrappedCentered(g, font, Component.translatable("screen.immersive_tanning.bench.next"), cx, y + 28, aw - 16, VanillaGui.DISPLAY_TEXT_DIM, false);
     }
 
-    private void renderSidebar(GuiGraphics g, int now) {
+    private void renderSidebar(GuiGraphicsExtractor g, int now) {
         int sx = sidebarX();
         int sw = sidebarWidth();
         int y = top + 20;
-        g.drawString(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.bench.step"), sw), sx, y, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.bench.step"), sw), sx, y, VanillaGui.LABEL, false);
         y += 16;
         int done = stage == Stage.RESULT ? run.count() : run.next();
-        g.drawString(font, Component.translatable("screen.immersive_tanning.bench.stitches"), sx, y, VanillaGui.LABEL, false);
+        g.text(font, Component.translatable("screen.immersive_tanning.bench.stitches"), sx, y, VanillaGui.LABEL, false);
         Component count = Component.literal(done + "/" + run.count());
-        g.drawString(font, count, sx + sw - font.width(count), y, VanillaGui.LABEL, false);
+        g.text(font, count, sx + sw - font.width(count), y, VanillaGui.LABEL, false);
         TanningGui.bar(g, sx + 1, y + 12, sw - 2, 5, done / (float) run.count(), TanningGui.STITCH);
         y += 26;
-        g.drawString(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.workmanship_label"), sw), sx, y, VanillaGui.LABEL, false);
+        g.text(font, VanillaGui.clipped(font, Component.translatable("screen.immersive_tanning.workmanship_label"), sw), sx, y, VanillaGui.LABEL, false);
         float running = run.runningAccuracy();
         Component grade = stage == Stage.RESULT ? Scores.label(result.score())
                 : running >= 0 ? TanningQuality.fromScore(Math.round(running * 100F)).displayName() : Component.literal("-");

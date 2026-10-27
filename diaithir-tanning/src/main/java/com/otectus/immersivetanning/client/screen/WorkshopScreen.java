@@ -1,6 +1,7 @@
 package com.otectus.immersivetanning.client.screen;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
@@ -42,20 +43,19 @@ public abstract class WorkshopScreen extends Screen {
     protected abstract void initPanel();
 
     @Override
-    public final void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        renderBackground(g);
+    public final void extractRenderState(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
         pendingItemTooltip = ItemStack.EMPTY;
         pendingTooltip = null;
-        g.pose().pushPose();
-        g.pose().translate(originX, originY, 0);
-        g.pose().scale(uiScale, uiScale, 1F);
+        g.pose().pushMatrix();
+        g.pose().translate(originX, originY);
+        g.pose().scale(uiScale, uiScale);
         renderPanel(g, (int) Math.floor(localX(mouseX)), (int) Math.floor(localY(mouseY)), partialTick);
-        g.pose().popPose();
-        if (!pendingItemTooltip.isEmpty()) g.renderTooltip(font, pendingItemTooltip, mouseX, mouseY);
-        else if (pendingTooltip != null && !pendingTooltip.isEmpty()) g.renderTooltip(font, pendingTooltip, mouseX, mouseY);
+        g.pose().popMatrix();
+        if (!pendingItemTooltip.isEmpty()) g.setTooltipForNextFrame(font, pendingItemTooltip, mouseX, mouseY);
+        else if (pendingTooltip != null && !pendingTooltip.isEmpty()) g.setTooltipForNextFrame(pendingTooltip, mouseX, mouseY);
     }
 
-    protected void renderPanel(GuiGraphics g, int x, int y, float partialTick) { super.render(g, x, y, partialTick); }
+    protected void renderPanel(GuiGraphicsExtractor g, int x, int y, float partialTick) { super.extractRenderState(g, x, y, partialTick); }
 
     /** Shows the item's own tooltip (with every tooltip mod's additions) after the panel is drawn. */
     protected void tooltip(ItemStack stack) {
@@ -83,19 +83,21 @@ public abstract class WorkshopScreen extends Screen {
         return new int[]{Math.round(originX + x * uiScale), Math.round(originY + y * uiScale), Math.round(w * uiScale), Math.round(h * uiScale)};
     }
 
-    protected void scissor(GuiGraphics g, int x0, int y0, int x1, int y1) {
+    protected void scissor(GuiGraphicsExtractor g, int x0, int y0, int x1, int y1) {
         g.enableScissor((int) Math.floor(originX + x0 * uiScale), (int) Math.floor(originY + y0 * uiScale),
                 (int) Math.ceil(originX + x1 * uiScale), (int) Math.ceil(originY + y1 * uiScale));
     }
 
-    @Override public final boolean mouseClicked(double x, double y, int button) { return panelClicked(localX(x), localY(y), button); }
-    protected boolean panelClicked(double x, double y, int button) { return super.mouseClicked(x, y, button); }
-    @Override public final boolean mouseReleased(double x, double y, int button) { return panelReleased(localX(x), localY(y), button); }
-    protected boolean panelReleased(double x, double y, int button) { return super.mouseReleased(x, y, button); }
-    @Override public final boolean mouseDragged(double x, double y, int button, double dx, double dy) { return panelDragged(localX(x), localY(y), button, dx / uiScale, dy / uiScale); }
-    protected boolean panelDragged(double x, double y, int button, double dx, double dy) { return super.mouseDragged(x, y, button, dx, dy); }
-    @Override public final boolean mouseScrolled(double x, double y, double delta) { return panelScrolled(localX(x), localY(y), delta); }
-    protected boolean panelScrolled(double x, double y, double delta) { return super.mouseScrolled(x, y, delta); }
+    private MouseButtonEvent local(MouseButtonEvent e) { return new MouseButtonEvent(localX(e.x()), localY(e.y()), e.buttonInfo()); }
+
+    @Override public final boolean mouseClicked(MouseButtonEvent e, boolean doubleClick) { MouseButtonEvent l = local(e); return panelClicked(l.x(), l.y(), l.button()); }
+    protected boolean panelClicked(double x, double y, int button) { return false; }
+    @Override public final boolean mouseReleased(MouseButtonEvent e) { MouseButtonEvent l = local(e); return panelReleased(l.x(), l.y(), l.button()); }
+    protected boolean panelReleased(double x, double y, int button) { return false; }
+    @Override public final boolean mouseDragged(MouseButtonEvent e, double dx, double dy) { MouseButtonEvent l = local(e); return panelDragged(l.x(), l.y(), l.button(), dx / uiScale, dy / uiScale); }
+    protected boolean panelDragged(double x, double y, int button, double dx, double dy) { return false; }
+    @Override public final boolean mouseScrolled(double x, double y, double scrollX, double scrollY) { return panelScrolled(localX(x), localY(y), scrollY); }
+    protected boolean panelScrolled(double x, double y, double delta) { return false; }
     @Override public void mouseMoved(double x, double y) { super.mouseMoved(localX(x), localY(y)); }
     @Override public boolean isPauseScreen() { return false; }
 }

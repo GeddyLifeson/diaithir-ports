@@ -3,7 +3,7 @@ package com.otectus.immersivetanning.client.screen;
 import com.otectus.immersivetanning.config.ClientConfig;
 import com.otectus.immersivetanning.registry.ModSounds;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
@@ -21,12 +21,12 @@ public final class TanningGui {
     public static final int FRAME = 0xFF6B4A2E;
 
     /** A vanilla bar filled to {@code value} (0..1). */
-    public static void bar(GuiGraphics g, int x, int y, int w, int h, float value, int color) {
+    public static void bar(GuiGraphicsExtractor g, int x, int y, int w, int h, float value, int color) {
         VanillaGui.bar(g, x, y, w, h, value, color);
     }
 
     /** The time left as a vanilla bar: amber while there is time, then red (orange when colorblind-safe). */
-    public static void timeBar(GuiGraphics g, int x, int y, int w, int h, float remaining) {
+    public static void timeBar(GuiGraphicsExtractor g, int x, int y, int w, int h, float remaining) {
         int color = remaining > 0.25F ? 0xFFE0A030 : (ClientConfig.get(ClientConfig.COLORBLIND_SAFE_COLORS) ? 0xFFFF9F1C : 0xFFD04030);
         VanillaGui.bar(g, x, y, w, h, remaining, color);
         // Quarter marks make the remaining time readable without colour.
@@ -34,7 +34,7 @@ public final class TanningGui {
     }
 
     /** A straight line of 1px squares (every {@code step} pixels, dashed when step > 1). */
-    public static void line(GuiGraphics g, float x0, float y0, float x1, float y1, int size, int step, int dash, int color) {
+    public static void line(GuiGraphicsExtractor g, float x0, float y0, float x1, float y1, int size, int step, int dash, int color) {
         float dx = x1 - x0;
         float dy = y1 - y0;
         float length = Mth.sqrt(dx * dx + dy * dy);
@@ -48,7 +48,7 @@ public final class TanningGui {
     }
 
     /** A ring of 1px squares. */
-    public static void ring(GuiGraphics g, float cx, float cy, float radius, int color) {
+    public static void ring(GuiGraphicsExtractor g, float cx, float cy, float radius, int color) {
         int n = Math.max(12, Math.round(radius * 5));
         for (int i = 0; i < n; i++) {
             float a = i * Mth.TWO_PI / n;
@@ -59,7 +59,7 @@ public final class TanningGui {
     }
 
     /** A filled disc of horizontal spans. */
-    public static void disc(GuiGraphics g, float cx, float cy, float radius, int color) {
+    public static void disc(GuiGraphicsExtractor g, float cx, float cy, float radius, int color) {
         int r = Math.max(1, Math.round(radius));
         for (int dy = -r; dy <= r; dy++) {
             int half = Math.round(Mth.sqrt(Math.max(0, r * r - dy * dy)));
@@ -69,7 +69,7 @@ public final class TanningGui {
     }
 
     /** Fills a polygon (screen coordinates, x/y pairs) with the even-odd rule, one scanline at a time. */
-    public static void polygon(GuiGraphics g, float[] pts, int color) {
+    public static void polygon(GuiGraphicsExtractor g, float[] pts, int color) {
         if (pts.length < 6) return;
         float minY = Float.MAX_VALUE;
         float maxY = -Float.MAX_VALUE;
