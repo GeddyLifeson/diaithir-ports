@@ -69,5 +69,8 @@
         1.0
       ]
     }
+  },
+  "textures": {
+    "particle": "alexscaves:item/frostmint_spear"
   }
 }

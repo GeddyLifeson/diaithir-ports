@@ -57,5 +57,8 @@
         0
       ]
     }
+  },
+  "textures": {
+    "particle": "alexscaves:item/dreadbow"
   }
 }

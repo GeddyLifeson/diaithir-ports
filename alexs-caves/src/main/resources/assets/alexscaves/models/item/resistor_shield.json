@@ -120,5 +120,8 @@
         0.25
       ]
     }
+  },
+  "textures": {
+    "particle": "minecraft:item/iron_ingot"
   }
 }

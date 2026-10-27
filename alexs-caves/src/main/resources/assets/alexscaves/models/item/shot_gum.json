@@ -87,5 +87,8 @@
         90
       ]
     }
+  },
+  "textures": {
+    "particle": "minecraft:item/iron_ingot"
   }
 }

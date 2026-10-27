@@ -17,6 +17,9 @@ def base_model(name):
     j=json.load(open(UP/'models/item'/(name+'.json')))
     out={k:v for k,v in j.items() if k in ('display','gui_light')}
     out.setdefault('gui_light','front')
+    n=name.replace('_throwing','').replace('_charging','')
+    tex='alexscaves:item/'+n if (R/'textures/item'/(n+'.png')).exists() else 'minecraft:item/iron_ingot'
+    out['textures']={'particle':tex}
     return out
 def special(base):
     return {"type":"minecraft:special","base":"alexscaves:item/"+base,"model":{"type":"alexscaves:legacy_item"}}
