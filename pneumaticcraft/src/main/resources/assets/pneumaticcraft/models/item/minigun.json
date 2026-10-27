@@ -1,0 +1,6 @@
+{
+	"loader": "pneumaticcraft:rendered_item",
+	"base_model": {
+	  "parent": "pneumaticcraft:block/minigun"
+	}
+  }

@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'pneumaticcraft-repressurized-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+sourceSets {
+    main {
+        java.srcDir 'src/api/java'
+        resources.srcDir 'src/generated/resources'
+    }
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        client {
+            client()
+            jvmArgument '-Xmx4G'
+        }
+    }
+    mods { pneumaticcraft { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ['-Xmaxerrs', '100000', '-Xmaxwarns', '1']
+}
