@@ -1,8 +1,6 @@
 {
  "type": "create:pressing",
- "ingredients": [
-  "create:zinc_ingot"
- ],
+ "ingredient": "create:zinc_ingot",
  "results": [
   {
    "id": "createdeco:zinc_sheet"

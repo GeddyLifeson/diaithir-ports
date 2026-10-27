@@ -1,8 +1,6 @@
 {
  "type": "create:pressing",
- "ingredients": [
-  "createdeco:industrial_iron_ingot"
- ],
+ "ingredient": "createdeco:industrial_iron_ingot",
  "results": [
   {
    "id": "createdeco:industrial_iron_sheet"

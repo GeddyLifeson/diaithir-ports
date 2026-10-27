@@ -302,7 +302,7 @@ def main():
         recipe(f'{m}_coin_from_stack', {'type': 'minecraft:crafting_shapeless', 'ingredients': [f'{NS}:{m}_coinstack'], 'result': {'id': f'{NS}:{m}_coin', 'count': 8}})
     # sheets / nuggets / ingot recipes
     for m, sh_id in (('andesite', 'andesite_sheet'), ('zinc', 'zinc_sheet'), ('industrial_iron', 'industrial_iron_sheet')):
-        recipe(sh_id + '_pressing', {'type': 'create:pressing', 'ingredients': [INGOT[m]], 'results': [{'id': f'{NS}:{sh_id}'}]})
+        recipe(sh_id + '_pressing', {'type': 'create:pressing', 'ingredient': INGOT[m], 'results': [{'id': f'{NS}:{sh_id}'}]})
     recipe('industrial_iron_nugget_from_ingot', {'type': 'minecraft:crafting_shapeless', 'ingredients': [INGOT['industrial_iron']], 'result': {'id': NS + ':industrial_iron_nugget', 'count': 9}})
     recipe('industrial_iron_ingot_from_nuggets', {'type': 'minecraft:crafting_shapeless', 'ingredients': [NS + ':industrial_iron_nugget'] * 9, 'result': {'id': NS + ':industrial_iron_ingot', 'count': 1}})
     recipe('industrial_iron_ingot_from_block', {'type': 'minecraft:crafting_shapeless', 'ingredients': ['create:industrial_iron_block'], 'result': {'id': NS + ':industrial_iron_ingot', 'count': 9}})
