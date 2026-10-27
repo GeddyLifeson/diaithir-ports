@@ -211,7 +211,7 @@ public class FrostmintExplosion {
                             }
                             if (!flag) {
                                 living.setTicksFrozen(living.getTicksRequiredToFreeze() + 200);
-                                ((FrostmintFreezableAccessor) living).setFrostmintFreezing(true);
+                                com.github.alexmodguy.alexscaves.server.entity.util.FrostmintFreezableAccessor.freeze(living);
                             }
                         }
                     }
