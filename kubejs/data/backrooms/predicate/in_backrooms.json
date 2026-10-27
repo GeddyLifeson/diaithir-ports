@@ -1,0 +1,653 @@
+{
+ "condition": "minecraft:any_of",
+ "terms": [
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:attic"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:basement"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:bluechannel"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:grave"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:home"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level0"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level1"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level10"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level11"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level12"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level121"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level13"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level135"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level139"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level14"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level141"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level15"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level159"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level19"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level2"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level217"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level22"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level221"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level231"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level237"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level24"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level25"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level26"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level265"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level283"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level29"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level3"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level305"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level32"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level34"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level37"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level399"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level4"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level41"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level410"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level420"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level43"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level458"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level46"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level47"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level494"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level495"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level5"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level500"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level51"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level56"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level57"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level58"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level6"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level601"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level630"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level7"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level70"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level71"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level78"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level790"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level8"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level813"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level827"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level888"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level9"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level93"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level94"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level993"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:level997"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:levelrun"
+    }
+   }
+  },
+  {
+   "condition": "minecraft:entity_properties",
+   "entity": "this",
+   "predicate": {
+    "location": {
+     "dimension": "backrooms:shady"
+    }
+   }
+  }
+ ]
+}

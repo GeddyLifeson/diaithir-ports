@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"actuallyadditions"},{"type":"neoforge:mod_loaded","modid":"occultism"}],"type":"actuallyadditions:crushing","ingredient":{"tag":"c:ingots/gold"},"result":[{"result":{"count":1,"id":"occultism:gold_dust"}}]}

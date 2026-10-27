@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivefarming"},{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:distillation","category":"misc","ingredient":{"count":2,"ingredient":"productivefarming:poppy"},"result":{"id":"theurgy:mercury_shard"},"time":100}

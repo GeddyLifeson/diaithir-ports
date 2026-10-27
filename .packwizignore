@@ -1,6 +1,7 @@
 README.md
 LICENSES.md
 Diaithir.zip
-source/
-client/
+/source/
+/client/
 .gitattributes
+.pre-commit-config.yaml

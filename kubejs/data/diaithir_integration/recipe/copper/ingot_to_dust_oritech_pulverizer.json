@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"occultism"},{"type":"neoforge:mod_loaded","modid":"oritech"}],"type":"oritech:pulverizer","itemInputs":["#c:ingots/copper"],"itemResults":[{"id":"occultism:copper_dust"}],"time":100}

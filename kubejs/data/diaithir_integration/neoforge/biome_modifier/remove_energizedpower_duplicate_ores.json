@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"energizedpower"}],"type":"neoforge:remove_features","biomes":"#minecraft:is_overworld","features":["energizedpower:tin_ore"],"steps":"underground_ores"}

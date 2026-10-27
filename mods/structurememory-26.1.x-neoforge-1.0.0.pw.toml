@@ -1,6 +1,6 @@
 name = "structurememory"
 filename = "structurememory-26.1.x-neoforge-1.0.0.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://cdn.modrinth.com/data/BUE1I3ga/versions/ViFK5DEJ/structurememory-26.1.x-neoforge-1.0.0.jar"

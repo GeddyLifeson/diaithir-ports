@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"diaithirbridges"}],"type":"minecraft:crafting_shaped","category":"misc","pattern":["ORO","SMS","ORO"],"key":{"O":"#c:ingots/brass","R":"#c:plates/steel","S":"#c:plates/steel","M":"diaithirbridges:aibhnedealain"},"result":{"id":"diaithirbridges:aibhnedealainumha"}}

@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"diaithir_create"}],"type":"minecraft:crafting_shaped","category":"misc","pattern":["APA","SWS","APA"],"key":{"A":"#c:ingots/silver","P":"create:precision_mechanism","S":"#c:plates/steel","W":"create:tide_wheel_gold"},"result":{"id":"create:tide_wheel_silver"}}

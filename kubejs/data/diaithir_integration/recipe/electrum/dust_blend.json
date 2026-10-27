@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"modern_industrialization"}],"type":"minecraft:crafting_shapeless","category":"misc","ingredients":["#c:dusts/gold","#c:dusts/silver"],"result":{"id":"modern_industrialization:electrum_dust","count":2}}

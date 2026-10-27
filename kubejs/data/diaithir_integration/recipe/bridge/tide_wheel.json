@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"diaithir_create"}],"type":"minecraft:crafting_shaped","category":"misc","pattern":[" S ","ICI","IDI"],"key":{"S":"create:shaft","I":"#c:ingots/copper","C":"create:andesite_casing","D":"#diaithir_integration:herb_dusts"},"result":{"id":"create:tide_wheel"}}

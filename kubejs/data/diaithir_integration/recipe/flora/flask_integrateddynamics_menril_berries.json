@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"integrateddynamics"},{"type":"neoforge:mod_loaded","modid":"neovitae"}],"type":"neovitae:flask_effect","baseDuration":1800,"effect":"minecraft:absorption","input":["neovitae:simple_catalyst","integrateddynamics:menril_berries"],"syphon":500,"ticks":200,"upgradeLevel":1}

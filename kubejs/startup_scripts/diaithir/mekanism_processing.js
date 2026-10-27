@@ -27,8 +27,8 @@ if (Platform.isLoaded("mekanism")) {
     let ChemicalBuilder = Java.loadClass("mekanism.api.chemical.ChemicalBuilder")
     for (let [mod, metals] of Object.entries(MEK_PROCESSING_METALS)) {
       for (let [metal, tint] of Object.entries(metals)) {
-        event.createCustom(`${mod}:clean_${metal}`, () => Chemical(ChemicalBuilder.cleanSlurry().tint(tint)))
-        event.createCustom(`${mod}:dirty_${metal}`, () => Chemical(ChemicalBuilder.dirtySlurry().tint(tint)))
+        event.createCustom(`${mod}:clean_${metal}`, () => Chemical(ChemicalBuilder.cleanSlurry().tint(tint | 0xFF000000)))
+        event.createCustom(`${mod}:dirty_${metal}`, () => Chemical(ChemicalBuilder.dirtySlurry().tint(tint | 0xFF000000)))
       }
     }
   })

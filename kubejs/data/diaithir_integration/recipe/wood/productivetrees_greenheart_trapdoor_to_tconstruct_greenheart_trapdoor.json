@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivetrees"},{"type":"neoforge:mod_loaded","modid":"tconstruct"}],"type":"minecraft:stonecutting","ingredient":"productivetrees:greenheart_trapdoor","result":{"id":"tconstruct:greenheart_trapdoor","count":1}}

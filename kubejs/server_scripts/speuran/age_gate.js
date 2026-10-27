@@ -14,11 +14,14 @@ const SPEURAN_OPENS = {
   'diaithir_worlds:ard_bhaile': 'RODOS'
 }
 const SpeuranPlanets = Java.loadClass('org.exodusstudio.stellaris.common.data.PlanetsData')
-let speuranHeld = []
+// Held planets are kept in an array made once by startup_scripts/speuran/age_gate_state.js; a top-level `let` here was reset to [] on
+// every script reload, so planets held back before it were only restored if Stellaris happened to reload PLANETS from data.
+let speuranHeld = global.speuranHeld || []
 
 function speuranAge(server) {
   try {
-    return SPEURAN_AGES.indexOf(String(Java.loadClass('net.diaithir.ages.mc.AgesSavedData').get(server).world.age).toUpperCase())
+    let i = SPEURAN_AGES.indexOf(String(Java.loadClass('net.diaithir.ages.mc.AgesSavedData').get(server).world.age).toUpperCase())
+    return i < 0 ? SPEURAN_AGES.length : i // an Age string this table does not know opens every world instead of holding them all
   } catch (e) {
     return SPEURAN_AGES.length
   }
@@ -34,7 +37,8 @@ NativeEvents.onEvent('highest', Java.loadClass('net.neoforged.neoforge.event.OnD
     if (opens && SPEURAN_AGES.indexOf(opens) > age) held.push(all[dim])
     else open.push(all[dim])
   })
-  speuranHeld = held
+  speuranHeld.length = 0 // in place: the array is shared with the startup script's global, which outlives a script reload
+  held.forEach(p => speuranHeld.push(p))
   SpeuranPlanets.setPlanets(open)
   console.info(`[speuran] Age ${SPEURAN_AGES[age] || 'unlinked'}: ${open.length} planets open, ${held.length} held`)
 })
