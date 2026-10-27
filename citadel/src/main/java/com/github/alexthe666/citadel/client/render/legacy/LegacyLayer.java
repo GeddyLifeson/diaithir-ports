@@ -17,6 +17,10 @@ public abstract class LegacyLayer<T extends LivingEntity, M extends BasicEntityM
         return renderer.getModel();
     }
 
+    protected net.minecraft.resources.Identifier getTextureLocation(T entity) {
+        return renderer.getTextureLocation(entity);
+    }
+
     public LegacyLayerParent<T, M> getRenderer() {
         return renderer;
     }

@@ -29,6 +29,10 @@ public abstract class BasicEntityModel<T extends Entity> {
 
     public abstract void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch);
 
+    public void copyPropertiesTo(BasicEntityModel<T> other) {
+        other.young = this.young;
+    }
+
     public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick) {
     }
 }

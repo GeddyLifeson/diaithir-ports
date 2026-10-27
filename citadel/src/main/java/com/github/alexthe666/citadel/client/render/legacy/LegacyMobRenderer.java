@@ -36,6 +36,10 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         this.shadowRadius = shadowRadius;
     }
 
+    public static int getOverlayCoords(LivingEntity entity, float whiteProgress) {
+        return OverlayTexture.pack(OverlayTexture.u(whiteProgress), OverlayTexture.v(entity.hurtTime > 0 || entity.deathTime > 0));
+    }
+
     public final boolean addLayer(LegacyLayer<T, M> layer) {
         return this.layers.add(layer);
     }
@@ -60,6 +64,14 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
     }
 
     protected void scale(T entity, PoseStack poseStack, float partialTick) {
+    }
+
+    public boolean isEntityUpsideDown(T entity) {
+        return false;
+    }
+
+    protected float getWhiteOverlayProgress(T entity, float partialTicks) {
+        return 0.0F;
     }
 
     protected float getFlipDegrees(T entity) {
@@ -94,6 +106,10 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         if (visibleToPlayer) return RenderTypes.entityTranslucent(tex);
         if (visible) return RenderTypes.entityCutout(tex);
         return null;
+    }
+
+    protected int getModelColor(T entity, float partialTicks) {
+        return -1;
     }
 
     protected boolean isBodyVisible(T entity) {
@@ -136,7 +152,7 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         if (type != null) {
             VertexConsumer vc = buffer.getBuffer(type);
             int overlay = OverlayTexture.pack(OverlayTexture.u(0.0F), OverlayTexture.v(entity.hurtTime > 0 || entity.deathTime > 0));
-            model.renderToBuffer(poseStack, vc, packedLight, overlay, -1);
+            model.renderToBuffer(poseStack, vc, packedLight, overlay, getModelColor(entity, partialTicks));
         }
         if (!entity.isSpectator()) {
             for (LegacyLayer<T, M> layer : this.layers) {
@@ -151,11 +167,13 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
     public void submit(LegacyRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
         super.submit(state, poseStack, collector, camera);
         if (state.entity == null) return;
+        LegacyRenderContext.begin(collector, camera, context);
         RecordingBufferSource rec = new RecordingBufferSource();
         T e = (T) state.entity;
         poseStack.pushPose();
         render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
         poseStack.popPose();
+        LegacyRenderContext.end();
         rec.flush(collector);
     }
 }

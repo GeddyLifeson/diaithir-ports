@@ -5,4 +5,6 @@ import net.minecraft.world.entity.Entity;
 
 public interface LegacyLayerParent<T extends Entity, M extends BasicEntityModel<T>> {
     M getModel();
+
+    net.minecraft.resources.Identifier getTextureLocation(T entity);
 }

@@ -30,6 +30,18 @@ public abstract class LegacyEntityRenderer<T extends Entity> extends EntityRende
         state.partialTick = partialTick;
     }
 
+    public boolean isEntityUpsideDown(T entity) {
+        return false;
+    }
+
+    protected float getWhiteOverlayProgress(T entity, float partialTicks) {
+        return 0.0F;
+    }
+
+    public static int getOverlayCoords(net.minecraft.world.entity.LivingEntity entity, float whiteProgress) {
+        return LegacyMobRenderer.getOverlayCoords(entity, whiteProgress);
+    }
+
     /** 1.21 name kept so subclasses compile. */
     public abstract Identifier getTextureLocation(T entity);
 
@@ -42,11 +54,13 @@ public abstract class LegacyEntityRenderer<T extends Entity> extends EntityRende
     public void submit(LegacyRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
         super.submit(state, poseStack, collector, camera);
         if (state.entity == null) return;
+        LegacyRenderContext.begin(collector, camera, context);
         RecordingBufferSource rec = new RecordingBufferSource();
         T e = (T) state.entity;
         poseStack.pushPose();
         render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
         poseStack.popPose();
+        LegacyRenderContext.end();
         rec.flush(collector);
     }
 }
