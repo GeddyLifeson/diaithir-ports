@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.world.gen.valuemap.CylinderProvider;
 import cn.leolezury.eternalstarlight.common.world.gen.valuemap.RotatedProvider;
 import cn.leolezury.eternalstarlight.common.world.gen.valuemap.ValueMapGenerator;
@@ -63,9 +65,9 @@ public class PillarFeature extends ESFeature<PillarFeature.Configuration> {
 	public record Configuration(BlockStateProvider pillar, IntProvider height, IntProvider radius, IntProvider rotation, HolderSet<PlacedFeature> decorations, float decorationChance) implements FeatureConfiguration {
 		public static final Codec<PillarFeature.Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
 			BlockStateProvider.CODEC.fieldOf("pillar").forGetter(PillarFeature.Configuration::pillar),
-			IntProvider.CODEC.fieldOf("height").forGetter(PillarFeature.Configuration::height),
-			IntProvider.CODEC.fieldOf("radius").forGetter(PillarFeature.Configuration::radius),
-			IntProvider.CODEC.fieldOf("rotation").forGetter(PillarFeature.Configuration::rotation),
+			IntProviders.CODEC.fieldOf("height").forGetter(PillarFeature.Configuration::height),
+			IntProviders.CODEC.fieldOf("radius").forGetter(PillarFeature.Configuration::radius),
+			IntProviders.CODEC.fieldOf("rotation").forGetter(PillarFeature.Configuration::rotation),
 			PlacedFeature.LIST_CODEC.fieldOf("decorations").forGetter(PillarFeature.Configuration::decorations),
 			Codec.floatRange(0, 1).fieldOf("decoration_chance").forGetter(PillarFeature.Configuration::decorationChance)
 		).apply(instance, PillarFeature.Configuration::new));

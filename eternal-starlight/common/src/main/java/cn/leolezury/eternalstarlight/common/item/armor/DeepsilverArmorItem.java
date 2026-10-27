@@ -67,7 +67,7 @@ public class DeepsilverArmorItem extends Item implements TickableArmor {
 			}
 		});
 		if (fullSet.get()) {
-			level.registryAccess().registryOrThrow(Registries.MOB_EFFECT).getTagOrEmpty(ESTags.MobEffects.DEEPSILVER_ARMOR_CAN_REMOVE).forEach(effect -> {
+			level.registryAccess().lookupOrThrow(Registries.MOB_EFFECT).getTagOrEmpty(ESTags.MobEffects.DEEPSILVER_ARMOR_CAN_REMOVE).forEach(effect -> {
 				if (livingEntity.hasEffect(effect)) {
 					livingEntity.removeEffect(effect);
 				}

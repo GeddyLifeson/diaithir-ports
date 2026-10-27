@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity.spawner;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -74,7 +76,7 @@ public abstract class BossSpawnerBlockEntity<T extends Mob> extends BlockEntity 
 		}
 		BlockPos spawnPos = getBlockPos();
 		mob.snapTo(spawnPos, level.getRandom().nextFloat() * 360.0F, 0.0F);
-		mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), EntitySpawnReason.SPAWNER, null);
+		mob.finalizeSpawn(level, ESPortCompat.difficulty(level, spawnPos), EntitySpawnReason.SPAWNER, null);
 		initializeBoss(mob);
 		return level.addFreshEntity(mob);
 	}

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -49,7 +51,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	private static final String TAG_HAS_LEAVES = "has_leaves";
 	private static final String TAG_VARIANT = "variant";
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESTags.Items.ENT_FOOD);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.ENT_FOOD));
 
 	public Ent(EntityType<? extends Ent> type, Level level) {
 		super(type, level);
@@ -78,7 +80,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	@Override
 	public void setVariant(Holder<EntVariant> variant) {
 		if (variant.isBound()) {
-			Identifier key = level().registryAccess().registryOrThrow(ESRegistries.ENT_VARIANT).getKey(variant.value());
+			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.ENT_VARIANT).getKey(variant.value());
 			if (key != null) {
 				setVariantId(key);
 			}
@@ -88,7 +90,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	@Override
 	public Holder<EntVariant> getVariant() {
 		Identifier key = getVariantId();
-		Registry<EntVariant> variants = level().registryAccess().registryOrThrow(ESRegistries.ENT_VARIANT);
+		Registry<EntVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ENT_VARIANT);
 		Optional<Holder.Reference<EntVariant>> optional = variants.getHolder(key);
 		return optional.orElse(variants.getHolder(ESEntVariants.LUNAR).orElseThrow());
 	}
@@ -148,7 +150,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 		if (!flag) {
 			if (ESPlatform.INSTANCE.isShears(stack) && hasLeaves()) {
 				setHasLeaves(false);
-				spawnAtLocation(getVariant().value().leaves().value());
+				ESPortCompat.spawnAtLocation(this, getVariant().value().leaves().value());
 				stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
 				playSound(SoundEvents.SHEEP_SHEAR);
 				return InteractionResult.SUCCESS;
@@ -167,7 +169,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	@Override
 	protected void dropCustomDeathLoot(ServerLevel level, DamageSource source, boolean recentlyHit) {
 		super.dropCustomDeathLoot(level, source, recentlyHit);
-		spawnAtLocation(getVariant().value().leaves().value());
+		ESPortCompat.spawnAtLocation(this, getVariant().value().leaves().value());
 	}
 
 	@Override
@@ -178,7 +180,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-		Ent ent = ESEntities.ENT.get().create(level);
+		Ent ent = ESEntities.ENT.get().create(level, EntitySpawnReason.TRIGGERED);
 		if (ent != null && mob instanceof Ent partner) {
 			if (this.random.nextBoolean()) {
 				ent.setVariant(this.getVariant());

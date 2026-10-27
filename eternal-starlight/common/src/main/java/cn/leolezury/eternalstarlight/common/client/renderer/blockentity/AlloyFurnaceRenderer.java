@@ -63,7 +63,7 @@ public class AlloyFurnaceRenderer implements BlockEntityRenderer<AlloyFurnaceBlo
 				lightWithOverheat = LightTexture.pack(Mth.ceil(Mth.lerp(overheatAmplitude, LightTexture.block(light), 15)), Mth.ceil(Mth.lerp(overheatAmplitude, LightTexture.sky(light), 15)));
 				stack.scale(1 + (float) Math.cos(animationTicks * 3.25) * overheatAmplitude * 0.02f, 1 + (float) Math.cos(animationTicks * 2.25) * overheatAmplitude * 0.02f, 1 + (float) Math.cos(animationTicks * 3.25) * overheatAmplitude * 0.02f);
 			}
-			int overheatColor = ARGB.lerp(overheatAmplitude, -1, 0xffee7044);
+			int overheatColor = ARGB.srgbLerp(overheatAmplitude, -1, 0xffee7044);
 			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityTranslucent(oxidized ? OXIDIZED_FURNACE_TEXTURE : FURNACE_TEXTURE)), lightWithOverheat, overlay, overheatColor);
 			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull((oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).get((blockEntity.isCooling() ? blockEntity.clientAnimationTicks / 2 : 0) % (oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).size()))), lightWithOverheat, overlay, overheatColor);
 			if (blockEntity.isLit()) {

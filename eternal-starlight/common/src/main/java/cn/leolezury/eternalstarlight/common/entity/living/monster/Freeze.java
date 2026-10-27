@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.projectile.FrozenTube;
 import cn.leolezury.eternalstarlight.common.registry.ESSoundEvents;
@@ -150,7 +152,7 @@ public class Freeze extends Monster implements RangedAttackMob {
 
 	@Override
 	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
+		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
 	}
 
 	@Override

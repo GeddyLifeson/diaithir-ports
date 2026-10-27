@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.FlareSpawnerBlock;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
@@ -149,7 +153,7 @@ public abstract class FlareSpawner {
 			&& state.hasProperty(FlareSpawnerBlock.LIT)
 			&& !state.getValue(FlareSpawnerBlock.LIT)
 			&& this.getOrCreateNextSpawnData(serverLevel, random, pos).getEntityToSpawn().contains("id")
-			&& serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+			&& ESPortCompat.gameRule(serverLevel, GameRules.SPAWN_MOBS)) {
 			serverLevel.setBlockAndUpdate(pos, state.setValue(FlareSpawnerBlock.LIT, true));
 			for (int i = 0; i < 15; i++) {
 				Vec3 speed = new Vec3((random.nextFloat() - random.nextFloat()) * 0.1F, random.nextFloat() * 0.05F, (random.nextFloat() - random.nextFloat()) * 0.1F).normalize();
@@ -163,7 +167,7 @@ public abstract class FlareSpawner {
 
 			if (this.spawnDelay > 0) {
 				this.spawnDelay--;
-			} else if (serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+			} else if (ESPortCompat.gameRule(serverLevel, GameRules.SPAWN_MOBS)) {
 				boolean success = false;
 				SpawnData spawnData = this.getOrCreateNextSpawnData(serverLevel, random, pos);
 
@@ -227,7 +231,7 @@ public abstract class FlareSpawner {
 
 							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id");
 							if (shouldFinalize) {
-								mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
+								mob.finalizeSpawn(serverLevel, ESPortCompat.difficulty(serverLevel, entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
 							}
 
 							spawnData.getEquipment().ifPresent(mob::equip);
@@ -357,8 +361,8 @@ public abstract class FlareSpawner {
 					.getOrThrow(s -> new IllegalStateException("Invalid SpawnData: " + s))
 			);
 		}
-		tag.put(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC.encodeStart(NbtOps.INSTANCE, this.spawnPotentials).getOrThrow());
-		tag.put(TAG_TRACKED_MOBS, UUIDUtil.CODEC_SET.encodeStart(NbtOps.INSTANCE, this.trackedMobs).getOrThrow());
+		tag.store(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC, this.spawnPotentials);
+		tag.store(TAG_TRACKED_MOBS, UUIDUtil.CODEC_SET, this.trackedMobs);
 		return tag;
 	}
 

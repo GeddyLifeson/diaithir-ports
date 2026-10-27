@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.structure;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.Stranghoul;
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
@@ -60,7 +62,7 @@ public class StranghoulDenStructure extends Structure {
 								Stranghoul stranghoul = new Stranghoul(ESEntities.STRANGHOUL.get(), level.getLevel());
 								stranghoul.setPos(pos.getBottomCenter());
 								stranghoul.setPersistenceRequired();
-								stranghoul.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.STRUCTURE, null);
+								stranghoul.finalizeSpawn(level, ESPortCompat.difficulty(level, pos), EntitySpawnReason.STRUCTURE, null);
 								level.addFreshEntity(stranghoul);
 								if (stranghoul.getMainHandItem().is(ItemTags.HOES)) {
 									farmer = true;

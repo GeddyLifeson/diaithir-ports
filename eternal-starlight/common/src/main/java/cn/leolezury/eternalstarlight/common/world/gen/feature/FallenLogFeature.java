@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -116,7 +118,7 @@ public class FallenLogFeature extends Feature<FallenLogFeature.Configuration> {
 	public record Configuration(BlockStateProvider trunkProvider, IntProvider logLength, List<TreeDecorator> stumpDecorators, List<TreeDecorator> logDecorators) implements FeatureConfiguration {
 		public static final Codec<Configuration> CODEC = RecordCodecBuilder.create(instance -> instance.group(
 			BlockStateProvider.CODEC.fieldOf("trunk_provider").forGetter(Configuration::trunkProvider),
-			IntProvider.codec(0, 16).fieldOf("log_length").forGetter(Configuration::logLength),
+			IntProviders.codec(0, 16).fieldOf("log_length").forGetter(Configuration::logLength),
 			TreeDecorator.CODEC.listOf().fieldOf("stump_decorators").forGetter(Configuration::stumpDecorators),
 			TreeDecorator.CODEC.listOf().fieldOf("log_decorators").forGetter(Configuration::logDecorators)
 		).apply(instance, Configuration::new));

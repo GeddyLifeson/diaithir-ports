@@ -156,7 +156,7 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 				ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(RingExplosionParticleOptions.LUNAR, getX(), getY(), getZ(), 0, 0.2, 0));
 				ScreenShakeVfx.createInstance(level().dimension(), position(), 40, 50, 0.3f, 0.3f, 3, 5.5f).send(serverLevel);
 				playSound(SoundEvents.GENERIC_EXPLODE.value());
-				for (LivingEntity living : level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(2))) {
+				for (LivingEntity living : ESPortCompat.getNearbyEntities(level(), LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(2))) {
 					if (ESEntityUtil.shouldHarm(getOwner(), living) && ESPortCompat.hurt(living, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.POISON, getOwner()), 10)) {
 						living.hurtMarked = true;
 						living.addDeltaMovement(living.position().subtract(position()).normalize().scale(1.25));

@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
@@ -20,7 +24,7 @@ import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class Ratlin extends Animal {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESTags.Items.RATLIN_FOOD);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.RATLIN_FOOD));
 
 	public Ratlin(EntityType<? extends Ratlin> type, Level level) {
 		super(type, level);
@@ -64,7 +68,7 @@ public class Ratlin extends Animal {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-		return ESEntities.RATLIN.get().create(level);
+		return ESEntities.RATLIN.get().create(level, EntitySpawnReason.TRIGGERED);
 	}
 
 	public static boolean checkRatlinSpawnRules(EntityType<? extends Ratlin> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {

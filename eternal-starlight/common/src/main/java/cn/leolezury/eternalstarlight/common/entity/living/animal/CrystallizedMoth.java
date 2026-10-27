@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
@@ -61,7 +63,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	@Nullable
 	private UUID persistentAngerTarget;
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESTags.Items.CRYSTALLIZED_MOTH_FOOD);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.CRYSTALLIZED_MOTH_FOOD));
 
 	protected static final EntityDataAccessor<Integer> ATTACK_TICKS = SynchedEntityData.defineId(CrystallizedMoth.class, EntityDataSerializers.INT);
 
@@ -217,7 +219,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 				Vec3 subtract = pos.subtract(selfPos);
 				CrystallizedMoth.this.setYRot(-((float) Mth.atan2(subtract.x, subtract.z)) * Mth.RAD_TO_DEG);
 				if (CrystallizedMoth.this.getAttackTicks() > 15 && CrystallizedMoth.this.hasLineOfSight(target) && CrystallizedMoth.this.distanceTo(target) < 30) {
-					ESPortCompat.hurt(target, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.SONAR, CrystallizedMoth.this), (float) getAttributeValue(Attributes.ATTACK_DAMAGE) * (target.getType().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 4 : 1));
+					ESPortCompat.hurt(target, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.SONAR, CrystallizedMoth.this), (float) getAttributeValue(Attributes.ATTACK_DAMAGE) * (target.getType().builtInRegistryHolder().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 4 : 1));
 				}
 				if (CrystallizedMoth.this.level() instanceof ServerLevel serverLevel && CrystallizedMoth.this.getAttackTicks() % 5 == 0) {
 					Vec3 delta = pos.subtract(selfPos).normalize().scale(0.8);
@@ -276,7 +278,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 			if (itemStack.is(ESItems.LUNARIS_CACTUS_GEL.get())) {
 				itemStack.consume(1, player);
 				if (this.random.nextInt(5) == 0) {
-					ItemEntity itemEntity = this.spawnAtLocation(ESItems.SHIVERING_GEL.get(), 1);
+					ItemEntity itemEntity = ESPortCompat.spawnAtLocation(this, ESItems.SHIVERING_GEL.get(), 1);
 					if (itemEntity != null) {
 						itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().add((getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F, getRandom().nextFloat() * 0.05F, (getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F));
 					}
@@ -338,7 +340,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-		CrystallizedMoth moth = ESEntities.CRYSTALLIZED_MOTH.get().create(level);
+		CrystallizedMoth moth = ESEntities.CRYSTALLIZED_MOTH.get().create(level, EntitySpawnReason.TRIGGERED);
 		if (this.isTame() && moth != null) {
 			moth.setOwnerUUID(this.getOwnerUUID());
 			moth.setTame(true, true);

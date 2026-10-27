@@ -37,7 +37,7 @@ public class AvoidStructureFilter extends PlacementFilter {
 		WorldGenLevel level = context.getLevel();
 
 		if (level instanceof WorldGenRegion worldGenRegion) {
-			Registry<Structure> registry = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
+			Registry<Structure> registry = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
 			StructureManager structureManager = worldGenRegion.getLevel().structureManager();
 
 			ChunkAccess chunkAccess = level.getChunk(SectionPos.blockToSectionCoord(pos.getX()), SectionPos.blockToSectionCoord(pos.getZ()), ChunkStatus.STRUCTURE_REFERENCES);

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -243,7 +245,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 				baby.setBaby(true);
 				baby.snapTo(pos.getCenter());
 				if (level instanceof ServerLevel serverLevel) {
-					baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(pos), EntitySpawnReason.BREEDING, null);
+					baby.finalizeSpawn(serverLevel, ESPortCompat.difficulty(level, pos), EntitySpawnReason.BREEDING, null);
 				}
 				blockEntity.addBabyOccupant(baby);
 				change = true;
@@ -277,7 +279,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 		super.loadAdditional(compoundTag);
 		this.stored.clear();
 		if (ESPortCompat.has(compoundTag, TAG_BIRDS)) {
-			Occupant.LIST_CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_BIRDS)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Starfire Birds: '{}'", string)).ifPresent((list) -> list.forEach(this::storeBird));
+			compoundTag.read(TAG_BIRDS, Occupant.LIST_CODEC).ifPresent((list) -> list.forEach(this::storeBird));
 		}
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
@@ -291,7 +293,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 	@Override
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
-		compoundTag.put(TAG_BIRDS, Occupant.LIST_CODEC.encodeStart(NbtOps.INSTANCE, this.getBirds()).getOrThrow());
+		compoundTag.store(TAG_BIRDS, Occupant.LIST_CODEC, this.getBirds());
 		ContainerHelper.saveAllItems(compoundTag, this.items, provider);
 		if (lastSeedPlayer != null) {
 			ESPortCompat.putUUID(compoundTag, TAG_LAST_SEED_PLAYER, lastSeedPlayer);

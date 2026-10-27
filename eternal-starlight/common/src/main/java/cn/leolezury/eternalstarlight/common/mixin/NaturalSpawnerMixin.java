@@ -25,7 +25,7 @@ public abstract class NaturalSpawnerMixin {
 	private static boolean isValidPositionForMob(ServerLevel serverLevel, Mob mob, double distance, Operation<Boolean> original) {
 		boolean originalValid = original.call(serverLevel, mob, distance);
 		if (originalValid
-			&& !mob.getType().is(ESTags.EntityTypes.SOLARIS_ISLES_INHABITANTS)
+			&& !mob.getType().builtInRegistryHolder().is(ESTags.EntityTypes.SOLARIS_ISLES_INHABITANTS)
 			&& ESBiomes.anyNearbyGoldenGrassBlock(serverLevel, mob.blockPosition())) {
 			return false;
 		}

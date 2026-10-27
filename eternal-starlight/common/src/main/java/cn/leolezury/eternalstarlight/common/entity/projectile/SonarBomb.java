@@ -47,7 +47,7 @@ public class SonarBomb extends ThrowableItemProjectile {
 			serverLevel.sendParticles(ParticleTypes.WHITE_SMOKE, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 2, 0.2, 0.2, 0.2, 0.0);
 			for (LivingEntity livingEntity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(20))) {
 				if (ESEntityUtil.shouldHarm(getOwner(), livingEntity)) {
-					ESPortCompat.hurt(livingEntity, level().damageSources().mobProjectile(this, getOwner() instanceof LivingEntity owner ? owner : null), livingEntity.getType().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 20 : 5);
+					ESPortCompat.hurt(livingEntity, level().damageSources().mobProjectile(this, getOwner() instanceof LivingEntity owner ? owner : null), livingEntity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 20 : 5);
 					Vec3 delta = livingEntity.position().add(0, livingEntity.getBbHeight() / 2, 0).subtract(position()).normalize().scale(1.1);
 					ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(ESParticles.CRYSTALLIZED_MOTH_SONAR.get(), getX(), getY(), getZ(), delta.x, delta.y, delta.z));
 				}

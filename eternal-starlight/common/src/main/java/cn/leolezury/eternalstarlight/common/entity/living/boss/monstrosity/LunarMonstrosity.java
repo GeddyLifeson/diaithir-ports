@@ -269,7 +269,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 
 	@Override
 	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
-		if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && (getBehaviorState() == LunarMonstrositySneakPhase.ID || getBehaviorState() == LunarMonstrositySoulPhase.ID || (source.getEntity() != null && source.getEntity().getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES)))) {
+		if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && (getBehaviorState() == LunarMonstrositySneakPhase.ID || getBehaviorState() == LunarMonstrositySoulPhase.ID || (source.getEntity() != null && source.getEntity().getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES)))) {
 			return false;
 		}
 		if (source.getEntity() != null && getTarget() != null) {
@@ -292,7 +292,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 
 	@Override
 	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Override
@@ -350,7 +350,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	public boolean canBite() {
 		LivingEntity target = getTarget();
 		if (target == null) return false;
-		for (LivingEntity livingEntity : level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(3))) {
+		for (LivingEntity livingEntity : ESPortCompat.getNearbyEntities(level(), LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(3))) {
 			Vec3 vec3 = livingEntity.position().vectorTo(this.position()).normalize();
 			vec3 = new Vec3(vec3.x, 0.0D, vec3.z);
 			if (vec3.dot(this.getViewVector(1.0F)) < 0.0D && target == livingEntity) {
@@ -361,7 +361,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	}
 
 	public void doBiteDamage(float damage) {
-		for (LivingEntity livingEntity : level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(3))) {
+		for (LivingEntity livingEntity : ESPortCompat.getNearbyEntities(level(), LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(3))) {
 			Vec3 vec3 = livingEntity.position().vectorTo(this.position()).normalize();
 			vec3 = new Vec3(vec3.x, 0.0D, vec3.z);
 			if (vec3.dot(this.getViewVector(1.0F)) < 0.0D) {
@@ -371,8 +371,8 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	}
 
 	public void knockbackNearbyEntities(float radius, float strength, boolean damage) {
-		for (LivingEntity living : level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(radius, 0, radius))) {
-			if (!living.getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES)) {
+		for (LivingEntity living : ESPortCompat.getNearbyEntities(level(), LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(radius, 0, radius))) {
+			if (!living.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES)) {
 				Vec3 motion = living.position().subtract(position()).normalize().scale(strength);
 				living.hurtMarked = true;
 				living.setDeltaMovement(living.getDeltaMovement().add(motion));
@@ -389,7 +389,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	@Override
 	public boolean ignoreExplosion(Explosion explosion) {
 		LivingEntity cause = explosion.getIndirectSourceEntity();
-		return cause != null && cause.getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+		return cause != null && cause.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Override

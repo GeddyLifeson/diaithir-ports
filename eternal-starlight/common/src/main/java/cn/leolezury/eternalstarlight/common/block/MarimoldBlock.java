@@ -85,7 +85,7 @@ public class MarimoldBlock extends BushBlock implements BonemealableBlock, Simpl
 
 	@Override
 	public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-		Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.HUGE_MARIMOLD);
+		Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.HUGE_MARIMOLD);
 		if (optional.isPresent()) {
 			serverLevel.removeBlock(blockPos, false);
 			if (!optional.get().value().place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos)) {

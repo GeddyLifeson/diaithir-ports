@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
@@ -27,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.EnumSet;
 
 public class ShadowSnail extends Animal {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESTags.Items.SHADOW_SNAIL_FOOD);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.SHADOW_SNAIL_FOOD));
 
 	protected static final EntityDataAccessor<Integer> HIDE_STATE = SynchedEntityData.defineId(ShadowSnail.class, EntityDataSerializers.INT);
 
@@ -150,14 +154,14 @@ public class ShadowSnail extends Animal {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-		return ESEntities.SHADOW_SNAIL.get().create(level);
+		return ESEntities.SHADOW_SNAIL.get().create(level, EntitySpawnReason.TRIGGERED);
 	}
 
 	@Override
 	protected void ageBoundaryReached() {
 		super.ageBoundaryReached();
 		if (!this.isBaby()) {
-			spawnAtLocation(ESItems.SHADOW_SNAIL_SHELL.get());
+			ESPortCompat.spawnAtLocation(this, ESItems.SHADOW_SNAIL_SHELL.get());
 		}
 	}
 

@@ -140,7 +140,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
 		if (ESPortCompat.has(compoundTag, TAG_INITIAL_POS)) {
-			GlobalVec3.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_INITIAL_POS)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse boss initial pos: {}", s)).ifPresent(pos -> this.initialPos = pos);
+			compoundTag.read(TAG_INITIAL_POS, GlobalVec3.CODEC).ifPresent(pos -> this.initialPos = pos);
 		}
 		spawned = compoundTag.getBooleanOr(TAG_SPAWNED, false);
 		setPhase(compoundTag.getIntOr(TAG_PHASE, 0));
@@ -152,7 +152,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 	@Override
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
-		compoundTag.put(TAG_INITIAL_POS, GlobalVec3.CODEC.encodeStart(NbtOps.INSTANCE, initialPos).getOrThrow());
+		compoundTag.store(TAG_INITIAL_POS, GlobalVec3.CODEC, initialPos);
 		compoundTag.putBoolean(TAG_SPAWNED, spawned);
 		compoundTag.putInt(TAG_PHASE, getPhase());
 		compoundTag.putBoolean(TAG_ACTIVATED, isActivated());
@@ -281,7 +281,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 	}
 
 	protected boolean shouldSpawnLoot() {
-		return level().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT);
+		return ESPortCompat.gameRule(level(), GameRules.MOB_DROPS);
 	}
 
 	protected boolean shouldSpawnLootChest() {
@@ -293,7 +293,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 			if (!spawnBossLootChest(serverLevel)) {
 				if (fightParticipants.stream().noneMatch(uuid -> level().getPlayerByUUID(uuid) != null)) {
 					ItemStack lootBag = getBossLootBag(Collections.emptyMap());
-					ItemEntity item = spawnAtLocation(lootBag);
+					ItemEntity item = ESPortCompat.spawnAtLocation(this, lootBag);
 					if (item != null) {
 						ESDataAttachments.IMPORTANT_ITEM.setData(item, true);
 						item.setGlowingTag(true);
@@ -304,7 +304,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 					Player player = level().getPlayerByUUID(uuid);
 					if (player != null && player.isAlive() && player.level().dimension() == level().dimension()) {
 						ItemStack lootBag = getBossLootBag(ESDataAttachments.BOSS_CHALLENGE_COUNTS.getData(player));
-						ItemEntity item = player.spawnAtLocation(lootBag);
+						ItemEntity item = ESPortCompat.spawnAtLocation(player, lootBag);
 						if (item != null) {
 							ESDataAttachments.IMPORTANT_ITEM.setData(item, true);
 							item.setTarget(player.getUUID());

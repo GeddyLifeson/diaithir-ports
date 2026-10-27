@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.weather;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.TinyCreteor;
@@ -46,7 +48,7 @@ public class MeteorShowerWeather extends AbstractWeather {
 			for (ServerPlayer player : level.players()) {
 				if (!player.isSpectator()) {
 					BlockPos pos = player.blockPosition();
-					DifficultyInstance difficulty = level.getCurrentDifficultyAt(pos);
+					DifficultyInstance difficulty = ESPortCompat.difficulty(level, pos);
 					RandomSource random = level.getRandom();
 					BlockPos randomPos = pos.above(20 + random.nextInt(15))
 						.east(-10 + random.nextInt(21))
@@ -56,7 +58,7 @@ public class MeteorShowerWeather extends AbstractWeather {
 					if (NaturalSpawner.isValidEmptySpawnBlock(level, randomPos, blockState, fluidState, ESEntities.TINY_CRETEOR.get()) && randomPos.getY() > level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, randomPos.getX(), randomPos.getZ())) {
 						SpawnGroupData groupData = null;
 						for (int i = 0; i < 2; i++) {
-							TinyCreteor tinyCreteor = ESEntities.TINY_CRETEOR.get().create(level);
+							TinyCreteor tinyCreteor = ESEntities.TINY_CRETEOR.get().create(level, EntitySpawnReason.TRIGGERED);
 							if (tinyCreteor != null) {
 								tinyCreteor.snapTo(randomPos, 0.0F, 0.0F);
 								groupData = tinyCreteor.finalizeSpawn(level, difficulty, EntitySpawnReason.NATURAL, groupData);

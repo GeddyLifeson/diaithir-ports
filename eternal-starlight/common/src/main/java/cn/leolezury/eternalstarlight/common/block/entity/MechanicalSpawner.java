@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.MechanicalSpawnerBlock;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
@@ -114,7 +118,7 @@ public abstract class MechanicalSpawner {
 				if (state.getValue(MechanicalSpawnerBlock.POWER) > 0) {
 					this.spawnDelay--;
 				}
-			} else if (serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+			} else if (ESPortCompat.gameRule(serverLevel, GameRules.SPAWN_MOBS)) {
 				boolean success = false;
 				SpawnData spawnData = this.getOrCreateNextSpawnData(serverLevel, random, pos);
 
@@ -173,7 +177,7 @@ public abstract class MechanicalSpawner {
 
 							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id");
 							if (shouldFinalize) {
-								mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
+								mob.finalizeSpawn(serverLevel, ESPortCompat.difficulty(serverLevel, entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
 							}
 
 							spawnData.getEquipment().ifPresent(mob::equip);
@@ -282,7 +286,7 @@ public abstract class MechanicalSpawner {
 					.getOrThrow(s -> new IllegalStateException("Invalid SpawnData: " + s))
 			);
 		}
-		tag.put(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC.encodeStart(NbtOps.INSTANCE, this.spawnPotentials).getOrThrow());
+		tag.store(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC, this.spawnPotentials);
 		return tag;
 	}
 

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.npc.boarwarf;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.server.level.ServerLevel;
@@ -91,7 +93,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	}
 
 	public BoarwarfType getBoarwarfType() {
-		return level().registryAccess().registryOrThrow(ESRegistries.BOARWARF_TYPE).get(getTypeId());
+		return level().registryAccess().lookupOrThrow(ESRegistries.BOARWARF_TYPE).get(getTypeId());
 	}
 
 	public void setTypeId(Identifier typeId) {
@@ -99,7 +101,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	}
 
 	public void setBoarwarfType(BoarwarfType type) {
-		Identifier key = level().registryAccess().registryOrThrow(ESRegistries.BOARWARF_TYPE).getKey(type);
+		Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.BOARWARF_TYPE).getKey(type);
 		if (key != null) {
 			setTypeId(key);
 		}
@@ -148,7 +150,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		awakeTicks = compoundTag.getIntOr(TAG_AWAKE_TICKS, 0);
 		sleepTicks = compoundTag.getIntOr(TAG_SLEEP_TICKS, 0);
 		if (ESPortCompat.has(compoundTag, TAG_HOME_POS)) {
-			GlobalPos.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_HOME_POS)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Boarwarf home pos: {}", s)).ifPresent(pos -> this.homePos = pos);
+			compoundTag.read(TAG_HOME_POS, GlobalPos.CODEC).ifPresent(pos -> this.homePos = pos);
 		}
 		if (this.offers == null) {
 			this.offers = new MerchantOffers();
@@ -162,7 +164,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		if (!this.level().isClientSide()) {
 			MerchantOffers merchantOffers = this.getOffers();
 			if (!merchantOffers.isEmpty()) {
-				compoundTag.put(TAG_OFFERS, MerchantOffers.CODEC.encodeStart(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), merchantOffers).getOrThrow());
+				compoundTag.store(TAG_OFFERS, MerchantOffers.CODEC, merchantOffers);
 			}
 		}
 		compoundTag.putString(TAG_TYPE, getTypeId().toString());
@@ -172,7 +174,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		compoundTag.putInt(TAG_CHAT_TICKS, chatTicks);
 		compoundTag.putInt(TAG_AWAKE_TICKS, awakeTicks);
 		compoundTag.putInt(TAG_SLEEP_TICKS, sleepTicks);
-		compoundTag.put(TAG_HOME_POS, GlobalPos.CODEC.encodeStart(NbtOps.INSTANCE, homePos).getOrThrow());
+		compoundTag.store(TAG_HOME_POS, GlobalPos.CODEC, homePos);
 	}
 
 	@Override
@@ -202,7 +204,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		homePos = GlobalPos.of(level.getLevel().dimension(), blockPosition());
 
-		level().registryAccess().registryOrThrow(ESRegistries.BOARWARF_TYPE).forEach((type) -> {
+		level().registryAccess().lookupOrThrow(ESRegistries.BOARWARF_TYPE).forEach((type) -> {
 			if (type.biome().value() == level.getBiome(blockPosition()).value()) {
 				setBoarwarfType(type);
 			}
@@ -365,7 +367,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 			if (chatTicks > 0) {
 				chatTicks--;
 				if (chatTarget == null) {
-					List<Boarwarf> availableChatTargets = level().getNearbyEntities(Boarwarf.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(15));
+					List<Boarwarf> availableChatTargets = ESPortCompat.getNearbyEntities(level(), Boarwarf.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(15));
 					for (Boarwarf boarwarf : availableChatTargets) {
 						if (boarwarf.chatTarget == null) {
 							boarwarf.chatTarget = this;

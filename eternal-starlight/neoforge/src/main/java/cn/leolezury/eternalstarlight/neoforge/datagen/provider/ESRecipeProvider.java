@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.neoforge.datagen.provider;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.data.ESPaintingVariant;
 import cn.leolezury.eternalstarlight.common.data.ESPaintingVariants;
@@ -712,7 +714,7 @@ public class ESRecipeProvider extends RecipeProvider {
 			new EtherConversionRecipe.WeightedOutput(ESItems.MUSIC_DISC_ETHER_RAIN.get().getDefaultInstance(), 1)
 		);
 		addEtherConversionRecipe(recipeOutput, "music_disc", Ingredient.of(Tags.Items.MUSIC_DISCS), musicDiscOutputs);
-		addEtherConversionRecipe(recipeOutput, "butterfly_wings_amulet_from_accessories", Ingredient.of(ESTags.Items.ACCESSORIES), ESItems.BUTTERFLY_WINGS_AMULET.get().getDefaultInstance());
+		addEtherConversionRecipe(recipeOutput, "butterfly_wings_amulet_from_accessories", Ingredient.of(ESPortCompat.items(ESTags.Items.ACCESSORIES)), ESItems.BUTTERFLY_WINGS_AMULET.get().getDefaultInstance());
 		addEtherConversionRecipe(recipeOutput, "shattered_sword_blade_from_shattered_sword", Ingredient.of(ESItems.SHATTERED_SWORD.get()), ESItems.SHATTERED_SWORD_BLADE.get().getDefaultInstance());
 		addEtherConversionRecipe(recipeOutput, "guardian_painting", Ingredient.of(ESItems.STARLIT_PAINTING.get()), starlitPaintingComponents(ESPaintingVariants.GUARDIAN), List.of(new EtherConversionRecipe.WeightedOutput(starlitPainting(ESPaintingVariants.GUARDIAN_SPECIAL), 1)));
 		addEtherConversionRecipe(recipeOutput, "energized_painting", Ingredient.of(ESItems.STARLIT_PAINTING.get()), starlitPaintingComponents(ESPaintingVariants.ENERGIZED), List.of(new EtherConversionRecipe.WeightedOutput(starlitPainting(ESPaintingVariants.ENERGIZED_SPECIAL), 1)));

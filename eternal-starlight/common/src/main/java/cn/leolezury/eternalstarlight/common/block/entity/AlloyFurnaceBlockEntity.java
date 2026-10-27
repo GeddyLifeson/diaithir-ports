@@ -184,7 +184,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 			if (entity.canBurn() && entity.litTicks <= 0) {
 				ItemStack fuel = entity.getItem(AlloyFurnaceMenu.FUEL_SLOT);
 				if (!fuel.isEmpty() && isFuel(fuel)) {
-					entity.totalLitTicks = ESPlatform.INSTANCE.getBurnTime(fuel, ESRecipes.ALLOY.get());
+					entity.totalLitTicks = ESPlatform.INSTANCE.getBurnTime(level, fuel, ESRecipes.ALLOY.get());
 					entity.litTicks = entity.totalLitTicks;
 					ItemStack originalFuel = fuel.copy();
 					fuel.shrink(1);

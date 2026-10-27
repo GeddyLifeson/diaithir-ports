@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.entity.living.AethersentGolem;
 import cn.leolezury.eternalstarlight.common.entity.living.GrimstoneGolem;
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
@@ -79,23 +81,23 @@ public class CarvedLunarisCactusFruitBlock extends HorizontalDirectionalBlock {
 		BlockPattern.BlockPatternMatch grimstoneGolemMatch = this.getOrCreateGrimstoneGolemFull().find(level, blockPos);
 		BlockPattern.BlockPatternMatch aethersentGolemMatch = this.getOrCreateAethersentGolemFull().find(level, blockPos);
 		if (snowGolemMatch != null) {
-			SnowGolem snowGolem = EntityType.SNOW_GOLEM.create(level);
+			SnowGolem snowGolem = EntityType.SNOW_GOLEM.create(level, EntitySpawnReason.TRIGGERED);
 			if (snowGolem != null) {
 				spawnGolemInWorld(level, snowGolemMatch, snowGolem, snowGolemMatch.getBlock(0, 2, 0).getPos());
 			}
 		} else if (ironGolemMatch != null) {
-			IronGolem ironGolem = EntityType.IRON_GOLEM.create(level);
+			IronGolem ironGolem = EntityType.IRON_GOLEM.create(level, EntitySpawnReason.TRIGGERED);
 			if (ironGolem != null) {
 				ironGolem.setPlayerCreated(true);
 				spawnGolemInWorld(level, ironGolemMatch, ironGolem, ironGolemMatch.getBlock(1, 2, 0).getPos());
 			}
 		} else if (grimstoneGolemMatch != null) {
-			GrimstoneGolem grimstoneGolem = ESEntities.GRIMSTONE_GOLEM.get().create(level);
+			GrimstoneGolem grimstoneGolem = ESEntities.GRIMSTONE_GOLEM.get().create(level, EntitySpawnReason.TRIGGERED);
 			if (grimstoneGolem != null) {
 				spawnGolemInWorld(level, grimstoneGolemMatch, grimstoneGolem, grimstoneGolemMatch.getBlock(0, 1, 0).getPos());
 			}
 		} else if (aethersentGolemMatch != null) {
-			AethersentGolem aethersentGolem = ESEntities.AETHERSENT_GOLEM.get().create(level);
+			AethersentGolem aethersentGolem = ESEntities.AETHERSENT_GOLEM.get().create(level, EntitySpawnReason.TRIGGERED);
 			if (aethersentGolem != null) {
 				spawnGolemInWorld(level, aethersentGolemMatch, aethersentGolem, aethersentGolemMatch.getBlock(0, 1, 0).getPos());
 			}

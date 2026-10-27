@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -45,6 +47,6 @@ public class BlockPatchFeature extends Feature<BlockPatchFeature.Configuration> 
 	}
 
 	public record Configuration(BlockStateProvider placeState, TagKey<Block> replaceable, IntProvider size) implements FeatureConfiguration {
-		public static final Codec<BlockPatchFeature.Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(BlockStateProvider.CODEC.fieldOf("place_state").forGetter(BlockPatchFeature.Configuration::placeState), TagKey.hashedCodec(Registries.BLOCK).fieldOf("replaceable").forGetter(BlockPatchFeature.Configuration::replaceable), IntProvider.CODEC.fieldOf("size").forGetter(BlockPatchFeature.Configuration::size)).apply(instance, BlockPatchFeature.Configuration::new));
+		public static final Codec<BlockPatchFeature.Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(BlockStateProvider.CODEC.fieldOf("place_state").forGetter(BlockPatchFeature.Configuration::placeState), TagKey.hashedCodec(Registries.BLOCK).fieldOf("replaceable").forGetter(BlockPatchFeature.Configuration::replaceable), IntProviders.CODEC.fieldOf("size").forGetter(BlockPatchFeature.Configuration::size)).apply(instance, BlockPatchFeature.Configuration::new));
 	}
 }

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.registry.ESSensorTypes;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
@@ -41,7 +43,7 @@ public class YetiAi {
 	);
 
 	public static Ingredient getTemptations() {
-		return Ingredient.of(ESTags.Items.YETI_FOOD);
+		return Ingredient.of(ESPortCompat.items(ESTags.Items.YETI_FOOD));
 	}
 
 	protected static Brain<?> makeBrain(Brain<Yeti> brain) {

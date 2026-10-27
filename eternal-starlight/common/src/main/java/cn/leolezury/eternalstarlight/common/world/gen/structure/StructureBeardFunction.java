@@ -50,7 +50,7 @@ public class StructureBeardFunction extends Beardifier {
 		Beardifier inside = Beardifier.forStructuresInChunk(structureManager, chunkPos);
 		List<BoundingBox> boxes = new ArrayList<>();
 		Set<Structure> adaptive = structureManager.registryAccess()
-			.registryOrThrow(Registries.STRUCTURE)
+			.lookupOrThrow(Registries.STRUCTURE)
 			.getTag(ESTags.Structures.TERRAIN_ADAPTIVE)
 			.map(tag -> tag.stream().map(Holder::value).collect(java.util.stream.Collectors.toSet()))
 			.orElse(Set.of());

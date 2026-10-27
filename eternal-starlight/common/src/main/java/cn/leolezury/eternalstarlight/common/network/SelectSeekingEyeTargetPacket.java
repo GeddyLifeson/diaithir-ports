@@ -75,7 +75,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 
 	private static BlockPos locate(SeekingEyeTargets.TargetType type, ResourceKey<?> key, ServerLevel level, ServerPlayer player) {
 		if (type == SeekingEyeTargets.TargetType.BOSS_STRUCTURE || type == SeekingEyeTargets.TargetType.NORMAL_STRUCTURE) {
-			Registry<Structure> registry = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
+			Registry<Structure> registry = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
 			Optional<Holder.Reference<Structure>> holder = registry.getHolder(key.identifier());
 			if (holder.isPresent()) {
 				Pair<BlockPos, Holder<Structure>> pair = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(holder.get()), player.blockPosition(), 100, false);

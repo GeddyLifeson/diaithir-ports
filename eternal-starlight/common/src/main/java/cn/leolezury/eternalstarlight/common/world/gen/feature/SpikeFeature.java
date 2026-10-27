@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import cn.leolezury.eternalstarlight.common.world.gen.valuemap.MergedProvider;
 import cn.leolezury.eternalstarlight.common.world.gen.valuemap.RotatedProvider;
@@ -43,11 +45,11 @@ public class SpikeFeature extends ESFeature<SpikeFeature.Configuration> {
 	public record Configuration(BlockStateProvider spike, IntProvider height, IntProvider radius, IntProvider minorCount, IntProvider minorHeight, IntProvider minorRadius) implements FeatureConfiguration {
 		public static final Codec<SpikeFeature.Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
 			BlockStateProvider.CODEC.fieldOf("spike").forGetter(SpikeFeature.Configuration::spike),
-			IntProvider.CODEC.fieldOf("height").forGetter(SpikeFeature.Configuration::height),
-			IntProvider.CODEC.fieldOf("radius").forGetter(SpikeFeature.Configuration::radius),
-			IntProvider.CODEC.fieldOf("minor_count").forGetter(SpikeFeature.Configuration::minorCount),
-			IntProvider.CODEC.fieldOf("minor_height").forGetter(SpikeFeature.Configuration::minorHeight),
-			IntProvider.CODEC.fieldOf("minor_radius").forGetter(SpikeFeature.Configuration::minorRadius)
+			IntProviders.CODEC.fieldOf("height").forGetter(SpikeFeature.Configuration::height),
+			IntProviders.CODEC.fieldOf("radius").forGetter(SpikeFeature.Configuration::radius),
+			IntProviders.CODEC.fieldOf("minor_count").forGetter(SpikeFeature.Configuration::minorCount),
+			IntProviders.CODEC.fieldOf("minor_height").forGetter(SpikeFeature.Configuration::minorHeight),
+			IntProviders.CODEC.fieldOf("minor_radius").forGetter(SpikeFeature.Configuration::minorRadius)
 		).apply(instance, SpikeFeature.Configuration::new));
 	}
 }

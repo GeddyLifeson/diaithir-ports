@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.command;
 
+import net.minecraft.server.permissions.Permissions;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.network.PostEffectPacket;
 import cn.leolezury.eternalstarlight.common.network.SimpleActionPacket;
@@ -25,7 +27,7 @@ public class ESPostEffectCommand {
 
 	public static ArgumentBuilder<CommandSourceStack, ?> register() {
 		return Commands.literal("posteffect")
-			.requires(source -> source.hasPermission(2))
+			.requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER))
 			.then(Commands.literal("spawn")
 				.then(Commands.argument("effect", PostEffectArgument.postEffect())
 					.then(Commands.argument("pos", Vec3Argument.vec3(false))

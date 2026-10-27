@@ -163,7 +163,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 								}
 							}
 
-							if (!target.getType().is(ESTags.EntityTypes.CHAIN_OF_SOULS_CANNOT_PULL)) {
+							if (!target.getType().builtInRegistryHolder().is(ESTags.EntityTypes.CHAIN_OF_SOULS_CANNOT_PULL)) {
 								Vec3 ownerPos = playerOwner.position().add(0, playerOwner.getBbHeight() / 2, 0);
 								Vec3 posDiff = ownerPos.subtract(targetPos);
 								if (posDiff.length() > length() * 1.2f) {

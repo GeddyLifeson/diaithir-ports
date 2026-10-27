@@ -30,7 +30,7 @@ public record EntVariant(Identifier texture, Identifier textureFull, Holder<Item
 	}
 
 	public static Holder<EntVariant> getSpawnVariant(RegistryAccess registryAccess, Holder<Biome> holder) {
-		Registry<EntVariant> registry = registryAccess.registryOrThrow(ESRegistries.ENT_VARIANT);
+		Registry<EntVariant> registry = registryAccess.lookupOrThrow(ESRegistries.ENT_VARIANT);
 		Optional<Holder.Reference<EntVariant>> optional = registry.holders().filter(reference -> reference.value().biomes().contains(holder)).findFirst().or(() -> registry.getHolder(ESEntVariants.LUNAR));
 		Objects.requireNonNull(registry);
 		return optional.or(registry::getAny).orElseThrow();

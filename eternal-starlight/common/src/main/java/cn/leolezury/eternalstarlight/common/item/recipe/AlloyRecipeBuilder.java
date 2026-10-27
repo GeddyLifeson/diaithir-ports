@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.item.recipe;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -62,12 +64,12 @@ public class AlloyRecipeBuilder {
 	}
 
 	public AlloyRecipeBuilder requires(TagKey<Item> tag) {
-		return this.requires(Ingredient.of(tag));
+		return this.requires(Ingredient.of(ESPortCompat.items(tag)));
 	}
 
 	public AlloyRecipeBuilder requires(TagKey<Item> tag, int quantity) {
 		for (int i = 0; i < quantity; i++) {
-			this.requires(Ingredient.of(tag));
+			this.requires(Ingredient.of(ESPortCompat.items(tag)));
 		}
 		return this;
 	}

@@ -709,7 +709,7 @@ public class ESClientSetupHandler {
 		strategy.register(dyeColor, ESBlocks.BLACK_YETI_FUR_CARPET.get());
 		strategy.register((state, getter, pos, i) -> {
 			float progress = state.hasProperty(AccumulatorBlock.POWER) ? state.getValue(AccumulatorBlock.POWER) / 15.0f : 0;
-			return ARGB.lerp(progress, 0xffffffff, 0xff00dfff);
+			return ARGB.srgbLerp(progress, 0xffffffff, 0xff00dfff);
 		}, ESBlocks.ACCUMULATOR.get());
 		strategy.register((state, getter, pos, i) -> {
 			double progress = getter != null && pos != null ? (COLOR_NOISE.getValue(pos.getX() / 10.0, pos.getY() / 10.0, pos.getZ() / 10.0) + 1) / 2 : (Math.sin((ESClientHandler.clientTickCount + Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally())) / 30.0) + 1) / 2;

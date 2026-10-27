@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -210,14 +212,14 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 			if (creeper.canDropMobsSkull()) {
 				ItemStack itemStack = ESItems.TANGLED_SKULL.get().getDefaultInstance();
 				creeper.increaseDroppedSkulls();
-				this.spawnAtLocation(itemStack);
+				ESPortCompat.spawnAtLocation(this, itemStack);
 			}
 		}
 	}
 
 	@Override
 	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Nullable

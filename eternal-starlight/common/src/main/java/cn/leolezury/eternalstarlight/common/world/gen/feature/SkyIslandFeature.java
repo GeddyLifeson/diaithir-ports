@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -190,8 +192,8 @@ public class SkyIslandFeature extends ESFeature<SkyIslandFeature.Configuration> 
 			BlockStateProvider.CODEC.fieldOf("dirt").forGetter(Configuration::dirt),
 			DecorationEntry.CODEC.listOf().fieldOf("decorations").forGetter(Configuration::decorations),
 			DecorationEntry.CODEC.listOf().fieldOf("bottom_decorations").forGetter(Configuration::bottomDecorations),
-			IntProvider.CODEC.fieldOf("size").forGetter(Configuration::size),
-			IntProvider.CODEC.fieldOf("height").forGetter(Configuration::height),
+			IntProviders.CODEC.fieldOf("size").forGetter(Configuration::size),
+			IntProviders.CODEC.fieldOf("height").forGetter(Configuration::height),
 			Codec.FLOAT.fieldOf("noise_scale").forGetter(Configuration::noiseScale)
 		).apply(instance, Configuration::new));
 

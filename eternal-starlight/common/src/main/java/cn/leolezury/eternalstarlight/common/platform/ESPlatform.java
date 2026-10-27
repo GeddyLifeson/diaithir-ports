@@ -1,5 +1,8 @@
 package cn.leolezury.eternalstarlight.common.platform;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import cn.leolezury.eternalstarlight.common.block.TearBombBlock;
@@ -89,14 +92,14 @@ public interface ESPlatform {
 	// for initialization
 	// items
 	default SpawnEggItem createSpawnEgg(Supplier<EntityType<? extends Mob>> defaultType, int backgroundColor, int highlightColor, Item.Properties properties) {
-		return new SpawnEggItem(defaultType.get(), backgroundColor, highlightColor, properties);
+		return new SpawnEggItem(properties.spawnEgg(defaultType.get()));
 	}
 
-	default SickleItem createSickle(Tier tier, Item.Properties properties) {
+	default SickleItem createSickle(ESItemTiers tier, Item.Properties properties) {
 		return new SickleItem(tier, properties);
 	}
 
-	default HammerItem createHammer(Tier tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Item.Properties properties) {
+	default HammerItem createHammer(ESItemTiers tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Item.Properties properties) {
 		return new HammerItem(tier, smashParticle, smashSound, properties);
 	}
 
@@ -112,8 +115,8 @@ public interface ESPlatform {
 		return new AlchemistArmorItem(material, type, properties);
 	}
 
-	default ArmorItem createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
-		return new ArmorItem(material, type, properties);
+	default Item createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
+		return new Item(properties.humanoidArmor(material, type));
 	}
 
 	default UnrealiumArmorItem createUnrealiumArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
@@ -154,14 +157,14 @@ public interface ESPlatform {
 
 	// event-related
 	default boolean canEntityGrief(Level level, Entity entity) {
-		return level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING);
+		return level instanceof ServerLevel serverLevel && serverLevel.getGameRules().get(GameRules.MOB_GRIEFING);
 	}
 
 	default boolean postEntityDestroyBlockEvent(Level level, BlockPos pos, Entity entity) {
 		if (entity instanceof ServerPlayer player && (!level.mayInteract(player, pos) || player.blockActionRestricted(level, pos, player.gameMode.getGameModeForPlayer()))) {
 			return false;
 		}
-		return level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING);
+		return level instanceof ServerLevel serverLevel && serverLevel.getGameRules().get(GameRules.MOB_GRIEFING);
 	}
 
 	default boolean postTravelToDimensionEvent(Entity entity, ResourceKey<Level> dimension) {
@@ -181,16 +184,16 @@ public interface ESPlatform {
 		return stack.is(ItemTags.AXES);
 	}
 
-	default int getBurnTime(ItemStack stack, RecipeType<?> type) {
-		return AbstractFurnaceBlockEntity.getFuel().get(stack.getItem());
+	default int getBurnTime(Level level, ItemStack stack, RecipeType<?> type) {
+		return level.fuelValues().burnDuration(stack);
 	}
 
 	default boolean hasCraftingRemainingItem(ItemStack stack) {
-		return stack.getItem().hasCraftingRemainingItem();
+		return stack.getItem().getCraftingRemainder() != null;
 	}
 
 	default Optional<ItemStack> getCraftingRemainingItem(ItemStack stack) {
-		return Optional.ofNullable(stack.getItem().getCraftingRemainingItem()).map(ItemStack::new);
+		return Optional.ofNullable(stack.getItem().getCraftingRemainder()).map(template -> template.create());
 	}
 
 	// dispenser
@@ -216,7 +219,7 @@ public interface ESPlatform {
 	}
 
 	default void sendToTrackingClients(ServerLevel level, Entity entity, CustomPacketPayload packet) {
-		level.getChunkSource().broadcast(entity, new ClientboundCustomPayloadPacket(packet));
+		level.getChunkSource().sendToTrackingPlayers(entity, new ClientboundCustomPayloadPacket(packet));
 		if (entity instanceof ServerPlayer player) {
 			sendToClient(player, packet);
 		}

@@ -63,7 +63,7 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 	@Override
 	public void setVariant(Holder<ShimmerLacewingVariant> variant) {
 		if (variant.isBound()) {
-			Identifier key = level().registryAccess().registryOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT).getKey(variant.value());
+			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT).getKey(variant.value());
 			if (key != null) {
 				setVariantId(key);
 			}
@@ -73,7 +73,7 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 	@Override
 	public Holder<ShimmerLacewingVariant> getVariant() {
 		Identifier key = getVariantId();
-		Registry<ShimmerLacewingVariant> variants = level().registryAccess().registryOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT);
+		Registry<ShimmerLacewingVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT);
 		Optional<Holder.Reference<ShimmerLacewingVariant>> optional = variants.getHolder(key);
 		return optional.orElse(variants.getHolder(ESShimmerLacewingVariants.RIVER).orElseThrow());
 	}

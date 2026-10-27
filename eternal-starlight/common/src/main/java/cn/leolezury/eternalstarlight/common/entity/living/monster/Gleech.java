@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -202,7 +206,7 @@ public class Gleech extends Monster {
 	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource damageSource, boolean bl) {
 		super.dropCustomDeathLoot(serverLevel, damageSource, bl);
 		if (damageSource.getEntity() instanceof CrystallizedMoth && getRandom().nextInt(15) == 0) {
-			spawnAtLocation(ESItems.MUSIC_DISC_SACRED_DESERT.get());
+			ESPortCompat.spawnAtLocation(this, ESItems.MUSIC_DISC_SACRED_DESERT.get());
 		}
 	}
 

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -261,7 +263,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 			this.animal.resetLove();
 			this.partner.resetLove();
 			RandomSource random = this.animal.getRandom();
-			if (this.level.getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
+			if (this.ESPortCompat.gameRule(level, GameRules.MOB_DROPS)) {
 				this.level.addFreshEntity(new ExperienceOrb(this.level, this.animal.getX(), this.animal.getY(), this.animal.getZ(), random.nextInt(7) + 1));
 			}
 			StarfireBird.this.stayOutOfNestTicks = 0;
@@ -435,11 +437,11 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		@Override
 		public boolean canUse() {
 			if (!StarfireBird.this.flying && !StarfireBird.this.isBaby()) {
-				List<LivingEntity> entities = StarfireBird.this.level().getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat(), StarfireBird.this, StarfireBird.this.getBoundingBox().inflate(5));
+				List<LivingEntity> entities = ESPortCompat.getNearbyEntities(StarfireBird.this.level(), LivingEntity.class, TargetingConditions.forCombat(), StarfireBird.this, StarfireBird.this.getBoundingBox().inflate(5));
 				return StarfireBird.this.walkingTicks > 300
 					|| StarfireBird.this.getLastHurtByMob() != null
 					|| (StarfireBird.this.wantsToEnterNest() && StarfireBird.this.isNestValid() && StarfireBird.this.level().getBlockEntity(StarfireBird.this.nestPos) instanceof StarfireBirdNestBlockEntity nest && !nest.isFullForAdults())
-					|| entities.stream().anyMatch(e -> e.getType().is(ESTags.EntityTypes.STARFIRE_BIRD_AFRAID_OF) && !trustedPlayers.contains(e.getUUID()));
+					|| entities.stream().anyMatch(e -> e.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARFIRE_BIRD_AFRAID_OF) && !trustedPlayers.contains(e.getUUID()));
 			}
 			return false;
 		}
@@ -665,7 +667,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		}
 		this.giftAllowances.clear();
 		if (ESPortCompat.has(compoundTag, TAG_GIFT_ALLOWANCES)) {
-			GIFT_ALLOWANCES_CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_GIFT_ALLOWANCES)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Starfire Bird gift allowances: '{}'", string)).ifPresent(parsed -> parsed.forEach((uuid, count) -> this.giftAllowances.put(uuid, Math.min(count, MAX_GIFT_ALLOWANCE))));
+			compoundTag.read(TAG_GIFT_ALLOWANCES, GIFT_ALLOWANCES_CODEC).ifPresent(parsed -> parsed.forEach((uuid, count) -> this.giftAllowances.put(uuid, Math.min(count, MAX_GIFT_ALLOWANCE))));
 		}
 		giftCooldown = compoundTag.getIntOr(TAG_GIFT_COOLDOWN, 0);
 	}
@@ -686,7 +688,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 			}
 		}
 		compoundTag.put(TAG_TRUSTED_PLAYERS, listTag);
-		compoundTag.put(TAG_GIFT_ALLOWANCES, GIFT_ALLOWANCES_CODEC.encodeStart(NbtOps.INSTANCE, this.giftAllowances).getOrThrow());
+		compoundTag.store(TAG_GIFT_ALLOWANCES, GIFT_ALLOWANCES_CODEC, this.giftAllowances);
 		compoundTag.putInt(TAG_GIFT_COOLDOWN, giftCooldown);
 	}
 
@@ -698,7 +700,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-		return ESEntities.STARFIRE_BIRD.get().create(level);
+		return ESEntities.STARFIRE_BIRD.get().create(level, EntitySpawnReason.TRIGGERED);
 	}
 
 	@Override

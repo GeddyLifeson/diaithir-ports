@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -104,7 +106,7 @@ public class Rookfish extends Squid implements Bucketable {
 	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource damageSource, boolean bl) {
 		super.dropCustomDeathLoot(serverLevel, damageSource, bl);
 		if (damageSource.is(DamageTypes.DROWN) && serverLevel.getRandom().nextInt(10) == 0) {
-			spawnAtLocation(ESItems.MUSIC_DISC_BRISK.get());
+			ESPortCompat.spawnAtLocation(this, ESItems.MUSIC_DISC_BRISK.get());
 		}
 	}
 

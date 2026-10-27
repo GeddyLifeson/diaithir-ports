@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -51,7 +53,7 @@ public class AuroraDeer extends Animal implements Charger {
 	private static final String TAG_SNOW = "snow";
 	private static final String TAG_SNOW_PROGRESS = "snow_progress";
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESTags.Items.AURORA_DEER_FOOD);
+	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.AURORA_DEER_FOOD));
 	protected static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(AuroraDeer.class, EntityDataSerializers.BOOLEAN);
 
 	public boolean hasLeftAntler() {
@@ -195,7 +197,7 @@ public class AuroraDeer extends Animal implements Charger {
 			snowProgress = 0;
 			int i = 1 + getRandom().nextInt(3);
 			for (int j = 0; j < i; ++j) {
-				ItemEntity itemEntity = this.spawnAtLocation(Items.SNOWBALL, 1);
+				ItemEntity itemEntity = ESPortCompat.spawnAtLocation(this, Items.SNOWBALL, 1);
 				if (itemEntity != null) {
 					itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().add((getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F, getRandom().nextFloat() * 0.05F, (getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F));
 				}
@@ -223,7 +225,7 @@ public class AuroraDeer extends Animal implements Charger {
 			if (level() instanceof ServerLevel serverLevel) {
 				serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX(), this.getY() + getBbHeight() / 2f, this.getZ(), 2, 0.2, 0.2, 0.2, 0.0);
 			}
-			spawnAtLocation(ESItems.AURORA_DEER_ANTLER.get());
+			ESPortCompat.spawnAtLocation(this, ESItems.AURORA_DEER_ANTLER.get());
 		}
 	}
 
@@ -272,7 +274,7 @@ public class AuroraDeer extends Animal implements Charger {
 	@Nullable
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-		return ESEntities.AURORA_DEER.get().create(serverLevel);
+		return ESEntities.AURORA_DEER.get().create(serverLevel, EntitySpawnReason.TRIGGERED);
 	}
 
 	public static boolean checkAuroraDeerSpawnRules(EntityType<? extends AuroraDeer> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {

@@ -126,7 +126,7 @@ public abstract class BehaviorPhase<T extends LivingEntity & MultiBehaviorUser> 
 	public void performMeleeAttack(T entity, double range, boolean attackOtherEnemies, float maxAngleForOtherEnemies, Consumer<LivingEntity> hurt) {
 		if (entity instanceof Targeting targeting) {
 			LivingEntity target = targeting.getTarget();
-			for (LivingEntity livingEntity : entity.level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(range))) {
+			for (LivingEntity livingEntity : ESPortCompat.getNearbyEntities(entity.level(), LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(range))) {
 				if (livingEntity == target || (attackOtherEnemies && livingEntity instanceof Targeting t && t.getTarget() == entity
 					&& (isFacingEntity(entity, livingEntity, maxAngleForOtherEnemies, entity.getYRot())
 					|| isFacingEntity(entity, livingEntity, maxAngleForOtherEnemies, entity.yBodyRot)))) {

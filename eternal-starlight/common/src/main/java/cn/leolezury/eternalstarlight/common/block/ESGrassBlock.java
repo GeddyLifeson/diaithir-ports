@@ -56,7 +56,7 @@ public class ESGrassBlock extends ESSpreadingSnowyDirtBlock implements Bonemeala
 		BlockPos abovePos = pos.above();
 		BlockState shortGrass = Blocks.SHORT_GRASS.defaultBlockState();
 		Optional<Holder.Reference<PlacedFeature>> optional = level.registryAccess()
-			.registryOrThrow(Registries.PLACED_FEATURE)
+			.lookupOrThrow(Registries.PLACED_FEATURE)
 			.getHolder(VegetationPlacements.GRASS_BONEMEAL);
 
 		outer:

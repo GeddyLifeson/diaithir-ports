@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -148,7 +150,7 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
 		boolean flag = super.doHurtTarget(hurtServerLevel, entity);
 		if (flag && entity instanceof LivingEntity living) {
-			float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+			float f = ESPortCompat.difficulty(this.level(), this.blockPosition()).getEffectiveDifficulty();
 			living.addEffect(new MobEffectInstance(MobEffects.HUNGER, 140 * (int) f), this);
 			hungerLevel = Math.min(hungerLevel + (isIntentionalAttack() ? 0.6f : 0.1f), 1);
 		}
@@ -160,7 +162,7 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 			if (entity instanceof LivingEntity living && living.isBlocking() && getRandom().nextInt(6) == 0) {
 				int i = getRandom().nextInt(3);
 				for (int j = 0; j < i; ++j) {
-					ItemEntity itemEntity = this.spawnAtLocation(ESItems.TOOTH_OF_HUNGER.get(), 1);
+					ItemEntity itemEntity = ESPortCompat.spawnAtLocation(this, ESItems.TOOTH_OF_HUNGER.get(), 1);
 					if (itemEntity != null) {
 						itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().add((getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F, getRandom().nextFloat() * 0.05F, (getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F));
 					}
@@ -207,7 +209,7 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 		if (!level().isClientSide() && level() instanceof ServerLevel serverLevel) {
 			this.updatePersistentAnger(serverLevel, true);
 			if (hungerLevel < 0.3 && getTarget() == null && (tickCount + getId() * 17) % 1200 == 0) {
-				List<Player> players = level().getNearbyEntities(Player.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(20));
+				List<Player> players = ESPortCompat.getNearbyEntities(level(), Player.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(20));
 				if (!players.isEmpty()) {
 					Player target = players.get(getRandom().nextInt(players.size()));
 					setTarget(target);

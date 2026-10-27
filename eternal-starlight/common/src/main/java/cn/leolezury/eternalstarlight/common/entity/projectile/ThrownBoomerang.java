@@ -92,7 +92,7 @@ public abstract class ThrownBoomerang extends AbstractArrow {
 			}
 			if (!this.isAcceptableReturnOwner()) {
 				if (!this.level().isClientSide() && this.pickup == Pickup.ALLOWED) {
-					this.spawnAtLocation(this.getPickupItem(), 0.1F);
+					ESPortCompat.spawnAtLocation(this, this.getPickupItem(), 0.1F);
 				}
 
 				this.discard();

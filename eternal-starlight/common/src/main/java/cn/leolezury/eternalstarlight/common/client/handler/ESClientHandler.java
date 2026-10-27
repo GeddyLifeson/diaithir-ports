@@ -194,7 +194,7 @@ public class ESClientHandler {
 
 			// entity progression
 			Entity entity = Minecraft.getInstance().crosshairPickEntity;
-			if (entity != null && entity.getType().is(ESTags.EntityTypes.AFFECTS_PROGRESSION)) {
+			if (entity != null && entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.AFFECTS_PROGRESSION)) {
 				CROSSHAIR_PICKED_ENTITIES.add(entity.getType());
 			}
 			if (clientTickCount % 60 == 0) {

@@ -297,7 +297,7 @@ public class LootChestBlockEntity extends BlockEntity {
 		quickEjection = compoundTag.getBooleanOr(TAG_QUICK_EJECTION, false);
 		if (ESPortCompat.has(compoundTag, TAG_REWARD_TARGETS)) {
 			this.rewardTargets.clear();
-			REWARD_TARGETS_CODEC.parse(compoundTag.lookup().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_REWARD_TARGETS)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest reward targets: '{}'", string)).ifPresent(this.rewardTargets::putAll);
+			compoundTag.read(TAG_REWARD_TARGETS, REWARD_TARGETS_CODEC).ifPresent(this.rewardTargets::putAll);
 		}
 		if (ESPortCompat.has(compoundTag, TAG_CURRENT_REWARD_TARGET)) {
 			currentRewardTarget = ESPortCompat.getUUID(compoundTag, TAG_CURRENT_REWARD_TARGET);
@@ -324,9 +324,9 @@ public class LootChestBlockEntity extends BlockEntity {
 		if (lootTable != null) {
 			compoundTag.putString(TAG_LOOT_TABLE, lootTable.identifier().toString());
 		}
-		compoundTag.put(TAG_ITEMS_TO_EJECT, ItemStack.OPTIONAL_CODEC.listOf().encodeStart(provider.createSerializationContext(NbtOps.INSTANCE), this.itemsToEject).getOrThrow());
+		compoundTag.store(TAG_ITEMS_TO_EJECT, ItemStack.OPTIONAL_CODEC.listOf(), this.itemsToEject);
 		compoundTag.putBoolean(TAG_QUICK_EJECTION, quickEjection);
-		compoundTag.put(TAG_REWARD_TARGETS, REWARD_TARGETS_CODEC.encodeStart(provider.createSerializationContext(NbtOps.INSTANCE), this.rewardTargets).getOrThrow());
+		compoundTag.store(TAG_REWARD_TARGETS, REWARD_TARGETS_CODEC, this.rewardTargets);
 		if (currentRewardTarget != null) {
 			ESPortCompat.putUUID(compoundTag, TAG_CURRENT_REWARD_TARGET, currentRewardTarget);
 		}

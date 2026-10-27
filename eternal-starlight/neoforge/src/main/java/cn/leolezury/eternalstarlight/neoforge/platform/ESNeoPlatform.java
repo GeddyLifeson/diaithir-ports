@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.neoforge.platform;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
@@ -182,16 +183,16 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public SpawnEggItem createSpawnEgg(Supplier<EntityType<? extends Mob>> defaultType, int backgroundColor, int highlightColor, Item.Properties properties) {
-		return new DeferredSpawnEggItem(defaultType, backgroundColor, highlightColor, properties);
+		return new SpawnEggItem(properties.spawnEgg(defaultType.get()));
 	}
 
 	@Override
-	public SickleItem createSickle(Tier tier, Item.Properties properties) {
+	public SickleItem createSickle(ESItemTiers tier, Item.Properties properties) {
 		return new NeoSickleItem(tier, properties);
 	}
 
 	@Override
-	public HammerItem createHammer(Tier tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Item.Properties properties) {
+	public HammerItem createHammer(ESItemTiers tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Item.Properties properties) {
 		return new NeoHammerItem(tier, smashParticle, smashSound, properties);
 	}
 
@@ -211,7 +212,7 @@ public class ESNeoPlatform implements ESPlatform {
 	}
 
 	@Override
-	public ArmorItem createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
+	public Item createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new NeoStarlitDiamondArmorItem(material, type, properties);
 	}
 
@@ -306,12 +307,12 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public boolean canEntityGrief(Level level, Entity entity) {
-		return EventHooks.canEntityGrief(level, entity);
+		return level instanceof net.minecraft.server.level.ServerLevel serverLevel && EventHooks.canEntityGrief(serverLevel, entity);
 	}
 
 	@Override
 	public boolean postEntityDestroyBlockEvent(Level level, BlockPos pos, Entity entity) {
-		return entity instanceof LivingEntity living ? CommonHooks.canEntityDestroy(level, pos, living) : canEntityGrief(level, entity);
+		return level instanceof net.minecraft.server.level.ServerLevel serverLevel && entity instanceof LivingEntity living ? CommonHooks.canEntityDestroy(serverLevel, pos, living) : canEntityGrief(level, entity);
 	}
 
 	@Override
@@ -328,32 +329,32 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public boolean isShears(ItemStack stack) {
-		return stack.is(Tags.Items.TOOLS_SHEAR) || stack.canPerformAction(ItemAbilities.SHEARS_DIG) || stack.is(ESTags.Items.SICKLES);
+		return stack.is(Tags.Items.TOOLS_SHEAR) || stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SHEARS_DIG) || stack.is(ESTags.Items.SICKLES);
 	}
 
 	@Override
 	public boolean isShield(ItemStack stack) {
-		return stack.canPerformAction(ItemAbilities.SHIELD_BLOCK);
+		return stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SHIELD_BLOCK);
 	}
 
 	@Override
 	public boolean canScrape(ItemStack stack) {
-		return stack.canPerformAction(ItemAbilities.AXE_SCRAPE);
+		return stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.AXE_SCRAPE);
 	}
 
 	@Override
-	public int getBurnTime(ItemStack stack, RecipeType<?> type) {
-		return stack.getBurnTime(type);
+	public int getBurnTime(Level level, ItemStack stack, RecipeType<?> type) {
+		return stack.getBurnTime(type, level.fuelValues());
 	}
 
 	@Override
 	public boolean hasCraftingRemainingItem(ItemStack stack) {
-		return stack.hasCraftingRemainingItem();
+		return stack.getItem().getCraftingRemainder() != null;
 	}
 
 	@Override
 	public Optional<ItemStack> getCraftingRemainingItem(ItemStack stack) {
-		return Optional.of(stack.getCraftingRemainingItem());
+		return Optional.ofNullable(stack.getItem().getCraftingRemainder()).map(template -> template.create());
 	}
 
 	@Override

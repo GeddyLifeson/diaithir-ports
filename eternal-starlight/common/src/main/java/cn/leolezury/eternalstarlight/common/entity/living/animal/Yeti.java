@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -200,7 +202,7 @@ public class Yeti extends Animal {
 
 				int i = 1 + getRandom().nextInt(3);
 				for (int j = 0; j < i; ++j) {
-					ItemEntity itemEntity = this.spawnAtLocation(ESItems.WHITE_YETI_FUR.get(), 1);
+					ItemEntity itemEntity = ESPortCompat.spawnAtLocation(this, ESItems.WHITE_YETI_FUR.get(), 1);
 					if (itemEntity != null) {
 						itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().add((getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F, getRandom().nextFloat() * 0.05F, (getRandom().nextFloat() - getRandom().nextFloat()) * 0.1F));
 					}

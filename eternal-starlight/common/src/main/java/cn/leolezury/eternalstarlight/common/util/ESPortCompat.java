@@ -37,4 +37,50 @@ public class ESPortCompat {
 	public static void putUUID(ValueOutput output, String key, UUID uuid) {
 		output.store(key, UUIDUtil.CODEC, uuid);
 	}
+
+	public static <T extends net.minecraft.world.entity.LivingEntity> java.util.List<T> getNearbyEntities(net.minecraft.world.level.Level level, Class<T> type, net.minecraft.world.entity.ai.targeting.TargetingConditions conditions, net.minecraft.world.entity.LivingEntity source, net.minecraft.world.phys.AABB box) {
+		if (!(level instanceof ServerLevel serverLevel)) {
+			return java.util.List.of();
+		}
+		return level.getEntitiesOfClass(type, box, e -> conditions.test(serverLevel, source, e));
+	}
+
+	public static java.util.List<net.minecraft.world.entity.player.Player> getNearbyPlayers(net.minecraft.world.level.Level level, net.minecraft.world.entity.ai.targeting.TargetingConditions conditions, net.minecraft.world.entity.LivingEntity source, net.minecraft.world.phys.AABB box) {
+		if (!(level instanceof ServerLevel serverLevel)) {
+			return java.util.List.of();
+		}
+		return level.getEntitiesOfClass(net.minecraft.world.entity.player.Player.class, box, e -> conditions.test(serverLevel, source, e));
+	}
+
+	public static net.minecraft.world.entity.item.ItemEntity spawnAtLocation(Entity entity, net.minecraft.world.item.ItemStack stack) {
+		return entity.level() instanceof ServerLevel serverLevel ? entity.spawnAtLocation(serverLevel, stack) : null;
+	}
+
+	public static net.minecraft.world.entity.item.ItemEntity spawnAtLocation(Entity entity, net.minecraft.world.level.ItemLike item) {
+		return entity.level() instanceof ServerLevel serverLevel ? entity.spawnAtLocation(serverLevel, item) : null;
+	}
+
+	public static net.minecraft.world.entity.item.ItemEntity spawnAtLocation(Entity entity, net.minecraft.world.item.ItemStack stack, float yOffset) {
+		return entity.level() instanceof ServerLevel serverLevel ? entity.spawnAtLocation(serverLevel, stack, yOffset) : null;
+	}
+
+	public static net.minecraft.world.entity.item.ItemEntity spawnAtLocation(Entity entity, net.minecraft.world.level.ItemLike item, int count) {
+		return spawnAtLocation(entity, new net.minecraft.world.item.ItemStack(item, count), 0F);
+	}
+
+	public static net.minecraft.world.DifficultyInstance difficulty(net.minecraft.world.level.LevelAccessor level, net.minecraft.core.BlockPos pos) {
+		return level instanceof net.minecraft.world.level.ServerLevelAccessor accessor ? accessor.getCurrentDifficultyAt(pos) : new net.minecraft.world.DifficultyInstance(net.minecraft.world.Difficulty.NORMAL, 0L, 0L, 0F);
+	}
+
+	public static boolean gameRule(net.minecraft.world.level.Level level, net.minecraft.world.level.gamerules.GameRule<Boolean> rule) {
+		return !(level instanceof ServerLevel serverLevel) || serverLevel.getGameRules().get(rule);
+	}
+
+	public static boolean gameRule(net.minecraft.world.level.LevelAccessor level, net.minecraft.world.level.gamerules.GameRule<Boolean> rule) {
+		return !(level instanceof ServerLevel serverLevel) || serverLevel.getGameRules().get(rule);
+	}
+
+	public static net.minecraft.core.HolderSet<net.minecraft.world.item.Item> items(net.minecraft.tags.TagKey<net.minecraft.world.item.Item> tag) {
+		return net.minecraft.core.registries.BuiltInRegistries.ITEM.getOrThrow(tag);
+	}
 }

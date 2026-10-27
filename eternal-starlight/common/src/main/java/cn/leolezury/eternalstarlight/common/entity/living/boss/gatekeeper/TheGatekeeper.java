@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import net.minecraft.world.level.storage.ValueOutput;
@@ -242,7 +244,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 		if (!this.level().isClientSide()) {
 			MerchantOffers merchantOffers = this.getOffers();
 			if (!merchantOffers.isEmpty()) {
-				compoundTag.put(TAG_OFFERS, MerchantOffers.CODEC.encodeStart(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), merchantOffers).getOrThrow());
+				compoundTag.store(TAG_OFFERS, MerchantOffers.CODEC, merchantOffers);
 			}
 		}
 		compoundTag.putString(TAG_GATEKEEPER_NAME, gatekeeperName);
@@ -477,7 +479,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 			if (killDragon != null && serverPlayer.getAdvancements().getOrStartProgress(killDragon).isDone() && !isPlayerPermitted(serverPlayer)) {
 				permitPlayer(serverPlayer);
 				ItemStack lootBag = getBossLootBag(ESDataAttachments.BOSS_CHALLENGE_COUNTS.getData(player));
-				ItemEntity item = player.spawnAtLocation(lootBag);
+				ItemEntity item = ESPortCompat.spawnAtLocation(player, lootBag);
 				if (item != null) {
 					ESDataAttachments.IMPORTANT_ITEM.setData(item, true);
 					item.setTarget(player.getUUID());

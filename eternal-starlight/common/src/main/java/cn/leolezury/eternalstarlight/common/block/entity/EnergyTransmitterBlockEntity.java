@@ -115,18 +115,18 @@ public class EnergyTransmitterBlockEntity extends BlockEntity {
 	public void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
 		if (ESPortCompat.has(compoundTag, TAG_INPUT_OFFSET)) {
-			Vec3i.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_INPUT_OFFSET)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Energy Transmitter input offset: {}", s)).ifPresent(pos -> this.inputOffset = pos);
+			compoundTag.read(TAG_INPUT_OFFSET, Vec3i.CODEC).ifPresent(pos -> this.inputOffset = pos);
 		}
 		if (ESPortCompat.has(compoundTag, TAG_OUTPUT_OFFSET)) {
-			Vec3i.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_OUTPUT_OFFSET)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Energy Transmitter output offset: {}", s)).ifPresent(pos -> this.outputOffset = pos);
+			compoundTag.read(TAG_OUTPUT_OFFSET, Vec3i.CODEC).ifPresent(pos -> this.outputOffset = pos);
 		}
 	}
 
 	@Override
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
-		compoundTag.put(TAG_INPUT_OFFSET, Vec3i.CODEC.encodeStart(NbtOps.INSTANCE, inputOffset).getOrThrow());
-		compoundTag.put(TAG_OUTPUT_OFFSET, Vec3i.CODEC.encodeStart(NbtOps.INSTANCE, outputOffset).getOrThrow());
+		compoundTag.store(TAG_INPUT_OFFSET, Vec3i.CODEC, inputOffset);
+		compoundTag.store(TAG_OUTPUT_OFFSET, Vec3i.CODEC, outputOffset);
 	}
 
 	@Nullable

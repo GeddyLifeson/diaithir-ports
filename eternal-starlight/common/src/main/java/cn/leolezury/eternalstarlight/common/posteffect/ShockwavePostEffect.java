@@ -4,7 +4,6 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -47,16 +46,4 @@ public class ShockwavePostEffect extends PostEffectType<ShockwavePostEffect.Data
 		super(EternalStarlight.id("shaders/post/shockwave.json"), Data.CODEC, Data.STREAM_CODEC);
 	}
 
-	@Override
-	protected void uploadTypeUniforms(EffectInstance effect, List<PostEffectInstance> instances, float partialTicks) {
-		int count = Math.min(instances.size(), MAX_EFFECTS);
-		for (int i = 0; i < count; i++) {
-			Data data = getData(instances.get(i));
-			PARAMS[i * PARAM_COUNT] = data.frequency();
-			PARAMS[i * PARAM_COUNT + 1] = data.falloff();
-			PARAMS[i * PARAM_COUNT + 2] = data.thickness();
-			PARAMS[i * PARAM_COUNT + 3] = 0;
-		}
-		setUniformArray(effect, UNIFORM_PARAMS, PARAMS);
-	}
 }

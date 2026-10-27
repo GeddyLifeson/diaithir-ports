@@ -35,7 +35,7 @@ public class SolarCreeperSolarWindPhase extends BehaviorPhase<SolarCreeper> {
 			return;
 		}
 		if (ticks > 10 && ticks < 60 && entity.level() instanceof ServerLevel serverLevel) {
-			for (LivingEntity livingEntity : entity.level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(5))) {
+			for (LivingEntity livingEntity : ESPortCompat.getNearbyEntities(entity.level(), LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(5))) {
 				if ((livingEntity == target || livingEntity instanceof Targeting t && t.getTarget() == entity)
 					&& (isFacingEntity(entity, livingEntity, 45, entity.getYRot())
 					|| isFacingEntity(entity, livingEntity, 45, entity.yBodyRot))) {

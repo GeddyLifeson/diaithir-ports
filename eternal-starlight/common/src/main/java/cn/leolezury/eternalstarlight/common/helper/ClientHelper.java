@@ -1,4 +1,4 @@
-package cn.leolezury.eternalstarlight.common.client.helper;
+package cn.leolezury.eternalstarlight.common.helper;
 
 import cn.leolezury.eternalstarlight.common.network.*;
 import net.minecraft.world.phys.Vec3;

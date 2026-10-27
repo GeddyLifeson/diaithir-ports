@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.tree;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import com.mojang.serialization.Codec;
@@ -121,10 +123,10 @@ public class JinglestemFeature extends Feature<JinglestemFeature.Configuration> 
 
 	public record Configuration(IntProvider trunkHeight, IntProvider branchAmount, IntProvider branchLength, IntProvider leavesHeight, boolean hasLeaves) implements FeatureConfiguration {
 		public static final Codec<Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-			IntProvider.CODEC.fieldOf("trunk_height").forGetter(Configuration::trunkHeight),
-			IntProvider.CODEC.fieldOf("branch_amount").forGetter(Configuration::branchAmount),
-			IntProvider.CODEC.fieldOf("branch_length").forGetter(Configuration::branchLength),
-			IntProvider.CODEC.fieldOf("leaves_height").forGetter(Configuration::leavesHeight),
+			IntProviders.CODEC.fieldOf("trunk_height").forGetter(Configuration::trunkHeight),
+			IntProviders.CODEC.fieldOf("branch_amount").forGetter(Configuration::branchAmount),
+			IntProviders.CODEC.fieldOf("branch_length").forGetter(Configuration::branchLength),
+			IntProviders.CODEC.fieldOf("leaves_height").forGetter(Configuration::leavesHeight),
 			Codec.BOOL.fieldOf("has_leaves").forGetter(Configuration::hasLeaves)
 		).apply(instance, Configuration::new));
 	}

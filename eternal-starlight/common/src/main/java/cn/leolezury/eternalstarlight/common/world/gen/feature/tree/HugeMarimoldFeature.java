@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.tree;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -76,9 +78,9 @@ public class HugeMarimoldFeature extends Feature<HugeMarimoldFeature.Configurati
 
 	public record Configuration(IntProvider trunkHeight, IntProvider capRadius, IntProvider capHeight) implements FeatureConfiguration {
 		public static final Codec<Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-			IntProvider.CODEC.fieldOf("trunk_height").forGetter(Configuration::trunkHeight),
-			IntProvider.CODEC.fieldOf("cap_radius").forGetter(Configuration::capRadius),
-			IntProvider.CODEC.fieldOf("cap_height").forGetter(Configuration::capHeight)
+			IntProviders.CODEC.fieldOf("trunk_height").forGetter(Configuration::trunkHeight),
+			IntProviders.CODEC.fieldOf("cap_radius").forGetter(Configuration::capRadius),
+			IntProviders.CODEC.fieldOf("cap_height").forGetter(Configuration::capHeight)
 		).apply(instance, Configuration::new));
 	}
 }

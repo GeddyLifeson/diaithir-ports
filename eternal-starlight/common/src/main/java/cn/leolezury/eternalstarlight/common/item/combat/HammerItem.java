@@ -55,7 +55,7 @@ public class HammerItem extends Item {
 			ESCriteriaTriggers.HAMMER_CRITICAL_HIT.get().trigger(serverPlayer);
 		}
 		Level level = player.level();
-		for (LivingEntity entity : level.getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(target.blockPosition()).inflate(2))) {
+		for (LivingEntity entity : ESPortCompat.getNearbyEntities(level, LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(target.blockPosition()).inflate(2))) {
 			if (ESPortCompat.hurt(entity, level.damageSources().playerAttack(player), (float) (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.75))) {
 				entity.addDeltaMovement(new Vec3(0.0, 0.4 * Math.max(0.0, 1.0 - entity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)), 0.0));
 			}

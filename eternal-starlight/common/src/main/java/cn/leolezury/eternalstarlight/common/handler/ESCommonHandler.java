@@ -504,7 +504,7 @@ public class ESCommonHandler {
 				}
 			}
 		}
-		if (source.getEntity() instanceof ServerPlayer player && entity.getType().is(ESTags.EntityTypes.AFFECTS_PROGRESSION)) {
+		if (source.getEntity() instanceof ServerPlayer player && entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.AFFECTS_PROGRESSION)) {
 			ESBookUtil.unlock(player, BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).withPrefix("entity_killed_"));
 		}
 	}
@@ -573,7 +573,7 @@ public class ESCommonHandler {
 			int abyssalFireTicks = ESDataAttachments.ABYSSAL_FIRE_TICKS.getData(entity);
 			if (abyssalFireTicks > 0) {
 				ESDataAttachments.ABYSSAL_FIRE_TICKS.setData(entity, abyssalFireTicks - 1);
-				if (!entity.getType().is(ESTags.EntityTypes.ABYSSAL_FIRE_IMMUNE) && entity.tickCount % 30 == 0) {
+				if (!entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.ABYSSAL_FIRE_IMMUNE) && entity.tickCount % 30 == 0) {
 					int oldInvulnerableTime = entity.invulnerableTime;
 					entity.invulnerableTime = 0;
 					ESPortCompat.hurt(entity, level.damageSources().onFire(), 3.0F);
@@ -733,7 +733,7 @@ public class ESCommonHandler {
 				if (livingEntity.hasEffect(ESMobEffects.TEARY.asHolder()) && level instanceof ServerLevel serverLevel) {
 					serverLevel.sendParticles(ParticleTypes.FALLING_WATER, livingEntity.getX() + livingEntity.getBbWidth() * (livingEntity.getRandom().nextFloat() - 0.5), livingEntity.getEyeY(), livingEntity.getZ() + livingEntity.getBbWidth() * (livingEntity.getRandom().nextFloat() - 0.5), 3, 0, 0, 0, 0);
 				}
-				if (!livingEntity.getType().is(ESTags.EntityTypes.TEARY_IMMUNE) && livingEntity.hasEffect(ESMobEffects.TEARY.asHolder())) {
+				if (!livingEntity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.TEARY_IMMUNE) && livingEntity.hasEffect(ESMobEffects.TEARY.asHolder())) {
 					int tearyTicks = ESDataAttachments.TEARY_TICKS.getData(entity);
 					if (tearyTicks <= ESConfig.INSTANCE.mobMaxTearyTicks) {
 						if (livingEntity instanceof Mob mob && mob.getTarget() != null) {
@@ -789,7 +789,7 @@ public class ESCommonHandler {
 			if (player.getRandom().nextFloat() < chance / 100f) {
 				ESDataAttachments.OBTAINED_BLOSSOM_OF_STARS.setData(player, true);
 				if (!player.getInventory().add(ESItems.BLOSSOM_OF_STARS.get().getDefaultInstance())) {
-					player.spawnAtLocation(ESItems.BLOSSOM_OF_STARS.get());
+					ESPortCompat.spawnAtLocation(player, ESItems.BLOSSOM_OF_STARS.get());
 				}
 			}
 		}

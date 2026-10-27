@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.entity.attack.TangledHusk;
 import cn.leolezury.eternalstarlight.common.platform.ESPlatform;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
@@ -36,7 +38,7 @@ public class WandOfTeleportationItem extends Item {
 
 	private void teleportPlayer(Level level, Player player, ItemStack stack, Vec3 target) {
 		createThornCircle(level, player, player.position());
-		TangledHusk husk = ESEntities.TANGLED_HUSK.get().create(level);
+		TangledHusk husk = ESEntities.TANGLED_HUSK.get().create(level, EntitySpawnReason.TRIGGERED);
 		if (husk != null) {
 			husk.snapTo(player.position());
 			husk.setYRot(player.getYRot());

@@ -1,11 +1,7 @@
 package cn.leolezury.eternalstarlight.common.posteffect;
 
 import cn.leolezury.eternalstarlight.common.registry.ESPostEffects;
-import com.mojang.blaze3d.shaders.Uniform;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.client.renderer.EffectInstance;
-import net.minecraft.client.renderer.PostChain;
-import net.minecraft.client.renderer.PostPass;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.Identifier;
@@ -56,55 +52,9 @@ public abstract class PostEffectType<T extends PostEffectData> {
 		return postChainLocation;
 	}
 
-	@Nullable
-	public EffectInstance getPostEffect(PostChain chain) {
-		List<PostPass> passes = chain.passes;
-		if (passes.isEmpty()) {
-			return null;
-		}
-		return passes.getFirst().getEffect();
-	}
 
-	public final void uploadUniforms(EffectInstance effect, List<PostEffectInstance> instances, float partialTicks) {
-		int count = Math.min(instances.size(), MAX_EFFECTS);
-		for (int i = 0; i < count; i++) {
-			PostEffectInstance instance = instances.get(i);
-			Vec3 position = instance.getPosition();
-			POSITIONS[i * 3] = (float) position.x;
-			POSITIONS[i * 3 + 1] = (float) position.y;
-			POSITIONS[i * 3 + 2] = (float) position.z;
-			RADII[i] = instance.getRadius();
-			INTENSITIES[i] = instance.getIntensity();
-			AGES[i] = instance.getAge() + partialTicks;
-			DURATIONS[i] = instance.getDuration();
-		}
-		setUniformArray(effect, UNIFORM_POSITIONS, POSITIONS);
-		setUniformArray(effect, UNIFORM_RADII, RADII);
-		setUniformArray(effect, UNIFORM_INTENSITIES, INTENSITIES);
-		setUniformArray(effect, UNIFORM_AGES, AGES);
-		setUniformArray(effect, UNIFORM_DURATIONS, DURATIONS);
-		Uniform countUniform = effect.getUniform(UNIFORM_COUNT);
-		if (countUniform != null) {
-			countUniform.set(count);
-		}
-		uploadTypeUniforms(effect, instances, partialTicks);
-	}
 
-	protected abstract void uploadTypeUniforms(EffectInstance effect, List<PostEffectInstance> instances, float partialTicks);
 
-	protected static void setUniform(EffectInstance effect, String name, float value) {
-		Uniform uniform = effect.getUniform(name);
-		if (uniform != null) {
-			uniform.set(value);
-		}
-	}
-
-	protected static void setUniformArray(EffectInstance effect, String name, float[] values) {
-		Uniform uniform = effect.getUniform(name);
-		if (uniform != null) {
-			uniform.set(values);
-		}
-	}
 
 	@SuppressWarnings("unchecked")
 	protected T getData(PostEffectInstance instance) {

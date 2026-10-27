@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.golem;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.block.EnergyBlock;
 import cn.leolezury.eternalstarlight.common.block.WeatheringGolemSteel;
 import cn.leolezury.eternalstarlight.common.block.entity.LootChestBlockEntity;
@@ -312,7 +314,7 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 
 	@Override
 	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
+		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
 	}
 
 	@Override
@@ -358,7 +360,7 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 		int left = maxNum;
 		LivingEntity target = getTarget();
 		if (trackTarget && target != null) {
-			EnergizedFlame energizedFlame = ESEntities.ENERGIZED_FLAME.get().create(level());
+			EnergizedFlame energizedFlame = ESEntities.ENERGIZED_FLAME.get().create(level(), EntitySpawnReason.TRIGGERED);
 			if (energizedFlame != null) {
 				energizedFlame.setPos(target.position().add(ESDataAttachments.MOVEMENT.getData(target).scale(20)));
 				energizedFlame.setOwner(this);
@@ -380,7 +382,7 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 		for (int i = 0; i < left; i++) {
 			if (!possiblePositions.isEmpty()) {
 				BlockPos firePos = possiblePositions.get(getRandom().nextInt(possiblePositions.size()));
-				EnergizedFlame energizedFlame = ESEntities.ENERGIZED_FLAME.get().create(level());
+				EnergizedFlame energizedFlame = ESEntities.ENERGIZED_FLAME.get().create(level(), EntitySpawnReason.TRIGGERED);
 				energizedFlame.setPos(firePos.getBottomCenter());
 				energizedFlame.setOwner(this);
 				level().addFreshEntity(energizedFlame);

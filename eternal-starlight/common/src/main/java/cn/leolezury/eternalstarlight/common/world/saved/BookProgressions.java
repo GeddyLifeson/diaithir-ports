@@ -41,7 +41,7 @@ public class BookProgressions extends SavedData {
 	@Override
 	public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
 		List<ProgressionInstance> progressions = getProgressions().entrySet().stream().map(entry -> new ProgressionInstance(entry.getKey(), Lists.newArrayList(entry.getValue()))).toList();
-		compoundTag.put(TAG_PROGRESSIONS, ProgressionInstance.LIST_CODEC.encodeStart(NbtOps.INSTANCE, progressions).getOrThrow());
+		compoundTag.store(TAG_PROGRESSIONS, ProgressionInstance.LIST_CODEC, progressions);
 		return compoundTag;
 	}
 

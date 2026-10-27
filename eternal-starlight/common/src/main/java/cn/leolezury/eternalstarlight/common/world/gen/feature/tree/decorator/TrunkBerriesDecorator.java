@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.tree.decorator;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.block.BerriesVinesBlock;
 import cn.leolezury.eternalstarlight.common.block.BerriesVinesPlantBlock;
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
@@ -18,7 +20,7 @@ import java.util.Optional;
 public class TrunkBerriesDecorator extends TreeDecorator {
 	private final IntProvider length;
 
-	public static final MapCodec<TrunkBerriesDecorator> CODEC = IntProvider.codec(1, 16).fieldOf("length").xmap(TrunkBerriesDecorator::new, (decorator) -> decorator.length);
+	public static final MapCodec<TrunkBerriesDecorator> CODEC = IntProviders.codec(1, 16).fieldOf("length").xmap(TrunkBerriesDecorator::new, (decorator) -> decorator.length);
 
 	public TrunkBerriesDecorator(IntProvider length) {
 		this.length = length;

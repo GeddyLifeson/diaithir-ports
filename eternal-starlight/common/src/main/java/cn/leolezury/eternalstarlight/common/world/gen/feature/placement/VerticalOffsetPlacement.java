@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.placement;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.registry.ESPlacementModifierTypes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -18,7 +20,7 @@ import java.util.stream.Stream;
 public class VerticalOffsetPlacement extends PlacementModifier {
 	public static final MapCodec<VerticalOffsetPlacement> CODEC = RecordCodecBuilder.mapCodec(
 		instance -> instance.group(
-			IntProvider.NON_NEGATIVE_CODEC.fieldOf("offset").forGetter(p -> p.offset)
+			IntProviders.NON_NEGATIVE_CODEC.fieldOf("offset").forGetter(p -> p.offset)
 		).apply(instance, VerticalOffsetPlacement::new)
 	);
 

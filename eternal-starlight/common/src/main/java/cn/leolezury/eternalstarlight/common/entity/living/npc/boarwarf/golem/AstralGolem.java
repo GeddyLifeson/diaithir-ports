@@ -158,11 +158,11 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	}
 
 	public AstralGolemMaterial getMaterial() {
-		return level().registryAccess().registryOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).get(getMaterialId());
+		return level().registryAccess().lookupOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).get(getMaterialId());
 	}
 
 	public void setMaterial(AstralGolemMaterial material) {
-		Identifier key = level().registryAccess().registryOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).getKey(material);
+		Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).getKey(material);
 		if (key != null) {
 			setMaterialId(key);
 		}

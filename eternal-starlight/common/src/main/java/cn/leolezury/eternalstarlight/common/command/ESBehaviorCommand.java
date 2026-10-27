@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.command;
 
+import net.minecraft.server.permissions.Permissions;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.living.phase.MultiBehaviorUser;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -17,7 +19,7 @@ import java.util.Collection;
 public class ESBehaviorCommand {
 	public static ArgumentBuilder<CommandSourceStack, ?> register() {
 		return Commands.literal("behavior")
-			.requires((stack) -> stack.hasPermission(2))
+			.requires((stack) -> stack.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER))
 			.then(Commands.literal("get")
 				.then(Commands.argument("targets", EntityArgument.entities())
 					.executes(ESBehaviorCommand::getBehavior)))

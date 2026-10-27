@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.command;
 
+import net.minecraft.server.permissions.Permissions;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.data.ESDimensions;
 import cn.leolezury.eternalstarlight.common.registry.ESWeathers;
@@ -19,7 +21,7 @@ import net.minecraft.util.valueproviders.IntProvider;
 public class ESWeatherCommand {
 	public static ArgumentBuilder<CommandSourceStack, ?> register(CommandBuildContext commandBuildContext) {
 		return Commands.literal("weather").requires((commandSourceStack) -> {
-			return commandSourceStack.hasPermission(2);
+			return commandSourceStack.permissions().hasPermission(Permissions.COMMANDS_GAMEMASTER);
 		}).then(Commands.argument("weather", ResourceArgument.resource(commandBuildContext, ESWeathers.REGISTRY_KEY)).executes((commandContext) -> {
 			return setWeather(commandContext.getSource(), ResourceArgument.getResource(commandContext, "weather", ESWeathers.REGISTRY_KEY).value(), -1);
 		}).then(Commands.argument("duration", TimeArgument.time(1)).executes((commandContext) -> {

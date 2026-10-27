@@ -235,7 +235,7 @@ public class Permafrost extends ESBoss {
 
 	@Override
 	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
+		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
 	}
 
 	@Override

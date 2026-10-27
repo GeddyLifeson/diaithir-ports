@@ -65,7 +65,7 @@ public class CradlewoodSaplingBlock extends Block implements BonemealableBlock {
 		if (blockState.getValue(STAGE) == 0) {
 			serverLevel.setBlock(blockPos, blockState.cycle(STAGE), 4);
 		} else {
-			Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.CRADLEWOOD);
+			Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.CRADLEWOOD);
 			if (optional.isPresent()) {
 				serverLevel.removeBlock(blockPos, false);
 				if (!optional.get().value().place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos)) {

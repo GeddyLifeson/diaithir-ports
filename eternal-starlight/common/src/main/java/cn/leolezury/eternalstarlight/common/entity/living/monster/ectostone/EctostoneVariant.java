@@ -36,7 +36,7 @@ public record EctostoneVariant(Identifier texture, Identifier textureFull, Ident
 	}
 
 	public static List<Holder.Reference<EctostoneVariant>> getCandidates(RegistryAccess registryAccess, Holder<Biome> biome) {
-		Registry<EctostoneVariant> registry = registryAccess.registryOrThrow(ESRegistries.ECTOSTONE_VARIANT);
+		Registry<EctostoneVariant> registry = registryAccess.lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT);
 		return registry.holders().filter(reference -> reference.value().biomes().contains(biome)).toList();
 	}
 
@@ -50,7 +50,7 @@ public record EctostoneVariant(Identifier texture, Identifier textureFull, Ident
 	}
 
 	public static Holder<EctostoneVariant> getDefault(RegistryAccess registryAccess) {
-		Registry<EctostoneVariant> registry = registryAccess.registryOrThrow(ESRegistries.ECTOSTONE_VARIANT);
+		Registry<EctostoneVariant> registry = registryAccess.lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT);
 		return registry.getHolder(ESEctostoneVariants.GRIMSTONE).or(registry::getAny).orElseThrow();
 	}
 

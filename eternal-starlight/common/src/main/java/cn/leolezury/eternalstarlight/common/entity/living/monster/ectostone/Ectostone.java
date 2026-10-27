@@ -169,7 +169,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 	@Override
 	public void setVariant(Holder<EctostoneVariant> variant) {
 		if (variant.isBound()) {
-			Identifier key = level().registryAccess().registryOrThrow(ESRegistries.ECTOSTONE_VARIANT).getKey(variant.value());
+			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT).getKey(variant.value());
 			if (key != null) {
 				setVariantId(key);
 			}
@@ -178,7 +178,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 
 	@Override
 	public Holder<EctostoneVariant> getVariant() {
-		Registry<EctostoneVariant> variants = level().registryAccess().registryOrThrow(ESRegistries.ECTOSTONE_VARIANT);
+		Registry<EctostoneVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT);
 		Optional<Holder.Reference<EctostoneVariant>> optional = variants.getHolder(getVariantId());
 		return optional.isPresent() ? optional.get() : EctostoneVariant.getDefault(level().registryAccess());
 	}

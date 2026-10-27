@@ -69,7 +69,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	@Override
 	public void setVariant(Holder<SeekerVariant> variant) {
 		if (variant.isBound()) {
-			Identifier key = level().registryAccess().registryOrThrow(ESRegistries.SEEKER_VARIANT).getKey(variant.value());
+			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.SEEKER_VARIANT).getKey(variant.value());
 			if (key != null) {
 				setVariantId(key);
 			}
@@ -79,7 +79,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	@Override
 	public Holder<SeekerVariant> getVariant() {
 		Identifier key = getVariantId();
-		Registry<SeekerVariant> variants = level().registryAccess().registryOrThrow(ESRegistries.SEEKER_VARIANT);
+		Registry<SeekerVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SEEKER_VARIANT);
 		Optional<Holder.Reference<SeekerVariant>> optional = variants.getHolder(key);
 		return optional.orElse(variants.getHolder(ESSeekerVariants.LUNAR).orElseThrow());
 	}

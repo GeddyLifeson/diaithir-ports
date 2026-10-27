@@ -5,7 +5,6 @@ import cn.leolezury.eternalstarlight.common.util.ESCodecUtil;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -49,17 +48,4 @@ public class FlashPostEffect extends PostEffectType<FlashPostEffect.Data> {
 		super(EternalStarlight.id("shaders/post/flash.json"), Data.CODEC, Data.STREAM_CODEC);
 	}
 
-	@Override
-	protected void uploadTypeUniforms(EffectInstance effect, List<PostEffectInstance> instances, float partialTicks) {
-		int count = Math.min(instances.size(), MAX_EFFECTS);
-		for (int i = 0; i < count; i++) {
-			Data data = getData(instances.get(i));
-			PARAMS[i * PARAM_COUNT] = data.fadeIn();
-			PARAMS[i * PARAM_COUNT + 1] = data.fadeOut();
-			PARAMS[i * PARAM_COUNT + 2] = ARGB.red(data.color()) / 255F;
-			PARAMS[i * PARAM_COUNT + 3] = ARGB.green(data.color()) / 255F;
-			PARAMS[i * PARAM_COUNT + 4] = ARGB.blue(data.color()) / 255F;
-		}
-		setUniformArray(effect, UNIFORM_PARAMS, PARAMS);
-	}
 }

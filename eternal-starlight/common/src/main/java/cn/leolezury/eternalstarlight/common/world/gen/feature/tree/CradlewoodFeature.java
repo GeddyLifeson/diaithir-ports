@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.tree;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import cn.leolezury.eternalstarlight.common.world.gen.feature.tree.decorator.StarfireBirdNestDecorator;
@@ -236,10 +238,10 @@ public class CradlewoodFeature extends Feature<CradlewoodFeature.Configuration> 
 
 	public record Configuration(IntProvider height, IntProvider horizontalOffset, IntProvider leavesRadius, IntProvider trunkRadius) implements FeatureConfiguration {
 		public static final Codec<Configuration> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-			IntProvider.CODEC.fieldOf("height").forGetter(Configuration::height),
-			IntProvider.CODEC.fieldOf("horizontal_offset").forGetter(Configuration::horizontalOffset),
-			IntProvider.CODEC.fieldOf("leaves_radius").forGetter(Configuration::leavesRadius),
-			IntProvider.CODEC.fieldOf("trunk_radius").forGetter(Configuration::trunkRadius)
+			IntProviders.CODEC.fieldOf("height").forGetter(Configuration::height),
+			IntProviders.CODEC.fieldOf("horizontal_offset").forGetter(Configuration::horizontalOffset),
+			IntProviders.CODEC.fieldOf("leaves_radius").forGetter(Configuration::leavesRadius),
+			IntProviders.CODEC.fieldOf("trunk_radius").forGetter(Configuration::trunkRadius)
 		).apply(instance, Configuration::new));
 	}
 }

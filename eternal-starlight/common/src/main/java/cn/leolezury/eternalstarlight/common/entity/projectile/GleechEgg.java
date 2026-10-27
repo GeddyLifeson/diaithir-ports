@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import cn.leolezury.eternalstarlight.common.entity.living.monster.Gleech;
@@ -40,11 +42,11 @@ public class GleechEgg extends ThrowableItemProjectile {
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
 		ESPortCompat.hurt(entityHitResult.getEntity(), this.damageSources().thrown(this, this.getOwner()), 0.0F);
-		if (!level().isClientSide() && entityHitResult.getEntity() instanceof LivingEntity livingEntity && !livingEntity.getType().is(ESTags.EntityTypes.GLEECH_IMMUNE)) {
+		if (!level().isClientSide() && entityHitResult.getEntity() instanceof LivingEntity livingEntity && !livingEntity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.GLEECH_IMMUNE)) {
 			if (getOwner() instanceof ServerPlayer serverPlayer) {
 				ESCriteriaTriggers.THROW_GLEECH_EGG.get().trigger(serverPlayer);
 			}
-			Gleech gleech = ESEntities.GLEECH.get().create(level());
+			Gleech gleech = ESEntities.GLEECH.get().create(level(), EntitySpawnReason.TRIGGERED);
 			if (gleech != null) {
 				gleech.setPos(position());
 				gleech.setLarval(true);

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.world.entity.EntitySpawnReason;
+
 import net.minecraft.server.level.ServerLevel;
 
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
@@ -40,7 +42,7 @@ public class NightfallSpider extends Spider {
 		getPassengers().forEach(entity -> {
 			if (entity instanceof Skeleton s) {
 				s.discard();
-				LonestarSkeleton skeleton = ESEntities.LONESTAR_SKELETON.get().create(this.level());
+				LonestarSkeleton skeleton = ESEntities.LONESTAR_SKELETON.get().create(this.level(), EntitySpawnReason.TRIGGERED);
 				if (skeleton != null) {
 					skeleton.snapTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0.0F);
 					skeleton.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, null);

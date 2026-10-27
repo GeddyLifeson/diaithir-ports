@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import net.minecraft.world.level.gamerules.GameRules;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.util.RandomSource;
 
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -155,7 +159,7 @@ public class StarfireBirdNestBlock extends BaseEntityBlock {
 
 	@Override
 	public BlockState playerWillDestroy(Level level, BlockPos blockPos, BlockState blockState, Player player) {
-		if (!level.isClientSide() && player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)) {
+		if (!level.isClientSide() && player.isCreative() && ESPortCompat.gameRule(level, GameRules.BLOCK_DROPS)) {
 			BlockEntity blockEntity = level.getBlockEntity(blockPos);
 			int eggs = blockState.getValue(EGGS);
 			if (blockEntity instanceof StarfireBirdNestBlockEntity nest) {

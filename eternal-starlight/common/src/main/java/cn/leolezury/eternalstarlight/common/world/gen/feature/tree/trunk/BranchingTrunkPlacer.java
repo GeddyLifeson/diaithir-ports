@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.world.gen.feature.tree.trunk;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import cn.leolezury.eternalstarlight.common.registry.ESTreePlacers;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import com.google.common.collect.Lists;
@@ -28,10 +30,10 @@ import java.util.function.BiConsumer;
 
 public class BranchingTrunkPlacer extends TrunkPlacer {
 	public static final MapCodec<BranchingTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> trunkPlacerParts(instance)
-		.and(IntProvider.codec(0, 3).fieldOf("trunk_size").forGetter((placer) -> placer.trunkSize))
-		.and(IntProvider.codec(0, 24).fieldOf("branch_length").forGetter((placer) -> placer.branchLen))
-		.and(IntProvider.codec(0, 10).fieldOf("branch_layer_num").forGetter((placer) -> placer.branchLayerNum))
-		.and(IntProvider.codec(0, 10).fieldOf("branch_num").forGetter((placer) -> placer.branchNum))
+		.and(IntProviders.codec(0, 3).fieldOf("trunk_size").forGetter((placer) -> placer.trunkSize))
+		.and(IntProviders.codec(0, 24).fieldOf("branch_length").forGetter((placer) -> placer.branchLen))
+		.and(IntProviders.codec(0, 10).fieldOf("branch_layer_num").forGetter((placer) -> placer.branchLayerNum))
+		.and(IntProviders.codec(0, 10).fieldOf("branch_num").forGetter((placer) -> placer.branchNum))
 		.and(Codec.BOOL.fieldOf("vanilla_giant_trunk").forGetter((placer) -> placer.vanillaGiantTrunk))
 		.apply(instance, BranchingTrunkPlacer::new));
 

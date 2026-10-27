@@ -157,7 +157,7 @@ public abstract class LivingEntityMixin {
 		LivingEntity entity = (LivingEntity) (Object) this;
 		if (autoSpinAttackItemStack != null && autoSpinAttackItemStack.is(ESItems.CRESCENT_SPEAR.get())) {
 			if (!entity.level().isClientSide()) {
-				for (LivingEntity living : entity.level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(3))) {
+				for (LivingEntity living : ESPortCompat.getNearbyEntities(entity.level(), LivingEntity.class, TargetingConditions.DEFAULT, entity, entity.getBoundingBox().inflate(3))) {
 					if (ESEntityUtil.shouldHarm(entity, living) && entity instanceof Player player) {
 						player.attackStrengthTicker = Mth.ceil(player.getCurrentItemAttackStrengthDelay());
 						player.attack(living);
@@ -314,8 +314,8 @@ public abstract class LivingEntityMixin {
 	@Inject(method = "die", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;gameEvent(Lnet/minecraft/core/Holder;)V", shift = At.Shift.AFTER))
 	private void die(CallbackInfo ci) {
 		LivingEntity livingEntity = ((LivingEntity) (Object) this);
-		if (livingEntity.getType().is(ESTags.EntityTypes.STRANGHOUL_PREYS) && getKillCredit() instanceof Stranghoul) {
-			List<Player> players = livingEntity.level().getNearbyPlayers(TargetingConditions.forNonCombat(), livingEntity, livingEntity.getBoundingBox().inflate(20));
+		if (livingEntity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STRANGHOUL_PREYS) && getKillCredit() instanceof Stranghoul) {
+			List<Player> players = ESPortCompat.getNearbyPlayers(livingEntity.level(), TargetingConditions.forNonCombat(), livingEntity, livingEntity.getBoundingBox().inflate(20));
 			for (Player player : players) {
 				if (player instanceof ServerPlayer serverPlayer) {
 					ESCriteriaTriggers.WITNESS_STRANGHOUL_HUNT.get().trigger(serverPlayer);

@@ -88,7 +88,7 @@ public class ESPainting extends HangingEntity {
 	}
 
 	public Holder<ESPaintingVariant> getVariant() {
-		Registry<ESPaintingVariant> registry = level().registryAccess().registryOrThrow(ESRegistries.PAINTING_VARIANT);
+		Registry<ESPaintingVariant> registry = level().registryAccess().lookupOrThrow(ESRegistries.PAINTING_VARIANT);
 		return registry.getHolder(getVariantId())
 			.or(() -> registry.getHolder(ESPaintingVariants.GUARDIAN))
 			.orElseGet(() -> registry.getAny().orElseThrow());
@@ -97,7 +97,7 @@ public class ESPainting extends HangingEntity {
 	public static Optional<ESPainting> createPainting(Level level, ItemStack item, BlockPos blockPos, Direction direction) {
 		ESPainting painting = new ESPainting(level, blockPos);
 		List<Holder<ESPaintingVariant>> candidates = new ArrayList<>();
-		level.registryAccess().registryOrThrow(ESRegistries.PAINTING_VARIANT).getTagOrEmpty(ESTags.PaintingVariants.PLACEABLE).forEach(candidates::add);
+		level.registryAccess().lookupOrThrow(ESRegistries.PAINTING_VARIANT).getTagOrEmpty(ESTags.PaintingVariants.PLACEABLE).forEach(candidates::add);
 		if (candidates.isEmpty()) {
 			return Optional.empty();
 		}
@@ -197,12 +197,12 @@ public class ESPainting extends HangingEntity {
 
 	@Override
 	public void dropItem(@Nullable Entity entity) {
-		if (this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+		if (this.ESPortCompat.gameRule(level(), GameRules.ENTITY_DROPS)) {
 			this.playSound(SoundEvents.PAINTING_BREAK, 1.0F, 1.0F);
 			if (entity instanceof Player player && player.hasInfiniteMaterials()) {
 				return;
 			}
-			this.spawnAtLocation(getItem());
+			ESPortCompat.spawnAtLocation(this, getItem());
 		}
 	}
 

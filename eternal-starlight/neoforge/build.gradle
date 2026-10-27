@@ -95,4 +95,5 @@ sourceSets.main.java {
 	exclude "**/eternalstarlight/neoforge/client/**"
 	exclude "**/eternalstarlight/neoforge/mixin/client/**"
 	exclude "**/eternalstarlight/neoforge/datagen/**"
+	exclude "**/eternalstarlight/neoforge/platform/ESNeoClientPlatform.java"
 }
