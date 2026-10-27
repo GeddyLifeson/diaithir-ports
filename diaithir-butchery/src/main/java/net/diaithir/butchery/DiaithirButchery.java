@@ -19,6 +19,11 @@ public final class DiaithirButchery {
         Butchery.register(modBus);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
                 e -> e.addListener(Identifier.fromNamespaceAndPath(Butchery.MOD, "butchery"), new ButcheryData.Loader()));
+        modBus.addListener(net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent.class, ev -> {
+            ev.registerBlockEntity(net.neoforged.neoforge.capabilities.Capabilities.Energy.BLOCK, Butchery.STATION_ENTITY.get(), (be, side) -> be.energy);
+            ev.registerBlockEntity(net.neoforged.neoforge.capabilities.Capabilities.Energy.BLOCK, Butchery.COLD_ROOM_ENTITY.get(), (be, side) -> be.energy);
+            ev.registerBlockEntity(net.neoforged.neoforge.capabilities.Capabilities.Energy.BLOCK, Butchery.STASIS_ENTITY.get(), (be, side) -> be.energy);
+        });
         NeoForge.EVENT_BUS.addListener(LivingDropsEvent.class, DiaithirButchery::onDrops);
     }
 

@@ -21,6 +21,7 @@ public class StationEntity extends BlockEntity {
     private ItemStack input = ItemStack.EMPTY;
     private ItemStack output = ItemStack.EMPTY;
     private int progress;
+    final net.neoforged.neoforge.transfer.energy.SimpleEnergyHandler energy = new net.neoforged.neoforge.transfer.energy.SimpleEnergyHandler(20000, 2000, 0);
 
     public StationEntity(BlockPos pos, BlockState state) {
         this(pos, state, "");
@@ -64,6 +65,11 @@ public class StationEntity extends BlockEntity {
             input = ItemStack.EMPTY;
             return;
         }
+        int fe = ButcheryData.powerOf(station);
+        if (fe > 0) {
+            if (energy.getAmountAsLong() < fe) return;
+            energy.set((int) energy.getAmountAsLong() - fe);
+        }
         if (++progress < p.ticks()) return;
         ItemStack made = p.make(input);
         if (output.isEmpty() || ItemStack.isSameItemSameComponents(output, made) && output.getCount() + made.getCount() <= output.getMaxStackSize()) {
@@ -81,6 +87,7 @@ public class StationEntity extends BlockEntity {
         o.store("input", ItemStack.OPTIONAL_CODEC, input);
         o.store("output", ItemStack.OPTIONAL_CODEC, output);
         o.putInt("progress", progress);
+        energy.serialize(o.child("energy"));
     }
 
     @Override
@@ -90,5 +97,6 @@ public class StationEntity extends BlockEntity {
         input = i.read("input", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         output = i.read("output", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         progress = i.getIntOr("progress", 0);
+        i.child("energy").ifPresent(energy::deserialize);
     }
 }

@@ -82,11 +82,11 @@ STATION_DATA = {
     "sausage_stuffer": {"age": 3, "process": [proc(M + "mince", M + "sausage", 80, 3, 200)]},
     "rendering_cauldron": {"age": 3, "process": [proc(M + "tallow", M + "lard", 200, 2, 500)]},
     "smokehouse": {"age": 4, "process": [proc(M + c, M + "cured_meat", 2400, 1, 800) for c in ("haunch", "shoulder", "loin", "ribs", "flank", "hock")]},
-    "steam_cannery": {"age": 5, "process": [proc(COOKED, M + "canned_meat", 100, 1, 2400)]},
-    "cold_room": {"age": 6, "process": [proc(RAW, "same", 40, 1, 400), proc(M + "mince", "same", 40, 1, 400), proc(M + "sausage", "same", 40, 1, 400)]},
-    "vacuum_packer": {"age": 7, "process": [proc(RAW, "same", 40, 1, 1200), proc(COOKED, "same", 40, 1, 1200), proc(ANY, "same", 40, 1, 1200)]},
-    "vat_grower": {"age": 8, "process": [proc(M + "marrow_bone", M + "grown_cut", 1200, 3, 300)]},
-    "stasis_case": {"age": 9, "process": [proc(ANY, "same", 20, 1, 100000)]},
+    "steam_cannery": {"power": 40, "age": 5, "process": [proc(COOKED, M + "canned_meat", 100, 1, 2400)]},
+    "cold_room": {"power": 20, "age": 6, "process": [proc(RAW, "same", 40, 1, 400), proc(M + "mince", "same", 40, 1, 400), proc(M + "sausage", "same", 40, 1, 400)]},
+    "vacuum_packer": {"power": 60, "age": 7, "process": [proc(RAW, "same", 40, 1, 1200), proc(COOKED, "same", 40, 1, 1200), proc(ANY, "same", 40, 1, 1200)]},
+    "vat_grower": {"power": 120, "age": 8, "process": [proc(M + "marrow_bone", M + "grown_cut", 1200, 3, 300)]},
+    "stasis_case": {"power": 200, "age": 9, "process": [proc(ANY, "same", 20, 1, 100000)]},
 }
 w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES, "tools": TOOLS, "stations": STATION_DATA})
 w(f"{D}/tags/block/cold_containers.json", {"values": [M + "cold_room", M + "stasis_case"]})

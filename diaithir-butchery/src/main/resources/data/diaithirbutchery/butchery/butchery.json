@@ -1042,6 +1042,7 @@
    ]
   },
   "steam_cannery": {
+   "power": 40,
    "age": 5,
    "process": [
     {
@@ -1054,6 +1055,7 @@
    ]
   },
   "cold_room": {
+   "power": 20,
    "age": 6,
    "process": [
     {
@@ -1080,6 +1082,7 @@
    ]
   },
   "vacuum_packer": {
+   "power": 60,
    "age": 7,
    "process": [
     {
@@ -1106,6 +1109,7 @@
    ]
   },
   "vat_grower": {
+   "power": 120,
    "age": 8,
    "process": [
     {
@@ -1118,6 +1122,7 @@
    ]
   },
   "stasis_case": {
+   "power": 200,
    "age": 9,
    "process": [
     {

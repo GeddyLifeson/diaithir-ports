@@ -42,6 +42,7 @@ public final class ButcheryData {
     }
 
     private static volatile Map<String, Map<String, List<Yield>>> classes = Map.of();
+    private static volatile Map<String, Integer> power = Map.of();
     private static volatile Map<String, List<Process>> stations = Map.of();
     private static volatile Map<String, Integer> toolBonus = Map.of();
     private static volatile Map<String, String> exact = Map.of();
@@ -71,6 +72,11 @@ public final class ButcheryData {
             if (shelf > 0) made.set(Butchery.SHELF.get(), shelf);
             return made;
         }
+    }
+
+    /** Energy (FE) per tick a station needs while it works; 0 for hand-worked stations. */
+    static int powerOf(String station) {
+        return power.getOrDefault(station, 0);
     }
 
     static Process recipeFor(String station, ItemStack s) {
@@ -126,6 +132,16 @@ public final class ButcheryData {
                     }
                 }
             }
+            Map<String, Integer> pw = new LinkedHashMap<>();
+            for (var file : files.entrySet()) {
+                if (file.getValue() instanceof JsonObject root && root.get("stations") instanceof JsonObject m) {
+                    for (var e : m.entrySet()) {
+                        JsonObject o = e.getValue().getAsJsonObject();
+                        if (o.has("power")) pw.put(e.getKey(), o.get("power").getAsInt());
+                    }
+                }
+            }
+            power = pw;
             stations = st;
             toolBonus = tools;
             classes = cls;
