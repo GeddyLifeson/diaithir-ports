@@ -1,0 +1,14 @@
+{
+  "type":"create:sequenced_assembly",
+  "ingredient":"minecraft:polished_blackstone",
+  "transitional_item":{"id":"create:incomplete_precision_mechanism"},
+  "loops":10,
+  "result":{"id":"minecraft:netherite_scrap","chance":0.85},
+  "junks":[{"id":"minecraft:gold_nugget","chance":0.1},{"id":"minecraft:basalt","chance":0.05}],
+  "sequence":[
+    {"type":"create:filling","ingredient":"$ingredient","fluid_ingredient":{"type":"fluid_stack","amount":20250,"fluid":"minecraft:lava"},"result":"$result"},
+    {"type":"create:deploying","target":"$ingredient","ingredient":"minecraft:gold_nugget","results":["$result"]},
+    {"type":"create:deploying","target":"$ingredient","ingredient":"minecraft:blaze_powder","results":["$result"]},
+    {"type":"create:pressing","ingredient":"$ingredient","results":["$result"]}
+  ]
+}

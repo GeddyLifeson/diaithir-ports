@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons"
+version="0.1.0"
+displayName="Diaithir Create Addons (batch 0)"
+authors="Diaithir pack; recipe ideas from GrandAviation's MIT datapacks Create: Enhanced Diamond/Emerald/Netherite Production"
+description='''Renewable diamonds (via asurine), emeralds (via veridium) and netherite scrap (sequenced assembly) for Create, rewritten for the Diaithir Create port (26.1 recipe formats).'''
+[[dependencies.diaithir_create_addons]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"
