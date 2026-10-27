@@ -32,7 +32,7 @@ def write(path, obj):
 
 # ---------------------------------------------------------------- selection
 STAGE = int(os.environ.get("GOETY_STAGE", "1"))
-FAM = re.compile(r'(haunted_|rotten_|marsh_|windswept_|pine_|steep_|shade_|crypt_|ominous_stone|marble|highrock|crag|siltstone|jade_|cursed_metal|pale_steel|dark_metal)')
+FAM = re.compile(r"")  # every plain block family; functional blocks are excluded by EXCL
 EXCL = re.compile(r'(altar|pedestal|brazier|sarcophagus|throne|chest|lamp|lantern|torch|candle|statue|urn|gravestone|ossuary|blower|glass|cage|sign|sapling|potted|bush|firewood|jug|mirror|chandelier|sconce|bars|carpet|crystal|idol|decree|vine|grass|fern|pit|shrine|tall_skull|moss_|window|plinth_door|_light$|jade_light)')
 CUBE_OK = {"ShadeStoneBlock", "CursedMetalBlock", "PaleSteelBlock", "DarkMetalBlock", "JadeStoneBlock", "StoneOreBlock"}
 
@@ -41,6 +41,9 @@ def like_for(i):
         return "oak_planks"
     if re.search(r'(_log|_wood)$', i): return "oak_log"
     if "leaves" in i: return "oak_leaves"
+    if re.search(r'(dirt|detritus)', i): return "dirt"
+    if "emerald" in i or "diamond_mold" in i: return "emerald_block"
+    if re.search(r'(^|_)end_|purpur', i): return "end_stone_bricks"
     if "jade_ore" in i: return "emerald_ore"
     if "jade" in i: return "emerald_block"
     if re.search(r'(cursed_metal|pale_steel|dark_metal)', i): return "iron_block"
@@ -54,8 +57,7 @@ def like_for(i):
     return "stone"
 
 def wood_set(i):
-    m = re.match(r'(?:stripped_)?(haunted|rotten|marsh|windswept|pine|steep)', i)
-    return m.group(1) if m else ""
+    return re.sub(r'_(door|trapdoor|fence_gate|pressure_plate|button)$', '', i)
 
 def block_kind(r):
     fn, a, i = r["fn"], r["args"], r["id"]
@@ -97,6 +99,7 @@ for r in blocks_up:
         e["like"] = like_for(base)
         if e["like"] == "oak_log": e["like"] = "oak_planks"
     e["axe"] = e["like"] in ("oak_planks", "oak_log", "oak_leaves")
+    e["shovel"] = e["like"] == "dirt"
     bspec.append(e); bkinds[i] = e
 # keep only derived blocks whose base exists
 ids = set(bkinds)
@@ -212,7 +215,8 @@ for i, e in bkinds.items():
 # ---------------------------------------------------------------- tags
 def tag(path, values, replace=False):
     write(os.path.join(RES, "data", path + ".json"), {"replace": replace, "values": sorted(set(values))})
-pick = [f"{ID}:{i}" for i, e in bkinds.items() if not e["axe"] and e["kind"] != "leaves"]
+pick = [f"{ID}:{i}" for i, e in bkinds.items() if not e["axe"] and not e["shovel"] and e["kind"] != "leaves"]
+tag("minecraft/tags/block/mineable/shovel", [f"{ID}:{i}" for i, e in bkinds.items() if e["shovel"]])
 axe = [f"{ID}:{i}" for i, e in bkinds.items() if e["axe"] and e["kind"] != "leaves"]
 tag("minecraft/tags/block/mineable/pickaxe", pick)
 tag("minecraft/tags/block/mineable/axe", axe)

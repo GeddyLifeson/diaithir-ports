@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:chorus_planks"
+ },
+ "pattern": [
+  "##"
+ ],
+ "result": {
+  "id": "goety:chorus_pressure_plate",
+  "count": 1
+ }
+}

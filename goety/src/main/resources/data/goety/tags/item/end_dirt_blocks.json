@@ -1,4 +1,8 @@
 {
  "replace": false,
- "values": []
+ "values": [
+  "goety:dirty_end_basalt",
+  "goety:dirty_end_rock",
+  "goety:top_dirty_end_basalt"
+ ]
 }

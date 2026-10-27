@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": [
+   "goety:sky_wood_planks"
+  ]
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "id": "goety:sky_wood_stairs",
+  "count": 4
+ }
+}

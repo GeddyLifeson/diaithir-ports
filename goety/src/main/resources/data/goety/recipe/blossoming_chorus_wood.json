@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:chorus_wood",
+  "minecraft:bone_meal"
+ ],
+ "result": {
+  "id": "goety:blossoming_chorus_wood",
+  "count": 1
+ }
+}

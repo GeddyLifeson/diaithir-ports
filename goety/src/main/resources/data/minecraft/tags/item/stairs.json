@@ -1,6 +1,14 @@
 {
  "replace": false,
  "values": [
+  "goety:chorus_stairs",
+  "goety:chorus_wood_stairs",
+  "goety:corrupt_chorus_stairs",
+  "goety:end_basalt_brick_stairs",
+  "goety:end_basalt_stairs",
+  "goety:end_limestone_stairs",
+  "goety:end_rock_brick_stairs",
+  "goety:end_rock_stairs",
   "goety:haunted_stairs",
   "goety:jade_stairs",
   "goety:marsh_stairs",
@@ -12,8 +20,11 @@
   "goety:shade_stone_stairs",
   "goety:shade_tiles_stairs",
   "goety:silt_jade_stairs",
+  "goety:sky_wood_stairs",
   "goety:snowy_jade_stairs",
   "goety:steep_stairs",
+  "goety:weathered_dark_oak_stairs",
+  "goety:weathered_oak_stairs",
   "goety:windswept_stairs"
  ]
 }

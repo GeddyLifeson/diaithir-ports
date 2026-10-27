@@ -39,7 +39,7 @@ G = {
  "staff": "bata", "wand": "slat", "ring": "fàinne", "amulet": "seun", "necklace": "usgar", "amethyst": "aimiteist",
  "charm": "seun", "belt": "crios", "scroll": "sgrìobhainn", "crown": "crùn", "robe": "èideadh", "hat": "ad",
  "alarming": "clisgeach", "feline": "cait", "spiteful": "gamhlasach", "rune": "rùn", "necro": "marbh", "geo": "talmhaidh",
- "storm": "stoirm", "frost": "reothadh", "wild": "fiadhaich", "abyss": "domhainn", "nether": "ifrinn", "pale_steel": "stàilinn bhàn", "compacted": "dùmhail", "concentrated": "dlùth", "dense": "dlùth", "flower": "flùr", "plank": "clàr", "shadow": "faileas", "steep": "cas", "thatched": "tughaichte", "wartful": "foinneach", "clàr-bruthaidh": "clàr-bruthaidh", "doras-tuill": "doras-tuill",
+ "storm": "stoirm", "frost": "reothadh", "wild": "fiadhaich", "abyss": "domhainn", "nether": "ifrinn", "pale_steel": "stàilinn bhàn", "apparition": "taibhse", "basalt": "basalt", "blooming": "fàs", "blossoming": "fo-fhlùr", "bottom": "bun", "chorus": "ceòl", "corrupted": "truaillte", "corrupt": "truaillte", "detritus": "smùr", "diamond": "daoimean", "dirt": "salchar", "end": "crìoch", "grown": "fàsta", "infused": "lìonta", "limestone": "clach-aoil", "mixed": "measgaichte", "mold": "molltair", "oak": "darach", "purpur": "purpur", "rock": "creag", "rod": "slat", "sky": "speur", "slated": "leugach", "soiled": "salach", "spruce": "giuthas-dorcha", "top": "mullach", "weathering": "caitheadh", "compacted": "dùmhail", "concentrated": "dlùth", "dense": "dlùth", "flower": "flùr", "plank": "clàr", "shadow": "faileas", "steep": "cas", "thatched": "tughaichte", "wartful": "foinneach", "clàr-bruthaidh": "clàr-bruthaidh", "doras-tuill": "doras-tuill",
 }
 # multi-word phrase overrides: key is the lower-case English phrase
 PHR = {

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:chorus_slab",
+  "s": "#c:rods/wooden"
+ },
+ "pattern": [
+  "#s#",
+  "s s",
+  "#s#"
+ ],
+ "result": {
+  "id": "goety:thatched_chorus_planks",
+  "count": 1
+ }
+}

@@ -1,6 +1,9 @@
 {
  "replace": false,
  "values": [
+  "goety:apparition_door",
+  "goety:chorus_door",
+  "goety:corrupt_chorus_door",
   "goety:haunted_door",
   "goety:marsh_door",
   "goety:pine_door",

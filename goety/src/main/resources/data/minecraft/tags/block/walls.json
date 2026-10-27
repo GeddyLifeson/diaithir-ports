@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "goety:end_rock_brick_wall",
   "goety:shade_bricks_wall",
   "goety:shade_stone_bricks_wall",
   "goety:snowy_windswept_plank_wall",

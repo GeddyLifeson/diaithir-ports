@@ -1,15 +1,26 @@
 {
  "replace": false,
  "values": [
+  "goety:chorus_planks",
   "goety:compacted_pine_planks",
   "goety:compacted_windswept_planks",
+  "goety:corrupt_chorus_planks",
   "goety:dense_steep_planks",
   "goety:haunted_planks",
   "goety:marsh_planks",
   "goety:pine_planks",
   "goety:rotten_planks",
+  "goety:sky_wood_planks",
+  "goety:soiled_chorus_planks",
+  "goety:soiled_corrupt_chorus_planks",
+  "goety:soiled_spruce_planks",
   "goety:steep_planks",
+  "goety:thatched_chorus_planks",
   "goety:thatched_pine_planks",
+  "goety:weathered_dark_oak_planks",
+  "goety:weathered_oak_planks",
+  "goety:weathering_dark_oak_planks",
+  "goety:weathering_oak_planks",
   "goety:windswept_planks"
  ]
 }

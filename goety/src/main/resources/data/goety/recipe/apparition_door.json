@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "h": "#goety:haunted_logs",
+  "r": "minecraft:redstone",
+  "e": "goety:ectoplasm"
+ },
+ "pattern": [
+  "hrh",
+  "rer",
+  "hrh"
+ ],
+ "result": {
+  "id": "goety:apparition_door",
+  "count": 4
+ }
+}

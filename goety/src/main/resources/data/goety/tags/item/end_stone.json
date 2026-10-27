@@ -1,4 +1,11 @@
 {
  "replace": false,
- "values": []
+ "values": [
+  "goety:soiled_end_stone_bricks_heavy",
+  "goety:smooth_end_stone_fence",
+  "goety:soiled_cobbled_end_stone_heavy",
+  "goety:end_stone_pillar",
+  "goety:chorus_end_stone_pillar",
+  "goety:infused_end_stone_pillar"
+ ]
 }

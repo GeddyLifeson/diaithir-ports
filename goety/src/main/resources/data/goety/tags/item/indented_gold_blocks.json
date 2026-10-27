@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "#goety:indented_golds"
+  "#goety:indented_golds",
+  "goety:gold_trapdoor"
  ]
 }

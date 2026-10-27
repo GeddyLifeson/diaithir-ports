@@ -1,4 +1,8 @@
 {
+ "awakened_emerald_block": {
+  "diaithiris": "Smauragd dùisgti blok",
+  "english": "Block of Awakened Emerald"
+ },
  "cursed_metal_block": {
   "diaithiris": "Mietuilt maldaichti blok",
   "english": "Block of Cursed Metal"
@@ -10,6 +14,178 @@
  "dark_metal_block": {
   "diaithiris": "Miesgachad dourcha blok",
   "english": "Block of Dark Alloy"
+ },
+ "diamond_mold_block": {
+  "diaithiris": "Blok moldtuir daeimen",
+  "english": "Diamond Mold Block"
+ },
+ "dark_dirt": {
+  "diaithiris": "Salchur dourcha",
+  "english": "Dark Dirt"
+ },
+ "detritus": {
+  "diaithiris": "Smùar",
+  "english": "Detritus"
+ },
+ "soiled_spruce_planks": {
+  "diaithiris": "Klàrun giutas-dourcha saulach",
+  "english": "Soiled Spruce Planks"
+ },
+ "soiled_spruce_planks_heavy": {
+  "diaithiris": "Klàrun giutas-dourcha saulach troum",
+  "english": "Heavy Soiled Spruce Planks"
+ },
+ "end_basalt": {
+  "diaithiris": "Basult krìuch",
+  "english": "End Basalt"
+ },
+ "end_basalt_stairs": {
+  "diaithiris": "Staidri basult krìuch",
+  "english": "End Basalt Stairs"
+ },
+ "end_basalt_slab": {
+  "diaithiris": "Liek basult krìuch",
+  "english": "End Basalt Slab"
+ },
+ "soiled_end_basalt_slight": {
+  "diaithiris": "Basult krìuch saulach aetrum",
+  "english": "Slight Soiled End Basalt"
+ },
+ "soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach",
+  "english": "Soiled End Basalt"
+ },
+ "top_soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach muldach",
+  "english": "Top Soiled End Basalt"
+ },
+ "bottom_soiled_end_basalt": {
+  "diaithiris": "Basult krìuch saulach bunu",
+  "english": "Bottom Soiled End Basalt"
+ },
+ "top_dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach muldach",
+  "english": "Top Dirty End Basalt"
+ },
+ "bottom_dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach bunu",
+  "english": "Bottom Dirty End Basalt"
+ },
+ "dirty_end_basalt": {
+  "diaithiris": "Basult krìuch saulach",
+  "english": "Dirty End Basalt"
+ },
+ "end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch",
+  "english": "End Basalt Bricks"
+ },
+ "end_basalt_brick_stairs": {
+  "diaithiris": "Staidri breigen basult krìuch",
+  "english": "End Basalt Brick Stairs"
+ },
+ "end_basalt_brick_slab": {
+  "diaithiris": "Liek breigen basult krìuch",
+  "english": "End Basalt Brick Slab"
+ },
+ "soiled_end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch saulach",
+  "english": "Soiled End Basalt Bricks"
+ },
+ "smooth_end_basalt_bricks": {
+  "diaithiris": "Breigen basult krìuch rèid",
+  "english": "Smooth End Basalt Bricks"
+ },
+ "end_rock": {
+  "diaithiris": "Krieg krìuch",
+  "english": "End Rock"
+ },
+ "end_rock_stairs": {
+  "diaithiris": "Staidri krieg krìuch",
+  "english": "End Rock Stairs"
+ },
+ "end_rock_slab": {
+  "diaithiris": "Liek krieg krìuch",
+  "english": "End Rock Slab"
+ },
+ "soiled_end_rock": {
+  "diaithiris": "Krieg krìuch saulach",
+  "english": "Soiled End Rock"
+ },
+ "grown_end_rock": {
+  "diaithiris": "Krieg krìuch fàista",
+  "english": "Grown End Rock"
+ },
+ "dirty_end_rock": {
+  "diaithiris": "Krieg krìuch saulach",
+  "english": "Dirty End Rock"
+ },
+ "end_rock_slate": {
+  "diaithiris": "Krieg krìuch leigach",
+  "english": "Slated End Rock"
+ },
+ "end_rock_bricks": {
+  "diaithiris": "Breigen krieg krìuch",
+  "english": "End Rock Bricks"
+ },
+ "end_rock_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg krìuch",
+  "english": "End Rock Brick Stairs"
+ },
+ "end_rock_brick_slab": {
+  "diaithiris": "Liek breigen krieg krìuch",
+  "english": "End Rock Brick Slab"
+ },
+ "end_rock_brick_wall": {
+  "diaithiris": "Balda breigen krieg krìuch",
+  "english": "End Rock Brick Wall"
+ },
+ "end_rock_brick_fence": {
+  "diaithiris": "Kaldaid breigen krieg krìuch",
+  "english": "End Rock Brick Fence"
+ },
+ "soiled_end_rock_bricks": {
+  "diaithiris": "Breigen krieg krìuch saulach",
+  "english": "Soiled End Rock Bricks"
+ },
+ "end_rock_chiseled": {
+  "diaithiris": "Krieg krìuch snaidti",
+  "english": "Chiseled End Rock"
+ },
+ "soiled_end_rock_chiseled": {
+  "diaithiris": "Krieg krìuch snaidti saulach",
+  "english": "Soiled Chiseled End Rock"
+ },
+ "end_limestone": {
+  "diaithiris": "Klach-aeil krìuch",
+  "english": "End Limestone"
+ },
+ "end_limestone_stairs": {
+  "diaithiris": "Staidri klach-aeil krìuch",
+  "english": "End Limestone Stairs"
+ },
+ "end_limestone_slab": {
+  "diaithiris": "Liek klach-aeil krìuch",
+  "english": "End Limestone Slab"
+ },
+ "mixed_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch miesgaichti",
+  "english": "Mixed End Limestone"
+ },
+ "soiled_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch saulach",
+  "english": "Soiled End Limestone"
+ },
+ "dirty_end_limestone_slight": {
+  "diaithiris": "Klach-aeil krìuch saulach aetrum",
+  "english": "Slight Dirty End Limestone"
+ },
+ "dirty_end_limestone": {
+  "diaithiris": "Klach-aeil krìuch saulach",
+  "english": "Dirty End Limestone"
+ },
+ "soiled_end_dirt": {
+  "diaithiris": "Salchur krìuch saulach",
+  "english": "Soiled End Dirt"
  },
  "jade_tiles": {
   "diaithiris": "Liekagun seidi",
@@ -111,6 +287,14 @@
   "diaithiris": "Sgeilpi-liebrigna taibsech",
   "english": "Haunted Bookshelf"
  },
+ "dark_pressure_plate": {
+  "diaithiris": "Klàr-brutaid dourcha",
+  "english": "Dark Pressure Plate"
+ },
+ "apparition_door": {
+  "diaithiris": "Douras taibsi",
+  "english": "Apparition Door"
+ },
  "rotten_planks": {
   "diaithiris": "Klàrun lobti",
   "english": "Rotten Planks"
@@ -198,6 +382,46 @@
  "marsh_door": {
   "diaithiris": "Douras bouglach",
   "english": "Marsh Door"
+ },
+ "weathering_oak_planks": {
+  "diaithiris": "Klàrun daurach kaited",
+  "english": "Weathering Oak Planks"
+ },
+ "weathered_oak_planks": {
+  "diaithiris": "Klàrun daurach kaitti",
+  "english": "Weathered Oak Planks"
+ },
+ "weathered_oak_stairs": {
+  "diaithiris": "Staidri daurach kaitti",
+  "english": "Weathered Oak Stairs"
+ },
+ "weathered_oak_slab": {
+  "diaithiris": "Liek daurach kaitti",
+  "english": "Weathered Oak Slab"
+ },
+ "weathered_oak_fence": {
+  "diaithiris": "Kaldaid daurach kaitti",
+  "english": "Weathered Oak Fence"
+ },
+ "weathering_dark_oak_planks": {
+  "diaithiris": "Klàrun daurach dourcha kaited",
+  "english": "Weathering Dark Oak Planks"
+ },
+ "weathered_dark_oak_planks": {
+  "diaithiris": "Klàrun daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Planks"
+ },
+ "weathered_dark_oak_stairs": {
+  "diaithiris": "Staidri daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Stairs"
+ },
+ "weathered_dark_oak_slab": {
+  "diaithiris": "Liek daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Slab"
+ },
+ "weathered_dark_oak_fence": {
+  "diaithiris": "Kaldaid daurach dourcha kaitti",
+  "english": "Weathered Dark Oak Fence"
  },
  "windswept_planks": {
   "diaithiris": "Klàrun gaetach",
@@ -367,6 +591,142 @@
   "diaithiris": "Balda kas takaichti",
   "english": "Studded Steep Wall"
  },
+ "sky_wood_planks": {
+  "diaithiris": "Klàrun fiud speiri",
+  "english": "Sky Wood Planks"
+ },
+ "sky_wood_slab": {
+  "diaithiris": "Liek fiud speiri",
+  "english": "Sky Wood Slab"
+ },
+ "sky_wood_stairs": {
+  "diaithiris": "Staidri fiud speiri",
+  "english": "Sky Wood Stairs"
+ },
+ "chorus_planks": {
+  "diaithiris": "Klàrun keòl",
+  "english": "Chorus Planks"
+ },
+ "soiled_chorus_planks": {
+  "diaithiris": "Klàrun keòl saulach",
+  "english": "Soiled Chorus Planks"
+ },
+ "soiled_chorus_planks_heavy": {
+  "diaithiris": "Klàrun keòl saulach troum",
+  "english": "Heavy Soiled Chorus Planks"
+ },
+ "thatched_chorus_planks": {
+  "diaithiris": "Klàrun keòl tugaichti",
+  "english": "Thatched Chorus Planks"
+ },
+ "chorus_log": {
+  "diaithiris": "Stok keòl",
+  "english": "Chorus Log"
+ },
+ "chorus_wood": {
+  "diaithiris": "Fiud keòl",
+  "english": "Chorus Wood"
+ },
+ "blossoming_chorus_wood": {
+  "diaithiris": "Fiud keòl fuo-fhlùar",
+  "english": "Blossoming Chorus Wood"
+ },
+ "blooming_chorus_wood": {
+  "diaithiris": "Fiud keòl fàsu",
+  "english": "Blooming Chorus Wood"
+ },
+ "studded_chorus_wood": {
+  "diaithiris": "Fiud keòl takaichti",
+  "english": "Studded Chorus Wood"
+ },
+ "chorus_wood_stairs": {
+  "diaithiris": "Staidri fiud keòl",
+  "english": "Chorus Wood Stairs"
+ },
+ "chorus_wood_slab": {
+  "diaithiris": "Liek fiud keòl",
+  "english": "Chorus Wood Slab"
+ },
+ "chorus_pressure_plate": {
+  "diaithiris": "Klàr-brutaid keòl",
+  "english": "Chorus Pressure Plate"
+ },
+ "chorus_trapdoor": {
+  "diaithiris": "Douras-toild keòl",
+  "english": "Chorus Trapdoor"
+ },
+ "chorus_button": {
+  "diaithiris": "Putun keòl",
+  "english": "Chorus Button"
+ },
+ "chorus_stairs": {
+  "diaithiris": "Staidri keòl",
+  "english": "Chorus Stairs"
+ },
+ "chorus_slab": {
+  "diaithiris": "Liek keòl",
+  "english": "Chorus Slab"
+ },
+ "chorus_fence_gate": {
+  "diaithiris": "Gieta kaldaid keòl",
+  "english": "Chorus Fence Gate"
+ },
+ "chorus_fence": {
+  "diaithiris": "Kaldaid keòl",
+  "english": "Chorus Fence"
+ },
+ "chorus_door": {
+  "diaithiris": "Douras keòl",
+  "english": "Chorus Door"
+ },
+ "corrupt_chorus_planks": {
+  "diaithiris": "Klàrun keòl truoildti",
+  "english": "Corrupted Chorus Planks"
+ },
+ "soiled_corrupt_chorus_planks": {
+  "diaithiris": "Klàrun keòl truoildti saulach",
+  "english": "Soiled Corrupted Chorus Planks"
+ },
+ "corrupt_chorus_log": {
+  "diaithiris": "Stok keòl truoildti",
+  "english": "Corrupted Chorus Log"
+ },
+ "corrupt_chorus_wood": {
+  "diaithiris": "Fiud keòl truoildti",
+  "english": "Corrupted Chorus Wood"
+ },
+ "corrupt_chorus_pressure_plate": {
+  "diaithiris": "Klàr-brutaid keòl truoildti",
+  "english": "Corrupted Chorus Pressure Plate"
+ },
+ "corrupt_chorus_trapdoor": {
+  "diaithiris": "Douras-toild keòl truoildti",
+  "english": "Corrupted Chorus Trapdoor"
+ },
+ "corrupt_chorus_button": {
+  "diaithiris": "Putun keòl truoildti",
+  "english": "Corrupted Chorus Button"
+ },
+ "corrupt_chorus_stairs": {
+  "diaithiris": "Staidri keòl truoildti",
+  "english": "Corrupted Chorus Stairs"
+ },
+ "corrupt_chorus_slab": {
+  "diaithiris": "Liek keòl truoildti",
+  "english": "Corrupted Chorus Slab"
+ },
+ "corrupt_chorus_fence_gate": {
+  "diaithiris": "Gieta kaldaid keòl truoildti",
+  "english": "Corrupted Chorus Fence Gate"
+ },
+ "corrupt_chorus_fence": {
+  "diaithiris": "Kaldaid keòl truoildti",
+  "english": "Corrupted Chorus Fence"
+ },
+ "corrupt_chorus_door": {
+  "diaithiris": "Douras keòl truoildti",
+  "english": "Corrupted Chorus Door"
+ },
  "shade_stone": {
   "diaithiris": "Klach sgàili",
   "english": "Shade Stone"
@@ -423,6 +783,34 @@
   "diaithiris": "Kolb klach mìa-fhortunach",
   "english": "Ominous Stone Pillar"
  },
+ "soiled_end_stone_bricks_heavy": {
+  "diaithiris": "Breigen klach krìuch saulach troum",
+  "english": "Heavy Soiled End Stone Bricks"
+ },
+ "soiled_cobbled_end_stone_heavy": {
+  "diaithiris": "Klach krìuch kloichti saulach troum",
+  "english": "Heavy Soiled Cobbled End Stone"
+ },
+ "end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch",
+  "english": "End Stone Pillar"
+ },
+ "chorus_end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch keòl",
+  "english": "Chorus End Stone Pillar"
+ },
+ "infused_end_stone_pillar": {
+  "diaithiris": "Kolb klach krìuch lìunta",
+  "english": "Infused End Stone Pillar"
+ },
+ "end_rod_block": {
+  "diaithiris": "Blok slaut krìuch",
+  "english": "End Rod Block"
+ },
+ "soiled_purpur_block": {
+  "diaithiris": "Blok puirpur saulach",
+  "english": "Soiled Purpur Block"
+ },
  "shade_stone_slab": {
   "diaithiris": "Liek klach sgàili",
   "english": "Shade Stone Slab"
@@ -446,6 +834,10 @@
  "ominous_stone_pillar_slab": {
   "diaithiris": "Liek kolb klach mìa-fhortunach",
   "english": "Ominous Stone Pillar Slab"
+ },
+ "dark_dirt_slab": {
+  "diaithiris": "Liek salchur dourcha",
+  "english": "Dark Dirt Slab"
  },
  "shade_stone_stairs": {
   "diaithiris": "Staidri klach sgàili",
@@ -478,6 +870,14 @@
  "cragrocks_fence": {
   "diaithiris": "Kaldaid kriegun",
   "english": "Cragrocks Fence"
+ },
+ "gold_trapdoor": {
+  "diaithiris": "Douras-toild òru",
+  "english": "Gold Trapdoor"
+ },
+ "smooth_end_stone_fence": {
+  "diaithiris": "Kaldaid klach krìuch rèid",
+  "english": "Smooth End Stone Fence"
  },
  "spent_totem": {
   "diaithiris": "Anmun tòtum kaitti",

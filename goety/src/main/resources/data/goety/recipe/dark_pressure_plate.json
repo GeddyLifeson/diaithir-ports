@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:haunted_pressure_plate",
+  "goety:ectoplasm"
+ ],
+ "result": {
+  "id": "goety:dark_pressure_plate",
+  "count": 1
+ }
+}

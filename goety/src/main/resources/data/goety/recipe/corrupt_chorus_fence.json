@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:stick",
+  "W": "goety:corrupt_chorus_planks"
+ },
+ "pattern": [
+  "W#W",
+  "W#W"
+ ],
+ "result": {
+  "id": "goety:corrupt_chorus_fence",
+  "count": 3
+ }
+}
