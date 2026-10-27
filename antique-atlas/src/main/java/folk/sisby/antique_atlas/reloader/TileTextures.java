@@ -58,6 +58,7 @@ public class TileTextures extends SimplePreparableReloadListener<Map<Identifier,
 
 	@Override
 	protected void apply(Map<Identifier, TileTextureMeta> prepared, ResourceManager manager, ProfilerFiller profiler) {
+		folk.sisby.antique_atlas.util.TextureSizes.clear();
 		AntiqueAtlas.LOGGER.debug("[Antique Atlas] Reloading Tile Textures...");
 		// Validate IDs
 		prepared.forEach((id, meta) -> meta.warnMissing(id, prepared.keySet()));

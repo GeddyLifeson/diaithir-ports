@@ -12,6 +12,8 @@ import folk.sisby.antique_atlas.util.ColorUtil;
 import folk.sisby.antique_atlas.util.Gfx;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import folk.sisby.antique_atlas.util.MathUtil;
+import folk.sisby.antique_atlas.util.TextureSizes;
+import folk.sisby.antique_atlas.util.TileSampling;
 import folk.sisby.antique_atlas.util.Rect;
 import folk.sisby.surveyor.PlayerSummary;
 import folk.sisby.surveyor.landmark.Landmark;
@@ -259,13 +261,15 @@ public interface AtlasRenderer {
 		}
 		int subTilePixels = tilePixels() / 2;
 		tileTextures.forEach((texture, subtiles) -> {
+			int[] sheet = TextureSizes.of(texture.id());
+			int unit = TileSampling.unit(sheet[0]);
 			{
 				for (SubTile subtile : subtiles) {
 					int drawX = subtile.x * subTilePixels;
 					int drawY = subtile.y * subTilePixels;
 					// a non-scope bounds check allows subtile-level accuracy, and keeps border tiling accurate.
 					if (drawX * effectiveScale > mapX + mapWidth() - mapStartScreenX || drawY * effectiveScale > mapY + mapHeight() - mapStartScreenY || (drawX + subTilePixels) * effectiveScale < mapX - mapStartScreenX || (drawY + subTilePixels) * effectiveScale < mapY - mapStartScreenY) continue;
-					Gfx.blitScaled(g, texture.id(), drawX, drawY, subTilePixels, subTilePixels, subtile.getTextureU() * 8, subtile.getTextureV() * 8, 8, 8, 32, 48);
+					Gfx.blitScaled(g, texture.id(), drawX, drawY, subTilePixels, subTilePixels, subtile.getTextureU() * unit, subtile.getTextureV() * unit, unit, unit, sheet[0], sheet[1]);
 				}
 			}
 		});
