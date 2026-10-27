@@ -31,6 +31,9 @@ final class PotionSelfTest {
         var brewing = src.getServer().potionBrewing();
         if (!brewing.hasMix(new ItemStack(Items.SPLASH_POTION), new ItemStack(Items.GLOW_INK_SAC))) return "FAIL lingering recipe";
         if (!brewing.hasMix(new ItemStack(Items.SPLASH_POTION), new ItemStack(Items.DRAGON_BREATH))) return "FAIL vanilla lingering lost";
-        return "PASS potions stack 8, drink 1s, cooldown, stews 16, coal fuel, glow ink lingering";
+        var strongSwift = net.minecraft.world.item.alchemy.PotionContents.createItemStack(Items.POTION, net.minecraft.world.item.alchemy.Potions.SWIFTNESS);
+        if (!brewing.hasMix(strongSwift, new ItemStack(Items.AMETHYST_SHARD)) || !brewing.hasMix(strongSwift, new ItemStack(Items.HONEYCOMB))) return "FAIL honeycomb/amethyst mixes";
+        if (!brewing.hasMix(strongSwift, new ItemStack(Items.GLOWSTONE_DUST))) return "FAIL vanilla mix lost";
+        return "PASS potions stack 8, drink 1s, cooldown, stews 16, coal fuel, glow ink lingering, honeycomb/amethyst mixes";
     }
 }
