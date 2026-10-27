@@ -110,6 +110,7 @@ w(f"{ROOT}/age_gates.json", {"_doc": "Same shape as DiaithirRPG content/tech_age
 # tags
 w(f"{RES}/data/{ID}/tags/item/handles.json", {"values": [f"{ID}:handle", f"{ID}:simple_handle"]})
 w(f"{RES}/data/{ID}/tags/item/poles.json", {"values": [f"{ID}:pole", f"{ID}:simple_pole"]})
+w(f"{RES}/data/c/tags/item/ingots/bronze.json", {"values": []})  # exists even without a bronze mod; other mods add to it
 w(f"{RES}/data/{ID}/tags/item/bronze_materials.json", {"values": [{"id": "#c:ingots/bronze", "required": False}]})
 sw = [f"{ID}:{t['id']}" for t in types if t["sweep"] > 0]
 w(f"{RES}/data/minecraft/tags/item/swords.json", {"values": sw})
