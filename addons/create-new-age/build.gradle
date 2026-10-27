@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = "${minecraft_version}-${mod_version}"
+base { archivesName = 'diaithir-create-new-age-neoforge' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+neoForge {
+    version = project.neo_version
+    mods { "${mod_id}" { sourceSet(sourceSets.main) } }
+}
+dependencies {
+    compileOnly files(project.create_jar)
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.compilerArgs += ['-Xmaxerrs','100000'] }
+processResources { inputs.property('v', mod_version); filesMatching('META-INF/neoforge.mods.toml') { expand(version: mod_version) } }
