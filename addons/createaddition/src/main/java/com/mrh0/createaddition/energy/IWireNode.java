@@ -561,6 +561,36 @@ public interface IWireNode {
 		return null;
 	}
 
+	final class ClientHook {
+		public static volatile net.minecraft.world.entity.player.Player player;
+		private ClientHook() {}
+	}
+
+	/** Render bounds of a wire node: its block, every wire end and the sag, plus the player while placing a wire. */
+	static net.minecraft.world.phys.AABB wireBounds(net.minecraft.world.level.block.entity.BlockEntity be, net.minecraft.world.phys.AABB base) {
+		IWireNode te = (IWireNode) be;
+		BlockPos pos = be.getBlockPos();
+		int minX = pos.getX(), minY = pos.getY(), minZ = pos.getZ();
+		int maxX = minX, maxY = minY, maxZ = minZ;
+		for (int i = 0; i < te.getNodeCount(); i++) {
+			BlockPos other = te.getNodePos(i);
+			if (other == null) continue;
+			minX = Math.min(minX, other.getX());
+			minY = Math.min(minY, other.getY());
+			minZ = Math.min(minZ, other.getZ());
+			maxX = Math.max(maxX, other.getX());
+			maxY = Math.max(maxY, other.getY());
+			maxZ = Math.max(maxZ, other.getZ());
+		}
+		net.minecraft.world.phys.AABB box = new net.minecraft.world.phys.AABB(minX - 1, minY - 1, minZ - 1, maxX + 2, maxY + 2, maxZ + 2);
+		net.minecraft.world.entity.player.Player player = ClientHook.player;
+		if (player != null) {
+			com.mrh0.createaddition.util.Util.Triple<BlockPos, Integer, WireType> held = com.mrh0.createaddition.util.Util.getWireNodeOfSpools(player.getMainHandItem(), player.getOffhandItem());
+			if (held != null && held.a.equals(pos)) box = box.minmax(player.getBoundingBox());
+		}
+		return box;
+	}
+
 	int getMaxWireLength();
 	
 	static WireConnectResult connect(Level world, BlockPos pos1, int node1, BlockPos pos2, int node2, WireType type) {
