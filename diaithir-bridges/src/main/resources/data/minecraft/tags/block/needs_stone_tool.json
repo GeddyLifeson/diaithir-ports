@@ -1,7 +1,12 @@
 {
-  "replace": false,
   "values": [
     "diaithirbridges:tobardealain",
-    "diaithirbridges:lochrandraoidheachd"
+    "diaithirbridges:tobardealainumha",
+    "diaithirbridges:tobardealainoir",
+    "diaithirbridges:lochrandraoidheachd",
+    "diaithirbridges:lochrandraoidheachdumha",
+    "diaithirbridges:aibhnedealain",
+    "diaithirbridges:aibhnedealainumha",
+    "diaithirbridges:aibhnedealainoir"
   ]
 }

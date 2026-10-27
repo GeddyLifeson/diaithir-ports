@@ -1,4 +1,10 @@
 {
-  "block.diaithirbridges.tobardealain": "Tobardealain",
-  "block.diaithirbridges.lochrandraoidheachd": "L\u00f2chrandraoidheachd"
+  "block.diaithirbridges.tobardealain": "Toburdeluin",
+  "block.diaithirbridges.tobardealainumha": "Toburdeluinuima",
+  "block.diaithirbridges.tobardealainoir": "Toburdeluinòiri",
+  "block.diaithirbridges.lochrandraoidheachd": "Lòchrundraeidechd",
+  "block.diaithirbridges.lochrandraoidheachdumha": "Lòchrundraeidechduima",
+  "block.diaithirbridges.aibhnedealain": "Aibnedeluin",
+  "block.diaithirbridges.aibhnedealainumha": "Aibnedeluinuima",
+  "block.diaithirbridges.aibhnedealainoir": "Aibnedeluinòiri"
 }
