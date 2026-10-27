@@ -46,7 +46,7 @@ public class DinosaurChopBlock extends Block implements SimpleWaterloggedBlock {
     private final float saturationAmount;
 
     public DinosaurChopBlock(int foodAmount, float saturationAmount) {
-        super(Properties.of().mapColor(MapColor.COLOR_RED).strength(1F, 1.0F).sound(SoundType.CANDLE).noOcclusion().dynamicShape().randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).strength(1F, 1.0F).sound(SoundType.CANDLE).noOcclusion().dynamicShape().randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(BITES, Integer.valueOf(0)).setValue(WATERLOGGED, false));
         this.foodAmount = foodAmount;
         this.saturationAmount = saturationAmount;

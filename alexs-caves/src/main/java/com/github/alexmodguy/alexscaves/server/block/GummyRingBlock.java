@@ -61,7 +61,7 @@ public class GummyRingBlock extends DirectionalBlock implements BucketPickup, Li
             box(8.0D, 5.0D, 5.0D, 16.0D, 11.0D, 11.0D), BooleanOp.ONLY_FIRST);
 
     public GummyRingBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_RED).strength(2.0F).sound(ACSoundTypes.SQUISHY_CANDY).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).strength(2.0F).sound(ACSoundTypes.SQUISHY_CANDY).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(LIQUID_LOGGED, 0).setValue(FLOATING, Boolean.valueOf(false)).setValue(FACING, Direction.UP));
     }
 

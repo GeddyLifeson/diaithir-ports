@@ -31,11 +31,11 @@ public final class ACProps {
     public static void setItem(String name) { if (name == null) CURRENT_ITEM.remove(); else CURRENT_ITEM.set(name); }
 
     public static BlockBehaviour.Properties block() {
-        return withId(com.github.alexmodguy.alexscaves.server.misc.ACProps.block());
+        return withId(BlockBehaviour.Properties.of());
     }
 
     public static BlockBehaviour.Properties blockCopy(BlockBehaviour source) {
-        return withId(com.github.alexmodguy.alexscaves.server.misc.ACProps.blockCopy(source));
+        return withId(BlockBehaviour.Properties.ofFullCopy(source));
     }
 
     public static BlockBehaviour.Properties withId(BlockBehaviour.Properties p) {
@@ -44,7 +44,7 @@ public final class ACProps {
     }
 
     public static Item.Properties item() {
-        Item.Properties p = com.github.alexmodguy.alexscaves.server.misc.ACProps.item();
+        Item.Properties p = new Item.Properties();
         String n = CURRENT_ITEM.get();
         return n == null ? p : p.setId(itemKey(n));
     }

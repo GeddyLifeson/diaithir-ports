@@ -34,7 +34,7 @@ public class GingerbarrelBlock extends BarrelBlock {
     public static final VoxelShape SHAPE_Y_DOWN = Block.box(4, 6, 4, 12, 16, 12);
     public static final VoxelShape SHAPE_Z = Block.box(4, 0, 3, 12, 8, 13);
     public GingerbarrelBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F).sound(ACSoundTypes.DENSE_CANDY).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_BROWN).strength(1.5F).sound(ACSoundTypes.DENSE_CANDY).noOcclusion());
     }
 
     public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult result) {

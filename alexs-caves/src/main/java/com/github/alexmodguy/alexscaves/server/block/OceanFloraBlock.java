@@ -32,7 +32,7 @@ public class OceanFloraBlock extends BushBlock implements LiquidBlockContainer {
     }
 
     public OceanFloraBlock() {
-        super(Properties.of().mapColor(DyeColor.WHITE).dynamicShape().instabreak().sound(SoundType.WET_GRASS).offsetType(OffsetType.XZ));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).dynamicShape().instabreak().sound(SoundType.WET_GRASS).offsetType(OffsetType.XZ));
     }
 
     protected boolean propagatesSkylightDown(BlockState state) {

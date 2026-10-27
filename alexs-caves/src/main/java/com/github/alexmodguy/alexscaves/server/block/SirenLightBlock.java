@@ -78,7 +78,7 @@ public class SirenLightBlock extends BaseEntityBlock {
 
 
     protected SirenLightBlock() {
-        super(Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(1F, 12.0F).sound(SoundType.GLASS).noOcclusion().dynamicShape().lightLevel(poweredBlockEmission(10)));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(1F, 12.0F).sound(SoundType.GLASS).noOcclusion().dynamicShape().lightLevel(poweredBlockEmission(10)));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(POWERED, Boolean.valueOf(false)));
     }
 

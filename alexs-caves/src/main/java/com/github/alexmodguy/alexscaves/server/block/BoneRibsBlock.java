@@ -38,7 +38,7 @@ public class BoneRibsBlock extends HorizontalDirectionalBlock implements SimpleW
     private static final VoxelShape SHAPE_EAST = Block.box(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     public BoneRibsBlock() {
-        super(Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(UNDER, false).setValue(FACING, Direction.NORTH));
     }
 

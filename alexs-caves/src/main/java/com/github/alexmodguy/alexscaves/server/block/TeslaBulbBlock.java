@@ -42,7 +42,7 @@ public class TeslaBulbBlock extends BaseEntityBlock implements SimpleWaterlogged
     public static final VoxelShape SHAPE_UP = Block.box(3, 1, 3, 11, 15, 11);
 
     public TeslaBulbBlock() {
-        super(Properties.of().mapColor(DyeColor.WHITE).strength(3.0F, 10.0F).sound(SoundType.GLASS).lightLevel((i) -> 15));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).strength(3.0F, 10.0F).sound(SoundType.GLASS).lightLevel((i) -> 15));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(DOWN, Boolean.valueOf(false)));
     }
 

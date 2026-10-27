@@ -24,7 +24,7 @@ public class GuanoBlock extends FallingBlockWithColor {
     protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D);
 
     public GuanoBlock() {
-        super(Properties.of().mapColor(DyeColor.BROWN).strength(0.3F).sound(SoundType.FROGSPAWN), 0X402721);
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.BROWN).strength(0.3F).sound(SoundType.FROGSPAWN), 0X402721);
     }
 
     public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {

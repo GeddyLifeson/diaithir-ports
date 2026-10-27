@@ -34,7 +34,7 @@ public class BeholderBlock extends BaseEntityBlock implements SimpleWaterloggedB
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected BeholderBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_RED).noCollision().strength(1F, 12.0F).sound(ACSoundTypes.BEHOLDER));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).noCollision().strength(1F, 12.0F).sound(ACSoundTypes.BEHOLDER));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 

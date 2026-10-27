@@ -48,7 +48,7 @@ public class HologramProjectorBlock extends BaseEntityBlock implements SimpleWat
     }
 
     public HologramProjectorBlock() {
-        super(Properties.of().mapColor(DyeColor.WHITE).strength(1.0F, 5.0F).sound(SoundType.METAL).lightLevel((i) -> 10));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).strength(1.0F, 5.0F).sound(SoundType.METAL).lightLevel((i) -> 10));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 

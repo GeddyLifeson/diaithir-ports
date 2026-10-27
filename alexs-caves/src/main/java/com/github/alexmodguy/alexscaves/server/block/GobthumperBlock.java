@@ -43,7 +43,7 @@ public class GobthumperBlock extends BaseEntityBlock implements SimpleWaterlogge
     }
 
     protected GobthumperBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_PINK).strength(1F, 12.0F).sound(ACSoundTypes.SQUISHY_CANDY));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PINK).strength(1F, 12.0F).sound(ACSoundTypes.SQUISHY_CANDY));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 

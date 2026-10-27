@@ -68,7 +68,7 @@ public class CopperValveBlock extends BaseEntityBlock implements SimpleWaterlogg
 
 
     protected CopperValveBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3F, 12.0F).sound(SoundType.COPPER));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3F, 12.0F).sound(SoundType.COPPER));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(TURNED, Boolean.valueOf(false)));
     }
 

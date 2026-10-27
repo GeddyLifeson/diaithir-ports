@@ -111,7 +111,7 @@ public class LicowitchAttackGoal extends Goal {
                         } else if (potionCooldown <= 0 && distance < 10.0D && !target.hasEffect(MobEffects.HUNGER)) {
                             enqueuedAttackType = 3;
                             licowitch.updateHeldItems = false;
-                            licowitch.setItemInHand(InteractionHand.MAIN_HAND, LicowitchEntity.hungerPotion.copy());
+                            licowitch.setItemInHand(InteractionHand.MAIN_HAND, LicowitchEntity.hungerPotion().copy());
                             potionCooldown = 100;
                         }
                     }
@@ -151,7 +151,7 @@ public class LicowitchAttackGoal extends Goal {
         double d2 = target.getZ() + vec3.z - licowitch.getZ();
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
 
-        ThrownSplashPotion thrownpotion = new ThrownSplashPotion(licowitch.level(), licowitch, LicowitchEntity.hungerPotion);
+        ThrownSplashPotion thrownpotion = new ThrownSplashPotion(licowitch.level(), licowitch, LicowitchEntity.hungerPotion());
         thrownpotion.setXRot(thrownpotion.getXRot() - -20.0F);
         thrownpotion.shoot(d0, d1 + d3 * 0.2D, d2, 0.75F, 8.0F);
         if (!licowitch.isSilent()) {

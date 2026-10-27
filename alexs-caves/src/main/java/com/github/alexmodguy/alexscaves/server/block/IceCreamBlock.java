@@ -31,7 +31,7 @@ public class IceCreamBlock extends Block {
     private final int dripColor;
 
     public IceCreamBlock(int dripColor) {
-        super(Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(3F).sound(ACSoundTypes.SQUISHY_CANDY));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.TERRACOTTA_WHITE).requiresCorrectToolForDrops().strength(3F).sound(ACSoundTypes.SQUISHY_CANDY));
         this.registerDefaultState(this.defaultBlockState().setValue(TYPE, 0));
         this.dripColor = dripColor;
     }

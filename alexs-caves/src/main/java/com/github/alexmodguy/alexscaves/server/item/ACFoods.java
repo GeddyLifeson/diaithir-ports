@@ -11,10 +11,10 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 /** Foods in the 26.1 form: FoodProperties plus a Consumable carrying the status effects. */
 public class ACFoods {
-    public record Food(FoodProperties food, Consumable consumable, ItemStack remainder) {
+    public record Food(FoodProperties food, Consumable consumable, boolean bowl) {
         public net.minecraft.world.item.Item.Properties apply(net.minecraft.world.item.Item.Properties properties) {
             properties = properties.food(food, consumable);
-            return remainder.isEmpty() ? properties : properties.usingConvertsTo(remainder.getItem());
+            return bowl ? properties.usingConvertsTo(Items.BOWL) : properties;
         }
     }
 
@@ -30,7 +30,7 @@ public class ACFoods {
         if (always) b.alwaysEdible();
         Consumable.Builder c = Consumable.builder();
         if (effect != null) c.onConsume(new ApplyStatusEffectsConsumeEffect(effect, prob));
-        return new Food(b.build(), c.build(), bowl ? new ItemStack(Items.BOWL) : ItemStack.EMPTY);
+        return new Food(b.build(), c.build(), bowl);
     }
 
     public static final Food TRILOCARIS_TAIL = make(2, 0.3F, false, null, 1.0F, false);

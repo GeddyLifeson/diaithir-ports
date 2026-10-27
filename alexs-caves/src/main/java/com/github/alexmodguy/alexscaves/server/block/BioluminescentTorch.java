@@ -27,7 +27,7 @@ public class BioluminescentTorch extends TorchBlock implements SimpleWaterlogged
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public BioluminescentTorch() {
-        super(ParticleTypes.SMOKE, Properties.of().mapColor(MapColor.SAND).sound(SoundType.WOOD).noCollision().lightLevel(state -> 15).instabreak().noOcclusion());
+        super(ParticleTypes.SMOKE, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.SAND).sound(SoundType.WOOD).noCollision().lightLevel(state -> 15).instabreak().noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
 

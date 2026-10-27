@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 public class AmberMonolithBlock extends BaseEntityBlock {
 
     protected AmberMonolithBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3F, 12.0F).sound(ACSoundTypes.AMBER_MONOLITH).lightLevel(block -> 5).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3F, 12.0F).sound(ACSoundTypes.AMBER_MONOLITH).lightLevel(block -> 5).noOcclusion());
     }
 
     @Override

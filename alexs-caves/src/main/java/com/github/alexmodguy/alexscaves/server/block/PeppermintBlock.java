@@ -34,7 +34,7 @@ public class PeppermintBlock extends Block implements SimpleWaterloggedBlock {
     private final VoxelShape shapeNorth;
 
     public PeppermintBlock(double distFromEdge, double height) {
-        super(Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(ACSoundTypes.HARD_CANDY).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(ACSoundTypes.HARD_CANDY).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(FACING, Direction.UP));
         shapeUp = Block.box(distFromEdge, 0.0D, distFromEdge, 16.0D - distFromEdge, height, 16.0D - distFromEdge);
         shapeDown = Block.box(distFromEdge, 16.0D - height, distFromEdge, 16.0D - distFromEdge, 16.0D, 16.0D - distFromEdge);

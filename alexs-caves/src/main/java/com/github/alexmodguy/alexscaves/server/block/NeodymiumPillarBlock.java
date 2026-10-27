@@ -27,7 +27,7 @@ public class NeodymiumPillarBlock extends Block {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     public NeodymiumPillarBlock(boolean azure) {
-        super(Properties.of().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(2F, 6.0F).sound(ACSoundTypes.NEODYMIUM).lightLevel((i) -> 2));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(2F, 6.0F).sound(ACSoundTypes.NEODYMIUM).lightLevel((i) -> 2));
         this.registerDefaultState(this.defaultBlockState().setValue(TOP, Boolean.valueOf(true)).setValue(FACING, Direction.UP));
         this.azure = azure;
     }

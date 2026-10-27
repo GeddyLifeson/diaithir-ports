@@ -36,7 +36,7 @@ public class ThinBoneBlock extends RotatedPillarBlock implements SimpleWaterlogg
     public static final VoxelShape SHAPE_Z = Block.box(6, 6, 0, 10, 10, 16);
 
     public ThinBoneBlock() {
-        super(Properties.of().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.SAND).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(OFFSET, 1).setValue(AXIS, Direction.Axis.Y));
     }
 

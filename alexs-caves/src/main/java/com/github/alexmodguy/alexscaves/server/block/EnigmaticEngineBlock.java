@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class EnigmaticEngineBlock extends BaseEntityBlock {
     public EnigmaticEngineBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(6F, 12.0F).sound(SoundType.COPPER));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(6F, 12.0F).sound(SoundType.COPPER));
     }
 
     @Override

@@ -25,7 +25,7 @@ public class DepthGlassBlock extends TransparentBlock {
     public static final BooleanProperty SOUTH = BooleanProperty.create("south");
 
     protected DepthGlassBlock() {
-        super(Properties.of().mapColor(MapColor.METAL).friction(0.97F).strength(0.2F).sound(SoundType.GLASS).noOcclusion().isRedstoneConductor(DepthGlassBlock::noOption).isSuffocating(DepthGlassBlock::noOption).isViewBlocking(DepthGlassBlock::noOption).emissiveRendering(DepthGlassBlock::yes));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).friction(0.97F).strength(0.2F).sound(SoundType.GLASS).noOcclusion().isRedstoneConductor(DepthGlassBlock::noOption).isSuffocating(DepthGlassBlock::noOption).isViewBlocking(DepthGlassBlock::noOption).emissiveRendering(DepthGlassBlock::yes));
         this.registerDefaultState(this.stateDefinition.any().setValue(UP, Boolean.valueOf(false))
                 .setValue(DOWN, Boolean.valueOf(false))
                 .setValue(EAST, Boolean.valueOf(false))

@@ -37,7 +37,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
     public static final VoxelShape SHAPE_TOP = Block.box(3, 0, 3, 13, 16, 13);
 
     public PingPongSpongeBlock() {
-        super(Properties.of().mapColor(DyeColor.WHITE).dynamicShape().instabreak().lightLevel(blockstate -> 5).sound(SoundType.WET_GRASS).offsetType(OffsetType.XZ));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).dynamicShape().instabreak().lightLevel(blockstate -> 5).sound(SoundType.WET_GRASS).offsetType(OffsetType.XZ));
         this.registerDefaultState(this.defaultBlockState().setValue(TOP, Boolean.valueOf(true)));
     }
 

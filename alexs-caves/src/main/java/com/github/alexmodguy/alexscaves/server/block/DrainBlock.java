@@ -43,7 +43,7 @@ public class DrainBlock extends TransparentBlock {
     private static final int DRAIN_TIME = 20;
 
     public DrainBlock() {
-        super(Properties.of().mapColor(MapColor.METAL).pushReaction(PushReaction.IGNORE).noOcclusion().requiresCorrectToolForDrops().strength(5F, 15.0F).sound(SoundType.METAL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).pushReaction(PushReaction.IGNORE).noOcclusion().requiresCorrectToolForDrops().strength(5F, 15.0F).sound(SoundType.METAL));
         this.registerDefaultState(this.defaultBlockState().setValue(OPEN, Boolean.valueOf(false)));
     }
 

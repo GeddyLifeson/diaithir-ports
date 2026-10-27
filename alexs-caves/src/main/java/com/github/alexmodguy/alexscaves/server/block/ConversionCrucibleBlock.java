@@ -45,7 +45,7 @@ public class ConversionCrucibleBlock extends BaseEntityBlock {
     private static final VoxelShape SUCK = Shapes.or(INSIDE, ABOVE);
 
     public ConversionCrucibleBlock() {
-        super(Properties.of().mapColor(MapColor.GOLD).requiresCorrectToolForDrops().strength(5F, 12.0F).sound(SoundType.METAL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.GOLD).requiresCorrectToolForDrops().strength(5F, 12.0F).sound(SoundType.METAL));
     }
 
     @Override
