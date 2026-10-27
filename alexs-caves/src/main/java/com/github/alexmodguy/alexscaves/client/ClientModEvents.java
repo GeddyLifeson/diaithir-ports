@@ -52,7 +52,15 @@ public class ClientModEvents {
             var r = event.getPlayerRenderer(skin);
             if (r != null) ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.CustomArmorLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r));
         }
+        for (var skin : event.getSkins()) {
+            var r = event.getPlayerRenderer(skin);
+            if (r != null) ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.ACPotionEffectLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r));
+        }
         for (var type : event.getEntityTypes()) {
+            var r0 = event.getRenderer((net.minecraft.world.entity.EntityType) type);
+            if (r0 instanceof net.minecraft.client.renderer.entity.LivingEntityRenderer && type != net.minecraft.world.entity.EntityType.ENDER_DRAGON) {
+                ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r0).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.ACPotionEffectLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r0));
+            }
             var r = event.getRenderer((net.minecraft.world.entity.EntityType) type);
             if (r instanceof net.minecraft.client.renderer.entity.HumanoidMobRenderer || r instanceof net.minecraft.client.renderer.entity.ArmorStandRenderer) {
                 ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.CustomArmorLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r));
@@ -63,6 +71,12 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void registerScreens(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent event) {
         event.register(com.github.alexmodguy.alexscaves.server.inventory.ACMenuRegistry.SPELUNKERY_TABLE_MENU.get(), com.github.alexmodguy.alexscaves.client.gui.SpelunkeryTableScreen::new);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SubscribeEvent
+    public static void registerRenderStateModifiers(net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent event) {
+        event.registerEntityModifier((Class) net.minecraft.client.renderer.entity.LivingEntityRenderer.class, (java.util.function.BiConsumer) (Object e, Object st) -> com.github.alexmodguy.alexscaves.client.render.entity.layer.ACPotionEffectLayer.extract((net.minecraft.world.entity.LivingEntity) e, (net.minecraft.client.renderer.entity.state.LivingEntityRenderState) st));
     }
 
     @SubscribeEvent
