@@ -13,8 +13,8 @@ neoForge {
         client {
             client()
             gameDirectory = file('run-client')
-            jvmArguments.addAll('-Xmx6G', '-Dwiretech.demo=true')
-            programArguments.addAll('--username', 'Dev', '--quickPlaySingleplayer', 'wt')
+            jvmArguments.addAll('-Xmx6G', '-Dwiretech.demo=false')
+            programArguments.addAll('--username', 'Dev', '--quickPlayMultiplayer', 'localhost:25565')
         }
         server {
             server()
