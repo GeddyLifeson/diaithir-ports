@@ -3,6 +3,6 @@ filename = "diaithir-sounds.zip"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-tooltips-2/client/resourcepacks/diaithir-sounds.zip"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-food-1/client/resourcepacks/diaithir-sounds.zip"
 hash-format = "sha256"
 hash = "5939b2a4c53aa7cf8a6a2f7238c8d0b18b3c43ab44182c223cd5b14e315dba96"

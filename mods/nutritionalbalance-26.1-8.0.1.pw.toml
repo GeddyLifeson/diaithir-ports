@@ -1,0 +1,12 @@
+name = "nutritionalbalance"
+filename = "nutritionalbalance-26.1-8.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/OECzAr94/versions/Ef1r7FhU/nutritionalbalance-26.1-8.0.1.jar"
+hash-format = "sha256"
+hash = "d72f8c861d62e29e72dc913e90b3aad036f8eaab3dd7b069dca5d1a85aba05ee"
+
+[update.modrinth]
+mod-id = "OECzAr94"
+version = "Ef1r7FhU"

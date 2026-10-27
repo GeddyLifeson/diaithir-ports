@@ -1,0 +1,12 @@
+name = "Spice of Life Onion_NEOFORGE"
+filename = "Spice of Life Onion_NEOFORGE_v1.5.6_mc26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/eHGYGKJz/versions/K4uDHMWQ/Spice%20of%20Life%20Onion_NEOFORGE_v1.5.6_mc26.1.2.jar"
+hash-format = "sha256"
+hash = "d975e3a4a0b0349341f925c75dcee3b801ef56b5a29bd12254c6e0bbe51f80d9"
+
+[update.modrinth]
+mod-id = "eHGYGKJz"
+version = "K4uDHMWQ"

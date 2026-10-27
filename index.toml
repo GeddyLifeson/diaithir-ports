@@ -10985,7 +10985,7 @@ metafile = true
 
 [[files]]
 file = "mods/CreativeCore_NEOFORGE_v2.14.16_mc26.1.2.pw.toml"
-hash = "9c3e8ef10e9776a57dd101e52059c57935b1aaf51fb62ea68d2904e3295f66bd"
+hash = "cda3dc678f898cb30380829e6d2de40ab9c3425639cf64560fe95dba5bdb59a5"
 metafile = true
 
 [[files]]
@@ -11322,6 +11322,11 @@ metafile = true
 [[files]]
 file = "mods/SimpleBackups-26.1.6.pw.toml"
 hash = "de14f3900239830d16f8e57d2d060f38de8041c0b2317daa6bcf6215a92f83de"
+metafile = true
+
+[[files]]
+file = "mods/Spice_of_Life_Onion_NEOFORGE_v1.5.6_mc26.1.2.pw.toml"
+hash = "c1b874474890449772176a4ab2d8f72d4f3cd48043f348652d9f8eefa5a03384"
 metafile = true
 
 [[files]]
@@ -11752,7 +11757,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "08f8502d341ce92dd9df03066cad0d5b85c5ae485d5fb3fb32487707927f75b6"
+hash = "67bcd4aff46786a234e3b901be219357522df801859f87640d9ce71c8b19d534"
 metafile = true
 
 [[files]]
@@ -11765,7 +11770,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "d3628cee9e3c2b28161d03a7068a1e02fc1253965c758a8fdbf249235a4ccd3c"
+hash = "db28d73562d5d9e6d54eb6f63f8f08695ab78bc14e3f8710d56fad26562eca78"
 metafile = true
 
 [[files]]
@@ -11778,7 +11783,7 @@ hash = "949692709e5661d0b1c2b23e093264d6a222ac57e6ab5694aded1f6bae3c91b4"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "fe7bf6b6d8490cba919aba279f1014b3dc7d6253b169abf8e0b3ff5e1643f7cd"
+hash = "2a47eba5dc76386e9549e7ed17e91279e2a6914b2103327209ba3a70f651ac18"
 metafile = true
 
 [[files]]
@@ -12311,6 +12316,11 @@ hash = "fd0f566611427aac6096cb5e9a19cf0bcaf63cad85e30bfc11df4e5b53d2beb6"
 metafile = true
 
 [[files]]
+file = "mods/nutritionalbalance-26.1-8.0.1.pw.toml"
+hash = "a7bec286fed168819a8af8ba1f47a383194bfd63bfacd00e3ec1ee6c23a437d6"
+metafile = true
+
+[[files]]
 file = "mods/occultism-26.1.2-neoforge-1.256.1.pw.toml"
 hash = "38124e715fcf24756940718e479d027789cb793738d98e6b785b5633b25bf33f"
 metafile = true
@@ -12755,10 +12765,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "4d1fc2313d231e1e329bb525842e63aaf65fc33e027123bff06364a698236c38"
+hash = "dde6e04c3822393d4835d59258ffb3d16f599295b82108908369b370190ce806"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "c01589cad10364693efc7fc4cad510094ce3489305025c79bfb8f745be97d450"
+hash = "1dd6107b217f67c19189e01888e52f4a0f0599af9785f092d971e6b5bd7a78e3"
 metafile = true
