@@ -30,8 +30,5 @@ public class UnrealiumCrossbowItem extends CrossbowItem {
 		projectile.setDeltaMovement(projectile.getDeltaMovement().scale(1.5));
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESConventionalTags.Items.INGOTS_UNREALIUM) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

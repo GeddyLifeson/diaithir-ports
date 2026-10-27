@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
 import net.minecraft.util.RandomSource;
 
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -35,7 +39,7 @@ import java.util.List;
 
 public class MechanicalSpawnerBlock extends BaseEntityBlock {
 	public static final MapCodec<MechanicalSpawnerBlock> CODEC = simpleCodec(MechanicalSpawnerBlock::new);
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	public static final IntegerProperty POWER = BlockStateProperties.POWER;
 
@@ -155,8 +159,8 @@ public class MechanicalSpawnerBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		super.appendHoverText(stack, context, tooltipDisplay, tooltipComponents, tooltipFlag);
 		Spawner.appendHoverText(stack, tooltipComponents, MechanicalSpawner.TAG_SPAWN_DATA);
 	}
 }

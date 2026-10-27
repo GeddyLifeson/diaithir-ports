@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NaturalSpawner;
@@ -59,7 +59,7 @@ public class MeteorShowerWeather extends AbstractWeather {
 							TinyCreteor tinyCreteor = ESEntities.TINY_CRETEOR.get().create(level);
 							if (tinyCreteor != null) {
 								tinyCreteor.moveTo(randomPos, 0.0F, 0.0F);
-								groupData = tinyCreteor.finalizeSpawn(level, difficulty, MobSpawnType.NATURAL, groupData);
+								groupData = tinyCreteor.finalizeSpawn(level, difficulty, EntitySpawnReason.NATURAL, groupData);
 								level.addFreshEntityWithPassengers(tinyCreteor);
 								LAST_SUCCESSFUL_SPAWN.put(level.dimension(), ticks);
 							}

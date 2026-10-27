@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -114,7 +116,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 	private void explode() {
 		this.gameEvent(GameEvent.EXPLODE, this.getOwner());
 		this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.FIREWORK_ROCKET_LARGE_BLAST, SoundSource.AMBIENT, 25.0F, 0.95F + this.random.nextFloat() * 0.1F);
-		if (level() instanceof ServerLevel serverLevel && serverLevel.dimension().location().equals(ESDimensions.STARLIGHT_KEY.location())) {
+		if (level() instanceof ServerLevel serverLevel && serverLevel.dimension().identifier().equals(ESDimensions.STARLIGHT_KEY.identifier())) {
 			for (int i = 0; i < 4; i++) {
 				Vec3 vec3 = position().offsetRandom(getRandom(), 1.5f);
 				for (int s = 0; s < serverLevel.players().size(); s++) {
@@ -172,14 +174,14 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 		super.readAdditionalSaveData(compound);
 		this.life = compound.getIntOr(TAG_LIFE, 0);
 		this.lifetime = compound.getIntOr(TAG_LIFETIME, 0);
-		if (compound.contains(TAG_ITEM, 10)) {
-			this.entityData.set(ITEM, ItemStack.parse(this.registryAccess(), compound.getCompound(TAG_ITEM)).orElseGet(AetherstrikeRocketEntity::getDefaultItem));
+		if (ESPortCompat.has(compound, TAG_ITEM)) {
+			this.entityData.set(ITEM, ItemStack.parse(this.registryAccess(), compound.childOrEmpty(TAG_ITEM)).orElseGet(AetherstrikeRocketEntity::getDefaultItem));
 		} else {
 			this.entityData.set(ITEM, getDefaultItem());
 		}
 
-		if (compound.contains(TAG_SHOT_AT_ANGLE)) {
-			this.entityData.set(SHOT_AT_ANGLE, compound.getBoolean(TAG_SHOT_AT_ANGLE));
+		if (ESPortCompat.has(compound, TAG_SHOT_AT_ANGLE)) {
+			this.entityData.set(SHOT_AT_ANGLE, compound.getBooleanOr(TAG_SHOT_AT_ANGLE, false));
 		}
 	}
 

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.misc;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -223,22 +225,22 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 		compoundTag.put(TAG_ITEM, this.getItem().save(this.registryAccess()));
 		getTarget().ifPresent(pos -> compoundTag.putLong(TAG_TARGET, pos.asLong()));
 		if (ownerId != null) {
-			compoundTag.putUUID(TAG_OWNER, ownerId);
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, ownerId);
 		}
 	}
 
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
-		if (compoundTag.contains(TAG_ITEM, CompoundTag.TAG_COMPOUND)) {
-			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.getCompound(TAG_ITEM)).orElse(this.getDefaultItem()));
+		if (ESPortCompat.has(compoundTag, TAG_ITEM)) {
+			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.childOrEmpty(TAG_ITEM)).orElse(this.getDefaultItem()));
 		} else {
 			this.setItem(this.getDefaultItem());
 		}
-		if (compoundTag.contains(TAG_TARGET)) {
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
 			this.signalTo(BlockPos.of(compoundTag.getLongOr(TAG_TARGET, 0L)));
 		}
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			this.ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			this.ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 	}
 

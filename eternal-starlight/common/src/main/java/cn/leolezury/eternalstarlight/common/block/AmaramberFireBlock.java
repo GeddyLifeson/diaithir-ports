@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.util.RandomSource;
 
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -34,7 +36,7 @@ public class AmaramberFireBlock extends BaseFireBlock {
 
 	@Override
 	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
-		entity.hurt(level.damageSources().inFire(), 1.0F);
+		ESPortCompat.hurt(entity, level.damageSources().inFire(), 1.0F);
 		if (entity instanceof LivingEntity living) {
 			living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));
 		}

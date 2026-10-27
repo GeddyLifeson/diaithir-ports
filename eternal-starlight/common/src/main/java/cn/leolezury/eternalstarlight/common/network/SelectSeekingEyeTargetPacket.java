@@ -76,7 +76,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 	private static BlockPos locate(SeekingEyeTargets.TargetType type, ResourceKey<?> key, ServerLevel level, ServerPlayer player) {
 		if (type == SeekingEyeTargets.TargetType.BOSS_STRUCTURE || type == SeekingEyeTargets.TargetType.NORMAL_STRUCTURE) {
 			Registry<Structure> registry = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
-			Optional<Holder.Reference<Structure>> holder = registry.getHolder(key.location());
+			Optional<Holder.Reference<Structure>> holder = registry.getHolder(key.identifier());
 			if (holder.isPresent()) {
 				Pair<BlockPos, Holder<Structure>> pair = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(holder.get()), player.blockPosition(), 100, false);
 				return pair != null ? pair.getFirst() : null;
@@ -84,7 +84,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 			return null;
 		}
 		if (type == SeekingEyeTargets.TargetType.BIOME) {
-			Pair<BlockPos, Holder<Biome>> pair = level.findClosestBiome3d(biome -> biome.is(key.location()), player.blockPosition(), 6400, 32, 64);
+			Pair<BlockPos, Holder<Biome>> pair = level.findClosestBiome3d(biome -> biome.is(key.identifier()), player.blockPosition(), 6400, 32, 64);
 			return pair != null ? pair.getFirst() : null;
 		}
 		return null;

@@ -1,5 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESAttributes;
 import com.google.common.base.Suppliers;
@@ -20,11 +28,11 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class UnrealiumArmorItem extends ArmorItem {
+public class UnrealiumArmorItem extends Item {
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public UnrealiumArmorItem(Holder<ArmorMaterial> materialHolder, Type type, Properties properties) {
-		super(materialHolder, type, properties);
+	public UnrealiumArmorItem(ArmorMaterial materialHolder, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(materialHolder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
@@ -64,26 +72,26 @@ public class UnrealiumArmorItem extends ArmorItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
 		if (getType() == Type.HELMET) {
-			list.add(CommonComponents.EMPTY);
-			list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_helmet")).withStyle(ChatFormatting.DARK_PURPLE));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_helmet.mute")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(CommonComponents.EMPTY);
+			list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_helmet")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_helmet.mute")).withStyle(ChatFormatting.DARK_PURPLE));
 		} else if (getType() == Type.CHESTPLATE) {
-			list.add(CommonComponents.EMPTY);
-			list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_chestplate")).withStyle(ChatFormatting.DARK_PURPLE));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_chestplate.mute")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(CommonComponents.EMPTY);
+			list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_chestplate")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_chestplate.mute")).withStyle(ChatFormatting.DARK_PURPLE));
 		} else if (getType() == Type.LEGGINGS) {
-			list.add(CommonComponents.EMPTY);
-			list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_leggings.mute")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(CommonComponents.EMPTY);
+			list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_leggings.mute")).withStyle(ChatFormatting.DARK_PURPLE));
 		} else if (getType() == Type.BOOTS) {
-			list.add(CommonComponents.EMPTY);
-			list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-			list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_boots.mute")).withStyle(ChatFormatting.DARK_PURPLE));
+			list.accept(CommonComponents.EMPTY);
+			list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+			list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".unrealium_boots.mute")).withStyle(ChatFormatting.DARK_PURPLE));
 		}
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 }

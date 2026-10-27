@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -55,7 +57,7 @@ public class WiltedPetal extends ThrowableProjectile {
 	protected void onHitEntity(EntityHitResult hitResult) {
 		super.onHitEntity(hitResult);
 		if (hitResult.getEntity() != getOwner()) {
-			hitResult.getEntity().hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.WILT, this, getOwner()), 8);
+			ESPortCompat.hurt(hitResult.getEntity(), ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.WILT, this, getOwner()), 8);
 		}
 		discard();
 	}

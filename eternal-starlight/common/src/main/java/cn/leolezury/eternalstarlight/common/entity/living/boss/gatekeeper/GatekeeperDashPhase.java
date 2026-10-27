@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorManager;
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
@@ -51,7 +53,7 @@ public class GatekeeperDashPhase extends BehaviorPhase<TheGatekeeper> {
 			}
 			if (entity.getBehaviorTicks() >= 16 && entity.getBehaviorTicks() <= 35) {
 				performMeleeAttack(entity, 1.5, true, 180, e -> {
-					if (!hitEntities.contains(e) && entity.doHurtTarget(e)) {
+					if (!hitEntities.contains(e) && ESPortCompat.doHurtTarget(entity, e)) {
 						e.hurtMarked = true;
 						e.addDeltaMovement(e.position().subtract(entity.position()).normalize().multiply(0.2, 0.1, 0.2));
 						hitEntities.add(e);

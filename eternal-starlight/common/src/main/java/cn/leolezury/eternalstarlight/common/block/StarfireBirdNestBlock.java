@@ -19,7 +19,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -36,7 +36,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -50,7 +50,7 @@ import java.util.List;
 public class StarfireBirdNestBlock extends BaseEntityBlock {
 	public static final MapCodec<StarfireBirdNestBlock> CODEC = simpleCodec(StarfireBirdNestBlock::new);
 	public static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final IntegerProperty EGGS = IntegerProperty.create("eggs", 0, 3);
 
 	@Override
@@ -77,7 +77,7 @@ public class StarfireBirdNestBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 		if (canAccessNestContent(state) && stack.is(ESTags.Items.STARFIRE_BIRD_FOOD) && level.getBlockEntity(pos) instanceof StarfireBirdNestBlockEntity nest && nest.getItems().stream().anyMatch(ItemStack::isEmpty)) {
 			if (!level.isClientSide() && nest.addSeeds(stack.copyWithCount(1))) {
 				nest.setLastSeedPlayer(player);
@@ -86,12 +86,12 @@ public class StarfireBirdNestBlock extends BaseEntityBlock {
 				}
 				stack.consume(1, player);
 			}
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		if (canAccessNestContent(state) && state.getValue(EGGS) < 3 && stack.is(ESItems.STARFIRE_BIRD_EGG.get())) {
 			stack.consume(1, player);
 			level.setBlockAndUpdate(pos, state.setValue(EGGS, state.getValue(EGGS) + 1));
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		if (canAccessNestContent(state) && state.getValue(EGGS) > 0 && (stack.isEmpty() || (stack.is(ESItems.STARFIRE_BIRD_EGG.get()) && stack.getCount() < stack.getMaxStackSize()))) {
 			if (stack.isEmpty()) {
@@ -100,7 +100,7 @@ public class StarfireBirdNestBlock extends BaseEntityBlock {
 				stack.grow(1);
 			}
 			level.setBlockAndUpdate(pos, state.setValue(EGGS, state.getValue(EGGS) - 1));
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
 	}

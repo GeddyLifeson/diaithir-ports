@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -89,7 +91,7 @@ public class CrystalCluster extends Entity implements TraceableEntity {
 			}
 			if (getSpawnedTicks() > 5 && getOwner() != null) {
 				for (LivingEntity livingEntity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(0.5))) {
-					if (ESEntityUtil.shouldHarm(getOwner(), livingEntity) && livingEntity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.CRYSTAL_INFECTION, this, getOwner()), 4)) {
+					if (ESEntityUtil.shouldHarm(getOwner(), livingEntity) && ESPortCompat.hurt(livingEntity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.CRYSTAL_INFECTION, this, getOwner()), 4)) {
 						livingEntity.addEffect(new MobEffectInstance(ESMobEffects.CRYSTAL_INFECTION.asHolder(), 120));
 					}
 				}
@@ -109,7 +111,7 @@ public class CrystalCluster extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -119,8 +121,8 @@ public class CrystalCluster extends Entity implements TraceableEntity {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput compoundTag) {
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
 	}
@@ -128,7 +130,7 @@ public class CrystalCluster extends Entity implements TraceableEntity {
 	@Override
 	protected void addAdditionalSaveData(ValueOutput compoundTag) {
 		if (owner != null) {
-			compoundTag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, owner.getUUID());
 		}
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 	}

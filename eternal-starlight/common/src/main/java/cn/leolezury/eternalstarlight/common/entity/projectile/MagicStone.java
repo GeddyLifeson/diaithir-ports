@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -62,7 +64,7 @@ public class MagicStone extends ThrowableItemProjectile {
 	protected void onHitEntity(EntityHitResult hitResult) {
 		super.onHitEntity(hitResult);
 		if (hitResult.getType() != HitResult.Type.MISS && getOwner() instanceof LivingEntity owner && ESEntityUtil.shouldHarm(owner, hitResult.getEntity())) {
-			hitResult.getEntity().hurt(damageSources().thrown(this, owner), (float) switch (getOwner()) {
+			ESPortCompat.hurt(hitResult.getEntity(), damageSources().thrown(this, owner), (float) switch (getOwner()) {
 				case Player ignored -> 4;
 				case LivingEntity living -> living.getAttribute(Attributes.ATTACK_DAMAGE) != null ? living.getAttributeValue(Attributes.ATTACK_DAMAGE) : 5;
 				default -> 5;

@@ -7,7 +7,7 @@ import cn.leolezury.eternalstarlight.common.registry.ESDataComponents;
 import cn.leolezury.eternalstarlight.common.util.ESBookUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +21,7 @@ public class ESBookItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (!player.level().isClientSide() && player instanceof ServerPlayer serverPlayer) {
 			GuideBook guideBook = stack.get(ESDataComponents.BOOK.get());
@@ -29,6 +29,6 @@ public class ESBookItem extends Item {
 				ESPlatform.INSTANCE.sendToClient(serverPlayer, new OpenBookPacket(guideBook.id(), new HashSet<>(ESBookUtil.getUnlockedParts(serverPlayer)), guideBook.allUnlocked()));
 			}
 		}
-		return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 }

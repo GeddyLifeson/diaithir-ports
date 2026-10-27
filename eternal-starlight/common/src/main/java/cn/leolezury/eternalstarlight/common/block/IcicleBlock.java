@@ -23,7 +23,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -33,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 	public static final MapCodec<IcicleBlock> CODEC = simpleCodec(IcicleBlock::new);
-	public static final DirectionProperty TIP_DIRECTION = BlockStateProperties.VERTICAL_DIRECTION;
+	public static final EnumProperty<Direction> TIP_DIRECTION = BlockStateProperties.VERTICAL_DIRECTION;
 	public static final EnumProperty<IcicleThickness> THICKNESS = EnumProperty.create("icicle_thickness", IcicleThickness.class);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 

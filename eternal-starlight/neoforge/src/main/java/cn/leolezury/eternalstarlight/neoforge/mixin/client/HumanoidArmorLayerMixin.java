@@ -35,7 +35,7 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
 
 	// no remap for forge method
 	@Inject(method = "renderTrim(Lnet/minecraft/core/Holder;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/armortrim/ArmorTrim;Lnet/minecraft/client/model/Model;Z)V", at = @At("HEAD"), remap = false, cancellable = true)
-	private void renderTrim(Holder<ArmorMaterial> arg, PoseStack arg2, MultiBufferSource arg3, int i, ArmorTrim arg4, Model arg5, boolean bl, CallbackInfo ci) {
+	private void renderTrim(ArmorMaterial arg, PoseStack arg2, MultiBufferSource arg3, int i, ArmorTrim arg4, Model arg5, boolean bl, CallbackInfo ci) {
 		if (armorStack.is(ESTags.Items.UNTRIMMABLE_ARMOR)) {
 			ci.cancel();
 		}

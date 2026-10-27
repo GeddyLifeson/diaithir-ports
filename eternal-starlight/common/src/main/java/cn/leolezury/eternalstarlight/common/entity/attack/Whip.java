@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -185,7 +187,7 @@ public abstract class Whip extends Entity implements TraceableEntity {
 									damage = EnchantmentHelper.modifyDamage(serverLevel, this.getWeaponItem(), entity, damageSource, damage);
 									knockback = EnchantmentHelper.modifyKnockback(serverLevel, this.getWeaponItem(), player, damageSource, knockback);
 								}
-								if (entity.hurt(damageSource, damage)) {
+								if (ESPortCompat.hurt(entity, damageSource, damage)) {
 									if (getWeaponItem() != null && getWeaponItem().getItem() instanceof WhipItem whipItem) {
 										whipItem.doPostHurtEffects(this, entity);
 									}
@@ -214,7 +216,7 @@ public abstract class Whip extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -236,7 +238,7 @@ public abstract class Whip extends Entity implements TraceableEntity {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 		if (ownerId != null) {
-			compoundTag.putUUID(TAG_OWNER, ownerId);
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, ownerId);
 		}
 		if (this.firedFromWeapon != null && !this.firedFromWeapon.isEmpty()) {
 			compoundTag.put(TAG_WEAPON, firedFromWeapon.save(registryAccess(), new CompoundTag()));
@@ -247,18 +249,18 @@ public abstract class Whip extends Entity implements TraceableEntity {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
-		if (compoundTag.contains(TAG_WEAPON, CompoundTag.TAG_COMPOUND)) {
-			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.getCompound(TAG_WEAPON)).orElse(null);
+		if (ESPortCompat.has(compoundTag, TAG_WEAPON)) {
+			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.childOrEmpty(TAG_WEAPON)).orElse(null);
 			if (firedFromWeapon != null) {
 				this.entityData.set(FOIL, firedFromWeapon.hasFoil());
 			}
 		} else {
 			firedFromWeapon = null;
 		}
-		if (compoundTag.contains(TAG_DAMAGE_SCALE, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (ESPortCompat.has(compoundTag, TAG_DAMAGE_SCALE)) {
 			damageScale = compoundTag.getFloatOr(TAG_DAMAGE_SCALE, 0F);
 		}
 	}

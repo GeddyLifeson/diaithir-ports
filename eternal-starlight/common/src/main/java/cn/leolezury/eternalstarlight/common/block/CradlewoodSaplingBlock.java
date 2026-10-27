@@ -82,7 +82,7 @@ public class CradlewoodSaplingBlock extends Block implements BonemealableBlock {
 
 	@Override
 	public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-		return level.random.nextFloat() < 0.45;
+		return level.getRandom().nextFloat() < 0.45;
 	}
 
 	@Override

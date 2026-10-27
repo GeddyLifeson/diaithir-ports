@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.entity.projectile.ThrownShatteredBlade;
 import cn.leolezury.eternalstarlight.common.registry.ESDataComponents;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
@@ -8,19 +12,17 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 
-public class ShatteredSwordItem extends SwordItem {
-	public ShatteredSwordItem(Tier tier, Properties properties) {
-		super(tier, properties);
+public class ShatteredSwordItem extends Item {
+	public ShatteredSwordItem(ESItemTiers tier, Properties properties) {
+		super(tier.sword(properties));
 	}
 
 	public static boolean hasBlade(ItemStack itemStack) {
@@ -32,7 +34,7 @@ public class ShatteredSwordItem extends SwordItem {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+	public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
 		ItemStack itemStack = player.getItemInHand(interactionHand);
 		if (hasBlade(itemStack)) {
 			ThrownShatteredBlade blade = new ThrownShatteredBlade(level, player, itemStack);
@@ -49,23 +51,23 @@ public class ShatteredSwordItem extends SwordItem {
 			}
 			player.awardStat(Stats.ITEM_USED.get(this));
 			player.getCooldowns().addCooldown(this, 10);
-			return InteractionResultHolder.success(itemStack);
+			return InteractionResult.SUCCESS;
 		} else {
 			if (player.hasInfiniteMaterials()) {
 				setHasBlade(itemStack, true);
-				return InteractionResultHolder.consume(itemStack);
+				return InteractionResult.CONSUME;
 			} else {
 				for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
 					ItemStack item = player.getInventory().getItem(i);
 					if (item.is(ESItems.SHATTERED_SWORD_BLADE.get())) {
 						setHasBlade(itemStack, true);
 						item.shrink(1);
-						return InteractionResultHolder.consume(itemStack);
+						return InteractionResult.CONSUME;
 					}
 				}
 			}
 		}
-		return InteractionResultHolder.fail(itemStack);
+		return InteractionResult.FAIL;
 	}
 
 	@Override

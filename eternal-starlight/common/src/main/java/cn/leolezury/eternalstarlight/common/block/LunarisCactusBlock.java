@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.ScheduledTickAccess;
 
 import cn.leolezury.eternalstarlight.common.platform.ESPlatform;
@@ -15,7 +17,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -56,12 +58,12 @@ public class LunarisCactusBlock extends Block {
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+	protected InteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
 		if (ESPlatform.INSTANCE.isShears(itemStack) && blockState.getValue(FRUIT)) {
 			level.setBlockAndUpdate(blockPos, ESBlocks.CARVED_LUNARIS_CACTUS_FRUIT.get().defaultBlockState());
 			itemStack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(itemStack));
 			level.playSound(null, blockPos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS, 1.0F, 1.0F);
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.useItemOn(itemStack, blockState, level, blockPos, player, interactionHand, blockHitResult);
 	}
@@ -139,7 +141,7 @@ public class LunarisCactusBlock extends Block {
 	@Override
 	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
 		if (!blockState.getValue(FRUIT)) {
-			entity.hurt(level.damageSources().cactus(), 1.0F);
+			ESPortCompat.hurt(entity, level.damageSources().cactus(), 1.0F);
 		}
 	}
 

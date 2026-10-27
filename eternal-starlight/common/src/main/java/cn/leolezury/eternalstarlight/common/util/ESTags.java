@@ -17,6 +17,14 @@ import net.minecraft.world.level.material.Fluid;
 
 public class ESTags {
 	public static class Items {
+		public static final TagKey<Item> REPAIR_AIR_SAC = create("repair_air_sac");
+		public static final TagKey<Item> REPAIR_TIER_PUNGENCY_FRUIT = create("repair_tier_pungency_fruit");
+		public static final TagKey<Item> REPAIR_TIER_STARFIRE = create("repair_tier_starfire");
+		public static final TagKey<Item> REPAIR_TIER_FLOWGLAZE = create("repair_tier_flowglaze");
+		public static final TagKey<Item> REPAIR_TIER_TOOTH_OF_HUNGER = create("repair_tier_tooth_of_hunger");
+		public static final TagKey<Item> REPAIR_TIER_PETAL = create("repair_tier_petal");
+		public static final TagKey<Item> REPAIR_TIER_DOOMEDEN = create("repair_tier_doomeden");
+		public static final TagKey<Item> REPAIR_TIER_NONE = create("repair_tier_none");
 		public static final TagKey<Item> LUNAR_LOGS = create("lunar_logs");
 		public static final TagKey<Item> NORTHLAND_LOGS = create("northland_logs");
 		public static final TagKey<Item> BANYIN_LOGS = create("banyin_logs");

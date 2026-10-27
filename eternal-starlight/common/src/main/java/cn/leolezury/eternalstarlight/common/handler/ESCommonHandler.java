@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.handler;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.fluid.EtherFluid;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
@@ -417,7 +419,7 @@ public class ESCommonHandler {
 			}
 			for (LivingEntity living : entity.level().getEntitiesOfClass(LivingEntity.class, entity.getBoundingBox().inflate(3))) {
 				if (ESEntityUtil.shouldHarm(source.getEntity(), living)) {
-					living.hurt(ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.STARFIRE, source.getDirectEntity(), source.getEntity()), amount / 3);
+					ESPortCompat.hurt(living, ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.STARFIRE, source.getDirectEntity(), source.getEntity()), amount / 3);
 				}
 			}
 		}
@@ -574,7 +576,7 @@ public class ESCommonHandler {
 				if (!entity.getType().is(ESTags.EntityTypes.ABYSSAL_FIRE_IMMUNE) && entity.tickCount % 30 == 0) {
 					int oldInvulnerableTime = entity.invulnerableTime;
 					entity.invulnerableTime = 0;
-					entity.hurt(level.damageSources().onFire(), 3.0F);
+					ESPortCompat.hurt(entity, level.damageSources().onFire(), 3.0F);
 					entity.invulnerableTime = oldInvulnerableTime;
 				}
 			}
@@ -750,7 +752,7 @@ public class ESCommonHandler {
 						factor = 1 - (float) resistance.getValue();
 					}
 					if (armorInstance != null && armorInstance.getValue() <= 0) {
-						if (entity.hurt(ESDamageTypes.getDamageSource(level, ESDamageTypes.ETHER), 0.3f + 0.6f * factor) && level instanceof ServerLevel serverLevel) {
+						if (ESPortCompat.hurt(entity, ESDamageTypes.getDamageSource(level, ESDamageTypes.ETHER), 0.3f + 0.6f * factor) && level instanceof ServerLevel serverLevel) {
 							for (int i = 0; i < 5; i++) {
 								serverLevel.sendParticles(ESParticles.STARLIGHT.get(), entity.getX() + (livingEntity.getRandom().nextDouble() - 0.5) * entity.getBbWidth(), entity.getY() + entity.getBbHeight() / 2d + (livingEntity.getRandom().nextDouble() - 0.5) * entity.getBbHeight(), entity.getZ() + (livingEntity.getRandom().nextDouble() - 0.5) * entity.getBbWidth(), 20, 0.1, 0.1, 0.1, 0);
 							}

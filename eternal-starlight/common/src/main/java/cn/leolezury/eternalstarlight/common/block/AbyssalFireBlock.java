@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.util.RandomSource;
 
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -73,7 +75,7 @@ public class AbyssalFireBlock extends BaseFireBlock implements SimpleWaterlogged
 	@Override
 	public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
 		if (!entity.getType().is(ESTags.EntityTypes.ABYSSAL_FIRE_IMMUNE) && entity.tickCount % 30 == 0) {
-			entity.hurt(level.damageSources().inFire(), 3.0F);
+			ESPortCompat.hurt(entity, level.damageSources().inFire(), 3.0F);
 		}
 		if (!level.isClientSide()) {
 			int abyssalFireTicks = ESDataAttachments.ABYSSAL_FIRE_TICKS.getData(entity);

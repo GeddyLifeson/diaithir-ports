@@ -17,7 +17,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
@@ -54,7 +54,7 @@ public class CrystalGreatswordItem extends GreatswordItem {
 		soundPitch(11), soundPitch(4)
 	};
 
-	public CrystalGreatswordItem(Tier tier, Properties properties) {
+	public CrystalGreatswordItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
 	}
 

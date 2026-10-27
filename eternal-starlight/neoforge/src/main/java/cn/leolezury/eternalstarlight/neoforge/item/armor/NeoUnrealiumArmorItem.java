@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 public class NeoUnrealiumArmorItem extends UnrealiumArmorItem {
-	public NeoUnrealiumArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
+	public NeoUnrealiumArmorItem(ArmorMaterial material, Type type, Properties properties) {
 		super(material, type, properties);
 	}
 

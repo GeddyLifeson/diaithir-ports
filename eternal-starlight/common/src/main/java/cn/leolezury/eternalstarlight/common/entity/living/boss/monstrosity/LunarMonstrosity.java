@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.monstrosity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.block.entity.LootChestBlockEntity;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
@@ -257,16 +259,16 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity target) {
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity target) {
 		if (getBehaviorState() == LunarMonstrositySneakPhase.ID) {
 			setBehaviorState(LunarMonstrosityEmergePhase.ID);
 			setBehaviorTicks(0);
 		}
-		return super.doHurtTarget(target);
+		return super.doHurtTarget(hurtServerLevel, target);
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && (getBehaviorState() == LunarMonstrositySneakPhase.ID || getBehaviorState() == LunarMonstrositySoulPhase.ID || (source.getEntity() != null && source.getEntity().getType().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES)))) {
 			return false;
 		}
@@ -277,7 +279,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 			}
 		}
 		float actualAmount = source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || isOnFire() || hasEffect(ESMobEffects.STARFIRE.asHolder()) || getBehaviorState() == LunarMonstrosityStunPhase.ID ? amount : Math.min(3, amount);
-		return super.hurt(source, actualAmount);
+		return super.hurtServer(hurtServerLevel, source, actualAmount);
 	}
 
 	@Override
@@ -307,7 +309,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 					itemStack.hurtAndBreak(1, player, getSlotForHand(hand));
 				}
 			}
-			return InteractionResult.sidedSuccess(this.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.mobInteract(player, hand);
 		}
@@ -363,7 +365,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 			Vec3 vec3 = livingEntity.position().vectorTo(this.position()).normalize();
 			vec3 = new Vec3(vec3.x, 0.0D, vec3.z);
 			if (vec3.dot(this.getViewVector(1.0F)) < 0.0D) {
-				livingEntity.hurt(ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.BITE, this), damage);
+				ESPortCompat.hurt(livingEntity, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.BITE, this), damage);
 			}
 		}
 	}
@@ -375,7 +377,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 				living.hurtMarked = true;
 				living.setDeltaMovement(living.getDeltaMovement().add(motion));
 				if (damage) {
-					living.hurt(damageSources().mobAttack(this), strength * 3);
+					ESPortCompat.hurt(living, damageSources().mobAttack(this), strength * 3);
 				}
 			}
 		}

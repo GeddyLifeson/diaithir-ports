@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.registry.ESAttributes;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Holder;
@@ -12,11 +16,11 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
 
-public class AethersentArmorItem extends ArmorItem {
+public class AethersentArmorItem extends Item {
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public AethersentArmorItem(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-		super(holder, type, properties);
+	public AethersentArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(holder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());

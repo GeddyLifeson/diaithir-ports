@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
 import cn.leolezury.eternalstarlight.common.particle.ExplosionShockParticleOptions;
@@ -37,7 +39,7 @@ public class SolarCreeperSolarWindPhase extends BehaviorPhase<SolarCreeper> {
 				if ((livingEntity == target || livingEntity instanceof Targeting t && t.getTarget() == entity)
 					&& (isFacingEntity(entity, livingEntity, 45, entity.getYRot())
 					|| isFacingEntity(entity, livingEntity, 45, entity.yBodyRot))) {
-					entity.doHurtTarget(livingEntity);
+					ESPortCompat.doHurtTarget(entity, livingEntity);
 					livingEntity.hurtMarked = true;
 					livingEntity.addDeltaMovement(livingEntity.position().subtract(entity.position()).normalize().multiply(1.5, 0.5, 1.5));
 				}

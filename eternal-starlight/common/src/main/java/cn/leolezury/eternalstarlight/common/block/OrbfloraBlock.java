@@ -65,7 +65,7 @@ public class OrbfloraBlock extends GrowingPlantHeadBlock implements LiquidBlockC
 	public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos pos, BlockState state) {
 		BlockPos growthDest = pos.relative(this.growthDirection);
 		if (this.canGrowInto(serverLevel.getBlockState(growthDest))) {
-			serverLevel.setBlockAndUpdate(growthDest, this.getGrowIntoState(state, serverLevel.random));
+			serverLevel.setBlockAndUpdate(growthDest, this.getGrowIntoState(state, serverLevel.getRandom()));
 		}
 		tryGrowOrbflora(serverLevel, state, pos);
 	}

@@ -98,14 +98,14 @@ public class GrimstoneGolem extends AbstractGolem {
 			if (!player.level().isClientSide()) {
 				player.level().broadcastEntityEvent(this, (byte) 100);
 			}
-			return InteractionResult.sidedSuccess(player.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		} else if (!getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && player.getItemInHand(interactionHand).isEmpty()) {
 			player.setItemInHand(interactionHand, getItemInHand(InteractionHand.MAIN_HAND).copy());
 			setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
 			if (!player.level().isClientSide()) {
 				player.level().broadcastEntityEvent(this, (byte) 101);
 			}
-			return InteractionResult.sidedSuccess(player.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.mobInteract(player, interactionHand);
 	}

@@ -34,7 +34,7 @@ public class ESTrimPatterns {
 	}
 
 	private static void register(BootstrapContext<TrimPattern> context, Item item, ResourceKey<TrimPattern> resourceKey) {
-		TrimPattern trimPattern = new TrimPattern(resourceKey.location(), BuiltInRegistries.ITEM.wrapAsHolder(item), Component.translatable(Util.makeDescriptionId("trim_pattern", resourceKey.location())), false);
+		TrimPattern trimPattern = new TrimPattern(resourceKey.identifier(), BuiltInRegistries.ITEM.wrapAsHolder(item), Component.translatable(Util.makeDescriptionId("trim_pattern", resourceKey.identifier())), false);
 		context.register(resourceKey, trimPattern);
 	}
 

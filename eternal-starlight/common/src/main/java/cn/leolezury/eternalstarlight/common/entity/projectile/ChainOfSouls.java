@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -147,7 +149,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 							if (getWeaponItem() != null) {
 								damage = EnchantmentHelper.modifyDamage(serverLevel, getWeaponItem(), target, damageSource, damage);
 							}
-							if (target.hurt(damageSource, damage)) {
+							if (ESPortCompat.hurt(target, damageSource, damage)) {
 								EnchantmentHelper.doPostAttackEffects(serverLevel, target, damageSource);
 								playerOwner.heal((float) (damage * ESConfig.INSTANCE.itemsConfig.chainOfSouls.healPercentage()));
 								playSound(ESSoundEvents.CHAIN_OF_SOULS_ABSORB.get());
@@ -269,7 +271,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 		compoundTag.putFloat(TAG_LENGTH, this.length());
 		compoundTag.putInt(TAG_TIP_DIRECTION, getTipDirection().get3DDataValue());
 		if (target != null) {
-			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 		if (this.firedFromWeapon != null && !this.firedFromWeapon.isEmpty()) {
 			compoundTag.put(TAG_WEAPON, firedFromWeapon.save(registryAccess(), new CompoundTag()));
@@ -282,11 +284,11 @@ public class ChainOfSouls extends Projectile implements Grappling {
 		this.setReachedTarget(compoundTag.getBooleanOr(TAG_REACHED_TARGET, false));
 		this.setLength(compoundTag.getFloatOr(TAG_LENGTH, 0F));
 		this.setTipDirection(Direction.from3DDataValue(compoundTag.getIntOr(TAG_TIP_DIRECTION, 0)));
-		if (compoundTag.hasUUID(TAG_TARGET)) {
-			targetId = compoundTag.getUUID(TAG_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
+			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
-		if (compoundTag.contains(TAG_WEAPON, CompoundTag.TAG_COMPOUND)) {
-			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.getCompound(TAG_WEAPON)).orElse(null);
+		if (ESPortCompat.has(compoundTag, TAG_WEAPON)) {
+			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.childOrEmpty(TAG_WEAPON)).orElse(null);
 		} else {
 			firedFromWeapon = null;
 		}

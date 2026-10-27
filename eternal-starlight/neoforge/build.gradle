@@ -89,3 +89,10 @@ publishing {
 	repositories {
 	}
 }
+
+// PORT STUB: client rendering code and data generators excluded (see PORT-NOTE.md)
+sourceSets.main.java {
+	exclude "**/eternalstarlight/neoforge/client/**"
+	exclude "**/eternalstarlight/neoforge/mixin/client/**"
+	exclude "**/eternalstarlight/neoforge/datagen/**"
+}

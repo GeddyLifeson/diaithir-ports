@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.neoforge.platform;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.TearBombBlock;
 import cn.leolezury.eternalstarlight.common.block.fluid.EtherFluid;
@@ -199,22 +201,22 @@ public class ESNeoPlatform implements ESPlatform {
 	}
 
 	@Override
-	public ThermalSpringstoneArmorItem createThermalSpringstoneArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	public ThermalSpringstoneArmorItem createThermalSpringstoneArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new NeoThermalSpringstoneArmorItem(material, type, properties);
 	}
 
 	@Override
-	public AlchemistArmorItem createAlchemistArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	public AlchemistArmorItem createAlchemistArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new NeoAlchemistArmorItem(material, type, properties);
 	}
 
 	@Override
-	public ArmorItem createStarlitDiamondArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	public ArmorItem createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new NeoStarlitDiamondArmorItem(material, type, properties);
 	}
 
 	@Override
-	public UnrealiumArmorItem createUnrealiumArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	public UnrealiumArmorItem createUnrealiumArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new NeoUnrealiumArmorItem(material, type, properties);
 	}
 

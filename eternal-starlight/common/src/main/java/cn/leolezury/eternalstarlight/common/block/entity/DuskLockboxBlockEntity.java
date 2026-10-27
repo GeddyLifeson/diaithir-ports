@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -57,7 +59,7 @@ public class DuskLockboxBlockEntity extends RandomizableContainerBlockEntity imp
 		super.loadAdditional(tag);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(tag)) {
-			ContainerHelper.loadAllItems(tag, this.items, registries);
+			ContainerHelper.loadAllItems(tag, this.items, tag.lookup());
 		}
 	}
 

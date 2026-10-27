@@ -398,7 +398,7 @@ public class ESCommonSetupHandler {
 					EntityType<?> entityType = ((SpawnEggItem) item.getItem()).getType(item);
 
 					try {
-						entityType.spawn(blockSource.level(), item, null, blockSource.pos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
+						entityType.spawn(blockSource.level(), item, null, blockSource.pos().relative(direction), EntitySpawnReason.DISPENSER, direction != Direction.UP, false);
 					} catch (Exception exception) {
 						LOGGER.error("Error while dispensing spawn egg from dispenser at {}", blockSource.pos(), exception);
 						return ItemStack.EMPTY;

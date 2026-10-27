@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -236,9 +238,9 @@ public class LootChestBlockEntity extends BlockEntity {
 		double z = position.z();
 		ItemEntity itemEntity = new ItemEntity(level, x, y, z, stack);
 		itemEntity.setDeltaMovement(
-			level.random.triangle(0, 0.035),
-			level.random.triangle(0.2, 0.035),
-			level.random.triangle(0, 0.035)
+			level.getRandom().triangle(0, 0.035),
+			level.getRandom().triangle(0.2, 0.035),
+			level.getRandom().triangle(0, 0.035)
 		);
 		level.addFreshEntity(itemEntity);
 		ESDataAttachments.IMPORTANT_ITEM.setData(itemEntity, true);
@@ -285,33 +287,33 @@ public class LootChestBlockEntity extends BlockEntity {
 	@Override
 	public void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
-		if (compoundTag.contains(TAG_LOOT_TABLE, CompoundTag.TAG_STRING)) {
+		if (ESPortCompat.has(compoundTag, TAG_LOOT_TABLE)) {
 			setLootTable(ResourceKey.create(Registries.LOOT_TABLE, Identifier.parse(compoundTag.getStringOr(TAG_LOOT_TABLE, ""))));
 		}
-		if (compoundTag.contains(TAG_ITEMS_TO_EJECT)) {
+		if (ESPortCompat.has(compoundTag, TAG_ITEMS_TO_EJECT)) {
 			this.itemsToEject.clear();
-			ItemStack.OPTIONAL_CODEC.listOf().parse(provider.createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_ITEMS_TO_EJECT)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest items: '{}'", string)).ifPresent(this.itemsToEject::addAll);
+			ItemStack.OPTIONAL_CODEC.listOf().parse(compoundTag.lookup().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_ITEMS_TO_EJECT)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest items: '{}'", string)).ifPresent(this.itemsToEject::addAll);
 		}
 		quickEjection = compoundTag.getBooleanOr(TAG_QUICK_EJECTION, false);
-		if (compoundTag.contains(TAG_REWARD_TARGETS)) {
+		if (ESPortCompat.has(compoundTag, TAG_REWARD_TARGETS)) {
 			this.rewardTargets.clear();
-			REWARD_TARGETS_CODEC.parse(provider.createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_REWARD_TARGETS)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest reward targets: '{}'", string)).ifPresent(this.rewardTargets::putAll);
+			REWARD_TARGETS_CODEC.parse(compoundTag.lookup().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_REWARD_TARGETS)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest reward targets: '{}'", string)).ifPresent(this.rewardTargets::putAll);
 		}
-		if (compoundTag.contains(TAG_CURRENT_REWARD_TARGET)) {
-			currentRewardTarget = compoundTag.getUUID(TAG_CURRENT_REWARD_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_CURRENT_REWARD_TARGET)) {
+			currentRewardTarget = ESPortCompat.getUUID(compoundTag, TAG_CURRENT_REWARD_TARGET);
 		}
 		cooldown = compoundTag.getIntOr(TAG_COOLDOWN, 0);
 		ejectionTicks = compoundTag.getIntOr(TAG_EJECTION_TICKS, 0);
-		if (compoundTag.contains(TAG_COLOR, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_COLOR)) {
 			color = compoundTag.getIntOr(TAG_COLOR, 0);
 		}
-		if (compoundTag.contains(TAG_OUTLINE_COLOR, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_OUTLINE_COLOR)) {
 			outlineColor = compoundTag.getIntOr(TAG_OUTLINE_COLOR, 0);
 		}
-		if (compoundTag.contains(TAG_FLASH_COLOR, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_FLASH_COLOR)) {
 			flashColor = compoundTag.getIntOr(TAG_FLASH_COLOR, 0);
 		}
-		if (compoundTag.contains(TAG_RARE_FLASH_COLOR, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_RARE_FLASH_COLOR)) {
 			rareFlashColor = compoundTag.getIntOr(TAG_RARE_FLASH_COLOR, 0);
 		}
 	}
@@ -320,13 +322,13 @@ public class LootChestBlockEntity extends BlockEntity {
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
 		if (lootTable != null) {
-			compoundTag.putString(TAG_LOOT_TABLE, lootTable.location().toString());
+			compoundTag.putString(TAG_LOOT_TABLE, lootTable.identifier().toString());
 		}
 		compoundTag.put(TAG_ITEMS_TO_EJECT, ItemStack.OPTIONAL_CODEC.listOf().encodeStart(provider.createSerializationContext(NbtOps.INSTANCE), this.itemsToEject).getOrThrow());
 		compoundTag.putBoolean(TAG_QUICK_EJECTION, quickEjection);
 		compoundTag.put(TAG_REWARD_TARGETS, REWARD_TARGETS_CODEC.encodeStart(provider.createSerializationContext(NbtOps.INSTANCE), this.rewardTargets).getOrThrow());
 		if (currentRewardTarget != null) {
-			compoundTag.putUUID(TAG_CURRENT_REWARD_TARGET, currentRewardTarget);
+			ESPortCompat.putUUID(compoundTag, TAG_CURRENT_REWARD_TARGET, currentRewardTarget);
 		}
 		compoundTag.putInt(TAG_COOLDOWN, cooldown);
 		compoundTag.putInt(TAG_EJECTION_TICKS, ejectionTicks);

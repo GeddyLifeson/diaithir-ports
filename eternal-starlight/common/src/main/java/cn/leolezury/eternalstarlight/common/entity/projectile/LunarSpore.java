@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.particle.ESExplosionParticleOptions;
 import cn.leolezury.eternalstarlight.common.particle.ESSmokeParticleOptions;
@@ -41,7 +43,7 @@ public class LunarSpore extends ThrowableProjectile {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		return false;
 	}
 
@@ -85,7 +87,7 @@ public class LunarSpore extends ThrowableProjectile {
 				if (getOwner() instanceof Player) {
 					entity.invulnerableTime = 0;
 				}
-				entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), 5);
+				ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), 5);
 			}
 		}
 		discard();

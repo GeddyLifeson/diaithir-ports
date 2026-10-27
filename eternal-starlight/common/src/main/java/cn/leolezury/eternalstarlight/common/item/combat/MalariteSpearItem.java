@@ -9,12 +9,12 @@ import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public class MalariteSpearItem extends SpearItem {
-	public MalariteSpearItem(Tier tier, Item.Properties properties) {
+	public MalariteSpearItem(ESItemTiers tier, Item.Properties properties) {
 		super(tier, properties);
 	}
 

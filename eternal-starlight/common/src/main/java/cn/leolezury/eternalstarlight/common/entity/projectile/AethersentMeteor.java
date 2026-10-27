@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -144,11 +146,11 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		setSize(compoundTag.getIntOr(TAG_SIZE, 0));
-		if (compoundTag.hasUUID(TAG_TARGET)) {
-			targetId = compoundTag.getUUID(TAG_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
+			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
 		targetPos = new Vec3(compoundTag.getDoubleOr(TAG_TARGET_X, 0.0), compoundTag.getDoubleOr(TAG_TARGET_Y, 0.0), compoundTag.getDoubleOr(TAG_TARGET_Z, 0.0));
-		if (compoundTag.contains(TAG_NATURAL, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_NATURAL)) {
 			natural = compoundTag.getBooleanOr(TAG_NATURAL, false);
 		}
 	}
@@ -157,7 +159,7 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		compoundTag.putInt(TAG_SIZE, getSize());
 		if (target != null) {
-			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 		if (targetPos != null) {
 			compoundTag.putDouble(TAG_TARGET_X, targetPos.x);
@@ -224,7 +226,7 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 					for (LivingEntity livingEntity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(getSize(), 0, getSize()))) {
 						if (ESEntityUtil.shouldHarm(getOwner(), livingEntity)) {
 							livingEntity.invulnerableTime = 0;
-							livingEntity.hurt(ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.METEOR, getOwner()), getSize() * 5 * (getOwner() instanceof LivingEntity ? 0.08f : 1f) * (getOwner() instanceof Player ? (float) ESConfig.INSTANCE.itemsConfig.playerAethersentMeteorDamageScale : 1));
+							ESPortCompat.hurt(livingEntity, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.METEOR, getOwner()), getSize() * 5 * (getOwner() instanceof LivingEntity ? 0.08f : 1f) * (getOwner() instanceof Player ? (float) ESConfig.INSTANCE.itemsConfig.playerAethersentMeteorDamageScale : 1));
 						}
 					}
 					serverLevel.sendParticles(getSize() >= 10 ? ParticleTypes.EXPLOSION_EMITTER : ESExplosionParticleOptions.AETHERSENT, getX(), getY() + 0.05 * getSize(), getZ(), 1, 0, 0, 0, 0);
@@ -288,7 +290,7 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		return false;
 	}
 

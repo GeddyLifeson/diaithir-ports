@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.data.ESDimensions;
@@ -156,8 +158,8 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		return !source.is(ESDamageTypes.SONAR) && super.hurt(source, amount);
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
+		return !source.is(ESDamageTypes.SONAR) && super.hurtServer(hurtServerLevel, source, amount);
 	}
 
 	private class MothMoveControl extends MoveControl {
@@ -215,7 +217,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 				Vec3 subtract = pos.subtract(selfPos);
 				CrystallizedMoth.this.setYRot(-((float) Mth.atan2(subtract.x, subtract.z)) * Mth.RAD_TO_DEG);
 				if (CrystallizedMoth.this.getAttackTicks() > 15 && CrystallizedMoth.this.hasLineOfSight(target) && CrystallizedMoth.this.distanceTo(target) < 30) {
-					target.hurt(ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.SONAR, CrystallizedMoth.this), (float) getAttributeValue(Attributes.ATTACK_DAMAGE) * (target.getType().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 4 : 1));
+					ESPortCompat.hurt(target, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.SONAR, CrystallizedMoth.this), (float) getAttributeValue(Attributes.ATTACK_DAMAGE) * (target.getType().is(ESTags.EntityTypes.VULNERABLE_TO_SONAR_BOMB) ? 4 : 1));
 				}
 				if (CrystallizedMoth.this.level() instanceof ServerLevel serverLevel && CrystallizedMoth.this.getAttackTicks() % 5 == 0) {
 					Vec3 delta = pos.subtract(selfPos).normalize().scale(0.8);
@@ -269,7 +271,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 				FoodProperties foodProperties = itemStack.get(DataComponents.FOOD);
 				float f = foodProperties != null ? (float) foodProperties.nutrition() : 1.0F;
 				this.heal(2.0F * f);
-				return InteractionResult.sidedSuccess(this.level().isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 			if (itemStack.is(ESItems.LUNARIS_CACTUS_GEL.get())) {
 				itemStack.consume(1, player);
@@ -349,7 +351,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 		return !this.onGround();
 	}
 
-	public static boolean checkMothSpawnRules(EntityType<? extends CrystallizedMoth> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkMothSpawnRules(EntityType<? extends CrystallizedMoth> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return !level.canSeeSky(pos) && pos.getY() <= ESDimensions.SEA_LEVEL && ESConfig.INSTANCE.mobsConfig.crystallizedMoth.canSpawn();
 	}
 }

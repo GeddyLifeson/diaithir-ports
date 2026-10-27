@@ -9,8 +9,5 @@ public class GlaciteShieldItem extends ShieldItem {
 		super(properties);
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESConventionalTags.Items.GEMS_GLACITE) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

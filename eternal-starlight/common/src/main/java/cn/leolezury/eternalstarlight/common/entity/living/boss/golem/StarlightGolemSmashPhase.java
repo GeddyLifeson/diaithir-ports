@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.golem;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESFallingBlock;
@@ -119,7 +121,7 @@ public class StarlightGolemSmashPhase extends BehaviorPhase<StarlightGolem> {
 										entity.level().addFreshEntity(fallingBlock);
 										for (LivingEntity living : entity.level().getEntitiesOfClass(LivingEntity.class, new AABB(pos).inflate(1))) {
 											if (living != entity) {
-												living.hurt(ESDamageTypes.getDamageSource(entity.level(), ESDamageTypes.GROUND_SMASH), 4);
+												ESPortCompat.hurt(living, ESDamageTypes.getDamageSource(entity.level(), ESDamageTypes.GROUND_SMASH), 4);
 											}
 										}
 										if (!entity.level().isClientSide()) {

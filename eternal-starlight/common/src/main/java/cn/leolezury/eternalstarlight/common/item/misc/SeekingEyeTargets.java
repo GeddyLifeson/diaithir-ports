@@ -95,7 +95,7 @@ public class SeekingEyeTargets {
 
 		public static Entry get(TargetType type, Identifier id) {
 			for (Entry entry : type.getEntries()) {
-				if (entry.key().location().equals(id)) {
+				if (entry.key().identifier().equals(id)) {
 					return entry;
 				}
 			}
@@ -104,10 +104,10 @@ public class SeekingEyeTargets {
 	}
 
 	private static Entry structure(ResourceKey<Structure> key, int color) {
-		return new Entry(key, Component.translatable("structure." + key.location().toLanguageKey()), color);
+		return new Entry(key, Component.translatable("structure." + key.identifier().toLanguageKey()), color);
 	}
 
 	private static Entry biome(ResourceKey<Biome> key, int color) {
-		return new Entry(key, Component.translatable("biome." + key.location().toLanguageKey()), color);
+		return new Entry(key, Component.translatable("biome." + key.identifier().toLanguageKey()), color);
 	}
 }

@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.entity.projectile.AethersentMeteor;
 import cn.leolezury.eternalstarlight.common.item.interfaces.SwingAttackWeapon;
 import net.minecraft.server.level.ServerLevel;
@@ -7,15 +11,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
-public class RageOfStarsItem extends SwordItem implements SwingAttackWeapon {
-	public RageOfStarsItem(Tier tier, Properties properties) {
-		super(tier, properties);
+public class RageOfStarsItem extends Item implements SwingAttackWeapon {
+	public RageOfStarsItem(ESItemTiers tier, Properties properties) {
+		super(tier.sword(properties));
 	}
 
 	private void performSpecialAttack(LivingEntity entity) {

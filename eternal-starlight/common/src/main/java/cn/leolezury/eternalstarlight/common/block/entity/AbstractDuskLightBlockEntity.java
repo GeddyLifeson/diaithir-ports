@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -79,7 +81,7 @@ public abstract class AbstractDuskLightBlockEntity extends BlockEntity implement
 	protected void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
 		for (Direction direction : Direction.values()) {
-			lengths.put(direction, compoundTag.getFloat(TAG_LENGTH + "_" + direction.getName()));
+			lengths.put(direction, compoundTag.getFloatOr(TAG_LENGTH + "_" + direction.getName(), 0F));
 		}
 		lit = compoundTag.getBooleanOr(TAG_LIT, false);
 	}

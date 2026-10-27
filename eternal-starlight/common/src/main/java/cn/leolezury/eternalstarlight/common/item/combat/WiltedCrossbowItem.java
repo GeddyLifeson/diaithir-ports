@@ -32,8 +32,5 @@ public class WiltedCrossbowItem extends CrossbowItem {
 		projectile.setDeltaMovement(projectile.getDeltaMovement().scale(1.5));
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.TENACIOUS_PETAL.get()) || repairCandidate.is(ESItems.TENACIOUS_VINE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

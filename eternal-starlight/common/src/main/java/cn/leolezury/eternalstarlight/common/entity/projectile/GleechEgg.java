@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.living.monster.Gleech;
 import cn.leolezury.eternalstarlight.common.registry.ESCriteriaTriggers;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
@@ -37,7 +39,7 @@ public class GleechEgg extends ThrowableItemProjectile {
 	@Override
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		entityHitResult.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 0.0F);
+		ESPortCompat.hurt(entityHitResult.getEntity(), this.damageSources().thrown(this, this.getOwner()), 0.0F);
 		if (!level().isClientSide() && entityHitResult.getEntity() instanceof LivingEntity livingEntity && !livingEntity.getType().is(ESTags.EntityTypes.GLEECH_IMMUNE)) {
 			if (getOwner() instanceof ServerPlayer serverPlayer) {
 				ESCriteriaTriggers.THROW_GLEECH_EGG.get().trigger(serverPlayer);
@@ -50,7 +52,7 @@ public class GleechEgg extends ThrowableItemProjectile {
 				level().addFreshEntity(gleech);
 				// to set the target in a hacky way
 				gleech.setTarget(livingEntity);
-				gleech.hurt(damageSources().mobAttack(livingEntity), 0);
+				ESPortCompat.hurt(gleech, damageSources().mobAttack(livingEntity), 0);
 			}
 		}
 	}

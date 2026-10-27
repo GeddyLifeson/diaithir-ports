@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESAttributes;
 import com.google.common.base.Suppliers;
@@ -13,13 +17,13 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
 
-public class AlchemistArmorItem extends ArmorItem {
+public class AlchemistArmorItem extends Item {
 	public static final Identifier TEXTURE = EternalStarlight.id("textures/armor/alchemist.png");
 
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public AlchemistArmorItem(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-		super(holder, type, properties);
+	public AlchemistArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(holder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());

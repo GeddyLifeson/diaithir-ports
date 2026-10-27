@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
@@ -40,7 +42,7 @@ public class SolarCreeperDashPhase extends BehaviorPhase<SolarCreeper> {
 			}
 			if ((ticks >= 16 && ticks <= 35) || (ticks >= 50 && ticks <= 69)) {
 				performMeleeAttack(entity, 1.5, true, 180, e -> {
-					if (!hitEntities.contains(e) && entity.doHurtTarget(e)) {
+					if (!hitEntities.contains(e) && ESPortCompat.doHurtTarget(entity, e)) {
 						e.hurtMarked = true;
 						e.addDeltaMovement(e.position().subtract(entity.position()).normalize().multiply(0.2, 0.1, 0.2));
 						hitEntities.add(e);

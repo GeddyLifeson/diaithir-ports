@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -173,7 +175,7 @@ public abstract class ThrownBoomerang extends AbstractArrow {
 		}
 
 		this.dealtDamage = true;
-		if (entity.hurt(damageSource, damage)) {
+		if (ESPortCompat.hurt(entity, damageSource, damage)) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}

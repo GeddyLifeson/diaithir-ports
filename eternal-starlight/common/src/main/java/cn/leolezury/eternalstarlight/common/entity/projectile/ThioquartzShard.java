@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
@@ -57,7 +59,7 @@ public class ThioquartzShard extends ThrowableProjectile {
 	protected void onHitEntity(EntityHitResult hitResult) {
 		super.onHitEntity(hitResult);
 		if (hitResult.getEntity() != getOwner()) {
-			if (hitResult.getEntity().hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ETHER, this, getOwner()), 4) && hitResult.getEntity() instanceof LivingEntity livingEntity) {
+			if (ESPortCompat.hurt(hitResult.getEntity(), ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ETHER, this, getOwner()), 4) && hitResult.getEntity() instanceof LivingEntity livingEntity) {
 				playSound(SoundEvents.GLASS_BREAK);
 				int inEtherTicks = ESDataAttachments.IN_ETHER_TICKS.getData(livingEntity);
 				if (inEtherTicks < 400) {

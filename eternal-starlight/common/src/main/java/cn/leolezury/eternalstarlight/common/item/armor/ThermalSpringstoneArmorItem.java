@@ -1,5 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.item.interfaces.TickableArmor;
 import cn.leolezury.eternalstarlight.common.registry.ESAttributes;
@@ -24,11 +32,11 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
-public class ThermalSpringstoneArmorItem extends ArmorItem implements TickableArmor {
+public class ThermalSpringstoneArmorItem extends Item implements TickableArmor {
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public ThermalSpringstoneArmorItem(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-		super(holder, type, properties);
+	public ThermalSpringstoneArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(holder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
@@ -57,11 +65,11 @@ public class ThermalSpringstoneArmorItem extends ArmorItem implements TickableAr
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		list.add(CommonComponents.EMPTY);
-		list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-		list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".thermal_springstone_armor")).withStyle(ChatFormatting.GOLD));
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		list.accept(CommonComponents.EMPTY);
+		list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+		list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".thermal_springstone_armor")).withStyle(ChatFormatting.GOLD));
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 
 	@Override

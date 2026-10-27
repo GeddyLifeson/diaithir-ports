@@ -14,7 +14,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -57,12 +57,12 @@ public class BlazingStarcoreBlock extends Block {
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+	protected InteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
 		if (itemStack.is(ItemTags.PICKAXES)) {
 			level.destroyBlock(blockPos, false);
 			level.setBlockAndUpdate(blockPos, ESBlocks.STARCORE_LIGHT.get().defaultBlockState());
 			itemStack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(itemStack));
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.useItemOn(itemStack, blockState, level, blockPos, player, interactionHand, blockHitResult);
 	}

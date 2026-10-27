@@ -19,7 +19,7 @@ import net.minecraft.sounds.Music;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.NaturalSpawner;
@@ -138,71 +138,71 @@ public class ESBiomes {
 		MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder()
 			.creatureGenerationProbability(0.2f);
 		if (hostile) {
-			builder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.NIGHTFALL_SPIDER.get(), 15, 1, 2))
-				.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.LONESTAR_SKELETON.get(), 10, 1, 2))
-				.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.SEEKER.get(), 15, 1, 2))
-				.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.ECTOSTONE.get(), 8, 1, 2))
+			builder.addSpawn(MobCategory.MONSTER, 15, new MobSpawnSettings.SpawnerData(ESEntities.NIGHTFALL_SPIDER.get(), 1, 2))
+				.addSpawn(MobCategory.MONSTER, 10, new MobSpawnSettings.SpawnerData(ESEntities.LONESTAR_SKELETON.get(), 1, 2))
+				.addSpawn(MobCategory.MONSTER, 15, new MobSpawnSettings.SpawnerData(ESEntities.SEEKER.get(), 1, 2))
+				.addSpawn(MobCategory.MONSTER, 8, new MobSpawnSettings.SpawnerData(ESEntities.ECTOSTONE.get(), 1, 2))
 				.addMobCharge(ESEntities.NIGHTFALL_SPIDER.get(), 1, 0.5)
 				.addMobCharge(ESEntities.LONESTAR_SKELETON.get(), 1, 0.5)
 				.addMobCharge(ESEntities.SEEKER.get(), 1, 0.5)
 				.addMobCharge(ESEntities.ECTOSTONE.get(), 1, 0.5);
 		}
-		return builder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.BAT, 2, 1, 2));
+		return builder.addSpawn(MobCategory.AMBIENT, 2, new MobSpawnSettings.SpawnerData(EntityType.BAT, 1, 2));
 	}
 
 	private static MobSpawnSettings.Builder baseLushSpawnBuilder() {
 		return baseSpawnBuilder()
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 30, 1, 2))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 24, 1, 3))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 18, 1, 2));
+			.addSpawn(MobCategory.CREATURE, 30, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 1, 2))
+			.addSpawn(MobCategory.CREATURE, 24, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 1, 3))
+			.addSpawn(MobCategory.CREATURE, 18, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 1, 2));
 	}
 
 	private static MobSpawnSettings.Builder baseAquaticSpawnBuilder() {
 		return baseSpawnBuilder()
-			.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.ROOKFISH.get(), 16, 2, 4))
-			.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.CONICERAS.get(), 10, 1, 1));
+			.addSpawn(MobCategory.WATER_CREATURE, 16, new MobSpawnSettings.SpawnerData(ESEntities.ROOKFISH.get(), 2, 4))
+			.addSpawn(MobCategory.WATER_CREATURE, 10, new MobSpawnSettings.SpawnerData(ESEntities.CONICERAS.get(), 1, 1));
 	}
 
 	private static MobSpawnSettings.Builder permafrostForestSpawns() {
 		return baseLushSpawnBuilder()
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.YETI.get(), 20, 3, 6))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.AURORA_DEER.get(), 16, 3, 6));
+			.addSpawn(MobCategory.CREATURE, 20, new MobSpawnSettings.SpawnerData(ESEntities.YETI.get(), 3, 6))
+			.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(ESEntities.AURORA_DEER.get(), 3, 6));
 	}
 
 	private static MobSpawnSettings.Builder taigaSpawns() {
 		return baseLushSpawnBuilder()
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.AURORA_DEER.get(), 16, 3, 6));
+			.addSpawn(MobCategory.CREATURE, 16, new MobSpawnSettings.SpawnerData(ESEntities.AURORA_DEER.get(), 3, 6));
 	}
 
 	private static MobSpawnSettings.Builder swampSpawns() {
 		return baseLushSpawnBuilder()
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.ZOMBIFIED_RATLIN.get(), 24, 1, 3))
-			.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 10, 1, 2));
+			.addSpawn(MobCategory.CREATURE, 24, new MobSpawnSettings.SpawnerData(ESEntities.ZOMBIFIED_RATLIN.get(), 1, 3))
+			.addSpawn(MobCategory.AMBIENT, 10, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 1, 2));
 	}
 
 	private static MobSpawnSettings.Builder desertSpawns() {
 		return baseSpawnBuilder()
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.CRYSTALLIZED_MOTH.get(), 15, 1, 6))
-			.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.GLEECH.get(), 10, 1, 3))
-			.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.THIRST_WALKER.get(), 10, 1, 2))
+			.addSpawn(MobCategory.CREATURE, 15, new MobSpawnSettings.SpawnerData(ESEntities.CRYSTALLIZED_MOTH.get(), 1, 6))
+			.addSpawn(MobCategory.MONSTER, 10, new MobSpawnSettings.SpawnerData(ESEntities.GLEECH.get(), 1, 3))
+			.addSpawn(MobCategory.MONSTER, 10, new MobSpawnSettings.SpawnerData(ESEntities.THIRST_WALKER.get(), 1, 2))
 			.addMobCharge(ESEntities.GLEECH.get(), 1, 0.75)
 			.addMobCharge(ESEntities.THIRST_WALKER.get(), 1, 0.75);
 	}
 
 	private static MobSpawnSettings.Builder mushroomSpawns() {
 		return baseSpawnBuilder(false)
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 30, 1, 2))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 24, 1, 3))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 18, 1, 2));
+			.addSpawn(MobCategory.CREATURE, 30, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 1, 2))
+			.addSpawn(MobCategory.CREATURE, 24, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 1, 3))
+			.addSpawn(MobCategory.CREATURE, 18, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 1, 2));
 	}
 
 	private static MobSpawnSettings.Builder solarisSpawns() {
 		return baseSpawnBuilder(false)
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 10, 1, 2))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 8, 1, 3))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 6, 1, 2))
-			.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 6, 1, 2))
-			.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(ESEntities.ECTOSTONE.get(), 8, 1, 2))
+			.addSpawn(MobCategory.CREATURE, 10, new MobSpawnSettings.SpawnerData(ESEntities.ENT.get(), 1, 2))
+			.addSpawn(MobCategory.CREATURE, 8, new MobSpawnSettings.SpawnerData(ESEntities.RATLIN.get(), 1, 3))
+			.addSpawn(MobCategory.CREATURE, 6, new MobSpawnSettings.SpawnerData(ESEntities.SHADOW_SNAIL.get(), 1, 2))
+			.addSpawn(MobCategory.CREATURE, 6, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 1, 2))
+			.addSpawn(MobCategory.MONSTER, 8, new MobSpawnSettings.SpawnerData(ESEntities.ECTOSTONE.get(), 1, 2))
 			.addMobCharge(ESEntities.ECTOSTONE.get(), 1, 0.5);
 	}
 
@@ -212,14 +212,14 @@ public class ESBiomes {
 
 	private static MobSpawnSettings.Builder riverSpawns() {
 		return baseAquaticSpawnBuilder()
-			.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 20, 1, 2));
+			.addSpawn(MobCategory.AMBIENT, 20, new MobSpawnSettings.SpawnerData(ESEntities.SHIMMER_LACEWING.get(), 1, 2));
 	}
 
 	private static MobSpawnSettings.Builder theAbyssSpawns() {
 		return baseAquaticSpawnBuilder()
-			.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(ESEntities.LUMINOFISH.get(), 20, 3, 6))
-			.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(ESEntities.LUMINARIS.get(), 16, 3, 6))
-			.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(ESEntities.TWILIGHT_GAZE.get(), 10, 3, 6));
+			.addSpawn(MobCategory.WATER_AMBIENT, 20, new MobSpawnSettings.SpawnerData(ESEntities.LUMINOFISH.get(), 3, 6))
+			.addSpawn(MobCategory.WATER_AMBIENT, 16, new MobSpawnSettings.SpawnerData(ESEntities.LUMINARIS.get(), 3, 6))
+			.addSpawn(MobCategory.WATER_CREATURE, 10, new MobSpawnSettings.SpawnerData(ESEntities.TWILIGHT_GAZE.get(), 3, 6));
 	}
 
 	public static BiomeGenerationSettings.Builder baseLandGenSettings(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
@@ -562,7 +562,7 @@ public class ESBiomes {
 		return type.is(ESTags.EntityTypes.UNDERGROUND_CREATURES);
 	}
 
-	public static Optional<BlockPos> findRandomUndergroundCreatureSpawnPos(ServerLevelAccessor level, EntityType<?> type, int startY, int x, int z, MobSpawnType spawnType) {
+	public static Optional<BlockPos> findRandomUndergroundCreatureSpawnPos(ServerLevelAccessor level, EntityType<?> type, int startY, int x, int z, EntitySpawnReason spawnType) {
 		List<Integer> validYs = new ArrayList<>();
 		for (int y = startY; y > level.getMinBuildHeight(); y--) {
 			BlockPos pos = new BlockPos(x, y, z);
@@ -577,7 +577,7 @@ public class ESBiomes {
 		return Optional.of(new BlockPos(x, validYs.get(random.nextInt(validYs.size())), z));
 	}
 
-	public static boolean isValidSpawnRulePosition(ServerLevelAccessor level, EntityType<?> type, BlockPos pos, MobSpawnType spawnType) {
+	public static boolean isValidSpawnRulePosition(ServerLevelAccessor level, EntityType<?> type, BlockPos pos, EntitySpawnReason spawnType) {
 		BlockState state = level.getBlockState(pos);
 		return NaturalSpawner.isValidEmptySpawnBlock(level, pos, state, state.getFluidState(), type)
 			&& SpawnPlacements.checkSpawnRules(type, level, spawnType, pos, level.getRandom());

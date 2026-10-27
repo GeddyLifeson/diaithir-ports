@@ -48,7 +48,7 @@ public class DuskEmitterBlock extends BaseEntityBlock {
 				BooleanProperty property = PROPERTY_BY_DIRECTION.get(blockHitResult.getDirection());
 				level.setBlockAndUpdate(blockPos, blockState.setValue(property, !blockState.getValue(property)));
 			}
-			return InteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;
 	}

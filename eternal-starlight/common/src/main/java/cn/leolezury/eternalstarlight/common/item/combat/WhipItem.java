@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
 import cn.leolezury.eternalstarlight.common.entity.attack.Whip;
 import cn.leolezury.eternalstarlight.common.item.interfaces.SwingAttackWeapon;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
@@ -11,7 +13,7 @@ import cn.leolezury.eternalstarlight.common.registry.ESSoundEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -21,20 +23,18 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class WhipItem extends TieredItem implements SwingAttackWeapon {
-	public WhipItem(Tier tier, Properties properties) {
-		super(tier, properties);
+public abstract class WhipItem extends Item implements SwingAttackWeapon {
+	public WhipItem(ESItemTiers tier, Properties properties) {
+		super(tier.common(properties));
 	}
 
-	public static ItemAttributeModifiers createAttributes(Tier tier, float damage, float speed) {
+	public static ItemAttributeModifiers createAttributes(ESItemTiers tier, float damage, float speed) {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -42,7 +42,7 @@ public abstract class WhipItem extends TieredItem implements SwingAttackWeapon {
 	}
 
 	@NotNull
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (hand == InteractionHand.MAIN_HAND && !(level.getEntity(ESDataAttachments.WHIP.getData(player)) instanceof Whip)) {
 			if (!level.isClientSide()) {
@@ -55,9 +55,9 @@ public abstract class WhipItem extends TieredItem implements SwingAttackWeapon {
 				player.awardStat(Stats.ITEM_USED.get(this));
 			}
 			player.resetAttackStrengthTicker();
-			return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
-		return InteractionResultHolder.pass(stack);
+		return InteractionResult.PASS;
 	}
 
 	@Override
@@ -75,8 +75,8 @@ public abstract class WhipItem extends TieredItem implements SwingAttackWeapon {
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		return;
 	}
 
 	@Override

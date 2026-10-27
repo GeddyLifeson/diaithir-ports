@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -120,7 +122,7 @@ public abstract class ThrownSpear extends AbstractArrow {
 		}
 
 		this.dealtDamage = true;
-		if (target.hurt(damageSource, damage)) {
+		if (ESPortCompat.hurt(target, damageSource, damage)) {
 			if (target.getType() == EntityType.ENDERMAN) {
 				return;
 			}

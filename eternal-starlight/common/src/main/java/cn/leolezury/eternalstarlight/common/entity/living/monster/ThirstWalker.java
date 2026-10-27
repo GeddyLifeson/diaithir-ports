@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -143,8 +145,8 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity entity) {
-		boolean flag = super.doHurtTarget(entity);
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
+		boolean flag = super.doHurtTarget(hurtServerLevel, entity);
 		if (flag && entity instanceof LivingEntity living) {
 			float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
 			living.addEffect(new MobEffectInstance(MobEffects.HUNGER, 140 * (int) f), this);
@@ -242,7 +244,7 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
 		this.readPersistentAngerSaveData(this.level(), compoundTag);
-		if (compoundTag.contains(TAG_HUNGER_LEVEL, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (ESPortCompat.has(compoundTag, TAG_HUNGER_LEVEL)) {
 			hungerLevel = compoundTag.getFloatOr(TAG_HUNGER_LEVEL, 0F);
 		}
 	}
@@ -289,7 +291,7 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(getRandom()));
 	}
 
-	public static boolean checkThirstWalkerSpawnRules(EntityType<? extends ThirstWalker> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkThirstWalkerSpawnRules(EntityType<? extends ThirstWalker> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.thirstWalker.canSpawn();
 	}
 }

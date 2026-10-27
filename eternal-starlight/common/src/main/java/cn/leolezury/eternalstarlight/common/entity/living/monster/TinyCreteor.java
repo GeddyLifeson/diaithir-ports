@@ -195,7 +195,7 @@ public class TinyCreteor extends Monster implements PowerableMob {
 				}
 			}
 
-			return InteractionResult.sidedSuccess(this.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.mobInteract(player, interactionHand);
 		}

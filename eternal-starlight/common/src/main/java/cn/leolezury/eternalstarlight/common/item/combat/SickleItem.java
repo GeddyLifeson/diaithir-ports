@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.BlockTags;
@@ -10,19 +14,17 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShearsItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SickleItem extends TieredItem {
-	public SickleItem(Tier tier, Properties properties) {
-		super(tier, properties.component(DataComponents.TOOL, ShearsItem.createToolProperties()));
+public class SickleItem extends Item {
+	public SickleItem(ESItemTiers tier, Properties properties) {
+		super(tier.common(properties.component(DataComponents.TOOL, ShearsItem.createToolProperties())));
 	}
 
-	public static ItemAttributeModifiers createAttributes(Tier tier, int damage, float speed) {
+	public static ItemAttributeModifiers createAttributes(ESItemTiers tier, int damage, float speed) {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (float) damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -48,8 +50,8 @@ public class SickleItem extends TieredItem {
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
+		return;
 	}
 
 	@Override

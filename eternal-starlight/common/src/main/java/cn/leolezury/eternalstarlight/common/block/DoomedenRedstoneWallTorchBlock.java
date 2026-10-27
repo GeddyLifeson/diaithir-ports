@@ -17,14 +17,14 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class DoomedenRedstoneWallTorchBlock extends DoomedenRedstoneTorchBlock {
 	public static final MapCodec<DoomedenRedstoneWallTorchBlock> CODEC = simpleCodec(DoomedenRedstoneWallTorchBlock::new);
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
 
 	public DoomedenRedstoneWallTorchBlock(BlockBehaviour.Properties properties) {

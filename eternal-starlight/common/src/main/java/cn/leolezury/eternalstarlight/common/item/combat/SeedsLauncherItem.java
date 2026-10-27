@@ -7,7 +7,7 @@ import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -36,7 +36,7 @@ public class SeedsLauncherItem extends ProjectileWeaponItem {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		ItemStack projectile = player.getProjectile(stack);
 		boolean success = performShooting(level, player, projectile, hand);
@@ -44,7 +44,7 @@ public class SeedsLauncherItem extends ProjectileWeaponItem {
 			SeedsLauncherAmmoType type = SeedsLauncherAmmoType.getAmmoType(level.registryAccess(), projectile.getItem()).value();
 			player.getCooldowns().addCooldown(this, type.cooldownAsTicks());
 		}
-		return success ? InteractionResultHolder.consume(stack) : super.use(level, player, hand);
+		return success ? InteractionResult.CONSUME : super.use(level, player, hand);
 	}
 
 	public boolean performShooting(Level level, LivingEntity living, ItemStack projectile, InteractionHand hand) {

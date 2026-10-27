@@ -7,7 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -22,7 +22,7 @@ public class ChainOfSoulsItem extends Item {
 	}
 
 	@NotNull
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+	public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
 		ItemStack stack = player.getItemInHand(interactionHand);
 		if (!level.isClientSide()) {
 			ChainOfSouls hook = level.getEntity(ESDataAttachments.GRAPPLING.getData(player)) instanceof ChainOfSouls chain ? chain : null;
@@ -33,7 +33,7 @@ public class ChainOfSoulsItem extends Item {
 				this.shoot(level, player, stack);
 			}
 		}
-		return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 
 	private void shoot(Level level, Player player, ItemStack weapon) {
@@ -56,13 +56,7 @@ public class ChainOfSoulsItem extends Item {
 		player.gameEvent(GameEvent.ITEM_INTERACT_FINISH);
 	}
 
-	@Override
-	public int getEnchantmentValue() {
-		return 1;
-	}
+	
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.TENACIOUS_PETAL.get()) || repairCandidate.is(ESItems.TENACIOUS_VINE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

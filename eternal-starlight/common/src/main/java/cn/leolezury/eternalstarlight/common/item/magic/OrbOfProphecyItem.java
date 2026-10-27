@@ -24,7 +24,7 @@ public class OrbOfProphecyItem extends Item {
 		if (level.getBlockState(pos).is(ESTags.Blocks.PORTAL_FRAME_BLOCKS)) {
 			if (ESPortalBlock.validateAndPlacePortal(level, pos)) {
 				level.playSound(player, pos, SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1.0F, 1.0F);
-				return InteractionResult.sidedSuccess(level.isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
 		return InteractionResult.PASS;

@@ -1,11 +1,15 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.entity.projectile.ThrownSpear;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,12 +27,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class SpearItem extends TieredItem implements ProjectileItem {
-	public SpearItem(Tier tier, Item.Properties properties) {
-		super(tier, properties.component(DataComponents.TOOL, createToolProperties()));
+public abstract class SpearItem extends Item implements ProjectileItem {
+	public SpearItem(ESItemTiers tier, Item.Properties properties) {
+		super(tier.common(properties.component(DataComponents.TOOL, createToolProperties())));
 	}
 
-	public static ItemAttributeModifiers createAttributes(Tier tier, float damage, float speed) {
+	public static ItemAttributeModifiers createAttributes(ESItemTiers tier, float damage, float speed) {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -45,8 +49,8 @@ public abstract class SpearItem extends TieredItem implements ProjectileItem {
 	}
 
 	@Override
-	public UseAnim getUseAnimation(ItemStack stack) {
-		return UseAnim.SPEAR;
+	public ItemUseAnimation getUseAnimation(ItemStack stack) {
+		return ItemUseAnimation.SPEAR;
 	}
 
 	@Override
@@ -55,7 +59,7 @@ public abstract class SpearItem extends TieredItem implements ProjectileItem {
 	}
 
 	@Override
-	public void releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
+	public boolean releaseUsing(ItemStack stack, Level level, LivingEntity living, int timeLeft) {
 		if (living instanceof Player player) {
 			int i = this.getUseDuration(stack, living) - timeLeft;
 			if (i >= 10) {
@@ -77,18 +81,19 @@ public abstract class SpearItem extends TieredItem implements ProjectileItem {
 				}
 			}
 		}
+		return true;
 	}
 
 	public abstract ThrownSpear createSpear(Level level, @Nullable LivingEntity owner, double x, double y, double z, ItemStack pickupItemStack);
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (isTooDamagedToUse(stack)) {
-			return InteractionResultHolder.fail(stack);
+			return InteractionResult.FAIL;
 		} else {
 			player.startUsingItem(hand);
-			return InteractionResultHolder.consume(stack);
+			return InteractionResult.CONSUME;
 		}
 	}
 
@@ -97,8 +102,8 @@ public abstract class SpearItem extends TieredItem implements ProjectileItem {
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		return;
 	}
 
 	@Override
@@ -106,8 +111,5 @@ public abstract class SpearItem extends TieredItem implements ProjectileItem {
 		stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 	}
 
-	@Override
-	public int getEnchantmentValue() {
-		return 1;
-	}
+	
 }

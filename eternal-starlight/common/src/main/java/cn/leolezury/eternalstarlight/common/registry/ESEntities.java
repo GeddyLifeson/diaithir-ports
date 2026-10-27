@@ -22,6 +22,7 @@ import cn.leolezury.eternalstarlight.common.platform.registry.RegistrationProvid
 import cn.leolezury.eternalstarlight.common.platform.registry.RegistryObject;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.player.Player;
 
@@ -33,7 +34,7 @@ public class ESEntities {
 			.sized(0.98F, 0.98F)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build("falling_block")
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("falling_block")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ESPainting>> PAINTING = ENTITIES.register(
 		"painting",
@@ -41,7 +42,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(10)
 			.updateInterval(Integer.MAX_VALUE)
-			.build("painting")
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("painting")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AethersentMeteor>> AETHERSENT_METEOR = ENTITIES.register(
 		"aethersent_meteor",
@@ -49,7 +50,7 @@ public class ESEntities {
 			.sized(0.98F, 0.98F)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("aethersent_meteor").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("aethersent_meteor")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AetherstrikeRocketEntity>> AETHERSTRIKE_ROCKET = ENTITIES.register(
 		"aetherstrike_rocket",
@@ -57,7 +58,7 @@ public class ESEntities {
 			.sized(0.25F, 0.25F)
 			.clientTrackingRange(4)
 			.updateInterval(10)
-			.build(EternalStarlight.id("aetherstrike_rocket").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("aetherstrike_rocket")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ESBoat>> BOAT = ENTITIES.register(
 		"boat",
@@ -65,7 +66,7 @@ public class ESEntities {
 			.sized(1.375F, 0.5625F)
 			.eyeHeight(0.5625F)
 			.clientTrackingRange(10)
-			.build("boat")
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("boat")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ESChestBoat>> CHEST_BOAT = ENTITIES.register(
 		"chest_boat",
@@ -73,21 +74,21 @@ public class ESEntities {
 			.sized(1.375F, 0.5625F)
 			.eyeHeight(0.5625F)
 			.clientTrackingRange(10)
-			.build("chest_boat")
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("chest_boat")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Boarwarf>> BOARWARF = ENTITIES.register(
 		"boarwarf",
 		() -> EntityType.Builder.of(Boarwarf::new, MobCategory.CREATURE)
 			.sized(0.6F, 1.7F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("boarwarf").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("boarwarf")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AstralGolem>> ASTRAL_GOLEM = ENTITIES.register(
 		"astral_golem",
 		() -> EntityType.Builder.of(AstralGolem::new, MobCategory.CREATURE)
 			.sized(0.5F, 1.25F)
 			.ridingOffset(-0.625F)
-			.build(EternalStarlight.id("astral_golem").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("astral_golem")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Gleech>> GLEECH = ENTITIES.register(
 		"gleech",
@@ -97,7 +98,7 @@ public class ESEntities {
 			.passengerAttachments(0.2375F)
 			.ridingOffset(-0.0625F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("gleech").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("gleech")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<GleechEgg>> GLEECH_EGG = ENTITIES.register(
 		"gleech_egg",
@@ -105,7 +106,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("gleech_egg").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("gleech_egg")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<LonestarSkeleton>> LONESTAR_SKELETON = ENTITIES.register(
 		"lonestar_skeleton",
@@ -114,14 +115,14 @@ public class ESEntities {
 			.eyeHeight(1.74F)
 			.ridingOffset(-0.7F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("lonestar_skeleton").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("lonestar_skeleton")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<NightfallSpider>> NIGHTFALL_SPIDER = ENTITIES.register(
 		"nightfall_spider",
 		() -> EntityType.Builder.of(NightfallSpider::new, MobCategory.MONSTER)
 			.sized(0.75F, 0.75F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("nightfall_spider").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("nightfall_spider")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Seeker>> SEEKER = ENTITIES.register(
 		"seeker",
@@ -129,7 +130,7 @@ public class ESEntities {
 			.sized(1.0F, 1.0F)
 			.clientTrackingRange(8)
 			.fireImmune()
-			.build(EternalStarlight.id("seeker").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("seeker")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Ectostone>> ECTOSTONE = ENTITIES.register(
 		"ectostone",
@@ -137,7 +138,7 @@ public class ESEntities {
 			.sized(0.75F, 1.0F)
 			.clientTrackingRange(4)
 			.fireImmune()
-			.build(EternalStarlight.id("ectostone").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("ectostone")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThirstWalker>> THIRST_WALKER = ENTITIES.register(
 		"thirst_walker",
@@ -145,21 +146,21 @@ public class ESEntities {
 			.sized(0.6F, 2.5F)
 			.ridingOffset(-0.125F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("thirst_walker").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("thirst_walker")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Creteor>> CRETEOR = ENTITIES.register(
 		"creteor",
 		() -> EntityType.Builder.of(Creteor::new, MobCategory.MONSTER)
 			.sized(0.6F, 1.5F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("creteor").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("creteor")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TinyCreteor>> TINY_CRETEOR = ENTITIES.register(
 		"tiny_creteor",
 		() -> EntityType.Builder.of(TinyCreteor::new, MobCategory.MONSTER)
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("tiny_creteor").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tiny_creteor")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Stranghoul>> STRANGHOUL = ENTITIES.register(
 		"stranghoul",
@@ -168,7 +169,7 @@ public class ESEntities {
 			.eyeHeight(1.74F)
 			.ridingOffset(-0.7F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("stranghoul").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("stranghoul")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Ent>> ENT = ENTITIES.register(
 		"ent",
@@ -176,21 +177,21 @@ public class ESEntities {
 			.sized(0.5F, 0.6875F)
 			.passengerAttachments(0.35F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("ent").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("ent")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Ratlin>> RATLIN = ENTITIES.register(
 		"ratlin",
 		() -> EntityType.Builder.of(Ratlin::new, MobCategory.CREATURE)
 			.sized(0.9F, 0.775F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("ratlin").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("ratlin")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ZombifiedRatlin>> ZOMBIFIED_RATLIN = ENTITIES.register(
 		"zombified_ratlin",
 		() -> EntityType.Builder.of(ZombifiedRatlin::new, MobCategory.CREATURE)
 			.sized(0.9F, 0.775F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("zombified_ratlin").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("zombified_ratlin")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ShadowSnail>> SHADOW_SNAIL = ENTITIES.register(
 		"shadow_snail",
@@ -200,14 +201,14 @@ public class ESEntities {
 			.passengerAttachments(0.2375F)
 			.ridingOffset(-0.0625F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("shadow_snail").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("shadow_snail")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Yeti>> YETI = ENTITIES.register(
 		"yeti",
 		() -> EntityType.Builder.of(Yeti::new, MobCategory.CREATURE)
 			.sized(0.9F, 0.9F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("yeti").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("yeti")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AuroraDeer>> AURORA_DEER = ENTITIES.register(
 		"aurora_deer",
@@ -215,42 +216,42 @@ public class ESEntities {
 			.sized(0.9F, 1.75F)
 			.passengerAttachments(1F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("aurora_deer").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("aurora_deer")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<CrystallizedMoth>> CRYSTALLIZED_MOTH = ENTITIES.register(
 		"crystallized_moth",
 		() -> EntityType.Builder.of(CrystallizedMoth::new, MobCategory.CREATURE)
 			.sized(0.5F, 0.4375F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("crystallized_moth").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("crystallized_moth")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ShimmerLacewing>> SHIMMER_LACEWING = ENTITIES.register(
 		"shimmer_lacewing",
 		() -> EntityType.Builder.of(ShimmerLacewing::new, MobCategory.AMBIENT)
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("shimmer_lacewing").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("shimmer_lacewing")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<StarfireBird>> STARFIRE_BIRD = ENTITIES.register(
 		"starfire_bird",
 		() -> EntityType.Builder.of(StarfireBird::new, MobCategory.AMBIENT)
 			.sized(0.5F, 0.625F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("starfire_bird").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("starfire_bird")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<GrimstoneGolem>> GRIMSTONE_GOLEM = ENTITIES.register(
 		"grimstone_golem",
 		() -> EntityType.Builder.of(GrimstoneGolem::new, MobCategory.CREATURE)
 			.sized(0.5F, 1F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("grimstone_golem").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("grimstone_golem")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AethersentGolem>> AETHERSENT_GOLEM = ENTITIES.register(
 		"aethersent_golem",
 		() -> EntityType.Builder.of(AethersentGolem::new, MobCategory.CREATURE)
 			.sized(0.5F, 1.75F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("aethersent_golem").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("aethersent_golem")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Rookfish>> ROOKFISH = ENTITIES.register(
 		"rookfish",
@@ -258,35 +259,35 @@ public class ESEntities {
 			.sized(0.6F, 0.6F)
 			.eyeHeight(0.4F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("rookfish").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("rookfish")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Luminofish>> LUMINOFISH = ENTITIES.register(
 		"luminofish",
 		() -> EntityType.Builder.of(Luminofish::new, MobCategory.WATER_AMBIENT)
 			.sized(0.5F, 0.3F)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("luminofish").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("luminofish")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Luminaris>> LUMINARIS = ENTITIES.register(
 		"luminaris",
 		() -> EntityType.Builder.of(Luminaris::new, MobCategory.WATER_AMBIENT)
 			.sized(0.5F, 0.3F)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("luminaris").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("luminaris")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TwilightGaze>> TWILIGHT_GAZE = ENTITIES.register(
 		"twilight_gaze",
 		() -> EntityType.Builder.of(TwilightGaze::new, MobCategory.WATER_CREATURE)
 			.sized(0.9F, 0.6F)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("twilight_gaze").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("twilight_gaze")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Coniceras>> CONICERAS = ENTITIES.register(
 		"coniceras",
 		() -> EntityType.Builder.of(Coniceras::new, MobCategory.WATER_CREATURE)
 			.sized(1.0F, 0.5F)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("coniceras").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("coniceras")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<EyeOfSeeking>> EYE_OF_SEEKING = ENTITIES.register(
 		"eye_of_seeking",
@@ -294,7 +295,7 @@ public class ESEntities {
 			.sized(0.25F, 0.25F)
 			.clientTrackingRange(4)
 			.updateInterval(1)
-			.build(EternalStarlight.id("eye_of_seeking").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("eye_of_seeking")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TheGatekeeper>> THE_GATEKEEPER = ENTITIES.register(
 		"the_gatekeeper",
@@ -303,7 +304,7 @@ public class ESEntities {
 			.clientTrackingRange(32)
 			.eyeHeight(1.74F)
 			.fireImmune()
-			.build(EternalStarlight.id("the_gatekeeper").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("the_gatekeeper")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<GatekeeperFireball>> GATEKEEPER_FIREBALL = ENTITIES.register(
 		"gatekeeper_fireball",
@@ -311,7 +312,7 @@ public class ESEntities {
 			.sized(1.0F, 1.0F)
 			.clientTrackingRange(4)
 			.updateInterval(1)
-			.build(EternalStarlight.id("gatekeeper_fireball").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("gatekeeper_fireball")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<StarlightGolem>> STARLIGHT_GOLEM = ENTITIES.register(
 		"starlight_golem",
@@ -319,27 +320,27 @@ public class ESEntities {
 			.sized(1.25f, 2.5f)
 			.clientTrackingRange(32)
 			.fireImmune()
-			.build(EternalStarlight.id("starlight_golem").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("starlight_golem")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<GolemLaserBeam>> GOLEM_LASER_BEAM = ENTITIES.register(
 		"golem_laser_beam",
 		() -> EntityType.Builder.<GolemLaserBeam>of(GolemLaserBeam::new, MobCategory.MISC)
 			.sized(0f, 0f)
 			.clientTrackingRange(32)
-			.build(EternalStarlight.id("golem_laser_beam").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("golem_laser_beam")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<EnergizedFlame>> ENERGIZED_FLAME = ENTITIES.register(
 		"energized_flame",
 		() -> EntityType.Builder.of(EnergizedFlame::new, MobCategory.MISC)
 			.sized(0f, 0f)
-			.build(EternalStarlight.id("energized_flame").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("energized_flame")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Freeze>> FREEZE = ENTITIES.register(
 		"freeze",
 		() -> EntityType.Builder.of(Freeze::new, MobCategory.MONSTER)
 			.sized(0.5f, 1.25f)
 			.fireImmune()
-			.build(EternalStarlight.id("freeze").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("freeze")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<FrozenTube>> FROZEN_TUBE = ENTITIES.register(
 		"frozen_tube",
@@ -347,7 +348,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("frozen_tube").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("frozen_tube")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Permafrost>> PERMAFROST = ENTITIES.register(
 		"permafrost",
@@ -355,7 +356,7 @@ public class ESEntities {
 			.sized(0.75f, 2.25f)
 			.clientTrackingRange(32)
 			.fireImmune()
-			.build(EternalStarlight.id("permafrost").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("permafrost")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<PermafrostSpit>> PERMAFROST_SPIT = ENTITIES.register(
 		"permafrost_spit",
@@ -363,14 +364,14 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("permafrost_spit").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("permafrost_spit")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<PermafrostCloud>> PERMAFROST_CLOUD = ENTITIES.register(
 		"permafrost_cloud",
 		() -> EntityType.Builder.of(PermafrostCloud::new, MobCategory.MISC)
 			.sized(3.5f, 0.3f)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("permafrost_cloud").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("permafrost_cloud")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Coldsnap>> COLDSNAP = ENTITIES.register(
 		"coldsnap",
@@ -378,21 +379,21 @@ public class ESEntities {
 			.sized(0.0f, 0.0f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("coldsnap").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("coldsnap")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<LunarMonstrosity>> LUNAR_MONSTROSITY = ENTITIES.register(
 		"lunar_monstrosity",
 		() -> EntityType.Builder.of(LunarMonstrosity::new, MobCategory.MONSTER)
 			.sized(0.9f, 3.5f)
 			.clientTrackingRange(32)
-			.build(EternalStarlight.id("lunar_monstrosity").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("lunar_monstrosity")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<LunarMonstrosityBreath>> LUNAR_MONSTROSITY_BREATH = ENTITIES.register(
 		"lunar_monstrosity_breath",
 		() -> EntityType.Builder.<LunarMonstrosityBreath>of(LunarMonstrosityBreath::new, MobCategory.MISC)
 			.sized(0f, 0f)
 			.clientTrackingRange(32)
-			.build(EternalStarlight.id("lunar_monstrosity_breath").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("lunar_monstrosity_breath")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<LunarSpore>> LUNAR_SPORE = ENTITIES.register(
 		"lunar_spore",
@@ -400,20 +401,20 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(6)
 			.updateInterval(1)
-			.build(EternalStarlight.id("lunar_spore").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("lunar_spore")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<LunarThorn>> LUNAR_THORN = ENTITIES.register(
 		"lunar_thorn",
 		() -> EntityType.Builder.of(LunarThorn::new, MobCategory.MISC)
 			.sized(0.3f, 1f)
-			.build(EternalStarlight.id("lunar_thorn").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("lunar_thorn")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<PoisonousCloud>> POISONOUS_CLOUD = ENTITIES.register(
 		"poisonous_cloud",
 		() -> EntityType.Builder.of(PoisonousCloud::new, MobCategory.MISC)
 			.sized(5f, 1f)
 			.clientTrackingRange(10)
-			.build(EternalStarlight.id("poisonous_cloud").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("poisonous_cloud")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Tangled>> TANGLED = ENTITIES.register(
 		"tangled",
@@ -422,14 +423,14 @@ public class ESEntities {
 			.eyeHeight(1.74F)
 			.ridingOffset(-0.7F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("tangled").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tangled")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TangledSkull>> TANGLED_SKULL = ENTITIES.register(
 		"tangled_skull",
 		() -> EntityType.Builder.of(TangledSkull::new, MobCategory.MONSTER)
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("tangled_skull").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tangled_skull")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<SolarCreeper>> SOLAR_CREEPER = ENTITIES.register(
 		"solar_creeper",
@@ -438,7 +439,7 @@ public class ESEntities {
 			.eyeHeight(2.1f)
 			.clientTrackingRange(32)
 			.fireImmune()
-			.build(EternalStarlight.id("solar_creeper").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("solar_creeper")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TangledHusk>> TANGLED_HUSK = ENTITIES.register(
 		"tangled_husk",
@@ -448,7 +449,7 @@ public class ESEntities {
 			.vehicleAttachment(Player.DEFAULT_VEHICLE_ATTACHMENT)
 			.clientTrackingRange(32)
 			.updateInterval(2)
-			.build(EternalStarlight.id("tangled_husk").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tangled_husk")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThrownShatteredBlade>> SHATTERED_BLADE = ENTITIES.register(
 		"shattered_blade",
@@ -456,7 +457,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(6)
 			.updateInterval(1)
-			.build(EternalStarlight.id("shattered_blade").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("shattered_blade")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThrownMalariteSpear>> MALARITE_SPEAR = ENTITIES.register(
 		"malarite_spear",
@@ -464,7 +465,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(6)
 			.updateInterval(1)
-			.build(EternalStarlight.id("malarite_spear").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("malarite_spear")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TearBomb>> TEAR_BOMB = ENTITIES.register(
 		"tear_bomb",
@@ -474,7 +475,7 @@ public class ESEntities {
 			.eyeHeight(0.15F)
 			.clientTrackingRange(10)
 			.updateInterval(10)
-			.build(EternalStarlight.id("tear_bomb").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tear_bomb")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TearBombMinecart>> TEAR_BOMB_MINECART = ENTITIES.register(
 		"tear_bomb_minecart",
@@ -482,7 +483,7 @@ public class ESEntities {
 			.sized(0.98F, 0.7F)
 			.passengerAttachments(0.1875F)
 			.clientTrackingRange(8)
-			.build(EternalStarlight.id("tear_bomb_minecart").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tear_bomb_minecart")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThrownPungencyFruitSpear>> PUNGENCY_FRUIT_SPEAR = ENTITIES.register(
 		"pungency_fruit_spear",
@@ -490,7 +491,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(6)
 			.updateInterval(1)
-			.build(EternalStarlight.id("pungency_fruit_spear").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("pungency_fruit_spear")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThioquartzArrow>> THIOQUARTZ_ARROW = ENTITIES.register(
 		"thioquartz_arrow",
@@ -498,7 +499,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("thioquartz_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("thioquartz_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThioquartzShard>> THIOQUARTZ_SHARD = ENTITIES.register(
 		"thioquartz_shard",
@@ -506,7 +507,7 @@ public class ESEntities {
 			.sized(0.2f, 0.2f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("thioquartz_shard").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("thioquartz_shard")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AethersentArrow>> AETHERSENT_ARROW = ENTITIES.register(
 		"aethersent_arrow",
@@ -514,7 +515,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("aethersent_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("aethersent_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<GlaciteArrow>> GLACITE_ARROW = ENTITIES.register(
 		"glacite_arrow",
@@ -522,7 +523,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("glacite_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("glacite_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<MalariteArrow>> MALARITE_ARROW = ENTITIES.register(
 		"malarite_arrow",
@@ -530,7 +531,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("malarite_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("malarite_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AmaramberArrow>> AMARAMBER_ARROW = ENTITIES.register(
 		"amaramber_arrow",
@@ -538,7 +539,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("amaramber_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("amaramber_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<VoraciousArrow>> VORACIOUS_ARROW = ENTITIES.register(
 		"voracious_arrow",
@@ -546,7 +547,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("voracious_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("voracious_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AirSacArrow>> AIR_SAC_ARROW = ENTITIES.register(
 		"air_sac_arrow",
@@ -554,7 +555,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("air_sac_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("air_sac_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<SpiralArrow>> SPIRAL_ARROW = ENTITIES.register(
 		"spiral_arrow",
@@ -562,7 +563,7 @@ public class ESEntities {
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
-			.build(EternalStarlight.id("spiral_arrow").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("spiral_arrow")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<SonarBomb>> SONAR_BOMB = ENTITIES.register(
 		"sonar_bomb",
@@ -570,7 +571,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("sonar_bomb").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("sonar_bomb")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<MagicStone>> MAGIC_STONE = ENTITIES.register(
 		"magic_stone",
@@ -578,7 +579,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("magic_stone").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("magic_stone")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<AshenSnowball>> ASHEN_SNOWBALL = ENTITIES.register(
 		"ashen_snowball",
@@ -586,7 +587,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("ashen_snowball").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("ashen_snowball")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<FrozenBomb>> FROZEN_BOMB = ENTITIES.register(
 		"frozen_bomb",
@@ -594,7 +595,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("frozen_bomb").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("frozen_bomb")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<WiltedPetal>> WILTED_PETAL = ENTITIES.register(
 		"wilted_petal",
@@ -602,7 +603,7 @@ public class ESEntities {
 			.sized(0.2f, 0.2f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("wilted_petal").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("wilted_petal")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ShotSeeds>> SHOT_SEEDS = ENTITIES.register(
 		"shot_seeds",
@@ -610,7 +611,7 @@ public class ESEntities {
 			.sized(0.2f, 0.2f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("shot_seeds").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("shot_seeds")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThrownStarfire>> STARFIRE = ENTITIES.register(
 		"starfire",
@@ -618,7 +619,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("starfire").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("starfire")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<Candlash>> CANDLASH = ENTITIES.register(
 		"candlash",
@@ -626,7 +627,7 @@ public class ESEntities {
 			.sized(0.0f, 0.0f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("candlash").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("candlash")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<TentacleSpike>> TENTACLE_SPIKE = ENTITIES.register(
 		"tentacle_spike",
@@ -634,7 +635,7 @@ public class ESEntities {
 			.sized(0.0f, 0.0f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("tentacle_spike").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("tentacle_spike")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<EnergySpark>> ENERGY_SPARK = ENTITIES.register(
 		"energy_spark",
@@ -642,7 +643,7 @@ public class ESEntities {
 			.sized(0.5f, 0.5f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("energy_spark").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("energy_spark")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<BallLightning>> BALL_LIGHTNING = ENTITIES.register(
 		"ball_lightning",
@@ -650,7 +651,7 @@ public class ESEntities {
 			.sized(0.5f, 0.5f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("ball_lightning").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("ball_lightning")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<CrystalCluster>> CRYSTAL_CLUSTER = ENTITIES.register(
 		"crystal_cluster",
@@ -658,7 +659,7 @@ public class ESEntities {
 			.sized(0.75f, 0.75f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("crystal_cluster").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("crystal_cluster")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ThrownEnergyBoomerang>> ENERGY_BOOMERANG = ENTITIES.register(
 		"energy_boomerang",
@@ -666,7 +667,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(6)
 			.updateInterval(1)
-			.build(EternalStarlight.id("energy_boomerang").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("energy_boomerang")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<SoulitSpectator>> SOULIT_SPECTATOR = ENTITIES.register(
 		"soulit_spectator",
@@ -674,7 +675,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("soulit_spectator").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("soulit_spectator")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ChainOfSouls>> CHAIN_OF_SOULS = ENTITIES.register(
 		"chain_of_souls",
@@ -682,7 +683,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("chain_of_souls").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("chain_of_souls")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<BouncyStar>> BOUNCY_STAR = ENTITIES.register(
 		"bouncy_star",
@@ -690,7 +691,7 @@ public class ESEntities {
 			.sized(0.5f, 0.5f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("bouncy_star").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("bouncy_star")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<ShiningStar>> SHINING_STAR = ENTITIES.register(
 		"shining_star",
@@ -698,7 +699,7 @@ public class ESEntities {
 			.sized(0.3f, 0.3f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("shining_star").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("shining_star")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<SolarStrikeEntity>> SOLAR_STRIKE = ENTITIES.register(
 		"solar_strike",
@@ -706,7 +707,7 @@ public class ESEntities {
 			.sized(0.0f, 0.0f)
 			.clientTrackingRange(32)
 			.updateInterval(1)
-			.build(EternalStarlight.id("solar_strike").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("solar_strike")))
 	);
 	public static final RegistryObject<EntityType<?>, EntityType<OrbitalPlanet>> ORBITAL_PLANET = ENTITIES.register(
 		"orbital_planet",
@@ -714,7 +715,7 @@ public class ESEntities {
 			.sized(0.5f, 0.5f)
 			.clientTrackingRange(10)
 			.updateInterval(1)
-			.build(EternalStarlight.id("orbital_planet").toString())
+			.build(ResourceKey.create(Registries.ENTITY_TYPE, EternalStarlight.id("orbital_planet")))
 	);
 
 	public static void loadClass() {

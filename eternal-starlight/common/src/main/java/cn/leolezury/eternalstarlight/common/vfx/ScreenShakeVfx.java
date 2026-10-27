@@ -48,7 +48,7 @@ public class ScreenShakeVfx extends VfxType<ScreenShakeVfx.Data> {
 	@Override
 	public void spawnOnClient(VfxInstance instance) {
 		ESMiscUtil.runWhenOnClient(() -> () -> ESClientHandler.SCREEN_SHAKES.add(new ScreenShake(
-			instance.dimension().location(),
+			instance.dimension().identifier(),
 			instance.position(),
 			instance.radius(),
 			instance.duration(),

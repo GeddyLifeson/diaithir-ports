@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.misc;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -60,7 +62,7 @@ public class ESPainting extends HangingEntity {
 
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
-		builder.define(DATA_VARIANT, ESPaintingVariants.GUARDIAN.location().toString());
+		builder.define(DATA_VARIANT, ESPaintingVariants.GUARDIAN.identifier().toString());
 		builder.define(DATA_ITEM, ESItems.STARLIT_PAINTING.get().getDefaultInstance());
 	}
 
@@ -82,7 +84,7 @@ public class ESPainting extends HangingEntity {
 	}
 
 	public void setVariant(Holder<ESPaintingVariant> variant) {
-		variant.unwrapKey().ifPresent(key -> setVariantId(key.location()));
+		variant.unwrapKey().ifPresent(key -> setVariantId(key.identifier()));
 	}
 
 	public Holder<ESPaintingVariant> getVariant() {
@@ -130,7 +132,7 @@ public class ESPainting extends HangingEntity {
 	public static CompoundTag paintingData(ResourceKey<ESPaintingVariant> variant) {
 		CompoundTag tag = new CompoundTag();
 		tag.putString("id", EternalStarlight.ID + ":painting");
-		tag.putString(TAG_VARIANT, variant.location().toString());
+		tag.putString(TAG_VARIANT, variant.identifier().toString());
 		return tag;
 	}
 
@@ -226,8 +228,8 @@ public class ESPainting extends HangingEntity {
 			setVariantId(variantId);
 		}
 		this.setDirection(this.direction);
-		if (compoundTag.contains(TAG_ITEM, CompoundTag.TAG_COMPOUND)) {
-			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.getCompound(TAG_ITEM)).orElse(ESItems.STARLIT_PAINTING.get().getDefaultInstance()));
+		if (ESPortCompat.has(compoundTag, TAG_ITEM)) {
+			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.childOrEmpty(TAG_ITEM)).orElse(ESItems.STARLIT_PAINTING.get().getDefaultInstance()));
 		} else {
 			this.setItem(ESItems.STARLIT_PAINTING.get().getDefaultInstance());
 		}

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -104,7 +106,7 @@ public class LunarThorn extends Entity implements TraceableEntity {
 						if (getAttackMode() == 1 && !livingEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
 							livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10));
 						}
-						livingEntity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), getAttackMode() == 0 ? 4 : 3);
+						ESPortCompat.hurt(livingEntity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), getAttackMode() == 0 ? 4 : 3);
 					}
 				}
 			}
@@ -123,7 +125,7 @@ public class LunarThorn extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -133,8 +135,8 @@ public class LunarThorn extends Entity implements TraceableEntity {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput compoundTag) {
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
 		setAttackMode(compoundTag.getIntOr(TAG_ATTACK_MODE, 0));
@@ -143,7 +145,7 @@ public class LunarThorn extends Entity implements TraceableEntity {
 	@Override
 	protected void addAdditionalSaveData(ValueOutput compoundTag) {
 		if (owner != null) {
-			compoundTag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, owner.getUUID());
 		}
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 		compoundTag.putInt(TAG_ATTACK_MODE, getAttackMode());

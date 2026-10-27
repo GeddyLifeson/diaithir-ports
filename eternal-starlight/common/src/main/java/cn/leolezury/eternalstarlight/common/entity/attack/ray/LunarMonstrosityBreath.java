@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack.ray;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.living.boss.monstrosity.LunarMonstrosity;
 import cn.leolezury.eternalstarlight.common.entity.living.boss.monstrosity.LunarMonstrosityToxicBreathPhase;
@@ -35,7 +37,7 @@ public class LunarMonstrosityBreath extends RayAttack {
 	public void doHurtTarget(LivingEntity target) {
 		getCaster().ifPresent(caster -> {
 			if (ESEntityUtil.shouldHarm(caster, target)) {
-				if (target.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, caster), getAttackDamage()) && !target.hasEffect(MobEffects.POISON)) {
+				if (ESPortCompat.hurt(target, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, caster), getAttackDamage()) && !target.hasEffect(MobEffects.POISON)) {
 					target.addEffect(new MobEffectInstance(MobEffects.POISON, 60));
 				}
 			}

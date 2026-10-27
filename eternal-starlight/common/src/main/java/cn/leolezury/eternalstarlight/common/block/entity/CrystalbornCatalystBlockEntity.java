@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -236,10 +238,10 @@ public class CrystalbornCatalystBlockEntity extends BaseContainerBlockEntity {
 		super.loadAdditional(compoundTag);
 		int count = compoundTag.getIntOr(TAG_CURSOR_COUNT, 0);
 		for (int i = 0; i < count; i++) {
-			this.cursors.add(Cursor.fromTag(compoundTag.getCompound(TAG_CURSOR + i)));
+			this.cursors.add(Cursor.fromTag(compoundTag.childOrEmpty(TAG_CURSOR + i)));
 		}
 		this.energyLeft = compoundTag.getIntOr(TAG_ENERGY_LEFT, 0);
-		ContainerHelper.loadAllItems(compoundTag, this.items, provider);
+		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
 	}
 
 	@Override

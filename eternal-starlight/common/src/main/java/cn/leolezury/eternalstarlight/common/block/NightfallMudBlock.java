@@ -21,7 +21,7 @@ public class NightfallMudBlock extends MudBlock {
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
 		if (random.nextInt(80) == 0 && level.getBlockState(pos.below()).isAir()) {
 			for (int i = 0; i < random.nextInt(1, 4); i++) {
-				level.addParticle(random.nextInt(3) == 0 ? ParticleTypes.DRIPPING_WATER : ESParticles.DRIPPING_MUD.get(), Mth.lerp(level.random.nextDouble(), pos.getX(), pos.getX() + 1), pos.getY(), Mth.lerp(level.random.nextDouble(), pos.getZ(), pos.getZ() + 1), 0.0, 0.0, 0.0);
+				level.addParticle(random.nextInt(3) == 0 ? ParticleTypes.DRIPPING_WATER : ESParticles.DRIPPING_MUD.get(), Mth.lerp(level.getRandom().nextDouble(), pos.getX(), pos.getX() + 1), pos.getY(), Mth.lerp(level.getRandom().nextDouble(), pos.getZ(), pos.getZ() + 1), 0.0, 0.0, 0.0);
 			}
 		}
 	}

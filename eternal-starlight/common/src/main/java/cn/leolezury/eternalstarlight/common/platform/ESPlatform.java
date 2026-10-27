@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.platform;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import cn.leolezury.eternalstarlight.common.block.TearBombBlock;
 import cn.leolezury.eternalstarlight.common.block.fluid.EtherFluid;
 import cn.leolezury.eternalstarlight.common.item.armor.AlchemistArmorItem;
@@ -102,19 +104,19 @@ public interface ESPlatform {
 		return new CrescentSpearItem(properties);
 	}
 
-	default ThermalSpringstoneArmorItem createThermalSpringstoneArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	default ThermalSpringstoneArmorItem createThermalSpringstoneArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new ThermalSpringstoneArmorItem(material, type, properties);
 	}
 
-	default AlchemistArmorItem createAlchemistArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	default AlchemistArmorItem createAlchemistArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new AlchemistArmorItem(material, type, properties);
 	}
 
-	default ArmorItem createStarlitDiamondArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	default ArmorItem createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new ArmorItem(material, type, properties);
 	}
 
-	default UnrealiumArmorItem createUnrealiumArmor(Holder<ArmorMaterial> material, ArmorItem.Type type, Item.Properties properties) {
+	default UnrealiumArmorItem createUnrealiumArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
 		return new UnrealiumArmorItem(material, type, properties);
 	}
 

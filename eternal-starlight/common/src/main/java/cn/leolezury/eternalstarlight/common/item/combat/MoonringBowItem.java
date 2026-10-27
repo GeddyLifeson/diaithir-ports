@@ -33,7 +33,7 @@ public class MoonringBowItem extends BowItem {
 	}
 
 	@Override
-	public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int n) {
+	public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int n) {
 		super.releaseUsing(itemStack, level, livingEntity, n);
 		int k = this.getUseDuration(itemStack, livingEntity) - n;
 		float powerForTime = getPowerForTime(k);
@@ -47,6 +47,7 @@ public class MoonringBowItem extends BowItem {
 				createThorn(level, livingEntity, livingEntity.getX() + x * i * 1.5, livingEntity.getY(), livingEntity.getZ() + z * i * 1.5, Mth.wrapDegrees(-livingEntity.getYRot()), 40, i * 5);
 			}
 		}
+		return true;
 	}
 
 	public static void createThorn(Level level, LivingEntity owner, double x, double y, double z, float yRot, double maxDiff, int delay) {
@@ -85,8 +86,5 @@ public class MoonringBowItem extends BowItem {
 		}
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.TENACIOUS_PETAL.get()) || repairCandidate.is(ESItems.TENACIOUS_VINE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

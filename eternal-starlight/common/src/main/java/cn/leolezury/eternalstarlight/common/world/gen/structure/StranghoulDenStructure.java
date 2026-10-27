@@ -13,7 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
@@ -60,7 +60,7 @@ public class StranghoulDenStructure extends Structure {
 								Stranghoul stranghoul = new Stranghoul(ESEntities.STRANGHOUL.get(), level.getLevel());
 								stranghoul.setPos(pos.getBottomCenter());
 								stranghoul.setPersistenceRequired();
-								stranghoul.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), MobSpawnType.STRUCTURE, null);
+								stranghoul.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), EntitySpawnReason.STRUCTURE, null);
 								level.addFreshEntity(stranghoul);
 								if (stranghoul.getMainHandItem().is(ItemTags.HOES)) {
 									farmer = true;

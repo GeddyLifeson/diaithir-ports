@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.neoforge.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
@@ -10,9 +14,9 @@ import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-public class NeoStarlitDiamondArmorItem extends ArmorItem {
-	public NeoStarlitDiamondArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
-		super(material, type, properties);
+public class NeoStarlitDiamondArmorItem extends Item {
+	public NeoStarlitDiamondArmorItem(ArmorMaterial material, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(material, type));
 	}
 
 	@Override

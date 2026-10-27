@@ -4,7 +4,7 @@ import cn.leolezury.eternalstarlight.common.entity.misc.ESBoat;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESChestBoat;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
@@ -33,11 +33,11 @@ public class ESBoatItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemStack = player.getItemInHand(hand);
 		HitResult result = getPlayerPOVHitResult(level, player, ClipContext.Fluid.ANY);
 		if (result.getType() == HitResult.Type.MISS) {
-			return InteractionResultHolder.pass(itemStack);
+			return InteractionResult.PASS;
 		} else {
 			Vec3 vector3d = player.getViewVector(1.0F);
 			List<Entity> list = level.getEntities(player, player.getBoundingBox().expandTowards(vector3d.scale(5.0D)).inflate(1.0D), ENTITY_PREDICATE);
@@ -47,7 +47,7 @@ public class ESBoatItem extends Item {
 				for (Entity entity : list) {
 					AABB aabb = entity.getBoundingBox().inflate(entity.getPickRadius());
 					if (aabb.contains(vector3d1)) {
-						return InteractionResultHolder.pass(itemStack);
+						return InteractionResult.PASS;
 					}
 				}
 			}
@@ -57,7 +57,7 @@ public class ESBoatItem extends Item {
 				boat.setStarlightBoatType(this.type);
 				boat.setYRot(player.getYRot());
 				if (!level.noCollision(boat, boat.getBoundingBox())) {
-					return InteractionResultHolder.fail(itemStack);
+					return InteractionResult.FAIL;
 				} else {
 					if (!level.isClientSide()) {
 						level.addFreshEntity(boat);
@@ -66,10 +66,10 @@ public class ESBoatItem extends Item {
 					}
 
 					player.awardStat(Stats.ITEM_USED.get(this));
-					return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
+					return InteractionResult.SUCCESS;
 				}
 			} else {
-				return InteractionResultHolder.pass(itemStack);
+				return InteractionResult.PASS;
 			}
 		}
 	}

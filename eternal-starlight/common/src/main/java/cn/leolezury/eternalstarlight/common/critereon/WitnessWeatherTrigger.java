@@ -33,7 +33,7 @@ public class WitnessWeatherTrigger extends SimpleCriterionTrigger<WitnessWeather
 
 		public boolean matches(ServerLevel serverLevel) {
 			Optional<WeatherInstance> active = ESCommonHandler.getActiveWeather();
-			return serverLevel.dimension().location().equals(ESDimensions.STARLIGHT_KEY.location())
+			return serverLevel.dimension().identifier().equals(ESDimensions.STARLIGHT_KEY.identifier())
 				&& active.isPresent() && weather().isBound() && active.get().getWeather() == weather().value();
 		}
 	}

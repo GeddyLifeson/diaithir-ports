@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -104,7 +106,7 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
-		builder.define(VARIANT, ESShimmerLacewingVariants.RIVER.location().toString());
+		builder.define(VARIANT, ESShimmerLacewingVariants.RIVER.identifier().toString());
 	}
 
 	@Override
@@ -167,7 +169,7 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		setVariant(ShimmerLacewingVariant.getSpawnVariant(level.registryAccess(), level.getBiome(blockPosition())));
 		return super.finalizeSpawn(level, instance, spawnType, data);
 	}
@@ -175,8 +177,8 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		setVariantId(Identifier.read(compoundTag.getString(TAG_VARIANT)).getOrThrow());
-		if (compoundTag.contains(TAG_FLIGHT_ALTITUDE)) {
+		setVariantId(Identifier.read(compoundTag.getStringOr(TAG_VARIANT, "")).getOrThrow());
+		if (ESPortCompat.has(compoundTag, TAG_FLIGHT_ALTITUDE)) {
 			flightAltitude = compoundTag.getDoubleOr(TAG_FLIGHT_ALTITUDE, 0.0);
 		}
 	}
@@ -206,7 +208,7 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 		return !this.onGround();
 	}
 
-	public static boolean checkLacewingSpawnRules(EntityType<? extends ShimmerLacewing> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkLacewingSpawnRules(EntityType<? extends ShimmerLacewing> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.canSeeSky(pos) && ESConfig.INSTANCE.mobsConfig.shimmerLacewing.canSpawn();
 	}
 }

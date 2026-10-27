@@ -89,7 +89,7 @@ public class ESPaintingVariants {
 	}
 
 	private static void register(BootstrapContext<ESPaintingVariant> context, ResourceKey<ESPaintingVariant> key, int width, int height, boolean sidesFromPainting) {
-		context.register(key, new ESPaintingVariant(width, height, key.location(), DEFAULT_BACK_TEXTURE, sidesFromPainting));
+		context.register(key, new ESPaintingVariant(width, height, key.identifier(), DEFAULT_BACK_TEXTURE, sidesFromPainting));
 	}
 
 	public static ResourceKey<ESPaintingVariant> create(String name) {

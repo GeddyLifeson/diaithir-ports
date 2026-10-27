@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.phase;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
@@ -115,7 +117,7 @@ public abstract class BehaviorPhase<T extends LivingEntity & MultiBehaviorUser> 
 
 	public void performDefaultMeleeAttack(T entity, double range, boolean attackOtherEnemies, float maxAngleForOtherEnemies, Consumer<LivingEntity> onSuccess) {
 		performMeleeAttack(entity, range, attackOtherEnemies, maxAngleForOtherEnemies, living -> {
-			if (entity.doHurtTarget(living)) {
+			if (ESPortCompat.doHurtTarget(entity, living)) {
 				onSuccess.accept(living);
 			}
 		});

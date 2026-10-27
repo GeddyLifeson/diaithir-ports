@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -89,8 +91,8 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
 	}
@@ -99,7 +101,7 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
 		if (owner != null) {
-			compoundTag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, owner.getUUID());
 		}
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 	}
@@ -112,9 +114,9 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
-			return super.hurt(source, amount);
+			return super.hurtServer(hurtServerLevel, source, amount);
 		}
 		return false;
 	}
@@ -155,7 +157,7 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 				ScreenShakeVfx.createInstance(level().dimension(), position(), 40, 50, 0.3f, 0.3f, 3, 5.5f).send(serverLevel);
 				playSound(SoundEvents.GENERIC_EXPLODE.value());
 				for (LivingEntity living : level().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, this, getBoundingBox().inflate(2))) {
-					if (ESEntityUtil.shouldHarm(getOwner(), living) && living.hurt(ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.POISON, getOwner()), 10)) {
+					if (ESEntityUtil.shouldHarm(getOwner(), living) && ESPortCompat.hurt(living, ESDamageTypes.getEntityDamageSource(level(), ESDamageTypes.POISON, getOwner()), 10)) {
 						living.hurtMarked = true;
 						living.addDeltaMovement(living.position().subtract(position()).normalize().scale(1.25));
 					}

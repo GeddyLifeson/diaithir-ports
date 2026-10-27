@@ -1,17 +1,19 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.entity.projectile.EnergySpark;
 import cn.leolezury.eternalstarlight.common.util.SpecialItemCooldown;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class EnergySwordItem extends SwordItem {
-	public EnergySwordItem(Tier tier, Properties properties) {
-		super(tier, properties);
+public class EnergySwordItem extends Item {
+	public EnergySwordItem(ESItemTiers tier, Properties properties) {
+		super(tier.sword(properties));
 	}
 
 	@Override

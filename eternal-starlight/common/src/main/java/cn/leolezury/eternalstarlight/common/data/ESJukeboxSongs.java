@@ -65,7 +65,7 @@ public class ESJukeboxSongs {
 	}
 
 	private static void register(BootstrapContext<JukeboxSong> context, ResourceKey<JukeboxSong> key, Holder<SoundEvent> sound, int lengthInSeconds, int comparatorOutput) {
-		context.register(key, new JukeboxSong(sound, Component.translatable(Util.makeDescriptionId("jukebox_song", key.location())), (float) lengthInSeconds, comparatorOutput));
+		context.register(key, new JukeboxSong(sound, Component.translatable(Util.makeDescriptionId("jukebox_song", key.identifier())), (float) lengthInSeconds, comparatorOutput));
 	}
 
 	public static ResourceKey<JukeboxSong> create(String name) {

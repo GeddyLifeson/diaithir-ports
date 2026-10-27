@@ -68,7 +68,7 @@ public class DoomedenRedstoneTorchBlock extends BaseTorchBlock {
 	@Override
 	protected InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult) {
 		level.setBlockAndUpdate(blockPos, blockState.setValue(LIT, !blockState.getValue(LIT)));
-		return InteractionResult.sidedSuccess(level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

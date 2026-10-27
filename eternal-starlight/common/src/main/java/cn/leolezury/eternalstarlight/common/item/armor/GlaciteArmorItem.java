@@ -1,5 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESAttributes;
 import com.google.common.base.Suppliers;
@@ -19,11 +27,11 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class GlaciteArmorItem extends ArmorItem {
+public class GlaciteArmorItem extends Item {
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public GlaciteArmorItem(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-		super(holder, type, properties);
+	public GlaciteArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
+		super(properties.humanoidArmor(holder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
@@ -47,10 +55,10 @@ public class GlaciteArmorItem extends ArmorItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		list.add(CommonComponents.EMPTY);
-		list.add(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
-		list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".glacite_armor")).withStyle(ChatFormatting.AQUA));
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		list.accept(CommonComponents.EMPTY);
+		list.accept(Component.translatable("item.modifiers.armor").withStyle(ChatFormatting.GRAY));
+		list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".glacite_armor")).withStyle(ChatFormatting.AQUA));
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 }

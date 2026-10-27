@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -36,7 +38,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
@@ -128,7 +130,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 
 	@Nullable
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, EntitySpawnReason mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
 		spawnGroupData = super.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, spawnGroupData);
 		initializeBossOnFirstSpawn();
 		return spawnGroupData;
@@ -137,12 +139,12 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_INITIAL_POS)) {
+		if (ESPortCompat.has(compoundTag, TAG_INITIAL_POS)) {
 			GlobalVec3.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_INITIAL_POS)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse boss initial pos: {}", s)).ifPresent(pos -> this.initialPos = pos);
 		}
 		spawned = compoundTag.getBooleanOr(TAG_SPAWNED, false);
 		setPhase(compoundTag.getIntOr(TAG_PHASE, 0));
-		if (compoundTag.contains(TAG_ACTIVATED, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_ACTIVATED)) {
 			setActivated(compoundTag.getBooleanOr(TAG_ACTIVATED, false));
 		}
 	}
@@ -157,11 +159,11 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (source.is(DamageTypes.IN_WALL) && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			return false;
 		}
-		boolean success = super.hurt(source, amount);
+		boolean success = super.hurtServer(hurtServerLevel, source, amount);
 		if (success && source.getEntity() instanceof ServerPlayer player && !fightParticipants.contains(player.getUUID())) {
 			fightParticipants.add(player.getUUID());
 		}

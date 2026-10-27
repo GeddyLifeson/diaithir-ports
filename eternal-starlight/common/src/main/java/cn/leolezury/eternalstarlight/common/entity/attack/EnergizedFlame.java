@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -80,7 +82,7 @@ public class EnergizedFlame extends Entity implements TraceableEntity {
 				box = box.setMaxY(box.minY + HEIGHT);
 				for (LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, box)) {
 					if (ESEntityUtil.shouldHarm(getOwner(), living)) {
-						living.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 2);
+						ESPortCompat.hurt(living, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 2);
 						living.igniteForSeconds(3);
 					}
 				}
@@ -97,7 +99,7 @@ public class EnergizedFlame extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -107,15 +109,15 @@ public class EnergizedFlame extends Entity implements TraceableEntity {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput compoundTag) {
-		if (compoundTag.hasUUID(TAG_OWNER)) {
-			ownerId = compoundTag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(compoundTag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 	}
 
 	@Override
 	protected void addAdditionalSaveData(ValueOutput compoundTag) {
 		if (owner != null) {
-			compoundTag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_OWNER, owner.getUUID());
 		}
 	}
 }

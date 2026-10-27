@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 public class NeoAlchemistArmorItem extends AlchemistArmorItem {
-	public NeoAlchemistArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties) {
+	public NeoAlchemistArmorItem(ArmorMaterial material, Type type, Properties properties) {
 		super(material, type, properties);
 	}
 

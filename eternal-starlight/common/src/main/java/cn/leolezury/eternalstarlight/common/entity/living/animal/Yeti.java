@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -207,7 +209,7 @@ public class Yeti extends Animal {
 				furGrowthTicks = getRandom().nextInt(1200);
 				setHasFur(false);
 			}
-			return InteractionResult.sidedSuccess(level().isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.mobInteract(player, hand);
 	}
@@ -233,13 +235,13 @@ public class Yeti extends Animal {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_FUR, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_FUR)) {
 			setHasFur(compoundTag.getBooleanOr(TAG_FUR, false));
 		}
 		furGrowthTicks = compoundTag.getIntOr(TAG_FUR_GROWTH_TICKS, 0);
 	}
 
-	public static boolean checkYetiSpawnRules(EntityType<? extends Yeti> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkYetiSpawnRules(EntityType<? extends Yeti> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && ESConfig.INSTANCE.mobsConfig.yeti.canSpawn();
 	}
 }

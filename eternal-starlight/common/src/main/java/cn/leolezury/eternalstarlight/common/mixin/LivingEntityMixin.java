@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.mixin;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.Stranghoul;
 import cn.leolezury.eternalstarlight.common.entity.projectile.MagicStone;
@@ -39,7 +41,7 @@ import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -216,10 +218,10 @@ public abstract class LivingEntityMixin {
 		}
 	}
 
-	@WrapOperation(method = "triggerItemUseEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getUseAnimation()Lnet/minecraft/world/item/UseAnim;"))
-	private UseAnim getUseAnimation(ItemStack instance, Operation<UseAnim> original) {
+	@WrapOperation(method = "triggerItemUseEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getUseAnimation()Lnet/minecraft/world/item/ItemUseAnimation;"))
+	private ItemUseAnimation getUseAnimation(ItemStack instance, Operation<ItemUseAnimation> original) {
 		if (ESAccessoryUtil.getActiveAccessoriesOnArmors((LivingEntity) (Object) this).contains(ESItems.FUNGUS_AMULET.get()) && instance.is(ESTags.Items.CONSUMABLE_WHEN_WEARING_FUNGUS_AMULET)) {
-			return UseAnim.EAT;
+			return ItemUseAnimation.EAT;
 		}
 		return original.call(instance);
 	}
@@ -284,7 +286,7 @@ public abstract class LivingEntityMixin {
 		if (!hasEffect(ESMobEffects.NUMBNESS.asHolder())) {
 			float damage = ESDataAttachments.NUMBNESS_DAMAGE.getData(livingEntity);
 			if (damage != 0) {
-				livingEntity.hurt(ESDamageTypes.getDamageSource(livingEntity.level(), ESDamageTypes.NUMBNESS), damage);
+				ESPortCompat.hurt(livingEntity, ESDamageTypes.getDamageSource(livingEntity.level(), ESDamageTypes.NUMBNESS), damage);
 				ESDataAttachments.NUMBNESS_DAMAGE.setData(livingEntity, 0f);
 			}
 		}

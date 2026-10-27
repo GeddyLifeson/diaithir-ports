@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -605,8 +607,8 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		boolean success = super.hurt(source, amount);
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
+		boolean success = super.hurtServer(hurtServerLevel, source, amount);
 		if (success && source.getEntity() instanceof Player player) {
 			trustedPlayers.remove(player.getUUID());
 			giftAllowances.remove(player.getUUID());
@@ -638,7 +640,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		if (random.nextInt(20) == 0) {
 			setSpecialVariant(true);
 		}
@@ -653,7 +655,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		stayOutOfNestTicks = compoundTag.getIntOr(TAG_STAY_OUT_OF_NEST_TICKS, 0);
 		hasEgg = compoundTag.getBooleanOr(TAG_HAS_EGG, false);
 		this.trustedPlayers.clear();
-		if (compoundTag.contains(TAG_TRUSTED_PLAYERS, CompoundTag.TAG_LIST)) {
+		if (ESPortCompat.has(compoundTag, TAG_TRUSTED_PLAYERS)) {
 			ListTag listTag = compoundTag.getList(TAG_TRUSTED_PLAYERS, CompoundTag.TAG_INT_ARRAY);
 			for (Tag tag : listTag) {
 				if (tag != null && tag.getType() == IntArrayTag.TYPE && ((IntArrayTag) tag).getAsIntArray().length == 4) {
@@ -662,7 +664,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 			}
 		}
 		this.giftAllowances.clear();
-		if (compoundTag.contains(TAG_GIFT_ALLOWANCES)) {
+		if (ESPortCompat.has(compoundTag, TAG_GIFT_ALLOWANCES)) {
 			GIFT_ALLOWANCES_CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_GIFT_ALLOWANCES)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Starfire Bird gift allowances: '{}'", string)).ifPresent(parsed -> parsed.forEach((uuid, count) -> this.giftAllowances.put(uuid, Math.min(count, MAX_GIFT_ALLOWANCE))));
 		}
 		giftCooldown = compoundTag.getIntOr(TAG_GIFT_COOLDOWN, 0);
@@ -739,7 +741,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		return ESSoundEvents.STARFIRE_BIRD_DEATH.get();
 	}
 
-	public static boolean checkStarfireBirdSpawnRules(EntityType<? extends StarfireBird> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkStarfireBirdSpawnRules(EntityType<? extends StarfireBird> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && ESConfig.INSTANCE.mobsConfig.starfireBird.canSpawn();
 	}
 }

@@ -14,7 +14,7 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.random.WeightedEntry;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.*;
@@ -49,7 +49,7 @@ public abstract class MechanicalSpawner {
 	private static final String TAG_SPAWN_RANGE = "spawn_range";
 	private static final int EVENT_SPAWN = 1;
 	private int spawnDelay = 20;
-	private SimpleWeightedRandomList<SpawnData> spawnPotentials = SimpleWeightedRandomList.empty();
+	private WeightedList<SpawnData> spawnPotentials = WeightedList.empty();
 	@Nullable
 	private SpawnData nextSpawnData;
 	private double spin;
@@ -146,7 +146,7 @@ public abstract class MechanicalSpawner {
 							if (!rules.isValidPosition(spawnPos, serverLevel)) {
 								continue;
 							}
-						} else if (!SpawnPlacements.checkSpawnRules(type.get(), serverLevel, MobSpawnType.TRIAL_SPAWNER, spawnPos, serverLevel.getRandom())) {
+						} else if (!SpawnPlacements.checkSpawnRules(type.get(), serverLevel, EntitySpawnReason.TRIAL_SPAWNER, spawnPos, serverLevel.getRandom())) {
 							continue;
 						}
 
@@ -173,7 +173,7 @@ public abstract class MechanicalSpawner {
 
 							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id", CompoundTag.TAG_STRING);
 							if (shouldFinalize) {
-								mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), MobSpawnType.TRIAL_SPAWNER, null);
+								mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
 							}
 
 							spawnData.getEquipment().ifPresent(mob::equip);
@@ -234,9 +234,9 @@ public abstract class MechanicalSpawner {
 			this.spawnPotentials = SpawnData.LIST_CODEC
 				.parse(NbtOps.INSTANCE, list)
 				.resultOrPartial(s -> EternalStarlight.LOGGER.warn("Invalid SpawnPotentials list: {}", s))
-				.orElseGet(SimpleWeightedRandomList::empty);
+				.orElseGet(WeightedList::empty);
 		} else {
-			this.spawnPotentials = SimpleWeightedRandomList.single(this.nextSpawnData != null ? this.nextSpawnData : new SpawnData());
+			this.spawnPotentials = WeightedList.single(this.nextSpawnData != null ? this.nextSpawnData : new SpawnData());
 		}
 
 		if (tag.contains(TAG_MIN_SPAWN_DELAY, CompoundTag.TAG_ANY_NUMERIC)) {

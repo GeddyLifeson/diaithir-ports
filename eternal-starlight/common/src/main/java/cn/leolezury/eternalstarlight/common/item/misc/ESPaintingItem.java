@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.misc;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
 import cn.leolezury.eternalstarlight.common.data.ESPaintingVariant;
 import cn.leolezury.eternalstarlight.common.data.ESRegistries;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESPainting;
@@ -64,7 +68,7 @@ public class ESPaintingItem extends HangingEntityItem {
 					// [ES] Fix incorrect shrinking on clientside
 					itemStack.shrink(1);
 				}
-				return InteractionResult.sidedSuccess(level.isClientSide());
+				return InteractionResult.SUCCESS;
 			} else {
 				return InteractionResult.CONSUME;
 			}
@@ -72,24 +76,24 @@ public class ESPaintingItem extends HangingEntityItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 		CustomData customData = itemStack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
 		if (!customData.isEmpty()) {
 			CompoundTag tag = customData.copyTag();
 			Identifier variantId = Identifier.tryParse(tag.getStringOr(ESPainting.TAG_VARIANT, ""));
 			if (variantId != null) {
-				list.add(Component.translatable(variantId.toLanguageKey("painting", "title")).withStyle(ChatFormatting.YELLOW));
-				list.add(Component.translatable(variantId.toLanguageKey("painting", "author")).withStyle(ChatFormatting.GRAY));
+				list.accept(Component.translatable(variantId.toLanguageKey("painting", "title")).withStyle(ChatFormatting.YELLOW));
+				list.accept(Component.translatable(variantId.toLanguageKey("painting", "author")).withStyle(ChatFormatting.GRAY));
 				HolderLookup.Provider provider = tooltipContext.registries();
 				if (provider != null) {
 					ResourceKey<ESPaintingVariant> key = ResourceKey.create(ESRegistries.PAINTING_VARIANT, variantId);
 					provider.lookup(ESRegistries.PAINTING_VARIANT).flatMap(registry -> registry.get(key)).ifPresent(holder ->
-						list.add(Component.translatable("painting.dimensions", holder.value().width(), holder.value().height())));
+						list.accept(Component.translatable("painting.dimensions", holder.value().width(), holder.value().height())));
 				}
 			}
 		} else if (tooltipFlag.isCreative()) {
-			list.add(TOOLTIP_RANDOM_VARIANT);
+			list.accept(TOOLTIP_RANDOM_VARIANT);
 		}
 	}
 }

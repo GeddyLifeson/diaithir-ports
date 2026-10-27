@@ -108,10 +108,10 @@ public abstract class ItemInHandRendererMixin {
 		return original.call(stack1, stack2);
 	}
 
-	@WrapOperation(method = "renderArmWithItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getUseAnimation()Lnet/minecraft/world/item/UseAnim;"))
-	private UseAnim getUseAnimation(ItemStack instance, Operation<UseAnim> original, @Local(argsOnly = true) AbstractClientPlayer player) {
+	@WrapOperation(method = "renderArmWithItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;getUseAnimation()Lnet/minecraft/world/item/ItemUseAnimation;"))
+	private ItemUseAnimation getUseAnimation(ItemStack instance, Operation<ItemUseAnimation> original, @Local(argsOnly = true) AbstractClientPlayer player) {
 		if (ESAccessoryUtil.getActiveAccessoriesOnArmors(player).contains(ESItems.FUNGUS_AMULET.get()) && instance.is(ESTags.Items.CONSUMABLE_WHEN_WEARING_FUNGUS_AMULET)) {
-			return UseAnim.EAT;
+			return ItemUseAnimation.EAT;
 		}
 		return original.call(instance);
 	}

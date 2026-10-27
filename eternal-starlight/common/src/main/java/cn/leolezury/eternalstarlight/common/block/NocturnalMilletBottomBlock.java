@@ -158,7 +158,7 @@ public class NocturnalMilletBottomBlock extends Block implements BonemealableBlo
 	}
 
 	public void growCrops(Level level, BlockPos pos, BlockState state) {
-		int targetAge = this.getAge(state) + Mth.nextInt(level.random, 2, 5);
+		int targetAge = this.getAge(state) + Mth.nextInt(level.getRandom(), 2, 5);
 		if (targetAge > 7) {
 			targetAge = 7;
 		}

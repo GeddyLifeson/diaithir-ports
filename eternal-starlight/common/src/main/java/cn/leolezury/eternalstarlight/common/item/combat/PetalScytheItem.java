@@ -9,12 +9,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 public class PetalScytheItem extends ScytheItem implements SwingAttackWeapon {
-	public PetalScytheItem(Tier tier, Properties properties) {
+	public PetalScytheItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
 	}
 

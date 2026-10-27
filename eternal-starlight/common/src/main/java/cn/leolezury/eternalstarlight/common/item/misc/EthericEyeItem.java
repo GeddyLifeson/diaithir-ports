@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.misc;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
 import cn.leolezury.eternalstarlight.common.particle.ExplosionShockParticleOptions;
@@ -11,7 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,7 +31,7 @@ public class EthericEyeItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		int y = level.getHeight(Heightmap.Types.WORLD_SURFACE, player.getBlockX(), player.getBlockZ());
 		if (y != player.getY()) {
@@ -44,16 +48,16 @@ public class EthericEyeItem extends Item {
 			stack.consume(1, player);
 			player.awardStat(Stats.ITEM_USED.get(this));
 			player.getCooldowns().addCooldown(this, 20);
-			return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
-		return InteractionResultHolder.pass(stack);
+		return InteractionResult.PASS;
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> components, TooltipFlag tooltipFlag) {
-		super.appendHoverText(itemStack, tooltipContext, components, tooltipFlag);
-		components.add(CommonComponents.EMPTY);
-		components.add(Component.translatable("tooltip." + EternalStarlight.ID + ".use").withStyle(ChatFormatting.GRAY));
-		components.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".etheric_eye")).withColor(0xdafff1));
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> components, TooltipFlag tooltipFlag) {
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, components, tooltipFlag);
+		components.accept(CommonComponents.EMPTY);
+		components.accept(Component.translatable("tooltip." + EternalStarlight.ID + ".use").withStyle(ChatFormatting.GRAY));
+		components.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".etheric_eye")).withColor(0xdafff1));
 	}
 }

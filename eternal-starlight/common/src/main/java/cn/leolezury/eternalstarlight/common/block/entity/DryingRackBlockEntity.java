@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -116,7 +118,7 @@ public class DryingRackBlockEntity extends SimpleContainerBlockEntity {
 		super.loadAdditional(compoundTag);
 		this.dryingTicks = compoundTag.getIntOr(TAG_DRYING_TICKS, 0);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compoundTag, this.items, provider);
+		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
 	}
 
 	@Override

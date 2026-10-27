@@ -236,11 +236,11 @@ public class Creteor extends Monster implements PowerableMob {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (!isActivated()) {
 			setActivated(true);
 		}
-		return super.hurt(source, amount);
+		return super.hurtServer(hurtServerLevel, source, amount);
 	}
 
 	@Override
@@ -258,7 +258,7 @@ public class Creteor extends Monster implements PowerableMob {
 				}
 			}
 
-			return InteractionResult.sidedSuccess(this.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.mobInteract(player, interactionHand);
 		}
@@ -348,7 +348,7 @@ public class Creteor extends Monster implements PowerableMob {
 		spinTicks = compoundTag.getIntOr(TAG_SPIN_TICKS, 0);
 	}
 
-	public static boolean checkCreteorSpawnRules(EntityType<? extends Creteor> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkCreteorSpawnRules(EntityType<? extends Creteor> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.creteor.canSpawn();
 	}
 }

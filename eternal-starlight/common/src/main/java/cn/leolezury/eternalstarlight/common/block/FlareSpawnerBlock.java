@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
 import cn.leolezury.eternalstarlight.common.block.entity.FlareSpawner;
 import cn.leolezury.eternalstarlight.common.block.entity.FlareSpawnerBlockEntity;
 import cn.leolezury.eternalstarlight.common.registry.ESBlockEntities;
@@ -72,8 +76,8 @@ public class FlareSpawnerBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		super.appendHoverText(stack, context, tooltipDisplay, tooltipComponents, tooltipFlag);
 		Spawner.appendHoverText(stack, tooltipComponents, FlareSpawner.TAG_SPAWN_DATA);
 	}
 }

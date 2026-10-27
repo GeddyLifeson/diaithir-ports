@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -150,7 +152,7 @@ public class EnergySpark extends ThrowableProjectile {
 	private void hurtTarget(Entity entity) {
 		if ((getTarget() == null || entity == getTarget()) && entity != getOwner()) {
 			entity.invulnerableTime = 0;
-			entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 3);
+			ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 3);
 		}
 		discard();
 	}
@@ -158,8 +160,8 @@ public class EnergySpark extends ThrowableProjectile {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.hasUUID(TAG_TARGET)) {
-			targetId = compoundTag.getUUID(TAG_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
+			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
 	}
@@ -168,7 +170,7 @@ public class EnergySpark extends ThrowableProjectile {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
 		if (target != null) {
-			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 	}

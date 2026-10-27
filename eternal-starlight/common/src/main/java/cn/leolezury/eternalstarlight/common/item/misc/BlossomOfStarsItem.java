@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.misc;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,8 +19,8 @@ public class BlossomOfStarsItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		list.add(Component.translatable("tooltip." + EternalStarlight.ID + ".blossom_of_stars").withColor(0x5187c4).withStyle(ChatFormatting.ITALIC));
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		list.accept(Component.translatable("tooltip." + EternalStarlight.ID + ".blossom_of_stars").withColor(0x5187c4).withStyle(ChatFormatting.ITALIC));
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 }

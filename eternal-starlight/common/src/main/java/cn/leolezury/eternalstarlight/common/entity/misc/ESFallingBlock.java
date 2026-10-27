@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.misc;
 
+import net.minecraft.server.level.ServerLevel;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -88,7 +92,7 @@ public class ESFallingBlock extends Entity {
 		setDeltaMovement(getDeltaMovement().scale(0.98));
 		if (damage) {
 			for (LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox())) {
-				living.hurt(damageSources().fallingBlock(this), 3);
+				ESPortCompat.hurt(living, damageSources().fallingBlock(this), 3);
 			}
 		}
 		if (this.onGround() && this.tickCount > this.duration)
@@ -98,7 +102,7 @@ public class ESFallingBlock extends Entity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;

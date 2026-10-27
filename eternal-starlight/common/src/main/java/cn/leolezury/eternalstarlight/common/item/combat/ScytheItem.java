@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.BlockTags;
@@ -9,16 +13,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
-public class ScytheItem extends TieredItem {
-	public ScytheItem(Tier tier, Properties properties) {
-		super(tier, properties.component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_HOE)));
+public class ScytheItem extends Item {
+	public ScytheItem(ESItemTiers tier, Properties properties) {
+		super(tier.common(properties.component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_HOE))));
 	}
 
-	public static ItemAttributeModifiers createAttributes(Tier tier, int damage, float speed, float reach, float sweep) {
+	public static ItemAttributeModifiers createAttributes(ESItemTiers tier, int damage, float speed, float reach, float sweep) {
 		ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (float) damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -31,8 +33,8 @@ public class ScytheItem extends TieredItem {
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
+		return;
 	}
 
 	@Override

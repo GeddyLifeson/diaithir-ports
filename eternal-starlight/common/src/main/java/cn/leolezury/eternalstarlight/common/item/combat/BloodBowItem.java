@@ -11,7 +11,8 @@ public class BloodBowItem extends BowItem {
 	}
 
 	@Override
-	public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int n) {
+	public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int n) {
 		super.releaseUsing(itemStack, level, livingEntity, n);
+		return true;
 	}
 }

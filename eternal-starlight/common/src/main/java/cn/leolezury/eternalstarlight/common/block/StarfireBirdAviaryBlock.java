@@ -58,7 +58,7 @@ public class StarfireBirdAviaryBlock extends StarfireBirdNestBlock {
 			level.setBlockAndUpdate(pos, state.setValue(OPEN, !open));
 			level.playSound(null, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, open ? type.trapdoorClose() : type.trapdoorOpen(), SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
-		return InteractionResult.sidedSuccess(level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

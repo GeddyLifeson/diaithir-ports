@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
@@ -86,7 +88,7 @@ public class SolarCreeperBlackHolePhase extends BehaviorPhase<SolarCreeper> {
 						living.setDeltaMovement(living.getDeltaMovement().add(pull));
 						living.hurtMarked = true;
 						if (ticks % 10 == 0) {
-							living.hurt(ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.LASER, entity, entity), 2);
+							ESPortCompat.hurt(living, ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.LASER, entity, entity), 2);
 						}
 					}
 				}

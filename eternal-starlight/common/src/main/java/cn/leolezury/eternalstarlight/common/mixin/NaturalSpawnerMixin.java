@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.NaturalSpawner;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -42,7 +42,7 @@ public abstract class NaturalSpawnerMixin {
 	private static BlockPos getTopNonCollidingPos(LevelReader level, EntityType<?> entityType, int x, int z, Operation<BlockPos> original) {
 		BlockPos originalPos = original.call(level, entityType, x, z);
 		if (ESBiomes.isUndergroundCreature(entityType) && level instanceof ServerLevelAccessor serverLevelAccessor) {
-			Optional<BlockPos> spawnPos = ESBiomes.findRandomUndergroundCreatureSpawnPos(serverLevelAccessor, entityType, originalPos.getY() - 1, x, z, MobSpawnType.CHUNK_GENERATION);
+			Optional<BlockPos> spawnPos = ESBiomes.findRandomUndergroundCreatureSpawnPos(serverLevelAccessor, entityType, originalPos.getY() - 1, x, z, EntitySpawnReason.CHUNK_GENERATION);
 			if (spawnPos.isPresent()) {
 				return spawnPos.get();
 			}

@@ -155,7 +155,7 @@ public class Luminaris extends AbstractSchoolingFish implements Charger {
 		return ESItems.LUMINARIS_BUCKET.get().getDefaultInstance();
 	}
 
-	public static boolean checkLuminarisSpawnRules(EntityType<? extends Luminaris> entityType, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
+	public static boolean checkLuminarisSpawnRules(EntityType<? extends Luminaris> entityType, LevelAccessor levelAccessor, EntitySpawnReason mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
 		int seaLevel = levelAccessor.getSeaLevel();
 		return blockPos.getY() <= seaLevel - 40 && levelAccessor.getFluidState(blockPos.below()).is(FluidTags.WATER) && levelAccessor.getBlockState(blockPos.above()).is(Blocks.WATER) && ESConfig.INSTANCE.mobsConfig.luminaris.canSpawn();
 	}

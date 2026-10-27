@@ -7,13 +7,7 @@
     "AttachmentHolderMixin",
     "AxeItemMixin",
     "ExtendedBlockMixin",
-    "ProjectileWeaponItemMixin",
-    "client.IBlockEntityRendererExtensionMixin"
-  ],
-  "client": [
-    "client.GuiMixin",
-    "client.HumanoidArmorLayerMixin",
-    "client.ParticleMixin"
+    "ProjectileWeaponItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

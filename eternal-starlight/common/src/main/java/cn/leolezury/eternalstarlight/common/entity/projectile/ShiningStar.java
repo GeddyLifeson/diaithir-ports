@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -90,7 +92,7 @@ public class ShiningStar extends ThrowableProjectile {
 		if (!level().isClientSide()) {
 			for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(2.5))) {
 				if (ESEntityUtil.shouldHarm(getOwner() != null ? getOwner() : this, entity)) {
-					entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.METEOR, this, getOwner()), 8);
+					ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.METEOR, this, getOwner()), 8);
 				}
 			}
 			if (level() instanceof ServerLevel serverLevel) {
@@ -108,8 +110,8 @@ public class ShiningStar extends ThrowableProjectile {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.hasUUID(TAG_TARGET)) {
-			targetId = compoundTag.getUUID(TAG_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
+			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
 	}
 
@@ -117,7 +119,7 @@ public class ShiningStar extends ThrowableProjectile {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
 		if (target != null) {
-			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 	}
 }

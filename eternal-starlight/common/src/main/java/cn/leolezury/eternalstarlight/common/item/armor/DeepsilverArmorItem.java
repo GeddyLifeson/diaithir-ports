@@ -1,5 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.item.interfaces.TickableArmor;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
@@ -22,11 +30,11 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
-public class DeepsilverArmorItem extends ArmorItem implements TickableArmor {
+public class DeepsilverArmorItem extends Item implements TickableArmor {
 	private final Supplier<ItemAttributeModifiers> extraModifiers;
 
-	public DeepsilverArmorItem(Holder<ArmorMaterial> materialHolder, Type type, Item.Properties properties) {
-		super(materialHolder, type, properties);
+	public DeepsilverArmorItem(ArmorMaterial materialHolder, Type type, Item.Properties properties) {
+		super(properties.humanoidArmor(materialHolder, type));
 		this.extraModifiers = Suppliers.memoize(() -> {
 			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
@@ -68,10 +76,10 @@ public class DeepsilverArmorItem extends ArmorItem implements TickableArmor {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		list.add(CommonComponents.EMPTY);
-		list.add(Component.translatable("tooltip." + EternalStarlight.ID + ".full_set").withStyle(ChatFormatting.GRAY));
-		list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".deepsilver_armor")).withStyle(ChatFormatting.YELLOW));
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		list.accept(CommonComponents.EMPTY);
+		list.accept(Component.translatable("tooltip." + EternalStarlight.ID + ".full_set").withStyle(ChatFormatting.GRAY));
+		list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".deepsilver_armor")).withStyle(ChatFormatting.YELLOW));
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 }

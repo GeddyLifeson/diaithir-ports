@@ -9,7 +9,7 @@ import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +53,7 @@ public class WandOfTeleportationItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		Vec3 startPos = player.getEyePosition();
 		float lookYaw = player.getYHeadRot() + 90.0f;
@@ -66,7 +66,7 @@ public class WandOfTeleportationItem extends Item {
 			target = target.add(diff.normalize().scale(Math.min(diff.length(), 2)));
 			teleportPlayer(level, player, stack, target);
 			player.awardStat(Stats.ITEM_USED.get(this));
-			return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		if (!result.entities().isEmpty()) {
 			for (int i = 0; i < result.entities().size(); i++) {
@@ -74,15 +74,12 @@ public class WandOfTeleportationItem extends Item {
 					Vec3 target = result.entities().get(i).position();
 					teleportPlayer(level, player, stack, target);
 					player.awardStat(Stats.ITEM_USED.get(this));
-					return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+					return InteractionResult.SUCCESS;
 				}
 			}
 		}
 		return super.use(level, player, hand);
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.SOUL_DEW.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

@@ -14,7 +14,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -57,7 +57,7 @@ public interface WeatheringGolemSteel {
 		.put(ESBlocks.ALLOY_FURNACE.get(), ESBlocks.WAXED_ALLOY_FURNACE.get())
 		.build());
 
-	default ItemInteractionResult use(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player) {
+	default InteractionResult use(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player) {
 		Optional<Block> scraped = TO_OXIDIZED.get().entrySet().stream().filter(e -> e.getValue() == state.getBlock()).findFirst().map(Map.Entry::getKey);
 		Optional<Block> unwaxed = TO_WAXED.get().entrySet().stream().filter(e -> e.getValue() == state.getBlock()).findFirst().map(Map.Entry::getKey);
 		if (ESPlatform.INSTANCE.canScrape(stack)) {
@@ -74,7 +74,7 @@ public interface WeatheringGolemSteel {
 				spawnWaxOrScrapeParticles(level, pos, ParticleTypes.WAX_OFF);
 				player.playSound(waxSound ? SoundEvents.AXE_WAX_OFF : SoundEvents.AXE_SCRAPE);
 				stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
-				return ItemInteractionResult.sidedSuccess(level.isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
 		Optional<BlockState> waxed = getWaxedState(state);
@@ -83,9 +83,9 @@ public interface WeatheringGolemSteel {
 			spawnWaxOrScrapeParticles(level, pos, stack.is(Items.HONEYCOMB) ? ParticleTypes.WAX_ON : ESParticles.AMARAMBER_WAX_ON.get());
 			player.playSound(SoundEvents.HONEYCOMB_WAX_ON);
 			stack.consume(1, player);
-			return ItemInteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return InteractionResult.TRY_WITH_EMPTY_HAND;
 	}
 
 	default void spawnWaxOrScrapeParticles(Level level, BlockPos pos, ParticleOptions particle) {

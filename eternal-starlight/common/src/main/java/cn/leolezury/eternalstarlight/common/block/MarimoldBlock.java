@@ -80,7 +80,7 @@ public class MarimoldBlock extends BushBlock implements BonemealableBlock, Simpl
 
 	@Override
 	public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-		return level.random.nextFloat() < 0.4;
+		return level.getRandom().nextFloat() < 0.4;
 	}
 
 	@Override

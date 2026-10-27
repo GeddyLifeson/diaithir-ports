@@ -194,8 +194,8 @@ public class Gleech extends Monster {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity entity) {
-		return super.doHurtTarget(entity);
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
+		return super.doHurtTarget(hurtServerLevel, entity);
 	}
 
 	@Override
@@ -220,7 +220,7 @@ public class Gleech extends Monster {
 		compoundTag.putInt(TAG_GROWTH_TICKS, growthTicks);
 	}
 
-	public static boolean checkGleechSpawnRules(EntityType<? extends Gleech> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkGleechSpawnRules(EntityType<? extends Gleech> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && level.getBlockState(pos.below()).is(BlockTags.SAND) && ESConfig.INSTANCE.mobsConfig.gleech.canSpawn();
 	}
 }

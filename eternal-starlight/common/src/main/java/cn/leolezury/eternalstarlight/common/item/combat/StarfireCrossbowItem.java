@@ -25,8 +25,5 @@ public class StarfireCrossbowItem extends CrossbowItem {
 		return projectile;
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.STARFIRE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

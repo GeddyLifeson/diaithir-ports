@@ -28,7 +28,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -44,7 +44,7 @@ import java.util.Map;
 
 public class AlloyFurnaceBlock extends BaseEntityBlock implements WorldlyContainerHolder, WeatheringGolemSteel {
 	public static final MapCodec<AlloyFurnaceBlock> CODEC = simpleCodec(AlloyFurnaceBlock::new);
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final IntegerProperty X_OFFSET = IntegerProperty.create("x_offset", 0, 1);
 	public static final IntegerProperty Y_OFFSET = IntegerProperty.create("y_offset", 0, 2);
 	public static final IntegerProperty Z_OFFSET = IntegerProperty.create("z_offset", 0, 2);
@@ -169,7 +169,7 @@ public class AlloyFurnaceBlock extends BaseEntityBlock implements WorldlyContain
 	}
 
 	@Override
-	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 		return use(stack, state, level, pos, player);
 	}
 

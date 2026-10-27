@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
 import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
@@ -104,7 +106,7 @@ public class SolarCreeperSolarRayPhase extends BehaviorPhase<SolarCreeper> {
 					result = ESEntityUtil.raytrace(entity.level(), CollisionContext.of(entity), sunPos, endPos);
 					for (Entity target : result.entities()) {
 						if (target instanceof LivingEntity living && living != entity && ESEntityUtil.shouldHarm(entity, living)) {
-							if (living.hurt(ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.LASER, entity, entity), 4f)) {
+							if (ESPortCompat.hurt(living, ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.LASER, entity, entity), 4f)) {
 								living.setRemainingFireTicks(Math.max(living.getRemainingFireTicks(), 100));
 							}
 						}

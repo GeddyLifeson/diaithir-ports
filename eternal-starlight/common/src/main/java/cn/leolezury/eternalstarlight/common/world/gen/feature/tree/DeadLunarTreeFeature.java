@@ -6,7 +6,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,7 +26,7 @@ public class DeadLunarTreeFeature extends Feature<NoneFeatureConfiguration> {
 	}
 
 	private BlockState getBlockToPlace(RandomSource randomSource, BlockPos pos) {
-		WeightedStateProvider stateProvider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.DEAD_LUNAR_LOG.get().defaultBlockState(), 10).add(ESBlocks.RED_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).add(ESBlocks.BLUE_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).build());
+		WeightedStateProvider stateProvider = new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.DEAD_LUNAR_LOG.get().defaultBlockState(), 10).add(ESBlocks.RED_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).add(ESBlocks.BLUE_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).build());
 		return stateProvider.getState(randomSource, pos);
 	}
 

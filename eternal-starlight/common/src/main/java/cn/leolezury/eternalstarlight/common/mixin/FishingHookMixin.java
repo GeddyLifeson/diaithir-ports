@@ -18,7 +18,7 @@ public abstract class FishingHookMixin {
 	@WrapOperation(method = "retrieve", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/storage/loot/LootTable;getRandomItems(Lnet/minecraft/world/level/storage/loot/LootParams;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"))
 	public ObjectArrayList<ItemStack> getFishingLoot(LootTable instance, LootParams params, Operation<ObjectArrayList<ItemStack>> original) {
 		FishingHook hook = (FishingHook) (Object) this;
-		if (hook.level().dimension().location().equals(ESDimensions.STARLIGHT_KEY.location())) {
+		if (hook.level().dimension().identifier().equals(ESDimensions.STARLIGHT_KEY.identifier())) {
 			MinecraftServer server = hook.level().getServer();
 			if (server != null) {
 				LootTable lootTable = server.reloadableRegistries().getLootTable(ESLootTables.GAMEPLAY_FISHING);

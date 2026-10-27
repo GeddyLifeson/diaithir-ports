@@ -1,10 +1,14 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.entity.projectile.ThrownBoomerang;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,8 +18,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
@@ -24,12 +26,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class BoomerangItem extends TieredItem implements ProjectileItem {
-	public BoomerangItem(Tier tier, Properties properties) {
-		super(tier, properties.component(DataComponents.TOOL, createToolProperties()));
+public abstract class BoomerangItem extends Item implements ProjectileItem {
+	public BoomerangItem(ESItemTiers tier, Properties properties) {
+		super(tier.common(properties.component(DataComponents.TOOL, createToolProperties())));
 	}
 
-	public static ItemAttributeModifiers createAttributes(Tier tier, float damage, float speed) {
+	public static ItemAttributeModifiers createAttributes(ESItemTiers tier, float damage, float speed) {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
@@ -43,10 +45,10 @@ public abstract class BoomerangItem extends TieredItem implements ProjectileItem
 	public abstract ThrownBoomerang createBoomerang(Level level, @Nullable LivingEntity owner, double x, double y, double z, ItemStack pickupItemStack);
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (isTooDamagedToUse(stack)) {
-			return InteractionResultHolder.fail(stack);
+			return InteractionResult.FAIL;
 		} else {
 			if (!level.isClientSide()) {
 				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
@@ -64,7 +66,7 @@ public abstract class BoomerangItem extends TieredItem implements ProjectileItem
 				player.getCooldowns().addCooldown(this, 15);
 			}
 			player.awardStat(Stats.ITEM_USED.get(this));
-			return InteractionResultHolder.consume(stack);
+			return InteractionResult.CONSUME;
 		}
 	}
 
@@ -73,8 +75,8 @@ public abstract class BoomerangItem extends TieredItem implements ProjectileItem
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		return;
 	}
 
 	@Override
@@ -82,8 +84,5 @@ public abstract class BoomerangItem extends TieredItem implements ProjectileItem
 		stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
 	}
 
-	@Override
-	public int getEnchantmentValue() {
-		return 1;
-	}
+	
 }

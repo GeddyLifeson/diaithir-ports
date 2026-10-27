@@ -38,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 public class EnergyTransmitterBlock extends BaseEntityBlock {
 	public static final MapCodec<EnergyTransmitterBlock> CODEC = simpleCodec(EnergyTransmitterBlock::new);
 
-	public static final DirectionProperty FACING = BlockStateProperties.FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 	public static final EnumProperty<OctahedralGroup> OFFSET_TRANSFORMATION = EnumProperty.create("offset_transformation", OctahedralGroup.class, group -> !group.inverts(Direction.Axis.Y) && (group.permutation == SymmetricGroup3.P123 || group.permutation == SymmetricGroup3.P321));
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 	public static final IntegerProperty POWER = BlockStateProperties.POWER;

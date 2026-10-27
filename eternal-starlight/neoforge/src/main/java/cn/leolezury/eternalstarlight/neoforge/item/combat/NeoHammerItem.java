@@ -5,14 +5,14 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.function.Supplier;
 
 public class NeoHammerItem extends HammerItem {
-	public NeoHammerItem(Tier tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Properties properties) {
+	public NeoHammerItem(ESItemTiers tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Properties properties) {
 		super(tier, smashParticle, smashSound, properties);
 	}
 

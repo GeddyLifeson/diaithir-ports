@@ -32,8 +32,5 @@ public class CrystalCrossbowItem extends CrossbowItem {
 		projectile.setDeltaMovement(projectile.getDeltaMovement().scale(1.35));
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESConventionalTags.Items.INGOTS_GOLEM_STEEL) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

@@ -114,7 +114,7 @@ public class ShadowSnail extends Animal {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (source.is(DamageTypeTags.PANIC_CAUSES) && getHideState() == 0) {
 			setHideState(1);
 			transitionTicks = 0;
@@ -161,7 +161,7 @@ public class ShadowSnail extends Animal {
 		}
 	}
 
-	public static boolean checkShadowSnailSpawnRules(EntityType<? extends ShadowSnail> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkShadowSnailSpawnRules(EntityType<? extends ShadowSnail> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && ESConfig.INSTANCE.mobsConfig.shadowSnail.canSpawn();
 	}
 }

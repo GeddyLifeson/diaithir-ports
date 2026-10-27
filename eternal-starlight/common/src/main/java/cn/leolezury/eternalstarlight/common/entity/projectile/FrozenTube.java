@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.entity.attack.EnergizedFlame;
 import cn.leolezury.eternalstarlight.common.entity.living.boss.golem.Permafrost;
@@ -92,7 +94,7 @@ public class FrozenTube extends ThrowableProjectile {
 	@Override
 	protected void onHitEntity(EntityHitResult hitResult) {
 		if (hitResult.getType() != HitResult.Type.MISS && getOwner() instanceof LivingEntity owner && ESEntityUtil.shouldHarm(owner, hitResult.getEntity())) {
-			hitResult.getEntity().hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.FREEZE, this, owner), (float) switch (getOwner()) {
+			ESPortCompat.hurt(hitResult.getEntity(), ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.FREEZE, this, owner), (float) switch (getOwner()) {
 				case Player ignored -> 6;
 				case Freeze freeze -> freeze.getAttribute(Attributes.ATTACK_DAMAGE) != null ? freeze.getAttributeValue(Attributes.ATTACK_DAMAGE) : 3;
 				case Permafrost permafrost -> (permafrost.getAttribute(Attributes.ATTACK_DAMAGE) != null ? permafrost.getAttributeValue(Attributes.ATTACK_DAMAGE) : 12) * 0.4;

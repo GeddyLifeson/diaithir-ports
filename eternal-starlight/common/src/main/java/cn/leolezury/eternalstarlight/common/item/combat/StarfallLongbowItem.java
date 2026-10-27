@@ -21,8 +21,5 @@ public class StarfallLongbowItem extends BowItem {
 		return projectile;
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESConventionalTags.Items.INGOTS_AETHERSENT) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

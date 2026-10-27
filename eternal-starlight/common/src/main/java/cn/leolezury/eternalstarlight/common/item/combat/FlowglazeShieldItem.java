@@ -9,8 +9,5 @@ public class FlowglazeShieldItem extends ShieldItem {
 		super(properties);
 	}
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.FLOWGLAZE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

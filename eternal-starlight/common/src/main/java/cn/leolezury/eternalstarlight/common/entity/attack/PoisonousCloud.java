@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -82,7 +84,7 @@ public class PoisonousCloud extends Entity implements TraceableEntity {
 					if (ESEntityUtil.shouldHarm(getOwner(), livingEntity)) {
 						int oldInvulnerableTime = livingEntity.invulnerableTime;
 						livingEntity.invulnerableTime = 0;
-						success = livingEntity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), 5) || success;
+						success = ESPortCompat.hurt(livingEntity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), 5) || success;
 						livingEntity.invulnerableTime = oldInvulnerableTime;
 						livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 1));
 					}
@@ -110,7 +112,7 @@ public class PoisonousCloud extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -120,15 +122,15 @@ public class PoisonousCloud extends Entity implements TraceableEntity {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput tag) {
-		if (tag.hasUUID(TAG_OWNER)) {
-			ownerId = tag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(tag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(tag, TAG_OWNER);
 		}
 	}
 
 	@Override
 	protected void addAdditionalSaveData(ValueOutput tag) {
 		if (owner != null) {
-			tag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(tag, TAG_OWNER, owner.getUUID());
 		}
 	}
 }

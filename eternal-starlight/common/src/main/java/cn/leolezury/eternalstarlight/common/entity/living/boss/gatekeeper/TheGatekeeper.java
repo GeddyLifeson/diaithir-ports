@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -218,13 +220,13 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_OFFERS)) {
+		if (ESPortCompat.has(compoundTag, TAG_OFFERS)) {
 			DataResult<MerchantOffers> parsed = MerchantOffers.CODEC.parse(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_OFFERS));
 			parsed.resultOrPartial(Util.prefix("Failed to load offers: ", EternalStarlight.LOGGER::warn)).ifPresent((merchantOffers) -> this.offers = merchantOffers);
 		}
 		gatekeeperName = compoundTag.getStringOr(TAG_GATEKEEPER_NAME, "");
 		fightTarget = compoundTag.getStringOr(TAG_FIGHT_TARGET, "");
-		if (compoundTag.contains(TAG_STANDARD_FIGHT)) {
+		if (ESPortCompat.has(compoundTag, TAG_STANDARD_FIGHT)) {
 			standardFight = compoundTag.getBooleanOr(TAG_STANDARD_FIGHT, false);
 		}
 		restockCooldown = compoundTag.getIntOr(TAG_RESTOCK_COOLDOWN, 0);
@@ -310,7 +312,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 
 	@Nullable
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, EntitySpawnReason mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
 		spawnGroupData = super.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, spawnGroupData);
 		RandomSource randomSource = serverLevelAccessor.getRandom();
 		this.populateDefaultEquipmentSlots(randomSource, difficultyInstance);
@@ -486,7 +488,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 			conversationTarget = serverPlayer;
 			ESPlatform.INSTANCE.sendToClient(serverPlayer, new OpenGatekeeperGuiPacket(getId(), isPlayerPermitted(serverPlayer)));
 		}
-		return isActivated() ? InteractionResult.PASS : InteractionResult.sidedSuccess(level().isClientSide());
+		return isActivated() ? InteractionResult.PASS : InteractionResult.SUCCESS;
 	}
 
 	public synchronized void handleDialogueClose(int operation) {
@@ -558,7 +560,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) && source.getEntity() == this) {
 			return false;
 		}
@@ -578,7 +580,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 			healInterrupted = true;
 			healInterruptedIndirect = !source.isDirect();
 		}
-		return super.hurt(source, amount);
+		return super.hurtServer(hurtServerLevel, source, amount);
 	}
 
 	@Override

@@ -56,7 +56,7 @@ public class LandmarkStructurePlacement extends StructurePlacement {
 		if (chunkPos.x != x || chunkPos.z != z) {
 			return false;
 		}
-		return possibleStructures.get(Math.floorMod(((x >> 5) + (z >> 5)), possibleStructures.size())).structure().location().equals(landmark.location());
+		return possibleStructures.get(Math.floorMod(((x >> 5) + (z >> 5)), possibleStructures.size())).structure().identifier().equals(landmark.identifier());
 	}
 
 	@Override

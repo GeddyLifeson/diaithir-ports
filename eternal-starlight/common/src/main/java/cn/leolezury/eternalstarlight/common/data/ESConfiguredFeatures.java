@@ -24,7 +24,7 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -192,9 +192,9 @@ public class ESConfiguredFeatures {
 		RuleTest dustedGravel = new BlockMatchTest(ESBlocks.DUSTED_GRAVEL.get());
 
 		FeatureUtils.register(context, FINAL_MODIFICATION, ESFeatures.FINAL_MODIFICATION.get());
-		FeatureUtils.register(context, STONE_SPIKE, ESFeatures.SPIKE.get(), new SpikeFeature.Configuration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(10, 32), UniformInt.of(4, 7), UniformInt.of(1, 6), UniformInt.of(5, 17), UniformInt.of(3, 5)));
-		FeatureUtils.register(context, MONOLITH, ESFeatures.PILLAR.get(), new PillarFeature.Configuration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(15, 25), UniformInt.of(3, 5), UniformInt.of(15, 30), HolderSet.empty(), 0));
-		FeatureUtils.register(context, LUSH_MONOLITH, ESFeatures.PILLAR.get(), new PillarFeature.Configuration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(15, 25), UniformInt.of(3, 5), UniformInt.of(15, 30), HolderSet.direct(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CAVE_VINE), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1))), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CAVE_MOSS), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1)))), 0.2f));
+		FeatureUtils.register(context, STONE_SPIKE, ESFeatures.SPIKE.get(), new SpikeFeature.Configuration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(10, 32), UniformInt.of(4, 7), UniformInt.of(1, 6), UniformInt.of(5, 17), UniformInt.of(3, 5)));
+		FeatureUtils.register(context, MONOLITH, ESFeatures.PILLAR.get(), new PillarFeature.Configuration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(15, 25), UniformInt.of(3, 5), UniformInt.of(15, 30), HolderSet.empty(), 0));
+		FeatureUtils.register(context, LUSH_MONOLITH, ESFeatures.PILLAR.get(), new PillarFeature.Configuration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GRIMSTONE.get().defaultBlockState(), 8).add(ESBlocks.GLOWING_GRIMSTONE.get().defaultBlockState(), 1).build()), UniformInt.of(15, 25), UniformInt.of(3, 5), UniformInt.of(15, 30), HolderSet.direct(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CAVE_VINE), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1))), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CAVE_MOSS), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1)))), 0.2f));
 		FeatureUtils.register(context, GLACITE, ESFeatures.GLACITE.get());
 		FeatureUtils.register(context, ICICLE, ESFeatures.ICICLE.get());
 		FeatureUtils.register(context, STONE_ORE, Feature.ORE, new OreConfiguration(baseStone, Blocks.STONE.defaultBlockState(), 64));
@@ -211,10 +211,10 @@ public class ESConfiguredFeatures {
 		FeatureUtils.register(context, REDSTONE_ORE, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(grimstone, ESBlocks.GRIMSTONE_REDSTONE_ORE.get().defaultBlockState()), OreConfiguration.target(voidstone, ESBlocks.VOIDSTONE_REDSTONE_ORE.get().defaultBlockState()), OreConfiguration.target(eternalIce, ESBlocks.ETERNAL_ICE_REDSTONE_ORE.get().defaultBlockState()), OreConfiguration.target(hazeIce, ESBlocks.HAZE_ICE_REDSTONE_ORE.get().defaultBlockState())), 7));
 		FeatureUtils.register(context, SALTPETER_ORE, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(grimstone, ESBlocks.GRIMSTONE_SALTPETER_ORE.get().defaultBlockState()), OreConfiguration.target(voidstone, ESBlocks.VOIDSTONE_SALTPETER_ORE.get().defaultBlockState()), OreConfiguration.target(eternalIce, ESBlocks.ETERNAL_ICE_SALTPETER_ORE.get().defaultBlockState()), OreConfiguration.target(hazeIce, ESBlocks.HAZE_ICE_SALTPETER_ORE.get().defaultBlockState())), 20));
 		FeatureUtils.register(context, STARCORE_ORE, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(grimstone, ESBlocks.GRIMSTONE_STARCORE_ORE.get().defaultBlockState()), OreConfiguration.target(voidstone, ESBlocks.VOIDSTONE_STARCORE_ORE.get().defaultBlockState()), OreConfiguration.target(eternalIce, ESBlocks.ETERNAL_ICE_STARCORE_ORE.get().defaultBlockState()), OreConfiguration.target(hazeIce, ESBlocks.HAZE_ICE_STARCORE_ORE.get().defaultBlockState())), 5));
-		FeatureUtils.register(context, FALLEN_LUNAR_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.LUNAR_LOG.get()), UniformInt.of(4, 7), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
-		FeatureUtils.register(context, FALLEN_NORTHLAND_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.NORTHLAND_LOG.get()), UniformInt.of(5, 8), List.of(), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
-		FeatureUtils.register(context, FALLEN_BANYIN_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.BANYIN_LOG.get()), UniformInt.of(4, 7), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.FANTASY_GRASS_CARPET.get().defaultBlockState(), 2).add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
-		FeatureUtils.register(context, FALLEN_SCARLET_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.SCARLET_LOG.get()), UniformInt.of(5, 8), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
+		FeatureUtils.register(context, FALLEN_LUNAR_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.LUNAR_LOG.get()), UniformInt.of(4, 7), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
+		FeatureUtils.register(context, FALLEN_NORTHLAND_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.NORTHLAND_LOG.get()), UniformInt.of(5, 8), List.of(), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
+		FeatureUtils.register(context, FALLEN_BANYIN_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.BANYIN_LOG.get()), UniformInt.of(4, 7), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.FANTASY_GRASS_CARPET.get().defaultBlockState(), 2).add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
+		FeatureUtils.register(context, FALLEN_SCARLET_LOG, ESFeatures.FALLEN_LOG.get(), new FallenLogFeature.Configuration(BlockStateProvider.simple(ESBlocks.SCARLET_LOG.get()), UniformInt.of(5, 8), List.of(TrunkVineDecorator.INSTANCE), List.of(new AttachedToLogsDecorator(0.1f, new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 2).add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 1).build()), List.of(Direction.UP)))));
 		FeatureUtils.register(context, SCARLET_LEAVES_PILE, ESFeatures.LEAVES_PILE.get(), new LeavesPileFeature.Configuration(BlockStateProvider.simple(ESBlocks.SCARLET_LEAVES_PILE.get())));
 		FeatureUtils.register(context, ASHEN_SNOW, ESFeatures.ASHEN_SNOW.get());
 		FeatureUtils.register(context, STARLIGHT_CRYSTAL, ESFeatures.STARLIGHT_CRYSTAL.get());
@@ -222,25 +222,25 @@ public class ESConfiguredFeatures {
 		FeatureUtils.register(context, STELLAGMITE, ESFeatures.STELLAGMITE.get());
 		FeatureUtils.register(context, VOIDSTONE_SPIKE, ESFeatures.SPELEOTHEM.get(), new SpeleothemFeature.Configuration(BlockStateProvider.simple(ESBlocks.VOIDSTONE_SPIKE.get()), 0.7F, 0.5F, 0.5F));
 		FeatureUtils.register(context, THIOQUARTZ_GEODE, Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR), BlockStateProvider.simple(ESBlocks.THIOQUARTZ_BLOCK.get()), BlockStateProvider.simple(ESBlocks.BUDDING_THIOQUARTZ.get()), BlockStateProvider.simple(ESBlocks.TOXITE.get()), BlockStateProvider.simple(ESBlocks.TOXITE.get()), List.of(ESBlocks.THIOQUARTZ_CLUSTER.get().defaultBlockState()), BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS), new GeodeLayerSettings(1.7, 2.2, 3.2, 4.2), new GeodeCrackSettings(0.95, 2.0, 2), 0.35, 0.083, true, UniformInt.of(4, 6), UniformInt.of(3, 4), UniformInt.of(1, 2), -16, 16, 0.05, 1));
-		FeatureUtils.register(context, CAVE_VINE, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(UniformInt.of(0, 19), 2).add(UniformInt.of(0, 2), 3).add(UniformInt.of(0, 6), 10).build()),
-			new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.BERRIES_VINES_PLANT.get().defaultBlockState(), 4).add(ESBlocks.BERRIES_VINES_PLANT.get().defaultBlockState().setValue(CaveVines.BERRIES, true), 1))), BlockColumnConfiguration.layer(ConstantInt.of(1),
-			new RandomizedIntStateProvider(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.BERRIES_VINES.get().defaultBlockState(), 4).add(ESBlocks.BERRIES_VINES.get().defaultBlockState().setValue(CaveVines.BERRIES, true), 1)), CaveVinesBlock.AGE, UniformInt.of(23, 25)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
-		FeatureUtils.register(context, CAVE_MOSS, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
+		FeatureUtils.register(context, CAVE_VINE, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(WeightedList.<IntProvider>builder().add(UniformInt.of(0, 19), 2).add(UniformInt.of(0, 2), 3).add(UniformInt.of(0, 6), 10).build()),
+			new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.BERRIES_VINES_PLANT.get().defaultBlockState(), 4).add(ESBlocks.BERRIES_VINES_PLANT.get().defaultBlockState().setValue(CaveVines.BERRIES, true), 1))), BlockColumnConfiguration.layer(ConstantInt.of(1),
+			new RandomizedIntStateProvider(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.BERRIES_VINES.get().defaultBlockState(), 4).add(ESBlocks.BERRIES_VINES.get().defaultBlockState().setValue(CaveVines.BERRIES, true), 1)), CaveVinesBlock.AGE, UniformInt.of(23, 25)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
+		FeatureUtils.register(context, CAVE_MOSS, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(WeightedList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
 			BlockStateProvider.simple(ESBlocks.CAVE_MOSS_PLANT.get())), BlockColumnConfiguration.layer(ConstantInt.of(1),
 			new RandomizedIntStateProvider(BlockStateProvider.simple(ESBlocks.CAVE_MOSS.get()), CaveMossBlock.AGE, UniformInt.of(23, 25)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
 		FeatureUtils.register(context, CAVE_MOSS_VEIN, Feature.MULTIFACE_GROWTH, new MultifaceGrowthConfiguration(ESBlocks.CAVE_MOSS_VEIN.get(), 20, false, true, true, 0.5F, HolderSet.direct(ESBlocks.GRIMSTONE.asHolder(), ESBlocks.VOIDSTONE.asHolder())));
 		FeatureUtils.register(context, BOULDERSHROOM, ESFeatures.BOULDERSHROOM.get());
-		FeatureUtils.register(context, HANGING_FANTAGRASS, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
+		FeatureUtils.register(context, HANGING_FANTAGRASS, Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(new WeightedListInt(WeightedList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
 			BlockStateProvider.simple(ESBlocks.HANGING_FANTAGRASS_PLANT.get())), BlockColumnConfiguration.layer(ConstantInt.of(1),
 			new RandomizedIntStateProvider(BlockStateProvider.simple(ESBlocks.HANGING_FANTAGRASS.get()), CaveMossBlock.AGE, UniformInt.of(23, 25)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_PREDICATE, true));
-		FeatureUtils.register(context, ABYSSAL_KELP, ESFeatures.WATER_PLANT.get(), new WaterPlantFeature.Configuration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.ABYSSAL_KELP_PLANT.get().defaultBlockState().setValue(AbyssalKelp.BERRIES, true), 1).add(ESBlocks.ABYSSAL_KELP_PLANT.get().defaultBlockState(), 4).build()), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.ABYSSAL_KELP.get().defaultBlockState().setValue(AbyssalKelp.BERRIES, true), 1).add(ESBlocks.ABYSSAL_KELP.get().defaultBlockState(), 4).build())));
+		FeatureUtils.register(context, ABYSSAL_KELP, ESFeatures.WATER_PLANT.get(), new WaterPlantFeature.Configuration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.ABYSSAL_KELP_PLANT.get().defaultBlockState().setValue(AbyssalKelp.BERRIES, true), 1).add(ESBlocks.ABYSSAL_KELP_PLANT.get().defaultBlockState(), 4).build()), new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.ABYSSAL_KELP.get().defaultBlockState().setValue(AbyssalKelp.BERRIES, true), 1).add(ESBlocks.ABYSSAL_KELP.get().defaultBlockState(), 4).build())));
 		FeatureUtils.register(context, ORBFLORA, ESFeatures.ORBFLORA.get());
 		FeatureUtils.register(context, SPIRAL_KELP, ESFeatures.WATER_PLANT.get(), new WaterPlantFeature.Configuration(BlockStateProvider.simple(ESBlocks.SPIRAL_KELP_PLANT.get()), BlockStateProvider.simple(ESBlocks.SPIRAL_KELP.get())));
 		FeatureUtils.register(context, SEA_ROSA, Feature.MULTIFACE_GROWTH, new MultifaceGrowthConfiguration(ESBlocks.SEA_ROSA.get(), 32, true, true, true, 0.9F, HolderSet.direct(ESBlocks.DUSTED_GRAVEL.asHolder(), ESBlocks.TWILIGHT_SAND.asHolder())));
 		FeatureUtils.register(context, LUMENSTEM, ESFeatures.WATER_PLANT.get(), new WaterPlantFeature.Configuration(BlockStateProvider.simple(ESBlocks.LUMENSTEM_PLANT.get()), BlockStateProvider.simple(ESBlocks.LUMENSTEM.get())));
 		FeatureUtils.register(context, OCEAN_VEGETATION, Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfiguration(HolderSet.direct(PlacementUtils.inlinePlaced(ESFeatures.CORAL_TREE.get(), FeatureConfiguration.NONE), PlacementUtils.inlinePlaced(ESFeatures.CORAL_CLAW.get(), FeatureConfiguration.NONE), PlacementUtils.inlinePlaced(ESFeatures.CORAL_MUSHROOM.get(), FeatureConfiguration.NONE))));
-		FeatureUtils.register(context, SPIRAL_KELP_FOREST_VEGETATION, ESFeatures.UNDERWATER_SIMPLE_BLOCK.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.WICK_GRASS.get().defaultBlockState(), 9).add(ESBlocks.JINGLING_PICKLE.get().defaultBlockState(), 2))));
-		FeatureUtils.register(context, LUSH_SHALLOW_SEA_VEGETATION, ESFeatures.UNDERWATER_SIMPLE_BLOCK.get(), new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.MARIMOLD.get().defaultBlockState(), 1).add(ESBlocks.CIRCULUSH.get().defaultBlockState(), 2).add(ESBlocks.STONETT.get().defaultBlockState(), 2).add(ESBlocks.LUMINIS.get().defaultBlockState(), 2).add(ESBlocks.GLOWLIS.get().defaultBlockState(), 2).add(ESBlocks.GLOREED.get().defaultBlockState(), 3).add(ESBlocks.STARLIGHT_SEAGRASS.get().defaultBlockState(), 5))));
+		FeatureUtils.register(context, SPIRAL_KELP_FOREST_VEGETATION, ESFeatures.UNDERWATER_SIMPLE_BLOCK.get(), new SimpleBlockConfiguration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.WICK_GRASS.get().defaultBlockState(), 9).add(ESBlocks.JINGLING_PICKLE.get().defaultBlockState(), 2))));
+		FeatureUtils.register(context, LUSH_SHALLOW_SEA_VEGETATION, ESFeatures.UNDERWATER_SIMPLE_BLOCK.get(), new SimpleBlockConfiguration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.MARIMOLD.get().defaultBlockState(), 1).add(ESBlocks.CIRCULUSH.get().defaultBlockState(), 2).add(ESBlocks.STONETT.get().defaultBlockState(), 2).add(ESBlocks.LUMINIS.get().defaultBlockState(), 2).add(ESBlocks.GLOWLIS.get().defaultBlockState(), 2).add(ESBlocks.GLOREED.get().defaultBlockState(), 3).add(ESBlocks.STARLIGHT_SEAGRASS.get().defaultBlockState(), 5))));
 		FeatureUtils.register(context, ABYSSLATE_PATCH, ESFeatures.ABYSSLATE_PATCH.get(), new AbysslatePatchFeature.Configuration(ESBlocks.ABYSSLATE.get(), BlockStateProvider.simple(ESBlocks.ABYSSAL_MAGMA_BLOCK.get()), BlockStateProvider.simple(ESBlocks.ABYSSAL_GEYSER.get())));
 		FeatureUtils.register(context, THERMABYSSLATE_PATCH, ESFeatures.ABYSSLATE_PATCH.get(), new AbysslatePatchFeature.Configuration(ESBlocks.THERMABYSSLATE.get(), BlockStateProvider.simple(ESBlocks.THERMABYSSAL_MAGMA_BLOCK.get()), BlockStateProvider.simple(ESBlocks.THERMABYSSAL_GEYSER.get())));
 		FeatureUtils.register(context, CRYOBYSSLATE_PATCH, ESFeatures.ABYSSLATE_PATCH.get(), new AbysslatePatchFeature.Configuration(ESBlocks.CRYOBYSSLATE.get(), BlockStateProvider.simple(ESBlocks.CRYOBYSSAL_MAGMA_BLOCK.get()), BlockStateProvider.simple(ESBlocks.CRYOBYSSAL_GEYSER.get())));
@@ -290,7 +290,7 @@ public class ESConfiguredFeatures {
 		FeatureUtils.register(context, JINGLESTEM_FOREST, Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(placedFeatures.getOrThrow(ESPlacedFeatures.HUGE_MARIMOLD_CHECKED), 0.2F), new WeightedPlacedFeature(placedFeatures.getOrThrow(ESPlacedFeatures.JINGLESTEM_CHECKED), 0.5F)), placedFeatures.getOrThrow(ESPlacedFeatures.JINGLESTEM_CHECKED)));
 		FeatureUtils.register(context, DEAD_LUNAR_TREE, ESFeatures.DEAD_LUNAR_TREE.get());
 		FeatureUtils.register(context, LUNARIS_CACTUS, Feature.RANDOM_PATCH, FeatureUtils.simpleRandomPatchConfiguration(10, PlacementUtils.inlinePlaced(Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 3), BlockStateProvider.simple(ESBlocks.LUNARIS_CACTUS.get())), BlockColumnConfiguration.layer(UniformInt.of(0, 1), BlockStateProvider.simple(ESBlocks.LUNARIS_CACTUS.get().defaultBlockState().setValue(LunarisCactusBlock.FRUIT, true)))), Direction.UP, BlockPredicate.ONLY_IN_AIR_PREDICATE, false), BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(ESBlocks.LUNARIS_CACTUS.get().defaultBlockState(), BlockPos.ZERO))))));
-		FeatureUtils.register(context, FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.SMALL_NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.GLOWING_NIGHT_SPROUTS.get().defaultBlockState(), 2)
@@ -316,7 +316,7 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.STARLIGHT_TORCHFLOWER.get().defaultBlockState(), 2)
 			.add(ESBlocks.WHISPERBLOOM.get().defaultBlockState(), 2)
 			.add(ESBlocks.STARLIGHT_FLOWER.get().defaultBlockState(), 2)), 48));
-		FeatureUtils.register(context, PLAINS_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, PLAINS_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.SMALL_NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.GLOWING_NIGHT_SPROUTS.get().defaultBlockState(), 2)
@@ -342,7 +342,7 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.STARLIGHT_TORCHFLOWER.get().defaultBlockState(), 2)
 			.add(ESBlocks.WHISPERBLOOM.get().defaultBlockState(), 2)
 			.add(ESBlocks.STARLIGHT_FLOWER.get().defaultBlockState(), 2)), 48));
-		FeatureUtils.register(context, SWAMP_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, SWAMP_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.FANTABUD.get().defaultBlockState(), 3)
 			.add(ESBlocks.GREEN_FANTABUD.get().defaultBlockState(), 3)
 			.add(ESBlocks.FANTAFERN.get().defaultBlockState(), 3)
@@ -355,7 +355,7 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.NIGHTFAN.get().defaultBlockState(), 2)
 			.add(ESBlocks.WHISPERBLOOM.get().defaultBlockState(), 2)
 			.add(ESBlocks.STARLIGHT_FLOWER.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, UNDERGROUND_SWAMP_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, UNDERGROUND_SWAMP_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.FANTABUD.get().defaultBlockState(), 3)
 			.add(ESBlocks.GREEN_FANTABUD.get().defaultBlockState(), 2)
 			.add(ESBlocks.FANTAFERN.get().defaultBlockState(), 3)
@@ -364,7 +364,7 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.GREEN_FANTAGRASS.get().defaultBlockState(), 2)
 			.add(ESBlocks.PUNGENCY_FRUIT_VINES.get().defaultBlockState(), 1)
 			.add(ESBlocks.PUNGENCY_FRUIT_VINES.get().defaultBlockState().setValue(PungencyFruitVinesBlock.AGE, 2), 1)), 48));
-		FeatureUtils.register(context, PERMAFROST_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, PERMAFROST_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.SMALL_NIGHT_SPROUTS.get().defaultBlockState(), 2)
 			.add(ESBlocks.GLOWING_NIGHT_SPROUTS.get().defaultBlockState(), 2)
@@ -383,7 +383,7 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.VIVIDSTALK.get().defaultBlockState(), 1)
 			.add(ESBlocks.WHISPERBLOOM.get().defaultBlockState(), 2)
 			.add(ESBlocks.STARLIGHT_FLOWER.get().defaultBlockState(), 2)), 48));
-		FeatureUtils.register(context, SCARLET_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, SCARLET_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.ORANGE_SCARLET_BUD.get().defaultBlockState(), 1)
 			.add(ESBlocks.PURPLE_SCARLET_BUD.get().defaultBlockState(), 1)
 			.add(ESBlocks.RED_SCARLET_BUD.get().defaultBlockState(), 1)
@@ -392,23 +392,23 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.WHISPERBLOOM.get().defaultBlockState(), 1)
 			.add(ESBlocks.WITHERED_STARLIGHT_FLOWER.get().defaultBlockState(), 1)
 			.add(ESBlocks.AUREATE_FLOWER.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, TORREYA_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, TORREYA_FOREST_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.WITHERED_STARLIGHT_FLOWER.get().defaultBlockState(), 1)
 			.add(ESBlocks.MAUVE_FERN.get().defaultBlockState(), 2)
 			.add(ESBlocks.AMARAMBER_GRASS.get().defaultBlockState(), 2)
 			.add(ESBlocks.AMARAMBER_GRASS_BUSH.get().defaultBlockState(), 1)
 			.add(ESBlocks.GLOOMCANDLE_ROOT.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, DESERT_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, DESERT_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.DEAD_LUNAR_BUSH.get().defaultBlockState(), 3)
 			.add(ESBlocks.DESERT_AMETHYSIA.get().defaultBlockState(), 1)
 			.add(ESBlocks.WITHERED_DESERT_AMETHYSIA.get().defaultBlockState(), 1)
 			.add(ESBlocks.SUNSET_THORNBLOOM.get().defaultBlockState(), 1)
 			.add(ESBlocks.AMETHYSIA_GRASS.get().defaultBlockState(), 30)
 			.add(ESBlocks.MAUVE_FERN.get().defaultBlockState(), 27)), 48));
-		FeatureUtils.register(context, BEACH_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, BEACH_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.BLAZEBANK_GRASS.get().defaultBlockState(), 5)
 			.add(ESBlocks.FIRE_ORCHID.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, MUSHROOM_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, MUSHROOM_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.GLOWING_MUSHROOM.get().defaultBlockState(), 20)
 			.add(ESBlocks.SHINING_MUSHROOM.get().defaultBlockState(), 20)
 			.add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 9)
@@ -417,17 +417,17 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.CONEBLOOM.get().defaultBlockState(), 5)
 			.add(ESBlocks.GLADESPIKE.get().defaultBlockState(), 5)
 			.add(ESBlocks.TALL_GLADESPIKE.get().defaultBlockState(), 3)), 48));
-		FeatureUtils.register(context, CAVE_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.CAVE_MOSS_VEIN.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 9).add(ESBlocks.CAVE_MOSS_CARPET.get().defaultBlockState(), 25))));
+		FeatureUtils.register(context, CAVE_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.CAVE_MOSS_VEIN.get().defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true), 9).add(ESBlocks.CAVE_MOSS_CARPET.get().defaultBlockState(), 25))));
 		FeatureUtils.register(context, CAVE_MOSS_PATCH, ESFeatures.BLOCK_PATCH.get(), new BlockPatchFeature.Configuration(BlockStateProvider.simple(ESBlocks.CAVE_MOSS_BLOCK.get()), BlockTags.MOSS_REPLACEABLE, UniformInt.of(4, 7)));
 		FeatureUtils.register(context, CAVE_MOSS_PATCH_BONEMEAL, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(ESBlocks.CAVE_MOSS_BLOCK.get()), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CAVE_MOSS_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.6F, UniformInt.of(1, 2), 0.75F));
-		FeatureUtils.register(context, WATERSIDE_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, WATERSIDE_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.LUNAR_REED.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, WATER_SURFACE_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, WATER_SURFACE_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.MOONLIGHT_DUCKWEED.get().defaultBlockState(), 18)
 			.add(ESBlocks.MOONLIGHT_LILY_PAD.get().defaultBlockState(), 2)
 			.add(ESBlocks.STARLIT_LILY_PAD.get().defaultBlockState(), 1)
 			.add(ESBlocks.STARLIT_LILY_PAD.get().defaultBlockState().setValue(WaterlilyWithFlowerBlock.LIT, true), 1)), 48));
-		FeatureUtils.register(context, CRYSTAL_CAVES_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+		FeatureUtils.register(context, CRYSTAL_CAVES_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
 			.add(ESBlocks.CRYSTALLIZED_LUNAR_GRASS.get().defaultBlockState(), 10)
 			.add(ESBlocks.RED_CRYSTAL_ROOTS.get().defaultBlockState(), 10)
 			.add(ESBlocks.BLUE_CRYSTAL_ROOTS.get().defaultBlockState(), 10)
@@ -437,28 +437,28 @@ public class ESConfiguredFeatures {
 			.add(ESBlocks.TWILVEWRYM_HERB.get().defaultBlockState(), 1)
 			.add(ESBlocks.STELLAFLY_BUSH.get().defaultBlockState(), 1)
 			.add(ESBlocks.GLIMMERFLY_BUSH.get().defaultBlockState(), 1)), 48));
-		FeatureUtils.register(context, RED_CRYSTAL_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.RED_CRYSTAL_ROOTS.get().defaultBlockState(), 9).add(ESBlocks.RED_CRYSTAL_MOSS_CARPET.get().defaultBlockState(), 25))));
-		FeatureUtils.register(context, BLUE_CRYSTAL_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.BLUE_CRYSTAL_ROOTS.get().defaultBlockState(), 9).add(ESBlocks.BLUE_CRYSTAL_MOSS_CARPET.get().defaultBlockState(), 25))));
+		FeatureUtils.register(context, RED_CRYSTAL_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.RED_CRYSTAL_ROOTS.get().defaultBlockState(), 9).add(ESBlocks.RED_CRYSTAL_MOSS_CARPET.get().defaultBlockState(), 25))));
+		FeatureUtils.register(context, BLUE_CRYSTAL_MOSS_VEGETATION, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.BLUE_CRYSTAL_ROOTS.get().defaultBlockState(), 9).add(ESBlocks.BLUE_CRYSTAL_MOSS_CARPET.get().defaultBlockState(), 25))));
 		FeatureUtils.register(context, RED_CRYSTAL_MOSS_PATCH, ESFeatures.BLOCK_PATCH.get(), new BlockPatchFeature.Configuration(BlockStateProvider.simple(ESBlocks.RED_CRYSTAL_MOSS_BLOCK.get()), BlockTags.MOSS_REPLACEABLE, UniformInt.of(4, 7)));
 		FeatureUtils.register(context, BLUE_CRYSTAL_MOSS_PATCH, ESFeatures.BLOCK_PATCH.get(), new BlockPatchFeature.Configuration(BlockStateProvider.simple(ESBlocks.BLUE_CRYSTAL_MOSS_BLOCK.get()), BlockTags.MOSS_REPLACEABLE, UniformInt.of(4, 7)));
 		FeatureUtils.register(context, RED_CRYSTAL_MOSS_PATCH_BONEMEAL, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(ESBlocks.RED_CRYSTAL_MOSS_BLOCK.get()), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(RED_CRYSTAL_MOSS_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.6F, UniformInt.of(1, 2), 0.75F));
 		FeatureUtils.register(context, BLUE_CRYSTAL_MOSS_PATCH_BONEMEAL, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(ESBlocks.BLUE_CRYSTAL_MOSS_BLOCK.get()), PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(BLUE_CRYSTAL_MOSS_VEGETATION)), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.6F, UniformInt.of(1, 2), 0.75F));
 		FeatureUtils.register(context, SWAMP_WATER, ESFeatures.SWAMP_WATER.get());
-		FeatureUtils.register(context, HOT_SPRING, ESFeatures.LAKE.get(), new ESLakeFeature.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(ESBlocks.SPRINGSTONE.get().defaultBlockState(), 10).add(ESBlocks.THERMAL_SPRINGSTONE.get().defaultBlockState(), 1).build())));
+		FeatureUtils.register(context, HOT_SPRING, ESFeatures.LAKE.get(), new ESLakeFeature.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.SPRINGSTONE.get().defaultBlockState(), 10).add(ESBlocks.THERMAL_SPRINGSTONE.get().defaultBlockState(), 1).build())));
 		FeatureUtils.register(context, SOLARIS_ISLAND, ESFeatures.SKY_ISLAND.get(), new SkyIslandFeature.Configuration(
 			BlockStateProvider.simple(ESBlocks.RADIANITE.get()),
 			BlockStateProvider.simple(ESBlocks.GOLDEN_GRASS_BLOCK.get()),
 			BlockStateProvider.simple(ESBlocks.NIGHTFALL_DIRT.get()),
 			List.of(
 				new SkyIslandFeature.Configuration.DecorationEntry(PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
-					new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+					new WeightedStateProvider(WeightedList.<BlockState>builder()
 						.add(ESBlocks.GOLDEN_GRASS.get().defaultBlockState(), 80)
 						.add(ESBlocks.TALL_GOLDEN_GRASS.get().defaultBlockState(), 30)
 						.add(ESBlocks.CRESCENTLEAF.get().defaultBlockState(), 6)
 						.add(ESBlocks.SACRED_STARLIGHT_FLOWER.get().defaultBlockState(), 1))
 				)), 0.8f, 24),
 				new SkyIslandFeature.Configuration.DecorationEntry(PlacementUtils.onlyWhenEmpty(Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(
-					BlockColumnConfiguration.layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(UniformInt.of(4, 8), 1).add(UniformInt.of(0, 4), 6).build()),
+					BlockColumnConfiguration.layer(new WeightedListInt(WeightedList.<IntProvider>builder().add(UniformInt.of(4, 8), 1).add(UniformInt.of(0, 4), 6).build()),
 						BlockStateProvider.simple(ESBlocks.SACRED_LANTERNVINE_PLANT.get())),
 					BlockColumnConfiguration.layer(ConstantInt.of(1),
 						BlockStateProvider.simple(ESBlocks.SACRED_LANTERNVINE.get()))),
@@ -467,7 +467,7 @@ public class ESConfiguredFeatures {
 			List.of(
 				new SkyIslandFeature.Configuration.DecorationEntry(PlacementUtils.inlinePlaced(configuredFeatures.getOrThrow(CRADLEWOOD)), 0.04f, 2),
 				new SkyIslandFeature.Configuration.DecorationEntry(PlacementUtils.onlyWhenEmpty(Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(
-					BlockColumnConfiguration.layer(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
+					BlockColumnConfiguration.layer(new WeightedListInt(WeightedList.<IntProvider>builder().add(UniformInt.of(10, 14), 1).add(UniformInt.of(6, 10), 2).add(UniformInt.of(0, 6), 6).build()),
 						BlockStateProvider.simple(ESBlocks.HANGING_SACRED_LANTERNVINE_PLANT.get())),
 					BlockColumnConfiguration.layer(ConstantInt.of(1),
 						BlockStateProvider.simple(ESBlocks.HANGING_SACRED_LANTERNVINE.get()))),

@@ -13,7 +13,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -74,7 +74,7 @@ public abstract class BossSpawnerBlockEntity<T extends Mob> extends BlockEntity 
 		}
 		BlockPos spawnPos = getBlockPos();
 		mob.moveTo(spawnPos, level.getRandom().nextFloat() * 360.0F, 0.0F);
-		mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), MobSpawnType.SPAWNER, null);
+		mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), EntitySpawnReason.SPAWNER, null);
 		initializeBoss(mob);
 		return level.addFreshEntity(mob);
 	}

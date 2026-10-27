@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -118,7 +120,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
-		builder.define(VARIANT, ESSeekerVariants.LUNAR.location().toString())
+		builder.define(VARIANT, ESSeekerVariants.LUNAR.identifier().toString())
 			.define(SEEKER_X_ROT, 0f)
 			.define(SEEKER_Y_ROT, 0f);
 	}
@@ -267,7 +269,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		setVariant(SeekerVariant.getSpawnVariant(level.registryAccess(), level.getBiome(blockPosition())));
 		return super.finalizeSpawn(level, instance, spawnType, data);
 	}
@@ -285,7 +287,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		setVariantId(Identifier.read(compoundTag.getString(TAG_VARIANT)).getOrThrow());
+		setVariantId(Identifier.read(compoundTag.getStringOr(TAG_VARIANT, "")).getOrThrow());
 	}
 
 	@Override
@@ -294,7 +296,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 		compoundTag.putString(TAG_VARIANT, getVariantId().toString());
 	}
 
-	public static boolean checkSeekerSpawnRules(EntityType<? extends Seeker> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkSeekerSpawnRules(EntityType<? extends Seeker> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.seeker.canSpawn();
 	}
 }

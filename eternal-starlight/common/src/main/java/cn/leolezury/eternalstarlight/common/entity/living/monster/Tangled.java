@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -125,7 +127,7 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 	}
 
 	@Nullable
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnType, @Nullable SpawnGroupData spawnGroupData) {
 		setVariant(random.nextInt(3));
 		return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
 	}
@@ -142,8 +144,8 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity entity) {
-		boolean flag = super.doHurtTarget(entity);
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
+		boolean flag = super.doHurtTarget(hurtServerLevel, entity);
 		if (flag && entity instanceof LivingEntity living && getRandom().nextInt(5) == 0 && !living.hasEffect(MobEffects.POISON)) {
 			living.addEffect(new MobEffectInstance(MobEffects.POISON, 40));
 		}
@@ -173,7 +175,7 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_VARIANT, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_VARIANT)) {
 			setVariant(compoundTag.getIntOr(TAG_VARIANT, 0));
 		}
 	}
@@ -234,7 +236,7 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 		return SoundEvents.SKELETON_DEATH;
 	}
 
-	public static boolean checkTangledSpawnRules(EntityType<? extends Tangled> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkTangledSpawnRules(EntityType<? extends Tangled> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.tangled.canSpawn();
 	}
 }

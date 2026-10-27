@@ -52,7 +52,7 @@ public class EnergyBlock extends Block {
 			if (player instanceof ServerPlayer serverPlayer) {
 				ESCriteriaTriggers.DEACTIVATE_ENERGY_BLOCK.get().trigger(serverPlayer);
 			}
-			return InteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;
 	}

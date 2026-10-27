@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -86,7 +88,7 @@ public class SpiralArrow extends AbstractArrow {
 				if (this.attachedTicks % 2 == 0) {
 					Entity owner = this.getOwner();
 					this.attachedTarget.invulnerableTime = 0;
-					this.attachedTarget.hurt(this.damageSources().arrow(this, owner != null ? owner : this), 1.0F);
+					ESPortCompat.hurt(this.attachedTarget, this.damageSources().arrow(this, owner != null ? owner : this), 1.0F);
 				}
 				this.attachedTicks--;
 				if (this.attachedTicks <= 0) {

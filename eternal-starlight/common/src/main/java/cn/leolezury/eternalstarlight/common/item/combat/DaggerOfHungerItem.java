@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.registry.ESCriteriaTriggers;
 import cn.leolezury.eternalstarlight.common.registry.ESDataComponents;
@@ -16,8 +18,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -30,7 +31,7 @@ public class DaggerOfHungerItem extends DualWieldingSwordItem {
 	public static final ItemAttributeModifiers BONUS_ATTRIBUTE = SwordItem.createAttributes(ESItemTiers.TOOTH_OF_HUNGER, 4, -1.9f);
 	public static final ItemAttributeModifiers PENALTY_ATTRIBUTE = SwordItem.createAttributes(ESItemTiers.TOOTH_OF_HUNGER, 2, -2.9f);
 
-	public DaggerOfHungerItem(Tier tier, Properties properties) {
+	public DaggerOfHungerItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
 		DataComponentMap copy = components;
 		this.components = new DataComponentMap() {
@@ -68,7 +69,7 @@ public class DaggerOfHungerItem extends DualWieldingSwordItem {
 			float newHungerLevel = Math.max(-1, hungerLevel - 0.00005f * 1200);
 			stack.applyComponentsAndValidate(DataComponentPatch.builder().set(ESDataComponents.HUNGER_LEVEL.get(), newHungerLevel).build());
 			if (hungerLevel == -1) {
-				entity.hurt(ESDamageTypes.getDamageSource(level, ESDamageTypes.DAGGER_OF_HUNGER), 3);
+				ESPortCompat.hurt(entity, ESDamageTypes.getDamageSource(level, ESDamageTypes.DAGGER_OF_HUNGER), 3);
 				newHungerLevel = Math.min(1, newHungerLevel + 0.05f);
 				stack.applyComponentsAndValidate(DataComponentPatch.builder().set(ESDataComponents.HUNGER_LEVEL.get(), newHungerLevel).build());
 			}

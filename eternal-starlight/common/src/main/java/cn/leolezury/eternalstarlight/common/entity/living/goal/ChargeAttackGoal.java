@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.goal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.interfaces.Charger;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -91,7 +93,7 @@ public class ChargeAttackGoal extends Goal {
 
 		for (LivingEntity living : charger.level().getEntitiesOfClass(LivingEntity.class, charger.getBoundingBox().inflate(attackRange))) {
 			if (!ended && living == target) {
-				charger.doHurtTarget(target);
+				ESPortCompat.doHurtTarget(charger, target);
 				this.ended = true;
 			}
 		}

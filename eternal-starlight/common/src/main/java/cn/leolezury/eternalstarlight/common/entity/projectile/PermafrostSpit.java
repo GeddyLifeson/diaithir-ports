@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -113,7 +115,7 @@ public class PermafrostSpit extends ThrowableProjectile {
 	@Override
 	protected void onHitEntity(EntityHitResult hitResult) {
 		if (hitResult.getType() != HitResult.Type.MISS && getOwner() instanceof LivingEntity owner && ESEntityUtil.shouldHarm(owner, hitResult.getEntity())) {
-			hitResult.getEntity().hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.FREEZE, this, owner), (float) ((owner.getAttribute(Attributes.ATTACK_DAMAGE) != null ? owner.getAttributeValue(Attributes.ATTACK_DAMAGE) : 12) * 1.25));
+			ESPortCompat.hurt(hitResult.getEntity(), ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.FREEZE, this, owner), (float) ((owner.getAttribute(Attributes.ATTACK_DAMAGE) != null ? owner.getAttributeValue(Attributes.ATTACK_DAMAGE) : 12) * 1.25));
 			if (hitResult.getEntity() instanceof LivingEntity living && living.canFreeze()) {
 				living.addEffect(new MobEffectInstance(ESMobEffects.BRITTLE.asHolder(), 200, 0));
 			}

@@ -202,7 +202,7 @@ public class Freeze extends Monster implements RangedAttackMob {
 		return ESSoundEvents.FREEZE_DEATH.get();
 	}
 
-	public static boolean checkFreezeSpawnRules(EntityType<? extends Freeze> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkFreezeSpawnRules(EntityType<? extends Freeze> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.freeze.canSpawn();
 	}
 }

@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,7 +27,7 @@ import java.util.List;
 public class DuskLightBlock extends BaseEntityBlock {
 	private static final List<Direction> FACING_ORDER = Arrays.stream(Direction.values()).toList();
 	public static final MapCodec<DuskLightBlock> CODEC = simpleCodec(DuskLightBlock::new);
-	public static final DirectionProperty FACING = BlockStateProperties.FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
 	public DuskLightBlock(Properties properties) {
 		super(properties);
@@ -54,7 +54,7 @@ public class DuskLightBlock extends BaseEntityBlock {
 					}
 				}
 			}
-			return InteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;
 	}

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.attack;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -128,7 +130,7 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 			if (level() instanceof ServerLevel serverLevel && getSpawnedTicks() == getChargeDuration() + 1 && getOwner() != null) {
 				ESEntityUtil.RaytraceResult result = ESEntityUtil.raytrace(level(), CollisionContext.of(this), position().add(position().subtract(getBeamTarget())), getBeamTarget());
 				for (Entity entity : result.entities()) {
-					if (entity instanceof LivingEntity && ESEntityUtil.shouldHarm(getOwner(), entity) && entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ELECTRIC_SHOCK, this, getOwner()), 8)) {
+					if (entity instanceof LivingEntity && ESEntityUtil.shouldHarm(getOwner(), entity) && ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ELECTRIC_SHOCK, this, getOwner()), 8)) {
 						entity.igniteForSeconds(2);
 					}
 				}
@@ -157,7 +159,7 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -167,8 +169,8 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput tag) {
-		if (tag.hasUUID(TAG_OWNER)) {
-			ownerId = tag.getUUID(TAG_OWNER);
+		if (ESPortCompat.has(tag, TAG_OWNER)) {
+			ownerId = ESPortCompat.getUUID(tag, TAG_OWNER);
 		}
 		setSpawnedTicks(tag.getIntOr(TAG_SPAWNED_TICKS, 0));
 	}
@@ -176,7 +178,7 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 	@Override
 	protected void addAdditionalSaveData(ValueOutput tag) {
 		if (owner != null) {
-			tag.putUUID(TAG_OWNER, owner.getUUID());
+			ESPortCompat.putUUID(tag, TAG_OWNER, owner.getUUID());
 		}
 		tag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 	}

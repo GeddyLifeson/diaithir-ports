@@ -18,7 +18,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +35,7 @@ public class ColdsnapItem extends WhipItem {
 		new Vector3f(69, 114, 185)
 	);
 
-	public ColdsnapItem(Tier tier, Properties properties) {
+	public ColdsnapItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
 	}
 

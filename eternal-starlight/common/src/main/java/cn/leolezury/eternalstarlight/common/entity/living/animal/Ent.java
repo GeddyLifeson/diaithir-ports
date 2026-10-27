@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -95,7 +97,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
 		builder.define(HAS_LEAVES, true)
-			.define(VARIANT, ESEntVariants.LUNAR.location().toString());
+			.define(VARIANT, ESEntVariants.LUNAR.identifier().toString());
 	}
 
 	@Override
@@ -113,10 +115,10 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_HAS_LEAVES, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_HAS_LEAVES)) {
 			setHasLeaves(compoundTag.getBooleanOr(TAG_HAS_LEAVES, false));
 		}
-		setVariantId(Identifier.read(compoundTag.getString(TAG_VARIANT)).getOrThrow());
+		setVariantId(Identifier.read(compoundTag.getStringOr(TAG_VARIANT, "")).getOrThrow());
 	}
 
 	@Override
@@ -134,7 +136,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		setVariant(EntVariant.getSpawnVariant(level.registryAccess(), level.getBiome(blockPosition())));
 		return super.finalizeSpawn(level, instance, spawnType, data);
 	}
@@ -149,14 +151,14 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 				spawnAtLocation(getVariant().value().leaves().value());
 				stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
 				playSound(SoundEvents.SHEEP_SHEAR);
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 			if (stack.is(ESTags.Items.ENT_FERTILIZERS) && !hasLeaves()) {
 				setHasLeaves(true);
 				usePlayerItem(player, hand, stack);
 				playSound(SoundEvents.BONE_MEAL_USE);
 				player.swing(hand);
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
 		return super.mobInteract(player, hand);
@@ -193,7 +195,7 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 		return ESSoundEvents.ENT_HURT.get();
 	}
 
-	public static boolean checkEntSpawnRules(EntityType<? extends Ent> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkEntSpawnRules(EntityType<? extends Ent> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && ESConfig.INSTANCE.mobsConfig.ent.canSpawn();
 	}
 }

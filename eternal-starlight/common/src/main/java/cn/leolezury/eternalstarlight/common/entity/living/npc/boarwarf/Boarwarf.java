@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.living.npc.boarwarf;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
+import net.minecraft.server.level.ServerLevel;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -132,18 +136,18 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_OFFERS)) {
+		if (ESPortCompat.has(compoundTag, TAG_OFFERS)) {
 			DataResult<MerchantOffers> parsed = MerchantOffers.CODEC.parse(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_OFFERS));
 			parsed.resultOrPartial(Util.prefix("Failed to load offers: ", EternalStarlight.LOGGER::warn)).ifPresent((merchantOffers) -> this.offers = merchantOffers);
 		}
-		setTypeId(Identifier.read(compoundTag.getString(TAG_TYPE)).getOrThrow());
-		setProfessionId(Identifier.read(compoundTag.getString(TAG_PROFESSION)).getOrThrow());
+		setTypeId(Identifier.read(compoundTag.getStringOr(TAG_TYPE, "")).getOrThrow());
+		setProfessionId(Identifier.read(compoundTag.getStringOr(TAG_PROFESSION, "")).getOrThrow());
 		restockCooldown = compoundTag.getIntOr(TAG_RESTOCK_COOLDOWN, 0);
 		chatCooldown = compoundTag.getIntOr(TAG_CHAT_COOLDOWN, 0);
 		chatTicks = compoundTag.getIntOr(TAG_CHAT_TICKS, 0);
 		awakeTicks = compoundTag.getIntOr(TAG_AWAKE_TICKS, 0);
 		sleepTicks = compoundTag.getIntOr(TAG_SLEEP_TICKS, 0);
-		if (compoundTag.contains(TAG_HOME_POS)) {
+		if (ESPortCompat.has(compoundTag, TAG_HOME_POS)) {
 			GlobalPos.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_HOME_POS)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Boarwarf home pos: {}", s)).ifPresent(pos -> this.homePos = pos);
 		}
 		if (this.offers == null) {
@@ -195,7 +199,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 
 	@Nullable
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @Nullable SpawnGroupData data) {
 		homePos = GlobalPos.of(level.getLevel().dimension(), blockPosition());
 
 		level().registryAccess().registryOrThrow(ESRegistries.BOARWARF_TYPE).forEach((type) -> {
@@ -244,7 +248,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 				this.setTradingPlayer(player);
 				this.openTradingScreen(player, this.getDisplayName(), 1);
 			}
-			return InteractionResult.sidedSuccess(this.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.mobInteract(player, playerHand);
 		}
@@ -298,7 +302,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (chatCooldown < 12000) {
 			chatCooldown += 12000;
 		}
@@ -316,7 +320,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 				}
 			}
 		}
-		return super.hurt(source, amount);
+		return super.hurtServer(hurtServerLevel, source, amount);
 	}
 
 	@Override
@@ -487,7 +491,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		return this.level().isClientSide();
 	}
 
-	public static boolean checkBoarwarfSpawnRules(EntityType<? extends Boarwarf> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkBoarwarfSpawnRules(EntityType<? extends Boarwarf> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkMobSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.boarwarf.canSpawn();
 	}
 }

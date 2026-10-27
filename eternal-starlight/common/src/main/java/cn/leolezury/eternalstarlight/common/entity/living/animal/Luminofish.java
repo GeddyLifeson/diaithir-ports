@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.server.level.ServerLevel;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.registry.ESSoundEvents;
@@ -94,8 +96,8 @@ public class Luminofish extends AbstractSchoolingFish {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
-		boolean flag = super.hurt(damageSource, amount);
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
+		boolean flag = super.hurtServer(hurtServerLevel, damageSource, amount);
 		Entity entity = damageSource.getDirectEntity();
 		if (flag && entity instanceof LivingEntity living && getSwellTicks() <= 0 && !level().isClientSide()) {
 			setSwellTicks(20);
@@ -126,7 +128,7 @@ public class Luminofish extends AbstractSchoolingFish {
 		return ESItems.LUMINOFISH_BUCKET.get().getDefaultInstance();
 	}
 
-	public static boolean checkLuminoFishSpawnRules(EntityType<? extends Luminofish> entityType, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
+	public static boolean checkLuminoFishSpawnRules(EntityType<? extends Luminofish> entityType, LevelAccessor levelAccessor, EntitySpawnReason mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
 		int seaLevel = levelAccessor.getSeaLevel();
 		return blockPos.getY() <= seaLevel - 40 && levelAccessor.getFluidState(blockPos.below()).is(FluidTags.WATER) && levelAccessor.getBlockState(blockPos.above()).is(Blocks.WATER) && ESConfig.INSTANCE.mobsConfig.luminofish.canSpawn();
 	}

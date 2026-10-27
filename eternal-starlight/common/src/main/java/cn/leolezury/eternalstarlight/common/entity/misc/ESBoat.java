@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.misc;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -81,7 +83,7 @@ public class ESBoat extends Boat {
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput compound) {
-		if (compound.contains(TAG_TYPE, CompoundTag.TAG_STRING)) {
+		if (ESPortCompat.has(compound, TAG_TYPE)) {
 			this.setStarlightBoatType(ESBoat.Type.getTypeFromString(compound.getStringOr(TAG_TYPE, "")));
 		}
 	}

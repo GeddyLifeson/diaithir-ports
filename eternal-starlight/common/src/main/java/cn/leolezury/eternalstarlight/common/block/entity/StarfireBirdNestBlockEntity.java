@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -241,7 +243,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 				baby.setBaby(true);
 				baby.moveTo(pos.getCenter());
 				if (level instanceof ServerLevel serverLevel) {
-					baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(pos), MobSpawnType.BREEDING, null);
+					baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(pos), EntitySpawnReason.BREEDING, null);
 				}
 				blockEntity.addBabyOccupant(baby);
 				change = true;
@@ -274,13 +276,13 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 	protected void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
 		this.stored.clear();
-		if (compoundTag.contains(TAG_BIRDS)) {
+		if (ESPortCompat.has(compoundTag, TAG_BIRDS)) {
 			Occupant.LIST_CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_BIRDS)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Starfire Birds: '{}'", string)).ifPresent((list) -> list.forEach(this::storeBird));
 		}
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compoundTag, this.items, provider);
-		if (compoundTag.hasUUID(TAG_LAST_SEED_PLAYER)) {
-			lastSeedPlayer = compoundTag.getUUID(TAG_LAST_SEED_PLAYER);
+		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
+		if (ESPortCompat.has(compoundTag, TAG_LAST_SEED_PLAYER)) {
+			lastSeedPlayer = ESPortCompat.getUUID(compoundTag, TAG_LAST_SEED_PLAYER);
 		}
 		hatchTicks = compoundTag.getIntOr(TAG_HATCH_TICKS, 0);
 		setChanged();
@@ -292,7 +294,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 		compoundTag.put(TAG_BIRDS, Occupant.LIST_CODEC.encodeStart(NbtOps.INSTANCE, this.getBirds()).getOrThrow());
 		ContainerHelper.saveAllItems(compoundTag, this.items, provider);
 		if (lastSeedPlayer != null) {
-			compoundTag.putUUID(TAG_LAST_SEED_PLAYER, lastSeedPlayer);
+			ESPortCompat.putUUID(compoundTag, TAG_LAST_SEED_PLAYER, lastSeedPlayer);
 		}
 		compoundTag.putInt(TAG_HATCH_TICKS, hatchTicks);
 	}

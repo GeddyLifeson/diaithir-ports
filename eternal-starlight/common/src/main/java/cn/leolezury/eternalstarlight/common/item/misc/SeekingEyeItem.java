@@ -2,7 +2,7 @@ package cn.leolezury.eternalstarlight.common.item.misc;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -14,10 +14,10 @@ public class SeekingEyeItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		if (level.isClientSide()) {
 			EternalStarlight.getClientHelper().openSeekingEyeGui();
 		}
-		return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 }

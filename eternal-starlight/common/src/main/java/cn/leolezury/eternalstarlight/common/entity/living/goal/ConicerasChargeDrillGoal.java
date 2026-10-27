@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.goal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.entity.interfaces.Charger;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
@@ -156,7 +158,7 @@ public class ConicerasChargeDrillGoal extends Goal {
 		}
 		attackCooldown = ATTACK_INTERVAL;
 		target.invulnerableTime = 0;
-		target.hurt(charger.damageSources().mobAttack(charger), (float) charger.getAttributeValue(Attributes.ATTACK_DAMAGE));
+		ESPortCompat.hurt(target, charger.damageSources().mobAttack(charger), (float) charger.getAttributeValue(Attributes.ATTACK_DAMAGE));
 	}
 
 	private double speedDecay() {

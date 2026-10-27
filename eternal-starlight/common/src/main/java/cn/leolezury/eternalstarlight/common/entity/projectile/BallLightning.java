@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -121,7 +123,7 @@ public class BallLightning extends ThrowableProjectile {
 				setTargetId(target.getId());
 				ESEntityUtil.RaytraceResult result = ESEntityUtil.raytrace(level(), CollisionContext.of(this), position().add(0, getBbHeight() / 2, 0), target.position().add(0, target.getBbHeight() / 2, 0));
 				for (Entity entity : result.entities()) {
-					if (entity instanceof LivingEntity && ESEntityUtil.shouldHarm(getOwner(), entity) && entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ELECTRIC_SHOCK, this, getOwner()), 8)) {
+					if (entity instanceof LivingEntity && ESEntityUtil.shouldHarm(getOwner(), entity) && ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ELECTRIC_SHOCK, this, getOwner()), 8)) {
 						entity.igniteForSeconds(2);
 					}
 				}
@@ -203,7 +205,7 @@ public class BallLightning extends ThrowableProjectile {
 				if (getOwner() instanceof Player) {
 					entity.invulnerableTime = 0;
 				}
-				entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 8);
+				ESPortCompat.hurt(entity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 8);
 			}
 		}
 		discard();
@@ -212,8 +214,8 @@ public class BallLightning extends ThrowableProjectile {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.hasUUID(TAG_TARGET)) {
-			targetId = compoundTag.getUUID(TAG_TARGET);
+		if (ESPortCompat.has(compoundTag, TAG_TARGET)) {
+			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
 		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
 	}
@@ -222,7 +224,7 @@ public class BallLightning extends ThrowableProjectile {
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
 		if (target != null) {
-			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
 	}

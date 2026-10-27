@@ -1,5 +1,11 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.registry.ESCriteriaTriggers;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import net.minecraft.core.BlockPos;
@@ -19,8 +25,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,12 +33,12 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Supplier;
 
-public class HammerItem extends TieredItem {
+public class HammerItem extends Item {
 	private final Supplier<ParticleOptions> smashParticle;
 	private final Holder<SoundEvent> smashSound;
 
-	public HammerItem(Tier tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Properties properties) {
-		super(tier, properties.component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_PICKAXE)));
+	public HammerItem(ESItemTiers tier, Supplier<ParticleOptions> smashParticle, Holder<SoundEvent> smashSound, Properties properties) {
+		super(tier.common(properties.component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_PICKAXE))));
 		this.smashParticle = smashParticle;
 		this.smashSound = smashSound;
 	}
@@ -52,7 +56,7 @@ public class HammerItem extends TieredItem {
 		}
 		Level level = player.level();
 		for (LivingEntity entity : level.getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, player, new AABB(target.blockPosition()).inflate(2))) {
-			if (entity.hurt(level.damageSources().playerAttack(player), (float) (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.75))) {
+			if (ESPortCompat.hurt(entity, level.damageSources().playerAttack(player), (float) (player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.75))) {
 				entity.addDeltaMovement(new Vec3(0.0, 0.4 * Math.max(0.0, 1.0 - entity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)), 0.0));
 			}
 		}
@@ -73,8 +77,8 @@ public class HammerItem extends TieredItem {
 	}
 
 	@Override
-	public boolean hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
-		return true;
+	public void hurtEnemy(ItemStack stack, LivingEntity entity, LivingEntity attacker) {
+		return;
 	}
 
 	@Override

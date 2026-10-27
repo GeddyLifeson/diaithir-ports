@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -75,7 +77,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 		super.loadAdditional(tag);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(tag)) {
-			ContainerHelper.loadAllItems(tag, this.items, registries);
+			ContainerHelper.loadAllItems(tag, this.items, tag.lookup());
 		}
 	}
 
@@ -133,6 +135,6 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 		double x = this.worldPosition.getX() + 0.5 + vec3i.getX() / 2.0;
 		double y = this.worldPosition.getY() + 0.5 + vec3i.getY() / 2.0;
 		double z = this.worldPosition.getZ() + 0.5 + vec3i.getZ() / 2.0;
-		this.level.playSound(null, x, y, z, sound, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+		this.level.playSound(null, x, y, z, sound, SoundSource.BLOCKS, 0.5F, this.level.getRandom().nextFloat() * 0.1F + 0.9F);
 	}
 }

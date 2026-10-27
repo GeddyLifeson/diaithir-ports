@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import net.minecraft.server.level.ServerLevel;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import net.minecraft.core.BlockPos;
@@ -33,7 +35,7 @@ public class NightfallSpider extends Spider {
 	}
 
 	@Override
-	public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
+	public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, EntitySpawnReason mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
 		SpawnGroupData data = super.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, spawnGroupData);
 		getPassengers().forEach(entity -> {
 			if (entity instanceof Skeleton s) {
@@ -50,8 +52,8 @@ public class NightfallSpider extends Spider {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity entity) {
-		if (super.doHurtTarget(entity)) {
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
+		if (super.doHurtTarget(hurtServerLevel, entity)) {
 			if (entity instanceof LivingEntity) {
 				int effectTime = 0;
 				if (this.level().getDifficulty() == Difficulty.NORMAL) {
@@ -74,7 +76,7 @@ public class NightfallSpider extends Spider {
 		return entity.getBbWidth() <= this.getBbWidth() ? new Vec3(0.0, 0.21875 * (double) this.getScale(), 0.0) : super.getVehicleAttachmentPoint(entity);
 	}
 
-	public static boolean checkNightfallSpiderSpawnRules(EntityType<? extends NightfallSpider> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkNightfallSpiderSpawnRules(EntityType<? extends NightfallSpider> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.nightfallSpider.canSpawn();
 	}
 }

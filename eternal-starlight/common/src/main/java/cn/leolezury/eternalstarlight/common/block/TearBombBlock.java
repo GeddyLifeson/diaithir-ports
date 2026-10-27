@@ -20,7 +20,7 @@ public class TearBombBlock extends TntBlock {
 		if (!level.isClientSide()) {
 			TearBomb bomb = new TearBomb(level, blockPos.getX() + 0.5F, blockPos.getY(), blockPos.getZ() + 0.5F, explosion.getIndirectSourceEntity());
 			int fuse = bomb.getFuse();
-			bomb.setFuse(level.random.nextInt(fuse / 4) + fuse / 8);
+			bomb.setFuse(level.getRandom().nextInt(fuse / 4) + fuse / 8);
 			level.addFreshEntity(bomb);
 		}
 	}

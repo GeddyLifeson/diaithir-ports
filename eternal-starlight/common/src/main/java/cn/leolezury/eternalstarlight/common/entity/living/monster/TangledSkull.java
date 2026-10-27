@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -171,7 +173,7 @@ public class TangledSkull extends Monster {
 			LivingEntity livingEntity = TangledSkull.this.getTarget();
 			if (livingEntity != null) {
 				if (TangledSkull.this.getBoundingBox().intersects(livingEntity.getBoundingBox())) {
-					TangledSkull.this.doHurtTarget(livingEntity);
+					ESPortCompat.doHurtTarget(TangledSkull.this, livingEntity);
 					TangledSkull.this.setCharging(false);
 				} else {
 					double d = TangledSkull.this.distanceToSqr(livingEntity);
@@ -305,11 +307,11 @@ public class TangledSkull extends Monster {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (isShot() && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			return false;
 		}
-		return super.hurt(source, amount);
+		return super.hurtServer(hurtServerLevel, source, amount);
 	}
 
 	@Override
@@ -332,13 +334,13 @@ public class TangledSkull extends Monster {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_SHOT, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_SHOT)) {
 			setShot(compoundTag.getBooleanOr(TAG_SHOT, false));
 		}
-		if (compoundTag.contains(TAG_SHOT_FROM_MONSTROSITY, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_SHOT_FROM_MONSTROSITY)) {
 			setShotFromMonstrosity(compoundTag.getBooleanOr(TAG_SHOT_FROM_MONSTROSITY, false));
 		}
-		if (compoundTag.contains(TAG_SHOT_MOVEMENT_X, CompoundTag.TAG_ANY_NUMERIC) && compoundTag.contains(TAG_SHOT_MOVEMENT_Y, CompoundTag.TAG_ANY_NUMERIC) && compoundTag.contains(TAG_SHOT_MOVEMENT_Z, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (ESPortCompat.has(compoundTag, TAG_SHOT_MOVEMENT_X) && ESPortCompat.has(compoundTag, TAG_SHOT_MOVEMENT_Y) && ESPortCompat.has(compoundTag, TAG_SHOT_MOVEMENT_Z)) {
 			setShotMovement(new Vec3(compoundTag.getDoubleOr(TAG_SHOT_MOVEMENT_X, 0.0), compoundTag.getDoubleOr(TAG_SHOT_MOVEMENT_Y, 0.0), compoundTag.getDoubleOr(TAG_SHOT_MOVEMENT_Z, 0.0)));
 		}
 	}

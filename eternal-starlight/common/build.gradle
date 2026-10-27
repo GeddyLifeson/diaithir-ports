@@ -19,3 +19,9 @@ sourceSets {
 processResources {
 	exclude '.cache/**'
 }
+
+// PORT STUB: client rendering code excluded until rewritten for the 26.1 render pipeline (see PORT-NOTE.md)
+sourceSets.main.java {
+	exclude "**/eternalstarlight/common/client/**"
+	exclude "**/eternalstarlight/common/mixin/client/**"
+}

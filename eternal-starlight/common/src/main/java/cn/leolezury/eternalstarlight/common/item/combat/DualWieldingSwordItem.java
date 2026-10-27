@@ -1,5 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import java.util.function.Consumer;
+
+import net.minecraft.world.item.component.TooltipDisplay;
+
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
+
+import net.minecraft.world.item.Item;
+
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import net.minecraft.ChatFormatting;
@@ -10,26 +18,24 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
 
 import java.util.List;
 
-public class DualWieldingSwordItem extends SwordItem {
-	public DualWieldingSwordItem(Tier tier, Properties properties) {
-		super(tier, properties);
+public class DualWieldingSwordItem extends Item {
+	public DualWieldingSwordItem(ESItemTiers tier, Properties properties) {
+		super(tier.sword(properties));
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	public InteractionResult use(Level level, Player player, InteractionHand hand) {
 		if (hand == InteractionHand.OFF_HAND && player.getMainHandItem().is(this)) {
 			HitResult result = pick(player, player.blockInteractionRange(), player.entityInteractionRange());
 			if (result instanceof EntityHitResult entityResult && entityResult.getType() != HitResult.Type.MISS) {
@@ -45,11 +51,11 @@ public class DualWieldingSwordItem extends SwordItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
-		list.add(CommonComponents.EMPTY);
-		list.add(Component.translatable("tooltip." + EternalStarlight.ID + ".dual_wielding").withStyle(ChatFormatting.GRAY));
-		list.add(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".dual_wielding.offhand_attack").withStyle(ChatFormatting.BLUE)));
-		super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
+	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
+		list.accept(CommonComponents.EMPTY);
+		list.accept(Component.translatable("tooltip." + EternalStarlight.ID + ".dual_wielding").withStyle(ChatFormatting.GRAY));
+		list.accept(Component.literal(" ").append(Component.translatable("tooltip." + EternalStarlight.ID + ".dual_wielding.offhand_attack").withStyle(ChatFormatting.BLUE)));
+		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
 	}
 
 	// copied from GameRenderer

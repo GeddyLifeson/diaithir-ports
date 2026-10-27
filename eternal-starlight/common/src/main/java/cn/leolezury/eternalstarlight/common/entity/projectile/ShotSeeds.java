@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
 import cn.leolezury.eternalstarlight.common.item.combat.SeedsLauncherAmmoType;
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
@@ -96,7 +98,7 @@ public class ShotSeeds extends ThrowableItemProjectile {
 		SeedsLauncherAmmoType type = SeedsLauncherAmmoType.getAmmoType(level().registryAccess(), getItem().getItem()).value();
 		damage *= type.damageMultiplier();
 		entity.invulnerableTime = 0;
-		if (entity.hurt(source, damage)) {
+		if (ESPortCompat.hurt(entity, source, damage)) {
 			if (entity instanceof LivingEntity living) {
 				if (level() instanceof ServerLevel serverLevel) {
 					EnchantmentHelper.doPostAttackEffectsWithItemSource(serverLevel, living, source, this.getWeaponItem());

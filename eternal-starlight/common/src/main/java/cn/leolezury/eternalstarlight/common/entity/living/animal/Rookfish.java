@@ -25,7 +25,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.animal.squid.Squid;
 import net.minecraft.world.entity.player.Player;
@@ -108,7 +108,7 @@ public class Rookfish extends Squid implements Bucketable {
 		}
 	}
 
-	public static boolean checkRookfishSpawnRules(EntityType<? extends Rookfish> type, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
+	public static boolean checkRookfishSpawnRules(EntityType<? extends Rookfish> type, LevelAccessor levelAccessor, EntitySpawnReason mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
 		int seaLevel = ESDimensions.SEA_LEVEL;
 		int minY = seaLevel - 13;
 		return blockPos.getY() >= minY && blockPos.getY() <= seaLevel && levelAccessor.getFluidState(blockPos.below()).is(FluidTags.WATER) && levelAccessor.getBlockState(blockPos.above()).is(Blocks.WATER);

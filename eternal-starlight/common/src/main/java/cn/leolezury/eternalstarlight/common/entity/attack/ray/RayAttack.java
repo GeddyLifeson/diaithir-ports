@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.entity.attack.ray;
 
+import net.minecraft.server.level.ServerLevel;
+
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -147,7 +151,7 @@ public class RayAttack extends Entity implements TraceableEntity {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damageSource, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource damageSource, float amount) {
 		if (damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			discard();
 			return true;
@@ -169,7 +173,7 @@ public class RayAttack extends Entity implements TraceableEntity {
 
 	public void doHurtTarget(LivingEntity target) {
 		getCaster().ifPresent(caster -> {
-			if (ESEntityUtil.shouldHarm(caster, target) && target.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.LASER, this, caster), getAttackDamage())) {
+			if (ESEntityUtil.shouldHarm(caster, target) && ESPortCompat.hurt(target, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.LASER, this, caster), getAttackDamage())) {
 				target.setRemainingFireTicks(Math.max(target.getRemainingFireTicks(), 100));
 			}
 		});

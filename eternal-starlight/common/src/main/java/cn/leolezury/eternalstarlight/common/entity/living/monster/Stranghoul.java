@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -537,7 +539,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					baby.setBaby(true);
 					baby.moveTo(stranghoul.getX(), stranghoul.getY(), stranghoul.getZ(), 0.0F, 0.0F);
 					if (level instanceof ServerLevel serverLevel) {
-						baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(baby.blockPosition()), MobSpawnType.BREEDING, null);
+						baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(baby.blockPosition()), EntitySpawnReason.BREEDING, null);
 					}
 					level.addFreshEntity(baby);
 					baby.addHappyParticles();
@@ -872,7 +874,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	}
 
 	@Nullable
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnType, @Nullable SpawnGroupData spawnGroupData) {
 		homePos = GlobalPos.of(level.getLevel().dimension(), blockPosition());
 		if (random.nextFloat() < 0.1F) {
 			this.setBaby(true);
@@ -987,12 +989,12 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 			if (player instanceof ServerPlayer serverPlayer) {
 				ESCriteriaTriggers.HIRE_STRANGHOUL.get().trigger(serverPlayer);
 			}
-			return InteractionResult.sidedSuccess(level().isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		if (stack.is(ESTags.Items.STRANGHOUL_CURRENCIES) && !isBaby() && getOffhandItem().isEmpty() && getTarget() == null) {
 			setItemSlot(EquipmentSlot.OFFHAND, stack.copyWithCount(1));
 			stack.consume(1, player);
-			return InteractionResult.sidedSuccess(level().isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		if (isHired() && player == getHirer()) {
 			boolean infiniteMaterials = player.hasInfiniteMaterials();
@@ -1004,7 +1006,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.HEAD, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.HEAD);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else if (stack.is(ItemTags.CHEST_ARMOR)) {
 				if (!level().isClientSide()) {
 					if (!infiniteMaterials || !getItemBySlot(EquipmentSlot.CHEST).isEmpty()) {
@@ -1013,7 +1015,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.CHEST, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.CHEST);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else if (stack.is(ItemTags.LEG_ARMOR)) {
 				if (!level().isClientSide()) {
 					if (!infiniteMaterials || !getItemBySlot(EquipmentSlot.LEGS).isEmpty()) {
@@ -1022,7 +1024,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.LEGS, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.LEGS);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else if (stack.is(ItemTags.FOOT_ARMOR)) {
 				if (!level().isClientSide()) {
 					if (!infiniteMaterials || !getItemBySlot(EquipmentSlot.FEET).isEmpty()) {
@@ -1031,7 +1033,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.FEET, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.FEET);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else if (stack.has(DataComponents.FOOD)) {
 				if (!level().isClientSide()) {
 					if (!infiniteMaterials || !getOffhandItem().isEmpty()) {
@@ -1040,7 +1042,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.OFFHAND, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.OFFHAND);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else if (!stack.isEmpty()) {
 				if (!level().isClientSide()) {
 					if (!infiniteMaterials || !getMainHandItem().isEmpty()) {
@@ -1049,7 +1051,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 					setItemSlot(EquipmentSlot.MAINHAND, stack.copy());
 					setGuaranteedDrop(EquipmentSlot.MAINHAND);
 				}
-				return InteractionResult.sidedSuccess(level().isClientSide());
+				return InteractionResult.SUCCESS;
 			} else {
 				for (EquipmentSlot slot : EquipmentSlot.values()) {
 					if (!getItemBySlot(slot).isEmpty()) {
@@ -1057,7 +1059,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 							player.setItemInHand(hand, getItemBySlot(slot).copy());
 							setItemSlot(slot, ItemStack.EMPTY);
 						}
-						return InteractionResult.sidedSuccess(level().isClientSide());
+						return InteractionResult.SUCCESS;
 					}
 				}
 			}
@@ -1142,7 +1144,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		return super.hurt(source, (source.getDirectEntity() instanceof LivingEntity living && living.getWeaponItem().is(ESTags.Items.STRANGHOUL_VULNERABLE_TO) ? 2 : 1) * amount);
 	}
 
@@ -1169,7 +1171,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 		compoundTag.putInt(TAG_BREED_COOLDOWN, breedCooldown);
 		compoundTag.putInt(TAG_ADMIRATION_TICKS, admirationTicks);
 		if (hirer != null) {
-			compoundTag.putUUID(TAG_HIRER, hirer.getUUID());
+			ESPortCompat.putUUID(compoundTag, TAG_HIRER, hirer.getUUID());
 		}
 		compoundTag.putInt(TAG_HIRED_TICKS_LEFT, hiredTicksLeft);
 	}
@@ -1178,17 +1180,17 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
 		this.readPersistentAngerSaveData(this.level(), compoundTag);
-		if (compoundTag.contains(TAG_HOME_POS)) {
+		if (ESPortCompat.has(compoundTag, TAG_HOME_POS)) {
 			GlobalPos.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_HOME_POS)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Stranghoul home pos: {}", s)).ifPresent(pos -> this.homePos = pos);
 		}
-		if (compoundTag.contains(TAG_BABY, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_BABY)) {
 			setBaby(compoundTag.getBooleanOr(TAG_BABY, false));
 		}
 		growthTicks = compoundTag.getIntOr(TAG_GROWTH_TICKS, 0);
 		breedCooldown = compoundTag.getIntOr(TAG_BREED_COOLDOWN, 0);
 		admirationTicks = compoundTag.getIntOr(TAG_ADMIRATION_TICKS, 0);
-		if (compoundTag.hasUUID(TAG_HIRER)) {
-			hirerId = compoundTag.getUUID(TAG_HIRER);
+		if (ESPortCompat.has(compoundTag, TAG_HIRER)) {
+			hirerId = ESPortCompat.getUUID(compoundTag, TAG_HIRER);
 		}
 		hiredTicksLeft = compoundTag.getIntOr(TAG_HIRED_TICKS_LEFT, 0);
 	}
@@ -1239,7 +1241,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 		return hirerId;
 	}
 
-	public static boolean checkStranghoulSpawnRules(EntityType<? extends Stranghoul> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkStranghoulSpawnRules(EntityType<? extends Stranghoul> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkAnyLightMonsterSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.stranghoul.canSpawn();
 	}
 }

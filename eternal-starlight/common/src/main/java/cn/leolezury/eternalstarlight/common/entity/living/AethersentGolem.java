@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.ectostone.Ectostone;
 import cn.leolezury.eternalstarlight.common.entity.projectile.AethersentMeteor;
@@ -119,7 +121,7 @@ public class AethersentGolem extends AbstractGolem {
 						ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(ExplosionShockParticleOptions.AETHERSENT, getX() + (random.nextFloat() - 0.5f) * getBbWidth() * 2, getY(), getZ() + (random.nextFloat() - 0.5f) * getBbWidth() * 2, 0, 1, 0));
 					}
 				}
-				return InteractionResult.sidedSuccess(this.level().isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
 	}
@@ -139,7 +141,7 @@ public class AethersentGolem extends AbstractGolem {
 				if (!meteors.isEmpty() || !mobTargets.isEmpty()) {
 					level().broadcastEntityEvent(this, (byte) 100);
 					meteors.forEach(meteor -> meteor.dropAndDiscard(true));
-					mobTargets.forEach(living -> living.hurt(damageSources().magic(), (float) getAttributeValue(Attributes.ATTACK_DAMAGE)));
+					mobTargets.forEach(living -> ESPortCompat.hurt(living, damageSources().magic(), (float) getAttributeValue(Attributes.ATTACK_DAMAGE)));
 					if (!meteors.isEmpty()) {
 						lookPos = meteors.getFirst().position();
 					} else {

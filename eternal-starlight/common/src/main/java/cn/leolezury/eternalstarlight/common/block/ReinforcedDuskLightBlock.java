@@ -15,12 +15,12 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import org.jetbrains.annotations.Nullable;
 
 public class ReinforcedDuskLightBlock extends BaseEntityBlock {
 	public static final MapCodec<ReinforcedDuskLightBlock> CODEC = simpleCodec(ReinforcedDuskLightBlock::new);
-	public static final DirectionProperty FACING = BlockStateProperties.FACING;
+	public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
 	public ReinforcedDuskLightBlock(Properties properties) {
 		super(properties);

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -65,7 +67,7 @@ public class VoraciousArrow extends AbstractArrow {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_DURATION)) {
+		if (ESPortCompat.has(compoundTag, TAG_DURATION)) {
 			this.duration = compoundTag.getIntOr(TAG_DURATION, 0);
 		}
 	}

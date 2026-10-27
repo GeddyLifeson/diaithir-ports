@@ -164,7 +164,7 @@ public class NocturnalMilletTopBlock extends Block implements BonemealableBlock 
 		boolean forgotten = state.getValue(FORGOTTEN);
 		if (age == 2) {
 			popResource(level, pos, new ItemStack(forgotten ? ESItems.FORGOTTEN_NOCTURNAL_MILLET.get() : ESItems.NOCTURNAL_MILLET.get(), 1));
-			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.getRandom().nextFloat() * 0.4F);
 			BlockState newState;
 			if (!forgotten) {
 				if (level.getRandom().nextDouble() < 0.2) {
@@ -178,7 +178,7 @@ public class NocturnalMilletTopBlock extends Block implements BonemealableBlock 
 			}
 			level.setBlock(pos, newState, Block.UPDATE_CLIENTS);
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
-			return InteractionResult.sidedSuccess(level.isClientSide());
+			return InteractionResult.SUCCESS;
 		} else {
 			return super.useWithoutItem(state, level, pos, player, hitResult);
 		}

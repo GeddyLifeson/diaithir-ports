@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -56,7 +58,7 @@ public class AshenSnowball extends ThrowableItemProjectile {
 		super.onHitEntity(hitResult);
 		Entity entity = hitResult.getEntity();
 		float i = entity instanceof Blaze ? 5 : 1.5f;
-		if (entity.hurt(this.damageSources().thrown(this, this.getOwner()), i) && entity instanceof LivingEntity living) {
+		if (ESPortCompat.hurt(entity, this.damageSources().thrown(this, this.getOwner()), i) && entity instanceof LivingEntity living) {
 			living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 50));
 		}
 	}

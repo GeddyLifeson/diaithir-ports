@@ -32,7 +32,7 @@ public class AetherstrikeRocketItem extends Item implements ProjectileItem {
 			itemStack.shrink(1);
 		}
 
-		return InteractionResult.sidedSuccess(level.isClientSide());
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

@@ -42,7 +42,7 @@ public class TwilightGaze extends WaterAnimal {
 	public AnimationState swimAnimationState = new AnimationState();
 
 	@Nullable
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnData) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnType, @Nullable SpawnGroupData spawnData) {
 		this.setAirSupply(this.getMaxAirSupply());
 		this.setXRot(0.0F);
 		return super.finalizeSpawn(level, difficulty, spawnType, spawnData);
@@ -143,7 +143,7 @@ public class TwilightGaze extends WaterAnimal {
 		return true;
 	}
 
-	public static boolean checkTwilightGazeSpawnRules(EntityType<? extends TwilightGaze> entityType, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
+	public static boolean checkTwilightGazeSpawnRules(EntityType<? extends TwilightGaze> entityType, LevelAccessor levelAccessor, EntitySpawnReason mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
 		int seaLevel = levelAccessor.getSeaLevel();
 		return blockPos.getY() <= seaLevel - 40 && levelAccessor.getFluidState(blockPos.below()).is(FluidTags.WATER) && levelAccessor.getBlockState(blockPos.above()).is(Blocks.WATER) && ESConfig.INSTANCE.mobsConfig.twilightGaze.canSpawn();
 	}

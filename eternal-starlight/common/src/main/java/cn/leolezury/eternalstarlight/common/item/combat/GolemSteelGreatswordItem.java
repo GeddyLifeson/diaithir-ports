@@ -6,12 +6,12 @@ import cn.leolezury.eternalstarlight.common.util.SpecialItemCooldown;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
+import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 public class GolemSteelGreatswordItem extends GreatswordItem implements SwingAttackWeapon {
-	public GolemSteelGreatswordItem(Tier tier, Properties properties) {
+	public GolemSteelGreatswordItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
 	}
 

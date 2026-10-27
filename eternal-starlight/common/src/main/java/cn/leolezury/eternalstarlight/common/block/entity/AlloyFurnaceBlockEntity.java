@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -378,7 +380,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 	@Override
 	public void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
-		ContainerHelper.loadAllItems(compoundTag, this.items, provider);
+		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
 		this.litTicks = compoundTag.getShortOr(TAG_LIT_TICKS, (short) 0);
 		this.totalLitTicks = compoundTag.getShortOr(TAG_TOTAL_LIT_TICKS, (short) 0);
 		this.burnTicks = compoundTag.getShortOr(TAG_BURN_TICKS, (short) 0);

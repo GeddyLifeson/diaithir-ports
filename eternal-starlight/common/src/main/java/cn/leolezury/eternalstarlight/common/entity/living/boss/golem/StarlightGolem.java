@@ -208,7 +208,7 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		if (!source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			if (!hasProtection()) {
 				if (source.getEntity() != null && source.getEntity() != this) {
@@ -226,7 +226,7 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 				return false;
 			}
 		}
-		boolean success = super.hurt(source, amount);
+		boolean success = super.hurtServer(hurtServerLevel, source, amount);
 		if (getPhase() == 0 && getHealth() / getMaxHealth() < 0.2) {
 			setPhase(1);
 			ESBlockUtil.getBlocksInBoundingBox(getBoundingBox().inflate(2, 0, 2)).forEach(pos -> {

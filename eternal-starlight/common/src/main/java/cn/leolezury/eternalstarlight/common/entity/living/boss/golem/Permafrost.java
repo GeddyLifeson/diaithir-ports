@@ -272,8 +272,8 @@ public class Permafrost extends ESBoss {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity entity) {
-		boolean success = super.doHurtTarget(entity);
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity entity) {
+		boolean success = super.doHurtTarget(hurtServerLevel, entity);
 		if (success && entity.canFreeze()) {
 			entity.setTicksFrozen(Math.min(entity.getTicksFrozen() + 150, 300));
 		}

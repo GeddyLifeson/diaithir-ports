@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -199,7 +201,7 @@ public class AuroraDeer extends Animal implements Charger {
 				}
 			}
 			stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
-			return InteractionResult.sidedSuccess(player.level().isClientSide());
+			return InteractionResult.SUCCESS;
 		}
 		return super.mobInteract(player, hand);
 	}
@@ -228,16 +230,16 @@ public class AuroraDeer extends Animal implements Charger {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (compoundTag.contains(TAG_LEFT_ANTLER, CompoundTag.TAG_BYTE)) {
-			this.getEntityData().set(LEFT_ANTLER, compoundTag.getBoolean(TAG_LEFT_ANTLER));
+		if (ESPortCompat.has(compoundTag, TAG_LEFT_ANTLER)) {
+			this.getEntityData().set(LEFT_ANTLER, compoundTag.getBooleanOr(TAG_LEFT_ANTLER, false));
 		}
-		if (compoundTag.contains(TAG_RIGHT_ANTLER, CompoundTag.TAG_BYTE)) {
-			this.getEntityData().set(RIGHT_ANTLER, compoundTag.getBoolean(TAG_RIGHT_ANTLER));
+		if (ESPortCompat.has(compoundTag, TAG_RIGHT_ANTLER)) {
+			this.getEntityData().set(RIGHT_ANTLER, compoundTag.getBooleanOr(TAG_RIGHT_ANTLER, false));
 		}
-		if (compoundTag.contains(TAG_SNOW, CompoundTag.TAG_BYTE)) {
+		if (ESPortCompat.has(compoundTag, TAG_SNOW)) {
 			setHasSnow(compoundTag.getBooleanOr(TAG_SNOW, false));
 		}
-		if (compoundTag.contains(TAG_SNOW_PROGRESS, CompoundTag.TAG_INT)) {
+		if (ESPortCompat.has(compoundTag, TAG_SNOW_PROGRESS)) {
 			snowProgress = compoundTag.getIntOr(TAG_SNOW_PROGRESS, 0);
 		}
 	}
@@ -273,7 +275,7 @@ public class AuroraDeer extends Animal implements Charger {
 		return ESEntities.AURORA_DEER.get().create(serverLevel);
 	}
 
-	public static boolean checkAuroraDeerSpawnRules(EntityType<? extends AuroraDeer> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkAuroraDeerSpawnRules(EntityType<? extends AuroraDeer> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && ESConfig.INSTANCE.mobsConfig.auroraDeer.canSpawn();
 	}
 }

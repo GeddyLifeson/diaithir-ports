@@ -7,7 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
@@ -16,7 +16,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -48,8 +48,8 @@ public class CrescentSpearItem extends Item {
 	}
 
 	@Override
-	public UseAnim getUseAnimation(ItemStack itemStack) {
-		return UseAnim.SPEAR;
+	public ItemUseAnimation getUseAnimation(ItemStack itemStack) {
+		return ItemUseAnimation.SPEAR;
 	}
 
 	@Override
@@ -58,14 +58,14 @@ public class CrescentSpearItem extends Item {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+	public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
 		ItemStack itemStack = player.getItemInHand(interactionHand);
 		player.startUsingItem(interactionHand);
-		return InteractionResultHolder.consume(itemStack);
+		return InteractionResult.CONSUME;
 	}
 
 	@Override
-	public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
+	public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
 		if (livingEntity instanceof Player player) {
 			int useTime = this.getUseDuration(itemStack, livingEntity) - i;
 			BlockHitResult result = level.clip(new ClipContext(player.position(), player.position().add(0, -5, 0), ClipContext.Block.COLLIDER, ClipContext.Fluid.ANY, player));
@@ -99,15 +99,10 @@ public class CrescentSpearItem extends Item {
 				player.awardStat(Stats.ITEM_USED.get(this));
 			}
 		}
+		return true;
 	}
 
-	@Override
-	public int getEnchantmentValue() {
-		return 1;
-	}
+	
 
-	@Override
-	public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-		return repairCandidate.is(ESItems.TENACIOUS_PETAL.get()) || repairCandidate.is(ESItems.TENACIOUS_VINE.get()) || super.isValidRepairItem(stack, repairCandidate);
-	}
+	
 }

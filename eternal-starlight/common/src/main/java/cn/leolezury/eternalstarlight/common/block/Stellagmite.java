@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import com.google.common.base.Suppliers;
@@ -11,7 +13,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -45,7 +47,7 @@ public interface Stellagmite {
 		));
 	}
 
-	default ItemInteractionResult use(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand) {
+	default InteractionResult use(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand) {
 		Block block = blockState.getBlock();
 		ImmutableMap<Block, Block> toMolten = TO_MOLTEN.get();
 		if (toMolten.containsKey(block) && itemStack.is(ESTags.Items.STELLAGMITE_IGNITERS) && (isAffectedByFluid(blockState, level, blockPos, FluidTags.LAVA) || !isAffectedByFluid(blockState, level, blockPos, FluidTags.WATER))) {
@@ -59,10 +61,10 @@ public interface Stellagmite {
 			Block moltenBlock = toMolten.get(block);
 			if (moltenBlock != null) {
 				level.setBlockAndUpdate(blockPos, moltenBlock.withPropertiesOf(blockState));
-				return ItemInteractionResult.sidedSuccess(level.isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return InteractionResult.TRY_WITH_EMPTY_HAND;
 	}
 
 	default BlockState updateShape(BlockState state, LevelAccessor level, BlockPos pos) {
@@ -74,7 +76,7 @@ public interface Stellagmite {
 
 	default void step(Entity entity) {
 		if (this instanceof Block block && TO_MOLTEN.get().containsValue(block) && !entity.isSteppingCarefully() && entity instanceof LivingEntity) {
-			entity.hurt(entity.level().damageSources().hotFloor(), 1.0F);
+			ESPortCompat.hurt(entity, entity.level().damageSources().hotFloor(), 1.0F);
 		}
 	}
 

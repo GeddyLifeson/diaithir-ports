@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.block.entity;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -112,10 +114,10 @@ public class EnergyTransmitterBlockEntity extends BlockEntity {
 	@Override
 	public void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
-		if (compoundTag.contains(TAG_INPUT_OFFSET)) {
+		if (ESPortCompat.has(compoundTag, TAG_INPUT_OFFSET)) {
 			Vec3i.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_INPUT_OFFSET)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Energy Transmitter input offset: {}", s)).ifPresent(pos -> this.inputOffset = pos);
 		}
-		if (compoundTag.contains(TAG_OUTPUT_OFFSET)) {
+		if (ESPortCompat.has(compoundTag, TAG_OUTPUT_OFFSET)) {
 			Vec3i.CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_OUTPUT_OFFSET)).resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Energy Transmitter output offset: {}", s)).ifPresent(pos -> this.outputOffset = pos);
 		}
 	}

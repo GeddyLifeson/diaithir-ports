@@ -26,14 +26,14 @@ import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import net.minecraft.world.level.block.state.pattern.BlockPattern;
 import net.minecraft.world.level.block.state.pattern.BlockPatternBuilder;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
 public class CarvedLunarisCactusFruitBlock extends HorizontalDirectionalBlock {
 	public static final MapCodec<CarvedLunarisCactusFruitBlock> CODEC = simpleCodec(CarvedLunarisCactusFruitBlock::new);
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	@Nullable
 	private BlockPattern snowGolemBase;
 	@Nullable

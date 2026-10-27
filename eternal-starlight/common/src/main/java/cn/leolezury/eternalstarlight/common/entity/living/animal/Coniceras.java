@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
+import net.minecraft.server.level.ServerLevel;
+
 import cn.leolezury.eternalstarlight.common.client.sound.DrillSoundInstance;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.interfaces.Charger;
@@ -58,8 +60,8 @@ public class Coniceras extends WaterAnimal implements Charger {
 	public AnimationState chargeAnimationState = new AnimationState();
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		boolean hurt = super.hurt(source, amount);
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
+		boolean hurt = super.hurtServer(hurtServerLevel, source, amount);
 		if (hurt && !this.level().isClientSide() && source.getEntity() instanceof LivingEntity attacker) {
 			this.setTarget(attacker);
 		}
@@ -154,7 +156,7 @@ public class Coniceras extends WaterAnimal implements Charger {
 		return ESSoundEvents.CONICERAS_DEATH.get();
 	}
 
-	public static boolean checkConicerasSpawnRules(EntityType<? extends Coniceras> entityType, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
+	public static boolean checkConicerasSpawnRules(EntityType<? extends Coniceras> entityType, LevelAccessor levelAccessor, EntitySpawnReason mobSpawnType, BlockPos blockPos, RandomSource randomSource) {
 		int seaLevel = levelAccessor.getSeaLevel();
 		return blockPos.getY() <= seaLevel - 10 && levelAccessor.getFluidState(blockPos.below()).is(FluidTags.WATER) && levelAccessor.getBlockState(blockPos.above()).is(Blocks.WATER) && ESConfig.INSTANCE.mobsConfig.coniceras.canSpawn();
 	}

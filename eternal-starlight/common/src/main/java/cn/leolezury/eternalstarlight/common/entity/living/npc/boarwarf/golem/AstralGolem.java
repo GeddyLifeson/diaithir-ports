@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.entity.living.npc.boarwarf.golem;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
+
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -109,7 +111,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		setMaterialId(Identifier.read(compoundTag.getString(TAG_MATERIAL)).getOrThrow());
+		setMaterialId(Identifier.read(compoundTag.getStringOr(TAG_MATERIAL, "")).getOrThrow());
 		homePos = new BlockPos(compoundTag.getIntOr(TAG_HOME_X, 0), compoundTag.getIntOr(TAG_HOME_Y, 0), compoundTag.getIntOr(TAG_HOME_Z, 0));
 	}
 
@@ -150,7 +152,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 
 	@Nullable
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType spawnType, @org.jetbrains.annotations.Nullable SpawnGroupData data) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance instance, EntitySpawnReason spawnType, @org.jetbrains.annotations.Nullable SpawnGroupData data) {
 		homePos = blockPosition();
 		return super.finalizeSpawn(level, instance, spawnType, data);
 	}
@@ -189,7 +191,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 					itemstack.shrink(1);
 					Boarwarf.setBoarwarfCredit(player, Boarwarf.getBoarwarfCredit(player) + 10);
 				}
-				return InteractionResult.sidedSuccess(this.level().isClientSide());
+				return InteractionResult.SUCCESS;
 			}
 		}
 	}
@@ -234,7 +236,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	}
 
 	@Override
-	public boolean doHurtTarget(Entity target) {
+	public boolean doHurtTarget(ServerLevel hurtServerLevel, Entity target) {
 		if (isGolemBlocking()) {
 			return false;
 		}
@@ -247,7 +249,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 			f = EnchantmentHelper.modifyDamage(serverLevel, this.getWeaponItem(), target, damageSource, f);
 		}
 
-		boolean bl = target.hurt(damageSource, f);
+		boolean bl = ESPortCompat.hurt(target, damageSource, f);
 		if (bl) {
 			float g = this.getKnockback(target, damageSource);
 			if (g > 0.0F && target instanceof LivingEntity) {
@@ -270,7 +272,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	}
 
 	@Override
-	public boolean hurt(DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
 		float f = getMaterial() == null ? 1 : getMaterial().defenseMultiplier();
 		if (source.getEntity() instanceof Player player && !player.hasInfiniteMaterials()) {
 			if (Boarwarf.getBoarwarfCredit(player) > -10000) {
@@ -344,7 +346,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 		return this.persistentAngerTarget;
 	}
 
-	public static boolean checkAstralGolemSpawnRules(EntityType<? extends AstralGolem> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+	public static boolean checkAstralGolemSpawnRules(EntityType<? extends AstralGolem> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkMobSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.astralGolem.canSpawn();
 	}
 }
