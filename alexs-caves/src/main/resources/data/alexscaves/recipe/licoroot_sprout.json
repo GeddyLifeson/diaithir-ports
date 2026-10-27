@@ -6,12 +6,8 @@
     " S "
   ],
   "key": {
-    "V": {
-      "item": "alexscaves:licoroot_vine"
-    },
-    "S": {
-      "item": "minecraft:sugar"
-    }
+    "V": "alexscaves:licoroot_vine",
+    "S": "minecraft:sugar"
   },
   "result": {
     "count": 1,

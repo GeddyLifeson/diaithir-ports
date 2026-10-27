@@ -6,9 +6,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:cinder_block"
-    }
+    "G": "alexscaves:cinder_block"
   },
   "result": {
     "count": 4,

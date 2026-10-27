@@ -1,9 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "count": 2,
-  "ingredient": {
-    "item": "alexscaves:galena"
-  },
+  "ingredient": "alexscaves:galena",
   "result": {
     "id": "alexscaves:galena_slab",
     "count": 1

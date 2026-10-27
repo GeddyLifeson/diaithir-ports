@@ -6,12 +6,8 @@
     " A "
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:abyssmarine"
-    },
-    "P": {
-      "item": "alexscaves:pearl"
-    }
+    "A": "alexscaves:abyssmarine",
+    "P": "alexscaves:pearl"
   },
   "result": {
     "id": "alexscaves:abyssal_altar",

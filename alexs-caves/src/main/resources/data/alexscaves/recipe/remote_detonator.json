@@ -6,15 +6,9 @@
     " P "
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:fissile_core"
-    },
-    "R": {
-      "tag": "c:storage_blocks/redstone"
-    },
-    "P": {
-      "item": "alexscaves:polymer_plate"
-    }
+    "F": "alexscaves:fissile_core",
+    "R": "#c:storage_blocks/redstone",
+    "P": "alexscaves:polymer_plate"
   },
   "result": {
     "id": "alexscaves:remote_detonator",

@@ -6,15 +6,9 @@
     " I "
   ],
   "key": {
-    "C": {
-      "item": "alexscaves:charred_remnant"
-    },
-    "U": {
-      "tag": "c:raw_materials/uranium"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    }
+    "C": "alexscaves:charred_remnant",
+    "U": "#c:raw_materials/uranium",
+    "I": "#c:ingots/iron"
   },
   "result": {
     "id": "alexscaves:nuclear_siren",

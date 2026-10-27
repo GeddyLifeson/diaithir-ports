@@ -6,15 +6,9 @@
     "DRD"
   ],
   "key": {
-    "R": {
-      "item": "alexscaves:radon_bottle"
-    },
-    "G": {
-      "item": "minecraft:glowstone"
-    },
-    "D": {
-      "tag": "c:dyes/purple"
-    }
+    "R": "alexscaves:radon_bottle",
+    "G": "minecraft:glowstone",
+    "D": "#c:dyes/purple"
   },
   "result": {
     "count": 4,

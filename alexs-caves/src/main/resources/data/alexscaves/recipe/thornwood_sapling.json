@@ -6,12 +6,8 @@
     "F"
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:fertilizer"
-    },
-    "B": {
-      "item": "alexscaves:thornwood_branch"
-    }
+    "F": "alexscaves:fertilizer",
+    "B": "alexscaves:thornwood_branch"
   },
   "result": {
     "id": "alexscaves:thornwood_sapling",

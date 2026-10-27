@@ -6,9 +6,7 @@
     "SSS"
   ],
   "key": {
-    "S": {
-      "tag": "c:dusts/sulfur"
-    }
+    "S": "#c:dusts/sulfur"
   },
   "result": {
     "id": "alexscaves:sulfur",

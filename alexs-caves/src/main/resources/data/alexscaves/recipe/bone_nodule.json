@@ -5,9 +5,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "minecraft:bone_block"
-    }
+    "G": "minecraft:bone_block"
   },
   "result": {
     "count": 12,

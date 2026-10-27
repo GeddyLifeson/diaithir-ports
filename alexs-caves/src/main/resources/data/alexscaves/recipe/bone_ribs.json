@@ -5,9 +5,7 @@
     " G"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:thin_bone"
-    }
+    "G": "alexscaves:thin_bone"
   },
   "result": {
     "count": 1,

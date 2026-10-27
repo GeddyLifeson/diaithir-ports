@@ -6,15 +6,9 @@
     "LLL"
   ],
   "key": {
-    "S": {
-      "tag": "alexscaves:sweet_berries"
-    },
-    "F": {
-      "tag": "alexscaves:frosting"
-    },
-    "L": {
-      "item": "alexscaves:cake_layer"
-    }
+    "S": "#alexscaves:sweet_berries",
+    "F": "#alexscaves:frosting",
+    "L": "alexscaves:cake_layer"
   },
   "result": {
     "id": "minecraft:cake",

@@ -6,12 +6,8 @@
     "HHH"
   ],
   "key": {
-    "H": {
-      "item": "alexscaves:hazmat_block"
-    },
-    "S": {
-      "item": "minecraft:skeleton_skull"
-    }
+    "H": "alexscaves:hazmat_block",
+    "S": "minecraft:skeleton_skull"
   },
   "result": {
     "count": 8,

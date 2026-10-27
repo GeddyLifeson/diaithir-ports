@@ -5,9 +5,7 @@
     "G"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:galena_slab"
-    }
+    "G": "alexscaves:galena_slab"
   },
   "result": {
     "count": 1,

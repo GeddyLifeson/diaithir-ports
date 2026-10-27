@@ -5,9 +5,7 @@
     "PP"
   ],
   "key": {
-    "P": {
-      "item": "alexscaves:peppermint_powder"
-    }
+    "P": "alexscaves:peppermint_powder"
   },
   "result": {
     "id": "alexscaves:small_peppermint",

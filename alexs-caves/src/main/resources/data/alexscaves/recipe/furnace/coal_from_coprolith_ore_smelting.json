@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "alexscaves:coprolith_coal_ore"
-  },
+  "ingredient": "alexscaves:coprolith_coal_ore",
   "result": {
     "id": "minecraft:coal",
     "count": 1

@@ -5,9 +5,7 @@
     "FF"
   ],
   "key": {
-    "F": {
-      "tag": "alexscaves:ferns"
-    }
+    "F": "#alexscaves:ferns"
   },
   "result": {
     "id": "alexscaves:fern_thatch",

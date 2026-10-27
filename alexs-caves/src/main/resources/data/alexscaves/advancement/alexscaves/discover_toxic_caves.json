@@ -1,10 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "citadel:icon_item",
-      "components": {
-        "citadel:icon_location": "alexscaves:textures/misc/advancement/icon/toxic_caves.png"
-      }
+      "id": "minecraft:filled_map"
     },
     "title": {
       "translate": "advancements.alexscaves.discover_toxic_caves.title"

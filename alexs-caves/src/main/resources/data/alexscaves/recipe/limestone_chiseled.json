@@ -5,9 +5,7 @@
     "A"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:limestone_slab"
-    }
+    "A": "alexscaves:limestone_slab"
   },
   "result": {
     "count": 1,

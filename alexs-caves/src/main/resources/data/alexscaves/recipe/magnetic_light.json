@@ -5,12 +5,8 @@
     "I"
   ],
   "key": {
-    "R": {
-      "item": "alexscaves:notor_gizmo"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    }
+    "R": "alexscaves:notor_gizmo",
+    "I": "#c:ingots/iron"
   },
   "result": {
     "count": 4,

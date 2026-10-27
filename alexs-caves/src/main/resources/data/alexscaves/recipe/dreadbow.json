@@ -6,15 +6,9 @@
     " VS"
   ],
   "key": {
-    "P": {
-      "item": "alexscaves:pure_darkness"
-    },
-    "V": {
-      "item": "alexscaves:vesper_wing"
-    },
-    "S": {
-      "item": "alexscaves:shadow_silk"
-    }
+    "P": "alexscaves:pure_darkness",
+    "V": "alexscaves:vesper_wing",
+    "S": "alexscaves:shadow_silk"
   },
   "result": {
     "id": "alexscaves:dreadbow",

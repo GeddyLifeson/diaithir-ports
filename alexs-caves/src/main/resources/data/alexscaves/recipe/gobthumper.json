@@ -6,15 +6,9 @@
     " L "
   ],
   "key": {
-    "G": {
-      "tag": "alexscaves:gelatins"
-    },
-    "P": {
-      "item": "alexscaves:gumball_pile"
-    },
-    "L": {
-      "item": "alexscaves:sharpened_candy_cane"
-    }
+    "G": "#alexscaves:gelatins",
+    "P": "alexscaves:gumball_pile",
+    "L": "alexscaves:sharpened_candy_cane"
   },
   "result": {
     "count": 2,

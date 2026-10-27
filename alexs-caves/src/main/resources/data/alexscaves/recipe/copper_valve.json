@@ -6,12 +6,8 @@
     " C "
   ],
   "key": {
-    "S": {
-      "item": "alexscaves:scrap_metal"
-    },
-    "C": {
-      "item": "minecraft:copper_ingot"
-    }
+    "S": "alexscaves:scrap_metal",
+    "C": "minecraft:copper_ingot"
   },
   "result": {
     "id": "alexscaves:copper_valve",

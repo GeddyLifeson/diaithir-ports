@@ -5,9 +5,7 @@
     "AA"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:abyssmarine_bricks"
-    }
+    "A": "alexscaves:abyssmarine_bricks"
   },
   "result": {
     "count": 4,

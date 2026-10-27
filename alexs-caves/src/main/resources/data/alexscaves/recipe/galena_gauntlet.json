@@ -6,18 +6,10 @@
     "SNS"
   ],
   "key": {
-    "S": {
-      "item": "alexscaves:ferrouslime_ball"
-    },
-    "P": {
-      "item": "alexscaves:packed_galena"
-    },
-    "T": {
-      "item": "alexscaves:telecore"
-    },
-    "N": {
-      "item": "alexscaves:scarlet_neodymium_ingot"
-    }
+    "S": "alexscaves:ferrouslime_ball",
+    "P": "alexscaves:packed_galena",
+    "T": "alexscaves:telecore",
+    "N": "alexscaves:scarlet_neodymium_ingot"
   },
   "result": {
     "count": 1,

@@ -4,16 +4,21 @@
   "replace": false,
   "conditions": [
     {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "alexscaves:chests/witch_hut"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "betterwitchhuts:chests/hut_0"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "nova_structures:chests/mangrove_witchhud"
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "alexscaves:chests/witch_hut"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "betterwitchhuts:chests/hut_0"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "nova_structures:chests/mangrove_witchhud"
+        }
+      ]
     }
   ]
 }

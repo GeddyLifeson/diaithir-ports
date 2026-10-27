@@ -4,9 +4,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:smooth_bone"
-    }
+    "G": "alexscaves:smooth_bone"
   },
   "result": {
     "count": 6,

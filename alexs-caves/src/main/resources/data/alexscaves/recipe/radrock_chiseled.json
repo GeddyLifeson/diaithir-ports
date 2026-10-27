@@ -5,9 +5,7 @@
     "G"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:radrock_slab"
-    }
+    "G": "alexscaves:radrock_slab"
   },
   "result": {
     "count": 1,

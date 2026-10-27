@@ -1,10 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "citadel:icon_item",
-      "components": {
-        "citadel:icon_location": "alexscaves:textures/misc/advancement/icon/deep_one_2.png"
-      }
+      "id": "minecraft:filled_map"
     },
     "title": {
       "translate": "advancements.alexscaves.deep_ones_become_neutral.title"

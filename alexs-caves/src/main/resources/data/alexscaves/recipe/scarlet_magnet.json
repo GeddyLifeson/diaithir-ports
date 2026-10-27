@@ -6,12 +6,8 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:scarlet_neodymium_ingot"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    }
+    "N": "alexscaves:scarlet_neodymium_ingot",
+    "I": "#c:ingots/iron"
   },
   "result": {
     "count": 1,

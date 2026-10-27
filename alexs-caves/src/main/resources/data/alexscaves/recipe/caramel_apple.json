@@ -6,12 +6,8 @@
     "CCC"
   ],
   "key": {
-    "A": {
-      "item": "minecraft:apple"
-    },
-    "C": {
-      "item": "alexscaves:caramel"
-    }
+    "A": "minecraft:apple",
+    "C": "alexscaves:caramel"
   },
   "result": {
     "id": "alexscaves:caramel_apple",

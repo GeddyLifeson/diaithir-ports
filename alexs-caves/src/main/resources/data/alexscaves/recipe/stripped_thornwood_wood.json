@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "group": "bark",
   "key": {
-    "#": {
-      "item": "alexscaves:stripped_thornwood_log"
-    }
+    "#": "alexscaves:stripped_thornwood_log"
   },
   "pattern": [
     "##",

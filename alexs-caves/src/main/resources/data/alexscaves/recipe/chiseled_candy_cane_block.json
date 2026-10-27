@@ -5,9 +5,7 @@
     "P"
   ],
   "key": {
-    "P": {
-      "item": "alexscaves:large_peppermint"
-    }
+    "P": "alexscaves:large_peppermint"
   },
   "result": {
     "id": "alexscaves:chiseled_candy_cane_block",

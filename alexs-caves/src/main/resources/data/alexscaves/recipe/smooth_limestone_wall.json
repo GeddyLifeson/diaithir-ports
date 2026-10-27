@@ -5,9 +5,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:smooth_limestone"
-    }
+    "G": "alexscaves:smooth_limestone"
   },
   "result": {
     "count": 6,

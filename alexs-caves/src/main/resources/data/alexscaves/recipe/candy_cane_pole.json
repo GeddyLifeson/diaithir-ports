@@ -6,9 +6,7 @@
     "C"
   ],
   "key": {
-    "C": {
-      "item": "alexscaves:candy_cane"
-    }
+    "C": "alexscaves:candy_cane"
   },
   "result": {
     "id": "alexscaves:candy_cane_pole",

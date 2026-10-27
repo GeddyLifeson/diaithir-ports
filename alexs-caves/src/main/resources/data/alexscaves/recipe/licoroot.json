@@ -5,9 +5,7 @@
     "VV"
   ],
   "key": {
-    "V": {
-      "item": "alexscaves:licoroot_vine"
-    }
+    "V": "alexscaves:licoroot_vine"
   },
   "result": {
     "count": 1,

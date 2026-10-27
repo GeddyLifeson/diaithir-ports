@@ -5,9 +5,7 @@
     "HHH"
   ],
   "key": {
-    "H": {
-      "item": "alexscaves:hazmat_block"
-    }
+    "H": "alexscaves:hazmat_block"
   },
   "result": {
     "count": 4,

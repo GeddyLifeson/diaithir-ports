@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:uranium"
-    }
+    "alexscaves:uranium"
   ],
   "result": {
     "count": 9,

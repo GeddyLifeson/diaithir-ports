@@ -6,27 +6,13 @@
     " G "
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:candy_cane"
-    },
-    "B": {
-      "item": "alexscaves:caramel"
-    },
-    "C": {
-      "tag": "alexscaves:sweet_berries"
-    },
-    "D": {
-      "item": "alexscaves:vanilla_ice_cream_scoop"
-    },
-    "E": {
-      "item": "alexscaves:chocolate_ice_cream_scoop"
-    },
-    "F": {
-      "item": "alexscaves:sweetberry_ice_cream_scoop"
-    },
-    "G": {
-      "item": "minecraft:bowl"
-    }
+    "A": "alexscaves:candy_cane",
+    "B": "alexscaves:caramel",
+    "C": "#alexscaves:sweet_berries",
+    "D": "alexscaves:vanilla_ice_cream_scoop",
+    "E": "alexscaves:chocolate_ice_cream_scoop",
+    "F": "alexscaves:sweetberry_ice_cream_scoop",
+    "G": "minecraft:bowl"
   },
   "result": {
     "id": "alexscaves:sundae",

@@ -5,12 +5,8 @@
     " B "
   ],
   "key": {
-    "B": {
-      "item": "alexscaves:thornwood_branch"
-    },
-    "E": {
-      "item": "alexscaves:occult_gem"
-    }
+    "B": "alexscaves:thornwood_branch",
+    "E": "alexscaves:occult_gem"
   },
   "result": {
     "id": "alexscaves:beholder",

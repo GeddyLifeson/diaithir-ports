@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "alexscaves:lanternfish"
-  },
+  "ingredient": "alexscaves:lanternfish",
   "result": {
     "id": "alexscaves:cooked_lanternfish",
     "count": 1

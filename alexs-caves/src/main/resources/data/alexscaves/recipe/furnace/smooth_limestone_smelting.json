@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "alexscaves:limestone"
-  },
+  "ingredient": "alexscaves:limestone",
   "result": {
     "id": "alexscaves:smooth_limestone",
     "count": 1

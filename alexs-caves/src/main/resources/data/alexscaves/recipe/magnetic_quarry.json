@@ -6,18 +6,10 @@
     "SDS"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:azure_neodymium_ingot"
-    },
-    "S": {
-      "item": "alexscaves:scrap_metal_plate"
-    },
-    "D": {
-      "tag": "c:gems/diamond"
-    },
-    "H": {
-      "item": "alexscaves:heart_of_iron"
-    }
+    "N": "alexscaves:azure_neodymium_ingot",
+    "S": "alexscaves:scrap_metal_plate",
+    "D": "#c:gems/diamond",
+    "H": "alexscaves:heart_of_iron"
   },
   "result": {
     "count": 1,

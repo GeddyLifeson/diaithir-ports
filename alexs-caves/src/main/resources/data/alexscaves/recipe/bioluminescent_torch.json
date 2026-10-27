@@ -5,12 +5,8 @@
     "S"
   ],
   "key": {
-    "B": {
-      "item": "alexscaves:bioluminesscence"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "B": "alexscaves:bioluminesscence",
+    "S": "#c:rods/wooden"
   },
   "result": {
     "count": 4,

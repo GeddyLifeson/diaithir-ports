@@ -5,9 +5,7 @@
     "PP"
   ],
   "key": {
-    "P": {
-      "item": "alexscaves:sweet_puff"
-    }
+    "P": "alexscaves:sweet_puff"
   },
   "result": {
     "id": "alexscaves:block_of_frosting",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "alexscaves:sweetish_fish_yellow"
-  },
+  "ingredient": "alexscaves:sweetish_fish_yellow",
   "result": {
     "id": "alexscaves:gelatin_yellow",
     "count": 1

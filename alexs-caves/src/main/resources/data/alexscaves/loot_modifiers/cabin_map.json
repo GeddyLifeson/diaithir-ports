@@ -2,7 +2,7 @@
   "type": "alexscaves:cabin_map",
   "conditions": [
     {
-      "condition": "c:loot_table_id",
+      "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:chests/abandoned_mineshaft"
     }
   ]

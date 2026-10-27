@@ -4,9 +4,7 @@
     "WWW"
   ],
   "key": {
-    "W": {
-      "item": "alexscaves:wafer_cookie_block"
-    }
+    "W": "alexscaves:wafer_cookie_block"
   },
   "result": {
     "count": 6,

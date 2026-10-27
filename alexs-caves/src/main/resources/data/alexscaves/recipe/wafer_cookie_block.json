@@ -5,9 +5,7 @@
     "CC"
   ],
   "key": {
-    "C": {
-      "item": "alexscaves:cookie_block"
-    }
+    "C": "alexscaves:cookie_block"
   },
   "result": {
     "count": 4,

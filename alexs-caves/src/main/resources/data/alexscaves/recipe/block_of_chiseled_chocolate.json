@@ -5,9 +5,7 @@
     "A"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:block_of_polished_chocolate"
-    }
+    "A": "alexscaves:block_of_polished_chocolate"
   },
   "result": {
     "count": 2,

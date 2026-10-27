@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "minecraft:bone_block"
-  },
+  "ingredient": "minecraft:bone_block",
   "result": {
     "id": "alexscaves:smooth_bone",
     "count": 1

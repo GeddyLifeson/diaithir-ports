@@ -5,9 +5,7 @@
     "AA"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:guanostone"
-    }
+    "A": "alexscaves:guanostone"
   },
   "result": {
     "count": 4,

@@ -4,16 +4,21 @@
   "replace": false,
   "conditions": [
     {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/underwater_ruin_big"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/underwater_ruin_small"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/buried_treasure"
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/underwater_ruin_big"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/underwater_ruin_small"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/buried_treasure"
+        }
+      ]
     }
   ]
 }

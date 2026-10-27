@@ -6,18 +6,10 @@
     "SHS"
   ],
   "key": {
-    "C": {
-      "item": "minecraft:chain"
-    },
-    "A": {
-      "item": "alexscaves:azure_neodymium_ingot"
-    },
-    "S": {
-      "item": "alexscaves:scarlet_neodymium_ingot"
-    },
-    "H": {
-      "item": "alexscaves:heavyweight"
-    }
+    "C": "minecraft:iron_chain",
+    "A": "alexscaves:azure_neodymium_ingot",
+    "S": "alexscaves:scarlet_neodymium_ingot",
+    "H": "alexscaves:heavyweight"
   },
   "result": {
     "count": 1,

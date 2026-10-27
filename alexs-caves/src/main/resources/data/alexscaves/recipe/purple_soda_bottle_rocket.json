@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:purple_soda_bottle"
-    },
-    {
-      "item": "alexscaves:purple_soda_bottle"
-    },
-    {
-      "item": "alexscaves:purple_soda_bottle"
-    },
-    {
-      "item": "alexscaves:frostmint"
-    }
+    "alexscaves:purple_soda_bottle",
+    "alexscaves:purple_soda_bottle",
+    "alexscaves:purple_soda_bottle",
+    "alexscaves:frostmint"
   ],
   "result": {
     "count": 3,

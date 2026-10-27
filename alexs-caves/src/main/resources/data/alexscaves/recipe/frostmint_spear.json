@@ -6,12 +6,8 @@
     " C "
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:frostmint"
-    },
-    "C": {
-      "item": "alexscaves:candy_cane"
-    }
+    "F": "alexscaves:frostmint",
+    "C": "alexscaves:candy_cane"
   },
   "result": {
     "count": 4,

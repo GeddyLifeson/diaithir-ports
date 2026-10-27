@@ -1,9 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "count": 1,
-  "ingredient": {
-    "item": "alexscaves:galena"
-  },
+  "ingredient": "alexscaves:galena",
   "result": {
     "id": "alexscaves:galena_brick_wall",
     "count": 1

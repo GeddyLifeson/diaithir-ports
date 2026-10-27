@@ -6,15 +6,9 @@
     "GCG"
   ],
   "key": {
-    "G": {
-      "tag": "alexscaves:gelatins"
-    },
-    "C": {
-      "item": "alexscaves:caramel"
-    },
-    "R": {
-      "item": "alexscaves:radiant_essence"
-    }
+    "G": "#alexscaves:gelatins",
+    "C": "alexscaves:caramel",
+    "R": "alexscaves:radiant_essence"
   },
   "result": {
     "count": 2,

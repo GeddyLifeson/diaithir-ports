@@ -6,12 +6,8 @@
     "DDD"
   ],
   "key": {
-    "D": {
-      "item": "alexscaves:shadow_silk"
-    },
-    "O": {
-      "item": "alexscaves:occult_gem"
-    }
+    "D": "alexscaves:shadow_silk",
+    "O": "alexscaves:occult_gem"
   },
   "result": {
     "id": "alexscaves:cloak_of_darkness",

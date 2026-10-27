@@ -1,45 +1,16 @@
 {
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "carvers": [
+    "minecraft:cave",
+    "minecraft:cave_extra_underground",
+    "minecraft:canyon"
+  ],
   "downfall": 0.4,
   "has_precipitation": true,
   "effects": {
-    "ambient_sound": "alexscaves:magnetic_caves_ambience",
-    "additions_sound": {
-      "sound": "alexscaves:magnetic_caves_ambience_additions",
-      "tick_chance": 0.0111
-    },
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "alexscaves:magnetic_caves_ambience_mood",
-      "tick_delay": 6000
-    },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "alexscaves:magnetic_caves_music"
-    },
-    "particle": {
-      "options": {
-        "type": "alexscaves:magnetic_caves_ambient"
-      },
-      "probability": 0.0005
-    },
-    "fog_color": 1315096,
-    "sky_color": 5063513,
-    "water_color": 6320065,
-    "water_fog_color": 4811680
+    "water_color": "#606fc1"
   },
   "features": [
-    [
-    ],
+    [],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
@@ -86,8 +57,7 @@
       "alexscaves:galena_iron_ore",
       "alexscaves:metal_swarf"
     ],
-    [
-    ],
+    [],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava",
@@ -226,5 +196,39 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.6
+  "temperature": 0.6,
+  "attributes": {
+    "minecraft:visual/sky_color": "#4d4359",
+    "minecraft:visual/fog_color": "#141118",
+    "minecraft:visual/water_fog_color": "#496ba0",
+    "minecraft:audio/ambient_sounds": {
+      "loop": "alexscaves:magnetic_caves_ambience",
+      "additions": {
+        "sound": "alexscaves:magnetic_caves_ambience_additions",
+        "tick_chance": 0.0111
+      },
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "alexscaves:magnetic_caves_ambience_mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "replace_current_music": false,
+        "sound": "alexscaves:magnetic_caves_music"
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "alexscaves:magnetic_caves_ambient"
+        },
+        "probability": 0.0005
+      }
+    ]
+  }
 }

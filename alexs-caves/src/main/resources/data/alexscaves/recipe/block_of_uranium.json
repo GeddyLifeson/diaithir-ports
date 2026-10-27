@@ -6,9 +6,7 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:uranium"
-    }
+    "N": "alexscaves:uranium"
   },
   "result": {
     "count": 1,

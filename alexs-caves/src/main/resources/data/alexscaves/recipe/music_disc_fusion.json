@@ -6,9 +6,7 @@
     "FFF"
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:disc_fragment_fusion"
-    }
+    "F": "alexscaves:disc_fragment_fusion"
   },
   "result": {
     "id": "alexscaves:music_disc_fusion",

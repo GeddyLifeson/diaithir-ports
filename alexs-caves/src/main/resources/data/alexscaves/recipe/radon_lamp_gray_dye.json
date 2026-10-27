@@ -6,12 +6,8 @@
     "LLL"
   ],
   "key": {
-    "L": {
-      "tag": "alexscaves:radon_lamps"
-    },
-    "D": {
-      "tag": "c:dyes/gray"
-    }
+    "L": "#alexscaves:radon_lamps",
+    "D": "#c:dyes/gray"
   },
   "result": {
     "count": 8,

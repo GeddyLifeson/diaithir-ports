@@ -5,9 +5,7 @@
     "NN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:guano"
-    }
+    "N": "alexscaves:guano"
   },
   "result": {
     "count": 1,

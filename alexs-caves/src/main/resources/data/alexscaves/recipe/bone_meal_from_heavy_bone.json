@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:heavy_bone"
-    }
+    "alexscaves:heavy_bone"
   ],
   "result": {
     "count": 6,

@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:cooked_dinosaur_chop"
-    }
+    "alexscaves:cooked_dinosaur_chop"
   ],
   "result": {
     "count": 12,

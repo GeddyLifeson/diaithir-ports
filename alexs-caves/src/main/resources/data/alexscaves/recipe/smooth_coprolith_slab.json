@@ -4,9 +4,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:smooth_coprolith"
-    }
+    "G": "alexscaves:smooth_coprolith"
   },
   "result": {
     "count": 6,

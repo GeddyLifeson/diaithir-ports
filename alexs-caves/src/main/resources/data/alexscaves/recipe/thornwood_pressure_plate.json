@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "group": "wooden_pressure_plate",
   "key": {
-    "#": {
-      "item": "alexscaves:thornwood_planks"
-    }
+    "#": "alexscaves:thornwood_planks"
   },
   "pattern": [
     "##"

@@ -5,9 +5,7 @@
     "GG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:gingerbread_crumbs"
-    }
+    "G": "alexscaves:gingerbread_crumbs"
   },
   "result": {
     "id": "alexscaves:gingerbread_block",

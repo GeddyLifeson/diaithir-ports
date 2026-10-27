@@ -6,12 +6,8 @@
     "AAA"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:porous_coprolith"
-    },
-    "T": {
-      "item": "alexscaves:pure_darkness"
-    }
+    "A": "alexscaves:porous_coprolith",
+    "T": "alexscaves:pure_darkness"
   },
   "result": {
     "count": 8,

@@ -4,9 +4,7 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:guano_block"
-    }
+    "N": "alexscaves:guano_block"
   },
   "result": {
     "count": 6,

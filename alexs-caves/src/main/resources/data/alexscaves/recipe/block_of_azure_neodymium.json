@@ -6,9 +6,7 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:azure_neodymium_ingot"
-    }
+    "N": "alexscaves:azure_neodymium_ingot"
   },
   "result": {
     "count": 1,

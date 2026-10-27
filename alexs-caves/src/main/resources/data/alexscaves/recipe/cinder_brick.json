@@ -6,9 +6,7 @@
     "CCC"
   ],
   "key": {
-    "C": {
-      "tag": "c:concrete"
-    }
+    "C": "#c:concrete"
   },
   "result": {
     "count": 16,

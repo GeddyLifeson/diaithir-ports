@@ -4,16 +4,21 @@
   "replace": false,
   "conditions": [
     {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/bastion_treasure"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/bastion_other"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:chests/bastion_bridge"
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/bastion_treasure"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/bastion_other"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/bastion_bridge"
+        }
+      ]
     }
   ]
 }

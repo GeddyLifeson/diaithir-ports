@@ -6,15 +6,9 @@
     "P L"
   ],
   "key": {
-    "S": {
-      "item": "alexscaves:sharpened_candy_cane"
-    },
-    "L": {
-      "item": "alexscaves:licoroot_vine"
-    },
-    "P": {
-      "item": "alexscaves:candy_cane_pole"
-    }
+    "S": "alexscaves:sharpened_candy_cane",
+    "L": "alexscaves:licoroot_vine",
+    "P": "alexscaves:candy_cane_pole"
   },
   "result": {
     "id": "alexscaves:candy_cane_hook",

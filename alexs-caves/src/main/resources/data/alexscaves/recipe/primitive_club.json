@@ -6,12 +6,8 @@
     "B  "
   ],
   "key": {
-    "B": {
-      "item": "alexscaves:heavy_bone"
-    },
-    "C": {
-      "item": "alexscaves:cycad"
-    }
+    "B": "alexscaves:heavy_bone",
+    "C": "alexscaves:cycad"
   },
   "result": {
     "id": "alexscaves:primitive_club",

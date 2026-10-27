@@ -5,9 +5,7 @@
     "AAA"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:frosted_gingerbread_bricks"
-    }
+    "A": "alexscaves:frosted_gingerbread_bricks"
   },
   "result": {
     "count": 6,

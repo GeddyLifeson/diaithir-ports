@@ -6,12 +6,8 @@
     "ISI"
   ],
   "key": {
-    "I": {
-      "tag": "c:ingots/iron"
-    },
-    "S": {
-      "item": "alexscaves:sea_glass_shards"
-    }
+    "I": "#c:ingots/iron",
+    "S": "alexscaves:sea_glass_shards"
   },
   "result": {
     "count": 8,

@@ -6,12 +6,8 @@
     "UUU"
   ],
   "key": {
-    "U": {
-      "item": "alexscaves:unrefined_waste"
-    },
-    "B": {
-      "item": "alexscaves:metal_barrel"
-    }
+    "U": "alexscaves:unrefined_waste",
+    "B": "alexscaves:metal_barrel"
   },
   "result": {
     "id": "alexscaves:waste_drum",

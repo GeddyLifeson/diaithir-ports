@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:moth_dust"
-    },
-    {
-      "item": "alexscaves:guano"
-    },
-    {
-      "item": "minecraft:string"
-    },
-    {
-      "item": "minecraft:string"
-    }
+    "alexscaves:moth_dust",
+    "alexscaves:guano",
+    "minecraft:string",
+    "minecraft:string"
   ],
   "result": {
     "id": "alexscaves:moth_ball",

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "item": "alexscaves:mussel"
-  },
+  "ingredient": "alexscaves:mussel",
   "result": {
     "id": "alexscaves:cooked_mussel",
     "count": 1

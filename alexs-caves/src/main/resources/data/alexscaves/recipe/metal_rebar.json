@@ -6,9 +6,7 @@
     "S"
   ],
   "key": {
-    "S": {
-      "item": "alexscaves:scrap_metal"
-    }
+    "S": "alexscaves:scrap_metal"
   },
   "result": {
     "count": 6,

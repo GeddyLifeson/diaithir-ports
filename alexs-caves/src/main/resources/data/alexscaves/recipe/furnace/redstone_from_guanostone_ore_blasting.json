@@ -1,8 +1,6 @@
 {
   "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "alexscaves:guanostone_redstone_ore"
-  },
+  "ingredient": "alexscaves:guanostone_redstone_ore",
   "result": {
     "id": "minecraft:redstone",
     "count": 1

@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:candy_cane"
-    }
+    "alexscaves:candy_cane"
   ],
   "result": {
     "count": 2,

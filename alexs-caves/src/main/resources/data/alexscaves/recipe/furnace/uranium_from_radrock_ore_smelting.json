@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "alexscaves:radrock_uranium_ore"
-  },
+  "ingredient": "alexscaves:radrock_uranium_ore",
   "result": {
     "id": "alexscaves:uranium",
     "count": 1

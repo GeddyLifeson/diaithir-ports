@@ -6,15 +6,9 @@
     " C "
   ],
   "key": {
-    "R": {
-      "tag": "alexscaves:rock_candies"
-    },
-    "E": {
-      "item": "alexscaves:radiant_essence"
-    },
-    "C": {
-      "item": "alexscaves:candy_cane"
-    }
+    "R": "#alexscaves:rock_candies",
+    "E": "alexscaves:radiant_essence",
+    "C": "alexscaves:candy_cane"
   },
   "result": {
     "id": "alexscaves:biome_treat",

@@ -5,9 +5,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:radrock_bricks"
-    }
+    "G": "alexscaves:radrock_bricks"
   },
   "result": {
     "count": 6,

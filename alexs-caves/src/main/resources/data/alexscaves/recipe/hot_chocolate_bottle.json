@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:block_of_chocolate"
-    },
-    {
-      "item": "alexscaves:block_of_chocolate"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:glass_bottle"
-    }
+    "alexscaves:block_of_chocolate",
+    "alexscaves:block_of_chocolate",
+    "minecraft:sugar",
+    "minecraft:glass_bottle"
   ],
   "result": {
     "id": "alexscaves:hot_chocolate_bottle",

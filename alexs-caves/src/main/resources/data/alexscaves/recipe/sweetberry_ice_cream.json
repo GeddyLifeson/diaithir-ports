@@ -5,9 +5,7 @@
     "II"
   ],
   "key": {
-    "I": {
-      "item": "alexscaves:sweetberry_ice_cream_scoop"
-    }
+    "I": "alexscaves:sweetberry_ice_cream_scoop"
   },
   "result": {
     "id": "alexscaves:sweetberry_ice_cream",

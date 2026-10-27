@@ -6,15 +6,9 @@
     "GGG"
   ],
   "key": {
-    "E": {
-      "item": "alexscaves:radiant_essence"
-    },
-    "C": {
-      "item": "minecraft:cauldron"
-    },
-    "G": {
-      "tag": "c:storage_blocks/gold"
-    }
+    "E": "alexscaves:radiant_essence",
+    "C": "minecraft:cauldron",
+    "G": "#c:storage_blocks/gold"
   },
   "result": {
     "count": 1,

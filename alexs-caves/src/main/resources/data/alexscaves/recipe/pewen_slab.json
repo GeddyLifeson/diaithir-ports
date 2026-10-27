@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "group": "wooden_slab",
   "key": {
-    "#": {
-      "item": "alexscaves:pewen_planks"
-    }
+    "#": "alexscaves:pewen_planks"
   },
   "pattern": [
     "###"

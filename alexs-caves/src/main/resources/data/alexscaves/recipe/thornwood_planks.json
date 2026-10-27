@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "alexscaves:thornwood_logs"
-    }
+    "#alexscaves:thornwood_logs"
   ],
   "result": {
     "count": 4,

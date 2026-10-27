@@ -5,9 +5,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:wafer_cookie_block"
-    }
+    "G": "alexscaves:wafer_cookie_block"
   },
   "result": {
     "count": 6,

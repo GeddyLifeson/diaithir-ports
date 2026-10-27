@@ -1,29 +1,8 @@
 {
-  "carvers": {
-  },
+  "carvers": [],
   "downfall": 0.5,
   "effects": {
-    "ambient_sound": "alexscaves:abyssal_chasm_ambience",
-    "additions_sound": {
-      "sound": "alexscaves:abyssal_chasm_ambience_additions",
-      "tick_chance": 0.01
-    },
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "alexscaves:abyssal_chasm_ambience_mood",
-      "tick_delay": 6000
-    },
-    "fog_color": 3884,
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "alexscaves:abyssal_chasm_music"
-    },
-    "sky_color": 8103167,
-    "water_color": 5451,
-    "water_fog_color": 3623
+    "water_color": "#00154b"
   },
   "has_precipitation": true,
   "features": [
@@ -71,8 +50,7 @@
       "minecraft:disk_gravel"
     ],
     [],
-    [
-    ],
+    [],
     [
       "alexscaves:tube_worm",
       "alexscaves:mussel",
@@ -223,5 +201,31 @@
       }
     ]
   },
-  "temperature": 0.5
+  "temperature": 0.5,
+  "attributes": {
+    "minecraft:visual/sky_color": "#7ba4ff",
+    "minecraft:visual/fog_color": "#000f2c",
+    "minecraft:visual/water_fog_color": "#000e27",
+    "minecraft:audio/ambient_sounds": {
+      "loop": "alexscaves:abyssal_chasm_ambience",
+      "additions": {
+        "sound": "alexscaves:abyssal_chasm_ambience_additions",
+        "tick_chance": 0.01
+      },
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "alexscaves:abyssal_chasm_ambience_mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "replace_current_music": false,
+        "sound": "alexscaves:abyssal_chasm_music"
+      }
+    }
+  }
 }

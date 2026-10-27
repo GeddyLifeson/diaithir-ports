@@ -6,15 +6,9 @@
     "BBB"
   ],
   "key": {
-    "D": {
-      "item": "alexscaves:depth_charge"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    },
-    "B": {
-      "item": "minecraft:bucket"
-    }
+    "D": "alexscaves:depth_charge",
+    "R": "minecraft:redstone",
+    "B": "minecraft:bucket"
   },
   "result": {
     "count": 1,

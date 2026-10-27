@@ -5,9 +5,7 @@
     "DD"
   ],
   "key": {
-    "D": {
-      "item": "alexscaves:dark_tatters"
-    }
+    "D": "alexscaves:dark_tatters"
   },
   "result": {
     "count": 1,

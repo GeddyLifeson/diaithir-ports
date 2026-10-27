@@ -5,12 +5,8 @@
     "CC"
   ],
   "key": {
-    "C": {
-      "item": "alexscaves:block_of_chocolate"
-    },
-    "F": {
-      "item": "alexscaves:block_of_frosting"
-    }
+    "C": "alexscaves:block_of_chocolate",
+    "F": "alexscaves:block_of_frosting"
   },
   "result": {
     "count": 4,

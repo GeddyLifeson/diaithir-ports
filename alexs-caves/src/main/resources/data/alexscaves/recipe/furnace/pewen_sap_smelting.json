@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "alexscaves:pewen_branch"
-  },
+  "ingredient": "alexscaves:pewen_branch",
   "result": {
     "id": "alexscaves:pewen_sap",
     "count": 1

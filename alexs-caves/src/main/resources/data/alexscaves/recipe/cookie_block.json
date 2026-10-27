@@ -5,9 +5,7 @@
     "CC"
   ],
   "key": {
-    "C": {
-      "item": "minecraft:cookie"
-    }
+    "C": "minecraft:cookie"
   },
   "result": {
     "id": "alexscaves:cookie_block",

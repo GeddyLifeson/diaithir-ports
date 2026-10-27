@@ -6,9 +6,7 @@
     "FFF"
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:disc_fragment_tasty"
-    }
+    "F": "alexscaves:disc_fragment_tasty"
   },
   "result": {
     "id": "alexscaves:music_disc_tasty",

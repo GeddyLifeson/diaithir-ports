@@ -6,18 +6,10 @@
     "IEI"
   ],
   "key": {
-    "E": {
-      "item": "minecraft:redstone"
-    },
-    "R": {
-      "item": "alexscaves:radon_bottle"
-    },
-    "G": {
-      "tag": "c:glass_blocks/colorless"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    }
+    "E": "minecraft:redstone",
+    "R": "alexscaves:radon_bottle",
+    "G": "#c:glass_blocks/colorless",
+    "I": "#c:ingots/iron"
   },
   "result": {
     "count": 1,

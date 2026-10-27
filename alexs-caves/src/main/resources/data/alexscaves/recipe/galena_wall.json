@@ -5,9 +5,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:galena"
-    }
+    "G": "alexscaves:galena"
   },
   "result": {
     "count": 6,

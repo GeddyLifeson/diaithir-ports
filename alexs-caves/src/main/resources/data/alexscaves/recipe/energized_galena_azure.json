@@ -6,12 +6,8 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:galena"
-    },
-    "N": {
-      "item": "alexscaves:raw_azure_neodymium"
-    }
+    "G": "alexscaves:galena",
+    "N": "alexscaves:raw_azure_neodymium"
   },
   "result": {
     "count": 8,

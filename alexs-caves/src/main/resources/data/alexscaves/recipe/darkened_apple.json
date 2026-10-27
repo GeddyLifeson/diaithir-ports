@@ -6,12 +6,8 @@
     " D "
   ],
   "key": {
-    "P": {
-      "item": "minecraft:apple"
-    },
-    "D": {
-      "item": "alexscaves:pure_darkness"
-    }
+    "P": "minecraft:apple",
+    "D": "alexscaves:pure_darkness"
   },
   "result": {
     "id": "alexscaves:darkened_apple",

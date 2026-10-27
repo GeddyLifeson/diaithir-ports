@@ -6,18 +6,10 @@
     "LDL"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:amber"
-    },
-    "C": {
-      "item": "alexscaves:amber_curiosity"
-    },
-    "L": {
-      "item": "alexscaves:limestone"
-    },
-    "D": {
-      "tag": "c:gems/diamond"
-    }
+    "A": "alexscaves:amber",
+    "C": "alexscaves:amber_curiosity",
+    "L": "alexscaves:limestone",
+    "D": "#c:gems/diamond"
   },
   "result": {
     "count": 1,

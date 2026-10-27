@@ -6,15 +6,9 @@
     "INI"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:azure_neodymium_ingot"
-    },
-    "I": {
-      "tag": "c:ingots/iron"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "N": "alexscaves:azure_neodymium_ingot",
+    "I": "#c:ingots/iron",
+    "S": "#c:rods/wooden"
   },
   "result": {
     "count": 6,

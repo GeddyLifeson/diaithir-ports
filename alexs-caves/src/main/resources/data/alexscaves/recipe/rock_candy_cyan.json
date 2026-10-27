@@ -6,15 +6,9 @@
     "SPS"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:sugar"
-    },
-    "P": {
-      "item": "alexscaves:peppermint_powder"
-    },
-    "D": {
-      "tag": "c:dyes/cyan"
-    }
+    "S": "minecraft:sugar",
+    "P": "alexscaves:peppermint_powder",
+    "D": "#c:dyes/cyan"
   },
   "result": {
     "count": 4,

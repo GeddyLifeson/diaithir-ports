@@ -1,41 +1,13 @@
 {
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "carvers": [
+    "minecraft:cave",
+    "minecraft:cave_extra_underground",
+    "minecraft:canyon"
+  ],
   "downfall": 0.2,
   "has_precipitation": true,
   "effects": {
-    "ambient_sound": "alexscaves:forlorn_hollows_ambience",
-    "additions_sound": {
-      "sound": "alexscaves:forlorn_hollows_ambience_additions",
-      "tick_chance": 0.0111
-    },
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "alexscaves:forlorn_hollows_ambience_mood",
-      "tick_delay": 6000
-    },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "alexscaves:forlorn_hollows_music"
-    },
-    "particle": {
-      "options": {
-        "type": "alexscaves:falling_guano"
-      },
-      "probability": 0.005
-    },
-    "fog_color": 2103829,
-    "sky_color": 2629914,
-    "water_color": 6122116,
-    "water_fog_color": 27552
+    "water_color": "#5d6a84"
   },
   "features": [
     [],
@@ -171,5 +143,39 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.7
+  "temperature": 0.7,
+  "attributes": {
+    "minecraft:visual/sky_color": "#28211a",
+    "minecraft:visual/fog_color": "#201a15",
+    "minecraft:visual/water_fog_color": "#006ba0",
+    "minecraft:audio/ambient_sounds": {
+      "loop": "alexscaves:forlorn_hollows_ambience",
+      "additions": {
+        "sound": "alexscaves:forlorn_hollows_ambience_additions",
+        "tick_chance": 0.0111
+      },
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "alexscaves:forlorn_hollows_ambience_mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "replace_current_music": false,
+        "sound": "alexscaves:forlorn_hollows_music"
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "alexscaves:falling_guano"
+        },
+        "probability": 0.005
+      }
+    ]
+  }
 }

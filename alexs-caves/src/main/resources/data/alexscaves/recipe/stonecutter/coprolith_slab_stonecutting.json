@@ -1,9 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "count": 2,
-  "ingredient": {
-    "item": "alexscaves:coprolith"
-  },
+  "ingredient": "alexscaves:coprolith",
   "result": {
     "id": "alexscaves:coprolith_slab",
     "count": 1

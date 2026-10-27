@@ -1,10 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "citadel:icon_item",
-      "components": {
-        "citadel:icon_location": "alexscaves:textures/misc/advancement/icon/defeat_gloomoth.png"
-      }
+      "id": "minecraft:filled_map"
     },
     "title": {
       "translate": "advancements.alexscaves.defeat_gloomoth.title"

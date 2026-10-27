@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:vesper_wing"
-    },
-    {
-      "item": "alexscaves:thornwood_branch"
-    },
-    {
-      "item": "minecraft:brown_mushroom"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "alexscaves:vesper_wing",
+    "alexscaves:thornwood_branch",
+    "minecraft:brown_mushroom",
+    "minecraft:bowl"
   ],
   "result": {
     "id": "alexscaves:vesper_stew",

@@ -1,39 +1,27 @@
 {
-  "carvers": {},
+  "carvers": [],
   "downfall": 0.4,
   "has_precipitation": true,
   "effects": {
-    "ambient_sound": "alexscaves:primordial_caves_ambience",
-    "additions_sound": {
-      "sound": "alexscaves:primordial_caves_ambience_additions",
-      "tick_chance": 0.0111
-    },
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "alexscaves:primordial_caves_ambience_mood",
-      "tick_delay": 6000
-    },
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "alexscaves:primordial_caves_music"
-    },
-    "sky_color": 15845747,
-    "fog_color": 15915104,
-    "water_color": 370073,
-    "water_fog_color": 370073,
-    "grass_color": 11785728,
-    "foliage_color": 10601538
+    "water_color": "#05a599",
+    "grass_color": "#b3d600",
+    "foliage_color": "#a1c442"
   },
   "features": [
     [],
     [],
     [],
-    ["minecraft:monster_room", "minecraft:monster_room_deep"],
-    ["alexscaves:subterranodon_roost"],
-    ["alexscaves:primordial_caves_lake", "alexscaves:caveman_house"],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [
+      "alexscaves:subterranodon_roost"
+    ],
+    [
+      "alexscaves:primordial_caves_lake",
+      "alexscaves:caveman_house"
+    ],
     [
       "alexscaves:ambersol",
       "alexscaves:primordial_forest_rock",
@@ -73,7 +61,9 @@
       "alexscaves:flytrap"
     ],
     [],
-    ["alexscaves:amber_monolith"],
+    [
+      "alexscaves:amber_monolith"
+    ],
     [
       "alexscaves:pewen_tree",
       "alexscaves:ancient_tree",
@@ -89,7 +79,9 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
     ],
-    ["minecraft:freeze_top_layer"]
+    [
+      "minecraft:freeze_top_layer"
+    ]
   ],
   "precipitation": "rain",
   "spawn_costs": {},
@@ -156,5 +148,31 @@
       }
     ]
   },
-  "temperature": 0.95
+  "temperature": 0.95,
+  "attributes": {
+    "minecraft:visual/sky_color": "#f1c973",
+    "minecraft:visual/fog_color": "#f2d860",
+    "minecraft:visual/water_fog_color": "#05a599",
+    "minecraft:audio/ambient_sounds": {
+      "loop": "alexscaves:primordial_caves_ambience",
+      "additions": {
+        "sound": "alexscaves:primordial_caves_ambience_additions",
+        "tick_chance": 0.0111
+      },
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "alexscaves:primordial_caves_ambience_mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "replace_current_music": false,
+        "sound": "alexscaves:primordial_caves_music"
+      }
+    }
+  }
 }

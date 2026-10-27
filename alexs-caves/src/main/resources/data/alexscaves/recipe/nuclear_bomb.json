@@ -6,18 +6,10 @@
     "IFI"
   ],
   "key": {
-    "U": {
-      "item": "alexscaves:uranium_rod"
-    },
-    "B": {
-      "tag": "c:storage_blocks/uranium"
-    },
-    "F": {
-      "item": "alexscaves:fissile_core"
-    },
-    "I": {
-      "tag": "c:storage_blocks/iron"
-    }
+    "U": "alexscaves:uranium_rod",
+    "B": "#c:storage_blocks/uranium",
+    "F": "alexscaves:fissile_core",
+    "I": "#c:storage_blocks/iron"
   },
   "result": {
     "count": 1,

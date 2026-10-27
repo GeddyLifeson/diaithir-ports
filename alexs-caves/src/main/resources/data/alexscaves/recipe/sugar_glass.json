@@ -5,12 +5,8 @@
     "PS"
   ],
   "key": {
-    "P": {
-      "item": "alexscaves:peppermint_powder"
-    },
-    "S": {
-      "item": "minecraft:sugar"
-    }
+    "P": "alexscaves:peppermint_powder",
+    "S": "minecraft:sugar"
   },
   "result": {
     "id": "alexscaves:sugar_glass",

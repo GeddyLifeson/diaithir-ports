@@ -6,18 +6,10 @@
     "ABA"
   ],
   "key": {
-    "T": {
-      "item": "alexscaves:tectonic_shard"
-    },
-    "S": {
-      "item": "alexscaves:limestone_spear"
-    },
-    "A": {
-      "item": "alexscaves:amber_curiosity"
-    },
-    "B": {
-      "item": "alexscaves:heavy_bone"
-    }
+    "T": "alexscaves:tectonic_shard",
+    "S": "alexscaves:limestone_spear",
+    "A": "alexscaves:amber_curiosity",
+    "B": "alexscaves:heavy_bone"
   },
   "result": {
     "id": "alexscaves:extinction_spear",

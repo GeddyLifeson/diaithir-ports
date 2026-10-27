@@ -5,12 +5,8 @@
     "FM"
   ],
   "key": {
-    "M": {
-      "item": "minecraft:magma_block"
-    },
-    "F": {
-      "item": "alexscaves:flood_basalt"
-    }
+    "M": "minecraft:magma_block",
+    "F": "alexscaves:flood_basalt"
   },
   "result": {
     "count": 2,

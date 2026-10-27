@@ -6,12 +6,8 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "minecraft:cobblestone"
-    },
-    "P": {
-      "item": "alexscaves:toxic_paste"
-    }
+    "N": "minecraft:cobblestone",
+    "P": "alexscaves:toxic_paste"
   },
   "result": {
     "count": 8,

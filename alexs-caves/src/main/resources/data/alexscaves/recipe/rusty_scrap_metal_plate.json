@@ -5,9 +5,7 @@
     "GG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:rusty_scrap_metal"
-    }
+    "G": "alexscaves:rusty_scrap_metal"
   },
   "result": {
     "count": 4,

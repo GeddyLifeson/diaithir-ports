@@ -6,12 +6,8 @@
     "LLL"
   ],
   "key": {
-    "L": {
-      "tag": "alexscaves:rock_candies"
-    },
-    "D": {
-      "tag": "c:dyes/cyan"
-    }
+    "L": "#alexscaves:rock_candies",
+    "D": "#c:dyes/cyan"
   },
   "result": {
     "count": 8,

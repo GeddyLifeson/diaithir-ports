@@ -5,9 +5,7 @@
     "G"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:geothermal_vent_medium"
-    }
+    "G": "alexscaves:geothermal_vent_medium"
   },
   "result": {
     "count": 3,

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "alexscaves:galena_iron_ore"
-  },
+  "ingredient": "alexscaves:galena_iron_ore",
   "result": {
     "id": "minecraft:iron_ingot",
     "count": 1

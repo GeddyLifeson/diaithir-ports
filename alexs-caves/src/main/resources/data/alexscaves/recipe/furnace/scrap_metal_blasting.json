@@ -1,8 +1,6 @@
 {
   "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "alexscaves:metal_swarf"
-  },
+  "ingredient": "alexscaves:metal_swarf",
   "result": {
     "id": "alexscaves:scrap_metal",
     "count": 1

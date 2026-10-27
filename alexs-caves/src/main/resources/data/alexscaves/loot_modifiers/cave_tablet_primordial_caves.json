@@ -4,24 +4,29 @@
   "replace": true,
   "conditions": [
     {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/desert_well"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/desert_pyramid"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/trail_ruins_rare"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/ocean_ruin_warm"
-    },
-    {
-      "condition": "c:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/ocean_ruin_cold"
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:archaeology/desert_well"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:archaeology/desert_pyramid"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:archaeology/trail_ruins_rare"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:archaeology/ocean_ruin_warm"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:archaeology/ocean_ruin_cold"
+        }
+      ]
     }
   ]
 }

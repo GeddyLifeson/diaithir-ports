@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:block_of_scarlet_neodymium"
-    }
+    "alexscaves:block_of_scarlet_neodymium"
   ],
   "result": {
     "count": 9,

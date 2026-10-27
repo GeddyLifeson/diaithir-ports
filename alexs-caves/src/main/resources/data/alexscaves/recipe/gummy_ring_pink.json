@@ -6,9 +6,7 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "item": "alexscaves:gelatin_pink"
-    }
+    "G": "alexscaves:gelatin_pink"
   },
   "result": {
     "count": 3,

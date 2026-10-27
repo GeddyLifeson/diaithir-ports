@@ -6,9 +6,7 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:pearl"
-    }
+    "N": "alexscaves:pearl"
   },
   "result": {
     "count": 1,

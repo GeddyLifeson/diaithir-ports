@@ -6,9 +6,7 @@
     "NN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:raw_scarlet_neodymium"
-    }
+    "N": "alexscaves:raw_scarlet_neodymium"
   },
   "result": {
     "count": 2,

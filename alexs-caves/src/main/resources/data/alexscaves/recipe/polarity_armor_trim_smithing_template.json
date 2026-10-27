@@ -6,15 +6,9 @@
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "alexscaves:galena"
-    },
-    "S": {
-      "item": "alexscaves:polarity_armor_trim_smithing_template"
-    }
+    "#": "minecraft:diamond",
+    "C": "alexscaves:galena",
+    "S": "alexscaves:polarity_armor_trim_smithing_template"
   },
   "result": {
     "count": 2,

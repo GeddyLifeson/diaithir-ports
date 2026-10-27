@@ -6,12 +6,8 @@
     " R "
   ],
   "key": {
-    "R": {
-      "item": "alexscaves:radrock"
-    },
-    "A": {
-      "item": "alexscaves:acid_bucket"
-    }
+    "R": "alexscaves:radrock",
+    "A": "alexscaves:acid_bucket"
   },
   "result": {
     "id": "alexscaves:acidic_radrock",

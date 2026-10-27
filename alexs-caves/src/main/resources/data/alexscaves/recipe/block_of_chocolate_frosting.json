@@ -6,12 +6,8 @@
     "FFF"
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:block_of_frosting"
-    },
-    "C": {
-      "item": "alexscaves:block_of_chocolate"
-    }
+    "F": "alexscaves:block_of_frosting",
+    "C": "alexscaves:block_of_chocolate"
   },
   "result": {
     "count": 8,

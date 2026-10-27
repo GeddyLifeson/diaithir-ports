@@ -1,10 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "citadel:effect_item",
-      "components": {
-        "citadel:display_effect": "alexscaves:deepsight"
-      }
+      "id": "minecraft:potion"
     },
     "title": {
       "translate": "advancements.alexscaves.deepsight.title"

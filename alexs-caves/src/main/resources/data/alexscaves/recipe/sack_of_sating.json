@@ -6,15 +6,9 @@
     "GGG"
   ],
   "key": {
-    "G": {
-      "tag": "alexscaves:gelatins"
-    },
-    "L": {
-      "item": "alexscaves:licoroot_vine"
-    },
-    "T": {
-      "item": "alexscaves:sweet_tooth"
-    }
+    "G": "#alexscaves:gelatins",
+    "L": "alexscaves:licoroot_vine",
+    "T": "alexscaves:sweet_tooth"
   },
   "result": {
     "id": "alexscaves:sack_of_sating",

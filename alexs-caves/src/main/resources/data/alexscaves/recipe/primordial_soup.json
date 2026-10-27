@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:cooked_trilocaris_tail"
-    },
-    {
-      "item": "alexscaves:cooked_trilocaris_tail"
-    },
-    {
-      "item": "alexscaves:tree_star"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "alexscaves:cooked_trilocaris_tail",
+    "alexscaves:cooked_trilocaris_tail",
+    "alexscaves:tree_star",
+    "minecraft:bowl"
   ],
   "result": {
     "id": "alexscaves:primordial_soup",

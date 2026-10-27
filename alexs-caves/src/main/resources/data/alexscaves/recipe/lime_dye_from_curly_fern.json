@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:curly_fern"
-    }
+    "alexscaves:curly_fern"
   ],
   "result": {
     "count": 2,

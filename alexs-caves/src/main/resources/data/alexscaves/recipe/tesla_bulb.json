@@ -6,12 +6,8 @@
     "NNN"
   ],
   "key": {
-    "N": {
-      "item": "alexscaves:energized_galena_neutral"
-    },
-    "C": {
-      "item": "alexscaves:telecore"
-    }
+    "N": "alexscaves:energized_galena_neutral",
+    "C": "alexscaves:telecore"
   },
   "result": {
     "id": "alexscaves:tesla_bulb",

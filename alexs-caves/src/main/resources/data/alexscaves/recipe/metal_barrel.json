@@ -6,12 +6,8 @@
     " S "
   ],
   "key": {
-    "S": {
-      "item": "alexscaves:scrap_metal"
-    },
-    "B": {
-      "tag": "c:barrels/wooden"
-    }
+    "S": "alexscaves:scrap_metal",
+    "B": "#c:barrels/wooden"
   },
   "result": {
     "id": "alexscaves:metal_barrel",

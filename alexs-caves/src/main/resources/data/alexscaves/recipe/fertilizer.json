@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:guano"
-    },
-    {
-      "item": "alexscaves:guano"
-    },
-    {
-      "item": "minecraft:bone_meal"
-    }
+    "alexscaves:guano",
+    "alexscaves:guano",
+    "minecraft:bone_meal"
   ],
   "result": {
     "id": "alexscaves:fertilizer",

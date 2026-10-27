@@ -6,12 +6,8 @@
     "FFF"
   ],
   "key": {
-    "F": {
-      "item": "alexscaves:block_of_frosting"
-    },
-    "C": {
-      "item": "minecraft:sugar"
-    }
+    "F": "alexscaves:block_of_frosting",
+    "C": "minecraft:sugar"
   },
   "result": {
     "count": 8,

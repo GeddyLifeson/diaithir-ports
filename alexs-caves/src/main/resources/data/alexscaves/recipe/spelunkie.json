@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "alexscaves:sulfur_dust"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    }
+    "alexscaves:sulfur_dust",
+    "minecraft:sugar",
+    "minecraft:sugar"
   ],
   "result": {
     "count": 2,

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "alexscaves:guano_block"
-  },
+  "ingredient": "alexscaves:guano_block",
   "result": {
     "id": "alexscaves:guanostone",
     "count": 1

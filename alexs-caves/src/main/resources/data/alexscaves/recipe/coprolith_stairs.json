@@ -6,9 +6,7 @@
     "AAA"
   ],
   "key": {
-    "A": {
-      "item": "alexscaves:coprolith"
-    }
+    "A": "alexscaves:coprolith"
   },
   "result": {
     "count": 4,
