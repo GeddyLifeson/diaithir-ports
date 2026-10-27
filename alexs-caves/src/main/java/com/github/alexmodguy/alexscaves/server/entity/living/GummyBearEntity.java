@@ -176,7 +176,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
             }
         });
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, SweetishFishEntity.class, 100, true, false, livingEntity -> livingEntity instanceof SweetishFishEntity sweetishFish && sweetishFish.getGummyColor() == this.getGummyColor()));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, SweetishFishEntity.class, 100, true, false, com.github.alexmodguy.alexscaves.server.misc.ACProps.sel(livingEntity -> livingEntity instanceof SweetishFishEntity sweetishFish && sweetishFish.getGummyColor() == this.getGummyColor())));
         this.targetSelector.addGoal(3, new ProtectBabiesGoal());
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Husk.class, true, false));
     }
@@ -198,7 +198,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
         super.readAdditionalSaveData(compound);
         this.setGummyColor(GummyColors.fromOrdinal(compound.getIntOr("GummyColor", 0)));
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "DigestingEffect")) {
-            this.digestEffect(BuiltInRegistries.POTION.get(Identifier.parse(compound.getStringOr("DigestingEffect", ""))));
+            this.digestEffect(BuiltInRegistries.POTION.getValue(Identifier.parse(compound.getStringOr("DigestingEffect", ""))));
             this.setDigesting(digestingEffect != null);
             this.jellybeansToMake = compound.getIntOr("JellyBeansToMake", 0);
         }
@@ -299,7 +299,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
     }
 
     private void updateDigestionColors() {
-        Potion potion = BuiltInRegistries.POTION.get(digestingEffect);
+        Potion potion = BuiltInRegistries.POTION.getValue(digestingEffect);
         if (potion != null) {
             Holder<Potion> potionHolder = BuiltInRegistries.POTION.wrapAsHolder(potion);
             PotionContents potionContents = new PotionContents(potionHolder);
@@ -327,7 +327,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
     }
 
     public ItemStack createJellybean() {
-        Potion potion = BuiltInRegistries.POTION.get(digestingEffect);
+        Potion potion = BuiltInRegistries.POTION.getValue(digestingEffect);
         return potion == null ? new ItemStack(ACItemRegistry.JELLY_BEAN.get()) : ACEffectRegistry.createJellybean(potion);
     }
 

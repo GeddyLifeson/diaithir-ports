@@ -189,7 +189,7 @@ public class SeaPigEntity extends WaterAnimal implements Bucketable {
         if (!level().isClientSide()) {
             LootTable loottable = level().getServer().reloadableRegistries().getLootTable(DIGESTION_LOOT_TABLE);
             List<ItemStack> items = loottable.getRandomItems((new LootParams.Builder((ServerLevel) this.level())).withParameter(LootContextParams.THIS_ENTITY, this).create(LootContextParamSets.PIGLIN_BARTER));
-            items.forEach(this::spawnAtLocation);
+            items.forEach(i -> this.spawnAtLocation((ServerLevel) this.level(), i));
         }
         this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
     }
@@ -243,8 +243,9 @@ public class SeaPigEntity extends WaterAnimal implements Bucketable {
         if (this.hasCustomName()) {
             bucket.set(DataComponents.CUSTOM_NAME, this.getCustomName());
         }
-        CompoundTag platTag = new CompoundTag();
-        this.addAdditionalSaveData(platTag);
+        net.minecraft.world.level.storage.TagValueOutput platOut = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess());
+        this.addAdditionalSaveData(platOut);
+        CompoundTag platTag = platOut.buildResult();
         CompoundTag compound = bucket.getOrDefault(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY).copyTag();
         compound.put("FishBucketTag", platTag);
         bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(compound));
@@ -273,7 +274,7 @@ public class SeaPigEntity extends WaterAnimal implements Bucketable {
     @Override
     public void loadFromBucketTag(@Nonnull CompoundTag compound) {
         if (compound.contains("FishBucketTag")) {
-            this.readAdditionalSaveData(compound.getCompoundOrEmpty("FishBucketTag"));
+            this.readAdditionalSaveData(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess(), compound.getCompoundOrEmpty("FishBucketTag")));
         }
         this.setAirSupply(2000);
     }

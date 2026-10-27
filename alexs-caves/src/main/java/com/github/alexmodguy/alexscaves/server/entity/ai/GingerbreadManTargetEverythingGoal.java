@@ -21,11 +21,11 @@ public class GingerbreadManTargetEverythingGoal extends NearestAttackableTargetG
 
     protected void findTarget() {
         if (this.targetType != Player.class && this.targetType != ServerPlayer.class) {
-            this.target = this.mob.level().getNearestEntity(this.mob.level().getEntitiesOfClass(this.targetType, this.getTargetSearchArea(this.getFollowDistance()), (entity) -> {
+            this.target = ((net.minecraft.server.level.ServerLevel) this.mob.level()).getNearestEntity(this.mob.level().getEntitiesOfClass(this.targetType, this.getTargetSearchArea(this.getFollowDistance()), (entity) -> {
                 return !(entity instanceof GingerbreadManEntity gingerbreadMan1 && gingerbreadMan1.getGingerbreadTeamColor() == gingerbreadMan.getGingerbreadTeamColor());
             }), this.targetConditions, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
         } else {
-            this.target = this.mob.level().getNearestPlayer(this.targetConditions, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+            this.target = ((net.minecraft.server.level.ServerLevel) this.mob.level()).getNearestPlayer(this.targetConditions, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
         }
     }
 }

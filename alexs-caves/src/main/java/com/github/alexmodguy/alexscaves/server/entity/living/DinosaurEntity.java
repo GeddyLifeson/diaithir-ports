@@ -330,8 +330,8 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
         return type;
     }
 
-    public boolean startRiding(Entity entity, boolean force) {
-        boolean flag = super.startRiding(entity, force);
+    public boolean startRiding(Entity entity, boolean force, boolean sendEvents) {
+        boolean flag = super.startRiding(entity, force, sendEvents);
         if (flag && entity instanceof AbstractMinecart) {
             List<EntityType> nearbyDinosaurEntityTypes = new ArrayList<>();
             double advancementRange = 30.0D;
@@ -352,8 +352,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
         return flag;
     }
 
-    @Override
-    public boolean isAlliedTo(Entity entityIn) {
+    public boolean isAlliedToDino(Entity entityIn) {
         if (this.isTame()) {
             LivingEntity livingentity = this.getOwner();
             if (entityIn == livingentity) {

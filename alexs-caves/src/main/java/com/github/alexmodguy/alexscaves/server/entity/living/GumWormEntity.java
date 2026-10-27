@@ -591,17 +591,17 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
     protected void dropAllDeathLoot(ServerLevel serverLevel, DamageSource damageSource) {
         this.captureDrops(new java.util.ArrayList<>());
 
-        boolean flag = this.lastHurtByPlayerTime > 0;
-        if (this.shouldDropLoot() && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(serverLevel, GameRules.MOB_DROPS)) {
-            this.dropFromLootTable(damageSource, flag);
+        boolean flag = this.lastHurtByPlayerMemoryTime > 0;
+        if (this.shouldDropLoot(serverLevel) && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(serverLevel, GameRules.MOB_DROPS)) {
+            this.dropFromLootTable(serverLevel, damageSource, flag);
             this.dropCustomDeathLoot(serverLevel, damageSource, flag);
         }
 
-        this.dropEquipment();
-        this.dropExperience(damageSource.getEntity());
+        this.dropEquipment(serverLevel);
+        this.dropExperience(serverLevel, damageSource.getEntity());
 
         Collection<ItemEntity> drops = captureDrops(null);
-        if (!net.neoforged.neoforge.common.CommonHooks.onLivingDrops(this, damageSource, drops, lastHurtByPlayerTime > 0)){
+        if (!net.neoforged.neoforge.common.CommonHooks.onLivingDrops(this, damageSource, drops, lastHurtByPlayerMemoryTime > 0)){
             drops.forEach(e -> dropItemAtSurface(e));
         }
     }

@@ -308,7 +308,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
     public boolean canPossessTargetEntity(Entity entity) {
         if (entity instanceof Player player) {
             CompoundTag playerData = player.getPersistentData();
-            CompoundTag data = playerData.getCompound(Player.PERSISTED_NBT_TAG);
+            CompoundTag data = playerData.getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
             if (data != null) {
                 long timeElapsed = level().getGameTime() - data.getLongOr(LAST_POSSESSED_TIME_IDENTIFIER, 0L);
                 return timeElapsed >= AlexsCaves.COMMON_CONFIG.watcherPossessionCooldown.get();
@@ -370,7 +370,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
 
     public static void setLastPossessedTimeFor(Player player){
         CompoundTag playerData = player.getPersistentData();
-        CompoundTag data = playerData.getCompound(Player.PERSISTED_NBT_TAG);
+        CompoundTag data = playerData.getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
         if (data != null) {
             data.putLong(LAST_POSSESSED_TIME_IDENTIFIER, player.level().getGameTime());
             playerData.put(Player.PERSISTED_NBT_TAG, data);

@@ -632,16 +632,16 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
         return new Vec3(player.xxa * 0.35F, 0.0D, player.zza * 0.8F * f);
     }
 
-    protected int calculateFallDamage(float f1, float f2) {
+    protected int calculateFallDamage(double f1, float f2) {
         return Mth.ceil((f1 * 0.33F - 5.0F) * f2);
     }
 
     @Override
-    public boolean causeFallDamage(float f1, float f2, DamageSource damageSource) {
-        float[] ret = net.neoforged.neoforge.common.CommonHooks.onLivingFall(this, f1, f2);
-        if (ret == null) return false;
-        f1 = ret[0];
-        f2 = ret[1];
+    public boolean causeFallDamage(double f1, float f2, DamageSource damageSource) {
+        net.neoforged.neoforge.event.entity.living.LivingFallEvent ret = net.neoforged.neoforge.common.CommonHooks.onLivingFall(this, f1, f2);
+        if (ret.isCanceled()) return false;
+        f1 = ret.getDistance();
+        f2 = ret.getDamageMultiplier();
 
         boolean flag = causeInternalFallDamage(f1, f2, damageSource);
         int i = this.calculateFallDamage(f1, f2);
@@ -655,11 +655,11 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
         }
     }
 
-    private boolean causeInternalFallDamage(float f1, float f2, DamageSource damageSource) {
-        float[] ret = net.neoforged.neoforge.common.CommonHooks.onLivingFall(this, f1, f2);
-        if (ret == null) return false;
-        f1 = ret[0];
-        f2 = ret[1];
+    private boolean causeInternalFallDamage(double f1, float f2, DamageSource damageSource) {
+        net.neoforged.neoforge.event.entity.living.LivingFallEvent ret = net.neoforged.neoforge.common.CommonHooks.onLivingFall(this, f1, f2);
+        if (ret.isCanceled()) return false;
+        f1 = ret.getDistance();
+        f2 = ret.getDamageMultiplier();
 
         int i = this.calculateFallDamage(f1, f2);
         if (i > 0) {

@@ -154,7 +154,7 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
 
 
     @Override
-    public ItemEntity spawnAtLocation(ItemStack stack) {
+    public ItemEntity spawnAtLocation(net.minecraft.server.level.ServerLevel serverLevel, ItemStack stack) {
         ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY() + (double)1, this.getZ(), stack);
         if (itementity != null) {
             if(this.headPart != null){
@@ -181,7 +181,7 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
             }
             if(this.getAnimation() == ANIMATION_DIE && this.getAnimationTick() > 10 && this.getAnimationTick() % 7 == 0 && collectedLoot && !deathItems.isEmpty()){
                 ItemStack randomItem = Util.getRandom(deathItems, getRandom());
-                spawnAtLocation(randomItem.copy());
+                spawnAtLocation((ServerLevel) level(), randomItem.copy());
                 deathItems.remove(randomItem);
             }
         }
@@ -195,10 +195,10 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
     private void populateDeathLootForHullbreaker(){
         DamageSource damageSource = getLastDamageSource();
         if(damageSource != null){
-            LootTable loottable = this.level().getServer().reloadableRegistries().getLootTable(this.getLootTable());
+            LootTable loottable = this.level().getServer().reloadableRegistries().getLootTable(this.getLootTable().orElseThrow());
             LootParams.Builder lootparams$builder = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.THIS_ENTITY, this).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.DAMAGE_SOURCE, damageSource).withOptionalParameter(LootContextParams.ATTACKING_ENTITY, damageSource.getEntity()).withOptionalParameter(LootContextParams.DIRECT_ATTACKING_ENTITY, damageSource.getDirectEntity());
             if (this.lastHurtByPlayer != null) {
-                lootparams$builder = lootparams$builder.withParameter(LootContextParams.LAST_DAMAGE_PLAYER, this.lastHurtByPlayer).withLuck(this.lastHurtByPlayer.getLuck());
+                lootparams$builder = lootparams$builder.withParameter(LootContextParams.LAST_DAMAGE_PLAYER, this.getLastHurtByPlayer()).withLuck(this.getLastHurtByPlayer().getLuck());
             }
             LootParams lootparams = lootparams$builder.create(LootContextParamSets.ENTITY);
             loottable.getRandomItems(lootparams, this.getLootTableSeed(), deathItems::add);

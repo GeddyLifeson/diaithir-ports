@@ -328,7 +328,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
                             ItemStack one = currentStack.copy();
                             one.setCount(1);
                             currentStack.shrink(1);
-                            spawnAtLocation(one);
+                            spawnAtLocation((ServerLevel) level(), one);
                         }
                     }
 
@@ -343,10 +343,10 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
     private void populateDeathLootForLuxtructosaurus() {
         DamageSource damageSource = getLastDamageSource();
         if (damageSource != null) {
-            LootTable loottable = this.level().getServer().reloadableRegistries().getLootTable(this.getLootTable());
+            LootTable loottable = this.level().getServer().reloadableRegistries().getLootTable(this.getLootTable().orElseThrow());
             LootParams.Builder lootparams$builder = (new LootParams.Builder((ServerLevel) this.level())).withParameter(LootContextParams.THIS_ENTITY, this).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.DAMAGE_SOURCE, damageSource).withOptionalParameter(LootContextParams.ATTACKING_ENTITY, damageSource.getEntity()).withOptionalParameter(LootContextParams.DIRECT_ATTACKING_ENTITY, damageSource.getDirectEntity());
             if (this.lastHurtByPlayer != null) {
-                lootparams$builder = lootparams$builder.withParameter(LootContextParams.LAST_DAMAGE_PLAYER, this.lastHurtByPlayer).withLuck(this.lastHurtByPlayer.getLuck());
+                lootparams$builder = lootparams$builder.withParameter(LootContextParams.LAST_DAMAGE_PLAYER, this.getLastHurtByPlayer()).withLuck(this.getLastHurtByPlayer().getLuck());
             }
             LootParams lootparams = lootparams$builder.create(LootContextParamSets.ENTITY);
             loottable.getRandomItems(lootparams, this.getLootTableSeed(), deathItems::add);
@@ -355,7 +355,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
     }
 
     @Override
-    public ItemEntity spawnAtLocation(ItemStack stack) {
+    public ItemEntity spawnAtLocation(net.minecraft.server.level.ServerLevel serverLevel, ItemStack stack) {
         ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY() + (double) 1, this.getZ(), stack);
         if (itementity != null) {
             Vec3 centerOfMob = this.position().add(3.0F - 6.0F * random.nextFloat(), 4, 3.0F - 6.0F * random.nextFloat());

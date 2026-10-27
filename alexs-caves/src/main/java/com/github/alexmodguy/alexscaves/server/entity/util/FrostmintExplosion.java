@@ -240,7 +240,6 @@ public class FrostmintExplosion {
                 BlockState blockstate = this.level.getBlockState(blockpos);
                 if (!blockstate.isAir()) {
                     BlockPos blockpos1 = blockpos.immutable();
-                    this.level.getProfiler().push("explosion_blocks");
                     Level level1 = this.level;
                     if (level1 instanceof ServerLevel) {
                         ServerLevel serverlevel = (ServerLevel) level1;
@@ -255,11 +254,7 @@ public class FrostmintExplosion {
                             addBlockDrops(objectarraylist, p_46074_, blockpos1);
                         });
                     }
-                    if (dummyExplosion == null) {
-                        dummyExplosion = new Explosion(level, null, this.x, this.y, this.z, this.radius, false, Explosion.BlockInteraction.KEEP);
-                    }
-                    blockstate.onBlockExploded(level, blockpos, dummyExplosion);
-                    this.level.getProfiler().pop();
+                    level.setBlock(blockpos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
                 }
             }
 

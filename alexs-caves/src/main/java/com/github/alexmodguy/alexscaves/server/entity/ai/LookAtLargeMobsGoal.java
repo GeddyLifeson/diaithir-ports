@@ -20,7 +20,7 @@ public class LookAtLargeMobsGoal extends LookAtPlayerGoal {
                 this.lookAt = this.mob.getTarget();
             }
 
-            this.lookAt = this.mob.level().getNearestEntity(this.mob.level().getEntitiesOfClass(this.lookAtType, this.mob.getBoundingBox().inflate((double)this.lookDistance, 3.0D, (double)this.lookDistance), (entity) -> entity.getBbHeight() > minHeight), this.lookAtContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+            this.lookAt = ((net.minecraft.server.level.ServerLevel) this.mob.level()).getNearestEntity(this.mob.level().getEntitiesOfClass(this.lookAtType, this.mob.getBoundingBox().inflate((double)this.lookDistance, 3.0D, (double)this.lookDistance), (entity) -> entity.getBbHeight() > minHeight), this.lookAtContext, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
 
             return this.lookAt != null;
         }

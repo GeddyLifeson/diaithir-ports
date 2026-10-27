@@ -67,7 +67,7 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 15.0F));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 20, false, true, IRRADIATED_TARGET));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 20, false, true, com.github.alexmodguy.alexscaves.server.misc.ACProps.sel(IRRADIATED_TARGET)));
     }
 
     public static boolean isValidLightLevel(ServerLevelAccessor levelAccessor, BlockPos blockPos, RandomSource randomSource) {
@@ -138,8 +138,8 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
         if (this.getAnimation() == ANIMATION_SPRAY) {
             if (this.getAnimationTick() == 10) {
                 AreaEffectCloud areaeffectcloud = new AreaEffectCloud(this.level(), this.getX(), this.getY() + 0.2F, this.getZ());
-                areaeffectcloud.setParticle(ACParticleRegistry.GAMMAROACH.get());
-                areaeffectcloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0X77D60E), java.util.List.of()));
+                areaeffectcloud.setCustomParticle(ACParticleRegistry.GAMMAROACH.get());
+                areaeffectcloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0X77D60E), java.util.List.of(), java.util.Optional.empty()));
                 areaeffectcloud.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED, 2000));
                 areaeffectcloud.setRadius(2.3F);
                 areaeffectcloud.setDuration(200);

@@ -227,7 +227,6 @@ public class TephraExplosion {
                 BlockState blockstate = this.level.getBlockState(blockpos);
                 if (!blockstate.isAir()) {
                     BlockPos blockpos1 = blockpos.immutable();
-                    this.level.getProfiler().push("explosion_blocks");
                     Level level1 = this.level;
                     boolean setToAir = true;
                     if (level1 instanceof ServerLevel) {
@@ -247,17 +246,13 @@ public class TephraExplosion {
                             });
                         }
                     }
-                    if (dummyExplosion == null) {
-                        dummyExplosion = new Explosion(level, null, this.x, this.y, this.z, this.radius, false, Explosion.BlockInteraction.KEEP);
-                    }
                     if (blockstate.getFluidState().isEmpty() && !blockstate.is(ACBlockRegistry.FISSURE_PRIMAL_MAGMA.get())) {
                         if (setToAir) {
-                            blockstate.onBlockExploded(level, blockpos, dummyExplosion);
+                            level.setBlock(blockpos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
                         } else {
                             level.setBlock(blockpos, ACBlockRegistry.FISSURE_PRIMAL_MAGMA.get().defaultBlockState().setValue(FissurePrimalMagmaBlock.REGEN_HEIGHT, 0), 3);
                         }
                     }
-                    this.level.getProfiler().pop();
                 }
             }
 
@@ -266,7 +261,7 @@ public class TephraExplosion {
             }
         }
         for (BlockPos blockpos2 : this.toBlow) {
-            if (this.random.nextInt(3) == 0 && this.level.getBlockState(blockpos2).isAir() && this.level.getBlockState(blockpos2.below()).isSolidRender(this.level, blockpos2.below())) {
+            if (this.random.nextInt(3) == 0 && this.level.getBlockState(blockpos2).isAir() && this.level.getBlockState(blockpos2.below()).isSolidRender()) {
                 this.level.setBlockAndUpdate(blockpos2, BaseFireBlock.getState(this.level, blockpos2));
             }
         }

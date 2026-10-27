@@ -222,7 +222,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
                             level().addFreshEntity(itemEntity);
                         }
                         double advancementRange = 20.0D;
-                        for (Player player : level().getNearbyPlayers(TargetingConditions.forNonCombat().range(advancementRange), this, this.getBoundingBox().inflate(advancementRange))) {
+                        for (Player player : ((net.minecraft.server.level.ServerLevel) level()).getNearbyPlayers(TargetingConditions.forNonCombat().range(advancementRange), this, this.getBoundingBox().inflate(advancementRange))) {
                             if (player.distanceTo(this) < advancementRange) {
                                 ACAdvancementTriggerRegistry.DEEP_ONE_TRADE.get().triggerForEntity(player);
                             }
@@ -361,7 +361,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
             compound.putInt("AltarZ", lastAltarPos.getZ());
         }
         if (!swappedItem.isEmpty()) {
-            compound.put("SwappedItem", swappedItem.saveOptional(this.registryAccess()));
+            compound.store("SwappedItem", ItemStack.OPTIONAL_CODEC, swappedItem);
         }
         compound.putBoolean("ConchSummoned", this.isSummoned());
         if (summonerUUID != null) {
@@ -375,8 +375,8 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarZ")) {
             this.setLastAltarPos(new BlockPos(compound.getIntOr("AltarX", 0), compound.getIntOr("AltarY", 0), compound.getIntOr("AltarZ", 0)));
         }
-        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SwappedWeapon")) {
-            swappedItem = ItemStack.parseOptional(this.registryAccess(), compound.getCompoundOrEmpty("SwappedWeapon"));
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SwappedItem")) {
+            swappedItem = compound.read("SwappedItem", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         }
         this.setSummoned(compound.getBooleanOr("ConchSummoned", false));
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "ConchUUID")) {
@@ -615,7 +615,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
         this.entityData.set(SOUNDS_ANGRY, angrySounding);
     }
 
-    public boolean isAlliedTo(Entity entityIn) {
+    public boolean isAlliedToDeepOne(Entity entityIn) {
         if (entityIn instanceof DeepOneBaseEntity) {
             return true;
         } else if (entityIn instanceof Player) {

@@ -53,8 +53,8 @@ import java.util.function.Predicate;
 
 public class MagnetronEntity extends Monster {
 
-    private static final EntityDataAccessor<CompoundTag> BLOCKSTATES = SynchedEntityData.defineId(MagnetronEntity.class, EntityDataSerializers.COMPOUND_TAG);
-    private static final EntityDataAccessor<CompoundTag> BLOCK_POSES = SynchedEntityData.defineId(MagnetronEntity.class, EntityDataSerializers.COMPOUND_TAG);
+    private static final EntityDataAccessor<CompoundTag> BLOCKSTATES = SynchedEntityData.defineId(MagnetronEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.COMPOUND_TAG);
+    private static final EntityDataAccessor<CompoundTag> BLOCK_POSES = SynchedEntityData.defineId(MagnetronEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.COMPOUND_TAG);
     private static final EntityDataAccessor<Boolean> FORMED = SynchedEntityData.defineId(MagnetronEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> ATTACK_POSE = SynchedEntityData.defineId(MagnetronEntity.class, EntityDataSerializers.INT);
 
@@ -332,19 +332,15 @@ public class MagnetronEntity extends Monster {
     @Override
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         this.setFormed(compound.getBooleanOr("Formed", false));
-        if (compound.contains("Blockstates", 10)) {
-            this.entityData.set(BLOCKSTATES, compound.getCompoundOrEmpty("Blockstates"));
-        }
-        if (compound.contains("BlockPoses", 10)) {
-            this.entityData.set(BLOCK_POSES, compound.getCompoundOrEmpty("BlockPoses"));
-        }
+        compound.read("Blockstates", CompoundTag.CODEC).ifPresent(t -> this.entityData.set(BLOCKSTATES, t));
+        compound.read("BlockPoses", CompoundTag.CODEC).ifPresent(t -> this.entityData.set(BLOCK_POSES, t));
     }
 
     @Override
     public void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput compound) {
         compound.putBoolean("Formed", this.isFormed());
-        compound.put("Blockstates", this.entityData.get(BLOCKSTATES));
-        compound.put("BlockPoses", this.entityData.get(BLOCK_POSES));
+        compound.store("Blockstates", CompoundTag.CODEC, this.entityData.get(BLOCKSTATES));
+        compound.store("BlockPoses", CompoundTag.CODEC, this.entityData.get(BLOCK_POSES));
 
     }
 
@@ -463,7 +459,7 @@ public class MagnetronEntity extends Monster {
             ListTag listTag = data.getListOrEmpty("BlockPos");
             for (int i = 0; i < listTag.size(); ++i) {
                 CompoundTag innerTag = listTag.getCompoundOrEmpty(i);
-                NbtUtils.readBlockPos(innerTag, "pos").ifPresent(list::add);
+                innerTag.getIntArray("pos").filter(a -> a.length == 3).ifPresent(a -> list.add(new BlockPos(a[0], a[1], a[2])));
             }
         }
         return list;
@@ -474,7 +470,7 @@ public class MagnetronEntity extends Monster {
         ListTag listTag = new ListTag();
         for (BlockPos pos : list) {
             CompoundTag posTag = new CompoundTag();
-            posTag.put("pos", NbtUtils.writeBlockPos(pos));
+            posTag.putIntArray("pos", new int[]{pos.getX(), pos.getY(), pos.getZ()});
             listTag.add(posTag);
         }
         tag.put("BlockPos", listTag);
@@ -509,7 +505,6 @@ public class MagnetronEntity extends Monster {
         return (prevAttackPoseProgress + (this.attackPoseProgress - prevAttackPoseProgress) * partialTick) / 10F;
     }
 
-    @Override
     public AABB getBoundingBoxForCulling() {
         return isFormed() ? this.getBoundingBox().inflate(3.5F, 5, 3.5F) : this.getBoundingBox();
     }

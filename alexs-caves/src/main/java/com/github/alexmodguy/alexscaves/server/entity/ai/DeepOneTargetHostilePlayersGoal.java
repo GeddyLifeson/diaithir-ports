@@ -16,7 +16,7 @@ public class DeepOneTargetHostilePlayersGoal extends NearestAttackableTargetGoal
 
     @Override
     protected void findTarget() {
-        this.target = this.mob.level().getNearestEntity(this.mob.level().getEntitiesOfClass(this.targetType, this.getTargetSearchArea(this.getFollowDistance()), (targetEntity) -> {
+        this.target = ((net.minecraft.server.level.ServerLevel) this.mob.level()).getNearestEntity(this.mob.level().getEntitiesOfClass(this.targetType, this.getTargetSearchArea(this.getFollowDistance()), (targetEntity) -> {
             return targetEntity instanceof Player player && this.deepOne.getReactionTo(player) == DeepOneReaction.AGGRESSIVE && !player.isCreative();
         }), this.targetConditions, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
     }

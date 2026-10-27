@@ -243,7 +243,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
         }
         if(this.isOvenSpawned()){
             if(despawnFromOvenCooldown-- < 0){
-                this.kill();
+                this.kill((ServerLevel) this.level());
                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.MAIN_HAND));
                 this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.OFF_HAND));
@@ -542,7 +542,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     }
 
     @Override
-    protected void dropExperience(@org.jetbrains.annotations.Nullable Entity attacker) {
+    protected void dropExperience(net.minecraft.server.level.ServerLevel serverLevel, @org.jetbrains.annotations.Nullable Entity attacker) {
         if(!this.isOvenSpawned()){
             super.dropExperience(serverLevel, attacker);
         }
@@ -568,7 +568,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     private void onLoseArm(boolean left, boolean arm) {
         Vec3 vec3 = arm ? new Vec3(left ? 0.3F : -0.3F, this.getBbHeight() * 0.8F, 0) : new Vec3(left ? 0.2F : -0.2F, this.getBbHeight() * 0.3F, 0);
         Vec3 vec31 = vec3.yRot((float) -Math.toRadians(this.yBodyRot)).add(this.position());
-        ItemParticleOption itemParticleOption = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ACItemRegistry.GINGERBREAD_CRUMBS.get()));
+        ItemParticleOption itemParticleOption = new ItemParticleOption(ParticleTypes.ITEM, ACItemRegistry.GINGERBREAD_CRUMBS.get());
         for(int i = 0; i < 5; i++){
             this.level().addParticle(itemParticleOption, vec31.x, vec31.y, vec31.z, ((double) this.random.nextFloat() - 0.5D) * 0.2D, ((double) this.random.nextFloat() - 0.5D) * 0.2D, ((double) this.random.nextFloat() - 0.5D) * 0.2D);
         }

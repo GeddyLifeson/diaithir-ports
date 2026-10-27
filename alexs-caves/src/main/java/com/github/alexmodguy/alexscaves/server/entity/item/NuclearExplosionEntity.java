@@ -171,9 +171,6 @@ public class NuclearExplosionEntity extends Entity {
         if (AlexsCaves.COMMON_CONFIG.nukeMaxBlockExplosionResistance.get() <= 0) {
             return;
         }
-        if (dummyExplosion == null) {
-            dummyExplosion = new Explosion(level(), null, this.getX(), this.getY(), this.getZ(), 10.0F, false, Explosion.BlockInteraction.KEEP);
-        }
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
                 for (int y = 15; y >= 0; y--) {

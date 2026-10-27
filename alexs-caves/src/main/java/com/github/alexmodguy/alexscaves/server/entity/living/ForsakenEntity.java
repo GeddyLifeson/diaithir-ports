@@ -115,7 +115,7 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, ForsakenEntity.class)));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Mob.class, 120, false, true, TARGETING));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Mob.class, 120, false, true, com.github.alexmodguy.alexscaves.server.misc.ACProps.sel(TARGETING)));
     }
 
     protected PathNavigation createNavigation(Level level) {

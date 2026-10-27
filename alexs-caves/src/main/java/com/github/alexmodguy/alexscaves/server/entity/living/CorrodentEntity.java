@@ -484,7 +484,7 @@ public class CorrodentEntity extends Monster implements ICustomCollisions, IAnim
         public PathType getPathType(PathfindingContext context, int x, int y, int z) {
             BlockPos pos = new BlockPos(x, y, z);
             PathType def = super.getPathType(context, x, y, z);
-            if (def == PathType.LAVA || def == PathType.OPEN || def == PathType.WATER || def == PathType.WATER_BORDER || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.DANGER_POWDER_SNOW) {
+            if (def == PathType.LAVA || def == PathType.OPEN || def == PathType.WATER || def == PathType.WATER_BORDER || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.POWDER_SNOW) {
                 return PathType.BLOCKED;
             }
             return isSafeDig(context.level(), pos) && pos.getY() > context.level().getMinY() ? PathType.WALKABLE : PathType.BLOCKED;

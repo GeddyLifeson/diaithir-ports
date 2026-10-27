@@ -87,10 +87,10 @@ public class BoundroidWinchEntity extends Monster {
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float damage) {
         Entity body = this.getHead();
-        if (isInvulnerableTo(source)) {
+        if (isInvulnerableTo(serverLevel, source)) {
             return false;
         }
-        if (body != null && !body.isInvulnerableTo(source)) {
+        if (body != null && !(body instanceof LivingEntity __b && __b.isInvulnerableTo(serverLevel, source))) {
             boolean flag = body.hurtServer((net.minecraft.server.level.ServerLevel) body.level(), source, damage);
             if (flag) {
                 noLatchCooldown = 60 + random.nextInt(60);

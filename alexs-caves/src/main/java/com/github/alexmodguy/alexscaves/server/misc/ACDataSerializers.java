@@ -15,5 +15,7 @@ public class ACDataSerializers {
     public static final DeferredRegister<EntityDataSerializer<?>> DEF_REG = DeferredRegister.create(NeoForgeRegistries.Keys.ENTITY_DATA_SERIALIZERS, AlexsCaves.MODID);
 
     public static final EntityDataSerializer<Optional<UUID>> OPTIONAL_UUID = EntityDataSerializer.forValueType(ByteBufCodecs.optional(UUIDUtil.STREAM_CODEC));
+    public static final EntityDataSerializer<net.minecraft.nbt.CompoundTag> COMPOUND_TAG = EntityDataSerializer.forValueType(ByteBufCodecs.COMPOUND_TAG);
+    public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<net.minecraft.nbt.CompoundTag>> COMPOUND_TAG_HOLDER = DEF_REG.register("compound_tag", () -> COMPOUND_TAG);
     public static final DeferredHolder<EntityDataSerializer<?>, EntityDataSerializer<Optional<UUID>>> OPTIONAL_UUID_HOLDER = DEF_REG.register("optional_uuid", () -> OPTIONAL_UUID);
 }

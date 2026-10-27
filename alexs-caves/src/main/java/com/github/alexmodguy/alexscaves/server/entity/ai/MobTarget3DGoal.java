@@ -15,7 +15,7 @@ public class MobTarget3DGoal extends NearestAttackableTargetGoal {
 
 
     public MobTarget3DGoal(Mob mob, Class targetClass, boolean sight, int chance, Predicate<LivingEntity> predicate) {
-        super(mob, targetClass, chance, sight, false, predicate);
+        super(mob, targetClass, chance, sight, false, com.github.alexmodguy.alexscaves.server.misc.ACProps.sel(predicate));
     }
 
     @Override

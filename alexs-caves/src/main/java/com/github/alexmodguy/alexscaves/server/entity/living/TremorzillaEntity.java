@@ -164,7 +164,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         this.setPathfindingMalus(PathType.FIRE, 0.0F);
         this.setPathfindingMalus(PathType.WATER, 0.0F);
         this.setPathfindingMalus(PathType.LEAVES, 0.0F);
-        dummyExplosion = new Explosion(level(), null, this.getX(), this.getY(), this.getZ(), 10.0F, false, Explosion.BlockInteraction.KEEP, List.of());
+        
     }
 
     protected PathNavigation createNavigation(Level level) {
@@ -892,7 +892,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
                 if (random.nextFloat() <= dropChance && !nuke) {
                     level().destroyBlock(blockpos, true);
                 } else {
-                    blockstate.onBlockExploded(level(), blockpos, dummyExplosion);
+                    level().setBlock(blockpos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
                 }
                 if (triggerExplosions) {
                     if (nuke) {

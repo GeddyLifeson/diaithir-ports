@@ -11,7 +11,7 @@ public class MobTargetUntamedGoal<T extends LivingEntity> extends NearestAttacka
     private final TamableAnimal tamableMob;
 
     public MobTargetUntamedGoal(TamableAnimal tamableAnimal, Class<T> clazz, int chance, boolean seeCheck, boolean reachCheck, @Nullable Predicate<LivingEntity> entityPredicate) {
-        super(tamableAnimal, clazz, chance, seeCheck, reachCheck, entityPredicate);
+        super(tamableAnimal, clazz, chance, seeCheck, reachCheck, com.github.alexmodguy.alexscaves.server.misc.ACProps.sel(entityPredicate));
         this.tamableMob = tamableAnimal;
     }
 
@@ -20,6 +20,6 @@ public class MobTargetUntamedGoal<T extends LivingEntity> extends NearestAttacka
     }
 
     public boolean canContinueToUse() {
-        return this.targetConditions != null ? this.targetConditions.test(this.mob, this.target) : super.canContinueToUse();
+        return this.targetConditions != null ? this.targetConditions.test((net.minecraft.server.level.ServerLevel) this.mob.level(), this.mob, this.target) : super.canContinueToUse();
     }
 }

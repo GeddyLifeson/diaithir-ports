@@ -116,7 +116,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
 
     public static boolean isWithinTowerSpawnBounds(ServerLevelAccessor level, BlockPos pos) {
         ResourceKey<Structure> structureKey = ResourceKey.create(Registries.STRUCTURE, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "licowitch_tower"));
-        Structure structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).get(structureKey);
+        Structure structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).get(structureKey).map(net.minecraft.core.Holder::value).orElse(null);
         if (structure != null) {
             StructureStart structureStart = level.getLevel().structureManager().getStructureAt(pos, structure);
             if (structureStart.isValid()) {
@@ -260,7 +260,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
             this.postTeleport();
         }
         if (this.getAnimation() == ANIMATION_EAT && this.getAnimationTick() < 90 && this.getAnimationTick() % 4 == 0) {
-            this.triggerItemUseEffects(this.getItemInHand(InteractionHand.MAIN_HAND), 2);
+            this.spawnItemParticles(this.getItemInHand(InteractionHand.MAIN_HAND), 2);
         }
         if (teleportCooldown > 0) {
             teleportCooldown--;
@@ -315,13 +315,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
     public void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput compoundTag) {
         super.addAdditionalSaveData(compoundTag);
         List<UUID> list = this.getPossessedUUIDs();
-        ListTag listtag = new ListTag();
-        for (UUID uuid : list) {
-            if (uuid != null) {
-                listtag.add(NbtUtils.createUUID(uuid));
-            }
-        }
-        compoundTag.put("Possessed", listtag);
+        compoundTag.store("Possessed", net.minecraft.core.UUIDUtil.CODEC.listOf(), list.stream().filter(java.util.Objects::nonNull).toList());
 
         BlockPos cruciblePos = getLastCruciblePos();
         if (cruciblePos != null) {
@@ -334,20 +328,13 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compoundTag) {
         super.readAdditionalSaveData(compoundTag);
-        ListTag listtag = compoundTag.getListOrEmpty("Possessed");
-        for (int i = 0; i < listtag.size(); ++i) {
-            this.addPossessedUUID(NbtUtils.loadUUID(listtag.get(i)));
-        }
+        compoundTag.read("Possessed", net.minecraft.core.UUIDUtil.CODEC.listOf()).ifPresent(l -> l.forEach(this::addPossessedUUID));
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleZ")) {
             this.setLastCruciblePos(new BlockPos(compoundTag.getIntOr("CrucibleX", 0), compoundTag.getIntOr("CrucibleY", 0), compoundTag.getIntOr("CrucibleZ", 0)));
         }
         teleportCooldown = compoundTag.getIntOr("TeleportCooldown", 0);
     }
 
-    @Override
-    protected float getEquipmentDropChance(EquipmentSlot slot) {
-        return slot.isArmor() ? super.getEquipmentDropChance(slot) : 0.0F;
-    }
 
     protected int calculateFallDamage(float f, float f1) {
         return super.calculateFallDamage(f, f1) - 2;
@@ -481,8 +468,8 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
     }
 
     @Override
-    public void awardKillScore(Entity entity, int deathScore, DamageSource damageSource) {
-        super.awardKillScore(entity, deathScore, damageSource);
+    public void awardKillScore(Entity entity, DamageSource damageSource) {
+        super.awardKillScore(entity, damageSource);
         this.level().playSound((Player) null, this.blockPosition(), ACSoundRegistry.LICOWITCH_CELEBRATE.get(), SoundSource.HOSTILE, 0.3F, 0.9F + this.level().getRandom().nextFloat() * 0.2F);
     }
 

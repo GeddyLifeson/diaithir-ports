@@ -72,6 +72,10 @@ public final class ACProps {
         return out.buildResult();
     }
 
+    public static net.minecraft.world.entity.ai.targeting.TargetingConditions.Selector sel(java.util.function.Predicate<net.minecraft.world.entity.LivingEntity> p) {
+        return p == null ? null : (t, l) -> p.test(t);
+    }
+
     public static boolean rule(net.minecraft.world.level.Level level, net.minecraft.world.level.gamerules.GameRule<Boolean> rule) {
         return !(level instanceof net.minecraft.server.level.ServerLevel serverLevel) || serverLevel.getGameRules().get(rule);
     }
