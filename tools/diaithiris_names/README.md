@@ -1,8 +1,12 @@
 # Diaithiris item names
 
-`diaithir-tooltips` shows an item's Diaithiris name in grey italics under its normal name. The names are a table
-(`diaithir-tooltips/src/main/resources/assets/diaithirtooltips/diaithiris_names.json`, item id to name), so the line is
-the same in every game language.
+`diaithir-tooltips` shows an item's name in the player's starting culture, in small grey italics under its normal
+(lang) name. The player's culture is a slug from DiaithirRPG `culture_starts.csv`, stored as a synced player attachment
+(`/culture set <players> <slug>`, or `player.setData(DiaithirTooltips.CULTURE, slug)` from the picker); empty reads as
+`diaithir`. Names are tables, not lang files, so the line is the same in every game language:
+`assets/diaithirtooltips/cultures/<slug>.json` = `{"item": {id: name}, "block": {...}, "entity": {...}}`. A culture with
+no file, or an id with no entry, shows no line. `CultureNames.name(kind, id)` is the lookup for other UIs (Jade, Codex).
+`cultures/diaithir.json` is what this generator writes.
 
 Regenerate after the modlist changes:
 
