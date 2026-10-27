@@ -1,14 +1,3 @@
 {
-  "layers": {
-    "humanoid": [
-      {
-        "texture": "alexscaves:diving_suit"
-      }
-    ],
-    "humanoid_leggings": [
-      {
-        "texture": "alexscaves:diving_suit"
-      }
-    ]
-  }
+  "layers": {}
 }

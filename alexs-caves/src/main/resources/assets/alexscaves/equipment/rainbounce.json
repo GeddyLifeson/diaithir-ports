@@ -1,9 +1,3 @@
 {
-  "layers": {
-    "humanoid": [
-      {
-        "texture": "alexscaves:rainbounce"
-      }
-    ]
-  }
+  "layers": {}
 }

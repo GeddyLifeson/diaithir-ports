@@ -41,6 +41,26 @@ public class ClientModEvents {
     }
 
     @SubscribeEvent
+    public static void registerArmorLayerDefinitions(net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions event) {
+        com.github.alexmodguy.alexscaves.client.model.layered.ACModelLayers.register(event);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SubscribeEvent
+    public static void addArmorLayers(net.neoforged.neoforge.client.event.EntityRenderersEvent.AddLayers event) {
+        for (var skin : event.getSkins()) {
+            var r = event.getPlayerRenderer(skin);
+            if (r != null) ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.CustomArmorLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r));
+        }
+        for (var type : event.getEntityTypes()) {
+            var r = event.getRenderer((net.minecraft.world.entity.EntityType) type);
+            if (r instanceof net.minecraft.client.renderer.entity.HumanoidMobRenderer || r instanceof net.minecraft.client.renderer.entity.ArmorStandRenderer) {
+                ((net.minecraft.client.renderer.entity.LivingEntityRenderer) r).addLayer(new com.github.alexmodguy.alexscaves.client.render.entity.layer.CustomArmorLayer((net.minecraft.client.renderer.entity.RenderLayerParent) r));
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void registerParticleGroups(RegisterParticleGroupsEvent event) {
         event.register(LegacyParticle.TYPE, LegacyParticle.Group::new);
     }
