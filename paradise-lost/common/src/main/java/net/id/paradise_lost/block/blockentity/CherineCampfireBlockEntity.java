@@ -185,17 +185,20 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
         this.itemsBeingCooked.clear();
     }
 
-    protected void applyImplicitComponents(BlockEntity.DataComponentInput components) {
+    @Override
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter components) {
         super.applyImplicitComponents(components);
         (components.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY)).copyInto(this.getItemsBeingCooked());
     }
 
+    @Override
     protected void collectImplicitComponents(DataComponentMap.Builder componentMapBuilder) {
         super.collectImplicitComponents(componentMapBuilder);
         componentMapBuilder.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItemsBeingCooked()));
     }
 
-    public void removeComponentsFromTag(CompoundTag nbt) {
-        nbt.remove("Items");
+    @Override
+    public void removeComponentsFromTag(net.minecraft.world.level.storage.ValueOutput nbt) {
+        nbt.discard("Items");
     }
 }

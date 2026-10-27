@@ -9,17 +9,21 @@ import net.minecraft.world.level.material.Fluid;
 public class RenderUtils {
 
     public static int toHex(Vec3i color) {
-        return Mth.color(color.getX(), color.getY(), color.getZ());
+        return rgb(color.getX(), color.getY(), color.getZ());
     }
 
     @Deprecated(forRemoval = true)
     public static int toHex(int r, int g, int b) {
-        return Mth.color(r, g, b);
+        return rgb(r, g, b);
     }
 
     @Deprecated(forRemoval = true)
     public static int toHex(int r, int g, int b, int a) {
-        return Mth.color(r, g, b) | (a << 24);
+        return rgb(r, g, b) | (a << 24);
+    }
+
+    private static int rgb(int r, int g, int b) {
+        return ((r & 0xFF) << 16) | ((g & 0xFF) << 8) | (b & 0xFF);
     }
 
     public static Vec3i toRGB(int hex) {

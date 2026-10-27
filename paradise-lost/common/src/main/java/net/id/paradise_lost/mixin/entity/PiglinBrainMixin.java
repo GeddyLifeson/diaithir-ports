@@ -15,8 +15,8 @@ public class PiglinBrainMixin {
 
     @Inject(method = "isWearingSafeArmor", at = @At("TAIL"), cancellable = true)
     private static void wearsGoldArmor(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        Iterable<ItemStack> iterable = entity.getArmorAndBodyArmorSlots();
-        for (ItemStack itemStack : iterable) {
+        for (net.minecraft.world.entity.EquipmentSlot slot : new net.minecraft.world.entity.EquipmentSlot[] {net.minecraft.world.entity.EquipmentSlot.HEAD, net.minecraft.world.entity.EquipmentSlot.CHEST, net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET}) {
+            ItemStack itemStack = entity.getItemBySlot(slot);
             var equippable = itemStack.get(DataComponents.EQUIPPABLE);
             if (equippable == null || equippable.assetId().isEmpty() || !equippable.assetId().get().equals(ParadiseLostArmorMaterials.GLAZED_GOLD.assetId())) continue;
             cir.setReturnValue(true);

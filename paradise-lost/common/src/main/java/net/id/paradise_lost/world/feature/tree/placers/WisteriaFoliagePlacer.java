@@ -10,7 +10,7 @@ import net.id.paradise_lost.world.feature.tree.ParadiseLostTreeHell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,7 +38,7 @@ public class WisteriaFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader world, FoliageSetter placer, RandomSource random, TreeConfiguration config, int trunkHeight, FoliageAttachment treeNode, int foliageHeight, int radius, int offset) {
+    protected void createFoliage(WorldGenLevel world, FoliageSetter placer, RandomSource random, TreeConfiguration config, int trunkHeight, FoliageAttachment treeNode, int foliageHeight, int radius, int offset) {
         Set<BlockPos> leaves = Sets.newHashSet();
         if (radius < 3) {
             radius = 3;
@@ -52,7 +52,7 @@ public class WisteriaFoliagePlacer extends FoliagePlacer {
         BlockPos nodePos = treeNode.pos();
         BlockPos altNodePos = nodePos.above(offset);
 
-        BlockState leafBlock = config.foliageProvider.getState(random, nodePos);
+        BlockState leafBlock = config.foliageProvider.getState(world, random, nodePos);
         BlockState hanger = Blocks.AIR.defaultBlockState();
 
         if (leafBlock.getBlock() instanceof ParadiseLostLeavesBlock) {

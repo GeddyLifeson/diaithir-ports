@@ -80,4 +80,11 @@ public class FoodBowlBlockEntity extends BlockEntity {
         super.saveAdditional(nbt);
         ContainerHelper.saveAllItems(nbt, inventory);
     }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, net.minecraft.world.level.block.state.BlockState state) {
+        if (level != null) {
+            net.minecraft.world.Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), getContainedItem());
+        }
+    }
 }

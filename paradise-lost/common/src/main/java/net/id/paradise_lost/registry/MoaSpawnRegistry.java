@@ -140,13 +140,13 @@ public final class MoaSpawnRegistry {
     }
 
     private static Identifier pick(Level world, List<WeightedRace> candidates, RandomSource random) {
-        List<Weighted<Identifier>> weighted = new ArrayList<>(candidates.size());
+        List<net.minecraft.util.random.Weighted<Identifier>> weighted = new ArrayList<>(candidates.size());
         for (WeightedRace entry : candidates) {
             if (resolve(world, entry.race()) != null) {
-                weighted.add(WeightedEntry.wrap(entry.race(), entry.weight()));
+                weighted.add(new net.minecraft.util.random.Weighted<>(entry.race(), entry.weight()));
             }
         }
-        return WeightedRandom.getRandomItem(random, weighted).map(WeightedEntry.Wrapper::data).orElse(null);
+        return net.minecraft.util.random.WeightedList.of(weighted).getRandom(random).orElse(null);
     }
 
     private static MoaRace resolve(Level world, Identifier raceId) {

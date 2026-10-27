@@ -28,7 +28,7 @@ public class ParadiseLostBoulderFeature extends Feature<BoulderFeatureConfig> {
         for (; blockPos.getY() > structureWorldAccess.getMinY() + 3; blockPos = blockPos.below()) {
             if (!structureWorldAccess.isEmptyBlock(blockPos.below())) {
                 BlockState blockState = structureWorldAccess.getBlockState(blockPos.below());
-                if ((isDirt(blockState) || blockState.is(ParadiseLostBlockTags.BASE_PARADISE_LOST_STONE)) && random.nextBoolean()) {
+                if ((blockState.is(net.minecraft.tags.BlockTags.DIRT) || blockState.is(ParadiseLostBlockTags.BASE_PARADISE_LOST_STONE)) && random.nextBoolean()) {
                     break;
                 }
             }
@@ -49,7 +49,7 @@ public class ParadiseLostBoulderFeature extends Feature<BoulderFeatureConfig> {
 
                 for (BlockPos bodyPos : BlockPos.betweenClosed(blockPos.offset(-j, -k, -l), blockPos.offset(j, k, l))) {
                     if (bodyPos.distSqr(blockPos) <= (double) (f * f)) {
-                        structureWorldAccess.setBlock(bodyPos, config.body().getState(random, bodyPos), Block.UPDATE_INVISIBLE);
+                        structureWorldAccess.setBlock(bodyPos, config.body().getState(structureWorldAccess, random, bodyPos), Block.UPDATE_INVISIBLE);
                     }
                 }
 

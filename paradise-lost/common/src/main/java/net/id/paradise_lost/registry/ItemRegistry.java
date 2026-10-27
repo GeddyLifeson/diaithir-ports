@@ -8,7 +8,6 @@ import net.id.paradise_lost.item.armor.ParadiseLostArmorMaterials;
 import net.id.paradise_lost.item.armor.XpCircletItem;
 import net.id.paradise_lost.item.food.ParadiseLostFoodComponent;
 import net.id.paradise_lost.item.misc.*;
-import net.id.paradise_lost.item.tool.AurelMilkBucketItem;
 import net.id.paradise_lost.item.tool.ParadiseLostToolMaterials;
 import net.id.paradise_lost.item.tool.AurelBucketItem;
 import net.id.paradise_lost.item.tool.SoulSwordItem;
@@ -74,7 +73,7 @@ public class ItemRegistry {
 
     @SuppressWarnings("unchecked")
     private static Properties withSherdPattern(Properties properties, String patternPath) {
-        DataComponentType<Identifier> type = (DataComponentType<Identifier>) BuiltInRegistries.DATA_COMPONENT_TYPE.get(
+        DataComponentType<Identifier> type = (DataComponentType<Identifier>) BuiltInRegistries.DATA_COMPONENT_TYPE.getValue(
                 Identifier.fromNamespaceAndPath("sherdsapi", "sherd_pattern"));
         return properties.component(type, locate(patternPath));
     }
@@ -113,9 +112,7 @@ public class ItemRegistry {
         return tool().hoe(material, attackDamage, attackSpeed);
     }
 
-    private static final Properties tool = tool();
-    private static final Properties rareTool = tool().rarity(RARE);
-    private static Properties unstackableTool() {
+            private static Properties unstackableTool() {
         return tool().stacksTo(1);
     }
     private static Properties unstackableRareTool() {
@@ -191,14 +188,15 @@ public class ItemRegistry {
     public static final RegistryObject<Item, XpCircletItem> XP_CIRCLET = add("xp_circlet", () -> new XpCircletItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.RELIC, ArmorType.HELMET).rarity(RARE)));
     public static final RegistryObject<Item, FloatyLeggingsItem> FLOATY_LEGGINGS = add("floaty_leggings",
             () -> new FloatyLeggingsItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.FLOATY, ArmorType.LEGGINGS).rarity(UNCOMMON)));
-    public static final RegistryObject<Item, FloatyBootsItem> FLOATY_BOOTS = add("floaty_boots",
+    public static final RegistryObject<Item, Item> FLOATY_BOOTS = add("floaty_boots",
             () -> new FloatyBootsItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.FLOATY, ArmorType.BOOTS).rarity(UNCOMMON)));
     private static Properties food() {
         return new Properties();
     }
 
-    private static Properties food(FoodProperties foodComponent) {
-        return new Properties().food(foodComponent);
+    private static Properties food(ParadiseLostFoodComponent.Food f) {
+        Properties p = new Properties().food(f.food(), f.consumable());
+        return f.convertsTo() == null ? p : p.usingConvertsTo(f.convertsTo());
     }
 
     public static final RegistryObject<Item, BlockItem> BLACKCURRANT = add("blackcurrant", () -> new BlockItem(BlockRegistry.BLACKCURRANT_BUSH.get(), food(ParadiseLostFoodComponent.BLACKCURRANT)), compostable30);
@@ -226,7 +224,7 @@ public class ItemRegistry {
     }
     public static final RegistryObject<Item, AurelBucketItem> AUREL_WATER_BUCKET = add("aurel_water_bucket", () -> new AurelBucketItem(Fluids.WATER, aurelBucket()), emptiableBucketBehavior);
     public static final RegistryObject<Item, AurelBucketItem> AUREL_POWDER_SNOW_BUCKET = add("aurel_powder_snow_bucket", () -> new AurelBucketItem(Blocks.POWDER_SNOW, aurelBucket()), emptiableBucketBehavior);
-    public static final RegistryObject<Item, AurelMilkBucketItem> AUREL_MILK_BUCKET = add("aurel_milk_bucket", () -> new AurelMilkBucketItem(new Item.Properties().craftRemainder(AUREL_BUCKET.get()).stacksTo(1)));
+    public static final RegistryObject<Item, Item> AUREL_MILK_BUCKET = add("aurel_milk_bucket", () -> new Item(new Item.Properties().stacksTo(1).usingConvertsTo(AUREL_BUCKET.get()).component(net.minecraft.core.component.DataComponents.CONSUMABLE, net.minecraft.world.item.component.Consumable.builder().consumeSeconds(1.6F).animation(net.minecraft.world.item.ItemUseAnimation.DRINK).sound(net.minecraft.sounds.SoundEvents.GENERIC_DRINK).hasConsumeParticles(false).onConsume(new net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect()).build())));
     public static final RegistryObject<Item, WardedJarItem> WARDED_JAR = add("warded_jar", () -> new WardedJarItem(new Properties()));
     private static Properties wardedJar() {
         return new Properties().stacksTo(1).craftRemainder(WARDED_JAR.get());
@@ -235,23 +233,23 @@ public class ItemRegistry {
     public static final RegistryObject<Item, WardedJarItem> WARDED_JAR_QUINT = add("warded_jar_quint", () -> new WardedJarItem(EntityRegistry.QUINT.get(), wardedJar()));
     public static final RegistryObject<Item, Item> PALACE_KEY = add("palace_key", () -> new Item(new Properties()));
 
-    public static final RegistryObject<Item, SpawnEggItem> ENVOY_SPAWN_EGG = add("envoy_spawn_egg", () -> new SpawnEggItem(EntityRegistry.ENVOY.get(), 0xc5b1af, 0x993c3c, new Properties()), spawnEggBehavior);
-    public static final RegistryObject<Item, SpawnEggItem> SENTINEL_SPAWN_EGG = add("sentinel_spawn_egg", () -> new SpawnEggItem(EntityRegistry.SENTINEL.get(), 0xf7eeec, 0xffc0bf, new Properties()), spawnEggBehavior);
-    public static final RegistryObject<Item, SpawnEggItem> MOA_SPAWN_EGG = add("moa_spawn_egg", () -> new SpawnEggItem(EntityRegistry.MOA.get(), 0xC55C2E4, 0xB3A8BB, new Properties()), spawnEggBehavior);
-    public static final RegistryObject<Item, SpawnEggItem> POPOM_SPAWN_EGG = add("popom_spawn_egg", () -> new SpawnEggItem(EntityRegistry.POPOM.get(), 0xd984e8, 0xd4d0cf, new Properties()), spawnEggBehavior);
-    public static final RegistryObject<Item, SpawnEggItem> QUINT_SPAWN_EGG = add("quint_spawn_egg", () -> new SpawnEggItem(EntityRegistry.QUINT.get(), 0xd9d0d9, 0xeeebf0, new Properties()), spawnEggBehavior);
+    public static final RegistryObject<Item, SpawnEggItem> ENVOY_SPAWN_EGG = add("envoy_spawn_egg", () -> new SpawnEggItem(new Properties().spawnEgg(EntityRegistry.ENVOY.get())), spawnEggBehavior);
+    public static final RegistryObject<Item, SpawnEggItem> SENTINEL_SPAWN_EGG = add("sentinel_spawn_egg", () -> new SpawnEggItem(new Properties().spawnEgg(EntityRegistry.SENTINEL.get())), spawnEggBehavior);
+    public static final RegistryObject<Item, SpawnEggItem> MOA_SPAWN_EGG = add("moa_spawn_egg", () -> new SpawnEggItem(new Properties().spawnEgg(EntityRegistry.MOA.get())), spawnEggBehavior);
+    public static final RegistryObject<Item, SpawnEggItem> POPOM_SPAWN_EGG = add("popom_spawn_egg", () -> new SpawnEggItem(new Properties().spawnEgg(EntityRegistry.POPOM.get())), spawnEggBehavior);
+    public static final RegistryObject<Item, SpawnEggItem> QUINT_SPAWN_EGG = add("quint_spawn_egg", () -> new SpawnEggItem(new Properties().spawnEgg(EntityRegistry.QUINT.get())), spawnEggBehavior);
 
-    public static final RegistryObject<Item, StandingAndWallBlockItem> CHERINE_TORCH = add("cherine_torch", () -> new StandingAndWallBlockItem(BlockRegistry.CHERINE_TORCH.get(), BlockRegistry.CHERINE_TORCH_WALL.get(), new Properties(), Direction.DOWN));
+    public static final RegistryObject<Item, StandingAndWallBlockItem> CHERINE_TORCH = add("cherine_torch", () -> new StandingAndWallBlockItem(BlockRegistry.CHERINE_TORCH.get(), BlockRegistry.CHERINE_TORCH_WALL.get(), Direction.DOWN, new Properties()));
 
-    private static final Properties sign = new Properties().stacksTo(16);
-    public static final RegistryObject<Item, SignItem> AUREL_SIGN = add("aurel_sign", () -> new SignItem(sign, BlockRegistry.AUREL_SIGNS.sign().get(), BlockRegistry.AUREL_SIGNS.wallSign().get()), fuel(200));
-    public static final RegistryObject<Item, SignItem> AUREL_HANGING_SIGN = add("aurel_hanging_sign", () -> new HangingSignItem(BlockRegistry.AUREL_SIGNS.hangingSign().get(), BlockRegistry.AUREL_SIGNS.wallHangingSign().get(), sign), fuel(200));
-    public static final RegistryObject<Item, SignItem> MOTHER_AUREL_SIGN = add("mother_aurel_sign", () -> new SignItem(sign, BlockRegistry.MOTHER_AUREL_SIGNS.sign().get(), BlockRegistry.MOTHER_AUREL_SIGNS.wallSign().get()), fuel(200));
-    public static final RegistryObject<Item, SignItem> MOTHER_AUREL_HANGING_SIGN = add("mother_aurel_hanging_sign", () -> new HangingSignItem(BlockRegistry.MOTHER_AUREL_SIGNS.hangingSign().get(), BlockRegistry.MOTHER_AUREL_SIGNS.wallHangingSign().get(), sign), fuel(200));
-    public static final RegistryObject<Item, SignItem> MENTH_SIGN = add("menth_sign", () -> new SignItem(sign, BlockRegistry.MENTH_SIGNS.sign().get(), BlockRegistry.MENTH_SIGNS.wallSign().get()), fuel(200));
-    public static final RegistryObject<Item, SignItem> MENTH_HANGING_SIGN = add("menth_hanging_sign", () -> new HangingSignItem(BlockRegistry.MENTH_SIGNS.hangingSign().get(), BlockRegistry.MENTH_SIGNS.wallHangingSign().get(), sign), fuel(200));
-    public static final RegistryObject<Item, SignItem> WISTERIA_SIGN = add("wisteria_sign", () -> new SignItem(sign, BlockRegistry.WISTERIA_SIGNS.sign().get(), BlockRegistry.WISTERIA_SIGNS.wallSign().get()));
-    public static final RegistryObject<Item, SignItem> WISTERIA_HANGING_SIGN = add("wisteria_hanging_sign", () -> new HangingSignItem(BlockRegistry.WISTERIA_SIGNS.hangingSign().get(), BlockRegistry.WISTERIA_SIGNS.wallHangingSign().get(), sign), fuel(200));
+    private static Properties sign() { return new Properties().stacksTo(16); }
+    public static final RegistryObject<Item, SignItem> AUREL_SIGN = add("aurel_sign", () -> new SignItem(BlockRegistry.AUREL_SIGNS.sign().get(), BlockRegistry.AUREL_SIGNS.wallSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> AUREL_HANGING_SIGN = add("aurel_hanging_sign", () -> new HangingSignItem(BlockRegistry.AUREL_SIGNS.hangingSign().get(), BlockRegistry.AUREL_SIGNS.wallHangingSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> MOTHER_AUREL_SIGN = add("mother_aurel_sign", () -> new SignItem(BlockRegistry.MOTHER_AUREL_SIGNS.sign().get(), BlockRegistry.MOTHER_AUREL_SIGNS.wallSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> MOTHER_AUREL_HANGING_SIGN = add("mother_aurel_hanging_sign", () -> new HangingSignItem(BlockRegistry.MOTHER_AUREL_SIGNS.hangingSign().get(), BlockRegistry.MOTHER_AUREL_SIGNS.wallHangingSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> MENTH_SIGN = add("menth_sign", () -> new SignItem(BlockRegistry.MENTH_SIGNS.sign().get(), BlockRegistry.MENTH_SIGNS.wallSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> MENTH_HANGING_SIGN = add("menth_hanging_sign", () -> new HangingSignItem(BlockRegistry.MENTH_SIGNS.hangingSign().get(), BlockRegistry.MENTH_SIGNS.wallHangingSign().get(), sign()), fuel(200));
+    public static final RegistryObject<Item, SignItem> WISTERIA_SIGN = add("wisteria_sign", () -> new SignItem(BlockRegistry.WISTERIA_SIGNS.sign().get(), BlockRegistry.WISTERIA_SIGNS.wallSign().get(), sign()));
+    public static final RegistryObject<Item, SignItem> WISTERIA_HANGING_SIGN = add("wisteria_hanging_sign", () -> new HangingSignItem(BlockRegistry.WISTERIA_SIGNS.hangingSign().get(), BlockRegistry.WISTERIA_SIGNS.wallHangingSign().get(), sign()), fuel(200));
 
     public static BoatSet AUREL_BOATS;
     public static BoatSet MOTHER_AUREL_BOATS;
@@ -263,7 +261,7 @@ public class ItemRegistry {
     private static final RegistrationProvider<Potion> POTIONS =
             RegistrationProvider.get(Registries.POTION, ModConstants.MOD_ID);
 
-    public static final Holder<Potion> HEALTH_BOOST_POTION = registerPotion("health_boost", () -> new Potion(new MobEffectInstance(MobEffects.HEALTH_BOOST, 6000, 1)));
+    public static final Holder<Potion> HEALTH_BOOST_POTION = registerPotion("health_boost", () -> new Potion("health_boost", new MobEffectInstance(MobEffects.HEALTH_BOOST, 6000, 1)));
     public static final Holder<Potion> LONG_HEALTH_BOOST_POTION = registerPotion(
             "long_health_boost", () -> new Potion("health_boost", new MobEffectInstance(MobEffects.HEALTH_BOOST, 12000, 1))
     );

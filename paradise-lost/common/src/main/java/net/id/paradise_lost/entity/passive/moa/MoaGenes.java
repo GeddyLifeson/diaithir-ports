@@ -51,8 +51,8 @@ public class MoaGenes {
     }
 
     public static MoaEntity getMoaFromEgg(Level world, ItemStack stack, UUID owner, BlockPos pos) {
-        MoaEntity moa = EntityRegistry.MOA.get().create(world);
-        moa.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, moa.getYRot(), moa.getXRot());
+        MoaEntity moa = EntityRegistry.MOA.get().create(world, net.minecraft.world.entity.EntitySpawnReason.SPAWN_ITEM_USE);
+        moa.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, moa.getYRot(), moa.getXRot());
         MoaGenes genes = moa.getGenes();
         if (stack.is(ItemRegistry.MOA_EGG.get())) {
             var component = stack.get(ParadiseLostDataComponentTypes.MOA_GENES);
@@ -190,7 +190,7 @@ public class MoaGenes {
                 hunger = tag.getFloatOr("hunger", 0F);
             }
             if (tag.getBooleanOr("tamed", false)) {
-                owner = tag.getUUID("owner");
+                owner = UUID.fromString(tag.getStringOr("owner", new UUID(0L, 0L).toString()));
             }
             Arrays.stream(MoaAttributes.values()).forEach(attribute -> {
                 if (tag.contains(attribute.name())) {
@@ -245,20 +245,20 @@ public class MoaGenes {
             tag.putFloat("hunger", hunger);
             tag.putBoolean("tamed", isTamed());
             if (isTamed()) {
-                tag.putUUID("owner", owner);
+                tag.putString("owner", owner.toString());
             }
-            Arrays.stream(MoaAttributes.values()).forEach(attribute -> tag.putFloat(attribute.name(), attributeMap.getFloatOr(attribute, 0F)));
+            Arrays.stream(MoaAttributes.values()).forEach(attribute -> tag.putFloat(attribute.name(), attributeMap.getFloat(attribute)));
         }
     }
 
     public ParadiseLostDataComponentTypes.MoaGeneComponent intoComponent() {
         var attributes = new ParadiseLostDataComponentTypes.MoaAttributeComponent(
-                attributeMap.getFloatOr(MoaAttributes.GROUND_SPEED, 0F),
-                attributeMap.getFloatOr(MoaAttributes.GLIDING_SPEED, 0F),
-                attributeMap.getFloatOr(MoaAttributes.GLIDING_DECAY, 0F),
-                attributeMap.getFloatOr(MoaAttributes.JUMPING_STRENGTH, 0F),
-                attributeMap.getFloatOr(MoaAttributes.DROP_MULTIPLIER, 0F),
-                attributeMap.getFloatOr(MoaAttributes.MAX_HEALTH, 0F)
+                attributeMap.getFloat(MoaAttributes.GROUND_SPEED),
+                attributeMap.getFloat(MoaAttributes.GLIDING_SPEED),
+                attributeMap.getFloat(MoaAttributes.GLIDING_DECAY),
+                attributeMap.getFloat(MoaAttributes.JUMPING_STRENGTH),
+                attributeMap.getFloat(MoaAttributes.DROP_MULTIPLIER),
+                attributeMap.getFloat(MoaAttributes.MAX_HEALTH)
         );
         return new ParadiseLostDataComponentTypes.MoaGeneComponent(raceId, affinity.name(), true, hunger, owner == null ? UUID.fromString("00000000-0000-0000-0000-000000000000") : owner, attributes);
     }

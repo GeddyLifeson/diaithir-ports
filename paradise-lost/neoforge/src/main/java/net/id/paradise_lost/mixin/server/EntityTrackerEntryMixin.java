@@ -6,7 +6,8 @@ import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.neoforge.network.bundle.PacketAndPayloadAcceptor;
+import net.minecraft.network.protocol.Packet;
+import java.util.function.Consumer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,7 +26,7 @@ public class EntityTrackerEntryMixin {
     private Entity entity;
 
     @Inject(method = "sendPairingData", at = @At("HEAD"))
-    private void sendPackets(ServerPlayer player, PacketAndPayloadAcceptor<ClientGamePacketListener> sender, CallbackInfo ci) {
+    private void sendPackets(ServerPlayer player, Consumer<Packet<? super ClientGamePacketListener>> sender, CallbackInfo ci) {
         if (this.entity instanceof LivingEntity) {
             this.flipped = ((ParadiseLostEntityExtensions) this.entity).getFlipped();
             this.gravFlippedTime = ((ParadiseLostEntityExtensions) this.entity).getFlipTime();

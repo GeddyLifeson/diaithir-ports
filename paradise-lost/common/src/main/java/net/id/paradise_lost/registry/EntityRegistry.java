@@ -156,7 +156,7 @@ public final class EntityRegistry {
             String id,
             EntityType.Builder<E> builder,
             Consumer<? super RegistryObject<EntityType<?>, EntityType<E>>>... additionalActions) {
-        RegistryObject<EntityType<?>, EntityType<E>> type = ENTITY_TYPES.register(id, () -> builder.build(id));
+        RegistryObject<EntityType<?>, EntityType<E>> type = ENTITY_TYPES.register(id, () -> builder.build(net.minecraft.resources.ResourceKey.create(Registries.ENTITY_TYPE, ModConstants.locate(id))));
         for (var action : additionalActions) {
             action.accept(type);
         }

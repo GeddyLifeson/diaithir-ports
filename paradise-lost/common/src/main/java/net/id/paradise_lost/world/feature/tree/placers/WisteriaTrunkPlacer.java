@@ -10,7 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -46,7 +46,7 @@ public class WisteriaTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
         List<FoliagePlacer.FoliageAttachment> nodes = new ArrayList<>();
 
         int firstHeight = random.nextInt(baseHeight) + baseHeight / 2 + 1;
@@ -75,7 +75,7 @@ public class WisteriaTrunkPlacer extends TrunkPlacer {
 
             dir2 = random.nextBoolean() ? dir.getClockWise() : dir.getCounterClockWise();
 
-            while (offset <= maxBranchRange.getMaxValue()) {
+            while (offset <= maxBranchRange.maxInclusive()) {
                 yOffset = trunkFunc(offset, a, b);
                 if (yOffset < 1) {
                     break;

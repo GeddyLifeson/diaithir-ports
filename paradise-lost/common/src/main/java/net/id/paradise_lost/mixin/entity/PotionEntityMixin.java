@@ -6,7 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile;
-import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.AbstractThrownPotion;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -24,8 +24,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-@Mixin(ThrownPotion.class)
-public class PotionEntityMixin extends ThrowableItemProjectile {
+@Mixin(AbstractThrownPotion.class)
+public abstract class PotionEntityMixin extends ThrowableItemProjectile {
 
     public PotionEntityMixin(EntityType<? extends ThrowableItemProjectile> entityType, Level world) {
         super(entityType, world);
@@ -62,8 +62,8 @@ public class PotionEntityMixin extends ThrowableItemProjectile {
                 }
                 if (!affected.isEmpty()) {
                     Collections.shuffle(affected);
-                    BloomedCalciteUtil.applyHealing(this.getOwner(), level(), affected.get(0), this.level().random, itemStack);
-                    if (affected.size() > 1 && this.level().random.nextBoolean()) BloomedCalciteUtil.applyHealing(this.getOwner(), level(), affected.get(1), this.level().random, itemStack);
+                    BloomedCalciteUtil.applyHealing(this.getOwner(), level(), affected.get(0), this.level().getRandom(), itemStack);
+                    if (affected.size() > 1 && this.level().getRandom().nextBoolean()) BloomedCalciteUtil.applyHealing(this.getOwner(), level(), affected.get(1), this.level().getRandom(), itemStack);
                 }
             }
 
@@ -76,8 +76,4 @@ public class PotionEntityMixin extends ThrowableItemProjectile {
         }
     }
 
-    @Override
-    public Item getDefaultItem() {
-        return Items.SPLASH_POTION;
-    }
 }

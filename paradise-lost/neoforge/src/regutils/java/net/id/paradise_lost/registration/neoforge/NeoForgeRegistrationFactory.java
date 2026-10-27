@@ -108,7 +108,7 @@ public class NeoForgeRegistrationFactory implements RegistrationProvider.Factory
 
         @Override
         public <I extends Item> ItemRegistryObject<I> register(String name, Supplier<? extends I> supplier) {
-            final var obj = new ItemRO<I>(registry.register(name, supplier));
+            final var obj = new ItemRO<I>(registry.register(name, net.id.paradise_lost.registration.RegIdContext.wrap(name, supplier)));
             entries.add(obj);
             return obj;
         }
@@ -129,7 +129,7 @@ public class NeoForgeRegistrationFactory implements RegistrationProvider.Factory
 
         @Override
         public <B extends Block> BlockRegistryObject<B> register(String name, Supplier<? extends B> supplier) {
-            final var obj = new BlockRO<B>(registry.register(name, supplier));
+            final var obj = new BlockRO<B>(registry.register(name, net.id.paradise_lost.registration.RegIdContext.wrap(name, supplier)));
             entries.add(obj);
             return obj;
         }
@@ -180,12 +180,12 @@ public class NeoForgeRegistrationFactory implements RegistrationProvider.Factory
 
         @SuppressWarnings("unchecked")
         private static <T> T get(Registry<T> registry, ResourceKey<?> key) {
-            return registry.get((ResourceKey<T>) key);
+            return registry.getValue((ResourceKey<T>) key);
         }
 
         @Override
         public <I extends T> RegistryObject<T, I> register(String name, Supplier<? extends I> supplier) {
-            final var obj = registry.<I>register(name, supplier);
+            final var obj = registry.<I>register(name, net.id.paradise_lost.registration.RegIdContext.wrap(name, supplier));
             final var ro = new RO<>(obj);
             entries.add(ro);
             return ro;

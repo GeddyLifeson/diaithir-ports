@@ -8,7 +8,7 @@ import net.id.paradise_lost.world.feature.tree.ParadiseLostTreeHell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
@@ -52,8 +52,8 @@ public class OvergrownTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
-        setDirtAt(world, replacer, random, startPos.below(), config);
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel world, BiConsumer<BlockPos, BlockState> replacer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
+        placeBelowTrunkBlock(world, replacer, random, startPos.below(), config);
 
         for (int i = 0; i < height; ++i) {
             var curPos = startPos.above(i);
@@ -68,7 +68,7 @@ public class OvergrownTrunkPlacer extends TrunkPlacer {
 
                         if (TreeFeature.validTreePos(world, tempPos)) {
                             placeLog(world, replacer, random, tempPos, config, (state -> {
-                                var overgrowth = overgrowthProvider.getState(random, tempPos);
+                                var overgrowth = overgrowthProvider.getState(world, random, tempPos);
 
                                 if (overgrowth.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
                                     overgrowth = overgrowth.setValue(BlockStateProperties.HORIZONTAL_FACING, dir.getOpposite());

@@ -46,22 +46,22 @@ public class CalciteDecoratedPotBlockEntity extends BlockEntity implements Rando
     @Override
     protected void saveAdditional(ValueOutput nbt) {
         super.saveAdditional(nbt);
-        this.sherds.save(nbt);
+        if (!this.sherds.equals(PotDecorations.EMPTY)) {
+            nbt.store("sherds", PotDecorations.CODEC, this.sherds);
+        }
         if (!this.trySaveLootTable(nbt) && !this.stack.isEmpty()) {
-            nbt.put("item", this.stack.save(registryLookup));
+            nbt.store("item", ItemStack.CODEC, this.stack);
         }
     }
 
     @Override
     protected void loadAdditional(ValueInput nbt) {
         super.loadAdditional(nbt);
-        this.sherds = PotDecorations.load(nbt);
+        this.sherds = nbt.read("sherds", PotDecorations.CODEC).orElse(PotDecorations.EMPTY);
         if (!this.tryLoadLootTable(nbt)) {
-            if (nbt.contains("item")) {
-                this.stack = ItemStack.parse(registryLookup, nbt.getCompoundOrEmpty("item")).orElse(ItemStack.EMPTY);
-            } else {
-                this.stack = ItemStack.EMPTY;
-            }
+            this.stack = nbt.read("item", ItemStack.CODEC).orElse(ItemStack.EMPTY);
+        } else {
+            this.stack = ItemStack.EMPTY;
         }
     }
 
@@ -127,17 +127,17 @@ public class CalciteDecoratedPotBlockEntity extends BlockEntity implements Rando
     }
 
     @Override
-    protected void applyImplicitComponents(BlockEntity.DataComponentInput components) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter components) {
         super.applyImplicitComponents(components);
         this.sherds = components.getOrDefault(DataComponents.POT_DECORATIONS, PotDecorations.EMPTY);
         this.stack = components.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyOne();
     }
 
     @Override
-    public void removeComponentsFromTag(CompoundTag nbt) {
+    public void removeComponentsFromTag(ValueOutput nbt) {
         super.removeComponentsFromTag(nbt);
-        nbt.remove("sherds");
-        nbt.remove("item");
+        nbt.discard("sherds");
+        nbt.discard("item");
     }
 
     @Override

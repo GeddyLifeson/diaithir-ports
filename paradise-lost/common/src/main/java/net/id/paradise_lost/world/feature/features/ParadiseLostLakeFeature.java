@@ -95,7 +95,7 @@ public class ParadiseLostLakeFeature extends Feature<BlockStateConfiguration> {
                 for (int yOff = 4; yOff < 8; yOff++) {
                     if (waterMap[(xOff * 16 + zOff) * 8 + yOff]) {
                         var below = blockPos.offset(xOff, yOff - 1, zOff);
-                        if (isDirt(context.level().getBlockState(below)) && context.level().getBrightness(LightLayer.SKY, blockPos.offset(xOff, yOff, zOff)) > 0) {
+                        if (context.level().getBlockState(below).is(net.minecraft.tags.BlockTags.DIRT) && context.level().getBrightness(LightLayer.SKY, blockPos.offset(xOff, yOff, zOff)) > 0) {
                             context.level().setBlock(below, BlockRegistry.HIGHLANDS_GRASS.get().defaultBlockState(), Block.UPDATE_CLIENTS);
                         }
                     }

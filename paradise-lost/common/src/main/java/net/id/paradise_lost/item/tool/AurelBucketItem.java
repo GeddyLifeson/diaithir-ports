@@ -57,11 +57,6 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
         ItemStack currentStack = playerIn.getItemInHand(handIn);
         BlockHitResult hitResult = getPlayerPOVHitResult(worldIn, playerIn, this.containedFluid == Fluids.EMPTY ? ClipContext.Fluid.SOURCE_ONLY : ClipContext.Fluid.NONE);
 
-        if (currentStack.getItem() == ItemRegistry.AUREL_MILK_BUCKET.get()) {
-            playerIn.startUsingItem(handIn);
-            return InteractionResult.PASS;
-        }
-
         if (hitResult == null) {
             return InteractionResult.PASS;
         } else if (hitResult.getType() == HitResult.Type.BLOCK) {
@@ -138,7 +133,7 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
                     int i = posIn.getX();
                     int j = posIn.getY();
                     int k = posIn.getZ();
-                    worldIn.playSound(playerIn, posIn, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (worldIn.random.nextFloat() - worldIn.random.nextFloat()) * 0.8F);
+                    worldIn.playSound(playerIn, posIn, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (worldIn.getRandom().nextFloat() - worldIn.getRandom().nextFloat()) * 0.8F);
 
                     for (int l = 0; l < 8; ++l) {
                         worldIn.addParticle(ParticleTypes.LARGE_SMOKE, (double) i + Math.random(), (double) j + Math.random(), (double) k + Math.random(), 0.0D, 0.0D, 0.0D);
@@ -169,12 +164,13 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
     }
 
     @Override
-    public void checkExtraContent(@Nullable Player player, Level world, ItemStack stack, BlockPos pos) {
+    public void checkExtraContent(@Nullable net.minecraft.world.entity.LivingEntity player, Level world, ItemStack stack, BlockPos pos) {
 
     }
 
     @Override
-    public boolean emptyContents(@Nullable Player player, Level world, BlockPos pos, @Nullable BlockHitResult hitResult) {
+    public boolean emptyContents(@Nullable net.minecraft.world.entity.LivingEntity user, Level world, BlockPos pos, @Nullable BlockHitResult hitResult) {
+        Player player = user instanceof Player p ? p : null;
         Block block;
         boolean bl;
         LiquidBlockContainer fluidFillable;
@@ -203,8 +199,8 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
 
         boolean bl2 = var10000;
         if (!bl2) {
-            return hitResult != null && this.emptyContents(player, world, hitResult.getBlockPos().relative(hitResult.getDirection()), null);
-        } else if (world.dimensionType().ultraWarm()) {
+            return hitResult != null && this.emptyContents(user, world, hitResult.getBlockPos().relative(hitResult.getDirection()), null);
+        } else if (world.dimension().equals(Level.NETHER)) {
             int i = pos.getX();
             int j = pos.getY();
             int k = pos.getZ();

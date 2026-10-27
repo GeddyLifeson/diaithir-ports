@@ -34,9 +34,9 @@ public class JaggedOreFeature extends Feature<JaggedOreConfig> {
                 for (int z = zOffset; z < sizez + zOffset; z++) {
                     BlockPos iPos = new BlockPos(center.getX() + x + xOffset, y, center.getZ() + z);
                     if (world.getBlockState(iPos).is(ParadiseLostBlockTags.BASE_PARADISE_LOST_STONE)) {
-                        BlockState block = config.block().getState(rand, center);
+                        BlockState block = config.block().getState(world, rand, center);
                         if (!(block.getBlock() instanceof FloatingBlock && !world.getBlockState(iPos.above()).canOcclude()))
-                            world.setBlock(iPos, config.block().getState(rand, iPos), Block.UPDATE_CLIENTS);
+                            world.setBlock(iPos, config.block().getState(world, rand, iPos), Block.UPDATE_CLIENTS);
                     }
                 }
             }

@@ -121,12 +121,8 @@ public class TreeTapBlock extends ParadiseLostBlockWithEntity {
     }
 
 	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
-		if (!state.is(newState.getBlock())) {
-			scatterContents(world, pos);
-			world.updateNeighbourForOutputSignal(pos, this);
-		}
-		super.onRemove(state, world, pos, newState, moved);
+	protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel world, BlockPos pos, boolean moved) {
+		Containers.updateNeighboursAfterDestroy(state, world, pos);
 	}
 
 	public static void scatterContents(Level world, BlockPos pos) {

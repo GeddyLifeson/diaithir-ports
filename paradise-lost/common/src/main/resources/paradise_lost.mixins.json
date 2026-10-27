@@ -12,6 +12,8 @@
     "brain.ActivityInvoker",
     "brain.MemoryModuleTypeInvoker",
     "brain.SensorTypeInvoker",
+    "core.BlockPropertiesIdMixin",
+    "core.ItemPropertiesIdMixin",
     "core.MappedRegistryAliasMixin",
     "enchantment.EnchantmentHelperMixin",
     "entity.AbstractMinecartEntityMixin",

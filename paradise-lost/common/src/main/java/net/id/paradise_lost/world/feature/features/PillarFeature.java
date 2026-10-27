@@ -22,7 +22,7 @@ public class PillarFeature extends Feature<LongFeatureConfig> {
         var world = context.level();
         var height = config.size().sample(random);
 
-        if (config.validFloor().contains(world.getBlockState(pos.below()).getBlockHolder())) {
+        if (config.validFloor().contains(world.getBlockState(pos.below()).typeHolder())) {
             var valid = true;
             var check = 0;
 
@@ -39,13 +39,13 @@ public class PillarFeature extends Feature<LongFeatureConfig> {
                 for (int i = 0; i < height; i++) {
                     var pillar = pos.above(i);
 
-                    world.setBlock(pillar, config.body().getState(random, pillar), Block.UPDATE_ALL);
+                    world.setBlock(pillar, config.body().getState(world, random, pillar), Block.UPDATE_ALL);
 
                     for (Direction dir : Direction.values()) {
                         var shell = pillar.relative(dir);
                         if (dir.get2DDataValue() >= 0 && world.isEmptyBlock(shell) && random.nextFloat() < config.shellChance()) {
 
-                            var shellState = config.shell().getState(random, shell);
+                            var shellState = config.shell().getState(world, random, shell);
 
                             if (shellState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
                                 shellState = shellState.setValue(BlockStateProperties.HORIZONTAL_FACING, dir.getOpposite());
@@ -61,7 +61,7 @@ public class PillarFeature extends Feature<LongFeatureConfig> {
 
                 if (random.nextFloat() < config.topChance()) {
                     var tip = pos.above(height);
-                    world.setBlock(tip, config.top().getState(random, tip), Block.UPDATE_ALL);
+                    world.setBlock(tip, config.top().getState(world, random, tip), Block.UPDATE_ALL);
                 }
             }
 

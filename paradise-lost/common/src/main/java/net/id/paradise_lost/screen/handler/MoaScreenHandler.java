@@ -1,6 +1,5 @@
 package net.id.paradise_lost.screen.handler;
 
-import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.id.paradise_lost.entity.passive.moa.MoaEntity;
@@ -21,14 +20,12 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SaddleItem;
 import net.minecraft.world.level.block.AbstractChestBlock;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 import static net.id.paradise_lost.ModConstants.locate;
-import static net.minecraft.world.inventory.InventoryMenu.BLOCK_ATLAS;
 
 public class MoaScreenHandler extends AbstractContainerMenu {
     private final SimpleContainer dummy = new SimpleContainer(20) {
@@ -57,8 +54,8 @@ public class MoaScreenHandler extends AbstractContainerMenu {
         addSlot(new FakeSlot(
                 8, 18,
                 () -> moa.isSaddled() ? new ItemStack(Items.SADDLE) : ItemStack.EMPTY,
-                (stack) -> moa.setSaddled(!stack.isEmpty() && stack.getItem() instanceof SaddleItem),
-                (stack) -> stack.getItem() instanceof SaddleItem
+                (stack) -> moa.setSaddled(!stack.isEmpty() && stack.is(Items.SADDLE)),
+                (stack) -> stack.is(Items.SADDLE)
             ) {
                 @Override
                 public int getMaxStackSize() {
@@ -66,8 +63,8 @@ public class MoaScreenHandler extends AbstractContainerMenu {
                 }
 
                 @Override
-                public Pair<Identifier, Identifier> getNoItemIcon() {
-                    return Pair.of(BLOCK_ATLAS, locate("item/slot/empty_slot_saddle"));
+                public Identifier getNoItemIcon() {
+        return locate("item/slot/empty_slot_saddle");
                 }
             }
         );
@@ -88,8 +85,8 @@ public class MoaScreenHandler extends AbstractContainerMenu {
                 }
 
                 @Override
-                public Pair<Identifier, Identifier> getNoItemIcon() {
-                    return Pair.of(BLOCK_ATLAS, locate("item/slot/empty_slot_chest"));
+                public Identifier getNoItemIcon() {
+        return locate("item/slot/empty_slot_chest");
                 }
             }
         );

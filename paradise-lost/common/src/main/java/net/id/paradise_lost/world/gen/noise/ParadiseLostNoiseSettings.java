@@ -7,7 +7,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SnowyDirtBlock;
+import net.minecraft.world.level.block.SnowyBlock;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
@@ -59,7 +59,7 @@ public final class ParadiseLostNoiseSettings {
                 SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(3, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ResourceKey.create(Registries.BIOME, locate("highlands_shield"))), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(ResourceKey.create(Registries.NOISE, locate("topsoil/shield_noise")), 0.4d, 2.0d), SurfaceRules.state(BlockRegistry.FLOESTONE.get().defaultBlockState()))))),
                 SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ResourceKey.create(Registries.BIOME, locate("highlands_shield"))), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(ResourceKey.create(Registries.NOISE, locate("topsoil/shield_noise")), 0.3d, 0.45d), SurfaceRules.state(BlockRegistry.COBBLED_FLOESTONE.get().defaultBlockState()))))),
                 SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0), SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ResourceKey.create(Registries.BIOME, locate("autumnal_tundra"))), SurfaceRules.state(BlockRegistry.FROZEN_GRASS.get().defaultBlockState())),
-                SurfaceRules.state(BlockRegistry.HIGHLANDS_GRASS.get().defaultBlockState().setValue(SnowyDirtBlock.SNOWY, false)))),
+                SurfaceRules.state(BlockRegistry.HIGHLANDS_GRASS.get().defaultBlockState().setValue(SnowyBlock.SNOWY, false)))),
                 SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(2, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ResourceKey.create(Registries.BIOME, locate("autumnal_tundra"))), SurfaceRules.state(BlockRegistry.PERMAFROST.get().defaultBlockState())),
                 SurfaceRules.state(BlockRegistry.DIRT.get().defaultBlockState()))),
                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(ResourceKey.create(Registries.NOISE, locate("topsoil/dirt_layer")), 0.0d, 1.0d), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(3, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ResourceKey.create(Registries.BIOME, locate("autumnal_tundra"))), SurfaceRules.state(BlockRegistry.PERMAFROST.get().defaultBlockState())),

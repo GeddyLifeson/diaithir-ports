@@ -79,13 +79,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 
-public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumping, OwnableEntity, ContainerListener, HasCustomInventoryScreen {
+public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumping, OwnableEntity, HasCustomInventoryScreen {
     private static final SimpleContainer DUMMY = new DummyInventory();
 
     public static final EntityDataAccessor<Integer> AIR_TICKS = SynchedEntityData.defineId(MoaEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<ItemStack> CHEST = SynchedEntityData.defineId(MoaEntity.class, EntityDataSerializers.ITEM_STACK);
 
-    private static final EntityDataAccessor<CompoundTag> GENES = SynchedEntityData.defineId(MoaEntity.class, EntityDataSerializers.COMPOUND_TAG);
+    private static final EntityDataAccessor<String> GENES = SynchedEntityData.defineId(MoaEntity.class, EntityDataSerializers.STRING);
     public float curWingRoll, curWingYaw, curLegPitch;
     public float jumpStrength;
     public boolean isInAir;
@@ -115,7 +115,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
 
         this.goalSelector.addGoal(1, new EatFromBowlGoal(0.4, 24, 16));
         this.goalSelector.addGoal(1, new BreedGoal(this, 0.25F));
-        this.goalSelector.addGoal(2, new TemptGoal(this, 0.7D, Ingredient.of(ParadiseLostItemTags.MOA_TEMPTABLES), false));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 0.7D, (stack) -> stack.is(ParadiseLostItemTags.MOA_TEMPTABLES), false));
 
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Parrot.class, 18F, 100f));
         this.goalSelector.addGoal(7, new InteractGoal(this, Parrot.class, 25, 120f));
@@ -155,7 +155,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         super.defineSynchedData(builder);
         builder.define(AIR_TICKS, 0);
         builder.define(CHEST, ItemStack.EMPTY);
-        builder.define(GENES, new CompoundTag());
+        builder.define(GENES, "");
     }
 
     public ItemStack getChest() {
@@ -178,11 +178,9 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         if (hasChest()) {
             if (inventory.getContainerSize() != 20) {
                 inventory = new SimpleContainer(20);
-                inventory.addListener(this);
             }
         } else {
             if (!inventory.isEmpty()) {
-                inventory.removeListener(this);
                 if (scatterItems && !level().isClientSide()) {
                     Containers.dropContents(level(), this, inventory);
                 }
@@ -193,11 +191,11 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
+    protected void dropEquipment(ServerLevel serverLevel) {
+        super.dropEquipment(serverLevel);
         if (hasChest()) {
             if (!level().isClientSide()) {
-                spawnAtLocation(getChest());
+                spawnAtLocation(serverLevel, getChest());
             }
             setChest(ItemStack.EMPTY);
         }
@@ -435,7 +433,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    protected int calculateFallDamage(float fallDistance, float damageMultiplier) {
+    protected int calculateFallDamage(double fallDistance, float damageMultiplier) {
         return 0;
     }
 
@@ -531,8 +529,8 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
 
                     double jumpVelocity = 0.1 * this.jumpStrength * this.getBlockJumpFactor();
 
-                    if (this.hasEffect(MobEffects.JUMP)) {
-                        int boostLevel = this.getEffect(MobEffects.JUMP).getAmplifier() + 1;
+                    if (this.hasEffect(MobEffects.JUMP_BOOST)) {
+                        int boostLevel = this.getEffect(MobEffects.JUMP_BOOST).getAmplifier() + 1;
                         jumpVelocity += boostLevel * 0.1;
                     }
 
@@ -554,7 +552,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
                     isInAir = false;
                 }
 
-                if (this.isControlledByLocalInstance()) {
+                if (this.isLocalInstanceAuthoritative()) {
                     super.travel(new Vec3(movement.x, movement.y, movement.z));
                 } else {
                     this.setDeltaMovement(Vec3.ZERO);
@@ -574,10 +572,10 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     protected void updateWalkAnimation(float posDelta) {
         if (isVehicle()) {
             float f = Math.min(posDelta * 2.0F, 0.5F);
-            this.walkAnimation.update(f, 0.4F);
+            this.walkAnimation.update(f, 0.4F, 1.0F);
         } else {
             float f = Math.min(posDelta * 4.0F, 3F);
-            this.walkAnimation.update(f, 0.5F);
+            this.walkAnimation.update(f, 0.5F, 1.0F);
         }
 
     }
@@ -618,7 +616,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
                 var item = heldStack.getItem();
                 if (heldStack.is(ItemTags.MEAT)) {
                     feedMob(heldStack);
-                    return InteractionResult.sidedSuccess(level().isClientSide());
+                    return InteractionResult.SUCCESS;
                 } else if (!hasChest() && item instanceof BlockItem blockItem && blockItem.getBlock() instanceof AbstractChestBlock) {
 
                     var chestStack = heldStack.copy();
@@ -627,13 +625,13 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
                         heldStack.shrink(1);
                     }
                     setChest(chestStack);
-                    return InteractionResult.sidedSuccess(level().isClientSide());
+                    return InteractionResult.SUCCESS;
                 }
             } else {
                 if (!heldStack.is(ParadiseLostItemTags.MOA_BREEDABLES) && heldStack.is(ParadiseLostItemTags.MOA_TEMPTABLES)) {
                     usePlayerItem(player, hand, heldStack);
                     playSound(ParadiseLostSoundEvents.ENTITY_MOA_EAT, 1, 0.4F + random.nextFloat() / 3F);
-                    produceParticlesServer(new ItemParticleOption(ParticleTypes.ITEM, heldStack), 2 + random.nextInt(4), 7, 0);
+                    produceParticlesServer(new ItemParticleOption(ParticleTypes.ITEM, heldStack.getItem()), 2 + random.nextInt(4), 7, 0);
 
                     var foodComponent = heldStack.getOrDefault(DataComponents.FOOD, null);
                     if (random.nextFloat() < 0.04F * (foodComponent == null ? 2 : foodComponent.nutrition())) {
@@ -659,7 +657,6 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         float hunger = 100 - satiation;
         if (hunger > 1) {
             int consumption = Math.min((int) Math.ceil(hunger / hungerRestored), heldStack.getCount());
-            triggerItemUseEffects(heldStack, 10 + random.nextInt(consumption * 2 + 1));
             heldStack.shrink(consumption);
             getGenes().setHunger(satiation + (consumption * hungerRestored));
             syncGenes();
@@ -672,30 +669,29 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("airTicks", entityData.get(AIR_TICKS));
-        compound.put("chest", entityData.get(CHEST).saveOptional(this.registryAccess()));
+        compound.store("chest", ItemStack.OPTIONAL_CODEC, entityData.get(CHEST));
         if (inventory != DUMMY) {
             // SimpleContainer.createTag/fromTag pack non-empty stacks into consecutive slots,
             // which reshuffles the chest on relog. Write Slot indices ourselves.
-            compound.put("chestContents", saveChestContents());
+            saveChestContents(compound.child("chestContents"));
         }
         CompoundTag genesTag = new CompoundTag();
         getGenes().writeToNbt(genesTag, this.registryAccess());
-        compound.put("moaGenes", genesTag);
+        compound.store("moaGenes", CompoundTag.CODEC, genesTag);
     }
 
     @Override
     public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         entityData.set(AIR_TICKS, compound.getIntOr("airTicks", 0));
-        entityData.set(CHEST, ItemStack.parseOptional(this.registryAccess(), compound.getCompoundOrEmpty("chest")));
+        entityData.set(CHEST, compound.read("chest", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY));
         refreshChest(false);
-        if (inventory != DUMMY && compound.contains("chestContents")) {
-            loadChestContents(compound.getListOrEmpty("chestContents"));
+        if (inventory != DUMMY) {
+            compound.child("chestContents").ifPresent(this::loadChestContents);
         }
-        MoaGenesDataFix.migrate(compound);
-        if (compound.contains("moaGenes")) {
-            getGenes().readFromNbt(compound.getCompoundOrEmpty("moaGenes"), this.registryAccess());
-        }
+        compound.read("moaGenes", CompoundTag.CODEC).ifPresent(genesTag -> {
+            getGenes().readFromNbt(genesTag, this.registryAccess());
+        });
         syncGenes();
 
         setSpeed(getGenes().getAttribute(MoaAttributes.GROUND_SPEED));
@@ -765,7 +761,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         var genesB = matingMoa.getGenes();
 
         var eggStack = genesA.getEggForBreeding(genesB, world, blockPosition());
-        var baby = EntityRegistry.MOA.get().create(world);
+        var baby = EntityRegistry.MOA.get().create(world, EntitySpawnReason.BREEDING);
         if (baby == null) {
             return null;
         }
@@ -776,9 +772,9 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    protected void dropFromLootTable(DamageSource source, boolean causedByPlayer) {
-        super.dropFromLootTable(source, causedByPlayer);
-        spawnAtLocation(new ItemStack(ItemRegistry.MOA_MEAT.get(), (int) Math.round(0.337 + random.nextFloat() * getGenes().getAttribute(MoaAttributes.DROP_MULTIPLIER))));
+    protected void dropFromLootTable(ServerLevel serverLevel, DamageSource source, boolean causedByPlayer) {
+        super.dropFromLootTable(serverLevel, source, causedByPlayer);
+        spawnAtLocation(serverLevel, new ItemStack(ItemRegistry.MOA_MEAT.get(), (int) Math.round(0.337 + random.nextFloat() * getGenes().getAttribute(MoaAttributes.DROP_MULTIPLIER))));
     }
 
     @Override
@@ -829,8 +825,14 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     private MoaGenes readSyncedGenes() {
-        CompoundTag tag = entityData.get(GENES);
-        if (tag.isEmpty()) {
+        CompoundTag tag;
+        String raw = entityData.get(GENES);
+        if (raw.isEmpty()) {
+            return new MoaGenes();
+        }
+        try {
+            tag = net.minecraft.nbt.TagParser.parseCompoundFully(raw);
+        } catch (com.mojang.brigadier.exceptions.CommandSyntaxException e) {
             return new MoaGenes();
         }
         MoaGenes synced = new MoaGenes();
@@ -844,7 +846,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         }
         CompoundTag tag = new CompoundTag();
         getGenes().writeToNbt(tag, this.registryAccess());
-        entityData.set(GENES, tag);
+        entityData.set(GENES, tag.toString());
     }
 
     @Override
@@ -858,20 +860,22 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Nullable
-    @Override
     public UUID getOwnerUUID() {
         return getGenes().getOwner();
     }
 
     @Nullable
     @Override
-    public LivingEntity getOwner() {
-        return Optional.ofNullable(getOwnerUUID()).map(level()::getPlayerByUUID).orElse(null);
+    public net.minecraft.world.entity.EntityReference<LivingEntity> getOwnerReference() {
+        UUID owner = getOwnerUUID();
+        return owner == null ? null : net.minecraft.world.entity.EntityReference.of(owner);
     }
 
+    @Nullable
     @Override
-    public void containerChanged(Container sender) {
-
+    public net.minecraft.world.entity.EntityReference<LivingEntity> getOwnerReference() {
+        UUID owner = getOwnerUUID();
+        return owner == null ? null : net.minecraft.world.entity.EntityReference.of(owner);
     }
 
     @Override
@@ -894,40 +898,21 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         return inventory;
     }
 
-    private net.minecraft.nbt.ListTag saveChestContents() {
-        net.minecraft.nbt.ListTag list = new net.minecraft.nbt.ListTag();
+    private void saveChestContents(ValueOutput out) {
         for (int i = 0; i < inventory.getContainerSize(); i++) {
             ItemStack stack = inventory.getItem(i);
             if (stack.isEmpty()) {
                 continue;
             }
-            CompoundTag entry = new CompoundTag();
-            entry.putByte("Slot", (byte) i);
-            list.add(stack.save(this.registryAccess(), entry));
+            out.store("s" + i, ItemStack.CODEC, stack);
         }
-        return list;
     }
 
-    private void loadChestContents(net.minecraft.nbt.ListTag list) {
+    private void loadChestContents(ValueInput in) {
         inventory.clearContent();
-        boolean hasSlots = false;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.getCompoundOrEmpty(i).contains("Slot")) {
-                hasSlots = true;
-                break;
-            }
-        }
-        if (hasSlots) {
-            for (int i = 0; i < list.size(); i++) {
-                CompoundTag entry = list.getCompoundOrEmpty(i);
-                int slot = entry.getByteOr("Slot", (byte) 0) & 255;
-                if (slot < inventory.getContainerSize()) {
-                    inventory.setItem(slot, ItemStack.parse(this.registryAccess(), entry).orElse(ItemStack.EMPTY));
-                }
-            }
-        } else {
-            // Pre-fix worlds: packed list with no Slot indices — best-effort restore
-            inventory.fromTag(list, this.registryAccess());
+        for (int i = 0; i < inventory.getContainerSize(); i++) {
+            int slot = i;
+            in.read("s" + i, ItemStack.CODEC).ifPresent(stack -> inventory.setItem(slot, stack));
         }
     }
 

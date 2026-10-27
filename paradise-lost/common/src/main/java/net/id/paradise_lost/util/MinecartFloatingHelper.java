@@ -215,6 +215,14 @@ public final class MinecartFloatingHelper {
         captureRailRenderPose(cart, false);
     }
 
+    private static Vec3 railPos(AbstractMinecart cart, double x, double y, double z) {
+        return cart.getBehavior() instanceof net.minecraft.world.entity.vehicle.minecart.OldMinecartBehavior old ? old.getPos(x, y, z) : null;
+    }
+
+    private static Vec3 railPosOffs(AbstractMinecart cart, double x, double y, double z, double offs) {
+        return cart.getBehavior() instanceof net.minecraft.world.entity.vehicle.minecart.OldMinecartBehavior old ? old.getPosOffs(x, y, z, offs) : null;
+    }
+
     /**
      * @param allowUnsettledAscending when true, midair over ascending still samples pose at the projected rail seat.
      *                                Used when incline flips (descend to climb) before the cart seats, cart.y offs are
@@ -226,12 +234,12 @@ public final class MinecartFloatingHelper {
             double x = cart.getX();
             double y = cart.getY();
             double z = cart.getZ();
-            Vec3 mid = cart.getPos(x, y, z);
+            Vec3 mid = railPos(cart, x, y, z);
             if (mid == null) {
                 return;
             }
-            Vec3 posOff = cart.getPosOffs(x, y, z, 0.30000001192092896D);
-            Vec3 negOff = cart.getPosOffs(x, y, z, -0.30000001192092896D);
+            Vec3 posOff = railPosOffs(cart, x, y, z, 0.30000001192092896D);
+            Vec3 negOff = railPosOffs(cart, x, y, z, -0.30000001192092896D);
             if (posOff == null) {
                 posOff = mid;
             }
@@ -269,8 +277,8 @@ public final class MinecartFloatingHelper {
                             if (!allowUnsettledAscending) {
                                 return;
                             }
-                            Vec3 seatPosOff = cart.getPosOffs(mid.x, mid.y, mid.z, 0.30000001192092896D);
-                            Vec3 seatNegOff = cart.getPosOffs(mid.x, mid.y, mid.z, -0.30000001192092896D);
+                            Vec3 seatPosOff = railPosOffs(cart, mid.x, mid.y, mid.z, 0.30000001192092896D);
+                            Vec3 seatNegOff = railPosOffs(cart, mid.x, mid.y, mid.z, -0.30000001192092896D);
                             if (seatPosOff == null) {
                                 seatPosOff = mid;
                             }
@@ -737,7 +745,7 @@ public final class MinecartFloatingHelper {
         // (carousel looked like it hovered above the rail).
         POS_CAPTURE_BYPASS.set(POS_CAPTURE_BYPASS.get() + 1);
         try {
-            Vec3 snapped = cart.getPos(cart.getX(), cart.getY(), cart.getZ());
+            Vec3 snapped = railPos(cart, cart.getX(), cart.getY(), cart.getZ());
             if (snapped != null) {
                 cart.setPos(snapped.x, snapped.y, snapped.z);
             }
@@ -2019,12 +2027,12 @@ public final class MinecartFloatingHelper {
                         || y - railAt.getY() < -0.7D || y - railAt.getY() > 0.9D) {
                     continue;
                 }
-                Vec3 at = cart.getPos(x, yy, z);
+                Vec3 at = railPos(cart, x, yy, z);
                 if (at == null) {
                     continue;
                 }
-                Vec3 a = cart.getPosOffs(x, yy, z, 0.3F);
-                Vec3 b = cart.getPosOffs(x, yy, z, -0.3F);
+                Vec3 a = railPosOffs(cart, x, yy, z, 0.3F);
+                Vec3 b = railPosOffs(cart, x, yy, z, -0.3F);
                 if (a == null) {
                     a = at;
                 }
@@ -2084,8 +2092,8 @@ public final class MinecartFloatingHelper {
         // Vanilla samples the rail 0.3 ahead and behind, so it starts turning before the curve cell.
         POS_CAPTURE_BYPASS.set(POS_CAPTURE_BYPASS.get() + 1);
         try {
-            Vec3 ahead = cart.getPosOffs(x, y, z, 0.3F);
-            Vec3 behind = cart.getPosOffs(x, y, z, -0.3F);
+            Vec3 ahead = railPosOffs(cart, x, y, z, 0.3F);
+            Vec3 behind = railPosOffs(cart, x, y, z, -0.3F);
             return (ahead != null && isCurveCell(cart, ahead.x, ahead.y, ahead.z))
                     || (behind != null && isCurveCell(cart, behind.x, behind.y, behind.z));
         } finally {

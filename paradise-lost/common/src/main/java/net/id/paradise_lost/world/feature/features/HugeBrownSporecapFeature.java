@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,9 +22,9 @@ public class HugeBrownSporecapFeature extends AbstractHugeMushroomFeature {
     }
 
     @Override
-    protected void makeCap(LevelAccessor world, RandomSource random, BlockPos start, int y, BlockPos.MutableBlockPos mutable, HugeMushroomFeatureConfiguration config) {
+    protected void makeCap(WorldGenLevel world, RandomSource random, BlockPos start, int y, BlockPos.MutableBlockPos mutable, HugeMushroomFeatureConfiguration config) {
         BlockPos stemTop = start.above(y);
-        BlockState capState = config.capProvider.getState(random, stemTop).setValue(HugeMushroomBlock.DOWN, false);
+        BlockState capState = config.capProvider().getState(world, random, stemTop).setValue(HugeMushroomBlock.DOWN, false);
 
         for (Direction d : PipeBlock.PROPERTY_BY_DIRECTION.keySet()) {
             if (!d.getAxis().isHorizontal()) continue;

@@ -171,7 +171,7 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
     )
     private void dropSmeltedLoot(Args args) {
         LootParams lootParams = args.get(0);
-        var weapon = lootParams.getParameter(LootContextParams.DAMAGE_SOURCE).getWeaponItem();
+        var weapon = lootParams.contextMap().getOptional(LootContextParams.DAMAGE_SOURCE) == null ? null : lootParams.contextMap().getOptional(LootContextParams.DAMAGE_SOURCE).getWeaponItem();
         if (weapon != null && weapon.is(ParadiseLostItemTags.IGNITING_TOOLS)) {
             args.set(2, (Consumer<ItemStack>) this::dropStackInternal);
         }
@@ -196,9 +196,9 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
         }
     }
 
-    @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
-    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (!this.isInvulnerableTo(source) && !this.level().isClientSide() && !this.isDeadOrDying()) {
+    @Inject(method = "hurtServer", at = @At("HEAD"), cancellable = true)
+    public void damage(ServerLevel serverLevel, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (!this.isInvulnerableTo(serverLevel, source) && !this.level().isClientSide() && !this.isDeadOrDying()) {
             if (source.is(DamageTypeTags.IS_FALL)) {
                 float modified = paradiseLost$previewMagicAbsorb(source, amount);
 
@@ -265,14 +265,14 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
     @Unique
     @Nullable
     private ItemEntity dropStackInternal(ItemStack stack) {
-        Optional<RecipeHolder<SmeltingRecipe>> optional = this.level().getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(stack), level());
+        Optional<RecipeHolder<SmeltingRecipe>> optional = ((ServerLevel) this.level()).recipeAccess().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(stack), level());
         if (optional.isPresent()) {
-            ItemStack itemStack = ((optional.get()).value()).getResultItem(level().registryAccess());
+            ItemStack itemStack = ((optional.get()).value()).assemble(new SingleRecipeInput(stack));
             if (!itemStack.isEmpty()) {
-                return this.spawnAtLocation(itemStack.copyWithCount(stack.getCount()), 0.0F);
+                return this.spawnAtLocation((ServerLevel) this.level(), itemStack.copyWithCount(stack.getCount()), 0.0F);
             }
         }
-        return this.spawnAtLocation(stack);
+        return this.spawnAtLocation((ServerLevel) this.level(), stack);
     }
 
 }

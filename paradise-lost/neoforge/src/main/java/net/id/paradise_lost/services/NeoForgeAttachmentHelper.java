@@ -17,7 +17,7 @@ public class NeoForgeAttachmentHelper implements IAttachmentHelper {
         AttachmentType.Builder<T> builder =
                 AttachmentType.builder((Function<IAttachmentHolder, T>) (Object) attachment.getDefaultValueSupplier());
         if (attachment.getCodec() != null) {
-            builder.serialize(attachment.getCodec());
+            builder.serialize(attachment.getCodec().fieldOf("value"));
         }
         if (attachment.isCopyOnDeath()) {
             builder.copyOnDeath();

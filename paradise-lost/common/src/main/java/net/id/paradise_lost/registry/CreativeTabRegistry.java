@@ -255,7 +255,7 @@ public class CreativeTabRegistry {
                         output.accept(GLAZED_GOLD_HOE.get());
                         output.accept(SOUL_BLADE.get());
                         var rending = params.holders().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ParadiseLostEnchantments.RENDING);
-                        output.accept(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(rending, rending.value().getMaxLevel())));
+                        output.accept(net.minecraft.world.item.enchantment.EnchantmentHelper.createBook(new EnchantmentInstance(rending, rending.value().getMaxLevel())));
 
                         output.accept(OLVITE_SPYGLASS.get());
                         output.accept(TOTEM_OF_LEVITATION.get());

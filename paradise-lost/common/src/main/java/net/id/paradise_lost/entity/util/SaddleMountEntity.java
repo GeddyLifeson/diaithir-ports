@@ -13,7 +13,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Saddleable;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +20,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class SaddleMountEntity extends MountableEntity implements Saddleable {
+public abstract class SaddleMountEntity extends MountableEntity {
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(SaddleMountEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -38,11 +37,11 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
     }
 
     @Override
-    public boolean hurt(DamageSource damagesource, float i) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, DamageSource damagesource, float i) {
         if ((damagesource.getEntity() instanceof Player) && (!this.getPassengers().isEmpty() && this.getPassengers().get(0) == damagesource.getDirectEntity()))
             return false;
 
-        return super.hurt(damagesource, i);
+        return super.hurtServer(level, damagesource, i);
     }
 
     @Override
@@ -52,10 +51,10 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
     }
 
     @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel level) {
+        super.dropEquipment(level);
         if (this.isSaddled()) {
-            this.spawnAtLocation(Items.SADDLE);
+            this.spawnAtLocation(level, Items.SADDLE);
         }
     }
 
@@ -71,7 +70,7 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
                 if (!player.isCreative()) player.setItemInHand(hand, ItemStack.EMPTY);
 
                 if (player.level().isClientSide())
-                    player.level().playSound(player, player.blockPosition(), SoundEvents.PIG_SADDLE, SoundSource.AMBIENT, 1.0F, 1.0F);
+                    player.level().playSound(player, player.blockPosition(), SoundEvents.PIG_SADDLE.value(), SoundSource.AMBIENT, 1.0F, 1.0F);
 
                 this.setSaddled(true);
                 return InteractionResult.SUCCESS;
@@ -108,7 +107,6 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
         this.setSaddled(nbt.getBooleanOr("saddled", false));
     }
 
-    @Override
     public boolean isSaddled() {
         return this.entityData.get(SADDLED);
     }
@@ -123,16 +121,14 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
         }
     }
 
-    @Override
     public boolean isSaddleable() {
         return this.isAlive() && !this.isBaby();
     }
 
-    @Override
     public void equipSaddle(ItemStack stack, @Nullable SoundSource soundCategory) {
 
         if (soundCategory != null) {
-            level().playSound(null, this, SoundEvents.PIG_SADDLE, soundCategory, 0.5F, 1.0F);
+            level().playSound(null, this, SoundEvents.PIG_SADDLE.value(), soundCategory, 0.5F, 1.0F);
         }
     }
 }

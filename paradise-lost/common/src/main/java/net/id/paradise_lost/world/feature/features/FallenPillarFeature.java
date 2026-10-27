@@ -28,7 +28,7 @@ public class FallenPillarFeature extends Feature<LongFeatureConfig> {
             origin = origin.below();
         }
 
-        if (config.validFloor().contains(world.getBlockState(origin.below()).getBlockHolder())) {
+        if (config.validFloor().contains(world.getBlockState(origin.below()).typeHolder())) {
 
             boolean shifted = false;
             var axis = (origin.getX() % 2 == 0) ^ (origin.getZ() % 2 == 0) ? Direction.Axis.X : Direction.Axis.Z;
@@ -60,7 +60,7 @@ public class FallenPillarFeature extends Feature<LongFeatureConfig> {
                     }
                 }
 
-                var body = config.body().getState(random, placement);
+                var body = config.body().getState(world, random, placement);
 
                 if (body.hasProperty(BlockStateProperties.AXIS)) {
                     body = body.setValue(BlockStateProperties.AXIS, axis);
@@ -77,7 +77,7 @@ public class FallenPillarFeature extends Feature<LongFeatureConfig> {
                     var shell = placement.relative(dir);
 
                     if (dir.get2DDataValue() >= 0 && dir.getAxis() != axis && world.isEmptyBlock(shell) && random.nextFloat() < config.shellChance()) {
-                        var shellState = config.shell().getState(random, shell);
+                        var shellState = config.shell().getState(world, random, shell);
                         if (shellState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
                             shellState = shellState.setValue(BlockStateProperties.HORIZONTAL_FACING, dir.getOpposite());
                         }
@@ -92,7 +92,7 @@ public class FallenPillarFeature extends Feature<LongFeatureConfig> {
                 var top = placement.above();
 
                 if (world.isEmptyBlock(top) && random.nextFloat() < config.topChance()) {
-                    world.setBlock(top, config.top().getState(random, top), Block.UPDATE_ALL);
+                    world.setBlock(top, config.top().getState(world, random, top), Block.UPDATE_ALL);
                 }
 
             }

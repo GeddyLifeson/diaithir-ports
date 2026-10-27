@@ -6,7 +6,7 @@ import net.id.paradise_lost.world.feature.tree.ParadiseLostTreeHell;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
@@ -17,8 +17,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerTy
 public class PointedBallFoliagePlacer extends FoliagePlacer {
 
     public static final MapCodec<PointedBallFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
-            IntProvider.codec(0, 16).fieldOf("offset").forGetter(placer -> placer.offset),
-            IntProvider.codec(1, 4).fieldOf("count").forGetter(placer -> placer.count)
+            net.minecraft.util.valueproviders.IntProviders.codec(0, 16).fieldOf("offset").forGetter(placer -> placer.offset),
+            net.minecraft.util.valueproviders.IntProviders.codec(1, 4).fieldOf("count").forGetter(placer -> placer.count)
     ).apply(instance, PointedBallFoliagePlacer::new));
 
     protected final IntProvider count;
@@ -34,7 +34,7 @@ public class PointedBallFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader world, FoliageSetter placer, RandomSource random, TreeConfiguration config, int trunkHeight, FoliageAttachment treeNode, int foliageHeight, int radius, int offset) {
+    protected void createFoliage(WorldGenLevel world, FoliageSetter placer, RandomSource random, TreeConfiguration config, int trunkHeight, FoliageAttachment treeNode, int foliageHeight, int radius, int offset) {
 
         BlockPos center = treeNode.pos().below(offset);
 
@@ -60,14 +60,14 @@ public class PointedBallFoliagePlacer extends FoliagePlacer {
         }
     }
 
-    private void generateSquare(LevelSimulatedReader world, FoliageSetter placer, RandomSource random, TreeConfiguration config, BlockPos center, int size, boolean corners) {
+    private void generateSquare(WorldGenLevel world, FoliageSetter placer, RandomSource random, TreeConfiguration config, BlockPos center, int size, boolean corners) {
         for (int x = -size; x <= size; x++) {
             for (int z = -size; z <= size; z++) {
 
                 BlockPos iterPos = center.offset(x, 0, z);
 
                 if ((corners || x == 0 || Math.abs(x) != Math.abs(z)) && (world.isStateAtPosition(iterPos, BlockBehaviour.BlockStateBase::isAir) || TreeFeature.validTreePos(world, iterPos))) {
-                    BlockState leafBlock = config.foliageProvider.getState(random, iterPos);
+                    BlockState leafBlock = config.foliageProvider.getState(world, random, iterPos);
                     placer.set(iterPos, leafBlock);
                 }
             }

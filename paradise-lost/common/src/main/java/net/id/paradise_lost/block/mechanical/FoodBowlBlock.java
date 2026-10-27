@@ -74,11 +74,8 @@ public class FoodBowlBlock extends ParadiseLostBlockWithEntity {
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
-        if (!state.is(newState.getBlock()) && world.getBlockEntity(pos) instanceof FoodBowlBlockEntity foodBowl) {
-            Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), foodBowl.getContainedItem());
-        }
-        super.onRemove(state, world, pos, newState, moved);
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel world, BlockPos pos, boolean moved) {
+        super.affectNeighborsAfterRemoval(state, world, pos, moved);
     }
 
     @Override

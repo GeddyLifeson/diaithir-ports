@@ -42,6 +42,6 @@ public class NeoForgeNetworkHelper implements INetworkHelper {
 
     @Override
     public void sendToServer(C2SModPacket<?> msg) {
-        PacketDistributor.sendToServer(msg);
+        net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(msg);
     }
 }

@@ -6,7 +6,8 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.util.random.Weighted;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.MobSpawnSettings;
@@ -53,19 +54,19 @@ public final class ParadiseLostStructures {
                 ConstantHeight.of(VerticalAnchor.absolute(100)),
                 true,
                 Optional.empty(),
-                128,
+                new JigsawStructure.MaxDistance(128),
                 List.of(),
                 new DimensionPadding(50),
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS));
         context.register(PALACE, new JigsawStructure(
-                new Structure.StructureSettings(biomes.getOrThrow(ParadiseLostStructureTags.PALACE_HAS_STRUCTURE), Map.ofEntries(Map.entry(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedRandomList.create(new MobSpawnSettings.SpawnerData(EntityRegistry.ENVOY.get(), 10, 2, 4))))), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
+                new Structure.StructureSettings(biomes.getOrThrow(ParadiseLostStructureTags.PALACE_HAS_STRUCTURE), Map.ofEntries(Map.entry(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedList.of(new Weighted<>(new MobSpawnSettings.SpawnerData(EntityRegistry.ENVOY.get(), 2, 4), 10))))), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
                 pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL, locate("palace/starts"))),
                 Optional.empty(),
                 6,
                 ConstantHeight.of(VerticalAnchor.absolute(155)),
                 true,
                 Optional.empty(),
-                128,
+                new JigsawStructure.MaxDistance(128),
                 List.of(),
                 new DimensionPadding(50),
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS));
@@ -77,7 +78,7 @@ public final class ParadiseLostStructures {
                 ConstantHeight.of(VerticalAnchor.absolute(0)),
                 true,
                 Optional.of(Heightmap.Types.WORLD_SURFACE_WG),
-                80,
+                new JigsawStructure.MaxDistance(80),
                 List.of(),
                 new DimensionPadding(50),
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS));
@@ -89,7 +90,7 @@ public final class ParadiseLostStructures {
                 ConstantHeight.of(VerticalAnchor.absolute(105)),
                 false,
                 Optional.empty(),
-                116,
+                new JigsawStructure.MaxDistance(116),
                 List.of(),
                 new DimensionPadding(50),
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS));

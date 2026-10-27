@@ -29,8 +29,8 @@ public class CloudCarver extends WorldCarver<CloudCarverConfig> {
 
     @Override
     public boolean carve(CarvingContext context, CloudCarverConfig config, ChunkAccess chunk, Function<BlockPos, Holder<Biome>> posToBiome, RandomSource random, Aquifer sampler, ChunkPos pos, CarvingMask carvingMask) {
-        int mainChunkX = chunk.getPos().x;
-        int mainChunkZ = chunk.getPos().z;
+        int mainChunkX = chunk.getPos().x();
+        int mainChunkZ = chunk.getPos().z();
 
         double x = pos.getBlockX(16);
         double y = config.y.sample(random, context);
@@ -122,6 +122,6 @@ public class CloudCarver extends WorldCarver<CloudCarverConfig> {
     @Nullable
     @Override
     protected BlockState getCarveState(CarvingContext context, CloudCarverConfig config, BlockPos pos, Aquifer sampler) {
-        return config.cloudState.getState(null, pos);
+        return config.cloudState.getState(null, net.minecraft.util.RandomSource.create(), pos);
     }
 }

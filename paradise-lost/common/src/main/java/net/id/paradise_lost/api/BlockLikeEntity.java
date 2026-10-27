@@ -82,9 +82,9 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     @Override
-    protected AABB makeBoundingBox() {
+    protected AABB makeBoundingBox(Vec3 position) {
         if (this.entityData == null || this.blockState == null) {
-            return super.makeBoundingBox();
+            return super.makeBoundingBox(position);
         }
         BlockPos origin = this.entityData.get(ORIGIN);
         VoxelShape shape = this.blockState.getCollisionShape(level(), origin);
@@ -92,13 +92,13 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
             this.collides = false;
             shape = this.blockState.getShape(level(), origin);
             if (shape.isEmpty()) {
-                return super.makeBoundingBox();
+                return super.makeBoundingBox(position);
             }
         } else {
             this.collides = true;
         }
         AABB box = shape.bounds();
-        return box.move(position().subtract(new Vec3(0.5, 0, 0.5)));
+        return box.move(position.subtract(new Vec3(0.5, 0, 0.5)));
     }
 
     @Override
@@ -115,7 +115,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
 
     public void postTickEntityCollision(Entity entity) {
         if (!(entity instanceof BlockLikeEntity ble && ble.partOfSet)) {
-            this.blockState.entityInside(level(), this.blockPosition(), entity);
+            this.blockState.entityInside(level(), this.blockPosition(), entity, net.minecraft.world.entity.InsideBlockEffectApplier.NOOP, true);
         }
     }
 
@@ -194,8 +194,8 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     @Override
-    public boolean causeFallDamage(float distance, float multiplier, DamageSource damageSource) {
-        int i = Mth.ceil(distance - 1.0F);
+    public boolean causeFallDamage(double distance, float multiplier, DamageSource damageSource) {
+        int i = Mth.ceil((float) distance - 1.0F);
 
         if (!this.hurtEntities || i <= 0) {
             return false;
@@ -205,7 +205,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
         DamageSource damageSource2 = flag ? this.level().damageSources().anvil(this) : this.level().damageSources().fallingBlock(this);
         float f = Math.min(Mth.floor((float) i * this.fallHurtAmount), this.fallHurtMax);
 
-        this.level().getEntities(this, getBoundingBox().minmax(getBoundingBox().move(0, 1 + -2 * this.getDeltaMovement().y(), 0))).forEach(entity -> entity.hurt(damageSource2, f));
+        this.level().getEntities(this, getBoundingBox().minmax(getBoundingBox().move(0, 1 + -2 * this.getDeltaMovement().y(), 0))).forEach(entity -> { if (this.level() instanceof net.minecraft.server.level.ServerLevel sl) entity.hurtServer(sl, damageSource2, f); });
 
         if (flag && f > 0.0F && this.random.nextFloat() < 0.05F + i * 0.05F) {
             BlockState blockstate = AnvilBlock.damage(this.blockState);
@@ -218,22 +218,22 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
 
     @Override
     protected void addAdditionalSaveData(ValueOutput compound) {
-        compound.put("BlockState", NbtUtils.writeBlockState(this.blockState));
+        compound.store("BlockState", BlockState.CODEC, this.blockState);
         compound.putInt("Time", this.moveTime);
         compound.putBoolean("DropItem", this.dropItem);
         compound.putBoolean("HurtEntities", this.hurtEntities);
         compound.putFloat("FallHurtAmount", this.fallHurtAmount);
         compound.putInt("FallHurtMax", this.fallHurtMax);
         if (this.blockEntityData != null) {
-            compound.put("TileEntityData", this.blockEntityData);
+            compound.store("TileEntityData", CompoundTag.CODEC, this.blockEntityData);
         }
     }
 
     @Override
     protected void readAdditionalSaveData(ValueInput compound) {
-        this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), compound.getCompoundOrEmpty("BlockState"));
+        this.blockState = compound.read("BlockState", BlockState.CODEC).orElse(Blocks.STONE.defaultBlockState());
         this.moveTime = compound.getIntOr("Time", 0);
-        if (compound.contains("HurtEntities")) {
+        if (compound.read("HurtEntities", com.mojang.serialization.Codec.BOOL).isPresent()) {
             this.hurtEntities = compound.getBooleanOr("HurtEntities", false);
             this.fallHurtAmount = compound.getFloatOr("FallHurtAmount", 0F);
             this.fallHurtMax = compound.getIntOr("FallHurtMax", 0);
@@ -241,9 +241,9 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
             this.hurtEntities = true;
         }
 
-        if (compound.contains("DropItem")) this.dropItem = compound.getBooleanOr("DropItem", false);
+        if (compound.read("DropItem", com.mojang.serialization.Codec.BOOL).isPresent()) this.dropItem = compound.getBooleanOr("DropItem", false);
 
-        if (compound.contains("TileEntityData")) this.blockEntityData = compound.getCompoundOrEmpty("TileEntityData");
+        compound.read("TileEntityData", CompoundTag.CODEC).ifPresent(tag -> this.blockEntityData = tag);
 
         if (this.blockState.isAir()) this.blockState = Blocks.STONE.defaultBlockState();
     }
@@ -306,24 +306,26 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
                 BlockEntity blockEntity = this.level().getBlockEntity(blockPos);
                 if (blockEntity != null) {
                     CompoundTag compoundTag = blockEntity.saveWithoutMetadata(this.level().registryAccess());
-                    for (String keyName : this.blockEntityData.getAllKeys()) {
+                    for (String keyName : this.blockEntityData.keySet()) {
                         Tag tag = this.blockEntityData.get(keyName);
                         if (tag != null && !"x".equals(keyName) && !"y".equals(keyName) && !"z".equals(keyName)) {
                             compoundTag.put(keyName, tag.copy());
                         }
                     }
 
-                    blockEntity.loadWithComponents(compoundTag, this.level().registryAccess());
+                    blockEntity.loadWithComponents(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, this.level().registryAccess(), compoundTag));
                     blockEntity.setChanged();
                 }
             }
             for (Direction dir : Direction.stream().toList()) {
                 var newState = this.blockState.updateShape(
-                        dir,
-                        this.level().getBlockState(blockPos.relative(dir)),
+                        this.level(),
                         this.level(),
                         blockPos,
-                        blockPos.relative(dir)
+                        dir,
+                        blockPos.relative(dir),
+                        this.level().getBlockState(blockPos.relative(dir)),
+                        this.level().getRandom()
                 );
                 this.level().setBlockAndUpdate(blockPos, newState);
                 this.blockState = newState;
@@ -345,11 +347,6 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
         }
 
         level().levelEvent(null, LevelEvent.PARTICLES_DESTROY_BLOCK, this.blockPosition(), Block.getId(blockState));
-    }
-
-    @Override
-    public boolean onlyOpCanSetNbt() {
-        return true;
     }
 
     @Override
