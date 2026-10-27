@@ -24,6 +24,8 @@ public final class DiaithirWiretech {
             e.registerBlockEntity(Capabilities.Item.BLOCK, Machines.MACHINE_BE.get(), (be, side) -> be.itemsFor(side));
             e.registerBlockEntity(Capabilities.Fluid.BLOCK, Machines.MACHINE_BE.get(), (be, side) -> be.fluidFor(side));
             e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.CONNECTOR_BE.get(), (be, side) -> be.energyFor(side));
+            e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.GENERATOR_BE.get(), (be, side) -> be.energyFor(side));
+            e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.TRANSFORMER_BE.get(), (be, side) -> be.energyFor(side));
             e.registerBlockEntity(Capabilities.Energy.BLOCK, Machines.DYNAMO_BE.get(), (be, side) -> be.energyFor(side));
         });
         bus.addListener(BuildCreativeModeTabContentsEvent.class, e -> {
@@ -34,6 +36,10 @@ public final class DiaithirWiretech {
             }
             if (e.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) Machines.BUILDING_ITEMS.forEach(i -> e.accept(i.get()));
             if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) Machines.COILS.values().forEach(i -> e.accept(i.get()));
+            if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+                e.accept(Machines.DIESEL_CANISTER.get());
+                e.accept(Machines.BIODIESEL_CANISTER.get());
+            }
             if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
                 Machines.AUGMENTS.forEach(i -> e.accept(i.get()));
                 Machines.MATERIALS.forEach(i -> e.accept(i.get()));

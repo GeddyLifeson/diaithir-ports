@@ -7,6 +7,7 @@ Clean-room power wires and generators for NeoForge 26.1.2. Written from the gene
 - Crusher and arc furnace with GUI, redstone control, side config and augments; data-driven recipes (`diaithir_wiretech:crusher`, `diaithir_wiretech:arc_furnace`).
 - Sheetmetal blocks and climbable scaffolding.
 - Self test: `/wiretech selftest` (owners) builds a crank, dynamo, wire and machines high above spawn and checks range, tier, loss, generators, machines, wire removal and the age gate.
-- Not yet: diesel generator, coke oven, blast furnace, multiblock structure checks beyond the windmill frame.
+- Diesel generator (right-click with diesel or biodiesel canisters), coke oven, blast furnace (needs sheetmetal above and on its left, right and back), and tier transformers (take FE from any side but the front, 5% loss).
+- Not yet: multiblocks larger than these checks.
 
 Assets and recipes come from `tools/gen_assets.py`. Age gate: `data/diaithir_wiretech/age_gate.json` (Age 4). Library entries: `library-sync/wiretech.json`.

@@ -57,6 +57,9 @@ public final class Machines {
     public static final List<DeferredItem<BlockItem>> GENERATOR_ITEMS = new ArrayList<>();
     public static final List<DeferredItem<BlockItem>> BUILDING_ITEMS = new ArrayList<>();
     public static final DeferredBlock<DynamoBlock> DYNAMO;
+    public static final DeferredBlock<GeneratorBlock> DIESEL_GENERATOR;
+    public static final Map<WireType, DeferredBlock<TransformerBlock>> TRANSFORMERS = new EnumMap<>(WireType.class);
+    public static final DeferredItem<FuelItem> DIESEL_CANISTER, BIODIESEL_CANISTER;
     public static final String[] SHEETMETAL = {"iron", "copper", "steel", "electrum"};
     public static final String[] SCAFFOLDS = {"iron", "steel"};
 
@@ -64,6 +67,8 @@ public final class Machines {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ConnectorBlockEntity>> CONNECTOR_BE;
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RotorBlockEntity>> ROTOR_BE;
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DynamoBlockEntity>> DYNAMO_BE;
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GeneratorBlockEntity>> GENERATOR_BE;
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TransformerBlockEntity>> TRANSFORMER_BE;
     public static final DeferredHolder<MenuType<?>, MenuType<MachineMenu>> MENU =
             MENUS.register("machine", () -> IMenuTypeExtension.create(MachineMenu::new));
 
@@ -99,6 +104,17 @@ public final class Machines {
         DYNAMO = BLOCKS.registerBlock("dynamo", DynamoBlock::new, () -> BlockBehaviour.Properties.of()
                 .mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
         GENERATOR_ITEMS.add(ITEMS.registerSimpleBlockItem(DYNAMO));
+        DIESEL_GENERATOR = BLOCKS.registerBlock("diesel_generator", GeneratorBlock::new, () -> BlockBehaviour.Properties.of()
+                .mapColor(MapColor.METAL).strength(3.5F, 9.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+        GENERATOR_ITEMS.add(ITEMS.registerSimpleBlockItem(DIESEL_GENERATOR));
+        DIESEL_CANISTER = ITEMS.registerItem("diesel_canister", p -> new FuelItem(1200, 80, p), () -> new Item.Properties().stacksTo(16));
+        BIODIESEL_CANISTER = ITEMS.registerItem("biodiesel_canister", p -> new FuelItem(1000, 60, p), () -> new Item.Properties().stacksTo(16));
+        for (WireType w : WireType.values()) {
+            DeferredBlock<TransformerBlock> t = BLOCKS.registerBlock("transformer_" + w.id, p -> new TransformerBlock(p, w), () -> BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+            TRANSFORMERS.put(w, t);
+            GENERATOR_ITEMS.add(ITEMS.registerSimpleBlockItem(t));
+        }
         for (String m : SHEETMETAL) {
             DeferredBlock<Block> b = BLOCKS.registerBlock("sheetmetal_" + m, Block::new, () -> BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL).strength(3.0F, 8.0F).sound(SoundType.COPPER).requiresCorrectToolForDrops());
@@ -112,13 +128,16 @@ public final class Machines {
         for (Augment a : Augment.values()) {
             AUGMENTS.add(ITEMS.registerItem(a.id, p -> new AugmentItem(a, p), () -> new Item.Properties().stacksTo(16)));
         }
-        for (String m : new String[] {"iron_dust", "copper_dust", "gold_dust", "coal_dust", "slag", "electrum_ingot", "steel_ingot"}) {
+        for (String m : new String[] {"iron_dust", "copper_dust", "gold_dust", "coal_dust", "coke", "slag", "electrum_ingot", "steel_ingot"}) {
             MATERIALS.add(ITEMS.registerSimpleItem(m));
         }
         CONNECTOR_BE = BLOCK_ENTITIES.register("connector", () -> new BlockEntityType<>(ConnectorBlockEntity::new,
                 CONNECTORS.values().stream().map(DeferredBlock::get).toArray(Block[]::new)));
         ROTOR_BE = BLOCK_ENTITIES.register("rotor", () -> new BlockEntityType<>(RotorBlockEntity::new,
                 ROTORS.values().stream().map(DeferredBlock::get).toArray(Block[]::new)));
+        GENERATOR_BE = BLOCK_ENTITIES.register("diesel_generator", () -> new BlockEntityType<>(GeneratorBlockEntity::new, DIESEL_GENERATOR.get()));
+        TRANSFORMER_BE = BLOCK_ENTITIES.register("transformer", () -> new BlockEntityType<>(TransformerBlockEntity::new,
+                TRANSFORMERS.values().stream().map(DeferredBlock::get).toArray(Block[]::new)));
         DYNAMO_BE = BLOCK_ENTITIES.register("dynamo", () -> new BlockEntityType<>(DynamoBlockEntity::new, DYNAMO.get()));
         MACHINE_BE = BLOCK_ENTITIES.register("machine", () -> new BlockEntityType<>(MachineBlockEntity::new,
                 ALL_BLOCKS.stream().map(DeferredBlock::get).toArray(Block[]::new)));

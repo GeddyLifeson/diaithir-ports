@@ -98,6 +98,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
     private boolean dirty = true;
     private boolean running;
     private int tickCount;
+    private boolean structureOk = true;
 
     public MachineBlockEntity(BlockPos pos, BlockState state) {
         super(Machines.MACHINE_BE.get(), pos, state);
@@ -249,6 +250,26 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
         return kind.inputs == 1 ? List.of(items.get(0)) : List.of(items.get(0), items.get(1));
     }
 
+    /**
+     * Blast furnace structure check: the block above and the blocks left, right and behind must be sheetmetal of this mod.
+     * The front stays free for the GUI. Other machines have no structure.
+     */
+    public boolean checkStructure(ServerLevel level) {
+        if (kind != Kind.BLAST_FURNACE) return structureOk = true;
+        Direction front = getBlockState().getValue(MachineBlock.FACING);
+        Direction[] need = {Direction.UP, front.getClockWise(), front.getCounterClockWise(), front.getOpposite()};
+        boolean ok = true;
+        for (Direction d : need) {
+            var key = net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(worldPosition.relative(d)).getBlock());
+            if (!key.getNamespace().equals(DiaithirWiretech.ID) || !key.getPath().startsWith("sheetmetal_")) ok = false;
+        }
+        return structureOk = ok;
+    }
+
+    public boolean structureOk() {
+        return structureOk;
+    }
+
     private boolean powered(ServerLevel level) {
         if (redstone == Redstone.IGNORE) return true;
         return (redstone == Redstone.HIGH) == level.hasNeighborSignal(worldPosition);
@@ -288,6 +309,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
 
     public void serverTick(ServerLevel level) {
         tickCount++;
+        if (kind == Kind.BLAST_FURNACE && tickCount % 20 == 1) checkStructure(level);
         if (active != null) {
             if (active.value().assign(inputStacks()) == null) {
                 active = null;
@@ -300,7 +322,7 @@ public final class MachineBlockEntity extends BaseContainerBlockEntity implement
 
         boolean nowRunning = false;
         draw = 0;
-        if (active != null && powered(level)) {
+        if (active != null && structureOk && powered(level)) {
             MachineRecipe r = active.value();
             if (canOutput(r)) {
                 double speed = speed();

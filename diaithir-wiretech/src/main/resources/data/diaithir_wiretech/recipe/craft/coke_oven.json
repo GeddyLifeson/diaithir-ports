@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:bricks",
+    "F": "minecraft:furnace",
+    "I": "minecraft:iron_ingot",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "BBB",
+    "BFB",
+    "IRI"
+  ],
+  "result": {
+    "id": "diaithir_wiretech:coke_oven",
+    "count": 1
+  }
+}

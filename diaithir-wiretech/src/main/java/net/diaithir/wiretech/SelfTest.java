@@ -78,6 +78,8 @@ final class SelfTest {
         if (be instanceof RotorBlockEntity r) r.serverTick(level);
         else if (be instanceof DynamoBlockEntity d) d.serverTick(level);
         else if (be instanceof ConnectorBlockEntity c) c.serverTick(level);
+        else if (be instanceof GeneratorBlockEntity g) g.serverTick(level);
+        else if (be instanceof TransformerBlockEntity t) t.serverTick(level);
         else if (be instanceof MachineBlockEntity m) m.serverTick(level);
     }
 
@@ -151,7 +153,7 @@ final class SelfTest {
             insert(level, pArc, Machines.MATERIALS.get(3).get(), 1); // coal dust
             List<BlockEntity> chain = List.of(crank, dyn, a, b, crusher, arc);
             int[] n = {0};
-            Item ironDust = Machines.MATERIALS.get(0).get(), steel = Machines.MATERIALS.get(6).get();
+            Item ironDust = Machines.MATERIALS.get(0).get(), steel = Machines.MATERIALS.get(7).get();
             int ticks = run(level, 4000, chain, () -> {
                 if (n[0]++ % 8 == 0) crank.crank();
             }, () -> has(crusher, Kind.OUT, ironDust, 2) && has(arc, Kind.OUT, steel, 1));
@@ -228,6 +230,63 @@ final class SelfTest {
             for (int i = 0; i < Config.CRANK_TICKS.get() + 2; i++) crank.serverTick(level);
             if (crank.torque() != 0) fails.add("crank keeps turning");
 
+            // diesel generator feeds a connector beside it and burns fuel
+            BlockPos pG = base.south(30), pGc = pG.east();
+            set(level, pGc.below(), Blocks.STONE.defaultBlockState());
+            set(level, pG, Machines.DIESEL_GENERATOR.get().defaultBlockState());
+            set(level, pGc, connector(WireType.COPPER));
+            if (level.getBlockEntity(pG) instanceof GeneratorBlockEntity gen && level.getBlockEntity(pGc) instanceof ConnectorBlockEntity gc) {
+                if (!gen.refuel(new ItemStack(Machines.DIESEL_CANISTER.get()))) fails.add("generator refused diesel");
+                if (gen.refuel(new ItemStack(Machines.BIODIESEL_CANISTER.get()))) fails.add("generator mixed fuels");
+                int before = gen.fuelLeft();
+                run(level, 20, List.of(gen, gc), () -> {}, () -> false);
+                if (gen.fuelLeft() >= before) fails.add("generator burned no fuel");
+                if (gc.energy.amount() <= 0) fails.add("generator gave no FE to the connector");
+            } else fails.add("generator or connector missing");
+
+            // transformer: steel in at the back, copper out at the front, with a loss, and nothing flows back
+            BlockPos pT1 = base.south(34), pT = pT1.east(), pT2 = pT1.east(2);
+            set(level, pT1.below(), Blocks.STONE.defaultBlockState());
+            set(level, pT2.below(), Blocks.STONE.defaultBlockState());
+            set(level, pT1, connector(WireType.STEEL));
+            set(level, pT, Machines.TRANSFORMERS.get(WireType.COPPER).get().defaultBlockState().setValue(TransformerBlock.FACING, Direction.EAST));
+            set(level, pT2, connector(WireType.COPPER));
+            if (level.getBlockEntity(pT1) instanceof ConnectorBlockEntity s1 && level.getBlockEntity(pT) instanceof TransformerBlockEntity tr
+                    && level.getBlockEntity(pT2) instanceof ConnectorBlockEntity c2) {
+                for (int i = 0; i < 4; i++) feInsert(level, pT1, 1000);
+                int start = s1.energy.amount();
+                run(level, 60, List.of(s1, tr, c2), () -> {}, () -> false);
+                int moved = start - s1.energy.amount() - tr.energy.amount();
+                if (c2.energy.amount() <= 0) fails.add("transformer passed no FE");
+                if (c2.energy.amount() >= moved) fails.add("transformer lost nothing: " + c2.energy.amount() + " of " + moved);
+                if (level.getCapability(Capabilities.Energy.BLOCK, pT, Direction.EAST) != null) fails.add("transformer front accepts FE");
+            } else fails.add("transformer chain missing");
+
+            // coke oven
+            BlockPos pK = base.south(38);
+            set(level, pK, Machines.ALL_BLOCKS.get(Kind.COKE_OVEN.ordinal()).get().defaultBlockState());
+            if (level.getBlockEntity(pK) instanceof MachineBlockEntity ko) {
+                insert(level, pK, Items.COAL, 1);
+                Item coke = Machines.MATERIALS.get(4).get();
+                if (run(level, 1500, List.of(ko), () -> ko.energy.set(20000), () -> has(ko, Kind.OUT, coke, 1)) < 0) fails.add("coke oven made no coke: " + ko.debug());
+            } else fails.add("coke oven missing");
+
+            // blast furnace: no walls, no work; with sheetmetal above and left, right and behind, steel
+            BlockPos pBf = base.south(42).east(4);
+            set(level, pBf, Machines.ALL_BLOCKS.get(Kind.BLAST_FURNACE.ordinal()).get().defaultBlockState().setValue(MachineBlock.FACING, Direction.NORTH));
+            if (level.getBlockEntity(pBf) instanceof MachineBlockEntity bf) {
+                Item steelIngot = Machines.MATERIALS.get(7).get();
+                insert(level, pBf, Items.IRON_INGOT, 2);
+                insert(level, pBf, Machines.MATERIALS.get(4).get(), 1);
+                if (bf.checkStructure(level)) fails.add("bare blast furnace passed its structure check");
+                run(level, 40, List.of(bf), () -> bf.energy.set(20000), () -> false);
+                if (bf.progress() != 0) fails.add("blast furnace ran without its structure");
+                BlockState sheet = BuiltInRegistries.BLOCK.getValue(Identifier.parse(DiaithirWiretech.ID + ":sheetmetal_iron")).defaultBlockState();
+                for (Direction d : new Direction[] {Direction.UP, Direction.EAST, Direction.WEST, Direction.SOUTH}) set(level, pBf.relative(d), sheet);
+                if (!bf.checkStructure(level)) fails.add("built blast furnace failed its structure check");
+                if (run(level, 1500, List.of(bf), () -> bf.energy.set(20000), () -> has(bf, Kind.OUT, steelIngot, 2)) < 0) fails.add("blast furnace made no steel: " + bf.debug());
+            } else fails.add("blast furnace missing");
+
             // menu of a machine
             AbstractContainerMenu menu = crusher.createMenu(7, player.getInventory(), player);
             if (menu == null || menu.slots.size() != 5 + 36 - 1) fails.add("menu slot count " + (menu == null ? -1 : menu.slots.size()));
@@ -269,10 +328,10 @@ final class SelfTest {
     }
 
     private static void clear(ServerLevel level, BlockPos base) {
-        for (BlockPos p : BlockPos.betweenClosed(base.offset(-3, -2, -4), base.offset(45, 6, 28))) {
+        for (BlockPos p : BlockPos.betweenClosed(base.offset(-3, -2, -4), base.offset(45, 6, 44))) {
             if (level.getBlockEntity(p) instanceof MachineBlockEntity be) be.clearContent();
             if (!level.getBlockState(p).isAir()) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16 | 64);
         }
-        for (ItemEntity e : level.getEntitiesOfClass(ItemEntity.class, new net.minecraft.world.phys.AABB(base).inflate(60, 10, 40))) e.discard();
+        for (ItemEntity e : level.getEntitiesOfClass(ItemEntity.class, new net.minecraft.world.phys.AABB(base).inflate(60, 10, 60))) e.discard();
     }
 }

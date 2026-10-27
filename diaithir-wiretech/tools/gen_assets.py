@@ -11,7 +11,7 @@ LIB = os.path.join(HERE, "..", "..", "library-sync", "wiretech.json")
 NS = "diaithir_wiretech"
 
 WIRES = {"copper": ("Kellivane", (184, 115, 51)), "electrum": ("Ostrimeth", (230, 207, 110)), "steel": ("Varkhulon", (141, 147, 156))}
-MACHINES = {"crusher": "Gruvandel", "arc_furnace": "Vorthazek"}
+MACHINES = {"crusher": "Gruvandel", "arc_furnace": "Vorthazek", "coke_oven": "Mirkelath", "blast_furnace": "Thurnakel"}
 ROTORS = {"hand_crank": "Tunwiq", "windmill": "Aelvenhorn", "water_wheel": "Sholmarra"}
 SHEET = {"iron": (150, 154, 160), "copper": (190, 118, 74), "steel": (96, 100, 112), "electrum": (214, 186, 92)}
 SCAFFOLD = {"iron": (132, 136, 142), "steel": (84, 88, 100)}
@@ -76,6 +76,22 @@ def front(kind, lit):
                 if y % 2 == 0: img.putpixel((cx - 1, y), A(steel)); img.putpixel((cx + 2, y), A(steel))
         if lit:
             for y in range(3, 11): img.putpixel((7, y), A(FIRE)); img.putpixel((8, y), A((120, 50, 16)))
+    elif kind == "coke_oven":
+        for x in range(4, 12):  # brick arch with a hot slot
+            for y in range(4, 11): img.putpixel((x, y), A((130, 56, 44) if (x + y) % 3 else (92, 40, 32)))
+        for x in range(6, 10):
+            for y in range(6, 10): img.putpixel((x, y), A(BLACK))
+        if lit:
+            for x in range(6, 10):
+                for y in range(7, 10): img.putpixel((x, y), A(FIRE if (x + y) % 2 else FIRE2))
+    elif kind == "blast_furnace":
+        for x in range(4, 12):  # tall stack with a tap hole
+            for y in range(3, 11): img.putpixel((x, y), A((70, 66, 64) if (x + y) % 4 else (52, 48, 46)))
+        for x in range(6, 10):
+            for y in range(8, 11): img.putpixel((x, y), A(BLACK))
+        if lit:
+            for x in range(6, 10): img.putpixel((x, 9), A(FIRE2)); img.putpixel((x, 10), A(FIRE))
+            for y in range(4, 8): img.putpixel((7, y), A((255, 150, 50))); img.putpixel((8, y), A((200, 80, 30)))
     else:
         for x in (4, 11):  # twin electrodes over a hearth
             for y in range(3, 8): img.putpixel((x, y), A(steel_l)); img.putpixel((x + 1 if x == 4 else x - 1, y), A(steel))
@@ -153,6 +169,32 @@ def insulator_tile():
     for y in range(16):
         if y % 4 == 3:
             for x in range(16): img.putpixel((x, y), A((150, 130, 106)))
+    return img
+
+
+def diesel_side():
+    img = plate((86, 60, 40), 31)
+    hazard(img, 12, 14)
+    for y in range(4, 10):
+        for x in range(3, 13): img.putpixel((x, y), A((200, 96, 36) if y % 3 else (150, 70, 26)))
+    return img
+
+
+def diesel_top():
+    img = plate((70, 72, 78), 32)
+    for x in range(5, 11):
+        for y in range(5, 11):
+            if (x - 7.5) ** 2 + (y - 7.5) ** 2 <= 9: img.putpixel((x, y), A((176, 178, 184)))
+    img.putpixel((7, 7), A(BLACK)); img.putpixel((8, 8), A(BLACK))
+    return img
+
+
+def transformer_front(col):
+    img = plate(PLATE, 41)
+    for y in range(3, 13):
+        for x in range(3, 13):
+            img.putpixel((x, y), A(col if (x + y) % 3 else shade(col, -50)))
+    for x in range(3, 13): img.putpixel((x, 2), A(HAZ_Y)); img.putpixel((x, 13), A(HAZ_K))
     return img
 
 
@@ -308,6 +350,22 @@ def main():
     write(f"assets/{NS}/blockstates/dynamo.json", {"variants": {"": {"model": f"{NS}:block/dynamo"}}})
     item_def("dynamo", "block/dynamo"); loot("dynamo"); lang[f"block.{NS}.dynamo"] = "Zephrikon"
 
+    # ---- diesel generator and transformers
+    png(f"assets/{NS}/textures/block/diesel_side.png", diesel_side()); png(f"assets/{NS}/textures/block/diesel_top.png", diesel_top())
+    write(f"assets/{NS}/models/block/diesel_generator.json", {"parent": "minecraft:block/cube_column", "textures": {
+        "end": f"{NS}:block/diesel_top", "side": f"{NS}:block/diesel_side"}})
+    write(f"assets/{NS}/blockstates/diesel_generator.json", {"variants": {"": {"model": f"{NS}:block/diesel_generator"}}})
+    item_def("diesel_generator", "block/diesel_generator"); loot("diesel_generator"); lang[f"block.{NS}.diesel_generator"] = "Dravokel Engine"
+    tf = []
+    for w, (disp, col) in WIRES.items():
+        n = f"transformer_{w}"; tf.append(n)
+        png(f"assets/{NS}/textures/block/{n}_front.png", transformer_front(col))
+        write(f"assets/{NS}/models/block/{n}.json", {"parent": "minecraft:block/orientable_with_bottom", "textures": {
+            "top": f"{NS}:block/casing_top", "bottom": f"{NS}:block/casing_bottom", "side": f"{NS}:block/casing_side", "front": f"{NS}:block/{n}_front"}})
+        write(f"assets/{NS}/blockstates/{n}.json", {"variants": {f"facing={fc}": single_variant(n, f"block/{n}", **({"y": y} if y else {}))
+                                                               for fc, y in (("north", 0), ("east", 90), ("south", 180), ("west", 270))}})
+        item_def(n, f"block/{n}"); loot(n); lang[f"block.{NS}.{n}"] = f"{disp} Shifter"
+
     # ---- rotors: element models, facing north, rotated by blockstate
     png(f"assets/{NS}/textures/block/crank_metal.png", metal_tile((70, 72, 80), 21))
     png(f"assets/{NS}/textures/block/rotor_wood.png", wood_tile()); png(f"assets/{NS}/textures/block/rotor_cloth.png", cloth_tile())
@@ -358,28 +416,37 @@ def main():
 
     # ---- items
     mats = {"iron_dust": ((190, 194, 200), "Iron Dust", dust), "copper_dust": ((196, 112, 70), "Copper Dust", dust), "gold_dust": ((240, 200, 60), "Gold Dust", dust),
-            "coal_dust": ((44, 44, 48), "Coal Dust", dust), "slag": (None, "Slag", None), "electrum_ingot": ((230, 207, 110), "Electrum Ingot", ingot),
+            "coal_dust": ((44, 44, 48), "Coal Dust", dust), "coke": ((96, 96, 104), "Coke", ingot), "slag": (None, "Slag", None), "electrum_ingot": ((230, 207, 110), "Electrum Ingot", ingot),
             "steel_ingot": ((120, 126, 138), "Steel Ingot", ingot)}
     for n, (c, d, fn) in mats.items():
         flat_item(n, slag() if n == "slag" else fn(c)); lang[f"item.{NS}.{n}"] = d
+    def canister(col):
+        img = item_img()
+        for x in range(4, 12):
+            for y in range(3, 14): img.putpixel((x, y), A(col if y % 5 else shade(col, -40)))
+        for x in range(4, 12): img.putpixel((x, 3), A(RIVET)); img.putpixel((x, 13), A(PLATE_D))
+        for x in (6, 7, 8): img.putpixel((x, 2), A(PLATE_L))
+        return img
+    flat_item("diesel_canister", canister((200, 90, 40))); lang[f"item.{NS}.diesel_canister"] = "Dravokel Canister"
+    flat_item("biodiesel_canister", canister((110, 170, 60))); lang[f"item.{NS}.biodiesel_canister"] = "Eshlovane Canister"
     for n, d in AUGMENTS.items():
         flat_item(n, augment(n)); lang[f"item.{NS}.{n}"] = d + " Augment"
     lang[f"itemGroup.{NS}"] = "Diaithir Wiretech"
     write(f"assets/{NS}/lang/en_us.json", dict(sorted(lang.items())))
 
     # ---- tags
-    pick = machine_names + ["dynamo", "hand_crank"] + cn + bn + sc
+    pick = machine_names + ["dynamo", "hand_crank", "diesel_generator"] + tf + cn + bn + sc
     write("data/minecraft/tags/block/mineable/pickaxe.json", {"values": [f"{NS}:{n}" for n in pick]})
     write("data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:windmill", f"{NS}:water_wheel"]})
-    write("data/minecraft/tags/block/needs_stone_tool.json", {"values": [f"{NS}:{n}" for n in machine_names + ["dynamo"] + bn + sc]})
+    write("data/minecraft/tags/block/needs_stone_tool.json", {"values": [f"{NS}:{n}" for n in machine_names + ["dynamo", "diesel_generator"] + tf + bn + sc]})
     write("data/minecraft/tags/block/climbable.json", {"values": [f"{NS}:{n}" for n in sc]})
-    for d, its in (("dusts/iron", ["iron_dust"]), ("dusts/copper", ["copper_dust"]), ("dusts/gold", ["gold_dust"]), ("dusts/coal", ["coal_dust"]),
+    for d, its in (("dusts/iron", ["iron_dust"]), ("dusts/copper", ["copper_dust"]), ("dusts/gold", ["gold_dust"]), ("dusts/coal", ["coal_dust"]), ("coal_coke", ["coke"]), ("fuels/diesel", ["diesel_canister"]),
                    ("ingots/electrum", ["electrum_ingot"]), ("ingots/steel", ["steel_ingot"]),
                    ("dusts", ["iron_dust", "copper_dust", "gold_dust", "coal_dust"]), ("ingots", ["electrum_ingot", "steel_ingot"])):
         write(f"data/c/tags/item/{d}.json", {"values": [f"{NS}:{i}" for i in its]})
 
     # ---- age gate (numeric ages; everything is Age IV)
-    all_ids = machine_names + ["dynamo"] + list(ROTORS) + cn + [f"{w}_wire_coil" for w in WIRES] + bn + sc + list(mats) + list(AUGMENTS)
+    all_ids = machine_names + ["dynamo", "diesel_generator", "diesel_canister", "biodiesel_canister"] + tf + list(ROTORS) + cn + [f"{w}_wire_coil" for w in WIRES] + bn + sc + list(mats) + list(AUGMENTS)
     write(f"data/{NS}/age_gate.json", {"age4": {"age": 4, "items": [f"{NS}:{n}" for n in all_ids]}})
 
     # ---- crafting
@@ -395,6 +462,16 @@ def main():
     shaped("craft/crusher", ["IFI", "RPR", "ICI"], {"I": I, "F": "minecraft:flint", "R": R, "P": "minecraft:piston", "C": C}, f"{NS}:crusher")
     shaped("craft/arc_furnace", ["ICI", "RBR", "IGI"], {"I": I, "C": f"{NS}:copper_wire_coil", "R": R, "B": "minecraft:blast_furnace", "G": "minecraft:gold_ingot"},
            f"{NS}:arc_furnace")
+    shaped("craft/coke_oven", ["BBB", "BFB", "IRI"], {"B": "minecraft:bricks", "F": "minecraft:furnace", "I": I, "R": R}, f"{NS}:coke_oven")
+    shaped("craft/blast_furnace", ["SSS", "BFB", "SIS"], {"S": f"{NS}:sheetmetal_iron", "B": "minecraft:bricks", "F": "minecraft:blast_furnace", "I": I}, f"{NS}:blast_furnace")
+    shaped("craft/diesel_generator", ["III", "IPI", "CDC"], {"I": I, "P": "minecraft:piston", "C": C, "D": f"{NS}:dynamo"}, f"{NS}:diesel_generator")
+    for w, i in ing.items():
+        shaped(f"craft/transformer_{w}", ["CIC", "CRC", "CIC"], {"C": i, "I": I, "R": R}, f"{NS}:transformer_{w}")
+    write(f"data/{NS}/recipe/craft/diesel_canister.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+          "ingredients": [f"{NS}:coke", f"{NS}:coke", "minecraft:glass_bottle"], "result": {"id": f"{NS}:diesel_canister", "count": 1}})
+    write(f"data/{NS}/recipe/craft/biodiesel_canister.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+          "ingredients": ["minecraft:wheat_seeds", "minecraft:wheat_seeds", "minecraft:wheat_seeds", "minecraft:wheat_seeds", "minecraft:glass_bottle"],
+          "result": {"id": f"{NS}:biodiesel_canister", "count": 1}})
     for m, col in SHEET.items():
         src = {"iron": I, "copper": C, "steel": f"{NS}:steel_ingot", "electrum": f"{NS}:electrum_ingot"}[m]
         shaped(f"craft/sheetmetal_{m}", ["II", "II"], {"I": src}, f"{NS}:sheetmetal_{m}", 4)
@@ -426,6 +503,10 @@ def main():
         mrec("arc_furnace", f"raw_{n}", [(f"#c:raw_materials/{n}", 1)], (ingr, 1), f"{NS}:slag", 0.25, energy=1600, time=80)
     mrec("arc_furnace", "steel", [(I, 1), (d("coal"), 1)], (f"{NS}:steel_ingot", 1), f"{NS}:slag", 0.3, energy=4000, time=150)
     mrec("arc_furnace", "electrum", [("minecraft:gold_ingot", 1), (C, 1)], (f"{NS}:electrum_ingot", 2), None, 0, energy=3000, time=120)
+    mrec("coke_oven", "coal", [("minecraft:coal", 1)], (f"{NS}:coke", 1), d("coal"), 0.15, energy=600, time=200)
+    mrec("coke_oven", "charcoal", [("minecraft:charcoal", 2)], (f"{NS}:coke", 1), None, 0, energy=600, time=200)
+    mrec("blast_furnace", "steel", [(I, 2), (f"{NS}:coke", 1)], (f"{NS}:steel_ingot", 2), f"{NS}:slag", 0.3, energy=3000, time=120)
+    mrec("blast_furnace", "iron_from_ore", [("#c:ores/iron", 1), (f"{NS}:coke", 1)], (I, 2), f"{NS}:slag", 0.3, energy=2400, time=120)
     mrec("arc_furnace", "glass", [("#minecraft:sand", 1)], ("minecraft:glass", 1), None, 0, energy=900, time=50)
 
     # ---- library entries (invented display names, English ids, no em dashes)
@@ -440,12 +521,20 @@ def main():
     L("dynamo", "Zephrikon", "Dynamo. Turns the torque of hand cranks, windmills and water wheels beside it into FE and pushes it into connectors or machines beside it.")
     L("crusher", "Gruvandel", "Crusher. Feed it ore and FE from a wire and it grinds the ore to dust, sometimes with a bonus item. Has a GUI, FE bar, redstone control and per-face side config.")
     L("arc_furnace", "Vorthazek", "Arc furnace. Smelts dust and raw ore to ingots fast, makes steel from iron and coal dust, and electrum from gold and copper. Slag comes out as a bonus. Needs FE from a wire.")
+    L("diesel_generator", "Dravokel Engine", "Diesel generator. Right-click with fuel canisters (up to 4 of one kind). Diesel gives 80 FE per tick for 60 s, biodiesel 60 FE per tick for 50 s. Pushes FE into connectors or machines beside it.")
+    L("diesel_canister", "Dravokel Canister", "Fuel canister made from 2 coke and a glass bottle. 80 FE per tick for 60 s in a diesel generator.")
+    L("biodiesel_canister", "Eshlovane Canister", "Fuel canister made from 4 wheat seeds and a glass bottle. 60 FE per tick for 50 s in a diesel generator.")
+    L("coke_oven", "Mirkelath", "Coke oven. Bakes coal into coke, sometimes with coal dust, using a little FE. Coke feeds steel making and diesel.")
+    L("blast_furnace", "Thurnakel", "Blast furnace. Needs sheetmetal above and on its left, right and back. Turns 2 iron and 1 coke into 2 steel, or iron ore and coke into 2 iron, with FE.")
+    for w, (disp, col) in WIRES.items():
+        L(f"transformer_{w}", f"{disp} Shifter", f"Tier transformer. Takes FE from any side but its front and hands it to the block in front at up to {WIRES[w] and {'copper':256,'electrum':1024,'steel':4096}[w]} FE per tick, losing 5%. Put it between connectors of different tiers.")
     for m in SHEET: L(f"sheetmetal_{m}", f"Plynthar Sheet ({m.capitalize()})", f"Plain {m} sheetmetal block for building.")
     for m in SCAFFOLD: L(f"{m}_scaffolding", f"Strandel Scaffold ({m.capitalize()})", f"Open {m} scaffolding. Climbable, and light passes through it.")
     L("iron_dust", "Iron Dust", "Ground iron ore. Smelt it or put it in the arc furnace to get an ingot.")
     L("copper_dust", "Copper Dust", "Ground copper ore. Smelt it or put it in the arc furnace to get an ingot.")
     L("gold_dust", "Gold Dust", "Ground gold ore. Smelt it or put it in the arc furnace to get an ingot.")
     L("coal_dust", "Coal Dust", "Ground coal. Arc furnace additive for making steel.")
+    L("coke", "Coke", "Baked coal from the coke oven. Used in the blast furnace and for diesel canisters.")
     L("slag", "Slag", "Waste from the arc furnace. Good for nothing yet.")
     L("electrum_ingot", "Electrum Ingot", "Alloy of gold and copper from the arc furnace. Used for electrum wire and connectors.")
     L("steel_ingot", "Steel Ingot", "Iron hardened with coal dust in the arc furnace. Used for steel wire and connectors.")
