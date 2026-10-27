@@ -1,0 +1,24 @@
+{
+ "_doc": "Cross-mod fuel hooks. Engine fuels are fluid tags; other mods' fluids join by adding to these c: tags.",
+ "fluid_tags": {
+  "c:diesel": [
+   "createdieselgenerators:diesel"
+  ],
+  "c:gasoline": [
+   "createdieselgenerators:gasoline"
+  ],
+  "c:biodiesel": [
+   "createdieselgenerators:biodiesel"
+  ],
+  "c:ethanol": [
+   "createdieselgenerators:ethanol"
+  ],
+  "c:plantoil": [
+   "createdieselgenerators:plant_oil"
+  ],
+  "c:crude_oil": [
+   "createdieselgenerators:crude_oil"
+  ]
+ },
+ "heat_note": "Create blaze_burner heat is already in CLIMATE.heat at 1500."
+}

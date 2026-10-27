@@ -1,0 +1,13 @@
+{
+ "_doc": "Merge into global.CLIMATE.heat in content/climate/kubejs/startup_scripts/climate/tables.js (watts as heat per tick). The engine has a LIT block property, true only while it burns fuel, which the climate scan reads, so an idle engine adds nothing. fuel_watts are informational: heat scales with fuel energy.",
+ "heat": {
+  "createdieselgenerators:diesel_engine": 900
+ },
+ "fuel_watts": {
+  "diesel": 900,
+  "gasoline": 1000,
+  "biodiesel": 800,
+  "ethanol": 600,
+  "plant_oil": 400
+ }
+}

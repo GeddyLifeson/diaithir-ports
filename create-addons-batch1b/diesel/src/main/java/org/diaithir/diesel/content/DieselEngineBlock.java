@@ -29,16 +29,17 @@ import org.jspecify.annotations.Nullable;
 
 public class DieselEngineBlock extends DirectionalKineticBlock implements IBE<DieselEngineBlockEntity>, SimpleWaterloggedBlock {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public DieselEngineBlock(Properties properties) {
         super(properties);
-        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false).setValue(POWERED, false));
+        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false).setValue(POWERED, false).setValue(LIT, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED, POWERED);
+        builder.add(WATERLOGGED, POWERED, LIT);
         super.createBlockStateDefinition(builder);
     }
 

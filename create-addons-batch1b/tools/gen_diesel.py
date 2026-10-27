@@ -58,9 +58,10 @@ def main():
     v = {}
     for facing, (m, rot) in {"east": ("diesel_engine", {}), "west": ("diesel_engine", {"y": 180}), "south": ("diesel_engine", {"y": 90}), "north": ("diesel_engine", {"y": 270}),
                               "up": ("diesel_engine_vertical", {}), "down": ("diesel_engine_vertical", {"x": 180})}.items():
-        for pw in ("true", "false"):
+        for lit in ("true", "false"):
+          for pw in ("true", "false"):
             for wl in ("true", "false"):
-                v[f"facing={facing},powered={pw},waterlogged={wl}"] = {"model": f"{NS}:block/{m}", **rot}
+                v[f"facing={facing},lit={lit},powered={pw},waterlogged={wl}"] = {"model": f"{NS}:block/{m}", **rot}
     w(f"{A}/blockstates/diesel_engine.json", {"variants": v})
     w(f"{A}/items/diesel_engine.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/diesel_engine"}})
     w(f"{A}/lang/en_us.json", lang)

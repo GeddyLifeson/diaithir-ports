@@ -97,6 +97,9 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
             reActivateSource = true;
         }
         Fuels.Per p = props();
+        boolean burning = p != null && speed != 0 && !isOverStressed() && !tank.getPrimaryHandler().getFluid().isEmpty();
+        if (getBlockState().getValue(DieselEngineBlock.LIT) != burning)
+            level.setBlock(worldPosition, getBlockState().setValue(DieselEngineBlock.LIT, burning), 3);
         if (p != null && speed != 0 && !isOverStressed()) {
             float throttle = throttle();
             fuelDebt += p.burn() * UNITS_PER_MB * (0.25f + throttle * 0.75f);

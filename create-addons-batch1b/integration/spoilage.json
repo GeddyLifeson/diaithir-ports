@@ -1,0 +1,13 @@
+{
+ "_doc": "Add to global.SPOIL_NEVER in content/spoilage/kubejs/startup_scripts/spoilage/rates.js and to spoilBlacklist in config/spoiled-common.toml. None of these are food; fuels and machines do not rot. Fuel buckets stored cold or warm keep as is.",
+ "never_regex": "^(crude_oil_bucket|diesel_bucket|gasoline_bucket|biodiesel_bucket|ethanol_bucket|plant_oil_bucket)$",
+ "spoil_blacklist": [
+  "createdieselgenerators:crude_oil_bucket",
+  "createdieselgenerators:diesel_bucket",
+  "createdieselgenerators:gasoline_bucket",
+  "createdieselgenerators:biodiesel_bucket",
+  "createdieselgenerators:ethanol_bucket",
+  "createdieselgenerators:plant_oil_bucket"
+ ],
+ "note": "Ethanol and plant oil are the only crop-derived goods; they are treated as stable (sealed fuel). If a decay model is wanted later, plant_oil at 3 percent a week as grain would match."
+}
