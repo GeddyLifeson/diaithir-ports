@@ -40,7 +40,7 @@ public class TearBombMinecartItem extends Item {
 			RailShape railShape = blockState.getBlock() instanceof BaseRailBlock ? blockState.getValue(((BaseRailBlock) blockState.getBlock()).getShapeProperty()) : RailShape.NORTH_SOUTH;
 			double g;
 			if (blockState.is(BlockTags.RAILS)) {
-				if (railShape.isAscending()) {
+				if (railShape.isSlope()) {
 					g = 0.6;
 				} else {
 					g = 0.1;
@@ -52,7 +52,7 @@ public class TearBombMinecartItem extends Item {
 
 				BlockState blockState2 = serverLevel.getBlockState(blockPos.below());
 				RailShape railShape2 = blockState2.getBlock() instanceof BaseRailBlock ? blockState2.getValue(((BaseRailBlock) blockState2.getBlock()).getShapeProperty()) : RailShape.NORTH_SOUTH;
-				if (direction != Direction.DOWN && railShape2.isAscending()) {
+				if (direction != Direction.DOWN && railShape2.isSlope()) {
 					g = -0.4;
 				} else {
 					g = -0.9;
@@ -88,7 +88,7 @@ public class TearBombMinecartItem extends Item {
 			if (level instanceof ServerLevel serverLevel) {
 				RailShape railShape = blockState.getBlock() instanceof BaseRailBlock ? blockState.getValue(((BaseRailBlock) blockState.getBlock()).getShapeProperty()) : RailShape.NORTH_SOUTH;
 				double d = 0.0F;
-				if (railShape.isAscending()) {
+				if (railShape.isSlope()) {
 					d = 0.5F;
 				}
 

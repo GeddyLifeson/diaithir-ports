@@ -29,6 +29,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 	private final Container container;
 	private final ContainerData data;
 	private final HolderLookup.Provider registries;
+	private final net.minecraft.world.level.Level menuLevel;
 
 	public AlloyFurnaceMenu(int containerId, Inventory playerInventory) {
 		this(containerId, playerInventory, new SimpleContainer(14), new SimpleContainerData(7));
@@ -39,6 +40,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 		this.container = container;
 		this.data = data;
 		this.registries = playerInventory.player.level().registryAccess();
+		this.menuLevel = playerInventory.player.level();
 		checkContainerSize(container, 14);
 		checkContainerDataCount(data, 7);
 
@@ -48,7 +50,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 			}
 		}
 
-		this.addSlot(new AlloyFurnaceFuelSlot(this.container, FUEL_SLOT, 10, 53));
+		this.addSlot(new AlloyFurnaceFuelSlot(this.container, FUEL_SLOT, 10, 53, this.menuLevel));
 		this.addSlot(new AlloyFurnaceCoolingSlot(this.container, COOLING_SLOT, 86, 53, this.registries));
 
 		this.addSlot(new AlloyResultSlot(playerInventory.player, this.container, RESULT_SLOT_START, 124, 18));
@@ -110,7 +112,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
 				slot.onQuickCraft(slotItem, stack);
 			} else if (index >= INV_SLOT_START && index < USE_ROW_SLOT_END) {
-				if (!((AlloyFurnaceBlockEntity.isFuel(slotItem) && this.moveItemStackTo(slotItem, FUEL_SLOT, FUEL_SLOT + 1, false)) || (AlloyFurnaceBlockEntity.isCoolingItem(this.registries, slotItem) && this.moveItemStackTo(slotItem, COOLING_SLOT, COOLING_SLOT + 1, false)) || this.moveItemStackTo(slotItem, INGREDIENT_SLOT_START, INGREDIENT_SLOT_END, false))) {
+				if (!((AlloyFurnaceBlockEntity.isFuel(this.menuLevel, slotItem) && this.moveItemStackTo(slotItem, FUEL_SLOT, FUEL_SLOT + 1, false)) || (AlloyFurnaceBlockEntity.isCoolingItem(this.registries, slotItem) && this.moveItemStackTo(slotItem, COOLING_SLOT, COOLING_SLOT + 1, false)) || this.moveItemStackTo(slotItem, INGREDIENT_SLOT_START, INGREDIENT_SLOT_END, false))) {
 					if (index < INV_SLOT_END) {
 						if (!this.moveItemStackTo(slotItem, USE_ROW_SLOT_START, USE_ROW_SLOT_END, false)) {
 							return ItemStack.EMPTY;

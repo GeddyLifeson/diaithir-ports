@@ -47,7 +47,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 			}
 			ServerLevel level = serverPlayer.level();
 			if (!level.dimension().equals(ESDimensions.STARLIGHT_KEY)) {
-				serverPlayer.displayClientMessage(Component.translatable("message." + EternalStarlight.ID + ".seeking_eye.wrong_dimension"), true);
+				serverPlayer.sendOverlayMessage(Component.translatable("message." + EternalStarlight.ID + ".seeking_eye.wrong_dimension"));
 				return;
 			}
 			InteractionHand hand = serverPlayer.getMainHandItem().is(ESItems.SEEKING_EYE.get()) ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
@@ -57,7 +57,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 			}
 			BlockPos found = locate(packet.targetType(), entry.key(), level, serverPlayer);
 			if (found == null) {
-				serverPlayer.displayClientMessage(Component.translatable("message." + EternalStarlight.ID + ".seeking_eye.not_found"), true);
+				serverPlayer.sendOverlayMessage(Component.translatable("message." + EternalStarlight.ID + ".seeking_eye.not_found"));
 				return;
 			}
 			EyeOfSeeking eye = new EyeOfSeeking(level, serverPlayer.getX(), serverPlayer.getY(0.5D), serverPlayer.getZ());
@@ -76,7 +76,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 	private static BlockPos locate(SeekingEyeTargets.TargetType type, ResourceKey<?> key, ServerLevel level, ServerPlayer player) {
 		if (type == SeekingEyeTargets.TargetType.BOSS_STRUCTURE || type == SeekingEyeTargets.TargetType.NORMAL_STRUCTURE) {
 			Registry<Structure> registry = level.registryAccess().lookupOrThrow(Registries.STRUCTURE);
-			Optional<Holder.Reference<Structure>> holder = registry.getHolder(key.identifier());
+			Optional<Holder.Reference<Structure>> holder = registry.get(key.identifier());
 			if (holder.isPresent()) {
 				Pair<BlockPos, Holder<Structure>> pair = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(holder.get()), player.blockPosition(), 100, false);
 				return pair != null ? pair.getFirst() : null;

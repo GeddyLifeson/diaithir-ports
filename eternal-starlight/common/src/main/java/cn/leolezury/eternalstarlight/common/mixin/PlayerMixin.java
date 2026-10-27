@@ -57,7 +57,7 @@ public abstract class PlayerMixin {
 		if (useItem.is(ESTags.Items.GREATSWORDS)) {
 			useItem.hurtAndBreak(Math.max((int) (amount / 5f), 1), player, player.getUsedItemHand() == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
 			player.stopUsingItem();
-			player.getCooldowns().addCooldown(useItem.getItem(), 100);
+			player.getCooldowns().addCooldown(useItem, 100);
 		}
 	}
 

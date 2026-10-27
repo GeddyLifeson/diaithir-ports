@@ -103,7 +103,7 @@ public class ESChunkGenerator extends NoiseBasedChunkGenerator {
 					BlockState state = chunk.getBlockState(pos);
 					if (state.isAir() || state.is(defaultFluid.getBlock()) || state.is(fluid.getBlock())) {
 						if (!state.is(fluid.getBlock())) {
-							chunk.setBlockState(pos, fluid, false);
+							chunk.setBlockState(pos, fluid, 0);
 						}
 					} else {
 						break;
@@ -202,7 +202,7 @@ public class ESChunkGenerator extends NoiseBasedChunkGenerator {
 					return Pair.of(placement.getLocatePos(chunkPos), structureHolder);
 				}
 
-				ChunkAccess chunk = level.getChunk(chunkPos.x, chunkPos.z, ChunkStatus.STRUCTURE_STARTS);
+				ChunkAccess chunk = level.getChunk(chunkPos.x(), chunkPos.z(), ChunkStatus.STRUCTURE_STARTS);
 				StructureStart structureStart = structureManager.getStartForStructure(SectionPos.bottomOf(chunk), structureHolder.value(), chunk);
 				if (structureStart != null && structureStart.isValid()) {
 					if (!skipKnownStructures || structureStart.canBeReferenced()) {

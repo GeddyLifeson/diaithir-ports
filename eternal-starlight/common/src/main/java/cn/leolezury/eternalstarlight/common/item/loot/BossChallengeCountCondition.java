@@ -1,15 +1,13 @@
 package cn.leolezury.eternalstarlight.common.item.loot;
 
-import cn.leolezury.eternalstarlight.common.registry.ESLootItemConditions;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
+import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 
 import java.util.Map;
 import java.util.Optional;
@@ -23,18 +21,18 @@ public record BossChallengeCountCondition(Identifier bossId, Optional<Integer> m
 	).apply(instance, BossChallengeCountCondition::new));
 
 	@Override
-	public LootItemConditionType getType() {
-		return ESLootItemConditions.BOSS_CHALLENGE_COUNT.get();
+	public MapCodec<BossChallengeCountCondition> codec() {
+		return CODEC;
 	}
 
 	@Override
-	public Set<LootContextParam<?>> getReferencedContextParams() {
+	public Set<ContextKey<?>> getReferencedContextParams() {
 		return ImmutableSet.of(ESLootContextParams.BOSS_CHALLENGE_COUNTS);
 	}
 
 	@Override
 	public boolean test(LootContext context) {
-		Map<Identifier, Integer> counts = context.getParamOrNull(ESLootContextParams.BOSS_CHALLENGE_COUNTS);
+		Map<Identifier, Integer> counts = context.getOptionalParameter(ESLootContextParams.BOSS_CHALLENGE_COUNTS);
 		if (counts != null) {
 			int count = counts.getOrDefault(bossId, 0);
 			boolean result = true;

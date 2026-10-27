@@ -43,7 +43,7 @@ public abstract class EtherFluid extends FlowingFluid {
 	}
 
 	@Override
-	protected boolean canConvertToSource(Level level) {
+	protected boolean canConvertToSource(net.minecraft.server.level.ServerLevel level) {
 		return true;
 	}
 

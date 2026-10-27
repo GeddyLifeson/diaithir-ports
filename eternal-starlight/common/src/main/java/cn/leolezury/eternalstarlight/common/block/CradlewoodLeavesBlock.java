@@ -14,7 +14,7 @@ public class CradlewoodLeavesBlock extends TintedParticleLeavesBlock {
 	public static final MapCodec<CradlewoodLeavesBlock> CODEC = simpleCodec(CradlewoodLeavesBlock::new);
 
 	public CradlewoodLeavesBlock(Properties properties) {
-		super(properties);
+		super(0.01F, properties);
 	}
 
 	@Override

@@ -70,7 +70,7 @@ public abstract class SimpleContainerBlockEntity extends BlockEntity implements 
 	}
 
 	@Override
-	protected void applyImplicitComponents(BlockEntity.DataComponentInput componentInput) {
+	protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
 		super.applyImplicitComponents(componentInput);
 		componentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(this.getItems());
 	}
@@ -79,10 +79,5 @@ public abstract class SimpleContainerBlockEntity extends BlockEntity implements 
 	protected void collectImplicitComponents(DataComponentMap.Builder components) {
 		super.collectImplicitComponents(components);
 		components.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(this.getItems()));
-	}
-
-	@Override
-	public void removeComponentsFromTag(CompoundTag tag) {
-		tag.remove(ContainerHelper.TAG_ITEMS);
 	}
 }

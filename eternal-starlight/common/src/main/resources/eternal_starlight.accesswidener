@@ -144,3 +144,5 @@ accessible method net/minecraft/world/entity/player/Player getEnchantedDamage (L
 accessible field net/minecraft/world/entity/projectile/arrow/AbstractArrow baseDamage D
 accessible method net/minecraft/world/entity/projectile/arrow/AbstractArrow isInGround ()Z
 accessible method net/minecraft/world/entity/projectile/arrow/AbstractArrow setInGround (Z)V
+accessible field net/minecraft/world/level/storage/loot/parameters/LootContextParamSets REGISTRY Lcom/google/common/collect/BiMap;
+accessible field net/minecraft/world/entity/AnimationState startTick I

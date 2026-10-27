@@ -68,7 +68,7 @@ public class BoarwarfChatGoal extends Goal {
 			return false;
 		} else if (!this.followingTargetEvenIfNotSeen) {
 			return !this.mob.getNavigation().isDone();
-		} else return this.mob.isWithinRestriction(livingentity.blockPosition());
+		} else return this.mob.isWithinHome(livingentity.blockPosition());
 	}
 
 	@Override

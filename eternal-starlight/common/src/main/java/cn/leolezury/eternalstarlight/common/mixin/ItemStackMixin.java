@@ -50,7 +50,7 @@ public abstract class ItemStackMixin {
 	public abstract boolean is(Item item);
 
 	@Inject(method = "inventoryTick", at = @At("RETURN"))
-	private void inventoryTick(Level level, Entity entity, int inventorySlot, boolean isCurrentItem, CallbackInfo ci) {
+	private void inventoryTick(Level level, Entity entity, net.minecraft.world.entity.EquipmentSlot slot, CallbackInfo ci) {
 		if (!level.isClientSide() && entity.tickCount % 600 == 0 && isDamaged() && (is(ESTags.Items.MENDS_NATURALLY) || (is(ESTags.Items.REPAIRED_BY_CRESCENT_PENDANT) && entity instanceof LivingEntity living && ESAccessoryUtil.getActiveAccessoriesOnArmors(living).contains(ESItems.CRESCENT_PENDANT.get())))) {
 			setDamageValue(Math.max(getDamageValue() - 1, 0));
 		}

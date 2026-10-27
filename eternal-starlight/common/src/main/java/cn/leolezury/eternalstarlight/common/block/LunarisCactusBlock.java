@@ -90,7 +90,7 @@ public class LunarisCactusBlock extends Block {
 					serverLevel.setBlockAndUpdate(blockPos2, this.defaultBlockState().setValue(FRUIT, i == 3));
 					BlockState blockState2 = blockState.setValue(AGE, 0);
 					serverLevel.setBlock(blockPos, blockState2, 4);
-					serverLevel.neighborChanged(blockState2, blockPos2, this, blockPos, false);
+					serverLevel.neighborChanged(blockState2, blockPos2, this, null, false);
 				} else {
 					serverLevel.setBlock(blockPos, blockState.setValue(AGE, j + 1), 4);
 				}

@@ -1,7 +1,5 @@
 package cn.leolezury.eternalstarlight.common.vfx;
 
-import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
-import cn.leolezury.eternalstarlight.common.client.visual.ScreenShake;
 import cn.leolezury.eternalstarlight.common.util.ESMiscUtil;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.serialization.Codec;

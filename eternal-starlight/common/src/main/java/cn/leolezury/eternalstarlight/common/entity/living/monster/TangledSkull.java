@@ -96,7 +96,7 @@ public class TangledSkull extends Monster {
 		this.getEntityData().set(SHOT_FROM_MONSTROSITY, shotFromMonstrosity);
 	}
 
-	protected static final EntityDataAccessor<Vector3f> SHOT_MOVEMENT = SynchedEntityData.defineId(TangledSkull.class, EntityDataSerializers.VECTOR3);
+	protected static final EntityDataAccessor<org.joml.Vector3fc> SHOT_MOVEMENT = SynchedEntityData.defineId(TangledSkull.class, EntityDataSerializers.VECTOR3);
 
 	public Vec3 getShotMovement() {
 		return new Vec3(this.getEntityData().get(SHOT_MOVEMENT));
@@ -315,8 +315,8 @@ public class TangledSkull extends Monster {
 	}
 
 	@Override
-	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+	protected boolean considersEntityAsAlly(Entity entity) {
+		return super.considersEntityAsAlly(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class ESTrimMaterials {
 	}
 
 	private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Holder<Item> trimItem, int color, float itemModelIndex) {
-		TrimMaterial material = new TrimMaterial(key.identifier().getPath(), trimItem, itemModelIndex, Map.of(), Component.translatable(Util.makeDescriptionId("trim_material", key.identifier())).withStyle(Style.EMPTY.withColor(color)));
+		TrimMaterial material = new TrimMaterial(net.minecraft.world.item.equipment.trim.MaterialAssetGroup.create(key.identifier().getPath()), Component.translatable(Util.makeDescriptionId("trim_material", key.identifier())).withStyle(Style.EMPTY.withColor(color)));
 		context.register(key, material);
 	}
 

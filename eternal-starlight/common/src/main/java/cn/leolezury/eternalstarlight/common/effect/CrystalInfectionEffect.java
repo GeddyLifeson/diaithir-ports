@@ -21,7 +21,7 @@ public class CrystalInfectionEffect extends MobEffect {
 	}
 
 	@Override
-	public boolean applyEffectTick(LivingEntity living, int amplifier) {
+	public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity living, int amplifier) {
 		ESPortCompat.hurt(living, ESDamageTypes.getDamageSource(living.level(), ESDamageTypes.CRYSTAL_INFECTION), (amplifier + 1));
 		return true;
 	}

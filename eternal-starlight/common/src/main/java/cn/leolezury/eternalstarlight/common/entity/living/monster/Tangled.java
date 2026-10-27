@@ -204,22 +204,11 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 		}
 	}
 
-	@Override
-	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource damageSource, boolean bl) {
-		super.dropCustomDeathLoot(serverLevel, damageSource, bl);
-		Entity entity = damageSource.getEntity();
-		if (entity instanceof Creeper creeper) {
-			if (creeper.canDropMobsSkull()) {
-				ItemStack itemStack = ESItems.TANGLED_SKULL.get().getDefaultInstance();
-				creeper.increaseDroppedSkulls();
-				ESPortCompat.spawnAtLocation(this, itemStack);
-			}
-		}
-	}
+	// STUB: creeper skull drop removed (Creeper#canDropMobsSkull no longer exists)
 
 	@Override
-	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+	protected boolean considersEntityAsAlly(Entity entity) {
+		return super.considersEntityAsAlly(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Nullable

@@ -200,7 +200,6 @@ public class ChainOfSouls extends Projectile implements Grappling {
 			if (target == null) {
 				this.setPos(hitResult.getLocation());
 			}
-			this.checkInsideBlocks();
 		} else {
 			this.discard();
 		}
@@ -367,7 +366,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 	public void recreateFromPacket(ClientboundAddEntityPacket packet) {
 		super.recreateFromPacket(packet);
 		if (this.getPlayerOwner() == null) {
-			this.kill();
+			this.discard();
 		}
 	}
 }

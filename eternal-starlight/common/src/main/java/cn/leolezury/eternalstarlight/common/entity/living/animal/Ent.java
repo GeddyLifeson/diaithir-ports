@@ -89,8 +89,8 @@ public class Ent extends Animal {
 	public Holder<EntVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<EntVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ENT_VARIANT);
-		Optional<Holder.Reference<EntVariant>> optional = variants.getHolder(key);
-		return optional.orElse(variants.getHolder(ESEntVariants.LUNAR).orElseThrow());
+		Optional<Holder.Reference<EntVariant>> optional = variants.get(key);
+		return optional.orElse(variants.get(ESEntVariants.LUNAR).orElseThrow());
 	}
 
 	@Override

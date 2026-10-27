@@ -125,7 +125,7 @@ public class GrimstoneGolem extends AbstractGolem {
 	public void tick() {
 		super.tick();
 		if (level().isClientSide()) {
-			if (raiseArmsAnimationState.isStarted() && (raiseArmsAnimationState.getAccumulatedTime() / 1000f) * 20f > 20) {
+			if (raiseArmsAnimationState.isStarted() && (this.tickCount - raiseArmsAnimationState.startTick) > 20) {
 				raiseArmsAnimationState.stop();
 				displayAnimationState.start(tickCount);
 			}

@@ -79,7 +79,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 	protected void onProjectileHit(Level level, BlockState state, BlockHitResult hitResult, Projectile projectile) {
 		if (!level.isClientSide()) {
 			BlockPos pos = hitResult.getBlockPos();
-			if (projectile.mayInteract(level, pos) && projectile.mayBreak(level) && projectile.getDeltaMovement().length() > 0.6) {
+			if (level instanceof net.minecraft.server.level.ServerLevel sl && projectile.mayInteract(sl, pos) && projectile.mayBreak(sl) && projectile.getDeltaMovement().length() > 0.6) {
 				level.destroyBlock(pos, true);
 			}
 		}

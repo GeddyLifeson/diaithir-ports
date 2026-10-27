@@ -56,8 +56,8 @@ public class ESPaintingItem extends HangingEntityItem {
 				return InteractionResult.CONSUME;
 			}
 			HangingEntity hangingEntity = optional.get();
-			CustomData customData = itemStack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
-			if (!customData.isEmpty()) {
+			net.minecraft.world.item.component.TypedEntityData<EntityType<?>> customData = itemStack.get(DataComponents.ENTITY_DATA);
+			if (customData != null) {
 				EntityType.updateCustomEntityTag(level, player, hangingEntity, customData);
 			}
 			if (hangingEntity.survives()) {
@@ -78,9 +78,9 @@ public class ESPaintingItem extends HangingEntityItem {
 	@Override
 	public void appendHoverText(ItemStack itemStack, Item.TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> list, TooltipFlag tooltipFlag) {
 		super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, list, tooltipFlag);
-		CustomData customData = itemStack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
-		if (!customData.isEmpty()) {
-			CompoundTag tag = customData.copyTag();
+		net.minecraft.world.item.component.TypedEntityData<EntityType<?>> customData = itemStack.get(DataComponents.ENTITY_DATA);
+		if (customData != null) {
+			CompoundTag tag = customData.copyTagWithoutId();
 			Identifier variantId = Identifier.tryParse(tag.getStringOr(ESPainting.TAG_VARIANT, ""));
 			if (variantId != null) {
 				list.accept(Component.translatable(variantId.toLanguageKey("painting", "title")).withStyle(ChatFormatting.YELLOW));

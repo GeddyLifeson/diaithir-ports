@@ -14,6 +14,11 @@ import java.util.UUID;
 
 /** Small helpers that keep the 1.21.1-shaped call sites readable after the 26.1 API changes. */
 public class ESPortCompat {
+	public static final com.mojang.serialization.Codec<org.joml.Vector3f> VECTOR3F_CODEC = net.minecraft.util.ExtraCodecs.VECTOR3F.xmap(org.joml.Vector3f::new, v -> v);
+	public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, org.joml.Vector3f> VECTOR3F_STREAM = net.minecraft.network.codec.ByteBufCodecs.VECTOR3F.map(org.joml.Vector3f::new, v -> v);
+	public static final com.mojang.serialization.Codec<org.joml.Quaternionf> QUATERNIONF_CODEC = net.minecraft.util.ExtraCodecs.QUATERNIONF.xmap(org.joml.Quaternionf::new, q -> q);
+	public static final net.minecraft.network.codec.StreamCodec<io.netty.buffer.ByteBuf, org.joml.Quaternionf> QUATERNIONF_STREAM = net.minecraft.network.codec.ByteBufCodecs.QUATERNIONF.map(org.joml.Quaternionf::new, q -> q);
+
 	public static boolean hurt(Entity entity, DamageSource source, float amount) {
 		return entity.level() instanceof ServerLevel serverLevel && entity.hurtServer(serverLevel, source, amount);
 	}

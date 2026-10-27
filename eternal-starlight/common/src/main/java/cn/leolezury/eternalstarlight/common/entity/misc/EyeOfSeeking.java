@@ -163,6 +163,11 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 		}
 	}
 
+	@Override
+	public boolean hurtServer(ServerLevel level, net.minecraft.world.damagesource.DamageSource source, float damage) {
+		return false;
+	}
+
 	public Vec3 getPositionForOwner(Vec3 ownerPos, Vec3 targetPos) {
 		Vec3 toTarget = targetPos.subtract(ownerPos);
 		Vec3 horizontal = new Vec3(toTarget.x, 0, toTarget.z);
@@ -172,7 +177,7 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 	}
 
 	@Override
-	public InteractionResult interact(Player player, InteractionHand hand) {
+	public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
 		if (!level().isClientSide()) {
 			this.playSound(ESSoundEvents.SEEKING_EYE_DEATH.get(), 1.0F, 1.0F);
 			if (this.random.nextFloat() < 0.2F) {

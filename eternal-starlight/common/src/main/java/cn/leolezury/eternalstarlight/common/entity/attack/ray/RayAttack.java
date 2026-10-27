@@ -89,7 +89,6 @@ public class RayAttack extends Entity implements TraceableEntity {
 
 	public RayAttack(EntityType<? extends RayAttack> type, Level world) {
 		super(type, world);
-		noCulling = true;
 	}
 
 	public RayAttack(EntityType<? extends RayAttack> type, Level world, LivingEntity caster, double x, double y, double z, float yaw, float pitch) {

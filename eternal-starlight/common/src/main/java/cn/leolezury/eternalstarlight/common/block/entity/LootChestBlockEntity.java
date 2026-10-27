@@ -292,7 +292,7 @@ public class LootChestBlockEntity extends BlockEntity {
 		}
 		if (ESPortCompat.has(compoundTag, TAG_ITEMS_TO_EJECT)) {
 			this.itemsToEject.clear();
-			ItemStack.OPTIONAL_CODEC.listOf().parse(compoundTag.lookup().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_ITEMS_TO_EJECT)).resultOrPartial((string) -> EternalStarlight.LOGGER.error("Failed to parse Loot Chest items: '{}'", string)).ifPresent(this.itemsToEject::addAll);
+			compoundTag.read(TAG_ITEMS_TO_EJECT, ItemStack.OPTIONAL_CODEC.listOf()).ifPresent(this.itemsToEject::addAll);
 		}
 		quickEjection = compoundTag.getBooleanOr(TAG_QUICK_EJECTION, false);
 		if (ESPortCompat.has(compoundTag, TAG_REWARD_TARGETS)) {

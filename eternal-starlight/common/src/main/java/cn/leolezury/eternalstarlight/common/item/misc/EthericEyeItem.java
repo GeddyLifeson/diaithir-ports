@@ -47,7 +47,7 @@ public class EthericEyeItem extends Item {
 			player.teleportTo(player.getX(), y, player.getZ());
 			stack.consume(1, player);
 			player.awardStat(Stats.ITEM_USED.get(this));
-			player.getCooldowns().addCooldown(this, 20);
+			player.getCooldowns().addCooldown(this.getDefaultInstance(), 20);
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;

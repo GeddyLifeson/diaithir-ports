@@ -832,7 +832,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 				new ItemStack(ESItems.STARLIGHT_SILVER_COIN.get(), 10),
 				Util.make(() -> {
 					ItemStack stack = ESItems.STARLIT_PAINTING.get().getDefaultInstance();
-					stack.set(DataComponents.ENTITY_DATA, CustomData.of(ESPainting.paintingData(ESPaintingVariants.GUARDIAN)));
+					stack.set(DataComponents.ENTITY_DATA, ESPainting.paintingData(ESPaintingVariants.GUARDIAN));
 					return stack;
 				}),
 				10

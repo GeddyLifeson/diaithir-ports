@@ -8,12 +8,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class DesertBushBlock extends BushBlock {
+public class DesertBushBlock extends VegetationBlock {
 	public static final MapCodec<DesertBushBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
 		Codec.INT.fieldOf("height").forGetter((block) -> block.height),
 		propertiesCodec()

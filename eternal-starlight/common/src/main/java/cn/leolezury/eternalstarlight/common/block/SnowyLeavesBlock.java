@@ -23,8 +23,12 @@ public class SnowyLeavesBlock extends LeavesBlock {
 	public static final BooleanProperty SNOWY = BlockStateProperties.SNOWY;
 
 	public SnowyLeavesBlock(Properties properties) {
-		super(properties);
+		super(0.01F, properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(SNOWY, false));
+	}
+
+	@Override
+	protected void spawnFallingLeavesParticle(net.minecraft.world.level.Level level, BlockPos pos, RandomSource random) {
 	}
 
 	@Override

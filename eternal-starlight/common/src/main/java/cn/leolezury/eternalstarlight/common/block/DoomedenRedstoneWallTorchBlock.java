@@ -38,11 +38,6 @@ public class DoomedenRedstoneWallTorchBlock extends DoomedenRedstoneTorchBlock {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return this.asItem().getDescriptionId();
-	}
-
-	@Override
 	public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
 		return WallTorchBlock.getShape(blockState);
 	}

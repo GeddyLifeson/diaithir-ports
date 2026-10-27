@@ -318,7 +318,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 	}
 
 	@Override
-	protected void applyImplicitComponents(BlockEntity.DataComponentInput input) {
+	protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter input) {
 		super.applyImplicitComponents(input);
 		this.stored.clear();
 		List<Occupant> occupants = input.getOrDefault(ESDataComponents.BIRDS.get(), List.of());
@@ -330,12 +330,6 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 	protected void collectImplicitComponents(DataComponentMap.Builder builder) {
 		super.collectImplicitComponents(builder);
 		builder.set(ESDataComponents.BIRDS.get(), this.getBirds());
-	}
-
-	@Override
-	public void removeComponentsFromTag(CompoundTag compoundTag) {
-		super.removeComponentsFromTag(compoundTag);
-		compoundTag.remove(TAG_BIRDS);
 	}
 
 	private List<Occupant> getBirds() {
@@ -402,8 +396,9 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 		public static final StreamCodec<ByteBuf, Occupant> STREAM_CODEC = StreamCodec.composite(CustomData.STREAM_CODEC, Occupant::entityData, ByteBufCodecs.VAR_INT, Occupant::ticksInNest, ByteBufCodecs.VAR_INT, Occupant::minTicksInNest, Occupant::new);
 
 		public static Occupant of(Entity entity, int minTicksInNest) {
-			CompoundTag compoundTag = new CompoundTag();
-			entity.save(compoundTag);
+			net.minecraft.world.level.storage.TagValueOutput output = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, entity.registryAccess());
+			entity.save(output);
+			CompoundTag compoundTag = output.buildResult();
 			IGNORED_BIRD_TAGS.forEach(compoundTag::remove);
 			return new Occupant(CustomData.of(compoundTag), 0, minTicksInNest);
 		}

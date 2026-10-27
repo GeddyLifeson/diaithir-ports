@@ -1161,7 +1161,7 @@ public class ESCreativeModeTabs {
 	public static void generatePresetPaintings(CreativeModeTab.Output output, HolderLookup.RegistryLookup<ESPaintingVariant> registryLookup) {
 		registryLookup.listElements().sorted(PAINTING_COMPARATOR).forEach((reference) -> {
 			ItemStack itemStack = new ItemStack(ESItems.STARLIT_PAINTING.get());
-			itemStack.set(DataComponents.ENTITY_DATA, CustomData.of(ESPainting.paintingData(reference.key())));
+			itemStack.set(DataComponents.ENTITY_DATA, ESPainting.paintingData(reference.key()));
 			output.accept(itemStack);
 		});
 	}

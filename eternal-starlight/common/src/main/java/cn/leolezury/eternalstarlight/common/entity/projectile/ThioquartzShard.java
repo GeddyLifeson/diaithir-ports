@@ -23,7 +23,8 @@ public class ThioquartzShard extends ThrowableProjectile {
 	}
 
 	public ThioquartzShard(Level level, LivingEntity livingEntity) {
-		super(ESEntities.THIOQUARTZ_SHARD.get(), livingEntity, level);
+		super(ESEntities.THIOQUARTZ_SHARD.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public ThioquartzShard(Level level, double x, double y, double z) {

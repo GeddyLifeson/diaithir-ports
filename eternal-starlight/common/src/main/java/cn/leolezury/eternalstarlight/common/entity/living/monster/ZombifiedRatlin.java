@@ -57,10 +57,20 @@ public class ZombifiedRatlin extends Ratlin {
 			.add(Attributes.MOVEMENT_SPEED, 0.25D);
 	}
 
+	private boolean isSunBurning() {
+		if (!this.level().isClientSide() && this.level().environmentAttributes().getValue(net.minecraft.world.attribute.EnvironmentAttributes.MONSTERS_BURN, this.position())) {
+			float br = this.getLightLevelDependentMagicValue();
+			net.minecraft.core.BlockPos roundedPos = net.minecraft.core.BlockPos.containing(this.getX(), this.getEyeY(), this.getZ());
+			boolean inNonBurnable = this.isInWaterOrRain() || this.isInPowderSnow || this.wasInPowderSnow;
+			return br > 0.5F && this.random.nextFloat() * 30.0F < (br - 0.4F) * 2.0F && !inNonBurnable && this.level().canSeeSky(roundedPos);
+		}
+		return false;
+	}
+
 	@Override
 	public void aiStep() {
 		super.aiStep();
-		if (this.isAlive() && this.isSunBurnTick()) {
+		if (this.isAlive() && this.isSunBurning()) {
 			this.igniteForSeconds(8.0F);
 		}
 	}

@@ -158,7 +158,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	}
 
 	public AstralGolemMaterial getMaterial() {
-		return level().registryAccess().lookupOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).get(getMaterialId());
+		return level().registryAccess().lookupOrThrow(ESRegistries.ASTRAL_GOLEM_MATERIAL).getValue(getMaterialId());
 	}
 
 	public void setMaterial(AstralGolemMaterial material) {
@@ -312,7 +312,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource source) {
-		return isDamageSourceBlocked(source) ? SoundEvents.SHIELD_BLOCK : ESSoundEvents.ASTRAL_GOLEM_HURT.get();
+		return ESSoundEvents.ASTRAL_GOLEM_HURT.get();
 	}
 
 	@Override

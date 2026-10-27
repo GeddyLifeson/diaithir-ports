@@ -34,7 +34,7 @@ public record ShimmerLacewingVariant(Identifier texture, Identifier textureFull,
 
 	public static Holder<ShimmerLacewingVariant> getSpawnVariant(RegistryAccess registryAccess, Holder<Biome> holder) {
 		Registry<ShimmerLacewingVariant> registry = registryAccess.lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT);
-		Optional<Holder.Reference<ShimmerLacewingVariant>> optional = registry.holders().filter(reference -> reference.value().biomes().contains(holder)).findFirst().or(() -> registry.getHolder(ESShimmerLacewingVariants.RIVER));
+		Optional<Holder.Reference<ShimmerLacewingVariant>> optional = registry.listElements().filter(reference -> reference.value().biomes().contains(holder)).findFirst().or(() -> registry.get(ESShimmerLacewingVariants.RIVER));
 		Objects.requireNonNull(registry);
 		return optional.or(registry::getAny).orElseThrow();
 	}

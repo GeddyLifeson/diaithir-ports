@@ -6,7 +6,7 @@ import com.google.gson.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
+import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
-public class TheGatekeeperNameManager extends SimpleJsonResourceReloadListener {
+public class TheGatekeeperNameManager extends SimplePreparableReloadListener<Void> {
 	private static final Identifier NAMES_LOCATION = EternalStarlight.id(EternalStarlight.ID + "/gatekeeper_names/gatekeeper_names.json");
 	private static final RandomSource RANDOM = RandomSource.create();
 	public static final Gson GSON_INSTANCE = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
@@ -25,11 +25,15 @@ public class TheGatekeeperNameManager extends SimpleJsonResourceReloadListener {
 	private static final String FOLDER = EternalStarlight.ID + "/gatekeeper_names";
 
 	public TheGatekeeperNameManager() {
-		super(GSON_INSTANCE, FOLDER);
 	}
 
 	@Override
-	protected void apply(Map<Identifier, JsonElement> resourceList, ResourceManager resourceManagerIn, ProfilerFiller profilerIn) {
+	protected Void prepare(ResourceManager resourceManager, ProfilerFiller profiler) {
+		return null;
+	}
+
+	@Override
+	protected void apply(Void prepared, ResourceManager resourceManagerIn, ProfilerFiller profilerIn) {
 		for (Resource iresource : resourceManagerIn.getResourceStack(NAMES_LOCATION)) {
 			try (InputStream inputstream = iresource.open();
 			     Reader reader = new BufferedReader(new InputStreamReader(inputstream, StandardCharsets.UTF_8))

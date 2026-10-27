@@ -21,7 +21,8 @@ public class WiltedPetal extends ThrowableProjectile {
 	}
 
 	public WiltedPetal(Level level, LivingEntity livingEntity) {
-		super(ESEntities.WILTED_PETAL.get(), livingEntity, level);
+		super(ESEntities.WILTED_PETAL.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public WiltedPetal(Level level, double x, double y, double z) {

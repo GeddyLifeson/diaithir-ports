@@ -312,8 +312,8 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
+	protected boolean considersEntityAsAlly(Entity entity) {
+		return super.considersEntityAsAlly(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STARLIGHT_GOLEM_ALLIES);
 	}
 
 	@Override

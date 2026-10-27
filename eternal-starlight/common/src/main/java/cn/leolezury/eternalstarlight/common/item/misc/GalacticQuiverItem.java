@@ -63,7 +63,7 @@ public class GalacticQuiverItem extends Item {
 				arrows.removeIf(LargeItemStackList.LargeItemStack::isEmpty);
 				inventoryItem.set(ESDataComponents.ARROWS.get(), new LargeItemStackList(Collections.unmodifiableList(arrows)));
 				if (inventory.player instanceof ServerPlayer serverPlayer) {
-					serverPlayer.connection.send(new ClientboundContainerSetSlotPacket(ClientboundContainerSetSlotPacket.PLAYER_INVENTORY, 0, i, inventoryItem));
+					serverPlayer.connection.send(new ClientboundContainerSetSlotPacket(-2, 0, i, inventoryItem));
 				}
 			}
 			if (stack.isEmpty()) {
@@ -188,7 +188,7 @@ public class GalacticQuiverItem extends Item {
 
 	@Override
 	public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
-		if (!stack.has(DataComponents.HIDE_TOOLTIP) && !stack.has(DataComponents.HIDE_ADDITIONAL_TOOLTIP)) {
+		if (!stack.getOrDefault(DataComponents.TOOLTIP_DISPLAY, net.minecraft.world.item.component.TooltipDisplay.DEFAULT).hideTooltip()) {
 			LargeItemStackList arrows = stack.getOrDefault(ESDataComponents.ARROWS.get(), new LargeItemStackList(List.of()));
 			return arrows.isEmpty() ? Optional.empty() : Optional.of(new GalacticQuiverTooltipComponent(arrows));
 		}

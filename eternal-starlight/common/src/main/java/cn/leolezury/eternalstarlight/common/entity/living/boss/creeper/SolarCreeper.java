@@ -47,7 +47,7 @@ public class SolarCreeper extends ESBoss {
 	private static final String TAG_INTRO_COMPLETED = "intro_completed";
 
 	private static final EntityDataAccessor<Float> HEALTH_PERCENTAGE = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.FLOAT);
-	private static final EntityDataAccessor<Vector3f> SOLAR_RAY_NORMAL = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.VECTOR3);
+	private static final EntityDataAccessor<org.joml.Vector3fc> SOLAR_RAY_NORMAL = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.VECTOR3);
 	private static final EntityDataAccessor<Float> SOLAR_RAY_ANGLE = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.FLOAT);
 	private static final EntityDataAccessor<Float> SOLAR_RAY_LENGTH_0 = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.FLOAT);
 	private static final EntityDataAccessor<Float> SOLAR_RAY_LENGTH_1 = SynchedEntityData.defineId(SolarCreeper.class, EntityDataSerializers.FLOAT);
@@ -93,7 +93,7 @@ public class SolarCreeper extends ESBoss {
 	}
 
 	public Vector3f getSolarRayNormal() {
-		return this.getEntityData().get(SOLAR_RAY_NORMAL);
+		return new Vector3f(this.getEntityData().get(SOLAR_RAY_NORMAL));
 	}
 
 	public void setSolarRayNormal(Vector3f normal) {
@@ -421,7 +421,7 @@ public class SolarCreeper extends ESBoss {
 	}
 
 	@Override
-	protected boolean isAffectedByFluids() {
+	public boolean isAffectedByFluids() {
 		return false;
 	}
 

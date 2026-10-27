@@ -18,7 +18,7 @@ public record PostEffectPacket(PostEffectType<?> effectType, PostEffectData data
 	public static final StreamCodec<RegistryFriendlyByteBuf, PostEffectPacket> STREAM_CODEC = StreamCodec.ofMember(PostEffectPacket::write, PostEffectPacket::read);
 
 	public static PostEffectPacket read(FriendlyByteBuf buf) {
-		Identifier typeId = buf.readResourceLocation();
+		Identifier typeId = buf.readIdentifier();
 		PostEffectType<?> type = ESPostEffects.get(typeId);
 		PostEffectData data = type == null ? null : readData(buf, type);
 		Vec3 position = new Vec3(buf.readDouble(), buf.readDouble(), buf.readDouble());
@@ -33,7 +33,7 @@ public record PostEffectPacket(PostEffectType<?> effectType, PostEffectData data
 	}
 
 	public static void write(PostEffectPacket packet, FriendlyByteBuf buf) {
-		buf.writeResourceLocation(packet.effectType().id());
+		buf.writeIdentifier(packet.effectType().id());
 		writeData(buf, packet.data());
 		buf.writeDouble(packet.position().x);
 		buf.writeDouble(packet.position().y);

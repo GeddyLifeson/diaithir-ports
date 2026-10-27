@@ -46,17 +46,12 @@ public class YetiAi {
 		return Ingredient.of(ESPortCompat.items(ESTags.Items.YETI_FOOD));
 	}
 
-	protected static Brain<?> makeBrain(Brain<Yeti> brain) {
-		initCoreActivity(brain);
-		initIdleActivity(brain);
-		brain.setCoreActivities(Set.of(Activity.CORE));
-		brain.setDefaultActivity(Activity.IDLE);
-		brain.useDefaultActivity();
-		return brain;
+	protected static List<net.minecraft.world.entity.ai.ActivityData<Yeti>> getActivities() {
+		return List.of(initCoreActivity(), initIdleActivity());
 	}
 
-	private static void initCoreActivity(Brain<Yeti> brain) {
-		brain.addActivity(Activity.CORE, 0, ImmutableList.of(
+	private static net.minecraft.world.entity.ai.ActivityData<Yeti> initCoreActivity() {
+		return net.minecraft.world.entity.ai.ActivityData.<Yeti>create(Activity.CORE, 0, ImmutableList.<BehaviorControl<? super Yeti>>of(
 			new Swim(0.8F),
 			new AnimalPanic<>(1.0F),
 			new MoveToTargetSink(),
@@ -64,8 +59,8 @@ public class YetiAi {
 		);
 	}
 
-	private static void initIdleActivity(Brain<Yeti> brain) {
-		brain.addActivity(Activity.IDLE, ImmutableList.of(
+	private static net.minecraft.world.entity.ai.ActivityData<Yeti> initIdleActivity() {
+		return net.minecraft.world.entity.ai.ActivityData.<Yeti>create(Activity.IDLE, ImmutableList.of(
 			Pair.of(0, new AnimalMakeLove(ESEntities.YETI.get())),
 			Pair.of(1, new FollowTemptation((livingEntity) -> 1.25F, (livingEntity) -> 3.5)),
 			Pair.of(2, new LookAtTargetSink(45, 90)),

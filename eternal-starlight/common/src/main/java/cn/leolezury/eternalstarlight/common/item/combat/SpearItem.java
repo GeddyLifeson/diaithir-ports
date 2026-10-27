@@ -41,12 +41,7 @@ public abstract class SpearItem extends Item implements ProjectileItem {
 	}
 
 	public static Tool createToolProperties() {
-		return new Tool(List.of(), 1.0F, 2);
-	}
-
-	@Override
-	public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
-		return !player.isCreative();
+		return new Tool(List.of(), 1.0F, 2, false);
 	}
 
 	@Override

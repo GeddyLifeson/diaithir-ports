@@ -30,7 +30,7 @@ public class ThermalSpringstoneBlock extends Block {
 
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource source) {
-		BubbleColumnBlock.updateColumn(level, pos.above(), state);
+		BubbleColumnBlock.updateColumn(net.minecraft.world.level.block.Blocks.BUBBLE_COLUMN, level, pos.above(), state);
 	}
 
 	@Override

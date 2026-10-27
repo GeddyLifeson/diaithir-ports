@@ -129,11 +129,10 @@ public class ESPainting extends HangingEntity {
 		return this.getEntityData().get(DATA_ITEM);
 	}
 
-	public static CompoundTag paintingData(ResourceKey<ESPaintingVariant> variant) {
+	public static net.minecraft.world.item.component.TypedEntityData<net.minecraft.world.entity.EntityType<?>> paintingData(ResourceKey<ESPaintingVariant> variant) {
 		CompoundTag tag = new CompoundTag();
-		tag.putString("id", EternalStarlight.ID + ":painting");
 		tag.putString(TAG_VARIANT, variant.identifier().toString());
-		return tag;
+		return net.minecraft.world.item.component.TypedEntityData.of(cn.leolezury.eternalstarlight.common.registry.ESEntities.PAINTING.get(), tag);
 	}
 
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#calculateBoundingBox

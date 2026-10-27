@@ -78,8 +78,8 @@ public class Seeker extends Monster {
 	public Holder<SeekerVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<SeekerVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SEEKER_VARIANT);
-		Optional<Holder.Reference<SeekerVariant>> optional = variants.getHolder(key);
-		return optional.orElse(variants.getHolder(ESSeekerVariants.LUNAR).orElseThrow());
+		Optional<Holder.Reference<SeekerVariant>> optional = variants.get(key);
+		return optional.orElse(variants.get(ESSeekerVariants.LUNAR).orElseThrow());
 	}
 
 	protected static final EntityDataAccessor<Float> SEEKER_Y_ROT = SynchedEntityData.defineId(Seeker.class, EntityDataSerializers.FLOAT);
@@ -232,7 +232,7 @@ public class Seeker extends Monster {
 						setSeekerYRot(attackYRot + 180);
 						setYRot(getSeekerYRot() - 90);
 						if (canReachTarget) {
-							doHurtTarget(target);
+							doHurtTarget((ServerLevel) level(), target);
 						}
 					}
 				}

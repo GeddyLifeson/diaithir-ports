@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -26,8 +27,8 @@ public record ESSmokeParticleOptions(Vector3f fromColor, Vector3f toColor, float
 	}
 
 	public static final MapCodec<ESSmokeParticleOptions> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
-		ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(ESSmokeParticleOptions::fromColor),
-		ExtraCodecs.VECTOR3F.fieldOf("to_color").forGetter(ESSmokeParticleOptions::toColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("from_color").forGetter(ESSmokeParticleOptions::fromColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("to_color").forGetter(ESSmokeParticleOptions::toColor),
 		Codec.FLOAT.fieldOf("alpha").forGetter(ESSmokeParticleOptions::alpha),
 		Codec.FLOAT.fieldOf("life_scale").forGetter(ESSmokeParticleOptions::lifeScale),
 		Codec.FLOAT.fieldOf("motion_scale").forGetter(ESSmokeParticleOptions::motionScale),

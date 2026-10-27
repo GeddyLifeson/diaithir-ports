@@ -28,7 +28,7 @@ public class TearBomb extends PrimedTnt {
 		this.xo = x;
 		this.yo = y;
 		this.zo = z;
-		this.owner = igniter;
+		this.owner = igniter == null ? null : net.minecraft.world.entity.EntityReference.of(igniter);
 		this.setBlockState(ESBlocks.TEAR_BOMB.get().defaultBlockState());
 	}
 

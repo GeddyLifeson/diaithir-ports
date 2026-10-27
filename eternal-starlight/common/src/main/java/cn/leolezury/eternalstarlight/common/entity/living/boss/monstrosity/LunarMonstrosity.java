@@ -251,11 +251,11 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	protected void blockedByShield(LivingEntity blocker) {
+	protected void blockedByItem(LivingEntity blocker) {
 		if (getBehaviorState() == LunarMonstrosityBitePhase.ID && blocker == getTarget()) {
 			setBehaviorState(LunarMonstrosityStunPhase.ID);
 		}
-		super.blockedByShield(blocker);
+		super.blockedByItem(blocker);
 	}
 
 	@Override
@@ -291,8 +291,8 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	public boolean isAlliedTo(Entity entity) {
-		return super.isAlliedTo(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
+	protected boolean considersEntityAsAlly(Entity entity) {
+		return super.considersEntityAsAlly(entity) || entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.LUNAR_MONSTROSITY_ALLIES);
 	}
 
 	@Override

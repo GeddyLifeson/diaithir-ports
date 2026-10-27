@@ -50,7 +50,8 @@ public class PermafrostSpit extends ThrowableProjectile {
 	}
 
 	public PermafrostSpit(Level level, LivingEntity livingEntity) {
-		super(ESEntities.PERMAFROST_SPIT.get(), livingEntity, level);
+		super(ESEntities.PERMAFROST_SPIT.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public PermafrostSpit(Level level, double x, double y, double z) {

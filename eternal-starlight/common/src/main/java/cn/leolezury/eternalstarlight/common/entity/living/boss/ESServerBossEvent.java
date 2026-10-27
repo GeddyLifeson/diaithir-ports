@@ -24,7 +24,7 @@ public class ESServerBossEvent extends ServerBossEvent {
 	private int type;
 
 	public ESServerBossEvent(ESBoss boss, int type, BossEvent.BossBarColor color, boolean darkenScreen) {
-		super(boss.getDisplayName(), color, BossEvent.BossBarOverlay.PROGRESS);
+		super(java.util.UUID.randomUUID(), boss.getDisplayName(), color, BossEvent.BossBarOverlay.PROGRESS);
 		this.boss = boss;
 		this.type = type;
 		this.setDarkenScreen(darkenScreen);

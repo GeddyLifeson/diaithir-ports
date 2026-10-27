@@ -62,7 +62,8 @@ public class BallLightning extends ThrowableProjectile {
 	}
 
 	public BallLightning(Level level, LivingEntity livingEntity) {
-		super(ESEntities.BALL_LIGHTNING.get(), livingEntity, level);
+		super(ESEntities.BALL_LIGHTNING.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public BallLightning(Level level, double x, double y, double z) {

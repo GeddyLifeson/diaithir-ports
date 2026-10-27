@@ -55,7 +55,7 @@ public class CrateBlock extends BaseEntityBlock {
 			BlockEntity blockentity = level.getBlockEntity(pos);
 			if (blockentity instanceof CrateBlockEntity entity) {
 				player.openMenu(entity);
-				PiglinAi.angerNearbyPiglins(player, true);
+				if (level instanceof net.minecraft.server.level.ServerLevel sl) PiglinAi.angerNearbyPiglins(sl, player, true);
 			}
 
 			return InteractionResult.CONSUME;
@@ -126,7 +126,7 @@ public class CrateBlock extends BaseEntityBlock {
 	@Override
 	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
 		ItemStack itemStack = super.getCloneItemStack(level, pos, state, includeData);
-		level.getBlockEntity(pos, ESBlockEntities.CRATE.get()).ifPresent((blockEntity) -> blockEntity.saveToItem(itemStack, level.registryAccess()));
+		level.getBlockEntity(pos, ESBlockEntities.CRATE.get()).ifPresent((blockEntity) -> itemStack.applyComponents(blockEntity.collectComponents()));
 		return itemStack;
 	}
 

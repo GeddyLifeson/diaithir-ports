@@ -32,7 +32,7 @@ import java.util.List;
 public class SoulitSpectator extends ThrowableItemProjectile {
 	private static final String TAG_NO_MOVEMENT = "no_movement";
 
-	private static final TicketType<ChunkPos> CHUNK_LOADING_TICKET_TYPE = TicketType.create(EternalStarlight.ID + ":soulit_spectator", Comparator.comparingLong(ChunkPos::toLong));
+	private static final TicketType CHUNK_LOADING_TICKET_TYPE = TicketType.PLAYER_LOADING;
 
 	private boolean noMovement;
 	private final List<ChunkPos> loadedChunks = new ArrayList<>();
@@ -56,7 +56,7 @@ public class SoulitSpectator extends ThrowableItemProjectile {
 		if (!level().isClientSide() && level() instanceof ServerLevel serverLevel) {
 			if (!loadedChunks.contains(chunkPosition())) {
 				// don't know if it really works
-				serverLevel.getChunkSource().addRegionTicket(CHUNK_LOADING_TICKET_TYPE, chunkPosition(), 3, chunkPosition());
+				serverLevel.getChunkSource().addTicketWithRadius(CHUNK_LOADING_TICKET_TYPE, chunkPosition(), 3);
 				loadedChunks.add(chunkPosition());
 			}
 			if (tickCount == 40 && getOwner() instanceof ServerPlayer serverPlayer) {
@@ -68,7 +68,7 @@ public class SoulitSpectator extends ThrowableItemProjectile {
 			}
 			if (tickCount > 200) {
 				for (ChunkPos chunkPos : loadedChunks) {
-					serverLevel.getChunkSource().removeRegionTicket(CHUNK_LOADING_TICKET_TYPE, chunkPos, 3, chunkPos);
+					serverLevel.getChunkSource().removeTicketWithRadius(CHUNK_LOADING_TICKET_TYPE, chunkPos, 3);
 				}
 				if (getOwner() instanceof ServerPlayer serverPlayer) {
 					ESPlatform.INSTANCE.sendToClient(serverPlayer, new UpdateCameraPacket(-1));

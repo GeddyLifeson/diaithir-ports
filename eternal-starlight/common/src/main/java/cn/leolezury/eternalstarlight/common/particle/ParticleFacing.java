@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -28,12 +29,12 @@ public record ParticleFacing(boolean cameraFacing, Quaternionf rotation) {
 
 	public static final Codec<ParticleFacing> CODEC = RecordCodecBuilder.create(instance -> instance.group(
 		Codec.BOOL.optionalFieldOf("camera_facing", true).forGetter(ParticleFacing::cameraFacing),
-		ExtraCodecs.QUATERNIONF.optionalFieldOf("rotation", new Quaternionf()).forGetter(ParticleFacing::rotation)
+		ESPortCompat.QUATERNIONF_CODEC.optionalFieldOf("rotation", new Quaternionf()).forGetter(ParticleFacing::rotation)
 	).apply(instance, ParticleFacing::new));
 
 	public static final StreamCodec<RegistryFriendlyByteBuf, ParticleFacing> STREAM_CODEC = StreamCodec.composite(
 		ByteBufCodecs.BOOL, ParticleFacing::cameraFacing,
-		ByteBufCodecs.QUATERNIONF, ParticleFacing::rotation,
+		ESPortCompat.QUATERNIONF_STREAM, ParticleFacing::rotation,
 		ParticleFacing::new
 	);
 }

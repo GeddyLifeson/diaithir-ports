@@ -152,7 +152,7 @@ public class Gleech extends Monster {
 
 	public void attachTo(LivingEntity livingEntity) {
 		if (!level().isClientSide() && level() instanceof ServerLevel serverLevel) {
-			startRiding(livingEntity, true);
+			startRiding(livingEntity, true, true);
 			ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ClientMountPacket(getId(), livingEntity.getId()));
 		}
 	}
@@ -161,8 +161,6 @@ public class Gleech extends Monster {
 	public void rideTick() {
 		this.setDeltaMovement(Vec3.ZERO);
 		this.tick();
-		this.oRun = this.run;
-		this.run = 0.0F;
 		this.resetFallDistance();
 		if (!level().isClientSide()) {
 			attachTicks++;

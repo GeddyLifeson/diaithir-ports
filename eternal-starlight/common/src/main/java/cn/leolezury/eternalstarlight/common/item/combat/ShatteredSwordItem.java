@@ -50,7 +50,7 @@ public class ShatteredSwordItem extends Item {
 				setHasBlade(itemStack, false);
 			}
 			player.awardStat(Stats.ITEM_USED.get(this));
-			player.getCooldowns().addCooldown(this, 10);
+			player.getCooldowns().addCooldown(this.getDefaultInstance(), 10);
 			return InteractionResult.SUCCESS;
 		} else {
 			if (player.hasInfiniteMaterials()) {
@@ -71,8 +71,8 @@ public class ShatteredSwordItem extends Item {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-		if (!level.isClientSide() && entity instanceof Player player && !hasBlade(stack)) {
+	public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @org.jetbrains.annotations.Nullable net.minecraft.world.entity.EquipmentSlot slot) {
+		if (entity instanceof Player player && !hasBlade(stack)) {
 			for (int i = 0; i < player.getInventory().getContainerSize(); ++i) {
 				ItemStack item = player.getInventory().getItem(i);
 				if (item.is(ESItems.SHATTERED_SWORD_BLADE.get())) {

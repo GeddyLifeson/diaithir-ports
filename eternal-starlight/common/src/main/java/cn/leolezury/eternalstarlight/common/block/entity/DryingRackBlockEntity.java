@@ -56,10 +56,10 @@ public class DryingRackBlockEntity extends SimpleContainerBlockEntity {
 	}
 
 	public boolean canBeDried(ItemStack stack, boolean fireBelow) {
-		if (level == null) {
+		if (!(level instanceof net.minecraft.server.level.ServerLevel serverLevel)) {
 			return false;
 		}
-		List<RecipeHolder<DryingRecipe>> list = level.getRecipeManager().getAllRecipesFor(ESRecipes.DRYING.get());
+		java.util.List<RecipeHolder<DryingRecipe>> list = serverLevel.recipeAccess().getRecipes().stream().filter(h -> h.value() instanceof DryingRecipe).map(h -> (RecipeHolder<DryingRecipe>) h).toList();
 		for (RecipeHolder<DryingRecipe> holder : list) {
 			DryingRecipe recipe = holder.value();
 			if (fireBelow == recipe.fireBelow() && recipe.input().test(stack)) {
@@ -77,7 +77,7 @@ public class DryingRackBlockEntity extends SimpleContainerBlockEntity {
 					entity.dryingTicks = 0;
 					entity.lastLit = lit;
 				}
-				Optional<RecipeHolder<DryingRecipe>> optionalRecipe = entity.quickCheck.getRecipeFor(new DryingRecipeInput(entity.items.getFirst(), lit), level);
+				Optional<RecipeHolder<DryingRecipe>> optionalRecipe = entity.quickCheck.getRecipeFor(new DryingRecipeInput(entity.items.getFirst(), lit), (net.minecraft.server.level.ServerLevel) level);
 				if (optionalRecipe.isPresent()) {
 					DryingRecipe recipe = optionalRecipe.get().value();
 					entity.dryingTicks++;

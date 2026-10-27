@@ -131,7 +131,7 @@ public class CarvedLunarisCactusFruitBlock extends HorizontalDirectionalBlock {
 		for (int i = 0; i < blockPatternMatch.getWidth(); ++i) {
 			for (int j = 0; j < blockPatternMatch.getHeight(); ++j) {
 				BlockInWorld blockInWorld = blockPatternMatch.getBlock(i, j, 0);
-				level.blockUpdated(blockInWorld.getPos(), Blocks.AIR);
+				level.updateNeighborsAt(blockInWorld.getPos(), Blocks.AIR, null);
 			}
 		}
 

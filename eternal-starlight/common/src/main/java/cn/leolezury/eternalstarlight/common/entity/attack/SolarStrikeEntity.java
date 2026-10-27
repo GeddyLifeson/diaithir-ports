@@ -72,7 +72,7 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 		this.getEntityData().set(CHARGE_DURATION, chargeDuration);
 	}
 
-	protected static final EntityDataAccessor<Vector3f> BEAM_TARGET = SynchedEntityData.defineId(SolarStrikeEntity.class, EntityDataSerializers.VECTOR3);
+	protected static final EntityDataAccessor<org.joml.Vector3fc> BEAM_TARGET = SynchedEntityData.defineId(SolarStrikeEntity.class, EntityDataSerializers.VECTOR3);
 
 	public Vec3 getBeamTarget() {
 		Vec3 beamTarget = new Vec3(this.getEntityData().get(BEAM_TARGET));
@@ -97,7 +97,6 @@ public class SolarStrikeEntity extends Entity implements TraceableEntity {
 
 	public SolarStrikeEntity(EntityType<? extends SolarStrikeEntity> entityType, Level level) {
 		super(entityType, level);
-		noCulling = true;
 	}
 
 	@Override

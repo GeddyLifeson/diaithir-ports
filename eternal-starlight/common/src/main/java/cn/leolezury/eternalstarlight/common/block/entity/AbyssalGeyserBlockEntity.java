@@ -52,7 +52,7 @@ public class AbyssalGeyserBlockEntity extends BlockEntity {
 					itemBox = itemBox.setMaxY(itemBox.maxY + 2);
 					for (ItemEntity itemEntity : level.getEntitiesOfClass(ItemEntity.class, itemBox)) {
 						ItemStack item = itemEntity.getItem();
-						level.getRecipeManager().getRecipeFor(ESRecipes.GEYSER_SMOKING.get(), new SingleRecipeInput(item), level).ifPresent(recipeHolder -> {
+						((net.minecraft.server.level.ServerLevel) level).recipeAccess().getRecipeFor(ESRecipes.GEYSER_SMOKING.get(), new SingleRecipeInput(item), level).ifPresent(recipeHolder -> {
 							GeyserSmokingRecipe recipe = recipeHolder.value();
 							int count = item.getCount() - recipe.inputCount();
 							Vec3 itemPos = itemEntity.position();

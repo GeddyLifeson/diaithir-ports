@@ -341,7 +341,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
 		CrystallizedMoth moth = ESEntities.CRYSTALLIZED_MOTH.get().create(level, EntitySpawnReason.TRIGGERED);
 		if (this.isTame() && moth != null) {
-			moth.setOwnerUUID(this.getOwnerUUID());
+			moth.setOwnerReference(this.getOwnerReference());
 			moth.setTame(true, true);
 		}
 		return moth;

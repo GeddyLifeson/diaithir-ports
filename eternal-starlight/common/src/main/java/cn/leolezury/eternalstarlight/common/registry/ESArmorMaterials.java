@@ -33,7 +33,7 @@ public class ESArmorMaterials {
 		ResourceKey.create(EquipmentAssets.ROOT_ID, EternalStarlight.id("amaramber")));
 	public static final ArmorMaterial ALCHEMIST = new ArmorMaterial(10, Map.of(ArmorType.BOOTS, 2, ArmorType.LEGGINGS, 5, ArmorType.CHESTPLATE, 6, ArmorType.HELMET, 2, ArmorType.BODY, 5), 15, ESSoundEvents.ARMOR_EQUIP_ALCHEMIST.asHolder(), 0F, 0F, ESConventionalTags.Items.GEMS_THIOQUARTZ,
 		ResourceKey.create(EquipmentAssets.ROOT_ID, EternalStarlight.id("alchemist")));
-	public static final ArmorMaterial AIR_SAC = new ArmorMaterial(15, Map.of(ArmorType.BOOTS, 1, ArmorType.LEGGINGS, 4, ArmorType.CHESTPLATE, 4, ArmorType.HELMET, 1, ArmorType.BODY, 4), 9, BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.ARMOR_EQUIP_LEATHER), 0F, 0F, ESTags.Items.REPAIR_AIR_SAC,
+	public static final ArmorMaterial AIR_SAC = new ArmorMaterial(15, Map.of(ArmorType.BOOTS, 1, ArmorType.LEGGINGS, 4, ArmorType.CHESTPLATE, 4, ArmorType.HELMET, 1, ArmorType.BODY, 4), 9, SoundEvents.ARMOR_EQUIP_LEATHER, 0F, 0F, ESTags.Items.REPAIR_AIR_SAC,
 		ResourceKey.create(EquipmentAssets.ROOT_ID, EternalStarlight.id("air_sac")));
 
 	public static void loadClass() {

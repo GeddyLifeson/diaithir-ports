@@ -117,7 +117,7 @@ public abstract class BehaviorPhase<T extends LivingEntity & MultiBehaviorUser> 
 
 	public void performDefaultMeleeAttack(T entity, double range, boolean attackOtherEnemies, float maxAngleForOtherEnemies, Consumer<LivingEntity> onSuccess) {
 		performMeleeAttack(entity, range, attackOtherEnemies, maxAngleForOtherEnemies, living -> {
-			if (ESPortCompat.doHurtTarget(entity, living)) {
+			if (entity instanceof net.minecraft.world.entity.Mob mobEntity && ESPortCompat.doHurtTarget(mobEntity, living)) {
 				onSuccess.accept(living);
 			}
 		});

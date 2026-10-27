@@ -68,7 +68,7 @@ public class Luminofish extends AbstractSchoolingFish {
 				LivingEntity target = getTarget();
 				if (swellTicks == 10 && target != null) {
 					if (target.position().distanceTo(position()) < 3) {
-						doHurtTarget(target);
+						doHurtTarget((ServerLevel) level(), target);
 						target.addEffect(new MobEffectInstance(MobEffects.POISON, 60));
 					}
 				}

@@ -39,7 +39,7 @@ public class AvoidLandmarkStructurePlacement extends RandomSpreadStructurePlacem
 	@Override
 	protected boolean isPlacementChunk(ChunkGeneratorStructureState state, int x, int z) {
 		ChunkPos landmarkPos = LandmarkStructurePlacement.getRegionLandmarkPos(state, x, z);
-		return super.isPlacementChunk(state, x, z) && !(x == landmarkPos.x && z == landmarkPos.z);
+		return super.isPlacementChunk(state, x, z) && !(x == landmarkPos.x() && z == landmarkPos.z());
 	}
 
 	@Override

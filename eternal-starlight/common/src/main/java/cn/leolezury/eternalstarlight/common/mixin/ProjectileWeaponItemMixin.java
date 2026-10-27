@@ -67,7 +67,7 @@ public abstract class ProjectileWeaponItemMixin {
 					arrows.removeIf(LargeItemStackList.LargeItemStack::isEmpty);
 					inventoryItem.set(ESDataComponents.ARROWS.get(), new LargeItemStackList(Collections.unmodifiableList(arrows)));
 					if (player instanceof ServerPlayer serverPlayer) {
-						serverPlayer.connection.send(new ClientboundContainerSetSlotPacket(ClientboundContainerSetSlotPacket.PLAYER_INVENTORY, 0, i, inventoryItem));
+						serverPlayer.connection.send(new ClientboundContainerSetSlotPacket(-2, 0, i, inventoryItem));
 					}
 				}
 			}

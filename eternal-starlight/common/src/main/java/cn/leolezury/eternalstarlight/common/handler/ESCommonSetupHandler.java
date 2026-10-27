@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.handler;
 
+import net.minecraft.core.dispenser.EquipmentDispenseItemBehavior;
 import cn.leolezury.eternalstarlight.common.block.CarvedLunarisCactusFruitBlock;
 import cn.leolezury.eternalstarlight.common.command.ESCommand;
 import cn.leolezury.eternalstarlight.common.entity.attack.TangledHusk;
@@ -311,7 +312,7 @@ public class ESCommonSetupHandler {
 				List<Armadillo> list = serverLevel.getEntitiesOfClass(Armadillo.class, new AABB(blockPos), EntitySelector.NO_SPECTATORS);
 				if (!list.isEmpty()) {
 					for (Armadillo armadillo : list) {
-						if (armadillo.brushOffScute()) {
+						if (armadillo.brushOffScute(null, itemStack)) {
 							itemStack.hurtAndBreak(16, serverLevel, null, (item) -> {
 							});
 							return itemStack;
@@ -335,7 +336,7 @@ public class ESCommonSetupHandler {
 					serverLevel.gameEvent(null, GameEvent.BLOCK_PLACE, blockPos);
 				} else if (!CampfireBlock.canLight(blockState) && !CandleBlock.canLight(blockState) && !CandleCakeBlock.canLight(blockState)) {
 					if (blockState.getBlock() instanceof TntBlock) {
-						TntBlock.explode(serverLevel, blockPos);
+						TntBlock.prime(serverLevel, blockPos);
 						serverLevel.removeBlock(blockPos, false);
 					} else {
 						this.setSuccess(false);
@@ -356,7 +357,7 @@ public class ESCommonSetupHandler {
 		DispenserBlock.registerBehavior(ESItems.TANGLED_SKULL.get(), new DefaultDispenseItemBehavior() {
 			@Override
 			protected ItemStack execute(BlockSource blockSource, ItemStack item) {
-				if (!ArmorItem.dispenseArmor(blockSource, item)) {
+				if (!EquipmentDispenseItemBehavior.dispenseEquipment(blockSource, item)) {
 					Level level = blockSource.level();
 					Direction direction = blockSource.state().getValue(DispenserBlock.FACING);
 					Position position = DispenserBlock.getDispensePosition(blockSource, 0.7, new Vec3(0.0, 0.1, 0.0));
@@ -385,7 +386,7 @@ public class ESCommonSetupHandler {
 					item.shrink(1);
 					this.setSuccess(true);
 				} else {
-					this.setSuccess(ArmorItem.dispenseArmor(blockSource, item));
+					this.setSuccess(EquipmentDispenseItemBehavior.dispenseEquipment(blockSource, item));
 				}
 				return item;
 			}

@@ -40,7 +40,7 @@ public abstract class BoomerangItem extends Item implements ProjectileItem {
 	}
 
 	public static Tool createToolProperties() {
-		return new Tool(List.of(), 1.0F, 2);
+		return new Tool(List.of(), 1.0F, 2, false);
 	}
 
 	public abstract ThrownBoomerang createBoomerang(Level level, @Nullable LivingEntity owner, double x, double y, double z, ItemStack pickupItemStack);
@@ -64,7 +64,7 @@ public abstract class BoomerangItem extends Item implements ProjectileItem {
 				if (!player.hasInfiniteMaterials()) {
 					player.getInventory().removeItem(stack);
 				}
-				player.getCooldowns().addCooldown(this, 15);
+				player.getCooldowns().addCooldown(this.getDefaultInstance(), 15);
 			}
 			player.awardStat(Stats.ITEM_USED.get(this));
 			return InteractionResult.CONSUME;

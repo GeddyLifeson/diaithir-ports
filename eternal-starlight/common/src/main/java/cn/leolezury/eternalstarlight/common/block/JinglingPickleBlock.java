@@ -29,7 +29,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class JinglingPickleBlock extends BushBlock implements BonemealableBlock, SimpleWaterloggedBlock {
+public class JinglingPickleBlock extends VegetationBlock implements BonemealableBlock, SimpleWaterloggedBlock {
 	public static final MapCodec<JinglingPickleBlock> CODEC = simpleCodec(JinglingPickleBlock::new);
 	private static final VoxelShape SHAPE = Block.box(6.0, 0.0, 6.0, 10.0, 12.0, 10.0);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;

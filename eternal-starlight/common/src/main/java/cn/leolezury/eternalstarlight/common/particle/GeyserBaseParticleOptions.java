@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -15,7 +16,7 @@ public record GeyserBaseParticleOptions(ParticleType<GeyserBaseParticleOptions> 
 	public static MapCodec<GeyserBaseParticleOptions> codec(final ParticleType<GeyserBaseParticleOptions> type) {
 		return RecordCodecBuilder.mapCodec(
 			i -> i.group(
-					ExtraCodecs.VECTOR3F.fieldOf("color").forGetter(o -> o.color),
+					ESPortCompat.VECTOR3F_CODEC.fieldOf("color").forGetter(o -> o.color),
 					ExtraCodecs.POSITIVE_INT.fieldOf("strength").forGetter(o -> o.strength),
 					Codec.FLOAT.fieldOf("burst_impulse_base").forGetter(o -> o.burstImpulseBase)
 				)
@@ -25,7 +26,7 @@ public record GeyserBaseParticleOptions(ParticleType<GeyserBaseParticleOptions> 
 
 	public static StreamCodec<? super ByteBuf, GeyserBaseParticleOptions> streamCodec(final ParticleType<GeyserBaseParticleOptions> type) {
 		return StreamCodec.composite(
-			ByteBufCodecs.VECTOR3F,
+			ESPortCompat.VECTOR3F_STREAM,
 			o -> o.color,
 			ByteBufCodecs.INT,
 			o -> o.strength,

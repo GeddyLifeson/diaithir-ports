@@ -15,7 +15,7 @@ public class CaveMossVeinBlock extends SimpleMultifaceBlock {
 	}
 
 	@Override
-	protected MapCodec<CaveMossVeinBlock> codec() {
+	public MapCodec<CaveMossVeinBlock> codec() {
 		return CODEC;
 	}
 

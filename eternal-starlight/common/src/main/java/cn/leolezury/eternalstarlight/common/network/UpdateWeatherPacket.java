@@ -1,7 +1,6 @@
 package cn.leolezury.eternalstarlight.common.network;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import cn.leolezury.eternalstarlight.common.client.weather.ClientWeatherState;
 import cn.leolezury.eternalstarlight.common.registry.ESWeathers;
 import cn.leolezury.eternalstarlight.common.weather.AbstractWeather;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -18,7 +17,7 @@ public record UpdateWeatherPacket(AbstractWeather weather) implements CustomPack
 	);
 
 	public static void handle(UpdateWeatherPacket packet, Player player) {
-		ClientWeatherState.weather = packet.weather();
+		// STUB: client weather state (client code excluded in the port)
 	}
 
 	@Override

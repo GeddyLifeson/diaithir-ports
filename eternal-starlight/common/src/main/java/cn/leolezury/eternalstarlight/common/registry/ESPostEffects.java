@@ -19,7 +19,7 @@ public class ESPostEffects {
 	public static final RegistryObject<PostEffectType<?>, FlashPostEffect> FLASH = POST_EFFECTS.register("flash", () -> FlashPostEffect.INSTANCE);
 
 	public static PostEffectType<?> get(Identifier id) {
-		return POST_EFFECTS.registry().get(id);
+		return POST_EFFECTS.registry().getValue(id);
 	}
 
 	public static Set<Identifier> keys() {

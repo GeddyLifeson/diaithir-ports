@@ -180,10 +180,10 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 				entity.coolingEfficiency = 0;
 			}
 			List<ItemStack> ingredients = entity.getIngredientItems();
-			RecipeHolder<AlloyRecipe> recipeHolder = entity.quickCheck.getRecipeFor(CraftingInput.of(3, 3, ingredients), level).orElse(null);
+			RecipeHolder<AlloyRecipe> recipeHolder = entity.quickCheck.getRecipeFor(CraftingInput.of(3, 3, ingredients), (ServerLevel) level).orElse(null);
 			if (entity.canBurn() && entity.litTicks <= 0) {
 				ItemStack fuel = entity.getItem(AlloyFurnaceMenu.FUEL_SLOT);
-				if (!fuel.isEmpty() && isFuel(fuel)) {
+				if (!fuel.isEmpty() && isFuel(level, fuel)) {
 					entity.totalLitTicks = ESPlatform.INSTANCE.getBurnTime(level, fuel, ESRecipes.ALLOY.get());
 					entity.litTicks = entity.totalLitTicks;
 					ItemStack originalFuel = fuel.copy();
@@ -316,7 +316,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 		if (level == null) {
 			return false;
 		}
-		Optional<RecipeHolder<AlloyRecipe>> recipeHolder = quickCheck.getRecipeFor(CraftingInput.of(3, 3, getIngredientItems()), level);
+		Optional<RecipeHolder<AlloyRecipe>> recipeHolder = quickCheck.getRecipeFor(CraftingInput.of(3, 3, getIngredientItems()), (ServerLevel) level);
 		if (getIngredientItems().stream().anyMatch(stack -> !stack.isEmpty()) && recipeHolder.isPresent()) {
 			AlloyRecipe recipe = recipeHolder.get().value();
 			for (int i = 0; i < Math.min(recipe.results().size(), 3); i++) {
@@ -339,8 +339,8 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 		}
 	}
 
-	public static boolean isFuel(ItemStack stack) {
-		return FurnaceBlockEntity.isFuel(stack);
+	public static boolean isFuel(Level level, ItemStack stack) {
+		return level != null && level.fuelValues().isFuel(stack);
 	}
 
 	public static boolean isCoolingItem(HolderLookup.Provider registries, ItemStack stack) {
@@ -354,7 +354,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 		if (level != null && index >= AlloyFurnaceMenu.INGREDIENT_SLOT_START && index < AlloyFurnaceMenu.INGREDIENT_SLOT_END && !unchanged) {
 			List<ItemStack> ingredients = getItems().subList(AlloyFurnaceMenu.INGREDIENT_SLOT_START, AlloyFurnaceMenu.INGREDIENT_SLOT_END);
 			ingredients.set(index - AlloyFurnaceMenu.INGREDIENT_SLOT_START, stack);
-			this.quickCheck.getRecipeFor(CraftingInput.of(3, 3, ingredients), level).ifPresentOrElse(holder -> this.totalBurnTicks = holder.value().burnTime(), () -> this.totalBurnTicks = 0);
+			this.quickCheck.getRecipeFor(CraftingInput.of(3, 3, ingredients), (ServerLevel) level).ifPresentOrElse(holder -> this.totalBurnTicks = holder.value().burnTime(), () -> this.totalBurnTicks = 0);
 			this.burnTicks = 0;
 			this.setChanged();
 		}
@@ -363,7 +363,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 
 	@Override
 	public boolean canPlaceItem(int index, ItemStack stack) {
-		if (index == AlloyFurnaceMenu.FUEL_SLOT && !isFuel(stack)) {
+		if (index == AlloyFurnaceMenu.FUEL_SLOT && !isFuel(this.level, stack)) {
 			return false;
 		}
 		if (index == AlloyFurnaceMenu.COOLING_SLOT && (level == null || !isCoolingItem(level.registryAccess(), stack))) {
@@ -454,7 +454,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 		if (index == AlloyFurnaceMenu.FUEL_SLOT || index == AlloyFurnaceMenu.COOLING_SLOT || level == null) {
 			return canPlaceItem(index, stack);
 		} else {
-			Optional<RecipeHolder<AlloyRecipe>> recipeHolder = quickCheck.getRecipeFor(CraftingInput.of(3, 3, getIngredientItems()), level);
+			Optional<RecipeHolder<AlloyRecipe>> recipeHolder = quickCheck.getRecipeFor(CraftingInput.of(3, 3, getIngredientItems()), (ServerLevel) level);
 			if (recipeHolder.isPresent()) {
 				return !getItem(index).isEmpty() && canPlaceItem(index, stack);
 			} else {

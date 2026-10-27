@@ -66,6 +66,10 @@ public record AlloyRecipe(NonNullList<Result> results, NonNullList<Ingredient> i
 
 
 
+	public net.minecraft.core.NonNullList<ItemStack> getRemainingItems(CraftingInput input) {
+		return net.minecraft.world.item.crafting.CraftingRecipe.defaultCraftingReminder(input);
+	}
+
 	private boolean matchesUnordered(CraftingInput input) {
 		java.util.List<ItemStack> remaining = new java.util.ArrayList<>();
 		for (ItemStack stack : input.items()) {
@@ -116,6 +120,10 @@ public record AlloyRecipe(NonNullList<Result> results, NonNullList<Ingredient> i
 			Result::new
 		);
 
+
+		public ItemStack getResultItem(net.minecraft.util.RandomSource random) {
+			return item().copyWithCount(amount().sample(random));
+		}
 
 		public ItemStack getMaxResultItem() {
 			return item().copyWithCount(amount().maxInclusive());

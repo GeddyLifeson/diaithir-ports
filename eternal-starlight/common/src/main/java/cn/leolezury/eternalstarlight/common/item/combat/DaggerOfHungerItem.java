@@ -27,24 +27,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class DaggerOfHungerItem extends DualWieldingSwordItem {
-	public static final ItemAttributeModifiers DEFAULT_ATTRIBUTE = SwordItem.createAttributes(ESItemTiers.TOOTH_OF_HUNGER, 3, -2.4f);
-	public static final ItemAttributeModifiers BONUS_ATTRIBUTE = SwordItem.createAttributes(ESItemTiers.TOOTH_OF_HUNGER, 4, -1.9f);
-	public static final ItemAttributeModifiers PENALTY_ATTRIBUTE = SwordItem.createAttributes(ESItemTiers.TOOTH_OF_HUNGER, 2, -2.9f);
+	public static final ItemAttributeModifiers DEFAULT_ATTRIBUTE = ESPortCompat.baseAttributes(ESItemTiers.TOOTH_OF_HUNGER, 3, -2.4f);
+	public static final ItemAttributeModifiers BONUS_ATTRIBUTE = ESPortCompat.baseAttributes(ESItemTiers.TOOTH_OF_HUNGER, 4, -1.9f);
+	public static final ItemAttributeModifiers PENALTY_ATTRIBUTE = ESPortCompat.baseAttributes(ESItemTiers.TOOTH_OF_HUNGER, 2, -2.9f);
 
 	public DaggerOfHungerItem(ESItemTiers tier, Properties properties) {
 		super(tier, properties);
-		DataComponentMap copy = components;
-		this.components = new DataComponentMap() {
-			@Override
-			public @Nullable <T> T get(DataComponentType<? extends T> type) {
-				return type != DataComponents.MAX_DAMAGE && type != DataComponents.DAMAGE ? copy.get(type) : null;
-			}
-
-			@Override
-			public Set<DataComponentType<?>> keySet() {
-				return copy.keySet().stream().filter(type -> type != DataComponents.MAX_DAMAGE && type != DataComponents.DAMAGE).collect(Collectors.toSet());
-			}
-		};
+		// STUB: durability suppression hack removed (components field is gone in 26.1)
 	}
 
 	@Override
@@ -63,7 +52,7 @@ public class DaggerOfHungerItem extends DualWieldingSwordItem {
 	}
 
 	@Override
-	public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean bl) {
+	public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @Nullable net.minecraft.world.entity.EquipmentSlot slot) {
 		if (entity.tickCount % 1200 == 0) {
 			float hungerLevel = Mth.clamp(stack.getOrDefault(ESDataComponents.HUNGER_LEVEL.get(), 0f), -1, 1);
 			float newHungerLevel = Math.max(-1, hungerLevel - 0.00005f * 1200);
@@ -84,7 +73,7 @@ public class DaggerOfHungerItem extends DualWieldingSwordItem {
 			};
 			stack.applyComponentsAndValidate(DataComponentPatch.builder().set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers).build());
 		}
-		super.inventoryTick(stack, level, entity, slot, bl);
+		super.inventoryTick(stack, level, entity, slot);
 	}
 
 	@Override

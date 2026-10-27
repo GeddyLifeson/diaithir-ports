@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -25,8 +26,8 @@ public record RingExplosionParticleOptions(Vector3f fromColor, Vector3f toColor,
 	}
 
 	public static final MapCodec<RingExplosionParticleOptions> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
-		ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(RingExplosionParticleOptions::fromColor),
-		ExtraCodecs.VECTOR3F.fieldOf("to_color").forGetter(RingExplosionParticleOptions::toColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("from_color").forGetter(RingExplosionParticleOptions::fromColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("to_color").forGetter(RingExplosionParticleOptions::toColor),
 		Codec.FLOAT.fieldOf("scale").forGetter(RingExplosionParticleOptions::scale)
 	).apply(instance, RingExplosionParticleOptions::new));
 

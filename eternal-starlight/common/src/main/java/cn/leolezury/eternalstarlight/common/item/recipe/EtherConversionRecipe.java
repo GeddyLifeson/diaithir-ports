@@ -7,7 +7,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.predicates.DataComponentPredicate;
+import net.minecraft.core.component.DataComponentExactPredicate;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.Identifier;
@@ -18,7 +18,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public record EtherConversionRecipe(Ingredient input, int inputCount, DataComponentPredicate components, List<WeightedOutput> outputs) implements Recipe<SingleRecipeInput> {
+public record EtherConversionRecipe(Ingredient input, int inputCount, DataComponentExactPredicate components, List<WeightedOutput> outputs) implements Recipe<SingleRecipeInput> {
 	@Override
 	public boolean matches(SingleRecipeInput container, Level level) {
 		ItemStack stack = container.getItem(0);
@@ -104,7 +104,7 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 		private static final MapCodec<EtherConversionRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			Ingredient.CODEC.fieldOf("input").forGetter(EtherConversionRecipe::input),
 			Codec.INT.optionalFieldOf("input_count", 1).forGetter(EtherConversionRecipe::inputCount),
-			DataComponentPredicate.CODEC.optionalFieldOf("components", DataComponentPredicate.EMPTY).forGetter(EtherConversionRecipe::components),
+			DataComponentExactPredicate.CODEC.optionalFieldOf("components", DataComponentExactPredicate.EMPTY).forGetter(EtherConversionRecipe::components),
 			WeightedOutput.CODEC.listOf().fieldOf("outputs").forGetter(EtherConversionRecipe::outputs)
 		).apply(instance, EtherConversionRecipe::new));
 
@@ -118,7 +118,7 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 				public EtherConversionRecipe decode(RegistryFriendlyByteBuf friendlyByteBuf) {
 					Ingredient input = Ingredient.CONTENTS_STREAM_CODEC.decode(friendlyByteBuf);
 					int inputCount = friendlyByteBuf.readInt();
-					DataComponentPredicate components = DataComponentPredicate.STREAM_CODEC.decode(friendlyByteBuf);
+					DataComponentExactPredicate components = DataComponentExactPredicate.STREAM_CODEC.decode(friendlyByteBuf);
 					int outputCount = friendlyByteBuf.readVarInt();
 					List<WeightedOutput> outputs = new java.util.ArrayList<>(outputCount);
 					for (int i = 0; i < outputCount; i++) {
@@ -133,7 +133,7 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 				public void encode(RegistryFriendlyByteBuf friendlyByteBuf, EtherConversionRecipe recipe) {
 					Ingredient.CONTENTS_STREAM_CODEC.encode(friendlyByteBuf, recipe.input());
 					friendlyByteBuf.writeInt(recipe.inputCount());
-					DataComponentPredicate.STREAM_CODEC.encode(friendlyByteBuf, recipe.components());
+					DataComponentExactPredicate.STREAM_CODEC.encode(friendlyByteBuf, recipe.components());
 					friendlyByteBuf.writeVarInt(recipe.outputs().size());
 					for (WeightedOutput output : recipe.outputs()) {
 						ItemStack.STREAM_CODEC.encode(friendlyByteBuf, output.output());

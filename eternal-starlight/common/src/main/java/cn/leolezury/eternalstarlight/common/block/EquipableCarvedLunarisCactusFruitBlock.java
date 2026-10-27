@@ -1,10 +1,8 @@
 package cn.leolezury.eternalstarlight.common.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.Equipable;
 
-public class EquipableCarvedLunarisCactusFruitBlock extends CarvedLunarisCactusFruitBlock implements Equipable {
+public class EquipableCarvedLunarisCactusFruitBlock extends CarvedLunarisCactusFruitBlock {
 	public static final MapCodec<EquipableCarvedLunarisCactusFruitBlock> CODEC = simpleCodec(EquipableCarvedLunarisCactusFruitBlock::new);
 
 	@Override
@@ -14,10 +12,5 @@ public class EquipableCarvedLunarisCactusFruitBlock extends CarvedLunarisCactusF
 
 	public EquipableCarvedLunarisCactusFruitBlock(Properties properties) {
 		super(properties);
-	}
-
-	@Override
-	public EquipmentSlot getEquipmentSlot() {
-		return EquipmentSlot.HEAD;
 	}
 }

@@ -72,8 +72,8 @@ public class ShimmerLacewing extends Animal implements FlyingAnimal {
 	public Holder<ShimmerLacewingVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<ShimmerLacewingVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT);
-		Optional<Holder.Reference<ShimmerLacewingVariant>> optional = variants.getHolder(key);
-		return optional.orElse(variants.getHolder(ESShimmerLacewingVariants.RIVER).orElseThrow());
+		Optional<Holder.Reference<ShimmerLacewingVariant>> optional = variants.get(key);
+		return optional.orElse(variants.get(ESShimmerLacewingVariants.RIVER).orElseThrow());
 	}
 
 	public ShimmerLacewing(EntityType<? extends ShimmerLacewing> entityType, Level level) {

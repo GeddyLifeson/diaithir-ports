@@ -287,22 +287,24 @@ public class ESDimensions {
 	}
 
 	public static void bootstrapDimType(BootstrapContext<DimensionType> context) {
+		// STUB: 26.1 dimension types use skybox/attributes/timelines; fixed time 12900 is not reproduced here
 		DimensionType type = new DimensionType(
-			OptionalLong.of(12900L), // fixed time
+			true, // has fixed time
 			true, // has skylight
 			false, // has ceiling
-			false, // ultrawarm
-			true, // natural
+			false, // ender dragon fight
 			1, // coordinate scale
-			true, // bed works
-			true, // respawn anchor works
 			-64, // min y
-			384, // max y
 			384, // height
+			384, // logical height
 			BlockTags.INFINIBURN_OVERWORLD, // infiniburn
-			EternalStarlight.id("special_effect"), // special effects
 			0f, // ambient light
-			new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 7) // monster spawn things
+			new DimensionType.MonsterSettings(UniformInt.of(0, 7), 7), // monster spawn settings
+			DimensionType.Skybox.OVERWORLD,
+			net.minecraft.world.level.CardinalLighting.Type.DEFAULT,
+			net.minecraft.world.attribute.EnvironmentAttributeMap.EMPTY,
+			net.minecraft.core.HolderSet.empty(),
+			java.util.Optional.empty()
 		);
 		context.register(STARLIGHT_TYPE, type);
 	}

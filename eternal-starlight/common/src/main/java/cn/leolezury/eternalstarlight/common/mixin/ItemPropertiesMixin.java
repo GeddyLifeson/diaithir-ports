@@ -25,7 +25,7 @@ public abstract class ItemPropertiesMixin {
 		}
 		// Items registered under the id of a block are BlockItems; vanilla gives them the block description id.
 		if (this.id != null && net.minecraft.core.registries.BuiltInRegistries.BLOCK.containsKey(this.id.identifier())) {
-			cir.setReturnValue(net.minecraft.Util.makeDescriptionId("block", this.id.identifier()));
+			cir.setReturnValue(net.minecraft.util.Util.makeDescriptionId("block", this.id.identifier()));
 		}
 	}
 

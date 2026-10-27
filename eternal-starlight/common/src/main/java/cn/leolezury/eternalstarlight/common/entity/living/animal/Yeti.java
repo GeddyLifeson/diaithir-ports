@@ -117,18 +117,13 @@ public class Yeti extends Animal {
 	}
 
 	@Override
-	protected Brain<?> makeBrain(Dynamic<?> dynamic) {
-		return YetiAi.makeBrain(this.brainProvider().makeBrain(dynamic));
+	protected Brain<Yeti> makeBrain(Brain.Packed packedBrain) {
+		return Brain.<Yeti>provider(YetiAi.MEMORY_TYPES, YetiAi.SENSOR_TYPES, yeti -> YetiAi.getActivities()).makeBrain(this, packedBrain);
 	}
 
 	@Override
 	public Brain<Yeti> getBrain() {
 		return (Brain<Yeti>) super.getBrain();
-	}
-
-	@Override
-	protected Brain.Provider<Yeti> brainProvider() {
-		return Brain.provider(YetiAi.MEMORY_TYPES, YetiAi.SENSOR_TYPES);
 	}
 
 	@Override

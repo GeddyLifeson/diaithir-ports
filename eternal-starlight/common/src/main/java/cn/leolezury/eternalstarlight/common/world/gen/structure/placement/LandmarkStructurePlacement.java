@@ -53,7 +53,7 @@ public class LandmarkStructurePlacement extends StructurePlacement {
 			return false;
 		}
 		ChunkPos chunkPos = getRegionLandmarkPos(structureState, x, z);
-		if (chunkPos.x != x || chunkPos.z != z) {
+		if (chunkPos.x() != x || chunkPos.z() != z) {
 			return false;
 		}
 		return possibleStructures.get(Math.floorMod(((x >> 5) + (z >> 5)), possibleStructures.size())).structure().identifier().equals(landmark.identifier());

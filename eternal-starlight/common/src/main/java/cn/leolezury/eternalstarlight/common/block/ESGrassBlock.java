@@ -20,7 +20,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.List;
@@ -57,7 +56,7 @@ public class ESGrassBlock extends ESSpreadingSnowyDirtBlock implements Bonemeala
 		BlockState shortGrass = Blocks.SHORT_GRASS.defaultBlockState();
 		Optional<Holder.Reference<PlacedFeature>> optional = level.registryAccess()
 			.lookupOrThrow(Registries.PLACED_FEATURE)
-			.getHolder(VegetationPlacements.GRASS_BONEMEAL);
+			.get(VegetationPlacements.GRASS_BONEMEAL);
 
 		outer:
 		for (int i = 0; i < 128; i++) {
@@ -75,24 +74,15 @@ public class ESGrassBlock extends ESSpreadingSnowyDirtBlock implements Bonemeala
 				((BonemealableBlock) shortGrass.getBlock()).performBonemeal(level, random, currentPos, currentState);
 			}
 
-			if (currentState.isAir()) {
-				Holder<PlacedFeature> holder;
+			if (currentState.isAir() && !level.isOutsideBuildHeight(currentPos)) {
 				if (random.nextInt(8) == 0) {
-					List<ConfiguredFeature<?, ?>> list = level.getBiome(currentPos).value().getGenerationSettings().getFlowerFeatures();
-					if (list.isEmpty()) {
-						list = level.getBiome(currentPos).value().getGenerationSettings().features().stream().flatMap(HolderSet::stream).map(Holder::value).flatMap(PlacedFeature::getFeatures).filter((configuredFeature) -> configuredFeature.feature() == Feature.RANDOM_PATCH).collect(ImmutableList.toImmutableList());
-						if (list.isEmpty()) {
-							continue;
-						}
+					List<ConfiguredFeature<?, ?>> features = level.getBiome(currentPos).value().getGenerationSettings().getBoneMealFeatures();
+					if (!features.isEmpty()) {
+						net.minecraft.util.Util.getRandom(features, random).place(level, level.getChunkSource().getGenerator(), random, currentPos);
 					}
-					holder = ((RandomPatchConfiguration) list.get(random.nextInt(list.size())).config()).feature();
-				} else {
-					if (optional.isEmpty()) {
-						continue;
-					}
-					holder = optional.get();
+				} else if (optional.isPresent()) {
+					optional.get().value().place(level, level.getChunkSource().getGenerator(), random, currentPos);
 				}
-				holder.value().place(level, level.getChunkSource().getGenerator(), random, currentPos);
 			}
 		}
 	}

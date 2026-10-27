@@ -50,7 +50,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 		}
 
 		@Override
-		protected boolean isOwnContainer(Player player) {
+		public boolean isOwnContainer(Player player) {
 			if (player.containerMenu instanceof CrateMenu menu) {
 				Container container = menu.getContainer();
 				return container == CrateBlockEntity.this;
@@ -107,16 +107,16 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 	}
 
 	@Override
-	public void startOpen(Player player) {
-		if (!this.remove && !player.isSpectator()) {
-			this.openersCounter.incrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+	public void startOpen(net.minecraft.world.entity.ContainerUser containerUser) {
+		if (!this.remove && !containerUser.getLivingEntity().isSpectator()) {
+			this.openersCounter.incrementOpeners(containerUser.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState(), containerUser.getContainerInteractionRange());
 		}
 	}
 
 	@Override
-	public void stopOpen(Player player) {
-		if (!this.remove && !player.isSpectator()) {
-			this.openersCounter.decrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+	public void stopOpen(net.minecraft.world.entity.ContainerUser containerUser) {
+		if (!this.remove && !containerUser.getLivingEntity().isSpectator()) {
+			this.openersCounter.decrementOpeners(containerUser.getLivingEntity(), this.getLevel(), this.getBlockPos(), this.getBlockState());
 		}
 	}
 

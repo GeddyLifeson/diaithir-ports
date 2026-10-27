@@ -48,7 +48,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Collection;
 
-public class TinyCreteor extends Monster implements PowerableMob {
+public class TinyCreteor extends Monster {
 	private static final String TAG_IGNITED = "ignited";
 	private static final String TAG_POWERED = "powered";
 	private static final String TAG_SWELL = "swell";
@@ -65,7 +65,6 @@ public class TinyCreteor extends Monster implements PowerableMob {
 
 	protected static final EntityDataAccessor<Boolean> POWERED = SynchedEntityData.defineId(TinyCreteor.class, EntityDataSerializers.BOOLEAN);
 
-	@Override
 	public boolean isPowered() {
 		return this.getEntityData().get(POWERED);
 	}
@@ -213,7 +212,7 @@ public class TinyCreteor extends Monster implements PowerableMob {
 			}
 			playSound(ESSoundEvents.CRETEOR_EXPLODE.get());
 			this.spawnLingeringCloud();
-			this.triggerOnDeathMobEffects(RemovalReason.KILLED);
+			this.triggerOnDeathMobEffects((ServerLevel) level(), RemovalReason.KILLED);
 			this.discard();
 		}
 	}

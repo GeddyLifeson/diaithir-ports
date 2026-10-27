@@ -14,7 +14,7 @@ public class ScarletLeavesBlock extends TintedParticleLeavesBlock {
 	public static final MapCodec<ScarletLeavesBlock> CODEC = simpleCodec(ScarletLeavesBlock::new);
 
 	public ScarletLeavesBlock(Properties properties) {
-		super(properties);
+		super(0.01F, properties);
 	}
 
 	@Override

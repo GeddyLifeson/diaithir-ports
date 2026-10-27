@@ -47,7 +47,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Collection;
 import java.util.EnumSet;
 
-public class Creteor extends Monster implements PowerableMob {
+public class Creteor extends Monster {
 	private static final String TAG_ACTIVATED = "activated";
 	private static final String TAG_IGNITED = "ignited";
 	private static final String TAG_POWERED = "powered";
@@ -78,7 +78,6 @@ public class Creteor extends Monster implements PowerableMob {
 
 	protected static final EntityDataAccessor<Boolean> POWERED = SynchedEntityData.defineId(Creteor.class, EntityDataSerializers.BOOLEAN);
 
-	@Override
 	public boolean isPowered() {
 		return this.getEntityData().get(POWERED);
 	}
@@ -278,7 +277,7 @@ public class Creteor extends Monster implements PowerableMob {
 			}
 			playSound(ESSoundEvents.CRETEOR_EXPLODE.get());
 			this.spawnLingeringCloud();
-			this.triggerOnDeathMobEffects(RemovalReason.KILLED);
+			this.triggerOnDeathMobEffects((ServerLevel) level(), RemovalReason.KILLED);
 			this.discard();
 			if (ESConfig.INSTANCE.mobsConfig.tinyCreteor.canSpawn()) {
 				int splitCount = getRandom().nextInt(2, 5);

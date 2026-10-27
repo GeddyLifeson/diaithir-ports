@@ -2,7 +2,6 @@ package cn.leolezury.eternalstarlight.common.entity.living.animal;
 
 import net.minecraft.server.level.ServerLevel;
 
-import cn.leolezury.eternalstarlight.common.client.sound.DrillSoundInstance;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.interfaces.Charger;
 import cn.leolezury.eternalstarlight.common.entity.living.goal.ConicerasChargeDrillGoal;
@@ -115,7 +114,7 @@ public class Coniceras extends WaterAnimal implements Charger {
 		this.xBodyRotO = this.xBodyRot;
 		this.zBodyRotO = this.zBodyRot;
 
-		if (this.isInWaterOrBubble()) {
+		if (this.isInWater()) {
 			this.xBodyRot += (-this.getXRot() - this.xBodyRot) * 0.1F;
 		} else {
 			this.xBodyRot += (-90.0F - this.xBodyRot) * 0.02F;
@@ -139,7 +138,7 @@ public class Coniceras extends WaterAnimal implements Charger {
 		if (isCharging()) {
 			chargeAnimationState.start(tickCount);
 			if (this.level().isClientSide()) {
-				DrillSoundInstance.playFor(this);
+				// STUB: drill sound instance (client code excluded)
 			}
 		}
 	}

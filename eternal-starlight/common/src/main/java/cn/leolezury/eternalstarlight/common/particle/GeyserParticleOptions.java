@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -23,7 +24,7 @@ public record GeyserParticleOptions(ParticleType<GeyserParticleOptions> type, Ve
 	public static MapCodec<GeyserParticleOptions> codec(final ParticleType<GeyserParticleOptions> type) {
 		return RecordCodecBuilder.mapCodec(
 			i -> i.group(
-					ExtraCodecs.VECTOR3F.fieldOf("color").forGetter(o -> o.color),
+					ESPortCompat.VECTOR3F_CODEC.fieldOf("color").forGetter(o -> o.color),
 					ExtraCodecs.POSITIVE_INT.fieldOf("strength").forGetter(o -> o.strength)
 				)
 				.apply(i, (color, strength) -> new GeyserParticleOptions(type, color, strength))
@@ -32,7 +33,7 @@ public record GeyserParticleOptions(ParticleType<GeyserParticleOptions> type, Ve
 
 	public static StreamCodec<? super ByteBuf, GeyserParticleOptions> streamCodec(final ParticleType<GeyserParticleOptions> type) {
 		return StreamCodec.composite(
-			ByteBufCodecs.VECTOR3F,
+			ESPortCompat.VECTOR3F_STREAM,
 			o -> o.color,
 			ByteBufCodecs.INT,
 			o -> o.strength,

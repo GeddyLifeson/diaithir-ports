@@ -51,7 +51,7 @@ public class DuskLockboxBlock extends BaseEntityBlock {
 	@Override
 	public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
 		ItemStack itemStack = super.getCloneItemStack(level, pos, state, includeData);
-		level.getBlockEntity(pos, ESBlockEntities.DUSK_LOCKBOX.get()).ifPresent((blockEntity) -> blockEntity.saveToItem(itemStack, level.registryAccess()));
+		level.getBlockEntity(pos, ESBlockEntities.DUSK_LOCKBOX.get()).ifPresent((blockEntity) -> itemStack.applyComponents(blockEntity.collectComponents()));
 		return itemStack;
 	}
 }

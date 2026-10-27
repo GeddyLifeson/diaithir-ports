@@ -153,7 +153,7 @@ public abstract class ThrownSpear extends AbstractArrow {
 	@Override
 	protected void hitBlockEnchantmentEffects(ServerLevel level, BlockHitResult hitResult, ItemStack stack) {
 		Vec3 location = hitResult.getBlockPos().clampLocationWithin(hitResult.getLocation());
-		EnchantmentHelper.onHitBlock(level, stack, this.getOwner() instanceof LivingEntity livingentity ? livingentity : null, this, null, location, level.getBlockState(hitResult.getBlockPos()), item -> this.kill());
+		EnchantmentHelper.onHitBlock(level, stack, this.getOwner() instanceof LivingEntity livingentity ? livingentity : null, this, null, location, level.getBlockState(hitResult.getBlockPos()), item -> this.kill(level));
 	}
 
 	@Override

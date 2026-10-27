@@ -51,7 +51,7 @@ public class WandOfTeleportationItem extends Item {
 			createThornCircle(level, player, target);
 		}
 		stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
-		player.getCooldowns().addCooldown(this, 600);
+		player.getCooldowns().addCooldown(this.getDefaultInstance(), 600);
 	}
 
 	@Override

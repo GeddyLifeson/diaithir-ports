@@ -82,7 +82,7 @@ public class LargeItemStackList extends AbstractList<LargeItemStackList.LargeIte
 		}
 
 		public static final Codec<LargeItemStack> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-			ItemStack.SINGLE_ITEM_CODEC.fieldOf("item").forGetter(LargeItemStack::getItem),
+			ItemStack.CODEC.fieldOf("item").forGetter(LargeItemStack::getItem),
 			Codec.INT.fieldOf("count").forGetter(LargeItemStack::getCount)
 		).apply(instance, LargeItemStack::new));
 

@@ -62,7 +62,7 @@ public record Chain(List<Segment> segments) {
 		int segmentsSize = tag.getIntOr(TAG_SEGMENTS_SIZE, 0);
 		for (int i = 0; i < segmentsSize; i++) {
 			if (tag.contains(TAG_SEGMENT + i)) {
-				CompoundTag segmentTag = tag.getCompound(TAG_SEGMENT + i);
+				CompoundTag segmentTag = tag.getCompoundOrEmpty(TAG_SEGMENT + i);
 				Segment segment = Segment.load(segmentTag);
 				segments.add(segment);
 			}

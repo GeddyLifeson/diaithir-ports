@@ -114,18 +114,14 @@ public class ESFallingBlock extends Entity {
 	protected void addAdditionalSaveData(ValueOutput tag) {
 		BlockState blockState = getBlock();
 		if (blockState != null)
-			tag.put(TAG_BLOCK_STATE, NbtUtils.writeBlockState(blockState));
+			tag.store(TAG_BLOCK_STATE, BlockState.CODEC, blockState);
 		tag.putInt(TAG_DURATION, this.duration);
 		tag.putBoolean(TAG_DAMAGE, this.damage);
 	}
 
 	@Override
 	protected void readAdditionalSaveData(ValueInput tag) {
-		Tag blockStateCompound = tag.get(TAG_BLOCK_STATE);
-		if (blockStateCompound != null) {
-			BlockState blockState = NbtUtils.readBlockState(level().holderLookup(Registries.BLOCK), (CompoundTag) blockStateCompound);
-			setBlock(blockState);
-		}
+		tag.read(TAG_BLOCK_STATE, BlockState.CODEC).ifPresent(this::setBlock);
 		this.duration = tag.getIntOr(TAG_DURATION, 0);
 		this.damage = tag.getBooleanOr(TAG_DAMAGE, false);
 	}

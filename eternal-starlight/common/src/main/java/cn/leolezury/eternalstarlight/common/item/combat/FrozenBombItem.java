@@ -36,7 +36,7 @@ public class FrozenBombItem extends Item implements ProjectileItem {
 			itemStack.shrink(1);
 		}
 
-		player.getCooldowns().addCooldown(this, 20);
+		player.getCooldowns().addCooldown(this.getDefaultInstance(), 20);
 
 		return InteractionResult.SUCCESS;
 	}

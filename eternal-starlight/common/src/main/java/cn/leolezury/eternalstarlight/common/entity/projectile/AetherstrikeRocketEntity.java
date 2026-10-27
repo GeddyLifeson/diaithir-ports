@@ -95,7 +95,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 		HitResult hitResult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
 		if (!this.noPhysics) {
 			this.hitTargetOrDeflectSelf(hitResult);
-			this.hasImpulse = true;
+			this.needsSync = true;
 		}
 
 		this.updateRotation();
@@ -121,7 +121,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 				Vec3 vec3 = position().offsetRandom(getRandom(), 1.5f);
 				for (int s = 0; s < serverLevel.players().size(); s++) {
 					ServerPlayer serverPlayer = serverLevel.players().get(s);
-					serverLevel.sendParticles(serverPlayer, ESExplosionParticleOptions.AETHERSENT, true, vec3.x, vec3.y, vec3.z, 3, 0, 0, 0, 0);
+					serverLevel.sendParticles(serverPlayer, ESExplosionParticleOptions.AETHERSENT, true, false, vec3.x, vec3.y, vec3.z, 3, 0, 0, 0, 0);
 				}
 			}
 			for (int i = 0; i < 30; i++) {
@@ -131,7 +131,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 			if (getRandom().nextFloat() < 0.6 && level().canSeeSky(blockPosition())) {
 				ESWeatherUtil.getOrCreateWeathers(serverLevel).setActiveWeather(ESWeathers.METEOR_SHOWER.get(), ESWeathers.METEOR_SHOWER.get().weatherProperties().duration().sample(serverLevel.getRandom()));
 				if (getOwner() instanceof Player player) {
-					player.getCooldowns().addCooldown(getItem().getItem(), 2400);
+					player.getCooldowns().addCooldown(getItem(), 2400);
 				}
 			}
 		}
@@ -149,7 +149,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 	@Override
 	protected void onHitBlock(BlockHitResult result) {
 		BlockPos blockpos = new BlockPos(result.getBlockPos());
-		this.level().getBlockState(blockpos).entityInside(this.level(), blockpos, this);
+		this.level().getBlockState(blockpos).entityInside(this.level(), blockpos, this, net.minecraft.world.entity.InsideBlockEffectApplier.NOOP, true);
 		if (!this.level().isClientSide()) {
 			this.explode();
 		}

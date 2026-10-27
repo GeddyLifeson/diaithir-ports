@@ -48,8 +48,7 @@ public class GolemSteelJetBlockEntity extends BlockEntity {
 						double push = Math.sqrt(state.getValue(WeatheringGolemSteelJetBlock.POWER) * 0.21) * (state.getBlock() instanceof WeatheringGolemSteel weathering && weathering.isOxidized() ? 0.9 : 1);
 						entity.addDeltaMovement(new Vec3(direction.step()).scale(push));
 						if (entity instanceof Player player) {
-							player.currentImpulseImpactPos = pos.getCenter().add(direction.getStepX() * 0.5, direction.getStepY() * 0.5, direction.getStepZ() * 0.5);
-							player.setIgnoreFallDamageFromCurrentImpulse(true);
+							player.setIgnoreFallDamageFromCurrentImpulse(true, pos.getCenter().add(direction.getStepX() * 0.5, direction.getStepY() * 0.5, direction.getStepZ() * 0.5));
 						}
 						success = true;
 					}

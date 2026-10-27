@@ -32,7 +32,7 @@ public record SeekerVariant(Identifier texture, Identifier textureFull, Identifi
 
 	public static Holder<SeekerVariant> getSpawnVariant(RegistryAccess registryAccess, Holder<Biome> holder) {
 		Registry<SeekerVariant> registry = registryAccess.lookupOrThrow(ESRegistries.SEEKER_VARIANT);
-		Optional<Holder.Reference<SeekerVariant>> optional = registry.holders().filter(reference -> reference.value().biomes().contains(holder)).findFirst().or(() -> registry.getHolder(ESSeekerVariants.LUNAR));
+		Optional<Holder.Reference<SeekerVariant>> optional = registry.listElements().filter(reference -> reference.value().biomes().contains(holder)).findFirst().or(() -> registry.get(ESSeekerVariants.LUNAR));
 		Objects.requireNonNull(registry);
 		return optional.or(registry::getAny).orElseThrow();
 	}

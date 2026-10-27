@@ -57,7 +57,7 @@ public class TorreyaVinesBlock extends GrowingPlantHeadBlock {
 		BlockState state = levelAccessor.getBlockState(blockPos.above());
 		if (state.is(ESBlocks.TORREYA_VINES_PLANT.get()) && !levelAccessor.getBlockState(blockPos.above(2)).is(ESBlocks.TORREYA_VINES_PLANT.get()) && !state.getValue(TorreyaVinesPlantBlock.TOP)) {
 			state = state.setValue(TorreyaVinesPlantBlock.TOP, true);
-			levelAccessor.setBlock(blockPos.above(), state, 2);
+			if (levelAccessor instanceof net.minecraft.world.level.LevelAccessor la) la.setBlock(blockPos.above(), state, 2);
 		}
 		return super.updateShape(blockState, levelAccessor, scheduledTickAccess, blockPos, direction, blockPos2, blockState2, randomSource);
 	}

@@ -4,7 +4,6 @@ import net.minecraft.util.RandomSource;
 
 import net.minecraft.world.level.ScheduledTickAccess;
 
-import net.minecraft.world.level.LevelReader;
 
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import com.mojang.serialization.MapCodec;
@@ -19,7 +18,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
@@ -52,7 +51,7 @@ public class BlazingStarcoreBlock extends Block {
 		return isAffectedByFluid(newState, level, pos, FluidTags.WATER) ? ESBlocks.STARCORE_BLOCK.get().defaultBlockState() : newState;
 	}
 
-	private boolean isAffectedByFluid(BlockState state, LevelAccessor level, BlockPos pos, TagKey<Fluid> fluid) {
+	private boolean isAffectedByFluid(BlockState state, LevelReader level, BlockPos pos, TagKey<Fluid> fluid) {
 		return Arrays.stream(Direction.values()).anyMatch(direction -> level.getFluidState(pos.relative(direction)).is(fluid)) || state.getFluidState().is(fluid);
 	}
 

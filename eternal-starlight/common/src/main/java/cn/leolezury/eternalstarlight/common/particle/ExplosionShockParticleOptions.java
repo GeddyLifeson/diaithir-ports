@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -31,8 +32,8 @@ public record ExplosionShockParticleOptions(Vector3f fromColor, Vector3f toColor
 	}
 
 	public static final MapCodec<ExplosionShockParticleOptions> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
-		ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(ExplosionShockParticleOptions::fromColor),
-		ExtraCodecs.VECTOR3F.fieldOf("to_color").forGetter(ExplosionShockParticleOptions::toColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("from_color").forGetter(ExplosionShockParticleOptions::fromColor),
+		ESPortCompat.VECTOR3F_CODEC.fieldOf("to_color").forGetter(ExplosionShockParticleOptions::toColor),
 		Codec.FLOAT.fieldOf("length_scale").forGetter(ExplosionShockParticleOptions::lengthScale),
 		Codec.FLOAT.fieldOf("width").forGetter(ExplosionShockParticleOptions::width),
 		Codec.FLOAT.fieldOf("life_scale").forGetter(ExplosionShockParticleOptions::lifeScale)

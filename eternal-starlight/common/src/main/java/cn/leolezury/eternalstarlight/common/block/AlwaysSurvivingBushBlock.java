@@ -7,12 +7,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class AlwaysSurvivingBushBlock extends BushBlock {
+public class AlwaysSurvivingBushBlock extends VegetationBlock {
 	public static final MapCodec<AlwaysSurvivingBushBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
 		Codec.INT.fieldOf("height").forGetter((block) -> block.height),
 		propertiesCodec()

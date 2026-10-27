@@ -49,7 +49,7 @@ public class RedVelvetumossBlock extends Block implements BonemealableBlock {
 	public void playerDestroy(Level level, Player player, BlockPos blockPos, BlockState blockState, @Nullable BlockEntity blockEntity, ItemStack itemStack) {
 		super.playerDestroy(level, player, blockPos, blockState, blockEntity, itemStack);
 		if (!EnchantmentHelper.hasTag(itemStack, EnchantmentTags.PREVENTS_ICE_MELTING)) {
-			if (level.dimensionType().ultraWarm()) {
+			if (level.environmentAttributes().getValue(net.minecraft.world.attribute.EnvironmentAttributes.WATER_EVAPORATES, blockPos)) {
 				level.removeBlock(blockPos, false);
 				return;
 			}

@@ -83,7 +83,7 @@ public class DualWieldingSwordItem extends Item {
 	private static HitResult filterHitResult(HitResult hitResult, Vec3 pos, double blockInteractionRange) {
 		Vec3 location = hitResult.getLocation();
 		if (!location.closerThan(pos, blockInteractionRange)) {
-			Direction direction = Direction.getNearest(location.x - pos.x, location.y - pos.y, location.z - pos.z);
+			Direction direction = Direction.getApproximateNearest(location.x - pos.x, location.y - pos.y, location.z - pos.z);
 			return BlockHitResult.miss(location, direction, BlockPos.containing(location));
 		} else {
 			return hitResult;

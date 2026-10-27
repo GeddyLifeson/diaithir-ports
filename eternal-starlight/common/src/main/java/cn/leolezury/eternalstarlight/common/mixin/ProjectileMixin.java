@@ -5,7 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.AbstractThrownPotion;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +22,7 @@ public abstract class ProjectileMixin {
 
 	@Inject(method = "getMovementToShoot", at = @At("RETURN"), cancellable = true)
 	private void getMovementToShoot(double x, double y, double z, float velocity, float inaccuracy, CallbackInfoReturnable<Vec3> cir) {
-		if (getOwner() instanceof LivingEntity livingEntity && ((Projectile) (Object) this) instanceof ThrownPotion) {
+		if (getOwner() instanceof LivingEntity livingEntity && ((Projectile) (Object) this) instanceof AbstractThrownPotion) {
 			double factor = 1;
 			if (livingEntity.getAttributes().hasAttribute(ESAttributes.THROWN_POTION_DISTANCE.asHolder())) {
 				AttributeInstance distance = livingEntity.getAttribute(ESAttributes.THROWN_POTION_DISTANCE.asHolder());

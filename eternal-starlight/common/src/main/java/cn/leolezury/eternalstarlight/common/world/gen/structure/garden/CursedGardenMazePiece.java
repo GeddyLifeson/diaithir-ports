@@ -88,7 +88,7 @@ public class CursedGardenMazePiece extends StructurePiece {
 		super(ESStructurePieceTypes.CURSED_GARDEN_MAZE.get(), tag);
 		setOrientation(Direction.SOUTH);
 		loadTemplates(context.structureTemplateManager());
-		ListTag xTag = tag.getList("maze", CompoundTag.TAG_LIST);
+		ListTag xTag = tag.getListOrEmpty("maze");
 		for (int x = 0; x < MAZE_SIZE; x++) {
 			if (x < xTag.size()) {
 				Tag yTag = xTag.get(x);
@@ -96,7 +96,7 @@ public class CursedGardenMazePiece extends StructurePiece {
 					for (int y = 0; y < MAZE_SIZE; y++) {
 						if (y < yList.size()) {
 							if (yList.get(y) instanceof ByteTag byteTag) {
-								maze[x][y] = byteTag.getAsByte() != 0;
+								maze[x][y] = byteTag.byteValue() != 0;
 							}
 						}
 					}

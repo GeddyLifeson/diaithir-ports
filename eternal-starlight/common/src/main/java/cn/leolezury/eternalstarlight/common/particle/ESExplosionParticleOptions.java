@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -28,16 +29,16 @@ public record ESExplosionParticleOptions(ParticleType<ESExplosionParticleOptions
 
 	public static MapCodec<ESExplosionParticleOptions> codec(ParticleType<ESExplosionParticleOptions> type) {
 		return RecordCodecBuilder.mapCodec((instance) -> instance.group(
-			ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(ESExplosionParticleOptions::fromColor),
-			ExtraCodecs.VECTOR3F.fieldOf("to_color").forGetter(ESExplosionParticleOptions::toColor),
+			ESPortCompat.VECTOR3F_CODEC.fieldOf("from_color").forGetter(ESExplosionParticleOptions::fromColor),
+			ESPortCompat.VECTOR3F_CODEC.fieldOf("to_color").forGetter(ESExplosionParticleOptions::toColor),
 			Codec.FLOAT.fieldOf("life_scale").forGetter(ESExplosionParticleOptions::lifeScale)
 		).apply(instance, (from, to, lifeScale) -> new ESExplosionParticleOptions(type, new Vector3f(from), new Vector3f(to), lifeScale)));
 	}
 
 	public static StreamCodec<? super ByteBuf, ESExplosionParticleOptions> streamCodec(ParticleType<ESExplosionParticleOptions> type) {
 		return StreamCodec.composite(
-			ByteBufCodecs.VECTOR3F, ESExplosionParticleOptions::fromColor,
-			ByteBufCodecs.VECTOR3F, ESExplosionParticleOptions::toColor,
+			ESPortCompat.VECTOR3F_STREAM, ESExplosionParticleOptions::fromColor,
+			ESPortCompat.VECTOR3F_STREAM, ESExplosionParticleOptions::toColor,
 			ByteBufCodecs.FLOAT, ESExplosionParticleOptions::lifeScale,
 			(from, to, lifeScale) -> new ESExplosionParticleOptions(type, new Vector3f(from), new Vector3f(to), lifeScale)
 		);

@@ -33,7 +33,7 @@ public class ESBoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 		Direction direction = blockSource.state().getValue(DispenserBlock.FACING);
 		ServerLevel serverlevel = blockSource.level();
 		Vec3 vec3 = blockSource.center();
-		double d0 = 0.5625 + (double) EntityType.BOAT.getWidth() / 2.0;
+		double d0 = 0.5625 + (double) EntityType.OAK_BOAT.getWidth() / 2.0;
 		double d1 = vec3.x() + (double) direction.getStepX() * d0;
 		double d2 = vec3.y() + (double) ((float) direction.getStepY() * 1.125F);
 		double d3 = vec3.z() + (double) direction.getStepZ() * d0;

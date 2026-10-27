@@ -169,7 +169,7 @@ public class AethersentGolem extends AbstractGolem {
 					}
 					shouldAddShootParticle = false;
 				}
-				if ((shootAnimationState.getAccumulatedTime() / 1000f) * 20f > 60) {
+				if ((this.tickCount - shootAnimationState.startTick) > 60) {
 					shootAnimationState.stop();
 					shootEndAnimationState.start(tickCount);
 				}

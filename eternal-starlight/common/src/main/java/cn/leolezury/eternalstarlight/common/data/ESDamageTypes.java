@@ -49,7 +49,7 @@ public class ESDamageTypes {
 	}
 
 	public static DamageSource getIndirectEntityDamageSource(Level level, ResourceKey<DamageType> type, @Nullable Entity attacker, @Nullable Entity indirectAttacker) {
-		return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(type), attacker, indirectAttacker);
+		return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(type), attacker, indirectAttacker);
 	}
 
 	public static void bootstrap(BootstrapContext<DamageType> context) {

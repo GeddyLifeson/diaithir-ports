@@ -26,9 +26,11 @@ public class TorreyaCampfireBlockEntity extends CampfireBlockEntity {
 		return this.getType().isValid(blockState);
 	}
 
+	private static final net.minecraft.world.item.crafting.RecipeManager.CachedCheck<net.minecraft.world.item.crafting.SingleRecipeInput, net.minecraft.world.item.crafting.CampfireCookingRecipe> QUICK_CHECK = net.minecraft.world.item.crafting.RecipeManager.createCheck(net.minecraft.world.item.crafting.RecipeType.CAMPFIRE_COOKING);
+
 	public static void serverTick(Level level, BlockPos blockPos, BlockState blockState, CampfireBlockEntity campfireBlockEntity) {
 		if (blockState.getValue(BlockStateProperties.LIT)) {
-			cookTick(level, blockPos, blockState, campfireBlockEntity);
+			if (level instanceof net.minecraft.server.level.ServerLevel sl) cookTick(sl, blockPos, blockState, campfireBlockEntity, QUICK_CHECK);
 			AABB box = AABB.unitCubeFromLowerCorner(Vec3.atLowerCornerOf(blockPos)).inflate(10);
 			for (LivingEntity living : level.getEntitiesOfClass(LivingEntity.class, box)) {
 				if (!(living instanceof Enemy) && !living.hasEffect(MobEffects.REGENERATION)) {

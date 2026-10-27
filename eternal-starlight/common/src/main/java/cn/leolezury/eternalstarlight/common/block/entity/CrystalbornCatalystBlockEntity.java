@@ -238,7 +238,7 @@ public class CrystalbornCatalystBlockEntity extends BaseContainerBlockEntity {
 		super.loadAdditional(compoundTag);
 		int count = compoundTag.getIntOr(TAG_CURSOR_COUNT, 0);
 		for (int i = 0; i < count; i++) {
-			this.cursors.add(Cursor.fromTag(compoundTag.childOrEmpty(TAG_CURSOR + i)));
+			compoundTag.read(TAG_CURSOR + i, CompoundTag.CODEC).ifPresent(cursorTag -> this.cursors.add(Cursor.fromTag(cursorTag)));
 		}
 		this.energyLeft = compoundTag.getIntOr(TAG_ENERGY_LEFT, 0);
 		ContainerHelper.loadAllItems(compoundTag, this.items);
@@ -249,7 +249,7 @@ public class CrystalbornCatalystBlockEntity extends BaseContainerBlockEntity {
 		super.saveAdditional(compoundTag);
 		compoundTag.putInt(TAG_CURSOR_COUNT, cursors.size());
 		for (int i = 0; i < cursors.size(); i++) {
-			compoundTag.put(TAG_CURSOR + i, cursors.get(i).toTag());
+			compoundTag.store(TAG_CURSOR + i, CompoundTag.CODEC, cursors.get(i).toTag());
 		}
 		compoundTag.putInt(TAG_ENERGY_LEFT, this.energyLeft);
 		ContainerHelper.saveAllItems(compoundTag, this.items);

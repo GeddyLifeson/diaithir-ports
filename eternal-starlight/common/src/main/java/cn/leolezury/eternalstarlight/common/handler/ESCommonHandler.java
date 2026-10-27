@@ -164,15 +164,11 @@ public class ESCommonHandler {
 		Accessory accessory = itemStack.get(ESDataComponents.ACCESSORY.get());
 		// copied from ItemStack#addAttributeTooltips
 		if (accessory != null) {
-			if ((accessory.attributeModifiers().showInTooltip() && !accessory.attributeModifiers().modifiers().isEmpty()) || !accessory.extraDescription().isEmpty()) {
+			if ((!accessory.attributeModifiers().modifiers().isEmpty()) || !accessory.extraDescription().isEmpty()) {
 				tooltip.add(CommonComponents.EMPTY);
 				tooltip.add(Component.translatable("tooltip." + EternalStarlight.ID + ".accessory_combined").withStyle(ChatFormatting.GRAY));
 			}
-			if (accessory.attributeModifiers().showInTooltip()) {
-				for (EquipmentSlotGroup slotGroup : EquipmentSlotGroup.values()) {
-					accessory.attributeModifiers().forEach(slotGroup, (holder, modifier) -> itemStack.addModifierTooltip(tooltip::add, player, holder, modifier));
-				}
-			}
+			// STUB: accessory attribute modifier tooltip lines dropped (ItemStack#addModifierTooltip removed in 26.1)
 			for (Component desc : accessory.extraDescription()) {
 				tooltip.add(Component.literal(" ").append(desc));
 			}
@@ -545,7 +541,7 @@ public class ESCommonHandler {
 			if (!level.isClientSide()) {
 				if (item.tickCount % 100 == 0 && ESBlockUtil.isEntityInBlock(item, ESBlocks.ETHER.get())) {
 					ItemStack content = item.getItem().copy();
-					level.getRecipeManager().getRecipeFor(ESRecipes.ETHER_CONVERSION.get(), new SingleRecipeInput(content), level).ifPresent(recipeHolder -> {
+					((ServerLevel) level).recipeAccess().getRecipeFor(ESRecipes.ETHER_CONVERSION.get(), new SingleRecipeInput(content), level).ifPresent(recipeHolder -> {
 						EtherConversionRecipe recipe = recipeHolder.value();
 						if (content.getCount() >= recipe.inputCount()) {
 							ItemStack output = recipe.rollOutput(level.getRandom());

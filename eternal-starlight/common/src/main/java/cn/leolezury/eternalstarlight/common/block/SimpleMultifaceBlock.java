@@ -22,15 +22,16 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class SimpleMultifaceBlock extends MultifaceBlock implements BonemealableBlock, SimpleWaterloggedBlock {
+public class SimpleMultifaceBlock extends MultifaceSpreadeableBlock implements BonemealableBlock, SimpleWaterloggedBlock {
 	public static final MapCodec<SimpleMultifaceBlock> CODEC = simpleCodec(SimpleMultifaceBlock::new);
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
 	@Override
-	protected MapCodec<? extends SimpleMultifaceBlock> codec() {
+	public MapCodec<? extends SimpleMultifaceBlock> codec() {
 		return CODEC;
 	}
+
 
 	public SimpleMultifaceBlock(BlockBehaviour.Properties properties) {
 		super(properties);

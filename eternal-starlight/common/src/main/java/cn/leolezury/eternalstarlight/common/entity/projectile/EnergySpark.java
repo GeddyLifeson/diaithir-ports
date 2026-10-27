@@ -48,7 +48,8 @@ public class EnergySpark extends ThrowableProjectile {
 	}
 
 	public EnergySpark(Level level, LivingEntity livingEntity) {
-		super(ESEntities.ENERGY_SPARK.get(), livingEntity, level);
+		super(ESEntities.ENERGY_SPARK.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public EnergySpark(Level level, double x, double y, double z) {

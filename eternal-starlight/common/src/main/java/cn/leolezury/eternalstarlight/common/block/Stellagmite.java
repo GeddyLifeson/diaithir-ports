@@ -20,7 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
@@ -67,7 +67,7 @@ public interface Stellagmite {
 		return InteractionResult.TRY_WITH_EMPTY_HAND;
 	}
 
-	default BlockState updateShape(BlockState state, LevelAccessor level, BlockPos pos) {
+	default BlockState updateShape(BlockState state, LevelReader level, BlockPos pos) {
 		return isAffectedByFluid(state, level, pos, FluidTags.LAVA) ? asMolten(state) : (
 			isAffectedByFluid(state, level, pos, FluidTags.WATER) ?
 				asCooled(state) : state
@@ -80,7 +80,7 @@ public interface Stellagmite {
 		}
 	}
 
-	default boolean isAffectedByFluid(BlockState state, LevelAccessor level, BlockPos pos, TagKey<Fluid> fluid) {
+	default boolean isAffectedByFluid(BlockState state, LevelReader level, BlockPos pos, TagKey<Fluid> fluid) {
 		return Arrays.stream(Direction.values()).anyMatch(direction -> level.getFluidState(pos.relative(direction)).is(fluid)) || state.getFluidState().is(fluid);
 	}
 

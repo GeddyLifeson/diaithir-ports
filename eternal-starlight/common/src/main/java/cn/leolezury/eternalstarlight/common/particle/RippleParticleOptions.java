@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.particle;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
 import cn.leolezury.eternalstarlight.common.platform.ESPlatform;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -73,7 +74,7 @@ public record RippleParticleOptions(ParticleType<RippleParticleOptions> type, Pa
 			ParticleFacing.CODEC.optionalFieldOf("facing", ParticleFacing.CAMERA).forGetter(RippleParticleOptions::facing),
 			EasingCurve.CODEC.fieldOf("radius").forGetter(RippleParticleOptions::radius),
 			EasingCurve.CODEC.fieldOf("width").forGetter(RippleParticleOptions::width),
-			ExtraCodecs.VECTOR3F.fieldOf("color").forGetter(RippleParticleOptions::color),
+			ESPortCompat.VECTOR3F_CODEC.fieldOf("color").forGetter(RippleParticleOptions::color),
 			Codec.INT.fieldOf("lifetime").forGetter(RippleParticleOptions::lifetime)
 		).apply(instance, (facing, radius, width, color, lifetime) -> new RippleParticleOptions(type, facing, radius, width, color, lifetime)));
 	}
@@ -83,7 +84,7 @@ public record RippleParticleOptions(ParticleType<RippleParticleOptions> type, Pa
 			ParticleFacing.STREAM_CODEC, RippleParticleOptions::facing,
 			EasingCurve.STREAM_CODEC, RippleParticleOptions::radius,
 			EasingCurve.STREAM_CODEC, RippleParticleOptions::width,
-			ByteBufCodecs.VECTOR3F, RippleParticleOptions::color,
+			ESPortCompat.VECTOR3F_STREAM, RippleParticleOptions::color,
 			ByteBufCodecs.VAR_INT, RippleParticleOptions::lifetime,
 			(facing, radius, width, color, lifetime) -> new RippleParticleOptions(type, facing, radius, width, color, lifetime)
 		);

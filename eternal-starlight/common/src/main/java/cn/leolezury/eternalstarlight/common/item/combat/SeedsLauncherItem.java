@@ -43,7 +43,7 @@ public class SeedsLauncherItem extends ProjectileWeaponItem {
 		boolean success = performShooting(level, player, projectile, hand);
 		if (success) {
 			SeedsLauncherAmmoType type = SeedsLauncherAmmoType.getAmmoType(level.registryAccess(), projectile.getItem()).value();
-			player.getCooldowns().addCooldown(this, type.cooldownAsTicks());
+			player.getCooldowns().addCooldown(this.getDefaultInstance(), type.cooldownAsTicks());
 		}
 		return success ? InteractionResult.CONSUME : super.use(level, player, hand);
 	}

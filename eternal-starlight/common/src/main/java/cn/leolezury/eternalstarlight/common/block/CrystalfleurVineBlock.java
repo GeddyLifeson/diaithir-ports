@@ -16,7 +16,7 @@ public class CrystalfleurVineBlock extends SimpleMultifaceBlock {
 	}
 
 	@Override
-	protected MapCodec<CrystalfleurVineBlock> codec() {
+	public MapCodec<CrystalfleurVineBlock> codec() {
 		return CODEC;
 	}
 

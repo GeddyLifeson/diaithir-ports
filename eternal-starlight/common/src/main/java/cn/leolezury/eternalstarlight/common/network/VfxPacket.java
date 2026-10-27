@@ -21,11 +21,11 @@ public record VfxPacket(Identifier typeId, VfxData data, ResourceKey<Level> dime
 	public static final StreamCodec<RegistryFriendlyByteBuf, VfxPacket> STREAM_CODEC = StreamCodec.ofMember(VfxPacket::write, VfxPacket::read);
 
 	public static VfxPacket read(RegistryFriendlyByteBuf buf) {
-		Identifier typeId = buf.readResourceLocation();
+		Identifier typeId = buf.readIdentifier();
 		VfxType<?> type = ESVfx.get(typeId);
 		VfxData data = type == null ? null : readData(buf, type);
 		ResourceKey<Level> dimension = buf.readResourceKey(Registries.DIMENSION);
-		Vec3 position = buf.readVec3();
+		Vec3 position = Vec3.STREAM_CODEC.decode(buf);
 		int duration = buf.readVarInt();
 		float radius = buf.readFloat();
 		return new VfxPacket(typeId, data, dimension, position, duration, radius);
@@ -36,10 +36,10 @@ public record VfxPacket(Identifier typeId, VfxData data, ResourceKey<Level> dime
 	}
 
 	public static void write(VfxPacket packet, RegistryFriendlyByteBuf buf) {
-		buf.writeResourceLocation(packet.typeId());
+		buf.writeIdentifier(packet.typeId());
 		writeData(buf, packet.data());
 		buf.writeResourceKey(packet.dimension());
-		buf.writeVec3(packet.position());
+		Vec3.STREAM_CODEC.encode(buf, packet.position());
 		buf.writeVarInt(packet.duration());
 		buf.writeFloat(packet.radius());
 	}

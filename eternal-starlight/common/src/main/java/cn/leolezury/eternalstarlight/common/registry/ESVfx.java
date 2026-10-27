@@ -15,7 +15,7 @@ public class ESVfx {
 	public static final RegistryObject<VfxType<?>, ScreenShakeVfx> SCREEN_SHAKE = VFX.register("screen_shake", () -> ScreenShakeVfx.INSTANCE);
 
 	public static VfxType<?> get(Identifier id) {
-		return VFX.registry().get(id);
+		return VFX.registry().getValue(id);
 	}
 
 	public static void loadClass() {

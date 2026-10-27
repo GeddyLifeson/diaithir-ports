@@ -18,7 +18,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MarimoldBlock extends BushBlock implements BonemealableBlock, SimpleWaterloggedBlock {
+public class MarimoldBlock extends VegetationBlock implements BonemealableBlock, SimpleWaterloggedBlock {
 	public static final MapCodec<MarimoldBlock> CODEC = simpleCodec(MarimoldBlock::new);
 	protected static final VoxelShape SHAPE = Block.box(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -85,7 +85,7 @@ public class MarimoldBlock extends BushBlock implements BonemealableBlock, Simpl
 
 	@Override
 	public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-		Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.HUGE_MARIMOLD);
+		Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).get(ESConfiguredFeatures.HUGE_MARIMOLD);
 		if (optional.isPresent()) {
 			serverLevel.removeBlock(blockPos, false);
 			if (!optional.get().value().place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos)) {

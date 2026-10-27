@@ -40,12 +40,7 @@ public class CrescentSpearItem extends Item {
 	}
 
 	public static Tool createToolProperties() {
-		return new Tool(List.of(), 1.0F, 2);
-	}
-
-	@Override
-	public boolean canAttackBlock(BlockState blockState, Level level, BlockPos blockPos, Player player) {
-		return !player.isCreative();
+		return new Tool(List.of(), 1.0F, 2, false);
 	}
 
 	@Override
@@ -89,7 +84,7 @@ public class CrescentSpearItem extends Item {
 				player.push(xSpeed, ySpeed, zSpeed);
 				ESDataAttachments.CRESCENT_SPEAR_DASH.setData(player, true);
 				player.startAutoSpinAttack(20, player.getAttribute(Attributes.ATTACK_DAMAGE) != null ? (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) * 1.5f : 8, itemStack);
-				player.getCooldowns().addCooldown(this, 20);
+				player.getCooldowns().addCooldown(itemStack, 20);
 
 				player.playSound(ESSoundEvents.CRESCENT_SPEAR_THROW.get());
 

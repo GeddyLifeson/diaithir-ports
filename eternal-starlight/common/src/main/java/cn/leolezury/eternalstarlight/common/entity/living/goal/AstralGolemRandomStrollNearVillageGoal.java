@@ -18,7 +18,7 @@ public class AstralGolemRandomStrollNearVillageGoal extends WaterAvoidingRandomS
 		if (mob instanceof AstralGolem golem) {
 			BlockPos homePos = golem.homePos;
 			Vec3 homeVec = new Vec3(homePos.getX(), homePos.getY(), homePos.getZ());
-			if (this.mob.isInWaterOrBubble()) {
+			if (this.mob.isInWater()) {
 				Vec3 vec3 = LandRandomPos.getPosTowards(golem, 15, 7, homeVec);
 				return vec3 == null ? super.getPosition() : vec3;
 			} else {

@@ -178,11 +178,6 @@ public class TangledHusk extends LivingEntity implements TraceableEntity {
 	}
 
 	@Override
-	public Iterable<ItemStack> getArmorSlots() {
-		return List.of();
-	}
-
-	@Override
 	public ItemStack getItemBySlot(EquipmentSlot equipmentSlot) {
 		return ItemStack.EMPTY;
 	}

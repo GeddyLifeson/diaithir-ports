@@ -21,7 +21,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class JinglestemSaplingBlock extends BushBlock implements BonemealableBlock, LiquidBlockContainer {
+public class JinglestemSaplingBlock extends VegetationBlock implements BonemealableBlock, LiquidBlockContainer {
 	public static final MapCodec<JinglestemSaplingBlock> CODEC = simpleCodec(JinglestemSaplingBlock::new);
 
 	public static final IntegerProperty STAGE = BlockStateProperties.STAGE;
@@ -89,7 +89,7 @@ public class JinglestemSaplingBlock extends BushBlock implements BonemealableBlo
 		if (blockState.getValue(STAGE) == 0) {
 			serverLevel.setBlock(blockPos, blockState.cycle(STAGE), 4);
 		} else {
-			Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).getHolder(ESConfiguredFeatures.JINGLESTEM_PLANTED);
+			Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = serverLevel.registryAccess().lookupOrThrow(Registries.CONFIGURED_FEATURE).get(ESConfiguredFeatures.JINGLESTEM_PLANTED);
 			if (optional.isPresent()) {
 				serverLevel.removeBlock(blockPos, false);
 				if (!optional.get().value().place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos)) {

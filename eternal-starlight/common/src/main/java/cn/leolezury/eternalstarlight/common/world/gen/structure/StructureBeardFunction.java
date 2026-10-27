@@ -40,7 +40,7 @@ public class StructureBeardFunction extends Beardifier {
 	private final WaterTableFluidPicker picker;
 
 	public StructureBeardFunction(Beardifier inside, List<BoundingBox> boxes, WaterTableFluidPicker picker) {
-		super(new ObjectArrayList<Rigid>().iterator(), new ObjectArrayList<JigsawJunction>().iterator());
+		super(new ObjectArrayList<Rigid>(), new ObjectArrayList<JigsawJunction>(), null);
 		this.inside = inside;
 		this.boxes = boxes;
 		this.picker = picker;
@@ -51,7 +51,7 @@ public class StructureBeardFunction extends Beardifier {
 		List<BoundingBox> boxes = new ArrayList<>();
 		Set<Structure> adaptive = structureManager.registryAccess()
 			.lookupOrThrow(Registries.STRUCTURE)
-			.getTag(ESTags.Structures.TERRAIN_ADAPTIVE)
+			.get(ESTags.Structures.TERRAIN_ADAPTIVE)
 			.map(tag -> tag.stream().map(Holder::value).collect(java.util.stream.Collectors.toSet()))
 			.orElse(Set.of());
 		if (!adaptive.isEmpty()) {

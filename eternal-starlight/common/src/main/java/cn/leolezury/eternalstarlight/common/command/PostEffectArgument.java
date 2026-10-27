@@ -53,7 +53,7 @@ public class PostEffectArgument implements ArgumentType<PostEffectData> {
 		if (type == null) {
 			throw ERROR_UNKNOWN_EFFECT.createWithContext(reader, id);
 		}
-		CompoundTag tag = reader.canRead() && reader.peek() == '{' ? new TagParser(reader).readStruct() : new CompoundTag();
+		CompoundTag tag = reader.canRead() && reader.peek() == '{' ? net.minecraft.nbt.TagParser.parseCompoundAsArgument(reader) : new CompoundTag();
 		return readPostEffect(tag, type, reader);
 	}
 

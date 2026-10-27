@@ -89,10 +89,7 @@ public abstract class SpeleothemBlock extends Block implements SimpleWaterlogged
 			return state;
 		}
 		Direction tipDirection = state.getValue(TIP_DIRECTION);
-		if (tipDirection == Direction.DOWN && level.getBlockTicks().hasScheduledTick(pos, this)) {
-			return state;
-		}
-		if (directionToNeighbour == tipDirection.getOpposite() && !this.canSurvive(state, level, pos)) {
+				if (directionToNeighbour == tipDirection.getOpposite() && !this.canSurvive(state, level, pos)) {
 			scheduledTickAccess.scheduleTick(pos, this, tipDirection == Direction.DOWN ? DELAY_BEFORE_FALLING : 1);
 			return state;
 		}
@@ -158,7 +155,7 @@ public abstract class SpeleothemBlock extends Block implements SimpleWaterlogged
 	protected void onProjectileHit(Level level, BlockState state, BlockHitResult blockHit, Projectile projectile) {
 		if (!level.isClientSide()) {
 			BlockPos pos = blockHit.getBlockPos();
-			if (projectile.mayInteract(level, pos) && projectile.mayBreak(level) && projectile.getDeltaMovement().length() > MIN_TRIDENT_VELOCITY_TO_BREAK) {
+			if (level instanceof net.minecraft.server.level.ServerLevel sl && projectile.mayInteract(sl, pos) && projectile.mayBreak(sl) && projectile.getDeltaMovement().length() > MIN_TRIDENT_VELOCITY_TO_BREAK) {
 				level.destroyBlock(pos, true);
 			}
 		}
@@ -234,7 +231,7 @@ public abstract class SpeleothemBlock extends Block implements SimpleWaterlogged
 			case MIDDLE -> SHAPE_MIDDLE;
 			case BASE -> SHAPE_BASE;
 		};
-		Vec3 vec3 = state.getOffset(level, pos);
+		Vec3 vec3 = state.getOffset(pos);
 		return shape.move(vec3.x, 0.0, vec3.z);
 	}
 

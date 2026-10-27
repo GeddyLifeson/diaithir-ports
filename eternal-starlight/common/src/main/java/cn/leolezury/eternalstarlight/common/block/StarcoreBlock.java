@@ -58,17 +58,17 @@ public class StarcoreBlock extends Block {
 			},
 			foundPos -> {
 				if (foundPos.equals(pos)) {
-					return true;
+					return BlockPos.TraversalNodeStatus.ACCEPT;
 				} else {
 					BlockState blockState = level.getBlockState(foundPos);
 					FluidState fluidState = level.getFluidState(foundPos);
 					if (!fluidState.is(FluidTags.LAVA)) {
-						return false;
+						return BlockPos.TraversalNodeStatus.SKIP;
 					} else {
 						Block block = blockState.getBlock();
 						if (block instanceof BucketPickup bucketPickup) {
 							if (!bucketPickup.pickupBlock(null, level, foundPos, blockState).isEmpty()) {
-								return true;
+								return BlockPos.TraversalNodeStatus.ACCEPT;
 							}
 						}
 
@@ -76,7 +76,7 @@ public class StarcoreBlock extends Block {
 							level.setBlock(foundPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
 						}
 
-						return true;
+						return BlockPos.TraversalNodeStatus.ACCEPT;
 					}
 				}
 			}

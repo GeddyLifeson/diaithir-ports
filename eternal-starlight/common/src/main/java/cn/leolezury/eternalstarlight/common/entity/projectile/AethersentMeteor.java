@@ -197,7 +197,7 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 					}
 					for (int i = 0; i < ((ServerLevel) level()).players().size(); ++i) {
 						ServerPlayer serverPlayer = ((ServerLevel) level()).players().get(i);
-						((ServerLevel) level()).sendParticles(serverPlayer, ESParticles.AETHERSENT_EXPLOSION.get(), true, getX(), getY(), getZ(), 1, 0, 0, 0, 0);
+						((ServerLevel) level()).sendParticles(serverPlayer, ESParticles.AETHERSENT_EXPLOSION.get(), true, false, getX(), getY(), getZ(), 1, 0, 0, 0, 0);
 					}
 				} else if (level() instanceof ServerLevel serverLevel) {
 					for (int i = 0; i < 25; i++) {

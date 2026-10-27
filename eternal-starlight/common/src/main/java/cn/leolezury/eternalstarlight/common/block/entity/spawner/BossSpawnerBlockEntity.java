@@ -88,12 +88,12 @@ public abstract class BossSpawnerBlockEntity<T extends Mob> extends BlockEntity 
 	public abstract ParticleOptions getSpawnerParticle();
 
 	protected void initializeBoss(T mob) {
-		mob.restrictTo(getBlockPos(), 50);
+		mob.setHomeTo(getBlockPos(), 50);
 		mob.setPersistenceRequired();
 	}
 
 	protected T createBoss(ServerLevel level) {
-		return this.entityType.create(level);
+		return this.entityType.create(level, net.minecraft.world.entity.EntitySpawnReason.SPAWNER);
 	}
 
 	@Override
