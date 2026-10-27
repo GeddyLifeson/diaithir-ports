@@ -1,5 +1,6 @@
-"""Rewrites display names in assets/kaleidoscope_tavern/lang/en_us.json as Diaithiris kennings (head noun, then genitive describers, one word).
-Words come from /mnt/project-files/diaithiris-archaic/LEXICON.json. Ids never change. Run: python3 -I tools/gen_names.py [LEXICON.json]
+"""Writes the Diaithiris name of every block and item in lang/en_us.json as kennings (head noun, then genitive describers, one word) to a JSON map id -> name;
+English stays the main display name and the pack shows the Diaithiris name in grey.
+Words come from /mnt/project-files/diaithiris-archaic/LEXICON.json. Ids never change. Run: python3 -I tools/gen_names.py [OUT.json] [LEXICON.json]
 """
 import json
 import os
@@ -8,7 +9,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LANG = os.path.join(HERE, "..", "src", "main", "resources", "assets", "kaleidoscope_tavern", "lang", "en_us.json")
-LEX = sys.argv[1] if len(sys.argv) > 1 else "/mnt/project-files/diaithiris-archaic/LEXICON.json"
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "diaithiris_names.json")
+LEX = sys.argv[2] if len(sys.argv) > 2 else "/mnt/project-files/diaithiris-archaic/LEXICON.json"
 
 COLOURS = {"White": "white", "Light Gray": "gray", "Gray": "grey", "Black": "black", "Brown": "brown", "Red": "red", "Orange": "saffron",
            "Yellow": "yellow", "Lime": "lime-green", "Green": "green", "Cyan": "teal", "Light Blue": "turquoise", "Blue": "blue",
@@ -78,9 +80,11 @@ def convert(english):
 
 
 lang = json.load(open(LANG))
+names = {}
 for key, value in lang.items():
-    if key.startswith(("block.", "item.")):
-        lang[key] = convert(value)
-with open(LANG, "w") as f:
-    json.dump(lang, f, ensure_ascii=False, indent=2)
+    m = re.fullmatch(r"(?:block|item)\.([^.]+)\.(.+)", key)
+    if m:
+        names[m.group(1) + ":" + m.group(2)] = convert(value)
+with open(OUT, "w") as f:
+    json.dump(names, f, ensure_ascii=False, indent=1)
     f.write("\n")

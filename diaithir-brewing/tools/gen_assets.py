@@ -75,10 +75,11 @@ os.makedirs(os.path.join(ROOT, f"assets/{NS}/textures/block"), exist_ok=True)
 make("keg", (150, 105, 60), (8, 51))
 make("fermenting_barrel", (112, 78, 46), (6, 29, 53))
 
+# (Diaithiris, English)
 NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel")}
 lang = {}
 for n, (dia, _en) in NAMES.items():
-    lang[f"block.{NS}.{n}"] = dia
+    lang[f"block.{NS}.{n}"] = _en  # English main name; the Diaithiris name is shown in grey by the pack (diaithirbrewing-names in tools/diaithiris_names.json)
     put(f"assets/{NS}/models/block/{n}.json", {
         "parent": "minecraft:block/cube_bottom_top",
         "textures": {"bottom": f"{NS}:block/{n}_bottom", "side": f"{NS}:block/{n}_side", "top": f"{NS}:block/{n}_top"}})
