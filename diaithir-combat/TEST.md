@@ -3,7 +3,7 @@
 Build: `./gradlew build` with JDK 25, NeoForge 26.1.2.116, jar `diaithir-combat-neoforge-26.1.2-1.0.0.jar`.
 
 Dedicated server (gradle runServer, rcon) run twice: alone, and with the diaithir-arms and spartan-weaponry port jars in `mods/`.
-- Boots with no ERROR line from the mod (the only ERROR is the vanilla flat-world `layers` property in my test server.properties).
+- Boots with no ERROR line from the mod.
 - `/combatselftest` (fake player, armour stands, iron golem): ok=297 bad=0 with both item mods loaded. It checks, for every class and every combo step:
   reach (hit just inside, miss beyond), arc (hit inside, miss outside) or thrust width, `max_targets` pierce/sweep cap, real damage on a golem against
   base attack damage x step multiplier (enchantment effects included), the cooldown gate, exhausted swings, and cooldown shrinking with Age.
