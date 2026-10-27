@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "chance": 0.3,
+   "id": "minecraft:redstone"
+  }
+ ],
+ "ingredient": "create:cinder_flour"
+}

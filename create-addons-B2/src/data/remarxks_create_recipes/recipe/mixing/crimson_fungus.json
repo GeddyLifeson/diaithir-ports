@@ -1,0 +1,22 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:crimson_nylium"
+  }
+ ],
+ "ingredients": [
+  "minecraft:crimson_fungus",
+  "minecraft:crimson_fungus",
+  "minecraft:crimson_fungus",
+  "minecraft:crimson_fungus",
+  "minecraft:netherrack"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

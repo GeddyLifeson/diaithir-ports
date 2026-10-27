@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "create:ochrum"
+  }
+ ],
+ "ingredients": [
+  "create:asurine",
+  "minecraft:flint",
+  "minecraft:quartz"
+ ]
+}

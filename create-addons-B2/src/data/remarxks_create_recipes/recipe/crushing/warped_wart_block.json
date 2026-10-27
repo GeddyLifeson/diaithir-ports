@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 25,
+ "results": [
+  {
+   "id": "minecraft:ender_pearl",
+   "chance": 0.01
+  }
+ ],
+ "ingredient": "minecraft:warped_wart_block"
+}

@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:dripstone_block"
+  }
+ ],
+ "ingredients": [
+  "create:ochrum",
+  "minecraft:stone"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 2025,
+   "fluid": "minecraft:water"
+  }
+ ]
+}

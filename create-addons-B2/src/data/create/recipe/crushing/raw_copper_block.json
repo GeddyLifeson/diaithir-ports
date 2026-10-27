@@ -1,0 +1,41 @@
+{
+ "type": "create:crushing",
+ "processing_time": 400,
+ "results": [
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 9
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 2,
+   "chance": 0.5
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 2,
+   "chance": 0.5
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 2,
+   "chance": 0.5
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 2,
+   "chance": 0.5
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 1,
+   "chance": 0.5
+  },
+  {
+   "id": "create:experience_nugget",
+   "count": 9,
+   "chance": 0.75
+  }
+ ],
+ "ingredient": "#c:storage_blocks/raw_copper"
+}

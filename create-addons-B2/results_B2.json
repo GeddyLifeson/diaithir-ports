@@ -1,0 +1,329 @@
+[
+ {
+  "slug": "create-mod-tools",
+  "status": "skip",
+  "reason": "1.20.1 command-block op-menu datapack, no gameplay content",
+  "fabric": [
+   [
+    "1.0.0+mod",
+    "1.20.1"
+   ]
+  ]
+ },
+ {
+  "slug": "create-dreams-desires-fixed-bore-blocks",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "contraptionrails",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-trains-on-trains",
+  "status": "blocked",
+  "reason": "1.20.1 Forge jar only; needs source port to 26.1",
+  "fabric": []
+ },
+ {
+  "slug": "remarxks-create-recipe",
+  "status": "ported",
+  "reason": "recipes ported",
+  "fabric": []
+ },
+ {
+  "slug": "create-aeronautics-lift-patch",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-immersive-armorer-integration",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: tacz, immersiveengineering; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-pc-enchant-fix",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "pushed-docking",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "cardboard-chalk-box",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: chalk; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-new-recipes",
+  "status": "ported",
+  "reason": "recipes ported; 9 sequenced-assembly recipes dropped (need code-registered incomplete_* items)",
+  "fabric": []
+ },
+ {
+  "slug": "create-aeronautics-encased-fluid-pipes",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: aeronautics; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "apotheoticcreation",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: apotheosis; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "createtuff",
+  "status": "blocked",
+  "reason": "items/blocks registered in code (volcanic ash); recipes alone useless; needs source rebuild",
+  "fabric": []
+ },
+ {
+  "slug": "create-double-ores",
+  "status": "ported",
+  "reason": "recipes only; ported as data in diaithir_create_addons_b2",
+  "fabric": []
+ },
+ {
+  "slug": "create-edible-belts",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-numismatics-advancement-seeker",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: numismatics; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "delivery-director",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "portable-engine-overdrive",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: simulated; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "createsoftmotion",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-more-configs",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-trolleybus-parts",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: powergrid; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-coins",
+  "status": "blocked",
+  "reason": "1.20.1 Forge jar only; needs source port to 26.1",
+  "fabric": []
+ },
+ {
+  "slug": "cdg-oil-info",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: createdieselgenerators+jade; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-aeronautics-crack",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-cobblemon-balls-overhaul",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: cobblemon; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-strict-links",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-ectoplasm",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "colorful-catalysts",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: create_connected, dragons_plus, garnished, dye_depot; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-lactose-intolerance",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-water-wheel-bearing",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: jade, jei; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-chicken-nuggets",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-fuel-water-information",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-electro-extras",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: electroenergetics; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-access-denied",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "kubejs-create",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: kubejs; plus code needs source rebuild against zurrtum Create port",
+  "fabric": [
+   [
+    "1802.2.4-build.23+fabric",
+    "1.18.2"
+   ]
+  ]
+ },
+ {
+  "slug": "create-heart-factory",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "ccc-redstone-link",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: computercraft; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-fluids-be-gone-simulated",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: simulated, sable, offroad; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "vault-ui",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-fully-automated",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-train-physics-reloaded",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-maintenance-control",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-factory",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: create_confectionery, ecologics; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-aero-stuff",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: simulated, tfmg, copycats; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-food-filling",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: tooltips_reforged; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-interval-filter",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable; plus code needs source rebuild against zurrtum Create port",
+  "fabric": [
+   [
+    "1.1.0+mc-1.20.1",
+    "1.20.1"
+   ]
+  ]
+ },
+ {
+  "slug": "create-dimension-steamworks-realm",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "create-aerostar",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable, northstar, simulated; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-capsule-corp.",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable, ldlib2; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ },
+ {
+  "slug": "create-configurable-crushing-wheel",
+  "status": "blocked",
+  "reason": "code addon on com.simibubi 1.21.1 API; port is com.zurrtum.create, needs upstream source rebuild (not scripted-retargetable)",
+  "fabric": []
+ },
+ {
+  "slug": "createaeroploughroll",
+  "status": "blocked",
+  "reason": "missing dependency mod(s) not in pack/port: sable, aeronautics; plus code needs source rebuild against zurrtum Create port",
+  "fabric": []
+ }
+]

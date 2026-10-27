@@ -1,0 +1,21 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "chance": 0.7,
+   "id": "minecraft:magma_block"
+  }
+ ],
+ "ingredients": [
+  "minecraft:netherrack",
+  "minecraft:blaze_powder"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

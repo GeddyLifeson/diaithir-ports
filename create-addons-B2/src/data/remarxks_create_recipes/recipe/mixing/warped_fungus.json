@@ -1,0 +1,22 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:warped_nylium"
+  }
+ ],
+ "ingredients": [
+  "minecraft:warped_fungus",
+  "minecraft:warped_fungus",
+  "minecraft:warped_fungus",
+  "minecraft:warped_fungus",
+  "minecraft:netherrack"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

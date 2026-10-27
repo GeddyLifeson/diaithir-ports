@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:prismarine"
+  }
+ ],
+ "ingredients": [
+  "create:veridium",
+  "minecraft:moss_block"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 20250,
+   "fluid": "minecraft:water"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:sculk",
+   "count": 4
+  }
+ ],
+ "ingredients": [
+  "create:asurine",
+  "create:asurine",
+  "create:asurine",
+  "create:asurine",
+  "create:powdered_obsidian"
+ ]
+}

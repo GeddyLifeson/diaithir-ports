@@ -1,0 +1,21 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "count": 1,
+   "id": "minecraft:tuff"
+  }
+ ],
+ "heat_requirement": "none",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:flint"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

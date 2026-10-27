@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "create:veridium"
+  }
+ ],
+ "ingredients": [
+  "create:ochrum",
+  "minecraft:flint",
+  "minecraft:quartz"
+ ]
+}

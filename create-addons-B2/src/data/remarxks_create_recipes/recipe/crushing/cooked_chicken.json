@@ -1,0 +1,27 @@
+{
+ "type": "create:crushing",
+ "processing_time": 30,
+ "results": [
+  {
+   "id": "minecraft:rotten_flesh",
+   "count": 3
+  },
+  {
+   "id": "minecraft:bone_meal",
+   "count": 1
+  },
+  {
+   "id": "create:experience_nugget"
+  },
+  {
+   "id": "minecraft:bone_meal",
+   "chance": 0.25,
+   "count": 1
+  },
+  {
+   "chance": 0.75,
+   "id": "create:experience_nugget"
+  }
+ ],
+ "ingredient": "minecraft:cooked_chicken"
+}

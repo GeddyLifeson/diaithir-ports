@@ -1,0 +1,22 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:mycelium"
+  }
+ ],
+ "ingredients": [
+  "#remarxks_create_recipes:mushroom",
+  "#remarxks_create_recipes:mushroom",
+  "#remarxks_create_recipes:mushroom",
+  "#remarxks_create_recipes:mushroom",
+  "minecraft:dirt"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 8100,
+   "fluid": "minecraft:water"
+  }
+ ]
+}

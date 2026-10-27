@@ -1,0 +1,16 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:fermented_spider_eye",
+   "count": 2
+  }
+ ],
+ "ingredients": [
+  "minecraft:spider_eye",
+  "minecraft:spider_eye",
+  "minecraft:sugar",
+  "minecraft:brown_mushroom"
+ ]
+}

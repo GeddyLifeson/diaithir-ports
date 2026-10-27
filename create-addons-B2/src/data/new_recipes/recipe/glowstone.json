@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "create:cinder_flour",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 4050,
+  "fluid": "minecraft:lava"
+ },
+ "result": {
+  "id": "minecraft:glowstone_dust"
+ }
+}

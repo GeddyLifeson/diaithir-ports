@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:popped_chorus_fruit"
+ },
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "result": {
+  "id": "minecraft:chorus_plant"
+ }
+}

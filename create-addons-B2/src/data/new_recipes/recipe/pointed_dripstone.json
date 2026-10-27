@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "processing_time": 100,
+ "results": [
+  {
+   "chance": 1,
+   "id": "minecraft:pointed_dripstone"
+  },
+  {
+   "chance": 0.5,
+   "id": "minecraft:pointed_dripstone"
+  }
+ ],
+ "ingredient": "minecraft:dripstone_block"
+}

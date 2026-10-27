@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:sculk",
+  "X": "minecraft:sculk_vein",
+  "/": "minecraft:amethyst_shard"
+ },
+ "pattern": [
+  " / ",
+  "X#X",
+  "###"
+ ],
+ "result": {
+  "count": 2,
+  "id": "minecraft:sculk_sensor"
+ }
+}

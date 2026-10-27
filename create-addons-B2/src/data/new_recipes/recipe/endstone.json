@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:end_stone"
+  }
+ ],
+ "ingredients": [
+  "minecraft:netherrack",
+  "minecraft:glowstone_dust"
+ ]
+}

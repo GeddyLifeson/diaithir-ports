@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:gunpowder"
+  }
+ ],
+ "ingredients": [
+  "create:cinder_flour",
+  "create:cinder_flour",
+  "minecraft:charcoal"
+ ]
+}

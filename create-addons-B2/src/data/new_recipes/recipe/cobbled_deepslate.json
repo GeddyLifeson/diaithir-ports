@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "count": 1,
+   "id": "minecraft:cobbled_deepslate"
+  }
+ ],
+ "heat_requirement": "none",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:flint"
+ ]
+}

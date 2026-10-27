@@ -1,0 +1,9 @@
+{
+ "type": "create:splashing",
+ "results": [
+  {
+   "id": "minecraft:obsidian"
+  }
+ ],
+ "ingredient": "minecraft:crying_obsidian"
+}

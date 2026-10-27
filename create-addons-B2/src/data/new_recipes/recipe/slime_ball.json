@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:slime_ball",
+   "chance": 0.3
+  }
+ ],
+ "ingredient": "minecraft:magma_cream"
+}

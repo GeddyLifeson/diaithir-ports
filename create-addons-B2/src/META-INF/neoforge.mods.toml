@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons_b2"
+version="0.1.0-diaithir.1"
+displayName="Diaithir Create Addons (slice B2, data)"
+authors="Diaithir pack; recipes adapted from the MIT datapacks Create Double Ores, Create New Recipes and Remarxk's Create Recipes"
+description='''Recipe-only Create addons rewritten for the Diaithir Create port (26.1 recipe shapes): double ore crushing, extra Create recipes for vanilla blocks, and Remarxk's recipes.'''
+[[dependencies.diaithir_create_addons_b2]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

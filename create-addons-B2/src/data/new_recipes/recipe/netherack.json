@@ -1,0 +1,18 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:netherrack"
+  }
+ ],
+ "ingredients": [
+  "create:cinder_flour"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

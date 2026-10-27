@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:ghast_tear",
+   "chance": 0.02
+  }
+ ],
+ "ingredient": "minecraft:soul_soil"
+}

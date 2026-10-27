@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "count": 1,
+   "id": "minecraft:calcite"
+  }
+ ],
+ "heat_requirement": "none",
+ "ingredients": [
+  "create:limestone",
+  "minecraft:cobblestone"
+ ]
+}

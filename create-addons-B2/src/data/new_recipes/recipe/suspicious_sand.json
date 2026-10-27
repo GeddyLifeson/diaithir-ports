@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:suspicious_gravel"
+  }
+ ],
+ "ingredient": "minecraft:gravel"
+}

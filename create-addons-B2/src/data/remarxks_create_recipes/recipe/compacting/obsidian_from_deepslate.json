@@ -1,0 +1,19 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "id": "minecraft:obsidian"
+  }
+ ],
+ "ingredients": [
+  "minecraft:deepslate",
+  "create:powdered_obsidian"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 4050,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

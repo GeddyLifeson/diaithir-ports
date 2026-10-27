@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "create:asurine"
+  }
+ ],
+ "ingredients": [
+  "create:crimsite",
+  "minecraft:flint",
+  "minecraft:quartz"
+ ]
+}

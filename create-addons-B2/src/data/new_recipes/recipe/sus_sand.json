@@ -1,0 +1,50 @@
+{
+ "type": "create:splashing",
+ "results": [
+  {
+   "id": "minecraft:nautilus_shell",
+   "chance": 0.003
+  },
+  {
+   "id": "minecraft:dead_horn_coral_fan",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_bubble_coral_fan",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_brain_coral_fan",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_tube_coral_fan",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_fire_coral_fan",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_horn_coral",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_bubble_coral",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_brain_coral",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_tube_coral",
+   "chance": 0.005
+  },
+  {
+   "id": "minecraft:dead_fire_coral",
+   "chance": 0.005
+  }
+ ],
+ "ingredient": "minecraft:suspicious_gravel"
+}

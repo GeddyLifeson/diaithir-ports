@@ -1,0 +1,19 @@
+{
+ "type": "create:crushing",
+ "processing_time": 100,
+ "results": [
+  {
+   "chance": 0.03,
+   "id": "minecraft:popped_chorus_fruit"
+  },
+  {
+   "chance": 0.01,
+   "id": "minecraft:ender_pearl"
+  },
+  {
+   "chance": 0.3,
+   "id": "create:experience_nugget"
+  }
+ ],
+ "ingredient": "minecraft:end_stone"
+}

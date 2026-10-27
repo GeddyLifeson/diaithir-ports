@@ -1,0 +1,17 @@
+{
+ "type": "create:splashing",
+ "results": [
+  {
+   "id": "minecraft:dirt"
+  },
+  {
+   "id": "minecraft:red_mushroom",
+   "chance": 0.75
+  },
+  {
+   "id": "minecraft:brown_mushroom",
+   "chance": 0.75
+  }
+ ],
+ "ingredient": "minecraft:mycelium"
+}

@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "processing_time": 100,
+ "results": [
+  {
+   "chance": 0.7,
+   "id": "minecraft:magma_cream"
+  },
+  {
+   "chance": 0.1,
+   "id": "minecraft:blaze_powder"
+  }
+ ],
+ "ingredient": "minecraft:magma_block"
+}

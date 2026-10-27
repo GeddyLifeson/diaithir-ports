@@ -1,0 +1,21 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:dirt",
+   "count": 2
+  }
+ ],
+ "ingredients": [
+  "minecraft:rotten_flesh",
+  "minecraft:sand",
+  "minecraft:sand"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 20250,
+   "fluid": "minecraft:water"
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "count": 1,
+   "id": "minecraft:amethyst_block"
+  }
+ ],
+ "heat_requirement": "none",
+ "ingredients": [
+  "create:asurine",
+  "create:veridium"
+ ]
+}

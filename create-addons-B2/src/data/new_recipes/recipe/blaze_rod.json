@@ -1,0 +1,18 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "count": 1,
+   "id": "minecraft:blaze_rod"
+  }
+ ],
+ "ingredients": [
+  "minecraft:blaze_powder",
+  "minecraft:blaze_powder",
+  "minecraft:blaze_powder",
+  "minecraft:blaze_powder",
+  "minecraft:blaze_powder",
+  "minecraft:blaze_powder"
+ ]
+}

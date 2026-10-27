@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "id": "minecraft:magma_cube_spawn_egg"
+  }
+ ],
+ "ingredients": [
+  "minecraft:magma_cream",
+  "minecraft:magma_cream",
+  "minecraft:egg"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 8100,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}
