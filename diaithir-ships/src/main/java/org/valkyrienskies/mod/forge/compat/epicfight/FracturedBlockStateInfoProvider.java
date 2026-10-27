@@ -1,7 +1,7 @@
 package org.valkyrienskies.mod.forge.compat.epicfight;
 
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +15,7 @@ import yesman.epicfight.world.level.block.FractureBlockState;
 public class FracturedBlockStateInfoProvider implements BlockStateInfoProvider {
     public static void register() {
         Registry.register(BlockStateInfo.INSTANCE.getREGISTRY(),
-            ResourceLocation.tryBuild(EpicFightMod.MODID, "fractured"), new FracturedBlockStateInfoProvider());
+            Identifier.tryBuild(EpicFightMod.MODID, "fractured"), new FracturedBlockStateInfoProvider());
     }
 
     @Override

@@ -3,7 +3,7 @@ package org.valkyrienskies.mod.common.networking
 import net.minecraft.client.Minecraft
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.core.registries.BuiltInRegistries
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.LivingEntity
@@ -64,7 +64,7 @@ object VSGamePackets {
             syncEntities.entity2Handler.forEach { (id, handler) ->
                 VSEntityManager.pair(
                     BuiltInRegistries.ENTITY_TYPE.byId(id),
-                    ResourceLocation.tryParse(handler)?.let { VSEntityManager.getHandler(it) }
+                    Identifier.tryParse(handler)?.let { VSEntityManager.getHandler(it) }
                         ?: throw IllegalStateException("No handler: $handler")
                 )
             }

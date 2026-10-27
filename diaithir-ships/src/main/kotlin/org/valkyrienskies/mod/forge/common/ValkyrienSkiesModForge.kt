@@ -7,7 +7,7 @@ import net.minecraft.commands.synchronization.SingletonArgumentInfo
 import net.minecraft.core.BlockPos
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.resources.Identifier
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.MobCategory
 import net.minecraft.world.item.BlockItem
@@ -204,7 +204,7 @@ object ValkyrienSkiesModForge {
                 ::ShipMountingEntity,
                 MobCategory.MISC
             ).sized(.3f, .3f)
-                .build(ResourceLocation.fromNamespaceAndPath(MOD_ID, "ship_mounting_entity").toString())
+                .build(Identifier.fromNamespaceAndPath(MOD_ID, "ship_mounting_entity").toString())
         }
 
         SHIP_ASSEMBLER_ITEM_REGISTRY =
