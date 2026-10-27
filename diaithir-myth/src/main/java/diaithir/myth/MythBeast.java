@@ -334,6 +334,9 @@ public class MythBeast extends PathfinderMob {
         if (reason == EntitySpawnReason.SPAWNER || reason == EntitySpawnReason.SPAWN_ITEM_USE || reason == EntitySpawnReason.COMMAND) {
             return true;
         }
+        if (!SpawnGate.allows(c.id, level, pos.getX(), pos.getZ())) {
+            return false;
+        }
         if (c.hostile) {
             return level.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(level, pos, random)
                     && net.minecraft.world.entity.Mob.checkMobSpawnRules(type, level, reason, pos, random);

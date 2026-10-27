@@ -16,7 +16,10 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -61,6 +64,8 @@ public class DiaithirMyth {
         bus.addListener(DiaithirMyth::attributes);
         bus.addListener(DiaithirMyth::placements);
         bus.addListener(DiaithirMyth::tabs);
+        NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class, SpawnGate::onAddReloadListeners);
+        NeoForge.EVENT_BUS.addListener(FinalizeSpawnEvent.class, SpawnGate::onFinalizeSpawn);
         SelfTest.init();
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
             diaithir.myth.client.MythClient.init(bus);
