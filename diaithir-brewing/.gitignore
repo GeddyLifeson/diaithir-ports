@@ -1,3 +1,5 @@
 build/
 .gradle/
 run/
+server.log
+cmd.fifo
