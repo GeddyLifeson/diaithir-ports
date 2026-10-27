@@ -4,14 +4,16 @@
 usage: gen_create_bridge_kubejs.py <a_data.js> <out data dir> [--namespaces a,b,...] [--exclude item,item,...]
 
 Mirrors drkRecipeFor() and the age I/II 'vat' filter of brewing.js, one heated-basin Create mixing
-recipe per brew. Each ingredient group becomes an alternatives list (any item of the group), counts
-are repeated slots (Create allows 9). Items from namespaces not listed in --namespaces are dropped
+recipe per brew. Each ingredient group becomes its first usable item, counts are repeated slots (Create allows 9).
+Every brew gets its own ingredient set (signature items, then a bigger main count), because a basin
+hands out the first matching recipe. Items from namespaces not listed in --namespaces are dropped
 from the alternatives; a group left empty skips the recipe. Water is the basin's fluid.
 """
 import json, re, sys, pathlib
 
 DAY = 24000
 BUCKET = 81000
+MAX_ITEMS = 9
 ITEM = "diaithir_drinks:"
 
 
@@ -77,23 +79,42 @@ def main(src, out, namespaces=None, exclude=()):
     ok_ns = set(namespaces.split(",")) if namespaces else None
     out = pathlib.Path(out) / "create" / "recipe" / "mixing"
     out.mkdir(parents=True, exist_ok=True)
-    made, skipped = 0, []
+    made, skipped, used = 0, [], {}
+    key_of = lambda ing: "|".join("%s*%d" % (k, ing[k]) for k in sorted(ing))
+    usable = lambda i: (not ok_ns or i.split(":")[0] in ok_ns) and i not in exclude
     for d in rows:
         r = recipe_for(d)
         if r["station"] != "vat" or r["age"] not in ("I", "II"):
             continue
-        slots, why = [], None
+        # one item per group, in group order, like the keg recipes in brewing.js
+        ing, total, why = {}, 0, None
         for g, c in r["inputs"]:
-            alts = [i for i in groups.get(g, []) if (not ok_ns or i.split(":")[0] in ok_ns) and i not in exclude]
+            alts = [i for i in groups.get(g, []) if usable(i)]
             if not alts:
                 why = "group %s has no usable item" % g
                 break
-            slots += [alts[0] if len(alts) == 1 else alts] * c
-        if why is None and len(slots) > 9:
-            why = "%d ingredient slots, Create allows 9" % len(slots)
+            ing[alts[0]] = ing.get(alts[0], 0) + c
+            total += c
+        if why is None:
+            # a basin matches the first recipe whose items are present, so every brew needs its own set:
+            # add the drink's signature items, then raise the main one (same rule as the keg recipes)
+            sig = [i for i in d["sig"] if usable(i) and i not in ing]
+            added = 0
+            while key_of(ing) in used and total < MAX_ITEMS:
+                if sig and added < 3:
+                    ing[sig.pop(0)] = 1; added += 1
+                else:
+                    k = next(iter(ing)); ing[k] += 1
+                total += 1
+            if key_of(ing) in used:
+                why = "no unique ingredient set within %d items (same as %s)" % (MAX_ITEMS, used[key_of(ing)])
+            elif total > MAX_ITEMS:
+                why = "%d items, Create allows %d" % (total, MAX_ITEMS)
         if why:
             skipped.append((d["id"], why))
             continue
+        used[key_of(ing)] = d["id"]
+        slots = [i for i, c in ing.items() for _ in range(c)]
         rec = {
             "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": "diaithir_create"}],
             "type": "create:mixing",
