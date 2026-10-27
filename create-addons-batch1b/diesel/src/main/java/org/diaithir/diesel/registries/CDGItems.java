@@ -13,6 +13,8 @@ public class CDGItems {
 
     public static final DeferredItem<BlockItem> CANISTER = ITEMS.registerSimpleBlockItem(CDGBlocks.CANISTER, (java.util.function.UnaryOperator<net.minecraft.world.item.Item.Properties>) p -> p.stacksTo(1));
 
+    public static final DeferredItem<BlockItem> BURNER = ITEMS.registerSimpleBlockItem(CDGBlocks.BURNER);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

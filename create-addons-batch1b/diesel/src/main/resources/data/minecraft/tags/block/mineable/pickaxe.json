@@ -1,6 +1,7 @@
 {
  "values": [
   "createdieselgenerators:diesel_engine",
-  "createdieselgenerators:canister"
+  "createdieselgenerators:canister",
+  "createdieselgenerators:burner"
  ]
 }

@@ -16,4 +16,7 @@ public class CDGBlocks {
 
     public static final DeferredBlock<org.diaithir.diesel.content.canister.CanisterBlock> CANISTER = BLOCKS.registerBlock("canister",
         org.diaithir.diesel.content.canister.CanisterBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().strength(2f));
+
+    public static final DeferredBlock<org.diaithir.diesel.content.burner.BurnerBlock> BURNER = BLOCKS.registerBlock("burner",
+        org.diaithir.diesel.content.burner.BurnerBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().lightLevel(st -> st.getValue(org.diaithir.diesel.content.burner.BurnerBlock.LIT) ? 12 : 0));
 }

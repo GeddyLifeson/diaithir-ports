@@ -100,6 +100,30 @@ def canister():
     d = json.load(open(path)); d["values"].append(f"{NS}:canister"); json.dump(d, open(path, "w"), indent=1)
     lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.canister"] = "Canister"; json.dump(l, open(lp, "w"), indent=1)
 
+def burner():
+    png(f"{A}/textures/block/burner.png", art.machine_face("cdg_burner", art.STEEL_D, art.HAZ_Y, 3))
+    png(f"{A}/textures/block/burner_top.png", art.machine_top("cdg_burner_top", art.STEEL_D))
+    png(f"{A}/textures/block/burner_lit.png", art.machine_top("cdg_burner_lit", art.GLOW))
+    for lit in ("", "_lit"):
+        tp = f"{NS}:block/burner" + ("_lit" if lit else "_top")
+        f = lambda t: {"uv": [0, 0, 16, 16], "texture": t}
+        w(f"{A}/models/block/burner{lit}.json", {"textures": {"side": f"{NS}:block/burner", "top": tp, "particle": f"{NS}:block/burner"},
+            "elements": [{"from": [1, 0, 1], "to": [15, 12, 15], "faces": {"north": f("#side"), "south": f("#side"), "east": f("#side"), "west": f("#side"), "up": f("#top"), "down": f("#side")}}]})
+    v = {}
+    for axis, rot in (("x", {"y": 90}), ("z", {})):
+        for hl in ("none", "smouldering", "fading", "kindled", "seething"):
+            for lit in ("true", "false"):
+                v[f"axis={axis},heat_level={hl},lit={lit}"] = {"model": f"{NS}:block/burner" + ("_lit" if lit == "true" else ""), **rot}
+    w(f"{A}/blockstates/burner.json", {"variants": v})
+    w(f"{A}/items/burner.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/burner"}})
+    w(f"{D}/loot_table/blocks/burner.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:burner"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/burner.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ISI", "IBI", "III"],
+        "key": {"I": "minecraft:iron_ingot", "S": "create:shaft", "B": "minecraft:bucket"}, "result": {"id": f"{NS}:burner", "count": 1}})
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:burner"); json.dump(d, open(path, "w"), indent=1)
+    w(f"{ROOT}/data/create/tags/block/passive_boiler_heaters.json", {"values": []}) if False else None
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.burner"] = "Burner"; json.dump(l, open(lp, "w"), indent=1)
+
 def recipes_and_worldgen():
     NSF = NS
     def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
@@ -123,4 +147,5 @@ def recipes_and_worldgen():
 
 main()
 canister()
+burner()
 recipes_and_worldgen()
