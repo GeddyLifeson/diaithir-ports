@@ -215,5 +215,10 @@
   "commands.favor.add.perk_bonus.success.single": "Added %s perk chance bonus with %s for %s",
   "commands.favor.set.perk_bonus.success.multiple": "Set perk chance bonus to %s with %s for %s players",
   "commands.favor.set.perk_bonus.success.single": "Set perk chance bonus to %s with %s for %s",
-  "container.brazier": "Offering Brazier"
+  "container.brazier": "Offering Brazier",
+  "entity.diaithir_gods.priest": "Priest",
+  "item.diaithir_gods.priest_spawn_egg": "Priest Spawn Egg",
+  "entity.diaithir_gods.priest.no_altar": "No god's altar stands near enough for me to serve.",
+  "entity.diaithir_gods.priest.speak": "I serve %s. Bring an offering of %s to earn favour.",
+  "entity.diaithir_gods.priest.speak_none": "I serve %s. This god asks for no offerings."
 }

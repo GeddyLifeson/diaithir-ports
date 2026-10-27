@@ -1087,5 +1087,10 @@
   "deity.diaithir_gods.yoruba.speiriardu": "Speiriàrdu",
   "deity.diaithir_gods.yoruba.speiriardu.title": "Supreme sky",
   "deity.diaithir_gods.yoruba.tairnenachtigerna": "Tàirnenachtigerna",
-  "deity.diaithir_gods.yoruba.tairnenachtigerna.title": "Lord of thunder"
+  "deity.diaithir_gods.yoruba.tairnenachtigerna.title": "Lord of thunder",
+  "entity.diaithir_gods.priest": "Priest",
+  "item.diaithir_gods.priest_spawn_egg": "Priest Spawn Egg",
+  "entity.diaithir_gods.priest.no_altar": "No god's altar stands near enough for me to serve.",
+  "entity.diaithir_gods.priest.speak": "I serve %s. Bring an offering of %s to earn favour.",
+  "entity.diaithir_gods.priest.speak_none": "I serve %s. This god asks for no offerings."
 }

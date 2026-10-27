@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB",
+    "IGI",
+    "BBB"
+  ],
+  "key": {
+    "B": "minecraft:stone_bricks",
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:gold_ingot"
+  },
+  "result": {
+    "id": "diaithir:temple_vault",
+    "count": 1
+  }
+}

@@ -21,6 +21,13 @@ The datapack format is kept compatible with upstream. See [docs/DEITY_FORMAT.md]
 - Offering brazier block, favor scroll item, favor GUI.
 - Global loot modifiers (autosmelt or cobble, crop multiplier) used by perks.
 - `/favor` command for operators, including `/favor selftest <deity>` which makes a fake player offer to a deity and prints the favor change.
+- Temple vault block `diaithir:temple_vault` (Diaithiris name Tasklundtiempuld, from the lexicon words vault + temple). It is registered
+  in the shared `diaithir` namespace because the economy pack's `data/diaithir/vault.json` lists that exact id. It is a stone strongroom with an
+  empty block entity and holds nothing; the economy scripts do the banking. Also in block tag `diaithir_gods:temple_vault`.
+  Recipe: 6 stone bricks, 2 iron ingots, 1 gold ingot. Pickaxe, needs a tool to drop.
+- Priest (`diaithir_gods:priest`, spawn egg in the creative tab): a villager-model Mob that stays within 8 blocks of the nearest altar that has a
+  deity (searches 24 blocks). Right-click with an empty hand: tells you the deity and an item it likes. Right-click holding an item: makes an
+  offering through the normal offering code. No coin blessing yet, because the economy API is not in this mod.
 - A generated court of 436 test deities in the `diaithir_gods` namespace (see below).
 
 ## Building

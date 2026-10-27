@@ -30,6 +30,7 @@ public final class ClientSetup {
 
     private static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(RGRegistry.ALTAR_TYPE.get(), AltarRenderer::new);
+        event.registerEntityRenderer(RGRegistry.PRIEST_TYPE.get(), rpggods.client.entity.PriestRenderer::new);
         event.registerBlockEntityRenderer(RGRegistry.BRAZIER_TYPE.get(), BrazierBlockEntityRenderer::new);
     }
 

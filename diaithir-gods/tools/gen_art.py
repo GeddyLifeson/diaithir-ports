@@ -432,10 +432,79 @@ def altar_textures():
     save(w, "gui", "altar", "altar_widgets.png")
 
 
+# ---------------------------------------------------------------- temple vault block and priest
+VAULT_TEX = os.path.join(ROOT, "..", "diaithir", "textures")
+
+
+def make_vault():
+    """Strongroom block (namespace diaithir) with iron bands, and the priest's robe texture and egg icon."""
+    iron = [(52, 54, 58), (84, 86, 92), (118, 120, 126)]
+    side = stone_block(16, 31, courses=2)
+    d = ImageDraw.Draw(side)
+    for y in (0, 15):
+        d.line([(0, y), (15, y)], fill=rgba(iron[1]))
+    for x in (0, 15):
+        d.line([(x, 0), (x, 15)], fill=rgba(iron[1]))
+    d.rectangle([5, 5, 10, 10], fill=rgba(iron[0]))
+    d.rectangle([6, 6, 9, 9], fill=rgba(iron[1]))
+    d.point((7, 7), fill=GOLD)
+    d.point((8, 8), fill=GOLD)
+    top = stone_block(16, 32, courses=1)
+    d = ImageDraw.Draw(top)
+    d.rectangle([0, 0, 15, 15], outline=rgba(iron[1]))
+    braid(d, 2, 2, 12, 12, rgba(STONE[4]), rgba(STONE[1]), period=6)
+    for name, img in (("temple_vault_side.png", side), ("temple_vault_top.png", top)):
+        full = os.path.join(VAULT_TEX, "block", name)
+        os.makedirs(os.path.dirname(full), exist_ok=True)
+        img.save(full)
+
+
+def _box(img, u, v, w, h, d, top, front, side, back=None, bottom=None):
+    """Paints the six faces of a model box in the vanilla unwrapped layout."""
+    back = back or side
+    bottom = bottom or top
+    dr = ImageDraw.Draw(img)
+    dr.rectangle([u + d, v, u + d + w - 1, v + d - 1], fill=top)
+    dr.rectangle([u + d + w, v, u + d + 2 * w - 1, v + d - 1], fill=bottom)
+    dr.rectangle([u, v + d, u + d - 1, v + d + h - 1], fill=side)
+    dr.rectangle([u + d, v + d, u + d + w - 1, v + d + h - 1], fill=front)
+    dr.rectangle([u + d + w, v + d, u + 2 * d + w - 1, v + d + h - 1], fill=side)
+    dr.rectangle([u + 2 * d + w, v + d, u + 2 * d + 2 * w - 1, v + d + h - 1], fill=back)
+
+
+def make_priest():
+    img = Image.new("RGBA", (64, 64), (0, 0, 0, 0))
+    robe, robe2 = rgba((92, 70, 130)), rgba((70, 50, 104))
+    skin, hair = rgba((214, 170, 130)), rgba((200, 196, 188))
+    gold = GOLD
+    _box(img, 0, 0, 8, 10, 8, hair, skin, skin, hair)             # head
+    _box(img, 24, 0, 2, 4, 2, skin, skin, skin)                    # nose
+    _box(img, 16, 20, 8, 12, 6, robe, robe, robe2)                 # body
+    _box(img, 0, 38, 8, 18, 6, robe2, robe2, robe2)                # robe
+    _box(img, 44, 22, 4, 8, 4, robe, robe, robe2)                  # arm
+    _box(img, 40, 38, 8, 4, 4, robe, robe, robe2)                  # crossed arms
+    _box(img, 0, 22, 4, 12, 4, robe2, robe2, robe2)                # leg
+    d = ImageDraw.Draw(img)
+    d.rectangle([8 + 1, 8 + 5, 8 + 2, 8 + 5], fill=INK)            # eyes on the face (u=8, v=8)
+    d.rectangle([8 + 5, 8 + 5, 8 + 6, 8 + 5], fill=INK)
+    d.rectangle([8 + 2, 8 + 8, 8 + 5, 8 + 9], fill=hair)           # beard
+    d.rectangle([20, 20 + 6 + 4, 27, 20 + 6 + 4], fill=gold)       # sash on the body front
+    d.rectangle([6 + 0, 38 + 6 + 1, 6 + 7, 38 + 6 + 1], fill=gold)  # hem band on the robe front
+    save(img, "entity", "priest.png")
+    egg = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    d = ImageDraw.Draw(egg)
+    d.ellipse([3, 1, 12, 14], fill=rgba(robe), outline=INK)
+    d.rectangle([5, 6, 10, 7], fill=gold)
+    d.ellipse([5, 3, 8, 5], fill=rgba((255, 255, 255), 90))
+    save(egg, "item", "priest_spawn_egg.png")
+
+
 def main():
-    for sub in ("block", "item", "altar", "gui/favor", "gui/altar"):
+    for sub in ("block", "item", "altar", "gui/favor", "gui/altar", "entity"):
         os.makedirs(os.path.join(TEX, *sub.split("/")), exist_ok=True)
     make_blocks()
+    make_vault()
+    make_priest()
     make_items()
     make_skins()
     favor_textures()

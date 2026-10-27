@@ -56,6 +56,10 @@ public final class RGRegistry {
 
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(RPGGods.MODID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(RPGGods.MODID);
+    /** The economy pack expects the vault under the shared "diaithir" namespace (data/diaithir/vault.json) **/
+    public static final String VAULT_NAMESPACE = "diaithir";
+    private static final DeferredRegister.Blocks VAULT_BLOCKS = DeferredRegister.createBlocks(VAULT_NAMESPACE);
+    private static final DeferredRegister.Items VAULT_ITEMS = DeferredRegister.createItems(VAULT_NAMESPACE);
     private static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, RPGGods.MODID);
     private static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(Registries.MENU, RPGGods.MODID);
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, RPGGods.MODID);
@@ -69,6 +73,8 @@ public final class RGRegistry {
     public static void register(final IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        VAULT_BLOCKS.register(bus);
+        VAULT_ITEMS.register(bus);
         ENTITY_TYPES.register(bus);
         BLOCK_ENTITY_TYPES.register(bus);
         MENU_TYPES.register(bus);
@@ -82,6 +88,7 @@ public final class RGRegistry {
 
     public static void registerEntityAttributes(final EntityAttributeCreationEvent event) {
         event.put(ALTAR_TYPE.get(), AltarEntity.registerAttributes().build());
+        event.put(PRIEST_TYPE.get(), rpggods.entity.PriestEntity.registerAttributes().build());
     }
 
     //// ATTACHMENTS (replace the Forge capabilities) ////
@@ -107,7 +114,15 @@ public final class RGRegistry {
                     .sized(0.8F, 2.48F).clientTrackingRange(10)
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(RPGGods.MODID, "altar"))));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<rpggods.entity.PriestEntity>> PRIEST_TYPE = ENTITY_TYPES.register("priest", () ->
+            EntityType.Builder.<rpggods.entity.PriestEntity>of(rpggods.entity.PriestEntity::new, MobCategory.MISC)
+                    .sized(0.6F, 1.95F).clientTrackingRange(10)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(RPGGods.MODID, "priest"))));
+
     //// BLOCKS ////
+    public static final DeferredBlock<rpggods.block.TempleVaultBlock> TEMPLE_VAULT_BLOCK = VAULT_BLOCKS.registerBlock("temple_vault", rpggods.block.TempleVaultBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops()
+                    .strength(5.0F, 12.0F).sound(SoundType.STONE));
     public static final DeferredBlock<AltarLightBlock> LIGHT_BLOCK = BLOCKS.registerBlock("light", AltarLightBlock::new,
             () -> BlockBehaviour.Properties.of().replaceable().noCollision().noLootTable().air()
                     .strength(-1F).randomTicks()
@@ -123,7 +138,13 @@ public final class RGRegistry {
     public static final DeferredItem<net.minecraft.world.item.BlockItem> LIGHT_ITEM = ITEMS.registerSimpleBlockItem("light", LIGHT_BLOCK);
     public static final DeferredItem<net.minecraft.world.item.BlockItem> BRAZIER_ITEM = ITEMS.registerSimpleBlockItem("brazier", BRAZIER_BLOCK);
 
+    public static final DeferredItem<net.minecraft.world.item.BlockItem> TEMPLE_VAULT_ITEM = VAULT_ITEMS.registerSimpleBlockItem("temple_vault", TEMPLE_VAULT_BLOCK);
+    public static final DeferredItem<Item> PRIEST_SPAWN_EGG = ITEMS.registerItem("priest_spawn_egg",
+            props -> new net.minecraft.world.item.SpawnEggItem(props.spawnEgg(PRIEST_TYPE.get())));
+
     //// BLOCK ENTITIES ////
+    public static final Supplier<BlockEntityType<rpggods.blockentity.TempleVaultBlockEntity>> TEMPLE_VAULT_TYPE = BLOCK_ENTITY_TYPES.register("temple_vault", () ->
+            new BlockEntityType<>(rpggods.blockentity.TempleVaultBlockEntity::new, TEMPLE_VAULT_BLOCK.get()));
     public static final Supplier<BlockEntityType<BrazierBlockEntity>> BRAZIER_TYPE = BLOCK_ENTITY_TYPES.register("brazier", () ->
             new BlockEntityType<>(BrazierBlockEntity::new, BRAZIER_BLOCK.get()));
 
@@ -165,6 +186,8 @@ public final class RGRegistry {
             .displayItems((params, output) -> {
                 output.accept(SCROLL_ITEM.get());
                 output.accept(BRAZIER_ITEM.get());
+                output.accept(TEMPLE_VAULT_ITEM.get());
+                output.accept(PRIEST_SPAWN_EGG.get());
                 List<ItemStack> altars = new ArrayList<>();
                 AltarItem.addAltarItems(altars);
                 altars.forEach(output::accept);
