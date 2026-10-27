@@ -4,7 +4,7 @@ license="MIT (code and data); assets are original to the Diaithir pack (see LICE
 
 [[mods]]
 modId="diaithir_create"
-version="6.0.9-diaithir.6"
+version="6.0.9-diaithir.7"
 displayName="Create (Diaithir port)"
 authors="The Create Team (code, MIT); ZurrTum (Create Fly port, CC0); Diaithir pack (NeoForge port and all art)"
 description='''Kinetic machinery. NeoForge 26.1.2 port of the MIT-licensed Create code with entirely new original art, sounds and text.'''

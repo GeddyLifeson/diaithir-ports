@@ -5,7 +5,7 @@ from PIL import Image
 
 R = "src/main/resources"
 A, D = f"{R}/assets/create", f"{R}/data/create"
-TIERS = [("brass", "Cuibhleseòlmaraumha", 38, .85, 1.0), ("gold", "Cuibhleseòlmaraòir", 47, 1.0, 1.12), ("silver", "Cuibhleseòlmaraairgid", 0, .12, 1.22)]
+TIERS = [("brass", "Koibleseòlmurauma", 38, .85, 1.0), ("gold", "Koibleseòlmuraòir", 47, 1.0, 1.12), ("silver", "Koibleseòlmuraairgid", 0, .12, 1.22)]
 
 
 def recolour(src, dst, hue, sat, val):
@@ -39,7 +39,7 @@ for metal, display, hue, sat, val in TIERS:
     for kind in ("block", "item"):
         key = f' "{kind}.create.{name}"'
         if key not in lang:
-            lang = lang.replace(f' "{kind}.create.tide_wheel": "Cuibhleseòlmara",\n', f' "{kind}.create.tide_wheel": "Cuibhleseòlmara",\n{key}: "{display}",\n')
+            lang = lang.replace(f' "{kind}.create.tide_wheel": "Koibleseòlmura",\n', f' "{kind}.create.tide_wheel": "Koibleseòlmura",\n{key}: "{display}",\n')
 open(lang_p, "w").write(lang)
 for tag in ("data/minecraft/tags/block/mineable/pickaxe.json", "data/create/tags/block/safe_nbt.json"):
     p = f"{R}/{tag}"
