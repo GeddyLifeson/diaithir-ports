@@ -1,11 +1,11 @@
 package net.id.paradise_lost.item.misc;
 
+import net.minecraft.world.InteractionResult;
 import net.id.paradise_lost.entity.projectile.ThrownNitraEntity;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,11 +16,11 @@ public class NitraItem extends Item {
         super(settings);
     }
 
-    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
+    public InteractionResult use(Level world, Player user, InteractionHand hand) {
         ItemStack itemStack = user.getItemInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), ParadiseLostSoundEvents.ENTITY_NITRA_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
         user.getCooldowns().addCooldown(this, 10);
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             ThrownNitraEntity nitraEntity = new ThrownNitraEntity(world, user);
             nitraEntity.setItem(itemStack);
             nitraEntity.shootFromRotation(user, user.getXRot(), user.getYRot(), 0.0F, 1.5F, 1.0F);
@@ -32,6 +32,6 @@ public class NitraItem extends Item {
             itemStack.shrink(1);
         }
 
-        return InteractionResultHolder.sidedSuccess(itemStack, world.isClientSide());
+        return InteractionResult.SUCCESS;
     }
 }

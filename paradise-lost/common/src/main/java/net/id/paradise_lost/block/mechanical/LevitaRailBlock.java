@@ -36,7 +36,7 @@ public class LevitaRailBlock extends PoweredRailBlock {
 
     @Override
     protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             List<AbstractMinecart> list = this.getCarts(world, pos, AbstractMinecart.class, e -> true);
             for (AbstractMinecart cart : list) {
                 MinecartFloatingHelper.updateInclineFromRail(cart, state.getValue(SHAPE), cart.getDeltaMovement());

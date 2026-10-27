@@ -49,7 +49,7 @@ public class FourBiteCakeBlock extends Block {
 
     @Override
     public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
-        if (world.isClientSide) {
+        if (world.isClientSide()) {
             if (tryEat(world, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }

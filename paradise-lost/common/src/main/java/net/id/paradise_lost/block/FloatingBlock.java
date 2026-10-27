@@ -48,7 +48,7 @@ public class FloatingBlock extends DropExperienceBlock {
 
     private void checkFloatable(Level worldIn, BlockPos pos) {
         if (!this.powered || worldIn.hasNeighborSignal(pos)) {
-            if (!worldIn.isClientSide) {
+            if (!worldIn.isClientSide()) {
                 FloatingBlockHelper.ANY.tryCreate(worldIn, pos);
             }
         }

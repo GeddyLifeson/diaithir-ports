@@ -68,7 +68,7 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
             if (heldItem.getItem() == Items.SADDLE && !this.isBaby()) {
                 if (!player.isCreative()) player.setItemInHand(hand, ItemStack.EMPTY);
 
-                if (player.level().isClientSide)
+                if (player.level().isClientSide())
                     player.level().playSound(player, player.blockPosition(), SoundEvents.PIG_SADDLE, SoundSource.AMBIENT, 1.0F, 1.0F);
 
                 this.setSaddled(true);
@@ -76,7 +76,7 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
             }
         } else {
             if (this.getPassengers().isEmpty()) {
-                if (!player.level().isClientSide) {
+                if (!player.level().isClientSide()) {
                     player.startRiding(this);
                     player.yRotO = player.getYRot();
                     player.setYRot(this.getYRot());

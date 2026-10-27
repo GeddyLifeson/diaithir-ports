@@ -60,7 +60,7 @@ public abstract class SurfaceBuilderMixin {
             @Override
             public void setBlock(int y, BlockState state) {
                 LevelHeightAccessor heightLimitView = chunk.getHeightAccessorForGeneration();
-                if (y >= heightLimitView.getMinBuildHeight() && y < heightLimitView.getMaxBuildHeight()) {
+                if (y >= heightLimitView.getMinY() && y < heightLimitView.getMaxY()) {
                     chunk.setBlockState(mutable.setY(y), state, false);
                     if (!state.getFluidState().isEmpty()) {
                         chunk.markPosForPostprocessing(mutable);
@@ -97,7 +97,7 @@ public abstract class SurfaceBuilderMixin {
             int j = Mth.floor(surfaceY + preHeight);
             if (surfaceY <= j && preHeight > 5) {
                 int steps = 0;
-                for (int k = j; k >= chunk.getMinBuildHeight(); k--) {
+                for (int k = j; k >= chunk.getMinY(); k--) {
                     if (!column.getBlock(k).isAir()) {
                         column.setBlock(k, this.defaultBlock);
                         column.setBlock(k - 1, this.defaultBlock);

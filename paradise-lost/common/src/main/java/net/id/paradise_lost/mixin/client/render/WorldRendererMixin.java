@@ -30,7 +30,7 @@ public abstract class WorldRendererMixin {
 
     @Inject(method = "levelEvent(ILnet/minecraft/core/BlockPos;I)V", at = @At("TAIL"), cancellable = true)
     public void processWorldEvent(int eventId, BlockPos pos, int data, CallbackInfo ci) {
-        RandomSource random = this.level.random;
+        RandomSource random = this.level.getRandom();
         if (eventId == ParadiseLostEvents.NITRA_EXPLODE) {
             this.level.playLocalSound(pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.NEUTRAL, 0.2F, 1.0F + random.nextFloat() * 0.4F, false);
             this.level.playLocalSound(pos, ParadiseLostSoundEvents.ENTITY_NITRA_EXPLODE, SoundSource.NEUTRAL, 2.0F, 0.5F + random.nextFloat() * 0.4F, false);

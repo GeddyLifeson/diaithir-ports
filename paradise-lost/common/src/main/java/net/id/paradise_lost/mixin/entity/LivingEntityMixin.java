@@ -198,7 +198,7 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
 
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
     public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (!this.isInvulnerableTo(source) && !this.level().isClientSide && !this.isDeadOrDying()) {
+        if (!this.isInvulnerableTo(source) && !this.level().isClientSide() && !this.isDeadOrDying()) {
             if (source.is(DamageTypeTags.IS_FALL)) {
                 float modified = paradiseLost$previewMagicAbsorb(source, amount);
 

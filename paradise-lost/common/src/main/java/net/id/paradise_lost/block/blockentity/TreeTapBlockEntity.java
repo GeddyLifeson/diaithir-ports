@@ -94,7 +94,7 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
 
     private void inventoryChanged() {
         setChanged();
-        if (level != null && !level.isClientSide) updateInClientWorld();
+        if (level != null && !level.isClientSide()) updateInClientWorld();
     }
 
 	@Override
@@ -144,7 +144,7 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
 		BlockState tappedState = this.getTappedState();
 		Optional<RecipeHolder<TreeTapRecipe>> recipe = this.matchGetter.getRecipeFor(input, this.getLevel())
 				.filter(holder -> holder.value().matches(input, tappedState));
-		if (recipe.isPresent() && level.random.nextInt(recipe.get().value().getChance()) == 0) {
+		if (recipe.isPresent() && level.getRandom().nextInt(recipe.get().value().getChance()) == 0) {
 			ItemStack output = recipe.get().value().assemble(input, level.registryAccess());
             Block convertBlock = recipe.get().value().getOutputBlock();
             BlockPos attachedPos = this.worldPosition.relative(level.getBlockState(this.worldPosition).getValue(TreeTapBlock.FACING).getOpposite());
@@ -155,7 +155,7 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
                 if (convertBlock != level.getBlockState(attachedPos).getBlock()) {
                     level.setBlockAndUpdate(attachedPos, convertBlock.defaultBlockState());
                 }
-                if (!level.isClientSide) level.playSound(null, worldPosition, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.5f, level.getRandom().nextFloat() * 0.4f + 0.8f);
+                if (!level.isClientSide()) level.playSound(null, worldPosition, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.5f, level.getRandom().nextFloat() * 0.4f + 0.8f);
 
                 this.inventory.set(0, output);
                 inventoryChanged();
@@ -164,7 +164,7 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
 
                 level.setBlockAndUpdate(attachedPos, attachedBlock.setValue(BeehiveBlock.HONEY_LEVEL, 0));
 
-                if (!level.isClientSide) level.playSound(null, worldPosition, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.5f, level.getRandom().nextFloat() * 0.4f + 0.8f);
+                if (!level.isClientSide()) level.playSound(null, worldPosition, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.5f, level.getRandom().nextFloat() * 0.4f + 0.8f);
 
                 this.inventory.set(0, output);
                 inventoryChanged();

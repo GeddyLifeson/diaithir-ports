@@ -117,7 +117,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     public boolean shouldCease() {
-        if (this.level().isClientSide) return false;
+        if (this.level().isClientSide()) return false;
 
         BlockPos blockPos = this.blockPosition();
         boolean isConcrete = this.blockState.getBlock() instanceof ConcretePowderBlock;
@@ -141,7 +141,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
             }
         }
 
-        return this.moveTime > 100 && (blockPos.getY() < this.level().getMinBuildHeight() || blockPos.getY() > this.level().getMaxBuildHeight());
+        return this.moveTime > 100 && (blockPos.getY() < this.level().getMinY() || blockPos.getY() > this.level().getMaxY());
     }
 
     public void incubus_Concern$postTick() {
@@ -159,7 +159,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
             Block block = this.blockState.getBlock();
             if (this.level().getBlockState(blockPos).is(block)) {
                 this.level().removeBlock(blockPos, false);
-            } else if (!this.level().isClientSide && !this.partOfSet) {
+            } else if (!this.level().isClientSide() && !this.partOfSet) {
                 this.discard();
                 return;
             }

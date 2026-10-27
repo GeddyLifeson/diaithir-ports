@@ -3,8 +3,7 @@ package net.id.paradise_lost.mixin.entity;
 import net.id.paradise_lost.item.armor.ParadiseLostArmorMaterials;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,12 +13,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PiglinAi.class)
 public class PiglinBrainMixin {
 
-    @Inject(method = "isWearingGold", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "isWearingSafeArmor", at = @At("TAIL"), cancellable = true)
     private static void wearsGoldArmor(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        Iterable<ItemStack> iterable = entity.getArmorSlots();
+        Iterable<ItemStack> iterable = entity.getArmorAndBodyArmorSlots();
         for (ItemStack itemStack : iterable) {
-            Item item = itemStack.getItem();
-            if (!(item instanceof ArmorItem) || ((ArmorItem) item).getMaterial() != ParadiseLostArmorMaterials.GLAZED_GOLD) continue;
+            var equippable = itemStack.get(DataComponents.EQUIPPABLE);
+            if (equippable == null || equippable.assetId().isEmpty() || !equippable.assetId().get().equals(ParadiseLostArmorMaterials.GLAZED_GOLD.assetId())) continue;
             cir.setReturnValue(true);
         }
     }

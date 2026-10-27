@@ -98,7 +98,7 @@ public class PopomEntity extends Animal {
         ItemStack itemStack = player.getItemInHand(hand);
         if (itemStack.isEmpty()) {
             int furSize = this.getFurSize();
-            if (!this.level().isClientSide && furSize > 1) {
+            if (!this.level().isClientSide() && furSize > 1) {
                 this.level().playSound(null, this, ParadiseLostSoundEvents.ENTITY_POPOM_HARVEST, SoundSource.PLAYERS, 1.0F, 1.0F);
                 int i = furSize == 2 ? 1 + this.random.nextInt(2) : 2 + this.random.nextInt(3);
 
@@ -148,7 +148,7 @@ public class PopomEntity extends Animal {
 
     @Override
     public void aiStep() {
-        if (this.level().isClientSide) {
+        if (this.level().isClientSide()) {
             this.eatingTimer = Math.max(0, this.eatingTimer - 1);
         }
 

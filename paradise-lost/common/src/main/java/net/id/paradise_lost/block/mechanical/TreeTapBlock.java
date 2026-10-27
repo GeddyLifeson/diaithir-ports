@@ -9,7 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
@@ -51,10 +51,10 @@ public class TreeTapBlock extends ParadiseLostBlockWithEntity {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!player.isShiftKeyDown() && world.getBlockEntity(pos) instanceof TreeTapBlockEntity treeTapBlockEntity) {
 			treeTapBlockEntity.handleUse(player, hand, player.getItemInHand(hand));
-            return ItemInteractionResult.sidedSuccess(world.isClientSide());
+            return InteractionResult.SUCCESS;
         }
         return super.useItemOn(stack, state, world, pos, player, hand, hit);
     }
@@ -108,7 +108,7 @@ public class TreeTapBlock extends ParadiseLostBlockWithEntity {
 	@Override
 	public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.randomTick(state, world, pos, random);
-		if (!world.isClientSide && world.getBlockEntity(pos) instanceof TreeTapBlockEntity treeTapBlockEntity) {
+		if (!world.isClientSide() && world.getBlockEntity(pos) instanceof TreeTapBlockEntity treeTapBlockEntity) {
 			treeTapBlockEntity.tryCraft();
 		}
 	}

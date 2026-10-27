@@ -88,12 +88,12 @@ public class ParadiseLostPortalForcer {
         double backupDist = -1.0;
         BlockPos backupPos = null;
         WorldBorder worldBorder = this.level.getWorldBorder();
-        int maxY = Math.min(this.level.getMaxBuildHeight(), this.level.getMinBuildHeight() + this.level.getLogicalHeight()) - 1;
+        int maxY = Math.min(this.level.getMaxY(), this.level.getMinY() + this.level.getLogicalHeight()) - 1;
         BlockPos.MutableBlockPos scratch = pos.mutable();
         boolean paradise = this.level.dimension() == ParadiseLostDimension.PARADISE_LOST_WORLD_KEY;
         int minSearchY = paradise
-                ? Math.max(this.level.getMinBuildHeight() + 1, PARADISE_MIN_PORTAL_Y)
-                : this.level.getMinBuildHeight();
+                ? Math.max(this.level.getMinY() + 1, PARADISE_MIN_PORTAL_Y)
+                : this.level.getMinY();
 
         for (BlockPos.MutableBlockPos cursor : BlockPos.spiralAround(pos, 64, Direction.EAST, Direction.SOUTH)) {
             boolean on_land = true;
@@ -142,7 +142,7 @@ public class ParadiseLostPortalForcer {
 
         if (bestDist == -1.0) {
             int minSafeY = paradise
-                    ? Math.max(this.level.getMinBuildHeight() + 1, PARADISE_MIN_PORTAL_Y)
+                    ? Math.max(this.level.getMinY() + 1, PARADISE_MIN_PORTAL_Y)
                     : OVERWORLD_MIN_PORTAL_Y;
             int maxSafeY = maxY - 9;
             if (maxSafeY < minSafeY) {

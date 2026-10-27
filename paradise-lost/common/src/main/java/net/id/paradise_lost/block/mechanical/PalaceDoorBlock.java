@@ -7,7 +7,7 @@ import net.id.paradise_lost.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -70,15 +70,15 @@ public class PalaceDoorBlock extends BaseEntityBlock {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!player.isShiftKeyDown() && stack.is(ItemRegistry.PALACE_KEY.get()) && world.getBlockEntity(pos) instanceof PalaceDoorBlockEntity be && !be.isOpen()) {
             stack.consume(1, player);
             be.open();
             world.setBlockAndUpdate(pos, state.setValue(OPEN, true));
             clearExtensionBlocks(world, pos);
-            return ItemInteractionResult.CONSUME;
+            return InteractionResult.CONSUME;
         }
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
     }
 
     public static Direction getRotation(BlockState state) {

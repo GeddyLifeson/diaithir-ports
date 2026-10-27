@@ -33,7 +33,7 @@ public class PotionEntityMixin extends ThrowableItemProjectile {
 
     @Inject(method = "onHitBlock", at = @At("TAIL"), cancellable = true)
     protected void onBlockHit(BlockHitResult blockHitResult, CallbackInfo ci) {
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             ItemStack itemStack = this.getItem();
             PotionContents potionContentsComponent = itemStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
             boolean healingPotion = potionContentsComponent.is(Potions.HEALING) || potionContentsComponent.is(Potions.STRONG_HEALING);

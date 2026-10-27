@@ -94,7 +94,7 @@ public class MoaScreenHandler extends AbstractContainerMenu {
             }
         );
 
-        if (moa.level().isClientSide) {
+        if (moa.level().isClientSide()) {
             moa.refreshChest(false);
             moaInventory = moa.getInventory();
         }

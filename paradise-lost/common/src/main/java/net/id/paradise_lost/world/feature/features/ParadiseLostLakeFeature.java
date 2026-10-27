@@ -23,7 +23,7 @@ public class ParadiseLostLakeFeature extends Feature<BlockStateConfiguration> {
     public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
         BlockPos blockPos = context.origin();
 
-        if (blockPos.getY() <= 123 + context.level().getMinBuildHeight()) {
+        if (blockPos.getY() <= 123 + context.level().getMinY()) {
             return false;
         }
 

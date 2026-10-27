@@ -195,7 +195,7 @@ public final class DimensionTests {
                 Step.until("rise above the void line", 200, () -> fromServer(server -> {
                     ServerPlayer player = player(server);
                     return player.level().dimension() != ParadiseLostDimension.PARADISE_LOST_WORLD_KEY
-                            || player.getY() > player.level().getMinBuildHeight() - 64;
+                            || player.getY() > player.level().getMinY() - 64;
                 })),
                 Step.run(0, () -> onServer(server -> {
                     ServerPlayer player = player(server);
@@ -221,7 +221,7 @@ public final class DimensionTests {
                 Step.run(0, () -> onServer(server -> check(player(server).getMainHandItem().isEmpty(), "totem was not used up"))),
                 Step.until("rise above the void line", 200, () -> fromServer(server -> {
                     ServerPlayer player = player(server);
-                    return player.isDeadOrDying() || player.getY() > player.level().getMinBuildHeight() - 64;
+                    return player.isDeadOrDying() || player.getY() > player.level().getMinY() - 64;
                 })),
                 Step.run(0, () -> {
                     check(Recorder.playerDeaths.isEmpty(), "player died");

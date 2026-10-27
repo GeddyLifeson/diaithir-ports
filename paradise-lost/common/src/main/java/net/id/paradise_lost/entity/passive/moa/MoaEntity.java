@@ -180,7 +180,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         } else {
             if (!inventory.isEmpty()) {
                 inventory.removeListener(this);
-                if (scatterItems && !level().isClientSide) {
+                if (scatterItems && !level().isClientSide()) {
                     Containers.dropContents(level(), this, inventory);
                 }
                 inventory.clearContent();
@@ -193,7 +193,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     protected void dropEquipment() {
         super.dropEquipment();
         if (hasChest()) {
-            if (!level().isClientSide) {
+            if (!level().isClientSide()) {
                 spawnAtLocation(getChest());
             }
             setChest(ItemStack.EMPTY);
@@ -347,7 +347,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     private boolean canFlap = true;
     public void attemptMoaFlap(boolean bypassFlapCheck) {
         if (getWingRoll() > 0.8 && canFlap || bypassFlapCheck) {
-            if (!this.level().isClientSide) {
+            if (!this.level().isClientSide()) {
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), ParadiseLostSoundEvents.ENTITY_MOA_GLIDING, SoundSource.NEUTRAL, 0.9F, getRandomFloat(0.9f, 0.97f));
             }
             this.canFlap = false;
@@ -369,7 +369,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     public void tick() {
         isInAir = !onGround();
 
-        if (!this.level().isClientSide) {
+        if (!this.level().isClientSide()) {
             if (this.moaSoundCallCooldown > 0) {
                 this.moaSoundCallCooldown--;
             } else {
@@ -624,7 +624,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
                         heldStack.shrink(1);
                     }
                     setChest(chestStack);
-                    return InteractionResult.sidedSuccess(level().isClientSide);
+                    return InteractionResult.sidedSuccess(level().isClientSide());
                 }
             } else {
                 if (!heldStack.is(ParadiseLostItemTags.MOA_BREEDABLES) && heldStack.is(ParadiseLostItemTags.MOA_TEMPTABLES)) {
@@ -820,7 +820,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
 
     public MoaGenes getGenes() {
         if (genes == null) {
-            genes = level().isClientSide ? readSyncedGenes() : new MoaGenes();
+            genes = level().isClientSide() ? readSyncedGenes() : new MoaGenes();
         }
         return genes;
     }
@@ -836,7 +836,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     public void syncGenes() {
-        if (level().isClientSide) {
+        if (level().isClientSide()) {
             return;
         }
         CompoundTag tag = new CompoundTag();
@@ -848,7 +848,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
         super.onSyncedDataUpdated(key);
 
-        if (key == GENES && level().isClientSide) {
+        if (key == GENES && level().isClientSide()) {
 
             this.genes = null;
         }
@@ -873,7 +873,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
 
     @Override
     public void openCustomInventoryScreen(Player player) {
-        if (!level().isClientSide && (!isVehicle() || hasPassenger(player)) && getGenes().isTamed() && player instanceof ServerPlayer serverPlayer) {
+        if (!level().isClientSide() && (!isVehicle() || hasPassenger(player)) && getGenes().isTamed() && player instanceof ServerPlayer serverPlayer) {
             Services.MISC.openMoaScreen(serverPlayer, this);
         }
     }

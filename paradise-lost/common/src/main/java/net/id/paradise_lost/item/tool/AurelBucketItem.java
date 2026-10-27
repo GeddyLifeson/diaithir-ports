@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.Item;
@@ -54,17 +53,17 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack currentStack = playerIn.getItemInHand(handIn);
         BlockHitResult hitResult = getPlayerPOVHitResult(worldIn, playerIn, this.containedFluid == Fluids.EMPTY ? ClipContext.Fluid.SOURCE_ONLY : ClipContext.Fluid.NONE);
 
         if (currentStack.getItem() == ItemRegistry.AUREL_MILK_BUCKET.get()) {
             playerIn.startUsingItem(handIn);
-            return new InteractionResultHolder<>(InteractionResult.PASS, currentStack);
+            return InteractionResult.PASS;
         }
 
         if (hitResult == null) {
-            return new InteractionResultHolder<>(InteractionResult.PASS, currentStack);
+            return InteractionResult.PASS;
         } else if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockPos hitPos = hitResult.getBlockPos();
 
@@ -79,18 +78,18 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
                             playerIn.playSound(SoundEvents.BUCKET_FILL, 1.0F, 1.0F);
                             ItemStack fillStack = this.fillBucket(currentStack, playerIn, ItemRegistry.AUREL_WATER_BUCKET.get());
 
-                            return new InteractionResultHolder<>(InteractionResult.SUCCESS, fillStack);
+                            return InteractionResult.SUCCESS;
                         } else if (hitState.is(Blocks.POWDER_SNOW)) {
                             ((BucketPickup) hitState.getBlock()).pickupBlock(playerIn, worldIn, hitPos, hitState);
                             playerIn.awardStat(Stats.ITEM_USED.get(this));
                             playerIn.playSound(SoundEvents.BUCKET_FILL_POWDER_SNOW, 1.0F, 1.0F);
                             ItemStack fillStack = this.fillBucket(currentStack, playerIn, ItemRegistry.AUREL_POWDER_SNOW_BUCKET.get());
 
-                            return new InteractionResultHolder<>(InteractionResult.SUCCESS, fillStack);
+                            return InteractionResult.SUCCESS;
                         }
                     }
 
-                    return new InteractionResultHolder<>(InteractionResult.FAIL, currentStack);
+                    return InteractionResult.FAIL;
                 } else {
                     BlockState hitBlockState = worldIn.getBlockState(hitPos);
                     BlockPos adjustedPos = hitBlockState.getBlock() instanceof LiquidBlockContainer ? hitPos : hitResult.getBlockPos().relative(hitResult.getDirection());
@@ -98,13 +97,13 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
                     this.placeLiquid(playerIn, worldIn, adjustedPos, hitResult);
 
                     playerIn.awardStat(Stats.ITEM_USED.get(this));
-                    return new InteractionResultHolder<>(InteractionResult.SUCCESS, this.emptyBucket(currentStack, playerIn));
+                    return InteractionResult.SUCCESS;
                 }
             } else {
-                return new InteractionResultHolder<>(InteractionResult.FAIL, currentStack);
+                return InteractionResult.FAIL;
             }
         } else {
-            return new InteractionResultHolder<>(InteractionResult.PASS, currentStack);
+            return InteractionResult.PASS;
         }
     }
 
@@ -119,7 +118,7 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
     public boolean placeLiquid(Player playerIn, Level worldIn, BlockPos posIn, BlockHitResult hitResult) {
         if (this.containedBlock != null) {
             if (worldIn.isInWorldBounds(posIn) && worldIn.getBlockState(posIn).canBeReplaced()) {
-                if (!worldIn.isClientSide) {
+                if (!worldIn.isClientSide()) {
                     worldIn.setBlock(posIn, this.containedBlock.defaultBlockState(), Block.UPDATE_ALL);
                 }
                 this.playEmptyingSound(playerIn, worldIn, posIn, SoundEvents.BUCKET_EMPTY_POWDER_SNOW);
@@ -149,7 +148,7 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
                         this.playEmptyingSound(playerIn, worldIn, posIn, SoundEvents.BUCKET_EMPTY);
                     }
                 } else {
-                    if (!worldIn.isClientSide && (flag || flag1) && !stateIn.liquid()) {
+                    if (!worldIn.isClientSide() && (flag || flag1) && !stateIn.liquid()) {
                         worldIn.destroyBlock(posIn, true);
                     }
 
@@ -209,7 +208,7 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
             int i = pos.getX();
             int j = pos.getY();
             int k = pos.getZ();
-            world.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (world.random.nextFloat() - world.random.nextFloat()) * 0.8F);
+            world.playSound(player, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (world.getRandom().nextFloat() - world.getRandom().nextFloat()) * 0.8F);
 
             for (int l = 0; l < 8; ++l) {
                 world.addParticle(ParticleTypes.LARGE_SMOKE, (double) i + Math.random(), (double) j + Math.random(), (double) k + Math.random(), 0.0, 0.0, 0.0);
@@ -224,7 +223,7 @@ public class AurelBucketItem extends Item implements DispensibleContainerItem {
                 return true;
             }
 
-            if (!world.isClientSide && bl && !blockState.liquid()) {
+            if (!world.isClientSide() && bl && !blockState.liquid()) {
                 world.destroyBlock(pos, true);
             }
 

@@ -48,7 +48,7 @@ public class BlackcurrantBushBlock extends SweetBerryBushBlock {
         int i = state.getValue(AGE);
         if (i > 1) {
             tryPickBerries(world, pos, state);
-            return InteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.sidedSuccess(world.isClientSide());
         } else {
             return super.useWithoutItem(state, world, pos, player, hit);
         }
@@ -58,9 +58,9 @@ public class BlackcurrantBushBlock extends SweetBerryBushBlock {
         boolean mature = state.getValue(AGE) == 3;
         BlockState floor = world.getBlockState(pos.below());
         double mod = floor.is(BlockRegistry.FARMLAND.get()) ? 1.5 : 1;
-        int berries = world.random.nextInt(2) + 1;
+        int berries = world.getRandom().nextInt(2) + 1;
         popResource(world, pos, new ItemStack(ItemRegistry.BLACKCURRANT.get(), (int) (berries + (mature ? 1 : 0) * mod)));
-        world.playSound(null, pos, ParadiseLostSoundEvents.BLOCK_BLACKCURRANT_BUSH_PICK_BLUEBERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+        world.playSound(null, pos, ParadiseLostSoundEvents.BLOCK_BLACKCURRANT_BUSH_PICK_BLUEBERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.getRandom().nextFloat() * 0.4F);
         world.setBlock(pos, state.setValue(AGE, 1), Block.UPDATE_CLIENTS);
     }
 }

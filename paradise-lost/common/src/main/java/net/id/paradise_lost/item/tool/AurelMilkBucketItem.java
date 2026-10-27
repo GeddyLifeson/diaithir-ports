@@ -23,7 +23,7 @@ public class AurelMilkBucketItem extends MilkBucketItem {
             serverPlayerEntity.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             user.removeAllEffects();
         }
 

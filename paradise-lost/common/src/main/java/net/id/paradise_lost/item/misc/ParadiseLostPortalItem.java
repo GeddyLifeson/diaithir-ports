@@ -13,7 +13,7 @@ public class ParadiseLostPortalItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (!context.getLevel().isClientSide) {
+        if (!context.getLevel().isClientSide()) {
             Direction.Axis portalAxis = context.getHorizontalDirection().getAxis() == Direction.Axis.X
                     ? Direction.Axis.Z
                     : Direction.Axis.X;

@@ -3,13 +3,13 @@ package net.id.paradise_lost.item.armor;
 import net.id.paradise_lost.item.ParadiseLostDataComponentTypes;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 
-public class XpCircletItem extends ArmorItem {
-    public XpCircletItem(Holder<ArmorMaterial> material, Type type, Properties settings) {
-        super(material, type, settings);
+public class XpCircletItem extends Item {
+    public XpCircletItem(Properties settings) {
+        super(settings);
     }
 
     public static void chargeCirclet(ItemStack stack, Player player) {

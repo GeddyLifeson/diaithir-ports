@@ -22,7 +22,7 @@ public class LiquidBlockPortalMixin {
             boolean moved,
             CallbackInfo ci
     ) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             return;
         }
         if (state.getFluidState().is(Fluids.WATER) || state.getFluidState().is(Fluids.FLOWING_WATER)) {

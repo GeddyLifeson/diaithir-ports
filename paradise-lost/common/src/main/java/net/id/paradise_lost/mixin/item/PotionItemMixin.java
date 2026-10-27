@@ -33,15 +33,15 @@ public class PotionItemMixin {
         Player playerEntity = context.getPlayer();
         ItemStack itemStack = context.getItemInHand();
         BlockState blockState = world.getBlockState(blockPos);
-        RandomSource random = world.random;
+        RandomSource random = world.getRandom();
         PotionContents potionContentsComponent = itemStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY);
         if (blockState.is(Blocks.CALCITE) && itemStack.is(Items.POTION) && (potionContentsComponent.is(Potions.HEALING) || potionContentsComponent.is(Potions.STRONG_HEALING))) {
             playerEntity.setItemInHand(context.getHand(), ItemUtils.createFilledResult(itemStack, playerEntity, new ItemStack(Items.GLASS_BOTTLE)));
             BloomedCalciteUtil.applyHealing(playerEntity, world, blockPos, random, itemStack);
-            if (!world.isClientSide) {
+            if (!world.isClientSide()) {
                 world.playSound(null, blockPos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
-            cir.setReturnValue(InteractionResult.sidedSuccess(world.isClientSide));
+            cir.setReturnValue(InteractionResult.sidedSuccess(world.isClientSide()));
             cir.cancel();
         }
     }

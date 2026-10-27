@@ -34,7 +34,7 @@ public interface FloatingBlockHelper {
     Predicate<FloatingBlockEntity> DEFAULT_DROP_STATE = (entity) -> {
         Level world = entity.level();
         BlockPos pos = entity.blockPosition();
-        int distFromTop = world.getMaxBuildHeight() - pos.getY();
+        int distFromTop = world.getMaxY() - pos.getY();
         return !entity.isInTag(ParadiseLostBlockTags.DECAYING_FLOATERS) && distFromTop <= 50;
     };
 

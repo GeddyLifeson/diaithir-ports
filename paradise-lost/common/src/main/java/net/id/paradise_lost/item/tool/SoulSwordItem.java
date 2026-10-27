@@ -15,19 +15,18 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class SoulSwordItem extends SwordItem {
+public class SoulSwordItem extends Item {
     private static final String RENDING_BONUS_SOUL_PREFIX = "paradise_lost:rending_soul/";
 
-    public SoulSwordItem(Tier toolMaterial, Properties settings) {
-        super(toolMaterial, settings);
+    public SoulSwordItem(Properties settings) {
+        super(settings);
     }
 
     @Override
@@ -73,14 +72,14 @@ public class SoulSwordItem extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag type) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag type) {
         var soulCount = getSoulCount(stack);
         if (soulCount == 1) {
-            tooltip.addAll(ImmutableList.of(Component.translatable("info.paradise_lost.soul_blade.soul_count_1").withStyle(ChatFormatting.LIGHT_PURPLE)));
+            tooltip.accept(Component.translatable("info.paradise_lost.soul_blade.soul_count_1").withStyle(ChatFormatting.LIGHT_PURPLE));
         } else {
-            tooltip.addAll(ImmutableList.of(Component.translatable("info.paradise_lost.soul_blade.soul_count_n", soulCount).withStyle(ChatFormatting.LIGHT_PURPLE)));
+            tooltip.accept(Component.translatable("info.paradise_lost.soul_blade.soul_count_n", soulCount).withStyle(ChatFormatting.LIGHT_PURPLE));
         }
-        super.appendHoverText(stack, context, tooltip, type);
+        super.appendHoverText(stack, context, display, tooltip, type);
     }
 
     private int getSoulCount(ItemStack itemStack) {

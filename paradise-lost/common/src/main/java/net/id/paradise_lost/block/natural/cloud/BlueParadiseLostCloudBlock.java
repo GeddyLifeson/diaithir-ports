@@ -40,11 +40,11 @@ public class BlueParadiseLostCloudBlock extends ParadiseLostCloudBlock {
             }
         }
 
-        if (world.isClientSide && !entity.verticalCollision && !(entity instanceof Player player && player.isCreative())) {
+        if (world.isClientSide() && !entity.verticalCollision && !(entity instanceof Player player && player.isCreative())) {
             for (int count = 0; count < 50; count++) {
-                double xOffset = pos.getX() + world.random.nextDouble();
-                double yOffset = pos.getY() + world.random.nextDouble();
-                double zOffset = pos.getZ() + world.random.nextDouble();
+                double xOffset = pos.getX() + world.getRandom().nextDouble();
+                double yOffset = pos.getY() + world.getRandom().nextDouble();
+                double zOffset = pos.getZ() + world.getRandom().nextDouble();
 
                 world.addParticle(ParticleTypes.SPLASH, xOffset, yOffset, zOffset, 0.0, 0.0, 0.0);
             }

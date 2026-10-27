@@ -109,7 +109,7 @@ public class QuintEntity extends PathfinderMob implements Enemy {
 
     @Override
     public void tick() {
-        if (this.level().isClientSide && this.random.nextInt(3) == 0) {
+        if (this.level().isClientSide() && this.random.nextInt(3) == 0) {
             this.level().addParticle(ParadiseLostParticleTypes.LIT_CLOUD,
                     this.getRandomX(0.2), (this.getY() + 0.15 + this.random.nextDouble() * 0.4), this.getRandomZ(0.2),
                     (this.random.nextDouble() - 0.5) * 0.05, -this.random.nextDouble() * 0.025, (this.random.nextDouble() - 0.5) * 0.05

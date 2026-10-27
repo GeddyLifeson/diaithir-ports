@@ -16,7 +16,7 @@ public class PalaceDoorPlacerItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (!context.getLevel().isClientSide) {
+        if (!context.getLevel().isClientSide()) {
             var player = context.getPlayer();
             var pos = context.getClickedPos().above();
             var facing = context.getHorizontalDirection();

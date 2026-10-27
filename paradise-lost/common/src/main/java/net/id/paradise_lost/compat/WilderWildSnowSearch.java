@@ -27,7 +27,7 @@ public final class WilderWildSnowSearch {
 
     public static int findLowestHeightForSnow(WorldGenLevel level, int x, int z, Operation<Integer> original) {
         int surface = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, x, z);
-        int minY = level.getMinBuildHeight();
+        int minY = level.getMinY();
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos(x, surface, z);
 
         if (surface - 1 >= minY && !canSearchThrough(level.getBlockState(cursor.setY(surface - 1)))) {

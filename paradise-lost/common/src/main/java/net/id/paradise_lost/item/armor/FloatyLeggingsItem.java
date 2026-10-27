@@ -10,13 +10,13 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.phys.Vec3;
 
-public class FloatyLeggingsItem extends ArmorItem {
+public class FloatyLeggingsItem extends Item {
     public static final int DURABILITY_INTERVAL_TICKS = 20;
     public static final int JUMP_TOGGLE_TICKS = 7;
     private static final double DESCEND_SPEED = -0.15D;

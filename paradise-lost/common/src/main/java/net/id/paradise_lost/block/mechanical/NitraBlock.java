@@ -5,7 +5,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -48,7 +48,7 @@ public class NitraBlock extends Block {
 
     public void wasExploded(Level world, BlockPos pos, Explosion explosion) {
         float sourcePower = explosion.radius();
-        if (!world.isClientSide && sourcePower > 0.5F) {
+        if (!world.isClientSide() && sourcePower > 0.5F) {
             ignite(world, pos, sourcePower - 0.5F);
         }
     }
@@ -69,7 +69,7 @@ public class NitraBlock extends Block {
         }
     }
 
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (!itemStack.is(Items.FLINT_AND_STEEL) && !itemStack.is(Items.FIRE_CHARGE)) {
             return super.useItemOn(stack, state, world, pos, player, hand, hit);
@@ -86,12 +86,12 @@ public class NitraBlock extends Block {
             }
 
             player.awardStat(Stats.ITEM_USED.get(item));
-            return ItemInteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         }
     }
 
     public void onProjectileHit(Level world, BlockState state, BlockHitResult hit, Projectile projectile) {
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             BlockPos blockPos = hit.getBlockPos();
             Entity entity = projectile.getOwner();
             if (projectile.isOnFire() && projectile.mayInteract(world, blockPos)) {

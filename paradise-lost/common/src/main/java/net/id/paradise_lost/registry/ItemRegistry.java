@@ -32,24 +32,20 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.SmithingTemplateItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.SpyglassItem;
 import net.minecraft.world.item.StandingAndWallBlockItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -101,20 +97,20 @@ public class ItemRegistry {
     private static Properties tool() {
         return new Properties();
     }
-    private static Properties shovel(Tier material, float attackDamage, float attackSpeed) {
-        return tool().attributes(ShovelItem.createAttributes(material, attackDamage, attackSpeed));
+    private static Properties shovel(ToolMaterial material, float attackDamage, float attackSpeed) {
+        return tool().shovel(material, attackDamage, attackSpeed);
     }
-    private static Properties pickaxe(Tier material, float attackDamage, float attackSpeed) {
-        return tool().attributes(PickaxeItem.createAttributes(material, attackDamage, attackSpeed));
+    private static Properties pickaxe(ToolMaterial material, float attackDamage, float attackSpeed) {
+        return tool().pickaxe(material, attackDamage, attackSpeed);
     }
-    private static Properties axe(Tier material, float attackDamage, float attackSpeed) {
-        return tool().attributes(AxeItem.createAttributes(material, attackDamage, attackSpeed));
+    private static Properties axe(ToolMaterial material, float attackDamage, float attackSpeed) {
+        return tool().axe(material, attackDamage, attackSpeed);
     }
-    private static Properties sword(Tier material, int attackDamage, float attackSpeed) {
-        return tool().attributes(SwordItem.createAttributes(material, attackDamage, attackSpeed));
+    private static Properties sword(ToolMaterial material, float attackDamage, float attackSpeed) {
+        return tool().sword(material, attackDamage, attackSpeed);
     }
-    private static Properties hoe(Tier material, float attackDamage, float attackSpeed) {
-        return tool().attributes(HoeItem.createAttributes(material, attackDamage, attackSpeed));
+    private static Properties hoe(ToolMaterial material, float attackDamage, float attackSpeed) {
+        return tool().hoe(material, attackDamage, attackSpeed);
     }
 
     private static final Properties tool = tool();
@@ -126,24 +122,24 @@ public class ItemRegistry {
         return tool().stacksTo(1).rarity(RARE);
     }
 
-    public static final RegistryObject<Item, ShovelItem> OLVITE_SHOVEL = add("olvite_shovel", () -> new ShovelItem(ParadiseLostToolMaterials.OLVITE, shovel(ParadiseLostToolMaterials.OLVITE, 1.5F, -3F)));
-    public static final RegistryObject<Item, PickaxeItem> OLVITE_PICKAXE = add("olvite_pickaxe", () -> new PickaxeItem(ParadiseLostToolMaterials.OLVITE, pickaxe(ParadiseLostToolMaterials.OLVITE, 1F, -2.8F)));
-    public static final RegistryObject<Item, AxeItem> OLVITE_AXE = add("olvite_axe", () -> new AxeItem(ParadiseLostToolMaterials.OLVITE, axe(ParadiseLostToolMaterials.OLVITE, 6f, -3.1f)));
-    public static final RegistryObject<Item, SwordItem> OLVITE_SWORD = add("olvite_sword", () -> new SwordItem(ParadiseLostToolMaterials.OLVITE, sword(ParadiseLostToolMaterials.OLVITE, 3, -2.4f)));
-    public static final RegistryObject<Item, HoeItem> OLVITE_HOE = add("olvite_hoe", () -> new HoeItem(ParadiseLostToolMaterials.OLVITE, hoe(ParadiseLostToolMaterials.OLVITE, -2, -1f)));
+    public static final RegistryObject<Item, Item> OLVITE_SHOVEL = add("olvite_shovel", () -> new Item(shovel(ParadiseLostToolMaterials.OLVITE, 1.5F, -3F)));
+    public static final RegistryObject<Item, Item> OLVITE_PICKAXE = add("olvite_pickaxe", () -> new Item(pickaxe(ParadiseLostToolMaterials.OLVITE, 1F, -2.8F)));
+    public static final RegistryObject<Item, Item> OLVITE_AXE = add("olvite_axe", () -> new Item(axe(ParadiseLostToolMaterials.OLVITE, 6f, -3.1f)));
+    public static final RegistryObject<Item, Item> OLVITE_SWORD = add("olvite_sword", () -> new Item(sword(ParadiseLostToolMaterials.OLVITE, 3, -2.4f)));
+    public static final RegistryObject<Item, Item> OLVITE_HOE = add("olvite_hoe", () -> new Item(hoe(ParadiseLostToolMaterials.OLVITE, -2, -1f)));
 
-    public static final RegistryObject<Item, ShovelItem> SURTRUM_SHOVEL = add("surtrum_shovel", () -> new ShovelItem(ParadiseLostToolMaterials.SURTRUM, shovel(ParadiseLostToolMaterials.SURTRUM, 2.5f, -3f).fireResistant()));
-    public static final RegistryObject<Item, PickaxeItem> SURTRUM_PICKAXE = add("surtrum_pickaxe", () -> new PickaxeItem(ParadiseLostToolMaterials.SURTRUM, pickaxe(ParadiseLostToolMaterials.SURTRUM, 2, -2.8f).fireResistant()));
-    public static final RegistryObject<Item, AxeItem> SURTRUM_AXE = add("surtrum_axe", () -> new AxeItem(ParadiseLostToolMaterials.SURTRUM, axe(ParadiseLostToolMaterials.SURTRUM, 6f, -3.1f).fireResistant()));
-    public static final RegistryObject<Item, SwordItem> SURTRUM_SWORD = add("surtrum_sword", () -> new SwordItem(ParadiseLostToolMaterials.SURTRUM, sword(ParadiseLostToolMaterials.SURTRUM, 4, -2.4f).fireResistant()));
-    public static final RegistryObject<Item, HoeItem> SURTRUM_HOE = add("surtrum_hoe", () -> new HoeItem(ParadiseLostToolMaterials.SURTRUM, hoe(ParadiseLostToolMaterials.SURTRUM, -3, 0f).fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_SHOVEL = add("surtrum_shovel", () -> new Item(shovel(ParadiseLostToolMaterials.SURTRUM, 2.5f, -3f).fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_PICKAXE = add("surtrum_pickaxe", () -> new Item(pickaxe(ParadiseLostToolMaterials.SURTRUM, 2, -2.8f).fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_AXE = add("surtrum_axe", () -> new Item(axe(ParadiseLostToolMaterials.SURTRUM, 6f, -3.1f).fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_SWORD = add("surtrum_sword", () -> new Item(sword(ParadiseLostToolMaterials.SURTRUM, 4, -2.4f).fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_HOE = add("surtrum_hoe", () -> new Item(hoe(ParadiseLostToolMaterials.SURTRUM, -3, 0f).fireResistant()));
 
-    public static final RegistryObject<Item, ShovelItem> GLAZED_GOLD_SHOVEL = add("glazed_gold_shovel", () -> new ShovelItem(ParadiseLostToolMaterials.GLAZED_GOLD, shovel(ParadiseLostToolMaterials.GLAZED_GOLD, 1.5f, -3f)));
-    public static final RegistryObject<Item, PickaxeItem> GLAZED_GOLD_PICKAXE = add("glazed_gold_pickaxe", () -> new PickaxeItem(ParadiseLostToolMaterials.GLAZED_GOLD, pickaxe(ParadiseLostToolMaterials.GLAZED_GOLD, 1, -2.8f)));
-    public static final RegistryObject<Item, AxeItem> GLAZED_GOLD_AXE = add("glazed_gold_axe", () -> new AxeItem(ParadiseLostToolMaterials.GLAZED_GOLD, axe(ParadiseLostToolMaterials.GLAZED_GOLD, 6f, -3.0f)));
-    public static final RegistryObject<Item, SwordItem> GLAZED_GOLD_SWORD = add("glazed_gold_sword", () -> new SwordItem(ParadiseLostToolMaterials.GLAZED_GOLD, sword(ParadiseLostToolMaterials.GLAZED_GOLD, 3, -2.4f)));
-    public static final RegistryObject<Item, HoeItem> GLAZED_GOLD_HOE = add("glazed_gold_hoe", () -> new HoeItem(ParadiseLostToolMaterials.GLAZED_GOLD, hoe(ParadiseLostToolMaterials.GLAZED_GOLD, -2, -2.0f)));
-    public static final RegistryObject<Item, SwordItem> SOUL_BLADE = add("soul_blade", () -> new SoulSwordItem(ParadiseLostToolMaterials.SOUL_BLADE, sword(ParadiseLostToolMaterials.SOUL_BLADE, 1, -2.8f).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_SHOVEL = add("glazed_gold_shovel", () -> new Item(shovel(ParadiseLostToolMaterials.GLAZED_GOLD, 1.5f, -3f)));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_PICKAXE = add("glazed_gold_pickaxe", () -> new Item(pickaxe(ParadiseLostToolMaterials.GLAZED_GOLD, 1, -2.8f)));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_AXE = add("glazed_gold_axe", () -> new Item(axe(ParadiseLostToolMaterials.GLAZED_GOLD, 6f, -3.0f)));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_SWORD = add("glazed_gold_sword", () -> new Item(sword(ParadiseLostToolMaterials.GLAZED_GOLD, 3, -2.4f)));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_HOE = add("glazed_gold_hoe", () -> new Item(hoe(ParadiseLostToolMaterials.GLAZED_GOLD, -2, -2.0f)));
+    public static final RegistryObject<Item, Item> SOUL_BLADE = add("soul_blade", () -> new SoulSwordItem(sword(ParadiseLostToolMaterials.SOUL_BLADE, 1, -2.8f).rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item, SpyglassItem> OLVITE_SPYGLASS = add("olvite_spyglass", () -> new SpyglassItem(unstackableTool()));
     public static final RegistryObject<Item, Item> TOTEM_OF_LEVITATION = add("totem_of_levitation", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
@@ -168,37 +164,35 @@ public class ItemRegistry {
         return new Properties();
     }
 
-    private static ArmorItem armorHelper(Holder<ArmorMaterial> mat, ArmorItem.Type type, int durabilityMultiplier, Item.Properties settings) {
-        return new ArmorItem(mat, type, settings.durability(type.getDurability(durabilityMultiplier)));
+    private static Item armorHelper(ArmorMaterial mat, ArmorType type, int durabilityMultiplier, Item.Properties settings) {
+        return new Item(settings.humanoidArmor(mat, type));
     }
 
-    private static ArmorItem armorHelper(Holder<ArmorMaterial> mat, ArmorItem.Type type, int durabilityMultiplier) {
+    private static Item armorHelper(ArmorMaterial mat, ArmorType type, int durabilityMultiplier) {
         return armorHelper(mat, type, durabilityMultiplier, wearable());
     }
 
-    public static final RegistryObject<Item, ArmorItem> OLVITE_HELMET = add("olvite_helmet", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorItem.Type.HELMET, 15));
-    public static final RegistryObject<Item, ArmorItem> OLVITE_CHESTPLATE = add("olvite_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorItem.Type.CHESTPLATE, 15));
-    public static final RegistryObject<Item, ArmorItem> OLVITE_LEGGINGS = add("olvite_leggings", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorItem.Type.LEGGINGS, 15));
-    public static final RegistryObject<Item, ArmorItem> OLVITE_BOOTS = add("olvite_boots", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorItem.Type.BOOTS, 15));
-    public static final RegistryObject<Item, ArmorItem> OLVITE_HELMET_ORNATE = add("ornate_olvite_helmet", () -> armorHelper(ParadiseLostArmorMaterials.ORNATE_OLVITE, ArmorItem.Type.HELMET, 15));
+    public static final RegistryObject<Item, Item> OLVITE_HELMET = add("olvite_helmet", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorType.HELMET, 15));
+    public static final RegistryObject<Item, Item> OLVITE_CHESTPLATE = add("olvite_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorType.CHESTPLATE, 15));
+    public static final RegistryObject<Item, Item> OLVITE_LEGGINGS = add("olvite_leggings", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorType.LEGGINGS, 15));
+    public static final RegistryObject<Item, Item> OLVITE_BOOTS = add("olvite_boots", () -> armorHelper(ParadiseLostArmorMaterials.OLVITE, ArmorType.BOOTS, 15));
+    public static final RegistryObject<Item, Item> OLVITE_HELMET_ORNATE = add("ornate_olvite_helmet", () -> armorHelper(ParadiseLostArmorMaterials.ORNATE_OLVITE, ArmorType.HELMET, 15));
 
-    public static final RegistryObject<Item, ArmorItem> GLAZED_GOLD_HELMET = add("glazed_gold_helmet", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorItem.Type.HELMET, 21));
-    public static final RegistryObject<Item, ArmorItem> GLAZED_GOLD_CHESTPLATE = add("glazed_gold_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorItem.Type.CHESTPLATE, 21));
-    public static final RegistryObject<Item, ArmorItem> GLAZED_GOLD_LEGGINGS = add("glazed_gold_leggings", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorItem.Type.LEGGINGS, 21));
-    public static final RegistryObject<Item, ArmorItem> GLAZED_GOLD_BOOTS = add("glazed_gold_boots", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorItem.Type.BOOTS, 21));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_HELMET = add("glazed_gold_helmet", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorType.HELMET, 21));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_CHESTPLATE = add("glazed_gold_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorType.CHESTPLATE, 21));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_LEGGINGS = add("glazed_gold_leggings", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorType.LEGGINGS, 21));
+    public static final RegistryObject<Item, Item> GLAZED_GOLD_BOOTS = add("glazed_gold_boots", () -> armorHelper(ParadiseLostArmorMaterials.GLAZED_GOLD, ArmorType.BOOTS, 21));
 
-    public static final RegistryObject<Item, ArmorItem> SURTRUM_HELMET = add("surtrum_helmet", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorItem.Type.HELMET, 27, wearable().fireResistant()));
-    public static final RegistryObject<Item, ArmorItem> SURTRUM_CHESTPLATE = add("surtrum_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorItem.Type.CHESTPLATE, 27, wearable().fireResistant()));
-    public static final RegistryObject<Item, ArmorItem> SURTRUM_LEGGINGS = add("surtrum_leggings", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorItem.Type.LEGGINGS, 27, wearable().fireResistant()));
-    public static final RegistryObject<Item, ArmorItem> SURTRUM_BOOTS = add("surtrum_boots", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorItem.Type.BOOTS, 27, wearable().fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_HELMET = add("surtrum_helmet", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorType.HELMET, 27, wearable().fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_CHESTPLATE = add("surtrum_chestplate", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorType.CHESTPLATE, 27, wearable().fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_LEGGINGS = add("surtrum_leggings", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorType.LEGGINGS, 27, wearable().fireResistant()));
+    public static final RegistryObject<Item, Item> SURTRUM_BOOTS = add("surtrum_boots", () -> armorHelper(ParadiseLostArmorMaterials.SURTRUM, ArmorType.BOOTS, 27, wearable().fireResistant()));
 
-    public static final RegistryObject<Item, XpCircletItem> XP_CIRCLET = add("xp_circlet", () -> new XpCircletItem(ParadiseLostArmorMaterials.RELIC, ArmorItem.Type.HELMET, wearable().durability(ArmorItem.Type.HELMET.getDurability(15)).rarity(RARE)));
+    public static final RegistryObject<Item, XpCircletItem> XP_CIRCLET = add("xp_circlet", () -> new XpCircletItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.RELIC, ArmorType.HELMET).rarity(RARE)));
     public static final RegistryObject<Item, FloatyLeggingsItem> FLOATY_LEGGINGS = add("floaty_leggings",
-            () -> new FloatyLeggingsItem(ParadiseLostArmorMaterials.FLOATY,
-                    wearable().durability(ArmorItem.Type.LEGGINGS.getDurability(66)).rarity(UNCOMMON)));
+            () -> new FloatyLeggingsItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.FLOATY, ArmorType.LEGGINGS).rarity(UNCOMMON)));
     public static final RegistryObject<Item, FloatyBootsItem> FLOATY_BOOTS = add("floaty_boots",
-            () -> new FloatyBootsItem(ParadiseLostArmorMaterials.FLOATY,
-                    wearable().durability(ArmorItem.Type.BOOTS.getDurability(66)).rarity(UNCOMMON)));
+            () -> new FloatyBootsItem(wearable().humanoidArmor(ParadiseLostArmorMaterials.FLOATY, ArmorType.BOOTS).rarity(UNCOMMON)));
     private static Properties food() {
         return new Properties();
     }

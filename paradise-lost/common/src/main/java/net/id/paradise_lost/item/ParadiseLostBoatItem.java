@@ -1,11 +1,11 @@
 package net.id.paradise_lost.item;
 
+import net.minecraft.world.InteractionResult;
 import net.id.paradise_lost.entity.vehicle.ParadiseLostBoatEntity;
 import net.id.paradise_lost.entity.vehicle.ParadiseLostBoatType;
 import net.id.paradise_lost.entity.vehicle.ParadiseLostChestBoatEntity;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.player.Player;
@@ -40,11 +40,11 @@ public class ParadiseLostBoatItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         HitResult hit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.ANY);
         if (hit.getType() == HitResult.Type.MISS) {
-            return InteractionResultHolder.pass(stack);
+            return InteractionResult.PASS;
         }
         Vec3 view = player.getViewVector(1.0F);
         List<Entity> nearby = level.getEntities(player, player.getBoundingBox().expandTowards(view.scale(5.0)).inflate(1.0), ENTITY_PREDICATE);
@@ -53,26 +53,26 @@ public class ParadiseLostBoatItem extends Item {
             for (Entity entity : nearby) {
                 AABB box = entity.getBoundingBox().inflate((double) entity.getPickRadius());
                 if (box.contains(eyes)) {
-                    return InteractionResultHolder.pass(stack);
+                    return InteractionResult.PASS;
                 }
             }
         }
         if (hit.getType() != HitResult.Type.BLOCK) {
-            return InteractionResultHolder.pass(stack);
+            return InteractionResult.PASS;
         }
 
         Boat boat = createBoat(level, hit.getLocation());
         boat.setYRot(player.getYRot());
         if (!level.noCollision(boat, boat.getBoundingBox())) {
-            return InteractionResultHolder.fail(stack);
+            return InteractionResult.FAIL;
         }
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             level.addFreshEntity(boat);
             level.gameEvent(player, GameEvent.ENTITY_PLACE, hit.getLocation());
             stack.consume(1, player);
         }
         player.awardStat(Stats.ITEM_USED.get(this));
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        return InteractionResult.SUCCESS;
     }
 
     private Boat createBoat(Level level, Vec3 pos) {

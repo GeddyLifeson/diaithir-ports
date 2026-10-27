@@ -93,7 +93,7 @@ public class EnvoyEntity extends Skeleton implements IEnlightenable {
     }
 
     public void tick() {
-        if (this.level().isClientSide && this.getEnlightened() && this.random.nextInt(3) == 0) {
+        if (this.level().isClientSide() && this.getEnlightened() && this.random.nextInt(3) == 0) {
             this.level().addParticle(ParadiseLostParticleTypes.LIT_CLOUD,
                     this.getRandomX(0.2), (this.getY() + this.random.nextDouble() * 0.6) + 0.85, this.getRandomZ(0.2),
                     (this.random.nextDouble() - 0.5) * 0.05, -this.random.nextDouble() * 0.025, (this.random.nextDouble() - 0.5) * 0.05

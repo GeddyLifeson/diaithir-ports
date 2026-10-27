@@ -8,7 +8,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -92,30 +91,30 @@ public class WardedJarItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
+    public InteractionResult use(Level world, Player user, InteractionHand hand) {
         ItemStack itemStack = user.getItemInHand(hand);
-        if (this.containedEntityType == null) return InteractionResultHolder.pass(itemStack);
+        if (this.containedEntityType == null) return InteractionResult.PASS;
         BlockHitResult blockHitResult = getPlayerPOVHitResult(world, user, ClipContext.Fluid.SOURCE_ONLY);
         if (blockHitResult.getType() != HitResult.Type.BLOCK) {
-            return InteractionResultHolder.pass(itemStack);
+            return InteractionResult.PASS;
         } else if (!(world instanceof ServerLevel)) {
-            return InteractionResultHolder.success(itemStack);
+            return InteractionResult.SUCCESS;
         } else {
             BlockPos blockPos = blockHitResult.getBlockPos();
             if (!(world.getBlockState(blockPos).getBlock() instanceof LiquidBlock)) {
-                return InteractionResultHolder.pass(itemStack);
+                return InteractionResult.PASS;
             } else if (world.mayInteract(user, blockPos) && user.mayUseItemAt(blockPos, blockHitResult.getDirection(), itemStack)) {
                 Entity entity = this.containedEntityType.spawn((ServerLevel) world, itemStack, user, blockPos, MobSpawnType.MOB_SUMMONED, false, false);
                 if (entity == null) {
-                    return InteractionResultHolder.pass(itemStack);
+                    return InteractionResult.PASS;
                 } else {
                     itemStack.consume(1, user);
                     user.awardStat(Stats.ITEM_USED.get(this));
                     world.gameEvent(user, GameEvent.ENTITY_PLACE, entity.position());
-                    return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(ItemRegistry.WARDED_JAR.get()));
+                    return InteractionResult.SUCCESS;
                 }
             } else {
-                return InteractionResultHolder.fail(itemStack);
+                return InteractionResult.FAIL;
             }
         }
     }

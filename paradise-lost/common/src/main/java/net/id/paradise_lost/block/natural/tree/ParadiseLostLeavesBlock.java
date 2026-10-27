@@ -54,7 +54,7 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
                 }
 
                 for (int leaf = 0; leaf < 9; leaf++) {
-                    if (world.random.nextInt(3) == 0) {
+                    if (world.getRandom().nextInt(3) == 0) {
                         double d = direction.getStepX() == 0 ? random.nextDouble() : 0.5D + (double) direction.getStepX() * 0.6D;
                         double f = direction.getStepZ() == 0 ? random.nextDouble() : 0.5D + (double) direction.getStepZ() * 0.6D;
                         world.addParticle(ParadiseLostParticleTypes.MOTHER_AUREL_LEAF, (double) pos.getX() + d, pos.getY(), (double) pos.getZ() + f, speed, world.getRandom().nextDouble() / -20.0, 0);

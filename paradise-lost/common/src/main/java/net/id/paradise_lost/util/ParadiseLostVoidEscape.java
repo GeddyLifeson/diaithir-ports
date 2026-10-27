@@ -65,7 +65,7 @@ public final class ParadiseLostVoidEscape {
             double scale = DimensionType.getTeleportationScale(level.dimensionType(), overworld.dimensionType());
             Vec3 dest = new Vec3(
                     Mth.clamp(root.getX() * scale, xMin, xMax),
-                    overworld.getMaxBuildHeight() + 128,
+                    overworld.getMaxY() + 128,
                     Mth.clamp(root.getZ() * scale, zMin, zMax)
             );
 

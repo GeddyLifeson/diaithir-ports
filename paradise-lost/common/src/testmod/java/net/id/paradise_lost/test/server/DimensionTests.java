@@ -123,7 +123,7 @@ public final class DimensionTests {
                     int height = chunks.getGenerator().getBaseHeight(spot.getMiddleBlockX(), spot.getMiddleBlockZ(), Heightmap.Types.WORLD_SURFACE_WG, paradise, chunks.randomState());
                     spots++;
 
-                    if (height <= paradise.getMinBuildHeight())
+                    if (height <= paradise.getMinY())
                         continue;
                     land++;
 

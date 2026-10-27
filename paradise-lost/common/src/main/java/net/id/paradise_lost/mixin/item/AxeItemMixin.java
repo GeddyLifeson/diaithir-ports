@@ -30,7 +30,7 @@ public class AxeItemMixin {
         Level world = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
 
-        if (world.getBlockState(blockPos).getBlock() == BlockRegistry.MOTHER_AUREL_WOODSTUFF.log().get() && !world.isClientSide) {
+        if (world.getBlockState(blockPos).getBlock() == BlockRegistry.MOTHER_AUREL_WOODSTUFF.log().get() && !world.isClientSide()) {
             ServerLevel server = (ServerLevel) world;
             LootTable supplier = server.getServer().reloadableRegistries().getLootTable(ParadiseLostLootTables.MOTHER_AUREL_STRIPPING);
             List<ItemStack> items = supplier.getRandomItems(new LootParams.Builder(server)

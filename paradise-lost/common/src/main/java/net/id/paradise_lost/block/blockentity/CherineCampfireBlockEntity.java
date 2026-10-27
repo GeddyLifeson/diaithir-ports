@@ -91,7 +91,7 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
     }
 
     public static void clientTick(Level world, BlockPos pos, BlockState state, CherineCampfireBlockEntity campfire) {
-        RandomSource random = world.random;
+        RandomSource random = world.getRandom();
         int i;
         if (random.nextFloat() < 0.11F) {
             for (i = 0; i < random.nextInt(2) + 2; ++i) {

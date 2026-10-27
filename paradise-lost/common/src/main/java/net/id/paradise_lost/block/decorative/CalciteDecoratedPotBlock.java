@@ -9,7 +9,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -41,10 +41,10 @@ public class CalciteDecoratedPotBlock extends DecoratedPotBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (world.getBlockEntity(pos) instanceof CalciteDecoratedPotBlockEntity decoratedPotBlockEntity) {
-            if (world.isClientSide) {
-                return ItemInteractionResult.CONSUME;
+            if (world.isClientSide()) {
+                return InteractionResult.CONSUME;
             } else {
                 ItemStack itemStack = decoratedPotBlockEntity.getTheItem();
                 if (!stack.isEmpty() && (itemStack.isEmpty() || ItemStack.isSameItemSameComponents(itemStack, stack) && itemStack.getCount() < itemStack.getMaxStackSize())) {
@@ -67,13 +67,13 @@ public class CalciteDecoratedPotBlock extends DecoratedPotBlock {
 
                     decoratedPotBlockEntity.setChanged();
                     world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 } else {
-                    return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+                    return InteractionResult.TRY_WITH_EMPTY_HAND;
                 }
             }
         } else {
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.PASS;
         }
     }
 

@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -63,25 +63,25 @@ public abstract class FlowerPotBlockMixin extends Block {
     }
 
     @Inject(method = "useItemOn", at = @At(value = "HEAD"), cancellable = true)
-    public void onUseWithItem(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<ItemInteractionResult> cir) {
+    public void onUseWithItem(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir) {
         if (state.is(BlockRegistry.CALCITE_FLOWER_POT.get())) {
             BlockState blockState = (stack.getItem() instanceof BlockItem blockItem
                     ? pottedFor(blockItem.getBlock())
                     : Blocks.AIR)
                     .defaultBlockState();
             if (blockState.isAir()) {
-                cir.setReturnValue(ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION);
+                cir.setReturnValue(InteractionResult.TRY_WITH_EMPTY_HAND);
             } else if (!this.isEmpty()) {
-                cir.setReturnValue(ItemInteractionResult.CONSUME);
+                cir.setReturnValue(InteractionResult.CONSUME);
             } else if (!hasCalcite(blockState)) {
 
-                cir.setReturnValue(ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION);
+                cir.setReturnValue(InteractionResult.TRY_WITH_EMPTY_HAND);
             } else {
                 world.setBlock(pos, blockState.setValue(CalciteFlowerPotBlock.IS_CALCITE, true), Block.UPDATE_ALL);
                 world.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
                 player.awardStat(Stats.POT_FLOWER);
                 stack.consume(1, player);
-                cir.setReturnValue(ItemInteractionResult.sidedSuccess(world.isClientSide));
+                cir.setReturnValue(InteractionResult.SUCCESS);
             }
             cir.cancel();
         }

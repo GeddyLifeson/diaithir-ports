@@ -36,7 +36,7 @@ public class JigsawStructureMixin {
         int startHeightPos = this.startHeight.sample(context.random(), new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
         var surfaceHeight = context.chunkGenerator().getBaseHeight(chunkPos.getMinBlockX(), chunkPos.getMinBlockZ(), projectStartToHeightmap.orElse(Heightmap.Types.WORLD_SURFACE_WG), context.heightAccessor(), context.randomState());
 
-        if (startHeightPos >= context.heightAccessor().getMinBuildHeight() && surfaceHeight <= context.heightAccessor().getMinBuildHeight()) {
+        if (startHeightPos >= context.heightAccessor().getMinY() && surfaceHeight <= context.heightAccessor().getMinY()) {
             cir.setReturnValue(Optional.empty());
         }
 

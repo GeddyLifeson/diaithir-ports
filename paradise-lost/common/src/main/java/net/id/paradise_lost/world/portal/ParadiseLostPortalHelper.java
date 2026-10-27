@@ -13,7 +13,7 @@ public final class ParadiseLostPortalHelper {
     private ParadiseLostPortalHelper() {}
 
     public static boolean tryLightPortal(Level level, BlockPos pos) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             return false;
         }
         if (!level.getGameRules().getBoolean(ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {

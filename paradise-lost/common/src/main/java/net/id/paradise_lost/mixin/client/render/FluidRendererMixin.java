@@ -27,7 +27,7 @@ public class FluidRendererMixin {
         fadeAlpha = 1F;
         if (Minecraft.getInstance().level.dimension() == ParadiseLostDimension.PARADISE_LOST_WORLD_KEY) {
             if (fluidState.getType().isSame(Fluids.WATER)) {
-                fadeAlpha = Math.min((pos.getY() - world.getMinBuildHeight()) / 32F, 1);
+                fadeAlpha = Math.min((pos.getY() - world.getMinY()) / 32F, 1);
             }
         }
     }

@@ -25,7 +25,7 @@ public class ParadiseLostBoulderFeature extends Feature<BoulderFeatureConfig> {
 
         var config = context.config();
 
-        for (; blockPos.getY() > structureWorldAccess.getMinBuildHeight() + 3; blockPos = blockPos.below()) {
+        for (; blockPos.getY() > structureWorldAccess.getMinY() + 3; blockPos = blockPos.below()) {
             if (!structureWorldAccess.isEmptyBlock(blockPos.below())) {
                 BlockState blockState = structureWorldAccess.getBlockState(blockPos.below());
                 if ((isDirt(blockState) || blockState.is(ParadiseLostBlockTags.BASE_PARADISE_LOST_STONE)) && random.nextBoolean()) {
@@ -34,7 +34,7 @@ public class ParadiseLostBoulderFeature extends Feature<BoulderFeatureConfig> {
             }
         }
 
-        if (blockPos.getY() <= structureWorldAccess.getMinBuildHeight() + 3) {
+        if (blockPos.getY() <= structureWorldAccess.getMinY() + 3) {
             return false;
         } else {
 
