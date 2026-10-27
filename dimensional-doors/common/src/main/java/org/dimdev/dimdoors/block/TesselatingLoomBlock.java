@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.dimdev.dimdoors.block.entity.ModBlockEntityTypes;
 import org.dimdev.dimdoors.block.entity.TesselatingLoomBlockEntity;
@@ -30,7 +30,7 @@ import static org.dimdev.dimdoors.block.DimensionalPortalBlock.checkType;
 public class TesselatingLoomBlock extends BaseEntityBlock {
     public static final MapCodec<TesselatingLoomBlock> CODEC = simpleCodec(TesselatingLoomBlock::new);
 
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
     private static final String DISPLAY_NAME = "";
 
     public TesselatingLoomBlock(Properties builder) {
@@ -42,20 +42,6 @@ public class TesselatingLoomBlock extends BaseEntityBlock {
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
     return CODEC;
-    }
-
-    @Override
-    public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-    if (!oldState.is(newState.getBlock())) {
-        BlockEntity tileEntity = worldIn.getBlockEntity(pos);
-        if (tileEntity instanceof TesselatingLoomBlockEntity) {
-        final NonNullList<ItemStack> inventory = ((TesselatingLoomBlockEntity) tileEntity).inventory;
-        Containers.dropContents(worldIn, pos, inventory);
-
-        worldIn.updateNeighbourForOutputSignal(pos, this);
-        }
-    }
-    super.onRemove(oldState, worldIn, pos, newState, isMoving);
     }
 
     @Nullable
@@ -101,7 +87,7 @@ public class TesselatingLoomBlock extends BaseEntityBlock {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos) {
+    public int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos, Direction direction) {
     return TessellatingContainer.getRedstoneSignalFromBlockEntity(level.getBlockEntity(blockPos));
     }
 

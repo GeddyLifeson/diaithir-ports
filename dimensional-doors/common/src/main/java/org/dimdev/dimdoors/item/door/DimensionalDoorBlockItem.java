@@ -41,7 +41,7 @@ public class DimensionalDoorBlockItem extends BlockItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack,  @Nullable TooltipContext world, List<Component> list, TooltipFlag tooltipContext) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext world, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipContext) {
     if(hasToolTip) {
         ToolTipHelper.processTranslation(list, this.getDescriptionId() + ".info");
     }

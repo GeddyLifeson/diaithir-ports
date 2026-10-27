@@ -18,7 +18,7 @@ public final class FrayCommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("fray")
-                .requires(source -> source.hasPermission(2))
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                 .executes(context -> get(context, target(context)))
                 .then(Commands.literal("get")
                         .executes(context -> get(context, target(context)))

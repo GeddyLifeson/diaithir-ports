@@ -58,7 +58,7 @@ public class DimensionalTrapDoorBlock extends TrapDoorBlock implements RiftProvi
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (world.isClientSide() || entity instanceof ServerPlayer) {
             return;
         }
@@ -226,7 +226,7 @@ public class DimensionalTrapDoorBlock extends TrapDoorBlock implements RiftProvi
     }
 
     public Block baseBlock() {
-        return BuiltInRegistries.BLOCK.get(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
+        return BuiltInRegistries.BLOCK.getValue(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
     }
 
     @Override

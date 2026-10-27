@@ -159,9 +159,9 @@ public final class RGBA implements Cloneable, Comparable<RGBA>, Iterable<Float> 
     public static RGBA fromNbt(CompoundTag nbt) {
     return new RGBA(
         nbt.getFloatOr("red", 0f),
-        nbt.getFloat("green"),
-        nbt.getFloat("blue"),
-        nbt.getFloat("alpha")
+        nbt.getFloatOr("green", 0f),
+        nbt.getFloatOr("blue", 0f),
+        nbt.getFloatOr("alpha", 0f)
     );
     }
 }

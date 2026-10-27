@@ -14,7 +14,7 @@ public class MutableBlockEntityType<T extends BlockEntity> extends BlockEntityTy
 
     public MutableBlockEntityType(BlockEntityFactory<? extends T> factory, Set<Block> blocks, Type<?> type) {
     // ensure that the Set is mutable
-    super(factory, new HashSet<>(blocks), type);
+    super(factory, new HashSet<>(blocks));
     }
 
     public boolean addBlock(Block block) {

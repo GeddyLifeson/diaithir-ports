@@ -4,18 +4,16 @@ import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.RecipeHolder;
 import org.dimdev.dimdoors.DimensionalDoors;
 import org.dimdev.dimdoors.block.entity.TesselatingLoomBlockEntity;
 import org.dimdev.dimdoors.recipe.TesselatingRecipe;
 
 import java.util.List;
 
-public class TessellatingContainer extends RecipeBookMenu<CraftingInput, TesselatingRecipe> {
+public class TessellatingContainer extends AbstractContainerMenu {
     public static final int DATA_WEAVE_TIME = 0;
     public static final int DATA_WEAVE_TIME_TOAL = 1;
 
@@ -60,54 +58,6 @@ public class TessellatingContainer extends RecipeBookMenu<CraftingInput, Tessela
         this.addDataSlots(data);
     }
 
-    @Override
-    public void fillCraftSlotsStackedContents(StackedContents stackedContents) {
-        for (int slot = 0; slot < 9; slot++) {
-            stackedContents.accountSimpleStack(this.recipeInv.getItem(slot));
-        }
-    }
-
-    @Override
-    public void clearCraftingContent() {
-        for (int slot = 0; slot < 9; slot++) {
-            this.recipeInv.setItem(slot, ItemStack.EMPTY);
-        }
-    }
-
-    @Override
-    public boolean recipeMatches(RecipeHolder<TesselatingRecipe> recipeHolder) {
-        return recipeHolder.value().matches(this.asCraftInput(), this.playerInventory.player.level());
-    }
-
-    @Override
-    public int getResultSlotIndex() {
-        return 0;
-    }
-
-    @Override
-    public int getGridWidth() {
-        return 3;
-    }
-
-    @Override
-    public int getGridHeight() {
-        return 3;
-    }
-
-    @Override
-    public int getSize() {
-        return 10;
-    }
-
-    @Override
-    public RecipeBookType getRecipeBookType() {
-        return DimensionalDoors.getSided().getTesselatingRecipeBookType();
-    }
-
-    @Override
-    public boolean shouldMoveToInventory(int index) {
-        return index != this.getResultSlotIndex();
-    }
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {

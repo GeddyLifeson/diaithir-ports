@@ -52,7 +52,7 @@ public class MonolithEntity extends Mob {
         this.setNoGravity(true);
         this.lookControl = new LookControl(this) {
             @Override
-            protected float rotateTowards(float from, float to, float maxDelta) {
+            public float rotateTowards(float from, float to, float maxDelta) {
                 return to;
             }
 
@@ -70,7 +70,7 @@ public class MonolithEntity extends Mob {
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, DamageSource source, float amount) {
         if (!source.is(DamageTypes.IN_WALL)) {
             setAggro(MAX_AGGRO);
         }
@@ -128,15 +128,15 @@ public class MonolithEntity extends Mob {
     }
 
     @Override
-    protected void customServerAiStep() {
+    protected void customServerAiStep(net.minecraft.server.level.ServerLevel serverLevel) {
         // Remove this Monolith if it's not in Limbo or in a pocket dungeon
         if (!(ModDimensions.isLimboDimension(this.level()) || ModDimensions.isPocketDimension(this.level()))) {
             this.remove(RemovalReason.DISCARDED);
-            super.customServerAiStep();
+            super.customServerAiStep(serverLevel);
             return;
         }
 
-        super.customServerAiStep();
+        super.customServerAiStep(serverLevel);
 
         // Check for players and update aggro levels even if there are no players in range
     }
@@ -245,7 +245,7 @@ public class MonolithEntity extends Mob {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag nbt) {
+    public void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput nbt) {
         super.addAdditionalSaveData(nbt);
         nbt.putInt("Aggro", getAggro());
 //        nbt.putFloat("scale", getScale());
@@ -253,16 +253,11 @@ public class MonolithEntity extends Mob {
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag nbt) {
+    public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput nbt) {
         super.readAdditionalSaveData(nbt);
         setAggro(nbt.getIntOr("Aggro", 0));
-        if (nbt.contains("pitch")) {
-        setPitch(nbt.getFloatOr("pitch", 0f));
-    }
-
-        if (nbt.contains("solid")) {
-            setSolid(nbt.getBooleanOr("solid", false));
-        }
+        setPitch(nbt.getFloatOr("pitch", getPitch()));
+        setSolid(nbt.getBooleanOr("solid", getSolid()));
     }
 
     private void setSolid(boolean solid) {
@@ -316,11 +311,11 @@ public class MonolithEntity extends Mob {
     }
 
     @Override
-    public boolean checkSpawnRules(LevelAccessor world, MobSpawnType spawnReason) {
-        if (spawnReason == MobSpawnType.CHUNK_GENERATION) {
+    public boolean checkSpawnRules(LevelAccessor world, net.minecraft.world.entity.EntitySpawnReason spawnReason) {
+        if (spawnReason == net.minecraft.world.entity.EntitySpawnReason.CHUNK_GENERATION) {
             return super.checkSpawnRules(world, spawnReason);
         }
-        if (spawnReason == MobSpawnType.NATURAL) {
+        if (spawnReason == net.minecraft.world.entity.EntitySpawnReason.NATURAL) {
             return this.getRandom().nextInt(32) == 2;
         }
         return false;

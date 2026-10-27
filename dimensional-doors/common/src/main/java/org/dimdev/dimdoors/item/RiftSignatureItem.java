@@ -92,7 +92,7 @@ public class RiftSignatureItem extends Item {
 
             var serverPlayer = (ServerPlayer) player;
 
-            stack.hurtAndBreak(1, ((ServerPlayer) player).serverLevel(), serverPlayer, a -> {
+            stack.hurtAndBreak(1, ((ServerPlayer) player).level(), serverPlayer, a -> {
             }); // TODO: calculate damage based on position?
             if (shouldclear) {
                 clearSource(stack);
@@ -118,11 +118,11 @@ public class RiftSignatureItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tooltipContext) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipContext) {
         RotatedLocation transform = getSource(itemStack);
         if (transform != null) {
-            list.add(Component.translatable(this.getDescriptionId() + ".bound.info0", transform.getX(), transform.getY(), transform.getZ(), transform.getWorldId().identifier().toString()));
-            list.add(Component.translatable(this.getDescriptionId() + ".bound.info1", transform.getWorldId().identifier().toString()));
+            list.accept(Component.translatable(this.getDescriptionId() + ".bound.info0", transform.getX(), transform.getY(), transform.getZ(), transform.getWorldId().identifier().toString()));
+            list.accept(Component.translatable(this.getDescriptionId() + ".bound.info1", transform.getWorldId().identifier().toString()));
         } else {
             ToolTipHelper.processTranslation(list, this.getDescriptionId() + ".unbound.info");
         }

@@ -53,8 +53,8 @@ public abstract class WaterLoggableBlockWithEntity extends BaseEntityBlock imple
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, world, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, world, pos, block, orientation, notify);
         if (state.getValue(WATERLOGGED)) {
             world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
@@ -71,12 +71,12 @@ public abstract class WaterLoggableBlockWithEntity extends BaseEntityBlock imple
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
         if (state.getValue(WATERLOGGED)) {
-            world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+            ticks.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
         }
 
-        BlockState newState = super.updateShape(state, direction, neighborState, world, pos, neighborPos);
+        BlockState newState = super.updateShape(state, world, ticks, pos, direction, neighborPos, neighborState, random);
         if (newState.isAir() && state.getFluidState().getType() == Fluids.WATER)
             return Blocks.WATER.defaultBlockState();
         return newState;

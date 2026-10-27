@@ -51,12 +51,12 @@ public class ServerPacketHandler {
     if (hand == InteractionHand.OFF_HAND) {
         sendPacket(player, new PlayerInventorySlotUpdateS2CPacket(45, stack));
     } else {
-        sendPacket(player, new PlayerInventorySlotUpdateS2CPacket(player.getInventory().selected, stack));
+        sendPacket(player, new PlayerInventorySlotUpdateS2CPacket(player.getInventory().getSelectedSlot(), stack));
     }
     }
 
     public static @Nullable CustomPacketPayload onAttackBlock(ServerPlayer player, HitBlockWithItemC2SPacket packet) {
-    player.getServer().execute(() -> {
+    player.level().getServer().execute(() -> {
         Item item = player.getItemInHand(packet.hand()).getItem();
         if (item instanceof ExtendedItem) {
         ((ExtendedItem) item).onAttackBlock(player.level(), player, packet.hand(), packet.pos(), packet.direction());

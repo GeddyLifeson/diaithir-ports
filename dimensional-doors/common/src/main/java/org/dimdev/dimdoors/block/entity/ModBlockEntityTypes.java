@@ -25,7 +25,7 @@ public class ModBlockEntityTypes {
 
 
     private static <E extends BlockEntity> BlockEntityType<E> register(String id, BiFunction<BlockPos, BlockState, E> factory, Block... blocks) {
-        return DimensionalDoors.getSided().registerBlockEntityType(id, BlockEntityType.Builder.of(factory::apply, Stream.of(blocks).toArray(Block[]::new)).build(null));
+        return DimensionalDoors.getSided().registerBlockEntityType(id, new BlockEntityType<E>(factory::apply, new java.util.HashSet<>(java.util.Arrays.asList(blocks))));
     }
 
 

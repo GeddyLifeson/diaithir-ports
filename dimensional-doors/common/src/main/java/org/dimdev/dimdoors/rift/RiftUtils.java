@@ -20,7 +20,7 @@ public class RiftUtils {
     public static record PortalPlane(Vec3 normal, Vec3 tangentX, Vec3 tangentY, Vec3 origin, double halfWidth, double height) {
 
         public static PortalPlane ofDoor(BlockState state, BlockPos pos) {
-            Vec3 normal = Vec3.atLowerCornerOf(state.getValue(FACING).getOpposite().getNormal());
+            Vec3 normal = Vec3.atLowerCornerOf(state.getValue(FACING).getOpposite().getUnitVec3i());
             Vec3 origin = Vec3.atBottomCenterOf(pos).add(normal.scale(0.31));
             Vec3 tangentY = new Vec3(0, 1, 0);
             Vec3 tangentX = normal.cross(tangentY).normalize();
@@ -31,7 +31,7 @@ public class RiftUtils {
             boolean isTop = state.getValue(TrapDoorBlock.HALF) == Half.TOP;
             Vec3 normal = isTop ? new Vec3(0, -1, 0) : new Vec3(0, 1, 0);
             Vec3 origin = Vec3.atBottomCenterOf(pos).add(0, isTop ? 1 : 0, 0);
-            Vec3 tangentX = Vec3.atLowerCornerOf(state.getValue(FACING).getNormal());
+            Vec3 tangentX = Vec3.atLowerCornerOf(state.getValue(FACING).getUnitVec3i());
             Vec3 tangentY = normal.cross(tangentX).normalize();
             return new PortalPlane(normal, tangentX, tangentY, origin, 0.5, 0.5);
         }

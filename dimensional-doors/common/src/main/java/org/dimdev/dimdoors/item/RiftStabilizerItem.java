@@ -52,7 +52,7 @@ public class RiftStabilizerItem extends Item {
 
         var serverPlayer = (ServerPlayer) player;
 
-        stack.hurtAndBreak(1, serverPlayer.serverLevel(), serverPlayer, a -> {});
+        stack.hurtAndBreak(1, serverPlayer.level(), serverPlayer, a -> {});
         player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".stabilized"), true);
         return InteractionResult.SUCCESS;
         } else {
@@ -63,7 +63,7 @@ public class RiftStabilizerItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, @Nullable TooltipContext level, List<Component> list, TooltipFlag tooltipFlag) {
-    list.add(Component.translatable(this.getDescriptionId() + ".info"));
+    public void appendHoverText(ItemStack itemStack, TooltipContext level, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipFlag) {
+    list.accept(Component.translatable(this.getDescriptionId() + ".info"));
     }
 }

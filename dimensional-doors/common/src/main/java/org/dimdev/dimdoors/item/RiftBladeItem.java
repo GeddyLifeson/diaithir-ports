@@ -48,11 +48,6 @@ public class RiftBladeItem extends Item {
     }
 
     @Override
-    public boolean isValidRepairItem(ItemStack item, ItemStack repairingItem) {
-        return Objects.equals(ModItems.STABLE_FABRIC, repairingItem.getItem());
-    }
-
-    @Override
     public @NonNull InteractionResult use(@NonNull Level world, Player player, @NonNull InteractionHand hand) {
 
         ItemStack stack = player.getItemInHand(hand);

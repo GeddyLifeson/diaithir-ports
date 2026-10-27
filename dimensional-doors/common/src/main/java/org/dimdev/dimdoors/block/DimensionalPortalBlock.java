@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
@@ -52,7 +52,7 @@ import java.util.function.Supplier;
 public class DimensionalPortalBlock extends WaterLoggableBlockWithEntity implements RiftProvider<EntranceRiftBlockEntity>, CoordinateTransformerBlock, ExplosionConvertibleBlock, AfterMoveCollidableBlock, CustomBreakHandling {
     public static final MapCodec<DimensionalPortalBlock> CODEC = simpleCodec(DimensionalPortalBlock::new);
 
-    public static DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
     public DimensionalPortalBlock(Properties settings) {
         super(settings);
@@ -76,7 +76,7 @@ public class DimensionalPortalBlock extends WaterLoggableBlockWithEntity impleme
     }
 
     @Override
-    public VoxelShape getOcclusionShape(BlockState state, BlockGetter level, BlockPos pos) {
+    public VoxelShape getOcclusionShape(BlockState state) {
         return Shapes.empty();
     }
 
@@ -86,7 +86,7 @@ public class DimensionalPortalBlock extends WaterLoggableBlockWithEntity impleme
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (world.isClientSide() || entity instanceof ServerPlayer) {
             return;
         }
@@ -177,7 +177,7 @@ public class DimensionalPortalBlock extends WaterLoggableBlockWithEntity impleme
     @Override
     public TransformationMatrix3d.TransformationMatrix3dBuilder transformationBuilder(BlockState state, BlockPos pos) {
         return TransformationMatrix3d.builder()
-                .inverseTranslate(Vec3.atCenterOf(pos).add(Vec3.atLowerCornerOf(state.getValue(HorizontalDirectionalBlock.FACING).getNormal()).scale(-0.31)))
+                .inverseTranslate(Vec3.atCenterOf(pos).add(Vec3.atLowerCornerOf(state.getValue(HorizontalDirectionalBlock.FACING).getUnitVec3i()).scale(-0.31)))
                 .inverseRotate(MathUtil.directionEulerAngle(state.getValue(HorizontalDirectionalBlock.FACING).getOpposite()));
     }
 
@@ -212,7 +212,7 @@ public class DimensionalPortalBlock extends WaterLoggableBlockWithEntity impleme
     }
 
     public Block baseBlock() {
-        return BuiltInRegistries.BLOCK.get(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
+        return BuiltInRegistries.BLOCK.getValue(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
     }
 
     @Override

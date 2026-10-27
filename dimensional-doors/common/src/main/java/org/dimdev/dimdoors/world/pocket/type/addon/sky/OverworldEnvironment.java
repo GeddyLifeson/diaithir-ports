@@ -29,12 +29,12 @@ public class OverworldEnvironment implements Environment {
             return new OverworldEnvironment(
                     buf.readVarLong(),
                     buf.readVarInt(),
-                    buf.readVec3(),
+                    net.minecraft.world.phys.Vec3.STREAM_CODEC.decode(buf),
                     buf.readFloat(),
                     buf.readEnum(Biome.Precipitation.class),
                     buf.readFloat(),
                     buf.readFloat(),
-                    buf.readVec3()
+                    net.minecraft.world.phys.Vec3.STREAM_CODEC.decode(buf)
             );
         }
 
@@ -42,12 +42,12 @@ public class OverworldEnvironment implements Environment {
         public void encode(RegistryFriendlyByteBuf buf, OverworldEnvironment data) {
             buf.writeVarLong(data.dayTime);
             buf.writeVarInt(data.moonPhase);
-            buf.writeVec3(data.skyColor);
+            net.minecraft.world.phys.Vec3.STREAM_CODEC.encode(buf, data.skyColor);
             buf.writeFloat(data.rainLevel);
             buf.writeEnum(data.precipitation);
             buf.writeFloat(data.thunderLevel);
             buf.writeFloat(data.cloudHeight);
-            buf.writeVec3(data.cloudColor);
+            net.minecraft.world.phys.Vec3.STREAM_CODEC.encode(buf, data.cloudColor);
         }
     };
 

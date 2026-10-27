@@ -99,15 +99,15 @@ public class EntranceRiftBlockEntity extends RiftBlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider provider) {
-        super.loadAdditional(nbt, provider);
+    protected void loadAdditional(net.minecraft.world.level.storage.ValueInput nbt) {
+        super.loadAdditional(nbt);
         locked = nbt.getBooleanOr("locked", false);
     }
 
     @Override
-    public void saveAdditional(CompoundTag nbt, HolderLookup.Provider provider) {
+    public void saveAdditional(net.minecraft.world.level.storage.ValueOutput nbt) {
         nbt.putBoolean("locked", locked);
-        super.saveAdditional(nbt, provider);
+        super.saveAdditional(nbt);
     }
 
     @Override
@@ -152,7 +152,7 @@ public class EntranceRiftBlockEntity extends RiftBlockEntity {
 
         // compute offset once — used whether or not it's a transformer block
         double offset = DimensionalDoors.getConfig().getGeneralConfig().teleportOffset + 0.01;
-        Vec3 offsetVec = Vec3.atLowerCornerOf(direction.getNormal()).scale(offset);
+        Vec3 offsetVec = Vec3.atLowerCornerOf(direction.getUnitVec3i()).scale(offset);
 
         Vec3 targetPos = Vec3.atCenterOf(blockPos).add(offsetVec);
 
@@ -174,9 +174,9 @@ public class EntranceRiftBlockEntity extends RiftBlockEntity {
         }
 
         targetPos = targetPos.add(
-                direction.getNormal().getX() / 2.0,
-                direction.getNormal().getY() / 2.0,
-                direction.getNormal().getZ() / 2.0
+                direction.getUnitVec3i().getX() / 2.0,
+                direction.getUnitVec3i().getY() / 2.0,
+                direction.getUnitVec3i().getZ() / 2.0
         );
 
         SableHelper.TeleportFrame frame = SableHelper.INSTANCE.projectTeleportFrame(

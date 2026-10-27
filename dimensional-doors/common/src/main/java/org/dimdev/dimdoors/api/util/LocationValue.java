@@ -8,6 +8,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
+import net.minecraft.util.valueproviders.FloatProviders;
 import org.dimdev.dimdoors.DimensionalDoors;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public interface LocationValue {
     }
 
     record Complex(List<LocationCondition> conditions, FloatProvider value, FloatProvider fallback) implements LocationValueWithType {
-        public static final MapCodec<Complex> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(LocationCondition.LIST_CODEC.fieldOf("conditions").forGetter(Complex::conditions), FloatProvider.CODEC.fieldOf("value").forGetter(Complex::value), FloatProvider.CODEC.fieldOf("fallback").forGetter(Complex::value)).apply(instance, Complex::new));
+        public static final MapCodec<Complex> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(LocationCondition.LIST_CODEC.fieldOf("conditions").forGetter(Complex::conditions), FloatProviders.CODEC.fieldOf("value").forGetter(Complex::value), FloatProviders.CODEC.fieldOf("fallback").forGetter(Complex::value)).apply(instance, Complex::new));
 
         @Override
         public float value(Location location, RandomSource source) {
@@ -42,7 +43,7 @@ public interface LocationValue {
     }
 
     record Simple(FloatProvider value) implements LocationValueWithType {
-        public static final MapCodec<Simple> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(FloatProvider.CODEC.fieldOf("value").forGetter(Simple::value)).apply(instance, Simple::new));
+        public static final MapCodec<Simple> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(FloatProviders.CODEC.fieldOf("value").forGetter(Simple::value)).apply(instance, Simple::new));
         @Override
         public float value(Location location, RandomSource source) {
             return value.sample(source);

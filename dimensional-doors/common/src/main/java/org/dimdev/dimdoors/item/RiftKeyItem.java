@@ -33,15 +33,15 @@ public class RiftKeyItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable TooltipContext world, List<Component> tooltip, TooltipFlag context) {
+    public void appendHoverText(ItemStack stack, TooltipContext world, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag context) {
     if (isEmpty(stack)) {
-        tooltip.add(Component.translatable("item.dimdoors.rift_key.no_links"));
+        tooltip.accept(Component.translatable("item.dimdoors.rift_key.no_links"));
     } else if (context.isAdvanced()) {
         for (UUID id : getIds(stack)) {
-        tooltip.add(Component.literal(" " + id.toString()));
+        tooltip.accept(Component.literal(" " + id.toString()));
         }
     }
-    super.appendHoverText(stack, world, tooltip, context);
+    super.appendHoverText(stack, world, display, tooltip, context);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class RiftKeyItem extends Item {
     }
 
     @Override
-    public void onCraftedBy(ItemStack stack, Level world, Player player) {
+    public void onCraftedBy(ItemStack stack, Player player) {
     stack.applyComponents(this.getDefaultInstance().getComponents());
     }
 

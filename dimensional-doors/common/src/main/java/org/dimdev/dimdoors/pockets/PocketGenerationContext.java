@@ -22,10 +22,10 @@ public record PocketGenerationContext(ServerLevel world, VirtualLocation sourceV
 
 
     public <T> Holder<T> lookupHolder(ResourceKey<T> id) {
-        return provider.asGetterLookup().lookupOrThrow(id.registryKey()).getOrThrow(id);
+        return provider.lookupOrThrow(id.registryKey()).getOrThrow(id);
     }
 
     public <T> Optional<Holder.Reference<T>> lookupHolderOptional(ResourceKey<T> id) {
-        return provider.asGetterLookup().lookupOrThrow(id.registryKey()).get(id);
+        return provider.lookupOrThrow(id.registryKey()).get(id);
     }
 }

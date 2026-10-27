@@ -14,8 +14,8 @@ public class NbtEquations {
 
     public static CompoundTag solveNbtCompoundEquations(CompoundTag nbt, Map<String, Double> variableMap) {
     CompoundTag solved = new CompoundTag();
-    for (String key : nbt.getAllKeys()) {
-        if (nbt.getTagType(key) == Tag.TAG_STRING && key.startsWith("equation_")) {
+    for (String key : nbt.keySet()) {
+        if (nbt.get(key) instanceof net.minecraft.nbt.StringTag && key.startsWith("equation_")) {
         try {
             double solution = Equation.parse(nbt.getStringOr(key, "")).apply(variableMap);
             key = key.substring(9);
@@ -34,9 +34,9 @@ public class NbtEquations {
         } catch (Equation.EquationParseException e) {
             LOGGER.error(e);
         }
-        } else if (nbt.getTagType(key) == Tag.TAG_COMPOUND) {
+        } else if (nbt.get(key) instanceof CompoundTag) {
         solved.put(key, solveNbtCompoundEquations(nbt.getCompoundOrEmpty(key), variableMap));
-        } else if (nbt.getTagType(key) == Tag.TAG_LIST) {
+        } else if (nbt.get(key) instanceof ListTag) {
         solved.put(key, solveListTagEquations((ListTag) nbt.get(key), variableMap));
         } else {
         solved.put(key, nbt.get(key));

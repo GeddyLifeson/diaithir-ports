@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.rift.registry;
 
+import org.dimdev.dimdoors.util.NbtUuid;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -42,7 +44,7 @@ public class RiftRegistry {
 
         for (Tag tag : riftsNBT) {
             CompoundTag compound = (CompoundTag) tag;
-            if (compound.getString("type").equals(riftTypeId)) {
+            if (compound.getStringOr("type", "").equals(riftTypeId)) {
                 Rift rift = Rift.fromNbt(compound);
                 riftRegistry.graph.addVertex(rift);
                 riftRegistry.uuidMap.put(rift.id, rift);
@@ -67,8 +69,8 @@ public class RiftRegistry {
 
         ListTag linksNBT = nbt.getListOrEmpty("links");
         for (Tag linkNBT : linksNBT) {
-            RegistryVertex from = riftRegistry.uuidMap.get(((CompoundTag) linkNBT).getUUID("from"));
-            RegistryVertex to = riftRegistry.uuidMap.get(((CompoundTag) linkNBT).getUUID("to"));
+            RegistryVertex from = riftRegistry.uuidMap.get(NbtUuid.get(((CompoundTag) linkNBT), "from"));
+            RegistryVertex to = riftRegistry.uuidMap.get(NbtUuid.get(((CompoundTag) linkNBT), "to"));
             if (from != null && to != null) {
                 riftRegistry.graph.addEdge(from, to);
             }
@@ -99,8 +101,8 @@ public class RiftRegistry {
             RegistryVertex from = this.graph.getEdgeSource(edge);
             RegistryVertex to = this.graph.getEdgeTarget(edge);
             CompoundTag linkNBT = new CompoundTag();
-            linkNBT.putUUID("from", from.id);
-            linkNBT.putUUID("to", to.id);
+            NbtUuid.put(linkNBT, "from", from.id);
+            NbtUuid.put(linkNBT, "to", to.id);
             linksNBT.add(linkNBT);
         }
 
@@ -119,8 +121,8 @@ public class RiftRegistry {
     private Map<UUID, PlayerRiftPointer> readPlayerRiftPointers(ListTag nbt) {
         Map<UUID, PlayerRiftPointer> pointerMap = new HashMap<>();
         for (Tag entryNBT : nbt) {
-            UUID player = ((CompoundTag) entryNBT).getUUID("player");
-            UUID riftId = ((CompoundTag) entryNBT).getUUID("rift");
+            UUID player = NbtUuid.get(((CompoundTag) entryNBT), "player");
+            UUID riftId = NbtUuid.get(((CompoundTag) entryNBT), "rift");
             RegistryVertex riftVertex = this.uuidMap.get(riftId);
 
             if (riftVertex != null) {
@@ -156,8 +158,8 @@ public class RiftRegistry {
             }
 
             CompoundTag entryNBT = new CompoundTag();
-            entryNBT.putUUID("player", entry.getKey());
-            entryNBT.putUUID("rift", rift.id);
+            NbtUuid.put(entryNBT, "player", entry.getKey());
+            NbtUuid.put(entryNBT, "rift", rift.id);
             pointers.add(entryNBT);
         }
         return pointers;
@@ -167,7 +169,7 @@ public class RiftRegistry {
         Map<UUID, Location> map = new HashMap<>();
         for (Tag tag : nbt) {
             CompoundTag entry = (CompoundTag) tag;
-            map.put(entry.getUUID("player"), Location.fromNbt(entry.getCompoundOrEmpty("location")));
+            map.put(NbtUuid.get(entry, "player"), Location.fromNbt(entry.getCompoundOrEmpty("location")));
         }
         return map;
     }
@@ -176,7 +178,7 @@ public class RiftRegistry {
         ListTag list = new ListTag();
         for (Map.Entry<UUID, Location> entry : map.entrySet()) {
             CompoundTag tag = new CompoundTag();
-            tag.putUUID("player", entry.getKey());
+            NbtUuid.put(tag, "player", entry.getKey());
             tag.put("location", Location.toNbt(entry.getValue()));
             list.add(tag);
         }

@@ -81,7 +81,7 @@ public class MonolithAggroGoal extends Goal {
 
                         var item = this.target.getItemBySlot(equip);
                         var serverPlayer = (ServerPlayer) target;
-                        item.hurtAndBreak(i, serverPlayer.serverLevel(), serverPlayer, a -> { /*target.broadcastBreakEvent(equip)*/ });
+                        item.hurtAndBreak(i, serverPlayer.level(), serverPlayer, a -> { /*target.broadcastBreakEvent(equip)*/ });
 
                     }
 

@@ -42,9 +42,9 @@ public class MaskWandItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, @Nullable TooltipContext level, List<Component> list, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext level, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipFlag) {
     if (I18n.exists(this.getDescriptionId() + ".info")) {
-        list.add(Component.translatable(this.getDescriptionId() + ".info"));
+        list.accept(Component.translatable(this.getDescriptionId() + ".info"));
     }
     }
 }

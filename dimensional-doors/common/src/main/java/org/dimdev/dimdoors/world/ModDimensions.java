@@ -74,8 +74,8 @@ public final class ModDimensions {
     }
 
     public static void bootstrap(BootstrapContext<DimensionType> entries) {
-        entries.register(LIMBO_TYPE_KEY, new DimensionType(OptionalLong.of(6000), true, false, false, false, 4, false, true, 0, 256, 256, BlockTags.INFINIBURN_OVERWORLD, DimensionalDoors.id("limbo"), 0.1f, new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
-        entries.register(POCKET_TYPE_KEY, new DimensionType(OptionalLong.of(6000), true, false, false, false, 4, false, true, 0, 256, 256, BlockTags.INFINIBURN_OVERWORLD, DimensionalDoors.id("dungeon"), 0.1f, new DimensionType.MonsterSettings(false, false, UniformInt.of(0, 7), 0)));
+        entries.register(LIMBO_TYPE_KEY, new DimensionType(true, true, false, false, 4.0, 0, 256, 256, BlockTags.INFINIBURN_OVERWORLD, 0.1f, new DimensionType.MonsterSettings(UniformInt.of(0, 7), 0), DimensionType.Skybox.OVERWORLD, net.minecraft.world.level.CardinalLighting.Type.DEFAULT, net.minecraft.world.attribute.EnvironmentAttributeMap.EMPTY, net.minecraft.core.HolderSet.empty(), java.util.Optional.empty()));
+        entries.register(POCKET_TYPE_KEY, new DimensionType(true, true, false, false, 4.0, 0, 256, 256, BlockTags.INFINIBURN_OVERWORLD, 0.1f, new DimensionType.MonsterSettings(UniformInt.of(0, 7), 0), DimensionType.Skybox.OVERWORLD, net.minecraft.world.level.CardinalLighting.Type.DEFAULT, net.minecraft.world.attribute.EnvironmentAttributeMap.EMPTY, net.minecraft.core.HolderSet.empty(), java.util.Optional.empty()));
     }
 
     private static LevelStem createPocketStem(Holder<DimensionType> dimensionType, Holder<Biome> biome) {

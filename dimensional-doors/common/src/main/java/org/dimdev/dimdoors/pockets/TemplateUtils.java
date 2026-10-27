@@ -37,14 +37,14 @@ public class TemplateUtils {
             float pitch = entityTag.getFloatOr("pitch", 0f);
 
             CompoundTag newTag;
-            if ("monolith".equals(entityTag.getString("placeholder"))) {
+            if ("monolith".equals(entityTag.getStringOr("placeholder", ""))) {
                 MonolithEntity monolith = Objects.requireNonNull(ModEntityTypes.MONOLITH.create(null));
                 monolith.setPos(x, y, z);
                 monolith.setYRot(yaw);
-                monolith.setPitch(pitch);
+                monolith.setXRot(pitch);
                 newTag = monolith.saveWithoutId(new CompoundTag());
             } else {
-                throw new RuntimeException("Unknown entity placeholder: " + entityTag.getString("placeholder"));
+                throw new RuntimeException("Unknown entity placeholder: " + entityTag.getStringOr("placeholder", ""));
             }
             entities.add(newTag);
         } else {

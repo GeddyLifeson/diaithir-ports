@@ -6,8 +6,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import org.dimdev.dimdoors.DimensionalDoors;
 
 public class ModRecipeSerializers {
-    public static RecipeSerializer<ShapedTesselatingRecipe> SHAPED_TESSELATING = register("shaped_tesselating", new ShapedTesselatingRecipe.Serializer());
-    public static RecipeSerializer<TesselatingShapelessRecipe> SHAPELESS_TESSELATING = register("shapeless_tesselating", new TesselatingShapelessRecipe.Serializer());
+    public static RecipeSerializer<ShapedTesselatingRecipe> SHAPED_TESSELATING = register("shaped_tesselating", ShapedTesselatingRecipe.Serializer.create());
+    public static RecipeSerializer<TesselatingShapelessRecipe> SHAPELESS_TESSELATING = register("shapeless_tesselating", TesselatingShapelessRecipe.Serializer.create());
 
     public static void init() {
     }

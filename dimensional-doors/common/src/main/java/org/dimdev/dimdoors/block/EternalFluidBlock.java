@@ -22,7 +22,7 @@ public class EternalFluidBlock extends LiquidBlock {
 
 
     @Override
-    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (level.isClientSide()) {
             return;
         }

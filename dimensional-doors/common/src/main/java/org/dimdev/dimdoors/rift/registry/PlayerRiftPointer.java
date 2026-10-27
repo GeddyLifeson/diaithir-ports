@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.rift.registry;
 
+import org.dimdev.dimdoors.util.NbtUuid;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.UUIDUtil;
@@ -36,13 +38,13 @@ public class PlayerRiftPointer extends RegistryVertex {
 
     public static CompoundTag toNbt(PlayerRiftPointer vertex) {
     CompoundTag nbt = new CompoundTag();
-    nbt.putUUID("id", vertex.id);
-    nbt.putUUID("player", vertex.player);
+    NbtUuid.put(nbt, "id", vertex.id);
+    NbtUuid.put(nbt, "player", vertex.player);
     return nbt;
     }
 
     public static PlayerRiftPointer fromNbt(CompoundTag nbt) {
-    return new PlayerRiftPointer(nbt.getUUID("id"));
+    return new PlayerRiftPointer(NbtUuid.get(nbt, "id"));
     }
 
     public UUID getPlayer() {

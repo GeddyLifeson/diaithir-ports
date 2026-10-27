@@ -1,6 +1,5 @@
 package org.dimdev.dimdoors.block;
 
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -44,9 +43,9 @@ public final class ModBlocks {
 
     public static final Block QUARTZ_DOOR = register("quartz_door", new ModDoorBlock(BlockSetType.IRON, ofFullCopy(QUARTZ_BLOCK).strength(5.0F).requiresCorrectToolForDrops()));
 
-    public static final Block DIMENSIONAL_PORTAL = registerWithoutTab("dimensional_portal", new DimensionalPortalBlock(BlockBehaviour.Properties.of().noLootTable().strength(-1.0F, 3600000.0F).noOcclusion().dropsLike(AIR).lightLevel(blockState -> 10)));
+    public static final Block DIMENSIONAL_PORTAL = registerWithoutTab("dimensional_portal", new DimensionalPortalBlock(BlockBehaviour.Properties.of().noLootTable().strength(-1.0F, 3600000.0F).noOcclusion().lightLevel(blockState -> 10)));
 
-    public static final Block DETACHED_RIFT = registerWithoutTabOrItem("detached_rift", new DetachedRiftBlock(BlockBehaviour.Properties.of().noCollission().noLootTable().mapColor(COLOR_BLACK).strength(-1.0F, 3600000.0F)));
+    public static final Block DETACHED_RIFT = registerWithoutTabOrItem("detached_rift", new DetachedRiftBlock(BlockBehaviour.Properties.of().noCollision().noLootTable().mapColor(COLOR_BLACK).strength(-1.0F, 3600000.0F)));
 
     public static final Block WHITE_FABRIC = registerFabric(DyeColor.WHITE);
 
@@ -135,7 +134,7 @@ public final class ModBlocks {
     public static final Block TESSELATING_LOOM = register("tesselating_loom", new TesselatingLoomBlock(of(LOOM)));
 
     public static final Block REALITY_SPONGE = register("reality_sponge", new RealitySpongeBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
-    public static final Block LIMBO_AIR = registerWithoutTabOrItem("limbo_air", new LimboAirBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollission().noLootTable().air()));
+    public static final Block LIMBO_AIR = registerWithoutTabOrItem("limbo_air", new LimboAirBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollision().noLootTable().air()));
 
     //Decay graph filler.
 
@@ -154,11 +153,11 @@ public final class ModBlocks {
     public static final Block DRIFTWOOD_WOOD = registerDecay("driftwood_wood", new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
     public static final Block DRIFTWOOD_LOG = registerDecay("driftwood_log", new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
     public static final Block DRIFTWOOD_PLANKS = registerDecay("driftwood_planks", new Block(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Block DRIFTWOOD_LEAVES = registerDecay("driftwood_leaves", new LeavesBlock(of(OAK_LEAVES)));
+    public static final Block DRIFTWOOD_LEAVES = registerDecay("driftwood_leaves", new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, of(OAK_LEAVES)));
     public static final Block DRIFTWOOD_SAPLING = registerDecay("driftwood_sapling", new DriftwoodSaplingBlock(of(OAK_SAPLING)));
     public static final Block DRIFTWOOD_FENCE = registerDecay("driftwood_fence", new FenceBlock(of(DRIFTWOOD_PLANKS)));
     public static final Block DRIFTWOOD_GATE = registerDecay("driftwood_gate", new FenceGateBlock(WoodType.OAK, of(DRIFTWOOD_PLANKS)));
-    public static final Block DRIFTWOOD_BUTTON = registerDecay("driftwood_button", new ModButtonBlock(BlockSetType.STONE, 20, of(DRIFTWOOD_PLANKS).noCollission().strength(0.5F)));
+    public static final Block DRIFTWOOD_BUTTON = registerDecay("driftwood_button", new ModButtonBlock(BlockSetType.STONE, 20, of(DRIFTWOOD_PLANKS).noCollision().strength(0.5F)));
     public static final Block DRIFTWOOD_SLAB = registerDecay("driftwood_slab", new SlabBlock(of(DRIFTWOOD_PLANKS)));
     public static final Block DRIFTWOOD_STAIRS = registerDecay("driftwood_stairs", new ModStairBlock(DRIFTWOOD_PLANKS.defaultBlockState(), of(DRIFTWOOD_PLANKS)));
     public static final Block DRIFTWOOD_DOOR = registerDecay("driftwood_door", new ModDoorBlock(BlockSetType.OAK, ofFullCopy(OAK_WOOD).mapColor(COLOR_GRAY).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
@@ -186,7 +185,7 @@ public final class ModBlocks {
             var set = new DecayGroupSet(
                     registerDecay(name + "_fence", new FenceBlock(properites)),
                     registerDecay(name + "_gate", new FenceGateBlock(WoodType.OAK, properites)),
-                    registerDecay(name + "_button", new ModButtonBlock(BlockSetType.STONE, 20, properites.noCollission().strength(0.5F))),
+                    registerDecay(name + "_button", new ModButtonBlock(BlockSetType.STONE, 20, properites.noCollision().strength(0.5F))),
                     registerDecay(name + "_slab", new SlabBlock(properites)),
                     registerDecay(name + "_stairs", new ModStairBlock(block.defaultBlockState(), properites)),
                     registerDecay(name + "_wall", new WallBlock(properites))

@@ -11,6 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.datafix.DataFixTypes;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.saveddata.SavedDataType;
 import org.dimdev.dimdoors.rift.registry.RiftRegistry;
 import org.dimdev.dimdoors.util.CodecUtils;
 import org.dimdev.dimdoors.world.ModDimensions;
@@ -36,13 +37,15 @@ public class DimensionalRegistry {
 
     private static class DummyData extends SavedData {
     private static final DummyData INSTANCE = new DummyData();
-
-    @Override
-    public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
-        writeToNbt(compoundTag, provider);
-
-        return compoundTag;
-    }
+    private static final Codec<DummyData> CODEC = CompoundTag.CODEC.xmap(tag -> {
+        readFromNbt(tag, null);
+        return INSTANCE;
+    }, data -> {
+        CompoundTag tag = new CompoundTag();
+        writeToNbt(tag, null);
+        return tag;
+    });
+    private static final SavedDataType<DummyData> TYPE = new SavedDataType<>(Identifier.fromNamespaceAndPath("dimdoors", "dimensional_registry"), () -> INSTANCE, CODEC);
     }
 
     public static void setDirty() {
@@ -50,10 +53,7 @@ public class DimensionalRegistry {
     }
 
     public static void init(MinecraftServer server) {
-    server.overworld().getDataStorage().computeIfAbsent(new SavedData.Factory<DummyData>(() -> DummyData.INSTANCE, (compoundTag, provider) -> {
-            readFromNbt(compoundTag, provider);
-            return DummyData.INSTANCE;
-        }, DataFixTypes.LEVEL /*TODO: FIgure out if correct for a singlemon data*/), "dimensional_registry");
+    server.overworld().getDataStorage().computeIfAbsent(DummyData.TYPE);
     }
 
     public static void readFromNbt(CompoundTag nbt, HolderLookup.Provider provider) {
@@ -64,7 +64,7 @@ public class DimensionalRegistry {
             throw new UnsupportedOperationException("Downgrading is not supported!");
         }
 
-        pocketRegistry = POCKET_DIRECTORY_MAP_CODEC.parse(NbtOps.INSTANCE, nbt.getCompound("pocket_registry")).getOrThrow();
+        pocketRegistry = POCKET_DIRECTORY_MAP_CODEC.parse(NbtOps.INSTANCE, nbt.getCompoundOrEmpty("pocket_registry")).getOrThrow();
 
         CompoundTag privateRegistryNbt = nbt.getCompoundOrEmpty("private_registry");
 

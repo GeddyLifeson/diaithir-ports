@@ -47,7 +47,7 @@ public final class PocketGenerator {
             return null;
         }
 
-        VirtualPocket virtualPocket = world.registryAccess().registry(group.registryKey()).map(a -> a.get(group)).orElse(null);
+        VirtualPocket virtualPocket = world.registryAccess().lookup(group.registryKey()).map(a -> a.getValue(group)).orElse(null);
         if (virtualPocket == null) {
             LOGGER.error("Cannot generate pocket group {} because it is not loaded.", group);
             return null;

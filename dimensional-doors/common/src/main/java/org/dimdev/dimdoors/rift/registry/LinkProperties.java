@@ -81,7 +81,7 @@ public class LinkProperties {
         CompoundTag nbt = new CompoundTag();
         nbt.putFloat("floatingWeight", properties.floatingWeight);
         nbt.putFloat("entranceWeight", properties.entranceWeight);
-        nbt.putIntArray("groups", new ArrayList<>(properties.groups));
+        nbt.putIntArray("groups", properties.groups.stream().mapToInt(Integer::intValue).toArray());
         nbt.putInt("linksRemaining", properties.linksRemaining);
         nbt.putBoolean("oneWay", properties.oneWay);
         return nbt;
@@ -90,10 +90,10 @@ public class LinkProperties {
     public static LinkProperties fromNbt(CompoundTag nbt) {
         return LinkProperties.builder()
                 .floatingWeight(nbt.getFloatOr("floatingWeight", 0f))
-                .entranceWeight(nbt.getFloat("entranceWeight"))
-                .groups(Arrays.stream(nbt.getIntArray("groups")).boxed().collect(Collectors.toSet()))
-                .linksRemaining(nbt.getInt("linksRemaining"))
-                .oneWay(nbt.getBoolean("oneWay"))
+                .entranceWeight(nbt.getFloatOr("entranceWeight", 0f))
+                .groups(Arrays.stream(nbt.getIntArray("groups").orElse(new int[0])).boxed().collect(Collectors.toSet()))
+                .linksRemaining(nbt.getIntOr("linksRemaining", 0))
+                .oneWay(nbt.getBooleanOr("oneWay", false))
                 .build();
     }
 

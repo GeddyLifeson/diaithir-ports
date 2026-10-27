@@ -52,7 +52,7 @@ public class ServerPlayNetworkHandlerMixin {
 
     @Unique
     private void dimdoors$checkAfterMoveCollision(AABB box, Vec3 previousPos, Vec3 currentPos) {
-        ServerLevel level = this.player.serverLevel();
+        ServerLevel level = this.player.level();
         BlockPos min = BlockPos.containing(box.minX + 1.0E-7D, box.minY + 1.0E-7D, box.minZ + 1.0E-7D);
         BlockPos max = BlockPos.containing(box.maxX - 1.0E-7D, box.maxY - 1.0E-7D, box.maxZ - 1.0E-7D);
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();

@@ -21,7 +21,7 @@ import org.dimdev.dimdoors.world.level.registry.DimensionalRegistry;
 public class DimTeleportCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("dimteleport")
-        .requires(source -> source.hasPermission(4))
+        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_OWNERS))
                 .then(Commands
                         .argument("dimension", DimensionArgument.dimension())
                         .executes(ctx -> {

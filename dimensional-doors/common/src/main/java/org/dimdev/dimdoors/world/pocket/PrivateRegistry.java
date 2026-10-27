@@ -30,7 +30,7 @@ public class PrivateRegistry {
         public static PocketInfo fromNbt(CompoundTag nbt) {
             return new PocketInfo(
                     ResourceKey.create(Registries.DIMENSION, Identifier.parse(nbt.getStringOr("world", ""))),
-                    nbt.getInt("id")
+                    nbt.getIntOr("id", 0)
             );
         }
     }
@@ -46,9 +46,9 @@ public class PrivateRegistry {
     privatePocketMap.clear();
     CompoundTag privatePocketMapNbt = nbt.getCompoundOrEmpty("private_pocket_map");
 
-        for (var key : privatePocketMapNbt.getAllKeys()) {
+        for (var key : privatePocketMapNbt.keySet()) {
         try {
-        CompoundTag pocketInfoNbt = privatePocketMapNbt.getCompound(key);
+        CompoundTag pocketInfoNbt = privatePocketMapNbt.getCompoundOrEmpty(key);
         UUID uuidKey = UUID.fromString(key);
         PocketInfo pocketInfo = PocketInfo.fromNbt(pocketInfoNbt);
 

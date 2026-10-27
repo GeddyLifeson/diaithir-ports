@@ -68,7 +68,7 @@ public final class EntityUtils {
     }
 
     public static void chat(Entity entity, Component text, boolean actionBar) {
-    if (entity instanceof Player player) player.displayClientMessage(text, actionBar);
+    if (entity instanceof Player player) { if (actionBar) player.sendOverlayMessage(text); else player.sendSystemMessage(text); }
     }
 
     public static void chat(Entity entity, Component text) {

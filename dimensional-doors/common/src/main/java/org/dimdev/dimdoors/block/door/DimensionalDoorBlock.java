@@ -60,7 +60,7 @@ public class DimensionalDoorBlock extends WaterLoggableDoorBlock implements Rift
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (world.isClientSide() || entity instanceof ServerPlayer) {
             return;
         }
@@ -263,7 +263,7 @@ public class DimensionalDoorBlock extends WaterLoggableDoorBlock implements Rift
     @Override
     public TransformationMatrix3d.TransformationMatrix3dBuilder transformationBuilder(BlockState state, BlockPos pos) {
         return TransformationMatrix3d.builder()
-                .inverseTranslate(Vec3.atCenterOf(pos).add(Vec3.atLowerCornerOf(state.getValue(DoorBlock.FACING).getNormal()).scale(-0.31)))
+                .inverseTranslate(Vec3.atCenterOf(pos).add(Vec3.atLowerCornerOf(state.getValue(DoorBlock.FACING).getUnitVec3i()).scale(-0.31)))
                 .inverseRotate(MathUtil.directionEulerAngle(state.getValue(DoorBlock.FACING).getOpposite()));
     }
 
@@ -300,7 +300,7 @@ public class DimensionalDoorBlock extends WaterLoggableDoorBlock implements Rift
     }
 
     public Block baseBlock() {
-        return BuiltInRegistries.BLOCK.get(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
+        return BuiltInRegistries.BLOCK.getValue(DimensionalDoors.getDimensionalDoorBlockRegistrar().get(BuiltInRegistries.BLOCK.getKey(this)));
     }
 
     @Override

@@ -38,7 +38,7 @@ public class RiftRemoverItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, @Nullable TooltipContext level, List<Component> list, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext level, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipFlag) {
         ToolTipHelper.processTranslation(list, this.getDescription() + ".info");
     }
 
@@ -66,7 +66,7 @@ public class RiftRemoverItem extends Item {
 
                 var serverPlayer = (ServerPlayer) player;
 
-                stack.hurtAndBreak(10, serverPlayer.serverLevel(), serverPlayer, a -> {/*serverPlayer.broadcastBreakEvent(slot)*/ });
+                stack.hurtAndBreak(10, serverPlayer.level(), serverPlayer, a -> {/*serverPlayer.broadcastBreakEvent(slot)*/ });
                 var pos = ((BlockHitResult) hit).getBlockPos();
                 LootParams ctx = new LootParams.Builder((ServerLevel) world)
                         .withParameter(LootContextParams.BLOCK_STATE, world.getBlockState(pos))

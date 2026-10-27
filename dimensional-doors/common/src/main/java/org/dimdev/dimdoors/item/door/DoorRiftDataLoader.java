@@ -31,7 +31,7 @@ public final class DoorRiftDataLoader {
 //    private static final Map<Item, RiftDataList> itemRiftData = new HashMap<>();
 
     public static Optional<RiftDataList> getRiftData(RegistryAccess access, Item item) {
-        return access.registry(ModRegistryKeys.DOOR_DATA).map(registry -> registry.get(item.builtInRegistryHolder().key().identifier()));
+        return access.lookup(ModRegistryKeys.DOOR_DATA).map(registry -> registry.getValue(item.builtInRegistryHolder().key().identifier()));
     }
 
     public static void reload(HolderLookup.Provider provider, ResourceManager manager) {
@@ -44,7 +44,7 @@ public final class DoorRiftDataLoader {
                 LOGGER.error("Could not find item " + itemId + " for door data " + id);
                 return;
             }
-            Item item = BuiltInRegistries.ITEM.get(itemId);
+            Item item = BuiltInRegistries.ITEM.getValue(itemId);
             try {
                 JsonElement json = GSON.fromJson(resource.openAsReader(), JsonElement.class);
                 RiftDataList dataList = RiftDataList.CODEC.parse(JsonOps.INSTANCE, json).getOrThrow();

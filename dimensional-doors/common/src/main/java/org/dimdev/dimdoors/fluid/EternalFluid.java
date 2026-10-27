@@ -36,7 +36,7 @@ public abstract class EternalFluid extends FlowingFluid {
     }
 
     @Override
-    protected void randomTick(Level level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
+    protected void randomTick(net.minecraft.server.level.ServerLevel level, BlockPos blockPos, FluidState fluidState, RandomSource randomSource) {
 
     }
 
@@ -52,7 +52,7 @@ public abstract class EternalFluid extends FlowingFluid {
 
     @Override
     protected int getDropOff(LevelReader levelReader) {
-        return levelReader.dimensionType().ultraWarm() ? 4 : 2;
+        return false ? 4 : 2;
     }
 
     @Override
@@ -67,7 +67,7 @@ public abstract class EternalFluid extends FlowingFluid {
 
     @Override
     protected int getSlopeFindDistance(LevelReader levelReader) {
-        return levelReader.dimensionType().ultraWarm() ? 1 : 2;
+        return false ? 1 : 2;
     }
 
     @Override
@@ -77,7 +77,7 @@ public abstract class EternalFluid extends FlowingFluid {
 
     @Override
     public int getTickDelay(LevelReader levelReader) {
-        return levelReader.dimensionType().ultraWarm() ? 10 : 30;
+        return false ? 10 : 30;
     }
 
     @Override
@@ -92,7 +92,7 @@ public abstract class EternalFluid extends FlowingFluid {
     }
 
     @Override
-    protected boolean canConvertToSource(Level level) {
+    protected boolean canConvertToSource(net.minecraft.server.level.ServerLevel level) {
         return false;
     }
 

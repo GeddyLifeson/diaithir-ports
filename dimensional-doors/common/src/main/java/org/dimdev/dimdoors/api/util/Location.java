@@ -131,9 +131,9 @@ public class Location {
     }
 
     public static BlockPos getHeightmapPosSafe(ServerLevel level, int x, int z) {
-        var mutablePos = new BlockPos.MutableBlockPos(x, level.getMaxBuildHeight(), z);
+        var mutablePos = new BlockPos.MutableBlockPos(x, level.getMaxY(), z);
 
-        while (mutablePos.getY() > level.getMinBuildHeight() && (!level.getBlockState(mutablePos).isSolid() && level.getFluidState(mutablePos).isEmpty()))
+        while (mutablePos.getY() > level.getMinY() && (!level.getBlockState(mutablePos).isSolid() && level.getFluidState(mutablePos).isEmpty()))
             mutablePos.move(Direction.DOWN);
 
         return mutablePos.move(Direction.UP);

@@ -66,11 +66,12 @@ public class EscapeTarget extends VirtualTarget<EscapeTarget> implements EntityT
             BlockPos destPos = null;
 
             if (DimensionalDoors.getConfig().getLimboConfig().tryPlayerBedSpawn) {
-                var level = DimensionalDoors.getWorld(player.getRespawnDimension());
+                var respawn = player.getRespawnConfig();
+                var level = respawn == null ? null : DimensionalDoors.getWorld(respawn.respawnData().globalPos().dimension());
 
                 if (level != null) {
                     destLevel = level;
-                    destPos = player.getRespawnPosition();
+                    destPos = respawn.respawnData().globalPos().pos();
                 }
             }
 
@@ -88,7 +89,7 @@ public class EscapeTarget extends VirtualTarget<EscapeTarget> implements EntityT
                 }
 
                 if (DimensionalDoors.getConfig().getLimboConfig().defaultToWorldSpawn) {
-                    destPos = destLevel.getSharedSpawnPos();
+                    destPos = destLevel.getRespawnData().globalPos().pos();
                 } else {
                     destPos = player.blockPosition();
                 }

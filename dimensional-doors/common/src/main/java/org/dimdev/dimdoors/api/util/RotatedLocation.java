@@ -49,8 +49,8 @@ public class RotatedLocation extends Location {
         return new RotatedLocation(
                 ResourceKey.create(Registries.DIMENSION, Identifier.parse(nbt.getStringOr("world", ""))),
                 new BlockPos(pos[0], pos[1], pos[2]),
-                nbt.getFloat("yaw"),
-                nbt.getFloat("pitch")
+                nbt.getFloatOr("yaw", 0f),
+                nbt.getFloatOr("pitch", 0f)
         );
     }
 }

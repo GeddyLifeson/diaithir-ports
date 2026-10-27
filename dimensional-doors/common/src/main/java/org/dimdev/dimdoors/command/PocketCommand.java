@@ -93,14 +93,14 @@ public class PocketCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
                 literal("pocket")
-                        .requires(source -> source.hasPermission(2))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                         .then(chunkLoadingCommand())
                         .then(placeOption("virtual_pocket", ModRegistryKeys.VIRTUAL_POCKET))
                         .then(placeOption("pocket_group", ModRegistryKeys.POCKET_GROUPS))
                         .then(placeOption("pocket_generator", ModRegistryKeys.POCKET_GENERATOR)
                                 .then(
                                                 literal("dump")
-                                                        .requires(src -> src.hasPermission(4))
+                                                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_OWNERS))
                                                         .executes(ctx -> {
                                                             ctx.getSource().sendSuccess(() -> Component.literal("Dumping pocket data"), false);
                                                             CompletableFuture.runAsync(() -> {
@@ -172,7 +172,7 @@ public class PocketCommand {
     }
 
     private static <T extends PocketCreator> int placePocket(CommandSourceStack source, Identifier id, ResourceKey<Registry<T>> idFunction, @Nullable Entity locatorEntity, @Nullable BlockPos selectedSourcePos) throws CommandSyntaxException {
-        PocketCreator creator = source.registryAccess().registry(idFunction).map(a -> a.get(id)).orElse(null);
+        PocketCreator creator = source.registryAccess().lookup(idFunction).map(a -> a.getValue(id)).orElse(null);
         if (creator == null) {
             source.sendFailure(Component.literal("Unknown pocket id: " + id));
             return 0;
@@ -183,13 +183,13 @@ public class PocketCommand {
         BlockPos sourcePos;
 
         if (selectedSourcePos != null) {
-            sourceLevel = player.serverLevel();
+            sourceLevel = player.level();
             sourcePos = normalizeSourcePos(sourceLevel, selectedSourcePos);
         } else if (locatorEntity != null) {
             sourceLevel = (ServerLevel) locatorEntity.level();
             sourcePos = normalizeSourcePos(sourceLevel, locatorEntity.blockPosition());
         } else {
-            sourceLevel = player.serverLevel();
+            sourceLevel = player.level();
             sourcePos = normalizeSourcePos(sourceLevel, player.blockPosition());
         }
 
@@ -265,6 +265,6 @@ public class PocketCommand {
     }
 
     public static <T extends PocketCreator> CompletableFuture<Suggestions> getSuggestions(RegistryAccess access, ResourceKey<Registry<T>> resourceKey, SuggestionsBuilder builder) {
-        return SharedSuggestionProvider.suggest(access.registry(resourceKey).map(Registry::keySet).stream().flatMap(Collection::stream).map(Identifier::toString), builder);
+        return SharedSuggestionProvider.suggest(access.lookup(resourceKey).map(Registry::keySet).stream().flatMap(Collection::stream).map(Identifier::toString), builder);
     }
 }

@@ -64,7 +64,7 @@ public interface PocketAddon {
         public static ResourceKey<Registry<PocketAddonType<?, ?>>> KEY = ResourceKey.createRegistryKey(DimensionalDoors.id("pocket_applicable_addon_type"));
         public static Registry<PocketAddonType<?, ?>> REGISTRY = DimensionalDoors.getSided().createRegistry(KEY);
         public static Codec<PocketAddonType<?, ?>> CODEC = REGISTRY.byNameCodec();
-        public static StreamCodec<RegistryFriendlyByteBuf, PocketAddonType<?, ?>> STREAM_CODEC = Identifier.STREAM_CODEC.<RegistryFriendlyByteBuf>cast().map(REGISTRY::get, REGISTRY::getKey);
+        public static StreamCodec<RegistryFriendlyByteBuf, PocketAddonType<?, ?>> STREAM_CODEC = Identifier.STREAM_CODEC.<RegistryFriendlyByteBuf>cast().map(REGISTRY::getValue, REGISTRY::getKey);
 
         public static final PocketAddonType<DyeableAddon, DyeableAddon.DyeableBuilderAddon> DYEABLE_ADDON = register(DyeableAddon.ID, DyeableAddon.CODEC, DyeableAddon.DyeableBuilderAddon.CODEC);
         public static PocketAddonType<PreventBlockModificationAddon, PreventBlockModificationAddon.PreventBlockModificationBuilderAddon> PREVENT_BLOCK_MODIFICATION_ADDON = register(PreventBlockModificationAddon.ID, PreventBlockModificationAddon.CODEC, PreventBlockModificationAddon.PreventBlockModificationBuilderAddon.CODEC, PreventBlockModificationAddon.STREAM_CODEC);

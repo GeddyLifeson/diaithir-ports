@@ -7,10 +7,9 @@ import net.minecraft.advancements.criterion.EntityPredicate;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
+import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
 import net.minecraft.world.phys.AABB;
@@ -31,18 +30,18 @@ public record EntityNearBy(NumberProvider range, Optional<EntityPredicate> predi
     }
 
     @Override
-    public @NotNull LootItemConditionType getType() {
-        return ModItemLootConditions.ENTITY_NEARBY;
+    public @NotNull MapCodec<EntityNearBy> codec() {
+        return CODEC;
     }
 
     @Override
-    public @NotNull Set<LootContextParam<?>> getReferencedContextParams() {
+    public @NotNull Set<ContextKey<?>> getReferencedContextParams() {
         return Set.of(LootContextParams.THIS_ENTITY, LootContextParams.ENCHANTMENT_LEVEL, LootContextParams.ORIGIN);
     }
 
     @Override
     public boolean test(LootContext lootContext) {
-        Entity entity = lootContext.getParamOrNull(LootContextParams.THIS_ENTITY);
+        Entity entity = lootContext.getOptionalParameter(LootContextParams.THIS_ENTITY);
         if (!(entity instanceof LivingEntity wearer) || !wearer.isAlive()) {
             return false;
         }

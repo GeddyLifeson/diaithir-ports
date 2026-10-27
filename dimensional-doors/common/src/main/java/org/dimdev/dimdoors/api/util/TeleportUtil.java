@@ -8,11 +8,11 @@ import net.minecraft.server.level.TicketType;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.RelativeMovement;
+import net.minecraft.world.entity.Relative;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.border.WorldBorder;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.Vec3;
 import org.dimdev.dimdoors.DimensionalDoors;
 import org.dimdev.dimdoors.compat.sable.SableHelper;
@@ -71,24 +71,19 @@ public final class TeleportUtil {
         // Clamp inside world border
         pos = clampToWorldBorder(pos, serverWorld.getWorldBorder());
         SableHelper.INSTANCE.validateTeleportDestination(serverWorld, pos);
-        float yaw = Mth.wrapDegrees(angle.getY());
-        float pitch = Mth.clamp(Mth.wrapDegrees(angle.getX()), -90.0F, 90.0F);
+        float yaw = Mth.wrapDegrees(angle.y());
+        float pitch = Mth.clamp(Mth.wrapDegrees(angle.x()), -90.0F, 90.0F);
 
         // Ensure the target chunk is loaded, vanilla-style
         BlockPos targetPos = BlockPos.containing(pos);
-        ChunkPos chunkPos = new ChunkPos(targetPos);
-        serverWorld.getChunkSource().addRegionTicket(
-                TicketType.POST_TELEPORT,
-                chunkPos,
-                1,
-                entity.getId()
-        );
+        ChunkPos chunkPos = ChunkPos.containing(targetPos);
+        serverWorld.getChunkSource().addTicketWithRadius(TicketType.PORTAL, chunkPos, 1);
 
         if (entity instanceof ServerPlayer serverPlayer) {
             entity.stopRiding();
 
             if (entity.level().dimension().equals(serverWorld.dimension())) {
-                serverPlayer.teleportTo(serverWorld, pos.x(), pos.y(), pos.z(), Set.<RelativeMovement>of(), yaw, pitch);
+                serverPlayer.teleportTo(serverWorld, pos.x(), pos.y(), pos.z(), Set.<Relative>of(), yaw, pitch, false);
             } else {
                 // Cross-dimension
                 entity = teleport(entity, serverWorld, pos, velocity, yaw, pitch);
@@ -104,7 +99,7 @@ public final class TeleportUtil {
             }
         } else {
             if (entity.level().dimension().equals(serverWorld.dimension())) {
-                entity.moveTo(pos.x(), pos.y(), pos.z(), yaw, pitch);
+                entity.snapTo(pos.x(), pos.y(), pos.z(), yaw, pitch);
             } else {
                 entity = teleport(entity, serverWorld, pos, velocity, yaw, pitch);
             }
@@ -169,6 +164,6 @@ public final class TeleportUtil {
 
     public static <E extends Entity> Entity teleport(E entity, ServerLevel world, Vec3 pos, Vec3 velocity, float yaw, float pitch) {
         // At this point the ticket has already been added by the caller.
-        return entity.changeDimension(new DimensionTransition(world, pos, velocity, yaw, pitch, e -> {}));
+        return entity.teleport(new TeleportTransition(world, pos, velocity, yaw, pitch, TeleportTransition.DO_NOTHING));
     }
 }
