@@ -1,5 +1,6 @@
 {
-  "key.diaithirvoice.talk": "Broidind",
-  "key.category.diaithirvoice.voice": "Gudu",
-  "hud.diaithirvoice.speaking": "Broidind"
+  "key.diaithirvoice.talk": "Push to Talk",
+  "key.category.diaithirvoice.voice": "Voice",
+  "hud.diaithirvoice.speaking": "Talking",
+  "hud.diaithirvoice.native": "Broidind"
 }
