@@ -16,7 +16,7 @@ Recipes are data files `data/<namespace>/diaithirbrewing/<name>.json` from any d
  "container": "minecraft:glass_bottle"}
 ```
 
-`station` is `keg` or `fermenting_barrel`; `base_returns`, `container`, `spoiled` (an item) and `spoil_chance` (default 0.25) are optional. `tools/sample` holds a runnable example. Age gates are applied by the pack's `age_gate.js` on the items; the vessels themselves are recipes in `data/diaithirbrewing/recipe`.
+`station` is `keg`, `fermenting_barrel` or `oak_cask`. The oak cask is for ageing: leave `base` out and list the young drinks as `ingredients` (for example four of one wine), and it gives back the aged drink after `ticks`, with the same cellar speed and spoilage rules (see `tools/sample/.../selftest_aged.json`); `base_returns`, `container`, `spoiled` (an item) and `spoil_chance` (default 0.25) are optional. `tools/sample` holds a runnable example. Age gates are applied by the pack's `age_gate.js` on the items; the vessels themselves are recipes in `data/diaithirbrewing/recipe`.
 
 `/brewing selftest` (owners) runs the first keg recipe through a fake player (pour, fill, ferment, save round trip, draw a serving, and the same through the item handler with a rolled-back insert) and prints PASS or what failed. `tools/gen_assets.py` writes the textures, models, loot, crafting and lang.
 

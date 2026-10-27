@@ -1,0 +1,9 @@
+{
+ "station": "oak_cask",
+ "ingredients": {
+  "minecraft:honey_bottle": 4
+ },
+ "ticks": 600,
+ "drink": "minecraft:honey_bottle",
+ "servings": 4
+}

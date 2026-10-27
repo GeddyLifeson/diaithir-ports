@@ -31,11 +31,23 @@ public final class DiaithirBrewing {
         p -> new BrewVesselBlock(p, "keg", 6), () -> props().strength(2.0F));
     public static final DeferredBlock<BrewVesselBlock> FERMENTING_BARREL = BLOCKS.registerBlock("fermenting_barrel",
         p -> new BrewVesselBlock(p, "fermenting_barrel", 12), () -> props().strength(2.5F));
+    public static final DeferredBlock<BrewVesselBlock> OAK_CASK = BLOCKS.registerBlock("oak_cask",
+        p -> new BrewVesselBlock(p, "oak_cask", 8), () -> props().strength(3.0F));
+    public static final DeferredItem<BlockItem> OAK_CASK_ITEM = ITEMS.registerSimpleBlockItem(OAK_CASK);
     public static final DeferredItem<BlockItem> KEG_ITEM = ITEMS.registerSimpleBlockItem(KEG);
     public static final DeferredItem<BlockItem> FERMENTING_BARREL_ITEM = ITEMS.registerSimpleBlockItem(FERMENTING_BARREL);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrewVesselEntity>> VESSEL_ENTITY = ENTITIES.register("vessel",
-        () -> new BlockEntityType<>(BrewVesselEntity::new, KEG.get(), FERMENTING_BARREL.get()));
+        () -> new BlockEntityType<>(BrewVesselEntity::new, KEG.get(), FERMENTING_BARREL.get(), OAK_CASK.get()));
+
+    /** The block for a recipe station name. */
+    static DeferredBlock<BrewVesselBlock> block(String station) {
+        return switch (station) {
+            case "keg" -> KEG;
+            case "oak_cask" -> OAK_CASK;
+            default -> FERMENTING_BARREL;
+        };
+    }
 
     private static BlockBehaviour.Properties props() {
         return BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD).noOcclusion().ignitedByLava();

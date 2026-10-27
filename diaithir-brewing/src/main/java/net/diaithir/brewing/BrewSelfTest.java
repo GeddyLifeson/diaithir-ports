@@ -80,12 +80,12 @@ final class BrewSelfTest {
         if (winner != r) {
             return "AMBIGUOUS shadowed by " + BuiltInRegistries.ITEM.getKey(winner.drink()) + ", identical station, base and ingredients";
         }
-        var block = r.station().equals("keg") ? DiaithirBrewing.KEG : DiaithirBrewing.FERMENTING_BARREL;
+        var block = DiaithirBrewing.block(r.station());
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
         level.setBlockAndUpdate(pos, block.get().defaultBlockState());
         Player p = FakePlayerFactory.getMinecraft(level);
         BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
-        if (!use(level, p, pos, hit, new ItemStack(r.base()))) return "FAIL base not accepted";
+        if (r.base() != Items.AIR && !use(level, p, pos, hit, new ItemStack(r.base()))) return "FAIL base not accepted";
         for (var e : r.ingredients().entrySet()) {
             for (int i = 0; i < e.getValue(); i++) {
                 if (!use(level, p, pos, hit, new ItemStack(e.getKey()))) return "FAIL ingredient " + e.getKey() + " not accepted";
@@ -115,14 +115,16 @@ final class BrewSelfTest {
     /** Feeds a fresh keg through its item handler (hopper path), checks an aborted insert rolls back, then draws the drinks out. */
     private static String automation(ServerLevel level, BlockPos pos, BrewRecipe r) {
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
-        level.setBlockAndUpdate(pos, (r.station().equals("keg") ? DiaithirBrewing.KEG : DiaithirBrewing.FERMENTING_BARREL).get().defaultBlockState());
+        level.setBlockAndUpdate(pos, DiaithirBrewing.block(r.station()).get().defaultBlockState());
         BrewVesselEntity be = (BrewVesselEntity) level.getBlockEntity(pos);
         try (var tx = Transaction.openRoot()) {
-            be.automation.insert(ItemResource.of(r.base()), 1, tx);
+            be.automation.insert(ItemResource.of(r.base() != Items.AIR ? r.base() : r.ingredients().keySet().iterator().next()), 1, tx);
         }
-        if (be.base != Items.AIR) return "FAIL aborted insert was not rolled back";
+        if (be.base != Items.AIR || !be.held.isEmpty()) return "FAIL aborted insert was not rolled back";
         try (var tx = Transaction.openRoot()) {
-            if (r.base() instanceof net.minecraft.world.item.BucketItem bucket && bucketFluid(bucket) != Fluids.EMPTY) {
+            if (r.base() == Items.AIR) {
+                // ageing recipe: no base
+            } else if (r.base() instanceof net.minecraft.world.item.BucketItem bucket && bucketFluid(bucket) != Fluids.EMPTY) {
                 if (be.fluidIntake.insert(FluidResource.of(bucketFluid(bucket)), FluidType.BUCKET_VOLUME - 1, tx) != 0) return "FAIL a partial bucket of fluid was accepted";
                 if (be.fluidIntake.insert(FluidResource.of(bucketFluid(bucket)), FluidType.BUCKET_VOLUME, tx) != FluidType.BUCKET_VOLUME) return "FAIL fluid base not accepted";
             } else {

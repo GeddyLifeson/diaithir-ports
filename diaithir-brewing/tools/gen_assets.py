@@ -74,9 +74,10 @@ def make(name, tone, bands):
 os.makedirs(os.path.join(ROOT, f"assets/{NS}/textures/block"), exist_ok=True)
 make("keg", (150, 105, 60), (8, 51))
 make("fermenting_barrel", (112, 78, 46), (6, 29, 53))
+make("oak_cask", (170, 135, 82), (10, 27, 46))
 
 # (Diaithiris, English)
-NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel")}
+NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel"), "oak_cask": ("", "Oak Cask")}
 lang = {}
 for n, (dia, _en) in NAMES.items():
     lang[f"block.{NS}.{n}"] = _en  # English main name; the Diaithiris name is shown in grey by the pack (assets/diaithirbrewing/diaithir_names/names.json, written by the names thread)
@@ -102,9 +103,17 @@ put(f"data/{NS}/recipe/fermenting_barrel.json", {
     "type": "minecraft:crafting_shaped", "category": "misc",
     "key": {"P": "#minecraft:planks", "I": "minecraft:iron_ingot", "S": "#minecraft:wooden_slabs"},
     "pattern": ["PIP", "PSP", "PIP"], "result": {"id": f"{NS}:fermenting_barrel"}})
-put(f"data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:keg", f"{NS}:fermenting_barrel"]})
+put(f"data/{NS}/recipe/oak_cask.json", {
+    "type": "minecraft:crafting_shaped", "category": "misc",
+    "key": {"P": "minecraft:oak_planks", "I": "minecraft:iron_ingot", "B": f"{NS}:fermenting_barrel"},
+    "pattern": ["PIP", "PBP", "PIP"], "result": {"id": f"{NS}:oak_cask"}})
+put(f"data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:keg", f"{NS}:fermenting_barrel", f"{NS}:oak_cask"]})
 
 # Sample brew in the data format (the alcohol thread writes the real catalogue the same way); kept out of the jar.
 put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest.json", {
     "station": "keg", "base": "minecraft:water_bucket", "base_returns": "minecraft:bucket",
     "ingredients": {"minecraft:wheat": 3}, "ticks": 100, "drink": "minecraft:honey_bottle", "servings": 4})
+
+# Ageing sample: a cask takes finished young drinks as its ingredients and gives the aged drink (no base).
+put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest_aged.json", {
+    "station": "oak_cask", "ingredients": {"minecraft:honey_bottle": 4}, "ticks": 600, "drink": "minecraft:honey_bottle", "servings": 4})
