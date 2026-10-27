@@ -21,7 +21,7 @@ import java.util.UUID;
  */
 @EventBusSubscriber(modid = DiaithirVoice.ID, value = Dist.CLIENT)
 public final class VoiceHud {
-    static final int OUTLINE = 0xFF221810, PANEL = 0xFFB2946A, HIGHLIGHT = 0xFFD8BE90, HOT = 0xFFDEAA46, INK = 0xFF221810;
+    static final int GREY = 0xFF6E5438, OUTLINE = 0xFF221810, PANEL = 0xFFB2946A, HIGHLIGHT = 0xFFD8BE90, HOT = 0xFFDEAA46, INK = 0xFF221810;
 
     private VoiceHud() {}
 
@@ -38,23 +38,32 @@ public final class VoiceHud {
         if (!me && others.isEmpty()) return;
         int right = g.guiWidth() - 6, y = 6;
         if (me) {
-            row(g, mc, right, y, Component.translatable("hud.diaithirvoice.speaking").getString(), true);
-            y += 14;
+            row(g, mc, right, y, Component.translatable("hud.diaithirvoice.speaking").getString(), Component.translatable("hud.diaithirvoice.native").getString(), true);
+            y += 22;
         }
         for (UUID id : others) {
             PlayerInfo info = mc.getConnection() == null ? null : mc.getConnection().getPlayerInfo(id);
-            row(g, mc, right, y, info == null ? "?" : info.getProfile().name(), false);
+            row(g, mc, right, y, info == null ? "?" : info.getProfile().name(), null, false);
             y += 14;
         }
     }
 
-    private static void row(GuiGraphicsExtractor g, Minecraft mc, int right, int y, String label, boolean self) {
-        int w = mc.font.width(label) + 24;
+    private static void row(GuiGraphicsExtractor g, Minecraft mc, int right, int y, String label, String nativeName, boolean self) {
+        int w = Math.max(mc.font.width(label), nativeName == null ? 0 : mc.font.width(nativeName) * 3 / 4) + 24;
         int x = right - w;
-        g.fill(x - 1, y - 1, right + 1, y + 13, OUTLINE);
-        g.fill(x, y, right, y + 12, self ? HIGHLIGHT : PANEL);
+        int h = nativeName == null ? 12 : 20;
+        g.fill(x - 1, y - 1, right + 1, y + h + 1, OUTLINE);
+        g.fill(x, y, right, y + h, self ? HIGHLIGHT : PANEL);
         mic(g, x + 3, y + 2, self ? HOT : INK);
         g.text(mc.font, label, x + 18, y + 2, INK, false);
+        if (nativeName != null) { // the native word, smaller and grey, under the English label
+            var pose = g.pose();
+            pose.pushMatrix();
+            pose.translate(x + 18, y + 12);
+            pose.scale(0.75f, 0.75f);
+            g.text(mc.font, nativeName, 0, 0, GREY, false);
+            pose.popMatrix();
+        }
     }
 
     /** A microphone drawn from rectangles: capsule, cradle and stand. */
