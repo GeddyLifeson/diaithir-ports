@@ -39,4 +39,7 @@ public class CCBlockEntityTypes {
         TYPES.register("freewheel_clutch", () -> new BlockEntityType<>((pos, state) -> new FreewheelClutchBlockEntity(CCBlockEntityTypes.FREEWHEEL_CLUTCH.get(), pos, state), Set.of(CCBlocks.FREEWHEEL_CLUTCH.get())));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CentrifugalClutchBlockEntity>> CENTRIFUGAL_CLUTCH =
         TYPES.register("centrifugal_clutch", () -> new BlockEntityType<>((pos, state) -> new CentrifugalClutchBlockEntity(CCBlockEntityTypes.CENTRIFUGAL_CLUTCH.get(), pos, state), Set.of(CCBlocks.CENTRIFUGAL_CLUTCH.get())));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.connected.content.shearpin.ShearPinBlockEntity>> SHEAR_PIN =
+        TYPES.register("shear_pin", () -> new BlockEntityType<>((pos, state) -> new org.diaithir.connected.content.shearpin.ShearPinBlockEntity(CCBlockEntityTypes.SHEAR_PIN.get(), pos, state), Set.of(CCBlocks.SHEAR_PIN.get())));
 }

@@ -16,5 +16,6 @@
  "block.create_connected.centrifugal_clutch": "Centrifugal Clutch",
  "block.create_connected.cross_connector": "Cross Connector",
  "block.create_connected.andesite_encased_cross_connector": "Andesite Encased Cross Connector",
- "block.create_connected.brass_encased_cross_connector": "Brass Encased Cross Connector"
+ "block.create_connected.brass_encased_cross_connector": "Brass Encased Cross Connector",
+ "block.create_connected.shear_pin": "Shear Pin"
 }

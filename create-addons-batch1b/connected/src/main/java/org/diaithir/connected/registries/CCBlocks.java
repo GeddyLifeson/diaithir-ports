@@ -47,6 +47,9 @@ public class CCBlocks {
     public static final DeferredBlock<FreewheelClutchBlock> FREEWHEEL_CLUTCH = reg("freewheel_clutch", FreewheelClutchBlock::new, box(MapColor.PODZOL));
     public static final DeferredBlock<CentrifugalClutchBlock> CENTRIFUGAL_CLUTCH = reg("centrifugal_clutch", CentrifugalClutchBlock::new, box(MapColor.PODZOL));
 
+    public static final DeferredBlock<org.diaithir.connected.content.shearpin.ShearPinBlock> SHEAR_PIN = reg("shear_pin", org.diaithir.connected.content.shearpin.ShearPinBlock::new,
+        Properties.ofFullCopy(Blocks.ANDESITE).mapColor(MapColor.METAL).noOcclusion().strength(0.8f));
+
     private static <B extends Block> DeferredBlock<B> reg(String id, Function<Properties, B> factory, Properties props) {
         return BLOCKS.registerBlock(id, factory, () -> props);
     }

@@ -42,6 +42,9 @@ public class CreateConnectedClient {
         shaftPair(CCBlockEntityTypes.INVERTED_CLUTCH.get());
         shaftPair(CCBlockEntityTypes.INVERTED_GEARSHIFT.get());
         shaftPair(CCBlockEntityTypes.BRAKE.get());
+        var sp = CCBlockEntityTypes.SHEAR_PIN.get();
+        AllBlockEntityRenders.visual(sp, AxisShaftRenderer<org.diaithir.connected.content.shearpin.ShearPinBlockEntity>::new, com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual.of(com.zurrtum.create.client.AllPartialModels.SHAFT));
+        AllBlockEntityBehaviours.add(sp, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
         var ov = CCBlockEntityTypes.OVERSTRESS_CLUTCH.get();
         shaftPair(ov);
         AllBlockEntityBehaviours.add(ov, be -> new ScrollValueBehaviour<>(Component.translatable("create_connected.overstress_clutch.uncouple_delay"), be,

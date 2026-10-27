@@ -26,6 +26,8 @@ public class CCItems {
     public static final DeferredItem<BlockItem> FREEWHEEL_CLUTCH = ITEMS.registerSimpleBlockItem(CCBlocks.FREEWHEEL_CLUTCH);
     public static final DeferredItem<BlockItem> CENTRIFUGAL_CLUTCH = ITEMS.registerSimpleBlockItem(CCBlocks.CENTRIFUGAL_CLUTCH);
 
+    public static final DeferredItem<BlockItem> SHEAR_PIN = ITEMS.registerSimpleBlockItem(CCBlocks.SHEAR_PIN);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

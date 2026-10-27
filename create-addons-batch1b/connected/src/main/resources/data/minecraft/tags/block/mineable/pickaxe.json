@@ -11,6 +11,7 @@
   "create_connected:centrifugal_clutch",
   "create_connected:cross_connector",
   "create_connected:andesite_encased_cross_connector",
-  "create_connected:brass_encased_cross_connector"
+  "create_connected:brass_encased_cross_connector",
+  "create_connected:shear_pin"
  ]
 }

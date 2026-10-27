@@ -141,3 +141,21 @@ def cross():
     pick["values"] += [f"{NS}:cross_connector", f"{NS}:andesite_encased_cross_connector", f"{NS}:brass_encased_cross_connector"]
     w(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json", pick)
 cross()
+
+
+def shear_pin():
+    lang = json.load(open(f"{A}/lang/en_us.json"))
+    png(f"{A}/textures/block/shear_pin.png", art.shaft_side("cc_shear_pin", art.RUST, art.HAZ_Y))
+    f = lambda uv: {"uv": uv, "texture": "#pin"}
+    w(f"{A}/models/block/shear_pin.json", {"textures": {"pin": f"{NS}:block/shear_pin", "particle": f"{NS}:block/shear_pin"},
+        "elements": [{"from": [5, 0, 5], "to": [11, 16, 11], "faces": {"north": f([0, 0, 6, 16]), "south": f([0, 0, 6, 16]), "east": f([0, 0, 6, 16]), "west": f([0, 0, 6, 16]), "up": f([0, 0, 6, 6]), "down": f([0, 0, 6, 6])}}]})
+    w(f"{A}/blockstates/shear_pin.json", {"variants": {"axis=y": {"model": f"{NS}:block/shear_pin"}, "axis=x": {"model": f"{NS}:block/shear_pin", "x": 90, "y": 90}, "axis=z": {"model": f"{NS}:block/shear_pin", "x": 90}}})
+    w(f"{A}/items/shear_pin.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/shear_pin"}})
+    lang[f"block.{NS}.shear_pin"] = "Shear Pin"
+    w(f"{A}/lang/en_us.json", lang)
+    w(f"{D}/loot_table/blocks/shear_pin.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:shear_pin"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/shear_pin.json", {"type": "minecraft:crafting_shapeless", "category": "misc", "ingredients": ["create:shaft", "minecraft:flint"], "result": {"id": f"{NS}:shear_pin", "count": 1}})
+    pick = json.load(open(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"))
+    pick["values"].append(f"{NS}:shear_pin")
+    w(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json", pick)
+shear_pin()
