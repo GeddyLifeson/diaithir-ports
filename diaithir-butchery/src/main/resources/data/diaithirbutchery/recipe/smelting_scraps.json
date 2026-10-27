@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "food",
+ "ingredient": "diaithirbutchery:scraps",
+ "result": {
+  "id": "diaithirbutchery:cooked_scraps"
+ },
+ "experience": 0.35,
+ "cookingtime": 200
+}

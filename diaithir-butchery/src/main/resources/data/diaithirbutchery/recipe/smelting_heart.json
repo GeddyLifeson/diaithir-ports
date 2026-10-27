@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "food",
+ "ingredient": "diaithirbutchery:heart",
+ "result": {
+  "id": "diaithirbutchery:cooked_heart"
+ },
+ "experience": 0.35,
+ "cookingtime": 200
+}
