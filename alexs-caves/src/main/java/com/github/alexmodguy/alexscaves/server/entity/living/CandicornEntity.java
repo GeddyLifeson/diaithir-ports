@@ -718,8 +718,8 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
     }
 
     @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel serverLevel) {
+        super.dropEquipment(serverLevel);
         if (this.isSaddled()) {
             this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), Items.SADDLE);
         }
@@ -799,7 +799,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
 
     @Override
     protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
-        return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
+        return super.shouldDropLoot(serverLevel) && getPossessedByLicowitchId() == -1;
     }
 
     @Override

@@ -33,7 +33,7 @@ public class GingerbreadManAttackGoal extends Goal {
             gingerbreadMan.lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition());
             if(distance < attackDistance && gingerbreadMan.hasLineOfSight(target)){
                 if(gingerbreadMan.getAnimation() == gingerbreadMan.getAnimationForHand(false) && gingerbreadMan.getAnimationTick() == 8){
-                    if(gingerbreadMan.doHurtTarget(target)){
+                    if(gingerbreadMan.doHurtTarget((net.minecraft.server.level.ServerLevel) gingerbreadMan.level(), target)){
                         gingerbreadMan.playSound(ACSoundRegistry.GINGERBREAD_MAN_ATTACK.get());
                         gingerbreadMan.fleeFromFor(target, gingerbreadMan.isOvenSpawned() ? 0 : 120 + gingerbreadMan.getRandom().nextInt(60));
                     }

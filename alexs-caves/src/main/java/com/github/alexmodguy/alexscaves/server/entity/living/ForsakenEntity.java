@@ -442,8 +442,8 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
     }
 
     @Override
-    protected void customServerAiStep() {
-        super.customServerAiStep();
+    protected void customServerAiStep(net.minecraft.server.level.ServerLevel serverLevel) {
+        super.customServerAiStep(serverLevel);
         if(this.isInWall()){
             if (this.destroyBlocksTick > 0) {
                 --this.destroyBlocksTick;

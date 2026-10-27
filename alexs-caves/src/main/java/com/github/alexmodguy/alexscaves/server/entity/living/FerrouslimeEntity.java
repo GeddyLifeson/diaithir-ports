@@ -287,7 +287,7 @@ public class FerrouslimeEntity extends Monster {
 
     public boolean doHurtTarget(Entity entityIn) {
         this.entityData.set(ATTACK_TICK, 10);
-        return super.doHurtTarget(entityIn);
+        return super.doHurtTarget((net.minecraft.server.level.ServerLevel) super.level(), entityIn);
     }
 
     private boolean canForm() {
@@ -379,7 +379,7 @@ public class FerrouslimeEntity extends Monster {
                 FerrouslimeEntity.this.getNavigation().moveTo(target, 1F);
                 FerrouslimeEntity.this.lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition());
                 if (FerrouslimeEntity.this.distanceTo(target) < 1 + FerrouslimeEntity.this.getSlimeSize(1.0F) && FerrouslimeEntity.this.hasLineOfSight(target) && cooldown == 0) {
-                    FerrouslimeEntity.this.doHurtTarget(target);
+                    FerrouslimeEntity.this.doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), target);
                     cooldown = 10;
                 }
             }

@@ -277,7 +277,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
 
     @Override
     protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
-        return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
+        return super.shouldDropLoot(serverLevel) && getPossessedByLicowitchId() == -1;
     }
 
     @Override
@@ -726,7 +726,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
     private class ProtectBabiesGoal extends NearestAttackableTargetGoal<Player> {
 
         public ProtectBabiesGoal() {
-            super(GummyBearEntity.this, Player.class, 20, true, true, (Predicate<LivingEntity>)null);
+            super(GummyBearEntity.this, Player.class, 20, true, true, (net.minecraft.world.entity.ai.targeting.TargetingConditions.Selector)null);
         }
 
         public boolean canUse() {

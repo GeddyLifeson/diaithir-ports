@@ -26,7 +26,7 @@ public abstract class ACMultipartEntity<T extends Entity> extends PartEntity<T> 
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
         Entity parent = this.getParent();
         if (parent == null) {
             return InteractionResult.PASS;
@@ -34,12 +34,16 @@ public abstract class ACMultipartEntity<T extends Entity> extends PartEntity<T> 
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }
-            return parent.interact(player, hand);
+            return parent.interact(player, hand, location);
         }
     }
 
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source) {
+        return this.isInvulnerableToBase(source);
+    }
+
     @Override
-    public boolean save(CompoundTag tag) {
+    public boolean save(net.minecraft.world.level.storage.ValueOutput output) {
         return false;
     }
 
@@ -61,7 +65,7 @@ public abstract class ACMultipartEntity<T extends Entity> extends PartEntity<T> 
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         Entity parent = this.getParent();
-        if (!this.isInvulnerableTo(source) && parent != null) {
+        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
             Entity attacker = source.getEntity();
             if (attacker != null && attacker.level().isClientSide()) {
                 // Client-side: send packet to server to handle the attack

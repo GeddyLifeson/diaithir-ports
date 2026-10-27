@@ -531,7 +531,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
 
     @Override
     protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
-        return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
+        return super.shouldDropLoot(serverLevel) && getPossessedByLicowitchId() == -1;
     }
 
     @Override
@@ -544,7 +544,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     @Override
     protected void dropExperience(@org.jetbrains.annotations.Nullable Entity attacker) {
         if(!this.isOvenSpawned()){
-            super.dropExperience(attacker);
+            super.dropExperience(serverLevel, attacker);
         }
     }
 
@@ -573,7 +573,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
             this.level().addParticle(itemParticleOption, vec31.x, vec31.y, vec31.z, ((double) this.random.nextFloat() - 0.5D) * 0.2D, ((double) this.random.nextFloat() - 0.5D) * 0.2D, ((double) this.random.nextFloat() - 0.5D) * 0.2D);
         }
         if(!level().isClientSide()){
-            if(!isOvenSpawned() && shouldDropLoot() && random.nextInt(2) == 0 && this.isAlive()){
+            if(!isOvenSpawned() && shouldDropLoot((net.minecraft.server.level.ServerLevel) level()) && random.nextInt(2) == 0 && this.isAlive()){
                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ACItemRegistry.GINGERBREAD_CRUMBS.get()));
             }
             if(arm){

@@ -45,7 +45,7 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
         SauropodBaseEntity parent = this.getParent();
         if (parent == null) {
             return InteractionResult.PASS;
@@ -54,12 +54,12 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }
-            return parent.interact(player, hand);
+            return parent.interact(player, hand, location);
         }
     }
 
     @Override
-    public boolean save(CompoundTag tag) {
+    public boolean save(net.minecraft.world.level.storage.ValueOutput output) {
         return false;
     }
 
@@ -78,7 +78,7 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
 
     public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         SauropodBaseEntity parent = this.getParent();
-        return super.isInvulnerableTo(serverLevel, damageSource) || parent != null && parent.isInvulnerableTo(damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
+        return super.isInvulnerableTo(serverLevel, damageSource) || parent != null && parent.isInvulnerableTo(serverLevel, damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
     }
 
     public boolean is(Entity entityIn) {
@@ -110,7 +110,7 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
         if(source.is(DamageTypeTags.IS_PROJECTILE)){
             amount *= 0.33F;
         }
-        if (!this.isInvulnerableTo(source) && parent != null) {
+        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
             Entity player = source.getEntity();
             if (player != null && !parent.isAlliedTo(player) && player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 1));

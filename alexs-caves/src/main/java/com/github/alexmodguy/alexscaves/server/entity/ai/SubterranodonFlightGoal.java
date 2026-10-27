@@ -96,8 +96,8 @@ public class SubterranodonFlightGoal extends Goal {
             if ((entity.timeFlying < 2000 || isLeaderStillGoing() || isOverWaterOrVoid()) && !entity.isOrderedToSit()) {
                 return vec3;
             } else {
-                if (entity.hasRestriction() && !entity.horizontalCollision) {
-                    return Vec3.atCenterOf(entity.getRestrictCenter());
+                if (entity.hasHome() && !entity.horizontalCollision) {
+                    return Vec3.atCenterOf(entity.getHomePosition());
                 }
                 return groundPosition(vec3);
             }
@@ -109,9 +109,9 @@ public class SubterranodonFlightGoal extends Goal {
 
     private Vec3 findFlightPos() {
         Vec3 targetVec;
-        if (entity.hasRestriction() && entity.getRestrictCenter() != null) {
+        if (entity.hasHome() && entity.getHomePosition() != null) {
             float maxRot = 360;
-            Vec3 center = Vec3.atCenterOf(entity.getRestrictCenter());
+            Vec3 center = Vec3.atCenterOf(entity.getHomePosition());
             float xRotOffset = (float) Math.toRadians(entity.getRandom().nextFloat() * (maxRot - (maxRot / 2)) * 0.5F);
             float yRotOffset = (float) Math.toRadians(entity.getRandom().nextFloat() * maxRot - (maxRot / 2));
             Vec3 distVec = new Vec3(0, 0, 15 + entity.getRandom().nextInt(15)).xRot(xRotOffset).yRot(yRotOffset);

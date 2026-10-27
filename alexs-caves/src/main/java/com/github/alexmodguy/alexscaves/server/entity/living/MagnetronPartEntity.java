@@ -57,7 +57,7 @@ public class MagnetronPartEntity extends PartEntity<MagnetronEntity> {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
         MagnetronEntity parent = this.getParent();
         if (parent == null) {
             return InteractionResult.PASS;
@@ -66,12 +66,12 @@ public class MagnetronPartEntity extends PartEntity<MagnetronEntity> {
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }
-            return parent.interact(player, hand);
+            return parent.interact(player, hand, location);
         }
     }
 
     @Override
-    public boolean save(CompoundTag tag) {
+    public boolean save(net.minecraft.world.level.storage.ValueOutput output) {
         return false;
     }
 
@@ -91,7 +91,7 @@ public class MagnetronPartEntity extends PartEntity<MagnetronEntity> {
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         MagnetronEntity parent = this.getParent();
-        if (!this.isInvulnerableTo(source) && parent != null) {
+        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
             Entity player = source.getEntity();
             if (player != null && player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 1));

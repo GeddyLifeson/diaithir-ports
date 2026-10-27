@@ -229,8 +229,8 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
         return id == -1 ? null : level().getEntity(id);
     }
 
-    protected void dropEquipment() {
-        super.dropEquipment();
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel serverLevel) {
+        super.dropEquipment(serverLevel);
         if (this.hasBarrel() && shouldDropBlocks()) {
             this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ACBlockRegistry.WASTE_DRUM.get()));
         }

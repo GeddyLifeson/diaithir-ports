@@ -539,7 +539,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
                 this.setTameAttempts(this.getTameAttempts() + 1);
                 if (this.getTameAttempts() >= 4 && getRandom().nextInt(3) == 0) {
                     this.tame(lastFedPlayer);
-                    this.clearRestriction();
+                    this.clearHome();
                     this.level().broadcastEntityEvent(this, (byte) 7);
                 } else {
                     this.level().broadcastEntityEvent(this, (byte) 6);

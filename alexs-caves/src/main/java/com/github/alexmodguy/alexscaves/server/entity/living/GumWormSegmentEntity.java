@@ -235,7 +235,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         Entity head = this.getHeadEntity();
-        if (!this.isInvulnerableTo(source) && head != null) {
+        if (!this.isInvulnerableTo(serverLevel, source) && head != null) {
             head.hurtServer((net.minecraft.server.level.ServerLevel) head.level(), source, amount);
         }
         return false;

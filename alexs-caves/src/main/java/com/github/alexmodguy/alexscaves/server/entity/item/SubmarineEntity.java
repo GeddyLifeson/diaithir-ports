@@ -443,7 +443,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
         if (player.isSecondaryUseActive()) {
             return InteractionResult.PASS;
         } else {

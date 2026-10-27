@@ -521,7 +521,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
                 this.usePlayerItem(player, hand, itemStack);
                 if (getRandom().nextInt(3) == 0) {
                     this.tame(player);
-                    this.clearRestriction();
+                    this.clearHome();
                     this.level().broadcastEntityEvent(this, (byte) 7);
                 } else {
                     this.level().broadcastEntityEvent(this, (byte) 6);

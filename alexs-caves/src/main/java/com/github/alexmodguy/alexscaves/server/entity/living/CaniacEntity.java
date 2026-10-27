@@ -264,7 +264,7 @@ public class CaniacEntity extends Monster implements IAnimatedEntity, PossessedB
 
     @Override
     protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
-        return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
+        return super.shouldDropLoot(serverLevel) && getPossessedByLicowitchId() == -1;
     }
 
     @Override

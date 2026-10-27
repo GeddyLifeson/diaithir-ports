@@ -265,8 +265,8 @@ public class TeletorEntity extends Monster {
         return this.getEyePosition().add(helmet);
     }
 
-    protected void dropEquipment() {
-        super.dropEquipment();
+    protected void dropEquipment(net.minecraft.server.level.ServerLevel serverLevel) {
+        super.dropEquipment(serverLevel);
         Entity weapon = this.getWeapon();
         if (weapon instanceof MagneticWeaponEntity magneticWeapon) {
             ItemStack itemstack = magneticWeapon.getItemStack();

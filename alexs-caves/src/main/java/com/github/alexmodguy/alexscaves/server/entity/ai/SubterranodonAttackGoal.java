@@ -113,7 +113,7 @@ public class SubterranodonAttackGoal extends Goal {
         if (distanceToTarget <= attackReach && this.ticksUntilNextAttack <= 0) {
             this.ticksUntilNextAttack = ATTACK_INTERVAL;
             entity.swing(InteractionHand.MAIN_HAND);
-            entity.doHurtTarget(target);
+            entity.doHurtTarget((net.minecraft.server.level.ServerLevel) entity.level(), target);
         }
     }
 

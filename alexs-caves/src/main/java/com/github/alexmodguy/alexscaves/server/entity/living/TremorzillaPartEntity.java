@@ -46,7 +46,7 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public InteractionResult interact(Player player, InteractionHand hand, net.minecraft.world.phys.Vec3 location) {
         TremorzillaEntity parent = this.getParent();
         if (parent == null) {
             return InteractionResult.PASS;
@@ -55,7 +55,7 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }
-            return parent.interact(player, hand);
+            return parent.interact(player, hand, location);
         }
     }
 
@@ -65,7 +65,7 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
     }
 
     @Override
-    public boolean save(CompoundTag tag) {
+    public boolean save(net.minecraft.world.level.storage.ValueOutput output) {
         return false;
     }
 
@@ -88,7 +88,7 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
         if(source.is(DamageTypeTags.IS_PROJECTILE)){
             amount *= 0.35F;
         }
-        if (!this.isInvulnerableTo(source) && parent != null) {
+        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
             Entity player = source.getEntity();
             if (player != null && !parent.isAlliedTo(player) && player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 1));
