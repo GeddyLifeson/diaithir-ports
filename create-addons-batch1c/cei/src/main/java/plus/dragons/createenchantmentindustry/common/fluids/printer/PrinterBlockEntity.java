@@ -17,6 +17,7 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.printer;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
 
 import static com.zurrtum.create.content.kinetics.belt.behaviour.BeltProcessingBehaviour.ProcessingResult.HOLD;
 import static com.zurrtum.create.content.kinetics.belt.behaviour.BeltProcessingBehaviour.ProcessingResult.PASS;
@@ -31,10 +32,7 @@ import com.zurrtum.create.content.kinetics.belt.transport.TransportedItemStack;
 import com.zurrtum.create.foundation.blockEntity.SmartBlockEntity;
 import com.zurrtum.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import com.zurrtum.create.infrastructure.transfer.FluidInventoryStorage;
 import java.util.List;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -86,9 +84,9 @@ public class PrinterBlockEntity extends SmartBlockEntity {
         behaviours.add(advancement);
     }
 
-    public @Nullable Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
+    public @Nullable FluidInventory getFluidStorage(@Nullable Direction side) {
         return tank != null && side != Direction.DOWN
-                ? FluidInventoryStorage.of(tank.getCapability(), side)
+                ? tank.getCapability()
                 : null;
     }
 

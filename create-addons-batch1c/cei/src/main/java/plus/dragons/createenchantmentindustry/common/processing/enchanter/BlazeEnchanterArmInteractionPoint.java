@@ -21,7 +21,7 @@ package plus.dragons.createenchantmentindustry.common.processing.enchanter;
 import com.zurrtum.create.content.kinetics.mechanicalArm.ArmBlockEntity;
 import com.zurrtum.create.content.kinetics.mechanicalArm.ArmInteractionPoint;
 import com.zurrtum.create.content.kinetics.mechanicalArm.ArmInteractionPointType;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import plus.dragons.createdragonsplus.compat.Transaction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;

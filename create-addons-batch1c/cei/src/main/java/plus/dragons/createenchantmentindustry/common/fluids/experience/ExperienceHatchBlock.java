@@ -25,11 +25,7 @@ import com.zurrtum.create.content.equipment.wrench.IWrenchable;
 import com.zurrtum.create.foundation.block.IBE;
 import com.zurrtum.create.foundation.block.ProperWaterloggedBlock;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import net.fabricmc.fabric.api.entity.FakePlayer;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import plus.dragons.createdragonsplus.compat.Transaction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -107,14 +103,14 @@ public class ExperienceHatchBlock extends HorizontalDirectionalBlock
         if (level.isClientSide())
             return InteractionResult.SUCCESS;
 
-        if (player instanceof FakePlayer)
+        if (player instanceof net.neoforged.neoforge.common.util.FakePlayer)
             return InteractionResult.SUCCESS;
 
         BlockEntity blockEntity = level.getBlockEntity(pos.relative(state.getValue(FACING)));
         if (blockEntity == null)
             return InteractionResult.PASS;
 
-        Storage<FluidVariant> tankCapability = FluidStorage.SIDED.find(level, blockEntity.getBlockPos(), null);
+        com.zurrtum.create.infrastructure.fluids.FluidInventory tankCapability = com.zurrtum.create.foundation.fluid.FluidHelper.getFluidInventory(level, blockEntity.getBlockPos(), state.getValue(FACING).getOpposite());
         if (tankCapability == null)
             return InteractionResult.PASS;
 
@@ -126,12 +122,9 @@ public class ExperienceHatchBlock extends HorizontalDirectionalBlock
         if (player.isSecondaryUseActive()) {
             FluidStack fluid = filter.getFluidToDrain();
             long extracted;
-            try (Transaction transaction = Transaction.openOuter()) {
-                extracted = tankCapability.extract(CEITransfer.variantOf(fluid), fluid.getAmount(), transaction);
-                if (extracted == 0)
-                    return InteractionResult.PASS;
-                transaction.commit();
-            }
+            extracted = tankCapability.extract(fluid);
+            if (extracted == 0)
+                return InteractionResult.PASS;
             fluid = fluid.copyWithAmount(Math.toIntExact(extracted));
             if (fluid.isEmpty())
                 return InteractionResult.PASS;
@@ -146,12 +139,9 @@ public class ExperienceHatchBlock extends HorizontalDirectionalBlock
             int experience = ExperienceHelper.getExperienceForPlayer(player);
             FluidStack fluid = filter.getFluidToFill(experience);
             long filled;
-            try (Transaction transaction = Transaction.openOuter()) {
-                filled = tankCapability.insert(CEITransfer.variantOf(fluid), fluid.getAmount(), transaction);
-                if (filled == 0)
-                    return InteractionResult.PASS;
-                transaction.commit();
-            }
+            filled = tankCapability.insert(fluid);
+            if (filled == 0)
+                return InteractionResult.PASS;
             if (filled == 0)
                 return InteractionResult.PASS;
             blockEntity.setChanged();

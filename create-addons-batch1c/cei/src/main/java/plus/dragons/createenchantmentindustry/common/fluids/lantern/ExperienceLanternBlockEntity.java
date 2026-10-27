@@ -17,17 +17,15 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.lantern;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
 
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 
 import com.zurrtum.create.api.behaviour.BlockEntityBehaviour;
 import com.zurrtum.create.foundation.blockEntity.SmartBlockEntity;
 import com.zurrtum.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
-import com.zurrtum.create.infrastructure.transfer.FluidInventoryStorage;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -165,9 +163,9 @@ public class ExperienceLanternBlockEntity extends SmartBlockEntity {
         level.setBlocksDirty(getBlockPos(), state, updatedState);
     }
 
-    public @Nullable Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
+    public @Nullable FluidInventory getFluidStorage(@Nullable Direction side) {
         return tank != null && (side == null || side.getOpposite() == getBlockState().getValue(FACING))
-                ? FluidInventoryStorage.of(tank.getCapability(), side)
+                ? tank.getCapability()
                 : null;
     }
 }

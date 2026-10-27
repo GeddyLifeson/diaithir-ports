@@ -18,8 +18,10 @@
 
 package plus.dragons.createenchantmentindustry.common.network;
 
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import plus.dragons.createenchantmentindustry.config.CEIConfig;
+import plus.dragons.createenchantmentindustry.common.registry.CEIDataMaps;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -42,14 +44,19 @@ public final class CEINetwork {
 
     private CEINetwork() {}
 
-    public static void register() {
-        PayloadTypeRegistry.clientboundPlay().registerLarge(DATA_MAP_SYNC_TYPE, DATA_MAP_SYNC_CODEC, 16 * 1024 * 1024);
-        PayloadTypeRegistry.clientboundPlay().register(CONFIG_SYNC_TYPE, CONFIG_SYNC_CODEC);
+    public static void register(net.neoforged.bus.api.IEventBus modBus) {
+        modBus.addListener(RegisterPayloadHandlersEvent.class, event -> {
+            var registrar = event.registrar("1").optional();
+            registrar.playToClient(DATA_MAP_SYNC_TYPE, DATA_MAP_SYNC_CODEC,
+                    (payload, ctx) -> ctx.enqueueWork(() -> CEIDataMaps.applyClientSnapshot(payload.packet().values())));
+            registrar.playToClient(CONFIG_SYNC_TYPE, CONFIG_SYNC_CODEC,
+                    (payload, ctx) -> ctx.enqueueWork(() -> CEIConfig.applyServerSnapshot(payload.packet().snapshot())));
+        });
     }
 
     public static void sendStateSnapshot(ServerPlayer player) {
-        ServerPlayNetworking.send(player, new DataMapSyncPayload(CEIDataMapSyncPacket.create()));
-        ServerPlayNetworking.send(player, new ConfigSyncPayload(CEIConfigSyncPacket.create()));
+        PacketDistributor.sendToPlayer(player, new DataMapSyncPayload(CEIDataMapSyncPacket.create()));
+        PacketDistributor.sendToPlayer(player, new ConfigSyncPayload(CEIConfigSyncPacket.create()));
     }
 
     public record DataMapSyncPayload(CEIDataMapSyncPacket packet) implements CustomPacketPayload {

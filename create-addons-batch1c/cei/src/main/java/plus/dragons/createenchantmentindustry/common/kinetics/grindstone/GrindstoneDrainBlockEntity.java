@@ -17,6 +17,7 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.kinetics.grindstone;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
 
 import com.zurrtum.create.AllRecipeTypes;
 import com.zurrtum.create.api.behaviour.BlockEntityBehaviour;
@@ -29,13 +30,8 @@ import com.zurrtum.create.content.processing.recipe.ProcessingInventory;
 import com.zurrtum.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.zurrtum.create.foundation.fluid.FluidIngredient;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import com.zurrtum.create.infrastructure.transfer.FluidInventoryStorage;
 import java.util.List;
 import java.util.Optional;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.item.ContainerStorage;
-import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -115,15 +111,15 @@ public class GrindstoneDrainBlockEntity extends KineticBlockEntity implements Cl
         behaviours.add(advancement);
     }
 
-    public @Nullable Storage<ItemVariant> getItemStorage(@Nullable Direction side) {
-        return side != Direction.DOWN ? ContainerStorage.of(inventory, side) : null;
+    public @Nullable net.minecraft.world.Container getItemStorage(@Nullable Direction side) {
+        return side != Direction.DOWN ? inventory : null;
     }
 
-    public @Nullable Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
+    public @Nullable FluidInventory getFluidStorage(@Nullable Direction side) {
         return tank != null
                 && (side == null
                         || side == getBlockState().getValue(HorizontalKineticBlock.HORIZONTAL_FACING).getOpposite())
-                                ? FluidInventoryStorage.of(tank.getCapability(), side)
+                                ? tank.getCapability()
                                 : null;
     }
 

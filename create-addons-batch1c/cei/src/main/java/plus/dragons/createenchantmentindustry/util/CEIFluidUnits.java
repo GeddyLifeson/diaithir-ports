@@ -19,12 +19,11 @@
 package plus.dragons.createenchantmentindustry.util;
 
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.minecraft.world.level.material.Fluid;
 
 /** Centralized conversion between legacy recipe/config mB and Fabric transfer units. */
 public final class CEIFluidUnits {
-    private static final long MILLIBUCKET = FluidConstants.BUCKET / 1000;
+    private static final long MILLIBUCKET = 81L;
 
     private CEIFluidUnits() {}
 

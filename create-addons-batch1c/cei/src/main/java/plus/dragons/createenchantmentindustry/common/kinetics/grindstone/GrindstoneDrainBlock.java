@@ -17,6 +17,9 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.kinetics.grindstone;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
+import com.zurrtum.create.infrastructure.fluids.FluidInventoryProvider;
+import net.minecraft.world.level.LevelAccessor;
 
 import com.zurrtum.create.AllBlocks;
 import com.zurrtum.create.AllShapes;
@@ -27,9 +30,7 @@ import com.zurrtum.create.content.kinetics.base.HorizontalKineticBlock;
 import com.zurrtum.create.content.schematics.requirement.ItemRequirement;
 import com.zurrtum.create.foundation.block.IBE;
 import java.util.List;
-import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import plus.dragons.createdragonsplus.compat.Transaction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
@@ -54,7 +55,7 @@ import org.jetbrains.annotations.Nullable;
 import plus.dragons.createenchantmentindustry.common.advancement.AdvancementBehaviour;
 import plus.dragons.createenchantmentindustry.common.registry.CEIBlockEntities;
 
-public class GrindstoneDrainBlock extends HorizontalKineticBlock implements IBE<GrindstoneDrainBlockEntity>, SpecialBlockItemRequirement {
+public class GrindstoneDrainBlock extends HorizontalKineticBlock implements IBE<GrindstoneDrainBlockEntity>, com.zurrtum.create.infrastructure.items.ItemInventoryProvider<GrindstoneDrainBlockEntity>, SpecialBlockItemRequirement, FluidInventoryProvider<GrindstoneDrainBlockEntity> {
     protected static VoxelShape SHAPE = new AllShapes.Builder(AllShapes.CASING_13PX.get(Direction.UP))
             .add(3, 3, 3, 13, 13, 13)
             .build();
@@ -102,20 +103,21 @@ public class GrindstoneDrainBlock extends HorizontalKineticBlock implements IBE<
         if (drain == null)
             return;
 
-        Storage<ItemVariant> capability = drain.getItemStorage(null);
+        net.minecraft.world.Container capability = drain.getItemStorage(null);
         if (capability == null)
             return;
 
         ItemStack original = itemEntity.getItem();
-        long inserted;
-        try (Transaction transaction = Transaction.openOuter()) {
-            inserted = capability.insert(ItemVariant.of(original), original.getCount(), transaction);
-            if (inserted == 0)
-                return;
-            transaction.commit();
+        int inserted = 0;
+        if (capability.getItem(0).isEmpty() && capability.canPlaceItem(0, original)) {
+            inserted = Math.min(original.getCount(), capability.getMaxStackSize(original));
+            if (inserted > 0)
+                capability.setItem(0, original.copyWithCount(inserted));
         }
+        if (inserted == 0)
+            return;
         ItemStack remainder = original.copy();
-        remainder.shrink(Math.toIntExact(inserted));
+        remainder.shrink(inserted);
         if (remainder.isEmpty()) itemEntity.discard();
         else itemEntity.setItem(remainder);
     }
@@ -181,5 +183,15 @@ public class GrindstoneDrainBlock extends HorizontalKineticBlock implements IBE<
                 new ItemRequirement.StackRequirement(new ItemStack(grindstone), ItemRequirement.ItemUseType.CONSUME),
                 new ItemRequirement.StackRequirement(
                         new ItemStack(AllBlocks.ITEM_DRAIN), ItemRequirement.ItemUseType.CONSUME)));
+    }
+
+    @Override
+    public FluidInventory getFluidInventory(LevelAccessor world, BlockPos pos, BlockState state, GrindstoneDrainBlockEntity be, @Nullable Direction context) {
+        return be.getFluidStorage(context);
+    }
+
+    @Override
+    public net.minecraft.world.Container getInventory(LevelAccessor world, BlockPos pos, BlockState state, GrindstoneDrainBlockEntity be, @Nullable Direction context) {
+        return be.getItemStorage(context);
     }
 }

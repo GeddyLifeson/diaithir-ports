@@ -24,8 +24,8 @@ import com.zurrtum.create.client.content.kinetics.base.KineticBlockEntityRendere
 import com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual;
 import com.zurrtum.create.client.foundation.blockEntity.renderer.SmartBlockEntityRenderer;
 import com.zurrtum.create.client.ponder.foundation.PonderIndex;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import plus.dragons.createdragonsplus.client.processing.blaze.BlazeRenderModelProvider;
 import plus.dragons.createdragonsplus.client.processing.blaze.BlazeRenderModels;
@@ -47,8 +47,7 @@ import plus.dragons.createenchantmentindustry.common.registry.CEIDataMaps;
 import plus.dragons.createenchantmentindustry.config.CEIConfig;
 
 /** Client-only registration for rendering, Ponder and synchronized data-map state. */
-public final class CEIClient implements ClientModInitializer {
-    @Override
+public final class CEIClient {
     public void onInitializeClient() {
         CEIConfig.initializeClient();
         CEIClientNetwork.register();
@@ -60,7 +59,7 @@ public final class CEIClient implements ClientModInitializer {
         CEITooltipBehaviours.register();
         registerBlockEntityRenderers();
         PonderIndex.addPlugin(new CEIPonderPlugin());
-        ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
+        NeoForge.EVENT_BUS.addListener(ClientPlayerNetworkEvent.LoggingOut.class, event -> {
             CEIDataMaps.clearClientSnapshot();
             CEIConfig.clearServerSnapshot();
         });

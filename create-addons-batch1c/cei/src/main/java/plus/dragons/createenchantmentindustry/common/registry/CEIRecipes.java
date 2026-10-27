@@ -19,7 +19,6 @@
 package plus.dragons.createenchantmentindustry.common.registry;
 
 import java.util.function.Supplier;
-import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -56,8 +55,6 @@ public final class CEIRecipes {
         grindingType = registerType(GRINDING.getId());
         printingSerializer = registerSerializer(PRINTING.getId(), PrintingRecipe.Serializer.INSTANCE);
         grindingSerializer = registerSerializer(GRINDING.getId(), GrindingRecipe.Serializer.INSTANCE);
-        RecipeSynchronization.synchronizeRecipeSerializer(printingSerializer);
-        RecipeSynchronization.synchronizeRecipeSerializer(grindingSerializer);
     }
 
     private static <R extends Recipe<?>> CDPRecipeTypeInfo<R> info(

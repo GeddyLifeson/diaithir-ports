@@ -26,7 +26,7 @@ import com.zurrtum.create.content.equipment.sandPaper.SandPaperItem;
 import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
 import com.zurrtum.create.content.kinetics.base.RotatedPillarKineticBlock;
 import com.zurrtum.create.foundation.block.IBE;
-import net.fabricmc.fabric.api.entity.FakePlayer;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;

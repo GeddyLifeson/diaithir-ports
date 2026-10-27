@@ -17,17 +17,14 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.experience;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
 
 import com.zurrtum.create.api.behaviour.BlockEntityBehaviour;
 import com.zurrtum.create.content.processing.burner.BlazeBurnerBlock.HeatLevel;
 import com.zurrtum.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.zurrtum.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour.TankSegment;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import com.zurrtum.create.infrastructure.transfer.FluidInventoryStorage;
 import java.util.List;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
-import net.fabricmc.fabric.api.transfer.v1.storage.base.CombinedStorage;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -154,13 +151,11 @@ public abstract class BlazeExperienceBlockEntity extends BlazeBlockEntity {
                 .forGoggles(tooltip, 2);
     }
 
-    public @Nullable Storage<FluidVariant> getFluidStorage(@Nullable Direction side) {
+    public @Nullable FluidInventory getFluidStorage(@Nullable Direction side) {
         if (normalTank == null || specialTank == null || isRemoved() || side != null && side != Direction.DOWN) {
             return null;
         }
-        return new CombinedStorage<>(List.of(
-                FluidInventoryStorage.of(normalTank.getCapability(), side),
-                FluidInventoryStorage.of(specialTank.getCapability(), side)));
+        return new com.zurrtum.create.infrastructure.fluids.CombinedTankWrapper(normalTank.getCapability(), specialTank.getCapability());
     }
 
     public boolean consumeExperience(int amount, boolean special, boolean simulate) {

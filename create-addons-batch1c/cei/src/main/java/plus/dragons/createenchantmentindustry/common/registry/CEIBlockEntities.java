@@ -19,9 +19,6 @@
 package plus.dragons.createenchantmentindustry.common.registry;
 
 import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
-import net.fabricmc.fabric.api.transfer.v1.item.ItemStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -68,21 +65,8 @@ public final class CEIBlockEntities {
         // Class initialization performs the ordered vanilla registrations above.
     }
 
-    public static synchronized void registerStorageProviders() {
-        if (storageProvidersRegistered) {
-            return;
-        }
-        storageProvidersRegistered = true;
-        FluidStorage.SIDED.registerForBlockEntity(GrindstoneDrainBlockEntity::getFluidStorage, GRINDSTONE_DRAIN.get());
-        ItemStorage.SIDED.registerForBlockEntity(GrindstoneDrainBlockEntity::getItemStorage, GRINDSTONE_DRAIN.get());
-        FluidStorage.SIDED.registerForBlockEntity(PrinterBlockEntity::getFluidStorage, PRINTER.get());
-        FluidStorage.SIDED.registerForBlockEntity(BlazeEnchanterBlockEntity::getFluidStorage, BLAZE_ENCHANTER.get());
-        FluidStorage.SIDED.registerForBlockEntity(BlazeForgerBlockEntity::getFluidStorage, BLAZE_FORGER.get());
-        FluidStorage.SIDED.registerForBlockEntity(
-                ClassicBlazeEnchanterBlockEntity::getFluidStorage, CLASSIC_BLAZE_ENCHANTER.get());
-        FluidStorage.SIDED.registerForBlockEntity(
-                ExperienceLanternBlockEntity::getFluidStorage, EXPERIENCE_LANTERN.get());
-    }
+    /** Fluid and item access is provided by the blocks (FluidInventoryProvider, ItemInventoryProvider). */
+    public static synchronized void registerStorageProviders() {}
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private static <T extends BlockEntity> CEIRegistryEntry<BlockEntityType<T>> register(

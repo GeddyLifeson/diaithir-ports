@@ -12,6 +12,7 @@ import plus.dragons.createdragonsplus.network.CDPNetworking;
 public class CreateDragonsPlusNeoForge {
     public CreateDragonsPlusNeoForge(IEventBus modBus, ModContainer container) {
         new CreateDragonsPlus().onInitialize();
+        plus.dragons.createdragonsplus.compat.ServerLifecycleEvents.init();
         CDPNetworking.register(modBus);
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
             modBus.addListener(FMLClientSetupEvent.class,

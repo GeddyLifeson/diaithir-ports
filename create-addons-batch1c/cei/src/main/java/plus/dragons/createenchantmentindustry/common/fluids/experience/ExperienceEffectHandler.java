@@ -21,7 +21,7 @@ package plus.dragons.createenchantmentindustry.common.fluids.experience;
 import com.zurrtum.create.api.effect.OpenPipeEffectHandler;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
 import java.util.List;
-import net.fabricmc.fabric.api.entity.FakePlayer;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ExperienceOrb;

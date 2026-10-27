@@ -24,10 +24,8 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import net.fabricmc.fabric.api.transfer.v1.item.ContainerStorage;
-import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
-import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext;
+import plus.dragons.createdragonsplus.compat.Transaction;
+import plus.dragons.createdragonsplus.compat.TransactionContext;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.EnchantmentTags;
@@ -51,7 +49,6 @@ public class BlazeForgerInventory extends ItemStackHandler {
     private static final int FIXED_SLOT_INVENTORY_VERSION = 1;
 
     private final BlazeForgerBlockEntity forger;
-    private final ContainerStorage transferStorage;
     private boolean suppressCallbacks;
     private int cost;
     private BlazeForgerMode operation;
@@ -62,7 +59,6 @@ public class BlazeForgerInventory extends ItemStackHandler {
     public BlazeForgerInventory(BlazeForgerBlockEntity forger) {
         super(6);
         this.forger = forger;
-        this.transferStorage = ContainerStorage.of(this, null);
         this.operation = BlazeForgerMode.MERGE;
         this.conflicting = false;
         this.overCap = false;
@@ -86,13 +82,13 @@ public class BlazeForgerInventory extends ItemStackHandler {
         return 4;
     }
 
-    public boolean isItemValid(int slot, ItemVariant resource, int count) {
+    public boolean isItemValid(int slot, ItemStack resource, int count) {
         return slot >= 0 && slot < 2 && !hasRemainingOutput();
     }
 
     @Override
     public boolean canPlaceItem(int slot, ItemStack stack) {
-        return isItemValid(slot, ItemVariant.of(stack), stack.getCount());
+        return isItemValid(slot, stack, stack.getCount());
     }
 
     public int getSlotCount() {
@@ -131,11 +127,14 @@ public class BlazeForgerInventory extends ItemStackHandler {
 
     public ItemStack insertItem(int slot, ItemStack stack, TransactionContext transaction) {
         validateSlotIndex(slot);
-        if (slot > 1 || stack.isEmpty() || hasRemainingOutput())
+        if (slot > 1 || stack.isEmpty() || hasRemainingOutput() || !getStackInSlot(slot).isEmpty())
             return stack;
-        long inserted = transferStorage.getSlot(slot).insert(ItemVariant.of(stack), stack.getCount(), transaction);
+        ItemStack previous = getStackInSlot(slot).copy();
+        setInternal(slot, stack.copyWithCount(1));
+        transaction.addRollback(() -> setInternal(slot, previous));
+        transaction.addCommitAction(() -> onContentsChanged(slot));
         ItemStack remainder = stack.copy();
-        remainder.shrink(Math.toIntExact(inserted));
+        remainder.shrink(1);
         return remainder;
     }
 
@@ -161,9 +160,11 @@ public class BlazeForgerInventory extends ItemStackHandler {
         ItemStack stored = getStackInSlot(slot);
         if (stored.isEmpty())
             return ItemStack.EMPTY;
-        long extracted = transferStorage.getSlot(slot).extract(ItemVariant.of(stored), amount, transaction);
+        ItemStack previous = stored.copy();
         ItemStack result = stored.copy();
-        result.setCount(Math.toIntExact(extracted));
+        setInternal(slot, ItemStack.EMPTY);
+        transaction.addRollback(() -> setInternal(slot, previous));
+        transaction.addCommitAction(() -> onContentsChanged(slot));
         return result;
     }
 

@@ -35,11 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
-import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
-import net.fabricmc.loader.api.FabricLoader;
+import plus.dragons.createdragonsplus.compat.ServerLifecycleEvents;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -145,7 +141,6 @@ public final class CEIDataMaps {
     }
 
     public static void register() {
-        CEINetwork.register();
         ServerLifecycleEvents.SERVER_STARTING.register(ACTIVE_SERVER::set);
         ServerLifecycleEvents.SERVER_STARTED.register(server -> SERVER.set(load(server.getResourceManager())));
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resources, success) -> {
@@ -201,7 +196,7 @@ public final class CEIDataMaps {
     private static Snapshot current() {
         MinecraftServer server = ACTIVE_SERVER.get();
         boolean serverThread = server != null && server.isSameThread();
-        return (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER || serverThread)
+        return (com.zurrtum.create.platform.FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER || serverThread)
                 ? SERVER.get()
                 : CLIENT.get();
     }
@@ -326,15 +321,6 @@ public final class CEIDataMaps {
             return true;
         }
         JsonObject object = element.getAsJsonObject();
-        if (object.has(ResourceConditions.CONDITIONS_KEY)) {
-            ResourceCondition condition = ResourceCondition.CONDITION_CODEC
-                    .parse(JsonOps.INSTANCE, object.get(ResourceConditions.CONDITIONS_KEY))
-                    .getOrThrow(message -> new IllegalArgumentException(
-                            "Failed to decode Fabric conditions for " + source + ": " + message));
-            if (!condition.test(CEIDataMaps::lookupRegistryInfo)) {
-                return false;
-            }
-        }
         JsonElement conditions = firstPresent(
                 object,
                 "forge:conditions",
@@ -373,7 +359,7 @@ public final class CEIDataMaps {
                 if (!condition.has("modid")) {
                     throw new IllegalArgumentException(source + " mod_loaded condition is missing modid");
                 }
-                yield FabricLoader.getInstance().isModLoaded(condition.get("modid").getAsString());
+                yield com.zurrtum.create.platform.FabricLoader.getInstance().isModLoaded(condition.get("modid").getAsString());
             }
             case "forge:all_mods_loaded", "neoforge:all_mods_loaded" -> {
                 JsonElement values = firstPresent(condition, "values", "modids", "mods");
@@ -383,7 +369,7 @@ public final class CEIDataMaps {
                 for (JsonElement mod : values.getAsJsonArray()) {
                     if (!mod.isJsonPrimitive() || !mod.getAsJsonPrimitive().isString())
                         throw new IllegalArgumentException(source + " all_mods_loaded contains a non-string mod id");
-                    loaded &= FabricLoader.getInstance().isModLoaded(mod.getAsString());
+                    loaded &= com.zurrtum.create.platform.FabricLoader.getInstance().isModLoaded(mod.getAsString());
                 }
                 yield loaded;
             }
@@ -452,17 +438,6 @@ public final class CEIDataMaps {
             throw new IllegalStateException("Dynamic registry " + type.registryKey().identifier() + " is unavailable");
         }
         return server.registryAccess().lookupOrThrow(type.registryKey());
-    }
-
-    private static <T> java.util.Optional<RegistryOps.RegistryInfo<T>> lookupRegistryInfo(
-            ResourceKey<? extends Registry<? extends T>> key) {
-        MinecraftServer server = ACTIVE_SERVER.get();
-        if (server == null) {
-            return java.util.Optional.empty();
-        }
-        return server.registryAccess()
-                .lookup(key)
-                .map(RegistryOps.RegistryInfo::fromRegistryLookup);
     }
 
     private record Snapshot(Map<Identifier, Map<Identifier, Object>> values) {

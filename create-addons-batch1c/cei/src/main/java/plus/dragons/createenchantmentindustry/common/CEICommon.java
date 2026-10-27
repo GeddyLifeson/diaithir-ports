@@ -19,8 +19,7 @@
 package plus.dragons.createenchantmentindustry.common;
 
 import com.mojang.logging.LogUtils;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import plus.dragons.createdragonsplus.compat.ServerLifecycleEvents;
 import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import plus.dragons.createenchantmentindustry.common.fluids.printer.behaviour.CEIPrintingBehaviours;
@@ -42,11 +41,10 @@ import plus.dragons.createenchantmentindustry.common.registry.CEIStats;
 import plus.dragons.createenchantmentindustry.config.CEIConfig;
 
 /** Common, dedicated-server-safe Fabric entrypoint. */
-public final class CEICommon implements ModInitializer {
+public final class CEICommon {
     public static final String ID = "create_enchantment_industry";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    @Override
     public void onInitialize() {
         // Blocks and fluids were registered earlier through CEICreatePlugin. Calling these is an idempotent assertion
         // and ensures stress defaults exist before the config builders freeze.

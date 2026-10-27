@@ -17,6 +17,9 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.printer;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
+import com.zurrtum.create.infrastructure.fluids.FluidInventoryProvider;
+import net.minecraft.world.level.LevelAccessor;
 
 import com.mojang.serialization.MapCodec;
 import com.zurrtum.create.AllShapes;
@@ -44,7 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import plus.dragons.createenchantmentindustry.common.advancement.AdvancementBehaviour;
 import plus.dragons.createenchantmentindustry.common.registry.CEIBlockEntities;
 
-public class PrinterBlock extends HorizontalDirectionalBlock implements IWrenchable, IBE<PrinterBlockEntity> {
+public class PrinterBlock extends HorizontalDirectionalBlock implements IWrenchable, IBE<PrinterBlockEntity>, FluidInventoryProvider<PrinterBlockEntity> {
     public static final MapCodec<PrinterBlock> CODEC = simpleCodec(PrinterBlock::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -104,5 +107,10 @@ public class PrinterBlock extends HorizontalDirectionalBlock implements IWrencha
     @Override
     public BlockEntityType<? extends PrinterBlockEntity> getBlockEntityType() {
         return CEIBlockEntities.PRINTER.get();
+    }
+
+    @Override
+    public FluidInventory getFluidInventory(LevelAccessor world, BlockPos pos, BlockState state, PrinterBlockEntity be, @Nullable Direction context) {
+        return be.getFluidStorage(context);
     }
 }

@@ -19,7 +19,7 @@
 package plus.dragons.createenchantmentindustry.config;
 
 import com.zurrtum.create.catnip.config.Builder;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import plus.dragons.createdragonsplus.compat.ServerLifecycleEvents;
 import plus.dragons.createenchantmentindustry.common.CEICommon;
 
 /** Owns the process-wide config instances used by Create Fly's JSON config builder. */

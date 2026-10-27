@@ -144,11 +144,6 @@ public final class CEIAdvancements extends AdvancementProvider {
         ENTRIES.forEach(advancement -> advancement.provideLang(consumer));
     }
 
-    @Override
-    public String getName() {
-        return "Create: Enchantment Industry Advancements";
-    }
-
     private static void generate(
             HolderLookup.Provider registries, Consumer<AdvancementHolder> output) {
         save(output, ROOT, null, CEIItems.EXPERIENCE_BUCKET.get(), AdvancementType.TASK, false, false, false, inventory());

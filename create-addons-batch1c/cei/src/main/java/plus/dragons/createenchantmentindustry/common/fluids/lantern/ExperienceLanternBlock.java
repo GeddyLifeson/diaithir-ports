@@ -17,6 +17,11 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.lantern;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
+import com.zurrtum.create.infrastructure.fluids.FluidInventoryProvider;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.LevelAccessor;
+import org.jetbrains.annotations.Nullable;
 
 import com.zurrtum.create.foundation.block.IBE;
 import com.zurrtum.create.foundation.block.WrenchableDirectionalBlock;
@@ -33,7 +38,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import plus.dragons.createenchantmentindustry.common.registry.CEIBlockEntities;
 import plus.dragons.createenchantmentindustry.common.registry.CEIShapes;
 
-public class ExperienceLanternBlock extends WrenchableDirectionalBlock implements IBE<ExperienceLanternBlockEntity> {
+public class ExperienceLanternBlock extends WrenchableDirectionalBlock implements IBE<ExperienceLanternBlockEntity>, FluidInventoryProvider<ExperienceLanternBlockEntity> {
     public static final IntegerProperty LIGHT = IntegerProperty.create("light", 0, 15);
 
     public ExperienceLanternBlock(Properties properties) {
@@ -65,5 +70,10 @@ public class ExperienceLanternBlock extends WrenchableDirectionalBlock implement
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return CEIShapes.LANTERN_SHAPE.get(pState.getValue(FACING));
+    }
+
+    @Override
+    public FluidInventory getFluidInventory(LevelAccessor world, BlockPos pos, BlockState state, ExperienceLanternBlockEntity be, @Nullable Direction context) {
+        return be.getFluidStorage(context);
     }
 }

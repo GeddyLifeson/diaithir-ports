@@ -17,11 +17,15 @@
  */
 
 package plus.dragons.createenchantmentindustry.common.fluids.experience;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
+import com.zurrtum.create.infrastructure.fluids.FluidInventoryProvider;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.LevelAccessor;
 
 import com.zurrtum.create.AllItems;
-import net.fabricmc.fabric.api.entity.FakePlayer;
-import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext;
-import net.fabricmc.fabric.api.transfer.v1.transaction.base.SnapshotParticipant;
+import net.neoforged.neoforge.common.util.FakePlayer;
+import plus.dragons.createdragonsplus.compat.TransactionContext;
+import plus.dragons.createdragonsplus.compat.SnapshotParticipant;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -36,7 +40,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlock;
 
-public abstract class BlazeExperienceBlock<T extends BlazeExperienceBlockEntity> extends BlazeBlock<T> {
+public abstract class BlazeExperienceBlock<T extends BlazeExperienceBlockEntity> extends BlazeBlock<T> implements FluidInventoryProvider<T> {
     public BlazeExperienceBlock(Properties properties) {
         super(properties);
     }
@@ -162,5 +166,10 @@ public abstract class BlazeExperienceBlock<T extends BlazeExperienceBlockEntity>
         static FuelApplication pass() {
             return new FuelApplication(InteractionResult.PASS, ItemStack.EMPTY);
         }
+    }
+
+    @Override
+    public FluidInventory getFluidInventory(LevelAccessor world, BlockPos pos, BlockState state, T be, @Nullable Direction context) {
+        return be.getFluidStorage(context);
     }
 }

@@ -20,137 +20,45 @@ package plus.dragons.createenchantmentindustry.util;
 
 import com.zurrtum.create.infrastructure.fluids.FluidInventory;
 import com.zurrtum.create.infrastructure.fluids.FluidStack;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.world.level.material.Fluid;
 
-/** Transaction-safe helpers for CEI fluid operations. */
+/** Simulate-or-apply helpers for CEI fluid operations on Create's native fluid inventories. */
 public final class CEITransfer {
     private CEITransfer() {}
 
-    public static long insert(Storage<FluidVariant> storage, FluidStack stack, boolean simulate) {
-        if (storage == null || stack.isEmpty())
+    public static long insert(FluidInventory inventory, FluidStack stack, boolean simulate) {
+        if (inventory == null || stack.isEmpty())
             return 0;
-        return insert(storage, variantOf(stack), stack.getAmount(), simulate);
-    }
-
-    static <T> long insert(Storage<T> storage, T resource, long amount, boolean simulate) {
-        if (storage == null || resource == null || amount <= 0)
-            return 0;
-        try (Transaction transaction = Transaction.openOuter()) {
-            long inserted = storage.insert(resource, amount, transaction);
-            if (!simulate)
-                transaction.commit();
-            return inserted;
-        }
-    }
-
-    public static boolean insertExact(Storage<FluidVariant> storage, FluidStack stack, boolean simulate) {
-        if (storage == null || stack.isEmpty())
-            return false;
-        return insertExact(storage, variantOf(stack), stack.getAmount(), simulate);
-    }
-
-    static <T> boolean insertExact(Storage<T> storage, T resource, long amount, boolean simulate) {
-        if (storage == null || resource == null || amount <= 0)
-            return false;
-        try (Transaction transaction = Transaction.openOuter()) {
-            long inserted = storage.insert(resource, amount, transaction);
-            if (inserted != amount)
-                return false;
-            if (!simulate)
-                transaction.commit();
-            return true;
-        }
-    }
-
-    public static long extract(Storage<FluidVariant> storage, FluidStack stack, boolean simulate) {
-        if (storage == null || stack.isEmpty())
-            return 0;
-        return extract(storage, variantOf(stack), stack.getAmount(), simulate);
-    }
-
-    static <T> long extract(Storage<T> storage, T resource, long amount, boolean simulate) {
-        if (storage == null || resource == null || amount <= 0)
-            return 0;
-        try (Transaction transaction = Transaction.openOuter()) {
-            long extracted = storage.extract(resource, amount, transaction);
-            if (!simulate)
-                transaction.commit();
-            return extracted;
-        }
-    }
-
-    public static boolean extractExact(Storage<FluidVariant> storage, FluidStack stack, boolean simulate) {
-        if (storage == null || stack.isEmpty())
-            return false;
-        return extractExact(storage, variantOf(stack), stack.getAmount(), simulate);
-    }
-
-    static <T> boolean extractExact(Storage<T> storage, T resource, long amount, boolean simulate) {
-        if (storage == null || resource == null || amount <= 0)
-            return false;
-        try (Transaction transaction = Transaction.openOuter()) {
-            long extracted = storage.extract(resource, amount, transaction);
-            if (extracted != amount)
-                return false;
-            if (!simulate)
-                transaction.commit();
-            return true;
-        }
-    }
-
-    public static long insertMillibuckets(
-            Storage<FluidVariant> storage,
-            Fluid fluid,
-            long amount,
-            boolean simulate) {
-        return insert(storage, CEIFluidUnits.stack(fluid, amount), simulate);
-    }
-
-    /**
-     * Inserts legacy millibucket amounts into Create Fly's native fluid inventory.
-     * This overload keeps gameplay and Ponder code on the same unit conversion path
-     * while reserving Fabric transactions for actual Transfer API boundaries.
-     */
-    public static long insertMillibuckets(
-            FluidInventory inventory,
-            Fluid fluid,
-            long amount,
-            boolean simulate) {
-        if (inventory == null || fluid == null || amount <= 0)
-            return 0;
-        FluidStack stack = CEIFluidUnits.stack(fluid, amount);
         return simulate ? inventory.countSpace(stack) : inventory.insert(stack);
     }
 
-    public static long extractMillibuckets(
-            Storage<FluidVariant> storage,
-            Fluid fluid,
-            long amount,
-            boolean simulate) {
-        return extract(storage, CEIFluidUnits.stack(fluid, amount), simulate);
+    public static boolean insertExact(FluidInventory inventory, FluidStack stack, boolean simulate) {
+        if (inventory == null || stack.isEmpty())
+            return false;
+        return simulate ? inventory.countSpace(stack) == stack.getAmount() : inventory.preciseInsert(stack);
     }
 
-    public static long extractMillibuckets(
-            FluidInventory inventory,
-            Fluid fluid,
-            long amount,
-            boolean simulate) {
-        if (inventory == null || fluid == null || amount <= 0)
+    public static long extract(FluidInventory inventory, FluidStack stack, boolean simulate) {
+        if (inventory == null || stack.isEmpty())
             return 0;
-        FluidStack stack = CEIFluidUnits.stack(fluid, amount);
         return simulate ? inventory.count(stack) : inventory.extract(stack);
     }
 
-    public static FluidVariant variantOf(FluidStack stack) {
-        return FluidVariant.of(stack.getFluid(), stack.getComponentChanges());
+    public static boolean extractExact(FluidInventory inventory, FluidStack stack, boolean simulate) {
+        if (inventory == null || stack.isEmpty())
+            return false;
+        return simulate ? inventory.count(stack) == stack.getAmount() : inventory.preciseExtract(stack);
     }
 
-    public static FluidStack stackOf(FluidVariant variant, long amount) {
-        if (variant == null || variant.isBlank() || amount <= 0)
-            return FluidStack.EMPTY;
-        return new FluidStack(variant.getFluid(), Math.toIntExact(amount), variant.getComponentsPatch());
+    public static long insertMillibuckets(FluidInventory inventory, Fluid fluid, long amount, boolean simulate) {
+        if (inventory == null || fluid == null || amount <= 0)
+            return 0;
+        return insert(inventory, CEIFluidUnits.stack(fluid, amount), simulate);
+    }
+
+    public static long extractMillibuckets(FluidInventory inventory, Fluid fluid, long amount, boolean simulate) {
+        if (inventory == null || fluid == null || amount <= 0)
+            return 0;
+        return extract(inventory, CEIFluidUnits.stack(fluid, amount), simulate);
     }
 }

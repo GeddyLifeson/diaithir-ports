@@ -19,7 +19,7 @@
 package plus.dragons.createenchantmentindustry.client;
 
 import com.zurrtum.create.client.AllFluidConfigs;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
+
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.resources.model.sprite.Material;
@@ -45,7 +45,8 @@ public final class CEIFluidRenderers {
                 new Material(FLOW, true),
                 null,
                 tint);
-        FluidRenderingRegistry.register(source, flowing, model);
+        AllFluidConfigs.MODEL.put((net.minecraft.world.level.material.FlowingFluid) source, model);
+        AllFluidConfigs.MODEL.put((net.minecraft.world.level.material.FlowingFluid) flowing, model);
         AllFluidConfigs.FOG_COLOR.put(source, COLOR);
         AllFluidConfigs.FOG_COLOR.put(flowing, COLOR);
         AllFluidConfigs.FOG_DISTANCE.put(source, () -> 96.0F / 256.0F);

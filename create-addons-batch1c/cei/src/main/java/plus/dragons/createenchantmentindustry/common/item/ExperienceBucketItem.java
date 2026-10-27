@@ -18,7 +18,7 @@
 
 package plus.dragons.createenchantmentindustry.common.item;
 
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -52,7 +52,7 @@ public final class ExperienceBucketItem extends FoilBucketItem {
         Player player = entity instanceof Player source ? source : null;
         level.playSound(player, pos, SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 0.5F, 1.0F);
         if (level instanceof ServerLevel serverLevel) {
-            int experience = Math.toIntExact(CEIFluidUnits.toMillibuckets(FluidConstants.BUCKET));
+            int experience = Math.toIntExact(CEIFluidUnits.toMillibuckets(81000L));
             ExperienceOrb.award(serverLevel, pos.getCenter(), experience);
         }
         return true;
