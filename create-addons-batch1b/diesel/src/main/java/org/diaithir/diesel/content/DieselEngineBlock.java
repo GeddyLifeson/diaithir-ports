@@ -73,6 +73,38 @@ public class DieselEngineBlock extends DirectionalKineticBlock implements IBE<Di
     }
 
     @Override
+    protected net.minecraft.world.InteractionResult useItemOn(net.minecraft.world.item.ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                                              net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand,
+                                                              net.minecraft.world.phys.BlockHitResult hit) {
+        EngineUpgrade up = EngineUpgrade.forItem(stack.getItem());
+        if (up == EngineUpgrade.NONE) return net.minecraft.world.InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.isClientSide()) return net.minecraft.world.InteractionResult.SUCCESS;
+        withBlockEntityDo(level, pos, be -> {
+            if (be.upgrade != EngineUpgrade.NONE) return;
+            be.upgrade = up;
+            be.reActivateSource = true;
+            if (!player.isCreative()) stack.shrink(1);
+            be.notifyUpdate();
+        });
+        return net.minecraft.world.InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public net.minecraft.world.InteractionResult onWrenched(BlockState state, net.minecraft.world.item.context.UseOnContext context) {
+        Level level = context.getLevel();
+        if (level.getBlockEntity(context.getClickedPos()) instanceof DieselEngineBlockEntity be && be.upgrade != EngineUpgrade.NONE) {
+            if (!level.isClientSide()) {
+                popResource(level, context.getClickedPos(), new net.minecraft.world.item.ItemStack(be.upgrade.item()));
+                be.upgrade = EngineUpgrade.NONE;
+                be.reActivateSource = true;
+                be.notifyUpdate();
+            }
+            return net.minecraft.world.InteractionResult.SUCCESS;
+        }
+        return super.onWrenched(state, context);
+    }
+
+    @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
             case NORTH, SOUTH -> Shapes.or(Block.box(3, 3, 0, 13, 13, 16), Block.box(0, 0, 0, 16, 4, 16));

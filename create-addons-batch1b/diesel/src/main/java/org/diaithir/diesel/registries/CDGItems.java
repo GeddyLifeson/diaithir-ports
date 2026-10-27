@@ -15,6 +15,11 @@ public class CDGItems {
 
     public static final DeferredItem<BlockItem> BURNER = ITEMS.registerSimpleBlockItem(CDGBlocks.BURNER);
 
+    public static final DeferredItem<Item> ENGINE_SILENCER = ITEMS.registerSimpleItem("engine_silencer");
+    public static final DeferredItem<Item> ENGINE_TURBO = ITEMS.registerSimpleItem("engine_turbocharger");
+
+    public static final DeferredItem<BlockItem> MODULAR_DIESEL_ENGINE = ITEMS.registerSimpleBlockItem(CDGBlocks.MODULAR_DIESEL_ENGINE);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

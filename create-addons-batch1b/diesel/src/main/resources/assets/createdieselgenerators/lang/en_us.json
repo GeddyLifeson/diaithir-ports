@@ -20,5 +20,8 @@
  "item.createdieselgenerators.plant_oil_bucket": "Plant Oil Bucket",
  "block.createdieselgenerators.plant_oil": "Plant Oil",
  "block.createdieselgenerators.canister": "Canister",
- "block.createdieselgenerators.burner": "Burner"
+ "block.createdieselgenerators.burner": "Burner",
+ "item.createdieselgenerators.engine_silencer": "Engine Silencer",
+ "item.createdieselgenerators.engine_turbocharger": "Engine Turbocharger",
+ "block.createdieselgenerators.modular_diesel_engine": "Modular Diesel Engine"
 }

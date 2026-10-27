@@ -124,6 +124,36 @@ def burner():
     w(f"{ROOT}/data/create/tags/block/passive_boiler_heaters.json", {"values": []}) if False else None
     lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.burner"] = "Burner"; json.dump(l, open(lp, "w"), indent=1)
 
+def modular_and_upgrades():
+    png(f"{A}/textures/block/modular_diesel_engine.png", art.machine_face("cdg_modular", art.STEEL, art.HAZ_Y, 4))
+    png(f"{A}/textures/block/modular_diesel_engine_end.png", art.machine_top("cdg_modular_end", art.STEEL_D))
+    f = lambda t: {"uv": [0, 0, 16, 16], "texture": t}
+    w(f"{A}/models/block/modular_diesel_engine.json", {"textures": {"side": f"{NS}:block/modular_diesel_engine", "end": f"{NS}:block/modular_diesel_engine_end", "particle": f"{NS}:block/modular_diesel_engine"},
+        "elements": [{"from": [0, 0, 0], "to": [16, 16, 16], "faces": {"north": f("#end"), "south": f("#end"), "east": f("#side"), "west": f("#side"), "up": f("#side"), "down": f("#side")}}]})
+    v = {}
+    for facing, rot in (("north", {}), ("east", {"y": 90}), ("south", {"y": 180}), ("west", {"y": 270})):
+        for pipe in ("true", "false"):
+            for lit in ("true", "false"):
+                for pw in ("true", "false"):
+                    v[f"facing={facing},lit={lit},pipe={pipe},powered={pw}"] = {"model": f"{NS}:block/modular_diesel_engine", **rot}
+    w(f"{A}/blockstates/modular_diesel_engine.json", {"variants": v})
+    w(f"{A}/items/modular_diesel_engine.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/modular_diesel_engine"}})
+    w(f"{D}/loot_table/blocks/modular_diesel_engine.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:modular_diesel_engine"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/modular_diesel_engine.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["ICI", "BSB", "ICI"],
+        "key": {"I": "minecraft:iron_ingot", "C": "create:andesite_casing", "B": "create:brass_ingot", "S": "create:shaft"}, "result": {"id": f"{NS}:modular_diesel_engine", "count": 1}})
+    for n, col, rec, en in (("engine_silencer", (90, 96, 104), ["III", "IPI", "III"], "Engine Silencer"), ("engine_turbocharger", (180, 140, 60), ["BPB", "ISI", "BPB"], "Engine Turbocharger")):
+        im = Image.new("RGBA", (16, 16), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+        d.ellipse([2, 2, 13, 13], fill=col, outline=(40, 42, 46)); d.ellipse([5, 5, 10, 10], fill=(40, 42, 46))
+        png(f"{A}/textures/item/{n}.png", im)
+        w(f"{A}/models/item/{n}.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{n}"}})
+        w(f"{A}/items/{n}.json", {"model": {"type": "minecraft:model", "model": f"{NS}:item/{n}"}})
+        key = {"I": "minecraft:iron_ingot", "P": "create:iron_sheet"} if n == "engine_silencer" else {"B": "create:brass_ingot", "P": "create:propeller", "I": "minecraft:iron_ingot", "S": "create:shaft"}
+        w(f"{D}/recipe/{n}.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": rec, "key": key, "result": {"id": f"{NS}:{n}", "count": 1}})
+        lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"item.{NS}.{n}"] = en; json.dump(l, open(lp, "w"), indent=1)
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:modular_diesel_engine"); json.dump(d, open(path, "w"), indent=1)
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.modular_diesel_engine"] = "Modular Diesel Engine"; json.dump(l, open(lp, "w"), indent=1)
+
 def recipes_and_worldgen():
     NSF = NS
     def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
@@ -148,4 +178,5 @@ def recipes_and_worldgen():
 main()
 canister()
 burner()
+modular_and_upgrades()
 recipes_and_worldgen()

@@ -29,6 +29,7 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
     private float lastSpeed, lastCapacity;
     private float fuelDebt;
     private boolean signalChanged;
+    public EngineUpgrade upgrade = EngineUpgrade.NONE;
 
     public DieselEngineBlockEntity(BlockPos pos, BlockState state) {
         super(CDGBlockEntityTypes.DIESEL_ENGINE.get(), pos, state);
@@ -69,7 +70,7 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
         Fuels.Per p = props();
         float speed = Math.abs(getGeneratedSpeed());
         if (p == null || speed == 0) return 0;
-        lastCapacityProvided = p.strength() / Math.max(0.01f, speed);
+        lastCapacityProvided = p.strength() * upgrade.multiplier / Math.max(0.01f, speed);
         return lastCapacityProvided;
     }
 
@@ -78,7 +79,7 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
         Fuels.Per p = props();
         float throttle = throttle();
         if (p == null || throttle == 0) return 0;
-        return convertToDirection((movementDirection.getValue() == 1 ? -1 : 1) * p.speed() * throttle, getBlockState().getValue(DieselEngineBlock.FACING));
+        return convertToDirection((movementDirection.getValue() == 1 ? -1 : 1) * p.speed() * upgrade.multiplier * throttle, getBlockState().getValue(DieselEngineBlock.FACING));
     }
 
     @Override
@@ -119,12 +120,14 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
     protected void write(ValueOutput view, boolean clientPacket) {
         super.write(view, clientPacket);
         view.putInt("AnalogSignal", analogSignal);
+        view.putString("Upgrade", upgrade.id);
     }
 
     @Override
     protected void read(ValueInput view, boolean clientPacket) {
         super.read(view, clientPacket);
         analogSignal = view.getIntOr("AnalogSignal", 0);
+        upgrade = EngineUpgrade.byId(view.getStringOr("Upgrade", "none"));
         fuelDebt = 0;
     }
 }

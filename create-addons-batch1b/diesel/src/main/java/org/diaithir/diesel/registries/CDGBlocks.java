@@ -19,4 +19,7 @@ public class CDGBlocks {
 
     public static final DeferredBlock<org.diaithir.diesel.content.burner.BurnerBlock> BURNER = BLOCKS.registerBlock("burner",
         org.diaithir.diesel.content.burner.BurnerBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().lightLevel(st -> st.getValue(org.diaithir.diesel.content.burner.BurnerBlock.LIT) ? 12 : 0));
+
+    public static final DeferredBlock<org.diaithir.diesel.content.modular.ModularDieselEngineBlock> MODULAR_DIESEL_ENGINE = BLOCKS.registerBlock("modular_diesel_engine",
+        org.diaithir.diesel.content.modular.ModularDieselEngineBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().forceSolidOn());
 }

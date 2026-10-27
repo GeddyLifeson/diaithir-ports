@@ -20,4 +20,7 @@ public class CDGBlockEntityTypes {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.burner.BurnerBlockEntity>> BURNER =
         TYPES.register("burner", () -> new BlockEntityType<>(org.diaithir.diesel.content.burner.BurnerBlockEntity::new, Set.of(CDGBlocks.BURNER.get())));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity>> MODULAR_DIESEL_ENGINE =
+        TYPES.register("modular_diesel_engine", () -> new BlockEntityType<>(org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity::new, Set.of(CDGBlocks.MODULAR_DIESEL_ENGINE.get())));
 }
