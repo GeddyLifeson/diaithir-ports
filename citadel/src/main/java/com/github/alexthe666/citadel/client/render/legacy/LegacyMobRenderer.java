@@ -25,6 +25,7 @@ import java.util.List;
  * for Citadel AdvancedEntityModel mobs. Subclasses override the same hooks the 1.21 class had.
  */
 public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicEntityModel<T>> extends EntityRenderer<T, LegacyRenderState> implements LegacyLayerParent<T, M> {
+    private static final java.util.Set<net.minecraft.world.entity.EntityType<?>> FAILED = java.util.concurrent.ConcurrentHashMap.newKeySet();
     protected M model;
     protected final List<LegacyLayer<T, M>> layers = new ArrayList<>();
     protected final EntityRendererProvider.Context context;
@@ -171,9 +172,16 @@ public abstract class LegacyMobRenderer<T extends LivingEntity, M extends BasicE
         RecordingBufferSource rec = new RecordingBufferSource();
         T e = (T) state.entity;
         poseStack.pushPose();
-        render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
-        poseStack.popPose();
-        LegacyRenderContext.end();
-        rec.flush(collector);
+        try {
+            render(e, e.getYRot(), state.partialTick, poseStack, rec, state.lightCoords);
+            poseStack.popPose();
+            LegacyRenderContext.end();
+            rec.flush(collector);
+        } catch (RuntimeException ex) {
+            LegacyRenderContext.end();
+            if (FAILED.add(e.getType())) {
+                com.mojang.logging.LogUtils.getLogger().error("Legacy renderer failed for {}, skipping", e.getType(), ex);
+            }
+        }
     }
 }
