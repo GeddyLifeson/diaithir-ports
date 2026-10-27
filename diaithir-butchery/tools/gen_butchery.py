@@ -1,5 +1,7 @@
 """Writes the butchery data, lang, item models, textures and recipes. Run from diaithir-butchery: python3 tools/gen_butchery.py"""
-import json, os, random
+import json, os, random, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import names
 from PIL import Image
 
 MOD = "diaithirbutchery"
@@ -87,13 +89,13 @@ def texture(name):
     os.makedirs(f"{A}/textures/item", exist_ok=True)
     img.save(f"{A}/textures/item/{name}.png")
 
-lang = {"item.diaithirbutchery.carcass_of": "Carcass of %s", "block.diaithirbutchery.meat_hook": "Meat Hook", "item.diaithirbutchery.meat_hook": "Meat Hook",
+lang = {"item.diaithirbutchery.carcass_of": names.CARCASS_OF, "block.diaithirbutchery.meat_hook": names.item("meat_hook"), "item.diaithirbutchery.meat_hook": names.item("meat_hook"),
         "message.diaithirbutchery.started": "Work has started; finish it with a knife.", "message.diaithirbutchery.unknown": "This carcass cannot be cut."}
 for n in ITEMS:
     texture(n)
     w(f"{A}/items/{n}.json", {"model": {"type": "minecraft:model", "model": f"{MOD}:item/{n}"}})
     w(f"{A}/models/item/{n}.json", {"parent": "minecraft:item/generated", "textures": {"layer0": f"{MOD}:item/{n}"}})
-    lang[f"item.{MOD}.{n}"] = n.replace("_", " ").title()
+    lang[f"item.{MOD}.{n}"] = names.item(n)
 w(f"{A}/lang/en_us.json", lang)
 
 # meat hook: a thin vertical hook, block + item model
