@@ -12,7 +12,7 @@ neoForge {
     runs {
         client {
             client()
-            programArguments.addAll '--username', 'Tester', '--quickPlayMultiplayer', 'localhost:25565'
+            programArguments.addAll '--username', 'Tester', '--quickPlayMultiplayer', (findProperty('qp') ?: 'localhost:25565')
             jvmArgument '-Xmx3G'
         }
         server {

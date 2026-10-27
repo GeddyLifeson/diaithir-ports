@@ -15,11 +15,16 @@ import net.minecraft.util.Mth;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /** Model built from a plan's JSON, with one generic animation: legs walk, wings flap, tails and fins sway, the head looks. */
 public class PlanModel extends EntityModel<FaunaState> {
+    private static final Pattern LIMB = Pattern.compile("(?:leg|arm)(?:_([fb]))?(?:_(\\d))?_([lr])");
     private final Plan plan;
     private final Map<String, ModelPart> parts = new HashMap<>();
+    /** Limb segments hanging off another limb segment; they follow their parent instead of swinging. */
+    private final java.util.Set<String> subLimb = new java.util.HashSet<>();
 
     public PlanModel(ModelPart root, Plan plan) {
         super(root);
@@ -30,7 +35,10 @@ public class PlanModel extends EntityModel<FaunaState> {
     private void index(ModelPart parent, String name) {
         ModelPart p = parent.getChild(name);
         parts.put(name, p);
-        for (String c : plan.children(name)) index(p, c);
+        for (String c : plan.children(name)) {
+            if (LIMB.matcher(name).matches() && LIMB.matcher(c).matches()) subLimb.add(c);
+            index(p, c);
+        }
     }
 
     public static LayerDefinition layer(Plan plan) {
@@ -64,12 +72,15 @@ public class PlanModel extends EntityModel<FaunaState> {
             if (n.equals("head")) {
                 p.yRot += s.yRot * Mth.DEG_TO_RAD * 0.7f;
                 p.xRot += s.xRot * Mth.DEG_TO_RAD * 0.7f;
-            } else if ((n.startsWith("leg_") || n.startsWith("arm_")) && !swim && !s.flying) {
-                String[] k = n.split("_");
-                boolean first = k.length > 1 && (k[1].equals("r") || k[1].equals("l") || k[k.length > 2 ? 2 : 1].equals("1"));
-                if (!first || n.contains("foot")) continue;
-                boolean right = n.endsWith("_r");
-                boolean front = n.startsWith("leg_f") || n.startsWith("arm");
+            } else if (LIMB.matcher(n).matches() && !subLimb.contains(n) && !swim && !s.flying) {
+                // leg_l, leg_1_r, leg_f_2_l, arm_1_l ...: only the first segment of a limb swings, diagonal gait
+                Matcher m = LIMB.matcher(n);
+                m.matches();
+                boolean right = m.group(3).equals("r");
+                boolean arm = n.startsWith("arm");
+                String fb = m.group(1);
+                int idx = m.group(2) == null ? 1 : Integer.parseInt(m.group(2));
+                boolean front = arm || (fb != null ? fb.equals("f") : idx % 2 == 0);
                 float phase = (right == front) ? 0 : Mth.PI;
                 p.xRot += Mth.cos(pos * 0.6662f + phase) * 1.1f * speed;
             } else if (n.startsWith("wing") && plan.fly()) {

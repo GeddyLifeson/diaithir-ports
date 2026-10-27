@@ -63,7 +63,7 @@ public class FaunaMob extends PathfinderMob {
             this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.02F, 0.1F, true);
             this.lookControl = new SmoothSwimmingLookControl(this, 10);
         } else if (plan.fly()) {
-            this.moveControl = new FlyingMoveControl(this, 10, false);
+            this.moveControl = new FlyingMoveControl(this, 10, true);
         }
     }
 
@@ -115,10 +115,15 @@ public class FaunaMob extends PathfinderMob {
         if (inst != null) inst.setBaseValue(v);
     }
 
+    /** A spawn group shares one species, so a herd or school is not a mix. */
+    private record Herd(Species species) implements SpawnGroupData {}
+
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData group) {
         if (species() == null) {
-            Species s = Habitat.pick(plan.name, level, blockPosition(), random);
+            Species s = null;
+            if (group instanceof Herd h && Habitat.candidates(plan.name, level, blockPosition()).contains(h.species)) s = h.species;
+            if (s == null) s = Habitat.pick(plan.name, level, blockPosition(), random);
             if (s == null && reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) {
                 var all = Species.ofPlan(plan.name).stream().filter(x -> !x.fossil).toList();
                 if (!all.isEmpty()) s = all.get(random.nextInt(all.size()));
@@ -128,8 +133,14 @@ public class FaunaMob extends PathfinderMob {
                 return group;
             }
             setSpecies(s);
+            if (!(group instanceof Herd)) group = new Herd(s);
         }
         return super.finalizeSpawn(level, difficulty, reason, group);
+    }
+
+    @Override
+    public boolean checkSpawnObstruction(net.minecraft.world.level.LevelReader level) {
+        return plan.water() ? level.isUnobstructed(this) : super.checkSpawnObstruction(level); // the default refuses any liquid
     }
 
     @Override
@@ -155,6 +166,7 @@ public class FaunaMob extends PathfinderMob {
             else goalSelector.addGoal(1, new PanicGoal(this, 1.4));
             goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.9));
         }
+        if (!fierce && !hunter && !plan.fly() && s.kg < 2000) goalSelector.addGoal(4, new FollowHerdGoal(this));
         goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8));
         goalSelector.addGoal(7, new RandomLookAroundGoal(this));
         if (fierce || hunter) targetSelector.addGoal(1, new HurtByTargetGoal(this));
@@ -162,6 +174,44 @@ public class FaunaMob extends PathfinderMob {
         if (hunter) {
             targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, FaunaMob.class, true, (t, lvl) -> isPrey(t)));
         }
+    }
+
+    /** Drift back towards the nearest animal of the same species when it is more than a few blocks away. */
+    private static final class FollowHerdGoal extends net.minecraft.world.entity.ai.goal.Goal {
+        private final FaunaMob mob;
+        private FaunaMob mate;
+        private int cooldown;
+
+        FollowHerdGoal(FaunaMob mob) {
+            this.mob = mob;
+            setFlags(java.util.EnumSet.of(Flag.MOVE));
+        }
+
+        @Override
+        public boolean canUse() {
+            if (mob.getRandom().nextInt(40) != 0 || mob.species() == null) return false;
+            FaunaMob best = null;
+            double bd = Double.MAX_VALUE;
+            for (FaunaMob o : mob.level().getEntitiesOfClass(FaunaMob.class, mob.getBoundingBox().inflate(16, 6, 16), o -> o != mob && o.species() == mob.species())) {
+                double d = mob.distanceToSqr(o);
+                if (d < bd) { bd = d; best = o; }
+            }
+            if (best == null || bd < 36) return false;
+            mate = best;
+            return true;
+        }
+
+        @Override
+        public boolean canContinueToUse() { return mate.isAlive() && cooldown > 0 && mob.distanceToSqr(mate) > 16 && !mob.getNavigation().isDone(); }
+
+        @Override
+        public void start() { cooldown = 100; mob.getNavigation().moveTo(mate, 0.9); }
+
+        @Override
+        public void tick() { cooldown--; }
+
+        @Override
+        public void stop() { mate = null; mob.getNavigation().stop(); }
     }
 
     private boolean isPrey(net.minecraft.world.entity.LivingEntity t) {
@@ -219,7 +269,7 @@ public class FaunaMob extends PathfinderMob {
     }
 
     @Override
-    public boolean removeWhenFarAway(double distance) { return !hasCustomName(); }
+    public boolean removeWhenFarAway(double distance) { return false; } // persistent like vanilla animals; the category cap keeps the count bounded
 
     @Override
     public int getMaxSpawnClusterSize() { return 6; }

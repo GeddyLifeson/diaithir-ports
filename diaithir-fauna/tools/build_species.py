@@ -45,10 +45,7 @@ if __name__ == '__main__':
     names = sorted(f[:-5] for f in os.listdir(os.path.join(d, 'plans')) if f != 'index.json')
     json.dump(names, open(os.path.join(d, 'plans/index.json'), 'w'))
     json.dump(dict(flags=FLAGS, habitats=HABS, rocks=ROCKS, species=sp), open(os.path.join(d, 'species.json'), 'w'), separators=(',', ':'))
-    bm = os.path.join(d, 'neoforge/biome_modifier'); os.makedirs(bm, exist_ok=True)
-    for n in names:
-        json.dump({'type': 'neoforge:add_spawns', 'biomes': '#minecraft:is_overworld',
-                   'spawners': {'type': f'diaithirfauna:{n}', 'weight': 6, 'minCount': 1, 'maxCount': 3}}, open(os.path.join(bm, n + '.json'), 'w'))
+    import spawn_modifiers; spawn_modifiers.write(names)
     lang = {f'entity.diaithirfauna.{p}': p.replace('_', ' ').title() for p in names}
     lang.update({f'species.diaithirfauna.{s["id"]}': s['name'] for s in sp})
     ld = os.path.join(RES, 'assets/diaithirfauna/lang'); os.makedirs(ld, exist_ok=True)

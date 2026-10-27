@@ -41,6 +41,9 @@ public final class Fossils {
     public static final DeferredItem<Item> CLEANED = ITEMS.registerItem("cleaned_fossil", p -> new FossilItem(p, true));
     public static final DeferredBlock<PrepBenchBlock> BENCH = BLOCKS.registerBlock("preparation_bench", PrepBenchBlock::new,
             p -> p.mapColor(MapColor.WOOD).strength(2.0F).sound(SoundType.WOOD));
+    public static final DeferredItem<Item> MATRIX = ITEMS.registerItem("revival_matrix", Item::new, p -> p.stacksTo(1));
+    public static final DeferredBlock<RevivalChamberBlock> CHAMBER = BLOCKS.registerBlock("revival_chamber", RevivalChamberBlock::new,
+            p -> p.mapColor(MapColor.METAL).strength(4.0F, 8.0F).requiresCorrectToolForDrops().sound(SoundType.METAL));
     /** Species ids a player has studied. */
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<List<String>>> STUDIED = ATTACHMENTS.register("studied",
             () -> AttachmentType.<List<String>>builder(() -> new ArrayList<String>()).serialize(Codec.STRING.listOf().fieldOf("ids")).copyOnDeath().build());
@@ -52,6 +55,7 @@ public final class Fossils {
             ITEMS.registerSimpleBlockItem(ROCK.get(rock));
         }
         ITEMS.registerSimpleBlockItem(BENCH);
+        ITEMS.registerSimpleBlockItem(CHAMBER);
     }
 
     private Fossils() {}

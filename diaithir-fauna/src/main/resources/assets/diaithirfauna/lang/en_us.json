@@ -2460,5 +2460,15 @@
 "item.diaithirfauna.cleaned_fossil.named": "Cleaned fossil (%s)",
 "item.diaithirfauna.fossil_fragment.hint": "Brush it clean on a preparation bench.",
 "message.diaithirfauna.studied.new": "Studied %s. New to your notes (%s species studied).",
-"message.diaithirfauna.studied.known": "You already knew %s; a little more detail added."
+"message.diaithirfauna.studied.known": "You already knew %s; a little more detail added.",
+"block.diaithirfauna.revival_chamber": "Revival chamber",
+"item.diaithirfauna.revival_matrix": "Revival matrix",
+"item.diaithirfauna.revival_matrix.hint": "Hold it in your off hand and use a studied, cleaned fossil on a revival chamber.",
+"message.diaithirfauna.revive.ok": "The %s breathes again.",
+"message.diaithirfauna.revive.no_fossil": "Hold a cleaned fossil.",
+"message.diaithirfauna.revive.not_studied": "You have not studied the %s yet.",
+"message.diaithirfauna.revive.too_early": "The %s cannot be revived yet (needs Age %s).",
+"message.diaithirfauna.revive.no_matrix": "Hold a revival matrix in your other hand.",
+"message.diaithirfauna.revive.no_cost": "You need %s x%s.",
+"message.diaithirfauna.revive.no_water": "The %s needs water."
 }
