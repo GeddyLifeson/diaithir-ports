@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "vanillabackport:pale_oak_stairs",
+   "required": false
+  }
+ ]
+}

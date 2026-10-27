@@ -1,0 +1,40 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "createrelics:magic_core",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    {
+     "id": "createrelics:magic_core"
+    }
+   ],
+   "target": "createrelics:magic_core",
+   "ingredient": "minecraft:end_crystal"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    {
+     "id": "createrelics:magic_core"
+    }
+   ],
+   "target": "createrelics:magic_core",
+   "ingredient": "minecraft:enchanted_golden_apple"
+  }
+ ],
+ "transitional_item": {
+  "id": "createrelics:belt_blank"
+ },
+ "result": {
+  "id": "relics:sphere_of_self_sacrifice",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

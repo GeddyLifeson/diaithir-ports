@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_templates_gears:item/silence_sheet"
+  }
+}

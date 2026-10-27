@@ -1,0 +1,54 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_templates_gears:deepslate_sheet",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "create_templates_gears:deepslate_sheet",
+   "ingredient": "minecraft:sculk"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "create_templates_gears:diamond_sheet"
+  },
+  {
+   "type": "create:pressing",
+   "results": [
+    "$result"
+   ],
+   "ingredient": "$ingredient"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "create_enchantment_industry:experience"
+   },
+   "result": {
+    "id": "minecraft:ward_armor_trim_smithing_template"
+   }
+  }
+ ],
+ "transitional_item": {
+  "id": "create_templates_gears:inactive_ward_armor_trim"
+ },
+ "result": {
+  "id": "minecraft:ward_armor_trim_smithing_template"
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "create_enchantment_industry"
+  }
+ ]
+}

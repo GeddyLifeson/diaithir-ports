@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "create_dense_ores:dense_lithium_ore",
+   "required": false
+  },
+  {
+   "id": "create_dense_ores:deepslate_dense_lithium_ore",
+   "required": false
+  }
+ ]
+}

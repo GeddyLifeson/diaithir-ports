@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:phantom_membrane"
+  }
+ ],
+ "ingredient": "minecraft:feather"
+}

@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "  c",
+  " a ",
+  "ab "
+ ],
+ "key": {
+  "a": {
+   "item": "minecraft:obsidian"
+  },
+  "b": {
+   "item": "create:andesite_alloy"
+  },
+  "c": {
+   "item": "minecraft:iron_ingot"
+  }
+ },
+ "result": {
+  "item": "hqi:shattered_hopes_and_dreams",
+  "count": 1
+ }
+}

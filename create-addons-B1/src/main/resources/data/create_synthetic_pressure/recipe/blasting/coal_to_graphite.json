@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:blasting",
+ "category": "misc",
+ "cookingtime": 100,
+ "experience": 0.1,
+ "ingredient": "#minecraft:coals",
+ "result": {
+  "count": 1,
+  "id": "create_synthetic_pressure:graphite_powder"
+ }
+}

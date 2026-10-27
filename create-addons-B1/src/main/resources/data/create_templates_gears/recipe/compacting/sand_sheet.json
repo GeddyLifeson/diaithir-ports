@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:sand",
+  "minecraft:sandstone",
+  "minecraft:sandstone"
+ ],
+ "results": [
+  {
+   "id": "create_templates_gears:sand_sheet",
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "minecraft:leather_helmet",
+ "loops": 1,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "createrelics:magic_core"
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "neoforge:single",
+    "amount": 16200,
+    "fluid": "minecraft:milk"
+   },
+   "result": "$result"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:white_wool"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:shears"
+  },
+  {
+   "type": "create:deploying",
+   "results": [
+    "$result"
+   ],
+   "target": "$ingredient",
+   "ingredient": "minecraft:white_wool"
+  }
+ ],
+ "transitional_item": {
+  "id": "minecraft:leather_helmet"
+ },
+ "result": {
+  "id": "relics:chef_hat",
+  "chance": 1.0
+ },
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "relics"
+  }
+ ]
+}

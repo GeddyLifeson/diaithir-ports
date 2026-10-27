@@ -1,0 +1,10 @@
+{
+ "type": "create:cutting",
+ "results": [
+  {
+   "id": "minecraft:mushroom_stem"
+  }
+ ],
+ "processing_time": 200,
+ "ingredient": "#stam1ocreatetweaks:mushroom_block"
+}
