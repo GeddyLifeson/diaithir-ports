@@ -53,6 +53,7 @@ public final class VoiceClient {
     private static volatile boolean micFailed;
     private static short sendSeq;
     private static long sent;
+    private static volatile long lastSendNanos;
 
     private static final Map<UUID, Speaker> SPEAKERS = new ConcurrentHashMap<>();
     private static volatile boolean mixerStarted;
@@ -69,6 +70,19 @@ public final class VoiceClient {
     }
 
     private VoiceClient() {}
+
+    /** True while frames are going out (within the last 200 ms). */
+    static boolean transmitting() {
+        return System.nanoTime() - lastSendNanos < 200_000_000L;
+    }
+
+    /** Ids of the players heard in the last 400 ms. */
+    static java.util.List<UUID> speaking() {
+        long now = System.nanoTime();
+        var out = new java.util.ArrayList<UUID>();
+        for (var e : SPEAKERS.entrySet()) if (now - e.getValue().lastRxNanos < 400_000_000L) out.add(e.getKey());
+        return out;
+    }
 
     @SubscribeEvent
     public static void keys(RegisterKeyMappingsEvent event) {
@@ -139,6 +153,7 @@ public final class VoiceClient {
                 var conn = Minecraft.getInstance().getConnection();
                 if (conn == null) continue;
                 conn.send(new VoiceUp(sendSeq++, AdpcmCodec.encode(pcm, pcm.length, enc)));
+                lastSendNanos = System.nanoTime();
                 if (++sent % 100 == 1) LOG.info("voice tx: {} frames sent", sent);
             }
         } catch (InterruptedException ignored) {

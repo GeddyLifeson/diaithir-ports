@@ -1,9 +1,10 @@
 package net.diaithir.voice;
 
 import com.mojang.logging.LogUtils;
+import net.diaithir.voice.api.SpeechEvent;
 import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -12,9 +13,6 @@ import net.neoforged.neoforge.network.registration.HandlerThread;
 import net.neoforged.neoforge.network.registration.NetworkRegistry;
 import org.slf4j.Logger;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodType;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,14 +26,12 @@ public final class DiaithirVoice {
     public static final String ID = "diaithirvoice";
     static final Logger LOG = LogUtils.getLogger();
     private static final Map<UUID, RateLimiter> LIMITERS = new ConcurrentHashMap<>();
-    private static MethodHandle speechHook;
-    private static boolean hookLooked;
     private static long relayed;
     private static long lastLog;
 
     public DiaithirVoice(IEventBus modBus, ModContainer container) {
         modBus.addListener(DiaithirVoice::registerPayloads);
-        net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent.class, e -> forget(e.getEntity().getUUID()));
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent.class, e -> forget(e.getEntity().getUUID()));
         container.registerConfig(ModConfig.Type.COMMON, VoiceConfig.COMMON);
         container.registerConfig(ModConfig.Type.CLIENT, VoiceConfig.CLIENT);
     }
@@ -75,27 +71,9 @@ public final class DiaithirVoice {
         reportSpeech(speaker, AdpcmCodec.levelDb(AdpcmCodec.rms(pcm, pcm.length)));
     }
 
-    /** Lets the optional diaithir-voice-interaction mod hear that someone spoke, without depending on it. */
+    /** Tells other mods (such as diaithir-voice-interaction) that someone spoke. */
     private static void reportSpeech(ServerPlayer speaker, float levelDb) {
-        if (!hookLooked) {
-            hookLooked = true;
-            if (ModList.get().isLoaded("diaithirvoiceinteraction")) {
-                try {
-                    speechHook = MethodHandles.publicLookup().findStatic(
-                        Class.forName("net.diaithir.voiceinteraction.api.VoiceInteractionApi"), "onSpeech",
-                        MethodType.methodType(void.class, ServerPlayer.class, float.class, boolean.class));
-                } catch (ReflectiveOperationException e) {
-                    LOG.warn("diaithirvoiceinteraction is loaded but its API was not found", e);
-                }
-            }
-        }
-        if (speechHook == null) return;
-        try {
-            speechHook.invoke(speaker, levelDb, false);
-        } catch (Throwable t) {
-            LOG.warn("speech hook failed", t);
-            speechHook = null;
-        }
+        NeoForge.EVENT_BUS.post(new SpeechEvent(speaker, levelDb, false));
     }
 
     public static void forget(UUID player) {
