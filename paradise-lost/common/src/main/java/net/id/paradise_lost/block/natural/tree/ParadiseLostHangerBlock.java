@@ -46,7 +46,7 @@ public class ParadiseLostHangerBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (entity instanceof LivingEntity) {
             entity.makeStuckInBlock(state, new Vec3(0.800000011920929D, 0.75D, 0.800000011920929D));
         }
@@ -63,7 +63,7 @@ public class ParadiseLostHangerBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor world, BlockPos pos, BlockPos posFrom) {
+    protected BlockState updateShape(BlockState state, LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos posFrom, BlockState newState, net.minecraft.util.RandomSource random) {
         if (!state.canSurvive(world, pos)) {
             return Blocks.AIR.defaultBlockState();
         } else if (!(world.getBlockState(pos.below()).getBlock() instanceof ParadiseLostHangerBlock)) {

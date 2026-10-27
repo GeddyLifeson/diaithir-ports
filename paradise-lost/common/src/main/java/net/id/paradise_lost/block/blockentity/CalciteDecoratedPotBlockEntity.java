@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -42,8 +44,8 @@ public class CalciteDecoratedPotBlockEntity extends BlockEntity implements Rando
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
+    protected void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
         this.sherds.save(nbt);
         if (!this.trySaveLootTable(nbt) && !this.stack.isEmpty()) {
             nbt.put("item", this.stack.save(registryLookup));
@@ -51,8 +53,8 @@ public class CalciteDecoratedPotBlockEntity extends BlockEntity implements Rando
     }
 
     @Override
-    protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.loadAdditional(nbt, registryLookup);
+    protected void loadAdditional(ValueInput nbt) {
+        super.loadAdditional(nbt);
         this.sherds = PotDecorations.load(nbt);
         if (!this.tryLoadLootTable(nbt)) {
             if (nbt.contains("item")) {

@@ -148,7 +148,7 @@ public class QuintEntity extends PathfinderMob implements Enemy {
         @Override
         public void start() {
             if (target != null) {
-                mob.navigation.moveTo(mob.navigation.createPath(((Entity) target).blockPosition(), 1), 2.0);
+                mob.navigation.snapTo(mob.navigation.createPath(((Entity) target).blockPosition(), 1), 2.0);
             }
         }
     }
@@ -190,7 +190,7 @@ public class QuintEntity extends PathfinderMob implements Enemy {
         @Override
         public void start() {
             if (target != null) {
-                mob.navigation.moveTo(mob.navigation.createPath(((Entity) target).blockPosition(), 1), 2.0);
+                mob.navigation.snapTo(mob.navigation.createPath(((Entity) target).blockPosition(), 1), 2.0);
             }
         }
     }
@@ -250,7 +250,7 @@ public class QuintEntity extends PathfinderMob implements Enemy {
         public void start() {
             Vec3 vec3d = this.getRandomLocation();
             if (vec3d != null) {
-                mob.navigation.moveTo(mob.navigation.createPath(BlockPos.containing(vec3d), 1), 1.0);
+                mob.navigation.snapTo(mob.navigation.createPath(BlockPos.containing(vec3d), 1), 1.0);
             }
         }
 

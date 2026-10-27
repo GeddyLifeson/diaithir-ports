@@ -130,7 +130,7 @@ public final class BlockTests {
                     world.setBlockAndUpdate(pos.above(), Blocks.STONE.defaultBlockState());
 
                     Cow cow = EntityType.COW.create(world);
-                    cow.moveTo(pos.getX() + 2.5, pos.getY(), pos.getZ() + 0.5, 0, 0);
+                    cow.snapTo(pos.getX() + 2.5, pos.getY(), pos.getZ() + 0.5, 0, 0);
                     world.addFreshEntity(cow);
                     entityId = cow.getId();
                 }),

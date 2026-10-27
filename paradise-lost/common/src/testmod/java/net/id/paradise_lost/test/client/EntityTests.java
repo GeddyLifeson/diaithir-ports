@@ -276,7 +276,7 @@ public final class EntityTests {
                         }
 
                         Vec3 at = Vec3.atBottomCenterOf(ahead(player, 6 + (i / 6) * 3, (i % 6) * 3 - 8));
-                        entity.moveTo(at.x, at.y, at.z, player.getYRot() + 180, 0);
+                        entity.snapTo(at.x, at.y, at.z, player.getYRot() + 180, 0);
                         entity.setNoGravity(true);
 
                         if (entity instanceof Mob mob)

@@ -34,7 +34,7 @@ public class LeafPileBlock extends FallingBlock {
 
     @SuppressWarnings("deprecation")
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (isFree(world.getBlockState(pos.below()))) {
             FallingBlockEntity fallingBlockEntity = FallingBlockEntity.fall(world, pos, state);
             this.falling(fallingBlockEntity);
@@ -42,8 +42,8 @@ public class LeafPileBlock extends FallingBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor world, BlockPos pos, BlockPos posFrom) {
-        return !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, newState, world, pos, posFrom);
+    protected BlockState updateShape(BlockState state, LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos posFrom, BlockState newState, net.minecraft.util.RandomSource random) {
+        return !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, world, ticks, pos, direction, posFrom, newState, random);
     }
 
     @Override

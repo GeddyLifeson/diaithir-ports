@@ -21,7 +21,7 @@ public class BlueParadiseLostCloudBlock extends ParadiseLostCloudBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         entity.fallDistance = 0.0F;
         Vec3 motion = entity.getDeltaMovement();
 

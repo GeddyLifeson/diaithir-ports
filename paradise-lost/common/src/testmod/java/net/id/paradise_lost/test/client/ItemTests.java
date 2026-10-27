@@ -70,7 +70,7 @@ public final class ItemTests {
 
             BlockPos at = ahead(player, 3, 0);
             Cow cow = EntityType.COW.create(world);
-            cow.moveTo(at.getX() + 0.5, at.getY(), at.getZ() + 0.5, 0, 0);
+            cow.snapTo(at.getX() + 0.5, at.getY(), at.getZ() + 0.5, 0, 0);
             world.addFreshEntity(cow);
             cow.hurt(world.damageSources().playerAttack(player), 100);
 

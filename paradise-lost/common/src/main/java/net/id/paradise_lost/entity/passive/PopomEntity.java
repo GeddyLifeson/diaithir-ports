@@ -1,5 +1,7 @@
 package net.id.paradise_lost.entity.passive;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.registry.EntityRegistry;
 import net.id.paradise_lost.entity.ai.EatFlowersGoal;
 import net.id.paradise_lost.registry.ItemRegistry;
@@ -130,13 +132,13 @@ public class PopomEntity extends Animal {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("FurSize", this.entityData.get(FUR_SIZE));
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         this.entityData.set(FUR_SIZE, compound.getIntOr("FurSize", 0));
     }

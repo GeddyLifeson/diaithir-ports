@@ -1,5 +1,6 @@
 package net.id.paradise_lost.block.natural;
 
+import net.minecraft.world.level.LevelReader;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,7 +27,7 @@ public class PoofBlock extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
+    protected BlockState updateShape(BlockState state, LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
         RandomSource rand = world.getRandom();
         if (neighborState.isAir()) {
             for (int i = 0; i < 4; i++) {
@@ -39,7 +40,7 @@ public class PoofBlock extends Block {
             }
             return Blocks.AIR.defaultBlockState();
         }
-        return super.updateShape(state, direction, neighborState, world, pos, neighborPos);
+        return super.updateShape(state, world, ticks, pos, direction, neighborPos, neighborState, random);
     }
 
     public void animateTick(BlockState state, Level world, BlockPos pos, RandomSource random) {

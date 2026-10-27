@@ -39,7 +39,7 @@ public class NitraBlock extends Block {
         }
     }
 
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+    protected void neighborChanged(BlockState state, Level world, BlockPos pos, Block sourceBlock, @org.jetbrains.annotations.Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
         if (world.hasNeighborSignal(pos)) {
             world.scheduleTick(pos, this, 1);
         }

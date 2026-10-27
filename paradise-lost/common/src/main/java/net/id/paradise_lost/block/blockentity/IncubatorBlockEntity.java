@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.entity.passive.moa.MoaGenes;
 import net.id.paradise_lost.registry.ItemRegistry;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
@@ -62,7 +64,7 @@ public class IncubatorBlockEntity extends BlockEntity {
             if (incubator.hatchTicks <= 0) {
                 incubator.hatchTicks = 0;
                 var moa = MoaGenes.getMoaFromEgg(world, incubator.egg, incubator.owner, pos);
-                moa.moveTo(pos.getX() + 0.25, pos.getY() + 0.65, pos.getZ() + 0.25, world.getRandom().nextFloat() * 360 - 180, 0);
+                moa.snapTo(pos.getX() + 0.25, pos.getY() + 0.65, pos.getZ() + 0.25, world.getRandom().nextFloat() * 360 - 180, 0);
                 world.playSound(null, pos, ParadiseLostSoundEvents.ENTITY_MOA_EGG_HATCH, SoundSource.BLOCKS, 0.8F, 0.5F);
                 world.addFreshEntity(moa);
                 incubator.egg = ItemStack.EMPTY;
@@ -125,8 +127,8 @@ public class IncubatorBlockEntity extends BlockEntity {
     }
 
     @Override
-    public void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
+    public void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
         if (!egg.isEmpty()) {
             nbt.put("egg", egg.save(registryLookup));
         } else {
@@ -137,8 +139,8 @@ public class IncubatorBlockEntity extends BlockEntity {
     }
 
     @Override
-    public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.loadAdditional(nbt, registryLookup);
+    public void loadAdditional(ValueInput nbt) {
+        super.loadAdditional(nbt);
         if (nbt.contains("egg")) {
             egg = ItemStack.parse(registryLookup, nbt.get("egg")).get();
         } else {

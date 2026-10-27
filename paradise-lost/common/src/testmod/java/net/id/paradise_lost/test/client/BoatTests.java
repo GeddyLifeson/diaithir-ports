@@ -65,7 +65,7 @@ public final class BoatTests {
                     for (int i = 0; i < BOATS.size(); i++) {
                         Entity boat = boat(i).create(world);
                         Vec3 at = Vec3.atBottomCenterOf(ahead(player, i < 4 ? 6 : 9, (i % 4) * 2 - 3));
-                        boat.moveTo(at.x, at.y, at.z, facing.toYRot() + 90, 0);
+                        boat.snapTo(at.x, at.y, at.z, facing.toYRot() + 90, 0);
                         world.addFreshEntity(boat);
                     }
                 })),
@@ -82,7 +82,7 @@ public final class BoatTests {
                     ServerLevel world = player.serverLevel();
                     entity = EntityRegistry.MENTH_BOAT.get().create(world);
                     Vec3 at = Vec3.atBottomCenterOf(ahead(player, 2, 0));
-                    entity.moveTo(at.x, at.y, at.z, 0, 0);
+                    entity.snapTo(at.x, at.y, at.z, 0, 0);
                     world.addFreshEntity(entity);
                 })),
                 Step.run(5, () -> onServer(server -> check(player(server).startRiding(entity, true), "startRiding returned false"))),
@@ -103,7 +103,7 @@ public final class BoatTests {
                 BlockPos boatPos = ahead(player, i < 4 ? 4 : 8, (i % 4) * 3 - 4);
                 Boat boat = boat(i).create(world);
                 Vec3 at = Vec3.atBottomCenterOf(boatPos);
-                boat.moveTo(at.x, at.y, at.z, 0, 0);
+                boat.snapTo(at.x, at.y, at.z, 0, 0);
                 Map<Item, Integer> expected = new LinkedHashMap<>();
                 expected.put(boatItem(i), 1);
                 if (boat instanceof ChestBoat chest) {

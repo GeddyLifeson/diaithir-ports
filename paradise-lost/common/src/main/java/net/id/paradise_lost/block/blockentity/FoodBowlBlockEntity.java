@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.tags.ItemTags;
 import net.id.paradise_lost.block.mechanical.FoodBowlBlock;
 import net.id.paradise_lost.util.PlayerInventoryHelper;
@@ -67,15 +69,15 @@ public class FoodBowlBlockEntity extends BlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.loadAdditional(nbt, registryLookup);
+    protected void loadAdditional(ValueInput nbt) {
+        super.loadAdditional(nbt);
         inventory.clear();
-        ContainerHelper.loadAllItems(nbt, inventory, registryLookup);
+        ContainerHelper.loadAllItems(nbt, inventory);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
-        ContainerHelper.saveAllItems(nbt, inventory, registryLookup);
+    protected void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
+        ContainerHelper.saveAllItems(nbt, inventory);
     }
 }

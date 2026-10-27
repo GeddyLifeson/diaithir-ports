@@ -66,7 +66,7 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
     }
 
     @Override
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return false;
     }
 
@@ -83,7 +83,7 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
 
     @SuppressWarnings("deprecation")
     @Override
-    public VoxelShape getOcclusionShape(BlockState state, BlockGetter world, BlockPos pos) {
+    protected VoxelShape getOcclusionShape(BlockState state) {
         return Shapes.block();
     }
 

@@ -1,5 +1,7 @@
 package net.id.paradise_lost.api;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.entity.util.PostTickEntity;
 import net.minecraft.CrashReportCategory;
 import net.minecraft.core.BlockPos;
@@ -214,7 +216,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
+    protected void addAdditionalSaveData(ValueOutput compound) {
         compound.put("BlockState", NbtUtils.writeBlockState(this.blockState));
         compound.putInt("Time", this.moveTime);
         compound.putBoolean("DropItem", this.dropItem);
@@ -227,7 +229,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
+    protected void readAdditionalSaveData(ValueInput compound) {
         this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), compound.getCompoundOrEmpty("BlockState"));
         this.moveTime = compound.getIntOr("Time", 0);
         if (compound.contains("HurtEntities")) {

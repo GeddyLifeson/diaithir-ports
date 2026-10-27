@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -120,8 +122,8 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
         return this.itemsBeingCooked;
     }
 
-    protected void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.loadAdditional(nbt, registryLookup);
+    protected void loadAdditional(ValueInput nbt) {
+        super.loadAdditional(nbt);
         this.itemsBeingCooked.clear();
         ContainerHelper.loadAllItems(nbt, this.itemsBeingCooked, registryLookup);
         int[] is;
@@ -137,8 +139,8 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
 
     }
 
-    protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
+    protected void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
         ContainerHelper.saveAllItems(nbt, this.itemsBeingCooked, true, registryLookup);
         nbt.putIntArray("CookingTimes", this.cookingTimes);
         nbt.putIntArray("CookingTotalTimes", this.cookingTotalTimes);

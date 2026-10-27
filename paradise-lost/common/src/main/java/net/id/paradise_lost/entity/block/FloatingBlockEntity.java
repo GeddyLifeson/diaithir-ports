@@ -1,5 +1,7 @@
 package net.id.paradise_lost.entity.block;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.api.BlockLikeEntity;
 import net.id.paradise_lost.api.FloatingBlockHelper;
 import net.id.paradise_lost.registry.EntityRegistry;
@@ -116,13 +118,13 @@ public class FloatingBlockEntity extends BlockLikeEntity {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("Dropping", this.isDropping());
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("Dropping")) this.setDropping(compound.getBooleanOr("Dropping", false));
     }

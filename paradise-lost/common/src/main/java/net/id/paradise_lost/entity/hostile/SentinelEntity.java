@@ -1,5 +1,7 @@
 package net.id.paradise_lost.entity.hostile;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.particle.ParadiseLostParticleTypes;
 import net.id.paradise_lost.registry.EntityRegistry;
 import net.id.paradise_lost.registry.ItemRegistry;
@@ -155,13 +157,13 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("Enlightened", this.entityData.get(ENLIGHTENED));
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         this.entityData.set(ENLIGHTENED, compound.getBooleanOr("Enlightened", false));
     }

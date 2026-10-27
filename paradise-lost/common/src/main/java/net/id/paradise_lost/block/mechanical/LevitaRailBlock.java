@@ -35,7 +35,7 @@ public class LevitaRailBlock extends PoweredRailBlock {
     }
 
     @Override
-    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!world.isClientSide()) {
             List<AbstractMinecart> list = this.getCarts(world, pos, AbstractMinecart.class, e -> true);
             for (AbstractMinecart cart : list) {

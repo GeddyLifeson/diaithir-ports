@@ -20,7 +20,7 @@ public class ParadiseLostCloudBlock extends TransparentBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         entity.fallDistance = 0.0F;
 
         if (entity.getDeltaMovement().y < 0.0) {
@@ -34,7 +34,7 @@ public class ParadiseLostCloudBlock extends TransparentBlock {
     }
 
     @Override
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 

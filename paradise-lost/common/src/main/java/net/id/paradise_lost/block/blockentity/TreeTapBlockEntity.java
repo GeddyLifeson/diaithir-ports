@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.block.mechanical.TreeTapBlock;
 import net.id.paradise_lost.recipe.ParadiseLostRecipeTypes;
 import net.id.paradise_lost.recipe.TreeTapRecipe;
@@ -98,16 +100,16 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
     }
 
 	@Override
-	public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-		super.loadAdditional(nbt, registryLookup);
+	public void loadAdditional(ValueInput nbt) {
+		super.loadAdditional(nbt);
         this.inventory.clear();
-		ContainerHelper.loadAllItems(nbt, inventory, registryLookup);
+		ContainerHelper.loadAllItems(nbt, inventory);
 	}
 
 	@Override
-	public void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-		super.saveAdditional(nbt, registryLookup);
-		ContainerHelper.saveAllItems(nbt, inventory, registryLookup);
+	public void saveAdditional(ValueOutput nbt) {
+		super.saveAdditional(nbt);
+		ContainerHelper.saveAllItems(nbt, inventory);
 	}
 
     @Override

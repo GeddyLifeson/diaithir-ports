@@ -1,5 +1,6 @@
 package net.id.paradise_lost.block;
 
+import net.minecraft.world.level.LevelReader;
 import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.platform.Services;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
@@ -72,29 +73,22 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
     }
 
     @Override
-    protected BlockState updateShape(
-            BlockState state,
-            Direction direction,
-            BlockState neighborState,
-            LevelAccessor level,
-            BlockPos pos,
-            BlockPos neighborPos
-    ) {
+    protected BlockState updateShape(BlockState state, LevelReader level, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
         Direction.Axis directionAxis = direction.getAxis();
         Direction.Axis blockAxis = state.getValue(AXIS);
 
         if (!blockAxis.isHorizontal()) {
-            return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+            return super.updateShape(state, level, ticks, pos, direction, neighborPos, neighborState, random);
         }
         boolean flag = blockAxis != directionAxis && directionAxis.isHorizontal();
         if (!flag && !neighborState.is(this) && !(new ParadiseLostPortalShape(level, pos, blockAxis).isComplete())) {
             return Blocks.AIR.defaultBlockState();
         }
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+        return super.updateShape(state, level, ticks, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!level.getGameRules().getBoolean(ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
             return;
         }

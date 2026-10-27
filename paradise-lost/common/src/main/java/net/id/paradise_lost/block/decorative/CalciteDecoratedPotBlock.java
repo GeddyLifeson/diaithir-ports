@@ -106,10 +106,10 @@ public class CalciteDecoratedPotBlock extends DecoratedPotBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
+    protected ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData) {
         return world.getBlockEntity(pos) instanceof CalciteDecoratedPotBlockEntity decoratedPotBlockEntity
                 ? decoratedPotBlockEntity.asStack()
-                : super.getCloneItemStack(world, pos, state);
+                : super.getCloneItemStack(world, pos, state, includeData);
     }
 
 }

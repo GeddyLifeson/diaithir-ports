@@ -20,7 +20,8 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.core.Direction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +41,7 @@ public class WallClingingPlantBlock extends BushBlock implements BonemealableBlo
             Direction.SOUTH, Block.box(0, 4, 10, 16, 12, 16),
             Direction.WEST, Block.box(0, 4, 0, 6, 12, 16)
     );
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     private final @Nullable TagKey<Block> clingableBlocks;
 
     public WallClingingPlantBlock(@Nullable TagKey<Block> clingableBlocks, Properties settings) {

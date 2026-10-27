@@ -1,5 +1,6 @@
 package net.id.paradise_lost.block;
 
+import net.minecraft.world.level.LevelReader;
 import net.id.paradise_lost.api.FloatingBlockHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,13 +32,13 @@ public class FloatingBlock extends DropExperienceBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facingIn, BlockState facingState, LevelAccessor worldIn, BlockPos posIn, BlockPos facingPosIn) {
+    protected BlockState updateShape(BlockState stateIn, LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos posIn, Direction facingIn, BlockPos facingPosIn, BlockState facingState, net.minecraft.util.RandomSource random) {
         worldIn.scheduleTick(posIn, this, this.getFallDelay());
-        return super.updateShape(stateIn, facingIn, facingState, worldIn, posIn, facingPosIn);
+        return super.updateShape(stateIn, worldIn, ticks, posIn, facingIn, facingPosIn, facingState, random);
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
+    protected void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @org.jetbrains.annotations.Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
         checkFloatable(world, pos);
     }
 

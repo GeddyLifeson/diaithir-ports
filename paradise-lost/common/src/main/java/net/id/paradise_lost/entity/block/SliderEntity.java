@@ -1,5 +1,7 @@
 package net.id.paradise_lost.entity.block;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.nbt.Tag;
 import net.id.paradise_lost.api.BlockLikeEntity;
 import net.id.paradise_lost.registry.BlockRegistry;
@@ -41,13 +43,13 @@ public class SliderEntity extends BlockLikeEntity {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putString("Direction", this.getDirection().name());
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("Direction")) {
             Direction dir;

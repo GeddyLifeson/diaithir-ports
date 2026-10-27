@@ -1,5 +1,7 @@
 package net.id.paradise_lost.entity.passive.moa;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.platform.Services;
 import net.minecraft.tags.ItemTags;
 import net.id.paradise_lost.block.blockentity.FoodBowlBlockEntity;
@@ -666,7 +668,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("airTicks", entityData.get(AIR_TICKS));
         compound.put("chest", entityData.get(CHEST).saveOptional(this.registryAccess()));
@@ -681,7 +683,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
         entityData.set(AIR_TICKS, compound.getIntOr("airTicks", 0));
         entityData.set(CHEST, ItemStack.parseOptional(this.registryAccess(), compound.getCompoundOrEmpty("chest")));

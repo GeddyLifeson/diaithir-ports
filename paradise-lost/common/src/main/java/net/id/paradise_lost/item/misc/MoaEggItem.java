@@ -41,11 +41,11 @@ public class MoaEggItem extends Item {
             BlockPos spawnPos = world.getBlockState(clicked).getCollisionShape(world, clicked).isEmpty()
                     ? clicked
                     : clicked.relative(contextIn.getClickedFace());
-            moa.moveTo(spawnPos, 0, 0);
+            moa.snapTo(spawnPos, 0, 0);
             moa.setHealth(moa.getGenes().getAttribute(MoaAttributes.MAX_HEALTH));
             moa.syncGenes();
             world.addFreshEntity(moa);
-            return InteractionResult.sidedSuccess(world.isClientSide());
+            return InteractionResult.SUCCESS;
         }
         return super.useOn(contextIn);
     }

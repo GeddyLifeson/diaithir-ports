@@ -14,7 +14,7 @@ public class FlaxweaveCushionBlock extends Block {
 	}
 
 	@Override
-	public void fallOn(Level world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+	public void fallOn(Level world, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
 		entity.causeFallDamage(fallDistance, 0.1F, world.damageSources().fall());
 		if (fallDistance > 3F && !world.isClientSide()) {
 			this.spawnDestroyParticles(world, null, pos, state);

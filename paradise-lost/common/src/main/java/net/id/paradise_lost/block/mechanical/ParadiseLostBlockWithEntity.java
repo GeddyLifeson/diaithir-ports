@@ -62,13 +62,13 @@ public abstract class ParadiseLostBlockWithEntity extends BaseEntityBlock implem
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
+    protected void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @org.jetbrains.annotations.Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
         boolean powered = world.hasNeighborSignal(pos);
         if (powered != state.getValue(POWERED)) {
             world.setBlock(pos, state.setValue(POWERED, powered), Block.UPDATE_ALL);
             pulseUpdate(state, world, pos, powered);
         }
-        super.neighborChanged(state, world, pos, block, fromPos, notify);
+        super.neighborChanged(state, world, pos, block, orientation, notify);
     }
 
     protected void pulseUpdate(BlockState state, Level world, BlockPos pos, boolean on) {
@@ -80,7 +80,7 @@ public abstract class ParadiseLostBlockWithEntity extends BaseEntityBlock implem
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos) {
+    protected int getAnalogOutputSignal(BlockState state, Level world, BlockPos pos, net.minecraft.core.Direction direction) {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(world.getBlockEntity(pos));
     }
 

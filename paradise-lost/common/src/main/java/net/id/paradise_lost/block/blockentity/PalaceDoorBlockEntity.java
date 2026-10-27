@@ -1,5 +1,7 @@
 package net.id.paradise_lost.block.blockentity;
 
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.registry.BlockRegistry;
 import net.id.paradise_lost.block.mechanical.PalaceDoorBlock;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
@@ -110,14 +112,14 @@ public class PalaceDoorBlockEntity extends BlockEntity {
     }
 
     @Override
-    public void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
+    public void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
         nbt.putBoolean("doorOpened", this.doorOpened);
     }
 
     @Override
-    public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.loadAdditional(nbt, registryLookup);
+    public void loadAdditional(ValueInput nbt) {
+        super.loadAdditional(nbt);
         this.doorOpened = nbt.getBooleanOr("doorOpened", false);
         this.doorFullyOpened = nbt.getBooleanOr("doorOpened", false);
     }

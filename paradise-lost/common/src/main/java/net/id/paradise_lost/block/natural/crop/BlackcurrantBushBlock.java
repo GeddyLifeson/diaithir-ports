@@ -27,17 +27,17 @@ public class BlackcurrantBushBlock extends SweetBerryBushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
+    protected ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData) {
         return new ItemStack(ItemRegistry.BLACKCURRANT.get());
     }
 
     @Override
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (state.getValue(AGE) > 0 && entity instanceof LivingEntity && entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
             entity.makeStuckInBlock(state, new Vec3(0.900000011920929D, 0.75D, 0.900000011920929D));
         }
@@ -48,7 +48,7 @@ public class BlackcurrantBushBlock extends SweetBerryBushBlock {
         int i = state.getValue(AGE);
         if (i > 1) {
             tryPickBerries(world, pos, state);
-            return InteractionResult.sidedSuccess(world.isClientSide());
+            return InteractionResult.SUCCESS;
         } else {
             return super.useWithoutItem(state, world, pos, player, hit);
         }

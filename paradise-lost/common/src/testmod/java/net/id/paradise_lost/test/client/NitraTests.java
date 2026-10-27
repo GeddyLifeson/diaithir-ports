@@ -40,7 +40,7 @@ public final class NitraTests {
                     world.setBlockAndUpdate(pos, BlockRegistry.NITRA_BUNCH.get().defaultBlockState());
                     Arrow arrow = new Arrow(world, player, new ItemStack(Items.ARROW), null);
                     Vec3 at = Vec3.atCenterOf(pos).add(0, 3, 0);
-                    arrow.moveTo(at.x, at.y, at.z, 0, 90);
+                    arrow.snapTo(at.x, at.y, at.z, 0, 90);
                     arrow.setDeltaMovement(0, -1, 0);
                     arrow.igniteForSeconds(10);
                     world.addFreshEntity(arrow);
@@ -122,7 +122,7 @@ public final class NitraTests {
                     ThrownNitraEntity nitra = new ThrownNitraEntity(world, player);
                     nitra.setItem(new ItemStack(NITRA_BULB.get()));
                     Vec3 at = Vec3.atCenterOf(ahead(player, 6, 0)).add(0, 2, 0);
-                    nitra.moveTo(at.x, at.y, at.z, 0, 0);
+                    nitra.snapTo(at.x, at.y, at.z, 0, 0);
                     nitra.setDeltaMovement(0, -0.5, 0);
                     world.addFreshEntity(nitra);
                     entityId = nitra.getId();

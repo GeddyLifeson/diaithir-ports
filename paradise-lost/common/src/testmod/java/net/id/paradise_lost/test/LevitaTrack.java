@@ -118,7 +118,7 @@ public final class LevitaTrack {
 
     public static int launch(ServerLevel world, EntityType<? extends AbstractMinecart> type, BlockPos at, double speed) {
         AbstractMinecart cart = type.create(world);
-        cart.moveTo(at.getX() + 0.5 + dir.getStepX() * launchPhase, at.getY(), at.getZ() + 0.5 + dir.getStepZ() * launchPhase, 0, 0);
+        cart.snapTo(at.getX() + 0.5 + dir.getStepX() * launchPhase, at.getY(), at.getZ() + 0.5 + dir.getStepZ() * launchPhase, 0, 0);
         cart.setDeltaMovement(Vec3.atLowerCornerOf(dir.getNormal()).scale(speed));
         world.addFreshEntity(cart);
         return cart.getId();

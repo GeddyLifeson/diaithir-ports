@@ -19,8 +19,15 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import java.util.List;
 
 public class ParadiseLostGrassBlock extends SpreadableParadiseLostBlock implements BonemealableBlock {
+    public static final com.mojang.serialization.MapCodec<ParadiseLostGrassBlock> CODEC = simpleCodec(ParadiseLostGrassBlock::new);
+
     public ParadiseLostGrassBlock(Properties settings) {
         super(settings);
+    }
+
+    @Override
+    protected com.mojang.serialization.MapCodec<? extends ParadiseLostGrassBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -39,7 +46,6 @@ public class ParadiseLostGrassBlock extends SpreadableParadiseLostBlock implemen
         BlockState blockState = BlockRegistry.GRASS.get().defaultBlockState();
 
         block0: for (int i = 0; i < 128; ++i) {
-            Holder<PlacedFeature> placedFeature;
             BlockPos blockPos2 = blockPos;
 
             for (int j = 0; j < i / 16; ++j) {
@@ -61,15 +67,15 @@ public class ParadiseLostGrassBlock extends SpreadableParadiseLostBlock implemen
                 continue;
             }
             if (random.nextInt(8) == 0) {
-                List<ConfiguredFeature<?, ?>> list = world.getBiome(blockPos2).value().getGenerationSettings().getFlowerFeatures();
-                if (list.isEmpty()) {
-                    continue;
+                List<ConfiguredFeature<?, ?>> list = world.getBiome(blockPos2).value().getGenerationSettings().getBoneMealFeatures();
+                if (!list.isEmpty()) {
+                    list.get(random.nextInt(list.size())).place(world, world.getChunkSource().getGenerator(), random, blockPos2);
                 }
-                placedFeature = ((RandomPatchConfiguration) ((ConfiguredFeature) list.get(0)).config()).feature();
             } else {
-                placedFeature = world.registryAccess().lookupOrThrow(Registries.PLACED_FEATURE).getHolder(ParadiseLostVegetationPlacedFeatures.GRASS).get();
+                final BlockPos target = blockPos2;
+                world.registryAccess().lookupOrThrow(Registries.PLACED_FEATURE).get(ParadiseLostVegetationPlacedFeatures.GRASS)
+                        .ifPresent(h -> h.value().place(world, world.getChunkSource().getGenerator(), random, target));
             }
-            (placedFeature.value()).place(world, world.getChunkSource().getGenerator(), random, blockPos2);
         }
     }
 }
