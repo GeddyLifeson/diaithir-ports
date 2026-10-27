@@ -1,0 +1,314 @@
+[
+ {
+  "slug": "alchemancy-x-create-compat",
+  "status": "ported",
+  "reason": "11 recipes, 110 data files; soft deps (conditioned): ['alchemancy']",
+  "jar": "diaithir-alchemancy-x-create-compat-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "alexs-caves-and-create-recipes",
+  "status": "ported",
+  "reason": "41 recipes, 41 data files; soft deps (conditioned): ['alexscaves', 'brewinandchewin']",
+  "jar": "diaithir-alexs-caves-and-create-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "better-blazecake-recipe",
+  "status": "ported",
+  "reason": "2 recipes, 2 data files; soft deps (conditioned): []",
+  "jar": "diaithir-better-blazecake-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "caelum-creo-recipes-for-skyblock",
+  "status": "ported",
+  "reason": "27 recipes, 36 data files; soft deps (conditioned): ['caelum_creo']",
+  "jar": "diaithir-caelum-creo-recipes-for-skyblock-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "cardboard-chalkbox",
+  "status": "ported",
+  "reason": "1 recipes, 2 data files; soft deps (conditioned): ['chalk']",
+  "jar": "diaithir-cardboard-chalkbox-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "cca-electrum-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): ['createaddition']",
+  "jar": "diaithir-cca-electrum-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "crafting-recipes-for-create",
+  "status": "ported",
+  "reason": "7237 recipes, 7237 data files; soft deps (conditioned): ['chipped']",
+  "jar": "diaithir-crafting-recipes-for-create-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-additional-recipies",
+  "status": "ported",
+  "reason": "8 recipes, 8 data files; soft deps (conditioned): ['irons_spellbooks']",
+  "jar": "diaithir-create-additional-recipies-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-balanced-recipes",
+  "status": "ported",
+  "reason": "36 recipes, 36 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-balanced-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-break-it-all",
+  "status": "ported",
+  "reason": "0 recipes, 18 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-break-it-all-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-caverns-and-chasms-silver-compatibility",
+  "status": "ported",
+  "reason": "3 recipes, 3 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-caverns-and-chasms-silver-compatibility-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-coal-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-coal-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-computercraft-recipes",
+  "status": "ported",
+  "reason": "37 recipes, 37 data files; soft deps (conditioned): ['computercraft']",
+  "jar": "diaithir-create-computercraft-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-copper-oxidizing",
+  "status": "ported",
+  "reason": "45 recipes, 45 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-copper-oxidizing-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-crimsite-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-crimsite-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-diamond-production",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-diamond-production-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-dmr",
+  "status": "ported",
+  "reason": "3 recipes, 3 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-dmr-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-essential-recipes",
+  "status": "ported",
+  "reason": "12 recipes, 12 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-essential-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-few-more-recipes",
+  "status": "ported",
+  "reason": "13 recipes, 13 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-few-more-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-glowstone-dust-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-glowstone-dust-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-gunsmithing-break-framed-glass-trapdoors",
+  "status": "ported",
+  "reason": "0 recipes, 4 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-gunsmithing-break-framed-glass-trapdoors-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-hangars",
+  "status": "ported",
+  "reason": "0 recipes, 39 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-hangars-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-lapis-lazuli-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-lapis-lazuli-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-man-of-many-planes",
+  "status": "ported",
+  "reason": "2 recipes, 2 data files; soft deps (conditioned): ['immersive_aircraft', 'man_of_many_planes']",
+  "jar": "diaithir-create-man-of-many-planes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-mekanism-crafting",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): ['mekanism']",
+  "jar": "diaithir-create-mekanism-crafting-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-molten-processing",
+  "status": "ported",
+  "reason": "36 recipes, 91 data files; soft deps (conditioned): ['ad_astra', 'create_dd', 'molten_metals', 'oreganized']",
+  "jar": "diaithir-create-molten-processing-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-mortar-mango-edition",
+  "status": "ported",
+  "reason": "12 recipes, 51 data files; soft deps (conditioned): ['create_dd', 'createaddition', 'tfmg']",
+  "jar": "diaithir-create-mortar-mango-edition-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-new-age-renewable-magnetite",
+  "status": "ported",
+  "reason": "2 recipes, 2 data files; soft deps (conditioned): ['create_new_age']",
+  "jar": "diaithir-create-new-age-renewable-magnetite-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-numismatics-recipes-1.21.1",
+  "status": "ported",
+  "reason": "7 recipes, 7 data files; soft deps (conditioned): ['numismatics']",
+  "jar": "diaithir-create-numismatics-recipes-1.21.1-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-ochrum-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-ochrum-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-redstone-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-redstone-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-brass",
+  "status": "ported",
+  "reason": "2 recipes, 2 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-brass-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-diamonds",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-diamonds-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-egapples",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-egapples-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-netherite",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-netherite-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-recipes",
+  "status": "ported",
+  "reason": "7 recipes, 7 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-renewable-resources",
+  "status": "ported",
+  "reason": "8 recipes, 8 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-renewable-resources-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-rocked-and-decadent",
+  "status": "ported",
+  "reason": "18 recipes, 18 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-rocked-and-decadent-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-simple-storage-recipes",
+  "status": "ported",
+  "reason": "20 recipes, 22 data files; soft deps (conditioned): ['toms_storage']",
+  "jar": "diaithir-create-simple-storage-recipes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-stones",
+  "status": "ported",
+  "reason": "15 recipes, 15 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-stones-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "create-wrenchable-shulker-boxes",
+  "status": "ported",
+  "reason": "0 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-create-wrenchable-shulker-boxes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "createccmodemfix",
+  "status": "ported",
+  "reason": "0 recipes, 2 data files; soft deps (conditioned): []",
+  "jar": "diaithir-createccmodemfix-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "createrecycled",
+  "status": "ported",
+  "reason": "84 recipes, 84 data files; soft deps (conditioned): []",
+  "jar": "diaithir-createrecycled-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "eyecrushing",
+  "status": "ported",
+  "reason": "17 recipes, 17 data files; soft deps (conditioned): ['endrem']",
+  "jar": "diaithir-eyecrushing-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "mes",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-mes-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "mll",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-mll-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "netherrack-recipe",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-netherrack-recipe-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "orb-create",
+  "status": "ported",
+  "reason": "0 recipes, 2 data files; soft deps (conditioned): []",
+  "jar": "diaithir-orb-create-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "raw-ore-to-blocks-create-add-on",
+  "status": "ported",
+  "reason": "2 recipes, 4 data files; soft deps (conditioned): []",
+  "jar": "diaithir-raw-ore-to-blocks-create-add-on-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "storage-drawers-create-compat",
+  "status": "ported",
+  "reason": "6 recipes, 6 data files; soft deps (conditioned): ['storagedrawers']",
+  "jar": "diaithir-storage-drawers-create-compat-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "ultra-precision-mechanism",
+  "status": "ported",
+  "reason": "1 recipes, 1 data files; soft deps (conditioned): []",
+  "jar": "diaithir-ultra-precision-mechanism-26.1.2-1.0.0-diaithir.1.jar"
+ },
+ {
+  "slug": "zinc-macerate",
+  "status": "ported",
+  "reason": "0 recipes, 0 data files; soft deps (conditioned): []",
+  "jar": "diaithir-zinc-macerate-26.1.2-1.0.0-diaithir.1.jar"
+ }
+]
