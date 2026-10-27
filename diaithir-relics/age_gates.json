@@ -1,0 +1,34 @@
+{
+ "_doc": "Same shape as DiaithirRPG content/tech_ages.json: namespaces and per-item entries (items beat namespaces). Relics belong to Ages III to VII by the age of the metal and the tale.",
+ "namespaces": {
+  "diaithirrelics": "III"
+ },
+ "items": {
+  "diaithirrelics:dawn_sword": "III",
+  "diaithirrelics:salmon_spear": "III",
+  "diaithirrelics:boar_shield": "III",
+  "diaithirrelics:well_ring": "III",
+  "diaithirrelics:gold_torque": "III",
+  "diaithirrelics:storm_axe": "IV",
+  "diaithirrelics:shadow_dagger": "IV",
+  "diaithirrelics:cairn_hammer": "IV",
+  "diaithirrelics:mist_bell": "IV",
+  "diaithirrelics:bear_belt": "IV",
+  "diaithirrelics:sea_sword": "V",
+  "diaithirrelics:lightning_spear": "V",
+  "diaithirrelics:frost_shield": "V",
+  "diaithirrelics:sun_ring": "V",
+  "diaithirrelics:moon_torque": "V",
+  "diaithirrelics:star_sword": "VI",
+  "diaithirrelics:serpent_axe": "VI",
+  "diaithirrelics:eagle_spear": "VI",
+  "diaithirrelics:raven_whistle": "VI",
+  "diaithirrelics:giant_belt": "VI",
+  "diaithirrelics:oath_sword": "VII",
+  "diaithirrelics:smith_hammer": "VII",
+  "diaithirrelics:light_shield": "VII",
+  "diaithirrelics:fate_ring": "VII",
+  "diaithirrelics:apple_branch": "VII",
+  "diaithirrelics:dragon_torque": "VII"
+ }
+}
