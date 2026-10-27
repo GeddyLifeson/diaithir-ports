@@ -1,14 +1,15 @@
 package cn.leolezury.eternalstarlight.common.client.gui.screen;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import cn.leolezury.eternalstarlight.common.client.book.ResolvedBookDefinition;
 import cn.leolezury.eternalstarlight.common.client.book.component.ConfiguredBookComponent;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.widget.BookHistoryButton;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.widget.BookProgressButton;
-import com.mojang.blaze3d.opengl.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -175,8 +176,11 @@ public class BookScreen extends Screen {
 	}
 
 	@Override
-	public boolean mouseClicked(double x, double y, int button) {
-		boolean result = super.mouseClicked(x, y, button);
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		double x = event.x();
+		double y = event.y();
+		int button = event.button();
+		boolean result = super.mouseClicked(event, doubleClick);
 		if (!result) {
 			if (x >= getContentX() && x <= getContentX() + book.width() - 2 * book.frameWidth()
 				&& y >= getContentY() && y <= getContentY() + book.height() - 2 * book.frameWidth()) {
@@ -204,17 +208,18 @@ public class BookScreen extends Screen {
 	}
 
 	@Override
-	public boolean mouseReleased(double x, double y, int button) {
-		if (button == 0) {
+	public boolean mouseReleased(MouseButtonEvent event) {
+		if (event.button() == 0) {
 			this.scrolling = false;
 			this.mouseOffset = 0;
 		}
 
-		return super.mouseReleased(x, y, button);
+		return super.mouseReleased(event);
 	}
 
 	@Override
-	public boolean mouseDragged(double x, double y, int button, double dragX, double dragY) {
+	public boolean mouseDragged(MouseButtonEvent event, double dragX, double dragY) {
+		double y = event.y();
 		if (this.scrolling) {
 			setScrollProgress((int) ((y - this.mouseOffset - getBaseY() - book.scrollbar().scrollbarYOffset()) * (double) Math.max(totalHeight - book.height() + 2 * book.frameWidth(), 1) / (double) Math.max(getMaxScroll(), 1)));
 			return true;
@@ -230,13 +235,14 @@ public class BookScreen extends Screen {
 	}
 
 	@Override
-	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+	public boolean keyPressed(KeyEvent event) {
+		int keyCode = event.key();
 		boolean up = keyCode == GLFW.GLFW_KEY_UP;
 		boolean down = keyCode == GLFW.GLFW_KEY_DOWN;
 		if (up || down) {
 			setScrollProgress(scrollProgress + (up ? -1 : 1) * font.lineHeight);
 		}
-		return super.keyPressed(keyCode, scanCode, modifiers);
+		return super.keyPressed(event);
 	}
 
 	@Override
@@ -256,9 +262,9 @@ public class BookScreen extends Screen {
 	}
 
 	@Override
-	public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-		super.renderBackground(guiGraphics, mouseX, mouseY, partialTick);
-		guiGraphics.blit(book.textures().background(), getBaseX(), getBaseY(), 0, 0, book.width(), book.height(), book.width(), book.height());
+	public void extractBackground(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+		super.extractBackground(guiGraphics, mouseX, mouseY, partialTick);
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, book.textures().background(), getBaseX(), getBaseY(), (float) 0, (float) 0, book.width(), book.height(), book.width(), book.height());
 		guiGraphics.enableScissor(getContentX(), getContentY(), getContentX() + book.width() - 2 * book.frameWidth(), getContentY() + book.height() - 2 * book.frameWidth());
 		int startHeight = 0;
 		for (ConfiguredBookComponent<?, ?> component : new ArrayList<>(currentComponents)) {
@@ -268,26 +274,23 @@ public class BookScreen extends Screen {
 			}
 			startHeight += component.getTotalHeight(context);
 		}
-		guiGraphics.pose().pushPose();
-		guiGraphics.pose().translate(0.0, 0.0, OVERLAY_Z_OFFSET);
+		guiGraphics.pose().pushMatrix();
 		guiGraphics.disableScissor();
-		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-		guiGraphics.blit(book.textures().overlay(), getBaseX(), getBaseY(), 0, 0, book.width(), book.height(), book.width(), book.height());
-		guiGraphics.pose().popPose();
-		guiGraphics.blit(book.textures().topOverlay(), getBaseX(), getBaseY(), 0, 0, book.width(), book.height(), book.width(), book.height());
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, book.textures().overlay(), getBaseX(), getBaseY(), (float) 0, (float) 0, book.width(), book.height(), book.width(), book.height());
+		guiGraphics.pose().popMatrix();
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, book.textures().topOverlay(), getBaseX(), getBaseY(), (float) 0, (float) 0, book.width(), book.height(), book.width(), book.height());
 		if (getScrollButtonHeight() < book.scrollbar().scrollbarHeight()) {
 			int scrollButtonX = getBaseX() + book.scrollbar().scrollbarXOffset() + (book.scrollbar().scrollbarWidth() - book.scrollbar().scrollButtonWidth()) / 2;
 			int scrollButtonY = getBaseY() + book.scrollbar().scrollbarYOffset() + (int) (getMaxScroll() * ((double) scrollProgress / (double) (totalHeight - book.height() + 2 * book.frameWidth())));
-			guiGraphics.pose().pushPose();
-			guiGraphics.pose().translate(0.0, 0.0, BUTTON_Z_OFFSET);
+			guiGraphics.pose().pushMatrix();
 			guiGraphics.fill(scrollButtonX, scrollButtonY, scrollButtonX + book.scrollbar().scrollButtonWidth(), scrollButtonY + getScrollButtonHeight(), book.scrollbar().scrollButtonColor());
-			guiGraphics.pose().popPose();
+			guiGraphics.pose().popMatrix();
 		}
 	}
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-		super.render(guiGraphics, mouseX, mouseY, partialTick);
+	public void extractRenderState(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+		super.extractRenderState(guiGraphics, mouseX, mouseY, partialTick);
 		int startHeight = 0;
 		for (ConfiguredBookComponent<?, ?> component : new ArrayList<>(currentComponents)) {
 			if (getContentY() - scrollProgress + startHeight < getContentY() + book.height() - 2 * book.frameWidth()

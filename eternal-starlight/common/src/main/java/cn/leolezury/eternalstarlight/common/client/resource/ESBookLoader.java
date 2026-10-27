@@ -4,11 +4,12 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.book.BookDefinition;
 import cn.leolezury.eternalstarlight.common.client.book.ResolvedBookDefinition;
 import cn.leolezury.eternalstarlight.common.client.book.component.ConfiguredBookComponent;
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.mojang.serialization.JsonOps;
+import net.minecraft.resources.FileToIdConverter;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.ExtraCodecs;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -19,13 +20,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ESBookLoader extends SimpleJsonResourceReloadListener {
+public class ESBookLoader extends SimpleJsonResourceReloadListener<JsonElement> {
 	private static final String SECTIONS_FOLDER = "sections/";
 
 	private final Map<Identifier, ResolvedBookDefinition> books = new HashMap<>();
 
 	public ESBookLoader() {
-		super(new Gson(), EternalStarlight.ID + "/books");
+		super(ExtraCodecs.JSON, FileToIdConverter.json(EternalStarlight.ID + "/books"));
 	}
 
 	@Nullable
@@ -34,7 +35,7 @@ public class ESBookLoader extends SimpleJsonResourceReloadListener {
 	}
 
 	@Override
-	public void apply(Map<Identifier, JsonElement> jsons, ResourceManager resourceManager, ProfilerFiller profiler) {
+	protected void apply(Map<Identifier, JsonElement> jsons, ResourceManager resourceManager, ProfilerFiller profiler) {
 		books.clear();
 		Map<Identifier, List<ConfiguredBookComponent<?, ?>>> sections = new HashMap<>();
 		Map<Identifier, BookDefinition> definitions = new HashMap<>();

@@ -1,8 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.gui.tooltip;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.item.component.LargeItemStackList;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.resources.Identifier;
 
@@ -17,7 +18,7 @@ public class ClientGalacticQuiverTooltip implements ClientTooltipComponent {
 	}
 
 	@Override
-	public int getHeight() {
+	public int getHeight(Font font) {
 		return this.gridSizeY() * 18 + 6;
 	}
 
@@ -27,7 +28,7 @@ public class ClientGalacticQuiverTooltip implements ClientTooltipComponent {
 	}
 
 	@Override
-	public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics) {
+	public void extractImage(Font font, int x, int y, int width, int height, GuiGraphicsExtractor guiGraphics) {
 		int sizeX = this.gridSizeX();
 		int sizeY = this.gridSizeY();
 		int index = 0;
@@ -39,12 +40,12 @@ public class ClientGalacticQuiverTooltip implements ClientTooltipComponent {
 		}
 	}
 
-	private void renderSlot(int x, int y, int itemIndex, GuiGraphics guiGraphics, Font font) {
+	private void renderSlot(int x, int y, int itemIndex, GuiGraphicsExtractor guiGraphics, Font font) {
 		if (itemIndex < this.contents.size()) {
 			LargeItemStackList.LargeItemStack stack = this.contents.get(itemIndex);
-			guiGraphics.blitSprite(SLOT, x, y, 0, 18, 18);
-			guiGraphics.renderItem(stack.getItem(), x + 1, y + 1, itemIndex);
-			guiGraphics.renderItemDecorations(font, stack.asItemStack(), x + 1, y + 1);
+			guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, SLOT, x, y, 18, 18);
+			guiGraphics.item(stack.getItem(), x + 1, y + 1, itemIndex);
+			guiGraphics.itemDecorations(font, stack.asItemStack(), x + 1, y + 1);
 		}
 	}
 

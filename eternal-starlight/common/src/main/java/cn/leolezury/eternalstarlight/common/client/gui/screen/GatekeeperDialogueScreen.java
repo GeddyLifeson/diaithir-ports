@@ -8,7 +8,7 @@ import cn.leolezury.eternalstarlight.common.network.CloseGatekeeperGuiPacket;
 import cn.leolezury.eternalstarlight.common.network.GatekeeperTalkPacket;
 import cn.leolezury.eternalstarlight.common.platform.ESClientPlatform;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
@@ -126,7 +126,7 @@ public class GatekeeperDialogueScreen extends Screen {
 	}
 
 	@Override
-	public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+	public void extractBackground(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
 
 	}
 

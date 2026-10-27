@@ -2,7 +2,7 @@ package cn.leolezury.eternalstarlight.common.client.book.component;
 
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import com.mojang.serialization.Codec;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.resources.Identifier;
 
 import java.util.HashSet;
@@ -31,11 +31,11 @@ public record ConfiguredBookComponent<C extends BookComponentConfig, B extends B
 		return component().getTotalHeight(config(), context);
 	}
 
-	public void render(BookContext context, GuiGraphics graphics, int x, int y) {
+	public void render(BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		component().render(config(), context, graphics, x, y);
 	}
 
-	public void renderDelayed(BookContext context, GuiGraphics graphics, int x, int y) {
+	public void renderDelayed(BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		component().renderDelayed(config(), context, graphics, x, y);
 	}
 

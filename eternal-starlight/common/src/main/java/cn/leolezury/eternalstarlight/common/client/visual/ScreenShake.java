@@ -51,7 +51,7 @@ public class ScreenShake {
 		float partialTicks = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 		float time = player != null ? player.tickCount + partialTicks : 0;
 		float distance = (float) pos.distanceTo(camera.position());
-		if (distance > radius || (player != null && !player.level().dimension().location().equals(dimension))) {
+		if (distance > radius || (player != null && !player.level().dimension().identifier().equals(dimension))) {
 			return 0;
 		}
 		float powerScale = getPowerScale(partialTicks) * (1 - distance / radius);
@@ -65,7 +65,7 @@ public class ScreenShake {
 		float partialTicks = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 		float time = player != null ? player.tickCount + partialTicks : 0;
 		float distance = (float) pos.distanceTo(camera.position());
-		if (distance > radius || (player != null && !player.level().dimension().location().equals(dimension))) {
+		if (distance > radius || (player != null && !player.level().dimension().identifier().equals(dimension))) {
 			return 0;
 		}
 		float powerScale = getPowerScale(partialTicks) * (1 - distance / radius);

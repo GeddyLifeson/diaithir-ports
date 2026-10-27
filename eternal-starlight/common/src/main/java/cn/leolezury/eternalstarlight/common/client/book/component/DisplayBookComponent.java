@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.book.component;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import cn.leolezury.eternalstarlight.common.client.book.text.BookContent;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.BookScreen;
@@ -8,29 +9,38 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.recipebook.PlaceRecipe;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.util.Mth;
+import net.minecraft.util.ProblemReporter;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.ShapedRecipe;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
+import net.minecraft.resources.ResourceKey;
+import java.util.Optional;
 import org.joml.Quaternionf;
+import org.joml.Quaternionfc;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
@@ -53,25 +63,31 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 	}
 
 	@Override
-	public void render(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void render(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		for (ImageDisplay display : config.imageDisplays()) {
-			graphics.blit(display.location(), x + display.x(), y + display.y(), 0, 0, display.width(), display.height(), display.width(), display.height());
+			graphics.blit(RenderPipelines.GUI_TEXTURED, display.location(), x + display.x(), y + display.y(), (float) 0, (float) 0, display.width(), display.height(), display.width(), display.height());
 		}
 		for (EntityDisplay display : config.entityDisplays()) {
 			LivingEntity entity = display.getEntity();
 			if (entity != null) {
-				InventoryScreen.renderEntityInInventory(graphics, x + display.x, y + display.y, display.scale, new Vector3f(), display.rotation, null, entity);
+				EntityRenderer<? super LivingEntity, ?> renderer = Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(entity);
+				EntityRenderState renderState = renderer.createRenderState(entity, 1.0F);
+				renderState.shadowPieces.clear();
+				renderState.outlineColor = 0;
+				int half = Math.max(8, (int) (display.scale * 1.2F));
+				int centerY = y + display.y - (int) (renderState.boundingBoxHeight * display.scale / 2.0F);
+				graphics.entity(renderState, display.scale, new Vector3f(), new Quaternionf(display.rotation), null, x + display.x - half, centerY - half, x + display.x + half, centerY + half);
 			}
 		}
 		for (ItemDisplay display : config.itemDisplays()) {
 			ItemStack stack = display.getItemStack();
-			graphics.renderItem(stack, x + display.x, y + display.y);
+			graphics.item(stack, x + display.x, y + display.y);
 		}
 		for (ItemTagDisplay display : config.itemTagDisplays()) {
 			List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(display.tag()).spliterator(), false).map(Holder::value).toList();
 			if (!items.isEmpty()) {
 				ItemStack stack = items.get(Mth.floor(context.getTickCount() / 30.0) % items.size()).getDefaultInstance();
-				graphics.renderItem(stack, x + display.x(), y + display.y());
+				graphics.item(stack, x + display.x(), y + display.y());
 			}
 		}
 		for (CraftingRecipeDisplay display : config.craftingRecipeDisplays()) {
@@ -80,36 +96,35 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 				for (int j = 0; j < 3; j++) {
 					Ingredient ingredient = ingredients[i][j];
 					if (ingredient != null) {
-						ItemStack[] items = ingredient.getItems();
+						ItemStack[] items = ingredientItems(ingredient);
 						ItemStack stack = items.length == 0 ? ItemStack.EMPTY : items[Mth.floor(context.getTickCount() / 30.0) % items.length];
-						graphics.renderItem(stack, x + display.x + i * display.slotWidth + (display.slotWidth - 16) / 2, y + display.y + j * display.slotHeight + (display.slotHeight - 16) / 2);
+						graphics.item(stack, x + display.x + i * display.slotWidth + (display.slotWidth - 16) / 2, y + display.y + j * display.slotHeight + (display.slotHeight - 16) / 2);
 					}
 				}
 			}
 		}
 		for (TextDisplay display : config.textDisplays()) {
-			graphics.pose().pushPose();
-			graphics.pose().translate(x + display.x, y + display.y, 0);
+			graphics.pose().pushMatrix();
+			graphics.pose().translate((float) (x + display.x), (float) (y + display.y));
 			List<FormattedCharSequence> lines = display.getLines(context);
-			graphics.pose().scale(display.scale, display.scale, 1);
+			graphics.pose().scale((float) (display.scale), (float) (display.scale));
 			for (int i = 0; i < lines.size(); i++) {
 				FormattedCharSequence text = lines.get(i);
-				graphics.drawString(context.getFont(), text, display.centered ? -context.getFont().width(text) / 2 : 0, i * display.lineHeight, 0, true);
+				graphics.text(context.getFont(), text, display.centered ? -context.getFont().width(text) / 2 : 0, i * display.lineHeight, 0, true);
 			}
-			graphics.pose().popPose();
+			graphics.pose().popMatrix();
 		}
 	}
 
 	@Override
-	public void renderDelayed(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void renderDelayed(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		for (ItemDisplay display : config.itemDisplays()) {
 			ItemStack stack = display.getItemStack();
 			if (context.getMouseX() >= x + display.x && context.getMouseX() <= x + display.x + 16
 				&& context.getMouseY() >= Math.max(y + display.y, context.getContentY()) && context.getMouseY() <= Math.min(y + display.y + 16, context.getContentY() + context.getBookDefinition().height() - 2 * context.getBookDefinition().frameWidth())) {
-				graphics.pose().pushPose();
-				graphics.pose().translate(0.0, 0.0, BookScreen.TOOLTIP_Z_OFFSET);
-				graphics.renderTooltip(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
-				graphics.pose().popPose();
+				graphics.pose().pushMatrix();
+				graphics.setTooltipForNextFrame(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
+				graphics.pose().popMatrix();
 			}
 		}
 		for (ItemTagDisplay display : config.itemTagDisplays()) {
@@ -118,10 +133,9 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 				ItemStack stack = items.get(Mth.floor(context.getTickCount() / 30.0) % items.size()).getDefaultInstance();
 				if (context.getMouseX() >= x + display.x() && context.getMouseX() <= x + display.x() + 16
 					&& context.getMouseY() >= Math.max(y + display.y(), context.getContentY()) && context.getMouseY() <= Math.min(y + display.y() + 16, context.getContentY() + context.getBookDefinition().height() - 2 * context.getBookDefinition().frameWidth())) {
-					graphics.pose().pushPose();
-					graphics.pose().translate(0.0, 0.0, BookScreen.TOOLTIP_Z_OFFSET);
-					graphics.renderTooltip(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
-					graphics.pose().popPose();
+					graphics.pose().pushMatrix();
+					graphics.setTooltipForNextFrame(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
+					graphics.pose().popMatrix();
 				}
 			}
 		}
@@ -131,14 +145,13 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 				for (int j = 0; j < 3; j++) {
 					Ingredient ingredient = ingredients[i][j];
 					if (ingredient != null) {
-						ItemStack[] items = ingredient.getItems();
+						ItemStack[] items = ingredientItems(ingredient);
 						ItemStack stack = items.length == 0 ? ItemStack.EMPTY : items[Mth.floor(context.getTickCount() / 30.0) % items.length];
 						if (!stack.isEmpty() && context.getMouseX() > x + display.x + i * display.slotWidth + (display.slotWidth - 16) / 2 && context.getMouseX() < x + display.x + i * display.slotWidth + (display.slotWidth - 16) / 2 + 16
 							&& context.getMouseY() > Math.max(y + display.y + j * display.slotHeight + (display.slotHeight - 16) / 2, context.getContentY()) && context.getMouseY() < Math.min(y + display.y + j * display.slotHeight + (display.slotHeight - 16) / 2 + 16, context.getContentY() + context.getBookDefinition().height() - 2 * context.getBookDefinition().frameWidth())) {
-							graphics.pose().pushPose();
-							graphics.pose().translate(0.0, 0.0, BookScreen.TOOLTIP_Z_OFFSET);
-							graphics.renderTooltip(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
-							graphics.pose().popPose();
+							graphics.pose().pushMatrix();
+							graphics.setTooltipForNextFrame(context.getFont(), Screen.getTooltipFromItem(Minecraft.getInstance(), stack), stack.getTooltipImage(), context.getMouseX(), context.getMouseY());
+							graphics.pose().popMatrix();
 						}
 					}
 				}
@@ -158,11 +171,11 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 				int startX = x + display.x - (display.centered ? width / 2 : 0);
 				int endX = x + display.x + (display.centered ? width / 2 : width);
 				if (context.getMouseX() >= startX && context.getMouseX() <= endX) {
-					Style style = context.getFont().getSplitter().componentStyleAtWidth(charSequence, (int) ((context.getMouseX() - startX) / display.scale));
+					Style style = cn.leolezury.eternalstarlight.common.util.ESGuiUtil.styleAtWidth(context.getFont(), charSequence, (int) ((context.getMouseX() - startX) / display.scale));
 					if (style != null) {
 						ClickEvent event = style.getClickEvent();
-						if (event != null && event.getAction() == ClickEvent.Action.CHANGE_PAGE) {
-							context.jumpToComponent(Identifier.parse(event.getValue()));
+						if (event instanceof ClickEvent.Custom custom) {
+							context.jumpToComponent(custom.id());
 						}
 					}
 				}
@@ -226,9 +239,9 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 		private final CompoundTag entityTag;
 		private final int x, y;
 		private final float xRot, yRot, scale;
-		private final Quaternionf rotation;
+		private final Quaternionfc rotation;
 
-		public EntityDisplay(CompoundTag entity, int x, int y, float xRot, float yRot, float scale, Quaternionf rotation) {
+		public EntityDisplay(CompoundTag entity, int x, int y, float xRot, float yRot, float scale, Quaternionfc rotation) {
 			this.entityTag = entity;
 			this.x = x;
 			this.y = y;
@@ -240,7 +253,9 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 
 		public LivingEntity getEntity() {
 			if (cachedEntity == null && Minecraft.getInstance().level != null) {
-				if (EntityType.loadEntityRecursive(entityTag, Minecraft.getInstance().level, e -> e) instanceof LivingEntity entity) {
+				Level level = Minecraft.getInstance().level;
+				ValueInput input = TagValueInput.create(ProblemReporter.DISCARDING, level.registryAccess(), entityTag);
+				if (EntityType.create(input, level, EntitySpawnReason.LOAD).orElse(null) instanceof LivingEntity entity) {
 					cachedEntity = entity;
 					cachedEntity.yBodyRot = yRot;
 					cachedEntity.setXRot(xRot);
@@ -272,7 +287,7 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 
 		public ItemStack getItemStack() {
 			if (cachedStack == null && Minecraft.getInstance().level != null) {
-				cachedStack = ItemStack.parseOptional(Minecraft.getInstance().level.registryAccess(), itemStackTag);
+				cachedStack = ItemStack.CODEC.parse(Minecraft.getInstance().level.registryAccess().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), itemStackTag).result().orElse(ItemStack.EMPTY);
 			}
 			return cachedStack == null ? ItemStack.EMPTY : cachedStack;
 		}
@@ -310,16 +325,37 @@ public class DisplayBookComponent extends BookComponent<DisplayBookComponent.Con
 		}
 
 		public Ingredient[][] getIngredients() {
-			if (recipe == null && Minecraft.getInstance().level != null) {
-				recipe = Minecraft.getInstance().level.getRecipeManager().byKey(recipeId).orElse(null);
+			if (recipe == null) {
+				// the client does not receive recipes, so they are only available while an integrated server is running
+				net.minecraft.server.MinecraftServer server = Minecraft.getInstance().getSingleplayerServer();
+				if (server != null) {
+					recipe = server.getRecipeManager().byKey(ResourceKey.create(Registries.RECIPE, recipeId)).orElse(null);
+				}
 			}
-			if (!recipePlaced && recipe != null && recipe.value().getType() == RecipeType.CRAFTING) {
+			if (!recipePlaced && recipe != null) {
 				recipePlaced = true;
-				PlaceRecipe<Ingredient> placeRecipe = (ingredient, slot, maxAmount, x, y) -> ingredients[x][y] = ingredient;
-				placeRecipe.placeRecipe(3, 3, -1, recipe, recipe.value().getIngredients().iterator(), 0);
+				if (recipe.value() instanceof ShapedRecipe shaped) {
+					List<Optional<Ingredient>> list = shaped.getIngredients();
+					for (int j = 0; j < shaped.getHeight() && j < 3; j++) {
+						for (int i = 0; i < shaped.getWidth() && i < 3; i++) {
+							ingredients[i][j] = list.get(j * shaped.getWidth() + i).orElse(null);
+						}
+					}
+				} else if (recipe.value() instanceof ShapelessRecipe shapeless) {
+					int index = 0;
+					for (Ingredient ingredient : shapeless.placementInfo().ingredients()) {
+						if (index >= 9) break;
+						ingredients[index % 3][index / 3] = ingredient;
+						index++;
+					}
+				}
 			}
 			return ingredients;
 		}
+	}
+
+	private static ItemStack[] ingredientItems(Ingredient ingredient) {
+		return ingredient.items().map(holder -> holder.value().getDefaultInstance()).toArray(ItemStack[]::new);
 	}
 
 	private record ImageDisplay(Identifier location, int x, int y, int width, int height) {

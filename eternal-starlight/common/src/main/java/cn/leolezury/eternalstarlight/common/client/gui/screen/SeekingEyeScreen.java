@@ -8,7 +8,9 @@ import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.util.Util;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -130,7 +132,7 @@ public class SeekingEyeScreen extends Screen {
 	private int lastMouseY;
 
 	public SeekingEyeScreen() {
-		super(ESItems.SEEKING_EYE.get().getDescription());
+		super(Component.translatable(ESItems.SEEKING_EYE.get().getDescriptionId()));
 	}
 
 	@Override
@@ -139,7 +141,7 @@ public class SeekingEyeScreen extends Screen {
 	}
 
 	@Override
-	public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+	public void extractBackground(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
 	}
 
 	@Override
@@ -163,21 +165,38 @@ public class SeekingEyeScreen extends Screen {
 	}
 
 	@Override
-	public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
 		lastMouseX = mouseX;
 		lastMouseY = mouseY;
 		advanceTime();
 		updateStars();
 		hoveredIndex = transitioning() ? -1 : (keyboardActive ? keyboardSelectedIndex() : pickHoveredStar(mouseX, mouseY));
 		fillStarData();
-		graphics.flush();
 		float fade = closing ? Mth.clamp(1.0F - (animTime - closeStart) / CLOSE_DURATION, 0.0F, 1.0F) : 1.0F;
 		SeekingEyeOverlay.render(STAR_POSITIONS, STAR_RADII, STAR_COLORS, STAR_ALPHAS, STAR_PHASES, STAR_ROTATIONS, STAR_RAY_COUNTS, STAR_RAY_LENGTHS, Math.min(stars.size(), MAX_STARS), hoveredIndex, fade, animTime, partialTick);
-		graphics.flush();
+		float globalAlpha = fade;
+		graphics.fill(0, 0, width, height, ((int) (0xB0 * globalAlpha) << 24) | 0x00000A);
+		for (int i = 0; i < stars.size(); i++) {
+			Star star = stars.get(i);
+			float a = Mth.clamp(star.alpha, 0.0F, 1.0F) * globalAlpha;
+			if (a <= 0.01F || star.radius <= 0.5F) {
+				continue;
+			}
+			float pulse = 1.0F + 0.08F * Mth.sin(animTime * 3.0F + i);
+			float radius = star.radius * pulse * (i == hoveredIndex ? 1.25F : 1.0F);
+			int rgb = star.color & 0xFFFFFF;
+			for (int layer = 4; layer >= 1; layer--) {
+				float size = radius * layer / 2.0F;
+				int layerAlpha = (int) (255 * a * (0.10F + 0.18F * (5 - layer)) / 2.0F);
+				graphics.fill((int) (star.x - size), (int) (star.y - size), (int) (star.x + size), (int) (star.y + size), (Mth.clamp(layerAlpha, 0, 255) << 24) | rgb);
+			}
+			int core = (int) Math.max(1, radius / 3.0F);
+			graphics.fill((int) (star.x - core), (int) (star.y - core), (int) (star.x + core), (int) (star.y + core), ((int) (255 * a) << 24) | 0xFFFFFF);
+		}
 		if (hoveredIndex >= 0 && hoveredIndex < stars.size()) {
 			Star star = stars.get(hoveredIndex);
 			if (star.label != null) {
-				graphics.renderTooltip(font, star.label, (int) star.x + 14, (int) star.y - 8);
+				graphics.setTooltipForNextFrame(font, star.label, (int) star.x + 14, (int) star.y - 8);
 			}
 		}
 		if (closing && animTime - closeStart > CLOSE_DURATION + 0.05F && minecraft != null) {
@@ -191,7 +210,8 @@ public class SeekingEyeScreen extends Screen {
 	}
 
 	@Override
-	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+	public boolean keyPressed(KeyEvent event) {
+		int keyCode = event.key();
 		if (!closing && !transitioning()) {
 			boolean up = keyCode == GLFW.GLFW_KEY_UP;
 			boolean down = keyCode == GLFW.GLFW_KEY_DOWN;
@@ -220,12 +240,14 @@ public class SeekingEyeScreen extends Screen {
 				}
 			}
 		}
-		return super.keyPressed(keyCode, scanCode, modifiers);
+		return super.keyPressed(event);
 	}
 
 	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		if (button != 0 || closing || transitioning()) {
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		double mouseX = event.x();
+		double mouseY = event.y();
+		if (event.button() != 0 || closing || transitioning()) {
 			return true;
 		}
 		Star clicked = pickStarAt(mouseX, mouseY);
@@ -354,7 +376,7 @@ public class SeekingEyeScreen extends Screen {
 			return;
 		}
 		packetSent = true;
-		ESClientPlatform.INSTANCE.sendToServer(new SelectSeekingEyeTargetPacket(currentCategory, star.entry.key().location()));
+		ESClientPlatform.INSTANCE.sendToServer(new SelectSeekingEyeTargetPacket(currentCategory, star.entry.key().identifier()));
 		closing = true;
 		closeStart = animTime;
 		for (Star s : stars) {

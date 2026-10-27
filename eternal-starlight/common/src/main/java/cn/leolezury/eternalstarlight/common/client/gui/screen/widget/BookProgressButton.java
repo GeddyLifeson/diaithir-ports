@@ -1,8 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.gui.screen.widget;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.client.book.BookDefinition;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.BookScreen;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.CommonComponents;
 
@@ -17,10 +18,9 @@ public class BookProgressButton extends Button {
 	}
 
 	@Override
-	public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-		guiGraphics.pose().pushPose();
-		guiGraphics.pose().translate(0.0, 0.0, BookScreen.BUTTON_Z_OFFSET);
-		guiGraphics.blit(isDown ? book.textures().downButton() : book.textures().upButton(), this.getX(), this.getY(), 0, 0, book.buttons().upDownButtonWidth(), book.buttons().upDownButtonHeight(), book.buttons().upDownButtonWidth(), book.buttons().upDownButtonHeight());
-		guiGraphics.pose().popPose();
+	protected void extractContents(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+		guiGraphics.pose().pushMatrix();
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, isDown ? book.textures().downButton() : book.textures().upButton(), this.getX(), this.getY(), (float) 0, (float) 0, book.buttons().upDownButtonWidth(), book.buttons().upDownButtonHeight(), book.buttons().upDownButtonWidth(), book.buttons().upDownButtonHeight());
+		guiGraphics.pose().popMatrix();
 	}
 }

@@ -6,7 +6,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
@@ -28,12 +28,12 @@ public class TextBookComponent extends BookComponent<TextBookComponent.Config> {
 	}
 
 	@Override
-	public void render(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void render(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		List<FormattedCharSequence> list = context.getFont().split(config.text().toComponent(), config.width());
 		for (int i = 0; i < list.size(); i++) {
 			int renderY = y + config.offset() + i * config.lineHeight();
 			float alpha = Math.abs(renderY - (context.getContentY() - context.getBookDefinition().frameWidth() + 0.5f * context.getBookDefinition().height())) / (0.5f * context.getBookDefinition().height() - context.getBookDefinition().frameWidth());
-			graphics.drawString(context.getFont(), list.get(i), x, renderY, ARGB.colorFromFloat(Mth.clamp(1.2f - alpha, 0.1f, 1), 0, 0, 0), true);
+			graphics.text(context.getFont(), list.get(i), x, renderY, ARGB.colorFromFloat(Mth.clamp(1.2f - alpha, 0.1f, 1), 0, 0, 0), true);
 		}
 	}
 
@@ -45,11 +45,11 @@ public class TextBookComponent extends BookComponent<TextBookComponent.Config> {
 			FormattedCharSequence charSequence = list.get(line);
 			int width = context.getFont().width(charSequence);
 			if (context.getMouseX() >= x && context.getMouseX() <= x + width) {
-				Style style = context.getFont().getSplitter().componentStyleAtWidth(charSequence, context.getMouseX() - x);
+				Style style = cn.leolezury.eternalstarlight.common.util.ESGuiUtil.styleAtWidth(context.getFont(), charSequence, context.getMouseX() - x);
 				if (style != null) {
 					ClickEvent event = style.getClickEvent();
-					if (event != null && event.getAction() == ClickEvent.Action.CHANGE_PAGE) {
-						context.jumpToComponent(Identifier.parse(event.getValue()));
+					if (event instanceof ClickEvent.Custom custom) {
+						context.jumpToComponent(custom.id());
 					}
 				}
 			}

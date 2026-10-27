@@ -1,7 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.gui.screen.widget;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
@@ -31,13 +31,13 @@ public class NpcDialogueTextWidget extends AbstractWidget {
 	}
 
 	@Override
-	protected void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
+	protected void extractWidgetRenderState(GuiGraphicsExtractor guiGraphics, int i, int j, float f) {
 		guiGraphics.fillGradient(getX(), getY(), getX() + width, getY() + height, 0x654169e1, 0x654169e1);
 		String message = getMessage().getString().substring(0, Math.min(getMessage().getString().length(), tickCount));
 		List<FormattedCharSequence> lines = Minecraft.getInstance().font.split(FormattedText.of(message), width / 5 * 4);
 		int y = 0;
 		for (FormattedCharSequence sequence : lines) {
-			guiGraphics.drawCenteredString(Minecraft.getInstance().font, sequence, getX() + width / 2, getY() + y + 5, 0xf2c55c);
+			guiGraphics.centeredText(Minecraft.getInstance().font, sequence, getX() + width / 2, getY() + y + 5, 0xf2c55c);
 			y += Minecraft.getInstance().font.lineHeight;
 		}
 	}

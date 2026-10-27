@@ -1,8 +1,10 @@
 package cn.leolezury.eternalstarlight.common.client.gui.toast;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.toasts.Toast;
-import net.minecraft.client.gui.components.toasts.ToastComponent;
+import net.minecraft.client.gui.components.toasts.ToastManager;
+import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.FormattedCharSequence;
@@ -16,6 +18,7 @@ public class SimpleTextToast implements Toast {
 	private final Component title;
 	private final Component text;
 	private final ItemStack icon;
+	private Toast.Visibility wanted = Toast.Visibility.SHOW;
 
 	public SimpleTextToast(Component title, Component text, ItemStack icon) {
 		this.title = title;
@@ -24,28 +27,35 @@ public class SimpleTextToast implements Toast {
 	}
 
 	@Override
-	public Toast.Visibility render(GuiGraphics guiGraphics, ToastComponent toastComponent, long timeSinceLastVisible) {
-		guiGraphics.blitSprite(BACKGROUND_SPRITE, 0, 0, this.width(), this.height());
-		List<FormattedCharSequence> list = toastComponent.getMinecraft().font.split(text, 125);
+	public Toast.Visibility getWantedVisibility() {
+		return wanted;
+	}
+
+	@Override
+	public void update(ToastManager manager, long fullyVisibleForMs) {
+		wanted = fullyVisibleForMs >= 5000.0 * manager.getNotificationDisplayTimeMultiplier() ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
+	}
+
+	@Override
+	public void extractRenderState(GuiGraphicsExtractor guiGraphics, Font font, long timeSinceLastVisible) {
+		guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, BACKGROUND_SPRITE, 0, 0, this.width(), this.height());
+		List<FormattedCharSequence> list = font.split(text, 125);
 		if (list.size() == 1) {
-			guiGraphics.drawString(toastComponent.getMinecraft().font, title, 30, 7, -1, false);
-			guiGraphics.drawString(toastComponent.getMinecraft().font, list.getFirst(), 30, 18, -1, false);
+			guiGraphics.text(font, title, 30, 7, -1, false);
+			guiGraphics.text(font, list.getFirst(), 30, 18, -1, false);
 		} else {
 			if (timeSinceLastVisible < 1500L) {
 				int color = Mth.floor(Mth.clamp((1500L - timeSinceLastVisible) / 300.0F, 0.0F, 1.0F) * 255.0F) << 24 | 67108864;
-				guiGraphics.drawString(toastComponent.getMinecraft().font, title, 30, 11, 16776960 | color, false);
+				guiGraphics.text(font, title, 30, 11, 16776960 | color, false);
 			} else {
 				int color = Mth.floor(Mth.clamp((timeSinceLastVisible - 1500L) / 300.0F, 0.0F, 1.0F) * 252.0F) << 24 | 67108864;
 				int textY = this.height() / 2 - list.size() * 9 / 2;
-
-				for (FormattedCharSequence formattedcharsequence : list) {
-					guiGraphics.drawString(toastComponent.getMinecraft().font, formattedcharsequence, 30, textY, 16777215 | color, false);
+				for (FormattedCharSequence sequence : list) {
+					guiGraphics.text(font, sequence, 30, textY, 16777215 | color, false);
 					textY += 9;
 				}
 			}
 		}
-
-		guiGraphics.renderFakeItem(icon, 8, 8);
-		return timeSinceLastVisible >= 5000.0 * toastComponent.getNotificationDisplayTimeMultiplier() ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
+		guiGraphics.fakeItem(icon, 8, 8);
 	}
 }

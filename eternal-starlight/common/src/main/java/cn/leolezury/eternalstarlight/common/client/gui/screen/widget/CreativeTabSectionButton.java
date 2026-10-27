@@ -1,8 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.gui.screen.widget;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.item.tab.ESCreativeModeTab;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.resources.Identifier;
 
@@ -30,8 +31,8 @@ public class CreativeTabSectionButton extends Button {
 	}
 
 	@Override
-	protected void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-		guiGraphics.blit(this.isSectionSelected() ? SELECTED_TEXTURE : TEXTURE, getX(), getY(), 0, 0, SIZE, SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
-		guiGraphics.renderItem(this.group.getSection(this.sectionIndex).icon().get(), getX() + 4, getY() + 4);
+	protected void extractContents(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.isSectionSelected() ? SELECTED_TEXTURE : TEXTURE, getX(), getY(), (float) 0, (float) 0, SIZE, SIZE, TEXTURE_SIZE, TEXTURE_SIZE);
+		guiGraphics.item(this.group.getSection(this.sectionIndex).icon().get(), getX() + 4, getY() + 4);
 	}
 }

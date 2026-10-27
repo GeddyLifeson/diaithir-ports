@@ -1,8 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.gui.screen;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.item.menu.CrystalbornCatalystMenu;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
 import net.minecraft.network.chat.Component;
@@ -15,25 +16,19 @@ public class CrystalbornCatalystScreen extends AbstractContainerScreen<Crystalbo
 	private static final Identifier PROGRESS = EternalStarlight.id("screen/crystalborn_catalyst/progress");
 
 	public CrystalbornCatalystScreen(CrystalbornCatalystMenu menu, Inventory inventory, Component title) {
-		super(menu, inventory, title);
-		this.imageHeight = 148;
+		super(menu, inventory, title, 176, 148);
 		this.inventoryLabelY = this.imageHeight - 94;
 	}
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
-		super.render(guiGraphics, mouseX, mouseY, partialTick);
-		this.renderTooltip(guiGraphics, mouseX, mouseY);
-	}
-
-	@Override
-	protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
+	public void extractBackground(GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+		super.extractBackground(guiGraphics, mouseX, mouseY, partialTick);
 		int x = (this.width - this.imageWidth) / 2;
 		int y = (this.height - this.imageHeight) / 2;
-		guiGraphics.blit(CONTAINER_BACKGROUND, x, y, 0, 0, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, CONTAINER_BACKGROUND, x, y, (float) 0, (float) 0, this.imageWidth, this.imageHeight, 256, 256);
 		if (menu.getChargeProgress() > 0) {
 			int progress = (Mth.ceil(menu.getChargeProgress() * 13) + 1);
-			guiGraphics.blitSprite(PROGRESS, 14, 14, 0, 14 - progress, this.leftPos + 9, this.topPos + 34 - progress, 14, progress);
+			guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, PROGRESS, 14, 14, 0, 14 - progress, this.leftPos + 9, this.topPos + 34 - progress, 14, progress);
 		}
 	}
 }

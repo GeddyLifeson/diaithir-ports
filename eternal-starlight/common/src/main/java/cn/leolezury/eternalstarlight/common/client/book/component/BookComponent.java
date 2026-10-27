@@ -3,7 +3,7 @@ package cn.leolezury.eternalstarlight.common.client.book.component;
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 public abstract class BookComponent<C extends BookComponentConfig> {
 	private final MapCodec<ConfiguredBookComponent<C, BookComponent<C>>> configuredCodec;
@@ -18,9 +18,9 @@ public abstract class BookComponent<C extends BookComponentConfig> {
 
 	public abstract int getTotalHeight(C config, BookContext context);
 
-	public abstract void render(C config, BookContext context, GuiGraphics graphics, int x, int y);
+	public abstract void render(C config, BookContext context, GuiGraphicsExtractor graphics, int x, int y);
 
-	public void renderDelayed(C config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void renderDelayed(C config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 
 	}
 

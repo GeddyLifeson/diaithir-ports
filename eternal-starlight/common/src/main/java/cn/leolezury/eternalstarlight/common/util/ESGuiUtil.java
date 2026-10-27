@@ -1,27 +1,39 @@
 package cn.leolezury.eternalstarlight.common.util;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
-import org.joml.Matrix4f;
 
 public class ESGuiUtil {
-	// from GuiGraphics, changed int -> float
-	public static void blitFloat(GuiGraphics graphics, Identifier resourceLocation, float x, float y, float width, float height, float texWidth, float texHeight) {
-		innerBlitFloat(graphics, resourceLocation, x, x + width, y, y + height, width / texWidth, height / texHeight);
+	/**
+	 * Draws a texture at a fractional position. GUI blits are integer based in 26.1, so the fraction is applied
+	 * through the pose matrix and the quad is drawn at the origin.
+	 */
+	public static void blitFloat(GuiGraphicsExtractor graphics, Identifier resourceLocation, float x, float y, float width, float height, float texWidth, float texHeight) {
+		graphics.pose().pushMatrix();
+		graphics.pose().translate(x, y);
+		graphics.pose().scale(width / texWidth, height / texHeight);
+		graphics.blit(RenderPipelines.GUI_TEXTURED, resourceLocation, 0, 0, 0.0F, 0.0F, (int) texWidth, (int) texHeight, (int) texWidth, (int) texHeight);
+		graphics.pose().popMatrix();
 	}
 
-	private static void innerBlitFloat(GuiGraphics graphics, Identifier resourceLocation, float x, float xTo, float y, float yTo, float u, float v) {
-		RenderSystem.setShaderTexture(0, resourceLocation);
-		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		Matrix4f matrix4f = graphics.pose().last().pose();
-		BufferBuilder bufferBuilder = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-		bufferBuilder.addVertex(matrix4f, x, y, 0).setUv(0, 0);
-		bufferBuilder.addVertex(matrix4f, x, yTo, 0).setUv(0, v);
-		bufferBuilder.addVertex(matrix4f, xTo, yTo, 0).setUv(u, v);
-		bufferBuilder.addVertex(matrix4f, xTo, y, 0).setUv(u, 0);
-		BufferUploader.drawWithShader(bufferBuilder.buildOrThrow());
+	/**
+	 * Replacement for the removed StringSplitter#componentStyleAtWidth.
+	 */
+	public static net.minecraft.network.chat.Style styleAtWidth(net.minecraft.client.gui.Font font, net.minecraft.util.FormattedCharSequence sequence, int width) {
+		if (width < 0) {
+			return null;
+		}
+		float[] accumulated = {0};
+		net.minecraft.network.chat.Style[] found = {null};
+		sequence.accept((index, style, codePoint) -> {
+			accumulated[0] += font.width(net.minecraft.util.FormattedCharSequence.codepoint(codePoint, style));
+			if (accumulated[0] > width) {
+				found[0] = style;
+				return false;
+			}
+			return true;
+		});
+		return found[0];
 	}
 }

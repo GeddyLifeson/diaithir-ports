@@ -5,6 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
@@ -113,7 +114,7 @@ public record BookText(boolean translation, String content) {
 			text.withStyle(state.style);
 		}
 		if (state.link != null) {
-			text.withStyle(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.CHANGE_PAGE, state.link)));
+			text.withStyle(style -> style.withClickEvent(new ClickEvent.Custom(Identifier.parse(state.link), java.util.Optional.empty())));
 		}
 		return text;
 	}

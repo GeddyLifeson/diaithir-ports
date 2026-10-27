@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.book.component;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import cn.leolezury.eternalstarlight.common.client.book.text.BookContent;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.BookScreen;
@@ -10,7 +11,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -43,18 +44,18 @@ public class MobInfoBookComponent extends BookComponent<MobInfoBookComponent.Con
 	}
 
 	@Override
-	public void render(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void render(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		if (config.entries().isEmpty()) return;
 		int selectedIndex = Mth.clamp(SELECTED_INDEX.getOrDefault(config.id(), 0), 0, config.entries().size() - 1);
 		int centerY = y + config.height() / 2;
-		graphics.blit(config.leftButton(), x + config.centerX() - config.width() / 2, centerY - config.buttonHeight() / 2, 0, 0, config.buttonWidth(), config.buttonHeight(), config.buttonWidth(), config.buttonHeight());
-		graphics.blit(config.rightButton(), x + config.centerX() + config.width() / 2 - config.buttonWidth(), centerY - config.buttonHeight() / 2, 0, 0, config.buttonWidth(), config.buttonHeight(), config.buttonWidth(), config.buttonHeight());
+		graphics.blit(RenderPipelines.GUI_TEXTURED, config.leftButton(), x + config.centerX() - config.width() / 2, centerY - config.buttonHeight() / 2, (float) 0, (float) 0, config.buttonWidth(), config.buttonHeight(), config.buttonWidth(), config.buttonHeight());
+		graphics.blit(RenderPipelines.GUI_TEXTURED, config.rightButton(), x + config.centerX() + config.width() / 2 - config.buttonWidth(), centerY - config.buttonHeight() / 2, (float) 0, (float) 0, config.buttonWidth(), config.buttonHeight(), config.buttonWidth(), config.buttonHeight());
 		Entry entry = config.entries().get(selectedIndex);
-		graphics.blit(entry.icon(), x + config.centerX() - entry.iconWidth() / 2, centerY - entry.iconHeight() / 2, 0, 0, entry.iconWidth(), entry.iconHeight(), entry.iconWidth(), entry.iconHeight());
+		graphics.blit(RenderPipelines.GUI_TEXTURED, entry.icon(), x + config.centerX() - entry.iconWidth() / 2, centerY - entry.iconHeight() / 2, (float) 0, (float) 0, entry.iconWidth(), entry.iconHeight(), entry.iconWidth(), entry.iconHeight());
 	}
 
 	@Override
-	public void renderDelayed(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void renderDelayed(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		if (config.entries().isEmpty()) return;
 		int selectedIndex = Mth.clamp(SELECTED_INDEX.getOrDefault(config.id(), 0), 0, config.entries().size() - 1);
 		int centerY = y + config.height() / 2;
@@ -64,9 +65,9 @@ public class MobInfoBookComponent extends BookComponent<MobInfoBookComponent.Con
 			List<Component> tooltip = new ArrayList<>();
 			if (entry.attribute().isPresent()) {
 				Optional<EntityType<?>> entityType = BuiltInRegistries.ENTITY_TYPE.getOptional(config.mob());
-				Optional<Holder.Reference<Attribute>> attribute = BuiltInRegistries.ATTRIBUTE.getHolder(entry.attribute().get());
+				Optional<Holder.Reference<Attribute>> attribute = BuiltInRegistries.ATTRIBUTE.get(entry.attribute().get());
 				if (entityType.isPresent() && attribute.isPresent() && Minecraft.getInstance().level != null) {
-					Entity entity = CACHED_ENTITY_SAMPLES.computeIfAbsent(entityType.get(), type -> type.create(Minecraft.getInstance().level));
+					Entity entity = CACHED_ENTITY_SAMPLES.computeIfAbsent(entityType.get(), type -> type.create(Minecraft.getInstance().level, net.minecraft.world.entity.EntitySpawnReason.LOAD));
 					if (entity instanceof LivingEntity living) {
 						AttributeInstance instance = living.getAttribute(attribute.get());
 						if (instance != null) {
@@ -104,10 +105,9 @@ public class MobInfoBookComponent extends BookComponent<MobInfoBookComponent.Con
 					}
 				}));
 			}
-			graphics.pose().pushPose();
-			graphics.pose().translate(0.0, 0.0, BookScreen.TOOLTIP_Z_OFFSET);
-			graphics.renderTooltip(context.getFont(), tooltip, Optional.empty(), context.getMouseX(), context.getMouseY());
-			graphics.pose().popPose();
+			graphics.pose().pushMatrix();
+			graphics.setTooltipForNextFrame(context.getFont(), tooltip, Optional.empty(), context.getMouseX(), context.getMouseY());
+			graphics.pose().popMatrix();
 		}
 	}
 

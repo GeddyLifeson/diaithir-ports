@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.book.component;
 
+import net.minecraft.client.renderer.RenderPipelines;
 import cn.leolezury.eternalstarlight.common.client.book.BookContext;
 import cn.leolezury.eternalstarlight.common.client.book.text.BookContent;
 import com.google.common.collect.Lists;
@@ -8,7 +9,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -40,7 +41,7 @@ public class IndexBookComponent extends BookComponent<IndexBookComponent.Config>
 	}
 
 	@Override
-	public void render(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
+	public void render(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
 		int startHeight = config.offset();
 		for (Entry entry : filterEnabledEntries(config, context)) {
 			entry.render(config, context, graphics, x, y + startHeight);
@@ -105,7 +106,7 @@ public class IndexBookComponent extends BookComponent<IndexBookComponent.Config>
 
 		public ItemStack getIcon() {
 			if (cachedIcon == null && Minecraft.getInstance().level != null) {
-				cachedIcon = ItemStack.parseOptional(Minecraft.getInstance().level.registryAccess(), icon);
+				cachedIcon = ItemStack.CODEC.parse(Minecraft.getInstance().level.registryAccess().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), icon).result().orElse(ItemStack.EMPTY);
 			}
 			return cachedIcon == null ? ItemStack.EMPTY : cachedIcon;
 		}
@@ -118,14 +119,14 @@ public class IndexBookComponent extends BookComponent<IndexBookComponent.Config>
 			return Math.max((splitText(config, context, getText()).size() - 1) * config.lineHeight() + context.getFont().lineHeight / 2 + iconFrameHeight / 2, iconFrameHeight);
 		}
 
-		public void render(Config config, BookContext context, GuiGraphics graphics, int x, int y) {
-			graphics.blit(iconFrame, x, y, 0, 0, iconFrameWidth, iconFrameHeight, iconFrameWidth, iconFrameHeight);
-			graphics.renderItem(getIcon(), x + iconFrameWidth / 2 - 8, y + iconFrameHeight / 2 - 8);
+		public void render(Config config, BookContext context, GuiGraphicsExtractor graphics, int x, int y) {
+			graphics.blit(RenderPipelines.GUI_TEXTURED, iconFrame, x, y, (float) 0, (float) 0, iconFrameWidth, iconFrameHeight, iconFrameWidth, iconFrameHeight);
+			graphics.item(getIcon(), x + iconFrameWidth / 2 - 8, y + iconFrameHeight / 2 - 8);
 			boolean selected = context.getMouseX() >= context.getContentX() && context.getMouseX() <= context.getContentX() + context.getBookDefinition().width() - 2 * context.getBookDefinition().frameWidth()
 				&& context.getMouseY() > y && context.getMouseY() < y + getHeight(config, context);
 			List<FormattedCharSequence> list = splitText(config, context, selected ? getText().copy().withStyle(ChatFormatting.UNDERLINE) : getText());
 			for (int i = 0; i < list.size(); i++) {
-				graphics.drawString(context.getFont(), list.get(i), x + iconFrameWidth + 5, y + iconFrameHeight / 2 - context.getFont().lineHeight / 2 + i * config.lineHeight(), -1, true);
+				graphics.text(context.getFont(), list.get(i), x + iconFrameWidth + 5, y + iconFrameHeight / 2 - context.getFont().lineHeight / 2 + i * config.lineHeight(), -1, true);
 			}
 		}
 	}
