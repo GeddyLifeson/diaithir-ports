@@ -18,6 +18,12 @@ final class Commands {
                             String line = fails.isEmpty() ? "Wiretech self test PASS" : "Wiretech self test FAIL: " + String.join("; ", fails);
                             c.getSource().sendSuccess(() -> Component.literal(line), false);
                             return fails.isEmpty() ? 1 : 0;
+                        }))
+                .then(net.minecraft.commands.Commands.literal("demo")
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_OWNERS)).executes(c -> {
+                            Demo.build(c.getSource().getServer());
+                            c.getSource().sendSuccess(() -> Component.literal("Wiretech demo built south of spawn"), false);
+                            return 1;
                         })));
     }
 }

@@ -10,6 +10,12 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 neoForge {
     version = project.neo_version
     runs {
+        client {
+            client()
+            gameDirectory = file('run-client')
+            jvmArguments.addAll('-Xmx6G', '-Dwiretech.demo=true')
+            programArguments.addAll('--username', 'Dev', '--quickPlaySingleplayer', 'wt')
+        }
         server {
             server()
             programArgument '--nogui'

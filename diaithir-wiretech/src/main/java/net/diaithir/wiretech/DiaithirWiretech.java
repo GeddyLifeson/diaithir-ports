@@ -45,6 +45,11 @@ public final class DiaithirWiretech {
                 Machines.MATERIALS.forEach(i -> e.accept(i.get()));
             }
         });
+        if (Boolean.getBoolean("wiretech.demo")) {
+            NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent.class, e -> {
+                if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer sp) Demo.show(sp);
+            });
+        }
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> Commands.register(e.getDispatcher()));
     }
 }
