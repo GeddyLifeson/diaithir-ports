@@ -5,4 +5,4 @@ side = "both"
 [download]
 url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/client/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
 hash-format = "sha256"
-hash = "60acb5293f5fbc6784389dba1bd3b349ac87015707523f9b8cb14bb2f6fec15f"
+hash = "65fc6a3a5a3e06243f313abbc32ab7e1bf1edc23b6dacde87c26f5e63c877132"
