@@ -2,29 +2,35 @@ package com.otectus.immersivetanning.network.packet;
 
 import com.otectus.immersivetanning.minigame.SessionManager;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkEvent;
 
-import java.util.function.Supplier;
 
 /** From the fleshing result: mount the next raw hide from the inventory on the same rack and flesh it. */
-public record FleshNextPacket(BlockPos pos) {
+public record FleshNextPacket(BlockPos pos) implements CustomPacketPayload {
+    public static final Type<FleshNextPacket> TYPE = new Type<>(ImmersiveTanning.id("flesh_next"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, FleshNextPacket> STREAM_CODEC = StreamCodec.ofMember(FleshNextPacket::encode, FleshNextPacket::decode);
 
-    public void encode(FriendlyByteBuf buf) {
+    @Override
+    public Type<FleshNextPacket> type() {
+        return TYPE;
+    }
+
+
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeBlockPos(pos);
     }
 
-    public static FleshNextPacket decode(FriendlyByteBuf buf) {
+    public static FleshNextPacket decode(RegistryFriendlyByteBuf buf) {
         return new FleshNextPacket(buf.readBlockPos());
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        NetworkEvent.Context context = ctx.get();
-        ServerPlayer player = context.getSender();
-        context.enqueueWork(() -> {
-            if (player != null) SessionManager.fleshNext(player, pos);
-        });
-        context.setPacketHandled(true);
+    public void handle(IPayloadContext ctx) {
+        ServerPlayer player = (ServerPlayer) ctx.player();
+        ctx.enqueueWork(() -> SessionManager.fleshNext(player, pos));
     }
 }

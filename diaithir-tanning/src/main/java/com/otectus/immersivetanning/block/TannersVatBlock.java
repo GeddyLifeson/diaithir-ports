@@ -11,7 +11,9 @@ import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.registry.ModTags;
 import com.otectus.immersivetanning.util.Feedback;
 import com.otectus.immersivetanning.util.StationEffects;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
@@ -41,8 +43,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.items.ItemHandlerHelper;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,17 +58,24 @@ public class TannersVatBlock extends BaseEntityBlock {
             Block.box(1, 0, 1, 15, 13, 15),
             Block.box(2.5, 2, 2.5, 13.5, 13, 13.5), BooleanOp.ONLY_FIRST);
 
+    public static final MapCodec<TannersVatBlock> CODEC = simpleCodec(TannersVatBlock::new);
+
     public TannersVatBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState state) {
+    protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
 
@@ -80,39 +88,35 @@ public class TannersVatBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? null : createTickerHelper(type, ModBlockEntities.TANNERS_VAT.get(), TannersVatBlockEntity::serverTick);
+        return level.isClientSide() ? null : createTickerHelper(type, ModBlockEntities.TANNERS_VAT.get(), TannersVatBlockEntity::serverTick);
     }
 
     @Override
-    @SuppressWarnings("deprecation")
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
-        if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof TannersVatBlockEntity vat) {
-            vat.dropContents();
-        }
-        super.onRemove(state, level, pos, newState, moved);
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public boolean hasAnalogOutputSignal(BlockState state) {
+    protected boolean hasAnalogOutputSignal(BlockState state) {
         return true;
     }
 
     /** Comparators read how many hides are ready, scaled to the vat's capacity. */
     @Override
-    @SuppressWarnings("deprecation")
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
         if (!(level.getBlockEntity(pos) instanceof TannersVatBlockEntity vat) || vat.finishedCount() == 0) return 0;
         return Math.max(1, Math.round(15F * vat.finishedCount() / Math.max(1, vat.capacity())));
     }
 
     @Override
-    @SuppressWarnings("deprecation")
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
-        ItemStack held = player.getItemInHand(hand);
+        return held.isEmpty() ? InteractionResult.TRY_WITH_EMPTY_HAND : handleUse(held, level, pos, player, hand);
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        return handleUse(ItemStack.EMPTY, level, pos, player, InteractionHand.MAIN_HAND);
+    }
+
+    private InteractionResult handleUse(ItemStack held, Level level, BlockPos pos, Player player, InteractionHand hand) {
         if (player.isSecondaryUseActive() && held.getItem() instanceof BlockItem) return InteractionResult.PASS;
-        if (level.isClientSide) return InteractionResult.SUCCESS;
+        if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (!(level.getBlockEntity(pos) instanceof TannersVatBlockEntity vat) || !(player instanceof ServerPlayer sp)) {
             return InteractionResult.PASS;
         }
@@ -168,14 +172,14 @@ public class TannersVatBlock extends BaseEntityBlock {
             if (added < offered) Feedback.info(player, "vat_full");
             return;
         }
-        if (HideItems.isMountable(level, held)) {
+        if (HideItems.isMountable(held)) {
             Feedback.info(player, "flesh_first");
             return;
         }
         if (held.isEmpty()) {
             List<ItemStack> finished = vat.takeFinished();
             if (!finished.isEmpty()) {
-                finished.forEach(s -> ItemHandlerHelper.giveItemToPlayer(player, s));
+                finished.forEach(s -> player.getInventory().placeItemBackInInventory(s));
                 level.playSound(null, pos, ModSounds.VAT_HIDE.get(), SoundSource.BLOCKS, 0.9F, 0.8F);
                 StationEffects.send((ServerLevel) level, pos, StationEffects.SPLASH, 0.5F);
                 ModAdvancements.award(player, ModAdvancements.TANNED);
@@ -184,7 +188,7 @@ public class TannersVatBlock extends BaseEntityBlock {
             if (player.isSecondaryUseActive()) {
                 ItemStack back = vat.takeBackUnfinished();
                 if (!back.isEmpty()) {
-                    ItemHandlerHelper.giveItemToPlayer(player, back);
+                    player.getInventory().placeItemBackInInventory(back);
                     return;
                 }
             }
@@ -205,7 +209,7 @@ public class TannersVatBlock extends BaseEntityBlock {
         Component head = Feedback.message("vat_status", water, vat.tannin(), vat.maxTannin(), vat.slots().size(), vat.capacity());
         List<Component> parts = new ArrayList<>();
         int steeping = vat.steepingCount();
-        if (steeping > 0) parts.add(Feedback.message("vat_status_tanning", steeping, StringUtil.formatTickDuration((int) vat.nextReadyTicks())));
+        if (steeping > 0) parts.add(Feedback.message("vat_status_tanning", steeping, StringUtil.formatTickDuration((int) vat.nextReadyTicks(), 20.0F)));
         if (vat.pausedCount() > 0) parts.add(Feedback.message("vat_status_paused", vat.pausedCount()));
         if (vat.waitingCount() > 0) parts.add(Feedback.message("vat_status_waiting", vat.waitingCount()));
         if (vat.finishedCount() > 0) parts.add(Feedback.message("vat_status_ready", vat.finishedCount()));

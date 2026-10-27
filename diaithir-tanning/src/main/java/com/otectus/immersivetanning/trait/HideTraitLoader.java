@@ -1,16 +1,15 @@
 package com.otectus.immersivetanning.trait;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.otectus.immersivetanning.ImmersiveTanning;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.profiling.ProfilerFiller;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -23,17 +22,16 @@ import java.util.Map;
  * </pre>
  * A trait only exists on hides whose hide source names it. The player never chooses it.
  */
-public class HideTraitLoader extends SimpleJsonResourceReloadListener {
-    private static final Gson GSON = new Gson();
-    private static volatile Map<ResourceLocation, TraitRef> traits = Map.of();
+public class HideTraitLoader extends SimpleJsonResourceReloadListener<JsonElement> {
+    private static volatile Map<Identifier, TraitRef> traits = Map.of();
 
     public HideTraitLoader() {
-        super(GSON, "immersive_tanning/hide_traits");
+        super(net.minecraft.util.ExtraCodecs.JSON, net.minecraft.resources.FileToIdConverter.json("immersive_tanning/hide_traits"));
     }
 
     @Override
-    protected void apply(Map<ResourceLocation, JsonElement> files, ResourceManager manager, ProfilerFiller profiler) {
-        Map<ResourceLocation, TraitRef> loaded = new LinkedHashMap<>();
+    protected void apply(Map<Identifier, JsonElement> files, ResourceManager manager, ProfilerFiller profiler) {
+        Map<Identifier, TraitRef> loaded = new LinkedHashMap<>();
         files.forEach((id, element) -> {
             try {
                 loaded.put(id, parse(id, GsonHelper.convertToJsonObject(element, "hide trait")));
@@ -45,8 +43,8 @@ public class HideTraitLoader extends SimpleJsonResourceReloadListener {
         ImmersiveTanning.LOGGER.info("Loaded {} hide traits", loaded.size());
     }
 
-    static TraitRef parse(ResourceLocation id, JsonObject json) {
-        ResourceLocation effect = new ResourceLocation(GsonHelper.getAsString(json, "effect"));
+    static TraitRef parse(Identifier id, JsonObject json) {
+        Identifier effect = Identifier.parse(GsonHelper.getAsString(json, "effect"));
         if (!TraitEffects.isKnown(effect)) throw new JsonParseException("unknown trait effect " + effect);
         float strength = GsonHelper.getAsFloat(json, "strength", 1.0F);
         if (!(strength > 0F) || strength > 10F) throw new JsonParseException("strength must be in (0, 10]");
@@ -61,7 +59,7 @@ public class HideTraitLoader extends SimpleJsonResourceReloadListener {
     }
 
     @Nullable
-    public static TraitRef get(ResourceLocation id) {
+    public static TraitRef get(Identifier id) {
         return traits.get(id);
     }
 

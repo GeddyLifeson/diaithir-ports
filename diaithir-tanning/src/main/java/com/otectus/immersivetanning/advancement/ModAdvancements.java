@@ -1,7 +1,7 @@
 package com.otectus.immersivetanning.advancement;
 
 import com.otectus.immersivetanning.ImmersiveTanning;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -20,8 +20,8 @@ public final class ModAdvancements {
     public static final String TROPHY = "trophy_hide";
 
     public static void award(ServerPlayer player, String name) {
-        if (player.getServer() == null) return;
-        Advancement advancement = player.getServer().getAdvancements().getAdvancement(ImmersiveTanning.id(name));
+        if (player.level().getServer() == null) return;
+        AdvancementHolder advancement = player.level().getServer().getAdvancements().get(ImmersiveTanning.id(name));
         if (advancement == null) return;
         AdvancementProgress progress = player.getAdvancements().getOrStartProgress(advancement);
         if (progress.isDone()) return;

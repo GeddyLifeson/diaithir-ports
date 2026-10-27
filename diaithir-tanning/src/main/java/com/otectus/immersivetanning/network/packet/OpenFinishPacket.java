@@ -4,27 +4,35 @@ import com.otectus.immersivetanning.client.ClientPacketHandler;
 import com.otectus.immersivetanning.hide.HideData;
 import com.otectus.immersivetanning.leather.Finish;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.network.NetworkEvent;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.util.function.Supplier;
 
 /** Asks the player how to finish the wet hide they are mounting on a rack. */
-public record OpenFinishPacket(BlockPos pos, HideData hide, Finish last) {
+public record OpenFinishPacket(BlockPos pos, HideData hide, Finish last) implements CustomPacketPayload {
+    public static final Type<OpenFinishPacket> TYPE = new Type<>(ImmersiveTanning.id("open_finish"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, OpenFinishPacket> STREAM_CODEC = StreamCodec.ofMember(OpenFinishPacket::encode, OpenFinishPacket::decode);
 
-    public void encode(FriendlyByteBuf buf) {
+    @Override
+    public Type<OpenFinishPacket> type() {
+        return TYPE;
+    }
+
+
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeBlockPos(pos);
         hide.write(buf);
         buf.writeEnum(last);
     }
 
-    public static OpenFinishPacket decode(FriendlyByteBuf buf) {
+    public static OpenFinishPacket decode(RegistryFriendlyByteBuf buf) {
         return new OpenFinishPacket(buf.readBlockPos(), HideData.read(buf), buf.readEnum(Finish.class));
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.openFinish(this));
+    public void handle(IPayloadContext ctx) {
+        ClientPacketHandler.openFinish(this);
     }
 }

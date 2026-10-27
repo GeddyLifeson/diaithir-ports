@@ -3,12 +3,11 @@ package com.otectus.immersivetanning.blockentity;
 import com.otectus.immersivetanning.minigame.SessionManager;
 import com.otectus.immersivetanning.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +70,7 @@ public class LeatherworkersBenchBlockEntity extends StationBlockEntity {
     public void onLoad() {
         super.onLoad();
         // Escrow in a freshly loaded bench belongs to a session that no longer exists.
-        if (level != null && !level.isClientSide && !escrow.isEmpty()) stale = true;
+        if (level != null && !level.isClientSide() && !escrow.isEmpty()) stale = true;
     }
 
     public static void serverTick(net.minecraft.world.level.Level level, BlockPos pos, BlockState state, LeatherworkersBenchBlockEntity bench) {
@@ -84,28 +83,34 @@ public class LeatherworkersBenchBlockEntity extends StationBlockEntity {
     @Override
     public void onChunkUnloaded() {
         super.onChunkUnloaded();
-        if (level != null && !level.isClientSide) SessionManager.onStationUnloaded(level, worldPosition);
+        if (level != null && !level.isClientSide()) SessionManager.onStationUnloaded(level, worldPosition);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
-        ListTag list = new ListTag();
-        for (ItemStack stack : escrow) list.add(stack.save(new CompoundTag()));
-        tag.put("Escrow", list);
-        if (!working.isEmpty()) tag.put("Working", working.save(new CompoundTag()));
+        tag.store("Escrow", ItemStack.OPTIONAL_CODEC.listOf(), escrow);
+        if (!working.isEmpty()) tag.store("Working", ItemStack.OPTIONAL_CODEC, working);
         tag.putInt("LeatherColor", leatherColor);
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
+    protected void loadAdditional(ValueInput tag) {
+        super.loadAdditional(tag);
         escrow.clear();
-        for (Tag t : tag.getList("Escrow", Tag.TAG_COMPOUND)) {
-            ItemStack stack = ItemStack.of((CompoundTag) t);
+        for (ItemStack stack : tag.read("Escrow", ItemStack.OPTIONAL_CODEC.listOf()).orElse(List.of())) {
             if (!stack.isEmpty()) escrow.add(stack);
         }
-        working = tag.contains("Working", Tag.TAG_COMPOUND) ? ItemStack.of(tag.getCompound("Working")) : ItemStack.EMPTY;
-        leatherColor = tag.contains("LeatherColor") ? tag.getInt("LeatherColor") : 0x9C5A30;
+        working = tag.read("Working", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
+        leatherColor = tag.getIntOr("LeatherColor", 0x9C5A30);
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        if (level != null && !level.isClientSide()) {
+            SessionManager.onStationRemoved(level, pos);
+            dropEscrow();
+        }
+        super.preRemoveSideEffects(pos, state);
     }
 }

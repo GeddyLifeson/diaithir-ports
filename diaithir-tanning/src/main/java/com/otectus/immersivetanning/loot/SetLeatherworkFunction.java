@@ -1,24 +1,24 @@
 package com.otectus.immersivetanning.loot;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonSerializationContext;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.otectus.immersivetanning.leather.Finish;
 import com.otectus.immersivetanning.leather.VillageLeatherwork;
-import com.otectus.immersivetanning.registry.ModLootFunctions;
 import com.otectus.immersivetanning.trait.HideTraitLoader;
 import com.otectus.immersivetanning.trait.TraitRef;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProviders;
 import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Loot function {@code immersive_tanning:set_leatherwork}: makes an item a finished piece from someone else's bench.
@@ -31,13 +31,27 @@ import org.jetbrains.annotations.Nullable;
  * </pre>
  */
 public class SetLeatherworkFunction extends LootItemConditionalFunction {
+    private static final Codec<Finish> FINISH_CODEC = Codec.STRING.comapFlatMap(
+            s -> {
+                Finish f = Finish.byName(s);
+                return f == null ? com.mojang.serialization.DataResult.error(() -> "finish must be supple, harness or hardened") : com.mojang.serialization.DataResult.success(f);
+            }, Finish::getSerializedName);
+
+    public static final MapCodec<SetLeatherworkFunction> CODEC = RecordCodecBuilder.mapCodec(i -> commonFields(i).and(i.group(
+            FINISH_CODEC.optionalFieldOf("finish").forGetter(f -> Optional.ofNullable(f.finish)),
+            NumberProviders.CODEC.optionalFieldOf("integrity").forGetter(f -> Optional.ofNullable(f.integrity)),
+            NumberProviders.CODEC.optionalFieldOf("workmanship").forGetter(f -> Optional.ofNullable(f.workmanship)),
+            Identifier.CODEC.optionalFieldOf("trait").forGetter(f -> Optional.ofNullable(f.trait))))
+            .apply(i, (conditions, finish, integrity, workmanship, trait) ->
+                    new SetLeatherworkFunction(conditions, finish.orElse(null), integrity.orElse(null), workmanship.orElse(null), trait.orElse(null))));
+
     @Nullable private final Finish finish;
     @Nullable private final NumberProvider integrity;
     @Nullable private final NumberProvider workmanship;
-    @Nullable private final ResourceLocation trait;
+    @Nullable private final Identifier trait;
 
-    SetLeatherworkFunction(LootItemCondition[] conditions, @Nullable Finish finish, @Nullable NumberProvider integrity,
-                           @Nullable NumberProvider workmanship, @Nullable ResourceLocation trait) {
+    SetLeatherworkFunction(List<LootItemCondition> conditions, @Nullable Finish finish, @Nullable NumberProvider integrity,
+                           @Nullable NumberProvider workmanship, @Nullable Identifier trait) {
         super(conditions);
         this.finish = finish;
         this.integrity = integrity;
@@ -55,31 +69,7 @@ public class SetLeatherworkFunction extends LootItemConditionalFunction {
     }
 
     @Override
-    public LootItemFunctionType getType() {
-        return ModLootFunctions.SET_LEATHERWORK.get();
-    }
-
-    public static class Serializer extends LootItemConditionalFunction.Serializer<SetLeatherworkFunction> {
-        @Override
-        public void serialize(JsonObject json, SetLeatherworkFunction function, JsonSerializationContext context) {
-            super.serialize(json, function, context);
-            if (function.finish != null) json.addProperty("finish", function.finish.getSerializedName());
-            if (function.integrity != null) json.add("integrity", context.serialize(function.integrity));
-            if (function.workmanship != null) json.add("workmanship", context.serialize(function.workmanship));
-            if (function.trait != null) json.addProperty("trait", function.trait.toString());
-        }
-
-        @Override
-        public SetLeatherworkFunction deserialize(JsonObject json, JsonDeserializationContext context, LootItemCondition[] conditions) {
-            Finish finish = null;
-            if (json.has("finish")) {
-                finish = Finish.byName(GsonHelper.getAsString(json, "finish"));
-                if (finish == null) throw new JsonParseException("finish must be supple, harness or hardened");
-            }
-            NumberProvider integrity = GsonHelper.getAsObject(json, "integrity", null, context, NumberProvider.class);
-            NumberProvider workmanship = GsonHelper.getAsObject(json, "workmanship", null, context, NumberProvider.class);
-            ResourceLocation trait = json.has("trait") ? new ResourceLocation(GsonHelper.getAsString(json, "trait")) : null;
-            return new SetLeatherworkFunction(conditions, finish, integrity, workmanship, trait);
-        }
+    public MapCodec<SetLeatherworkFunction> codec() {
+        return CODEC;
     }
 }

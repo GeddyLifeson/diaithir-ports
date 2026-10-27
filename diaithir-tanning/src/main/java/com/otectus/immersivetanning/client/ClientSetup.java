@@ -9,7 +9,7 @@ import com.otectus.immersivetanning.registry.ModBlockEntities;
 import com.otectus.immersivetanning.registry.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.neoforged.bus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /** Client-only mod-bus registration. Reached only through DistExecutor, so it never loads on a server. */

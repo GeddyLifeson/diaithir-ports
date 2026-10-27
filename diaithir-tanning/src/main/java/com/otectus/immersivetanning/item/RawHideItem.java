@@ -9,10 +9,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * A raw hide of one size. Ordinary hides carry no NBT so they always stack; only a hide whose source grants an innate
@@ -35,7 +37,7 @@ public class RawHideItem extends Item {
         if (trait != null) {
             CompoundTag root = new CompoundTag();
             trait.save(root);
-            stack.getOrCreateTag().put(HideData.ROOT, root);
+            com.otectus.immersivetanning.util.StackNbt.set(stack, root);
         }
         return stack;
     }
@@ -52,12 +54,12 @@ public class RawHideItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag) {
         TraitRef trait = HideData.of(stack, size).trait();
         if (trait != null) {
-            tooltip.add(Component.translatable("tooltip.immersive_tanning.trait", trait.displayName()).withStyle(ChatFormatting.GRAY));
+            tooltip.accept(Component.translatable("tooltip.immersive_tanning.trait", trait.displayName()).withStyle(ChatFormatting.GRAY));
         }
-        tooltip.add(Component.translatable("tooltip.immersive_tanning.yields", size.leather()).withStyle(ChatFormatting.DARK_GRAY));
-        tooltip.add(Component.translatable("tooltip.immersive_tanning.raw_hide.hint").withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.accept(Component.translatable("tooltip.immersive_tanning.yields", size.leather()).withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.accept(Component.translatable("tooltip.immersive_tanning.raw_hide.hint").withStyle(ChatFormatting.DARK_GRAY));
     }
 }

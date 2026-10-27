@@ -1,27 +1,27 @@
 package com.otectus.immersivetanning.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 /** Presentation settings. None of these change scoring. */
 public final class ClientConfig {
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec SPEC;
 
     public enum ParticleAmount { NORMAL, REDUCED, MINIMAL }
 
-    public static final ForgeConfigSpec.BooleanValue SHOW_NUMERIC_SCORES;
-    public static final ForgeConfigSpec.BooleanValue SHOW_GRAIN_HINTS;
-    public static final ForgeConfigSpec.EnumValue<ParticleAmount> PARTICLE_AMOUNT;
-    public static final ForgeConfigSpec.BooleanValue HIGH_CONTRAST_MINIGAMES;
-    public static final ForgeConfigSpec.BooleanValue COLORBLIND_SAFE_COLORS;
-    public static final ForgeConfigSpec.BooleanValue LARGE_MINIGAME_MARKERS;
-    public static final ForgeConfigSpec.BooleanValue TIMING_CUE_SOUNDS;
-    public static final ForgeConfigSpec.DoubleValue SOUND_CUE_VOLUME;
-    public static final ForgeConfigSpec.IntValue FEEDBACK_LABEL_MS;
-    public static final ForgeConfigSpec.BooleanValue STATION_NOTICES;
-    public static final ForgeConfigSpec.IntValue NOTICE_SECONDS;
+    public static final ModConfigSpec.BooleanValue SHOW_NUMERIC_SCORES;
+    public static final ModConfigSpec.BooleanValue SHOW_GRAIN_HINTS;
+    public static final ModConfigSpec.EnumValue<ParticleAmount> PARTICLE_AMOUNT;
+    public static final ModConfigSpec.BooleanValue HIGH_CONTRAST_MINIGAMES;
+    public static final ModConfigSpec.BooleanValue COLORBLIND_SAFE_COLORS;
+    public static final ModConfigSpec.BooleanValue LARGE_MINIGAME_MARKERS;
+    public static final ModConfigSpec.BooleanValue TIMING_CUE_SOUNDS;
+    public static final ModConfigSpec.DoubleValue SOUND_CUE_VOLUME;
+    public static final ModConfigSpec.IntValue FEEDBACK_LABEL_MS;
+    public static final ModConfigSpec.BooleanValue STATION_NOTICES;
+    public static final ModConfigSpec.IntValue NOTICE_SECONDS;
 
     static {
-        ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder b = new ModConfigSpec.Builder();
         b.push("tooltips");
         SHOW_NUMERIC_SCORES = b.comment("Show Integrity and Workmanship as 0-100 numbers next to their grade.")
                 .define("showNumericScores", true);
@@ -49,15 +49,15 @@ public final class ClientConfig {
         SPEC = b.build();
     }
 
-    public static boolean get(ForgeConfigSpec.BooleanValue value) {
+    public static boolean get(ModConfigSpec.BooleanValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 
-    public static double get(ForgeConfigSpec.DoubleValue value) {
+    public static double get(ModConfigSpec.DoubleValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 
-    public static int get(ForgeConfigSpec.IntValue value) {
+    public static int get(ModConfigSpec.IntValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 

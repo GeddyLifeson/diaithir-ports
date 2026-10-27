@@ -6,7 +6,7 @@ import com.otectus.immersivetanning.leather.LeatherworkData;
 import com.otectus.immersivetanning.recipe.LeatherworkingRecipe;
 import com.otectus.immersivetanning.trait.TraitEffects;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 
@@ -25,7 +25,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class ImmersiveTanningAPI {
 
     /** Registers a trait effect under {@code id}. Call during mod construction or common setup. */
-    public static void registerTraitEffect(ResourceLocation id, TraitEffect effect) {
+    public static void registerTraitEffect(Identifier id, TraitEffect effect) {
         TraitEffects.register(id, effect);
     }
 
@@ -80,7 +80,7 @@ public final class ImmersiveTanningAPI {
                 double value = source.fleshingTimeMultiplier(player);
                 if (Double.isFinite(value) && value > 0) product *= value;
             } catch (RuntimeException e) {
-                ImmersiveTanning.LOGGER.error("Assist source {} failed for {}", source.getClass().getName(), player.getGameProfile().getName(), e);
+                ImmersiveTanning.LOGGER.error("Assist source {} failed for {}", source.getClass().getName(), player.getGameProfile().name(), e);
             }
         }
         double ceiling = Math.max(1.0, ServerConfig.get(ServerConfig.MAX_ASSIST_TIME_MULTIPLIER));

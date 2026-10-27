@@ -6,7 +6,7 @@ import com.otectus.immersivetanning.blockentity.TannersRackBlockEntity;
 import com.otectus.immersivetanning.blockentity.TannersVatBlockEntity;
 import com.otectus.immersivetanning.hide.HideSourceLoader;
 import com.otectus.immersivetanning.recipe.TanningData;
-import com.otectus.immersivetanning.registry.ModRecipeTypes;
+import com.otectus.immersivetanning.recipe.HideMountingLoader;
 import com.otectus.immersivetanning.trait.HideTraitLoader;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -25,24 +25,19 @@ public final class TanningCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("immersive_tanning")
-                .requires(source -> source.hasPermission(2))
+                .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
                 .then(Commands.literal("report").executes(ctx -> {
                     TanningData data = TanningData.current();
                     CommandSourceStack source = ctx.getSource();
                     source.sendSuccess(() -> Component.literal(data.summary()), false);
-                    int mounting = source.getServer().getRecipeManager().getAllRecipesFor(ModRecipeTypes.HIDE_MOUNTING.get()).size();
+                    int mounting = HideMountingLoader.all().size();
                     source.sendSuccess(() -> Component.literal(HideSourceLoader.all().size() + " hide sources covering "
                             + HideSourceLoader.coveredEntityTypes() + " entity types, " + HideTraitLoader.all().size() + " hide traits, "
-                            + mounting + " hide mounting recipes"), false);
+                            + mounting + " hide mounting entries"), false);
                     List<String> unknown = HideSourceLoader.unknownEntities();
                     if (!unknown.isEmpty()) {
                         source.sendSuccess(() -> Component.literal(" - " + unknown.size() + " hide source entities are not installed: "
                                 + String.join(", ", unknown.subList(0, Math.min(12, unknown.size()))) + (unknown.size() > 12 ? ", ..." : "")), false);
-                    }
-                    int shown = 0;
-                    for (String note : data.notes()) {
-                        if (shown++ >= 20) break;
-                        source.sendSuccess(() -> Component.literal(" - " + note), false);
                     }
                     return data.recipes().size();
                 }))

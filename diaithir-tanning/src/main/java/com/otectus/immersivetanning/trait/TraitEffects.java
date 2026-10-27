@@ -3,30 +3,30 @@ package com.otectus.immersivetanning.trait;
 import com.otectus.immersivetanning.ImmersiveTanning;
 import com.otectus.immersivetanning.api.TraitEffect;
 import com.otectus.immersivetanning.registry.ModTags;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.event.ItemAttributeModifierEvent;
-import org.jetbrains.annotations.Nullable;
+import net.neoforged.neoforge.common.NeoForgeMod;
+import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import org.jspecify.annotations.Nullable;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /** The built-in trait effects and the registry that custom effects join. */
 public final class TraitEffects {
-    public static final ResourceLocation HEATPROOF = ImmersiveTanning.id("heatproof");
-    public static final ResourceLocation INSULATING = ImmersiveTanning.id("insulating");
-    public static final ResourceLocation LIGHTWEIGHT = ImmersiveTanning.id("lightweight");
-    public static final ResourceLocation TOUGH = ImmersiveTanning.id("tough");
-    public static final ResourceLocation WATER_RESISTANT = ImmersiveTanning.id("water_resistant");
+    public static final Identifier HEATPROOF = ImmersiveTanning.id("heatproof");
+    public static final Identifier INSULATING = ImmersiveTanning.id("insulating");
+    public static final Identifier LIGHTWEIGHT = ImmersiveTanning.id("lightweight");
+    public static final Identifier TOUGH = ImmersiveTanning.id("tough");
+    public static final Identifier WATER_RESISTANT = ImmersiveTanning.id("water_resistant");
 
-    private static final Map<ResourceLocation, TraitEffect> EFFECTS = new ConcurrentHashMap<>();
+    private static final Map<Identifier, TraitEffect> EFFECTS = new ConcurrentHashMap<>();
 
     static {
         EFFECTS.put(HEATPROOF, new TraitEffect() {
@@ -53,8 +53,8 @@ public final class TraitEffects {
         });
         EFFECTS.put(LIGHTWEIGHT, new TraitEffect() {
             @Override
-            public void addModifiers(ItemAttributeModifierEvent event, TraitRef trait) {
-                add(event, Attributes.MOVEMENT_SPEED, "lightweight", 0.015 * trait.strength());
+            public void addModifiers(ItemAttributeModifierEvent event, EquipmentSlot slot, TraitRef trait) {
+                add(event, slot, Attributes.MOVEMENT_SPEED, "lightweight", 0.015 * trait.strength());
             }
 
             @Override
@@ -75,8 +75,8 @@ public final class TraitEffects {
         });
         EFFECTS.put(WATER_RESISTANT, new TraitEffect() {
             @Override
-            public void addModifiers(ItemAttributeModifierEvent event, TraitRef trait) {
-                add(event, ForgeMod.SWIM_SPEED.get(), "water_resistant", 0.05 * trait.strength());
+            public void addModifiers(ItemAttributeModifierEvent event, EquipmentSlot slot, TraitRef trait) {
+                add(event, slot, NeoForgeMod.SWIM_SPEED, "water_resistant", 0.05 * trait.strength());
             }
 
             @Override
@@ -91,18 +91,18 @@ public final class TraitEffects {
         });
     }
 
-    public static void register(ResourceLocation id, TraitEffect effect) {
+    public static void register(Identifier id, TraitEffect effect) {
         if (EFFECTS.putIfAbsent(id, effect) != null) {
             throw new IllegalStateException("Trait effect " + id + " is already registered");
         }
     }
 
-    public static boolean isKnown(ResourceLocation id) {
+    public static boolean isKnown(Identifier id) {
         return EFFECTS.containsKey(id);
     }
 
     @Nullable
-    public static TraitEffect get(ResourceLocation id) {
+    public static TraitEffect get(Identifier id) {
         return EFFECTS.get(id);
     }
 
@@ -117,10 +117,9 @@ public final class TraitEffects {
     }
 
     /** Adds a MULTIPLY_BASE modifier whose id is stable per effect and slot, so pieces in different slots stack. */
-    private static void add(ItemAttributeModifierEvent event, Attribute attribute, String name, double amount) {
-        EquipmentSlot slot = event.getSlotType();
-        UUID id = UUID.nameUUIDFromBytes(("immersive_tanning:trait:" + name + ":" + slot.getName()).getBytes(StandardCharsets.UTF_8));
-        event.addModifier(attribute, new AttributeModifier(id, "Hide trait", amount, AttributeModifier.Operation.MULTIPLY_BASE));
+    private static void add(ItemAttributeModifierEvent event, EquipmentSlot slot, Holder<Attribute> attribute, String name, double amount) {
+        Identifier id = ImmersiveTanning.id("trait/" + name + "/" + slot.getName());
+        event.addModifier(attribute, new AttributeModifier(id, amount, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.bySlot(slot));
     }
 
     private TraitEffects() {}

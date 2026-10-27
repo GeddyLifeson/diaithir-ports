@@ -4,7 +4,7 @@ import com.otectus.immersivetanning.hide.HideData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 /**
  * Posted on the Forge bus when a player finishes fleshing a raw hide on a Tanner's Rack, before the scraped hide is

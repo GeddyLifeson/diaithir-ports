@@ -11,6 +11,7 @@ import com.otectus.immersivetanning.registry.ModBlockEntities;
 import com.otectus.immersivetanning.registry.ModItems;
 import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.util.Feedback;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,13 +37,12 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.items.ItemHandlerHelper;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -51,7 +51,7 @@ import java.util.Optional;
  * the Tanner's Knife; a wet tanned hide is laced into the frame with the chosen finish and dries by itself.
  */
 public class TannersRackBlock extends BaseEntityBlock {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 
     private static final StationShape SHAPE = new StationShape(Shapes.or(
             Block.box(0, 0, 5, 4, 1, 11),
@@ -64,9 +64,16 @@ public class TannersRackBlock extends BaseEntityBlock {
             Block.box(13, 4, 3, 15, 6, 7),
             Block.box(2, 4, 1, 14, 6, 3)));
 
+    public static final MapCodec<TannersRackBlock> CODEC = simpleCodec(TannersRackBlock::new);
+
     public TannersRackBlock(Properties properties) {
         super(properties);
         registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -80,23 +87,22 @@ public class TannersRackBlock extends BaseEntityBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rotation) {
+    protected BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
-    @SuppressWarnings("deprecation")
-    public BlockState mirror(BlockState state, Mirror mirror) {
+    protected BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE.facing(state.getValue(FACING));
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState state) {
+    protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
 
@@ -109,26 +115,23 @@ public class TannersRackBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide ? null : createTickerHelper(type, ModBlockEntities.TANNERS_RACK.get(), TannersRackBlockEntity::serverTick);
+        return level.isClientSide() ? null : createTickerHelper(type, ModBlockEntities.TANNERS_RACK.get(), TannersRackBlockEntity::serverTick);
     }
 
     @Override
-    @SuppressWarnings("deprecation")
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean moved) {
-        if (!state.is(newState.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof TannersRackBlockEntity rack) {
-            SessionManager.onStationRemoved(level, pos);
-            rack.dropContents();
-        }
-        super.onRemove(state, level, pos, newState, moved);
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
-        ItemStack held = player.getItemInHand(hand);
+        return held.isEmpty() ? InteractionResult.TRY_WITH_EMPTY_HAND : handleUse(held, level, pos, player, hand);
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        return handleUse(ItemStack.EMPTY, level, pos, player, InteractionHand.MAIN_HAND);
+    }
+
+    private InteractionResult handleUse(ItemStack held, Level level, BlockPos pos, Player player, InteractionHand hand) {
         if (player.isSecondaryUseActive() && held.getItem() instanceof BlockItem) return InteractionResult.PASS;
-        if (level.isClientSide) return InteractionResult.SUCCESS;
+        if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (!(level.getBlockEntity(pos) instanceof TannersRackBlockEntity rack) || !(player instanceof ServerPlayer sp)) {
             return InteractionResult.PASS;
         }
@@ -144,7 +147,7 @@ public class TannersRackBlock extends BaseEntityBlock {
         Level level = player.level();
         switch (rack.mode()) {
             case EMPTY -> {
-                Optional<HideData> raw = HideItems.resolve(level, held);
+                Optional<HideData> raw = HideItems.resolve(held);
                 if (raw.isPresent()) {
                     rack.mountRaw(raw.get());
                     if (!player.getAbilities().instabuild) held.shrink(1);
@@ -163,7 +166,7 @@ public class TannersRackBlock extends BaseEntityBlock {
                 if (held.getItem() instanceof TannersKnifeItem) {
                     SessionManager.openFleshing(player, rack, hand);
                 } else if (held.isEmpty() && player.isSecondaryUseActive()) {
-                    ItemHandlerHelper.giveItemToPlayer(player, rack.takeRaw());
+                    player.getInventory().placeItemBackInInventory(rack.takeRaw());
                 } else {
                     Feedback.info(player, "flesh_with_knife");
                 }
@@ -171,11 +174,11 @@ public class TannersRackBlock extends BaseEntityBlock {
             case DRYING -> {
                 if (rack.isDry()) {
                     ItemStack leather = rack.collectLeather();
-                    ItemHandlerHelper.giveItemToPlayer(player, leather);
+                    player.getInventory().placeItemBackInInventory(leather);
                     level.playSound(null, rack.getBlockPos(), ModSounds.BENCH_FINISH.get(), SoundSource.BLOCKS, 0.8F, 1.1F);
                     ModAdvancements.award(player, ModAdvancements.FINISHED);
                 } else if (held.isEmpty() && player.isSecondaryUseActive()) {
-                    ItemHandlerHelper.giveItemToPlayer(player, rack.takeWet());
+                    player.getInventory().placeItemBackInInventory(rack.takeWet());
                 } else {
                     int percent = Math.round(rack.dryProgress(level.getGameTime()) * 100F);
                     Feedback.info(player, "drying_progress", rack.finish().displayName(), percent);

@@ -7,9 +7,10 @@ import com.otectus.immersivetanning.item.RawHideItem;
 import com.otectus.immersivetanning.trait.TraitRef;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.DyeableLeatherItem;
+import net.minecraft.core.component.DataComponents;
+import com.otectus.immersivetanning.recipe.EquipmentSeams;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Leatherwork and hides that someone else made or found: village trades, loot and quest rewards. A player's own work
@@ -34,7 +35,9 @@ public final class VillageLeatherwork {
      */
     public static ItemStack make(ItemStack stack, Finish finish, int integrity, int workmanship, @Nullable TraitRef trait, @Nullable String crafter) {
         new LeatherworkData(finish, integrity, workmanship, trait, crafter).apply(stack);
-        if (stack.getItem() instanceof DyeableLeatherItem dyeable && !dyeable.hasCustomColor(stack)) dyeable.setColor(stack, finish.leatherColor());
+        if (EquipmentSeams.isLeatherArmor(stack) && java.util.Objects.equals(stack.get(DataComponents.DYED_COLOR), stack.getItem().components().get(DataComponents.DYED_COLOR))) {
+            stack.set(DataComponents.DYED_COLOR, new net.minecraft.world.item.component.DyedItemColor(finish.leatherColor()));
+        }
         return stack;
     }
 

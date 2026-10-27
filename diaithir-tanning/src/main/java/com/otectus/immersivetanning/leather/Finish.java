@@ -3,7 +3,7 @@ package com.otectus.immersivetanning.leather;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.StringRepresentable;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The one strategic choice of the tannery, made when a wet hide is mounted to dry. Each finish has exactly one

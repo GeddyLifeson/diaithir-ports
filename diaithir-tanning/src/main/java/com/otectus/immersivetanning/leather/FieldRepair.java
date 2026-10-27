@@ -11,7 +11,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -82,7 +82,7 @@ public final class FieldRepair {
         target.setDamageValue(Math.max(0, target.getDamageValue() - repairAmount(target)));
         if (!player.getAbilities().instabuild) {
             scraps.shrink(1);
-            awl.hurtAndBreak(1, player, p -> {});
+            awl.hurtAndBreak(1, player, net.minecraft.world.entity.EquipmentSlot.MAINHAND);
         }
         player.playSound(ModSounds.AWL_REPAIR.get(), 0.8F, 0.9F + player.getRandom().nextFloat() * 0.2F);
         if (player instanceof ServerPlayer sp) ModAdvancements.award(sp, ModAdvancements.PATCHED_UP);

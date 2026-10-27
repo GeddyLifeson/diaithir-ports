@@ -1,21 +1,31 @@
 package com.otectus.immersivetanning.network.packet;
 
 import com.otectus.immersivetanning.minigame.SessionManager;
-import net.minecraft.Util;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.util.Util;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkEvent;
 
-import java.util.function.Supplier;
 
 /**
  * A batch of knife positions (12-bit fixed point per axis). {@code begins} places the knife at the first point;
  * {@code ends} lifts it after the last. Points only: the server replays them and computes everything else.
  */
-public record FleshStrokePacket(int sessionId, int sequence, boolean begins, boolean ends, int clientMs, short[] xs, short[] ys) {
+public record FleshStrokePacket(int sessionId, int sequence, boolean begins, boolean ends, int clientMs, short[] xs, short[] ys) implements CustomPacketPayload {
+    public static final Type<FleshStrokePacket> TYPE = new Type<>(ImmersiveTanning.id("flesh_stroke"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, FleshStrokePacket> STREAM_CODEC = StreamCodec.ofMember(FleshStrokePacket::encode, FleshStrokePacket::decode);
+
+    @Override
+    public Type<FleshStrokePacket> type() {
+        return TYPE;
+    }
+
     public static final int MAX_POINTS = 64;
 
-    public void encode(FriendlyByteBuf buf) {
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeVarInt(sessionId);
         buf.writeVarInt(sequence);
         buf.writeBoolean(begins);
@@ -29,7 +39,7 @@ public record FleshStrokePacket(int sessionId, int sequence, boolean begins, boo
         }
     }
 
-    public static FleshStrokePacket decode(FriendlyByteBuf buf) {
+    public static FleshStrokePacket decode(RegistryFriendlyByteBuf buf) {
         int session = buf.readVarInt();
         int sequence = buf.readVarInt();
         boolean begins = buf.readBoolean();
@@ -45,13 +55,9 @@ public record FleshStrokePacket(int sessionId, int sequence, boolean begins, boo
         return new FleshStrokePacket(session, sequence, begins, ends, clientMs, xs, ys);
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
+    public void handle(IPayloadContext ctx) {
         long arrival = Util.getMillis();
-        NetworkEvent.Context context = ctx.get();
-        ServerPlayer player = context.getSender();
-        context.enqueueWork(() -> {
-            if (player != null) SessionManager.fleshStroke(player, this, arrival);
-        });
-        context.setPacketHandled(true);
+        ServerPlayer player = (ServerPlayer) ctx.player();
+        ctx.enqueueWork(() -> SessionManager.fleshStroke(player, this, arrival));
     }
 }

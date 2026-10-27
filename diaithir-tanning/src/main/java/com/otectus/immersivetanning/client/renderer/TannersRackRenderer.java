@@ -14,7 +14,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -24,8 +24,8 @@ import net.minecraft.world.level.block.state.BlockState;
  * corner. The wet hide lightens toward its finished colour as it dries and settles once it is done.
  */
 public class TannersRackRenderer implements BlockEntityRenderer<TannersRackBlockEntity> {
-    public static final ResourceLocation RAW = ImmersiveTanning.id("textures/entity/hide_raw.png");
-    public static final ResourceLocation LEATHER = ImmersiveTanning.id("textures/entity/hide_leather.png");
+    public static final Identifier RAW = ImmersiveTanning.id("textures/entity/hide_raw.png");
+    public static final Identifier LEATHER = ImmersiveTanning.id("textures/entity/hide_leather.png");
     public static final int WET_COLOR = 0x4A2E1C;
     private static final int CORD_COLOR = 0xFF3A2A1C;
     private static final float PX = 1F / 16F;

@@ -12,7 +12,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
@@ -24,7 +24,7 @@ import java.util.List;
  * as folded shapes just under the surface. Tanned hides float up and turn the colour of wet leather.
  */
 public class TannersVatRenderer implements BlockEntityRenderer<TannersVatBlockEntity> {
-    private static final ResourceLocation WATER = new ResourceLocation("minecraft", "block/water_still");
+    private static final Identifier WATER = Identifier.fromNamespaceAndPath("minecraft", "block/water_still");
     private static final int WATER_COLOR = 0x3F76E4;
     private static final int TANNIN_COLOR = 0x9A6230;
     private static final int SCRAPED_COLOR = 0xD9C2A0;

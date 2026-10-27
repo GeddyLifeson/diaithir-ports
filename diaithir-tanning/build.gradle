@@ -27,3 +27,9 @@ repositories {
     mavenCentral()
 }
 
+
+sourceSets.main.java.exclude 'com/otectus/immersivetanning/client/screen/**', 'com/otectus/immersivetanning/client/renderer/**', 'com/otectus/immersivetanning/client/ClientEffects.java', 'com/otectus/immersivetanning/client/ClientEvents.java', 'com/otectus/immersivetanning/client/ClientSetup.java', 'com/otectus/immersivetanning/client/StationNotices.java'
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ['-Xmaxerrs', '5000']
+}

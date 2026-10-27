@@ -1,6 +1,6 @@
 package com.otectus.immersivetanning.loot;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.otectus.immersivetanning.hide.HideSourceLoader;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -10,9 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.common.loot.LootModifier;
-import org.jetbrains.annotations.NotNull;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
+import net.neoforged.neoforge.common.loot.LootModifier;
 
 /**
  * Adds the hide an entity's hide source names to its death loot and, by default, removes the leather it would
@@ -20,27 +19,27 @@ import org.jetbrains.annotations.NotNull;
  * opened by an entity.
  */
 public class HideDropModifier extends LootModifier {
-    public static final Codec<HideDropModifier> CODEC = RecordCodecBuilder.create(inst -> codecStart(inst).apply(inst, HideDropModifier::new));
+    public static final MapCodec<HideDropModifier> CODEC = RecordCodecBuilder.mapCodec(inst -> codecStart(inst).apply(inst, HideDropModifier::new));
 
-    public HideDropModifier(LootItemCondition[] conditions) {
-        super(conditions);
+    public HideDropModifier(LootItemCondition[] conditions, int priority) {
+        super(conditions, priority);
     }
 
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> loot, LootContext context) {
-        Entity entity = context.getParamOrNull(LootContextParams.THIS_ENTITY);
-        if (!(entity instanceof LivingEntity living) || !context.hasParam(LootContextParams.DAMAGE_SOURCE)) return loot;
-        if (!living.getLootTable().equals(context.getQueriedLootTableId())) return loot;
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> loot, LootContext context) {
+        Entity entity = context.getOptionalParameter(LootContextParams.THIS_ENTITY);
+        if (!(entity instanceof LivingEntity living) || !context.hasParameter(LootContextParams.DAMAGE_SOURCE)) return loot;
+        if (!living.getLootTable().map(key -> key.identifier().equals(context.getQueriedLootTableId())).orElse(false)) return loot;
         HideSourceLoader.HideSource source = HideSourceLoader.forEntity(living.getType());
         if (source == null) return loot;
 
-        HideDrops.apply(loot, living, source, context.getParamOrNull(LootContextParams.KILLER_ENTITY), context.getLootingModifier(),
+        HideDrops.apply(loot, living, source, context.getOptionalParameter(LootContextParams.ATTACKING_ENTITY), 0,
                 context.getRandom());
         return loot;
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec() {
+    public MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC;
     }
 }

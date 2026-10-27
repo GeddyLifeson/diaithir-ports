@@ -17,7 +17,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import org.lwjgl.glfw.GLFW;
 
@@ -44,7 +44,7 @@ public class FleshingScreen extends WorkshopScreen {
     private final long clientStartMs;
     private final NativeImage image;
     private final DynamicTexture texture;
-    private final ResourceLocation textureId;
+    private final Identifier textureId;
     private int uploadedVersion = -1;
     private Stage stage = Stage.READY;
     private Button doneButton;

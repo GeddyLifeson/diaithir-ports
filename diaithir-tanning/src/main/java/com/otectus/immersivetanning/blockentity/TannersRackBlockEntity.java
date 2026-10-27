@@ -10,14 +10,14 @@ import com.otectus.immersivetanning.registry.ModItems;
 import com.otectus.immersivetanning.registry.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The Tanner's Rack has a lifecycle. A raw hide mounts low and forward for fleshing; after the vat, a wet tanned hide
@@ -37,11 +37,6 @@ public class TannersRackBlockEntity extends StationBlockEntity {
 
     public TannersRackBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.TANNERS_RACK.get(), pos, state);
-    }
-
-    @Override
-    public AABB getRenderBoundingBox() {
-        return new AABB(worldPosition).inflate(0.25, 0, 0.25).expandTowards(0, 0.5, 0);
     }
 
     public Mode mode() { return mode; }
@@ -143,14 +138,14 @@ public class TannersRackBlockEntity extends StationBlockEntity {
     @Override
     public void onChunkUnloaded() {
         super.onChunkUnloaded();
-        if (level != null && !level.isClientSide) SessionManager.onStationUnloaded(level, worldPosition);
+        if (level != null && !level.isClientSide()) SessionManager.onStationUnloaded(level, worldPosition);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
         tag.putString("Mode", mode.name());
-        if (hide != null) tag.put("Hide", hide.save());
+        if (hide != null) tag.store("Hide", CompoundTag.CODEC, hide.save());
         tag.putString("Finish", finish.getSerializedName());
         tag.putLong("DryStart", dryStart);
         tag.putInt("DryTicks", dryTicks);
@@ -158,19 +153,28 @@ public class TannersRackBlockEntity extends StationBlockEntity {
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
+    protected void loadAdditional(ValueInput tag) {
+        super.loadAdditional(tag);
         try {
-            mode = Mode.valueOf(tag.getString("Mode"));
+            mode = Mode.valueOf(tag.getStringOr("Mode", "EMPTY"));
         } catch (IllegalArgumentException e) {
             mode = Mode.EMPTY;
         }
-        hide = tag.contains("Hide", Tag.TAG_COMPOUND) ? HideData.load(tag.getCompound("Hide"), HideSize.MEDIUM) : null;
+        hide = tag.read("Hide", CompoundTag.CODEC).map(c -> HideData.load(c, HideSize.MEDIUM)).orElse(null);
         if (hide == null) mode = Mode.EMPTY;
-        Finish f = Finish.byName(tag.getString("Finish"));
+        Finish f = Finish.byName(tag.getStringOr("Finish", ""));
         finish = f != null ? f : Finish.HARNESS;
-        dryStart = tag.getLong("DryStart");
-        dryTicks = tag.getInt("DryTicks");
-        settled = tag.getBoolean("Settled");
+        dryStart = tag.getLongOr("DryStart", 0L);
+        dryTicks = tag.getIntOr("DryTicks", 0);
+        settled = tag.getBooleanOr("Settled", false);
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        if (level != null && !level.isClientSide()) {
+            SessionManager.onStationRemoved(level, pos);
+            dropContents();
+        }
+        super.preRemoveSideEffects(pos, state);
     }
 }

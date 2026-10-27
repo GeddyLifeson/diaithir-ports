@@ -1,36 +1,31 @@
 package com.otectus.immersivetanning.recipe;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.util.GsonHelper;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.Holder;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.util.ExtraCodecs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.crafting.CraftingHelper;
 
 /** A non-leather ingredient (string, iron, a chest...) consumed from the leatherworker's inventory when stitching starts. */
 public record AuxiliaryIngredient(Ingredient ingredient, int count) {
+    public static final Codec<AuxiliaryIngredient> CODEC = RecordCodecBuilder.create(i -> i.group(
+            Ingredient.CODEC.fieldOf("ingredient").forGetter(AuxiliaryIngredient::ingredient),
+            ExtraCodecs.intRange(1, 64).optionalFieldOf("count", 1).forGetter(AuxiliaryIngredient::count)
+    ).apply(i, AuxiliaryIngredient::new));
 
-    public static AuxiliaryIngredient fromJson(JsonObject json) {
-        Ingredient ingredient = CraftingHelper.getIngredient(json.get("ingredient"), false);
-        int count = GsonHelper.getAsInt(json, "count", 1);
-        if (count <= 0 || count > 64) throw new JsonParseException("Auxiliary count must be 1-64");
-        return new AuxiliaryIngredient(ingredient, count);
-    }
-
-    public void write(FriendlyByteBuf buf) {
-        ingredient.toNetwork(buf);
-        buf.writeVarInt(count);
-    }
-
-    public static AuxiliaryIngredient read(FriendlyByteBuf buf) {
-        return new AuxiliaryIngredient(Ingredient.fromNetwork(buf), buf.readVarInt());
-    }
+    public static final StreamCodec<RegistryFriendlyByteBuf, AuxiliaryIngredient> STREAM_CODEC = StreamCodec.composite(
+            Ingredient.CONTENTS_STREAM_CODEC, AuxiliaryIngredient::ingredient,
+            ByteBufCodecs.VAR_INT, AuxiliaryIngredient::count,
+            AuxiliaryIngredient::new);
 
     /** A representative stack for display, with this ingredient's count. */
     public ItemStack displayStack() {
-        ItemStack[] items = ingredient.getItems();
-        if (items.length == 0) return ItemStack.EMPTY;
-        return items[0].copyWithCount(count);
+        return ingredient.items().findFirst().map(Holder::value).map(Item::getDefaultInstance)
+                .map(s -> s.copyWithCount(count)).orElse(ItemStack.EMPTY);
     }
 }

@@ -35,12 +35,12 @@ import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.trait.TraitRef;
 import com.otectus.immersivetanning.util.Feedback;
 import com.otectus.immersivetanning.util.StationEffects;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -49,16 +49,17 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DyeableLeatherItem;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.component.DyedItemColor;
+import com.otectus.immersivetanning.recipe.EquipmentSeams;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.network.PacketDistributor;
-import net.minecraftforge.server.ServerLifecycleHooks;
-import org.jetbrains.annotations.Nullable;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -134,7 +135,7 @@ public final class SessionManager {
         session.lastSequence = packet.sequence();
         long elapsed = arrivalMs - session.startMs;
         if (elapsed < -EARLY_INPUT_MS) return;
-        int time = SessionTiming.validate(packet.clientMs(), elapsed, player.latency, session.lastValidMs);
+        int time = SessionTiming.validate(packet.clientMs(), elapsed, player.connection.latency(), session.lastValidMs);
         if (time > session.allowedMs) {
             finishFleshing(player, session, true);
             return;
@@ -166,7 +167,7 @@ public final class SessionManager {
         if (packet.ends()) surface.end();
 
         if (surface.coverage() > removedBefore) {
-            ServerLevel level = player.serverLevel();
+            ServerLevel level = ((ServerLevel) player.level());
             level.playSound(player, session.pos, ModSounds.RACK_SCRAPE.get(), SoundSource.BLOCKS, 0.5F, 0.9F + player.getRandom().nextFloat() * 0.2F);
             StationEffects.send(level, session.pos, StationEffects.SCRAPE, surface.coverage() - removedBefore);
         }
@@ -181,9 +182,9 @@ public final class SessionManager {
                 : player.getOffhandItem().getItem() instanceof TannersKnifeItem ? InteractionHand.OFF_HAND : null;
         if (hand == null) return;
         net.minecraft.world.entity.player.Inventory inv = player.getInventory();
-        for (int slot = 0; slot < inv.items.size(); slot++) {
-            ItemStack stack = inv.items.get(slot);
-            Optional<HideData> raw = HideItems.resolve(player.level(), stack);
+        for (int slot = 0; slot < inv.getNonEquipmentItems().size(); slot++) {
+            ItemStack stack = inv.getNonEquipmentItems().get(slot);
+            Optional<HideData> raw = HideItems.resolve(stack);
             if (raw.isPresent()) {
                 rack.mountRaw(raw.get());
                 if (!player.getAbilities().instabuild) stack.shrink(1);
@@ -201,7 +202,7 @@ public final class SessionManager {
     }
 
     private static void finishFleshing(ServerPlayer player, FleshingSession session, boolean timedOut) {
-        TannersRackBlockEntity rack = rackAt(player.serverLevel(), session);
+        TannersRackBlockEntity rack = rackAt(((ServerLevel) player.level()), session);
         if (rack == null || rack.mode() != TannersRackBlockEntity.Mode.RAW || rack.hide() == null) {
             cancel(session, player, message("station_missing"));
             return;
@@ -210,15 +211,15 @@ public final class SessionManager {
         FleshingSurface surface = session.surface;
         // Progression mods hear the score before Integrity is rounded from it and may adjust it.
         HideFleshedEvent fleshed = new HideFleshedEvent(player, rack.hide(), surface.score(), session.pos, timedOut);
-        MinecraftForge.EVENT_BUS.post(fleshed);
+        NeoForge.EVENT_BUS.post(fleshed);
         HideData scraped = rack.hide().fleshed(fleshed.getScore());
         rack.unlock();
         rack.clear();
-        ItemHandlerHelper.giveItemToPlayer(player, ModItems.SCRAPED_HIDE.get().create(scraped));
+        player.getInventory().placeItemBackInInventory(ModItems.SCRAPED_HIDE.get().create(scraped));
 
         ItemStack knife = player.getItemInHand(session.hand);
         if (knife.getItem() instanceof TannersKnifeItem && !player.getAbilities().instabuild) {
-            knife.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(session.hand));
+            knife.hurtAndBreak(1, player, session.hand);
         }
         player.level().playSound(null, session.pos, ModSounds.RACK_MOUNT.get(), SoundSource.BLOCKS, 0.8F, 1.2F);
         ModAdvancements.award(player, ModAdvancements.FLESHED);
@@ -264,13 +265,13 @@ public final class SessionManager {
     }
 
     public static Finish lastFinish(Player player) {
-        CompoundTag persisted = player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
-        Finish finish = Finish.byName(persisted.getString(LAST_FINISH));
+        CompoundTag persisted = player.getPersistentData().getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
+        Finish finish = Finish.byName(persisted.getStringOr(LAST_FINISH, ""));
         return finish != null ? finish : Finish.HARNESS;
     }
 
     private static void setLastFinish(Player player, Finish finish) {
-        CompoundTag persisted = player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
+        CompoundTag persisted = player.getPersistentData().getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
         persisted.putString(LAST_FINISH, finish.getSerializedName());
         player.getPersistentData().put(Player.PERSISTED_NBT_TAG, persisted);
     }
@@ -309,7 +310,7 @@ public final class SessionManager {
                     missingAux = true;
                     continue;
                 }
-                ResourceLocation trait = group.trait() == null ? null : group.trait().id();
+                Identifier trait = group.trait() == null ? null : group.trait().id();
                 offers.add(new StitchingSession.Offer(recipe.getId(), group.finish(), trait));
                 entries.add(new OpenBenchPacket.Entry(recipe.getId(), recipe.result().copy(), recipe.leather(), group.finish(),
                         group.trait(), group.integrityFor(recipe.leather()),
@@ -330,11 +331,11 @@ public final class SessionManager {
         send(player, new OpenBenchPacket(session.id, bench.getBlockPos(), entries));
     }
 
-    public static void selectBenchRecipe(ServerPlayer player, int sessionId, ResourceLocation recipeId, Finish finish,
-                                         @Nullable ResourceLocation traitId) {
+    public static void selectBenchRecipe(ServerPlayer player, int sessionId, Identifier recipeId, Finish finish,
+                                         @Nullable Identifier traitId) {
         StitchingSession session = session(player, sessionId, StitchingSession.class);
         if (session == null || session.isPlaying() || session.recipe != null) return;
-        LeatherworkersBenchBlockEntity bench = benchAt(player.serverLevel(), session);
+        LeatherworkersBenchBlockEntity bench = benchAt(((ServerLevel) player.level()), session);
         if (bench == null) {
             cancel(session, player, message("station_missing"));
             return;
@@ -370,7 +371,7 @@ public final class SessionManager {
         }
         List<ItemStack> aux = AuxInventory.take(player, recipe.auxiliary(), protectedSlot);
         if (aux == null) {
-            leather.forEach(s -> ItemHandlerHelper.giveItemToPlayer(player, s));
+            leather.forEach(s -> player.getInventory().placeItemBackInInventory(s));
             cancel(session, player, message("materials_changed"));
             return;
         }
@@ -406,10 +407,10 @@ public final class SessionManager {
         session.lastSequence = sequence;
         long elapsed = arrivalMs - session.startMs;
         if (elapsed < -EARLY_INPUT_MS) return;
-        int time = SessionTiming.validate(clientMs, elapsed, player.latency, session.lastValidMs);
+        int time = SessionTiming.validate(clientMs, elapsed, player.connection.latency(), session.lastValidMs);
         session.lastValidMs = time;
         StitchRun.Press press = session.run.press(time);
-        ServerLevel level = player.serverLevel();
+        ServerLevel level = ((ServerLevel) player.level());
         if (press.outcome() != StitchRun.Outcome.IGNORED) {
             player.swing(session.hand, true);
             boolean hit = press.outcome() == StitchRun.Outcome.HIT;
@@ -422,7 +423,7 @@ public final class SessionManager {
     }
 
     private static void finishStitching(ServerPlayer player, StitchingSession session, boolean timedOut) {
-        LeatherworkersBenchBlockEntity bench = benchAt(player.serverLevel(), session);
+        LeatherworkersBenchBlockEntity bench = benchAt(((ServerLevel) player.level()), session);
         if (bench == null) {
             cancel(session, player, message("station_missing"));
             return;
@@ -437,26 +438,26 @@ public final class SessionManager {
         // workmanship; the experience and the Masterwork advancement below follow the final value.
         LeatherworkStitchedEvent stitched = new LeatherworkStitchedEvent(player, result, session.recipe.getId(), session.finish,
                 session.integrity, workmanship, session.trait, session.leatherUsed, session.pos, timedOut);
-        MinecraftForge.EVENT_BUS.post(stitched);
+        NeoForge.EVENT_BUS.post(stitched);
         workmanship = stitched.getWorkmanship();
-        LeatherworkData data = new LeatherworkData(session.finish, session.integrity, workmanship, session.trait, player.getGameProfile().getName());
+        LeatherworkData data = new LeatherworkData(session.finish, session.integrity, workmanship, session.trait, player.getGameProfile().name());
         data.apply(result);
         LeatherworkData.stampCrafter(result, player.getUUID());
-        if (result.getItem() instanceof DyeableLeatherItem dyeable) dyeable.setColor(result, session.finish.leatherColor());
-        ItemHandlerHelper.giveItemToPlayer(player, result);
+        if (EquipmentSeams.isLeatherArmor(result)) result.set(DataComponents.DYED_COLOR, new DyedItemColor(session.finish.leatherColor()));
+        player.getInventory().placeItemBackInInventory(result);
         int perOffcut = ServerConfig.get(ServerConfig.LEATHER_PER_OFFCUT);
         if (perOffcut > 0 && session.leatherUsed / perOffcut > 0) {
-            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.LEATHER_SCRAPS.get(), session.leatherUsed / perOffcut));
+            player.getInventory().placeItemBackInInventory(new ItemStack(ModItems.LEATHER_SCRAPS.get(), session.leatherUsed / perOffcut));
         }
 
         ItemStack awl = player.getItemInHand(session.hand);
         if (awl.getItem() instanceof AwlItem && !player.getAbilities().instabuild) {
-            awl.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(session.hand));
+            awl.hurtAndBreak(1, player, session.hand);
         }
         player.level().playSound(null, session.pos, ModSounds.BENCH_FINISH.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
-        StationEffects.send(player.serverLevel(), session.pos, StationEffects.FINISHED, workmanship / 100F);
+        StationEffects.send(((ServerLevel) player.level()), session.pos, StationEffects.FINISHED, workmanship / 100F);
         int xp = benchExperience(data);
-        if (xp > 0) ExperienceOrb.award(player.serverLevel(), Vec3.atCenterOf(session.pos).add(0, 0.6, 0), xp);
+        if (xp > 0) ExperienceOrb.award(((ServerLevel) player.level()), Vec3.atCenterOf(session.pos).add(0, 0.6, 0), xp);
         ModAdvancements.award(player, ModAdvancements.LEATHERWORK);
         if (data.quality() == TanningQuality.MASTERWORK) ModAdvancements.award(player, ModAdvancements.MASTERWORK);
         if (session.trait != null) ModAdvancements.award(player, ModAdvancements.TROPHY);
@@ -533,7 +534,7 @@ public final class SessionManager {
                 continue;
             }
             long elapsed = now - session.startMs;
-            if (elapsed - SessionTiming.graceMs(player.latency) > session.allowedMs) {
+            if (elapsed - SessionTiming.graceMs(player.connection.latency()) > session.allowedMs) {
                 if (session instanceof FleshingSession f) finishFleshing(player, f, true);
                 else if (session instanceof StitchingSession s) finishStitching(player, s, true);
                 continue;
@@ -544,7 +545,7 @@ public final class SessionManager {
 
     private static void cancel(TanningSession session, @Nullable ServerPlayer player, @Nullable Component reason) {
         unregister(session);
-        MinecraftServer server = player != null ? player.getServer() : ServerLifecycleHooks.getCurrentServer();
+        MinecraftServer server = player != null ? player.level().getServer() : ServerLifecycleHooks.getCurrentServer();
         ServerLevel level = server != null ? server.getLevel(session.dimension) : null;
         if (level != null && level.isLoaded(session.pos)) {
             BlockEntity be = level.getBlockEntity(session.pos);
@@ -566,7 +567,7 @@ public final class SessionManager {
         if (!player.isAlive() || player.level().dimension() != session.dimension) return false;
         if (!near(player, session.pos)) return false;
         if (!toolValid(player, session)) return false;
-        return session instanceof FleshingSession ? rackAt(player.serverLevel(), session) != null : benchAt(player.serverLevel(), session) != null;
+        return session instanceof FleshingSession ? rackAt(((ServerLevel) player.level()), session) != null : benchAt(((ServerLevel) player.level()), session) != null;
     }
 
     private static boolean toolValid(ServerPlayer player, TanningSession session) {
@@ -622,8 +623,8 @@ public final class SessionManager {
         return Component.translatable("message.immersive_tanning." + key);
     }
 
-    private static void send(ServerPlayer player, Object packet) {
-        ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player), packet);
+    private static void send(ServerPlayer player, net.minecraft.network.protocol.common.custom.CustomPacketPayload packet) {
+        PacketDistributor.sendToPlayer(player, packet);
     }
 
     private SessionManager() {}

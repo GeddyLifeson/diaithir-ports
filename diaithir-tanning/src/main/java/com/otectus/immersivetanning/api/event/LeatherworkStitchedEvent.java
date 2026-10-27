@@ -3,12 +3,12 @@ package com.otectus.immersivetanning.api.event;
 import com.otectus.immersivetanning.leather.Finish;
 import com.otectus.immersivetanning.trait.TraitRef;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import org.jetbrains.annotations.Nullable;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Posted on the Forge bus when a player finishes stitching a piece at the Leatherworker's Bench, before its
@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public class LeatherworkStitchedEvent extends PlayerEvent {
     private final ItemStack result;
-    private final ResourceLocation recipeId;
+    private final Identifier recipeId;
     private final Finish finish;
     private final int integrity;
     @Nullable
@@ -30,7 +30,7 @@ public class LeatherworkStitchedEvent extends PlayerEvent {
     private final boolean timedOut;
     private int workmanship;
 
-    public LeatherworkStitchedEvent(ServerPlayer player, ItemStack result, ResourceLocation recipeId, Finish finish, int integrity,
+    public LeatherworkStitchedEvent(ServerPlayer player, ItemStack result, Identifier recipeId, Finish finish, int integrity,
                                     int workmanship, @Nullable TraitRef trait, int leatherUsed, BlockPos bench, boolean timedOut) {
         super(player);
         this.result = result;
@@ -52,7 +52,7 @@ public class LeatherworkStitchedEvent extends PlayerEvent {
     /** The finished piece, mutable. */
     public ItemStack getItem() { return result; }
     /** The leatherworking recipe that was stitched, explicit or automatic. */
-    public ResourceLocation getRecipeId() { return recipeId; }
+    public Identifier getRecipeId() { return recipeId; }
     public Finish getFinish() { return finish; }
     /** The averaged Integrity of the leather used (steps of 10). */
     public int getIntegrity() { return integrity; }

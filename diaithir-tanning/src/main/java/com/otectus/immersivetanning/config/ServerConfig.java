@@ -1,6 +1,6 @@
 package com.otectus.immersivetanning.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
 
@@ -10,55 +10,55 @@ import java.util.List;
  * no world is loaded.
  */
 public final class ServerConfig {
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec SPEC;
 
-    public static final ForgeConfigSpec.BooleanValue REPLACE_LEATHER_DROPS;
-    public static final ForgeConfigSpec.BooleanValue LOOTING_ADDS_HIDES;
-    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> CARCASS_ENCHANTMENTS;
-    public static final ForgeConfigSpec.BooleanValue REPLACE_LEATHER_LOOT;
-    public static final ForgeConfigSpec.BooleanValue REPLACE_LEATHER_IN_TRADES;
+    public static final ModConfigSpec.BooleanValue REPLACE_LEATHER_DROPS;
+    public static final ModConfigSpec.BooleanValue LOOTING_ADDS_HIDES;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> CARCASS_ENCHANTMENTS;
+    public static final ModConfigSpec.BooleanValue REPLACE_LEATHER_LOOT;
+    public static final ModConfigSpec.BooleanValue REPLACE_LEATHER_IN_TRADES;
 
-    public static final ForgeConfigSpec.BooleanValue REPLACE_LEATHER_EQUIPMENT_RECIPES;
-    public static final ForgeConfigSpec.BooleanValue AUTO_DETECT_LEATHER_EQUIPMENT;
-    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> RECIPE_BLACKLIST;
-    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
+    public static final ModConfigSpec.BooleanValue REPLACE_LEATHER_EQUIPMENT_RECIPES;
+    public static final ModConfigSpec.BooleanValue AUTO_DETECT_LEATHER_EQUIPMENT;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> RECIPE_BLACKLIST;
+    public static final ModConfigSpec.ConfigValue<List<? extends String>> MOD_BLACKLIST;
 
-    public static final ForgeConfigSpec.IntValue TANNING_TICKS;
-    public static final ForgeConfigSpec.IntValue VAT_CAPACITY;
-    public static final ForgeConfigSpec.IntValue VAT_MAX_TANNIN;
-    public static final ForgeConfigSpec.IntValue BARK_PER_LOG;
-    public static final ForgeConfigSpec.IntValue DRYING_TICKS;
+    public static final ModConfigSpec.IntValue TANNING_TICKS;
+    public static final ModConfigSpec.IntValue VAT_CAPACITY;
+    public static final ModConfigSpec.IntValue VAT_MAX_TANNIN;
+    public static final ModConfigSpec.IntValue BARK_PER_LOG;
+    public static final ModConfigSpec.IntValue DRYING_TICKS;
 
-    public static final ForgeConfigSpec.IntValue FLESHING_TIME_SECONDS;
-    public static final ForgeConfigSpec.DoubleValue MAX_ASSIST_TIME_MULTIPLIER;
-    public static final ForgeConfigSpec.IntValue READY_DELAY_MS;
-    public static final ForgeConfigSpec.IntValue TIMING_TOLERANCE_MS;
-    public static final ForgeConfigSpec.IntValue MAX_LATENCY_COMPENSATION_MS;
-    public static final ForgeConfigSpec.DoubleValue MAX_STATION_DISTANCE;
+    public static final ModConfigSpec.IntValue FLESHING_TIME_SECONDS;
+    public static final ModConfigSpec.DoubleValue MAX_ASSIST_TIME_MULTIPLIER;
+    public static final ModConfigSpec.IntValue READY_DELAY_MS;
+    public static final ModConfigSpec.IntValue TIMING_TOLERANCE_MS;
+    public static final ModConfigSpec.IntValue MAX_LATENCY_COMPENSATION_MS;
+    public static final ModConfigSpec.DoubleValue MAX_STATION_DISTANCE;
 
-    public static final ForgeConfigSpec.DoubleValue MINIMUM_DURABILITY_MULTIPLIER;
-    public static final ForgeConfigSpec.DoubleValue MAXIMUM_DURABILITY_MULTIPLIER;
-    public static final ForgeConfigSpec.DoubleValue MINIMUM_EFFICACY_MULTIPLIER;
-    public static final ForgeConfigSpec.DoubleValue MAXIMUM_EFFICACY_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue MINIMUM_DURABILITY_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue MAXIMUM_DURABILITY_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue MINIMUM_EFFICACY_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue MAXIMUM_EFFICACY_MULTIPLIER;
 
-    public static final ForgeConfigSpec.DoubleValue SUPPLE_SPEED_PER_PIECE;
-    public static final ForgeConfigSpec.DoubleValue SUPPLE_VISIBILITY_PER_PIECE;
-    public static final ForgeConfigSpec.BooleanValue SUPPLE_BOOTS_MUFFLE_STEPS;
-    public static final ForgeConfigSpec.DoubleValue HARNESS_DURABILITY_MULTIPLIER;
-    public static final ForgeConfigSpec.DoubleValue HARNESS_REPAIR_MULTIPLIER;
-    public static final ForgeConfigSpec.DoubleValue HARDENED_ARMOR_FACTOR;
-    public static final ForgeConfigSpec.DoubleValue HARDENED_TOUGHNESS_PER_PIECE;
+    public static final ModConfigSpec.DoubleValue SUPPLE_SPEED_PER_PIECE;
+    public static final ModConfigSpec.DoubleValue SUPPLE_VISIBILITY_PER_PIECE;
+    public static final ModConfigSpec.BooleanValue SUPPLE_BOOTS_MUFFLE_STEPS;
+    public static final ModConfigSpec.DoubleValue HARNESS_DURABILITY_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue HARNESS_REPAIR_MULTIPLIER;
+    public static final ModConfigSpec.DoubleValue HARDENED_ARMOR_FACTOR;
+    public static final ModConfigSpec.DoubleValue HARDENED_TOUGHNESS_PER_PIECE;
 
-    public static final ForgeConfigSpec.DoubleValue REPAIR_FRACTION_PER_SCRAP;
-    public static final ForgeConfigSpec.IntValue LEATHER_PER_OFFCUT;
+    public static final ModConfigSpec.DoubleValue REPAIR_FRACTION_PER_SCRAP;
+    public static final ModConfigSpec.IntValue LEATHER_PER_OFFCUT;
 
-    public static final ForgeConfigSpec.BooleanValue ENABLE_AUTOMATION;
+    public static final ModConfigSpec.BooleanValue ENABLE_AUTOMATION;
 
-    public static final ForgeConfigSpec.BooleanValue ENABLE_VILLAGER_TRADES;
-    public static final ForgeConfigSpec.IntValue BENCH_EXPERIENCE;
+    public static final ModConfigSpec.BooleanValue ENABLE_VILLAGER_TRADES;
+    public static final ModConfigSpec.IntValue BENCH_EXPERIENCE;
 
     static {
-        ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder b = new ModConfigSpec.Builder();
 
         b.comment("Hide drops. Which animals drop which hide is datapack-driven (immersive_tanning/hide_sources).").push("hides");
         REPLACE_LEATHER_DROPS = b.comment("Remove items in #immersive_tanning:replaced_by_hides (leather, rabbit hide) from animals that drop a hide.")
@@ -167,20 +167,20 @@ public final class ServerConfig {
         SPEC = b.build();
     }
 
-    public static boolean get(ForgeConfigSpec.BooleanValue value) {
+    public static boolean get(ModConfigSpec.BooleanValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 
-    public static int get(ForgeConfigSpec.IntValue value) {
+    public static int get(ModConfigSpec.IntValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 
-    public static double get(ForgeConfigSpec.DoubleValue value) {
+    public static double get(ModConfigSpec.DoubleValue value) {
         return SPEC.isLoaded() ? value.get() : value.getDefault();
     }
 
     @SuppressWarnings("unchecked")
-    public static List<String> list(ForgeConfigSpec.ConfigValue<List<? extends String>> value) {
+    public static List<String> list(ModConfigSpec.ConfigValue<List<? extends String>> value) {
         return (List<String>) (SPEC.isLoaded() ? value.get() : value.getDefault());
     }
 

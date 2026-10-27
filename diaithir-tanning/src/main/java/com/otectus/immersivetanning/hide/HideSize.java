@@ -2,7 +2,7 @@ package com.otectus.immersivetanning.hide;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Vanilla hides collapse into three sizes instead of one item per animal. Size decides how much leather a hide

@@ -2,21 +2,29 @@ package com.otectus.immersivetanning.network.packet;
 
 import com.otectus.immersivetanning.client.ClientPacketHandler;
 import com.otectus.immersivetanning.minigame.TanningSession;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.network.NetworkEvent;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.util.function.Supplier;
 
 /**
  * Final server-computed result. For fleshing, {@code score} is the hide's Integrity and the three measures explain it;
  * for stitching it is the Workmanship.
  */
 public record SessionResultPacket(int sessionId, TanningSession.Kind kind, int score, float coverage, float control,
-                                  float overwork, boolean timedOut) {
+                                  float overwork, boolean timedOut) implements CustomPacketPayload {
+    public static final Type<SessionResultPacket> TYPE = new Type<>(ImmersiveTanning.id("session_result"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, SessionResultPacket> STREAM_CODEC = StreamCodec.ofMember(SessionResultPacket::encode, SessionResultPacket::decode);
 
-    public void encode(FriendlyByteBuf buf) {
+    @Override
+    public Type<SessionResultPacket> type() {
+        return TYPE;
+    }
+
+
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeVarInt(sessionId);
         buf.writeEnum(kind);
         buf.writeVarInt(score);
@@ -26,12 +34,12 @@ public record SessionResultPacket(int sessionId, TanningSession.Kind kind, int s
         buf.writeBoolean(timedOut);
     }
 
-    public static SessionResultPacket decode(FriendlyByteBuf buf) {
+    public static SessionResultPacket decode(RegistryFriendlyByteBuf buf) {
         return new SessionResultPacket(buf.readVarInt(), buf.readEnum(TanningSession.Kind.class), buf.readVarInt(),
                 buf.readFloat(), buf.readFloat(), buf.readFloat(), buf.readBoolean());
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.sessionResult(this));
+    public void handle(IPayloadContext ctx) {
+        ClientPacketHandler.sessionResult(this);
     }
 }

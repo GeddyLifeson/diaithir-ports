@@ -3,12 +3,12 @@ package com.otectus.immersivetanning.leather;
 import com.otectus.immersivetanning.hide.HideData;
 import com.otectus.immersivetanning.item.FinishedLeatherItem;
 import com.otectus.immersivetanning.trait.TraitRef;
+import com.otectus.immersivetanning.util.StackNbt;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -26,12 +26,9 @@ public record LeatherData(Finish finish, int integrity, @Nullable TraitRef trait
 
     public static Optional<LeatherData> get(ItemStack stack) {
         if (!(stack.getItem() instanceof FinishedLeatherItem leather)) return Optional.empty();
-        CompoundTag tag = stack.getTag();
-        if (tag == null || !tag.contains(HideData.ROOT, Tag.TAG_COMPOUND)) {
-            return Optional.of(new LeatherData(leather.finish(), DEFAULT_INTEGRITY, null));
-        }
-        CompoundTag root = tag.getCompound(HideData.ROOT);
-        int integrity = root.contains("Integrity", Tag.TAG_ANY_NUMERIC) ? root.getInt("Integrity") : DEFAULT_INTEGRITY;
+        CompoundTag root = StackNbt.root(stack);
+        if (root == null) return Optional.of(new LeatherData(leather.finish(), DEFAULT_INTEGRITY, null));
+        int integrity = root.getIntOr("Integrity", DEFAULT_INTEGRITY);
         return Optional.of(new LeatherData(leather.finish(), integrity, TraitRef.load(root)));
     }
 
@@ -40,7 +37,7 @@ public record LeatherData(Finish finish, int integrity, @Nullable TraitRef trait
         CompoundTag root = new CompoundTag();
         root.putInt("Integrity", integrity);
         if (trait != null) trait.save(root);
-        stack.getOrCreateTag().put(HideData.ROOT, root);
+        StackNbt.set(stack, root);
         return stack;
     }
 

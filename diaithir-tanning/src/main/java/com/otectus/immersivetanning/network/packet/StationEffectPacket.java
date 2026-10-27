@@ -2,27 +2,35 @@ package com.otectus.immersivetanning.network.packet;
 
 import com.otectus.immersivetanning.client.ClientPacketHandler;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.network.NetworkEvent;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.util.function.Supplier;
 
 /** A station effect (scraping dust, stitch, splash) that each client spawns with its own particle settings. */
-public record StationEffectPacket(BlockPos pos, int type, float strength) {
+public record StationEffectPacket(BlockPos pos, int kind, float strength) implements CustomPacketPayload {
+    public static final Type<StationEffectPacket> TYPE = new Type<>(ImmersiveTanning.id("station_effect"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, StationEffectPacket> STREAM_CODEC = StreamCodec.ofMember(StationEffectPacket::encode, StationEffectPacket::decode);
 
-    public void encode(FriendlyByteBuf buf) {
+    @Override
+    public Type<StationEffectPacket> type() {
+        return TYPE;
+    }
+
+
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeBlockPos(pos);
-        buf.writeVarInt(type);
+        buf.writeVarInt(kind);
         buf.writeFloat(strength);
     }
 
-    public static StationEffectPacket decode(FriendlyByteBuf buf) {
+    public static StationEffectPacket decode(RegistryFriendlyByteBuf buf) {
         return new StationEffectPacket(buf.readBlockPos(), buf.readVarInt(), buf.readFloat());
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.stationEffect(this));
+    public void handle(IPayloadContext ctx) {
+        ClientPacketHandler.stationEffect(this);
     }
 }

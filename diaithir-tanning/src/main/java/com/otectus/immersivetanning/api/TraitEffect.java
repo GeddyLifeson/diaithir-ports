@@ -2,7 +2,8 @@ package com.otectus.immersivetanning.api;
 
 import com.otectus.immersivetanning.trait.TraitRef;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraftforge.event.ItemAttributeModifierEvent;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 
 /**
  * What an innate hide trait does. Every method is evaluated per equipped piece, so each piece contributes a share and
@@ -12,7 +13,7 @@ import net.minecraftforge.event.ItemAttributeModifierEvent;
 public interface TraitEffect {
 
     /** Adds attribute modifiers for one equipped piece carrying the trait. Use ids that are unique per slot. */
-    default void addModifiers(ItemAttributeModifierEvent event, TraitRef trait) {}
+    default void addModifiers(ItemAttributeModifierEvent event, EquipmentSlot slot, TraitRef trait) {}
 
     /** Multiplier applied to incoming damage for one equipped piece (1 = unchanged). */
     default float damageMultiplier(DamageSource source, TraitRef trait) {

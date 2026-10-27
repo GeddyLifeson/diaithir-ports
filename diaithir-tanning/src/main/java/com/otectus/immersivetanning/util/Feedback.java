@@ -1,14 +1,13 @@
 package com.otectus.immersivetanning.util;
 
-import com.otectus.immersivetanning.network.ModNetwork;
 import com.otectus.immersivetanning.network.packet.StationNoticePacket;
 import com.otectus.immersivetanning.registry.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.util.FakePlayer;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.common.util.FakePlayer;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 /**
  * Station messages. A real player receives them as notices that stay readable above the hotbar for the client's
@@ -36,7 +35,7 @@ public final class Feedback {
 
     public static void fail(Player player, Component message) {
         send(player, message, true);
-        player.playNotifySound(ModSounds.ACTION_FAIL.get(), SoundSource.BLOCKS, 0.5F, 1.0F);
+        player.level().playSound(null, player.blockPosition(), ModSounds.ACTION_FAIL.get(), SoundSource.BLOCKS, 0.5F, 1.0F);
     }
 
     public static Component message(String key, Object... args) {
@@ -45,9 +44,9 @@ public final class Feedback {
 
     private static void send(Player player, Component message, boolean failure) {
         if (player instanceof ServerPlayer sp && !(sp instanceof FakePlayer) && sp.connection != null) {
-            ModNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new StationNoticePacket(message, failure));
+            PacketDistributor.sendToPlayer(sp, new StationNoticePacket(message, failure));
         } else {
-            player.displayClientMessage(message, true);
+            player.sendOverlayMessage(message);
         }
     }
 

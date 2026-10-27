@@ -9,24 +9,15 @@ import com.otectus.immersivetanning.registry.ModItems;
 import com.otectus.immersivetanning.registry.ModSounds;
 import com.otectus.immersivetanning.registry.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.capability.IFluidHandler;
-import net.minecraftforge.items.IItemHandler;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +26,7 @@ import java.util.List;
  * The Tanner's Vat: a batch of scraped hides steeping in water charged with bark. No GUI and no chemistry - one bucket
  * of water, one bark per tannin charge, and each hide spends the charges its size needs when it starts. Hides progress
  * independently along world time, so a batch can be topped up at any moment and keeps working while nobody is near.
- * Automation may supply water, bark and scraped hides and take tanned hides out; it never finishes or flesh hides.
+ * Automation hooks (item and fluid transfer) are not ported yet.
  *
  * <p>Every change to water, tannin or hides runs one transition ({@link #startWaiting}): waiting hides start in
  * insertion order, each paying its own cost once, and a hide the tannin cannot pay for yet does not hold back a
@@ -88,12 +79,9 @@ public class TannersVatBlockEntity extends StationBlockEntity {
     private final List<Slot> slots = new ArrayList<>();
     private int water;
     private int tannin;
-    /** Set by {@link #load}: the first server tick re-runs the start transition (and migrates older dry vats). */
+    /** Set by {@link #loadAdditional}: the first server tick re-runs the start transition (and migrates older dry vats). */
     private boolean restoreCheck;
     private boolean migrateDryVat;
-
-    private final LazyOptional<IItemHandler> items = LazyOptional.of(AutomationItems::new);
-    private final LazyOptional<IFluidHandler> fluids = LazyOptional.of(AutomationWater::new);
 
     public TannersVatBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.TANNERS_VAT.get(), pos, state);
@@ -319,18 +307,18 @@ public class TannersVatBlockEntity extends StationBlockEntity {
     @Override
     protected void sync() {
         super.sync();
-        if (level != null && !level.isClientSide) level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
+        if (level != null && !level.isClientSide()) level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
     }
 
     // ------------------------------------------------------------------ persistence
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(ValueOutput tag) {
         super.saveAdditional(tag);
         tag.putInt("Version", SAVE_VERSION);
         tag.putInt("Water", water);
         tag.putInt("Tannin", tannin);
-        ListTag list = new ListTag();
+        List<CompoundTag> list = new ArrayList<>();
         for (Slot s : slots) {
             CompoundTag entry = s.hide.save();
             entry.putBoolean("Started", s.started);
@@ -340,156 +328,32 @@ public class TannersVatBlockEntity extends StationBlockEntity {
             if (s.pausedElapsed >= 0) entry.putLong("PausedElapsed", s.pausedElapsed);
             list.add(entry);
         }
-        tag.put("Hides", list);
+        tag.store("Hides", CompoundTag.CODEC.listOf(), list);
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
-        water = tag.getInt("Water");
-        tannin = tag.getInt("Tannin");
+    protected void loadAdditional(ValueInput tag) {
+        super.loadAdditional(tag);
+        water = tag.getIntOr("Water", 0);
+        tannin = tag.getIntOr("Tannin", 0);
         slots.clear();
-        for (Tag t : tag.getList("Hides", Tag.TAG_COMPOUND)) {
-            CompoundTag entry = (CompoundTag) t;
+        for (CompoundTag entry : tag.read("Hides", CompoundTag.CODEC.listOf()).orElse(List.of())) {
             HideData hide = HideData.load(entry, HideSize.MEDIUM);
             Slot s = new Slot(hide.isFleshed() ? hide : hide.fleshed(0));
-            s.started = entry.getBoolean("Started");
-            s.start = entry.getLong("Start");
-            s.duration = entry.getInt("Duration");
-            s.announced = entry.getBoolean("Announced");
-            s.pausedElapsed = s.started && entry.contains("PausedElapsed", Tag.TAG_ANY_NUMERIC) ? entry.getLong("PausedElapsed") : -1L;
+            s.started = entry.getBooleanOr("Started", false);
+            s.start = entry.getLongOr("Start", 0L);
+            s.duration = entry.getIntOr("Duration", 0);
+            s.announced = entry.getBooleanOr("Announced", false);
+            s.pausedElapsed = s.started ? entry.getLongOr("PausedElapsed", -1L) : -1L;
             slots.add(s);
         }
         restoreCheck = true;
-        migrateDryVat = tag.getInt("Version") < SAVE_VERSION;
-    }
-
-    // ------------------------------------------------------------------ automation
-
-    @Override
-    public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (ServerConfig.get(ServerConfig.ENABLE_AUTOMATION)) {
-            if (cap == ForgeCapabilities.ITEM_HANDLER) return items.cast();
-            if (cap == ForgeCapabilities.FLUID_HANDLER) return fluids.cast();
-        }
-        return super.getCapability(cap, side);
+        migrateDryVat = tag.getIntOr("Version", 0) < SAVE_VERSION;
     }
 
     @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        items.invalidate();
-        fluids.invalidate();
-    }
-
-    /** Slot 0 takes scraped hides and tannin sources; slot 1 offers tanned hides. */
-    private final class AutomationItems implements IItemHandler {
-        @Override
-        public int getSlots() {
-            return 2;
-        }
-
-        @Override
-        public @NotNull ItemStack getStackInSlot(int slot) {
-            if (slot != 1) return ItemStack.EMPTY;
-            long now = gameTime();
-            for (Slot s : slots) {
-                if (s.finished(now)) return ModItems.WET_TANNED_HIDE.get().create(s.hide);
-            }
-            return ItemStack.EMPTY;
-        }
-
-        @Override
-        public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
-            if (slot != 0 || stack.isEmpty()) return stack;
-            if (stack.is(ModItems.SCRAPED_HIDE.get())) {
-                int room = Math.min(stack.getCount(), capacity() - slots.size());
-                if (room <= 0) return stack;
-                if (!simulate) {
-                    HideData data = ProcessedHideItem.data(stack);
-                    for (int i = 0; i < room; i++) insertHide(data);
-                }
-                return stack.copyWithCount(stack.getCount() - room);
-            }
-            if (stack.is(ModTags.TANNIN_SOURCES)) {
-                int room = Math.min(stack.getCount(), maxTannin() - tannin);
-                if (room <= 0) return stack;
-                if (!simulate) addTannin(room);
-                return stack.copyWithCount(stack.getCount() - room);
-            }
-            return stack;
-        }
-
-        @Override
-        public @NotNull ItemStack extractItem(int slot, int amount, boolean simulate) {
-            if (slot != 1 || amount <= 0) return ItemStack.EMPTY;
-            long now = gameTime();
-            for (int i = 0; i < slots.size(); i++) {
-                Slot s = slots.get(i);
-                if (!s.finished(now)) continue;
-                ItemStack out = ModItems.WET_TANNED_HIDE.get().create(s.hide);
-                if (!simulate) {
-                    slots.remove(i);
-                    sync();
-                }
-                return out;
-            }
-            return ItemStack.EMPTY;
-        }
-
-        @Override
-        public int getSlotLimit(int slot) {
-            return 1;
-        }
-
-        @Override
-        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return slot == 0 && (stack.is(ModItems.SCRAPED_HIDE.get()) || stack.is(ModTags.TANNIN_SOURCES));
-        }
-    }
-
-    /** Accepts water only, up to one bucket. Nothing can be drained. */
-    private final class AutomationWater implements IFluidHandler {
-        @Override
-        public int getTanks() {
-            return 1;
-        }
-
-        @Override
-        public @NotNull FluidStack getFluidInTank(int tank) {
-            return water > 0 ? new FluidStack(Fluids.WATER, water) : FluidStack.EMPTY;
-        }
-
-        @Override
-        public int getTankCapacity(int tank) {
-            return WATER_CAPACITY;
-        }
-
-        @Override
-        public boolean isFluidValid(int tank, @NotNull FluidStack stack) {
-            return stack.getFluid() == Fluids.WATER;
-        }
-
-        @Override
-        public int fill(FluidStack resource, FluidAction action) {
-            if (resource.isEmpty() || resource.getFluid() != Fluids.WATER) return 0;
-            int filled = Math.min(resource.getAmount(), WATER_CAPACITY - water);
-            if (filled > 0 && action.execute()) {
-                water += filled;
-                startWaiting();
-                sync();
-            }
-            return filled;
-        }
-
-        @Override
-        public @NotNull FluidStack drain(FluidStack resource, FluidAction action) {
-            return FluidStack.EMPTY;
-        }
-
-        @Override
-        public @NotNull FluidStack drain(int maxDrain, FluidAction action) {
-            return FluidStack.EMPTY;
-        }
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        if (level != null && !level.isClientSide()) dropContents();
+        super.preRemoveSideEffects(pos, state);
     }
 }

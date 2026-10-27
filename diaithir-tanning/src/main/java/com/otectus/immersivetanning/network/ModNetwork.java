@@ -1,6 +1,7 @@
 package com.otectus.immersivetanning.network;
 
-import com.otectus.immersivetanning.ImmersiveTanning;
+import com.otectus.immersivetanning.recipe.LeatherworkingRecipe;
+import com.otectus.immersivetanning.recipe.TanningData;
 import com.otectus.immersivetanning.network.packet.CancelSessionPacket;
 import com.otectus.immersivetanning.network.packet.CloseSessionPacket;
 import com.otectus.immersivetanning.network.packet.FinishFleshingPacket;
@@ -17,69 +18,67 @@ import com.otectus.immersivetanning.network.packet.StationNoticePacket;
 import com.otectus.immersivetanning.network.packet.StitchPressPacket;
 import com.otectus.immersivetanning.network.packet.StitchResultPacket;
 import com.otectus.immersivetanning.network.packet.StitchStartPacket;
-import net.minecraftforge.network.NetworkDirection;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.HandlerThread;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /** Small, purpose-specific packets. Clients report inputs only; the server owns every outcome. */
+@EventBusSubscriber(modid = com.otectus.immersivetanning.ImmersiveTanning.MOD_ID)
 public final class ModNetwork {
-    public static final String VERSION = "2";
-    public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(ImmersiveTanning.id("main"),
-            () -> VERSION, VERSION::equals, VERSION::equals);
+    public static final String VERSION = "3";
 
-    public static void register() {
-        int id = 0;
-        // Server -> client
-        CHANNEL.messageBuilder(OpenFleshingPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(OpenFleshingPacket::encode).decoder(OpenFleshingPacket::decode)
-                .consumerMainThread(OpenFleshingPacket::handle).add();
-        CHANNEL.messageBuilder(OpenFinishPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(OpenFinishPacket::encode).decoder(OpenFinishPacket::decode)
-                .consumerMainThread(OpenFinishPacket::handle).add();
-        CHANNEL.messageBuilder(OpenBenchPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(OpenBenchPacket::encode).decoder(OpenBenchPacket::decode)
-                .consumerMainThread(OpenBenchPacket::handle).add();
-        CHANNEL.messageBuilder(StitchStartPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(StitchStartPacket::encode).decoder(StitchStartPacket::decode)
-                .consumerMainThread(StitchStartPacket::handle).add();
-        CHANNEL.messageBuilder(StitchResultPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(StitchResultPacket::encode).decoder(StitchResultPacket::decode)
-                .consumerMainThread(StitchResultPacket::handle).add();
-        CHANNEL.messageBuilder(SessionResultPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(SessionResultPacket::encode).decoder(SessionResultPacket::decode)
-                .consumerMainThread(SessionResultPacket::handle).add();
-        CHANNEL.messageBuilder(CloseSessionPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(CloseSessionPacket::encode).decoder(CloseSessionPacket::decode)
-                .consumerMainThread(CloseSessionPacket::handle).add();
-        CHANNEL.messageBuilder(StationEffectPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(StationEffectPacket::encode).decoder(StationEffectPacket::decode)
-                .consumerMainThread(StationEffectPacket::handle).add();
-        // Client -> server
-        CHANNEL.messageBuilder(FleshStrokePacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(FleshStrokePacket::encode).decoder(FleshStrokePacket::decode)
-                .consumerNetworkThread(FleshStrokePacket::handle).add();
-        CHANNEL.messageBuilder(FinishFleshingPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(FinishFleshingPacket::encode).decoder(FinishFleshingPacket::decode)
-                .consumerNetworkThread(FinishFleshingPacket::handle).add();
-        CHANNEL.messageBuilder(SelectFinishPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(SelectFinishPacket::encode).decoder(SelectFinishPacket::decode)
-                .consumerNetworkThread(SelectFinishPacket::handle).add();
-        CHANNEL.messageBuilder(SelectBenchRecipePacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(SelectBenchRecipePacket::encode).decoder(SelectBenchRecipePacket::decode)
-                .consumerNetworkThread(SelectBenchRecipePacket::handle).add();
-        CHANNEL.messageBuilder(StitchPressPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(StitchPressPacket::encode).decoder(StitchPressPacket::decode)
-                .consumerNetworkThread(StitchPressPacket::handle).add();
-        CHANNEL.messageBuilder(FleshNextPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(FleshNextPacket::encode).decoder(FleshNextPacket::decode)
-                .consumerNetworkThread(FleshNextPacket::handle).add();
-        CHANNEL.messageBuilder(CancelSessionPacket.class, id++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(CancelSessionPacket::encode).decoder(CancelSessionPacket::decode)
-                .consumerNetworkThread(CancelSessionPacket::handle).add();
-        // Server -> client (protocol 2)
-        CHANNEL.messageBuilder(StationNoticePacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(StationNoticePacket::encode).decoder(StationNoticePacket::decode)
-                .consumerMainThread(StationNoticePacket::handle).add();
+    /** The active bench recipes, sent to a player when they join and whenever data reloads. */
+    public record RecipeListPacket(List<LeatherworkingRecipe> recipes) implements CustomPacketPayload {
+        public static final Type<RecipeListPacket> TYPE = new Type<>(com.otectus.immersivetanning.ImmersiveTanning.id("recipe_list"));
+        public static final StreamCodec<RegistryFriendlyByteBuf, RecipeListPacket> STREAM_CODEC =
+                LeatherworkingRecipe.STREAM_CODEC.apply(ByteBufCodecs.list()).map(RecipeListPacket::new, RecipeListPacket::recipes);
+
+        @Override
+        public Type<RecipeListPacket> type() {
+            return TYPE;
+        }
+
+        public void handle(net.neoforged.neoforge.network.handling.IPayloadContext ctx) {
+            TanningData.setFromServer(new ArrayList<>(recipes));
+        }
+    }
+
+    @SubscribeEvent
+    public static void register(RegisterPayloadHandlersEvent event) {
+        PayloadRegistrar client = event.registrar(VERSION);
+        client.playToClient(RecipeListPacket.TYPE, RecipeListPacket.STREAM_CODEC, RecipeListPacket::handle);
+        client.playToClient(CloseSessionPacket.TYPE, CloseSessionPacket.STREAM_CODEC, CloseSessionPacket::handle);
+        client.playToClient(OpenBenchPacket.TYPE, OpenBenchPacket.STREAM_CODEC, OpenBenchPacket::handle);
+        client.playToClient(OpenFinishPacket.TYPE, OpenFinishPacket.STREAM_CODEC, OpenFinishPacket::handle);
+        client.playToClient(OpenFleshingPacket.TYPE, OpenFleshingPacket.STREAM_CODEC, OpenFleshingPacket::handle);
+        client.playToClient(SessionResultPacket.TYPE, SessionResultPacket.STREAM_CODEC, SessionResultPacket::handle);
+        client.playToClient(StationEffectPacket.TYPE, StationEffectPacket.STREAM_CODEC, StationEffectPacket::handle);
+        client.playToClient(StationNoticePacket.TYPE, StationNoticePacket.STREAM_CODEC, StationNoticePacket::handle);
+        client.playToClient(StitchResultPacket.TYPE, StitchResultPacket.STREAM_CODEC, StitchResultPacket::handle);
+        client.playToClient(StitchStartPacket.TYPE, StitchStartPacket.STREAM_CODEC, StitchStartPacket::handle);
+        PayloadRegistrar server = event.registrar(VERSION).executesOn(HandlerThread.NETWORK);
+        server.playToServer(CancelSessionPacket.TYPE, CancelSessionPacket.STREAM_CODEC, CancelSessionPacket::handle);
+        server.playToServer(FinishFleshingPacket.TYPE, FinishFleshingPacket.STREAM_CODEC, FinishFleshingPacket::handle);
+        server.playToServer(FleshNextPacket.TYPE, FleshNextPacket.STREAM_CODEC, FleshNextPacket::handle);
+        server.playToServer(FleshStrokePacket.TYPE, FleshStrokePacket.STREAM_CODEC, FleshStrokePacket::handle);
+        server.playToServer(SelectBenchRecipePacket.TYPE, SelectBenchRecipePacket.STREAM_CODEC, SelectBenchRecipePacket::handle);
+        server.playToServer(SelectFinishPacket.TYPE, SelectFinishPacket.STREAM_CODEC, SelectFinishPacket::handle);
+        server.playToServer(StitchPressPacket.TYPE, StitchPressPacket.STREAM_CODEC, StitchPressPacket::handle);
+    }
+
+    public static void sendRecipes(ServerPlayer player) {
+        PacketDistributor.sendToPlayer(player, new RecipeListPacket(new ArrayList<>(TanningData.current().recipes())));
     }
 
     private ModNetwork() {}

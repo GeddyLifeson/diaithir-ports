@@ -3,7 +3,7 @@ package com.otectus.immersivetanning.recipe;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,12 +61,12 @@ public final class AuxInventory {
 
     static boolean usable(int slot, int protectedSlot, Inventory inv) {
         if (slot == protectedSlot) return false;
-        return slot < inv.items.size() || slot == OFFHAND_SLOT;
+        return slot < inv.getNonEquipmentItems().size() || slot == OFFHAND_SLOT;
     }
 
     /** The inventory slot of the hand's item, which recipes must never consume. */
     public static int protectedSlot(Player player, net.minecraft.world.InteractionHand hand) {
-        return hand == net.minecraft.world.InteractionHand.MAIN_HAND ? player.getInventory().selected : OFFHAND_SLOT;
+        return hand == net.minecraft.world.InteractionHand.MAIN_HAND ? player.getInventory().getSelectedSlot() : OFFHAND_SLOT;
     }
 
     private AuxInventory() {}

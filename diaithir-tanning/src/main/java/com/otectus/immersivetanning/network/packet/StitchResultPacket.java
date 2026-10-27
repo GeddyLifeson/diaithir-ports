@@ -1,17 +1,25 @@
 package com.otectus.immersivetanning.network.packet;
 
 import com.otectus.immersivetanning.client.ClientPacketHandler;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.network.NetworkEvent;
+import com.otectus.immersivetanning.ImmersiveTanning;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.util.function.Supplier;
 
 /** The server's verdict on one press, so the client can correct its prediction. {@code index < 0}: ignored. */
-public record StitchResultPacket(int sessionId, int sequence, int index, float accuracy, int next) {
+public record StitchResultPacket(int sessionId, int sequence, int index, float accuracy, int next) implements CustomPacketPayload {
+    public static final Type<StitchResultPacket> TYPE = new Type<>(ImmersiveTanning.id("stitch_result"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, StitchResultPacket> STREAM_CODEC = StreamCodec.ofMember(StitchResultPacket::encode, StitchResultPacket::decode);
 
-    public void encode(FriendlyByteBuf buf) {
+    @Override
+    public Type<StitchResultPacket> type() {
+        return TYPE;
+    }
+
+
+    public void encode(RegistryFriendlyByteBuf buf) {
         buf.writeVarInt(sessionId);
         buf.writeVarInt(sequence);
         buf.writeVarInt(index + 1);
@@ -19,11 +27,11 @@ public record StitchResultPacket(int sessionId, int sequence, int index, float a
         buf.writeVarInt(next);
     }
 
-    public static StitchResultPacket decode(FriendlyByteBuf buf) {
+    public static StitchResultPacket decode(RegistryFriendlyByteBuf buf) {
         return new StitchResultPacket(buf.readVarInt(), buf.readVarInt(), buf.readVarInt() - 1, buf.readFloat(), buf.readVarInt());
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.stitchResult(this));
+    public void handle(IPayloadContext ctx) {
+        ClientPacketHandler.stitchResult(this);
     }
 }

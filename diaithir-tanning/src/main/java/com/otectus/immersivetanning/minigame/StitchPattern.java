@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.otectus.immersivetanning.ImmersiveTanning;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 
@@ -25,9 +25,9 @@ import java.util.List;
  * }
  * </pre>
  */
-public record StitchPattern(ResourceLocation id, List<float[]> panels, List<float[]> seams, int[] stitches, float[] rhythm,
+public record StitchPattern(Identifier id, List<float[]> panels, List<float[]> seams, int[] stitches, float[] rhythm,
                             int beatMs, int windowMs, int perfectMs, int leadMs) {
-    public static final ResourceLocation GENERIC = ImmersiveTanning.id("generic");
+    public static final Identifier GENERIC = ImmersiveTanning.id("generic");
     public static final StitchPattern DEFAULT = new StitchPattern(GENERIC,
             List.of(new float[]{0.14F, 0.28F, 0.86F, 0.28F, 0.86F, 0.72F, 0.14F, 0.72F}),
             List.of(new float[]{0.2F, 0.36F, 0.8F, 0.36F}, new float[]{0.8F, 0.64F, 0.2F, 0.64F}),
@@ -122,7 +122,7 @@ public record StitchPattern(ResourceLocation id, List<float[]> panels, List<floa
 
     // ------------------------------------------------------------------ serialisation
 
-    public static StitchPattern fromJson(ResourceLocation id, JsonObject json) {
+    public static StitchPattern fromJson(Identifier id, JsonObject json) {
         List<float[]> panels = new ArrayList<>();
         if (json.has("panels")) {
             for (JsonElement e : GsonHelper.getAsJsonArray(json, "panels")) panels.add(points(e.getAsJsonArray(), 3));
@@ -168,7 +168,7 @@ public record StitchPattern(ResourceLocation id, List<float[]> panels, List<floa
     }
 
     public void write(FriendlyByteBuf buf) {
-        buf.writeResourceLocation(id);
+        buf.writeIdentifier(id);
         buf.writeVarInt(panels.size());
         panels.forEach(p -> writeFloats(buf, p));
         buf.writeVarInt(seams.size());
@@ -184,7 +184,7 @@ public record StitchPattern(ResourceLocation id, List<float[]> panels, List<floa
     }
 
     public static StitchPattern read(FriendlyByteBuf buf) {
-        ResourceLocation id = buf.readResourceLocation();
+        Identifier id = buf.readIdentifier();
         int panelCount = Math.min(buf.readVarInt(), 16);
         List<float[]> panels = new ArrayList<>();
         for (int i = 0; i < panelCount; i++) panels.add(readFloats(buf));

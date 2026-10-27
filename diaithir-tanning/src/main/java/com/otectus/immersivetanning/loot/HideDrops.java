@@ -6,20 +6,19 @@ import com.otectus.immersivetanning.hide.HideSourceLoader;
 import com.otectus.immersivetanning.leather.BindingLeather;
 import com.otectus.immersivetanning.registry.ModItems;
 import com.otectus.immersivetanning.registry.ModTags;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,7 +32,7 @@ import java.util.List;
  * enchantment, on a {@code #immersive_tanning:carcass_animals} adult - drops no hide: the mod that butchers the carcass
  * supplies the skin, and the rack accepts that skin through a hide mounting recipe.</p>
  */
-@Mod.EventBusSubscriber(modid = ImmersiveTanning.MOD_ID)
+@EventBusSubscriber(modid = ImmersiveTanning.MOD_ID)
 public final class HideDrops {
 
     /** Replaces the leather in {@code loot} with the source's hides, or only removes it on a carcass kill. */
@@ -59,14 +58,16 @@ public final class HideDrops {
     }
 
     public static boolean butcheredAsCarcass(LivingEntity victim, @Nullable Entity killer) {
-        if (victim.isBaby() || !victim.getType().is(ModTags.CARCASS_ANIMALS) || !(killer instanceof LivingEntity living)) return false;
+        if (victim.isBaby() || !victim.getType().builtInRegistryHolder().is(ModTags.CARCASS_ANIMALS) || !(killer instanceof LivingEntity living)) return false;
         ItemStack weapon = living.getMainHandItem();
         if (weapon.isEmpty()) return false;
         if (weapon.is(ModTags.CARCASS_TOOLS)) return true;
         for (String id : ServerConfig.list(ServerConfig.CARCASS_ENCHANTMENTS)) {
-            ResourceLocation key = ResourceLocation.tryParse(id);
-            Enchantment enchantment = key == null ? null : ForgeRegistries.ENCHANTMENTS.getValue(key);
-            if (enchantment != null && weapon.getEnchantmentLevel(enchantment) > 0) return true;
+            Identifier key = Identifier.tryParse(id);
+            if (key == null) continue;
+            for (var entry : weapon.getEnchantments().entrySet()) {
+                if (entry.getKey().unwrapKey().map(k -> k.identifier().equals(key)).orElse(false)) return true;
+            }
         }
         return false;
     }
@@ -79,14 +80,14 @@ public final class HideDrops {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onLivingDrops(LivingDropsEvent event) {
         LivingEntity victim = event.getEntity();
-        if (victim instanceof Player || victim.level().isClientSide) return;
+        if (victim instanceof Player || victim.level().isClientSide()) return;
         HideSourceLoader.HideSource source = HideSourceLoader.forEntity(victim.getType());
         if (source != null && contains(event, true)) {
             List<ItemStack> stacks = new ArrayList<>();
             event.getDrops().forEach(e -> stacks.add(e.getItem()));
             Entity killer = event.getSource().getEntity();
             if (!contains(event, false)) {
-                apply(stacks, victim, source, killer, event.getLootingLevel(), victim.getRandom());
+                apply(stacks, victim, source, killer, 0, victim.getRandom());
             } else if (ServerConfig.get(ServerConfig.REPLACE_LEATHER_DROPS) || butcheredAsCarcass(victim, killer)) {
                 stacks.removeIf(stack -> stack.is(ModTags.REPLACED_BY_HIDES));
             }

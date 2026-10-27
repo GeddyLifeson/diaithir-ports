@@ -3,45 +3,40 @@ package com.otectus.immersivetanning.recipe;
 import com.otectus.immersivetanning.ImmersiveTanning;
 import com.otectus.immersivetanning.minigame.SeamPatterns;
 import com.otectus.immersivetanning.minigame.StitchPattern;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterials;
-import net.minecraft.world.item.DyeableLeatherItem;
-import net.minecraft.world.item.HorseArmorItem;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SaddleItem;
+import net.minecraft.world.item.equipment.Equippable;
 
 /**
  * Picks a seam pattern for a result that does not name one: an item tag {@code <namespace>:seams/<path>} naming the
- * seam {@code <namespace>:<path>} (so modded saddles can take the saddle seam), then equipment slot, horse gear, or the
- * generic seam.
+ * seam {@code <namespace>:<path>} (so modded saddles can take the saddle seam), then equipment slot, or the generic seam.
  */
 public final class EquipmentSeams {
 
-    public static ResourceLocation classify(ItemStack stack) {
-        for (ResourceLocation seam : SeamPatterns.ids()) {
-            if (stack.is(ItemTags.create(new ResourceLocation(seam.getNamespace(), "seams/" + seam.getPath())))) return seam;
+    public static Identifier classify(ItemStack stack) {
+        for (Identifier seam : SeamPatterns.ids()) {
+            if (stack.is(ItemTags.create(Identifier.fromNamespaceAndPath(seam.getNamespace(), "seams/" + seam.getPath())))) return seam;
         }
-        if (stack.getItem() instanceof SaddleItem) return ImmersiveTanning.id("saddle");
-        if (stack.getItem() instanceof HorseArmorItem) return ImmersiveTanning.id("horse_armor");
-        if (stack.getItem() instanceof ArmorItem || stack.getItem() instanceof net.minecraft.world.item.Equipable) {
-            return switch (LivingEntity.getEquipmentSlotForItem(stack)) {
-                case HEAD -> ImmersiveTanning.id("helmet");
-                case CHEST -> ImmersiveTanning.id("chestplate");
-                case LEGS -> ImmersiveTanning.id("leggings");
-                case FEET -> ImmersiveTanning.id("boots");
-                default -> StitchPattern.GENERIC;
-            };
-        }
-        return StitchPattern.GENERIC;
+        Equippable equippable = stack.get(DataComponents.EQUIPPABLE);
+        if (equippable == null) return StitchPattern.GENERIC;
+        EquipmentSlot slot = equippable.slot();
+        return switch (slot) {
+            case HEAD -> ImmersiveTanning.id("helmet");
+            case CHEST -> ImmersiveTanning.id("chestplate");
+            case LEGS -> ImmersiveTanning.id("leggings");
+            case FEET -> ImmersiveTanning.id("boots");
+            case SADDLE -> ImmersiveTanning.id("saddle");
+            case BODY -> ImmersiveTanning.id("horse_armor");
+            default -> StitchPattern.GENERIC;
+        };
     }
 
     /** Vanilla-style leather armor and dyeable leather gear, which are leatherwork even without a tag. */
     public static boolean isLeatherArmor(ItemStack stack) {
-        if (stack.getItem() instanceof ArmorItem armor && armor.getMaterial() == ArmorMaterials.LEATHER) return true;
-        return stack.getItem() instanceof DyeableLeatherItem;
+        return stack.has(DataComponents.EQUIPPABLE) && stack.has(DataComponents.DYED_COLOR);
     }
 
     private EquipmentSeams() {}

@@ -12,55 +12,54 @@ import com.otectus.immersivetanning.item.StationBlockItem;
 import com.otectus.immersivetanning.item.TannersKnifeItem;
 import com.otectus.immersivetanning.leather.Finish;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.EnumMap;
 import java.util.Map;
 
 public final class ModItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ImmersiveTanning.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ImmersiveTanning.MOD_ID);
 
-    public static final RegistryObject<Item> TANNERS_RACK = ITEMS.register("tanners_rack",
-            () -> new StationBlockItem(ModBlocks.TANNERS_RACK.get(), new Item.Properties()));
-    public static final RegistryObject<Item> TANNERS_VAT = ITEMS.register("tanners_vat",
-            () -> new StationBlockItem(ModBlocks.TANNERS_VAT.get(), new Item.Properties()));
-    public static final RegistryObject<Item> LEATHERWORKERS_BENCH = ITEMS.register("leatherworkers_bench",
-            () -> new StationBlockItem(ModBlocks.LEATHERWORKERS_BENCH.get(), new Item.Properties()));
+    public static final DeferredItem<Item> TANNERS_RACK = ITEMS.registerItem("tanners_rack",
+            p -> new StationBlockItem(ModBlocks.TANNERS_RACK.get(), p), () -> new Item.Properties().useBlockDescriptionPrefix());
+    public static final DeferredItem<Item> TANNERS_VAT = ITEMS.registerItem("tanners_vat",
+            p -> new StationBlockItem(ModBlocks.TANNERS_VAT.get(), p), () -> new Item.Properties().useBlockDescriptionPrefix());
+    public static final DeferredItem<Item> LEATHERWORKERS_BENCH = ITEMS.registerItem("leatherworkers_bench",
+            p -> new StationBlockItem(ModBlocks.LEATHERWORKERS_BENCH.get(), p), () -> new Item.Properties().useBlockDescriptionPrefix());
 
-    public static final Map<HideSize, RegistryObject<RawHideItem>> RAW_HIDES = new EnumMap<>(HideSize.class);
+    public static final Map<HideSize, DeferredItem<RawHideItem>> RAW_HIDES = new EnumMap<>(HideSize.class);
 
     static {
         for (HideSize size : HideSize.values()) {
-            RAW_HIDES.put(size, ITEMS.register(size.getSerializedName() + "_hide",
-                    () -> new RawHideItem(size, new Item.Properties().stacksTo(16))));
+            RAW_HIDES.put(size, ITEMS.registerItem(size.getSerializedName() + "_hide",
+                    p -> new RawHideItem(size, p), () -> new Item.Properties().stacksTo(16)));
         }
     }
 
-    public static final RegistryObject<ProcessedHideItem> SCRAPED_HIDE = ITEMS.register("scraped_hide",
-            () -> new ProcessedHideItem(ProcessedHideItem.Stage.SCRAPED, new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<ProcessedHideItem> WET_TANNED_HIDE = ITEMS.register("wet_tanned_hide",
-            () -> new ProcessedHideItem(ProcessedHideItem.Stage.WET, new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<ProcessedHideItem> SCRAPED_HIDE = ITEMS.registerItem("scraped_hide",
+            p -> new ProcessedHideItem(ProcessedHideItem.Stage.SCRAPED, p), () -> new Item.Properties().stacksTo(16));
+    public static final DeferredItem<ProcessedHideItem> WET_TANNED_HIDE = ITEMS.registerItem("wet_tanned_hide",
+            p -> new ProcessedHideItem(ProcessedHideItem.Stage.WET, p), () -> new Item.Properties().stacksTo(16));
 
-    public static final Map<Finish, RegistryObject<FinishedLeatherItem>> LEATHERS = new EnumMap<>(Finish.class);
+    public static final Map<Finish, DeferredItem<FinishedLeatherItem>> LEATHERS = new EnumMap<>(Finish.class);
 
     static {
         for (Finish finish : Finish.values()) {
-            LEATHERS.put(finish, ITEMS.register(finish.getSerializedName() + "_leather",
-                    () -> new FinishedLeatherItem(finish, new Item.Properties())));
+            LEATHERS.put(finish, ITEMS.registerItem(finish.getSerializedName() + "_leather",
+                    p -> new FinishedLeatherItem(finish, p), () -> new Item.Properties()));
         }
     }
 
     /** Replaces vanilla leather in every recipe, loot table and trade. See {@link com.otectus.immersivetanning.leather.BindingLeather}. */
-    public static final RegistryObject<Item> BINDING_LEATHER = ITEMS.register("binding_leather", () -> new HintItem(new Item.Properties()));
-    public static final RegistryObject<LeatherScrapsItem> LEATHER_SCRAPS = ITEMS.register("leather_scraps",
-            () -> new LeatherScrapsItem(new Item.Properties()));
-    public static final RegistryObject<Item> BARK = ITEMS.register("bark", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<TannersKnifeItem> TANNERS_KNIFE = ITEMS.register("tanners_knife",
-            () -> new TannersKnifeItem(new Item.Properties().durability(250)));
-    public static final RegistryObject<AwlItem> AWL = ITEMS.register("awl",
-            () -> new AwlItem(new Item.Properties().durability(200)));
+    public static final DeferredItem<Item> BINDING_LEATHER = ITEMS.registerItem("binding_leather", HintItem::new, () -> new Item.Properties());
+    public static final DeferredItem<LeatherScrapsItem> LEATHER_SCRAPS = ITEMS.registerItem("leather_scraps",
+            LeatherScrapsItem::new, () -> new Item.Properties());
+    public static final DeferredItem<Item> BARK = ITEMS.registerItem("bark", Item::new, () -> new Item.Properties());
+    public static final DeferredItem<TannersKnifeItem> TANNERS_KNIFE = ITEMS.registerItem("tanners_knife",
+            TannersKnifeItem::new, () -> new Item.Properties().durability(250).repairable(net.neoforged.neoforge.common.Tags.Items.INGOTS_IRON));
+    public static final DeferredItem<AwlItem> AWL = ITEMS.registerItem("awl",
+            AwlItem::new, () -> new Item.Properties().durability(200).repairable(net.neoforged.neoforge.common.Tags.Items.NUGGETS_IRON));
 
     public static RawHideItem rawHide(HideSize size) {
         return RAW_HIDES.get(size).get();

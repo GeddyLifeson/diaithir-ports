@@ -4,7 +4,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.FormattedCharSequence;
 
 import java.util.List;
@@ -16,10 +16,10 @@ import java.util.List;
  * follows vanilla containers: dark grey labels on the light panel, light text inside the dark gameplay displays.
  */
 public final class VanillaGui {
-    public static final ResourceLocation PANEL = new ResourceLocation("textures/gui/demo_background.png");
-    public static final ResourceLocation SLOTS = new ResourceLocation("textures/gui/container/generic_54.png");
-    public static final ResourceLocation WIDGETS = new ResourceLocation("textures/gui/widgets.png");
-    public static final ResourceLocation SCROLLER = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");
+    public static final Identifier PANEL = Identifier.parse("textures/gui/demo_background.png");
+    public static final Identifier SLOTS = Identifier.parse("textures/gui/container/generic_54.png");
+    public static final Identifier WIDGETS = Identifier.parse("textures/gui/widgets.png");
+    public static final Identifier SCROLLER = Identifier.parse("textures/gui/container/creative_inventory/tabs.png");
 
     /** Container titles and labels (vanilla {@code 0x404040}). */
     public static final int LABEL = 0xFF404040;
