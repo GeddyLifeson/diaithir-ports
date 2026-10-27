@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-license = "MIT"
+license = "MIT; Pixelify Sans (assets/diaithirtooltips/font) is SIL OFL 1.1, see OFL-PixelifySans.txt"
 
 [[mods]]
 modId = "diaithirtooltips"

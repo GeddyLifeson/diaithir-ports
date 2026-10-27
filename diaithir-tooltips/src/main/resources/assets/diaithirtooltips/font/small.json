@@ -1,0 +1,20 @@
+{
+  "providers": [
+    {
+      "type": "space",
+      "advances": {
+        " ": 2.5
+      }
+    },
+    {
+      "type": "ttf",
+      "file": "diaithirtooltips:pixelify_sans.ttf",
+      "size": 8.0,
+      "oversample": 4.0
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:default"
+    }
+  ]
+}

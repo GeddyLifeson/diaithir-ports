@@ -8,6 +8,9 @@ import java.util.Map;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.FontDescription;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -17,6 +20,8 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 @Mod(value = "diaithirtooltips", dist = Dist.CLIENT)
 public final class DiaithirTooltips {
     private static final Map<String, String> NAMES = load();
+    private static final Style STYLE = Style.EMPTY.withColor(ChatFormatting.GRAY).withItalic(true)
+            .withFont(new FontDescription.Resource(Identifier.fromNamespaceAndPath("diaithirtooltips", "small")));
 
     public DiaithirTooltips() {
         NeoForge.EVENT_BUS.addListener(ItemTooltipEvent.class, DiaithirTooltips::onTooltip);
@@ -37,7 +42,7 @@ public final class DiaithirTooltips {
         }
         String name = NAMES.get(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString());
         if (name != null) {
-            lines.add(1, Component.literal(name).withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+            lines.add(1, Component.literal(name).withStyle(STYLE));
         }
     }
 }
