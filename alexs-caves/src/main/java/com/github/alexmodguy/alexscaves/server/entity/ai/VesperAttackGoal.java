@@ -72,7 +72,7 @@ public class VesperAttackGoal extends Goal {
                     entity.setAnimation(VesperEntity.ANIMATION_BITE);
                 } else if (entity.getAnimationTick() == 8 && entity.hasLineOfSight(target)) {
                     boolean flag = target.isBlocking();
-                    if (target.hurt(target.damageSources().mobAttack(entity), (float) entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
+                    if (target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(entity), (float) entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue())) {
                         if (!target.isAlive() && target instanceof GloomothEntity gloomothEntity) {
                             if (gloomothEntity.lightPos != null && gloomothEntity.distanceToSqr(Vec3.atCenterOf(gloomothEntity.lightPos)) < 32.0F) {
                                 entity.groundedFor = 100 + entity.getRandom().nextInt(40);

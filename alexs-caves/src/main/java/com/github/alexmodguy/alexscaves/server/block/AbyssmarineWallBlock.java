@@ -26,7 +26,7 @@ public class AbyssmarineWallBlock extends WallBlock implements ActivatedByAltar 
 
     public AbyssmarineWallBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(UP, Boolean.valueOf(true)).setValue(NORTH_WALL, WallSide.NONE).setValue(EAST_WALL, WallSide.NONE).setValue(SOUTH_WALL, WallSide.NONE).setValue(WEST_WALL, WallSide.NONE).setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(ACTIVE, Boolean.valueOf(false)).setValue(DISTANCE, MAX_DISTANCE));
+        this.registerDefaultState(this.stateDefinition.any().setValue(UP, Boolean.valueOf(true)).setValue(NORTH, WallSide.NONE).setValue(EAST, WallSide.NONE).setValue(SOUTH, WallSide.NONE).setValue(WEST, WallSide.NONE).setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(ACTIVE, Boolean.valueOf(false)).setValue(DISTANCE, MAX_DISTANCE));
         this.shapeByIndex = this.makeAbyssalShapes(4.0F, 3.0F, 16.0F, 0.0F, 14.0F, 16.0F);
         this.collisionShapeByIndex = this.makeAbyssalShapes(4.0F, 3.0F, 24.0F, 0.0F, 24.0F, 24.0F);
     }
@@ -50,7 +50,7 @@ public class AbyssmarineWallBlock extends WallBlock implements ActivatedByAltar 
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(DISTANCE, ACTIVE, UP, NORTH_WALL, EAST_WALL, WEST_WALL, SOUTH_WALL, WATERLOGGED);
+        builder.add(DISTANCE, ACTIVE, UP, NORTH, EAST, WEST, SOUTH, WATERLOGGED);
     }
 
     private Map<BlockState, VoxelShape> makeAbyssalShapes(float p_57966_, float p_57967_, float p_57968_, float p_57969_, float p_57970_, float p_57971_) {
@@ -70,10 +70,10 @@ public class AbyssmarineWallBlock extends WallBlock implements ActivatedByAltar 
         ImmutableMap.Builder<BlockState, VoxelShape> builder = ImmutableMap.builder();
 
         for (Boolean obool : UP.getPossibleValues()) {
-            for (WallSide wallside : EAST_WALL.getPossibleValues()) {
-                for (WallSide wallside1 : NORTH_WALL.getPossibleValues()) {
-                    for (WallSide wallside2 : WEST_WALL.getPossibleValues()) {
-                        for (WallSide wallside3 : SOUTH_WALL.getPossibleValues()) {
+            for (WallSide wallside : EAST.getPossibleValues()) {
+                for (WallSide wallside1 : NORTH.getPossibleValues()) {
+                    for (WallSide wallside2 : WEST.getPossibleValues()) {
+                        for (WallSide wallside3 : SOUTH.getPossibleValues()) {
                             VoxelShape voxelshape9 = Shapes.empty();
                             voxelshape9 = applyWallShape(voxelshape9, wallside, voxelshape4, voxelshape8);
                             voxelshape9 = applyWallShape(voxelshape9, wallside2, voxelshape3, voxelshape7);
@@ -83,7 +83,7 @@ public class AbyssmarineWallBlock extends WallBlock implements ActivatedByAltar 
                                 voxelshape9 = Shapes.or(voxelshape9, voxelshape);
                             }
 
-                            BlockState blockstate = this.defaultBlockState().setValue(UP, obool).setValue(EAST_WALL, wallside).setValue(WEST_WALL, wallside2).setValue(NORTH_WALL, wallside1).setValue(SOUTH_WALL, wallside3);
+                            BlockState blockstate = this.defaultBlockState().setValue(UP, obool).setValue(EAST, wallside).setValue(WEST, wallside2).setValue(NORTH, wallside1).setValue(SOUTH, wallside3);
                             for (int i = 1; i <= MAX_DISTANCE; i++) {
                                 builder.put(blockstate.setValue(DISTANCE, i).setValue(ACTIVE, false).setValue(WATERLOGGED, Boolean.valueOf(false)), voxelshape9);
                                 builder.put(blockstate.setValue(DISTANCE, i).setValue(ACTIVE, false).setValue(WATERLOGGED, Boolean.valueOf(true)), voxelshape9);

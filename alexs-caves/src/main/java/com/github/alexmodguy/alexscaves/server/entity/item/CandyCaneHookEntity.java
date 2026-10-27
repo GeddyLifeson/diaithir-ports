@@ -186,7 +186,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
                     this.setHookedEntityUUID(favoredToHookTo.getUUID());
                     if(this.getDamage() != 0){
                         DamageSource damageSource = this.damageSources().thrown(this, owner);
-                        favoredToHookTo.hurt(damageSource, this.getDamage());
+                        favoredToHookTo.hurtServer((net.minecraft.server.level.ServerLevel) favoredToHookTo.level(), damageSource, this.getDamage());
                     }
                 }
             }

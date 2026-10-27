@@ -319,7 +319,7 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
                             GammaroachEntity.this.setAnimation(GammaroachEntity.ANIMATION_RAM);
                         } else if (GammaroachEntity.this.getAnimation() == GammaroachEntity.ANIMATION_RAM && GammaroachEntity.this.getAnimationTick() > 8 && GammaroachEntity.this.getAnimationTick() < 15) {
                             GammaroachEntity.this.playSound(ACSoundRegistry.GAMMAROACH_ATTACK.get());
-                            target.hurt(damageSources().mobAttack(GammaroachEntity.this), (float) GammaroachEntity.this.getAttributeValue(Attributes.ATTACK_DAMAGE));
+                            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(GammaroachEntity.this), (float) GammaroachEntity.this.getAttributeValue(Attributes.ATTACK_DAMAGE));
                         }
                         if (pickupMonster != null) {
                             pickupMonster.stopRiding();
@@ -331,7 +331,7 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
                     GammaroachEntity.this.lookAt(pickupMonster, 180, 30);
                     if (GammaroachEntity.this.distanceTo(pickupMonster) < 1.5F + pickupMonster.getBbWidth()) {
                         pickupMonster.startRiding(GammaroachEntity.this, true);
-                        pickupMonster.hurt(damageSources().cactus(), 1);
+                        pickupMonster.hurtServer((net.minecraft.server.level.ServerLevel) pickupMonster.level(), damageSources().cactus(), 1);
                     }
                 } else {
                     pickupMonster = null;

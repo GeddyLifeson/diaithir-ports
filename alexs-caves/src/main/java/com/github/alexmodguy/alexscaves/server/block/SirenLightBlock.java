@@ -156,7 +156,7 @@ public class SirenLightBlock extends BaseEntityBlock {
     @Override
     public InteractionResult useItemOn(ItemStack heldItem, BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
         if (worldIn.getBlockEntity(pos) instanceof SirenLightBlockEntity sirenLightBlock && !player.isShiftKeyDown() && heldItem.getItem() instanceof DyeItem dyeItem) {
-            if (sirenLightBlock.setColor(dyeItem.getDyeColor().getTextColor())) {
+            if (sirenLightBlock.setColor(heldItem.get(net.minecraft.core.component.DataComponents.DYE).getTextColor())) {
                 player.playSound(SoundEvents.DYE_USE);
                 if (!player.getAbilities().instabuild)
                     heldItem.shrink(1);

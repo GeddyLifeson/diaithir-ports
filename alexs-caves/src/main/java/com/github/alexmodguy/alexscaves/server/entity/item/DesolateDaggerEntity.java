@@ -86,7 +86,7 @@ public class DesolateDaggerEntity extends Entity {
                     Entity player = getPlayer();
                     Entity damageFrom = player == null ? this : player;
                     float damage = 2 + ACEnchantmentRegistry.getEnchantmentLevel(level(), this.getItemStack(), ACEnchantmentRegistry.IMPENDING_STAB) * 2F;
-                    if (entity.hurt(ACDamageTypes.causeDesolateDaggerDamage(this.level().registryAccess(), damageFrom), damage)) {
+                    if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), ACDamageTypes.causeDesolateDaggerDamage(this.level().registryAccess(), damageFrom), damage)) {
                         this.playSound(ACSoundRegistry.DESOLATE_DAGGER_HIT.get());
                         int healBy = ACEnchantmentRegistry.getEnchantmentLevel(level(), this.getItemStack(), ACEnchantmentRegistry.SATED_BLADE);
                         if(healBy > 0 && damageFrom instanceof Player healPlayer && healPlayer.getFoodData().getSaturationLevel() < 5F){

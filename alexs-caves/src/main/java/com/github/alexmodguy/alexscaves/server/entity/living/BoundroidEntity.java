@@ -150,7 +150,7 @@ public class BoundroidEntity extends Monster {
                     bashBox = bashBox.move(this.position());
                     for (Entity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
                         if (!isAlliedTo(entity) && !(entity instanceof BoundroidEntity) && !(entity instanceof BoundroidWinchEntity)) {
-                            entity.hurt(damageSources().mobAttack(this), 5);
+                            entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSources().mobAttack(this), 5);
                         }
                     }
                 }

@@ -37,7 +37,7 @@ public class GuanoEntity extends ThrowableItemProjectile {
 
     protected void onHitEntity(EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
-        hitResult.getEntity().hurt(damageSources().thrown(this, this.getOwner()), 0F);
+        hitResult.getEntity().hurtServer((net.minecraft.server.level.ServerLevel) hitResult.getEntity().level(), damageSources().thrown(this, this.getOwner()), 0F);
     }
 
     protected void onHit(HitResult hitResult) {

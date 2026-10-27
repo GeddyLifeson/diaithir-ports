@@ -299,7 +299,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
                 for (UUID possessedId : possessedIds) {
                     Entity possessedEntity = ((ServerLevel) level()).getEntity(possessedId);
                     if (possessedEntity != null) {
-                        possessedEntity.hurt(this.damageSources().magic(), 300);
+                        possessedEntity.hurtServer((net.minecraft.server.level.ServerLevel) possessedEntity.level(), this.damageSources().magic(), 300);
                     }
                 }
             }

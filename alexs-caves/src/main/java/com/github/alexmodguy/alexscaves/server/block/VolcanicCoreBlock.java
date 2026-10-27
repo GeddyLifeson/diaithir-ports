@@ -50,7 +50,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
         if (!entity.isSteppingCarefully() && entity instanceof LivingEntity livingEntity) {
             var frostWalker = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FROST_WALKER);
             if (EnchantmentHelper.getEnchantmentLevel(frostWalker, livingEntity) == 0) {
-                entity.hurt(level.damageSources().hotFloor(), 1.0F);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), level.damageSources().hotFloor(), 1.0F);
                 entity.igniteForSeconds(3);
             }
         }
@@ -59,7 +59,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
 
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState blockState, net.minecraft.util.RandomSource randomSource) {
         if (!this.scanForLava(levelAccessor, blockPos)) {
-            levelAccessor.scheduleTick(blockPos, this, 60 + levelAccessor.getRandom().nextInt(40));
+            ticks.scheduleTick(blockPos, this, 60 + randomSource.nextInt(40));
         }
 
         return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, blockState, randomSource);

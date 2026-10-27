@@ -624,7 +624,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         DamageSource damageSource = this.damageSources().mobAttack(this);
         for (LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, hurtBox, EntitySelector.NO_CREATIVE_OR_SPECTATOR)) {
             if (!living.is(this) && !living.isAlliedTo(this) && !isRidingPlayer(living) && living.getType() != this.getType()) {
-                if (living.hurt(damageSource, damageAmount)) {
+                if (living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)) {
                     living.knockback(knockbackAmount, this.getX() - living.getX(), this.getZ() - living.getZ());
                 }
                 if (target != null && living.is(target)) {

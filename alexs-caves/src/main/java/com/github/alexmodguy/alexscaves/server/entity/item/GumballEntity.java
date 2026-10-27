@@ -274,7 +274,7 @@ public class GumballEntity extends ThrowableProjectile {
         DamageSource damageSource = ACDamageTypes.causeGumballDamage(entity.level().registryAccess(), owner);
         if ((owner == null || !entity.is(owner) && !entity.isAlliedTo(owner) && !owner.isAlliedTo(entity))) {
             this.playSound(ACSoundRegistry.GUMBALL_HIT.get());
-            entity.hurt(damageSource, damage);
+            entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSource, damage);
         }
         if(splitsOnHit()){
             for(int i = 0; i < 3; i++){

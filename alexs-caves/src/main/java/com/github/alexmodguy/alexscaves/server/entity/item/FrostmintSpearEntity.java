@@ -89,7 +89,7 @@ public class FrostmintSpearEntity extends AbstractArrow {
         DamageSource damagesource = this.damageSources().trident(this, (Entity) (entity1 == null ? this : entity1));
         this.dealtDamage = true;
         SoundEvent soundevent = ACSoundRegistry.FROSTMINT_SPEAR_HIT.get();
-        if (entity.hurt(damagesource, f)) {
+        if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damagesource, f)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }

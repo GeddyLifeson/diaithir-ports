@@ -346,7 +346,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
                 float dist = (float) entity.distanceToSqr(chargeFocalPoint);
                 if (!(this.isTame() && isAlliedTo(entity)) && !entity.isPassengerOfSameVehicle(this) && !(entity instanceof CandicornEntity) && entity != this && dist < 7.0F) {
                     float dmgExtra = 7.0F - dist;
-                    entity.hurt(this.damageSources().mobAttack(this), 7.0F + dmgExtra);
+                    entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), this.damageSources().mobAttack(this), 7.0F + dmgExtra);
                     entity.knockback(2.0F, chargeFocalPoint.x - entity.getX(), chargeFocalPoint.z - entity.getZ());
                 }
             }
@@ -648,7 +648,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
         if (i > 0) {
             this.playSound(i > 4 ? this.getFallSounds().big() : this.getFallSounds().small(), 1.0F, 1.0F);
             this.playBlockFallSound();
-            this.hurt(damageSource, (float)i);
+            this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), damageSource, (float)i);
             return true;
         } else {
             return flag;
@@ -664,7 +664,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
         int i = this.calculateFallDamage(f1, f2);
         if (i > 0) {
             this.playBlockFallSound();
-            this.hurt(damageSource, (float)i);
+            this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), damageSource, (float)i);
             return true;
         } else {
             return this.getType().builtInRegistryHolder().is(EntityTypeTags.FALL_DAMAGE_IMMUNE);

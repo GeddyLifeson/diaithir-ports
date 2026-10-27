@@ -57,7 +57,7 @@ public class CandicornMeleeGoal extends Goal {
             if (candicorn.getAnimation() == CandicornEntity.ANIMATION_STAB) {
                 candicorn.getNavigation().stop();
                 if(candicorn.getAnimationTick() > 8 && candicorn.getAnimationTick() <= 12){
-                    if(target.hurt(target.damageSources().mobAttack(candicorn), (float) candicorn.getAttribute(Attributes.ATTACK_DAMAGE).getValue())){
+                    if(target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(candicorn), (float) candicorn.getAttribute(Attributes.ATTACK_DAMAGE).getValue())){
                         target.knockback(0.6F, candicorn.getX() - target.getX(), candicorn.getZ() - target.getZ());
                     }
                 }

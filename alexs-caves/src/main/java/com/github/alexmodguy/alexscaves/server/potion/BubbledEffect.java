@@ -51,7 +51,7 @@ public class BubbledEffect extends MobEffect {
                     double d4 = entity.getRandom().nextDouble() - entity.getRandom().nextDouble();
                     entity.level().addParticle(ParticleTypes.BUBBLE, entity.getX() + d2, entity.getY() + d3, entity.getZ() + d4, vec3.x, vec3.y, vec3.z);
                 }
-                entity.hurt(entity.damageSources().drown(), 2.0F);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), entity.damageSources().drown(), 2.0F);
             }
         }
         return true;

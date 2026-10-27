@@ -106,7 +106,7 @@ public class ConfectionOvenBlockEntity extends BlockEntity {
             gingerbreadMan.setGingerbreadTeamColor(gingerbreadTeamColor);
             gingerbreadMan.setDespawnFromOvenCooldown(COOKING_TIME);
             if(!level.isClientSide()){
-                gingerbreadMan.hasImpulse = true;
+                gingerbreadMan.needsSync = true;
                 level.addFreshEntity(gingerbreadMan);
             }
             spawnedGingerbreads.add(gingerbreadMan);

@@ -26,7 +26,13 @@ def find_method_spans(src, names):
                 if depth==0: break
             k+=1
         spans.append((start,k+1))
-    return spans
+    # drop spans nested inside an earlier span
+    spans.sort()
+    out=[]
+    for a,b in spans:
+        if out and a<out[-1][1]: continue
+        out.append((a,b))
+    return out
 
 def remove_methods(path, names):
     s=path.read_text()

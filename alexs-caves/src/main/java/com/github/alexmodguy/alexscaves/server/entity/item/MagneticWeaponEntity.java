@@ -346,7 +346,7 @@ public class MagneticWeaponEntity extends Entity {
         if (i > 0) {
             target.igniteForSeconds(i * 4);
         }
-        if(target.hurt(damageSources().mobAttack(holder), f)){
+        if(target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(holder), f)){
             // doEnchantDamageEffects removed in 1.21 - enchantment effects are handled automatically
             damageItem(1);
             if (f1 > 0.0F && target instanceof LivingEntity) {

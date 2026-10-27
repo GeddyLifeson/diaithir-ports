@@ -83,7 +83,7 @@ public class GuanoLayerBlock extends SnowLayerBlock implements Fallable {
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!(entity instanceof LivingEntity) || level.getBlockState(entity.blockPosition()).is(this)) {
             if (GuanoBlock.isForlornEntity(entity)) {
                 entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.9D, 1.0D, 0.9D));

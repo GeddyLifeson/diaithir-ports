@@ -24,7 +24,7 @@ public class MuckBlock extends FallingBlockWithColor {
         super(props, 0X5C5C6E);
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!(entity instanceof LivingEntity) || level.getBlockState(entity.blockPosition()).is(this)) {
             if (isOceanEntity(entity)) {
                 entity.setPos(entity.getX(), blockPos.getY() + 1.0F, entity.getZ());

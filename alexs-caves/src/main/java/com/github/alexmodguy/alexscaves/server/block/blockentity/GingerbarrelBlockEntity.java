@@ -40,7 +40,7 @@ public class GingerbarrelBlockEntity extends RandomizableContainerBlockEntity {
         protected void openerCountChanged(Level p_155066_, BlockPos p_155067_, BlockState p_155068_, int p_155069_, int p_155070_) {
         }
 
-        protected boolean isOwnContainer(Player p_155060_) {
+        public boolean isOwnContainer(Player p_155060_) {
             if (p_155060_.containerMenu instanceof ChestMenu) {
                 Container container = ((ChestMenu) p_155060_.containerMenu).getContainer();
                 return container == GingerbarrelBlockEntity.this;
@@ -56,9 +56,6 @@ public class GingerbarrelBlockEntity extends RandomizableContainerBlockEntity {
 
     protected void saveAdditional(net.minecraft.world.level.storage.ValueOutput p_187459_) {
         super.saveAdditional(p_187459_);
-        if (this.customName != null) {
-            p_187459_.putString("CustomName", Component.Serializer.toJson(this.customName, registries));
-        }
         if (!this.trySaveLootTable(p_187459_)) {
             ContainerHelper.saveAllItems(p_187459_, this.items);
         }
@@ -67,9 +64,6 @@ public class GingerbarrelBlockEntity extends RandomizableContainerBlockEntity {
 
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput p_155055_) {
         super.loadAdditional(p_155055_);
-        if (p_155055_.contains("CustomName", 8)) {
-            this.customName = Component.Serializer.fromJson(p_155055_.getStringOr("CustomName", ""), registries);
-        }
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(p_155055_)) {
             ContainerHelper.loadAllItems(p_155055_, this.items);

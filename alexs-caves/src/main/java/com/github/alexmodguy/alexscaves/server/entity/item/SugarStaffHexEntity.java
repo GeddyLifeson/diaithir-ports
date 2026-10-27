@@ -129,7 +129,7 @@ public class SugarStaffHexEntity extends Entity {
         AABB bashBox = this.getBoundingBox();
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && entity.distanceTo(this) <= 4.0F && (owner != null && !entity.is(owner) && (!(owner instanceof LicowitchEntity) && !entity.isAlliedTo(owner) || owner instanceof LicowitchEntity licowitch && !licowitch.isFriendlyFire(entity)))) {
-                entity.hurt(this.damageSources().indirectMagic(this, owner), finalExplosion ? 6.0F : 1.0F);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), this.damageSources().indirectMagic(this, owner), finalExplosion ? 6.0F : 1.0F);
                 if(finalExplosion){
                     entity.knockback(0.9F, this.getX() - entity.getX(), this.getZ() - entity.getZ());
                 }

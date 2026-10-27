@@ -120,7 +120,7 @@ public class OrtholanceItem extends Item {
                 }
                 for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
                     if (!livingEntity.isAlliedTo(entity) && !livingEntity.equals(entity) && livingEntity.hasLineOfSight(entity)) {
-                        entity.hurt(source, (float) d);
+                        entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, (float) d);
                         entity.stopRiding();
                     }
                 }

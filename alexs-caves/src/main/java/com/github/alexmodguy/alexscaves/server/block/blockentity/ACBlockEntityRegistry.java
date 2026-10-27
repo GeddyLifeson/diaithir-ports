@@ -40,21 +40,8 @@ public class ACBlockEntityRegistry {
 
     // Custom sign blocks are added to vanilla BlockEntityType.SIGN and BlockEntityType.HANGING_SIGN
     // using access transformers to make validBlocks accessible (public-f in accesstransformer.cfg)
-    public static void expandVanillaDefinitions() {
-        ImmutableSet.Builder<Block> validSignBlocks = new ImmutableSet.Builder<>();
-        validSignBlocks.addAll(BlockEntityType.SIGN.validBlocks);
-        validSignBlocks.add(ACBlockRegistry.PEWEN_SIGN.get());
-        validSignBlocks.add(ACBlockRegistry.PEWEN_WALL_SIGN.get());
-        validSignBlocks.add(ACBlockRegistry.THORNWOOD_SIGN.get());
-        validSignBlocks.add(ACBlockRegistry.THORNWOOD_WALL_SIGN.get());
-        BlockEntityType.SIGN.validBlocks = validSignBlocks.build();
-        
-        ImmutableSet.Builder<Block> validHangingSignBlocks = new ImmutableSet.Builder<>();
-        validHangingSignBlocks.addAll(BlockEntityType.HANGING_SIGN.validBlocks);
-        validHangingSignBlocks.add(ACBlockRegistry.PEWEN_HANGING_SIGN.get());
-        validHangingSignBlocks.add(ACBlockRegistry.PEWEN_WALL_HANGING_SIGN.get());
-        validHangingSignBlocks.add(ACBlockRegistry.THORNWOOD_HANGING_SIGN.get());
-        validHangingSignBlocks.add(ACBlockRegistry.THORNWOOD_WALL_HANGING_SIGN.get());
-        BlockEntityType.HANGING_SIGN.validBlocks = validHangingSignBlocks.build();
+    public static void expandVanillaDefinitions(net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent event) {
+        event.modify(BlockEntityType.SIGN, ACBlockRegistry.PEWEN_SIGN.get(), ACBlockRegistry.PEWEN_WALL_SIGN.get(), ACBlockRegistry.THORNWOOD_SIGN.get(), ACBlockRegistry.THORNWOOD_WALL_SIGN.get());
+        event.modify(BlockEntityType.HANGING_SIGN, ACBlockRegistry.PEWEN_HANGING_SIGN.get(), ACBlockRegistry.PEWEN_WALL_HANGING_SIGN.get(), ACBlockRegistry.THORNWOOD_HANGING_SIGN.get(), ACBlockRegistry.THORNWOOD_WALL_HANGING_SIGN.get());
     }
 }

@@ -82,11 +82,11 @@ public class AcidFluidType extends FluidType {
 
     @Override
     public boolean isVaporizedOnPlacement(Level level, BlockPos pos, FluidStack stack) {
-        return level.dimensionType().ultraWarm();
+        return level.dimension() == Level.NETHER;
     }
 
     @Override
-    public void onVaporize(@Nullable Player player, Level level, BlockPos pos, FluidStack stack) {
+    public void onVaporize(@Nullable net.minecraft.world.entity.LivingEntity player, Level level, BlockPos pos, FluidStack stack) {
         SoundEvent sound = this.getSound(player, level, pos, SoundActions.FLUID_VAPORIZE);
         level.playSound(player, pos, sound != null ? sound : SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.8F);
 

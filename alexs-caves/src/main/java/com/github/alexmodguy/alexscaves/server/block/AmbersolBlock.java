@@ -29,7 +29,7 @@ public class AmbersolBlock extends BaseEntityBlock {
         return MapCodec.unit(this);
     }
 
-    public static BlockPos fillWithLights(BlockPos current, LevelReader level) {
+    public static BlockPos fillWithLights(BlockPos current, net.minecraft.world.level.LevelAccessor level) {
         current = current.below();
         while (current.getY() > level.getMinY() && AmbersolLightBlock.testSkylight(level, level.getBlockState(current), current)) {
             if (level.getBlockState(current).isAir()) {
@@ -42,7 +42,7 @@ public class AmbersolBlock extends BaseEntityBlock {
 
 
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
-        fillWithLights(blockPos, levelAccessor);
+        ticks.scheduleTick(blockPos, this, 1);
         return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
     }
 

@@ -79,7 +79,7 @@ public class ResistorShieldItem extends ShieldItem {
             AABB bashBox = living.getBoundingBox().inflate(5, 1, 5);
             for (LivingEntity entity : living.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
                 if (!living.isAlliedTo(entity) && !entity.equals(living) && entity.distanceTo(living) <= range) {
-                    entity.hurt(living.damageSources().mobAttack(living), firstHit ? 6 + (slamEnchantAmount * 3) : 2);
+                    entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), living.damageSources().mobAttack(living), firstHit ? 6 + (slamEnchantAmount * 3) : 2);
                     if (scarlet) {
                         entity.knockback(firstHit ? 0.5D : 0.2D, entity.getX() - living.getX(), entity.getZ() - living.getZ());
                     } else {

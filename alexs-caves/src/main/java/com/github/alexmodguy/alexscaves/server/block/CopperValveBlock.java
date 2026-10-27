@@ -110,11 +110,11 @@ public class CopperValveBlock extends BaseEntityBlock implements SimpleWaterlogg
         return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
     }
 
-    public void onRemove(BlockState state, Level level, BlockPos blockPos, BlockState blockState, boolean b) {
-        if (!b && !state.is(blockState.getBlock())) {
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos blockPos, boolean b) {
+        if (!b) {
             level.updateNeighborsAt(blockPos, state.getBlock());
             level.updateNeighborsAt(blockPos.relative(state.getValue(CopperValveBlock.FACING).getOpposite()), state.getBlock());
-            super.onRemove(state, level, blockPos, blockState, b);
+            super.affectNeighborsAfterRemoval(state, level, blockPos, b);
         }
     }
 

@@ -51,7 +51,7 @@ public class CaniacMeleeGoal extends Goal {
                     if(distance < 10){
                         target.setDeltaMovement(target.getDeltaMovement().scale(0.3F).add(delta.scale(0.1)));
                         if(caniac.getAnimationTick() > 19 && caniac.getAnimationTick() <= 22 && caniac.hasLineOfSight(target) && distance < 3.5F){
-                            target.hurt(caniac.damageSources().mobAttack(caniac), 3.0F);
+                            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), caniac.damageSources().mobAttack(caniac), 3.0F);
                         }
                     }
                 }else if(caniac.getAnimationTick() > 10 && caniac.getAnimationTick() <= 13){

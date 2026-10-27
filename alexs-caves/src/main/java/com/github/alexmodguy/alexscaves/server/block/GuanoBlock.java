@@ -27,7 +27,7 @@ public class GuanoBlock extends FallingBlockWithColor {
         super(Properties.of().mapColor(DyeColor.BROWN).strength(0.3F).sound(SoundType.FROGSPAWN), 0X402721);
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!(entity instanceof LivingEntity) || level.getBlockState(entity.blockPosition()).is(this)) {
             if (isForlornEntity(entity)) {
                 entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.9D, 1.0D, 0.9D));

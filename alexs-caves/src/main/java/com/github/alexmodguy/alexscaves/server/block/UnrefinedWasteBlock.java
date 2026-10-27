@@ -25,7 +25,7 @@ public class UnrefinedWasteBlock extends FallingBlockWithColor {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.LIME).strength(0.5F).sound(ACSoundTypes.UNREFINED_WASTE).lightLevel(state -> 3), 0X00EE00);
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if(entity instanceof LivingEntity living && !entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_RADIATION)){
             entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.9D, 1.0D, 0.9D));
             living.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED, 4000));

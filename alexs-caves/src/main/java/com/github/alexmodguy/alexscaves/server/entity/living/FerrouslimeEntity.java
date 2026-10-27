@@ -132,7 +132,7 @@ public class FerrouslimeEntity extends Monster {
         } else {
             LivingEntity target = this.getTarget();
             if (attackProgress >= 3F && target != null && this.distanceTo(target) < getSlimeSize(1.0F)) {
-                target.hurt(damageSources().mobAttack(this), 4F + getHeadCount() * 2);
+                target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(this), 4F + getHeadCount() * 2);
             }
             if (attackProgress > 0F) {
                 attackProgress--;

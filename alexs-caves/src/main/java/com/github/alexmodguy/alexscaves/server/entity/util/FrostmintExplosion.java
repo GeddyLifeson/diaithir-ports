@@ -180,7 +180,7 @@ public class FrostmintExplosion {
                         double d14 = (double) getSeenPercent(vec3, entity);
                         double d10 = (1.0D - d12) * d14;
                         if(!(entity instanceof ItemEntity) || !fromSpear){
-                            entity.hurt(this.getDamageSource(), (float) ((int) ((d10 * d10 + d10) / 2.0D * 7.0D * (double) f2 + 1.0D)));
+                            entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), this.getDamageSource(), (float) ((int) ((d10 * d10 + d10) / 2.0D * 7.0D * (double) f2 + 1.0D)));
                         }
                         double d11;
                         if (entity instanceof LivingEntity) {

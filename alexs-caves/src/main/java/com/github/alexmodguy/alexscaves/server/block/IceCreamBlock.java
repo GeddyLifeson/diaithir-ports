@@ -105,7 +105,7 @@ public class IceCreamBlock extends Block {
     }
 
     @Override
-    public VoxelShape getOcclusionShape(BlockState state, BlockGetter getter, BlockPos blockPos) {
+    public VoxelShape getOcclusionShape(BlockState state) {
         return state.getValue(TYPE) == 2 ? DRIPPING_SHAPE : ABOVE_OCCLUDE_SHAPE;
     }
 }

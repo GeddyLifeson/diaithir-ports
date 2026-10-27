@@ -41,7 +41,7 @@ public class PurpleSodaBlock extends LiquidBlock {
     }
 
     @Override
-    public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         entity.fallDistance = 0.0F;
         // Movement sound implementation - plays sound based on entity movement speed
         if (entity instanceof LivingEntity living && !(entity instanceof SweetishFishEntity)) {

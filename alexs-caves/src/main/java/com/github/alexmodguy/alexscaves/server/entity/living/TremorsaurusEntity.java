@@ -189,7 +189,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
             boolean held = false;
             if (riderHitEntity != null && this.getAnimation() == ANIMATION_BITE && this.getAnimationTick() > 10 && this.getAnimationTick() <= 12) {
                 if (this.hasLineOfSight(riderHitEntity) && this.distanceTo(riderHitEntity) < this.getBbWidth() + riderHitEntity.getBbWidth() + 2.0D) {
-                    riderHitEntity.hurt(riderHitEntity.damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                    riderHitEntity.hurtServer((net.minecraft.server.level.ServerLevel) riderHitEntity.level(), riderHitEntity.damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
                     if (riderHitEntity instanceof LivingEntity living) {
                         living.knockback(0.5D, this.getX() - riderHitEntity.getX(), this.getZ() - riderHitEntity.getZ());
                     }
@@ -234,7 +234,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
                     Vec3 minus = new Vec3(shakePreyPos.x - entity.getX(), shakePreyPos.y - entity.getY(), shakePreyPos.z - entity.getZ());
                     entity.setDeltaMovement(minus);
                     if (this.getAnimationTick() % 10 == 0) {
-                        entity.hurt(damageSources().mobAttack(this), 5 + this.getRandom().nextInt(2));
+                        entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSources().mobAttack(this), 5 + this.getRandom().nextInt(2));
                     }
                 }else{
                     entity.setDeltaMovement(entity.getDeltaMovement().scale(0.6F));

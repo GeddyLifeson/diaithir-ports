@@ -236,7 +236,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         Entity head = this.getHeadEntity();
         if (!this.isInvulnerableTo(source) && head != null) {
-            head.hurt(source, amount);
+            head.hurtServer((net.minecraft.server.level.ServerLevel) head.level(), source, amount);
         }
         return false;
     }
@@ -367,7 +367,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
                     }
 
                     if (j > i - 1) {
-                        this.hurt(this.damageSources().cramming(), 6.0F);
+                        this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), this.damageSources().cramming(), 6.0F);
                     }
                 }
 

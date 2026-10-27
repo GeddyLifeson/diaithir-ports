@@ -171,3 +171,4 @@ public class NuclearSirenBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
+}

@@ -85,7 +85,7 @@ public class DarkArrowEntity extends AbstractArrow {
         }
         DamageSource damageSource = ACDamageTypes.causeDarkArrowDamage(entity.level().registryAccess(), owner);
         if ((owner == null || !entity.is(owner) && !entity.isAlliedTo(owner) && !owner.isAlliedTo(entity)) && !this.startFading) {
-            if (entity.hurt(damageSource, damage)) {
+            if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSource, damage)) {
                 this.startFading = true;
             }
         }

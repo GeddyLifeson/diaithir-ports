@@ -81,7 +81,7 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
         return super.getShape(state, getter, pos, context);
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (state.getValue(ACTIVE)) {
             BlockPos corner = getCornerForFurnace(level, blockPos, true);
             if (corner != null && corner.getY() == blockPos.getY() - 1 && level.getBlockEntity(corner) instanceof NuclearFurnaceBlockEntity furnace && furnace.isUndergoingFission()) { //top

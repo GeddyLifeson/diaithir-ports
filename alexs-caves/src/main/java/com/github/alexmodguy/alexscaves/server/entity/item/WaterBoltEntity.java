@@ -205,7 +205,7 @@ public class WaterBoltEntity extends Projectile {
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && !(entity instanceof DeepOneBaseEntity) && (owner == null || !entity.is(owner) && !entity.isAlliedTo(owner))) {
                 lastHitMob = entity;
-                entity.hurt(source, 3.0F);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, 3.0F);
                 if (this.isBubbling() && !entity.hasEffect(ACEffectRegistry.BUBBLED)) {
                     entity.addEffect(new MobEffectInstance(ACEffectRegistry.BUBBLED, 200));
                 }

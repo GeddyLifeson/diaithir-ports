@@ -53,19 +53,19 @@ public class PrimalMagmaBlock extends Block {
         if (!entity.isSteppingCarefully() && entity instanceof LivingEntity livingEntity) {
             var frostWalker = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FROST_WALKER);
             if (EnchantmentHelper.getEnchantmentLevel(frostWalker, livingEntity) == 0) {
-                entity.hurt(level.damageSources().hotFloor(), 1.0F);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), level.damageSources().hotFloor(), 1.0F);
                 entity.igniteForSeconds(3);
             }
         }
         super.stepOn(level, blockPos, blockState, entity);
     }
 
-    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!(entity instanceof LuxtructosaurusEntity)) {
             if(state.getValue(ACTIVE)){
                 if(!(entity instanceof ItemEntity)){
                     entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.9D, 0.1D, 0.9D));
-                    entity.hurt(level.damageSources().hotFloor(), 1.0F);
+                    entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), level.damageSources().hotFloor(), 1.0F);
                     entity.igniteForSeconds(3);
                 }
             }else{

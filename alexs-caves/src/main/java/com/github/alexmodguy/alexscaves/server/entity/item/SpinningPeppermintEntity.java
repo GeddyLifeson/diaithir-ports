@@ -277,7 +277,7 @@ public class SpinningPeppermintEntity extends Entity {
         boolean flag = false;
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && (owner != null && !entity.is(owner) && (!(owner instanceof LicowitchEntity) && !entity.isAlliedTo(owner) || owner instanceof LicowitchEntity licowitch && !licowitch.isFriendlyFire(entity)))) {
-                if (entity.hurt(source, 3.0F)) {
+                if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, 3.0F)) {
                     flag = true;
                     entity.knockback(0.3F, this.getX() - entity.getX(), this.getZ() - entity.getZ());
                 }

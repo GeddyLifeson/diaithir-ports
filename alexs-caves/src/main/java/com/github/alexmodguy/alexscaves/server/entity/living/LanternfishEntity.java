@@ -170,7 +170,7 @@ public class LanternfishEntity extends WaterAnimal implements Bucketable {
             this.setAirSupply(prevAir - 1);
             if (this.getAirSupply() == -20) {
                 this.setAirSupply(0);
-                this.hurt(damageSources().dryOut(), 2.0F);
+                this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), damageSources().dryOut(), 2.0F);
             }
         } else {
             this.setAirSupply(200);

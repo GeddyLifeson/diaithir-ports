@@ -77,15 +77,15 @@ public class AbyssalAltarBlock extends BaseEntityBlock implements SimpleWaterlog
         return new AbyssalAltarBlockEntity(pos, state);
     }
 
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState state1, boolean b) {
-        if (!state.is(state1.getBlock())) {
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, boolean b) {
+        {
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof Container) {
                 Containers.dropContents(level, pos, (Container) blockentity);
                 level.updateNeighbourForOutputSignal(pos, this);
             }
 
-            super.onRemove(state, level, pos, state1, b);
+            super.affectNeighborsAfterRemoval(state, level, pos, b);
         }
     }
 

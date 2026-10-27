@@ -51,7 +51,7 @@ public class AcidBlock extends LiquidBlock {
         }
     }
 
-    public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_ACID) && entity.getFluidTypeHeight(ACFluidRegistry.ACID_FLUID_TYPE.get()) > 0.1) {
             boolean armor = false;
             boolean hurtSound = false;
@@ -75,7 +75,7 @@ public class AcidBlock extends LiquidBlock {
             }
             if (level.getRandom().nextFloat() < dmgMultiplier) {
                 float golemAddition = entity.getType().builtInRegistryHolder().is(ACTagRegistry.WEAK_TO_ACID) ? 10.0F : 0.0F;
-                hurtSound = entity.hurt(ACDamageTypes.causeAcidDamage(level.registryAccess()), dmgMultiplier * (float) (armor ? 0.01D : 1.0D) + golemAddition);
+                hurtSound = entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), ACDamageTypes.causeAcidDamage(level.registryAccess()), dmgMultiplier * (float) (armor ? 0.01D : 1.0D) + golemAddition);
             }
             if (hurtSound) {
                 entity.playSound(ACSoundRegistry.ACID_BURN.get());

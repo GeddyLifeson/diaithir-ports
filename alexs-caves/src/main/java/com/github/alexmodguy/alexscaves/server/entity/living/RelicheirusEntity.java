@@ -173,7 +173,7 @@ public class RelicheirusEntity extends DinosaurEntity implements IAnimatedEntity
                         Vec3 trilocarisPos = getTrilocarisPos();
                         target.setPos(trilocarisPos);
                         if (this.getAnimationTick() >= 45 && target.isAlive()) {
-                            target.hurt(damageSources().mobAttack(this), 20);
+                            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(this), 20);
                         }
                         held = true;
                         target.fallDistance = 0;

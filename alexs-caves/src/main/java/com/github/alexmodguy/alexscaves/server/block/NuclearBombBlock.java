@@ -34,7 +34,7 @@ public class NuclearBombBlock extends Block {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).strength(8, 1001).sound(ACSoundTypes.NUCLEAR_BOMB));
     }
 
-    public void onCaughtFire(BlockState state, Level level, BlockPos blockPos, @Nullable net.minecraft.core.Direction face, @Nullable LivingEntity igniter) {
+    public boolean onCaughtFire(BlockState state, Level level, BlockPos blockPos, @Nullable net.minecraft.core.Direction face, @Nullable LivingEntity igniter) {
         if (!level.isClientSide()) {
             NuclearBombEntity bomb = ACEntityRegistry.NUCLEAR_BOMB.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             bomb.setPos((double) blockPos.getX() + 0.5D, (double) blockPos.getY(), (double) blockPos.getZ() + 0.5D);
@@ -42,6 +42,7 @@ public class NuclearBombBlock extends Block {
             level.playSound((Player) null, bomb.getX(), bomb.getY(), bomb.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
             level.gameEvent(igniter, GameEvent.PRIME_FUSE, blockPos);
         }
+        return true;
     }
 
     public void onPlace(BlockState state, Level level, BlockPos blockPos, BlockState blockState, boolean b) {

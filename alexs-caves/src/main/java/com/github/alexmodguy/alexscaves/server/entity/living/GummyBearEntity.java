@@ -508,7 +508,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
             heldMob.setAirSupply(40);
             this.setAnimation(ANIMATION_EAT);
             if (tickCount % 15 == 0) {
-                heldMob.hurt(this.damageSources().mobAttack(this), random.nextBoolean() ? 0.0F : 1.0F);
+                heldMob.hurtServer((net.minecraft.server.level.ServerLevel) heldMob.level(), this.damageSources().mobAttack(this), random.nextBoolean() ? 0.0F : 1.0F);
             }
         } else if (!level().isClientSide()) {
             this.setHeldMobId(-1);

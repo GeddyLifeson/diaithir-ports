@@ -71,7 +71,7 @@ public class WatcherAttackGoal extends Goal {
                             watcher.setAnimation(watcher.getRandom().nextBoolean() ? WatcherEntity.ANIMATION_ATTACK_0 : WatcherEntity.ANIMATION_ATTACK_1);
                             watcher.playSound(ACSoundRegistry.WATCHER_ATTACK.get());
                         } else if (watcher.getAnimationTick() == 8) {
-                            target.hurt(target.damageSources().mobAttack(watcher), (float) watcher.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(watcher), (float) watcher.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
                             target.knockback(0.5D, watcher.getX() - target.getX(), watcher.getZ() - target.getZ());
                             retreatFor = 30 + watcher.getRandom().nextInt(30);
                             for (int i = 0; i < 15; i++) {

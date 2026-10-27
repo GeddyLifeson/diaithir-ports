@@ -142,7 +142,7 @@ public class TrilocarisEntity extends WaterAnimal implements Bucketable {
             }
         } else {
             if (biteProgress > 4 && this.getTarget() != null && this.distanceTo(this.getTarget()) < 1.3D) {
-                this.getTarget().hurt(damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                this.getTarget().hurtServer((net.minecraft.server.level.ServerLevel) this.getTarget().level(), damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
             }
             if (biteProgress > 0F) {
                 biteProgress--;

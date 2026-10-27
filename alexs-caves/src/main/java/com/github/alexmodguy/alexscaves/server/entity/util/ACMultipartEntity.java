@@ -69,7 +69,7 @@ public abstract class ACMultipartEntity<T extends Entity> extends PartEntity<T> 
                 return true;
             } else if (attacker == null || !attacker.level().isClientSide()) {
                 // Server-side: directly apply damage to parent
-                return parent.hurt(source, amount);
+                return parent.hurtServer((net.minecraft.server.level.ServerLevel) parent.level(), source, amount);
             }
         }
         return false;

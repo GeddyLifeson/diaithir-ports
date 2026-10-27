@@ -595,12 +595,12 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
     protected void checkAndDealMeleeDamage(LivingEntity target, float multiplier, float knockback) {
         if (this.hasLineOfSight(target) && this.distanceTo(target) < this.getBbWidth() + target.getBbWidth() + 5.0D) {
             float f = (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier;
-            target.hurt(damageSources().mobAttack(this), f);
+            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(this), f);
             target.knockback(knockback * multiplier, this.getX() - target.getX(), this.getZ() - target.getZ());
             Entity entity = target.getVehicle();
             if (entity != null) {
                 entity.setDeltaMovement(target.getDeltaMovement());
-                entity.hurt(damageSources().mobAttack(this), f);
+                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSources().mobAttack(this), f);
             }
         }
     }
