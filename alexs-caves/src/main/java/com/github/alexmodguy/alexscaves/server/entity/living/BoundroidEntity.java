@@ -102,7 +102,7 @@ public class BoundroidEntity extends Monster {
     public Entity getWinch() {
         if (!level().isClientSide()) {
             UUID id = getWinchUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(WINCH_ID);
             return id == -1 ? null : level().getEntity(id);
@@ -150,7 +150,7 @@ public class BoundroidEntity extends Monster {
                     bashBox = bashBox.move(this.position());
                     for (Entity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
                         if (!isAlliedTo(entity) && !(entity instanceof BoundroidEntity) && !(entity instanceof BoundroidWinchEntity)) {
-                            entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSources().mobAttack(this), 5);
+                            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, damageSources().mobAttack(this), 5);
                         }
                     }
                 }

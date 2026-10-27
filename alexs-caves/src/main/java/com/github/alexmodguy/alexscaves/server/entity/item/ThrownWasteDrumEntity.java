@@ -46,7 +46,7 @@ public class ThrownWasteDrumEntity extends Entity {
             for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, killBox)) {
                 if (!(entity instanceof BrainiacEntity)) {
                     b = true;
-                    entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), ACDamageTypes.causeAcidDamage(level().registryAccess()), 2);
+                    com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, ACDamageTypes.causeAcidDamage(level().registryAccess()), 2);
                 }
             }
             if (b) {

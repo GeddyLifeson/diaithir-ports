@@ -78,7 +78,7 @@ public class VallumraptorMeleeGoal extends Goal {
     private void checkAndDealDamage(LivingEntity target) {
         if (raptor.hasLineOfSight(target) && raptor.distanceTo(target) < raptor.getBbWidth() + target.getBbWidth() + 1) {
             raptor.playSound(ACSoundRegistry.VALLUMRAPTOR_SCRATCH.get());
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(raptor), (float) raptor.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(raptor), (float) raptor.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
         }
     }
 

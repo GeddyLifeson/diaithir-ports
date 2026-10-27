@@ -161,7 +161,7 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
         if (tongueTarget instanceof LivingEntity living) {
             if (this.shootTongueAmount >= 5F) {
                 postAttackEffect(living);
-                tongueTarget.hurtServer((net.minecraft.server.level.ServerLevel) tongueTarget.level(), damageSources().mobAttack(this), 4);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(tongueTarget, damageSources().mobAttack(this), 4);
                 living.knockback(0.3D, living.getX() - this.getX(), tongueTarget.getZ() - this.getZ());
                 this.setLickTicks(0);
             }
@@ -352,7 +352,7 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
 
         private void checkAndDealDamage(LivingEntity target, float damageMultiplier) {
             if (BrainiacEntity.this.hasLineOfSight(target) && BrainiacEntity.this.distanceTo(target) < BrainiacEntity.this.getBbWidth() + target.getBbWidth() + 2.0D) {
-                target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(BrainiacEntity.this), (float) BrainiacEntity.this.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * damageMultiplier);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, damageSources().mobAttack(BrainiacEntity.this), (float) BrainiacEntity.this.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * damageMultiplier);
                 BrainiacEntity.this.postAttackEffect(target);
                 target.knockback(0.3D, BrainiacEntity.this.getX() - target.getX(), BrainiacEntity.this.getZ() - target.getZ());
             }

@@ -346,7 +346,7 @@ public class MagneticWeaponEntity extends Entity {
         if (i > 0) {
             target.igniteForSeconds(i * 4);
         }
-        if(target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(holder), f)){
+        if(com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, damageSources().mobAttack(holder), f)){
             // doEnchantDamageEffects removed in 1.21 - enchantment effects are handled automatically
             damageItem(1);
             if (f1 > 0.0F && target instanceof LivingEntity) {
@@ -446,7 +446,7 @@ public class MagneticWeaponEntity extends Entity {
     public Entity getController() {
         if (!level().isClientSide()) {
             final UUID id = getControllerUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(CONTROLLER_ID);
             return id == -1 ? null : level().getEntity(id);

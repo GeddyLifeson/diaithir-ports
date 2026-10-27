@@ -224,7 +224,7 @@ public class NotorEntity extends PathfinderMob {
     public Entity getHologramEntity() {
         if (!level().isClientSide()) {
             UUID id = getHologramUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(HOLOGRAM_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);

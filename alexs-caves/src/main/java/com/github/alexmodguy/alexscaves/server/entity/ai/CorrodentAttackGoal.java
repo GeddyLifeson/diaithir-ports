@@ -117,12 +117,12 @@ public class CorrodentAttackGoal extends Goal {
     private void checkAndDealDamage(LivingEntity target, float multiplier) {
         if (entity.hasLineOfSight(target) && entity.distanceTo(target) < entity.getBbWidth() + target.getBbWidth() + 1.0D) {
             float f = (float) entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier;
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(entity), f);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(entity), f);
             target.knockback(0.2D + 0.3D * multiplier, entity.getX() - target.getX(), entity.getZ() - target.getZ());
             Entity entity = target.getVehicle();
             if (entity != null) {
                 entity.setDeltaMovement(target.getDeltaMovement());
-                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), target.damageSources().mobAttack(this.entity), f * 0.5F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, target.damageSources().mobAttack(this.entity), f * 0.5F);
             }
             burrowing = true;
         }

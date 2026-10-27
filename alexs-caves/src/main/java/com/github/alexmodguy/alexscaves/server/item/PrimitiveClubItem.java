@@ -82,7 +82,7 @@ public class PrimitiveClubItem extends Item {
                                     aoeStunDuration += existingAoeStun.getDuration();
                                 }
                                 MobEffectInstance instance2 = new MobEffectInstance(ACEffectRegistry.STUNNED, aoeStunDuration, 0, false, false);
-                                inflict.hurtServer((net.minecraft.server.level.ServerLevel) inflict.level(), inflict.level().damageSources().mobAttack(player), 1.0F);
+                                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(inflict, inflict.level().damageSources().mobAttack(player), 1.0F);
                                 if (inflict.addEffect(instance2)) {
                                     AlexsCaves.sendMSGToAll(new UpdateEffectVisualityEntityMessage(inflict.getId(), player.getId(), 3, instance2.getDuration()));
                                 }

@@ -75,7 +75,7 @@ public class SpinningPeppermintEntity extends Entity {
     @javax.annotation.Nullable
     public LivingEntity getOwner() {
         if (this.owner == null && this.ownerUUID != null && this.level() instanceof ServerLevel) {
-            Entity entity = ((ServerLevel) this.level()).getEntity(this.ownerUUID);
+            Entity entity = com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), this.ownerUUID);
             if (entity instanceof LivingEntity) {
                 this.owner = (LivingEntity) entity;
             }
@@ -277,7 +277,7 @@ public class SpinningPeppermintEntity extends Entity {
         boolean flag = false;
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && (owner != null && !entity.is(owner) && (!(owner instanceof LicowitchEntity) && !entity.isAlliedTo(owner) || owner instanceof LicowitchEntity licowitch && !licowitch.isFriendlyFire(entity)))) {
-                if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, 3.0F)) {
+                if (com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, source, 3.0F)) {
                     flag = true;
                     entity.knockback(0.3F, this.getX() - entity.getX(), this.getZ() - entity.getZ());
                 }

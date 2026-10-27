@@ -460,7 +460,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
                 if(dist < CaramelCubeEntity.this.getBbWidth() + 0.25D + livingentity.getBbWidth() && CaramelCubeEntity.this.hasJumped() && CaramelCubeEntity.this.onGround() && attackLogicCooldown == 0){
                     attackLogicCooldown = 5;
                     CaramelCubeEntity.this.playSound(ACSoundRegistry.CARAMEL_CUBE_ATTACK.get(), CaramelCubeEntity.this.getSoundVolume(), CaramelCubeEntity.this.getVoicePitch());
-                    livingentity.hurtServer((net.minecraft.server.level.ServerLevel) livingentity.level(), damageSources().mobAttack(CaramelCubeEntity.this), (float) CaramelCubeEntity.this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                    com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(livingentity, damageSources().mobAttack(CaramelCubeEntity.this), (float) CaramelCubeEntity.this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
                 }
             }
             if(attackLogicCooldown > 0){

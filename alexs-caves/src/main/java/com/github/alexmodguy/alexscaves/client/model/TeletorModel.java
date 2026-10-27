@@ -172,7 +172,6 @@ public class TeletorModel extends AdvancedEntityModel<TeletorEntity> {
         Vector4f bodyOffsetVec = new Vector4f((float) in.x, (float) in.y, (float) in.z, 1.0F);
         bodyOffsetVec.mul(modelTranslateStack.last().pose());
         Vec3 offset = new Vec3(bodyOffsetVec.x(), bodyOffsetVec.y(), bodyOffsetVec.z());
-        modelTranslateStack.popPose();
         return offset;
     }
 

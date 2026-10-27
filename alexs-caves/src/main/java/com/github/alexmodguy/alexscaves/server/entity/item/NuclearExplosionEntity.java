@@ -118,7 +118,7 @@ public class NuclearExplosionEntity extends Entity {
                         }
                     }
                     if(damage > 0){
-                        entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), isIntentionalGameDesign() ? ACDamageTypes.causeIntentionalGameDesign(level().registryAccess()) : ACDamageTypes.causeNukeDamage(level().registryAccess()), damage);
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, isIntentionalGameDesign() ? ACDamageTypes.causeIntentionalGameDesign(level().registryAccess()) : ACDamageTypes.causeNukeDamage(level().registryAccess()), damage);
                     }
                 }
                 entity.setDeltaMovement(vec3.scale(damage * 0.1F * playerFling));

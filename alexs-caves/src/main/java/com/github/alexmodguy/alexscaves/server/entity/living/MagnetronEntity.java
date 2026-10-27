@@ -811,19 +811,19 @@ public class MagnetronEntity extends Monster {
                 bashBox = bashBox.move(ground.add(new Vec3(0, 0, 2).yRot((float) Math.toRadians(-MagnetronEntity.this.yBodyRot))));
                 for (Entity entity : MagnetronEntity.this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
                     if (!isAlliedTo(entity) && !(entity instanceof MagnetronEntity)) {
-                        entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damageSources().mobAttack(MagnetronEntity.this), 2 + leftDmg + rightDmg);
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, damageSources().mobAttack(MagnetronEntity.this), 2 + leftDmg + rightDmg);
                         launch(entity, true);
                     }
                 }
             } else if (attackPose == AttackPose.LEFT_PUNCH) {
                 BlockState state = getStateForHand(true);
                 boolean magnet = state.is(ACBlockRegistry.AZURE_MAGNET.get()) || state.is(ACBlockRegistry.SCARLET_MAGNET.get());
-                target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(MagnetronEntity.this), 2 + leftDmg);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, damageSources().mobAttack(MagnetronEntity.this), 2 + leftDmg);
                 launch(target, magnet);
             } else if (attackPose == AttackPose.RIGHT_PUNCH) {
                 BlockState state = getStateForHand(false);
                 boolean magnet = state.is(ACBlockRegistry.AZURE_MAGNET.get()) || state.is(ACBlockRegistry.SCARLET_MAGNET.get());
-                target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), damageSources().mobAttack(MagnetronEntity.this), 2 + rightDmg);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, damageSources().mobAttack(MagnetronEntity.this), 2 + rightDmg);
                 launch(target, magnet);
             }
         }

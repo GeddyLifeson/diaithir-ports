@@ -186,7 +186,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
                     this.setHookedEntityUUID(favoredToHookTo.getUUID());
                     if(this.getDamage() != 0){
                         DamageSource damageSource = this.damageSources().thrown(this, owner);
-                        favoredToHookTo.hurtServer((net.minecraft.server.level.ServerLevel) favoredToHookTo.level(), damageSource, this.getDamage());
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(favoredToHookTo, damageSource, this.getDamage());
                     }
                 }
             }
@@ -403,7 +403,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
     public Entity getHookedEntity() {
         if (!level().isClientSide()) {
             final UUID id = getHookedEntityUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(HOOKED_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);

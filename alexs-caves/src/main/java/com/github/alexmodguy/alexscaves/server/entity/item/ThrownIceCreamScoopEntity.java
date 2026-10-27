@@ -48,7 +48,7 @@ public class ThrownIceCreamScoopEntity extends ThrowableItemProjectile {
 
     protected void onHitEntity(EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
-        hitResult.getEntity().hurtServer((net.minecraft.server.level.ServerLevel) hitResult.getEntity().level(), damageSources().thrown(this, this.getOwner()), 0.0F);
+        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(hitResult.getEntity(), damageSources().thrown(this, this.getOwner()), 0.0F);
         if(hitResult.getEntity() instanceof LivingEntity living){
             for (MobEffectInstance mobEffectInstance : new ArrayList<>(living.getActiveEffects())) {
                  if (mobEffectInstance.getEffect().value() != ACEffectRegistry.IRRADIATED.value() && mobEffectInstance.getEffect().value() != ACEffectRegistry.DARKNESS_INCARNATE.value() && mobEffectInstance.getEffect().value() != ACEffectRegistry.BUBBLED.value()){

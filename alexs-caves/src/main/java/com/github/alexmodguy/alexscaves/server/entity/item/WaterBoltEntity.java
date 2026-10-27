@@ -205,7 +205,7 @@ public class WaterBoltEntity extends Projectile {
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && !(entity instanceof DeepOneBaseEntity) && (owner == null || !entity.is(owner) && !entity.isAlliedTo(owner))) {
                 lastHitMob = entity;
-                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, 3.0F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, source, 3.0F);
                 if (this.isBubbling() && !entity.hasEffect(ACEffectRegistry.BUBBLED)) {
                     entity.addEffect(new MobEffectInstance(ACEffectRegistry.BUBBLED, 200));
                 }
@@ -263,7 +263,7 @@ public class WaterBoltEntity extends Projectile {
 
     public Entity getArcingTowards() {
         UUID id = this.entityData.get(ARC_TOWARDS_ENTITY_UUID).orElse(null);
-        return id == null ? null : ((ServerLevel) level()).getEntity(id);
+        return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
     }
 
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {

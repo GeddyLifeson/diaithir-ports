@@ -116,7 +116,7 @@ public class TeletorEntity extends Monster {
     public Entity getWeapon() {
         if (!level().isClientSide()) {
             UUID id = getWeaponUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(WEAPON_ID);
             return id == -1 ? null : level().getEntity(id);

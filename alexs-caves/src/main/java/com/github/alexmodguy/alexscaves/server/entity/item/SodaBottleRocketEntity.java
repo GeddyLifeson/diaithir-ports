@@ -221,7 +221,7 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
 
         if (f > 0.0F) {
             if (this.attachedToEntity != null) {
-                this.attachedToEntity.hurtServer((net.minecraft.server.level.ServerLevel) this.attachedToEntity.level(), this.damageSources().fireworks(this, this.getOwner()), 5.0F + (float)(list.size() * 2));
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(this.attachedToEntity, this.damageSources().fireworks(this, this.getOwner()), 5.0F + (float)(list.size() * 2));
             }
 
             double d0 = 5.0;
@@ -242,7 +242,7 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
 
                     if (flag) {
                         float f1 = f * (float)Math.sqrt((5.0 - (double)this.distanceTo(livingentity)) / 5.0);
-                        livingentity.hurtServer((net.minecraft.server.level.ServerLevel) livingentity.level(), this.damageSources().fireworks(this, this.getOwner()), f1);
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(livingentity, this.damageSources().fireworks(this, this.getOwner()), f1);
                     }
                 }
             }

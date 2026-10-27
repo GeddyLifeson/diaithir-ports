@@ -140,7 +140,7 @@ public class ExtinctionSpearEntity extends AbstractArrow {
         this.dealtDamage = true;
         SoundEvent soundevent = ACSoundRegistry.EXTINCTION_SPEAR_HIT.get();
         entity.igniteForSeconds(5);
-        if (entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), damagesource, f)) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, damagesource, f)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }

@@ -68,7 +68,7 @@ public class ForsakenAttackGoal extends Goal {
             if (attemptSonicDamageIn > 0) {
                 attemptSonicDamageIn--;
                 if (attemptSonicDamageIn == 0 && this.entity.hasLineOfSight(target)) {
-                    target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), ACDamageTypes.causeForsakenSonicBoomDamage(entity.level().registryAccess(), entity), entity.getSonicDamageAgainst(target));
+                    com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, ACDamageTypes.causeForsakenSonicBoomDamage(entity.level().registryAccess(), entity), entity.getSonicDamageAgainst(target));
                     knockBackAngle(target, 1.0F, 0F);
                 }
             }
@@ -99,7 +99,7 @@ public class ForsakenAttackGoal extends Goal {
                             List<LivingEntity> list = this.entity.level().getEntitiesOfClass(LivingEntity.class, this.entity.getBoundingBox().inflate(16, 8, 16));
                             for (LivingEntity living : list) {
                                 if (living != this.entity && !this.entity.isAlliedTo(living) && !living.isAlliedTo(entity) && living.distanceTo(entity) <= 14F && !living.getType().builtInRegistryHolder().is(ACTagRegistry.FORSAKEN_IGNORES)) {
-                                    living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), ACDamageTypes.causeForsakenSonicBoomDamage(entity.level().registryAccess(), entity), (float) Math.ceil(entity.getSonicDamageAgainst(target) * 0.65F));
+                                    com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(living, ACDamageTypes.causeForsakenSonicBoomDamage(entity.level().registryAccess(), entity), (float) Math.ceil(entity.getSonicDamageAgainst(target) * 0.65F));
                                 }
                             }
                         }
@@ -238,7 +238,7 @@ public class ForsakenAttackGoal extends Goal {
 
     private boolean checkAndDealDamage(LivingEntity target, double multiplier, float extraRange) {
         if (entity.hasLineOfSight(target) && entity.distanceTo(target) < entity.getBbWidth() + target.getBbWidth() + extraRange) {
-            boolean b = target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(entity), (float) (multiplier * entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue()));
+            boolean b = com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(entity), (float) (multiplier * entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue()));
             if (entity.getRandom().nextInt(2) == 0) {
                 startCleanJump();
             }

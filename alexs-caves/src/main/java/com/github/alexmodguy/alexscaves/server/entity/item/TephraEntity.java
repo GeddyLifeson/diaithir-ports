@@ -197,7 +197,7 @@ public class TephraEntity extends Projectile {
 
     public Entity getArcingTowards() {
         UUID id = this.entityData.get(ARC_TOWARDS_ENTITY_UUID).orElse(null);
-        return id == null ? null : ((ServerLevel) level()).getEntity(id);
+        return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
     }
 
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {

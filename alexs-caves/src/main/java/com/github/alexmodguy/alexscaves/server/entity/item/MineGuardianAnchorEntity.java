@@ -95,7 +95,7 @@ public class MineGuardianAnchorEntity extends Entity {
     public Entity getGuardian() {
         if (!level().isClientSide()) {
             final UUID id = getGuardianUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(GUARDIAN_ID);
             return id == -1 ? null : level().getEntity(id);

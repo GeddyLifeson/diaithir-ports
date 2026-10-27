@@ -117,7 +117,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public Entity getHeadEntity() {
         if (!level().isClientSide()) {
             UUID id = getHeadUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(HEAD_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);
@@ -127,7 +127,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public Entity getFrontEntity() {
         if (!level().isClientSide()) {
             UUID id = getFrontEntityUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(FRONT_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);
@@ -137,7 +137,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public Entity getBackEntity() {
         if (!level().isClientSide()) {
             UUID id = getBackEntityUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(BACK_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);
@@ -236,7 +236,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         Entity head = this.getHeadEntity();
         if (!this.isInvulnerableTo(serverLevel, source) && head != null) {
-            head.hurtServer((net.minecraft.server.level.ServerLevel) head.level(), source, amount);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(head, source, amount);
         }
         return false;
     }
@@ -366,7 +366,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
                     }
 
                     if (j > i - 1) {
-                        this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), this.damageSources().cramming(), 6.0F);
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(this, this.damageSources().cramming(), 6.0F);
                     }
                 }
 

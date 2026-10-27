@@ -27,7 +27,7 @@ public class IrradiatedEffect extends MobEffect {
             player.causeFoodExhaustion(0.4F);
         }
         if (!(entity instanceof RaycatEntity) && entity.level().getRandom().nextFloat() < damageScale + 0.1F) {
-            entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), ACDamageTypes.causeRadiationDamage(entity.level().registryAccess()), damageScale);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, ACDamageTypes.causeRadiationDamage(entity.level().registryAccess()), damageScale);
         }
         return true;
     }

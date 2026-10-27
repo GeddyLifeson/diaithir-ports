@@ -92,7 +92,7 @@ public class BoundroidWinchEntity extends Monster {
             return false;
         }
         if (body != null && !(body instanceof LivingEntity __b && __b.isInvulnerableTo(serverLevel, source))) {
-            boolean flag = body.hurtServer((net.minecraft.server.level.ServerLevel) body.level(), source, damage);
+            boolean flag = com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(body, source, damage);
             if (flag) {
                 noLatchCooldown = 60 + random.nextInt(60);
             }
@@ -317,7 +317,7 @@ public class BoundroidWinchEntity extends Monster {
     public Entity getHead() {
         if (!level().isClientSide()) {
             UUID id = getHeadUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(HEAD_ID);
             return id == -1 ? null : level().getEntity(id);

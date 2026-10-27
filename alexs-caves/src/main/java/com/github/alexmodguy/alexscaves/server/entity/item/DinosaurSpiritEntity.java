@@ -181,7 +181,7 @@ public class DinosaurSpiritEntity extends Entity {
             }
             this.setUsingAbility(true);
             if (inRange && this.abilityProgress >= 5) {
-                if(!dealtDamage && target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), ACDamageTypes.causeSpiritDinosaurDamage(level().registryAccess(), player), 3 + 2 * getEnchantmentLevel())){
+                if(!dealtDamage && com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, ACDamageTypes.causeSpiritDinosaurDamage(level().registryAccess(), player), 3 + 2 * getEnchantmentLevel())){
                     dealtDamage = true;
                 }
                 this.setFading(true);

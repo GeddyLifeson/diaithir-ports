@@ -625,7 +625,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         DamageSource damageSource = this.damageSources().mobAttack(this);
         for (LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, hurtBox, EntitySelector.NO_CREATIVE_OR_SPECTATOR)) {
             if (!living.is(this) && !living.isAlliedTo(this) && !isRidingPlayer(living) && living.getType() != this.getType()) {
-                if (living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)) {
+                if (com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(living, damageSource, damageAmount)) {
                     living.knockback(knockbackAmount, this.getX() - living.getX(), this.getZ() - living.getZ());
                 }
                 if (target != null && living.is(target)) {
@@ -757,7 +757,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
     public Entity getRidingSegment() {
         if (!level().isClientSide()) {
             final UUID id = getRidingSegmentUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(RIDING_SEGMENT_ID);
             return id == -1 ? null : level().getEntity(id);

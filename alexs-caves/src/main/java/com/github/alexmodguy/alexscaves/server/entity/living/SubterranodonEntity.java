@@ -299,7 +299,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
         } else {
             LivingEntity target = this.getTarget();
             if (attackProgress == 5F && target != null && this.distanceTo(target) < 3D + target.getBbWidth() && this.hasLineOfSight(target)) {
-                target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), this.damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, this.damageSources().mobAttack(this), (float) this.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
                 this.playSound(ACSoundRegistry.SUBTERRANODON_ATTACK.get());
             }
             if (attackProgress > 0F) {

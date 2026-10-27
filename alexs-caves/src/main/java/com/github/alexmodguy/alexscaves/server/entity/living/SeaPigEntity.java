@@ -144,7 +144,7 @@ public class SeaPigEntity extends WaterAnimal implements Bucketable {
             this.setAirSupply(prevAir - 1);
             if (this.getAirSupply() == -20) {
                 this.setAirSupply(0);
-                this.hurtServer((net.minecraft.server.level.ServerLevel) this.level(), damageSources().dryOut(), 2.0F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(this, damageSources().dryOut(), 2.0F);
             }
         } else {
             this.setAirSupply(40);

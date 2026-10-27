@@ -226,7 +226,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
             List<UUID> possessedIds = getPossessedUUIDs();
             if (level() instanceof ServerLevel) {
                 for (UUID possessedId : possessedIds) {
-                    Entity possessedEntity = ((ServerLevel) level()).getEntity(possessedId);
+                    Entity possessedEntity = com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), possessedId);
                     if (possessedEntity != null) {
                         this.tickPossessedEntity(possessedEntity);
                     }
@@ -304,9 +304,9 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
             List<UUID> possessedIds = getPossessedUUIDs();
             if (level() instanceof ServerLevel) {
                 for (UUID possessedId : possessedIds) {
-                    Entity possessedEntity = ((ServerLevel) level()).getEntity(possessedId);
+                    Entity possessedEntity = com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), possessedId);
                     if (possessedEntity != null) {
-                        possessedEntity.hurtServer((net.minecraft.server.level.ServerLevel) possessedEntity.level(), this.damageSources().magic(), 300);
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(possessedEntity, this.damageSources().magic(), 300);
                     }
                 }
             }

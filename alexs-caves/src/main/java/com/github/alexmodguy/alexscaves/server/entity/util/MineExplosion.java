@@ -175,7 +175,7 @@ public class MineExplosion {
                         d9 /= d13;
                         double d14 = (double) getSeenPercent(vec3, entity);
                         double d10 = (1.0D - d12) * d14;
-                        entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), this.getDamageSource(), (float) ((int) ((d10 * d10 + d10) / 2.0D * 7.0D * (double) f2 + 1.0D)));
+                        com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, this.getDamageSource(), (float) ((int) ((d10 * d10 + d10) / 2.0D * 7.0D * (double) f2 + 1.0D)));
                         double d11;
                         if (entity instanceof LivingEntity) {
                             LivingEntity livingentity = (LivingEntity) entity;

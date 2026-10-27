@@ -65,7 +65,7 @@ public class GrottoceratopsMeleeGoal extends Goal {
     private void checkAndDealDamage(LivingEntity target, float multiplier) {
         if (grottoceratops.hasLineOfSight(target) && grottoceratops.distanceTo(target) < grottoceratops.getBbWidth() + target.getBbWidth() + 1.0D) {
             grottoceratops.playSound(ACSoundRegistry.GROTTOCERATOPS_ATTACK.get());
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(grottoceratops), (float) grottoceratops.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(grottoceratops), (float) grottoceratops.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier);
             target.knockback(0.8D + 0.5D * multiplier, grottoceratops.getX() - target.getX(), grottoceratops.getZ() - target.getZ());
         }
     }

@@ -56,13 +56,13 @@ public class UnderzealotMeleeGoal extends Goal {
     private void checkAndDealDamage(LivingEntity target, float multiplier) {
         if (entity.hasLineOfSight(target) && entity.distanceTo(target) < entity.getBbWidth() + target.getBbWidth() + 1.0D) {
             float f = (float) entity.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier;
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(entity), f);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(entity), f);
             target.knockback(0.2D + 0.3D * multiplier, entity.getX() - target.getX(), entity.getZ() - target.getZ());
             shouldBurrow = entity.level().getRandom().nextBoolean();
             Entity vehicle = target.getVehicle();
             if (vehicle != null) {
                 vehicle.setDeltaMovement(target.getDeltaMovement());
-                vehicle.hurtServer((net.minecraft.server.level.ServerLevel) vehicle.level(), target.damageSources().mobAttack(this.entity), f * 0.5F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(vehicle, target.damageSources().mobAttack(this.entity), f * 0.5F);
             }
         }
     }

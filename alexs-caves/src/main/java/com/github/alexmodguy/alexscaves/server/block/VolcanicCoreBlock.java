@@ -50,7 +50,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
         if (!entity.isSteppingCarefully() && entity instanceof LivingEntity livingEntity) {
             var frostWalker = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FROST_WALKER);
             if (EnchantmentHelper.getEnchantmentLevel(frostWalker, livingEntity) == 0) {
-                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), level.damageSources().hotFloor(), 1.0F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, level.damageSources().hotFloor(), 1.0F);
                 entity.igniteForSeconds(3);
             }
         }

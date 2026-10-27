@@ -97,7 +97,7 @@ public class GummyBearMeleeGoal extends Goal {
 
     private void checkAndDealDamage(LivingEntity target) {
         if (gummyBear.hasLineOfSight(target) && gummyBear.distanceTo(target) < gummyBear.getBbWidth() + target.getBbWidth() + 1) {
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(gummyBear), (float) gummyBear.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(gummyBear), (float) gummyBear.getAttribute(Attributes.ATTACK_DAMAGE).getValue());
         }
     }
 }

@@ -178,7 +178,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
     public Entity getPossessedEntity() {
         if (!level().isClientSide()) {
             UUID id = getPossessedEntityUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(POSSESSED_ENTITY_ID);
             return id == -1 ? null : level().getEntity(id);

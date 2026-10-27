@@ -68,7 +68,7 @@ public class WaveEntity extends Entity {
     @Nullable
     public LivingEntity getOwner() {
         if (this.owner == null && this.ownerUUID != null && this.level() instanceof ServerLevel) {
-            Entity entity = ((ServerLevel) this.level()).getEntity(this.ownerUUID);
+            Entity entity = com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), this.ownerUUID);
             if (entity instanceof LivingEntity) {
                 this.owner = (LivingEntity) entity;
             }
@@ -222,7 +222,7 @@ public class WaveEntity extends Entity {
         DamageSource source = damageSources().mobProjectile(this, owner);
         for (LivingEntity entity : this.level().getEntitiesOfClass(LivingEntity.class, bashBox)) {
             if (!isAlliedTo(entity) && !(entity instanceof DeepOneBaseEntity) && (owner == null || !owner.equals(entity) && !owner.isAlliedTo(entity))) {
-                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), source, scale + 1.0F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, source, scale + 1.0F);
                 this.setSlamming(true);
                 entity.knockback(0.1D + 0.5D * scale, (double) Mth.sin(this.getYRot() * ((float) Math.PI / 180F)), (double) (-Mth.cos(this.getYRot() * ((float) Math.PI / 180F))));
             }

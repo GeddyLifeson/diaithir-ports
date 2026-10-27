@@ -118,7 +118,7 @@ public class MineGuardianEntity extends Monster {
     public Entity getAnchor() {
         if (!level().isClientSide()) {
             UUID id = getAnchorUUID();
-            return id == null ? null : ((ServerLevel) level()).getEntity(id);
+            return id == null ? null : com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), id);
         } else {
             int id = this.entityData.get(ANCHOR_ID);
             return id == -1 ? null : level().getEntity(id);

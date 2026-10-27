@@ -121,7 +121,7 @@ public class DeepOneKnightEntity extends DeepOneBaseEntity {
 
     protected boolean pickUpTrident() {
         if (lastThrownTrident != null && !level().isClientSide()) {
-            if (((ServerLevel) level()).getEntity(lastThrownTrident) instanceof ThrownTrident trident) {
+            if (com.github.alexmodguy.alexscaves.server.misc.ACSide.entity(level(), lastThrownTrident) instanceof ThrownTrident trident) {
                 if (this.distanceTo(trident) < 2.0D) {
                     if (this.getAnimation() == NO_ANIMATION) {
                         this.setAnimation(ANIMATION_SCRATCH);

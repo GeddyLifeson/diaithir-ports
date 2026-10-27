@@ -549,7 +549,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
                 if(living.isBlocking() && disablesShields && living instanceof Player player){
                     player.getCooldowns().addCooldown(player.getUseItem(), 100); player.stopUsingItem();
                 }
-                if(living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)){
+                if(com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(living, damageSource, damageAmount)){
                     flag = true;
                     if(setsOnFire){
                         living.igniteForSeconds(10);

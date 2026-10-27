@@ -67,12 +67,12 @@ public class HullbreakerMeleeGoal extends Goal {
     private void checkAndDealDamage(LivingEntity target, float multiplier) {
         if (hullbreaker.hasLineOfSight(target) && hullbreaker.distanceTo(target) < hullbreaker.getBbWidth() + target.getBbWidth() + 5.0D) {
             float f = (float) hullbreaker.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * multiplier;
-            target.hurtServer((net.minecraft.server.level.ServerLevel) target.level(), target.damageSources().mobAttack(hullbreaker), f);
+            com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(target, target.damageSources().mobAttack(hullbreaker), f);
             target.knockback(0.8D + 0.5D * multiplier, hullbreaker.getX() - target.getX(), hullbreaker.getZ() - target.getZ());
             Entity entity = target.getVehicle();
             if (entity != null) {
                 entity.setDeltaMovement(target.getDeltaMovement());
-                entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), target.damageSources().mobAttack(hullbreaker), f * 0.5F);
+                com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(entity, target.damageSources().mobAttack(hullbreaker), f * 0.5F);
             }
         }
     }

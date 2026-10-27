@@ -233,7 +233,7 @@ public class CaniacEntity extends Monster implements IAnimatedEntity, PossessedB
                         return;
                     }
                 }
-                if(living.distanceTo(this) < 3.15F && living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)){
+                if(living.distanceTo(this) < 3.15F && com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(living, damageSource, damageAmount)){
                     living.knockback(knockbackAmount, this.getX() - living.getX(), this.getZ() - living.getZ());
                 }
             }

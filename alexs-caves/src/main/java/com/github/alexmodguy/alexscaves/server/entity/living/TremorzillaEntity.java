@@ -843,7 +843,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         DamageSource damageSource = radioactive ? ACDamageTypes.causeTremorzillaBeamDamage(level().registryAccess(), this) : this.damageSources().mobAttack(this);
         for (LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, aabb, EntitySelector.NO_CREATIVE_OR_SPECTATOR)) {
             if (!living.is(this) && !this.isAlliedTo(living) && living.getType() != this.getType() && living.distanceToSqr(center.x, stretchY ? living.getY() : center.y, center.z) <= radius * radius && (!radioactive || canEntityBeHurtByBeam(living, center)) && (hurtsOtherKaiju || !(living instanceof KaijuMob))) {
-                if (living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)) {
+                if (com.github.alexmodguy.alexscaves.server.misc.ACSide.hurt(living, damageSource, damageAmount)) {
                     flag = true;
                     knockbackTarget(living, knockbackAmount, this.getX() - living.getX(), this.getZ() - living.getZ(), !(living instanceof KaijuMob));
                     if (radioactive) {
