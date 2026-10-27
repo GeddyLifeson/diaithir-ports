@@ -124,7 +124,7 @@ public class FloatingBlockEntity extends BlockLikeEntity {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("Dropping", 99)) this.setDropping(compound.getBoolean("Dropping"));
+        if (compound.contains("Dropping")) this.setDropping(compound.getBooleanOr("Dropping", false));
     }
 
     @Override

@@ -67,7 +67,7 @@ public abstract class MappedRegistryAliasMixin {
         if (original != null || key == null) {
             return original;
         }
-        Identifier mapped = ParadiseLostAliasFix.resolve(key.location());
+        Identifier mapped = ParadiseLostAliasFix.resolve(key.identifier());
         if (mapped == null) {
             return original;
         }
@@ -82,7 +82,7 @@ public abstract class MappedRegistryAliasMixin {
         if ((original != null && !original.isEmpty()) || key == null) {
             return original;
         }
-        Identifier mapped = ParadiseLostAliasFix.resolve(key.location());
+        Identifier mapped = ParadiseLostAliasFix.resolve(key.identifier());
         if (mapped == null) {
             return original;
         }
@@ -97,7 +97,7 @@ public abstract class MappedRegistryAliasMixin {
         if (original || key == null) {
             return original;
         }
-        Identifier mapped = ParadiseLostAliasFix.resolve(key.location());
+        Identifier mapped = ParadiseLostAliasFix.resolve(key.identifier());
         return mapped != null && paradiseLost$registry().containsKey(mapped);
     }
 }

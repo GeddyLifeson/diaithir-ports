@@ -74,7 +74,7 @@ public class BloodstoneHUDRenderer {
         var component = bloodstoneCapturedData.bloodstoneComponent;
         renderText(context, client, component.name(), 0, -80);
         renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.REGENERATION), Component.literal(component.health()), 0, 80);
-        renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.DAMAGE_RESISTANCE), Component.literal(component.defense()), -80, 0);
+        renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.RESISTANCE), Component.literal(component.defense()), -80, 0);
         renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.ABSORPTION), Component.literal(component.toughness()), 80, 0);
     }
 

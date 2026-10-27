@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -26,7 +26,7 @@ public abstract class ParadiseLostAnimalEntity extends Animal {
         this(null, world);
     }
 
-    public static boolean isValidNaturalParadiseLostSpawn(EntityType<? extends ParadiseLostAnimalEntity> type, LevelAccessor world, MobSpawnType spawnReason, BlockPos pos, RandomSource random) {
+    public static boolean isValidNaturalParadiseLostSpawn(EntityType<? extends ParadiseLostAnimalEntity> type, LevelAccessor world, EntitySpawnReason spawnReason, BlockPos pos, RandomSource random) {
         return world.getBlockState(pos.below()).is(ParadiseLostBlockTags.ANIMALS_PREFERRED) && world.getRawBrightness(pos, 0) > 8;
     }
 

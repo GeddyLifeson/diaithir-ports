@@ -32,7 +32,7 @@ public class SliderEntity extends BlockLikeEntity {
         if (this.horizontalCollision) {
             this.setDirection(this.getDirection().getOpposite());
         }
-        this.moveRelative(0.01F, Vec3.atLowerCornerOf(this.getDirection().getNormal()));
+        this.moveRelative(0.01F, Vec3.atLowerCornerOf(this.getDirection().getUnitVec3i()));
         this.move(MoverType.SELF, this.getDeltaMovement());
     }
 
@@ -49,10 +49,10 @@ public class SliderEntity extends BlockLikeEntity {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("Direction", Tag.TAG_STRING)) {
+        if (compound.contains("Direction")) {
             Direction dir;
             try {
-                dir = Direction.valueOf(compound.getString("Direction"));
+                dir = Direction.valueOf(compound.getStringOr("Direction", ""));
             } catch (IllegalArgumentException e) {
                 dir = Direction.NORTH;
             }

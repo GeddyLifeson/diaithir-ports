@@ -138,7 +138,7 @@ public class PopomEntity extends Animal {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.entityData.set(FUR_SIZE, compound.getInt("FurSize"));
+        this.entityData.set(FUR_SIZE, compound.getIntOr("FurSize", 0));
     }
 
     @Override

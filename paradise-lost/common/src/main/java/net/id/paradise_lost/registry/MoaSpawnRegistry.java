@@ -15,7 +15,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.random.WeightedEntry;
+import net.minecraft.util.random.Weighted;
 import net.minecraft.util.random.WeightedRandom;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -99,7 +99,7 @@ public final class MoaSpawnRegistry {
     }
 
     private static void table(BootstrapContext<SpawnEntry> context, ResourceKey<Biome> biome, WeightedRace... entries) {
-        context.register(ResourceKey.create(REGISTRY.key(), biome.location()), races(entries));
+        context.register(ResourceKey.create(REGISTRY.key(), biome.identifier()), races(entries));
     }
 
     private static SpawnEntry races(WeightedRace... entries) {
@@ -107,7 +107,7 @@ public final class MoaSpawnRegistry {
     }
 
     private static WeightedRace weighted(ResourceKey<MoaRace> race, int weight) {
-        return new WeightedRace(race.location(), weight);
+        return new WeightedRace(race.identifier(), weight);
     }
 
     public static MoaRace getMoaFromSpawning(Level world, ResourceKey<Biome> biome, RandomSource random) {
@@ -117,13 +117,13 @@ public final class MoaSpawnRegistry {
 
     public static Identifier getMoaRaceIdFromSpawning(Level world, ResourceKey<Biome> biome, RandomSource random) {
         Registry<SpawnEntry> tables = REGISTRY.get(world.registryAccess());
-        Holder<Biome> holder = world.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(biome);
+        Holder<Biome> holder = world.registryAccess().lookupOrThrow(Registries.BIOME).getHolderOrThrow(biome);
 
         List<WeightedRace> pool = new ArrayList<>();
-        tables.getOptional(biome.location()).ifPresent(table -> pool.addAll(table.races()));
+        tables.getOptional(biome.identifier()).ifPresent(table -> pool.addAll(table.races()));
         for (var entry : tables.entrySet()) {
-            Identifier id = entry.getKey().location();
-            if (id.equals(biome.location()) || id.equals(DEFAULT_ID)) {
+            Identifier id = entry.getKey().identifier();
+            if (id.equals(biome.identifier()) || id.equals(DEFAULT_ID)) {
                 continue;
             }
             entry.getValue().biomes().ifPresent(set -> {
@@ -140,7 +140,7 @@ public final class MoaSpawnRegistry {
     }
 
     private static Identifier pick(Level world, List<WeightedRace> candidates, RandomSource random) {
-        List<WeightedEntry.Wrapper<Identifier>> weighted = new ArrayList<>(candidates.size());
+        List<Weighted<Identifier>> weighted = new ArrayList<>(candidates.size());
         for (WeightedRace entry : candidates) {
             if (resolve(world, entry.race()) != null) {
                 weighted.add(WeightedEntry.wrap(entry.race(), entry.weight()));

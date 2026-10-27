@@ -32,7 +32,7 @@ public class ParadiseLostMushroomBlock extends MushroomBlock {
             blockPos = pos.below();
         }
         BlockState blockState = world.getBlockState(blockPos);
-        if (blockState.is(BlockTags.MUSHROOM_GROW_BLOCK)) {
+        if (blockState.is(BlockTags.OVERWORLD_NATURAL_LOGS)) {
             return true;
         } else {
             return world.getRawBrightness(pos, 0) < 13 && this.mayPlaceOn(blockState, world, blockPos);

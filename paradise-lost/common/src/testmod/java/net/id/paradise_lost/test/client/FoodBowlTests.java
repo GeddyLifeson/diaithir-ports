@@ -12,7 +12,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -207,7 +207,7 @@ public final class FoodBowlTests {
     }
 
     private static void moaEatsFromBowl(ServerPlayer player, float hunger) {
-        MoaEntity moa = EntityRegistry.MOA.get().spawn(player.serverLevel(), ahead(player, 3, 1), MobSpawnType.COMMAND);
+        MoaEntity moa = EntityRegistry.MOA.get().spawn(player.serverLevel(), ahead(player, 3, 1), EntitySpawnReason.COMMAND);
         moa.setNoAi(true);
         moa.getGenes().setHunger(hunger);
 

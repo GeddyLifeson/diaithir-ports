@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.item.ArmorItem;
@@ -95,7 +95,7 @@ public final class ItemTests {
             List<String> wrong = new ArrayList<>();
 
             for (EntityType<? extends LivingEntity> type : List.of(EntityType.ARMOR_STAND, EntityType.PIG)) {
-                LivingEntity entity = type.spawn(world, ahead(3, 0), MobSpawnType.COMMAND);
+                LivingEntity entity = type.spawn(world, ahead(3, 0), EntitySpawnReason.COMMAND);
                 entity.tick();
                 try {
                     entity.setItemSlot(EquipmentSlot.HEAD, new ItemStack(XP_CIRCLET.get()));
@@ -119,7 +119,7 @@ public final class ItemTests {
                     world.setBlockAndUpdate(pos, Blocks.DISPENSER.defaultBlockState().setValue(DispenserBlock.FACING, FACING));
                     ((DispenserBlockEntity) world.getBlockEntity(pos)).setItem(0, new ItemStack(XP_CIRCLET.get()));
 
-                    entityId = EntityType.ARMOR_STAND.spawn(world, pos.relative(FACING), MobSpawnType.COMMAND).getId();
+                    entityId = EntityType.ARMOR_STAND.spawn(world, pos.relative(FACING), EntitySpawnReason.COMMAND).getId();
                 }),
                 Step.run(5, () -> level().setBlockAndUpdate(pos.relative(FACING.getOpposite()), Blocks.REDSTONE_BLOCK.defaultBlockState())),
                 Step.until("armor stand to wear the circlet", 20, () ->

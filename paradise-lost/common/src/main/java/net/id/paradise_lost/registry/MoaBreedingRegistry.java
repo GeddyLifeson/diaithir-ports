@@ -60,14 +60,14 @@ public final class MoaBreedingRegistry {
     private static void table(BootstrapContext<BreedingRecipes> context,
                               ResourceKey<MoaRace> child,
                               BreedingEntry... recipes) {
-        context.register(ResourceKey.create(REGISTRY.key(), child.location()),
+        context.register(ResourceKey.create(REGISTRY.key(), child.identifier()),
                 new BreedingRecipes(List.of(recipes)));
     }
 
     private static BreedingEntry pair(ResourceKey<MoaRace> first,
                                       ResourceKey<MoaRace> second,
                                       float chance, LootItemCondition... conditions) {
-        return new BreedingEntry(first.location(), second.location(), chance, List.of(conditions));
+        return new BreedingEntry(first.identifier(), second.identifier(), chance, List.of(conditions));
     }
 
     private static LootItemCondition night() {
@@ -112,7 +112,7 @@ public final class MoaBreedingRegistry {
     private static List<IndexedRecipe> index(MoaBreedingContext ctx, Registry<BreedingRecipes> rules) {
         List<IndexedRecipe> indexed = new ArrayList<>();
         for (var entry : rules.entrySet()) {
-            Identifier childId = entry.getKey().location();
+            Identifier childId = entry.getKey().identifier();
             if (resolve(ctx, childId) == null) {
                 continue;
             }

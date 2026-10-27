@@ -110,7 +110,7 @@ public class ParadiseLostMushroomPlantBlock extends BushBlock implements Bonemea
     @Override
     public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
         Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = world.registryAccess()
-                .registryOrThrow(Registries.CONFIGURED_FEATURE)
+                .lookupOrThrow(Registries.CONFIGURED_FEATURE)
                 .getHolder(this.featureKey);
         if (!optional.isEmpty()) {
             world.removeBlock(pos, false);

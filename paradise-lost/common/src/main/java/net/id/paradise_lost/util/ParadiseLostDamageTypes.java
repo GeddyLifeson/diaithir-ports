@@ -12,7 +12,7 @@ public class ParadiseLostDamageTypes {
     public static final ResourceKey<DamageType> FALL_FROM_PARADISE = ResourceKey.create(Registries.DAMAGE_TYPE, ModConstants.locate("fall"));
 
     public static DamageSource of(Level world, ResourceKey<DamageType> key) {
-        return new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(key));
+        return new DamageSource(world.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(key));
     }
 
     public static void init() {

@@ -12,7 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -82,7 +82,7 @@ public class WardedJarItem extends Item {
             } else {
                 blockPos2 = blockPos.relative(direction);
             }
-            if (containedEntityType.spawn((ServerLevel) world, itemStack, context.getPlayer(), blockPos2, MobSpawnType.MOB_SUMMONED, true, false) != null) {
+            if (containedEntityType.spawn((ServerLevel) world, itemStack, context.getPlayer(), blockPos2, EntitySpawnReason.MOB_SUMMONED, true, false) != null) {
                 itemStack.consume(1, user);
                 context.getPlayer().addItem(new ItemStack(ItemRegistry.WARDED_JAR.get()));
                 world.gameEvent(context.getPlayer(), GameEvent.ENTITY_PLACE, blockPos);
@@ -104,7 +104,7 @@ public class WardedJarItem extends Item {
             if (!(world.getBlockState(blockPos).getBlock() instanceof LiquidBlock)) {
                 return InteractionResult.PASS;
             } else if (world.mayInteract(user, blockPos) && user.mayUseItemAt(blockPos, blockHitResult.getDirection(), itemStack)) {
-                Entity entity = this.containedEntityType.spawn((ServerLevel) world, itemStack, user, blockPos, MobSpawnType.MOB_SUMMONED, false, false);
+                Entity entity = this.containedEntityType.spawn((ServerLevel) world, itemStack, user, blockPos, EntitySpawnReason.MOB_SUMMONED, false, false);
                 if (entity == null) {
                     return InteractionResult.PASS;
                 } else {

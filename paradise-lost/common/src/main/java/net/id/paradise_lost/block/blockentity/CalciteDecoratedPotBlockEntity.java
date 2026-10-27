@@ -55,8 +55,8 @@ public class CalciteDecoratedPotBlockEntity extends BlockEntity implements Rando
         super.loadAdditional(nbt, registryLookup);
         this.sherds = PotDecorations.load(nbt);
         if (!this.tryLoadLootTable(nbt)) {
-            if (nbt.contains("item", Tag.TAG_COMPOUND)) {
-                this.stack = ItemStack.parse(registryLookup, nbt.getCompound("item")).orElse(ItemStack.EMPTY);
+            if (nbt.contains("item")) {
+                this.stack = ItemStack.parse(registryLookup, nbt.getCompoundOrEmpty("item")).orElse(ItemStack.EMPTY);
             } else {
                 this.stack = ItemStack.EMPTY;
             }

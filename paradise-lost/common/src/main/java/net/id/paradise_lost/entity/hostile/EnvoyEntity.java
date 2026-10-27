@@ -19,7 +19,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -64,9 +64,9 @@ public class EnvoyEntity extends Skeleton implements IEnlightenable {
         }
     }
 
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, @Nullable SpawnGroupData entityData) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason spawnReason, @Nullable SpawnGroupData entityData) {
         entityData = super.finalizeSpawn(world, difficulty, spawnReason, entityData);
-        if (spawnReason == MobSpawnType.NATURAL && world.getRandom().nextFloat() < 0.05F) {
+        if (spawnReason == EntitySpawnReason.NATURAL && world.getRandom().nextFloat() < 0.05F) {
             this.setEnlightened(true);
         }
 
@@ -76,7 +76,7 @@ public class EnvoyEntity extends Skeleton implements IEnlightenable {
     public void die(DamageSource damageSource) {
         super.die(damageSource);
         if (this.level() instanceof ServerLevel serverWorld && this.getEnlightened() && damageSource.is(DamageTypeTags.IS_PLAYER_ATTACK)) {
-            EntityRegistry.QUINT.get().spawn(serverWorld, this.blockPosition().above(), MobSpawnType.MOB_SUMMONED);
+            EntityRegistry.QUINT.get().spawn(serverWorld, this.blockPosition().above(), EntitySpawnReason.MOB_SUMMONED);
         }
     }
 
@@ -156,7 +156,7 @@ public class EnvoyEntity extends Skeleton implements IEnlightenable {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.entityData.set(ENLIGHTENED, compound.getBoolean("Enlightened"));
+        this.entityData.set(ENLIGHTENED, compound.getBooleanOr("Enlightened", false));
     }
 
     static {

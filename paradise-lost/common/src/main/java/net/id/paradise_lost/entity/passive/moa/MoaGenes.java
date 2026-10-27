@@ -175,26 +175,26 @@ public class MoaGenes {
     }
 
     public void readFromNbt(CompoundTag tag, HolderLookup.Provider registryLookup) {
-        initialized = tag.getBoolean("initialized");
+        initialized = tag.getBooleanOr("initialized", false);
         if (initialized) {
-            raceId = Identifier.tryParse(tag.getString("raceId"));
+            raceId = Identifier.tryParse(tag.getStringOr("raceId", ""));
             if (raceId == null) {
                 raceId = MoaRaceRegistry.FALLBACK_ID;
             }
             RegistryAccess access = registryLookup instanceof RegistryAccess ra ? ra : null;
             race = access != null ? MoaAPI.getRace(access, raceId) : MoaRaceRegistry.FALLBACK_VALUE;
-            String affinityStr = tag.getString("affinity");
+            String affinityStr = tag.getStringOr("affinity", "");
             affinity = affinityStr.isEmpty() ? race.defaultAffinity() : MoaAttributes.valueOf(affinityStr);
-            legendary = tag.getBoolean("legendary");
-            if (tag.contains("hunger", Tag.TAG_FLOAT)) {
-                hunger = tag.getFloat("hunger");
+            legendary = tag.getBooleanOr("legendary", false);
+            if (tag.contains("hunger")) {
+                hunger = tag.getFloatOr("hunger", 0F);
             }
-            if (tag.getBoolean("tamed")) {
+            if (tag.getBooleanOr("tamed", false)) {
                 owner = tag.getUUID("owner");
             }
             Arrays.stream(MoaAttributes.values()).forEach(attribute -> {
-                if (tag.contains(attribute.name(), Tag.TAG_FLOAT)) {
-                    attributeMap.put(attribute, tag.getFloat(attribute.name()));
+                if (tag.contains(attribute.name())) {
+                    attributeMap.put(attribute, tag.getFloatOr(attribute.name(), 0F));
                 } else {
                     if (attribute.equals(MoaAttributes.JUMPING_STRENGTH)) {
                         attributeMap.put(attribute, attribute.max);
@@ -247,18 +247,18 @@ public class MoaGenes {
             if (isTamed()) {
                 tag.putUUID("owner", owner);
             }
-            Arrays.stream(MoaAttributes.values()).forEach(attribute -> tag.putFloat(attribute.name(), attributeMap.getFloat(attribute)));
+            Arrays.stream(MoaAttributes.values()).forEach(attribute -> tag.putFloat(attribute.name(), attributeMap.getFloatOr(attribute, 0F)));
         }
     }
 
     public ParadiseLostDataComponentTypes.MoaGeneComponent intoComponent() {
         var attributes = new ParadiseLostDataComponentTypes.MoaAttributeComponent(
-                attributeMap.getFloat(MoaAttributes.GROUND_SPEED),
-                attributeMap.getFloat(MoaAttributes.GLIDING_SPEED),
-                attributeMap.getFloat(MoaAttributes.GLIDING_DECAY),
-                attributeMap.getFloat(MoaAttributes.JUMPING_STRENGTH),
-                attributeMap.getFloat(MoaAttributes.DROP_MULTIPLIER),
-                attributeMap.getFloat(MoaAttributes.MAX_HEALTH)
+                attributeMap.getFloatOr(MoaAttributes.GROUND_SPEED, 0F),
+                attributeMap.getFloatOr(MoaAttributes.GLIDING_SPEED, 0F),
+                attributeMap.getFloatOr(MoaAttributes.GLIDING_DECAY, 0F),
+                attributeMap.getFloatOr(MoaAttributes.JUMPING_STRENGTH, 0F),
+                attributeMap.getFloatOr(MoaAttributes.DROP_MULTIPLIER, 0F),
+                attributeMap.getFloatOr(MoaAttributes.MAX_HEALTH, 0F)
         );
         return new ParadiseLostDataComponentTypes.MoaGeneComponent(raceId, affinity.name(), true, hunger, owner == null ? UUID.fromString("00000000-0000-0000-0000-000000000000") : owner, attributes);
     }

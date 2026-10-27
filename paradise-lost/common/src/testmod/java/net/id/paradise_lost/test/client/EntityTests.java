@@ -15,7 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -44,7 +44,7 @@ public final class EntityTests {
         return List.of(
                 Step.run(0, () -> onServer(server -> {
                     ServerPlayer player = player(server);
-                    PopomEntity popom = EntityRegistry.POPOM.get().spawn(player.serverLevel(), ahead(player, 2, 0), MobSpawnType.COMMAND);
+                    PopomEntity popom = EntityRegistry.POPOM.get().spawn(player.serverLevel(), ahead(player, 2, 0), EntitySpawnReason.COMMAND);
                     popom.setNoAi(true);
                     popom.setFurSize(3);
                     entityId = popom.getId();
@@ -68,7 +68,7 @@ public final class EntityTests {
                     ServerPlayer player = player(server);
                     BlockPos at = ahead(player, 4, 0);
                     player.serverLevel().getChunk(at);
-                    EnvoyEntity envoy = EntityRegistry.ENVOY.get().spawn(player.serverLevel(), at, MobSpawnType.COMMAND);
+                    EnvoyEntity envoy = EntityRegistry.ENVOY.get().spawn(player.serverLevel(), at, EntitySpawnReason.COMMAND);
                     check(envoy != null, "envoy failed to spawn");
                     envoy.setNoAi(true);
                     envoy.setInvulnerable(true);
@@ -91,7 +91,7 @@ public final class EntityTests {
             ServerLevel world = player.serverLevel();
 
             BlockPos at = ahead(player, 3, 0);
-            SentinelEntity sentinel = EntityRegistry.SENTINEL.get().spawn(world, at, MobSpawnType.COMMAND);
+            SentinelEntity sentinel = EntityRegistry.SENTINEL.get().spawn(world, at, EntitySpawnReason.COMMAND);
             float health = sentinel.getHealth();
             sentinel.hurt(world.damageSources().playerAttack(player), 10);
             check(sentinel.getHealth() == health, "dormant sentinel took damage");

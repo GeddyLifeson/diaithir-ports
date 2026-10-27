@@ -36,7 +36,7 @@ import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.SmithingTemplateItem;
@@ -201,19 +201,19 @@ public class ItemRegistry {
         return new Properties().food(foodComponent);
     }
 
-    public static final RegistryObject<Item, ItemNameBlockItem> BLACKCURRANT = add("blackcurrant", () -> new ItemNameBlockItem(BlockRegistry.BLACKCURRANT_BUSH.get(), food(ParadiseLostFoodComponent.BLACKCURRANT)), compostable30);
-    public static final RegistryObject<Item, ItemNameBlockItem> AMADRYS_BUSHEL = add("amadrys_bushel", () -> new ItemNameBlockItem(BlockRegistry.AMADRYS.get(), food(ParadiseLostFoodComponent.GENERIC_WORSE)), compostable30);
-    public static final RegistryObject<Item, ItemNameBlockItem> NITRA_SEED = add("nitra", () -> new ItemNameBlockItem(BlockRegistry.NITRA.get(), food()), compostable15);
+    public static final RegistryObject<Item, BlockItem> BLACKCURRANT = add("blackcurrant", () -> new BlockItem(BlockRegistry.BLACKCURRANT_BUSH.get(), food(ParadiseLostFoodComponent.BLACKCURRANT)), compostable30);
+    public static final RegistryObject<Item, BlockItem> AMADRYS_BUSHEL = add("amadrys_bushel", () -> new BlockItem(BlockRegistry.AMADRYS.get(), food(ParadiseLostFoodComponent.GENERIC_WORSE)), compostable30);
+    public static final RegistryObject<Item, BlockItem> NITRA_SEED = add("nitra", () -> new BlockItem(BlockRegistry.NITRA.get(), food()), compostable15);
     public static final RegistryObject<Item, Item> NITRA_BULB = add("nitra_bulb", () -> new NitraItem(food()), compostable50);
     public static final RegistryObject<Item, Item> AMADRYS_NOODLES = add("amadrys_noodles", () -> new Item(food(ParadiseLostFoodComponent.AMADRYS_NOODLES)));
     public static final RegistryObject<Item, Item> AMADRYS_BREAD = add("amadrys_bread", () -> new Item(food(ParadiseLostFoodComponent.AMADRYS_BREAD)), compostable50);
     public static final RegistryObject<Item, Item> AMADRYS_BREAD_GLAZED = add("amadrys_bread_glazed", () -> new Item(food(ParadiseLostFoodComponent.AMADRYS_BREAD_GLAZED)), compostable50);
     public static final RegistryObject<Item, Item> AMADRYS_BREAD_GLAZED_FILLED = add("amadrys_bread_glazed_filled", () -> new Item(food(ParadiseLostFoodComponent.AMADRYS_BREAD_GLAZED_FILLED)), compostable50);
-    public static final RegistryObject<Item, ItemNameBlockItem> SWEDROOT = add("swedroot", () -> new ItemNameBlockItem(BlockRegistry.SWEDROOT.get(), food(ParadiseLostFoodComponent.SWEDROOT)), compostable30);
+    public static final RegistryObject<Item, BlockItem> SWEDROOT = add("swedroot", () -> new BlockItem(BlockRegistry.SWEDROOT.get(), food(ParadiseLostFoodComponent.SWEDROOT)), compostable30);
     public static final RegistryObject<Item, Item> BLACKCURRANT_PIE = add("blackcurrant_pie", () -> new Item(food(ParadiseLostFoodComponent.BLACKCURRANT_PIE)), compostable100);
     public static final RegistryObject<Item, Item> BLACKCURRANT_COOKIE = add("blackcurrant_cookie", () -> new Item(food(ParadiseLostFoodComponent.BLACKCURRANT_COOKIE)), compostable85);
     public static final RegistryObject<Item, Item> ROOT_STEW = add("root_stew", () -> new Item(food(ParadiseLostFoodComponent.ROOT_STEW)));
-    public static final RegistryObject<Item, ItemNameBlockItem> FLAXSEED = add("flaxseed", () -> new ItemNameBlockItem(BlockRegistry.FLAX.get(), food()), compostable30);
+    public static final RegistryObject<Item, BlockItem> FLAXSEED = add("flaxseed", () -> new BlockItem(BlockRegistry.FLAX.get(), food()), compostable30);
     public static final RegistryObject<Item, Item> MOA_MEAT = add("moa_meat", () -> new Item(food(ParadiseLostFoodComponent.MOA_MEAT)));
     public static final RegistryObject<Item, Item> COOKED_MOA_MEAT = add("moa_meat_cooked", () -> new Item(food(ParadiseLostFoodComponent.COOKED_MOA_MEAT)));
     public static final RegistryObject<Item, Item> POPOM_JELLY = add("popom_jelly", () -> new Item(food(ParadiseLostFoodComponent.POPOM_JELLY)), compostable15);

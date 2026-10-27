@@ -1,5 +1,7 @@
 package net.id.paradise_lost.world.gen.carver;
 
+import net.minecraft.util.valueproviders.FloatProviders;
+import net.minecraft.util.valueproviders.IntProviders;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -17,23 +19,23 @@ public class CloudCarverConfig extends CarverConfiguration {
     public static final Codec<CloudCarverConfig> CODEC = RecordCodecBuilder.create((instance) -> {
         return instance.group(CarverConfiguration.CODEC.forGetter((carverConfig) -> {
             return carverConfig;
-        }), FloatProvider.CODEC.fieldOf("horizontal_radius_multiplier").forGetter((carverConfig) -> {
+        }), FloatProviders.CODEC.fieldOf("horizontal_radius_multiplier").forGetter((carverConfig) -> {
             return carverConfig.horizontalRadiusMultiplier;
-        }), FloatProvider.CODEC.fieldOf("vertical_radius_multiplier").forGetter((carverConfig) -> {
+        }), FloatProviders.CODEC.fieldOf("vertical_radius_multiplier").forGetter((carverConfig) -> {
             return carverConfig.verticalRadiusMultiplier;
         }), BlockStateProvider.CODEC.fieldOf("cloud_block").forGetter((cloudCarverConfig -> {
             return cloudCarverConfig.cloudState;
-        })), FloatProvider.CODEC.fieldOf("yaw_multiplier").forGetter((carverConfig) -> {
+        })), FloatProviders.CODEC.fieldOf("yaw_multiplier").forGetter((carverConfig) -> {
             return carverConfig.yawMultiplier;
-        }), FloatProvider.CODEC.fieldOf("yaw_pitch_ratio").forGetter((carverConfig) -> {
+        }), FloatProviders.CODEC.fieldOf("yaw_pitch_ratio").forGetter((carverConfig) -> {
             return carverConfig.yawPitchRatio;
-        }), IntProvider.CODEC.fieldOf("size_multiplier").forGetter((carverConfig) -> {
+        }), IntProviders.CODEC.fieldOf("size_multiplier").forGetter((carverConfig) -> {
             return carverConfig.sizeMultiplier;
-        }), FloatProvider.CODEC.fieldOf("max_yaw").forGetter((carverConfig) -> {
+        }), FloatProviders.CODEC.fieldOf("max_yaw").forGetter((carverConfig) -> {
             return carverConfig.maxYaw;
-        }), IntProvider.CODEC.fieldOf("engorged_chance").forGetter((carverConfig) -> {
+        }), IntProviders.CODEC.fieldOf("engorged_chance").forGetter((carverConfig) -> {
             return carverConfig.engorgementChance;
-        }), FloatProvider.CODEC.fieldOf("width_multiplier").forGetter((carverConfig) -> {
+        }), FloatProviders.CODEC.fieldOf("width_multiplier").forGetter((carverConfig) -> {
             return carverConfig.widthMultiplier;
         })).apply(instance, CloudCarverConfig::new);
     });

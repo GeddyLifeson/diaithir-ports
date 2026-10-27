@@ -16,22 +16,22 @@ public final class LegacyCardinalComponents {
 
     @Nullable
     public static CompoundTag get(CompoundTag entityTag, Identifier componentId) {
-        if (entityTag == null || !entityTag.contains(ROOT_KEY, Tag.TAG_COMPOUND)) {
+        if (entityTag == null || !entityTag.contains(ROOT_KEY)) {
             return null;
         }
-        CompoundTag root = entityTag.getCompound(ROOT_KEY);
+        CompoundTag root = entityTag.getCompoundOrEmpty(ROOT_KEY);
         String key = componentId.toString();
-        if (!root.contains(key, Tag.TAG_COMPOUND)) {
+        if (!root.contains(key)) {
             return null;
         }
-        return root.getCompound(key);
+        return root.getCompoundOrEmpty(key);
     }
 
     public static void remove(CompoundTag entityTag, Identifier componentId) {
-        if (entityTag == null || !entityTag.contains(ROOT_KEY, Tag.TAG_COMPOUND)) {
+        if (entityTag == null || !entityTag.contains(ROOT_KEY)) {
             return;
         }
-        CompoundTag root = entityTag.getCompound(ROOT_KEY);
+        CompoundTag root = entityTag.getCompoundOrEmpty(ROOT_KEY);
         root.remove(componentId.toString());
         if (root.isEmpty()) {
             entityTag.remove(ROOT_KEY);

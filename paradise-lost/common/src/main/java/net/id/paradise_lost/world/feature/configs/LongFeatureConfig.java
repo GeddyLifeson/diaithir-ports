@@ -1,5 +1,6 @@
 package net.id.paradise_lost.world.feature.configs;
 
+import net.minecraft.util.valueproviders.IntProviders;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderSet;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 public record LongFeatureConfig(IntProvider size, BlockStateProvider body, BlockStateProvider top, BlockStateProvider shell, float topChance, float shellChance, HolderSet<Block> validFloor) implements FeatureConfiguration {
     public static final Codec<LongFeatureConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            IntProvider.CODEC.fieldOf("size").forGetter(LongFeatureConfig::size),
+            IntProviders.CODEC.fieldOf("size").forGetter(LongFeatureConfig::size),
             BlockStateProvider.CODEC.fieldOf("body").forGetter(LongFeatureConfig::body),
             BlockStateProvider.CODEC.fieldOf("top").forGetter(LongFeatureConfig::top),
             BlockStateProvider.CODEC.fieldOf("shell").forGetter(LongFeatureConfig::shell),

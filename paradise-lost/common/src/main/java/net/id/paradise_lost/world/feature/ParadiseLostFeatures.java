@@ -20,6 +20,7 @@ public class ParadiseLostFeatures {
     private static final RegistrationProvider<Feature<?>> FEATURES =
             RegistrationProvider.get(Registries.FEATURE, ModConstants.MOD_ID);
 
+    public static final RandomPatchFeature RANDOM_PATCH = register("random_patch", new RandomPatchFeature(RandomPatchConfiguration.CODEC));
     public static final ParadiseLostLakeFeature LAKE = register("lake", new ParadiseLostLakeFeature(BlockStateConfiguration.CODEC));
 
     public static final ParadiseLostDeltaFeature DELTA_FEATURE = register("delta_feature", new ParadiseLostDeltaFeature(DeltaFeatureConfiguration.CODEC));

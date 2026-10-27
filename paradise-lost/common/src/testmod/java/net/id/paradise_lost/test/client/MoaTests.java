@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +39,7 @@ public final class MoaTests {
     }
 
     private static MoaEntity tamedMoa(ServerPlayer player) {
-        MoaEntity moa = EntityRegistry.MOA.get().spawn(player.serverLevel(), ahead(player, 2, 0), MobSpawnType.COMMAND);
+        MoaEntity moa = EntityRegistry.MOA.get().spawn(player.serverLevel(), ahead(player, 2, 0), EntitySpawnReason.COMMAND);
         moa.setNoAi(true);
         moa.getGenes().tame(player.getUUID());
         moa.syncGenes();

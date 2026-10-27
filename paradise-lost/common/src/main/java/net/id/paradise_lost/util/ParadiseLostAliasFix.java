@@ -74,7 +74,7 @@ public final class ParadiseLostAliasFix {
 
     private static void alias(Registry<?> registry, Identifier from, Identifier to) {
         if (!registry.containsKey(to)) {
-            ModConstants.LOGGER.warn("Not aliasing {} -> {}: {} is not registered in {}", from, to, to, registry.key().location());
+            ModConstants.LOGGER.warn("Not aliasing {} -> {}: {} is not registered in {}", from, to, to, registry.key().identifier());
             return;
         }
         ALIASES.put(from, to);

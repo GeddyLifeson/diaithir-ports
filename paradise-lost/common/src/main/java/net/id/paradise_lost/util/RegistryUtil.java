@@ -16,7 +16,7 @@ public class RegistryUtil {
             return false;
         }
 
-        DimensionType shatteredSky = world.registryAccess().registryOrThrow(Registries.DIMENSION_TYPE).get(type);
+        DimensionType shatteredSky = world.registryAccess().lookupOrThrow(Registries.DIMENSION_TYPE).get(type);
         return world.dimensionType().equals(shatteredSky);
     }
 

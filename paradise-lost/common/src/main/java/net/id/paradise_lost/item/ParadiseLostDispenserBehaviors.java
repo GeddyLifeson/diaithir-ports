@@ -7,7 +7,7 @@ import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
@@ -69,7 +69,7 @@ public class ParadiseLostDispenserBehaviors {
             EntityType<?> entityType = ((SpawnEggItem) stack.getItem()).getType(stack);
 
             try {
-                entityType.spawn(pointer.level(), stack, null, pointer.pos().relative(direction), MobSpawnType.DISPENSER, direction != Direction.UP, false);
+                entityType.spawn(pointer.level(), stack, null, pointer.pos().relative(direction), EntitySpawnReason.DISPENSER, direction != Direction.UP, false);
             } catch (Exception var6) {
                 LOGGER.error("Error while dispensing spawn egg from dispenser at {}", pointer.pos(), var6);
                 return ItemStack.EMPTY;

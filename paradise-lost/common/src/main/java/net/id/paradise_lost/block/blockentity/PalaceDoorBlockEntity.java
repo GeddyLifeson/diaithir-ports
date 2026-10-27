@@ -118,8 +118,8 @@ public class PalaceDoorBlockEntity extends BlockEntity {
     @Override
     public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
         super.loadAdditional(nbt, registryLookup);
-        this.doorOpened = nbt.getBoolean("doorOpened");
-        this.doorFullyOpened = nbt.getBoolean("doorOpened");
+        this.doorOpened = nbt.getBooleanOr("doorOpened", false);
+        this.doorFullyOpened = nbt.getBooleanOr("doorOpened", false);
     }
 
     @Override

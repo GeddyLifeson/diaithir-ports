@@ -235,8 +235,8 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
         if (source.is(DamageTypeTags.BYPASSES_EFFECTS)) {
             return damageAmount;
         }
-        if (this.hasEffect(MobEffects.DAMAGE_RESISTANCE) && !source.is(DamageTypeTags.BYPASSES_RESISTANCE)) {
-            MobEffectInstance resistance = this.getEffect(MobEffects.DAMAGE_RESISTANCE);
+        if (this.hasEffect(MobEffects.RESISTANCE) && !source.is(DamageTypeTags.BYPASSES_RESISTANCE)) {
+            MobEffectInstance resistance = this.getEffect(MobEffects.RESISTANCE);
             if (resistance != null) {
                 int reduction = (resistance.getAmplifier() + 1) * 5;
                 damageAmount = Math.max(damageAmount * (25 - reduction) / 25.0F, 0.0F);

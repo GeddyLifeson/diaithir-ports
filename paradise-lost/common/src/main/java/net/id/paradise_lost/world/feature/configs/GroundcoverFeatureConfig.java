@@ -1,5 +1,6 @@
 package net.id.paradise_lost.world.feature.configs;
 
+import net.minecraft.util.valueproviders.IntProviders;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -9,7 +10,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 public record GroundcoverFeatureConfig(BlockStateProvider states, IntProvider size, IntProvider spacing) implements FeatureConfiguration {
     public static final Codec<GroundcoverFeatureConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             BlockStateProvider.CODEC.fieldOf("states").forGetter(GroundcoverFeatureConfig::states),
-            IntProvider.CODEC.fieldOf("size").forGetter(GroundcoverFeatureConfig::size),
-            IntProvider.CODEC.fieldOf("spacing").forGetter(GroundcoverFeatureConfig::spacing)
+            IntProviders.CODEC.fieldOf("size").forGetter(GroundcoverFeatureConfig::size),
+            IntProviders.CODEC.fieldOf("spacing").forGetter(GroundcoverFeatureConfig::spacing)
     ).apply(instance, GroundcoverFeatureConfig::new));
 }

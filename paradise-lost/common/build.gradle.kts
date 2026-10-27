@@ -41,7 +41,7 @@ tasks.named<JavaCompile>("compileJava") {
 }
 
 sourceSets.named("main") {
-    java.srcDir(layout.buildDirectory.dir("tmp/commonRegSourcesJar/sources"))
+    java.srcDir("src/regutils/java")
     resources.srcDir(file("src/generated/resources"))
 }
 

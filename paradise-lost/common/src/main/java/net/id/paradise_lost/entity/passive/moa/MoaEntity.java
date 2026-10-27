@@ -39,7 +39,7 @@ import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.HasCustomInventoryScreen;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -131,7 +131,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, @Nullable SpawnGroupData entityData) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason spawnReason, @Nullable SpawnGroupData entityData) {
 
         MoaGenes genes = getGenes();
         if (!genes.isInitialized()) {
@@ -683,15 +683,15 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        entityData.set(AIR_TICKS, compound.getInt("airTicks"));
-        entityData.set(CHEST, ItemStack.parseOptional(this.registryAccess(), compound.getCompound("chest")));
+        entityData.set(AIR_TICKS, compound.getIntOr("airTicks", 0));
+        entityData.set(CHEST, ItemStack.parseOptional(this.registryAccess(), compound.getCompoundOrEmpty("chest")));
         refreshChest(false);
-        if (inventory != DUMMY && compound.contains("chestContents", Tag.TAG_LIST)) {
-            loadChestContents(compound.getList("chestContents", Tag.TAG_COMPOUND));
+        if (inventory != DUMMY && compound.contains("chestContents")) {
+            loadChestContents(compound.getListOrEmpty("chestContents"));
         }
         MoaGenesDataFix.migrate(compound);
-        if (compound.contains("moaGenes", Tag.TAG_COMPOUND)) {
-            getGenes().readFromNbt(compound.getCompound("moaGenes"), this.registryAccess());
+        if (compound.contains("moaGenes")) {
+            getGenes().readFromNbt(compound.getCompoundOrEmpty("moaGenes"), this.registryAccess());
         }
         syncGenes();
 
@@ -721,7 +721,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
             this.resetLove();
             other.resetLove();
             world.broadcastEntityEvent(this, (byte) 18);
-            if (world.getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
+            if (world.getGameRules().getBooleanOr(GameRules.RULE_DOMOBLOOT, false)) {
                 world.addFreshEntity(new ExperienceOrb(world, this.getX(), this.getY(), this.getZ(), this.getRandom().nextInt(16) + 4));
             }
 
@@ -909,15 +909,15 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         inventory.clearContent();
         boolean hasSlots = false;
         for (int i = 0; i < list.size(); i++) {
-            if (list.getCompound(i).contains("Slot", Tag.TAG_BYTE)) {
+            if (list.getCompoundOrEmpty(i).contains("Slot")) {
                 hasSlots = true;
                 break;
             }
         }
         if (hasSlots) {
             for (int i = 0; i < list.size(); i++) {
-                CompoundTag entry = list.getCompound(i);
-                int slot = entry.getByte("Slot") & 255;
+                CompoundTag entry = list.getCompoundOrEmpty(i);
+                int slot = entry.getByteOr("Slot", (byte) 0) & 255;
                 if (slot < inventory.getContainerSize()) {
                     inventory.setItem(slot, ItemStack.parse(this.registryAccess(), entry).orElse(ItemStack.EMPTY));
                 }

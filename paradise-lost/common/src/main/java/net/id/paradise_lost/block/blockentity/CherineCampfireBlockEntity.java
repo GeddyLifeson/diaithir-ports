@@ -125,12 +125,12 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
         this.itemsBeingCooked.clear();
         ContainerHelper.loadAllItems(nbt, this.itemsBeingCooked, registryLookup);
         int[] is;
-        if (nbt.contains("CookingTimes", 11)) {
+        if (nbt.contains("CookingTimes")) {
             is = nbt.getIntArray("CookingTimes");
             System.arraycopy(is, 0, this.cookingTimes, 0, Math.min(this.cookingTotalTimes.length, is.length));
         }
 
-        if (nbt.contains("CookingTotalTimes", 11)) {
+        if (nbt.contains("CookingTotalTimes")) {
             is = nbt.getIntArray("CookingTotalTimes");
             System.arraycopy(is, 0, this.cookingTotalTimes, 0, Math.min(this.cookingTotalTimes.length, is.length));
         }

@@ -58,7 +58,7 @@ import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.FarmlandBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -167,7 +167,7 @@ public class BlockRegistry {
         });
     }
 
-    public static class ParadiseLostFarmlandBlock extends FarmBlock {
+    public static class ParadiseLostFarmlandBlock extends FarmlandBlock {
         ParadiseLostFarmlandBlock(BlockBehaviour.Properties settings) {
             super(settings);
         }
@@ -432,7 +432,7 @@ public class BlockRegistry {
         return ofFullCopy(Blocks.DIRT).strength(2f).sound(SoundType.GILDED_BLACKSTONE);
     }
 
-    public static final RegistryObject<Block, FarmBlock> FARMLAND = add("farmland", () -> new ParadiseLostFarmlandBlock(ofFullCopy(Blocks.FARMLAND)));
+    public static final RegistryObject<Block, FarmlandBlock> FARMLAND = add("farmland", () -> new ParadiseLostFarmlandBlock(ofFullCopy(Blocks.FARMLAND)));
     public static final RegistryObject<Block, ParadiseLostDirtPathBlock> DIRT_PATH = add("grass_path", () -> new ParadiseLostDirtPathBlock(ofFullCopy(Blocks.DIRT_PATH).mapColor(MapColor.TERRACOTTA_CYAN), BlockRegistry.DIRT));
     public static final RegistryObject<Block, ParadiseLostDirtPathBlock> PERMAFROST_PATH = add("frozen_path", () -> new ParadiseLostDirtPathBlock(permafrost(), BlockRegistry.PERMAFROST));
     public static final RegistryObject<Block, ParadiseLostGrassBlock> HIGHLANDS_GRASS = add("highlands_grass", () -> new ParadiseLostGrassBlock(grassBlock()), cutoutMippedRenderLayer, tillable(), flattenable(BlockRegistry.DIRT_PATH));
@@ -616,8 +616,8 @@ public class BlockRegistry {
     public static final RegistryObject<Block, TallWaterPlantBlock> HONEY_NETTLE = add("honey_nettle", () -> new TallWaterPlantBlock(shrub().sound(SoundType.SMALL_DRIPLEAF)), List.of(compostable50), cutoutRenderLayer);
 
     public static final RegistryObject<Block, WallClingingPlantBlock> ROOTCAP = add("rootcap", () -> new WallClingingPlantBlock(ParadiseLostBlockTags.FUNGI_CLINGABLES, ofFullCopy(BROWN_MUSHROOM)), List.of(compostable65), cutoutRenderLayer);
-    public static final RegistryObject<Block, ParadiseLostMushroomPlantBlock> BROWN_SPORECAP = add("brown_sporecap", () -> new ParadiseLostMushroomPlantBlock(BlockTags.MUSHROOM_GROW_BLOCK, ParadiseLostTreeConfiguredFeatures.HUGE_BROWN_SPORECAP, ofFullCopy(BROWN_MUSHROOM)), List.of(compostable65), cutoutRenderLayer);
-    public static final RegistryObject<Block, ParadiseLostHangingMushroomPlantBlock> PINK_SPORECAP = add("pink_sporecap", () -> new ParadiseLostHangingMushroomPlantBlock(BlockTags.MUSHROOM_GROW_BLOCK, ofFullCopy(BROWN_MUSHROOM)), List.of(compostable65), cutoutRenderLayer);
+    public static final RegistryObject<Block, ParadiseLostMushroomPlantBlock> BROWN_SPORECAP = add("brown_sporecap", () -> new ParadiseLostMushroomPlantBlock(BlockTags.OVERWORLD_NATURAL_LOGS, ParadiseLostTreeConfiguredFeatures.HUGE_BROWN_SPORECAP, ofFullCopy(BROWN_MUSHROOM)), List.of(compostable65), cutoutRenderLayer);
+    public static final RegistryObject<Block, ParadiseLostHangingMushroomPlantBlock> PINK_SPORECAP = add("pink_sporecap", () -> new ParadiseLostHangingMushroomPlantBlock(BlockTags.OVERWORLD_NATURAL_LOGS, ofFullCopy(BROWN_MUSHROOM)), List.of(compostable65), cutoutRenderLayer);
 
     public static final RegistryObject<Block, Block> ROOTCAP_BLOCK = add("rootcap_block", () -> new HugeMushroomBlock(ofFullCopy(BROWN_MUSHROOM_BLOCK).instrument(NoteBlockInstrument.BASS).mapColor(MapColor.TERRACOTTA_BROWN)), List.of(compostable85));
     public static final RegistryObject<Block, Block> BROWN_SPORECAP_BLOCK = add("brown_sporecap_block", () -> new HugeMushroomBlock(ofFullCopy(BROWN_MUSHROOM_BLOCK).instrument(NoteBlockInstrument.BASS).mapColor(MapColor.COLOR_BROWN)), List.of(compostable85));

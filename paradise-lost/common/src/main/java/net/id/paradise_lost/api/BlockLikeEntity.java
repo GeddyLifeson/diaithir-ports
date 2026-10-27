@@ -228,19 +228,19 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
 
     @Override
     protected void readAdditionalSaveData(CompoundTag compound) {
-        this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), compound.getCompound("BlockState"));
-        this.moveTime = compound.getInt("Time");
-        if (compound.contains("HurtEntities", 99)) {
-            this.hurtEntities = compound.getBoolean("HurtEntities");
-            this.fallHurtAmount = compound.getFloat("FallHurtAmount");
-            this.fallHurtMax = compound.getInt("FallHurtMax");
+        this.blockState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), compound.getCompoundOrEmpty("BlockState"));
+        this.moveTime = compound.getIntOr("Time", 0);
+        if (compound.contains("HurtEntities")) {
+            this.hurtEntities = compound.getBooleanOr("HurtEntities", false);
+            this.fallHurtAmount = compound.getFloatOr("FallHurtAmount", 0F);
+            this.fallHurtMax = compound.getIntOr("FallHurtMax", 0);
         } else if (this.blockState.is(BlockTags.ANVIL)) {
             this.hurtEntities = true;
         }
 
-        if (compound.contains("DropItem", 99)) this.dropItem = compound.getBoolean("DropItem");
+        if (compound.contains("DropItem")) this.dropItem = compound.getBooleanOr("DropItem", false);
 
-        if (compound.contains("TileEntityData", 10)) this.blockEntityData = compound.getCompound("TileEntityData");
+        if (compound.contains("TileEntityData")) this.blockEntityData = compound.getCompoundOrEmpty("TileEntityData");
 
         if (this.blockState.isAir()) this.blockState = Blocks.STONE.defaultBlockState();
     }
@@ -337,7 +337,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
         if (this.isRemoved()) return;
 
         this.discard();
-        if (this.dropItem && this.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+        if (this.dropItem && this.level().getGameRules().getBooleanOr(GameRules.RULE_DOENTITYDROPS, false)) {
             Block.dropResources(this.blockState, this.level(), this.blockPosition());
         }
 

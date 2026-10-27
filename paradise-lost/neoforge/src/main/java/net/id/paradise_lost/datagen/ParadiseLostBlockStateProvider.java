@@ -409,10 +409,10 @@ public class ParadiseLostBlockStateProvider extends BlockStateProvider {
         ModelFile dry = existingModel("farmland");
         ModelFile moist = existingModel("farmland_moist");
         for (int i = 0; i < 7; i++) {
-            getVariantBuilder(block).partialState().with(FarmBlock.MOISTURE, i)
+            getVariantBuilder(block).partialState().with(FarmlandBlock.MOISTURE, i)
                     .modelForState().modelFile(dry).addModel();
         }
-        getVariantBuilder(block).partialState().with(FarmBlock.MOISTURE, 7)
+        getVariantBuilder(block).partialState().with(FarmlandBlock.MOISTURE, 7)
                 .modelForState().modelFile(moist).addModel();
         blockItem(block);
     }

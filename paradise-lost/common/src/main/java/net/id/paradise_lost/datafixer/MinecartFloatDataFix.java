@@ -20,8 +20,8 @@ public final class MinecartFloatDataFix {
             LegacyCardinalComponents.remove(entityTag, LegacyCardinalComponents.MINECART_FLOAT);
             return false;
         }
-        int time = legacy.contains("floatTime", Tag.TAG_INT) ? legacy.getInt("floatTime") : 0;
-        boolean floating = legacy.getBoolean("floating");
+        int time = legacy.contains("floatTime") ? legacy.getIntOr("floatTime", 0) : 0;
+        boolean floating = legacy.getBooleanOr("floating", false);
         MinecartFloatingHelper.setFloatTime(cart, floating ? Math.max(time, 1) : time);
         LegacyCardinalComponents.remove(entityTag, LegacyCardinalComponents.MINECART_FLOAT);
         ModConstants.LOGGER.debug("Migrated CCA minecart_float (floating={}, floatTime={})", floating, time);

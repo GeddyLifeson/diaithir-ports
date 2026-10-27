@@ -1,5 +1,6 @@
 package net.id.paradise_lost.block.natural;
 
+import net.id.paradise_lost.world.feature.ParadiseLostFeatures;
 import net.id.paradise_lost.registry.BlockRegistry;
 import net.id.paradise_lost.block.util.SpreadableParadiseLostBlock;
 import net.id.paradise_lost.world.feature.placed_features.ParadiseLostVegetationPlacedFeatures;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.id.paradise_lost.world.feature.configs.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class ParadiseLostGrassBlock extends SpreadableParadiseLostBlock implemen
                 }
                 placedFeature = ((RandomPatchConfiguration) ((ConfiguredFeature) list.get(0)).config()).feature();
             } else {
-                placedFeature = world.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(ParadiseLostVegetationPlacedFeatures.GRASS).get();
+                placedFeature = world.registryAccess().lookupOrThrow(Registries.PLACED_FEATURE).getHolder(ParadiseLostVegetationPlacedFeatures.GRASS).get();
             }
             (placedFeature.value()).place(world, world.getChunkSource().getGenerator(), random, blockPos2);
         }

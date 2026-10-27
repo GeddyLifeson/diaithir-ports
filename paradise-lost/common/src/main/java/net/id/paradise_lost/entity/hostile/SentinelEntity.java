@@ -18,7 +18,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -72,7 +72,7 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
     public void die(DamageSource damageSource) {
         super.die(damageSource);
         if (this.level() instanceof ServerLevel serverWorld && this.getEnlightened() && damageSource.is(DamageTypeTags.IS_PLAYER_ATTACK)) {
-            EntityRegistry.QUINT.get().spawn(serverWorld, this.blockPosition().above(), MobSpawnType.MOB_SUMMONED);
+            EntityRegistry.QUINT.get().spawn(serverWorld, this.blockPosition().above(), EntitySpawnReason.MOB_SUMMONED);
         }
     }
 
@@ -83,7 +83,7 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
 
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, @Nullable SpawnGroupData entityData) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason spawnReason, @Nullable SpawnGroupData entityData) {
         return super.finalizeSpawn(world, difficulty, spawnReason, new Zombie.ZombieGroupData(false, false));
     }
 
@@ -163,14 +163,14 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        this.entityData.set(ENLIGHTENED, compound.getBoolean("Enlightened"));
+        this.entityData.set(ENLIGHTENED, compound.getBooleanOr("Enlightened", false));
     }
 
     static {
         ENLIGHTENED = SynchedEntityData.defineId(SentinelEntity.class, EntityDataSerializers.BOOLEAN);
     }
 
-    public static boolean noSpawn(EntityType<? extends Monster> type, ServerLevelAccessor world, MobSpawnType spawnReason, BlockPos pos, RandomSource random) {
+    public static boolean noSpawn(EntityType<? extends Monster> type, ServerLevelAccessor world, EntitySpawnReason spawnReason, BlockPos pos, RandomSource random) {
         return false;
     }
 

@@ -97,17 +97,11 @@ dependencies {
 
 // Compile NeoForge RegistrationUtils sources into this mod (AutoService factory on classpath for runs).
 sourceSets.named("main") {
-    java.srcDir(layout.buildDirectory.dir("tmp/neoforgeRegSourcesJar/sources"))
+    java.srcDir("src/regutils/java")
 }
 
 tasks.named<JavaCompile>("compileJava") {
     dependsOn("neoforgeRegSourcesJar")
-}
-
-// Shade RegistrationUtils into the mod jar without adding the joined GAMELIBRARY to runtimeClasspath.
-afterEvaluate {
-    val reg = extensions.getByName("reg") as com.matyrobbrt.registrationutils.gradle.RegExtension
-    reg.configureJarTask(tasks.named<Jar>("jar").get())
 }
 
 // Do not package Fabric-only metadata into the NeoForge mod.

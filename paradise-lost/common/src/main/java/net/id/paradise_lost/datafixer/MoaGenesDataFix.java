@@ -11,7 +11,7 @@ public final class MoaGenesDataFix {
     }
 
     public static boolean migrate(CompoundTag entityTag) {
-        if (entityTag == null || entityTag.contains(MOA_GENES_KEY, Tag.TAG_COMPOUND)) {
+        if (entityTag == null || entityTag.contains(MOA_GENES_KEY)) {
             return false;
         }
         CompoundTag legacy = LegacyCardinalComponents.get(entityTag, LegacyCardinalComponents.MOA_GENETICS);

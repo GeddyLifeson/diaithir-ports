@@ -145,9 +145,9 @@ public class IncubatorBlockEntity extends BlockEntity {
             egg = ItemStack.EMPTY;
         }
 
-        hatchTicks = nbt.getInt("hatchTicks");
+        hatchTicks = nbt.getIntOr("hatchTicks", 0);
         if (nbt.contains("itemFacing")) {
-            itemFacing = Direction.byName(nbt.getString("itemFacing"));
+            itemFacing = Direction.byName(nbt.getStringOr("itemFacing", ""));
             if (itemFacing == null || !itemFacing.getAxis().isHorizontal()) {
                 itemFacing = Direction.SOUTH;
             }

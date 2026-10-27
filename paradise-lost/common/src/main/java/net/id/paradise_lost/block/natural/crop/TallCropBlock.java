@@ -25,7 +25,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.FarmlandBlock;
 
 @SuppressWarnings("unused")
 public class TallCropBlock extends CropBlock {
@@ -102,7 +102,7 @@ public class TallCropBlock extends CropBlock {
                 BlockState soil = level.getBlockState(below.offset(x, 0, z));
                 if (soil.is(Blocks.FARMLAND)) {
                     local = 1.0F;
-                    if (soil.getValue(FarmBlock.MOISTURE) > 0) {
+                    if (soil.getValue(FarmlandBlock.MOISTURE) > 0) {
                         local = 3.0F;
                     }
                 }

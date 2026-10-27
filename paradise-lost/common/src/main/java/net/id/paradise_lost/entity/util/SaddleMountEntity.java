@@ -103,7 +103,7 @@ public abstract class SaddleMountEntity extends MountableEntity implements Saddl
     @Override
     public void readAdditionalSaveData(CompoundTag nbt) {
         super.readAdditionalSaveData(nbt);
-        this.setSaddled(nbt.getBoolean("saddled"));
+        this.setSaddled(nbt.getBooleanOr("saddled", false));
     }
 
     @Override

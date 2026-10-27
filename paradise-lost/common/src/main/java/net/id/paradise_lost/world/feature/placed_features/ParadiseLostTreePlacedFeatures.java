@@ -9,7 +9,7 @@ import net.id.paradise_lost.registry.BlockRegistry;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.WeightedListInt;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -130,55 +130,55 @@ public class ParadiseLostTreePlacedFeatures extends ParadiseLostPlacedFeatures {
         register(context, THICKET_AUREL_TREE, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.THICKET_AUREL_TREE),
                 BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(BlockRegistry.AUREL_WOODSTUFF.sapling().get().defaultBlockState(), BlockPos.ZERO)));
         register(context, CRAGLANDS_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.CRAGLANDS_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(1), 9).add(ConstantInt.of(3), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(1), 9).add(ConstantInt.of(3), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, DENSE_SHIELD_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.DENSE_SHIELD_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(4), 9).add(ConstantInt.of(6), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(4), 9).add(ConstantInt.of(6), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, MIXED_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.MIXED_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(0), 15).add(ConstantInt.of(1), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(0), 15).add(ConstantInt.of(1), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, PLATEAU_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.PLATEAU_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(0), 10).add(ConstantInt.of(1), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(0), 10).add(ConstantInt.of(1), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, RAINBOW_FOREST_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.RAINBOW_FOREST_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(11), 9).add(ConstantInt.of(12), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(11), 9).add(ConstantInt.of(12), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, SCATTERED_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.SCATTERED_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(5), 9).add(ConstantInt.of(6), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(5), 9).add(ConstantInt.of(6), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, SHIELD_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.SHIELD_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(0), 6).add(ConstantInt.of(1), 6).add(ConstantInt.of(10), 3).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(0), 6).add(ConstantInt.of(1), 6).add(ConstantInt.of(10), 3).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, SPARSE_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.SPARSE_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(0), 15).add(ConstantInt.of(1), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(0), 15).add(ConstantInt.of(1), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),
                 BiomeFilter.biome());
         register(context, THICKET_TREES, configuredFeatures.getOrThrow(ParadiseLostTreeConfiguredFeatures.THICKET_TREES),
-                CountPlacement.of(new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(6), 7).add(ConstantInt.of(8), 1).build())),
+                CountPlacement.of(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(6), 7).add(ConstantInt.of(8), 1).build())),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 HeightmapPlacement.onHeightmap(Heightmap.Types.OCEAN_FLOOR),

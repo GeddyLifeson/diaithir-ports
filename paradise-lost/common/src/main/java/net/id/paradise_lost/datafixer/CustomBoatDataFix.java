@@ -20,10 +20,10 @@ public final class CustomBoatDataFix {
     }
 
     public static boolean migrate(CompoundTag entityTag) {
-        if (entityTag == null || !entityTag.contains("id", Tag.TAG_STRING)) {
+        if (entityTag == null || !entityTag.contains("id")) {
             return false;
         }
-        String rawId = entityTag.getString("id");
+        String rawId = entityTag.getStringOr("id", "");
         Identifier id = Identifier.tryParse(rawId);
         if (id == null) {
             return false;
@@ -32,10 +32,10 @@ public final class CustomBoatDataFix {
         if (!chest && !isBoat(id)) {
             return false;
         }
-        if (!entityTag.contains("Type", Tag.TAG_STRING)) {
+        if (!entityTag.contains("Type")) {
             return false;
         }
-        String type = normalizeType(entityTag.getString("Type"));
+        String type = normalizeType(entityTag.getStringOr("Type", ""));
         String wood = WOOD_BY_TYPE.get(type);
         if (wood == null) {
             return false;

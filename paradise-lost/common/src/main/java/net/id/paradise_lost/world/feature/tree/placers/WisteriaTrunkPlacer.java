@@ -1,5 +1,7 @@
 package net.id.paradise_lost.world.feature.tree.placers;
 
+import net.minecraft.util.valueproviders.FloatProviders;
+import net.minecraft.util.valueproviders.IntProviders;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.id.paradise_lost.world.feature.tree.ParadiseLostTreeHell;
@@ -21,10 +23,10 @@ import java.util.function.BiConsumer;
 public class WisteriaTrunkPlacer extends TrunkPlacer {
 
     public static final MapCodec<WisteriaTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-            IntProvider.CODEC.fieldOf("max_branch_range").forGetter(placer -> placer.maxBranchRange),
-            IntProvider.CODEC.fieldOf("branch_count").forGetter(placer -> placer.branchCount),
-            FloatProvider.CODEC.fieldOf("branch_range").forGetter(placer -> placer.branchRange),
-            FloatProvider.CODEC.fieldOf("branch_height").forGetter(placer -> placer.branchHeight)
+            IntProviders.CODEC.fieldOf("max_branch_range").forGetter(placer -> placer.maxBranchRange),
+            IntProviders.CODEC.fieldOf("branch_count").forGetter(placer -> placer.branchCount),
+            FloatProviders.CODEC.fieldOf("branch_range").forGetter(placer -> placer.branchRange),
+            FloatProviders.CODEC.fieldOf("branch_height").forGetter(placer -> placer.branchHeight)
     ).and(TrunkPlacer.trunkPlacerParts(instance)).apply(instance, WisteriaTrunkPlacer::new));
 
     private final IntProvider maxBranchRange, branchCount;
