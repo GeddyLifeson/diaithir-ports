@@ -1,0 +1,15 @@
+{
+  "type": "diaithirforgeworks:crucible",
+  "inputs": [
+    {
+      "ingredient": "minecraft:netherrack",
+      "count": 1
+    }
+  ],
+  "energy": 3000,
+  "time": 200,
+  "fluid": {
+    "id": "minecraft:lava",
+    "amount": 100
+  }
+}
