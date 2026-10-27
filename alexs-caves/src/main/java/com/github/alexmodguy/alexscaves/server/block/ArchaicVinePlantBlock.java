@@ -14,7 +14,7 @@ public class ArchaicVinePlantBlock extends GrowingPlantBodyBlock {
     public static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
 
     public ArchaicVinePlantBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).randomTicks().noCollision().instabreak().sound(SoundType.VINE), Direction.DOWN, SHAPE, false);
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_GREEN).randomTicks().noCollision().instabreak().sound(SoundType.VINE), Direction.DOWN, SHAPE, false);
     }
 
     @Override

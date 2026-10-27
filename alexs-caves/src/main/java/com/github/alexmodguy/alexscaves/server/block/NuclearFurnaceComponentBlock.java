@@ -57,7 +57,7 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
     );
 
     public NuclearFurnaceComponentBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).pushReaction(PushReaction.BLOCK).strength(5, 1001).sound(ACSoundTypes.NUCLEAR_BOMB).noOcclusion().randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).pushReaction(PushReaction.BLOCK).strength(5, 1001).sound(ACSoundTypes.NUCLEAR_BOMB).noOcclusion().randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, Boolean.valueOf(false)));
     }
 

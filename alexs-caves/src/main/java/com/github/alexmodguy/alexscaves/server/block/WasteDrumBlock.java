@@ -17,7 +17,7 @@ public class WasteDrumBlock extends Block {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     public WasteDrumBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.YELLOW).strength(3.5F).sound(ACSoundTypes.SCRAP_METAL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.YELLOW).strength(3.5F).sound(ACSoundTypes.SCRAP_METAL));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 

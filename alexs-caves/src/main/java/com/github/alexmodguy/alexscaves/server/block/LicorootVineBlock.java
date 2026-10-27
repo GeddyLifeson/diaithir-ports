@@ -37,7 +37,7 @@ public class LicorootVineBlock extends Block implements SimpleWaterloggedBlock {
     private static final VoxelShape SHAPE_SOUTH = Block.box(0.0D, 1.0D, 0.0D, 16.0D, 15.0D, 16.0D);
 
     public LicorootVineBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.NETHER_WOOD).instrument(NoteBlockInstrument.SNARE).noOcclusion().noCollision());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.NETHER_WOOD).instrument(NoteBlockInstrument.SNARE).noOcclusion().noCollision());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(FACING, Direction.UP).setValue(END, false));
     }
 

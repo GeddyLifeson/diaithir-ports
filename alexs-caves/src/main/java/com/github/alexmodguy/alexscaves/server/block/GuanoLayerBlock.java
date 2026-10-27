@@ -31,7 +31,7 @@ import javax.annotation.Nullable;
 public class GuanoLayerBlock extends SnowLayerBlock implements Fallable {
 
     public GuanoLayerBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN).strength(0.3F).sound(SoundType.FROGSPAWN).forceSolidOff().randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.BROWN).strength(0.3F).sound(SoundType.FROGSPAWN).forceSolidOff().randomTicks());
     }
 
     @Override

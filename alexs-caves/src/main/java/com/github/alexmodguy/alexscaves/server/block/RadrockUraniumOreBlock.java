@@ -18,7 +18,7 @@ import net.minecraft.world.level.material.MapColor;
 public class RadrockUraniumOreBlock extends Block {
 
     public RadrockUraniumOreBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).requiresCorrectToolForDrops().strength(5F, 11.0F).sound(ACSoundTypes.URANIUM));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_GREEN).requiresCorrectToolForDrops().strength(5F, 11.0F).sound(ACSoundTypes.URANIUM));
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource randomSource) {

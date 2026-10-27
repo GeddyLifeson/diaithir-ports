@@ -22,7 +22,7 @@ import java.util.Locale;
 public class GazingPearlItem extends Item {
 
     public GazingPearlItem() {
-        super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     public static int getPearlColor(ItemStack stack) {

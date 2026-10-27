@@ -1,120 +1,54 @@
 package com.github.alexmodguy.alexscaves.server.item;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
-import net.minecraft.util.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
+import java.util.Map;
 
-/**
- * Armor material helper class for NeoForge 1.21.
- * In 1.21, ArmorMaterial is a record and must be registered.
- */
+/** Armour set data in the 26.1 form: a vanilla ArmorMaterial record plus an equipment asset key. */
 public class ACArmorMaterial {
-
-    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, AlexsCaves.MODID);
-
-    protected static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
-
     private final String name;
-    private final int durability;
-    private final int[] damageReduction;
-    private final int enchantability;
-    private final Holder<SoundEvent> sound;
-    private final float toughness;
-    private Supplier<Ingredient> ingredient = () -> Ingredient.EMPTY;
-    public float knockbackResistance = 0.0F;
-    private Holder<ArmorMaterial> holder;
+    private final ArmorMaterial material;
+    public final float knockbackResistance;
 
     public ACArmorMaterial(String name, int durability, int[] damageReduction, int enchantability, Holder<SoundEvent> sound, float toughness) {
-        this.name = name;
-        this.durability = durability;
-        this.damageReduction = damageReduction;
-        this.enchantability = enchantability;
-        this.sound = sound;
-        this.toughness = toughness;
-        this.knockbackResistance = 0;
-        registerMaterial();
+        this(name, durability, damageReduction, enchantability, sound, toughness, 0F);
     }
 
+    @SuppressWarnings("unchecked")
     public ACArmorMaterial(String name, int durability, int[] damageReduction, int enchantability, Holder<SoundEvent> sound, float toughness, float knockbackResist) {
         this.name = name;
-        this.durability = durability;
-        this.damageReduction = damageReduction;
-        this.enchantability = enchantability;
-        this.sound = sound;
-        this.toughness = toughness;
         this.knockbackResistance = knockbackResist;
-        registerMaterial();
+        Map<ArmorType, Integer> defense = new EnumMap<>(ArmorType.class);
+        defense.put(ArmorType.BOOTS, damageReduction[3]);
+        defense.put(ArmorType.LEGGINGS, damageReduction[2]);
+        defense.put(ArmorType.CHESTPLATE, damageReduction[1]);
+        defense.put(ArmorType.HELMET, damageReduction[0]);
+        defense.put(ArmorType.BODY, damageReduction[1]);
+        this.material = new ArmorMaterial(durability, defense, enchantability, sound, toughness, knockbackResist,
+                TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "repairs_" + name + "_armor")),
+                ResourceKey.create((ResourceKey) EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, name)));
     }
 
-    private void registerMaterial() {
-        this.holder = ARMOR_MATERIALS.register(this.name, () -> {
-            EnumMap<ArmorItem.Type, Integer> defenseMap = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, this.damageReduction[3]);
-                map.put(ArmorItem.Type.LEGGINGS, this.damageReduction[2]);
-                map.put(ArmorItem.Type.CHESTPLATE, this.damageReduction[1]);
-                map.put(ArmorItem.Type.HELMET, this.damageReduction[0]);
-                map.put(ArmorItem.Type.BODY, this.damageReduction[1]);
-            });
-            return new ArmorMaterial(
-                    defenseMap,
-                    this.enchantability,
-                    this.sound,
-                    this.ingredient,
-                    List.of(new ArmorMaterial.Layer(Identifier.fromNamespaceAndPath(AlexsCaves.MODID, this.name))),
-                    this.toughness,
-                    this.knockbackResistance
-            );
-        });
-    }
+    public ArmorMaterial material() { return material; }
 
-    public int getDurabilityForType(ArmorItem.Type type) {
-        return MAX_DAMAGE_ARRAY[type.ordinal()] * this.durability;
-    }
+    public String getName() { return name; }
 
-    public int getDefenseForType(ArmorItem.Type type) {
-        return this.damageReduction[type.ordinal()];
-    }
+    public float getToughness() { return material.toughness(); }
 
-    public int getEnchantmentValue() {
-        return this.enchantability;
-    }
+    public float getKnockbackResistance() { return knockbackResistance; }
 
-    public Holder<SoundEvent> getEquipSound() {
-        return this.sound;
-    }
+    public int getEnchantmentValue() { return material.enchantmentValue(); }
 
-    public Ingredient getRepairIngredient() {
-        return this.ingredient.get();
-    }
-
-    public void setRepairMaterial(Ingredient ingredient) {
-        this.ingredient = () -> ingredient;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getToughness() {
-        return toughness;
-    }
-
-    public float getKnockbackResistance() {
-        return knockbackResistance;
-    }
-
-    public Holder<ArmorMaterial> getHolder() {
-        return holder;
-    }
+    public Holder<SoundEvent> getEquipSound() { return material.equipSound(); }
 }

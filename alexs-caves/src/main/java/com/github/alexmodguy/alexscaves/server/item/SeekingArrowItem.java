@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 
 public class SeekingArrowItem extends ArrowItem {
     public SeekingArrowItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     @Override

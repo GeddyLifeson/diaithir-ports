@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 public class SodaBottleRocketItem extends Item {
 
     public SodaBottleRocketItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     public InteractionResult useOn(UseOnContext context) {

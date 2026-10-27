@@ -27,7 +27,7 @@ import java.util.UUID;
 public class CandyCaneHookItem extends Item {
 
     public CandyCaneHookItem() {
-        super(new Item.Properties().durability(200));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().durability(200));
     }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {

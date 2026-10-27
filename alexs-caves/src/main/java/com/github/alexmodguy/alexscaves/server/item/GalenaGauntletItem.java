@@ -26,7 +26,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 public class GalenaGauntletItem extends Item {
     public GalenaGauntletItem() {
-        super(new Item.Properties().stacksTo(1).durability(400).rarity(Rarity.UNCOMMON));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(400).rarity(Rarity.UNCOMMON));
     }
 
     @Override

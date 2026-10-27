@@ -41,7 +41,7 @@ import java.util.function.Predicate;
 public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTags {
 
     public DreadbowItem() {
-        super(new Item.Properties().rarity(ACItemRegistry.getRarityDemonic()).durability(500));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().rarity(ACItemRegistry.getRarityDemonic()).durability(500));
     }
 
     // Helper methods for custom data

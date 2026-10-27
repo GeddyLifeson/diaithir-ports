@@ -24,7 +24,7 @@ public class MagneticActivatorBlock extends DirectionalBlock {
     }
 
     public MagneticActivatorBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(5F, 15.0F).sound(ACSoundTypes.SCRAP_METAL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(5F, 15.0F).sound(ACSoundTypes.SCRAP_METAL));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
     }
 

@@ -25,7 +25,7 @@ public class SpelunkeryTableBlock extends Block {
     private static final Component CONTAINER_TITLE = Component.translatable("alexscaves.container.spelunkery_table");
 
     public SpelunkeryTableBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.5F).sound(SoundType.WOOD));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.WOOD).strength(2.5F).sound(SoundType.WOOD));
     }
 
     @Override

@@ -41,7 +41,7 @@ public class PrimalMagmaBlock extends Block {
     public static final BooleanProperty PERMANENT = BooleanProperty.create("permanent");
     public static final VoxelShape SINK_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
     public PrimalMagmaBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
             return 5;
         }).strength(0.5F).isValidSpawn((state, getter, pos, entityType) -> {
             return entityType.fireImmune();

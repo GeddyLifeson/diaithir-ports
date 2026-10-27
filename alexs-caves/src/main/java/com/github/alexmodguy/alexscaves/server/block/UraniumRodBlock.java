@@ -57,7 +57,7 @@ public class UraniumRodBlock extends RotatedPillarBlock implements SimpleWaterlo
     public static final IntegerProperty LIQUID_LOGGED = IntegerProperty.create("liquid_logged", 0, 2);
 
     public UraniumRodBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(1.5F).lightLevel((state -> 9)).emissiveRendering((state, level, pos) -> true).sound(ACSoundTypes.URANIUM));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(1.5F).lightLevel((state -> 9)).emissiveRendering((state, level, pos) -> true).sound(ACSoundTypes.URANIUM));
         this.registerDefaultState(this.defaultBlockState().setValue(LIQUID_LOGGED, 0).setValue(AXIS, Direction.Axis.Y));
     }
 

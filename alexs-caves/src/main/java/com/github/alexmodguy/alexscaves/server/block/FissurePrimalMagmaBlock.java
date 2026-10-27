@@ -49,7 +49,7 @@ public class FissurePrimalMagmaBlock extends Block {
     public static final IntegerProperty REGEN_HEIGHT = IntegerProperty.create("regen_height", 0, 4);
 
     public FissurePrimalMagmaBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
             return 5;
         }).strength(0.5F).isValidSpawn((state, getter, pos, entityType) -> {
             return entityType.fireImmune();

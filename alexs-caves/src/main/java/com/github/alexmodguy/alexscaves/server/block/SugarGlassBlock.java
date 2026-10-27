@@ -15,7 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 public class SugarGlassBlock extends TransparentBlock {
 
     public SugarGlassBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).noOcclusion().requiresCorrectToolForDrops().strength(0.3F, 0.0F).sound(SoundType.GLASS));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_LIGHT_BLUE).noOcclusion().requiresCorrectToolForDrops().strength(0.3F, 0.0F).sound(SoundType.GLASS));
     }
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {

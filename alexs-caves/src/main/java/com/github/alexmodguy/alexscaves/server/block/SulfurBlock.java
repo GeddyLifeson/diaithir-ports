@@ -15,7 +15,7 @@ import net.minecraft.world.level.material.MapColor;
 public class SulfurBlock extends Block {
 
     public SulfurBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2F, 4.0F).sound(ACSoundTypes.SULFUR).randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_YELLOW).strength(2F, 4.0F).sound(ACSoundTypes.SULFUR).randomTicks());
     }
 
     public void randomTick(BlockState currentState, ServerLevel level, BlockPos blockPos, RandomSource randomSource) {

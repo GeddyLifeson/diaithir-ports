@@ -46,7 +46,7 @@ public class GeothermalVentBlock extends BaseEntityBlock {
     }
 
     public GeothermalVentBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(2F, 5.0F).sound(SoundType.TUFF));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(2F, 5.0F).sound(SoundType.TUFF));
         this.registerDefaultState(this.stateDefinition.any().setValue(SMOKE_TYPE, Integer.valueOf(0)).setValue(SPAWNING_PARTICLES, true));
     }
 

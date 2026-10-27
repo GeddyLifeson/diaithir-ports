@@ -20,7 +20,7 @@ public class PottedFlytrapBlock extends FlowerPotBlock {
     public static final BooleanProperty OPEN = BooleanProperty.create("open");
 
     public PottedFlytrapBlock() {
-        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> ACBlockRegistry.FLYTRAP.get(), BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY).randomTicks());
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> ACBlockRegistry.FLYTRAP.get(), com.github.alexmodguy.alexscaves.server.misc.ACProps.block().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY).randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(OPEN, Boolean.valueOf(true)));
     }
 

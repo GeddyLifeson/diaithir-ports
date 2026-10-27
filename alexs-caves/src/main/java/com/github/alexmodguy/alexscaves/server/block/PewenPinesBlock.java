@@ -26,7 +26,7 @@ public class PewenPinesBlock extends BushBlock {
     }
 
     public PewenPinesBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN).instabreak().sound(SoundType.ROOTS).randomTicks().offsetType(BlockBehaviour.OffsetType.XZ).noOcclusion().replaceable().noCollision());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.GREEN).instabreak().sound(SoundType.ROOTS).randomTicks().offsetType(BlockBehaviour.OffsetType.XZ).noOcclusion().replaceable().noCollision());
     }
 
     public boolean canSurvive(BlockState state, LevelReader levelReader, BlockPos pos) {

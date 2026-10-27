@@ -30,7 +30,7 @@ public class ConfectionOvenBlock extends BaseEntityBlock {
     public static final IntegerProperty COOKSTATE = IntegerProperty.create("cookstate", 0, 2);
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public ConfectionOvenBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(1.5F).lightLevel(blockState -> blockState.getValue(COOKSTATE) == 1 ? 10 : 0));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_BROWN).strength(1.5F).lightLevel(blockState -> blockState.getValue(COOKSTATE) == 1 ? 10 : 0));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(POWERED, Boolean.valueOf(false)).setValue(COOKSTATE, 0));
     }
 

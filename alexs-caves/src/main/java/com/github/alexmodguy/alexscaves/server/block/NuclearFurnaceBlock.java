@@ -41,7 +41,7 @@ public class NuclearFurnaceBlock extends BaseEntityBlock {
     }
 
     public NuclearFurnaceBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(5, 1001).sound(ACSoundTypes.NUCLEAR_BOMB).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).strength(5, 1001).sound(ACSoundTypes.NUCLEAR_BOMB).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 

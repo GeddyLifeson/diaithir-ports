@@ -51,7 +51,7 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
     };
 
     public RaygunItem() {
-        super(new Item.Properties().stacksTo(1));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1));
     }
 
     @Override

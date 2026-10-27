@@ -24,7 +24,7 @@ public class MagneticLevitationRailBlock extends BaseRailBlock {
     }
 
     public MagneticLevitationRailBlock() {
-        super(true, BlockBehaviour.Properties.of().noCollision().strength(0.7F).sound(SoundType.METAL).lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
+        super(true, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().noCollision().strength(0.7F).sound(SoundType.METAL).lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
         this.registerDefaultState(this.defaultBlockState().setValue(SHAPE, RailShape.NORTH_SOUTH).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 

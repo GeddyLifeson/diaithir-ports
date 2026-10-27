@@ -1,5 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.item;
 
+import net.minecraft.world.item.Item;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import net.minecraft.world.entity.Entity;
@@ -7,7 +8,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -16,12 +16,12 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 
-public class HazmatArmorItem extends ArmorItem {
+public class HazmatArmorItem extends Item {
 
     private final ACArmorMaterial acMaterial;
 
-    public HazmatArmorItem(ACArmorMaterial armorMaterial, Type slot) {
-        super(armorMaterial.getHolder(), slot, new Properties().durability(armorMaterial.getDurabilityForType(slot)));
+    public HazmatArmorItem(ACArmorMaterial armorMaterial, net.minecraft.world.item.equipment.ArmorType slot) {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().humanoidArmor(armorMaterial.material(), slot));
         this.acMaterial = armorMaterial;
     }
 

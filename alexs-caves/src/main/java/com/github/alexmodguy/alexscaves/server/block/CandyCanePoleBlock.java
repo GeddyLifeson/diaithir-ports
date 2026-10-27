@@ -25,7 +25,7 @@ import net.neoforged.neoforge.common.ItemAbilities;
 public class CandyCanePoleBlock extends CrossCollisionBlock {
 
     public CandyCanePoleBlock() {
-        super(2.0F, 2.0F, 16.0F, 16.0F, 16.0F, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape());
+        super(2.0F, 2.0F, 16.0F, 16.0F, 16.0F, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(NORTH, false).setValue(EAST, false).setValue(SOUTH, false).setValue(WEST, false));
     }
 

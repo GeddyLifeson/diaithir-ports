@@ -15,7 +15,7 @@ import net.neoforged.neoforge.common.ItemAbilities;
 public class CandyCaneBlock extends RotatedPillarBlock {
 
     public CandyCaneBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(2.0F, 3.0F).sound(ACSoundTypes.HARD_CANDY));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).strength(2.0F, 3.0F).sound(ACSoundTypes.HARD_CANDY));
     }
 
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {

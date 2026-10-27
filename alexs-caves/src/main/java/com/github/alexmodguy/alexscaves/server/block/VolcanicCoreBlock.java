@@ -39,7 +39,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
     }
 
     public VolcanicCoreBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> {
             return 8;
         }).strength(55.0F, 1200.0F).isValidSpawn((state, getter, pos, entityType) -> {
             return entityType.fireImmune();

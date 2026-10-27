@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 
 public class BurrowingArrowItem extends ArrowItem {
     public BurrowingArrowItem() {
-        super(new Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     @Override

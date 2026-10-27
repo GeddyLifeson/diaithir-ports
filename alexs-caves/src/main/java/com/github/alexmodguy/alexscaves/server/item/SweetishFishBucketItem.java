@@ -22,7 +22,7 @@ public class SweetishFishBucketItem extends ModFishBucketItem{
     private final GummyColors color;
 
     public SweetishFishBucketItem(GummyColors color) {
-        super(ACEntityRegistry.SWEETISH_FISH, ACFluidRegistry.PURPLE_SODA_FLUID_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
+        super(ACEntityRegistry.SWEETISH_FISH, ACFluidRegistry.PURPLE_SODA_FLUID_SOURCE, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().craftRemainder(Items.BUCKET).stacksTo(1));
         this.color = color;
     }
 

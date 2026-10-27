@@ -27,7 +27,7 @@ import java.util.List;
 public class BiomeTreatItem extends CaveInfoItem {
 
     public BiomeTreatItem() {
-        super(new Item.Properties().stacksTo(1).food(ACFoods.BIOME_TREAT), false);
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).food(ACFoods.BIOME_TREAT.food(), ACFoods.BIOME_TREAT.consumable()), false);
     }
 
     @Override

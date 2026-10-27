@@ -45,7 +45,7 @@ public class NuclearSirenBlock extends BaseEntityBlock implements SimpleWaterlog
     );
 
     public NuclearSirenBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.RAW_IRON).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL).noOcclusion().dynamicShape().randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.RAW_IRON).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL).noOcclusion().dynamicShape().randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(POWERED, Boolean.valueOf(false)).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 

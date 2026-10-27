@@ -30,7 +30,7 @@ import java.util.List;
 public class JellyBeanItem extends PotionItem {
 
     public JellyBeanItem() {
-        super(new Item.Properties().food(ACFoods.JELLY_BEAN).stacksTo(16));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().food(ACFoods.JELLY_BEAN.food(), ACFoods.JELLY_BEAN.consumable()).stacksTo(16));
     }
 
     public static int getBeanColor(ItemStack stack) {

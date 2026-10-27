@@ -26,7 +26,7 @@ import java.util.Optional;
 public class SackOfSatingItem extends Item {
 
     public SackOfSatingItem() {
-        super(new Item.Properties().stacksTo(1).rarity(ACItemRegistry.getRaritySweet()));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).rarity(ACItemRegistry.getRaritySweet()));
     }
 
     public static int getHunger(ItemStack itemStack) {

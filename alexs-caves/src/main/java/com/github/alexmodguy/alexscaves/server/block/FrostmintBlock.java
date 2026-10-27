@@ -28,7 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class FrostmintBlock extends SlabBlock implements Fallable {
     public FrostmintBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL).strength(1.0F, 1.5F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.WOOL).strength(1.0F, 1.5F).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASS));
     }
 
     @Override

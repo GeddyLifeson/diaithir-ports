@@ -7,7 +7,7 @@ import net.minecraft.world.level.material.MapColor;
 
 public class PorousCoprolithBlock extends Block {
     public PorousCoprolithBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.DIRT).requiresCorrectToolForDrops().strength(1.75F, 4.0F).sound(SoundType.CALCITE).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.DIRT).requiresCorrectToolForDrops().strength(1.75F, 4.0F).sound(SoundType.CALCITE).noOcclusion());
     }
 
 }

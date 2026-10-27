@@ -15,7 +15,7 @@ public class NeodymiumOreBlock extends Block {
     private boolean azure;
 
     public NeodymiumOreBlock(boolean azure) {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(3.5F, 10.0F).sound(ACSoundTypes.NEODYMIUM).lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(3.5F, 10.0F).sound(ACSoundTypes.NEODYMIUM).lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
         this.azure = azure;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AlexMealItem extends ACBowlFoodItem {
     public AlexMealItem() {
-        super(new Item.Properties().food(ACFoods.ALEX_MEAL).rarity(ACItemRegistry.getRarityRainbow()).stacksTo(1));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().food(ACFoods.ALEX_MEAL.food(), ACFoods.ALEX_MEAL.consumable()).rarity(ACItemRegistry.getRarityRainbow()).stacksTo(1));
     }
 
     @Override

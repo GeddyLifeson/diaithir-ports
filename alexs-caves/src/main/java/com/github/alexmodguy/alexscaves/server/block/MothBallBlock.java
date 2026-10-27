@@ -36,7 +36,7 @@ public class MothBallBlock extends Block implements SimpleWaterloggedBlock {
     public static final IntegerProperty BALLS = IntegerProperty.create("balls", 1, 5);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public MothBallBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).noCollision().strength(0.5F).sound(ACSoundTypes.MOTH_BALL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_LIGHT_GRAY).noCollision().strength(0.5F).sound(ACSoundTypes.MOTH_BALL));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(BALLS, 1));
     }
 

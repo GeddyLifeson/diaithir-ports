@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 public class HotChocolateBottleItem extends DrinkableBottledItem {
 
     public HotChocolateBottleItem() {
-        super(new Item.Properties().stacksTo(16).food(ACFoods.HOT_CHOCOLATE_BOTTLE));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(16).food(ACFoods.HOT_CHOCOLATE_BOTTLE.food(), ACFoods.HOT_CHOCOLATE_BOTTLE.consumable()));
     }
 
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {

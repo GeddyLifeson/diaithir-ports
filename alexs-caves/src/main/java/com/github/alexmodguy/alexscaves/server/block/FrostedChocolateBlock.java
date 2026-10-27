@@ -39,7 +39,7 @@ public class FrostedChocolateBlock extends Block {
     }
 
     public FrostedChocolateBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(1.0F, 2.0F).sound(ACSoundTypes.DENSE_CANDY).instrument(NoteBlockInstrument.BASEDRUM).randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PINK).strength(1.0F, 2.0F).sound(ACSoundTypes.DENSE_CANDY).instrument(NoteBlockInstrument.BASEDRUM).randomTicks());
     }
 
     private boolean shouldRemain(LevelReader levelReader, BlockPos blockPos) {

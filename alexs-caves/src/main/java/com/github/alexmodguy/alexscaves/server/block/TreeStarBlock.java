@@ -35,7 +35,7 @@ public class TreeStarBlock extends Block implements SimpleWaterloggedBlock {
     private static final VoxelShape SHAPE_SOUTH = Block.box(1.0D, 1.0D, 0.0D, 15.0D, 15.0D, 4.0D);
 
     public TreeStarBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).instabreak().sound(SoundType.GRASS).noOcclusion().noCollision());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_GREEN).instabreak().sound(SoundType.GRASS).noOcclusion().noCollision());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(FACING, Direction.UP));
     }
 

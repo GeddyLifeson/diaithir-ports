@@ -26,7 +26,7 @@ public class MarineSnowItem extends Item {
     private static Map<Block, Block> GROWS_INTERACTIONS;
     private static Map<Block, ItemStack> DUPLICATES_INTERACTIONS;
     public MarineSnowItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     @Override

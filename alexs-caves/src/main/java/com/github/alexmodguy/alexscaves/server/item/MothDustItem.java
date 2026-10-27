@@ -21,7 +21,7 @@ import net.minecraft.world.phys.Vec3;
 public class MothDustItem extends Item {
 
     public MothDustItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     public ItemUseAnimation getUseAnimation(ItemStack stack) {

@@ -27,7 +27,7 @@ public class SmallCandyCaneBlock extends Block {
     private static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D);
 
     public SmallCandyCaneBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PINK).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(COUNT, Integer.valueOf(1)));
     }
 

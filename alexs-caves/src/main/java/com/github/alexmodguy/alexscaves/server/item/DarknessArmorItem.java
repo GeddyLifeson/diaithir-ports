@@ -1,5 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.item;
 
+import net.minecraft.world.item.Item;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.message.ArmorKeyMessage;
 import com.github.alexmodguy.alexscaves.server.message.UpdateItemTagMessage;
@@ -18,7 +19,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
@@ -27,12 +27,12 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 
-public class DarknessArmorItem extends ArmorItem implements CustomArmorPostRender, KeybindUsingArmor, UpdatesStackTags {
+public class DarknessArmorItem extends Item implements CustomArmorPostRender, KeybindUsingArmor, UpdatesStackTags {
 
     private final ACArmorMaterial acMaterial;
 
-    public DarknessArmorItem(ACArmorMaterial armorMaterial, Type slot) {
-        super(armorMaterial.getHolder(), slot, new Properties().durability(armorMaterial.getDurabilityForType(slot)).rarity(ACItemRegistry.getRarityDemonic()));
+    public DarknessArmorItem(ACArmorMaterial armorMaterial, net.minecraft.world.item.equipment.ArmorType slot) {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().humanoidArmor(armorMaterial.material(), slot).rarity(ACItemRegistry.getRarityDemonic()));
         this.acMaterial = armorMaterial;
     }
 

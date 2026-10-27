@@ -1,5 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.item;
 
+import net.minecraft.world.item.Item;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.Entity;
@@ -7,7 +8,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GingerbreadArmorItem extends ArmorItem {
+public class GingerbreadArmorItem extends Item {
 
     private static final double MIN_SPEED_BOOST = 0.1D;
     private static final double MAX_SPEED_BOOST = 1.0D;
@@ -25,13 +25,13 @@ public class GingerbreadArmorItem extends ArmorItem {
     private final ItemAttributeModifiers defaultItemAttributes;
     private final ACArmorMaterial acMaterial;
 
-    public GingerbreadArmorItem(ACArmorMaterial armorMaterial, Type slot) {
-        super(armorMaterial.getHolder(), slot, new Properties().durability(armorMaterial.getDurabilityForType(slot)));
+    public GingerbreadArmorItem(ACArmorMaterial armorMaterial, net.minecraft.world.item.equipment.ArmorType slot) {
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().humanoidArmor(armorMaterial.material(), slot));
         this.acMaterial = armorMaterial;
         this.defaultItemAttributes = createGingerbreadAttributes(armorMaterial, slot, MIN_SPEED_BOOST);
     }
 
-    private static ItemAttributeModifiers createGingerbreadAttributes(ACArmorMaterial armorMaterial, Type slot, double speedBoost) {
+    private static ItemAttributeModifiers createGingerbreadAttributes(ACArmorMaterial armorMaterial, net.minecraft.world.item.equipment.ArmorType slot, double speedBoost) {
         Identifier id = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "armor_gingerbread_" + slot.getName());
         EquipmentSlotGroup slotGroup = EquipmentSlotGroup.bySlot(slot.getSlot());
         return ItemAttributeModifiers.builder()

@@ -46,7 +46,7 @@ import java.util.UUID;
 public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
 
     public TotemOfPossessionItem() {
-        super(new Item.Properties().durability(1000).rarity(Rarity.UNCOMMON).attributes(createAttributes()));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().durability(1000).rarity(Rarity.UNCOMMON).attributes(createAttributes()));
     }
 
     public static ItemAttributeModifiers createAttributes() {

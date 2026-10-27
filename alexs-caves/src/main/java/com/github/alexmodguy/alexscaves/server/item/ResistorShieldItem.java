@@ -28,7 +28,7 @@ import java.util.List;
 public class ResistorShieldItem extends ShieldItem {
 
     public ResistorShieldItem() {
-        super(new Item.Properties().stacksTo(1).durability(1000).rarity(Rarity.UNCOMMON));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(1000).rarity(Rarity.UNCOMMON));
     }
 
     @Override

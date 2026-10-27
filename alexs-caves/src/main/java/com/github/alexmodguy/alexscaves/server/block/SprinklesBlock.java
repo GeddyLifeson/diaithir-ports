@@ -25,7 +25,7 @@ public class SprinklesBlock extends Block {
     private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
 
     public SprinklesBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PINK).noOcclusion().noCollision().pushReaction(PushReaction.DESTROY).instabreak().sound(ACSoundTypes.HARD_CANDY).dynamicShape());
         this.registerDefaultState(this.stateDefinition.any().setValue(AMOUNT, Integer.valueOf(1)));
     }
 

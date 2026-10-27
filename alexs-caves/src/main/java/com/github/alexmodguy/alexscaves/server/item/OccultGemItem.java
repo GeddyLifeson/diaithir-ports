@@ -41,7 +41,7 @@ public class OccultGemItem extends Item {
             Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "occult_gem"));
 
     public OccultGemItem() {
-        super(new Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     public static boolean isActive(ItemStack itemStack) {

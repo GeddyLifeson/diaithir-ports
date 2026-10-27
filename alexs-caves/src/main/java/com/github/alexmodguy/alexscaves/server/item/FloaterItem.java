@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 public class FloaterItem extends Item {
     public FloaterItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {

@@ -29,7 +29,7 @@ public class QuarryBlock extends BaseEntityBlock {
     }
 
     public QuarryBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(5F, 12.0F).sound(ACSoundTypes.SCRAP_METAL).lightLevel((i) -> 5).emissiveRendering((state, level, pos) -> true));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(5F, 12.0F).sound(ACSoundTypes.SCRAP_METAL).lightLevel((i) -> 5).emissiveRendering((state, level, pos) -> true));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 

@@ -20,7 +20,7 @@ public class GalenaPillarBlock extends RotatedPillarBlock {
     public static final IntegerProperty SHAPE = IntegerProperty.create("shape", 0, 3);
 
     public GalenaPillarBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().strength(3.5F, 10.0F).sound(SoundType.DEEPSLATE));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_PURPLE).requiresCorrectToolForDrops().strength(3.5F, 10.0F).sound(SoundType.DEEPSLATE));
         this.registerDefaultState(this.defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(SHAPE, 3));
     }
 

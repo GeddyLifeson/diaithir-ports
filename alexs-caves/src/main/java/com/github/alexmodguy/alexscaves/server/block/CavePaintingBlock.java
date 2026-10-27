@@ -17,7 +17,7 @@ public class CavePaintingBlock extends DirectionalBlock {
     private static String id = Util.makeDescriptionId("block", Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "cave_painting"));
 
     public CavePaintingBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops().strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops().strength(1.2F, 4.5F).sound(SoundType.DRIPSTONE_BLOCK));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
     }
 

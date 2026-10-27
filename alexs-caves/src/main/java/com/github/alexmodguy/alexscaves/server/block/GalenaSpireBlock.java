@@ -37,7 +37,7 @@ public class GalenaSpireBlock extends Block implements SimpleWaterloggedBlock {
     public static final VoxelShape SHAPE_3_BOTTOM = Block.box(6, 0, 6, 10, 9, 10);
 
     public GalenaSpireBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.PURPLE).strength(1.5F).sound(SoundType.DEEPSLATE));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.PURPLE).strength(1.5F).sound(SoundType.DEEPSLATE));
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(DOWN, Boolean.valueOf(false)).setValue(SHAPE, 3));
     }
 

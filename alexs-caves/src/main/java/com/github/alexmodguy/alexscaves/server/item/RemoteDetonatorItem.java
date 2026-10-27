@@ -43,7 +43,7 @@ public class RemoteDetonatorItem extends Item {
             Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "remote_detonator"));
 
     public RemoteDetonatorItem() {
-        super(new Item.Properties().stacksTo(1));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1));
     }
 
     public static boolean isActive(ItemStack itemStack) {

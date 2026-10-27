@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class FertilizerItem extends Item {
 
     public FertilizerItem() {
-        super(new Item.Properties());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item());
     }
 
     public InteractionResult useOn(UseOnContext context) {

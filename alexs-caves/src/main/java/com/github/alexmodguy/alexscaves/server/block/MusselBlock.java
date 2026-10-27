@@ -48,7 +48,7 @@ public class MusselBlock extends Block implements SimpleWaterloggedBlock {
 
 
     public MusselBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(1F, 1.0F).sound(SoundType.BASALT).noOcclusion().noCollision().dynamicShape().randomTicks());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_BLUE).strength(1F, 1.0F).sound(SoundType.BASALT).noOcclusion().noCollision().dynamicShape().randomTicks());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP).setValue(MUSSELS, Integer.valueOf(1)).setValue(WATERLOGGED, Boolean.valueOf(true)));
     }
 

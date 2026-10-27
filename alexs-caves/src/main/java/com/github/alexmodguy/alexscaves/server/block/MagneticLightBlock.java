@@ -35,7 +35,7 @@ public class MagneticLightBlock extends Block implements SimpleWaterloggedBlock 
     private static final VoxelShape SHAPE_SOUTH = Block.box(6.0D, 6.0D, 0.0D, 10.0D, 10.0D, 10.0D);
 
     public MagneticLightBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().instabreak().sound(SoundType.METAL).strength(0.5F).lightLevel((state -> 12)).noOcclusion());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().instabreak().sound(SoundType.METAL).strength(0.5F).lightLevel((state -> 12)).noOcclusion());
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(FACING, Direction.UP));
     }
 

@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 public class MetalBarrelBlock extends BarrelBlock {
 
     public MetalBarrelBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.5F).sound(ACSoundTypes.SCRAP_METAL));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).strength(3.5F).sound(ACSoundTypes.SCRAP_METAL));
     }
 
     public InteractionResult useWithoutItem(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult result) {

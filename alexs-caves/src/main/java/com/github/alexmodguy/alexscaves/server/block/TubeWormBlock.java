@@ -48,7 +48,7 @@ public class TubeWormBlock extends Block implements SimpleWaterloggedBlock {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public TubeWormBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(2F).sound(ACSoundTypes.TUBE_WORM));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.WHITE).requiresCorrectToolForDrops().strength(2F).sound(ACSoundTypes.TUBE_WORM));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false).setValue(TUBE_TYPE, TubeShape.STRAIGHT));
     }
 

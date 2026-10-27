@@ -31,7 +31,7 @@ public class ShotGumItem extends Item implements UpdatesStackTags, AlwaysCombina
     public static final int MAX_AMMO = 4;
 
     public ShotGumItem() {
-        super(new Item.Properties().stacksTo(1));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1));
     }
 
     @Override

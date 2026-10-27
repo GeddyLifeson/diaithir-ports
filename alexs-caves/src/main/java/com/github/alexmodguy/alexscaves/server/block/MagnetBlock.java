@@ -79,7 +79,7 @@ public class MagnetBlock extends BaseEntityBlock {
     );
 
     protected MagnetBlock(boolean azure) {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4F, 12.0F).sound(ACSoundTypes.NEODYMIUM).noOcclusion().dynamicShape().lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4F, 12.0F).sound(ACSoundTypes.NEODYMIUM).noOcclusion().dynamicShape().lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(POWERED, Boolean.valueOf(false)));
         this.azure = azure;
     }

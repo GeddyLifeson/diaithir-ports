@@ -34,7 +34,7 @@ class FlytrapBlock extends BushBlock implements BonemealableBlock {
     }
 
     public FlytrapBlock() {
-        super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instabreak().sound(SoundType.ROOTS).randomTicks().offsetType(BlockBehaviour.OffsetType.XZ).noOcclusion().noCollision());
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_RED).instabreak().sound(SoundType.ROOTS).randomTicks().offsetType(BlockBehaviour.OffsetType.XZ).noOcclusion().noCollision());
         this.registerDefaultState(this.defaultBlockState().setValue(OPEN, Boolean.valueOf(true)));
     }
 
