@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "C": "minecraft:copper_ingot",
+  "P": "diaithirsteamrails:riveted_plate",
+  "T": "diaithirsteamrails:flue_tube"
+ },
+ "pattern": [
+  "CPC",
+  "PTP",
+  "CPC"
+ ],
+ "result": {
+  "id": "diaithirsteamrails:copper_boiler_shell",
+  "count": 2
+ },
+ "category": "misc"
+}
