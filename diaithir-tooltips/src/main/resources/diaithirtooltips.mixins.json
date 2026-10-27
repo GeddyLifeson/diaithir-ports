@@ -2,7 +2,10 @@
   "required": true,
   "package": "net.diaithir.tooltips.mixin",
   "client": [
-    "DebugEntryBiomeMixin"
+    "DebugEntryBiomeMixin",
+    "ExplorersCompassMixin",
+    "NaturesCompassMixin",
+    "JourneyMapLabelsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
