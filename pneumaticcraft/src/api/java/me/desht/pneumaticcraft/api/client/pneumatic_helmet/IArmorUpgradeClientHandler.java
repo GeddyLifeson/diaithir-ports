@@ -24,10 +24,10 @@ import me.desht.pneumaticcraft.api.lib.Names;
 import me.desht.pneumaticcraft.api.pneumatic_armor.IArmorUpgradeHandler;
 import me.desht.pneumaticcraft.api.pneumatic_armor.ICommonArmorHandler;
 import net.minecraft.client.KeyMapping;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;
 import net.neoforged.neoforge.client.settings.KeyModifier;
@@ -48,6 +48,12 @@ import java.util.function.Consumer;
  * You will need a corresponding {@link IArmorUpgradeHandler} object; there is a 1-1 relationship.
  */
 public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
+    final class Holder {
+        private static final KeyMapping.Category TOGGLES = KeyMapping.Category.register(net.minecraft.resources.Identifier.fromNamespaceAndPath("pneumaticcraft", "upgrade_toggles"));
+
+        private Holder() {}
+    }
+
     /**
      * Get the common handler corresponding to this client handler. There is always a one-to-one mapping between common
      * and client handlers.
@@ -60,7 +66,7 @@ public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
      *
      * @return the handler ID
      */
-    default ResourceLocation getID() {
+    default Identifier getID() {
         return getCommonHandler().getID();
     }
 
@@ -98,7 +104,7 @@ public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
      * @param partialTicks          partial ticks since last world tick
      * @param armorPieceHasPressure true if the armor piece actually has any pressure
      */
-    void render2D(GuiGraphics graphics, float partialTicks, boolean armorPieceHasPressure);
+    void render2D(GuiGraphicsExtractor graphics, float partialTicks, boolean armorPieceHasPressure);
 
     /**
      * You can return a {@link IGuiAnimatedStat} here, which the HUD Handler will pick up and render. It also
@@ -191,11 +197,11 @@ public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
      * key binding can be registered for them.
      * <p>
      * The ID's returned here are the same as those passed to
-     * {@link IClientArmorRegistry#makeKeybindingCheckBox(ResourceLocation, int, int, int, Consumer)}.
+     * {@link IClientArmorRegistry#makeKeybindingCheckBox(Identifier, int, int, int, Consumer)}.
      *
      * @return a collection of ID's
      */
-    default Collection<ResourceLocation> getSubKeybinds() {
+    default Collection<Identifier> getSubKeybinds() {
         return Collections.emptyList();
     }
 
@@ -222,8 +228,8 @@ public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
      *
      * @return a keybind category ID
      */
-    default String getKeybindCategory() {
-        return Names.PNEUMATIC_KEYBINDING_CATEGORY_UPGRADE_TOGGLES;
+    default KeyMapping.Category getKeybindCategory() {
+        return Holder.TOGGLES;
     }
 
     /**
@@ -302,7 +308,7 @@ public interface IArmorUpgradeClientHandler<T extends IArmorUpgradeHandler<?>> {
         }
 
         @Override
-        public void render2D(GuiGraphics graphics, float partialTicks, boolean armorPieceHasPressure) {
+        public void render2D(GuiGraphicsExtractor graphics, float partialTicks, boolean armorPieceHasPressure) {
         }
 
         @Override

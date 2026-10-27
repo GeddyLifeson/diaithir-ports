@@ -1,66 +1,47 @@
 package me.desht.pneumaticcraft.common.registry;
 
-import me.desht.pneumaticcraft.api.lib.Names;
-import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
-import java.util.EnumMap;
-import java.util.List;
+import java.util.Map;
 
 import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 
+/**
+ * Armor materials are plain records in 26.1; the equipment model is an asset JSON
+ * ({@code assets/pneumaticcraft/equipment/*.json}) referenced by key.
+ */
 public class ModArmorMaterials {
-    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS
-            = DeferredRegister.create(Registries.ARMOR_MATERIAL, Names.MOD_ID);
+    public static final Identifier COMPRESSED_IRON_ARMOR = RL("compressed_iron");
+    public static final Identifier PNEUMATIC_ARMOR = RL("pneumatic");
 
-    public static final ResourceLocation COMPRESSED_IRON_ARMOR = RL("compressed_iron");
-    public static final ResourceLocation PNEUMATIC_ARMOR = RL("pneumatic");
+    public static final TagKey<Item> REPAIRS_ARMOR = TagKey.create(Registries.ITEM, RL("repairs_armor"));
 
-    public static final DeferredHolder<ArmorMaterial,ArmorMaterial> COMPRESSED_IRON
-        = ARMOR_MATERIALS.register(COMPRESSED_IRON_ARMOR.getPath(), () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 5);
-            }),
-            9,
-            SoundEvents.ARMOR_EQUIP_IRON,
-            () -> Ingredient.of(ModItems.COMPRESSED_IRON_INGOT.get()),
-            List.of(
-                    new ArmorMaterial.Layer(COMPRESSED_IRON_ARMOR)
-            ),
-            1.0f,
-            0.075f
-    ));
+    private static final Map<ArmorType, Integer> DEFENSE = Map.of(
+            ArmorType.BOOTS, 2,
+            ArmorType.LEGGINGS, 5,
+            ArmorType.CHESTPLATE, 6,
+            ArmorType.HELMET, 2,
+            ArmorType.BODY, 5
+    );
 
-    public static final DeferredHolder<ArmorMaterial,ArmorMaterial> PNEUMATIC
-            = ARMOR_MATERIALS.register(PNEUMATIC_ARMOR.getPath(), () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 5);
-            }),
-            9,
-            SoundEvents.ARMOR_EQUIP_IRON,
-            () -> Ingredient.of(ModItems.COMPRESSED_IRON_INGOT.get()),
-            List.of(
-                    new ArmorMaterial.Layer(PNEUMATIC_ARMOR, "_primary", true),
-                    new ArmorMaterial.Layer(PNEUMATIC_ARMOR, "_secondary", true),
-                    new ArmorMaterial.Layer(PNEUMATIC_ARMOR, "_eyepiece", true),
-                    new ArmorMaterial.Layer(PNEUMATIC_ARMOR, "_translucent", false)
-            ),
-            1.0f,
-            0.2f
-    ));
+    public static final ArmorMaterial COMPRESSED_IRON = new ArmorMaterial(
+            24, DEFENSE, 9, SoundEvents.ARMOR_EQUIP_IRON,
+            1.0f, 0.075f, REPAIRS_ARMOR,
+            ResourceKey.create(EquipmentAssets.ROOT_ID, COMPRESSED_IRON_ARMOR)
+    );
+
+    public static final ArmorMaterial PNEUMATIC = new ArmorMaterial(
+            24, DEFENSE, 9, SoundEvents.ARMOR_EQUIP_IRON,
+            1.0f, 0.2f, REPAIRS_ARMOR,
+            ResourceKey.create(EquipmentAssets.ROOT_ID, PNEUMATIC_ARMOR)
+    );
 }

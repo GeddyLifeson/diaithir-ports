@@ -33,7 +33,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
@@ -59,12 +59,12 @@ public class RemoteItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand handIn) {
+    public InteractionResult use(Level world, Player player, InteractionHand handIn) {
         ItemStack stack = player.getItemInHand(handIn);
         if (player instanceof ServerPlayer sp) {
             openGui(sp, stack, handIn);
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     @Override
@@ -79,10 +79,10 @@ public class RemoteItem extends Item {
                 GlobalPos gPos = GlobalPosHelper.makeGlobalPos(world, pos);
                 setSecurityStationPos(remote, gPos);
                 Component posComp = Component.literal(GlobalPosHelper.prettyPrint(gPos)).withStyle(ChatFormatting.YELLOW);
-                player.displayClientMessage(xlate("pneumaticcraft.gui.remote.boundSecurityStation", posComp), false);
+                player.sendSystemMessage(xlate("pneumaticcraft.gui.remote.boundSecurityStation", posComp));
                 return InteractionResult.CONSUME;
             } else {
-                player.displayClientMessage(xlate("pneumaticcraft.gui.remote.cantBindSecurityStation"), true);
+                player.sendOverlayMessage(xlate("pneumaticcraft.gui.remote.cantBindSecurityStation"));
                 return InteractionResult.FAIL;
             }
         } else if (player instanceof ServerPlayer sp) {
@@ -94,8 +94,9 @@ public class RemoteItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack remote, TooltipContext context, List<Component> curInfo, TooltipFlag moreInfo) {
-        super.appendHoverText(remote, context, curInfo, moreInfo);
+    public void appendHoverText(ItemStack remote, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag moreInfo) {
+        List<Component> curInfo = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(remote, context, tooltipDisplay__, tooltipConsumer__, moreInfo);
 
         curInfo.add(xlate("pneumaticcraft.gui.remote.tooltip.sneakRightClickToEdit"));
         GlobalPos gPos = getSecurityStationPos(remote);
@@ -138,7 +139,7 @@ public class RemoteItem extends Item {
             if (GlobalPosHelper.getTileEntity(gPos) instanceof SecurityStationBlockEntity teSS) {
                 boolean canAccess = teSS.doesAllowPlayer(player);
                 if (!canAccess) {
-                    player.displayClientMessage(Component.translatable("pneumaticcraft.gui.remote.noEditRights", gPos).withStyle(ChatFormatting.RED), false);
+                    player.sendSystemMessage(Component.translatable("pneumaticcraft.gui.remote.noEditRights", gPos).withStyle(ChatFormatting.RED));
                 }
                 return canAccess;
             }
@@ -161,7 +162,7 @@ public class RemoteItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack remote, Level world, Entity entity, int slot, boolean holdingItem) {
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             GlobalPos gPos = getSecurityStationPos(remote);
             if (gPos != null && !(GlobalPosHelper.getTileEntity(gPos) instanceof SecurityStationBlockEntity)) {
                 setSecurityStationPos(remote, null);

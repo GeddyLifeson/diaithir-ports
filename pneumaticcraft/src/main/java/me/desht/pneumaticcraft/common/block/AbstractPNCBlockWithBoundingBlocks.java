@@ -94,7 +94,7 @@ public abstract class AbstractPNCBlockWithBoundingBlocks extends AbstractPneumat
      * @param mainPos main block position
      * @param player  player to spawn break particles around, null if no particles should spawn
      */
-    private void removeBoundingBlocks(BlockState state, Level level, BlockPos mainPos, @Nullable Player player) {
+    public void removeBoundingBlocks(BlockState state, Level level, BlockPos mainPos, @Nullable Player player) {
         // Prevents the bounding blocks from causing unwanted removals until all have been removed
         if (level.getBlockEntity(mainPos) instanceof IHasBoundingBlocks blockEntity) {
             blockEntity.setMainBlockRemovalLock(true);
@@ -146,18 +146,18 @@ public abstract class AbstractPNCBlockWithBoundingBlocks extends AbstractPneumat
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
         BlockPos mainPos = getMainPos(state, level, pos);
 
         if (!pos.equals(mainPos)) {
             // Redirect destroy to main block for bounding blocks
             BlockState mainBlockState = level.getBlockState(mainPos);
-            onDestroyedByPlayer(mainBlockState, level, mainPos, player, willHarvest, mainBlockState.getFluidState());
+            onDestroyedByPlayer(mainBlockState, level, mainPos, player, toolStack, willHarvest, mainBlockState.getFluidState());
             return false;
         } else {
             // Destroys all bounding blocks
             removeBoundingBlocks(state, level, pos, player);
-            return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+            return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
         }
     }
 
@@ -211,20 +211,17 @@ public abstract class AbstractPNCBlockWithBoundingBlocks extends AbstractPneumat
     // Ensures that all blocks are broken when one block breaks
     // Common breaks should handle everything on their own, this is a failsafe
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (!state.getValue(BOUNDING)
-                && world.getBlockEntity(pos) instanceof IHasBoundingBlocks blockEntity
-                && !blockEntity.getBoundingRemoved()) {
-            // Removes bounding blocks for main block if they weren't already removed
-            removeBoundingBlocks(state, world, pos, null);
-        } else if (world.getBlockEntity(getMainPos(state, world, pos)) instanceof IHasBoundingBlocks blockEntity
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel world, BlockPos pos, boolean movedByPiston) {
+        // (the main block's own removal is handled in the block entity's preRemoveSideEffects())
+        if (state.getValue(BOUNDING)
+                && world.getBlockEntity(getMainPos(state, world, pos)) instanceof IHasBoundingBlocks blockEntity
                 && !blockEntity.getMainBlockRemovalLock()) {
             // Removes main block if a bounding block was forcefully removed separately
             // Does not apply when bounding blocks are removed through removeBoundingBlocks method
             world.removeBlock(getMainPos(state, world, pos), false);
         }
 
-        super.onRemove(state, world, pos, newState, isMoving);
+        super.affectNeighborsAfterRemoval(state, world, pos, movedByPiston);
     }
 
     @Override

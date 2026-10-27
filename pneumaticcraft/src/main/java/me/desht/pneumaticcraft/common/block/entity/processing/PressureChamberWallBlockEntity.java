@@ -77,7 +77,7 @@ public class PressureChamberWallBlockEntity extends AbstractTickingBlockEntity i
                 || newValve != null && valvePos == null;
 
         valvePos = newValve == null ? null : newValve.getBlockPos();
-        if (valveChanging && !nonNullLevel().isClientSide) {
+        if (valveChanging && !nonNullLevel().isClientSide()) {
             teValve = newValve;
             // defer updating the blockstate since this can get called during placement, and updating the blockstate
             // then can cause the TE to change, losing the reference to the valve TE
@@ -86,6 +86,12 @@ public class PressureChamberWallBlockEntity extends AbstractTickingBlockEntity i
             setChanged();
         }
     }
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        super.preRemoveSideEffects(pos, state);
+        if (level != null && !level.isClientSide()) onBlockBreak();
+    }
+
     public void onBlockBreak() {
         teValve = getPrimaryValve();
         if (teValve != null) {
@@ -157,19 +163,19 @@ public class PressureChamberWallBlockEntity extends AbstractTickingBlockEntity i
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        valvePos = NbtUtils.readBlockPos(tag, "valvePos").orElse(null);
+        valvePos = tag.read("valvePos", BlockPos.CODEC).orElse(null);
         teValve = null;
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         if (valvePos != null) {
-            tag.put("valvePos", NbtUtils.writeBlockPos(valvePos));
+            tag.store("valvePos", BlockPos.CODEC, valvePos);
         }
     }
 

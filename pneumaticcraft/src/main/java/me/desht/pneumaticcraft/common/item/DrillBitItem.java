@@ -42,8 +42,9 @@ public class DrillBitItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+        List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flagIn);
 
         tooltip.add(xlate("pneumaticcraft.gui.tooltip.item.drillBit.blocks").withStyle(ChatFormatting.YELLOW)
                 .append(Component.literal(Integer.toString(getType().getBestDigType().getBlocksDug())).withStyle(ChatFormatting.GOLD)));

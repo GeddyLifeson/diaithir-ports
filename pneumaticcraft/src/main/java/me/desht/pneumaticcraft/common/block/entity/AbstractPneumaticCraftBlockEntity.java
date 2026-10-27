@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block.entity;
 
+import me.desht.pneumaticcraft.api.PneumaticRegistry;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
 import me.desht.pneumaticcraft.api.heat.IHeatExchangerLogic;
 import me.desht.pneumaticcraft.api.lib.NBTKeys;
@@ -64,7 +65,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.client.model.data.ModelData;
+import net.neoforged.neoforge.model.data.ModelData;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidUtil;
@@ -111,7 +112,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
 
     private String getBlockTranslationKey() {
         String key = BuiltInRegistries.BLOCK_ENTITY_TYPE.getResourceKey(getType())
-                .map(rk -> rk.location().getPath())
+                .map(rk -> rk.identifier().getPath())
                 .orElse("unknown");
         return "block.pneumaticcraft." + key;
     }
@@ -156,7 +157,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         super.onDataPacket(net, pkt, lookupProvider);
 
         // handle any extra data serialized by PacketDescription
-        if (pkt.getTag().contains(Names.MOD_ID, Tag.TAG_COMPOUND)) {
+        if (pkt.getTag().contains(Names.MOD_ID)) {
             CompoundTag tag = pkt.getTag().getCompound(Names.MOD_ID).getCompound(PacketDescription.NBT_EXTRA);
             if (!tag.isEmpty()) {
                 readFromPacket(tag, lookupProvider);
@@ -196,7 +197,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
      * Force a sync of this BE to the client right now.
      */
     public final void sendDescriptionPacket() {
-        if (level == null || level.isClientSide) return;
+        if (level == null || level.isClientSide()) return;
 
         PacketDescription descPacket = PacketDescription.create(this, forceFullSync, level.registryAccess());
         if (descPacket.hasData() || forceFullSync) {
@@ -218,7 +219,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
      * which extend non-tickable subclasses might need it (e.g. PressureChamberInterfaceBlockEntity)
      */
     void defaultServerTick() {
-        if (!nonNullLevel().isClientSide) {
+        if (!nonNullLevel().isClientSide()) {
             if (this instanceof IHeatExchangingTE he) {
                 // tick default heat exchanger; if the BE has other exchangers, they are handled in the subclass
                 IHeatExchangerLogic logic = he.getHeatExchanger();
@@ -284,6 +285,24 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         }
     }
 
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        if (level == null) return;
+        if (this instanceof me.desht.pneumaticcraft.common.block.entity.IHasBoundingBlocks hb
+                && state.getBlock() instanceof me.desht.pneumaticcraft.common.block.AbstractPNCBlockWithBoundingBlocks bb
+                && !state.getValue(me.desht.pneumaticcraft.common.block.AbstractPNCBlockWithBoundingBlocks.BOUNDING)
+                && !hb.getBoundingRemoved()) {
+            // Removes bounding blocks for main block if they weren't already removed
+            bb.removeBoundingBlocks(state, level, pos, null);
+        }
+        NonNullList<ItemStack> drops = NonNullList.create();
+        getContentsToDrop(drops);
+        drops.forEach(stack -> PneumaticCraftUtils.dropItemOnGround(stack, level, pos));
+        if (!shouldPreserveStateOnBreak()) {
+            PneumaticRegistry.getInstance().getMiscHelpers().playMachineBreakEffect(this);
+        }
+    }
+
     protected boolean shouldRerenderChunkOnDescUpdate() {
         return this instanceof CamouflageableBlockEntity;
     }
@@ -318,13 +337,25 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
     @Override
     public void readFromPacket(CompoundTag tag, HolderLookup.Provider provider) {
         if (this instanceof ISideConfigurable sc) {
-            SideConfigurator.readFromNBT(tag.getCompound(NBTKeys.NBT_SIDE_CONFIG), sc, provider);
+            SideConfigurator.readFromNBT(tag.getCompoundOrEmpty(NBTKeys.NBT_SIDE_CONFIG), sc, provider);
         }
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveAdditional(net.minecraft.world.level.storage.ValueOutput output) {
+        super.saveAdditional(output);
+        CompoundTag tag = new CompoundTag();
+        saveLegacy(tag, me.desht.pneumaticcraft.compat.NbtCompat.registries(level));
+        output.store(tag);
+    }
+
+    @Override
+    protected void loadAdditional(net.minecraft.world.level.storage.ValueInput input) {
+        super.loadAdditional(input);
+        loadLegacy(me.desht.pneumaticcraft.compat.NbtCompat.toTag(input), input.lookup());
+    }
+
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
 
         if (customName != null) {
             tag.putString("CustomName", Component.Serializer.toJson(customName, provider));
@@ -345,11 +376,9 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         writeToPacket(tag, provider);
     }
 
-    @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
 
-        if (tag.contains("CustomName", Tag.TAG_STRING)) {
+        if (tag.contains("CustomName")) {
             customName = Component.Serializer.fromJson(tag.getString("CustomName"), provider);
         }
         if (tag.contains(NBTKeys.NBT_UPGRADE_INVENTORY) && getUpgradeHandler() != null) {
@@ -357,13 +386,13 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         }
         if (this instanceof IHeatExchangingTE he) {
             IHeatExchangerLogic logic = he.getHeatExchanger();
-            if (logic != null) logic.deserializeNBT(tag.getCompound(NBTKeys.NBT_HEAT_EXCHANGER));
+            if (logic != null) logic.deserializeNBT(tag.getCompoundOrEmpty(NBTKeys.NBT_HEAT_EXCHANGER));
         }
         if (this instanceof IRedstoneControl<?> rc) {
-            rc.getRedstoneController().restore(RedstoneController.Saved.fromNBT(provider, tag.getCompound(NBTKeys.NBT_REDSTONE_MODE)));
+            rc.getRedstoneController().restore(RedstoneController.Saved.fromNBT(provider, tag.getCompoundOrEmpty(NBTKeys.NBT_REDSTONE_MODE)));
         }
         if (this instanceof ISerializableTanks st) {
-            st.deserializeTanks(provider, tag.getCompound(NBTKeys.NBT_SAVED_TANKS));
+            st.deserializeTanks(provider, tag.getCompoundOrEmpty(NBTKeys.NBT_SAVED_TANKS));
         }
         readFromPacket(tag, provider);
     }
@@ -433,7 +462,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         // don't attempt to cache client-side; we don't get neighbour block updates there so can't reliably clear the cache
         if (level == null) return null;
 
-        return level.isClientSide ?
+        return level.isClientSide() ?
                 level.getBlockEntity(worldPosition.relative(dir)) :
                 neighbourCache.getCachedNeighbour(dir);
     }
@@ -540,7 +569,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
     @Override
     public String getPeripheralType() {
         return BuiltInRegistries.BLOCK_ENTITY_TYPE.getResourceKey(getType())
-                .map(rk -> rk.location().toString())
+                .map(rk -> rk.identifier().toString())
                 .orElse("unknown");
     }
 
@@ -728,7 +757,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         // it is possible for the BE's client world to be a fake one, e.g. Create schematicannon previews
         // https://github.com/TeamPneumatic/pnc-repressurized/issues/812
         // TODO: 1.19 client refactor may make this workaround unnecessary - confirm
-        if (level != null && level.isClientSide && level == ClientUtils.getClientLevel()) {
+        if (level != null && level.isClientSide() && level == ClientUtils.getClientLevel()) {
             level.getModelDataManager().requestRefresh(this);
         }
     }

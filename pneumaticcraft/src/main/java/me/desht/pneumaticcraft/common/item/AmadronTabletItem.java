@@ -40,7 +40,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -71,11 +71,11 @@ public class AmadronTabletItem extends PressurizableItem
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         if (playerIn instanceof ServerPlayer sp) {
             openGui(sp, handIn);
         }
-        return InteractionResultHolder.sidedSuccess(playerIn.getItemInHand(handIn), playerIn.level().isClientSide);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(playerIn.getItemInHand(handIn));
     }
 
     @Override
@@ -94,32 +94,33 @@ public class AmadronTabletItem extends PressurizableItem
         if (IOHelper.getFluidHandlerForBlock(te, facing).isPresent()) {
             GlobalPos current = getFluidProvidingLocation(tabletStack);
             if (current == null || !current.equals(globalPos)) {
-                if (!level.isClientSide) {
+                if (!level.isClientSide()) {
                     setFluidProvidingLocation(tabletStack, globalPos);
                 } else {
                     player.playSound(ModSounds.CHIRP.get(), 1.0f, 1.5f);
                 }
                 // By checking if fluid pos was actually changed, we can fall through to checking for
                 //   an item pos, allowing blocks which offer both item and fluid caps to be used
-                return InteractionResult.sidedSuccess(level.isClientSide);
+                return InteractionResult.SUCCESS;
             }
         }
 
         if (IOHelper.getInventoryForBlock(te, facing).isPresent()) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 setItemProvidingLocation(tabletStack, globalPos);
             } else {
                 player.playSound(ModSounds.CHIRP.get(), 1.0f, 1.5f);
             }
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            return InteractionResult.SUCCESS;
         }
 
         return InteractionResult.PASS;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag flag) {
-        super.appendHoverText(stack, context, infoList, flag);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flag) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flag);
         GlobalPos gPos = getItemProvidingLocation(stack);
         if (gPos != null) {
             infoList.add(xlate("pneumaticcraft.gui.tooltip.amadronTablet.itemLocation", GlobalPosHelper.prettyPrint(gPos)).withStyle(ChatFormatting.YELLOW));

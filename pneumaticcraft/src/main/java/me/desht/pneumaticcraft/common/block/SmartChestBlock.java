@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.api.item.IInventoryItem;
 import me.desht.pneumaticcraft.common.block.entity.utility.SmartChestBlockEntity;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
@@ -82,16 +83,16 @@ public class SmartChestBlock extends AbstractPneumaticCraftBlock implements Pneu
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
         if (!willHarvest && level.getBlockEntity(pos) instanceof SmartChestBlockEntity be) {
             // broken with wrong tool; ensure any contents get dropped even if the block itself doesn't
             PneumaticCraftUtils.forceDropContents(level, pos, be.getItemHandler());
         }
 
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+        return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
     }
 
-    public static class ItemBlockBlockSmartChest extends BlockItem implements IInventoryItem {
+    public static class ItemBlockBlockSmartChest extends PNCBlockItem implements IInventoryItem {
         public ItemBlockBlockSmartChest(Block block) {
             super(block, ModItems.defaultProps());
         }
@@ -108,8 +109,9 @@ public class SmartChestBlock extends AbstractPneumaticCraftBlock implements Pneu
         }
 
         @Override
-        public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-            super.appendHoverText(stack, context, tooltip, flagIn);
+        public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+            List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+            super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flagIn);
 
             SmartChestBlockEntity.SavedData savedData = stack.get(ModDataComponents.SMART_CHEST_SAVED);
             if (savedData != null) {

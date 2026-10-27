@@ -62,7 +62,8 @@ public class AssemblyProgramItem extends Item {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag par4) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag par4) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
         infoList.add(Component.translatable("item.pneumaticcraft.assembly_program.required"));
         infoList.add(bullet().append(xlate(ModBlocks.ASSEMBLY_CONTROLLER.get().getDescriptionId())));
         Arrays.stream(getProgram().getRequiredMachines())

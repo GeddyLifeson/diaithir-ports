@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.item.minigun;
 
+import net.minecraft.world.InteractionResult;
 import it.unimi.dsi.fastutil.ints.IntList;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
 import me.desht.pneumaticcraft.api.client.IFOVModifierItem;
@@ -57,7 +58,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
@@ -198,7 +199,7 @@ public class MinigunItem extends PressurizableItem implements
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand handIn) {
+    public InteractionResult use(Level world, Player player, InteractionHand handIn) {
         ItemStack stack = player.getItemInHand(handIn);
         if (player.isShiftKeyDown()) {
             if (player instanceof ServerPlayer sp && stack.getCount() == 1) {
@@ -214,19 +215,19 @@ public class MinigunItem extends PressurizableItem implements
                     }
                 }, buf -> AbstractPneumaticCraftMenu.putHand(buf, handIn));
             }
-            return InteractionResultHolder.consume(stack);
+            return InteractionResult.CONSUME.heldItemTransformedTo(stack);
         } else {
             MagazineHandler magazineHandler = getMagazine(stack);
             ItemStack ammo = magazineHandler.getAmmo();
             if (!ammo.isEmpty()) {
                 player.startUsingItem(handIn);
-                return InteractionResultHolder.sidedSuccess(stack, world.isClientSide);
+                return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
             }
-            if (player.level().isClientSide) {
+            if (player.level().isClientSide()) {
                 player.playSound(SoundEvents.COMPARATOR_CLICK, 1f, 1f);
-                player.displayClientMessage(Component.translatable("pneumaticcraft.message.minigun.outOfAmmo"), true);
+                player.sendOverlayMessage(Component.translatable("pneumaticcraft.message.minigun.outOfAmmo"));
             }
-            return InteractionResultHolder.fail(stack);
+            return InteractionResult.FAIL;
         }
     }
 
@@ -248,9 +249,9 @@ public class MinigunItem extends PressurizableItem implements
                 magazineHandler.save();
             }
         } else {
-            if (player.level().isClientSide) {
+            if (player.level().isClientSide()) {
                 player.playSound(SoundEvents.COMPARATOR_CLICK, 1f, 1f);
-                player.displayClientMessage(Component.translatable("pneumaticcraft.message.minigun.outOfAmmo"), true);
+                player.sendOverlayMessage(Component.translatable("pneumaticcraft.message.minigun.outOfAmmo"));
             }
             player.releaseUsingItem();
         }
@@ -303,18 +304,18 @@ public class MinigunItem extends PressurizableItem implements
                 ItemStack ammoStack = handler.getStackInSlot(newSlot);
                 if (ammoStack.getItem() instanceof AbstractGunAmmoItem ammo) {
                     stack.set(ModDataComponents.MINIGUN_LOCKED_SLOT, newSlot);
-                    if (!player.level().isClientSide) {
+                    if (!player.level().isClientSide()) {
                         // possible message for potion-tipped ammo
                         if (ammo instanceof StandardGunAmmoItem) {
                             ItemStack potion = StandardGunAmmoItem.getPotionStack(ammoStack);
                             if (!potion.isEmpty()) {
                                 int col = potion.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY).getColor();
-                                player.displayClientMessage(potion.getDisplayName().copy().withStyle(Style.EMPTY.withColor(col)), true);
+                                player.sendOverlayMessage(potion.getDisplayName().copy().withStyle(Style.EMPTY.withColor(col)));
                             } else {
-                                player.displayClientMessage(Component.literal(" "), true);
+                                player.sendOverlayMessage(Component.literal(" "));
                             }
                         } else {
-                            player.displayClientMessage(Component.literal(" "), true);
+                            player.sendOverlayMessage(Component.literal(" "));
                         }
                         return;
                     }
@@ -418,7 +419,7 @@ public class MinigunItem extends PressurizableItem implements
 
         @Override
         public void playSound(SoundEvent soundName, float volume, float pitch) {
-            if (!player.level().isClientSide) {
+            if (!player.level().isClientSide()) {
                 NetworkHandler.sendToAllTracking(new PacketPlaySound(soundName, SoundSource.PLAYERS, player.blockPosition(), volume, pitch, false), player.level(), player.blockPosition());
             }
         }

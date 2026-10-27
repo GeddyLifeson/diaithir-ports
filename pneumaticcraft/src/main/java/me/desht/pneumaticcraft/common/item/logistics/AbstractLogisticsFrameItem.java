@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.item.logistics;
 
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.api.misc.Symbols;
 import me.desht.pneumaticcraft.client.util.ClientUtils;
 import me.desht.pneumaticcraft.common.entity.semiblock.AbstractLogisticsFrameEntity;
@@ -32,7 +34,7 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -53,7 +55,7 @@ import static me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.xlate;
 
 public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand handIn) {
+    public InteractionResult use(Level world, Player player, InteractionHand handIn) {
         ItemStack stack = player.getItemInHand(handIn);
         if (player instanceof ServerPlayer sp) {
             sp.openMenu(new MenuProvider() {
@@ -68,14 +70,15 @@ public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
                 }
             }, (buffer) -> buffer.writeVarInt(-1));
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     protected abstract MenuType<?> getContainerType();
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> curInfo, TooltipFlag extraInfo) {
-        super.appendHoverText(stack, context, curInfo, extraInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> curInfo = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
 
         addLogisticsTooltip(stack, context, curInfo, ClientUtils.hasShiftDown());
     }
@@ -85,20 +88,20 @@ public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
         if (stack.has(ModDataComponents.SEMIBLOCK_DATA) && stack.getItem() instanceof SemiblockItem && provider != null) {
             if (sneaking) {
                 CompoundTag tag = stack.getOrDefault(ModDataComponents.SEMIBLOCK_DATA, CustomData.EMPTY).copyTag();
-                if (tag.getBoolean(AbstractLogisticsFrameEntity.NBT_INVISIBLE)) {
+                if (tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_INVISIBLE, false)) {
                     curInfo.add(bullet().append(xlate("pneumaticcraft.gui.logistics_frame.invisible")).withStyle(ChatFormatting.YELLOW));
                 }
-                if (tag.getBoolean(AbstractLogisticsFrameEntity.NBT_MATCH_DURABILITY)) {
+                if (tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_MATCH_DURABILITY, false)) {
                     curInfo.add(bullet().append(xlate("pneumaticcraft.gui.logistics_frame.matchDurability")).withStyle(ChatFormatting.YELLOW));
                 }
-                if (tag.getBoolean(AbstractLogisticsFrameEntity.NBT_MATCH_COMPONENTS)) {
+                if (tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_MATCH_COMPONENTS, false)) {
                     curInfo.add(bullet().append(xlate("pneumaticcraft.gui.logistics_frame.matchNBT")).withStyle(ChatFormatting.YELLOW));
                 }
-                if (tag.getBoolean(AbstractLogisticsFrameEntity.NBT_MATCH_MODID)) {
+                if (tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_MATCH_MODID, false)) {
                     curInfo.add(bullet().append(xlate("pneumaticcraft.gui.logistics_frame.matchModId")).withStyle(ChatFormatting.YELLOW));
                 }
 
-                boolean whitelist = tag.getBoolean(AbstractLogisticsFrameEntity.NBT_ITEM_WHITELIST);
+                boolean whitelist = tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_ITEM_WHITELIST, false);
                 curInfo.add(xlate("pneumaticcraft.gui.logistics_frame." + (whitelist ? "itemWhitelist" : "itemBlacklist"))
                         .append(":").withStyle(ChatFormatting.YELLOW));
 
@@ -116,7 +119,7 @@ public abstract class AbstractLogisticsFrameItem extends SemiblockItem {
                 }
                 tooltipSize = curInfo.size();
 
-                whitelist = tag.getBoolean(AbstractLogisticsFrameEntity.NBT_FLUID_WHITELIST);
+                whitelist = tag.getBooleanOr(AbstractLogisticsFrameEntity.NBT_FLUID_WHITELIST, false);
                 curInfo.add(xlate("pneumaticcraft.gui.logistics_frame." + (whitelist ? "fluidWhitelist" : "fluidBlacklist"))
                         .append(":").withStyle(ChatFormatting.YELLOW));
 

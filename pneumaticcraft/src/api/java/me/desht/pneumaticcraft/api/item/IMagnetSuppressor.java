@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.api.item;
 
+import me.desht.pneumaticcraft.api.PneumaticRegistry;
 import net.minecraft.world.entity.Entity;
 
 /**

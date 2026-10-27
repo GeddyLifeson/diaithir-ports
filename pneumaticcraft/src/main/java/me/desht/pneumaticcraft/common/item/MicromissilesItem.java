@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.item;
 
+import net.minecraft.world.InteractionResult;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import me.desht.pneumaticcraft.api.lib.Names;
@@ -38,7 +39,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
@@ -78,7 +79,7 @@ public class MicromissilesItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack stack = playerIn.getItemInHand(handIn);
 
         if (stack.get(ModDataComponents.MICROMISSILE_SETTINGS) == Settings.DEFAULT) {
@@ -86,10 +87,10 @@ public class MicromissilesItem extends Item {
         }
 
         if (playerIn.isShiftKeyDown()) {
-            if (worldIn.isClientSide) {
+            if (worldIn.isClientSide()) {
                 MicromissileScreen.openGui(stack.getHoverName(), handIn);
             }
-            return InteractionResultHolder.success(stack);
+            return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
         }
 
         MicromissileEntity missile = new MicromissileEntity(worldIn, playerIn, stack);
@@ -113,7 +114,7 @@ public class MicromissilesItem extends Item {
             }
         }
 
-        return InteractionResultHolder.sidedSuccess(stack, playerIn.level().isClientSide());
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     private float getInitialVelocity(ItemStack stack) {
@@ -122,8 +123,9 @@ public class MicromissilesItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> curInfo, TooltipFlag extraInfo) {
-        super.appendHoverText(stack, context, curInfo, extraInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> curInfo = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
 
         curInfo.add(xlate("pneumaticcraft.gui.micromissile.remaining")
                 .append(Component.literal(Integer.toString(stack.getMaxDamage() - stack.getDamageValue())).withStyle(ChatFormatting.AQUA))

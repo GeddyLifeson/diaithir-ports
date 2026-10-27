@@ -54,8 +54,9 @@ public class TubeModuleItem extends Item {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flag) {
+        List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flag);
 
         AbstractTubeModule module = createModule(Direction.UP,null);
         Component yesNo = Component.translatable(module.isInline() ? "gui.yes" : "gui.no");

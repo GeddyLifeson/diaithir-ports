@@ -27,12 +27,12 @@ import org.joml.Vector3f;
 public class BlockIndicator {
     public static void indicateBlock(Level world, BlockPos pos) {
         if (world != null) {
-            if (world.isClientSide) {
+            if (world.isClientSide()) {
                 for (int i = 0; i < 5; i++) {
                     double dx = pos.getX() + 0.5;
                     double dy = pos.getY() + 0.5;
                     double dz = pos.getZ() + 0.5;
-                    world.addParticle(new DustParticleOptions(new Vector3f(1f, 0.2f, 0f), 1.0F), dx, dy, dz, 0, 0, 0);
+                    world.addParticle(new DustParticleOptions(0xFF3300, 1.0F), dx, dy, dz, 0, 0, 0);
                 }
             } else {
                 NetworkHandler.sendToAllTracking(new PacketDebugBlock(pos), world, pos);

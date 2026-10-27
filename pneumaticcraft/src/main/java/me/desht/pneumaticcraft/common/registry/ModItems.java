@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.registry;
 
+import net.minecraft.resources.Identifier;
 import me.desht.pneumaticcraft.api.crafting.recipe.AssemblyRecipe;
 import me.desht.pneumaticcraft.api.crafting.recipe.AssemblyRecipe.AssemblyProgramType;
 import me.desht.pneumaticcraft.api.lib.Names;
@@ -117,22 +118,22 @@ public class ModItems {
             JackHammerItem::new);
 
     public static final DeferredItem<Item> COMPRESSED_IRON_HELMET = register("compressed_iron_helmet",
-            () -> new CompressedIronArmorItem(ArmorItem.Type.HELMET));
+            () -> new CompressedIronArmorItem(ArmorType.HELMET));
     public static final DeferredItem<Item> COMPRESSED_IRON_CHESTPLATE = register("compressed_iron_chestplate",
-            () -> new CompressedIronArmorItem(ArmorItem.Type.CHESTPLATE));
+            () -> new CompressedIronArmorItem(ArmorType.CHESTPLATE));
     public static final DeferredItem<Item> COMPRESSED_IRON_LEGGINGS = register("compressed_iron_leggings",
-            () -> new CompressedIronArmorItem(ArmorItem.Type.LEGGINGS));
+            () -> new CompressedIronArmorItem(ArmorType.LEGGINGS));
     public static final DeferredItem<Item> COMPRESSED_IRON_BOOTS = register("compressed_iron_boots",
-            () -> new CompressedIronArmorItem(ArmorItem.Type.BOOTS));
+            () -> new CompressedIronArmorItem(ArmorType.BOOTS));
 
     public static final DeferredItem<PneumaticArmorItem> PNEUMATIC_HELMET = register("pneumatic_helmet",
-            () -> new PneumaticArmorItem(ArmorItem.Type.HELMET));
+            () -> new PneumaticArmorItem(ArmorType.HELMET));
     public static final DeferredItem<PneumaticArmorItem> PNEUMATIC_CHESTPLATE = register("pneumatic_chestplate",
-            () -> new PneumaticArmorItem(ArmorItem.Type.CHESTPLATE));
+            () -> new PneumaticArmorItem(ArmorType.CHESTPLATE));
     public static final DeferredItem<PneumaticArmorItem> PNEUMATIC_LEGGINGS = register("pneumatic_leggings",
-            () -> new PneumaticArmorItem(ArmorItem.Type.LEGGINGS));
+            () -> new PneumaticArmorItem(ArmorType.LEGGINGS));
     public static final DeferredItem<PneumaticArmorItem> PNEUMATIC_BOOTS = register("pneumatic_boots",
-            () -> new PneumaticArmorItem(ArmorItem.Type.BOOTS));
+            () -> new PneumaticArmorItem(ArmorType.BOOTS));
 
     public static final DeferredItem<AssemblyProgramItem> ASSEMBLY_PROGRAM_LASER = register(AssemblyRecipe.AssemblyProgramType.LASER);
     public static final DeferredItem<AssemblyProgramItem> ASSEMBLY_PROGRAM_DRILL = register(AssemblyRecipe.AssemblyProgramType.DRILL);
@@ -257,8 +258,14 @@ public class ModItems {
 
     /* -----------------------*/
 
+    private static Identifier currentId = null;
+
     public static Item.Properties defaultProps() {
-        return new Item.Properties();
+        Item.Properties p = new Item.Properties();
+        if (currentId != null) {
+            p.setId(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ITEM, currentId));
+        }
+        return p;
     }
 
     public static Item.Properties toolProps() {
@@ -278,7 +285,14 @@ public class ModItems {
     }
 
     public static <T extends Item> DeferredItem<T> register(final String name, final Supplier<T> sup) {
-        return ITEMS.register(name, sup);
+        return ITEMS.register(name, id -> {
+            currentId = id;
+            try {
+                return sup.get();
+            } finally {
+                currentId = null;
+            }
+        });
     }
 
     private static DeferredItem<NetworkComponentItem> register(final NetworkComponentType type) {

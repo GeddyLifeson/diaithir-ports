@@ -114,7 +114,7 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
     public void tickClient() {
         super.tickClient();
 
-        if (isOpen() && isCoreLoaded && nonNullLevel().random.nextBoolean()) {
+        if (isOpen() && isCoreLoaded && nonNullLevel().getRandom().nextBoolean()) {
             ClientUtils.emitParticles(level, worldPosition, ParticleTypes.PORTAL);
         }
     }
@@ -155,7 +155,7 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
     private void absorbEntity(Mob e) {
         int toAdd = 1;
         if (xpTank.getFluid().getAmount() >= MEMORY_ESSENCE_AMOUNT) {
-            toAdd += e.level().random.nextInt(3) + 1;
+            toAdd += e.level().getRandom().nextInt(3) + 1;
         }
         ISpawnerCoreStats newStats = inv.getStats().addAmount(e.getType(), toAdd);
         if (newStats != inv.getStats()) {
@@ -179,12 +179,12 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
     }
 
     private boolean isApplicable(LivingEntity e) {
-        return e.getType().is(PneumaticCraftTags.EntityTypes.VACUUM_TRAP_WHITELISTED) ||
-                !e.getType().is(Tags.EntityTypes.BOSSES)
+        return e.getType().builtInRegistryHolder().is(PneumaticCraftTags.EntityTypes.VACUUM_TRAP_WHITELISTED) ||
+                !e.getType().builtInRegistryHolder().is(Tags.EntityTypes.BOSSES)
                 && !(e instanceof DroneEntity)
                 && !(e instanceof Warden)
                 && !(e instanceof TamableAnimal t && t.isTame())
-                && !e.getType().is(PneumaticCraftTags.EntityTypes.VACUUM_TRAP_BLACKLISTED);
+                && !e.getType().builtInRegistryHolder().is(PneumaticCraftTags.EntityTypes.VACUUM_TRAP_BLACKLISTED);
     }
 
     @Override
@@ -224,15 +224,15 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        inv.deserializeNBT(provider, tag.getCompound("Items"));
+        inv.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Items", inv.serializeNBT(provider));
     }

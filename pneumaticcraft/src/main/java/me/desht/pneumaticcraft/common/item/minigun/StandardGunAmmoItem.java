@@ -87,8 +87,9 @@ public class StandardGunAmmoItem extends AbstractGunAmmoItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag extraInfo) {
-        super.appendHoverText(stack, context, infoList, extraInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
         ItemStack potion = getPotionStack(stack);
         if (!potion.isEmpty()) {
             List<Component> potionInfo = new ArrayList<>();
@@ -134,7 +135,7 @@ public class StandardGunAmmoItem extends AbstractGunAmmoItem {
         if (potion.getItem() == Items.SPLASH_POTION || potion.getItem() == Items.LINGERING_POTION) {
             Player shooter = minigun.getPlayer();
             int chance = ConfigHelper.common().minigun.potionProcChance.get() + minigun.getUpgrades(ModUpgrades.DISPENSER.get()) * 2;
-            if (shooter.level().random.nextInt(100) < chance) {
+            if (shooter.level().getRandom().nextInt(100) < chance) {
                 ThrownPotion entityPotion = new ThrownPotion(shooter.level(), shooter);
                 entityPotion.setItem(potion);
                 BlockPos pos2 = brtr.getBlockPos().relative(brtr.getDirection());

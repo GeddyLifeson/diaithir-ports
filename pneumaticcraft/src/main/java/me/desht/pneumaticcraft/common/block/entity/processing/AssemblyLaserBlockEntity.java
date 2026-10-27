@@ -128,17 +128,17 @@ public class AssemblyLaserBlockEntity extends AbstractAssemblyRobotBlockEntity {
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putBoolean("laser", isLaserOn);
         tag.putInt("laserStep", laserStep);
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
-        isLaserOn = tag.getBoolean("laser");
-        laserStep = tag.getInt("laserStep");
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
+        isLaserOn = tag.getBooleanOr("laser", false);
+        laserStep = tag.getIntOr("laserStep", 0);
     }
 
     @Override

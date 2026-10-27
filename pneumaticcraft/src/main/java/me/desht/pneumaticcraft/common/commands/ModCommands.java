@@ -59,7 +59,7 @@ import net.minecraft.core.component.TypedDataComponent;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -83,7 +83,7 @@ public class ModCommands {
     private static final DeferredHolder<ArgumentTypeInfo<?, ?>, SingletonArgumentInfo<VarnameType>> VARNAME_COMMAND_ARGUMENT_TYPE
             = COMMAND_ARGUMENT_TYPES.register("varname",
             () -> ArgumentTypeInfos.registerByClass(ModCommands.VarnameType.class, SingletonArgumentInfo.contextFree(VarnameType::new)));
-    private static final ResourceLocation UNKNOWN_ITEM = RL("unknown");
+    private static final Identifier UNKNOWN_ITEM = RL("unknown");
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext) {
         dispatcher.register(literal("pncr")
@@ -148,7 +148,7 @@ public class ModCommands {
         );
     }
 
-    private static int setArmorUpgrade(CommandSourceStack source, ResourceLocation id, boolean enabled) throws CommandSyntaxException {
+    private static int setArmorUpgrade(CommandSourceStack source, Identifier id, boolean enabled) throws CommandSyntaxException {
         Optional<IArmorUpgradeHandler<?>> upgrade = CommonArmorRegistry.getInstance().getArmorUpgradeHandler(id);
 
         if (upgrade.isPresent()) {

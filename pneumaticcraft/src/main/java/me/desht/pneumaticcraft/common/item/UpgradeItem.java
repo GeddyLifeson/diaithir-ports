@@ -34,7 +34,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -81,7 +81,8 @@ public class UpgradeItem extends Item implements IUpgradeItem, CreativeTabStackP
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag par4) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag par4) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
         if (ClientUtils.hasShiftDown()) {
             infoList.add(xlate("pneumaticcraft.gui.tooltip.item.upgrade.usedIn").withStyle(ChatFormatting.AQUA));
             PneumaticRegistry.getInstance().getUpgradeRegistry().addUpgradeTooltip(upgrade, infoList);
@@ -97,7 +98,7 @@ public class UpgradeItem extends Item implements IUpgradeItem, CreativeTabStackP
             );
             infoList.add(xlate("pneumaticcraft.message.dispenser.clickToSet"));
         }
-        super.appendHoverText(stack, context, infoList, par4);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, par4);
     }
 
     @Override
@@ -121,12 +122,12 @@ public class UpgradeItem extends Item implements IUpgradeItem, CreativeTabStackP
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         if (getUpgradeType() == ModUpgrades.DISPENSER.get()) {
             if (playerIn instanceof ServerPlayer sp) {
                 setDirection(sp, handIn, null);
             }
-            return InteractionResultHolder.success(playerIn.getItemInHand(handIn));
+            return InteractionResult.SUCCESS.heldItemTransformedTo(playerIn.getItemInHand(handIn));
         }
         return super.use(worldIn, playerIn, handIn);
     }
@@ -135,10 +136,10 @@ public class UpgradeItem extends Item implements IUpgradeItem, CreativeTabStackP
         ItemStack stack = player.getItemInHand(hand);
         if (facing == null) {
             stack.remove(ModDataComponents.EJECT_DIR);
-            player.displayClientMessage(Component.translatable("pneumaticcraft.message.dispenser.direction", "*"), true);
+            player.sendOverlayMessage(Component.translatable("pneumaticcraft.message.dispenser.direction", "*"));
         } else {
             stack.set(ModDataComponents.EJECT_DIR, facing);
-            player.displayClientMessage(Component.translatable("pneumaticcraft.message.dispenser.direction", facing.getSerializedName()), true);
+            player.sendOverlayMessage(Component.translatable("pneumaticcraft.message.dispenser.direction", facing.getSerializedName()));
         }
     }
 

@@ -238,8 +238,8 @@ public class LiquidHopperBlockEntity extends AbstractHopperBlockEntity<LiquidHop
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         comparatorValue = -1;
     }

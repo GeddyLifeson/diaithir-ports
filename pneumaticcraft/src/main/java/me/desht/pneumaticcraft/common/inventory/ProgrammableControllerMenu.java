@@ -43,7 +43,7 @@ public class ProgrammableControllerMenu extends AbstractPneumaticCraftMenu<Progr
 
         addPlayerSlots(playerInventory, 84);
 
-        IEnergyStorage storage = blockEntity.getLevel().getCapability(Capabilities.EnergyStorage.BLOCK, blockEntity.getBlockPos(), blockEntity.getBlockState(), blockEntity, null);
+        IEnergyStorage storage = me.desht.pneumaticcraft.compat.Caps.energy(blockEntity.getLevel(), blockEntity.getBlockPos(), blockEntity.getBlockState(), blockEntity, null);
         if (storage != null) {
             try {
                 addSyncedField(new SyncedField.SyncedInt(storage, EnergyStorage.class.getDeclaredField("energy")));

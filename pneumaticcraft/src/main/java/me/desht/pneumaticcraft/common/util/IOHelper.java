@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.util;
 
+import me.desht.pneumaticcraft.compat.Caps;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
@@ -81,7 +82,7 @@ public class IOHelper {
     }
 
     public static Optional<IItemHandler> getInventoryForBlock(BlockEntity te, Direction facing) {
-        return getCap(te, Capabilities.ItemHandler.BLOCK, facing);
+        return te == null || te.getLevel() == null ? Optional.empty() : Optional.ofNullable(Caps.item(te.getLevel(), te.getBlockPos(), te.getBlockState(), te, facing));
     }
 
     public static Optional<IItemHandler> getInventoryForBlock(BlockEntity te) {
@@ -91,20 +92,20 @@ public class IOHelper {
     public static Optional<IItemHandler> getSidedInventoryForEntity(Entity entity, Direction dir) {
         IItemHandler handler = entity.getCapability(PNCCapabilities.ENTITY_AUTOMATION, dir);
         if (handler == null) {
-            handler = entity.getCapability(Capabilities.ItemHandler.ENTITY_AUTOMATION, dir);
+            handler = Caps.itemEntityAutomation(entity, dir);
             if (handler == null) {
-                handler = entity.getCapability(Capabilities.ItemHandler.ENTITY);
+                handler = Caps.itemEntity(entity);
             }
         }
         return Optional.ofNullable(handler);
     }
 
     public static Optional<IItemHandler> getInventoryForEntity(Entity entity) {
-        return Optional.ofNullable(entity.getCapability(Capabilities.ItemHandler.ENTITY));
+        return Optional.ofNullable(Caps.itemEntity(entity));
     }
 
     public static Optional<IFluidHandler> getFluidHandlerForBlock(BlockEntity te, Direction facing) {
-        return getCap(te, Capabilities.FluidHandler.BLOCK, facing);
+        return te == null || te.getLevel() == null ? Optional.empty() : Optional.ofNullable(Caps.fluid(te.getLevel(), te.getBlockPos(), te.getBlockState(), te, facing));
     }
 
     public static Optional<IFluidHandler> getFluidHandlerForBlock(BlockEntity te) {
@@ -112,23 +113,23 @@ public class IOHelper {
     }
 
     public static Optional<IFluidHandlerItem> getFluidHandlerForItem(ItemStack stack) {
-        return Optional.ofNullable(stack.getCapability(Capabilities.FluidHandler.ITEM));
+        return Optional.ofNullable(me.desht.pneumaticcraft.compat.Caps.fluidItem(stack));
     }
 
     public static Optional<IFluidHandler> getFluidHandlerForEntity(Entity entity, Direction dir) {
-        return Optional.ofNullable(entity.getCapability(Capabilities.FluidHandler.ENTITY, dir));
+        return Optional.ofNullable(Caps.fluidEntity(entity, dir));
     }
 
     public static Optional<IEnergyStorage> getEnergyStorageForBlock(BlockEntity te, Direction side) {
-        return getCap(te, Capabilities.EnergyStorage.BLOCK, side);
+        return te == null || te.getLevel() == null ? Optional.empty() : Optional.ofNullable(Caps.energy(te.getLevel(), te.getBlockPos(), te.getBlockState(), te, side));
     }
 
     public static Optional<IEnergyStorage> getEnergyStorageForBlock(BlockEntity te) {
-        return getCap(te, Capabilities.EnergyStorage.BLOCK, null);
+        return getEnergyStorageForBlock(te, null);
     }
 
     public static Optional<IEnergyStorage> getEnergyStorageForItem(ItemStack item) {
-        return Optional.ofNullable(item.getCapability(Capabilities.EnergyStorage.ITEM));
+        return Optional.ofNullable(me.desht.pneumaticcraft.compat.Caps.energyItem(item));
     }
 
     /**

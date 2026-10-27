@@ -214,22 +214,22 @@ public abstract class AbstractAssemblyRobotBlockEntity extends AbstractTickingBl
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         for (int i = 0; i < 5; i++) {
-            angles[i] = tag.getFloat("angle" + i);
-            targetAngles[i] = tag.getFloat("targetAngle" + i);
+            angles[i] = tag.getFloatOr("angle" + i, 0f);
+            targetAngles[i] = tag.getFloatOr("targetAngle" + i, 0f);
         }
-        slowMode = tag.getBoolean("slowMode");
-        speed = tag.getFloat("speed");
+        slowMode = tag.getBooleanOr("slowMode", false);
+        speed = tag.getFloatOr("speed", 0f);
         targetDirection = TargetDirections.readNBT(tag);
 
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         for (int i = 0; i < 5; i++) {
             tag.putFloat("angle" + i, angles[i]);
@@ -319,8 +319,8 @@ public abstract class AbstractAssemblyRobotBlockEntity extends AbstractTickingBl
         static TargetDirections readNBT(CompoundTag tag) {
             if (!tag.contains("targetDir1")) return null;
             return new TargetDirections(
-                    Direction.from3DDataValue(tag.getInt("targetDir1")),
-                    tag.contains("targetDir2") ? Direction.from3DDataValue(tag.getInt("targetDir2")) : null
+                    Direction.from3DDataValue(tag.getIntOr("targetDir1", 0)),
+                    tag.contains("targetDir2") ? Direction.from3DDataValue(tag.getIntOr("targetDir2", 0)) : null
             );
         }
 

@@ -143,7 +143,6 @@ public class PneumaticCraftRepressurized {
         ModCriterionTriggers.CRITERION_TRIGGERS.register(modBus);
         ModDataComponents.COMPONENTS.register(modBus);
         ModAttachmentTypes.ATTACHMENT_TYPES.register(modBus);
-        ModArmorMaterials.ARMOR_MATERIALS.register(modBus);
 
         // custom registries
         ModHarvestHandlers.HARVEST_HANDLERS_DEFERRED.register(modBus);

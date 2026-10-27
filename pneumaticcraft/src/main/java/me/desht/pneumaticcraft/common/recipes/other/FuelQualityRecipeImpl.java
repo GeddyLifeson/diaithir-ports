@@ -66,12 +66,12 @@ public class FuelQualityRecipeImpl extends FuelQualityRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.FUEL_QUALITY.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.FUEL_QUALITY.get();
     }
 
@@ -79,7 +79,7 @@ public class FuelQualityRecipeImpl extends FuelQualityRecipe {
         T create(FluidIngredient fluid, int airPerBucket, float burnRate);
     }
 
-    public static class Serializer<T extends FuelQualityRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends FuelQualityRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
@@ -96,15 +96,15 @@ public class FuelQualityRecipeImpl extends FuelQualityRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

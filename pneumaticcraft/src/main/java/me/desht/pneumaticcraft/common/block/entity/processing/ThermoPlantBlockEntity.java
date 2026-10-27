@@ -144,7 +144,7 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
     public void tickClient() {
         super.tickClient();
 
-        if (didWork && nonNullLevel().random.nextBoolean()) {
+        if (didWork && nonNullLevel().getRandom().nextBoolean()) {
             ClientUtils.emitParticles(nonNullLevel(), getBlockPos(), ParticleTypes.SMOKE, 0.9);
         }
     }
@@ -275,8 +275,8 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Items", inputItemHandler.serializeNBT(provider));
         tag.put("Output", outputItemHandler.serializeNBT(provider));
@@ -284,12 +284,12 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         inputItemHandler.deserializeNBT(provider, tag.getCompound("Items"));
         outputItemHandler.deserializeNBT(provider, tag.getCompound("Output"));
-        craftingProgress = tag.getFloat("craftingProgress");
+        craftingProgress = tag.getFloatOr("craftingProgress", 0f);
     }
 
     @Override

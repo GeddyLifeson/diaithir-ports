@@ -48,7 +48,7 @@ import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import me.desht.pneumaticcraft.lib.BlockEntityConstants;
 import me.desht.pneumaticcraft.lib.Log;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -140,7 +140,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
 
         if (rebootTimer > 0) {
             rebootTimer--;
-            if (!nonNullLevel().isClientSide) {
+            if (!nonNullLevel().isClientSide()) {
                 if (rebootTimer == 0) {
                     hackedUsers.clear();
                     NetworkHandler.sendToAllTracking(new PacketPlaySound(ModSounds.HUD_ENTITY_LOCK.get(), SoundSource.BLOCKS, getBlockPos(), 1f, 1f, false), getLevel(), getBlockPos());
@@ -193,7 +193,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
                 if (hasValidNetwork()) {
                     initiateHacking(player);
                 } else {
-                    player.displayClientMessage(Component.translatable("pneumaticcraft.message.securityStation.outOfOrder"), false);
+                    player.sendSystemMessage(Component.translatable("pneumaticcraft.message.securityStation.outOfOrder"));
                 }
             } else if (tag.startsWith("remove:") && isOwner(player)) {
                 String name = tag.split(":", 2)[1];
@@ -234,7 +234,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             }
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             Log.warning("security station @ {}: ignoring bad message {} from {}",
-                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().getName());
+                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().name());
         }
     }
 
@@ -248,14 +248,14 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             }
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             Log.warning("security station @ {}: ignoring bad message {} from {}",
-                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().getName());
+                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().name());
         }
     }
 
     private void tryStopWorm(Player player) {
         if (!simulationController.getSimulation(HackingSide.AI).isStopWormed()) {
             if (PneumaticCraftUtils.consumeInventoryItem(player.getInventory(), ModItems.STOP_WORM.get())) {
-                int r = 80 + nonNullLevel().random.nextInt(40);
+                int r = 80 + nonNullLevel().getRandom().nextInt(40);
                 simulationController.getSimulation(HackingSide.AI).applyStopWorm(r);
             } else {
                 // client is lying about how many stop worms they have!
@@ -275,7 +275,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             }
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             Log.warning("security station @ {}: ignoring bad message {}} from {}}",
-                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().getName());
+                    PneumaticCraftUtils.posToString(worldPosition), tag, player.getGameProfile().name());
         }
     }
 
@@ -322,17 +322,17 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        rebootTimer = tag.getInt("startupTimer");
+        rebootTimer = tag.getIntOr("startupTimer", 0);
         inventory.deserializeNBT(provider, tag.getCompound("Items"));
         checkForNetworkValidity();
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.putInt("startupTimer", rebootTimer);
         tag.put("Items", inventory.serializeNBT(provider));
@@ -351,9 +351,9 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         super.readFromPacket(tag, provider);
 
         sharedUsers.clear();
-        sharedUsers.addAll(fromNBTList(tag.getList("SharedUsers", Tag.TAG_COMPOUND)));
+        sharedUsers.addAll(fromNBTList(tag.getListOrEmpty("SharedUsers")));
         hackedUsers.clear();
-        hackedUsers.addAll(fromNBTList(tag.getList("HackedUsers", Tag.TAG_COMPOUND)));
+        hackedUsers.addAll(fromNBTList(tag.getListOrEmpty("HackedUsers")));
     }
 
     private ListTag toNBTList(Collection<GameProfile> profiles) {
@@ -370,8 +370,8 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     private Collection<GameProfile> fromNBTList(ListTag list) {
         ImmutableList.Builder<GameProfile> builder = ImmutableList.builder();
         for (int i = 0; i < list.size(); ++i) {
-            CompoundTag tagCompound = list.getCompound(i);
-            builder.add(new GameProfile(UUID.fromString(tagCompound.getString("uuid")), tagCompound.getString("name")));
+            CompoundTag tagCompound = list.getCompoundOrEmpty(i);
+            builder.add(new GameProfile(UUID.fromString(tagCompound.getStringOr("uuid", "")), tagCompound.getStringOr("name", "")));
         }
         return builder.build();
     }
@@ -442,7 +442,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     public void initiateHacking(ServerPlayer hacker) {
         // will only get here if the BE has a valid node network
         if (simulationController != null) {
-            hacker.displayClientMessage(xlate("pneumaticcraft.message.securityStation.hackInProgress").withStyle(ChatFormatting.GOLD), false);
+            hacker.sendSystemMessage(xlate("pneumaticcraft.message.securityStation.hackInProgress").withStyle(ChatFormatting.GOLD));
         } else {
             simulationController = new SimulationController(this, hacker, isPlayerOnWhiteList(hacker));
             hacker.openMenu(getHackingContainerProvider(), buf -> simulationController.toBytes(buf));
@@ -579,7 +579,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
      * @return the number of security stations which currently prevent access by the player
      */
     public static int getProtectingSecurityStations(Player player, BlockPos pos, boolean isPlacingSecurityStation) {
-        return (int) getSecurityStations(player.getCommandSenderWorld(), pos, isPlacingSecurityStation)
+        return (int) getSecurityStations(player.level(), pos, isPlacingSecurityStation)
                 .filter(teSS -> !teSS.doesAllowPlayer(player))
                 .count();
     }
@@ -593,7 +593,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
      * @return  true if a security station would prevent access to the area
      */
     public static boolean isProtectedFromPlayer(Player player, BlockPos pos, final boolean isPlacingSecurityStation) {
-        return getSecurityStations(player.getCommandSenderWorld(), pos, isPlacingSecurityStation)
+        return getSecurityStations(player.level(), pos, isPlacingSecurityStation)
                 .anyMatch(teSS -> !teSS.doesAllowPlayer(player));
     }
 
@@ -695,12 +695,12 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             if (interactedBlock != ModBlocks.SECURITY_STATION.get() || event instanceof PlayerInteractEvent.LeftClickBlock) {
                 boolean tryingToPlaceSecurityStation = heldItem.getItem() instanceof BlockItem bi && bi.getBlock() == ModBlocks.SECURITY_STATION.get();
                 if (SecurityStationBlockEntity.isProtectedFromPlayer(player, event.getPos(), tryingToPlaceSecurityStation)) {
-                    player.displayClientMessage(xlate(tryingToPlaceSecurityStation ?
+                    player.sendOverlayMessage(xlate(tryingToPlaceSecurityStation ?
                             "pneumaticcraft.message.securityStation.stationPlacementPrevented" :
                             "pneumaticcraft.message.securityStation.accessPrevented"
-                    ).withStyle(ChatFormatting.RED), true);
+                    ).withStyle(ChatFormatting.RED));
                     if (heldItem.getItem() instanceof BlockItem) {
-                        player.connection.send(new ClientboundContainerSetSlotPacket(-2, 0, player.getInventory().selected, heldItem));
+                        player.connection.send(new ClientboundContainerSetSlotPacket(-2, 0, player.getInventory().getSelectedSlot(), heldItem));
                     }
                     return false;
                 }
@@ -730,14 +730,14 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             Player player = event.getPlayer();
             if (!isPlayerExempt(player) && isProtectedFromPlayer(player, event.getPos(), false)) {
                 event.setCanceled(true);
-                player.displayClientMessage(xlate("pneumaticcraft.message.securityStation.accessPrevented").withStyle(ChatFormatting.RED), true);
+                player.sendOverlayMessage(xlate("pneumaticcraft.message.securityStation.accessPrevented").withStyle(ChatFormatting.RED));
             }
         }
 
         @SubscribeEvent(priority = EventPriority.HIGHEST)
         public static void onBlockExplode(ExplosionEvent.Start event) {
             final Player player = getPlayerForExplosion(event);
-            if (player != null && !isPlayerExempt(player) && !event.getLevel().isClientSide) {
+            if (player != null && !isPlayerExempt(player) && !event.getLevel().isClientSide()) {
                 event.getExplosion().getToBlow().removeIf(pos -> isProtectedFromPlayer(player, pos, false));
             }
         }
@@ -746,10 +746,10 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
             boolean tryingToPlaceSecurityStation = event.getPlacedBlock().getBlock() == ModBlocks.SECURITY_STATION.get();
             if (isProtectedFromPlayer(player, pos, tryingToPlaceSecurityStation)) {
                 event.setCanceled(true);
-                player.displayClientMessage(xlate(tryingToPlaceSecurityStation ?
+                player.sendOverlayMessage(xlate(tryingToPlaceSecurityStation ?
                         "pneumaticcraft.message.securityStation.stationPlacementPrevented" :
                         "pneumaticcraft.message.securityStation.accessPrevented"
-                ).withStyle(ChatFormatting.RED), true);
+                ).withStyle(ChatFormatting.RED));
                 return true;
             }
             return false;

@@ -71,12 +71,12 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
 		return ModRecipeSerializers.REFINERY.get();
 	}
 
 	@Override
-	public RecipeType<?> getType() {
+	public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
 		return ModRecipeTypes.REFINERY.get();
 	}
 
@@ -94,7 +94,7 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 		T create(SizedFluidIngredient input, TemperatureRange operatingTemp, List<FluidStack> outputs);
 	}
 
-	public static class Serializer<T extends RefineryRecipe> implements RecipeSerializer<T> {
+	public static class Serializer<T extends RefineryRecipe> {
 		private final MapCodec<T> codec;
 		private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
@@ -117,15 +117,15 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 					factory::create
 			);
 		}
-
-		@Override
 		public MapCodec<T> codec() {
 			return codec;
 		}
-
-		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
 			return streamCodec;
 		}
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
+        }
     }
 }

@@ -121,12 +121,12 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.PRESSURE_CHAMBER.get();
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.PRESSURE_CHAMBER.get();
     }
 
@@ -170,7 +170,7 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
         T create(List<SizedIngredient> inputs, float pressureRequired, List<ItemStack> outputs);
     }
 
-    public static class Serializer<T extends PressureChamberRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends PressureChamberRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
 
@@ -187,15 +187,15 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

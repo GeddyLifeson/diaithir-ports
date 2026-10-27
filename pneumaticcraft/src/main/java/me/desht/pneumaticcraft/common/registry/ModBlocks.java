@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.registry;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.api.lib.Names;
 import me.desht.pneumaticcraft.api.pressure.PressureTier;
 import me.desht.pneumaticcraft.common.block.*;
@@ -34,12 +35,12 @@ public class ModBlocks {
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, ? extends T> sup, BlockBehaviour.Properties props, Function<DeferredBlock<T>, Supplier<? extends Item>> itemCreator) {
         DeferredBlock<T> ret = registerNoItem(name, sup, props);
-        ITEMS.register(name, itemCreator.apply(ret));
+        ModItems.register(name, itemCreator.apply(ret));
         return ret;
     }
 
     private static <T extends Block> DeferredBlock<T> registerNoItem(String name, Function<BlockBehaviour.Properties, ? extends T> sup, BlockBehaviour.Properties props) {
-        return BLOCKS.registerBlock(name, sup, props);
+        return BLOCKS.registerBlock(name, sup, () -> props);
     }
 
     private static Supplier<BlockItem> itemDefault(final DeferredBlock<? extends Block> blockSupplier) {
@@ -47,7 +48,7 @@ public class ModBlocks {
     }
 
     private static Supplier<BlockItem> item(final DeferredBlock<? extends Block> blockSupplier) {
-        return () -> new BlockItem(blockSupplier.get(), ModItems.defaultProps());
+        return () -> new PNCBlockItem(blockSupplier.get(), ModItems.defaultProps());
     }
 
     public static Block.Properties defaultProps() {
@@ -73,7 +74,7 @@ public class ModBlocks {
         return Block.Properties.of()
                 .mapColor(color)
                 .replaceable()
-                .noCollission()
+                .noCollision()
                 .strength(100f)
                 .noLootTable()
                 .liquid()
@@ -140,7 +141,7 @@ public class ModBlocks {
             ElectrostaticCompressorBlock::new, defaultProps());
     public static final DeferredBlock<AphorismTileBlock> APHORISM_TILE = register("aphorism_tile",
             AphorismTileBlock::new,
-            defaultProps().mapColor(MapColor.QUARTZ).strength(1.5f, 4.0f).noCollission(),
+            defaultProps().mapColor(MapColor.QUARTZ).strength(1.5f, 4.0f).noCollision(),
             block -> () -> new AphorismTileBlock.ItemBlockAphorismTile(block.get()));
     public static final DeferredBlock<OmnidirectionalHopperBlock> OMNIDIRECTIONAL_HOPPER = register("omnidirectional_hopper",
             OmnidirectionalHopperBlock::new,
@@ -241,7 +242,7 @@ public class ModBlocks {
     public static final DeferredBlock<DroneInterfaceBlock> DRONE_INTERFACE = register("drone_interface",
             DroneInterfaceBlock::new, defaultProps());
     public static final DeferredBlock<ThermalLaggingBlock> THERMAL_LAGGING = register("thermal_lagging",
-            ThermalLaggingBlock::new, defaultProps().noOcclusion().noCollission());
+            ThermalLaggingBlock::new, defaultProps().noOcclusion().noCollision());
     public static final DeferredBlock<FluidMixerBlock> FLUID_MIXER = register("fluid_mixer",
             FluidMixerBlock::new, defaultProps());
     public static final DeferredBlock<VacuumTrapBlock> VACUUM_TRAP = register("vacuum_trap",

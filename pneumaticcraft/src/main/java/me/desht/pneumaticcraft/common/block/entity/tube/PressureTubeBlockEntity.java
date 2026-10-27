@@ -42,7 +42,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -51,8 +51,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.neoforged.neoforge.client.model.data.ModelData;
-import net.neoforged.neoforge.client.model.data.ModelProperty;
+import net.neoforged.neoforge.model.data.ModelData;
+import net.neoforged.neoforge.model.data.ModelProperty;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -84,15 +84,15 @@ public class PressureTubeBlockEntity extends AbstractAirHandlingBlockEntity impl
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        sidesClosed = tag.getInt("sidesClosed");
+        sidesClosed = tag.getIntOr("sidesClosed", 0);
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         if (sidesClosed != 0) {
             tag.putInt("sidesClosed", sidesClosed);
@@ -128,11 +128,11 @@ public class PressureTubeBlockEntity extends AbstractAirHandlingBlockEntity impl
         super.readFromPacket(tag, provider);
 
         EnumSet<Direction> dirs = EnumSet.allOf(Direction.class);
-        ListTag moduleList = tag.getList("modules", Tag.TAG_COMPOUND);
+        ListTag moduleList = tag.getListOrEmpty("modules");
         for (int i = 0; i < moduleList.size(); i++) {
-            CompoundTag moduleTag = moduleList.getCompound(i);
-            Item item = BuiltInRegistries.ITEM.get(ResourceLocation.parse(moduleTag.getString("type")));
-            Direction dir = Direction.from3DDataValue(moduleTag.getInt("dir"));
+            CompoundTag moduleTag = moduleList.getCompoundOrEmpty(i);
+            Item item = BuiltInRegistries.ITEM.getValue(Identifier.parse(moduleTag.getStringOr("type", "")));
+            Direction dir = Direction.from3DDataValue(moduleTag.getIntOr("dir", 0));
             if (item instanceof TubeModuleItem) {
                 AbstractTubeModule module = ((TubeModuleItem) item).createModule(dir, this);
                 module.readFromNBT(moduleTag);
@@ -156,7 +156,7 @@ public class PressureTubeBlockEntity extends AbstractAirHandlingBlockEntity impl
         }
 
         updateRenderBoundingBox();
-        if (hasLevel() && nonNullLevel().isClientSide) {
+        if (hasLevel() && nonNullLevel().isClientSide()) {
             forceBlockEntityRerender();
         }
         camoState = CamouflageableBlockEntity.readCamo(tag);
@@ -227,7 +227,7 @@ public class PressureTubeBlockEntity extends AbstractAirHandlingBlockEntity impl
     public void onLoad() {
         super.onLoad();
 
-        if (!nonNullLevel().isClientSide) {
+        if (!nonNullLevel().isClientSide()) {
             discoverConnectedNeighbors();
         }
 
@@ -308,7 +308,7 @@ public class PressureTubeBlockEntity extends AbstractAirHandlingBlockEntity impl
         } else {
             modules.remove(side);
         }
-        if (getLevel() != null && !getLevel().isClientSide) {
+        if (getLevel() != null && !getLevel().isClientSide()) {
             discoverConnectedNeighbors();
             sendDescriptionPacket();
             setChanged();

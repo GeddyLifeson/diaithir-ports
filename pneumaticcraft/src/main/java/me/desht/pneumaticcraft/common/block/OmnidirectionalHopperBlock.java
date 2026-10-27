@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.client.ColorHandlers;
 import me.desht.pneumaticcraft.common.block.entity.hopper.AbstractHopperBlockEntity;
 import me.desht.pneumaticcraft.common.block.entity.hopper.OmnidirectionalHopperBlockEntity;
@@ -25,7 +26,7 @@ import me.desht.pneumaticcraft.common.upgrades.ModUpgrades;
 import me.desht.pneumaticcraft.common.upgrades.UpgradableItemUtils;
 import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import me.desht.pneumaticcraft.common.util.VoxelShapeUtils;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -190,7 +191,7 @@ public class OmnidirectionalHopperBlock extends AbstractPneumaticCraftBlock
         return new OmnidirectionalHopperBlockEntity(pPos, pState);
     }
 
-    public static class ItemBlockOmnidirectionalHopper extends BlockItem implements ColorHandlers.ITintableItem {
+    public static class ItemBlockOmnidirectionalHopper extends PNCBlockItem implements ColorHandlers.ITintableItem {
         public ItemBlockOmnidirectionalHopper(Block block) {
             super(block, ModItems.defaultProps());
         }

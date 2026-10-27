@@ -71,8 +71,9 @@ public class SpawnerCoreItem extends Item implements ColorHandlers.ITintableItem
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+        List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flagIn);
 
         ISpawnerCoreStats stats = stack.getOrDefault(ModDataComponents.SPAWNER_CORE_STATS, SpawnerCoreStats.EMPTY);
         if (stats.getUnusedPercentage() < 100) {
@@ -94,7 +95,7 @@ public class SpawnerCoreItem extends Item implements ColorHandlers.ITintableItem
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (!context.getLevel().isClientSide) {
+        if (!context.getLevel().isClientSide()) {
             return trySpawnEntity(context) ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
             return InteractionResult.SUCCESS;
@@ -120,7 +121,7 @@ public class SpawnerCoreItem extends Item implements ColorHandlers.ITintableItem
                         return e1;
                     });
                     if (entity != null) {
-                        entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), world.random.nextFloat() * 360.0F, 0.0F);
+                        entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), world.getRandom().nextFloat() * 360.0F, 0.0F);
                         if (serverworld.tryAddFreshEntityWithPassengers(entity)) {
                             stats.addAmount(type, -1).save(stack);
                             return true;

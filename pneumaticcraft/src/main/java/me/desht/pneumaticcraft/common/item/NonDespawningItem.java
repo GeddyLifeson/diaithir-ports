@@ -43,7 +43,7 @@ public class NonDespawningItem extends Item {
         // Note: the /give command creates a fake item entity which despawns in one tick by setting the entity's age
         // to one tick less than the entity's lifetime; we need to check for that
         // https://github.com/TeamPneumatic/pnc-repressurized/issues/1012
-        if (!entityItem.level().isClientSide && ((ItemEntityAccess)entityItem).getAge() < entityItem.getItem().getEntityLifespan(entityItem.level()) - 1) {
+        if (!entityItem.level().isClientSide() && ((ItemEntityAccess)entityItem).getAge() < entityItem.getItem().getEntityLifespan(entityItem.level()) - 1) {
             entityItem.setExtendedLifetime();
         }
         return false;
@@ -53,8 +53,9 @@ public class NonDespawningItem extends Item {
      * allows items to add custom lines of information to the mouseover description
      */
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> curInfo, TooltipFlag moreInfo) {
-        super.appendHoverText(stack, context, curInfo, moreInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag moreInfo) {
+        List<Component> curInfo = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, moreInfo);
         curInfo.add(xlate("pneumaticcraft.gui.tooltip.doesNotDespawn"));
     }
 }

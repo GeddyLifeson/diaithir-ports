@@ -34,7 +34,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -60,7 +60,7 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
         BlockPos pos = ctx.getClickedPos();
         if (ctx.getPlayer() == null) return InteractionResult.PASS;
         setGPSLocation(ctx.getPlayer().getUUID(), ctx.getPlayer().getItemInHand(ctx.getHand()), pos);
-        if (!ctx.getLevel().isClientSide) {
+        if (!ctx.getLevel().isClientSide()) {
             displayPosition(ctx.getPlayer(), ctx.getItemInHand(), pos, false);
         }
         ctx.getPlayer().playSound(ModSounds.CHIRP.get(), 1.0f, 1.5f);
@@ -75,17 +75,18 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack stack = playerIn.getItemInHand(handIn);
-        if (worldIn.isClientSide) {
+        if (worldIn.isClientSide()) {
             GPSToolScreen.showGUI(stack, handIn, getGPSLocation(playerIn.getUUID(), stack).orElse(playerIn.blockPosition()));
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag par4) {
-        super.appendHoverText(stack, context, infoList, par4);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag par4) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, par4);
 
         ClientUtils.getOptionalClientLevel().ifPresent(level -> {
             ClientUtils.addGuiContextSensitiveTooltip(stack, infoList);
@@ -110,7 +111,7 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean heldItem) {
         String var = getVariable(stack);
-        if (!var.isEmpty() && !world.isClientSide && entity instanceof Player) {
+        if (!var.isEmpty() && !world.isClientSide() && entity instanceof Player) {
             getGPSLocation(entity.getUUID(), stack).ifPresent(curPos -> {
                 BlockPos varPos = GlobalVariableHelper.getInstance().getPos(entity.getUUID(), var, PneumaticCraftUtils.invalidPos());
                 if (!varPos.equals(curPos)) {
@@ -196,7 +197,7 @@ public class GPSToolItem extends Item implements IPositionProvider, IGPSToolSync
 
     @Override
     public void onShiftScrolled(Player player, boolean forward, InteractionHand hand) {
-        if (!player.level().isClientSide) {
+        if (!player.level().isClientSide()) {
             ItemStack stack = player.getItemInHand(hand);
             getGPSLocation(stack).ifPresent(loc -> {
                 Direction facing = Direction.orderedByNearest(player)[0];

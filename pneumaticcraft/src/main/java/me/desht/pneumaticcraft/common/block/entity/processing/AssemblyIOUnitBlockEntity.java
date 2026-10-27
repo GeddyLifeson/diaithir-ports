@@ -466,12 +466,12 @@ public class AssemblyIOUnitBlockEntity extends AbstractAssemblyRobotBlockEntity 
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        clawProgress = tag.getFloat("clawProgress");
-        shouldClawClose = tag.getBoolean("clawClosing");
-        state = tag.getByte("state");
+        clawProgress = tag.getFloatOr("clawProgress", 0f);
+        shouldClawClose = tag.getBooleanOr("clawClosing", false);
+        state = tag.getByteOr("state", (byte)0);
         itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
     }
 
@@ -481,8 +481,8 @@ public class AssemblyIOUnitBlockEntity extends AbstractAssemblyRobotBlockEntity 
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putFloat("clawProgress", clawProgress);
         tag.putBoolean("clawClosing", shouldClawClose);
         tag.putByte("state", state);

@@ -47,13 +47,13 @@ import me.desht.pneumaticcraft.common.util.GlobalPosHelper;
 import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import me.desht.pneumaticcraft.lib.PneumaticValues;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
@@ -64,7 +64,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -80,12 +81,12 @@ import java.util.Optional;
 import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 import static me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.xlate;
 
-public class PneumaticArmorItem extends ArmorItem implements
+public class PneumaticArmorItem extends Item implements
         IChargeableContainerProvider, IFOVModifierItem, ICustomDurabilityBar, IPressurizableItem,
         ColorHandlers.ITintableItem
         /*, IVisDiscountGear, IGoggles, IRevealer,*/
 {
-    private static final Map<EquipmentSlotGroup,ResourceLocation> MODIFIER_IDS = Util.make(
+    private static final Map<EquipmentSlotGroup,Identifier> MODIFIER_IDS = Util.make(
             new EnumMap<>(EquipmentSlotGroup.class), map -> {
                 map.put(EquipmentSlotGroup.HEAD, RL("armor_mod_head"));
                 map.put(EquipmentSlotGroup.CHEST, RL("armor_mod_chest"));
@@ -105,9 +106,11 @@ public class PneumaticArmorItem extends ArmorItem implements
     public static final DyedItemColor DEFAULT_SECONDARY_COLOR = new DyedItemColor(0xFFC0C0C0, false);
     public static final DyedItemColor DEFAULT_EYEPIECE_COLOR = new DyedItemColor(0xFF00AA00, false);
 
-    public PneumaticArmorItem(ArmorItem.Type type) {
-        super(ModArmorMaterials.PNEUMATIC.getDelegate(), type,
-                ModItems.pressurizableToolProps().durability(type.getDurability(24)));
+    protected final ArmorType type;
+
+    public PneumaticArmorItem(ArmorType type) {
+        super(ModItems.pressurizableToolProps().humanoidArmor(ModArmorMaterials.PNEUMATIC, type));
+        this.type = type;
     }
 
     /**
@@ -148,7 +151,8 @@ public class PneumaticArmorItem extends ArmorItem implements
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+        List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
         if (type == Type.HELMET && context.registries() != null) {
             ClientUtils.getOptionalClientLevel().ifPresent(level -> addHelmetInformation(stack, level, tooltip));
         }

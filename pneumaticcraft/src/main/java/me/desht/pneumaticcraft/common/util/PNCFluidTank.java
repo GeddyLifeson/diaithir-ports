@@ -80,13 +80,13 @@ public class PNCFluidTank implements IFluidHandler, IFluidTank {
     }
 
     public PNCFluidTank readFromNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        FluidStack fluid = FluidStack.parseOptional(provider, nbt);
+        FluidStack fluid = me.desht.pneumaticcraft.compat.NbtCompat.parseFluid(provider, nbt);
         setFluid(fluid);
         return this;
     }
 
     public Tag writeToNBT(HolderLookup.Provider provider) {
-        return fluidStack.saveOptional(provider);
+        return me.desht.pneumaticcraft.compat.NbtCompat.saveFluid(provider, fluidStack);
     }
 
     @Override

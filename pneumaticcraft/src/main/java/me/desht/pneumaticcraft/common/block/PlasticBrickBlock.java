@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.api.drone.IDrone;
 import me.desht.pneumaticcraft.client.ColorHandlers;
 import me.desht.pneumaticcraft.common.PNCDamageSource;
@@ -178,7 +179,7 @@ public class PlasticBrickBlock extends Block implements ColorHandlers.ITintableB
         }
     }
 
-    public static class ItemPlasticBrick extends BlockItem implements ICustomTooltipName {
+    public static class ItemPlasticBrick extends PNCBlockItem implements ICustomTooltipName {
         public ItemPlasticBrick(PlasticBrickBlock blockPlasticBrick) {
             super(blockPlasticBrick, ModItems.defaultProps());
         }

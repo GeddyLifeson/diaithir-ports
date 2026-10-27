@@ -146,19 +146,19 @@ public abstract class AbstractHopperBlockEntity<T extends BlockEntity & IRedston
     protected abstract int getComparatorValueInternal();
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putInt("leaveMaterialCount", leaveMaterialCount);
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         if (tag.contains("leaveMaterial")) {
-            leaveMaterialCount = (byte)(tag.getBoolean("leaveMaterial") ? 1 : 0);
+            leaveMaterialCount = (byte)(tag.getBooleanOr("leaveMaterial", false) ? 1 : 0);
         } else {
-            leaveMaterialCount = tag.getInt("leaveMaterialCount");
+            leaveMaterialCount = tag.getIntOr("leaveMaterialCount", 0);
         }
     }
 
@@ -189,7 +189,7 @@ public abstract class AbstractHopperBlockEntity<T extends BlockEntity & IRedston
     public void onUpgradesChanged() {
         super.onUpgradesChanged();
 
-        if (level != null && !level.isClientSide) {
+        if (level != null && !level.isClientSide()) {
             isCreative = getUpgrades(ModUpgrades.CREATIVE.get()) > 0;
         }
     }

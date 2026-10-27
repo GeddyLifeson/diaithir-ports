@@ -50,7 +50,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
@@ -223,7 +223,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
             playerName = "";
         } else {
             isConnectedToPlayer = true;
-            playerName = player.getGameProfile().getName();
+            playerName = player.getGameProfile().name();
             scanForChargeableItems(player);
         }
         if (wasConnected != isConnectedToPlayer) {
@@ -298,8 +298,8 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
     }
 
     private static boolean isDimensionBlacklisted(ServerLevel beLevel, ServerPlayer player) {
-        return dimensionBlacklist.get().test(beLevel.dimension().location())
-                || player != null && dimensionBlacklist.get().test(player.level().dimension().location());
+        return dimensionBlacklist.get().test(beLevel.dimension().identifier())
+                || player != null && dimensionBlacklist.get().test(player.level().dimension().identifier());
     }
 
     public static void clearDimensionBlacklist() {
@@ -362,12 +362,12 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        playerUUID = UUID.fromString(tag.getString("playerUUID"));
+        playerUUID = UUID.fromString(tag.getStringOr("playerUUID", ""));
         feedMode = FeedMode.valueOf(tag.getString("feedMode"));
-        curXpFluid = tag.contains("curXpFluid") ? BuiltInRegistries.FLUID.get(ResourceLocation.parse(tag.getString("curXpFluid"))) : Fluids.EMPTY;
+        curXpFluid = tag.contains("curXpFluid") ? BuiltInRegistries.FLUID.get(Identifier.parse(tag.getStringOr("curXpFluid", ""))) : Fluids.EMPTY;
         curXpRatio = XPFluidManager.getInstance().getXPRatio(curXpFluid);
         energyStorage.readFromNBT(tag);
 
@@ -375,8 +375,8 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.putString("playerUUID", playerUUID.toString());
         tag.putString("feedMode", feedMode.toString());
@@ -614,7 +614,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
                             player.drop(remainingItem, false);
                         }
                     }
-                    player.displayClientMessage(Component.translatable("pneumaticcraft.gui.aerial_interface.fedItem", copy.getHoverName()), true);
+                    player.sendOverlayMessage(Component.translatable("pneumaticcraft.gui.aerial_interface.fedItem", copy.getHoverName()));
                     if (stack.getCount() == startValue) break;
                 }
                 return remainingItem.getCount() > 0 ? remainingItem : ItemStack.EMPTY;

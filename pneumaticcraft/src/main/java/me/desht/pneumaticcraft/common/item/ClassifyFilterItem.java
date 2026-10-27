@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.item;
 
+import net.minecraft.world.InteractionResult;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import me.desht.pneumaticcraft.api.item.IFilteringItem;
@@ -18,7 +19,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -46,12 +47,12 @@ public class ClassifyFilterItem extends Item implements IFilteringItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+    public InteractionResult use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
-        if (pLevel.isClientSide) {
+        if (pLevel.isClientSide()) {
             ClassifyFilterScreen.openGui(stack.getHoverName(), pUsedHand);
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     @Override
@@ -62,8 +63,9 @@ public class ClassifyFilterItem extends Item implements IFilteringItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, TooltipContext context, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        super.appendHoverText(pStack, context, pTooltipComponents, pIsAdvanced);
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag pIsAdvanced) {
+        List<Component> pTooltipComponents = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(pStack, context, tooltipDisplay__, tooltipConsumer__, pIsAdvanced);
 
         FilterSettings settings = FilterSettings.fromStack(pStack);
         pTooltipComponents.add(xlateMatch(settings.matchAll()).withStyle(ChatFormatting.YELLOW));
@@ -121,7 +123,7 @@ public class ClassifyFilterItem extends Item implements IFilteringItem {
         PLACEABLE(Items.STONE, s -> s.getItem() instanceof BlockItem),
         FLUID_CONTAINER(Items.BUCKET, s -> IOHelper.getFluidHandlerForItem(s).isPresent()),
         UNSTACKABLE(Items.WRITABLE_BOOK, s -> s.getMaxStackSize() == 1),
-        WEARABLE(Items.LEATHER_HELMET, s -> s.getItem() instanceof ArmorItem),
+        WEARABLE(Items.LEATHER_HELMET, s -> s.get(net.minecraft.core.component.DataComponents.EQUIPPABLE) != null),
         TOOL(Items.IRON_PICKAXE, s -> s.getItem() instanceof TieredItem),
         WEAPON(Items.IRON_SWORD, s -> s.getItem() instanceof SwordItem || s.getItem() instanceof AxeItem || s.getItem() instanceof ProjectileWeaponItem),
         ENCHANTABLE(Items.BOOK, s -> s.isEnchantable() && !s.isEnchanted()),

@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.common.block.entity.utility.KeroseneLampBlockEntity;
 import me.desht.pneumaticcraft.common.config.ConfigHelper;
 import me.desht.pneumaticcraft.common.item.ICustomTooltipName;
@@ -124,7 +125,7 @@ public class KeroseneLampBlock extends AbstractPneumaticCraftBlock implements Pn
         return new KeroseneLampBlockEntity(pPos, pState);
     }
 
-    public static class ItemBlockKeroseneLamp extends BlockItem implements ICustomTooltipName {
+    public static class ItemBlockKeroseneLamp extends PNCBlockItem implements ICustomTooltipName {
         public ItemBlockKeroseneLamp(Block blockIn) {
             super(blockIn, ModItems.defaultProps());
         }

@@ -189,7 +189,7 @@ public class OmnidirectionalHopperBlockEntity extends AbstractHopperBlockEntity<
         Direction dir = inputDir.getOpposite();
         int remaining = maxItems;
         for (Entity e : cachedInputEntities) {
-            if (e.isAlive() && !e.getType().is(PneumaticCraftTags.EntityTypes.OMNIHOPPER_BLACKLISTED)) {
+            if (e.isAlive() && !e.getType().builtInRegistryHolder().is(PneumaticCraftTags.EntityTypes.OMNIHOPPER_BLACKLISTED)) {
                 final int r = remaining;
                 boolean playerArmor = e instanceof Player && dir.getAxis().isHorizontal();
                 int imported = IOHelper.getSidedInventoryForEntity(e, dir)
@@ -263,20 +263,20 @@ public class OmnidirectionalHopperBlockEntity extends AbstractHopperBlockEntity<
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.put("Items", itemHandler.serializeNBT(provider));
         tag.putBoolean("RoundRobin", roundRobin);
         if (roundRobin) tag.putInt("RRSlot", rrSlot);
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
-        roundRobin = tag.getBoolean("RoundRobin");
-        rrSlot = tag.getInt("RRSlot");
+        itemHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
+        roundRobin = tag.getBooleanOr("RoundRobin", false);
+        rrSlot = tag.getIntOr("RRSlot", 0);
     }
 
     @Override

@@ -107,20 +107,20 @@ public class AssemblyDrillBlockEntity extends AbstractAssemblyRobotBlockEntity {
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putBoolean("drill", isDrillOn);
         tag.putFloat("drillSpeed", drillSpeed);
         tag.putInt("drillStep", drillStep);
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        isDrillOn = tag.getBoolean("drill");
-        drillSpeed = tag.getFloat("drillSpeed");
-        drillStep = tag.getInt("drillStep");
+        isDrillOn = tag.getBooleanOr("drill", false);
+        drillSpeed = tag.getFloatOr("drillSpeed", 0f);
+        drillStep = tag.getIntOr("drillStep", 0);
     }
 
     @Override

@@ -67,20 +67,20 @@ public class VortexTubeBlockEntity extends AbstractAirHandlingBlockEntity implem
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         // hot side heat exchanger is the default, and handled in TileEntityPneumaticBase
         tag.put("coldHeat", coldHeatExchanger.serializeNBT());
         tag.put("connector", connectingExchanger.serializeNBT());
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         // hot side heat exchanger is the default, and handled in TileEntityPneumaticBase
-        coldHeatExchanger.deserializeNBT(tag.getCompound("coldHeat"));
-        connectingExchanger.deserializeNBT(tag.getCompound("connector"));
+        coldHeatExchanger.deserializeNBT(tag.getCompoundOrEmpty("coldHeat"));
+        connectingExchanger.deserializeNBT(tag.getCompoundOrEmpty("connector"));
     }
 
     @Override

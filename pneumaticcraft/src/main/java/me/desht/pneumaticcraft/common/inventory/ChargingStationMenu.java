@@ -25,7 +25,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
@@ -63,7 +62,7 @@ public class ChargingStationMenu extends AbstractPneumaticCraftMenu<ChargingStat
         ItemStack srcStack = srcSlot.getItem().copy();
         ItemStack copyOfSrcStack = srcStack.copy();
 
-        if (slot == 0 && srcStack.getItem() instanceof ArmorItem) {
+        if (slot == 0 && srcStack.get(net.minecraft.core.component.DataComponents.EQUIPPABLE) != null) {
             // chargeable slot - move to armor if appropriate, player inv otherwise
             if (!moveItemStackTo(srcStack, 5, 9, false)
                     && !moveItemStackToHotbarOrInventory(srcStack, playerSlotsStart))

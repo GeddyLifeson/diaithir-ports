@@ -89,7 +89,7 @@ public class PneumaticDoorBlockEntity extends AbstractTickingBlockEntity {
             color = dyeColor;
             nonNullLevel().getBlockEntity(getBlockPos(), ModBlockEntityTypes.PNEUMATIC_DOOR.get()).ifPresent(topHalf -> {
                 topHalf.color = color;
-                if (!nonNullLevel().isClientSide) {
+                if (!nonNullLevel().isClientSide()) {
                     setChanged();
                     topHalf.setChanged();
                     sendDescriptionPacket();
@@ -109,19 +109,19 @@ public class PneumaticDoorBlockEntity extends AbstractTickingBlockEntity {
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.putBoolean("rightGoing", rightGoing);
         tag.putInt("color", color.getId());
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        rightGoing = tag.getBoolean("rightGoing");
-        color = DyeColor.byId(tag.getInt("color"));
+        rightGoing = tag.getBooleanOr("rightGoing", false);
+        color = DyeColor.byId(tag.getIntOr("color", 0));
         scheduleDescriptionPacket();
     }
 

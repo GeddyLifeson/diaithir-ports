@@ -45,22 +45,22 @@ public class HeatSinkBlockEntity extends CompressedIronBlockEntity {
     public void onLoad() {
         super.onLoad();
 
-        if (!nonNullLevel().isClientSide) {
+        if (!nonNullLevel().isClientSide()) {
             ambientTemp = HeatExchangerLogicAmbient.getAmbientTemperature(getLevel(), getBlockPos());
             airExchanger.setTemperature(ambientTemp);
         }
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.put("airExchanger", airExchanger.serializeNBT());
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
-        airExchanger.deserializeNBT(tag.getCompound("airExchanger"));
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
+        airExchanger.deserializeNBT(tag.getCompoundOrEmpty("airExchanger"));
     }
 
     @Override

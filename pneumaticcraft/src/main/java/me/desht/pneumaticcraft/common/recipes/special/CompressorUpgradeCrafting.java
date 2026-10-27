@@ -35,11 +35,11 @@ public class CompressorUpgradeCrafting extends WrappedShapedRecipe {
     }
 
     private static Item getItem(String id) {
-        return BuiltInRegistries.ITEM.get(RL(id));
+        return BuiltInRegistries.ITEM.getValue(RL(id));
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.COMPRESSOR_UPGRADE_CRAFTING.get();
     }
 
@@ -79,20 +79,20 @@ public class CompressorUpgradeCrafting extends WrappedShapedRecipe {
         return i;
     }
 
-    public static class Serializer implements RecipeSerializer<CompressorUpgradeCrafting> {
+    public static class Serializer {
         public static final MapCodec<CompressorUpgradeCrafting> CODEC
                 = ShapedRecipe.Serializer.CODEC.xmap(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
         public static final StreamCodec<RegistryFriendlyByteBuf, CompressorUpgradeCrafting> STREAM_CODEC
                 = ShapedRecipe.Serializer.STREAM_CODEC.map(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
-
-        @Override
         public MapCodec<CompressorUpgradeCrafting> codec() {
             return CODEC;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, CompressorUpgradeCrafting> streamCodec() {
             return STREAM_CODEC;
+        }
+
+        public RecipeSerializer<CompressorUpgradeCrafting> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

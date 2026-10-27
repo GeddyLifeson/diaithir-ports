@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.item.minigun;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.common.config.ConfigHelper;
 import me.desht.pneumaticcraft.common.minigun.Minigun;
 import net.minecraft.network.chat.Component;
@@ -69,8 +70,9 @@ public class ExplosiveGunAmmoItem extends AbstractGunAmmoItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag extraInfo) {
-        super.appendHoverText(stack, context, infoList, extraInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
         if (ConfigHelper.common().minigun.explosiveAmmoTerrainDamage.get()) {
             infoList.add(xlate("pneumaticcraft.gui.tooltip.terrainWarning"));
         } else {

@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.item;
 
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
 import me.desht.pneumaticcraft.api.tileentity.IAirHandler;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
@@ -27,7 +29,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -55,8 +57,9 @@ public class AirCanisterItem extends PressurizableItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag pTooltipFlag) {
+        List<Component> pTooltipComponents = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(pStack, pContext, tooltipDisplay__, tooltipConsumer__, pTooltipFlag);
 
         MutableComponent c = xlate(pStack.getOrDefault(ModDataComponents.CHARGING_MODE, ChargeMode.NONE).getTranslationKey());
         pTooltipComponents.add(c.withStyle(ChatFormatting.AQUA));
@@ -64,19 +67,19 @@ public class AirCanisterItem extends PressurizableItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+    public InteractionResult use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             ChargeMode mode = getChargeMode(stack).nextMode();
             pPlayer.getItemInHand(pUsedHand).set(ModDataComponents.CHARGING_MODE, mode);
-            pPlayer.displayClientMessage(xlate(mode.getTranslationKey()).withStyle(ChatFormatting.AQUA), true);
+            pPlayer.sendOverlayMessage(xlate(mode.getTranslationKey()).withStyle(ChatFormatting.AQUA));
         }
-        return InteractionResultHolder.sidedSuccess(stack, pLevel.isClientSide);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if (pEntity.level().isClientSide) return;
+        if (pEntity.level().isClientSide()) return;
 
         ChargeMode mode = getChargeMode(pStack);
         if (pEntity instanceof Player player && mode != ChargeMode.NONE && pLevel.getGameTime() % PneumaticValues.ARMOR_CHARGER_INTERVAL == 15) {

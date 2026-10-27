@@ -317,18 +317,18 @@ public class SmartChestBlockEntity extends AbstractTickingBlockEntity
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.put(NBT_ITEMS, inventory.serializeNBT(provider));
         tag.putInt("pushPull", pushPullModes);
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound(NBT_ITEMS));
-        pushPullModes = tag.getInt("pushPull");
+        inventory.deserializeNBT(provider, tag.getCompoundOrEmpty(NBT_ITEMS));
+        pushPullModes = tag.getIntOr("pushPull", 0);
     }
 
     @Override
@@ -492,7 +492,7 @@ public class SmartChestBlockEntity extends AbstractTickingBlockEntity
                 if (!filter[i].isEmpty()) {
                     CompoundTag subTag = new CompoundTag();
                     subTag.putInt("Slot", i);
-                    filter[i].save(provider, subTag);
+                    me.desht.pneumaticcraft.compat.NbtCompat.saveItemInto(provider, filter[i], subTag);
                     l.add(subTag);
                 }
             }
@@ -504,11 +504,11 @@ public class SmartChestBlockEntity extends AbstractTickingBlockEntity
         public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
             super.deserializeNBT(provider, nbt);
 
-            lastSlot = nbt.getInt("LastSlot");
-            ListTag l = nbt.getList("Filter", Tag.TAG_COMPOUND);
+            lastSlot = nbt.getIntOr("LastSlot", 0);
+            ListTag l = nbt.getListOrEmpty("Filter");
             for (int i = 0; i < l.size(); i++) {
-                CompoundTag tag = l.getCompound(i);
-                filter[tag.getInt("Slot")] = ItemStack.parseOptional(provider, tag);
+                CompoundTag tag = l.getCompoundOrEmpty(i);
+                filter[tag.getIntOr("Slot", 0)] = me.desht.pneumaticcraft.compat.NbtCompat.parseItem(provider, tag);
             }
         }
 

@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.common.block.entity.utility.ChargingStationBlockEntity;
 import me.desht.pneumaticcraft.common.registry.ModBlockEntityTypes;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
@@ -146,7 +147,7 @@ public class ChargingStationBlock extends AbstractCamouflageBlock implements Pne
         list.add(ModDataComponents.UPGRADE_ONLY.get());
     }
 
-    public static class ItemBlockChargingStation extends BlockItem {
+    public static class ItemBlockChargingStation extends PNCBlockItem {
         public ItemBlockChargingStation(Block blockIn) {
             super(blockIn, ModItems.defaultProps());
         }

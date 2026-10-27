@@ -91,12 +91,12 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.HEAT_FRAME_COOLING.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.HEAT_FRAME_COOLING.get();
     }
 
@@ -122,7 +122,7 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
         T create(Either<Ingredient,FluidContainerIngredient> input, int temperature, ItemStack out, float bonusMultiplier, float bonusLimit);
     }
 
-    public static class Serializer<T extends HeatFrameCoolingRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends HeatFrameCoolingRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
@@ -148,15 +148,15 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

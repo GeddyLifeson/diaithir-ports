@@ -150,8 +150,8 @@ public class KeroseneLampBlockEntity extends AbstractTickingBlockEntity implemen
         super.tickClient();
 
         final Level level = nonNullLevel();
-        if (getBlockState().getValue(LIT) && level.random.nextInt(10) == 0) {
-            level.addParticle(ParticleTypes.FLAME, getBlockPos().getX() + 0.4 + 0.2 * level.random.nextDouble(), getBlockPos().getY() + 0.2 + tank.getFluidAmount() / 1000D * 3 / 16D, getBlockPos().getZ() + 0.4 + 0.2 * level.random.nextDouble(), 0, 0, 0);
+        if (getBlockState().getValue(LIT) && level.getRandom().nextInt(10) == 0) {
+            level.addParticle(ParticleTypes.FLAME, getBlockPos().getX() + 0.4 + 0.2 * level.getRandom().nextDouble(), getBlockPos().getY() + 0.2 + tank.getFluidAmount() / 1000D * 3 / 16D, getBlockPos().getZ() + 0.4 + 0.2 * level.getRandom().nextDouble(), 0, 0, 0);
         }
     }
 
@@ -317,8 +317,8 @@ public class KeroseneLampBlockEntity extends AbstractTickingBlockEntity implemen
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         BLOCKPOS_LIST_CODEC.encodeStart(provider.createSerializationContext(NbtOps.INSTANCE), List.copyOf(managingLights)).result()
                 .ifPresent(t -> tag.put("lights", t));
         tag.putByte("targetRange", (byte) targetRange);
@@ -327,15 +327,15 @@ public class KeroseneLampBlockEntity extends AbstractTickingBlockEntity implemen
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         managingLights.clear();
         BLOCKPOS_LIST_CODEC.parse(provider.createSerializationContext(NbtOps.INSTANCE), tag.get("lights")).result()
                 .ifPresent(managingLights::addAll);
         fuelQuality = calculateFuelQuality(tank.getFluid().getFluid());
-        targetRange = tag.getByte("targetRange");
-        range = tag.getByte("range");
+        targetRange = tag.getByteOr("targetRange", (byte)0);
+        range = tag.getByteOr("range", (byte)0);
         rangeSq = range * range;
         inventory.deserializeNBT(provider, tag.getCompound("Items"));
     }

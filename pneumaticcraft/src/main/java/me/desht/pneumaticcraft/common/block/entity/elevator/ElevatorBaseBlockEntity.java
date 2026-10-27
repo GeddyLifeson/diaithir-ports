@@ -146,7 +146,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
         }
 
         double speedMultiplier;
-        if (!nonNullLevel().isClientSide) {
+        if (!nonNullLevel().isClientSide()) {
             if (isControlledByRedstone()) {
                 handleRedstoneControl();
             }
@@ -169,7 +169,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
         }
 
         if (extension < targetExtension) {
-            if (!nonNullLevel().isClientSide && getPressure() < PneumaticValues.MIN_PRESSURE_ELEVATOR) {
+            if (!nonNullLevel().isClientSide() && getPressure() < PneumaticValues.MIN_PRESSURE_ELEVATOR) {
                 targetExtension = extension;
             }
             double moveBy = extension < targetExtension - BlockEntityConstants.ELEVATOR_SLOW_EXTENSION ?
@@ -183,7 +183,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
                     BlockEntityConstants.ELEVATOR_SPEED_FAST * speedMultiplier * chargingSlowdown:
                     BlockEntityConstants.ELEVATOR_SPEED_SLOW * speedMultiplier * chargingSlowdown;
             extension = Math.max(targetExtension, extension - moveBy);
-            if (!nonNullLevel().isClientSide && chargingUpgrades > 0 && getPressure() < airHandler.getDangerPressure() - 0.1f) {
+            if (!nonNullLevel().isClientSide() && chargingUpgrades > 0 && getPressure() < airHandler.getDangerPressure() - 0.1f) {
                 float mul = 0.15f * Math.min(4, chargingUpgrades);
                 addAir((int) ((oldExtension - extension) * PneumaticValues.USAGE_ELEVATOR * mul * (getSpeedUsageMultiplierFromUpgrades() / speedMultiplier)));
             }
@@ -194,7 +194,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
             isStopped = true;
             ticksRunning = 0;
             playStopStartSound();
-            if (!nonNullLevel().isClientSide) updateFloors(false);
+            if (!nonNullLevel().isClientSide()) updateFloors(false);
         } else if (!PneumaticCraftUtils.epsilonEquals(oldExtension, extension) && isStopped) {
             // just departed
             isStopped = false;
@@ -333,21 +333,21 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
         if (tag.contains("extensionD")) {
-            extension = tag.getDouble("extensionD");
-            targetExtension = tag.getDouble("targetExtensionD");
+            extension = tag.getDoubleOr("extensionD", 0d);
+            targetExtension = tag.getDoubleOr("targetExtensionD", 0d);
         } else {
-            extension = tag.getFloat("extension");
-            targetExtension = tag.getFloat("targetExtension");
+            extension = tag.getFloatOr("extension", 0f);
+            targetExtension = tag.getFloatOr("targetExtension", 0f);
         }
-        maxFloorHeight = tag.getInt("maxFloorHeight");
+        maxFloorHeight = tag.getIntOr("maxFloorHeight", 0);
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putDouble("extensionD", extension);
         tag.putDouble("targetExtensionD", targetExtension);
         tag.putInt("maxFloorHeight", maxFloorHeight);
@@ -361,9 +361,9 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
         floorHeights = tag.getIntArray("floorHeights");
 
         floorNames.clear();
-        ListTag floorNameList = tag.getList("floorNames", Tag.TAG_COMPOUND);
+        ListTag floorNameList = tag.getListOrEmpty("floorNames");
         for (int i = 0; i < floorNameList.size(); i++) {
-            CompoundTag floorName = floorNameList.getCompound(i);
+            CompoundTag floorName = floorNameList.getCompoundOrEmpty(i);
             floorNames.put(floorName.getInt("floorHeight"), floorName.getString("floorName"));
         }
     }
@@ -511,7 +511,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
             }
         }
 
-        if (notifyClient && !level.isClientSide) sendDescPacketFromAllElevators();
+        if (notifyClient && !level.isClientSide()) sendDescPacketFromAllElevators();
     }
 
     private ElevatorButton[] layoutElevatorButtons() {
@@ -581,7 +581,7 @@ public class ElevatorBaseBlockEntity extends AbstractAirHandlingBlockEntity impl
     }
 
     private ElevatorBaseBlockEntity getCoreElevator() {
-        if (coreElevator == null || (nonNullLevel().isClientSide && (nonNullLevel().getGameTime() & 0x3f) == 0)) {
+        if (coreElevator == null || (nonNullLevel().isClientSide() && (nonNullLevel().getGameTime() & 0x3f) == 0)) {
             // bit of a hack; force a recalc every 64 ticks on the client
             coreElevator = ElevatorBaseBlock.getCoreBlockEntity(nonNullLevel(), getBlockPos()).orElse(null);
         }

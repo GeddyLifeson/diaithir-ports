@@ -70,7 +70,7 @@ public class DroneColorCrafting extends ShapelessRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.DRONE_COLOR_CRAFTING.get();
     }
 

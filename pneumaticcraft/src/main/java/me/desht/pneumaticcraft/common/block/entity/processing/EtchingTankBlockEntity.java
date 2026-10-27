@@ -119,7 +119,7 @@ public class EtchingTankBlockEntity extends AbstractTickingBlockEntity
                             didWork = true;
                         } else if (!isOutputFull() && !isFailedOutputFull()) {
                             int uvProgress = UVLightBoxBlockEntity.getExposureProgress(stack);
-                            boolean success = level.random.nextInt(100) <= uvProgress;
+                            boolean success = level.getRandom().nextInt(100) <= uvProgress;
                             tryMoveFinishedItem(i, success);
                         }
                     }
@@ -127,7 +127,7 @@ public class EtchingTankBlockEntity extends AbstractTickingBlockEntity
 
                 if (didWork && tickInterval < 30) {
                     // heated - chance to use up some acid
-                    if (level.random.nextInt(100) < 30 - tickInterval) {
+                    if (level.getRandom().nextInt(100) < 30 - tickInterval) {
                         acidTank.drain(1, IFluidHandler.FluidAction.EXECUTE);
                     }
                     heatExchanger.addHeat(-(30 - tickInterval));
@@ -219,8 +219,8 @@ public class EtchingTankBlockEntity extends AbstractTickingBlockEntity
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Inventory", itemHandler.serializeNBT(provider));
         tag.put("Output", outputHandler.serializeNBT(provider));
@@ -228,8 +228,8 @@ public class EtchingTankBlockEntity extends AbstractTickingBlockEntity
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         itemHandler.deserializeNBT(provider, tag.getCompound("Inventory"));
         outputHandler.deserializeNBT(provider, tag.getCompound("Output"));

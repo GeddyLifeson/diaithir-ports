@@ -106,12 +106,12 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.EXPLOSION_CRAFTING.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.EXPLOSION_CRAFTING.get();
     }
 
@@ -129,7 +129,7 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
         T create(SizedIngredient input, int lossRate, List<ItemStack> result);
     }
 
-    public static class Serializer<T extends ExplosionCraftingRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends ExplosionCraftingRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
 
@@ -146,15 +146,15 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

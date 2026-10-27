@@ -26,9 +26,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.boss.EnderDragonPart;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragonPart;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
-import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
+import net.minecraft.world.entity.projectile.hurtingprojectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.ShulkerBullet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -109,9 +109,10 @@ public abstract class AbstractGunAmmoItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag extraInfo) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
         infoList.add(xlate("pneumaticcraft.gui.tooltip.gunAmmo.ammoRemaining", stack.getMaxDamage() - stack.getDamageValue(), stack.getMaxDamage()));
-        super.appendHoverText(stack, context, infoList, extraInfo);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
     }
 
     /**
@@ -127,7 +128,7 @@ public abstract class AbstractGunAmmoItem extends Item {
         int times = 1;
         int nSpeed = minigun.getUpgrades(ModUpgrades.SPEED.get());
         for (int i = 0; i < nSpeed; i++) {
-            if (minigun.getWorld().random.nextInt(100) < 20) times++;
+            if (minigun.getWorld().getRandom().nextInt(100) < 20) times++;
         }
 
         double dmgMult = getDamageMultiplier(target, ammo);

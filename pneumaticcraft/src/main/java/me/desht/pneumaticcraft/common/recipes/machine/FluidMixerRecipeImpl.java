@@ -90,12 +90,12 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.FLUID_MIXER.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.FLUID_MIXER.get();
     }
 
@@ -105,7 +105,7 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
                  FluidStack outputFluid, ItemStack outputItem, float pressure, int processingTime);
     }
 
-    public static class Serializer<T extends FluidMixerRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends FluidMixerRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
@@ -128,15 +128,15 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

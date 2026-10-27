@@ -31,7 +31,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.client.model.data.ModelProperty;
+import net.neoforged.neoforge.model.data.ModelProperty;
 
 /**
  * Base class for blocks which may be camouflaged, storing the camouflaged block state in the
@@ -48,7 +48,7 @@ public abstract class AbstractCamouflageBlock extends AbstractPneumaticCraftBloc
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
         BlockEntity te = world.getBlockEntity(pos);
         if (te instanceof CamouflageableBlockEntity camo && !player.isCreative()) {
             BlockState camoState = camo.getCamouflage();
@@ -61,7 +61,7 @@ public abstract class AbstractCamouflageBlock extends AbstractPneumaticCraftBloc
                 return false;
             }
         }
-        return super.onDestroyedByPlayer(state, world, pos, player, willHarvest, fluid);
+        return super.onDestroyedByPlayer(state, world, pos, player, toolStack, willHarvest, fluid);
     }
 
     @Override

@@ -241,18 +241,18 @@ public class PneumaticDoorBaseBlockEntity extends AbstractAirHandlingBlockEntity
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        progress = tag.getFloat("extension");
-        opening = tag.getBoolean("opening");
-        rightGoing = tag.getBoolean("rightGoing");
-        passSignal = tag.getBoolean("passSignal");
+        progress = tag.getFloatOr("extension", 0f);
+        opening = tag.getBooleanOr("opening", false);
+        rightGoing = tag.getBooleanOr("rightGoing", false);
+        passSignal = tag.getBooleanOr("passSignal", false);
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.putFloat("extension", progress);
         tag.putBoolean("opening", opening);
         tag.putBoolean("rightGoing", rightGoing);

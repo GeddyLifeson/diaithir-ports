@@ -176,9 +176,9 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
             if (ClientUtils.getClientPlayer().distanceToSqr(getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ()) < 256) {
                 Level level = nonNullLevel();
                 for (int i = 0; i < nParticles; i++) {
-                    double posX = multiBlockX + 1D + level.random.nextDouble() * (multiBlockSize - 2D);
-                    double posY = multiBlockY + 1.5D + level.random.nextDouble() * (multiBlockSize - 2.5D);
-                    double posZ = multiBlockZ + 1D + level.random.nextDouble() * (multiBlockSize - 2D);
+                    double posX = multiBlockX + 1D + level.getRandom().nextDouble() * (multiBlockSize - 2D);
+                    double posY = multiBlockY + 1.5D + level.getRandom().nextDouble() * (multiBlockSize - 2.5D);
+                    double posZ = multiBlockZ + 1D + level.getRandom().nextDouble() * (multiBlockSize - 2D);
                     level.addParticle(AirParticleData.DENSE, posX, posY, posZ, 0, 0, 0);
                 }
             }
@@ -423,10 +423,10 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
-        setupMultiBlock(tag.getInt("multiBlockSize"), tag.getInt("multiBlockX"), tag.getInt("multiBlockY"), tag.getInt("multiBlockZ"));
+        setupMultiBlock(tag.getIntOr("multiBlockSize", 0), tag.getIntOr("multiBlockX", 0), tag.getIntOr("multiBlockY", 0), tag.getIntOr("multiBlockZ", 0));
         ItemStackHandler handler = new ItemStackHandler();
         handler.deserializeNBT(provider, tag.getCompound("itemsInChamber"));
         for (int i = 0; i < handler.getSlots() && i < CHAMBER_INV_SIZE; i++) {
@@ -439,7 +439,7 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
         }
 
         // Read in the accessory valves from NBT
-        ListTag accList = tag.getList("Valves", Tag.TAG_INT_ARRAY);
+        ListTag accList = tag.getListOrEmpty("Valves");
         nbtValveList.clear();
         for (int i = 0; i < accList.size(); ++i) {
             int[] p = accList.getIntArray(i);
@@ -450,8 +450,8 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.putInt("multiBlockX", multiBlockX);
         tag.putInt("multiBlockY", multiBlockY);
@@ -744,7 +744,7 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
         @Override
         protected void onContentsChanged(int slot) {
             recipeRecalcNeeded = true;
-            if (level != null && level.isClientSide) {
+            if (level != null && level.isClientSide()) {
                 rebuildRenderedItems();
             }
             setChanged();
@@ -758,7 +758,7 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
 
         @Override
         protected void onContentsChanged(int slot) {
-            if (level != null && level.isClientSide) {
+            if (level != null && level.isClientSide()) {
                 rebuildRenderedItems();
             }
             setChanged();

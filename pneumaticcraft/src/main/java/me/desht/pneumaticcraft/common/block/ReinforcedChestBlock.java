@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.api.item.IInventoryItem;
 import me.desht.pneumaticcraft.common.block.entity.utility.ReinforcedChestBlockEntity;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
@@ -80,16 +81,16 @@ public class ReinforcedChestBlock extends AbstractPneumaticCraftBlock implements
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
         if (!willHarvest && level.getBlockEntity(pos) instanceof ReinforcedChestBlockEntity be) {
             // broken with wrong tool; ensure any contents get dropped even if the block itself doesn't
             PneumaticCraftUtils.forceDropContents(level, pos, be.getItemHandler());
         }
 
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+        return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
     }
 
-    public static class ItemBlockReinforcedChest extends BlockItem implements IInventoryItem {
+    public static class ItemBlockReinforcedChest extends PNCBlockItem implements IInventoryItem {
         public ItemBlockReinforcedChest(ReinforcedChestBlock block) {
             super(block, ModItems.defaultProps());
         }

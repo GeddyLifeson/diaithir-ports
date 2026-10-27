@@ -275,7 +275,7 @@ public class FluidUtils {
             if (world.isEmptyBlock(pos) || isNotSolid || isReplaceable
                     || block instanceof LiquidBlockContainer lbc && lbc.canPlaceLiquid(null, world, pos, blockstate, toPlace.getFluid())) {
                 if (action.execute()) {
-                    if (world.dimensionType().ultraWarm() && fluid.is(FluidTags.WATER)) {
+                    if (world.environmentAttributes().getValue(net.minecraft.world.attribute.EnvironmentAttributes.WATER_EVAPORATES, pos) && fluid.is(FluidTags.WATER)) {
                         // no pouring water in the nether!
                         playEvaporationEffects(world, pos);
                     } else if (block instanceof LiquidBlockContainer) {
@@ -322,7 +322,7 @@ public class FluidUtils {
         int i = pos.getX();
         int j = pos.getY();
         int k = pos.getZ();
-        world.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (world.random.nextFloat() - world.random.nextFloat()) * 0.8F);
+        world.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F + (world.getRandom().nextFloat() - world.getRandom().nextFloat()) * 0.8F);
         for(int l = 0; l < 8; ++l) {
             world.addParticle(ParticleTypes.LARGE_SMOKE, (double)i + Math.random(), (double)j + Math.random(), (double)k + Math.random(), 0.0D, 0.0D, 0.0D);
         }
@@ -330,7 +330,7 @@ public class FluidUtils {
 
     public static ItemStack createFluidContainingItem(ItemLike item, FluidStack fluid) {
         ItemStack tank = new ItemStack(item);
-        IFluidHandlerItem handler = tank.getCapability(Capabilities.FluidHandler.ITEM, null);
+        IFluidHandlerItem handler = me.desht.pneumaticcraft.compat.Caps.fluidItem(tank);
         if (handler == null) {
             return ItemStack.EMPTY;
         } else {

@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.item;
 
+import net.minecraft.world.InteractionResult;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -45,18 +46,18 @@ import me.desht.pneumaticcraft.common.util.RayTraceUtils;
 import me.desht.pneumaticcraft.lib.PneumaticValues;
 import me.desht.pneumaticcraft.lib.Textures;
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -236,9 +237,9 @@ public class JackHammerItem extends PressurizableItem
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack stack = playerIn.getItemInHand(handIn);
-        if (!playerIn.isShiftKeyDown() || stack.getCount() != 1) return InteractionResultHolder.pass(stack);
+        if (!playerIn.isShiftKeyDown() || stack.getCount() != 1) return InteractionResult.PASS;
         if (playerIn instanceof ServerPlayer sp) {
             sp.openMenu(new MenuProvider() {
                 @Override
@@ -252,7 +253,7 @@ public class JackHammerItem extends PressurizableItem
                 }
             }, buf -> AbstractPneumaticCraftMenu.putHand(buf, handIn));
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     @Override
@@ -419,11 +420,11 @@ public class JackHammerItem extends PressurizableItem
 
     @Override
     public void onShiftScrolled(Player player, boolean forward, InteractionHand hand) {
-        if (!player.level().isClientSide) {
+        if (!player.level().isClientSide()) {
             DigMode newMode = cycleDigMode(player.getItemInHand(hand), forward);
             if (newMode != null) {
-                player.displayClientMessage(xlate("pneumaticcraft.message.jackhammer.mode")
-                        .append(xlate(newMode.getTranslationKey()).withStyle(ChatFormatting.YELLOW)), true);
+                player.sendOverlayMessage(xlate("pneumaticcraft.message.jackhammer.mode")
+                        .append(xlate(newMode.getTranslationKey()).withStyle(ChatFormatting.YELLOW)));
             }
         } else {
             lastModeSwitchTime = player.level().getGameTime();
@@ -466,7 +467,7 @@ public class JackHammerItem extends PressurizableItem
             return blocksDug;
         }
 
-        public ResourceLocation getGuiIcon() {
+        public Identifier getGuiIcon() {
             return Textures.guiIconTexture("gui_" + name + ".png");
         }
 
@@ -571,7 +572,7 @@ public class JackHammerItem extends PressurizableItem
             Player player = event.getEntity();
             ItemStack stack = player.getItemInHand(event.getHand());
             if (stack.getItem() instanceof JackHammerItem jackHammer && jackHammer.getAir(stack) > 0f) {
-                if (event.getLevel().isClientSide) {
+                if (event.getLevel().isClientSide()) {
                     // play the sound to this player
                     MovingSounds.playMovingSound(MovingSounds.Sound.JACKHAMMER, event.getEntity());
                 } else {

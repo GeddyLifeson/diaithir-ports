@@ -87,7 +87,7 @@ public class GunAmmoPotionCrafting extends ShapelessRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.GUN_AMMO_POTION_CRAFTING.get();
     }
 }

@@ -56,24 +56,24 @@ public class ShapedPressurizableRecipe extends WrappedShapedRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.CRAFTING_SHAPED_PRESSURIZABLE.get();
     }
 
-    public static class Serializer implements RecipeSerializer<ShapedPressurizableRecipe> {
+    public static class Serializer {
         public static final MapCodec<ShapedPressurizableRecipe> CODEC
                 = ShapedRecipe.Serializer.CODEC.xmap(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
         public static final StreamCodec<RegistryFriendlyByteBuf, ShapedPressurizableRecipe> STREAM_CODEC
                 = ShapedRecipe.Serializer.STREAM_CODEC.map(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
-
-        @Override
         public MapCodec<ShapedPressurizableRecipe> codec() {
             return CODEC;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, ShapedPressurizableRecipe> streamCodec() {
             return STREAM_CODEC;
+        }
+
+        public RecipeSerializer<ShapedPressurizableRecipe> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

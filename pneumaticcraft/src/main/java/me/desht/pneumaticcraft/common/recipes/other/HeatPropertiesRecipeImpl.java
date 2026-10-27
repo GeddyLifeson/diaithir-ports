@@ -151,12 +151,12 @@ public class HeatPropertiesRecipeImpl extends HeatPropertiesRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.HEAT_PROPERTIES.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.BLOCK_HEAT_PROPERTIES.get();
     }
 
@@ -193,7 +193,7 @@ public class HeatPropertiesRecipeImpl extends HeatPropertiesRecipe {
                  Map<String, String> predicates, String descriptionKey);
     }
 
-    public static class Serializer<T extends HeatPropertiesRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends HeatPropertiesRecipe> {
         private static final Codec<Map<String,String>> PREDICATES_CODEC = Codec.unboundedMap(Codec.STRING, Codec.STRING);
 
         private final MapCodec<T> codec;
@@ -220,15 +220,15 @@ public class HeatPropertiesRecipeImpl extends HeatPropertiesRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

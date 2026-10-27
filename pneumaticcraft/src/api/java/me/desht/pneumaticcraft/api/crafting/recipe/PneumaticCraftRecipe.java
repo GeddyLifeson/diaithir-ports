@@ -17,22 +17,18 @@
 
 package me.desht.pneumaticcraft.api.crafting.recipe;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.PlacementInfo;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeBookCategories;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.level.Level;
-
-import java.util.List;
 
 /**
  * Base class for all PneumaticCraft machine recipes, which are registered in the vanilla RecipeManager.
  */
-public abstract class PneumaticCraftRecipe implements CraftingRecipe {
+public abstract class PneumaticCraftRecipe implements Recipe<CraftingInput> {
     protected PneumaticCraftRecipe() {
     }
 
@@ -42,17 +38,7 @@ public abstract class PneumaticCraftRecipe implements CraftingRecipe {
     }
 
     @Override
-    public ItemStack assemble(CraftingInput container, HolderLookup.Provider registryAccess) {
-        return ItemStack.EMPTY;
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(HolderLookup.Provider registryAccess) {
+    public ItemStack assemble(CraftingInput container) {
         return ItemStack.EMPTY;
     }
 
@@ -62,80 +48,22 @@ public abstract class PneumaticCraftRecipe implements CraftingRecipe {
     }
 
     @Override
-    public CraftingBookCategory category() {
-        return CraftingBookCategory.MISC;
+    public boolean showNotification() {
+        return false;
     }
 
-    /**
-     * Just to keep vanilla happy...
-     */
-    public static class DummyIInventory implements CraftingContainer {
-        private static final DummyIInventory INSTANCE = new DummyIInventory();
+    @Override
+    public String group() {
+        return "";
+    }
 
-        public static DummyIInventory getInstance() {
-            return INSTANCE;
-        }
+    @Override
+    public PlacementInfo placementInfo() {
+        return PlacementInfo.NOT_PLACEABLE;
+    }
 
-        @Override
-        public int getContainerSize() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return true;
-        }
-
-        @Override
-        public ItemStack getItem(int index) {
-            return ItemStack.EMPTY;
-        }
-
-        @Override
-        public ItemStack removeItem(int index, int count) {
-            return ItemStack.EMPTY;
-        }
-
-        @Override
-        public ItemStack removeItemNoUpdate(int index) {
-            return ItemStack.EMPTY;
-        }
-
-        @Override
-        public void setItem(int index, ItemStack stack) {
-        }
-
-        @Override
-        public void setChanged() {
-        }
-
-        @Override
-        public boolean stillValid(Player player) {
-            return false;
-        }
-
-        @Override
-        public void clearContent() {
-        }
-
-        @Override
-        public int getWidth() {
-            return 3;
-        }
-
-        @Override
-        public int getHeight() {
-            return 3;
-        }
-
-        @Override
-        public List<ItemStack> getItems() {
-            return List.of();
-        }
-
-        @Override
-        public void fillStackedContents(StackedContents p_40281_) {
-
-        }
+    @Override
+    public RecipeBookCategory recipeBookCategory() {
+        return RecipeBookCategories.CRAFTING_MISC;
     }
 }

@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.level.LevelReader;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
 import me.desht.pneumaticcraft.api.PneumaticRegistry;
 import me.desht.pneumaticcraft.api.block.IPneumaticWrenchable;
@@ -43,7 +44,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -97,7 +98,7 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
+    public boolean canPlaceLiquid(@Nullable LivingEntity player, BlockGetter pLevel, BlockPos pPos, BlockState pState, Fluid pFluid) {
         return pState.hasProperty(WATERLOGGED) && SimpleWaterloggedBlock.super.canPlaceLiquid(player, pLevel, pPos, pState, pFluid);
     }
 
@@ -107,7 +108,7 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public ItemStack pickupBlock(Player player, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+    public ItemStack pickupBlock(@Nullable LivingEntity player, LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
         return pState.hasProperty(WATERLOGGED) ? SimpleWaterloggedBlock.super.pickupBlock(player, pLevel, pPos, pState) : ItemStack.EMPTY;
     }
 
@@ -121,29 +122,29 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack heldItem, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult brtr) {
+    public InteractionResult useItemOn(ItemStack heldItem, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult brtr) {
         BlockEntity te = level.getBlockEntity(pos);
         if (player.isShiftKeyDown()
                 || !(te instanceof MenuProvider)
                 || isRotatable() && (heldItem.getItem() == ModItems.MANOMETER.get() || ModdedWrenchUtils.getInstance().isModdedWrench(heldItem))
                 || hand == InteractionHand.OFF_HAND && ModdedWrenchUtils.getInstance().isModdedWrench(player.getMainHandItem())) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.TRY_WITH_EMPTY_HAND;
         } else {
             if (player instanceof ServerPlayer serverPlayer) {
                 if (te instanceof AbstractPneumaticCraftBlockEntity) {
                     if (FluidUtils.tryFluidInsertion(te, null, player, hand)) {
                         level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0f, 1.0f);
-                        return ItemInteractionResult.sidedSuccess(false);
+                        return InteractionResult.SUCCESS;
                     } else if (FluidUtils.tryFluidExtraction(te, null, player, hand)) {
                         level.playSound(null, pos, SoundEvents.BUCKET_FILL, SoundSource.BLOCKS, 1.0f, 1.0f);
-                        return ItemInteractionResult.sidedSuccess(false);
+                        return InteractionResult.SUCCESS;
                     }
                     // te must be a MenuProvider at this point: see instanceof check above
                     doOpenGui(serverPlayer, te);
                 }
             }
 
-            return ItemInteractionResult.sidedSuccess(true);
+            return InteractionResult.SUCCESS;
         }
     }
 
@@ -329,15 +330,14 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
         if (!world.isClientSide()) {
             PneumaticCraftUtils.getBlockEntityAt(world, pos, AbstractPneumaticCraftBlockEntity.class)
-                    .ifPresent(pncBE -> pncBE.onNeighborBlockUpdate(fromPos));
+                    .ifPresent(pncBE -> pncBE.onNeighborBlockUpdate(pos));
         }
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> curInfo, TooltipFlag flag) {
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Component> curInfo, TooltipFlag flag) {
         int savedAir = stack.getOrDefault(ModDataComponents.AIR, 0);
         if (savedAir != 0) {
             curInfo.add(xlate("pneumaticcraft.gui.tooltip.air", Integer.toString(savedAir)).withStyle(ChatFormatting.GREEN));
@@ -399,7 +399,7 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState pState, Level pLevel, BlockPos pPos) {
+    public int getAnalogOutputSignal(BlockState pState, Level pLevel, BlockPos pPos, Direction direction) {
         return pLevel.getBlockEntity(pPos) instanceof IComparatorSupport comp ? comp.getComparatorValue() : 0;
     }
 
@@ -409,24 +409,9 @@ public abstract class AbstractPneumaticCraftBlock extends Block
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (state.getBlock() != newState.getBlock()) {
-            PneumaticCraftUtils.getBlockEntityAt(world, pos, AbstractPneumaticCraftBlockEntity.class).ifPresent(pncBE -> {
-                NonNullList<ItemStack> drops = NonNullList.create();
-                pncBE.getContentsToDrop(drops);
-                drops.forEach(stack -> PneumaticCraftUtils.dropItemOnGround(stack, world, pos));
-                if (!pncBE.shouldPreserveStateOnBreak()) {
-                    PneumaticRegistry.getInstance().getMiscHelpers().playMachineBreakEffect(pncBE);
-                }
-            });
-            super.onRemove(state, world, pos, newState, isMoving);
-        }
-    }
-
-    @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (stateIn.hasProperty(WATERLOGGED) && stateIn.getValue(WATERLOGGED)) {
-            worldIn.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
+            ticks.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(worldIn));
         }
         if (stateIn.hasProperty(connectionProperty(facing))) {
             BlockEntity ourTE = worldIn.getBlockEntity(currentPos);
@@ -440,7 +425,7 @@ public abstract class AbstractPneumaticCraftBlock extends Block
             }
             return stateIn;
         }
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
     }
 
     @Override

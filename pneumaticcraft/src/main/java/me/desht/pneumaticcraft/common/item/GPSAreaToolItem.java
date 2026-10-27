@@ -40,7 +40,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
+
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -82,24 +82,23 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn) {
+    public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         ItemStack stack = playerIn.getItemInHand(handIn);
-        if (worldIn.isClientSide && !playerIn.isShiftKeyDown()) {
+        if (worldIn.isClientSide() && !playerIn.isShiftKeyDown()) {
             GPSAreaToolScreen.showGUI(stack, handIn, 0);
         } else if (playerIn.isShiftKeyDown()) {
             setActiveIndex(playerIn, stack, 0);
         }
-        return InteractionResultHolder.success(stack);
+        return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
     }
 
     public static void setActiveIndex(Player player, ItemStack stack, int index) {
         Validate.isTrue(index == 0 || index == 1);
         stack.set(ModDataComponents.GPS_AREA_TOOL_INDEX, index);
         String str = index == 0 ? ChatFormatting.RED + "P1" : ChatFormatting.GREEN + "P2";
-        player.displayClientMessage(stack.getDisplayName().copy().withStyle(ChatFormatting.AQUA)
+        player.sendOverlayMessage(stack.getDisplayName().copy().withStyle(ChatFormatting.AQUA)
                         .append(" ")
-                        .append(Component.translatable("pneumaticcraft.message.gps_tool.activeIndex", str).withStyle(ChatFormatting.YELLOW)),
-                true);
+                        .append(Component.translatable("pneumaticcraft.message.gps_tool.activeIndex", str).withStyle(ChatFormatting.YELLOW)));
     }
 
     public static int getActiveIndex(ItemStack stack) {
@@ -132,8 +131,9 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> infoList, TooltipFlag par4) {
-        super.appendHoverText(stack, context, infoList, par4);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag par4) {
+        List<Component> infoList = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, par4);
 
         ClientUtils.getOptionalClientLevel().ifPresent(level ->  {
             ClientUtils.addGuiContextSensitiveTooltip(stack, infoList);
@@ -154,7 +154,7 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
 
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean heldItem) {
-        if (!world.isClientSide && entity instanceof Player p) {
+        if (!world.isClientSide() && entity instanceof Player p) {
             ProgWidgetArea area = getArea(p, stack);
             for (int index = 0; index < 2; index++) {
                 String varName = area.getVarName(index);
@@ -192,7 +192,7 @@ public class GPSAreaToolItem extends Item implements IPositionProvider, IGPSTool
 
         // if there's a variable set for this index, use its value instead (and update the stored position)
         String var = area.getVarName(index);
-        if (!var.isEmpty() && !player.level().isClientSide) {
+        if (!var.isEmpty() && !player.level().isClientSide()) {
             BlockPos newPos = GlobalVariableHelper.getInstance().getPos(player.getUUID(), var);
             if (pos.isEmpty() || !pos.get().equals(newPos)) {
                 area.setPos(index, newPos);

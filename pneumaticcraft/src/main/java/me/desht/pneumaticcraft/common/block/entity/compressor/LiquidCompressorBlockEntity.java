@@ -124,7 +124,7 @@ public class LiquidCompressorBlockEntity extends AbstractAirHandlingBlockEntity 
     public void tickClient() {
         super.tickClient();
 
-        if (isActive() && nonNullLevel().random.nextInt(5) == 0) {
+        if (isActive() && nonNullLevel().getRandom().nextInt(5) == 0) {
             ClientUtils.emitParticles(getLevel(), getBlockPos(), ParticleTypes.SMOKE);
         }
     }
@@ -191,8 +191,8 @@ public class LiquidCompressorBlockEntity extends AbstractAirHandlingBlockEntity 
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Items", itemHandler.serializeNBT(provider));
         tag.putDouble("internalFuelBuffer", internalFuelBuffer);
@@ -200,12 +200,12 @@ public class LiquidCompressorBlockEntity extends AbstractAirHandlingBlockEntity 
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
-        internalFuelBuffer = tag.getDouble("internalFuelBuffer");
-        burnMultiplier = tag.getFloat("burnMultiplier");
+        internalFuelBuffer = tag.getDoubleOr("internalFuelBuffer", 0d);
+        burnMultiplier = tag.getFloatOr("burnMultiplier", 0f);
     }
 
     @Override

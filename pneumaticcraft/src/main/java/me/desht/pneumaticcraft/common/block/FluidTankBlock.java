@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.client.render.fluid.IFluidItemRenderInfoProvider;
 import me.desht.pneumaticcraft.client.render.fluid.RenderFluidTank;
 import me.desht.pneumaticcraft.common.block.entity.AbstractFluidTankBlockEntity;
@@ -188,7 +189,7 @@ public class FluidTankBlock extends AbstractPneumaticCraftBlock
         return size.beFactory.apply(pPos, pState);
     }
 
-    public static class ItemBlockFluidTank extends BlockItem implements IFluidRendered, IFluidCapProvider {
+    public static class ItemBlockFluidTank extends PNCBlockItem implements IFluidRendered, IFluidCapProvider {
         private final int capacity;
 
         private RenderFluidTank.ItemRenderInfoProvider renderInfoProvider;

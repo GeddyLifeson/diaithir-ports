@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.client.ColorHandlers;
 import me.desht.pneumaticcraft.client.render.fluid.IFluidItemRenderInfoProvider;
 import me.desht.pneumaticcraft.client.render.fluid.RenderLiquidHopper;
@@ -50,7 +51,7 @@ public class LiquidHopperBlock extends OmnidirectionalHopperBlock implements Pne
         return new LiquidHopperBlockEntity(pPos, pState);
     }
 
-    public static class ItemBlockLiquidHopper extends BlockItem implements ColorHandlers.ITintableItem, IFluidRendered, IFluidCapProvider {
+    public static class ItemBlockLiquidHopper extends PNCBlockItem implements ColorHandlers.ITintableItem, IFluidRendered, IFluidCapProvider {
         Lazy<RenderLiquidHopper.ItemRenderInfoProvider> renderInfoProvider = Lazy.of(RenderLiquidHopper.ItemRenderInfoProvider::new);
 
         public ItemBlockLiquidHopper(Block block) {

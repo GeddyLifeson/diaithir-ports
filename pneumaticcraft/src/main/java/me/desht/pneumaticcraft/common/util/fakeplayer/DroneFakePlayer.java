@@ -43,7 +43,6 @@ public class DroneFakePlayer extends FakePlayer {
         drone.getDroneLevel().addFreshEntity(orb);
     }
 
-    @Override
     public void playNotifySound(SoundEvent soundEvent, SoundSource category, float volume, float pitch) {
         drone.playSound(soundEvent, category, volume, pitch);
     }

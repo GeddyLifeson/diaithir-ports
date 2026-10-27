@@ -26,7 +26,7 @@ import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -45,8 +45,9 @@ public class TagFilterItem extends Item implements IFilteringItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+        List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flagIn);
 
         if (context.registries() != null) {
             tooltip.add(xlate("pneumaticcraft.gui.tooltip.tag_filter.header").withStyle(ChatFormatting.YELLOW));
@@ -57,7 +58,7 @@ public class TagFilterItem extends Item implements IFilteringItem {
     }
 
     public static Set<TagKey<Item>> getConfiguredTagList(ItemStack stack) {
-        List<ResourceLocation> tagIds = stack.get(ModDataComponents.TAG_FILTER_KEYS);
+        List<Identifier> tagIds = stack.get(ModDataComponents.TAG_FILTER_KEYS);
         return tagIds != null && !tagIds.isEmpty() ?
                 tagIds.stream().map(r -> TagKey.create(Registries.ITEM, r)).collect(Collectors.toSet()) :
                 Set.of();

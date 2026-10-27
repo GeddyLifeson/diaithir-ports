@@ -182,7 +182,7 @@ public class GasLiftBlockEntity extends AbstractAirHandlingBlockEntity implement
     private boolean tryDigDown() {
         if (isUnbreakable(getBlockPos().relative(Direction.DOWN, currentDepth + 1))) {
             status = Status.STUCK;
-        } else if (getBlockPos().getY() - currentDepth >= nonNullLevel().getMinBuildHeight()) {
+        } else if (getBlockPos().getY() - currentDepth >= nonNullLevel().getMinY()) {
             status = Status.DIGGING;
             currentDepth++;
             BlockPos pos1 = getBlockPos().relative(Direction.DOWN, currentDepth);
@@ -305,8 +305,8 @@ public class GasLiftBlockEntity extends AbstractAirHandlingBlockEntity implement
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Items", inventory.serializeNBT(provider));
         tag.putString("mode", pumpMode.toString());
@@ -314,12 +314,12 @@ public class GasLiftBlockEntity extends AbstractAirHandlingBlockEntity implement
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         inventory.deserializeNBT(provider, tag.getCompound("Items"));
         if (tag.contains("mode")) pumpMode = PumpMode.valueOf(tag.getString("mode"));
-        currentDepth = tag.getInt("currentDepth");
+        currentDepth = tag.getIntOr("currentDepth", 0);
     }
 
     public IFluidTank getTank() {

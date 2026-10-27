@@ -44,6 +44,6 @@ public class InventoryTrackEvent extends Event implements ICancellableEvent {
     }
 
     public IItemHandler getInventory() {
-        return te.getLevel().getCapability(Capabilities.ItemHandler.BLOCK, te.getBlockPos(), te.getBlockState(), te, null);
+        return me.desht.pneumaticcraft.compat.Caps.item(te.getLevel(), te.getBlockPos(), te.getBlockState(), te, null);
     }
 }

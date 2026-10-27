@@ -52,14 +52,14 @@ public class DisplayTableBlockEntity extends AbstractPneumaticCraftBlockEntity i
     public void writeToPacket(CompoundTag tag, HolderLookup.Provider provider) {
         super.writeToPacket(tag, provider);
 
-        tag.put("Item", displayedStack.saveOptional(provider));
+        tag.put("Item", me.desht.pneumaticcraft.compat.NbtCompat.saveItem(provider, displayedStack));
     }
 
     @Override
     public void readFromPacket(CompoundTag tag, HolderLookup.Provider provider) {
         super.readFromPacket(tag, provider);
 
-        displayedStack = ItemStack.parseOptional(provider, tag.getCompound("Item"));
+        displayedStack = me.desht.pneumaticcraft.compat.NbtCompat.parseItem(provider, tag.getCompoundOrEmpty("Item"));
         inventory.initStack(displayedStack);
     }
 
@@ -79,7 +79,7 @@ public class DisplayTableBlockEntity extends AbstractPneumaticCraftBlockEntity i
 
             if (slot == 0) {
                 displayedStack = getStackInSlot(0);
-                if (!nonNullLevel().isClientSide) sendDescriptionPacket();
+                if (!nonNullLevel().isClientSide()) sendDescriptionPacket();
             }
         }
 

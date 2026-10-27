@@ -62,7 +62,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -109,7 +109,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     private static final UUID FALLBACK_UUID = UUID.nameUUIDFromBytes(FALLBACK_NAME.getBytes());
     private static final int MAX_ENERGY = 100000;
 
-    public static final Set<ResourceLocation> BLACKLISTED_WIDGETS = ImmutableSet.of(
+    public static final Set<Identifier> BLACKLISTED_WIDGETS = ImmutableSet.of(
             RL("computer_control"),
             RL("entity_attack"),
             RL("drone_condition_entity"),
@@ -216,7 +216,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
 
     @SubscribeEvent
     public void onSemiblockEvent(SemiblockEvent event) {
-        if (!event.getWorld().isClientSide && event.getWorld() == getLevel() && event.getSemiblock() instanceof AbstractLogisticsFrameEntity) {
+        if (!event.getWorld().isClientSide() && event.getWorld() == getLevel() && event.getSemiblock() instanceof AbstractLogisticsFrameEntity) {
             logisticsManager = null;
         }
     }
@@ -325,9 +325,9 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
 
         int cx = (int)curX >> 4;
         int cz = (int)curZ >> 4;
-        return chunkloadSelf && cp.x == worldPosition.getX() >> 4 && cp.z == worldPosition.getZ() >> 4
-                || chunkloadWorkingChunk && !isIdle && cp.x == cx && cp.z == cz
-                || chunkloadWorkingChunk3x3 && !isIdle && cp.x >= cx - 1 && cp.x <= cx + 1 && cp.z >= cz - 1 && cp.z <= cz + 1;
+        return chunkloadSelf && cp.x() == worldPosition.getX() >> 4 && cp.z() == worldPosition.getZ() >> 4
+                || chunkloadWorkingChunk && !isIdle && cp.x() == cx && cp.z() == cz
+                || chunkloadWorkingChunk3x3 && !isIdle && cp.x() >= cx - 1 && cp.x() <= cx + 1 && cp.z() >= cz - 1 && cp.z() <= cz + 1;
     }
 
     private void maybeChargeHeldItem() {
@@ -440,7 +440,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     public void onUpgradesChanged() {
         super.onUpgradesChanged();
 
-        if (getLevel() != null && !getLevel().isClientSide) {
+        if (getLevel() != null && !getLevel().isClientSide()) {
             int oldInvUpgrades = droneItemHandler.getSlots() - 1;
             int newInvUpgrades = Math.min(35, getUpgrades(ModUpgrades.INVENTORY.get()));
             if (oldInvUpgrades != newInvUpgrades) {
@@ -468,13 +468,13 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         inventory.deserializeNBT(provider, tag.getCompound("Items"));
         tank.readFromNBT(provider, tag.getCompound("tank"));
 
-        ownerID = tag.contains("ownerID") ? UUID.fromString(tag.getString("ownerID")) : FALLBACK_UUID;
+        ownerID = tag.contains("ownerID") ? UUID.fromString(tag.getStringOr("ownerID", "")) : FALLBACK_UUID;
         ownerName = Component.literal(tag.contains("ownerName") ? tag.getString("ownerName") : FALLBACK_NAME);
         ownerNameClient = ownerName.getString();
 
@@ -487,18 +487,18 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
 
         itemHandlerSideConfigurator.updateHandler("droneInv", () -> droneItemHandler);
 
-        shouldChargeHeldItem = tag.getBoolean("chargeHeld");
+        shouldChargeHeldItem = tag.getBooleanOr("chargeHeld", false);
 
-        variablesNBT = tag.getCompound("variables");
+        variablesNBT = tag.getCompoundOrEmpty("variables");
 
-        chunkloadSelf = tag.getBoolean("chunkload_self");
-        chunkloadWorkingChunk = tag.getBoolean("chunkload_work");
-        chunkloadWorkingChunk3x3 = tag.getBoolean("chunkload_work_3x3");
+        chunkloadSelf = tag.getBooleanOr("chunkload_self", false);
+        chunkloadWorkingChunk = tag.getBooleanOr("chunkload_work", false);
+        chunkloadWorkingChunk3x3 = tag.getBooleanOr("chunkload_work_3x3", false);
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
 
         tag.put("Items", inventory.serializeNBT(provider));
 
@@ -665,7 +665,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     }
 
     public BlockPos getDugPosition() {
-        return level != null && diggingY >= level.getMinBuildHeight() ? new BlockPos(diggingX, diggingY, diggingZ) : null;
+        return level != null && diggingY >= level.getMinY() ? new BlockPos(diggingX, diggingY, diggingZ) : null;
     }
 
     @Override
@@ -736,7 +736,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     @Override
     public Player getOwner() {
         if (ownerID == null) return null;
-        if (nonNullLevel().isClientSide) return ClientUtils.getClientPlayer();
+        if (nonNullLevel().isClientSide()) return ClientUtils.getClientPlayer();
 
         return PneumaticCraftUtils.getPlayerFromId(ownerID);
     }
@@ -764,7 +764,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
 
     @Override
     public DroneAIManager getAIManager() {
-        if (!nonNullLevel().isClientSide) {
+        if (!nonNullLevel().isClientSide()) {
             if (aiManager == null) {
                 aiManager = new DroneAIManager(this, new ArrayList<>());
                 aiManager.dontStopWhenEndReached();
@@ -908,7 +908,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
                 if (updateNeighbours) updateNeighbours();
                 isIdle = true;
             }
-            if (getLevel() != null && !getLevel().isClientSide) {
+            if (getLevel() != null && !getLevel().isClientSide()) {
                 aiManager = null;
                 aiManager = getAIManager();
                 aiManager.setWidgets(progWidgets);

@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.block;
 
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.common.block.entity.spawning.VacuumTrapBlockEntity;
 import me.desht.pneumaticcraft.common.item.SpawnerCoreItem;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;
@@ -114,7 +115,7 @@ public class VacuumTrapBlock extends AbstractPneumaticCraftBlock implements Simp
             boolean open = state.getValue(OPEN);
             world.setBlockAndUpdate(pos, state.setValue(OPEN, !open));
             world.playSound(player, pos, open ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1f, 0.5f);
-            return InteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }
@@ -143,14 +144,15 @@ public class VacuumTrapBlock extends AbstractPneumaticCraftBlock implements Simp
         list.add(ModDataComponents.BLOCK_ENTITY_SAVED_INV.get());
     }
 
-    public static class ItemBlockVacuumTrap extends BlockItem {
+    public static class ItemBlockVacuumTrap extends PNCBlockItem {
         public ItemBlockVacuumTrap(VacuumTrapBlock blockVacuumTrap) {
             super(blockVacuumTrap, ModItems.defaultProps());
         }
 
         @Override
-        public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-            super.appendHoverText(stack, context, tooltip, flagIn);
+        public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag flagIn) {
+            List<Component> tooltip = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+            super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, flagIn);
 
             ItemContainerContents contents = stack.get(ModDataComponents.BLOCK_ENTITY_SAVED_INV.get());
             if (contents != null && contents.copyOne().getItem() instanceof SpawnerCoreItem) {

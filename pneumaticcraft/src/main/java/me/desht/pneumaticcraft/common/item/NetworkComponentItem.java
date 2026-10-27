@@ -64,8 +64,9 @@ public class NetworkComponentItem extends Item implements IProgrammable {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> curInfo, TooltipFlag extraInfo) {
-        super.appendHoverText(stack, context, curInfo, extraInfo);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay tooltipDisplay__, java.util.function.Consumer<Component> tooltipConsumer__, TooltipFlag extraInfo) {
+        List<Component> curInfo = me.desht.pneumaticcraft.compat.TooltipList.of(tooltipConsumer__);
+        super.appendHoverText(stack, context, tooltipDisplay__, tooltipConsumer__, extraInfo);
 
         if (context.registries() != null) {
             SecurityStationHackingScreen.addExtraHackInfoStatic(curInfo);
@@ -74,7 +75,7 @@ public class NetworkComponentItem extends Item implements IProgrammable {
 
     @Override
     public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
-        if (entity.getCommandSenderWorld().isClientSide && stack.has(ModDataComponents.SAVED_DRONE_PROGRAM)) {
+        if (entity.level().isClientSide() && stack.has(ModDataComponents.SAVED_DRONE_PROGRAM)) {
             entity.setExtendedLifetime();
         }
         return false;

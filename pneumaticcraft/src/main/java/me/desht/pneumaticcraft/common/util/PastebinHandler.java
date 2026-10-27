@@ -18,22 +18,18 @@
 package me.desht.pneumaticcraft.common.util;
 
 import me.desht.pneumaticcraft.lib.Log;
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Duration;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PastebinHandler extends Thread {
     private static String userKey;
@@ -45,8 +41,7 @@ public class PastebinHandler extends Thread {
     private static volatile Exception exception;
 
     private PastebinHandler() {
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(5000).build();
-        httpclient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build();
+        httpclient = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5)).build();
         isDone = false;
     }
 
@@ -113,27 +108,31 @@ public class PastebinHandler extends Thread {
         handler.start();
     }
 
-    public boolean loginInternal(String userName, String password) {
-        HttpPost httppost = new HttpPost("https://pastebin.com/api/api_login.php");
+    private String post(String url, Map<String,String> params) throws IOException, InterruptedException {
+        String body = params.entrySet().stream()
+                .map(e -> URLEncoder.encode(e.getKey(), StandardCharsets.UTF_8) + "=" + URLEncoder.encode(e.getValue(), StandardCharsets.UTF_8))
+                .collect(Collectors.joining("&"));
+        HttpRequest req = HttpRequest.newBuilder(URI.create(url))
+                .header("Content-Type", "application/x-www-form-urlencoded")
+                .timeout(Duration.ofSeconds(15))
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+        return httpclient.send(req, HttpResponse.BodyHandlers.ofString()).body();
+    }
 
-        List<NameValuePair> params = new ArrayList<>(3);
-        params.add(new BasicNameValuePair("api_dev_key", DEV_KEY));
-        params.add(new BasicNameValuePair("api_user_name", userName));
-        params.add(new BasicNameValuePair("api_user_password", password));
+    public boolean loginInternal(String userName, String password) {
+        Map<String,String> params = new LinkedHashMap<>();
+        params.put("api_dev_key", DEV_KEY);
+        params.put("api_user_name", userName);
+        params.put("api_user_password", password);
         try {
-            httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
-            HttpResponse response = httpclient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            if (entity != null) {
-                InputStream instream = entity.getContent();
-                userKey = IOUtils.toString(instream, StandardCharsets.UTF_8);
-                if (userKey.startsWith("Bad API request")) {
-                    Log.warning("User tried to log in into pastebin, it responded with the following: " + userKey);
-                    userKey = null;
-                    return false;
-                }
-                return true;
+            userKey = post("https://pastebin.com/api/api_login.php", params);
+            if (userKey.startsWith("Bad API request")) {
+                Log.warning("User tried to log in into pastebin, it responded with the following: " + userKey);
+                userKey = null;
+                return false;
             }
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -141,23 +140,14 @@ public class PastebinHandler extends Thread {
     }
 
     public String putInternal(String contents) {
-        HttpPost httppost = new HttpPost("https://pastebin.com/api/api_post.php");
-
-        List<NameValuePair> params = new ArrayList<>();
-        params.add(new BasicNameValuePair("api_dev_key", DEV_KEY));
-        params.add(new BasicNameValuePair("api_paste_code", contents));
-        params.add(new BasicNameValuePair("api_paste_format", "json"));
-        params.add(new BasicNameValuePair("api_option", "paste"));
-        if (isLoggedIn()) params.add(new BasicNameValuePair("api_user_key", userKey));
+        Map<String,String> params = new LinkedHashMap<>();
+        params.put("api_dev_key", DEV_KEY);
+        params.put("api_paste_code", contents);
+        params.put("api_paste_format", "json");
+        params.put("api_option", "paste");
+        if (isLoggedIn()) params.put("api_user_key", userKey);
         try {
-            httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
-            HttpResponse response = httpclient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            if (entity != null) {
-                InputStream instream = entity.getContent();
-                return IOUtils.toString(instream, StandardCharsets.UTF_8);
-            }
-
+            return post("https://pastebin.com/api/api_post.php", params);
         } catch (Exception e) {
             e.printStackTrace();
         }

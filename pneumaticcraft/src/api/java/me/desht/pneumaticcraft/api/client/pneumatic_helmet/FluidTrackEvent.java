@@ -45,6 +45,6 @@ public class FluidTrackEvent extends Event implements ICancellableEvent {
     }
 
     public IFluidHandler getFluidHandler(Direction face) {
-        return te.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, te.getBlockPos(), te.getBlockState(), te, face);
+        return me.desht.pneumaticcraft.compat.Caps.fluid(te.getLevel(), te.getBlockPos(), te.getBlockState(), te, face);
     }
 }

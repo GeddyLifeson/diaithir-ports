@@ -130,12 +130,12 @@ public class ThermoPlantRecipeImpl extends ThermoPlantRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
         return ModRecipeSerializers.THERMO_PLANT.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getType() {
         return ModRecipeTypes.THERMO_PLANT.get();
     }
 
@@ -154,7 +154,7 @@ public class ThermoPlantRecipeImpl extends ThermoPlantRecipe {
                  float requiredPressure, float recipeSpeed, float airUseMultiplier, boolean exothermic);
     }
 
-    public static class Serializer<T extends ThermoPlantRecipe> implements RecipeSerializer<T> {
+    public static class Serializer<T extends ThermoPlantRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
 
@@ -191,15 +191,15 @@ public class ThermoPlantRecipeImpl extends ThermoPlantRecipe {
                     factory::create
             );
         }
-
-        @Override
         public MapCodec<T> codec() {
             return codec;
         }
-
-        @Override
         public StreamCodec<RegistryFriendlyByteBuf, T> streamCodec() {
             return streamCodec;
+        }
+
+        public RecipeSerializer<T> toSerializer() {
+            return new RecipeSerializer<>(codec(), streamCodec());
         }
     }
 }

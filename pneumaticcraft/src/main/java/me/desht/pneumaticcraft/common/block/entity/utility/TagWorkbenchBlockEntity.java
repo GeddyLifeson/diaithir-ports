@@ -26,7 +26,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.MenuProvider;
@@ -77,7 +77,7 @@ public class TagWorkbenchBlockEntity extends DisplayTableBlockEntity implements 
             if (!outputStack.isEmpty()) {
                 Set<TagKey<Item>> tags = new HashSet<>(TagFilterItem.getConfiguredTagList(outputStack));
                 for (String s : data) {
-                    tags.add(TagKey.create(Registries.ITEM, ResourceLocation.parse(s)));
+                    tags.add(TagKey.create(Registries.ITEM, Identifier.parse(s)));
                 }
                 TagFilterItem.setConfiguredTagList(outputStack, tags);
                 inventory.setStackInSlot(OUTPUT_SLOT, outputStack);
@@ -86,14 +86,14 @@ public class TagWorkbenchBlockEntity extends DisplayTableBlockEntity implements 
     }
 
     @Override
-    public void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
+    protected void saveLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveLegacy(tag, provider);
         tag.put("Items", inventory.serializeNBT(provider));
     }
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
+    protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadLegacy(tag, provider);
 
         inventory.deserializeNBT(provider, tag.getCompound("Items"));
         displayedStack = inventory.getStackInSlot(0);
@@ -105,8 +105,8 @@ public class TagWorkbenchBlockEntity extends DisplayTableBlockEntity implements 
     public void readFromPacket(CompoundTag tag, HolderLookup.Provider provider) {
         super.readFromPacket(tag, provider);
 
-        paperItemId = tag.getInt("PaperItemId");
-        outputItemId = tag.getInt("OutputItemId");
+        paperItemId = tag.getIntOr("PaperItemId", 0);
+        outputItemId = tag.getIntOr("OutputItemId", 0);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.level.LevelReader;
+import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.client.ColorHandlers;
 import me.desht.pneumaticcraft.client.util.TintColor;
 import me.desht.pneumaticcraft.common.item.ICustomTooltipName;
@@ -9,7 +11,7 @@ import me.desht.pneumaticcraft.common.util.VoxelShapeUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.FastColor;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -52,7 +54,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
 
     static {
         for (DyeColor c : DyeColor.values()) {
-            TintColor tc = new TintColor(FastColor.ARGB32.color(255, c.getTextureDiffuseColor()));
+            TintColor tc = new TintColor(ARGB.ARGB32.color(255, c.getTextureDiffuseColor()));
             COLORS_ON[c.getId()] = tc.getARGB();
             COLORS_OFF[c.getId()] = tc.darker().getARGB();
         }
@@ -100,7 +102,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
 
     @Override
     public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-        if (!worldIn.isClientSide) {
+        if (!worldIn.isClientSide()) {
             boolean isLit = state.getValue(LIT);
             if (isLit != shouldLight(worldIn, pos)) {
                 if (isLit) {
@@ -160,7 +162,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
         return state -> state.getValue(LIT) ? 15 : 0;
     }
 
-    public static class ItemWallLamp extends BlockItem implements ICustomTooltipName {
+    public static class ItemWallLamp extends PNCBlockItem implements ICustomTooltipName {
         public ItemWallLamp(WallLampBlock blockWallLamp) {
             super(blockWallLamp, ModItems.defaultProps());
         }
