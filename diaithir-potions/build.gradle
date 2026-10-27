@@ -10,6 +10,12 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 neoForge {
     version = project.neo_version
     runs {
+        client {
+            client()
+            jvmArgument '-Xmx3G'
+            jvmArgument '-Djava.net.preferIPv4Stack=true'
+            programArguments.addAll '--username', 'Tester', '--quickPlayMultiplayer', 'localhost:25565'
+        }
         server {
             server()
             programArgument '--nogui'
