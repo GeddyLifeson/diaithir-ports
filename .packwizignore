@@ -3,5 +3,7 @@ LICENSES.md
 Diaithir.zip
 /source/
 /client/
+/diaithir-tooltips/
+/tools/
 .gitattributes
 .pre-commit-config.yaml

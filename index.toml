@@ -11773,6 +11773,11 @@ file = "mods/diaithir-perf-neoforge-26.1.2-0.3.1.jar"
 hash = "06a6e19a9f535a30eb006da3b8664f969d08007c09bdc25d7b732c52ee3311ec"
 
 [[files]]
+file = "mods/diaithir-tooltips-neoforge-26.1.2-1.0.1.pw.toml"
+hash = "f94b40f69f7fd1ef08ece65c8a764a1fc40cf6afe7df856d46225f2514fb26ab"
+metafile = true
+
+[[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
 hash = "cb4a4ce59ceb5018b3a3eb02ced19df1f389fd90d648867e51f1c02c5de540d4"
 
