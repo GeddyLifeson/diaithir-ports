@@ -252,41 +252,8 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
                     middleBlockForBiome = getFallbackMiddleBlock(biomeHolder.get());
                     bottomBlockForBiome = getFallbackBottomBlock(biomeHolder.get());
                 }
-                Holder<NoiseGeneratorSettings> settings = serverLevel.registryAccess().lookupOrThrow(Registries.NOISE_SETTINGS).getHolderOrThrow(dimensionType);
-                //for compat with other world types, like flat worlds, we cannot assume the chunk generator of the world is noise-based so we must create a new one
-                NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(new ACDummyBiomeSource(), settings);
-                //get or create a dummy noise chunk
-                NoiseChunk noisechunk = chunkaccess.getOrCreateNoiseChunk((chunkAccess) -> {
-                    return noiseBasedChunkGenerator.createNoiseChunk(chunkAccess, serverLevel.structureManager(), Blender.empty(), serverLevel.getChunkSource().randomState());
-                });
-                //should ideally be merged when we get it, for some reason isn't. Idk why
-                SurfaceRules.RuleSource ruleSource = SurfaceRulesManager.mergeOverworldRules(noiseBasedChunkGenerator.generatorSettings().value().surfaceRule());
-                WorldGenerationContext worldGenerationContext = new WorldGenerationContext(noiseBasedChunkGenerator, serverLevel);
-                Function<BlockPos, Holder<Biome>> biomeRef = (blockPos -> biomeHolder.get());
-                SurfaceRules.Context surfacerulesContext = new SurfaceRules.Context(serverLevel.getChunkSource().randomState().surfaceSystem(), serverLevel.getChunkSource().randomState(), chunkaccess, noisechunk, biomeRef, registry, worldGenerationContext);
-                SurfaceRules.SurfaceRule rule = ruleSource.apply(surfacerulesContext);
-                int x = this.getBlockPos().getX();
-                int z = this.getBlockPos().getZ();
-                //one over the top (grass condition)
-                int topHeight = serverLevel.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z) + 1;
-                surfacerulesContext.updateXZ(x, z);
-                surfacerulesContext.updateY(1, 1, topHeight, x, topHeight, z);
-                BlockState grass = rule.tryApply(x, topHeight, z);
-                if (grass != null && !grass.is(Blocks.BEDROCK)) {
-                    topBlockForBiome = grass;
-                }
-                //tell it that there is a block about the top position
-                surfacerulesContext.updateY(1, 1, topHeight + 1, x, topHeight, z);
-                BlockState dirt = rule.tryApply(x, topHeight, z);
-                if (dirt != null && !dirt.is(Blocks.BEDROCK)) {
-                    middleBlockForBiome = dirt;
-                }
-                //tell it that there is many blocks about the top position
-                surfacerulesContext.updateY(1, 1, topHeight + 20, x, topHeight, z);
-                BlockState stone = rule.tryApply(x, topHeight, z);
-                if (stone != null && !stone.is(Blocks.BEDROCK)) {
-                    bottomBlockForBiome = stone;
-                }
+                //surface rule probing removed in the 26.1 port; fallback blocks above are used
+
             } catch (Exception e) {
                 AlexsCaves.LOGGER.warn("Encountered error finding the surface blocks of a biome");
             }
@@ -328,7 +295,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         AABB aabb = new AABB(pos.getX() - 32, pos.getY() - 32, pos.getZ() - 32, pos.getX() + 32, pos.getY() + 32, pos.getZ() + 32);
         for (Player player : level.getEntitiesOfClass(Player.class, aabb, EntitySelector.NO_SPECTATORS)) {
             ACAdvancementTriggerRegistry.CONVERT_BIOME.get().triggerForEntity(player);
-            if (biomeHolder.get().is(BiomeTags.IS_NETHER) && this.level.dimensionType().bedWorks()) {
+            if (biomeHolder.get().is(BiomeTags.IS_NETHER) && this.level.dimension() == net.minecraft.world.level.Level.NETHER) {
                 ACAdvancementTriggerRegistry.CONVERT_NETHER_BIOME.get().triggerForEntity(player);
             }
         }
@@ -348,7 +315,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
             MutableInt mutableint = new MutableInt(0);
             for(ChunkAccess chunkaccess1 : list) {
                 chunkaccess1.fillBiomesFromNoise(makeResolver(mutableint, chunkaccess1, biomeConversionBox, width, biomeHolder.get()), serverLevel.getChunkSource().randomState().sampler());
-                chunkaccess1.setUnsaved(true);
+                chunkaccess1.markUnsaved();
             }
             serverLevel.getChunkSource().chunkMap.resendBiomesForChunks(list);
         }
@@ -606,7 +573,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         if (BIOME_COLORS.containsKey(holder)) {
             return BIOME_COLORS.get(holder);
         } else {
-            int fogColor = holder.get().value().getFogColor();
+            int fogColor = holder.get().value().getWaterColor();
             int color;
             if (ACBiomeRegistry.getBiomeTabletColor(holder.get().key()) != -1) {
                 color = ACBiomeRegistry.getBiomeTabletColor(holder.get().key());

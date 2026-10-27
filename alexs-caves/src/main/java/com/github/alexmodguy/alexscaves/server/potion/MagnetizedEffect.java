@@ -14,7 +14,7 @@ public class MagnetizedEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int tick) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int tick) {
         if (!entity.level().isClientSide() && entity.tickCount % 20 == 0) {
             MobEffectInstance instance = entity.getEffect(ACEffectRegistry.MAGNETIZING);
             if (instance != null) {

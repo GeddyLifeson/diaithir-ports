@@ -57,8 +57,8 @@ public class UpdateCaveBiomeMapTagMessage implements CustomPacketPayload {
             Player player = playerSided.level().getPlayerByUUID(message.userUUID);
             if (player != null) {
                 ItemStack set = null;
-                for(int i = 0; i < player.getInventory().items.size(); i++){
-                    ItemStack itemStack = player.getInventory().items.get(i);
+                for(int i = 0; i < player.getInventory().getNonEquipmentItems().size(); i++){
+                    ItemStack itemStack = player.getInventory().getNonEquipmentItems().get(i);
                     if(itemStack.is(ACItemRegistry.CAVE_MAP.get()) && itemStack.has(DataComponents.CUSTOM_DATA)){
                         CompoundTag tag = itemStack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
                         if(tag.contains("MapUUID") && message.caveBiomeMapUUID.equals(tag.read("MapUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null))){

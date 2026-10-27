@@ -26,7 +26,7 @@ public class DarknessIncarnateEffect extends MobEffect {
 
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         toggleFlight(entity, true);
         if (entity.onGround()) {
             entity.setDeltaMovement(entity.getDeltaMovement().add(0, 0.1, 0));
@@ -116,7 +116,7 @@ public class DarknessIncarnateEffect extends MobEffect {
     public static boolean isInLight(LivingEntity living, int threshold) {
         BlockPos samplePos = living.getRootVehicle().blockPosition();
         int lightLevel = living.level().getBrightness(LightLayer.BLOCK, samplePos);
-        float timeOfDay = living.level().getTimeOfDay(1.0F); //night starts at 0.259 and ends at 0.74
+        float timeOfDay = com.github.alexmodguy.alexscaves.server.misc.ACMath.celestialAngle(living.level()); //night starts at 0.259 and ends at 0.74
         if (living.level().canSeeSky(samplePos) && (timeOfDay < 0.259 || timeOfDay > 0.74)) {
             lightLevel = 15;
         }

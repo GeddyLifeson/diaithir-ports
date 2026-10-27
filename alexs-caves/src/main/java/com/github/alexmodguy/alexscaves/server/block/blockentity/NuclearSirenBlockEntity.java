@@ -104,9 +104,6 @@ public class NuclearSirenBlockEntity extends BlockEntity {
     }
 
     public boolean isTrackedFurnaceCritical() {
-        if (nearestMeltdownFurnace != null && level.getBlockEntity(nearestMeltdownFurnace) instanceof NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity) {
-            return nuclearFurnaceBlockEntity.getCriticality() >= 2;
-        }
         return false;
     }
 
@@ -131,7 +128,7 @@ public class NuclearSirenBlockEntity extends BlockEntity {
     }
 
     private boolean isCriticalFurnace(BlockPos pos) {
-        return level.getBlockEntity(pos) instanceof NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity && nuclearFurnaceBlockEntity.getCriticality() >= 2;
+        return false;
     }
 
     @Override

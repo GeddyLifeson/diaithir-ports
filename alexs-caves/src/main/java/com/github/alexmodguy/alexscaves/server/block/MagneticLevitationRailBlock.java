@@ -152,7 +152,4 @@ public class MagneticLevitationRailBlock extends BaseRailBlock {
         return super.mirror(state, mirror);
     }
 
-    public float getRailMaxSpeed(BlockState state, Level level, BlockPos pos, AbstractMinecart cart) {
-        return super.getRailMaxSpeed(state, level, pos, cart) + 0.3F;
-    }
 }

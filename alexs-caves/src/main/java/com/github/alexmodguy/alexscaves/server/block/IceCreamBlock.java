@@ -92,7 +92,7 @@ public class IceCreamBlock extends Block {
         }
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 

@@ -2,7 +2,6 @@ package com.github.alexmodguy.alexscaves.server.level.storage;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.entity.living.LuxtructosaurusEntity;
-import com.github.alexmodguy.alexscaves.server.level.map.CaveBiomeMapWorldWorker;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -14,8 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
-import net.minecraft.world.level.storage.DimensionDataStorage;
-import net.neoforged.neoforge.common.WorldWorkerManager;
 import net.neoforged.neoforge.common.world.chunk.TicketHelper;
 import net.neoforged.neoforge.common.world.chunk.TicketSet;
 
@@ -25,13 +22,14 @@ import java.util.*;
 public class ACWorldData extends SavedData {
 
     private static final String IDENTIFIER = "alexscaves_world_data";
-    public static final Factory<ACWorldData> FACTORY = new Factory<>(ACWorldData::new, ACWorldData::load);
+    public static final com.mojang.serialization.Codec<ACWorldData> CODEC = CompoundTag.CODEC.xmap(ACWorldData::load, ACWorldData::save);
+    public static final net.minecraft.world.level.saveddata.SavedDataType<ACWorldData> TYPE = new net.minecraft.world.level.saveddata.SavedDataType<>(
+            net.minecraft.resources.Identifier.fromNamespaceAndPath(AlexsCaves.MODID, IDENTIFIER), ACWorldData::new, CODEC);
     private Map<UUID, Integer> deepOneReputations = new HashMap<>();
     private boolean primordialBossDefeatedOnce = false;
     private long firstPrimordialBossDefeatTimestamp = -1;
     private Set<Integer> trackedLuxtructosaurusIds = new ObjectArraySet();
 
-    private CaveBiomeMapWorldWorker lastMapWorker = null;
 
     private ACWorldData() {
         super();
@@ -39,9 +37,8 @@ public class ACWorldData extends SavedData {
 
     public static ACWorldData get(Level world) {
         if (world instanceof ServerLevel) {
-            ServerLevel overworld = world.getServer().getLevel(Level.OVERWORLD);
-            DimensionDataStorage storage = overworld.getDataStorage();
-            ACWorldData data = storage.computeIfAbsent(FACTORY, IDENTIFIER);
+            ServerLevel overworld = ((ServerLevel) world).getServer().getLevel(Level.OVERWORLD);
+            ACWorldData data = overworld.getDataStorage().computeIfAbsent(TYPE);
             if (data != null) {
                 data.setDirty();
             }
@@ -50,9 +47,9 @@ public class ACWorldData extends SavedData {
         return null;
     }
 
-    public static ACWorldData load(CompoundTag nbt, HolderLookup.Provider provider) {
+    public static ACWorldData load(CompoundTag nbt) {
         ACWorldData data = new ACWorldData();
-        if (nbt.contains("DeepOneReputations")) {
+        if (nbt.getList("DeepOneReputations").isPresent()) {
             ListTag listtag = nbt.getListOrEmpty("DeepOneReputations");
             for (int i = 0; i < listtag.size(); ++i) {
                 CompoundTag innerTag = listtag.getCompoundOrEmpty(i);
@@ -65,8 +62,11 @@ public class ACWorldData extends SavedData {
         return data;
     }
 
-    @Override
-    public CompoundTag save(CompoundTag compound, HolderLookup.Provider provider) {
+    public static CompoundTag save(ACWorldData self) {
+        return self.saveTag(new CompoundTag());
+    }
+
+    private CompoundTag saveTag(CompoundTag compound) {
         if (!this.deepOneReputations.isEmpty()) {
             ListTag listTag = new ListTag();
             for (Map.Entry<UUID, Integer> reputations : deepOneReputations.entrySet()) {
@@ -125,16 +125,12 @@ public class ACWorldData extends SavedData {
         this.firstPrimordialBossDefeatTimestamp = time;
     }
 
+    /** The cave map biome search worker was cut from the port (WorldWorkerManager is gone); maps stay empty. */
     public void fillOutCaveMap(UUID uuid, ItemStack map, ServerLevel serverLevel, BlockPos center, Player player){
-        if(lastMapWorker != null){
-            lastMapWorker.onWorkComplete(lastMapWorker.getLastFoundBiome());
-        }
-        lastMapWorker = new CaveBiomeMapWorldWorker(map, serverLevel, center, player, uuid);
-        WorldWorkerManager.addWorker(lastMapWorker);
     }
 
     public boolean isCaveMapTicking(){
-        return lastMapWorker != null && lastMapWorker.hasWork();
+        return false;
     }
 
     public static void clearLoadedChunksCallback(ServerLevel serverLevel, TicketHelper ticketHelper) {

@@ -87,7 +87,7 @@ public class GingerbreadHousePiece extends UndergroundTemplateStructurePiece {
                 accessor.getChunk(offset).markPosForPostprocessing(offset);
             }
         }
-        accessor.blockUpdated(pos, accessor.getBlockState(pos).getBlock());
+        
     }
 
     @Override

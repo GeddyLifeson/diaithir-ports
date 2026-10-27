@@ -55,7 +55,7 @@ public class SprinklesBlock extends Block {
         stateBuilder.add(AMOUNT);
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter blockGetter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return state.getFluidState().isEmpty();
     }
 

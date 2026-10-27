@@ -82,8 +82,6 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.server.ServerAboutToStartEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
-import net.neoforged.neoforge.event.village.VillagerTradesEvent;
-import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -413,23 +411,6 @@ public class CommonEvents {
     }
 
     @SubscribeEvent
-    public void onVillagerTradeSetup(VillagerTradesEvent event) {
-        if (event.getType() == VillagerProfession.CARTOGRAPHER && AlexsCaves.COMMON_CONFIG.cartographersSellCabinMaps.get()) {
-            int level = 2;
-            List<VillagerTrades.ItemListing> list = event.getTrades().get(level);
-            list.add(new VillagerUndergroundCabinMapTrade(5, 10, 6));
-            event.getTrades().put(level, list);
-        }
-    }
-
-    @SubscribeEvent
-    public void onWanderingTradeSetup(WandererTradesEvent event) {
-        if (AlexsCaves.COMMON_CONFIG.wanderingTradersSellCabinMaps.get()) {
-            event.getGenericTrades().add(new VillagerUndergroundCabinMapTrade(8, 1, 10));
-        }
-    }
-
-    @SubscribeEvent
     public void playerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (AlexsCaves.COMMON_CONFIG.warnGenerationIncompatibility.get() && !AlexsCaves.MOD_GENERATION_CONFLICTS.isEmpty() && event.getEntity().level().isClientSide()) {
             for (String modid : AlexsCaves.MOD_GENERATION_CONFLICTS) {
@@ -538,7 +519,7 @@ public class CommonEvents {
                 }
             }
             
-            event.setCost(cost);
+            event.setXpCost(cost);
             ItemStack copy = event.getLeft().copy();
             copy.set(DataComponents.ENCHANTMENTS, mutableEnchants.toImmutable());
             event.setOutput(copy);
@@ -547,7 +528,7 @@ public class CommonEvents {
 
     private static boolean itemTagContainsAC(CompoundTag tag, String tagID, boolean allowUndergroundCabin) {
         if (tag.contains(tagID)) {
-            String resourceLocation = tag.getString(tagID);
+            String resourceLocation = tag.getStringOr(tagID, "");
             return resourceLocation.contains("alexscaves:") && (!allowUndergroundCabin || !resourceLocation.contains("underground_cabin"));
         }
         return false;

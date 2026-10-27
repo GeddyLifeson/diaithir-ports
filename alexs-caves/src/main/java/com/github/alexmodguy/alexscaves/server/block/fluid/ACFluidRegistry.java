@@ -35,7 +35,7 @@ public class ACFluidRegistry {
         return new BaseFlowingFluid.Properties(PURPLE_SODA_FLUID_TYPE, PURPLE_SODA_FLUID_SOURCE, PURPLE_SODA_FLUID_FLOWING).bucket(ACItemRegistry.PURPLE_SODA_BUCKET).block(() -> (LiquidBlock) ACBlockRegistry.PURPLE_SODA.get());
     }
 
-    public static final DeferredHolder<FluidType, FluidType> ACID_FLUID_TYPE = FLUID_TYPE_DEF_REG.register("acid", () -> new AcidFluidType(FluidType.Properties.create().lightLevel(5).density(1024).viscosity(1024).pathType(PathType.LAVA).adjacentPathType(PathType.DANGER_OTHER).sound(SoundActions.BUCKET_EMPTY, ACSoundRegistry.ACID_UNSUBMERGE.get()).sound(SoundActions.BUCKET_FILL, ACSoundRegistry.ACID_SUBMERGE.get())));
+    public static final DeferredHolder<FluidType, FluidType> ACID_FLUID_TYPE = FLUID_TYPE_DEF_REG.register("acid", () -> new AcidFluidType(FluidType.Properties.create().lightLevel(5).density(1024).viscosity(1024).pathType(PathType.LAVA).adjacentPathType(PathType.DAMAGING_IN_NEIGHBOR).sound(SoundActions.BUCKET_EMPTY, ACSoundRegistry.ACID_UNSUBMERGE.get()).sound(SoundActions.BUCKET_FILL, ACSoundRegistry.ACID_SUBMERGE.get())));
     public static final DeferredHolder<Fluid, FlowingFluid> ACID_FLUID_SOURCE = FLUID_DEF_REG.register("acid", () -> new BaseFlowingFluid.Source(acidProperties()));
     public static final DeferredHolder<Fluid, FlowingFluid> ACID_FLUID_FLOWING = FLUID_DEF_REG.register("acid_flowing", () -> new BaseFlowingFluid.Flowing(acidProperties()));
 

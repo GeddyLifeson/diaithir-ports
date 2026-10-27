@@ -113,4 +113,9 @@ public class CaveTabletLootModifier implements IGlobalLootModifier {
     public MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC;
     }
+
+    @Override
+    public int priority() {
+        return 0;
+    }
 }

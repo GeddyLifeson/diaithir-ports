@@ -41,7 +41,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
         this.registerDefaultState(this.defaultBlockState().setValue(TOP, Boolean.valueOf(true)));
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 

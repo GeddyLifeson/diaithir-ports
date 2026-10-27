@@ -91,7 +91,7 @@ public class HologramProjectorBlockEntity extends BlockEntity {
             this.entityType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(str));
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityTag")) {
-            this.entityTag = tag.getCompoundOrEmpty("EntityTag");
+            this.entityTag = tag.read("EntityTag", net.minecraft.nbt.CompoundTag.CODEC).orElse(new net.minecraft.nbt.CompoundTag());
         }
         this.rotation = tag.getFloatOr("Rotation", 0F);
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "LastPlayerUUID")) {
@@ -105,7 +105,7 @@ public class HologramProjectorBlockEntity extends BlockEntity {
             tag.putString("EntityType", BuiltInRegistries.ENTITY_TYPE.getKey(this.entityType).toString());
         }
         if (this.entityTag != null) {
-            tag.put("EntityTag", this.entityTag);
+            tag.store("EntityTag", net.minecraft.nbt.CompoundTag.CODEC, this.entityTag);
         }
         tag.putFloat("Rotation", this.rotation);
         if (lastPlayerUUID != null) {
@@ -132,7 +132,7 @@ public class HologramProjectorBlockEntity extends BlockEntity {
             compoundtag.putString("EntityType", BuiltInRegistries.ENTITY_TYPE.getKey(this.entityType).toString());
         }
         if (this.entityTag != null) {
-            compoundtag.put("EntityTag", this.entityTag);
+            compoundtag.store("EntityTag", net.minecraft.nbt.CompoundTag.CODEC, this.entityTag);
         }
         compoundtag.putFloat("Rotation", this.rotation);
         if (lastPlayerUUID != null) {
@@ -162,7 +162,7 @@ public class HologramProjectorBlockEntity extends BlockEntity {
             return null;
         }
         if (displayEntity == null && entityType != null) {
-            displayEntity = EntityType.loadEntityRecursive(entityTag, level, Function.identity());
+            displayEntity = EntityType.loadEntityRecursive(entityTag, level, net.minecraft.world.entity.EntitySpawnReason.LOAD, net.minecraft.world.entity.EntityProcessor.NOP);
         }
         if (displayEntity == null && prevDisplayEntity != null) {
             return prevDisplayEntity;

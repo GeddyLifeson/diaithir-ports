@@ -71,7 +71,7 @@ public class WaterBubbleCarver extends CaveWorldCarver {
     protected boolean carveBlock(CarvingContext context, CaveCarverConfiguration carverConfiguration, ChunkAccess access, Function<BlockPos, Holder<Biome>> biomeGetter, CarvingMask mask, BlockPos.MutableBlockPos mutableBlockPos, BlockPos.MutableBlockPos blockPos, Aquifer aquifer, MutableBoolean mutableBoolean) {
         if (this.canReplaceBlock(carverConfiguration, access.getBlockState(mutableBlockPos))) {
             BlockState blockstate = WATER.createLegacyBlock();
-            access.setBlockState(mutableBlockPos, blockstate, false);
+            access.setBlockState(mutableBlockPos, blockstate, 3);
             return true;
         } else {
             return false;

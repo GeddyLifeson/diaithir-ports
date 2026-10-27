@@ -50,9 +50,9 @@ public class CabinMapLootModifier implements IGlobalLootModifier {
 
     @Nonnull
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if (context.getRandom().nextFloat() < getChance() && context.hasParam(LootContextParams.ORIGIN)) {
+        if (context.getRandom().nextFloat() < getChance() && context.hasParameter(LootContextParams.ORIGIN)) {
             ServerLevel serverlevel = context.getLevel();
-            BlockPos chestPos = BlockPos.containing(context.getParam(LootContextParams.ORIGIN));
+            BlockPos chestPos = BlockPos.containing(context.getParameter(LootContextParams.ORIGIN));
             BlockPos blockpos = serverlevel.findNearestMapStructure(ACTagRegistry.ON_UNDERGROUND_CABIN_MAPS, chestPos, 100, true);
             if(blockpos != null){
                 ItemStack itemstack = MapItem.create(serverlevel, blockpos.getX(), blockpos.getZ(), (byte)2, true, true);
@@ -73,5 +73,10 @@ public class CabinMapLootModifier implements IGlobalLootModifier {
     @Override
     public MapCodec<? extends IGlobalLootModifier> codec() {
         return CODEC;
+    }
+
+    @Override
+    public int priority() {
+        return 0;
     }
 }

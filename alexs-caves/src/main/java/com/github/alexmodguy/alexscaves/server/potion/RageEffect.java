@@ -24,7 +24,7 @@ public class RageEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int level) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int level) {
         AttributeInstance attributeinstance = entity.getAttribute(Attributes.ATTACK_DAMAGE);
         if (attributeinstance != null) {
             float levelScale = (1 + level) * 2.5F;

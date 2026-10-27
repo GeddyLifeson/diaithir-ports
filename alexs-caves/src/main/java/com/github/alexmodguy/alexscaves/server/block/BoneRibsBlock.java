@@ -109,7 +109,7 @@ public class BoneRibsBlock extends HorizontalDirectionalBlock implements SimpleW
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos pos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 

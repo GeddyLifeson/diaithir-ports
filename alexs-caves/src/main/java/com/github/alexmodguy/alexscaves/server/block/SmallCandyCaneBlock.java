@@ -68,7 +68,7 @@ public class SmallCandyCaneBlock extends Block {
         stateBuilder.add(FACING, COUNT);
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter blockGetter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return state.getFluidState().isEmpty();
     }
 

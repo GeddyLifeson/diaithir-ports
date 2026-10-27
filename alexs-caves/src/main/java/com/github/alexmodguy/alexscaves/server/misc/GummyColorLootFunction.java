@@ -10,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.functions.LootItemConditionalFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +28,7 @@ public class GummyColorLootFunction extends LootItemConditionalFunction {
 
     @Override
     protected ItemStack run(ItemStack stack, @NotNull LootContext context) {
-        if(stack.is(ACTagRegistry.GUMMY_ITEMS) && context.hasParam(LootContextParams.THIS_ENTITY) && context.getParam(LootContextParams.THIS_ENTITY) instanceof HasGummyColors hasGummyColors){
+        if(stack.is(ACTagRegistry.GUMMY_ITEMS) && context.hasParameter(LootContextParams.THIS_ENTITY) && context.getParameter(LootContextParams.THIS_ENTITY) instanceof HasGummyColors hasGummyColors){
             GummyColors color = hasGummyColors.getGummyColor();
             Item replaceItem = stack.getItem();
             if(stack.is(ACItemRegistry.SWEETISH_FISH_RED_BUCKET.get()) || stack.is(ACItemRegistry.SWEETISH_FISH_GREEN_BUCKET.get()) || stack.is(ACItemRegistry.SWEETISH_FISH_YELLOW_BUCKET.get()) || stack.is(ACItemRegistry.SWEETISH_FISH_BLUE_BUCKET.get()) || stack.is(ACItemRegistry.SWEETISH_FISH_PINK_BUCKET.get())){
@@ -112,7 +111,7 @@ public class GummyColorLootFunction extends LootItemConditionalFunction {
 
 
     @Override
-    public @NotNull LootItemFunctionType<GummyColorLootFunction> getType() {
-        return ACLootTableRegistry.GUMMY_COLORS_LOOT_FUNCTION.get();
+    public @NotNull MapCodec<GummyColorLootFunction> codec() {
+        return CODEC;
     }
 }

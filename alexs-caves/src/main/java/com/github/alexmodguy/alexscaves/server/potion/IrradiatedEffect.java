@@ -20,7 +20,7 @@ public class IrradiatedEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int tick) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int tick) {
         int hazmat = HazmatArmorItem.getWornAmount(entity);
         float damageScale = 1F - hazmat * 0.25F;
         if (entity instanceof Player player && hazmat == 0) {

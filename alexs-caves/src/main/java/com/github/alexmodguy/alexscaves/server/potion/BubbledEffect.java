@@ -22,7 +22,7 @@ public class BubbledEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         // Periodically sync effect to clients to ensure visual stays in sync
         if (!entity.level().isClientSide() && entity.tickCount % 40 == 0) {
             MobEffectInstance instance = entity.getEffect(ACEffectRegistry.BUBBLED);

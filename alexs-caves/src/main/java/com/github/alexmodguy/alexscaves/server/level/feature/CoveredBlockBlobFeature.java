@@ -24,7 +24,7 @@ public class CoveredBlockBlobFeature extends Feature<CoveredBlockBlobConfigurati
         for (blockstateconfiguration = context.config(); blockpos.getY() > worldgenlevel.getMinY() + 3; blockpos = blockpos.below()) {
             if (!worldgenlevel.isEmptyBlock(blockpos.below())) {
                 BlockState blockstate = worldgenlevel.getBlockState(blockpos.below());
-                if (isDirt(blockstate) || isStone(blockstate)) {
+                if (blockstate.is(net.minecraft.tags.BlockTags.DIRT) || blockstate.is(net.minecraft.tags.BlockTags.BASE_STONE_OVERWORLD)) {
                     break;
                 }
             }
@@ -41,10 +41,10 @@ public class CoveredBlockBlobFeature extends Feature<CoveredBlockBlobConfigurati
                 double radius = (double) (f * f);
                 for (BlockPos blockpos1 : BlockPos.betweenClosed(blockpos.offset(-i, -j, -k), blockpos.offset(i, j, k))) {
                     if (blockpos1.distSqr(blockpos) <= radius) {
-                        worldgenlevel.setBlock(blockpos1, blockstateconfiguration.block.getState(randomsource, blockpos1), 3);
+                        worldgenlevel.setBlock(blockpos1, blockstateconfiguration.block.getState(worldgenlevel, randomsource, blockpos1), 3);
                         BlockPos blockpos2 = blockpos1.above();
                         if (blockpos2.distSqr(blockpos) > radius && worldgenlevel.getBlockState(blockpos2).isAir()) {
-                            worldgenlevel.setBlock(blockpos2, blockstateconfiguration.coverBlock.getState(randomsource, blockpos2), 3);
+                            worldgenlevel.setBlock(blockpos2, blockstateconfiguration.coverBlock.getState(worldgenlevel, randomsource, blockpos2), 3);
                         }
                     }
                 }

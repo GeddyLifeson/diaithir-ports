@@ -1,7 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.block;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
-import com.github.alexmodguy.alexscaves.client.model.ConversionCrucibleModel;
 import com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry;
 import com.github.alexmodguy.alexscaves.server.block.grower.AncientTreeGrower;
 import com.github.alexmodguy.alexscaves.server.block.grower.LicorootGrower;
@@ -181,7 +180,7 @@ public class ACBlockRegistry {
     public static final DeferredHolder<Block, Block> POTTED_CYCAD = reg("potted_cycad", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CYCAD, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final DeferredHolder<Block, Block> ARCHAIC_VINE = registerBlockAndItem("archaic_vine", () -> new ArchaicVineBlock());
     public static final DeferredHolder<Block, Block> ARCHAIC_VINE_PLANT = reg("archaic_vine_plant", () -> new ArchaicVinePlantBlock());
-    public static final DeferredHolder<Block, Block> ANCIENT_LEAVES = registerBlockAndItem("ancient_leaves", () -> new net.minecraft.world.level.block.UntintedParticleLeavesBlock(0.01F, net.minecraft.core.particles.ParticleTypes.OAK_LEAVES, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.GRASS).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
+    public static final DeferredHolder<Block, Block> ANCIENT_LEAVES = registerBlockAndItem("ancient_leaves", () -> new net.minecraft.world.level.block.UntintedParticleLeavesBlock(0.01F, net.minecraft.core.particles.ParticleTypes.CHERRY_LEAVES, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.GRASS).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isSuffocating((blockState, getter, pos) -> false)));
     public static final DeferredHolder<Block, Block> ANCIENT_SAPLING = registerBlockAndItem("ancient_sapling", () -> new AncientSaplingBlock(AncientTreeGrower.GROWER, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.GRASS).noCollision().randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final DeferredHolder<Block, Block> POTTED_ANCIENT_SAPLING = reg("potted_ancient_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_SAPLING, com.github.alexmodguy.alexscaves.server.misc.ACProps.block().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final DeferredHolder<Block, Block> TREE_STAR = registerBlockAndItem("tree_star", () -> new TreeStarBlock());
@@ -219,7 +218,7 @@ public class ACBlockRegistry {
     public static final DeferredHolder<Block, Block> NUCLEAR_BOMB = registerBlockAndItem("nuclear_bomb", () -> new NuclearBombBlock());
     public static final DeferredHolder<Block, Block> UNREFINED_WASTE = registerBlockAndItem("unrefined_waste", () -> new UnrefinedWasteBlock(), 4);
     public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE_COMPONENT = registerBlockAndItem("nuclear_furnace_component", () -> new NuclearFurnaceComponentBlock());
-    public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE = reg("nuclear_furnace", () -> new NuclearFurnaceBlock());
+    public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE = reg("nuclear_furnace", () -> new Block(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().strength(50.0F, 1200.0F).lightLevel(state -> 7)));
     public static final DeferredHolder<Block, Block> SULFUR = registerBlockAndItem("sulfur", () -> new SulfurBlock());
     public static final DeferredHolder<Block, Block> SULFUR_BUD_SMALL = registerBlockAndItem("sulfur_bud_small", () -> new SulfurBudBlock(6, 4));
     public static final DeferredHolder<Block, Block> SULFUR_BUD_MEDIUM = registerBlockAndItem("sulfur_bud_medium", () -> new SulfurBudBlock(6, 8));

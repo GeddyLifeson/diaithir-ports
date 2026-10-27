@@ -76,9 +76,9 @@ public class SundropBlock extends DirectionalBlock {
         }
     }
 
-    public void updateEntityAfterFallOn(BlockGetter getter, Entity entity) {
+    public void updateEntityMovementAfterFallOn(BlockGetter getter, Entity entity) {
         if (entity.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(getter, entity);
+            super.updateEntityMovementAfterFallOn(getter, entity);
         } else {
             this.bounceUp(entity);
         }

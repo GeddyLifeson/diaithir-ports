@@ -49,7 +49,7 @@ public class CycadBlock extends BushBlock implements BonemealableBlock {
         return MapCodec.unit(this);
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 

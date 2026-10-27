@@ -52,7 +52,7 @@ public class MultipartEntityMessage implements CustomPacketPayload {
                 Entity parent = player.level().getEntity(message.parentId);
                 if (parent != null && parent.isMultipartEntity() && player.distanceTo(parent) < 16) {
                     if (message.type == 0) {
-                        parent.interact(player, player.getUsedItemHand());
+                        parent.interact(player, player.getUsedItemHand(), parent.position());
                     } else if (message.type == 1) {
                         // Use player's attack method to properly calculate damage with weapons, enchantments, crits, etc.
                         player.attack(parent);

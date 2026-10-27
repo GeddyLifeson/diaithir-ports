@@ -46,7 +46,7 @@ public class DonutArchStructure extends Structure {
 
     public void generatePieces(StructurePiecesBuilder builder, GenerationContext context) {
         WorldgenRandom worldgenrandom = new WorldgenRandom(new LegacyRandomSource(0L));
-        worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
+        worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x(), context.chunkPos().z());
         int i = context.chunkPos().getMinBlockX();
         int j = context.chunkPos().getMinBlockZ();
         int k = context.chunkGenerator().getSeaLevel();

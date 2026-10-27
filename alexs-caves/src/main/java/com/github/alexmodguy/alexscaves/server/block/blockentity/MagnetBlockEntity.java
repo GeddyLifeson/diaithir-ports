@@ -96,7 +96,7 @@ public class MagnetBlockEntity extends BlockEntity {
                                 level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                             }
                             MovingMetalBlockEntity metalBlockEntity = ACEntityRegistry.MOVING_METAL_BLOCK.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
-                            metalBlockEntity.moveTo(Vec3.atCenterOf(checkMetalAt));
+                            metalBlockEntity.snapTo(Vec3.atCenterOf(checkMetalAt));
                             metalBlockEntity.setAllBlockData(MovingMetalBlockEntity.createTagFromData(allData));
                             metalBlockEntity.setPlacementCooldown(1);
                             level.addFreshEntity(metalBlockEntity);

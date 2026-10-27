@@ -210,7 +210,7 @@ public class MetalScaffoldingBlock extends Block implements BucketPickup, Liquid
         }
     }
 
-    public ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, LevelAccessor levelAccessor, BlockPos blockPos, BlockState state) {
+    public ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, LevelAccessor levelAccessor, BlockPos blockPos, BlockState state) {
         int liquidType = state.getValue(LIQUID_LOGGED);
         if (liquidType > 0) {
             levelAccessor.setBlock(blockPos, state.setValue(LIQUID_LOGGED, 0), 3);

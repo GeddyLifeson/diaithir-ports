@@ -28,7 +28,7 @@ public class DeepsightEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide()) {
             return true;
         }

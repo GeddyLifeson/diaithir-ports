@@ -144,7 +144,7 @@ public class ForlornBridgeStructurePiece extends StructurePiece {
             return;
         }
         while (!checkedGetBlock(level, pos).isSolid() && pos.getY() < level.getMaxY() && !level.canSeeSky(pos)) {
-            checkedSetBlock(level, pos, Blocks.CHAIN.defaultBlockState());
+            checkedSetBlock(level, pos, Blocks.IRON_CHAIN.defaultBlockState());
             pos.move(0, 1, 0);
         }
     }

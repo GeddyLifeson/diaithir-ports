@@ -152,7 +152,7 @@ public class ACMath {
 
     /** The vanilla celestial angle (0 at noon) computed from the day time, for code that used Level.getTimeOfDay. */
     public static float celestialAngle(net.minecraft.world.level.Level level) {
-        double d0 = net.minecraft.util.Mth.frac(level.getDayTime() / 24000.0D - 0.25D);
+        double d0 = net.minecraft.util.Mth.frac(level.getOverworldClockTime() / 24000.0D - 0.25D);
         double d1 = 0.5D - Math.cos(d0 * Math.PI) / 2.0D;
         return (float) (d0 * 2.0D + d1) / 3.0F;
     }

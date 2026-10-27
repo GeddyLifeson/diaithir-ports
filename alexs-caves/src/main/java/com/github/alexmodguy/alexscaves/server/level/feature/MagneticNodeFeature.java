@@ -92,7 +92,7 @@ public class MagneticNodeFeature extends Feature<MagneticNodeFeatureConfiguratio
     }
 
     private static void placeBlock(WorldGenLevel level, BlockPos pos, BlockStateProvider blockState, Direction facing, RandomSource randomSource, boolean flag) {
-        BlockState state = blockState.getState(randomSource, pos);
+        BlockState state = blockState.getState(level, randomSource, pos);
         if (state.getBlock() instanceof NeodymiumNodeBlock) {
             state = state.setValue(NeodymiumNodeBlock.FACING, facing).setValue(NeodymiumNodeBlock.WATERLOGGED, flag);
 

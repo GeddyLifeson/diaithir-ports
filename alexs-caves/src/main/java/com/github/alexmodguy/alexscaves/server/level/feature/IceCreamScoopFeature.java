@@ -26,7 +26,7 @@ public class IceCreamScoopFeature extends Feature<IceCreamScoopFeatureConfigurat
         WorldGenLevel level = context.level();
         BlockPos genAt = context.origin();
         BlockState belowState = level.getBlockState(genAt);
-        BlockState ourIceCream = context.config().iceCreamBlock.getState(randomsource, genAt);
+        BlockState ourIceCream = context.config().iceCreamBlock.getState(context.level(), randomsource, genAt);
         int pileHeight = 6 + randomsource.nextInt(3);
         int pileWidth = 2 + randomsource.nextInt(3);
         if(belowState.getBlock() instanceof IceCreamBlock){
@@ -52,7 +52,7 @@ public class IceCreamScoopFeature extends Feature<IceCreamScoopFeatureConfigurat
                     double dist = yAdd >= 0 ? pos.distToLowCornerSqr(genAt.getX(), genAt.getY(), genAt.getZ()) : pos.distToLowCornerSqr(genAt.getX(), pos.getY(), genAt.getZ());
                     BlockState replacingState = level.getBlockState(pos);
                     if((replacingState.canBeReplaced() || replacingState.is(ACBlockRegistry.GIANT_SWEETBERRY.get())) && dist < circleFat){
-                        level.setBlock(pos, lastState = context.config().iceCreamBlock.getState(randomsource, pos), 3);
+                        level.setBlock(pos, lastState = context.config().iceCreamBlock.getState(context.level(), randomsource, pos), 3);
                     }
                     yAdd--;
                 }

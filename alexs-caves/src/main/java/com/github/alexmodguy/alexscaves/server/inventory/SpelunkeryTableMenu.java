@@ -106,7 +106,7 @@ public class SpelunkeryTableMenu extends AbstractContainerMenu {
 
             public void onTake(Player player, ItemStack stack) {
                 access.execute((level, blockPos) -> level.playSound((Player) null, blockPos, ACSoundRegistry.SPELUNKERY_TABLE_CODEX_REMOVE.get(), SoundSource.BLOCKS, 1.0F, 1.0F));
-                stack.getItem().onCraftedBy(stack, player.level(), player);
+                stack.onCraftedBy(player, stack.getCount());
                 super.onTake(player, stack);
             }
         });
@@ -157,7 +157,7 @@ public class SpelunkeryTableMenu extends AbstractContainerMenu {
             ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
             if (slotIndex == 2) {
-                itemstack1.getItem().onCraftedBy(itemstack1, player.level(), player);
+                itemstack1.onCraftedBy(player, itemstack1.getCount());
                 if (!this.moveItemStackTo(itemstack1, 3, 39, true)) {
                     return ItemStack.EMPTY;
                 }
@@ -217,7 +217,7 @@ public class SpelunkeryTableMenu extends AbstractContainerMenu {
 
     public static void setTutorialComplete(Player player, boolean done) {
         CompoundTag playerData = player.getPersistentData();
-        CompoundTag data = playerData.getCompound(Player.PERSISTED_NBT_TAG);
+        CompoundTag data = playerData.getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
         if (data != null) {
             data.putBoolean(NEEDS_TUTORIAL_IDENTIFIER, done);
             playerData.put(Player.PERSISTED_NBT_TAG, data);
@@ -226,7 +226,7 @@ public class SpelunkeryTableMenu extends AbstractContainerMenu {
 
     public static boolean hasCompletedTutorial(Player player) {
         CompoundTag playerData = player.getPersistentData();
-        CompoundTag data = playerData.getCompound(Player.PERSISTED_NBT_TAG);
+        CompoundTag data = playerData.getCompoundOrEmpty(Player.PERSISTED_NBT_TAG);
         return data != null && data.getBooleanOr(NEEDS_TUTORIAL_IDENTIFIER, false);
     }
 

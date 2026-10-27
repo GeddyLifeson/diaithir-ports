@@ -34,26 +34,6 @@ public class CandyCanePoleBlock extends CrossCollisionBlock {
         return MapCodec.unit(this);
     }
 
-    @Override
-    protected VoxelShape[] makeShapes(float poleWidth, float connectorWidth, float poleHeight, float connectorYMin, float connectorYMax) {
-        float f = 8.0F - poleWidth;
-        float f1 = 8.0F + poleWidth;
-        float f2 = 8.0F - connectorWidth;
-        float f3 = 8.0F + connectorWidth;
-        float upper = connectorYMax - 4.0F;
-        VoxelShape voxelshape = Block.box((double)f, 0.0D, (double)f, (double)f1, (double)poleHeight, (double)f1);
-        VoxelShape voxelshape1 = Block.box((double)f2, (double)upper, 0.0D, (double)f3, (double)connectorYMax, (double)f3);
-        VoxelShape voxelshape2 = Block.box((double)f2, (double)upper, (double)f2, (double)f3, (double)connectorYMax, 16.0D);
-        VoxelShape voxelshape3 = Block.box(0.0D, (double)upper, (double)f2, (double)f3, (double)connectorYMax, (double)f3);
-        VoxelShape voxelshape4 = Block.box((double)f2, (double)upper, (double)f2, 16.0D, (double)connectorYMax, (double)f3);
-        VoxelShape voxelshape5 = Shapes.or(voxelshape1, voxelshape4);
-        VoxelShape voxelshape6 = Shapes.or(voxelshape2, voxelshape3);
-        VoxelShape[] avoxelshape = new VoxelShape[]{Shapes.empty(), voxelshape2, voxelshape3, voxelshape6, voxelshape1, Shapes.or(voxelshape2, voxelshape1), Shapes.or(voxelshape3, voxelshape1), Shapes.or(voxelshape6, voxelshape1), voxelshape4, Shapes.or(voxelshape2, voxelshape4), Shapes.or(voxelshape3, voxelshape4), Shapes.or(voxelshape6, voxelshape4), voxelshape5, Shapes.or(voxelshape2, voxelshape5), Shapes.or(voxelshape3, voxelshape5), Shapes.or(voxelshape6, voxelshape5)};
-        for(int i = 0; i < 16; ++i) {
-            avoxelshape[i] = Shapes.or(voxelshape, avoxelshape[i]);
-        }
-        return avoxelshape;
-    }
 
     public boolean connectsTo(BlockGetter level, BlockPos ourPos, BlockPos posInQuestion) {
         BlockState stateAbove = level.getBlockState(ourPos.above());

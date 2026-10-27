@@ -18,7 +18,7 @@ public class StunnedEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(net.minecraft.server.level.ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         if (entity.getDeltaMovement().y > 0) {
             entity.setDeltaMovement(entity.getDeltaMovement().multiply(1, 0.1D, 1));
         }

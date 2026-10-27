@@ -45,7 +45,7 @@ public class GingerbarrelBlock extends BarrelBlock {
             if (blockentity instanceof GingerbarrelBlockEntity) {
                 player.openMenu((GingerbarrelBlockEntity) blockentity);
                 player.awardStat(Stats.OPEN_BARREL);
-                PiglinAi.angerNearbyPiglins(player, true);
+                if (level instanceof net.minecraft.server.level.ServerLevel __sl) PiglinAi.angerNearbyPiglins(__sl, player, true);
             }
             return InteractionResult.CONSUME;
         }

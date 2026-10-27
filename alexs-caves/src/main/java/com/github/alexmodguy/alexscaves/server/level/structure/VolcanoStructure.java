@@ -54,7 +54,7 @@ public class VolcanoStructure extends Structure {
 
     public void generatePieces(StructurePiecesBuilder builder, GenerationContext context) {
         WorldgenRandom worldgenrandom = new WorldgenRandom(new LegacyRandomSource(0L));
-        worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x, context.chunkPos().z);
+        worldgenrandom.setLargeFeatureSeed(context.seed(), context.chunkPos().x(), context.chunkPos().z());
         int volcanoWidthRadius = 30 + context.random().nextInt(15);
         int volcanoHeight = volcanoWidthRadius + 8 + context.random().nextInt(5);
         int i = context.chunkPos().getMinBlockX();

@@ -36,7 +36,7 @@ public class MetalBarrelBlock extends BarrelBlock {
             if (blockentity instanceof MetalBarrelBlockEntity) {
                 player.openMenu((MetalBarrelBlockEntity) blockentity);
                 player.awardStat(Stats.OPEN_BARREL);
-                PiglinAi.angerNearbyPiglins(player, true);
+                if (level instanceof net.minecraft.server.level.ServerLevel __sl) PiglinAi.angerNearbyPiglins(__sl, player, true);
             }
             return InteractionResult.CONSUME;
         }

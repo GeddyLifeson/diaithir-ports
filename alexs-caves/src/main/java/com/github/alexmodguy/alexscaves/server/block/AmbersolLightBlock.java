@@ -29,7 +29,7 @@ public class AmbersolLightBlock extends Block {
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter getter, BlockPos blockPos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return true;
     }
 
@@ -68,7 +68,7 @@ public class AmbersolLightBlock extends Block {
     }
 
     public static boolean testSkylight(LevelReader levelReader, BlockState blockState, BlockPos current) {
-        return blockState.propagatesSkylightDown(levelReader, current);
+        return blockState.getFluidState().isEmpty() && !blockState.isSolid() ;
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {

@@ -171,13 +171,13 @@ public class MagnetBlock extends BaseEntityBlock {
         return super.useItemOn(heldItem, state, worldIn, pos, player, handIn, hit);
     }
 
-    public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel worldIn, BlockPos pos, boolean isMoving) {
         BlockEntity tileentity = worldIn.getBlockEntity(pos);
-        if (tileentity instanceof MagnetBlockEntity magnetBlockEntity && newState.getBlock() != state.getBlock()) {
+        if (tileentity instanceof MagnetBlockEntity magnetBlockEntity) {
             magnetBlockEntity.dropIngots(this.azure);
             worldIn.updateNeighbourForOutputSignal(pos, this);
         }
-        super.onRemove(state, worldIn, pos, newState, isMoving);
+        super.affectNeighborsAfterRemoval(state, worldIn, pos, isMoving);
     }
 
     @Nullable

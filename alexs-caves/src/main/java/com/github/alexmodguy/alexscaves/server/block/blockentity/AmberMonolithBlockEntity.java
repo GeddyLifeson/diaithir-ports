@@ -14,7 +14,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.random.WeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -184,9 +184,9 @@ public class AmberMonolithBlockEntity extends BlockEntity {
         }
         MobSpawnSettings.SpawnerData spawnerData = getDepopulatedEntitySpawnData(level, this.getBlockPos(), 4 + level.getRandom().nextInt(8), 64, forcedEntityList);
         if (spawnerData != null) {
-            spawnType = spawnerData.type;
-            int j = Math.max(spawnerData.maxCount - spawnerData.minCount, 0);
-            spawnCount = j <= 0 ? spawnerData.minCount : level.getRandom().nextInt(j) + spawnerData.minCount;
+            spawnType = spawnerData.type();
+            int j = Math.max(spawnerData.maxCount() - spawnerData.minCount(), 0);
+            spawnCount = j <= 0 ? spawnerData.minCount() : level.getRandom().nextInt(j) + spawnerData.minCount();
         }
         int i = Math.max(1000, AlexsCaves.COMMON_CONFIG.amberMonolithMeanTime.get());
         spawnsMobIn = i / 2 + level.getRandom().nextInt(i);
@@ -194,34 +194,34 @@ public class AmberMonolithBlockEntity extends BlockEntity {
     }
 
     private static boolean isEntitySpawnBlocked(MobSpawnSettings.SpawnerData settings, Level level, BlockPos pos, int range) {
-        if(settings.type.is(ACTagRegistry.AMBER_MONOLITH_SKIPS)){
+        if(settings.type().builtInRegistryHolder().is(ACTagRegistry.AMBER_MONOLITH_SKIPS)){
             return true;
         }
-        if(settings.type == ACEntityRegistry.ATLATITAN.get()){
+        if(settings.type() == ACEntityRegistry.ATLATITAN.get()){
             ACWorldData worldData = ACWorldData.get(level);
             if(worldData != null && !worldData.isPrimordialBossDefeatedOnce()){
                 return true;
             }
         }
-        return !level.getEntities(settings.type, (new AABB(pos)).inflate(range), Entity::isAlive).isEmpty();
+        return !level.getEntities(settings.type(), (new AABB(pos)).inflate(range), Entity::isAlive).isEmpty();
     }
 
     private static MobSpawnSettings.SpawnerData getEntitySpawnSettingsForBiome(Level level, BlockPos pos, List<EntityType<?>> forcedEntityTypes) {
         Biome biome = level.getBiome(pos).value();
         if (biome != null) {
-            WeightedRandomList<MobSpawnSettings.SpawnerData> spawnList = biome.getMobSettings().getMobs(ACEntityRegistry.CAVE_CREATURE);
+            WeightedList<MobSpawnSettings.SpawnerData> spawnList = biome.getMobSettings().getMobs(ACEntityRegistry.CAVE_CREATURE);
             if (spawnList.isEmpty()) {
                 spawnList = biome.getMobSettings().getMobs(MobCategory.CREATURE);
             }
             if(!forcedEntityTypes.isEmpty()){
-                List<MobSpawnSettings.SpawnerData> matching = new ArrayList<>();
-                for(MobSpawnSettings.SpawnerData unwrapped : spawnList.unwrap()){
-                    if(forcedEntityTypes.contains(unwrapped.type)){
+                List<net.minecraft.util.random.Weighted<MobSpawnSettings.SpawnerData>> matching = new ArrayList<>();
+                for(net.minecraft.util.random.Weighted<MobSpawnSettings.SpawnerData> unwrapped : spawnList.unwrap()){
+                    if(forcedEntityTypes.contains(unwrapped.value().type())){
                         matching.add(unwrapped);
                     }
                 }
                 if(!matching.isEmpty()){
-                    spawnList = WeightedRandomList.create(matching);
+                    spawnList = WeightedList.of(matching);
                 }
             }
             if (!spawnList.isEmpty()) {
