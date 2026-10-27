@@ -58,7 +58,7 @@ public class DetachedRiftBlockEntityRenderer extends RiftBlockEntityRenderer<Det
             collector.submitCustomGeometry(matrices, RenderTypes.entityCutout(TESSERACT_PATH), (pose, vc) -> this.renderTesseract(vc, state, pose, matrices));
         }
 
-        collector.submitCustomGeometry(matrices, RenderTypes.entityCutout(TESSERACT_PATH), (pose, vc) -> this.renderCrack(vc, state, pose));
+        collector.submitCustomGeometry(matrices, RenderTypes.entityTranslucent(TESSERACT_PATH), (pose, vc) -> this.renderCrack(vc, state, pose));
     }
 
     private void renderCrack(VertexConsumer vc, State state, PoseStack.Pose pose) {
