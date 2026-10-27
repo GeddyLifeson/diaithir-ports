@@ -74,7 +74,9 @@ def make(name, tone, bands):
 os.makedirs(os.path.join(ROOT, f"assets/{NS}/textures/block"), exist_ok=True)
 make("keg", (150, 105, 60), (8, 51))
 make("fermenting_barrel", (112, 78, 46), (6, 29, 53))
-make("oak_cask", (170, 135, 82), (10, 27, 46))
+# oak_cask art comes from the textures thread (64 px); only generate a placeholder if it is missing
+if not os.path.exists(os.path.join(ROOT, f"assets/{NS}/textures/block/oak_cask_side.png")):
+    make("oak_cask", (170, 135, 82), (10, 27, 46))
 
 # (Diaithiris, English)
 NAMES = {"keg": ("Boidellienda", "Keg"), "fermenting_barrel": ("Tundagrùduiri", "Fermenting Barrel"), "oak_cask": ("", "Oak Cask")}
