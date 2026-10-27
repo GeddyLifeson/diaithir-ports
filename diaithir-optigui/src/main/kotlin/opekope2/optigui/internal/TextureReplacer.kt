@@ -1,0 +1,139 @@
+package opekope2.optigui.internal
+
+import net.minecraft.client.Minecraft
+import net.minecraft.client.gui.screens.Screen
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent
+import net.neoforged.neoforge.client.event.ClientTickEvent
+import net.neoforged.neoforge.common.NeoForge
+import net.minecraft.resources.Identifier
+import net.minecraft.world.InteractionHand
+import opekope2.optigui.interaction.IBeforeInteractionBeginCallback
+import opekope2.optigui.interaction.Interaction
+import opekope2.optigui.internal.filter.ContainerMapFilter
+import opekope2.optigui.registry.ContainerDefaultGuiTextureRegistry
+import opekope2.optigui.registry.RetexturableScreenRegistry
+import opekope2.optigui.util.identifier
+
+internal object TextureReplacer {
+    private object InteractionHolder {
+        val replacementCache = mutableMapOf<Identifier, Identifier>()
+
+        var interacting: Boolean = false
+            private set
+
+        var container: Identifier? = null
+            private set
+        var data: Interaction.Data? = null
+            private set
+        private var screen: Screen? = null
+
+        fun prepare(container: Identifier, data: Interaction.Data): Boolean {
+            if (interacting) return false
+
+            this.container = container
+            this.data = data
+
+            return true
+        }
+
+        fun begin(screen: Screen) {
+            IBeforeInteractionBeginCallback.EVENT.invoker().onBeforeBegin(screen)
+
+            this.screen = screen
+
+            interacting = true
+        }
+
+        fun end() {
+            container = null
+            data = data?.copy(hitResult = null, extra = null, blockEntity = null, entity = null)
+
+            interacting = false
+
+            replacementCache.clear()
+        }
+
+        fun createInteraction(texture: Identifier): Interaction? {
+            return if (!interacting) null
+            else Interaction(
+                container ?: data?.player?.vehicle?.identifier ?: return null,
+                texture,
+                screen!!,
+                data ?: return null
+            )
+        }
+
+        fun onEndTick() {
+            if (interacting && Minecraft.getInstance().level != null) {
+                replacementCache.clear()
+            }
+        }
+
+        fun onPlayReady(player: net.minecraft.client.player.LocalPlayer) {
+            data = Interaction.Data(player, player.level(), InteractionHand.MAIN_HAND, null, null, null, null)
+        }
+
+        fun onPlayDisconnect() {
+            // Clean up, don't leak memory. Just to be safe.
+            end()
+            data = null
+        }
+    }
+
+    private var filter: ContainerMapFilter = ContainerMapFilter(mapOf())
+    private var replaceableTextures: Set<Identifier> = setOf()
+
+    val inspectableInteraction: Interaction?
+        get() {
+            return InteractionHolder.createInteraction(
+                ContainerDefaultGuiTextureRegistry[InteractionHolder.container ?: return null] ?: return null
+            )
+        }
+    val interactionData: Interaction.Data? by InteractionHolder::data
+
+    @JvmStatic
+    var isReplacingTextures = false
+        get() = field && InteractionHolder.interacting
+
+    fun onInitializeClient() {
+        NeoForge.EVENT_BUS.addListener(ClientTickEvent.Post::class.java) { InteractionHolder.onEndTick() }
+        NeoForge.EVENT_BUS.addListener(ClientPlayerNetworkEvent.LoggingIn::class.java) {
+            InteractionHolder.onPlayReady(it.player)
+        }
+        NeoForge.EVENT_BUS.addListener(ClientPlayerNetworkEvent.LoggingOut::class.java) {
+            InteractionHolder.onPlayDisconnect()
+        }
+    }
+
+    @JvmStatic
+    fun replaceTexture(texture: Identifier): Identifier {
+        // Only replace predefined textures
+        if (texture !in replaceableTextures) return texture
+
+        // Don't bother replacing textures if not interacting
+        val interaction = InteractionHolder.createInteraction(texture) ?: return texture
+
+        return InteractionHolder.replacementCache.getOrPut(texture) {
+            filter.evaluate(interaction) ?: texture
+        }
+    }
+
+    @JvmStatic
+    fun handleScreenChange(screen: Screen?) {
+        when (screen) {
+            null -> InteractionHolder.end()
+            in RetexturableScreenRegistry -> InteractionHolder.begin(screen)
+            else -> InteractionHolder.end()
+        }
+    }
+
+    fun prepareInteraction(container: Identifier, data: Interaction.Data): Boolean =
+        InteractionHolder.prepare(container, data)
+
+    fun onFiltersLoaded(filter: ContainerMapFilter, replaceableTextures: Set<Identifier>) {
+        this.filter = filter
+        this.replaceableTextures = replaceableTextures
+    }
+
+    fun clearReplacementCache() = InteractionHolder.replacementCache.clear()
+}
