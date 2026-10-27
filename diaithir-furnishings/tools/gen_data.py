@@ -50,6 +50,7 @@ def block_files(name, model_ref):
 
 def main():
     lang = json.loads((A / "lang/en_us.json").read_text())
+    native = {}
     axe = ["diaithirfurnishings:rope", "diaithirfurnishings:sack", "diaithirfurnishings:hanging_sack"]
     for wid, stripped, planks, label in WOODS:
         name = f"{wid}_signpost"
@@ -64,7 +65,9 @@ def main():
             "type": "minecraft:crafting_shaped", "category": "misc",
             "key": {"P": f"minecraft:{planks}", "S": "minecraft:stick"},
             "pattern": ["P", "S", "S"], "result": {"id": f"{NS}:{name}", "count": 2}})
-        lang[f"block.{NS}.{name}"] = f"Komurra {label}"
+        lang[f"block.{NS}.{name}"] = f"{wid.replace('_', ' ').title()} Signpost"
+        native[f"{wid.replace('_', ' ').title()} Signpost"] = f"Komurra {label}"
+        lang[f"item.{NS}.{name}.native"] = f"Komurra {label}"
         axe.append(f"{NS}:{name}")
 
     # clay crock: open mouth, the stored item shows over the rim
@@ -85,9 +88,11 @@ def main():
     dump(A / "models/block/glass_jar.json", {
         "textures": {"glass": f"{NS}:block/glass_jar", "cork": f"{NS}:block/jar_lid", "particle": f"{NS}:block/glass_jar"},
         "elements": [box([4, 0, 4], [12, 11, 12], "glass"), box([5, 11, 5], [11, 13, 11], "cork")]})
-    for jar, label, mats in (("clay_jar", "Krogun Krèada", ("minecraft:brick",)), ("glass_jar", "Krogun Glaindech", ("minecraft:glass_pane",))):
+    for jar, label, english in (("clay_jar", "Krogun Krèada", "Clay Jar"), ("glass_jar", "Krogun Glaindech", "Glass Jar")):
         dump(D / f"loot_table/blocks/{jar}.json", drop_self(jar, True))
-        lang[f"block.{NS}.{jar}"] = label
+        lang[f"block.{NS}.{jar}"] = english
+        native[english] = label
+        lang[f"item.{NS}.{jar}.native"] = label
     dump(D / "recipe/clay_jar.json", {"type": "minecraft:crafting_shaped", "category": "misc",
         "key": {"B": "minecraft:brick"}, "pattern": ["B B", "B B", " B "], "result": {"id": f"{NS}:clay_jar", "count": 2}})
     dump(D / "recipe/glass_jar.json", {"type": "minecraft:crafting_shaped", "category": "misc",
@@ -106,12 +111,18 @@ def main():
     dump(D / "loot_table/blocks/hanging_sack.json", drop_self("hanging_sack", True))
     dump(D / "recipe/hanging_sack.json", {"type": "minecraft:crafting_transmute", "category": "misc",
         "input": f"{NS}:sack", "material": f"{NS}:rope", "result": {"id": f"{NS}:hanging_sack"}})
-    lang[f"block.{NS}.hanging_sack"] = "Sak Krochti"
+    for bid, english, label in (("hanging_sack", "Hanging Sack", "Sak Krochti"), ("rope", "Rope", "Ròpu"), ("sack", "Sack", "Sak"), ("sconce", "Sconce", "Solasbulda")):
+        lang[f"block.{NS}.{bid}"] = english
+        native[english] = label
+        lang[f"item.{NS}.{bid}.native"] = label
 
-    lang["gui.diaithirfurnishings.signpost"] = "Komurra"
+    lang["gui.diaithirfurnishings.signpost"] = "Signpost"
     lang["gui.diaithirfurnishings.signpost.line1"] = "First line"
     lang["gui.diaithirfurnishings.signpost.line2"] = "Second line"
     dump(A / "lang/en_us.json", dict(sorted(lang.items())))
+    out = Path("/mnt/project-files/names/furnishings_native.json")
+    if out.parent.exists():
+        out.write_text(json.dumps(native, indent=1, ensure_ascii=False) + "\n")
     dump(ROOT / "data/minecraft/tags/block/mineable/axe.json", {"values": axe})
     dump(ROOT / "data/minecraft/tags/block/mineable/pickaxe.json", {"values": [f"{NS}:sconce", f"{NS}:clay_jar", f"{NS}:glass_jar"]})
 
