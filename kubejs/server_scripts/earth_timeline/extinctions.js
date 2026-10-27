@@ -1,15 +1,19 @@
 // Species die out on their real dates. global.etNS.EXTINCTIONS (extinctions_data.js, from world/earth/timeline) holds
-// [fadeStartLc, extinctLc, [species ids]]: natural spawns thin out linearly over the fade years, then stop. Animals already
-// in the world and tamed or spawned by command are left alone. flood.js stores the engine's year under global.etNS.etYearKey.
-// The data file loads after this one (alphabetical), so the table is read on the first spawn, not at load.
+// [fadeStartLc, extinctLc, [species ids]]: new spawns thin out linearly over the fade years, then stop. Animals already
+// in the world (loaded from disk), tamed ones and ones spawned by command, egg or spawner block are left alone.
+// flood.js stores the engine's year under global.etNS.etYearKey. The data file loads after this one (alphabetical), so the
+// table is read on the first spawn, not at load.
 //
-// A species id is not always an entity type. Untamed Wilds has one entity type per family (untamedwilds:rhino) and a
-// variant number per species (wooly = 5, from data/untamedwilds/entities/rhino.json), so 'untamedwilds:rhino_wooly' is
-// looked up in VARIANTS. The variant is only chosen in Mob.finalizeSpawn, after the FinalizeSpawn event (checkSpawn), so
-// checkSpawn only remembers which new natural spawns to judge and the verdict is given when the entity joins the level
-// (spawned), when the variant is set. Ids not listed in VARIANTS are taken as entity types (diaithirbestiary:*) and are
-// judged straight in checkSpawn. Animals Untamed Wilds places during chunk generation (FaunaSpawn calls finalizeSpawn
-// itself, no event) are not affected; only spawns that go through NeoForge's FinalizeSpawn event with a natural reason are.
+// A species id is not an entity type:
+//  - Untamed Wilds has one entity type per family (untamedwilds:rhino) and a VARIANT number per species (wooly = 5, from
+//    data/untamedwilds/entities/rhino.json), so 'untamedwilds:rhino_wooly' is looked up in VARIANTS.
+//  - Diaithir Bestiary has a few entity types (diaithirbestiary:beast, flyer, ...) and a creature id ('kind') per species,
+//    so 'diaithirbestiary:eachreidhlein' is matched against Creature.kind().
+// Both the variant and the kind are only set while the mob is being spawned (Mob.finalizeSpawn, after the FinalizeSpawn
+// event that checkSpawn sees), so the verdict is given when the entity joins the level, and only for entities that were
+// not loaded from disk. checkSpawn is used for one thing: it sees the spawn reason, and a reason that is not natural
+// exempts that entity. Spawns that bypass the event (Bestiary's own spawner, Untamed Wilds' chunk-generation fauna) have
+// no reason and count as natural.
 (function () {
   const EXT_KEY = 'earth_timeline_lc'
   // EntitySpawnReason names that count as "natural"; everything else (command, egg, breeding, bucket, spawner block) is exempt.
@@ -33,26 +37,30 @@
     'untamedwilds:bison_ancient': ['untamedwilds:bison', 3],
     'untamedwilds:bovid_aurochs': ['untamedwilds:bovid', 0]
   }
+  const BESTIARY = 'diaithirbestiary:'
 
-  let byType = null // entity type id -> { whole: row | null, variants: { n: row } }
-  let pending = {} // uuid -> true, new natural spawns of a type that needs a variant check
-  let pendingCount = 0
+  let byType = null // entity type id -> { variants: { n: row } }
+  let byKind = null // Bestiary creature id -> row
+  let exempt = {} // uuid -> true: spawn with a non-natural reason, seen in checkSpawn, not yet joined
+  let exemptCount = 0
 
   function table() {
     if (byType) return byType
     byType = {}
+    byKind = {}
     ;(global.etNS.EXTINCTIONS || []).forEach(row => row[2].forEach(id => {
       let v = VARIANTS[id]
-      let type = v ? v[0] : id
-      let e = byType[type] || (byType[type] = { whole: null, variants: {} })
-      if (v) e.variants[v[1]] = row
-      else e.whole = row
+      if (v) {
+        let e = byType[v[0]] || (byType[v[0]] = { variants: {} })
+        e.variants[v[1]] = row
+      } else if (id.indexOf(BESTIARY) === 0) byKind[id] = row
+      else console.warn('[earth_timeline] extinction id has no mapping to an entity: ' + id)
     }))
     warnMissing()
     return byType
   }
 
-  // A type that is not an entity type in this pack would silently do nothing; say so once in the log.
+  // A base type that is not an entity type in this pack would silently do nothing; say so once in the log.
   function warnMissing() {
     try {
       let have = {}
@@ -67,29 +75,40 @@
     return (row[1] - lc) / (row[1] - row[0])
   }
 
-  function rollFails(row, lc) {
-    return Math.random() >= survival(row, lc)
+  // The row for this entity, or null if it is not an extinct-able species.
+  function rowFor(entity) {
+    let t = String(entity.type)
+    let e = table()[t]
+    if (e) return e.variants[Number(entity.getVariant())] || null
+    if (t.indexOf(BESTIARY) === 0 && typeof entity.kind === 'function') return byKind[String(entity.kind())] || null
+    return null
+  }
+
+  function tamed(entity) {
+    try {
+      if (typeof entity.owner === 'function') return entity.owner() != null // Bestiary Creature: owner UUID
+      if (typeof entity.isTame === 'function') return !!entity.isTame() // Untamed Wilds (TamableAnimal)
+    } catch (e) { /* not a tameable mob */ }
+    return false
   }
 
   EntityEvents.checkSpawn(event => {
-    let e = table()[String(event.entity.type)]
-    if (!e || !REASONS[String(event.type)]) return
-    let lc = event.server.persistentData.getIntOr(EXT_KEY, -1)
-    if (lc < 0) return
-    if (e.whole && rollFails(e.whole, lc)) { event.cancel(); return }
-    if (pendingCount > 256) { pending = {}; pendingCount = 0 }
-    if (Object.keys(e.variants).length) { pending[String(event.entity.uuid)] = lc; pendingCount++ }
+    if (REASONS[String(event.type)]) return
+    if (exemptCount > 256) { exempt = {}; exemptCount = 0 }
+    exempt[String(event.entity.uuid)] = true
+    exemptCount++
   })
 
-  EntityEvents.spawned(event => {
-    if (!pendingCount) return
-    let key = String(event.entity.uuid)
-    let lc = pending[key]
-    if (lc === undefined) return
-    delete pending[key]
-    pendingCount--
-    let e = byType && byType[String(event.entity.type)]
-    let row = e && e.variants[Number(event.entity.getVariant())]
-    if (row && rollFails(row, lc)) event.cancel()
+  NativeEvents.onEvent(Java.loadClass('net.neoforged.neoforge.event.entity.EntityJoinLevelEvent'), event => {
+    if (event.loadedFromDisk() || event.getLevel().isClientSide()) return
+    let entity = event.getEntity()
+    let key = String(entity.uuid)
+    if (exemptCount && exempt[key]) { delete exempt[key]; exemptCount--; return }
+    let lc = event.getLevel().getServer().persistentData.getIntOr(EXT_KEY, -1)
+    if (lc < 0) return
+    let row = rowFor(entity)
+    if (!row) return
+    if (tamed(entity)) return
+    if (Math.random() >= survival(row, lc)) event.setCanceled(true)
   })
 })()
