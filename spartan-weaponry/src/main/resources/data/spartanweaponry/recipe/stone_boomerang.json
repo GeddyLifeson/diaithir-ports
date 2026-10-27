@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:stone_tool_materials",
+  "P": "#minecraft:planks"
+ },
+ "pattern": [
+  "#PP",
+  "P  ",
+  "P  "
+ ],
+ "result": {
+  "id": "spartanweaponry:stone_boomerang"
+ }
+}

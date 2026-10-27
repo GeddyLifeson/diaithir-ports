@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "#minecraft:planks",
+  "|": "spartanweaponry:handle",
+  "/": "minecraft:stick"
+ },
+ "pattern": [
+  " ##",
+  " /#",
+  "|  "
+ ],
+ "result": {
+  "id": "spartanweaponry:wooden_flanged_mace"
+ }
+}

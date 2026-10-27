@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": "minecraft:iron_ingot",
+  "|": "#spartanweaponry:handles"
+ },
+ "pattern": [
+  "|#"
+ ],
+ "result": {
+  "id": "spartanweaponry:iron_throwing_knife"
+ }
+}
