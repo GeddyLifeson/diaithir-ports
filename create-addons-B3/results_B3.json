@@ -1,0 +1,262 @@
+[
+ {
+  "slug": "create-enhanced-diamonds",
+  "status": "skip",
+  "reason": "already in batch 0"
+ },
+ {
+  "slug": "create-bugfix-clipboard-patch",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-craft-n-extras",
+  "status": "ported",
+  "reason": "recipes only (20)"
+ },
+ {
+  "slug": "create_collision_fix",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-dangerous-shafts",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-train-perspective-fix",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-easy-goo",
+  "status": "ported",
+  "reason": "recipe only"
+ },
+ {
+  "slug": "artifice-create-recipes",
+  "status": "blocked",
+  "reason": "needs irons_artifice/hexerei"
+ },
+ {
+  "slug": "localschematics",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-new-additional-recipes",
+  "status": "ported",
+  "reason": "10 recipes"
+ },
+ {
+  "slug": "create-sound-of-steam-ultimine-tuning",
+  "status": "blocked",
+  "reason": "needs pipeorgans/ftbultimine"
+ },
+ {
+  "slug": "emi-create-schematics",
+  "status": "blocked",
+  "reason": "needs EMI (excluded)"
+ },
+ {
+  "slug": "create-bluemap",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "creategsrpm",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "creategrowableores-compat",
+  "status": "blocked",
+  "reason": "needs growable_ores"
+ },
+ {
+  "slug": "create-ultimine",
+  "status": "blocked",
+  "reason": "needs ftbultimine"
+ },
+ {
+  "slug": "crate-stuff",
+  "status": "blocked",
+  "reason": "needs createbb + own blocks"
+ },
+ {
+  "slug": "create-better-item-vaults",
+  "status": "blocked",
+  "reason": "needs create_connected/dndecor"
+ },
+ {
+  "slug": "recipeadditions",
+  "status": "ported",
+  "reason": "22 recipes"
+ },
+ {
+  "slug": "create-bbfe",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "spur-recipe-numismatics",
+  "status": "blocked",
+  "reason": "needs numismatics"
+ },
+ {
+  "slug": "create-threaded-trains",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-no-entities",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-aeronautics-portable-engine-liquid-fuel",
+  "status": "blocked",
+  "reason": "needs simulated"
+ },
+ {
+  "slug": "create-geological-processing",
+  "status": "ported",
+  "reason": "59 recipes"
+ },
+ {
+  "slug": "create-more-pipe-bombs-in-packages",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "brushstrokes",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-aeronautics-easy-assembly",
+  "status": "blocked",
+  "reason": "needs aeronautics/sable"
+ },
+ {
+  "slug": "biomimicry",
+  "status": "blocked",
+  "reason": "1.20.1 Forge, needs exnihilo/FD"
+ },
+ {
+  "slug": "farmers-delight-extended",
+  "status": "blocked",
+  "reason": "needs farmersdelight"
+ },
+ {
+  "slug": "create-portal-logistics",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "createtraincontrol",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-sound-of-steam-tuning-wrench",
+  "status": "blocked",
+  "reason": "needs pipeorgans"
+ },
+ {
+  "slug": "create-buildstone-toolkit",
+  "status": "blocked",
+  "reason": "needs buildstonetoolkit"
+ },
+ {
+  "slug": "simple-sights",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-more-seats",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-contraption-terminals",
+  "status": "blocked",
+  "reason": "needs toms_storage"
+ },
+ {
+  "slug": "create-crowns-x-create-more-burners-compat",
+  "status": "blocked",
+  "reason": "needs crowns"
+ },
+ {
+  "slug": "bellsandwhistles",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "antique-atlas-create-train-networks",
+  "status": "blocked",
+  "reason": "needs antique atlas"
+ },
+ {
+  "slug": "simulated-copycats",
+  "status": "blocked",
+  "reason": "needs sable/aeronautics/copycats"
+ },
+ {
+  "slug": "create-cabin-crafts",
+  "status": "ported",
+  "reason": "5 vanilla/create-only recipes; own blocks not ported"
+ },
+ {
+  "slug": "crle",
+  "status": "blocked",
+  "reason": "needs id_card_mod"
+ },
+ {
+  "slug": "create-horse-power",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "create-nowheel",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "sable-tool",
+  "status": "blocked",
+  "reason": "needs sable/simulated"
+ },
+ {
+  "slug": "create-ergonomic",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ },
+ {
+  "slug": "anvilcraft-create",
+  "status": "blocked",
+  "reason": "needs anvilcraft"
+ },
+ {
+  "slug": "create-colored-chain-conveyor",
+  "status": "blocked",
+  "reason": "needs create_extra_casing"
+ },
+ {
+  "slug": "create-aeronautics-heavitite",
+  "status": "blocked",
+  "reason": "needs aeronautics"
+ },
+ {
+  "slug": "create-emf-compat-skyhook",
+  "status": "blocked",
+  "reason": "needs EMF/rocketnautics"
+ },
+ {
+  "slug": "create-cats-dont-care",
+  "status": "blocked",
+  "reason": "code/mixin addon (QoL/own content) needs source port against diaithir_create package; deferred; or clean-room"
+ }
+]
