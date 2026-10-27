@@ -1,7 +1,12 @@
 package folk.sisby.antique_atlas;
 
 import folk.sisby.antique_atlas.item.AtlasItem;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.component.ItemLore;
+import java.util.List;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -20,8 +25,13 @@ public final class AntiqueAtlasMod {
 
 	private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
 
-	public static final DeferredItem<AtlasItem> ATLAS = ITEMS.registerItem("atlas", AtlasItem::new, p -> p.stacksTo(1));
-	public static final DeferredItem<Item> PARCHMENT = ITEMS.registerSimpleItem("parchment");
+	public static final DeferredItem<AtlasItem> ATLAS = ITEMS.registerItem("atlas", AtlasItem::new, p -> p.stacksTo(1).component(DataComponents.LORE, nativeName("atlas")));
+	public static final DeferredItem<Item> PARCHMENT = ITEMS.registerSimpleItem("parchment", p -> p.component(DataComponents.LORE, nativeName("parchment")));
+
+	/** The Diaithiris name as a grey second line under the English name. */
+	private static ItemLore nativeName(String item) {
+		return new ItemLore(List.of(Component.translatable("item.antique_atlas." + item + ".native").withStyle(ChatFormatting.GRAY)));
+	}
 
 	public AntiqueAtlasMod(IEventBus modBus) {
 		ITEMS.register(modBus);
