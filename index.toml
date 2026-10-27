@@ -69,6 +69,10 @@ file = "config/silentgear-common.toml"
 hash = "49fb3b31a84488631484f196a401b0d34603c13d55c331e5acd26a086fa253bd"
 
 [[files]]
+file = "config/solonion.json"
+hash = "ca014d7c9b088d16bc3cc17739388a8678bcb51e88c8c3a99d0de13482e8348f"
+
+[[files]]
 file = "config/tconstruct-common.toml"
 hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
 
@@ -775,6 +779,10 @@ hash = "4d8b854ecb06f5f4fe1917a209de28be3ea20d74feef0fd13838f57f7c3713d9"
 [[files]]
 file = "kubejs/assets/neoorigins/lang/en_us.json"
 hash = "d9f1a089a0d21a9fe8d20f56b41722ca9370d9b0c550739f7146aa8fff1af384"
+
+[[files]]
+file = "kubejs/assets/nutritionalbalance/items/lunchbox_3d.json"
+hash = "3bf6bc92eb2c01872d3031a6f6cdd1b155b61916edcaa68c01c9d23c5726cb67"
 
 [[files]]
 file = "kubejs/assets/pointblank/lang/en_us.json"
@@ -11762,7 +11770,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "67bcd4aff46786a234e3b901be219357522df801859f87640d9ce71c8b19d534"
+hash = "984868ae0d9095cba52ca33dd8c77352bc444b5e2e574a5af06451d1b9ed3b33"
 metafile = true
 
 [[files]]
@@ -11775,7 +11783,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "db28d73562d5d9e6d54eb6f63f8f08695ab78bc14e3f8710d56fad26562eca78"
+hash = "e5eed3800d5a5f30f7364f2ce3708affd1d495bc02473f42ca832f7ac3924e38"
 metafile = true
 
 [[files]]
@@ -11783,12 +11791,12 @@ file = "mods/diaithir-nemesis-neoforge-26.1.2-1.0.0.jar"
 hash = "070dd74217842d2c8c1e77d55ad505a23586603d875c82146a148e85cc0d2f9f"
 
 [[files]]
-file = "mods/diaithir-perf-neoforge-26.1.2-0.3.2.jar"
-hash = "949692709e5661d0b1c2b23e093264d6a222ac57e6ab5694aded1f6bae3c91b4"
+file = "mods/diaithir-perf-neoforge-26.1.2-0.3.3.jar"
+hash = "35e6386a2edb9a69cd5dfcb144b279783233072aff82050047a53b7c72fe42e9"
 
 [[files]]
-file = "mods/diaithir-tooltips-neoforge-26.1.2-2.2.0.jar"
-hash = "d80a429f336039c607adf08939dccd8ca2a7d716608769beedf85ef78f5e06c0"
+file = "mods/diaithir-tooltips-neoforge-26.1.2-2.3.1.jar"
+hash = "bf1866c88d1d242e34c77104c68313a8cd529494817ee224313f0d5cd3fc2f5b"
 
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
@@ -12562,11 +12570,6 @@ hash = "ed58a0d642a54a6f8c19b9a3c5222151963d5b800665e1c193c9ccf88c58a6f0"
 metafile = true
 
 [[files]]
-file = "mods/solcarrot-26.1-1.19.0.pw.toml"
-hash = "98d237631fb8443873e9feb94a276dc0e10ba1ecd438304ff34686df7b8c5f18"
-metafile = true
-
-[[files]]
 file = "mods/sophisticatedbackpacks-26.1.2-3.26.11.2198.pw.toml"
 hash = "cb185438baa892028d51e99828d6f5addf325596cc9c217b0434a1916aaaa4ab"
 metafile = true
@@ -12769,10 +12772,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "dde6e04c3822393d4835d59258ffb3d16f599295b82108908369b370190ce806"
+hash = "886049fe1be3be726708e94e9ef88d25639f00cb6d4c4152e3043742ba74c31b"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "1dd6107b217f67c19189e01888e52f4a0f0599af9785f092d971e6b5bd7a78e3"
+hash = "3a4e5bf592583ce6a86164276a9e62f0ad9296d30fa77f504ab72cf3ffcd25bf"
 metafile = true

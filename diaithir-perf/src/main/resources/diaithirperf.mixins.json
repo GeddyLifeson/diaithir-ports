@@ -17,7 +17,8 @@
     "ModelBakeryMixin",
     "compat.ctm.StandardCTMOverlayTableMixin",
     "compat.jei.AnvilRecipeMakerMixin",
-    "compat.jei.EnchantmentDataAccessor"
+    "compat.jei.EnchantmentDataAccessor",
+    "compat.occultism.ClientRecipeSyncMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -68,6 +68,9 @@ C2ME replaces every vanilla IOWorker with a `C2MEStorageThread` that starts its 
 
 The other per-dimension pool, Distant Horizons' (about 15 threads per level), was already handled in 0.3.1 (`DhIgnore`). Both injectors are required (no `require = 0`): if a C2ME update renames `wakeUp` or the constructor, boot fails loudly rather than leaving a storage whose thread never starts.
 
+## Fix 7: Occultism's JEI recipe sync without JEI (0.3.3, client)
+Occultism 1.256.1 subscribes `JeiPlugin.ClientRecipeSync` to `RecipesReceivedEvent` without checking that JEI is installed. With JEI dropped, every join logged `NoClassDefFoundError: mezz/jei/api/IModPlugin` out of the `neoforge:recipe_content` payload ("Failed to process a synchronized task"), and the recipe listeners that run after Occultism's (Spoiled's recipe list, Reliquary, Powah) were skipped. A `@Pseudo` mixin cancels the handler while `jei` is not loaded. No effect when JEI is present.
+
 ## Existing optimizers: keep them
 Nothing in this mod duplicates ModernFix, FerriteCore, Lithium-style ports, Sodium or EntityCulling; the five fixes above are for costs those mods don't touch (structure upgrades, CTM tables, quad duplication, JEI anvil pages, mod-jar resource scans). Removing any of them would lose more than this mod adds, so none are removed. Sodium and EntityCulling licences don't allow folding their code in.
 
