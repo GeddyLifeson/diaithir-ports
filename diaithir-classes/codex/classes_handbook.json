@@ -159,7 +159,7 @@
     },
     {
      "id": "diaithir_classes:sleagh_sling_bronze",
-     "name": "krandtabuild bogaduir krèuma",
+     "name": "Krandtabuild bogaduir krèuma",
      "age": "III"
     },
     {
@@ -169,7 +169,7 @@
     },
     {
      "id": "diaithir_classes:sleagh_sling_steel",
-     "name": "krandtabuild bogaduir kruoid",
+     "name": "Krandtabuild bogaduir kruoid",
      "age": "V"
     },
     {
@@ -179,7 +179,7 @@
     },
     {
      "id": "diaithir_classes:sleagh_sling_composite",
-     "name": "krandtabuild bogaduir kriadach",
+     "name": "Krandtabuild bogaduir kriadach",
      "age": "VII"
     }
    ],
@@ -298,17 +298,17 @@
    "weapons": [
     {
      "id": "diaithir_classes:ceilg_dagger_bronze",
-     "name": "biudag sielguir krèuma",
+     "name": "Biudag sielguir krèuma",
      "age": "III"
     },
     {
      "id": "diaithir_classes:ceilg_dagger_steel",
-     "name": "biudag sielguir kruoid",
+     "name": "Biudag sielguir kruoid",
      "age": "V"
     },
     {
      "id": "diaithir_classes:ceilg_dagger_composite",
-     "name": "biudag sielguir kriadach",
+     "name": "Biudag sielguir kriadach",
      "age": "VII"
     }
    ],
@@ -427,17 +427,17 @@
    "weapons": [
     {
      "id": "diaithir_classes:cleirech_crozier_bronze",
-     "name": "meirlech ligichi krèuma",
+     "name": "Meirlech ligichi krèuma",
      "age": "III"
     },
     {
      "id": "diaithir_classes:cleirech_crozier_steel",
-     "name": "meirlech ligichi kruoid",
+     "name": "Meirlech ligichi kruoid",
      "age": "V"
     },
     {
      "id": "diaithir_classes:cleirech_crozier_composite",
-     "name": "meirlech ligichi kriadach",
+     "name": "Meirlech ligichi kriadach",
      "age": "VII"
     }
    ],

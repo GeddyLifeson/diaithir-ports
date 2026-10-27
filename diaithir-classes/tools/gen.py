@@ -55,6 +55,7 @@ ex = {c: C.EXTRA[c] for c in C.EXTRA}
 
 
 def reg(iid, en, rod, age):
+    rod = rod[:1].upper() + rod[1:]
     english[iid] = en
     dnames[iid] = rod
     lang[f"item.{NS}.{iid}"] = rod
@@ -77,7 +78,7 @@ for cls, cd in C.CLASSES.items():
     eid = f"{cls}_emblem"
     parts.append(eid)
     EMB[cls] = f"{NS}:{eid}"
-    reg(eid, f"{cls.title()} Emblem", N.phrase("emblem", cd["word"]), "III")
+    reg(eid, f"{cd['word'].title()} Emblem", N.phrase("emblem", cd["word"]), "III")
     shapeless(eid, ["minecraft:leather"] + cd["emblem"], eid)
 
 weapon_spells = {}  # item id -> list of spell ids
@@ -89,7 +90,7 @@ for cls, cd in C.CLASSES.items():
         for slot in C.SLOTS:
             iid = f"{cls}_{slot}_{tk}"
             items.append(dict(id=iid, kind="armor", mat=tk, slot=slot, damage=0, speed=0, spear=None, durability=0, extras=None))
-            reg(iid, f"{cls.title()} {tk.title()} {slot.title()}", f"{N.rod(slot)} {N.rod(cd['word'])} {adj}", age)
+            reg(iid, f"{cd['word'].title()} {tk.title()} {slot.title()}", f"{N.rod(slot)} {N.rod(cd['word'])} {adj}", age)
             shapeless(iid, [f"diaithirarms:{tk}_{slot}", EMB[cls]], iid)
         ext = [dict(attribute=a, amount=v, op=op, slot="mainhand") for a, v, op in ex[cls][ti]]
         cum = [s for lo in C.LOADOUT[cls][: ti + 1] for s in lo]
@@ -122,7 +123,7 @@ for cls, cd in C.CLASSES.items():
                 models[iid] = "handheld"
                 shapeless(iid, ["minecraft:leather", "minecraft:string"] + [part] * n + [EMB[cls]], iid)
             items.append(base)
-            reg(iid, f"{cls.title()} {kind.title()} ({tk})", f"{N.rod(word)} {N.rod(cd['word'])} {adj}", age)
+            reg(iid, f"{cd['word'].title()} {kind.title()} ({tk})", f"{N.rod(word)} {N.rod(cd['word'])} {adj}", age)
             sp = [s for s in cum if s != "sleagh_volley" or kind == "bow"]
             if kind == "sling":
                 sp = [s for s in sp if s != "sleagh_volley"] + C.SLING_EXTRA
@@ -294,10 +295,10 @@ def lib(name, kind, age, locale, facts):
 
 for cls, cd in C.CLASSES.items():
     lib(N.rod(cd["word"]).capitalize(), "concept", "III", "classes",
-        f"Class kit '{cls}' ({cd['word']}). Gear in Ages III (bronze), V (steel), VII (composite); power school {cd['school']}; "
+        f"Class kit of the {cd['word']}s. Gear in Ages III (bronze), V (steel), VII (composite); power school {cd['school']}; "
         f"four pieces of one tier give set bonuses at 2 and 4 pieces. Weapons: " + ", ".join(k for k, _ in C.WEAPONS[cls]) + ".")
 for sp in C.SPELLS:
-    lib(spell_names[sp["id"]], "concept", sp["age"], "magic", f"Spell of class {sp['cls']}, tier {sp['spell'].get('tier')}, school {sp['spell']['school']}. Effect: {sp['desc']}")
+    lib(spell_names[sp["id"]], "concept", sp["age"], "magic", f"Spell of the {C.CLASSES[sp['cls']]['word']} class, tier {sp['spell'].get('tier')}, school {sp['spell']['school']}. Effect: {sp['desc']}")
 for r in C.RUNES:
     lib(dnames[f"rune_{r[0]}"], "item", "III", "runes", f"Ogham rune of the {r[1]}. Craft: flint, {r[2].split(':')[1]}, gold nugget gives 2. Socketed in a ring or charm it gives {r[6]}.")
 for rid, kind, tk, sockets, slot in C.RINGS:
@@ -314,30 +315,47 @@ def write_job(kind, rows, readme, merge):
     open(os.path.join(d, "merge.py"), "w").write(merge)
 
 
-MERGE_LORE = '''import json,pathlib
+BANNED = r"\b(fian|fianna|sleagh|ceilg|cleirech)\b"
+RETRY_NOTE = " Never use the words Fian, Fianna, Sleagh, Ceilg or Cleirech; say warrior, archer, hunter or healer instead."
+MERGE_COMMON = """import json,pathlib,re
 d=pathlib.Path(__file__).parent
-names={json.loads(l)['id']:json.loads(l)['name'] for l in open(d/'in.jsonl')}
-rows=[]
-for l in open(d/'out.jsonl'):
-    o=json.loads(l); t=o['text'].strip().strip('"')
-    if 8<=len(t.split())<=18 and '\\u2014' not in t and o['id'] in names: rows.append([names[o['id']],'item',0,'classes_lore',t])
-json.dump(rows,open('/mnt/project-files/library-sync/classes_lore.json','w'),ensure_ascii=False)
-print(len(rows),'of',len(names))
-'''
-MERGE_LIB = '''import json,pathlib,re
-d=pathlib.Path(__file__).parent
+rd=d.parent/(d.name+'_retry')
 meta={}
 for l in open(d/'in.jsonl'):
     o=json.loads(l); meta[o['id']]=o
-rows=[]
-for l in open(d/'out.jsonl'):
-    o=json.loads(l); t=o['text'].strip().strip('"'); m=meta.get(o['id'])
-    if not m: continue
+outs={}
+for f in (d/'out.jsonl', rd/'out.jsonl'):
+    if f.exists():
+        for l in open(f):
+            o=json.loads(l); outs[o['id']]=o
+BAN=re.compile(r'%s',re.I)
+def retry(bad):
+    if not bad: return
+    rd.mkdir(exist_ok=True)
+    with open(rd/'in.jsonl','w') as f:
+        for i in bad:
+            r=dict(meta[i]); r['system']=r['system']+%r; f.write(json.dumps(r,ensure_ascii=False)+chr(10))
+    (rd/'README').write_text('Retry rows of '+d.name+': rows that failed the check (modern Irish class words or length). Same format; merge.py of '+d.name+' reads out.jsonl here too.'+chr(10))
+""" % (BANNED, RETRY_NOTE)
+MERGE_LORE = MERGE_COMMON + """rows=[]; bad=[]
+for i,m in meta.items():
+    o=outs.get(i); t=o['text'].strip().strip('"') if o else ''
+    if o and 8<=len(t.split())<=18 and '\\u2014' not in t and not BAN.search(t) and not BAN.search(m['name']): rows.append([m['name'],'item',0,'classes_lore',t])
+    else: bad.append(i)
+retry(bad)
+json.dump(rows,open('/mnt/project-files/library-sync/classes_lore.json','w'),ensure_ascii=False)
+print(len(rows),'of',len(meta),'; retry rows',len(bad))
+"""
+MERGE_LIB = MERGE_COMMON + """rows=[]; bad=[]
+for i,m in meta.items():
+    o=outs.get(i); t=o['text'].strip().strip('"') if o else ''
     n=len(t.split()); s=len(re.findall(r'[.!?](?:\\s|$)',t))
-    if 15<=n<=55 and 1<=s<=3 and '\\u2014' not in t: rows.append([m['name'],m['kind'],m['age'],m['locale'],t])
+    if o and 15<=n<=55 and 1<=s<=3 and '\\u2014' not in t and not BAN.search(t): rows.append([m['name'],m['kind'],m['age'],m['locale'],t])
+    else: bad.append(i)
+retry(bad)
 json.dump(rows,open('/mnt/project-files/library-sync/classes.json','w'),ensure_ascii=False)
-print(len(rows),'of',len(meta))
-'''
+print(len(rows),'of',len(meta),'; retry rows',len(bad))
+"""
 write_job("classes_lore", lore_rows,
           "Owner: classes thread (diaithir-classes). Rows: every item id of the mod as classes:<item id>. One tooltip line per item.\n"
           "Check rule: 8 to 18 words, no em dash, no quotes, no proper names of real people. Failing rows go to Claude Batch. max_tokens 60.\n"
