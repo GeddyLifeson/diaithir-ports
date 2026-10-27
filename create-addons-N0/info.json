@@ -1,0 +1,1349 @@
+{
+ "create-crystal-clear": {
+  "ver": "2.1-Beta",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 31,
+  "data": 86,
+  "assets": 212,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "Xbc0uyRg",
+    "required"
+   ]
+  ]
+ },
+ "create-vintage-improvements": {
+  "ver": "1.20.1-0.2.0.3",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 196,
+  "data": 740,
+  "assets": 681,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "kU1G12Nn",
+    "optional"
+   ],
+   [
+    "u6dRKJwZ",
+    "optional"
+   ]
+  ]
+ },
+ "create-connected-fabric": {
+  "ver": "1.2.3-mc1.20.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 382,
+  "data": 556,
+  "assets": 738,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": []
+ },
+ "create-sweets-and-treats": {
+  "ver": "2.0(With-Apple-Syrup)",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 22,
+  "data": 172,
+  "assets": 309,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "u6dRKJwZ",
+    "optional"
+   ],
+   [
+    "Xbc0uyRg",
+    "required"
+   ]
+  ]
+ },
+ "create-nuke": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 16,
+  "data": 27,
+  "assets": 34,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "Xbc0uyRg",
+    "required"
+   ],
+   [
+    "FTeXqI9v",
+    "required"
+   ]
+  ]
+ },
+ "create-train-perspective-fix": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.18.2",
+   "1.19.2",
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric",
+   "forge",
+   "neoforge"
+  ],
+  "classes": 3,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "fabric.mod.json",
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "Xbc0uyRg",
+    "required"
+   ]
+  ]
+ },
+ "vintage-kubejs": {
+  "ver": "1.20.1-1.0.0rc-2",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 19,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "umyGl7zF",
+    "required"
+   ],
+   [
+    "S27aYArf",
+    "required"
+   ],
+   [
+    "T38eAZQC",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-basic-additions": {
+  "ver": "1.0.2",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 32,
+  "data": 93,
+  "assets": 177,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "cbc-nuclear": {
+  "ver": "2.1.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 4,
+  "data": 28,
+  "assets": 18,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "jJfV67b1",
+    "required"
+   ]
+  ]
+ },
+ "create-potato-weapons": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 557,
+  "data": 190,
+  "assets": 451,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-train-additions": {
+  "ver": "0.3.0a",
+  "gv": [
+   "1.19.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 269,
+  "data": 69,
+  "assets": 448,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "tinkers-gears": {
+  "ver": "0.3.8-for-create-6.0.6",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 110,
+  "data": 257,
+  "assets": 190,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "rxIIYO6c",
+    "required"
+   ]
+  ]
+ },
+ "create-nuclear-shell": {
+  "ver": "3.1.0",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 13,
+  "data": 37,
+  "assets": 65,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "B3pb093D",
+    "required"
+   ],
+   [
+    "GWp4jCJj",
+    "required"
+   ]
+  ]
+ },
+ "avaritia-x-create": {
+  "ver": "0.0.2a+mc1.20.1-Fabric",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 50,
+  "data": 24,
+  "assets": 55,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "Xbc0uyRg",
+    "required"
+   ],
+   [
+    "p19vrgc2",
+    "required"
+   ]
+  ]
+ },
+ "create-ponder": {
+  "ver": "0.0.2a+mc1.20.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 298,
+  "data": 0,
+  "assets": 29,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "umyGl7zF",
+    "required"
+   ],
+   [
+    "5A34Stj8",
+    "incompatible"
+   ],
+   [
+    "LNytGWDc",
+    "incompatible"
+   ]
+  ]
+ },
+ "create-more-blocks": {
+  "ver": "2.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 45,
+  "data": 35,
+  "assets": 218,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": []
+ },
+ "ptdye-plus": {
+  "ver": "2.2.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 38,
+  "data": 0,
+  "assets": 23,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "nvQzSEkH",
+    "optional"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "lfHFW1mp",
+    "optional"
+   ]
+  ]
+ },
+ "balancedflight": {
+  "ver": "2.4.5c",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 53,
+  "data": 24,
+  "assets": 30,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "8BmcQJ2H",
+    "required"
+   ],
+   [
+    "vvuO3ImH",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-recycling": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 2,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-molten-rocks": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 1,
+  "data": 4,
+  "assets": 6,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-automaton": {
+  "ver": "1.1.2+mod",
+  "gv": [
+   "1.20",
+   "1.20.1"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 0,
+  "data": 166,
+  "assets": 8,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "lxcH9LKV",
+    "required"
+   ],
+   [
+    "t5W7Jfwy",
+    "required"
+   ],
+   [
+    "q9IQHpND",
+    "optional"
+   ],
+   [
+    "3BeIrqZR",
+    "required"
+   ],
+   [
+    "Xbc0uyRg",
+    "required"
+   ],
+   [
+    "PnhmwLM0",
+    "required"
+   ]
+  ]
+ },
+ "create-optimized-trains": {
+  "ver": "1.3.2",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 81,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "automate-stones": {
+  "ver": "0.0.3",
+  "gv": [
+   "1.20.1",
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 0,
+  "data": 27,
+  "assets": 3,
+  "meta": [
+   "META-INF/mods.toml",
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "create-schematic-i18n": {
+  "ver": "1.0.2",
+  "gv": [
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 7,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "tis-create": {
+  "ver": "1.1.3",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 31,
+  "data": 0,
+  "assets": 19,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "GWp4jCJj",
+    "optional"
+   ],
+   [
+    "L23x7zL8",
+    "required"
+   ],
+   [
+    "kU1G12Nn",
+    "optional"
+   ]
+  ]
+ },
+ "create-better-building": {
+  "ver": "1.3.0-beta.2",
+  "gv": [
+   "1.19.2",
+   "1.19.3",
+   "1.19.4",
+   "1.20",
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6",
+   "1.21",
+   "1.21.1",
+   "1.21.2",
+   "1.21.3",
+   "1.21.4"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 5,
+  "data": 267,
+  "assets": 1162,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "lhGA9TYQ",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-curio-goggles": {
+  "ver": "0.0.4",
+  "gv": [
+   "1.16.5"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 1,
+  "data": 5,
+  "assets": 4,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "vvuO3ImH",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "falcons-wither-storm-adventure-core": {
+  "ver": "1.0.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 9,
+  "data": 29,
+  "assets": 24,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": []
+ },
+ "create-ice-creams": {
+  "ver": "V1.51",
+  "gv": [
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 135,
+  "data": 102,
+  "assets": 196,
+  "meta": [
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "create-bronze-age": {
+  "ver": "0.0.2-1.19.2",
+  "gv": [
+   "1.19.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 23,
+  "data": 102,
+  "assets": 123,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "u6dRKJwZ",
+    "optional"
+   ]
+  ]
+ },
+ "create-cogged-up": {
+  "ver": "1.0.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 21,
+  "data": 59,
+  "assets": 151,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-condensed-milk": {
+  "ver": "1.0.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 22,
+  "data": 11,
+  "assets": 31,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-more-recipes-addon": {
+  "ver": "1.21.5",
+  "gv": [
+   "1.21.5"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 1,
+  "data": 9,
+  "assets": 1,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-caverns-and-chasms-silver-compatibility": {
+  "ver": "1.0+mod",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 0,
+  "data": 15,
+  "assets": 0,
+  "meta": [
+   "fabric.mod.json",
+   "META-INF/mods.toml",
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "tfjmPSbI",
+    "required"
+   ]
+  ]
+ },
+ "create-simple-coins": {
+  "ver": "1.0.2",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 4,
+  "data": 18,
+  "assets": 42,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-structures-overhaul-bop-integration": {
+  "ver": "0.2.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 1,
+  "data": 44,
+  "assets": 7,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "VOKKVKJQ",
+    "required"
+   ],
+   [
+    "HXF82T3G",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-redstone-additions": {
+  "ver": "1.0.5-1.21.1-neoforge",
+  "gv": [
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 34,
+  "data": 35,
+  "assets": 91,
+  "meta": [
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "create-titan": {
+  "ver": "6.1.1-neoforge",
+  "gv": [
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 402,
+  "data": 245,
+  "assets": 264,
+  "meta": [
+   "META-INF/mods.toml",
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "create-computing": {
+  "ver": "1.0.0-pre3",
+  "gv": [
+   "1.18.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 32,
+  "data": 13,
+  "assets": 25,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "gu7yAYhd",
+    "required"
+   ]
+  ]
+ },
+ "tinkers-create-diving-modifiers": {
+  "ver": "0.0.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 3,
+  "data": 9,
+  "assets": 29,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "rxIIYO6c",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "better-create-recipes": {
+  "ver": "1.0.8",
+  "gv": [
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 4,
+  "data": 41,
+  "assets": 15,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": []
+ },
+ "cer": {
+  "ver": "1.01",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 21,
+  "data": 35,
+  "assets": 59,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "u6dRKJwZ",
+    "optional"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "mechanical-machinery": {
+  "ver": "1.19.2-1.3.0",
+  "gv": [
+   "1.19.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 55,
+  "data": 20,
+  "assets": 47,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "water-life_create": {
+  "ver": "0.5.4",
+  "gv": [
+   "1.19.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 129,
+  "data": 45,
+  "assets": 181,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "slabs-to-blocks-create-deco": {
+  "ver": "2.0.1-1.20.1",
+  "gv": [
+   "1.20",
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 2,
+  "data": 57,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "sMvUb4Rb",
+    "required"
+   ]
+  ]
+ },
+ "slabs-to-blocks-create": {
+  "ver": "1.0.1-1.20.1",
+  "gv": [
+   "1.20",
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 2,
+  "data": 19,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": []
+ },
+ "create-additional-recipies": {
+  "ver": "1.1.0",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 0,
+  "data": 8,
+  "assets": 0,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "s4OWxYQQ",
+    "optional"
+   ]
+  ]
+ },
+ "material-ascension": {
+  "ver": "1.0.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 53,
+  "data": 412,
+  "assets": 527,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "sc2Pektv",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "7q30ZETU",
+    "required"
+   ]
+  ]
+ },
+ "trackwok-port": {
+  "ver": "1.0.0",
+  "gv": [
+   "1.19.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 85,
+  "data": 25,
+  "assets": 83,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "V5ujR2yw",
+    "required"
+   ],
+   [
+    "EO8aSHxh",
+    "optional"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ],
+   [
+    "84USeAvk",
+    "optional"
+   ]
+  ]
+ },
+ "create-recipes-plus-secretf": {
+  "ver": "1.0.1",
+  "gv": [
+   "1.20",
+   "1.20.1",
+   "1.20.2",
+   "1.20.3",
+   "1.20.4",
+   "1.20.5",
+   "1.20.6"
+  ],
+  "loaders": [
+   "fabric"
+  ],
+  "classes": 2,
+  "data": 6,
+  "assets": 4,
+  "meta": [
+   "fabric.mod.json"
+  ],
+  "deps": [
+   [
+    "Xbc0uyRg",
+    "required"
+   ]
+  ]
+ },
+ "create-recipe-extensions": {
+  "ver": "1.2.2+1.20.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge",
+   "neoforge"
+  ],
+  "classes": 5,
+  "data": 34,
+  "assets": 5,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "9s6osm5g",
+    "required"
+   ],
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-recipe-everything": {
+  "ver": "1.18.2-1.0.1",
+  "gv": [
+   "1.18.2"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 18,
+  "data": 63,
+  "assets": 64,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-recipe-hooks": {
+  "ver": "1.2.0",
+  "gv": [
+   "1.21.1"
+  ],
+  "loaders": [
+   "neoforge"
+  ],
+  "classes": 57,
+  "data": 0,
+  "assets": 0,
+  "meta": [
+   "META-INF/neoforge.mods.toml"
+  ],
+  "deps": []
+ },
+ "create-departure-timer": {
+  "ver": "0.0.3",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 20,
+  "data": 4,
+  "assets": 12,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ },
+ "create-diamonds-automated": {
+  "ver": "0.2-1.20.1",
+  "gv": [
+   "1.20.1"
+  ],
+  "loaders": [
+   "forge"
+  ],
+  "classes": 4,
+  "data": 10,
+  "assets": 12,
+  "meta": [
+   "META-INF/mods.toml"
+  ],
+  "deps": [
+   [
+    "LNytGWDc",
+    "required"
+   ]
+  ]
+ }
+}

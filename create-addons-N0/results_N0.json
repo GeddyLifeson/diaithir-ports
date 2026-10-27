@@ -1,0 +1,282 @@
+[
+ {
+  "slug": "create",
+  "status": "skip",
+  "reason": "the base mod, already ported (diaithir_create)"
+ },
+ {
+  "slug": "create-crystal-clear",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 31 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-vintage-improvements",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge/neoforge), 196 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-connected-fabric",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 382 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-sweets-and-treats",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 22 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-nuke",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 16 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-train-perspective-fix",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric/forge/neoforge), 3 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "vintage-kubejs",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 19 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-basic-additions",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge), 32 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "cbc-nuclear",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 4 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-potato-weapons",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 557 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-train-additions",
+  "status": "blocked",
+  "reason": "newest build 1.19.2 (forge), 269 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "tinkers-gears",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge), 110 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-nuclear-shell",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge), 13 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "avaritia-x-create",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 50 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-ponder",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (fabric), 298 classes: needs code port to com.zurrtum.create; Fabric build is 1.20.1 (com.simibubi era), not same API family so retarget not scriptable"
+ },
+ {
+  "slug": "create-more-blocks",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 45 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "ptdye-plus",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 38 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "balancedflight",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 53 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-recycling",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge) content is mostly assets/data with mod-class hook; revisit"
+ },
+ {
+  "slug": "create-molten-rocks",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_create_molten_rocks datapack mod (1.20.1 forge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-automaton",
+  "status": "blocked",
+  "reason": "Origins datapack addon, needs Origins mod not in pack"
+ },
+ {
+  "slug": "create-optimized-trains",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge), 81 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "automate-stones",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_automate_stones datapack mod (1.21.1 neoforge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-schematic-i18n",
+  "status": "blocked",
+  "reason": "newest build 1.21.1 (neoforge), 7 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "tis-create",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge/neoforge), 31 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-better-building",
+  "status": "blocked",
+  "reason": "newest build 1.21.4 (forge), 5 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-curio-goggles",
+  "status": "blocked",
+  "reason": "1.16.5 only, needs Curios code"
+ },
+ {
+  "slug": "falcons-wither-storm-adventure-core",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 9 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-ice-creams",
+  "status": "blocked",
+  "reason": "newest build 1.21.1 (neoforge), 135 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-bronze-age",
+  "status": "blocked",
+  "reason": "newest build 1.19.2 (forge), 23 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-cogged-up",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 21 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-condensed-milk",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge/neoforge), 22 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-more-recipes-addon",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_create_more_recipes_addon datapack mod (1.21.5 forge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-caverns-and-chasms-silver-compatibility",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_create_caverns_and_chasms_silver_compatibility datapack mod (1.20.1 forge/neoforge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-simple-coins",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 4 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-structures-overhaul-bop-integration",
+  "status": "blocked",
+  "reason": "needs BOP + Create Structures Overhaul"
+ },
+ {
+  "slug": "create-redstone-additions",
+  "status": "blocked",
+  "reason": "newest build 1.21.1 (neoforge), 34 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-titan",
+  "status": "blocked",
+  "reason": "newest build 1.21.1 (neoforge), 402 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-computing",
+  "status": "blocked",
+  "reason": "newest build 1.18.2 (forge), 32 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "tinkers-create-diving-modifiers",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 3 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "better-create-recipes",
+  "status": "blocked",
+  "reason": "newest build 1.20.6 (forge), 4 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "cer",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 21 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "mechanical-machinery",
+  "status": "blocked",
+  "reason": "newest build 1.19.2 (forge), 55 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "water-life_create",
+  "status": "blocked",
+  "reason": "newest build 1.19.2 (forge), 129 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "slabs-to-blocks-create-deco",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_slabs_to_blocks_create_deco datapack mod (1.20.6 forge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "slabs-to-blocks-create",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_slabs_to_blocks_create datapack mod (1.20.6 forge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-additional-recipies",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_create_additional_recipies datapack mod (1.20.1 forge/neoforge); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "material-ascension",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 53 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "trackwok-port",
+  "status": "blocked",
+  "reason": "newest build 1.19.2 (forge), 85 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-recipes-plus-secretf",
+  "status": "ported",
+  "reason": "data converted by conv.py to diaithir_create_recipes_plus_secretf datapack mod (1.20.6 fabric); molten-rocks lava.json bad JSON dropped"
+ },
+ {
+  "slug": "create-recipe-extensions",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge/neoforge), 5 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-recipe-everything",
+  "status": "blocked",
+  "reason": "newest build 1.18.2 (forge), 18 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-recipe-hooks",
+  "status": "blocked",
+  "reason": "newest build 1.21.1 (neoforge), 57 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-departure-timer",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 20 classes: needs code port to com.zurrtum.create"
+ },
+ {
+  "slug": "create-diamonds-automated",
+  "status": "blocked",
+  "reason": "newest build 1.20.1 (forge), 4 classes: needs code port to com.zurrtum.create"
+ }
+]
