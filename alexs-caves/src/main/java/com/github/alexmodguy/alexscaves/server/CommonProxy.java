@@ -4,7 +4,6 @@ import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.level.storage.ACWorldData;
 import com.github.alexmodguy.alexscaves.server.misc.ACLoadedMods;
 import com.github.alexthe666.citadel.server.entity.pathfinding.raycoms.PathfindingConstants;
-import com.github.alexthe666.citadel.server.tick.ServerTickRateTracker;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.entity.Entity;
@@ -147,7 +146,7 @@ public class CommonProxy {
     }
 
     public boolean isTickRateModificationActive(Level level) {
-        return ServerTickRateTracker.getForServer(level.getServer()).getServerTickLengthMs() != 50;
+        return false;
     }
 
     public boolean isFarFromCamera(double x, double y, double z) {

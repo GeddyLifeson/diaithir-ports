@@ -1,9 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.potion;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
-import com.github.alexthe666.citadel.server.tick.ServerTickRateTracker;
-import com.github.alexthe666.citadel.server.tick.modifier.LocalEntityTickRateModifier;
-import com.github.alexthe666.citadel.server.tick.modifier.TickRateModifier;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
@@ -16,10 +13,10 @@ import net.minecraft.world.level.Level;
 
 public class SugarRushEffect extends MobEffect {
 
-
     protected SugarRushEffect() {
         super(MobEffectCategory.BENEFICIAL, 0XFFA4EB);
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED, Identifier.parse("alexscaves:sugar_rush_speed"), 0.7F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+        this.addAttributeModifier(Attributes.ATTACK_SPEED, Identifier.parse("alexscaves:sugar_rush_attack"), 0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
     @Override
@@ -28,39 +25,14 @@ public class SugarRushEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if(entity.level().isClientSide()){
-            AlexsCaves.PROXY.playWorldSound(entity, (byte)18);
-        }
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         return true;
     }
 
+    /** The original slowed the server tick rate for everyone else through Citadel; the port gives the drinker speed instead. */
     public static void enterSlowMotion(Player entity, Level level, int duration, float speed) {
-        if (!level.isClientSide() && level instanceof ServerLevel) {
-            ServerTickRateTracker tracker = ServerTickRateTracker.getForServer(level.getServer());
-            for (TickRateModifier modifier : tracker.tickRateModifierList) {
-                if (modifier instanceof LocalEntityTickRateModifier entityTick && entityTick.getEntityId() == entity.getId()) {
-                    modifier.setMaxDuration(duration);
-                    return;
-                }
-            }
-            tracker.addTickRateModifier(new LocalEntityTickRateModifier(entity.getId(), entity.getType(), 10, level.dimension(), duration, speed));
-        }
     }
 
     public static void leaveSlowMotion(Player entity, Level level) {
-        if (!level.isClientSide() && level instanceof ServerLevel) {
-            ServerTickRateTracker tracker = ServerTickRateTracker.getForServer(level.getServer());
-            TickRateModifier toRemove = null;
-            for (TickRateModifier modifier : tracker.tickRateModifierList) {
-                if (modifier instanceof LocalEntityTickRateModifier entityTick && entityTick.getEntityId() == entity.getId()) {
-                    toRemove = modifier;
-                }
-            }
-            if (toRemove != null) {
-                tracker.tickRateModifierList.remove(toRemove);
-            }
-        }
     }
-
 }

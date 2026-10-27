@@ -2,7 +2,6 @@ package com.github.alexmodguy.alexscaves.server.message;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
-import com.github.alexthe666.citadel.server.message.PacketBufferUtils;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.component.CustomData;
@@ -39,13 +38,13 @@ public class UpdateCaveBiomeMapTagMessage implements CustomPacketPayload {
 
 
     public static UpdateCaveBiomeMapTagMessage read(FriendlyByteBuf buf) {
-        return new UpdateCaveBiomeMapTagMessage(buf.readUUID(), buf.readUUID(), PacketBufferUtils.readTag(buf));
+        return new UpdateCaveBiomeMapTagMessage(buf.readUUID(), buf.readUUID(), (net.minecraft.nbt.CompoundTag) buf.readNbt());
     }
 
     public static void write(UpdateCaveBiomeMapTagMessage message, FriendlyByteBuf buf) {
         buf.writeUUID(message.userUUID);
         buf.writeUUID(message.caveBiomeMapUUID);
-        PacketBufferUtils.writeTag(buf, message.tag);
+        buf.writeNbt(message.tag);
     }
 
     public static void handle(UpdateCaveBiomeMapTagMessage message, IPayloadContext context) {

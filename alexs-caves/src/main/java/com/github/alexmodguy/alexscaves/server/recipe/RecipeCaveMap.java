@@ -3,7 +3,6 @@ package com.github.alexmodguy.alexscaves.server.recipe;
 import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
 import com.github.alexmodguy.alexscaves.server.item.CaveInfoItem;
 import com.github.alexmodguy.alexscaves.server.item.CaveMapItem;
-import com.github.alexthe666.citadel.recipe.SpecialRecipeInGuideBook;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceKey;
@@ -17,7 +16,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 
-public class RecipeCaveMap extends CustomRecipe implements SpecialRecipeInGuideBook {
+public class RecipeCaveMap extends CustomRecipe {
     
     private static final NonNullList<Ingredient> DISPLAY_INGREDIENTS = NonNullList.of(Ingredient.EMPTY, 
         Ingredient.of(Items.PAPER), Ingredient.of(Items.PAPER), Ingredient.of(Items.PAPER), 

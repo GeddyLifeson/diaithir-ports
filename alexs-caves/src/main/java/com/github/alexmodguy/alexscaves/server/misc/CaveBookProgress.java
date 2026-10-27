@@ -4,7 +4,6 @@ import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry;
 import com.github.alexthe666.citadel.Citadel;
 import com.github.alexthe666.citadel.server.entity.CitadelEntityData;
-import com.github.alexthe666.citadel.server.message.PropertiesMessage;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceKey;
@@ -46,9 +45,9 @@ public class CaveBookProgress {
         tag.put(PLAYER_CAVE_BOOK_PROGRESS_TAG, savedTag);
         CitadelEntityData.setCitadelTag(player, tag);
         if (!player.level().isClientSide()) {
-            PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, new PropertiesMessage("CitadelTagUpdate", tag, player.getId()));
+            
         } else {
-            PacketDistributor.sendToServer(new PropertiesMessage("CitadelTagUpdate", tag, player.getId()));
+            
         }
     }
 

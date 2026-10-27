@@ -4,8 +4,6 @@ import com.github.alexmodguy.alexscaves.server.entity.living.LuxtructosaurusEnti
 import com.github.alexmodguy.alexscaves.server.entity.living.SauropodBaseEntity;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
 import com.github.alexthe666.citadel.animation.IAnimatedEntity;
-import com.github.alexthe666.citadel.server.entity.pathfinding.raycoms.AdvancedPathNavigate;
-import com.github.alexthe666.citadel.server.entity.pathfinding.raycoms.PathResult;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -119,11 +117,11 @@ public class LuxtructosaurusMeleeGoal extends Goal {
         if (target.distanceTo(this.luxtructosaurus) > 50) {
             return false;
         } else {
-            PathResult path = ((AdvancedPathNavigate) this.luxtructosaurus.getNavigation()).moveToLivingEntity(target, 1.0D);
-            if (path == null || path.getPath() == null) {
+            net.minecraft.world.level.pathfinder.Path path = this.luxtructosaurus.getNavigation().createPath(target, 0);
+            if (path == null) {
                 return false;
             } else {
-                Node node = path.getPath().getEndNode();
+                Node node = path.getEndNode();
                 if (node == null) {
                     return false;
                 } else {

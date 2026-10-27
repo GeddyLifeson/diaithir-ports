@@ -3,14 +3,9 @@ package com.github.alexthe666.citadel.server.entity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 
-/**
- * @author Alexthe666
- * @since 1.7.0
- *
- * CitadelTag is a datasynced tag for LivingEntity provided by citadel to be used by various mods.
- */
+/** Citadel keeps a synced tag on living entities through a mixin; here it lives in NeoForge persistent data. */
 public class CitadelEntityData {
-
+    private static final String KEY = "CitadelTag";
 
     public static CompoundTag getOrCreateCitadelTag(LivingEntity entity) {
         CompoundTag tag = getCitadelTag(entity);
@@ -18,12 +13,10 @@ public class CitadelEntityData {
     }
 
     public static CompoundTag getCitadelTag(LivingEntity entity) {
-        return entity instanceof ICitadelDataEntity ? ((ICitadelDataEntity) entity).getCitadelEntityData() : new CompoundTag();
+        return entity.getPersistentData().getCompoundOrEmpty(KEY);
     }
 
     public static void setCitadelTag(LivingEntity entity, CompoundTag tag) {
-        if(entity instanceof ICitadelDataEntity){
-            ((ICitadelDataEntity) entity).setCitadelEntityData(tag);
-        }
+        entity.getPersistentData().put(KEY, tag);
     }
 }

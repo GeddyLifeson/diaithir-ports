@@ -1,7 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.level.biome;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
-import com.github.alexthe666.citadel.server.world.ExpandedBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -30,12 +29,6 @@ public class ACBiomeRegistry {
     private static final Vec3 CANDY_CAVITY_LIGHT_COLOR = new Vec3(1.1, 0.9, 1.0);
 
     public static void init() {
-        ExpandedBiomes.addExpandedBiome(MAGNETIC_CAVES, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(PRIMORDIAL_CAVES, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(TOXIC_CAVES, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(ABYSSAL_CHASM, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(FORLORN_HOLLOWS, LevelStem.OVERWORLD);
-        ExpandedBiomes.addExpandedBiome(CANDY_CAVITY, LevelStem.OVERWORLD);
     }
 
     public static float getBiomeAmbientLight(Holder<Biome> value) {

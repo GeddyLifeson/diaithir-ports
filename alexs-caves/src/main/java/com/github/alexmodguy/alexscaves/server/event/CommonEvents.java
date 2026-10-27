@@ -21,7 +21,6 @@ import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.DarknessIncarnateEffect;
 import com.github.alexmodguy.alexscaves.server.potion.SugarRushEffect;
-import com.github.alexthe666.citadel.server.tick.ServerTickRateTracker;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.*;
@@ -369,8 +368,7 @@ public class CommonEvents {
     @SubscribeEvent
     public void onServerStopping(ServerStoppingEvent event) {
         if (AlexsCaves.COMMON_CONFIG.sugarRushSlowsTime.get()) {
-            ServerTickRateTracker tracker = ServerTickRateTracker.getForServer(event.getServer());
-            tracker.tickRateModifierList.clear();
+            
         }
     }
 

@@ -11,7 +11,6 @@ import com.github.alexmodguy.alexscaves.server.item.dispenser.FluidContainerDisp
 import com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry;
 import com.github.alexmodguy.alexscaves.server.misc.ACProjectileDispenseBehavior;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
-import com.github.alexthe666.citadel.server.block.LecternBooks;
 import net.minecraft.core.*;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
@@ -413,7 +412,6 @@ public class ACItemRegistry {
         DispenserBlock.registerBehavior(SWEETISH_FISH_BLUE_BUCKET.get(), new FluidContainerDispenseItemBehavior());
         DispenserBlock.registerBehavior(SWEETISH_FISH_YELLOW_BUCKET.get(), new FluidContainerDispenseItemBehavior());
         DispenserBlock.registerBehavior(SWEETISH_FISH_PINK_BUCKET.get(), new FluidContainerDispenseItemBehavior());
-        LecternBooks.BOOKS.put(CAVE_BOOK.getId(), new LecternBooks.BookData(0X81301C, 0XFDF8EC));
         // Compostables are now registered via data map: data/neoforge/data_maps/item/compostables.json
 
     }
