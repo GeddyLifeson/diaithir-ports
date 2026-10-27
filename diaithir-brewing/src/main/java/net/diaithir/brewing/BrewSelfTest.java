@@ -14,12 +14,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.core.Direction;
+import com.mojang.logging.LogUtils;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.transaction.Transaction;
 
 /** /brewing selftest: runs the first loaded keg recipe through a fake player and reports PASS or what failed. */
 final class BrewSelfTest {
+    private static final org.slf4j.Logger LOG = LogUtils.getLogger();
+
     static void register(CommandDispatcher<CommandSourceStack> d) {
         d.register(Commands.literal("brewing").requires(Commands.hasPermission(Commands.LEVEL_OWNERS))
             .then(Commands.literal("selftest").executes(c -> {
@@ -33,16 +37,24 @@ final class BrewSelfTest {
         if (BrewRecipes.all().isEmpty()) {
             return "FAIL no recipes loaded";
         }
+        java.util.List<String> failures = new java.util.ArrayList<>();
         for (BrewRecipe r : BrewRecipes.all()) {
             String fail = one(level, pos, r);
             if (fail != null) {
-                return fail + " (recipe " + r.drink() + " on " + r.station() + ")";
+                failures.add(fail + " (recipe " + BuiltInRegistries.ITEM.getKey(r.drink()) + " on " + r.station() + ")");
             }
         }
-        return "PASS " + BrewRecipes.all().size() + " recipes brewed, drew, round-tripped and automated";
+        failures.forEach(f -> LOG.warn("brewing selftest: {}", f));
+        int n = BrewRecipes.all().size();
+        return failures.isEmpty() ? "PASS " + n + " recipes brewed, drew, round-tripped and automated"
+            : "FAIL " + failures.size() + " of " + n + " recipes, first: " + failures.get(0) + " (all are in the log)";
     }
 
     private static String one(ServerLevel level, BlockPos pos, BrewRecipe r) {
+        BrewRecipe winner = BrewRecipes.all().stream().filter(x -> x.matches(r.station(), r.base(), r.ingredients())).findFirst().orElse(r);
+        if (winner != r) {
+            return "AMBIGUOUS shadowed by " + BuiltInRegistries.ITEM.getKey(winner.drink()) + ", identical station, base and ingredients";
+        }
         var block = r.station().equals("keg") ? DiaithirBrewing.KEG : DiaithirBrewing.FERMENTING_BARREL;
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
         level.setBlockAndUpdate(pos, block.get().defaultBlockState());

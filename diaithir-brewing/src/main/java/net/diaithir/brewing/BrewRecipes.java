@@ -42,6 +42,14 @@ public final class BrewRecipes implements ResourceManagerReloadListener {
                 LOG.warn("Skipping brewing recipe {}: {}", e.getKey(), ex.toString());
             }
         }
+        Map<String, List<BrewRecipe>> groups = new HashMap<>();
+        loaded.forEach(x -> groups.computeIfAbsent(x.station() + "|" + x.base() + "|" + new java.util.TreeMap<>(
+            x.ingredients().entrySet().stream().collect(java.util.stream.Collectors.toMap(en -> BuiltInRegistries.ITEM.getKey(en.getKey()).toString(), Map.Entry::getValue))), k -> new ArrayList<>()).add(x));
+        groups.forEach((k, v) -> {
+            if (v.size() > 1) {
+                LOG.warn("Ambiguous brewing recipes (same station, base and ingredients, the first wins): {} -> {}", k, v.stream().map(x -> BuiltInRegistries.ITEM.getKey(x.drink()).toString()).toList());
+            }
+        });
         all = List.copyOf(loaded);
         LOG.info("Loaded {} brewing recipes", loaded.size());
     }
