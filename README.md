@@ -23,3 +23,9 @@ It follows DiaithirRPG's `diaithir_ages` engine by reflection on its `StoryEvent
 Commands: `/nemesis roster` (who hunts you), `/nemesis chronicle`; for operators `/nemesis list`, `forget <id>`, `ambush <player>`, `turn <age>`; `/nemesis selftest` (owners, on a world with no nemeses) runs promotion, rank-up, trophy, ambush, escape or fall, save round trip and succession with a fake player and reports PASS or what failed.
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis. Licence: MIT.
+
+# Diaithir Èistechd (diaithir-voice-interaction)
+
+Creatures of the wild notice speech. A player's voice makes a vibration (a game event of its own, frequency 7) that sculk sensors and wardens hear, and creatures within `noticeRadius` (16 blocks for loud speech, less for quiet) react by rule: wolves, cats, villagers, golems, horses and parrots turn to look, foxes, ocelots, rabbits, chickens and bats take a few steps away. Speaking while sneaking is not noticed. Whispers and private groups are optional. Quiet speech under `thresholdDb` (-45 dB) is ignored, and one speaker is noticed at most every `intervalTicks` (10).
+
+It listens to Simple Voice Chat through its published plugin API (`de.maxhenkel.voicechat:voicechat-api`, compile-time only, nothing bundled; the plugin class is `@ForgeVoicechatPlugin` and only loaded when Simple Voice Chat is) and to diaithir-voice through `net.diaithir.voiceinteraction.api.VoiceInteractionApi.onSpeech`, which any other voice source can call. The vibration frequency, and which events wardens listen to, are data (`data/neoforge/data_maps/game_event/vibration_frequencies.json`, `data/minecraft/tags/game_event/`) that a datapack can change. Config `config/diaithirvoiceinteraction-common.toml`. Licence: MIT. Clean-room: written from the public description of the voice-interaction addons for Simple Voice Chat, no code, assets or text taken from them.

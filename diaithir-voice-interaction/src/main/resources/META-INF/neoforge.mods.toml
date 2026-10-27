@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirvoiceinteraction"
+version = "${version}"
+displayName = "Diaithir Èistechd (Voice Interaction)"
+description = "Creatures of the wild notice speech. Talking makes a vibration that sculk sensors and wardens hear, wolves and villagers turn to look, foxes and rabbits shy away, and sneaking keeps you quiet. Works with Simple Voice Chat through its plugin API and with diaithir-voice. Clean-room: written from the described behaviour of voice-interaction addons, no code taken from any of them."
+
+[[dependencies.diaithirvoiceinteraction]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
