@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sds",
+  "sss"
+ ],
+ "key": {
+  "s": "minecraft:stone_bricks",
+  "d": "minecraft:red_dye"
+ },
+ "result": {
+  "id": "createdeco:scarlet_bricks",
+  "count": 8
+ }
+}

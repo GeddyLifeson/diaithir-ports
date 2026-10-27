@@ -1,0 +1,169 @@
+{
+ "textures": {
+  "p": "createdeco:block/iron_catwalk",
+  "q": "createdeco:block/iron_plate",
+  "particle": "createdeco:block/iron_catwalk"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    14,
+    0
+   ],
+   "to": [
+    16,
+    16,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#p"
+    },
+    "south": {
+     "texture": "#p"
+    },
+    "east": {
+     "texture": "#p"
+    },
+    "west": {
+     "texture": "#p"
+    },
+    "up": {
+     "texture": "#p"
+    },
+    "down": {
+     "texture": "#p"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    2,
+    14,
+    2
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    14,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    14,
+    2
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    14
+   ],
+   "to": [
+    2,
+    14,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    14,
+    0,
+    14
+   ],
+   "to": [
+    16,
+    14,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "createdeco:block/long_pearl_bricks",
+  "side": "createdeco:block/long_pearl_bricks",
+  "top": "createdeco:block/long_pearl_bricks"
+ }
+}

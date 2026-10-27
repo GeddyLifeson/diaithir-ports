@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "createdeco:industrial_iron_ingot",
+  "minecraft:glow_berries",
+  "createdeco:industrial_iron_bars"
+ ],
+ "result": {
+  "id": "createdeco:green_industrial_iron_lamp"
+ }
+}

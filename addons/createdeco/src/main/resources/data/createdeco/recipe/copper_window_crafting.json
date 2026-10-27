@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " i ",
+  "igi",
+  " i "
+ ],
+ "key": {
+  "i": "minecraft:copper_ingot",
+  "g": "minecraft:glass"
+ },
+ "result": {
+  "id": "createdeco:copper_window",
+  "count": 4
+ }
+}

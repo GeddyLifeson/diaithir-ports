@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s  ",
+  "ss ",
+  "bbb"
+ ],
+ "key": {
+  "s": "create:iron_sheet",
+  "b": "minecraft:iron_bars"
+ },
+ "result": {
+  "id": "createdeco:iron_catwalk_stairs",
+  "count": 4
+ }
+}

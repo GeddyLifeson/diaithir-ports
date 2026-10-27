@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ss",
+  "ss"
+ ],
+ "key": {
+  "s": "createdeco:andesite_sheet"
+ },
+ "result": {
+  "id": "createdeco:andesite_sheet_metal",
+  "count": 4
+ }
+}

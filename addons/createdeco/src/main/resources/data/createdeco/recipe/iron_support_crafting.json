@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s",
+  "s",
+  "s"
+ ],
+ "key": {
+  "s": "create:iron_sheet"
+ },
+ "result": {
+  "id": "createdeco:iron_support",
+  "count": 4
+ }
+}

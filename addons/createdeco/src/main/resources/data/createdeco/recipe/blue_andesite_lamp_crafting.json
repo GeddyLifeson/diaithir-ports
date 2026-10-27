@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create:andesite_alloy",
+  "minecraft:soul_torch",
+  "createdeco:andesite_bars"
+ ],
+ "result": {
+  "id": "createdeco:blue_andesite_lamp"
+ }
+}

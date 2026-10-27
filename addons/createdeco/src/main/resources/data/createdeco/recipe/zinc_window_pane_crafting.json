@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "www",
+  "www"
+ ],
+ "key": {
+  "w": "createdeco:zinc_window"
+ },
+ "result": {
+  "id": "createdeco:zinc_window_pane",
+  "count": 16
+ }
+}

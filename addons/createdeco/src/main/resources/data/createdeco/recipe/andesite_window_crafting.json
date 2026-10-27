@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " i ",
+  "igi",
+  " i "
+ ],
+ "key": {
+  "i": "create:andesite_alloy",
+  "g": "minecraft:glass"
+ },
+ "result": {
+  "id": "createdeco:andesite_window",
+  "count": 4
+ }
+}

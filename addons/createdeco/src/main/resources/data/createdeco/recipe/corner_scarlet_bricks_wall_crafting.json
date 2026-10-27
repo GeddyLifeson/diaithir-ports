@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:corner_scarlet_bricks"
+ },
+ "result": {
+  "id": "createdeco:corner_scarlet_bricks_wall",
+  "count": 6
+ }
+}

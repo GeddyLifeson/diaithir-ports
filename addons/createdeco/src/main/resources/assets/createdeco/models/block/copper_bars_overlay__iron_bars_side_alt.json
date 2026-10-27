@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_bars_side_alt",
+ "textures": {
+  "bars": "createdeco:block/copper_bars_overlay",
+  "edge": "createdeco:block/copper_bars_overlay"
+ }
+}

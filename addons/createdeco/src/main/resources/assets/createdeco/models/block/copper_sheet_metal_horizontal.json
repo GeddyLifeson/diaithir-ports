@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "createdeco:block/copper_flat",
+  "side": "createdeco:block/copper_plate",
+  "particle": "createdeco:block/copper_plate"
+ }
+}

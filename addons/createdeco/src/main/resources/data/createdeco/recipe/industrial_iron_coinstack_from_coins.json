@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin",
+  "createdeco:industrial_iron_coin"
+ ],
+ "result": {
+  "id": "createdeco:industrial_iron_coinstack",
+  "count": 1
+ }
+}

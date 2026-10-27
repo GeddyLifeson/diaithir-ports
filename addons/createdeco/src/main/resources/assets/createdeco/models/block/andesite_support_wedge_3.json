@@ -1,0 +1,72 @@
+{
+ "textures": {
+  "q": "createdeco:block/andesite_plate",
+  "particle": "createdeco:block/andesite_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    5,
+    2,
+    14
+   ],
+   "to": [
+    11,
+    8,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    0,
+    8
+   ],
+   "to": [
+    11,
+    2,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  }
+ ]
+}

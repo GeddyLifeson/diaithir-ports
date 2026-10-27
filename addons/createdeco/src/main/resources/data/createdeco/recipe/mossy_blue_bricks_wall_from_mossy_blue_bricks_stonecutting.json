@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "createdeco:mossy_blue_bricks",
+ "result": {
+  "id": "createdeco:mossy_blue_bricks_wall",
+  "count": 1
+ }
+}

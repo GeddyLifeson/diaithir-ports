@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "create:copper_sheet"
+ },
+ "result": {
+  "id": "createdeco:copper_bars_overlay",
+  "count": 16
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "variants": {
+  "facing=up": {
+   "model": "createdeco:block/brass_hull"
+  },
+  "facing=down": {
+   "model": "createdeco:block/brass_hull",
+   "x": 180
+  },
+  "facing=north": {
+   "model": "createdeco:block/brass_hull",
+   "x": 90
+  },
+  "facing=south": {
+   "model": "createdeco:block/brass_hull",
+   "x": 90,
+   "y": 180
+  },
+  "facing=east": {
+   "model": "createdeco:block/brass_hull",
+   "x": 90,
+   "y": 90
+  },
+  "facing=west": {
+   "model": "createdeco:block/brass_hull",
+   "x": 90,
+   "y": 270
+  }
+ }
+}

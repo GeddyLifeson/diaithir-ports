@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=east": {
+   "model": "createdeco:block/iron_ladder__ladder",
+   "y": 90
+  },
+  "facing=north": {
+   "model": "createdeco:block/iron_ladder__ladder"
+  },
+  "facing=south": {
+   "model": "createdeco:block/iron_ladder__ladder",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "createdeco:block/iron_ladder__ladder",
+   "y": 270
+  }
+ }
+}

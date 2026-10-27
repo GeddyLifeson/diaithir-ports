@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s",
+  "s",
+  "s"
+ ],
+ "key": {
+  "s": "createdeco:industrial_iron_sheet"
+ },
+ "result": {
+  "id": "createdeco:industrial_iron_support",
+  "count": 4
+ }
+}

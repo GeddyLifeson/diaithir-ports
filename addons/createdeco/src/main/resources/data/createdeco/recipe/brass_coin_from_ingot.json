@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create:brass_ingot"
+ ],
+ "result": {
+  "id": "createdeco:brass_coin",
+  "count": 9
+ }
+}

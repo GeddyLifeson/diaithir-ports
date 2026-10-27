@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s",
+  "s",
+  "s"
+ ],
+ "key": {
+  "s": "createdeco:zinc_sheet"
+ },
+ "result": {
+  "id": "createdeco:zinc_support",
+  "count": 4
+ }
+}

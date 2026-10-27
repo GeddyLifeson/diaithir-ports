@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/wall_inventory",
+ "textures": {
+  "wall": "createdeco:block/mossy_umber_bricks"
+ }
+}

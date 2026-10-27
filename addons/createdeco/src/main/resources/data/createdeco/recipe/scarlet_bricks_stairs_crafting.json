@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s  ",
+  "ss ",
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:scarlet_bricks"
+ },
+ "result": {
+  "id": "createdeco:scarlet_bricks_stairs",
+  "count": 4
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:andesite_sheet"
+ },
+ "result": {
+  "id": "createdeco:andesite_bars_overlay",
+  "count": 16
+ }
+}

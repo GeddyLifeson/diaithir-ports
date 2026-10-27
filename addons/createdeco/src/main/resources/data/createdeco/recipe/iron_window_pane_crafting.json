@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "www",
+  "www"
+ ],
+ "key": {
+  "w": "createdeco:iron_window"
+ },
+ "result": {
+  "id": "createdeco:iron_window_pane",
+  "count": 16
+ }
+}

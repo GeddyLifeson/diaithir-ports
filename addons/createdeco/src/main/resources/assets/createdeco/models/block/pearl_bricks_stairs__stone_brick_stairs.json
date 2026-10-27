@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/stairs",
+ "textures": {
+  "bottom": "createdeco:block/pearl_bricks",
+  "side": "createdeco:block/pearl_bricks",
+  "top": "createdeco:block/pearl_bricks"
+ }
+}

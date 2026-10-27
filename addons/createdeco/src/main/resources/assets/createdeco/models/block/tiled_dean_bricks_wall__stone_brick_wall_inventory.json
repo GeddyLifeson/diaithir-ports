@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/wall_inventory",
+ "textures": {
+  "wall": "createdeco:block/tiled_dean_bricks"
+ }
+}

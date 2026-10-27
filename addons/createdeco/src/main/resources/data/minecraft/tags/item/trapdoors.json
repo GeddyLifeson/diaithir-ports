@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "createdeco:andesite_trapdoor",
+  "createdeco:zinc_trapdoor",
+  "createdeco:brass_trapdoor",
+  "createdeco:industrial_iron_trapdoor"
+ ]
+}

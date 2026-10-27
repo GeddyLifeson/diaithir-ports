@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin",
+  "createdeco:brass_coin"
+ ],
+ "result": {
+  "id": "createdeco:brass_coinstack",
+  "count": 1
+ }
+}

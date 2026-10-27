@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "createdeco:long_umber_bricks",
+ "result": {
+  "id": "createdeco:long_umber_bricks_stairs",
+  "count": 1
+ }
+}

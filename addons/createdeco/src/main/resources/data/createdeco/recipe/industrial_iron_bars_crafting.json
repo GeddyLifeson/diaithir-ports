@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "bbb",
+  "bbb"
+ ],
+ "key": {
+  "b": "createdeco:industrial_iron_ingot"
+ },
+ "result": {
+  "id": "createdeco:industrial_iron_bars",
+  "count": 16
+ }
+}

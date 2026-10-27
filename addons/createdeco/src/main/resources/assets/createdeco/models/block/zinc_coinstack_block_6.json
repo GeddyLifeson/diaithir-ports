@@ -1,0 +1,41 @@
+{
+ "textures": {
+  "s": "createdeco:block/zinc_coinstack_side",
+  "t": "createdeco:block/zinc_coinstack_top",
+  "particle": "createdeco:block/zinc_coinstack_side"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    0,
+    3
+   ],
+   "to": [
+    13,
+    12,
+    13
+   ],
+   "faces": {
+    "north": {
+     "texture": "#s"
+    },
+    "south": {
+     "texture": "#s"
+    },
+    "east": {
+     "texture": "#s"
+    },
+    "west": {
+     "texture": "#s"
+    },
+    "up": {
+     "texture": "#t"
+    },
+    "down": {
+     "texture": "#t"
+    }
+   }
+  }
+ ]
+}

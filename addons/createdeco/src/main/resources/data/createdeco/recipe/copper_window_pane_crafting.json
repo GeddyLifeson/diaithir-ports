@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "www",
+  "www"
+ ],
+ "key": {
+  "w": "createdeco:copper_window"
+ },
+ "result": {
+  "id": "createdeco:copper_window_pane",
+  "count": 16
+ }
+}

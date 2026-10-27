@@ -1,0 +1,60 @@
+{
+ "multipart": [
+  {
+   "when": {
+    "facing": "up"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support"
+   }
+  },
+  {
+   "when": {
+    "facing": "down"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support",
+    "x": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "north"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support",
+    "x": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "south"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support",
+    "x": 90,
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "east"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support",
+    "x": 90,
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "west"
+   },
+   "apply": {
+    "model": "createdeco:block/brass_support",
+    "x": 90,
+    "y": 270
+   }
+  }
+ ]
+}

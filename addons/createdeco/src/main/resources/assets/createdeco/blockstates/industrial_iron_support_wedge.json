@@ -1,0 +1,160 @@
+{
+ "multipart": [
+  {
+   "when": {
+    "facing": "north",
+    "orientation": "1"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_1"
+   }
+  },
+  {
+   "when": {
+    "facing": "north",
+    "orientation": "2"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_2"
+   }
+  },
+  {
+   "when": {
+    "facing": "north",
+    "orientation": "3"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_3"
+   }
+  },
+  {
+   "when": {
+    "facing": "north",
+    "orientation": "4"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_4"
+   }
+  },
+  {
+   "when": {
+    "facing": "east",
+    "orientation": "1"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_1",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "east",
+    "orientation": "2"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_2",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "east",
+    "orientation": "3"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_3",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "east",
+    "orientation": "4"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_4",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "facing": "south",
+    "orientation": "1"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_1",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "south",
+    "orientation": "2"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_2",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "south",
+    "orientation": "3"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_3",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "south",
+    "orientation": "4"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_4",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "facing": "west",
+    "orientation": "1"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_1",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "facing": "west",
+    "orientation": "2"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_2",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "facing": "west",
+    "orientation": "3"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_3",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "facing": "west",
+    "orientation": "4"
+   },
+   "apply": {
+    "model": "createdeco:block/industrial_iron_support_wedge_4",
+    "y": 270
+   }
+  }
+ ]
+}

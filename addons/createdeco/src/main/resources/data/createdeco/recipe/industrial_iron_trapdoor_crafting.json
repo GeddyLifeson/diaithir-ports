@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ss",
+  "ss"
+ ],
+ "key": {
+  "s": "createdeco:industrial_iron_ingot"
+ },
+ "result": {
+  "id": "createdeco:industrial_iron_trapdoor"
+ }
+}

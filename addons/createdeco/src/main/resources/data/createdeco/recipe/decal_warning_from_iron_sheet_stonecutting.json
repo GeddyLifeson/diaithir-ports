@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create:iron_sheet",
+ "result": {
+  "id": "createdeco:decal_warning",
+  "count": 4
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget",
+  "createdeco:industrial_iron_nugget"
+ ],
+ "result": {
+  "id": "createdeco:industrial_iron_ingot",
+  "count": 1
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "bbb",
+  "bbb"
+ ],
+ "key": {
+  "b": "create:brass_ingot"
+ },
+ "result": {
+  "id": "createdeco:brass_bars",
+  "count": 16
+ }
+}

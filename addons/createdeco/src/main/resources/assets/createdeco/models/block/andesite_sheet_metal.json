@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "createdeco:block/andesite_flat",
+  "side": "createdeco:block/andesite_plate",
+  "particle": "createdeco:block/andesite_plate"
+ }
+}

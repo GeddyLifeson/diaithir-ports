@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:pearl_bricks"
+ },
+ "result": {
+  "id": "createdeco:pearl_bricks_wall",
+  "count": 6
+ }
+}

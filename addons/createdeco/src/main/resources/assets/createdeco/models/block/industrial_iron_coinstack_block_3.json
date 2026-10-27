@@ -1,0 +1,41 @@
+{
+ "textures": {
+  "s": "createdeco:block/industrial_iron_coinstack_side",
+  "t": "createdeco:block/industrial_iron_coinstack_top",
+  "particle": "createdeco:block/industrial_iron_coinstack_side"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    0,
+    3
+   ],
+   "to": [
+    13,
+    6,
+    13
+   ],
+   "faces": {
+    "north": {
+     "texture": "#s"
+    },
+    "south": {
+     "texture": "#s"
+    },
+    "east": {
+     "texture": "#s"
+    },
+    "west": {
+     "texture": "#s"
+    },
+    "up": {
+     "texture": "#t"
+    },
+    "down": {
+     "texture": "#t"
+    }
+   }
+  }
+ ]
+}

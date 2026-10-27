@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:corner_red_bricks"
+ },
+ "result": {
+  "id": "createdeco:corner_red_bricks_slab",
+  "count": 6
+ }
+}

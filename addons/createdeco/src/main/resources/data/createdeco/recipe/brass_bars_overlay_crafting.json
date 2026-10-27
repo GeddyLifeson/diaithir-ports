@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "create:brass_sheet"
+ },
+ "result": {
+  "id": "createdeco:brass_bars_overlay",
+  "count": 16
+ }
+}

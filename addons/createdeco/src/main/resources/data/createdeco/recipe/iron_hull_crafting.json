@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ss",
+  "ss"
+ ],
+ "key": {
+  "s": "create:iron_sheet"
+ },
+ "result": {
+  "id": "createdeco:iron_hull",
+  "count": 4
+ }
+}

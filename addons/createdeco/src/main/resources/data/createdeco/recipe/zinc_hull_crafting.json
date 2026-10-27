@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ss",
+  "ss"
+ ],
+ "key": {
+  "s": "createdeco:zinc_sheet"
+ },
+ "result": {
+  "id": "createdeco:zinc_hull",
+  "count": 4
+ }
+}

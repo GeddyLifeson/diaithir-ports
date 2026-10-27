@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " i ",
+  "igi",
+  " i "
+ ],
+ "key": {
+  "i": "create:brass_ingot",
+  "g": "minecraft:glass"
+ },
+ "result": {
+  "id": "createdeco:brass_window",
+  "count": 4
+ }
+}

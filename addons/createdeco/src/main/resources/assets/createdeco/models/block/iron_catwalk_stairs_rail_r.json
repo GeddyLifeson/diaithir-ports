@@ -1,0 +1,136 @@
+{
+ "textures": {
+  "q": "createdeco:block/iron_plate",
+  "particle": "createdeco:block/iron_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    4,
+    12
+   ],
+   "to": [
+    2,
+    14,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    8,
+    8
+   ],
+   "to": [
+    2,
+    18,
+    12
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    12,
+    4
+   ],
+   "to": [
+    2,
+    22,
+    8
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    16,
+    0
+   ],
+   "to": [
+    2,
+    26,
+    4
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  }
+ ]
+}

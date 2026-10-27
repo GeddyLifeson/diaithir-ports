@@ -1,0 +1,72 @@
+{
+ "textures": {
+  "q": "createdeco:block/brass_plate",
+  "particle": "createdeco:block/brass_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    2,
+    5,
+    14
+   ],
+   "to": [
+    8,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    5,
+    8
+   ],
+   "to": [
+    2,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  }
+ ]
+}

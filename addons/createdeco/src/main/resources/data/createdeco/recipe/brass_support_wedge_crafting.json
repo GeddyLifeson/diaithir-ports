@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ss",
+  "s "
+ ],
+ "key": {
+  "s": "create:brass_sheet"
+ },
+ "result": {
+  "id": "createdeco:brass_support_wedge",
+  "count": 4
+ }
+}

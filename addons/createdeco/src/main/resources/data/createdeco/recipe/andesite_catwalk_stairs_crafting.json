@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s  ",
+  "ss ",
+  "bbb"
+ ],
+ "key": {
+  "s": "createdeco:andesite_sheet",
+  "b": "createdeco:andesite_bars"
+ },
+ "result": {
+  "id": "createdeco:andesite_catwalk_stairs",
+  "count": 4
+ }
+}

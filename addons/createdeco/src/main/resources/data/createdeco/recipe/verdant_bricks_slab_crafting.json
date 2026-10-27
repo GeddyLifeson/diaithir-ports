@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:verdant_bricks"
+ },
+ "result": {
+  "id": "createdeco:verdant_bricks_slab",
+  "count": 6
+ }
+}

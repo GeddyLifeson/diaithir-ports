@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sds",
+  "sss"
+ ],
+ "key": {
+  "s": "minecraft:stone_bricks",
+  "d": "minecraft:brown_dye"
+ },
+ "result": {
+  "id": "createdeco:umber_bricks",
+  "count": 8
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab",
+ "textures": {
+  "bottom": "createdeco:block/tiled_dean_bricks",
+  "side": "createdeco:block/tiled_dean_bricks",
+  "top": "createdeco:block/tiled_dean_bricks"
+ }
+}

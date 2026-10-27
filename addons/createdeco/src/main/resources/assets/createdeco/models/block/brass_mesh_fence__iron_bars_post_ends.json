@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_bars_post_ends",
+ "textures": {
+  "bars": "createdeco:block/brass_mesh",
+  "edge": "createdeco:block/brass_mesh"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create:zinc_ingot",
+  "minecraft:glow_berries",
+  "createdeco:zinc_bars"
+ ],
+ "result": {
+  "id": "createdeco:green_zinc_lamp"
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_bars_cap",
+ "textures": {
+  "bars": "createdeco:block/copper_bars",
+  "edge": "createdeco:block/copper_bars"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "textures": {
+  "t": "createdeco:block/decal_down",
+  "particle": "createdeco:block/decal_down"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    0.4,
+    16
+   ],
+   "faces": {
+    "up": {
+     "texture": "#t"
+    },
+    "down": {
+     "texture": "#t"
+    }
+   }
+  }
+ ]
+}

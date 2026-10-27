@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "create:iron_sheet"
+ },
+ "result": {
+  "id": "createdeco:iron_bars_overlay",
+  "count": 16
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "create:brass_ingot",
+  "minecraft:soul_torch",
+  "createdeco:brass_bars"
+ ],
+ "result": {
+  "id": "createdeco:blue_brass_lamp"
+ }
+}

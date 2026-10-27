@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "www",
+  "www"
+ ],
+ "key": {
+  "w": "createdeco:brass_window"
+ },
+ "result": {
+  "id": "createdeco:brass_window_pane",
+  "count": 16
+ }
+}

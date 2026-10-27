@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_column_horizontal",
+ "textures": {
+  "end": "createdeco:block/iron_flat",
+  "side": "createdeco:block/iron_plate",
+  "particle": "createdeco:block/iron_plate"
+ }
+}

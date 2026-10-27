@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/template_bars_side",
+ "textures": {
+  "bars": "createdeco:block/iron_mesh",
+  "edge": "createdeco:block/iron_mesh"
+ }
+}

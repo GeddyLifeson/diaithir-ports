@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/outer_stairs",
+ "textures": {
+  "bottom": "createdeco:block/long_verdant_bricks",
+  "side": "createdeco:block/long_verdant_bricks",
+  "top": "createdeco:block/long_verdant_bricks"
+ }
+}

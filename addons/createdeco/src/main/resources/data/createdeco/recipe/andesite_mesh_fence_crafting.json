@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sbs",
+  "sbs"
+ ],
+ "key": {
+  "s": "createdeco:andesite_sheet",
+  "b": "createdeco:andesite_bars"
+ },
+ "result": {
+  "id": "createdeco:andesite_mesh_fence",
+  "count": 8
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "bbb"
+ ],
+ "key": {
+  "s": "create:brass_ingot",
+  "b": "createdeco:brass_bars"
+ },
+ "result": {
+  "id": "createdeco:brass_catwalk_railing",
+  "count": 8
+ }
+}

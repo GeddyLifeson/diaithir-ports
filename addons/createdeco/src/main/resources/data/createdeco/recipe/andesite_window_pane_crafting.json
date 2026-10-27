@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "www",
+  "www"
+ ],
+ "key": {
+  "w": "createdeco:andesite_window"
+ },
+ "result": {
+  "id": "createdeco:andesite_window_pane",
+  "count": 16
+ }
+}

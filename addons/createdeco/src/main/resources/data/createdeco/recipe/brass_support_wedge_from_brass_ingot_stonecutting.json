@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "create:brass_ingot",
+ "result": {
+  "id": "createdeco:brass_support_wedge",
+  "count": 4
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "minecraft:copper_ingot",
+ "result": {
+  "id": "createdeco:copper_catwalk_railing",
+  "count": 8
+ }
+}

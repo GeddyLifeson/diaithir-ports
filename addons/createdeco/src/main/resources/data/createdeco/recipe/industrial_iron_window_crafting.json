@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  " i ",
+  "igi",
+  " i "
+ ],
+ "key": {
+  "i": "createdeco:industrial_iron_ingot",
+  "g": "minecraft:glass"
+ },
+ "result": {
+  "id": "createdeco:industrial_iron_window",
+  "count": 4
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "textures": {
+  "t": "createdeco:block/blue_copper_lamp",
+  "particle": "createdeco:block/blue_copper_lamp"
+ },
+ "elements": [
+  {
+   "from": [
+    4,
+    0,
+    4
+   ],
+   "to": [
+    12,
+    8,
+    12
+   ],
+   "faces": {
+    "north": {
+     "texture": "#t"
+    },
+    "south": {
+     "texture": "#t"
+    },
+    "east": {
+     "texture": "#t"
+    },
+    "west": {
+     "texture": "#t"
+    },
+    "up": {
+     "texture": "#t"
+    },
+    "down": {
+     "texture": "#t"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    8,
+    5
+   ],
+   "to": [
+    11,
+    10,
+    11
+   ],
+   "faces": {
+    "north": {
+     "texture": "#t"
+    },
+    "south": {
+     "texture": "#t"
+    },
+    "east": {
+     "texture": "#t"
+    },
+    "west": {
+     "texture": "#t"
+    },
+    "up": {
+     "texture": "#t"
+    },
+    "down": {
+     "texture": "#t"
+    }
+   }
+  }
+ ]
+}

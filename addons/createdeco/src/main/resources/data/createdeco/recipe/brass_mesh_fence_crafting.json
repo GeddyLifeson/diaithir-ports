@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sbs",
+  "sbs"
+ ],
+ "key": {
+  "s": "create:brass_sheet",
+  "b": "createdeco:brass_bars"
+ },
+ "result": {
+  "id": "createdeco:brass_mesh_fence",
+  "count": 8
+ }
+}

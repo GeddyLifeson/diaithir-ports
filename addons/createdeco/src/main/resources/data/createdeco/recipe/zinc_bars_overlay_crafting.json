@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sss"
+ ],
+ "key": {
+  "s": "createdeco:zinc_sheet"
+ },
+ "result": {
+  "id": "createdeco:zinc_bars_overlay",
+  "count": 16
+ }
+}

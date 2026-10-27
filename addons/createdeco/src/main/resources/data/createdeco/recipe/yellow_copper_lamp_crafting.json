@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  "minecraft:copper_ingot",
+  "minecraft:torch",
+  "createdeco:copper_bars"
+ ],
+ "result": {
+  "id": "createdeco:yellow_copper_lamp"
+ }
+}

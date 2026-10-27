@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "s  ",
+  "ss ",
+  "bbb"
+ ],
+ "key": {
+  "s": "create:copper_sheet",
+  "b": "createdeco:copper_bars"
+ },
+ "result": {
+  "id": "createdeco:copper_catwalk_stairs",
+  "count": 4
+ }
+}

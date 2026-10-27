@@ -1,0 +1,72 @@
+{
+ "textures": {
+  "q": "createdeco:block/zinc_plate",
+  "particle": "createdeco:block/zinc_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    8,
+    5,
+    14
+   ],
+   "to": [
+    14,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  },
+  {
+   "from": [
+    14,
+    5,
+    8
+   ],
+   "to": [
+    16,
+    11,
+    16
+   ],
+   "faces": {
+    "north": {
+     "texture": "#q"
+    },
+    "south": {
+     "texture": "#q"
+    },
+    "east": {
+     "texture": "#q"
+    },
+    "west": {
+     "texture": "#q"
+    },
+    "up": {
+     "texture": "#q"
+    },
+    "down": {
+     "texture": "#q"
+    }
+   }
+  }
+ ]
+}

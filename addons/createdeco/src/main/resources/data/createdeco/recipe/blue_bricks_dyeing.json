@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "sss",
+  "sds",
+  "sss"
+ ],
+ "key": {
+  "s": "minecraft:stone_bricks",
+  "d": "minecraft:blue_dye"
+ },
+ "result": {
+  "id": "createdeco:blue_bricks",
+  "count": 8
+ }
+}
