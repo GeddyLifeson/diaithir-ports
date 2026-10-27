@@ -51,6 +51,8 @@ public class AlexsCaves {
 
     public static CommonProxy PROXY = new CommonProxy();
     public static final ACServerConfig COMMON_CONFIG;
+    public static final com.github.alexmodguy.alexscaves.client.config.ACClientConfig CLIENT_CONFIG;
+    private static final ModConfigSpec CLIENT_CONFIG_SPEC;
     private static final ModConfigSpec COMMON_CONFIG_SPEC;
     public static final java.util.List<String> MOD_GENERATION_CONFLICTS = new java.util.ArrayList<>();
 
@@ -58,10 +60,21 @@ public class AlexsCaves {
         final Pair<ACServerConfig, ModConfigSpec> serverPair = new ModConfigSpec.Builder().configure(ACServerConfig::new);
         COMMON_CONFIG = serverPair.getLeft();
         COMMON_CONFIG_SPEC = serverPair.getRight();
+        final Pair<com.github.alexmodguy.alexscaves.client.config.ACClientConfig, ModConfigSpec> clientPair = new ModConfigSpec.Builder().configure(com.github.alexmodguy.alexscaves.client.config.ACClientConfig::new);
+        CLIENT_CONFIG = clientPair.getLeft();
+        CLIENT_CONFIG_SPEC = clientPair.getRight();
     }
 
     public AlexsCaves(IEventBus modEventBus, ModContainer modContainer) {
         modContainer.registerConfig(ModConfig.Type.COMMON, COMMON_CONFIG_SPEC, "alexscaves-general.toml");
+        modContainer.registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG_SPEC, "alexscaves-client.toml");
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            try {
+                PROXY = (CommonProxy) Class.forName("com.github.alexmodguy.alexscaves.client.ClientProxy").getDeclaredConstructor().newInstance();
+            } catch (ReflectiveOperationException e) {
+                throw new IllegalStateException("Could not create client proxy", e);
+            }
+        }
         modEventBus.addListener(this::registerPayloads);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::loadComplete);
@@ -96,6 +109,9 @@ public class AlexsCaves {
         ACDataComponentRegistry.init(modEventBus);
         ACPotPatternRegistry.init();
         PROXY.commonInit(modEventBus);
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist().isClient()) {
+            PROXY.clientInit(modEventBus);
+        }
         ACBiomeRegistry.init();
     }
 

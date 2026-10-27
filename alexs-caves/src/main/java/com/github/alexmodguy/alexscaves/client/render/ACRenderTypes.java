@@ -7,6 +7,10 @@ import net.minecraft.resources.Identifier;
 /** 26.1 stand-ins for the upstream custom render types (custom shaders are not ported): vanilla glow / translucent types. */
 public class ACRenderTypes {
 
+    public static RenderType itemEntityTranslucentCull(Identifier resourceLocation) {
+        return RenderTypes.entityTranslucent(resourceLocation);
+    }
+
     public static RenderType getParticleTrail(Identifier resourceLocation) {
         return RenderTypes.eyes(resourceLocation);
     }
