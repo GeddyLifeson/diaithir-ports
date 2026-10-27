@@ -2,6 +2,7 @@ package net.diaithir.goety.entity.more;
 
 import java.util.EnumSet;
 import net.diaithir.goety.GoetyEntities;
+import net.diaithir.goety.GoetySounds;
 import net.diaithir.goety.entity.BoltEntity;
 import net.diaithir.goety.entity.Servant;
 import net.diaithir.goety.entity.ServantCore;
@@ -112,6 +113,9 @@ public final class Mobs {
     /** A wraith: a vex that is not bound to an evoker and does not crumble. */
     public static class Wraith extends Vex {
         public Wraith(EntityType<? extends Vex> t, Level l) { super(t, l); }
+        @Override protected net.minecraft.sounds.SoundEvent getAmbientSound() { return GoetySounds.get("wraith_ambient", super.getAmbientSound()); }
+        @Override protected net.minecraft.sounds.SoundEvent getHurtSound(DamageSource s) { return GoetySounds.get("wraith_hurt", super.getHurtSound(s)); }
+        @Override protected net.minecraft.sounds.SoundEvent getDeathSound() { return GoetySounds.get("wraith_death", super.getDeathSound()); }
         @Override public void tick() {
             super.tick();
             if (level() instanceof ServerLevel sl && tickCount % 10 == 0) sl.sendParticles(ParticleTypes.SOUL, getX(), getY() + 0.5, getZ(), 1, 0.2, 0.2, 0.2, 0.01);
@@ -122,6 +126,9 @@ public final class Mobs {
     public static class Necromancer extends Zombie {
         private String minion = "frayed";
         public Necromancer(EntityType<? extends Zombie> t, Level l) { super(t, l); }
+        @Override protected net.minecraft.sounds.SoundEvent getAmbientSound() { return GoetySounds.get("necromancer_ambient", super.getAmbientSound()); }
+        @Override protected net.minecraft.sounds.SoundEvent getHurtSound(DamageSource s) { return GoetySounds.get("necromancer_hurt", super.getHurtSound(s)); }
+        @Override protected net.minecraft.sounds.SoundEvent getDeathSound() { return GoetySounds.get("necromancer_death", super.getDeathSound()); }
         public Necromancer minion(String id) { this.minion = id; return this; }
         @Override protected boolean isSunSensitive() { return false; }
         @Override protected void registerGoals() {
@@ -179,6 +186,10 @@ public final class Mobs {
         private final ServerBossEvent bar = new ServerBossEvent(java.util.UUID.randomUUID(), getDisplayName(), BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
         private int skullCd = 60;
         public SkullLord(EntityType<? extends Skeleton> t, Level l) { super(t, l); xpReward = 50; setPersistenceRequired(); }
+        @Override protected net.minecraft.sounds.SoundEvent getAmbientSound() { return GoetySounds.get("skull_lord_ambient", super.getAmbientSound()); }
+        @Override protected net.minecraft.sounds.SoundEvent getHurtSound(DamageSource s) { return GoetySounds.get("skull_lord_hurt", super.getHurtSound(s)); }
+        @Override protected net.minecraft.sounds.SoundEvent getDeathSound() { return GoetySounds.get("skull_lord_death", super.getDeathSound()); }
+
         @Override public void startSeenByPlayer(ServerPlayer p) { super.startSeenByPlayer(p); bar.addPlayer(p); }
         @Override public void stopSeenByPlayer(ServerPlayer p) { super.stopSeenByPlayer(p); bar.removePlayer(p); }
         @Override public boolean canUsePortal(boolean b) { return false; }

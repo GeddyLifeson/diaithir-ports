@@ -3692,6 +3692,14 @@
   "shovel": false
  },
  {
+  "id": "jade_ore",
+  "kind": "cube",
+  "like": "emerald_ore",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "dark_altar",
   "kind": "altar",
   "like": "deepslate_bricks",

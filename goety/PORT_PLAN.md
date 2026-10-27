@@ -28,3 +28,6 @@ followed where it can be read from the source; Patchouli, JEI and other-mod comp
 
 Celtic framing: display names in Diaithiris (names_map.json via archaic.py), necromancy as the Cailleach's Samhain rites,
 Age gate in age_gates.json (namespace `goety`, Age V and up).
+
+## Status after the second pass
+Stages 1 to 5 done as a working subset (see TEST.md). Stage 4 (worldgen, structures, loot) is covered by tools/worldgen.py, which converts the original data to the 26.1 layout and drops anything that refers to content the port lacks. Sounds and particles come from tools/audiofx.py. `tools/regen.sh <upstream>` rebuilds every generated file.

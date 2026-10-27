@@ -85,7 +85,7 @@ public class AltarBlockEntity extends HolderBlockEntity {
             caster = player.getUUID();
             casterRef = player;
             level.setBlock(worldPosition, getBlockState().setValue(AltarBlock.LIT, true), 3);
-            level.playSound(null, worldPosition, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0F, 0.6F);
+            level.playSound(null, worldPosition, net.diaithir.goety.GoetySounds.get("altar_start", SoundEvents.BEACON_ACTIVATE), SoundSource.BLOCKS, 1.0F, 0.6F);
             return true;
         }
         player.sendOverlayMessage(Component.translatable(sawActivation ? "goety.msg.rite_offerings" : "goety.msg.rite_unknown"));
@@ -97,7 +97,7 @@ public class AltarBlockEntity extends HolderBlockEntity {
         time = 0;
         if (level != null) {
             level.setBlock(worldPosition, getBlockState().setValue(AltarBlock.LIT, false), 3);
-            level.playSound(null, worldPosition, ok ? SoundEvents.ENCHANTMENT_TABLE_USE : SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.playSound(null, worldPosition, ok ? net.diaithir.goety.GoetySounds.get("altar_finish", SoundEvents.ENCHANTMENT_TABLE_USE) : SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F);
         }
         setChanged();
     }

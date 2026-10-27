@@ -84,6 +84,11 @@ public final class GoetyClient {
     }
 
     @SubscribeEvent
+    public static void particles(net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent e) {
+        net.diaithir.goety.GoetyParticles.ALL.values().forEach(p -> e.registerSpriteSet(p.get(), net.minecraft.client.particle.EndRodParticle.Provider::new));
+    }
+
+    @SubscribeEvent
     public static void projectiles(EntityRenderersEvent.RegisterRenderers e) {
         GoetyEntities.PROJECTILES.values().forEach(t -> e.registerEntityRenderer(t.get(), NoopRenderer::new));
     }

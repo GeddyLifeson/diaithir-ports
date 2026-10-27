@@ -32,6 +32,8 @@ public final class Goety {
         GoetyBlockEntities.register(bus);
         GoetyEntities.register(bus);
         GoetyItems.register(bus);
+        GoetySounds.register(bus);
+        GoetyParticles.register(bus);
         TABS.register(bus);
         NeoForge.EVENT_BUS.register(GoetyEvents.class);
         NeoForge.EVENT_BUS.register(net.diaithir.goety.rite.RitualManager.class);

@@ -78,7 +78,7 @@ public final class SpellEngine {
 
     static ParticleOptions particle(String name) {
         if (name.equals("block")) return new BlockParticleOption(ParticleTypes.BLOCK, Blocks.DIRT.defaultBlockState());
-        var pt = BuiltInRegistries.PARTICLE_TYPE.getValue(Identifier.withDefaultNamespace(name));
+        var pt = BuiltInRegistries.PARTICLE_TYPE.getValue(name.contains(":") ? Identifier.parse(name) : Identifier.withDefaultNamespace(name));
         return pt instanceof SimpleParticleType s ? s : ParticleTypes.POOF;
     }
 
@@ -172,7 +172,7 @@ public final class SpellEngine {
         String p = d.s("particle", "witch");
         int steps = (int) Math.max(2, from.distanceTo(end) * 2);
         for (int i = 0; i <= steps; i++) puff(level, p, from.lerp(end, i / (double) steps), 1, 0.02);
-        sound(level, caster, SoundEvents.EVOKER_CAST_SPELL, 1.2F);
+        sound(level, caster, net.diaithir.goety.GoetySounds.get("cast_spell", SoundEvents.EVOKER_CAST_SPELL), 1.2F);
         if (t == null || !isFoe(caster, t) && d.d("damage", 0) > 0) return true;
         damage(d, level, caster, t, d.d("damage", 0));
         knock(caster, t, d.d("knock", 0), d.d("up", 0));
@@ -256,7 +256,8 @@ public final class SpellEngine {
             level.addFreshEntity(m);
             puff(level, "soul", m.position().add(0, 0.5, 0), 12, 0.4);
         }
-        sound(level, caster, SoundEvents.EVOKER_PREPARE_SUMMON, 1.0F);
+        sound(level, caster, net.diaithir.goety.GoetySounds.get("summon_spell", SoundEvents.EVOKER_PREPARE_SUMMON), 1.0F);
+        puff(level, "goety:cult_spell", caster.position().add(0, 1, 0), 12, 0.6);
         return true;
     }
 

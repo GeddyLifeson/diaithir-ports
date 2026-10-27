@@ -105,6 +105,9 @@ for r in blocks_up:
     e["axe"] = e["like"] in ("oak_planks", "oak_log", "oak_leaves")
     e["shovel"] = e["like"] == "dirt"
     bspec.append(e); bkinds[i] = e
+if "jade_ore" not in bkinds:
+    e = {"id": "jade_ore", "kind": "cube", "like": "emerald_ore", "set": "", "axe": False, "shovel": False}
+    bspec.append(e); bkinds["jade_ore"] = e
 # keep only derived blocks whose base exists
 ids = set(bkinds)
 bspec = [e for e in bspec if "base" not in e or e["base"] in ids]
