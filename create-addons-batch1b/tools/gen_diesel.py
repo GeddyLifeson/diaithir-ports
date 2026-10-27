@@ -74,4 +74,26 @@ def main():
         w(f"{ROOT}/data/c/tags/fluid/{tag}.json", {"values": [f"{NS}:{n}", f"{NS}:flowing_{n}"]})
     w(f"{ROOT}/data/minecraft/tags/item/buckets.json", {"values": [f"{NS}:{n}_bucket" for n in FLUIDS]}) if False else None
 
+def recipes_and_worldgen():
+    NSF = NS
+    def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
+    def res(n, amount): return {"id": f"{NSF}:{n}", "amount": amount}
+    w(f"{D}/recipe/mixing/distill_crude_oil.json", {"type": "create:mixing", "heat_requirement": "heated", "ingredients": [],
+        "fluid_ingredients": [ft("crude_oil", 81000)], "fluid_results": [res("diesel", 40500), res("gasoline", 20250)]})
+    w(f"{D}/recipe/mixing/plant_oil.json", {"type": "create:mixing", "heat_requirement": "heated",
+        "ingredients": ["minecraft:wheat_seeds", "minecraft:wheat_seeds", "minecraft:wheat_seeds", "minecraft:wheat_seeds"], "fluid_results": [res("plant_oil", 8100)]})
+    w(f"{D}/recipe/mixing/ethanol.json", {"type": "create:mixing", "heat_requirement": "heated",
+        "ingredients": ["minecraft:sugar", "minecraft:sugar"], "fluid_ingredients": [{"type": "fluid_tag", "amount": 40500, "fluid_tag": "#c:water"}], "fluid_results": [res("ethanol", 20250)]})
+    w(f"{D}/recipe/mixing/biodiesel.json", {"type": "create:mixing", "heat_requirement": "heated", "ingredients": [],
+        "fluid_ingredients": [ft("plantoil", 40500), ft("ethanol", 20250)], "fluid_results": [res("biodiesel", 60750)]})
+    w(f"{D}/worldgen/configured_feature/oil_spring.json", {"type": "minecraft:spring_feature", "config": {
+        "state": {"Name": f"{NSF}:crude_oil", "Properties": {"falling": "true"}}, "requires_block_below": True, "rock_count": 4, "hole_count": 1,
+        "valid_blocks": "#minecraft:base_stone_overworld"}})
+    w(f"{D}/worldgen/placed_feature/oil_spring.json", {"feature": f"{NSF}:oil_spring", "placement": [
+        {"type": "minecraft:rarity_filter", "chance": 6}, {"type": "minecraft:in_square"},
+        {"type": "minecraft:height_range", "height": {"type": "minecraft:uniform", "min_inclusive": {"absolute": -48}, "max_inclusive": {"absolute": 24}}},
+        {"type": "minecraft:biome"}]})
+    w(f"{D}/neoforge/biome_modifier/oil_spring.json", {"type": "neoforge:add_features", "biomes": "#minecraft:is_overworld", "features": f"{NSF}:oil_spring", "step": "underground_ores"})
+
 main()
+recipes_and_worldgen()
