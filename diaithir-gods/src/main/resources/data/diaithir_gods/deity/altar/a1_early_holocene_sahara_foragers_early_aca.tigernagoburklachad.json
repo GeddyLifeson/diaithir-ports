@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_early_holocene_sahara_foragers_early_aca.tigernagoburklachad",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:goat_horn",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

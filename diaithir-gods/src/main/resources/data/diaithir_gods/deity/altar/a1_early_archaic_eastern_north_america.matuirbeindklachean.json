@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:a1_early_archaic_eastern_north_america.matuirbeindklachean",
+  "female": false,
+  "slim": false,
+  "light": 8,
+  "items": {
+    "block": "minecraft:stone_bricks",
+    "mainhand": "minecraft:stone",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

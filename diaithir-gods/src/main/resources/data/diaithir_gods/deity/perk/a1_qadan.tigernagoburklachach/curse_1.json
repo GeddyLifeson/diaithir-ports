@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:goat_horn",
+    "color": 10786693,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_qadan.tigernagoburklachach",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "a1_qadan.tigernagoburklachach_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

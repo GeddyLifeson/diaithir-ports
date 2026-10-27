@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:canaanite.moirmiriaguilt",
+  "icon": "minecraft:spider_eye",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

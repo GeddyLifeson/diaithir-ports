@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:hellenic.soulaskeol",
+  "icon": "minecraft:note_block",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:spruce_log",
+    "color": 7901371,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:northwest.seidurmatuir",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 1,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "northwest.seidurmatuir_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

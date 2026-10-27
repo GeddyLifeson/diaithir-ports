@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 10399433,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:finnic.matunatuir",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "finnic.matunatuir_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

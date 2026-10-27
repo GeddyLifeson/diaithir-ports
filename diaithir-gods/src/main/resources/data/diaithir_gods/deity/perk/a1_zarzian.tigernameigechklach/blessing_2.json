@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:rabbit_foot",
+    "color": 6866041,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_zarzian.tigernameigechklach",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_zarzian.tigernameigechklach_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

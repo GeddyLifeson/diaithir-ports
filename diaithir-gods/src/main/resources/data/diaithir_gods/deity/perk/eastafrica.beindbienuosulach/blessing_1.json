@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:stone",
+    "color": 12504955,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:eastafrica.beindbienuosulach",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:haste",
+        "Amplifier": 0,
+        "Duration": 1200,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.45,
+  "cooldown": 1200,
+  "cooldown_category": "eastafrica.beindbienuosulach_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

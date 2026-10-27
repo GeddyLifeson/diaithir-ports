@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:polynesian.eileniaskuir",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:fishing_rod",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

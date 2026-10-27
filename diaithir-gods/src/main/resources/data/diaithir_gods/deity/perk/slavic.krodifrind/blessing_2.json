@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:cod",
+    "color": 5796004,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:slavic.krodifrind",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:saturation",
+        "Amplifier": 1,
+        "Duration": 40,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "slavic.krodifrind_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

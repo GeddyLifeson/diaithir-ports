@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:milk_bucket",
+    "color": 10002048,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_epipalaeolithic_egypt_isnan_afian_qaruni.tigernaboiklach",
+    "minlevel": -10,
+    "maxlevel": -2
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 0,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.25,
+  "cooldown": 1200,
+  "cooldown_category": "a1_epipalaeolithic_egypt_isnan_afian_qaruni.tigernaboiklach_curse_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

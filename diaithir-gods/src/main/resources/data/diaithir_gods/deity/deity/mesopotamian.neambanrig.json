@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:mesopotamian.neambanrig",
+  "icon": "minecraft:nether_star",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

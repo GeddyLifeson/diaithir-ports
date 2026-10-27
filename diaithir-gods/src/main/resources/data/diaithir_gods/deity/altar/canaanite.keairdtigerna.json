@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:canaanite.keairdtigerna",
+  "female": false,
+  "slim": false,
+  "light": 0,
+  "items": {
+    "block": "minecraft:stone",
+    "mainhand": "minecraft:iron_pickaxe",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:bone",
+    "color": 10851683,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:caucasus.sielgtigerna",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "caucasus.sielgtigerna_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

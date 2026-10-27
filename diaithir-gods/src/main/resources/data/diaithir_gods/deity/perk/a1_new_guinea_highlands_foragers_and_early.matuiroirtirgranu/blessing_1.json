@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:sand",
+    "color": 10983277,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_new_guinea_highlands_foragers_and_early.matuiroirtirgranu",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:luck",
+        "Amplifier": 0,
+        "Duration": 3600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_new_guinea_highlands_foragers_and_early.matuiroirtirgranu_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

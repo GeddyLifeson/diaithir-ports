@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:salmon",
+    "color": 11367781,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_sahul_pleistocene_core_tool_and_scraper.tigernabradunskian",
+    "minlevel": 6,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:night_vision",
+        "Amplifier": 1,
+        "Duration": 1800,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "a1_sahul_pleistocene_core_tool_and_scraper.tigernabradunskian_blessing_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

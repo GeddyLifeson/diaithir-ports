@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:polynesian.eileniaskuir",
+  "icon": "minecraft:fishing_rod",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": 0,
+  "maxlevel": 10
+}

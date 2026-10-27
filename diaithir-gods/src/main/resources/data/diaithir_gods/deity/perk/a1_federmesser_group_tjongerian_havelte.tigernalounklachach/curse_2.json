@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:leather",
+    "color": 8683190,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:a1_federmesser_group_tjongerian_havelte.tigernalounklachach",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:darkness",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "a1_federmesser_group_tjongerian_havelte.tigernalounklachach_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

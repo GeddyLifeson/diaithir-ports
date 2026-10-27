@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:maya.oiskitigernaach",
+  "female": false,
+  "slim": false,
+  "light": 4,
+  "items": {
+    "block": "minecraft:cobblestone",
+    "mainhand": "minecraft:slime_ball",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

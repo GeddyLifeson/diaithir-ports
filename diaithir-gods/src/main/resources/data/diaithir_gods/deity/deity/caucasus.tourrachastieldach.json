@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:caucasus.tourrachastieldach",
+  "icon": "minecraft:torch",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}

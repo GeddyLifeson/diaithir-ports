@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:oak_log",
+    "color": 12627034,
+    "fancy": true
+  },
+  "range": {
+    "deity": "diaithir_gods:diaithir.atuirdaurach",
+    "minlevel": -10,
+    "maxlevel": -6
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:unluck",
+        "Amplifier": 1,
+        "Duration": 600,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.35,
+  "cooldown": 1200,
+  "cooldown_category": "diaithir.atuirdaurach_curse_2",
+  "condition": {
+    "type": "random_tick"
+  }
+}

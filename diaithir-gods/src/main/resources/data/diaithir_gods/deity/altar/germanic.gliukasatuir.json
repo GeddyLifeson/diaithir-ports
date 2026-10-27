@@ -1,0 +1,14 @@
+{
+  "name": "diaithir_gods:germanic.gliukasatuir",
+  "female": false,
+  "slim": false,
+  "light": 8,
+  "items": {
+    "block": "minecraft:stone_bricks",
+    "mainhand": "minecraft:feather",
+    "armor_locked": false,
+    "hands_locked": false,
+    "block_locked": false
+  },
+  "pose_locked": false
+}

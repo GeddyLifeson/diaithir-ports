@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "item": "minecraft:wheat_seeds",
+    "color": 12285100,
+    "fancy": false
+  },
+  "range": {
+    "deity": "diaithir_gods:sunda.rusubienuosul",
+    "minlevel": 2,
+    "maxlevel": 10
+  },
+  "action": [
+    {
+      "type": "potion",
+      "tag": {
+        "Potion": "minecraft:saturation",
+        "Amplifier": 0,
+        "Duration": 40,
+        "ShowParticles": false
+      }
+    }
+  ],
+  "chance": 0.6,
+  "cooldown": 1200,
+  "cooldown_category": "sunda.rusubienuosul_blessing_1",
+  "condition": {
+    "type": "random_tick"
+  }
+}

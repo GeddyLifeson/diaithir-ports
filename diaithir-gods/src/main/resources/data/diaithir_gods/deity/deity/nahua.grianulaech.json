@@ -1,0 +1,8 @@
+{
+  "name": "diaithir_gods:nahua.grianulaech",
+  "icon": "minecraft:feather",
+  "unlocked": true,
+  "enabled": true,
+  "minlevel": -10,
+  "maxlevel": 10
+}
