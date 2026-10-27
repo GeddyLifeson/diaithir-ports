@@ -110,3 +110,12 @@ All fourteen are written by `tools/gen_content.py` (which also writes their crea
 | `grumblebun` | beast, friendly | V | forests; tame with carrots |
 | `twirlfin` | flyer, friendly | V | plains; tame with cod, then fly it |
 | `mossmop` | beast, friendly | IV | swamps; tame with wheat |
+
+## Creatures added in 0.3.1
+
+Two realistic Pleistocene beasts for the Earth timeline (Age I), both written by `tools/gen_content.py` with art in `tools/art/creatures`. Names are Diaithiris compounds.
+
+| Id | Preset | From Age | Where |
+| --- | --- | --- | --- |
+| `dobhranfamhair` Dobhranfamhair (giant beaver, Castoroides ohioensis) | beast | I | swamps; tame with stripped oak logs |
+| `eachreidhlein` Eachrèidhlein (Mexican horse, Equus conversidens) | beast, rideable | I | plains, herds; tame with wheat |

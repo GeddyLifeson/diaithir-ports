@@ -284,6 +284,18 @@ toon("mossmop", "Mossmop", "beast",
      {"biomes": "c:is_swamp", "weight": 6, "min_group": 1, "max_group": 2, "min_age": "IV"},
      [("minecraft:moss_block", 2, 5), ("minecraft:string", 1, 3)])
 
+# Pleistocene megafauna for the Earth timeline (Age I): realistic art, no cartoon face. Names are Diaithiris compounds.
+toon("dobhranfamhair", "Dobhranfamhair", "beast", [], {}, 1.3, 1.0,
+     {"health": 34, "damage": 5, "speed": 0.22, "knockback_resistance": 0.4}, {"item": "minecraft:stripped_oak_log", "chance": 0.25},
+     {"biomes": "c:is_swamp", "weight": 5, "min_group": 1, "max_group": 2, "min_age": "I"},
+     [("minecraft:leather", 1, 3), ("minecraft:stick", 2, 6), ("minecraft:bone", 1, 2)])
+J["dobhranfamhair"]["rideable"] = False
+
+toon("eachreidhlein", "Eachrèidhlein", "beast", [], {}, 1.0, 1.45,
+     {"health": 22, "damage": 3, "speed": 0.3}, {"item": "minecraft:wheat", "chance": 0.35},
+     {"biomes": "c:is_plains", "weight": 8, "min_group": 2, "max_group": 5, "min_age": "I"},
+     [("minecraft:leather", 1, 2), ("minecraft:bone", 0, 2)])
+
 
 def loot_json(entries):
     pools = []
@@ -295,7 +307,7 @@ def loot_json(entries):
 
 ART = ["aurelith", "ironstrider", "hollowmourn", "bumblesnout", "emberwyrm", "verdanai", "orsolune", "ashenvar", "marenoth",
        "brassjack", "siegewarden", "tinkerspider", "pallidgaunt", "marrowcrawl", "veilstitch", "puddlepip", "grumblebun",
-       "twirlfin", "mossmop"]
+       "twirlfin", "mossmop", "dobhranfamhair", "eachreidhlein"]
 
 
 def main():
