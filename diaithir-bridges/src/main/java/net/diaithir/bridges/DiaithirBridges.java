@@ -40,6 +40,7 @@ public final class DiaithirBridges {
     }
 
     public DiaithirBridges(IEventBus bus) {
+        EffectMerge.register();
         BLOCKS.register(bus);
         ITEMS.register(bus);
         ENTITIES.register(bus);
