@@ -26,6 +26,10 @@ public final class CultureNames {
         }
         String slug = player.getData(DiaithirTooltips.CULTURE);
         slug = slug.isEmpty() ? DiaithirTooltips.DEFAULT_CULTURE : slug;
+        var set = sets().get(id);
+        if (set != null && set.has(slug)) {
+            return set.get(slug).getAsString();
+        }
         var table = table(slug);
         if (table.has(kind)) {
             var v = table.getAsJsonObject(kind).get(id);
@@ -129,12 +133,37 @@ public final class CultureNames {
         return data("cultures/" + slug + ".json");
     }
 
+    private static Map<String, JsonObject> setsCache;
+
+    /** Every every assets namespace's diaithir_names folder, merged: {id: {"en": ..., "diaithir": ..., "<culture slug>": name}}. */
+    private static Map<String, JsonObject> sets() {
+        data("names/units.json"); // resets the caches when the resource manager changed
+        if (setsCache == null) {
+            var all = new HashMap<String, JsonObject>();
+            var manager = Minecraft.getInstance().getResourceManager();
+            manager.listResources("diaithir_names", f -> f.getPath().endsWith(".json")).forEach((loc, res) -> {
+                try (var in = new InputStreamReader(res.open(), StandardCharsets.UTF_8)) {
+                    JsonParser.parseReader(in).getAsJsonObject().entrySet().forEach(e -> {
+                        if (e.getValue().isJsonObject()) {
+                            all.put(e.getKey(), e.getValue().getAsJsonObject());
+                        }
+                    });
+                } catch (Exception e) {
+                    System.err.println("[diaithirtooltips] skipped name set " + loc + ": " + e);
+                }
+            });
+            setsCache = all;
+        }
+        return setsCache;
+    }
+
     /** A JSON resource under assets/diaithirtooltips/, parsed once per resource-manager generation; an empty object if absent. */
     private static JsonObject data(String path) {
         var manager = Minecraft.getInstance().getResourceManager();
         if (manager != cacheOwner) {
             CACHE.clear();
             adjCache = null;
+            setsCache = null;
             cacheOwner = manager;
         }
         return CACHE.computeIfAbsent(path, s -> {
