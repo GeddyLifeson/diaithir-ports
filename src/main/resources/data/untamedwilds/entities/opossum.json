@@ -1,28 +1,26 @@
 {
-  "name":"opossum",
-  "breeding":"AUTUMN",
-  "growing_time":3,
-  "offspring":6,
-  "activityType":"nocturnal",
-  "favourite_food":"minecraft:chicken",
-  "sounds":{
-    "ambient":"untamedwilds:entity.opossum.ambient",
-    "hurt":"untamedwilds:entity.opossum.hurt",
-    "death":"untamedwilds:entity.opossum.death"
+  "name": "opossum",
+  "breeding": "AUTUMN",
+  "growing_time": 3,
+  "offspring": 6,
+  "activityType": "nocturnal",
+  "favourite_food": "minecraft:chicken",
+  "sounds": {
+    "ambient": "untamedwilds:entity.opossum.ambient",
+    "hurt": "untamedwilds:entity.opossum.hurt",
+    "death": "untamedwilds:entity.opossum.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"virginia",
-      "variant":0,
-      "scale":0.8,
-      "rarity":1,
-      "growing_time":3,
-      "offspring":6,
-      "skins":10,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "virginia",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 1,
+      "growing_time": 3,
+      "offspring": 6,
+      "skins": 10,
+      "flags": {},
+      "spawnBiomes": [
         [
           "category|forest"
         ]
@@ -41,6 +39,57 @@
       "spawnBiomes": [
         [
           "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "opossum_water",
+      "variant": 2,
+      "scale": 0.62,
+      "rarity": 1,
+      "growing_time": 3,
+      "offspring": 6,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:chicken",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "opossum_woolly",
+      "variant": 3,
+      "scale": 0.49,
+      "rarity": 1,
+      "growing_time": 3,
+      "offspring": 6,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:chicken",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "opossum_monito",
+      "variant": 4,
+      "scale": 0.22,
+      "rarity": 1,
+      "growing_time": 3,
+      "offspring": 6,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:chicken",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
         ]
       ]
     }

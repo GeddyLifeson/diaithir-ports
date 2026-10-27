@@ -1,19 +1,17 @@
 {
-  "name":"giant_clam",
-  "breeding":"LATE_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "giant_clam",
+  "breeding": "LATE_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
+  "species": [
     {
-      "name":"derasa",
-      "variant":0,
-      "scale":1,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "derasa",
+      "variant": 0,
+      "scale": 1,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -29,11 +27,11 @@
       ]
     },
     {
-      "name":"gigas",
-      "variant":1,
-      "scale":1.2,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "gigas",
+      "variant": 1,
+      "scale": 1.2,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -49,11 +47,11 @@
       ]
     },
     {
-      "name":"maxima",
-      "variant":2,
-      "scale":0.7,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "maxima",
+      "variant": 2,
+      "scale": 0.7,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -69,11 +67,11 @@
       ]
     },
     {
-      "name":"squamosa",
-      "variant":3,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "squamosa",
+      "variant": 3,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -85,6 +83,21 @@
         ],
         [
           "resource|terraforged:warm_beach"
+        ]
+      ]
+    },
+    {
+      "name": "hippopus_clam",
+      "variant": 4,
+      "scale": 0.6,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
         ]
       ]
     }

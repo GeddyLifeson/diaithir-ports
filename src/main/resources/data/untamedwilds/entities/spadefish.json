@@ -1,22 +1,20 @@
 {
-  "name":"spadefish",
-  "breeding":"MID_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"minecraft:sea_grass",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "spadefish",
+  "breeding": "MID_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "minecraft:sea_grass",
+  "sounds": {},
+  "species": [
     {
-      "name":"atlantic",
-      "variant":0,
-      "scale":0.9,
-      "rarity":2,
-      "flags":{
+      "name": "atlantic",
+      "variant": 0,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {
         "groupCount": 4
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "resource|minecraft:mangrove_swamp"
         ],
@@ -30,44 +28,90 @@
       ]
     },
     {
-      "name":"dusky",
-      "variant":1,
-      "scale":1,
-      "rarity":2,
-      "flags":{
+      "name": "dusky",
+      "variant": 1,
+      "scale": 1,
+      "rarity": 2,
+      "flags": {
         "groupCount": 4
       },
-      "spawnBiomes":[
-        [ "resource|minecraft:warm_ocean" ],
-        [ "resource|minecraft:lukewarm_ocean" ]
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
       ]
     },
     {
-      "name":"orbicular",
-      "variant":2,
-      "scale":1.2,
-      "rarity":1,
-      "flags":{
+      "name": "orbicular",
+      "variant": 2,
+      "scale": 1.2,
+      "rarity": 1,
+      "flags": {
         "groupCount": 4
       },
-      "spawnBiomes":[
-        [ "resource|minecraft:mangrove_swamp" ],
-        [ "resource|minecraft:warm_ocean" ],
-        [ "resource|minecraft:lukewarm_ocean" ]
+      "spawnBiomes": [
+        [
+          "resource|minecraft:mangrove_swamp"
+        ],
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
       ]
     },
     {
-      "name":"teira",
-      "variant":3,
-      "scale":1.3,
-      "rarity":2,
-      "flags":{
+      "name": "teira",
+      "variant": 3,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {
         "groupCount": 4
       },
-      "spawnBiomes":[
-        [ "resource|minecraft:ocean" ],
-        [ "resource|minecraft:warm_ocean" ],
-        [ "resource|minecraft:lukewarm_ocean" ]
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "pacific_spadefish",
+      "variant": 4,
+      "scale": 0.8,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "sheepshead",
+      "variant": 5,
+      "scale": 0.6,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
       ]
     }
   ]

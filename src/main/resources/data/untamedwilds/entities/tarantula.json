@@ -1,21 +1,21 @@
 {
-  "name":"tarantula",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"minecraft:chicken",
-  "sounds":{
-    "ambient":"untamedwilds:entity.tarantula.ambient",
-    "hurt":"entity.spider.hurt",
-    "death":"entity.spider.death"
+  "name": "tarantula",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "minecraft:chicken",
+  "sounds": {
+    "ambient": "untamedwilds:entity.tarantula.ambient",
+    "hurt": "entity.spider.hurt",
+    "death": "entity.spider.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"black",
-      "variant":0,
-      "scale":0.8,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "black",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ],
@@ -25,79 +25,181 @@
       ]
     },
     {
-      "name":"black_and_white",
-      "variant":1,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "black_and_white",
+      "variant": 1,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ]
       ]
     },
     {
-      "name":"cobalt",
-      "variant":2,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "cobalt",
+      "variant": 2,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"king",
-      "variant":3,
-      "scale":1,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "king",
+      "variant": 3,
+      "scale": 1,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"red_knee",
-      "variant":4,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "red_knee",
+      "variant": 4,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ]
       ]
     },
     {
-      "name":"regalis",
-      "variant":5,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "regalis",
+      "variant": 5,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"rose",
-      "variant":6,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "rose",
+      "variant": 6,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ]
       ]
     },
     {
-      "name":"tiger",
-      "variant":7,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "tiger",
+      "variant": 7,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "goliath_birdeater",
+      "variant": 8,
+      "scale": 1.6,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "pinkfoot_goliath",
+      "variant": 9,
+      "scale": 1.5,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "giant_huntsman",
+      "variant": 10,
+      "scale": 1.4,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_underground"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "desert_blonde",
+      "variant": 11,
+      "scale": 0.9,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "texas_brown",
+      "variant": 12,
+      "scale": 0.8,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "trapdoor_spider",
+      "variant": 13,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "sydney_funnel_web",
+      "variant": 14,
+      "scale": 0.6,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mouse_spider",
+      "variant": 15,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
         ]
       ]
     }

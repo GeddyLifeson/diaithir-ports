@@ -77,6 +77,57 @@
           "tag|is_savanna"
         ]
       ]
+    },
+    {
+      "name": "glyptodont_panochthus",
+      "variant": 3,
+      "scale": 1.0,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 6,
+      "health": 61,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "glyptodont_neosclerocalyptus",
+      "variant": 4,
+      "scale": 0.79,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 7,
+      "health": 51,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "pampathere_pampatherium",
+      "variant": 5,
+      "scale": 0.58,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 4,
+      "health": 27,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
     }
   ]
 }

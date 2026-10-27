@@ -83,6 +83,249 @@
           "tag|is_plains"
         ]
       ]
+    },
+    {
+      "name": "yukon_horse",
+      "variant": 3,
+      "scale": 0.6,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 24,
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "hippidion",
+      "variant": 4,
+      "scale": 0.66,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 26,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "onager",
+      "variant": 5,
+      "scale": 0.56,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "syrian_wild_ass",
+      "variant": 6,
+      "scale": 0.52,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 4,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "kiang",
+      "variant": 7,
+      "scale": 0.63,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 5,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "african_wild_ass",
+      "variant": 8,
+      "scale": 0.56,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "atlas_wild_ass",
+      "variant": 9,
+      "scale": 0.55,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "hydruntine",
+      "variant": 10,
+      "scale": 0.52,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 4,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "plains_zebra",
+      "variant": 11,
+      "scale": 0.6,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 24,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "quagga",
+      "variant": 12,
+      "scale": 0.58,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 23,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "grevys_zebra",
+      "variant": 13,
+      "scale": 0.66,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 26,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "mountain_zebra",
+      "variant": 14,
+      "scale": 0.57,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 23,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
     }
   ]
 }

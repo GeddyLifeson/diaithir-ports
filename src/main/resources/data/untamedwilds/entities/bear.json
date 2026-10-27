@@ -1,37 +1,35 @@
 {
-  "name":"bear",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":8,
-  "offspring":2,
-  "sounds":{
-    "ambient":"untamedwilds:entity.bear.ambient",
-    "hurt":"untamedwilds:entity.bear.hurt",
-    "death":"untamedwilds:entity.bear.death",
-    "threat":"untamedwilds:entity.bear.warning"
+  "name": "bear",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 8,
+  "offspring": 2,
+  "sounds": {
+    "ambient": "untamedwilds:entity.bear.ambient",
+    "hurt": "untamedwilds:entity.bear.hurt",
+    "death": "untamedwilds:entity.bear.death",
+    "threat": "untamedwilds:entity.bear.warning"
   },
-  "flags":{
-    "hasHump":0,
-    "hasShortSnout":0,
-    "isPanda":0
+  "flags": {
+    "hasHump": 0,
+    "hasShortSnout": 0,
+    "isPanda": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"black",
-      "variant":0,
-      "scale":0.8,
-      "rarity":5,
-      "breeding":"EARLY_SUMMER",
-      "growing_time":8,
-      "offspring":2,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:sweet_berries",
-      "attack":5,
-      "health":30,
-      "skins":41,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "black",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 5,
+      "breeding": "EARLY_SUMMER",
+      "growing_time": 8,
+      "offspring": 2,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:sweet_berries",
+      "attack": 5,
+      "health": 30,
+      "skins": 41,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -41,43 +39,43 @@
       ]
     },
     {
-      "name":"blind",
-      "variant":1,
-      "scale":1.1,
-      "rarity":1,
-      "breeding":"MID_SUMMER",
-      "growing_time":8,
-      "offspring":1,
-      "activityType":"cathemeral",
-      "favourite_food":"minecraft:beef",
-      "attack":7,
-      "health":45,
-      "flags":{
-        "hasShortSnout":1
+      "name": "blind",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 1,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:beef",
+      "attack": 7,
+      "health": 45,
+      "flags": {
+        "hasShortSnout": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_underground"
         ]
       ]
     },
     {
-      "name":"brown",
-      "variant":2,
-      "scale":1.1,
-      "rarity":3,
-      "breeding":"MID_SUMMER",
-      "growing_time":8,
-      "offspring":1,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:salmon",
-      "attack":7,
-      "health":40,
-      "skins":40,
-      "flags":{
-        "hasHump":1
+      "name": "brown",
+      "variant": 2,
+      "scale": 1.1,
+      "rarity": 3,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:salmon",
+      "attack": 7,
+      "health": 40,
+      "skins": 40,
+      "flags": {
+        "hasHump": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ],
@@ -87,21 +85,21 @@
       ]
     },
     {
-      "name":"cave",
-      "variant":3,
-      "scale":1.3,
-      "rarity":1,
-      "breeding":"MID_SUMMER",
-      "growing_time":10,
-      "offspring":1,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:potato",
-      "attack":9,
-      "health":50,
-      "flags":{
-        "hasHump":1
+      "name": "cave",
+      "variant": 3,
+      "scale": 1.3,
+      "rarity": 1,
+      "breeding": "MID_SUMMER",
+      "growing_time": 10,
+      "offspring": 1,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:potato",
+      "attack": 9,
+      "health": 50,
+      "flags": {
+        "hasHump": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ],
@@ -111,22 +109,22 @@
       ]
     },
     {
-      "name":"panda",
-      "variant":4,
-      "scale":0.7,
-      "rarity":0,
-      "breeding":"MID_SPRING",
-      "growing_time":6,
-      "offspring":1,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:bamboo",
-      "attack":4,
-      "health":25,
-      "flags":{
-        "hasShortSnout":1,
-        "isPanda":1
+      "name": "panda",
+      "variant": 4,
+      "scale": 0.7,
+      "rarity": 0,
+      "breeding": "MID_SPRING",
+      "growing_time": 6,
+      "offspring": 1,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:bamboo",
+      "attack": 4,
+      "health": 25,
+      "flags": {
+        "hasShortSnout": 1,
+        "isPanda": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "resource|minecraft:bamboo_jungle"
         ],
@@ -136,21 +134,19 @@
       ]
     },
     {
-      "name":"polar",
-      "variant":5,
-      "scale":1.3,
-      "rarity":1,
-      "breeding":"LATE_SPRING",
-      "growing_time":10,
-      "offspring":1,
-      "activityType":"diurnal",
-      "favourite_food":"untamedwilds:material_blubber",
-      "attack":8,
-      "health":45,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "polar",
+      "variant": 5,
+      "scale": 1.3,
+      "rarity": 1,
+      "breeding": "LATE_SPRING",
+      "growing_time": 10,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "untamedwilds:material_blubber",
+      "attack": 8,
+      "health": 45,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_icy"
         ],
@@ -163,42 +159,42 @@
       ]
     },
     {
-      "name":"spectacled",
-      "variant":6,
-      "scale":0.8,
-      "rarity":1,
-      "breeding":"LATE_WET",
-      "growing_time":7,
-      "offspring":1,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:apple",
-      "attack":5,
-      "health":30,
-      "flags":{
-        "hasShortSnout":1
+      "name": "spectacled",
+      "variant": 6,
+      "scale": 0.8,
+      "rarity": 1,
+      "breeding": "LATE_WET",
+      "growing_time": 7,
+      "offspring": 1,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:apple",
+      "attack": 5,
+      "health": 30,
+      "flags": {
+        "hasShortSnout": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_mountain"
         ]
       ]
     },
     {
-      "name":"sun",
-      "variant":7,
-      "scale":0.6,
-      "rarity":1,
-      "breeding":"MID_WET",
-      "growing_time":4,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:honeycomb",
-      "attack":4,
-      "health":15,
-      "flags":{
-        "groupCount":3
+      "name": "sun",
+      "variant": 7,
+      "scale": 0.6,
+      "rarity": 1,
+      "breeding": "MID_WET",
+      "growing_time": 4,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:honeycomb",
+      "attack": 4,
+      "health": 15,
+      "flags": {
+        "groupCount": 3
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
@@ -249,6 +245,152 @@
         ],
         [
           "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_bear",
+      "variant": 10,
+      "scale": 0.6,
+      "rarity": 4,
+      "breeding": "EARLY_SUMMER",
+      "growing_time": 8,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:sweet_berries",
+      "flags": {},
+      "attack": 4,
+      "health": 24,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "asiatic_black_bear",
+      "variant": 11,
+      "scale": 0.8,
+      "rarity": 4,
+      "breeding": "EARLY_SUMMER",
+      "growing_time": 8,
+      "offspring": 2,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:sweet_berries",
+      "flags": {},
+      "attack": 5,
+      "health": 30,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "atlas_bear",
+      "variant": 12,
+      "scale": 1.0,
+      "rarity": 3,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:salmon",
+      "flags": {
+        "hasHump": 1
+      },
+      "attack": 6,
+      "health": 37,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mexican_grizzly",
+      "variant": 13,
+      "scale": 1.0,
+      "rarity": 3,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:salmon",
+      "flags": {
+        "hasHump": 1
+      },
+      "attack": 6,
+      "health": 37,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "california_grizzly",
+      "variant": 14,
+      "scale": 1.1,
+      "rarity": 3,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:salmon",
+      "flags": {
+        "hasHump": 1
+      },
+      "attack": 7,
+      "health": 40,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "gobi_bear",
+      "variant": 15,
+      "scale": 0.8,
+      "rarity": 3,
+      "breeding": "MID_SUMMER",
+      "growing_time": 8,
+      "offspring": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:salmon",
+      "flags": {
+        "hasHump": 1
+      },
+      "attack": 5,
+      "health": 31,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
         ]
       ]
     }

@@ -1,19 +1,17 @@
 {
-  "name":"sunfish",
-  "breeding":"EARLY_AUTUMN",
-  "growing_time":6,
-  "offspring":5,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "sunfish",
+  "breeding": "EARLY_AUTUMN",
+  "growing_time": 6,
+  "offspring": 5,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
+  "species": [
     {
-      "name":"sunfish",
-      "variant":0,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "sunfish",
+      "variant": 0,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_lukewarm_ocean"
         ],
@@ -26,11 +24,11 @@
       ]
     },
     {
-      "name":"southern",
-      "variant":1,
-      "scale":1.1,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "southern",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_lukewarm_ocean"
         ],
@@ -39,6 +37,57 @@
         ],
         [
           "resource|minecraft:deep_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "hoodwinker_sunfish",
+      "variant": 2,
+      "scale": 1.0,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "sharptail_mola",
+      "variant": 3,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "slender_sunfish",
+      "variant": 4,
+      "scale": 0.6,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
         ]
       ]
     }

@@ -1,24 +1,24 @@
 {
-  "name":"newt",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":3,
-  "offspring":5,
-  "favourite_food":"untamedwilds:food_turtle_raw",
-  "sounds":{
-    "hurt":"entity.turtle.hurt",
-    "death":"entity.turtle.death"
+  "name": "newt",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 3,
+  "offspring": 5,
+  "favourite_food": "untamedwilds:food_turtle_raw",
+  "sounds": {
+    "hurt": "entity.turtle.hurt",
+    "death": "entity.turtle.death"
   },
-  "flags":{
-    "isAquatic":0
+  "flags": {
+    "isAquatic": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"coastal",
-      "variant":0,
-      "scale":1.3,
-      "rarity":5,
-      "skins":30,
-      "spawnBiomes":[
+      "name": "coastal",
+      "variant": 0,
+      "scale": 1.3,
+      "rarity": 5,
+      "skins": 30,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -28,15 +28,15 @@
       ]
     },
     {
-      "name":"crested",
-      "variant":1,
-      "scale":1,
-      "rarity":2,
-      "skins":20,
-      "flags":{
-        "isAquatic":1
+      "name": "crested",
+      "variant": 1,
+      "scale": 1,
+      "rarity": 2,
+      "skins": 20,
+      "flags": {
+        "isAquatic": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_river"
         ],
@@ -46,15 +46,15 @@
       ]
     },
     {
-      "name":"eastern",
-      "variant":2,
-      "scale":1,
-      "rarity":3,
-      "skins":20,
-      "flags":{
-        "isAquatic":1
+      "name": "eastern",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 3,
+      "skins": 20,
+      "flags": {
+        "isAquatic": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -67,12 +67,12 @@
       ]
     },
     {
-      "name":"fire_salamander",
-      "variant":3,
-      "scale":1.2,
-      "rarity":5,
-      "skins":30,
-      "spawnBiomes":[
+      "name": "fire_salamander",
+      "variant": 3,
+      "scale": 1.2,
+      "rarity": 5,
+      "skins": 30,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -85,14 +85,14 @@
       ]
     },
     {
-      "name":"ribbed",
-      "variant":4,
-      "scale":0.9,
-      "rarity":3,
-      "flags":{
-        "isAquatic":1
+      "name": "ribbed",
+      "variant": 4,
+      "scale": 0.9,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -105,17 +105,312 @@
       ]
     },
     {
-      "name":"tiger",
-      "variant":5,
-      "scale":1.2,
-      "rarity":5,
-      "skins":21,
-      "spawnBiomes":[
+      "name": "tiger",
+      "variant": 5,
+      "scale": 1.2,
+      "rarity": 5,
+      "skins": 21,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
         [
           "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "axolotl",
+      "variant": 6,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "spotted_salamander",
+      "variant": 7,
+      "scale": 1.1,
+      "rarity": 4,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "smoky_mountain_salamander",
+      "variant": 8,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "rough_skinned_newt",
+      "variant": 9,
+      "scale": 0.9,
+      "rarity": 4,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "california_newt",
+      "variant": 10,
+      "scale": 0.9,
+      "rarity": 4,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_river"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "alpine_newt",
+      "variant": 11,
+      "scale": 0.6,
+      "rarity": 2,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "smooth_newt",
+      "variant": 12,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "marbled_newt",
+      "variant": 13,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "alpine_salamander",
+      "variant": 14,
+      "scale": 0.8,
+      "rarity": 4,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "siberian_salamander",
+      "variant": 15,
+      "scale": 0.8,
+      "rarity": 4,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "japanese_fire_belly_newt",
+      "variant": 16,
+      "scale": 0.8,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "chinese_fire_belly_newt",
+      "variant": 17,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "crocodile_newt",
+      "variant": 18,
+      "scale": 1.1,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "kaisers_spotted_newt",
+      "variant": 19,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "greater_siren",
+      "variant": 20,
+      "scale": 3.0,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "three_toed_amphiuma",
+      "variant": 21,
+      "scale": 3.0,
+      "rarity": 3,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "mudpuppy",
+      "variant": 22,
+      "scale": 1.8,
+      "rarity": 3,
+      "activityType": "nocturnal",
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "olm",
+      "variant": 23,
+      "scale": 1.5,
+      "rarity": 2,
+      "flags": {
+        "isAquatic": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_underground"
         ]
       ]
     }

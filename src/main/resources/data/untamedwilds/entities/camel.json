@@ -1,61 +1,61 @@
 {
-  "name":"camel",
-  "breeding":"MID_SUMMER",
-  "growing_time":13,
-  "offspring":1,
-  "sounds":{
-    "ambient":"untamedwilds:entity.camel.ambient",
-    "hurt":"untamedwilds:entity.camel.hurt",
-    "death":"untamedwilds:entity.camel.death"
+  "name": "camel",
+  "breeding": "MID_SUMMER",
+  "growing_time": 13,
+  "offspring": 1,
+  "sounds": {
+    "ambient": "untamedwilds:entity.camel.ambient",
+    "hurt": "untamedwilds:entity.camel.hurt",
+    "death": "untamedwilds:entity.camel.death"
   },
-  "flags":{
-    "groupCount":4
+  "flags": {
+    "groupCount": 4
   },
-  "species":[
+  "species": [
     {
-      "name":"bactrian",
-      "variant":0,
-      "scale":1.1,
-      "rarity":6,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:cactus",
-      "flags":{
-        "groupCount":4
+      "name": "bactrian",
+      "variant": 0,
+      "scale": 1.1,
+      "rarity": 6,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:cactus",
+      "flags": {
+        "groupCount": 4
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_wasteland"
         ]
       ]
     },
     {
-      "name":"dromedary",
-      "variant":1,
-      "scale":1.0,
-      "rarity":6,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:cactus",
+      "name": "dromedary",
+      "variant": 1,
+      "scale": 1.0,
+      "rarity": 6,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:cactus",
       "skins": 20,
-      "flags":{
-        "groupCount":4
+      "flags": {
+        "groupCount": 4
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_desert"
         ]
       ]
     },
     {
-      "name":"wild_bactrian",
-      "variant":2,
-      "scale":1.0,
-      "rarity":1,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:cactus",
-      "flags":{
-        "groupCount":4
+      "name": "wild_bactrian",
+      "variant": 2,
+      "scale": 1.0,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:cactus",
+      "flags": {
+        "groupCount": 4
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_desert"
         ]
@@ -77,6 +77,133 @@
         ],
         [
           "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "macrauchenia",
+      "variant": 4,
+      "scale": 1.22,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "hemiauchenia",
+      "variant": 5,
+      "scale": 1.03,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "palaeolama",
+      "variant": 6,
+      "scale": 0.82,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "guanaco",
+      "variant": 7,
+      "scale": 0.58,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "vicuna",
+      "variant": 8,
+      "scale": 0.43,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "llama",
+      "variant": 9,
+      "scale": 0.63,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "alpaca",
+      "variant": 10,
+      "scale": 0.49,
+      "rarity": 1,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
         ]
       ]
     }

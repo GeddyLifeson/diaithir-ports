@@ -1,25 +1,21 @@
 {
-  "name":"baleen_whale",
-  "breeding":"MID_WINTER",
-  "growing_time":12,
-  "offspring":1,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
+  "name": "baleen_whale",
+  "breeding": "MID_WINTER",
+  "growing_time": 12,
+  "offspring": 1,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
   "flags": {
     "hasLongFins": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"blue",
-      "variant":0,
-      "scale":1.8,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "blue",
+      "variant": 0,
+      "scale": 1.8,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_cold_ocean"
         ],
@@ -29,14 +25,12 @@
       ]
     },
     {
-      "name":"fin",
-      "variant":1,
-      "scale":1.6,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "fin",
+      "variant": 1,
+      "scale": 1.6,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_cold_ocean"
         ],
@@ -46,14 +40,12 @@
       ]
     },
     {
-      "name":"gray",
-      "variant":2,
-      "scale":1.3,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "gray",
+      "variant": 2,
+      "scale": 1.3,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:cold_ocean"
         ],
@@ -63,14 +55,14 @@
       ]
     },
     {
-      "name":"humpback",
-      "variant":3,
-      "scale":1.3,
-      "rarity":1,
-      "flags":{
+      "name": "humpback",
+      "variant": 3,
+      "scale": 1.3,
+      "rarity": 1,
+      "flags": {
         "hasLongFins": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_ocean"
         ],
@@ -80,14 +72,12 @@
       ]
     },
     {
-      "name":"minke",
-      "variant":4,
-      "scale":1.0,
-      "rarity":3,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "minke",
+      "variant": 4,
+      "scale": 1.0,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:cold_ocean"
         ],
@@ -112,19 +102,155 @@
       ]
     },
     {
-      "name":"sei",
-      "variant":5,
-      "scale":1.35,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "sei",
+      "variant": 5,
+      "scale": 1.35,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_cold_ocean"
         ],
         [
           "resource|minecraft:deep_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_brydes",
+      "variant": 6,
+      "scale": 0.87,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_rices",
+      "variant": 7,
+      "scale": 1.0,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_right_north_atlantic",
+      "variant": 8,
+      "scale": 1.19,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_right_north_pacific",
+      "variant": 9,
+      "scale": 1.19,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_right_southern",
+      "variant": 10,
+      "scale": 1.19,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "whale_bowhead",
+      "variant": 11,
+      "scale": 1.39,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "whale_pygmy_right",
+      "variant": 12,
+      "scale": 0.46,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
         ]
       ]
     }

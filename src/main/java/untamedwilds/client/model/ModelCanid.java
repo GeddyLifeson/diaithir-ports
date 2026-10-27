@@ -182,6 +182,7 @@ public class ModelCanid extends AdvancedEntityModel<EntityCanid> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("canid", v);
         for (int s : set) {
             if (s == v) return true;
         }

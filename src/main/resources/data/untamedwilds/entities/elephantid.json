@@ -173,6 +173,202 @@
           "tag|is_savanna"
         ]
       ]
+    },
+    {
+      "name": "st_paul_mammoth",
+      "variant": 7,
+      "scale": 0.83,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 11,
+      "health": 83,
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "wrangel_mammoth",
+      "variant": 8,
+      "scale": 0.82,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 11,
+      "health": 82,
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "pygmy_mammoth",
+      "variant": 9,
+      "scale": 0.56,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 7,
+      "health": 57,
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "cuvieronius",
+      "variant": 10,
+      "scale": 0.96,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 12,
+      "health": 88,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "forest_elephant",
+      "variant": 11,
+      "scale": 0.81,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 11,
+      "health": 85,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "atlas_elephant",
+      "variant": 12,
+      "scale": 0.88,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 12,
+      "health": 91,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "syrian_elephant",
+      "variant": 13,
+      "scale": 0.92,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:sugar_cane",
+      "flags": {
+        "groupCount": 5
+      },
+      "attack": 11,
+      "health": 87,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chinese_elephant",
+      "variant": 14,
+      "scale": 0.92,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:sugar_cane",
+      "flags": {
+        "groupCount": 5
+      },
+      "attack": 11,
+      "health": 87,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "cyprus_dwarf_elephant",
+      "variant": 15,
+      "scale": 0.34,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:sugar_cane",
+      "flags": {},
+      "attack": 5,
+      "health": 39,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "tilos_dwarf_elephant",
+      "variant": 16,
+      "scale": 0.39,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:sugar_cane",
+      "flags": {},
+      "attack": 6,
+      "health": 44,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
     }
   ]
 }

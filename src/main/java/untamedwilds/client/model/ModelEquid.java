@@ -220,6 +220,7 @@ public class ModelEquid extends AdvancedEntityModel<EntityEquid> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("equid", v);
         for (int s : set) {
             if (s == v) return true;
         }

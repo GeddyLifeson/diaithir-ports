@@ -1,22 +1,18 @@
 {
-  "name":"triggerfish",
-  "breeding":"MID_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "triggerfish",
+  "breeding": "MID_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
+  "species": [
     {
-      "name":"clown",
-      "variant":0,
-      "scale":1.1,
-      "rarity":2,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "clown",
+      "variant": 0,
+      "scale": 1.1,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -26,14 +22,12 @@
       ]
     },
     {
-      "name":"grey",
-      "variant":1,
-      "scale":1.1,
-      "rarity":2,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "grey",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:ocean"
         ],
@@ -43,14 +37,12 @@
       ]
     },
     {
-      "name":"orangelined",
-      "variant":2,
-      "scale":1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "orangelined",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -60,14 +52,12 @@
       ]
     },
     {
-      "name":"picasso",
-      "variant":3,
-      "scale":1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "picasso",
+      "variant": 3,
+      "scale": 1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -77,14 +67,12 @@
       ]
     },
     {
-      "name":"redtooth",
-      "variant":4,
-      "scale":1.1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "redtooth",
+      "variant": 4,
+      "scale": 1.1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -94,14 +82,12 @@
       ]
     },
     {
-      "name":"reef",
-      "variant":5,
-      "scale":1.1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "reef",
+      "variant": 5,
+      "scale": 1.1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
         ],
@@ -111,16 +97,86 @@
       ]
     },
     {
-      "name":"titan",
-      "variant":6,
-      "scale":1.3,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "titan",
+      "variant": 6,
+      "scale": 1.3,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "queen_triggerfish",
+      "variant": 7,
+      "scale": 1.2,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "yellow_boxfish",
+      "variant": 8,
+      "scale": 0.5,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "pufferfish_giant",
+      "variant": 9,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "porcupinefish",
+      "variant": 10,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "tiger_pufferfish",
+      "variant": 11,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
         ],
         [
           "resource|minecraft:lukewarm_ocean"

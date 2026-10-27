@@ -1,37 +1,37 @@
 {
-  "name":"rhino",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":12,
-  "offspring":1,
-  "activityType":"cathemeral",
-  "favourite_food":"minecraft:melon_slice",
-  "sounds":{
-    "ambient":"minecraft:entity.cow.ambient",
-    "hurt":"minecraft:entity.cow.hurt",
-    "death":"minecraft:entity.cow.death"
+  "name": "rhino",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 12,
+  "offspring": 1,
+  "activityType": "cathemeral",
+  "favourite_food": "minecraft:melon_slice",
+  "sounds": {
+    "ambient": "minecraft:entity.cow.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"black",
-      "variant":0,
-      "scale":0.9,
-      "rarity":5,
-      "attack":8,
-      "health":50,
-      "spawnBiomes":[
+      "name": "black",
+      "variant": 0,
+      "scale": 0.9,
+      "rarity": 5,
+      "attack": 8,
+      "health": 50,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"indian",
-      "variant":1,
-      "scale":1.1,
-      "rarity":4,
-      "attack":8,
-      "health":60,
-      "spawnBiomes":[
+      "name": "indian",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 4,
+      "attack": 8,
+      "health": 60,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ],
@@ -41,57 +41,88 @@
       ]
     },
     {
-      "name":"javan",
-      "variant":2,
-      "scale":0.8,
-      "rarity":1,
-      "attack":6,
-      "health":45,
-      "spawnBiomes":[
+      "name": "javan",
+      "variant": 2,
+      "scale": 0.8,
+      "rarity": 1,
+      "attack": 6,
+      "health": 45,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"sumatran",
-      "variant":3,
-      "scale":0.8,
-      "rarity":1,
-      "attack":5,
-      "health":40,
-      "spawnBiomes":[
+      "name": "sumatran",
+      "variant": 3,
+      "scale": 0.8,
+      "rarity": 1,
+      "attack": 5,
+      "health": 40,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"white",
-      "variant":4,
-      "scale":1,
-      "rarity":2,
-      "attack":10,
-      "health":60,
-      "spawnBiomes":[
+      "name": "white",
+      "variant": 4,
+      "scale": 1,
+      "rarity": 2,
+      "attack": 10,
+      "health": 60,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"wooly",
-      "variant":5,
-      "scale":1.2,
-      "rarity":1,
-      "attack":10,
-      "health":60,
-      "spawnBiomes":[
+      "name": "wooly",
+      "variant": 5,
+      "scale": 1.2,
+      "rarity": 1,
+      "attack": 10,
+      "health": 60,
+      "spawnBiomes": [
         [
           "tag|is_icy"
         ],
         [
           "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "western_black_rhino",
+      "variant": 6,
+      "scale": 0.76,
+      "rarity": 4,
+      "flags": {},
+      "attack": 7,
+      "health": 44,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "toxodon",
+      "variant": 7,
+      "scale": 0.78,
+      "rarity": 4,
+      "flags": {},
+      "attack": 7,
+      "health": 45,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_swamp"
         ]
       ]
     }

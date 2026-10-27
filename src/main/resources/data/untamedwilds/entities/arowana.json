@@ -1,31 +1,29 @@
 {
-  "name":"arowana",
-  "breeding":"MID_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "arowana",
+  "breeding": "MID_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
+  "species": [
     {
-      "name":"black",
-      "variant":0,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "black",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"green",
-      "variant":1,
-      "scale":1.1,
-      "rarity":2,
-      "skins":12,
-      "spawnBiomes":[
+      "name": "green",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 2,
+      "skins": 12,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -35,24 +33,36 @@
       ]
     },
     {
-      "name":"jardini",
-      "variant":2,
-      "scale":1,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "jardini",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ]
       ]
     },
     {
-      "name":"silver",
-      "variant":3,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "silver",
+      "variant": 3,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "spotted_saratoga",
+      "variant": 4,
+      "scale": 1.1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
         ]
       ]
     }

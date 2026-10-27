@@ -1,40 +1,40 @@
 {
-  "name":"monitor",
-  "breeding":"LATE_SPRING",
-  "growing_time":7,
-  "offspring":5,
-  "attack":3,
-  "health":10,
-  "favourite_food":"untamedwilds:food_turtle_raw",
-  "sounds":{
-    "ambient":"entity.turtle.ambient_land",
-    "hurt":"entity.turtle.hurt",
-    "death":"entity.turtle.death"
+  "name": "monitor",
+  "breeding": "LATE_SPRING",
+  "growing_time": 7,
+  "offspring": 5,
+  "attack": 3,
+  "health": 10,
+  "favourite_food": "untamedwilds:food_turtle_raw",
+  "sounds": {
+    "ambient": "entity.turtle.ambient_land",
+    "hurt": "entity.turtle.hurt",
+    "death": "entity.turtle.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"bengal",
-      "variant":0,
-      "scale":1.2,
-      "rarity":3,
-      "attack":3,
-      "health":14,
-      "skins":21,
-      "spawnBiomes":[
+      "name": "bengal",
+      "variant": 0,
+      "scale": 1.2,
+      "rarity": 3,
+      "attack": 3,
+      "health": 14,
+      "skins": 21,
+      "spawnBiomes": [
         [
           "category|swamp"
         ]
       ]
     },
     {
-      "name":"desert",
-      "variant":1,
-      "scale":0.9,
-      "rarity":3,
-      "attack":3,
-      "health":14,
-      "skins":30,
-      "spawnBiomes":[
+      "name": "desert",
+      "variant": 1,
+      "scale": 0.9,
+      "rarity": 3,
+      "attack": 3,
+      "health": 14,
+      "skins": 30,
+      "spawnBiomes": [
         [
           "category|desert"
         ],
@@ -44,27 +44,27 @@
       ]
     },
     {
-      "name":"nile",
-      "variant":2,
-      "scale":1.0,
-      "rarity":3,
-      "attack":3,
-      "health":14,
-      "spawnBiomes":[
+      "name": "nile",
+      "variant": 2,
+      "scale": 1.0,
+      "rarity": 3,
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
         [
           "category|savanna"
         ]
       ]
     },
     {
-      "name":"rock",
-      "variant":3,
-      "scale":1.0,
-      "rarity":3,
-      "attack":4,
-      "health":16,
-      "skins":20,
-      "spawnBiomes":[
+      "name": "rock",
+      "variant": 3,
+      "scale": 1.0,
+      "rarity": 3,
+      "attack": 4,
+      "health": 16,
+      "skins": 20,
+      "spawnBiomes": [
         [
           "category|savanna"
         ],
@@ -74,19 +74,190 @@
       ]
     },
     {
-      "name":"water",
-      "variant":4,
-      "scale":1.2,
-      "rarity":3,
-      "attack":4,
-      "health":18,
-      "skins":41,
-      "spawnBiomes":[
+      "name": "water",
+      "variant": 4,
+      "scale": 1.2,
+      "rarity": 3,
+      "attack": 4,
+      "health": 18,
+      "skins": 41,
+      "spawnBiomes": [
         [
           "category|swamp"
         ],
         [
           "category|jungle"
+        ]
+      ]
+    },
+    {
+      "name": "komodo_dragon",
+      "variant": 5,
+      "scale": 4.0,
+      "rarity": 3,
+      "flags": {},
+      "attack": 8,
+      "health": 32,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "perentie",
+      "variant": 6,
+      "scale": 2.5,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "flags": {},
+      "attack": 7,
+      "health": 32,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "lace_monitor",
+      "variant": 7,
+      "scale": 2.0,
+      "rarity": 3,
+      "flags": {},
+      "attack": 5,
+      "health": 24,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "crocodile_monitor",
+      "variant": 8,
+      "scale": 2.2,
+      "rarity": 3,
+      "flags": {},
+      "attack": 6,
+      "health": 29,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mangrove_monitor",
+      "variant": 9,
+      "scale": 0.9,
+      "rarity": 3,
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "savannah_monitor",
+      "variant": 10,
+      "scale": 0.8,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "flags": {},
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "sail_fin_monitor_gould",
+      "variant": 11,
+      "scale": 0.9,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "kimberley_rock_monitor",
+      "variant": 12,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {},
+      "attack": 3,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "spiny_tailed_monitor",
+      "variant": 13,
+      "scale": 0.3,
+      "rarity": 3,
+      "flags": {},
+      "attack": 1,
+      "health": 6,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
         ]
       ]
     }

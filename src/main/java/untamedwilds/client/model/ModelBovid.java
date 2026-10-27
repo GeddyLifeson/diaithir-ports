@@ -83,10 +83,11 @@ public class ModelBovid extends AdvancedEntityModel<EntityBovid> {
     private final AdvancedModelBox hump;
     private final AdvancedModelBox ear_sg_left;
     private final AdvancedModelBox ear_sg_right;
-    private static final int[] SET_0 = {0, 1, 3, 4, 5};
+    private static final int[] SET_0 = {0, 1, 3, 4, 5, 100};
     private static final int[] SET_1 = {0};
     private static final int[] SET_2 = {1};
-    private static final int[] SET_3 = {2};
+    private static final int[] SET_3 = {2, 100};
+    private static final int[] SET_NOSE = {2};
     private static final int[] SET_4 = {3};
     private static final int[] SET_5 = {3, 5};
     private static final int[] SET_6 = {4};
@@ -561,6 +562,7 @@ public class ModelBovid extends AdvancedEntityModel<EntityBovid> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("bovid", v);
         for (int s : set) {
             if (s == v) return true;
         }
@@ -588,7 +590,7 @@ public class ModelBovid extends AdvancedEntityModel<EntityBovid> {
         this.md_1_right.showModel = in(SET_2, mob.getVariant());
         this.sg_left.showModel = in(SET_3, mob.getVariant()) && mob.isMale();
         this.sg_right.showModel = in(SET_3, mob.getVariant()) && mob.isMale();
-        this.sg_nose.showModel = in(SET_3, mob.getVariant());
+        this.sg_nose.showModel = in(SET_NOSE, mob.getVariant());
         this.ib_0_left.showModel = in(SET_4, mob.getVariant()) && mob.isMale();
         this.ib_0_right.showModel = in(SET_4, mob.getVariant()) && mob.isMale();
         this.ib_1_left.showModel = in(SET_4, mob.getVariant()) && mob.isMale();

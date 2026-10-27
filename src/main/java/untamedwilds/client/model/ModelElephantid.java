@@ -280,6 +280,7 @@ public class ModelElephantid extends AdvancedEntityModel<EntityElephantid> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("elephantid", v);
         for (int s : set) {
             if (s == v) return true;
         }

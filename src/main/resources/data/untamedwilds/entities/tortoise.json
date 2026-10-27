@@ -1,21 +1,21 @@
 {
-  "name":"tortoise",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":6,
-  "offspring":5,
-  "favourite_food":"minecraft:apple",
-  "sounds":{
-    "ambient":"entity.turtle.ambient_land",
-    "hurt":"entity.turtle.hurt",
-    "death":"entity.turtle.death"
+  "name": "tortoise",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 6,
+  "offspring": 5,
+  "favourite_food": "minecraft:apple",
+  "sounds": {
+    "ambient": "entity.turtle.ambient_land",
+    "hurt": "entity.turtle.hurt",
+    "death": "entity.turtle.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"asian_box",
-      "variant":0,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "asian_box",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -25,22 +25,22 @@
       ]
     },
     {
-      "name":"gopher",
-      "variant":1,
-      "scale":1,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "gopher",
+      "variant": 1,
+      "scale": 1,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ]
       ]
     },
     {
-      "name":"leopard",
-      "variant":2,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "leopard",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ],
@@ -53,11 +53,11 @@
       ]
     },
     {
-      "name":"marginated",
-      "variant":3,
-      "scale":0.9,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "marginated",
+      "variant": 3,
+      "scale": 0.9,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -67,11 +67,11 @@
       ]
     },
     {
-      "name":"star",
-      "variant":4,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "star",
+      "variant": 4,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_plains"
         ],
@@ -81,13 +81,894 @@
       ]
     },
     {
-      "name":"sulcata",
-      "variant":5,
-      "scale":1.2,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "sulcata",
+      "variant": 5,
+      "scale": 1.2,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "asian_box_tortoise",
+      "variant": 6,
+      "scale": 1.2,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "hermanns_tortoise",
+      "variant": 7,
+      "scale": 0.5,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "spur_thighed_tortoise",
+      "variant": 8,
+      "scale": 0.6,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "russian_tortoise",
+      "variant": 9,
+      "scale": 0.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_underground"
+        ]
+      ]
+    },
+    {
+      "name": "egyptian_tortoise",
+      "variant": 10,
+      "scale": 0.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "desert_tortoise",
+      "variant": 11,
+      "scale": 0.8,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "texas_tortoise",
+      "variant": 12,
+      "scale": 0.4,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bolson_tortoise",
+      "variant": 13,
+      "scale": 1.0,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "red_footed_tortoise",
+      "variant": 14,
+      "scale": 0.7,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "yellow_footed_tortoise",
+      "variant": 15,
+      "scale": 1.0,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chaco_tortoise",
+      "variant": 16,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "elongated_tortoise",
+      "variant": 17,
+      "scale": 0.7,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "travancore_tortoise",
+      "variant": 18,
+      "scale": 0.6,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "impressed_tortoise",
+      "variant": 19,
+      "scale": 0.7,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "pancake_tortoise",
+      "variant": 20,
+      "scale": 0.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "speke_hingeback",
+      "variant": 21,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "geometric_tortoise",
+      "variant": 22,
+      "scale": 0.3,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "angulate_tortoise",
+      "variant": 23,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "radiated_tortoise",
+      "variant": 24,
+      "scale": 1.0,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "ploughshare_tortoise",
+      "variant": 25,
+      "scale": 0.9,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "madagascan_spider_tortoise",
+      "variant": 26,
+      "scale": 0.35,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "flat_tailed_tortoise",
+      "variant": 27,
+      "scale": 0.35,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "aldabra_tortoise",
+      "variant": 28,
+      "scale": 3.5,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "seychelles_giant_tortoise_arnoldi",
+      "variant": 29,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "seychelles_giant_tortoise_hololissa",
+      "variant": 30,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "seychelles_giant_tortoise_sumeirei",
+      "variant": 31,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "madagascar_giant_tortoise",
+      "variant": 32,
+      "scale": 3.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "madagascar_giant_tortoise_abrupta",
+      "variant": 33,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cylindraspis_indica",
+      "variant": 34,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "cylindraspis_triserrata",
+      "variant": 35,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cylindraspis_inepta",
+      "variant": 36,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cylindraspis_vosmaeri",
+      "variant": 37,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cylindraspis_peltastes",
+      "variant": 38,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_floreana",
+      "variant": 39,
+      "scale": 3.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_pinta",
+      "variant": 40,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_fernandina",
+      "variant": 41,
+      "scale": 2.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_santa_cruz",
+      "variant": 42,
+      "scale": 3.8,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_espanola",
+      "variant": 43,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_wolf",
+      "variant": 44,
+      "scale": 3.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_alcedo",
+      "variant": 45,
+      "scale": 3.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_sierra_negra",
+      "variant": 46,
+      "scale": 3.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_san_cristobal",
+      "variant": 47,
+      "scale": 3.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_santiago",
+      "variant": 48,
+      "scale": 3.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_pinzon",
+      "variant": 49,
+      "scale": 2.6,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "galapagos_tortoise_santa_fe",
+      "variant": 50,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "bahamas_giant_tortoise",
+      "variant": 51,
+      "scale": 1.8,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cuban_giant_tortoise",
+      "variant": 52,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "meiolania_damelipi",
+      "variant": 53,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "painted_turtle",
+      "variant": 54,
+      "scale": 0.35,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "red_eared_slider",
+      "variant": 55,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "european_pond_turtle",
+      "variant": 56,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "box_turtle_eastern",
+      "variant": 57,
+      "scale": 0.4,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "box_turtle_ornate",
+      "variant": 58,
+      "scale": 0.35,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "wood_turtle",
+      "variant": 59,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "bog_turtle",
+      "variant": 60,
+      "scale": 0.25,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "diamondback_terrapin",
+      "variant": 61,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "musk_turtle",
+      "variant": 62,
+      "scale": 0.25,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "big_headed_turtle",
+      "variant": 63,
+      "scale": 0.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "yellow_pond_turtle",
+      "variant": 64,
+      "scale": 0.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "indian_roofed_turtle",
+      "variant": 65,
+      "scale": 0.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "red_necked_pond_turtle",
+      "variant": 66,
+      "scale": 0.3,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
         ]
       ]
     }

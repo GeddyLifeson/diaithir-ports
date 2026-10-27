@@ -1,36 +1,36 @@
 {
-  "name":"big_cat",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":8,
-  "offspring":2,
-  "sounds":{
-    "ambient":"untamedwilds:entity.big_cat.ambient",
-    "hurt":"untamedwilds:entity.big_cat.hurt",
-    "death":"untamedwilds:entity.big_cat.death",
-    "threat":"untamedwilds:entity.big_cat.warning"
+  "name": "big_cat",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 8,
+  "offspring": 2,
+  "sounds": {
+    "ambient": "untamedwilds:entity.big_cat.ambient",
+    "hurt": "untamedwilds:entity.big_cat.hurt",
+    "death": "untamedwilds:entity.big_cat.death",
+    "threat": "untamedwilds:entity.big_cat.warning"
   },
-  "flags":{
+  "flags": {
     "fluffyTail": 0,
     "dimorphism": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"cave_lion",
-      "variant":0,
-      "scale":1.1,
-      "rarity":1,
-      "breeding":"ALL",
-      "growing_time":6,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:beef",
-      "attack":9,
-      "health":45,
-      "flags":{
-        "dimorphism":1,
-        "groupCount":3
+      "name": "cave_lion",
+      "variant": 0,
+      "scale": 1.1,
+      "rarity": 1,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "attack": 9,
+      "health": 45,
+      "flags": {
+        "dimorphism": 1,
+        "groupCount": 3
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ],
@@ -40,44 +40,40 @@
       ]
     },
     {
-      "name":"jaguar",
-      "variant":1,
-      "scale":0.9,
-      "rarity":5,
-      "breeding":"ALL",
-      "growing_time":5,
-      "offspring":2,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:porkchop",
-      "attack":8,
-      "health":40,
-      "skins":30,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "jaguar",
+      "variant": 1,
+      "scale": 0.9,
+      "rarity": 5,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:porkchop",
+      "attack": 8,
+      "health": 40,
+      "skins": 30,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"leopard",
-      "variant":2,
-      "scale":0.9,
-      "rarity":5,
-      "breeding":"ALL",
-      "growing_time":5,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:porkchop",
-      "attack":7,
-      "health":40,
-      "skins":30,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "leopard",
+      "variant": 2,
+      "scale": 0.9,
+      "rarity": 5,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "attack": 7,
+      "health": 40,
+      "skins": 30,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ],
@@ -87,71 +83,67 @@
       ]
     },
     {
-      "name":"lion",
-      "variant":3,
-      "scale":1,
-      "rarity":3,
-      "breeding":"ALL",
-      "growing_time":6,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:beef",
-      "attack":8,
-      "health":40,
+      "name": "lion",
+      "variant": 3,
+      "scale": 1,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "attack": 8,
+      "health": 40,
       "skins": 20,
-      "flags":{
-        "dimorphism":1,
-        "groupCount":4
+      "flags": {
+        "dimorphism": 1,
+        "groupCount": 4
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"marsupial_lion",
-      "variant":4,
-      "scale":0.8,
-      "rarity":1,
-      "breeding":"ALL",
-      "growing_time":6,
-      "offspring":1,
-      "activityType":"nocturnal",
-      "favourite_food":"minecraft:chicken",
-      "attack":6,
-      "health":25,
-      "sounds":{
+      "name": "marsupial_lion",
+      "variant": 4,
+      "scale": 0.8,
+      "rarity": 1,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 1,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:chicken",
+      "attack": 6,
+      "health": 25,
+      "sounds": {
         "ambient": "untamedwilds:entity.big_cat.ambient_meow"
       },
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"puma",
-      "variant":5,
-      "scale":0.8,
-      "rarity":8,
-      "breeding":"ALL",
-      "growing_time":4,
-      "offspring":3,
-      "activityType":"crepuscular",
-      "favourite_food":"minecraft:rabbit",
-      "attack":6,
-      "health":30,
-      "sounds":{
+      "name": "puma",
+      "variant": 5,
+      "scale": 0.8,
+      "rarity": 8,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:rabbit",
+      "attack": 6,
+      "health": 30,
+      "sounds": {
         "ambient": "untamedwilds:entity.big_cat.ambient_meow"
       },
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ],
@@ -164,45 +156,43 @@
       ]
     },
     {
-      "name":"sabertooth",
-      "variant":6,
-      "scale":1,
-      "rarity":1,
-      "breeding":"ALL",
-      "growing_time":6,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:beef",
-      "attack":9,
-      "health":40,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "sabertooth",
+      "variant": 6,
+      "scale": 1,
+      "rarity": 1,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "attack": 9,
+      "health": 40,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ]
       ]
     },
     {
-      "name":"snow_leopard",
-      "variant":7,
-      "scale":0.8,
-      "rarity":5,
-      "breeding":"ALL",
-      "growing_time":5,
-      "offspring":3,
-      "activityType":"nocturnal",
-      "favourite_food":"minecraft:beef",
-      "attack":8,
-      "health":30,
-      "sounds":{
+      "name": "snow_leopard",
+      "variant": 7,
+      "scale": 0.8,
+      "rarity": 5,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:beef",
+      "attack": 8,
+      "health": 30,
+      "sounds": {
         "ambient": "untamedwilds:entity.big_cat.ambient_meow"
       },
-      "flags":{
-        "fluffyTail":1
+      "flags": {
+        "fluffyTail": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_icy"
         ],
@@ -215,21 +205,19 @@
       ]
     },
     {
-      "name":"tiger",
-      "variant":8,
-      "scale":1.1,
-      "rarity":3,
-      "breeding":"ALL",
-      "growing_time":6,
-      "offspring":2,
-      "activityType":"diurnal",
-      "favourite_food":"minecraft:porkchop",
-      "attack":9,
-      "health":40,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "tiger",
+      "variant": 8,
+      "scale": 1.1,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "attack": 9,
+      "health": 40,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ],
@@ -306,6 +294,1188 @@
         ],
         [
           "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "barbary_lion",
+      "variant": 12,
+      "scale": 1.0,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "flags": {},
+      "attack": 8,
+      "health": 40,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "cape_lion",
+      "variant": 13,
+      "scale": 1.0,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "flags": {},
+      "attack": 8,
+      "health": 40,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "asiatic_lion",
+      "variant": 14,
+      "scale": 0.95,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:beef",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 8,
+      "health": 38,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "amur_tiger",
+      "variant": 15,
+      "scale": 1.15,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 9,
+      "health": 41,
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "caspian_tiger",
+      "variant": 16,
+      "scale": 1.05,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 9,
+      "health": 39,
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bali_tiger",
+      "variant": 17,
+      "scale": 0.85,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 7,
+      "health": 33,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "javan_tiger",
+      "variant": 18,
+      "scale": 0.95,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 8,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "sumatran_tiger",
+      "variant": 19,
+      "scale": 0.95,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 8,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "south_china_tiger",
+      "variant": 20,
+      "scale": 1.0,
+      "rarity": 3,
+      "breeding": "ALL",
+      "growing_time": 6,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 8,
+      "health": 37,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "amur_leopard",
+      "variant": 21,
+      "scale": 0.85,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 7,
+      "health": 38,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "persian_leopard",
+      "variant": 22,
+      "scale": 0.9,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 7,
+      "health": 40,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "javan_leopard",
+      "variant": 23,
+      "scale": 0.8,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 6,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "arabian_leopard",
+      "variant": 24,
+      "scale": 0.7,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 6,
+      "health": 33,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "cheetah",
+      "variant": 25,
+      "scale": 0.65,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 5,
+      "health": 31,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "asiatic_cheetah",
+      "variant": 26,
+      "scale": 0.6,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 5,
+      "health": 29,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "american_cheetah",
+      "variant": 27,
+      "scale": 0.75,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 6,
+      "health": 28,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "clouded_leopard",
+      "variant": 28,
+      "scale": 0.6,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 5,
+      "health": 29,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "sunda_clouded_leopard",
+      "variant": 29,
+      "scale": 0.55,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 5,
+      "health": 27,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "marbled_cat",
+      "variant": 30,
+      "scale": 0.35,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "bay_cat",
+      "variant": 31,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "asian_golden_cat",
+      "variant": 32,
+      "scale": 0.5,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 4,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "african_golden_cat",
+      "variant": 33,
+      "scale": 0.45,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "leopard_cat",
+      "variant": 34,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "fishing_cat",
+      "variant": 35,
+      "scale": 0.4,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "flat_headed_cat",
+      "variant": 36,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "rusty_spotted_cat",
+      "variant": 37,
+      "scale": 0.2,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "jungle_cat",
+      "variant": 38,
+      "scale": 0.4,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "sand_cat",
+      "variant": 39,
+      "scale": 0.25,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "black_footed_cat",
+      "variant": 40,
+      "scale": 0.2,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "pallass_cat",
+      "variant": 41,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "european_wildcat",
+      "variant": 42,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "african_wildcat",
+      "variant": 43,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chinese_mountain_cat",
+      "variant": 44,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "serval",
+      "variant": 45,
+      "scale": 0.4,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "caracal",
+      "variant": 46,
+      "scale": 0.45,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "ocelot",
+      "variant": 47,
+      "scale": 0.4,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "margay",
+      "variant": 48,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "oncilla",
+      "variant": 49,
+      "scale": 0.25,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "geoffroys_cat",
+      "variant": 50,
+      "scale": 0.25,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "kodkod",
+      "variant": 51,
+      "scale": 0.2,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "andean_cat",
+      "variant": 52,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 3,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:beef",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {
+        "fluffyTail": 1
+      },
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "pampas_cat",
+      "variant": 53,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "jaguarundi",
+      "variant": 54,
+      "scale": 0.3,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bobcat",
+      "variant": 55,
+      "scale": 0.4,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 21,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "canada_lynx",
+      "variant": 56,
+      "scale": 0.45,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 4,
+      "offspring": 3,
+      "activityType": "crepuscular",
+      "favourite_food": "minecraft:rabbit",
+      "sounds": {
+        "ambient": "untamedwilds:entity.big_cat.ambient_meow"
+      },
+      "flags": {},
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "eurasian_lynx",
+      "variant": 57,
+      "scale": 0.5,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 25,
+      "spawnBiomes": [
+        [
+          "tag|is_taiga"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "iberian_lynx",
+      "variant": 58,
+      "scale": 0.45,
+      "rarity": 4,
+      "breeding": "ALL",
+      "growing_time": 5,
+      "offspring": 2,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:porkchop",
+      "flags": {},
+      "attack": 4,
+      "health": 23,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
         ]
       ]
     }

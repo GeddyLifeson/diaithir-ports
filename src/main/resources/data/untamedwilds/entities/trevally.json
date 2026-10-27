@@ -1,22 +1,20 @@
 {
-  "name":"trevally",
-  "breeding":"MID_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"untamedwilds:chum",
-  "sounds":{
-
-  },
-  "species":[
+  "name": "trevally",
+  "breeding": "MID_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "untamedwilds:chum",
+  "sounds": {},
+  "species": [
     {
-      "name":"bigeye",
-      "variant":0,
-      "scale":0.8,
-      "rarity":2,
-      "flags":{
-        "groupCount":8
+      "name": "bigeye",
+      "variant": 0,
+      "scale": 0.8,
+      "rarity": 2,
+      "flags": {
+        "groupCount": 8
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_ocean",
           "!resource|minecraft:cold_ocean",
@@ -27,14 +25,14 @@
       ]
     },
     {
-      "name":"bluespotted",
-      "variant":1,
-      "scale":0.8,
-      "rarity":2,
-      "flags":{
-        "groupCount":8
+      "name": "bluespotted",
+      "variant": 1,
+      "scale": 0.8,
+      "rarity": 2,
+      "flags": {
+        "groupCount": 8
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_ocean",
           "!resource|minecraft:cold_ocean",
@@ -45,14 +43,14 @@
       ]
     },
     {
-      "name":"giant",
-      "variant":2,
-      "scale":1.5,
-      "rarity":1,
-      "flags":{
-        "groupCount":1
+      "name": "giant",
+      "variant": 2,
+      "scale": 1.5,
+      "rarity": 1,
+      "flags": {
+        "groupCount": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_ocean",
           "!resource|minecraft:cold_ocean",
@@ -63,14 +61,14 @@
       ]
     },
     {
-      "name":"golden",
-      "variant":3,
-      "scale":1,
-      "rarity":2,
-      "flags":{
-        "groupCount":6
+      "name": "golden",
+      "variant": 3,
+      "scale": 1,
+      "rarity": 2,
+      "flags": {
+        "groupCount": 6
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_ocean",
           "!resource|minecraft:cold_ocean",
@@ -81,20 +79,149 @@
       ]
     },
     {
-      "name":"jack",
-      "variant":4,
-      "scale":1,
-      "rarity":3,
-      "flags":{
-        "groupCount":8
+      "name": "jack",
+      "variant": 4,
+      "scale": 1,
+      "rarity": 3,
+      "flags": {
+        "groupCount": 8
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_ocean",
           "!resource|minecraft:cold_ocean",
           "!resource|minecraft:frozen_ocean",
           "!resource|minecraft:deep_cold_ocean",
           "!resource|minecraft:deep_frozen_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "yellowtail_amberjack",
+      "variant": 5,
+      "scale": 1.5,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "yellowtail_kingfish",
+      "variant": 6,
+      "scale": 1.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "pilot_fish",
+      "variant": 7,
+      "scale": 0.35,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "rainbow_runner",
+      "variant": 8,
+      "scale": 1.0,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "mahi_mahi",
+      "variant": 9,
+      "scale": 1.7,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "pompano",
+      "variant": 10,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "bluefish",
+      "variant": 11,
+      "scale": 1.2,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
         ]
       ]
     }

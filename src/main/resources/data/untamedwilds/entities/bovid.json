@@ -146,6 +146,1852 @@
           "tag|is_icy"
         ]
       ]
+    },
+    {
+      "name": "wild_yak",
+      "variant": 6,
+      "scale": 0.77,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 8,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "gaur",
+      "variant": 7,
+      "scale": 0.8,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 9,
+      "health": 38,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "banteng",
+      "variant": 8,
+      "scale": 0.72,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 8,
+      "health": 35,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "kouprey",
+      "variant": 9,
+      "scale": 0.75,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 9,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "wild_water_buffalo",
+      "variant": 10,
+      "scale": 0.8,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 9,
+      "health": 38,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "tamaraw",
+      "variant": 11,
+      "scale": 0.55,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 7,
+      "health": 28,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "lowland_anoa",
+      "variant": 12,
+      "scale": 0.51,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 6,
+      "health": 27,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "african_buffalo",
+      "variant": 13,
+      "scale": 0.74,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 8,
+      "health": 36,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "forest_buffalo",
+      "variant": 14,
+      "scale": 0.54,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 7,
+      "health": 28,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "giant_long_horned_buffalo",
+      "variant": 15,
+      "scale": 0.88,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 10,
+      "health": 41,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bootherium",
+      "variant": 16,
+      "scale": 0.63,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 7,
+      "health": 31,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "euceratherium",
+      "variant": 17,
+      "scale": 0.7,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 8,
+      "health": 33,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "mouflon",
+      "variant": 18,
+      "scale": 0.29,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "urial",
+      "variant": 19,
+      "scale": 0.32,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "argali",
+      "variant": 20,
+      "scale": 0.42,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 5,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "badlands_bighorn",
+      "variant": 21,
+      "scale": 0.36,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bharal",
+      "variant": 22,
+      "scale": 0.32,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "barbary_sheep",
+      "variant": 23,
+      "scale": 0.38,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "bezoar_ibex",
+      "variant": 24,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "cretan_wild_goat",
+      "variant": 25,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "markhor",
+      "variant": 26,
+      "scale": 0.34,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "iberian_ibex",
+      "variant": 27,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "pyrenean_ibex",
+      "variant": 28,
+      "scale": 0.33,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "portuguese_ibex",
+      "variant": 29,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "siberian_ibex",
+      "variant": 30,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "nubian_ibex",
+      "variant": 31,
+      "scale": 0.31,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "walia_ibex",
+      "variant": 32,
+      "scale": 0.4,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 4,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "himalayan_tahr",
+      "variant": 33,
+      "scale": 0.33,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 3,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "nilgiri_tahr",
+      "variant": 34,
+      "scale": 0.36,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 4
+      },
+      "attack": 3,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "myotragus",
+      "variant": 35,
+      "scale": 0.31,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "alpine_chamois",
+      "variant": 36,
+      "scale": 0.28,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "pyrenean_chamois",
+      "variant": 37,
+      "scale": 0.27,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 6
+      },
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "goral",
+      "variant": 38,
+      "scale": 0.26,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mainland_serow",
+      "variant": 39,
+      "scale": 0.41,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "japanese_serow",
+      "variant": 40,
+      "scale": 0.28,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "takin",
+      "variant": 41,
+      "scale": 0.55,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 6,
+      "health": 28,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "saola",
+      "variant": 42,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "chiru",
+      "variant": 43,
+      "scale": 0.27,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "blackbuck",
+      "variant": 44,
+      "scale": 0.28,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "nilgai",
+      "variant": 45,
+      "scale": 0.48,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "four_horned_antelope",
+      "variant": 46,
+      "scale": 0.22,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "chinkara",
+      "variant": 47,
+      "scale": 0.24,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "goitered_gazelle",
+      "variant": 48,
+      "scale": 0.26,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "mountain_gazelle",
+      "variant": 49,
+      "scale": 0.23,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 1,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "mongolian_gazelle",
+      "variant": 50,
+      "scale": 0.26,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "przewalski_gazelle",
+      "variant": 51,
+      "scale": 0.24,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "tibetan_gazelle",
+      "variant": 52,
+      "scale": 0.2,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 1,
+      "health": 8,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "queen_of_sheba_gazelle",
+      "variant": 53,
+      "scale": 0.2,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 8,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "arabian_oryx",
+      "variant": 54,
+      "scale": 0.34,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "blue_wildebeest",
+      "variant": 55,
+      "scale": 0.5,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 6,
+      "health": 26,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "black_wildebeest",
+      "variant": 56,
+      "scale": 0.44,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 23,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bubal_hartebeest",
+      "variant": 57,
+      "scale": 0.47,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "hirola",
+      "variant": 58,
+      "scale": 0.36,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "topi",
+      "variant": 59,
+      "scale": 0.42,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bontebok",
+      "variant": 60,
+      "scale": 0.33,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bluebuck",
+      "variant": 61,
+      "scale": 0.45,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "sable_antelope",
+      "variant": 62,
+      "scale": 0.51,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "roan_antelope",
+      "variant": 63,
+      "scale": 0.54,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "gemsbok",
+      "variant": 64,
+      "scale": 0.49,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "beisa_oryx",
+      "variant": 65,
+      "scale": 0.47,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "scimitar_oryx",
+      "variant": 66,
+      "scale": 0.47,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "addax",
+      "variant": 67,
+      "scale": 0.38,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "waterbuck",
+      "variant": 68,
+      "scale": 0.51,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "uganda_kob",
+      "variant": 69,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "lechwe",
+      "variant": 70,
+      "scale": 0.38,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "common_reedbuck",
+      "variant": 71,
+      "scale": 0.34,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "grey_rhebok",
+      "variant": 72,
+      "scale": 0.24,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "impala",
+      "variant": 73,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "springbok",
+      "variant": 74,
+      "scale": 0.27,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "gerenuk",
+      "variant": 75,
+      "scale": 0.28,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "thomsons_gazelle",
+      "variant": 76,
+      "scale": 0.23,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 1,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "grants_gazelle",
+      "variant": 77,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "dorcas_gazelle",
+      "variant": 78,
+      "scale": 0.22,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 1,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "dama_gazelle",
+      "variant": 79,
+      "scale": 0.33,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "sand_gazelle",
+      "variant": 80,
+      "scale": 0.25,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "blue_duiker",
+      "variant": 81,
+      "scale": 0.14,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 6,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "common_duiker",
+      "variant": 82,
+      "scale": 0.22,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "yellow_backed_duiker",
+      "variant": 83,
+      "scale": 0.32,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "royal_antelope",
+      "variant": 84,
+      "scale": 0.12,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 5,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "kirks_dikdik",
+      "variant": 85,
+      "scale": 0.14,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 6,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "steenbok",
+      "variant": 86,
+      "scale": 0.18,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 7,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "klipspringer",
+      "variant": 87,
+      "scale": 0.19,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 8,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "oribi",
+      "variant": 88,
+      "scale": 0.21,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 1,
+      "health": 8,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "sitatunga",
+      "variant": 89,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "bushbuck",
+      "variant": 90,
+      "scale": 0.29,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "nyala",
+      "variant": 91,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "mountain_nyala",
+      "variant": 92,
+      "scale": 0.48,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 3,
+      "health": 16,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "greater_kudu",
+      "variant": 93,
+      "scale": 0.5,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "lesser_kudu",
+      "variant": 94,
+      "scale": 0.37,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 2,
+      "health": 13,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "bongo",
+      "variant": 95,
+      "scale": 0.52,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 3,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "common_eland",
+      "variant": 96,
+      "scale": 0.7,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 4,
+      "health": 22,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "giant_eland",
+      "variant": 97,
+      "scale": 0.74,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 4,
+      "health": 23,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "pronghorn",
+      "variant": 98,
+      "scale": 0.31,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:wheat",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 2,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
     }
   ]
 }

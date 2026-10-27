@@ -205,6 +205,7 @@ public class ModelGlyptodont extends AdvancedEntityModel<EntityGlyptodont> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("glyptodont", v);
         for (int s : set) {
             if (s == v) return true;
         }

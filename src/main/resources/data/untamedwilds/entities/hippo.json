@@ -1,31 +1,92 @@
 {
-  "name":"hippo",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":8,
-  "offspring":1,
-  "activityType":"cathemeral",
-  "favourite_food":"untamedwilds:flora_water_hyacinth_item",
-  "sounds":{
-    "ambient":"untamedwilds:entity.hippo.ambient",
-    "hurt":"minecraft:entity.cow.hurt",
-    "death":"minecraft:entity.cow.death"
+  "name": "hippo",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 8,
+  "offspring": 1,
+  "activityType": "cathemeral",
+  "favourite_food": "untamedwilds:flora_water_hyacinth_item",
+  "sounds": {
+    "ambient": "untamedwilds:entity.hippo.ambient",
+    "hurt": "minecraft:entity.cow.hurt",
+    "death": "minecraft:entity.cow.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"common",
-      "variant":0,
-      "scale":1.2,
-      "rarity":1,
-      "skins":30,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "common",
+      "variant": 0,
+      "scale": 1.2,
+      "rarity": 1,
+      "skins": 30,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ],
         [
           "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "pygmy_hippo",
+      "variant": 1,
+      "scale": 0.65,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "malagasy_hippo_lemerlei",
+      "variant": 2,
+      "scale": 0.7,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "malagasy_hippo_madagascariensis",
+      "variant": 3,
+      "scale": 0.83,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "cyprus_dwarf_hippo",
+      "variant": 4,
+      "scale": 0.61,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
         ]
       ]
     }

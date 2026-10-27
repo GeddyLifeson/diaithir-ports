@@ -1,21 +1,21 @@
 {
-  "name":"softshell_turtle",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":6,
-  "offspring":5,
-  "favourite_food":"minecraft:cod",
-  "sounds":{
-    "ambient":"entity.turtle.ambient_land",
-    "hurt":"entity.turtle.hurt",
-    "death":"entity.turtle.death"
+  "name": "softshell_turtle",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 6,
+  "offspring": 5,
+  "favourite_food": "minecraft:cod",
+  "sounds": {
+    "ambient": "entity.turtle.ambient_land",
+    "hurt": "entity.turtle.hurt",
+    "death": "entity.turtle.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"black",
-      "variant":0,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "black",
+      "variant": 0,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -25,12 +25,12 @@
       ]
     },
     {
-      "name":"chinese",
-      "variant":1,
-      "scale":0.8,
-      "rarity":3,
-      "skins":20,
-      "spawnBiomes":[
+      "name": "chinese",
+      "variant": 1,
+      "scale": 0.8,
+      "rarity": 3,
+      "skins": 20,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -43,11 +43,11 @@
       ]
     },
     {
-      "name":"flapshell",
-      "variant":2,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "flapshell",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -57,33 +57,33 @@
       ]
     },
     {
-      "name":"nile",
-      "variant":3,
-      "scale":1.1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "nile",
+      "variant": 3,
+      "scale": 1.1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_river"
         ]
       ]
     },
     {
-      "name":"peacock",
-      "variant":4,
-      "scale":0.9,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "peacock",
+      "variant": 4,
+      "scale": 0.9,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"pig_nose",
-      "variant":5,
-      "scale":0.8,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "pig_nose",
+      "variant": 5,
+      "scale": 0.8,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ],
@@ -93,14 +93,95 @@
       ]
     },
     {
-      "name":"spiny",
-      "variant":6,
-      "scale":0.7,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "spiny",
+      "variant": 6,
+      "scale": 0.7,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "florida_softshell",
+      "variant": 7,
+      "scale": 1.1,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "asian_giant_softshell",
+      "variant": 8,
+      "scale": 2.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "indian_narrow_headed_softshell",
+      "variant": 9,
+      "scale": 2.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "euphrates_softshell",
+      "variant": 10,
+      "scale": 2.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "yangtze_giant_softshell",
+      "variant": 11,
+      "scale": 2.8,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "ganges_softshell",
+      "variant": 12,
+      "scale": 1.6,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_river"
         ]

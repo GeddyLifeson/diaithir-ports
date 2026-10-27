@@ -1,21 +1,21 @@
 {
-  "name":"king_crab",
-  "breeding":"EARLY_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"minecraft:cod",
-  "sounds":{
-    "ambient":"untamedwilds:entity.tarantula.ambient",
-    "hurt":"entity.spider.hurt",
-    "death":"entity.spider.death"
+  "name": "king_crab",
+  "breeding": "EARLY_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "minecraft:cod",
+  "sounds": {
+    "ambient": "untamedwilds:entity.tarantula.ambient",
+    "hurt": "entity.spider.hurt",
+    "death": "entity.spider.death"
   },
-  "species":[
+  "species": [
     {
-      "name":"centolla",
-      "variant":0,
-      "scale":1,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "centolla",
+      "variant": 0,
+      "scale": 1,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "resource|minecraft:cold_ocean"
         ],
@@ -31,11 +31,11 @@
       ]
     },
     {
-      "name":"red",
-      "variant":1,
-      "scale":1.1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "red",
+      "variant": 1,
+      "scale": 1.1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "resource|minecraft:cold_ocean"
         ],
@@ -51,16 +51,46 @@
       ]
     },
     {
-      "name":"spiny",
-      "variant":2,
-      "scale":0.8,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "spiny",
+      "variant": 2,
+      "scale": 0.8,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "resource|minecraft:deep_cold_ocean"
         ],
         [
           "resource|minecraft:deep_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "blue_king_crab",
+      "variant": 3,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:cold_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "golden_king_crab",
+      "variant": 4,
+      "scale": 0.8,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "resource|minecraft:deep_ocean"
+        ],
+        [
+          "resource|minecraft:deep_cold_ocean"
         ]
       ]
     }

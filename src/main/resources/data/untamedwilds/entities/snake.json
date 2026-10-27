@@ -1,29 +1,29 @@
 {
-  "name":"snake",
-  "breeding":"LATE_SUMMER",
-  "growing_time":6,
-  "offspring":4,
-  "favourite_food":"minecraft:rabbit",
-  "sounds":{
-    "ambient":"untamedwilds:entity.snake.warning",
-    "hurt":"untamedwilds:entity.snake.warning",
-    "death":"untamedwilds:entity.snake.warning",
-    "threat":"untamedwilds:entity.snake.warning"
+  "name": "snake",
+  "breeding": "LATE_SUMMER",
+  "growing_time": 6,
+  "offspring": 4,
+  "favourite_food": "minecraft:rabbit",
+  "sounds": {
+    "ambient": "untamedwilds:entity.snake.warning",
+    "hurt": "untamedwilds:entity.snake.warning",
+    "death": "untamedwilds:entity.snake.warning",
+    "threat": "untamedwilds:entity.snake.warning"
   },
-  "flags":{
-    "venom":0,
-    "rattler":0
+  "flags": {
+    "venom": 0,
+    "rattler": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"adder",
-      "variant":0,
-      "scale":0.7,
-      "rarity":3,
-      "flags":{
-        "venom":1
+      "name": "adder",
+      "variant": 0,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {
+        "venom": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_taiga"
         ],
@@ -36,61 +36,61 @@
       ]
     },
     {
-      "name":"ball_python",
-      "variant":1,
-      "scale":1,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "ball_python",
+      "variant": 1,
+      "scale": 1,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"black_mamba",
-      "variant":2,
-      "scale":1.3,
-      "rarity":2,
-      "flags":{
-        "venom":2
+      "name": "black_mamba",
+      "variant": 2,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ]
       ]
     },
     {
-      "name":"carpet_python",
-      "variant":3,
-      "scale":1.1,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "carpet_python",
+      "variant": 3,
+      "scale": 1.1,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"cave_racer",
-      "variant":4,
-      "scale":1,
-      "rarity":1,
-      "spawnBiomes":[
+      "name": "cave_racer",
+      "variant": 4,
+      "scale": 1,
+      "rarity": 1,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"coral",
-      "variant":5,
-      "scale":0.7,
-      "rarity":3,
-      "flags":{
-        "venom":2
+      "name": "coral",
+      "variant": 5,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {
+        "venom": 2
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ],
@@ -103,47 +103,47 @@
       ]
     },
     {
-      "name":"coral_blue",
-      "variant":6,
-      "scale":1.1,
-      "rarity":1,
-      "flags":{
-        "venom":1
+      "name": "coral_blue",
+      "variant": 6,
+      "scale": 1.1,
+      "rarity": 1,
+      "flags": {
+        "venom": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"corn",
-      "variant":7,
-      "scale":0.9,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "corn",
+      "variant": 7,
+      "scale": 0.9,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_plains"
         ]
       ]
     },
     {
-      "name":"emerald",
-      "variant":8,
-      "scale":0.9,
-      "rarity":2,
-      "spawnBiomes":[
+      "name": "emerald",
+      "variant": 8,
+      "scale": 0.9,
+      "rarity": 2,
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"grass_snake",
-      "variant":9,
-      "scale":0.8,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "grass_snake",
+      "variant": 9,
+      "scale": 0.8,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -153,25 +153,25 @@
       ]
     },
     {
-      "name":"gray_kingsnake",
-      "variant":10,
-      "scale":0.7,
-      "rarity":3,
-      "spawnBiomes":[
+      "name": "gray_kingsnake",
+      "variant": 10,
+      "scale": 0.7,
+      "rarity": 3,
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ]
       ]
     },
     {
-      "name":"green_mamba",
-      "variant":11,
-      "scale":1.3,
-      "rarity":2,
-      "flags":{
-        "venom":2
+      "name": "green_mamba",
+      "variant": 11,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ],
@@ -181,21 +181,21 @@
       ]
     },
     {
-      "name":"rattlesnake",
-      "variant":12,
-      "scale":0.7,
-      "rarity":2,
-      "sounds":{
-        "ambient":"untamedwilds:entity.snake.rattle",
-        "hurt":"untamedwilds:entity.snake.rattle",
-        "death":"untamedwilds:entity.snake.rattle",
-        "threat":"untamedwilds:entity.snake.rattle"
+      "name": "rattlesnake",
+      "variant": 12,
+      "scale": 0.7,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
       },
-      "flags":{
-        "rattler":1,
-        "venom":1
+      "flags": {
+        "rattler": 1,
+        "venom": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ],
@@ -205,14 +205,14 @@
       ]
     },
     {
-      "name":"rice_paddy",
-      "variant":13,
-      "scale":0.7,
-      "rarity":2,
-      "flags":{
-        "venom":1
+      "name": "rice_paddy",
+      "variant": 13,
+      "scale": 0.7,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ],
@@ -222,54 +222,1560 @@
       ]
     },
     {
-      "name":"swamp_moccasin",
-      "variant":14,
-      "scale":0.7,
-      "rarity":2,
-      "flags":{
-        "venom":1
+      "name": "swamp_moccasin",
+      "variant": 14,
+      "scale": 0.7,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_swamp"
         ]
       ]
     },
     {
-      "name":"taipan",
-      "variant":15,
-      "scale":1,
-      "rarity":2,
-      "flags":{
-        "venom":2
+      "name": "taipan",
+      "variant": 15,
+      "scale": 1,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ]
       ]
     },
     {
-      "name":"western_rattlesnake",
-      "variant":16,
-      "scale":0.7,
-      "rarity":2,
-      "sounds":{
-        "ambient":"untamedwilds:entity.snake.rattle",
-        "hurt":"untamedwilds:entity.snake.rattle",
-        "death":"untamedwilds:entity.snake.rattle",
-        "threat":"untamedwilds:entity.snake.rattle"
+      "name": "western_rattlesnake",
+      "variant": 16,
+      "scale": 0.7,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
       },
-      "flags":{
-        "venom":1,
-        "rattler":1
+      "flags": {
+        "venom": 1,
+        "rattler": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "tag|is_badlands"
         ],
         [
           "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "king_cobra",
+      "variant": 17,
+      "scale": 3.0,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "indian_cobra",
+      "variant": 18,
+      "scale": 1.4,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "monocled_cobra",
+      "variant": 19,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chinese_cobra",
+      "variant": 20,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "philippine_cobra",
+      "variant": 21,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "egyptian_cobra",
+      "variant": 22,
+      "scale": 1.5,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "forest_cobra",
+      "variant": 23,
+      "scale": 1.7,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "cape_cobra",
+      "variant": 24,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "black_necked_spitting_cobra",
+      "variant": 25,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "mozambique_spitting_cobra",
+      "variant": 26,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "rinkhals",
+      "variant": 27,
+      "scale": 0.8,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "indian_spitting_cobra",
+      "variant": 28,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "common_krait",
+      "variant": 29,
+      "scale": 0.9,
+      "rarity": 3,
+      "activityType": "nocturnal",
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "banded_krait",
+      "variant": 30,
+      "scale": 1.4,
+      "rarity": 3,
+      "activityType": "nocturnal",
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "malayan_krait",
+      "variant": 31,
+      "scale": 0.9,
+      "rarity": 3,
+      "activityType": "nocturnal",
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "russells_viper",
+      "variant": 32,
+      "scale": 1.0,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "saw_scaled_viper",
+      "variant": 33,
+      "scale": 0.4,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "puff_adder",
+      "variant": 34,
+      "scale": 0.9,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "gaboon_viper",
+      "variant": 35,
+      "scale": 1.1,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "horned_viper",
+      "variant": 36,
+      "scale": 0.5,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "nose_horned_viper",
+      "variant": 37,
+      "scale": 0.7,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "asp_viper",
+      "variant": 38,
+      "scale": 0.5,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "palestine_viper",
+      "variant": 39,
+      "scale": 0.8,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bush_viper",
+      "variant": 40,
+      "scale": 0.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "boomslang",
+      "variant": 41,
+      "scale": 1.2,
+      "rarity": 2,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "twig_snake",
+      "variant": 42,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mole_snake",
+      "variant": 43,
+      "scale": 1.2,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "african_egg_eating_snake",
+      "variant": 44,
+      "scale": 0.6,
+      "rarity": 3,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "eastern_brown_snake",
+      "variant": 45,
+      "scale": 1.3,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "king_brown_snake",
+      "variant": 46,
+      "scale": 1.5,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "inland_taipan",
+      "variant": 47,
+      "scale": 1.4,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "tiger_snake",
+      "variant": 48,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "red_bellied_black_snake",
+      "variant": 49,
+      "scale": 1.1,
+      "rarity": 2,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "death_adder",
+      "variant": 50,
+      "scale": 0.6,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "black_rat_snake",
+      "variant": 51,
+      "scale": 1.3,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "eastern_indigo_snake",
+      "variant": 52,
+      "scale": 1.7,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "common_garter_snake",
+      "variant": 53,
+      "scale": 0.6,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "eastern_hognose",
+      "variant": 54,
+      "scale": 0.5,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "milk_snake",
+      "variant": 55,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "eastern_racer",
+      "variant": 56,
+      "scale": 0.9,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "bullsnake",
+      "variant": 57,
+      "scale": 1.3,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "rubber_boa",
+      "variant": 58,
+      "scale": 0.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "rosy_boa",
+      "variant": 59,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "sidewinder",
+      "variant": 60,
+      "scale": 0.5,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "timber_rattlesnake",
+      "variant": 61,
+      "scale": 1.1,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "prairie_rattlesnake",
+      "variant": 62,
+      "scale": 0.9,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "mojave_rattlesnake",
+      "variant": 63,
+      "scale": 0.9,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "copperhead",
+      "variant": 64,
+      "scale": 0.7,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "massasauga",
+      "variant": 65,
+      "scale": 0.5,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "fer_de_lance",
+      "variant": 66,
+      "scale": 1.4,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "jararaca",
+      "variant": 67,
+      "scale": 1.0,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "bushmaster",
+      "variant": 68,
+      "scale": 2.4,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "south_american_rattlesnake",
+      "variant": 69,
+      "scale": 1.2,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "habu",
+      "variant": 70,
+      "scale": 1.5,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chinese_pit_viper",
+      "variant": 71,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "malayan_pit_viper",
+      "variant": 72,
+      "scale": 0.7,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "mamushi",
+      "variant": 73,
+      "scale": 0.5,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "green_pit_viper",
+      "variant": 74,
+      "scale": 0.6,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "himalayan_pit_viper",
+      "variant": 75,
+      "scale": 0.6,
+      "rarity": 2,
+      "sounds": {
+        "ambient": "untamedwilds:entity.snake.rattle",
+        "hurt": "untamedwilds:entity.snake.rattle",
+        "death": "untamedwilds:entity.snake.rattle",
+        "threat": "untamedwilds:entity.snake.rattle"
+      },
+      "flags": {
+        "venom": 1,
+        "rattler": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "boa_madagascar_ground",
+      "variant": 76,
+      "scale": 1.4,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "boa_madagascar_tree",
+      "variant": 77,
+      "scale": 1.0,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "rainbow_boa",
+      "variant": 78,
+      "scale": 1.0,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "jamaican_boa",
+      "variant": 79,
+      "scale": 1.1,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_underground"
+        ]
+      ]
+    },
+    {
+      "name": "keel_scaled_boa",
+      "variant": 80,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "round_island_burrowing_boa",
+      "variant": 81,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_underground"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "st_croix_racer",
+      "variant": 82,
+      "scale": 0.7,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "jamaican_racer",
+      "variant": 83,
+      "scale": 0.8,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "royal_python_green_tree",
+      "variant": 84,
+      "scale": 0.8,
+      "rarity": 2,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "woma_python",
+      "variant": 85,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "black_headed_python",
+      "variant": 86,
+      "scale": 1.4,
+      "rarity": 1,
+      "activityType": "nocturnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "children_python",
+      "variant": 87,
+      "scale": 0.5,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "yellow_bellied_sea_snake",
+      "variant": 88,
+      "scale": 0.8,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ]
+      ]
+    },
+    {
+      "name": "banded_sea_krait",
+      "variant": 89,
+      "scale": 1.0,
+      "rarity": 3,
+      "flags": {
+        "venom": 2
+      },
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "olive_sea_snake",
+      "variant": 90,
+      "scale": 1.2,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "turtle_headed_sea_snake",
+      "variant": 91,
+      "scale": 0.6,
+      "rarity": 2,
+      "flags": {
+        "venom": 1
+      },
+      "spawnBiomes": [
+        [
+          "resource|minecraft:warm_ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "resource|minecraft:deep_lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "european_whip_snake",
+      "variant": 92,
+      "scale": 1.2,
+      "rarity": 3,
+      "activityType": "diurnal",
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "smooth_snake",
+      "variant": 93,
+      "scale": 0.6,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "aesculapian_snake",
+      "variant": 94,
+      "scale": 1.4,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "montpellier_snake",
+      "variant": 95,
+      "scale": 1.6,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "dice_snake",
+      "variant": 96,
+      "scale": 0.8,
+      "rarity": 3,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_river"
+        ]
+      ]
+    },
+    {
+      "name": "sand_boa",
+      "variant": 97,
+      "scale": 0.4,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "flying_snake",
+      "variant": 98,
+      "scale": 0.9,
+      "rarity": 2,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
         ]
       ]
     }

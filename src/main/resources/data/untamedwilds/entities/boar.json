@@ -1,30 +1,28 @@
 {
-  "name":"boar",
-  "breeding":"MID_WINTER",
-  "growing_time":4,
-  "offspring":4,
-  "activityType":"nocturnal",
-  "favourite_food":"minecraft:beetroot",
-  "sounds":{
-    "ambient":"untamedwilds:entity.boar.ambient",
-    "hurt":"untamedwilds:entity.boar.hurt",
-    "death":"untamedwilds:entity.boar.death",
-    "threat":"untamedwilds:entity.boar.squeal"
+  "name": "boar",
+  "breeding": "MID_WINTER",
+  "growing_time": 4,
+  "offspring": 4,
+  "activityType": "nocturnal",
+  "favourite_food": "minecraft:beetroot",
+  "sounds": {
+    "ambient": "untamedwilds:entity.boar.ambient",
+    "hurt": "untamedwilds:entity.boar.hurt",
+    "death": "untamedwilds:entity.boar.death",
+    "threat": "untamedwilds:entity.boar.squeal"
   },
-  "flags":{
-    "isWarthog":0
+  "flags": {
+    "isWarthog": 0
   },
-  "species":[
+  "species": [
     {
-      "name":"eurasian",
-      "variant":0,
-      "scale":1.2,
-      "rarity":1,
-      "skins":40,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "eurasian",
+      "variant": 0,
+      "scale": 1.2,
+      "rarity": 1,
+      "skins": 40,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_forest"
         ],
@@ -34,28 +32,24 @@
       ]
     },
     {
-      "name":"peccary",
-      "variant":1,
-      "scale":1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "peccary",
+      "variant": 1,
+      "scale": 1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_jungle"
         ]
       ]
     },
     {
-      "name":"red_river",
-      "variant":2,
-      "scale":1,
-      "rarity":1,
-      "flags":{
-
-      },
-      "spawnBiomes":[
+      "name": "red_river",
+      "variant": 2,
+      "scale": 1,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
         [
           "tag|is_savanna"
         ],
@@ -65,14 +59,14 @@
       ]
     },
     {
-      "name":"warthog",
-      "variant":3,
-      "scale":1.2,
-      "rarity":1,
-      "flags":{
+      "name": "warthog",
+      "variant": 3,
+      "scale": 1.2,
+      "rarity": 1,
+      "flags": {
         "isWarthog": 1
       },
-      "spawnBiomes":[
+      "spawnBiomes": [
         [
           "category|savanna"
         ]
@@ -108,6 +102,139 @@
       "spawnBiomes": [
         [
           "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "white_lipped_peccary",
+      "variant": 6,
+      "scale": 0.8,
+      "rarity": 1,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "chacoan_peccary",
+      "variant": 7,
+      "scale": 0.88,
+      "rarity": 1,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_badlands"
+        ],
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "bushpig",
+      "variant": 8,
+      "scale": 1.11,
+      "rarity": 1,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "giant_forest_hog",
+      "variant": 9,
+      "scale": 1.51,
+      "rarity": 1,
+      "flags": {
+        "isWarthog": 1,
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "pygmy_hog",
+      "variant": 10,
+      "scale": 0.54,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "bearded_pig",
+      "variant": 11,
+      "scale": 1.28,
+      "rarity": 1,
+      "flags": {
+        "groupCount": 4
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "sulawesi_warty_pig",
+      "variant": 12,
+      "scale": 1.01,
+      "rarity": 1,
+      "flags": {
+        "isWarthog": 1
+      },
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "babirusa",
+      "variant": 13,
+      "scale": 1.16,
+      "rarity": 1,
+      "flags": {},
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
         ]
       ]
     }

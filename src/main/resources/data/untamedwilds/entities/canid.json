@@ -63,6 +63,962 @@
           "tag|is_savanna"
         ]
       ]
+    },
+    {
+      "name": "arctic_wolf",
+      "variant": 2,
+      "scale": 0.55,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 6,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ]
+      ]
+    },
+    {
+      "name": "indian_wolf",
+      "variant": 3,
+      "scale": 0.45,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "arabian_wolf",
+      "variant": 4,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "red_wolf",
+      "variant": 5,
+      "scale": 0.45,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "mexican_wolf",
+      "variant": 6,
+      "scale": 0.45,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "japanese_wolf",
+      "variant": 7,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "hokkaido_wolf",
+      "variant": 8,
+      "scale": 0.5,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_taiga"
+        ]
+      ]
+    },
+    {
+      "name": "falkland_wolf",
+      "variant": 9,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "ethiopian_wolf",
+      "variant": 10,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "coyote",
+      "variant": 11,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "golden_jackal",
+      "variant": 12,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "african_golden_wolf",
+      "variant": 13,
+      "scale": 0.38,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "black_backed_jackal",
+      "variant": 14,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "side_striped_jackal",
+      "variant": 15,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "dhole",
+      "variant": 16,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "african_wild_dog",
+      "variant": 17,
+      "scale": 0.45,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 17,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "dingo",
+      "variant": 18,
+      "scale": 0.4,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 5,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "singing_dog",
+      "variant": 19,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_jungle"
+        ]
+      ]
+    },
+    {
+      "name": "thylacine",
+      "variant": 20,
+      "scale": 0.5,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 5,
+      "health": 18,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "maned_wolf",
+      "variant": 21,
+      "scale": 0.55,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 6,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "bush_dog",
+      "variant": 22,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {
+        "groupCount": 8
+      },
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "crab_eating_fox",
+      "variant": 23,
+      "scale": 0.3,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "culpeo",
+      "variant": 24,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "diurnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "south_american_grey_fox",
+      "variant": 25,
+      "scale": 0.28,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "pampas_fox",
+      "variant": 26,
+      "scale": 0.3,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "darwins_fox",
+      "variant": 27,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "hoary_fox",
+      "variant": 28,
+      "scale": 0.22,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "short_eared_dog",
+      "variant": 29,
+      "scale": 0.3,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_jungle"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "sechuran_fox",
+      "variant": 30,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "red_fox",
+      "variant": 31,
+      "scale": 0.35,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 14,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_icy"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "arctic_fox",
+      "variant": 32,
+      "scale": 0.28,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_icy"
+        ],
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "fennec_fox",
+      "variant": 33,
+      "scale": 0.18,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 2,
+      "health": 8,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "ruppells_fox",
+      "variant": 34,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "blanfords_fox",
+      "variant": 35,
+      "scale": 0.2,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "cape_fox",
+      "variant": 36,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "pale_fox",
+      "variant": 37,
+      "scale": 0.22,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "bengal_fox",
+      "variant": 38,
+      "scale": 0.25,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 10,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "corsac_fox",
+      "variant": 39,
+      "scale": 0.28,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ],
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "tibetan_sand_fox",
+      "variant": 40,
+      "scale": 0.28,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 11,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "swift_fox",
+      "variant": 41,
+      "scale": 0.22,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "kit_fox",
+      "variant": 42,
+      "scale": 0.2,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_desert"
+        ]
+      ]
+    },
+    {
+      "name": "afghan_fox",
+      "variant": 43,
+      "scale": 0.2,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_mountain"
+        ]
+      ]
+    },
+    {
+      "name": "gray_fox",
+      "variant": 44,
+      "scale": 0.3,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_badlands"
+        ]
+      ]
+    },
+    {
+      "name": "island_fox",
+      "variant": 45,
+      "scale": 0.2,
+      "rarity": 4,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "resource|minecraft:ocean"
+        ],
+        [
+          "resource|minecraft:lukewarm_ocean"
+        ]
+      ]
+    },
+    {
+      "name": "raccoon_dog",
+      "variant": 46,
+      "scale": 0.3,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 4,
+      "health": 12,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_swamp"
+        ]
+      ]
+    },
+    {
+      "name": "bat_eared_fox",
+      "variant": 47,
+      "scale": 0.22,
+      "rarity": 4,
+      "activityType": "nocturnal",
+      "favourite_food": "minecraft:rotten_flesh",
+      "flags": {},
+      "attack": 3,
+      "health": 9,
+      "spawnBiomes": [
+        [
+          "tag|is_savanna"
+        ],
+        [
+          "tag|is_plains"
+        ]
+      ]
     }
   ]
 }

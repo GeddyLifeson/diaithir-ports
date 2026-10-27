@@ -132,6 +132,121 @@
           "tag|is_mountain"
         ]
       ]
+    },
+    {
+      "name": "sloth_ground_eremotherium",
+      "variant": 5,
+      "scale": 1.44,
+      "rarity": 2,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {},
+      "attack": 16,
+      "health": 97,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ],
+        [
+          "tag|is_savanna"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_ground_scelidotherium",
+      "variant": 6,
+      "scale": 1.0,
+      "rarity": 2,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:wheat",
+      "flags": {},
+      "attack": 13,
+      "health": 70,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_ground_lestodon",
+      "variant": 7,
+      "scale": 1.52,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:potato",
+      "flags": {},
+      "attack": 16,
+      "health": 80,
+      "spawnBiomes": [
+        [
+          "tag|is_plains"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_cuban_megalocnus",
+      "variant": 8,
+      "scale": 0.53,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:oak_leaves",
+      "flags": {},
+      "attack": 9,
+      "health": 43,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_cuban_parocnus",
+      "variant": 9,
+      "scale": 0.31,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:cactus",
+      "flags": {},
+      "attack": 5,
+      "health": 20,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_antillean_neocnus",
+      "variant": 10,
+      "scale": 0.22,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:cactus",
+      "flags": {},
+      "attack": 4,
+      "health": 15,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
+    },
+    {
+      "name": "sloth_acratocnus",
+      "variant": 11,
+      "scale": 0.29,
+      "rarity": 3,
+      "activityType": "cathemeral",
+      "favourite_food": "minecraft:cactus",
+      "flags": {},
+      "attack": 4,
+      "health": 19,
+      "spawnBiomes": [
+        [
+          "tag|is_forest"
+        ]
+      ]
     }
   ]
 }

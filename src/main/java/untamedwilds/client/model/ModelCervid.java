@@ -627,6 +627,7 @@ public class ModelCervid extends AdvancedEntityModel<EntityCervid> {
     }
 
     private static boolean in(int[] set, int v) {
+        v = untamedwilds.util.VariantLook.look("cervid", v);
         for (int s : set) {
             if (s == v) return true;
         }
