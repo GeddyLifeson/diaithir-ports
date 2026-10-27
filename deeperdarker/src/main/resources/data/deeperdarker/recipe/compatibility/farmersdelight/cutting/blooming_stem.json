@@ -1,9 +1,7 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "deeperdarker:blooming_stem"
-    }
+    "deeperdarker:blooming_stem"
   ],
   "result": [
     {

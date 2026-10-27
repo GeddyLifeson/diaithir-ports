@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "S": {
-      "item": "deeperdarker:soul_dust"
-    }
+    "G": "minecraft:glass",
+    "S": "deeperdarker:soul_dust"
   },
   "pattern": [
     " S ",

@@ -1,9 +1,7 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "deeperdarker:echo_door"
-    }
+    "deeperdarker:echo_door"
   ],
   "result": [
     {

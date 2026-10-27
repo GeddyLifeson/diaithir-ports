@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "boat",
   "key": {
-    "#": {
-      "item": "deeperdarker:echo_planks"
-    }
+    "#": "deeperdarker:echo_planks"
   },
   "pattern": [
     "# #",

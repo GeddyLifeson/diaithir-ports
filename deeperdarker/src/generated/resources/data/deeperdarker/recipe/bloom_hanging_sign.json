@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "deeperdarker:stripped_blooming_stem"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "deeperdarker:stripped_blooming_stem",
+    "X": "minecraft:iron_chain"
   },
   "pattern": [
     "X X",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "S": {
-      "item": "deeperdarker:smooth_gloomslate"
-    }
+    "S": "deeperdarker:smooth_gloomslate"
   },
   "pattern": [
     "SS",

@@ -1,9 +1,7 @@
 {
   "type": "create:crushing",
   "ingredients": [
-    {
-      "item": "deeperdarker:sculk_stone_emerald_ore"
-    }
+    "deeperdarker:sculk_stone_emerald_ore"
   ],
   "processingTime": 550,
   "results": [

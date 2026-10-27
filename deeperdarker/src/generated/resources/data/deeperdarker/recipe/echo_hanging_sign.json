@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "deeperdarker:stripped_echo_log"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "deeperdarker:stripped_echo_log",
+    "X": "minecraft:iron_chain"
   },
   "pattern": [
     "X X",

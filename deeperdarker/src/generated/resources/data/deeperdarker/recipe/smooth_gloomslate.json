@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "deeperdarker:gloomslate"
-  },
+  "ingredient": "deeperdarker:gloomslate",
   "result": {
     "count": 1,
     "id": "deeperdarker:smooth_gloomslate"

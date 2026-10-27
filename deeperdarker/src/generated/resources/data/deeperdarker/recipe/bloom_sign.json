@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "sign",
   "key": {
-    "#": {
-      "item": "deeperdarker:bloom_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "deeperdarker:bloom_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

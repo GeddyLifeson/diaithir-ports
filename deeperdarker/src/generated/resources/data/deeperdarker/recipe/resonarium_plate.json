@@ -2,30 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "deeperdarker:resonarium"
-    },
-    {
-      "item": "deeperdarker:resonarium"
-    },
-    {
-      "item": "deeperdarker:resonarium"
-    },
-    {
-      "item": "deeperdarker:resonarium"
-    },
-    {
-      "tag": "deeperdarker:scutes"
-    },
-    {
-      "tag": "deeperdarker:scutes"
-    },
-    {
-      "tag": "deeperdarker:scutes"
-    },
-    {
-      "tag": "deeperdarker:scutes"
-    }
+    "deeperdarker:resonarium",
+    "deeperdarker:resonarium",
+    "deeperdarker:resonarium",
+    "deeperdarker:resonarium",
+    "#deeperdarker:scutes",
+    "#deeperdarker:scutes",
+    "#deeperdarker:scutes",
+    "#deeperdarker:scutes"
   ],
   "result": {
     "count": 1,

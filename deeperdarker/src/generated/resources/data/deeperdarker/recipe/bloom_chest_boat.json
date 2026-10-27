@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "chest_boat",
   "ingredients": [
-    {
-      "item": "minecraft:chest"
-    },
-    {
-      "item": "deeperdarker:bloom_boat"
-    }
+    "minecraft:chest",
+    "deeperdarker:bloom_boat"
   ],
   "result": {
     "count": 1,

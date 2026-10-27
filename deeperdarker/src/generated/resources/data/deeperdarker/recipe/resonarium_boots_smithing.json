@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "deeperdarker:resonarium_plate"
-  },
-  "base": {
-    "item": "minecraft:diamond_boots"
-  },
+  "addition": "deeperdarker:resonarium_plate",
+  "base": "minecraft:diamond_boots",
   "result": {
     "count": 1,
     "id": "deeperdarker:resonarium_boots"
   },
-  "template": {
-    "item": "deeperdarker:resonarium_upgrade_smithing_template"
-  }
+  "template": "deeperdarker:resonarium_upgrade_smithing_template"
 }

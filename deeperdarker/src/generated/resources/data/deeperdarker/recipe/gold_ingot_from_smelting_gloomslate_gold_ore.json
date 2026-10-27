@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 1.0,
   "group": "gold_ingot",
-  "ingredient": {
-    "item": "deeperdarker:gloomslate_gold_ore"
-  },
+  "ingredient": "deeperdarker:gloomslate_gold_ore",
   "result": {
     "count": 1,
     "id": "minecraft:gold_ingot"

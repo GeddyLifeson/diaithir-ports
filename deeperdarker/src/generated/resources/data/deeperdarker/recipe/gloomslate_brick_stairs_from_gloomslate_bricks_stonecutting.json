@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "deeperdarker:gloomslate_bricks"
-  },
+  "ingredient": "deeperdarker:gloomslate_bricks",
   "result": {
     "count": 1,
     "id": "deeperdarker:gloomslate_brick_stairs"

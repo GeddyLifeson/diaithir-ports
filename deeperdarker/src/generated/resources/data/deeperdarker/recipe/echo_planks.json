@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "deeperdarker:echo_logs"
-    }
+    "#deeperdarker:echo_logs"
   ],
   "result": {
     "count": 4,

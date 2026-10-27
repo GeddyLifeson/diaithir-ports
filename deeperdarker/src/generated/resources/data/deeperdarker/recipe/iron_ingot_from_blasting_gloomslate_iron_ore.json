@@ -4,9 +4,7 @@
   "cookingtime": 100,
   "experience": 0.7,
   "group": "iron_ingot",
-  "ingredient": {
-    "item": "deeperdarker:gloomslate_iron_ore"
-  },
+  "ingredient": "deeperdarker:gloomslate_iron_ore",
   "result": {
     "count": 1,
     "id": "minecraft:iron_ingot"

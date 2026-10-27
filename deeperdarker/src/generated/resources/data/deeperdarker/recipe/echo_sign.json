@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "sign",
   "key": {
-    "#": {
-      "item": "deeperdarker:echo_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "deeperdarker:echo_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

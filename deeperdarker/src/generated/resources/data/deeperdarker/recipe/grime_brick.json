@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.2,
-  "ingredient": {
-    "item": "deeperdarker:grime_ball"
-  },
+  "ingredient": "deeperdarker:grime_ball",
   "result": {
     "count": 1,
     "id": "deeperdarker:grime_brick"

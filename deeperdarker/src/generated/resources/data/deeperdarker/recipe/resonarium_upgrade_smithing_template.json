@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "deeperdarker:resonarium"
-    },
-    "S": {
-      "item": "deeperdarker:resonarium_upgrade_smithing_template"
-    }
+    "#": "minecraft:diamond",
+    "C": "deeperdarker:resonarium",
+    "S": "deeperdarker:resonarium_upgrade_smithing_template"
   },
   "pattern": [
     "#S#",

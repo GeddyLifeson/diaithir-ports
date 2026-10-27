@@ -1,9 +1,7 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "deeperdarker:echo_hanging_sign"
-    }
+    "deeperdarker:echo_hanging_sign"
   ],
   "result": [
     {

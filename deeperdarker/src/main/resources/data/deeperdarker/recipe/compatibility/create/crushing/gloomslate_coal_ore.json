@@ -1,9 +1,7 @@
 {
   "type": "create:crushing",
   "ingredients": [
-    {
-      "item": "deeperdarker:gloomslate_coal_ore"
-    }
+    "deeperdarker:gloomslate_coal_ore"
   ],
   "processingTime": 250,
   "results": [

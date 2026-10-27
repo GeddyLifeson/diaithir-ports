@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.2,
   "group": "lapis_lazuli",
-  "ingredient": {
-    "item": "deeperdarker:gloomslate_lapis_ore"
-  },
+  "ingredient": "deeperdarker:gloomslate_lapis_ore",
   "result": {
     "count": 1,
     "id": "minecraft:lapis_lazuli"

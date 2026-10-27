@@ -1,25 +1,31 @@
 {
-  "carvers": {
-    "air": "deeperdarker:cave"
+  "attributes": {
+    "minecraft:audio/ambient_sounds": {
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "deeperdarker:ambient.otherside.additions",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:sculk_charge_pop"
+        },
+        "probability": 0.002
+      }
+    ],
+    "minecraft:visual/fog_color": "#1a2f40",
+    "minecraft:visual/sky_color": "#829fff",
+    "minecraft:visual/water_fog_color": "#216888"
   },
+  "carvers": [
+    "deeperdarker:cave"
+  ],
   "downfall": 0.2,
   "effects": {
-    "fog_color": 1716032,
-    "mood_sound": {
-      "block_search_extent": 8,
-      "offset": 2.0,
-      "sound": "deeperdarker:ambient.otherside.additions",
-      "tick_delay": 6000
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:sculk_charge_pop"
-      },
-      "probability": 0.002
-    },
-    "sky_color": 8560639,
-    "water_color": 2601177,
-    "water_fog_color": 2189448
+    "water_color": "#27b0d9"
   },
   "features": [
     [],
@@ -65,15 +71,15 @@
     "misc": [],
     "monster": [
       {
-        "type": "deeperdarker:sculk_snapper",
         "maxCount": 2,
         "minCount": 1,
+        "type": "deeperdarker:sculk_snapper",
         "weight": 1
       },
       {
-        "type": "deeperdarker:sludge",
         "maxCount": 2,
         "minCount": 1,
+        "type": "deeperdarker:sludge",
         "weight": 6
       }
     ],
@@ -81,9 +87,9 @@
     "water_ambient": [],
     "water_creature": [
       {
-        "type": "deeperdarker:angler_fish",
         "maxCount": 5,
         "minCount": 3,
+        "type": "deeperdarker:angler_fish",
         "weight": 6
       }
     ]

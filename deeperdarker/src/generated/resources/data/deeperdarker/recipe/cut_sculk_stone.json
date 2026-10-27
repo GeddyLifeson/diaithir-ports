@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "S": {
-      "item": "deeperdarker:smooth_sculk_stone"
-    }
+    "S": "deeperdarker:smooth_sculk_stone"
   },
   "pattern": [
     "SS",

@@ -36,6 +36,7 @@ public class DDItems {
     public static final DeferredItem<Item> LITE = ITEMS.registerSimpleItem("lite");
 
     public static final DeferredItem<Item> ANCIENT_COMPASS = ITEMS.registerItem("ancient_compass", AncientCompassItem::new, p -> p.stacksTo(1));
+    public static final DeferredItem<Item> SOUL_CRYSTAL = ITEMS.registerSimpleItem("soul_crystal");
     public static final DeferredItem<Item> SOUL_ELYTRA = ITEMS.registerItem("soul_elytra", SoulElytraItem::new, p -> p.rarity(Rarity.RARE).component(DataComponents.GLIDER, Unit.INSTANCE).component(DataComponents.EQUIPPABLE, SoulElytraItem.equipableComponent()).repairable(DDItems.SOUL_CRYSTAL.get()).attributes(SoulElytraItem.attributes()));
     public static final DeferredItem<Item> ECHO_BOAT = ITEMS.registerItem("echo_boat", p -> new BoatItem(DDEntities.ECHO_BOAT.get(), p), p -> p.stacksTo(1));
     public static final DeferredItem<Item> ECHO_CHEST_BOAT = ITEMS.registerItem("echo_chest_boat", p -> new BoatItem(DDEntities.ECHO_CHEST_BOAT.get(), p), p -> p.stacksTo(1));
@@ -47,7 +48,6 @@ public class DDItems {
 
     public static final DeferredItem<Item> SCULK_BONE = ITEMS.registerSimpleItem("sculk_bone");
     public static final DeferredItem<Item> SOUL_DUST = ITEMS.registerSimpleItem("soul_dust");
-    public static final DeferredItem<Item> SOUL_CRYSTAL = ITEMS.registerSimpleItem("soul_crystal");
     public static final DeferredItem<Item> RESONARIUM = ITEMS.registerSimpleItem("resonarium");
     public static final DeferredItem<Item> RESONARIUM_PLATE = ITEMS.registerSimpleItem("resonarium_plate");
     public static final DeferredItem<Item> HEART_OF_THE_DEEP = ITEMS.registerItem("heart_of_the_deep", WardenHeartItem::new, p -> p.rarity(Rarity.RARE).stacksTo(1).fireResistant());

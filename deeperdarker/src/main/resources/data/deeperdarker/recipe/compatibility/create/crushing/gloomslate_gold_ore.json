@@ -1,9 +1,7 @@
 {
   "type": "create:crushing",
   "ingredients": [
-    {
-      "item": "deeperdarker:gloomslate_gold_ore"
-    }
+    "deeperdarker:gloomslate_gold_ore"
   ],
   "processingTime": 350,
   "results": [

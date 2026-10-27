@@ -1,9 +1,7 @@
 {
   "type": "create:crushing",
   "ingredients": [
-    {
-      "item": "deeperdarker:sculk_stone_coal_ore"
-    }
+    "deeperdarker:sculk_stone_coal_ore"
   ],
   "processingTime": 250,
   "results": [

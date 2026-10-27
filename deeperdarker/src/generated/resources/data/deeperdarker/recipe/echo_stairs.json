@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "deeperdarker:echo_planks"
-    }
+    "#": "deeperdarker:echo_planks"
   },
   "pattern": [
     "#  ",

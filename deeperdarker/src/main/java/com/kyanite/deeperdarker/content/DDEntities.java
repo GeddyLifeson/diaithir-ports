@@ -125,7 +125,7 @@ public class DDEntities {
                     .sized(0.9f, 4.3375f)
                     .eyeHeight(3.99f)
                     .clientTrackingRange(10)
-                    .build(createKey("shriek_worm"))
+                    .build(createKey("stalker"))
     );
 
     public static ResourceKey<EntityType<?>> createKey(String name) {

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "deeperdarker:gloomslate_brick_slab"
-    }
+    "#": "deeperdarker:gloomslate_brick_slab"
   },
   "pattern": [
     "#",

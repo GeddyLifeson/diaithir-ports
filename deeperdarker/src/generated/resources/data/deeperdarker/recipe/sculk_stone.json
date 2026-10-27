@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.1,
-  "ingredient": {
-    "item": "deeperdarker:cobbled_sculk_stone"
-  },
+  "ingredient": "deeperdarker:cobbled_sculk_stone",
   "result": {
     "count": 1,
     "id": "deeperdarker:sculk_stone"

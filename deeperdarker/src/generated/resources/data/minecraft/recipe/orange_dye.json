@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 1.0,
-  "ingredient": {
-    "item": "deeperdarker:gloomy_cactus"
-  },
+  "ingredient": "deeperdarker:gloomy_cactus",
   "result": {
     "count": 1,
     "id": "minecraft:orange_dye"

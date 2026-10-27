@@ -252,4 +252,19 @@ public class DeeperDarkerEvents {
             event.addTooltipLines(Component.translatable("item." + DeeperDarker.MOD_ID + ".dampens_vibrations").withStyle(ChatFormatting.BLUE));
         }
     }
+
+    /** Operator command to light an Otherside portal frame without a Warden heart: /otherside light <pos>. */
+    @SubscribeEvent
+    public static void registerCommands(final net.neoforged.neoforge.event.RegisterCommandsEvent event) {
+        event.getDispatcher().register(net.minecraft.commands.Commands.literal("otherside")
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(net.minecraft.commands.Commands.literal("light")
+                        .then(net.minecraft.commands.Commands.argument("pos", net.minecraft.commands.arguments.coordinates.BlockPosArgument.blockPos())
+                                .executes(ctx -> {
+                                    BlockPos pos = net.minecraft.commands.arguments.coordinates.BlockPosArgument.getLoadedBlockPos(ctx, "pos");
+                                    boolean ok = DDBlocks.OTHERSIDE_PORTAL.get().spawnPortal(ctx.getSource().getLevel(), pos);
+                                    ctx.getSource().sendSuccess(() -> Component.literal(ok ? "Portal lit" : "No valid frame here"), true);
+                                    return ok ? 1 : 0;
+                                }))));
+    }
 }

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "G": {
-      "item": "deeperdarker:gleam_gel"
-    }
+    "G": "deeperdarker:gleam_gel"
   },
   "pattern": [
     "GGG",

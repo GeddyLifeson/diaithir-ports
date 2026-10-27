@@ -1,9 +1,7 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "deeperdarker:bloom_door"
-    }
+    "deeperdarker:bloom_door"
   ],
   "result": [
     {

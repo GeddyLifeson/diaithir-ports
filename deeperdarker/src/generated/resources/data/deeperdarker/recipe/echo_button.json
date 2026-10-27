@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "redstone",
   "ingredients": [
-    {
-      "item": "deeperdarker:echo_planks"
-    }
+    "deeperdarker:echo_planks"
   ],
   "result": {
     "count": 1,
