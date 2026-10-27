@@ -10,7 +10,6 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,7 +27,6 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
  * Alex's Caves entity is drawn as a box of its hitbox size textured with its own entity texture (or the missing texture).
  * Non-mob entities (boats, projectiles, bombs) are not drawn.
  */
-@EventBusSubscriber(modid = AlexsCaves.MODID, value = Dist.CLIENT)
 public class FallbackRenderers {
     static class BoxModel extends EntityModel<LivingEntityRenderState> {
         BoxModel(ModelPart root) {
@@ -44,7 +42,7 @@ public class FallbackRenderers {
         }
     }
 
-    static class BoxRenderer<T extends Mob> extends MobRenderer<T, LivingEntityRenderState, BoxModel> {
+    static class BoxRenderer<T extends Mob> extends net.minecraft.client.renderer.entity.MobRenderer<T, LivingEntityRenderState, BoxModel> {
         private final Identifier texture;
         private final float shadow;
 
@@ -66,11 +64,10 @@ public class FallbackRenderers {
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    @SubscribeEvent
-    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    public static void register(EntityRenderersEvent.RegisterRenderers event, java.util.Set<EntityType<?>> skip) {
         for (EntityType<?> type : BuiltInRegistries.ENTITY_TYPE) {
             Identifier id = BuiltInRegistries.ENTITY_TYPE.getKey(type);
-            if (!AlexsCaves.MODID.equals(id.getNamespace())) continue;
+            if (!AlexsCaves.MODID.equals(id.getNamespace()) || skip.contains(type)) continue;
             if (type.getCategory() == MobCategory.MISC) {
                 event.registerEntityRenderer((EntityType) type, NoopRenderer::new);
                 continue;
