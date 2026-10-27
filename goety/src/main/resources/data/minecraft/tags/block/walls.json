@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "goety:shade_bricks_wall",
+  "goety:shade_stone_bricks_wall",
+  "goety:snowy_windswept_plank_wall",
+  "goety:steep_wall",
+  "goety:studded_steep_wall",
+  "goety:windswept_plank_wall"
+ ]
+}

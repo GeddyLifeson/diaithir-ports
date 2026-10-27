@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "goety:haunted_stairs",
+  "goety:marsh_stairs",
+  "goety:pine_stairs",
+  "goety:rotten_stairs",
+  "goety:steep_stairs",
+  "goety:windswept_stairs"
+ ]
+}

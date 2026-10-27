@@ -1,0 +1,15 @@
+{
+ "replace": false,
+ "values": [
+  "goety:compacted_pine_planks",
+  "goety:compacted_windswept_planks",
+  "goety:dense_steep_planks",
+  "goety:haunted_planks",
+  "goety:marsh_planks",
+  "goety:pine_planks",
+  "goety:rotten_planks",
+  "goety:steep_planks",
+  "goety:thatched_pine_planks",
+  "goety:windswept_planks"
+ ]
+}

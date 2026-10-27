@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "#c:strings",
+  "#c:strings",
+  "#c:gems/lapis",
+  "minecraft:fermented_spider_eye"
+ ],
+ "result": {
+  "id": "goety:occult_fabric",
+  "count": 1
+ }
+}

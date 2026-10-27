@@ -1,0 +1,19 @@
+{
+ "replace": false,
+ "values": [
+  "goety:haunted_log",
+  "goety:haunted_wood",
+  "goety:marsh_wood",
+  "goety:pine_wood",
+  "goety:rotten_wood",
+  "goety:steep_wood",
+  "goety:stripped_haunted_log",
+  "goety:stripped_haunted_wood",
+  "goety:stripped_marsh_wood",
+  "goety:stripped_pine_wood",
+  "goety:stripped_rotten_wood",
+  "goety:stripped_windswept_wood",
+  "goety:studded_steep_wood",
+  "goety:windswept_wood"
+ ]
+}

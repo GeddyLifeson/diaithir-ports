@@ -1,0 +1,19 @@
+{
+ "replace": false,
+ "values": [
+  "goety:pine_wood",
+  "goety:pine_planks",
+  "goety:compacted_pine_planks",
+  "goety:compacted_pine_slab",
+  "goety:thatched_pine_planks",
+  "goety:pine_door",
+  "goety:pine_fence",
+  "goety:pine_fence_gate",
+  "goety:pine_slab",
+  "goety:pine_stairs",
+  "goety:pine_trapdoor",
+  "goety:pine_button",
+  "goety:pine_pressure_plate",
+  "goety:stripped_pine_wood"
+ ]
+}

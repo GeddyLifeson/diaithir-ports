@@ -1,0 +1,19 @@
+{
+ "replace": false,
+ "values": [
+  "goety:haunted_stairs",
+  "goety:jade_stairs",
+  "goety:marsh_stairs",
+  "goety:pine_stairs",
+  "goety:rotten_stairs",
+  "goety:shade_bricks_stairs",
+  "goety:shade_stone_bricks_stairs",
+  "goety:shade_stone_polished_stairs",
+  "goety:shade_stone_stairs",
+  "goety:shade_tiles_stairs",
+  "goety:silt_jade_stairs",
+  "goety:snowy_jade_stairs",
+  "goety:steep_stairs",
+  "goety:windswept_stairs"
+ ]
+}

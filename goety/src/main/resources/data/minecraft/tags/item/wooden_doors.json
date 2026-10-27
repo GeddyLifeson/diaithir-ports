@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "goety:haunted_door",
+  "goety:marsh_door",
+  "goety:pine_door",
+  "goety:rotten_door",
+  "goety:windswept_door"
+ ]
+}

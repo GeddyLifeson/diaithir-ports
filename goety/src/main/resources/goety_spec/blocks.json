@@ -1,0 +1,880 @@
+[
+ {
+  "id": "cursed_metal_block",
+  "kind": "cube",
+  "like": "iron_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "pale_steel_block",
+  "kind": "cube",
+  "like": "iron_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "dark_metal_block",
+  "kind": "cube",
+  "like": "iron_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "jade_tiles",
+  "kind": "cube",
+  "like": "emerald_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "jade_block",
+  "kind": "cube",
+  "like": "emerald_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "jade_pillar",
+  "kind": "pillar",
+  "like": "emerald_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "jade_stairs",
+  "kind": "stairs",
+  "like": "emerald_block",
+  "set": "",
+  "base": "jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "jade_slab",
+  "kind": "slab",
+  "like": "emerald_block",
+  "set": "",
+  "base": "jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "silt_jade_tiles",
+  "kind": "cube",
+  "like": "emerald_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "silt_jade_stairs",
+  "kind": "stairs",
+  "like": "emerald_block",
+  "set": "",
+  "base": "silt_jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "silt_jade_slab",
+  "kind": "slab",
+  "like": "emerald_block",
+  "set": "",
+  "base": "silt_jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "snowy_jade_tiles",
+  "kind": "cube",
+  "like": "emerald_block",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "snowy_jade_stairs",
+  "kind": "stairs",
+  "like": "emerald_block",
+  "set": "",
+  "base": "snowy_jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "snowy_jade_slab",
+  "kind": "slab",
+  "like": "emerald_block",
+  "set": "",
+  "base": "snowy_jade_tiles",
+  "axe": false
+ },
+ {
+  "id": "haunted_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "haunted_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_haunted_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "haunted_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_haunted_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "haunted_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "haunted",
+  "axe": true
+ },
+ {
+  "id": "haunted_trapdoor",
+  "kind": "trapdoor",
+  "like": "oak_planks",
+  "set": "haunted",
+  "axe": true
+ },
+ {
+  "id": "haunted_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "haunted",
+  "axe": true
+ },
+ {
+  "id": "haunted_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "haunted_planks",
+  "axe": true
+ },
+ {
+  "id": "haunted_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "haunted_planks",
+  "axe": true
+ },
+ {
+  "id": "haunted_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "haunted",
+  "axe": true
+ },
+ {
+  "id": "haunted_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "haunted_door",
+  "kind": "door",
+  "like": "oak_planks",
+  "set": "haunted",
+  "axe": true
+ },
+ {
+  "id": "haunted_bookshelf",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "rotten_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "rotten_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_rotten_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "rotten_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "rotten",
+  "axe": true
+ },
+ {
+  "id": "rotten_trapdoor",
+  "kind": "trapdoor",
+  "like": "oak_planks",
+  "set": "rotten",
+  "axe": true
+ },
+ {
+  "id": "rotten_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "rotten",
+  "axe": true
+ },
+ {
+  "id": "rotten_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "rotten_planks",
+  "axe": true
+ },
+ {
+  "id": "rotten_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "rotten_planks",
+  "axe": true
+ },
+ {
+  "id": "rotten_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "rotten",
+  "axe": true
+ },
+ {
+  "id": "rotten_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "rotten_door",
+  "kind": "door",
+  "like": "oak_planks",
+  "set": "rotten",
+  "axe": true
+ },
+ {
+  "id": "marsh_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "marsh_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_marsh_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "marsh_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "marsh",
+  "axe": true
+ },
+ {
+  "id": "marsh_trapdoor",
+  "kind": "trapdoor",
+  "like": "oak_planks",
+  "set": "marsh",
+  "axe": true
+ },
+ {
+  "id": "marsh_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "marsh",
+  "axe": true
+ },
+ {
+  "id": "marsh_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "marsh_planks",
+  "axe": true
+ },
+ {
+  "id": "marsh_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "marsh_planks",
+  "axe": true
+ },
+ {
+  "id": "marsh_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "marsh",
+  "axe": true
+ },
+ {
+  "id": "marsh_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "marsh_door",
+  "kind": "door",
+  "like": "oak_planks",
+  "set": "marsh",
+  "axe": true
+ },
+ {
+  "id": "windswept_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "compacted_windswept_planks",
+  "kind": "pillar",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "compacted_windswept_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "compacted_windswept_planks",
+  "axe": true
+ },
+ {
+  "id": "windswept_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_windswept_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "windswept_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "windswept",
+  "axe": true
+ },
+ {
+  "id": "windswept_trapdoor",
+  "kind": "trapdoor",
+  "like": "oak_planks",
+  "set": "windswept",
+  "axe": true
+ },
+ {
+  "id": "windswept_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "windswept",
+  "axe": true
+ },
+ {
+  "id": "windswept_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "windswept_planks",
+  "axe": true
+ },
+ {
+  "id": "windswept_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "windswept_planks",
+  "axe": true
+ },
+ {
+  "id": "windswept_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "windswept",
+  "axe": true
+ },
+ {
+  "id": "windswept_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "windswept_door",
+  "kind": "door",
+  "like": "oak_planks",
+  "set": "windswept",
+  "axe": true
+ },
+ {
+  "id": "windswept_plank_wall",
+  "kind": "wall",
+  "like": "oak_planks",
+  "set": "",
+  "base": "windswept_planks",
+  "axe": true
+ },
+ {
+  "id": "snowy_windswept_plank_wall",
+  "kind": "wall",
+  "like": "oak_planks",
+  "set": "",
+  "base": "windswept_planks",
+  "axe": true
+ },
+ {
+  "id": "pine_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "compacted_pine_planks",
+  "kind": "pillar",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "compacted_pine_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "compacted_pine_planks",
+  "axe": true
+ },
+ {
+  "id": "thatched_pine_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "pine_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "stripped_pine_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "pine_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "pine",
+  "axe": true
+ },
+ {
+  "id": "pine_trapdoor",
+  "kind": "trapdoor",
+  "like": "oak_planks",
+  "set": "pine",
+  "axe": true
+ },
+ {
+  "id": "pine_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "pine",
+  "axe": true
+ },
+ {
+  "id": "pine_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "pine_planks",
+  "axe": true
+ },
+ {
+  "id": "pine_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "pine_planks",
+  "axe": true
+ },
+ {
+  "id": "pine_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "pine",
+  "axe": true
+ },
+ {
+  "id": "pine_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "pine_door",
+  "kind": "door",
+  "like": "oak_planks",
+  "set": "pine",
+  "axe": true
+ },
+ {
+  "id": "steep_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "dense_steep_planks",
+  "kind": "cube",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "steep_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "steep_wood_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "steep_wood",
+  "axe": true
+ },
+ {
+  "id": "studded_steep_wood",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "steep_pressure_plate",
+  "kind": "plate",
+  "like": "oak_planks",
+  "set": "steep",
+  "axe": true
+ },
+ {
+  "id": "steep_button",
+  "kind": "button",
+  "like": "oak_planks",
+  "set": "steep",
+  "axe": true
+ },
+ {
+  "id": "steep_stairs",
+  "kind": "stairs",
+  "like": "oak_planks",
+  "set": "",
+  "base": "steep_planks",
+  "axe": true
+ },
+ {
+  "id": "steep_slab",
+  "kind": "slab",
+  "like": "oak_planks",
+  "set": "",
+  "base": "steep_planks",
+  "axe": true
+ },
+ {
+  "id": "steep_fence_gate",
+  "kind": "gate",
+  "like": "oak_planks",
+  "set": "steep",
+  "axe": true
+ },
+ {
+  "id": "steep_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ },
+ {
+  "id": "steep_wall",
+  "kind": "wall",
+  "like": "oak_planks",
+  "set": "",
+  "base": "steep_wood",
+  "axe": true
+ },
+ {
+  "id": "studded_steep_wall",
+  "kind": "wall",
+  "like": "oak_planks",
+  "set": "",
+  "base": "studded_steep_wood",
+  "axe": true
+ },
+ {
+  "id": "shade_stone",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_polished",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_chiseled",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_bricks",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_bricks",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_tiles",
+  "kind": "cube",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_pillar",
+  "kind": "pillar",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "crypt_pillar",
+  "kind": "pillar",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "siltstone_pillar",
+  "kind": "pillar",
+  "like": "sandstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "snowy_siltstone_pillar",
+  "kind": "pillar",
+  "like": "sandstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "red_siltstone_pillar",
+  "kind": "pillar",
+  "like": "sandstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "blue_siltstone_pillar",
+  "kind": "pillar",
+  "like": "sandstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "green_siltstone_pillar",
+  "kind": "pillar",
+  "like": "sandstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "ominous_stone_pillar",
+  "kind": "pillar",
+  "like": "blackstone",
+  "set": "",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_slab",
+  "kind": "slab",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_polished_slab",
+  "kind": "slab",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_bricks_slab",
+  "kind": "slab",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "shade_bricks_slab",
+  "kind": "slab",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "shade_tiles_slab",
+  "kind": "slab",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "ominous_stone_pillar_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_pillar",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_stairs",
+  "kind": "stairs",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_polished_stairs",
+  "kind": "stairs",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone_polished",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_bricks_stairs",
+  "kind": "stairs",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone_bricks",
+  "axe": false
+ },
+ {
+  "id": "shade_bricks_stairs",
+  "kind": "stairs",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_bricks",
+  "axe": false
+ },
+ {
+  "id": "shade_tiles_stairs",
+  "kind": "stairs",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_tiles",
+  "axe": false
+ },
+ {
+  "id": "shade_bricks_wall",
+  "kind": "wall",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_bricks",
+  "axe": false
+ },
+ {
+  "id": "shade_stone_bricks_wall",
+  "kind": "wall",
+  "like": "deepslate_bricks",
+  "set": "",
+  "base": "shade_stone_bricks",
+  "axe": false
+ },
+ {
+  "id": "cragrocks_fence",
+  "kind": "fence",
+  "like": "oak_planks",
+  "set": "",
+  "axe": true
+ }
+]

@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:jade_tiles",
+  "S": "minecraft:snowball"
+ },
+ "pattern": [
+  "#S",
+  "S#"
+ ],
+ "result": {
+  "id": "goety:snowy_jade_tiles",
+  "count": 2
+ }
+}

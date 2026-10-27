@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "goety:siltstone_pillar",
+  "goety:red_siltstone_pillar",
+  "goety:blue_siltstone_pillar",
+  "goety:green_siltstone_pillar"
+ ]
+}

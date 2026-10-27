@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "goety:steep_wood"
+ ],
+ "result": {
+  "id": "goety:steep_planks",
+  "count": 4
+ }
+}
