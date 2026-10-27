@@ -6,7 +6,9 @@
   "mixins": [
     "FilePackResourcesMixin",
     "SharedZipFileAccessAccessor",
-    "TemplateSourceMixin"
+    "TemplateSourceMixin",
+    "compat.distanthorizons.ServerApiMixin",
+    "compat.lightmanscurrency.BlockEntityTrackingManagerMixin"
   ],
   "client": [
     "FaceBakeryMixin",
