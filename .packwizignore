@@ -4,3 +4,4 @@ Diaithir.zip
 /source/
 /client/
 .gitattributes
+.pre-commit-config.yaml
