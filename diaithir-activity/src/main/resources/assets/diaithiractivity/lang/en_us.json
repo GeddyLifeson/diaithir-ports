@@ -1,0 +1,21 @@
+{
+ "activity.diaithiractivity.mining": "mèind",
+ "activity.diaithiractivity.chopping": "miongerrad",
+ "activity.diaithiractivity.digging": "klaudach",
+ "activity.diaithiractivity.farming": "tuotunas",
+ "activity.diaithiractivity.fighting": "katachad",
+ "activity.diaithiractivity.fishing": "iaskach",
+ "activity.diaithiractivity.building": "toguil",
+ "activity.diaithiractivity.brewing": "grùdad",
+ "activity.diaithiractivity.smelting": "liegad",
+ "activity.diaithiractivity.crafting": "keàird",
+ "activity.diaithiractivity.enchanting": "seinad",
+ "activity.diaithiractivity.smithing": "inden",
+ "activity.diaithiractivity.storage": "bùd",
+ "activity.diaithiractivity.trading": "iumlaid",
+ "activity.diaithiractivity.menu": "klàrbìd",
+ "activity.diaithiractivity.reading": "leigad",
+ "activity.diaithiractivity.riding": "markachd",
+ "activity.diaithiractivity.sleeping": "kadul",
+ "activity.diaithiractivity.afk": "aro falb"
+}
