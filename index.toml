@@ -10829,6 +10829,10 @@ file = "kubejs/server_scripts/diaithir/prewarm_spawn.js"
 hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
 
 [[files]]
+file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
+hash = "23e8236a8cbd9b0f7033ad41aa7d386b2688c60fef20258991a495dd9ce0d8d2"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/unify.js"
 hash = "90cf22e88574447f9d7d1b2b5b7f41de01793c68444d0b3aa3c3e18cdb874fba"
 
