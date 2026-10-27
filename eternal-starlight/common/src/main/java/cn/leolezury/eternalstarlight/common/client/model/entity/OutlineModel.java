@@ -4,7 +4,7 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -13,11 +13,12 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.Entity;
 
-public class OutlineModel<T extends Entity> extends EntityModel<T> {
+public class OutlineModel<T extends Entity> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("outline"), "main");
 	private final ModelPart root;
 
 	public OutlineModel(ModelPart root) {
+		super(root, ESRenderType::entityCutoutGlow);
 		this.root = root.getChild("root");
 	}
 
@@ -35,13 +36,5 @@ public class OutlineModel<T extends Entity> extends EntityModel<T> {
 
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return ESRenderType.entityCutoutGlow(resourceLocation);
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

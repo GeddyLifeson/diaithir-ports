@@ -1,10 +1,11 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.FrozenTube;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -13,11 +14,12 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class FrozenTubeModel<T extends FrozenTube> extends EntityModel<T> {
+public class FrozenTubeModel<T extends FrozenTube> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("frozen_tube"), "main");
 	private final ModelPart root;
 
 	public FrozenTubeModel(ModelPart root) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root.getChild("root");
 	}
 
@@ -37,13 +39,5 @@ public class FrozenTubeModel<T extends FrozenTube> extends EntityModel<T> {
 		root.xRot = headPitch * Mth.DEG_TO_RAD;
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

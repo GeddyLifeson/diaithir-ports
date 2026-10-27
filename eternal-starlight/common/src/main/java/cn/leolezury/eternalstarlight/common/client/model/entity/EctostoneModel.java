@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -30,6 +31,7 @@ public class EctostoneModel<T extends Ectostone> extends AnimatedEntityModel<T> 
 	private final ModelPart particle4;
 
 	public EctostoneModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.body = this.root.getChild("body");
 		this.cannons = this.body.getChild("cannons");
@@ -72,10 +74,6 @@ public class EctostoneModel<T extends Ectostone> extends AnimatedEntityModel<T> 
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {

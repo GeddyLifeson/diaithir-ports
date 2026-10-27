@@ -4,13 +4,13 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.ChainOfSouls;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class ChainOfSoulsModel<T extends ChainOfSouls> extends EntityModel<T> {
+public class ChainOfSoulsModel<T extends ChainOfSouls> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("chain_of_souls"), "main");
 	private final ModelPart base;
 	private final ModelPart side1;
@@ -19,6 +19,7 @@ public class ChainOfSoulsModel<T extends ChainOfSouls> extends EntityModel<T> {
 	private final ModelPart side4;
 
 	public ChainOfSoulsModel(ModelPart root) {
+		super(root);
 		this.base = root.getChild("base");
 		this.side1 = root.getChild("side1");
 		this.side2 = root.getChild("side2");
@@ -48,12 +49,5 @@ public class ChainOfSoulsModel<T extends ChainOfSouls> extends EntityModel<T> {
 
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		base.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		side1.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		side2.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		side3.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		side4.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
+	// PORT-TODO partial render removed
 }

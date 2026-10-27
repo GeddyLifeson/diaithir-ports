@@ -2,14 +2,14 @@ package cn.leolezury.eternalstarlight.common.client.model.entity;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.NightfallSpider;
-import net.minecraft.client.model.HierarchicalModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class NightfallSpiderModel<T extends NightfallSpider> extends HierarchicalModel<T> {
+public class NightfallSpiderModel<T extends NightfallSpider> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("nightfall_spider"), "main");
 	private final ModelPart root;
 	private final ModelPart head;
@@ -23,6 +23,7 @@ public class NightfallSpiderModel<T extends NightfallSpider> extends Hierarchica
 	private final ModelPart leftFrontLeg;
 
 	public NightfallSpiderModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.head = root.getChild("head");
 		this.rightHindLeg = root.getChild("leg1");
@@ -66,10 +67,6 @@ public class NightfallSpiderModel<T extends NightfallSpider> extends Hierarchica
 		partdefinition.addOrReplaceChild("leg8", CubeListBuilder.create().texOffs(23, 20).mirror().addBox(-1.0F, -1.0F, -1.0F, 12.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(3.0F, 17.0F, -2.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
-	}
-
-	public ModelPart root() {
-		return this.root;
 	}
 
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {

@@ -5,20 +5,21 @@ import cn.leolezury.eternalstarlight.common.entity.attack.TentacleSpike;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class TentacleSpikeModel<T extends TentacleSpike> extends EntityModel<T> {
+public class TentacleSpikeModel<T extends TentacleSpike> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("tentacle_spike"), "main");
 	private static final int NUM_SEGMENTS = 15;
 	private final ModelPart root;
 	private final ModelPart[] segments;
 
 	public TentacleSpikeModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		ModelPart[] parts = new ModelPart[NUM_SEGMENTS];
 		ModelPart last = this.root;
@@ -70,8 +71,4 @@ public class TentacleSpikeModel<T extends TentacleSpike> extends EntityModel<T> 
 		}
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

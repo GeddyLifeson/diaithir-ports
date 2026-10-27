@@ -4,7 +4,7 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -15,7 +15,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import org.joml.Vector3f;
 
-public class OrbModel<T extends Entity> extends EntityModel<T> {
+public class OrbModel<T extends Entity> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("orb"), "main");
 	public final ModelPart root;
 	public final ModelPart layer1;
@@ -23,6 +23,7 @@ public class OrbModel<T extends Entity> extends EntityModel<T> {
 	public final ModelPart layer3;
 
 	public OrbModel(ModelPart root) {
+		super(root, ESRenderType::entityCutoutGlow);
 		this.root = root.getChild("root");
 		this.layer1 = this.root.getChild("layer1");
 		this.layer2 = this.root.getChild("layer2");
@@ -54,13 +55,5 @@ public class OrbModel<T extends Entity> extends EntityModel<T> {
 		this.layer3.offsetScale(new Vector3f(Mth.sin(ageInTicks * 0.07f + 31 + entity.getId() * 7) * (0.6f / 8f)));
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return ESRenderType.entityCutoutGlow(resourceLocation);
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

@@ -1,98 +1,82 @@
 package cn.leolezury.eternalstarlight.common.client;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import cn.leolezury.eternalstarlight.common.client.shader.ESShaders;
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
-import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.util.Util;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.RenderStateShard;
+import com.mojang.blaze3d.pipeline.BlendFunction;
+import com.mojang.blaze3d.pipeline.ColorTargetState;
+import com.mojang.blaze3d.pipeline.DepthStencilState;
+import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.mojang.blaze3d.platform.CompareOp;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.rendertype.RenderSetup;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Util;
 
 import java.util.function.Function;
 
-public abstract class ESRenderType extends RenderType {
-	public static final RenderType PORTAL = create(EternalStarlight.ID + ":starlight_portal", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, false, true, RenderType.CompositeState.builder()
-		.setShaderState(new ShaderStateShard(ESShaders::getRenderTypeStarlightPortal))
-		.setTextureState(NO_TEXTURE)
-		.setTransparencyState(TRANSLUCENT_TRANSPARENCY)
-		.setCullState(NO_CULL)
-		.setLightmapState(LIGHTMAP)
-		.setOverlayState(OVERLAY)
-		.createCompositeState(false));
+public class ESRenderType {
+	public static final RenderPipeline ENTITY_TRANSLUCENT_ADDITIVE_GLOW_PIPELINE = RenderPipeline.builder(RenderPipelines.ENTITY_EMISSIVE_SNIPPET)
+		.withLocation(EternalStarlight.id("pipeline/entity_translucent_additive_glow"))
+		.withShaderDefine("ALPHA_CUTOUT", 0.1F)
+		.withShaderDefine("PER_FACE_LIGHTING")
+		.withSampler("Sampler1")
+		.withColorTargetState(new ColorTargetState(BlendFunction.LIGHTNING))
+		.withCull(false)
+		.withDepthStencilState(new DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, false))
+		.build();
 
-	public static final RenderType ECLIPSE = create(EternalStarlight.ID + ":eclipse", DefaultVertexFormat.BLOCK, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, false, true, RenderType.CompositeState.builder()
-		.setShaderState(new ShaderStateShard(ESShaders::getRenderTypeEclipse))
-		.setTextureState(NO_TEXTURE)
-		.setTransparencyState(LIGHTNING_TRANSPARENCY)
-		.setCullState(NO_CULL)
-		.setLightmapState(LIGHTMAP)
-		.setOverlayState(OVERLAY)
-		.createCompositeState(false));
+	public static final RenderPipeline ENTITY_TRANSLUCENT_NO_DEPTH_PIPELINE = RenderPipeline.builder(RenderPipelines.ENTITY_SNIPPET)
+		.withLocation(EternalStarlight.id("pipeline/entity_translucent_no_depth"))
+		.withShaderDefine("ALPHA_CUTOUT", 0.1F)
+		.withShaderDefine("PER_FACE_LIGHTING")
+		.withSampler("Sampler1")
+		.withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
+		.withCull(false)
+		.withDepthStencilState(new DepthStencilState(CompareOp.ALWAYS_PASS, false))
+		.build();
 
-	public static final RenderType PARTICLE_NO_DEPTH = create(EternalStarlight.ID + ":particle_no_depth", DefaultVertexFormat.PARTICLE, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, false, true, RenderType.CompositeState.builder()
-		.setShaderState(new ShaderStateShard(GameRenderer::getParticleShader))
-		.setTextureState(new TextureStateShard(TextureAtlas.LOCATION_PARTICLES, false, false))
-		.setTransparencyState(TRANSLUCENT_TRANSPARENCY)
-		.setCullState(NO_CULL)
-		.setLightmapState(LIGHTMAP)
-		.setOverlayState(OVERLAY)
-		.setWriteMaskState(COLOR_WRITE)
-		.createCompositeState(false));
-
-	public static final RenderType PARTICLE_ADDITIVE_GLOW = create(EternalStarlight.ID + ":particle_additive_glow", DefaultVertexFormat.PARTICLE, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, false, true, RenderType.CompositeState.builder()
-		.setShaderState(new ShaderStateShard(GameRenderer::getParticleShader))
-		.setTextureState(new TextureStateShard(TextureAtlas.LOCATION_PARTICLES, false, false))
-		.setTransparencyState(LIGHTNING_TRANSPARENCY)
-		.setCullState(NO_CULL)
-		.setLightmapState(LIGHTMAP)
-		.setOverlayState(OVERLAY)
-		.setWriteMaskState(COLOR_WRITE)
-		.createCompositeState(false));
-
-	public static final RenderType DRAGON_RAYS_QUADS = create(EternalStarlight.ID + ":dragon_rays_quads", DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, false, true, RenderType.CompositeState.builder()
-		.setShaderState(RENDERTYPE_LIGHTNING_SHADER)
-		.setTextureState(NO_TEXTURE)
-		.setTransparencyState(LIGHTNING_TRANSPARENCY)
-		.setCullState(NO_CULL)
-		.setLightmapState(LIGHTMAP)
-		.setOverlayState(OVERLAY)
-		.setWriteMaskState(COLOR_WRITE)
-		.createCompositeState(false));
+	public static final RenderPipeline ENTITY_CUTOUT_GLOW_PIPELINE = RenderPipeline.builder(RenderPipelines.ENTITY_EMISSIVE_SNIPPET)
+		.withLocation(EternalStarlight.id("pipeline/entity_cutout_glow"))
+		.withShaderDefine("ALPHA_CUTOUT", 0.1F)
+		.withShaderDefine("PER_FACE_LIGHTING")
+		.withSampler("Sampler1")
+		.withCull(false)
+		.build();
 
 	public static final Function<Identifier, RenderType> TRANSLUCENT_ADDITIVE_GLOW = Util.memoize(location ->
-		create(EternalStarlight.ID + ":entity_translucent_additive_glow", DefaultVertexFormat.NEW_ENTITY, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, true, true, RenderType.CompositeState.builder()
-			.setShaderState(RENDERTYPE_ENTITY_TRANSLUCENT_EMISSIVE_SHADER)
-			.setTextureState(new RenderStateShard.TextureStateShard(location, false, false))
-			.setTransparencyState(LIGHTNING_TRANSPARENCY)
-			.setCullState(NO_CULL)
-			.setWriteMaskState(COLOR_WRITE)
-			.setOverlayState(OVERLAY)
-			.createCompositeState(true)));
+		RenderType.create(EternalStarlight.ID + ":entity_translucent_additive_glow", RenderSetup.builder(ENTITY_TRANSLUCENT_ADDITIVE_GLOW_PIPELINE)
+			.withTexture("Sampler0", location)
+			.useOverlay()
+			.sortOnUpload()
+			.createRenderSetup()));
 
 	public static final Function<Identifier, RenderType> TRANSLUCENT_NO_DEPTH = Util.memoize(location ->
-		create(EternalStarlight.ID + ":entity_translucent_no_depth", DefaultVertexFormat.NEW_ENTITY, VertexFormat.Mode.QUADS, TRANSIENT_BUFFER_SIZE, true, true, RenderType.CompositeState.builder()
-			.setShaderState(RENDERTYPE_ENTITY_TRANSLUCENT_SHADER)
-			.setTextureState(new RenderStateShard.TextureStateShard(location, false, false))
-			.setTransparencyState(TRANSLUCENT_TRANSPARENCY)
-			.setCullState(NO_CULL)
-			.setWriteMaskState(COLOR_WRITE)
-			.setLightmapState(LIGHTMAP)
-			.setOverlayState(OVERLAY)
-			.createCompositeState(true)));
+		RenderType.create(EternalStarlight.ID + ":entity_translucent_no_depth", RenderSetup.builder(ENTITY_TRANSLUCENT_NO_DEPTH_PIPELINE)
+			.withTexture("Sampler0", location)
+			.useLightmap()
+			.useOverlay()
+			.sortOnUpload()
+			.createRenderSetup()));
 
 	public static final Function<Identifier, RenderType> CUTOUT_GLOW = Util.memoize(location ->
-		create(EternalStarlight.ID + ":entity_cutout_glow", DefaultVertexFormat.NEW_ENTITY, VertexFormat.Mode.QUADS, 256, true, true, RenderType.CompositeState.builder()
-			.setTextureState(new RenderStateShard.TextureStateShard(location, false, false))
-			.setShaderState(RENDERTYPE_BEACON_BEAM_SHADER)
-			.setTransparencyState(NO_TRANSPARENCY)
-			.setOverlayState(OVERLAY)
-			.createCompositeState(true)));
+		RenderType.create(EternalStarlight.ID + ":entity_cutout_glow", RenderSetup.builder(ENTITY_CUTOUT_GLOW_PIPELINE)
+			.withTexture("Sampler0", location)
+			.useOverlay()
+			.createRenderSetup()));
 
-	public ESRenderType(String string, VertexFormat vertexFormat, VertexFormat.Mode mode, int bufferSize, boolean affectsCrumbling, boolean sortOnUpload, Runnable setupState, Runnable clearState) {
-		super(string, vertexFormat, mode, bufferSize, affectsCrumbling, sortOnUpload, setupState, clearState);
+	/** Position/colour quads, additive-ish blending. Used for the portal surface. */
+	public static RenderType portal() {
+		return RenderTypes.lightning();
+	}
+
+	/** Position/colour quads, additive-ish blending. Used for the eclipse disc. */
+	public static RenderType eclipse() {
+		return RenderTypes.lightning();
+	}
+
+	public static RenderType dragonRaysQuads() {
+		return RenderTypes.lightning();
 	}
 
 	public static RenderType entityTranslucentAdditiveGlow(Identifier location) {

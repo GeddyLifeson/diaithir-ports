@@ -15,6 +15,7 @@ public class TwilightGazeModel<T extends TwilightGaze> extends AnimatedEntityMod
 	private final ModelPart root;
 
 	public TwilightGazeModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -60,8 +61,4 @@ public class TwilightGazeModel<T extends TwilightGaze> extends AnimatedEntityMod
 		animate(entity.swimAnimationState, TwilightGazeAnimation.SWIM, ageInTicks, (float) (16.0f * entity.getDeltaMovement().length()), entity.isInWater() ? 1.0f : 1.5f);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

@@ -5,7 +5,7 @@ import cn.leolezury.eternalstarlight.common.client.book.ResolvedBookDefinition;
 import cn.leolezury.eternalstarlight.common.client.book.component.ConfiguredBookComponent;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.widget.BookHistoryButton;
 import cn.leolezury.eternalstarlight.common.client.gui.screen.widget.BookProgressButton;
-import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.opengl.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

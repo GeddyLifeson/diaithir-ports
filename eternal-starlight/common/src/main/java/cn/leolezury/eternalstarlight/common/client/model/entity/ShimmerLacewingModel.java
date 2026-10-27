@@ -14,6 +14,7 @@ public class ShimmerLacewingModel<T extends ShimmerLacewing> extends AnimatedEnt
 	private final ModelPart root;
 
 	public ShimmerLacewingModel(ModelPart root) {
+		super(root);
 		this.root = root;
 	}
 
@@ -69,8 +70,4 @@ public class ShimmerLacewingModel<T extends ShimmerLacewing> extends AnimatedEnt
 		animate(entity.idleAnimationState, ShimmerLacewingAnimation.IDLE, ageInTicks);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

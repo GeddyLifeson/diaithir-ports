@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -32,6 +34,7 @@ public class PermafrostModel<T extends Permafrost> extends AnimatedEntityModel<T
 	public float alphaFactor = 1;
 
 	public PermafrostModel(ModelPart root) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root.getChild("root");
 		this.head = root.getChild("root").getChild("head");
 		this.lower = root.getChild("root").getChild("lower");
@@ -156,18 +159,9 @@ public class PermafrostModel<T extends Permafrost> extends AnimatedEntityModel<T
 		entity.smokePos = ESModelUtil.getModelPartWorldPosition(entity, entity.getPosition(Mth.frac(ageInTicks)), Mth.lerp(Mth.frac(ageInTicks), entity.yBodyRotO, entity.yBodyRot), List.of(root(), lower, armature));
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
-	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+	public void renderWithAlpha(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
 		root().render(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
 	}
 }

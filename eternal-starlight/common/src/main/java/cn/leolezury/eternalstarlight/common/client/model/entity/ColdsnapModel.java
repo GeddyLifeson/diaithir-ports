@@ -1,11 +1,12 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.attack.Coldsnap;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -14,13 +15,14 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class ColdsnapModel<T extends Coldsnap> extends EntityModel<T> {
+public class ColdsnapModel<T extends Coldsnap> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("coldsnap"), "main");
 	private static final int NUM_SEGMENTS = 9;
 	private final ModelPart root;
 	private final ModelPart[] segments;
 
 	public ColdsnapModel(ModelPart root) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root.getChild("root");
 		ModelPart[] parts = new ModelPart[NUM_SEGMENTS];
 		ModelPart last = this.root;
@@ -76,13 +78,5 @@ public class ColdsnapModel<T extends Coldsnap> extends EntityModel<T> {
 		}
 	}
 
-	@Override
-	public RenderType renderType(Identifier location) {
-		return RenderType.entityTranslucent(location);
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

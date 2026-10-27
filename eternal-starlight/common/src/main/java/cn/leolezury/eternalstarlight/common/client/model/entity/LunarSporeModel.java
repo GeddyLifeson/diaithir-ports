@@ -4,18 +4,19 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.LunarSpore;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class LunarSporeModel<T extends LunarSpore> extends EntityModel<T> {
+public class LunarSporeModel<T extends LunarSpore> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("lunar_spore"), "main");
 	private final ModelPart root;
 
 	public LunarSporeModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -34,8 +35,4 @@ public class LunarSporeModel<T extends LunarSpore> extends EntityModel<T> {
 		root.xRot = headPitch * Mth.DEG_TO_RAD;
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

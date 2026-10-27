@@ -14,6 +14,7 @@ public class ShadowSnailModel<T extends ShadowSnail> extends AnimatedEntityModel
 	private final ModelPart root;
 
 	public ShadowSnailModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -50,8 +51,4 @@ public class ShadowSnailModel<T extends ShadowSnail> extends AnimatedEntityModel
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

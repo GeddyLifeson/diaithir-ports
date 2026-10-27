@@ -15,6 +15,7 @@ public class GleechModel<T extends Gleech> extends AnimatedEntityModel<T> {
 	private final ModelPart root;
 
 	public GleechModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -44,8 +45,4 @@ public class GleechModel<T extends Gleech> extends AnimatedEntityModel<T> {
 		animate(entity.idleAnimationState, GleechAnimation.IDLE, ageInTicks);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

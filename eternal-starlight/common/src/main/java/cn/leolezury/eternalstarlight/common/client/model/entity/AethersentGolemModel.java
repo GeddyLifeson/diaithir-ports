@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -30,6 +31,7 @@ public class AethersentGolemModel<T extends AethersentGolem> extends AnimatedEnt
 	private final ModelPart lower;
 
 	public AethersentGolemModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.upper = root.getChild("upper");
 		this.body = this.upper.getChild("body");
@@ -115,8 +117,4 @@ public class AethersentGolemModel<T extends AethersentGolem> extends AnimatedEnt
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

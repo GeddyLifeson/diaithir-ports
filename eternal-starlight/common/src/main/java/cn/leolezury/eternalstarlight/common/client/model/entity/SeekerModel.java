@@ -19,6 +19,7 @@ public class SeekerModel<T extends Seeker> extends AnimatedEntityModel<T> {
 	private final ModelPart eye;
 
 	public SeekerModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.eye = this.root.getChild("head").getChild("eye");
 	}
@@ -67,8 +68,4 @@ public class SeekerModel<T extends Seeker> extends AnimatedEntityModel<T> {
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

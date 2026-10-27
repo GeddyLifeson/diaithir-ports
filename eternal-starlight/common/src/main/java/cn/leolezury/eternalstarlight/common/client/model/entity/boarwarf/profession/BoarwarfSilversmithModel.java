@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.profession;
 
+import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
 import cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.BoarwarfModel;
@@ -16,6 +17,7 @@ public class BoarwarfSilversmithModel<T extends Boarwarf> extends AnimatedEntity
 	public final ModelPart head;
 
 	public BoarwarfSilversmithModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.body = root.getChild("body");
 		this.head = body.getChild("head");
@@ -34,8 +36,8 @@ public class BoarwarfSilversmithModel<T extends Boarwarf> extends AnimatedEntity
 	}
 
 	public void copyPropertiesFrom(BoarwarfModel<?> model) {
-		this.body.copyFrom(model.body);
-		this.head.copyFrom(model.head);
+		ESModelUtil.copyFrom(this.body, model.body);
+		ESModelUtil.copyFrom(this.head, model.head);
 	}
 
 	@Override
@@ -43,8 +45,4 @@ public class BoarwarfSilversmithModel<T extends Boarwarf> extends AnimatedEntity
 
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

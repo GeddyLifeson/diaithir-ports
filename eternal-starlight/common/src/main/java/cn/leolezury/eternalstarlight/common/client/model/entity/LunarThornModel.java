@@ -4,18 +4,19 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.attack.LunarThorn;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class LunarThornModel<T extends LunarThorn> extends EntityModel<T> {
+public class LunarThornModel<T extends LunarThorn> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("lunar_thorn"), "main");
 
 	private final ModelPart thorn;
 
 	public LunarThornModel(ModelPart root) {
+		super(root);
 		this.thorn = root.getChild("thorn");
 	}
 
@@ -47,8 +48,5 @@ public class LunarThornModel<T extends LunarThorn> extends EntityModel<T> {
 		this.thorn.zScale = scale;
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		thorn.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
+	// PORT-TODO partial render removed
 }

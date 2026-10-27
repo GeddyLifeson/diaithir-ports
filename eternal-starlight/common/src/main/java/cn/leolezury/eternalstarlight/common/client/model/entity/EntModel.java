@@ -4,14 +4,14 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.Ent;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class EntModel<T extends Ent> extends EntityModel<T> {
+public class EntModel<T extends Ent> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("ent"), "main");
 	private final ModelPart body;
 	private final ModelPart leaves;
@@ -21,6 +21,7 @@ public class EntModel<T extends Ent> extends EntityModel<T> {
 	private final ModelPart leftLeg;
 
 	public EntModel(ModelPart root) {
+		super(root);
 		this.body = root.getChild("body");
 		this.leaves = this.body.getChild("leaves");
 		this.leftArm = this.body.getChild("left_arm");
@@ -58,10 +59,5 @@ public class EntModel<T extends Ent> extends EntityModel<T> {
 		rightLeg.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount;
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		rightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		leftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
+	// PORT-TODO partial render removed
 }

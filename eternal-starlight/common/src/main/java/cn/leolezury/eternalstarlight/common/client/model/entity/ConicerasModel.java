@@ -23,6 +23,7 @@ public class ConicerasModel<T extends Coniceras> extends AnimatedEntityModel<T> 
 	private final ModelPart mouth_bottom;
 
 	public ConicerasModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.shell = this.root.getChild("shell");
 		this.shell4 = this.shell.getChild("shell4");
@@ -64,10 +65,6 @@ public class ConicerasModel<T extends Coniceras> extends AnimatedEntityModel<T> 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
 import cn.leolezury.eternalstarlight.common.client.model.animation.definition.TangledAnimation;
@@ -18,6 +19,7 @@ public class TangledModel<T extends Tangled> extends AnimatedEntityModel<T> {
 	private final ModelPart head;
 
 	public TangledModel(ModelPart root) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root;
 		this.head = root.getChild("body").getChild("head");
 	}
@@ -54,13 +56,5 @@ public class TangledModel<T extends Tangled> extends AnimatedEntityModel<T> {
 		animate(entity.meleeAnimationState, TangledAnimation.ATTACK, ageInTicks);
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
-	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

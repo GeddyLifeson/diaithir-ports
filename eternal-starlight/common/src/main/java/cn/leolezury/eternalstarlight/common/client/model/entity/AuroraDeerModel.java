@@ -18,6 +18,7 @@ public class AuroraDeerModel<T extends AuroraDeer> extends AnimatedEntityModel<T
 	private final ModelPart rightAntler;
 
 	public AuroraDeerModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.head = root.getChild("root").getChild("body").getChild("neck").getChild("head");
 		this.leftAntler = head.getChild("left_antler");
@@ -91,8 +92,4 @@ public class AuroraDeerModel<T extends AuroraDeer> extends AnimatedEntityModel<T
 		this.animateWalk(AuroraDeerAnimation.WALK, limbSwing, limbSwingAmount, young ? 3.0f : 5.0f, 1.0f);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

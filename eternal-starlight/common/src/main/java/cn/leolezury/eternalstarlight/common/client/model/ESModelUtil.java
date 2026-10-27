@@ -7,10 +7,10 @@ import com.mojang.math.Axis;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.client.renderer.entity.player.AvatarRenderer;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
@@ -21,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 import org.joml.Vector4f;
 
 import java.util.HashMap;
@@ -58,55 +59,15 @@ public class ESModelUtil {
 		return pos.scale(entity instanceof LivingEntity living ? living.getScale() : 1);
 	}
 
+	@SuppressWarnings("unchecked")
 	public static Optional<Vec3> getThirdPersonPlayerHandPosition(Player player, EntityRenderDispatcher renderDispatcher, float yaw, float partialTick, HumanoidArm arm, Vec3 offset) {
-		if (player instanceof AbstractClientPlayer clientPlayer && renderDispatcher.getRenderer(clientPlayer) instanceof PlayerRenderer renderer) {
+		if (player instanceof AbstractClientPlayer clientPlayer && renderDispatcher.getRenderer(clientPlayer) instanceof AvatarRenderer<?> rawRenderer) {
+			AvatarRenderer<AbstractClientPlayer> renderer = (AvatarRenderer<AbstractClientPlayer>) rawRenderer;
+			AvatarRenderState state = renderer.createRenderState(clientPlayer, partialTick);
+			PlayerModel model = renderer.getModel();
+			model.setupAnim(state);
+
 			PoseStack stack = new PoseStack();
-			renderer.setModelProperties(clientPlayer);
-			PlayerModel<AbstractClientPlayer> model = renderer.getModel();
-
-			// animate the player model
-			// copied from LivingEntityRenderer
-			model.attackTime = clientPlayer.getAttackAnim(partialTick);
-			boolean shouldSit = clientPlayer.isPassenger() && clientPlayer.getVehicle() != null;
-			model.riding = shouldSit;
-			float yBodyRot = Mth.rotLerp(partialTick, clientPlayer.yBodyRotO, clientPlayer.yBodyRot);
-			float yHeadRot = Mth.rotLerp(partialTick, clientPlayer.yHeadRotO, clientPlayer.yHeadRot);
-			float rotDiff = yHeadRot - yBodyRot;
-			if (shouldSit && clientPlayer.getVehicle() instanceof LivingEntity livingentity) {
-				yBodyRot = Mth.rotLerp(partialTick, livingentity.yBodyRotO, livingentity.yBodyRot);
-				rotDiff = yHeadRot - yBodyRot;
-				float diff = Mth.wrapDegrees(rotDiff);
-				if (diff < -85.0F) {
-					diff = -85.0F;
-				}
-				if (diff >= 85.0F) {
-					diff = 85.0F;
-				}
-				yBodyRot = yHeadRot - diff;
-				if (diff * diff > 2500.0F) {
-					yBodyRot += diff * 0.2F;
-				}
-				rotDiff = yHeadRot - yBodyRot;
-			}
-			float xRot = Mth.lerp(partialTick, clientPlayer.xRotO, clientPlayer.getXRot());
-			if (LivingEntityRenderer.isEntityUpsideDown(clientPlayer)) {
-				xRot *= -1.0F;
-				rotDiff *= -1.0F;
-			}
-			rotDiff = Mth.wrapDegrees(rotDiff);
-			float age = clientPlayer.tickCount + partialTick;
-			float walkSpeed = 0.0F;
-			float walkPos = 0.0F;
-			if (!shouldSit && clientPlayer.isAlive()) {
-				walkSpeed = clientPlayer.walkAnimation.speed(partialTick);
-				walkPos = clientPlayer.walkAnimation.position(partialTick);
-				if (walkSpeed > 1.0F) {
-					walkSpeed = 1.0F;
-				}
-			}
-			model.prepareMobModel(clientPlayer, walkPos, walkSpeed, partialTick);
-			model.setupAnim(clientPlayer, walkPos, walkSpeed, age, rotDiff, xRot);
-
 			stack.translate(
 				Mth.lerp(partialTick, player.xo, player.getX()),
 				Mth.lerp(partialTick, player.yo, player.getY()),
@@ -114,9 +75,8 @@ public class ESModelUtil {
 			);
 			stack.mulPose(new Quaternionf().rotationY((-yaw + 180.0F) * Mth.DEG_TO_RAD));
 			stack.scale(-1, -1, 1);
-			renderer.scale(clientPlayer, stack, partialTick);
-			stack.translate(0, -1.5f, 0);
-			model.translateToHand(arm, stack);
+			stack.translate(0, -1.501f, 0);
+			model.translateToHand(state, arm, stack);
 
 			Vector4f vec = new Vector4f((float) offset.x(), (float) offset.y(), (float) offset.z(), 1).mul(stack.last().pose());
 			Vec3 pos = new Vec3(vec.x(), vec.y(), vec.z());
@@ -124,6 +84,19 @@ public class ESModelUtil {
 			return Optional.of(player.position().add(subtract.scale(player.getScale())));
 		}
 		return Optional.empty();
+	}
+
+	public static void copyFrom(ModelPart dst, ModelPart src) {
+		dst.x = src.x;
+		dst.y = src.y;
+		dst.z = src.z;
+		dst.xRot = src.xRot;
+		dst.yRot = src.yRot;
+		dst.zRot = src.zRot;
+		dst.xScale = src.xScale;
+		dst.yScale = src.yScale;
+		dst.zScale = src.zScale;
+		dst.visible = src.visible;
 	}
 
 	public static Stream<String> getAllPartNames(ModelPart root) {
@@ -168,15 +141,15 @@ public class ESModelUtil {
 		part.translateAndRotate(poseStack);
 		for (ModelPart.Cube cube : part.cubes) {
 			for (ModelPart.Polygon polygon : cube.polygons) {
-				Vector3f normal = polygon.normal;
-				ModelPart.Vertex[] vertices = polygon.vertices;
+				Vector3fc normal = polygon.normal();
+				ModelPart.Vertex[] vertices = polygon.vertices();
 				if (vertices.length != 4) continue;
 				int color = ARGB.color((int) (alpha * 255), (int) (red * 255), (int) (green * 255), (int) (blue * 255));
 				float minX = Float.MAX_VALUE, maxX = Float.MIN_VALUE;
 				float minY = Float.MAX_VALUE, maxY = Float.MIN_VALUE;
 				float minZ = Float.MAX_VALUE, maxZ = Float.MIN_VALUE;
 				for (ModelPart.Vertex v : vertices) {
-					float vx = v.pos.x(), vy = v.pos.y(), vz = v.pos.z();
+					float vx = v.x(), vy = v.y(), vz = v.z();
 					if (vx < minX) minX = vx;
 					if (vx > maxX) maxX = vx;
 					if (vy < minY) minY = vy;
@@ -186,7 +159,7 @@ public class ESModelUtil {
 				}
 				for (int i = 3; i >= 0; i--) {
 					ModelPart.Vertex v = vertices[i];
-					float vx = v.pos.x(), vy = v.pos.y(), vz = v.pos.z();
+					float vx = v.x(), vy = v.y(), vz = v.z();
 					float ox = vx / 16f + normal.x() * expansion;
 					float oy = vy / 16f + normal.y() * expansion;
 					float oz = vz / 16f + normal.z() * expansion;
@@ -201,9 +174,9 @@ public class ESModelUtil {
 					}
 					vertexConsumer.addVertex(poseStack.last(), ox, oy, oz)
 						.setColor(color)
-						.setUv(v.u, v.v)
+						.setUv(v.u(), v.v())
 						.setOverlay(OverlayTexture.NO_OVERLAY)
-						.setLight(LightTexture.FULL_BRIGHT)
+						.setLight(LightCoordsUtil.FULL_BRIGHT)
 						.setNormal(poseStack.last(), normal.x(), normal.y(), normal.z());
 				}
 			}

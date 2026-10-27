@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -33,6 +34,7 @@ public class SolarCreeperModel<T extends SolarCreeper> extends AnimatedEntityMod
 	public float shatterProgress = 0;
 
 	public SolarCreeperModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.body = this.root.getChild("body");
 		this.head = this.body.getChild("head");
@@ -74,10 +76,6 @@ public class SolarCreeperModel<T extends SolarCreeper> extends AnimatedEntityMod
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
 	public void applyShatter(Map<String, Vector3f> offsets, Map<String, Vector3f> rotations, float shatterProgress) {
 		for (String name : allPartNames) {
@@ -109,8 +107,7 @@ public class SolarCreeperModel<T extends SolarCreeper> extends AnimatedEntityMod
 		return null;
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+	public void renderWithAlpha(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
 		root().render(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
 	}
 }

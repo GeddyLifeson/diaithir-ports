@@ -5,20 +5,21 @@ import cn.leolezury.eternalstarlight.common.entity.attack.Candlash;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class CandlashModel<T extends Candlash> extends EntityModel<T> {
+public class CandlashModel<T extends Candlash> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("candlash"), "main");
 	private static final int NUM_SEGMENTS = 20;
 	private final ModelPart root;
 	private final ModelPart[] segments;
 
 	public CandlashModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		ModelPart[] parts = new ModelPart[NUM_SEGMENTS];
 		ModelPart last = this.root;
@@ -68,8 +69,4 @@ public class CandlashModel<T extends Candlash> extends EntityModel<T> {
 		}
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

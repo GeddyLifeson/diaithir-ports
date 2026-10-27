@@ -4,13 +4,13 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.SpiralArrow;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class SpiralArrowModel<T extends SpiralArrow> extends EntityModel<T> {
+public class SpiralArrowModel<T extends SpiralArrow> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("spiral_arrow"), "main");
 	public final ModelPart root;
 	public final ModelPart head;
@@ -20,6 +20,7 @@ public class SpiralArrowModel<T extends SpiralArrow> extends EntityModel<T> {
 	public final ModelPart bone3;
 
 	public SpiralArrowModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.head = this.root.getChild("head");
 		this.bone4 = this.head.getChild("bone4");
@@ -55,8 +56,4 @@ public class SpiralArrowModel<T extends SpiralArrow> extends EntityModel<T> {
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		this.root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

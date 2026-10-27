@@ -14,6 +14,7 @@ public class LuminofishModel<T extends Luminofish> extends AnimatedEntityModel<T
 	private final ModelPart head;
 
 	public LuminofishModel(ModelPart root) {
+		super(root);
 		this.head = root.getChild("head");
 	}
 
@@ -45,8 +46,4 @@ public class LuminofishModel<T extends Luminofish> extends AnimatedEntityModel<T
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return head;
-	}
 }

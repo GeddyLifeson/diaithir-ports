@@ -15,6 +15,7 @@ public class CrystallizedMothModel<T extends CrystallizedMoth> extends AnimatedE
 	private final ModelPart root;
 
 	public CrystallizedMothModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -57,8 +58,4 @@ public class CrystallizedMothModel<T extends CrystallizedMoth> extends AnimatedE
 		animate(entity.idleAnimationState, CrystallizedMothAnimation.IDLE, ageInTicks);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

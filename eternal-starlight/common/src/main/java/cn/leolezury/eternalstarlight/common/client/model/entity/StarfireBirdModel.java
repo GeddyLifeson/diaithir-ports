@@ -16,6 +16,7 @@ public class StarfireBirdModel<T extends StarfireBird> extends AnimatedEntityMod
 	private final ModelPart root;
 
 	public StarfireBirdModel(ModelPart root) {
+		super(root);
 		this.root = root;
 	}
 
@@ -67,8 +68,4 @@ public class StarfireBirdModel<T extends StarfireBird> extends AnimatedEntityMod
 		animateWalk(StarfireBirdAnimation.WALK, limbSwing, limbSwingAmount, 2.5f, 1 - flapScale);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

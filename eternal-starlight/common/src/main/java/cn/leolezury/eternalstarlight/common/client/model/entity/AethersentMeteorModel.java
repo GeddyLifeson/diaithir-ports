@@ -5,7 +5,7 @@ import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.entity.projectile.AethersentMeteor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class AethersentMeteorModel<T extends AethersentMeteor> extends EntityModel<T> {
+public class AethersentMeteorModel<T extends AethersentMeteor> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("aethersent_meteor"), "main");
 	public final ModelPart root;
 	public final ModelPart rotator;
@@ -26,6 +26,7 @@ public class AethersentMeteorModel<T extends AethersentMeteor> extends EntityMod
 	public float alphaFactor = 1;
 
 	public AethersentMeteorModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.rotator = this.root.getChild("rotator");
 		this.allPartNames = Stream.concat(Stream.of("root"), ESModelUtil.getAllPartNames(this.root)).toList();
@@ -49,12 +50,7 @@ public class AethersentMeteorModel<T extends AethersentMeteor> extends EntityMod
 		this.root.xScale = this.root.yScale = this.root.zScale = entity.getSize() / 10.0F;
 	}
 
-	public Optional<ModelPart> getAnyDescendantWithName(String name) {
-		return name.equals("root") ? Optional.of(root) : root.getAllParts().filter((part) -> part.hasChild(name)).findFirst().map((part) -> part.getChild(name));
-	}
-
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+	public void renderWithAlpha(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
 		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
 	}
 }

@@ -15,8 +15,7 @@ public interface AnimatedModel {
 	}
 
 	default void animate(AnimationState state, AnimationDefinition definition, float tickCount, float speed, float scale) {
-		state.updateTime(tickCount, speed);
-		state.ifStarted((animState) -> ESKeyframeAnimations.animate(this, definition, animState.getAccumulatedTime(), scale, ANIMATION_VECTOR_CACHE));
+		state.ifStarted((animState) -> ESKeyframeAnimations.animate(this, definition, (long) (animState.getTimeInMillis(tickCount) * speed), scale, ANIMATION_VECTOR_CACHE));
 	}
 
 	default void animateWalk(AnimationDefinition definition, float swing, float swingAmount, float speed, float scale) {
@@ -32,6 +31,11 @@ public interface AnimatedModel {
 	ModelPart root();
 
 	default Optional<ModelPart> getAnyDescendantWithName(String name) {
-		return name.equals("root") ? Optional.of(root()) : root().getAllParts().filter((part) -> part.hasChild(name)).findFirst().map((part) -> part.getChild(name));
+		for (ModelPart part : root().getAllParts()) {
+			if (part.hasChild(name)) {
+				return Optional.of(part.getChild(name));
+			}
+		}
+		return Optional.empty();
 	}
 }

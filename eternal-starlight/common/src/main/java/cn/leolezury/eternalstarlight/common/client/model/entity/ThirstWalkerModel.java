@@ -16,6 +16,7 @@ public class ThirstWalkerModel<T extends ThirstWalker> extends AnimatedEntityMod
 	private final ModelPart head;
 
 	public ThirstWalkerModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.head = root.getChild("body").getChild("head");
 	}
@@ -55,8 +56,4 @@ public class ThirstWalkerModel<T extends ThirstWalker> extends AnimatedEntityMod
 		animate(entity.meleeAnimationState, entity.isIntentionalAttack() ? ThirstWalkerAnimation.INTENTIONAL_ATTACK : ThirstWalkerAnimation.ATTACK, ageInTicks);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

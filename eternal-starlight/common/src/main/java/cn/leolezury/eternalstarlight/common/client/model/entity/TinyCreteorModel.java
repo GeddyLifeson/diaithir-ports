@@ -16,6 +16,7 @@ public class TinyCreteorModel<T extends TinyCreteor> extends AnimatedEntityModel
 	private final ModelPart rotator;
 
 	public TinyCreteorModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.rotator = root.getChild("root").getChild("rotator");
 	}
@@ -48,8 +49,4 @@ public class TinyCreteorModel<T extends TinyCreteor> extends AnimatedEntityModel
 		root.yRot = netHeadYaw * Mth.DEG_TO_RAD;
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

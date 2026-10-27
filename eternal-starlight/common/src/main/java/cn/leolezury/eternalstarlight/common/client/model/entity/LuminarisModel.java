@@ -14,6 +14,7 @@ public class LuminarisModel<T extends Luminaris> extends AnimatedEntityModel<T> 
 	private final ModelPart head;
 
 	public LuminarisModel(ModelPart root) {
+		super(root);
 		this.head = root.getChild("head");
 	}
 
@@ -51,8 +52,4 @@ public class LuminarisModel<T extends Luminaris> extends AnimatedEntityModel<T> 
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return head;
-	}
 }

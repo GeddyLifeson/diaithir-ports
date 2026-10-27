@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.profession;
 
+import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
 import cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.BoarwarfModel;
@@ -21,6 +22,7 @@ public class BoarwarfDruidModel<T extends Boarwarf> extends AnimatedEntityModel<
 	public final ModelPart leftEar;
 
 	public BoarwarfDruidModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.body = root.getChild("body");
 		this.head = body.getChild("head");
@@ -58,13 +60,13 @@ public class BoarwarfDruidModel<T extends Boarwarf> extends AnimatedEntityModel<
 	}
 
 	public void copyPropertiesFrom(BoarwarfModel<?> model) {
-		this.body.copyFrom(model.body);
-		this.head.copyFrom(model.head);
-		this.leftArm.copyFrom(model.leftArm);
-		this.rightArm.copyFrom(model.rightArm);
-		this.leftLeg.copyFrom(model.leftLeg);
-		this.rightLeg.copyFrom(model.rightLeg);
-		this.leftEar.copyFrom(model.leftEar);
+		ESModelUtil.copyFrom(this.body, model.body);
+		ESModelUtil.copyFrom(this.head, model.head);
+		ESModelUtil.copyFrom(this.leftArm, model.leftArm);
+		ESModelUtil.copyFrom(this.rightArm, model.rightArm);
+		ESModelUtil.copyFrom(this.leftLeg, model.leftLeg);
+		ESModelUtil.copyFrom(this.rightLeg, model.rightLeg);
+		ESModelUtil.copyFrom(this.leftEar, model.leftEar);
 	}
 
 	@Override
@@ -72,8 +74,4 @@ public class BoarwarfDruidModel<T extends Boarwarf> extends AnimatedEntityModel<
 
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

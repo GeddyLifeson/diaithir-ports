@@ -16,6 +16,7 @@ public class RatlinModel<T extends Ratlin> extends AnimatedEntityModel<T> {
 	private final ModelPart head;
 
 	public RatlinModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.head = root.getChild("root").getChild("body").getChild("head");
 	}
@@ -64,8 +65,4 @@ public class RatlinModel<T extends Ratlin> extends AnimatedEntityModel<T> {
 		this.animateWalk(RatlinAnimation.WALK, limbSwing, limbSwingAmount, young ? 3.0f : 5.0f, 1f);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

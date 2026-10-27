@@ -2,7 +2,7 @@ package cn.leolezury.eternalstarlight.common.client.posteffect;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import com.mojang.blaze3d.pipeline.RenderTarget;
-import com.mojang.blaze3d.shaders.Uniform;
+import com.mojang.blaze3d.opengl.Uniform;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.client.renderer.PostChain;

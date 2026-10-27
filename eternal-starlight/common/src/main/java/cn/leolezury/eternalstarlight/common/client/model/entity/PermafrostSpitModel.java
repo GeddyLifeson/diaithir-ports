@@ -4,20 +4,21 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.PermafrostSpit;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class PermafrostSpitModel<T extends PermafrostSpit> extends EntityModel<T> {
+public class PermafrostSpitModel<T extends PermafrostSpit> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("permafrost_spit"), "main");
 	public static final ModelLayerLocation SMALL_LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("permafrost_spit"), "small");
 
 	private final ModelPart root;
 
 	public PermafrostSpitModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 	}
 
@@ -47,8 +48,4 @@ public class PermafrostSpitModel<T extends PermafrostSpit> extends EntityModel<T
 		root.xRot = headPitch * Mth.DEG_TO_RAD;
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

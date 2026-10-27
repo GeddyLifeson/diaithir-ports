@@ -14,6 +14,7 @@ public class GrimstoneGolemModel<T extends GrimstoneGolem> extends AnimatedEntit
 	private final ModelPart root;
 
 	public GrimstoneGolemModel(ModelPart root) {
+		super(root);
 		this.root = root;
 	}
 
@@ -53,8 +54,4 @@ public class GrimstoneGolemModel<T extends GrimstoneGolem> extends AnimatedEntit
 		animateWalk(GrimstoneGolemAnimation.WALK, limbSwing, limbSwingAmount, 2.5f, 1.2f);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

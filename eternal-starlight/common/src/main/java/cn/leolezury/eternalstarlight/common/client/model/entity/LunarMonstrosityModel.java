@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -23,6 +24,7 @@ public class LunarMonstrosityModel<T extends LunarMonstrosity> extends AnimatedE
 	private final ModelPart eye;
 
 	public LunarMonstrosityModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.stemAll = root.getChild("root").getChild("stem_all");
 		this.stemMiddle = root.getChild("root").getChild("stem_all").getChild("stem_middle");
@@ -128,8 +130,4 @@ public class LunarMonstrosityModel<T extends LunarMonstrosity> extends AnimatedE
 		return RenderType.entityTranslucent(resourceLocation);
 	}*/
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

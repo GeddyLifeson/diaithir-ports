@@ -21,6 +21,7 @@ public class YetiModel<T extends Yeti> extends AnimatedEntityModel<T> {
 	private final ModelPart body;
 
 	public YetiModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.fur = root.getChild("root").getChild("head").getChild("fur");
 		this.body = root.getChild("root").getChild("head").getChild("body");
@@ -69,17 +70,17 @@ public class YetiModel<T extends Yeti> extends AnimatedEntityModel<T> {
 		switch (entity.getRollState()) {
 			case 1 -> {
 				this.animate(entity.rollStartAnimationState, YetiAnimation.ROLL_START, ageInTicks);
-				float rollAngle = Mth.rotLerp(Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), entity.prevRollAngle, entity.rollAngle);
+				float rollAngle = Mth.rotLerp(partialTick, entity.prevRollAngle, entity.rollAngle);
 				this.root.xRot = rollAngle * Mth.DEG_TO_RAD;
 			}
 			case 2 -> {
 				this.animate(entity.rollAnimationState, YetiAnimation.ROLL, ageInTicks);
-				float rollAngle = Mth.rotLerp(Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), entity.prevRollAngle, entity.rollAngle);
+				float rollAngle = Mth.rotLerp(partialTick, entity.prevRollAngle, entity.rollAngle);
 				this.root.xRot = rollAngle * Mth.DEG_TO_RAD;
 			}
 			case 3 -> {
 				this.animate(entity.rollEndAnimationState, YetiAnimation.ROLL_END, ageInTicks);
-				float progress = Math.min(10f, entity.rollEndAnimationState.getAccumulatedTime() / 1000f * 20f) / 10f;
+				float progress = Math.min(10f, entity.rollEndAnimationState.getTimeInMillis(ageInTicks) / 1000f * 20f) / 10f;
 				float rollAngle = Mth.rotLerp(progress, entity.rollAngle, 0);
 				this.root.xRot = rollAngle * Mth.DEG_TO_RAD;
 			}
@@ -102,8 +103,4 @@ public class YetiModel<T extends Yeti> extends AnimatedEntityModel<T> {
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

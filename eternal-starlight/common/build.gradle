@@ -22,9 +22,33 @@ processResources {
 
 // PORT STUB: client rendering code excluded until rewritten for the 26.1 render pipeline (see PORT-NOTE.md)
 sourceSets.main.java {
-	exclude "**/eternalstarlight/common/client/**"
+	exclude "**/eternalstarlight/common/item/recipe/AlloyRecipeBuilder.java"
+// CLIENT-PORT: packages still excluded; removed one by one as they are ported
+	exclude "**/eternalstarlight/common/client/model/entity/StranghoulModel.java"
+	exclude "**/eternalstarlight/common/client/model/entity/AstralGolemModel.java"
+	exclude "**/eternalstarlight/common/client/model/entity/LonestarSkeletonModel.java"
+	exclude "**/eternalstarlight/common/client/model/entity/ScarletBoatModel.java"
+	exclude "**/eternalstarlight/common/client/model/entity/ScarletChestBoatModel.java"
+	exclude "**/eternalstarlight/common/client/book/**"
+	exclude "**/eternalstarlight/common/client/gui/**"
+	exclude "**/eternalstarlight/common/client/handler/**"
+	exclude "**/eternalstarlight/common/client/helper/**"
+	exclude "**/eternalstarlight/common/client/model/armor/**"
+	exclude "**/eternalstarlight/common/client/model/block/**"
+	exclude "**/eternalstarlight/common/client/model/item/**"
+	exclude "**/eternalstarlight/common/client/model/animation/PlayerAnimator.java"
+	exclude "**/eternalstarlight/common/client/particle/**"
+	exclude "**/eternalstarlight/common/client/posteffect/**"
+	exclude "**/eternalstarlight/common/client/renderer/**"
+	exclude "**/eternalstarlight/common/client/resource/**"
+	exclude "**/eternalstarlight/common/client/shader/**"
+	exclude "**/eternalstarlight/common/client/sound/**"
+	exclude "**/eternalstarlight/common/client/trail/**"
+	exclude "**/eternalstarlight/common/client/visual/**"
+	exclude "**/eternalstarlight/common/client/weather/**"
+	exclude "**/eternalstarlight/common/client/ESDimensionSpecialEffects.java"
 	exclude "**/eternalstarlight/common/util/ESGuiUtil.java"
 	exclude "**/eternalstarlight/common/platform/ESClientPlatform.java"
 	exclude "**/eternalstarlight/common/mixin/client/**"
-	exclude "**/eternalstarlight/common/item/recipe/AlloyRecipeBuilder.java"
 }
+tasks.withType(JavaCompile).configureEach { options.compilerArgs += ["-Xmaxerrs","100000"] }

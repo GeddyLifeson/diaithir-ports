@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -8,6 +10,7 @@ import cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper.*;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.ArmedModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -23,7 +26,7 @@ import org.joml.Vector3f;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class TheGatekeeperModel<T extends TheGatekeeper> extends AnimatedEntityModel<T> implements ArmedModel {
+public class TheGatekeeperModel<T extends TheGatekeeper> extends AnimatedEntityModel<T> implements ArmedModel<ESRenderState> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("the_gatekeeper"), "main");
 	public static final ModelLayerLocation SLIM_LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("the_gatekeeper_slim"), "main");
 	public static final ModelLayerLocation OUTER_LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("the_gatekeeper"), "outer");
@@ -42,6 +45,7 @@ public class TheGatekeeperModel<T extends TheGatekeeper> extends AnimatedEntityM
 	public float alphaFactor = 1;
 
 	public TheGatekeeperModel(ModelPart root, boolean slim) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root.getChild("root");
 		this.body = this.root.getChild("body");
 		this.head = this.body.getChild("head");
@@ -161,7 +165,7 @@ public class TheGatekeeperModel<T extends TheGatekeeper> extends AnimatedEntityM
 	}
 
 	@Override
-	public void translateToHand(HumanoidArm arm, PoseStack stack) {
+	public void translateToHand(ESRenderState state, HumanoidArm arm, PoseStack stack) {
 		root.translateAndRotate(stack);
 		body.translateAndRotate(stack);
 		ModelPart armPart = arm == HumanoidArm.LEFT ? leftArm : rightArm;
@@ -178,18 +182,9 @@ public class TheGatekeeperModel<T extends TheGatekeeper> extends AnimatedEntityM
 		stack.translate(0, -0.55, 0);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		super.renderToBuffer(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
+	public void renderWithAlpha(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+		renderToBuffer(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
 	}
 }

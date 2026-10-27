@@ -4,7 +4,7 @@ import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.Rookfish;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.EntityModel;
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -13,12 +13,13 @@ import net.minecraft.util.Mth;
 
 import java.util.Arrays;
 
-public class RookfishModel<T extends Rookfish> extends EntityModel<T> {
+public class RookfishModel<T extends Rookfish> extends ESModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("rookfish"), "main");
 	private final ModelPart root;
 	private final ModelPart[] legs = new ModelPart[8];
 
 	public RookfishModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		Arrays.setAll(this.legs, (i) -> root.getChild("root").getChild("leg" + (i + 1)));
 	}
@@ -69,8 +70,4 @@ public class RookfishModel<T extends Rookfish> extends EntityModel<T> {
 		}
 	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
 }

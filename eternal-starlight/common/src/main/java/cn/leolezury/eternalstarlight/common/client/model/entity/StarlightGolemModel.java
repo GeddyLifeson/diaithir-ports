@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
@@ -28,6 +29,7 @@ public class StarlightGolemModel<T extends StarlightGolem> extends AnimatedEntit
 	public float alphaFactor = 1;
 
 	public StarlightGolemModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.head = root.getChild("upper").getChild("head");
 		this.allPartNames = Stream.concat(Stream.of("root"), ESModelUtil.getAllPartNames(this.root)).toList();
@@ -81,13 +83,8 @@ public class StarlightGolemModel<T extends StarlightGolem> extends AnimatedEntit
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+	public void renderWithAlpha(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
 		root().render(poseStack, vertexConsumer, packedLight, packedOverlay, ARGB.color(Math.round(ARGB.alpha(color) * alphaFactor), ARGB.red(color), ARGB.green(color), ARGB.blue(color)));
 	}
 }

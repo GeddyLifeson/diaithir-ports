@@ -22,6 +22,7 @@ public class BoarwarfModel<T extends Boarwarf> extends AnimatedEntityModel<T> {
 	public final ModelPart leftEar;
 
 	public BoarwarfModel(ModelPart root) {
+		super(root);
 		this.root = root;
 		this.body = root.getChild("body");
 		this.head = body.getChild("head");
@@ -68,8 +69,4 @@ public class BoarwarfModel<T extends Boarwarf> extends AnimatedEntityModel<T> {
 		this.animate(entity.idleAnimationState, BoarwarfAnimation.IDLE, ageInTicks);
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

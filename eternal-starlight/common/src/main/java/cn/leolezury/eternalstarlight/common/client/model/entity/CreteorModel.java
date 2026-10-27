@@ -17,6 +17,7 @@ public class CreteorModel<T extends Creteor> extends AnimatedEntityModel<T> {
 	private final ModelPart rotator;
 
 	public CreteorModel(ModelPart root) {
+		super(root);
 		this.root = root.getChild("root");
 		this.rotator = root.getChild("root").getChild("rotator");
 	}
@@ -68,8 +69,4 @@ public class CreteorModel<T extends Creteor> extends AnimatedEntityModel<T> {
 		}
 	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }

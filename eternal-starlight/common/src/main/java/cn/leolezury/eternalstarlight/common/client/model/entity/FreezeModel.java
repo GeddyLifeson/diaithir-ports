@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.animation.AnimatedEntityModel;
 import cn.leolezury.eternalstarlight.common.client.model.animation.definition.FreezeAnimation;
@@ -18,6 +19,7 @@ public class FreezeModel<T extends Freeze> extends AnimatedEntityModel<T> {
 	private final ModelPart head;
 
 	public FreezeModel(ModelPart root) {
+		super(root, RenderTypes::entityTranslucent);
 		this.root = root;
 		this.head = root.getChild("head");
 	}
@@ -61,13 +63,5 @@ public class FreezeModel<T extends Freeze> extends AnimatedEntityModel<T> {
 		}
 	}
 
-	@Override
-	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
-	}
 
-	@Override
-	public ModelPart root() {
-		return root;
-	}
 }
