@@ -12486,10 +12486,6 @@ hash = "32838486814de98aae6e914cc003e689715ada61d401165f9ae08e6ae46b42b7"
 metafile = true
 
 [[files]]
-file = "mods/trashcans-1.1.1a-neoforge-mc26.1-diaithir.1.jar"
-hash = "e7eb6694fb1f4abbe2992a9c3aab00d801d8395e2265f83ac40d083706c68866"
-
-[[files]]
 file = "mods/trashslot-neoforge-26.1.2-26.1.2.4.pw.toml"
 hash = "52d44d93c9dde9c68f7d6be37e339c955418152d5d20ada2b609f32e9c76de72"
 metafile = true
