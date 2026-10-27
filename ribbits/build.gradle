@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+version = project.mod_version
+base.archivesName = 'ribbits-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories { mavenCentral() }
+neoForge {
+    version = '26.1.2.116'
+    runs { server { server(); programArgument '--nogui' } }
+    mods { ribbits { sourceSet(sourceSets.main) } }
+    accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
+}
+dependencies {
+    compileOnly files('libs/YungsApi-26.1.2-NeoForge-6.1.3.jar', 'libs/cloth-config-26.1.154.jar', 'libs/geckolib-neoforge-26.1.2-5.5.2.jar')
+}
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
