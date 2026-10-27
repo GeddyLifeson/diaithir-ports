@@ -1,0 +1,6 @@
+{
+  "parent": "diaithirstoragenet:block/cable_core",
+  "textures": {
+    "all": "diaithirstoragenet:block/cable"
+  }
+}
