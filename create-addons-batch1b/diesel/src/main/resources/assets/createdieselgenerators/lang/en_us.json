@@ -18,5 +18,6 @@
  "block.createdieselgenerators.ethanol": "Ethanol",
  "fluid.createdieselgenerators.plant_oil": "Plant Oil",
  "item.createdieselgenerators.plant_oil_bucket": "Plant Oil Bucket",
- "block.createdieselgenerators.plant_oil": "Plant Oil"
+ "block.createdieselgenerators.plant_oil": "Plant Oil",
+ "block.createdieselgenerators.canister": "Canister"
 }

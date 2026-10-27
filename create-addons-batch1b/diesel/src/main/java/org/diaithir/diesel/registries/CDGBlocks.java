@@ -13,4 +13,7 @@ public class CDGBlocks {
 
     public static final DeferredBlock<DieselEngineBlock> DIESEL_ENGINE = BLOCKS.registerBlock("diesel_engine", DieselEngineBlock::new,
         () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().forceSolidOn());
+
+    public static final DeferredBlock<org.diaithir.diesel.content.canister.CanisterBlock> CANISTER = BLOCKS.registerBlock("canister",
+        org.diaithir.diesel.content.canister.CanisterBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().strength(2f));
 }

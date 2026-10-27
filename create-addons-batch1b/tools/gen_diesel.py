@@ -75,6 +75,31 @@ def main():
         w(f"{ROOT}/data/c/tags/fluid/{tag}.json", {"values": [f"{NS}:{n}", f"{NS}:flowing_{n}"]})
     w(f"{ROOT}/data/minecraft/tags/item/buckets.json", {"values": [f"{NS}:{n}_bucket" for n in FLUIDS]}) if False else None
 
+def canister():
+    """Placeholder art (textures thread replaces it)."""
+    png(f"{A}/textures/block/canister.png", art.machine_face("cdg_canister", art.RUST, art.HAZ_K, 1))
+    png(f"{A}/textures/block/canister_end.png", art.machine_top("cdg_canister_end", art.RUST))
+    t = {"side": f"{NS}:block/canister", "end": f"{NS}:block/canister_end", "particle": f"{NS}:block/canister_end"}
+    def m(frm, to, rot=None):
+        return {"textures": t, "elements": [{"from": frm, "to": to, "faces": {
+            "north": {"uv": [0, 0, 16, 16], "texture": "#side"}, "south": {"uv": [0, 0, 16, 16], "texture": "#side"},
+            "east": {"uv": [0, 0, 16, 16], "texture": "#side"}, "west": {"uv": [0, 0, 16, 16], "texture": "#side"},
+            "up": {"uv": [0, 0, 16, 16], "texture": "#end"}, "down": {"uv": [0, 0, 16, 16], "texture": "#end"}}}]}
+    w(f"{A}/models/block/canister.json", m([2, 0, 2], [14, 16, 14]))
+    w(f"{A}/blockstates/canister.json", {"variants": {
+        "facing=up": {"model": f"{NS}:block/canister"}, "facing=down": {"model": f"{NS}:block/canister"},
+        "facing=north": {"model": f"{NS}:block/canister", "x": 90}, "facing=south": {"model": f"{NS}:block/canister", "x": 90, "y": 180},
+        "facing=east": {"model": f"{NS}:block/canister", "x": 90, "y": 90}, "facing=west": {"model": f"{NS}:block/canister", "x": 90, "y": 270}}})
+    w(f"{A}/items/canister.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/canister"}})
+    w(f"{D}/loot_table/blocks/canister.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:canister",
+        "functions": [{"function": "minecraft:copy_components", "source": "minecraft:block_entity", "include": [f"{NS}:fluid_contents"]}]}],
+        "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/canister.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": [" I ", "ICI", " I "],
+        "key": {"I": "minecraft:iron_ingot", "C": "minecraft:copper_ingot"}, "result": {"id": f"{NS}:canister", "count": 1}})
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:canister"); json.dump(d, open(path, "w"), indent=1)
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.canister"] = "Canister"; json.dump(l, open(lp, "w"), indent=1)
+
 def recipes_and_worldgen():
     NSF = NS
     def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
@@ -97,4 +122,5 @@ def recipes_and_worldgen():
     w(f"{D}/neoforge/biome_modifier/oil_spring.json", {"type": "neoforge:add_features", "biomes": "#minecraft:is_overworld", "features": f"{NSF}:oil_spring", "step": "underground_ores"})
 
 main()
+canister()
 recipes_and_worldgen()

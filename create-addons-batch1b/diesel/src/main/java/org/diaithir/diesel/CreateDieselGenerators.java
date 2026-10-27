@@ -52,6 +52,7 @@ public class CreateDieselGenerators {
         CDGBlocks.BLOCKS.register(bus);
         CDGItems.ITEMS.register(bus);
         CDGBlockEntityTypes.TYPES.register(bus);
+        org.diaithir.diesel.registries.CDGComponents.COMPONENTS.register(bus);
         TABS.register(bus);
         bus.addListener(RegisterEvent.class, e -> {
             if (e.getRegistryKey().equals(NeoForgeRegistries.Keys.FLUID_TYPES)) CDGFluids.registerTypes();
@@ -68,6 +69,8 @@ public class CreateDieselGenerators {
     private static void setup() {
         BlockEntityBehaviour.add(CDGBlockEntityTypes.DIESEL_ENGINE.get(),
             (DieselEngineBlockEntity be) -> new CachedFluidInventoryBehaviour<>(be, b -> b.tank.getPrimaryHandler()));
+        BlockEntityBehaviour.add(CDGBlockEntityTypes.CANISTER.get(),
+            (org.diaithir.diesel.content.canister.CanisterBlockEntity be) -> new CachedFluidInventoryBehaviour<>(be, b -> b.tank.getPrimaryHandler()));
         BlockStressValues.IMPACTS.register(CDGBlocks.DIESEL_ENGINE.get(), (DoubleSupplier) () -> 0.0);
         BlockStressValues.RPM.register(CDGBlocks.DIESEL_ENGINE.get(), new BlockStressValues.GeneratedRpm(96, true));
     }
