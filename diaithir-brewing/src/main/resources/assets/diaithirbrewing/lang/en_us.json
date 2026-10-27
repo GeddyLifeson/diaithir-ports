@@ -1,0 +1,7 @@
+{
+ "block.diaithirbrewing.keg": "Boidellienda",
+ "block.diaithirbrewing.fermenting_barrel": "Tundagr\u00f9duiri",
+ "block.diaithirbrewing.ready": "%2$s x %1$s ready to draw",
+ "block.diaithirbrewing.fermenting": "Fermenting: %s%%",
+ "block.diaithirbrewing.filling": "Contents: %s / %s"
+}
