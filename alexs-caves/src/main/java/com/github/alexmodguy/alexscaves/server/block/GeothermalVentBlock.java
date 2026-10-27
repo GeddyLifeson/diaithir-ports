@@ -18,6 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -51,7 +52,7 @@ public class GeothermalVentBlock extends BaseEntityBlock {
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        LevelAccessor levelaccessor = context.getLevel();
+        LevelReader levelaccessor = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
         return this.defaultBlockState().setValue(SMOKE_TYPE, getSmokeType(levelaccessor, blockpos)).setValue(SPAWNING_PARTICLES, isSpawningParticles(blockpos, levelaccessor));
     }
@@ -64,7 +65,7 @@ public class GeothermalVentBlock extends BaseEntityBlock {
         builder.add(SMOKE_TYPE, SPAWNING_PARTICLES);
     }
 
-    public int getSmokeType(LevelAccessor level, BlockPos blockpos) {
+    public int getSmokeType(LevelReader level, BlockPos blockpos) {
         BlockState state = level.getBlockState(blockpos.below());
         if (state.getBlock() instanceof GeothermalVentBlock) {
             return state.getValue(SMOKE_TYPE);
@@ -79,7 +80,7 @@ public class GeothermalVentBlock extends BaseEntityBlock {
         return 0;
     }
 
-    public boolean isSpawningParticles(BlockPos pos, LevelAccessor level) {
+    public boolean isSpawningParticles(BlockPos pos, LevelReader level) {
         BlockState above = level.getBlockState(pos.above());
         return (above.isAir() || !above.blocksMotion());
     }

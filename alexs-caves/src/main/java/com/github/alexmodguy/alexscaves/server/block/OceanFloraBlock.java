@@ -27,7 +27,7 @@ public class OceanFloraBlock extends BushBlock implements LiquidBlockContainer {
     public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 12, 15);
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<BushBlock> codec() {
         return CODEC;
     }
 
@@ -45,7 +45,7 @@ public class OceanFloraBlock extends BushBlock implements LiquidBlockContainer {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(getter, pos);
+        Vec3 vec3 = state.getOffset(pos);
         VoxelShape shape = SHAPE;
         return shape.move(vec3.x, vec3.y, vec3.z);
     }

@@ -98,7 +98,7 @@ public class ForsakenAttackGoal extends Goal {
                         if (this.entity.getAnimationTick() % 5 == 0) {
                             List<LivingEntity> list = this.entity.level().getEntitiesOfClass(LivingEntity.class, this.entity.getBoundingBox().inflate(16, 8, 16));
                             for (LivingEntity living : list) {
-                                if (living != this.entity && !this.entity.isAlliedTo(living) && !living.isAlliedTo(entity) && living.distanceTo(entity) <= 14F && !living.getType().is(ACTagRegistry.FORSAKEN_IGNORES)) {
+                                if (living != this.entity && !this.entity.isAlliedTo(living) && !living.isAlliedTo(entity) && living.distanceTo(entity) <= 14F && !living.getType().builtInRegistryHolder().is(ACTagRegistry.FORSAKEN_IGNORES)) {
                                     living.hurt(ACDamageTypes.causeForsakenSonicBoomDamage(entity.level().registryAccess(), entity), (float) Math.ceil(entity.getSonicDamageAgainst(target) * 0.65F));
                                 }
                             }
@@ -183,7 +183,7 @@ public class ForsakenAttackGoal extends Goal {
                 List<LivingEntity> list = this.entity.level().getEntitiesOfClass(LivingEntity.class, new AABB(smashPos.x - 4, smashPos.y - 2, smashPos.z - 4, smashPos.x + 4, smashPos.y + 3, smashPos.z + 4));
                 boolean flag = false;
                 for (LivingEntity living : list) {
-                    if (living != this.entity && !this.entity.isAlliedTo(living) && !living.isAlliedTo(entity) && living.distanceToSqr(smashPos) <= 16F && !living.getType().is(ACTagRegistry.FORSAKEN_IGNORES)) {
+                    if (living != this.entity && !this.entity.isAlliedTo(living) && !living.isAlliedTo(entity) && living.distanceToSqr(smashPos) <= 16F && !living.getType().builtInRegistryHolder().is(ACTagRegistry.FORSAKEN_IGNORES)) {
                         if (checkAndDealDamage(living, 0.8F, 3) && living.onGround()) {
                             living.setDeltaMovement(living.getDeltaMovement().add(0, 0.5, 0));
                             flag = true;

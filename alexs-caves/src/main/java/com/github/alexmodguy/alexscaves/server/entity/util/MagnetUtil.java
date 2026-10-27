@@ -277,14 +277,14 @@ public class MagnetUtil {
         } else if (entity instanceof FallingBlockEntity block) {
             return block.getBlockState() != null && block.getBlockState().is(ACTagRegistry.MAGNETIC_BLOCKS);
         }
-        return entity.getType().is(ACTagRegistry.MAGNETIC_ENTITIES);
+        return entity.getType().builtInRegistryHolder().is(ACTagRegistry.MAGNETIC_ENTITIES);
     }
 
     public static boolean attachesToMagnets(Entity entity) {
         if (entity instanceof LivingEntity living && isDynamicallyMagnetic(living, true) && !living.isShiftKeyDown()) {
             return true;
         }
-        return entity.getType().is(ACTagRegistry.MAGNETIC_ENTITIES);
+        return entity.getType().builtInRegistryHolder().is(ACTagRegistry.MAGNETIC_ENTITIES);
     }
 
     public static void rotateHead(LivingEntity entity) {

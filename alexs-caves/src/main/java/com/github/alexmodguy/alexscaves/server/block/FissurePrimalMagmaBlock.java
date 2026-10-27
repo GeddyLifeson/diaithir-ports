@@ -53,7 +53,7 @@ public class FissurePrimalMagmaBlock extends Block {
             return 5;
         }).strength(0.5F).isValidSpawn((state, getter, pos, entityType) -> {
             return entityType.fireImmune();
-        }).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true).sound(ACSoundTypes.FLOOD_BASALT).randomTicks());
+        }).sound(ACSoundTypes.FLOOD_BASALT).randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(REGEN_HEIGHT, 0));
     }
 
@@ -183,7 +183,7 @@ public class FissurePrimalMagmaBlock extends Block {
 
     @Override
     public PathType getAdjacentBlockPathType(BlockState state, BlockGetter level, BlockPos pos, @Nullable Mob mob, PathType originalType) {
-        return PathType.DANGER_FIRE;
+        return PathType.FIRE;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

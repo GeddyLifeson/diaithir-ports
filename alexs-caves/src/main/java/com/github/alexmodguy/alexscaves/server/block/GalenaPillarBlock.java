@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -26,12 +27,12 @@ public class GalenaPillarBlock extends RotatedPillarBlock {
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        LevelAccessor levelaccessor = context.getLevel();
+        LevelReader levelaccessor = context.getLevel();
         Direction.Axis axis = context.getClickedFace().getAxis();
         return this.defaultBlockState().setValue(AXIS, axis).setValue(SHAPE, getShapeInt(levelaccessor, context.getClickedPos(), axis));
     }
 
-    public int getShapeInt(LevelAccessor levelAccessor, BlockPos pos, Direction.Axis axis) {
+    public int getShapeInt(LevelReader levelAccessor, BlockPos pos, Direction.Axis axis) {
         Direction belowDir = Direction.UP;
         Direction aboveDir = Direction.UP;
         switch (axis) {

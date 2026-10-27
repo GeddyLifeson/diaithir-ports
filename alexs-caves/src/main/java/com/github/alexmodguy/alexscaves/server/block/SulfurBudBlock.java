@@ -116,7 +116,7 @@ public class SulfurBudBlock extends Block implements SimpleWaterloggedBlock {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
-    public boolean canPlaceLiquid(BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity user, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
         return fluid == Fluids.WATER || fluid.getFluidType() == ACFluidRegistry.ACID_FLUID_TYPE.get();
     }
 

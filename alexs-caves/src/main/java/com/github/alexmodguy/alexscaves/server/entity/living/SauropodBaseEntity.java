@@ -104,7 +104,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
     public SauropodBaseEntity(EntityType entityType, Level level) {
         super(entityType, level);
         this.setPathfindingMalus(PathType.LAVA, 0.0F);
-        this.setPathfindingMalus(PathType.DANGER_FIRE, 0.0F);
+        this.setPathfindingMalus(PathType.FIRE, 0.0F);
         this.setPathfindingMalus(PathType.DAMAGE_FIRE, 0.0F);
         this.moveControl = new SauropodMoveHelper();
         this.neckPart1 = new SauropodPartEntity(this, this, 3F, 3F);

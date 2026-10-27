@@ -70,7 +70,7 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
     private static final EntityDataAccessor<Integer> INTEREST_LEVEL = SynchedEntityData.defineId(HullbreakerEntity.class, EntityDataSerializers.INT);
 
     public static final Predicate<LivingEntity> GLOWING_TARGET = (mob) -> {
-        return mob.isInWater() && (mob.hasEffect(MobEffects.GLOWING) || mob.getType().is(ACTagRegistry.GLOWING_ENTITIES) || mob.isPassenger() && mob.getVehicle() instanceof SubmarineEntity sub && sub.areLightsOn());
+        return mob.isInWater() && (mob.hasEffect(MobEffects.GLOWING) || mob.getType().builtInRegistryHolder().is(ACTagRegistry.GLOWING_ENTITIES) || mob.isPassenger() && mob.getVehicle() instanceof SubmarineEntity sub && sub.areLightsOn());
     };
     public final HullbreakerPartEntity headPart;
     public final HullbreakerPartEntity tail1Part;

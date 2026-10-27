@@ -79,7 +79,7 @@ public class MagnetBlock extends BaseEntityBlock {
     );
 
     protected MagnetBlock(boolean azure) {
-        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4F, 12.0F).sound(ACSoundTypes.NEODYMIUM).noOcclusion().dynamicShape().lightLevel((i) -> 3).emissiveRendering((state, level, pos) -> true));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4F, 12.0F).sound(ACSoundTypes.NEODYMIUM).noOcclusion().dynamicShape().lightLevel((i) -> 3));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(POWERED, Boolean.valueOf(false)));
         this.azure = azure;
     }
@@ -126,7 +126,7 @@ public class MagnetBlock extends BaseEntityBlock {
         return createTickerHelper(p_152182_, ACBlockEntityRegistry.MAGNET.get(), MagnetBlockEntity::tick);
     }
 
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, @javax.annotation.Nullable net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
         if (!worldIn.isClientSide()) {
             this.updateState(state, worldIn, pos, blockIn);
         }

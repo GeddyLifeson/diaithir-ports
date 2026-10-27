@@ -52,7 +52,7 @@ public class MothDustItem extends Item {
                     AABB hitBox = new AABB(vec31.add(-32, -32, -32), vec31.add(32, 32, 32));
                     for(Entity entity : level.getEntities(target, hitBox, Entity::canBeHitByProjectile)){
                         if(!target.is(entity) && !target.isAlliedTo(entity) && !entity.isAlliedTo(target) && !entity.isPassengerOfSameVehicle(target)){
-                            if(entity.getType().is(ACTagRegistry.MOTH_DUST_ENRAGES) && entity instanceof Mob mob){
+                            if(entity.getType().builtInRegistryHolder().is(ACTagRegistry.MOTH_DUST_ENRAGES) && entity instanceof Mob mob){
                                 mob.setTarget(target);
                                 mob.setLastHurtByMob(target);
                             }

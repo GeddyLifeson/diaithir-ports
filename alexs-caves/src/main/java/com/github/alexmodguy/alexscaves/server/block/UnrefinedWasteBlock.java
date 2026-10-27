@@ -22,11 +22,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class UnrefinedWasteBlock extends FallingBlockWithColor {
     protected static final VoxelShape SHAPE = Block.box(0.1D, 0.1D, 0.1D, 15.9D, 14.0D, 15.9D);
     public UnrefinedWasteBlock() {
-        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.LIME).strength(0.5F).sound(ACSoundTypes.UNREFINED_WASTE).lightLevel(state -> 3).emissiveRendering((state, level, pos) -> true), 0X00EE00);
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(DyeColor.LIME).strength(0.5F).sound(ACSoundTypes.UNREFINED_WASTE).lightLevel(state -> 3), 0X00EE00);
     }
 
     public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity) {
-        if(entity instanceof LivingEntity living && !entity.getType().is(ACTagRegistry.RESISTS_RADIATION)){
+        if(entity instanceof LivingEntity living && !entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_RADIATION)){
             entity.setDeltaMovement(entity.getDeltaMovement().multiply(0.9D, 1.0D, 0.9D));
             living.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED, 4000));
         }

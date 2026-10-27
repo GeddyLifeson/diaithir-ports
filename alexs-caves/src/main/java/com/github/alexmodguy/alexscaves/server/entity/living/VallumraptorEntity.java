@@ -72,7 +72,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
     private static final EntityDataAccessor<Float> PUZZLED_HEAD_ROT = SynchedEntityData.defineId(VallumraptorEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Integer> RELAXED_FOR = SynchedEntityData.defineId(VallumraptorEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> HIDING_FOR = SynchedEntityData.defineId(VallumraptorEntity.class, EntityDataSerializers.INT);
-    private static final Predicate<LivingEntity> VALLUMRAPTOR_TARGETS = living -> living.getType().is(ACTagRegistry.VALLUMRAPTOR_TARGETS);
+    private static final Predicate<LivingEntity> VALLUMRAPTOR_TARGETS = living -> living.getType().builtInRegistryHolder().is(ACTagRegistry.VALLUMRAPTOR_TARGETS);
     private Animation currentAnimation;
     private int animationTick;
     private float leapProgress;

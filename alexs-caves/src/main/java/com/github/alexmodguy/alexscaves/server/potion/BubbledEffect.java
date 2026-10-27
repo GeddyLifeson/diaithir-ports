@@ -32,7 +32,7 @@ public class BubbledEffect extends MobEffect {
         }
         // In 1.21, MobType was removed, so we check canBreatheUnderwater instead
         if (entity.canBreatheUnderwater()) {
-            if (!entity.getType().is(ACTagRegistry.RESISTS_BUBBLED)) {
+            if (!entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_BUBBLED)) {
                 entity.setAirSupply(entity.getMaxAirSupply());
                 if (!entity.onGround()) {
                     entity.setDeltaMovement(entity.getDeltaMovement().add(0, -0.08, 0));

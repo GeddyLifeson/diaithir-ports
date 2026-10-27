@@ -26,7 +26,7 @@ public class SubterranodonFleeGoal extends Goal {
             return false;
         }
         AABB aabb = subterranodon.getBoundingBox().inflate(7);
-        List<Entity> list = subterranodon.level().getEntitiesOfClass(Entity.class, aabb, (entity -> entity.getType().is(ACTagRegistry.SUBTERRANODON_FLEES)));
+        List<Entity> list = subterranodon.level().getEntitiesOfClass(Entity.class, aabb, (entity -> entity.getType().builtInRegistryHolder().is(ACTagRegistry.SUBTERRANODON_FLEES)));
         return !list.isEmpty();
     }
 

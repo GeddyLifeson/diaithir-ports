@@ -158,7 +158,7 @@ public class DinosaurEggBlock extends Block {
     }
 
     private boolean canTrample(Level worldIn, Entity trampler) {
-        if (!trampler.getType().is(ACTagRegistry.DINOSAURS)) {
+        if (!trampler.getType().builtInRegistryHolder().is(ACTagRegistry.DINOSAURS)) {
             if (!(trampler instanceof LivingEntity)) {
                 return false;
             } else {

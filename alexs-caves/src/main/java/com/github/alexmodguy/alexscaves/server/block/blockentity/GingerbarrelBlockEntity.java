@@ -137,7 +137,7 @@ public class GingerbarrelBlockEntity extends RandomizableContainerBlockEntity {
     }
 
     private void playSound(BlockState p_58601_, SoundEvent p_58602_) {
-        Vec3i vec3i = p_58601_.getValue(BarrelBlock.FACING).getNormal();
+        Vec3i vec3i = p_58601_.getValue(BarrelBlock.FACING).getUnitVec3i();
         double d0 = (double) this.worldPosition.getX() + 0.5D + (double) vec3i.getX() / 2.0D;
         double d1 = (double) this.worldPosition.getY() + 0.5D + (double) vec3i.getY() / 2.0D;
         double d2 = (double) this.worldPosition.getZ() + 0.5D + (double) vec3i.getZ() / 2.0D;

@@ -21,7 +21,7 @@ public class PewenPinesBlock extends BushBlock {
     public static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 13, 14);
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<BushBlock> codec() {
         return CODEC;
     }
 
@@ -38,7 +38,7 @@ public class PewenPinesBlock extends BushBlock {
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(getter, pos);
+        Vec3 vec3 = state.getOffset(pos);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
     }
 

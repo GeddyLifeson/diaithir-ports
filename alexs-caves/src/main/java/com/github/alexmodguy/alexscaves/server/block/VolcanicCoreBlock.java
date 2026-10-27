@@ -43,7 +43,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
             return 8;
         }).strength(55.0F, 1200.0F).isValidSpawn((state, getter, pos, entityType) -> {
             return entityType.fireImmune();
-        }).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true).sound(ACSoundTypes.FLOOD_BASALT));
+        }).sound(ACSoundTypes.FLOOD_BASALT));
     }
 
     public void stepOn(Level level, BlockPos blockPos, BlockState blockState, Entity entity) {

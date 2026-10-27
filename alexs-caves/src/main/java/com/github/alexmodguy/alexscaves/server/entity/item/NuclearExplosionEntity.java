@@ -109,7 +109,7 @@ public class NuclearExplosionEntity extends Entity {
                 if (damage > 0) {
                     if (entity instanceof RaycatEntity) {
                         damage = 0;
-                    } else if (entity.getType().is(ACTagRegistry.RESISTS_RADIATION)) {
+                    } else if (entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_RADIATION)) {
                         damage *= 0.25F;
                         playerFling *= 0.1F;
                         if(entity instanceof TremorzillaEntity){

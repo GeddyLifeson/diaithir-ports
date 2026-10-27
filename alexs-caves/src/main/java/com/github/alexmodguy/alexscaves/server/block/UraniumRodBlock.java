@@ -57,7 +57,7 @@ public class UraniumRodBlock extends RotatedPillarBlock implements SimpleWaterlo
     public static final IntegerProperty LIQUID_LOGGED = IntegerProperty.create("liquid_logged", 0, 2);
 
     public UraniumRodBlock() {
-        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(1.5F).lightLevel((state -> 9)).emissiveRendering((state, level, pos) -> true).sound(ACSoundTypes.URANIUM));
+        super(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(1.5F).lightLevel((state -> 9)).sound(ACSoundTypes.URANIUM));
         this.registerDefaultState(this.defaultBlockState().setValue(LIQUID_LOGGED, 0).setValue(AXIS, Direction.Axis.Y));
     }
 
@@ -105,7 +105,7 @@ public class UraniumRodBlock extends RotatedPillarBlock implements SimpleWaterlo
         return super.getStateForPlacement(context).setValue(LIQUID_LOGGED, getLiquidType(levelaccessor.getFluidState(blockpos)));
     }
 
-    public boolean canPlaceLiquid(BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity user, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
         return fluid == Fluids.WATER || fluid.getFluidType() == ACFluidRegistry.ACID_FLUID_TYPE.get();
     }
 

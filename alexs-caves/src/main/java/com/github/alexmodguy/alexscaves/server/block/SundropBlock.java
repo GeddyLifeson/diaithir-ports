@@ -40,7 +40,7 @@ public class SundropBlock extends DirectionalBlock {
     }
 
     public SundropBlock() {
-        super(Properties.of().mapColor(DyeColor.YELLOW).strength(2.0F, 5.0F).sound(ACSoundTypes.SQUISHY_CANDY).lightLevel((i) -> 15).emissiveRendering((state, level, pos) -> true).randomTicks().noOcclusion());
+        super(Properties.of().mapColor(DyeColor.YELLOW).strength(2.0F, 5.0F).sound(ACSoundTypes.SQUISHY_CANDY).lightLevel((i) -> 15).randomTicks().noOcclusion());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP));
     }
 

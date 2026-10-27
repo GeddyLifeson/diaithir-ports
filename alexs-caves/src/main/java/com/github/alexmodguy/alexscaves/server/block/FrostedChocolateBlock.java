@@ -88,7 +88,7 @@ public class FrostedChocolateBlock extends Block {
             int rDec = (int) ACMath.smin((float) (COLORIZER_R_DIFFERENCE * (distToTarget * distToCenter)), COLORIZER_R_DIFFERENCE, 0.1F);
             int gDec = (int) ACMath.smin((float) (COLORIZER_G_DIFFERENCE * (distToTarget * distToCenter)), COLORIZER_G_DIFFERENCE, 0.1F);
             int bDec = (int) ACMath.smin((float) (COLORIZER_B_DIFFERENCE * (distToTarget * distToCenter)), COLORIZER_B_DIFFERENCE, 0.1F);
-            return FastColor.ARGB32.color(255, 255 - rDec, 255 - gDec, 255 - bDec);
+            return net.minecraft.util.ARGB.color(255, 255 - rDec, 255 - gDec, 255 - bDec);
         } else {
             return 0XFFFFFF;
         }

@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 public class UraniumFullBlock extends RotatedPillarBlock {
 
     public UraniumFullBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(3.5F).lightLevel((state -> 4)).emissiveRendering((state, level, pos) -> true).sound(ACSoundTypes.URANIUM));
+        super(Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(3.5F).lightLevel((state -> 4)).sound(ACSoundTypes.URANIUM));
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource randomSource) {

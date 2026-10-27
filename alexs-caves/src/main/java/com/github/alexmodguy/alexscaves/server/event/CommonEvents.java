@@ -166,7 +166,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public void livingHeal(LivingHealEvent event) {
-        if (event.getEntity().hasEffect(ACEffectRegistry.IRRADIATED) && !event.getEntity().getType().is(ACTagRegistry.RESISTS_RADIATION)) {
+        if (event.getEntity().hasEffect(ACEffectRegistry.IRRADIATED) && !event.getEntity().getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_RADIATION)) {
             event.setCanceled(true);
         }
     }

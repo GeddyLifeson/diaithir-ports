@@ -54,7 +54,7 @@ public class NuclearBombBlock extends Block {
         }
     }
 
-    public void neighborChanged(BlockState state, Level level, BlockPos blockPos, Block block, BlockPos blockPos1, boolean forced) {
+    public void neighborChanged(BlockState state, Level level, BlockPos blockPos, Block block, @javax.annotation.Nullable net.minecraft.world.level.redstone.Orientation blockPos1, boolean forced) {
         if (level.hasNeighborSignal(blockPos)) {
             onCaughtFire(state, level, blockPos, null, null);
             level.removeBlock(blockPos, false);

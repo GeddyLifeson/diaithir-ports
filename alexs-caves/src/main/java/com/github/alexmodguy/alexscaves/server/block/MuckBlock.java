@@ -36,7 +36,7 @@ public class MuckBlock extends FallingBlockWithColor {
     }
 
     private boolean isOceanEntity(Entity entity) {
-        return entity.getType().is(ACTagRegistry.SEAFLOOR_DENIZENS) || entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).is(ACItemRegistry.DIVING_BOOTS.get());
+        return entity.getType().builtInRegistryHolder().is(ACTagRegistry.SEAFLOOR_DENIZENS) || entity instanceof LivingEntity living && living.getItemBySlot(EquipmentSlot.FEET).is(ACItemRegistry.DIVING_BOOTS.get());
     }
 
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos blockPos, CollisionContext context) {

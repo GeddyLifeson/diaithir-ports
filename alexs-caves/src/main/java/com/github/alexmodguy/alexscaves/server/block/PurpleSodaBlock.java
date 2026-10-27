@@ -53,7 +53,7 @@ public class PurpleSodaBlock extends LiquidBlock {
         }
     }
 
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, @javax.annotation.Nullable net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
         super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);
         for (Direction direction : ACMath.HORIZONTAL_DIRECTIONS) {
             BlockPos offset = pos.relative(direction);

@@ -45,7 +45,7 @@ public class CycadBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
+    protected MapCodec<BushBlock> codec() {
         return MapCodec.unit(this);
     }
 
@@ -59,7 +59,7 @@ public class CycadBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(getter, pos);
+        Vec3 vec3 = state.getOffset(pos);
         VoxelShape shape = state.getValue(TOP) ? SHAPE_TOP : SHAPE;
         return shape.move(vec3.x, vec3.y, vec3.z);
     }

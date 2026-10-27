@@ -52,7 +52,7 @@ public class AcidBlock extends LiquidBlock {
     }
 
     public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity) {
-        if (!entity.getType().is(ACTagRegistry.RESISTS_ACID) && entity.getFluidTypeHeight(ACFluidRegistry.ACID_FLUID_TYPE.get()) > 0.1) {
+        if (!entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_ACID) && entity.getFluidTypeHeight(ACFluidRegistry.ACID_FLUID_TYPE.get()) > 0.1) {
             boolean armor = false;
             boolean hurtSound = false;
             float dmgMultiplier = 1.0F;
@@ -74,7 +74,7 @@ public class AcidBlock extends LiquidBlock {
                 ACAdvancementTriggerRegistry.ENTER_ACID_WITH_ARMOR.get().triggerForEntity(entity);
             }
             if (level.getRandom().nextFloat() < dmgMultiplier) {
-                float golemAddition = entity.getType().is(ACTagRegistry.WEAK_TO_ACID) ? 10.0F : 0.0F;
+                float golemAddition = entity.getType().builtInRegistryHolder().is(ACTagRegistry.WEAK_TO_ACID) ? 10.0F : 0.0F;
                 hurtSound = entity.hurt(ACDamageTypes.causeAcidDamage(level.registryAccess()), dmgMultiplier * (float) (armor ? 0.01D : 1.0D) + golemAddition);
             }
             if (hurtSound) {
@@ -96,7 +96,7 @@ public class AcidBlock extends LiquidBlock {
         tickCorrosion(worldIn, pos);
     }
 
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, @javax.annotation.Nullable net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
         super.neighborChanged(state, worldIn, pos, blockIn, fromPos, isMoving);
         tickCorrosion(worldIn, pos);
     }

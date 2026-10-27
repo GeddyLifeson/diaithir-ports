@@ -84,7 +84,7 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
     private int destroyBlocksTick = 10;
 
     public static final Predicate<LivingEntity> TARGETING = (mob) -> {
-        return !mob.getType().is(ACTagRegistry.FORSAKEN_IGNORES);
+        return !mob.getType().builtInRegistryHolder().is(ACTagRegistry.FORSAKEN_IGNORES);
     };
 
     public ForsakenEntity(EntityType entityType, Level level) {
@@ -505,7 +505,7 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
     }
 
     public float getSonicDamageAgainst(LivingEntity target) {
-        return target.getType().is(ACTagRegistry.WEAK_TO_FORSAKEN_SONIC_ATTACK) ? 45.0F : 4.0F;
+        return target.getType().builtInRegistryHolder().is(ACTagRegistry.WEAK_TO_FORSAKEN_SONIC_ATTACK) ? 45.0F : 4.0F;
     }
 
     public float getStepHeight() {

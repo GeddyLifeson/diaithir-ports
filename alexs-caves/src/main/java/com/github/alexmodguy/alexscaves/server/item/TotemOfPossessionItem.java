@@ -172,7 +172,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
                             if (controlledEntity instanceof Mob mob) {
                                 mob.setTarget(target);
                                 mob.setLastHurtByMob(target);
-                                if (i % 4 == 0 && target.getHealth() > mob.getHealth() && !target.getType().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) && ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.ASTRAL_TRANSFERRING, stack) > 0) {
+                                if (i % 4 == 0 && target.getHealth() > mob.getHealth() && !target.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) && ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.ASTRAL_TRANSFERRING, stack) > 0) {
                                     setPossessed(target, true);
                                     CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
                                     tag.store("BoundEntityUUID", net.minecraft.core.UUIDUtil.CODEC, target.getUUID());
@@ -279,7 +279,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
     }
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity hurtMob, LivingEntity livingEntity1) {
-        if (hurtMob.getType().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) || hurtMob instanceof Player && !AlexsCaves.COMMON_CONFIG.totemOfPossessionPlayers.get()) {
+        if (hurtMob.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) || hurtMob instanceof Player && !AlexsCaves.COMMON_CONFIG.totemOfPossessionPlayers.get()) {
             if (livingEntity1 instanceof Player player) {
                 player.sendOverlayMessage(Component.translatable("item.alexscaves.totem_of_possession.invalid"));
             }

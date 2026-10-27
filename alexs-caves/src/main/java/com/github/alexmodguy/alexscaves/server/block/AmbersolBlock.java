@@ -10,6 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -20,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public class AmbersolBlock extends BaseEntityBlock {
 
     public AmbersolBlock() {
-        super(Properties.of().mapColor(MapColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(3F, 10.0F).randomTicks().sound(ACSoundTypes.AMBER).lightLevel((i) -> 15).emissiveRendering((state, level, pos) -> true));
+        super(Properties.of().mapColor(MapColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(3F, 10.0F).randomTicks().sound(ACSoundTypes.AMBER).lightLevel((i) -> 15));
     }
 
     @Override
@@ -28,7 +29,7 @@ public class AmbersolBlock extends BaseEntityBlock {
         return MapCodec.unit(this);
     }
 
-    public static BlockPos fillWithLights(BlockPos current, LevelAccessor level) {
+    public static BlockPos fillWithLights(BlockPos current, LevelReader level) {
         current = current.below();
         while (current.getY() > level.getMinY() && AmbersolLightBlock.testSkylight(level, level.getBlockState(current), current)) {
             if (level.getBlockState(current).isAir()) {

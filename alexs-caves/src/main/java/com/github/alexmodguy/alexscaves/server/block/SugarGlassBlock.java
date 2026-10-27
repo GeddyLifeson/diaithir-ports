@@ -19,7 +19,7 @@ public class SugarGlassBlock extends TransparentBlock {
     }
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entityIn, float fallDistance) {
-        if (!(entityIn.getType().is(ACTagRegistry.CANDY_MOBS)) && !entityIn.isInFluidType() && !level.isClientSide()) {
+        if (!(entityIn.getType().builtInRegistryHolder().is(ACTagRegistry.CANDY_MOBS)) && !entityIn.isInFluidType() && !level.isClientSide()) {
             level.destroyBlock(pos, true);
         }
         super.fallOn(level, state, pos, entityIn, fallDistance);
@@ -27,7 +27,7 @@ public class SugarGlassBlock extends TransparentBlock {
 
 
     public void onProjectileHit(Level level, BlockState blockState, BlockHitResult blockHitResult, Projectile entityIn) {
-        if (!(entityIn.getType().is(ACTagRegistry.CANDY_MOBS)) && !level.isClientSide()) {
+        if (!(entityIn.getType().builtInRegistryHolder().is(ACTagRegistry.CANDY_MOBS)) && !level.isClientSide()) {
             level.destroyBlock(blockHitResult.getBlockPos(), true);
         }
     }

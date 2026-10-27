@@ -198,7 +198,7 @@ public class DinosaurChopBlock extends Block implements SimpleWaterloggedBlock {
         return (7 - i) * 2;
     }
 
-    public boolean canPlaceLiquid(BlockGetter blockGetter, BlockPos pos, BlockState blockState, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity user, BlockGetter blockGetter, BlockPos pos, BlockState blockState, Fluid fluid) {
         return blockState.getValue(BITES) != 0 && fluid == Fluids.WATER;
     }
 

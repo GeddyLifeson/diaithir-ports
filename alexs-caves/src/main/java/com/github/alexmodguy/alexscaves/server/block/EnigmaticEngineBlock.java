@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
@@ -45,7 +46,7 @@ public class EnigmaticEngineBlock extends BaseEntityBlock {
         return new EnigmaticEngineBlockEntity(pos, state);
     }
 
-    public boolean attemptAssembly(LevelAccessor levelAccessor, BlockPos blockPos) {
+    public boolean attemptAssembly(LevelReader levelAccessor, BlockPos blockPos) {
         if (levelAccessor.getBlockEntity(blockPos) instanceof EnigmaticEngineBlockEntity blockEntity) {
            return blockEntity.attemptAssembly();
         }

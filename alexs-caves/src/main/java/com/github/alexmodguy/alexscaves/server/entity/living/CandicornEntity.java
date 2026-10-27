@@ -667,7 +667,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
             this.hurt(damageSource, (float)i);
             return true;
         } else {
-            return this.getType().is(EntityTypeTags.FALL_DAMAGE_IMMUNE);
+            return this.getType().builtInRegistryHolder().is(EntityTypeTags.FALL_DAMAGE_IMMUNE);
         }
     }
 

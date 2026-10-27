@@ -161,7 +161,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         this.setPathfindingMalus(PathType.POWDER_SNOW, 8.0F);
         this.setPathfindingMalus(PathType.LAVA, 0.0F);
         this.setPathfindingMalus(PathType.DAMAGE_FIRE, 0.0F);
-        this.setPathfindingMalus(PathType.DANGER_FIRE, 0.0F);
+        this.setPathfindingMalus(PathType.FIRE, 0.0F);
         this.setPathfindingMalus(PathType.WATER, 0.0F);
         this.setPathfindingMalus(PathType.LEAVES, 0.0F);
         dummyExplosion = new Explosion(level(), null, this.getX(), this.getY(), this.getZ(), 10.0F, false, Explosion.BlockInteraction.KEEP, List.of());
@@ -958,7 +958,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         }
         List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, this.getBoundingBox().inflate(64, 20, 64));
         for (LivingEntity e : list) {
-            if (!e.getType().is(ACTagRegistry.RESISTS_TREMORSAURUS_ROAR) && !isAlliedTo(e)) {
+            if (!e.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_TREMORSAURUS_ROAR) && !isAlliedTo(e)) {
                 if (e instanceof PathfinderMob mob && (!(mob instanceof TamableAnimal) || !((TamableAnimal) mob).isInSittingPose())) {
                     mob.setTarget(null);
                     mob.setLastHurtByMob(null);

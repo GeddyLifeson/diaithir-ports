@@ -31,7 +31,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
     public static final VoxelShape SHAPE = Block.box(6, 0, 6, 10, 16, 10);
 
     @Override
-    public MapCodec<? extends BushBlock> codec() {
+    public MapCodec<BushBlock> codec() {
         return CODEC;
     }
     public static final VoxelShape SHAPE_TOP = Block.box(3, 0, 3, 13, 16, 13);
@@ -51,7 +51,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(getter, pos);
+        Vec3 vec3 = state.getOffset(pos);
         VoxelShape shape = state.getValue(TOP) ? SHAPE_TOP : SHAPE;
         return shape.move(vec3.x, vec3.y, vec3.z);
     }

@@ -53,7 +53,7 @@ public class NotorEntity extends PathfinderMob {
     private static final EntityDataAccessor<Integer> HOLOGRAM_ENTITY_ID = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.INT);
 
     public static final Predicate<LivingEntity> SCAN_TARGET = (mob) -> {
-        return mob.isAlive() && !mob.getType().is(ACTagRegistry.NOTOR_IGNORES) && !mob.isInvisible();
+        return mob.isAlive() && !mob.getType().builtInRegistryHolder().is(ACTagRegistry.NOTOR_IGNORES) && !mob.isInvisible();
     };
     private int flyingSoundTimer;
 
