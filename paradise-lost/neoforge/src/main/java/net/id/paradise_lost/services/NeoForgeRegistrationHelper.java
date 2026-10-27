@@ -3,7 +3,7 @@ package net.id.paradise_lost.services;
 import net.id.paradise_lost.platform.services.IRegistrationHelper;
 import net.id.paradise_lost.registry.ItemRegistry;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;

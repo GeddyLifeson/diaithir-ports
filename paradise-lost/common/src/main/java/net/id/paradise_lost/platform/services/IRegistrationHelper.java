@@ -1,6 +1,6 @@
 package net.id.paradise_lost.platform.services;
 
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 
 public interface IRegistrationHelper {
     void setFlammable(Object block, int encouragement, int flammability);

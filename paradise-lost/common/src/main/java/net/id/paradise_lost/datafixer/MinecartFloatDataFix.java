@@ -4,7 +4,7 @@ import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.util.MinecartFloatingHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 
 public final class MinecartFloatDataFix {
     private MinecartFloatDataFix() {

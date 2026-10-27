@@ -6,7 +6,7 @@ import net.id.paradise_lost.tag.ParadiseLostBlockTags;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
 import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.id.paradise_lost.world.dimension.ParadiseLostDimension;
-import net.minecraft.BlockUtil;
+import net.minecraft.util.BlockUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;

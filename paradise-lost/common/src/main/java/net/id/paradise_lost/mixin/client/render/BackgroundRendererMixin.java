@@ -3,7 +3,7 @@ package net.id.paradise_lost.mixin.client.render;
 import net.id.paradise_lost.util.RegistryUtil;
 import net.id.paradise_lost.world.dimension.ParadiseLostDimension;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.client.renderer.fog.FogRenderer;
 import net.minecraft.world.phys.Vec3;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;

@@ -3,7 +3,7 @@ package net.id.paradise_lost.util;
 import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.registration.RegistrationProvider;
 import net.minecraft.advancements.CriterionTrigger;
-import net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger;
+import net.minecraft.advancements.criterion.ItemUsedOnLocationTrigger;
 import net.minecraft.core.registries.Registries;
 
 public class ParadiseLostCriteria {

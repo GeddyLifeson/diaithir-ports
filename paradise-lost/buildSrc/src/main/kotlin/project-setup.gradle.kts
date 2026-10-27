@@ -215,7 +215,7 @@ publishing {
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile::class) {
-        options.compilerArgs.addAll(arrayOf("-Xmaxerrs", "1000"))
+        options.compilerArgs.addAll(arrayOf("-Xmaxerrs", "100000"))
     }
 }
 

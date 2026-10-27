@@ -1,7 +1,7 @@
 package net.id.paradise_lost.world;
 
 import net.id.paradise_lost.platform.Services;
-import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.gamerules.GameRules;
 
 public final class ParadiseLostGameRules {
     public static final GameRules.Key<GameRules.BooleanValue> PARADISE_VOID_KILLS =

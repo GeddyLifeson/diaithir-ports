@@ -6,7 +6,7 @@ import net.id.paradise_lost.item.armor.XpCircletItem;
 import net.id.paradise_lost.registry.ItemRegistry;
 import net.minecraft.client.renderer.item.ItemProperties;
 
-import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.entity.vehicle.boat.Boat;
 
 import net.id.paradise_lost.entity.vehicle.ParadiseLostBoatType;
 import net.id.paradise_lost.client.rendering.entity.ParadiseLostBoatRenderer;

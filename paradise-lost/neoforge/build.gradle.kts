@@ -176,3 +176,6 @@ tasks.named<DefaultTask>("publish") {
     finalizedBy("publishToCurseForge")
 }
 //</editor-fold>
+// PORT NOTE: datagen providers are 1.21.1 API (ModelProvider/ExistingFileHelper/etc); excluded until migrated.
+// Generated resources already live in common/src/generated/resources.
+sourceSets.main { java.exclude("net/id/paradise_lost/datagen/**") }

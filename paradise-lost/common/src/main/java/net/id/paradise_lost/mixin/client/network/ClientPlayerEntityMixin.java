@@ -4,7 +4,7 @@ import net.id.paradise_lost.block.blockentity.ParadiseHangingSignBlockEntity;
 import net.id.paradise_lost.item.armor.FloatyLeggingsItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.HangingSignEditScreen;
-import net.minecraft.client.player.Input;
+import net.minecraft.world.entity.player.Input;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import org.spongepowered.asm.mixin.Final;

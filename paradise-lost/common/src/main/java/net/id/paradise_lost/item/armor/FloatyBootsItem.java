@@ -4,7 +4,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 
 public class FloatyBootsItem extends ArmorItem {
     /** Feather Falling IV equivalent: 3 blocks of fall protection per level. */

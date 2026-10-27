@@ -2,7 +2,7 @@ package net.id.paradise_lost.mixin.entity;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.id.paradise_lost.block.mechanical.LevitaRailBlock;
-import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
