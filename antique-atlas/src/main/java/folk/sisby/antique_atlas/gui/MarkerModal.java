@@ -67,7 +67,7 @@ public class MarkerModal extends GuiComponent {
 
 	void setMarkerData(WorldSummary summary, RegistryAccess manager, Landmark baseLandmark) {
 		this.summary = summary;
-		this.packRepository = manager;
+		this.manager = manager;
 		this.baseLandmark = baseLandmark;
 		this.selectedColor = Arrays.stream(DyeColor.values()).filter(d -> baseLandmark.contains(LandmarkComponentTypes.COLOR) && d.getTextureDiffuseColor() == baseLandmark.get(LandmarkComponentTypes.COLOR)).findAny().orElse(DyeColor.WHITE);
 		this.selectedTexture = MarkerTextures.getInstance().fromLandmark(baseLandmark);
@@ -89,7 +89,7 @@ public class MarkerModal extends GuiComponent {
 		removeAllChildren();
 		super.init();
 
-		addDrawableChild(btnDone = Button.builder(Component.translatable("gui.done"), (button) -> {
+		addRenderableWidget(btnDone = Button.builder(Component.translatable("gui.done"), (button) -> {
 			MutableComponent label = Component.literal(textField.getValue());
 			WorldLandmarks landmarks = summary.landmarks();
 			if (landmarks != null) {
@@ -98,7 +98,7 @@ public class MarkerModal extends GuiComponent {
 					baseLandmark,
 					selectedTexture.keyId().withSuffix("/" + selectedColor.getName() + "/" + baseLandmark.get(LandmarkComponentTypes.POS).getX() + "/" + baseLandmark.get(LandmarkComponentTypes.POS).getZ()),
 					copy -> {
-					Item item = manager.get(Registries.ITEM).get(selectedTexture.item());
+					Item item = manager.lookupOrThrow(Registries.ITEM).getValue(selectedTexture.item());
 					if (item != null && !item.getDefaultInstance().isEmpty()) copy.set(LandmarkComponentTypes.STACK, item.getDefaultInstance().copy());
 					copy.set(LandmarkComponentTypes.COLOR, selectedColor.getTextureDiffuseColor());
 					copy.set(LandmarkComponentTypes.NAME, label);
@@ -106,11 +106,11 @@ public class MarkerModal extends GuiComponent {
 			}
 			((AtlasScreen) getParent()).updateBookmarkerList();
 			LocalPlayer player = Minecraft.getInstance().player;
-			if (player != null) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ENTITY_VILLAGER_WORK_CARTOGRAPHER, 1F));
+			if (player != null) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.VILLAGER_WORK_CARTOGRAPHER, 1F));
 			closeChild();
-		}).dimensions(this.width / 2 - BUTTON_WIDTH - BUTTON_SPACING / 2, this.height / 2 + 70, BUTTON_WIDTH, 20).build());
-		addDrawableChild(btnCancel = Button.builder(Component.translatable("gui.cancel"), (button) -> closeChild())
-			.dimensions(this.width / 2 + BUTTON_SPACING / 2, this.height / 2 + 70, BUTTON_WIDTH, 20).build());
+		}).bounds(this.width / 2 - BUTTON_WIDTH - BUTTON_SPACING / 2, this.height / 2 + 70, BUTTON_WIDTH, 20).build());
+		addRenderableWidget(btnCancel = Button.builder(Component.translatable("gui.cancel"), (button) -> closeChild())
+			.bounds(this.width / 2 + BUTTON_SPACING / 2, this.height / 2 + 70, BUTTON_WIDTH, 20).build());
 		textField = new EditBox(Minecraft.getInstance().font, (this.width - 200) / 2, this.height / 2 - 65, 200, 20, Component.translatable("gui.antique_atlas.marker.label"));
 		textField.setEditable(true);
 		textField.setCanLoseFocus(true);
@@ -187,26 +187,26 @@ public class MarkerModal extends GuiComponent {
 
 	@Override
 	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		return super.mouseClicked(mouseX, mouseY, button) || textField.mouseClicked(mouseX, mouseY, button);
+		return super.mouseClicked(mouseX, mouseY, button) || textField.mouseClicked(new net.minecraft.client.input.MouseButtonEvent(mouseX, mouseY, new net.minecraft.client.input.MouseButtonInfo(button, 0)), false);
 	}
 
 	@Override
 	public boolean keyPressed(int aa, int bb, int cc) {
-		return super.keyPressed(aa, bb, cc) || textField.keyPressed(aa, bb, cc);
+		return super.keyPressed(aa, bb, cc) || textField.keyPressed(new net.minecraft.client.input.KeyEvent(aa, bb, cc));
 	}
 
 	@Override
 	public boolean charTyped(char aa, int bb) {
-		return super.charTyped(aa, bb) || textField.charTyped(aa, bb);
+		return super.charTyped(aa, bb) || textField.charTyped(new net.minecraft.client.input.CharacterEvent(aa));
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
 		this.extractBackground(context, mouseX, mouseY, partialTick);
 		drawCentered(context, Component.translatable("gui.antique_atlas.marker.label"), this.height / 2 - 80, 0xDDDDDD, true);
-		btnCancel.render(context, mouseX, mouseY, partialTick);
-		btnDone.render(context, mouseX, mouseY, partialTick);
-		textField.render(context, mouseX, mouseY, partialTick);
+		btnCancel.extractRenderState(context, mouseX, mouseY, partialTick);
+		btnDone.extractRenderState(context, mouseX, mouseY, partialTick);
+		textField.extractRenderState(context, mouseX, mouseY, partialTick);
 		// Darker background for marker type selector
 		context.fillGradient(textureScrollBox.getGuiX() + 1, textureScrollBox.getGuiY() + 1,
 			textureScrollBox.getGuiX() + textureScrollBox.getWidth(),
@@ -216,7 +216,7 @@ public class MarkerModal extends GuiComponent {
 			colorScrollBox.getGuiX() + colorScrollBox.getWidth(),
 			colorScrollBox.getGuiY() + colorScrollBox.getHeight(),
 			0x88101010, 0x99101010);
-		super.render(context, mouseX, mouseY, partialTick);
+		super.extractRenderState(context, mouseX, mouseY, partialTick);
 	}
 
 	public interface IMarkerTypeSelectListener {

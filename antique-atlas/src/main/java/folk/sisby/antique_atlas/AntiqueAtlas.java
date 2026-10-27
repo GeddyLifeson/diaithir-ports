@@ -110,7 +110,7 @@ public class AntiqueAtlas {
 		});
 		NeoForge.EVENT_BUS.addListener((TagsUpdatedEvent e) -> {
 			if (e.getUpdateCause() == TagsUpdatedEvent.UpdateCause.CLIENT_PACKET_RECEIVED) {
-				BiomeTileProviders.getInstance().registerFallbacks(e.getLookupProvider().lookupOrThrow(Registries.BIOME));
+				BiomeTileProviders.getInstance().registerFallbacks(Minecraft.getInstance().getConnection().registryAccess().lookupOrThrow(Registries.BIOME));
 			}
 		});
 		NeoForge.EVENT_BUS.addListener((ClientPlayerNetworkEvent.LoggingOut e) -> {

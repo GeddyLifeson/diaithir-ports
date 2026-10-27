@@ -1,5 +1,6 @@
 package folk.sisby.antique_atlas;
 
+import folk.sisby.antique_atlas.util.MathUtil;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.util.Mth;
@@ -18,7 +19,7 @@ public record TerrainTileProvider(Identifier id, Map<TileElevation, List<TileTex
 	}
 
 	public TileTexture getTexture(ChunkPos pos, @Nullable TileElevation elevation) {
-		int variation = (int) (Mth.hashCode(pos.x, pos.z, pos.x * pos.z) & 0x7FFFFFFF);
+		int variation = (int) (MathUtil.hash3(pos.x(), pos.z(), pos.x() * pos.z()) & 0x7FFFFFFF);
 		TileElevation usedElevation = elevation == null ? TileElevation.VALLEY : elevation;
 		return textures.get(usedElevation).get(variation % textures.get(usedElevation).size());
 	}

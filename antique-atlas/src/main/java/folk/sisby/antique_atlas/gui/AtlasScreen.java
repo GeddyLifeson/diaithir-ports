@@ -1,6 +1,7 @@
 package folk.sisby.antique_atlas.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import folk.sisby.antique_atlas.util.MathUtil;
+import folk.sisby.antique_atlas.util.Gfx;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import folk.sisby.antique_atlas.AntiqueAtlas;
@@ -27,7 +28,7 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.resource.metadata.ResourceMetadataReader;
+import net.minecraft.server.packs.metadata.MetadataSectionType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.DyeColor;
@@ -131,18 +132,18 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 				state.switchTo(PLACING_MARKER, this);
 
 				// While holding shift, we create a marker on the player's position
-				if (hasShiftDown()) {
+				if (shiftDown()) {
 					double dimX = player.getBlockX();
 					double dimZ = player.getBlockZ();
 					Map<ResourceKey<Level>, Integer> scales = AntiqueAtlas.CONFIG.dimensions.getScales(Minecraft.getInstance().getConnection());
 					int newScale = scales.getOrDefault(dim(), 0);
-					int oldScale = scales.getOrDefault(player.getEntityWorld().dimension(), 0);
+					int oldScale = scales.getOrDefault(player.level().dimension(), 0);
 					if (newScale * oldScale == 0) return; // no ratio!
 					double mult = newScale / (double) oldScale;
 					dimX = mult * dimX;
 					dimZ = mult * dimZ;
 
-					markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.getEntityWorld().registryAccess(), Landmark.create(SurveyorClient.getClientUuid(), AntiqueAtlas.id("newmarker"), b -> b.add(LandmarkComponentTypes.POS, player.getBlockPos())));
+					markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.level().registryAccess(), Landmark.create(SurveyorClient.getClientUuid(), AntiqueAtlas.id("newmarker"), b -> b.add(LandmarkComponentTypes.POS, player.blockPosition())));
 					addChild(markerModal);
 
 					markerCursor.setTexture(markerModal.selectedTexture.id(), markerModal.selectedTexture.textureWidth(), markerModal.selectedTexture.textureHeight());
@@ -182,7 +183,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 				state.switchTo(HIDING_MARKERS, this);
 			}
 		});
-		resetScaleBookmark = new TextBookmarkButton(Component.translatable("gui.antique_atlas.resetScale"), Component.of("1c"));
+		resetScaleBookmark = new TextBookmarkButton(Component.translatable("gui.antique_atlas.resetScale"), Component.literal("1c"));
 		addChild(resetScaleBookmark);
 		offsetSideButton(resetScaleBookmark);
 		resetScaleBookmark.addListener(button -> {
@@ -220,7 +221,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 	}
 
 	public void prepareToOpen() {
-		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.0F));
+		Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F));
 
 		this.player = Minecraft.getInstance().player;
 		this.dim = Minecraft.getInstance().level.dimension();
@@ -244,7 +245,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		updateBookmarkerList();
 	}
 
-	public static final ResourceMetadataReader<DimensionTextureMeta> METADATA = new CodecUtil.CodecResourceMetadataSerializer<>(DimensionTextureMeta.CODEC, AntiqueAtlas.id("dimension"));
+	public static final MetadataSectionType<DimensionTextureMeta> METADATA = CodecUtil.metadata(AntiqueAtlas.ID + ":" + "dimension", DimensionTextureMeta.CODEC);
 
 	public record DimensionTextureMeta(int color, String name) {
 		public static final Codec<DimensionTextureMeta> CODEC = RecordCodecBuilder.create(instance -> instance.group(
@@ -265,7 +266,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		dimBookmarks.clear();
 
 		for (ResourceKey<Level> dimension : dim == null ? new ArrayList<ResourceKey<Level>>() : AntiqueAtlas.CONFIG.dimensions.getOrder(Minecraft.getInstance().getConnection())) {
-			Identifier iconId = dimension.getValue().withPath("textures/atlas/dimension/%s.png"::formatted);
+			Identifier iconId = dimension.identifier().withPath("textures/atlas/dimension/%s.png"::formatted);
 			Resource icon = Minecraft.getInstance().getResourceManager().getResource(iconId).orElse(null);
 			Integer backgroundTint;
 			Component name;
@@ -273,17 +274,17 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 				iconId = ICON_UNKNOWN;
 			}
 			try {
-				DimensionTextureMeta meta = icon.metadata().decode(METADATA).orElseThrow();
+				DimensionTextureMeta meta = icon.metadata().getSection(METADATA).orElseThrow();
 				backgroundTint = meta.color();
 				name = Component.translatable(meta.name());
 			} catch (NullPointerException | IOException | NoSuchElementException e) {
-				name = Component.of(WordUtils.capitalizeFully(dimension.getValue().getPath().replaceAll("[/_-]", " ")));
-				backgroundTint = DyeColor.byId(dimension.getValue().toString().hashCode() & 15).getTextureDiffuseColor();
+				name = Component.literal(WordUtils.capitalizeFully(dimension.identifier().getPath().replaceAll("[/_-]", " ")));
+				backgroundTint = DyeColor.byId(dimension.identifier().toString().hashCode() & 15).getTextureDiffuseColor();
 			}
 			BookmarkButton bookmark = new BookmarkButton(name, iconId, backgroundTint, null, 16, 16, false, true);
 			bookmark.setSelected(dimension.equals(dim));
 			bookmark.addListener(button -> {
-				List<ResourceKey<Level>> regKeys = AntiqueAtlas.CONFIG.dimensions.getOrder(client.getConnection());
+				List<ResourceKey<Level>> regKeys = AntiqueAtlas.CONFIG.dimensions.getOrder(minecraft.getConnection());
 				if (regKeys.contains(dimension) && !dim.equals(dimension)) changeDim(dimension);
 			});
 			dimBookmarks.add(bookmark);
@@ -307,12 +308,12 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			bookmark.addListener(button -> {
 				if (state.is(NORMAL)) {
 					clearTargetBookmarks(bookmark);
-					setTargetPosition(new ColumnPos(landmark.getOrDefault(LandmarkComponentTypes.POS, BlockPos.ORIGIN).getX(), landmark.getOrDefault(LandmarkComponentTypes.POS, BlockPos.ORIGIN).getZ()));
+					setTargetPosition(new ColumnPos(landmark.getOrDefault(LandmarkComponentTypes.POS, BlockPos.ZERO).getX(), landmark.getOrDefault(LandmarkComponentTypes.POS, BlockPos.ZERO).getZ()));
 				} else if (state.is(DELETING_MARKER)) {
 					if (!worldAtlasData.deleteLandmark(dim, landmark)) return;
 					updateBookmarkerList();
 					Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 1F, 0.5F));
-					if (!hasShiftDown()) {
+					if (!shiftDown()) {
 						state.switchTo(NORMAL, this);
 					}
 				}
@@ -357,7 +358,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 
 		// If clicked on the map, start dragging
 		if (state.is(NORMAL) && hoveredLandmark != null && hoveredLandmark.contains(LandmarkComponentTypes.POS) && !hoveredLandmark.owner().equals(WorldLandmarks.GLOBAL) && SurveyorClient.canModify(hoveredLandmark.owner()) && mouseState == GLFW.GLFW_MOUSE_BUTTON_2) {
-			markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.getEntityWorld().registryAccess(), hoveredLandmark);
+			markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.level().registryAccess(), hoveredLandmark);
 			addChild(markerModal);
 
 			markerCursor.setTexture(markerModal.selectedTexture.id(), MARKER_SIZE, MARKER_SIZE);
@@ -370,7 +371,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			return true;
 		} else if (!state.is(NORMAL) && !state.is(HIDING_MARKERS)) {
 			if (state.is(PLACING_MARKER) && isMouseOverMap && mouseState == GLFW.GLFW_MOUSE_BUTTON_1) {
-				markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.getEntityWorld().registryAccess(), Landmark.create(SurveyorClient.getClientUuid(), AntiqueAtlas.id("newmarker"), b -> b.add(LandmarkComponentTypes.POS, new BlockPos(screenXToWorldX(mouseX), 0, screenYToWorldZ(mouseY)))));
+				markerModal.setMarkerData(SurveyorClient.tryGetSummary(dim), player.level().registryAccess(), Landmark.create(SurveyorClient.getClientUuid(), AntiqueAtlas.id("newmarker"), b -> b.add(LandmarkComponentTypes.POS, new BlockPos(screenXToWorldX(mouseX), 0, screenYToWorldZ(mouseY)))));
 				addChild(markerModal);
 
 				markerCursor.setTexture(markerModal.selectedTexture.id(), MARKER_SIZE, MARKER_SIZE);
@@ -387,7 +388,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 					Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, 1F, 0.5F));
 				}
 			}
-			if (!hasShiftDown() || !state.is(DELETING_MARKER)) {
+			if (!shiftDown() || !state.is(DELETING_MARKER)) {
 				state.switchTo(NORMAL, this);
 			}
 		} else if (isMouseOverMap && selectedButton == null) {
@@ -426,14 +427,14 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			}
 		}
 		if (newPrevDimScale != 0) prevDimScale = newPrevDimScale;
-		client.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.1F));
+		minecraft.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.1F));
 		updateAtlasData();
 	}
 
 	@Override
 	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-		if ((AntiqueAtlasKeybindings.ATLAS_KEYMAPPING.matches(keyCode, scanCode) && this.markerModal.getParent() == null)) {
-			close();
+		if ((AntiqueAtlasKeybindings.ATLAS_KEYMAPPING.matches(new net.minecraft.client.input.KeyEvent(keyCode, scanCode, modifiers)) && this.markerModal.getParent() == null)) {
+			onClose();
 			return true;
 		}
 		switch (keyCode) {
@@ -444,10 +445,10 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			case GLFW.GLFW_KEY_EQUAL, GLFW.GLFW_KEY_KP_ADD -> zoomIn(true, (16 << AntiqueAtlas.CONFIG.maxTilePixels));
 			case GLFW.GLFW_KEY_MINUS, GLFW.GLFW_KEY_KP_SUBTRACT -> zoomOut(true, (1 << AntiqueAtlas.CONFIG.maxTileChunks));
 			case GLFW.GLFW_KEY_TAB -> {
-				List<ResourceKey<Level>> regKeys = AntiqueAtlas.CONFIG.dimensions.getOrder(client.getConnection());
+				List<ResourceKey<Level>> regKeys = AntiqueAtlas.CONFIG.dimensions.getOrder(minecraft.getConnection());
 				if (regKeys.contains(dim)) changeDim(regKeys.get((regKeys.size() + regKeys.indexOf(dim) + 1) % regKeys.size()));
 			}
-			case GLFW.GLFW_KEY_ESCAPE -> close();
+			case GLFW.GLFW_KEY_ESCAPE -> onClose();
 			default -> {
 				return super.keyPressed(keyCode, scanCode, modifiers);
 			}
@@ -508,7 +509,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		double dimZ = player.getBlockZ();
 		Map<ResourceKey<Level>, Integer> scales = AntiqueAtlas.CONFIG.dimensions.getScales(Minecraft.getInstance().getConnection());
 		int newScale = scales.getOrDefault(dim(), 0);
-		int oldScale = scales.getOrDefault(player.getEntityWorld().dimension(), 0);
+		int oldScale = scales.getOrDefault(player.level().dimension(), 0);
 		if (newScale * oldScale > 0) {
 			double mult = newScale / (double) oldScale;
 			dimX = mult * dimX;
@@ -577,7 +578,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		int defaultTileSizeBlocks = 16;
 		int rulerSizeBlocks = (int) (tileSizeBlocks / getEffectiveScale());
 		resetScaleBookmark.setLabel(Component.literal(
-			rulerSizeBlocks == 16 | rulerSizeBlocks >= 32 ? "%dc".formatted(rulerSizeBlocks / 16) : "%db".formatted(rulerSizeBlocks)).formatted(
+			rulerSizeBlocks == 16 | rulerSizeBlocks >= 32 ? "%dc".formatted(rulerSizeBlocks / 16) : "%db".formatted(rulerSizeBlocks)).withStyle(
 			tileSizeBlocks < defaultTileSizeBlocks ? ChatFormatting.DARK_RED : tileSizeBlocks == defaultTileSizeBlocks ? ChatFormatting.BLACK : ChatFormatting.DARK_BLUE
 		));
 	}
@@ -587,10 +588,10 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		if (tileChunks == 1) {
 			if (tilePixels >= maxTilePixels) return false;
 			tilePixels <<= 1;
-			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_SPYGLASS_USE, 1.0F));
+			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.SPYGLASS_USE, 1.0F));
 		} else {
 			tileChunks >>= 1;
-			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.0F));
+			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F));
 		}
 		mapOffsetX *= 2;
 		mapOffsetY *= 2;
@@ -603,10 +604,10 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		if (tilePixels == 16) {
 			if (tileChunks >= maxTileChunks) return false;
 			tileChunks <<= 1;
-			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_BOOK_PAGE_TURN, 1.0F));
+			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.BOOK_PAGE_TURN, 1.0F));
 		} else {
 			tilePixels >>= 1;
-			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.ITEM_SPYGLASS_USE, 1.0F));
+			if (playSound) Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.SPYGLASS_USE, 1.0F));
 		}
 		mapOffsetX /= 2;
 		mapOffsetY /= 2;
@@ -624,7 +625,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
 		int trueMouseX = mouseX;
 		int trueMouseY = mouseY;
 		if (markerModal.getParent() != null) {
@@ -633,44 +634,40 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 		}
 		super.extractBackground(context, mouseX, mouseY, partialTick);
 		mapScale = calculateMapScale();
-		RenderSystem.setShaderColor(1, 1, 1, 1);
+		Gfx.tint(1, 1, 1, 1);
 
 		if (fullscreen) {
 			int left_width = bookWidth / 2 - 15;
-			context.blitSprite(BOOK_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
-			context.blitSprite(BOOK_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
-			context.blitSprite(BOOK_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
+			Gfx.blitSprite(context, BOOK_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
+			Gfx.blitSprite(context, BOOK_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
+			Gfx.blitSprite(context, BOOK_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
 		} else {
-			context.drawTexture(BOOK, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
+			Gfx.blit(context, BOOK, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
 		}
 
 		if (worldAtlasData == null) return;
 
-		RenderSystem.enableScissor(
-			(int) (guiScale() * (getGuiX() + MAP_BORDER_WIDTH)),
-			(int) (guiScale() * (getGuiY() + MAP_BORDER_HEIGHT)),
-			(int) (guiScale() * mapWidth),
-			(int) (guiScale() * mapHeight)
+		context.enableScissor(
+			getGuiX() + MAP_BORDER_WIDTH,
+			getGuiY() + MAP_BORDER_HEIGHT,
+			getGuiX() + MAP_BORDER_WIDTH + mapWidth,
+			getGuiY() + MAP_BORDER_HEIGHT + mapHeight
 		);
-
-		RenderSystem.enableBlend();
-		RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-		RenderSystem.setShaderColor(1, 1, 1, state.is(DELETING_MARKER) ? 0.5f : 1.0f);
-		renderTiles(context.pose(), null, MAX_LIGHT);
-		RenderSystem.setShaderColor(1, 1, 1, 1);
-		RenderSystem.disableBlend();
+		Gfx.tint(1, 1, 1, state.is(DELETING_MARKER) ? 0.5f : 1.0f);
+		renderTiles(context, MAX_LIGHT);
+		Gfx.tint(1, 1, 1, 1);
 
 		// Overlay the frame so that edges of the map are smooth:
 		if (fullscreen) {
 			int left_width = bookWidth / 2 - 15;
-			context.blitSprite(BOOK_FRAME_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
-			context.blitSprite(BOOK_FRAME_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
-			context.blitSprite(BOOK_FRAME_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
 		} else {
-			context.drawTexture(BOOK_FRAME, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
+			Gfx.blit(context, BOOK_FRAME, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
 		}
-		context.pose().push();
-		context.pose().translate(getGuiX(), getGuiY(), 0);
+		context.pose().pushMatrix();
+		context.pose().translate((float) getGuiX(), (float) getGuiY());
 		float markerScale = getEffectiveScale() * (tilePixels / 16.0F);
 
 		Map<UUID, PlayerSummary> friends = AntiqueAtlas.getOrderedFriends();
@@ -705,7 +702,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 						double markerX = worldXToScreenX(pos.getX());
 						double markerY = worldZToScreenY(pos.getZ());
 						Vector2d markerCenter = texture.getCenter(tileChunks);
-						double squaredDistance = Vector2d.distanceToSqr(markerX + markerScale * markerCenter.x, markerY + markerScale * markerCenter.y, mouseX, mouseY);
+						double squaredDistance = MathUtil.distanceToSqr(markerX + markerScale * markerCenter.x, markerY + markerScale * markerCenter.y, mouseX, mouseY);
 						if (squaredDistance > 0 && squaredDistance < bestDistance && squaredDistance < (texture.getSquaredSize(tileChunks) * markerScale * markerScale) / 4.0) {
 							bestDistance = squaredDistance;
 							hoveredLandmark = landmark;
@@ -719,8 +716,8 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 					boolean self = uuid.equals(SurveyorClient.getClientUuid());
 					boolean inDim = friend.dimension().equals(dim);
 					if (!self && !inDim) continue;
-					double dimX = friend.position().getX();
-					double dimZ = friend.position().getZ();
+					double dimX = friend.pos().x;
+					double dimZ = friend.pos().z;
 
 					if (!dim.equals(friend.dimension())) {
 						Map<ResourceKey<Level>, Integer> scales = AntiqueAtlas.CONFIG.dimensions.getScales(Minecraft.getInstance().getConnection());
@@ -734,7 +731,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 
 					double markerX = worldXToScreenX(dimX);
 					double markerY = worldZToScreenY(dimZ);
-					double squaredDistance = Vector2d.distanceToSqr(markerX, markerY, mouseX, mouseY);
+					double squaredDistance = MathUtil.distanceToSqr(markerX, markerY, mouseX, mouseY);
 					if (squaredDistance > 0 && squaredDistance < bestDistance && squaredDistance < (PLAYER_ICON_HEIGHT * PLAYER_ICON_WIDTH * 1.5) / 4.0) {
 						bestDistance = squaredDistance;
 						hoveredFriend = friend;
@@ -746,101 +743,94 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 				boolean hovering = hoveredLandmark == landmark && markerModal.getParent() == null;
 				boolean editable = !landmark.owner().equals(WorldLandmarks.GLOBAL) && SurveyorClient.canModify(landmark.owner());
 				BiFunction<Double, Double, Float> alpha = (x, y) -> state.is(PLACING_MARKER) || (state.is(DELETING_MARKER) && !editable) || (hovering && x <= MAP_BORDER_WIDTH || x >= mapWidth + MAP_BORDER_WIDTH || y <= MAP_BORDER_HEIGHT || y >= mapHeight + MAP_BORDER_HEIGHT) ? 0.5f : 1.0f;
-				renderMarker(context.pose(), null, landmark, texture, 0, MAX_LIGHT, alpha, editable, hovering, markerScale);
+				renderMarker(context, landmark, texture, 0, MAX_LIGHT, alpha, editable, hovering, markerScale);
 			});
 		}
 
-		context.pose().pop();
+		context.pose().popMatrix();
 
-		RenderSystem.disableScissor();
-
-		RenderSystem.enableBlend();
-		RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		context.disableScissor();
 		if (fullscreen) {
 			int left_width = bookWidth / 2 - 15;
-			context.blitSprite(BOOK_FRAME_NARROW_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
-			context.blitSprite(BOOK_FRAME_NARROW_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
-			context.blitSprite(BOOK_FRAME_NARROW_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_NARROW_FULLSCREEN, getGuiX(), getGuiY(), left_width, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_NARROW_FULLSCREEN_M, getGuiX() + left_width, getGuiY(), 29, bookHeight);
+			Gfx.blitSprite(context, BOOK_FRAME_NARROW_FULLSCREEN_R, getGuiX() + left_width + 29, getGuiY(), left_width + 1, bookHeight);
 		} else {
-			context.drawTexture(BOOK_FRAME_NARROW, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
+			Gfx.blit(context, BOOK_FRAME_NARROW, getGuiX(), getGuiY(), 0, 0, bookWidth, bookHeight, bookWidth, bookHeight);
 		}
-		RenderSystem.disableBlend();
 
 		markerScrollBox.getViewport().setClipped(state.is(HIDING_MARKERS));
 
-		context.pose().push();
-		context.pose().translate(getGuiX(), getGuiY(), 0);
+		context.pose().pushMatrix();
+		context.pose().translate((float) getGuiX(), (float) getGuiY());
 		friends.forEach((uuid, friend) -> {
 			boolean self = uuid.equals(SurveyorClient.getClientUuid());
 			boolean inDim = friend.dimension().equals(dim);
 			if (!self && !inDim) return;
 			boolean hovering = hoveredFriend == friend && markerModal.getParent() == null;
 			if (state.is(HIDING_MARKERS) && (!playerBookmark.isSelected() || !self)) return;
-			renderPlayer(context.pose(), null, 0, MAX_LIGHT, friend, getEffectiveScale(), state.is(PLACING_MARKER) ? 0.5F : 1.0F, hovering, self);
+			renderPlayer(context, 0, MAX_LIGHT, friend, getEffectiveScale(), state.is(PLACING_MARKER) ? 0.5F : 1.0F, hovering, self);
 		});
-		context.pose().pop();
+		context.pose().popMatrix();
 
 		if (state.is(PLACING_MARKER)) {
-			RenderSystem.setShaderColor(1, 1, 1, 0.5f);
-			context.drawTexture(markerModal.selectedTexture.id(), mouseX + markerModal.selectedTexture.getX(), mouseY + markerModal.selectedTexture.offsetY(), 0, 0, markerModal.selectedTexture.textureWidth(), markerModal.selectedTexture.textureHeight(), markerModal.selectedTexture.textureWidth(), markerModal.selectedTexture.textureHeight());
-			RenderSystem.setShaderColor(1, 1, 1, 1);
+			Gfx.tint(1, 1, 1, 0.5f);
+			Gfx.blit(context, markerModal.selectedTexture.id(), mouseX + markerModal.selectedTexture.offsetX(), mouseY + markerModal.selectedTexture.offsetY(), 0, 0, markerModal.selectedTexture.textureWidth(), markerModal.selectedTexture.textureHeight(), markerModal.selectedTexture.textureWidth(), markerModal.selectedTexture.textureHeight());
+			Gfx.tint(1, 1, 1, 1);
 		}
 
-		addMarkerBookmark.setTitle(hasShiftDown() ? TEXT_ADD_MARKER_HERE : TEXT_ADD_MARKER);
+		addMarkerBookmark.setTitle(shiftDown() ? TEXT_ADD_MARKER_HERE : TEXT_ADD_MARKER);
 
 		if (worldAtlasData.isLoading()) {
-			context.text(textRenderer, Component.literal("...").formatted(ChatFormatting.GRAY), getGuiX() + MAP_BORDER_WIDTH + mapWidth - 10, getGuiY() + MAP_BORDER_HEIGHT + mapHeight - 10, 0xFFFFFFFF, true);
+			context.text(font, Component.literal("...").withStyle(ChatFormatting.GRAY), getGuiX() + MAP_BORDER_WIDTH + mapWidth - 10, getGuiY() + MAP_BORDER_HEIGHT + mapHeight - 10, 0xFFFFFFFF, true);
 		}
 
-		if (hasAltDown() && !isDragging && isMouseOverMap && markerModal.getParent() == null) {
+		if (altDown() && !isDragging && isMouseOverMap && markerModal.getParent() == null) {
 			int x = screenXToWorldX((int) getMouseX());
 			int z = screenYToWorldZ((int) getMouseY());
-			ChunkPos pos = new ChunkPos(new BlockPos(x, 0, z));
-			context.text(textRenderer, Component.literal("%d,%d (%d,%d)".formatted(pos.x, pos.z, x, z)), getGuiX(), getGuiY() - 12, 0xFFFFFFFF, true);
+			ChunkPos pos = ChunkPos.containing(new BlockPos(x, 0, z));
+			context.text(font, Component.literal("%d,%d (%d,%d)".formatted(pos.x(), pos.z(), x, z)), getGuiX(), getGuiY() - 12, 0xFFFFFFFF, true);
 			if (hoveredLandmark != null) {
 				MarkerTexture texture = worldAtlasData.getMarkerTexture(hoveredLandmark);
-				context.text(textRenderer, Component.literal(hoveredLandmark.id().toString()), getGuiX() + bookWidth - textRenderer.getWidth(Component.literal(hoveredLandmark.id().toString())), getGuiY() - 12, 0xFFFFFFFF, true);
-				if (texture != null) context.text(textRenderer, Component.literal(texture.displayId()), getGuiX() + bookWidth - textRenderer.getWidth(Component.literal(texture.displayId())), getGuiY() + bookHeight, 0xFFFFFFFF, true);
+				context.text(font, Component.literal(hoveredLandmark.id().toString()), getGuiX() + bookWidth - font.width(Component.literal(hoveredLandmark.id().toString())), getGuiY() - 12, 0xFFFFFFFF, true);
+				if (texture != null) context.text(font, Component.literal(texture.displayId()), getGuiX() + bookWidth - font.width(Component.literal(texture.displayId())), getGuiY() + bookHeight, 0xFFFFFFFF, true);
 			} else {
 				TileTexture texture = worldAtlasData.getTile(pos);
 				Identifier providerId = worldAtlasData.getProvider(pos);
 				String predicate = worldAtlasData.getTilePredicate(pos);
 				if (texture != null) {
-					if (predicate != null) context.text(textRenderer, Component.literal(predicate), getGuiX() + bookWidth - textRenderer.getWidth(Component.literal(predicate)), getGuiY() - 12, 0xFFFFFFFF, true);
-					if (providerId != null) context.text(textRenderer, Component.literal(providerId.toString()), getGuiX(), getGuiY() + bookHeight + 14, 0xFFFFFFFF, true);
-					context.text(textRenderer, Component.literal(texture.displayId()), getGuiX() + bookWidth - textRenderer.getWidth(Component.literal(texture.displayId())), getGuiY() + bookHeight, 0xFFFFFFFF, true);
+					if (predicate != null) context.text(font, Component.literal(predicate), getGuiX() + bookWidth - font.width(Component.literal(predicate)), getGuiY() - 12, 0xFFFFFFFF, true);
+					if (providerId != null) context.text(font, Component.literal(providerId.toString()), getGuiX(), getGuiY() + bookHeight + 14, 0xFFFFFFFF, true);
+					context.text(font, Component.literal(texture.displayId()), getGuiX() + bookWidth - font.width(Component.literal(texture.displayId())), getGuiY() + bookHeight, 0xFFFFFFFF, true);
 				}
 			}
 		}
 
 		if (markerModal.getParent() != null) {
 			markerModal.setClipped(true);
-			super.render(context, mouseX, mouseY, partialTick);
+			super.extractRenderState(context, mouseX, mouseY, partialTick);
 			markerModal.setClipped(false);
-			markerModal.render(context, trueMouseX, trueMouseY, partialTick);
+			markerModal.extractRenderState(context, trueMouseX, trueMouseY, partialTick);
 		} else {
-			super.render(context, mouseX, mouseY, partialTick);
+			super.extractRenderState(context, mouseX, mouseY, partialTick);
 		}
 
-		context.pose().push();
-		context.pose().translate(getMouseX(), getMouseY(), 0);
 		if (hoveredLandmark != null) {
 			Component name = hoveredLandmark.get(LandmarkComponentTypes.NAME);
 			if (name != null && !name.getString().isEmpty()) {
-				context.drawTooltip(textRenderer, Stream.concat(Stream.of(name), hoveredLandmark.getOrDefault(LandmarkComponentTypes.LORE, new ArrayList<Component>()).stream().map(t -> t.copy().formatted(ChatFormatting.GRAY))).toList(), 0, 0);
+				context.setTooltipForNextFrame(font, Stream.concat(Stream.of(name), hoveredLandmark.getOrDefault(LandmarkComponentTypes.LORE, new ArrayList<Component>()).stream().map(t -> t.copy().withStyle(ChatFormatting.GRAY))).toList(), java.util.Optional.empty(), (int) getMouseX(), (int) getMouseY());
 			}
 		} else if (hoveredFriend != null) {
-			boolean self = hoveredFriend.username().equals(Minecraft.getInstance().player.getGameProfile().getName());
+			boolean self = hoveredFriend.username().equals(Minecraft.getInstance().player.getGameProfile().name());
 			boolean inDim = hoveredFriend.dimension().equals(dim);
 			if (self && inDim) return;
-			context.drawTooltip(textRenderer, (self ? Component.translatable("gui.antique_atlas.followPlayer") : Component.literal(hoveredFriend.username())).formatted(hoveredFriend.online() ? (self ? ChatFormatting.WHITE : ChatFormatting.LIGHT_PURPLE) : ChatFormatting.GRAY), 0, 0);
+			context.setTooltipForNextFrame(font, (self ? Component.translatable("gui.antique_atlas.followPlayer") : Component.literal(hoveredFriend.username())).withStyle(hoveredFriend.online() ? (self ? ChatFormatting.WHITE : ChatFormatting.LIGHT_PURPLE) : ChatFormatting.GRAY), (int) getMouseX(), (int) getMouseY());
 		}
-		context.pose().pop();
 	}
 
 	@Override
 	public double guiScale() {
-		return Minecraft.getInstance().getWindow().getAgeScale();
+		return Minecraft.getInstance().getWindow().getGuiScale();
 	}
 
 	@Override
@@ -849,8 +839,8 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 	}
 
 	@Override
-	public void close() {
-		super.close();
+	public void onClose() {
+		super.onClose();
 		markerModal.closeChild();
 		removeChild(markerCursor);
 	}

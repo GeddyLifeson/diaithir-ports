@@ -1,5 +1,7 @@
 package folk.sisby.antique_atlas.reloader;
 
+import net.minecraft.resources.FileToIdConverter;
+import net.minecraft.util.ExtraCodecs;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -15,7 +17,6 @@ import folk.sisby.surveyor.structure.JigsawPieceSummary;
 import folk.sisby.surveyor.structure.StructurePieceSummary;
 import folk.sisby.surveyor.structure.StructureStartSummary;
 import it.unimi.dsi.fastutil.Pair;
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
@@ -39,7 +40,7 @@ import java.util.Set;
 
 import static folk.sisby.antique_atlas.reloader.BiomeTileProviders.resolveTextureJson;
 
-public class StructureTileProviders extends SimpleJsonResourceReloadListener implements IdentifiableResourceReloadListener {
+public class StructureTileProviders extends SimpleJsonResourceReloadListener<JsonElement> {
 	public static final StructureTileProviders INSTANCE = new StructureTileProviders();
 
 	public static final Identifier ID = AntiqueAtlas.id("structures");
@@ -94,13 +95,13 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 	);
 
 	public StructureTileProviders() {
-		super(new Gson(), "atlas/structure");
+		super(ExtraCodecs.JSON, FileToIdConverter.json("atlas/structure"));
 	}
 
 	public void resolve(Map<ChunkPos, TileTexture> outTiles, Map<ChunkPos, StructureTileProvider> structureProviders, Map<ChunkPos, String> tilePredicates, StructurePieceSummary piece, WorldSummary summary) {
 		if (piece instanceof JigsawPieceSummary jigsawPiece) {
 			if (pieceJigsawSingleTiles.containsKey(jigsawPiece.getId())) {
-				StructureTileProvider provider = (jigsawPiece.getElementType() == StructurePoolElementType.FEATURE_POOL_ELEMENT ? pieceJigsawFeatureTiles : pieceJigsawSingleTiles).get(jigsawPiece.getId());
+				StructureTileProvider provider = (jigsawPiece.getElementType() == StructurePoolElementType.FEATURE ? pieceJigsawFeatureTiles : pieceJigsawSingleTiles).get(jigsawPiece.getId());
 				provider.getTextures(summary, jigsawPiece.getBoundingBox(), jigsawPiece.getJunctions(), tilePredicates).forEach((pos, texture) -> {
 					if (structureProviders.containsKey(pos) && structureProviders.get(pos).priority() < provider.priority()) return;
 					outTiles.put(pos, texture);
@@ -108,7 +109,7 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 				});
 			}
 		} else {
-			Identifier pieceTypeId = BuiltInRegistries.STRUCTURE_PIECE.getId(piece.getType());
+			Identifier pieceTypeId = BuiltInRegistries.STRUCTURE_PIECE.getKey(piece.getType());
 			if (pieceTypeTiles.containsKey(pieceTypeId)) {
 				StructureTileProvider provider = pieceTypeTiles.get(pieceTypeId);
 				provider.getTextures(summary, piece.getBoundingBox(), tilePredicates).forEach((pos, texture) -> {
@@ -121,43 +122,43 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 	}
 
 	public void resolve(Map<ChunkPos, TileTexture> outTiles, Map<ChunkPos, StructureTileProvider> structureProviders, Map<ChunkPos, String> debugPredicates, Map<Landmark, MarkerTexture> outMarkers, WorldSummary summary, ResourceKey<Structure> key, ChunkPos pos, StructureStartSummary start, ResourceKey<StructureType<?>> type, Collection<TagKey<Structure>> tags) {
-		if (startMarkers.containsKey(key.getValue())) {
-			MarkerTexture texture = startMarkers.get(key.getValue());
-			outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.getValue().withPath(p -> "start/" + p + "/" + pos.x + "/" + pos.z), b -> b
+		if (startMarkers.containsKey(key.identifier())) {
+			MarkerTexture texture = startMarkers.get(key.identifier());
+			outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.identifier().withPath(p -> "start/" + p + "/" + pos.x() + "/" + pos.z()), b -> b
 				.add(LandmarkComponentTypes.POS, pos.getMiddleBlockPosition(0))
-				.add(LandmarkComponentTypes.NAME, Component.translatable(ProviderType.START.translation(key.getValue())))
+				.add(LandmarkComponentTypes.NAME, Component.translatable(ProviderType.START.translation(key.identifier())))
 			), texture);
-		} else if (type != null && typeMarkers.containsKey(type.getValue())) {
-			MarkerTexture texture = typeMarkers.get(type.getValue());
-			outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.getValue().withPath(p -> "start/" + p + "/" + pos.x + "/" + pos.z), b -> b
+		} else if (type != null && typeMarkers.containsKey(type.identifier())) {
+			MarkerTexture texture = typeMarkers.get(type.identifier());
+			outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.identifier().withPath(p -> "start/" + p + "/" + pos.x() + "/" + pos.z()), b -> b
 				.add(LandmarkComponentTypes.POS, pos.getMiddleBlockPosition(0))
-				.add(LandmarkComponentTypes.NAME, Component.translatable(ProviderType.TYPE.translation(type.getValue())))
+				.add(LandmarkComponentTypes.NAME, Component.translatable(ProviderType.TYPE.translation(type.identifier())))
 			), texture);
 		} else {
-			tagMarkers.entrySet().stream().filter(entry -> tags.contains(TagKey.of(Registries.STRUCTURE, entry.getKey()))).findFirst().ifPresent(entry ->
-				outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.getValue().withPath(p -> "start/" + p + "/" + pos.x + "/" + pos.z), b -> b
+			tagMarkers.entrySet().stream().filter(entry -> tags.contains(TagKey.create(Registries.STRUCTURE, entry.getKey()))).findFirst().ifPresent(entry ->
+				outMarkers.put(Landmark.create(WorldLandmarks.GLOBAL, key.identifier().withPath(p -> "start/" + p + "/" + pos.x() + "/" + pos.z()), b -> b
 					.add(LandmarkComponentTypes.POS, pos.getMiddleBlockPosition(0))
 					.add(LandmarkComponentTypes.NAME, Component.translatable(ProviderType.TAG.translation(entry.getKey())))
 				), entry.getValue()));
 		}
 
-		if (startTiles.containsKey(key.getValue())) {
-			StructureTileProvider provider = startTiles.get(key.getValue());
+		if (startTiles.containsKey(key.identifier())) {
+			StructureTileProvider provider = startTiles.get(key.identifier());
 			provider.getTextures(summary, start.getBoundingBox(), debugPredicates).forEach((pos2, texture) -> {
 				if (structureProviders.containsKey(pos) && structureProviders.get(pos).priority() < provider.priority()) return;
 				outTiles.put(pos2, texture);
 				structureProviders.put(pos2, provider);
 			});
-		} else if (type != null && typeTiles.containsKey(type.getValue())) {
-			StructureTileProvider provider = typeTiles.get(key.getValue());
+		} else if (type != null && typeTiles.containsKey(type.identifier())) {
+			StructureTileProvider provider = typeTiles.get(key.identifier());
 			provider.getTextures(summary, start.getBoundingBox(), debugPredicates).forEach((pos2, texture) -> {
 				if (structureProviders.containsKey(pos) && structureProviders.get(pos).priority() < provider.priority()) return;
 				outTiles.put(pos2, texture);
 				structureProviders.put(pos2, provider);
 			});
 		} else {
-			tags.stream().filter(t -> tagTiles.containsKey(t.id())).findFirst().ifPresent(tag -> {
-				StructureTileProvider provider = tagTiles.get(tag.id());
+			tags.stream().filter(t -> tagTiles.containsKey(t.location())).findFirst().ifPresent(tag -> {
+				StructureTileProvider provider = tagTiles.get(tag.location());
 				provider.getTextures(summary, start.getBoundingBox(), debugPredicates).forEach((pos2, texture) -> {
 					if (structureProviders.containsKey(pos) && structureProviders.get(pos).priority() < provider.priority()) return;
 					outTiles.put(pos2, texture);
@@ -171,7 +172,7 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 
 	@Override
 	protected void apply(Map<Identifier, JsonElement> prepared, ResourceManager manager, ProfilerFiller profiler) {
-		AntiqueAtlas.LOGGER.printDebugLog("[Antique Atlas] Reloading Structure Tile / Marker Providers...");
+		AntiqueAtlas.LOGGER.debug("[Antique Atlas] Reloading Structure Tile / Marker Providers...");
 		Map<Identifier, TileTexture> textures = TileTextures.getInstance().getTextures();
 		Set<TileTexture> unusedTextures = new HashSet<>(textures.values().stream().filter(t -> t.id().getPath().startsWith("structure")).toList());
 
@@ -183,7 +184,7 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 				Map<Identifier, StructureTileProvider> providerMap = pair.left();
 				Map<Identifier, MarkerTexture> markerMap = pair.right();
 				if (fileId.getPath().startsWith(providerType.prefix())) {
-					Identifier id = Identifier.of(fileId.getNamespace(), fileId.getPath().substring(providerType.prefix().length()));
+					Identifier id = Identifier.fromNamespaceAndPath(fileId.getNamespace(), fileId.getPath().substring(providerType.prefix().length()));
 					try {
 						JsonObject fileJson = fileEntry.getValue().getAsJsonObject();
 						if (fileJson.has("textures")) {
@@ -236,13 +237,4 @@ public class StructureTileProviders extends SimpleJsonResourceReloadListener imp
 		}
 	}
 
-	@Override
-	public Identifier getFabricId() {
-		return ID;
-	}
-
-	@Override
-	public Collection<Identifier> getFabricDependencies() {
-		return List.of(TileTextures.ID, MarkerTextures.ID);
-	}
 }

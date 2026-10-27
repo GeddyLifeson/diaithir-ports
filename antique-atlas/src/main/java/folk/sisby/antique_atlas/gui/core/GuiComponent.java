@@ -1,6 +1,9 @@
 package folk.sisby.antique_atlas.gui.core;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.input.CharacterEvent;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -41,7 +44,7 @@ public class GuiComponent extends Screen {
 	public int guiX = 0, guiY = 0;
 
 	public GuiComponent() {
-		super(Component.literal("component"));
+		super(Minecraft.getInstance(), Minecraft.getInstance().font, net.minecraft.network.chat.Component.literal("component"));
 	}
 
 	/**
@@ -184,9 +187,9 @@ public class GuiComponent extends Screen {
 		}
 		child.parent = this;
 		child.setGuiCoords(guiX, guiY);
-		if (Minecraft.getInstance() != null) {
-			child.init(Minecraft.getInstance(), width, height);
-		}
+		child.width = width;
+		child.height = height;
+		child.init();
 		updateSize();
 	}
 
@@ -233,83 +236,83 @@ public class GuiComponent extends Screen {
 		return false;
 	}
 
-	/**
-	 * Handle mouse input for this GUI and its children.
-	 */
+	// The 26.1 input events are objects; the component tree keeps the older (x, y, button) style internally.
 	@Override
+	public final boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		return mouseClicked(event.x(), event.y(), event.button());
+	}
+
+	@Override
+	public final boolean mouseReleased(MouseButtonEvent event) {
+		return mouseReleased(event.x(), event.y(), event.button());
+	}
+
+	@Override
+	public final boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
+		return mouseDragged(event.x(), event.y(), event.button(), dx, dy);
+	}
+
+	@Override
+	public final boolean keyPressed(KeyEvent event) {
+		return keyPressed(event.key(), event.scancode(), event.modifiers());
+	}
+
+	@Override
+	public final boolean keyReleased(KeyEvent event) {
+		return keyReleased(event.key(), event.scancode(), event.modifiers());
+	}
+
+	@Override
+	public final boolean charTyped(CharacterEvent event) {
+		return charTyped((char) event.codepoint(), 0);
+	}
+
+	public static boolean shiftDown() {
+		return Minecraft.getInstance().hasShiftDown();
+	}
+
+	public static boolean altDown() {
+		return Minecraft.getInstance().hasAltDown();
+	}
+
 	public boolean mouseClicked(double mx, double my, int mb) {
-		if (!iterateInput((c) -> c.mouseClicked(mx, my, mb))) {
-			return super.mouseClicked(mx, my, mb);
-		} else {
-			return true;
-		}
+		return iterateInput((c) -> c.mouseClicked(mx, my, mb));
 	}
 
-	@Override
 	public boolean mouseReleased(double mx, double my, int mb) {
-		if (!iterateInput((c) -> c.mouseReleased(mx, my, mb))) {
-			return super.mouseReleased(mx, my, mb);
-		} else {
-			return true;
-		}
+		return iterateInput((c) -> c.mouseReleased(mx, my, mb));
 	}
 
-	@Override
 	public boolean mouseDragged(double mx, double my, int mb, double mx2, double my2) {
-		if (!iterateInput((c) -> c.mouseDragged(mx, my, mb, mx2, my2))) {
-			return super.mouseClicked(mx, my, mb);
-		} else {
-			return true;
-		}
+		return iterateInput((c) -> c.mouseDragged(mx, my, mb, mx2, my2));
 	}
 
 	@Override
 	public boolean mouseScrolled(double mx, double my, double dx, double dy) {
-		if (!iterateInput((c) -> c.mouseScrolled(mx, my, dx, dy))) {
-			return super.mouseScrolled(mx, my, dx, dy);
-		} else {
-			return true;
-		}
+		return iterateInput((c) -> c.mouseScrolled(mx, my, dx, dy));
 	}
 
 	@Override
 	public void mouseMoved(double mx, double my) {
-		if (!iterateInput((c) -> {
+		iterateInput((c) -> {
 			c.mouseMoved(mx, my);
 			return false;
-		})) {
-			super.mouseMoved(mx, my);
-		}
+		});
 	}
 
 	/**
 	 * Handle keyboard input for this GUI and its children.
 	 */
-	@Override
 	public boolean keyPressed(int a, int b, int c) {
-		if (!iterateInput((cpt) -> cpt.keyPressed(a, b, c))) {
-			return super.keyPressed(a, b, c);
-		} else {
-			return true;
-		}
+		return iterateInput((cpt) -> cpt.keyPressed(a, b, c));
 	}
 
-	@Override
 	public boolean charTyped(char aa, int bb) {
-		if (!iterateInput((cpt) -> cpt.charTyped(aa, bb))) {
-			return super.charTyped(aa, bb);
-		} else {
-			return true;
-		}
+		return iterateInput((cpt) -> cpt.charTyped(aa, bb));
 	}
 
-	@Override
 	public boolean keyReleased(int a, int b, int c) {
-		if (!iterateInput((cpt) -> cpt.keyReleased(a, b, c))) {
-			return super.keyReleased(a, b, c);
-		} else {
-			return true;
-		}
+		return iterateInput((cpt) -> cpt.keyReleased(a, b, c));
 	}
 
 	/**
@@ -317,11 +320,11 @@ public class GuiComponent extends Screen {
 	 * Drawable children are not rendered.
 	 */
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
 		// Do not call super() as it would render the background
 		for (GuiComponent child : children) {
 			if (!child.isClipped) {
-				child.render(context, mouseX, mouseY, partialTick);
+				child.extractRenderState(context, mouseX, mouseY, partialTick);
 			}
 		}
 	}
@@ -330,11 +333,11 @@ public class GuiComponent extends Screen {
 	 * Called when the GUI is unloaded, called for each child as well.
 	 */
 	@Override
-	public void close() {
+	public void onClose() {
 		for (GuiComponent child : children) {
-			child.close();
+			child.onClose();
 		}
-		super.close();
+		super.onClose();
 	}
 
 	/**
@@ -353,7 +356,9 @@ public class GuiComponent extends Screen {
 	public void init() {
 		super.init();
 		for (GuiComponent child : children) {
-			child.init(Minecraft.getInstance(), width, height);
+			child.width = width;
+			child.height = height;
+			child.init();
 		}
 	}
 
@@ -433,16 +438,16 @@ public class GuiComponent extends Screen {
 	/**
 	 * Draw a text string centered horizontally, using this GUI's font.
 	 */
-	public void drawCentered(GuiGraphicsExtractor context, Component text, int y, int color, boolean dropShadow) {
-		int length = this.font.getWidth(text);
-		context.text(textRenderer, text, (this.width - length) / 2, y, color, dropShadow);
+	public void drawCentered(GuiGraphicsExtractor context, net.minecraft.network.chat.Component text, int y, int color, boolean dropShadow) {
+		int length = this.font.width(text);
+		context.text(font, text, (this.width - length) / 2, y, color, dropShadow);
 	}
 
 	public double getMouseX() {
-		return Minecraft.getInstance().mouseHandler.getX() * width / Minecraft.getInstance().getWindow().getWidth();
+		return Minecraft.getInstance().mouseHandler.xpos() * width / Minecraft.getInstance().getWindow().getScreenWidth();
 	}
 
 	public double getMouseY() {
-		return Minecraft.getInstance().mouseHandler.getY() * height / Minecraft.getInstance().getWindow().getHeight();
+		return Minecraft.getInstance().mouseHandler.ypos() * height / Minecraft.getInstance().getWindow().getScreenHeight();
 	}
 }

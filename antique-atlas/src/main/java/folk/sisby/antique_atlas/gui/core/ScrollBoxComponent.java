@@ -1,5 +1,6 @@
 package folk.sisby.antique_atlas.gui.core;
 
+import folk.sisby.antique_atlas.util.Gfx;
 import folk.sisby.antique_atlas.AntiqueAtlas;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -36,12 +37,12 @@ public class ScrollBoxComponent extends GuiComponent {
 		boolean hovered = new Rect2i(x, y, ARROW_SIZE, ARROW_SIZE).contains(mouseX, mouseY);
 		int u = (prev ? 0 : ARROW_SIZE);
 		int v = (vertical ? 0 : ARROW_SIZE) + (hovered ? ARROW_SIZE * 2 : 0);
-		context.drawTexture(ARROW, x, y, u, v, ARROW_SIZE, ARROW_SIZE, ARROW_TEXTURE_WIDTH, ARROW_TEXTURE_HEIGHT);
+		Gfx.blit(context, ARROW, x, y, u, v, ARROW_SIZE, ARROW_SIZE, ARROW_TEXTURE_WIDTH, ARROW_TEXTURE_HEIGHT);
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
-		super.render(context, mouseX, mouseY, partialTick);
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+		super.extractRenderState(context, mouseX, mouseY, partialTick);
 		if (scrollPos > 0) renderArrow(context, mouseX, mouseY, true);
 		if (scrollPos < getContentSize() - getViewportSize()) renderArrow(context, mouseX, mouseY, false);
 	}

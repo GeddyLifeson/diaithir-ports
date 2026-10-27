@@ -1,6 +1,6 @@
 package folk.sisby.antique_atlas.gui.core;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import folk.sisby.antique_atlas.util.Gfx;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.resources.Identifier;
 import org.lwjgl.opengl.GL11;
@@ -46,23 +46,19 @@ public class BlinkingTextureComponent extends GuiComponent {
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
 		long currentTime = System.currentTimeMillis();
 		if (lastTickTime + blinkTime < currentTime) {
 			lastTickTime = currentTime;
 			isVisible = !isVisible;
 		}
-		RenderSystem.setShaderColor(1, 1, 1, isVisible ? visibleAlpha : invisibleAlpha);
-		RenderSystem.enableBlend();
-		RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		Gfx.tint(1, 1, 1, isVisible ? visibleAlpha : invisibleAlpha);
 
 		drawImage(context);
-
-		RenderSystem.disableBlend();
-		RenderSystem.setShaderColor(1, 1, 1, 1);
+		Gfx.tint(1, 1, 1, 1);
 	}
 
 	protected void drawImage(GuiGraphicsExtractor context) {
-		context.drawTexture(texture, getGuiX(), getGuiY(), 0, 0, getWidth(), getHeight(), getWidth(), getHeight());
+		Gfx.blit(context, texture, getGuiX(), getGuiY(), 0, 0, getWidth(), getHeight(), getWidth(), getHeight());
 	}
 }

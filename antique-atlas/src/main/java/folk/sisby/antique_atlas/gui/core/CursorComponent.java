@@ -1,5 +1,6 @@
 package folk.sisby.antique_atlas.gui.core;
 
+import folk.sisby.antique_atlas.util.Gfx;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.resources.Identifier;
 
@@ -44,7 +45,7 @@ public class CursorComponent extends GuiComponent {
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
-		context.drawTexture(texture, mouseX - pointX, mouseY - pointY, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+		Gfx.blit(context, texture, mouseX - pointX, mouseY - pointY, 0, 0, textureWidth, textureHeight, textureWidth, textureHeight);
 	}
 }

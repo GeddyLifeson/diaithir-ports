@@ -98,7 +98,7 @@ public class BiomeTileProviders extends SimpleJsonResourceReloadListener<JsonEle
 		if (byTag != null) return Identifier.parse(byTag);
 		Biome value = biome.value();
 		boolean snows = value.getPrecipitationAt(BlockPos.ZERO, 64) == Biome.Precipitation.SNOW;
-		return Identifier.parse(BiomeFallbacks.byClimate(value.getBaseTemperature(), value.climateSettings.downfall(), snows));
+		return Identifier.parse(BiomeFallbacks.byClimate(value.getBaseTemperature(), value.getModifiedClimateSettings().downfall(), snows));
 	}
 
 	public static TileTexture getTexture(Map<Identifier, TileTexture> textures, Identifier id) {
@@ -110,11 +110,11 @@ public class BiomeTileProviders extends SimpleJsonResourceReloadListener<JsonEle
 	}
 
 	public static @Nullable List<TileTexture> resolveTextureJson(Map<Identifier, TileTexture> textures, JsonElement textureJson) {
-		if (textureJson instanceof JsonPrimitive texturePrimitive && texturePrimitive.isStringValue()) {
+		if (textureJson instanceof JsonPrimitive texturePrimitive && texturePrimitive.isString()) {
 			return List.of(getTexture(textures, Identifier.tryParse(texturePrimitive.getAsString())));
 		} else if (textureJson instanceof JsonArray textureArray) {
 			return textureArray.asList().stream().map(je -> getTexture(textures, Identifier.tryParse(je.getAsString()))).toList();
-		} else if (textureJson instanceof JsonObject textureObject && textureObject.keySet().stream().allMatch(k -> textureObject.get(k) instanceof JsonPrimitive jp && jp.isNumberValue())) {
+		} else if (textureJson instanceof JsonObject textureObject && textureObject.keySet().stream().allMatch(k -> textureObject.get(k) instanceof JsonPrimitive jp && jp.isNumber())) {
 			Multiset<TileTexture> outList = HashMultiset.create();
 			textureObject.entrySet().forEach(e -> outList.add(getTexture(textures, Identifier.tryParse(e.getKey())), e.getValue().getAsInt()));
 			return outList.stream().toList();

@@ -1,6 +1,6 @@
 package folk.sisby.antique_atlas.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import folk.sisby.antique_atlas.util.Gfx;
 import folk.sisby.antique_atlas.AntiqueAtlas;
 import folk.sisby.antique_atlas.gui.core.ToggleButtonComponent;
 import folk.sisby.antique_atlas.util.ColorUtil;
@@ -59,20 +59,20 @@ public class BookmarkButton extends ToggleButtonComponent {
 	}
 
 	public void drawIcon(GuiGraphicsExtractor context, int x, int y) {
-		if (iconTint != null) RenderSystem.setShaderColor(iconTint[0], iconTint[1], iconTint[2], 1.0F);
-		context.drawTexture(iconTexture, x, y, 0, 0, iconWidth, iconHeight, iconWidth, iconHeight);
-		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		if (iconTint != null) Gfx.tint(iconTint[0], iconTint[1], iconTint[2], 1.0F);
+		Gfx.blit(context, iconTexture, x, y, 0, 0, iconWidth, iconHeight, iconWidth, iconHeight);
+		Gfx.tint(1.0F, 1.0F, 1.0F, 1.0F);
 	}
 
 	@Override
-	public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
+	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
 		boolean mouseOver = isMouseOver(mouseX, mouseY);
 		boolean isExtended = mouseOver || isSelected();
 
-		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-		if (backgroundTint != null) RenderSystem.setShaderColor(backgroundTint[0], backgroundTint[1], backgroundTint[2], 1.0F);
-		context.drawTexture(backgroundTexture, getGuiX(), getGuiY(), !vertical || isExtended ? 0 : HEIGHT, vertical || isExtended ? 0 : HEIGHT, vertical ? HEIGHT : WIDTH, vertical ? WIDTH : HEIGHT, vertical ? HEIGHT * 2 : WIDTH, vertical ? WIDTH : HEIGHT * 2);
-		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+		Gfx.tint(1.0F, 1.0F, 1.0F, 1.0F);
+		if (backgroundTint != null) Gfx.tint(backgroundTint[0], backgroundTint[1], backgroundTint[2], 1.0F);
+		Gfx.blit(context, backgroundTexture, getGuiX(), getGuiY(), !vertical || isExtended ? 0 : HEIGHT, vertical || isExtended ? 0 : HEIGHT, vertical ? HEIGHT : WIDTH, vertical ? WIDTH : HEIGHT, vertical ? HEIGHT * 2 : WIDTH, vertical ? WIDTH : HEIGHT * 2);
+		Gfx.tint(1.0F, 1.0F, 1.0F, 1.0F);
 
 		if (iconTexture != null) {
 			int iconX = getGuiX() + (!vertical ? (10 - iconWidth / 2 + (isExtended ? (backwards ? 3 : 1) : (backwards ? 4 : 0))) : (9 - iconHeight / 2));
@@ -85,7 +85,7 @@ public class BookmarkButton extends ToggleButtonComponent {
 
 	public void renderTooltip(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick, boolean mouseOver) {
 		if (mouseOver && !title.getString().isEmpty()) {
-			context.drawTooltip(textRenderer, title, mouseX, mouseY);
+			context.setTooltipForNextFrame(font, title, mouseX, mouseY);
 		}
 	}
 }

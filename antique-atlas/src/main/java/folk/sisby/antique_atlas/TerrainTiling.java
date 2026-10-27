@@ -9,7 +9,7 @@ import folk.sisby.surveyor.util.RegistryPalette;
 import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.objects.Reference2BooleanArrayMap;
 import it.unimi.dsi.fastutil.objects.Reference2IntArrayMap;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
+import net.neoforged.neoforge.common.Tags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.Registry;
@@ -55,7 +55,7 @@ public class TerrainTiling {
 
 	public static int priorityForBiome(Registry<Biome> biomeRegistry, Biome biome) {
 		return priorityCache.computeIfAbsent(biome, b -> {
-			Holder<Biome> biomeEntry = biomeRegistry.getEntry(biome);
+			Holder<Biome> biomeEntry = biomeRegistry.wrapAsHolder(biome);
 			if (biomeEntry.is(BiomeTags.IS_BEACH)) {
 				return BEACH_PRIORITY;
 			} else if (biomeEntry.is(BiomeTags.IS_NETHER)) {
@@ -67,7 +67,7 @@ public class TerrainTiling {
 	}
 
 	public static boolean isSwamp(Registry<Biome> biomeRegistry, Biome biome) {
-		return swampCache.computeIfAbsent(biome, b -> biomeRegistry.getEntry(b).is(ConventionalBiomeTags.SWAMP));
+		return swampCache.computeIfAbsent(biome, b -> biomeRegistry.wrapAsHolder(b).is(Tags.Biomes.IS_SWAMP));
 	}
 
 	public static Pair<TerrainTileProvider, TileElevation> frequencyToTexture(int[][] possibleTiles, Registry<Biome> biomeRegistry, IdMap<Biome> biomePalette) {
@@ -85,9 +85,9 @@ public class TerrainTiling {
 		}
 		if (bestFrequency == 0) return null;
 		int customTileIndex = biomeIndex - possibleTiles[0].length + CUSTOM_TILES.size();
-		Identifier providerId = customTileIndex >= 0 ? CUSTOM_TILES.get(customTileIndex) : biomeRegistry.getId(biomePalette.get(biomeIndex));
+		Identifier providerId = customTileIndex >= 0 ? CUSTOM_TILES.get(customTileIndex) : biomeRegistry.getKey(biomePalette.byId(biomeIndex));
 		if (providerId == null) {
-			throw new RuntimeException(customTileIndex >= 0 ? "Custom tile index %s was out of bounds for size %s!".formatted(customTileIndex, CUSTOM_TILES.size()) : "Biome ID was null at index %s and instance %S!".formatted(biomeIndex, biomePalette.get(biomeIndex)));
+			throw new RuntimeException(customTileIndex >= 0 ? "Custom tile index %s was out of bounds for size %s!".formatted(customTileIndex, CUSTOM_TILES.size()) : "Biome ID was null at index %s and instance %S!".formatted(biomeIndex, biomePalette.byId(biomeIndex)));
 		}
 		return Pair.of(BiomeTileProviders.getInstance().getTileProvider(providerId), elevationOrdinal == TileElevation.values().length ? null : TileElevation.values()[elevationOrdinal]);
 	}
@@ -120,8 +120,8 @@ public class TerrainTiling {
 				continue;
 			}
 			int height = topY - lithograph.depths()[i] + lithograph.waterDepths()[i];
-			Block block = blockPalette.get(lithograph.blocks()[i]);
-			Biome biome = biomePalette.get(lithograph.biomes()[i]);
+			Block block = blockPalette.byId(lithograph.blocks()[i]);
+			Biome biome = biomePalette.byId(lithograph.biomes()[i]);
 
 			if (checkRavines && height - SEA_LEVEL < -7) {
 				possibleTiles[elevationSize][biomeCount + CUSTOM_TILES.indexOf(FeatureTiles.TILE_RAVINE)] += RAVINE_PRIORITY;
@@ -171,17 +171,17 @@ public class TerrainTiling {
 				if (!fullLithograph.exists().get(i)) {
 					possibleTiles[elevationSize][defaultTile] += EMPTY_PRIORITY;
 				} else {
-					Biome biome = biomePalette.get(fullLithograph.biomes()[i]);
+					Biome biome = biomePalette.byId(fullLithograph.biomes()[i]);
 					possibleTiles[elevationSize][fullLithograph.biomes()[i]] += priorityForBiome(biomeRegistry, biome);
 				}
 			}
 		} else {
 			for (int i = 0; i < lowLithograph.depths().length; i++) {
 				if (!lowLithograph.exists().get(i) || lowLithograph.depths()[i] > SEA_DEPTH) {
-					Biome biome = biomePalette.get(fullLithograph.biomes()[i]);
+					Biome biome = biomePalette.byId(fullLithograph.biomes()[i]);
 					possibleTiles[elevationSize][fullLithograph.biomes()[i]] += priorityForBiome(biomeRegistry, biome);
 				} else {
-					Block block = blockPalette.get(lowLithograph.blocks()[i]);
+					Block block = blockPalette.byId(lowLithograph.blocks()[i]);
 					if (block == Blocks.LAVA) { // Lava Sea
 						possibleTiles[elevationSize][biomeCount + CUSTOM_TILES.indexOf(FeatureTiles.TILE_LAVA)] += LAVA_PRIORITY;
 					} else { // Low Floor

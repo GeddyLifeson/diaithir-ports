@@ -5,12 +5,11 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import folk.sisby.antique_atlas.AntiqueAtlas;
 import folk.sisby.antique_atlas.TileTexture;
 import folk.sisby.antique_atlas.util.CodecUtil;
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.server.packs.resources.ResourceMetadata;
-import net.minecraft.resource.metadata.ResourceMetadataReader;
+import net.minecraft.server.packs.metadata.MetadataSectionType;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -24,7 +23,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class TileTextures extends SimplePreparableReloadListener<Map<Identifier, TileTextures.TileTextureMeta>> implements IdentifiableResourceReloadListener {
+public class TileTextures extends SimplePreparableReloadListener<Map<Identifier, TileTextures.TileTextureMeta>> {
 	public static final TileTextures INSTANCE = new TileTextures();
 	public static final Identifier ID = AntiqueAtlas.id("tile_textures");
 
@@ -42,11 +41,11 @@ public class TileTextures extends SimplePreparableReloadListener<Map<Identifier,
 	protected Map<Identifier, TileTextures.TileTextureMeta> prepare(ResourceManager manager, ProfilerFiller profiler) {
 		Map<Identifier, TileTextureMeta> textureMeta = new HashMap<>();
 		for (Map.Entry<Identifier, Resource> e : manager.listResources("textures/atlas/tile", id -> id.getPath().endsWith(".png")).entrySet()) {
-			Identifier id = Identifier.of(e.getKey().getNamespace(), e.getKey().getPath().substring("textures/atlas/tile/".length(), e.getKey().getPath().length() - ".png".length()));
+			Identifier id = Identifier.fromNamespaceAndPath(e.getKey().getNamespace(), e.getKey().getPath().substring("textures/atlas/tile/".length(), e.getKey().getPath().length() - ".png".length()));
 			try {
 				ResourceMetadata metadata = e.getValue().metadata();
-				metadata.decode(TileTextureMeta.METADATA).ifPresentOrElse(meta -> textureMeta.put(id, meta), () -> {
-					AntiqueAtlas.LOGGER.printDebugLog("[Antique Atlas] Metadata not present for {} - using defaults.", e.getKey());
+				metadata.getSection(TileTextureMeta.METADATA).ifPresentOrElse(meta -> textureMeta.put(id, meta), () -> {
+					AntiqueAtlas.LOGGER.debug("[Antique Atlas] Metadata not present for {} - using defaults.", e.getKey());
 					textureMeta.put(id, TileTextureMeta.DEFAULT);
 				});
 			} catch (IOException ex) {
@@ -59,7 +58,7 @@ public class TileTextures extends SimplePreparableReloadListener<Map<Identifier,
 
 	@Override
 	protected void apply(Map<Identifier, TileTextureMeta> prepared, ResourceManager manager, ProfilerFiller profiler) {
-		AntiqueAtlas.LOGGER.printDebugLog("[Antique Atlas] Reloading Tile Textures...");
+		AntiqueAtlas.LOGGER.debug("[Antique Atlas] Reloading Tile Textures...");
 		// Validate IDs
 		prepared.forEach((id, meta) -> meta.warnMissing(id, prepared.keySet()));
 
@@ -104,11 +103,6 @@ public class TileTextures extends SimplePreparableReloadListener<Map<Identifier,
 		textureBuilders.forEach((id, builder) -> builder.build(textures));
 	}
 
-	@Override
-	public Identifier getFabricId() {
-		return ID;
-	}
-
 	public static class TileTextureMeta {
 		public static final TileTextureMeta DEFAULT = new TileTextureMeta(null, null, Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), Set.of());
 
@@ -116,19 +110,19 @@ public class TileTextures extends SimplePreparableReloadListener<Map<Identifier,
 			Identifier.CODEC.optionalFieldOf("parent").forGetter(TileTextureMeta::parent),
 			CodecUtil.ofEnum(BorderType.class).optionalFieldOf("borderType").forGetter(TileTextureMeta::borderType),
 			CodecUtil.set(Identifier.CODEC).fieldOf("tags").orElseGet(HashSet::new).forGetter(TileTextureMeta::tags),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesTo").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesTo),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesToHorizontal").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToHorizontal),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesToVertical").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToVertical),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesToThis").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThis),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesToThisHorizontal").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThisHorizontal),
-			CodecUtil.set(ExtraCodecs.TAG_ENTRY_ID).fieldOf("tilesToThisVertical").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThisVertical)
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesTo").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesTo),
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesToHorizontal").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToHorizontal),
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesToVertical").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToVertical),
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesToThis").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThis),
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesToThisHorizontal").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThisHorizontal),
+			CodecUtil.set(ExtraCodecs.TAG_OR_ELEMENT_ID).fieldOf("tilesToThisVertical").orElseGet(HashSet::new).forGetter(TileTextureMeta::tilesToThisVertical)
 		).apply(instance, (p, b, t, tt, tth, ttv, ttt, ttth, tttv) -> new TileTextureMeta(p.orElse(null), b.orElse(null), t, tt, tth, ttv, ttt, ttth, tttv)));
 
 		public enum BorderType {
 			OUTER, INNER
 		}
 
-		public static final ResourceMetadataReader<TileTextureMeta> METADATA = new CodecUtil.CodecResourceMetadataSerializer<>(CODEC, AntiqueAtlas.id("tiling"));
+		public static final MetadataSectionType<TileTextureMeta> METADATA = CodecUtil.metadata(AntiqueAtlas.ID + ":" + "tiling", CODEC);
 		protected final Identifier parent;
 		protected BorderType borderType;
 		protected final Set<Identifier> tags;

@@ -1,12 +1,9 @@
 package folk.sisby.antique_atlas;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import folk.sisby.antique_atlas.util.DrawBatcher;
+import folk.sisby.antique_atlas.util.Gfx;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.renderer.MultiBufferSource;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.resources.Identifier;
-import net.minecraft.util.math.ColorHelper;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import org.joml.Vector2d;
 
@@ -23,10 +20,10 @@ public record MarkerTexture(Identifier id, Identifier accentId, Identifier item,
 		return ofId(id, item, -width / 2, -height / 2, width, height, mipLevels, nearClip, farClip, accent);
 	}
 
-	public static final MarkerTexture DEFAULT = centered(AntiqueAtlas.id("custom/point"), Identifier.of("minecraft", "emerald"), 32, 32, 0, 1, Integer.MAX_VALUE, true);
+	public static final MarkerTexture DEFAULT = centered(AntiqueAtlas.id("custom/point"), Identifier.fromNamespaceAndPath("minecraft", "emerald"), 32, 32, 0, 1, Integer.MAX_VALUE, true);
 
 	public Identifier keyId() {
-		return Identifier.of(id.getNamespace(), id.getPath().substring("textures/atlas/marker/".length(), id.getPath().length() - 4));
+		return Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath().substring("textures/atlas/marker/".length(), id.getPath().length() - 4));
 	}
 
 	public String displayId() {
@@ -62,33 +59,33 @@ public record MarkerTexture(Identifier id, Identifier accentId, Identifier item,
 	}
 
 	public void drawIcon(GuiGraphicsExtractor context, int x, int y, float[] accent) {
-		context.drawTexture(id, x, y, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight);
+		Gfx.blit(context, id, x, y, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight);
 		if (accentId != null && accent != null) {
-			RenderSystem.setShaderColor(accent[0], accent[1], accent[2], 1F);
-			context.drawTexture(accentId, x, y, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight);
-			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+			Gfx.tint(accent[0], accent[1], accent[2], 1F);
+			Gfx.blit(context, accentId, x, y, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight);
+			Gfx.tint(1.0F, 1.0F, 1.0F, 1.0F);
 		}
 	}
 
-	public void draw(PoseStack matrices, MultiBufferSource vertexConsumers, double markerX, double markerY, float z, float markerScale, int tileChunks, float[] accent, float tint, float alpha, int light) {
+	public void draw(GuiGraphicsExtractor g, double markerX, double markerY, float z, float markerScale, int tileChunks, float[] accent, float tint, float alpha, int light) {
 		if (alpha == 0) return;
-		matrices.push();
-		matrices.translate(markerX, markerY, 0.0);
-		matrices.scale(markerScale, markerScale, 1.0F);
-		int mainArgb = ColorHelper.Argb.getArgb((int) (alpha * 255), (int) (tint * 255), (int) (tint * 255), (int) (tint * 255));
-		int accentArgb = accent != null ? ColorHelper.Argb.getArgb((int) (alpha * 255), (int) (tint * accent[0] * 255), (int) (tint * accent[1] * 255), (int) (tint * accent[2] * 255)) : 0;
+		g.pose().pushMatrix();
+		g.pose().translate((float) markerX, (float) markerY);
+		g.pose().scale(markerScale, markerScale);
+		int mainArgb = ARGB.color((int) (alpha * 255), (int) (tint * 255), (int) (tint * 255), (int) (tint * 255));
+		int accentArgb = accent != null ? ARGB.color((int) (alpha * 255), (int) (tint * accent[0] * 255), (int) (tint * accent[1] * 255), (int) (tint * accent[2] * 255)) : 0;
 		if (tileChunks > 1 && mipLevels > 0) {
 			int mipLevel = Mth.clamp(Mth.ceillog2(tileChunks), 0, mipLevels);
-			DrawBatcher.drawSingle(matrices, vertexConsumers, id, fullTextureWidth(), textureHeight, light, offsetX / (1 << mipLevel), offsetY / (1 << mipLevel), z, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), getU(mipLevel), 0, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), mainArgb, false);
+			Gfx.blitColored(g, id, offsetX / (1 << mipLevel), offsetY / (1 << mipLevel), getU(mipLevel), 0, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), fullTextureWidth(), textureHeight, mainArgb);
 			if (accentId != null && accent != null) {
-				DrawBatcher.drawSingle(matrices, vertexConsumers, accentId, fullTextureWidth(), textureHeight, light, offsetX / (1 << mipLevel), offsetY / (1 << mipLevel), z, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), getU(mipLevel), 0, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), accentArgb, false);
+				Gfx.blitColored(g, accentId, offsetX / (1 << mipLevel), offsetY / (1 << mipLevel), getU(mipLevel), 0, textureWidth / (1 << mipLevel), textureHeight / (1 << mipLevel), fullTextureWidth(), textureHeight, accentArgb);
 			}
 		} else {
-			DrawBatcher.drawSingle(matrices, vertexConsumers, id, fullTextureWidth(), textureHeight, light, offsetX, offsetY, z, textureWidth, textureHeight, 0, 0, textureWidth, textureHeight, mainArgb, false);
+			Gfx.blitColored(g, id, offsetX, offsetY, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight, mainArgb);
 			if (accentId != null && accent != null) {
-				DrawBatcher.drawSingle(matrices, vertexConsumers, accentId, fullTextureWidth(), textureHeight, light, offsetX, offsetY, z, textureWidth, textureHeight, 0, 0, textureWidth, textureHeight, accentArgb, false);
+				Gfx.blitColored(g, accentId, offsetX, offsetY, 0, 0, textureWidth, textureHeight, fullTextureWidth(), textureHeight, accentArgb);
 			}
 		}
-		matrices.pop();
+		g.pose().popMatrix();
 	}
 }

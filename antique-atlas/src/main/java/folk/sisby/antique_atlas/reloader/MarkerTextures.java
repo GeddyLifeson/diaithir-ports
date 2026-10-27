@@ -6,12 +6,11 @@ import folk.sisby.antique_atlas.AntiqueAtlas;
 import folk.sisby.antique_atlas.MarkerTexture;
 import folk.sisby.antique_atlas.util.CodecUtil;
 import folk.sisby.surveyor.landmark.Landmark;
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.server.packs.resources.ResourceMetadata;
-import net.minecraft.resource.metadata.ResourceMetadataReader;
+import net.minecraft.server.packs.metadata.MetadataSectionType;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.profiling.ProfilerFiller;
 
@@ -20,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifier, MarkerTextures.MarkerTextureMeta>> implements IdentifiableResourceReloadListener {
+public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifier, MarkerTextures.MarkerTextureMeta>> {
 	public static final MarkerTextures INSTANCE = new MarkerTextures();
 	public static final Identifier ID = AntiqueAtlas.id("marker_textures");
 
@@ -66,10 +65,10 @@ public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifie
 	protected Map<Identifier, MarkerTextureMeta> prepare(ResourceManager manager, ProfilerFiller profiler) {
 		Map<Identifier, MarkerTextures.MarkerTextureMeta> textureMeta = new HashMap<>();
 		for (Map.Entry<Identifier, Resource> e : manager.listResources("textures/atlas/marker", id -> id.getPath().endsWith(".png")).entrySet()) {
-			Identifier id = Identifier.of(e.getKey().getNamespace(), e.getKey().getPath().substring("textures/atlas/marker/".length(), e.getKey().getPath().length() - ".png".length()));
+			Identifier id = Identifier.fromNamespaceAndPath(e.getKey().getNamespace(), e.getKey().getPath().substring("textures/atlas/marker/".length(), e.getKey().getPath().length() - ".png".length()));
 			try {
 				ResourceMetadata metadata = e.getValue().metadata();
-				textureMeta.put(id, metadata.decode(MarkerTextures.MarkerTextureMeta.METADATA).orElse(MarkerTextureMeta.DEFAULT));
+				textureMeta.put(id, metadata.getSection(MarkerTextures.MarkerTextureMeta.METADATA).orElse(MarkerTextureMeta.DEFAULT));
 			} catch (IOException ex) {
 				AntiqueAtlas.LOGGER.error("[Antique Atlas] Failed to access marker texture metadata for {}", e.getKey(), ex);
 				textureMeta.put(id, MarkerTextures.MarkerTextureMeta.DEFAULT);
@@ -80,7 +79,7 @@ public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifie
 
 	@Override
 	protected void apply(Map<Identifier, MarkerTextureMeta> prepared, ResourceManager manager, ProfilerFiller profiler) {
-		AntiqueAtlas.LOGGER.printDebugLog("[Antique Atlas] Reloading Marker Textures...");
+		AntiqueAtlas.LOGGER.debug("[Antique Atlas] Reloading Marker Textures...");
 		textures.clear();
 		prepared.forEach((id, meta) -> {
 			if (id.getPath().endsWith("_accent")) {
@@ -100,11 +99,6 @@ public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifie
 		});
 	}
 
-	@Override
-	public Identifier getFabricId() {
-		return ID;
-	}
-
 	public record MarkerTextureMeta(Optional<Identifier> item, Optional<Integer> textureWidth, Optional<Integer> textureHeight, Optional<Integer> mipLevels, Optional<Integer> offsetX, Optional<Integer> offsetY, Optional<Integer> nearClip, Optional<Integer> farClip) {
 		public static final MarkerTextureMeta DEFAULT = new MarkerTextureMeta(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
 
@@ -113,19 +107,19 @@ public class MarkerTextures extends SimplePreparableReloadListener<Map<Identifie
 			Codec.INT.optionalFieldOf("textureWidth").forGetter(MarkerTextureMeta::textureWidth),
 			Codec.INT.optionalFieldOf("textureHeight").forGetter(MarkerTextureMeta::textureHeight),
 			Codec.INT.optionalFieldOf("mipLevels").forGetter(MarkerTextureMeta::mipLevels),
-			Codec.INT.optionalFieldOf("offsetX").forGetter(MarkerTextureMeta::getX),
+			Codec.INT.optionalFieldOf("offsetX").forGetter(MarkerTextureMeta::offsetX),
 			Codec.INT.optionalFieldOf("offsetY").forGetter(MarkerTextureMeta::offsetY),
 			Codec.INT.optionalFieldOf("nearClip").forGetter(MarkerTextureMeta::nearClip),
 			Codec.INT.optionalFieldOf("farClip").forGetter(MarkerTextureMeta::farClip)
 		).apply(instance, MarkerTextureMeta::new));
 
-		public static final ResourceMetadataReader<MarkerTextureMeta> METADATA = new CodecUtil.CodecResourceMetadataSerializer<>(CODEC, AntiqueAtlas.id("marker"));
+		public static final MetadataSectionType<MarkerTextureMeta> METADATA = CodecUtil.metadata(AntiqueAtlas.ID + ":" + "marker", CODEC);
 
 		public MarkerTexture build(Identifier id, boolean accent) {
 			int textureWidth = this.textureWidth.orElse(32);
 			int textureHeight = this.textureHeight.orElse(32);
 			int mipLevels = this.mipLevels.orElse(0);
-			int offsetX = this.getX.orElse(-textureWidth / 2);
+			int offsetX = this.offsetX.orElse(-textureWidth / 2);
 			int offsetY = this.offsetY.orElse(-textureHeight / 2);
 			int nearClip = this.nearClip.orElse(1);
 			int farClip = this.farClip.orElse(Integer.MAX_VALUE);
