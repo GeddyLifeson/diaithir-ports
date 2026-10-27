@@ -1,0 +1,5 @@
+Citadel (module citadel), Diaithir port to Minecraft 26.1.2 / NeoForge 26.1.2.116.
+Original work: Citadel, copyright Alexthe668, https://github.com/Alexthe666/Citadel (branch 1.21, version 2.7.1), LGPL-3.0 (LICENSE, COPYING).
+Included: animation, math, collision and pathing helper classes, advanced model boxes and the model animator.
+New in this port: client/render/legacy (bridge that runs 1.21-style immediate-mode renderers on the 26.1 submit pipeline).
+Not included: book GUI, capes and patreon rendering, shaders, tabula model loading, mixins.
