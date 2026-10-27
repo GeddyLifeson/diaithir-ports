@@ -1,0 +1,14 @@
+{
+ "structures": [
+  {
+   "structure": "diaithirbosses:raider_admiral",
+   "weight": 1
+  }
+ ],
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 44,
+  "separation": 18,
+  "salt": 2456
+ }
+}

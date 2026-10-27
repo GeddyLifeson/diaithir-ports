@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "diaithirbosses:item/tribal_chief_spawn_egg"
+ }
+}

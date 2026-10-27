@@ -1,0 +1,226 @@
+{
+ "id": "iron_walker",
+ "name": "Koisichiiarund",
+ "name_en": "Iron Walker",
+ "age": 4,
+ "own": {
+  "kind": "golem",
+  "scale": 2.0,
+  "hp": 520,
+  "damage": 12,
+  "armor": 10,
+  "speed": 0.28,
+  "knockback_resistance": 1.0,
+  "follow_range": 48,
+  "fire_immune": false
+ },
+ "bar": {
+  "color": "white",
+  "overlay": "notched_10"
+ },
+ "scaling": {
+  "hp_per_age": 0.22,
+  "damage_per_age": 0.1,
+  "hp_per_extra_player": 0.45,
+  "max_age_steps": 4
+ },
+ "arena": {
+  "radius": 26,
+  "lock": true,
+  "leash": true,
+  "burn": 6.0
+ },
+ "max_hit_fraction": 0.1,
+ "respawn": {
+  "mode": "cooldown",
+  "ticks": 48000
+ },
+ "hostile": true,
+ "xp": 680,
+ "attacks": {
+  "stride": {
+   "telegraph": 34,
+   "cooldown": 90,
+   "radius": 6,
+   "damage": 12.0,
+   "knockback": 1.2,
+   "type": "slam"
+  },
+  "chain": {
+   "telegraph": 30,
+   "cooldown": 100,
+   "count": 4,
+   "damage": 9.6,
+   "range": 34,
+   "fire": false,
+   "type": "bolt"
+  },
+  "steam": {
+   "telegraph": 26,
+   "cooldown": 160,
+   "radius": 6,
+   "duration": 200,
+   "effect": "minecraft:slowness",
+   "amp": 2,
+   "ticks": 80,
+   "type": "cloud"
+  },
+  "overrun": {
+   "telegraph": 30,
+   "cooldown": 130,
+   "active": 18,
+   "speed": 1.15,
+   "damage": 15.0,
+   "radius": 2.4,
+   "type": "charge"
+  }
+ },
+ "phases": [
+  {
+   "at": 1.0,
+   "name": "I",
+   "speed": 0.9,
+   "damage": 1.0,
+   "cooldown": 1.0,
+   "attacks": [
+    "stride",
+    "chain"
+   ]
+  },
+  {
+   "at": 0.65,
+   "name": "II",
+   "speed": 1.0,
+   "damage": 1.15,
+   "cooldown": 0.85,
+   "attacks": [
+    "stride",
+    "chain",
+    "steam"
+   ],
+   "invuln": 30
+  },
+  {
+   "at": 0.3,
+   "name": "III",
+   "speed": 1.15,
+   "damage": 1.3,
+   "cooldown": 0.7,
+   "attacks": [
+    "stride",
+    "chain",
+    "steam",
+    "overrun"
+   ],
+   "invuln": 30
+  }
+ ],
+ "loot": [
+  {
+   "item": "minecraft:bone",
+   "min": 4,
+   "max": 10,
+   "min_age": 1,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 2,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:iron_nugget",
+   "min": 4,
+   "max": 10,
+   "min_age": 3,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:iron_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 4,
+   "chance": 1.0,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:gold_ingot",
+   "min": 4,
+   "max": 10,
+   "min_age": 5,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:diamond",
+   "min": 4,
+   "max": 10,
+   "min_age": 6,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "minecraft:netherite_scrap",
+   "min": 4,
+   "max": 10,
+   "min_age": 7,
+   "chance": 0.6,
+   "per_age": 1
+  },
+  {
+   "item": "diaithirarms:mail_helmet",
+   "min": 1,
+   "max": 1,
+   "min_age": 4,
+   "chance": 0.4,
+   "per_age": 0
+  },
+  {
+   "item": "diaithirarms:mail_chestplate",
+   "min": 1,
+   "max": 1,
+   "min_age": 4,
+   "chance": 0.4,
+   "per_age": 0
+  },
+  {
+   "item": "diaithirarms:mail_leggings",
+   "min": 1,
+   "max": 1,
+   "min_age": 4,
+   "chance": 0.4,
+   "per_age": 0
+  },
+  {
+   "item": "diaithirarms:mail_boots",
+   "min": 1,
+   "max": 1,
+   "min_age": 4,
+   "chance": 0.4,
+   "per_age": 0
+  },
+  {
+   "item": "minecraft:iron_block",
+   "min": 1,
+   "max": 2,
+   "min_age": 4,
+   "chance": 0.5,
+   "per_age": 1
+  }
+ ],
+ "structure": {
+  "style": 4,
+  "biomes": "#minecraft:is_badlands",
+  "spacing": 46,
+  "separation": 20
+ },
+ "mythic": false,
+ "entity": "diaithirbosses:iron_walker",
+ "creature_id": null,
+ "equipment": {}
+}

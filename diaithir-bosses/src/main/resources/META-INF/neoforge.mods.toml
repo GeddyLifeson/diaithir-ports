@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirbosses"
+version = "${version}"
+displayName = "Diaithir Bosses"
+authors = "Diaithir"
+description = '''Boss fights for every Age of Diaithir: war leaders, siege constructs, a raider admiral, a plague swarm lord, a storm elemental, a battle kit for the avatars of the dead courts, and champion elites. Data-driven phases, telegraphed attacks, arena lock-in and Age-scaled loot. Clean-room, original art and code.'''
+
+[[dependencies.diaithirbosses]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
