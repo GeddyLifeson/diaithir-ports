@@ -1,37 +1,21 @@
-<p align="center"><img src="https://github.com/KyaniteMods/DeeperAndDarker/blob/forge-1.20/src/main/resources/banner.png" alt="banner" width="1024"></p>
+# Deeper Darker (Diaithir port)
 
----
-A Minecraft mod featuring new blocks, items, armor, and hidden mysteries to complement the Deep Dark update. Some features introduced by Deeper and Darker include new sculk-related blocks, Warden armor and tools, and the Otherside dimension!
+Port of **Deeper and Darker** by Kyanite Mods to Minecraft 26.1.2 / NeoForge 26.1.2.116, for the Diaithir pack.
 
-If you happen to find any bugs in Deeper and Darker, be sure to report them here! Try not to post duplicate reports.
+- Upstream: https://github.com/KyaniteMods/DeeperAndDarker (branch `neoforge-26.1`, commit 78ed826, 2026-06-23). No 26.1 release exists on Modrinth (latest published build is 1.4.1 for 1.21.1), so this is built from the upstream 26.1 branch and finished here.
+- Licence: **GPL-3.0** (upstream `LICENSE`, kept unchanged in this directory; the Modrinth page lists AGPL-3.0, the repository file and `mod_license` say GPL-3.0). All code and assets stay under the upstream licence. This module is kept separate from the MIT modules in this repository for that reason.
+- Jar: `deeperdarker-neoforge-26.1.2-1.4.1-diaithir.1.jar`
 
-You can also join our [Discord](https://discord.gg/GDNRd5yvxa) to chat with our community and get an inside look at current development.
+## What it is in the pack
 
-# Building From Source
-If you want to build Deeper And Darker from source, clone this repo and run the following:
+The Otherside is the **Otherworld**: the night realm under the hills (the Sidhe-like otherworld of Celtic tale). You reach it through a *Bealach*, a frame of reinforced deepslate lit with the Warden's heart. Its four lands are Tìrdumuind (open caves), Koildemaktuldach (echo forest), Uomunblàtach (blooming caverns) and Kolbundeilach (gloom columns). The creatures there (sculk centipede, leech, snapper, shattered, stalker, shriek worm, sludge) are the *sìthfhàs*, the sidhe-growth, and answer to sound.
 
-```
-gradlew build
-```
+## Diaithir changes
 
-Build files are located in the project's `build/libs` folder.
-
-# Credits
-Kyanite Team
-- NewJumper: NeoForge & Forge Developer
-- AndroidDr: Fabric Developer
-- MainlyMaya: Artwork Designer
-- nitro_dynamite18: Translations Manager
-- angxdd: Former Developer
-
-Others
-- GSimus: Playtester
-- Nyvi: Playtester
-- DanielArtist: Artwork
-
-# Contributions
-We accept bug fixes from the community. Be sure to use proper naming conventions and match the organization of the mod's workspace if you want to make changes!
-
-If you would like to help translate Deeper and Darker, head over to our [Crowdin](https://crowdin.com/project/deeper-and-darker) page. If there is a language you want to add translations for, but it is not listed on the page, start a discussion on Crowdin or join our Discord and let us know! We'd love to make our mod even more accessible.
-
-[![Crowdin](https://badges.crowdin.net/deeper-and-darker/localized.svg)](https://crowdin.com/project/deeper-and-darker)
+- **Age VI.** Everything in the `deeperdarker` namespace is Age VI (`age_gates.json`). The portal also checks the entity tag `diaithir_age_vi` on players when the server config `othersideRequiredTag` is set (empty by default, so the mod works outside the pack).
+- **Display names in Diaithiris** (`src/generated/resources/assets/deeperdarker/lang/en_us.json`). Ids are unchanged. The upstream English names are kept in `lang_source/en_us.upstream.json`; `tools/diaithiris_lang.py` rebuilds the lang file from them with the archaic-layer tools. Descriptions are English, framed as the Otherworld.
+- **Operator command** `/otherside light <pos>` lights a portal frame without a Warden heart.
+- **26.1 port work:** registries get explicit block ids, item definitions replace the 1.21 model overrides (`tools/gen_assets_26_1.py`), the datapack uses the 26.1 formats (dimension type attributes, biome attributes, flat carvers, recipe ingredients as plain ids, one file per loot modifier), and the datagen and JEI classes were dropped (the generated data is checked in under `src/generated`).
+- Sculk transmitter dyeing is now ordinary `crafting_transmute` recipes (the upstream custom recipe class was missing).
+- The gloomslate pot item shows the vanilla decorated-pot item model (no custom special renderer yet).
+- Library entries for the in-game Library: `library/deeperdarker.json`.

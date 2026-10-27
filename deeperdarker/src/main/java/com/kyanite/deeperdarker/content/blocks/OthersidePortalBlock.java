@@ -116,6 +116,11 @@ public class OthersidePortalBlock extends Block implements Portal {
 
     @Override
     public TeleportTransition getPortalDestination(ServerLevel level, Entity pEntity, BlockPos pos) {
+        String requiredTag = com.kyanite.deeperdarker.DeeperDarkerConfig.CONFIG.othersideRequiredTag.get();
+        if(!requiredTag.isEmpty() && pEntity instanceof net.minecraft.server.level.ServerPlayer player && !player.entityTags().contains(requiredTag)) {
+            player.sendSystemMessage(net.minecraft.network.chat.Component.translatable("message.deeperdarker.age_locked"), true);
+            return null;
+        }
         ResourceKey<Level> destLevel = level.dimension() == Level.OVERWORLD ? OthersideDimension.OTHERSIDE_LEVEL : Level.OVERWORLD;
         ServerLevel destServerLevel = level.getServer().getLevel(destLevel);
         if(destServerLevel == null) return null;

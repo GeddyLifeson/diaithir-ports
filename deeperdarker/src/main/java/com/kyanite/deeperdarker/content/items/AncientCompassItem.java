@@ -37,6 +37,9 @@ public class AncientCompassItem extends Item {
             if (pos == null) tracker = TempleTracker.empty();
             else tracker = new TempleTracker(Optional.of(GlobalPos.of(level.dimension(), pos)));
             itemStack.set(DDDataComponents.TEMPLE_TRACKER, tracker);
+            // 26.1 item definitions drive the compass needle from the vanilla lodestone tracker component
+            tracker.linkedPos().ifPresent(globalPos -> itemStack.set(net.minecraft.core.component.DataComponents.LODESTONE_TRACKER,
+                    new net.minecraft.world.item.component.LodestoneTracker(Optional.of(globalPos), false)));
         }
     }
 }

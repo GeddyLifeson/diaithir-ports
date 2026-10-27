@@ -34,3 +34,8 @@ processResources {
 
 repositories { mavenCentral() }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+jar {
+    from('LICENSE') { into 'META-INF' }
+    from('age_gates.json') { into 'META-INF' }
+}
