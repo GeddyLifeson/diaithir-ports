@@ -1,0 +1,100 @@
+{
+ "values": [
+  {
+   "id": "spartanweaponry:wooden_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_halberd",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_glaive",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_pike",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:wooden_lance",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:stone_lance",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:copper_lance",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:bronze_lance",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:iron_lance",
+   "required": false
+  },
+  {
+   "id": "spartanweaponry:steel_lance",
+   "required": false
+  }
+ ]
+}
