@@ -12,7 +12,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | MekanismAdditions-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismadditions) |
 | MekanismGenerators-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismgenerators) |
 | MekanismTools-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismtools) |
-| Tellus-neoforge-26.1.2-0.8.3-diaithir.16.jar | LGPL-3.0-only | [source](source/Tellus-diaithir-src-0.8.3-diaithir.16.zip) is the complete .16 tree (earth timeline, fantasy biomes, underground work, flood fix; contains LICENSE and DIAITHIR_CHANGES.md); it is commit 31af9d9 on DiaithirRPG branch `claude/project-thread-hrk578-tellus` |
+| Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.5.jar | LGPL-3.0-only | [source](source/Tellus-diaithir-src-0.8.3-diaithir.16-fantasy.5.zip) is the complete tree of this build (earth timeline, fantasy biomes, underground work, land use, tick fix; contains LICENSE and DIAITHIR_CHANGES.md); it is DiaithirRPG pull request 147 at commit d2e760bd41c5e29ee9eccc93ff96e5ef084cd232 |
 | TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar | MIT (Tinkers' Construct by SlimeKnights; registry lookup fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct), patch: [source/TinkersConstruct-3.12.13-diaithir.1](source/TinkersConstruct-3.12.13-diaithir.1) |
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |

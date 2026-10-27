@@ -57,12 +57,20 @@ file = "config/modern_industrialization-server.toml"
 hash = "aa57943a7c0edc242de06fc0a3d008b081259ce1e8ee6ed4d8a51af076185aa7"
 
 [[files]]
+file = "config/mtsconfig.json"
+hash = "1b276b2f65ecc0d9ad1263252b75a5a0ab1249e0cf07fbaf78aedd4e8240d74b"
+
+[[files]]
 file = "config/silentgear-common.toml"
 hash = "49fb3b31a84488631484f196a401b0d34603c13d55c331e5acd26a086fa253bd"
 
 [[files]]
 file = "config/tconstruct-common.toml"
 hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
+
+[[files]]
+file = "config/walkers.json5"
+hash = "0aaa598b80b3d009e31c802466af7a607cb35667b9320489baf9b93f90ecde19"
 
 [[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
@@ -11154,8 +11162,8 @@ hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16.jar"
-hash = "a74160cc503137112a1c1fd9914366f6b847d7b69826e9b90bc223cd16df9eca"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.5.jar"
+hash = "bac8294a2b151e884c94fc72bab21375fa620eeb6688044252503f1dd983fbc3"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"
