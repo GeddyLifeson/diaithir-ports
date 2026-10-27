@@ -28,4 +28,7 @@ public class CDGBlocks {
 
     public static final DeferredBlock<org.diaithir.diesel.content.distillation.DistillationTowerBlock> DISTILLATION_TOWER = BLOCKS.registerBlock("distillation_tower",
         org.diaithir.diesel.content.distillation.DistillationTowerBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL));
+
+    public static final DeferredBlock<org.diaithir.diesel.content.pumpjack.PumpjackBlock> PUMPJACK = BLOCKS.registerBlock("pumpjack",
+        org.diaithir.diesel.content.pumpjack.PumpjackBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion());
 }

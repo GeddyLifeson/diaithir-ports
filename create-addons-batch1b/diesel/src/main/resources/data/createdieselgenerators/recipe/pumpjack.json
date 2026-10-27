@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "BSB",
+  "ICI"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "B": "create:brass_ingot",
+  "S": "create:shaft",
+  "C": "create:andesite_casing"
+ },
+ "result": {
+  "id": "createdieselgenerators:pumpjack",
+  "count": 1
+ }
+}

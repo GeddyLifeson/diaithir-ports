@@ -24,6 +24,8 @@ public class CDGItems {
 
     public static final DeferredItem<BlockItem> DISTILLATION_TOWER = ITEMS.registerSimpleBlockItem(CDGBlocks.DISTILLATION_TOWER);
 
+    public static final DeferredItem<BlockItem> PUMPJACK = ITEMS.registerSimpleBlockItem(CDGBlocks.PUMPJACK);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

@@ -29,4 +29,7 @@ public class CDGBlockEntityTypes {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.distillation.DistillationTowerBlockEntity>> DISTILLATION_TOWER =
         TYPES.register("distillation_tower", () -> new BlockEntityType<>(org.diaithir.diesel.content.distillation.DistillationTowerBlockEntity::new, Set.of(CDGBlocks.DISTILLATION_TOWER.get())));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.pumpjack.PumpjackBlockEntity>> PUMPJACK =
+        TYPES.register("pumpjack", () -> new BlockEntityType<>(org.diaithir.diesel.content.pumpjack.PumpjackBlockEntity::new, Set.of(CDGBlocks.PUMPJACK.get())));
 }

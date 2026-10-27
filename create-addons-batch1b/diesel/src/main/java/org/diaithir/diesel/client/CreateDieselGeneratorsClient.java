@@ -28,8 +28,11 @@ public class CreateDieselGeneratorsClient {
         AllBlockEntityRenders.visual(huge, EngineShaftRenderer::new, OrientedRotatingVisual.of(AllPartialModels.SHAFT_HALF));
         AllBlockEntityBehaviours.add(huge, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
         var mod = CDGBlockEntityTypes.MODULAR_DIESEL_ENGINE.get();
-        AllBlockEntityRenders.visual(mod, ModularShaftRenderer::new, com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual.of(AllPartialModels.SHAFT));
+        AllBlockEntityRenders.visual(mod, ModularShaftRenderer<org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity>::new, com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual.of(AllPartialModels.SHAFT));
         AllBlockEntityBehaviours.add(mod, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
+        var pj = CDGBlockEntityTypes.PUMPJACK.get();
+        AllBlockEntityBehaviours.add(pj, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
+        AllBlockEntityRenders.visual(pj, ModularShaftRenderer<org.diaithir.diesel.content.pumpjack.PumpjackBlockEntity>::new, com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual.of(AllPartialModels.SHAFT));
         var burner = CDGBlockEntityTypes.BURNER.get();
         AllBlockEntityBehaviours.add(burner, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
     }

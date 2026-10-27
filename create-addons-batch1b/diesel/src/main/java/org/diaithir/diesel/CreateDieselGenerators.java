@@ -82,6 +82,9 @@ public class CreateDieselGenerators {
         BlockStressValues.RPM.register(CDGBlocks.HUGE_DIESEL_ENGINE.get(), new BlockStressValues.GeneratedRpm(224, true));
         BlockEntityBehaviour.add(CDGBlockEntityTypes.DISTILLATION_TOWER.get(),
             (org.diaithir.diesel.content.distillation.DistillationTowerBlockEntity be) -> new CachedFluidInventoryBehaviour<>(be, b -> b.tank.getPrimaryHandler()));
+        BlockEntityBehaviour.add(CDGBlockEntityTypes.PUMPJACK.get(),
+            (org.diaithir.diesel.content.pumpjack.PumpjackBlockEntity be) -> new CachedFluidInventoryBehaviour<>(be, b -> b.tank.getPrimaryHandler()));
+        BlockStressValues.IMPACTS.register(CDGBlocks.PUMPJACK.get(), (DoubleSupplier) () -> 4.0);
         BlockStressValues.IMPACTS.register(CDGBlocks.DIESEL_ENGINE.get(), (DoubleSupplier) () -> 0.0);
         BlockStressValues.RPM.register(CDGBlocks.DIESEL_ENGINE.get(), new BlockStressValues.GeneratedRpm(96, true));
     }

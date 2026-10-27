@@ -6,7 +6,8 @@ import com.zurrtum.create.client.catnip.render.CachedBuffers;
 import com.zurrtum.create.client.content.kinetics.base.KineticBlockEntityRenderer;
 import com.zurrtum.create.client.content.kinetics.base.SingleKineticRenderState;
 import com.zurrtum.create.client.foundation.blockEntity.renderer.SmartBlockEntityRenderer;
-import org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity;
+import com.zurrtum.create.content.kinetics.base.IRotate;
+import com.zurrtum.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider.Context;
@@ -20,7 +21,7 @@ import org.jspecify.annotations.Nullable;
 
 import static com.zurrtum.create.client.content.kinetics.base.KineticBlockEntityRenderer.getTintColor;
 
-public class ModularShaftRenderer implements BlockEntityRenderer<ModularDieselEngineBlockEntity, SingleKineticRenderState> {
+public class ModularShaftRenderer<T extends KineticBlockEntity> implements BlockEntityRenderer<T, SingleKineticRenderState> {
     public ModularShaftRenderer(Context context) {
     }
 
@@ -31,14 +32,14 @@ public class ModularShaftRenderer implements BlockEntityRenderer<ModularDieselEn
 
     @Override
     public void extractRenderState(
-        ModularDieselEngineBlockEntity be,
+        T be,
         SingleKineticRenderState state,
         float partialTicks,
         Vec3 cameraPosition,
         @Nullable CrumblingOverlay breakProgress
     ) {
         Level level = SmartBlockEntityRenderer.extractBase(be, state, breakProgress);
-        Direction facing = state.blockState.getValue(org.diaithir.diesel.content.modular.ModularDieselEngineBlock.HORIZONTAL_FACING);
+        Direction facing = Direction.fromAxisAndDirection(((IRotate) state.blockState.getBlock()).getRotationAxis(state.blockState), Direction.AxisDirection.POSITIVE);
         state.model = CachedBuffers.partialFacing(AllPartialModels.SHAFT, state.blockState, facing)
             .cardinalLighting(level).light(state.lightCoords).color(getTintColor(be)).extractRenderState();
         state.angle = KineticBlockEntityRenderer.getRotateAngleWithoutBeOffset(facing.getAxis(), be, state, level);

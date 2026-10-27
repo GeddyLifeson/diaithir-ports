@@ -5,6 +5,7 @@
   "createdieselgenerators:burner",
   "createdieselgenerators:modular_diesel_engine",
   "createdieselgenerators:huge_diesel_engine",
-  "createdieselgenerators:distillation_tower"
+  "createdieselgenerators:distillation_tower",
+  "createdieselgenerators:pumpjack"
  ]
 }

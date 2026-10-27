@@ -190,6 +190,21 @@ def tower():
     d = json.load(open(path)); d["values"].append(f"{NS}:distillation_tower"); json.dump(d, open(path, "w"), indent=1)
     lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.distillation_tower"] = "Distillation Tower"; json.dump(l, open(lp, "w"), indent=1)
 
+def pump():
+    png(f"{A}/textures/block/pumpjack.png", art.machine_face("cdg_pump", art.RUST, art.HAZ_Y, 7))
+    png(f"{A}/textures/block/pumpjack_top.png", art.machine_top("cdg_pump_top", art.STEEL_D))
+    f = lambda t: {"uv": [0, 0, 16, 16], "texture": t}
+    w(f"{A}/models/block/pumpjack.json", {"textures": {"side": f"{NS}:block/pumpjack", "top": f"{NS}:block/pumpjack_top", "particle": f"{NS}:block/pumpjack"},
+        "elements": [{"from": [0, 0, 0], "to": [16, 12, 16], "faces": {"north": f("#side"), "south": f("#side"), "east": f("#side"), "west": f("#side"), "up": f("#top"), "down": f("#top")}}]})
+    w(f"{A}/blockstates/pumpjack.json", {"variants": {"axis=x": {"model": f"{NS}:block/pumpjack", "y": 90}, "axis=z": {"model": f"{NS}:block/pumpjack"}}})
+    w(f"{A}/items/pumpjack.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/pumpjack"}})
+    w(f"{D}/loot_table/blocks/pumpjack.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:pumpjack"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/pumpjack.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["III", "BSB", "ICI"],
+        "key": {"I": "minecraft:iron_ingot", "B": "create:brass_ingot", "S": "create:shaft", "C": "create:andesite_casing"}, "result": {"id": f"{NS}:pumpjack", "count": 1}})
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:pumpjack"); json.dump(d, open(path, "w"), indent=1)
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.pumpjack"] = "Pumpjack"; json.dump(l, open(lp, "w"), indent=1)
+
 def recipes_and_worldgen():
     NSF = NS
     def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
@@ -217,4 +232,5 @@ burner()
 modular_and_upgrades()
 huge()
 tower()
+pump()
 recipes_and_worldgen()

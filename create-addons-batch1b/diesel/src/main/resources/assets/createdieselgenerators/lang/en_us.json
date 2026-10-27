@@ -25,5 +25,6 @@
  "item.createdieselgenerators.engine_turbocharger": "Engine Turbocharger",
  "block.createdieselgenerators.modular_diesel_engine": "Modular Diesel Engine",
  "block.createdieselgenerators.huge_diesel_engine": "Huge Diesel Engine",
- "block.createdieselgenerators.distillation_tower": "Distillation Tower"
+ "block.createdieselgenerators.distillation_tower": "Distillation Tower",
+ "block.createdieselgenerators.pumpjack": "Pumpjack"
 }
