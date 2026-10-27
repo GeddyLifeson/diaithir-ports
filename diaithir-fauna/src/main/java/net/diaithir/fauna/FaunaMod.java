@@ -93,6 +93,10 @@ public final class FaunaMod {
                                 c.getSource().sendFailure(Component.literal("No such species"));
                                 return 0;
                             }
+                            if (!TYPES.containsKey(s.plan)) {
+                                c.getSource().sendFailure(Component.literal(s.id + " lives in Untamedwilds (" + s.plan + ")"));
+                                return 0;
+                            }
                             ServerLevel level = c.getSource().getLevel();
                             FaunaMob m = TYPES.get(s.plan).get().create(level, EntitySpawnReason.COMMAND);
                             m.setPos(c.getSource().getPosition());

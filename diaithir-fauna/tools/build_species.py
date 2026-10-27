@@ -16,12 +16,12 @@ def species():
     out = []
     for kind in ('mob', 'fossil'):
         for r in C.rows(kind):
-            if not r['plan'].startswith('gen:'): continue
+            if not (r['plan'].startswith('gen:') or (kind == 'fossil' and r['plan'].startswith('uw:'))): continue
             notes = {t.strip().split(' ')[0].lower() for t in r['notes'].split(',')}
             fl = 0
             for i, f in enumerate(FLAGS):
                 if f in notes: fl |= 1 << i
-            e = dict(id=r['id'], plan=r['plan'][4:], scale=round(float(r['scale']), 3), kg=float(r['kg']), diet=r['diet'], flags=fl)
+            e = dict(id=r['id'], plan=r['plan'].replace('gen:', ''), scale=round(float(r['scale']), 3), kg=float(r['kg']), diet=r['diet'], flags=fl)
             if kind == 'mob':
                 hab = 0
                 for h in r['habitat'].split(';'):
