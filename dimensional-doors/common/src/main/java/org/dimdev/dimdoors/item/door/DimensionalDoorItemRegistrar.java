@@ -94,7 +94,10 @@ public class DimensionalDoorItemRegistrar {
         if (!(originalBlock instanceof DimensionalDoorBlock)
                 && !(originalBlock instanceof DimensionalTrapDoorBlock)
                 && (originalBlock instanceof DoorBlock || originalBlock instanceof TrapDoorBlock)) {
-            Item.Properties settings = ItemExtensions.getSettings(original);
+            // 26.1: item components are initialised per ResourceKey, so the cloned settings need the generated item's own id
+            // (otherwise the generated item gets no default components, e.g. null attribute modifiers, which crashes Better Combat).
+            Item.Properties settings = ItemExtensions.getSettings(original)
+                    .setId(net.minecraft.resources.ResourceKey.create(Registries.ITEM, DimensionalDoors.id(PREFIX + identifier.getNamespace() + "_" + identifier.getPath())));
 
             Function<Block, BlockItem> dimItemConstructor = (dimBlock) -> constructor.apply(dimBlock, settings, original);
 
