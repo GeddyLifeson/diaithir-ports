@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "folk.sisby.surveyor.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AccessAbstractBlock",
+    "AccessServerPlayerEntity",
+    "MixinChunkDataSender",
+    "MixinFilledMapItem",
+    "MixinMinecraftServer",
+    "MixinNetherPortal",
+    "MixinServerPlayerEntity",
+    "MixinServerWorld",
+    "MixinStructureStart"
+  ],
+  "client": [
+    "client.MixinClientPlayNetworkHandler"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

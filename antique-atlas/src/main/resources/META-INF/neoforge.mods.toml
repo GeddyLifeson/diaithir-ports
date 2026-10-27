@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-or-later (code), CC BY-NC-SA 4.0 (textures)"
+issueTrackerURL = "https://github.com/sisby-folk/antique-atlas/issues"
+
+[[mods]]
+modId = "antique_atlas"
+version = "${version}"
+displayName = "Antique Atlas"
+description = '''A hand-drawn world map with biomes, structures, waypoints, and less! NeoForge 26.1.2 port of Antique Atlas 4 for Diaithir, running on the Surveyor port. Original: https://github.com/sisby-folk/antique-atlas'''
+authors = "Hunternif, tyra314, Sisby folk. NeoForge port for Diaithir."
+credits = "Contributions by Kenkron, asiekierka, Haven King, TheCodeWarrior, osipxd, coolAlias, TehNut, lumiscosity, frodolon. Textures by Hunternif and lumiscosity (CC BY-NC-SA 4.0), see CREDITS."
+displayURL = "https://modrinth.com/mod/antique-atlas-4"
+logoFile = "assets/antique_atlas/icon.png"
+
+[[dependencies.antique_atlas]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.antique_atlas]]
+modId = "surveyor"
+type = "required"
+versionRange = "[1.2.4,)"
+ordering = "AFTER"
+side = "BOTH"
