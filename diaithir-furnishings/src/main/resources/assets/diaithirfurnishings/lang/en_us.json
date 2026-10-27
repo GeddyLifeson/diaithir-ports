@@ -1,5 +1,8 @@
 {
- "block.diaithirfurnishings.rope": "Ròpu",
- "block.diaithirfurnishings.sack": "Sak",
- "block.diaithirfurnishings.sconce": "Solasbulda"
+ "block.diaithirfurnishings.rope": "Rope",
+ "block.diaithirfurnishings.sack": "Sack",
+ "block.diaithirfurnishings.sconce": "Sconce",
+ "item.diaithirfurnishings.rope.native": "Ròpu",
+ "item.diaithirfurnishings.sack.native": "Sak",
+ "item.diaithirfurnishings.sconce.native": "Solasbulda"
 }
