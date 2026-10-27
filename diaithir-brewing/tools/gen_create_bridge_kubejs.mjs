@@ -16,19 +16,37 @@ const haveFile = process.argv.includes('--have') ? process.argv[process.argv.ind
 const have = haveFile ? new Set(fs.readFileSync(haveFile, 'utf8').split(/\s+/).filter(Boolean)) : null;
 const BUCKET = 81000; // fluid units in the port: 20250 per 250 mb
 const MAX_ITEMS = 9;
+const extra = {};
 
 const noop = () => {};
-let generate = null;
-const sandbox = {
-  console: { info: noop, warn: noop, log: noop },
-  Item: { exists: id => !have || have.has(id) },
-  ServerEvents: { generateData: (_stage, cb) => { generate = cb; }, loaded: noop, recipes: noop },
-  BlockEvents: { rightClicked: noop, broken: noop },
-};
-vm.createContext(sandbox);
+// any KubeJS global the scripts touch at load time (PlayerEvents, Text, ...) becomes a do-nothing stub
+const stub = () => new Proxy(noop, { get: (_t, k) => (k === Symbol.toPrimitive ? () => '' : stub()), apply: () => stub() });
 const src = ['a_data.js', 'brewing.js'].map(f => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n');
-vm.runInContext(src, sandbox);
+let generate = null;
+let sandbox;
+for (let attempt = 0; attempt < 50; attempt++) {
+  generate = null;
+  sandbox = sandbox0();
+  vm.createContext(sandbox);
+  try {
+    vm.runInContext(src, sandbox);
+    break;
+  } catch (e) {
+    const m = /^(\w+) is not defined/.exec(e.message);
+    if (!m) throw e;
+    extra[m[1]] = stub();
+  }
+}
 if (!generate) throw new Error('brewing.js registered no generateData handler');
+function sandbox0() {
+  return {
+    ...extra,
+    console: { info: noop, warn: noop, log: noop },
+    Item: { exists: id => !have || have.has(id) },
+    ServerEvents: { generateData: (_stage, cb) => { generate = cb; }, loaded: noop, recipes: noop },
+    BlockEvents: { rightClicked: noop, broken: noop },
+  };
+}
 
 // strength of each drink (a_data.js DRINK_ROWS), stamped on the basin's output as custom_data abv:X.Xd
 const keys = vm.runInContext('DRINK_KEYS', sandbox);
