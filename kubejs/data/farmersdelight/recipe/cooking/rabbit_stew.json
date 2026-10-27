@@ -1,0 +1,15 @@
+{
+ "type": "farmersdelight:cooking",
+ "container": null,
+ "experience": 1.0,
+ "ingredients": [
+  "#c:crops/potato",
+  "minecraft:rabbit",
+  "#c:crops/carrot"
+ ],
+ "recipe_book_tab": "meals",
+ "result": {
+  "count": 1,
+  "id": "minecraft:rabbit_stew"
+ }
+}

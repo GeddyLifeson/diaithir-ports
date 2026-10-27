@@ -1,0 +1,21 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [
+  "farmersdelight:bamboo_basket"
+ ],
+ "result": [
+  {
+   "item": {
+    "count": 1,
+    "id": "farmersdelight:canvas"
+   }
+  },
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:bamboo"
+   }
+  }
+ ],
+ "tool": "#minecraft:axes"
+}

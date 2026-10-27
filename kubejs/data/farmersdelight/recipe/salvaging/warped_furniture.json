@@ -1,0 +1,14 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [],
+ "result": [
+  {
+   "chance": 0.75,
+   "item": {
+    "count": 1,
+    "id": "minecraft:warped_planks"
+   }
+  }
+ ],
+ "tool": "#minecraft:axes"
+}

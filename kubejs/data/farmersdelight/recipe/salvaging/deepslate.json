@@ -1,0 +1,15 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [
+  "minecraft:deepslate"
+ ],
+ "result": [
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:cobbled_deepslate"
+   }
+  }
+ ],
+ "tool": "#minecraft:pickaxes"
+}

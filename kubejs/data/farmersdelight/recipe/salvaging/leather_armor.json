@@ -1,0 +1,13 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [],
+ "result": [
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:leather"
+   }
+  }
+ ],
+ "tool": "#c:tools/shear"
+}

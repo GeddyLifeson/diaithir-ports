@@ -1,0 +1,21 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [
+  "minecraft:birch_chest_boat"
+ ],
+ "result": [
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:birch_boat"
+   }
+  },
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:chest"
+   }
+  }
+ ],
+ "tool": "#minecraft:hoes"
+}

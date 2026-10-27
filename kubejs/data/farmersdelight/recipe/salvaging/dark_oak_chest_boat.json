@@ -1,0 +1,21 @@
+{
+ "type": "farmersdelight:cutting",
+ "ingredients": [
+  "minecraft:dark_oak_chest_boat"
+ ],
+ "result": [
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:dark_oak_boat"
+   }
+  },
+  {
+   "item": {
+    "count": 1,
+    "id": "minecraft:chest"
+   }
+  }
+ ],
+ "tool": "#minecraft:hoes"
+}
