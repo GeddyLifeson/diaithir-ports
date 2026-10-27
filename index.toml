@@ -773,6 +773,10 @@ file = "kubejs/assets/roulettecasino/lang/en_us.json"
 hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
 
 [[files]]
+file = "kubejs/config/earth_timeline.json"
+hash = "8ad6c915b7e4ea0a88e73098ce6376d5b947472ce9b228ba7ae3aa59855f294a"
+
+[[files]]
 file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
 hash = "86ae65651753a394e41ed4d6efd6fdc4de636f0682cfc21ad49ff5d710dc9fdd"
 
@@ -10681,6 +10685,38 @@ file = "kubejs/server_scripts/diaithir/worldgen_diag.js"
 hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 
 [[files]]
+file = "kubejs/server_scripts/earth_timeline/catchup.js"
+hash = "6ff1bcc29e21b4e3a9354ae86adde5f5d389fdd87a9f40be0f54d27261e24977"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/catchup_core.js"
+hash = "a0a790c18e6c93202da5c33a14821204e8f5c4d4a851c11a0e04d49c7896120f"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/extinctions.js"
+hash = "e789c09c36460db9f7aad536cbf0801acd68f76b80eaac7c4407be61dc18a7bd"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/extinctions_data.js"
+hash = "376050788f76201995122cb93671a1f827edbd4e773d7f5eea92b4afd1dd4fc1"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/flood.js"
+hash = "6555ab290415f3d165538162caca448fa0c14f262f901b5c606686cc47dc11be"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/flood_core.js"
+hash = "0f63e9cc13c6b396341e01103daa70c0c8afb03558a9e39b0aa4b2911fc66127"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/melt.js"
+hash = "175238f049f8966874eaa3a349317ff6e70fbc9c999a28de9272e031545b839b"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/melt_core.js"
+hash = "02164e4f56698d62e83891ccb176899e9607da4e33ac2e968c682638b6ec7428"
+
+[[files]]
 file = "kubejs/server_scripts/speuran/age_gate.js"
 hash = "1286a28174044b239a9fd41f59fc5fc7ac73a62f82da0c6de8f9bb7b9b953317"
 
@@ -10711,6 +10747,10 @@ hash = "555dcdbd9e06d488d18316dafa6406121db4c92463a32aa6315920ea7428d507"
 [[files]]
 file = "kubejs/startup_scripts/diaithir/unify_families.js"
 hash = "64991bffa80630dbaa13a593000023da345ecfb3c4039b5f4b2701c3f1fb5a18"
+
+[[files]]
+file = "kubejs/startup_scripts/earth_timeline_ns.js"
+hash = "ce29fedf15fc07062ef3c26ae729f70da87601e7b0669924b7d6ecce5354eb48"
 
 [[files]]
 file = "kubejs/startup_scripts/economy/items.js"
