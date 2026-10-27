@@ -40,7 +40,7 @@ final class CartSelfTest {
 
     private static final Logger LOG = LogUtils.getLogger();
     private static final int LANE_LEN = 60;
-    private static final int[] LANE_Z = {0, 3, 6, 9, 12, 15, 18, 21, 24};
+    private static final int[] LANE_Z = {0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30};
 
     private static ServerLevel level;
     private static CommandSourceStack source;
@@ -64,14 +64,14 @@ final class CartSelfTest {
         fails.clear();
         at = new BlockPos(level.getRespawnData().pos().getX(), 240, level.getRespawnData().pos().getZ());
         for (int cx = (at.getX() - 4) >> 4; cx <= (at.getX() + LANE_LEN + 6) >> 4; cx++) {
-            for (int cz = (at.getZ() - 4) >> 4; cz <= (at.getZ() + 30) >> 4; cz++) {
+            for (int cz = (at.getZ() - 4) >> 4; cz <= (at.getZ() + 36) >> 4; cz++) {
                 level.getChunk(cx, cz);
                 level.setChunkForced(cx, cz, true);
                 forced.add(new ChunkPos(cx, cz));
             }
         }
-        for (BlockPos p : BlockPos.betweenClosed(at.offset(-2, -1, -2), at.offset(LANE_LEN + 4, 4, 28))) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16);
-        for (BlockPos p : BlockPos.betweenClosed(at.offset(-1, -1, -1), at.offset(LANE_LEN + 2, -1, 26))) level.setBlock(p, Blocks.STONE_BRICKS.defaultBlockState(), 2 | 16);
+        for (BlockPos p : BlockPos.betweenClosed(at.offset(-2, -1, -2), at.offset(LANE_LEN + 4, 4, 34))) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16);
+        for (BlockPos p : BlockPos.betweenClosed(at.offset(-1, -1, -1), at.offset(LANE_LEN + 2, -1, 32))) level.setBlock(p, Blocks.STONE_BRICKS.defaultBlockState(), 2 | 16);
         player = FakePlayerFactory.get(level, new GameProfile(UUID.nameUUIDFromBytes("carts-tester".getBytes()), "carts_tester"));
         chains = new ItemStack(DiaithirCarts.COUPLING_CHAIN.get(), 2);
         tick = 0;
@@ -140,6 +140,11 @@ final class CartSelfTest {
             level.setBlock(at.offset(20, 0, LANE_Z[8]), ew(DiaithirCarts.STATION_RAIL.get()).setValue(StationRail.DELAY, 1), 2 | 16);
             for (int x = 0; x < LANE_LEN; x += 5) level.setBlock(at.offset(x, 0, LANE_Z[4] + 1), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
             level.setBlock(at.offset(LANE_LEN - 1, 0, LANE_Z[4] + 1), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
+            // range: one redstone block at the start of a lane, vanilla powered rails against ours
+            lane(9, DiaithirCarts.STEEL_POWERED_RAIL.get());
+            lane(10, Blocks.POWERED_RAIL);
+            level.setBlock(at.offset(0, 0, LANE_Z[9] + 1), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
+            level.setBlock(at.offset(0, 0, LANE_Z[10] + 1), Blocks.REDSTONE_BLOCK.defaultBlockState(), 3);
             for (int i = 0; i < 4; i++) spawn(i, 1.5, i, 2.0);
             spawn(4, 2.5, 4, 0.1);
             spawn(5, 2.5, 5, 0.3);
@@ -164,6 +169,12 @@ final class CartSelfTest {
             lastX[i] = carts[i].getX();
         }
         if (tick == 20) {
+            for (int l : new int[] {9, 10}) {
+                int n = 0;
+                while (n < LANE_LEN && level.getBlockState(at.offset(n, 0, LANE_Z[l])).getValue(PoweredRailBlock.POWERED)) n++;
+                LOG.info("lane {} powered rails from one source: {}", l, n);
+                if (l == 9) check(n >= 9, "power from one source reached only " + n + " rails (vanilla reaches 9)");
+            }
             double[] want = {0.4, Tier.BRONZE.maxSpeed, Tier.STEEL.maxSpeed, Tier.FAST.maxSpeed};
             String[] name = {"vanilla", "bronze", "steel", "fast"};
             for (int i = 0; i < 4; i++) {
@@ -214,7 +225,7 @@ final class CartSelfTest {
     private static void finish() {
         for (AbstractMinecart c : carts) if (c != null) c.discard();
         for (Entity e : level.getEntitiesOfClass(ItemEntity.class, new AABB(at).inflate(80))) e.discard();
-        for (BlockPos p : BlockPos.betweenClosed(at.offset(-2, -1, -2), at.offset(LANE_LEN + 4, 4, 28))) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16);
+        for (BlockPos p : BlockPos.betweenClosed(at.offset(-2, -1, -2), at.offset(LANE_LEN + 4, 4, 34))) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2 | 16);
         for (ChunkPos c : forced) level.setChunkForced(c.x(), c.z(), false);
         forced.clear();
         java.util.Arrays.fill(carts, null);
