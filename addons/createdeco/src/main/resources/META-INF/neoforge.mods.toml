@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="CC0-1.0 (code, from Create Deco by the Create Deco team); art original to the Diaithir pack"
+
+[[mods]]
+modId="diaithir_createdeco"
+version="${version}"
+displayName="Create Deco (Diaithir port)"
+authors="Create Deco team (original code, CC0); Diaithir pack (NeoForge 26.1.2 port and all art)"
+description='''Industrial decoration for the Diaithir Create port: bars, catwalks, bricks, shipping containers, coins.'''
+
+[[dependencies.diaithir_createdeco]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_createdeco]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_createdeco]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"
