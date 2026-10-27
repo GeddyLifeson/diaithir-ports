@@ -52,6 +52,13 @@ public class DimensionalDoorsForgeClient implements IClientSided {
         if(DimensionalDoors.getSided().isModLoaded("cloth_config")) container.registerExtensionPoint(IConfigScreenFactory.class, (modContainer, previous) -> ClothConfigCompat.createScreen(previous));
 
         bus.addListener(DimensionalDoorsForgeClient::registerParticles);
+        bus.addListener(DimensionalDoorsForgeClient::registerParticleGroups);
+        bus.addListener(DimensionalDoorsForgeClient::registerSkyboxes);
+        bus.addListener((net.neoforged.neoforge.event.AddPackFindersEvent event) -> {
+            if (event.getPackType() == net.minecraft.server.packs.PackType.CLIENT_RESOURCES) {
+                event.addRepositorySource(result -> result.accept(GeneratedDoorPack.create()));
+            }
+        });
         bus.addListener(DimensionalDoorsForgeClient::initalizeMenuScreens);
         bus.addListener(DimensionalDoorsForgeClient::initializeClient);
         bus.addListener(DimensionalDoorsForgeClient::registerEntities);
@@ -64,6 +71,14 @@ public class DimensionalDoorsForgeClient implements IClientSided {
                 (particleType, particleProvider) -> event.registerSpecial((ParticleType) particleType, (ParticleProvider) particleProvider),
                 (particleType, spriteSetFunction) -> event.registerSpriteSet(particleType, (net.minecraft.client.particle.ParticleResources.SpriteParticleRegistration) spriteSetFunction::apply));
 
+    }
+
+    public static void registerParticleGroups(RegisterParticleGroupsEvent event) {
+        event.register(org.dimdev.dimdoors.particle.client.MonolithParticle.RENDER_TYPE, org.dimdev.dimdoors.particle.client.MonolithParticleGroup::new);
+    }
+
+    public static void registerSkyboxes(RegisterCustomEnvironmentEffectRendererEvent event) {
+        event.registerSkyboxRenderer(LimboSkyboxRenderer.ID, new LimboSkyboxRenderer());
     }
 
     private static void initalizeMenuScreens(RegisterMenuScreensEvent event) {

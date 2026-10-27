@@ -279,6 +279,11 @@ public class DimensionalDoorBlockRegistrar {
         return originalState;
     }
 
+    /** Generated block id -> original block id. */
+    public Map<Identifier, Identifier> getMappedDoorBlocks() {
+        return Collections.unmodifiableMap(mappedDoorBlocks);
+    }
+
     public Identifier get(Identifier Identifier) {
         return mappedDoorBlocks.get(Identifier);
     }

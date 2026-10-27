@@ -16,6 +16,10 @@ public class MonolithModel extends EntityModel<MonolithRenderState> {
         super(context.bakeLayer(ModEntityModelLayers.MONOLITH), net.minecraft.client.renderer.rendertype.RenderTypes::entitySolid);
     }
 
+    public MonolithModel(net.minecraft.client.model.geom.ModelPart root) {
+        super(root, net.minecraft.client.renderer.rendertype.RenderTypes::entitySolid);
+    }
+
     public static LayerDefinition getTexturedModelData() {
     MeshDefinition modelData = new MeshDefinition();
         PartDefinition modelPartData = modelData.getRoot();

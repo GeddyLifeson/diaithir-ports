@@ -6,7 +6,13 @@
       "can_sleep": "never"
     },
     "minecraft:gameplay/nether_portal_spawns_piglin": false,
-    "minecraft:gameplay/respawn_anchor_works": true
+    "minecraft:gameplay/respawn_anchor_works": true,
+    "minecraft:visual/cloud_color": "#00000000",
+    "minecraft:visual/fog_color": "#3a3a3a",
+    "minecraft:visual/sky_color": "#262626",
+    "minecraft:visual/star_brightness": 0.0,
+    "minecraft:visual/sunrise_sunset_color": "#00000000",
+    "neoforge:custom_skybox": "dimdoors:limbo"
   },
   "coordinate_scale": 4.0,
   "has_ceiling": false,
@@ -21,5 +27,6 @@
     "max_inclusive": 7,
     "min_inclusive": 0,
     "type": "minecraft:uniform"
-  }
+  },
+  "skybox": "none"
 }
