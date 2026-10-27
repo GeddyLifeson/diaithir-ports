@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Make Create mixing recipes from the drinks KubeJS data (a_data.js + the recipe rules of brewing.js).
 
-usage: gen_create_bridge_kubejs.py <a_data.js> <out data dir> [--namespaces minecraft,diaithir_drinks,...]
+usage: gen_create_bridge_kubejs.py <a_data.js> <out data dir> [--namespaces a,b,...] [--exclude item,item,...]
 
 Mirrors drkRecipeFor() and the age I/II 'vat' filter of brewing.js, one heated-basin Create mixing
 recipe per brew. Each ingredient group becomes an alternatives list (any item of the group), counts
@@ -72,7 +72,7 @@ def recipe_for(d):
     return r
 
 
-def main(src, out, namespaces=None):
+def main(src, out, namespaces=None, exclude=()):
     rows, groups = load(src)
     ok_ns = set(namespaces.split(",")) if namespaces else None
     out = pathlib.Path(out) / "create" / "recipe" / "mixing"
@@ -84,7 +84,7 @@ def main(src, out, namespaces=None):
             continue
         slots, why = [], None
         for g, c in r["inputs"]:
-            alts = [i for i in groups.get(g, []) if not ok_ns or i.split(":")[0] in ok_ns]
+            alts = [i for i in groups.get(g, []) if (not ok_ns or i.split(":")[0] in ok_ns) and i not in exclude]
             if not alts:
                 why = "group %s has no usable item" % g
                 break
@@ -112,4 +112,5 @@ def main(src, out, namespaces=None):
 
 if __name__ == "__main__":
     ns = sys.argv[sys.argv.index("--namespaces") + 1] if "--namespaces" in sys.argv else None
-    main(sys.argv[1], sys.argv[2], ns)
+    ex = sys.argv[sys.argv.index("--exclude") + 1].split(",") if "--exclude" in sys.argv else []
+    main(sys.argv[1], sys.argv[2], ns, set(ex))
