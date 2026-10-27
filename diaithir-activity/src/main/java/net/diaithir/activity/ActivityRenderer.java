@@ -74,7 +74,9 @@ final class ActivityRenderer {
     static Component line(ActivityData.Def def) {
         MutableComponent out = Component.object(new AtlasSprite(Identifier.parse(def.atlas()), Identifier.parse(def.sprite())));
         if (ActivityConfig.SHOW_LABEL.get()) {
-            out.append(Component.literal(" ")).append(Component.translatable(def.label()).withColor(color()));
+            String mode = ActivityConfig.LABEL_MODE.get();
+            if (!mode.equals("native")) out.append(Component.literal(" ")).append(Component.translatable(def.label()).withColor(color()));
+            if (!mode.equals("english")) out.append(Component.literal(" ")).append(Component.translatable(def.label() + ".native").withColor(0x9A9A9A));
         }
         return out;
     }

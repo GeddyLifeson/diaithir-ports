@@ -18,6 +18,7 @@ public final class ActivityConfig {
     public static final ModConfigSpec.DoubleValue ICON_SCALE;
     public static final ModConfigSpec.BooleanValue SHOW_LABEL;
     public static final ModConfigSpec.ConfigValue<String> LABEL_COLOR;
+    public static final ModConfigSpec.ConfigValue<String> LABEL_MODE;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -33,6 +34,7 @@ public final class ActivityConfig {
         ICON_SCALE = c.comment("Size of the icon line. 1.0 is the size of the nameplate text.").defineInRange("iconScale", 1.0, 0.5, 3.0);
         SHOW_LABEL = c.comment("Write the name of the activity next to its icon.").define("showLabel", true);
         LABEL_COLOR = c.comment("Colour of the label as a hex value.").define("labelColor", "#DEAA46");
+        LABEL_MODE = c.comment("Which word to show: both (English, then the native word in grey), english or native.").define("labelMode", "both");
         CLIENT = c.build();
     }
 
