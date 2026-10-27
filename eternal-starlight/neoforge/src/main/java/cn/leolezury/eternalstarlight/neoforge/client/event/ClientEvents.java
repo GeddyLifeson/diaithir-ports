@@ -30,7 +30,9 @@ public class ClientEvents {
 
 	@SubscribeEvent
 	private static void onRenderFog(ViewportEvent.RenderFog event) {
-		ESClientHandler.onRenderFog(event.getCamera(), event.getMode());
+		float[] distances = ESClientHandler.onRenderFog(event.getCamera(), event.getType(), event.getNearPlaneDistance(), event.getFarPlaneDistance());
+		event.setNearPlaneDistance(distances[0]);
+		event.setFarPlaneDistance(distances[1]);
 	}
 
 	@SubscribeEvent
@@ -41,19 +43,8 @@ public class ClientEvents {
 	}
 
 	@SubscribeEvent
-	private static void onRenderLevelStage(RenderLevelStageEvent event) {
-		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_ENTITIES) {
-			ESClientHandler.onAfterRenderEntities(event.getLevelRenderer().renderBuffers.bufferSource(), event.getPoseStack(), event.getPartialTick().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()));
-		}
-		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
-			ESClientHandler.onAfterRenderParticles();
-		}
-		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_WEATHER) {
-			ESClientHandler.onAfterRenderWeather(event.getPartialTick().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()));
-		}
-		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_LEVEL) {
-			ESClientHandler.onAfterRenderLevel(event.getModelViewMatrix(), event.getProjectionMatrix(), event.getCamera(), event.getPartialTick().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()));
-		}
+	private static void onSubmitCustomGeometry(SubmitCustomGeometryEvent event) {
+		ESClientHandler.onSubmitCustomGeometry(event.getSubmitNodeCollector(), event.getPoseStack(), Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false));
 	}
 
 	@SubscribeEvent

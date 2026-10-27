@@ -1,31 +1,35 @@
 package cn.leolezury.eternalstarlight.neoforge.client.event;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
 import cn.leolezury.eternalstarlight.common.client.gui.tooltip.ClientGalacticQuiverTooltip;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientSetupHandler;
+import cn.leolezury.eternalstarlight.common.client.model.ESArmorSets;
 import cn.leolezury.eternalstarlight.common.client.model.armor.AlchemistArmorModel;
 import cn.leolezury.eternalstarlight.common.client.model.armor.StarlitDiamondArmorModel;
 import cn.leolezury.eternalstarlight.common.client.model.armor.ThermalSpringStoneArmorModel;
 import cn.leolezury.eternalstarlight.common.client.model.armor.UnrealiumArmorModel;
 import cn.leolezury.eternalstarlight.common.item.tooltip.GalacticQuiverTooltipComponent;
-import cn.leolezury.eternalstarlight.common.platform.ESClientPlatform;
+import cn.leolezury.eternalstarlight.common.registry.ESFluids;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
-import cn.leolezury.eternalstarlight.neoforge.client.renderer.ESNeoItemStackRenderer;
+import cn.leolezury.eternalstarlight.neoforge.client.ESNeoSkyboxRenderer;
 import cn.leolezury.eternalstarlight.neoforge.registry.ESFluidTypes;
-import com.mojang.blaze3d.shaders.FogShape;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.Model;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.fog.FogRenderer;
-import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.world.entity.player.PlayerSkin;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.client.renderer.fog.FogData;
+import net.minecraft.client.renderer.fog.environment.FogEnvironment;
+import net.minecraft.client.resources.model.EquipmentClientInfo;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.PackType;
@@ -34,9 +38,11 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.PlayerModelType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -46,13 +52,15 @@ import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.fluid.FluidTintSource;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
-import org.jetbrains.annotations.NotNull;
-import org.joml.Vector3f;
+import org.joml.Vector4f;
 
-import java.io.IOException;
+import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Function;
 
 @EventBusSubscriber(modid = EternalStarlight.ID, value = Dist.CLIENT)
 public class ClientSetupEvents {
@@ -76,157 +84,98 @@ public class ClientSetupEvents {
 	}
 
 	@SubscribeEvent
-	private static void onRegisterDimEffects(RegisterDimensionSpecialEffectsEvent event) {
-		event.register(EternalStarlight.id("special_effect"), ESClientPlatform.INSTANCE.getDimEffect());
+	private static void onRegisterEnvironmentRenderers(RegisterCustomEnvironmentEffectRendererEvent event) {
+		event.registerSkyboxRenderer(EternalStarlight.id("starlight"), new ESNeoSkyboxRenderer());
 	}
 
 	@SubscribeEvent
-	private static void onRegisterBlockColor(RegisterColorHandlersEvent.Block event) {
+	private static void onRegisterBlockTintSources(RegisterColorHandlersEvent.BlockTintSources event) {
 		ESClientSetupHandler.registerBlockColors(event::register);
 	}
 
 	@SubscribeEvent
-	private static void onRegisterItemColor(RegisterColorHandlersEvent.Item event) {
-		ESClientSetupHandler.registerItemColors(event::register);
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	private static void onRegisterRenderStateModifiers(RegisterRenderStateModifiersEvent event) {
+		// gives the entity based accessory layers access to the entity behind a humanoid render state
+		event.registerEntityModifier((Class) LivingEntityRenderer.class, (java.util.function.BiConsumer) (entity, state) -> {
+			if (state instanceof HumanoidRenderState) {
+				ESRender.bindEntity((net.minecraft.client.renderer.entity.state.EntityRenderState) state, (Entity) entity);
+			}
+		});
+	}
+
+	private static IClientItemExtensions armorExtension(Function<EquipmentSlot, Model> factory) {
+		return new IClientItemExtensions() {
+			private final Map<EquipmentSlot, Model> models = new EnumMap<>(EquipmentSlot.class);
+
+			@Override
+			public Model getHumanoidArmorModel(ItemStack itemStack, EquipmentClientInfo.LayerType layerType, Model original) {
+				var equippable = itemStack.get(DataComponents.EQUIPPABLE);
+				if (equippable == null) {
+					return original;
+				}
+				return models.computeIfAbsent(equippable.slot(), factory);
+			}
+		};
+	}
+
+	private static Model slotModel(HumanoidModel<HumanoidRenderState> model, EquipmentSlot slot) {
+		ESArmorSets.applySlotVisibility(model, slot);
+		return model;
+	}
+
+	private static ModelPartBaker baker() {
+		return location -> Minecraft.getInstance().getEntityModels().bakeLayer(location);
+	}
+
+	private interface ModelPartBaker {
+		net.minecraft.client.model.geom.ModelPart bake(ModelLayerLocation location);
 	}
 
 	@SubscribeEvent
 	private static void onRegisterClientExtensions(RegisterClientExtensionsEvent event) {
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.GLACITE_SHIELD.get());
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.FLOWGLAZE_SHIELD.get());
-		IClientItemExtensions alchemistArmor = new IClientItemExtensions() {
-			private AlchemistArmorModel<LivingEntity> model;
-
-			@Override
-			public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				if (model == null) {
-					model = new AlchemistArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(AlchemistArmorModel.LAYER_LOCATION));
-				}
-
-				return model;
-			}
-		};
-		event.registerItem(alchemistArmor, ESItems.ALCHEMIST_MASK.get());
-		event.registerItem(alchemistArmor, ESItems.ALCHEMIST_ROBE.get());
-		IClientItemExtensions thermalSpringstoneArmor = new IClientItemExtensions() {
-			private ThermalSpringStoneArmorModel<LivingEntity> innerModel;
-			private ThermalSpringStoneArmorModel<LivingEntity> outerModel;
-
-			@Override
-			public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				if (innerModel == null || outerModel == null) {
-					innerModel = new ThermalSpringStoneArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(ThermalSpringStoneArmorModel.INNER_LOCATION));
-					outerModel = new ThermalSpringStoneArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(ThermalSpringStoneArmorModel.OUTER_LOCATION));
-				}
-
-				if (itemStack.is(ESItems.THERMAL_SPRINGSTONE_HELMET.get()) || itemStack.is(ESItems.THERMAL_SPRINGSTONE_CHESTPLATE.get()) || itemStack.is(ESItems.THERMAL_SPRINGSTONE_BOOTS.get())) {
-					return outerModel;
-				} else if (itemStack.is(ESItems.THERMAL_SPRINGSTONE_LEGGINGS.get())) {
-					return innerModel;
-				}
-
-				return IClientItemExtensions.super.getHumanoidArmorModel(livingEntity, itemStack, equipmentSlot, original);
-			}
-		};
-		event.registerItem(thermalSpringstoneArmor, ESItems.THERMAL_SPRINGSTONE_HELMET.get());
-		event.registerItem(thermalSpringstoneArmor, ESItems.THERMAL_SPRINGSTONE_CHESTPLATE.get());
-		event.registerItem(thermalSpringstoneArmor, ESItems.THERMAL_SPRINGSTONE_LEGGINGS.get());
-		event.registerItem(thermalSpringstoneArmor, ESItems.THERMAL_SPRINGSTONE_BOOTS.get());
-		IClientItemExtensions starlitDiamondArmor = new IClientItemExtensions() {
-			private StarlitDiamondArmorModel<LivingEntity> innerModel;
-			private StarlitDiamondArmorModel<LivingEntity> outerModel;
-
-			@Override
-			public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				if (innerModel == null || outerModel == null) {
-					innerModel = new StarlitDiamondArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(StarlitDiamondArmorModel.INNER_LOCATION));
-					outerModel = new StarlitDiamondArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(StarlitDiamondArmorModel.OUTER_LOCATION));
-				}
-
-				if (itemStack.is(ESItems.STARLIT_DIAMOND_HELMET.get()) || itemStack.is(ESItems.STARLIT_DIAMOND_CHESTPLATE.get()) || itemStack.is(ESItems.STARLIT_DIAMOND_BOOTS.get())) {
-					return outerModel;
-				} else if (itemStack.is(ESItems.STARLIT_DIAMOND_LEGGINGS.get())) {
-					return innerModel;
-				}
-
-				return IClientItemExtensions.super.getHumanoidArmorModel(livingEntity, itemStack, equipmentSlot, original);
-			}
-		};
-		event.registerItem(starlitDiamondArmor, ESItems.STARLIT_DIAMOND_HELMET.get());
-		event.registerItem(starlitDiamondArmor, ESItems.STARLIT_DIAMOND_CHESTPLATE.get());
-		event.registerItem(starlitDiamondArmor, ESItems.STARLIT_DIAMOND_LEGGINGS.get());
-		event.registerItem(starlitDiamondArmor, ESItems.STARLIT_DIAMOND_BOOTS.get());
-		IClientItemExtensions unrealiumArmor = new IClientItemExtensions() {
-			private UnrealiumArmorModel<LivingEntity> innerModel;
-			private UnrealiumArmorModel<LivingEntity> outerModel;
-
-			@Override
-			public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-				if (innerModel == null || outerModel == null) {
-					innerModel = new UnrealiumArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(UnrealiumArmorModel.INNER_LOCATION));
-					outerModel = new UnrealiumArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(UnrealiumArmorModel.OUTER_LOCATION));
-				}
-
-				if (itemStack.is(ESItems.UNREALIUM_HELMET.get()) || itemStack.is(ESItems.UNREALIUM_CHESTPLATE.get()) || itemStack.is(ESItems.UNREALIUM_BOOTS.get())) {
-					return outerModel;
-				} else if (itemStack.is(ESItems.UNREALIUM_LEGGINGS.get())) {
-					return innerModel;
-				}
-
-				return IClientItemExtensions.super.getHumanoidArmorModel(livingEntity, itemStack, equipmentSlot, original);
-			}
-		};
-		event.registerItem(unrealiumArmor, ESItems.UNREALIUM_HELMET.get());
-		event.registerItem(unrealiumArmor, ESItems.UNREALIUM_CHESTPLATE.get());
-		event.registerItem(unrealiumArmor, ESItems.UNREALIUM_LEGGINGS.get());
-		event.registerItem(unrealiumArmor, ESItems.UNREALIUM_BOOTS.get());
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.MALARITE_SPEAR.get());
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.PUNGENCY_FRUIT_SPEAR.get());
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.CRESCENT_SPEAR.get());
-		event.registerItem(ESNeoItemStackRenderer.CLIENT_ITEM_EXTENSION, ESItems.LOOT_CHEST.get());
+		IClientItemExtensions alchemistArmor = armorExtension(slot -> slotModel(new AlchemistArmorModel(baker().bake(AlchemistArmorModel.LAYER_LOCATION)), slot));
+		event.registerItem(alchemistArmor, ESItems.ALCHEMIST_MASK.get(), ESItems.ALCHEMIST_ROBE.get());
+		IClientItemExtensions thermalSpringstoneArmor = armorExtension(slot -> slotModel(new ThermalSpringStoneArmorModel(baker().bake(slot == EquipmentSlot.LEGS ? ThermalSpringStoneArmorModel.INNER_LOCATION : ThermalSpringStoneArmorModel.OUTER_LOCATION)), slot));
+		event.registerItem(thermalSpringstoneArmor, ESItems.THERMAL_SPRINGSTONE_HELMET.get(), ESItems.THERMAL_SPRINGSTONE_CHESTPLATE.get(), ESItems.THERMAL_SPRINGSTONE_LEGGINGS.get(), ESItems.THERMAL_SPRINGSTONE_BOOTS.get());
+		IClientItemExtensions starlitDiamondArmor = armorExtension(slot -> slotModel(new StarlitDiamondArmorModel(baker().bake(slot == EquipmentSlot.LEGS ? StarlitDiamondArmorModel.INNER_LOCATION : StarlitDiamondArmorModel.OUTER_LOCATION)), slot));
+		event.registerItem(starlitDiamondArmor, ESItems.STARLIT_DIAMOND_HELMET.get(), ESItems.STARLIT_DIAMOND_CHESTPLATE.get(), ESItems.STARLIT_DIAMOND_LEGGINGS.get(), ESItems.STARLIT_DIAMOND_BOOTS.get());
+		IClientItemExtensions unrealiumArmor = armorExtension(slot -> slotModel(new UnrealiumArmorModel(baker().bake(slot == EquipmentSlot.LEGS ? UnrealiumArmorModel.INNER_LOCATION : UnrealiumArmorModel.OUTER_LOCATION)), slot));
+		event.registerItem(unrealiumArmor, ESItems.UNREALIUM_HELMET.get(), ESItems.UNREALIUM_CHESTPLATE.get(), ESItems.UNREALIUM_LEGGINGS.get(), ESItems.UNREALIUM_BOOTS.get());
 
 		event.registerFluidType(new IClientFluidTypeExtensions() {
 			@Override
-			public Identifier getStillTexture() {
-				return EternalStarlight.id("block/ether");
+			public void modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector4f fluidFogColor) {
+				fluidFogColor.set(232 / 255F, 255 / 255F, 222 / 255F, fluidFogColor.w);
 			}
 
 			@Override
-			public Identifier getFlowingTexture() {
-				return EternalStarlight.id("block/ether_flow");
-			}
-
-			@Override
-			public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
-				return ESClientHandler.getEtherTint(getter, pos);
-			}
-
-			@Override
-			public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
-				return new Vector3f(232 / 255F, 255 / 255F, 222 / 255F);
-			}
-
-			@Override
-			public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
-				RenderSystem.setShaderFogStart(0.0F);
-				RenderSystem.setShaderFogEnd(3.0F);
+			public void modifyFogRender(Camera camera, FogEnvironment environment, float renderDistance, float partialTick, FogData fogData) {
+				fogData.environmentalStart = 0.0F;
+				fogData.environmentalEnd = 3.0F;
 			}
 		}, ESFluidTypes.ETHER.get());
 	}
 
 	@SubscribeEvent
-	private static void onBakingCompleted(ModelEvent.ModifyBakingResult event) {
-		Map<ModelResourceLocation, BakedModel> models = event.getModels();
-		ESClientSetupHandler.modifiedBakedModels = false;
-		ESClientSetupHandler.modifyBakingResult(models);
-	}
+	private static void onRegisterFluidModels(RegisterFluidModelsEvent event) {
+		FluidModel.Unbaked ether = new FluidModel.Unbaked(
+			new Material(EternalStarlight.id("block/ether")),
+			new Material(EternalStarlight.id("block/ether_flow")),
+			null,
+			new FluidTintSource() {
+				@Override
+				public int color(FluidState state) {
+					return ESClientHandler.getEtherTint(null, null);
+				}
 
-	@SubscribeEvent
-	private static void onRegisterExtraModels(ModelEvent.RegisterAdditional event) {
-		ESClientSetupHandler.registerExtraBakedModels(l -> {
-			ModelResourceLocation forged = ModelResourceLocation.standalone(l.id().withPrefix("item/"));
-			event.register(forged);
-		});
+				@Override
+				public int colorInWorld(FluidState state, BlockState blockState, BlockAndTintGetter getter, BlockPos pos) {
+					return ESClientHandler.getEtherTint(getter, pos);
+				}
+			}
+		);
+		event.register(ether, ESFluids.ETHER_STILL.get(), ESFluids.ETHER_FLOWING.get());
 	}
 
 	@SubscribeEvent
@@ -242,7 +191,7 @@ public class ClientSetupEvents {
 
 	@SubscribeEvent
 	private static void onRegisterSkullModels(EntityRenderersEvent.CreateSkullModels event) {
-		ESClientSetupHandler.registerSkullModels(event::registerSkullModel, event.getEntityModelSet());
+		ESClientSetupHandler.registerSkullModels(event::registerSkullModel);
 	}
 
 	@SubscribeEvent
@@ -256,47 +205,37 @@ public class ClientSetupEvents {
 	}
 
 	@SubscribeEvent
-	private static void onRegisterMenuScreens(EntityRenderersEvent.AddLayers event) {
+	private static void onAddLayers(EntityRenderersEvent.AddLayers event) {
 		for (EntityType<? extends Entity> entityType : event.getEntityTypes()) {
-			if (event.getRenderer(entityType) instanceof LivingEntityRenderer<?, ?> livingEntityRenderer) {
+			if (event.getRenderer(entityType) instanceof LivingEntityRenderer<?, ?, ?> livingEntityRenderer) {
 				ESClientSetupHandler.onRenderLayerAttachment(entityType, livingEntityRenderer, event.getContext());
 			}
 		}
-		for (PlayerSkin.Model model : event.getSkins()) {
-			if (event.getSkin(model) instanceof LivingEntityRenderer<?, ?> livingEntityRenderer) {
+		for (PlayerModelType model : event.getSkins()) {
+			if (event.getPlayerRenderer(model) instanceof LivingEntityRenderer<?, ?, ?> livingEntityRenderer) {
 				ESClientSetupHandler.onRenderLayerAttachment(EntityType.PLAYER, livingEntityRenderer, event.getContext());
 			}
 		}
 	}
 
 	@SubscribeEvent
-	private static void onRegisterShader(RegisterShadersEvent event) {
-		ESClientSetupHandler.registerShaders((location, format, loaded) -> {
-			try {
-				event.registerShader(new ShaderInstance(event.getResourceProvider(), location, format), loaded);
-			} catch (IOException e) {
-				EternalStarlight.LOGGER.error("Cannot register shader: {}", location);
-			}
-		});
-	}
-
-	@SubscribeEvent
 	private static void onRegisterGuiLayers(RegisterGuiLayersEvent event) {
-		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("offhand_attack_indicator"), (graphics, partialTicks) -> ESClientHandler.renderOffhandAttackIndicator(graphics));
-		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("ether_erosion"), (graphics, partialTicks) -> ESClientHandler.renderEtherErosion(graphics));
-		event.registerAbove(VanillaGuiLayers.ARMOR_LEVEL, EternalStarlight.id("ether_armor"), (graphics, partialTicks) -> {
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("offhand_attack_indicator"), (graphics, deltaTracker) -> ESClientHandler.renderOffhandAttackIndicator(graphics));
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("ether_erosion"), (graphics, deltaTracker) -> ESClientHandler.renderEtherErosion(graphics));
+		event.registerAbove(VanillaGuiLayers.ARMOR_LEVEL, EternalStarlight.id("ether_armor"), (graphics, deltaTracker) -> {
 			if (Minecraft.getInstance().gameMode != null && Minecraft.getInstance().gameMode.canHurtPlayer()) {
 				ESClientHandler.renderEtherArmor(graphics, graphics.guiWidth(), graphics.guiHeight());
 			}
 		});
-		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("dream_catcher"), (graphics, partialTicks) -> ESClientHandler.renderDreamCatcher(graphics));
-		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("carved_lunaris_cactus_fruit_blur"), (graphics, partialTicks) -> ESClientHandler.renderCarvedLunarisCactusFruitBlur(graphics));
-		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("portal"), (graphics, partialTicks) -> ESClientHandler.renderPortalOverlay(graphics));
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("dream_catcher"), (graphics, deltaTracker) -> ESClientHandler.renderDreamCatcher(graphics));
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("carved_lunaris_cactus_fruit_blur"), (graphics, deltaTracker) -> ESClientHandler.renderCarvedLunarisCactusFruitBlur(graphics));
+		event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, EternalStarlight.id("portal"), (graphics, deltaTracker) -> ESClientHandler.renderPortalOverlay(graphics));
 	}
 
 	@SubscribeEvent
-	private static void onAddReloadListener(RegisterClientReloadListenersEvent event) {
-		ESClientSetupHandler.addClientReloadListeners(event::registerReloadListener);
+	private static void onAddReloadListener(AddClientReloadListenersEvent event) {
+		int[] counter = {0};
+		ESClientSetupHandler.addClientReloadListeners(listener -> event.addListener(EternalStarlight.id("client_reload_" + counter[0]++), listener));
 	}
 
 	@SubscribeEvent

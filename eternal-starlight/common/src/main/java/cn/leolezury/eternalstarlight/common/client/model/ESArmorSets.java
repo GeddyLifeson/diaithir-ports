@@ -39,4 +39,17 @@ public final class ESArmorSets {
 		registration.accept(locations.legs(), () -> LayerDefinition.create(HumanoidModel.createArmorMeshSet(inner, outer).legs(), 64, 32));
 		registration.accept(locations.feet(), () -> LayerDefinition.create(HumanoidModel.createArmorMeshSet(inner, outer).feet(), 64, 32));
 	}
+
+	/**
+	 * Armor item models contain the parts of every slot; since a model renders after the layer has moved on to the next slot, one model instance is kept per slot with a fixed visibility.
+	 */
+	public static void applySlotVisibility(HumanoidModel<?> model, net.minecraft.world.entity.EquipmentSlot slot) {
+		model.head.visible = slot == net.minecraft.world.entity.EquipmentSlot.HEAD;
+		model.hat.visible = slot == net.minecraft.world.entity.EquipmentSlot.HEAD;
+		model.body.visible = slot == net.minecraft.world.entity.EquipmentSlot.CHEST || slot == net.minecraft.world.entity.EquipmentSlot.LEGS;
+		model.rightArm.visible = slot == net.minecraft.world.entity.EquipmentSlot.CHEST;
+		model.leftArm.visible = slot == net.minecraft.world.entity.EquipmentSlot.CHEST;
+		model.rightLeg.visible = slot == net.minecraft.world.entity.EquipmentSlot.LEGS || slot == net.minecraft.world.entity.EquipmentSlot.FEET;
+		model.leftLeg.visible = slot == net.minecraft.world.entity.EquipmentSlot.LEGS || slot == net.minecraft.world.entity.EquipmentSlot.FEET;
+	}
 }

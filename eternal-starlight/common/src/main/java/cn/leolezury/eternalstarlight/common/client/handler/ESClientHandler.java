@@ -1,6 +1,12 @@
 package cn.leolezury.eternalstarlight.common.client.handler;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
+import cn.leolezury.eternalstarlight.common.client.compat.RecordingBufferSource;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.world.entity.EquipmentSlot;
 import cn.leolezury.eternalstarlight.common.client.posteffect.PostEffectRenderer;
 import cn.leolezury.eternalstarlight.common.client.posteffect.WorldPostEffectManager;
 import cn.leolezury.eternalstarlight.common.client.resource.ESBookLoader;
@@ -66,6 +72,10 @@ public class ESClientHandler {
 	public static ESBookLoader books;
 	public static final Map<UUID, Integer> BOSS_BAR_TYPES = new HashMap<>();
 	public static final List<ScreenShake> SCREEN_SHAKES = new ArrayList<>();
+	private static final Identifier[] BAR_BACKGROUND_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/pink_background"), Identifier.withDefaultNamespace("boss_bar/blue_background"), Identifier.withDefaultNamespace("boss_bar/red_background"), Identifier.withDefaultNamespace("boss_bar/green_background"), Identifier.withDefaultNamespace("boss_bar/yellow_background"), Identifier.withDefaultNamespace("boss_bar/purple_background"), Identifier.withDefaultNamespace("boss_bar/white_background")};
+	private static final Identifier[] BAR_PROGRESS_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/pink_progress"), Identifier.withDefaultNamespace("boss_bar/blue_progress"), Identifier.withDefaultNamespace("boss_bar/red_progress"), Identifier.withDefaultNamespace("boss_bar/green_progress"), Identifier.withDefaultNamespace("boss_bar/yellow_progress"), Identifier.withDefaultNamespace("boss_bar/purple_progress"), Identifier.withDefaultNamespace("boss_bar/white_progress")};
+	private static final Identifier[] OVERLAY_BACKGROUND_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/notched_6_background"), Identifier.withDefaultNamespace("boss_bar/notched_10_background"), Identifier.withDefaultNamespace("boss_bar/notched_12_background"), Identifier.withDefaultNamespace("boss_bar/notched_20_background")};
+	private static final Identifier[] OVERLAY_PROGRESS_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/notched_6_progress"), Identifier.withDefaultNamespace("boss_bar/notched_10_progress"), Identifier.withDefaultNamespace("boss_bar/notched_12_progress"), Identifier.withDefaultNamespace("boss_bar/notched_20_progress")};
 	private static final Identifier ETHER_EROSION_OVERLAY = EternalStarlight.id("textures/misc/ether_erosion.png");
 	private static final Identifier ETHER_ARMOR_EMPTY = EternalStarlight.id("textures/gui/hud/ether_armor_empty.png");
 	private static final Identifier ETHER_ARMOR_HALF = EternalStarlight.id("textures/gui/hud/ether_armor_half.png");
@@ -355,6 +365,203 @@ public class ESClientHandler {
 			return player.getRandom().nextInt(2);
 		}
 		return 0;
+	}
+
+	// world rendering
+
+	public static void onSubmitCustomGeometry(SubmitNodeCollector collector, PoseStack stack, float partialTicks) {
+		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
+		Vec3 cameraPos = camera.position();
+		stack.pushPose();
+		stack.translate(-cameraPos.x(), -cameraPos.y(), -cameraPos.z());
+		RecordingBufferSource.submit(collector, stack, source -> TrailManager.render(source, stack, partialTicks));
+		stack.popPose();
+	}
+
+	/**
+	 * @return the modified {near, far} fog distances
+	 */
+	public static float[] onRenderFog(Camera camera, FogType fogType, float near, float far) {
+		Minecraft minecraft = Minecraft.getInstance();
+		LocalPlayer player = minecraft.player;
+		if (player == null) {
+			return new float[]{near, far};
+		}
+		if (player.level().dimension() == ESDimensions.STARLIGHT_KEY && fogType == FogType.NONE && camera.getFluidInCamera() == FogType.NONE && player.level().getBlockState(camera.blockPosition()).getFluidState().isEmpty()) {
+			near -= Mth.clamp(fogStartDecrement, 0, near + 5);
+			far -= Mth.clamp(fogEndDecrement, 0, far - 50);
+		}
+		AttributeInstance fogVision = player.getAttribute(ESAttributes.FOG_VISION.asHolder());
+		if (fogVision != null && fogType == FogType.NONE) {
+			near += (float) fogVision.getValue();
+			far += (float) fogVision.getValue();
+		}
+		AttributeInstance fireResistance = player.getAttribute(ESAttributes.FIRE_RESISTANCE.asHolder());
+		if (fireResistance != null && fogType == FogType.LAVA) {
+			near += (float) fireResistance.getValue() * 15;
+			far += (float) fireResistance.getValue() * 15;
+		}
+		return new float[]{near, far};
+	}
+
+	// gui
+
+	public static boolean renderBossBar(GuiGraphicsExtractor guiGraphics, LerpingBossEvent bossEvent, int x, int y) {
+		Identifier barLocation;
+		switch (BOSS_BAR_TYPES.getOrDefault(bossEvent.getId(), 0)) {
+			case ESServerBossEvent.THE_GATEKEEPER -> barLocation = EternalStarlight.id("textures/gui/bars/the_gatekeeper.png");
+			case ESServerBossEvent.STARLIGHT_GOLEM -> barLocation = EternalStarlight.id("textures/gui/bars/starlight_golem.png");
+			case ESServerBossEvent.LUNAR_MONSTROSITY -> barLocation = EternalStarlight.id("textures/gui/bars/lunar_monstrosity.png");
+			case ESServerBossEvent.LUNAR_MONSTROSITY_SOUL -> barLocation = EternalStarlight.id("textures/gui/bars/lunar_monstrosity_soul.png");
+			case ESServerBossEvent.SOLAR_CREEPER -> barLocation = EternalStarlight.id("textures/gui/bars/solar_creeper.png");
+			default -> {
+				return false;
+			}
+		}
+		drawBar(guiGraphics, x, y, bossEvent, barLocation);
+		Component component = bossEvent.getName();
+		int textWidth = Minecraft.getInstance().font.width(component);
+		int textX = guiGraphics.guiWidth() / 2 - textWidth / 2;
+		int textY = y - 9;
+		guiGraphics.text(Minecraft.getInstance().font, component, textX, textY, 16777215);
+		return true;
+	}
+
+	public static void drawBar(GuiGraphicsExtractor guiGraphics, int x, int y, BossEvent event, Identifier barLocation) {
+		drawBar(guiGraphics, x, y, event, 182, BAR_BACKGROUND_SPRITES, OVERLAY_BACKGROUND_SPRITES);
+		int k = Mth.lerpDiscrete(event.getProgress(), 0, 182);
+		if (k > 0) {
+			drawBar(guiGraphics, x, y, event, k, BAR_PROGRESS_SPRITES, OVERLAY_PROGRESS_SPRITES);
+		}
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, barLocation, x - 1, y - 5, 0.0F, 0.0F, 184, 16, 184, 16);
+	}
+
+	private static void drawBar(GuiGraphicsExtractor guiGraphics, int x, int y, BossEvent bossEvent, int progress, Identifier[] bars, Identifier[] overlays) {
+		guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, bars[bossEvent.getColor().ordinal()], 182, 5, 0, 0, x, y, progress, 5);
+		if (bossEvent.getOverlay() != BossEvent.BossBarOverlay.PROGRESS) {
+			guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, overlays[bossEvent.getOverlay().ordinal() - 1], 182, 5, 0, 0, x, y, progress, 5);
+		}
+	}
+
+	// copied from Gui
+	public static void renderTextureOverlay(GuiGraphicsExtractor guiGraphics, Identifier resourceLocation, float alpha) {
+		guiGraphics.blit(RenderPipelines.GUI_TEXTURED, resourceLocation, 0, 0, 0.0F, 0.0F, guiGraphics.guiWidth(), guiGraphics.guiHeight(), guiGraphics.guiWidth(), guiGraphics.guiHeight(), ARGB.white(alpha));
+	}
+
+	// copied from Gui#extractPortalOverlay
+	public static void renderPortalOverlay(GuiGraphicsExtractor guiGraphics) {
+		float alpha = Mth.lerp(Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false), oldPortalTicks, portalTicks) / 120f;
+		if (alpha <= 0) {
+			return;
+		}
+		if (alpha < 1.0F) {
+			alpha *= alpha;
+			alpha *= alpha;
+			alpha = alpha * 0.8F + 0.2F;
+		}
+		TextureAtlasSprite sprite = Minecraft.getInstance().getModelManager().getBlockStateModelSet().getParticleMaterial(ESBlocks.STARLIGHT_PORTAL.get().defaultBlockState()).sprite();
+		guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, sprite, 0, 0, guiGraphics.guiWidth(), guiGraphics.guiHeight(), ARGB.white(alpha));
+	}
+
+	public static void renderOffhandAttackIndicator(GuiGraphicsExtractor guiGraphics) {
+		LocalPlayer player = Minecraft.getInstance().player;
+		if (player == null) {
+			return;
+		}
+		ItemStack mainHand = player.getMainHandItem();
+		ItemStack offhand = player.getOffhandItem();
+		if (ItemStack.isSameItem(mainHand, offhand) && mainHand.getItem() instanceof DualWieldingSwordItem) {
+			float attackStrengthScale = Mth.clamp(ESDataAttachments.OFFHAND_ATTACK_STRENGTH_TIMER.getData(player) / player.getCurrentItemAttackStrengthDelay(), 0.0F, 1.0F);
+			if (Minecraft.getInstance().options.getCameraType().isFirstPerson() && Minecraft.getInstance().options.attackIndicator().get() == AttackIndicatorStatus.CROSSHAIR) {
+				boolean full = false;
+				if (Minecraft.getInstance().crosshairPickEntity instanceof LivingEntity && attackStrengthScale >= 1.0F) {
+					full = player.getCurrentItemAttackStrengthDelay() > 5.0F;
+					full &= Minecraft.getInstance().crosshairPickEntity.isAlive();
+				}
+				int x = guiGraphics.guiWidth() / 2 - 8;
+				// +16 -> +24 we want it to be under the normal crosshair
+				int y = guiGraphics.guiHeight() / 2 - 7 + 24;
+				if (full) {
+					guiGraphics.blitSprite(RenderPipelines.CROSSHAIR, CROSSHAIR_ATTACK_INDICATOR_FULL_SPRITE, x, y, 16, 16);
+				} else if (attackStrengthScale < 1.0F) {
+					int progress = (int) (attackStrengthScale * 17.0F);
+					guiGraphics.blitSprite(RenderPipelines.CROSSHAIR, CROSSHAIR_ATTACK_INDICATOR_BACKGROUND_SPRITE, x, y, 16, 4);
+					guiGraphics.blitSprite(RenderPipelines.CROSSHAIR, CROSSHAIR_ATTACK_INDICATOR_PROGRESS_SPRITE, 16, 4, 0, 0, x, y, progress, 4);
+				}
+			}
+			if (Minecraft.getInstance().options.attackIndicator().get() == AttackIndicatorStatus.HOTBAR) {
+				HumanoidArm arm = player.getMainArm();
+				if (attackStrengthScale < 1.0F) {
+					int halfWidth = guiGraphics.guiWidth() / 2;
+					// we want it to be on the other side of the hotbar
+					// offset by 29 so that it won't be under the offhand slot
+					int x = halfWidth + 91 + 6 + 29;
+					if (arm == HumanoidArm.RIGHT) {
+						x = halfWidth - 91 - 22 - 29;
+					}
+					int y = guiGraphics.guiHeight() - 20;
+					int progress = (int) (attackStrengthScale * 19.0F);
+					guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, HOTBAR_ATTACK_INDICATOR_BACKGROUND_SPRITE, x, y, 18, 18);
+					guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, HOTBAR_ATTACK_INDICATOR_PROGRESS_SPRITE, 18, 18, 0, 18 - progress, x, y + 18 - progress, 18, progress);
+				}
+			}
+		}
+	}
+
+	public static void renderEtherErosion(GuiGraphicsExtractor guiGraphics) {
+		if (Minecraft.getInstance().player == null) {
+			return;
+		}
+		float erosionProgress = ESDataAttachments.IN_ETHER_TICKS.getData(Minecraft.getInstance().player) / 140f;
+		if (erosionProgress > 0) {
+			renderTextureOverlay(guiGraphics, ETHER_EROSION_OVERLAY, erosionProgress);
+		}
+	}
+
+	public static void renderEtherArmor(GuiGraphicsExtractor guiGraphics, int screenWidth, int screenHeight) {
+		Minecraft minecraft = Minecraft.getInstance();
+		if (minecraft.player != null && ESBlockUtil.isEntityInBlock(minecraft.player, ESBlocks.ETHER.get())) {
+			int initialX = screenWidth / 2 - 91;
+			int initialY = screenHeight - 39;
+			float maxHealth = (float) Math.max(minecraft.player.getAttributeValue(Attributes.MAX_HEALTH), Mth.ceil(minecraft.player.getHealth()));
+			int absorptionAmount = Mth.ceil(minecraft.player.getAbsorptionAmount());
+			int q = Mth.ceil((maxHealth + (float) absorptionAmount) / 2.0F / 10.0F);
+			int r = Math.max(10 - (q - 2), 3);
+			int armorValue = minecraft.player.getArmorValue();
+			int y = initialY - (q - 1) * r - 10;
+			for (int i = 0; i < 10; ++i) {
+				if (armorValue > 0) {
+					int x = initialX + i * 8;
+					if (i * 2 + 1 < armorValue) {
+						guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ETHER_ARMOR_FULL, x, y, 0f, 0f, 9, 9, 9, 9);
+					}
+					if (i * 2 + 1 == armorValue) {
+						guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ETHER_ARMOR_HALF, x, y, 0f, 0f, 9, 9, 9, 9);
+					}
+					if (i * 2 + 1 > armorValue) {
+						guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ETHER_ARMOR_EMPTY, x, y, 0f, 0f, 9, 9, 9, 9);
+					}
+				}
+			}
+		}
+	}
+
+	public static void renderCarvedLunarisCactusFruitBlur(GuiGraphicsExtractor guiGraphics) {
+		if (Minecraft.getInstance().options.getCameraType().isFirstPerson() && Minecraft.getInstance().player != null) {
+			ItemStack itemStack = Minecraft.getInstance().player.getItemBySlot(EquipmentSlot.HEAD);
+			if (itemStack.is(ESBlocks.CARVED_LUNARIS_CACTUS_FRUIT.get().asItem())) {
+				renderTextureOverlay(guiGraphics, LUNARIS_CACTUS_BLUR_LOCATION, 1.0F);
+			}
+		}
+	}
+
+	public static void renderDreamCatcher(GuiGraphicsExtractor guiGraphics) {
+		LocalPlayer player = Minecraft.getInstance().player;
+		if (player != null && player.hasEffect(ESMobEffects.DREAM_CATCHER.asHolder())) {
+			for (DreamCatcherText text : DREAM_CATCHER_TEXTS) {
+				guiGraphics.centeredText(Minecraft.getInstance().font, text.getText(), text.getX(), text.getY(), 0xFF5187c4);
+			}
+		}
 	}
 
 	private static class DreamCatcherText {
