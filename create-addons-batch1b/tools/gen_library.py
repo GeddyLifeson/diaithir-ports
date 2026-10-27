@@ -21,6 +21,15 @@ rows=[
 ('overstress_clutch','machine','A clutch that slips open when the network is overstressed and closes again once the load falls.'),
 ('freewheel_clutch','machine','A one-way clutch. It turns the output when driven forward and spins free when driven back.'),
 ('centrifugal_clutch','machine','A clutch that engages once the shaft passes a set speed. Set the threshold with the scroll.'),
+('shear_pin','machine','A shaft that gives way first. When the network is overstressed the pin breaks and the load is dropped, instead of wrecking the machines.'),
+('modular_diesel_engine','machine','A diesel engine built from segments set in a line. Each segment adds stress; all share one tank, and the whole line runs on the same fuel.'),
+('huge_diesel_engine','machine','A very large engine for the heaviest loads. Four buckets of fuel in the tank, high speed, and a great deal of stress.'),
+('burner','machine','A fuel burner that heats basins like a blaze burner. Turn its valve or give it a redstone signal; it burns the liquid fuel piped into it.'),
+('canister','machine','A portable fuel can, and a tank when set down. It keeps what is in it when picked up again.'),
+('distillation_tower','machine','Stack three over a burner and feed crude oil into the bottom. Diesel collects in the second segment and gasoline in the third.'),
+('pumpjack','machine','Draws crude oil from the pool under its chunk when turned. About one chunk in three holds oil; each pool runs dry in the end.'),
+('engine_silencer','machine','Bolts onto a diesel engine to quieten it. It changes the sound and nothing else.'),
+('engine_turbocharger','machine','Bolts onto a diesel engine to raise its speed and its stress by half again.'),
 ('diesel_engine','machine','Burns liquid fuel and turns a shaft. Fuel quality sets speed and stress; a redstone signal throttles it. It runs hot, so it warms the room around it.'),
 ('crude_oil','fluid','Raw oil from oil springs, black and thick. Sold in buckets. It is distilled into fuels and not burned as it comes.'),
 ('diesel','fluid','A middle-weight fuel with steady, high power. The engine burns it by the millibucket.'),
@@ -32,6 +41,6 @@ rows=[
 out=[]
 for k,c,t in rows:
     n=names.get(k)
-    out.append([A(n) if n else k,'item',4,'create',t])
+    out.append([A(n) if n else k.replace('_',' ').title(),'item',4,'create',t])
 json.dump(out,open('/mnt/project-files/library-sync/create_batch1b.json','w'),ensure_ascii=False,indent=1)
 print(len(out),[r[0] for r in out])

@@ -85,6 +85,51 @@
    85,
    12,
    "IV"
+  ],
+  "createdieselgenerators:modular_diesel_engine": [
+   380,
+   8,
+   "IV"
+  ],
+  "createdieselgenerators:huge_diesel_engine": [
+   1400,
+   3,
+   "IV"
+  ],
+  "createdieselgenerators:burner": [
+   140,
+   12,
+   "IV"
+  ],
+  "createdieselgenerators:canister": [
+   60,
+   24,
+   "IV"
+  ],
+  "createdieselgenerators:distillation_tower": [
+   220,
+   8,
+   "IV"
+  ],
+  "createdieselgenerators:pumpjack": [
+   300,
+   6,
+   "IV"
+  ],
+  "createdieselgenerators:engine_silencer": [
+   70,
+   12,
+   "IV"
+  ],
+  "createdieselgenerators:engine_turbocharger": [
+   160,
+   8,
+   "IV"
+  ],
+  "create_connected:shear_pin": [
+   18,
+   48,
+   "IV"
   ]
  }
 }

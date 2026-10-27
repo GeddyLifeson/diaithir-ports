@@ -20,6 +20,15 @@
   "createdieselgenerators:gasoline_bucket": "IV",
   "createdieselgenerators:biodiesel_bucket": "IV",
   "createdieselgenerators:ethanol_bucket": "IV",
-  "createdieselgenerators:plant_oil_bucket": "IV"
+  "createdieselgenerators:plant_oil_bucket": "IV",
+  "createdieselgenerators:modular_diesel_engine": "IV",
+  "createdieselgenerators:huge_diesel_engine": "IV",
+  "createdieselgenerators:burner": "IV",
+  "createdieselgenerators:canister": "IV",
+  "createdieselgenerators:distillation_tower": "IV",
+  "createdieselgenerators:pumpjack": "IV",
+  "createdieselgenerators:engine_silencer": "IV",
+  "createdieselgenerators:engine_turbocharger": "IV",
+  "create_connected:shear_pin": "IV"
  }
 }

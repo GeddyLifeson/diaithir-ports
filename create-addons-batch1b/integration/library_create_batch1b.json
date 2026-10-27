@@ -70,6 +70,69 @@
   "A clutch that engages once the shaft passes a set speed. Set the threshold with the scroll."
  ],
  [
+  "Shear Pin",
+  "item",
+  4,
+  "create",
+  "A shaft that gives way first. When the network is overstressed the pin breaks and the load is dropped, instead of wrecking the machines."
+ ],
+ [
+  "Modular Diesel Engine",
+  "item",
+  4,
+  "create",
+  "A diesel engine built from segments set in a line. Each segment adds stress; all share one tank, and the whole line runs on the same fuel."
+ ],
+ [
+  "Huge Diesel Engine",
+  "item",
+  4,
+  "create",
+  "A very large engine for the heaviest loads. Four buckets of fuel in the tank, high speed, and a great deal of stress."
+ ],
+ [
+  "Burner",
+  "item",
+  4,
+  "create",
+  "A fuel burner that heats basins like a blaze burner. Turn its valve or give it a redstone signal; it burns the liquid fuel piped into it."
+ ],
+ [
+  "Canister",
+  "item",
+  4,
+  "create",
+  "A portable fuel can, and a tank when set down. It keeps what is in it when picked up again."
+ ],
+ [
+  "Distillation Tower",
+  "item",
+  4,
+  "create",
+  "Stack three over a burner and feed crude oil into the bottom. Diesel collects in the second segment and gasoline in the third."
+ ],
+ [
+  "Pumpjack",
+  "item",
+  4,
+  "create",
+  "Draws crude oil from the pool under its chunk when turned. About one chunk in three holds oil; each pool runs dry in the end."
+ ],
+ [
+  "Engine Silencer",
+  "item",
+  4,
+  "create",
+  "Bolts onto a diesel engine to quieten it. It changes the sound and nothing else."
+ ],
+ [
+  "Engine Turbocharger",
+  "item",
+  4,
+  "create",
+  "Bolts onto a diesel engine to raise its speed and its stress by half again."
+ ],
+ [
   "Kondadindel",
   "item",
   4,
