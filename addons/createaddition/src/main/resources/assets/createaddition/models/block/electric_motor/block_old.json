@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "createaddition:block/electric_motor/brass_motor",
 		"1": "createaddition:block/electric_motor/brass_motor_sides",
-		"2": "create:block/brass_storage_block",
+		"2": "createaddition:block/ext/brass_storage_block",
 		"3": "createaddition:block/electric_motor/brass_electric_motor_back",
 		"particle": "createaddition:block/electric_motor/brass_motor"
 	},

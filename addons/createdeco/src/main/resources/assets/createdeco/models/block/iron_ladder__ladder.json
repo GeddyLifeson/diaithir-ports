@@ -1,5 +1,4 @@
 {
- "parent": "minecraft:block/cube_all",
  "textures": {
   "particle": "createdeco:block/iron_ladder",
   "texture": "createdeco:block/iron_ladder"

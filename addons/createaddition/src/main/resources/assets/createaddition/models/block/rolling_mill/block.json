@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "createaddition:block/rolling_mill/andesite_casing_short",
-		"1": "create:block/andesite_casing",
-		"2": "create:block/fan_side",
+		"1": "createaddition:block/ext/andesite_casing",
+		"2": "createaddition:block/ext/fan_side",
 		"particle": "createaddition:block/rolling_mill/andesite_casing_short"
 	},
 	"elements": [

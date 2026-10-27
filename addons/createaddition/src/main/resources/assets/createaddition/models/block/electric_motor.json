@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "createaddition:block/electric_motor/coil",
-		"1": "create:block/depot_top",
+		"1": "createaddition:block/ext/depot_top",
 		"particle": "createaddition:block/electric_motor/coil"
 	},
 	"elements": [

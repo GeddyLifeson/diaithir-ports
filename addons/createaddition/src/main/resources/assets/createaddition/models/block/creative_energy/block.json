@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "create:block/crate_creative",
-		"1": "create:block/creative_fluid_tank",
-		"particle": "create:block/crate_creative"
+		"0": "createaddition:block/ext/crate_creative",
+		"1": "createaddition:block/ext/creative_fluid_tank",
+		"particle": "createaddition:block/ext/crate_creative"
 	},
 	"elements": [
 		{

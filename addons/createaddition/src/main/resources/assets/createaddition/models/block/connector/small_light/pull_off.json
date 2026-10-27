@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "createaddition:block/connector/copper_pull",
 		"2": "createaddition:block/connector/bulb_off",
-		"particle": "create:block/andesite_casing"
+		"particle": "createaddition:block/ext/andesite_casing"
 	},
 	"elements": [
 		{

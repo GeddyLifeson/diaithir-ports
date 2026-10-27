@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "create:block/girder",
-		"particle": "create:block/industrial_iron_block"
+		"0": "createaddition:block/ext/girder",
+		"particle": "createaddition:block/ext/industrial_iron_block"
 	},
 	"elements": [
 		{

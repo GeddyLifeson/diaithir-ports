@@ -239,7 +239,7 @@ def reskin(vname, myid, texmap, default):
         base = m.split('/')[-1]
         vm = json.load(open(VAN + '/models/block/' + base + '.json'))
         nm = myid + '__' + base
-        out = {'parent': vm.get('parent', 'minecraft:block/cube_all')}
+        out = {'parent': vm['parent']} if 'parent' in vm else {}
         if 'textures' in vm:
             out['textures'] = {k: texmap.get(k, default) for k in vm['textures']}
         for k in ('elements', 'display', 'ambientocclusion', 'texture_size'):
@@ -366,9 +366,9 @@ def main():
         model(m + '_catwalk_stairs', {'textures': {'p': g, 'q': T(m + '_plate'), 'particle': g},
               'elements': [box(a, b, t) for a, b, t in st]})
         model(m + '_catwalk_stairs_rail_l', {'textures': {'q': T(m + '_plate'), 'particle': T(m + '_plate')}, 'elements': [
-            box([14, 2 + 4 * k + 2, 12 - 4 * k], [16, 14 + 4 * k, 16 - 4 * k], 'q') for k in range(4)]})
+            box([14, 4 + 3 * k, 12 - 4 * k], [16, min(16, 12 + 3 * k), 16 - 4 * k], 'q') for k in range(4)]})
         model(m + '_catwalk_stairs_rail_r', {'textures': {'q': T(m + '_plate'), 'particle': T(m + '_plate')}, 'elements': [
-            box([0, 2 + 4 * k + 2, 12 - 4 * k], [2, 14 + 4 * k, 16 - 4 * k], 'q') for k in range(4)]})
+            box([0, 4 + 3 * k, 12 - 4 * k], [2, min(16, 12 + 3 * k), 16 - 4 * k], 'q') for k in range(4)]})
         ys = {'north': 0, 'east': 90, 'south': 180, 'west': 270}
         mp = []
         for f, y in ys.items():

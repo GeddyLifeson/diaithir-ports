@@ -3,8 +3,8 @@
 	"textures": {
 		"particle": "createaddition:block/electric_motor/brass_electric_motor",
 		"main": "createaddition:block/electric_motor/brass_electric_motor",
-		"1_0": "create:block/axis",
-		"1_1": "create:block/axis_top"
+		"1_0": "createaddition:block/ext/axis",
+		"1_1": "createaddition:block/ext/axis_top"
 	},
 	"display": {
 		"gui": {
