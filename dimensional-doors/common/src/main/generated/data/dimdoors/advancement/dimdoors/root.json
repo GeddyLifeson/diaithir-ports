@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "inventory_changed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:ender_pearl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.root.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:rift_blade"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.root"
+    }
+  },
+  "requirements": [
+    [
+      "inventory_changed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "dimdoors:dimdoors/dark_ostiology",
+  "criteria": {
+    "private_pocket": {
+      "conditions": {
+        "to": "dimdoors:personal_pockets"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.home_away_from_home.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:item_ag_dim_minecraft_iron_door"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.home_away_from_home"
+    }
+  },
+  "requirements": [
+    [
+      "private_pocket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

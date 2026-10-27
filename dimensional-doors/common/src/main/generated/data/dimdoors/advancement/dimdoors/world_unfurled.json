@@ -1,0 +1,34 @@
+{
+  "parent": "dimdoors:dimdoors/enter_limbo",
+  "criteria": {
+    "get_the_unravelled": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dimdoors:unravelled_fabric"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.world_unfurled.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:unravelled_fabric"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.world_unfurled"
+    }
+  },
+  "requirements": [
+    [
+      "get_the_unravelled"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

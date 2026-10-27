@@ -1,0 +1,34 @@
+{
+  "parent": "dimdoors:dimdoors/enter_limbo",
+  "criteria": {
+    "get_the_immutable": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dimdoors:infrangible_fiber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.unravelled_but_immutable.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:infrangible_fiber"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.unravelled_but_immutable"
+    }
+  },
+  "requirements": [
+    [
+      "get_the_immutable"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

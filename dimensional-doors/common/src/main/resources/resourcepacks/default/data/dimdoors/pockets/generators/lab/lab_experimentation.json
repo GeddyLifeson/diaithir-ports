@@ -1,0 +1,29 @@
+{
+  "type": "dimdoors:schematic",
+  "id": "dimdoors:lab/lab_experimentation",
+  "builder": {
+    "type": "dimdoors:pocket",
+    "addons": [
+      {
+        "type": "dimdoors:environment",
+        "environment": {
+          "type": "dimdoors:overworld",
+          "day_time": 6000,
+          "cloud_height": 250
+        }
+      }
+    ]
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [1],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:template",
+      "ids": [2],
+      "templateId": "dimdoors:lab/labfinal"
+    }
+  ]
+}

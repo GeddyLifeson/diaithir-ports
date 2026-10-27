@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:y_clamped_gradient",
+    "from_value": 0.32,
+    "from_y": 0,
+    "to_value": -0.35,
+    "to_y": 256
+  },
+  "argument2": {
+    "type": "minecraft:shifted_noise",
+    "noise": "dimdoors:limbo/terrain",
+    "shift_x": "dimdoors:limbo/x_shift",
+    "shift_y": "dimdoors:limbo/y_shift",
+    "shift_z": "dimdoors:limbo/z_shift",
+    "xz_scale": 2.0,
+    "y_scale": 9.75
+  }
+}

@@ -1,0 +1,49 @@
+package org.dimdev.dimdoors.mixin;
+
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import org.dimdev.dimdoors.DimensionalDoors;
+import org.dimdev.dimdoors.mixin.accessor.EntityAccessor;
+import org.dimdev.dimdoors.world.ModDimensions;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+@Mixin(value = Player.class)
+public abstract class PlayerEntityMixin extends LivingEntityMixin {
+    @Shadow
+    public abstract void awardStat(Identifier stat);
+
+    @Inject(method = "causeFallDamage", at = @At("HEAD"), cancellable = true)
+    public void handleLimboFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+        if (ModDimensions.isLimboDimension(level())) {
+            cir.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "die", at = @At("HEAD"), cancellable = true)
+    public void checkDeath(DamageSource source, CallbackInfo ci) {
+        this.doOnDeathStuff(source, ci);
+    }
+
+    @Unique
+    protected void doOnDeathStuff(DamageSource source, CallbackInfo ci) {
+        if (shouldAvertDeath(source)) {
+            ((EntityAccessor) this).setRemovalReason(null);
+            this.dead = false;
+            this.setHealth(this.getMaxHealth());
+            ci.cancel();
+        }
+    }
+
+    @Unique
+    protected boolean shouldAvertDeath(DamageSource source) {
+        return ModDimensions.isPocketDimension(this.level()) || DimensionalDoors.getConfig().getLimboConfig().shouldUseLimbo(this.level().dimension()) || (DimensionalDoors.getConfig().getLimboConfig().hardcoreLimbo && ModDimensions.isLimboDimension(this.level()));
+    }
+}

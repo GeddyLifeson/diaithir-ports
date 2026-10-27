@@ -1,0 +1,34 @@
+{
+  "parent": "dimdoors:dimdoors/enter_limbo",
+  "criteria": {
+    "get_the_immutable": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dimdoors:frayed_filament"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.fuzzy_unreality.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:frayed_filament"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.fuzzy_unreality"
+    }
+  },
+  "requirements": [
+    [
+      "get_the_immutable"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

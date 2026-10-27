@@ -1,0 +1,19 @@
+{
+  "type": "dimdoors:schematic",
+  "id": "dimdoors:dungeon/ruins_multiple_warppoints",
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [1, 2, 3, 4, 5, 6, 7, 8],
+      "rift_data": "dimdoors:default_dungeon"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "org.dimdev.dimdoors.mixin.neoforge",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "client.BlockStateModelLoaderMixin",
+    "client.ModelBakeryMIxin"
+  ],
+  "mixins": [
+    "DataAttachmentMixin",
+    "ServerPlayerGameModeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "dimdoors:schematic",
+  "id": "dimdoors:dungeon/lantredom_end",
+  "builder": {
+    "type": "dimdoors:pocket",
+    "addons": [
+      {
+        "type": "dimdoors:environment",
+        "environment": {
+          "type": "dimdoors:end"
+        }
+      }
+    ]
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [2],
+      "rift_data": "dimdoors:default_dungeon"
+    },
+    {
+      "type": "dimdoors:relative",
+      "point_a": 1,
+      "point_b": 3
+    }
+  ]
+}

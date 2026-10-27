@@ -1,0 +1,19 @@
+{
+  "type": "dimdoors:schematic",
+  "id": "dimdoors:dungeon/silverfish_bridge",
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [1],
+      "rift_data": "dimdoors:default_dungeon"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "dimdoors:schematic",
+  "setup_loot": true,
+      "id": "dimdoors:classic/ruins/buggy_top_entry",
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [1],
+      "rift_data": "dimdoors:default_dungeon"
+    }
+  ]
+}

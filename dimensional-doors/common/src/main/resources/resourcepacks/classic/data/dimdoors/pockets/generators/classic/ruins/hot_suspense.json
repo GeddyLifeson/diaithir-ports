@@ -1,0 +1,20 @@
+{
+  "type": "dimdoors:schematic",
+      "id": "dimdoors:classic/ruins/hot_suspense",
+  "setup_loot": true,
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [1],
+      "rift_data": "dimdoors:escape"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "dimdoors:dimdoors/door_to_adventure",
+  "criteria": {
+    "get_fabric": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#dimdoors:fabric"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "dimdoors:textures/block/unravelled_fabric.png",
+    "description": {
+      "translate": "dimdoors.advancement.darklight.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dimdoors:black_fabric"
+    },
+    "title": {
+      "translate": "dimdoors.advancement.darklight"
+    }
+  },
+  "requirements": [
+    [
+      "get_fabric"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

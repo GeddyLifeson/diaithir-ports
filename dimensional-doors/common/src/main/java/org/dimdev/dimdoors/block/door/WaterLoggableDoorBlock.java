@@ -1,0 +1,89 @@
+package org.dimdev.dimdoors.block.door;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import org.jetbrains.annotations.Nullable;
+
+public abstract class WaterLoggableDoorBlock extends DoorBlock implements SimpleWaterloggedBlock {
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
+    protected WaterLoggableDoorBlock(Properties settings, BlockSetType blockSetType) {
+        super(blockSetType, settings);
+        registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(OPEN, false).setValue(HINGE, DoorHingeSide.LEFT).setValue(POWERED, false).setValue(HALF, DoubleBlockHalf.LOWER).setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(WATERLOGGED);
+    }
+
+//    @Override
+//    public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
+//    InteractionResult result = super.useWithoutItem(state, world, pos, player, hit);
+//    if (result.consumesAction()) {
+//        world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+//    }
+//    return result;
+//    }
+
+
+
+    @Override
+    public void setPlacedBy(Level world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
+    BlockPos up = pos.above();
+    world.setBlock(up, state.setValue(HALF, DoubleBlockHalf.UPPER).setValue(WATERLOGGED, world.isWaterAt(up)), 3);
+    }
+
+//    @Override
+//    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
+//    boolean bl = world.hasNeighborSignal(pos) || world.hasNeighborSignal(pos.relative(state.getValue(HALF) == DoubleBlockHalf.LOWER ? Direction.UP : Direction.DOWN));
+//    super.neighborChanged(state, world, pos, block, fromPos, notify);
+//    if (bl && !world.isClientSide && state.getValue(WATERLOGGED)) {
+//        world.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
+//    }
+//    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        FluidState fluidState = ctx.getLevel().getFluidState(ctx.getClickedPos());
+        boolean bl = fluidState.getType() == Fluids.WATER;
+        var state = super.getStateForPlacement(ctx);
+        if(state != null) state = state.setValue(WATERLOGGED, bl);
+
+        return state;
+    }
+
+    protected BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
+        if ((Boolean)blockState.getValue(WATERLOGGED)) {
+            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+        }
+
+        return super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2);
+    }
+
+    protected FluidState getFluidState(BlockState blockState) {
+        return (Boolean)blockState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(blockState);
+    }
+
+    @Override
+    public BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
+    return super.playerWillDestroy(world, pos, state, player);
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "dimdoors:schematic",
+  "id": "dimdoors:dungeon/ruins_diamond_tnt_trap_a",
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    }
+  ]
+}

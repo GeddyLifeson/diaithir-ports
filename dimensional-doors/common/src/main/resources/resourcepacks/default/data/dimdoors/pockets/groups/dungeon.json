@@ -1,0 +1,10 @@
+[
+    {
+      "path": "dimdoors:dungeon/",
+      "type": "dimdoors:path"
+    },
+    {
+      "type": "dimdoors:id",
+      "id": "dimdoors:lab/lab_hallway"
+    }
+]

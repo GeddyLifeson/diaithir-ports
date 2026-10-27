@@ -1,0 +1,24 @@
+{
+  "type": "dimdoors:schematic",
+  "setup_loot": true,
+  "id": "dimdoors:dungeon/ruins_camp_station",
+  "builder": {
+    "type": "dimdoors:pocket"
+  },
+  "modifiers": [
+    {
+      "layers": [
+        {
+          "block_state": "dimdoors:black_ancient_fabric",
+          "thickness": "1"
+        }
+      ],
+      "type": "dimdoors:shell"
+    },
+    {
+      "type": "dimdoors:rift_data",
+      "ids": [0],
+      "rift_data": "dimdoors:pocket_entrance"
+    }
+  ]
+}
