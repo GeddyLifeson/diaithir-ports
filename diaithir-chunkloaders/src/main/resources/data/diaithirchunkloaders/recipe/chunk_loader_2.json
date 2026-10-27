@@ -1,0 +1,3 @@
+{"type":"minecraft:crafting_shaped","category":"misc","pattern":["IEI","ELE","IEI"],
+ "key":{"I":"minecraft:iron_block","E":"minecraft:ender_pearl","L":"diaithirchunkloaders:chunk_loader_1"},
+ "result":{"id":"diaithirchunkloaders:chunk_loader_2","count":1}}
