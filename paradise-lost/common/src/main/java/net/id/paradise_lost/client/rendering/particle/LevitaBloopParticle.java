@@ -3,15 +3,16 @@ package net.id.paradise_lost.client.rendering.particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 
-public class LevitaBloopParticle extends TextureSheetParticle {
+public class LevitaBloopParticle extends SingleQuadParticle {
 
-    LevitaBloopParticle(ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-        super(clientWorld, d, e, f, g, h, i);
+    LevitaBloopParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, TextureAtlasSprite sprite) {
+        super(level, x, y, z, xd, yd, zd, sprite);
         float j = this.random.nextFloat() * 0.1F + 0.2F;
         this.rCol = j;
         this.gCol = j;
@@ -25,8 +26,8 @@ public class LevitaBloopParticle extends TextureSheetParticle {
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.OPAQUE;
     }
 
     @Override
@@ -57,13 +58,13 @@ public class LevitaBloopParticle extends TextureSheetParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-            LevitaBloopParticle suspendParticle = new LevitaBloopParticle(clientWorld, d, e, f, g, h, i);
-            suspendParticle.setColor(0.5F, 0.45F, 1.0F);
-            suspendParticle.pickSprite(this.spriteProvider);
-            suspendParticle.setAlpha(1.0F - clientWorld.random.nextFloat() * 0.7F);
-            suspendParticle.setLifetime(suspendParticle.getLifetime() / 2);
-            return suspendParticle;
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd, RandomSource random) {
+            LevitaBloopParticle particle = new LevitaBloopParticle(level, x, y, z, xd, yd, zd, this.spriteProvider.get(random));
+            particle.setColor(0.5F, 0.45F, 1.0F);
+            particle.setAlpha(1.0F - random.nextFloat() * 0.7F);
+            particle.setLifetime(particle.getLifetime() / 2);
+            return particle;
         }
     }
 }

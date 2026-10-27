@@ -1,15 +1,14 @@
 package net.id.paradise_lost.client.rendering.entity;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.id.paradise_lost.ModConstants;
+import net.id.paradise_lost.client.rendering.entity.state.LevitaArrowRenderState;
 import net.id.paradise_lost.entity.projectile.LevitaArrow;
-import net.minecraft.client.renderer.LightTexture;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.Identifier;
 
-public class LevitaArrowRenderer extends ArrowRenderer<LevitaArrow> {
+public class LevitaArrowRenderer extends ArrowRenderer<LevitaArrow, LevitaArrowRenderState> {
     private static final Identifier TEXTURE = ModConstants.locate("textures/entity/projectiles/levita_arrow.png");
 
     public LevitaArrowRenderer(EntityRendererProvider.Context context) {
@@ -17,12 +16,18 @@ public class LevitaArrowRenderer extends ArrowRenderer<LevitaArrow> {
     }
 
     @Override
-    public void render(LevitaArrow entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        super.render(entity, entityYaw, partialTicks, poseStack, buffer, LightTexture.FULL_BRIGHT);
+    public LevitaArrowRenderState createRenderState() {
+        return new LevitaArrowRenderState();
     }
 
     @Override
-    public Identifier getTextureLocation(LevitaArrow entity) {
+    public void extractRenderState(LevitaArrow entity, LevitaArrowRenderState state, float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
+        state.lightCoords = LightCoordsUtil.FULL_BRIGHT;
+    }
+
+    @Override
+    protected Identifier getTextureLocation(LevitaArrowRenderState state) {
         return TEXTURE;
     }
 }

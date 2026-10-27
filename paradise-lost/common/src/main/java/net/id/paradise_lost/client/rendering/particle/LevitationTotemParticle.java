@@ -6,6 +6,7 @@ import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SimpleAnimatedParticle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 
 public class LevitationTotemParticle extends SimpleAnimatedParticle {
     LevitationTotemParticle(ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, SpriteSet spriteProvider) {
@@ -31,8 +32,9 @@ public class LevitationTotemParticle extends SimpleAnimatedParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-            return new LevitationTotemParticle(clientWorld, d, e, f, g, h, i, this.spriteProvider);
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd, RandomSource random) {
+            return new LevitationTotemParticle(level, x, y, z, xd, yd, zd, this.spriteProvider);
         }
     }
 }

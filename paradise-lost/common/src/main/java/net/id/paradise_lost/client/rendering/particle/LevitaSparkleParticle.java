@@ -3,30 +3,25 @@ package net.id.paradise_lost.client.rendering.particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.core.particles.SimpleParticleType;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.util.RandomSource;
 
-import java.util.SplittableRandom;
+public class LevitaSparkleParticle extends SingleQuadParticle {
 
-public class LevitaSparkleParticle extends TextureSheetParticle {
-
-    private static final SplittableRandom random = new SplittableRandom();
     private final SpriteSet sprites;
     private final float polarity;
 
     protected LevitaSparkleParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet sprites) {
-        super(level, x, y, z);
+        super(level, x, y, z, sprites.first());
         this.sprites = sprites;
         this.lifetime = 12;
-        this.gravity = -random.nextFloat(0.002F, 0.004F);
+        this.gravity = -(0.002F + this.random.nextFloat() * 0.002F);
         this.xd = xSpeed;
         this.yd = ySpeed;
         this.zd = zSpeed;
-        this.polarity = random.nextBoolean() ? 0.01F : -0.01F;
-        //this.roll = random.nextFloat();
+        this.polarity = this.random.nextBoolean() ? 0.01F : -0.01F;
         this.setSpriteFromAge(sprites);
     }
 
@@ -39,6 +34,7 @@ public class LevitaSparkleParticle extends TextureSheetParticle {
             this.remove();
         } else {
             this.yd = this.yd - (double) this.gravity;
+            this.oRoll = this.roll;
             this.roll += polarity;
             this.move(this.xd, this.yd, this.zd);
             this.setSpriteFromAge(this.sprites);
@@ -46,19 +42,19 @@ public class LevitaSparkleParticle extends TextureSheetParticle {
     }
 
     @Override
-    public int getLightColor(float tint) {
+    public int getLightCoords(float partialTick) {
         return 240;
     }
 
     @Override
-    public @NotNull ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.OPAQUE;
     }
 
     public record DefaultFactory(SpriteSet spriteProvider) implements ParticleProvider<SimpleParticleType> {
-
-        public Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-            return new LevitaSparkleParticle(clientWorld, d, e, f, g, h, i, this.spriteProvider);
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd, RandomSource random) {
+            return new LevitaSparkleParticle(level, x, y, z, xd, yd, zd, this.spriteProvider);
         }
     }
 

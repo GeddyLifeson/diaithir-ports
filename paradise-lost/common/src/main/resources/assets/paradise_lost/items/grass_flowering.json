@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/grass_flowering"
+    "model": "paradise_lost:item/grass_flowering",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10673090
+      }
+    ]
   }
 }

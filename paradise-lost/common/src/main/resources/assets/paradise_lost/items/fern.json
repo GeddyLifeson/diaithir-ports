@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/fern"
+    "model": "paradise_lost:item/fern",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10673090
+      }
+    ]
   }
 }

@@ -1,9 +1,7 @@
 package net.id.paradise_lost.client.model.entity;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.id.paradise_lost.entity.passive.moa.MoaEntity;
-import net.minecraft.client.model.*;
+import net.id.paradise_lost.client.rendering.entity.state.MoaRenderState;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -11,9 +9,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.phys.Vec3;
 
-public class MoaModel extends EntityModel<MoaEntity> {
+public class MoaModel extends EntityModel<MoaRenderState> {
     private final ModelPart beak;
     private final ModelPart neck;
     private final ModelPart head;
@@ -32,6 +29,7 @@ public class MoaModel extends EntityModel<MoaEntity> {
     private final ModelPart tail;
 
     public MoaModel(ModelPart root) {
+        super(root);
         this.torso = root.getChild("torso");
         this.tail = this.torso.getChild("tail");
         this.neck = this.torso.getChild("neck");
@@ -73,31 +71,29 @@ public class MoaModel extends EntityModel<MoaEntity> {
     }
 
     @Override
-    public void setupAnim(MoaEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        saddle.visible = entity.isSaddled();
-        chest.visible = entity.hasChest();
-        float netYaw = netHeadYaw * 0.017453292F;
+    public void setupAnim(MoaRenderState state) {
+        super.setupAnim(state);
+        saddle.visible = state.saddled;
+        chest.visible = state.hasChest;
+        float limbSwing = state.walkAnimationPos;
+        float limbSwingAmount = state.walkAnimationSpeed;
+        float netYaw = state.yRot * 0.017453292F;
         head.yRot = netYaw / 4;
         neck.yRot = (netYaw / 4) * 3;
-        float speedPitch = (float) Math.min((new Vec3(entity.getDeltaMovement().x(), 0, entity.getDeltaMovement().z()).length() * 1.1F), 1F) + 0.1309F;
+        float speedPitch = Math.min(state.horizontalSpeed * 1.1F, 1F) + 0.1309F;
         neck.xRot = speedPitch;
-        head.xRot = -speedPitch + headPitch * 0.017453F;
-        if (!entity.isInAir) {
+        head.xRot = -speedPitch + state.xRot * 0.017453F;
+        if (!state.inAir) {
             limbSwingAmount /= 2;
             right_leg.xRot = Mth.cos(limbSwing * 0.6662F) * 2F * limbSwingAmount + 0.2618F;
             left_leg.xRot = Mth.cos(limbSwing * 0.6662F + 3.1415927F) * 2F * limbSwingAmount + 0.2618F;
         } else {
-            left_leg.xRot = entity.getLegPitch();
+            left_leg.xRot = state.legPitch;
             right_leg.xRot = left_leg.xRot;
         }
-        left_wing.zRot = entity.getWingRoll();
+        left_wing.zRot = state.wingRoll;
         right_wing.zRot = -left_wing.zRot;
-        left_wing.yRot = entity.getWingYaw();
+        left_wing.yRot = state.wingYaw;
         right_wing.yRot = -left_wing.yRot;
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        torso.render(matrices, vertices, light, overlay);
     }
 }

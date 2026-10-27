@@ -1,18 +1,24 @@
 package net.id.paradise_lost.client.rendering.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.RisingParticle;
+import net.minecraft.client.particle.SingleQuadParticle;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.util.LightCoordsUtil;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 
 public class CherineFlameParticle extends RisingParticle {
-    CherineFlameParticle(ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-        super(clientWorld, d, e, f, g, h, i);
+    CherineFlameParticle(ClientLevel level, double x, double y, double z, double xd, double yd, double zd, TextureAtlasSprite sprite) {
+        super(level, x, y, z, xd, yd, zd, sprite);
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.OPAQUE;
     }
 
     @Override
@@ -22,24 +28,14 @@ public class CherineFlameParticle extends RisingParticle {
     }
 
     @Override
-    public float getQuadSize(float tickDelta) {
-        float f = ((float) this.age + tickDelta) / (float) this.lifetime;
+    public float getQuadSize(float partialTick) {
+        float f = ((float) this.age + partialTick) / (float) this.lifetime;
         return this.quadSize * (1.0F - f * f * 0.5F);
     }
 
     @Override
-    public int getLightColor(float tint) {
-        float f = ((float) this.age + tint) / (float) this.lifetime;
-        f = Mth.clamp(f, 0.0F, 1.0F);
-        int i = super.getLightColor(tint);
-        int j = i & 255;
-        int k = i >> 16 & 255;
-        j += (int) (f * 15.0F * 16.0F);
-        if (j > 240) {
-            j = 240;
-        }
-
-        return j | k << 16;
+    public int getLightCoords(float partialTick) {
+        return LightCoordsUtil.addSmoothBlockEmission(super.getLightCoords(partialTick), (this.age + partialTick) / this.lifetime);
     }
 
     public static class DefaultFactory implements ParticleProvider<SimpleParticleType> {
@@ -50,10 +46,8 @@ public class CherineFlameParticle extends RisingParticle {
         }
 
         @Override
-        public Particle createParticle(SimpleParticleType defaultParticleType, ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-            CherineFlameParticle flameParticle = new CherineFlameParticle(clientWorld, d, e, f, g, h, i);
-            flameParticle.pickSprite(this.spriteProvider);
-            return flameParticle;
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd, RandomSource random) {
+            return new CherineFlameParticle(level, x, y, z, xd, yd, zd, this.spriteProvider.get(random));
         }
     }
 }

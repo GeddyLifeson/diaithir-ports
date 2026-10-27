@@ -1,10 +1,7 @@
 package net.id.paradise_lost.client.model.entity;
 
-import com.google.common.collect.ImmutableList;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.id.paradise_lost.entity.passive.PopomEntity;
-import net.minecraft.client.model.AgeableListModel;
+import net.id.paradise_lost.client.rendering.entity.state.PopomRenderState;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -14,9 +11,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 
-public class PopomEntityModel<T extends PopomEntity> extends AgeableListModel<T> {
-
-    public int furSize = 0;
+public class PopomEntityModel extends EntityModel<PopomRenderState> {
 
     private final ModelPart body0;
     private final ModelPart body1;
@@ -31,7 +26,7 @@ public class PopomEntityModel<T extends PopomEntity> extends AgeableListModel<T>
     private final ModelPart mlleg;
 
     public PopomEntityModel(ModelPart root) {
-        super(true, 25.0F, 2.0F, 3.0F, 3.0F, 48.0F);
+        super(root);
         this.body0 = root.getChild("body0");
         this.body1 = root.getChild("body1");
         this.body2 = root.getChild("body2");
@@ -76,42 +71,22 @@ public class PopomEntityModel<T extends PopomEntity> extends AgeableListModel<T>
     }
 
     @Override
-    public void renderToBuffer(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        super.renderToBuffer(matrices, vertices, light, overlay, color);
-        if (this.young) {
-            matrices.pushPose();
-            float f = 0.5F;
-            matrices.scale(f, f, f);
-            matrices.translate(0.0F, 1.6F, 0.0F);
-            this.getFurs()[1].render(matrices, vertices, light, overlay, color);
-            matrices.popPose();
-        } else {
-            this.getFurs()[Math.min(3, furSize)].render(matrices, vertices, light, overlay, color);
+    public void setupAnim(PopomRenderState state) {
+        super.setupAnim(state);
+        // Only one fur layer is drawn: babies always show the second layer, adults show their fur size.
+        int fur = state.isBaby ? 1 : Math.min(3, state.furSize);
+        ModelPart[] furs = {this.body0, this.body1, this.body2, this.body3};
+        for (int i = 0; i < furs.length; i++) {
+            furs[i].visible = i == fur;
         }
-    }
-
-    @Override
-    protected Iterable<ModelPart> headParts() {
-        return ImmutableList.of(this.head);
-    }
-
-    @Override
-    protected Iterable<ModelPart> bodyParts() {
-        return ImmutableList.of(this.frleg, this.flleg, this.brleg, this.blleg, this.mrleg, this.mlleg);
-    }
-
-    protected ModelPart[] getFurs() {
-        return new ModelPart[]{this.body0, this.body1, this.body2, this.body3};
-    }
-
-    @Override
-    public void setupAnim(PopomEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        if (entity.isBaby()) {
+        float limbAngle = state.walkAnimationPos;
+        float limbDistance = state.walkAnimationSpeed;
+        if (state.isBaby) {
             this.head.xRot = 0;
-            this.head.yRot = headYaw * (float) (Math.PI / 180.0) * 0.1F;
+            this.head.yRot = state.yRot * (float) (Math.PI / 180.0) * 0.1F;
         } else {
-            this.head.xRot = headPitch * (float) (Math.PI / 180.0) * 0.3F + entity.getHeadAngle(animationProgress);
-            this.head.yRot = headYaw * (float) (Math.PI / 180.0) * 0.3F;
+            this.head.xRot = state.xRot * (float) (Math.PI / 180.0) * 0.3F + state.headAngle;
+            this.head.yRot = state.yRot * (float) (Math.PI / 180.0) * 0.3F;
         }
         this.brleg.xRot = Mth.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
         this.blleg.xRot = Mth.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance;
@@ -119,9 +94,8 @@ public class PopomEntityModel<T extends PopomEntity> extends AgeableListModel<T>
         this.flleg.xRot = Mth.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance;
         this.mrleg.xRot = Mth.cos(limbAngle * 0.6662F + (float) Math.PI) * 1.4F * limbDistance;
         this.mlleg.xRot = Mth.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
-        this.body0.zRot = Mth.cos(limbAngle * 0.9F) * 0.3F * limbDistance;
-        this.body1.zRot = Mth.cos(limbAngle * 0.9F) * 0.3F * limbDistance;
-        this.body2.zRot = Mth.cos(limbAngle * 0.9F) * 0.3F * limbDistance;
-        this.body3.zRot = Mth.cos(limbAngle * 0.9F) * 0.3F * limbDistance;
+        for (ModelPart fp : furs) {
+            fp.zRot = Mth.cos(limbAngle * 0.9F) * 0.3F * limbDistance;
+        }
     }
 }

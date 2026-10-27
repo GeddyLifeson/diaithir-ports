@@ -2,54 +2,54 @@ package net.id.paradise_lost.client.rendering.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.id.paradise_lost.api.BlockLikeEntity;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.entity.state.FallingBlockRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 
-@SuppressWarnings("unused")
-public class BlockLikeEntityRenderer extends EntityRenderer<BlockLikeEntity> {
-    private final RandomSource random = RandomSource.create();
+/**
+ * Renders a {@link BlockLikeEntity} as a moving block, mirroring the vanilla falling block renderer.
+ */
+public class BlockLikeEntityRenderer extends EntityRenderer<BlockLikeEntity, FallingBlockRenderState> {
 
-    public BlockLikeEntityRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+    public BlockLikeEntityRenderer(EntityRendererProvider.Context context) {
+        super(context);
         this.shadowRadius = 0.5F;
     }
 
     @Override
-    public void render(BlockLikeEntity entity, float yaw, float tickDelta, PoseStack matrices, MultiBufferSource vertexConsumers, int light) {
-        BlockState blockState = entity.getBlockState();
+    public FallingBlockRenderState createRenderState() {
+        return new FallingBlockRenderState();
+    }
 
-        if (blockState.getRenderShape() == RenderShape.MODEL) {
-            Level world = entity.getWorldObj();
-
-            if (blockState != world.getBlockState(new BlockPos(entity.blockPosition())) && blockState.getRenderShape() != RenderShape.INVISIBLE) {
-                matrices.pushPose();
-
-                BlockPos blockpos = new BlockPos(new BlockPos(entity.blockPosition()));
-                matrices.translate(-0.5, 0.0, -0.5);
-                BlockRenderDispatcher blockRenderManager = Minecraft.getInstance().getBlockRenderer();
-                blockRenderManager.getModelRenderer().tesselateBlock(world, blockRenderManager.getBlockModel(blockState), blockState, blockpos, matrices, vertexConsumers.getBuffer(ItemBlockRenderTypes.getMovingBlockRenderType(blockState)), false, random, blockState.getSeed(entity.getOrigin()), OverlayTexture.NO_OVERLAY);
-                matrices.popPose();
-                super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
-            }
+    @Override
+    public void extractRenderState(BlockLikeEntity entity, FallingBlockRenderState state, float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
+        BlockPos pos = BlockPos.containing(entity.getX(), entity.getBoundingBox().maxY, entity.getZ());
+        state.movingBlockRenderState.randomSeedPos = entity.getOrigin();
+        state.movingBlockRenderState.blockPos = pos;
+        state.movingBlockRenderState.blockState = entity.getBlockState();
+        if (entity.level() instanceof ClientLevel clientLevel) {
+            state.movingBlockRenderState.biome = clientLevel.getBiome(pos);
+            state.movingBlockRenderState.cardinalLighting = clientLevel.cardinalLighting();
+            state.movingBlockRenderState.lightEngine = clientLevel.getLightEngine();
         }
     }
 
-    @SuppressWarnings("deprecation")
     @Override
-    public Identifier getTextureLocation(BlockLikeEntity entityIn) {
-        return TextureAtlas.LOCATION_BLOCKS;
+    public void submit(FallingBlockRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
+        BlockState blockState = state.movingBlockRenderState.blockState;
+        if (blockState.getRenderShape() == RenderShape.MODEL) {
+            poseStack.pushPose();
+            poseStack.translate(-0.5, 0.0, -0.5);
+            collector.submitMovingBlock(poseStack, state.movingBlockRenderState);
+            poseStack.popPose();
+            super.submit(state, poseStack, collector, camera);
+        }
     }
 }

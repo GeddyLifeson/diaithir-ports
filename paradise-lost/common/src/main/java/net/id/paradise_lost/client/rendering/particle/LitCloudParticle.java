@@ -3,21 +3,20 @@ package net.id.paradise_lost.client.rendering.particle;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 
-public class LitCloudParticle extends TextureSheetParticle {
+public class LitCloudParticle extends SingleQuadParticle {
     private final SpriteSet spriteProvider;
 
     LitCloudParticle(ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, SpriteSet spriteProvider) {
-        super(world, x, y, z, 0.0, 0.0, 0.0);
+        super(world, x, y, z, 0.0, 0.0, 0.0, spriteProvider.first());
         this.friction = 0.96F;
         this.spriteProvider = spriteProvider;
-        float f = 2.5F;
         this.xd *= 0.10000000149011612;
         this.yd *= 0.10000000149011612;
         this.zd *= 0.10000000149011612;
@@ -35,14 +34,17 @@ public class LitCloudParticle extends TextureSheetParticle {
         this.setSpriteFromAge(spriteProvider);
     }
 
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    @Override
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.TRANSLUCENT;
     }
 
-    public float getQuadSize(float tickDelta) {
-        return this.quadSize * Mth.clamp(((float) this.age + tickDelta) / (float) this.lifetime * 32.0F, 0.0F, 1.0F);
+    @Override
+    public float getQuadSize(float partialTick) {
+        return this.quadSize * Mth.clamp(((float) this.age + partialTick) / (float) this.lifetime * 32.0F, 0.0F, 1.0F);
     }
 
+    @Override
     public void tick() {
         super.tick();
         if (!this.removed) {
@@ -57,11 +59,10 @@ public class LitCloudParticle extends TextureSheetParticle {
                 }
             }
         }
-
     }
 
     @Override
-    public int getLightColor(float tint) {
+    public int getLightCoords(float partialTick) {
         return 240;
     }
 
@@ -72,8 +73,9 @@ public class LitCloudParticle extends TextureSheetParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientWorld, double d, double e, double f, double g, double h, double i) {
-            return new LitCloudParticle(clientWorld, d, e, f, g, h, i, this.spriteProvider);
+        @Override
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xd, double yd, double zd, RandomSource random) {
+            return new LitCloudParticle(level, x, y, z, xd, yd, zd, this.spriteProvider);
         }
     }
 }

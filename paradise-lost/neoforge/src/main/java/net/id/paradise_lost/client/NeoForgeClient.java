@@ -1,32 +1,30 @@
 package net.id.paradise_lost.client;
 
 import net.id.paradise_lost.ModConstants;
-import net.id.paradise_lost.client.rendering.particle.LevitaSparkleParticle;
-import net.id.paradise_lost.services.NeoForgeClientHelper;
-import net.id.paradise_lost.client.model.CalciteFlowerPotModel;
+import net.id.paradise_lost.client.item.XpCircletChargedProperty;
 import net.id.paradise_lost.client.model.ParadiseLostModelLayers;
 import net.id.paradise_lost.client.rendering.armor.OrnateOlviteArmorClientExtensions;
 import net.id.paradise_lost.client.rendering.block.PalaceDoorBlockEntityRendererNeoForge;
 import net.id.paradise_lost.client.rendering.particle.*;
+import net.id.paradise_lost.client.rendering.ui.BloodstoneHUDRenderer;
 import net.id.paradise_lost.client.rendering.util.ParadiseLostColorProviders;
 import net.id.paradise_lost.client.screen.MoaScreen;
-import net.id.paradise_lost.registry.ItemRegistry;
 import net.id.paradise_lost.particle.ParadiseLostParticleTypes;
+import net.id.paradise_lost.registry.ItemRegistry;
 import net.id.paradise_lost.screen.ParadiseLostScreens;
 import net.id.paradise_lost.util.ParadiseLostSoundEvents;
 import net.id.paradise_lost.world.dimension.ParadiseLostDimension;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterConditionalItemModelPropertyEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.SelectMusicEvent;
@@ -40,18 +38,21 @@ public class NeoForgeClient {
         modBus.addListener(EntityRenderersEvent.RegisterLayerDefinitions.class, NeoForgeClient::registerLayers);
         modBus.addListener(RegisterParticleProvidersEvent.class, NeoForgeClient::registerParticles);
         modBus.addListener(RegisterMenuScreensEvent.class, NeoForgeClient::registerScreens);
-        modBus.addListener(RegisterColorHandlersEvent.Block.class, NeoForgeClient::registerBlockColors);
-        modBus.addListener(RegisterColorHandlersEvent.Item.class, NeoForgeClient::registerItemColors);
+        modBus.addListener(RegisterColorHandlersEvent.BlockTintSources.class, NeoForgeClient::registerBlockTints);
+        modBus.addListener(RegisterConditionalItemModelPropertyEvent.class, NeoForgeClient::registerItemModelProperties);
         modBus.addListener(RegisterClientExtensionsEvent.class, NeoForgeClient::registerClientExtensions);
-        modBus.addListener(FMLClientSetupEvent.class, NeoForgeClient::onClientSetup);
-
-        modBus.addListener(ModelEvent.ModifyBakingResult.class, CalciteFlowerPotModel::onModifyBakingResult);
+        modBus.addListener(RegisterGuiLayersEvent.class, NeoForgeClient::registerGuiLayers);
 
         NeoForge.EVENT_BUS.addListener(EventPriority.LOW, NeoForgeClient::onSelectMusic);
     }
 
     private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
         event.registerItem(new OrnateOlviteArmorClientExtensions(), ItemRegistry.OLVITE_HELMET_ORNATE.get());
+        event.registerItem(new OlviteSpyglassClientExtensions(), ItemRegistry.OLVITE_SPYGLASS.get());
+    }
+
+    private static void registerGuiLayers(RegisterGuiLayersEvent event) {
+        event.registerAboveAll(ModConstants.locate("bloodstone_hud"), BloodstoneHUDRenderer::render);
     }
 
     private static void onSelectMusic(SelectMusicEvent event) {
@@ -84,23 +85,11 @@ public class NeoForgeClient {
         event.register(ParadiseLostScreens.MOA.get(), MoaScreen::new);
     }
 
-    private static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        ParadiseLostColorProviders.registerBlocks((color, blocks) -> event.register(color, blocks));
+    private static void registerBlockTints(RegisterColorHandlersEvent.BlockTintSources event) {
+        ParadiseLostColorProviders.registerBlocks((sources, blocks) -> event.register(sources, blocks));
     }
 
-    private static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        ParadiseLostColorProviders.registerItems((color, blocks) -> {
-            Item[] items = new Item[blocks.length];
-            for (int i = 0; i < blocks.length; i++) {
-                items[i] = blocks[i].asItem();
-            }
-            event.register(color, items);
-        });
-    }
-
-    private static void onClientSetup(FMLClientSetupEvent event) {
-
-        ClientRegistration.registerItemProperties();
-        event.enqueueWork(NeoForgeClientHelper::applyDeferredRenderLayers);
+    private static void registerItemModelProperties(RegisterConditionalItemModelPropertyEvent event) {
+        event.register(ModConstants.locate("charged"), XpCircletChargedProperty.MAP_CODEC);
     }
 }

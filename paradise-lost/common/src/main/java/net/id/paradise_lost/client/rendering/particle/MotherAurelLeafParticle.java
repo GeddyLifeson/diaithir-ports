@@ -1,21 +1,25 @@
 package net.id.paradise_lost.client.rendering.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.SingleQuadParticle;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.tags.FluidTags;
 import java.util.SplittableRandom;
 
-public class MotherAurelLeafParticle extends TextureSheetParticle {
+public class MotherAurelLeafParticle extends SingleQuadParticle {
 
     private static final SplittableRandom random = new SplittableRandom();
     private final float rotateFactor;
     private final double velocityComposite, velocityDown;
 
-    protected MotherAurelLeafParticle(ClientLevel clientWorld, double d, double e, double f, double g, double h, double i, SpriteSet provider) {
-        super(clientWorld, d, e, f);
-        this.pickSprite(provider);
+    protected MotherAurelLeafParticle(ClientLevel clientWorld, double d, double e, double f, double g, double h, double i, TextureAtlasSprite sprite) {
+        super(clientWorld, d, e, f, sprite);
 
         this.hasPhysics = true;
         this.gravity = 0.09F;
@@ -60,13 +64,13 @@ public class MotherAurelLeafParticle extends TextureSheetParticle {
     }
 
     @Override
-    public int getLightColor(float tint) {
+    public int getLightCoords(float partialTick) {
         return 200;
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.TRANSLUCENT;
     }
 
     public static class DefaultFactory implements ParticleProvider<SimpleParticleType> {
@@ -77,8 +81,8 @@ public class MotherAurelLeafParticle extends TextureSheetParticle {
         }
 
         @Override
-        public Particle createParticle(SimpleParticleType parameters, ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-            return new MotherAurelLeafParticle(world, x, y, z, velocityX, velocityY, velocityZ, this.provider);
+        public Particle createParticle(SimpleParticleType parameters, ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, RandomSource random) {
+            return new MotherAurelLeafParticle(world, x, y, z, velocityX, velocityY, velocityZ, this.provider.get(random));
         }
     }
 }

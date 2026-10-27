@@ -7,12 +7,18 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 
-public class OrnateOlviteArmorModel extends HumanoidModel<LivingEntity> {
+public class OrnateOlviteArmorModel extends HumanoidModel<HumanoidRenderState> {
 
     public OrnateOlviteArmorModel(ModelPart root) {
         super(root);
+        // Only the helmet is rendered with this model; hide every other part.
+        this.body.visible = false;
+        this.rightArm.visible = false;
+        this.leftArm.visible = false;
+        this.rightLeg.visible = false;
+        this.leftLeg.visible = false;
     }
 
     public static LayerDefinition getTexturedModelData() {

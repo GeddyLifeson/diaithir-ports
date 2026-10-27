@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/shamrock"
+    "model": "paradise_lost:item/shamrock",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15859609
+      }
+    ]
   }
 }

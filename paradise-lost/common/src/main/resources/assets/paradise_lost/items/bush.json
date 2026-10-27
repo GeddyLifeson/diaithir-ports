@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/bush"
+    "model": "paradise_lost:item/bush",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10673090
+      }
+    ]
   }
 }

@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/highlands_grass"
+    "model": "paradise_lost:item/highlands_grass",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10673090
+      }
+    ]
   }
 }

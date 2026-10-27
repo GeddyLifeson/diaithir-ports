@@ -4,31 +4,43 @@ import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.client.model.ParadiseLostModelLayers;
 import net.id.paradise_lost.client.model.entity.SentinelEntityModel;
 import net.id.paradise_lost.client.model.entity.SentinelEyesFeatureRenderer;
+import net.id.paradise_lost.client.rendering.entity.state.SentinelRenderState;
 import net.id.paradise_lost.entity.hostile.SentinelEntity;
-import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.renderer.entity.ArmorModelSet;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.Identifier;
 
-public class SentinelEntityRenderer extends HumanoidMobRenderer<SentinelEntity, SentinelEntityModel<SentinelEntity>> {
+public class SentinelEntityRenderer extends HumanoidMobRenderer<SentinelEntity, SentinelRenderState, SentinelEntityModel> {
     private static final Identifier TEXTURE = ModConstants.locate("textures/entity/sentinel/sentinel.png");
 
-    public SentinelEntityRenderer(EntityRendererProvider.Context renderManager) {
-        this(renderManager, ParadiseLostModelLayers.SENTINEL, ParadiseLostModelLayers.SENTINEL_INNER_ARMOR, ParadiseLostModelLayers.SENTINEL_OUTER_ARMOR);
-        this.addLayer(new SentinelEyesFeatureRenderer<>(this));
+    public SentinelEntityRenderer(EntityRendererProvider.Context context) {
+        super(context, new SentinelEntityModel(context.bakeLayer(ParadiseLostModelLayers.SENTINEL)), 0.5F);
+        this.addLayer(new HumanoidArmorLayer<>(this,
+                ArmorModelSet.bake(ParadiseLostModelLayers.SENTINEL_ARMOR, context.getModelSet(), SentinelEntityModel::new),
+                context.getEquipmentRenderer()));
+        this.addLayer(new SentinelEyesFeatureRenderer(this));
     }
 
-    public Identifier getTextureLocation(SentinelEntity entity) {
+    @Override
+    public SentinelRenderState createRenderState() {
+        return new SentinelRenderState();
+    }
+
+    @Override
+    public void extractRenderState(SentinelEntity entity, SentinelRenderState state, float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
+        state.enlightened = entity.getEnlightened();
+    }
+
+    @Override
+    public Identifier getTextureLocation(SentinelRenderState state) {
         return TEXTURE;
     }
 
-    public SentinelEntityRenderer(EntityRendererProvider.Context ctx, ModelLayerLocation layer, ModelLayerLocation legsArmorLayer, ModelLayerLocation bodyArmorLayer) {
-        super(ctx, new SentinelEntityModel<>(ctx.bakeLayer(layer)), 0.5F);
-        this.addLayer(new HumanoidArmorLayer<>(this, new SentinelEntityModel<>(ctx.bakeLayer(legsArmorLayer)), new SentinelEntityModel<>(ctx.bakeLayer(bodyArmorLayer)), ctx.getModelManager()));
-    }
-
-    protected float getShadowRadius(SentinelEntity sentinelEntity) {
-        return sentinelEntity.getEnlightened() ? super.getShadowRadius(sentinelEntity) * sentinelEntity.getAgeScale() : 0F;
+    @Override
+    protected float getShadowRadius(SentinelRenderState state) {
+        return state.enlightened ? super.getShadowRadius(state) : 0F;
     }
 }

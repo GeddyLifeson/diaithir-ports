@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/aurel_leaf_pile"
+    "model": "paradise_lost:item/aurel_leaf_pile",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15859609
+      }
+    ]
   }
 }

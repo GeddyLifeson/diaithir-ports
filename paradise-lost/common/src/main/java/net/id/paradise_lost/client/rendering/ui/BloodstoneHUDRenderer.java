@@ -1,6 +1,5 @@
 package net.id.paradise_lost.client.rendering.ui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.api.MoaAPI;
 import net.id.paradise_lost.entity.passive.moa.MoaAttributes;
@@ -8,9 +7,15 @@ import net.id.paradise_lost.item.tool.bloodstone.*;
 import net.id.paradise_lost.item.ParadiseLostDataComponentTypes;
 import net.id.paradise_lost.registry.MoaRaceRegistry;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.MobEffectTextureManager;
+import net.minecraft.client.resources.model.sprite.SpriteId;
+import net.minecraft.core.Holder;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Tuple;
@@ -22,8 +27,11 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
 public class BloodstoneHUDRenderer {
-    public static void render(GuiGraphics context) {
+    public static void render(GuiGraphicsExtractor context, DeltaTracker deltaTracker) {
         Player player = Minecraft.getInstance().player;
+        if (player == null) {
+            return;
+        }
         ItemStack stack = player.getMainHandItem();
         if (stack.getItem() instanceof BloodstoneItem) {
             var hasBloodstoneData = stack.getComponents().stream().anyMatch((c) -> c.type() == ParadiseLostDataComponentTypes.MOA_GENES || c.type() == ParadiseLostDataComponentTypes.BLOODSTONE);
@@ -32,10 +40,8 @@ public class BloodstoneHUDRenderer {
                 BloodstoneCapturedData capturedData = BloodstoneCapturedData.fromComponents(stack);
                 if (client.screen == null && isLookingAtMatchingEntity(client, capturedData) || doUUIDMatch(player, capturedData)) {
                     var matrixStack = context.pose();
-                    matrixStack.pushPose();
-                    RenderSystem.enableBlend();
-                    RenderSystem.defaultBlendFunc();
-                    matrixStack.translate(client.getWindow().getGuiScaledWidth() / 2f, client.getWindow().getGuiScaledHeight() / 2f, 0);
+                    matrixStack.pushMatrix();
+                    matrixStack.translate(context.guiWidth() / 2f, context.guiHeight() / 2f);
                     if (stack.getItem() instanceof CherineBloodstoneItem) {
                         renderCherine(context, client, capturedData);
                     } else if (stack.getItem() instanceof OlviteBloodstoneItem) {
@@ -43,8 +49,7 @@ public class BloodstoneHUDRenderer {
                     } else if (stack.getItem() instanceof SurtrumBloodstoneItem) {
                         renderSurtrum(context, client, capturedData);
                     }
-                    RenderSystem.disableBlend();
-                    matrixStack.popPose();
+                    matrixStack.popMatrix();
                 }
             }
         }
@@ -68,29 +73,26 @@ public class BloodstoneHUDRenderer {
         return capturedData.bloodstoneComponent.uuid().equals(entity.getUUID());
     }
 
-    private static void renderCherine(GuiGraphics context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
-        MobEffectTextureManager statusEffectSpriteManager = client.getMobEffectTextures();
-        renderRing(context, 0, 0);
+    private static void renderCherine(GuiGraphicsExtractor context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
+                renderRing(context, 0, 0);
         var component = bloodstoneCapturedData.bloodstoneComponent;
         renderText(context, client, component.name(), 0, -80);
-        renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.REGENERATION), Component.literal(component.health()), 0, 80);
-        renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.RESISTANCE), Component.literal(component.defense()), -80, 0);
-        renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.ABSORPTION), Component.literal(component.toughness()), 80, 0);
+        renderIconWText(context, client, effectIcon(MobEffects.REGENERATION), Component.literal(component.health()), 0, 80);
+        renderIconWText(context, client, effectIcon(MobEffects.RESISTANCE), Component.literal(component.defense()), -80, 0);
+        renderIconWText(context, client, effectIcon(MobEffects.ABSORPTION), Component.literal(component.toughness()), 80, 0);
     }
 
-    private static void renderOlvite(GuiGraphics context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
-        MobEffectTextureManager statusEffectSpriteManager = client.getMobEffectTextures();
-        var effectAtlas = client.getTextureAtlas(Identifier.parse("textures/atlas/blocks.png"));
-        TextureAtlasSprite affinitySprite = effectAtlas.apply(ModConstants.locate("item/icons/affinity"));
-        TextureAtlasSprite raceSprite = effectAtlas.apply(ModConstants.locate("item/icons/race"));
+    private static void renderOlvite(GuiGraphicsExtractor context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
+                TextureAtlasSprite affinitySprite = context.getSprite(new SpriteId(TextureAtlas.LOCATION_BLOCKS, ModConstants.locate("item/icons/affinity")));
+        TextureAtlasSprite raceSprite = context.getSprite(new SpriteId(TextureAtlas.LOCATION_BLOCKS, ModConstants.locate("item/icons/race")));
 
         renderRing(context, 0, 0);
         renderText(context, client, bloodstoneCapturedData.bloodstoneComponent.name(), 0, -80);
 
         if (bloodstoneCapturedData.moaGeneComponent != null) {
             renderIconWText(context, client, affinitySprite, Component.translatable(bloodstoneCapturedData.moaGeneComponent.affinity()), 76, -25);
-            renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.INVISIBILITY), Component.literal(bloodstoneCapturedData.bloodstoneComponent.owner()), 47, 65);
-            renderIconWText(context, client, statusEffectSpriteManager.get(MobEffects.HUNGER), Component.literal(String.format("%.1f", bloodstoneCapturedData.moaGeneComponent.hunger()) + "/" + 100.0), -47, 65);
+            renderIconWText(context, client, effectIcon(MobEffects.INVISIBILITY), Component.literal(bloodstoneCapturedData.bloodstoneComponent.owner()), 47, 65);
+            renderIconWText(context, client, effectIcon(MobEffects.HUNGER), Component.literal(String.format("%.1f", bloodstoneCapturedData.moaGeneComponent.hunger()) + "/" + 100.0), -47, 65);
             var raceId = bloodstoneCapturedData.moaGeneComponent.race();
             var race = client.level != null
                     ? MoaAPI.getRace(client.level, raceId)
@@ -99,7 +101,7 @@ public class BloodstoneHUDRenderer {
         }
     }
 
-    private static void renderSurtrum(GuiGraphics context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
+    private static void renderSurtrum(GuiGraphicsExtractor context, Minecraft client, BloodstoneCapturedData bloodstoneCapturedData) {
         renderRing(context, 0, 0);
         renderText(context, client, bloodstoneCapturedData.bloodstoneComponent.name(), 0, -80);
         if (bloodstoneCapturedData.moaGeneComponent != null) {
@@ -112,12 +114,24 @@ public class BloodstoneHUDRenderer {
         }
     }
 
-    private static void renderRing(GuiGraphics context, int offsetX, int offsetY) {
-        context.blit(ModConstants.locate("textures/hud/bloodstone/bloodstone_ring.png"), offsetX - 75, offsetY - 75, 0, 0, 150, 150, 150, 150);
+    private static void renderRing(GuiGraphicsExtractor context, int offsetX, int offsetY) {
+        context.blit(RenderPipelines.GUI_TEXTURED, ModConstants.locate("textures/hud/bloodstone/bloodstone_ring.png"), offsetX - 75, offsetY - 75, 0, 0, 150, 150, 150, 150);
     }
 
-    private static void renderIconWText(GuiGraphics context, Minecraft client, TextureAtlasSprite sprite, Component text, int offsetX, int offsetY) {
-        int totalWidth = ((sprite.contents().width()) + 2 + client.font.width(text));
+    private static Identifier effectIcon(Holder<MobEffect> effect) {
+        return Gui.getMobEffectSprite(effect);
+    }
+
+    private static void renderIconWText(GuiGraphicsExtractor context, Minecraft client, Identifier guiSprite, Component text, int offsetX, int offsetY) {
+        renderIconWText(context, client, 18, (x, y) -> context.blitSprite(RenderPipelines.GUI_TEXTURED, guiSprite, x, y, 18, 18), text, offsetX, offsetY);
+    }
+
+    private static void renderIconWText(GuiGraphicsExtractor context, Minecraft client, TextureAtlasSprite sprite, Component text, int offsetX, int offsetY) {
+        renderIconWText(context, client, sprite.contents().width(), (x, y) -> context.blitSprite(RenderPipelines.GUI_TEXTURED, sprite, x, y, 18, 18), text, offsetX, offsetY);
+    }
+
+    private static void renderIconWText(GuiGraphicsExtractor context, Minecraft client, int iconWidth, java.util.function.BiConsumer<Integer, Integer> icon, Component text, int offsetX, int offsetY) {
+        int totalWidth = iconWidth + 2 + client.font.width(text);
         int totalHeight = client.font.lineHeight / 2;
 
         int startX = offsetX;
@@ -127,13 +141,11 @@ public class BloodstoneHUDRenderer {
             startX = (offsetX - totalWidth);
         }
 
-        RenderSystem.setShaderTexture(0, sprite.atlasLocation());
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1);
-        context.blit(startX, offsetY - 9, 0, 18, 18, sprite);
-        context.drawString(client.font, text, startX + sprite.contents().width() + 2, offsetY - totalHeight, 14737632);
+        icon.accept(startX, offsetY - 9);
+        context.text(client.font, text, startX + iconWidth + 2, offsetY - totalHeight, 0xFFE0E0E0);
     }
 
-    private static void renderText(GuiGraphics context, Minecraft client, Component text, int offsetX, int offsetY) {
+    private static void renderText(GuiGraphicsExtractor context, Minecraft client, Component text, int offsetX, int offsetY) {
         int totalWidth = client.font.width(text);
         int totalHeight = client.font.lineHeight / 2;
 
@@ -144,7 +156,7 @@ public class BloodstoneHUDRenderer {
             startX = (offsetX - totalWidth);
         }
 
-        context.drawString(client.font, text, startX, offsetY - totalHeight, 14737632);
+        context.text(client.font, text, startX, offsetY - totalHeight, 0xFFE0E0E0);
     }
 
     private static Tuple<Integer, Integer> getCircularPosition(int radius, int itemNum, int totalItems) {

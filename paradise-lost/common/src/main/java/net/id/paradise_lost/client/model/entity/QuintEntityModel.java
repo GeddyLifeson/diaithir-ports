@@ -1,8 +1,6 @@
 package net.id.paradise_lost.client.model.entity;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.id.paradise_lost.entity.passive.QuintEntity;
+import net.id.paradise_lost.client.rendering.entity.state.QuintRenderState;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -12,17 +10,19 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 
-public class QuintEntityModel extends EntityModel<QuintEntity> {
+public class QuintEntityModel extends EntityModel<QuintRenderState> {
 
     private final ModelPart center;
 
     public QuintEntityModel(ModelPart root) {
+        super(root);
         this.center = root.getChild("center");
     }
 
     @Override
-    public void setupAnim(QuintEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        this.center.yRot = animationProgress / 3.0F;
+    public void setupAnim(QuintRenderState state) {
+        super.setupAnim(state);
+        this.center.yRot = state.ageInTicks / 3.0F;
     }
 
     public static LayerDefinition getTexturedModelData() {
@@ -30,10 +30,5 @@ public class QuintEntityModel extends EntityModel<QuintEntity> {
         PartDefinition modelPartData = modelData.getRoot();
         PartDefinition center = modelPartData.addOrReplaceChild("center", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -6.0F, -3.0F, 6.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
         return LayerDefinition.create(modelData, 32, 16);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        this.center.render(matrices, vertices, light, overlay, color);
     }
 }

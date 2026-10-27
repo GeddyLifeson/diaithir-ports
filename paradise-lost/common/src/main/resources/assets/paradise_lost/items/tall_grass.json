@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "paradise_lost:item/tall_grass"
+    "model": "paradise_lost:item/tall_grass",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10673090
+      }
+    ]
   }
 }
