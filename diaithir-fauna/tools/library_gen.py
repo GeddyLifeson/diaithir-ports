@@ -113,6 +113,9 @@ def fossil(r, seen):
     return uniq(seen, common, latin), 'being', age, 'fossils', ' '.join([s1, s2, s3, s4])
 
 
+DRAFT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'library_accepted.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'library_accepted.json')) else {}
+
+
 def main():
     seen = set(); groups = {}
     for f in sorted(glob.glob(os.path.join(CAT, '*.psv'))):
@@ -122,7 +125,9 @@ def main():
             line = line.rstrip('\n')
             if not line.strip() or line.startswith('#'): continue
             r = line.split('|')
-            e = fossil(r, seen) if len(r) >= 15 else mob(r, seen)
+            e = list(fossil(r, seen) if len(r) >= 15 else mob(r, seen))
+            if r[0] in DRAFT:  # lane-drafted text that passed library_merge.py
+                e[4] = DRAFT[r[0]] + (' ' + e[4].split('. ')[-1] if e[3] == 'fossils' else '')
             groups.setdefault(g, []).append(list(e))
     os.makedirs(OUT, exist_ok=True)
     tot = 0
