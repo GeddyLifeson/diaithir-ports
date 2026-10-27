@@ -1,0 +1,39 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = "${minecraft_version}-${mod_version}"
+group = 'com.diaithir'
+base { archivesName = 'diaithir_createaddition' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+    maven { url = 'https://maven.createmod.net' }
+    maven { url = 'https://maven.shedaniel.me/' }
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        server { server() }
+        client { client() }
+    }
+    mods { "${mod_id}" { sourceSet(sourceSets.main) } }
+}
+
+dependencies {
+    compileOnly files(project.create_jar)
+    // Create's compile-time-only Fabric API stubs
+    compileOnly 'net.fabricmc.fabric-api:fabric-renderer-api-v1:13.0.3+c80601bb4c'
+    compileOnly 'net.fabricmc.fabric-api:fabric-api-base:2.0.3+ece063234c'
+    compileOnly 'net.fabricmc.fabric-api:fabric-model-loading-api-v1:8.0.6+c80601bb4c'
+    compileOnly 'net.fabricmc:fabric-loader:0.19.2'
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = "UTF-8"; options.compilerArgs += ["-Xmaxerrs","2000"] }
+processResources {
+    inputs.property 'v', project.mod_version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: project.mod_version) }
+}
