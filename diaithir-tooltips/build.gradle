@@ -26,3 +26,10 @@ processResources {
     inputs.property 'version', version
     filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
 }
+
+// the Jade hook needs Jade's API: pass -PjadeJar=<path to the pack's Jade jar>; without it that package is left out
+if (project.hasProperty('jadeJar')) {
+    dependencies { compileOnly files(project.property('jadeJar')) }
+} else {
+    sourceSets.main.java.exclude('**/jade/**')
+}

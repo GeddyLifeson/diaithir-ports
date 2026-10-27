@@ -1,5 +1,7 @@
 """Diaithiris names for every item id: head-first kenning phrase from the archaic lexicon.
-usage: build_names.py LEXICON.json(archaic) ITEMS.json REF_DIR OUT.json [REPORT.md]
+usage: build_names.py LEXICON.json(archaic) INPUT_DIR REF_DIR OUT.json [REPORT.md]
+INPUT_DIR holds the files scan_items.py writes; OUT is the culture table {"item","block","entity","dimension","biome","structure"}.
+Env NAMES_EN (more English names for dimensions, biomes, structures) and FIXED_NAMES (hand-made names that win) are optional.
 REF_DIR holds the Irish and Scottish Gaelic Hunspell lists (*.dic) for the collision check."""
 import json, re, sys, glob, unicodedata, collections
 
@@ -37,7 +39,7 @@ def pick(en, mod):
         return None
     order = ("adj", "n", "v") if mod else ("n", "adj", "v")
     es.sort(key=lambda x: (order.index(x["pos"]), LEVEL.get(x["level"], 9)))
-    return es[0]["rod"].lower()
+    return es[0]["rod"].lower().strip("-")
 
 def stems(w):
     yield w
@@ -125,21 +127,33 @@ def clear(w):
             return c
     return w + "ur"
 
-items = json.load(open(ITEMS, encoding="utf8"))
-names, stat, bad = {}, collections.Counter(), collections.Counter()
-for i, n in items.items():
-    nm = n if n else i.split(":", 1)[1].replace("_", " ").replace("/", " ")
-    p, kinds = phrase(nm)
-    if not p:
-        continue
-    p = " ".join(clear(w.lower()) if w[:1].islower() or w.isupper() else clear(w.lower()).capitalize() for w in p.split())
-    names[i] = p
-    stat["+".join(sorted(kinds))] += 1
-    for w in WORDS(p):
-        if w in REAL or fold(w) in REAL:
-            bad[w] += 1
-json.dump(names, open(OUT, "w", encoding="utf8"), ensure_ascii=False, separators=(",", ":"), sort_keys=True)
-print(len(names), "names;", dict(stat))
-print("words equal to a real Gaelic word:", len(bad), "of", len({w for p in names.values() for w in WORDS(p)}), "distinct;", bad.most_common(40))
+import os
+EXTRA = json.load(open(os.environ["NAMES_EN"], encoding="utf8")) if os.environ.get("NAMES_EN") else {}  # {"dimension"|"biome"|"structure": {id: English name}}
+FIXED = json.load(open(os.environ["FIXED_NAMES"], encoding="utf8")) if os.environ.get("FIXED_NAMES") else {}  # {kind: {id: hand-made name}}
+KINDS = {"item": "items.json", "block": "blocks_only.json", "entity": "entities.json", "dimension": "dimensions.json", "biome": "biomes.json", "structure": "structures.json"}
+out, stat, bad = {}, collections.Counter(), collections.Counter()
+for kind, fn in KINDS.items():
+    names = out[kind] = {}
+    ids = json.load(open(f"{ITEMS}/{fn}", encoding="utf8"))
+    for i, n in EXTRA.get(kind, {}).items():
+        if not ids.get(i):
+            ids[i] = n
+    for i, n in ids.items():
+        nm = n if n else i.split(":", 1)[1].replace("_", " ").replace("/", " ")
+        p, kinds = phrase(nm)
+        if not p:  # a name made only of short or stop words: say the id's own words
+            p, kinds = phrase(i.split(":", 1)[1].replace("_", " ").replace("/", " ") + " thing")
+        p = " ".join(clear(w.lower()) if w[:1].islower() or w.isupper() else clear(w.lower()).capitalize() for w in p.split())
+        p = " ".join(w if not (w.lower() in REAL or fold(w.lower()) in REAL) else w + "u" for w in p.split())
+        names[i] = p
+        stat["+".join(sorted(kinds))] += 1
+        for w in WORDS(p):
+            if w in REAL or fold(w) in REAL:
+                bad[w] += 1
+for kind, d in FIXED.items():
+    out.setdefault(kind, {}).update(d)
+json.dump(out, open(OUT, "w", encoding="utf8"), ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+print({k: len(v) for k, v in out.items()}, dict(stat))
+print("words equal to a real Gaelic word:", len(bad), "of", len({w for v in out.values() for p in v.values() for w in WORDS(p)}), "distinct;", bad.most_common(40))
 if REPORT:
     open(REPORT, "w", encoding="utf8").write("collisions:\n" + "\n".join(f"{w} {n}" for w, n in bad.most_common()) + "\n")

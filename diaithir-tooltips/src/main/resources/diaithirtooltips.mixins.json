@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "net.diaithir.tooltips.mixin",
+  "client": [
+    "DebugEntryBiomeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

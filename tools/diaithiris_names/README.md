@@ -4,14 +4,15 @@
 (lang) name. The player's culture is a slug from DiaithirRPG `culture_starts.csv`, stored as a synced player attachment
 (`/culture set <players> <slug>`, or `player.setData(DiaithirTooltips.CULTURE, slug)` from the picker); empty reads as
 `diaithir`. Names are tables, not lang files, so the line is the same in every game language:
-`assets/diaithirtooltips/cultures/<slug>.json` = `{"item": {id: name}, "block": {...}, "entity": {...}}`. A culture with
-no file, or an id with no entry, shows no line. `CultureNames.name(kind, id)` is the lookup for other UIs (Jade, Codex).
+`assets/diaithirtooltips/cultures/<slug>.json` = `{"item", "block" (blocks without an item), "entity", "dimension", "biome", "structure"}`, each `{id: name}`. A culture with
+no file, or an id with no entry, shows no line. `CultureNames.name(kind, id)` is the lookup for other UIs (Jade shows block and mob lines, entering a dimension shows a title card, F3's biome line carries the biome name; Codex and maps call the same method).
 `cultures/diaithir.json` is what this generator writes.
 
 Regenerate after the modlist changes:
 
-    python3 tools/diaithiris_names/scan_items.py MC_CLIENT_JAR MODS_DIR items.json
-    python3 tools/diaithiris_names/build_names.py diaithiris-archaic/LEXICON.json items.json REF_DIR names.json
+    python3 tools/diaithiris_names/scan_items.py MC_CLIENT_JAR INPUT_DIR MODS_DIR [MODS_DIR ...]
+    python3 tools/diaithiris_names/build_names.py diaithiris-archaic/LEXICON.json INPUT_DIR REF_DIR diaithir.json
+    python3 tools/diaithiris_names/check_coverage.py INPUT_DIR diaithir.json   # fails below 100%
 
 `LEXICON.json` is the archaic layer (project files, diaithiris-archaic). `REF_DIR` holds `ga.dic` and `gd.dic`
 (Hunspell lists of Irish and Scottish Gaelic) and `oldirish_known.txt`; any word that equals one of them takes the

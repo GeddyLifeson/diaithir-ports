@@ -15,3 +15,13 @@ type = "required"
 versionRange = "[26.1.2.109,)"
 ordering = "AFTER"
 side = "CLIENT"
+
+[[dependencies.diaithirtooltips]]
+modId = "jade"
+type = "optional"
+versionRange = "[26.1,)"
+ordering = "AFTER"
+side = "CLIENT"
+
+[[mixins]]
+config = "diaithirtooltips.mixins.json"

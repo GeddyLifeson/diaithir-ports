@@ -1321,8 +1321,8 @@ file = "mods/diaithir-perf-neoforge-26.1.2-0.3.0.jar"
 hash = "1f92060ccb86e5a8b9406f9e75502fb0fff9e964e6fa1125325bab4f235e80e5"
 
 [[files]]
-file = "mods/diaithir-tooltips-neoforge-26.1.2-2.0.0.pw.toml"
-hash = "37a1aca7f64ee391ee1695535332d0fe35ec2bcb5cafc8b6a3a34ed0921f174b"
+file = "mods/diaithir-tooltips-neoforge-26.1.2-2.1.0.pw.toml"
+hash = "8c709ade51abe16b6daad1c4d640b1589881878cbef23d3d849c567219e3eed2"
 metafile = true
 
 [[files]]
