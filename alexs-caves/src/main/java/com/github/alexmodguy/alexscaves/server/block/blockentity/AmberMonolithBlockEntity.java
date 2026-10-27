@@ -132,7 +132,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
                     if (entity instanceof Mob) {
                         Mob mob = (Mob) entity;
                         if (net.neoforged.neoforge.event.EventHooks.checkSpawnPosition(mob, (ServerLevelAccessor) level, EntitySpawnReason.CHUNK_GENERATION)) {
-                            spawngroupdata = mob.finalizeSpawn((ServerLevelAccessor) level, level.getCurrentDifficultyAt(mob.blockPosition()), EntitySpawnReason.CHUNK_GENERATION, spawngroupdata);
+                            spawngroupdata = mob.finalizeSpawn((ServerLevelAccessor) level, ((net.minecraft.server.level.ServerLevel) level).getCurrentDifficultyAt(mob.blockPosition()), EntitySpawnReason.CHUNK_GENERATION, spawngroupdata);
                             ((ServerLevel) level).addFreshEntityWithPassengers(mob);
                             spawned = true;
                             flag = true;
@@ -255,7 +255,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
         super.loadAdditional(tag);
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityType")) {
             String str = tag.getStringOr("EntityType", "");
-            this.spawnType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
+            this.spawnType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(str));
         }
         this.spawnCount = tag.getIntOr("SpawnCount", 0);
         this.spawnsMobIn = tag.getIntOr("SpawnMobsIn", 0);

@@ -67,7 +67,7 @@ public class CaveInfoItem extends Item {
         int color = ACBiomeRegistry.getBiomeTabletColor(biomeResourceKey);
         if (color == -1) {
             if (level != null) {
-                Registry<Biome> registry = level.registryAccess().registry(Registries.BIOME).orElse(null);
+                Registry<Biome> registry = level.registryAccess().lookupOrThrow(Registries.BIOME);
                 if (registry != null && registry.get(biomeResourceKey).isPresent()) {
                     return ConversionCrucibleBlockEntity.calculateBiomeColor(registry.get(biomeResourceKey));
                 }

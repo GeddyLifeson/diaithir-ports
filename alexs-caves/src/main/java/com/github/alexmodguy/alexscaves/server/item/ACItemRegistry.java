@@ -31,7 +31,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
-import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -120,9 +119,9 @@ public class ACItemRegistry {
     public static final DeferredHolder<Item, Item> SEEKING_ARROW = reg("seeking_arrow", () -> new SeekingArrowItem());
     public static final DeferredHolder<Item, Item> GALENA_GAUNTLET = reg("galena_gauntlet", () -> new GalenaGauntletItem());
     public static final DeferredHolder<Item, Item> RESISTOR_SHIELD = reg("resistor_shield", () -> new ResistorShieldItem());
-    public static final DeferredHolder<Item, Item> POLARITY_ARMOR_TRIM_SMITHING_TEMPLATE = reg("polarity_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "polarity")));
+    public static final DeferredHolder<Item, Item> POLARITY_ARMOR_TRIM_SMITHING_TEMPLATE = reg("polarity_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
     public static final DeferredHolder<Item, Item> PEWEN_DOOR = reg("pewen_door", () -> new DoubleHighBlockItem(ACBlockRegistry.PEWEN_DOOR.get(), (com.github.alexmodguy.alexscaves.server.misc.ACProps.item())));
-    public static final DeferredHolder<Item, Item> PEWEN_SIGN = reg("pewen_sign", () -> new SignItem((com.github.alexmodguy.alexscaves.server.misc.ACProps.item()).stacksTo(16), ACBlockRegistry.PEWEN_SIGN.get(), ACBlockRegistry.PEWEN_WALL_SIGN.get()));
+    public static final DeferredHolder<Item, Item> PEWEN_SIGN = reg("pewen_sign", () -> new SignItem(ACBlockRegistry.PEWEN_SIGN.get(), ACBlockRegistry.PEWEN_WALL_SIGN.get(), com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(16).useBlockDescriptionPrefix()));
     public static final DeferredHolder<Item, Item> PEWEN_HANGING_SIGN = reg("pewen_hanging_sign", () -> new HangingSignItem(ACBlockRegistry.PEWEN_HANGING_SIGN.get(), ACBlockRegistry.PEWEN_WALL_HANGING_SIGN.get(), (com.github.alexmodguy.alexscaves.server.misc.ACProps.item()).stacksTo(16)));
     public static final DeferredHolder<Item, Item> PEWEN_BOAT = reg("pewen_boat", () -> new CaveBoatItem(false, AlexsCavesBoat.Type.PEWEN, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1)));
     public static final DeferredHolder<Item, Item> PEWEN_CHEST_BOAT = reg("pewen_chest_boat", () -> new CaveBoatItem(true, AlexsCavesBoat.Type.PEWEN, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1)));
@@ -211,7 +210,7 @@ public class ACItemRegistry {
     public static final DeferredHolder<Item, Item> DEPTH_CHARGE = reg("depth_charge", () -> new ThrownProjectileItem(com.github.alexmodguy.alexscaves.server.misc.ACProps.item(), player -> new DepthChargeEntity(player.level(), player), -10.0F, 0.65F, 1.5F));
     public static final DeferredHolder<Item, Item> GUARDIAN_POTTERY_SHERD = reg("guardian_pottery_sherd", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
     public static final DeferredHolder<Item, Item> HERO_POTTERY_SHERD = reg("hero_pottery_sherd", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
-    public static final DeferredHolder<Item, Item> BIOLUMINESCENT_TORCH = reg("bioluminescent_torch", () -> new StandingAndWallBlockItem(ACBlockRegistry.BIOLUMINESCENT_TORCH.get(), ACBlockRegistry.BIOLUMINESCENT_WALL_TORCH.get(), com.github.alexmodguy.alexscaves.server.misc.ACProps.item(), Direction.DOWN));
+    public static final DeferredHolder<Item, Item> BIOLUMINESCENT_TORCH = reg("bioluminescent_torch", () -> new StandingAndWallBlockItem(ACBlockRegistry.BIOLUMINESCENT_TORCH.get(), ACBlockRegistry.BIOLUMINESCENT_WALL_TORCH.get(), Direction.DOWN, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().useBlockDescriptionPrefix()));
     public static final DeferredHolder<Item, Item> GAME_CONTROLLER = reg("game_controller", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().rarity(Rarity.RARE)));
     public static final DeferredHolder<Item, Item> STINKY_FISH = reg("stinky_fish", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().rarity(Rarity.RARE).food(ACFoods.STINKY_FISH.food(), ACFoods.STINKY_FISH.consumable())));
     public static final DeferredHolder<Item, Item> IMMORTAL_EMBRYO = reg("immortal_embryo", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().rarity(Rarity.EPIC)));
@@ -237,7 +236,7 @@ public class ACItemRegistry {
     public static final DeferredHolder<Item, Item> DREADBOW_PULLING_1_SPRITE = reg("dreadbow_pulling_1_inventory", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
     public static final DeferredHolder<Item, Item> DREADBOW_PULLING_2_SPRITE = reg("dreadbow_pulling_2_inventory", () -> new Item(com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
     public static final DeferredHolder<Item, Item> THORNWOOD_DOOR = reg("thornwood_door", () -> new DoubleHighBlockItem(ACBlockRegistry.THORNWOOD_DOOR.get(), (com.github.alexmodguy.alexscaves.server.misc.ACProps.item())));
-    public static final DeferredHolder<Item, Item> THORNWOOD_SIGN = reg("thornwood_sign", () -> new SignItem((com.github.alexmodguy.alexscaves.server.misc.ACProps.item()).stacksTo(16), ACBlockRegistry.THORNWOOD_SIGN.get(), ACBlockRegistry.THORNWOOD_WALL_SIGN.get()));
+    public static final DeferredHolder<Item, Item> THORNWOOD_SIGN = reg("thornwood_sign", () -> new SignItem(ACBlockRegistry.THORNWOOD_SIGN.get(), ACBlockRegistry.THORNWOOD_WALL_SIGN.get(), com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(16).useBlockDescriptionPrefix()));
     public static final DeferredHolder<Item, Item> THORNWOOD_HANGING_SIGN = reg("thornwood_hanging_sign", () -> new HangingSignItem(ACBlockRegistry.THORNWOOD_HANGING_SIGN.get(), ACBlockRegistry.THORNWOOD_WALL_HANGING_SIGN.get(), (com.github.alexmodguy.alexscaves.server.misc.ACProps.item()).stacksTo(16)));
     public static final DeferredHolder<Item, Item> THORNWOOD_BOAT = reg("thornwood_boat", () -> new CaveBoatItem(false, AlexsCavesBoat.Type.THORNWOOD, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1)));
     public static final DeferredHolder<Item, Item> THORNWOOD_CHEST_BOAT = reg("thornwood_chest_boat", () -> new CaveBoatItem(true, AlexsCavesBoat.Type.THORNWOOD, com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1)));
@@ -339,16 +338,11 @@ public class ACItemRegistry {
     }
 
     private static void spawnEgg(String entityName, Supplier<? extends EntityType<? extends Mob>> type, int color1, int color2, ResourceKey<Biome> biomeTab) {
-        DeferredHolder<Item, Item> item = reg("spawn_egg_" + entityName, () -> new DeferredSpawnEggItem(type, color1, color2, com.github.alexmodguy.alexscaves.server.misc.ACProps.item()));
+        DeferredHolder<Item, Item> item = reg("spawn_egg_" + entityName, () -> new net.minecraft.world.item.SpawnEggItem(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().spawnEgg(type.get())));
         creativeTabSpawnEggMap.put(item, biomeTab);
     }
 
     public static void setup() {
-        PRIMORDIAL_ARMOR_MATERIAL.setRepairMaterial(Ingredient.of(TOUGH_HIDE.get()));
-        HAZMAT_SUIT_ARMOR_MATERIAL.setRepairMaterial(Ingredient.of(POLYMER_PLATE.get()));
-        DIVING_SUIT_ARMOR_MATERIAL.setRepairMaterial(Ingredient.of(Items.COPPER_INGOT));
-        DARKNESS_ARMOR_MATERIAL.setRepairMaterial(Ingredient.of(DARK_TATTERS.get()));
-        GINGERBREAD_ARMOR_MATERIAL.setRepairMaterial(Ingredient.of(GINGERBREAD_CRUMBS.get()));
         DispenserBlock.registerBehavior(SEEKING_ARROW.get(), new ACProjectileDispenseBehavior() {
             protected Projectile getProjectile(Level level, Position position, ItemStack itemStack) {
                 AbstractArrow abstractarrow = new SeekingArrowEntity(level, position.x(), position.y(), position.z());
@@ -356,7 +350,7 @@ public class ACItemRegistry {
                 return abstractarrow;
             }
         });
-        DispenserBlock.registerBehavior(GALENA_GAUNTLET.get(), ArmorItem.DISPENSE_ITEM_BEHAVIOR);
+        
         DispenserBlock.registerBehavior(TRILOCARIS_BUCKET.get(), new FluidContainerDispenseItemBehavior());
         DispenserBlock.registerBehavior(ACID_BUCKET.get(), new FluidContainerDispenseItemBehavior());
         DispenserBlock.registerBehavior(RADGILL_BUCKET.get(), new FluidContainerDispenseItemBehavior());
@@ -428,7 +422,7 @@ public class ACItemRegistry {
 
     public static Item getSpawnEggFor(EntityType type) {
         for (Map.Entry<DeferredHolder<Item, ? extends Item>, ResourceKey<Biome>> entry : creativeTabSpawnEggMap.entrySet()) {
-            if (entry.getKey().get() instanceof DeferredSpawnEggItem forgeSpawnEggItem && forgeSpawnEggItem.getType(null) == type) {
+            if (entry.getKey().get() instanceof net.minecraft.world.item.SpawnEggItem forgeSpawnEggItem && false) {
                 return forgeSpawnEggItem;
             }
         }

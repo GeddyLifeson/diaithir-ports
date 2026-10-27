@@ -90,13 +90,13 @@ public class SackOfSatingItem extends Item {
                 }
                 int wholeHunger = calculateWholeStackHungerValue(foodStack, player);
                 setHunger(sackStack, getHunger(sackStack) + wholeHunger);
-                ItemStack containerItem = foodStack.getItem().getCraftingRemainder() != null ? new ItemStack(foodStack.getItem().getCraftingRemainder(), foodStack.getCount()) : ItemStack.EMPTY;
+                ItemStack containerItem = foodStack.getItem().getCraftingRemainder() == null ? ItemStack.EMPTY : foodStack.getItem().getCraftingRemainder().create().copyWithCount(foodStack.getCount());
                 if(!containerItem.isEmpty() && containerItem.is(Items.BOWL)){
                     if(!player.addItem(containerItem)){
                         player.drop(containerItem, false);
                     }
                 }
-                if(foodStack.getItem() instanceof HoneyBottleItem || foodStack.getItem() instanceof DrinkableBottledItem){
+                if(foodStack.is(Items.HONEY_BOTTLE) || foodStack.getItem() instanceof DrinkableBottledItem){
                     ItemStack bowlStack = new ItemStack(Items.GLASS_BOTTLE, foodStack.getCount());
                     if(!player.addItem(bowlStack)){
                         player.drop(bowlStack, false);
@@ -138,7 +138,7 @@ public class SackOfSatingItem extends Item {
     }
 
      public static int calculateWholeStackHungerValue(ItemStack foodStack, LivingEntity eater){
-        FoodProperties foodProperties = foodStack.getFoodProperties(eater);
+        FoodProperties foodProperties = foodStack.get(net.minecraft.core.component.DataComponents.FOOD);
         if(foodProperties != null && !foodStack.is(ACTagRegistry.RESTRICTED_FROM_SACK_OF_SATING)){
             return foodProperties.nutrition() * foodStack.getCount();
         }

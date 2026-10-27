@@ -88,7 +88,7 @@ public class HologramProjectorBlockEntity extends BlockEntity {
         super.loadAdditional(tag);
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityType")) {
             String str = tag.getStringOr("EntityType", "");
-            this.entityType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
+            this.entityType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(str));
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityTag")) {
             this.entityTag = tag.getCompoundOrEmpty("EntityTag");

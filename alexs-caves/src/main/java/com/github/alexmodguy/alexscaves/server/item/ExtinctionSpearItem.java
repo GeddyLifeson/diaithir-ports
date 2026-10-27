@@ -103,7 +103,8 @@ public class ExtinctionSpearItem extends SpearItem {
         dinosaurSpirit.setDelaySpawn(5);
 
         player.level().addFreshEntity(dinosaurSpirit);
-        return super.hurtEnemy(stack, hurtEntity, player);
+        super.hurtEnemy(stack, hurtEntity, player);
+        return true;
     }
 
 

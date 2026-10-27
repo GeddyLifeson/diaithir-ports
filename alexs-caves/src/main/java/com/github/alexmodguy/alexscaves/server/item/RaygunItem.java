@@ -115,8 +115,8 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
                 int charge = getCharge(stack);
                 if (charge > 0 && level.getRandom().nextFloat() < 0.02F) {
                     BlockPos playerPos = entity.blockPosition().above();
-                    float timeOfDay = level.getTimeOfDay(1.0F); //night starts at 0.259 and ends at 0.74
-                    if (level.canSeeSky(playerPos) && level.isDay() && !level.dimensionType().hasFixedTime() && (timeOfDay < 0.259 || timeOfDay > 0.74)) {
+                    float timeOfDay = com.github.alexmodguy.alexscaves.server.misc.ACMath.celestialAngle(level); //night starts at 0.259 and ends at 0.74
+                    if (level.canSeeSky(playerPos) && level.isBrightOutside() && !level.dimensionType().hasFixedTime() && (timeOfDay < 0.259 || timeOfDay > 0.74)) {
                         setCharge(stack, charge - 1);
                         setUseTime(stack, 0);
                     }
@@ -190,7 +190,7 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
             while(fakeRayTraceProgress < maxDist){
                 startClip = startClip.add(living.getViewVector(1.0F));
                 Vec3 endClip = startClip.add(living.getViewVector(1.0F));
-                HitResult attemptedHitResult = ProjectileUtil.getEntityHitResult(level, living, startClip, endClip, maxAABB, Entity::canBeHitByProjectile);
+                HitResult attemptedHitResult = ProjectileUtil.getEntityHitResult(level, living, startClip, endClip, maxAABB, Entity::canBeHitByProjectile, 0.0F);
                 if(attemptedHitResult != null){
                     realHitResult = attemptedHitResult;
                     break;

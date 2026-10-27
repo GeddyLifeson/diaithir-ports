@@ -23,7 +23,7 @@ public class RadiationRemovingFoodItem extends Item {
 
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
         MobEffectInstance mobEffectInstance = livingEntity.getEffect(ACEffectRegistry.IRRADIATED);
-        FoodProperties foodProperties = this.getFoodProperties(stack, livingEntity);
+        FoodProperties foodProperties = stack.get(net.minecraft.core.component.DataComponents.FOOD);
         if (mobEffectInstance != null && foodProperties != null) {
             float f = Math.min(livingEntity.getMaxHealth(), livingEntity.getHealth() + (float) Math.ceil(foodProperties.nutrition() * 1.5F + 1));
             livingEntity.setHealth(f);

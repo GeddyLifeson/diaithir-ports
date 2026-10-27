@@ -34,7 +34,7 @@ public class BiomeTreatItem extends CaveInfoItem {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if (itemstack.has(DataComponents.FOOD) && getCaveBiome(itemstack) == null) {
-            if (player.canEat(itemstack.getFoodProperties(player).canAlwaysEat())) {
+            if (player.canEat(itemstack.get(net.minecraft.core.component.DataComponents.FOOD).canAlwaysEat())) {
                 player.startUsingItem(hand);
                 return InteractionResult.CONSUME;
             } else {
@@ -68,7 +68,8 @@ public class BiomeTreatItem extends CaveInfoItem {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
         if(getCaveBiome(stack) == null && (livingEntity instanceof Player player && (player.getFoodData().getFoodLevel() == 0 || player.isCreative()))){
             ItemStack map = create(this, level.getBiome(livingEntity.blockPosition()).unwrapKey().get());
-            map.set(DataComponents.FOOD, ACFoods.BIOME_TREAT_DONE);
+            map.set(DataComponents.FOOD, ACFoods.BIOME_TREAT_DONE.food());
+            map.set(DataComponents.CONSUMABLE, ACFoods.BIOME_TREAT_DONE.consumable());
             return map;
         }
         return super.finishUsingItem(stack, level, livingEntity);

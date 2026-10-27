@@ -62,7 +62,7 @@ public class RemoteDetonatorItem extends Item {
         if (flag && flag1) {
             Optional<ResourceKey<Level>> optional = getBombDimension(tag);
             if (optional.isPresent()) {
-                Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(tag, "BombPos");
+                Optional<BlockPos> blockposOpt = tag.read("BombPos", BlockPos.CODEC);
                 if (blockposOpt.isPresent()) {
                     return GlobalPos.of(optional.get(), blockposOpt.get());
                 }
@@ -119,7 +119,7 @@ public class RemoteDetonatorItem extends Item {
                 }
                 Optional<ResourceKey<Level>> optional = getBombDimension(compoundtag);
                 if (optional.isPresent() && optional.get() == level.dimension() && compoundtag.contains("BombPos")) {
-                    Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(compoundtag, "BombPos");
+                    Optional<BlockPos> blockposOpt = compoundtag.read("BombPos", BlockPos.CODEC);
                     if (blockposOpt.isEmpty()) return;
                     BlockPos blockpos = blockposOpt.get();
                     boolean flag = false;
@@ -168,7 +168,7 @@ public class RemoteDetonatorItem extends Item {
     }
 
     private void addBombTags(ResourceKey<Level> levelResourceKey, BlockPos blockPos, CompoundTag tag) {
-        tag.put("BombPos", NbtUtils.writeBlockPos(blockPos));
+        tag.store("BombPos", BlockPos.CODEC, blockPos);
         Level.RESOURCE_KEY_CODEC.encodeStart(NbtOps.INSTANCE, levelResourceKey).result().ifPresent((p_40731_) -> {
             tag.put("BombDimension", p_40731_);
         });
@@ -181,7 +181,7 @@ public class RemoteDetonatorItem extends Item {
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (tag.contains("BombPos")) {
             Optional<ResourceKey<Level>> optional = getBombDimension(tag);
-            Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(tag, "BombPos");
+            Optional<BlockPos> blockposOpt = tag.read("BombPos", BlockPos.CODEC);
             if (optional.isPresent() && blockposOpt.isPresent()) {
                 BlockPos blockpos = blockposOpt.get();
                 Component untranslated = Component.translatable("item.alexscaves.remote_detonator.desc", blockpos.getX(), blockpos.getY(), blockpos.getZ()).withStyle(ChatFormatting.GRAY);

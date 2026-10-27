@@ -159,7 +159,7 @@ public class CandyCaneHookItem extends Item {
 
 
     @Override
-    public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility toolAction) {
+    public boolean canPerformAction(net.minecraft.world.item.ItemInstance stack, net.neoforged.neoforge.common.ItemAbility toolAction) {
         return toolAction == ItemAbilities.FISHING_ROD_CAST || super.canPerformAction(stack, toolAction);
     }
 }

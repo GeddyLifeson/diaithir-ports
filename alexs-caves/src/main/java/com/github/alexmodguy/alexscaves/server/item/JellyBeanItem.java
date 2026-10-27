@@ -104,13 +104,13 @@ public class JellyBeanItem extends PotionItem {
                     MobEffect mobeffect = mobeffectinstance.getEffect().value();
                     Player player = living instanceof Player ? (Player)living : null;
                     if (mobeffect.isInstantenous()) {
-                        mobeffect.applyInstantenousEffect(player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
+                        mobeffect.applyInstantenousEffect((net.minecraft.server.level.ServerLevel) level, player, player, living, mobeffectinstance.getAmplifier(), 1.0D);
                     } else {
                         living.addEffect(new MobEffectInstance(mobeffectinstance));
                     }
                 }
             }
         }
-        return living.eat(level, stack);
+        return super.finishUsingItem(stack, level, living);
     }
 }

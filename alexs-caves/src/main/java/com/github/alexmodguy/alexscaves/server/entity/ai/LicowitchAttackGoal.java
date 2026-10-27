@@ -170,7 +170,7 @@ public class LicowitchAttackGoal extends Goal {
             if (summonSpot != null) {
                 Mob summoned = licowitch.createRandomPossessedMob();
                 if (licowitch.level() instanceof ServerLevel serverLevel) {
-                    summoned.finalizeSpawn(serverLevel, licowitch.level().getCurrentDifficultyAt(BlockPos.containing(summonSpot)), EntitySpawnReason.MOB_SUMMONED, null);
+                    summoned.finalizeSpawn(serverLevel, ((net.minecraft.server.level.ServerLevel) licowitch.level()).getCurrentDifficultyAt(BlockPos.containing(summonSpot)), EntitySpawnReason.MOB_SUMMONED, null);
                 }
                 if (summoned instanceof PossessedByLicowitch possessed) {
                     possessed.setPossessedByLicowitch(licowitch);

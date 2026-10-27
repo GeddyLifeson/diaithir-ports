@@ -78,7 +78,7 @@ public class GobthumperBlockEntity extends BlockEntity {
                         GumWormEntity summonedWorm = ACEntityRegistry.GUM_WORM.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                         summonedWorm.setPos(Vec3.atCenterOf(summonPos));
                         summonedWorm.setTempSummon(true);
-                        summonedWorm.finalizeSpawn((ServerLevel) level, level.getCurrentDifficultyAt(summonPos), EntitySpawnReason.MOB_SUMMONED, (SpawnGroupData) null);
+                        summonedWorm.finalizeSpawn((ServerLevel) level, ((net.minecraft.server.level.ServerLevel) level).getCurrentDifficultyAt(summonPos), EntitySpawnReason.MOB_SUMMONED, (SpawnGroupData) null);
                         level.addFreshEntity(summonedWorm);
                         summonedWorm.setGobthumperPos(this.getBlockPos());
                         this.summonedWormId = summonedWorm.getId();

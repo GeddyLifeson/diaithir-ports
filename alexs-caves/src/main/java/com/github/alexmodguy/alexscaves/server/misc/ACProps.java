@@ -57,4 +57,18 @@ public final class ACProps {
     public static boolean has(net.minecraft.nbt.CompoundTag tag, String key) {
         return tag.contains(key);
     }
+
+    public static java.util.Optional<net.minecraft.world.entity.EntityType<?>> entityTypeOf(net.minecraft.nbt.CompoundTag tag) {
+        String id = tag.getStringOr("id", "");
+        Identifier key = Identifier.tryParse(id);
+        if (key == null) return java.util.Optional.empty();
+        return net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getOptional(key);
+    }
+
+    public static net.minecraft.nbt.CompoundTag serializeEntity(net.minecraft.world.entity.Entity entity) {
+        net.minecraft.world.level.storage.TagValueOutput out = net.minecraft.world.level.storage.TagValueOutput.createWithContext(
+                net.minecraft.util.ProblemReporter.DISCARDING, entity.registryAccess());
+        entity.save(out);
+        return out.buildResult();
+    }
 }

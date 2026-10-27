@@ -25,13 +25,13 @@ public class PrehistoricMixtureItem extends ACBowlFoodItem {
     }
 
     public InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity livingEntity, InteractionHand hand) {
-        FoodProperties foodProperties = itemStack.getFoodProperties(livingEntity);
+        FoodProperties foodProperties = itemStack.get(net.minecraft.core.component.DataComponents.FOOD);
         if (!livingEntity.level().isClientSide() && livingEntity instanceof Mob && canFeedMob(player, (Mob) livingEntity) && foodProperties != null) {
             livingEntity.heal(foodProperties.nutrition());
             if (!(livingEntity instanceof DinosaurEntity dinosaur && dinosaur.onFeedMixture(itemStack, player))) {
-                if (!foodProperties.effects().isEmpty()) {
-                    for (FoodProperties.PossibleEffect possibleEffect : foodProperties.effects()) {
-                        livingEntity.addEffect(possibleEffect.effect());
+                if (!ACFoods.effectsOf(itemStack).isEmpty()) {
+                    for (net.minecraft.world.effect.MobEffectInstance possibleEffect : ACFoods.effectsOf(itemStack)) {
+                        livingEntity.addEffect(new net.minecraft.world.effect.MobEffectInstance(possibleEffect));
                     }
                 }
                 if (this == ACItemRegistry.SERENE_SALAD.get()) {

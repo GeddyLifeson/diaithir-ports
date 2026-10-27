@@ -24,8 +24,8 @@ public class RadioactiveOnDestroyedBlockItem extends RadioactiveBlockItem {
         if(!damageSource.isCreativePlayer() && !itemEntity.isRemoved()){
             itemEntity.discard();
             AreaEffectCloud cloud = new AreaEffectCloud(itemEntity.level(), itemEntity.getX(), itemEntity.getY(), itemEntity.getZ());
-            cloud.setParticle(ACParticleRegistry.GAMMAROACH.get());
-            cloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0X77D60E), java.util.List.of()));
+            cloud.setCustomParticle(ACParticleRegistry.GAMMAROACH.get());
+            cloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0X77D60E), java.util.List.of(), java.util.Optional.empty()));
             cloud.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED, 9600, 1));
             cloud.setRadius(2.0F);
             cloud.setDuration(12000);

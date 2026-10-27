@@ -141,7 +141,7 @@ public class MagicConchItem extends Item {
             deepOne.yBodyRot = f;
             deepOne.setYHeadRot(f);
             deepOne.setSummonedBy(summoner, time);
-            deepOne.finalizeSpawn((ServerLevel) summoner.level(), summoner.level().getCurrentDifficultyAt(BlockPos.containing(at)), EntitySpawnReason.TRIGGERED, (SpawnGroupData) null);
+            deepOne.finalizeSpawn((ServerLevel) summoner.level(), ((net.minecraft.server.level.ServerLevel) summoner.level()).getCurrentDifficultyAt(BlockPos.containing(at)), EntitySpawnReason.TRIGGERED, (SpawnGroupData) null);
             if (deepOne.checkSpawnObstruction(summoner.level())) {
                 summoner.level().addFreshEntity(deepOne);
                 deepOne.copyTarget(summoner);

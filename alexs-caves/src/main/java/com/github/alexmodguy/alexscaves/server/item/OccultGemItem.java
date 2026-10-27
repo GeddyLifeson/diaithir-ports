@@ -60,7 +60,7 @@ public class OccultGemItem extends Item {
         if (flag && flag1) {
             Optional<ResourceKey<Level>> optional = getBeholderDimension(tag);
             if (optional.isPresent()) {
-                Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(tag, "BeholderPos");
+                Optional<BlockPos> blockposOpt = tag.read("BeholderPos", BlockPos.CODEC);
                 if (blockposOpt.isPresent()) {
                     return GlobalPos.of(optional.get(), blockposOpt.get());
                 }
@@ -112,7 +112,7 @@ public class OccultGemItem extends Item {
                 }
                 Optional<ResourceKey<Level>> optional = getBeholderDimension(compoundtag);
                 if (optional.isPresent() && optional.get() == level.dimension() && compoundtag.contains("BeholderPos")) {
-                    Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(compoundtag, "BeholderPos");
+                    Optional<BlockPos> blockposOpt = compoundtag.read("BeholderPos", BlockPos.CODEC);
                     if (blockposOpt.isPresent()) {
                         BlockPos blockpos = blockposOpt.get();
                         boolean flag = false;
@@ -165,7 +165,7 @@ public class OccultGemItem extends Item {
     }
 
     private void addBeholderTags(ResourceKey<Level> levelResourceKey, BlockPos blockPos, CompoundTag tag) {
-        tag.put("BeholderPos", NbtUtils.writeBlockPos(blockPos));
+        tag.store("BeholderPos", BlockPos.CODEC, blockPos);
         Level.RESOURCE_KEY_CODEC.encodeStart(NbtOps.INSTANCE, levelResourceKey).result().ifPresent((p_40731_) -> {
             tag.put("BeholderDimension", p_40731_);
         });
@@ -176,7 +176,7 @@ public class OccultGemItem extends Item {
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (!tag.isEmpty() && tag.contains("BeholderPos")) {
             Optional<ResourceKey<Level>> optional = getBeholderDimension(tag);
-            Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(tag, "BeholderPos");
+            Optional<BlockPos> blockposOpt = tag.read("BeholderPos", BlockPos.CODEC);
             return optional.isPresent() && blockposOpt.isPresent();
         }
         return super.isFoil(stack);
@@ -187,7 +187,7 @@ public class OccultGemItem extends Item {
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (!tag.isEmpty() && tag.contains("BeholderPos")) {
             Optional<ResourceKey<Level>> optional = getBeholderDimension(tag);
-            Optional<BlockPos> blockposOpt = NbtUtils.readBlockPos(tag, "BeholderPos");
+            Optional<BlockPos> blockposOpt = tag.read("BeholderPos", BlockPos.CODEC);
             if (optional.isPresent() && blockposOpt.isPresent()) {
                 BlockPos blockpos = blockposOpt.get();
                 Component untranslated = Component.translatable("item.alexscaves.occult_gem.desc", blockpos.getX(), blockpos.getY(), blockpos.getZ()).withStyle(ChatFormatting.GRAY);

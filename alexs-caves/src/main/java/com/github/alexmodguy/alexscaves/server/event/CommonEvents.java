@@ -179,7 +179,7 @@ public class CommonEvents {
             CompoundTag tag = new CompoundTag();
             tag.store("BoundEntityUUID", net.minecraft.core.UUIDUtil.CODEC, event.getTarget().getUUID());
             // In 1.21, serializeNBT requires RegistryAccess provider
-            CompoundTag entityTag = event.getTarget() instanceof Player ? new CompoundTag() : event.getTarget().serializeNBT(event.getLevel().registryAccess());
+            CompoundTag entityTag = event.getTarget() instanceof Player ? new CompoundTag() : com.github.alexmodguy.alexscaves.server.misc.ACProps.serializeEntity(event.getTarget());
             entityTag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(event.getTarget().getType()).toString());
             if (event.getTarget() instanceof Player) {
                 entityTag.store("UUID", net.minecraft.core.UUIDUtil.CODEC, event.getTarget().getUUID());

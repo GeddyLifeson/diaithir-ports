@@ -56,6 +56,7 @@ public class FrostmintSpearItem extends SpearItem {
     private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         hurtEntity.setTicksFrozen(hurtEntity.getTicksRequiredToFreeze() + 200);
         ((FrostmintFreezableAccessor)hurtEntity).setFrostmintFreezing(true);
-        return super.hurtEnemy(stack, hurtEntity, player);
+        super.hurtEnemy(stack, hurtEntity, player);
+        return true;
     }
 }

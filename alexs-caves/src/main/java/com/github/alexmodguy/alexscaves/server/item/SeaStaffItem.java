@@ -98,7 +98,7 @@ public class SeaStaffItem extends Item {
         if (!level.isClientSide()) {
             if (ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SEAPAIRING, stack) > 0 && !using) {
                 if (level.getRandom().nextFloat() < 0.02F) {
-                    if (entity.isInWaterRainOrBubble()) {
+                    if ((entity.isInWater() || entity.level().isRainingAt(entity.blockPosition()))) {
                         stack.setDamageValue(Math.min(0, stack.getDamageValue() - 1));
                     }
                 }

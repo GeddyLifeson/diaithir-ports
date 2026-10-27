@@ -42,6 +42,10 @@ public class ACArmorMaterial {
 
     public ArmorMaterial material() { return material; }
 
+    public int getDefenseForType(ArmorType type) { return material.defense().getOrDefault(type, 0); }
+
+    public int getDefenseForType(ArmorType type) { return material.defense().getOrDefault(type, 0); }
+
     public String getName() { return name; }
 
     public float getToughness() { return material.toughness(); }

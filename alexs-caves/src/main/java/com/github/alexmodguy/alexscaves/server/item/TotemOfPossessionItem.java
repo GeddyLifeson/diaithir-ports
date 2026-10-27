@@ -182,7 +182,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
                                     setPossessed(target, true);
                                     CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
                                     tag.store("BoundEntityUUID", net.minecraft.core.UUIDUtil.CODEC, target.getUUID());
-                                    CompoundTag entityTag = target.serializeNBT(level.registryAccess());
+                                    CompoundTag entityTag = com.github.alexmodguy.alexscaves.server.misc.ACProps.serializeEntity(target);
                                     entityTag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(target.getType()).toString());
                                     tag.put("BoundEntityTag", entityTag);
                                     stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
@@ -226,7 +226,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         if (!tag.isEmpty()) {
             Tag entity = tag.get("BoundEntityTag");
             if (entity instanceof CompoundTag) {
-                Optional<EntityType<?>> optional = EntityType.by((CompoundTag) entity);
+                Optional<EntityType<?>> optional = com.github.alexmodguy.alexscaves.server.misc.ACProps.entityTypeOf(entity);
                 if (optional.isPresent()) {
                     Component untranslated = optional.get().getDescription().copy().withStyle(ChatFormatting.GRAY);
                     tooltip.accept(untranslated);
@@ -298,7 +298,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
             setPossessed(hurtMob, true);
             CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
             tag.store("BoundEntityUUID", net.minecraft.core.UUIDUtil.CODEC, hurtMob.getUUID());
-            CompoundTag entityTag = hurtMob.serializeNBT(hurtMob.level().registryAccess());
+            CompoundTag entityTag = com.github.alexmodguy.alexscaves.server.misc.ACProps.serializeEntity(hurtMob);
             entityTag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(hurtMob.getType()).toString());
             tag.put("BoundEntityTag", entityTag);
             stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));

@@ -105,6 +105,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
     }
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        boolean held = slotArg == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         super.inventoryTick(stack, level, entity, slotArg);
         if (!level.isClientSide() && held && !isLoading(stack) && isFilled(stack) && (entity.tickCount + entity.getId()) % CHECK_REGEN_TICKS == 0 && entity instanceof Player) {
             BlockPos biomePos = getBiomeBlockPos(stack);
@@ -145,7 +146,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
                 CompoundTag innerTag = listTag.getCompoundOrEmpty(i);
                 integerByteMap.put(innerTag.getByteOr("BiomeHash", (byte) 0), innerTag.getIntOr("BiomeID", 0));
             }
-            byte[] byteArray = tag.getByteArray("MapBiomes");
+            byte[] byteArray = tag.getByteArray("MapBiomes").orElse(new byte[0]).orElse(new byte[0]);
             int[] intArray = new int[128 * 128];
             int j = Math.min(intArray.length, byteArray.length);
             if (j > 0) {

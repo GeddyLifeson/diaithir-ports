@@ -59,7 +59,7 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
         CompoundTag tag = getCustomData(itemStackIn);
         if(tag.contains("LastUsedArrowType")) {
             String str = tag.getStringOr("LastUsedArrowType", "");
-            return BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
+            return BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(str));
         }
         return null;
     }
@@ -240,7 +240,7 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
                             darkArrowEntity.setPerfectShot(perfectShot);
                             abstractArrow = darkArrowEntity;
                         }else if(perfectShot){
-                            abstractArrow.setBaseDamage(abstractArrow.getBaseDamage() * 2.0F);
+                            abstractArrow.setBaseDamage(4.0D);
                         }
                         Vec3 vec3 = mutableSkyPos.getCenter().add(level.getRandom().nextFloat() * 16 - 8, level.getRandom().nextFloat() * 4 - 2, level.getRandom().nextFloat() * 16 - 8);
                         int clearTries = 0;

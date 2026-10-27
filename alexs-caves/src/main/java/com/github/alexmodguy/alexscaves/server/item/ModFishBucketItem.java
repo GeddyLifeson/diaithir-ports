@@ -28,7 +28,7 @@ public class ModFishBucketItem extends MobBucketItem {
     private final Supplier<? extends EntityType<?>> fishTypeSupplier;
 
     public ModFishBucketItem(Supplier<? extends EntityType<?>> fishTypeIn, Supplier<? extends Fluid> fluid, Item.Properties builder) {
-        super(fishTypeIn.get(), fluid.get(), SoundEvents.BUCKET_EMPTY_FISH, builder.stacksTo(1));
+        super((EntityType) fishTypeIn.get(), fluid.get(), SoundEvents.BUCKET_EMPTY_FISH, builder.stacksTo(1));
         this.fishTypeSupplier = fishTypeIn;
     }
 
@@ -41,7 +41,7 @@ public class ModFishBucketItem extends MobBucketItem {
     }
 
     @Override
-    public void checkExtraContent(@Nullable Player player, Level level, ItemStack stack, BlockPos pos) {
+    public void checkExtraContent(@Nullable net.minecraft.world.entity.LivingEntity player, Level level, ItemStack stack, BlockPos pos) {
         if (level instanceof ServerLevel) {
             this.spawnFish((ServerLevel) level, stack, pos);
             level.gameEvent(player, GameEvent.ENTITY_PLACE, pos);

@@ -18,6 +18,20 @@ public class ACFoods {
         }
     }
 
+    public static java.util.List<MobEffectInstance> effectsOf(ItemStack stack) {
+        Consumable c = stack.get(net.minecraft.core.component.DataComponents.CONSUMABLE);
+        java.util.List<MobEffectInstance> out = new java.util.ArrayList<>();
+        if (c != null) for (var e : c.onConsumeEffects()) if (e instanceof ApplyStatusEffectsConsumeEffect a) out.addAll(a.effects());
+        return out;
+    }
+
+    public static java.util.List<MobEffectInstance> effectsOf(ItemStack stack) {
+        Consumable c = stack.get(net.minecraft.core.component.DataComponents.CONSUMABLE);
+        java.util.List<MobEffectInstance> out = new java.util.ArrayList<>();
+        if (c != null) for (var e : c.onConsumeEffects()) if (e instanceof ApplyStatusEffectsConsumeEffect a) out.addAll(a.effects());
+        return out;
+    }
+
     private static Food make(int nutrition, float sat, boolean always, MobEffectInstance effect, float prob, boolean bowl) {
         FoodProperties.Builder b = new FoodProperties.Builder().nutrition(nutrition).saturationModifier(sat);
         if (always) b.alwaysEdible();

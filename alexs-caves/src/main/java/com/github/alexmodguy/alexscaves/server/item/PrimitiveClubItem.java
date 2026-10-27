@@ -123,7 +123,7 @@ public class PrimitiveClubItem extends Item {
     }
 
     @Override
-    public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
+    public boolean onEntitySwing(ItemStack stack, LivingEntity entity, net.minecraft.world.InteractionHand hand) {
         if (entity instanceof Player player) {
             if (player.getAttackStrengthScale(0) < 1 && player.attackAnim > 0) {
                 return true;
@@ -135,6 +135,8 @@ public class PrimitiveClubItem extends Item {
     }
 
     public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        boolean held = slotArg == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
+        boolean held = slotArg == net.minecraft.world.entity.EquipmentSlot.MAINHAND;
         if (entity instanceof Player player && held) {
             if (player.getAttackStrengthScale(0) < 0.95 && player.attackAnim > 0) {
                 player.swingTime--;
