@@ -12,12 +12,15 @@ import net.minecraft.world.level.gamerules.GameRuleType;
 import net.minecraft.world.level.gamerules.GameRuleTypeVisitor;
 
 public final class ParadiseLostGameRules {
+    private static final net.id.paradise_lost.registration.RegistrationProvider<GameRule<?>> GAME_RULES =
+            net.id.paradise_lost.registration.RegistrationProvider.get(net.minecraft.core.registries.Registries.GAME_RULE, ModConstants.MOD_ID);
     public static final GameRule<Boolean> PARADISE_VOID_KILLS = bool("paradise_void_kills", GameRuleCategory.PLAYER, false);
     public static final GameRule<Boolean> PARADISE_PORTAL_ENABLED = bool("paradise_portal_enabled", GameRuleCategory.UPDATES, true);
 
     private static GameRule<Boolean> bool(String id, GameRuleCategory category, boolean defaultValue) {
-        return Registry.register(BuiltInRegistries.GAME_RULE, ModConstants.locate(id),
-                new GameRule<>(category, GameRuleType.BOOL, BoolArgumentType.bool(), GameRuleTypeVisitor::visitBoolean, Codec.BOOL, b -> b ? 1 : 0, defaultValue, FeatureFlagSet.of()));
+        GameRule<Boolean> rule = new GameRule<>(category, GameRuleType.BOOL, BoolArgumentType.bool(), GameRuleTypeVisitor::visitBoolean, Codec.BOOL, b -> b ? 1 : 0, defaultValue, FeatureFlagSet.of());
+        GAME_RULES.register(id, () -> rule);
+        return rule;
     }
 
     public static <T> T get(net.minecraft.world.level.Level level, GameRule<T> rule) {

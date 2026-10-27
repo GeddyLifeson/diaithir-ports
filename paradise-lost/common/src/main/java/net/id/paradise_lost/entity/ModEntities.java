@@ -15,7 +15,6 @@ public final class ModEntities {
     private ModEntities() {}
 
     public static void init() {
-        SpawnPlacements.register(EntityType.BREEZE, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules);
     }
 
     public static void registerEntityAttributes(BiConsumer<EntityType<? extends LivingEntity>, AttributeSupplier> registrar) {

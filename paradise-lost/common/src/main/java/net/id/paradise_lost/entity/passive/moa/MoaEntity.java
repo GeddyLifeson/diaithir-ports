@@ -101,7 +101,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
     }
 
     public static AttributeSupplier.Builder createMoaAttributes() {
-        return createMobAttributes()
+        return createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
                 .add(Attributes.MAX_HEALTH, 35.0D)
                 .add(Attributes.MOVEMENT_SPEED, 1.0D)
                 .add(Attributes.STEP_HEIGHT, 1.0);

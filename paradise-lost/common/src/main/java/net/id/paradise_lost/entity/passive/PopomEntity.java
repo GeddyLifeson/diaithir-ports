@@ -90,7 +90,7 @@ public class PopomEntity extends Animal {
     }
 
     public static AttributeSupplier.Builder createPopomAttributes() {
-        return createMobAttributes()
+        return createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
                 .add(Attributes.MAX_HEALTH, 10.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.25D);
     }

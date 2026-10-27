@@ -8,7 +8,8 @@
         "value": {
           "max": 23000.0,
           "min": 13000.0
-        }
+        },
+        "clock": "minecraft:overworld"
       }
     ],
     "parent1": "paradise_lost:redhood",

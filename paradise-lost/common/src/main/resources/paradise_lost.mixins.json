@@ -38,7 +38,7 @@
     "world.gen.structure.JigsawStructureMixin"
   ],
   "injectors": {
-    "defaultRequire": 1,
+    "defaultRequire": 0,
     "maxShiftBy": 5
   },
   "plugin": "net.id.paradise_lost.mixin.Plugin"

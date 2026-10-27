@@ -267,7 +267,7 @@ public class QuintEntity extends PathfinderMob implements Enemy {
     }
 
     public static AttributeSupplier.Builder createQuintAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 6.0)
+        return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0).add(Attributes.MAX_HEALTH, 6.0)
                 .add(Attributes.FLYING_SPEED, 0.5)
                 .add(Attributes.MOVEMENT_SPEED, 0.3);
     }
