@@ -1,0 +1,31 @@
+{
+ "rates": [
+  [
+   "create_enchantment_industry:experience_cake",
+   0.15,
+   "meat"
+  ],
+  [
+   "create_enchantment_industry:experience_cake_slice",
+   0.15,
+   "meat"
+  ],
+  [
+   "create_enchantment_industry:experience_cake_base",
+   0.15,
+   "grain"
+  ]
+ ],
+ "never": [
+  "create_enchantment_industry:super_experience_nugget",
+  "create_enchantment_industry:experience_bucket"
+ ],
+ "temperature": {
+  "note": "Blaze enchanter/forger and Create heaters act as TEMP_AT heat sources (+ hot room); fluid_hatch and dragon_breath cauldron inert. CCK boiler/burner heat cookware via heat tags.",
+  "heat_sources": [
+   "create_enchantment_industry:blaze_enchanter",
+   "create_enchantment_industry:blaze_forger",
+   "create_enchantment_industry:classic_blaze_enchanter"
+  ]
+ }
+}

@@ -1,0 +1,146 @@
+{
+"create_enchantment_industry:blaze_enchanter": [
+900,
+76
+],
+"create_enchantment_industry:blaze_forger": [
+700,
+74
+],
+"create_enchantment_industry:classic_blaze_enchanter": [
+900,
+76
+],
+"create_enchantment_industry:experience_hatch": [
+150,
+66
+],
+"create_enchantment_industry:experience_lantern": [
+180,
+66
+],
+"create_enchantment_industry:grindstone_drain": [
+80,
+62
+],
+"create_enchantment_industry:mechanical_grindstone": [
+260,
+70
+],
+"create_enchantment_industry:printer": [
+420,
+72
+],
+"create_enchantment_industry:super_experience_block": [
+2800,
+85
+],
+"create_enchantment_industry:blazes_enchanting_handbook": [
+350,
+71
+],
+"create_enchantment_industry:enchanting_template": [
+500,
+73
+],
+"create_enchantment_industry:experience_bucket": [
+120,
+62
+],
+"create_enchantment_industry:experience_cake": [
+90,
+60
+],
+"create_enchantment_industry:super_enchanting_template": [
+2400,
+83
+],
+"create_enchantment_industry:super_experience_nugget": [
+320,
+70
+],
+"create_dragons_plus:fluid_hatch": [
+120,
+64
+],
+"create_dragons_plus:black_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:blaze_upgrade_smithing_template": [
+1200,
+78
+],
+"create_dragons_plus:blue_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:brown_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:cyan_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:dragon_breath_bucket": [
+260,
+70
+],
+"create_dragons_plus:gray_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:green_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:light_blue_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:light_gray_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:lime_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:magenta_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:orange_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:pink_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:purple_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:rare_blaze_package": [
+180,
+66
+],
+"create_dragons_plus:rare_marble_gate_package": [
+180,
+66
+],
+"create_dragons_plus:red_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:white_dye_bucket": [
+60,
+58
+],
+"create_dragons_plus:yellow_dye_bucket": [
+60,
+58
+]
+}

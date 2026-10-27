@@ -1,0 +1,15 @@
+{
+ "namespaces": {
+  "create_enchantment_industry": "III",
+  "create_dragons_plus": "IV",
+  "create_central_kitchen": "IV"
+ },
+ "nontech": [],
+ "decided": {
+  "create_enchantment_industry:experience_bucket": "III",
+  "create_enchantment_industry:experience_cake": "III",
+  "create_dragons_plus:dragon_breath_bucket": "IV",
+  "create_central_kitchen:chef_hat": "IV"
+ },
+ "note": "Merge into DiaithirRPG content/tech_ages.json (namespaces/decided). Fluid-bucket-only registry ids use the addon registry namespace; mod ids are diaithir_*."
+}
