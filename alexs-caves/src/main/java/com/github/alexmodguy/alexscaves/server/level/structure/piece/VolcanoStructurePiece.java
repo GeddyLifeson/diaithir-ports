@@ -57,7 +57,7 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     private static BoundingBox createBoundingBox(BlockPos chunkCorner) {
-        ChunkPos chunkPos = new ChunkPos(chunkCorner);
+        ChunkPos chunkPos = ChunkPos.containing(chunkCorner);
         return new BoundingBox(chunkPos.getMinBlockX(), -64, chunkPos.getMinBlockZ(), chunkPos.getMaxBlockX(), 256, chunkPos.getMaxBlockZ());
     }
 

@@ -15,7 +15,7 @@ public class AlexMealItem extends ACBowlFoodItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(Component.translatable("item.alexscaves.alex_meal.desc").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        tooltip.accept(Component.translatable("item.alexscaves.alex_meal.desc").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 }

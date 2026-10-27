@@ -54,9 +54,6 @@ public class JellyBeanItem extends PotionItem {
 
 
 
-    public SoundEvent getDrinkingSound() {
-        return SoundEvents.GENERIC_EAT;
-    }
 
     @Override
     public void onUseTick(Level level, LivingEntity living, ItemStack stack, int useDir) {
@@ -69,9 +66,9 @@ public class JellyBeanItem extends PotionItem {
         vec31 = vec31.yRot(-living.getYRot() * ((float) Math.PI / 180F));
         vec31 = vec31.add(living.getX(), living.getEyeY(), living.getZ());
         if (level instanceof ServerLevel) {
-            ((ServerLevel) level).sendParticles(new ItemParticleOption(ACParticleRegistry.JELLY_BEAN_EAT.get(), stack), vec31.x, vec31.y, vec31.z, 1, vec3.x, vec3.y + 0.05D, vec3.z, 0.0D);
+            ((ServerLevel) level).sendParticles(new ItemParticleOption(ACParticleRegistry.JELLY_BEAN_EAT.get(), stack.getItem()), vec31.x, vec31.y, vec31.z, 1, vec3.x, vec3.y + 0.05D, vec3.z, 0.0D);
         } else {
-            level.addParticle(new ItemParticleOption(ACParticleRegistry.JELLY_BEAN_EAT.get(), stack), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05D, vec3.z);
+            level.addParticle(new ItemParticleOption(ACParticleRegistry.JELLY_BEAN_EAT.get(), stack.getItem()), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05D, vec3.z);
         }
 
     }
@@ -95,7 +92,7 @@ public class JellyBeanItem extends PotionItem {
                 mutablecomponent = Component.translatable("potion.withDuration", mutablecomponent, MobEffectUtil.formatDuration(mobeffectinstance, 1.0F, context.tickRate()));
             }
 
-            tooltip.add(Component.translatable("item.alexscaves.jelly_bean.desc", mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting())).withStyle(ChatFormatting.GRAY));
+            tooltip.accept(Component.translatable("item.alexscaves.jelly_bean.desc", mutablecomponent.withStyle(mobeffect.getCategory().getTooltipFormatting())).withStyle(ChatFormatting.GRAY));
         }
     }
 

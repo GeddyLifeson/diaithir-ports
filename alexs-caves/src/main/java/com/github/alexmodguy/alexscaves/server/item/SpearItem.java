@@ -36,7 +36,12 @@ public class SpearItem extends Item {
                 .build();
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+        hurtEnemyImpl(stack, hurtEntity, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         return true;
     }

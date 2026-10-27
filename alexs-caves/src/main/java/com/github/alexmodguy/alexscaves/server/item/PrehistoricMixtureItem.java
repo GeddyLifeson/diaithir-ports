@@ -39,7 +39,7 @@ public class PrehistoricMixtureItem extends ACBowlFoodItem {
                 }
             }
             for (int i = 0; i < 4 + livingEntity.getRandom().nextInt(3); i++) {
-                ((ServerLevel) livingEntity.level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), livingEntity.getRandomX(0.8F), livingEntity.getRandomY(), livingEntity.getRandomZ(0.8F), 0, 0, 0, 0, 0);
+                ((ServerLevel) livingEntity.level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack.getItem()), livingEntity.getRandomX(0.8F), livingEntity.getRandomY(), livingEntity.getRandomZ(0.8F), 0, 0, 0, 0, 0);
             }
             if (!player.isCreative()) {
                 itemStack.shrink(1);

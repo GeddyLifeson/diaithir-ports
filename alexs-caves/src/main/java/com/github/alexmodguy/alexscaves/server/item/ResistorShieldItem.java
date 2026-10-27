@@ -44,7 +44,7 @@ public class ResistorShieldItem extends ShieldItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(Component.translatable("item.alexscaves.resistor_shield.desc").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.alexscaves.resistor_shield.desc").withStyle(ChatFormatting.GRAY));
     }
 
 
@@ -93,11 +93,14 @@ public class ResistorShieldItem extends ShieldItem {
         }
     }
 
-    public boolean isValidRepairItem(ItemStack item, ItemStack repairItem) {
-        return repairItem.is(ACItemRegistry.SCARLET_NEODYMIUM_INGOT.get()) || repairItem.is(ACItemRegistry.AZURE_NEODYMIUM_INGOT.get()) || super.isValidRepairItem(item, repairItem);
+
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+        releaseUsingImpl(stack, level, player, useTimeLeft);
+        return true;
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
         super.releaseUsing(stack, level, player, useTimeLeft);
         AlexsCaves.PROXY.clearSoundCacheFor(player);
     }

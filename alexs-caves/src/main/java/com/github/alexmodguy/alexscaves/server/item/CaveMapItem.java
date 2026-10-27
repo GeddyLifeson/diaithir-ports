@@ -171,7 +171,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
         ResourceKey<Biome> biomeResourceKey = getBiomeTarget(stack);
         if (biomeResourceKey != null) {
             String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
-            tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
+            tooltip.accept(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, context, display, tooltip, flagIn);
     }

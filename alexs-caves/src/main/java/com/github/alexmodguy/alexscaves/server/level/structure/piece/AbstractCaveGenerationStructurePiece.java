@@ -53,7 +53,7 @@ public abstract class AbstractCaveGenerationStructurePiece extends StructurePiec
     }
 
     private static BoundingBox createBoundingBox(BlockPos origin, int minY, int maxY) {
-        ChunkPos chunkPos = new ChunkPos(origin);
+        ChunkPos chunkPos = ChunkPos.containing(origin);
         return new BoundingBox(chunkPos.getMinBlockX(), minY, chunkPos.getMinBlockZ(), chunkPos.getMaxBlockX(), maxY, chunkPos.getMaxBlockZ());
     }
 

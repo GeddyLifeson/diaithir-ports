@@ -34,7 +34,13 @@ public class MothDustItem extends Item {
         return InteractionResult.CONSUME;
     }
 
-    public void releaseUsing(ItemStack itemStack, Level level, LivingEntity living, int time) {
+    @Override
+    public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity living, int time) {
+        releaseUsingImpl(itemStack, level, living, time);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack itemStack, Level level, LivingEntity living, int time) {
         if (living instanceof Player player) {
             int i = this.getUseDuration(itemStack, living) - time;
             float strength = getPowerForTime(i);

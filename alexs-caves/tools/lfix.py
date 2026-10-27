@@ -22,6 +22,8 @@ RULES = [
  (r'method registryOrThrow', r'\.registryOrThrow\(', '.lookupOrThrow('),
  (r'method registry\(', r'\.registry\((Registries\.\w+)\)\.get\(\)', r'.lookupOrThrow(\1)'),
  (r'Level cannot be converted to ServerLevel', r'(canEntityGrief|mayInteract)\((\w+(?:\(\))?),', r'\1((net.minecraft.server.level.ServerLevel) \2,'),
+ (r'no suitable constructor found for ItemParticleOption', r'new ItemParticleOption\(([\w.()]+), (new ItemStack\((?:[^()]|\([^()]*\))*\)|[\w.()]+?)\)(?=[,)])', r'new ItemParticleOption(\1, \2.getItem())'),
+ (r'constructor ChunkPos in record', r'new ChunkPos\((\w+)\)', r'ChunkPos.containing(\1)'),
  (r'method getRandom\(\)', r'levelAccessor\.getRandom\(\)', 'levelAccessor.getRandom()'),
 ]
 log=open(sys.argv[1]).read().split('\n')

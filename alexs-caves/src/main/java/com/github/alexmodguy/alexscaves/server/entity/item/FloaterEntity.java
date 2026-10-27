@@ -49,7 +49,7 @@ public class FloaterEntity extends Entity {
     public void handleEntityEvent(byte message) {
         if (message == 3) {
             for (int i = 0; i < 10 + random.nextInt(4); ++i) {
-                this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ACItemRegistry.FLOATER.get())), this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), ((double) this.random.nextFloat() - 0.5D) * 0.3D, ((double) this.random.nextFloat() - 0.5D) * 0.3D, ((double) this.random.nextFloat() - 0.5D) * 0.3D);
+                this.level().addParticle(new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ACItemRegistry.FLOATER.get()).getItem()), this.getRandomX(1.0D), this.getRandomY(), this.getRandomZ(1.0D), ((double) this.random.nextFloat() - 0.5D) * 0.3D, ((double) this.random.nextFloat() - 0.5D) * 0.3D, ((double) this.random.nextFloat() - 0.5D) * 0.3D);
             }
         } else {
             super.handleEntityEvent(message);

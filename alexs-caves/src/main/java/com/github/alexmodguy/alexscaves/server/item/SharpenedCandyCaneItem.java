@@ -29,7 +29,12 @@ public class SharpenedCandyCaneItem extends Item {
                 .build();
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+        hurtEnemyImpl(stack, hurtEntity, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         if (player instanceof Player player1 && !player1.isCreative()) {
             stack.shrink(1);
             player1.playSound(SoundEvents.ITEM_BREAK.value());

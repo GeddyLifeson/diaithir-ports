@@ -49,13 +49,7 @@ public class DrinkableBottledItem extends Item {
         return ItemUseAnimation.DRINK;
     }
 
-    public SoundEvent getDrinkingSound() {
-        return SoundEvents.GENERIC_DRINK;
-    }
 
-    public SoundEvent getEatingSound() {
-        return SoundEvents.GENERIC_DRINK;
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         return ItemUtils.startUsingInstantly(level, player, hand);

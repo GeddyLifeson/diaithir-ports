@@ -32,7 +32,12 @@ public class DesolateDaggerItem extends SwordItem {
         return 360;
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurt, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurt, LivingEntity player) {
+        hurtEnemyImpl(stack, hurt, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurt, LivingEntity player) {
         if (super.hurtEnemy(stack, hurt, player)) {
             int delayedLevel = ACEnchantmentHelper.getEnchantmentLevel(player.level(), ACEnchantmentRegistry.IMPENDING_STAB, stack);
             for(int i = 0; i < 1 + ACEnchantmentHelper.getEnchantmentLevel(player.level(), ACEnchantmentRegistry.DOUBLE_STAB, stack); i++){
@@ -49,8 +54,5 @@ public class DesolateDaggerItem extends SwordItem {
         }
     }
 
-    public boolean isValidRepairItem(ItemStack itemStack, ItemStack repairWith) {
-        return repairWith.is(ACItemRegistry.PURE_DARKNESS.get());
-    }
 
 }

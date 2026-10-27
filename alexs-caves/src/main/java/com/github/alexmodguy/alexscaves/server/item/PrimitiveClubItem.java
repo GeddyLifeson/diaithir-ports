@@ -50,7 +50,12 @@ public class PrimitiveClubItem extends Item {
 
 
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+        hurtEnemyImpl(stack, hurtEntity, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         if (!hurtEntity.level().isClientSide()) {
             SoundEvent soundEvent = ACSoundRegistry.PRIMITIVE_CLUB_MISS.get();
@@ -101,9 +106,6 @@ public class PrimitiveClubItem extends Item {
         return true;
     }
 
-    public boolean isValidRepairItem(ItemStack item, ItemStack repairItem) {
-        return repairItem.is(ACItemRegistry.HEAVY_BONE.get()) || super.isValidRepairItem(item, repairItem);
-    }
 
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {

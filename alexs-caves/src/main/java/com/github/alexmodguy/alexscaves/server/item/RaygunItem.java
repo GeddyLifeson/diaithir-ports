@@ -300,7 +300,13 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
         }
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+        releaseUsingImpl(stack, level, player, useTimeLeft);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
         super.releaseUsing(stack, level, player, useTimeLeft);
         if (level.isClientSide()) {
             AlexsCaves.sendMSGToServer(new UpdateItemTagMessage(player.getId(), stack));
@@ -327,7 +333,7 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         if (getCharge(stack) != 0) {
             String chargeLeft = "" + (int) (MAX_CHARGE - getCharge(stack));
-            tooltip.add(Component.translatable("item.alexscaves.raygun.charge", chargeLeft, MAX_CHARGE).withStyle(ChatFormatting.GREEN));
+            tooltip.accept(Component.translatable("item.alexscaves.raygun.charge", chargeLeft, MAX_CHARGE).withStyle(ChatFormatting.GREEN));
         }
     }
 

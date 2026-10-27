@@ -79,7 +79,13 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         }
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity user, int i1) {
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity user, int i1) {
+        releaseUsingImpl(stack, level, user, i1);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity user, int i1) {
         Entity controlledEntity = getControlledEntity(level, stack);
         if (controlledEntity != null) {
             controlledEntity.setGlowingTag(false);
@@ -223,7 +229,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
                 Optional<EntityType<?>> optional = EntityType.by((CompoundTag) entity);
                 if (optional.isPresent()) {
                     Component untranslated = optional.get().getDescription().copy().withStyle(ChatFormatting.GRAY);
-                    tooltip.add(untranslated);
+                    tooltip.accept(untranslated);
                 }
             }
         }
@@ -278,7 +284,12 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         return getBoundEntityUUID(stack) != null;
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtMob, LivingEntity livingEntity1) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtMob, LivingEntity livingEntity1) {
+        hurtEnemyImpl(stack, hurtMob, livingEntity1);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtMob, LivingEntity livingEntity1) {
         if (hurtMob.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) || hurtMob instanceof Player && !AlexsCaves.COMMON_CONFIG.totemOfPossessionPlayers.get()) {
             if (livingEntity1 instanceof Player player) {
                 player.sendOverlayMessage(Component.translatable("item.alexscaves.totem_of_possession.invalid"));

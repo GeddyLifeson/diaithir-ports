@@ -23,7 +23,7 @@ public class BlockItemWithSupplierLore extends BlockItemWithSupplier {
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         String blockName = block.getId().getNamespace() + "." + block.getId().getPath();
-        tooltip.add(Component.translatable("block." + blockName + ".desc").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("block." + blockName + ".desc").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 }

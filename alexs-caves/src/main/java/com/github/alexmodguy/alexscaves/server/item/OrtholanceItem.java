@@ -51,7 +51,13 @@ public class OrtholanceItem extends Item {
         return 72000;
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int useTime) {
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int useTime) {
+        releaseUsingImpl(stack, level, livingEntity, useTime);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity livingEntity, int useTime) {
         int i = Mth.clamp(this.getUseDuration(stack, livingEntity) - useTime, 0, 60);
         int flinging = ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.FLINGING, stack);
         boolean tsunami = ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.TSUNAMI, stack) > 0;
@@ -139,7 +145,12 @@ public class OrtholanceItem extends Item {
         }
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurt, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurt, LivingEntity player) {
+        hurtEnemyImpl(stack, hurt, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurt, LivingEntity player) {
         stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         Vec3 vec3 = player.getViewVector(1.0F);
         if(ACEnchantmentHelper.getEnchantmentLevel(player.level(), ACEnchantmentRegistry.SEA_SWING, stack) > 0){

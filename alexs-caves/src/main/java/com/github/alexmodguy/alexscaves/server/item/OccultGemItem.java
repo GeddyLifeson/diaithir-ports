@@ -94,7 +94,7 @@ public class OccultGemItem extends Item {
 
 
     private static void loadChunksAround(ServerLevel serverLevel, UUID ticket, BlockPos center, boolean load) {
-        ChunkPos chunkPos = new ChunkPos(center);
+        ChunkPos chunkPos = ChunkPos.containing(center);
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 TICKET_CONTROLLER.forceChunk(serverLevel, center, chunkPos.x() + i, chunkPos.z() + j, load, true);
@@ -191,7 +191,7 @@ public class OccultGemItem extends Item {
             if (optional.isPresent() && blockposOpt.isPresent()) {
                 BlockPos blockpos = blockposOpt.get();
                 Component untranslated = Component.translatable("item.alexscaves.occult_gem.desc", blockpos.getX(), blockpos.getY(), blockpos.getZ()).withStyle(ChatFormatting.GRAY);
-                tooltip.add(untranslated);
+                tooltip.accept(untranslated);
             }
         }
         super.appendHoverText(stack, context, display, tooltip, flagIn);

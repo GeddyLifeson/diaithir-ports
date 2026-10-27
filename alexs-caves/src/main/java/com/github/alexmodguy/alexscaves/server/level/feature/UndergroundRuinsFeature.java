@@ -63,7 +63,7 @@ public class UndergroundRuinsFeature extends Feature<UndergroundRuinsFeatureConf
         int i = randomsource.nextInt(config.structures.size());
         StructureTemplateManager structuretemplatemanager = level.getLevel().getServer().getStructureManager();
         StructureTemplate structuretemplate = structuretemplatemanager.getOrCreate(config.structures.get(i));
-        ChunkPos chunkpos = new ChunkPos(blockpos);
+        ChunkPos chunkpos = ChunkPos.containing(blockpos);
         BoundingBox boundingbox = new BoundingBox(chunkpos.getMinBlockX() - 16, level.getMinY(), chunkpos.getMinBlockZ() - 16, chunkpos.getMaxBlockX() + 16, level.getMaxY(), chunkpos.getMaxBlockZ() + 16);
         StructurePlaceSettings structureplacesettings = (new StructurePlaceSettings()).setRotation(rotation).setBoundingBox(boundingbox).setRandom(randomsource);
         structureplacesettings = modifyPlacementSettings(structureplacesettings);

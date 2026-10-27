@@ -44,7 +44,7 @@ public class SugarStaffItem extends Item {
                 level.addFreshEntity(sugarStaffHexEntity);
                 level.playSound((Player)null, player.blockPosition(), ACSoundRegistry.SUGAR_STAFF_CAST_HEX.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
                 sugarStaffHexEntity.setLifespan(100 + 60 * ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SPELL_LASTING, itemstack));
-                player.getCooldowns().addCooldown(this, 100);
+                player.getCooldowns().addCooldown(new ItemStack(this), 100);
             }else{
                 int spawnIn = 3 + ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.MULTIPLE_MINT, itemstack);
                 boolean flag = false;
@@ -74,7 +74,7 @@ public class SugarStaffItem extends Item {
                     level.addFreshEntity(spinningPeppermintEntity);
                 }
                 level.playSound((Player)null, player.blockPosition(), ACSoundRegistry.SUGAR_STAFF_CAST_PEPPERMINT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
-                player.getCooldowns().addCooldown(this, despawnTime);
+                player.getCooldowns().addCooldown(new ItemStack(this), despawnTime);
             }
             itemstack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
         }

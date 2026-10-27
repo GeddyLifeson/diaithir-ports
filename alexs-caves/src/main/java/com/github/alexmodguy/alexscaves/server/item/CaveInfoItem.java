@@ -126,7 +126,7 @@ public class CaveInfoItem extends Item {
         ResourceKey<Biome> biomeResourceKey = getCaveBiome(stack);
         if (biomeResourceKey != null && !this.hideCaveId) {
             String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
-            tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
+            tooltip.accept(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, context, display, tooltip, flagIn);
     }

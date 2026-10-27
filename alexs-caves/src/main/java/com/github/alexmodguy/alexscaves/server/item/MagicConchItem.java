@@ -33,7 +33,13 @@ public class MagicConchItem extends Item {
         return true;
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+        releaseUsingImpl(stack, level, player, useTimeLeft);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
         level.playSound(null, player, ACSoundRegistry.MAGIC_CONCH_CAST.get(), SoundSource.RECORDS, 16.0F, 1.0F);
         int i = this.getUseDuration(stack, player) - useTimeLeft;
         boolean hurtRelations = false;
@@ -93,7 +99,7 @@ public class MagicConchItem extends Item {
             }
             if (player instanceof Player realPlayer) {
                 realPlayer.awardStat(Stats.ITEM_USED.get(this));
-                realPlayer.getCooldowns().addCooldown(this, time);
+                realPlayer.getCooldowns().addCooldown(new ItemStack(this), time);
             }
         }
 

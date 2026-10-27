@@ -23,7 +23,13 @@ public class ExtinctionSpearItem extends SpearItem {
         super(properties, 8.0D);
     }
 
-    public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+    @Override
+    public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+        releaseUsingImpl(itemStack, level, livingEntity, i1);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
         if (livingEntity instanceof Player player) {
             int i = this.getUseDuration(itemStack, livingEntity) - i1;
             float f = getPowerForTime(i);
@@ -79,7 +85,12 @@ public class ExtinctionSpearItem extends SpearItem {
         return !justTheClosest;
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+        hurtEnemyImpl(stack, hurtEntity, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         hurtEntity.igniteForSeconds(5);
         DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(player.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         Vec3 between = player.position().add(hurtEntity.position()).scale(0.5F);
@@ -97,7 +108,4 @@ public class ExtinctionSpearItem extends SpearItem {
 
 
 
-    public boolean isValidRepairItem(ItemStack item, ItemStack repairItem) {
-        return repairItem.is(ACItemRegistry.TECTONIC_SHARD.get()) || super.isValidRepairItem(item, repairItem);
-    }
 }

@@ -39,11 +39,5 @@ public class RadiationRemovingFoodItem extends Item {
         return this == ACItemRegistry.GREEN_SOYLENT.get() ? ItemUseAnimation.DRINK : ItemUseAnimation.EAT;
     }
 
-    public SoundEvent getDrinkingSound() {
-        return this == ACItemRegistry.GREEN_SOYLENT.get() ? SoundEvents.HONEY_DRINK : super.getDrinkingSound();
-    }
 
-    public SoundEvent getEatingSound() {
-        return this == ACItemRegistry.GREEN_SOYLENT.get() ? SoundEvents.HONEY_DRINK : super.getEatingSound();
-    }
 }

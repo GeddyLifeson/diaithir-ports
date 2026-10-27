@@ -68,7 +68,7 @@ public class DonutArchStructurePiece extends StructurePiece {
     }
 
     private static BoundingBox createBoundingBox(BlockPos origin, Direction direction) {
-        ChunkPos chunkPos = new ChunkPos(origin);
+        ChunkPos chunkPos = ChunkPos.containing(origin);
         return new BoundingBox(chunkPos.getMinBlockX(), origin.getY() - 2, chunkPos.getMinBlockZ(), chunkPos.getMaxBlockX(), origin.getY() + 16, chunkPos.getMaxBlockZ());
     }
 

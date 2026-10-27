@@ -22,7 +22,13 @@ public class FrostmintSpearItem extends SpearItem {
         super(properties, 5.0D);
     }
 
-    public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+    @Override
+    public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+        releaseUsingImpl(itemStack, level, livingEntity, i1);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
         if (livingEntity instanceof Player player) {
             int i = this.getUseDuration(itemStack, livingEntity) - i1;
             float f = getPowerForTime(i);
@@ -42,7 +48,12 @@ public class FrostmintSpearItem extends SpearItem {
         }
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+    @Override
+    public void hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
+        hurtEnemyImpl(stack, hurtEntity, player);
+    }
+
+    private boolean hurtEnemyImpl(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         hurtEntity.setTicksFrozen(hurtEntity.getTicksRequiredToFreeze() + 200);
         ((FrostmintFreezableAccessor)hurtEntity).setFrostmintFreezing(true);
         return super.hurtEnemy(stack, hurtEntity, player);

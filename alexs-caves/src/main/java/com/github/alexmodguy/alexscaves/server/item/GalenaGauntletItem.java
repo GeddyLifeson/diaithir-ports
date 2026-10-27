@@ -45,14 +45,17 @@ public class GalenaGauntletItem extends Item {
         }
     }
 
-    public boolean isValidRepairItem(ItemStack item, ItemStack repairItem) {
-        return repairItem.is(ACBlockRegistry.PACKED_GALENA.get().asItem()) || super.isValidRepairItem(item, repairItem);
+
+    @Override
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+        releaseUsingImpl(stack, level, player, useTimeLeft);
+        return true;
     }
 
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
+    private void releaseUsingImpl(ItemStack stack, Level level, LivingEntity player, int useTimeLeft) {
         super.releaseUsing(stack, level, player, useTimeLeft);
         if(player instanceof Player realPlayer){
-            realPlayer.getCooldowns().addCooldown(this, 5);
+            realPlayer.getCooldowns().addCooldown(new ItemStack(this), 5);
 
         }
         AlexsCaves.PROXY.clearSoundCacheFor(player);

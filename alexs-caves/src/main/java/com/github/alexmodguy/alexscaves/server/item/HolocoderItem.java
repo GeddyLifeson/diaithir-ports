@@ -29,7 +29,7 @@ public class HolocoderItem extends Item {
                 Optional<EntityType<?>> optional = EntityType.by((CompoundTag) entity);
                 if (optional.isPresent()) {
                     Component untranslated = optional.get().getDescription().copy().withStyle(ChatFormatting.GRAY);
-                    tooltip.add(untranslated);
+                    tooltip.accept(untranslated);
                 }
             }
         }

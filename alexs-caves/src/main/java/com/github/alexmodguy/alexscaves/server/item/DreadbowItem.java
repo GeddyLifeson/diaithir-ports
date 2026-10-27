@@ -197,7 +197,13 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
 
 
 
-    public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+    @Override
+    public boolean releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
+        releaseUsingImpl(itemStack, level, livingEntity, i1);
+        return true;
+    }
+
+    private void releaseUsingImpl(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
         if (livingEntity instanceof Player player && !ACEnchantmentHelper.hasEnchantment(level, ACEnchantmentRegistry.RELENTLESS_DARKNESS, itemStack)) {
             int i = this.getUseDuration(itemStack, livingEntity) - i1;
             float f = getPowerForTime(level, i, itemStack);
