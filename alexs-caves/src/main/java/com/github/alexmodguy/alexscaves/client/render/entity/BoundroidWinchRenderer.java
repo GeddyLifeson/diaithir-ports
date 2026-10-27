@@ -27,7 +27,7 @@ import org.joml.Matrix4f;
 public class BoundroidWinchRenderer extends LegacyMobRenderer<BoundroidWinchEntity, BoundroidWinchModel> {
     private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/entity/boundroid_winch.png");
     private static final Identifier TEXTURE_GLOW = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/entity/boundroid_winch_glow.png");
-    private static final Identifier TEXTURE_CHAIN = Identifier.parse("minecraft:textures/block/chain.png");
+    private static final Identifier TEXTURE_CHAIN = Identifier.parse("minecraft:textures/block/iron_chain.png");
     public static final int MAX_CHAIN_SEGMENTS = 256;
 
     public BoundroidWinchRenderer(EntityRendererProvider.Context renderManagerIn) {
