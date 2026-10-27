@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "E": "minecraft:ender_pearl",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "E",
+    "I",
+    "I"
+  ],
+  "result": {
+    "id": "diaithirconduits:tuner",
+    "count": 1
+  },
+  "category": "misc"
+}
