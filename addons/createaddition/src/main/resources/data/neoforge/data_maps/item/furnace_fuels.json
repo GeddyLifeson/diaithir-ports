@@ -1,0 +1,10 @@
+{
+ "values": {
+  "createaddition:biomass_pellet": {
+   "burn_time": 6400
+  },
+  "createaddition:biomass_pellet_block": {
+   "burn_time": 57600
+  }
+ }
+}

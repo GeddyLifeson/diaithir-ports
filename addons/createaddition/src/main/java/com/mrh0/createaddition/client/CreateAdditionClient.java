@@ -22,6 +22,7 @@ public class CreateAdditionClient {
         event.registerBlockEntityRenderer(CABlockEntities.ALTERNATOR.get(), ctx -> new ShaftMachineRenderer<>(ShaftMachineRenderer.Kind.ALTERNATOR));
         event.registerBlockEntityRenderer(CABlockEntities.ROLLING_MILL.get(), ctx -> new ShaftMachineRenderer<>(ShaftMachineRenderer.Kind.ROLLING_MILL));
         event.registerBlockEntityRenderer(CABlockEntities.SMALL_CONNECTOR.get(), ctx -> new WireNodeRenderer<>());
+        event.registerBlockEntityRenderer(CABlockEntities.MODULAR_ACCUMULATOR.get(), ctx -> new AccumulatorRenderer());
         event.registerBlockEntityRenderer(CABlockEntities.SMALL_LIGHT_CONNECTOR.get(), ctx -> new WireNodeRenderer<>());
         event.registerBlockEntityRenderer(CABlockEntities.LARGE_CONNECTOR.get(), ctx -> new WireNodeRenderer<>());
         event.registerBlockEntityRenderer(CABlockEntities.REDSTONE_RELAY.get(), ctx -> new WireNodeRenderer<>());

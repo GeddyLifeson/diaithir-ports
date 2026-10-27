@@ -25,6 +25,7 @@ import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.Vec3;
@@ -37,8 +38,12 @@ public class WireNodeRenderer<T extends BlockEntity> implements BlockEntityRende
     /** One wire: translate to (tx,ty,tz) from the block origin, then run to (x,y,z). Lights: block/sky at the other end, then at this end. */
     public record Seg(float tx, float ty, float tz, float x, float y, float z, WireType type, float dis, int bOther, int bThis, int sOther, int sThis) {}
 
+    public record Bulb(Seg seg, float x, float y, float z, com.zurrtum.create.client.catnip.render.SuperByteBufferRenderState model) {}
+    private static final int[] BULB_COLORS = {0xFF2020, 0x20FF20, 0x2040FF};
+
     public static class State extends BlockEntityRenderState {
         public final List<Seg> segs = new ArrayList<>();
+        public final List<Bulb> bulbs = new ArrayList<>();
     }
 
     public WireNodeRenderer() {}
@@ -68,6 +73,7 @@ public class WireNodeRenderer<T extends BlockEntity> implements BlockEntityRende
     public void extractRenderState(T be, State state, float partialTicks, Vec3 cameraPosition, @Nullable CrumblingOverlay breakProgress) {
         BlockEntityRenderState.extractBase(be, state, breakProgress);
         state.segs.clear();
+        state.bulbs.clear();
         Level level = be.getLevel();
         if (level == null) return;
         IWireNode te = (IWireNode) be;
@@ -107,10 +113,33 @@ public class WireNodeRenderer<T extends BlockEntity> implements BlockEntityRende
                     level.getBrightness(LightLayer.SKY, pb), level.getBrightness(LightLayer.SKY, here)));
             }
         }
+        addBulbs(state, be.getBlockState());
+    }
+
+    private static void addBulbs(State state, BlockState bs) {
+        for (Seg s : new ArrayList<>(state.segs)) {
+            if (!s.type.isFestive()) continue;
+            boolean main = s.x + s.y + s.z > 0;
+            for (int idx = 3; idx < SEGMENTS; idx += 3) {
+                float part = (float) idx / SEGMENTS;
+                float v = s.y;
+                float cat = v > 0 ? v * part * part : v - v * (1 - part) * (1 - part);
+                int col = BULB_COLORS[main ? 2 - (idx / 3) % 3 : (idx / 3) % 3];
+                state.bulbs.add(new Bulb(s, s.x * part, cat + hang(part, s.dis) - 0.03f, s.z * part,
+                    com.zurrtum.create.client.catnip.render.CachedBuffers.partial(com.mrh0.createaddition.index.CAPartials.SMALL_LIGHT, bs).color(col).light(0xF000F0).extractRenderState()));
+            }
+        }
     }
 
     @Override
     public void submit(State state, PoseStack stack, SubmitNodeCollector queue, CameraRenderState camera) {
+        for (Bulb b : state.bulbs) {
+            stack.pushPose();
+            stack.translate(b.seg.tx, b.seg.ty, b.seg.tz);
+            stack.translate(b.x, b.y, b.z);
+            b.model.submit(stack, queue);
+            stack.popPose();
+        }
         for (Seg s : state.segs) {
             stack.pushPose();
             stack.translate(s.tx, s.ty, s.tz);

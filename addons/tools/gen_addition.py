@@ -46,6 +46,7 @@ def have_item(i):
 
 
 class Skip(Exception): pass
+REMAP = {'create:copper_nugget': 'minecraft:copper_nugget'}
 
 
 def ing(x):
@@ -53,6 +54,7 @@ def ing(x):
     if isinstance(x, list): return [ing(i) for i in x]
     if isinstance(x, str): return x
     if 'item' in x:
+        x = dict(x, item=REMAP.get(x['item'], x['item']))
         if not have_item(x['item']): raise Skip(x['item'])
         return x['item']
     if 'tag' in x and x.get('type', 'neoforge:tag') in ('neoforge:tag',) and 'amount' not in x:
@@ -73,6 +75,7 @@ def fluid_ing(x):
 
 def result(r):
     if isinstance(r, str): r = {'id': r}
+    r = dict(r, id=REMAP.get(r['id'], r['id']))
     if not have_item(r['id']): raise Skip(r['id'])
     o = {'id': r['id']}
     if r.get('count', 1) != 1: o['count'] = r['count']
@@ -195,6 +198,13 @@ def main():
         W(os.path.join(A, 'items', n + '.json'), {'model': {'type': 'minecraft:model', 'model': f'{NS}:{model}'}})
     # ---- data: recipes
     n_ok = n_skip = 0
+    SK = []
+    WHY = ('Reasons by code: `type createaddition:liquid_burning` is the diesel/liquid burner fuel registry, which depends on the 1.21 fluid '
+           'registry the port does not ship (fluids are not ported yet); `fluid` is the bioethanol/seed_oil fluids, same cause; '
+           '`type create:item_application` is a Create 1.21 recipe type absent from the Create port; `immersiveengineering:`, `mekanism:`, '
+           '`jeed:`, `tconstruct`/`thermal` compat entries target mods that do not exist on 26.1; `createaddition:digital_adapter`, '
+           '`portable_energy_interface`, `servo_motor`, `electric_pump` are items not ported (they need Create 1.21 internals the port '
+           'replaced). The two tuff crushing recipes are now ported via create:copper_nugget -> minecraft:copper_nugget.\n\n')
     for src, pre in ((UP + '/generated/resources/data/createaddition/recipe', ''), (UP + '/main/resources/data/createaddition/recipe', ''),
                      (UP + '/generated/resources/data/create/recipe', 'create_')):
         for p in glob.glob(src + '/**/*.json', recursive=True):
@@ -202,12 +212,14 @@ def main():
             try:
                 out = conv_recipe(json.load(open(p)))
             except Skip as e:
-                n_skip += 1; continue
+                n_skip += 1; SK.append((rel, str(e))); continue
             except Exception as e:
-                print('ERR', rel, e); n_skip += 1; continue
+                print('ERR', rel, e); n_skip += 1; SK.append((rel, 'error: ' + str(e))); continue
             W(os.path.join(D, NS, 'recipe', os.path.dirname(rel), pre + os.path.basename(rel)), out)
             n_ok += 1
+    W(os.path.join(D, 'neoforge', 'data_maps', 'item', 'furnace_fuels.json'), {'values': {NS + ':biomass_pellet': {'burn_time': 6400}, NS + ':biomass_pellet_block': {'burn_time': 57600}}})
     print('recipes ok', n_ok, 'skipped', n_skip)
+    open(os.path.join(HERE, '..', 'createaddition', 'SKIPPED_RECIPES.md'), 'w').write('# Skipped recipes\n\n' + WHY + '\n'.join(f'- `{a}`: {b}' for a, b in sorted(SK)) + '\n')
     # ---- data: tags (filter unknown createaddition ids), damage types
     for ns_dir in ('c', 'minecraft', 'create', 'createaddition', 'farmersdelight'):
         base = UP + '/generated/resources/data/' + ns_dir + '/tags'
