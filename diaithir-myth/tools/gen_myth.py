@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generates every data and asset file of Diaithir Myth Beasts: creature table, models, skins, spawn egg icons,
-loot tables, lang, spawn modifier and biome tag.
+loot tables, lang, and (via gen_spawns.py) spawn regions, habitat biome tags and spawn modifiers.
 
 Creature stats and behaviours are adapted from Greek Fantasy by skyjay1 (GPLv3). No upstream model, texture, sound
 or language file is used: the geometry, skins and names below are new. Names are coined Diaithiris names.
@@ -155,9 +155,8 @@ def main():
     json.dump(dict(comment='court of each creature in this mod; living-tradition courts are not represented', courts=courts),
               open(os.path.join(RES, 'data/%s/myth/courts.json' % NS), 'w'), indent=1)
     json.dump(lang, open(os.path.join(RES, 'assets/%s/lang/en_us.json' % NS), 'w'), indent=2, ensure_ascii=False)
-    json.dump({'type': 'neoforge:add_spawns', 'biomes': '#%s:spawns' % NS, 'spawners': spawners},
-              open(os.path.join(RES, 'data/%s/neoforge/biome_modifier/spawns.json' % NS), 'w'), indent=2)
-    json.dump({'replace': False, 'values': ['#minecraft:is_overworld']}, open(os.path.join(RES, 'data/%s/tags/worldgen/biome/spawns.json' % NS), 'w'), indent=2)
+    import gen_spawns  # spawn regions, habitat biome tags and per-creature spawn modifiers
+    gen_spawns.main()
     print('wrote', len(table), 'creatures')
 
 

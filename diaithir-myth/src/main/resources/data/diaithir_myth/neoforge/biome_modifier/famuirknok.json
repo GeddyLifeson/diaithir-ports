@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:habitat/volcano",
+  "spawners": [
+    {
+      "type": "diaithir_myth:famuirknok",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}
