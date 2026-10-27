@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "diaithirbutchery"
+    }
+  ],
+  "ingredient": "diaithirbutchery:raw_hide",
+  "size": "medium",
+  "component": "diaithirbutchery:body",
+  "sizes": {
+    "land_tiny": "small",
+    "land_small": "small",
+    "land_medium": "medium",
+    "land_large": "large",
+    "land_huge": "large",
+    "predator": "medium",
+    "fish_medium": "small",
+    "fish_large": "medium",
+    "fish_huge": "large",
+    "reptile": "medium",
+    "monster_hide": "large"
+  }
+}

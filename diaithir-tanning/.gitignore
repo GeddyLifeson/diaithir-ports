@@ -1,4 +1,3 @@
-build/
-.gradle/
 run/
-*.log
+.gradle/
+build/

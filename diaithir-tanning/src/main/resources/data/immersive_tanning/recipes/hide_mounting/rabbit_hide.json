@@ -1,9 +1,0 @@
-{
-  "type": "immersive_tanning:hide_mounting",
-  "ingredient": [
-    {
-      "item": "minecraft:rabbit_hide"
-    }
-  ],
-  "size": "small"
-}
