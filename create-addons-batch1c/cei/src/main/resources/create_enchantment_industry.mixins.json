@@ -4,6 +4,7 @@
   "package": "plus.dragons.createenchantmentindustry.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "AddonRegistrationMixin",
     "ConnectivityHandlerMixin",
     "CreateNBTProcessorsMixin",
     "CrushingWheelControllerBlockEntityMixin",

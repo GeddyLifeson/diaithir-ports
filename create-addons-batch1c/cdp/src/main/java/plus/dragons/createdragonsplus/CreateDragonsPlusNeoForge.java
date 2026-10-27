@@ -11,7 +11,6 @@ import plus.dragons.createdragonsplus.network.CDPNetworking;
 @Mod("diaithir_create_dragons_plus")
 public class CreateDragonsPlusNeoForge {
     public CreateDragonsPlusNeoForge(IEventBus modBus, ModContainer container) {
-        new CreateDragonsPlus().onInitialize();
         plus.dragons.createdragonsplus.compat.ServerLifecycleEvents.init();
         CDPNetworking.register(modBus);
         if (FMLEnvironment.getDist() == Dist.CLIENT) {

@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="LGPL-3.0-or-later"
+
+[[mods]]
+modId="diaithir_create_enchantment_industry"
+version="2.5.2-diaithir.1"
+displayName="Create: Enchantment Industry (Diaithir port)"
+authors="DragonsPlus (code, LGPL-3.0); Diaithir pack (NeoForge port, art, text)"
+description='''Automatic enchanting, experience fluid and printing with Create. NeoForge 26.1.2 port of the LGPL-3.0 Fly build.'''
+
+[[mixins]]
+config="create_enchantment_industry.mixins.json"
+
+[[dependencies.diaithir_create_enchantment_industry]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_enchantment_industry]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_enchantment_industry]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.diaithir_create_enchantment_industry]]
+modId="diaithir_create_dragons_plus"
+type="required"
+versionRange="[1.11.8,)"
+ordering="AFTER"
+side="BOTH"

@@ -196,7 +196,7 @@ public final class CEIDataMaps {
     private static Snapshot current() {
         MinecraftServer server = ACTIVE_SERVER.get();
         boolean serverThread = server != null && server.isSameThread();
-        return (com.zurrtum.create.platform.FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER || serverThread)
+        return (net.neoforged.fml.loading.FMLEnvironment.getDist() == net.neoforged.api.distmarker.Dist.DEDICATED_SERVER || serverThread)
                 ? SERVER.get()
                 : CLIENT.get();
     }

@@ -13,7 +13,6 @@ import plus.dragons.createenchantmentindustry.common.network.CEINetwork;
 @Mod("diaithir_create_enchantment_industry")
 public class CreateEnchantmentIndustryNeoForge {
     public CreateEnchantmentIndustryNeoForge(IEventBus modBus, ModContainer container) {
-        new CEICommon().onInitialize();
         CEINetwork.register(modBus);
         if (FMLEnvironment.getDist() == Dist.CLIENT) {
             modBus.addListener(FMLClientSetupEvent.class, event -> new CEIClient().onInitializeClient());

@@ -73,9 +73,7 @@ public final class CEIBlockEntities {
             String path, Factory<T> factory, Block... blocks) {
         Identifier id = CEICommon.asResource(path);
         BlockEntityType<T>[] holder = new BlockEntityType[1];
-        BlockEntityType<T> type = FabricBlockEntityTypeBuilder
-                .create((pos, state) -> factory.create(holder[0], pos, state), blocks)
-                .build();
+        BlockEntityType<T> type = new BlockEntityType<>((pos, state) -> factory.create(holder[0], pos, state), java.util.Set.of(blocks));
         holder[0] = type;
         Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, type);
         return new CEIRegistryEntry<>(id, type);

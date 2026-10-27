@@ -4,6 +4,7 @@
   "package": "plus.dragons.createdragonsplus.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "minecraft.AddonRegistrationMixin",
     "create.AirCurrentMixin",
     "create.AirCurrentMixin$AirCurrentSegmentMixin",
     "create.BasinOperatingBlockEntityMixin",
@@ -14,7 +15,6 @@
     "create.VanillaFluidTargetsMixin",
     "minecraft.BottleItemMixin",
     "minecraft.ConcretePowderBlockMixin",
-    "minecraft.EntityMixin",
     "minecraft.LiquidBlockMixin",
     "minecraft.PointedDripstoneBlockMixin",
     "minecraft.RecipeManagerAccessor",

@@ -37,16 +37,6 @@ import plus.dragons.createdragonsplus.registry.CDPFluids;
 
 @Mixin(PointedDripstoneBlock.class)
 public abstract class PointedDripstoneBlockMixin {
-    @ModifyExpressionValue(method = "maybeTransferFluid", at = @At(value = "FIELD", target = "Lnet/minecraft/world/level/material/Fluids;LAVA:Lnet/minecraft/world/level/material/FlowingFluid;"))
-    private static FlowingFluid createDragonsPlus$recognizeDragonBreath(
-            FlowingFluid original, @Local Fluid fluid) {
-        return fluid == CDPFluids.DRAGON_BREATH.getSource()
-                && CDPConfig.features().dragonBreathFluid.get()
-                && CDPConfig.features().dragonBreathFluidDripstoneDuplication.get()
-                        ? CDPFluids.DRAGON_BREATH.getSource()
-                        : original;
-    }
-
     @Inject(method = "canFillCauldron", at = @At("HEAD"), cancellable = true)
     private static void createDragonsPlus$canFillDragonBreathCauldron(
             Fluid fluid, CallbackInfoReturnable<Boolean> callback) {
