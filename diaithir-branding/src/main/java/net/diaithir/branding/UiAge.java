@@ -31,10 +31,12 @@ final class UiAge {
     private static final Set<String> IDS = Set.copyOf(AGES.stream().map(UiAge::packId).toList());
     static final ModConfigSpec SPEC;
     private static final ModConfigSpec.ConfigValue<String> CONFIG;
+    private static final ModConfigSpec.ConfigValue<String> CODEX_ITEM;
 
     static {
         var b = new ModConfigSpec.Builder();
         CONFIG = b.comment("Age look of the shared screens: auto (follow the Codex), I, II, III, IV, V, VI, VII or RODOS").define("uiAge", "auto");
+        CODEX_ITEM = b.comment("Part of the item id that is the Codex (diaithir_ages:leabhar_siubhail); in auto mode its form is read").define("codexItem", "leabhar_siubhail");
         SPEC = b.build();
     }
 
@@ -69,7 +71,7 @@ final class UiAge {
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack stack = inv.getItem(i);
             CustomModelData cmd = stack.get(DataComponents.CUSTOM_MODEL_DATA);
-            if (stack.isEmpty() || cmd == null || !BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().contains("leabhar_siubhail")) continue;
+            if (stack.isEmpty() || cmd == null || !BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().contains(CODEX_ITEM.get())) continue;
             for (String s : cmd.strings()) {
                 String age = parse(s);
                 if (age != null) return age;
