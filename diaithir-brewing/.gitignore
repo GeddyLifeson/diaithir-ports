@@ -3,3 +3,5 @@ build/
 run/
 server.log
 cmd.fifo
+client.log
+gen.log
