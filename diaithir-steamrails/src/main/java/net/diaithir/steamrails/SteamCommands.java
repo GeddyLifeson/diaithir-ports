@@ -5,7 +5,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
-/** /diaithirsteamrails selftest (owners): builds a boiler yard high above spawn, burns fuel and checks pressure, steam flow, the tender, the registries and the train hooks. */
+/** /diaithirsteamrails selftest and traintest [keep] (owners). The self test builds a boiler yard high above spawn, burns fuel and checks pressure, steam flow, the tender, the registries and the train hooks. */
 final class SteamCommands {
     private SteamCommands() {}
 
@@ -15,6 +15,14 @@ final class SteamCommands {
                     String err = SelfTest.start(c.getSource());
                     c.getSource().sendSuccess(() -> Component.literal(err == null ? "Steamrails self test started (about 15 seconds)" : "Steamrails self test not started: " + err), false);
                     return err == null ? 1 : 0;
-                })));
+                }))
+                .then(Commands.literal("traintest").requires(Commands.hasPermission(Commands.LEVEL_OWNERS)).executes(c -> run(c.getSource(), false))
+                        .then(Commands.literal("keep").executes(c -> run(c.getSource(), true)))));
+    }
+
+    private static int run(CommandSourceStack src, boolean keep) {
+        String err = TrainTest.start(src, keep);
+        src.sendSuccess(() -> Component.literal(err == null ? "Steamrails train test started (about 20 seconds)" : "Steamrails train test not started: " + err), false);
+        return err == null ? 1 : 0;
     }
 }

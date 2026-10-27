@@ -14,6 +14,15 @@ neoForge {
             server()
             programArgument '--nogui'
         }
+        client {
+            client()
+            jvmArgument '-Xmx6G'
+            // -Pquickplay=<world folder in run/saves> goes straight into that world
+            if (project.hasProperty('quickplay')) {
+                programArgument '--quickPlaySingleplayer'
+                programArgument project.property('quickplay')
+            }
+        }
     }
     mods { diaithirsteamrails { sourceSet(sourceSets.main) } }
 }

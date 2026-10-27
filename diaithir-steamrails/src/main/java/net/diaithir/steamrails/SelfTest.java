@@ -2,6 +2,10 @@ package net.diaithir.steamrails;
 
 import com.mojang.logging.LogUtils;
 import com.zurrtum.create.AllBogeyStyles;
+import com.zurrtum.create.foundation.fluid.FluidHelper;
+import com.zurrtum.create.infrastructure.fluids.FluidInventory;
+import com.zurrtum.create.infrastructure.fluids.FluidStack;
+import net.minecraft.core.registries.BuiltInRegistries;
 import com.zurrtum.create.api.behaviour.movement.MovementBehaviour;
 import com.zurrtum.create.content.trains.bogey.AbstractBogeyBlock;
 import com.zurrtum.create.content.trains.bogey.AllBogeySizes;
@@ -218,6 +222,7 @@ final class SelfTest {
                 t.drainIntake();
                 check(t.state.water >= w0 + 900, "intake did not reach the tender: " + w0 + " -> " + t.state.water);
             }
+            createFluids(level, t, at);
             // player hands: a bucket of water goes into the boiler
             // safety valve
             b.state.pressure = SteamRails.CORE_RATING - 0.02F;
@@ -397,5 +402,34 @@ final class SelfTest {
         tick = -1;
         maxPressure = 0;
         whistleDrawn = 0;
+    }
+
+    /** Water through Create's own fluid API, the route its pipes, spouts and tanks use. */
+    private static void createFluids(ServerLevel level, TenderBlockEntity t, BlockPos at) {
+        BlockPos tp = at.north();
+        FluidInventory ci = FluidHelper.getFluidInventory(level, tp, Direction.UP);
+        check(ci != null, "Create sees no fluid inventory on the tender");
+        if (ci == null) return;
+        float w1 = t.state.water;
+        int in = ci.insert(new FluidStack(Fluids.WATER, 81000), 81000, Direction.UP);
+        check(in == 81000, "Create insert took " + in + " of 81000 units");
+        check(ci.insert(new FluidStack(Fluids.LAVA, 81000), 81000, Direction.UP) == 0, "Create insert accepted lava");
+        t.drainIntake();
+        check(t.state.water >= w1 + 990F, "Create water did not reach the tender: " + w1 + " -> " + t.state.water);
+        // a Create fluid tank as the source
+        BlockPos tank = tp.above(6).east(6);
+        level.setBlock(tank, BuiltInRegistries.BLOCK.getValue(Identifier.parse("create:fluid_tank")).defaultBlockState(), 3);
+        FluidInventory src = FluidHelper.getFluidInventory(level, tank, Direction.UP);
+        check(src != null, "no inventory on the Create fluid tank");
+        if (src != null) {
+            src.insert(new FluidStack(Fluids.WATER, 81000 * 2), 81000 * 2, Direction.UP);
+            int moved = src.extract(new FluidStack(Fluids.WATER, 81000), 81000, Direction.UP);
+            check(moved == 81000, "tank gave " + moved);
+            float w2 = t.state.water;
+            ci.insert(new FluidStack(Fluids.WATER, 81000), moved, Direction.UP);
+            t.drainIntake();
+            check(t.state.water >= w2 + 990F, "tank water did not reach the tender");
+        }
+        level.removeBlock(tank, false);
     }
 }

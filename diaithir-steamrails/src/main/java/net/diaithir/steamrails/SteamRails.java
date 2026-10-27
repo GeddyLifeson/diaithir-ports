@@ -52,6 +52,7 @@ public final class SteamRails {
         NeoForge.EVENT_BUS.addListener(ServerTickEvent.Post.class, e -> {
             TrainPower.tick();
             SelfTest.tick(e.getServer());
+            TrainTest.tick();
         });
     }
 

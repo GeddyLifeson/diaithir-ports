@@ -1,12 +1,15 @@
 package net.diaithir.steamrails;
 
+import com.zurrtum.create.api.behaviour.BlockEntityBehaviour;
+import com.zurrtum.create.foundation.blockEntity.SmartBlockEntity;
+import com.zurrtum.create.foundation.blockEntity.behaviour.CachedFluidInventoryBehaviour;
+import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.ValueInput;
@@ -18,7 +21,7 @@ import org.jspecify.annotations.Nullable;
 import java.util.function.ToIntFunction;
 
 /** The brain of a boiler standing in the world: ticks {@link BoilerState}, draws from tenders, smokes. A boiler riding a train is ticked by {@link BoilerMovement} instead. */
-public final class BoilerBlockEntity extends BlockEntity {
+public final class BoilerBlockEntity extends SmartBlockEntity {
     public static final String KEY = "Boiler";
 
     public final class Intake extends FluidStacksResourceHandler {
@@ -34,6 +37,14 @@ public final class BoilerBlockEntity extends BlockEntity {
 
     public BoilerState state = new BoilerState();
     public final Intake intake = new Intake();
+
+    /** What Create pipes, tanks and spouts fill. */
+    public final SteamIntake createIntake = new SteamIntake(this::setChanged);
+
+    @Override
+    public void addBehaviours(List<BlockEntityBehaviour<?>> behaviours) {
+        behaviours.add(new CachedFluidInventoryBehaviour<>(this, be -> be.createIntake));
+    }
     private @Nullable Layout layout;
     private long layoutAt = -1000;
     private float extraLoad;
@@ -74,11 +85,19 @@ public final class BoilerBlockEntity extends BlockEntity {
         return true;
     }
 
+    /** Create saves only this for a block on a carriage, so the numbers must be in it. */
+    @Override
+    public void writeSafe(ValueOutput out) {
+        super.writeSafe(out);
+        out.store(KEY, BoilerState.CODEC, state);
+    }
+
     @Override
     protected void saveAdditional(ValueOutput out) {
         super.saveAdditional(out);
         out.store(KEY, BoilerState.CODEC, state);
         intake.serialize(out.child("intake"));
+        createIntake.save(out.child("createIntake"));
     }
 
     @Override
@@ -86,9 +105,11 @@ public final class BoilerBlockEntity extends BlockEntity {
         super.loadAdditional(in);
         state = in.read(KEY, BoilerState.CODEC).orElseGet(BoilerState::new);
         in.child("intake").ifPresent(intake::deserialize);
+        in.child("createIntake").ifPresent(createIntake::load);
     }
 
     public void serverTick(ServerLevel level) {
+        tick();
         Layout l = layout(level);
         if (l == null) return;
         BlockState bs = getBlockState();
@@ -104,6 +125,8 @@ public final class BoilerBlockEntity extends BlockEntity {
                 int n = state.addWater(a, l.waterCapacity());
                 intake.set(0, FluidResource.EMPTY, a - n);
             }
+            int mb = createIntake.millibuckets();
+            if (mb > 0) createIntake.take(state.addWater(mb, l.waterCapacity()));
             for (BlockPos tp : l.tenderPos) {
                 if (level.getBlockEntity(tp) instanceof TenderBlockEntity tb && tb.state.feed(state, l, burn)) tb.setChanged();
             }
