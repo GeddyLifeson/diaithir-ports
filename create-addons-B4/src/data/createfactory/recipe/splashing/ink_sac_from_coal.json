@@ -1,0 +1,9 @@
+{
+ "type": "create:splashing",
+ "results": [
+  {
+   "id": "minecraft:ink_sac"
+  }
+ ],
+ "ingredient": "#minecraft:coals"
+}

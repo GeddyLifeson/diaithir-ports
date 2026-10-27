@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "create_structure:factoryrailway",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 49,
+    "separation": 27,
+    "salt": 2058693501
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "results": [
+  {
+   "chance": 0.4,
+   "id": "minecraft:gunpowder"
+  }
+ ],
+ "processing_time": 100,
+ "ingredient": "minecraft:flint"
+}

@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:blaze_rod"
+  }
+ ],
+ "ingredients": [
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "minecraft:stick"
+ ]
+}

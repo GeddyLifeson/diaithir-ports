@@ -1,0 +1,364 @@
+[
+ {
+  "slug": "createbarters",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.21.5",
+  "missing_deps": []
+ },
+ {
+  "slug": "createobbcollisioncrashfix",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-skill-tree",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "createstructures",
+  "status": "ported",
+  "reason": "data only (potato projectiles / worldgen); code stub dropped"
+ },
+ {
+  "slug": "agricraft-create-compat-by-kuki",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "agricraft"
+  ]
+ },
+ {
+  "slug": "create-enchantment-industry-plus",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "create_enchantment_industry"
+  ]
+ },
+ {
+  "slug": "sabelfanconfig",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "sable"
+  ]
+ },
+ {
+  "slug": "catworks",
+  "status": "ported",
+  "reason": "data only: 49 recipes"
+ },
+ {
+  "slug": "create-wrenchable-blocks-plus",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "aeronautics-display-link-fix",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-aerostuff-fix",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "xaero-train-map",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "xaeroworldmap"
+  ]
+ },
+ {
+  "slug": "create-melodies-mechanisms",
+  "status": "ported",
+  "reason": "data only: 1 recipes"
+ },
+ {
+  "slug": "create-drill-levitite",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "aeronautics"
+  ]
+ },
+ {
+  "slug": "create-expanded-potato-cannon",
+  "status": "ported",
+  "reason": "data only (potato projectiles / worldgen); code stub dropped"
+ },
+ {
+  "slug": "create-more-parallel-pipes",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-real-stack-size",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-neapolitan",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "neapolitan",
+   "createaddition"
+  ]
+ },
+ {
+  "slug": "create-bright-ponders",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "ponder",
+   "simply-no-shading",
+   "flat-lighting",
+   "createbetterfps"
+  ]
+ },
+ {
+  "slug": "create-blueprint-tweaks",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-bigger-tanks",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-smart-bounds",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-package-tooltip",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-stuff-and-addition-tank-fix",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-creativity-ages-energy-bridge",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "createaddition",
+   "create_new_age"
+  ]
+ },
+ {
+  "slug": "create-simple-generator",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-fe-converter",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "dynamic-village",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-magneutica",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "sable",
+   "simulated",
+   "aeronautics"
+  ]
+ },
+ {
+  "slug": "create-toolbox-tooltip",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": [
+   "shulkerboxtooltip"
+  ]
+ },
+ {
+  "slug": "create-honey-boots",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "create_sa",
+   "create_sa"
+  ]
+ },
+ {
+  "slug": "create-better-factory-gauge",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "dimensional-sable",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.21.1",
+  "missing_deps": [
+   "sable",
+   "simulated"
+  ]
+ },
+ {
+  "slug": "eatandesite",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": [
+   "architectury"
+  ]
+ },
+ {
+  "slug": "create-envelope-compat",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "envelope"
+  ]
+ },
+ {
+  "slug": "creatework",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-dynamic-lights",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.6",
+  "missing_deps": [
+   "sodiumdynamiclights"
+  ]
+ },
+ {
+  "slug": "create-jukebox-displays",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "etched"
+  ]
+ },
+ {
+  "slug": "create-bigger-storage",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-windmill-speed-control",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "iris-flywheel-compat"
+  ]
+ },
+ {
+  "slug": "create-cobblemon-potion",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "cobblemon"
+  ]
+ },
+ {
+  "slug": "create-airburst",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-extended-filters",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-sandpaper-overhaul",
+  "status": "ported",
+  "reason": "data only: 2 recipes"
+ },
+ {
+  "slug": "tradeworks",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "compat_manager"
+  ]
+ },
+ {
+  "slug": "extended-wrenches",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: 1.20.1",
+  "missing_deps": [
+   "everycomp"
+  ]
+ },
+ {
+  "slug": "create-aeronautics-compact-gearshift",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "jei"
+  ]
+ },
+ {
+  "slug": "chemistry-plus",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "createchemistry",
+   "create_chemistry_fix"
+  ]
+ },
+ {
+  "slug": "create-expanded-steam-whistle",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": [
+   "pipeorgans"
+  ]
+ },
+ {
+  "slug": "create-electrolysis",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-extra-casing",
+  "status": "blocked",
+  "reason": "code or mixins against com.simibubi/1.21.1 (port is com.zurrtum, MC 26.1); recipes reference addon-own items; fabric build: none",
+  "missing_deps": []
+ },
+ {
+  "slug": "create-factory-processing",
+  "status": "ported",
+  "reason": "data only: 18 recipes"
+ }
+]

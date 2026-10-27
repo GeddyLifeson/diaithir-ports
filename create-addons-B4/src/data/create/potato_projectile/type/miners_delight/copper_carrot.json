@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "minersdelight"
+    }
+  ],
+  "damage": 10,
+  "items": "minersdelight:copper_carrot",
+  "knockback": 0.5,
+  "on_entity_hit": {
+    "type": "create_expanded_potato_cannon:lightning_strike"
+  },
+  "on_block_hit": {
+    "type": "create_expanded_potato_cannon:lightning_strike"
+  },
+  "reload_ticks": 18,
+  "render_mode": {
+    "type": "create:toward_motion",
+    "spin": 1.0,
+    "sprite_angle_offset": 140
+  },
+  "sound_pitch": 1.3,
+  "velocity_multiplier": 1.35
+}

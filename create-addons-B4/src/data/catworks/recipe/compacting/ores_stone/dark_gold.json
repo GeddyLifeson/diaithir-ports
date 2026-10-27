@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_gold_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot"
+ ]
+}

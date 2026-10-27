@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "create_structure:crashed_diregble",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 230,
+    "separation": 130,
+    "salt": 595423564
+  }
+}

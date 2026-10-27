@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:coal_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "#minecraft:coals"
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:milling",
+ "results": [
+  {
+   "id": "minecraft:glowstone_dust"
+  }
+ ],
+ "processing_time": 100,
+ "ingredient": "minecraft:glow_berries"
+}

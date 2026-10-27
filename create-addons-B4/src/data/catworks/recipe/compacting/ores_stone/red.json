@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:redstone_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone"
+ ]
+}

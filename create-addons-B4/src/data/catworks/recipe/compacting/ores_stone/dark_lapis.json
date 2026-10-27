@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_lapis_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block"
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:brown_mushroom"
+  }
+ ],
+ "ingredient": "minecraft:red_mushroom"
+}

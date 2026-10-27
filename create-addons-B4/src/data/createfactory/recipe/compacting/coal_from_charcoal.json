@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "id": "minecraft:coal"
+  }
+ ],
+ "ingredients": [
+  "minecraft:charcoal",
+  "minecraft:charcoal",
+  "minecraft:charcoal",
+  "minecraft:charcoal"
+ ]
+}

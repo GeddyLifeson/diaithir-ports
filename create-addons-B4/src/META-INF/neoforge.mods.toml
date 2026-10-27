@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+[[mods]]
+modId="diaithir_create_addons_b4"
+version="0.1.0-diaithir.1"
+displayName="Diaithir Create Addons (slice B4)"
+authors="Recipe/data from MIT addons: Catworks, Create Factory Processing, Create Melodies and Mechanisms, Create Sandpaper Overhaul, Create Expanded Potato Cannon, Create Structures"
+description='''Data from small MIT Create addons, rewritten for the Diaithir Create port.'''
+[[dependencies.diaithir_create_addons_b4]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

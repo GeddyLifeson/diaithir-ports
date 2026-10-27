@@ -1,0 +1,14 @@
+{
+ "type": "create:crushing",
+ "processing_time": 250,
+ "results": [
+  {
+   "id": "minecraft:gravel"
+  },
+  {
+   "chance": 0.2,
+   "id": "create:zinc_nugget"
+  }
+ ],
+ "ingredient": "#create:stone_types/limestone"
+}

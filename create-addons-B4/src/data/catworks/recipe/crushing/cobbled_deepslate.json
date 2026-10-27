@@ -1,0 +1,10 @@
+{
+ "type": "create:crushing",
+ "processing_time": 250,
+ "results": [
+  {
+   "id": "minecraft:cobbled_deepslate"
+  }
+ ],
+ "ingredient": "minecraft:deepslate"
+}

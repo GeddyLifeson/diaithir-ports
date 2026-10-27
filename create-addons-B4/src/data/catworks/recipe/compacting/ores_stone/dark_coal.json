@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_coal_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "#minecraft:coals",
+  "#minecraft:coals"
+ ]
+}

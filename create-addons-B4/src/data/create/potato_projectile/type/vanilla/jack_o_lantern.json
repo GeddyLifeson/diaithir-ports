@@ -1,0 +1,19 @@
+{
+  "damage": 5,
+  "items": "minecraft:jack_o_lantern",
+  "knockback": 1.5,
+  "on_block_hit": {
+    "type": "create:place_block_on_ground",
+    "block": "minecraft:jack_o_lantern"
+  },
+  "pre_entity_hit": {
+    "type": "create:set_on_fire",
+    "ticks": 40
+  },
+  "reload_ticks": 15,
+  "render_mode": {
+    "type": "create:tumble"
+  },
+  "sound_pitch": 1.1,
+  "velocity_multiplier": 1.1
+}

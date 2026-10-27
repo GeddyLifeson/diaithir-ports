@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_emerald_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:emerald",
+  "minecraft:emerald"
+ ]
+}

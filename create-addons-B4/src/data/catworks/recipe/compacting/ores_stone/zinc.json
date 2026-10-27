@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "create:zinc_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "create:zinc_ingot",
+  "create:zinc_ingot",
+  "create:zinc_ingot",
+  "create:zinc_ingot"
+ ]
+}

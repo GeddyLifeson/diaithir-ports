@@ -1,0 +1,16 @@
+{
+ "type": "create:mixing",
+ "results": [
+  {
+   "count": 1,
+   "id": "create:polished_rose_quartz"
+  }
+ ],
+ "ingredients": [
+  "minecraft:quartz",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone"
+ ]
+}

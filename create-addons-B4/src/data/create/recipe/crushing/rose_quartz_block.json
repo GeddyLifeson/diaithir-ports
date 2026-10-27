@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 150,
+ "results": [
+  {
+   "chance": 0.5,
+   "id": "create:rose_quartz"
+  }
+ ],
+ "ingredient": "create:rose_quartz_block"
+}

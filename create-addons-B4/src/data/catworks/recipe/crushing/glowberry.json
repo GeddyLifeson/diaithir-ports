@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 100,
+ "results": [
+  {
+   "count": 2,
+   "id": "minecraft:orange_dye"
+  }
+ ],
+ "ingredient": "minecraft:glow_berries"
+}

@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_iron_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot"
+ ]
+}

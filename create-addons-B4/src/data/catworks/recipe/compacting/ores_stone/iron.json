@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:iron_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot"
+ ]
+}

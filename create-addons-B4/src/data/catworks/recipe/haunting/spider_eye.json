@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:spider_eye"
+  }
+ ],
+ "ingredient": "minecraft:red_dye"
+}

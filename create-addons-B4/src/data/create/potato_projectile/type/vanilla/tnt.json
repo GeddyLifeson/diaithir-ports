@@ -1,0 +1,26 @@
+{
+  "items": [
+    "minecraft:tnt"
+  ],
+  "reload_ticks": 50,
+  "damage": 8,
+  "velocity": 0.5,
+  "knockback": 1.0,
+  "on_entity_hit": {
+    "type": "create_expanded_potato_cannon:explosion",
+    "radius": 4.0,
+    "causes_fire": false,
+    "interaction": "tnt"
+  },
+  "on_block_hit": {
+    "type": "create_expanded_potato_cannon:explosion",
+    "radius": 4.0,
+    "causes_fire": false,
+    "interaction": "tnt"
+  },
+  "render_mode": {
+    "type": "create:tumble"
+  },
+  "sound_pitch": 0.5,
+  "velocity_multiplier": 0.5
+}

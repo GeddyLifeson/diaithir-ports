@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:netherrack"
+  }
+ ],
+ "ingredients": [
+  "minecraft:basalt",
+  "create:cinder_flour"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 100,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}

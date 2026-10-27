@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:nether_quartz_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:netherrack",
+  "minecraft:quartz",
+  "minecraft:quartz",
+  "minecraft:quartz",
+  "minecraft:quartz"
+ ]
+}

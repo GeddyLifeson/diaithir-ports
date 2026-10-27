@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_redstone_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone",
+  "minecraft:redstone"
+ ]
+}

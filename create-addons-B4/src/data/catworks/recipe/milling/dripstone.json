@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "results": [
+  {
+   "count": 4,
+   "id": "minecraft:pointed_dripstone"
+  }
+ ],
+ "processing_time": 250,
+ "ingredient": "minecraft:dripstone_block"
+}

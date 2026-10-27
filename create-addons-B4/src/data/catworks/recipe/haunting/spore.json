@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:spore_blossom"
+  }
+ ],
+ "ingredient": "minecraft:flowering_azalea"
+}

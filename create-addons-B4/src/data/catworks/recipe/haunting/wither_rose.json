@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:wither_rose"
+  }
+ ],
+ "ingredient": "#minecraft:flowers"
+}

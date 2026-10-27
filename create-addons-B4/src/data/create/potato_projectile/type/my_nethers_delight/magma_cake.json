@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "damage": 10,
+  "items": "mynethersdelight:magma_cake_block",
+  "knockback": 0.1,
+  "pre_entity_hit": {
+    "type": "create:set_on_fire",
+    "ticks": 120
+  },
+  "reload_ticks": 15,
+  "render_mode": {
+    "type": "create:tumble"
+  },
+  "sticky": true,
+  "velocity_multiplier": 1.5
+}

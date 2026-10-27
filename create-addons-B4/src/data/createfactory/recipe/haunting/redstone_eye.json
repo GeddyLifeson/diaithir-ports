@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "chance": 0.35,
+   "id": "minecraft:spider_eye"
+  }
+ ],
+ "ingredient": "minecraft:redstone"
+}

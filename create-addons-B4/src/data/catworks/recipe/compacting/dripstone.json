@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "id": "minecraft:dripstone_block"
+  }
+ ],
+ "ingredients": [
+  "minecraft:clay",
+  "minecraft:clay",
+  "minecraft:clay",
+  "minecraft:clay"
+ ]
+}

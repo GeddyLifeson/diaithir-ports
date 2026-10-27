@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 75,
+ "results": [
+  {
+   "chance": 0.4,
+   "id": "create:experience_nugget"
+  }
+ ],
+ "ingredient": "minecraft:quartz"
+}

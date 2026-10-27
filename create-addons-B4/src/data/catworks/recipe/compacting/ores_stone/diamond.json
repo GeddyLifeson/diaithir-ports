@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:diamond_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond"
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "type": "create:haunting",
+ "results": [
+  {
+   "id": "minecraft:breeze_rod"
+  }
+ ],
+ "ingredient": "minecraft:blaze_rod"
+}

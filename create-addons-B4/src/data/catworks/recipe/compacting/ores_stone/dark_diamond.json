@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "results": [
+  {
+   "id": "minecraft:deepslate_diamond_ore"
+  }
+ ],
+ "ingredients": [
+  "minecraft:cobbled_deepslate",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond",
+  "minecraft:diamond"
+ ]
+}

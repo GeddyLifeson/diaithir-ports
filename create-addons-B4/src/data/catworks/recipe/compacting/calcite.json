@@ -1,0 +1,22 @@
+{
+ "type": "create:compacting",
+ "results": [
+  {
+   "count": 2,
+   "id": "minecraft:calcite"
+  }
+ ],
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:bone_meal",
+  "minecraft:bone_meal",
+  "minecraft:bone_meal"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 100,
+   "fluid": "minecraft:lava"
+  }
+ ]
+}
