@@ -30,6 +30,8 @@ public final class BrewVesselEntity extends BlockEntity {
     final Map<Item, Integer> held = new HashMap<>();
     BrewRecipe active;
     int progress;
+    int settle = -1;
+    static final int SETTLE_TICKS = 100;
     ItemStack drink = ItemStack.EMPTY;
     Item container = Items.AIR;
 
@@ -66,15 +68,34 @@ public final class BrewVesselEntity extends BlockEntity {
         return !busy() && !done() && count() < capacity() && BrewRecipes.usesIngredient(station(), item);
     }
 
-    /** Starts fermenting if the contents now match a recipe exactly. */
+    /** Starts fermenting when the contents match a recipe exactly; if a bigger recipe could still be completed, waits a few seconds for more input. */
     void tryStart() {
-        for (BrewRecipe r : BrewRecipes.all()) {
-            if (r.matches(station(), base, held)) {
-                active = r;
-                progress = 0;
-                break;
-            }
+        settle = -1;
+        BrewRecipe exact = BrewRecipes.all().stream().filter(r -> r.matches(station(), base, held)).findFirst().orElse(null);
+        if (exact == null) {
+            sync();
+        } else if (BrewRecipes.extendable(station(), base, held)) {
+            settle = SETTLE_TICKS;
+            sync();
+        } else {
+            begin(exact);
         }
+    }
+
+    /** Empty-hand click while waiting: brew what is in there now. */
+    boolean startNow() {
+        BrewRecipe exact = settle >= 0 ? BrewRecipes.all().stream().filter(r -> r.matches(station(), base, held)).findFirst().orElse(null) : null;
+        if (exact == null) {
+            return false;
+        }
+        begin(exact);
+        return true;
+    }
+
+    private void begin(BrewRecipe r) {
+        active = r;
+        progress = 0;
+        settle = -1;
         sync();
     }
 
@@ -111,8 +132,12 @@ public final class BrewVesselEntity extends BlockEntity {
     }
 
     static void tick(Level level, BlockPos pos, BlockState state, BrewVesselEntity be) {
-        if (be.active != null && ++be.progress >= be.active.ticks()) {
-            be.finish();
+        if (be.active != null) {
+            if (++be.progress >= be.active.ticks()) {
+                be.finish();
+            }
+        } else if (be.settle > 0 && --be.settle == 0) {
+            be.startNow();
         }
     }
 
@@ -133,8 +158,11 @@ public final class BrewVesselEntity extends BlockEntity {
         drink = in.read("Drink", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         container = itemOr(in.getStringOr("Container", ""));
         active = null;
-        if (progress > 0 || !held.isEmpty()) {
+        settle = -1;
+        if (progress > 0) {
             active = BrewRecipes.all().stream().filter(r -> r.matches(station(), base, held)).findFirst().orElse(null);
+        } else if (!held.isEmpty() && !done()) {
+            settle = 1;
         }
     }
 

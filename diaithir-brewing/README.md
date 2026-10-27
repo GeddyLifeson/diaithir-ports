@@ -2,7 +2,7 @@
 
 Two hand-fed vessels for small-batch fermenting: the keg (Boidellienda, 6 items) and the fermenting barrel (Tundagrùduiri, 12 items). Clean-room, written from behaviour only (Brewin' and Chewin' is All Rights Reserved, so none of its code or art is used).
 
-Right-click with a base (a bucket of water, milk and so on) to pour it in; the container comes back if the recipe names one. Right-click with each ingredient to drop it in. When the contents match a recipe exactly it starts fermenting and shows the percentage on an empty-hand click. When done, right-click with the recipe's container (a glass bottle unless it says otherwise) to draw one serving at a time. Sneak with an empty hand to dump an unfinished batch.
+Right-click with a base (a bucket of water, milk and so on) to pour it in; the container comes back if the recipe names one. Right-click with each ingredient to drop it in. When the contents match a recipe exactly it starts fermenting. If a bigger recipe could still be completed from what is inside, it waits 5 seconds for more input (or an empty-hand click starts it now), so a recipe that is a subset of another still works. An empty-hand click while it ferments shows the percentage. When done, right-click with the recipe's container (a glass bottle unless it says otherwise) to draw one serving at a time. Sneak with an empty hand to dump an unfinished batch.
 
 Automation (the wine-cellar idea from Create: Winery, written from its public description only): hoppers, pipes and Create belts see an item handler with an input slot that takes one valid base or ingredient at a time and an output slot that gives the finished drinks directly, with full transaction rollback.
 

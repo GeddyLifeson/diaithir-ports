@@ -97,7 +97,7 @@ public final class BrewVesselBlock extends BaseEntityBlock {
             if (!level.isClientSide()) {
                 if (player.isShiftKeyDown() && !be.done()) {
                     be.dump(level, pos);
-                } else {
+                } else if (!be.startNow()) {
                     player.sendOverlayMessage(status(be));
                 }
             }

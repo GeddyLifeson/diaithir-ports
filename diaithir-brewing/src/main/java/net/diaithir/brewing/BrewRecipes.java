@@ -63,6 +63,12 @@ public final class BrewRecipes implements ResourceManagerReloadListener {
         return BuiltInRegistries.ITEM.getOptional(Identifier.parse(id)).orElseThrow(() -> new IllegalArgumentException("unknown item " + id));
     }
 
+    /** True when some other recipe for this base would still be reachable by adding more ingredients. */
+    static boolean extendable(String station, Item base, Map<Item, Integer> held) {
+        return all.stream().anyMatch(r -> r.station().equals(station) && r.base() == base && !r.ingredients().equals(held)
+            && held.entrySet().stream().allMatch(e -> r.ingredients().getOrDefault(e.getKey(), 0) >= e.getValue()));
+    }
+
     static int largest(String station) {
         return all.stream().filter(r -> r.station().equals(station))
             .mapToInt(r -> r.ingredients().values().stream().mapToInt(Integer::intValue).sum()).max().orElse(0);

@@ -55,8 +55,8 @@ final class BrewSelfTest {
             }
         }
         BrewVesselEntity be = (BrewVesselEntity) level.getBlockEntity(pos);
-        if (!be.busy()) return "FAIL did not start fermenting";
-        for (int i = 0; i < r.ticks() && !be.done(); i++) BrewVesselEntity.tick(level, pos, be.getBlockState(), be);
+        if (!be.busy() && be.settle < 0) return "FAIL did not start fermenting";
+        for (int i = 0; i < r.ticks() + BrewVesselEntity.SETTLE_TICKS + 5 && !be.done(); i++) BrewVesselEntity.tick(level, pos, be.getBlockState(), be);
         if (!be.done()) return "FAIL did not finish";
         BrewVesselEntity reloaded = new BrewVesselEntity(pos, be.getBlockState());
         reloaded.setLevel(level);
@@ -91,8 +91,8 @@ final class BrewSelfTest {
             }
             tx.commit();
         }
-        if (!be.busy()) return "FAIL automation did not start fermenting: base=" + be.base + " held=" + be.held + " done=" + be.done();
-        for (int i = 0; i < r.ticks() && !be.done(); i++) BrewVesselEntity.tick(level, pos, be.getBlockState(), be);
+        if (!be.busy() && be.settle < 0) return "FAIL automation did not start fermenting: base=" + be.base + " held=" + be.held + " done=" + be.done();
+        for (int i = 0; i < r.ticks() + BrewVesselEntity.SETTLE_TICKS + 5 && !be.done(); i++) BrewVesselEntity.tick(level, pos, be.getBlockState(), be);
         int got;
         try (var tx = Transaction.openRoot()) {
             got = be.automation.extract(ItemResource.of(r.drink()), 64, tx);
