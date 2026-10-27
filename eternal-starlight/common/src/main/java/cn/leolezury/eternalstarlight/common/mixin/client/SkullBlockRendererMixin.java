@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.mixin.client;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.block.ESSkullType;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.blockentity.SkullBlockRenderer;
@@ -24,7 +25,7 @@ public abstract class SkullBlockRendererMixin {
 	@Inject(method = "getRenderType", at = @At("RETURN"), cancellable = true)
 	private static void getRenderType(SkullBlock.Type type, ResolvableProfile resolvableProfile, CallbackInfoReturnable<RenderType> cir) {
 		if (type == ESSkullType.TANGLED) {
-			cir.setReturnValue(RenderType.entityTranslucent(SKIN_BY_TYPE.get(type)));
+			cir.setReturnValue(RenderTypes.entityTranslucent(SKIN_BY_TYPE.get(type)));
 		}
 	}
 }

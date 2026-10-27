@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESSimpleAnimatedParticle;
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.particle.ESSmokeParticleOptions;
@@ -10,7 +14,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.util.Mth;
 
-public class ESSmokeParticle extends SimpleAnimatedParticle {
+public class ESSmokeParticle extends ESSimpleAnimatedParticle {
 	private final float rotSpeed;
 	private final float initialAlpha;
 
@@ -45,12 +49,17 @@ public class ESSmokeParticle extends SimpleAnimatedParticle {
 	public void render(VertexConsumer vertexConsumer, Camera camera, float partialTicks) {
 		float progress = Math.min(age + partialTicks, lifetime) / lifetime;
 		this.alpha = Mth.lerp((float) Math.pow((Math.abs(progress - 0.5) * 2), 5), initialAlpha, 0);
-		super.render(ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(ESRenderType.PARTICLE_NO_DEPTH), camera, partialTicks);
+		super.render(vertexConsumer, camera, partialTicks);
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.CUSTOM;
+		return ESParticleTypes.CUSTOM;
+	}
+
+	@Override
+	public RenderType getESRenderType() {
+		return ESRenderType.PARTICLE_NO_DEPTH;
 	}
 
 	public static class Provider implements ParticleProvider<ESSmokeParticleOptions> {
@@ -61,7 +70,7 @@ public class ESSmokeParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(ESSmokeParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(ESSmokeParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new ESSmokeParticle(level, options.lifeScale(), x, y, z, xSpeed, ySpeed, zSpeed, options.rise(), options.motionScale(), Color.rgbd(options.fromColor().x, options.fromColor().y, options.fromColor().z).rgb(), Color.rgbd(options.toColor().x, options.toColor().y, options.toColor().z).rgb(), options.alpha(), this.sprites);
 		}
 	}

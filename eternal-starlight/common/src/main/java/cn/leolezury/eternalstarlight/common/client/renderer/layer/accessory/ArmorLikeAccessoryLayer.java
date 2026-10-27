@@ -1,5 +1,8 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer.accessory;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -9,21 +12,20 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
-public abstract class ArmorLikeAccessoryLayer<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends RenderLayer<T, M> {
+public abstract class ArmorLikeAccessoryLayer<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends ESRenderLayer<T, M> {
 	public static final ModelLayerLocation INNER_LOCATION = new ModelLayerLocation(EternalStarlight.id("accessory"), "inner_armor");
 	public static final ModelLayerLocation OUTER_LOCATION = new ModelLayerLocation(EternalStarlight.id("accessory"), "outer_armor");
 
 	private final A innerModel;
 	private final A outerModel;
 
-	public ArmorLikeAccessoryLayer(RenderLayerParent<T, M> renderer, A innerModel, A outerModel) {
+	public ArmorLikeAccessoryLayer(RenderLayerParent<ESRenderState, M> renderer, A innerModel, A outerModel) {
 		super(renderer);
 		this.innerModel = innerModel;
 		this.outerModel = outerModel;
@@ -83,7 +85,7 @@ public abstract class ArmorLikeAccessoryLayer<T extends LivingEntity, M extends 
 	}
 
 	private void renderModel(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, Model model, Identifier texture) {
-		VertexConsumer vertexconsumer = bufferSource.getBuffer(RenderType.armorCutoutNoCull(texture));
+		VertexConsumer vertexconsumer = bufferSource.getBuffer(RenderTypes.armorCutoutNoCull(texture));
 		model.renderToBuffer(poseStack, vertexconsumer, packedLight, OverlayTexture.NO_OVERLAY);
 	}
 

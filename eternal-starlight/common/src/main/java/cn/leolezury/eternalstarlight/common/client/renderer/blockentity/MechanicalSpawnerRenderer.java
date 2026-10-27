@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.MechanicalSpawnerBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.MechanicalSpawner;
@@ -48,7 +49,7 @@ public class MechanicalSpawnerRenderer implements BlockEntityRenderer<Mechanical
 		stack.mulPose(Axis.YP.rotationDegrees(blockEntity.getBlockState().getValue(MechanicalSpawnerBlock.FACING).toYRot() + 180));
 		this.spawnerModel.root().getAllParts().forEach(ModelPart::resetPose);
 		this.spawnerModel.animate(blockEntity.idleAnimationState, MechanicalSpawnerAnimation.IDLE, blockEntity.clientTickCount + partialTick, 1.0F, Mth.lerp(partialTick, spawner.getOAnimationScale(), spawner.getAnimationScale()));
-		this.spawnerModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(SPAWNER_TEXTURE)), packedLight, packedOverlay);
+		this.spawnerModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(SPAWNER_TEXTURE)), packedLight, packedOverlay);
 		stack.popPose();
 		Level level = blockEntity.getLevel();
 		if (level != null) {

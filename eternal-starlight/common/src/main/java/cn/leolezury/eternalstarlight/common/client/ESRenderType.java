@@ -79,6 +79,37 @@ public class ESRenderType {
 		return RenderTypes.lightning();
 	}
 
+	private static RenderPipeline.Builder particlePipeline(String name) {
+		return RenderPipeline.builder(RenderPipelines.PARTICLE_SNIPPET)
+			.withLocation(EternalStarlight.id("pipeline/" + name))
+			.withCull(false);
+	}
+
+	public static final RenderPipeline PARTICLE_OPAQUE_PIPELINE = particlePipeline("particle_opaque").build();
+	public static final RenderPipeline PARTICLE_TRANSLUCENT_PIPELINE = particlePipeline("particle_translucent")
+		.withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
+		.build();
+	public static final RenderPipeline PARTICLE_NO_DEPTH_PIPELINE = particlePipeline("particle_no_depth")
+		.withColorTargetState(new ColorTargetState(BlendFunction.TRANSLUCENT))
+		.withDepthStencilState(new DepthStencilState(CompareOp.ALWAYS_PASS, false))
+		.build();
+	public static final RenderPipeline PARTICLE_ADDITIVE_GLOW_PIPELINE = particlePipeline("particle_additive_glow")
+		.withColorTargetState(new ColorTargetState(BlendFunction.LIGHTNING))
+		.withDepthStencilState(new DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, false))
+		.build();
+
+	private static RenderType particleType(String name, RenderPipeline pipeline) {
+		return RenderType.create(EternalStarlight.ID + ":" + name, RenderSetup.builder(pipeline)
+			.withTexture("Sampler0", net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_PARTICLES)
+			.useLightmap()
+			.createRenderSetup());
+	}
+
+	public static final RenderType PARTICLE_OPAQUE = particleType("particle_opaque", PARTICLE_OPAQUE_PIPELINE);
+	public static final RenderType PARTICLE_TRANSLUCENT = particleType("particle_translucent", PARTICLE_TRANSLUCENT_PIPELINE);
+	public static final RenderType PARTICLE_NO_DEPTH = particleType("particle_no_depth", PARTICLE_NO_DEPTH_PIPELINE);
+	public static final RenderType PARTICLE_ADDITIVE_GLOW = particleType("particle_additive_glow", PARTICLE_ADDITIVE_GLOW_PIPELINE);
+
 	public static RenderType entityTranslucentAdditiveGlow(Identifier location) {
 		return TRANSLUCENT_ADDITIVE_GLOW.apply(location);
 	}

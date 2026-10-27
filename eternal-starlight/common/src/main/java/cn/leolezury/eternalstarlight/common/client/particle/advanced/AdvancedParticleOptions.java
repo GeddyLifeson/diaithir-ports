@@ -146,8 +146,8 @@ public class AdvancedParticleOptions {
 		if (particleStatus == ParticleStatus.DECREASED && RANDOM.nextInt(3) == 0) {
 			particleStatus = ParticleStatus.MINIMAL;
 		}
-		if (camera.getPosition().distanceToSqr(x, y, z) <= 1024.0 && particleStatus != ParticleStatus.MINIMAL) {
-			Particle particle = spawner.spawn(Minecraft.getInstance().level, x, y, z, Minecraft.getInstance().particleEngine.spriteSets.get(location), this);
+		if (camera.position().distanceToSqr(x, y, z) <= 1024.0 && particleStatus != ParticleStatus.MINIMAL) {
+			Particle particle = spawner.spawn(Minecraft.getInstance().level, x, y, z, Minecraft.getInstance().particleResources.spriteSets.get(location), this);
 			Minecraft.getInstance().particleEngine.add(particle);
 		}
 	}

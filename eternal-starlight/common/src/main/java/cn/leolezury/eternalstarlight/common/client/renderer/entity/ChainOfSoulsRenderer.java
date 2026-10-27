@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.entity.ChainOfSoulsModel;
@@ -9,10 +11,9 @@ import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
@@ -27,7 +28,7 @@ import org.joml.Quaternionf;
 
 import java.util.Optional;
 
-public class ChainOfSoulsRenderer extends EntityRenderer<ChainOfSouls> {
+public class ChainOfSoulsRenderer extends ESEntityRenderer<ChainOfSouls> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/chain_of_souls.png");
 	private static final Identifier TIP_TEXTURE = EternalStarlight.id("textures/entity/chain_of_souls_tip.png");
 	private final ChainOfSoulsModel<ChainOfSouls> model;
@@ -65,18 +66,18 @@ public class ChainOfSoulsRenderer extends EntityRenderer<ChainOfSouls> {
 			stack.mulPose(new Quaternionf().rotationX(90 * Mth.DEG_TO_RAD));
 			stack.mulPose(new Quaternionf().rotationZ((yRot - 90) * Mth.DEG_TO_RAD));
 			stack.mulPose(new Quaternionf().rotationX(-xRot * Mth.DEG_TO_RAD));
-			VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.entityCutoutNoCull(ENTITY_TEXTURE));
+			VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.entityCutout(ENTITY_TEXTURE));
 			Matrix4f pose = stack.last().pose();
 
-			vertexConsumer.addVertex(pose, -0.5f, 0, 0).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, 0.5f, 0, 0).setColor(-1).setUv(0.5f, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, 0.5f, length, 0).setColor(-1).setUv(0.5f, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, -0.5f, length, 0).setColor(-1).setUv(0, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, -0.5f, 0, 0).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0.5f, 0, 0).setColor(-1).setUv(0.5f, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0.5f, length, 0).setColor(-1).setUv(0.5f, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, -0.5f, length, 0).setColor(-1).setUv(0, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
 
-			vertexConsumer.addVertex(pose, 0, 0, -0.5f).setColor(-1).setUv(0.5f, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, 0, 0, 0.5f).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, 0, length, 0.5f).setColor(-1).setUv(1, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, 0, length, -0.5f).setColor(-1).setUv(0.5f, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0, 0, -0.5f).setColor(-1).setUv(0.5f, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0, 0, 0.5f).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0, length, 0.5f).setColor(-1).setUv(1, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, 0, length, -0.5f).setColor(-1).setUv(0.5f, length / 2).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(0.0F, 1.0F, 0.0F);
 
 			if (attachedToBlock) {
 				stack.popPose();

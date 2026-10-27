@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
@@ -10,14 +12,13 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class SolarCreeperPowerUpOutlineLayer<T extends SolarCreeper> extends RenderLayer<T, SolarCreeperModel<T>> {
+public class SolarCreeperPowerUpOutlineLayer<T extends SolarCreeper> extends ESRenderLayer<T, SolarCreeperModel<T>> {
 	private static final Identifier OUTLINE_TEXTURE = EternalStarlight.id("textures/entity/blank.png");
 
-	public SolarCreeperPowerUpOutlineLayer(RenderLayerParent<T, SolarCreeperModel<T>> renderer) {
+	public SolarCreeperPowerUpOutlineLayer(RenderLayerParent<ESRenderState, SolarCreeperModel<T>> renderer) {
 		super(renderer);
 	}
 

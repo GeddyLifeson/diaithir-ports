@@ -1,13 +1,13 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.YetiModel;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.Yeti;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class YetiRenderer<T extends Yeti> extends MobRenderer<T, YetiModel<T>> {
+public class YetiRenderer<T extends Yeti> extends ESMobRenderer<T, YetiModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/yeti.png");
 
 	public YetiRenderer(EntityRendererProvider.Context context) {

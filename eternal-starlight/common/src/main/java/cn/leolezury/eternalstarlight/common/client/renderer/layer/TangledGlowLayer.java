@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.TangledModel;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.Tangled;
@@ -9,13 +13,12 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 
-public class TangledGlowLayer<T extends Tangled> extends RenderLayer<T, TangledModel<T>> {
-	private static final RenderType GLOW = RenderType.entityTranslucentEmissive(EternalStarlight.id("textures/entity/tangled_glow.png"));
+public class TangledGlowLayer<T extends Tangled> extends ESRenderLayer<T, TangledModel<T>> {
+	private static final RenderType GLOW = RenderTypes.entityTranslucentEmissive(EternalStarlight.id("textures/entity/tangled_glow.png"));
 	private final TangledModel<T> model;
 
-	public TangledGlowLayer(RenderLayerParent<T, TangledModel<T>> parent, EntityModelSet modelSet) {
+	public TangledGlowLayer(RenderLayerParent<ESRenderState, TangledModel<T>> parent, EntityModelSet modelSet) {
 		super(parent);
 		this.model = new TangledModel<>(modelSet.bakeLayer(TangledModel.LAYER_LOCATION));
 	}
@@ -26,7 +29,7 @@ public class TangledGlowLayer<T extends Tangled> extends RenderLayer<T, TangledM
 			getParentModel().copyPropertiesTo(this.model);
 			this.model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 			this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			this.model.renderToBuffer(poseStack, bufferSource.getBuffer(GLOW), packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0.0F), -1);
+			this.model.renderToBuffer(poseStack, bufferSource.getBuffer(GLOW), packedLight, OverlayTexture.NO_OVERLAY, -1);
 		}
 	}
 }

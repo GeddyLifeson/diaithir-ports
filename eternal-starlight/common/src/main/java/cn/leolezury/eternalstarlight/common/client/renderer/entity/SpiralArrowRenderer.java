@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.SpiralArrowModel;
 import cn.leolezury.eternalstarlight.common.entity.projectile.SpiralArrow;
@@ -8,13 +10,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class SpiralArrowRenderer extends EntityRenderer<SpiralArrow> {
+public class SpiralArrowRenderer extends ESEntityRenderer<SpiralArrow> {
 	private static final Identifier TEXTURE_LOCATION = EternalStarlight.id("textures/entity/spiral_arrow.png");
 	private final SpiralArrowModel<SpiralArrow> model;
 
@@ -37,7 +38,7 @@ public class SpiralArrowRenderer extends EntityRenderer<SpiralArrow> {
 		poseStack.mulPose(Axis.XP.rotationDegrees(45.0F));
 		poseStack.scale(0.8F, 0.8F, 0.8F);
 		poseStack.translate(0.35F, -1.45F, 0.0F);
-		VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.entityCutout(TEXTURE_LOCATION));
+		VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.entityCutout(TEXTURE_LOCATION));
 		this.model.setupAnim(entity, 0.0F, 0.0F, entity.tickCount + partialTicks, entity.getYRot(), entity.getXRot());
 		this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 		poseStack.popPose();

@@ -1,13 +1,13 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.AethersentGolemModel;
 import cn.leolezury.eternalstarlight.common.entity.living.AethersentGolem;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class AethersentGolemRenderer<T extends AethersentGolem> extends MobRenderer<T, AethersentGolemModel<T>> {
+public class AethersentGolemRenderer<T extends AethersentGolem> extends ESMobRenderer<T, AethersentGolemModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/aethersent_golem.png");
 
 	public AethersentGolemRenderer(EntityRendererProvider.Context context) {

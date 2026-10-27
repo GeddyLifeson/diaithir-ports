@@ -1,5 +1,8 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
@@ -18,7 +21,6 @@ import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
@@ -28,7 +30,7 @@ import org.joml.Quaternionf;
 
 import java.util.Map;
 
-public class StarlightGolemRenderer<T extends StarlightGolem> extends MobRenderer<T, StarlightGolemModel<T>> {
+public class StarlightGolemRenderer<T extends StarlightGolem> extends ESMobRenderer<T, StarlightGolemModel<T>> {
 	private static final int SNAPSHOT_LIFESPAN = 15;
 
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/starlight_golem/starlight_golem.png");
@@ -48,9 +50,9 @@ public class StarlightGolemRenderer<T extends StarlightGolem> extends MobRendere
 			poseStack.pushPose();
 			poseStack.translate(0, entity.getBbHeight() / 4, 0);
 			poseStack.scale(deathProgress + Mth.cos((entity.tickCount + partialTicks) * 4f) * 0.2f * deathProgress, deathProgress + Mth.cos((entity.tickCount + partialTicks) * 4f) * 0.2f * deathProgress, deathProgress + Mth.cos((entity.tickCount + partialTicks) * 4f) * 0.2f * deathProgress);
-			poseStack.mulPose(new Quaternionf(this.entityRenderDispatcher.cameraOrientation()).rotateY(Mth.PI));
+			poseStack.mulPose(new Quaternionf(ESRender.cameraOrientation()).rotateY(Mth.PI));
 			PoseStack.Pose pose = poseStack.last();
-			VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.dragonRays());
+			VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.dragonRays());
 			for (int i = 0; i < 5; i++) {
 				vertexConsumer.addVertex(pose, 0, 0, 0).setColor(ARGB.colorFromFloat(Easing.IN_OUT_SINE.interpolate(deathProgress, 0.5F, 1.0F), 1.0F, 1.0F, 1.0F));
 				float angle = i * Mth.TWO_PI / 5 + deathProgress * Mth.PI * 1.5f;
@@ -65,7 +67,7 @@ public class StarlightGolemRenderer<T extends StarlightGolem> extends MobRendere
 			double currentX = Mth.lerp(partialTicks, entity.xo, entity.getX());
 			double currentY = Mth.lerp(partialTicks, entity.yo, entity.getY());
 			double currentZ = Mth.lerp(partialTicks, entity.zo, entity.getZ());
-			float currentTick = getBob(entity, partialTicks);
+			float currentTick = (entity.tickCount + partialTicks);
 			if (entity.trailSnapshots.isEmpty() || currentTick - entity.lastTrailTick > 4) {
 				if (entity.shouldAddTrailSnapshot()) {
 					Map<String, ModelPartPose> snapshot = ESModelUtil.saveModelSnapshot(getModel().allPartNames, getModel()::getAnyDescendantWithName);

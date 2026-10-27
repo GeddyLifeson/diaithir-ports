@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.handler;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.AccumulatorBlock;
 import cn.leolezury.eternalstarlight.common.block.ESSkullType;
@@ -468,9 +469,9 @@ public class ESClientSetupHandler {
 		TrailManager.register(ESEntities.ENERGY_SPARK.get(), new SimpleTrailEmitter<>(0.125f, 3, new Vector4f(128 / 255f, 255 / 255f, 255 / 255f, 2f), 0.5f, false, false, ESRenderType.entityTranslucentAdditiveGlow(TrailManager.TRAIL_TEXTURE)));
 		TrailManager.register(ESEntities.BALL_LIGHTNING.get(), new SimpleTrailEmitter<>(0.125f, 10, new Vector4f(128 / 255f, 255 / 255f, 255 / 255f, 2f), 0.5f, false, false, ESRenderType.entityTranslucentAdditiveGlow(TrailManager.TRAIL_TEXTURE)));
 		TrailManager.register(ESEntities.SOLAR_CREEPER.get(), new SolarCreeperTrailEmitter());
-		TrailManager.register(ESEntities.BOUNCY_STAR.get(), new SimpleTrailEmitter<BouncyStar>(0.15f, 6, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderType.entityCutoutNoCull(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.FLARE).widthProfile(TrailStyles.SOLAR_TAPER));
-		TrailManager.register(ESEntities.SHINING_STAR.get(), new SimpleTrailEmitter<ShiningStar>(0.1f, 5, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderType.entityCutoutNoCull(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.FLARE).widthProfile(TrailStyles.SOLAR_TAPER));
-		TrailManager.register(ESEntities.ORBITAL_PLANET.get(), new SimpleTrailEmitter<OrbitalPlanet>(0.12f, 10, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderType.entityCutoutNoCull(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.PLANET).widthProfile(TrailStyles.TAPER));
+		TrailManager.register(ESEntities.BOUNCY_STAR.get(), new SimpleTrailEmitter<BouncyStar>(0.15f, 6, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderTypes.entityCutout(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.FLARE).widthProfile(TrailStyles.SOLAR_TAPER));
+		TrailManager.register(ESEntities.SHINING_STAR.get(), new SimpleTrailEmitter<ShiningStar>(0.1f, 5, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderTypes.entityCutout(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.FLARE).widthProfile(TrailStyles.SOLAR_TAPER));
+		TrailManager.register(ESEntities.ORBITAL_PLANET.get(), new SimpleTrailEmitter<OrbitalPlanet>(0.12f, 10, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderTypes.entityCutout(EternalStarlight.id("textures/entity/blank.png"))).colorProfile(TrailStyles.PLANET).widthProfile(TrailStyles.TAPER));
 		TrailManager.register(ESEntities.FROZEN_TUBE.get(), new SimpleTrailEmitter<>(0.3f, 8, new Vector4f(104 / 255f, 204 / 255f, 255 / 255f, 1), 0.9f, false, false, ESRenderType.entityTranslucentNoDepth(TrailManager.TRAIL_TEXTURE)));
 		TrailManager.register(ESEntities.LUNAR_SPORE.get(), new SimpleTrailEmitter<LunarSpore>(0.4f, 12, new Vector4f(32 / 255f, 32 / 255f, 64 / 255f, 2f), 0.5f, false, false, ESRenderType.entityTranslucentNoDepth(TrailManager.TRAIL_TEXTURE)).length(entity -> entity.getOwner() instanceof LunarMonstrosity ? 15f : 12f));
 		TrailManager.register(ESEntities.PERMAFROST_SPIT.get(), new SimpleTrailEmitter<>(0.3f, 8, new Vector4f(104 / 255f, 204 / 255f, 255 / 255f, 1), 0.9f, false, false, ESRenderType.entityTranslucentNoDepth(TrailManager.TRAIL_TEXTURE)));
@@ -855,7 +856,7 @@ public class ESClientSetupHandler {
 		strategy.register(ESParticles.AMARAMBER_WAX_ON.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {
 			GlowParticle particle = new GlowParticle(level, x, y, z, 0.0F, 0.0F, 0.0F, spriteSet);
 			particle.setParticleSpeed(dx * 0.01 / (double) 2.0F, dy * 0.01, dz * 0.01 / (double) 2.0F);
-			particle.setLifetime(level.random.nextInt(30) + 10);
+			particle.setLifetime(level.getRandom().nextInt(30) + 10);
 			return particle;
 		});
 		strategy.register(ESParticles.DRIPPING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {

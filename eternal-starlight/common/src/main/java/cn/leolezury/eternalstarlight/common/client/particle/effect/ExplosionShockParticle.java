@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.renderer.SpriteUv;
 import cn.leolezury.eternalstarlight.common.particle.ExplosionShockParticleOptions;
 import cn.leolezury.eternalstarlight.common.util.Easing;
@@ -8,12 +12,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
-public class ExplosionShockParticle extends TextureSheetParticle {
+public class ExplosionShockParticle extends ESTextureSheetParticle {
 	private final Vec3 direction;
 	private final float length, width;
 	private final Vector3f fromColor, toColor;
@@ -32,12 +36,12 @@ public class ExplosionShockParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
 	public void render(VertexConsumer consumer, Camera camera, float partialTick) {
-		Vec3 camPos = camera.getPosition();
+		Vec3 camPos = camera.position();
 		PoseStack stack = new PoseStack();
 		stack.pushPose();
 		stack.translate(-camPos.x, -camPos.y, -camPos.z);
@@ -55,10 +59,10 @@ public class ExplosionShockParticle extends TextureSheetParticle {
 		float u1 = Easing.IN_OUT_QUAD.interpolate(Mth.abs(Math.min(age + partialTick, lifetime) / lifetime - 0.5f) * 2, uv.u1(), uv.u0());
 		float v0 = uv.v0();
 		float v1 = uv.v1();
-		consumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u0, v0).setLight(LightTexture.FULL_BRIGHT);
-		consumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u0, v1).setLight(LightTexture.FULL_BRIGHT);
-		consumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u1, v1).setLight(LightTexture.FULL_BRIGHT);
-		consumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u1, v0).setLight(LightTexture.FULL_BRIGHT);
+		consumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u0, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
+		consumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u0, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+		consumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u1, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+		consumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.x(), toColor.x()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.y(), toColor.y()), Easing.IN_OUT_QUAD.interpolate(Math.min(age + partialTick, lifetime) / lifetime, fromColor.z(), toColor.z()), 1).setUv(u1, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
 		stack.popPose();
 	}
 
@@ -70,7 +74,7 @@ public class ExplosionShockParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(ExplosionShockParticleOptions options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(ExplosionShockParticleOptions options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new ExplosionShockParticle(level, x, y, z, dx, dy, dz, options.fromColor(), options.toColor(), options.lengthScale(), options.width(), options.lifeScale(), sprites);
 		}
 	}

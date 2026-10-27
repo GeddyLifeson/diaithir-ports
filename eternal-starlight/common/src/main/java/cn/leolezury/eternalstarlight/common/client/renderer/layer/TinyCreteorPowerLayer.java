@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
 import cn.leolezury.eternalstarlight.common.client.model.entity.TinyCreteorModel;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.TinyCreteor;
 import net.minecraft.client.model.EntityModel;
@@ -8,13 +9,18 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EnergySwirlLayer;
 import net.minecraft.resources.Identifier;
 
-public class TinyCreteorPowerLayer<T extends TinyCreteor> extends EnergySwirlLayer<T, TinyCreteorModel<T>> {
+public class TinyCreteorPowerLayer<T extends TinyCreteor> extends EnergySwirlLayer<ESRenderState, TinyCreteorModel<T>> {
 	private static final Identifier POWER_LOCATION = Identifier.withDefaultNamespace("textures/entity/creeper/creeper_armor.png");
 	private final TinyCreteorModel<T> model;
 
-	public TinyCreteorPowerLayer(RenderLayerParent<T, TinyCreteorModel<T>> parent, EntityModelSet modelSet) {
+	public TinyCreteorPowerLayer(RenderLayerParent<ESRenderState, TinyCreteorModel<T>> parent, EntityModelSet modelSet) {
 		super(parent);
 		this.model = new TinyCreteorModel<>(modelSet.bakeLayer(TinyCreteorModel.ARMOR_LOCATION));
+	}
+
+	@Override
+	protected boolean isPowered(ESRenderState state) {
+		return state.entity instanceof TinyCreteor creteor && creteor.isPowered();
 	}
 
 	@Override
@@ -28,7 +34,7 @@ public class TinyCreteorPowerLayer<T extends TinyCreteor> extends EnergySwirlLay
 	}
 
 	@Override
-	protected EntityModel<T> model() {
+	protected TinyCreteorModel<T> model() {
 		return this.model;
 	}
 }

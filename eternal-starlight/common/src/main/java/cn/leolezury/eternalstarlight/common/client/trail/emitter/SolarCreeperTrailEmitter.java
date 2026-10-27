@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.trail.emitter;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailStyles;
@@ -12,7 +13,7 @@ import org.joml.Vector4f;
 
 public class SolarCreeperTrailEmitter extends SimpleTrailEmitter<SolarCreeper> {
 	public SolarCreeperTrailEmitter() {
-		super(0.15f, 0, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderType.entityCutoutNoCull(EternalStarlight.id("textures/entity/blank.png")));
+		super(0.15f, 0, new Vector4f(1, 1, 1, 1), 0.5f, true, true, RenderTypes.entityCutout(EternalStarlight.id("textures/entity/blank.png")));
 		colorProfile(TrailStyles.FLARE);
 		widthProfile(TrailStyles.SOLAR_TAPER);
 	}

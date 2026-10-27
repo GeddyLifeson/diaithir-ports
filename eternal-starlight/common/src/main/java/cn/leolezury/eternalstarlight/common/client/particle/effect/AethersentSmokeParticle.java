@@ -1,12 +1,16 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.util.Color;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 
-public class AethersentSmokeParticle extends TextureSheetParticle {
+public class AethersentSmokeParticle extends ESTextureSheetParticle {
 	private final Color fromColor = Color.rgbi(163, 76, 186).blend(Color.WHITE, 0.4);
 	private final Color fadeColor = Color.rgbi(69, 18, 82);
 	private final double initialX, initialY, initialZ;
@@ -62,7 +66,7 @@ public class AethersentSmokeParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_LIT;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -73,7 +77,7 @@ public class AethersentSmokeParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new AethersentSmokeParticle(clientLevel, x, y, z, dx, dy, dz, this.sprites);
 		}
 	}

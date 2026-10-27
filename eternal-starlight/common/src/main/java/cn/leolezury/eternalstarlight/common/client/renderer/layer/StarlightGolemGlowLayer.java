@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.model.entity.StarlightGolemModel;
@@ -11,16 +15,15 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 
-public class StarlightGolemGlowLayer<T extends StarlightGolem> extends RenderLayer<T, StarlightGolemModel<T>> {
-	private static final RenderType GLOW = RenderType.entityTranslucentEmissive(EternalStarlight.id("textures/entity/starlight_golem/starlight_golem_glow.png"));
-	private static final RenderType GLOW_HALLOWEEN = RenderType.entityTranslucentEmissive(EternalStarlight.id("textures/entity/starlight_golem/starlight_golem_glow_halloween.png"));
+public class StarlightGolemGlowLayer<T extends StarlightGolem> extends ESRenderLayer<T, StarlightGolemModel<T>> {
+	private static final RenderType GLOW = RenderTypes.entityTranslucentEmissive(EternalStarlight.id("textures/entity/starlight_golem/starlight_golem_glow.png"));
+	private static final RenderType GLOW_HALLOWEEN = RenderTypes.entityTranslucentEmissive(EternalStarlight.id("textures/entity/starlight_golem/starlight_golem_glow_halloween.png"));
 	private final StarlightGolemModel<T> model;
 
-	public StarlightGolemGlowLayer(RenderLayerParent<T, StarlightGolemModel<T>> parent, EntityModelSet modelSet) {
+	public StarlightGolemGlowLayer(RenderLayerParent<ESRenderState, StarlightGolemModel<T>> parent, EntityModelSet modelSet) {
 		super(parent);
 		this.model = new StarlightGolemModel<>(modelSet.bakeLayer(StarlightGolemModel.LAYER_LOCATION));
 	}
@@ -36,7 +39,7 @@ public class StarlightGolemGlowLayer<T extends StarlightGolem> extends RenderLay
 			if (entity.deathAnimationTime > 0 || (entity.getPhase() == 1 && entity.tickCount % 20 <= entity.getRandom().nextInt(10))) {
 				alpha = 0;
 			}
-			this.model.renderToBuffer(poseStack, consumer, packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0.0F), ARGB.color(alpha, 255, 255, 255));
+			this.model.renderToBuffer(poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY, ARGB.color(alpha, 255, 255, 255));
 		}
 	}
 }

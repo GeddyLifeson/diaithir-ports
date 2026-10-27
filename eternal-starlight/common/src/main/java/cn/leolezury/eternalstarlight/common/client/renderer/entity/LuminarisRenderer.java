@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.LuminarisModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.LuminarisGlowLayer;
@@ -7,10 +8,9 @@ import cn.leolezury.eternalstarlight.common.entity.living.animal.Luminaris;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class LuminarisRenderer<T extends Luminaris> extends MobRenderer<T, LuminarisModel<T>> {
+public class LuminarisRenderer<T extends Luminaris> extends ESMobRenderer<T, LuminarisModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/luminaris.png");
 
 	public LuminarisRenderer(EntityRendererProvider.Context context) {

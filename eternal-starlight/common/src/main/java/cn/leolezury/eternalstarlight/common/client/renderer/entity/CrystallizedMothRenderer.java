@@ -1,14 +1,14 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.CrystallizedMothModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.CrystallizedMothGlowLayer;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.CrystallizedMoth;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class CrystallizedMothRenderer<T extends CrystallizedMoth> extends MobRenderer<T, CrystallizedMothModel<T>> {
+public class CrystallizedMothRenderer<T extends CrystallizedMoth> extends ESMobRenderer<T, CrystallizedMothModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/crystallized_moth.png");
 
 	public CrystallizedMothRenderer(EntityRendererProvider.Context context) {

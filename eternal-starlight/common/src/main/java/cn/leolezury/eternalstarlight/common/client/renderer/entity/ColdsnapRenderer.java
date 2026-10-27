@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.ColdsnapModel;
 import cn.leolezury.eternalstarlight.common.entity.attack.Coldsnap;
@@ -8,7 +9,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.phys.Vec3;
@@ -28,7 +28,7 @@ public class ColdsnapRenderer extends WhipRenderer<Coldsnap> {
 		float bob = entity.tickCount + partialTicks;
 		this.model.setupAnim(entity, 0, 0, bob, 0, 0);
 		RenderType renderType = this.model.renderType(getTextureLocation(entity));
-		VertexConsumer vertexConsumer = ItemRenderer.getFoilBufferDirect(buffer, renderType, false, entity.isFoil());
+		VertexConsumer vertexConsumer = ESRender.foilBuffer(buffer, renderType, false, entity.isFoil());
 		this.model.renderToBuffer(stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY);
 
 		if (bob - entity.lastParticleTick > 0.1) {

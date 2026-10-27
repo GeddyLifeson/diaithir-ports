@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.ThirstWalkerModel;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.ThirstWalker;
@@ -7,10 +9,10 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.EyesLayer;
 
-public class ThirstWalkerEyesLayer<T extends ThirstWalker, M extends ThirstWalkerModel<T>> extends EyesLayer<T, M> {
-	private static final RenderType EYES = RenderType.entityTranslucentEmissive(EternalStarlight.id("textures/entity/thirst_walker_eyes.png"));
+public class ThirstWalkerEyesLayer<T extends ThirstWalker, M extends ThirstWalkerModel<T>> extends EyesLayer<ESRenderState, M> {
+	private static final RenderType EYES = RenderTypes.entityTranslucentEmissive(EternalStarlight.id("textures/entity/thirst_walker_eyes.png"));
 
-	public ThirstWalkerEyesLayer(RenderLayerParent<T, M> parent) {
+	public ThirstWalkerEyesLayer(RenderLayerParent<ESRenderState, M> parent) {
 		super(parent);
 	}
 

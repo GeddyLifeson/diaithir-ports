@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.particle.ESExplosionParticleOptions;
 import cn.leolezury.eternalstarlight.common.particle.ESSmokeParticleOptions;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -24,16 +25,16 @@ public class AethersentExplosionParticle extends NoRenderParticle {
 		if (age == 0) {
 			for (int angle = 0; angle <= 360; angle += 30) {
 				Vec3 pos = ESMathUtil.rotationToPosition(new Vec3(x, y, z), 0.2f, 0, angle);
-				level.addParticle(ESSmokeParticleOptions.AETHERSENT, true, x, y, z, pos.x - x, pos.y - y, pos.z - z);
+				level.addParticle(ESSmokeParticleOptions.AETHERSENT, true, false, x, y, z, pos.x - x, pos.y - y, pos.z - z);
 			}
 			Vec3 basePos = new Vec3(x, y + 2, z);
 			for (int i = 0; i < 300; i++) {
 				Vec3 pos = ESMathUtil.rotationToPosition(basePos, random.nextFloat() * 3, random.nextFloat() * 360, random.nextFloat() * 360);
-				level.addParticle(ESParticles.AETHERSENT_SMOKE.get(), true, x, y, z, pos.x - x, pos.y - y, pos.z - z);
+				level.addParticle(ESParticles.AETHERSENT_SMOKE.get(), true, false, x, y, z, pos.x - x, pos.y - y, pos.z - z);
 			}
 			for (int i = 0; i < 15; i++) {
 				Vec3 pos = ESMathUtil.rotationToPosition(new Vec3(x, y, z), 0.5f, random.nextInt(30, 60), random.nextFloat() * 360);
-				level.addParticle(ESParticles.SMOKE_TRAIL.get(), true, x, y, z, pos.x - x, pos.y - y, pos.z - z);
+				level.addParticle(ESParticles.SMOKE_TRAIL.get(), true, false, x, y, z, pos.x - x, pos.y - y, pos.z - z);
 			}
 		}
 		super.tick();
@@ -41,16 +42,16 @@ public class AethersentExplosionParticle extends NoRenderParticle {
 		for (int angle = 0; angle <= 360; angle += 10) {
 			Vec3 basePos = ESMathUtil.rotationToPosition(new Vec3(x, y, z), radius, 0, angle);
 			Vec3 pos = basePos.offsetRandom(random, 2);
-			level.addParticle(ESExplosionParticleOptions.AETHERSENT, true, pos.x, pos.y, pos.z, 0, 0, 0);
+			level.addParticle(ESExplosionParticleOptions.AETHERSENT, true, false, pos.x, pos.y, pos.z, 0, 0, 0);
 			pos = basePos.offsetRandom(random, 2);
-			level.addParticle(ParticleTypes.SMOKE, true, pos.x, pos.y, pos.z, 0, 0, 0);
+			level.addParticle(ParticleTypes.SMOKE, true, false, pos.x, pos.y, pos.z, 0, 0, 0);
 			pos = basePos.offsetRandom(random, 2);
-			level.addParticle(ParticleTypes.LARGE_SMOKE, true, pos.x, pos.y, pos.z, 0, 0, 0);
+			level.addParticle(ParticleTypes.LARGE_SMOKE, true, false, pos.x, pos.y, pos.z, 0, 0, 0);
 			if (random.nextInt(25) == 0) {
-				level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, true, pos.x, pos.y, pos.z, 0, 0.05, 0);
+				level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, true, false, pos.x, pos.y, pos.z, 0, 0.05, 0);
 			}
 			pos = basePos.offsetRandom(random, 2);
-			level.addParticle(ParticleTypes.WHITE_SMOKE, true, pos.x, pos.y, pos.z, 0, 0, 0);
+			level.addParticle(ParticleTypes.WHITE_SMOKE, true, false, pos.x, pos.y, pos.z, 0, 0, 0);
 		}
 	}
 
@@ -59,7 +60,7 @@ public class AethersentExplosionParticle extends NoRenderParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i, RandomSource random) {
 			return new AethersentExplosionParticle(clientLevel, d, e, f);
 		}
 	}

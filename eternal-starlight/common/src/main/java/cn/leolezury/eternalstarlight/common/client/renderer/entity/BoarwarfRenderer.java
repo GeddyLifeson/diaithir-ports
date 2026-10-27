@@ -1,15 +1,15 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.BoarwarfModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.boarwarf.BoarwarfBiomeLayer;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.boarwarf.profession.*;
 import cn.leolezury.eternalstarlight.common.entity.living.npc.boarwarf.Boarwarf;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class BoarwarfRenderer<T extends Boarwarf> extends MobRenderer<T, BoarwarfModel<T>> {
+public class BoarwarfRenderer<T extends Boarwarf> extends ESMobRenderer<T, BoarwarfModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/boarwarf/boarwarf.png");
 
 	public BoarwarfRenderer(EntityRendererProvider.Context context) {

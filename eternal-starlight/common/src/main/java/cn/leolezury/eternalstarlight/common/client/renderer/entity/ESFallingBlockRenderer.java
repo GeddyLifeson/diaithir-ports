@@ -1,11 +1,11 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESFallingBlock;
 import cn.leolezury.eternalstarlight.common.platform.ESClientPlatform;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.core.BlockPos;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ESFallingBlockRenderer extends EntityRenderer<ESFallingBlock> {
+public class ESFallingBlockRenderer extends ESEntityRenderer<ESFallingBlock> {
 	private final BlockRenderDispatcher dispatcher;
 
 	public ESFallingBlockRenderer(EntityRendererProvider.Context context) {

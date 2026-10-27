@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.environment;
 
+import net.minecraft.util.RandomSource;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.BaseAshSmokeParticle;
 import net.minecraft.client.particle.Particle;
@@ -26,7 +27,7 @@ public class AshenSnowParticle extends BaseAshSmokeParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xs, double ys, double zs) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xs, double ys, double zs, RandomSource random) {
 			return new AshenSnowParticle(level, x, y, z, xs, ys, zs, this.sprites);
 		}
 	}

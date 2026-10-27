@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.attack.ray.RayAttack;
 import cn.leolezury.eternalstarlight.common.entity.interfaces.RayAttackUser;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
@@ -7,10 +9,9 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Mth;
@@ -18,7 +19,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
-public abstract class LaserBeamRenderer<T extends RayAttack> extends EntityRenderer<T> {
+public abstract class LaserBeamRenderer<T extends RayAttack> extends ESEntityRenderer<T> {
 	public LaserBeamRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -78,23 +79,23 @@ public abstract class LaserBeamRenderer<T extends RayAttack> extends EntityRende
 		}
 
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-		Vec3 sight = camera.getPosition().subtract(start);
+		Vec3 sight = camera.position().subtract(start);
 		Vec3 diff = ESMathUtil.rotationToPosition(laserBeam.getLength(), pitch, yaw);
 		Vec3 sideOffset = diff.cross(sight).normalize().scale((getBeamWidth() * 0.2 * Math.sin(laserBeam.tickCount + partialTicks) + getBeamWidth() * 0.8) / 2);
 		PoseStack.Pose pose = stack.last();
-		VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(getTextureLocation(laserBeam)));
+		VertexConsumer consumer = bufferSource.getBuffer(RenderTypes.entityCutout(getTextureLocation(laserBeam)));
 
 		Vec3 bodyEndDiff = diff.normalize().scale(diff.length() - getEndLength());
 
-		consumer.addVertex(pose, sideOffset.toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, sideOffset.scale(-1).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, bodyEndDiff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, bodyEndDiff.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, sideOffset.toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, sideOffset.scale(-1).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, bodyEndDiff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, bodyEndDiff.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 
-		consumer.addVertex(pose, bodyEndDiff.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, bodyEndDiff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, diff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-		consumer.addVertex(pose, diff.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, bodyEndDiff.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, bodyEndDiff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, diff.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		consumer.addVertex(pose, diff.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 
 		stack.popPose();
 	}

@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.CrystallizedMothModel;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.CrystallizedMoth;
@@ -9,15 +13,14 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 
-public class CrystallizedMothGlowLayer<T extends CrystallizedMoth> extends RenderLayer<T, CrystallizedMothModel<T>> {
-	private static final RenderType GLOW = RenderType.entityTranslucentEmissive(EternalStarlight.id("textures/entity/crystallized_moth_glow.png"));
+public class CrystallizedMothGlowLayer<T extends CrystallizedMoth> extends ESRenderLayer<T, CrystallizedMothModel<T>> {
+	private static final RenderType GLOW = RenderTypes.entityTranslucentEmissive(EternalStarlight.id("textures/entity/crystallized_moth_glow.png"));
 	private final CrystallizedMothModel<T> model;
 
-	public CrystallizedMothGlowLayer(RenderLayerParent<T, CrystallizedMothModel<T>> parent, EntityModelSet modelSet) {
+	public CrystallizedMothGlowLayer(RenderLayerParent<ESRenderState, CrystallizedMothModel<T>> parent, EntityModelSet modelSet) {
 		super(parent);
 		this.model = new CrystallizedMothModel<>(modelSet.bakeLayer(CrystallizedMothModel.LAYER_LOCATION));
 	}
@@ -28,7 +31,7 @@ public class CrystallizedMothGlowLayer<T extends CrystallizedMoth> extends Rende
 			getParentModel().copyPropertiesTo(this.model);
 			this.model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 			this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			this.model.renderToBuffer(poseStack, bufferSource.getBuffer(GLOW), packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0.0F), ARGB.color((int) (Math.max(0.0F, Mth.cos(ageInTicks * 0.01f + 3.1415927F)) * 255), 255, 255, 255));
+			this.model.renderToBuffer(poseStack, bufferSource.getBuffer(GLOW), packedLight, OverlayTexture.NO_OVERLAY, ARGB.color((int) (Math.max(0.0F, Mth.cos(ageInTicks * 0.01f + 3.1415927F)) * 255), 255, 255, 255));
 		}
 	}
 }

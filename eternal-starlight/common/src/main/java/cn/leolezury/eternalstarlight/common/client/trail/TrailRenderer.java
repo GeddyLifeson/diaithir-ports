@@ -23,7 +23,7 @@ public class TrailRenderer {
 		}
 
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-		Vec3 cameraPos = camera.getPosition();
+		Vec3 cameraPos = camera.position();
 		Quaternionf cameraRotation = new Quaternionf(camera.rotation());
 		Function<Float, Vector4f> colorProfile = trail.getColorProfile();
 

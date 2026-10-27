@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.client.compat.ESModel;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
@@ -127,7 +129,7 @@ public class LunarMonstrosityModel<T extends LunarMonstrosity> extends AnimatedE
 
 	/*@Override
 	public RenderType renderType(Identifier resourceLocation) {
-		return RenderType.entityTranslucent(resourceLocation);
+		return RenderTypes.entityTranslucent(resourceLocation);
 	}*/
 
 }

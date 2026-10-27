@@ -70,10 +70,6 @@ public class ESClientHandler {
 	public static ESBookLoader books;
 	public static final Map<UUID, Integer> BOSS_BAR_TYPES = new HashMap<>();
 	public static final List<ScreenShake> SCREEN_SHAKES = new ArrayList<>();
-	private static final Identifier[] BAR_BACKGROUND_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/pink_background"), Identifier.withDefaultNamespace("boss_bar/blue_background"), Identifier.withDefaultNamespace("boss_bar/red_background"), Identifier.withDefaultNamespace("boss_bar/green_background"), Identifier.withDefaultNamespace("boss_bar/yellow_background"), Identifier.withDefaultNamespace("boss_bar/purple_background"), Identifier.withDefaultNamespace("boss_bar/white_background")};
-	private static final Identifier[] BAR_PROGRESS_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/pink_progress"), Identifier.withDefaultNamespace("boss_bar/blue_progress"), Identifier.withDefaultNamespace("boss_bar/red_progress"), Identifier.withDefaultNamespace("boss_bar/green_progress"), Identifier.withDefaultNamespace("boss_bar/yellow_progress"), Identifier.withDefaultNamespace("boss_bar/purple_progress"), Identifier.withDefaultNamespace("boss_bar/white_progress")};
-	private static final Identifier[] OVERLAY_BACKGROUND_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/notched_6_background"), Identifier.withDefaultNamespace("boss_bar/notched_10_background"), Identifier.withDefaultNamespace("boss_bar/notched_12_background"), Identifier.withDefaultNamespace("boss_bar/notched_20_background")};
-	private static final Identifier[] OVERLAY_PROGRESS_SPRITES = new Identifier[]{Identifier.withDefaultNamespace("boss_bar/notched_6_progress"), Identifier.withDefaultNamespace("boss_bar/notched_10_progress"), Identifier.withDefaultNamespace("boss_bar/notched_12_progress"), Identifier.withDefaultNamespace("boss_bar/notched_20_progress")};
 	private static final Identifier ETHER_EROSION_OVERLAY = EternalStarlight.id("textures/misc/ether_erosion.png");
 	private static final Identifier ETHER_ARMOR_EMPTY = EternalStarlight.id("textures/gui/hud/ether_armor_empty.png");
 	private static final Identifier ETHER_ARMOR_HALF = EternalStarlight.id("textures/gui/hud/ether_armor_half.png");
@@ -102,9 +98,6 @@ public class ESClientHandler {
 	public static boolean tearyEffect;
 	public static int oldSeedsLauncherAnimTicks;
 	public static int seedsLauncherAnimTicks;
-	public static final MultiBufferSource.BufferSource DELAYED_BUFFER_SOURCE = new DelayedMultiBufferSource(new ByteBufferBuilder(RenderType.TRANSIENT_BUFFER_SIZE));
-	public static final MultiBufferSource.BufferSource AFTER_LEVEL_BUFFER_SOURCE = new DelayedMultiBufferSource(new ByteBufferBuilder(RenderType.TRANSIENT_BUFFER_SIZE));
-	private static Matrix4f modelViewMatrix = new Matrix4f();
 	public static boolean isHalloween;
 
 	public static void onClientTick() {
@@ -326,102 +319,6 @@ public class ESClientHandler {
 		return sum;
 	}
 
-	public static void onAfterRenderEntities(MultiBufferSource source, PoseStack stack, float partialTicks) {
-		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-		Vec3 cameraPos = camera.getPosition();
-		stack.pushPose();
-		stack.translate(-cameraPos.x(), -cameraPos.y(), -cameraPos.z());
-		TrailManager.render(source, stack, partialTicks);
-		stack.popPose();
-	}
-
-	public static void onAfterRenderParticles() {
-		modelViewMatrix = new Matrix4f(RenderSystem.getModelViewMatrix());
-	}
-
-	public static void onAfterRenderWeather(float partialTicks) {
-		RenderSystem.enableCull();
-		RenderSystem.enableBlend();
-		RenderSystem.enableDepthTest();
-		RenderSystem.depthMask(false);
-		Matrix4f matrix4f = new Matrix4f(RenderSystem.getModelViewMatrix());
-		RenderSystem.getModelViewMatrix().set(modelViewMatrix);
-		if (Minecraft.useShaderTransparency()) {
-			Minecraft.getInstance().getMainRenderTarget().bindWrite(false);
-		}
-		DELAYED_BUFFER_SOURCE.endBatch();
-		RenderSystem.getModelViewMatrix().set(matrix4f);
-		// aurora
-		float aurora = Mth.lerp(partialTicks, oldAuroraIntensity, auroraIntensity);
-		if (aurora > 0 && Minecraft.getInstance().level != null) {
-			renderSkyShader(ESShaders.getAurora(), aurora);
-		}
-		// restore the states vanilla expects for the rest of the weather block and for later AFTER_WEATHER listeners
-		RenderSystem.enableCull();
-		RenderSystem.enableBlend();
-		RenderSystem.enableDepthTest();
-		RenderSystem.depthMask(false);
-	}
-
-	public static void onAfterRenderLevel(Matrix4f viewMatrix, Matrix4f projectionMatrix, Camera camera, float partialTicks) {
-		float[] shaderColor = RenderSystem.getShaderColor().clone();
-		Matrix4f matrix4f = new Matrix4f(RenderSystem.getModelViewMatrix());
-		RenderSystem.getModelViewMatrix().set(viewMatrix);
-		AFTER_LEVEL_BUFFER_SOURCE.endBatch();
-		RenderSystem.getModelViewMatrix().set(matrix4f);
-		restoreLevelRenderState(shaderColor);
-		PostEffectRenderer.render(Minecraft.getInstance().level, camera, viewMatrix, projectionMatrix, partialTicks);
-		// post effect chains leave blend and depth test disabled, which would leak into the hand render
-		restoreLevelRenderState(shaderColor);
-	}
-
-	private static void restoreLevelRenderState(float[] shaderColor) {
-		RenderSystem.enableCull();
-		RenderSystem.disableBlend();
-		RenderSystem.defaultBlendFunc();
-		RenderSystem.enableDepthTest();
-		RenderSystem.depthMask(true);
-		RenderSystem.polygonOffset(0.0F, 0.0F);
-		RenderSystem.disablePolygonOffset();
-		RenderSystem.setShaderColor(shaderColor[0], shaderColor[1], shaderColor[2], shaderColor[3]);
-	}
-
-	private static void renderSkyShader(ShaderInstance shader, float intensity) {
-		final float scale = 2048F * (Minecraft.getInstance().gameRenderer.getRenderDistance() / 32F);
-		Vec3 pos = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
-		float height = (float) (pos.y() + 128);
-		float cloudHeight = Minecraft.getInstance().level.effects().getCloudHeight();
-		float cloud = Float.isNaN(cloudHeight) ? 0F : cloudHeight + 64;
-		float y = (float) (Math.max(height, cloud) - pos.y());
-		if (!Float.isFinite(y)) {
-			return;
-		}
-
-		Tesselator tesselator = Tesselator.getInstance();
-		BufferBuilder buffer = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-		buffer.addVertex(-scale, y, scale).setColor(1F, 1F, 1F, 1F);
-		buffer.addVertex(-scale, y, -scale).setColor(1F, 1F, 1F, 1F);
-		buffer.addVertex(scale, y, -scale).setColor(1F, 1F, 1F, 1F);
-		buffer.addVertex(scale, y, scale).setColor(1F, 1F, 1F, 1F);
-
-		// shader instance ignores the blend config of the json, and flushing buffers above clears the
-		// render state, so the blend state has to be set here or the shader draws an opaque sheet
-		RenderSystem.enableCull();
-		RenderSystem.enableBlend();
-		RenderSystem.defaultBlendFunc();
-		RenderSystem.enableDepthTest();
-		RenderSystem.depthMask(false);
-		float[] lastColor = RenderSystem.getShaderColor().clone();
-		RenderSystem.setShaderColor(1F, 1F, 1F, intensity);
-		ShaderInstance last = RenderSystem.getShader();
-		RenderSystem.setShader(() -> shader);
-		shader.apply();
-		BufferUploader.drawWithShader(buffer.buildOrThrow());
-		shader.clear();
-		RenderSystem.setShader(() -> last);
-		RenderSystem.setShaderColor(lastColor[0], lastColor[1], lastColor[2], lastColor[3]);
-	}
-
 	public static Vec3 onComputeCameraAngles(Vec3 angles) {
 		return angles.add(Mth.clamp(getScreenShakePitchOffset(), -0.5, 0.5), Mth.clamp(getScreenShakeYawOffset(), -0.5, 0.5), 0);
 	}
@@ -437,48 +334,11 @@ public class ESClientHandler {
 				modified = (float) Mth.lerp(Minecraft.getInstance().options.fovEffectScale().get(), 1.0F, (modified * (1.0F - f * 0.15F)));
 			}
 		}
-		float portal = Mth.lerp(Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), oldPortalTicks, portalTicks) / 80f;
+		float portal = Mth.lerp(Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), oldPortalTicks, portalTicks) / 80f;
 		if (portal > 0) {
 			modified = (float) Mth.lerp(Minecraft.getInstance().options.fovEffectScale().get(), 1.0F, (modified * (1.0F - portal)));
 		}
 		return modified == original ? OptionalDouble.empty() : OptionalDouble.of(modified);
-	}
-
-	// tail of setupFog
-	public static void onRenderFog(Camera camera, FogRenderer.FogMode fogMode) {
-		Minecraft minecraft = Minecraft.getInstance();
-		LocalPlayer player = minecraft.player;
-		if (player == null) {
-			return;
-		}
-		if (ESPlatform.INSTANCE.getLoader() == ESPlatform.Loader.FABRIC) {
-			FluidState fluidState = camera.getEntity().level().getFluidState(camera.getBlockPosition());
-			if (fluidState.is(ESFluids.ETHER_STILL.get()) || fluidState.is(ESFluids.ETHER_FLOWING.get())) {
-				if (camera.getPosition().y < (double) ((float) camera.getBlockPosition().getY() + fluidState.getHeight(camera.getEntity().level(), camera.getBlockPosition()))) {
-					RenderSystem.setShaderFogStart(0.0F);
-					RenderSystem.setShaderFogEnd(3.0F);
-					RenderSystem.setShaderFogColor(232 / 255F, 255 / 255F, 222 / 255F);
-					RenderSystem.setShaderFogShape(FogShape.SPHERE);
-				}
-			}
-		}
-
-		if (player.level().dimension() == ESDimensions.STARLIGHT_KEY && camera.getFluidInCamera() == FogType.NONE && player.level().getBlockState(camera.getBlockPosition()).getFluidState().isEmpty() && fogMode == FogRenderer.FogMode.FOG_TERRAIN) {
-			RenderSystem.setShaderFogStart(RenderSystem.getShaderFogStart() - Mth.clamp(fogStartDecrement, 0, RenderSystem.getShaderFogStart() + 5));
-			RenderSystem.setShaderFogEnd(RenderSystem.getShaderFogEnd() - Mth.clamp(fogEndDecrement, 0, RenderSystem.getShaderFogEnd() - 50));
-		}
-
-		AttributeInstance fogVision = player.getAttribute(ESAttributes.FOG_VISION.asHolder());
-		if (fogVision != null && fogMode == FogRenderer.FogMode.FOG_TERRAIN) {
-			RenderSystem.setShaderFogStart(RenderSystem.getShaderFogStart() + (float) fogVision.getValue());
-			RenderSystem.setShaderFogEnd(RenderSystem.getShaderFogEnd() + (float) fogVision.getValue());
-		}
-
-		AttributeInstance fireResistance = player.getAttribute(ESAttributes.FIRE_RESISTANCE.asHolder());
-		if (fireResistance != null && camera.getFluidInCamera() == FogType.LAVA) {
-			RenderSystem.setShaderFogStart(RenderSystem.getShaderFogStart() + (float) fireResistance.getValue() * 15);
-			RenderSystem.setShaderFogEnd(RenderSystem.getShaderFogEnd() + (float) fireResistance.getValue() * 15);
-		}
 	}
 
 	public static boolean onRenderBlockOverlay(Player player, BlockState state) {
@@ -488,205 +348,9 @@ public class ESClientHandler {
 		return true;
 	}
 
-	public static boolean renderBossBar(GuiGraphics guiGraphics, LerpingBossEvent bossEvent, int x, int y) {
-		Identifier barLocation;
-		switch (BOSS_BAR_TYPES.getOrDefault(bossEvent.getId(), 0)) {
-			case ESServerBossEvent.THE_GATEKEEPER -> barLocation = Identifier.fromNamespaceAndPath(EternalStarlight.ID, "textures/gui/bars/the_gatekeeper.png");
-			case ESServerBossEvent.STARLIGHT_GOLEM -> barLocation = Identifier.fromNamespaceAndPath(EternalStarlight.ID, "textures/gui/bars/starlight_golem.png");
-			case ESServerBossEvent.LUNAR_MONSTROSITY -> barLocation = Identifier.fromNamespaceAndPath(EternalStarlight.ID, "textures/gui/bars/lunar_monstrosity.png");
-			case ESServerBossEvent.LUNAR_MONSTROSITY_SOUL -> barLocation = Identifier.fromNamespaceAndPath(EternalStarlight.ID, "textures/gui/bars/lunar_monstrosity_soul.png");
-			case ESServerBossEvent.SOLAR_CREEPER -> barLocation = Identifier.fromNamespaceAndPath(EternalStarlight.ID, "textures/gui/bars/solar_creeper.png");
-			default -> {
-				return false;
-			}
-		}
-		drawBar(guiGraphics, x, y, bossEvent, barLocation);
-		Component component = bossEvent.getName();
-		int textWidth = Minecraft.getInstance().font.width(component);
-		int textX = Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2 - textWidth / 2;
-		int textY = y - 9;
-		guiGraphics.drawString(Minecraft.getInstance().font, component, textX, textY, 16777215);
-		return true;
-	}
-
-	public static void drawBar(GuiGraphics guiGraphics, int x, int y, BossEvent event, Identifier barLocation) {
-		drawBar(guiGraphics, x, y, event, 182, BAR_BACKGROUND_SPRITES, OVERLAY_BACKGROUND_SPRITES);
-		int k = Mth.lerpDiscrete(event.getProgress(), 0, 182);
-		if (k > 0) {
-			drawBar(guiGraphics, x, y, event, k, BAR_PROGRESS_SPRITES, OVERLAY_PROGRESS_SPRITES);
-		}
-		guiGraphics.blit(barLocation, x - 1, y - 5, 0.0F, 0.0F, 184, 16, 184, 16);
-	}
-
-	private static void drawBar(GuiGraphics guiGraphics, int x, int y, BossEvent bossEvent, int progress, Identifier[] bars, Identifier[] overlays) {
-		guiGraphics.blitSprite(bars[bossEvent.getColor().ordinal()], 182, 5, 0, 0, x, y, progress, 5);
-		if (bossEvent.getOverlay() != BossEvent.BossBarOverlay.PROGRESS) {
-			RenderSystem.enableBlend();
-			guiGraphics.blitSprite(overlays[bossEvent.getOverlay().ordinal() - 1], 182, 5, 0, 0, x, y, progress, 5);
-			RenderSystem.disableBlend();
-		}
-	}
-
 	public static int getEtherTint(BlockAndTintGetter getter, BlockPos pos) {
-		double progress = getter != null && pos != null ? (ESClientSetupHandler.COLOR_NOISE.getValue(pos.getX() / 15.0, pos.getY() / 15.0, pos.getZ() / 15.0) + 1) / 2 : (Math.sin((ESClientHandler.clientTickCount + Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally())) / 30.0) + 1) / 2;
+		double progress = getter != null && pos != null ? (ESClientSetupHandler.COLOR_NOISE.getValue(pos.getX() / 15.0, pos.getY() / 15.0, pos.getZ() / 15.0) + 1) / 2 : (Math.sin((ESClientHandler.clientTickCount + Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally())) / 30.0) + 1) / 2;
 		return ARGB.color((int) Mth.lerp(progress, 190, 255), (int) Mth.lerp(progress, 240, 255), (int) Mth.lerp(progress, 230, 255));
-	}
-
-	// copied from Gui
-	public static void renderTextureOverlay(GuiGraphics guiGraphics, Identifier resourceLocation, float f) {
-		RenderSystem.disableDepthTest();
-		RenderSystem.depthMask(false);
-		RenderSystem.enableBlend();
-		guiGraphics.setColor(1.0F, 1.0F, 1.0F, f);
-		guiGraphics.blit(resourceLocation, 0, 0, -90, 0.0F, 0.0F, guiGraphics.guiWidth(), guiGraphics.guiHeight(), guiGraphics.guiWidth(), guiGraphics.guiHeight());
-		RenderSystem.disableBlend();
-		RenderSystem.depthMask(true);
-		RenderSystem.enableDepthTest();
-		guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
-	}
-
-	// copied from Gui#renderPortalOverlay
-	public static void renderPortalOverlay(GuiGraphics guiGraphics) {
-		float alpha = Mth.lerp(Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), oldPortalTicks, portalTicks) / 120f;
-
-		if (alpha <= 0) {
-			return;
-		}
-
-		if (alpha < 1.0F) {
-			alpha *= alpha;
-			alpha *= alpha;
-			alpha = alpha * 0.8F + 0.2F;
-		}
-
-		RenderSystem.disableDepthTest();
-		RenderSystem.depthMask(false);
-		RenderSystem.enableBlend();
-		guiGraphics.setColor(1.0F, 1.0F, 1.0F, alpha);
-		TextureAtlasSprite textureatlassprite = Minecraft.getInstance()
-			.getBlockRenderer()
-			.getBlockModelShaper()
-			.getParticleIcon(ESBlocks.STARLIGHT_PORTAL.get().defaultBlockState());
-		guiGraphics.blit(0, 0, -90, guiGraphics.guiWidth(), guiGraphics.guiHeight(), textureatlassprite);
-		RenderSystem.disableBlend();
-		RenderSystem.depthMask(true);
-		RenderSystem.enableDepthTest();
-		guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
-	}
-
-	public static void renderOffhandAttackIndicator(GuiGraphics guiGraphics) {
-		RenderSystem.enableBlend();
-		if (Minecraft.getInstance().player != null) {
-			ItemStack mainHand = Minecraft.getInstance().player.getMainHandItem();
-			ItemStack offhand = Minecraft.getInstance().player.getOffhandItem();
-			if (ItemStack.isSameItem(mainHand, offhand) && mainHand.getItem() instanceof DualWieldingSwordItem) {
-				float attackStrengthScale = Mth.clamp(ESDataAttachments.OFFHAND_ATTACK_STRENGTH_TIMER.getData(Minecraft.getInstance().player) / Minecraft.getInstance().player.getCurrentItemAttackStrengthDelay(), 0.0F, 1.0F);
-				if (Minecraft.getInstance().options.getCameraType().isFirstPerson() && Minecraft.getInstance().options.attackIndicator().get() == AttackIndicatorStatus.CROSSHAIR) {
-					RenderSystem.blendFuncSeparate(
-						GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR,
-						GlStateManager.DestFactor.ONE_MINUS_SRC_COLOR,
-						GlStateManager.SourceFactor.ONE,
-						GlStateManager.DestFactor.ZERO
-					);
-					boolean full = false;
-					if (Minecraft.getInstance().crosshairPickEntity != null && Minecraft.getInstance().crosshairPickEntity instanceof LivingEntity && attackStrengthScale >= 1.0F) {
-						full = Minecraft.getInstance().player.getCurrentItemAttackStrengthDelay() > 5.0F;
-						full &= Minecraft.getInstance().crosshairPickEntity.isAlive();
-					}
-					int x = guiGraphics.guiWidth() / 2 - 8;
-					// +16 -> +24 we want it to be under the normal crosshair
-					int y = guiGraphics.guiHeight() / 2 - 7 + 24;
-					if (full) {
-						guiGraphics.blitSprite(CROSSHAIR_ATTACK_INDICATOR_FULL_SPRITE, x, y, 16, 16);
-					} else if (attackStrengthScale < 1.0F) {
-						int progress = (int) (attackStrengthScale * 17.0F);
-						guiGraphics.blitSprite(CROSSHAIR_ATTACK_INDICATOR_BACKGROUND_SPRITE, x, y, 16, 4);
-						guiGraphics.blitSprite(CROSSHAIR_ATTACK_INDICATOR_PROGRESS_SPRITE, 16, 4, 0, 0, x, y, progress, 4);
-					}
-					RenderSystem.defaultBlendFunc();
-				}
-				if (Minecraft.getInstance().options.attackIndicator().get() == AttackIndicatorStatus.HOTBAR) {
-					HumanoidArm arm = Minecraft.getInstance().player.getMainArm();
-					if (attackStrengthScale < 1.0F) {
-						int halfWidth = guiGraphics.guiWidth() / 2;
-						// we want it to be on the other side of the hotbar
-						// offset by 29 so that it won't be under the offhand slot
-						int x = halfWidth + 91 + 6 + 29;
-						if (arm == HumanoidArm.RIGHT) {
-							x = halfWidth - 91 - 22 - 29;
-						}
-						int y = guiGraphics.guiHeight() - 20;
-						int progress = (int) (attackStrengthScale * 19.0F);
-						guiGraphics.blitSprite(HOTBAR_ATTACK_INDICATOR_BACKGROUND_SPRITE, x, y, 18, 18);
-						guiGraphics.blitSprite(HOTBAR_ATTACK_INDICATOR_PROGRESS_SPRITE, 18, 18, 0, 18 - progress, x, y + 18 - progress, 18, progress);
-					}
-				}
-			}
-		}
-		RenderSystem.disableBlend();
-	}
-
-	public static void renderEtherErosion(GuiGraphics guiGraphics) {
-		float erosionProgress = ESDataAttachments.IN_ETHER_TICKS.getData(Minecraft.getInstance().player) / 140f;
-		if (erosionProgress > 0) {
-			renderTextureOverlay(guiGraphics, ETHER_EROSION_OVERLAY, erosionProgress);
-		}
-	}
-
-	public static void renderEtherArmor(GuiGraphics guiGraphics, int screenWidth, int screenHeight) {
-		Minecraft minecraft = Minecraft.getInstance();
-		if (ESBlockUtil.isEntityInBlock(minecraft.player, ESBlocks.ETHER.get())) {
-			minecraft.getProfiler().push("armor");
-			int initialX = screenWidth / 2 - 91;
-			int initialY = screenHeight - 39;
-			float maxHealth = (float) Math.max(minecraft.player.getAttributeValue(Attributes.MAX_HEALTH), Mth.ceil(minecraft.player.getHealth()));
-			int absorptionAmount = Mth.ceil(minecraft.player.getAbsorptionAmount());
-			int q = Mth.ceil((maxHealth + (float) absorptionAmount) / 2.0F / 10.0F);
-			int r = Math.max(10 - (q - 2), 3);
-			int armorValue = minecraft.player.getArmorValue();
-			int y = initialY - (q - 1) * r - 10;
-			for (int i = 0; i < 10; ++i) {
-				if (armorValue > 0) {
-					int x = initialX + i * 8;
-					if (i * 2 + 1 < armorValue) {
-						guiGraphics.blit(ETHER_ARMOR_FULL, x, y, 0f, 0f, 9, 9, 9, 9);
-					}
-
-					if (i * 2 + 1 == armorValue) {
-						guiGraphics.blit(ETHER_ARMOR_HALF, x, y, 0f, 0f, 9, 9, 9, 9);
-					}
-
-					if (i * 2 + 1 > armorValue) {
-						guiGraphics.blit(ETHER_ARMOR_EMPTY, x, y, 0f, 0f, 9, 9, 9, 9);
-					}
-				}
-			}
-		}
-	}
-
-	public static void renderCarvedLunarisCactusFruitBlur(GuiGraphics guiGraphics) {
-		if (Minecraft.getInstance().options.getCameraType().isFirstPerson() && Minecraft.getInstance().player != null) {
-			ItemStack itemStack = Minecraft.getInstance().player.getInventory().getArmor(3);
-			if (itemStack.is(ESBlocks.CARVED_LUNARIS_CACTUS_FRUIT.get().asItem())) {
-				renderTextureOverlay(guiGraphics, LUNARIS_CACTUS_BLUR_LOCATION, 1.0F);
-			}
-		}
-	}
-
-	public static void renderDreamCatcher(GuiGraphics guiGraphics) {
-		LocalPlayer player = Minecraft.getInstance().player;
-		if (player != null && player.hasEffect(ESMobEffects.DREAM_CATCHER.asHolder())) {
-			for (DreamCatcherText text : DREAM_CATCHER_TEXTS) {
-				guiGraphics.drawCenteredString(Minecraft.getInstance().font, text.getText(), text.getX(), text.getY(), 0x5187c4);
-			}
-		}
-	}
-
-	public static void setAirBubbleColor() {
-		LocalPlayer player = Minecraft.getInstance().player;
-		if (player != null && player.level().getBiome(player.blockPosition()).is(ESBiomes.THE_ABYSS)) {
-			RenderSystem.setShaderColor(1, (float) Mth.clamp(1 + player.getY() / 64, 0, 1), 1, 1);
-		}
 	}
 
 	public static int getAirBubbleYOffset() {

@@ -1,17 +1,21 @@
 package cn.leolezury.eternalstarlight.common.client.particle.advanced;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector4f;
 
-public class AdvancedParticle extends TextureSheetParticle implements ParticleOperator {
+public class AdvancedParticle extends ESTextureSheetParticle implements ParticleOperator {
 	protected SpriteSet sprites;
 	private final AdvancedParticleOptions options;
 
@@ -33,18 +37,23 @@ public class AdvancedParticle extends TextureSheetParticle implements ParticleOp
 
 	@Override
 	protected int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	@Override
 	public void render(VertexConsumer vertexConsumer, Camera camera, float f) {
 		this.options.operateRender(this);
-		super.render(ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(this.options.getRenderType()), camera, f);
+		super.render(vertexConsumer, camera, f);
+	}
+
+	@Override
+	public net.minecraft.client.renderer.rendertype.RenderType getESRenderType() {
+		return this.options.getRenderType();
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.CUSTOM;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
@@ -121,7 +130,7 @@ public class AdvancedParticle extends TextureSheetParticle implements ParticleOp
 
 	@Override
 	public float getAge() {
-		return age + Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
+		return age + Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 	}
 
 	@Override
@@ -159,7 +168,7 @@ public class AdvancedParticle extends TextureSheetParticle implements ParticleOp
 			this.spriteSet = spriteSet;
 		}
 
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i, RandomSource random) {
 			return new AdvancedParticle(clientLevel, d, e, f, spriteSet, new AdvancedParticleOptions().defaultOperators());
 		}
 	}

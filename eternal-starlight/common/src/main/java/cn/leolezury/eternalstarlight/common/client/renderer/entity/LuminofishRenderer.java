@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.LuminofishModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.LuminofishGlowLayer;
@@ -7,10 +8,9 @@ import cn.leolezury.eternalstarlight.common.entity.living.animal.Luminofish;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class LuminofishRenderer<T extends Luminofish> extends MobRenderer<T, LuminofishModel<T>> {
+public class LuminofishRenderer<T extends Luminofish> extends ESMobRenderer<T, LuminofishModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/luminofish.png");
 
 	public LuminofishRenderer(EntityRendererProvider.Context context) {

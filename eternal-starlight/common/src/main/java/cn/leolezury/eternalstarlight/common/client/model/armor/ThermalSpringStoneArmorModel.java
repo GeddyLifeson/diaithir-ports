@@ -8,7 +8,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.world.entity.LivingEntity;
 
 public class ThermalSpringStoneArmorModel<T extends LivingEntity> extends HumanoidArmorModel<T> {
@@ -35,6 +35,6 @@ public class ThermalSpringStoneArmorModel<T extends LivingEntity> extends Humano
 
 	@Override
 	public void renderToBuffer(PoseStack stack, VertexConsumer builder, int packedLight, int packedOverlay, int color) {
-		super.renderToBuffer(stack, builder, LightTexture.FULL_BRIGHT, packedOverlay, color);
+		super.renderToBuffer(stack, builder, LightCoordsUtil.FULL_BRIGHT, packedOverlay, color);
 	}
 }

@@ -1,11 +1,11 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.entity.attack.Whip;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
@@ -17,7 +17,7 @@ import org.joml.Quaternionf;
 
 import java.util.Optional;
 
-public abstract class WhipRenderer<T extends Whip> extends EntityRenderer<T> {
+public abstract class WhipRenderer<T extends Whip> extends ESEntityRenderer<T> {
 	public WhipRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}

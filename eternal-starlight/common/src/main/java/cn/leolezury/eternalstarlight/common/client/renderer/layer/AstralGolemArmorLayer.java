@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -10,7 +11,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 
 public class AstralGolemArmorLayer<T extends LivingEntity, M extends HumanoidModel<T>, A extends HumanoidModel<T>> extends HumanoidArmorLayer<T, M, A> {
-	public AstralGolemArmorLayer(RenderLayerParent<T, M> parent, A inner, A outer, ModelManager mgr) {
+	public AstralGolemArmorLayer(RenderLayerParent<ESRenderState, M> parent, A inner, A outer, ModelManager mgr) {
 		super(parent, inner, outer, mgr);
 	}
 

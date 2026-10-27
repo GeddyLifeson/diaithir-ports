@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailPoint;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailRenderer;
@@ -12,14 +16,14 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector4f;
 
 import java.util.function.Function;
 
-public class GatheringTrailParticle extends TextureSheetParticle {
+public class GatheringTrailParticle extends ESTextureSheetParticle {
 	private final Trail trail;
 	private final Vec3 destPos;
 	private final float pitchSpeed, yawSpeed, radiusSpeed;
@@ -77,17 +81,16 @@ public class GatheringTrailParticle extends TextureSheetParticle {
 		float y = (float) Mth.lerp(partialTicks, this.yo, this.y);
 		float z = (float) Mth.lerp(partialTicks, this.zo, this.z);
 		stack.pushPose();
-		stack.translate(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z);
+		stack.translate(-camera.position().x, -camera.position().y, -camera.position().z);
 		this.trail.setSpriteUv(this.sprite);
 		this.trail.prepareRender(TrailPoint.cameraFacing(new Vec3(x, y, z)), partialTicks);
-		RenderSystem.disableCull();
-		TrailRenderer.render(this.trail, consumer, stack, true, true, LightTexture.FULL_BRIGHT);
+		TrailRenderer.render(this.trail, consumer, stack, true, true, LightCoordsUtil.FULL_BRIGHT);
 		stack.popPose();
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	public static class Provider implements ParticleProvider<GatheringTrailParticleOptions> {
@@ -100,7 +103,7 @@ public class GatheringTrailParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(GatheringTrailParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(GatheringTrailParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new GatheringTrailParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, options.trailWidth(), options.trailLength(), options.speedScale(), options.rotSpeedScale(), sprites, colorProfile);
 		}
 	}

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.particle.GeyserBaseParticleOptions;
 import cn.leolezury.eternalstarlight.common.particle.GeyserParticleOptions;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
@@ -74,7 +75,8 @@ public class GeyserEruptionParticle extends NoRenderParticle {
 			final double z,
 			final double xAux,
 			final double yAux,
-			final double zAux
+			final double zAux,
+			final RandomSource random
 		) {
 			return new GeyserEruptionParticle(level, x, y, z, xAux, yAux, zAux, options);
 		}

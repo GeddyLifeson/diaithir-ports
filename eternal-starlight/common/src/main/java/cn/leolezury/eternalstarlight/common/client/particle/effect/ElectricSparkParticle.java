@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.renderer.SpriteUv;
@@ -8,14 +12,14 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ElectricSparkParticle extends TextureSheetParticle {
+public class ElectricSparkParticle extends ESTextureSheetParticle {
 	private final Vec3 destPos;
 	private final List<Vec3> segments = new ArrayList<>();
 
@@ -34,7 +38,12 @@ public class ElectricSparkParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+		return ESParticleTypes.CUSTOM;
+	}
+
+	@Override
+	public RenderType getESRenderType() {
+		return ESRenderType.PARTICLE_ADDITIVE_GLOW;
 	}
 
 	@Override
@@ -58,13 +67,12 @@ public class ElectricSparkParticle extends TextureSheetParticle {
 	}
 
 	@Override
-	public void render(VertexConsumer consumer, Camera camera, float partialTick) {
-		Vec3 camPos = camera.getPosition();
+	public void render(VertexConsumer vertexConsumer, Camera camera, float partialTick) {
+		Vec3 camPos = camera.position();
 		PoseStack stack = new PoseStack();
 		stack.pushPose();
 		stack.translate(-camPos.x, -camPos.y, -camPos.z);
-		VertexConsumer vertexConsumer = ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(ESRenderType.PARTICLE_ADDITIVE_GLOW);
-		for (int i = 0; i < segments.size() - 1; i++) {
+				for (int i = 0; i < segments.size() - 1; i++) {
 			Vec3 start = segments.get(i);
 			Vec3 end = segments.get(i + 1);
 			Vec3 offset = end.subtract(start);
@@ -76,10 +84,10 @@ public class ElectricSparkParticle extends TextureSheetParticle {
 			float u1 = uv.u1();
 			float v0 = uv.v0();
 			float v1 = uv.v1();
-			vertexConsumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(0.6F, 0.6F, 0.9F, 0.75F).setUv(u0, v0).setLight(LightTexture.FULL_BRIGHT);
-			vertexConsumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u0, v1).setLight(LightTexture.FULL_BRIGHT);
-			vertexConsumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u1, v1).setLight(LightTexture.FULL_BRIGHT);
-			vertexConsumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u1, v0).setLight(LightTexture.FULL_BRIGHT);
+			vertexConsumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(0.6F, 0.6F, 0.9F, 0.75F).setUv(u0, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
+			vertexConsumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u0, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+			vertexConsumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u1, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+			vertexConsumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(0.6F, 0.6F, 0.9f, 0.75f).setUv(u1, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
 		}
 		stack.popPose();
 	}
@@ -92,7 +100,7 @@ public class ElectricSparkParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(SimpleParticleType options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new ElectricSparkParticle(level, x, y, z, dx, dy, dz, sprites);
 		}
 	}

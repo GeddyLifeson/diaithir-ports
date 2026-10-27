@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
  * Renderer base for non-living entities written in the immediate-mode style.
  */
 public abstract class ESEntityRenderer<T extends Entity> extends EntityRenderer<T, ESRenderState> {
+	protected SubmitNodeCollector collector;
 	protected ESEntityRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -35,6 +36,7 @@ public abstract class ESEntityRenderer<T extends Entity> extends EntityRenderer<
 	@SuppressWarnings("unchecked")
 	public void submit(ESRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		T entity = (T) state.entity;
+		this.collector = collector;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(entity, state.entityYaw, state.partialTicks, poseStack, source, state.lightCoords));
 		super.submit(state, poseStack, collector, camera);
 	}

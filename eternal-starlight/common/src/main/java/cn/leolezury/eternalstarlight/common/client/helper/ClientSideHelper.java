@@ -54,7 +54,7 @@ public class ClientSideHelper extends ClientHelper {
 	public void handleParticlePacket(ParticlePacket packet) {
 		ClientLevel clientLevel = Minecraft.getInstance().level;
 		if (clientLevel != null) {
-			clientLevel.addParticle(packet.particle(), packet.longDistance(), packet.x(), packet.y(), packet.z(), packet.dx(), packet.dy(), packet.dz());
+			clientLevel.addParticle(packet.particle(), packet.longDistance(), false, packet.x(), packet.y(), packet.z(), packet.dx(), packet.dy(), packet.dz());
 		}
 	}
 
@@ -231,9 +231,9 @@ public class ClientSideHelper extends ClientHelper {
 		ClientLevel level = Minecraft.getInstance().level;
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
 		if (level != null && level.getGameTime() % 20 == 0) {
-			Vec3 randomPos = camera.getPosition().offsetRandom(level.getRandom(), 75f);
+			Vec3 randomPos = camera.position().offsetRandom(level.getRandom(), 75f);
 			int height = level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) randomPos.x, (int) randomPos.z);
-			level.addParticle(ESParticles.METEOR.get(), true, randomPos.x, Math.max(height + 75, camera.getPosition().y + 75), randomPos.z, 0, 0, 0);
+			level.addParticle(ESParticles.METEOR.get(), true, false, randomPos.x, Math.max(height + 75, camera.position().y + 75), randomPos.z, 0, 0, 0);
 		}
 	}
 

@@ -2,7 +2,7 @@ package cn.leolezury.eternalstarlight.common.client.trail.emitter;
 
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailPoint;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
@@ -84,7 +84,7 @@ public class SimpleTrailEmitter<T extends Entity> implements TrailEmitter<T> {
 
 	@Override
 	public int getLight(T entity, float partialTicks) {
-		return fullBright ? LightTexture.FULL_BRIGHT : TrailEmitter.super.getLight(entity, partialTicks);
+		return fullBright ? LightCoordsUtil.FULL_BRIGHT : TrailEmitter.super.getLight(entity, partialTicks);
 	}
 
 	@Override

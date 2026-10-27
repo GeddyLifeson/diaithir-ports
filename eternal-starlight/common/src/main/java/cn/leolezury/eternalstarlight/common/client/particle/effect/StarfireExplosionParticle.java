@@ -1,15 +1,17 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESSimpleAnimatedParticle;
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SimpleAnimatedParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class StarfireExplosionParticle extends SimpleAnimatedParticle {
+public class StarfireExplosionParticle extends ESSimpleAnimatedParticle {
 	protected StarfireExplosionParticle(ClientLevel level, double x, double y, double z, double dx, double dy, double dz, float scale, SpriteSet spriteSet) {
 		super(level, x, y, z, spriteSet, 0.25f);
 		this.setParticleSpeed(dx, dy, dz);
@@ -30,7 +32,7 @@ public class StarfireExplosionParticle extends SimpleAnimatedParticle {
 
 	@Override
 	public int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -41,7 +43,7 @@ public class StarfireExplosionParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new StarfireExplosionParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, 0.25f, sprites);
 		}
 	}
@@ -54,7 +56,7 @@ public class StarfireExplosionParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new StarfireExplosionParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, 0.125f, sprites);
 		}
 	}

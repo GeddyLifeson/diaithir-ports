@@ -1,5 +1,8 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.entity.OrbModel;
@@ -10,11 +13,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
@@ -26,7 +28,7 @@ import org.joml.Vector3f;
 
 import java.util.List;
 
-public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T, SolarCreeperModel<T>> {
+public class SolarCreeperRenderer<T extends SolarCreeper> extends ESMobRenderer<T, SolarCreeperModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/solar_creeper/solar_creeper.png");
 	private static final Identifier SUN_TEXTURE = EternalStarlight.id("textures/entity/solar_creeper/sun.png");
 	private static final Identifier BLACK_HOLE_TEXTURE = EternalStarlight.id("textures/entity/solar_creeper/black_hole.png");
@@ -125,8 +127,8 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 			poseStack.translate(0.0F, -1.5F, 0.0F);
 			RenderType renderType = this.sunModel.renderType(SUN_TEXTURE);
 			VertexConsumer vertexConsumer = buffer.getBuffer(renderType);
-			this.sunModel.setupAnim(entity, 0, 0, getBob(entity, partialTicks), 0, 0);
-			this.sunModel.renderToBuffer(poseStack, vertexConsumer, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, sunColor);
+			this.sunModel.setupAnim(entity, 0, 0, (entity.tickCount + partialTicks), 0, 0);
+			this.sunModel.renderToBuffer(poseStack, vertexConsumer, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, sunColor);
 			poseStack.popPose();
 		}
 		if (blackHoleScale > 0) {
@@ -137,8 +139,8 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 			poseStack.translate(0.0F, -1.5F, 0.0F);
 			RenderType renderType = this.sunModel.renderType(BLACK_HOLE_TEXTURE);
 			VertexConsumer vertexConsumer = buffer.getBuffer(renderType);
-			this.sunModel.setupAnim(entity, 0, 0, getBob(entity, partialTicks), 0, 0);
-			this.sunModel.renderToBuffer(poseStack, vertexConsumer, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+			this.sunModel.setupAnim(entity, 0, 0, (entity.tickCount + partialTicks), 0, 0);
+			this.sunModel.renderToBuffer(poseStack, vertexConsumer, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
 			poseStack.popPose();
 		}
 		if (shineScale > 0) {
@@ -152,8 +154,8 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 			if (state == SolarCreeperBlackHolePhase.ID) {
 				poseStack.scale(entity.getBbHeight() * 4, entity.getBbHeight() * 4, entity.getBbHeight() * 4);
 				PoseStack.Pose pose = poseStack.last();
-				VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.dragonRays());
-				Vec3 camPos = camera.getPosition();
+				VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.dragonRays());
+				Vec3 camPos = camera.position();
 				Vec3 sight = camPos.subtract(sunAbovePos);
 				Vec3 sideOffset = SolarCreeperBlackHolePhase.BLACK_HOLE_RAY_NORMAL.cross(sight).normalize().scale(0.2);
 				vertexConsumer.addVertex(pose, 0, 0, 0).setColor(ARGB.color(255, 139, 38, 19));
@@ -163,9 +165,9 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 				vertexConsumer.addVertex(pose, SolarCreeperBlackHolePhase.BLACK_HOLE_RAY_NORMAL.scale(-1).subtract(sideOffset).toVector3f()).setColor(ARGB.color(0, 229, 84, 6));
 				vertexConsumer.addVertex(pose, SolarCreeperBlackHolePhase.BLACK_HOLE_RAY_NORMAL.scale(-1).add(sideOffset).toVector3f()).setColor(ARGB.color(0, 229, 84, 6));
 			} else {
-				poseStack.mulPose(new Quaternionf(this.entityRenderDispatcher.cameraOrientation()).rotateY(Mth.PI));
+				poseStack.mulPose(new Quaternionf(ESRender.cameraOrientation()).rotateY(Mth.PI));
 				PoseStack.Pose pose = poseStack.last();
-				VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.dragonRays());
+				VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.dragonRays());
 				int rays = 5;
 				for (int i = 0; i < rays; i++) {
 					vertexConsumer.addVertex(pose, 0, 0, 0).setColor(ARGB.color(255, 255, 213, 74));
@@ -178,13 +180,13 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 			poseStack.popPose();
 		}
 		if (state == SolarCreeperSolarRayPhase.ID) {
-			Vec3 sight = camera.getPosition().subtract(sunAbovePos);
+			Vec3 sight = camera.position().subtract(sunAbovePos);
 			Vector3f normalVec = entity.getRenderSolarRayNormal(partialTicks);
 			float angle = entity.getRenderSolarRayAngle(partialTicks);
 			Vec3 n = new Vec3(normalVec);
 			if (n.lengthSqr() < 0.01) n = new Vec3(0, 1, 0);
 			n = n.normalize();
-			Vec3 zOffset = sunAbovePos.subtract(camera.getPosition()).normalize().scale(0.01);
+			Vec3 zOffset = sunAbovePos.subtract(camera.position()).normalize().scale(0.01);
 			poseStack.pushPose();
 			poseStack.translate(sunAbovePos.x - pos.x, sunAbovePos.y - pos.y, sunAbovePos.z - pos.z);
 			PoseStack.Pose pose = poseStack.last();
@@ -200,29 +202,29 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 					float staticWidth = 0.8f;
 					staticWidth *= entity.getRenderSolarRayWidth(i, partialTicks);
 					Vec3 staticOffset = diff.cross(sight).normalize().scale(staticWidth / 2);
-					VertexConsumer consumer = buffer.getBuffer(RenderType.entityCutoutNoCull(LASER_JITTER_TEXTURE));
+					VertexConsumer consumer = buffer.getBuffer(RenderTypes.entityCutout(LASER_JITTER_TEXTURE));
 
-					consumer.addVertex(pose, jitterOffset.toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, jitterOffset.scale(-1).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, jitterOffset.toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, jitterOffset.scale(-1).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
 
-					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, diff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, diff.add(jitterOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, diff.add(jitterOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, diff.add(jitterOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
 
-					consumer = buffer.getBuffer(RenderType.entityCutoutNoCull(LASER_STATIC_TEXTURE));
+					consumer = buffer.getBuffer(RenderTypes.entityCutout(LASER_STATIC_TEXTURE));
 
-					consumer.addVertex(pose, staticOffset.add(zOffset).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, staticOffset.scale(-1).add(zOffset).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, staticOffset.add(zOffset).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, staticOffset.scale(-1).add(zOffset).toVector3f()).setColor(ARGB.color(255, 255, 213, 74)).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
 
-					consumer.addVertex(pose, bodyEndDiff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, bodyEndDiff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, diff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
-					consumer.addVertex(pose, diff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, bodyEndDiff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, diff.add(staticOffset.scale(-1)).add(zOffset).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
+					consumer.addVertex(pose, diff.add(staticOffset).add(zOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0, 1, 0);
 				}
 			}
 			poseStack.popPose();
@@ -259,10 +261,10 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 
 		Vec3[] positions = {headPos, bodyPos, leg1Pos, leg2Pos, leg3Pos, leg4Pos};
 
-		Vec3 camPos = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
+		Vec3 camPos = Minecraft.getInstance().gameRenderer.getMainCamera().position();
 		Vec3 sight = camPos.subtract(pos).normalize();
 
-		VertexConsumer consumer = buffer.getBuffer(RenderType.entityCutoutNoCull(SOLAR_TETHER_TEXTURE));
+		VertexConsumer consumer = buffer.getBuffer(RenderTypes.entityCutout(SOLAR_TETHER_TEXTURE));
 		PoseStack.Pose pose = poseStack.last();
 
 		float[][] segments = {
@@ -291,10 +293,10 @@ public class SolarCreeperRenderer<T extends SolarCreeper> extends MobRenderer<T,
 
 			Vec3 sideOffset = diff.cross(sight).normalize().scale(0.035f);
 
-			consumer.addVertex(pose, from.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			consumer.addVertex(pose, from.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			consumer.addVertex(pose, to.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			consumer.addVertex(pose, to.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			consumer.addVertex(pose, from.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			consumer.addVertex(pose, from.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			consumer.addVertex(pose, to.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			consumer.addVertex(pose, to.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 		}
 	}
 

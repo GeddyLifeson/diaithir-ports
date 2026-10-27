@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
@@ -18,7 +20,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.entity.player.PlayerSkin;
@@ -34,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class TheGatekeeperRenderer<T extends TheGatekeeper> extends MobRenderer<T, TheGatekeeperModel<T>> {
+public class TheGatekeeperRenderer<T extends TheGatekeeper> extends ESMobRenderer<T, TheGatekeeperModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/the_gatekeeper.png");
 	private static final Identifier SLIM_ENTITY_TEXTURE = EternalStarlight.id("textures/entity/the_gatekeeper_slim.png");
 	private static final int PHANTOM_AMOUNT = 5;
@@ -76,7 +77,7 @@ public class TheGatekeeperRenderer<T extends TheGatekeeper> extends MobRenderer<
 				stack.pushPose();
 				float spin = progress * Mth.HALF_PI + i * Mth.TWO_PI / PHANTOM_AMOUNT;
 				Vector3f offset = new Vector3f(radius * Mth.sin(spin), radius * Mth.cos(spin), 0);
-				offset.rotate(this.entityRenderDispatcher.cameraOrientation());
+				offset.rotate(ESRender.cameraOrientation());
 				stack.translate(offset.x, offset.y, offset.z);
 				super.render(entity, entityYaw, partialTicks, stack, bufferSource, packedLight);
 				stack.popPose();
@@ -90,7 +91,7 @@ public class TheGatekeeperRenderer<T extends TheGatekeeper> extends MobRenderer<
 			double currentX = Mth.lerp(partialTicks, entity.xo, entity.getX());
 			double currentY = Mth.lerp(partialTicks, entity.yo, entity.getY());
 			double currentZ = Mth.lerp(partialTicks, entity.zo, entity.getZ());
-			float currentTick = getBob(entity, partialTicks);
+			float currentTick = (entity.tickCount + partialTicks);
 			if (entity.trailSnapshots.isEmpty() || currentTick - entity.lastTrailTick > 3) {
 				if (entity.shouldAddTrailSnapshot()) {
 					Map<String, ModelPartPose> snapshot = ESModelUtil.saveModelSnapshot(getModel().allPartNames, getModel()::getAnyDescendantWithName);

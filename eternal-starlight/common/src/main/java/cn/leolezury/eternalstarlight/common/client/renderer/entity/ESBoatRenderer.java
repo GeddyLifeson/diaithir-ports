@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESBoat;
 import com.google.common.collect.ImmutableMap;
@@ -11,7 +13,6 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
@@ -22,7 +23,7 @@ import org.joml.Quaternionf;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class ESBoatRenderer extends EntityRenderer<ESBoat> {
+public class ESBoatRenderer extends ESEntityRenderer<ESBoat> {
 	private final Map<ESBoat.Type, Pair<Identifier, ListModel<Boat>>> boatResources;
 
 	public ESBoatRenderer(EntityRendererProvider.Context context, boolean chest) {
@@ -84,7 +85,7 @@ public class ESBoatRenderer extends EntityRenderer<ESBoat> {
 		VertexConsumer vertexconsumer = buffer.getBuffer(model.renderType(resourcelocation));
 		model.renderToBuffer(stack, vertexconsumer, light, OverlayTexture.NO_OVERLAY);
 		if (model instanceof BoatModel boatModel && !boat.isUnderWater()) {
-			VertexConsumer vertexconsumer1 = buffer.getBuffer(RenderType.waterMask());
+			VertexConsumer vertexconsumer1 = buffer.getBuffer(RenderTypes.waterMask());
 			boatModel.waterPatch().render(stack, vertexconsumer1, light, OverlayTexture.NO_OVERLAY);
 		}
 

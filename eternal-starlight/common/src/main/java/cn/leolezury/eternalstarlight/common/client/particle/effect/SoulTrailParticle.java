@@ -1,16 +1,18 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESSimpleAnimatedParticle;
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SimpleAnimatedParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 
-public class SoulTrailParticle extends SimpleAnimatedParticle {
+public class SoulTrailParticle extends ESSimpleAnimatedParticle {
 	protected SoulTrailParticle(ClientLevel level, double x, double y, double z, double dx, double dy, double dz, SpriteSet spriteSet) {
 		super(level, x, y, z, spriteSet, 0.01f);
 		this.setParticleSpeed(dx, dy, dz);
@@ -27,7 +29,7 @@ public class SoulTrailParticle extends SimpleAnimatedParticle {
 
 	@Override
 	public int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -38,7 +40,7 @@ public class SoulTrailParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new SoulTrailParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprites);
 		}
 	}

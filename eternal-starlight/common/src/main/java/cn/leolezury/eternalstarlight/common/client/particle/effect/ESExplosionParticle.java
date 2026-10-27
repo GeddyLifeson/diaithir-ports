@@ -1,12 +1,16 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESSimpleAnimatedParticle;
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.particle.ESExplosionParticleOptions;
 import cn.leolezury.eternalstarlight.common.util.Color;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 
-public class ESExplosionParticle extends SimpleAnimatedParticle {
+public class ESExplosionParticle extends ESSimpleAnimatedParticle {
 	protected ESExplosionParticle(ClientLevel level, float lifeMultiplier, double x, double y, double z, int fromColor, int toColor, SpriteSet spriteSet) {
 		super(level, x, y, z, spriteSet, 0);
 		this.lifetime = (int) ((6 + this.random.nextInt(4)) * lifeMultiplier);
@@ -18,12 +22,12 @@ public class ESExplosionParticle extends SimpleAnimatedParticle {
 
 	@Override
 	public int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_LIT;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	public static class Provider implements ParticleProvider<ESExplosionParticleOptions> {
@@ -34,7 +38,7 @@ public class ESExplosionParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(ESExplosionParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(ESExplosionParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new ESExplosionParticle(level, options.lifeScale(), x, y, z, Color.rgbd(options.fromColor().x, options.fromColor().y, options.fromColor().z).rgb(), Color.rgbd(options.toColor().x, options.toColor().y, options.toColor().z).rgb(), this.sprites);
 		}
 	}

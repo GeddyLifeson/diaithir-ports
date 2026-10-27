@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.environment;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -8,7 +12,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class FireflyParticle extends TextureSheetParticle {
+public class FireflyParticle extends ESTextureSheetParticle {
 	private final SpriteSet spriteSet;
 	private int ticksSinceMotionChange;
 
@@ -52,7 +56,7 @@ public class FireflyParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
@@ -77,7 +81,7 @@ public class FireflyParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs, RandomSource random) {
 			return new FireflyParticle(clientLevel, x, y, z, this.sprites);
 		}
 	}

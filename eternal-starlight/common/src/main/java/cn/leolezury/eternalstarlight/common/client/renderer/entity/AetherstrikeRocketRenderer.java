@@ -1,18 +1,18 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.projectile.AetherstrikeRocketEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemDisplayContext;
 
-public class AetherstrikeRocketRenderer extends EntityRenderer<AetherstrikeRocketEntity> {
+public class AetherstrikeRocketRenderer extends ESEntityRenderer<AetherstrikeRocketEntity> {
 	private final ItemRenderer itemRenderer;
 
 	public AetherstrikeRocketRenderer(EntityRendererProvider.Context context) {
@@ -23,7 +23,7 @@ public class AetherstrikeRocketRenderer extends EntityRenderer<AetherstrikeRocke
 	@Override
 	public void render(AetherstrikeRocketEntity rocket, float yaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
 		poseStack.pushPose();
-		poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
+		poseStack.mulPose(ESRender.cameraOrientation());
 		if (rocket.isShotAtAngle()) {
 			poseStack.mulPose(Axis.ZP.rotationDegrees(180.0F));
 			poseStack.mulPose(Axis.YP.rotationDegrees(180.0F));

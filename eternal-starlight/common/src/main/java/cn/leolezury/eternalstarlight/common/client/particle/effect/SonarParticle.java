@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESSimpleAnimatedParticle;
+import net.minecraft.util.RandomSource;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -11,7 +13,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import org.joml.Quaternionf;
 
-public class SonarParticle extends SimpleAnimatedParticle {
+public class SonarParticle extends ESSimpleAnimatedParticle {
 	private final float rot;
 	private final float pitch;
 
@@ -61,7 +63,7 @@ public class SonarParticle extends SimpleAnimatedParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new SonarParticle(level, x, y, z, dx, dy, dz, this.sprites);
 		}
 	}

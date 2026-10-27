@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.AlloyFurnaceBlock;
 import cn.leolezury.eternalstarlight.common.block.WeatheringGolemSteel;
@@ -12,7 +13,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -60,14 +61,14 @@ public class AlloyFurnaceRenderer implements BlockEntityRenderer<AlloyFurnaceBlo
 			stack.mulPose(Axis.YP.rotationDegrees(blockEntity.getBlockState().getValue(AlloyFurnaceBlock.FACING).toYRot() + 180));
 			int lightWithOverheat = light;
 			if (overheatAmplitude > 0) {
-				lightWithOverheat = LightTexture.pack(Mth.ceil(Mth.lerp(overheatAmplitude, LightTexture.block(light), 15)), Mth.ceil(Mth.lerp(overheatAmplitude, LightTexture.sky(light), 15)));
+				lightWithOverheat = LightCoordsUtil.pack(Mth.ceil(Mth.lerp(overheatAmplitude, LightCoordsUtil.block(light), 15)), Mth.ceil(Mth.lerp(overheatAmplitude, LightCoordsUtil.sky(light), 15)));
 				stack.scale(1 + (float) Math.cos(animationTicks * 3.25) * overheatAmplitude * 0.02f, 1 + (float) Math.cos(animationTicks * 2.25) * overheatAmplitude * 0.02f, 1 + (float) Math.cos(animationTicks * 3.25) * overheatAmplitude * 0.02f);
 			}
 			int overheatColor = ARGB.srgbLerp(overheatAmplitude, -1, 0xffee7044);
-			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityTranslucent(oxidized ? OXIDIZED_FURNACE_TEXTURE : FURNACE_TEXTURE)), lightWithOverheat, overlay, overheatColor);
-			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull((oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).get((blockEntity.isCooling() ? blockEntity.clientAnimationTicks / 2 : 0) % (oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).size()))), lightWithOverheat, overlay, overheatColor);
+			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityTranslucent(oxidized ? OXIDIZED_FURNACE_TEXTURE : FURNACE_TEXTURE)), lightWithOverheat, overlay, overheatColor);
+			this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout((oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).get((blockEntity.isCooling() ? blockEntity.clientAnimationTicks / 2 : 0) % (oxidized ? OXIDIZED_FAN_TEXTURES : FAN_TEXTURES).size()))), lightWithOverheat, overlay, overheatColor);
 			if (blockEntity.isLit()) {
-				this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(LIT_TEXTURES.get((blockEntity.clientAnimationTicks / 2) % LIT_TEXTURES.size()))), LightTexture.FULL_BRIGHT, overlay);
+				this.furnaceModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(LIT_TEXTURES.get((blockEntity.clientAnimationTicks / 2) % LIT_TEXTURES.size()))), LightCoordsUtil.FULL_BRIGHT, overlay);
 			}
 			stack.popPose();
 		}

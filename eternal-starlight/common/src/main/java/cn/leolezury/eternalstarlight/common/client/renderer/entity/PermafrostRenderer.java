@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
@@ -14,7 +15,6 @@ import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
@@ -22,7 +22,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Map;
 
-public class PermafrostRenderer<T extends Permafrost> extends MobRenderer<T, PermafrostModel<T>> {
+public class PermafrostRenderer<T extends Permafrost> extends ESMobRenderer<T, PermafrostModel<T>> {
 	private static final int SNAPSHOT_LIFESPAN = 8;
 
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/permafrost.png");
@@ -38,7 +38,7 @@ public class PermafrostRenderer<T extends Permafrost> extends MobRenderer<T, Per
 			double currentX = Mth.lerp(partialTicks, entity.xo, entity.getX());
 			double currentY = Mth.lerp(partialTicks, entity.yo, entity.getY());
 			double currentZ = Mth.lerp(partialTicks, entity.zo, entity.getZ());
-			float currentTick = getBob(entity, partialTicks);
+			float currentTick = (entity.tickCount + partialTicks);
 			if (entity.trailSnapshots.isEmpty() || currentTick - entity.lastTrailTick > 1.5) {
 				if (entity.shouldAddTrailSnapshot()) {
 					Map<String, ModelPartPose> snapshot = ESModelUtil.saveModelSnapshot(getModel().allPartNames, getModel()::getAnyDescendantWithName);

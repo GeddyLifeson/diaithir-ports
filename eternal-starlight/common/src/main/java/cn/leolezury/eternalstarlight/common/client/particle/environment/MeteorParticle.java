@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.environment;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
@@ -11,12 +15,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class MeteorParticle extends TextureSheetParticle {
+public class MeteorParticle extends ESTextureSheetParticle {
 	private final Trail trail = new Trail(0.8f, 15);
 
 	protected MeteorParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
@@ -31,7 +35,7 @@ public class MeteorParticle extends TextureSheetParticle {
 	@Override
 	public void tick() {
 		super.tick();
-		level.addParticle(ESExplosionParticleOptions.AETHERSENT, true, x, y, z, 0, 0, 0);
+		level.addParticle(ESExplosionParticleOptions.AETHERSENT, true, false, x, y, z, 0, 0, 0);
 		this.trail.update(TrailPoint.cameraFacing(new Vec3(xo, yo, zo)).color(144 / 255f, 94 / 255f, 168 / 255f, 2f));
 		if (onGround || stoppedByCollision) {
 			trail.setLength(Math.max(trail.getLength() - 0.75f, 0));
@@ -51,16 +55,21 @@ public class MeteorParticle extends TextureSheetParticle {
 		float y = (float) Mth.lerp(partialTicks, this.yo, this.y);
 		float z = (float) Mth.lerp(partialTicks, this.zo, this.z);
 		stack.pushPose();
-		stack.translate(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z);
+		stack.translate(-camera.position().x, -camera.position().y, -camera.position().z);
 		this.trail.setSpriteUv(this.sprite);
 		this.trail.prepareRender(TrailPoint.cameraFacing(new Vec3(x, y, z)), partialTicks);
-		TrailRenderer.render(this.trail, ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(ESRenderType.PARTICLE_ADDITIVE_GLOW), stack, true, false, LightTexture.FULL_BRIGHT);
+		TrailRenderer.render(this.trail, consumer, stack, true, false, LightCoordsUtil.FULL_BRIGHT);
 		stack.popPose();
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.CUSTOM;
+		return ESParticleTypes.CUSTOM;
+	}
+
+	@Override
+	public RenderType getESRenderType() {
+		return ESRenderType.PARTICLE_ADDITIVE_GLOW;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -71,7 +80,7 @@ public class MeteorParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new MeteorParticle(level, x, y, z, sprites);
 		}
 	}

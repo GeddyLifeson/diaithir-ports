@@ -1,10 +1,14 @@
 package cn.leolezury.eternalstarlight.common.client.particle.environment;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class FallingLeavesParticle extends TextureSheetParticle {
+public class FallingLeavesParticle extends ESTextureSheetParticle {
 	private float rotSpeed;
 	private final float particleRandom;
 	private final float spinAcceleration;
@@ -27,7 +31,7 @@ public class FallingLeavesParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return glow ? ParticleRenderType.PARTICLE_SHEET_LIT : ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return glow ? ESParticleTypes.CUSTOM : ESParticleTypes.CUSTOM;
 	}
 
 	@Override
@@ -71,7 +75,7 @@ public class FallingLeavesParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs, RandomSource random) {
 			return new FallingLeavesParticle(clientLevel, x, y, z, false, this.sprites);
 		}
 	}
@@ -84,7 +88,7 @@ public class FallingLeavesParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double x, double y, double z, double xs, double ys, double zs, RandomSource random) {
 			return new FallingLeavesParticle(clientLevel, x, y, z, true, this.sprites);
 		}
 	}

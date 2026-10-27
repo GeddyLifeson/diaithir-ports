@@ -1,20 +1,22 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.WiltedPetal;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class WiltedPetalRenderer extends EntityRenderer<WiltedPetal> {
+public class WiltedPetalRenderer extends ESEntityRenderer<WiltedPetal> {
 	private static final Identifier TEXTURE_LOCATION = EternalStarlight.id("textures/entity/wilted_petal.png");
-	private static final RenderType RENDER_TYPE = RenderType.entityCutoutNoCull(TEXTURE_LOCATION);
+	private static final RenderType RENDER_TYPE = RenderTypes.entityCutout(TEXTURE_LOCATION);
 
 	public WiltedPetalRenderer(EntityRendererProvider.Context context) {
 		super(context);
@@ -25,7 +27,7 @@ public class WiltedPetalRenderer extends EntityRenderer<WiltedPetal> {
 		poseStack.pushPose();
 		poseStack.translate(0, entity.getBbHeight() / 2, 0);
 		poseStack.scale(0.6F, 0.6F, 0.6F);
-		poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
+		poseStack.mulPose(ESRender.cameraOrientation());
 		PoseStack.Pose pose = poseStack.last();
 		VertexConsumer vertexConsumer = buffer.getBuffer(RENDER_TYPE);
 		vertex(vertexConsumer, pose, packedLight, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0, 1);

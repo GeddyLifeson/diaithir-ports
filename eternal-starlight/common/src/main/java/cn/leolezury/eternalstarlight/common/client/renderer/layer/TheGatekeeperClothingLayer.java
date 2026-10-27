@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer;
 
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import cn.leolezury.eternalstarlight.common.client.compat.ESRenderLayer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.TheGatekeeperModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.entity.TheGatekeeperRenderer;
@@ -13,20 +17,19 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.entity.player.PlayerSkin;
 import net.minecraft.client.resources.SkinManager;
 import net.minecraft.resources.Identifier;
 
 import java.util.Optional;
 
-public class TheGatekeeperClothingLayer<T extends TheGatekeeper> extends RenderLayer<T, TheGatekeeperModel<T>> {
+public class TheGatekeeperClothingLayer<T extends TheGatekeeper> extends ESRenderLayer<T, TheGatekeeperModel<T>> {
 	private static final Identifier OVERLAY_TEXTURE = EternalStarlight.id("textures/entity/the_gatekeeper_overlay.png");
 	private static final Identifier SLIM_OVERLAY_TEXTURE = EternalStarlight.id("textures/entity/the_gatekeeper_overlay_slim.png");
 	private final TheGatekeeperModel<T> normalModel;
 	private final TheGatekeeperModel<T> slimModel;
 
-	public TheGatekeeperClothingLayer(RenderLayerParent<T, TheGatekeeperModel<T>> parent, EntityModelSet modelSet) {
+	public TheGatekeeperClothingLayer(RenderLayerParent<ESRenderState, TheGatekeeperModel<T>> parent, EntityModelSet modelSet) {
 		super(parent);
 		this.normalModel = new TheGatekeeperModel<>(modelSet.bakeLayer(TheGatekeeperModel.OUTER_LAYER_LOCATION), false);
 		this.slimModel = new TheGatekeeperModel<>(modelSet.bakeLayer(TheGatekeeperModel.SLIM_OUTER_LAYER_LOCATION), true);
@@ -47,8 +50,8 @@ public class TheGatekeeperClothingLayer<T extends TheGatekeeper> extends RenderL
 			getParentModel().copyPropertiesTo(model);
 			model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 			model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-			VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityTranslucent(texture));
-			model.renderToBuffer(poseStack, consumer, packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0.0F));
+			VertexConsumer consumer = bufferSource.getBuffer(RenderTypes.entityTranslucent(texture));
+			model.renderToBuffer(poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY);
 		}
 	}
 }

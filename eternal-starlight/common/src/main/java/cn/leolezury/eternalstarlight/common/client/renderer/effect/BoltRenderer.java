@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.effect;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
@@ -38,7 +39,7 @@ public class BoltRenderer {
 	}
 
 	public void render(float partialTicks, PoseStack matrixStack, MultiBufferSource bufferIn) {
-		VertexConsumer buffer = bufferIn.getBuffer(RenderType.lightning());
+		VertexConsumer buffer = bufferIn.getBuffer(RenderTypes.lightning());
 		Matrix4f matrix = matrixStack.last().pose();
 		Timestamp timestamp = new Timestamp(minecraft.level.getGameTime(), partialTicks);
 		boolean refresh = timestamp.isPassed(refreshTimestamp, (1 / REFRESH_TIME));

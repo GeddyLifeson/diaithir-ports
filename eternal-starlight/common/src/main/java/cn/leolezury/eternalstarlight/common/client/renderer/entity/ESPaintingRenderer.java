@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.data.ESPaintingVariant;
 import cn.leolezury.eternalstarlight.common.entity.misc.ESPainting;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -9,7 +11,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
@@ -23,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
+public class ESPaintingRenderer extends ESEntityRenderer<ESPainting> {
 	private static final float HALF_DEPTH = 0.0625F / 2.0F;
 	private static final float PIXEL = 1.0F / 16.0F;
 	private static final Identifier PAINTING_ATLAS = Identifier.withDefaultNamespace("textures/atlas/paintings.png");
@@ -91,7 +92,7 @@ public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
 		int backWidth = backSprite.contents().width();
 		int backHeight = backSprite.contents().height();
 
-		VertexConsumer consumer = buffer.getBuffer(RenderType.entityCutoutNoCull(frontSprite.atlasLocation()));
+		VertexConsumer consumer = buffer.getBuffer(RenderTypes.entityCutout(frontSprite.atlasLocation()));
 
 		boolean[] blockHasPixels = new boolean[width * height];
 		boolean[] blockFullyOpaque = new boolean[width * height];
@@ -357,7 +358,7 @@ public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
 		float f14 = backSprite.getV1();
 		double d0 = 1.0 / (double) width;
 		double d1 = 1.0 / (double) height;
-		VertexConsumer consumer = buffer.getBuffer(RenderType.entityCutoutNoCull(frontSprite.atlasLocation()));
+		VertexConsumer consumer = buffer.getBuffer(RenderTypes.entityCutout(frontSprite.atlasLocation()));
 		boolean renderBack = isCameraBehind(painting);
 		for (int blockX = 0; blockX < width; blockX++) {
 			for (int blockY = 0; blockY < height; blockY++) {
@@ -472,7 +473,7 @@ public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
 
 	private boolean isCameraBehind(ESPainting painting) {
 		Direction facing = painting.getDirection();
-		Vec3 toCamera = this.entityRenderDispatcher.camera.getPosition().subtract(painting.position());
+		Vec3 toCamera = this.entityRenderDispatcher.camera.position().subtract(painting.position());
 		return toCamera.dot(Vec3.atLowerCornerOf(facing.getUnitVec3i())) < 0.0;
 	}
 
@@ -499,7 +500,7 @@ public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
 		if (direction == Direction.EAST) {
 			posZ = Mth.floor(painting.getZ() + centerX);
 		}
-		return LevelRenderer.getLightColor(painting.level(), new BlockPos(posX, posY, posZ));
+		return LevelRenderer.getLightCoords(painting.level(), new BlockPos(posX, posY, posZ));
 	}
 
 	private static boolean isOpaqueAt(AlphaMask mask, int pixelX, int pixelY) {

@@ -49,7 +49,7 @@ public class ESSkyRenderer {
 			PoseStack poseStack = new PoseStack();
 			poseStack.mulPose(modelViewMatrix);
 
-			Vec3 vec3 = level.getSkyColor(minecraft.gameRenderer.getMainCamera().getPosition(), partialTicks);
+			Vec3 vec3 = level.getSkyColor(minecraft.gameRenderer.getMainCamera().position(), partialTicks);
 			float g = (float) vec3.x;
 			float h = (float) vec3.y;
 			float i = (float) vec3.z;
@@ -61,7 +61,6 @@ public class ESSkyRenderer {
 			levelRenderer.skyBuffer.bind();
 			levelRenderer.skyBuffer.drawWithShader(poseStack.last().pose(), matrix, shaderInstance);
 			VertexBuffer.unbind();
-			RenderSystem.enableBlend();
 			float[] fs = level.effects().getSunriseColor(FIXED_TIME, partialTicks);
 			float j;
 			float l;
@@ -129,8 +128,6 @@ public class ESSkyRenderer {
 			setupFog.run();
 
 			RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-			RenderSystem.disableBlend();
-			RenderSystem.defaultBlendFunc();
 			poseStack.popPose();
 			RenderSystem.setShaderColor(0.0F, 0.0F, 0.0F, 1.0F);
 

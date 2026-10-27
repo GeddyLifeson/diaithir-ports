@@ -1,17 +1,17 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.OrbModel;
 import cn.leolezury.eternalstarlight.common.entity.projectile.BouncyStar;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 
-public class BouncyStarRenderer extends EntityRenderer<BouncyStar> {
+public class BouncyStarRenderer extends ESEntityRenderer<BouncyStar> {
 	private static final Identifier SUN_TEXTURE = EternalStarlight.id("textures/entity/solar_creeper/sun.png");
 
 	private final OrbModel<BouncyStar> model;
@@ -32,7 +32,7 @@ public class BouncyStarRenderer extends EntityRenderer<BouncyStar> {
 
 		this.model.prepareMobModel(entity, 0, 0, partialTicks);
 		this.model.setupAnim(entity, 0, 0, bob, 0, 0);
-		this.model.renderToBuffer(poseStack, buffer.getBuffer(model.renderType(getTextureLocation(entity))), LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+		this.model.renderToBuffer(poseStack, buffer.getBuffer(model.renderType(getTextureLocation(entity))), LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
 		poseStack.popPose();
 
 		super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);

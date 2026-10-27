@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.attack.TangledHusk;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -7,7 +8,6 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.RemotePlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
@@ -16,7 +16,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import org.joml.Quaternionf;
 
-public class TangledHuskRenderer extends EntityRenderer<TangledHusk> {
+public class TangledHuskRenderer extends ESEntityRenderer<TangledHusk> {
 	private final EntityRenderDispatcher entityRenderer;
 
 	public TangledHuskRenderer(EntityRendererProvider.Context context) {

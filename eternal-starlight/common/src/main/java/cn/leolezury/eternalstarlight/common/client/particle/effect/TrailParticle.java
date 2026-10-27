@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailPoint;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailRenderer;
@@ -10,7 +14,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
@@ -18,7 +22,7 @@ import org.joml.Vector4f;
 
 import java.util.function.Function;
 
-public class TrailParticle extends TextureSheetParticle {
+public class TrailParticle extends ESTextureSheetParticle {
 	private final Trail trail = new Trail(0.05f, 0.8f);
 
 	protected TrailParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet spriteSet, Function<Float, Vector4f> colorProfile) {
@@ -53,17 +57,16 @@ public class TrailParticle extends TextureSheetParticle {
 		float y = (float) Mth.lerp(partialTicks, this.yo, this.y);
 		float z = (float) Mth.lerp(partialTicks, this.zo, this.z);
 		stack.pushPose();
-		stack.translate(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z);
+		stack.translate(-camera.position().x, -camera.position().y, -camera.position().z);
 		this.trail.setSpriteUv(this.sprite);
 		this.trail.prepareRender(TrailPoint.cameraFacing(new Vec3(x, y, z)), partialTicks);
-		RenderSystem.disableCull();
-		TrailRenderer.render(this.trail, consumer, stack, true, true, LightTexture.FULL_BRIGHT);
+		TrailRenderer.render(this.trail, consumer, stack, true, true, LightCoordsUtil.FULL_BRIGHT);
 		stack.popPose();
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -76,7 +79,7 @@ public class TrailParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new TrailParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, sprites, colorProfile);
 		}
 	}

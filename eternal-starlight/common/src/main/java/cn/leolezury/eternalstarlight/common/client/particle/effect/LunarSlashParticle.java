@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.renderer.SpriteUv;
@@ -9,13 +13,13 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 
-public class LunarSlashParticle extends TextureSheetParticle {
+public class LunarSlashParticle extends ESTextureSheetParticle {
 	private static final int DIVISION = 72;
 	private static final float CELL = (float) 180 / DIVISION;
 
@@ -37,24 +41,28 @@ public class LunarSlashParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
-	public void render(VertexConsumer consumer, Camera camera, float partialTick) {
+	public RenderType getESRenderType() {
+		return ESRenderType.PARTICLE_ADDITIVE_GLOW;
+	}
+
+	@Override
+	public void render(VertexConsumer vertexConsumer, Camera camera, float partialTick) {
 		float progress = Math.min(age + partialTick, lifetime) / lifetime;
 		double currentX = Mth.lerp(partialTick, this.xo, this.x);
 		double currentY = Mth.lerp(partialTick, this.yo, this.y);
 		double currentZ = Mth.lerp(partialTick, this.zo, this.z);
-		Vec3 camPos = camera.getPosition();
+		Vec3 camPos = camera.position();
 		PoseStack stack = new PoseStack();
 		stack.pushPose();
 		stack.translate(currentX - camPos.x, currentY - camPos.y, currentZ - camPos.z);
 		stack.mulPose(new Quaternionf().rotationX(90 * Mth.DEG_TO_RAD));
 		stack.mulPose(new Quaternionf().rotationZ(yRot));
 		stack.mulPose(new Quaternionf().rotationX(zRot));
-		VertexConsumer vertexConsumer = ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(ESRenderType.PARTICLE_ADDITIVE_GLOW);
-		float lastYawOffset = 0;
+				float lastYawOffset = 0;
 		Vec3 lastInnerPos = Vec3.ZERO;
 		Vec3 lastOuterPos = Vec3.ZERO;
 		for (int i = 0; i < DIVISION / 2; i++) {
@@ -80,10 +88,10 @@ public class LunarSlashParticle extends TextureSheetParticle {
 				float u1 = uv.u1();
 				float v0 = uv.v0();
 				float v1 = uv.v1();
-				vertexConsumer.addVertex(pose, renderLastInnerPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - (i - 1) / (DIVISION / 2f)).setUv(u0, v0).setLight(LightTexture.FULL_BRIGHT);
-				vertexConsumer.addVertex(pose, renderLastOuterPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - (i - 1) / (DIVISION / 2f)).setUv(u0, v1).setLight(LightTexture.FULL_BRIGHT);
-				vertexConsumer.addVertex(pose, renderOuterPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - i / (DIVISION / 2f)).setUv(u1, v1).setLight(LightTexture.FULL_BRIGHT);
-				vertexConsumer.addVertex(pose, renderInnerPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - i / (DIVISION / 2f)).setUv(u1, v0).setLight(LightTexture.FULL_BRIGHT);
+				vertexConsumer.addVertex(pose, renderLastInnerPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - (i - 1) / (DIVISION / 2f)).setUv(u0, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
+				vertexConsumer.addVertex(pose, renderLastOuterPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - (i - 1) / (DIVISION / 2f)).setUv(u0, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+				vertexConsumer.addVertex(pose, renderOuterPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - i / (DIVISION / 2f)).setUv(u1, v1).setLight(LightCoordsUtil.FULL_BRIGHT);
+				vertexConsumer.addVertex(pose, renderInnerPos.toVector3f()).setColor(128 / 255f, 156 / 255f, 240 / 255f, 1 - i / (DIVISION / 2f)).setUv(u1, v0).setLight(LightCoordsUtil.FULL_BRIGHT);
 			}
 			lastYawOffset = yawOffset;
 			lastInnerPos = innerPos;
@@ -100,7 +108,7 @@ public class LunarSlashParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(SimpleParticleType options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new LunarSlashParticle(level, x, y, z, dx, dy, dz, sprites);
 		}
 	}

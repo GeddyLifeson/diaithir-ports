@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * Block entity renderer base keeping the old immediate-mode signature.
  */
 public abstract class ESBlockEntityRenderer<T extends BlockEntity> implements BlockEntityRenderer<T, ESBlockEntityRenderer.State> {
+	protected SubmitNodeCollector collector;
+
 	public static class State extends BlockEntityRenderState {
 		public BlockEntity blockEntity;
 		public float partialTicks;
@@ -40,6 +42,7 @@ public abstract class ESBlockEntityRenderer<T extends BlockEntity> implements Bl
 	@SuppressWarnings("unchecked")
 	public void submit(State state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		T be = (T) state.blockEntity;
+		this.collector = collector;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(be, state.partialTicks, poseStack, source, state.lightCoords, OverlayTexture.NO_OVERLAY));
 	}
 

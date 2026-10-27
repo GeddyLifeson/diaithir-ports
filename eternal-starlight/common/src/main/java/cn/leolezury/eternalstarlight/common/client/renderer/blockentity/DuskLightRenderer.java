@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.entity.AbstractDuskLightBlockEntity;
 import cn.leolezury.eternalstarlight.common.block.entity.DuskLightBlockEntity;
@@ -7,7 +8,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -33,16 +34,16 @@ public class DuskLightRenderer<T extends AbstractDuskLightBlockEntity> implement
 			/*float yaw = camera.getYRot() + 90;
 			float pitch = -camera.getXRot();
 			Vec3 sight = ESMathUtil.rotationToPosition(1, pitch, yaw);*/
-			Vec3 sight = camera.getPosition().subtract(blockEntity.getBlockPos().getCenter());
+			Vec3 sight = camera.position().subtract(blockEntity.getBlockPos().getCenter());
 			Vec3 start = new Vec3(0.5, 0.5, 0.5).add(new Vec3(direction.getStepX(), direction.getStepY(), direction.getStepZ()).scale(0.5));
 			Vec3 end = start.add(new Vec3(direction.getStepX(), direction.getStepY(), direction.getStepZ()).scale(progress * DuskLightBlockEntity.MAX_LENGTH));
 			Vec3 sideOffset = end.subtract(start).cross(sight).normalize().scale(0.25);
 			PoseStack.Pose pose = poseStack.last();
-			VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(DUSK_BEAM_TEXTURE));
-			vertexConsumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
-			vertexConsumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderTypes.entityCutout(DUSK_BEAM_TEXTURE));
+			vertexConsumer.addVertex(pose, start.add(sideOffset).toVector3f()).setColor(-1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, start.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, end.add(sideOffset.scale(-1)).toVector3f()).setColor(-1).setUv(1, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+			vertexConsumer.addVertex(pose, end.add(sideOffset).toVector3f()).setColor(-1).setUv(1, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 		}
 	}
 

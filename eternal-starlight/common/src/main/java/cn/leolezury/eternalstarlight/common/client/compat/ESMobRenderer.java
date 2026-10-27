@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Mob;
  * Renderer base for living entities that keeps the old entity based hooks.
  */
 public abstract class ESMobRenderer<T extends Mob, M extends ESModel<T>> extends MobRenderer<T, ESRenderState, M> {
+	protected SubmitNodeCollector collector;
 	private ESRenderState currentState;
 
 	protected ESMobRenderer(EntityRendererProvider.Context context, M model, float shadow) {
@@ -49,6 +50,7 @@ public abstract class ESMobRenderer<T extends Mob, M extends ESModel<T>> extends
 	public void submit(ESRenderState state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		currentState = state;
 		super.submit(state, poseStack, collector, camera);
+		this.collector = collector;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(cast(state), state.entityYaw, state.partialTicks, poseStack, source, state.lightCoords));
 	}
 

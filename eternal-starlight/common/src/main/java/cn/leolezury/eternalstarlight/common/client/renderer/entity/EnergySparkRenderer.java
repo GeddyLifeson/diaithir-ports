@@ -1,21 +1,23 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.projectile.EnergySpark;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class EnergySparkRenderer extends EntityRenderer<EnergySpark> {
+public class EnergySparkRenderer extends ESEntityRenderer<EnergySpark> {
 	private static final Identifier TEXTURE_LOCATION = EternalStarlight.id("textures/entity/energy_spark.png");
-	private static final RenderType RENDER_TYPE = RenderType.entityCutoutNoCull(TEXTURE_LOCATION);
+	private static final RenderType RENDER_TYPE = RenderTypes.entityCutout(TEXTURE_LOCATION);
 
 	public EnergySparkRenderer(EntityRendererProvider.Context context) {
 		super(context);
@@ -27,13 +29,13 @@ public class EnergySparkRenderer extends EntityRenderer<EnergySpark> {
 		float scale = (Math.min(60f, entity.getSpawnedTicks() + partialTicks) / 60f) * 0.5f;
 		poseStack.translate(0, entity.getBbHeight() / 2, 0);
 		poseStack.scale(scale, scale, scale);
-		poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
+		poseStack.mulPose(ESRender.cameraOrientation());
 		PoseStack.Pose pose = poseStack.last();
 		VertexConsumer vertexConsumer = buffer.getBuffer(RENDER_TYPE);
-		vertex(vertexConsumer, pose, LightTexture.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0, 1);
-		vertex(vertexConsumer, pose, LightTexture.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 90), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 90), 1, 1);
-		vertex(vertexConsumer, pose, LightTexture.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 180), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 180), 1, 0);
-		vertex(vertexConsumer, pose, LightTexture.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 270), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 270), 0, 0);
+		vertex(vertexConsumer, pose, LightCoordsUtil.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin)), 0, 1);
+		vertex(vertexConsumer, pose, LightCoordsUtil.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 90), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 90), 1, 1);
+		vertex(vertexConsumer, pose, LightCoordsUtil.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 180), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 180), 1, 0);
+		vertex(vertexConsumer, pose, LightCoordsUtil.FULL_BRIGHT, 0.5F * Mth.SQRT_OF_TWO * Mth.sin(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 270), 0.5F * Mth.SQRT_OF_TWO * Mth.cos(Mth.lerp(partialTicks, entity.oSpin, entity.spin) + Mth.DEG_TO_RAD * 270), 0, 0);
 		poseStack.popPose();
 		super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
 	}

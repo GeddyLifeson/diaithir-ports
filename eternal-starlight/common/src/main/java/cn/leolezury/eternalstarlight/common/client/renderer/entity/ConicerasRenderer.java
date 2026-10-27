@@ -1,16 +1,16 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.ConicerasModel;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.Coniceras;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class ConicerasRenderer<T extends Coniceras> extends MobRenderer<T, ConicerasModel<T>> {
+public class ConicerasRenderer<T extends Coniceras> extends ESMobRenderer<T, ConicerasModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/coniceras.png");
 
 	public ConicerasRenderer(EntityRendererProvider.Context context) {

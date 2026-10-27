@@ -1,11 +1,11 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.entity.misc.TearBomb;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.TntMinecartRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 
 // copied from TntRenderer
 
-public class TearBombRenderer extends EntityRenderer<TearBomb> {
+public class TearBombRenderer extends ESEntityRenderer<TearBomb> {
 	private final BlockRenderDispatcher blockRenderer;
 
 	public TearBombRenderer(EntityRendererProvider.Context context) {

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.ESModelUtil;
 import cn.leolezury.eternalstarlight.common.client.model.entity.AethersentMeteorModel;
@@ -12,7 +14,6 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
@@ -21,7 +22,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Map;
 
-public class AethersentMeteorRenderer extends EntityRenderer<AethersentMeteor> {
+public class AethersentMeteorRenderer extends ESEntityRenderer<AethersentMeteor> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/aethersent_meteor.png");
 	private static final int SNAPSHOT_LIFESPAN = 5;
 
@@ -76,7 +77,7 @@ public class AethersentMeteorRenderer extends EntityRenderer<AethersentMeteor> {
 				model.alphaFactor = (1 - Mth.clamp(currentTick - snapshot.timestamp(), 0, SNAPSHOT_LIFESPAN) / SNAPSHOT_LIFESPAN) * 0.3F;
 				stack.scale(-1.0F, -1.0F, 1.0F);
 				stack.translate(0.0F, -1.5F, 0.0F);
-				renderType = RenderType.entityTranslucentEmissive(getTextureLocation(entity));
+				renderType = RenderTypes.entityTranslucentEmissive(getTextureLocation(entity));
 				vertexConsumer = bufferSource.getBuffer(renderType);
 				model.renderToBuffer(stack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
 				stack.popPose();

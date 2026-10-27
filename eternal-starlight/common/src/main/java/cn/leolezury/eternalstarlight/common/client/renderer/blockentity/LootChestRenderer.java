@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.LootChestBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.LootChestBlockEntity;
@@ -45,11 +46,11 @@ public class LootChestRenderer implements BlockEntityRenderer<LootChestBlockEnti
 		if (blockEntity.isEjecting() && !blockEntity.openAnimationState.isStarted() && !blockEntity.closeAnimationState.isStarted()) {
 			this.chestModel.lid.xRot = -Mth.HALF_PI;
 		}
-		this.chestModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(CHEST_TEXTURE)), light, overlay, ARGB.opaque(blockEntity.getColor()));
-		this.chestModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(CHEST_OUTLINE_TEXTURE)), light, overlay, ARGB.opaque(blockEntity.getOutlineColor()));
+		this.chestModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(CHEST_TEXTURE)), light, overlay, ARGB.opaque(blockEntity.getColor()));
+		this.chestModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(CHEST_OUTLINE_TEXTURE)), light, overlay, ARGB.opaque(blockEntity.getOutlineColor()));
 		stack.popPose();
 		float flashAnimation = Math.max((blockEntity.clientTickCount + partialTicks) - blockEntity.flashStartTickCount, 0);
-		VertexConsumer consumer = bufferSource.getBuffer(ESRenderType.DRAGON_RAYS_QUADS);
+		VertexConsumer consumer = bufferSource.getBuffer(ESRenderType.dragonRaysQuads());
 		PoseStack.Pose pose = stack.last();
 		if (flashAnimation < 10) {
 			float flashProgress = Easing.IN_OUT_SINE.calculate(1 - Math.abs(flashAnimation - 5) / 5);

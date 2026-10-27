@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.LunarSporeModel;
 import cn.leolezury.eternalstarlight.common.entity.projectile.LunarSpore;
@@ -8,13 +9,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class LunarSporeRenderer extends EntityRenderer<LunarSpore> {
+public class LunarSporeRenderer extends ESEntityRenderer<LunarSpore> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/lunar_spore.png");
 	private final LunarSporeModel<LunarSpore> model;
 

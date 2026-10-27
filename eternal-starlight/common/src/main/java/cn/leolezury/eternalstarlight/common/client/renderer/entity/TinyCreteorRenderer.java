@@ -1,16 +1,16 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.TinyCreteorModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.TinyCreteorPowerLayer;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.TinyCreteor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class TinyCreteorRenderer<T extends TinyCreteor> extends MobRenderer<T, TinyCreteorModel<T>> {
+public class TinyCreteorRenderer<T extends TinyCreteor> extends ESMobRenderer<T, TinyCreteorModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/tiny_creteor.png");
 
 	public TinyCreteorRenderer(EntityRendererProvider.Context context) {

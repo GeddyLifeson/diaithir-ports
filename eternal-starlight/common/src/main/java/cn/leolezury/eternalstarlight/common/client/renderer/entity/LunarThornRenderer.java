@@ -1,21 +1,22 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.LunarThornModel;
 import cn.leolezury.eternalstarlight.common.entity.attack.LunarThorn;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class LunarThornRenderer extends EntityRenderer<LunarThorn> {
+public class LunarThornRenderer extends ESEntityRenderer<LunarThorn> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/lunar_thorn.png");
 	private static final Identifier GLOW_TEXTURE = EternalStarlight.id("textures/entity/lunar_thorn_glow.png");
 
@@ -39,9 +40,9 @@ public class LunarThornRenderer extends EntityRenderer<LunarThorn> {
 		RenderType renderType = this.model.renderType(getTextureLocation(entity));
 		VertexConsumer vertexConsumer = bufferSource.getBuffer(renderType);
 		this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY);
-		RenderType glowRenderType = RenderType.entityTranslucentEmissive(GLOW_TEXTURE);
+		RenderType glowRenderType = RenderTypes.entityTranslucentEmissive(GLOW_TEXTURE);
 		VertexConsumer glowVertexConsumer = bufferSource.getBuffer(glowRenderType);
-		this.model.renderToBuffer(poseStack, glowVertexConsumer, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+		this.model.renderToBuffer(poseStack, glowVertexConsumer, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
 
 		poseStack.popPose();
 		super.render(entity, yaw, partialTicks, poseStack, bufferSource, packedLight);

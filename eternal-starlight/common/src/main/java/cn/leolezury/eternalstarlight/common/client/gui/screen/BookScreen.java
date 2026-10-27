@@ -271,13 +271,8 @@ public class BookScreen extends Screen {
 		guiGraphics.pose().pushPose();
 		guiGraphics.pose().translate(0.0, 0.0, OVERLAY_Z_OFFSET);
 		guiGraphics.disableScissor();
-		RenderSystem.enableBlend();
-		RenderSystem.enableDepthTest();
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
 		guiGraphics.blit(book.textures().overlay(), getBaseX(), getBaseY(), 0, 0, book.width(), book.height(), book.width(), book.height());
-		RenderSystem.disableBlend();
-		RenderSystem.disableDepthTest();
-		RenderSystem.defaultBlendFunc();
 		guiGraphics.pose().popPose();
 		guiGraphics.blit(book.textures().topOverlay(), getBaseX(), getBaseY(), 0, 0, book.width(), book.height(), book.width(), book.height());
 		if (getScrollButtonHeight() < book.scrollbar().scrollbarHeight()) {

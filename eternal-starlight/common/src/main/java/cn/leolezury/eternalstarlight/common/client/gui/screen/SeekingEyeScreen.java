@@ -172,9 +172,7 @@ public class SeekingEyeScreen extends Screen {
 		fillStarData();
 		graphics.flush();
 		float fade = closing ? Mth.clamp(1.0F - (animTime - closeStart) / CLOSE_DURATION, 0.0F, 1.0F) : 1.0F;
-		RenderSystem.disableDepthTest();
 		SeekingEyeOverlay.render(STAR_POSITIONS, STAR_RADII, STAR_COLORS, STAR_ALPHAS, STAR_PHASES, STAR_ROTATIONS, STAR_RAY_COUNTS, STAR_RAY_LENGTHS, Math.min(stars.size(), MAX_STARS), hoveredIndex, fade, animTime, partialTick);
-		RenderSystem.enableDepthTest();
 		graphics.flush();
 		if (hoveredIndex >= 0 && hoveredIndex < stars.size()) {
 			Star star = stars.get(hoveredIndex);

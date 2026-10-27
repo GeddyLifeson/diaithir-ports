@@ -1,14 +1,18 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class StarfireParticle extends TextureSheetParticle {
+public class StarfireParticle extends ESTextureSheetParticle {
 	private final SpriteSet sprites;
 
 	protected StarfireParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, SpriteSet sprites) {
@@ -42,12 +46,12 @@ public class StarfireParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
 	public int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -57,7 +61,7 @@ public class StarfireParticle extends TextureSheetParticle {
 			this.sprite = sprite;
 		}
 
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new StarfireParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, this.sprite);
 		}
 	}

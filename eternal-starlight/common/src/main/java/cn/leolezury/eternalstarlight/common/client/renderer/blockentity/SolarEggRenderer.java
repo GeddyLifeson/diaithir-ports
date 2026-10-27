@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.SolarEggBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.SolarEggBlockEntity;
@@ -33,7 +34,7 @@ public class SolarEggRenderer implements BlockEntityRenderer<SolarEggBlockEntity
 			stack.pushPose();
 			stack.scale(-1.0F, -1.0F, 1.0F);
 			stack.translate(-0.5F, -1.5F, 0.5F);
-			this.eggModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(EGG_TEXTURE)), light, overlay);
+			this.eggModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(EGG_TEXTURE)), light, overlay);
 			stack.popPose();
 		}
 	}

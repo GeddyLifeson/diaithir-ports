@@ -1,11 +1,15 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.particle.GeyserParticleOptions;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import org.jetbrains.annotations.Nullable;
 
-public class GeyserPlumeParticle extends TextureSheetParticle {
+public class GeyserPlumeParticle extends ESTextureSheetParticle {
 	private final SpriteSet sprites;
 	private final double startY;
 	private final double maxY;
@@ -69,7 +73,7 @@ public class GeyserPlumeParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	public static class Provider implements ParticleProvider<GeyserParticleOptions> {
@@ -89,11 +93,12 @@ public class GeyserPlumeParticle extends TextureSheetParticle {
 			final double z,
 			final double xAux,
 			final double yAux,
-			final double zAux
+			final double zAux,
+			final RandomSource random
 		) {
-			double randomX = x + (level.random.nextFloat() - 0.5F) * 0.2F;
-			double randomY = y + level.random.nextFloat();
-			double randomZ = z + (level.random.nextFloat() - 0.5F) * 0.2F;
+			double randomX = x + (level.getRandom().nextFloat() - 0.5F) * 0.2F;
+			double randomY = y + level.getRandom().nextFloat();
+			double randomZ = z + (level.getRandom().nextFloat() - 0.5F) * 0.2F;
 			return new GeyserPlumeParticle(level, randomX, randomY, randomZ, xAux, yAux, zAux, options, this.sprites);
 		}
 	}

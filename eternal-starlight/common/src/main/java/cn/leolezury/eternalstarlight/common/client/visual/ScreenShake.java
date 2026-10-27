@@ -50,7 +50,7 @@ public class ScreenShake {
 		LocalPlayer player = Minecraft.getInstance().player;
 		float partialTicks = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 		float time = player != null ? player.tickCount + partialTicks : 0;
-		float distance = (float) pos.distanceTo(camera.getPosition());
+		float distance = (float) pos.distanceTo(camera.position());
 		if (distance > radius || (player != null && !player.level().dimension().location().equals(dimension))) {
 			return 0;
 		}
@@ -64,7 +64,7 @@ public class ScreenShake {
 		LocalPlayer player = Minecraft.getInstance().player;
 		float partialTicks = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 		float time = player != null ? player.tickCount + partialTicks : 0;
-		float distance = (float) pos.distanceTo(camera.getPosition());
+		float distance = (float) pos.distanceTo(camera.position());
 		if (distance > radius || (player != null && !player.level().dimension().location().equals(dimension))) {
 			return 0;
 		}

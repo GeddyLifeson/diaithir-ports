@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.mixin.client;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.model.animation.PlayerAnimator;
@@ -204,8 +205,8 @@ public abstract class ItemInHandRendererMixin {
 		playerModel.swimAmount = 0.0F;
 		playerModel.setupAnim(abstractClientPlayer, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
 		Identifier resourceLocation = abstractClientPlayer.getSkin().texture();
-		modelPart.render(poseStack, buffer.getBuffer(RenderType.entitySolid(resourceLocation)), light, OverlayTexture.NO_OVERLAY);
-		modelPart2.render(poseStack, buffer.getBuffer(RenderType.entityTranslucent(resourceLocation)), light, OverlayTexture.NO_OVERLAY);
+		modelPart.render(poseStack, buffer.getBuffer(RenderTypes.entitySolid(resourceLocation)), light, OverlayTexture.NO_OVERLAY);
+		modelPart2.render(poseStack, buffer.getBuffer(RenderTypes.entityTranslucent(resourceLocation)), light, OverlayTexture.NO_OVERLAY);
 		poseStack.pushPose();
 		playerModel.translateToHand(leftHand ? HumanoidArm.LEFT : HumanoidArm.RIGHT, poseStack);
 		poseStack.mulPose(Axis.XP.rotationDegrees(-90.0F));

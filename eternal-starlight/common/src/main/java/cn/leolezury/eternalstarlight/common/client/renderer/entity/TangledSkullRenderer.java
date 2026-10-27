@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.TangledSkullModel;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.TangledSkull;
@@ -7,12 +8,11 @@ import cn.leolezury.eternalstarlight.common.util.Easing;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class TangledSkullRenderer<T extends TangledSkull> extends MobRenderer<T, TangledSkullModel<T>> {
+public class TangledSkullRenderer<T extends TangledSkull> extends ESMobRenderer<T, TangledSkullModel<T>> {
 	public static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/tangled_skull.png");
 
 	public TangledSkullRenderer(EntityRendererProvider.Context context) {

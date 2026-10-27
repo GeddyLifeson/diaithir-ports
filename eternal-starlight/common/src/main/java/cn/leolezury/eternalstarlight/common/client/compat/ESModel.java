@@ -37,6 +37,11 @@ public abstract class ESModel<T extends Entity> extends EntityModel<ESRenderStat
 		}
 	}
 
+	public void copyPropertiesTo(ESModel<?> other) {
+		other.young = this.young;
+		other.riding = this.riding;
+	}
+
 	public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick) {
 	}
 

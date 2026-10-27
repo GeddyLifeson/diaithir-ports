@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.GrimstoneGolemModel;
 import cn.leolezury.eternalstarlight.common.client.renderer.layer.GrimstoneGolemGlowLayer;
@@ -8,8 +9,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.resources.Identifier;
@@ -17,7 +16,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
-public class GrimstoneGolemRenderer<T extends GrimstoneGolem> extends MobRenderer<T, GrimstoneGolemModel<T>> {
+public class GrimstoneGolemRenderer<T extends GrimstoneGolem> extends ESMobRenderer<T, GrimstoneGolemModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/grimstone_golem.png");
 	private final ItemRenderer itemRenderer;
 

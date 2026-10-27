@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.LunarVineBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.LunarVineBlockEntity;
@@ -43,13 +44,13 @@ public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEnti
 			boolean lowerSturdy = vine.getLevel().getBlockState(attachPos.below()).isFaceSturdy(vine.getLevel(), attachPos.below(), vine.getBlockState().getValue(LunarVineBlock.FACING).getOpposite());
 			this.vineModel.applyVisibility(upperSturdy && vine.getLevel().isEmptyBlock(vine.getBlockPos().above()), lowerSturdy && vine.getLevel().isEmptyBlock(vine.getBlockPos().below()));
 		}
-		this.vineModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(VINE_TEXTURE)), light, overlay);
+		this.vineModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(VINE_TEXTURE)), light, overlay);
 		for (LunarVineBlockEntity.Flower flower : vine.getOrCreateFlowers()) {
 			stack.pushPose();
 			stack.translate(flower.pos().x, flower.pos().y, flower.pos().z);
 			this.flowerModel.root.xRot = flower.xRot() * Mth.DEG_TO_RAD;
 			this.flowerModel.root.yRot = flower.yRot() * Mth.DEG_TO_RAD;
-			this.flowerModel.renderToBuffer(stack, bufferSource.getBuffer(RenderType.entityCutoutNoCull(FLOWER_TEXTURE)), light, overlay);
+			this.flowerModel.renderToBuffer(stack, bufferSource.getBuffer(RenderTypes.entityCutout(FLOWER_TEXTURE)), light, overlay);
 			stack.popPose();
 		}
 		stack.popPose();

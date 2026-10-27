@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
@@ -45,7 +46,7 @@ public class OrbitalAshenSnowParticle extends BaseAshSmokeParticle {
 	}
 
 	@Override
-	public void render(VertexConsumer consumer, Camera camera, float partialTick) {
+	public void extract(net.minecraft.client.renderer.state.level.QuadParticleRenderState state, Camera camera, float partialTick) {
 		if (!onGround) {
 			Vec3 pos = ESMathUtil.rotationToPosition(new Vec3(cx, 0, cz), Mth.lerp(partialTick, oRadius, radius), 0, Mth.lerp(partialTick, oAngle, angle));
 			this.x = pos.x;
@@ -53,7 +54,7 @@ public class OrbitalAshenSnowParticle extends BaseAshSmokeParticle {
 			this.xo = pos.x;
 			this.zo = pos.z;
 		}
-		super.render(consumer, camera, partialTick);
+		super.extract(state, camera, partialTick);
 	}
 
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -64,7 +65,7 @@ public class OrbitalAshenSnowParticle extends BaseAshSmokeParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xs, double ys, double zs) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xs, double ys, double zs, RandomSource random) {
 			return new OrbitalAshenSnowParticle(level, x, y, z, xs, ys, zs, this.sprites);
 		}
 	}

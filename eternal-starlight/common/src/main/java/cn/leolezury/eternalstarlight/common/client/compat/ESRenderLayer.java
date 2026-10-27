@@ -12,6 +12,8 @@ import net.minecraft.world.entity.LivingEntity;
  * Layer base keeping the old immediate-mode signature.
  */
 public abstract class ESRenderLayer<T extends LivingEntity, M extends EntityModel<ESRenderState>> extends RenderLayer<ESRenderState, M> {
+	protected SubmitNodeCollector collector;
+
 	protected ESRenderLayer(RenderLayerParent<ESRenderState, M> parent) {
 		super(parent);
 	}
@@ -20,8 +22,9 @@ public abstract class ESRenderLayer<T extends LivingEntity, M extends EntityMode
 	@SuppressWarnings("unchecked")
 	public final void submit(PoseStack poseStack, SubmitNodeCollector collector, int lightCoords, ESRenderState state, float yRot, float xRot) {
 		T entity = (T) state.entity;
-		RecordingBufferSource.submit(collector, poseStack, source -> render(poseStack, source, lightCoords, entity, state.walkAnimationPos, state.walkAnimationSpeed, state.partialTicks, state.ageInTicks, yRot, xRot, state));
+		this.collector = collector;
+		RecordingBufferSource.submit(collector, poseStack, source -> render(poseStack, source, lightCoords, entity, state.walkAnimationPos, state.walkAnimationSpeed, state.partialTicks, state.ageInTicks, yRot, xRot));
 	}
 
-	public abstract void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, T entity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch, ESRenderState state);
+	public abstract void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, T entity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch);
 }

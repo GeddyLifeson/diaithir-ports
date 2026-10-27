@@ -1,5 +1,9 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
+import cn.leolezury.eternalstarlight.common.client.compat.ESParticleTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESTextureSheetParticle;
+import net.minecraft.client.renderer.rendertype.RenderType;
 import cn.leolezury.eternalstarlight.common.client.renderer.SpriteUv;
 import cn.leolezury.eternalstarlight.common.particle.ParticleFacing;
 import cn.leolezury.eternalstarlight.common.particle.RippleParticleOptions;
@@ -8,12 +12,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.util.Mth;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
-public class RippleParticle extends TextureSheetParticle {
+public class RippleParticle extends ESTextureSheetParticle {
 	private final EasingCurve radius;
 	private final EasingCurve width;
 	private final float red, green, blue;
@@ -35,12 +39,12 @@ public class RippleParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ESParticleTypes.CUSTOM;
 	}
 
 	@Override
 	protected int getLightColor(float f) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	@Override
@@ -51,9 +55,9 @@ public class RippleParticle extends TextureSheetParticle {
 		if (currentRadius <= 0 || currentWidth <= 0) return;
 		float innerRadius = Math.max(0, currentRadius - currentWidth);
 
-		float cx = (float) (Mth.lerp(partialTicks, xo, x) - camera.getPosition().x);
-		float cy = (float) (Mth.lerp(partialTicks, yo, y) - camera.getPosition().y);
-		float cz = (float) (Mth.lerp(partialTicks, zo, z) - camera.getPosition().z);
+		float cx = (float) (Mth.lerp(partialTicks, xo, x) - camera.position().x);
+		float cy = (float) (Mth.lerp(partialTicks, yo, y) - camera.position().y);
+		float cz = (float) (Mth.lerp(partialTicks, zo, z) - camera.position().z);
 
 		Quaternionf quaternion = facing.cameraFacing() ? new Quaternionf(camera.rotation()) : facing.getRotation();
 
@@ -90,7 +94,7 @@ public class RippleParticle extends TextureSheetParticle {
 		}
 
 		@Override
-		public Particle createParticle(RippleParticleOptions options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+		public Particle createParticle(RippleParticleOptions options, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 			return new RippleParticle(level, x, y, z, options.facing(), options.radius(), options.width(), options.color(), options.lifetime(), sprites);
 		}
 	}

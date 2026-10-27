@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.trail.emitter;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.trail.Trail;
 import cn.leolezury.eternalstarlight.common.client.trail.TrailPoint;
@@ -7,7 +8,7 @@ import cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper.*;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.util.Easing;
 import cn.leolezury.eternalstarlight.common.util.EasingCurve;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.HumanoidArm;
@@ -18,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Vector4f;
 
 public class GatekeeperTrailEmitter implements TrailEmitter<TheGatekeeper> {
-	private static final RenderType RENDER_TYPE = RenderType.entityCutoutNoCull(EternalStarlight.id("textures/entity/blank.png"));
+	private static final RenderType RENDER_TYPE = RenderTypes.entityCutout(EternalStarlight.id("textures/entity/blank.png"));
 	private static final float SAMPLE_INTERVAL = 0.15f;
 	private static final Vector4f NEAR_COLOR = new Vector4f(1, 1, 1, 1);
 	private static final Vector4f FAR_COLOR = new Vector4f(101 / 255f, 125 / 255f, 201 / 255f, 1);
@@ -138,7 +139,7 @@ public class GatekeeperTrailEmitter implements TrailEmitter<TheGatekeeper> {
 
 	@Override
 	public int getLight(TheGatekeeper entity, float partialTicks) {
-		return LightTexture.FULL_BRIGHT;
+		return LightCoordsUtil.FULL_BRIGHT;
 	}
 
 	@Override

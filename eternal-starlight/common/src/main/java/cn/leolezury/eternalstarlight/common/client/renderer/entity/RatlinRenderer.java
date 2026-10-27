@@ -1,14 +1,14 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESMobRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.client.model.entity.RatlinModel;
 import cn.leolezury.eternalstarlight.common.entity.living.animal.Ratlin;
 import cn.leolezury.eternalstarlight.common.entity.living.monster.ZombifiedRatlin;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.Identifier;
 
-public class RatlinRenderer<T extends Ratlin> extends MobRenderer<T, RatlinModel<T>> {
+public class RatlinRenderer<T extends Ratlin> extends ESMobRenderer<T, RatlinModel<T>> {
 	private static final Identifier ENTITY_TEXTURE = EternalStarlight.id("textures/entity/ratlin.png");
 	private static final Identifier ZOMBIFIED_TEXTURE = EternalStarlight.id("textures/entity/zombified_ratlin.png");
 

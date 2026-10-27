@@ -59,7 +59,7 @@ public class PostEffectChain implements AutoCloseable {
 			minecraft.getMainRenderTarget().bindWrite(true);
 			return;
 		}
-		Vec3 cameraPosition = camera.getPosition();
+		Vec3 cameraPosition = camera.position();
 		setUniformMat4(effect, "uViewProj", viewProj);
 		setUniformMat4(effect, "uViewProjInv", viewProjInv);
 		setUniform3(effect, "uCameraPosition", (float) cameraPosition.x, (float) cameraPosition.y, (float) cameraPosition.z);

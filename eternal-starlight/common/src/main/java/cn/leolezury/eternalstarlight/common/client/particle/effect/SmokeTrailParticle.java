@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.NoRenderParticle;
 import net.minecraft.client.particle.Particle;
@@ -23,8 +24,8 @@ public class SmokeTrailParticle extends NoRenderParticle {
 	public void tick() {
 		super.tick();
 		for (int i = 0; i < 2; i++) {
-			level.addParticle(ParticleTypes.SMOKE, true, x + (random.nextFloat() - 0.5) * 0.15, y + (random.nextFloat() - 0.5) * 0.15, z + (random.nextFloat() - 0.5) * 0.15, 0, 0, 0);
-			level.addParticle(ParticleTypes.LARGE_SMOKE, true, x + (random.nextFloat() - 0.5) * 0.15, y + (random.nextFloat() - 0.5) * 0.15, z + (random.nextFloat() - 0.5) * 0.15, 0, 0, 0);
+			level.addParticle(ParticleTypes.SMOKE, true, false, x + (random.nextFloat() - 0.5) * 0.15, y + (random.nextFloat() - 0.5) * 0.15, z + (random.nextFloat() - 0.5) * 0.15, 0, 0, 0);
+			level.addParticle(ParticleTypes.LARGE_SMOKE, true, false, x + (random.nextFloat() - 0.5) * 0.15, y + (random.nextFloat() - 0.5) * 0.15, z + (random.nextFloat() - 0.5) * 0.15, 0, 0, 0);
 		}
 		if (this.onGround || this.stoppedByCollision) {
 			remove();
@@ -36,7 +37,7 @@ public class SmokeTrailParticle extends NoRenderParticle {
 		}
 
 		@Override
-		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i, RandomSource random) {
 			return new SmokeTrailParticle(clientLevel, d, e, f, g, h, i);
 		}
 	}

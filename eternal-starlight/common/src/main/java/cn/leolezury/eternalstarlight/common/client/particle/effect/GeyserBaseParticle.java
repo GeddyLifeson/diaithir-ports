@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import cn.leolezury.eternalstarlight.common.particle.GeyserBaseParticleOptions;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.BaseAshSmokeParticle;
@@ -47,11 +48,12 @@ public class GeyserBaseParticle extends BaseAshSmokeParticle {
 			final double z,
 			final double xAux,
 			final double yAux,
-			final double zAux
+			final double zAux,
+			final RandomSource random
 		) {
-			double randomX = x + (level.random.nextFloat() - 0.5F) * 0.5F;
-			double randomY = y + (level.random.nextFloat() - 0.5F) * 0.5F + 0.2F;
-			double randomZ = z + (level.random.nextFloat() - 0.5F) * 0.5F;
+			double randomX = x + (level.getRandom().nextFloat() - 0.5F) * 0.5F;
+			double randomY = y + (level.getRandom().nextFloat() - 0.5F) * 0.5F + 0.2F;
+			double randomZ = z + (level.getRandom().nextFloat() - 0.5F) * 0.5F;
 			return new GeyserBaseParticle(level, randomX, randomY, randomZ, xAux, yAux, zAux, options.color(), options.strength(), options.burstImpulseBase(), this.sprites);
 		}
 	}

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
 import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.entity.attack.SolarStrikeEntity;
@@ -8,14 +9,13 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class SolarStrikeRenderer extends EntityRenderer<SolarStrikeEntity> {
+public class SolarStrikeRenderer extends ESEntityRenderer<SolarStrikeEntity> {
 	public SolarStrikeRenderer(EntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -51,9 +51,9 @@ public class SolarStrikeRenderer extends EntityRenderer<SolarStrikeEntity> {
 		Vec3 pos = new Vec3(entityX, entityY, entityZ);
 
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-		Vec3 camPos = camera.getPosition();
+		Vec3 camPos = camera.position();
 
-		VertexConsumer vertexConsumer = ESClientHandler.DELAYED_BUFFER_SOURCE.getBuffer(ESRenderType.DRAGON_RAYS_QUADS);
+		VertexConsumer vertexConsumer = buffer.getBuffer(ESRenderType.dragonRaysQuads());
 		PoseStack.Pose pose = stack.last();
 
 		Vec3 end = entity.getBeamTarget();

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.mixin.client;
 
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
@@ -31,7 +32,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
 	@Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isSpectator()Z"))
 	private void renderOverlay(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
 		if (entity instanceof AbstractClientPlayer && entity.level().getEntity(ESDataAttachments.HUSK_OWNER_ID.getData(entity)) instanceof Player) {
-			VertexConsumer consumer = buffer.getBuffer(RenderType.entityCutout(entity instanceof AbstractClientPlayer player && player.getSkin().model() == PlayerSkin.Model.SLIM ? EternalStarlight.id("textures/entity/tangled_husk_slim.png") : EternalStarlight.id("textures/entity/tangled_husk.png")));
+			VertexConsumer consumer = buffer.getBuffer(RenderTypes.entityCutout(entity instanceof AbstractClientPlayer player && player.getSkin().model() == PlayerSkin.Model.SLIM ? EternalStarlight.id("textures/entity/tangled_husk_slim.png") : EternalStarlight.id("textures/entity/tangled_husk.png")));
 			getModel().renderToBuffer(poseStack, consumer, packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0.0F));
 		}
 	}
@@ -53,7 +54,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
 	private void getRenderType(T livingEntity, boolean bodyVisible, boolean translucent, boolean glowing, CallbackInfoReturnable<RenderType> cir) {
 		if (livingEntity instanceof AbstractClientPlayer && livingEntity.level().getEntity(ESDataAttachments.HUSK_OWNER_ID.getData(livingEntity)) instanceof Player) {
 			if (!translucent && bodyVisible) {
-				cir.setReturnValue(RenderType.entityTranslucent(((LivingEntityRenderer<T, M>) (Object) this).getTextureLocation(livingEntity)));
+				cir.setReturnValue(RenderTypes.entityTranslucent(((LivingEntityRenderer<T, M>) (Object) this).getTextureLocation(livingEntity)));
 			}
 		}
 	}

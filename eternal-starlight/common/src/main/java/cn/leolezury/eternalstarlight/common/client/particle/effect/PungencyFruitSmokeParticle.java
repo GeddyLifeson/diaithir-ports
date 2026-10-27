@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.particle.effect;
 
+import net.minecraft.util.RandomSource;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.BaseAshSmokeParticle;
 import net.minecraft.client.particle.Particle;
@@ -22,7 +23,7 @@ public class PungencyFruitSmokeParticle extends BaseAshSmokeParticle {
 			this.sprites = sprites;
 		}
 
-		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
 			return new PungencyFruitSmokeParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, 1.0F, this.sprites);
 		}
 	}

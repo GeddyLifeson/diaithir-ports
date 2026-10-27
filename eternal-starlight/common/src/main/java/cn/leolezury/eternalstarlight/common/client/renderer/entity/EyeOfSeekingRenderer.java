@@ -1,17 +1,18 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.entity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import cn.leolezury.eternalstarlight.common.client.compat.ESEntityRenderer;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.entity.misc.EyeOfSeeking;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.Identifier;
@@ -20,7 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.phys.Vec3;
 
-public class EyeOfSeekingRenderer extends EntityRenderer<EyeOfSeeking> {
+public class EyeOfSeekingRenderer extends ESEntityRenderer<EyeOfSeeking> {
 	private static final float MIN_CAMERA_DISTANCE_SQUARED = 12.25F;
 	private static final Identifier LINE_TEXTURE = EternalStarlight.id("textures/entity/blank.png");
 	private static final int[] LINE_BLOCK_COLORS = {0xBAE3EA, 0xA368AD, 0x5E3F7A, 0x220B3D};
@@ -50,9 +51,9 @@ public class EyeOfSeekingRenderer extends EntityRenderer<EyeOfSeeking> {
 			renderLineToOwner(posForOwner.add(0, entity.getBbHeight() / 2, 0), ownerPos, poseStack, buffer);
 			poseStack.popPose();
 		}
-		if (entity.tickCount >= 2 || !(this.entityRenderDispatcher.camera.getEntity().distanceToSqr(entity) < MIN_CAMERA_DISTANCE_SQUARED)) {
-			poseStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
-			this.itemRenderer.renderStatic(entity.getItem(), ItemDisplayContext.GROUND, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.level(), entity.getId());
+		if (entity.tickCount >= 2 || !(this.entityRenderDispatcher.camera.entity().distanceToSqr(entity) < MIN_CAMERA_DISTANCE_SQUARED)) {
+			poseStack.mulPose(ESRender.cameraOrientation());
+			this.itemRenderer.renderStatic(entity.getItem(), ItemDisplayContext.GROUND, LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, poseStack, buffer, entity.level(), entity.getId());
 		}
 		poseStack.popPose();
 		super.render(entity, yaw, partialTicks, poseStack, buffer, packedLight);
@@ -60,11 +61,11 @@ public class EyeOfSeekingRenderer extends EntityRenderer<EyeOfSeeking> {
 
 	private void renderLineToOwner(Vec3 eyePos, Vec3 ownerPos, PoseStack poseStack, MultiBufferSource buffer) {
 		Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-		Vec3 sight = camera.getPosition().subtract(eyePos);
+		Vec3 sight = camera.position().subtract(eyePos);
 		Vec3 end = ownerPos.subtract(eyePos).scale(0.6);
 		Vec3 sideOffset = end.cross(sight).normalize().scale(1.0 / 36.0);
 		PoseStack.Pose pose = poseStack.last();
-		VertexConsumer vertexConsumer = buffer.getBuffer(RenderType.entityCutoutNoCull(LINE_TEXTURE));
+		VertexConsumer vertexConsumer = buffer.getBuffer(RenderTypes.entityCutout(LINE_TEXTURE));
 		// a trapezoid from the vertices instead of the old tapering texture, still split into four color blocks
 		int segments = LINE_BLOCK_COLORS.length;
 		for (int i = 0; i < segments; i++) {
@@ -90,7 +91,7 @@ public class EyeOfSeekingRenderer extends EntityRenderer<EyeOfSeeking> {
 	}
 
 	private static void addLineVertex(PoseStack.Pose pose, VertexConsumer vertexConsumer, Vec3 pos, float red, float green, float blue, float u, float v) {
-		vertexConsumer.addVertex(pose, pos.toVector3f()).setColor(red, green, blue, 1).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightTexture.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
+		vertexConsumer.addVertex(pose, pos.toVector3f()).setColor(red, green, blue, 1).setUv(u, v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 	}
 
 	@Override
