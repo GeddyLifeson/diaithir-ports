@@ -4,6 +4,7 @@
 SRV=$1; JDK=$2; PORT=$3; shift 3
 NAME=$(basename "$1" .jar)
 rm -rf "$SRV/mods" "$SRV/world"; mkdir -p "$SRV/mods" "$SRV/logs"
+cp "$PORT" "$SRV/mods/"; cp /home/user/work-shim/out/lib-*.jar "$SRV/mods/" 2>/dev/null; true
 cp "$PORT" "$SRV/mods/"; for j in "$@"; do cp "$j" "$SRV/mods/"; done
 cd "$SRV"; echo "eula=true" > eula.txt
 sed -i '/^server-port=/d;/^online-mode=/d' server.properties; printf 'server-port=25791\nonline-mode=false\nlevel-type=flat\nview-distance=4\n' >> server.properties

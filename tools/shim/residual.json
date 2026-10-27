@@ -5,24 +5,8 @@
     "n": 3,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 2,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/LightTexture": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
-    "n": 2,
     "candidates": []
    },
    "plus/dragons/createdragonsplus/data/runtime/RuntimePackResources": {
@@ -31,10 +15,6 @@
    },
    "net/neoforged/neoforge/common/data/ExistingFileHelper": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 22,
     "candidates": []
    },
    "net/minecraft/gametest/framework/GameTestRegistry": {
@@ -57,15 +37,7 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/Minecraft": {
-    "n": 1,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/util/ErrorMessages": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientLevel": {
     "n": 1,
     "candidates": []
    },
@@ -121,10 +93,6 @@
    },
    "vectorwing/farmersdelight/common/registry/ModItems": {
     "n": 5,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 7,
     "candidates": []
    },
    "vectorwing/farmersdelight/common/tag/ModTags$Blocks": {
@@ -786,6 +754,13 @@
    ],
    [
     "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/AllRecipeTypes",
     "getType",
     "()Lnet/minecraft/world/item/crafting/RecipeType;",
@@ -902,6 +877,13 @@
     "addConnection",
     "(Lcom/simibubi/create/content/logistics/factoryBoard/FactoryPanelPosition;)V",
     4
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/processing/burner/BlazeBurnerRenderer",
+    "getBlazeModel",
+    "(Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock$HeatLevel;Z)Ldev/engine_room/flywheel/lib/model/baked/PartialModel;",
+    2
    ],
    [
     "M",
@@ -1584,6 +1566,34 @@
    ],
    [
     "M",
+    "net/minecraft/client/multiplayer/ClientLevel",
+    "getRecipeManager",
+    "()Lnet/minecraft/world/item/crafting/RecipeManager;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
     "net/minecraft/core/DefaultedRegistry",
     "containsKey",
     "(Lnet/minecraft/resources/ResourceLocation;)Z",
@@ -1651,6 +1661,34 @@
     "writeBlockPos",
     "(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/nbt/Tag;",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withPrefix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withSuffix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    4
    ],
    [
     "M",
@@ -1873,22 +1911,6 @@
  },
  "create-enchantment-industry-2.5.4b.jar": {
   "missing_classes": {
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 41,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 14,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 45,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
-    "n": 7,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/config/FeaturesConfig$ConfigFeature": {
     "n": 10,
     "candidates": []
@@ -1912,12 +1934,6 @@
    "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlock": {
     "n": 9,
     "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/FluidEntry": {
-    "n": 23,
-    "candidates": [
-     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
-    ]
    },
    "plus/dragons/createdragonsplus/common/registry/CDPItems": {
     "n": 6,
@@ -1971,14 +1987,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/FluidBuilder$FluidTypeFactory": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/FluidBuilder": {
-    "n": 4,
-    "candidates": []
-   },
    "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueSettingsBehaviour$ValueSettings": {
     "n": 5,
     "candidates": []
@@ -1987,16 +1995,8 @@
     "n": 6,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 18,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/common/fluids/tank/FluidTankBehaviour$TankSegment": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 10,
     "candidates": []
    },
    "plus/dragons/createdragonsplus/common/advancements/AdvancementBehaviour": {
@@ -2009,31 +2009,11 @@
     "n": 5,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 20,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 12,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 13,
-    "candidates": []
-   },
    "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
     "n": 3,
     "candidates": [
      "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
     ]
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 15,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 15,
-    "candidates": []
    },
    "org/jetbrains/annotations/ApiStatus$Internal": {
     "n": 4,
@@ -2049,10 +2029,6 @@
    },
    "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
     "n": 4,
-    "candidates": []
-   },
-   "net/minecraft/client/Minecraft": {
-    "n": 10,
     "candidates": []
    },
    "net/minecraft/client/renderer/entity/ItemRenderer": {
@@ -2071,46 +2047,12 @@
     "n": 3,
     "candidates": []
    },
-   "net/minecraft/client/resources/model/Material": {
-    "n": 2,
-    "candidates": [
-     "com/zurrtum/create/client/flywheel/api/material/Material"
-    ]
-   },
-   "net/minecraft/client/model/BookModel": {
-    "n": 2,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/LightTexture": {
     "n": 6,
     "candidates": []
    },
-   "net/minecraft/client/renderer/texture/OverlayTexture": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelLayers": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/EntityModelSet": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexConsumer": {
-    "n": 3,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlockRenderer": {
     "n": 4,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/TextureAtlas": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
-    "n": 1,
     "candidates": []
    },
    "plus/dragons/createdragonsplus/common/advancements/criterion/BuiltinTrigger": {
@@ -2129,20 +2071,8 @@
     "n": 2,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 3,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlockVisual": {
     "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 5,
     "candidates": []
    },
    "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
@@ -2167,18 +2097,6 @@
     "n": 2,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 6,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 9,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
     "n": 3,
     "candidates": []
@@ -2187,16 +2105,8 @@
     "n": 3,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/ProviderType": {
-    "n": 1,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/util/Pairs": {
     "n": 8,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateDataMapProvider": {
-    "n": 1,
     "candidates": []
    },
    "plus/dragons/createdragonsplus/common/registry/CDPFluids": {
@@ -2209,10 +2119,6 @@
    },
    "plus/dragons/createdragonsplus/data/tag/TagRegistry": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
-    "n": 4,
     "candidates": []
    },
    "net/minecraft/data/tags/TagsProvider$TagAppender": {
@@ -2271,10 +2177,6 @@
     "n": 3,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
-    "n": 3,
-    "candidates": []
-   },
    "net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
     "n": 3,
     "candidates": []
@@ -2317,10 +2219,6 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/multiplayer/ClientLevel": {
-    "n": 5,
-    "candidates": []
-   },
    "mezz/jei/api/IModPlugin": {
     "n": 2,
     "candidates": []
@@ -2355,14 +2253,6 @@
    },
    "mezz/jei/api/gui/builder/IIngredientAcceptor": {
     "n": 3,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/platform/Lighting": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
-    "n": 2,
     "candidates": []
    },
    "mezz/jei/api/neoforge/NeoForgeTypes": {
@@ -2401,14 +2291,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/mojang/blaze3d/systems/RenderSystem": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/item/ItemProperties": {
     "n": 1,
     "candidates": []
@@ -2419,10 +2301,6 @@
    },
    "net/minecraft/world/level/block/entity/BlockEntity$DataComponentInput": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/LevelRenderer": {
-    "n": 2,
     "candidates": []
    },
    "dev/shadowsoffire/apothic_enchanting/api/EnchantmentStatBlock": {
@@ -3297,6 +3175,27 @@
    ],
    [
     "F",
+    "net/minecraft/client/Minecraft",
+    "cameraEntity",
+    "Lnet/minecraft/world/entity/Entity;",
+    2
+   ],
+   [
+    "F",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "CUTOUT_MIPPED",
+    "Lnet/minecraft/client/renderer/RenderType;",
+    3
+   ],
+   [
+    "F",
+    "net/minecraft/client/renderer/texture/TextureAtlas",
+    "LOCATION_BLOCKS",
+    "Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "F",
     "net/minecraft/core/particles/ParticleTypes",
     "DRAGON_BREATH",
     "Lnet/minecraft/core/particles/SimpleParticleType;",
@@ -3420,6 +3319,90 @@
     "addProperty",
     "(Ljava/lang/String;Ljava/lang/String;)V",
     2
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/platform/Lighting",
+    "setupFor3DItems",
+    "()V",
+    2
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/systems/RenderSystem",
+    "setShaderTexture",
+    "(ILnet/minecraft/resources/ResourceLocation;)V",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    9
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/VertexConsumer",
+    "addVertex",
+    "(Lorg/joml/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    2
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    3
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    5
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/providers/DataGenContext",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    2
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/providers/RegistrateTagsProvider",
+    "addTag",
+    "(Lnet/minecraft/tags/TagKey;)Lnet/minecraft/data/tags/TagsProvider$TagAppender;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl",
+    "addTag",
+    "(Lnet/minecraft/tags/TagKey;)Lnet/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender;",
+    3
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/BlockEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    9
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    4
    ],
    [
     "M",
@@ -3689,6 +3672,13 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;F)V",
@@ -3720,6 +3710,13 @@
     "com/zurrtum/create/client/content/kinetics/base/SingleAxisRotatingVisual",
     "of",
     "(Ldev/engine_room/flywheel/lib/model/baked/PartialModel;)Ldev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/processing/burner/BlazeBurnerRenderer",
+    "getBlazeModel",
+    "(Lcom/simibubi/create/content/processing/burner/BlazeBurnerBlock$HeatLevel;Z)Ldev/engine_room/flywheel/lib/model/baked/PartialModel;",
     1
    ],
    [
@@ -3958,6 +3955,13 @@
     "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
     "<init>",
     "(Lnet/minecraft/network/chat/Component;Lcom/simibubi/create/foundation/blockEntity/SmartBlockEntity;Lcom/simibubi/create/foundation/blockEntity/behaviour/ValueBoxTransform;)V",
+    4
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/blockEntity/renderer/SmartBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/foundation/blockEntity/SmartBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
     4
    ],
    [
@@ -5019,6 +5023,104 @@
    ],
    [
     "M",
+    "net/minecraft/client/Minecraft",
+    "getItemRenderer",
+    "()Lnet/minecraft/client/renderer/entity/ItemRenderer;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/model/object/book/BookModel",
+    "render",
+    "(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/model/object/book/BookModel",
+    "setupAnim",
+    "(FFFF)V",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/multiplayer/ClientLevel",
+    "getRecipeManager",
+    "()Lnet/minecraft/world/item/crafting/RecipeManager;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/LevelRenderer",
+    "getLightColor",
+    "(Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    8
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context",
+    "getItemRenderer",
+    "()Lnet/minecraft/client/renderer/entity/ItemRenderer;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "entitySolid",
+    "(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "text",
+    "(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/sprite/Material",
+    "<init>",
+    "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/sprite/Material",
+    "buffer",
+    "(Lnet/minecraft/client/renderer/MultiBufferSource;Ljava/util/function/Function;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    2
+   ],
+   [
+    "M",
     "net/minecraft/core/DefaultedRegistry",
     "getOptional",
     "(Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;",
@@ -5247,6 +5349,41 @@
     "<init>",
     "(Lnet/minecraft/resources/ResourceLocation;)V",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    8
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "tryParse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withDefaultNamespace",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withPrefix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    5
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withSuffix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
    ],
    [
     "M",
@@ -5707,35 +5844,11 @@
  },
  "create-new-age-1.2.0.jar": {
   "missing_classes": {
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 6,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
     "n": 3,
     "candidates": []
    },
    "net/neoforged/neoforge/client/model/generators/ModelFile": {
-    "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/DataGenContext": {
     "n": 3,
     "candidates": []
    },
@@ -5747,26 +5860,6 @@
     "n": 3,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 5,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 2,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
     "n": 1,
     "candidates": []
@@ -5775,23 +5868,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 19,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexFormat$Mode": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeState": {
     "n": 1,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/VertexFormat": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType$CompositeState": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeState$CompositeStateBuilder": {
     "n": 1,
     "candidates": []
    },
@@ -5819,20 +5900,12 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/renderer/RenderType$CompositeRenderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/DefaultVertexFormat": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType": {
     "n": 1,
     "candidates": []
    },
    "com/zurrtum/create/AllSoundEvents$SoundEntryBuilder": {
     "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 17,
     "candidates": []
    },
    "net/createmod/catnip/config/ui/BaseConfigScreen": {
@@ -5841,10 +5914,6 @@
    },
    "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 23,
     "candidates": []
    },
    "org/antarcticgardens/esl/ESLNeoForge": {
@@ -5867,14 +5936,6 @@
     "n": 3,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/Font": {
-    "n": 1,
-    "candidates": []
-   },
    "org/antarcticgardens/esl/energy/SimpleEnergyStorage": {
     "n": 6,
     "candidates": []
@@ -5891,10 +5952,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
-    "n": 4,
-    "candidates": []
-   },
    "mezz/jei/api/recipe/RecipeIngredientRole": {
     "n": 1,
     "candidates": []
@@ -5907,53 +5964,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/Minecraft": {
-    "n": 3,
-    "candidates": []
-   },
    "org/antarcticgardens/esl/energy/EnergyStorage": {
     "n": 9,
     "candidates": [
      "net/neoforged/neoforge/energy/EnergyStorage"
     ]
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 4,
-    "candidates": []
-   },
-   "net/minecraft/client/player/LocalPlayer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/Options": {
-    "n": 1,
-    "candidates": [
-     "org/joml/Options"
-    ]
-   },
-   "net/minecraft/client/CameraType": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/GameRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/Camera": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexConsumer": {
-    "n": 1,
-    "candidates": []
    },
    "net/minecraft/client/renderer/LightTexture": {
     "n": 1,
@@ -6038,26 +6053,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/ProviderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateItemTagsProvider": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateLangProvider": {
-    "n": 1,
-    "candidates": []
-   },
    "com/zurrtum/create/content/kinetics/deployer/ItemApplicationRecipe$Builder": {
     "n": 3,
     "candidates": []
@@ -6068,7 +6063,9 @@
    },
    "com/tterrag/registrate/providers/RegistrateRecipeProvider": {
     "n": 1,
-    "candidates": []
+    "candidates": [
+     "com/tterrag/registrate/providers/generators/RegistrateRecipeProvider"
+    ]
    },
    "dan200/computercraft/api/peripheral/PeripheralCapability": {
     "n": 1,
@@ -6488,6 +6485,48 @@
    ],
    [
     "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Matrix4f;)V",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    3
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/VertexConsumer",
+    "addVertex",
+    "(Lorg/joml/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/AllRecipeTypes",
     "getSerializer",
     "()Lnet/minecraft/world/item/crafting/RecipeSerializer;",
@@ -6712,6 +6751,20 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "standardKineticRotationTransform",
+    "(Lnet/createmod/catnip/render/SuperByteBuffer;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;I)Lnet/createmod/catnip/render/SuperByteBuffer;",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;F)V",
@@ -6744,6 +6797,13 @@
     "setup",
     "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;)Lcom/simibubi/create/content/kinetics/base/RotatingInstance;",
     1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/ShaftRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    2
    ],
    [
     "M",
@@ -7510,6 +7570,55 @@
    ],
    [
     "M",
+    "net/minecraft/client/Camera",
+    "getPosition",
+    "()Lnet/minecraft/world/phys/Vec3;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "<init>",
+    "(Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLjava/lang/Runnable;Ljava/lang/Runnable;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "create",
+    "(Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLnet/minecraft/client/renderer/RenderType$CompositeState;)Lnet/minecraft/client/renderer/RenderType$CompositeRenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "lightning",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    2
+   ],
+   [
+    "M",
     "net/minecraft/core/Direction",
     "getNearest",
     "(DDD)Lnet/minecraft/core/Direction;",
@@ -7633,6 +7742,13 @@
     "toArray",
     "([Ljava/lang/Object;)[Ljava/lang/Object;",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    16
    ],
    [
     "M",
@@ -7863,18 +7979,6 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 35,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 53,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 18,
-    "candidates": []
-   },
    "com/copycatsplus/copycats/config/FeatureToggle": {
     "n": 1,
     "candidates": []
@@ -7891,20 +7995,12 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/Minecraft": {
-    "n": 6,
-    "candidates": []
-   },
    "mezz/jei/api/constants/VanillaTypes": {
     "n": 1,
     "candidates": []
    },
    "mezz/jei/api/runtime/IIngredientManager": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
-    "n": 8,
     "candidates": []
    },
    "mezz/jei/api/IModPlugin": {
@@ -7915,40 +8011,12 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 5,
-    "candidates": []
-   },
    "dev/simulated_team/simulated/Simulated": {
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 2,
-    "candidates": []
-   },
    "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverVisual": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 19,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 13,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 13,
     "candidates": []
    },
    "org/jetbrains/annotations/ApiStatus$Internal": {
@@ -7959,28 +8027,12 @@
     "n": 2,
     "candidates": []
    },
-   "com/tterrag/registrate/AbstractRegistrate": {
-    "n": 2,
-    "candidates": []
-   },
    "net/createmod/catnip/platform/CatnipServices": {
     "n": 5,
     "candidates": []
    },
    "net/createmod/catnip/platform/services/PlatformHelper": {
     "n": 5,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/Builder": {
-    "n": 1,
-    "candidates": [
-     "com/zurrtum/create/catnip/config/Builder",
-     "org/apache/logging/log4j/core/util/Builder",
-     "org/apache/commons/lang3/builder/Builder"
-    ]
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 36,
     "candidates": []
    },
    "net/minecraft/world/ItemInteractionResult": {
@@ -7995,47 +8047,11 @@
     "n": 7,
     "candidates": []
    },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 8,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 11,
-    "candidates": []
-   },
    "dev/engine_room/flywheel/lib/instance/FlatLit": {
     "n": 4,
     "candidates": [
      "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
     ]
-   },
-   "net/minecraft/client/resources/sounds/SoundInstance": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/sounds/SoundManager": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/Gui": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/resources/sounds/SoundInstance$Attenuation": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/LevelRenderer": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientLevel": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
-    "n": 1,
-    "candidates": []
    },
    "net/createmod/catnip/net/base/ClientboundPacketPayload": {
     "n": 1,
@@ -8049,16 +8065,8 @@
     "n": 3,
     "candidates": []
    },
-   "net/minecraft/world/level/BlockAndTintGetter": {
-    "n": 8,
-    "candidates": []
-   },
    "net/minecraft/client/resources/model/BakedModel": {
     "n": 9,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/block/model/BakedQuad": {
-    "n": 5,
     "candidates": []
    },
    "net/minecraft/world/level/block/state/properties/DirectionProperty": {
@@ -8066,64 +8074,6 @@
     "candidates": []
    },
    "net/minecraft/client/renderer/blockentity/SignRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/Font": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/Font$DisplayMode": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/Options": {
-    "n": 1,
-    "candidates": [
-     "org/joml/Options"
-    ]
-   },
-   "net/minecraft/client/CameraType": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/player/LocalPlayer": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/SkullBlockRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/SkullModelBase": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/OverlayTexture": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelPart": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/EntityModelSet": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/SkullModel": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/dragon/DragonHeadModel": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelLayers": {
     "n": 1,
     "candidates": []
    },
@@ -8153,20 +8103,8 @@
      "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
     ]
    },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 6,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 2,
-    "candidates": []
-   },
    "net/createmod/catnip/platform/NeoForgeCatnipServices": {
     "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexConsumer": {
-    "n": 2,
     "candidates": []
    },
    "net/minecraft/world/InteractionResultHolder": {
@@ -8231,23 +8169,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/resources/language/I18n": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/client/gui/GuiGraphics": {
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/gui/screens/Screen": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullFunction": {
     "n": 1,
     "candidates": []
    },
@@ -8275,23 +8201,11 @@
     "n": 3,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/ProviderType": {
-    "n": 3,
-    "candidates": []
-   },
    "net/neoforged/neoforge/common/data/ExistingFileHelper": {
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/RegistrateLangProvider": {
-    "n": 2,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/common/registry/CDPDataMaps": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateDataMapProvider": {
     "n": 1,
     "candidates": []
    },
@@ -8299,23 +8213,9 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/common/conditions/FalseCondition": {
     "n": 2,
     "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/FluidEntry": {
-    "n": 2,
-    "candidates": [
-     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
-    ]
    },
    "com/zurrtum/create/content/kinetics/deployer/ItemApplicationRecipe$Builder": {
     "n": 2,
@@ -8341,23 +8241,7 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 2,
-    "candidates": []
-   },
    "net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/BiomeColors": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/systems/RenderSystem": {
     "n": 1,
     "candidates": []
    },
@@ -9514,6 +9398,69 @@
    ],
    [
     "M",
+    "com/mojang/blaze3d/systems/RenderSystem",
+    "setShaderTexture",
+    "(ILnet/minecraft/resources/ResourceLocation;)V",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    2
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    3
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "color",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullSupplier;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    3
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/BlockEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    7
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemProviderEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    4
+   ],
+   [
+    "M",
     "com/zurrtum/create/AllShapes$Builder",
     "add",
     "(DDDDDD)Lcom/simibubi/create/AllShapes$Builder;",
@@ -10074,6 +10021,13 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/content/redstone/analogLever/AnalogLeverRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/redstone/analogLever/AnalogLeverBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/content/redstone/analogLever/AnalogLeverVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lcom/simibubi/create/content/redstone/analogLever/AnalogLeverBlockEntity;F)V",
@@ -10375,6 +10329,69 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/foundation/gui/widget/IconButton",
+    "<init>",
+    "(IILnet/createmod/catnip/gui/element/ScreenElement;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/IconButton",
+    "withCallback",
+    "(Ljava/lang/Runnable;)Lnet/createmod/catnip/gui/widget/AbstractSimiWidget;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "calling",
+    "(Ljava/util/function/Consumer;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "setState",
+    "(I)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "titled",
+    "(Lnet/minecraft/network/chat/MutableComponent;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    2
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "withRange",
+    "(II)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "withShiftStep",
+    "(I)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "withStepFunction",
+    "(Ljava/util/function/Function;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    2
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "forOptions",
+    "(Ljava/util/List;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    2
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/foundation/item/ItemDescription$Modifier",
     "<init>",
     "(Lnet/minecraft/world/item/Item;Lnet/createmod/catnip/lang/FontHelper$Palette;)V",
@@ -10610,6 +10627,41 @@
     "translate",
     "(Ljava/lang/String;[Ljava/lang/Object;)Lnet/createmod/catnip/lang/LangBuilder;",
     2
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/BracketedKineticBlockModel",
+    "<init>",
+    "(Lnet/minecraft/client/resources/model/BakedModel;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "<init>",
+    "(Lnet/minecraft/client/resources/model/BakedModel;Lcom/simibubi/create/foundation/block/connected/ConnectedTextureBehaviour;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "gatherModelData",
+    "(Lnet/neoforged/neoforge/client/model/data/ModelData$Builder;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/neoforged/neoforge/client/model/data/ModelData;)Lnet/neoforged/neoforge/client/model/data/ModelData$Builder;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "getQuads",
+    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/util/RandomSource;Lnet/neoforged/neoforge/client/model/data/ModelData;Lnet/minecraft/client/renderer/RenderType;)Ljava/util/List;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CopycatModel",
+    "<init>",
+    "(Lnet/minecraft/client/resources/model/BakedModel;)V",
+    9
    ],
    [
     "M",
@@ -11586,6 +11638,125 @@
    ],
    [
     "M",
+    "net/minecraft/client/gui/Font",
+    "drawInBatch",
+    "(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/Font",
+    "drawInBatch8xOutline",
+    "(Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/model/object/skull/SkullModelBase",
+    "setupAnim",
+    "(FFF)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/BiomeColors",
+    "getAverageWaterColor",
+    "(Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/LevelRenderer",
+    "getLightColor",
+    "(Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/LevelRenderer",
+    "notifyNearbyEntities",
+    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Z)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    7
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context",
+    "getFont",
+    "()Lnet/minecraft/client/gui/Font;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context",
+    "getModelSet",
+    "()Lnet/minecraft/client/model/geom/EntityModelSet;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "entityCutoutNoCullZOffset",
+    "(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/geometry/BakedQuad",
+    "getDirection",
+    "()Lnet/minecraft/core/Direction;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/geometry/BakedQuad",
+    "getSprite",
+    "()Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/geometry/BakedQuad",
+    "getVertices",
+    "()[I",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/sounds/SoundManager",
+    "play",
+    "(Lnet/minecraft/client/resources/sounds/SoundInstance;)V",
+    1
+   ],
+   [
+    "M",
     "net/minecraft/core/DefaultedRegistry",
     "get",
     "(Lnet/minecraft/resources/ResourceLocation;)Ljava/lang/Object;",
@@ -11848,6 +12019,27 @@
     "net/minecraft/network/protocol/common/custom/CustomPacketPayload$Type",
     "<init>",
     "(Lnet/minecraft/resources/ResourceLocation;)V",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    12
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withDefaultNamespace",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
     2
    ],
    [
@@ -12415,14 +12607,6 @@
     "n": 3,
     "candidates": []
    },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 10,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 25,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/ItemBlockRenderTypes": {
     "n": 1,
     "candidates": []
@@ -12431,32 +12615,8 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 33,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 31,
-    "candidates": []
-   },
    "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
     "n": 18,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 9,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 12,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 12,
     "candidates": []
    },
    "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
@@ -12465,10 +12625,6 @@
    },
    "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
     "n": 9,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 10,
     "candidates": []
    },
    "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
@@ -12511,27 +12667,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/renderer/LevelRenderer": {
-    "n": 3,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 10,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexConsumer": {
-    "n": 4,
-    "candidates": []
-   },
    "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
     "n": 1,
     "candidates": [
      "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
     ]
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 16,
-    "candidates": []
    },
    "net/minecraft/world/InteractionResultHolder": {
     "n": 2,
@@ -12541,20 +12681,8 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/Minecraft": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/player/LocalPlayer": {
-    "n": 3,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/LightTexture": {
     "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
-    "n": 2,
     "candidates": []
    },
    "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
@@ -12667,18 +12795,6 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/ByteBufferBuilder": {
-    "n": 1,
-    "candidates": []
-   },
    "dev/ryanhcode/sable/companion/SableCompanion": {
     "n": 1,
     "candidates": []
@@ -12721,29 +12837,11 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/FluidEntry": {
-    "n": 6,
-    "candidates": [
-     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
-    ]
-   },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 2,
-    "candidates": []
-   },
    "net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
     "n": 3,
     "candidates": []
    },
    "net/minecraft/data/tags/TagsProvider$TagAppender": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/components/DebugScreenOverlay": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientLevel": {
     "n": 1,
     "candidates": []
    },
@@ -12763,39 +12861,7 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 3,
-    "candidates": []
-   },
    "com/zurrtum/create/AllFluids$TintedFluidType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/FluidBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/FluidBuilder$FluidTypeFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
     "n": 1,
     "candidates": []
    },
@@ -12807,23 +12873,11 @@
     "n": 1,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/DefaultVertexFormat": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeState": {
     "n": 1,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/VertexFormat$Mode": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType$CompositeState": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/VertexFormat": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeState$CompositeStateBuilder": {
     "n": 1,
     "candidates": []
    },
@@ -12847,15 +12901,7 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/renderer/RenderType$CompositeRenderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRenderer": {
+   "net/minecraft/client/renderer/rendertype/RenderType$CompositeRenderType": {
     "n": 1,
     "candidates": []
    },
@@ -12864,18 +12910,6 @@
     "candidates": [
      "com/zurrtum/create/catnip/theme/Color"
     ]
-   },
-   "net/minecraft/client/resources/sounds/SoundInstance": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/sounds/SoundManager": {
-    "n": 1,
-    "candidates": []
    }
   },
   "missing_members": [
@@ -13630,6 +13664,13 @@
    ],
    [
     "F",
+    "net/minecraft/client/Minecraft",
+    "cameraEntity",
+    "Lnet/minecraft/world/entity/Entity;",
+    2
+   ],
+   [
+    "F",
     "net/minecraft/stats/Stats",
     "EAT_CAKE_SLICE",
     "Lnet/minecraft/resources/ResourceLocation;",
@@ -13703,6 +13744,48 @@
     "net/neoforged/fml/loading/FMLEnvironment",
     "production",
     "Z",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    2
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/VertexConsumer",
+    "addVertex",
+    "(Lorg/joml/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/BlockEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
     1
    ],
    [
@@ -14060,6 +14143,13 @@
     "com/zurrtum/create/client/content/contraptions/render/ActorVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lnet/minecraft/world/level/BlockAndTintGetter;Lcom/simibubi/create/content/contraptions/behaviour/MovementContext;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
     1
    ],
    [
@@ -14424,6 +14514,20 @@
     "com/zurrtum/create/client/foundation/gui/ModularGuiLineBuilder",
     "addSelectionScrollInput",
     "(IILjava/util/function/BiConsumer;Ljava/lang/String;)Lcom/simibubi/create/foundation/gui/ModularGuiLineBuilder;",
+    2
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/ScrollInput",
+    "titled",
+    "(Lnet/minecraft/network/chat/MutableComponent;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    2
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "forOptions",
+    "(Ljava/util/List;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
     2
    ],
    [
@@ -15247,6 +15351,55 @@
    ],
    [
     "M",
+    "net/minecraft/client/renderer/LevelRenderer",
+    "getLightColor",
+    "(Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    8
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher",
+    "render",
+    "(Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "<init>",
+    "(Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLjava/lang/Runnable;Ljava/lang/Runnable;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    6
+   ],
+   [
+    "M",
+    "net/minecraft/client/sounds/SoundManager",
+    "play",
+    "(Lnet/minecraft/client/resources/sounds/SoundInstance;)V",
+    1
+   ],
+   [
+    "M",
     "net/minecraft/commands/CommandSourceStack",
     "hasPermission",
     "(I)Z",
@@ -15545,6 +15698,34 @@
     "<init>",
     "(Lnet/minecraft/resources/ResourceLocation;)V",
     3
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    28
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "tryParse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withPrefix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
    ],
    [
     "M",
@@ -15900,76 +16081,22 @@
  },
  "createdeco-2.1.3.jar": {
   "missing_classes": {
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 6,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 15,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 3,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateRecipeProvider": {
     "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 17,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 7,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 18,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 1,
-    "candidates": []
+    "candidates": [
+     "com/tterrag/registrate/providers/generators/RegistrateRecipeProvider"
+    ]
    },
    "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
     "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 12,
     "candidates": []
    },
    "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
     "n": 2,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 5,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
     "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/DataIngredient": {
-    "n": 1,
     "candidates": []
    },
    "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
@@ -16014,10 +16141,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/nullness/NonNullFunction": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/ModelFile": {
     "n": 1,
     "candidates": []
@@ -16038,16 +16161,8 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/world/level/BlockAndTintGetter": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/world/ItemInteractionResult": {
     "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 4,
     "candidates": []
    },
    "org/jetbrains/annotations/ApiStatus$Internal": {
@@ -16178,6 +16293,27 @@
     "HORIZONTAL_FACING",
     "Lnet/minecraft/world/level/block/state/properties/DirectionProperty;",
     4
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    12
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    17
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    7
    ],
    [
     "M",
@@ -16405,6 +16541,27 @@
    ],
    [
     "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    7
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "translucent",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    5
+   ],
+   [
+    "M",
     "net/minecraft/core/Direction",
     "getNormal",
     "()Lnet/minecraft/core/Vec3i;",
@@ -16458,6 +16615,13 @@
     "shapeless",
     "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;I)Lnet/minecraft/data/recipes/ShapelessRecipeBuilder;",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    4
    ],
    [
     "M",
@@ -16568,10 +16732,6 @@
  },
  "createdieselgenerators-1.21.1-1.3.15.jar": {
   "missing_classes": {
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 23,
-    "candidates": []
-   },
    "net/mehvahdjukaar/moonlight/api/set/wood/WoodType": {
     "n": 1,
     "candidates": [
@@ -16598,14 +16758,6 @@
     "n": 10,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 21,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 32,
-    "candidates": []
-   },
    "mezz/jei/api/recipe/RecipeIngredientRole": {
     "n": 7,
     "candidates": []
@@ -16622,16 +16774,8 @@
     "n": 4,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 39,
-    "candidates": []
-   },
    "mezz/jei/api/ingredients/subtypes/ISubtypeInterpreter": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/Minecraft": {
-    "n": 20,
     "candidates": []
    },
    "mezz/jei/api/recipe/IFocusGroup": {
@@ -16648,18 +16792,6 @@
    },
    "net/minecraft/client/renderer/LightTexture": {
     "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/platform/Lighting": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 19,
     "candidates": []
    },
    "mezz/jei/api/recipe/category/IRecipeCategory": {
@@ -16688,10 +16820,6 @@
      "net/minecraft/world/item/crafting/RecipeType"
     ]
    },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 8,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
     "n": 5,
     "candidates": []
@@ -16708,32 +16836,12 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 2,
-    "candidates": []
-   },
    "com/cake/struts/content/block/StrutBlockEntityRenderer": {
     "n": 1,
     "candidates": []
    },
    "com/cake/struts/compat/flywheel/StrutFlywheelVisual": {
     "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 18,
     "candidates": []
    },
    "com/cake/struts/content/block/StrutBlockItem": {
@@ -16752,24 +16860,8 @@
     "n": 5,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 14,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 14,
-    "candidates": []
-   },
    "com/cake/struts/content/block/StrutBlock": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 29,
     "candidates": []
    },
    "dan200/computercraft/api/peripheral/IPeripheral": {
@@ -16816,10 +16908,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
     "n": 3,
     "candidates": []
@@ -16860,26 +16948,8 @@
     "n": 4,
     "candidates": []
    },
-   "net/minecraft/client/model/geom/ModelPart$Cube": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelPart": {
-    "n": 2,
-    "candidates": []
-   },
    "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
     "n": 17,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/FluidEntry": {
-    "n": 8,
-    "candidates": [
-     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
-    ]
-   },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
-    "n": 6,
     "candidates": []
    },
    "net/createmod/catnip/platform/CatnipServices": {
@@ -16888,10 +16958,6 @@
    },
    "net/createmod/catnip/platform/services/PlatformHelper": {
     "n": 10,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/FluidBuilder": {
-    "n": 1,
     "candidates": []
    },
    "net/minecraft/world/item/Tiers": {
@@ -16926,28 +16992,8 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/sounds/SoundManager": {
-    "n": 7,
-    "candidates": []
-   },
    "F": {
     "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientLevel": {
-    "n": 5,
-    "candidates": []
-   },
-   "net/minecraft/client/resources/sounds/SoundInstance$Attenuation": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/resources/sounds/SoundInstance": {
-    "n": 4,
     "candidates": []
    },
    "net/minecraft/world/level/block/state/properties/DirectionProperty": {
@@ -16970,10 +17016,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/mojang/blaze3d/vertex/VertexConsumer": {
-    "n": 3,
-    "candidates": []
-   },
    "net/createmod/catnip/platform/services/NetworkHelper": {
     "n": 1,
     "candidates": []
@@ -16982,33 +17024,11 @@
     "n": 6,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/MenuEntry": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/player/LocalPlayer": {
-    "n": 3,
-    "candidates": []
-   },
    "com/zurrtum/create/content/trains/track/TrackPlacement$ConnectingFrom": {
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/Options": {
-    "n": 1,
-    "candidates": [
-     "org/joml/Options"
-    ]
-   },
-   "net/minecraft/client/KeyMapping": {
-    "n": 1,
-    "candidates": []
-   },
    "D": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent": {
     "n": 1,
     "candidates": []
    },
@@ -17028,23 +17048,7 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/world/level/BlockAndTintGetter": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/block/model/BakedQuad": {
-    "n": 1,
-    "candidates": []
-   },
    "dan200/computercraft/api/peripheral/PeripheralCapability": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/layers/RenderLayer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/Sheets": {
     "n": 1,
     "candidates": []
    },
@@ -17056,43 +17060,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/renderer/entity/EntityRenderDispatcher": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/EntityRenderer": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/LivingEntityRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/EntityModel": {
-    "n": 1,
-    "candidates": []
-   },
    "dev/ryanhcode/sable/companion/SableCompanion": {
     "n": 1,
     "candidates": []
    },
    "net/minecraft/world/item/UseAnim": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/player/AbstractClientPlayer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/HumanoidModel$ArmPose": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/HumanoidModel": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/EntityEntry": {
     "n": 1,
     "candidates": []
    },
@@ -17116,43 +17088,11 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/renderer/entity/EntityRendererProvider$Context": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/EntityRendererProvider": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/world/item/MilkBucketItem": {
     "n": 4,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/MenuBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/MenuBuilder$ForgeMenuFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/MenuBuilder$ScreenFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/EntityBuilder": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/event/village/VillagerTradesEvent": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/screens/Screen": {
     "n": 1,
     "candidates": []
    },
@@ -17160,15 +17100,7 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/ProviderType": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/ItemBlockRenderTypes": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateLangProvider": {
     "n": 1,
     "candidates": []
    }
@@ -18086,6 +18018,13 @@
    ],
    [
     "F",
+    "net/minecraft/client/Minecraft",
+    "cameraEntity",
+    "Lnet/minecraft/world/entity/Entity;",
+    1
+   ],
+   [
+    "F",
     "net/minecraft/network/syncher/EntityDataSerializers",
     "COMPOUND_TAG",
     "Lnet/minecraft/network/syncher/EntityDataSerializer;",
@@ -18187,6 +18126,48 @@
     "com/google/gson/JsonObject",
     "getAsJsonPrimitive",
     "(Ljava/lang/String;)Lcom/google/gson/JsonPrimitive;",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/platform/Lighting",
+    "setupFor3DItems",
+    "()V",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    6
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    2
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    3
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/BlockEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
     1
    ],
    [
@@ -18674,6 +18655,34 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "getAngleForBe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction$Axis;)F",
+    3
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "getRotationAxisOf",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;)Lnet/minecraft/core/Direction$Axis;",
+    5
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "kineticRotationTransform",
+    "(Lnet/createmod/catnip/render/SuperByteBuffer;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;Lnet/minecraft/core/Direction$Axis;FI)Lnet/createmod/catnip/render/SuperByteBuffer;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;F)V",
@@ -18702,6 +18711,13 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/content/kinetics/base/ShaftRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    4
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/content/kinetics/base/ShaftVisual",
     "<init>",
     "(Ldev/engine_room/flywheel/api/visualization/VisualizationContext;Lcom/simibubi/create/content/kinetics/base/KineticBlockEntity;F)V",
@@ -18712,6 +18728,27 @@
     "com/zurrtum/create/client/content/kinetics/base/SingleAxisRotatingVisual",
     "of",
     "(Ldev/engine_room/flywheel/lib/model/baked/PartialModel;)Ldev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/logistics/filter/AbstractFilterScreen",
+    "<init>",
+    "(Lcom/simibubi/create/content/logistics/filter/AbstractFilterMenu;Lnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/network/chat/Component;Lcom/simibubi/create/foundation/gui/AllGuiTextures;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/logistics/filter/AbstractFilterScreen",
+    "renderForeground",
+    "(Lnet/minecraft/client/gui/GuiGraphics;IIF)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/content/logistics/filter/AbstractFilterScreen",
+    "renderTooltip",
+    "(Lnet/minecraft/client/gui/GuiGraphics;II)V",
     1
    ],
    [
@@ -19094,10 +19131,80 @@
    ],
    [
     "M",
+    "com/zurrtum/create/client/foundation/blockEntity/renderer/SmartBlockEntityRenderer",
+    "renderSafe",
+    "(Lcom/simibubi/create/foundation/blockEntity/SmartBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/client/foundation/gui/AllGuiTextures",
     "render",
     "(Lnet/minecraft/client/gui/GuiGraphics;II)V",
     7
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/IconButton",
+    "<init>",
+    "(IILnet/createmod/catnip/gui/element/ScreenElement;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/IconButton",
+    "withCallback",
+    "(Ljava/lang/Runnable;)Lnet/createmod/catnip/gui/widget/AbstractSimiWidget;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/Label",
+    "colored",
+    "(I)Lcom/simibubi/create/foundation/gui/widget/Label;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/Label",
+    "withShadow",
+    "()Lcom/simibubi/create/foundation/gui/widget/Label;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "calling",
+    "(Ljava/util/function/Consumer;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "forOptions",
+    "(Ljava/util/List;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "removeCallback",
+    "()Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "setState",
+    "(I)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/foundation/gui/widget/SelectionScrollInput",
+    "titled",
+    "(Lnet/minecraft/network/chat/MutableComponent;)Lcom/simibubi/create/foundation/gui/widget/ScrollInput;",
+    1
    ],
    [
     "M",
@@ -19308,6 +19415,27 @@
     "translate",
     "(Ljava/lang/String;[Ljava/lang/Object;)Lnet/createmod/catnip/lang/LangBuilder;",
     4
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "<init>",
+    "(Lnet/minecraft/client/resources/model/BakedModel;Lcom/simibubi/create/foundation/block/connected/ConnectedTextureBehaviour;)V",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "gatherModelData",
+    "(Lnet/neoforged/neoforge/client/model/data/ModelData$Builder;Lnet/minecraft/world/level/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/neoforged/neoforge/client/model/data/ModelData;)Lnet/neoforged/neoforge/client/model/data/ModelData$Builder;",
+    1
+   ],
+   [
+    "M",
+    "com/zurrtum/create/client/infrastructure/model/CTModel",
+    "getQuads",
+    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/util/RandomSource;Lnet/neoforged/neoforge/client/model/data/ModelData;Lnet/minecraft/client/renderer/RenderType;)Ljava/util/List;",
+    1
    ],
    [
     "M",
@@ -20081,6 +20209,97 @@
    ],
    [
     "M",
+    "net/minecraft/client/Minecraft",
+    "getItemRenderer",
+    "()Lnet/minecraft/client/renderer/entity/ItemRenderer;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/screens/Screen",
+    "hasAltDown",
+    "()Z",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/player/LocalPlayer",
+    "displayClientMessage",
+    "(Lnet/minecraft/network/chat/Component;Z)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    15
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/Sheets",
+    "cutoutBlockSheet",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/entity/EntityRenderDispatcher",
+    "getSkinMap",
+    "()Ljava/util/Map;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    5
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "glint",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "solid",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    9
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "translucent",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/geometry/BakedQuad",
+    "getDirection",
+    "()Lnet/minecraft/core/Direction;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/sounds/SoundManager",
+    "play",
+    "(Lnet/minecraft/client/resources/sounds/SoundInstance;)V",
+    7
+   ],
+   [
+    "M",
     "net/minecraft/commands/CommandSourceStack",
     "hasPermission",
     "(I)Z",
@@ -20295,6 +20514,27 @@
     "<init>",
     "(Lnet/minecraft/resources/ResourceLocation;)V",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    7
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    4
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withDefaultNamespace",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
    ],
    [
     "M",
@@ -20750,10 +20990,6 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 8,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/ItemModelShaper": {
     "n": 1,
     "candidates": []
@@ -20762,27 +20998,11 @@
     "n": 2,
     "candidates": []
    },
-   "net/minecraft/client/resources/model/ModelManager": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 1,
-    "candidates": []
-   },
    "dev/architectury/registry/registries/RegistrySupplier": {
     "n": 1,
     "candidates": []
    },
    "net/minecraft/client/color/item/ItemColor": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
     "n": 1,
     "candidates": []
    },
@@ -20800,34 +21020,6 @@
    },
    "net/minecraft/world/item/ArmorItem": {
     "n": 5,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/layers/RenderLayer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/HumanoidModel": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/model/EntityModel": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelPart": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/Minecraft": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/OverlayTexture": {
-    "n": 1,
     "candidates": []
    },
    "net/minecraft/client/renderer/entity/ItemRenderer": {
@@ -20862,24 +21054,8 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/renderer/entity/EntityRenderDispatcher": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/EntityRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/entity/LivingEntityRenderer": {
-    "n": 1,
-    "candidates": []
-   },
    "mekanism/api/gear/ICustomModule": {
     "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 2,
     "candidates": []
    },
    "mekanism/api/gear/ModuleData$ModuleDataBuilder": {
@@ -20914,26 +21090,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/builders/BlockBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 1,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
     "n": 1,
     "candidates": []
@@ -20943,26 +21099,6 @@
     "candidates": [
      "net/neoforged/neoforge/registries/DeferredRegister"
     ]
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 1,
-    "candidates": []
    },
    "dev/architectury/platform/Platform": {
     "n": 1,
@@ -21116,6 +21252,48 @@
    ],
    [
     "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "addLayer",
+    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "color",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullSupplier;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/ItemEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
     "com/zurrtum/create/Create",
     "asResource",
     "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
@@ -21200,6 +21378,34 @@
    ],
    [
     "M",
+    "net/minecraft/client/Minecraft",
+    "getItemRenderer",
+    "()Lnet/minecraft/client/renderer/entity/ItemRenderer;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/entity/EntityRenderDispatcher",
+    "getSkinMap",
+    "()Ljava/util/Map;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutoutMipped",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/resources/model/ModelManager",
+    "getModel",
+    "(Lnet/minecraft/client/resources/model/ModelResourceLocation;)Lnet/minecraft/client/resources/model/BakedModel;",
+    1
+   ],
+   [
+    "M",
     "net/minecraft/core/Holder",
     "is",
     "(Lnet/minecraft/resources/ResourceLocation;)Z",
@@ -21280,6 +21486,34 @@
     "net/minecraft/data/recipes/SmithingTrimRecipeBuilder",
     "smithingTrim",
     "(Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/data/recipes/RecipeCategory;)Lnet/minecraft/data/recipes/SmithingTrimRecipeBuilder;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "fromNamespaceAndPath",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withDefaultNamespace",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "withPrefix",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
     1
    ],
    [
@@ -21377,10 +21611,6 @@
  },
  "createoreexcavation-1.21-1.6.8.jar": {
   "missing_classes": {
-   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
-    "n": 7,
-    "candidates": []
-   },
    "net/minecraft/world/ItemInteractionResult": {
     "n": 5,
     "candidates": []
@@ -21389,31 +21619,11 @@
     "n": 3,
     "candidates": []
    },
-   "net/minecraft/client/resources/language/I18n": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/resources/ResourceLocation": {
-    "n": 40,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemEntry": {
-    "n": 14,
-    "candidates": []
-   },
    "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
     "n": 4,
     "candidates": []
    },
    "net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/BlockEntry": {
-    "n": 6,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/nullness/NonNullUnaryOperator": {
     "n": 1,
     "candidates": []
    },
@@ -21427,7 +21637,9 @@
    },
    "dan200/computercraft/shared/platform/RegistryEntry": {
     "n": 1,
-    "candidates": []
+    "candidates": [
+     "com/tterrag/registrate/util/entry/RegistryEntry"
+    ]
    },
    "dan200/computercraft/api/upgrades/UpgradeData": {
     "n": 1,
@@ -21439,10 +21651,6 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/entry/RegistryEntry": {
-    "n": 3,
-    "candidates": []
-   },
    "dan200/computercraft/shared/ModRegistry$Items": {
     "n": 1,
     "candidates": []
@@ -21451,16 +21659,8 @@
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/util/CreativeModeTabModifier": {
-    "n": 1,
-    "candidates": []
-   },
    "dan200/computercraft/api/upgrades/UpgradeType": {
     "n": 3,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/NoConfigBuilder": {
-    "n": 2,
     "candidates": []
    },
    "dan200/computercraft/shared/ModRegistry": {
@@ -21503,74 +21703,6 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/Minecraft": {
-    "n": 13,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/Font": {
-    "n": 4,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelPart": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/builders/MeshDefinition": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/builders/CubeListBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/PartPose": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/builders/PartDefinition": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/builders/CubeDeformation": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/builders/LayerDefinition": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/vertex/PoseStack": {
-    "n": 6,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/RenderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/MultiBufferSource": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/model/geom/ModelLayerLocation": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
-    "n": 3,
-    "candidates": []
-   },
    "net/minecraft/client/renderer/block/BlockRenderDispatcher": {
     "n": 1,
     "candidates": []
@@ -21583,32 +21715,12 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/multiplayer/ClientSuggestionProvider": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientPacketListener": {
-    "n": 6,
-    "candidates": []
-   },
    "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
     "n": 2,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/ProviderType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/providers/RegistrateLangProvider": {
-    "n": 1,
-    "candidates": []
-   },
    "net/minecraft/world/InteractionResultHolder": {
     "n": 2,
-    "candidates": []
-   },
-   "com/tterrag/registrate/util/entry/MenuEntry": {
-    "n": 1,
     "candidates": []
    },
    "net/minecraft/client/gui/GuiGraphics": {
@@ -21633,10 +21745,6 @@
    },
    "mezz/jei/api/recipe/category/IRecipeCategory": {
     "n": 3,
-    "candidates": []
-   },
-   "com/mojang/blaze3d/systems/RenderSystem": {
-    "n": 5,
     "candidates": []
    },
    "mezz/jei/api/gui/drawable/IDrawable": {
@@ -21746,21 +21854,15 @@
    },
    "journeymap/api/v2/client/display/Overlay": {
     "n": 3,
-    "candidates": []
+    "candidates": [
+     "net/minecraft/client/gui/screens/Overlay"
+    ]
    },
    "journeymap/api/v2/client/util/PolygonHelper": {
     "n": 1,
     "candidates": []
    },
    "journeymap/api/v2/client/IClientAPI": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/multiplayer/ClientLevel": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/minecraft/client/player/LocalPlayer": {
     "n": 1,
     "candidates": []
    },
@@ -21894,57 +21996,11 @@
     "n": 1,
     "candidates": []
    },
-   "net/minecraft/client/gui/components/Button": {
-    "n": 5,
-    "candidates": [
-     "net/neoforged/fml/earlydisplay/error/Button"
-    ]
-   },
-   "net/minecraft/client/gui/components/WidgetSprites": {
-    "n": 4,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/components/Button$CreateNarration": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/components/Button$OnPress": {
-    "n": 5,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/components/Tooltip": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/screens/inventory/PageButton": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/components/AbstractWidget": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/common/util/INBTSerializable": {
     "n": 1,
     "candidates": []
    },
-   "com/tterrag/registrate/providers/DataGenContext": {
-    "n": 1,
-    "candidates": []
-   },
    "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/ItemBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockBuilder": {
     "n": 1,
     "candidates": []
    },
@@ -21962,39 +22018,11 @@
      "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
     ]
    },
-   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/MenuBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/MenuBuilder$ScreenFactory": {
-    "n": 1,
-    "candidates": []
-   },
    "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
     "n": 1,
     "candidates": []
    },
    "net/neoforged/neoforge/client/model/generators/ModelFile": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/tterrag/registrate/builders/MenuBuilder$MenuFactory": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/minecraft/client/gui/screens/Screen": {
     "n": 1,
     "candidates": []
    }
@@ -22236,6 +22264,48 @@
     "com/google/gson/Gson",
     "toJson",
     "(Ljava/lang/Object;Ljava/lang/Appendable;)V",
+    1
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/systems/RenderSystem",
+    "enableBlend",
+    "()V",
+    3
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/systems/RenderSystem",
+    "enableDepthTest",
+    "()V",
+    5
+   ],
+   [
+    "M",
+    "com/mojang/blaze3d/vertex/PoseStack",
+    "mulPose",
+    "(Lorg/joml/Quaternionf;)V",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/BlockBuilder",
+    "blockstate",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/BlockBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/builders/ItemBuilder",
+    "model",
+    "(Lcom/tterrag/registrate/util/nullness/NonNullBiConsumer;)Lcom/tterrag/registrate/builders/ItemBuilder;",
+    1
+   ],
+   [
+    "M",
+    "com/tterrag/registrate/util/entry/RegistryEntry",
+    "getId",
+    "()Lnet/minecraft/resources/ResourceLocation;",
     1
    ],
    [
@@ -22779,6 +22849,83 @@
    ],
    [
     "M",
+    "net/minecraft/client/Minecraft",
+    "getBlockRenderer",
+    "()Lnet/minecraft/client/renderer/block/BlockRenderDispatcher;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/components/WidgetSprites",
+    "<init>",
+    "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/components/WidgetSprites",
+    "get",
+    "(ZZ)Lnet/minecraft/resources/ResourceLocation;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/screens/Screen",
+    "hasShiftDown",
+    "()Z",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen",
+    "render",
+    "(Lnet/minecraft/client/gui/GuiGraphics;IIF)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/model/geom/ModelLayerLocation",
+    "<init>",
+    "(Lnet/minecraft/resources/ResourceLocation;Ljava/lang/String;)V",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/multiplayer/ClientLevel",
+    "getRecipeManager",
+    "()Lnet/minecraft/world/item/crafting/RecipeManager;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/client/multiplayer/ClientPacketListener",
+    "getRecipeManager",
+    "()Lnet/minecraft/world/item/crafting/RecipeManager;",
+    5
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/MultiBufferSource",
+    "getBuffer",
+    "(Lnet/minecraft/client/renderer/RenderType;)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "cutout",
+    "()Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/client/renderer/rendertype/RenderType",
+    "entityCutoutNoCull",
+    "(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;",
+    1
+   ],
+   [
+    "M",
     "net/minecraft/commands/CommandSourceStack",
     "hasPermission",
     "(I)Z",
@@ -22986,6 +23133,27 @@
     "<init>",
     "(Lnet/minecraft/resources/ResourceLocation;)V",
     2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "parse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    2
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "tryBuild",
+    "(Ljava/lang/String;Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    17
+   ],
+   [
+    "M",
+    "net/minecraft/resources/Identifier",
+    "tryParse",
+    "(Ljava/lang/String;)Lnet/minecraft/resources/ResourceLocation;",
+    5
    ],
    [
     "M",

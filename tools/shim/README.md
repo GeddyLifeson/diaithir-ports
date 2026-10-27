@@ -13,3 +13,8 @@ Scripted, dependency-free (Python 3 only, constant-pool rewriting, no ASM).
 Outputs committed: map.json, residual.json, scan_out.json, boot_results.txt.
 Findings: package rename alone resolves about half of Create refs. Blockers: (a) Registrate (com.tterrag.registrate + CreateRegistrate, foundation.data.*) absent in port,
 (b) ProcessingRecipe/StandardProcessingRecipe/AllTags/BlockEntityBehaviour API reshaped, (c) JEI/KubeJS/other addon deps, (d) Fabric transfer vs NeoForge capabilities, (e) client Flywheel/Ponder member signatures.
+
+## Update (registrate + wider runtime index)
+- `registrate/` is Tterrag1098/Registrate 26.1/dev (MPL-2.0, see registrate/NOTICE), built by our gradle (`./gradlew :registrate:jar`, JDK 25, neo 26.1.2.109) into a GAMELIBRARY jar; put it in mods/ (boot_one.sh copies out/lib-*.jar).
+- build_map.py now has overrides.json (ResourceLocation -> Identifier) and takes the merged MC client jar plus all server libs as runtime index (runtime.txt).
+- Residual per addon now 22-144 missing classes, mostly: CreateRegistrate/foundation.data (adapter needed, extends AbstractRegistrate), recipe API, 26.1 API removals (ItemInteractionResult, InteractionResultHolder, GuiGraphics, BakedModel, RenderStateShard, Capabilities.*, datagen model builders), and third-party deps.

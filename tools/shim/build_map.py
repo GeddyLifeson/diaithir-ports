@@ -33,8 +33,11 @@ def main():
     for ad in addons:
         for _, c in cf.jar_classes(ad): own.add(c['name'])
     m, un = {}, []
+    ov = json.load(open(os.path.join(os.path.dirname(__file__), 'overrides.json')))
+    ov = {k: v for k, v in ov.items() if v in idx and k != v}
     for k in sorted(used - own):
         if not k or k.startswith(('java/', 'javax/', 'sun/', 'jdk/')) or k in idx: continue
+        if k in ov: m[k] = ov[k]; continue
         done = False
         for old, news in ROOTS:
             if k.startswith(old):
