@@ -32,6 +32,7 @@ public class ForlornBridgeStructure extends Structure {
     }
 
     public Optional<GenerationStub> findGenerationPoint(Structure.GenerationContext context) {
+        if (!CaveMaskBiomeSource.insideParent(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS)) return Optional.empty();
         return atYCaveBiomePoint(context, Heightmap.Types.OCEAN_FLOOR_WG, (builder) -> {
             this.generatePieces(builder, context);
         });
@@ -52,12 +53,12 @@ public class ForlornBridgeStructure extends Structure {
         int j = context.chunkPos().getMinBlockZ();
         int k = context.chunkGenerator().getSeaLevel();
         BlockPos xzCoords = new BlockPos(i, ForlornCanyonStructure.BOWL_Y_CENTER, j);
-        int biomeUp = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.UP, xzCoords, 32);
-        int biomeDown = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.DOWN, xzCoords, 32);
+        int biomeUp = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS), context.randomState(), Direction.UP, xzCoords, 32);
+        int biomeDown = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS), context.randomState(), Direction.DOWN, xzCoords, 32);
         BlockPos center = xzCoords.below(biomeDown).above(worldgenrandom.nextInt(Math.max(biomeUp, 10)));
         Direction bridgeDirection = Util.getRandom(ACMath.HORIZONTAL_DIRECTIONS, worldgenrandom);
-        int biomeForwards = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), bridgeDirection, center, 32 + worldgenrandom.nextInt(6) * 16);
-        int biomeBackwards = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), bridgeDirection.getOpposite(), center, 32 + worldgenrandom.nextInt(6) * 16);
+        int biomeForwards = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS), context.randomState(), bridgeDirection, center, 32 + worldgenrandom.nextInt(6) * 16);
+        int biomeBackwards = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS), context.randomState(), bridgeDirection.getOpposite(), center, 32 + worldgenrandom.nextInt(6) * 16);
         int maxSections = (int) Math.ceil((biomeBackwards + biomeForwards) / BRIDGE_SECTION_LENGTH);
         for (int section = 0; section <= maxSections; section++) {
             BlockPos at = center.relative(bridgeDirection, section * BRIDGE_SECTION_LENGTH - BRIDGE_SECTION_LENGTH / 2 - biomeBackwards);

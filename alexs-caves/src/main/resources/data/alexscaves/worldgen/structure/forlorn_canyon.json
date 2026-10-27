@@ -1,6 +1,6 @@
 {
   "type": "alexscaves:forlorn_canyon",
-  "biomes": "alexscaves:forlorn_hollows",
+  "biomes": "#minecraft:is_overworld",
   "step": "raw_generation",
   "start_height": {
     "absolute": 0

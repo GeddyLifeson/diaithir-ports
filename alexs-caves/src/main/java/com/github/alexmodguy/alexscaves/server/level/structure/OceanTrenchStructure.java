@@ -28,19 +28,24 @@ public class OceanTrenchStructure extends AbstractCaveGenerationStructure {
     }
 
     @Override
+    protected boolean canStartAt(Structure.GenerationContext context) {
+        return surfaceAt(context, context.chunkPos().getMiddleBlockX(), context.chunkPos().getMiddleBlockZ()) < context.chunkGenerator().getSeaLevel() - 6;
+    }
+
+    @Override
     public void generatePieces(StructurePiecesBuilder builder, Structure.GenerationContext context) {
         int i = context.chunkPos().getMinBlockX();
         int j = context.chunkPos().getMinBlockZ();
         BlockPos center = new BlockPos(i, getGenerateYHeight(context.random(), i, j), j);
         int heightRad = getHeightRadius(context.random(), context.chunkGenerator().getSeaLevel());
         int widthRad = getWidthRadius(context.random());
-        int biomeUp = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.UP, center, heightRad) + getYExpandUp();
-        int biomeDown = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.DOWN, center, heightRad) + getYExpandDown();
+        int biomeUp = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.UP, center, heightRad) + getYExpandUp();
+        int biomeDown = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.DOWN, center, heightRad) + getYExpandDown();
         BlockPos ground = center.below(biomeDown - 2);
-        int biomeEast = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.EAST, ground, widthRad) + 32;
-        int biomeWest = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.WEST, ground, widthRad) + 32;
-        int biomeNorth = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.NORTH, ground, widthRad) + 32;
-        int biomeSouth = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.SOUTH, ground, widthRad) + 32;
+        int biomeEast = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.EAST, ground, widthRad) + 32;
+        int biomeWest = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.WEST, ground, widthRad) + 32;
+        int biomeNorth = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.NORTH, ground, widthRad) + 32;
+        int biomeSouth = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM), context.randomState(), Direction.SOUTH, ground, widthRad) + 32;
         int widthBlocks = (biomeEast + biomeWest + biomeNorth + biomeSouth) / 4;
         int heightBlocks = (biomeUp + biomeDown) / 2;
         int widthChunks = (int) Math.ceil((widthBlocks + 16) / 16F / 2F) + 3;

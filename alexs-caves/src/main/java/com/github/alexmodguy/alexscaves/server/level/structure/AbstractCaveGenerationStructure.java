@@ -25,7 +25,17 @@ public abstract class AbstractCaveGenerationStructure extends Structure {
         this.matchingBiome = matchingBiome;
     }
 
+    /** Gate for the whole structure start (terrain checks the 3D biome source used to provide). */
+    protected boolean canStartAt(Structure.GenerationContext context) {
+        return true;
+    }
+
+    protected int surfaceAt(Structure.GenerationContext context, int x, int z) {
+        return context.chunkGenerator().getBaseHeight(x, z, Heightmap.Types.OCEAN_FLOOR_WG, context.heightAccessor(), context.randomState());
+    }
+
     public Optional<GenerationStub> findGenerationPoint(Structure.GenerationContext context) {
+        if (!canStartAt(context)) return Optional.empty();
         return atYCaveBiomePoint(context, Heightmap.Types.OCEAN_FLOOR_WG, (builder) -> {
             this.generatePieces(builder, context);
         });
@@ -48,13 +58,20 @@ public abstract class AbstractCaveGenerationStructure extends Structure {
         BlockPos center = new BlockPos(i, getGenerateYHeight(context.random(), i, j), j);
         int heightRad = getHeightRadius(context.random(), context.chunkGenerator().getSeaLevel());
         int widthRad = getWidthRadius(context.random());
-        int biomeUp = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.UP, center, heightRad) + getYExpandUp();
-        int biomeDown = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.DOWN, center, heightRad) + getYExpandDown();
+        // keep the bowl under the terrain: squash its height to the lowest surface across the footprint
+        int lowSurface = surfaceAt(context, i, j);
+        for (int dx = -1; dx <= 1; dx += 2) for (int dz = -1; dz <= 1; dz += 2) {
+            lowSurface = Math.min(lowSurface, surfaceAt(context, i + dx * widthRad / 2, j + dz * widthRad / 2));
+        }
+        heightRad = Math.min(heightRad, (lowSurface - 14 - center.getY()));
+        if (heightRad < 40) return;
+        int biomeUp = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.UP, center, heightRad) + getYExpandUp();
+        int biomeDown = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.DOWN, center, heightRad) + getYExpandDown();
         BlockPos ground = center.below(biomeDown - 2);
-        int biomeEast = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.EAST, ground, widthRad);
-        int biomeWest = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.WEST, ground, widthRad);
-        int biomeNorth = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.NORTH, ground, widthRad);
-        int biomeSouth = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.SOUTH, ground, widthRad);
+        int biomeEast = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.EAST, ground, widthRad);
+        int biomeWest = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.WEST, ground, widthRad);
+        int biomeNorth = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.NORTH, ground, widthRad);
+        int biomeSouth = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, matchingBiome), context.randomState(), Direction.SOUTH, ground, widthRad);
         int widthBlocks = (biomeEast + biomeWest + biomeNorth + biomeSouth) / 4;
         int heightBlocks = (biomeUp + biomeDown) / 2;
         int widthChunks = (int) Math.ceil((widthBlocks + 16) / 16F / 2F) + 2;

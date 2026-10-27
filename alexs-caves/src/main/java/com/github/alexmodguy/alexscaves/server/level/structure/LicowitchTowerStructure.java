@@ -41,7 +41,7 @@ public class LicowitchTowerStructure extends Structure {
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
         int i = context.chunkPos().getBlockX(9);
         int j = context.chunkPos().getBlockZ(9);
-        for (Holder<Biome> holder : ACMath.getBiomesWithinAtY(context.biomeSource(), i, -30, j, 20, context.randomState().sampler())) {
+        for (Holder<Biome> holder : ACMath.getBiomesWithinAtY(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY), i, -30, j, 20, context.randomState().sampler())) {
             if (!holder.is(ACBiomeRegistry.CANDY_CAVITY)) {
                 return Optional.empty();
             }

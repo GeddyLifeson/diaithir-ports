@@ -31,6 +31,9 @@ public class AbyssalRuinsStructure extends Structure {
     }
 
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
+        if (!CaveMaskBiomeSource.insideParent(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.ABYSSAL_CHASM)) {
+            return Optional.empty();
+        }
         Rotation rotation = Rotation.getRandom(context.random());
         LevelHeightAccessor levelHeight = context.heightAccessor();
         int y = context.chunkGenerator().getBaseHeight(context.chunkPos().getMinBlockX(), context.chunkPos().getMinBlockZ(), Heightmap.Types.OCEAN_FLOOR_WG, levelHeight, context.randomState());

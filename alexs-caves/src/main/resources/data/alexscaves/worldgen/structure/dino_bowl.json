@@ -1,6 +1,6 @@
 {
   "type": "alexscaves:dino_bowl",
-  "biomes": "alexscaves:primordial_caves",
+  "biomes": "#minecraft:is_overworld",
   "step": "raw_generation",
   "start_height": {
     "absolute": 0

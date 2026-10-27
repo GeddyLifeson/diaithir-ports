@@ -38,6 +38,7 @@ public class FerrocaveStructurePiece extends AbstractCaveGenerationStructurePiec
         BlockPos.MutableBlockPos carveAbove = new BlockPos.MutableBlockPos();
         carve.set(cornerX, cornerY, cornerZ);
         carveAbove.set(cornerX, cornerY, cornerZ);
+        boolean carvedAny = false;
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
                 for (int y = 15; y >= 0; y--) {
@@ -45,10 +46,14 @@ public class FerrocaveStructurePiece extends AbstractCaveGenerationStructurePiec
                     carveAbove.set(carve.getX(), carve.getY() + 1, carve.getZ());
                     if (inCircle(carve) && !checkedGetBlock(level, carve).is(Blocks.BEDROCK)) {
                         checkedSetBlock(level, carve, Blocks.CAVE_AIR.defaultBlockState());
+                        carvedAny = true;
                         surroundCornerOfLiquid(level, carve);
                     }
                 }
             }
+        }
+        if (carvedAny) {
+            replaceBiomes(level, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.MAGNETIC_CAVES, 32);
         }
     }
 

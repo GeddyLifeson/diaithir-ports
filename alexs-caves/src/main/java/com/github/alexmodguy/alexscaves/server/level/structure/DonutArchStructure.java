@@ -31,6 +31,7 @@ public class DonutArchStructure extends Structure {
     }
 
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
+        if (!CaveMaskBiomeSource.insideParent(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY)) return Optional.empty();
         return atYCaveBiomePoint(context, Heightmap.Types.OCEAN_FLOOR_WG, (builder) -> {
             this.generatePieces(builder, context);
         });
@@ -51,13 +52,13 @@ public class DonutArchStructure extends Structure {
         int j = context.chunkPos().getMinBlockZ();
         int k = context.chunkGenerator().getSeaLevel();
         BlockPos xzCoords = new BlockPos(i, -30, j);
-        int biomeUp = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.UP, xzCoords, 25);
-        int biomeDown = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), Direction.DOWN, xzCoords, 16);
+        int biomeUp = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY), context.randomState(), Direction.UP, xzCoords, 25);
+        int biomeDown = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY), context.randomState(), Direction.DOWN, xzCoords, 16);
         BlockPos center = xzCoords.below(biomeDown).above(5 + worldgenrandom.nextInt(Math.max(biomeUp, 10)));
         Direction donutFacing = Util.getRandom(ACMath.HORIZONTAL_DIRECTIONS, worldgenrandom);
         int donutRadius = 32;
-        int biomeLeft = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), donutFacing.getClockWise(), center, donutRadius);
-        int biomeRight = biomeContinuesInDirectionFor(context.biomeSource(), context.randomState(), donutFacing.getCounterClockWise(), center, donutRadius);
+        int biomeLeft = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY), context.randomState(), donutFacing.getClockWise(), center, donutRadius);
+        int biomeRight = biomeContinuesInDirectionFor(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.CANDY_CAVITY), context.randomState(), donutFacing.getCounterClockWise(), center, donutRadius);
         int widthChunks = (int) Math.ceil(biomeRight + biomeLeft) / 2 / DONUT_SECTION_WIDTH;
         int frostingType = worldgenrandom.nextInt(3);
         for (int chunkXZ = -widthChunks; chunkXZ <= widthChunks; chunkXZ++) {

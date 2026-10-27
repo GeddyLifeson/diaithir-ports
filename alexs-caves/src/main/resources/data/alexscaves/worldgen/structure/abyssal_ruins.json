@@ -1,6 +1,6 @@
 {
   "type": "alexscaves:abyssal_ruins",
-  "biomes": "alexscaves:abyssal_chasm",
+  "biomes": "#minecraft:is_overworld",
   "step": "underground_structures",
   "start_height": {
     "absolute": 0

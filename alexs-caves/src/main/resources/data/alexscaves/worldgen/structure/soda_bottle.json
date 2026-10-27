@@ -1,6 +1,6 @@
 {
   "type": "alexscaves:soda_bottle",
-  "biomes": "alexscaves:candy_cavity",
+  "biomes": "#minecraft:is_overworld",
   "step": "underground_structures",
   "start_height": {
     "absolute": 0

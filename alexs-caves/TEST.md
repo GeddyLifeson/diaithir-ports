@@ -11,7 +11,14 @@ Build: NeoForge 26.1.2.116, Java 25, `./gradlew jar` (jar 73 MB, mostly the orig
 | Cave chambers, vanilla overworld, 192x192 forced area scan | pass: all six biomes found by `execute if biome`, no "far chunk" errors after centring on the chunk |
 | Cave chambers with the pack's Tellus jar and `tellus:earth`, same scan | pass: all six biomes found |
 | Age gate | data only (age_gates.json) |
+| Dev client (Xvfb, software GL) with the Citadel module, all 83 entities summoned in 21 batches of four | pass: real Citadel models and textures render, no render exceptions after the fixes below; log is clean apart from the OpenAL device warning |
+| Client crashes found by that run | fixed: `(ServerLevel)` casts reached from client ticks (acid block, tesla bulb, entity hurt and UUID lookups, now `misc/ACSide`), Teletor `popPose` on a fresh PoseStack, uranium rod and abyssal altar block models with UVs over 16 |
+| Structures, vanilla overworld (seed 424242), `/locate structure` for all 14 | pass: found (cake cave, dino bowl, acid pit, ferrocave, forlorn canyon, ocean trench as parents; volcano, donut arch, gingerbread town, licowitch tower, soda bottle, forlorn bridge, abyssal ruins inside them; underground cabin standalone) |
+| Parent bowls generated (forceload plus `execute if biome` at the centre) | pass for all six: cake cave, dino bowl, acid pit, ferrocave, forlorn canyon, ocean trench carve and relabel to their cave biome |
+| Child structures generated (forceload around each), server log | pass: no exceptions |
+| Structures over `tellus:earth` (Tellus 0.8.3-diaithir.12, inland spawn) | pass: 12 of 14 found, cake cave and dino bowl generate and relabel; ocean trench and abyssal ruins not found (spawn is inland, nothing in the 100 chunk search), not tested over water |
+| Natural spawning in the cake cave bowl (creative player, 9000 ticks) | pass: caniac, gumbeeper, candicorn, caramel cube, gummy bear, gingerbread man, melted caramel and sweetish fish spawned by themselves (plus mobs of neighbouring bowls) |
 
-Not tested (no client here): any rendering (fallback box renderers, block and item models, armour, GUIs), natural mob spawning inside chambers (spawn lists are in the biome JSON), the cave chambers' look. Item, block and equipment assets were checked by script for missing parents and textures.
+Not tested: GUIs, particles (providers are not ported), block entity renderers, shaders, armour models, the potion layer, animations in motion (stills only), how the bowls look from inside, bowls under heavy terrain relief (they are squashed to stay 14 blocks below the lowest surface across their footprint), structure interiors (loot, spawners and data markers in the templates). Item, block and equipment assets were checked by script for missing parents and textures.
 
 Known gaps: see PORT_PLAN.md (cut features, structures, entity models).

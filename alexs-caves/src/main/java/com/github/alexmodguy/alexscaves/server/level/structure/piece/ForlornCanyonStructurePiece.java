@@ -38,6 +38,7 @@ public class ForlornCanyonStructurePiece extends AbstractCaveGenerationStructure
         BlockPos.MutableBlockPos carve = new BlockPos.MutableBlockPos();
         BlockPos.MutableBlockPos carveBelow = new BlockPos.MutableBlockPos();
         carve.set(cornerX, cornerY, cornerZ);
+        boolean carvedAny = false;
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
                 MutableBoolean doFloor = new MutableBoolean(false);
@@ -45,6 +46,7 @@ public class ForlornCanyonStructurePiece extends AbstractCaveGenerationStructure
                     carve.set(cornerX + x, Mth.clamp(cornerY + y, level.getMinY(), level.getMaxY()), cornerZ + z);
                     if (inCircle(carve) && !checkedGetBlock(level, carve).is(Blocks.BEDROCK)) {
                         checkedSetBlock(level, carve, Blocks.CAVE_AIR.defaultBlockState());
+                        carvedAny = true;
                         surroundCornerOfLiquid(level, carve);
                         carveBelow.set(carve.getX(), carve.getY() - 1, carve.getZ());
                         doFloor.setTrue();
@@ -57,6 +59,9 @@ public class ForlornCanyonStructurePiece extends AbstractCaveGenerationStructure
                     doFloor.setFalse();
                 }
             }
+        }
+        if (carvedAny) {
+            replaceBiomes(level, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.FORLORN_HOLLOWS, 32);
         }
     }
 

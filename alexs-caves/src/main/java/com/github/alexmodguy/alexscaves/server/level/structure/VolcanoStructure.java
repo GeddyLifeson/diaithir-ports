@@ -33,7 +33,7 @@ public class VolcanoStructure extends Structure {
         int i = context.chunkPos().getBlockX(9);
         int j = context.chunkPos().getBlockZ(9);
 
-        for(Holder<Biome> holder : ACMath.getBiomesWithinAtY(context.biomeSource(), i, VOLCANO_Y_CENTER, j, 30, context.randomState().sampler())) {
+        for(Holder<Biome> holder : ACMath.getBiomesWithinAtY(CaveMaskBiomeSource.of(context, com.github.alexmodguy.alexscaves.server.level.biome.ACBiomeRegistry.PRIMORDIAL_CAVES), i, VOLCANO_Y_CENTER, j, 30, context.randomState().sampler())) {
             if (!holder.is(ACBiomeRegistry.PRIMORDIAL_CAVES)) {
                 return Optional.empty();
             }
