@@ -116,9 +116,25 @@ for r in items_up:
 TOOLS = [("dark_sword", "sword"), ("dark_shovel", "shovel"), ("dark_pickaxe", "pickaxe"), ("dark_axe", "axe"), ("dark_hoe", "hoe")]
 ARMOR = [("black_iron_" + p, p) for p in ("helmet", "chestplate", "leggings", "boots")]
 
+# ---- stage 3: magic
+import spells_table
+SPELLCFG = json.load(open(os.path.join(HERE, "spell_config.json")))
+FOCI = list(spells_table.S)
+WANDS = [("dark_wand", 1.0, ["none"]), ("ominous_staff", 2.0, ["ill"]), ("necro_staff", 2.0, ["necromancy"]),
+         ("geo_staff", 2.0, ["geomancy"]), ("wind_staff", 2.0, ["wind"]), ("storm_staff", 2.0, ["storm"]),
+         ("frost_staff", 2.0, ["frost"]), ("wild_staff", 2.0, ["wild"]), ("abyss_staff", 2.0, ["abyss"]),
+         ("void_staff", 2.0, ["void"]), ("nether_staff", 3.0, ["nether"])]
+MAGIC_ITEMS = ["totem_of_souls"] + FOCI + [w[0] for w in WANDS]
+SPELLS = []
+for fid, (stype, pre, kind, params, hold, interval) in spells_table.S.items():
+    SPELLS.append({"id": fid, "type": stype, "cost": SPELLCFG.get(pre + "Cost", 10), "cast": SPELLCFG.get(pre + "Duration", 0),
+                   "cooldown": SPELLCFG.get(pre + "CoolDown", 20), "kind": kind, "params": params, "hold": hold, "interval": interval})
+BOLTS = ["soul_bolt", "magic_bolt"]
+
 # ---------------------------------------------------------------- specs
 write(os.path.join(RES, "goety_spec/blocks.json"), bspec)
-write(os.path.join(RES, "goety_spec/items.json"), {"plain": PLAIN_ITEMS, "tools": TOOLS, "armor": ARMOR})
+write(os.path.join(RES, "goety_spec/items.json"), {"plain": PLAIN_ITEMS, "tools": TOOLS, "armor": ARMOR, "foci": FOCI, "wands": [list(w) for w in WANDS]})
+write(os.path.join(RES, "goety_spec/spells.json"), SPELLS)
 
 # ---------------------------------------------------------------- assets
 missing = set()
@@ -176,6 +192,18 @@ for i, e in bkinds.items():
 for i in PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR]:
     copy_model(f"goety:item/{i}")
     item_def(i)
+for i in FOCI + [w[0] for w in WANDS]:
+    copy_model(f"goety:item/{i}")
+    item_def(i)
+for m in ("empty_totem", "mid_totem", "full_totem"):
+    copy_model(f"goety:item/{m}")
+cp(upa("textures/item/lesser_totem.png"), os.path.join(A, "textures/item/lesser_totem.png"))
+write(os.path.join(A, "models/item/lesser_totem.json"), {"parent": "minecraft:item/generated", "textures": {"layer0": "goety:item/lesser_totem"}})
+write(os.path.join(A, "items/totem_of_souls.json"), {"model": {"type": "minecraft:range_dispatch", "property": "minecraft:custom_model_data", "index": 0,
+    "fallback": {"type": "minecraft:model", "model": "goety:item/empty_totem"},
+    "entries": [{"threshold": 0.0001, "model": {"type": "minecraft:model", "model": "goety:item/lesser_totem"}},
+                {"threshold": 0.34, "model": {"type": "minecraft:model", "model": "goety:item/mid_totem"}},
+                {"threshold": 0.99, "model": {"type": "minecraft:model", "model": "goety:item/full_totem"}}]}})
 # armour equipment assets (textures: 64x64 humanoid layers of the original)
 for fam in {a[0].rsplit("_", 1)[0] for a in ARMOR}:
     cp(upa(f"textures/models/armor/{fam}_armor.png"), os.path.join(A, f"textures/entity/equipment/humanoid/{fam}.png"))
@@ -215,6 +243,22 @@ def name_for(kind, i):
 lang = {}
 for i in bkinds: lang[f"block.goety.{i}"] = name_for("block", i)
 for i in PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR]: lang[f"item.goety.{i}"] = name_for("item", i)
+for i in MAGIC_ITEMS: lang[f"item.goety.{i}"] = name_for("item", i)
+for b in BOLTS:
+    d, miss = naming.diaithiris(en.get(f"entity.goety.{b}") or b.replace("_", " ").title()); allmiss.update(miss)
+    lang[f"entity.goety.{b}"] = d
+    names[b] = {"diaithiris": d, "english": en.get(f"entity.goety.{b}") or b.replace("_", " ").title(), "entity": True}
+# interface strings, written in modern Gaelic and then run through the archaic layer
+UI = {"goety.tooltip.cost": "Anman: %s", "goety.tooltip.souls": "Anman: %s / %s", "goety.tooltip.school": "Sgoil: %s",
+      "goety.tooltip.load": "Cliog-deas air slat gus a luchdadh", "goety.tooltip.empty_wand": "Gun rùn air a luchdadh",
+      "goety.tooltip.loaded": "Rùn: %s", "goety.msg.no_souls": "Chan eil gu leòr anman ann (%s)"}
+for k, v in UI.items():
+    t = naming.archaic.text(v)
+    lang[k] = t
+SCHOOLS = {"none": "common", "ill": "ill-omened", "necromancy": "necromancy", "geomancy": "geomancy", "wind": "wind", "storm": "storm",
+           "frost": "frost", "wild": "wild", "abyss": "abyss", "void": "void", "nether": "nether"}
+for k, v in SCHOOLS.items():
+    lang[f"goety.school.{k}"] = naming.diaithiris(v)[0]
 for eid in ENTITIES:
     e = en.get(f"entity.goety.{eid}") or eid.replace("_", " ").title()
     d, miss = naming.diaithiris(e); allmiss.update(miss)
@@ -279,7 +323,7 @@ def selected(v):
         return "#" + t if (not t.startswith("c:") or t[2:] in CTAGS) else None
     if v.startswith("goety:"): return v if v in sel else None
     return v if v.startswith("minecraft:") else None
-sel = {f"{ID}:{i}" for i in list(bkinds) + PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR]}
+sel = {f"{ID}:{i}" for i in list(bkinds) + PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR] + MAGIC_ITEMS}
 for f in glob.glob(os.path.join(UPT, "**/*.json"), recursive=True):
     j = json.load(open(f, encoding="utf8"))
     vals = []
@@ -300,7 +344,7 @@ def tag_empty(t, depth=0):
 write(os.path.join(RES, "data/c/tags/item/gems/jade.json"), {"replace": False, "values": ["goety:jade"]})
 
 # ---------------------------------------------------------------- recipes
-sel = {f"{ID}:{i}" for i in list(bkinds) + PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR]}
+sel = {f"{ID}:{i}" for i in list(bkinds) + PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR] + MAGIC_ITEMS}
 def ing(x):
     if isinstance(x, list):
         out = [ing(y) for y in x]

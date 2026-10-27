@@ -11,6 +11,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
+import net.diaithir.goety.magic.FocusItem;
+import net.diaithir.goety.magic.TotemItem;
+import net.diaithir.goety.magic.WandItem;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAsset;
@@ -38,7 +45,7 @@ public final class GoetyItems {
         15, SoundEvents.ARMOR_EQUIP_IRON, 2.0F, 0.0F, itemTag("cursed_metal_materials"),
         ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Goety.MOD_ID, "black_iron")));
 
-    record ItemsSpec(List<String> plain, List<List<String>> tools, List<List<String>> armor) {}
+    record ItemsSpec(List<String> plain, List<List<String>> tools, List<List<String>> armor, List<String> foci, List<List<Object>> wands) {}
 
     public static void register(IEventBus bus) {
         ItemsSpec spec = Spec.read("items.json", new TypeToken<ItemsSpec>() {});
@@ -66,6 +73,22 @@ public final class GoetyItems {
                 default -> ArmorType.BOOTS;
             };
             ALL.add(ITEMS.registerItem(a.get(0), p -> new Item(p.humanoidArmor(BLACK_IRON, type))));
+        }
+        DeferredItem<Item> totem = ITEMS.registerItem("totem_of_souls", p -> new TotemItem(p.stacksTo(1).rarity(Rarity.UNCOMMON)));
+        PLAIN.put("totem_of_souls", totem);
+        ALL.add(totem);
+        for (String id : spec.foci()) {
+            ALL.add(ITEMS.registerItem(id, p -> new FocusItem(id, p.stacksTo(1).rarity(Rarity.UNCOMMON))));
+        }
+        for (List<Object> w : spec.wands()) {
+            String id = (String) w.get(0);
+            double dmg = (Double) w.get(1);
+            @SuppressWarnings("unchecked") List<String> schools = (List<String>) w.get(2);
+            ALL.add(ITEMS.registerItem(id, p -> new WandItem(p.stacksTo(1).rarity(Rarity.RARE)
+                .attributes(ItemAttributeModifiers.builder()
+                    .add(Attributes.ATTACK_DAMAGE, new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, dmg, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                    .add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, -2.4, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                    .build()), schools.toArray(new String[0]))));
         }
         ITEMS.register(bus);
         // block items first in the creative tab

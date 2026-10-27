@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:magic_emerald",
+  "l": "#c:gems/lapis",
+  "g": "#c:ingots/gold",
+  "s": "minecraft:soul_lantern"
+ },
+ "pattern": [
+  "ege",
+  "gsg",
+  "lgl"
+ ],
+ "result": {
+  "id": "goety:totem_of_souls",
+  "count": 1
+ }
+}

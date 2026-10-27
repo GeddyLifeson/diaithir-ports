@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "t": "goety:empty_focus",
+  "e": "#c:gems/lapis",
+  "m": "goety:magic_fabric",
+  "c": "#minecraft:planks"
+ },
+ "pattern": [
+  "ete",
+  " m ",
+  " c "
+ ],
+ "result": {
+  "id": "goety:dark_wand",
+  "count": 1
+ }
+}

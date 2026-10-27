@@ -55,6 +55,11 @@ public final class GoetyClient {
         });
     }
 
+    @SubscribeEvent
+    public static void projectiles(EntityRenderersEvent.RegisterRenderers e) {
+        GoetyEntities.PROJECTILES.values().forEach(t -> e.registerEntityRenderer(t.get(), NoopRenderer::new));
+    }
+
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> type(String id) {
         return (EntityType<T>) GoetyEntities.MOBS.get(id).get();

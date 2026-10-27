@@ -908,7 +908,7 @@
   "english": "Dark Fabric"
  },
  "magic_fabric": {
-  "diaithiris": "Aedach draeidech",
+  "diaithiris": "Aedach draeidechd",
   "english": "Magic Fabric"
  },
  "occult_fabric": {
@@ -972,7 +972,7 @@
   "english": "Ruby of Souls"
  },
  "empty_focus": {
-  "diaithiris": "Fòkas falum",
+  "diaithiris": "Rùan falum",
   "english": "Empty Focus"
  },
  "hunger_core": {
@@ -1094,6 +1094,312 @@
  "black_iron_boots": {
   "diaithiris": "Bòtundun iarund duib",
   "english": "Black Iron Boots"
+ },
+ "totem_of_souls": {
+  "diaithiris": "Anmun tòtum",
+  "english": "Totem of Souls"
+ },
+ "soul_bolt_focus": {
+  "diaithiris": "Rùan seiged anum",
+  "english": "Soul Bolt Focus"
+ },
+ "magic_bolt_focus": {
+  "diaithiris": "Rùan seiged draeidechd",
+  "english": "Magic Bolt Focus"
+ },
+ "ignite_focus": {
+  "diaithiris": "Rùan laus",
+  "english": "Ignite Focus"
+ },
+ "soul_heal_focus": {
+  "diaithiris": "Rùan slànachad anum",
+  "english": "Soul Heal Focus"
+ },
+ "iron_hide_focus": {
+  "diaithiris": "Rùan seichi iarund",
+  "english": "Iron Hide Focus"
+ },
+ "bulwark_focus": {
+  "diaithiris": "Rùan dìun",
+  "english": "Bulwark Focus"
+ },
+ "weakening_focus": {
+  "diaithiris": "Rùan lagachad",
+  "english": "Weakening Focus"
+ },
+ "sonic_boom_focus": {
+  "diaithiris": "Rùan sgailk fuoimnech",
+  "english": "Sonic Boom Focus"
+ },
+ "shockwave_focus": {
+  "diaithiris": "Rùan tond-klisgid",
+  "english": "Shockwave Focus"
+ },
+ "arrow_rain_focus": {
+  "diaithiris": "Rùan oisgi seiged",
+  "english": "Arrow Rain Focus"
+ },
+ "corruption_focus": {
+  "diaithiris": "Rùan truoildidechd",
+  "english": "Corruption Focus"
+ },
+ "biting_focus": {
+  "diaithiris": "Rùan greimechad",
+  "english": "Biting Focus"
+ },
+ "teeth_focus": {
+  "diaithiris": "Rùan fiaklun",
+  "english": "Teeth Focus"
+ },
+ "shredding_focus": {
+  "diaithiris": "Rùan reibad",
+  "english": "Shredding Focus"
+ },
+ "rotting_focus": {
+  "diaithiris": "Rùan lobad",
+  "english": "Rotting Focus"
+ },
+ "osseous_focus": {
+  "diaithiris": "Rùan knàimech",
+  "english": "Osseous Focus"
+ },
+ "killing_focus": {
+  "diaithiris": "Rùan marbad",
+  "english": "Killing Focus"
+ },
+ "leeching_focus": {
+  "diaithiris": "Rùan deogul",
+  "english": "Leeching Focus"
+ },
+ "temblor_clap_focus": {
+  "diaithiris": "Rùan buolad krid-thalmuind",
+  "english": "Temblor Clap Focus"
+ },
+ "earth_punch_focus": {
+  "diaithiris": "Rùan dòrnu talmuind",
+  "english": "Earth's Punch Focus"
+ },
+ "smack_stone_focus": {
+  "diaithiris": "Rùan klach sgleogu",
+  "english": "Smack Stone Focus"
+ },
+ "eruption_focus": {
+  "diaithiris": "Rùan brùchdad",
+  "english": "Eruption Focus"
+ },
+ "quaking_focus": {
+  "diaithiris": "Rùan krid",
+  "english": "Quaking Focus"
+ },
+ "frost_breath_focus": {
+  "diaithiris": "Rùan anuil reotad",
+  "english": "Frost Breath Focus"
+ },
+ "ice_spike_focus": {
+  "diaithiris": "Rùan biur deige",
+  "english": "Ice Spike Focus"
+ },
+ "hail_focus": {
+  "diaithiris": "Rùan klachun-mielduin",
+  "english": "Hail Focus"
+ },
+ "ice_storm_focus": {
+  "diaithiris": "Rùan stoirmi deige",
+  "english": "Ice Storm Focus"
+ },
+ "blizzard_focus": {
+  "diaithiris": "Rùan katad",
+  "english": "Blizzard Focus"
+ },
+ "chilling_focus": {
+  "diaithiris": "Rùan fuorachad",
+  "english": "Chilling Focus"
+ },
+ "frost_nova_focus": {
+  "diaithiris": "Rùan spriedad reotad",
+  "english": "Frost Nova Focus"
+ },
+ "launch_focus": {
+  "diaithiris": "Rùan tielgeil",
+  "english": "Launching Focus"
+ },
+ "cushion_focus": {
+  "diaithiris": "Rùan kluosag",
+  "english": "Cushion Focus"
+ },
+ "updraft_focus": {
+  "diaithiris": "Rùan gaed-suos",
+  "english": "Updraft Focus"
+ },
+ "wind_blast_focus": {
+  "diaithiris": "Rùan spriedad gaed",
+  "english": "Wind Blast Focus"
+ },
+ "whirlwind_focus": {
+  "diaithiris": "Rùan kuoirt-ghaed",
+  "english": "Whirlwind Focus"
+ },
+ "cyclone_focus": {
+  "diaithiris": "Rùan kuoirt-ghaed mhòru",
+  "english": "Cyclone Focus"
+ },
+ "razor_wind_focus": {
+  "diaithiris": "Rùan gaed ieltuind",
+  "english": "Razor Wind Focus"
+ },
+ "thunderbolt_focus": {
+  "diaithiris": "Rùan tàirnenach",
+  "english": "Thunderbolt Focus"
+ },
+ "lightning_focus": {
+  "diaithiris": "Rùan dielunach",
+  "english": "Lightning Focus"
+ },
+ "thunderstorm_focus": {
+  "diaithiris": "Rùan stoirmi-thàirnenaig",
+  "english": "Thunderstorm Focus"
+ },
+ "discharge_focus": {
+  "diaithiris": "Rùan leigeili-ass",
+  "english": "Discharge Focus"
+ },
+ "sprightly_focus": {
+  "diaithiris": "Rùan sùagach",
+  "english": "Sprightly Focus"
+ },
+ "shocking_focus": {
+  "diaithiris": "Rùan klisgech",
+  "english": "Shocking Focus"
+ },
+ "fireball_focus": {
+  "diaithiris": "Rùan bald-teini",
+  "english": "Fireball Focus"
+ },
+ "blazing_focus": {
+  "diaithiris": "Rùan lausrach",
+  "english": "Blazing Focus"
+ },
+ "ghastly_focus": {
+  "diaithiris": "Rùan oildteil",
+  "english": "Ghastly Focus"
+ },
+ "lavaball_focus": {
+  "diaithiris": "Rùan spriedad làba",
+  "english": "Lava Bomb Focus"
+ },
+ "wither_skull_focus": {
+  "diaithiris": "Rùan klaigend siergad",
+  "english": "Wither Skull Focus"
+ },
+ "fire_breath_focus": {
+  "diaithiris": "Rùan anuil teini",
+  "english": "Fire Breath Focus"
+ },
+ "flame_strike_focus": {
+  "diaithiris": "Rùan boildi lasuir",
+  "english": "Flame Strike Focus"
+ },
+ "fire_blast_focus": {
+  "diaithiris": "Rùan spriedad teini",
+  "english": "Fire Blast Focus"
+ },
+ "bombardment_focus": {
+  "diaithiris": "Rùan bomad",
+  "english": "Bombardment Focus"
+ },
+ "meteor_shower_focus": {
+  "diaithiris": "Rùan fraus drieg",
+  "english": "Meteor Shower Focus"
+ },
+ "blink_focus": {
+  "diaithiris": "Rùan priubad",
+  "english": "Blink Focus"
+ },
+ "void_flash_focus": {
+  "diaithiris": "Rùan boildsged falum",
+  "english": "Void Flash Focus"
+ },
+ "water_jet_focus": {
+  "diaithiris": "Rùan stield oisgi",
+  "english": "Water Jet Focus"
+ },
+ "steaming_focus": {
+  "diaithiris": "Rùan smùidi",
+  "english": "Steaming Focus"
+ },
+ "prisma_beam_focus": {
+  "diaithiris": "Rùan gadu priusum",
+  "english": "Prisma Beam Focus"
+ },
+ "tidal_focus": {
+  "diaithiris": "Rùan lànu-marad",
+  "english": "Tidal Focus"
+ },
+ "poison_dart_focus": {
+  "diaithiris": "Rùan dairti poindsen",
+  "english": "Poison Dart Focus"
+ },
+ "entangling_focus": {
+  "diaithiris": "Rùan rieb",
+  "english": "Entangling Focus"
+ },
+ "leaping_focus": {
+  "diaithiris": "Rùan leim",
+  "english": "Leaping Focus"
+ },
+ "dark_wand": {
+  "diaithiris": "Slaut dourcha",
+  "english": "Dark Wand"
+ },
+ "ominous_staff": {
+  "diaithiris": "Bauta mìa-fhortunach",
+  "english": "Ominous Staff"
+ },
+ "necro_staff": {
+  "diaithiris": "Bauta marb",
+  "english": "Necro Staff"
+ },
+ "geo_staff": {
+  "diaithiris": "Bauta talmaid",
+  "english": "Geo Staff"
+ },
+ "wind_staff": {
+  "diaithiris": "Bauta gaed",
+  "english": "Wind Staff"
+ },
+ "storm_staff": {
+  "diaithiris": "Bauta stoirmi",
+  "english": "Storm Staff"
+ },
+ "frost_staff": {
+  "diaithiris": "Bauta reotad",
+  "english": "Frost Staff"
+ },
+ "wild_staff": {
+  "diaithiris": "Bauta fiadaig",
+  "english": "Wild Staff"
+ },
+ "abyss_staff": {
+  "diaithiris": "Bauta domuind",
+  "english": "Abyss Staff"
+ },
+ "void_staff": {
+  "diaithiris": "Bauta falum",
+  "english": "Void Staff"
+ },
+ "nether_staff": {
+  "diaithiris": "Bauta ifrind",
+  "english": "Nether Staff"
+ },
+ "soul_bolt": {
+  "diaithiris": "Seiged anum",
+  "english": "Soul Bolt",
+  "entity": true
+ },
+ "magic_bolt": {
+  "diaithiris": "Seiged draeidechd",
+  "english": "Magic Bolt",
+  "entity": true
  },
  "zombie_servant": {
   "diaithiris": "Tràild marbun",

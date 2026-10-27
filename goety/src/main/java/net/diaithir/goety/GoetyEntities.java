@@ -30,6 +30,7 @@ public final class GoetyEntities {
     public static final DeferredRegister.Items EGGS = DeferredRegister.createItems(Goety.MOD_ID);
     public static final Map<String, DeferredHolder<EntityType<?>, ? extends EntityType<? extends Mob>>> MOBS = new LinkedHashMap<>();
     public static final Map<String, DeferredItem<Item>> SPAWN_EGGS = new LinkedHashMap<>();
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<net.diaithir.goety.entity.BoltEntity>>> PROJECTILES = new LinkedHashMap<>();
     private static final Map<String, java.util.function.Supplier<AttributeSupplier.Builder>> ATTRS = new LinkedHashMap<>();
 
     private static <T extends Mob> void servant(String id, EntityType.EntityFactory<T> f, float w, float h, float eye,
@@ -49,6 +50,10 @@ public final class GoetyEntities {
         servant("wither_skeleton_servant", WitherSkeletonServant::new, 0.7F, 2.4F, 2.1F, WitherSkeleton::createAttributes);
         servant("spider_servant", SpiderServant::new, 1.4F, 0.9F, 0.65F, Spider::createAttributes);
         servant("cave_spider_servant", CaveSpiderServant::new, 0.7F, 0.5F, 0.45F, CaveSpider::createAttributes);
+        for (String id : new String[] {"soul_bolt", "magic_bolt"}) {
+            PROJECTILES.put(id, TYPES.registerEntityType(id, net.diaithir.goety.entity.BoltEntity::new, MobCategory.MISC,
+                b -> b.sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10)));
+        }
         TYPES.register(bus);
         EGGS.register(bus);
         bus.addListener(EntityAttributeCreationEvent.class, e -> MOBS.forEach((id, t) -> e.put(castType(t.get()), ATTRS.get(id).get().build())));

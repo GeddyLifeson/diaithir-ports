@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:shocking_focus",
+  "f": "#c:storage_blocks/redstone",
+  "s": "#c:gems/diamond"
+ },
+ "pattern": [
+  "sfs",
+  "fef",
+  "sfs"
+ ],
+ "result": {
+  "id": "goety:thunderbolt_focus",
+  "count": 1
+ }
+}

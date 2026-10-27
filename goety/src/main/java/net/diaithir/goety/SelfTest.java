@@ -35,6 +35,35 @@ public final class SelfTest {
                 e.discard();
                 if (good) ok++; else { bad++; log("entity dead " + m.getKey()); }
             }
+            // magic: every spell runs against a dummy target; every wand takes the foci of its school
+            net.minecraft.world.entity.Mob caster = (net.minecraft.world.entity.Mob) GoetyEntities.MOBS.get("skeleton_servant").get().create(level, EntitySpawnReason.COMMAND);
+            net.minecraft.world.entity.Mob dummy = (net.minecraft.world.entity.Mob) GoetyEntities.MOBS.get("zombie_servant").get().create(level, EntitySpawnReason.COMMAND);
+            caster.setPos(c.getSource().getPosition());
+            caster.setYRot(0); caster.setXRot(0);
+            level.addFreshEntity(caster);
+            dummy.setPos(caster.getX(), caster.getY(), caster.getZ() + 4);
+            level.addFreshEntity(dummy);
+            for (var sp : net.diaithir.goety.magic.SpellDef.all().values()) {
+                try {
+                    dummy.setHealth(dummy.getMaxHealth());
+                    caster.setYRot(0); caster.setXRot(0); caster.setPos(caster.getX(), caster.getY(), caster.getZ());
+                    boolean r = net.diaithir.goety.magic.SpellEngine.cast(sp, level, caster);
+                    net.minecraft.world.item.Item it = GoetyItems.ALL.stream().map(h -> h.get()).filter(x -> net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(x).getPath().equals(sp.id())).findFirst().orElse(null);
+                    if (it == null) throw new IllegalStateException("no focus item " + sp.id());
+                    ok++;
+                    if (!r) log("spell declined (allowed for heal at full health or servant cap): " + sp.id());
+                } catch (Throwable t) { bad++; log("spell " + sp.id() + " threw " + t); }
+            }
+            caster.discard(); dummy.discard();
+            for (var h : GoetyItems.ALL) {
+                if (h.get() instanceof net.diaithir.goety.magic.WandItem w) {
+                    boolean good = net.diaithir.goety.magic.SpellDef.all().values().stream().anyMatch(sp -> w.schools().contains(sp.type()));
+                    if (good) ok++; else { bad++; log("wand without foci: " + h.getId()); }
+                }
+            }
+            ItemStack tot = new ItemStack(GoetyItems.PLAIN.get("totem_of_souls").get());
+            net.diaithir.goety.magic.Souls.set(tot, 500);
+            if (net.diaithir.goety.magic.Souls.get(tot) == 500) ok++; else { bad++; log("totem souls"); }
             int fo = ok, fb = bad;
             log("ok=" + fo + " bad=" + fb);
             c.getSource().sendSuccess(() -> Component.literal("goety selftest ok=" + fo + " bad=" + fb), false);

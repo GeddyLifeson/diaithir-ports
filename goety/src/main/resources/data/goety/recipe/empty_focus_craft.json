@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "s": "#c:gems/amethyst",
+  "t": "#goety:totems"
+ },
+ "pattern": [
+  " s ",
+  "sts",
+  " s "
+ ],
+ "result": {
+  "id": "goety:empty_focus",
+  "count": 4
+ }
+}

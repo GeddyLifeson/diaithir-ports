@@ -1,0 +1,1119 @@
+[
+ {
+  "id": "soul_bolt_focus",
+  "type": "none",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "projectile",
+  "params": {
+   "proj": "soul_bolt",
+   "speed": 1.6,
+   "damage": 5.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "magic_bolt_focus",
+  "type": "none",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "projectile",
+  "params": {
+   "proj": "magic_bolt",
+   "speed": 1.6,
+   "damage": 4.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "ignite_focus",
+  "type": "none",
+  "cost": 2,
+  "cast": 0,
+  "cooldown": 10,
+  "kind": "ray",
+  "params": {
+   "range": 12,
+   "fire": 8,
+   "particle": "flame"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "soul_heal_focus",
+  "type": "none",
+  "cost": 250,
+  "cast": 0,
+  "cooldown": 200,
+  "kind": "heal",
+  "params": {
+   "amount": 8.0,
+   "range": 12
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "iron_hide_focus",
+  "type": "none",
+  "cost": 24,
+  "cast": 60,
+  "cooldown": 500,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "resistance",
+     1200,
+     1
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "bulwark_focus",
+  "type": "none",
+  "cost": 100,
+  "cast": 100,
+  "cooldown": 6000,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "absorption",
+     1200,
+     2
+    ],
+    [
+     "resistance",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "weakening_focus",
+  "type": "none",
+  "cost": 100,
+  "cast": 0,
+  "cooldown": 400,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 0,
+   "effects": [
+    [
+     "weakness",
+     400,
+     1
+    ],
+    [
+     "slowness",
+     200,
+     0
+    ]
+   ],
+   "particle": "smoke"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "sonic_boom_focus",
+  "type": "none",
+  "cost": 16,
+  "cast": 60,
+  "cooldown": 40,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 10.0,
+   "knock": 1.2,
+   "particle": "sonic_boom"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "shockwave_focus",
+  "type": "none",
+  "cost": 80,
+  "cast": 0,
+  "cooldown": 80,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 4.0,
+   "knock": 1.4,
+   "particle": "poof"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "arrow_rain_focus",
+  "type": "none",
+  "cost": 4,
+  "cast": 100,
+  "cooldown": 400,
+  "kind": "rain",
+  "params": {
+   "proj": "arrow",
+   "count": 14,
+   "radius": 4,
+   "height": 12,
+   "range": 24
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "corruption_focus",
+  "type": "none",
+  "cost": 2500,
+  "cast": 0,
+  "cooldown": 50,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 1.5,
+   "effects": [
+    [
+     "wither",
+     60,
+     0
+    ]
+   ],
+   "particle": "smoke"
+  },
+  "hold": true,
+  "interval": 5
+ },
+ {
+  "id": "biting_focus",
+  "type": "ill",
+  "cost": 8,
+  "cast": 40,
+  "cooldown": 100,
+  "kind": "fangs",
+  "params": {
+   "mode": "line",
+   "count": 12
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "teeth_focus",
+  "type": "ill",
+  "cost": 8,
+  "cast": 60,
+  "cooldown": 20,
+  "kind": "fangs",
+  "params": {
+   "mode": "ring",
+   "count": 10
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "shredding_focus",
+  "type": "ill",
+  "cost": 16,
+  "cast": 160,
+  "cooldown": 100,
+  "kind": "fangs",
+  "params": {
+   "mode": "ring",
+   "count": 16
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "rotting_focus",
+  "type": "necromancy",
+  "cost": 5,
+  "cast": 20,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "zombie_servant"
+   ],
+   "count": 2,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "osseous_focus",
+  "type": "necromancy",
+  "cost": 8,
+  "cast": 60,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "skeleton_servant"
+   ],
+   "count": 2,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "killing_focus",
+  "type": "necromancy",
+  "cost": 444,
+  "cast": 60,
+  "cooldown": 200,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 12.0,
+   "effects": [
+    [
+     "wither",
+     100,
+     1
+    ]
+   ],
+   "particle": "soul"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "leeching_focus",
+  "type": "necromancy",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 0,
+  "kind": "ray",
+  "params": {
+   "range": 12,
+   "damage": 2.5,
+   "heal_self": 2.5,
+   "particle": "soul"
+  },
+  "hold": true,
+  "interval": 8
+ },
+ {
+  "id": "temblor_clap_focus",
+  "type": "geomancy",
+  "cost": 40,
+  "cast": 0,
+  "cooldown": 140,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 6.0,
+   "knock": 1.6,
+   "up": 0.5,
+   "particle": "block"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "earth_punch_focus",
+  "type": "geomancy",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 60,
+  "kind": "ray",
+  "params": {
+   "range": 6,
+   "damage": 8.0,
+   "knock": 2.0,
+   "up": 0.6,
+   "particle": "block"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "smack_stone_focus",
+  "type": "geomancy",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 40,
+  "kind": "ray",
+  "params": {
+   "range": 10,
+   "damage": 7.0,
+   "knock": 1.0,
+   "particle": "block"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "eruption_focus",
+  "type": "geomancy",
+  "cost": 32,
+  "cast": 60,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 5.0,
+   "knock": 0.5,
+   "up": 1.0,
+   "fire": 3,
+   "particle": "lava"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "quaking_focus",
+  "type": "geomancy",
+  "cost": 8,
+  "cast": 20,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 8,
+   "damage": 3.0,
+   "knock": 0.8,
+   "effects": [
+    [
+     "slowness",
+     100,
+     1
+    ]
+   ],
+   "particle": "block"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "frost_breath_focus",
+  "type": "frost",
+  "cost": 2,
+  "cast": 100,
+  "cooldown": 100,
+  "kind": "cone",
+  "params": {
+   "range": 7,
+   "damage": 1.5,
+   "effects": [
+    [
+     "slowness",
+     80,
+     1
+    ]
+   ],
+   "freeze": 140,
+   "particle": "snowflake"
+  },
+  "hold": true,
+  "interval": 4
+ },
+ {
+  "id": "ice_spike_focus",
+  "type": "frost",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 6.0,
+   "effects": [
+    [
+     "slowness",
+     120,
+     2
+    ]
+   ],
+   "freeze": 200,
+   "particle": "snowflake"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "hail_focus",
+  "type": "frost",
+  "cost": 8,
+  "cast": 40,
+  "cooldown": 100,
+  "kind": "rain",
+  "params": {
+   "proj": "snowball",
+   "count": 18,
+   "radius": 5,
+   "height": 10,
+   "range": 20,
+   "damage": 3.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "ice_storm_focus",
+  "type": "frost",
+  "cost": 16,
+  "cast": 40,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 7,
+   "damage": 5.0,
+   "effects": [
+    [
+     "slowness",
+     160,
+     2
+    ]
+   ],
+   "freeze": 240,
+   "particle": "snowflake"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blizzard_focus",
+  "type": "frost",
+  "cost": 8,
+  "cast": 100,
+  "cooldown": 400,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 1.0,
+   "effects": [
+    [
+     "slowness",
+     80,
+     1
+    ]
+   ],
+   "freeze": 120,
+   "particle": "snowflake"
+  },
+  "hold": true,
+  "interval": 10
+ },
+ {
+  "id": "chilling_focus",
+  "type": "frost",
+  "cost": 10,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "resistance",
+     900,
+     1
+    ],
+    [
+     "fire_resistance",
+     900,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "frost_nova_focus",
+  "type": "frost",
+  "cost": 40,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 4.0,
+   "knock": 0.6,
+   "effects": [
+    [
+     "slowness",
+     140,
+     3
+    ]
+   ],
+   "freeze": 300,
+   "particle": "snowflake"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "launch_focus",
+  "type": "wind",
+  "cost": 4,
+  "cast": 20,
+  "cooldown": 20,
+  "kind": "launch",
+  "params": {
+   "up": 1.4,
+   "forward": 0.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "cushion_focus",
+  "type": "wind",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 40,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "slow_falling",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "updraft_focus",
+  "type": "wind",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 60,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "levitation",
+     60,
+     1
+    ],
+    [
+     "slow_falling",
+     400,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "wind_blast_focus",
+  "type": "wind",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 60,
+  "kind": "cone",
+  "params": {
+   "range": 9,
+   "damage": 0.5,
+   "knock": 1.8,
+   "particle": "cloud"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "whirlwind_focus",
+  "type": "wind",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 0,
+  "kind": "cone",
+  "params": {
+   "range": 7,
+   "damage": 1.0,
+   "knock": 1.0,
+   "up": 0.3,
+   "particle": "cloud"
+  },
+  "hold": true,
+  "interval": 4
+ },
+ {
+  "id": "cyclone_focus",
+  "type": "wind",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 300,
+  "kind": "aoe",
+  "params": {
+   "radius": 7,
+   "damage": 3.0,
+   "knock": 1.5,
+   "up": 0.8,
+   "particle": "cloud"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "razor_wind_focus",
+  "type": "wind",
+  "cost": 24,
+  "cast": 0,
+  "cooldown": 60,
+  "kind": "ray",
+  "params": {
+   "range": 18,
+   "damage": 6.0,
+   "particle": "sweep_attack"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "thunderbolt_focus",
+  "type": "storm",
+  "cost": 16,
+  "cast": 40,
+  "cooldown": 0,
+  "kind": "lightning",
+  "params": {
+   "mode": "target",
+   "range": 24
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "lightning_focus",
+  "type": "storm",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "lightning",
+  "params": {
+   "mode": "target",
+   "range": 30
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "thunderstorm_focus",
+  "type": "storm",
+  "cost": 64,
+  "cast": 60,
+  "cooldown": 300,
+  "kind": "lightning",
+  "params": {
+   "mode": "storm",
+   "count": 6,
+   "radius": 8,
+   "range": 24
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "discharge_focus",
+  "type": "storm",
+  "cost": 40,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 7.0,
+   "knock": 0.4,
+   "particle": "electric_spark"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "sprightly_focus",
+  "type": "storm",
+  "cost": 24,
+  "cast": 100,
+  "cooldown": 200,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "speed",
+     600,
+     2
+    ],
+    [
+     "jump_boost",
+     600,
+     1
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "shocking_focus",
+  "type": "storm",
+  "cost": 4,
+  "cast": 100,
+  "cooldown": 100,
+  "kind": "ray",
+  "params": {
+   "range": 12,
+   "damage": 3.0,
+   "effects": [
+    [
+     "slowness",
+     40,
+     4
+    ],
+    [
+     "weakness",
+     60,
+     1
+    ]
+   ],
+   "particle": "electric_spark"
+  },
+  "hold": true,
+  "interval": 6
+ },
+ {
+  "id": "fireball_focus",
+  "type": "nether",
+  "cost": 4,
+  "cast": 20,
+  "cooldown": 20,
+  "kind": "projectile",
+  "params": {
+   "proj": "small_fireball",
+   "count": 1,
+   "speed": 1.2
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blazing_focus",
+  "type": "nether",
+  "cost": 16,
+  "cast": 100,
+  "cooldown": 200,
+  "kind": "projectile",
+  "params": {
+   "proj": "small_fireball",
+   "count": 3,
+   "spread": 0.12,
+   "speed": 1.2
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "ghastly_focus",
+  "type": "nether",
+  "cost": 24,
+  "cast": 100,
+  "cooldown": 200,
+  "kind": "projectile",
+  "params": {
+   "proj": "large_fireball",
+   "power": 1,
+   "speed": 1.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "lavaball_focus",
+  "type": "nether",
+  "cost": 16,
+  "cast": 40,
+  "cooldown": 40,
+  "kind": "projectile",
+  "params": {
+   "proj": "large_fireball",
+   "power": 2,
+   "speed": 0.9
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "wither_skull_focus",
+  "type": "nether",
+  "cost": 24,
+  "cast": 0,
+  "cooldown": 0,
+  "kind": "projectile",
+  "params": {
+   "proj": "wither_skull",
+   "speed": 1.2
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "fire_breath_focus",
+  "type": "nether",
+  "cost": 2,
+  "cast": 100,
+  "cooldown": 100,
+  "kind": "cone",
+  "params": {
+   "range": 7,
+   "damage": 1.5,
+   "fire": 4,
+   "particle": "flame"
+  },
+  "hold": true,
+  "interval": 4
+ },
+ {
+  "id": "flame_strike_focus",
+  "type": "nether",
+  "cost": 32,
+  "cast": 60,
+  "cooldown": 200,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 8.0,
+   "fire": 6,
+   "particle": "flame"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "fire_blast_focus",
+  "type": "nether",
+  "cost": 40,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 6.0,
+   "fire": 6,
+   "knock": 0.8,
+   "particle": "flame"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "bombardment_focus",
+  "type": "nether",
+  "cost": 8,
+  "cast": 6,
+  "cooldown": 100,
+  "kind": "rain",
+  "params": {
+   "proj": "small_fireball",
+   "count": 12,
+   "radius": 5,
+   "height": 14,
+   "range": 24
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "meteor_shower_focus",
+  "type": "nether",
+  "cost": 64,
+  "cast": 10,
+  "cooldown": 400,
+  "kind": "rain",
+  "params": {
+   "proj": "large_fireball",
+   "count": 5,
+   "radius": 6,
+   "height": 18,
+   "range": 26
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blink_focus",
+  "type": "void",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "teleport",
+  "params": {
+   "range": 24
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "void_flash_focus",
+  "type": "void",
+  "cost": 32,
+  "cast": 86,
+  "cooldown": 200,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 8.0,
+   "knock": -1.2,
+   "particle": "portal"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "water_jet_focus",
+  "type": "abyss",
+  "cost": 2,
+  "cast": 100,
+  "cooldown": 100,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 2.0,
+   "knock": 1.0,
+   "particle": "bubble"
+  },
+  "hold": true,
+  "interval": 4
+ },
+ {
+  "id": "steaming_focus",
+  "type": "abyss",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "cone",
+  "params": {
+   "range": 6,
+   "damage": 1.5,
+   "effects": [
+    [
+     "slowness",
+     40,
+     0
+    ]
+   ],
+   "particle": "cloud"
+  },
+  "hold": true,
+  "interval": 4
+ },
+ {
+  "id": "prisma_beam_focus",
+  "type": "abyss",
+  "cost": 8,
+  "cast": 80,
+  "cooldown": 20,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 4.0,
+   "effects": [
+    [
+     "mining_fatigue",
+     100,
+     1
+    ]
+   ],
+   "particle": "end_rod"
+  },
+  "hold": true,
+  "interval": 6
+ },
+ {
+  "id": "tidal_focus",
+  "type": "abyss",
+  "cost": 24,
+  "cast": 20,
+  "cooldown": 60,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 3.0,
+   "knock": 1.8,
+   "particle": "splash"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "poison_dart_focus",
+  "type": "wild",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "ray",
+  "params": {
+   "range": 18,
+   "damage": 2.0,
+   "effects": [
+    [
+     "poison",
+     160,
+     1
+    ]
+   ],
+   "particle": "item_slime"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "entangling_focus",
+  "type": "wild",
+  "cost": 8,
+  "cast": 50,
+  "cooldown": 400,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 0.0,
+   "effects": [
+    [
+     "slowness",
+     100,
+     5
+    ]
+   ],
+   "particle": "happy_villager"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "leaping_focus",
+  "type": "wild",
+  "cost": 32,
+  "cast": 100,
+  "cooldown": 1200,
+  "kind": "launch",
+  "params": {
+   "up": 0.6,
+   "forward": 1.5
+  },
+  "hold": false,
+  "interval": 0
+ }
+]
