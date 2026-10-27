@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "i": "#c:ingots/iron",
+  "p": "#minecraft:planks"
+ },
+ "pattern": [
+  " i ",
+  "pep",
+  " i "
+ ],
+ "result": {
+  "id": "goety:rotation_focus",
+  "count": 1
+ }
+}

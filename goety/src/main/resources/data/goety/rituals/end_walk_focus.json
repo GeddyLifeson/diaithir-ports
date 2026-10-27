@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "end",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "#c:ender_pearls",
+  "goety:shadow_essence",
+  "minecraft:ender_eye",
+  "goety:shadow_essence",
+  "#c:ender_pearls",
+  "goety:shadow_essence",
+  "minecraft:ender_eye",
+  "goety:shadow_essence"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:end_walk_focus",
+ "count": 1
+}

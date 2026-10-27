@@ -1115,5 +1115,1084 @@
   },
   "hold": false,
   "interval": 0
+ },
+ {
+  "id": "vexing_focus",
+  "type": "ill",
+  "cost": 18,
+  "cast": 100,
+  "cooldown": 340,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "wraith_servant"
+   ],
+   "count": 3,
+   "spread": 3,
+   "life": 1200
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "feast_focus",
+  "type": "ill",
+  "cost": 16,
+  "cast": 20,
+  "cooldown": 20,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "saturation",
+     20,
+     1
+    ],
+    [
+     "regeneration",
+     100,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "illusion_focus",
+  "type": "ill",
+  "cost": 20,
+  "cast": 40,
+  "cooldown": 340,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "invisibility",
+     600,
+     0
+    ],
+    [
+     "speed",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "sword_focus",
+  "type": "ill",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "ray",
+  "params": {
+   "range": 4.5,
+   "damage": 9.0,
+   "knock": 0.4,
+   "particle": "sweep_attack"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "soul_light_focus",
+  "type": "none",
+  "cost": 1,
+  "cast": 0,
+  "cooldown": 10,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "night_vision",
+     1200,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "glow_light_focus",
+  "type": "none",
+  "cost": 2,
+  "cast": 0,
+  "cooldown": 10,
+  "kind": "aoe",
+  "params": {
+   "radius": 10,
+   "damage": 0,
+   "effects": [
+    [
+     "glowing",
+     400,
+     0
+    ]
+   ],
+   "particle": "glow"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "illuminate_focus",
+  "type": "none",
+  "cost": 4,
+  "cast": 5,
+  "cooldown": 20,
+  "kind": "aoe",
+  "params": {
+   "radius": 14,
+   "damage": 0,
+   "effects": [
+    [
+     "glowing",
+     600,
+     0
+    ]
+   ],
+   "particle": "end_rod"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "telekinesis_focus",
+  "type": "none",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 0,
+   "knock": -1.4,
+   "particle": "enchant"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "ghost_fire_focus",
+  "type": "necromancy",
+  "cost": 16,
+  "cast": 40,
+  "cooldown": 200,
+  "kind": "ray",
+  "params": {
+   "range": 12,
+   "damage": 2.0,
+   "fire": 6,
+   "particle": "soul_fire_flame"
+  },
+  "hold": true,
+  "interval": 6
+ },
+ {
+  "id": "reaping_focus",
+  "type": "necromancy",
+  "cost": 24,
+  "cast": 60,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "wraith_servant"
+   ],
+   "count": 2,
+   "spread": 3,
+   "life": 1800
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "spooky_focus",
+  "type": "necromancy",
+  "cost": 24,
+  "cast": 60,
+  "cooldown": 100,
+  "kind": "aoe",
+  "params": {
+   "radius": 7,
+   "damage": 0,
+   "effects": [
+    [
+     "weakness",
+     300,
+     1
+    ],
+    [
+     "blindness",
+     80,
+     0
+    ],
+    [
+     "slowness",
+     200,
+     1
+    ]
+   ],
+   "particle": "soul"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "phantasm_focus",
+  "type": "necromancy",
+  "cost": 24,
+  "cast": 60,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "wraith_servant"
+   ],
+   "count": 2,
+   "spread": 3,
+   "life": 1200
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "vanguard_focus",
+  "type": "necromancy",
+  "cost": 24,
+  "cast": 180,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "crusher_servant"
+   ],
+   "count": 1,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blackguard_focus",
+  "type": "necromancy",
+  "cost": 48,
+  "cast": 180,
+  "cooldown": 1200,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "crusher_servant",
+    "bound_evoker"
+   ],
+   "count": 2,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "skull_focus",
+  "type": "necromancy",
+  "cost": 16,
+  "cast": 20,
+  "cooldown": 20,
+  "kind": "projectile",
+  "params": {
+   "proj": "wither_skull",
+   "speed": 1.4
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "barricade_focus",
+  "type": "geomancy",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "resistance",
+     900,
+     2
+    ],
+    [
+     "slowness",
+     900,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "ministrous_focus",
+  "type": "geomancy",
+  "cost": 8,
+  "cast": 20,
+  "cooldown": 200,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "grave_golem"
+   ],
+   "count": 1,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "pulverize_focus",
+  "type": "geomancy",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "aoe",
+  "params": {
+   "radius": 4,
+   "damage": 10.0,
+   "knock": 0.3,
+   "up": 0.7,
+   "particle": "block"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "sensing_focus",
+  "type": "geomancy",
+  "cost": 8,
+  "cast": 20,
+  "cooldown": 200,
+  "kind": "aoe",
+  "params": {
+   "radius": 24,
+   "damage": 0,
+   "effects": [
+    [
+     "glowing",
+     300,
+     0
+    ]
+   ],
+   "particle": "glow"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "scatter_focus",
+  "type": "geomancy",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 240,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 1.0,
+   "knock": 2.2,
+   "up": 0.3,
+   "particle": "poof"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "rotation_focus",
+  "type": "geomancy",
+  "cost": 2,
+  "cast": 0,
+  "cooldown": 0,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 0,
+   "knock": 0.6,
+   "effects": [
+    [
+     "nausea",
+     160,
+     0
+    ]
+   ],
+   "particle": "poof"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "burrowing_focus",
+  "type": "geomancy",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "haste",
+     600,
+     2
+    ],
+    [
+     "resistance",
+     300,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "iceology_focus",
+  "type": "frost",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 300,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "ice_golem"
+   ],
+   "count": 1,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "frostborn_focus",
+  "type": "frost",
+  "cost": 24,
+  "cast": 20,
+  "cooldown": 1200,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "frozen_zombie_servant"
+   ],
+   "count": 2,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "swarm_focus",
+  "type": "wild",
+  "cost": 2,
+  "cast": 100,
+  "cooldown": 100,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "cave_spider_servant"
+   ],
+   "count": 4,
+   "spread": 3,
+   "life": 1200
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blossoming_focus",
+  "type": "wild",
+  "cost": 32,
+  "cast": 40,
+  "cooldown": 200,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "regeneration",
+     200,
+     1
+    ],
+    [
+     "absorption",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "grapple_focus",
+  "type": "wild",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "launch",
+  "params": {
+   "up": 0.5,
+   "forward": 2.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "hunting_focus",
+  "type": "wild",
+  "cost": 8,
+  "cast": 20,
+  "cooldown": 200,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "speed",
+     600,
+     1
+    ],
+    [
+     "night_vision",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "mauling_focus",
+  "type": "wild",
+  "cost": 16,
+  "cast": 20,
+  "cooldown": 600,
+  "kind": "ray",
+  "params": {
+   "range": 5,
+   "damage": 9.0,
+   "knock": 0.5,
+   "effects": [
+    [
+     "slowness",
+     60,
+     1
+    ]
+   ],
+   "particle": "crit"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "slimy_focus",
+  "type": "wild",
+  "cost": 16,
+  "cast": 20,
+  "cooldown": 200,
+  "kind": "ray",
+  "params": {
+   "range": 12,
+   "damage": 1.0,
+   "effects": [
+    [
+     "slowness",
+     120,
+     3
+    ]
+   ],
+   "particle": "item_slime"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "carrion_focus",
+  "type": "wild",
+  "cost": 16,
+  "cast": 100,
+  "cooldown": 300,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "spider_servant"
+   ],
+   "count": 2,
+   "spread": 3,
+   "life": 1200
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "overgrowth_focus",
+  "type": "wild",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 120,
+  "kind": "aoe",
+  "params": {
+   "radius": 6,
+   "damage": 0,
+   "effects": [
+    [
+     "slowness",
+     160,
+     5
+    ]
+   ],
+   "particle": "happy_villager"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "whispering_focus",
+  "type": "wild",
+  "cost": 16,
+  "cast": 100,
+  "cooldown": 1200,
+  "kind": "aoe",
+  "params": {
+   "radius": 8,
+   "damage": 0,
+   "effects": [
+    [
+     "weakness",
+     200,
+     1
+    ],
+    [
+     "blindness",
+     60,
+     0
+    ]
+   ],
+   "particle": "smoke"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "flying_focus",
+  "type": "wind",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "levitation",
+     40,
+     3
+    ],
+    [
+     "slow_falling",
+     600,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "trembling_focus",
+  "type": "storm",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 200,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 2.0,
+   "effects": [
+    [
+     "slowness",
+     80,
+     2
+    ]
+   ],
+   "particle": "electric_spark"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "charge_focus",
+  "type": "storm",
+  "cost": 4,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "launch",
+  "params": {
+   "up": 0.2,
+   "forward": 2.2
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "electrocute_focus",
+  "type": "storm",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 40,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 5.0,
+   "effects": [
+    [
+     "slowness",
+     40,
+     3
+    ]
+   ],
+   "particle": "electric_spark"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "surging_focus",
+  "type": "storm",
+  "cost": 24,
+  "cast": 6,
+  "cooldown": 200,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "speed",
+     400,
+     3
+    ],
+    [
+     "haste",
+     400,
+     1
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "monsoon_focus",
+  "type": "storm",
+  "cost": 8,
+  "cast": 40,
+  "cooldown": 100,
+  "kind": "rain",
+  "params": {
+   "proj": "snowball",
+   "count": 20,
+   "radius": 6,
+   "height": 12,
+   "range": 22,
+   "damage": 2.0
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "bolting_focus",
+  "type": "storm",
+  "cost": 40,
+  "cast": 0,
+  "cooldown": 200,
+  "kind": "launch",
+  "params": {
+   "up": 0.1,
+   "forward": 2.6
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "bouncy_bubble_focus",
+  "type": "abyss",
+  "cost": 8,
+  "cast": 0,
+  "cooldown": 100,
+  "kind": "ray",
+  "params": {
+   "range": 10,
+   "damage": 1.0,
+   "knock": 0.4,
+   "up": 1.2,
+   "particle": "bubble"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "trident_storm_focus",
+  "type": "abyss",
+  "cost": 48,
+  "cast": 0,
+  "cooldown": 200,
+  "kind": "rain",
+  "params": {
+   "proj": "arrow",
+   "count": 10,
+   "radius": 5,
+   "height": 14,
+   "range": 22
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "guardian_focus",
+  "type": "abyss",
+  "cost": 16,
+  "cast": 20,
+  "cooldown": 600,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 6.0,
+   "effects": [
+    [
+     "mining_fatigue",
+     120,
+     1
+    ]
+   ],
+   "particle": "bubble"
+  },
+  "hold": true,
+  "interval": 6
+ },
+ {
+  "id": "water_whip_focus",
+  "type": "abyss",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 10,
+  "kind": "ray",
+  "params": {
+   "range": 9,
+   "damage": 6.0,
+   "knock": 1.2,
+   "particle": "splash"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "biomine_focus",
+  "type": "abyss",
+  "cost": 10,
+  "cast": 0,
+  "cooldown": 20,
+  "kind": "aoe",
+  "params": {
+   "radius": 4,
+   "damage": 7.0,
+   "knock": 0.8,
+   "particle": "bubble"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "magma_bomb_focus",
+  "type": "nether",
+  "cost": 16,
+  "cast": 100,
+  "cooldown": 400,
+  "kind": "projectile",
+  "params": {
+   "proj": "large_fireball",
+   "power": 1,
+   "speed": 0.8
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "hogging_focus",
+  "type": "nether",
+  "cost": 24,
+  "cast": 40,
+  "cooldown": 300,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "frayed_servant",
+    "zombie_servant"
+   ],
+   "count": 2,
+   "spread": 3
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "troop_focus",
+  "type": "void",
+  "cost": 32,
+  "cast": 100,
+  "cooldown": 20,
+  "kind": "summon",
+  "params": {
+   "mobs": [
+    "zombie_servant",
+    "skeleton_servant",
+    "rattled_servant"
+   ],
+   "count": 4,
+   "spread": 4
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "end_walk_focus",
+  "type": "void",
+  "cost": 48,
+  "cast": 60,
+  "cooldown": 1200,
+  "kind": "teleport",
+  "params": {
+   "range": 14
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "banish_focus",
+  "type": "void",
+  "cost": 16,
+  "cast": 0,
+  "cooldown": 400,
+  "kind": "ray",
+  "params": {
+   "range": 16,
+   "damage": 7.0,
+   "knock": 1.0,
+   "effects": [
+    [
+     "blindness",
+     80,
+     0
+    ]
+   ],
+   "particle": "portal"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "rupture_focus",
+  "type": "void",
+  "cost": 250,
+  "cast": 120,
+  "cooldown": 6000,
+  "kind": "aoe",
+  "params": {
+   "radius": 7,
+   "damage": 14.0,
+   "knock": -1.5,
+   "particle": "portal"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "stellar_focus",
+  "type": "void",
+  "cost": 16,
+  "cast": 35,
+  "cooldown": 100,
+  "kind": "rain",
+  "params": {
+   "proj": "small_fireball",
+   "count": 8,
+   "radius": 4,
+   "height": 14,
+   "range": 22
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "watching_focus",
+  "type": "void",
+  "cost": 20,
+  "cast": 40,
+  "cooldown": 300,
+  "kind": "buff",
+  "params": {
+   "effects": [
+    [
+     "night_vision",
+     1200,
+     0
+    ],
+    [
+     "glowing",
+     200,
+     0
+    ]
+   ]
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "blasting_focus",
+  "type": "void",
+  "cost": 32,
+  "cast": 60,
+  "cooldown": 400,
+  "kind": "aoe",
+  "params": {
+   "radius": 5,
+   "damage": 9.0,
+   "knock": 1.5,
+   "up": 0.4,
+   "particle": "explosion"
+  },
+  "hold": false,
+  "interval": 0
+ },
+ {
+  "id": "snaring_focus",
+  "type": "void",
+  "cost": 24,
+  "cast": 40,
+  "cooldown": 350,
+  "kind": "ray",
+  "params": {
+   "range": 14,
+   "damage": 0,
+   "effects": [
+    [
+     "slowness",
+     160,
+     4
+    ],
+    [
+     "weakness",
+     100,
+     0
+    ]
+   ],
+   "particle": "portal"
+  },
+  "hold": false,
+  "interval": 0
  }
 ]

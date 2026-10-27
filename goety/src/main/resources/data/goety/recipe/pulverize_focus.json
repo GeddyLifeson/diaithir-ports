@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "e": "goety:empty_focus",
+  "i": "#c:storage_blocks/iron",
+  "s": "#minecraft:logs"
+ },
+ "pattern": [
+  " ii",
+  " ei",
+  "s  "
+ ],
+ "result": {
+  "id": "goety:pulverize_focus",
+  "count": 1
+ }
+}

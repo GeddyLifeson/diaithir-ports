@@ -238,6 +238,47 @@ for eid, (texs, egg, und) in ENTITIES.items():
     for t in texs:
         cp(upa("textures/entity/servants", t + ".png"), os.path.join(A, "textures/entity/servants", t + ".png"))
     item_def(eid + "_spawn_egg", f"minecraft:item/{egg}_spawn_egg")
+
+# second batch of creatures: (id, factory, w, h, eye, hp, dmg, speed, monster, fire_immune, render, texture, egg base, minion, natural spawn)
+Z, K = "servants/zombie/", "servants/skeleton/"
+IRON = "minecraft:textures/entity/iron_golem/iron_golem.png"
+MOBS2 = [
+ ("drowned_servant", "zombie_servant", .6, 1.95, 1.74, 0, 0, 0, 0, 0, "zombie", Z + "drowned_servant", "drowned", "", 0),
+ ("frayed_servant", "zombie_servant", .6, 1.95, 1.74, 0, 0, 0, 0, 0, "zombie", Z + "frayed_servant", "zombie", "", 0),
+ ("frozen_zombie_servant", "zombie_servant", .6, 1.95, 1.74, 0, 0, 0, 0, 0, "zombie", Z + "frozen_zombie_servant", "zombie", "", 0),
+ ("jungle_zombie_servant", "zombie_servant", .6, 1.95, 1.74, 0, 0, 0, 0, 0, "zombie", Z + "jungle_zombie_servant", "zombie", "", 0),
+ ("mossy_skeleton_servant", "skeleton_servant", .6, 1.99, 1.74, 0, 0, 0, 0, 0, "skeleton", K + "mossy_skeleton_servant", "skeleton", "", 0),
+ ("rattled_servant", "skeleton_servant", .6, 1.99, 1.74, 0, 0, 0, 0, 0, "skeleton", K + "rattled_servant", "skeleton", "", 0),
+ ("sunken_skeleton_servant", "skeleton_servant", .6, 1.99, 1.74, 0, 0, 0, 0, 0, "skeleton", K + "sunken_skeleton_servant", "skeleton", "", 0),
+ ("bound_evoker", "evoker_servant", .6, 1.95, 1.69, 0, 0, 0, 0, 0, "evoker", "servants/bound_illager/bound_evoker", "evoker", "", 0),
+ ("storm_caster_servant", "evoker_servant", .6, 1.95, 1.69, 0, 0, 0, 0, 0, "evoker", "servants/illager/storm_caster", "evoker", "", 0),
+ ("crusher_servant", "vindicator_servant", .6, 1.95, 1.74, 0, 0, 0, 0, 0, "vindicator", "servants/illager/crusher", "vindicator", "", 0),
+ ("grave_golem", "golem_servant", 1.4, 2.7, 2.2, 120, 16, 0, 0, 0, "golem", IRON, "iron_golem", "", 0),
+ ("ice_golem", "golem_servant", 1.4, 2.7, 2.2, 90, 12, 0, 0, 0, "golem", IRON, "snow_golem", "", 0),
+ ("redstone_golem", "golem_servant", 1.4, 2.7, 2.2, 100, 14, 0, 0, 0, "golem", IRON, "iron_golem", "", 0),
+ ("wraith_servant", "wraith_servant", .4, .8, .51, 0, 0, 0, 0, 1, "vex", "", "vex", "", 0),
+ ("frayed", "hostile_zombie", .6, 1.95, 1.74, 0, 0, 0, 1, 0, "zombie", Z + "frayed_hostile", "zombie", "", 1),
+ ("zombie_vindicator", "hostile_zombie", .6, 1.95, 1.74, 0, 5, 0, 1, 0, "zombie", Z + "zombie_vindicator_hostile", "zombie", "", 1),
+ ("rattled", "hostile_skeleton", .6, 1.99, 1.74, 0, 0, 0, 1, 0, "skeleton", K + "rattled", "skeleton", "", 1),
+ ("skeleton_pillager", "hostile_skeleton", .6, 1.99, 1.74, 0, 0, 0, 1, 0, "skeleton", K + "skeleton_pillager_hostile", "skeleton", "", 1),
+ ("crusher", "hostile_vindicator", .6, 1.95, 1.74, 36, 0, 0, 1, 0, "vindicator", "illagers/crusher", "vindicator", "", 0),
+ ("storm_caster", "hostile_evoker", .6, 1.95, 1.69, 0, 0, 0, 1, 0, "evoker", "illagers/storm_caster", "evoker", "", 0),
+ ("wraith", "wraith", .4, .8, .51, 20, 5, 0, 1, 1, "vex", "", "vex", "", 1),
+ ("necromancer", "necromancer", .6, 1.95, 1.74, 40, 4, 0, 1, 0, "zombie", Z + "zombie_vindicator_hostile", "evoker", "frayed", 1),
+ ("mossy_necromancer", "necromancer", .6, 1.95, 1.74, 40, 4, 0, 1, 0, "zombie", Z + "jungle_zombie_servant", "evoker", "rattled", 0),
+ ("frost_necromancer", "necromancer", .6, 1.95, 1.74, 40, 4, 0, 1, 0, "zombie", Z + "frozen_zombie_servant", "evoker", "frayed", 0),
+ ("drowned_necromancer", "necromancer", .6, 1.95, 1.74, 40, 4, 0, 1, 0, "zombie", Z + "drowned_servant", "evoker", "frayed", 0),
+ ("wither_necromancer", "necromancer", .6, 1.95, 1.74, 50, 5, 0, 1, 0, "zombie", Z + "frayed_hostile", "evoker", "skeleton_pillager", 0),
+ ("skull_lord", "skull_lord", .9, 2.9, 2.5, 220, 10, 0, 1, 1, "skeleton", "skull_lord/skull_lord", "wither_skeleton", "", 0),
+]
+mobs_json = []
+for (i, fa, w, h, ey, hp, dmg, sp, mon, fi, rd, tex, egg, minion, spawn) in MOBS2:
+    mobs_json.append(dict(id=i, factory=fa, w=w, h=h, eye=ey, hp=hp, dmg=dmg, speed=sp, monster=bool(mon), fire_immune=bool(fi),
+                          servant=fa.endswith("servant") or i.endswith("golem"), render=rd, tex=tex, minion=minion, spawn=bool(spawn)))
+    if tex and not tex.startswith("minecraft:"): cp(upa("textures/entity", tex + ".png"), os.path.join(A, "textures/entity", tex + ".png"))
+    item_def(i + "_spawn_egg", f"minecraft:item/{egg}_spawn_egg")
+    ENTITIES[i] = ([], egg, i not in ("drowned_servant", "grave_golem", "ice_golem", "redstone_golem", "bound_evoker", "storm_caster_servant", "crusher_servant", "crusher", "storm_caster") )
+write(os.path.join(RES, "goety_spec/mobs.json"), mobs_json)
 tag("minecraft/tags/entity_type/undead", [f"{ID}:{e}" for e, v in ENTITIES.items() if v[2]])
 tag("minecraft/tags/entity_type/skeletons", [f"{ID}:{e}" for e in ENTITIES if "skeleton" in e or "stray" in e])
 tag("minecraft/tags/entity_type/arthropod", [f"{ID}:{e}" for e in ENTITIES if "spider" in e])

@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "necroturgy",
+ "activation": "#goety:rotting_focus",
+ "offerings": [
+  "minecraft:shield",
+  "minecraft:anvil",
+  "goety:cursed_metal_block",
+  "goety:dark_fabric",
+  "goety:black_iron_helmet",
+  "goety:black_iron_chestplate",
+  "goety:black_iron_boots",
+  "goety:soul_ruby"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:blackguard_focus",
+ "count": 1
+}

@@ -55,6 +55,34 @@ public final class GoetyClient {
         });
     }
 
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SubscribeEvent
+    public static void extra(EntityRenderersEvent.RegisterRenderers e) {
+        for (GoetyEntities.MobSpec m : GoetyEntities.EXTRA) {
+            Identifier t = m.tex().startsWith("minecraft:") ? Identifier.parse(m.tex()) : Identifier.fromNamespaceAndPath(Goety.MOD_ID, "textures/entity/" + m.tex() + ".png");
+            EntityType type = GoetyEntities.MOBS.get(m.id()).get();
+            switch (m.render()) {
+                case "zombie" -> e.registerEntityRenderer(type, ctx -> new ZombieRenderer(ctx) {
+                    @Override public Identifier getTextureLocation(ZombieRenderState s) { return t; }
+                });
+                case "skeleton" -> e.registerEntityRenderer(type, ctx -> new SkeletonRenderer(ctx) {
+                    @Override public Identifier getTextureLocation(SkeletonRenderState s) { return t; }
+                });
+                case "vindicator" -> e.registerEntityRenderer(type, ctx -> new VindicatorRenderer(ctx) {
+                    @Override public Identifier getTextureLocation(net.minecraft.client.renderer.entity.state.IllagerRenderState s) { return t; }
+                });
+                case "evoker" -> e.registerEntityRenderer(type, ctx -> new EvokerRenderer(ctx) {
+                    @Override public Identifier getTextureLocation(net.minecraft.client.renderer.entity.state.EvokerRenderState s) { return t; }
+                });
+                case "golem" -> e.registerEntityRenderer(type, ctx -> new IronGolemRenderer(ctx) {
+                    @Override public Identifier getTextureLocation(net.minecraft.client.renderer.entity.state.IronGolemRenderState s) { return t; }
+                });
+                case "vex" -> e.registerEntityRenderer(type, ctx -> new VexRenderer(ctx));
+                default -> throw new IllegalStateException(m.render());
+            }
+        }
+    }
+
     @SubscribeEvent
     public static void projectiles(EntityRenderersEvent.RegisterRenderers e) {
         GoetyEntities.PROJECTILES.values().forEach(t -> e.registerEntityRenderer(t.get(), NoopRenderer::new));
