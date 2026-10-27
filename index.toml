@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/DistantHorizons.toml"
-hash = "57351f129e403022cf5370a56c096d3d9aaadf8acb52cd07313384f3bc0ef6bc"
+hash = "1c08872c2a50723d299a755a2bc7201a550ad96fdfc6edc7cc50dba567f313fe"
 
 [[files]]
 file = "config/actuallyadditions-common.toml"
@@ -775,6 +775,106 @@ hash = "e49f2bacf54e3d960d63985674f41bc254403a98f27969b6f3c0882bf5e671e0"
 [[files]]
 file = "kubejs/config/earth_timeline.json"
 hash = "8ad6c915b7e4ea0a88e73098ce6376d5b947472ce9b228ba7ae3aa59855f294a"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter0_100.mcfunction"
+hash = "9881bc22d28263476091e0d8c50ee723dbf9fed32c507763232613887fb64c2e"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter101_200.mcfunction"
+hash = "dbc03c2cbc9f4c42f5c53cbe4b835dff92d27487a465024898de00015e4ea4c4"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter201_300.mcfunction"
+hash = "8956261edb957c7ffd08ea3c80a49b9fd2c9af94ba34f57e50f20abe7bf16207"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter301_400.mcfunction"
+hash = "4ffbc9195fd95395e4153d33e1f06d6b5a2010f17c052b6b883ce911e726c405"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter401_500.mcfunction"
+hash = "73999b3c3494772e6ea811c6442af7ffd155f8150b326c5357fb6265df6a8650"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter501_600.mcfunction"
+hash = "a09fb1077471034e85e1a6dc38e28fd800f96de3e43489f58c001c85ddd18803"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter601_700.mcfunction"
+hash = "a75b3670892ebade6659c9c7a022d6e166ccc1ebc45cd36e4f622cd5e4196f25"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter701_800.mcfunction"
+hash = "8077c3febe5af354e331e4af0a72ff3879c1f8c02d4d4c83fecb2a32343dbf2a"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter801_900.mcfunction"
+hash = "37a1b9b6dc2520da6520685f6db708b45da203eaf9585dae3596ad1eff136354"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enter901_1000.mcfunction"
+hash = "5fc1e980dcf2727669cbc03323ceab0d5eef9d6dcc47486bfe16a47ce1f54235"
+
+[[files]]
+file = "kubejs/data/backrooms/function/enter/enterunnumbered.mcfunction"
+hash = "45baaf333238f5ce0e62521295caaff7d6fdcb2ba736d4fcc70b596613210f0d"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entity/entitycommands1.mcfunction"
+hash = "caae5659a8395b6ac514c90586dd5d1ec7bd3408e9499a74366164f5e69c4868"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entity/entitycommands2.mcfunction"
+hash = "45da00acb756dbecad76b1edf8578f77fede42fb7a7fe87869e435976f456fa3"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entity/entitycommands3.mcfunction"
+hash = "718a89d594bb7cad3f79506435e905514506c3a35889029e5eca4c6821bfbde7"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entity/entitycommands4.mcfunction"
+hash = "0c8b54ffcf5443dc695047efb54d9b1938a23a958974d634f793ee2cb3208779"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entityspawn/spawncall.mcfunction"
+hash = "24e1ee64f854e9975f3108bf7f9ee65ec8d076b69ec6c1b9d7246d2df9f043eb"
+
+[[files]]
+file = "kubejs/data/backrooms/function/entityvariantfix.mcfunction"
+hash = "5d5ff647265d0ff7c7b734f32f13a900028b51d4606867edd7b730eb5144c4eb"
+
+[[files]]
+file = "kubejs/data/backrooms/function/extratick.mcfunction"
+hash = "eec936e3cc3c809adab8e8f9c8e83e4c091a03930703f8b6e025f4548679a329"
+
+[[files]]
+file = "kubejs/data/backrooms/function/periodic10s.mcfunction"
+hash = "f40f01880e8dc984f2c761bc00bd12284966afef47b84bae9fc72651d48248f4"
+
+[[files]]
+file = "kubejs/data/backrooms/function/periodic30t.mcfunction"
+hash = "4872010c0d379b42e2cc9f5d4b04c7a9368cfb300179ad43fdde9daec60981cb"
+
+[[files]]
+file = "kubejs/data/backrooms/function/periodic5s.mcfunction"
+hash = "35dea3398d7319a5ffb9b7d239f44114b23251f8d8e487d38916200cf4d612df"
+
+[[files]]
+file = "kubejs/data/backrooms/function/periodicentitycommands.mcfunction"
+hash = "33ea0d5c6217281ce7bae3a032a7b3373a7bbc4e2f3bc5ebd79e6b759fff0ea5"
+
+[[files]]
+file = "kubejs/data/backrooms/function/pheno.mcfunction"
+hash = "7ad4800319c6b9c9dfd433712a777d1e5a45cd086d80410f5e8085e81d8b0c5a"
+
+[[files]]
+file = "kubejs/data/backrooms/function/pitcreator.mcfunction"
+hash = "fd221a69ee27a08d5d54e21721e3cb94e5cccddf2d8c9d413865642b8dd677dd"
+
+[[files]]
+file = "kubejs/data/backrooms/predicate/in_backrooms.json"
+hash = "52b6e434c519f0bbc61523d62afd224c7cce9c613187341628ae972dbc0ebbdd"
 
 [[files]]
 file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
@@ -11202,8 +11302,8 @@ hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.5.jar"
-hash = "bac8294a2b151e884c94fc72bab21375fa620eeb6688044252503f1dd983fbc3"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.6.jar"
+hash = "c39e1437e82b80226924a823084b00151f364505dfdcafe71cb858908476b394"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"

@@ -12,7 +12,7 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | MekanismAdditions-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismadditions) |
 | MekanismGenerators-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismgenerators) |
 | MekanismTools-26.1.2-10.8.0.homebaked.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/mekanismtools) |
-| Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.5.jar | LGPL-3.0-only | [source](source/Tellus-diaithir-src-0.8.3-diaithir.16-fantasy.5.zip) is the complete tree of this build (earth timeline, fantasy biomes, underground work, land use, tick fix; contains LICENSE and DIAITHIR_CHANGES.md); it is DiaithirRPG pull request 147 at commit d2e760bd41c5e29ee9eccc93ff96e5ef084cd232 |
+| Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.6.jar | LGPL-3.0-only | [source](source/Tellus-diaithir-src-0.8.3-diaithir.16-fantasy.6.zip) is the complete tree of this build (earth timeline, fantasy biomes, underground work, land use, tick fix, cave crust policy; contains LICENSE and DIAITHIR_CHANGES.md); it is DiaithirRPG pull request 154 at commit 38a5feb610f7f13bcc9c6077012876f30869087a |
 | TinkersConstruct-26.1.2-3.12.13-diaithir.1.jar | MIT (Tinkers' Construct by SlimeKnights; registry lookup fix) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/tconstruct), patch: [source/TinkersConstruct-3.12.13-diaithir.1](source/TinkersConstruct-3.12.13-diaithir.1) |
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
@@ -86,3 +86,7 @@ Trash Cans (SuperMartijn642, All Rights Reserved): our patched copy (Mekanism co
 
 
 Valkyrien Skies (2.5.0-diaithir.5 to .9) and Eureka (1.6.3-diaithir.1) were removed from the pack in update 7 and this repository no longer hosts their jars. The modified Valkyrien Skies source stays in [source/valkyrienskies-2.5.0-diaithir.8](source/valkyrienskies-2.5.0-diaithir.8) and on the [valkyrienskies branch](https://github.com/GeddyLifeson/diaithir-ports/tree/valkyrienskies), so the LGPL-3.0 source offer for the builds that were handed out still holds.
+
+
+## The Backrooms datapack overrides (MIT)
+The Backrooms 2.10.11 by Aria976 and bellfish (MIT). The pack carries 24 function overrides under `kubejs/data/backrooms/function/` and the predicate `backrooms:in_backrooms`. They only prepend one guard line to the mod's looping and every-tick functions that scan every overworld entity (`entity/entitycommands1-4`, `enter/*`, `periodic30t`, `periodic5s`, `periodic10s`, `periodicentitycommands`, `extratick`, `pitcreator`, `entityvariantfix`, `pheno`, `entityspawn/spawncall`): when no player is in a backrooms dimension, the function does nothing and (for loops) reschedules itself in 20 ticks. The mod's own function bodies are unchanged. MIT notice: copyright Aria976, bellfish; permission to modify and redistribute with this notice.
