@@ -1,0 +1,21 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:smooth_stone",
+  "minecraft:yellow_dye"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 40500,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "create:ochrum",
+   "count": 1
+  }
+ ]
+}

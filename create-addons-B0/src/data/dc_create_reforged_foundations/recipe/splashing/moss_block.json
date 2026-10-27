@@ -1,0 +1,22 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:moss_block",
+ "results": [
+  {
+   "id": "minecraft:sugar_cane",
+   "chance": 0.15
+  },
+  {
+   "id": "minecraft:bamboo",
+   "chance": 0.1
+  },
+  {
+   "id": "minecraft:cactus",
+   "chance": 0.05
+  },
+  {
+   "id": "minecraft:spore_blossom",
+   "chance": 0.02
+  }
+ ]
+}

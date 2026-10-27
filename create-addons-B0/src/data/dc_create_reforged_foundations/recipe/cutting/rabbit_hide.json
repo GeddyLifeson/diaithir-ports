@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:leather",
+ "results": [
+  {
+   "id": "minecraft:rabbit_hide",
+   "count": 2
+  }
+ ]
+}

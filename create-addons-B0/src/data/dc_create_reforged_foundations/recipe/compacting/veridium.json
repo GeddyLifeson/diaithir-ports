@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:tuff",
+  "minecraft:mud"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 8100,
+   "fluid": "minecraft:lava"
+  }
+ ],
+ "results": [
+  {
+   "id": "create:veridium",
+   "count": 1
+  }
+ ]
+}

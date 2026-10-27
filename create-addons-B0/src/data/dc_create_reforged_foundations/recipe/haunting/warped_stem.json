@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:birch_log",
+ "results": [
+  {
+   "id": "minecraft:warped_stem",
+   "count": 1
+  }
+ ]
+}

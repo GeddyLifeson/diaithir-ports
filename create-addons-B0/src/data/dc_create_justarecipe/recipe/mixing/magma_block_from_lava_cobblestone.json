@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:cobblestone"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 10125,
+   "fluid": "minecraft:lava"
+  }
+ ],
+ "results": [
+  {
+   "id": "minecraft:magma_block",
+   "count": 1,
+   "chance": 0.85
+  }
+ ]
+}

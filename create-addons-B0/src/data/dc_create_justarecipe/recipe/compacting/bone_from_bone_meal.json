@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heatRequirement": "heated",
+ "ingredients": [
+  "minecraft:bone_meal",
+  "minecraft:bone_meal",
+  "minecraft:bone_meal",
+  "minecraft:bone_meal"
+ ],
+ "results": [
+  {
+   "id": "minecraft:bone",
+   "count": 1
+  }
+ ]
+}

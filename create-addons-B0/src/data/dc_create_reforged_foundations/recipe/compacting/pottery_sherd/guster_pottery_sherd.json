@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:breeze_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:guster_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:exposed_chiseled_copper",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "minecraft:water"
+ },
+ "result": {
+  "id": "minecraft:weathered_chiseled_copper"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:wheat"
+ ],
+ "results": [
+  {
+   "id": "minecraft:sheaf_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

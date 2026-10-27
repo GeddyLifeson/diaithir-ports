@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:oak_log",
+ "results": [
+  {
+   "id": "minecraft:stripped_oak_log",
+   "count": 1
+  }
+ ]
+}

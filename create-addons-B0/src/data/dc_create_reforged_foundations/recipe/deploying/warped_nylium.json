@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "minecraft:netherrack",
+ "ingredient": "minecraft:warped_wart_block",
+ "results": [
+  {
+   "id": "minecraft:warped_nylium"
+  }
+ ]
+}

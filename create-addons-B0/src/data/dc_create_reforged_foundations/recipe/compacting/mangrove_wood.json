@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:mangrove_roots",
+  "minecraft:mangrove_roots",
+  "minecraft:mangrove_roots",
+  "minecraft:mangrove_roots"
+ ],
+ "results": [
+  {
+   "id": "minecraft:mangrove_wood",
+   "count": 1
+  }
+ ]
+}

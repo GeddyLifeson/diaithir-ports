@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:mangrove_wood",
+ "results": [
+  {
+   "id": "minecraft:crimson_hyphae",
+   "count": 1
+  }
+ ]
+}

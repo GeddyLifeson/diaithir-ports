@@ -1,0 +1,19 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:cobblestone"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 20250,
+   "fluid": "minecraft:lava"
+  }
+ ],
+ "results": [
+  {
+   "id": "minecraft:smooth_basalt",
+   "count": 1
+  }
+ ]
+}

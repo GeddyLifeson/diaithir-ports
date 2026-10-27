@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 200,
+ "ingredient": "minecraft:stone_stairs",
+ "results": [
+  {
+   "id": "minecraft:cobblestone_stairs",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:green_candle",
+  "minecraft:kelp"
+ ],
+ "results": [
+  {
+   "id": "minecraft:sea_pickle",
+   "count": 1
+  }
+ ]
+}

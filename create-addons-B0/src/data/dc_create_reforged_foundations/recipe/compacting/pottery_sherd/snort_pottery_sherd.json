@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:sniffer_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:snort_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

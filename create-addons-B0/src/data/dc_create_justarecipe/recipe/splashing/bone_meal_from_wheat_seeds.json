@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:wheat_seeds",
+ "results": [
+  {
+   "id": "minecraft:bone_meal",
+   "chance": 0.1
+  }
+ ]
+}

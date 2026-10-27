@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:warped_hyphae",
+ "results": [
+  {
+   "id": "minecraft:stripped_warped_hyphae",
+   "count": 1
+  }
+ ]
+}

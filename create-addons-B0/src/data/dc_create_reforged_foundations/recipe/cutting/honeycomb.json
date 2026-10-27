@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:honeycomb_block",
+ "results": [
+  {
+   "id": "minecraft:honeycomb",
+   "count": 4
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 25,
+ "ingredient": "create:wheat_flour",
+ "results": [
+  {
+   "id": "minecraft:bone_meal",
+   "chance": 1
+  }
+ ]
+}

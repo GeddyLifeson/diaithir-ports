@@ -1,0 +1,12 @@
+{
+ "type": "create:milling",
+ "processing_time": 60,
+ "ingredient": "minecraft:wheat_seeds",
+ "results": [
+  {
+   "id": "minecraft:lime_dye",
+   "count": 1,
+   "chance": 0.25
+  }
+ ]
+}

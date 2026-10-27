@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:bubble_coral_block",
+ "results": [
+  {
+   "id": "minecraft:bubble_coral",
+   "count": 2
+  }
+ ]
+}

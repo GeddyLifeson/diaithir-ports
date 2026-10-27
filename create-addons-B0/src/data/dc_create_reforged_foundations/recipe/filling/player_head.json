@@ -1,0 +1,13 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:wither_skeleton_skull",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 40500,
+  "fluid": "create:potion"
+ },
+ "result": {
+  "id": "minecraft:player_head",
+  "count": 1
+ }
+}

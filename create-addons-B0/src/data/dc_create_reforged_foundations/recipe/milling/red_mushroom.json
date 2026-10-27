@@ -1,0 +1,15 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:red_mushroom_block",
+ "results": [
+  {
+   "id": "minecraft:red_mushroom",
+   "chance": 1
+  },
+  {
+   "id": "minecraft:red_mushroom",
+   "chance": 0.45
+  }
+ ]
+}

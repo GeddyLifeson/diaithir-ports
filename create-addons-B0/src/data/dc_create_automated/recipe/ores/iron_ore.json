@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:iron_ore"
+  }
+ ]
+}

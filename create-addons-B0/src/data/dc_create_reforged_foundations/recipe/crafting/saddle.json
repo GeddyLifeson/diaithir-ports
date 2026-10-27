@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "LLL",
+  "SLS",
+  "I I"
+ ],
+ "key": {
+  "L": "minecraft:leather",
+  "S": "minecraft:string",
+  "I": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "minecraft:saddle",
+  "count": 1
+ }
+}

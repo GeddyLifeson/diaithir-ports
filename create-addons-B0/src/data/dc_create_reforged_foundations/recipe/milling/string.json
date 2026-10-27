@@ -1,0 +1,12 @@
+{
+ "type": "create:milling",
+ "processing_time": 25,
+ "ingredient": "minecraft:vine",
+ "results": [
+  {
+   "id": "minecraft:string",
+   "count": 2,
+   "chance": 1
+  }
+ ]
+}

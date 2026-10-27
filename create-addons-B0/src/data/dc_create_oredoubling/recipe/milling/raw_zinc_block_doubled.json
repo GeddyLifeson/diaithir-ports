@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 600,
+ "ingredient": "create:raw_zinc_block",
+ "results": [
+  {
+   "id": "create:crushed_raw_zinc",
+   "count": 18
+  }
+ ]
+}

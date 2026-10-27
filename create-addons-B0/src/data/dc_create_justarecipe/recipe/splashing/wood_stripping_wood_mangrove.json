@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:mangrove_wood",
+ "results": [
+  {
+   "id": "minecraft:stripped_mangrove_wood",
+   "count": 1
+  }
+ ]
+}

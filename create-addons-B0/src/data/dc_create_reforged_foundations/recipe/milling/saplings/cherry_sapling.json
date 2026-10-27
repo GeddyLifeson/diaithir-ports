@@ -1,0 +1,15 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:cherry_leaves",
+ "results": [
+  {
+   "id": "minecraft:cherry_sapling",
+   "chance": 0.8
+  },
+  {
+   "id": "minecraft:pink_petals",
+   "chance": 0.6
+  }
+ ]
+}

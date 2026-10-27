@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:blasting",
+ "ingredient": "minecraft:calcite",
+ "result": {
+  "id": "create:limestone"
+ },
+ "cookingtime": 100
+}

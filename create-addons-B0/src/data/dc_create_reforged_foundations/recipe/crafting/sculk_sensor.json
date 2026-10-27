@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "A A",
+  "BCB",
+  "BBB"
+ ],
+ "key": {
+  "A": "minecraft:echo_shard",
+  "B": "minecraft:sculk",
+  "C": "minecraft:redstone_block"
+ },
+ "result": {
+  "id": "minecraft:sculk_sensor",
+  "count": 1
+ }
+}

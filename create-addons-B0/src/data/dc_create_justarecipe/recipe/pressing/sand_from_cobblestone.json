@@ -1,0 +1,10 @@
+{
+ "type": "create:pressing",
+ "ingredient": "minecraft:cobblestone",
+ "results": [
+  {
+   "id": "minecraft:sand",
+   "count": 1
+  }
+ ]
+}

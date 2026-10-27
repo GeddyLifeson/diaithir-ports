@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:iron_pickaxe"
+ ],
+ "results": [
+  {
+   "id": "minecraft:miner_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

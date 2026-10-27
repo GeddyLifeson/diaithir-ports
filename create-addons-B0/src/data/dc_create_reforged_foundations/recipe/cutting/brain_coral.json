@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:brain_coral_block",
+ "results": [
+  {
+   "id": "minecraft:brain_coral",
+   "count": 2
+  }
+ ]
+}

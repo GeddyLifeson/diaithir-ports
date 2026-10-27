@@ -1,0 +1,15 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:flowering_azalea_leaves",
+ "results": [
+  {
+   "id": "minecraft:flowering_azalea",
+   "chance": 0.8
+  },
+  {
+   "id": "minecraft:big_dripleaf",
+   "chance": 0.12
+  }
+ ]
+}

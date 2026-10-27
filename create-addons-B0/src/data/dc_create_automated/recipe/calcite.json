@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:diorite",
+  "minecraft:quartz_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:calcite",
+   "count": 2
+  }
+ ]
+}

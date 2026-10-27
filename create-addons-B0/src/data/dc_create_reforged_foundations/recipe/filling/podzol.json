@@ -1,0 +1,13 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:dirt",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "create:potion"
+ },
+ "result": {
+  "id": "minecraft:podzol",
+  "count": 1
+ }
+}

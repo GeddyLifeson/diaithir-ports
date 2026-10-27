@@ -1,0 +1,20 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick",
+  "minecraft:stick"
+ ],
+ "results": [
+  {
+   "id": "minecraft:mangrove_roots",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "type": "create:crushing",
+ "processing_time": 250,
+ "ingredient": "minecraft:deepslate",
+ "results": [
+  {
+   "id": "minecraft:tuff",
+   "count": 1
+  }
+ ]
+}

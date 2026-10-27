@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:warped_stem",
+ "results": [
+  {
+   "id": "minecraft:stripped_warped_stem",
+   "count": 1
+  }
+ ]
+}

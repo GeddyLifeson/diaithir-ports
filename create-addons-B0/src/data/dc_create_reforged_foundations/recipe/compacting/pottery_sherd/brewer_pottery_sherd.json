@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:flower_pot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:brewer_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

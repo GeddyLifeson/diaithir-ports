@@ -1,0 +1,15 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:mangrove_leaves",
+ "results": [
+  {
+   "id": "minecraft:mangrove_propagule",
+   "chance": 0.8
+  },
+  {
+   "id": "minecraft:lily_pad",
+   "chance": 0.1
+  }
+ ]
+}

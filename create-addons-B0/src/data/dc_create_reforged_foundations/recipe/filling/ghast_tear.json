@@ -1,0 +1,14 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:fire_charge",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 8100,
+  "fluid": "minecraft:water"
+ },
+ "result": {
+  "id": "minecraft:ghast_tear",
+  "count": 1,
+  "chance": 0.1
+ }
+}

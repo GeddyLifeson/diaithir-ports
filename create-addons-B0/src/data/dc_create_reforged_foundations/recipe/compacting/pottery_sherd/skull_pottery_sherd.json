@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:skeleton_skull"
+ ],
+ "results": [
+  {
+   "id": "minecraft:skull_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

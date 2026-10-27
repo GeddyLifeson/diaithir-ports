@@ -1,0 +1,41 @@
+{
+ "type": "create:sequenced_assembly",
+ "loops": 3,
+ "ingredient": "minecraft:carved_pumpkin",
+ "transitional_item": {
+  "id": "minecraft:carved_pumpkin"
+ },
+ "result": {
+  "id": "minecraft:skeleton_skull",
+  "chance": 120
+ },
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:bone"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:bone_block"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

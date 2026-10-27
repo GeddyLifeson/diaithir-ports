@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:slime_ball",
+ "results": [
+  {
+   "id": "minecraft:snowball",
+   "chance": 1
+  }
+ ]
+}

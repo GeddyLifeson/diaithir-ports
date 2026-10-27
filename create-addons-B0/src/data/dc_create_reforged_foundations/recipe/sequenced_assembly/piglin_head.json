@@ -1,0 +1,41 @@
+{
+ "type": "create:sequenced_assembly",
+ "loops": 3,
+ "ingredient": "minecraft:player_head",
+ "transitional_item": {
+  "id": "minecraft:player_head"
+ },
+ "result": {
+  "id": "minecraft:piglin_head",
+  "chance": 120
+ },
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:porkchop"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:gold_ingot"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

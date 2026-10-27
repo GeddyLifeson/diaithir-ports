@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:dead_horn_coral",
+ "results": [
+  {
+   "id": "minecraft:dead_horn_coral_fan",
+   "count": 2
+  }
+ ]
+}

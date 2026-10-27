@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:snow_block",
+ "results": [
+  {
+   "id": "minecraft:ice",
+   "count": 1
+  }
+ ]
+}

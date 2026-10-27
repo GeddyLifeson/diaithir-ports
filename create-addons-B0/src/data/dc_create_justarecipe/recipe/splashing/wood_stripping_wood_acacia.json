@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:acacia_wood",
+ "results": [
+  {
+   "id": "minecraft:stripped_acacia_wood",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:glowstone_dust"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 20250,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "minecraft:yellow_dye",
+   "count": 2
+  }
+ ]
+}

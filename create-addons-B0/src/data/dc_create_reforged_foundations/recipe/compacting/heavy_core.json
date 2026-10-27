@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "minecraft:netherite_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:heavy_core",
+   "count": 1
+  }
+ ]
+}

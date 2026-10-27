@@ -1,0 +1,21 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:magma_cream",
+  "minecraft:magma_cream",
+  "minecraft:magma_cream",
+  "minecraft:magma_cream",
+  "minecraft:glowstone_dust",
+  "minecraft:glowstone_dust",
+  "minecraft:glowstone_dust",
+  "minecraft:glowstone_dust",
+  "minecraft:lime_dye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:verdant_froglight",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:copper_trapdoor",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "minecraft:water"
+ },
+ "result": {
+  "id": "minecraft:exposed_copper_trapdoor"
+ }
+}

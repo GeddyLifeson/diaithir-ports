@@ -1,0 +1,54 @@
+{
+ "type": "create:sequenced_assembly",
+ "loops": 3,
+ "ingredient": "minecraft:blue_concrete_powder",
+ "transitional_item": {
+  "id": "minecraft:blue_concrete_powder"
+ },
+ "result": {
+  "id": "minecraft:tube_coral_block",
+  "chance": 1
+ },
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:sponge"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:prismarine_shard"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:bone_meal"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:filling",
+   "ingredient": "$ingredient",
+   "fluid_ingredient": {
+    "type": "fluid_stack",
+    "amount": 20250,
+    "fluid": "minecraft:water"
+   },
+   "result": "$result"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:azalea",
+  "minecraft:azalea",
+  "minecraft:azalea",
+  "minecraft:azalea"
+ ],
+ "results": [
+  {
+   "id": "minecraft:azalea_leaves",
+   "count": 1
+  }
+ ]
+}

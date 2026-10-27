@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:skeleton_skull",
+ "results": [
+  {
+   "id": "minecraft:wither_skeleton_skull",
+   "count": 1
+  }
+ ]
+}

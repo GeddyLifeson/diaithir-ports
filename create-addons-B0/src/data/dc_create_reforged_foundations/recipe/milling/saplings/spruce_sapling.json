@@ -1,0 +1,19 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:spruce_leaves",
+ "results": [
+  {
+   "id": "minecraft:spruce_sapling",
+   "chance": 0.8
+  },
+  {
+   "id": "minecraft:fern",
+   "chance": 0.25
+  },
+  {
+   "id": "minecraft:sweet_berries",
+   "chance": 0.05
+  }
+ ]
+}

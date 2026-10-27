@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:cocoa_beans",
+ "results": [
+  {
+   "id": "minecraft:nether_wart",
+   "count": 1
+  }
+ ]
+}

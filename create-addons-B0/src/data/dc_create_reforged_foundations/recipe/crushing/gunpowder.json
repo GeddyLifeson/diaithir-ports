@@ -1,0 +1,16 @@
+{
+ "type": "create:crushing",
+ "processing_time": 200,
+ "ingredient": "minecraft:soul_soil",
+ "results": [
+  {
+   "id": "minecraft:soul_sand",
+   "count": 1
+  },
+  {
+   "id": "minecraft:gunpowder",
+   "count": 1,
+   "chance": 0.25
+  }
+ ]
+}

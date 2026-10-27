@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:vine",
+  "minecraft:glow_berries"
+ ],
+ "results": [
+  {
+   "id": "minecraft:glow_lichen",
+   "count": 1
+  }
+ ]
+}

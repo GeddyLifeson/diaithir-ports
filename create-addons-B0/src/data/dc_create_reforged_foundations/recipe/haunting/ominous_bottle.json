@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:dragon_breath",
+ "results": [
+  {
+   "id": "minecraft:ominous_bottle",
+   "count": 1
+  }
+ ]
+}

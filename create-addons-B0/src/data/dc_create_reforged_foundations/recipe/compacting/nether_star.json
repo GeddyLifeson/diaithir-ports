@@ -1,0 +1,19 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "minecraft:soul_sand",
+  "minecraft:soul_sand",
+  "minecraft:soul_sand",
+  "minecraft:soul_sand",
+  "minecraft:wither_skeleton_skull",
+  "minecraft:wither_skeleton_skull",
+  "minecraft:wither_skeleton_skull"
+ ],
+ "results": [
+  {
+   "id": "minecraft:nether_star",
+   "count": 1
+  }
+ ]
+}

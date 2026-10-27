@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:dead_fire_coral_block",
+ "results": [
+  {
+   "id": "minecraft:dead_fire_coral",
+   "count": 2
+  }
+ ]
+}

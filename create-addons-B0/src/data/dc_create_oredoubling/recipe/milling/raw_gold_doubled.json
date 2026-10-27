@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 200,
+ "ingredient": "minecraft:raw_gold",
+ "results": [
+  {
+   "id": "create:crushed_raw_gold",
+   "count": 2
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:coal"
+ ],
+ "results": [
+  {
+   "id": "minecraft:deepslate"
+  }
+ ]
+}

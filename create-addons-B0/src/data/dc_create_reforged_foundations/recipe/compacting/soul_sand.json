@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:sand",
+  "minecraft:bone",
+  "minecraft:rotten_flesh",
+  "minecraft:spider_eye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:soul_sand",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "type": "create:mixing",
+ "processing_time": 1000,
+ "ingredients": [
+  "create:wheat_flour",
+  "minecraft:soul_sand"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "minecraft:warped_fungus",
+   "count": 1,
+   "chance": 0.25
+  },
+  {
+   "id": "minecraft:crimson_fungus",
+   "count": 1,
+   "chance": 0.25
+  }
+ ]
+}

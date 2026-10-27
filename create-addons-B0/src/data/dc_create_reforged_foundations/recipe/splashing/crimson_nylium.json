@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:crimson_nylium",
+ "results": [
+  {
+   "id": "minecraft:crimson_roots",
+   "chance": 0.6
+  }
+ ]
+}

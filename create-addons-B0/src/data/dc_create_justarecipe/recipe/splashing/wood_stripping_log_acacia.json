@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:acacia_log",
+ "results": [
+  {
+   "id": "minecraft:stripped_acacia_log",
+   "count": 1
+  }
+ ]
+}

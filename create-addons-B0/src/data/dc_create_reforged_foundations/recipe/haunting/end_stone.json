@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:smooth_sandstone",
+ "results": [
+  {
+   "id": "minecraft:end_stone",
+   "count": 1
+  }
+ ]
+}

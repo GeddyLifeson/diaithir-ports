@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:creeper_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:danger_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

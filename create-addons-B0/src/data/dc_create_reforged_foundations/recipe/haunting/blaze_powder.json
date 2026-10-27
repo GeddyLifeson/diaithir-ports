@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:gunpowder",
+ "results": [
+  {
+   "id": "minecraft:blaze_powder",
+   "count": 1
+  }
+ ]
+}

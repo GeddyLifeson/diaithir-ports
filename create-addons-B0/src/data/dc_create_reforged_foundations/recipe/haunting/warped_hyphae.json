@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:birch_wood",
+ "results": [
+  {
+   "id": "minecraft:warped_hyphae",
+   "count": 1
+  }
+ ]
+}

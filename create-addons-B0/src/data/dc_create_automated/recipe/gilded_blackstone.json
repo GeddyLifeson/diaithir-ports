@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "G": "create:crushed_raw_gold",
+  "B": "minecraft:blackstone"
+ },
+ "pattern": [
+  " G ",
+  "GBG",
+  " G "
+ ],
+ "result": {
+  "id": "minecraft:gilded_blackstone",
+  "count": 1
+ }
+}

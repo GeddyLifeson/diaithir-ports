@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:end_stone",
+ "results": [
+  {
+   "id": "minecraft:chorus_flower",
+   "chance": 0.15
+  },
+  {
+   "id": "minecraft:ender_pearl",
+   "chance": 0.1
+  }
+ ]
+}

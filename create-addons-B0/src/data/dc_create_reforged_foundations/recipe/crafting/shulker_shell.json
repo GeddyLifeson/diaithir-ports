@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "AAA",
+  "ABA",
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:popped_chorus_fruit",
+  "B": "minecraft:nautilus_shell"
+ },
+ "result": {
+  "id": "minecraft:shulker_shell",
+  "count": 1
+ }
+}

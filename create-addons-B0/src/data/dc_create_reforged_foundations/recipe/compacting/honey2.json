@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:honeycomb_block"
+ ],
+ "results": [],
+ "fluid_results": [
+  {
+   "amount": 32400,
+   "id": "create:honey"
+  }
+ ]
+}

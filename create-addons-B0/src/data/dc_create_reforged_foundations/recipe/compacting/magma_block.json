@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:cobblestone",
+  "minecraft:blaze_powder"
+ ],
+ "results": [
+  {
+   "id": "minecraft:magma_block",
+   "count": 1
+  }
+ ]
+}

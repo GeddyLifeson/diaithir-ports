@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:warped_nylium",
+ "results": [
+  {
+   "id": "minecraft:warped_roots",
+   "chance": 0.6
+  },
+  {
+   "id": "minecraft:nether_sprouts",
+   "chance": 0.5
+  }
+ ]
+}

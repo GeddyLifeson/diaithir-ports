@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:oak_sapling",
+  "minecraft:oak_sapling",
+  "minecraft:oak_sapling",
+  "minecraft:oak_sapling"
+ ],
+ "results": [
+  {
+   "id": "minecraft:oak_leaves",
+   "count": 1
+  }
+ ]
+}

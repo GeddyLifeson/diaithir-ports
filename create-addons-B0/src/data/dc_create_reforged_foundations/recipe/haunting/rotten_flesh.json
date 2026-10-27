@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "#c:foods/raw_meat",
+ "results": [
+  {
+   "id": "minecraft:rotten_flesh",
+   "count": 1
+  }
+ ]
+}

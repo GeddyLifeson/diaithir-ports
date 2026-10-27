@@ -1,0 +1,13 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:glowstone",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "minecraft:water"
+ },
+ "result": {
+  "id": "minecraft:sea_lantern",
+  "count": 1
+ }
+}

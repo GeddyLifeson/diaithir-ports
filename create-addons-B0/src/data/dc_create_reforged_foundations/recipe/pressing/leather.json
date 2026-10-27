@@ -1,0 +1,10 @@
+{
+ "type": "create:pressing",
+ "ingredient": "minecraft:rotten_flesh",
+ "results": [
+  {
+   "id": "minecraft:leather",
+   "count": 1
+  }
+ ]
+}

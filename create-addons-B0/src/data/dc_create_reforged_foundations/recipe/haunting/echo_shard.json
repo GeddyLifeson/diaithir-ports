@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:amethyst_shard",
+ "results": [
+  {
+   "id": "minecraft:echo_shard",
+   "count": 1
+  }
+ ]
+}

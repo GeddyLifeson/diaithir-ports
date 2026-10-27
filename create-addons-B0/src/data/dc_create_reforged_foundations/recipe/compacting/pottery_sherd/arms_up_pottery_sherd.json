@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:wandering_trader_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:arms_up_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

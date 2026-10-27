@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:gravel",
+  "minecraft:gravel"
+ ],
+ "results": [
+  {
+   "id": "minecraft:cobblestone",
+   "count": 1
+  }
+ ]
+}

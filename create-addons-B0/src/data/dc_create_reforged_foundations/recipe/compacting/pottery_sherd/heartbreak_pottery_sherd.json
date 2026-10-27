@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:rotten_flesh"
+ ],
+ "results": [
+  {
+   "id": "minecraft:heartbreak_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

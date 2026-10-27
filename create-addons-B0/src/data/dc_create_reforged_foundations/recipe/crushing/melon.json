@@ -1,0 +1,16 @@
+{
+ "type": "create:crushing",
+ "processing_time": 200,
+ "ingredient": "minecraft:melon",
+ "results": [
+  {
+   "id": "minecraft:melon_slice",
+   "count": 7
+  },
+  {
+   "id": "minecraft:melon_slice",
+   "count": 2,
+   "chance": 0.5
+  }
+ ]
+}

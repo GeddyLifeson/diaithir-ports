@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "AAA",
+  "BBB",
+  "AAA"
+ ],
+ "key": {
+  "A": "minecraft:mangrove_roots",
+  "B": "minecraft:honeycomb"
+ },
+ "result": {
+  "id": "minecraft:bee_nest",
+  "count": 1
+ }
+}

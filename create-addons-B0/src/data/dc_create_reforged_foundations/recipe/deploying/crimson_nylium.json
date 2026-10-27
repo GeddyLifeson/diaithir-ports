@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "minecraft:netherrack",
+ "ingredient": "minecraft:nether_wart_block",
+ "results": [
+  {
+   "id": "minecraft:crimson_nylium"
+  }
+ ]
+}

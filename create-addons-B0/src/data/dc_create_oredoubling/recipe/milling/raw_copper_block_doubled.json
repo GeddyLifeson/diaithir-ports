@@ -1,0 +1,11 @@
+{
+ "type": "create:milling",
+ "processing_time": 600,
+ "ingredient": "minecraft:raw_copper_block",
+ "results": [
+  {
+   "id": "create:crushed_raw_copper",
+   "count": 18
+  }
+ ]
+}

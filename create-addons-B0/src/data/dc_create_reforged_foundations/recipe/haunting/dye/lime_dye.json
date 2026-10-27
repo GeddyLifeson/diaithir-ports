@@ -1,0 +1,14 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:lime_wool",
+ "results": [
+  {
+   "id": "minecraft:lime_dye",
+   "chance": 1
+  },
+  {
+   "id": "minecraft:lime_dye",
+   "chance": 0.5
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:turtle_scute",
+  "minecraft:brown_dye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:armadillo_scute",
+   "count": 1
+  }
+ ]
+}

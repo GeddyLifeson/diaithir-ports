@@ -1,0 +1,19 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:jungle_leaves",
+ "results": [
+  {
+   "id": "minecraft:jungle_sapling",
+   "chance": 0.8
+  },
+  {
+   "id": "minecraft:vine",
+   "chance": 0.6
+  },
+  {
+   "id": "minecraft:cocoa_beans",
+   "chance": 0.05
+  }
+ ]
+}

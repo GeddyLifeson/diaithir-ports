@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:campfire"
+ ],
+ "results": [
+  {
+   "id": "minecraft:burn_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

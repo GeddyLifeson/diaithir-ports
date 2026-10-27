@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "#minecraft:leaves",
+  "#minecraft:leaves",
+  "#minecraft:leaves",
+  "#minecraft:leaves"
+ ],
+ "results": [
+  {
+   "id": "minecraft:moss_block",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:diorite",
+ "results": [
+  {
+   "id": "minecraft:tuff",
+   "count": 1
+  }
+ ]
+}

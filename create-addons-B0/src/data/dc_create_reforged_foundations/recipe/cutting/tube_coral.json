@@ -1,0 +1,11 @@
+{
+ "type": "create:cutting",
+ "processing_time": 50,
+ "ingredient": "minecraft:tube_coral_block",
+ "results": [
+  {
+   "id": "minecraft:tube_coral",
+   "count": 2
+  }
+ ]
+}

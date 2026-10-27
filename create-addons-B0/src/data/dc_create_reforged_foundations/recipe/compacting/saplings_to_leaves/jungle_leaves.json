@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:jungle_sapling",
+  "minecraft:jungle_sapling",
+  "minecraft:jungle_sapling",
+  "minecraft:jungle_sapling"
+ ],
+ "results": [
+  {
+   "id": "minecraft:jungle_leaves",
+   "count": 1
+  }
+ ]
+}

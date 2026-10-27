@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:yellow_wool",
+  "minecraft:slime_ball"
+ ],
+ "results": [
+  {
+   "id": "minecraft:sponge",
+   "count": 1
+  }
+ ]
+}

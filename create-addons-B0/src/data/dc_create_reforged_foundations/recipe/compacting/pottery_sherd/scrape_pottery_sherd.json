@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:iron_axe"
+ ],
+ "results": [
+  {
+   "id": "minecraft:scrape_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

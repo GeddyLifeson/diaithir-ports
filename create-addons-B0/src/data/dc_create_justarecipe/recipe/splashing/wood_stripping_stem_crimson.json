@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:crimson_stem",
+ "results": [
+  {
+   "id": "minecraft:stripped_crimson_stem",
+   "count": 1
+  }
+ ]
+}

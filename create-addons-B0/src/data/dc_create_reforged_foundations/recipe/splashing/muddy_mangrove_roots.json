@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:muddy_mangrove_roots",
+ "results": [
+  {
+   "id": "minecraft:hanging_roots",
+   "chance": 0.25
+  },
+  {
+   "id": "minecraft:redstone",
+   "chance": 0.125
+  }
+ ]
+}

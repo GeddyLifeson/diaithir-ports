@@ -1,0 +1,11 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:quartz",
+ "results": [
+  {
+   "id": "minecraft:amethyst_shard",
+   "count": 1,
+   "chance": 0.25
+  }
+ ]
+}

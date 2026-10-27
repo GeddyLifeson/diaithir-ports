@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:warden_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:mourner_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

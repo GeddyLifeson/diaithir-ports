@@ -1,0 +1,30 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:rooted_dirt",
+ "results": [
+  {
+   "id": "minecraft:wheat_seeds",
+   "chance": 0.25
+  },
+  {
+   "id": "minecraft:pumpkin_seeds",
+   "chance": 0.2
+  },
+  {
+   "id": "minecraft:melon_seeds",
+   "chance": 0.2
+  },
+  {
+   "id": "minecraft:beetroot_seeds",
+   "chance": 0.2
+  },
+  {
+   "id": "minecraft:torchflower_seeds",
+   "chance": 0.05
+  },
+  {
+   "id": "minecraft:pitcher_pod",
+   "chance": 0.02
+  }
+ ]
+}

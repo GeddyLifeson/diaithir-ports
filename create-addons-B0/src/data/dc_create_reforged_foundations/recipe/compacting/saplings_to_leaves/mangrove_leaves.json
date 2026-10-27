@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:mangrove_propagule",
+  "minecraft:mangrove_propagule",
+  "minecraft:mangrove_propagule",
+  "minecraft:mangrove_propagule"
+ ],
+ "results": [
+  {
+   "id": "minecraft:mangrove_leaves",
+   "count": 1
+  }
+ ]
+}

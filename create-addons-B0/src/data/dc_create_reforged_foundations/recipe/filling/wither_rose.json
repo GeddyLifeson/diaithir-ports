@@ -1,0 +1,13 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:poppy",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 40500,
+  "fluid": "create:potion"
+ },
+ "result": {
+  "id": "minecraft:wither_rose",
+  "count": 1
+ }
+}

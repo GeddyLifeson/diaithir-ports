@@ -1,0 +1,14 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:orange_wool",
+ "results": [
+  {
+   "id": "minecraft:orange_dye",
+   "chance": 1
+  },
+  {
+   "id": "minecraft:orange_dye",
+   "chance": 0.5
+  }
+ ]
+}

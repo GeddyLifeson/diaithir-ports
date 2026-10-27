@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:deepslate",
+  "minecraft:copper_ingot",
+  "minecraft:copper_ingot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:deepslate_copper_ore"
+  }
+ ]
+}

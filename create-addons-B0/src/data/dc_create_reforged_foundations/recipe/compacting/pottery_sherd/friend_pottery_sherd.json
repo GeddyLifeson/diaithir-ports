@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:villager_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:friend_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

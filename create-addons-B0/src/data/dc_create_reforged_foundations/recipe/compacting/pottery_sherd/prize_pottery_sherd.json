@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:diamond"
+ ],
+ "results": [
+  {
+   "id": "minecraft:prize_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

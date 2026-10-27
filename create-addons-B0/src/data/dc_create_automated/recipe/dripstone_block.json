@@ -1,0 +1,16 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:granite",
+  "minecraft:clay_ball",
+  "minecraft:clay_ball",
+  "minecraft:clay_ball",
+  "minecraft:clay_ball"
+ ],
+ "results": [
+  {
+   "id": "minecraft:dripstone_block"
+  }
+ ]
+}

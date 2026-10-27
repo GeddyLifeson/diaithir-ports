@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:iron_sword"
+ ],
+ "results": [
+  {
+   "id": "minecraft:blade_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

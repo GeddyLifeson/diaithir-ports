@@ -1,0 +1,21 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "minecraft:prismarine",
+  "minecraft:prismarine",
+  "minecraft:prismarine",
+  "minecraft:prismarine",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block",
+  "minecraft:lapis_block",
+  "minecraft:echo_shard"
+ ],
+ "results": [
+  {
+   "id": "minecraft:heart_of_the_sea",
+   "count": 1
+  }
+ ]
+}

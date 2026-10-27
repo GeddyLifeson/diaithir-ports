@@ -1,0 +1,15 @@
+{
+ "type": "create:milling",
+ "processing_time": 50,
+ "ingredient": "minecraft:tinted_glass",
+ "results": [
+  {
+   "id": "minecraft:amethyst_shard",
+   "chance": 1
+  },
+  {
+   "id": "minecraft:amethyst_shard",
+   "chance": 0.5
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:brown_mushroom_block",
+  "minecraft:red_mushroom_block",
+  "minecraft:bone_meal"
+ ],
+ "results": [
+  {
+   "id": "minecraft:mushroom_stem",
+   "count": 2
+  }
+ ]
+}

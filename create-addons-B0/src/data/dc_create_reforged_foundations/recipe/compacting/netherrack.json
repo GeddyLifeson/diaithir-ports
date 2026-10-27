@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:blaze_powder"
+ ],
+ "results": [
+  {
+   "id": "minecraft:netherrack",
+   "count": 1
+  }
+ ]
+}

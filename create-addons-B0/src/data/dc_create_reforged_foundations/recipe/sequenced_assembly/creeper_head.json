@@ -1,0 +1,41 @@
+{
+ "type": "create:sequenced_assembly",
+ "loops": 3,
+ "ingredient": "minecraft:skeleton_skull",
+ "transitional_item": {
+  "id": "minecraft:skeleton_skull"
+ },
+ "result": {
+  "id": "minecraft:creeper_head",
+  "chance": 120
+ },
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:gunpowder"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": [
+    "minecraft:tnt"
+   ],
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

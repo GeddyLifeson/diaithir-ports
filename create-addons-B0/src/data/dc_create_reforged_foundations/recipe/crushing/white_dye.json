@@ -1,0 +1,16 @@
+{
+ "type": "create:crushing",
+ "processing_time": 200,
+ "ingredient": "minecraft:white_terracotta",
+ "results": [
+  {
+   "id": "minecraft:white_dye",
+   "count": 1,
+   "chance": 0.6
+  },
+  {
+   "id": "minecraft:red_sand",
+   "count": 1
+  }
+ ]
+}

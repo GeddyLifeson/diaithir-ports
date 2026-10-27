@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:prismarine_shard",
+  "minecraft:green_dye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:turtle_scute",
+   "count": 1
+  }
+ ]
+}

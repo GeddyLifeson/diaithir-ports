@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:wind_charge"
+ ],
+ "results": [
+  {
+   "id": "minecraft:flow_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

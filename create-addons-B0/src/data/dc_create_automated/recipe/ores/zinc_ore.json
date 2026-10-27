@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "create:zinc_ingot",
+  "create:zinc_ingot"
+ ],
+ "results": [
+  {
+   "id": "create:zinc_ore"
+  }
+ ]
+}

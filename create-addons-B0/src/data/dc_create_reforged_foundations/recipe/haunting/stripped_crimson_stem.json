@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:stripped_mangrove_log",
+ "results": [
+  {
+   "id": "minecraft:stripped_crimson_stem",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:ender_pearl",
+  "minecraft:white_dye",
+  "minecraft:leather"
+ ],
+ "results": [
+  {
+   "id": "minecraft:phantom_membrane",
+   "count": 1
+  }
+ ]
+}

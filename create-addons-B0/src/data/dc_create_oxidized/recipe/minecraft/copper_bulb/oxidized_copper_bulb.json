@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "minecraft:weathered_copper_bulb",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "minecraft:water"
+ },
+ "result": {
+  "id": "minecraft:oxidized_copper_bulb"
+ }
+}

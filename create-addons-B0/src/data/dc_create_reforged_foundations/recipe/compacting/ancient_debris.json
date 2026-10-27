@@ -1,0 +1,18 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "minecraft:raw_gold_block",
+  "minecraft:reinforced_deepslate",
+  "minecraft:crying_obsidian",
+  "minecraft:nether_wart_block",
+  "minecraft:soul_soil",
+  "minecraft:warped_wart_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:ancient_debris",
+   "count": 1
+  }
+ ]
+}

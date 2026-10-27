@@ -1,0 +1,13 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:vine",
+  "minecraft:nether_wart_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:weeping_vines",
+   "count": 2
+  }
+ ]
+}

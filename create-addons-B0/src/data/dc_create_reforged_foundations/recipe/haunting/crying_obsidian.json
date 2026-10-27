@@ -1,0 +1,10 @@
+{
+ "type": "create:haunting",
+ "ingredient": "minecraft:obsidian",
+ "results": [
+  {
+   "id": "minecraft:crying_obsidian",
+   "count": 1
+  }
+ ]
+}

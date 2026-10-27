@@ -1,0 +1,15 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:soul_sand",
+  "minecraft:bone",
+  "minecraft:bone",
+  "minecraft:bone"
+ ],
+ "results": [
+  {
+   "id": "minecraft:skeleton_skull",
+   "count": 1
+  }
+ ]
+}

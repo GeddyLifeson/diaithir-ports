@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:wolf_spawn_egg"
+ ],
+ "results": [
+  {
+   "id": "minecraft:howl_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

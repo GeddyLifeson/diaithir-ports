@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ABA",
+  "BCB",
+  "ABA"
+ ],
+ "key": {
+  "A": "create:andesite_alloy",
+  "B": "create:andesite_alloy_block",
+  "C": "create:millstone"
+ },
+ "result": {
+  "id": "create:crushing_wheel",
+  "count": 1
+ }
+}

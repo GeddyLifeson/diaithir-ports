@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "minecraft:blackstone",
+ "ingredient": "minecraft:raw_gold",
+ "results": [
+  {
+   "id": "minecraft:gilded_blackstone"
+  }
+ ]
+}

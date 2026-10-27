@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:rabbit_foot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:plenty_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

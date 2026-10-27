@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:coarse_dirt",
+ "results": [
+  {
+   "id": "minecraft:flint",
+   "chance": 0.25
+  },
+  {
+   "id": "create:zinc_nugget",
+   "chance": 0.125
+  }
+ ]
+}

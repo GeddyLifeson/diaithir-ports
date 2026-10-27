@@ -1,0 +1,12 @@
+{
+ "type": "create:milling",
+ "processing_time": 25,
+ "ingredient": "minecraft:phantom_membrane",
+ "results": [
+  {
+   "id": "minecraft:feather",
+   "count": 2,
+   "chance": 1
+  }
+ ]
+}

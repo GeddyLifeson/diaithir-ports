@@ -1,0 +1,16 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:prismarine_shard",
+  "minecraft:prismarine_crystals",
+  "minecraft:orange_dye",
+  "minecraft:red_dye"
+ ],
+ "results": [
+  {
+   "id": "minecraft:nautilus_shell",
+   "count": 1
+  }
+ ]
+}

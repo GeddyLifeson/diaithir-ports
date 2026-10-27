@@ -1,0 +1,15 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:echo_shard",
+  "minecraft:echo_shard",
+  "minecraft:echo_shard",
+  "minecraft:echo_shard"
+ ],
+ "results": [
+  {
+   "id": "minecraft:sculk",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:gold_ingot",
+  "minecraft:gold_ingot"
+ ],
+ "results": [
+  {
+   "id": "minecraft:gold_ore"
+  }
+ ]
+}

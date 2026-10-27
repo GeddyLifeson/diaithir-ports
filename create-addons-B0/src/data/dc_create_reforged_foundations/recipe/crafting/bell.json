@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " A ",
+  " B ",
+  "   "
+ ],
+ "key": {
+  "A": "minecraft:gold_block",
+  "B": "create:golden_sheet"
+ },
+ "result": {
+  "id": "minecraft:bell",
+  "count": 1
+ }
+}

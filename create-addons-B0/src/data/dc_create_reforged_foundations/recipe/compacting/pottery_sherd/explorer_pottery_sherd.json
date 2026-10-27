@@ -1,0 +1,13 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:brick",
+  "minecraft:map"
+ ],
+ "results": [
+  {
+   "id": "minecraft:explorer_pottery_sherd",
+   "count": 1
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "type": "create:splashing",
+ "ingredient": "minecraft:dirt_path",
+ "results": [
+  {
+   "id": "minecraft:sand",
+   "chance": 0.45
+  }
+ ]
+}

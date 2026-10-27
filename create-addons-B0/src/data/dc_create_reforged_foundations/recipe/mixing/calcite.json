@@ -1,0 +1,14 @@
+{
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "ingredients": [
+  "minecraft:quartz",
+  "minecraft:stone"
+ ],
+ "results": [
+  {
+   "id": "minecraft:calcite",
+   "count": 1
+  }
+ ]
+}
