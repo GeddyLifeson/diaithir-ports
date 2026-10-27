@@ -2,7 +2,7 @@
 <center>
 <img alt="surveyor banner" src="https://cdn.modrinth.com/data/4KjqhPc9/images/036db8bcb021c9e81e18561698d45d3c7bb71127.png"><br/>
 An open-source backend (and API) for world map and waypoint mods!<br/>
-<b>Requires <a href="https://modrinth.com/mod/connector">Connector</a> and <a href="https://modrinth.com/mod/forgified-fabric-api">FFAPI</a> on (neo)forge.<br/></b>
+<b>This build is a native NeoForge 26.1.2 port. It needs no Connector and no Fabric API.</b><br/>
 </center>
 
 ---

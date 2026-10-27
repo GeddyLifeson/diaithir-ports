@@ -23,3 +23,7 @@ It follows DiaithirRPG's `diaithir_ages` engine by reflection on its `StoryEvent
 Commands: `/nemesis roster` (who hunts you), `/nemesis chronicle`; for operators `/nemesis list`, `forget <id>`, `ambush <player>`, `turn <age>`; `/nemesis selftest` (owners, on a world with no nemeses) runs promotion, rank-up, trophy, ambush, escape or fall, save round trip and succession with a fake player and reports PASS or what failed.
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis. Licence: MIT.
+
+## Other modules in this repository
+
+- `surveyor/` and `antique-atlas/`: NeoForge 26.1.2 ports of the Surveyor map backend and the Antique Atlas world map, each its own module under its original licence (LGPL-3.0-or-later code; Antique Atlas textures CC BY-NC-SA 4.0). See each module's README.

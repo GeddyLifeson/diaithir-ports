@@ -3,7 +3,7 @@
 A hand-drawn clientside world map, with map sharing, structure discovery, and more!<br/>
 A rewrite of <a href="https://modrinth.com/mod/antique-atlas">Antique Atlas</a> by <a href="https://github.com/Hunternif">Hunternif</a>, as continued by <a href="https://github.com/Kenkron">Kenkron</a>, <a href="https://github.com/asiekierka">asie</a>, and <a href="https://github.com/tyra314">tyra314</a>.<br/>
 <b>Requires <a href="https://modrinth.com/mod/surveyor">Surveyor Map Framework</a>.</b>
-<b>Requires <a href="https://modrinth.com/mod/connector">Connector</a> and <a href="https://modrinth.com/mod/forgified-fabric-api">FFAPI</a> on (neo)forge.</b><br/>
+<b>This build is a native NeoForge 26.1.2 port. It needs no Connector and no Fabric API.</b><br/>
 </center>
 
 ---

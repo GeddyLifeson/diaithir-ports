@@ -72,7 +72,6 @@ public class WorldAtlasData {
 	}
 
 	public void onTerrainUpdated(WorldSummary summary, Map<RegionPos, BitSet> chunks) {
-		AntiqueAtlas.LOGGER.info("[Antique Atlas] DBGterrainUpdated {} regions", chunks.size());
 		for (ChunkPos pos : RegionPos.regionsToChunks(chunks)) {
 			if (!biomeTiles.containsKey(pos) && !terrainDequeHash.contains(pos)) {
 				terrainDequeHash.add(pos);
@@ -86,7 +85,6 @@ public class WorldAtlasData {
 	}
 
 	public void tick(WorldSummary summary) {
-		if (Minecraft.getInstance().level != null && Minecraft.getInstance().level.getGameTime() % 100 == 0) AntiqueAtlas.LOGGER.info("[Antique Atlas] DBGtick fallbacks={} queue={} tiles={}", BiomeTileProviders.getInstance().hasFallbacks(), terrainDeque.size(), biomeTiles.size());
 		if (!BiomeTileProviders.getInstance().hasFallbacks()) return;
 		RegistryAccess manager = Minecraft.getInstance().getConnection().registryAccess();
 		for (int i = 0; i < AntiqueAtlas.CONFIG.chunkTickLimit; i++) {
