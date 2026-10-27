@@ -1,0 +1,10 @@
+{
+ "replace": false,
+ "values": [
+  "goety:husk_servant",
+  "goety:skeleton_servant",
+  "goety:stray_servant",
+  "goety:wither_skeleton_servant",
+  "goety:zombie_servant"
+ ]
+}

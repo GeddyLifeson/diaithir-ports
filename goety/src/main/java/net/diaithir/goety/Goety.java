@@ -6,6 +6,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -18,12 +20,17 @@ public final class Goety {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("goety", () -> CreativeModeTab.builder()
         .title(Component.translatable("itemGroup.goety"))
         .icon(() -> new ItemStack(GoetyItems.PLAIN.get("dark_ingot").get()))
-        .displayItems((params, out) -> GoetyItems.ALL.forEach(i -> out.accept(i.get())))
+        .displayItems((params, out) -> {
+            GoetyItems.ALL.forEach(i -> out.accept(i.get()));
+            GoetyEntities.SPAWN_EGGS.values().forEach(i -> out.accept(i.get()));
+        })
         .build());
 
     public Goety(IEventBus bus) {
         GoetyBlocks.register(bus);
+        GoetyEntities.register(bus);
         GoetyItems.register(bus);
         TABS.register(bus);
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
     }
 }

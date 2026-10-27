@@ -157,6 +157,8 @@ def walk_models(o):
     elif isinstance(o, list):
         for v in o: walk_models(v)
 
+def tag(path, values, replace=False):
+    write(os.path.join(RES, "data", path + ".json"), {"replace": replace, "values": sorted(set(values))})
 def item_def(i, model=None):
     write(os.path.join(A, "items", i + ".json"), {"model": {"type": "minecraft:model", "model": model or f"goety:item/{i}"}})
 
@@ -180,6 +182,27 @@ for fam in {a[0].rsplit("_", 1)[0] for a in ARMOR}:
     cp(upa(f"textures/models/armor/{fam}_armor_layer.png"), os.path.join(A, f"textures/entity/equipment/humanoid_leggings/{fam}.png"))
     write(os.path.join(A, f"equipment/{fam}.json"), {"layers": {"humanoid": [{"texture": f"goety:{fam}"}], "humanoid_leggings": [{"texture": f"goety:{fam}"}]}})
 
+# ---------------------------------------------------------------- entities (stage 2)
+ENTITIES = {  # id: (texture files under textures/entity/servants, vanilla egg used for the item sprite, undead?)
+    "zombie_servant": (["zombie/zombie_servant"], "zombie", True),
+    "husk_servant": (["zombie/husk_servant"], "husk", True),
+    "skeleton_servant": (["skeleton/skeleton_servant"], "skeleton", True),
+    "stray_servant": (["skeleton/stray_servant"], "stray", True),
+    "wither_skeleton_servant": (["skeleton/wither_skeleton_servant"], "wither_skeleton", True),
+    "spider_servant": (["spider/spider_servant"], "spider", False),
+    "cave_spider_servant": (["spider/cave_spider_servant"], "cave_spider", False),
+}
+for eid, (texs, egg, und) in ENTITIES.items():
+    for t in texs:
+        cp(upa("textures/entity/servants", t + ".png"), os.path.join(A, "textures/entity/servants", t + ".png"))
+    item_def(eid + "_spawn_egg", f"minecraft:item/{egg}_spawn_egg")
+tag("minecraft/tags/entity_type/undead", [f"{ID}:{e}" for e, v in ENTITIES.items() if v[2]])
+tag("minecraft/tags/entity_type/skeletons", [f"{ID}:{e}" for e in ENTITIES if "skeleton" in e or "stray" in e])
+tag("minecraft/tags/entity_type/arthropod", [f"{ID}:{e}" for e in ENTITIES if "spider" in e])
+tag("minecraft/tags/entity_type/zombies", [f"{ID}:{e}" for e in ENTITIES if "zombie" in e or "husk" in e])
+tag("minecraft/tags/entity_type/aquatic", []) if False else None
+write(os.path.join(RES, "goety_spec/entities.json"), list(ENTITIES))
+
 # ---------------------------------------------------------------- names
 en = U.lang(UP)
 names, allmiss = {}, set()
@@ -192,6 +215,12 @@ def name_for(kind, i):
 lang = {}
 for i in bkinds: lang[f"block.goety.{i}"] = name_for("block", i)
 for i in PLAIN_ITEMS + [t[0] for t in TOOLS] + [a[0] for a in ARMOR]: lang[f"item.goety.{i}"] = name_for("item", i)
+for eid in ENTITIES:
+    e = en.get(f"entity.goety.{eid}") or eid.replace("_", " ").title()
+    d, miss = naming.diaithiris(e); allmiss.update(miss)
+    lang[f"entity.goety.{eid}"] = d
+    lang[f"item.goety.{eid}_spawn_egg"] = d + " " + naming.diaithiris("Summoning Egg")[0].lower()
+    names[eid] = {"diaithiris": d, "english": e, "entity": True}
 lang["itemGroup.goety"] = naming.diaithiris("Goety")[0]
 write(os.path.join(A, "lang/en_us.json"), lang)
 write(os.path.join(ROOT, "names_map.json"), names)
@@ -213,8 +242,6 @@ for i, e in bkinds.items():
     write(os.path.join(D, "loot_table/blocks", i + ".json"), t)
 
 # ---------------------------------------------------------------- tags
-def tag(path, values, replace=False):
-    write(os.path.join(RES, "data", path + ".json"), {"replace": replace, "values": sorted(set(values))})
 pick = [f"{ID}:{i}" for i, e in bkinds.items() if not e["axe"] and not e["shovel"] and e["kind"] != "leaves"]
 tag("minecraft/tags/block/mineable/shovel", [f"{ID}:{i}" for i, e in bkinds.items() if e["shovel"]])
 axe = [f"{ID}:{i}" for i, e in bkinds.items() if e["axe"] and e["kind"] != "leaves"]

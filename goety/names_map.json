@@ -1094,5 +1094,40 @@
  "black_iron_boots": {
   "diaithiris": "Bòtundun iarund duib",
   "english": "Black Iron Boots"
+ },
+ "zombie_servant": {
+  "diaithiris": "Tràild marbun",
+  "english": "Zombie Servant",
+  "entity": true
+ },
+ "husk_servant": {
+  "diaithiris": "Tràild plaesg",
+  "english": "Husk Servant",
+  "entity": true
+ },
+ "skeleton_servant": {
+  "diaithiris": "Tràild knàimnech",
+  "english": "Skeleton Servant",
+  "entity": true
+ },
+ "stray_servant": {
+  "diaithiris": "Tràild siechrunaichi",
+  "english": "Stray Servant",
+  "entity": true
+ },
+ "wither_skeleton_servant": {
+  "diaithiris": "Tràild knàimnech siergad",
+  "english": "Wither Skeleton Servant",
+  "entity": true
+ },
+ "spider_servant": {
+  "diaithiris": "Tràild damun-aldaid",
+  "english": "Spider Servant",
+  "entity": true
+ },
+ "cave_spider_servant": {
+  "diaithiris": "Tràild damun-aldaid uoim",
+  "english": "Cave Spider Servant",
+  "entity": true
  }
 }
