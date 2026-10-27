@@ -7,7 +7,11 @@ import com.zurrtum.create.client.content.kinetics.transmission.SplitShaftVisual;
 import com.zurrtum.create.client.foundation.blockEntity.behaviour.audio.KineticAudioBehaviour;
 import com.zurrtum.create.client.foundation.blockEntity.behaviour.tooltip.KineticTooltipBehaviour;
 import com.zurrtum.create.content.kinetics.transmission.SplitShaftBlockEntity;
+import com.zurrtum.create.client.foundation.blockEntity.behaviour.CenteredSideValueBoxTransform;
+import com.zurrtum.create.client.foundation.blockEntity.behaviour.scrollValue.RotationDirectionScrollBehaviour;
+import com.zurrtum.create.client.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,5 +42,15 @@ public class CreateConnectedClient {
         shaftPair(CCBlockEntityTypes.INVERTED_CLUTCH.get());
         shaftPair(CCBlockEntityTypes.INVERTED_GEARSHIFT.get());
         shaftPair(CCBlockEntityTypes.BRAKE.get());
+        var ov = CCBlockEntityTypes.OVERSTRESS_CLUTCH.get();
+        shaftPair(ov);
+        AllBlockEntityBehaviours.add(ov, be -> new ScrollValueBehaviour<>(Component.translatable("create_connected.overstress_clutch.uncouple_delay"), be,
+            new CenteredSideValueBoxTransform((state, d) -> state.getValue(org.diaithir.connected.content.overstressclutch.OverstressClutchBlock.AXIS) != d.getAxis())));
+        var fw = CCBlockEntityTypes.FREEWHEEL_CLUTCH.get();
+        shaftPair(fw);
+        AllBlockEntityBehaviours.add(fw, be -> new RotationDirectionScrollBehaviour(be, Component.translatable("create.contraptions.windmill.rotation_direction"), new ClutchValueBox()));
+        var ce = CCBlockEntityTypes.CENTRIFUGAL_CLUTCH.get();
+        shaftPair(ce);
+        AllBlockEntityBehaviours.add(ce, be -> new ScrollValueBehaviour<>(Component.translatable("create_connected.centrifugal_clutch.speed_threshold"), be, new ClutchValueBox()));
     }
 }

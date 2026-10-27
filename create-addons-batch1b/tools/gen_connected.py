@@ -24,6 +24,9 @@ TEXTURES = {
     "brass_gearbox": (lambda n: art.machine_face(n, art.BRASS, art.HAZ_Y, 4), lambda n: art.machine_top(n, art.BRASS)),
     "inverted_clutch": (lambda n: art.machine_face(n, art.ANDESITE, (120, 150, 210), 0), lambda n: art.machine_top(n, art.ANDESITE)),
     "inverted_gearshift": (lambda n: art.machine_face(n, art.ANDESITE, (120, 150, 210), 3), lambda n: art.machine_top(n, art.ANDESITE)),
+    "overstress_clutch": (lambda n: art.machine_face(n, art.ANDESITE, (214, 90, 60), 2), lambda n: art.machine_top(n, art.ANDESITE)),
+    "freewheel_clutch": (lambda n: art.machine_face(n, art.ANDESITE, (110, 190, 130), 4), lambda n: art.machine_top(n, art.ANDESITE)),
+    "centrifugal_clutch": (lambda n: art.machine_face(n, art.ANDESITE, (230, 190, 60), 1), lambda n: art.machine_top(n, art.ANDESITE)),
     "brake": (lambda n: art.machine_face(n, art.STEEL, art.HAZ_Y, 2), lambda n: art.machine_top(n, art.STEEL)),
 }
 BLOCKS = {
@@ -33,6 +36,9 @@ BLOCKS = {
     "inverted_clutch": dict(en="Inverted Clutch", powered=True),
     "inverted_gearshift": dict(en="Inverted Gearshift", powered=True),
     "brake": dict(en="Brake", powered=True),
+    "overstress_clutch": dict(en="Overstress Clutch", powered=False, state=True),
+    "freewheel_clutch": dict(en="Freewheel Clutch", powered=False, directional=True),
+    "centrifugal_clutch": dict(en="Centrifugal Clutch", powered=False, directional=True),
 }
 # recipes: shapeless ingredient lists; results are ours, ingredient ids are the Diaithir Create port's
 RECIPES = {
@@ -41,11 +47,14 @@ RECIPES = {
     "brass_gearbox": ["create:brass_casing", "create:cogwheel", "create:large_cogwheel"],
     "inverted_clutch": ["create:clutch", "minecraft:redstone_torch"],
     "inverted_gearshift": ["create:gearshift", "minecraft:redstone_torch"],
+    "overstress_clutch": ["create:clutch", "create:brass_ingot", "create:precision_mechanism"],
+    "freewheel_clutch": ["create:clutch", "create:cogwheel"],
+    "centrifugal_clutch": ["create:clutch", "create:electron_tube"],
     "brake": ["create:andesite_casing", "create:shaft", "minecraft:iron_ingot", "minecraft:redstone"],
 }
 
 def main():
-    lang = {f"itemGroup.{NS}.main": "Create: Connected"}
+    lang = {f"itemGroup.{NS}.main": "Create: Connected", "create_connected.overstress_clutch.uncouple_delay": "Uncouple Delay (ticks)", "create_connected.centrifugal_clutch.speed_threshold": "Speed Threshold (negative: below)"}
     mineable = []
     for bid, b in BLOCKS.items():
         side, end = TEXTURES[bid]
@@ -58,7 +67,21 @@ def main():
             png(f"{A}/textures/block/{bid}_powered.png", art.machine_face(bid + "_p", art.ANDESITE if bid != "brake" else art.STEEL, (110, 220, 130), {"inverted_clutch": 0, "inverted_gearshift": 3, "brake": 2}[bid]))
             w(f"{A}/models/block/{bid}_powered.json", {"parent": "minecraft:block/cube_column", "textures": {"side": f"{NS}:block/{bid}_powered", "end": f"{NS}:block/{bid}_end"}})
         variants = {}
-        for axis, rot in (("x", {"x": 90, "y": 90}), ("y", {}), ("z", {"x": 90})):
+        if b.get("directional") or b.get("state"):
+            png(f"{A}/textures/block/{bid}_uncoupled.png", art.machine_face(bid + "_u", art.STEEL_D, (200, 70, 60), 0))
+            w(f"{A}/models/block/{bid}_uncoupled.json", {"parent": "minecraft:block/cube_column", "textures": {"side": f"{NS}:block/{bid}_uncoupled", "end": f"{NS}:block/{bid}_end"}})
+        if b.get("directional"):
+            rots = {"east": {"x": 90, "y": 90}, "west": {"x": 90, "y": 270}, "south": {"x": 90, "y": 180}, "north": {"x": 90}, "up": {}, "down": {"x": 180}}
+            for f, rot in rots.items():
+                for unc in ("false", "true"):
+                    variants[f"facing={f},uncoupled={unc}"] = {"model": f"{NS}:block/{bid}" + ("_uncoupled" if unc == "true" else ""), **rot}
+        elif b.get("state"):
+            for axis, rot in (("x", {"x": 90, "y": 90}), ("y", {}), ("z", {"x": 90})):
+                for st in ("coupled", "uncoupling", "uncoupled"):
+                    for pw in ("false", "true"):
+                        variants[f"axis={axis},powered={pw},state={st}"] = {"model": f"{NS}:block/{bid}" + ("_uncoupled" if st == "uncoupled" else ""), **rot}
+        else:
+          for axis, rot in (("x", {"x": 90, "y": 90}), ("y", {}), ("z", {"x": 90})):
             if b["powered"]:
                 for pw in ("false", "true"):
                     variants[f"axis={axis},powered={pw}"] = {"model": f"{NS}:block/{bid}" + ("_powered" if pw == "true" else ""), **rot}

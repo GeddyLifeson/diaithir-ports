@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:clutch",
+  "create:cogwheel"
+ ],
+ "result": {
+  "id": "create_connected:freewheel_clutch",
+  "count": 1
+ }
+}
