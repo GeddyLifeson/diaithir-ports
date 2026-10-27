@@ -10605,6 +10605,22 @@ file = "kubejs/data/diaithir_integration/tags/item/magic_fuel.json"
 hash = "d73cf7bd94898ccb4f73f8e46cb6b02f10c69dc7161932a58641d49a3440c7b9"
 
 [[files]]
+file = "kubejs/data/diaithir_tech/history_events.json"
+hash = "aab3cc0c58fb58019e43deb5d1e9489b3ba07bd411d3f970c2b52b3a5ff41614"
+
+[[files]]
+file = "kubejs/data/diaithir_tech/tech_items.json"
+hash = "ba3c42d1e31d2be3c1d46bc6526d8f2ec730a15624ab4dfeeb5c96edfb343ea5"
+
+[[files]]
+file = "kubejs/data/diaithir_tech/tech_rooms.json"
+hash = "19d683e91a2c3e89611e48671e55911a08f961952fc142090d9d9bf164c0ca4e"
+
+[[files]]
+file = "kubejs/data/diaithir_tech/tech_tree.json"
+hash = "335f990941cc9a97111cf5267e0def0f23fa41c3461e9c0e1680d72acdd525b7"
+
+[[files]]
 file = "kubejs/data/diaithir_worlds/dimension/an_fhainne_mhor.json"
 hash = "a327c9bf20b559206d355ab6a42ecd156e55de9d97dd7edc0d06f78a5584d092"
 
@@ -11794,7 +11810,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "984868ae0d9095cba52ca33dd8c77352bc444b5e2e574a5af06451d1b9ed3b33"
+hash = "5666b062d7902d562f931eec2bcb52de67994f3254985e300a1f5955ce316362"
 metafile = true
 
 [[files]]
@@ -11807,7 +11823,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "e5eed3800d5a5f30f7364f2ce3708affd1d495bc02473f42ca832f7ac3924e38"
+hash = "0f1428b821990248357d77638ee5763f24f28d9f16bfee9d4ccc4d37723883ec"
 metafile = true
 
 [[files]]
@@ -12796,10 +12812,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "886049fe1be3be726708e94e9ef88d25639f00cb6d4c4152e3043742ba74c31b"
+hash = "2f43f687fc90272b858a84f69e95b39e69ee0ca4089eb22149191d9d35e62860"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "3a4e5bf592583ce6a86164276a9e62f0ad9296d30fa77f504ab72cf3ffcd25bf"
+hash = "0d637aad93bf8f1f9026204f8b6e5f01702fff85ad7991accf4c858c0a7c3a37"
 metafile = true

@@ -1,0 +1,192 @@
+{
+ "_doc": "Room specs for the tech tree (docs/design/tech-tree.md). A room counts toward a building only if it is enclosed (flood fill, no gap, roof), has a door, is big enough and holds the listed blocks. byEra rows raise the bar from that era on. Edit here; install.py copies it to kubejs/data/diaithir_tech/.",
+ "limits": {
+  "maxCells": 4000,
+  "spanHorizontal": 28,
+  "spanVertical": 14
+ },
+ "groups": {
+  "furnace": [
+   "minecraft:furnace",
+   "minecraft:smoker"
+  ],
+  "blast_furnace": [
+   "minecraft:blast_furnace"
+  ],
+  "table": [
+   "minecraft:crafting_table",
+   "minecraft:smithing_table",
+   "minecraft:loom",
+   "minecraft:stonecutter",
+   "minecraft:cartography_table",
+   "minecraft:fletching_table",
+   "minecraft:grindstone"
+  ],
+  "bookshelf": [
+   "minecraft:bookshelf",
+   "minecraft:chiseled_bookshelf"
+  ],
+  "lectern": [
+   "minecraft:lectern"
+  ],
+  "seat": [
+   "*_stairs"
+  ],
+  "altar": [
+   "minecraft:enchanting_table",
+   "minecraft:bell",
+   "*altar*"
+  ],
+  "light": [
+   "minecraft:torch",
+   "minecraft:wall_torch",
+   "minecraft:lantern",
+   "minecraft:soul_lantern",
+   "*candle",
+   "minecraft:glowstone",
+   "minecraft:sea_lantern"
+  ],
+  "bed": [
+   "*_bed"
+  ]
+ },
+ "buildings": [
+  {
+   "id": "smelter",
+   "codex": "building.smelter",
+   "minVolume": 12,
+   "minArea": 6,
+   "minHeight": 2,
+   "needs": {
+    "blast_furnace": 1,
+    "furnace": 1,
+    "door": 1
+   },
+   "byEra": [
+    {
+     "from": "IV",
+     "minVolume": 24,
+     "needs": {
+      "blast_furnace": 2,
+      "furnace": 2,
+      "door": 1,
+      "light": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "kiln",
+   "codex": "building.kiln",
+   "minVolume": 8,
+   "minArea": 4,
+   "minHeight": 2,
+   "needs": {
+    "furnace": 1,
+    "door": 1
+   },
+   "byEra": [
+    {
+     "from": "III",
+     "minVolume": 12,
+     "needs": {
+      "furnace": 2,
+      "door": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "codex": "building.library",
+   "minVolume": 20,
+   "minArea": 9,
+   "minHeight": 3,
+   "needs": {
+    "bookshelf": 6,
+    "lectern": 1,
+    "seat": 1,
+    "door": 1
+   },
+   "byEra": [
+    {
+     "from": "III",
+     "minVolume": 40,
+     "needs": {
+      "bookshelf": 12,
+      "lectern": 1,
+      "seat": 2,
+      "door": 1,
+      "light": 1
+     }
+    },
+    {
+     "from": "V",
+     "minVolume": 80,
+     "needs": {
+      "bookshelf": 24,
+      "lectern": 2,
+      "seat": 4,
+      "door": 1,
+      "light": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "temple",
+   "codex": "building.temple",
+   "minVolume": 30,
+   "minArea": 12,
+   "minHeight": 3,
+   "needs": {
+    "altar": 1,
+    "light": 2,
+    "door": 1
+   },
+   "byEra": [
+    {
+     "from": "III",
+     "minVolume": 48,
+     "needs": {
+      "altar": 1,
+      "light": 4,
+      "seat": 2,
+      "door": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "workshop",
+   "codex": "building.workshop",
+   "minVolume": 16,
+   "minArea": 9,
+   "minHeight": 2,
+   "needs": {
+    "table": 3,
+    "door": 1
+   },
+   "byEra": [
+    {
+     "from": "IV",
+     "minVolume": 30,
+     "needs": {
+      "table": 5,
+      "light": 1,
+      "door": 1
+     }
+    },
+    {
+     "from": "VI",
+     "minVolume": 60,
+     "needs": {
+      "table": 8,
+      "light": 2,
+      "door": 1
+     }
+    }
+   ]
+  }
+ ]
+}
