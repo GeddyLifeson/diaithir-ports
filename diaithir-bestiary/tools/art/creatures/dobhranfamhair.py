@@ -1,4 +1,4 @@
-"""Dobhranfamhair: the giant beaver (Castoroides ohioensis), a bear-sized Pleistocene rodent with a long skull, orange-brown
+"""Dobrunfumuir: the giant beaver (Castoroides ohioensis), a bear-sized Pleistocene rodent with a long skull, orange-brown
 chisel incisors, dense dark fur, small round ears, webbed hind feet and a narrow scaly tail (not the broad paddle of the living
 beaver). Real proportions: about 2.2 m nose to tail, 1 m at the hip."""
 import mats

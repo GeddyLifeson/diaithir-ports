@@ -1,4 +1,4 @@
-"""Eachrèidhlein: the Mexican horse (Equus conversidens), a small stocky Pleistocene horse about 1.4 m at the withers,
+"""Iechrèidlein: the Mexican horse (Equus conversidens), a small stocky Pleistocene horse about 1.4 m at the withers,
 dun coat with a dark dorsal stripe, dark mane, tail and lower legs, and a heavy head."""
 import mats
 from model import Model, Anim

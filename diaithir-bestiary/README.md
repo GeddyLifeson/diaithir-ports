@@ -117,5 +117,5 @@ Two realistic Pleistocene beasts for the Earth timeline (Age I), both written by
 
 | Id | Preset | From Age | Where |
 | --- | --- | --- | --- |
-| `dobhranfamhair` Dobhranfamhair (giant beaver, Castoroides ohioensis) | beast | I | swamps; tame with stripped oak logs |
-| `eachreidhlein` Eachrèidhlein (Mexican horse, Equus conversidens) | beast, rideable | I | plains, herds; tame with wheat |
+| `dobhranfamhair` Dobrunfumuir (giant beaver, Castoroides ohioensis) | beast | I | swamps; tame with stripped oak logs |
+| `eachreidhlein` Iechrèidlein (Mexican horse, Equus conversidens) | beast, rideable | I | plains, herds; tame with wheat |
