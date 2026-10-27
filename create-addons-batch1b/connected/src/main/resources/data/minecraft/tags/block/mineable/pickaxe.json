@@ -5,6 +5,9 @@
   "create_connected:brass_gearbox",
   "create_connected:inverted_clutch",
   "create_connected:inverted_gearshift",
-  "create_connected:brake"
+  "create_connected:brake",
+  "create_connected:cross_connector",
+  "create_connected:andesite_encased_cross_connector",
+  "create_connected:brass_encased_cross_connector"
  ]
 }

@@ -90,3 +90,31 @@ def main():
     w(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json", {"values": mineable})
 
 main()
+
+def cross():
+    lang = json.load(open(f"{A}/lang/en_us.json"))
+    png(f"{A}/textures/block/cross_connector_arm.png", art.shaft_side("cc_arm", art.STEEL))
+    png(f"{A}/textures/block/cross_connector_core.png", art.metal_flat("cc_core", art.BRASS, 0.3))
+    def arm(f, t):
+        return {"from": f, "to": t, "faces": {k: {"uv": [6, 0, 10, 16] if k in ("north", "south", "east", "west") else [6, 6, 10, 10], "texture": "#arm"} for k in ("north", "south", "east", "west", "up", "down")}}
+    core = {"from": [5, 5, 5], "to": [11, 11, 11], "faces": {k: {"uv": [0, 0, 16, 16], "texture": "#core"} for k in ("north", "south", "east", "west", "up", "down")}}
+    w(f"{A}/models/block/cross_connector.json", {"textures": {"arm": f"{NS}:block/cross_connector_arm", "core": f"{NS}:block/cross_connector_core", "particle": f"{NS}:block/cross_connector_core"},
+        "elements": [core, arm([0, 6, 6], [16, 10, 10]), arm([6, 6, 0], [10, 10, 16])]})
+    w(f"{A}/blockstates/cross_connector.json", {"variants": {"axis=y": {"model": f"{NS}:block/cross_connector"}, "axis=x": {"model": f"{NS}:block/cross_connector", "x": 90, "y": 90}, "axis=z": {"model": f"{NS}:block/cross_connector", "x": 90}}})
+    w(f"{A}/items/cross_connector.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/cross_connector"}})
+    lang[f"block.{NS}.cross_connector"] = "Cross Connector"
+    drop = lambda item: {"rolls": 1, "entries": [{"type": "minecraft:item", "name": item}], "conditions": [{"condition": "minecraft:survives_explosion"}]}
+    for kind, name in (("andesite", "Andesite"), ("brass", "Brass")):
+        bid = f"{kind}_encased_cross_connector"
+        w(f"{A}/models/block/{bid}.json", {"parent": "minecraft:block/cube_all", "textures": {"all": f"create:block/{kind}_casing"}})
+        w(f"{A}/blockstates/{bid}.json", {"variants": {f"axis={a}": {"model": f"{NS}:block/{bid}"} for a in "xyz"}})
+        w(f"{A}/items/{bid}.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/{bid}"}})
+        lang[f"block.{NS}.{bid}"] = f"{name} Encased Cross Connector"
+        w(f"{D}/loot_table/blocks/{bid}.json", {"type": "minecraft:block", "pools": [drop(f"{NS}:cross_connector"), drop(f"create:{kind}_casing")]})
+    w(f"{D}/loot_table/blocks/cross_connector.json", {"type": "minecraft:block", "pools": [drop(f"{NS}:cross_connector")]})
+    w(f"{D}/recipe/cross_connector.json", {"type": "minecraft:crafting_shapeless", "category": "misc", "ingredients": ["create:shaft", "create:shaft", "create:brass_ingot"], "result": {"id": f"{NS}:cross_connector", "count": 1}})
+    w(f"{A}/lang/en_us.json", lang)
+    pick = json.load(open(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"))
+    pick["values"] += [f"{NS}:cross_connector", f"{NS}:andesite_encased_cross_connector", f"{NS}:brass_encased_cross_connector"]
+    w(f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json", pick)
+cross()

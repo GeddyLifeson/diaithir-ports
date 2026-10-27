@@ -56,8 +56,10 @@ public class CreateConnected {
     }
 
     private static void setup() {
+        com.zurrtum.create.content.decoration.encasing.EncasingRegistry.addVariant(CCBlocks.CROSS_CONNECTOR.get(), CCBlocks.ANDESITE_ENCASED_CROSS_CONNECTOR.get());
+        com.zurrtum.create.content.decoration.encasing.EncasingRegistry.addVariant(CCBlocks.CROSS_CONNECTOR.get(), CCBlocks.BRASS_ENCASED_CROSS_CONNECTOR.get());
         for (var b : new net.minecraft.world.level.block.Block[]{CCBlocks.PARALLEL_GEARBOX.get(), CCBlocks.SIX_WAY_GEARBOX.get(),
-            CCBlocks.BRASS_GEARBOX.get(), CCBlocks.INVERTED_CLUTCH.get(), CCBlocks.INVERTED_GEARSHIFT.get(), CCBlocks.BRAKE.get()}) {
+            CCBlocks.BRASS_GEARBOX.get(), CCBlocks.INVERTED_CLUTCH.get(), CCBlocks.INVERTED_GEARSHIFT.get(), CCBlocks.BRAKE.get(), CCBlocks.CROSS_CONNECTOR.get(), CCBlocks.ANDESITE_ENCASED_CROSS_CONNECTOR.get(), CCBlocks.BRASS_ENCASED_CROSS_CONNECTOR.get()}) {
             BlockStressValues.IMPACTS.register(b, (DoubleSupplier) () -> 0.0);
         }
     }

@@ -20,6 +20,8 @@ public class CCItems {
     public static final DeferredItem<BlockItem> INVERTED_GEARSHIFT = ITEMS.registerSimpleBlockItem(CCBlocks.INVERTED_GEARSHIFT);
     public static final DeferredItem<BlockItem> BRAKE = ITEMS.registerSimpleBlockItem(CCBlocks.BRAKE);
 
+    public static final DeferredItem<BlockItem> CROSS_CONNECTOR = ITEMS.registerSimpleBlockItem(CCBlocks.CROSS_CONNECTOR);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

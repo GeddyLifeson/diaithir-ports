@@ -9,6 +9,9 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.diaithir.connected.CreateConnected;
 import org.diaithir.connected.content.brake.BrakeBlock;
+import org.diaithir.connected.content.crossconnector.CrossConnectorBlock;
+import org.diaithir.connected.content.crossconnector.EncasedCrossConnectorBlock;
+import com.zurrtum.create.AllBlocks;
 import org.diaithir.connected.content.brassgearbox.BrassGearboxBlock;
 import org.diaithir.connected.content.invertedclutch.InvertedClutchBlock;
 import org.diaithir.connected.content.invertedgearshift.InvertedGearshiftBlock;
@@ -30,6 +33,12 @@ public class CCBlocks {
     public static final DeferredBlock<InvertedClutchBlock> INVERTED_CLUTCH = reg("inverted_clutch", InvertedClutchBlock::new, box(MapColor.PODZOL));
     public static final DeferredBlock<InvertedGearshiftBlock> INVERTED_GEARSHIFT = reg("inverted_gearshift", InvertedGearshiftBlock::new, box(MapColor.PODZOL));
     public static final DeferredBlock<BrakeBlock> BRAKE = reg("brake", BrakeBlock::new, box(MapColor.PODZOL));
+
+    public static final DeferredBlock<CrossConnectorBlock> CROSS_CONNECTOR = reg("cross_connector", CrossConnectorBlock::new, box(MapColor.PODZOL));
+    public static final DeferredBlock<EncasedCrossConnectorBlock> ANDESITE_ENCASED_CROSS_CONNECTOR = reg("andesite_encased_cross_connector",
+        p -> new EncasedCrossConnectorBlock(p, () -> AllBlocks.ANDESITE_CASING), box(MapColor.PODZOL));
+    public static final DeferredBlock<EncasedCrossConnectorBlock> BRASS_ENCASED_CROSS_CONNECTOR = reg("brass_encased_cross_connector",
+        p -> new EncasedCrossConnectorBlock(p, () -> AllBlocks.BRASS_CASING), box(MapColor.TERRACOTTA_BROWN));
 
     private static <B extends Block> DeferredBlock<B> reg(String id, Function<Properties, B> factory, Properties props) {
         return BLOCKS.registerBlock(id, factory, () -> props);

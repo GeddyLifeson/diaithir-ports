@@ -8,5 +8,8 @@
  "item.create_connected.vertical_brass_gearbox": "Vertical Brass Gearbox",
  "block.create_connected.inverted_clutch": "Inverted Clutch",
  "block.create_connected.inverted_gearshift": "Inverted Gearshift",
- "block.create_connected.brake": "Brake"
+ "block.create_connected.brake": "Brake",
+ "block.create_connected.cross_connector": "Cross Connector",
+ "block.create_connected.andesite_encased_cross_connector": "Andesite Encased Cross Connector",
+ "block.create_connected.brass_encased_cross_connector": "Brass Encased Cross Connector"
 }
