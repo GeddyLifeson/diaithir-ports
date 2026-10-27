@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT (code, from Create: Diesel Generators by George VI); art, sounds and text original to the Diaithir pack"
+
+[[mods]]
+modId="diaithir_create_diesel_generators"
+version="${file.jarVersion}"
+displayName="Create: Diesel Generators (Diaithir port)"
+authors="George VI (original code, MIT); Diaithir pack (NeoForge 26.1.2 port, all art and text)"
+description='''Fuel engines and oil for the Diaithir Create port. https://github.com/geddylifeson/diaithir-ports.'''
+
+[[dependencies.diaithir_create_diesel_generators]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_diesel_generators]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_diesel_generators]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"
