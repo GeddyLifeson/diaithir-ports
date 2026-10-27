@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.otectus.immersivetanning.config.ClientConfig;
 import com.otectus.immersivetanning.config.ServerConfig;
 import com.otectus.immersivetanning.registry.ModBlockEntities;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import com.otectus.immersivetanning.registry.ModBlocks;
 import com.otectus.immersivetanning.registry.ModCreativeTabs;
 import com.otectus.immersivetanning.registry.ModItems;
@@ -30,6 +32,10 @@ public class ImmersiveTanning {
         ModLootModifiers.LOOT_MODIFIERS.register(modBus);
         ModLootFunctions.LOOT_FUNCTIONS.register(modBus);
         ModCreativeTabs.TABS.register(modBus);
+        modBus.addListener(RegisterCapabilitiesEvent.class, event -> {
+            event.registerBlockEntity(Capabilities.Item.BLOCK, ModBlockEntities.TANNERS_VAT.get(), (vat, side) -> vat.itemHandler);
+            event.registerBlockEntity(Capabilities.Fluid.BLOCK, ModBlockEntities.TANNERS_VAT.get(), (vat, side) -> vat.fluidHandler);
+        });
 
         container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
         container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);

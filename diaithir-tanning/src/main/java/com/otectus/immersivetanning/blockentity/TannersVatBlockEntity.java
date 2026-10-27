@@ -14,6 +14,12 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.transaction.SnapshotJournal;
+import net.neoforged.neoforge.transfer.transaction.TransactionContext;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -26,7 +32,7 @@ import java.util.List;
  * The Tanner's Vat: a batch of scraped hides steeping in water charged with bark. No GUI and no chemistry - one bucket
  * of water, one bark per tannin charge, and each hide spends the charges its size needs when it starts. Hides progress
  * independently along world time, so a batch can be topped up at any moment and keeps working while nobody is near.
- * Automation hooks (item and fluid transfer) are not ported yet.
+ * Hoppers and pipes reach it through the item and fluid transfer capabilities registered in {@code CommonEvents}.
  *
  * <p>Every change to water, tannin or hides runs one transition ({@link #startWaiting}): waiting hides start in
  * insertion order, each paying its own cost once, and a hide the tannin cannot pay for yet does not hold back a
@@ -51,6 +57,16 @@ public class TannersVatBlockEntity extends StationBlockEntity {
 
         Slot(HideData hide) {
             this.hide = hide;
+        }
+
+        Slot copy() {
+            Slot c = new Slot(hide);
+            c.started = started;
+            c.start = start;
+            c.duration = duration;
+            c.announced = announced;
+            c.pausedElapsed = pausedElapsed;
+            return c;
         }
 
         public HideData hide() { return hide; }
@@ -308,6 +324,153 @@ public class TannersVatBlockEntity extends StationBlockEntity {
     protected void sync() {
         super.sync();
         if (level != null && !level.isClientSide()) level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());
+    }
+
+    // ------------------------------------------------------------------ automation
+
+    private record Snapshot(int water, int tannin, List<Slot> slots) {}
+
+    private final SnapshotJournal<Snapshot> journal = new SnapshotJournal<>() {
+        @Override
+        protected Snapshot createSnapshot() {
+            List<Slot> copy = new ArrayList<>();
+            for (Slot s : slots) copy.add(s.copy());
+            return new Snapshot(water, tannin, copy);
+        }
+
+        @Override
+        protected void revertToSnapshot(Snapshot snapshot) {
+            water = snapshot.water();
+            tannin = snapshot.tannin();
+            slots.clear();
+            slots.addAll(snapshot.slots());
+        }
+
+        @Override
+        protected void onRootCommit(Snapshot original) {
+            sync();
+        }
+    };
+
+    /** Slot 0 takes scraped hides and tannin sources; slot 1 offers tanned hides. */
+    public final ResourceHandler<ItemResource> itemHandler = new ResourceHandler<>() {
+        @Override
+        public int size() {
+            return 2;
+        }
+
+        @Override
+        public ItemResource getResource(int index) {
+            ItemStack finished = index == 1 ? firstFinished() : ItemStack.EMPTY;
+            return finished.isEmpty() ? ItemResource.EMPTY : ItemResource.of(finished);
+        }
+
+        @Override
+        public long getAmountAsLong(int index) {
+            return index == 1 && !firstFinished().isEmpty() ? 1 : 0;
+        }
+
+        @Override
+        public long getCapacityAsLong(int index, ItemResource resource) {
+            return index == 1 ? 1 : 64;
+        }
+
+        @Override
+        public boolean isValid(int index, ItemResource resource) {
+            return index == 0 && (resource.is(ModItems.SCRAPED_HIDE.get()) || resource.toStack().is(ModTags.TANNIN_SOURCES));
+        }
+
+        @Override
+        public int insert(int index, ItemResource resource, int amount, TransactionContext transaction) {
+            if (index != 0 || amount <= 0 || !ServerConfig.get(ServerConfig.ENABLE_AUTOMATION)) return 0;
+            ItemStack stack = resource.toStack(amount);
+            if (stack.is(ModItems.SCRAPED_HIDE.get())) {
+                int room = Math.min(amount, capacity() - slots.size());
+                HideData data = ProcessedHideItem.data(stack);
+                if (room <= 0 || !data.isFleshed()) return 0;
+                journal.updateSnapshots(transaction);
+                for (int i = 0; i < room; i++) {
+                    slots.add(new Slot(data));
+                }
+                startWaiting();
+                return room;
+            }
+            if (stack.is(ModTags.TANNIN_SOURCES)) {
+                int room = Math.min(amount, maxTannin() - tannin);
+                if (room <= 0) return 0;
+                journal.updateSnapshots(transaction);
+                tannin += room;
+                startWaiting();
+                return room;
+            }
+            return 0;
+        }
+
+        @Override
+        public int extract(int index, ItemResource resource, int amount, TransactionContext transaction) {
+            if (index != 1 || amount <= 0 || !ServerConfig.get(ServerConfig.ENABLE_AUTOMATION)) return 0;
+            long now = gameTime();
+            for (int i = 0; i < slots.size(); i++) {
+                Slot s = slots.get(i);
+                if (!s.finished(now) || !resource.matches(ModItems.WET_TANNED_HIDE.get().create(s.hide))) continue;
+                journal.updateSnapshots(transaction);
+                slots.remove(i);
+                return 1;
+            }
+            return 0;
+        }
+    };
+
+    /** Accepts water only, up to one bucket. Nothing can be drained. */
+    public final ResourceHandler<FluidResource> fluidHandler = new ResourceHandler<>() {
+        @Override
+        public int size() {
+            return 1;
+        }
+
+        @Override
+        public FluidResource getResource(int index) {
+            return water > 0 ? FluidResource.of(Fluids.WATER) : FluidResource.EMPTY;
+        }
+
+        @Override
+        public long getAmountAsLong(int index) {
+            return water;
+        }
+
+        @Override
+        public long getCapacityAsLong(int index, FluidResource resource) {
+            return WATER_CAPACITY;
+        }
+
+        @Override
+        public boolean isValid(int index, FluidResource resource) {
+            return resource.is(Fluids.WATER);
+        }
+
+        @Override
+        public int insert(int index, FluidResource resource, int amount, TransactionContext transaction) {
+            if (index != 0 || amount <= 0 || !resource.is(Fluids.WATER) || !ServerConfig.get(ServerConfig.ENABLE_AUTOMATION)) return 0;
+            int filled = Math.min(amount, WATER_CAPACITY - water);
+            if (filled <= 0) return 0;
+            journal.updateSnapshots(transaction);
+            water += filled;
+            startWaiting();
+            return filled;
+        }
+
+        @Override
+        public int extract(int index, FluidResource resource, int amount, TransactionContext transaction) {
+            return 0;
+        }
+    };
+
+    private ItemStack firstFinished() {
+        long now = gameTime();
+        for (Slot s : slots) {
+            if (s.finished(now)) return ModItems.WET_TANNED_HIDE.get().create(s.hide);
+        }
+        return ItemStack.EMPTY;
     }
 
     // ------------------------------------------------------------------ persistence
