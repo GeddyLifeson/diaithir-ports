@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "diaithir_wiretech:block/dynamo"
+    }
+  }
+}

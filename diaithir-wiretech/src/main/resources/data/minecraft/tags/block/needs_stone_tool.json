@@ -1,0 +1,13 @@
+{
+  "values": [
+    "diaithir_wiretech:crusher",
+    "diaithir_wiretech:arc_furnace",
+    "diaithir_wiretech:dynamo",
+    "diaithir_wiretech:sheetmetal_iron",
+    "diaithir_wiretech:sheetmetal_copper",
+    "diaithir_wiretech:sheetmetal_steel",
+    "diaithir_wiretech:sheetmetal_electrum",
+    "diaithir_wiretech:iron_scaffolding",
+    "diaithir_wiretech:steel_scaffolding"
+  ]
+}
