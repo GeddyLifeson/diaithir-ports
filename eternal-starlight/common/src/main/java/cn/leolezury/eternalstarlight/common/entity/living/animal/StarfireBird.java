@@ -542,7 +542,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.starfireBird.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.starfireBird.armor())
 			.add(Attributes.MOVEMENT_SPEED, 0.3)

@@ -19,16 +19,14 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(BlockBehaviour.BlockStateBase.class)
 public abstract class BlockStateBaseMixin {
-	@Shadow
-	public abstract boolean is(TagKey<Block> key);
 
 	@WrapMethod(method = "getCollisionShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;")
 	private VoxelShape getCollisionShape(BlockGetter level, BlockPos pos, CollisionContext context, Operation<VoxelShape> original) {
 		VoxelShape result = original.call(level, pos, context);
-		if (!is(ESTags.Blocks.UNAFFECTED_BY_OBLIVION)
-			&& context instanceof EntityCollisionContext entityContext
+		if (context instanceof EntityCollisionContext entityContext
 			&& entityContext.getEntity() instanceof LivingEntity living
-			&& living.hasEffect(ESMobEffects.OBLIVION.asHolder())) {
+			&& living.hasEffect(ESMobEffects.OBLIVION.asHolder())
+			&& !((BlockBehaviour.BlockStateBase) (Object) this).is(ESTags.Blocks.UNAFFECTED_BY_OBLIVION)) {
 			if (context.isAbove(result, pos, true) && !context.isDescending()) {
 				return result;
 			} else {

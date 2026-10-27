@@ -34,9 +34,9 @@ public abstract class TagLoaderMixin {
 				}
 				Optional<Collection<T>> vanilla = result.entrySet().stream().filter(e -> e.getKey().equals(entry.getKey().location())).findFirst().map(Map.Entry::getValue);
 				if (!excluded.isEmpty() && vanilla.isPresent()) {
-					Set<T> modified = new HashSet<>(vanilla.get());
+					List<T> modified = new ArrayList<>(vanilla.get());
 					modified.removeIf(excluded::contains);
-					result.put(entry.getKey().location(), ImmutableSet.copyOf(modified));
+					result.put(entry.getKey().location(), com.google.common.collect.ImmutableList.copyOf(modified));
 				}
 			}
 		}

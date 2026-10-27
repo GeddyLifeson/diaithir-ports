@@ -53,7 +53,11 @@ public class AuroraDeer extends Animal implements Charger {
 	private static final String TAG_SNOW = "snow";
 	private static final String TAG_SNOW_PROGRESS = "snow_progress";
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.AURORA_DEER_FOOD));
+	private static Ingredient foodItemsCache;
+	private static Ingredient foodItems() {
+		if (foodItemsCache == null) foodItemsCache = Ingredient.of(ESPortCompat.items(ESTags.Items.AURORA_DEER_FOOD));
+		return foodItemsCache;
+	}
 	protected static final EntityDataAccessor<Boolean> LEFT_ANTLER = SynchedEntityData.defineId(AuroraDeer.class, EntityDataSerializers.BOOLEAN);
 
 	public boolean hasLeftAntler() {
@@ -115,7 +119,7 @@ public class AuroraDeer extends Animal implements Charger {
 			}
 		});
 		this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+		this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, foodItems(), false));
 		this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D) {
 			@Override
@@ -129,7 +133,7 @@ public class AuroraDeer extends Animal implements Charger {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.auroraDeer.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.auroraDeer.armor())
 			.add(Attributes.ATTACK_DAMAGE, ESConfig.INSTANCE.mobsConfig.auroraDeer.attackDamage())
@@ -139,7 +143,7 @@ public class AuroraDeer extends Animal implements Charger {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return FOOD_ITEMS.test(stack);
+		return foodItems().test(stack);
 	}
 
 	@Override

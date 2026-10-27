@@ -29,6 +29,9 @@
           "west": "true"
         }
       }
+    },
+    "can_place_on": {
+      "type": "minecraft:solid"
     }
   }
 }

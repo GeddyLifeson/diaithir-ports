@@ -11,7 +11,7 @@
           "base": 0.2,
           "per_level_above_first": 0.2
         },
-        "attribute": "minecraft:generic.attack_speed",
+        "attribute": "minecraft:attack_speed",
         "id": "eternal_starlight:enchantment.swift_lash",
         "operation": "add_value"
       }

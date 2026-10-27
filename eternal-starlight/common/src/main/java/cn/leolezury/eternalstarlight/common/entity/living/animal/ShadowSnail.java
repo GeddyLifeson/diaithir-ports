@@ -31,7 +31,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.EnumSet;
 
 public class ShadowSnail extends Animal {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.SHADOW_SNAIL_FOOD));
+	private static Ingredient foodItemsCache;
+	private static Ingredient foodItems() {
+		if (foodItemsCache == null) foodItemsCache = Ingredient.of(ESPortCompat.items(ESTags.Items.SHADOW_SNAIL_FOOD));
+		return foodItemsCache;
+	}
 
 	protected static final EntityDataAccessor<Integer> HIDE_STATE = SynchedEntityData.defineId(ShadowSnail.class, EntityDataSerializers.INT);
 
@@ -64,7 +68,7 @@ public class ShadowSnail extends Animal {
 		this.goalSelector.addGoal(0, new ShadowSnailDoNothingGoal());
 		this.goalSelector.addGoal(1, new FloatGoal(this));
 		this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, FOOD_ITEMS, false));
+		this.goalSelector.addGoal(3, new TemptGoal(this, 1.1D, foodItems(), false));
 		this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
 	}
@@ -91,7 +95,7 @@ public class ShadowSnail extends Animal {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.shadowSnail.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.shadowSnail.armor())
 			.add(Attributes.MOVEMENT_SPEED, 0.08D);
@@ -148,7 +152,7 @@ public class ShadowSnail extends Animal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return FOOD_ITEMS.test(stack);
+		return foodItems().test(stack);
 	}
 
 	@Nullable

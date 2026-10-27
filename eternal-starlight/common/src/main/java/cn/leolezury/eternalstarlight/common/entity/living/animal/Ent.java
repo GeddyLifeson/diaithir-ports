@@ -51,7 +51,11 @@ public class Ent extends Animal {
 	private static final String TAG_HAS_LEAVES = "has_leaves";
 	private static final String TAG_VARIANT = "variant";
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.ENT_FOOD));
+	private static Ingredient foodItemsCache;
+	private static Ingredient foodItems() {
+		if (foodItemsCache == null) foodItemsCache = Ingredient.of(ESPortCompat.items(ESTags.Items.ENT_FOOD));
+		return foodItemsCache;
+	}
 
 	public Ent(EntityType<? extends Ent> type, Level level) {
 		super(type, level);
@@ -105,7 +109,7 @@ public class Ent extends Animal {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
 		this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+		this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, foodItems(), false));
 		this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
 		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
@@ -129,7 +133,7 @@ public class Ent extends Animal {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.ent.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.ent.armor())
 			.add(Attributes.MOVEMENT_SPEED, 0.25D);
@@ -172,7 +176,7 @@ public class Ent extends Animal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return FOOD_ITEMS.test(stack);
+		return foodItems().test(stack);
 	}
 
 	@Nullable

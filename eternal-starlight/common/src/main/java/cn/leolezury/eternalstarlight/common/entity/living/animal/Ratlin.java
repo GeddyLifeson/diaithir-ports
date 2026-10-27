@@ -24,7 +24,11 @@ import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class Ratlin extends Animal {
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.RATLIN_FOOD));
+	private static Ingredient foodItemsCache;
+	private static Ingredient foodItems() {
+		if (foodItemsCache == null) foodItemsCache = Ingredient.of(ESPortCompat.items(ESTags.Items.RATLIN_FOOD));
+		return foodItemsCache;
+	}
 
 	public Ratlin(EntityType<? extends Ratlin> type, Level level) {
 		super(type, level);
@@ -37,7 +41,7 @@ public class Ratlin extends Animal {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
 		this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-		this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+		this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, foodItems(), false));
 		this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Player.class, 8f, 1.25D, 1.5D));
 		this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
 		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -46,7 +50,7 @@ public class Ratlin extends Animal {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.ratlin.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.ratlin.armor())
 			.add(Attributes.MOVEMENT_SPEED, 0.25D);
@@ -54,7 +58,7 @@ public class Ratlin extends Animal {
 
 	@Override
 	public boolean isFood(ItemStack stack) {
-		return FOOD_ITEMS.test(stack);
+		return foodItems().test(stack);
 	}
 
 	@Override

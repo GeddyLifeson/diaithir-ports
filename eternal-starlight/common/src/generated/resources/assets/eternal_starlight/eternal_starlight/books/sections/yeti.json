@@ -86,7 +86,7 @@
           ]
         },
         {
-          "attribute": "minecraft:generic.max_health",
+          "attribute": "minecraft:max_health",
           "attribute_text_style": {
             "color": "#ACFFFC"
           },
@@ -96,7 +96,7 @@
           "text": []
         },
         {
-          "attribute": "minecraft:generic.armor",
+          "attribute": "minecraft:armor",
           "attribute_text_style": {
             "color": "#ACFFFC"
           },
@@ -106,7 +106,7 @@
           "text": []
         },
         {
-          "attribute": "minecraft:generic.movement_speed",
+          "attribute": "minecraft:movement_speed",
           "attribute_text_style": {
             "color": "#ACFFFC"
           },

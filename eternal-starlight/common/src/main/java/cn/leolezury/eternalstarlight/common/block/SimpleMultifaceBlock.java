@@ -41,7 +41,6 @@ public class SimpleMultifaceBlock extends MultifaceSpreadeableBlock implements B
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(WATERLOGGED);
 	}
 
 	@Override

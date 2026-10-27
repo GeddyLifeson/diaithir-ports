@@ -63,7 +63,11 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	@Nullable
 	private net.minecraft.world.entity.EntityReference<LivingEntity> persistentAngerTarget;
 
-	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.CRYSTALLIZED_MOTH_FOOD));
+	private static Ingredient foodItemsCache;
+	private static Ingredient foodItems() {
+		if (foodItemsCache == null) foodItemsCache = Ingredient.of(ESPortCompat.items(ESTags.Items.CRYSTALLIZED_MOTH_FOOD));
+		return foodItemsCache;
+	}
 
 	protected static final EntityDataAccessor<Integer> ATTACK_TICKS = SynchedEntityData.defineId(CrystallizedMoth.class, EntityDataSerializers.INT);
 
@@ -111,7 +115,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 		goalSelector.addGoal(1, new CrystallizedMothAttackGoal());
 		goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
 		goalSelector.addGoal(3, new BreedGoal(this, 1.0));
-		goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+		goalSelector.addGoal(4, new TemptGoal(this, 1.2D, foodItems(), false));
 		goalSelector.addGoal(5, new RandomFlyGoal(this) {
 			@Override
 			public boolean canUse() {
@@ -237,7 +241,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes()
+		return Mob.createMobAttributes().add(net.minecraft.world.entity.ai.attributes.Attributes.TEMPT_RANGE, 10.0)
 			.add(Attributes.MAX_HEALTH, ESConfig.INSTANCE.mobsConfig.crystallizedMoth.maxHealth())
 			.add(Attributes.ARMOR, ESConfig.INSTANCE.mobsConfig.crystallizedMoth.armor())
 			.add(Attributes.ATTACK_DAMAGE, ESConfig.INSTANCE.mobsConfig.crystallizedMoth.attackDamage())
@@ -256,7 +260,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 
 	@Override
 	public boolean isFood(ItemStack itemStack) {
-		return FOOD_ITEMS.test(itemStack);
+		return foodItems().test(itemStack);
 	}
 
 	// copied from vanilla Wolf
