@@ -260,7 +260,7 @@ public class FerrouslimeEntity extends Monster {
 
     private FerrouslimeEntity makeSlime(int heads, int cooldown) {
         Component component = this.getCustomName();
-        FerrouslimeEntity ferrouslime = ACEntityRegistry.FERROUSLIME.get().create(level());
+        FerrouslimeEntity ferrouslime = ACEntityRegistry.FERROUSLIME.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         ferrouslime.setPos(this.position());
         ferrouslime.setHeadCount(heads);
         ferrouslime.setCustomName(component);

@@ -75,7 +75,7 @@ public class UndergroundCabinStructurePiece extends UndergroundTemplateStructure
         accessor.setBlock(pos, Blocks.CAVE_AIR.defaultBlockState(), 0);
         switch (string) {
             case "loot_chest":
-                ResourceKey<LootTable> chestLoot = pickedBiome == null ? BuiltInLootTables.SIMPLE_DUNGEON : ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "chests/underground_cabin_" + pickedBiome.location().getPath()));
+                ResourceKey<LootTable> chestLoot = pickedBiome == null ? BuiltInLootTables.SIMPLE_DUNGEON : ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "chests/underground_cabin_" + pickedBiome.identifier().getPath()));
                 if (accessor.getBlockEntity(pos.below()) instanceof RandomizableContainerBlockEntity container) {
                     container.setLootTable(chestLoot, random.nextLong());
                 }

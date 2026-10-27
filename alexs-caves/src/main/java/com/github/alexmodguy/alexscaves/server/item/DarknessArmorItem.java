@@ -104,7 +104,7 @@ public class DarknessArmorItem extends Item implements CustomArmorPostRender, Ke
                     }
                     if (lastEquipMessageTime <= 0 && entity instanceof Player player) {
                         tag.putLong("LastEquipMessageTime", level.getGameTime());
-                        player.displayClientMessage(Component.translatable("item.alexscaves.cloak_of_darkness.equip"), true);
+                        player.sendOverlayMessage(Component.translatable("item.alexscaves.cloak_of_darkness.equip"));
                         modified = true;
                     }
                     if (modified) {
@@ -126,7 +126,7 @@ public class DarknessArmorItem extends Item implements CustomArmorPostRender, Ke
             itemStack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
             living.addEffect(new MobEffectInstance(ACEffectRegistry.DARKNESS_INCARNATE, AlexsCaves.COMMON_CONFIG.darknessCloakFlightTime.get(), 0, false, false, false));
         } else if (wearer instanceof Player player && !wearer.level().isClientSide()) {
-            player.displayClientMessage(Component.translatable("item.alexscaves.cloak_of_darkness.requires_darkness"), true);
+            player.sendOverlayMessage(Component.translatable("item.alexscaves.cloak_of_darkness.requires_darkness"));
         }
     }
 

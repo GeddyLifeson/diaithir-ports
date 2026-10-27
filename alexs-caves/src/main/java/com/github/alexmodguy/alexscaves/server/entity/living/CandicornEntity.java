@@ -185,7 +185,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        CandicornEntity candicornEntity = ACEntityRegistry.CANDICORN.get().create(serverLevel);
+        CandicornEntity candicornEntity = ACEntityRegistry.CANDICORN.get().create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
         candicornEntity.setVariant(this.getVariant());
         return candicornEntity;
     }
@@ -553,7 +553,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
                 itemstack.hurtAndBreak(1, player, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
                 this.level().playSound((Player) null, this, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
                 this.setSaddled(false);
-                this.spawnAtLocation(Items.SADDLE);
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), Items.SADDLE);
                 return InteractionResult.SUCCESS;
             } else if (isTame() && isOwnedBy(player) && !isFood(itemstack)) {
                 if (player.isShiftKeyDown()) {
@@ -561,7 +561,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
                     if (this.getCommand() == 3) {
                         this.setCommand(0);
                     }
-                    player.displayClientMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()), true);
+                    player.sendOverlayMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()));
                     boolean sit = this.getCommand() == 1;
                     if (sit) {
                         this.setOrderedToSit(true);
@@ -721,7 +721,7 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
     protected void dropEquipment() {
         super.dropEquipment();
         if (this.isSaddled()) {
-            this.spawnAtLocation(Items.SADDLE);
+            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), Items.SADDLE);
         }
     }
 

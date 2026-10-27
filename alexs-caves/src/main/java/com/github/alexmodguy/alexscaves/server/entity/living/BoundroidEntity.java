@@ -243,7 +243,7 @@ public class BoundroidEntity extends Monster {
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("WinchUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "WinchUUID")) {
             this.setWinchUUID(compound.read("WinchUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
     }

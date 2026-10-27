@@ -109,7 +109,7 @@ public class MineGuardianAnchorEntity extends Entity {
 
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
-        if (compound.contains("GuardianUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "GuardianUUID")) {
             this.setGuardianUUID(compound.read("GuardianUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
     }

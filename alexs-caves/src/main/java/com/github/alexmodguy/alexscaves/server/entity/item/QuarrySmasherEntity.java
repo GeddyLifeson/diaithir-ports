@@ -411,13 +411,13 @@ public class QuarrySmasherEntity extends Entity {
             damageSustained += damageValue;
             this.level().broadcastEntityEvent(this, (byte) 48);
             if (damageSustained >= 10) {
-                this.playSound(SoundEvents.ITEM_BREAK);
+                this.playSound(SoundEvents.ITEM_BREAK.value());
                 if (!this.isRemoved()) {
                     for (int i = 0; i < 1 + random.nextInt(1); i++) {
-                        this.spawnAtLocation(ACItemRegistry.AZURE_NEODYMIUM_INGOT.get());
+                        this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), ACItemRegistry.AZURE_NEODYMIUM_INGOT.get());
                     }
                     for (int i = 0; i < 1 + random.nextInt(1); i++) {
-                        this.spawnAtLocation(ACItemRegistry.SCARLET_NEODYMIUM_INGOT.get());
+                        this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), ACItemRegistry.SCARLET_NEODYMIUM_INGOT.get());
                     }
                 }
                 this.remove(RemovalReason.KILLED);

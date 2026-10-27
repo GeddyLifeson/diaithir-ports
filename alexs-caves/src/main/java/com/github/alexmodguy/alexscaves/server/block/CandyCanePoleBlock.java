@@ -75,7 +75,7 @@ public class CandyCanePoleBlock extends CrossCollisionBlock {
 
     public BlockState updateShape(BlockState blockState, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos ourPos, Direction direction, BlockPos updatePos, BlockState blockState1, net.minecraft.util.RandomSource randomSource) {
         if (blockState.getValue(WATERLOGGED)) {
-            levelAccessor.scheduleTick(ourPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(ourPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
 
         return direction.getAxis().getPlane() == Direction.Plane.HORIZONTAL ? blockState.setValue(PROPERTY_BY_DIRECTION.get(direction), this.connectsTo(levelAccessor, ourPos, updatePos)) : super.updateShape(blockState, levelAccessor, ticks, ourPos, direction, updatePos, blockState1, randomSource);

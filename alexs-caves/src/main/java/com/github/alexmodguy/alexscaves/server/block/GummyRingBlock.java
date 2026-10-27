@@ -75,9 +75,9 @@ public class GummyRingBlock extends DirectionalBlock implements BucketPickup, Li
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         int liquidType = state.getValue(LIQUID_LOGGED);
         if (liquidType == 1) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         } else if (liquidType == 2) {
-            levelAccessor.scheduleTick(blockPos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
         }
         boolean flag = liquidType == 0 && state.getValue(FACING) == Direction.UP && !levelAccessor.getFluidState(blockPos.below()).isEmpty();
         return state.setValue(FLOATING, flag);

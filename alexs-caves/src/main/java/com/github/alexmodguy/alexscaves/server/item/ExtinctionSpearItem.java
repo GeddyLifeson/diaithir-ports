@@ -51,7 +51,7 @@ public class ExtinctionSpearItem extends SpearItem {
             int grottoHeads = 3 + ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.HERD_PHALANX, stack);
             float grottoRotateBy = 360F / grottoHeads;
             for(int i = 0; i < grottoHeads; i++){
-                DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level);
+                DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 dinosaurSpirit.copyPosition(living);
                 dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.GROTTOCERATOPS);
                 dinosaurSpirit.setPlayerUUID(living.getUUID());
@@ -81,7 +81,7 @@ public class ExtinctionSpearItem extends SpearItem {
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         hurtEntity.igniteForSeconds(5);
-        DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(player.level());
+        DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(player.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         Vec3 between = player.position().add(hurtEntity.position()).scale(0.5F);
         dinosaurSpirit.setPos(between.x, player.getY() + 1.0F, between.z);
         dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.TREMORSAURUS);

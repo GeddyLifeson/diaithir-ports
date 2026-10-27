@@ -109,7 +109,7 @@ public class GalenaSpireBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         if (state.getValue(WATERLOGGED)) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
         BlockState prev = state.canSurvive(levelAccessor, blockPos) ? super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource) : Blocks.AIR.defaultBlockState();
         if (prev.getBlock() == this) {

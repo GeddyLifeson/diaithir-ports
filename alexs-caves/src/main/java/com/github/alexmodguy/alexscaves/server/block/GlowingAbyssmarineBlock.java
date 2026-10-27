@@ -24,7 +24,7 @@ public class GlowingAbyssmarineBlock extends Block implements ActivatedByAltar {
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         int i = ActivatedByAltar.getDistanceAt(state1) + 1;
         if (i != 1 || state.getValue(DISTANCE) != i) {
-            levelAccessor.scheduleTick(blockPos, this, 2);
+            ticks.scheduleTick(blockPos, this, 2);
         }
         return state;
     }

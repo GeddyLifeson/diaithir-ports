@@ -87,7 +87,7 @@ public class NuclearBombEntity extends Entity {
     }
 
     private void explode() {
-        NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level());
+        NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         explosion.copyPosition(this);
         explosion.setSize(AlexsCaves.COMMON_CONFIG.nukeExplosionSizeModifier.get().floatValue());
         level().addFreshEntity(explosion);
@@ -157,7 +157,7 @@ public class NuclearBombEntity extends Entity {
             player.swing(hand);
             this.playSound(ACSoundRegistry.NUCLEAR_BOMB_DEFUSE.get());
             this.remove(RemovalReason.KILLED);
-            this.spawnAtLocation(new ItemStack(ACBlockRegistry.NUCLEAR_BOMB.get()));
+            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ACBlockRegistry.NUCLEAR_BOMB.get()));
             if (!player.getAbilities().instabuild) {
                 itemStack.hurtAndBreak(1, player, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
             }

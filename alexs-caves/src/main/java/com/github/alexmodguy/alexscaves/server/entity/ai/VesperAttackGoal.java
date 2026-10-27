@@ -126,7 +126,7 @@ public class VesperAttackGoal extends Goal {
                     } else {
                         holder.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
                     }
-                    holder.playSound(SoundEvents.SHIELD_BREAK, 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
+                    holder.playSound(SoundEvents.SHIELD_BREAK.value(), 0.8F, 0.8F + entity.level().getRandom().nextFloat() * 0.4F);
                 }
             }
 

@@ -49,7 +49,7 @@ public class VillageHouseManager {
     public static void addAllHouses(RegistryAccess registryAccess) {
         try {
             for (Identifier villagePool : VILLAGE_REPLACEMENT_POOLS) {
-                StructureTemplatePool pool = registryAccess.registryOrThrow(Registries.TEMPLATE_POOL).getOptional(villagePool).orElse(null);
+                StructureTemplatePool pool = registryAccess.lookupOrThrow(Registries.TEMPLATE_POOL).getOptional(villagePool).orElse(null);
                 if (pool != null) {
                     for (Pair<Identifier, Consumer<StructureTemplatePool>> pair : REGISTRY) {
                         if (villagePool.equals(pair.getFirst())) {

@@ -97,7 +97,7 @@ public class OccultGemItem extends Item {
         ChunkPos chunkPos = new ChunkPos(center);
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                TICKET_CONTROLLER.forceChunk(serverLevel, center, chunkPos.x + i, chunkPos.z + j, load, true);
+                TICKET_CONTROLLER.forceChunk(serverLevel, center, chunkPos.x() + i, chunkPos.z() + j, load, true);
             }
         }
     }

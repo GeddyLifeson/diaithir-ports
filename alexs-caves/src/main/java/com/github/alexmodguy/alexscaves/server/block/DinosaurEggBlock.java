@@ -85,7 +85,7 @@ public class DinosaurEggBlock extends Block {
 
     private void tryTrample(Level worldIn, BlockPos pos, Entity trampler, int chances) {
         if (this.canTrample(worldIn, trampler)) {
-            if (!worldIn.isClientSide && worldIn.random.nextInt(chances) == 0) {
+            if (!worldIn.isClientSide() && worldIn.getRandom().nextInt(chances) == 0) {
                 AABB bb = new AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1).inflate(25, 25, 25);
                 if (trampler instanceof LivingEntity && !(trampler instanceof Player player && player.isCreative())) {
                     List<Mob> list = worldIn.getEntitiesOfClass(Mob.class, bb, living -> living.isAlive() && living.getType() == births.get());
@@ -125,7 +125,7 @@ public class DinosaurEggBlock extends Block {
         level.removeBlock(pos, false);
         for (int j = 0; j < getDinosaursBornFrom(state); ++j) {
             level.levelEvent(2001, pos, Block.getId(state));
-            Entity fromType = births.get().create(level);
+            Entity fromType = births.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             if (fromType instanceof Animal animal) {
                 animal.setAge(-24000);
             }
@@ -145,7 +145,7 @@ public class DinosaurEggBlock extends Block {
     }
 
     protected boolean canGrow(Level worldIn, BlockState stateBelow) {
-        return worldIn.random.nextInt(stateBelow.is(ACBlockRegistry.FERN_THATCH.get()) ? 10 : 20) == 0;
+        return worldIn.getRandom().nextInt(stateBelow.is(ACBlockRegistry.FERN_THATCH.get()) ? 10 : 20) == 0;
     }
 
     protected int getDinosaursBornFrom(BlockState state) {
@@ -153,7 +153,7 @@ public class DinosaurEggBlock extends Block {
     }
 
     protected void removeOneEgg(Level worldIn, BlockPos pos, BlockState state) {
-        worldIn.playSound(null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
+        worldIn.playSound(null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.getRandom().nextFloat() * 0.2F);
         worldIn.destroyBlock(pos, false);
     }
 
@@ -170,7 +170,7 @@ public class DinosaurEggBlock extends Block {
     }
 
     public void onPlace(BlockState state, Level worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (canHatchAt(worldIn, pos) && !worldIn.isClientSide) {
+        if (canHatchAt(worldIn, pos) && !worldIn.isClientSide()) {
             worldIn.levelEvent(2005, pos, 0);
         }
     }

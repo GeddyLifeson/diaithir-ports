@@ -143,7 +143,7 @@ public class NuclearSirenBlockEntity extends BlockEntity {
     public void loadAdditional(net.minecraft.world.level.storage.ValueInput tag) {
         super.loadAdditional(tag);
         this.bombId = tag.getIntOr("BombID", 0);
-        if (tag.contains("NearestFurnaceX")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "NearestFurnaceX")) {
             this.nearestMeltdownFurnace = new BlockPos(tag.getIntOr("NearestFurnaceX", 0), tag.getIntOr("NearestFurnaceY", 0), tag.getIntOr("NearestFurnaceZ", 0));
 
         }

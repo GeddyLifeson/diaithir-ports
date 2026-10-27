@@ -46,7 +46,7 @@ public class EnigmaticEngineBlockEntity extends BlockEntity {
                 }
             }
             if(!level.isClientSide()){
-                SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level);
+                SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 Vec3 vec31 = Vec3.atCenterOf(this.getBlockPos()).add(0, -1, 0);
                 submarine.setYRot(assembleIn.toYRot());
                 submarine.setPos(vec31.x, vec31.y, vec31.z);

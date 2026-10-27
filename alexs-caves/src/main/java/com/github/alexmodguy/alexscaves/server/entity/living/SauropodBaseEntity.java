@@ -341,7 +341,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
                                 if (currentBlocksInChunk < 16) {
                                     currentBlocksInChunk++;
                                 } else {
-                                    CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level());
+                                    CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                                     crushed.moveTo(Vec3.atCenterOf(center.above(y)));
                                     crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
                                     crushed.setPlacementCooldown(10);
@@ -356,7 +356,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
                     }
                 }
                 if (!dataPerYLevel.isEmpty()) {
-                    CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level());
+                    CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                     crushed.moveTo(Vec3.atCenterOf(center.above(y)));
                     crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
                     crushed.setDropChance(dropChance);

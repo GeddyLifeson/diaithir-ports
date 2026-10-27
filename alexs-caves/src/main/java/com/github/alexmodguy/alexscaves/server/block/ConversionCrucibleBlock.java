@@ -85,7 +85,7 @@ public class ConversionCrucibleBlock extends BaseEntityBlock {
                     crucible.rerollWantedItem();
                     crucible.markUpdated();
                 }else if(!crucible.getWantItem().isEmpty() && crucible.getWantItem().is(playerItem.getItem())){
-                    if(!worldIn.isClientSide){
+                    if(!worldIn.isClientSide()){
                         ItemStack copy = playerItem.copy();
                         copy.setCount(1);
                         crucible.consumeItem(copy);
@@ -98,7 +98,7 @@ public class ConversionCrucibleBlock extends BaseEntityBlock {
                 }
                 return InteractionResult.TRY_WITH_EMPTY_HAND;
             }else if(playerItem.is(ACItemRegistry.BIOME_TREAT.get()) && BiomeTreatItem.getCaveBiome(playerItem) != null){
-                if(!worldIn.isClientSide){
+                if(!worldIn.isClientSide()){
                     crucible.setConvertingToBiome(BiomeTreatItem.getCaveBiome(playerItem));
                     crucible.setFilledLevel(1);
                     crucible.rerollWantedItem();

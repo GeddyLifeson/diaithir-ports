@@ -130,7 +130,7 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
                     this.setHasBarrel(false);
                     Vec3 hand = new Vec3(0.65F, -0.3F, 0.9F).xRot(-this.getXRot() * ((float) Math.PI / 180F)).yRot(-this.getYHeadRot() * ((float) Math.PI / 180F));
                     Vec3 handOnBody = this.getEyePosition().add(hand);
-                    ThrownWasteDrumEntity wasteDrumEntity = ACEntityRegistry.THROWN_WASTE_DRUM.get().create(level());
+                    ThrownWasteDrumEntity wasteDrumEntity = ACEntityRegistry.THROWN_WASTE_DRUM.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                     wasteDrumEntity.setPos(handOnBody);
                     Vec3 toss = attackTarget.getEyePosition().subtract(handOnBody).multiply(0.35F, 0, 0.35F).add(0, 0.4, 0);
                     wasteDrumEntity.setYRot(-((float) Mth.atan2(toss.x, toss.z)) * 180.0F / (float) Math.PI);
@@ -232,7 +232,7 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
     protected void dropEquipment() {
         super.dropEquipment();
         if (this.hasBarrel() && shouldDropBlocks()) {
-            this.spawnAtLocation(new ItemStack(ACBlockRegistry.WASTE_DRUM.get()));
+            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ACBlockRegistry.WASTE_DRUM.get()));
         }
     }
 

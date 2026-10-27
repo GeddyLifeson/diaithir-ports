@@ -159,7 +159,7 @@ public class BeholderEyeEntity extends Entity implements PossessesCamera {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
-        if (tag.contains("UsingPlayerUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "UsingPlayerUUID")) {
             this.setUsingPlayerUUID(tag.read("UsingPlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
     }
@@ -228,15 +228,15 @@ public class BeholderEyeEntity extends Entity implements PossessesCamera {
         if (this.level() instanceof ServerLevel serverLevel) {
             if(this.getUsingPlayer() instanceof ServerPlayer serverPlayer){
                 ChunkPos playerChunkPos = new ChunkPos(serverPlayer.blockPosition());
-                TICKET_CONTROLLER.forceChunk(serverLevel, this, playerChunkPos.x, playerChunkPos.z, load, load);
+                TICKET_CONTROLLER.forceChunk(serverLevel, this, playerChunkPos.x(), playerChunkPos.z(), load, load);
             }
             ChunkPos chunkPos = new ChunkPos(this.blockPosition());
             int dist = Math.max(LOAD_CHUNK_DISTANCE, serverLevel.getServer().getPlayerList().getViewDistance() / 2);
             for (int i = -dist; i <= dist; i++) {
                 for (int j = -dist; j <= dist; j++) {
-                    TICKET_CONTROLLER.forceChunk(serverLevel, this, chunkPos.x + i, chunkPos.z + j, load, load);
+                    TICKET_CONTROLLER.forceChunk(serverLevel, this, chunkPos.x() + i, chunkPos.z() + j, load, load);
                     if (load && this.getUsingPlayer() instanceof ServerPlayer serverPlayer) {
-                        serverPlayer.connection.send(new ClientboundLevelChunkWithLightPacket(level().getChunk(chunkPos.x + i, chunkPos.z + j), level().getLightEngine(), (BitSet)null, (BitSet)null));
+                        serverPlayer.connection.send(new ClientboundLevelChunkWithLightPacket(level().getChunk(chunkPos.x() + i, chunkPos.z() + j), level().getLightEngine(), (BitSet)null, (BitSet)null));
                     }
                 }
             }

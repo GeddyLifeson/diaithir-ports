@@ -73,7 +73,7 @@ public class BiomeGenerationNoiseCondition {
         if (depth != null && depth.length >= 2 && (unquantizedDepth < depth[0] || unquantizedDepth > depth[1])) {
             return false;
         }
-        if(dimension != null && !dimensions.contains(dimension.location().toString())){
+        if(dimension != null && !dimensions.contains(dimension.identifier().toString())){
             return false;
         }
         return true;

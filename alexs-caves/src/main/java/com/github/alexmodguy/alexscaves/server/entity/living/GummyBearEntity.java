@@ -197,7 +197,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
         this.setGummyColor(GummyColors.fromOrdinal(compound.getIntOr("GummyColor", 0)));
-        if (compound.contains("DigestingEffect")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "DigestingEffect")) {
             this.digestEffect(BuiltInRegistries.POTION.get(Identifier.parse(compound.getStringOr("DigestingEffect", ""))));
             this.setDigesting(digestingEffect != null);
             this.jellybeansToMake = compound.getIntOr("JellyBeansToMake", 0);
@@ -343,7 +343,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        GummyBearEntity gummyBear = ACEntityRegistry.GUMMY_BEAR.get().create(level);
+        GummyBearEntity gummyBear = ACEntityRegistry.GUMMY_BEAR.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
         gummyBear.setGummyColor(this.getGummyColor());
         return gummyBear;
     }
@@ -486,7 +486,7 @@ public class GummyBearEntity extends Animal implements IDancesToJukebox, IAnimat
             if (this.getAnimation() == ANIMATION_BACKSCRATCH) {
                 if (this.getAnimationTick() % 15 == 0 && this.getAnimationTick() > 0) {
                     if (jellybeansToMake > 0) {
-                        spawnAtLocation(createJellybean(), 1.0F + random.nextFloat());
+                        spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), createJellybean(), 1.0F + random.nextFloat());
                         jellybeansToMake--;
                     }
                 }

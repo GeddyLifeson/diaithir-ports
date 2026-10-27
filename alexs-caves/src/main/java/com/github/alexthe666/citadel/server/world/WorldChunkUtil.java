@@ -54,7 +54,7 @@ public class WorldChunkUtil {
      * @return true if loaded
      */
     public static boolean isChunkLoaded(final LevelAccessor world, final ChunkPos pos) {
-        return isChunkLoaded(world, pos.x, pos.z);
+        return isChunkLoaded(world, pos.x(), pos.z());
     }
 
     /**

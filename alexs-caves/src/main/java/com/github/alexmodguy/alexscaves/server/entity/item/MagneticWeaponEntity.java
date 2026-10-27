@@ -255,7 +255,7 @@ public class MagneticWeaponEntity extends Entity {
     private void plopItem(){
         if(!spawnedItem){
             spawnedItem = true;
-            ItemEntity itementity = this.spawnAtLocation(this.getItemStack());
+            ItemEntity itementity = this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemStack());
             if (itementity != null) {
                 itementity.setNoPickUpDelay();
             }
@@ -389,10 +389,10 @@ public class MagneticWeaponEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
-        if (tag.contains("WeaponStack")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "WeaponStack")) {
             this.setItemStack(ItemStack.parseOptional(this.registryAccess(), tag.getCompoundOrEmpty("WeaponStack")));
         }
-        if (tag.contains("ControllerUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "ControllerUUID")) {
             this.setControllerUUID(tag.read("ControllerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
     }

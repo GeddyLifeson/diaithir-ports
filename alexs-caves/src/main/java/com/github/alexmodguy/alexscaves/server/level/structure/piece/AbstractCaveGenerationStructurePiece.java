@@ -73,7 +73,7 @@ public abstract class AbstractCaveGenerationStructurePiece extends StructurePiec
           return;
         }
         try {
-            Holder<Biome> biomeHolder = level.registryAccess().registryOrThrow(Registries.BIOME).getHolderOrThrow(with);
+            Holder<Biome> biomeHolder = level.registryAccess().lookupOrThrow(Registries.BIOME).getHolderOrThrow(with);
             ChunkAccess chunkAccess = level.getChunk(this.chunkCorner);
             int stopY = level.getSeaLevel() - belowLevel;
             BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();

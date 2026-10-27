@@ -332,7 +332,7 @@ public class MineGuardianEntity extends Monster {
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("AnchorUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AnchorUUID")) {
             this.setAnchorUUID(compound.read("AnchorUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         this.setMaxChainLength(compound.getIntOr("MaxChainLength", 0));

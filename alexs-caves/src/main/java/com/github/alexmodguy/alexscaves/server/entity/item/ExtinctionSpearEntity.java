@@ -70,7 +70,7 @@ public class ExtinctionSpearEntity extends AbstractArrow {
         if ((this.inGround || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (!this.level().isClientSide() && this.pickup == AbstractArrow.Pickup.ALLOWED) {
-                    this.spawnAtLocation(this.getDefaultPickupItem(), 0.1F);
+                    this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getDefaultPickupItem(), 0.1F);
                 }
 
                 this.discard();
@@ -151,7 +151,7 @@ public class ExtinctionSpearEntity extends AbstractArrow {
                 this.doPostHurtEffects(livingentity1);
             }
             if(entity1 != null){
-                DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level());
+                DinosaurSpiritEntity dinosaurSpirit = ACEntityRegistry.DINOSAUR_SPIRIT.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 dinosaurSpirit.setPos(entity.getX(), entity.getY() + entity.getBbHeight(), entity.getZ());
                 dinosaurSpirit.setDinosaurType(DinosaurSpiritEntity.DinosaurType.SUBTERRANODON);
                 dinosaurSpirit.setPlayerUUID(entity1.getUUID());

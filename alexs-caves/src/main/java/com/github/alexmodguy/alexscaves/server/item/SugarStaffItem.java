@@ -41,7 +41,7 @@ public class SugarStaffItem extends Item {
             Entity lookingAtEntity = SeaStaffItem.getClosestLookingAtEntityFor(level, player, 32);
             if(hex){
                 Vec3 ground = ACMath.getGroundBelowPosition(player.level(), player.getEyePosition());
-                SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(player.level());
+                SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(player.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 sugarStaffHexEntity.setOwner(player);
                 sugarStaffHexEntity.setPos(ground.x, ground.y, ground.z);
                 sugarStaffHexEntity.setHexScale(1.0F + 0.25F * ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.HUMUNGOUS_HEX, itemstack));
@@ -54,7 +54,7 @@ public class SugarStaffItem extends Item {
                 boolean flag = false;
                 int despawnTime = 80;
                 for (int i = 0; i < spawnIn; i++) {
-                    SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(player.level());
+                    SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(player.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                     spinningPeppermintEntity.setPos(player.position().add(0, player.getBbHeight() * 0.45F, 0));
                     if(ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.PEPPERMINT_PUNTING, itemstack) > 0){
                         spinningPeppermintEntity.setStraight(true);

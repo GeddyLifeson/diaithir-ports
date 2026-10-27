@@ -102,12 +102,12 @@ public class MetalScaffoldingBlock extends Block implements BucketPickup, Liquid
     public BlockState updateShape(BlockState blockState, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos pos1, BlockState blockState1, net.minecraft.util.RandomSource randomSource) {
         int liquidType = blockState.getValue(LIQUID_LOGGED);
         if (liquidType == 1) {
-            levelAccessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         } else if (liquidType == 2) {
-            levelAccessor.scheduleTick(pos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
+            ticks.scheduleTick(pos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
         }
         if (!levelAccessor.isClientSide()) {
-            levelAccessor.scheduleTick(pos, this, 1);
+            ticks.scheduleTick(pos, this, 1);
         }
 
         return blockState;

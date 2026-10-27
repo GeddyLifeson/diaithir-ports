@@ -289,7 +289,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
     public boolean hurtEnemy(ItemStack stack, LivingEntity hurtMob, LivingEntity livingEntity1) {
         if (hurtMob.getType().is(ACTagRegistry.RESISTS_TOTEM_OF_POSSESSION) || hurtMob instanceof Player && !AlexsCaves.COMMON_CONFIG.totemOfPossessionPlayers.get()) {
             if (livingEntity1 instanceof Player player) {
-                player.displayClientMessage(Component.translatable("item.alexscaves.totem_of_possession.invalid"), true);
+                player.sendOverlayMessage(Component.translatable("item.alexscaves.totem_of_possession.invalid"));
             }
         } else {
             setPossessed(hurtMob, true);

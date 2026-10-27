@@ -23,7 +23,7 @@ public abstract class LocalTickRateModifier extends TickRateModifier {
     public CompoundTag toTag() {
         CompoundTag tag = super.toTag();
         tag.putDouble("Range", range);
-        tag.putString("Dimension", dimension.location().toString());
+        tag.putString("Dimension", dimension.identifier().toString());
         return tag;
     }
 

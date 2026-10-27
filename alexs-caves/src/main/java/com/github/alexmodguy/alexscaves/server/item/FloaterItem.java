@@ -17,7 +17,7 @@ public class FloaterItem extends Item {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if(player.isInWater() && !player.isShiftKeyDown()){
-            FloaterEntity floaterEntity = ACEntityRegistry.FLOATER.get().create(level);
+            FloaterEntity floaterEntity = ACEntityRegistry.FLOATER.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             floaterEntity.copyPosition(player);
             if(!level.isClientSide()){
                 level.addFreshEntity(floaterEntity);

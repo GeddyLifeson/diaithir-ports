@@ -871,10 +871,10 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
     @Override
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compoundTag) {
         super.readAdditionalSaveData(compoundTag);
-        if (compoundTag.contains("GobthumperX") && compoundTag.contains("GobthumperY") && compoundTag.contains("GobthumperZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "GobthumperX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "GobthumperY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "GobthumperZ")) {
             this.setGobthumperPos(new BlockPos(compoundTag.getIntOr("GobthumperX", 0), compoundTag.getIntOr("GobthumperY", 0), compoundTag.getIntOr("GobthumperZ", 0)));
         }
-        if (compoundTag.contains("RidingSegmentUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "RidingSegmentUUID")) {
             this.setRidingSegmentUUID(compoundTag.read("RidingSegmentUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         this.setTempSummon(compoundTag.getBooleanOr("TempSummon", false));

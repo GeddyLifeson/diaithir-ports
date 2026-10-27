@@ -191,7 +191,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
         this.setHasEgg(compound.getBooleanOr("Egg", false));
         int altSkin = compound.getIntOr("AltSkin", 0);
         //compatibility with pre 1.1.0 saves
-        if (compound.contains("Retro") && compound.getBooleanOr("Retro", false)) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "Retro") && compound.getBooleanOr("Retro", false)) {
             altSkin = 1;
         }
         this.setAltSkin(altSkin);
@@ -220,7 +220,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
     }
 
     public void onLayEggTick(BlockPos belowEgg, int time) {
-        this.walkAnimation.update(0.5F, 0.4F);
+        this.walkAnimation.update(0.5F, 0.4F, 1.0F);
         this.level().broadcastEntityEvent(this, (byte) 77);
     }
 
@@ -308,7 +308,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
                     if (this.getCommand() == 3) {
                         this.setCommand(0);
                     }
-                    player.displayClientMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()), true);
+                    player.sendOverlayMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()));
                     boolean sit = this.getCommand() == 1;
                     if (sit) {
                         this.setOrderedToSit(true);

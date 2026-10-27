@@ -108,7 +108,7 @@ public class PrimalMagmaBlock extends Block {
 
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         BlockState newState = super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
-        levelAccessor.scheduleTick(blockPos, this, 2);
+        ticks.scheduleTick(blockPos, this, 2);
         return newState;
     }
 

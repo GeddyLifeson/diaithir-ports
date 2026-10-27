@@ -160,7 +160,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ACEntityRegistry.VALLUMRAPTOR.get().create(level);
+        return ACEntityRegistry.VALLUMRAPTOR.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     public int getMaxFallDistance() {
@@ -471,7 +471,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, this.getY() - this.yo, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 6.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     public void playAmbientSound() {
@@ -584,7 +584,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
         }
         if (this.getAnimation() == ANIMATION_GRAB && this.getAnimationTick() > 15) {
             if (!this.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && !this.level().isClientSide()) {
-                this.spawnAtLocation(this.getItemInHand(InteractionHand.MAIN_HAND), 0.0F);
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.MAIN_HAND), 0.0F);
             }
             this.take(e, 1);
             ItemStack duplicate = e.getItem().copy();

@@ -67,7 +67,7 @@ public class FallingGuanoEntity extends FallingBlockEntity {
                 if (!this.onGround()) {
                     if (!this.level().isClientSide() && (this.time > 100 && (blockpos.getY() <= this.level().getMinY() || blockpos.getY() > this.level().getMaxY()) || this.time > 600)) {
                         if (this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
-                            this.spawnAtLocation(block);
+                            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                         }
 
                         this.discard();
@@ -111,7 +111,7 @@ public class FallingGuanoEntity extends FallingBlockEntity {
                                 if (aboveState.canBeReplaced(new DirectionalPlaceContext(this.level(), abovePos, Direction.DOWN, ItemStack.EMPTY, Direction.UP))) {
                                     this.level().setBlockAndUpdate(abovePos, setAboveState);
                                 } else {
-                                    this.spawnAtLocation(block);
+                                    this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                                 }
                                 this.discard();
                                 flag5 = true;
@@ -119,13 +119,13 @@ public class FallingGuanoEntity extends FallingBlockEntity {
                             if (!flag5 && this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                                 this.discard();
                                 this.callOnBrokenAfterFall(block, blockpos);
-                                this.spawnAtLocation(block);
+                                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                             }
                         } else {
                             this.discard();
                             if (this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                                 this.callOnBrokenAfterFall(block, blockpos);
-                                this.spawnAtLocation(block);
+                                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                             }
                         }
                     } else {

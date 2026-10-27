@@ -230,10 +230,10 @@ public class AbyssalAltarBlockEntity extends BaseContainerBlockEntity implements
         super.loadAdditional(compound);
         this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         ContainerHelper.loadAllItems(compound, this.stacks, registries);
-        if (compound.contains("PopStack")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "PopStack")) {
             this.popStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("PopStack"));
         }
-        if (compound.contains("PlayerUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "PlayerUUID")) {
             placingPlayer = compound.read("PlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
         slideProgress = compound.getFloatOr("SlideAmount", 0F);

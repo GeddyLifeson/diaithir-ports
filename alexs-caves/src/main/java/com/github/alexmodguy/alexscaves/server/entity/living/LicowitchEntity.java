@@ -116,7 +116,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
 
     public static boolean isWithinTowerSpawnBounds(ServerLevelAccessor level, BlockPos pos) {
         ResourceKey<Structure> structureKey = ResourceKey.create(Registries.STRUCTURE, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "licowitch_tower"));
-        Structure structure = level.registryAccess().registryOrThrow(Registries.STRUCTURE).get(structureKey);
+        Structure structure = level.registryAccess().lookupOrThrow(Registries.STRUCTURE).get(structureKey);
         if (structure != null) {
             StructureStart structureStart = level.getLevel().structureManager().getStructureAt(pos, structure);
             if (structureStart.isValid()) {
@@ -338,7 +338,7 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
         for (int i = 0; i < listtag.size(); ++i) {
             this.addPossessedUUID(NbtUtils.loadUUID(listtag.get(i)));
         }
-        if (compoundTag.contains("CrucibleX") && compoundTag.contains("CrucibleY") && compoundTag.contains("CrucibleZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "CrucibleZ")) {
             this.setLastCruciblePos(new BlockPos(compoundTag.getIntOr("CrucibleX", 0), compoundTag.getIntOr("CrucibleY", 0), compoundTag.getIntOr("CrucibleZ", 0)));
         }
         teleportCooldown = compoundTag.getIntOr("TeleportCooldown", 0);
@@ -462,17 +462,17 @@ public class LicowitchEntity extends Monster implements IAnimatedEntity {
     public Mob createRandomPossessedMob() {
         float chance = random.nextFloat();
         if (chance < 0.1F) {
-            return ACEntityRegistry.CANDICORN.get().create(level());
+            return ACEntityRegistry.CANDICORN.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         } else if (chance < 0.2F) {
-            return ACEntityRegistry.GUMMY_BEAR.get().create(level());
+            return ACEntityRegistry.GUMMY_BEAR.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         } else if (chance < 0.5F) {
-            return ACEntityRegistry.GUMBEEPER.get().create(level());
+            return ACEntityRegistry.GUMBEEPER.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         } else if (chance < 0.65F) {
-            return ACEntityRegistry.CARAMEL_CUBE.get().create(level());
+            return ACEntityRegistry.CARAMEL_CUBE.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         } else if (chance < 0.75F) {
-            return ACEntityRegistry.GINGERBREAD_MAN.get().create(level());
+            return ACEntityRegistry.GINGERBREAD_MAN.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         } else {
-            return ACEntityRegistry.CANIAC.get().create(level());
+            return ACEntityRegistry.CANIAC.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         }
     }
 

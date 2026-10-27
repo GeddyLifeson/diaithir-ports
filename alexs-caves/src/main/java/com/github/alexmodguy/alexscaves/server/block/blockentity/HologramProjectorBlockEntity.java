@@ -86,15 +86,15 @@ public class HologramProjectorBlockEntity extends BlockEntity {
 
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput tag) {
         super.loadAdditional(tag);
-        if (tag.contains("EntityType")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityType")) {
             String str = tag.getStringOr("EntityType", "");
             this.entityType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
         }
-        if (tag.contains("EntityTag")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityTag")) {
             this.entityTag = tag.getCompoundOrEmpty("EntityTag");
         }
         this.rotation = tag.getFloatOr("Rotation", 0F);
-        if (tag.contains("LastPlayerUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "LastPlayerUUID")) {
             this.lastPlayerUUID = tag.read("LastPlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
     }

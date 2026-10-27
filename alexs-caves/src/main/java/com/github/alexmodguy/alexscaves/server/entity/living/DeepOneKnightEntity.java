@@ -214,7 +214,7 @@ public class DeepOneKnightEntity extends DeepOneBaseEntity {
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("LastTridentUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "LastTridentUUID")) {
             this.lastThrownTrident = compound.read("LastTridentUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
     }

@@ -497,7 +497,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return ACEntityRegistry.SUBTERRANODON.get().create(serverLevel);
+        return ACEntityRegistry.SUBTERRANODON.get().create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     public AABB getBoundingBoxForCulling() {
@@ -588,7 +588,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.lastStepX, 0, this.getZ() - this.lastStepZ);
         float f2 = Math.min(f1 * 4.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     @Override

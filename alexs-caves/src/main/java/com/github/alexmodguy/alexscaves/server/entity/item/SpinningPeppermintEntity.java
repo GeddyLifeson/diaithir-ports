@@ -235,14 +235,14 @@ public class SpinningPeppermintEntity extends Entity {
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compoundTag) {
         this.setStraight(compoundTag.getBooleanOr("Straight", false));
-        if (compoundTag.contains("DespawnsIn")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "DespawnsIn")) {
             this.despawnsIn = compoundTag.getIntOr("DespawnsIn", 0);
         }
         this.setLifespan(compoundTag.getIntOr("Lifespan", 0));
-        if (compoundTag.contains("Owner")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "Owner")) {
             this.ownerUUID = compoundTag.read("Owner", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
-        if (compoundTag.contains("AroundX") && compoundTag.contains("AroundY") && compoundTag.contains("AroundZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "AroundX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "AroundY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "AroundZ")) {
             this.setSpinAroundPosition(new Vec3(compoundTag.getDoubleOr("AroundX", 0D), compoundTag.getDoubleOr("AroundZ", 0D), compoundTag.getDoubleOr("AroundZ", 0D)));
         }
         this.setSpinSpeed(compoundTag.getFloatOr("SpinSpeed", 0F));

@@ -106,7 +106,7 @@ public class GalenaGauntletItem extends Item {
             if(!otherMagneticWeaponsInUse) {
                 ItemStack copy = otherStack.copy();
                 otherStack.setCount(0);
-                MagneticWeaponEntity magneticWeapon = ACEntityRegistry.MAGNETIC_WEAPON.get().create(level);
+                MagneticWeaponEntity magneticWeapon = ACEntityRegistry.MAGNETIC_WEAPON.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 magneticWeapon.setItemStack(copy);
                 magneticWeapon.setPos(living.position().add(0, 1, 0));
                 magneticWeapon.setControllerUUID(living.getUUID());

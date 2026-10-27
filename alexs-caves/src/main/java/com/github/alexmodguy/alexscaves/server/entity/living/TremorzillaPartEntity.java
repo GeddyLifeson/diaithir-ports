@@ -51,7 +51,7 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
         if (parent == null) {
             return InteractionResult.PASS;
         } else {
-            this.playSound(SoundEvents.ITEM_BREAK);
+            this.playSound(SoundEvents.ITEM_BREAK.value());
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }

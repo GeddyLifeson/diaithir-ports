@@ -95,7 +95,7 @@ public class ConfectionOvenBlockEntity extends BlockEntity {
     }
     private void makeGingerbreadMen() {
         if(cooldown % spawnIteratesBy == 0 && gingerbreadSpawns > 0){
-            GingerbreadManEntity gingerbreadMan = ACEntityRegistry.GINGERBREAD_MAN.get().create(level);
+            GingerbreadManEntity gingerbreadMan = ACEntityRegistry.GINGERBREAD_MAN.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             Direction facing = getBlockState().getValue(ConfectionOvenBlock.FACING);
             Vec3 spawnVec = rotateCenteredVec(new Vec3(0, -0.25F, -0.7F), facing);
             gingerbreadMan.setPos(spawnVec.add(this.getBlockPos().getCenter()));

@@ -29,7 +29,7 @@ public class CaveBookItem extends Item {
             serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
         }
         playerIn.swing(handIn);
-        if (worldIn.isClientSide) {
+        if (worldIn.isClientSide()) {
             AlexsCaves.PROXY.openBookGUI(itemStackIn);
         }
         return InteractionResult.PASS;

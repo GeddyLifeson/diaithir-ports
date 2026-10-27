@@ -103,7 +103,7 @@ public class CaveTabletLootModifier implements IGlobalLootModifier {
         if (biome != null) {
             key = biome;
         }
-        tag.putString("CaveBiome", key.location().toString());
+        tag.putString("CaveBiome", key.identifier().toString());
         ItemStack stack = new ItemStack(ACItemRegistry.CAVE_TABLET.get());
         stack.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         return stack;

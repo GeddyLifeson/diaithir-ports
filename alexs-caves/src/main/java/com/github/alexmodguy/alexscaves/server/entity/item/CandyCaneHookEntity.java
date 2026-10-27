@@ -385,7 +385,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
         super.readAdditionalSaveData(tag);
         this.setReeling(tag.getBooleanOr("Reeling", false));
-        if(tag.contains("HookedEntityUUID")){
+        if(com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "HookedEntityUUID")){
             this.setHookedEntityUUID(tag.read("HookedEntityUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         this.setOffhand(tag.getBooleanOr("Offhand", false));

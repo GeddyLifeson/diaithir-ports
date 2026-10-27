@@ -60,7 +60,7 @@ public class MeltedCaramelEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compoundTag) {
-        if(compoundTag.contains("DespawnsIn")){
+        if(com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "DespawnsIn")){
             this.despawnsIn = compoundTag.getIntOr("DespawnsIn", 0);
         }
     }

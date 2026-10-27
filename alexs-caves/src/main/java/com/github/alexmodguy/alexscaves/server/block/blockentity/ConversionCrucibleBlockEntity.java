@@ -93,8 +93,8 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         entity.prevItemDisplayProgress = entity.itemDisplayProgress;
 
         if (entity.biomeColor == -1 && entity.convertingToBiome != null) {
-            Registry<Biome> registry = level.registryAccess().registryOrThrow(Registries.BIOME);
-            Optional<Holder.Reference<Biome>> biomeHolder = registry.getHolder(entity.convertingToBiome);
+            Registry<Biome> registry = level.registryAccess().lookupOrThrow(Registries.BIOME);
+            Optional<Holder.Reference<Biome>> biomeHolder = registry.get(entity.convertingToBiome);
             if (biomeHolder.isPresent()) {
                 entity.biomeColor = calculateBiomeColor(biomeHolder);
             } else {
@@ -238,8 +238,8 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         bottomBlockForBiome = Blocks.STONE.defaultBlockState();
         if (level instanceof ServerLevel serverLevel && convertingToBiome != null) {
             try {
-                Registry<Biome> registry = serverLevel.registryAccess().registryOrThrow(Registries.BIOME);
-                Optional<Holder.Reference<Biome>> biomeHolder = registry.getHolder(convertingToBiome);
+                Registry<Biome> registry = serverLevel.registryAccess().lookupOrThrow(Registries.BIOME);
+                Optional<Holder.Reference<Biome>> biomeHolder = registry.get(convertingToBiome);
                 ChunkAccess chunkaccess = serverLevel.getChunk(this.getBlockPos());
                 ResourceKey<NoiseGeneratorSettings> dimensionType = NoiseGeneratorSettings.OVERWORLD;
                 if (biomeHolder.isPresent()) {
@@ -252,7 +252,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
                     middleBlockForBiome = getFallbackMiddleBlock(biomeHolder.get());
                     bottomBlockForBiome = getFallbackBottomBlock(biomeHolder.get());
                 }
-                Holder<NoiseGeneratorSettings> settings = serverLevel.registryAccess().registryOrThrow(Registries.NOISE_SETTINGS).getHolderOrThrow(dimensionType);
+                Holder<NoiseGeneratorSettings> settings = serverLevel.registryAccess().lookupOrThrow(Registries.NOISE_SETTINGS).getHolderOrThrow(dimensionType);
                 //for compat with other world types, like flat worlds, we cannot assume the chunk generator of the world is noise-based so we must create a new one
                 NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(new ACDummyBiomeSource(), settings);
                 //get or create a dummy noise chunk
@@ -320,7 +320,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
     }
 
     public void convertBiome() {
-        Optional<Holder.Reference<Biome>> biomeHolder = level.registryAccess().registryOrThrow(Registries.BIOME).getHolder(convertingToBiome);
+        Optional<Holder.Reference<Biome>> biomeHolder = level.registryAccess().lookupOrThrow(Registries.BIOME).getHolder(convertingToBiome);
         if(biomeHolder.isEmpty()){
             return;
         }
@@ -425,13 +425,13 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
     @Override
     public void loadAdditional(net.minecraft.world.level.storage.ValueInput compound) {
         super.loadAdditional(compound);
-        if (compound.contains("WantStack")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "WantStack")) {
             this.wantStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("WantStack"));
         }
-        if (compound.contains("DisplayStack")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "DisplayStack")) {
             this.displayStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("DisplayStack"));
         }
-        if (compound.contains("ConvertingToBiome")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "ConvertingToBiome")) {
             convertingToBiome = ResourceKey.create(Registries.BIOME, Identifier.parse(compound.getStringOr("ConvertingToBiome", "")));
         }
         filledLevel = compound.getIntOr("FilledLevel", 0);
@@ -451,7 +451,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
             compound.put("DisplayStack", this.displayStack.saveOptional(registries));
         }
         if (convertingToBiome != null) {
-            compound.putString("ConvertingToBiome", convertingToBiome.location().toString());
+            compound.putString("ConvertingToBiome", convertingToBiome.identifier().toString());
         }
         compound.putInt("FilledLevel", filledLevel);
         compound.putInt("BiomeColor", biomeColor);
@@ -561,8 +561,8 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         if (this.isWitchMode()) {
             this.wantStack = new ItemStack(ACItemRegistry.LICOWITCH_RADIANT_ESSENCE.get());
         } else if (getFilledLevel() > MAX_FILL_AMOUNT - 2) {
-            Registry<Biome> registry = level.registryAccess().registryOrThrow(Registries.BIOME);
-            Optional<Holder.Reference<Biome>> biomeHolder = registry.getHolder(this.convertingToBiome);
+            Registry<Biome> registry = level.registryAccess().lookupOrThrow(Registries.BIOME);
+            Optional<Holder.Reference<Biome>> biomeHolder = registry.get(this.convertingToBiome);
             this.wantStack = biomeHolder.isPresent() ? getFinalSacrificeForBiome(biomeHolder.get()) : new ItemStack(Items.DIAMOND);
         } else {
             int choice = level.getRandom().nextInt(2);

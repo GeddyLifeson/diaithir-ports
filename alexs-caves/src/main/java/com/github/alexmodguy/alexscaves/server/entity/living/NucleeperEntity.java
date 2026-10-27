@@ -227,7 +227,7 @@ public class NucleeperEntity extends Monster implements ActivatesSirens, Powerab
     }
 
     private void explode() {
-        NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level());
+        NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         explosion.copyPosition(this);
         explosion.setSize(isCharged() ? 1.75F : 1F);
         if(!level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)){
@@ -251,7 +251,7 @@ public class NucleeperEntity extends Monster implements ActivatesSirens, Powerab
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, flying ? this.getY() - this.yo : 0, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 8.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     public float getStepHeight() {
@@ -280,7 +280,7 @@ public class NucleeperEntity extends Monster implements ActivatesSirens, Powerab
     protected void dropCustomDeathLoot(ServerLevel level, DamageSource damageSource, boolean recentlyHit) {
         super.dropCustomDeathLoot(level, damageSource, recentlyHit);
         if (damageSource.getEntity() instanceof TremorzillaEntity && damageSource.is(ACDamageTypes.TREMORZILLA_BEAM)) {
-            this.spawnAtLocation(ACItemRegistry.MUSIC_DISC_FUSION_FRAGMENT.get());
+            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), ACItemRegistry.MUSIC_DISC_FUSION_FRAGMENT.get());
         }
     }
 

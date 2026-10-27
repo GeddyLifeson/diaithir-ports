@@ -217,7 +217,7 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, flying ? this.getY() - this.yo : 0, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 8.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     public float getStepHeight() {

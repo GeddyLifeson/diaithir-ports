@@ -122,16 +122,16 @@ public class CommonEvents {
         if (event.getEntity().getType() == EntityType.MAGMA_CUBE && event.getSource() != null && event.getSource().getEntity() instanceof Frog frog) {
             // In 1.21, getVariant() returns Holder<FrogVariant>, use is() to compare
             if (frog.getVariant().is(ACFrogRegistry.PRIMORDIAL)) {
-                event.getEntity().spawnAtLocation(new ItemStack(ACBlockRegistry.CARMINE_FROGLIGHT.get()));
+                event.getEntity().spawnAtLocation((net.minecraft.server.level.ServerLevel) event.getEntity().level(), new ItemStack(ACBlockRegistry.CARMINE_FROGLIGHT.get()));
             }
         }
         if (!event.getEntity().level().isClientSide() && event.getEntity() instanceof Mob mob && event.getSource() != null && event.getSource().getDirectEntity() instanceof LivingEntity directSource && directSource.getItemInHand(InteractionHand.MAIN_HAND).is(ACItemRegistry.PRIMITIVE_CLUB.get())) {
             // In 1.21, use helper method for enchantment check with data-driven enchantments
             if (hasEnchantment(directSource.getItemInHand(InteractionHand.MAIN_HAND), event.getEntity().level(), ACEnchantmentRegistry.BONKING) && event.getEntity().level().getRandom().nextFloat() < 0.33F) {
-                Creeper fakeCreeperForSkullDrop = EntityType.CREEPER.create(mob.level());
+                Creeper fakeCreeperForSkullDrop = EntityType.CREEPER.create(mob.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 if (fakeCreeperForSkullDrop != null) {
                     if (event.getEntity().level() instanceof ServerLevel serverLevel) {
-                        LightningBolt fakeThunder = EntityType.LIGHTNING_BOLT.create(serverLevel);
+                        LightningBolt fakeThunder = EntityType.LIGHTNING_BOLT.create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                         if (fakeThunder != null) {
                             fakeThunder.setVisualOnly(true);
                             fakeCreeperForSkullDrop.thunderHit(serverLevel, fakeThunder);
@@ -157,10 +157,10 @@ public class CommonEvents {
         }
         if (event.getEntity() instanceof Player) {
             if (event.getEntity().getUUID().toString().equals("71363abe-fd03-49c9-940d-aae8b8209b7c")) {
-                event.getEntity().spawnAtLocation(new ItemStack(ACItemRegistry.GREEN_SOYLENT.get(), 1 + event.getEntity().getRandom().nextInt(9)));
+                event.getEntity().spawnAtLocation((net.minecraft.server.level.ServerLevel) event.getEntity().level(), new ItemStack(ACItemRegistry.GREEN_SOYLENT.get(), 1 + event.getEntity().getRandom().nextInt(9)));
             }
             if (event.getEntity().getUUID().toString().equals("4a463319-625c-4b86-a4e7-8b700f023a60")) {
-                event.getEntity().spawnAtLocation(new ItemStack(ACItemRegistry.STINKY_FISH.get(), 1));
+                event.getEntity().spawnAtLocation((net.minecraft.server.level.ServerLevel) event.getEntity().level(), new ItemStack(ACItemRegistry.STINKY_FISH.get(), 1));
             }
         }
     }
@@ -224,7 +224,7 @@ public class CommonEvents {
         }
         if (event.getEntity() instanceof Player player && player.getUseItem().is(ACItemRegistry.EXTINCTION_SPEAR.get()) && ExtinctionSpearItem.killGrottoGhostsFor(player, true)) {
             event.setNewDamage(0);
-            player.playSound(SoundEvents.SHIELD_BLOCK);
+            player.playSound(SoundEvents.SHIELD_BLOCK.value());
         }
         if (event.getEntity() instanceof Player player && event.getSource().is(DamageTypes.FALL) && player.getItemBySlot(EquipmentSlot.FEET).is(ACItemRegistry.RAINBOUNCE_BOOTS.get())) {
             player.fallDistance = 0.0F;
@@ -379,21 +379,21 @@ public class CommonEvents {
         ACBiomeRarity.init();
         //moved from citadel
         RegistryAccess registryAccess = event.getServer().registryAccess();
-        Registry<Biome> allBiomes = registryAccess.registryOrThrow(Registries.BIOME);
-        Registry<LevelStem> levelStems = registryAccess.registryOrThrow(Registries.LEVEL_STEM);
+        Registry<Biome> allBiomes = registryAccess.lookupOrThrow(Registries.BIOME);
+        Registry<LevelStem> levelStems = registryAccess.lookupOrThrow(Registries.LEVEL_STEM);
         Map<ResourceKey<Biome>, Holder<Biome>> biomeMap = new HashMap<>();
         for (ResourceKey<Biome> biomeResourceKey : allBiomes.registryKeySet()) {
-            Optional<Holder.Reference<Biome>> holderOptional = allBiomes.getHolder(biomeResourceKey);
+            Optional<Holder.Reference<Biome>> holderOptional = allBiomes.get(biomeResourceKey);
             holderOptional.ifPresent(biomeHolder -> biomeMap.put(biomeResourceKey, biomeHolder));
         }
         for (ResourceKey<LevelStem> levelStemResourceKey : levelStems.registryKeySet()) {
-            Optional<Holder.Reference<LevelStem>> holderOptional = levelStems.getHolder(levelStemResourceKey);
+            Optional<Holder.Reference<LevelStem>> holderOptional = levelStems.get(levelStemResourceKey);
             if (holderOptional.isPresent() && holderOptional.get().value().generator().getBiomeSource() instanceof BiomeSourceAccessor expandedBiomeSource) {
                 expandedBiomeSource.setResourceKeyMap(biomeMap);
                 if (levelStemResourceKey.equals(LevelStem.OVERWORLD)) {
                     ImmutableSet.Builder<Holder<Biome>> biomeHolders = ImmutableSet.builder();
                     for (ResourceKey<Biome> biomeResourceKey : ACBiomeRegistry.ALEXS_CAVES_BIOMES) {
-                        allBiomes.getHolder(biomeResourceKey).ifPresent(biomeHolders::add);
+                        allBiomes.get(biomeResourceKey).ifPresent(biomeHolders::add);
                     }
                     expandedBiomeSource.expandBiomesWith(biomeHolders.build());
                 }
@@ -455,7 +455,7 @@ public class CommonEvents {
                     player.onEquippedItemBroken(itemInHand.getItem(), slot);
                     player.playSound(ACSoundRegistry.DISAPPOINTMENT.get());
                     if (!player.level().isClientSide()) {
-                        player.displayClientMessage(Component.translatable("item.alexscaves.natures_compass_warning"), true);
+                        player.sendOverlayMessage(Component.translatable("item.alexscaves.natures_compass_warning"));
                     }
                 }
             }
@@ -475,7 +475,7 @@ public class CommonEvents {
                         event.getLevel().playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
                         player.awardStat(Stats.ITEM_USED.get(Items.GLASS_BOTTLE));
                         if (!player.addItem(new ItemStack(ACItemRegistry.PURPLE_SODA_BOTTLE.get()))) {
-                            player.spawnAtLocation(new ItemStack(ACItemRegistry.PURPLE_SODA_BOTTLE.get()));
+                            player.spawnAtLocation((net.minecraft.server.level.ServerLevel) player.level(), new ItemStack(ACItemRegistry.PURPLE_SODA_BOTTLE.get()));
                         }
                         player.swing(event.getHand());
                         if (!player.isCreative()) {

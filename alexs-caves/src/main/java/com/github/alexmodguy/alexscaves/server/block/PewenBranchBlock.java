@@ -122,10 +122,10 @@ public class PewenBranchBlock extends Block implements SimpleWaterloggedBlock {
 
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         if (!state.canSurvive(levelAccessor, blockPos)) {
-            levelAccessor.scheduleTick(blockPos, this, 1);
+            ticks.scheduleTick(blockPos, this, 1);
         }
         if (state.getValue(WATERLOGGED)) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
         boolean shouldHavePines = hasPines(state.getValue(ROTATION), levelAccessor, blockPos);
         if (shouldHavePines != state.getValue(PINES)) {

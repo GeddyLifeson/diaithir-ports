@@ -373,7 +373,7 @@ public class AtlatitanEntity extends SauropodBaseEntity implements KeybindUsingM
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ACEntityRegistry.ATLATITAN.get().create(level);
+        return ACEntityRegistry.ATLATITAN.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     public float getScale() {

@@ -143,7 +143,7 @@ public class AnimalLootChestsGoal extends MoveToBlockGoal {
                             ItemStack duplicate = stack.copy();
                             duplicate.setCount(1);
                             if (!this.entity.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && !this.entity.level().isClientSide()) {
-                                this.entity.spawnAtLocation(this.entity.getItemInHand(InteractionHand.MAIN_HAND), 0.0F);
+                                this.entity.spawnAtLocation((net.minecraft.server.level.ServerLevel) entity.level(), this.entity.getItemInHand(InteractionHand.MAIN_HAND), 0.0F);
                             }
                             this.entity.setItemInHand(InteractionHand.MAIN_HAND, duplicate);
                             stack.shrink(1);

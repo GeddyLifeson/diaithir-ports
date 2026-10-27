@@ -27,47 +27,47 @@ public class ACDamageTypes {
     public static final ResourceKey<DamageType> INTENTIONAL_GAME_DESIGN = ResourceKey.create(Registries.DAMAGE_TYPE, Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "intentional_game_design"));
 
     public static DamageSource causeAcidDamage(RegistryAccess registryAccess) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(ACID), 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ACID), 1);
     }
 
     public static DamageSource causeRadiationDamage(RegistryAccess registryAccess) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(RADIATION), 2);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(RADIATION), 2);
     }
 
     public static DamageSource causeNukeDamage(RegistryAccess registryAccess) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(NUKE), 4);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(NUKE), 4);
     }
 
     public static DamageSource causeRaygunDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(RAYGUN), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(RAYGUN), source, 1);
     }
 
     public static DamageSource causeForsakenSonicBoomDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(FORSAKEN_SONIC_BOOM), source, 2);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(FORSAKEN_SONIC_BOOM), source, 2);
     }
 
     public static DamageSource causeDesolateDaggerDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(DESOLATE_DAGGER), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DESOLATE_DAGGER), source, 1);
     }
 
     public static DamageSource causeDarkArrowDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(DARK_ARROW), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DARK_ARROW), source, 1);
     }
 
     public static DamageSource causeSpiritDinosaurDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(SPIRIT_DINOSAUR), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(SPIRIT_DINOSAUR), source, 1);
     }
 
     public static DamageSource causeTremorzillaBeamDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(TREMORZILLA_BEAM), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(TREMORZILLA_BEAM), source, 1);
     }
 
     public static DamageSource causeGumballDamage(RegistryAccess registryAccess, Entity source) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(GUMBALL), source, 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(GUMBALL), source, 1);
     }
 
     public static DamageSource causeIntentionalGameDesign(RegistryAccess registryAccess) {
-        return new DamageSourceRandomMessages(registryAccess.registry(Registries.DAMAGE_TYPE).get().getHolderOrThrow(INTENTIONAL_GAME_DESIGN), 1);
+        return new DamageSourceRandomMessages(registryAccess.lookupOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(INTENTIONAL_GAME_DESIGN), 1);
     }
 
 

@@ -50,7 +50,7 @@ public class SubmarineItem extends Item {
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 Vec3 vec31 = hitresult.getLocation();
-                SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level);
+                SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 submarine.setPos(vec31.x, vec31.y, vec31.z);
                 submarine.setYRot(player.getYRot());
                 submarine.playSound(ACSoundRegistry.SUBMARINE_PLACE.get());

@@ -53,7 +53,7 @@ public class AlexsCavesBoatEntity extends Boat implements AlexsCavesBoat {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput nbt) {
-        if (nbt.contains("ACBoatType")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(nbt, "ACBoatType")) {
             this.entityData.set(DATA_ID_AC_BOAT_TYPE, AlexsCavesBoat.Type.byName(nbt.getStringOr("ACBoatType", "")).ordinal());
         }
     }
@@ -74,11 +74,11 @@ public class AlexsCavesBoatEntity extends Boat implements AlexsCavesBoat {
                         this.kill();
                         if (this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                             for (int i = 0; i < 3; ++i) {
-                                this.spawnAtLocation(this.getACBoatType().getPlankSupplier().get());
+                                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getACBoatType().getPlankSupplier().get());
                             }
 
                             for (int j = 0; j < 2; ++j) {
-                                this.spawnAtLocation(Items.STICK);
+                                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), Items.STICK);
                             }
                         }
                     }

@@ -41,7 +41,7 @@ public class GuanoLayerBlock extends SnowLayerBlock implements Fallable {
 
     @Override
     public BlockState updateShape(BlockState blockState, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos pos1, BlockState blockState1, net.minecraft.util.RandomSource randomSource) {
-        levelAccessor.scheduleTick(pos, this, this.getDelayAfterPlace());
+        ticks.scheduleTick(pos, this, this.getDelayAfterPlace());
         return super.updateShape(blockState, levelAccessor, ticks, pos, direction, pos1, blockState1, randomSource);
     }
 

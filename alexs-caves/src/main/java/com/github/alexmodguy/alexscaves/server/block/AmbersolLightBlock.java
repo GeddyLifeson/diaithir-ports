@@ -78,11 +78,11 @@ public class AmbersolLightBlock extends Block {
 
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         if (state.getValue(WATERLOGGED)) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
         if (levelAccessor.getBlockState(blockPos.below()).getBlock() != this) {
             BlockPos top = getTopOfColumn(blockPos, levelAccessor, state2 -> !state2.is(ACBlockRegistry.AMBERSOL.get()));
-            levelAccessor.scheduleTick(new BlockPos(top), ACBlockRegistry.AMBERSOL.get(), 3);
+            ticks.scheduleTick(new BlockPos(top), ACBlockRegistry.AMBERSOL.get(), 3);
         }
         if (!state.canSurvive(levelAccessor, blockPos)) {
             return Blocks.AIR.defaultBlockState();

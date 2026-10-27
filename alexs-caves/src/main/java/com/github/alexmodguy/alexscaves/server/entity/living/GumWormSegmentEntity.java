@@ -154,13 +154,13 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
 
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
-        if (compound.contains("HeadUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "HeadUUID")) {
             this.setHeadUUID(compound.read("HeadUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
-        if (compound.contains("FrontUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "FrontUUID")) {
             this.setFrontEntityUUID(compound.read("FrontUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
-        if (compound.contains("BackUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "BackUUID")) {
             this.setBackEntityUUID(compound.read("BackUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         this.setIndex(compound.getIntOr("Index", 0));

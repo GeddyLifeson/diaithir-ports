@@ -106,11 +106,11 @@ public class SugarStaffHexEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compoundTag) {
-        if (compoundTag.contains("DespawnsIn")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "DespawnsIn")) {
             this.despawnsIn = compoundTag.getIntOr("DespawnsIn", 0);
         }
         this.setLifespan(compoundTag.getIntOr("Lifespan", 0));
-        if (compoundTag.contains("Owner")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compoundTag, "Owner")) {
             this.ownerUUID = compoundTag.read("Owner", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
     }

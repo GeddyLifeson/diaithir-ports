@@ -50,7 +50,7 @@ public class MultipleDinosaurEggsBlock extends DinosaurEggBlock {
     }
 
     protected void removeOneEgg(Level worldIn, BlockPos pos, BlockState state) {
-        worldIn.playSound(null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.random.nextFloat() * 0.2F);
+        worldIn.playSound(null, pos, SoundEvents.TURTLE_EGG_BREAK, SoundSource.BLOCKS, 0.7F, 0.9F + worldIn.getRandom().nextFloat() * 0.2F);
         int i = state.getValue(EGGS);
         if (i <= 1) {
             worldIn.destroyBlock(pos, false);

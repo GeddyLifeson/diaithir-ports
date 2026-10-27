@@ -186,7 +186,7 @@ public class NotorEntity extends PathfinderMob {
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, this.getY() - this.yo, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 6.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
 
     }
 
@@ -284,7 +284,7 @@ public class NotorEntity extends PathfinderMob {
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
         this.setShowingHologram(compound.getBooleanOr("ShowingHologram", false));
-        if (compound.contains("HologramUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "HologramUUID")) {
             this.setHologramUUID(compound.read("HologramUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         stopScanningFor = compound.getIntOr("StopScanningTime", 0);

@@ -244,9 +244,9 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
         if(this.isOvenSpawned()){
             if(despawnFromOvenCooldown-- < 0){
                 this.kill();
-                this.spawnAtLocation(this.getItemInHand(InteractionHand.MAIN_HAND));
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.MAIN_HAND));
                 this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
-                this.spawnAtLocation(this.getItemInHand(InteractionHand.OFF_HAND));
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.OFF_HAND));
                 this.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
             }
         }
@@ -379,7 +379,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.lastStepX, 0, this.getZ() - this.lastStepZ);
         float f2 = Math.min(f1 * 10.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     @Override
@@ -574,15 +574,15 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
         }
         if(!level().isClientSide()){
             if(!isOvenSpawned() && shouldDropLoot() && random.nextInt(2) == 0 && this.isAlive()){
-                this.spawnAtLocation(new ItemStack(ACItemRegistry.GINGERBREAD_CRUMBS.get()));
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), new ItemStack(ACItemRegistry.GINGERBREAD_CRUMBS.get()));
             }
             if(arm){
                 if(this.isLeftHanded() == left){
-                    this.spawnAtLocation(this.getItemInHand(InteractionHand.MAIN_HAND));
+                    this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.MAIN_HAND));
                     this.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
                 }
                 if(this.isLeftHanded() != left){
-                    this.spawnAtLocation(this.getItemInHand(InteractionHand.OFF_HAND));
+                    this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getItemInHand(InteractionHand.OFF_HAND));
                     this.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
                 }
             }

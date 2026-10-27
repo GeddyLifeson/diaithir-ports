@@ -372,14 +372,14 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("AltarX") && compound.contains("AltarY") && compound.contains("AltarZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "AltarZ")) {
             this.setLastAltarPos(new BlockPos(compound.getIntOr("AltarX", 0), compound.getIntOr("AltarY", 0), compound.getIntOr("AltarZ", 0)));
         }
-        if (compound.contains("SwappedWeapon")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SwappedWeapon")) {
             swappedItem = ItemStack.parseOptional(this.registryAccess(), compound.getCompoundOrEmpty("SwappedWeapon"));
         }
         this.setSummoned(compound.getBooleanOr("ConchSummoned", false));
-        if (compound.contains("ConchUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "ConchUUID")) {
             this.summonerUUID = compound.read("ConchUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
             this.setSummonTime(compound.getIntOr("ConchTime", 0));
         }
@@ -489,7 +489,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
                 if (newReaction == DeepOneReaction.HELPFUL) {
                     ACAdvancementTriggerRegistry.DEEP_ONE_HELPFUL.get().triggerForEntity(player);
                 }
-                player.displayClientMessage(Component.translatable("entity.alexscaves.deep_one.reaction_" + newReaction.toString().toLowerCase(Locale.ROOT)), true);
+                player.sendOverlayMessage(Component.translatable("entity.alexscaves.deep_one.reaction_" + newReaction.toString().toLowerCase(Locale.ROOT)));
             }
         }
     }
@@ -522,7 +522,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
         if (isDeepOneSwimming()) {
             float f1 = (float) Mth.length(this.getX() - this.xo, this.getY() - this.yo, this.getZ() - this.zo);
             float f2 = Math.min(f1 * 6.0F, 1.0F);
-            this.walkAnimation.update(f2, 0.4F);
+            this.walkAnimation.update(f2, 0.4F, 1.0F);
         } else {
             super.calculateEntityAnimation(flying);
         }

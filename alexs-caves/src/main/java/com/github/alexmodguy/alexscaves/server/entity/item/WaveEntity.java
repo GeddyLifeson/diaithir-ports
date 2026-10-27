@@ -93,10 +93,10 @@ public class WaveEntity extends Entity {
     }
 
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
-        if (tag.contains("Owner")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "Owner")) {
             this.ownerUUID = tag.read("Owner", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
         }
-        if (tag.contains("Lifespan")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "Lifespan")) {
             this.setLifespan(tag.getIntOr("Lifespan", 0));
         }
     }

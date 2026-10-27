@@ -87,12 +87,12 @@ public class UraniumRodBlock extends RotatedPillarBlock implements SimpleWaterlo
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         int liquidType = state.getValue(LIQUID_LOGGED);
         if (liquidType == 1) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         } else if (liquidType == 2) {
-            levelAccessor.scheduleTick(blockPos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, ACFluidRegistry.ACID_FLUID_SOURCE.get(), ACFluidRegistry.ACID_FLUID_SOURCE.get().getTickDelay(levelAccessor));
         }
         if (!levelAccessor.isClientSide()) {
-            levelAccessor.scheduleTick(blockPos, this, 1);
+            ticks.scheduleTick(blockPos, this, 1);
         }
 
         return super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);

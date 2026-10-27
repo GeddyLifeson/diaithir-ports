@@ -75,7 +75,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
     public static ItemStack createMap(ResourceKey<Biome> biomeResourceKey) {
         ItemStack map = new ItemStack(ACItemRegistry.CAVE_MAP.get());
         CompoundTag tag = new CompoundTag();
-        tag.putString("BiomeTargetResourceKey", biomeResourceKey.location().toString());
+        tag.putString("BiomeTargetResourceKey", biomeResourceKey.identifier().toString());
         map.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         return map;
     }
@@ -130,8 +130,8 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
                         } else {
                             uuid = tag.read("MapUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
                         }
-                        String currentBiomeName = currentBiome.unwrapKey().isPresent() ? currentBiome.unwrapKey().get().location().toString() : "NULL";
-                        String wantedBiomeName = biomeResourceKey == null ? "NULL" : biomeResourceKey.location().toString();
+                        String currentBiomeName = currentBiome.unwrapKey().isPresent() ? currentBiome.unwrapKey().get().identifier().toString() : "NULL";
+                        String wantedBiomeName = biomeResourceKey == null ? "NULL" : biomeResourceKey.identifier().toString();
                         AlexsCaves.LOGGER.info("regenerating cave biome map, incorrect biome {} found at {} {} {}, should be {}", currentBiomeName, biomePos.getX(), biomePos.getY(), biomePos.getZ(), wantedBiomeName);
                         acWorldData.fillOutCaveMap(uuid, stack, (ServerLevel) level, entity.getRootVehicle().blockPosition(), (Player) entity);
                     }
@@ -174,7 +174,7 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
         ResourceKey<Biome> biomeResourceKey = getBiomeTarget(stack);
         if (biomeResourceKey != null) {
-            String biomeName = "biome." + biomeResourceKey.location().toString().replace(":", ".");
+            String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
             tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, context, tooltip, flagIn);

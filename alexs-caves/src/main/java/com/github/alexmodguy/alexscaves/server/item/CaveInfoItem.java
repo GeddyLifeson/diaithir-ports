@@ -68,8 +68,8 @@ public class CaveInfoItem extends Item {
         if (color == -1) {
             if (level != null) {
                 Registry<Biome> registry = level.registryAccess().registry(Registries.BIOME).orElse(null);
-                if (registry != null && registry.getHolder(biomeResourceKey).isPresent()) {
-                    return ConversionCrucibleBlockEntity.calculateBiomeColor(registry.getHolder(biomeResourceKey));
+                if (registry != null && registry.get(biomeResourceKey).isPresent()) {
+                    return ConversionCrucibleBlockEntity.calculateBiomeColor(registry.get(biomeResourceKey));
                 }
             }
             return 0;
@@ -82,22 +82,22 @@ public class CaveInfoItem extends Item {
         ItemStack itemstack = player.getItemInHand(hand);
         ResourceKey<Biome> biomeResourceKey = getCaveBiome(itemstack);
         if(itemstack.is(ACItemRegistry.CAVE_CODEX.get()) && biomeResourceKey != null){
-            String biomeStr = biomeResourceKey.location().toString();
+            String biomeStr = biomeResourceKey.identifier().toString();
             CaveBookProgress progress = CaveBookProgress.getCaveBookProgress(player);
             if(progress.unlockNextFor(biomeStr)){
                 player.swing(hand);
                 if(!level.isClientSide()){
                     CaveBookProgress.saveCaveBookProgress(progress, player);
                     CaveBookProgress.Subcategory subcategory = progress.getLastUnlockedCategory(biomeStr);
-                    Component biomeTitle = Component.translatable("biome." + biomeResourceKey.location().toString().replace(":", "."));
+                    Component biomeTitle = Component.translatable("biome." + biomeResourceKey.identifier().toString().replace(":", "."));
                     if(AlexsCaves.COMMON_CONFIG.onlyOneResearchNeeded.get()){
-                        player.displayClientMessage(Component.translatable("item.alexscaves.cave_codex.add_all", biomeTitle), true);
+                        player.sendOverlayMessage(Component.translatable("item.alexscaves.cave_codex.add_all", biomeTitle));
                     }else{
                         MutableComponent unlocked = Component.translatable("item.alexscaves.cave_codex.add", biomeTitle, Component.translatable("item.alexscaves.cave_book." + subcategory.toString().toLowerCase()));
                         if(subcategory == CaveBookProgress.Subcategory.SECRETS){
                             unlocked = unlocked.withStyle(ChatFormatting.LIGHT_PURPLE);
                         }
-                        player.displayClientMessage(unlocked, true);
+                        player.sendOverlayMessage(unlocked);
                     }
                 }
                 if(!player.isCreative()){
@@ -106,7 +106,7 @@ public class CaveInfoItem extends Item {
                 player.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);
                 return InteractionResult.CONSUME;
             }else{
-                player.displayClientMessage(Component.translatable("item.alexscaves.cave_codex.end").withStyle(ChatFormatting.RED), true);
+                player.sendOverlayMessage(Component.translatable("item.alexscaves.cave_codex.end").withStyle(ChatFormatting.RED));
             }
         }
         return InteractionResult.PASS;
@@ -125,7 +125,7 @@ public class CaveInfoItem extends Item {
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
         ResourceKey<Biome> biomeResourceKey = getCaveBiome(stack);
         if (biomeResourceKey != null && !this.hideCaveId) {
-            String biomeName = "biome." + biomeResourceKey.location().toString().replace(":", ".");
+            String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
             tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, context, tooltip, flagIn);

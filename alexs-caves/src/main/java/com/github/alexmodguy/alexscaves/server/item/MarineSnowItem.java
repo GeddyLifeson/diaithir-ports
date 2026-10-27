@@ -55,7 +55,7 @@ public class MarineSnowItem extends Item {
                 context.getLevel().setBlockAndUpdate(context.getClickedPos(), clickedState.setValue(MusselBlock.MUSSELS, clickedState.getValue(MusselBlock.MUSSELS) + 1));
             }
             if(flag){
-                if (!context.getLevel().isClientSide) {
+                if (!context.getLevel().isClientSide()) {
                     context.getLevel().levelEvent(1505, context.getClickedPos(), 0);
                 }
                 if(!context.getPlayer().isCreative()){

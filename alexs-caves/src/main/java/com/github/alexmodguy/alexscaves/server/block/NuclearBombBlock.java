@@ -36,7 +36,7 @@ public class NuclearBombBlock extends Block {
 
     public void onCaughtFire(BlockState state, Level level, BlockPos blockPos, @Nullable net.minecraft.core.Direction face, @Nullable LivingEntity igniter) {
         if (!level.isClientSide()) {
-            NuclearBombEntity bomb = ACEntityRegistry.NUCLEAR_BOMB.get().create(level);
+            NuclearBombEntity bomb = ACEntityRegistry.NUCLEAR_BOMB.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             bomb.setPos((double) blockPos.getX() + 0.5D, (double) blockPos.getY(), (double) blockPos.getZ() + 0.5D);
             level.addFreshEntity(bomb);
             level.playSound((Player) null, bomb.getX(), bomb.getY(), bomb.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);

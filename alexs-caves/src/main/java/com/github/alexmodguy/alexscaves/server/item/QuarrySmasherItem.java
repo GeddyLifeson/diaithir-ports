@@ -49,7 +49,7 @@ public class QuarrySmasherItem extends Item {
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
                 Vec3 vec31 = hitresult.getLocation();
-                QuarrySmasherEntity smasherEntity = ACEntityRegistry.QUARRY_SMASHER.get().create(level);
+                QuarrySmasherEntity smasherEntity = ACEntityRegistry.QUARRY_SMASHER.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 smasherEntity.setPos(vec31.x, vec31.y, vec31.z);
                 smasherEntity.setYRot(player.getYRot());
                 smasherEntity.setInactive(true);

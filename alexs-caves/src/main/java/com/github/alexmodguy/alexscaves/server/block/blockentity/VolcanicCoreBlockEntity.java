@@ -99,7 +99,7 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
                     }
                 }
             }
-            LuxtructosaurusEntity luxtructosaurus = ACEntityRegistry.LUXTRUCTOSAURUS.get().create(level);
+            LuxtructosaurusEntity luxtructosaurus = ACEntityRegistry.LUXTRUCTOSAURUS.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             luxtructosaurus.setPos(Vec3.upFromBottomCenterOf(volcanoTop, 2.0F));
             luxtructosaurus.setInvisible(true);
             luxtructosaurus.setAnimation(SauropodBaseEntity.ANIMATION_SUMMON);
@@ -126,7 +126,7 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
             Vec3 volcanoVec = Vec3.upFromBottomCenterOf(volcanoTop, 3F);
             Player nearestPlayer = level.getNearestPlayer(volcanoVec.x, volcanoVec.y, volcanoVec.z, 400D, true);
             if (big) {
-                TephraEntity bigTephra = ACEntityRegistry.TEPHRA.get().create(level);
+                TephraEntity bigTephra = ACEntityRegistry.TEPHRA.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 bigTephra.setPos(volcanoVec);
                 bigTephra.setMaxScale(2F + level.getRandom().nextFloat());
                 Vec3 targetVec;
@@ -142,7 +142,7 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
                 level.addFreshEntity(bigTephra);
             }
             for(int smalls = 0; smalls < 3 + level.getRandom().nextInt(3); smalls++){
-                TephraEntity smallTephra = ACEntityRegistry.TEPHRA.get().create(level);
+                TephraEntity smallTephra = ACEntityRegistry.TEPHRA.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 smallTephra.setPos(volcanoVec);
                 smallTephra.setMaxScale(0.6F + 0.6F * level.getRandom().nextFloat());
                 Vec3 targetVec = new Vec3(level.getRandom().nextFloat() - 0.5F, 0, level.getRandom().nextFloat() - 0.5F).normalize().scale(level.getRandom().nextInt(30) + 30);

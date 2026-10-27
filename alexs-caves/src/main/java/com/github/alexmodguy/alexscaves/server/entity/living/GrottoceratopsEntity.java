@@ -155,7 +155,7 @@ public class GrottoceratopsEntity extends DinosaurEntity implements IAnimatedEnt
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ACEntityRegistry.GROTTOCERATOPS.get().create(level);
+        return ACEntityRegistry.GROTTOCERATOPS.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     @Override
@@ -208,7 +208,7 @@ public class GrottoceratopsEntity extends DinosaurEntity implements IAnimatedEnt
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, flying ? this.getY() - this.yo : 0, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 8.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
 

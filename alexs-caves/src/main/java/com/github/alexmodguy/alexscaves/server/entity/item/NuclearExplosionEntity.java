@@ -149,7 +149,7 @@ public class NuclearExplosionEntity extends Entity {
             int dist = Math.max(getChunksAffected(), serverLevel.getServer().getPlayerList().getViewDistance() / 2);
             for (int i = -dist; i <= dist; i++) {
                 for (int j = -dist; j <= dist; j++) {
-                    TICKET_CONTROLLER.forceChunk(serverLevel, this, chunkPos.x + i, chunkPos.z + j, load, load);
+                    TICKET_CONTROLLER.forceChunk(serverLevel, this, chunkPos.x() + i, chunkPos.z() + j, load, load);
                 }
             }
         }

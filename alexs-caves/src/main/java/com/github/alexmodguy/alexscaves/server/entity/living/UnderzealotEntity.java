@@ -115,7 +115,7 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
     public void calculateEntityAnimation(boolean flying) {
         float f1 = (float) Mth.length(this.getX() - this.xo, this.getY() - this.yo, this.getZ() - this.zo);
         float f2 = Math.min(f1 * 8.0F, 1.0F);
-        this.walkAnimation.update(f2, 0.4F);
+        this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     public void travel(Vec3 vec3d) {
@@ -431,7 +431,7 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
 
     private void spawnReinforcements(ServerLevelAccessor worldIn) {
         for (int i = 0; i < 3 + random.nextInt(2); i++) {
-            UnderzealotEntity friend = ACEntityRegistry.UNDERZEALOT.get().create(worldIn.getLevel());
+            UnderzealotEntity friend = ACEntityRegistry.UNDERZEALOT.get().create(worldIn.getLevel(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
             friend.copyPosition(this);
             worldIn.addFreshEntity(friend);
         }
@@ -470,10 +470,10 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
         super.readAdditionalSaveData(compound);
         this.sacrificeCooldown = compound.getIntOr("SacrificeCooldown", 0);
         this.setBuried(compound.getBooleanOr("Buried", false));
-        if (compound.contains("RX") && compound.contains("RY") && compound.contains("RZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "RX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "RY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "RZ")) {
             this.remergePos = new BlockPos(compound.getIntOr("RX", 0), compound.getIntOr("RY", 0), compound.getIntOr("RZ", 0));
         }
-        if (compound.contains("SX") && compound.contains("SY") && compound.contains("SZ")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SX") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SY") && com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "SZ")) {
             this.setLastSacrificePos(new BlockPos(compound.getIntOr("SX", 0), compound.getIntOr("SY", 0), compound.getIntOr("SZ", 0)));
         }
     }

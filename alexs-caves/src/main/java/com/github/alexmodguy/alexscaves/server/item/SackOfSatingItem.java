@@ -126,7 +126,7 @@ public class SackOfSatingItem extends Item {
         }
         if(isExploding(stack)){
             if(!level.isClientSide()){
-                NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level);
+                NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 explosion.setPos(entity.position().add(0, 4, 0));
                 explosion.setSize(0.5F);
                 explosion.setIntentionalGameDesign(true);

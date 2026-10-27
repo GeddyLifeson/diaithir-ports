@@ -199,7 +199,7 @@ public class RelicheirusEntity extends DinosaurEntity implements IAnimatedEntity
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ACEntityRegistry.RELICHEIRUS.get().create(level);
+        return ACEntityRegistry.RELICHEIRUS.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     private Vec3 getTrilocarisPos() {

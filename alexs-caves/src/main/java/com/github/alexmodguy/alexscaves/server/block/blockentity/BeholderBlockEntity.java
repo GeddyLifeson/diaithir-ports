@@ -75,7 +75,7 @@ public class BeholderBlockEntity extends BlockEntity  {
     }
 
     public void startObserving(Level level, Player player) {
-        BeholderEyeEntity beholderEyeEntity = ACEntityRegistry.BEHOLDER_EYE.get().create(level);
+        BeholderEyeEntity beholderEyeEntity = ACEntityRegistry.BEHOLDER_EYE.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
         double dist = Math.sqrt(this.getBlockPos().distSqr(player.blockPosition()));
         if(dist > 1000){
             ACAdvancementTriggerRegistry.BEHOLDER_FAR_AWAY.get().triggerForEntity(player);
@@ -86,7 +86,7 @@ public class BeholderBlockEntity extends BlockEntity  {
         beholderEyeEntity.setYRot(player.getYRot());
         level.addFreshEntity(beholderEyeEntity);
         this.currentlyUsingEntityId = beholderEyeEntity.getId();
-        player.displayClientMessage(Component.translatable("item.alexscaves.occult_gem.start_observing"), true);
+        player.sendOverlayMessage(Component.translatable("item.alexscaves.occult_gem.start_observing"));
     }
 
     @Override

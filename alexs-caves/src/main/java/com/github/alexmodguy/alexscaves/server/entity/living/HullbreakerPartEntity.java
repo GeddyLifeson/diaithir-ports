@@ -47,7 +47,7 @@ public class HullbreakerPartEntity extends PartEntity<HullbreakerEntity> {
         if (parent == null) {
             return InteractionResult.PASS;
         } else {
-            this.playSound(SoundEvents.ITEM_BREAK);
+            this.playSound(SoundEvents.ITEM_BREAK.value());
             if (player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 0));
             }

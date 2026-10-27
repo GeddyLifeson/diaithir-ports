@@ -278,7 +278,7 @@ public class GumballEntity extends ThrowableProjectile {
         }
         if(splitsOnHit()){
             for(int i = 0; i < 3; i++){
-                GumballEntity gumballEntity = ACEntityRegistry.GUMBALL.get().create(level());
+                GumballEntity gumballEntity = ACEntityRegistry.GUMBALL.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 Vec3 vec3 = this.getDeltaMovement().normalize();
                 float f = -((float) Mth.atan2(vec3.x, vec3.z)) * 180.0F / (float) Math.PI;
                 Vec3 vec31 = new Vec3(0, 0, this.isExplosive() ? 0.7F : 1.5F).yRot((float) -Math.toRadians(f + 30.0F - 30.0F * i));

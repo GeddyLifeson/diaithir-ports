@@ -90,7 +90,7 @@ public class SubterranodonRoostFeature extends Feature<NoneFeatureConfiguration>
                     level.setBlock(immutable, ACBlockRegistry.FERN_THATCH.get().defaultBlockState(), 3);
                     level.setBlock(immutable.above(), ACBlockRegistry.SUBTERRANODON_EGG.get().defaultBlockState().setValue(MultipleDinosaurEggsBlock.EGGS, 1 + randomSource.nextInt(3)).setValue(DinosaurEggBlock.NEEDS_PLAYER, true), 3);
                     Vec3 spawnMobAt = Vec3.atCenterOf(immutable.relative(direction).above());
-                    SubterranodonEntity subterranodon = ACEntityRegistry.SUBTERRANODON.get().create(level.getLevel());
+                    SubterranodonEntity subterranodon = ACEntityRegistry.SUBTERRANODON.get().create(level.getLevel(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                     subterranodon.setPos(spawnMobAt);
                     subterranodon.restrictTo(immutable.above(), 20 + randomSource.nextInt(20));
                     if (!level.collidesWithSuffocatingBlock(subterranodon, subterranodon.getBoundingBox())) {

@@ -194,7 +194,7 @@ public class DinosaurSpiritEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
-        if (tag.contains("UsingPlayerUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "UsingPlayerUUID")) {
             this.setPlayerUUID(tag.read("UsingPlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
         this.setDinosaurTypeInt(tag.getIntOr("DinosaurType", 0));

@@ -138,14 +138,14 @@ public class CaveBiomeMapWorldWorker implements WorldWorkerManager.IWorker {
                 tag.putInt("BiomeZ", centered.getZ());
                 tag.putLong("RandomSeed", serverLevel.getRandom().nextLong());
                 tag.putBoolean("Filled", true);
-                AlexsCaves.LOGGER.info("Found {} at {} {} {} in {}s", biomeResourceKey.location(), centered.getX(), centered.getY(), centered.getZ(), stopwatch.elapsed().toSeconds());
+                AlexsCaves.LOGGER.info("Found {} at {} {} {} in {}s", biomeResourceKey.identifier(), centered.getX(), centered.getY(), centered.getZ(), stopwatch.elapsed().toSeconds());
             } else {
                 int distance = 0;
                 if (lastSampledPos != null) {
                     distance = (int) Math.sqrt(center.distSqr(lastSampledPos));
                 }
                 player.sendSystemMessage(Component.translatable("item.alexscaves.cave_map.error", distance).withStyle(ChatFormatting.RED));
-                AlexsCaves.LOGGER.info("Could not find {} after {}s", biomeResourceKey.location(), stopwatch.elapsed().toSeconds());
+                AlexsCaves.LOGGER.info("Could not find {} after {}s", biomeResourceKey.identifier(), stopwatch.elapsed().toSeconds());
             }
             tag.putBoolean("Loading", false);
             tag.remove("MapUUID");

@@ -36,7 +36,7 @@ public class DesolateDaggerItem extends SwordItem {
         if (super.hurtEnemy(stack, hurt, player)) {
             int delayedLevel = ACEnchantmentHelper.getEnchantmentLevel(player.level(), ACEnchantmentRegistry.IMPENDING_STAB, stack);
             for(int i = 0; i < 1 + ACEnchantmentHelper.getEnchantmentLevel(player.level(), ACEnchantmentRegistry.DOUBLE_STAB, stack); i++){
-                DesolateDaggerEntity daggerEntity = ACEntityRegistry.DESOLATE_DAGGER.get().create(player.level());
+                DesolateDaggerEntity daggerEntity = ACEntityRegistry.DESOLATE_DAGGER.get().create(player.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 daggerEntity.setTargetId(hurt.getId());
                 daggerEntity.copyPosition(player);
                 daggerEntity.setItemStack(stack);

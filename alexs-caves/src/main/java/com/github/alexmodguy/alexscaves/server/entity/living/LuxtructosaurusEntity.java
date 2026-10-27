@@ -685,7 +685,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
                 if (!prev) {
                     worldData.setFirstPrimordialBossDefeatTimestamp(level().getGameTime());
                     if (level() instanceof ServerLevel serverLevel) {
-                        serverLevel.getPlayers(EntitySelector.NO_SPECTATORS).forEach(serverPlayer -> serverPlayer.displayClientMessage(Component.translatable("entity.alexscaves.luxtructosaurus.slain_message").withStyle(ChatFormatting.GOLD), true));
+                        serverLevel.getPlayers(EntitySelector.NO_SPECTATORS).forEach(serverPlayer -> serverPlayer.sendOverlayMessage(Component.translatable("entity.alexscaves.luxtructosaurus.slain_message").withStyle(ChatFormatting.GOLD)));
                     }
                 }
             }

@@ -32,7 +32,7 @@ public class SharpenedCandyCaneItem extends Item {
     public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         if (player instanceof Player player1 && !player1.isCreative()) {
             stack.shrink(1);
-            player1.playSound(SoundEvents.ITEM_BREAK);
+            player1.playSound(SoundEvents.ITEM_BREAK.value());
         }
         hurtEntity.knockback(0.15F, hurtEntity.getX() - player.getX(), hurtEntity.getZ() - player.getZ());
         if(!hurtEntity.level().isClientSide() && hurtEntity.level() instanceof ServerLevel serverLevel){

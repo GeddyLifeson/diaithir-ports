@@ -79,7 +79,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
     public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader levelAccessor, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos blockPos, Direction direction, BlockPos blockPos1, BlockState state1, net.minecraft.util.RandomSource randomSource) {
         BlockState prev = super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
         if (!prev.isAir()) {
-            levelAccessor.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+            ticks.scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
         if (prev.getBlock() == this) {
             if (levelAccessor.getBlockState(blockPos.above()).getBlock() == this) {

@@ -136,7 +136,7 @@ public class MagicConchItem extends Item {
             return null;
         }
         Vec3 at = Vec3.atCenterOf(randomPos).add(0, 0.5, 0);
-        Entity created = type.create(summoner.level());
+        Entity created = type.create(summoner.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         if (created instanceof DeepOneBaseEntity deepOne) {
             float f = random.nextFloat() * 360;
             deepOne.moveTo(at.x, at.y, at.z, f, -60);

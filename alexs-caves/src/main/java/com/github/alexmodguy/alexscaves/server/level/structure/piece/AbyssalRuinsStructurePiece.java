@@ -115,7 +115,7 @@ public class AbyssalRuinsStructurePiece extends TemplateStructurePiece {
     }
 
     private void spawnSubmarine(ServerLevelAccessor level, BlockPos pos, boolean totaled) {
-        SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level.getLevel());
+        SubmarineEntity submarine = ACEntityRegistry.SUBMARINE.get().create(level.getLevel(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         while (level.getBlockState(pos).getFluidState().isEmpty() && !level.isEmptyBlock(pos) && pos.getY() < level.getMaxY()) {
             pos = pos.above();
         }

@@ -628,7 +628,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
             walkSpeed = 1.5F;
         }
         float f2 = Math.min(f1 * walkSpeed, 1.0F);
-        walkAnimation.update(f2, 0.4F);
+        walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     @Override
@@ -896,7 +896,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
                 }
                 if (triggerExplosions) {
                     if (nuke) {
-                        NuclearBombEntity bomb = ACEntityRegistry.NUCLEAR_BOMB.get().create(level());
+                        NuclearBombEntity bomb = ACEntityRegistry.NUCLEAR_BOMB.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                         bomb.setPos((double) blockpos.getX() + 0.5D, (double) blockpos.getY(), (double) blockpos.getZ() + 0.5D);
                         bomb.setTime(NuclearBombEntity.MAX_TIME);
                         level().addFreshEntity(bomb);
@@ -1073,7 +1073,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return ACEntityRegistry.TREMORZILLA.get().create(serverLevel);
+        return ACEntityRegistry.TREMORZILLA.get().create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     public static float calculateSpikesDownAmount(float progress, float spikeCount) {

@@ -118,7 +118,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
 
                     Entity entity;
                     try {
-                        entity = spawnType.create(level);
+                        entity = spawnType.create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
                     } catch (Exception exception) {
                         AlexsCaves.LOGGER.warn("Failed to create mob", (Throwable) exception);
                         continue;
@@ -265,7 +265,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
     @Override
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput tag) {
         super.loadAdditional(tag);
-        if (tag.contains("EntityType")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "EntityType")) {
             String str = tag.getStringOr("EntityType", "");
             this.spawnType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
         }
@@ -296,7 +296,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
 
     public Entity getDisplayEntity(Level level) {
         if (displayEntity == null && spawnType != null || displayEntity != null && displayEntity.getType() != spawnType) {
-            displayEntity = spawnType.create(level);
+            displayEntity = spawnType.create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
         }
         return displayEntity;
     }

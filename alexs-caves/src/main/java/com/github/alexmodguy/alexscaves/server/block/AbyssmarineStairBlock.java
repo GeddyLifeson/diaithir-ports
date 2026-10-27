@@ -36,7 +36,7 @@ public class AbyssmarineStairBlock extends StairBlock implements ActivatedByAlta
         BlockState newState = super.updateShape(state, levelAccessor, ticks, blockPos, direction, blockPos1, state1, randomSource);
         int i = ActivatedByAltar.getDistanceAt(state1) + 1;
         if (i != 1 || newState.getValue(DISTANCE) != i) {
-            levelAccessor.scheduleTick(blockPos, this, 2);
+            ticks.scheduleTick(blockPos, this, 2);
         }
         return newState;
     }

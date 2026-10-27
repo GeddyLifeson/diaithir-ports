@@ -248,7 +248,7 @@ public class NuclearFurnaceBlockEntity extends BaseContainerBlockEntity implemen
             }
         }
         for (int i = 0; i < wasteBlocks; i++) {
-            FallingBlockEntity fallingblockentity = EntityType.FALLING_BLOCK.create(level);
+            FallingBlockEntity fallingblockentity = EntityType.FALLING_BLOCK.create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             if (fallingblockentity instanceof FallingBlockEntityAccessor accessor) {
                 accessor.setBlockState(waste);
             }
@@ -257,7 +257,7 @@ public class NuclearFurnaceBlockEntity extends BaseContainerBlockEntity implemen
             level.addFreshEntity(fallingblockentity);
         }
         if (nuke) {
-            NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level);
+            NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
             explosion.setPos(vec3.add(0, -1.5F, 0));
             explosion.setSize(0.75F);
             level.addFreshEntity(explosion);

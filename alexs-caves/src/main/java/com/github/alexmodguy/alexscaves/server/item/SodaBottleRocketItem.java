@@ -35,7 +35,7 @@ public class SodaBottleRocketItem extends Item {
     public InteractionResult use(Level worldIn, Player playerIn, InteractionHand handIn) {
         if (playerIn.isFallFlying()) {
             ItemStack itemstack = playerIn.getItemInHand(handIn);
-            if (!worldIn.isClientSide) {
+            if (!worldIn.isClientSide()) {
                 worldIn.addFreshEntity(new SodaBottleRocketEntity(worldIn, itemstack, playerIn));
                 if (!playerIn.getAbilities().instabuild) {
                     itemstack.shrink(1);

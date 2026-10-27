@@ -125,7 +125,7 @@ public class TeletorEntity extends Monster {
 
     public void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("WeaponUUID")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "WeaponUUID")) {
             this.setWeaponUUID(compound.read("WeaponUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
         }
     }
@@ -228,7 +228,7 @@ public class TeletorEntity extends Monster {
 
     @javax.annotation.Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficultyIn, EntitySpawnReason reason, @javax.annotation.Nullable SpawnGroupData spawnDataIn) {
-        MagneticWeaponEntity magneticWeapon = ACEntityRegistry.MAGNETIC_WEAPON.get().create(this.level());
+        MagneticWeaponEntity magneticWeapon = ACEntityRegistry.MAGNETIC_WEAPON.get().create(this.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         ItemStack stack = createItemStack(level().getRandom());
         float f = difficultyIn.getSpecialMultiplier();
         if (level().getRandom().nextFloat() < 0.25F * (f + 0.5F) && this.level() instanceof ServerLevel serverLevel) {
@@ -275,7 +275,7 @@ public class TeletorEntity extends Monster {
                 if (itemstack.isDamageableItem()) {
                     itemstack.setDamageValue(itemstack.getMaxDamage() - this.random.nextInt(1 + this.random.nextInt(Math.max(itemstack.getMaxDamage() - 3, 1))));
                 }
-                this.spawnAtLocation(itemstack);
+                this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), itemstack);
             }
             magneticWeapon.remove(RemovalReason.KILLED);
         }

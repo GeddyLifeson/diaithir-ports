@@ -95,10 +95,10 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
         this.setDamageLevel(tag.getIntOr("DamageLevel", 0));
         this.setWaxed(tag.getBooleanOr("Waxed", false));
         this.setLightsOn(tag.getBooleanOr("LightsOn", false));
-        if (tag.contains("OxidizeTime")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "OxidizeTime")) {
             this.oxidizeTime = tag.getIntOr("OxidizeTime", 0);
         }
-        if (tag.contains("DamageSustained")) {
+        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "DamageSustained")) {
             this.damageSustained = tag.getIntOr("DamageSustained", 0);
         }
     }
@@ -633,7 +633,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
                 if (this.getDamageLevel() >= 4) {
                     if (!this.isRemoved()) {
                         for (int i = 0; i < 2 + random.nextInt(3); i++) {
-                            this.spawnAtLocation(Items.COPPER_INGOT);
+                            this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), Items.COPPER_INGOT);
                         }
                     }
                     this.remove(RemovalReason.KILLED);

@@ -134,12 +134,12 @@ public class CaveBookProgress {
 
         public static boolean canUnlockNext(String category, int currentLevel){
             Subcategory next = getByOrdinal(currentLevel + 1);
-            return next.limitedTo.length == 0 || Arrays.stream(next.limitedTo).anyMatch(biomeResourceKey -> biomeResourceKey.location().toString().equals(category));
+            return next.limitedTo.length == 0 || Arrays.stream(next.limitedTo).anyMatch(biomeResourceKey -> biomeResourceKey.identifier().toString().equals(category));
         }
 
         public static Subcategory getLastUnlockableFor(String category){
             Subcategory subcategory = SECRETS;
-            if(subcategory.limitedTo.length > 0 && Arrays.stream(subcategory.limitedTo).anyMatch(biomeResourceKey -> biomeResourceKey.location().toString().equals(category))){
+            if(subcategory.limitedTo.length > 0 && Arrays.stream(subcategory.limitedTo).anyMatch(biomeResourceKey -> biomeResourceKey.identifier().toString().equals(category))){
                 return subcategory;
             }else{
                 return getByOrdinal(subcategory.ordinal() - 1);

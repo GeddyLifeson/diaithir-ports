@@ -243,7 +243,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
             float f1 = this.random.nextFloat() * 0.5F + 0.65F;
             float f2 = Mth.sin(f) * (float) i * 0.5F * f1;
             float f3 = Mth.cos(f) * (float) i * 0.5F * f1;
-            MeltedCaramelEntity meltedCaramel = ACEntityRegistry.MELTED_CARAMEL.get().create(level());
+            MeltedCaramelEntity meltedCaramel = ACEntityRegistry.MELTED_CARAMEL.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
             Vec3 vec3 = new Vec3(this.getX() + (double) f2, this.getY() + 0.02, this.getZ() + (double) f3);
             meltedCaramel.setPos(ACMath.getGroundBelowPosition(level(), vec3));
             meltedCaramel.setDespawnsIn(40 + (i - 1) * 40);
@@ -309,7 +309,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
             for (int l = 0; l < slimesSpawned; ++l) {
                 float f1 = ((float) (l % 2) - 0.5F) * f;
                 float f2 = ((float) (l / 2) - 0.5F) * f;
-                CaramelCubeEntity slime = ACEntityRegistry.CARAMEL_CUBE.get().create(this.level());
+                CaramelCubeEntity slime = ACEntityRegistry.CARAMEL_CUBE.get().create(this.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
                 if (slime != null) {
                     if (this.isPersistenceRequired()) {
                         slime.setPersistenceRequired();

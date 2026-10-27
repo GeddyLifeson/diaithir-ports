@@ -186,7 +186,7 @@ public class LicowitchAttackGoal extends Goal {
         if (!flag) {
             Vec3 ground = ACMath.getGroundBelowPosition(licowitch.level(), licowitch.getEyePosition());
             Vec3 groundThere = ACMath.getGroundBelowPosition(target.level(), target.getEyePosition());
-            SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(licowitch.level());
+            SugarStaffHexEntity sugarStaffHexEntity = ACEntityRegistry.SUGAR_STAFF_HEX.get().create(licowitch.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
             sugarStaffHexEntity.setOwner(licowitch);
             sugarStaffHexEntity.setPos(ground.x, groundThere.y, ground.z);
             Vec3 delta = groundThere.subtract(ground);
@@ -214,7 +214,7 @@ public class LicowitchAttackGoal extends Goal {
         Vec3 subtract = target.position().subtract(licowitch.position());
         float f = -((float) Mth.atan2(subtract.x, subtract.z)) * 180.0F / (float) Math.PI;
         for (int i = 0; i < spawnIn; i++) {
-            SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(licowitch.level());
+            SpinningPeppermintEntity spinningPeppermintEntity = ACEntityRegistry.SPINNING_PEPPERMINT.get().create(licowitch.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
             spinningPeppermintEntity.setPos(licowitch.getStaffPosition());
             spinningPeppermintEntity.setStraight(!spinning);
             spinningPeppermintEntity.setYRot(180 + f + (i - 1) * 30);

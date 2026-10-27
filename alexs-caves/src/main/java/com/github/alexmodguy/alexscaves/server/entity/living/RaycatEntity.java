@@ -262,7 +262,7 @@ public class RaycatEntity extends TamableAnimal implements IComandableMob {
             if (this.getCommand() == 3) {
                 this.setCommand(0);
             }
-            player.displayClientMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()), true);
+            player.sendOverlayMessage(Component.translatable("entity.alexscaves.all.command_" + this.getCommand(), this.getName()));
             boolean sit = this.getCommand() == 1;
             if (sit) {
                 this.setOrderedToSit(true);
@@ -286,7 +286,7 @@ public class RaycatEntity extends TamableAnimal implements IComandableMob {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return ACEntityRegistry.RAYCAT.get().create(serverLevel);
+        return ACEntityRegistry.RAYCAT.get().create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     protected SoundEvent getAmbientSound() {

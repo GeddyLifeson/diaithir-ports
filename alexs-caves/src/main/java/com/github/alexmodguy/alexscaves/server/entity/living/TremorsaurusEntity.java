@@ -373,7 +373,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ACEntityRegistry.TREMORSAURUS.get().create(level);
+        return ACEntityRegistry.TREMORSAURUS.get().create(level, net.minecraft.world.entity.EntitySpawnReason.EVENT);
     }
 
     @Override
@@ -404,7 +404,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
             walkSpeed = 2.0F;
         }
         float f2 = Math.min(f1 * walkSpeed, 1.0F);
-        walkAnimation.update(f2, 0.4F);
+        walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
     public void playAmbientSound() {
