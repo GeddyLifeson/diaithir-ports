@@ -1,0 +1,15 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "immersive_tanning"
+version = "${version}"
+displayName = "Immersive Tanning (Diaithir port)"
+authors = "Otectus; ported to NeoForge 26.1.2 for the Diaithir modpack"
+description = "Leather is worked, not crafted. Flesh hides on the Tanner's Rack, steep them with bark in the Tanner's Vat, choose a finish, and stitch equipment at the Leatherworker's Bench. A port of Otectus' Immersive Tanning (GPL-3.0), wired to diaithir-butchery."
+
+[[dependencies.immersive_tanning]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
