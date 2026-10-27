@@ -1,0 +1,12 @@
+{
+  "feature": "alexscaves:chamber_primordial_caves",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 30
+    },
+    {
+      "type": "minecraft:in_square"
+    }
+  ]
+}
