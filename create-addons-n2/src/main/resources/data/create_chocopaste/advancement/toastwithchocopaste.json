@@ -1,0 +1,28 @@
+{
+ "display": {
+  "icon": "create_chocopaste:toastwith_chocolate_paste",
+  "title": {
+   "translate": "advancements.toastwithchocopaste.title"
+  },
+  "description": {
+   "translate": "advancements.toastwithchocopaste.descr"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "toastwithchocopaste": {
+   "trigger": "minecraft:consume_item",
+   "conditions": {
+    "item": {
+     "items": [
+      "create_chocopaste:toastwith_chocolate_paste"
+     ]
+    }
+   }
+  }
+ },
+ "parent": "create_chocopaste:bigjarobtain"
+}

@@ -1,0 +1,17 @@
+{
+ "type": "create:compacting",
+ "heat_requirement": "superheated",
+ "ingredients": [
+  "create_thermobaric:impure_copper_dust"
+ ],
+ "results": [
+  {
+   "id": "minecraft:copper_ingot",
+   "chance": 0.3
+  },
+  {
+   "id": "create_thermobaric:impure_copper_ingot",
+   "chance": 0.7
+  }
+ ]
+}

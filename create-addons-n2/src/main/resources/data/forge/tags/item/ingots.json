@@ -1,0 +1,25 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "create_thermobaric:graphite_ingot",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:beryl_ingot",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_gold_ingot",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_iron_ingot",
+   "required": false
+  },
+  {
+   "id": "create_thermobaric:impure_copper_ingot",
+   "required": false
+  }
+ ]
+}

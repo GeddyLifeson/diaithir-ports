@@ -1,0 +1,10 @@
+{
+ "type": "minecraft:smelting",
+ "category": "misc",
+ "cookingtime": 1200,
+ "experience": 0.3,
+ "ingredient": "create_chocopaste:rawchimneycakeshaft",
+ "result": {
+  "id": "create_chocopaste:chimneycakeshaft"
+ }
+}

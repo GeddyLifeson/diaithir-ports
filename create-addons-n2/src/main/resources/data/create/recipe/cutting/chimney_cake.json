@@ -1,0 +1,13 @@
+{
+ "type": "create:cutting",
+ "processing_time": 20,
+ "ingredient": "create_chocopaste:chimneycakeshaft",
+ "results": [
+  {
+   "id": "create_chocopaste:chimney_cake"
+  },
+  {
+   "id": "create:shaft"
+  }
+ ]
+}

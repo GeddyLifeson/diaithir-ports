@@ -1,0 +1,34 @@
+{
+ "display": {
+  "icon": "create_chocopaste:chocolate_paste_sandwich",
+  "title": {
+   "translate": "advancements.sandwich.title"
+  },
+  "description": {
+   "translate": "advancements.sandwich.descr"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "sandwich": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_chocopaste:chocolate_paste_sandwich"
+      ],
+      "count": {
+       "min": 1,
+       "max": 1
+      }
+     }
+    ]
+   }
+  }
+ },
+ "parent": "create_chocopaste:bigjarobtain"
+}

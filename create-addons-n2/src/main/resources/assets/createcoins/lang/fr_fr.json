@@ -1,0 +1,10 @@
+{
+  "item.createcoins.goldcoin": "Pièce d\u0027or",
+  "item_group.createcoins.createcoins": "Create Coins",
+  "item.createcoins.coopercoin": "Pièce de cuivre",
+  "item.createcoins.diamondcoin": "Pièce de diamant",
+  "itemGroup.tabcreatecoins": "Create Coins",
+  "item.createcoins.ironcoin": "Pièce de fer",
+  "item.createcoins.zinccoin": "Pièce de zinc",
+  "item.createcoins.brasscoin": "Pièce de monnaie en laiton"
+}

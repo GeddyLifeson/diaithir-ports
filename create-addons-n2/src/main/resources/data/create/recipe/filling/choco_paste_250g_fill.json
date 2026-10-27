@@ -1,0 +1,12 @@
+{
+ "type": "create:filling",
+ "ingredient": "create_chocopaste:empty_choco_paste_250g",
+ "fluid_ingredient": {
+  "type": "fluid_stack",
+  "amount": 20250,
+  "fluid": "create:chocolate"
+ },
+ "result": {
+  "id": "create_chocopaste:choco_paste_250g"
+ }
+}

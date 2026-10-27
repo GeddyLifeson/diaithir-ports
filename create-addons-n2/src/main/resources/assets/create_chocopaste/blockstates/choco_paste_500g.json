@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "create_chocopaste:block/choco_paste_500g"
+    },
+    "facing=east": {
+      "model": "create_chocopaste:block/choco_paste_500g",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "create_chocopaste:block/choco_paste_500g",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "create_chocopaste:block/choco_paste_500g",
+      "y": 270
+    }
+  }
+}

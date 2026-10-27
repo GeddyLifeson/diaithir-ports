@@ -1,0 +1,10 @@
+{
+  "item.crtr.wood_chunks": "Wood Chunks",
+  "item.crtr.briquette": "Briquette",
+  "item.crtr.compressed_carbon": "Compressed Carbon",
+  "item.crtr.supercompressed_carbon": "Supercompressed Carbon",
+  "item.crtr.maximally_compressed_carbon": "Maximally Compressed Carbon",
+  "item.crtr.unprocessed_maximally_compressed_carbon": "Unprocessed Maximally Compressed Carbon",
+  "item.crtr.rough_diamond": "Rough Diamond",
+  "item.crtr.powdered_coal": "Powdered Coal"
+}

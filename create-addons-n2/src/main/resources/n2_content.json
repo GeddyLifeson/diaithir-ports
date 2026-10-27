@@ -1,0 +1,85 @@
+{
+ "electrumblock": {
+  "blocks": [
+   "electrum_block"
+  ],
+  "items": []
+ },
+ "create_thermobaric": {
+  "blocks": [
+   "beryl_block",
+   "graphite_block"
+  ],
+  "items": [
+   "beryl_dust",
+   "beryl_ingot",
+   "carbon_dust",
+   "graphite_ingot",
+   "impure_copper_dust",
+   "impure_copper_ingot",
+   "impure_diamond",
+   "impure_emerald",
+   "impure_gold_dust",
+   "impure_gold_ingot",
+   "impure_iron_dust",
+   "impure_iron_ingot"
+  ]
+ },
+ "createcoins": {
+  "blocks": [],
+  "items": [
+   "brasscoin",
+   "coopercoin",
+   "diamondcoin",
+   "goldcoin",
+   "ironcoin",
+   "zinccoin"
+  ]
+ },
+ "crtr": {
+  "blocks": [],
+  "items": [
+   "briquette",
+   "compressed_carbon",
+   "maximally_compressed_carbon",
+   "powdered_coal",
+   "rough_diamond",
+   "supercompressed_carbon",
+   "unprocessed_maximally_compressed_carbon",
+   "wood_chunks"
+  ]
+ },
+ "create_chocopaste": {
+  "blocks": [
+   "choco_paste_250g",
+   "choco_paste_500g",
+   "empty_choco_paste_250g",
+   "empty_choco_paste_500g"
+  ],
+  "items": [
+   "chimney_cake",
+   "chimney_cake_dough",
+   "chimneycakechocolate",
+   "chimneycakecoveredinchocolate",
+   "chimneycakeshaft",
+   "chocolate_paste_sandwich",
+   "chocolatetoast",
+   "double_chocolate_paste_sandwich",
+   "icon_item",
+   "pressed_dough",
+   "raw_chimney_cake",
+   "rawchimneycakeshaft",
+   "sweetdough",
+   "toast",
+   "toastwith_chocolate_paste"
+  ]
+ },
+ "create_deepslate_processing": {
+  "blocks": [
+   "deep_gravel"
+  ],
+  "items": [
+   "deepslate_shard"
+  ]
+ }
+}
