@@ -73,7 +73,7 @@ public class AbyssalFireBlock extends BaseFireBlock implements SimpleWaterlogged
 	}
 
 	@Override
-	public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+	public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier applier, boolean intersects) {
 		if (!entity.getType().builtInRegistryHolder().is(ESTags.EntityTypes.ABYSSAL_FIRE_IMMUNE) && entity.tickCount % 30 == 0) {
 			ESPortCompat.hurt(entity, level.damageSources().inFire(), 3.0F);
 		}

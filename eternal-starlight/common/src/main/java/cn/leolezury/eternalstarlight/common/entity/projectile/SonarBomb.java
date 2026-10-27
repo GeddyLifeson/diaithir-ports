@@ -41,7 +41,7 @@ public class SonarBomb extends ThrowableItemProjectile {
 	protected void onHit(HitResult hitResult) {
 		super.onHit(hitResult);
 		if (hitResult.getType() != HitResult.Type.MISS && level() instanceof ServerLevel serverLevel) {
-			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, getItem()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
+			serverLevel.sendParticles(ESPortCompat.itemParticle(ParticleTypes.ITEM, getItem()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
 			serverLevel.sendParticles(ParticleTypes.EXPLOSION, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 3, 0.2, 0.2, 0.2, 0.0);
 			serverLevel.sendParticles(ParticleTypes.SMOKE, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 2, 0.2, 0.2, 0.2, 0.0);
 			serverLevel.sendParticles(ParticleTypes.WHITE_SMOKE, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 2, 0.2, 0.2, 0.2, 0.0);

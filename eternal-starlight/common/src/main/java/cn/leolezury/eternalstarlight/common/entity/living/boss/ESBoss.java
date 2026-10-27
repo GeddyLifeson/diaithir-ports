@@ -191,13 +191,9 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 		return false;
 	}
 
-	@Override
-	public boolean canChangeDimensions(Level level, Level level1) {
-		return false;
-	}
 
 	@Override
-	public boolean startRiding(Entity entity, boolean bl) {
+	public boolean startRiding(Entity entity, boolean bl, boolean esEvent) {
 		return false;
 	}
 

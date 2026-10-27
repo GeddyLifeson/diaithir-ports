@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import java.util.function.Consumer;
 
 import net.minecraft.world.item.component.TooltipDisplay;
@@ -7,6 +8,7 @@ import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.item.interfaces.TickableArmor;
@@ -28,40 +30,28 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Supplier;
 
 public class DeepsilverArmorItem extends Item implements TickableArmor {
-	private final Supplier<ItemAttributeModifiers> extraModifiers;
+	private final ArmorType armorType;
 
-	public DeepsilverArmorItem(ArmorMaterial materialHolder, Type type, Item.Properties properties) {
-		super(properties.humanoidArmor(materialHolder, type));
-		this.extraModifiers = Suppliers.memoize(() -> {
-			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
-			Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
-			builder.add(Attributes.ATTACK_SPEED, new AttributeModifier(resourceLocation, 0.05, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-			builder.add(Attributes.MOVEMENT_SPEED, new AttributeModifier(resourceLocation, 0.01, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-			return builder.build();
-		});
+	public DeepsilverArmorItem(ArmorMaterial materialHolder, ArmorType type, Item.Properties properties) {
+		super(ESPortCompat.armor(properties, materialHolder, type, extra(type)));
+		this.armorType = type;
 	}
 
-	@Override
-	public ItemAttributeModifiers getDefaultAttributeModifiers() {
-		ItemAttributeModifiers modifiers = super.getDefaultAttributeModifiers();
+	private static ItemAttributeModifiers extra(ArmorType type) {
 		ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-		for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
-		for (ItemAttributeModifiers.Entry entry : extraModifiers.get().modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
+		EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
+		Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
+		builder.add(Attributes.ATTACK_SPEED, new AttributeModifier(resourceLocation, 0.05, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
+		builder.add(Attributes.MOVEMENT_SPEED, new AttributeModifier(resourceLocation, 0.01, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
 		return builder.build();
 	}
 
 	@Override
 	public void tick(Level level, LivingEntity livingEntity, ItemStack armor) {
 		AtomicBoolean fullSet = new AtomicBoolean(true);
-		livingEntity.getArmorSlots().forEach(stack -> {
+		ESPortCompat.armorItems(livingEntity).forEach(stack -> {
 			if (!(stack.getItem() instanceof DeepsilverArmorItem)) {
 				fullSet.set(false);
 			}

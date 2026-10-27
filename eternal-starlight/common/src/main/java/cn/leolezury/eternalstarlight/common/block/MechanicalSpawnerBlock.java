@@ -68,7 +68,7 @@ public class MechanicalSpawnerBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		if (!level.isClientSide()) {
 			int signal = Math.max(level.getBestNeighborSignal(pos), level.getBestNeighborSignal(pos.relative(state.getValue(HALF).getDirectionToOther())));
 			if (state.getValue(POWER) != signal) {
@@ -158,9 +158,4 @@ public class MechanicalSpawnerBlock extends BaseEntityBlock {
 		return RenderShape.MODEL;
 	}
 
-	@Override
-	public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-		super.appendHoverText(stack, context, tooltipDisplay, tooltipComponents, tooltipFlag);
-		Spawner.appendHoverText(stack, tooltipComponents, MechanicalSpawner.TAG_SPAWN_DATA);
-	}
 }

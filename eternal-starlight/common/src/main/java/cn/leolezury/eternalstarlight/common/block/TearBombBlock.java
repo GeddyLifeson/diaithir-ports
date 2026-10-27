@@ -16,7 +16,7 @@ public class TearBombBlock extends TntBlock {
 	}
 
 	@Override
-	public void wasExploded(Level level, BlockPos blockPos, Explosion explosion) {
+	public void wasExploded(net.minecraft.server.level.ServerLevel level, BlockPos blockPos, Explosion explosion) {
 		if (!level.isClientSide()) {
 			TearBomb bomb = new TearBomb(level, blockPos.getX() + 0.5F, blockPos.getY(), blockPos.getZ() + 0.5F, explosion.getIndirectSourceEntity());
 			int fuse = bomb.getFuse();

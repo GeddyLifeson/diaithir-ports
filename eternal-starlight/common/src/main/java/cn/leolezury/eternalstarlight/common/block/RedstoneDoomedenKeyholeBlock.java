@@ -40,7 +40,7 @@ public class RedstoneDoomedenKeyholeBlock extends HorizontalAxisBlock {
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		boolean lit = state.getValue(LIT);
 		if (!lit && Arrays.stream(Direction.values()).filter(direction -> direction.getAxis() == state.getValue(AXIS)).anyMatch(direction -> hasInputSignal(level, pos, direction))) {
 			level.setBlockAndUpdate(pos, state.setValue(LIT, true));

@@ -75,9 +75,4 @@ public class FlareSpawnerBlock extends BaseEntityBlock {
 		return RenderShape.MODEL;
 	}
 
-	@Override
-	public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-		super.appendHoverText(stack, context, tooltipDisplay, tooltipComponents, tooltipFlag);
-		Spawner.appendHoverText(stack, tooltipComponents, FlareSpawner.TAG_SPAWN_DATA);
-	}
 }

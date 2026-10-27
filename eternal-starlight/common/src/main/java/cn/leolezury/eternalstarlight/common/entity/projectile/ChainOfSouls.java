@@ -363,10 +363,6 @@ public class ChainOfSouls extends Projectile implements Grappling {
 		return entity instanceof Player ? (Player) entity : null;
 	}
 
-	@Override
-	public boolean canChangeDimensions(Level level, Level level2) {
-		return false;
-	}
 
 	@Override
 	public void recreateFromPacket(ClientboundAddEntityPacket packet) {

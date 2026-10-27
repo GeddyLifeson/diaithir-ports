@@ -83,4 +83,34 @@ public class ESPortCompat {
 	public static net.minecraft.core.HolderSet<net.minecraft.world.item.Item> items(net.minecraft.tags.TagKey<net.minecraft.world.item.Item> tag) {
 		return net.minecraft.core.registries.BuiltInRegistries.ITEM.getOrThrow(tag);
 	}
+
+	public static net.minecraft.world.item.Item.Properties armor(net.minecraft.world.item.Item.Properties properties, net.minecraft.world.item.equipment.ArmorMaterial material, net.minecraft.world.item.equipment.ArmorType type, net.minecraft.world.item.component.ItemAttributeModifiers extra) {
+		net.minecraft.world.item.component.ItemAttributeModifiers.Builder builder = net.minecraft.world.item.component.ItemAttributeModifiers.builder();
+		for (net.minecraft.world.item.component.ItemAttributeModifiers.Entry entry : material.createAttributes(type).modifiers()) {
+			builder.add(entry.attribute(), entry.modifier(), entry.slot());
+		}
+		for (net.minecraft.world.item.component.ItemAttributeModifiers.Entry entry : extra.modifiers()) {
+			builder.add(entry.attribute(), entry.modifier(), entry.slot());
+		}
+		return properties.humanoidArmor(material, type).attributes(builder.build());
+	}
+
+	public static java.util.List<net.minecraft.world.item.ItemStack> armorItems(net.minecraft.world.entity.LivingEntity entity) {
+		return java.util.List.of(
+			entity.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.FEET),
+			entity.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.LEGS),
+			entity.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.CHEST),
+			entity.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD));
+	}
+
+	public static net.minecraft.world.item.component.ItemAttributeModifiers baseAttributes(cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers tier, float damage, float speed) {
+		return net.minecraft.world.item.component.ItemAttributeModifiers.builder()
+			.add(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE, new net.minecraft.world.entity.ai.attributes.AttributeModifier(net.minecraft.world.item.Item.BASE_ATTACK_DAMAGE_ID, damage + tier.getAttackDamageBonus(), net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE), net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND)
+			.add(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, new net.minecraft.world.entity.ai.attributes.AttributeModifier(net.minecraft.world.item.Item.BASE_ATTACK_SPEED_ID, speed, net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE), net.minecraft.world.entity.EquipmentSlotGroup.MAINHAND)
+			.build();
+	}
+
+	public static net.minecraft.core.particles.ItemParticleOption itemParticle(net.minecraft.core.particles.ParticleType<net.minecraft.core.particles.ItemParticleOption> type, net.minecraft.world.item.ItemStack stack) {
+		return new net.minecraft.core.particles.ItemParticleOption(type, net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(stack));
+	}
 }

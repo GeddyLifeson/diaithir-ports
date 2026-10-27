@@ -44,7 +44,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class ShimmerLacewing extends Animal implements VariantHolder<Holder<ShimmerLacewingVariant>>, FlyingAnimal {
+public class ShimmerLacewing extends Animal implements FlyingAnimal {
 	private static final String TAG_VARIANT = "variant";
 	private static final String TAG_FLIGHT_ALTITUDE = "flight_altitude";
 
@@ -60,7 +60,6 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 		this.getEntityData().set(VARIANT, variant.toString());
 	}
 
-	@Override
 	public void setVariant(Holder<ShimmerLacewingVariant> variant) {
 		if (variant.isBound()) {
 			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT).getKey(variant.value());
@@ -70,7 +69,6 @@ public class ShimmerLacewing extends Animal implements VariantHolder<Holder<Shim
 		}
 	}
 
-	@Override
 	public Holder<ShimmerLacewingVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<ShimmerLacewingVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SHIMMER_LACEWING_VARIANT);

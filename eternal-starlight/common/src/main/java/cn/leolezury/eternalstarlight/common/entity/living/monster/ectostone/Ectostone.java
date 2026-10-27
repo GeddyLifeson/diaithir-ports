@@ -166,7 +166,6 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 		this.getEntityData().set(VARIANT, variant.toString());
 	}
 
-	@Override
 	public void setVariant(Holder<EctostoneVariant> variant) {
 		if (variant.isBound()) {
 			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT).getKey(variant.value());
@@ -176,7 +175,6 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 		}
 	}
 
-	@Override
 	public Holder<EctostoneVariant> getVariant() {
 		Registry<EctostoneVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT);
 		Optional<Holder.Reference<EctostoneVariant>> optional = variants.getHolder(getVariantId());
@@ -376,7 +374,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 	}
 
 	@Override
-	public boolean causeFallDamage(float f, float g, DamageSource damageSource) {
+	public boolean causeFallDamage(double f, float g, DamageSource damageSource) {
 		return false;
 	}
 

@@ -54,7 +54,7 @@ public class MagicStone extends ThrowableItemProjectile {
 		if (hitResult.getType() != HitResult.Type.MISS && level() instanceof ServerLevel serverLevel) {
 			this.playSound(SoundEvents.STONE_BREAK, 1.2f, 1.2f);
 			for (int i = 0; i < 10; i++) {
-				serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, getItem()), this.getX(), this.getY() + 0.125, this.getZ(), 1, (random.nextDouble() - 0.5) * 0.3, random.nextDouble() * 0.3, (random.nextDouble() - 0.5) * 0.3, 0.0);
+				serverLevel.sendParticles(ESPortCompat.itemParticle(ParticleTypes.ITEM, getItem()), this.getX(), this.getY() + 0.125, this.getZ(), 1, (random.nextDouble() - 0.5) * 0.3, random.nextDouble() * 0.3, (random.nextDouble() - 0.5) * 0.3, 0.0);
 			}
 			discard();
 		}

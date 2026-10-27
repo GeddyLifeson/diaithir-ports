@@ -112,18 +112,12 @@ public class DryingRackBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		Containers.dropContentsOnDestroy(state, newState, level, pos);
-		super.onRemove(state, level, pos, newState, isMoving);
-	}
-
-	@Override
 	protected boolean hasAnalogOutputSignal(BlockState state) {
 		return true;
 	}
 
 	@Override
-	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos, Direction direction) {
 		return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
 	}
 

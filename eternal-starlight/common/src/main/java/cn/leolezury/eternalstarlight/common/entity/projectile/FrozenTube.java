@@ -55,7 +55,7 @@ public class FrozenTube extends ThrowableProjectile {
 		if (hitResult.getType() != HitResult.Type.MISS) {
 			this.playSound(ESSoundEvents.FROZEN_TUBE_BREAK.get(), 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
 			if (level() instanceof ServerLevel serverLevel) {
-				serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, ESItems.FROZEN_TUBE.get().getDefaultInstance()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
+				serverLevel.sendParticles(ESPortCompat.itemParticle(ParticleTypes.ITEM, ESItems.FROZEN_TUBE.get().getDefaultInstance()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
 			}
 			for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(2))) {
 				if (!level().isClientSide() && ESEntityUtil.shouldHarm(getOwner(), entity)) {

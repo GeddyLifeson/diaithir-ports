@@ -98,40 +98,11 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 		builder.define(OWNER_ID, -1);
 	}
 
-	@Override
-	public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps) {
-		this.lerpSteps = steps;
-		this.lerpX = x;
-		this.lerpY = y;
-		this.lerpZ = z;
-		this.lerpYRot = yRot;
-		this.lerpXRot = xRot;
-	}
 
-	@Override
-	public double lerpTargetX() {
-		return this.lerpX;
-	}
 
-	@Override
-	public double lerpTargetY() {
-		return this.lerpY;
-	}
 
-	@Override
-	public double lerpTargetZ() {
-		return this.lerpZ;
-	}
 
-	@Override
-	public float lerpTargetYRot() {
-		return this.lerpYRot;
-	}
 
-	@Override
-	public float lerpTargetXRot() {
-		return this.lerpXRot;
-	}
 
 	@Override
 	public boolean shouldRenderAtSqrDistance(double d) {
@@ -207,7 +178,7 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 			this.playSound(ESSoundEvents.SEEKING_EYE_DEATH.get(), 1.0F, 1.0F);
 			if (this.random.nextFloat() < 0.2F) {
 				if (level() instanceof ServerLevel serverLevel) {
-					serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY() + this.getBbHeight() / 2, this.getZ(), 10, 0.2, 0.2, 0.2, 0.1);
+					serverLevel.sendParticles(ESPortCompat.itemParticle(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY() + this.getBbHeight() / 2, this.getZ(), 10, 0.2, 0.2, 0.2, 0.1);
 				}
 			} else if (!player.hasInfiniteMaterials()) {
 				ItemStack item = this.getItem();

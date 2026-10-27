@@ -106,7 +106,7 @@ public class ESPortalBlock extends BaseEntityBlock implements Portal {
 	}
 
 	@Override
-	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+	public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier applier, boolean intersects) {
 		if (entity.canUsePortal(false)) {
 			entity.setAsInsidePortal(this, pos);
 		}

@@ -106,7 +106,7 @@ public class EnergyTransmitterBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		if (!level.isClientSide()) {
 			int signal = level.getSignal(pos.relative(state.getValue(FACING).getOpposite()), state.getValue(FACING).getOpposite());
 			if (state.getValue(DIRECT_POWER) != signal) {

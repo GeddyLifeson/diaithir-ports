@@ -119,7 +119,7 @@ public class CrateBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos, Direction direction) {
 		return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
 	}
 

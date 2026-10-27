@@ -205,8 +205,8 @@ public class StarlightGolem extends ESBoss implements RayAttackUser {
 	}
 
 	@Override
-	public boolean isInvulnerableTo(DamageSource source) {
-		return super.isInvulnerableTo(source) || source.getEntity() == this || source.is(DamageTypes.FALLING_BLOCK);
+	public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel esLevel, DamageSource source) {
+		return super.isInvulnerableTo(esLevel, source) || source.getEntity() == this || source.is(DamageTypes.FALLING_BLOCK);
 	}
 
 	@Override

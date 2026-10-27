@@ -50,7 +50,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class Seeker extends Monster implements VariantHolder<Holder<SeekerVariant>> {
+public class Seeker extends Monster {
 	private static final String TAG_VARIANT = "variant";
 	public static final float TENTACLE_LENGTH = 5;
 	private static final byte EVENT_MOVE = 100;
@@ -66,7 +66,6 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 		this.getEntityData().set(VARIANT, variant.toString());
 	}
 
-	@Override
 	public void setVariant(Holder<SeekerVariant> variant) {
 		if (variant.isBound()) {
 			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.SEEKER_VARIANT).getKey(variant.value());
@@ -76,7 +75,6 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 		}
 	}
 
-	@Override
 	public Holder<SeekerVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<SeekerVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.SEEKER_VARIANT);
@@ -259,7 +257,7 @@ public class Seeker extends Monster implements VariantHolder<Holder<SeekerVarian
 	}
 
 	@Override
-	public boolean causeFallDamage(float f, float g, DamageSource damageSource) {
+	public boolean causeFallDamage(double f, float g, DamageSource damageSource) {
 		return false;
 	}
 

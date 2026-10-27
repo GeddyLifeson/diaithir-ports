@@ -86,7 +86,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 	}
 
 	@Override
-	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
 		if (state.getValue(TIP_DIRECTION) == Direction.UP && state.getValue(THICKNESS) == IcicleThickness.TIP) {
 			entity.causeFallDamage(fallDistance + 2.0F, 2.0F, level.damageSources().stalagmite());
 		} else {

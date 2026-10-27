@@ -135,8 +135,8 @@ public class Tangled extends Monster implements MultiBehaviorUser {
 	}
 
 	@Override
-	protected void customServerAiStep() {
-		super.customServerAiStep();
+	protected void customServerAiStep(net.minecraft.server.level.ServerLevel esLevel) {
+		super.customServerAiStep(esLevel);
 		if (getTarget() != null && !getTarget().isAlive()) {
 			setTarget(null);
 		}

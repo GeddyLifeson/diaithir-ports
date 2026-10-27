@@ -77,11 +77,10 @@ public class SimpleMultifaceBlock extends MultifaceBlock implements Bonemealable
 	}
 
 	@Override
-	public boolean propagatesSkylightDown(BlockState state, BlockGetter blockGetter, BlockPos pos) {
+	protected boolean propagatesSkylightDown(BlockState state) {
 		return state.getFluidState().isEmpty();
 	}
 
-	@Override
 	public MultifaceSpreader getSpreader() {
 		return this.spreader;
 	}

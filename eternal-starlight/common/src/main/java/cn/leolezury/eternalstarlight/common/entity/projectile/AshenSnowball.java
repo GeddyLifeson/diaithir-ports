@@ -39,7 +39,7 @@ public class AshenSnowball extends ThrowableItemProjectile {
 	protected void onHit(HitResult hitResult) {
 		super.onHit(hitResult);
 		if (hitResult.getType() != HitResult.Type.MISS && level() instanceof ServerLevel serverLevel) {
-			serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, getItem()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
+			serverLevel.sendParticles(ESPortCompat.itemParticle(ParticleTypes.ITEM, getItem()), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
 			serverLevel.sendParticles(ESParticles.ASHEN_SNOW.get(), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 0.2, 0.2, 0.0);
 			for (int i = 0; i <= 5; i++) {
 				serverLevel.sendParticles(ESParticles.ORBITAL_ASHEN_SNOW.get(), this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + (random.nextFloat() - 0.5f) * getBbHeight() * 8, this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 5, 0.2, 1.5, 0.2, 0.0);

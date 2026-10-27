@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.ScheduledTickAccess;
 
 import net.minecraft.world.level.LevelReader;
@@ -59,7 +60,7 @@ public class LumenstemBlock extends GrowingPlantHeadBlock implements LiquidBlock
 	}
 
 	@Override
-	public boolean canPlaceLiquid(@Nullable Player player, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+	public boolean canPlaceLiquid(@Nullable LivingEntity player, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
 		return false;
 	}
 

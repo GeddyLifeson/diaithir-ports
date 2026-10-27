@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import net.minecraft.world.entity.EntitySpawnReason;
 
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
@@ -146,7 +147,7 @@ public class Freeze extends Monster implements RangedAttackMob {
 	}
 
 	@Override
-	public boolean causeFallDamage(float f, float g, DamageSource damageSource) {
+	public boolean causeFallDamage(double f, float g, DamageSource damageSource) {
 		return false;
 	}
 

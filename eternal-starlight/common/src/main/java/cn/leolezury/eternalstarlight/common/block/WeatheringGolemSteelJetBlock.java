@@ -62,7 +62,7 @@ public class WeatheringGolemSteelJetBlock extends BaseEntityBlock implements Wea
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		if (!level.isClientSide()) {
 			if (state.getValue(POWER) != level.getBestNeighborSignal(pos)) {
 				level.setBlockAndUpdate(pos, state.setValue(POWER, level.getBestNeighborSignal(pos)));

@@ -50,9 +50,9 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	private static final String TAG_HUNGER_LEVEL = "hunger_level";
 
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
-	private int remainingPersistentAngerTime;
+	private long persistentAngerEndTime;
 	@Nullable
-	private UUID persistentAngerTarget;
+	private net.minecraft.world.entity.EntityReference<LivingEntity> persistentAngerTarget;
 	private float hungerLevel = 1;
 	private Vec3 fleeTo;
 	private int fleeTicks;
@@ -173,8 +173,8 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	}
 
 	@Override
-	protected void customServerAiStep() {
-		super.customServerAiStep();
+	protected void customServerAiStep(net.minecraft.server.level.ServerLevel esLevel) {
+		super.customServerAiStep(esLevel);
 		if (getTarget() != null && !getTarget().isAlive()) {
 			setTarget(null);
 		}
@@ -268,29 +268,29 @@ public class ThirstWalker extends Monster implements MultiBehaviorUser, NeutralM
 	}
 
 	@Override
-	public int getRemainingPersistentAngerTime() {
-		return remainingPersistentAngerTime;
+	public long getPersistentAngerEndTime() {
+		return persistentAngerEndTime;
 	}
 
 	@Override
-	public void setRemainingPersistentAngerTime(int i) {
-		this.remainingPersistentAngerTime = i;
+	public void setPersistentAngerEndTime(long i) {
+		this.persistentAngerEndTime = i;
 	}
 
 	@Nullable
 	@Override
-	public UUID getPersistentAngerTarget() {
+	public net.minecraft.world.entity.EntityReference<LivingEntity> getPersistentAngerTarget() {
 		return persistentAngerTarget;
 	}
 
 	@Override
-	public void setPersistentAngerTarget(@Nullable UUID uuid) {
+	public void setPersistentAngerTarget(@Nullable net.minecraft.world.entity.EntityReference<LivingEntity> uuid) {
 		this.persistentAngerTarget = uuid;
 	}
 
 	@Override
 	public void startPersistentAngerTimer() {
-		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(getRandom()));
+		this.setTimeToRemainAngry(PERSISTENT_ANGER_TIME.sample(getRandom()));
 	}
 
 	public static boolean checkThirstWalkerSpawnRules(EntityType<? extends ThirstWalker> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {

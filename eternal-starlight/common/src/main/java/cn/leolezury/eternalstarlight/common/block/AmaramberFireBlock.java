@@ -35,7 +35,7 @@ public class AmaramberFireBlock extends BaseFireBlock {
 	}
 
 	@Override
-	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier applier, boolean intersects) {
 		ESPortCompat.hurt(entity, level.damageSources().inFire(), 1.0F);
 		if (entity instanceof LivingEntity living) {
 			living.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100));

@@ -139,7 +139,7 @@ public class LunarisCactusBlock extends Block {
 	}
 
 	@Override
-	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {
+	protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier applier, boolean intersects) {
 		if (!blockState.getValue(FRUIT)) {
 			ESPortCompat.hurt(entity, level.damageSources().cactus(), 1.0F);
 		}

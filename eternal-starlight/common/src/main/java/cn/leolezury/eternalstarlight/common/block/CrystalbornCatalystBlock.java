@@ -54,28 +54,13 @@ public class CrystalbornCatalystBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (!state.is(newState.getBlock())) {
-			BlockEntity blockentity = level.getBlockEntity(pos);
-			if (blockentity instanceof CrystalbornCatalystBlockEntity entity) {
-				if (level instanceof ServerLevel) {
-					Containers.dropContents(level, pos, entity);
-				}
-				super.onRemove(state, level, pos, newState, isMoving);
-			} else {
-				super.onRemove(state, level, pos, newState, isMoving);
-			}
-		}
-	}
-
-	@Override
 	@Nullable
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(LIT, context.getLevel().hasNeighborSignal(context.getClickedPos())).setValue(FACING, context.getNearestLookingDirection().getOpposite());
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		if (!level.isClientSide()) {
 			boolean lit = state.getValue(LIT);
 			if (lit != level.hasNeighborSignal(pos)) {

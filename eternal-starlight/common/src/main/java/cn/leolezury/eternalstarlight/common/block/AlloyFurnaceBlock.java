@@ -249,46 +249,6 @@ public class AlloyFurnaceBlock extends BaseEntityBlock implements WorldlyContain
 		}
 	}
 
-	@Override
-	protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (!state.is(newState.getBlock())) {
-			BlockEntity blockEntity = level.getBlockEntity(pos);
-			if (blockEntity instanceof AlloyFurnaceBlockEntity entity) {
-				if (!entity.isValidBlockState(newState)) {
-					if (level instanceof ServerLevel) {
-						Containers.dropContents(level, pos, entity);
-					}
-					super.onRemove(state, level, pos, newState, isMoving);
-				}
-			} else {
-				super.onRemove(state, level, pos, newState, isMoving);
-			}
-		}
-		Direction facing = state.getValue(FACING);
-		if (state.getValue(X_OFFSET) == 0 && state.getValue(Y_OFFSET) == 0 && state.getValue(Z_OFFSET) == 1
-			&& !(newState.is(this) && newState.getValue(FACING) == facing && newState.getValue(X_OFFSET) == 0 && newState.getValue(Y_OFFSET) == 0 && newState.getValue(Z_OFFSET) == 1)) {
-			for (int x = 0; x <= 1; x++) {
-				for (int z = -1; z <= 1; z++) {
-					for (int y = 0; y <= 2; y++) {
-						Vec3 rotated = new Vec3(x, 0, z).yRot((-facing.toYRot() + 90) * Mth.DEG_TO_RAD);
-						int rotatedX = Math.round((float) rotated.x);
-						int rotatedZ = Math.round((float) rotated.z);
-						if (level.getBlockState(pos.offset(rotatedX, y, rotatedZ)).is(this) && !(x == 0 && y == 0 && z == 0)) {
-							level.destroyBlock(pos.offset(rotatedX, y, rotatedZ), false);
-						}
-					}
-				}
-			}
-		} else {
-			int x = state.getValue(X_OFFSET);
-			int z = state.getValue(Z_OFFSET) - 1;
-			Vec3 rotated = new Vec3(x, 0, z).yRot((-facing.toYRot() + 90) * Mth.DEG_TO_RAD);
-			int rotatedX = Math.round((float) rotated.x);
-			int rotatedZ = Math.round((float) rotated.z);
-			checkStructure(level, pos.offset(-rotatedX, -state.getValue(Y_OFFSET), -rotatedZ));
-		}
-	}
-
 	public void checkStructure(LevelAccessor level, BlockPos pos) {
 		BlockState state = level.getBlockState(pos);
 		if (state.is(this) && state.getValue(X_OFFSET) == 0 && state.getValue(Y_OFFSET) == 0 && state.getValue(Z_OFFSET) == 1) {

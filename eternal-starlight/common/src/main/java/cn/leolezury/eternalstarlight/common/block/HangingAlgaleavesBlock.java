@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import net.minecraft.world.entity.LivingEntity;
 import cn.leolezury.eternalstarlight.common.registry.ESBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -50,7 +51,7 @@ public class HangingAlgaleavesBlock extends GrowingPlantHeadBlock implements Liq
 	}
 
 	@Override
-	public boolean canPlaceLiquid(@Nullable Player player, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+	public boolean canPlaceLiquid(@Nullable LivingEntity player, BlockGetter blockGetter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
 		return false;
 	}
 

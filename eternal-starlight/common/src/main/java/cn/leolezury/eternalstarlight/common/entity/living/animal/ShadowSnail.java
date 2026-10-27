@@ -124,7 +124,7 @@ public class ShadowSnail extends Animal {
 			transitionTicks = 0;
 			getNavigation().stop();
 		}
-		return super.hurt(source, (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || getHideState() != 2) ? amount : amount / 8);
+		return super.hurtServer(hurtServerLevel, source, (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || getHideState() != 2) ? amount : amount / 8);
 	}
 
 	public void stopAllAnimStates() {

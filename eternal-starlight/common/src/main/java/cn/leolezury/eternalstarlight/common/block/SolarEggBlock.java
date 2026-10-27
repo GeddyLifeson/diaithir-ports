@@ -95,7 +95,8 @@ public class SolarEggBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+	protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, boolean movedByPiston) {
+		BlockState newState = level.getBlockState(pos);
 		if (state.getValue(X_OFFSET) == 1 && state.getValue(Y_OFFSET) == 0 && state.getValue(Z_OFFSET) == 1
 			&& !(newState.is(this) && newState.getValue(X_OFFSET) == 1 && newState.getValue(Y_OFFSET) == 0 && newState.getValue(Z_OFFSET) == 1)) {
 			for (int x = -1; x <= 1; x++) {
@@ -110,7 +111,7 @@ public class SolarEggBlock extends BaseEntityBlock {
 		} else {
 			checkStructure(level, pos.offset(1 - state.getValue(X_OFFSET), -state.getValue(Y_OFFSET), 1 - state.getValue(Z_OFFSET)));
 		}
-		super.onRemove(state, level, pos, newState, movedByPiston);
+		super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
 	}
 
 	public void checkStructure(LevelAccessor level, BlockPos pos) {

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import java.util.function.Consumer;
 
 import net.minecraft.world.item.component.TooltipDisplay;
@@ -21,7 +22,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -30,38 +30,26 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Supplier;
 
 public class ThermalSpringstoneArmorItem extends Item implements TickableArmor {
-	private final Supplier<ItemAttributeModifiers> extraModifiers;
+	private final ArmorType armorType;
 
 	public ThermalSpringstoneArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
-		super(properties.humanoidArmor(holder, type));
-		this.extraModifiers = Suppliers.memoize(() -> {
-			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
-			Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
-			builder.add(ESAttributes.FIRE_RESISTANCE.asHolder(), new AttributeModifier(resourceLocation, 0.25, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-			builder.add(ESAttributes.COLD_RESISTANCE.asHolder(), new AttributeModifier(resourceLocation, 0.10, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-			return builder.build();
-		});
+		super(ESPortCompat.armor(properties, holder, type, extra(type)));
+		this.armorType = type;
+	}
+
+	private static ItemAttributeModifiers extra(ArmorType type) {
+		ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
+		EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
+		Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
+		builder.add(ESAttributes.FIRE_RESISTANCE.asHolder(), new AttributeModifier(resourceLocation, 0.25, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
+		builder.add(ESAttributes.COLD_RESISTANCE.asHolder(), new AttributeModifier(resourceLocation, 0.10, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
+		return builder.build();
 	}
 
 	public static Identifier getTexture(EquipmentSlot slot) {
 		return EternalStarlight.id("textures/armor/thermal_springstone_layer_" + ((slot == EquipmentSlot.LEGS) ? "2.png" : "1.png"));
-	}
-
-	@Override
-	public ItemAttributeModifiers getDefaultAttributeModifiers() {
-		ItemAttributeModifiers modifiers = super.getDefaultAttributeModifiers();
-		ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-		for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
-		for (ItemAttributeModifiers.Entry entry : extraModifiers.get().modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
-		return builder.build();
 	}
 
 	@Override
@@ -75,7 +63,7 @@ public class ThermalSpringstoneArmorItem extends Item implements TickableArmor {
 	@Override
 	public void tick(Level level, LivingEntity livingEntity, ItemStack armor) {
 		AtomicBoolean fullSet = new AtomicBoolean(true);
-		livingEntity.getArmorSlots().forEach(stack -> {
+		ESPortCompat.armorItems(livingEntity).forEach(stack -> {
 			if (!(stack.getItem() instanceof ThermalSpringstoneArmorItem)) {
 				fullSet.set(false);
 			}

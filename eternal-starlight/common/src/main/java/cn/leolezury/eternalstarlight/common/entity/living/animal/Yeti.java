@@ -132,13 +132,13 @@ public class Yeti extends Animal {
 	}
 
 	@Override
-	protected void customServerAiStep() {
+	protected void customServerAiStep(net.minecraft.server.level.ServerLevel esLevel) {
 		this.level().getProfiler().push("YetiBrain");
 		this.getBrain().tick((ServerLevel) this.level(), this);
 		this.level().getProfiler().popPush("YetiActivityUpdate");
 		YetiAi.updateActivity(this);
 		this.level().getProfiler().pop();
-		super.customServerAiStep();
+		super.customServerAiStep(esLevel);
 	}
 
 	@Override

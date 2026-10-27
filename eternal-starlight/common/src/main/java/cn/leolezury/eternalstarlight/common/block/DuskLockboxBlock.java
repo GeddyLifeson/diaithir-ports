@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.block;
 
+import net.minecraft.core.Direction;
 import cn.leolezury.eternalstarlight.common.block.entity.DuskLockboxBlockEntity;
 import cn.leolezury.eternalstarlight.common.registry.ESBlockEntities;
 import com.mojang.serialization.MapCodec;
@@ -32,7 +33,7 @@ public class DuskLockboxBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+	protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos, Direction direction) {
 		return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
 	}
 

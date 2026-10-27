@@ -217,8 +217,8 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> JINGLESTEM_HANGING_SIGN = ITEMS.register("jinglestem_hanging_sign", () -> new HangingSignItem(ESBlocks.JINGLESTEM_HANGING_SIGN.get(), ESBlocks.JINGLESTEM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> JINGLESTEM_RAFT = ITEMS.register("jinglestem_raft", () -> new ESBoatItem(false, ESBoat.Type.JINGLESTEM, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> JINGLESTEM_CHEST_RAFT = ITEMS.register("jinglestem_chest_raft", () -> new ESBoatItem(true, ESBoat.Type.JINGLESTEM, new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item, Item> JINGLESTEM_CRISP = ITEMS.register("jinglestem_crisp", () -> new Item(new Item.Properties().food(ESFoods.JINGLESTEM_CRISP.get())));
-	public static final RegistryObject<Item, Item> JINGLESTEM_SANDWICH = ITEMS.register("jinglestem_sandwich", () -> new Item(new Item.Properties().food(ESFoods.JINGLESTEM_SANDWICH.get())));
+	public static final RegistryObject<Item, Item> JINGLESTEM_CRISP = ITEMS.register("jinglestem_crisp", () -> new Item(new Item.Properties().food(ESFoods.JINGLESTEM_CRISP.get().food(), ESFoods.JINGLESTEM_CRISP.get().consumable())));
+	public static final RegistryObject<Item, Item> JINGLESTEM_SANDWICH = ITEMS.register("jinglestem_sandwich", () -> new Item(new Item.Properties().food(ESFoods.JINGLESTEM_SANDWICH.get().food(), ESFoods.JINGLESTEM_SANDWICH.get().consumable())));
 
 	// cradlewood wood
 	public static final RegistryObject<Item, Item> CRADLEWOOD_SAPLING = ITEMS.register("cradlewood_sapling", () -> new BlockItem(ESBlocks.CRADLEWOOD_SAPLING.get(), new Item.Properties()));
@@ -498,7 +498,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM = ITEMS.register("shining_mushroom", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM_BLOCK = ITEMS.register("shining_mushroom_block", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM_STEM = ITEMS.register("shining_mushroom_stem", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM_STEM.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> LUNAR_BERRIES = ITEMS.register("lunar_berries", () -> new BlockItem(ESBlocks.BERRIES_VINES.get(), new Item.Properties().food(ESFoods.LUNAR_BERRIES.get())));
+	public static final RegistryObject<Item, Item> LUNAR_BERRIES = ITEMS.register("lunar_berries", () -> new BlockItem(ESBlocks.BERRIES_VINES.get(), new Item.Properties().food(ESFoods.LUNAR_BERRIES.get().food(), ESFoods.LUNAR_BERRIES.get().consumable())));
 	public static final RegistryObject<Item, Item> CAVE_MOSS = ITEMS.register("cave_moss", () -> new BlockItem(ESBlocks.CAVE_MOSS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CAVE_MOSS_BLOCK = ITEMS.register("cave_moss_block", () -> new BlockItem(ESBlocks.CAVE_MOSS_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CAVE_MOSS_CARPET = ITEMS.register("cave_moss_carpet", () -> new BlockItem(ESBlocks.CAVE_MOSS_CARPET.get(), new Item.Properties()));
@@ -506,7 +506,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> BOULDERSHROOM_BLOCK = ITEMS.register("bouldershroom_block", () -> new BlockItem(ESBlocks.BOULDERSHROOM_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> BOULDERSHROOM_STEM = ITEMS.register("bouldershroom_stem", () -> new BlockItem(ESBlocks.BOULDERSHROOM_STEM.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> BOULDERSHROOM_ROOTS = ITEMS.register("bouldershroom_roots", () -> new BlockItem(ESBlocks.BOULDERSHROOM_ROOTS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> BOULDERSHROOM_STEW = ITEMS.register("bouldershroom_stew", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.BOULDERSHROOM_STEW.get())));
+	public static final RegistryObject<Item, Item> BOULDERSHROOM_STEW = ITEMS.register("bouldershroom_stew", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.BOULDERSHROOM_STEW.get().food(), ESFoods.BOULDERSHROOM_STEW.get().consumable()).usingConvertsTo(Items.BOWL)));
 
 	// swamp plant
 	public static final RegistryObject<Item, Item> SWAMP_ROSE = ITEMS.register("swamp_rose", () -> new BlockItem(ESBlocks.SWAMP_ROSE.get(), new Item.Properties()));
@@ -547,8 +547,8 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> AMETHYSIA_GRASS = ITEMS.register("amethysia_grass", () -> new BlockItem(ESBlocks.AMETHYSIA_GRASS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> LUNARIS_CACTUS = ITEMS.register("lunaris_cactus", () -> new BlockItem(ESBlocks.LUNARIS_CACTUS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_GEL_BLOCK = ITEMS.register("lunaris_cactus_gel_block", () -> new BlockItem(ESBlocks.LUNARIS_CACTUS_GEL_BLOCK.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_FRUIT = ITEMS.register("lunaris_cactus_fruit", () -> new Item(new Item.Properties().food(ESFoods.LUNARIS_CACTUS_FRUIT.get())));
-	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_GEL = ITEMS.register("lunaris_cactus_gel", () -> new Item(new Item.Properties().food(ESFoods.LUNARIS_CACTUS_GEL.get())));
+	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_FRUIT = ITEMS.register("lunaris_cactus_fruit", () -> new Item(new Item.Properties().food(ESFoods.LUNARIS_CACTUS_FRUIT.get().food(), ESFoods.LUNARIS_CACTUS_FRUIT.get().consumable())));
+	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_GEL = ITEMS.register("lunaris_cactus_gel", () -> new Item(new Item.Properties().food(ESFoods.LUNARIS_CACTUS_GEL.get().food(), ESFoods.LUNARIS_CACTUS_GEL.get().consumable())));
 	public static final RegistryObject<Item, Item> CARVED_LUNARIS_CACTUS_FRUIT = ITEMS.register("carved_lunaris_cactus_fruit", () -> new BlockItem(ESBlocks.CARVED_LUNARIS_CACTUS_FRUIT.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> LUNARIS_CACTUS_FRUIT_LANTERN = ITEMS.register("lunaris_cactus_fruit_lantern", () -> new BlockItem(ESBlocks.LUNARIS_CACTUS_FRUIT_LANTERN.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> BLOOMING_RED_STARLIGHT_CRYSTAL_CLUSTER = ITEMS.register("blooming_red_starlight_crystal_cluster", () -> new BlockItem(ESBlocks.BLOOMING_RED_STARLIGHT_CRYSTAL_CLUSTER.get(), new Item.Properties()));
@@ -572,7 +572,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> MOONLIGHT_DUCKWEED = ITEMS.register("moonlight_duckweed", () -> new PlaceOnWaterBlockItem(ESBlocks.MOONLIGHT_DUCKWEED.get(), new Item.Properties()));
 
 	// sea stuff
-	public static final RegistryObject<Item, Item> ABYSSAL_FRUIT = ITEMS.register("abyssal_fruit", () -> new BlockItem(ESBlocks.ABYSSAL_KELP.get(), new Item.Properties().food(ESFoods.ABYSSAL_FRUIT.get())));
+	public static final RegistryObject<Item, Item> ABYSSAL_FRUIT = ITEMS.register("abyssal_fruit", () -> new BlockItem(ESBlocks.ABYSSAL_KELP.get(), new Item.Properties().food(ESFoods.ABYSSAL_FRUIT.get().food(), ESFoods.ABYSSAL_FRUIT.get().consumable())));
 	public static final RegistryObject<Item, Item> ORBFLORA = ITEMS.register("orbflora", () -> new BlockItem(ESBlocks.ORBFLORA.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> ORBFLORA_LIGHT = ITEMS.register("orbflora_light", () -> new BlockItem(ESBlocks.ORBFLORA_LIGHT.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SPIRAL_KELP = ITEMS.register("spiral_kelp", () -> new BlockItem(ESBlocks.SPIRAL_KELP.get(), new Item.Properties()));
@@ -608,7 +608,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> DEAD_CRYSTALLUM_CORAL_BLOCK = ITEMS.register("dead_crystallum_coral_block", () -> new BlockItem(ESBlocks.DEAD_CRYSTALLUM_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRYSTALLUM_CORAL_BLOCK = ITEMS.register("crystallum_coral_block", () -> new BlockItem(ESBlocks.CRYSTALLUM_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> VELVETUMOSS = ITEMS.register("velvetumoss", () -> new BlockItem(ESBlocks.VELVETUMOSS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> VELVETUMOSS_BALL = ITEMS.register("velvetumoss_ball", () -> new Item(new Item.Properties().food(ESFoods.VELVETUMOSS_BALL.get())));
+	public static final RegistryObject<Item, Item> VELVETUMOSS_BALL = ITEMS.register("velvetumoss_ball", () -> new Item(new Item.Properties().food(ESFoods.VELVETUMOSS_BALL.get().food(), ESFoods.VELVETUMOSS_BALL.get().consumable())));
 	public static final RegistryObject<Item, Item> VELVETUMOSS_VILLI = ITEMS.register("velvetumoss_villi", () -> new BlockItem(ESBlocks.VELVETUMOSS_VILLI.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> RED_VELVETUMOSS = ITEMS.register("red_velvetumoss", () -> new BlockItem(ESBlocks.RED_VELVETUMOSS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> RED_VELVETUMOSS_VILLI = ITEMS.register("red_velvetumoss_villi", () -> new BlockItem(ESBlocks.RED_VELVETUMOSS_VILLI.get(), new Item.Properties()));
@@ -644,13 +644,13 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> CRINOA_SEEDS = ITEMS.register("crinoa_seeds", () -> new BlockItem(ESBlocks.CRINOA.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRINOA = ITEMS.register("crinoa", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRINOA_BALE = ITEMS.register("crinoa_bale", () -> new BlockItem(ESBlocks.CRINOA_BALE.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> CRINOA_BALL = ITEMS.register("crinoa_ball", () -> new Item(new Item.Properties().food(ESFoods.CRINOA_BALL.get())));
-	public static final RegistryObject<Item, Item> CRINOA_PORRIDGE = ITEMS.register("crinoa_porridge", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.CRINOA_PORRIDGE.get())));
+	public static final RegistryObject<Item, Item> CRINOA_BALL = ITEMS.register("crinoa_ball", () -> new Item(new Item.Properties().food(ESFoods.CRINOA_BALL.get().food(), ESFoods.CRINOA_BALL.get().consumable())));
+	public static final RegistryObject<Item, Item> CRINOA_PORRIDGE = ITEMS.register("crinoa_porridge", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.CRINOA_PORRIDGE.get().food(), ESFoods.CRINOA_PORRIDGE.get().consumable()).usingConvertsTo(Items.BOWL)));
 	public static final RegistryObject<Item, Item> NOCTURNAL_MILLET_SEEDS = ITEMS.register("nocturnal_millet_seeds", () -> new BlockItem(ESBlocks.NOCTURNAL_MILLET_STALK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> NOCTURNAL_MILLET = ITEMS.register("nocturnal_millet", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> FORGOTTEN_NOCTURNAL_MILLET = ITEMS.register("forgotten_nocturnal_millet", () -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item, Item> POPPED_NOCTURNAL_MILLET_BUCKET = ITEMS.register("popped_nocturnal_millet_bucket", () -> new Item(new Item.Properties().durability(10).food(ESFoods.POPPED_NOCTURNAL_MILLET_BUCKET.get())));
-	public static final RegistryObject<Item, Item> ROASTED_FORGOTTEN_NOCTURNAL_MILLET = ITEMS.register("roasted_forgotten_nocturnal_millet", () -> new Item(new Item.Properties().food(ESFoods.ROASTED_FORGOTTEN_NOCTURNAL_MILLET.get())));
+	public static final RegistryObject<Item, Item> POPPED_NOCTURNAL_MILLET_BUCKET = ITEMS.register("popped_nocturnal_millet_bucket", () -> new Item(new Item.Properties().durability(10).food(ESFoods.POPPED_NOCTURNAL_MILLET_BUCKET.get().food(), ESFoods.POPPED_NOCTURNAL_MILLET_BUCKET.get().consumable())));
+	public static final RegistryObject<Item, Item> ROASTED_FORGOTTEN_NOCTURNAL_MILLET = ITEMS.register("roasted_forgotten_nocturnal_millet", () -> new Item(new Item.Properties().food(ESFoods.ROASTED_FORGOTTEN_NOCTURNAL_MILLET.get().food(), ESFoods.ROASTED_FORGOTTEN_NOCTURNAL_MILLET.get().consumable())));
 
 	// aethersent
 	public static final RegistryObject<Item, Item> CRETEOR_HIDE = ITEMS.register("creteor_hide", () -> new Item(new Item.Properties()));
@@ -660,16 +660,16 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> RAW_AETHERSENT_BLOCK = ITEMS.register("raw_aethersent_block", () -> new BlockItem(ESBlocks.RAW_AETHERSENT_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> AETHERSENT_BLOCK = ITEMS.register("aethersent_block", () -> new BlockItem(ESBlocks.AETHERSENT_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> AETHERSENT_ARROW = ITEMS.register("aethersent_arrow", () -> new AethersentArrowItem(new Item.Properties()));
-	public static final RegistryObject<Item, Item> RAGE_OF_STARS = ITEMS.register("rage_of_stars", () -> new RageOfStarsItem(ESItemTiers.AETHERSENT, new Item.Properties().attributes(SwordItem.createAttributes(ESItemTiers.AETHERSENT, 3, -2.4F))));
+	public static final RegistryObject<Item, Item> RAGE_OF_STARS = ITEMS.register("rage_of_stars", () -> new RageOfStarsItem(ESItemTiers.AETHERSENT, new Item.Properties().attributes(ESPortCompat.baseAttributes(ESItemTiers.AETHERSENT, 3, -2.4F))));
 	public static final RegistryObject<Item, Item> STARFALL_LONGBOW = ITEMS.register("starfall_longbow", () -> new StarfallLongbowItem(new Item.Properties().durability(2000)));
 	public static final RegistryObject<Item, Item> AETHERSENT_HOOD = ITEMS.register("aethersent_hood",
-		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(45))));
+		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> AETHERSENT_CAPE = ITEMS.register("aethersent_cape",
-		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(45)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
+		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
 	public static final RegistryObject<Item, Item> AETHERSENT_BOTTOMS = ITEMS.register("aethersent_bottoms",
-		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(45))));
+		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> AETHERSENT_BOOTS = ITEMS.register("aethersent_boots",
-		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(45))));
+		() -> new AethersentArmorItem(ESArmorMaterials.AETHERSENT, ArmorType.BOOTS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> GALACTIC_QUIVER = ITEMS.register("galactic_quiver", () -> new GalacticQuiverItem(new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> AETHERSTRIKE_ROCKET = ITEMS.register("aetherstrike_rocket", () -> new AetherstrikeRocketItem(new Item.Properties()));
 
@@ -709,15 +709,15 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_SCYTHE = ITEMS.register("thermal_springstone_scythe",
 		() -> new ScytheItem(ESItemTiers.THERMAL_SPRINGSTONE, new Item.Properties().attributes(ScytheItem.createAttributes(ESItemTiers.THERMAL_SPRINGSTONE, 4, -2.7F, 0.5F, 0.25F))));
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_HAMMER = ITEMS.register("thermal_springstone_hammer",
-		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.THERMAL_SPRINGSTONE, () -> null, Holder.direct(SoundEvents.MACE_SMASH_GROUND_HEAVY), new Item.Properties().attributes(DiggerItem.createAttributes(ESItemTiers.THERMAL_SPRINGSTONE, 7, -3F))));
+		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.THERMAL_SPRINGSTONE, () -> null, Holder.direct(SoundEvents.MACE_SMASH_GROUND_HEAVY), new Item.Properties().attributes(ESPortCompat.baseAttributes(ESItemTiers.THERMAL_SPRINGSTONE, 7, -3F))));
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_HELMET = ITEMS.register("thermal_springstone_helmet",
-		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(15))));
+		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_CHESTPLATE = ITEMS.register("thermal_springstone_chestplate",
-		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(15))));
+		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.CHESTPLATE, new Item.Properties()));
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_LEGGINGS = ITEMS.register("thermal_springstone_leggings",
-		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(15))));
+		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> THERMAL_SPRINGSTONE_BOOTS = ITEMS.register("thermal_springstone_boots",
-		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(15))));
+		() -> ESPlatform.INSTANCE.createThermalSpringstoneArmor(ESArmorMaterials.THERMAL_SPRINGSTONE, ArmorType.BOOTS, new Item.Properties()));
 
 	// glacite
 	public static final RegistryObject<Item, Item> GLACITE = ITEMS.register("glacite", () -> new BlockItem(ESBlocks.GLACITE.get(), new Item.Properties()));
@@ -737,13 +737,13 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> GLACITE_SCYTHE = ITEMS.register("glacite_scythe",
 		() -> new ScytheItem(ESItemTiers.GLACITE, new Item.Properties().attributes(ScytheItem.createAttributes(ESItemTiers.GLACITE, 4, -2.7F, 0.5F, 0.3F))));
 	public static final RegistryObject<Item, Item> GLACITE_HELMET = ITEMS.register("glacite_helmet",
-		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(15))));
+		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> GLACITE_CHESTPLATE = ITEMS.register("glacite_chestplate",
-		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(15)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
+		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
 	public static final RegistryObject<Item, Item> GLACITE_LEGGINGS = ITEMS.register("glacite_leggings",
-		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(15))));
+		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> GLACITE_BOOTS = ITEMS.register("glacite_boots",
-		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(15))));
+		() -> new GlaciteArmorItem(ESArmorMaterials.GLACITE, ArmorType.BOOTS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> GLACITE_SHIELD = ITEMS.register("glacite_shield",
 		() -> new GlaciteShieldItem(new Item.Properties().durability(500)));
 
@@ -765,13 +765,13 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> STARLIT_DIAMOND_SHOVEL = ITEMS.register("starlit_diamond_shovel",
 		() -> new Item(new Item.Properties().shovel(ESItemTiers.STARLIT_DIAMOND.material(), 1.5F, -3.2F)));
 	public static final RegistryObject<Item, Item> STARLIT_DIAMOND_HELMET = ITEMS.register("starlit_diamond_helmet",
-		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(45))));
+		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> STARLIT_DIAMOND_CHESTPLATE = ITEMS.register("starlit_diamond_chestplate",
-		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(45)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 3)));
+		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 3)));
 	public static final RegistryObject<Item, Item> STARLIT_DIAMOND_LEGGINGS = ITEMS.register("starlit_diamond_leggings",
-		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(45))));
+		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> STARLIT_DIAMOND_BOOTS = ITEMS.register("starlit_diamond_boots",
-		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(45))));
+		() -> ESPlatform.INSTANCE.createStarlitDiamondArmor(ESArmorMaterials.STARLIT_DIAMOND, ArmorType.BOOTS, new Item.Properties()));
 
 	// deepsilver
 	public static final RegistryObject<Item, Item> GRIMSTONE_DEEPSILVER_ORE = ITEMS.register("grimstone_deepsilver_ore", () -> new BlockItem(ESBlocks.GRIMSTONE_DEEPSILVER_ORE.get(), new Item.Properties()));
@@ -801,13 +801,13 @@ public class ESItems {
 		() -> ESPlatform.INSTANCE.createSickle(ESItemTiers.DEEPSILVER, new Item.Properties().attributes(SickleItem.createAttributes(ESItemTiers.DEEPSILVER, 1, -1.5F))));
 	public static final RegistryObject<Item, Item> DEEPSILVER_BRUSH = ITEMS.register("deepsilver_brush", () -> new BrushItem(new Item.Properties().durability(256)));
 	public static final RegistryObject<Item, Item> DEEPSILVER_HELMET = ITEMS.register("deepsilver_helmet",
-		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(30))));
+		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEEPSILVER_CHESTPLATE = ITEMS.register("deepsilver_chestplate",
-		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(30)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
+		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 2)));
 	public static final RegistryObject<Item, Item> DEEPSILVER_LEGGINGS = ITEMS.register("deepsilver_leggings",
-		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(30))));
+		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEEPSILVER_BOOTS = ITEMS.register("deepsilver_boots",
-		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(30))));
+		() -> new DeepsilverArmorItem(ESArmorMaterials.DEEPSILVER, ArmorType.BOOTS, new Item.Properties()));
 
 	// unrealium
 	public static final RegistryObject<Item, Item> UNREALIUM_INGOT = ITEMS.register("unrealium_ingot", () -> new Item(new Item.Properties()));
@@ -815,26 +815,26 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> UNREALIUM_BLOCK = ITEMS.register("unrealium_block", () -> new BlockItem(ESBlocks.UNREALIUM_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> UNREALIUM_BARS = ITEMS.register("unrealium_bars", () -> new BlockItem(ESBlocks.UNREALIUM_BARS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> UNREALIUM_SWORD = ITEMS.register("unrealium_sword",
-		() -> new SwordItem(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 3, -2.4F))));
+		() -> new Item(new Item.Properties().sword(ESItemTiers.UNREALIUM.material(), 3, -2.4F).attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 3, -2.4F))));
 	public static final RegistryObject<Item, Item> UNREALIUM_PICKAXE = ITEMS.register("unrealium_pickaxe",
-		() -> new PickaxeItem(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 1, -2.8F))));
+		() -> new Item(new Item.Properties().pickaxe(ESItemTiers.UNREALIUM.material(), 1, -2.8F).attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 1, -2.8F))));
 	public static final RegistryObject<Item, Item> UNREALIUM_AXE = ITEMS.register("unrealium_axe",
-		() -> new AxeItem(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 6, -3))));
+		() -> new Item(new Item.Properties().axe(ESItemTiers.UNREALIUM.material(), 6, -3).attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 6, -3))));
 	public static final RegistryObject<Item, Item> UNREALIUM_HOE = ITEMS.register("unrealium_hoe",
-		() -> new HoeItem(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, -3, -1.0F))));
+		() -> new Item(new Item.Properties().hoe(ESItemTiers.UNREALIUM.material(), -3, -1.0F).attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, -3, -1.0F))));
 	public static final RegistryObject<Item, Item> UNREALIUM_SHOVEL = ITEMS.register("unrealium_shovel",
-		() -> new ShovelItem(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 1.5F, -3F))));
+		() -> new Item(new Item.Properties().shovel(ESItemTiers.UNREALIUM.material(), 1.5F, -3F).attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 1.5F, -3F))));
 	public static final RegistryObject<Item, Item> UNREALIUM_SICKLE = ITEMS.register("unrealium_sickle",
 		() -> ESPlatform.INSTANCE.createSickle(ESItemTiers.UNREALIUM, new Item.Properties().attributes(createUnrealiumAttributes(ESItemTiers.UNREALIUM, 1, -1.5F))));
 	public static final RegistryObject<Item, Item> UNREALIUM_CROSSBOW = ITEMS.register("unrealium_crossbow", () -> new UnrealiumCrossbowItem(new Item.Properties().durability(1200)));
 	public static final RegistryObject<Item, Item> UNREALIUM_HELMET = ITEMS.register("unrealium_helmet",
-		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(50))));
+		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> UNREALIUM_CHESTPLATE = ITEMS.register("unrealium_chestplate",
-		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(50)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 4)));
+		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 4)));
 	public static final RegistryObject<Item, Item> UNREALIUM_LEGGINGS = ITEMS.register("unrealium_leggings",
-		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.LEGGINGS, new Item.Properties().durability(ArmorType.LEGGINGS.getDurability(50))));
+		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.LEGGINGS, new Item.Properties()));
 	public static final RegistryObject<Item, Item> UNREALIUM_BOOTS = ITEMS.register("unrealium_boots",
-		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(50))));
+		() -> ESPlatform.INSTANCE.createUnrealiumArmor(ESArmorMaterials.UNREALIUM, ArmorType.BOOTS, new Item.Properties()));
 
 	public static final RegistryObject<Item, Item> GRIMSTONE_MALARITE_ORE = ITEMS.register("grimstone_malarite_ore", () -> new BlockItem(ESBlocks.GRIMSTONE_MALARITE_ORE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> VOIDSTONE_MALARITE_ORE = ITEMS.register("voidstone_malarite_ore", () -> new BlockItem(ESBlocks.VOIDSTONE_MALARITE_ORE.get(), new Item.Properties()));
@@ -859,16 +859,15 @@ public class ESItems {
 		() -> new MalariteSpearItem(ESItemTiers.MALARITE, new Item.Properties().attributes(SpearItem.createAttributes(ESItemTiers.MALARITE, 3, -2.7F))));
 
 	public static final RegistryObject<Item, Item> PUNGENCY_FRUIT_SEEDS = ITEMS.register("pungency_fruit_seeds", () -> new PungencyFruitSeedsItem(ESBlocks.PUNGENCY_FRUIT_VINES.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> PUNGENCY_FRUIT = ITEMS.register("pungency_fruit", () -> new Item(new Item.Properties().food(ESFoods.PUNGENCY_FRUIT.get())));
-	public static final RegistryObject<Item, Item> PUNGENCY_STEW = ITEMS.register("pungency_stew", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.PUNGENCY_STEW.get())));
-	public static final RegistryObject<Item, Item> SILVER_PUNGENCY_FRUIT = ITEMS.register("silver_pungency_fruit", () -> new Item(new Item.Properties().rarity(Rarity.RARE).food(ESFoods.SILVER_PUNGENCY_FRUIT.get())));
+	public static final RegistryObject<Item, Item> PUNGENCY_FRUIT = ITEMS.register("pungency_fruit", () -> new Item(new Item.Properties().food(ESFoods.PUNGENCY_FRUIT.get().food(), ESFoods.PUNGENCY_FRUIT.get().consumable())));
+	public static final RegistryObject<Item, Item> PUNGENCY_STEW = ITEMS.register("pungency_stew", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.PUNGENCY_STEW.get().food(), ESFoods.PUNGENCY_STEW.get().consumable()).usingConvertsTo(Items.BOWL)));
+	public static final RegistryObject<Item, Item> SILVER_PUNGENCY_FRUIT = ITEMS.register("silver_pungency_fruit", () -> new Item(new Item.Properties().rarity(Rarity.RARE).food(ESFoods.SILVER_PUNGENCY_FRUIT.get().food(), ESFoods.SILVER_PUNGENCY_FRUIT.get().consumable())));
 	public static final RegistryObject<Item, Item> TEAR_BOMB = ITEMS.register("tear_bomb", () -> new BlockItem(ESBlocks.TEAR_BOMB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> TEAR_BOMB_MINECART = ITEMS.register("tear_bomb_minecart", () -> new TearBombMinecartItem(new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> PUNGENCY_FRUIT_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("pungency_fruit_upgrade_smithing_template", () -> new SmithingTemplateItem(
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE),
-		Component.translatable(Util.makeDescriptionId("upgrade", EternalStarlight.id("pungency_fruit_upgrade"))).withStyle(ChatFormatting.GRAY),
-		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.base_slot_description"))),
+				Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.base_slot_description"))),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.additions_slot_description"))),
 		List.of(Identifier.withDefaultNamespace("item/empty_slot_axe")),
 		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond"))
@@ -881,7 +880,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> SEEDS_LAUNCHER = ITEMS.register("seeds_launcher", () -> new SeedsLauncherItem(new Item.Properties().durability(500)));
 
 	public static final RegistryObject<Item, Item> DRYING_RACK = ITEMS.register("drying_rack", () -> new BlockItem(ESBlocks.DRYING_RACK.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> ROTTEN_FLESH_JERKY = ITEMS.register("rotten_flesh_jerky", () -> new Item(new Item.Properties().food(ESFoods.ROTTEN_FLESH_JERKY.get())));
+	public static final RegistryObject<Item, Item> ROTTEN_FLESH_JERKY = ITEMS.register("rotten_flesh_jerky", () -> new Item(new Item.Properties().food(ESFoods.ROTTEN_FLESH_JERKY.get().food(), ESFoods.ROTTEN_FLESH_JERKY.get().consumable())));
 
 	public static final RegistryObject<Item, Item> STARFIRE_BIRD_NEST = ITEMS.register("starfire_bird_nest", () -> new BlockItem(ESBlocks.STARFIRE_BIRD_NEST.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> OAK_STARFIRE_BIRD_AVIARY = ITEMS.register("oak_starfire_bird_aviary", () -> new BlockItem(ESBlocks.OAK_STARFIRE_BIRD_AVIARY.get(), new Item.Properties()));
@@ -907,8 +906,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> STARFIRE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("starfire_upgrade_smithing_template", () -> new SmithingTemplateItem(
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.starfire_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.starfire_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE),
-		Component.translatable(Util.makeDescriptionId("upgrade", EternalStarlight.id("starfire_upgrade"))).withStyle(ChatFormatting.GRAY),
-		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.starfire_upgrade.base_slot_description"))),
+				Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.starfire_upgrade.base_slot_description"))),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.starfire_upgrade.additions_slot_description"))),
 		List.of(
 			Identifier.withDefaultNamespace("item/empty_slot_sword"),
@@ -932,7 +930,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> STARFIRE_SCYTHE = ITEMS.register("starfire_scythe",
 		() -> new ScytheItem(ESItemTiers.STARFIRE, new Item.Properties().attributes(ScytheItem.createAttributes(ESItemTiers.STARFIRE, 4, -2.7F, 0.5F, 0.25F))));
 	public static final RegistryObject<Item, Item> STARFIRE_HAMMER = ITEMS.register("starfire_hammer",
-		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.STARFIRE, ESParticles.STARFIRE_EXPLOSION::get, ESSoundEvents.STARFIRE_WHOOSH.asHolder(), new Item.Properties().attributes(DiggerItem.createAttributes(ESItemTiers.STARFIRE, 7, -3F))));
+		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.STARFIRE, ESParticles.STARFIRE_EXPLOSION::get, ESSoundEvents.STARFIRE_WHOOSH.asHolder(), new Item.Properties().attributes(ESPortCompat.baseAttributes(ESItemTiers.STARFIRE, 7, -3F))));
 	public static final RegistryObject<Item, Item> STARFIRE_CROSSBOW = ITEMS.register("starfire_crossbow", () -> new StarfireCrossbowItem(new Item.Properties().durability(875)));
 
 	public static final RegistryObject<Item, Item> RAW_FLOWGLAZE = ITEMS.register("raw_flowglaze", () -> new BlockItem(ESBlocks.RAW_FLOWGLAZE.get(), new Item.Properties()));
@@ -945,8 +943,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> FLOWGLAZE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("flowglaze_upgrade_smithing_template", () -> new SmithingTemplateItem(
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.flowglaze_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.flowglaze_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE),
-		Component.translatable(Util.makeDescriptionId("upgrade", EternalStarlight.id("flowglaze_upgrade"))).withStyle(ChatFormatting.GRAY),
-		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.flowglaze_upgrade.base_slot_description"))),
+				Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.flowglaze_upgrade.base_slot_description"))),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.flowglaze_upgrade.additions_slot_description"))),
 		List.of(
 			Identifier.withDefaultNamespace("item/empty_slot_sword"),
@@ -1010,9 +1007,9 @@ public class ESItems {
 		() -> ESPlatform.INSTANCE.createSickle(ESItemTiers.AMARAMBER, new Item.Properties().attributes(SickleItem.createAttributes(ESItemTiers.AMARAMBER, 1, -1.5F))));
 	public static final RegistryObject<Item, Item> CANDLASH = ITEMS.register("candlash", () -> new CandlashItem(ESItemTiers.AMARAMBER, new Item.Properties().attributes(WhipItem.createAttributes(ESItemTiers.AMARAMBER, 2.8F, -3.0F))));
 	public static final RegistryObject<Item, Item> AMARAMBER_MASK = ITEMS.register("amaramber_mask",
-		() -> new ArmorItem(ESArmorMaterials.AMARAMBER, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(15))));
+		() -> new Item(new Item.Properties().humanoidArmor(ESArmorMaterials.AMARAMBER, ArmorType.HELMET)));
 	public static final RegistryObject<Item, Item> AMARAMBER_CHESTPLATE = ITEMS.register("amaramber_chestplate",
-		() -> new ArmorItem(ESArmorMaterials.AMARAMBER, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(15))));
+		() -> new Item(new Item.Properties().humanoidArmor(ESArmorMaterials.AMARAMBER, ArmorType.CHESTPLATE)));
 
 	// ether
 	public static final RegistryObject<Item, Item> ETHER_BUCKET = ITEMS.register("ether_bucket", () -> new BucketItem(ESFluids.ETHER_STILL.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
@@ -1036,9 +1033,9 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> POLISHED_TOXITE_WALL = ITEMS.register("polished_toxite_wall", () -> new BlockItem(ESBlocks.POLISHED_TOXITE_WALL.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CHISELED_TOXITE = ITEMS.register("chiseled_toxite", () -> new BlockItem(ESBlocks.CHISELED_TOXITE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> ALCHEMIST_MASK = ITEMS.register("alchemist_mask",
-		() -> ESPlatform.INSTANCE.createAlchemistArmor(ESArmorMaterials.ALCHEMIST, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(10))));
+		() -> ESPlatform.INSTANCE.createAlchemistArmor(ESArmorMaterials.ALCHEMIST, ArmorType.HELMET, new Item.Properties()));
 	public static final RegistryObject<Item, Item> ALCHEMIST_ROBE = ITEMS.register("alchemist_robe",
-		() -> ESPlatform.INSTANCE.createAlchemistArmor(ESArmorMaterials.ALCHEMIST, ArmorType.CHESTPLATE, new Item.Properties().durability(ArmorType.CHESTPLATE.getDurability(10)).component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 3)));
+		() -> ESPlatform.INSTANCE.createAlchemistArmor(ESArmorMaterials.ALCHEMIST, ArmorType.CHESTPLATE, new Item.Properties().component(ESDataComponents.ACCESSORY_SLOT_COUNT.get(), 3)));
 
 	public static final RegistryObject<Item, Item> GRIMSTONE_REDSTONE_ORE = ITEMS.register("grimstone_redstone_ore", () -> new BlockItem(ESBlocks.GRIMSTONE_REDSTONE_ORE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> VOIDSTONE_REDSTONE_ORE = ITEMS.register("voidstone_redstone_ore", () -> new BlockItem(ESBlocks.VOIDSTONE_REDSTONE_ORE.get(), new Item.Properties()));
@@ -1047,25 +1044,25 @@ public class ESItems {
 
 	// mob stuff
 	public static final RegistryObject<Item, Item> ROOKFISH_BUCKET = ITEMS.register("rookfish_bucket", () -> new MobBucketItem(ESEntities.ROOKFISH.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY)));
-	public static final RegistryObject<Item, Item> ROOKFISH = ITEMS.register("rookfish", () -> new Item(new Item.Properties().food(ESFoods.ROOKFISH.get())));
-	public static final RegistryObject<Item, Item> COOKED_ROOKFISH = ITEMS.register("cooked_rookfish", () -> new Item(new Item.Properties().food(ESFoods.COOKED_ROOKFISH.get())));
-	public static final RegistryObject<Item, Item> ROOKFISH_SKEWER = ITEMS.register("rookfish_skewer", () -> new Item(new Item.Properties().food(ESFoods.ROOKFISH_SKEWER.get())));
+	public static final RegistryObject<Item, Item> ROOKFISH = ITEMS.register("rookfish", () -> new Item(new Item.Properties().food(ESFoods.ROOKFISH.get().food(), ESFoods.ROOKFISH.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_ROOKFISH = ITEMS.register("cooked_rookfish", () -> new Item(new Item.Properties().food(ESFoods.COOKED_ROOKFISH.get().food(), ESFoods.COOKED_ROOKFISH.get().consumable())));
+	public static final RegistryObject<Item, Item> ROOKFISH_SKEWER = ITEMS.register("rookfish_skewer", () -> new Item(new Item.Properties().food(ESFoods.ROOKFISH_SKEWER.get().food(), ESFoods.ROOKFISH_SKEWER.get().consumable()).usingConvertsTo(Items.STICK)));
 	public static final RegistryObject<Item, Item> ROOKFISH_AIR_SAC = ITEMS.register("rookfish_air_sac", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> AIR_SAC_ARROW = ITEMS.register("air_sac_arrow", () -> new AirSacArrowItem(new Item.Properties()));
 	public static final RegistryObject<Item, Item> AIR_SAC_MASK = ITEMS.register("air_sac_mask",
-		() -> new ArmorItem(ESArmorMaterials.AIR_SAC, ArmorType.HELMET, new Item.Properties().durability(ArmorType.HELMET.getDurability(15))));
+		() -> new Item(new Item.Properties().humanoidArmor(ESArmorMaterials.AIR_SAC, ArmorType.HELMET)));
 	public static final RegistryObject<Item, Item> AIR_SAC_BOOTS = ITEMS.register("air_sac_boots",
-		() -> new AirSacArmorItem(ESArmorMaterials.AIR_SAC, ArmorType.BOOTS, new Item.Properties().durability(ArmorType.BOOTS.getDurability(15))));
+		() -> new AirSacArmorItem(ESArmorMaterials.AIR_SAC, ArmorType.BOOTS, new Item.Properties()));
 
 	public static final RegistryObject<Item, Item> LUMINOFISH_BUCKET = ITEMS.register("luminofish_bucket", () -> new MobBucketItem(ESEntities.LUMINOFISH.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY)));
-	public static final RegistryObject<Item, Item> LUMINOFISH = ITEMS.register("luminofish", () -> new Item(new Item.Properties().food(ESFoods.LUMINOFISH.get())));
-	public static final RegistryObject<Item, Item> COOKED_LUMINOFISH = ITEMS.register("cooked_luminofish", () -> new Item(new Item.Properties().food(ESFoods.COOKED_LUMINOFISH.get())));
+	public static final RegistryObject<Item, Item> LUMINOFISH = ITEMS.register("luminofish", () -> new Item(new Item.Properties().food(ESFoods.LUMINOFISH.get().food(), ESFoods.LUMINOFISH.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_LUMINOFISH = ITEMS.register("cooked_luminofish", () -> new Item(new Item.Properties().food(ESFoods.COOKED_LUMINOFISH.get().food(), ESFoods.COOKED_LUMINOFISH.get().consumable())));
 	public static final RegistryObject<Item, Item> LUMINARIS_BUCKET = ITEMS.register("luminaris_bucket", () -> new MobBucketItem(ESEntities.LUMINARIS.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY)));
-	public static final RegistryObject<Item, Item> LUMINARIS = ITEMS.register("luminaris", () -> new Item(new Item.Properties().food(ESFoods.LUMINARIS.get())));
-	public static final RegistryObject<Item, Item> COOKED_LUMINARIS = ITEMS.register("cooked_luminaris", () -> new Item(new Item.Properties().food(ESFoods.COOKED_LUMINARIS.get())));
+	public static final RegistryObject<Item, Item> LUMINARIS = ITEMS.register("luminaris", () -> new Item(new Item.Properties().food(ESFoods.LUMINARIS.get().food(), ESFoods.LUMINARIS.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_LUMINARIS = ITEMS.register("cooked_luminaris", () -> new Item(new Item.Properties().food(ESFoods.COOKED_LUMINARIS.get().food(), ESFoods.COOKED_LUMINARIS.get().consumable())));
 	public static final RegistryObject<Item, Item> CONICERAS_SHELL = ITEMS.register("coniceras_shell", () -> new Item(new Item.Properties()));
-	public static final RegistryObject<Item, Item> CONICERAS_TENTACLES = ITEMS.register("coniceras_tentacles", () -> new Item(new Item.Properties().food(ESFoods.CONICERAS_TENTACLES.get())));
-	public static final RegistryObject<Item, Item> GRILLED_CONICERAS_TENTACLES = ITEMS.register("grilled_coniceras_tentacles", () -> new Item(new Item.Properties().food(ESFoods.GRILLED_CONICERAS_TENTACLES.get())));
+	public static final RegistryObject<Item, Item> CONICERAS_TENTACLES = ITEMS.register("coniceras_tentacles", () -> new Item(new Item.Properties().food(ESFoods.CONICERAS_TENTACLES.get().food(), ESFoods.CONICERAS_TENTACLES.get().consumable())));
+	public static final RegistryObject<Item, Item> GRILLED_CONICERAS_TENTACLES = ITEMS.register("grilled_coniceras_tentacles", () -> new Item(new Item.Properties().food(ESFoods.GRILLED_CONICERAS_TENTACLES.get().food(), ESFoods.GRILLED_CONICERAS_TENTACLES.get().consumable())));
 	public static final RegistryObject<Item, Item> SPIRAL_ARROW = ITEMS.register("spiral_arrow", () -> new SpiralArrowItem(new Item.Properties()));
 
 	public static final RegistryObject<Item, Item> STARLIT_PAINTING = ITEMS.register("starlit_painting", () -> new ESPaintingItem(new Item.Properties()));
@@ -1105,18 +1102,18 @@ public class ESItems {
 
 	public static final RegistryObject<Item, Item> AURORA_DEER_ANTLER = ITEMS.register("aurora_deer_antler",
 		() -> ESPlatform.INSTANCE.createSickle(ESItemTiers.AURORA_DEER_ANTLER, new Item.Properties().attributes(SickleItem.createAttributes(ESItemTiers.AURORA_DEER_ANTLER, 2, -1F))));
-	public static final RegistryObject<Item, Item> AURORA_DEER_STEAK = ITEMS.register("aurora_deer_steak", () -> new Item(new Item.Properties().food(ESFoods.AURORA_DEER_STEAK.get())));
-	public static final RegistryObject<Item, Item> COOKED_AURORA_DEER_STEAK = ITEMS.register("cooked_aurora_deer_steak", () -> new Item(new Item.Properties().food(ESFoods.COOKED_AURORA_DEER_STEAK.get())));
+	public static final RegistryObject<Item, Item> AURORA_DEER_STEAK = ITEMS.register("aurora_deer_steak", () -> new Item(new Item.Properties().food(ESFoods.AURORA_DEER_STEAK.get().food(), ESFoods.AURORA_DEER_STEAK.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_AURORA_DEER_STEAK = ITEMS.register("cooked_aurora_deer_steak", () -> new Item(new Item.Properties().food(ESFoods.COOKED_AURORA_DEER_STEAK.get().food(), ESFoods.COOKED_AURORA_DEER_STEAK.get().consumable())));
 
-	public static final RegistryObject<Item, Item> RATLIN_MEAT = ITEMS.register("ratlin_meat", () -> new Item(new Item.Properties().food(ESFoods.RATLIN_MEAT.get())));
-	public static final RegistryObject<Item, Item> COOKED_RATLIN_MEAT = ITEMS.register("cooked_ratlin_meat", () -> new Item(new Item.Properties().food(ESFoods.COOKED_RATLIN_MEAT.get())));
+	public static final RegistryObject<Item, Item> RATLIN_MEAT = ITEMS.register("ratlin_meat", () -> new Item(new Item.Properties().food(ESFoods.RATLIN_MEAT.get().food(), ESFoods.RATLIN_MEAT.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_RATLIN_MEAT = ITEMS.register("cooked_ratlin_meat", () -> new Item(new Item.Properties().food(ESFoods.COOKED_RATLIN_MEAT.get().food(), ESFoods.COOKED_RATLIN_MEAT.get().consumable())));
 
-	public static final RegistryObject<Item, Item> SHADOW_SNAIL_MEAT = ITEMS.register("shadow_snail_meat", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_SNAIL_MEAT.get())));
-	public static final RegistryObject<Item, Item> COOKED_SHADOW_SNAIL_MEAT = ITEMS.register("cooked_shadow_snail_meat", () -> new Item(new Item.Properties().food(ESFoods.COOKED_SHADOW_SNAIL_MEAT.get())));
+	public static final RegistryObject<Item, Item> SHADOW_SNAIL_MEAT = ITEMS.register("shadow_snail_meat", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_SNAIL_MEAT.get().food(), ESFoods.SHADOW_SNAIL_MEAT.get().consumable())));
+	public static final RegistryObject<Item, Item> COOKED_SHADOW_SNAIL_MEAT = ITEMS.register("cooked_shadow_snail_meat", () -> new Item(new Item.Properties().food(ESFoods.COOKED_SHADOW_SNAIL_MEAT.get().food(), ESFoods.COOKED_SHADOW_SNAIL_MEAT.get().consumable())));
 	public static final RegistryObject<Item, Item> SHADOW_SNAIL_SHELL = ITEMS.register("shadow_snail_shell", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> SHADOW_SNAIL_SHELL_POWDER = ITEMS.register("shadow_snail_shell_powder", () -> new BoneMealItem(new Item.Properties()));
-	public static final RegistryObject<Item, Item> SHADOW_SNAIL_PIE = ITEMS.register("shadow_snail_pie", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_SNAIL_PIE.get())));
-	public static final RegistryObject<Item, Item> SHADOW_ESCARGOT = ITEMS.register("shadow_escargot", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_ESCARGOT.get())));
+	public static final RegistryObject<Item, Item> SHADOW_SNAIL_PIE = ITEMS.register("shadow_snail_pie", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_SNAIL_PIE.get().food(), ESFoods.SHADOW_SNAIL_PIE.get().consumable())));
+	public static final RegistryObject<Item, Item> SHADOW_ESCARGOT = ITEMS.register("shadow_escargot", () -> new Item(new Item.Properties().food(ESFoods.SHADOW_ESCARGOT.get().food(), ESFoods.SHADOW_ESCARGOT.get().consumable()).usingConvertsTo(ESItems.SHADOW_SNAIL_SHELL.get())));
 
 	public static final RegistryObject<Item, Item> FROZEN_TUBE = ITEMS.register("frozen_tube", () -> new FrozenTubeItem(new Item.Properties()));
 
@@ -1125,7 +1122,7 @@ public class ESItems {
 
 	public static final RegistryObject<Item, Item> NIGHTFALL_SPIDER_EYE = ITEMS.register("nightfall_spider_eye", () -> new Item(new Item.Properties()));
 
-	public static final RegistryObject<Item, Item> SEEKER_TENTACLE = ITEMS.register("seeker_tentacle", () -> new Item(new Item.Properties().food(ESFoods.SEEKER_TENTACLE.get())));
+	public static final RegistryObject<Item, Item> SEEKER_TENTACLE = ITEMS.register("seeker_tentacle", () -> new Item(new Item.Properties().food(ESFoods.SEEKER_TENTACLE.get().food(), ESFoods.SEEKER_TENTACLE.get().consumable())));
 	public static final RegistryObject<Item, Item> TENTACLE_SPIKE = ITEMS.register("tentacle_spike", () -> new TentacleSpikeItem(ESItemTiers.TENTACLE_SPIKE, new Item.Properties().attributes(WhipItem.createAttributes(ESItemTiers.TENTACLE_SPIKE, 2.8F, -3.0F))));
 
 	public static final RegistryObject<Item, Item> MAGIC_STONE = ITEMS.register("magic_stone", () -> new MagicStoneItem(new Item.Properties()));
@@ -1134,7 +1131,7 @@ public class ESItems {
 
 	public static final RegistryObject<Item, Item> GLEECH_EGG = ITEMS.register("gleech_egg", () -> new GleechEggItem(new Item.Properties().stacksTo(16)));
 
-	public static final RegistryObject<Item, Item> SHATTERED_SWORD = ITEMS.register("shattered_sword", () -> new ShatteredSwordItem(ESItemTiers.DEEPSILVER, new Item.Properties().rarity(Rarity.RARE).attributes(SwordItem.createAttributes(ESItemTiers.DEEPSILVER, 3, -2.4F))));
+	public static final RegistryObject<Item, Item> SHATTERED_SWORD = ITEMS.register("shattered_sword", () -> new ShatteredSwordItem(ESItemTiers.DEEPSILVER, new Item.Properties().rarity(Rarity.RARE).attributes(ESPortCompat.baseAttributes(ESItemTiers.DEEPSILVER, 3, -2.4F))));
 	public static final RegistryObject<Item, Item> SHATTERED_SWORD_BLADE = ITEMS.register("shattered_sword_blade", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
 	public static final RegistryObject<Item, Item> TOOTH_OF_HUNGER = ITEMS.register("tooth_of_hunger", () -> new Item(new Item.Properties()));
@@ -1258,7 +1255,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> GLISTERING_GREATSWORD = ITEMS.register("glistering_greatsword",
 		() -> new GreatswordItem(ESItemTiers.GLISTERING, new Item.Properties().rarity(Rarity.RARE).attributes(GreatswordItem.createAttributes(ESItemTiers.GLISTERING, 6, -2.8F, 0.5F))));
 	public static final RegistryObject<Item, Item> GLISTERING_MORNING_STAR = ITEMS.register("glistering_morning_star",
-		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.GLISTERING, () -> null, Holder.direct(SoundEvents.MACE_SMASH_GROUND_HEAVY), new Item.Properties().rarity(Rarity.RARE).attributes(DiggerItem.createAttributes(ESItemTiers.GLISTERING, 7, -3F))));
+		() -> ESPlatform.INSTANCE.createHammer(ESItemTiers.GLISTERING, () -> null, Holder.direct(SoundEvents.MACE_SMASH_GROUND_HEAVY), new Item.Properties().rarity(Rarity.RARE).attributes(ESPortCompat.baseAttributes(ESItemTiers.GLISTERING, 7, -3F))));
 	public static final RegistryObject<Item, Item> GLISTERING_BOW = ITEMS.register("glistering_bow", () -> new GlisteringBowItem(new Item.Properties().rarity(Rarity.RARE).durability(8000)));
 
 	// starlight golem
@@ -1267,7 +1264,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> GOLEM_STEEL_NUGGET = ITEMS.register("golem_steel_nugget", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> OXIDIZED_GOLEM_STEEL_NUGGET = ITEMS.register("oxidized_golem_steel_nugget", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> COLDSNAP = ITEMS.register("coldsnap", () -> new ColdsnapItem(ESItemTiers.GOLEM_STEEL, new Item.Properties().attributes(WhipItem.createAttributes(ESItemTiers.GOLEM_STEEL, 4.7F, -3.2F))));
-	public static final RegistryObject<Item, Item> ENERGY_SWORD = ITEMS.register("energy_sword", () -> new EnergySwordItem(ESItemTiers.GOLEM_STEEL, new Item.Properties().rarity(Rarity.RARE).attributes(SwordItem.createAttributes(ESItemTiers.GOLEM_STEEL, 3, -2.4F))));
+	public static final RegistryObject<Item, Item> ENERGY_SWORD = ITEMS.register("energy_sword", () -> new EnergySwordItem(ESItemTiers.GOLEM_STEEL, new Item.Properties().rarity(Rarity.RARE).attributes(ESPortCompat.baseAttributes(ESItemTiers.GOLEM_STEEL, 3, -2.4F))));
 	public static final RegistryObject<Item, Item> GOLEM_STEEL_GREATSWORD = ITEMS.register("golem_steel_greatsword", () -> new GolemSteelGreatswordItem(ESItemTiers.GOLEM_STEEL, new Item.Properties().rarity(Rarity.RARE).attributes(GreatswordItem.createAttributes(ESItemTiers.GOLEM_STEEL, 6, -2.8F, 0.5F))));
 	public static final RegistryObject<Item, Item> MECHANICAL_CROSSBOW = ITEMS.register("mechanical_crossbow", () -> new MechanicalCrossbowItem(new Item.Properties().rarity(Rarity.RARE).durability(1600)));
 	public static final RegistryObject<Item, Item> ENERGY_BOOMERANG = ITEMS.register("energy_boomerang", () -> new EnergyBoomerangItem(ESItemTiers.GOLEM_STEEL, new Item.Properties().rarity(Rarity.RARE).attributes(BoomerangItem.createAttributes(ESItemTiers.GOLEM_STEEL, 4, -3.0F))));
@@ -1355,8 +1352,8 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> LIVING_ARM = ITEMS.register("living_arm", () -> new Item(new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> DOOMED_TORCH = ITEMS.register("doomed_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_TORCH.get(), ESBlocks.WALL_DOOMED_TORCH.get(), Direction.DOWN, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DOOMED_REDSTONE_TORCH = ITEMS.register("doomed_redstone_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_REDSTONE_TORCH.get(), ESBlocks.WALL_DOOMED_REDSTONE_TORCH.get(), Direction.DOWN, new Item.Properties()));
-	public static final RegistryObject<Item, Item> DOOMEDEN_CARRION = ITEMS.register("doomeden_carrion", () -> new Item(new Item.Properties().food(ESFoods.DOOMEDEN_CARRION.get())));
-	public static final RegistryObject<Item, Item> ROTTEN_HAM = ITEMS.register("rotten_ham", () -> new Item(new Item.Properties().food(ESFoods.ROTTEN_HAM.get())));
+	public static final RegistryObject<Item, Item> DOOMEDEN_CARRION = ITEMS.register("doomeden_carrion", () -> new Item(new Item.Properties().food(ESFoods.DOOMEDEN_CARRION.get().food(), ESFoods.DOOMEDEN_CARRION.get().consumable())));
+	public static final RegistryObject<Item, Item> ROTTEN_HAM = ITEMS.register("rotten_ham", () -> new Item(new Item.Properties().food(ESFoods.ROTTEN_HAM.get().food(), ESFoods.ROTTEN_HAM.get().consumable())));
 	public static final RegistryObject<Item, Item> EYE_OF_DOOM = ITEMS.register("eye_of_doom", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> DOOMEDEN_RAG = ITEMS.register("doomeden_rag", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> FLESH_GRINDER = ITEMS.register("flesh_grinder", () -> new Item(new Item.Properties().axe(ESItemTiers.DOOMEDEN.material(), 5, -2F)));
@@ -1383,10 +1380,10 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> ORB_OF_PROPHECY = ITEMS.register("orb_of_prophecy", () -> new OrbOfProphecyItem(new Item.Properties().stacksTo(1)));
 
 	// trim
-	public static final RegistryObject<Item, Item> KEEPER_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("keeper_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(EternalStarlight.id("keeper")));
-	public static final RegistryObject<Item, Item> FORGE_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("forge_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(EternalStarlight.id("forge")));
-	public static final RegistryObject<Item, Item> BLOOMING_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("blooming_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(EternalStarlight.id("blooming")));
-	public static final RegistryObject<Item, Item> TWINING_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("twining_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(EternalStarlight.id("twining")));
+	public static final RegistryObject<Item, Item> KEEPER_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("keeper_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(new Item.Properties()));
+	public static final RegistryObject<Item, Item> FORGE_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("forge_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(new Item.Properties()));
+	public static final RegistryObject<Item, Item> BLOOMING_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("blooming_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(new Item.Properties()));
+	public static final RegistryObject<Item, Item> TWINING_ARMOR_TRIM_SMITHING_TEMPLATE = ITEMS.register("twining_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(new Item.Properties()));
 
 	// music discs
 	public static final RegistryObject<Item, Item> MUSIC_DISC_WHISPER_OF_THE_STARS = ITEMS.register("music_disc_whisper_of_the_stars", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(ESJukeboxSongs.WHISPER_OF_THE_STARS)));
@@ -1415,9 +1412,9 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> MUSIC_DISC_NEST = ITEMS.register("music_disc_nest", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(ESJukeboxSongs.NEST)));
 
 	// hide it from creative mode tab
-	public static final RegistryObject<Item, Item> BLOSSOM_OF_STARS = ITEMS.register("blossom_of_stars", () -> new BlossomOfStarsItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.1f).effect(new MobEffectInstance(ESMobEffects.DREAM_CATCHER.asHolder(), 2400, 0), 1F).alwaysEdible().build()).rarity(Rarity.RARE)));
+	public static final RegistryObject<Item, Item> BLOSSOM_OF_STARS = ITEMS.register("blossom_of_stars", () -> new BlossomOfStarsItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.1f).alwaysEdible().build(), net.minecraft.world.item.component.Consumable.builder().onConsume(new net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect(new MobEffectInstance(ESMobEffects.DREAM_CATCHER.asHolder(), 2400, 0), 1F)).build()).rarity(Rarity.RARE)));
 
-	public static ItemAttributeModifiers createUnrealiumAttributes(Tier tier, float damage, float speed) {
+	public static ItemAttributeModifiers createUnrealiumAttributes(ESItemTiers tier, float damage, float speed) {
 		return ItemAttributeModifiers.builder()
 			.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, damage + tier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
 			.add(Attributes.ATTACK_SPEED, new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, speed, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)

@@ -44,7 +44,7 @@ public class DoomedenRedstoneTorchBlock extends BaseTorchBlock {
 	}
 
 	@Override
-	public void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
+	protected void affectNeighborsAfterRemoval(BlockState blockState, net.minecraft.server.level.ServerLevel level, BlockPos blockPos, boolean bl) {
 		if (!bl) {
 			Direction[] var6 = Direction.values();
 			int var7 = var6.length;
@@ -72,7 +72,7 @@ public class DoomedenRedstoneTorchBlock extends BaseTorchBlock {
 	}
 
 	@Override
-	public void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, BlockPos blockPos2, boolean bl) {
+	public void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, net.minecraft.world.level.redstone.Orientation blockPos2, boolean bl) {
 		if (blockState.getValue(LIT) == this.hasNeighborSignal(level, blockPos) && !level.getBlockTicks().willTickThisTick(blockPos, this)) {
 			level.scheduleTick(blockPos, this, 2);
 		}

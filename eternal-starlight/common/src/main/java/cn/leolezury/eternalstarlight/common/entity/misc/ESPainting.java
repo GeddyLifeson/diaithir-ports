@@ -178,10 +178,6 @@ public class ESPainting extends HangingEntity {
 	}
 
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#lerpTo
-	@Override
-	public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps) {
-		this.setPos(x, y, z);
-	}
 
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#trackingPosition
 	@Override

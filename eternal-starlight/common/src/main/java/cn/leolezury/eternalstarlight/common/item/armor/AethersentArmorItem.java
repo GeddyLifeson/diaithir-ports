@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.armor;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import net.minecraft.world.item.Item;
@@ -10,36 +11,24 @@ import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
-import java.util.function.Supplier;
 
 public class AethersentArmorItem extends Item {
-	private final Supplier<ItemAttributeModifiers> extraModifiers;
+	private final ArmorType armorType;
 
 	public AethersentArmorItem(ArmorMaterial holder, ArmorType type, Properties properties) {
-		super(properties.humanoidArmor(holder, type));
-		this.extraModifiers = Suppliers.memoize(() -> {
-			ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-			EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
-			Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
-			builder.add(ESAttributes.METEOR_COUNTERATTACK_CHANCE.asHolder(), new AttributeModifier(resourceLocation, 0.25, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-			return builder.build();
-		});
+		super(ESPortCompat.armor(properties, holder, type, extra(type)));
+		this.armorType = type;
 	}
 
-	@Override
-	public ItemAttributeModifiers getDefaultAttributeModifiers() {
-		ItemAttributeModifiers modifiers = super.getDefaultAttributeModifiers();
+	private static ItemAttributeModifiers extra(ArmorType type) {
 		ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-		for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
-		for (ItemAttributeModifiers.Entry entry : extraModifiers.get().modifiers()) {
-			builder.add(entry.attribute(), entry.modifier(), entry.slot());
-		}
+		EquipmentSlotGroup equipmentSlotGroup = EquipmentSlotGroup.bySlot(type.getSlot());
+		Identifier resourceLocation = Identifier.withDefaultNamespace("armor." + type.getName());
+		builder.add(ESAttributes.METEOR_COUNTERATTACK_CHANCE.asHolder(), new AttributeModifier(resourceLocation, 0.25, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
 		return builder.build();
 	}
+
 }

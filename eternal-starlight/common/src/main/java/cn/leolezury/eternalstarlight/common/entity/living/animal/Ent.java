@@ -47,7 +47,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
+public class Ent extends Animal {
 	private static final String TAG_HAS_LEAVES = "has_leaves";
 	private static final String TAG_VARIANT = "variant";
 
@@ -77,7 +77,6 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 		this.getEntityData().set(VARIANT, variant.toString());
 	}
 
-	@Override
 	public void setVariant(Holder<EntVariant> variant) {
 		if (variant.isBound()) {
 			Identifier key = level().registryAccess().lookupOrThrow(ESRegistries.ENT_VARIANT).getKey(variant.value());
@@ -87,7 +86,6 @@ public class Ent extends Animal implements VariantHolder<Holder<EntVariant>> {
 		}
 	}
 
-	@Override
 	public Holder<EntVariant> getVariant() {
 		Identifier key = getVariantId();
 		Registry<EntVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ENT_VARIANT);

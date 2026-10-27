@@ -71,9 +71,9 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 	}
 
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
-	private int remainingPersistentAngerTime;
+	private long persistentAngerEndTime;
 	@Nullable
-	private UUID persistentAngerTarget;
+	private net.minecraft.world.entity.EntityReference<LivingEntity> persistentAngerTarget;
 	private int attackAnimationTick;
 
 	public int getAttackAnimationTick() {
@@ -134,7 +134,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 
 		targetSelector.addGoal(0, (new HurtByTargetGoal(this)).setAlertOthers());
 		targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
-		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (entity) -> entity instanceof Enemy && !(entity instanceof Creeper)));
+		targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (entity, lvl) -> entity instanceof Enemy && !(entity instanceof Creeper)));
 		targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, false));
 	}
 
@@ -279,7 +279,7 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 				Boarwarf.setBoarwarfCredit(player, (int) (Boarwarf.getBoarwarfCredit(player) - amount));
 			}
 		}
-		return super.hurt(source, amount / f);
+		return super.hurtServer(hurtServerLevel, source, amount / f);
 	}
 
 	@Override
@@ -323,26 +323,26 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 
 	@Override
 	public void startPersistentAngerTimer() {
-		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
+		this.setTimeToRemainAngry(PERSISTENT_ANGER_TIME.sample(this.random));
 	}
 
 	@Override
-	public void setRemainingPersistentAngerTime(int time) {
-		this.remainingPersistentAngerTime = time;
+	public void setPersistentAngerEndTime(long time) {
+		this.persistentAngerEndTime = time;
 	}
 
 	@Override
-	public int getRemainingPersistentAngerTime() {
-		return this.remainingPersistentAngerTime;
+	public long getPersistentAngerEndTime() {
+		return this.persistentAngerEndTime;
 	}
 
 	@Override
-	public void setPersistentAngerTarget(@Nullable UUID target) {
+	public void setPersistentAngerTarget(@Nullable net.minecraft.world.entity.EntityReference<LivingEntity> target) {
 		this.persistentAngerTarget = target;
 	}
 
 	@Nullable
-	public UUID getPersistentAngerTarget() {
+	public net.minecraft.world.entity.EntityReference<LivingEntity> getPersistentAngerTarget() {
 		return this.persistentAngerTarget;
 	}
 

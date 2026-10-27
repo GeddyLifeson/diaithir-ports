@@ -102,9 +102,9 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	private static final Identifier SPEED_MODIFIER_BABY_ID = Identifier.withDefaultNamespace("baby");
 	private static final AttributeModifier SPEED_MODIFIER_BABY = new AttributeModifier(SPEED_MODIFIER_BABY_ID, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
-	private int remainingPersistentAngerTime;
+	private long persistentAngerEndTime;
 	@Nullable
-	private UUID persistentAngerTarget;
+	private net.minecraft.world.entity.EntityReference<LivingEntity> persistentAngerTarget;
 	public GlobalPos homePos = GlobalPos.of(Level.OVERWORLD, BlockPos.ZERO);
 	private int growthTicks;
 	private int breedCooldown = 24000;
@@ -240,8 +240,8 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 		this.targetSelector.addGoal(0, new HirerHurtByTargetGoal());
 		this.targetSelector.addGoal(1, new HirerHurtTargetGoal());
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, living -> living.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STRANGHOUL_PREYS) && !living.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STRANGHOUL_CANNOT_HUNT)));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, true, living -> !Stranghoul.this.isHired() && living.getHealth() / living.getMaxHealth() < 0.15));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, (living, lvl) -> living.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STRANGHOUL_PREYS) && !living.getType().builtInRegistryHolder().is(ESTags.EntityTypes.STRANGHOUL_CANNOT_HUNT)));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Player.class, true, (living, lvl) -> !Stranghoul.this.isHired() && living.getHealth() / living.getMaxHealth() < 0.15));
 		this.targetSelector.addGoal(5, new ResetUniversalAngerTargetGoal<>(this, false));
 	}
 
@@ -363,7 +363,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 				if (foodProperties != null) {
 					Stranghoul.this.heal(foodProperties.nutrition() + foodProperties.saturation() * 3);
 				}
-				Stranghoul.this.eat(Stranghoul.this.level(), food);
+				food.shrink(1);
 			}
 			// copied from LivingEntity#triggerItemUseEffects
 			if (eatTicks % 4 == 0 && Stranghoul.this.level() instanceof ServerLevel serverLevel) {
@@ -377,10 +377,10 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 						vec31 = vec31.xRot((float) (-Stranghoul.this.getXRot() * (Math.PI / 180F)));
 						vec31 = vec31.yRot((float) (-Stranghoul.this.getYHeadRot() * (Math.PI / 180F)));
 						vec31 = vec31.add(Stranghoul.this.getX(), Stranghoul.this.getEyeY(), Stranghoul.this.getZ());
-						ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(new ItemParticleOption(ParticleTypes.ITEM, food), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05, vec3.z));
+						ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(ESPortCompat.itemParticle(ParticleTypes.ITEM, food), vec31.x, vec31.y, vec31.z, vec3.x, vec3.y + 0.05, vec3.z));
 					}
 				}
-				Stranghoul.this.playSound(Stranghoul.this.getEatingSound(food), 0.5F + 0.5F * Stranghoul.this.random.nextInt(2), (Stranghoul.this.random.nextFloat() - Stranghoul.this.random.nextFloat()) * 0.2F + 1.0F);
+				Stranghoul.this.playSound(net.minecraft.sounds.SoundEvents.GENERIC_EAT.value(), 0.5F + 0.5F * Stranghoul.this.random.nextInt(2), (Stranghoul.this.random.nextFloat() - Stranghoul.this.random.nextFloat()) * 0.2F + 1.0F);
 			}
 		}
 
@@ -871,7 +871,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 
 	private ItemStack dyedLeatherArmor(Item item, RandomSource random) {
 		ItemStack stack = item.getDefaultInstance();
-		stack.set(DataComponents.DYED_COLOR, new DyedItemColor(ARGB.srgbLerp(random.nextFloat(), ARGB.color(117, 135, 137), ARGB.color(48, 55, 56)), true));
+		stack.set(DataComponents.DYED_COLOR, new DyedItemColor(ARGB.srgbLerp(random.nextFloat(), ARGB.color(117, 135, 137), ARGB.color(48, 55, 56))));
 		return stack;
 	}
 
@@ -966,14 +966,14 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	}
 
 	@Override
-	public boolean isAlliedTo(Entity entity) {
+	protected boolean considersEntityAsAlly(Entity entity) {
 		LivingEntity hirer = getHirer();
-		return super.isAlliedTo(entity) || entity instanceof Stranghoul || (hirer != null
+		return super.considersEntityAsAlly(entity) || entity instanceof Stranghoul || (hirer != null
 			&& (hirer.isAlliedTo(entity)
 			|| hirer == entity
 			|| (entity instanceof OwnableEntity ownable
-			&& ownable.getOwnerUUID() != null
-			&& ownable.getOwnerUUID().equals(getOwnerUUID()))));
+			&& ownable.getOwnerReference() != null
+			&& ownable.getOwnerReference().equals(getOwnerReference()))));
 	}
 
 	@Override
@@ -1147,7 +1147,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 
 	@Override
 	public boolean hurtServer(ServerLevel hurtServerLevel, DamageSource source, float amount) {
-		return super.hurt(source, (source.getDirectEntity() instanceof LivingEntity living && living.getWeaponItem().is(ESTags.Items.STRANGHOUL_VULNERABLE_TO) ? 2 : 1) * amount);
+		return super.hurtServer(hurtServerLevel, source, (source.getDirectEntity() instanceof LivingEntity living && living.getWeaponItem().is(ESTags.Items.STRANGHOUL_VULNERABLE_TO) ? 2 : 1) * amount);
 	}
 
 	@Override
@@ -1213,34 +1213,34 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 	}
 
 	@Override
-	public int getRemainingPersistentAngerTime() {
-		return remainingPersistentAngerTime;
+	public long getPersistentAngerEndTime() {
+		return persistentAngerEndTime;
 	}
 
 	@Override
-	public void setRemainingPersistentAngerTime(int i) {
-		this.remainingPersistentAngerTime = i;
+	public void setPersistentAngerEndTime(long i) {
+		this.persistentAngerEndTime = i;
 	}
 
 	@Nullable
 	@Override
-	public UUID getPersistentAngerTarget() {
+	public net.minecraft.world.entity.EntityReference<LivingEntity> getPersistentAngerTarget() {
 		return persistentAngerTarget;
 	}
 
 	@Override
-	public void setPersistentAngerTarget(@Nullable UUID uuid) {
+	public void setPersistentAngerTarget(@Nullable net.minecraft.world.entity.EntityReference<LivingEntity> uuid) {
 		this.persistentAngerTarget = uuid;
 	}
 
 	@Override
 	public void startPersistentAngerTimer() {
-		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(getRandom()));
+		this.setTimeToRemainAngry(PERSISTENT_ANGER_TIME.sample(getRandom()));
 	}
 
 	@Override
-	public @Nullable UUID getOwnerUUID() {
-		return hirerId;
+	public net.minecraft.world.entity.@Nullable EntityReference<LivingEntity> getOwnerReference() {
+		return hirerId == null ? null : net.minecraft.world.entity.EntityReference.of(hirerId);
 	}
 
 	public static boolean checkStranghoulSpawnRules(EntityType<? extends Stranghoul> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {

@@ -46,7 +46,7 @@ public class CrinoaBaleBlock extends Block {
 	}
 
 	@Override
-	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
 		entity.causeFallDamage(fallDistance, 0.2F, level.damageSources().fall());
 	}
 

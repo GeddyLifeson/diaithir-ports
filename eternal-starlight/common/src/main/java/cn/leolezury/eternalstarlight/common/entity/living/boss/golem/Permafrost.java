@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.golem;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.block.entity.LootChestBlockEntity;
 import cn.leolezury.eternalstarlight.common.config.ESConfig;
 import cn.leolezury.eternalstarlight.common.entity.living.boss.ESBoss;
@@ -229,7 +230,7 @@ public class Permafrost extends ESBoss {
 	}
 
 	@Override
-	public boolean causeFallDamage(float f, float g, DamageSource damageSource) {
+	public boolean causeFallDamage(double f, float g, DamageSource damageSource) {
 		return false;
 	}
 

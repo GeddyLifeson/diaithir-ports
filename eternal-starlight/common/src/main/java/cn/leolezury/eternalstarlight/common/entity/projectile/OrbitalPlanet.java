@@ -54,40 +54,11 @@ public class OrbitalPlanet extends ThrowableProjectile {
 	private double lerpX, lerpY, lerpZ;
 	private float lerpYRot, lerpXRot;
 
-	@Override
-	public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps) {
-		this.lerpSteps = steps;
-		this.lerpX = x;
-		this.lerpY = y;
-		this.lerpZ = z;
-		this.lerpYRot = yRot;
-		this.lerpXRot = xRot;
-	}
 
-	@Override
-	public double lerpTargetX() {
-		return this.lerpX;
-	}
 
-	@Override
-	public double lerpTargetY() {
-		return this.lerpY;
-	}
 
-	@Override
-	public double lerpTargetZ() {
-		return this.lerpZ;
-	}
 
-	@Override
-	public float lerpTargetYRot() {
-		return this.lerpYRot;
-	}
 
-	@Override
-	public float lerpTargetXRot() {
-		return this.lerpXRot;
-	}
 
 	public void setOrbitRadius(float radius) {
 		this.orbitRadius = radius;

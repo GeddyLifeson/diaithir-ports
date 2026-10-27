@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -340,7 +341,7 @@ public class SolarCreeper extends ESBoss {
 	}
 
 	@Override
-	public boolean causeFallDamage(float fallDistance, float multiplier, DamageSource source) {
+	public boolean causeFallDamage(double fallDistance, float multiplier, DamageSource source) {
 		return false;
 	}
 

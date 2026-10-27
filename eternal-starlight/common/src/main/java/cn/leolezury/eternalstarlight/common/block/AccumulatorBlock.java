@@ -37,7 +37,7 @@ public class AccumulatorBlock extends DirectionalBlock {
 	}
 
 	@Override
-	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+	protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation fromPos, boolean isMoving) {
 		if (!level.isClientSide()) {
 			int signal = level.getSignal(pos.relative(state.getValue(FACING)), state.getValue(FACING));
 			if (state.getValue(POWER) != signal) {

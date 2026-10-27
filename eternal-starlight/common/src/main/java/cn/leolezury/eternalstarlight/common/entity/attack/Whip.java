@@ -294,8 +294,4 @@ public abstract class Whip extends Entity implements TraceableEntity {
 		return entity instanceof Player ? (Player) entity : null;
 	}
 
-	@Override
-	public boolean canChangeDimensions(Level level, Level level2) {
-		return false;
-	}
 }

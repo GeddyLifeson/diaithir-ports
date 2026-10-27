@@ -59,9 +59,9 @@ import java.util.UUID;
 
 public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, NeutralMob {
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
-	private int remainingPersistentAngerTime;
+	private long persistentAngerEndTime;
 	@Nullable
-	private UUID persistentAngerTarget;
+	private net.minecraft.world.entity.EntityReference<LivingEntity> persistentAngerTarget;
 
 	private static final Ingredient FOOD_ITEMS = Ingredient.of(ESPortCompat.items(ESTags.Items.CRYSTALLIZED_MOTH_FOOD));
 
@@ -134,29 +134,29 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	}
 
 	@Override
-	public int getRemainingPersistentAngerTime() {
-		return remainingPersistentAngerTime;
+	public long getPersistentAngerEndTime() {
+		return persistentAngerEndTime;
 	}
 
 	@Override
-	public void setRemainingPersistentAngerTime(int i) {
-		this.remainingPersistentAngerTime = i;
+	public void setPersistentAngerEndTime(long i) {
+		this.persistentAngerEndTime = i;
 	}
 
 	@Nullable
 	@Override
-	public UUID getPersistentAngerTarget() {
+	public net.minecraft.world.entity.EntityReference<LivingEntity> getPersistentAngerTarget() {
 		return persistentAngerTarget;
 	}
 
 	@Override
-	public void setPersistentAngerTarget(@Nullable UUID uuid) {
+	public void setPersistentAngerTarget(@Nullable net.minecraft.world.entity.EntityReference<LivingEntity> uuid) {
 		this.persistentAngerTarget = uuid;
 	}
 
 	@Override
 	public void startPersistentAngerTimer() {
-		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(getRandom()));
+		this.setTimeToRemainAngry(PERSISTENT_ANGER_TIME.sample(getRandom()));
 	}
 
 	@Override

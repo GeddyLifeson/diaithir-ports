@@ -129,8 +129,8 @@ public class Luminaris extends AbstractSchoolingFish implements Charger {
 	}
 
 	@Override
-	public boolean isInvulnerableTo(DamageSource damageSource) {
-		return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.HOT_FLOOR);
+	public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel esLevel, DamageSource damageSource) {
+		return super.isInvulnerableTo(esLevel, damageSource) || damageSource.is(DamageTypes.HOT_FLOOR);
 	}
 
 	@Nullable
