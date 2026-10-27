@@ -104,6 +104,6 @@ put(f"data/{NS}/recipe/fermenting_barrel.json", {
 put(f"data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:keg", f"{NS}:fermenting_barrel"]})
 
 # Sample brew in the data format (the alcohol thread writes the real catalogue the same way); kept out of the jar.
-put("../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest.json", {
+put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest.json", {
     "station": "keg", "base": "minecraft:water_bucket", "base_returns": "minecraft:bucket",
     "ingredients": {"minecraft:wheat": 3}, "ticks": 100, "drink": "minecraft:honey_bottle", "servings": 4})

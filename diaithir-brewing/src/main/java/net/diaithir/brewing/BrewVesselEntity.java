@@ -65,7 +65,7 @@ public final class BrewVesselEntity extends BlockEntity {
     }
 
     void finish() {
-        drink = active.drink().copy();
+        drink = new ItemStack(active.drink(), active.servings());
         container = active.container();
         held.clear();
         base = Items.AIR;

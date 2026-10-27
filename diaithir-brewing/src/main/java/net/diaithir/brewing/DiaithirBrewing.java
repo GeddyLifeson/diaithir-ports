@@ -11,6 +11,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -44,5 +45,6 @@ public final class DiaithirBrewing {
         ENTITIES.register(bus);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "recipes"), new BrewRecipes()));
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> BrewSelfTest.register(e.getDispatcher()));
     }
 }

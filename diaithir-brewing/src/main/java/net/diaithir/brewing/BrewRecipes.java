@@ -9,7 +9,6 @@ import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.slf4j.Logger;
 
@@ -56,8 +55,8 @@ public final class BrewRecipes implements ResourceManagerReloadListener {
         }
         Item returns = j.has("base_returns") ? item(j.get("base_returns").getAsString()) : Items.AIR;
         Item container = j.has("container") ? item(j.get("container").getAsString()) : Items.GLASS_BOTTLE;
-        ItemStack drink = new ItemStack(item(j.get("drink").getAsString()), j.has("servings") ? j.get("servings").getAsInt() : 4);
-        return new BrewRecipe(station, item(j.get("base").getAsString()), returns, Map.copyOf(ingredients), j.get("ticks").getAsInt(), drink, container);
+                return new BrewRecipe(station, item(j.get("base").getAsString()), returns, Map.copyOf(ingredients), j.get("ticks").getAsInt(),
+            item(j.get("drink").getAsString()), j.has("servings") ? j.get("servings").getAsInt() : 4, container);
     }
 
     private static Item item(String id) {
