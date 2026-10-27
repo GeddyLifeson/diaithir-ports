@@ -23,7 +23,8 @@ public final class Species {
             F_SWIMS = 7, F_AGGRESSIVE = 8, F_TOXIC = 9, F_ARBOREAL = 10, F_BURROW = 11, F_MIGRATORY = 12, F_DOMESTICABLE = 13,
             F_SCAV = 14, F_FAST = 15;
 
-    public final String id, plan, name, diet;
+    public final String id, plan, name, diet, rock, form, per;
+    public final int dna;
     public final float scale, kg;
     public final int flags, hab;
     /** AD year of extinction, or Integer.MAX_VALUE when alive today. */
@@ -39,6 +40,7 @@ public final class Species {
         try (Reader r = new InputStreamReader(Species.class.getResourceAsStream("/data/diaithirfauna/species.json"), StandardCharsets.UTF_8)) {
             JsonObject root = new Gson().fromJson(r, JsonObject.class);
             FLAGS = root.getAsJsonArray("flags").asList().stream().map(e -> e.getAsString()).toList();
+            ROCKS = root.getAsJsonArray("rocks").asList().stream().map(e -> e.getAsString()).toList();
             HABS = root.getAsJsonArray("habitats").asList().stream().map(e -> e.getAsString()).toList();
             for (var e : root.getAsJsonArray("species")) {
                 Species s = new Species(e.getAsJsonObject(), ALL.size());
@@ -63,6 +65,10 @@ public final class Species {
         hab = o.has("hab") ? o.get("hab").getAsInt() : 0;
         ext = o.has("ext") ? o.get("ext").getAsInt() : Integer.MAX_VALUE;
         fossil = o.has("fossil");
+        rock = o.has("rock") ? o.get("rock").getAsString() : "";
+        form = o.has("form") ? o.get("form").getAsString() : "";
+        per = o.has("per") ? o.get("per").getAsString() : "";
+        dna = o.has("dna") ? o.get("dna").getAsInt() : 0;
         maFrom = fossil ? o.getAsJsonArray("ma").get(0).getAsFloat() : 0;
         maTo = fossil ? o.getAsJsonArray("ma").get(1).getAsFloat() : 0;
         if (o.has("boxes")) {
@@ -73,6 +79,8 @@ public final class Species {
             boxes = new float[0][];
         }
     }
+
+    public static final List<String> ROCKS;
 
     public static Species byId(String id) { return BY_ID.get(id); }
 

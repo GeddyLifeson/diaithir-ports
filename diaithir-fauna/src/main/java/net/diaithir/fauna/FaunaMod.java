@@ -44,6 +44,7 @@ public final class FaunaMod {
 
     public FaunaMod(IEventBus bus) {
         ENTITIES.register(bus);
+        Fossils.register(bus);
     }
 
     @SubscribeEvent
@@ -73,6 +74,17 @@ public final class FaunaMod {
     @SubscribeEvent
     static void commands(RegisterCommandsEvent e) {
         e.getDispatcher().register(Commands.literal("fauna").requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
+                .then(Commands.literal("fossil").then(Commands.argument("rock", StringArgumentType.word())
+                        .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ROCKS, b))
+                        .executes(c -> {
+                            String rock = StringArgumentType.getString(c, "rock");
+                            ServerLevel level = c.getSource().getLevel();
+                            BlockPos at = BlockPos.containing(c.getSource().getPosition());
+                            Species s = Fossils.pick(level, at, rock, level.getRandom());
+                            net.minecraft.world.level.block.Block.popResource(level, at, Fossils.stack(Fossils.FRAGMENT.get(), s));
+                            c.getSource().sendSuccess(() -> Component.literal(s.id + " (" + s.per + ", " + s.form + ")"), false);
+                            return 1;
+                        })))
                 .then(Commands.literal("summon").then(Commands.argument("species", StringArgumentType.word())
                         .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().map(s -> s.id), b))
                         .executes(c -> {

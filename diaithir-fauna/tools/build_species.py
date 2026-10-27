@@ -9,6 +9,7 @@ import catalogue as C
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src/main/resources')
 FLAGS = ['flies', 'flightless', 'nocturnal', 'diurnal', 'herd', 'pack', 'venomous', 'swims', 'aggressive', 'toxic', 'arboreal', 'burrow', 'migratory', 'domesticable', 'scav', 'fast']
+ROCKS = 'sandstone mudstone limestone shale marine_sediment chalk amber tar volcanic_ash permafrost conglomerate coal'.split()
 HABS = 'forest jungle plains savanna taiga swamp desert badlands mountain icy river lake coast reef ocean_warm ocean_cold ocean_deep cave island tundra grassland wetland'.split()
 
 def species():
@@ -31,6 +32,9 @@ def species():
             else:
                 e['fossil'] = 1
                 e['ma'] = [float(r['ma_from']), float(r['ma_to'])]
+                e['rock'] = r['rock'] if r['rock'] in ROCKS else 'sandstone'
+                e['form'] = r['formation']; e['per'] = r['period']; e['dna'] = int(r['dna_tier'])
+                e['boxes'] = [[b['lat'][0], b['lat'][1], b['lon'][0], b['lon'][1]] for b in C.boxes(r['region'])]
             e['name'] = r['common']
             out.append(e)
     return out
@@ -40,7 +44,7 @@ if __name__ == '__main__':
     d = os.path.join(RES, 'data/diaithirfauna')
     names = sorted(f[:-5] for f in os.listdir(os.path.join(d, 'plans')) if f != 'index.json')
     json.dump(names, open(os.path.join(d, 'plans/index.json'), 'w'))
-    json.dump(dict(flags=FLAGS, habitats=HABS, species=sp), open(os.path.join(d, 'species.json'), 'w'), separators=(',', ':'))
+    json.dump(dict(flags=FLAGS, habitats=HABS, rocks=ROCKS, species=sp), open(os.path.join(d, 'species.json'), 'w'), separators=(',', ':'))
     bm = os.path.join(d, 'neoforge/biome_modifier'); os.makedirs(bm, exist_ok=True)
     for n in names:
         json.dump({'type': 'neoforge:add_spawns', 'biomes': '#minecraft:is_overworld',
