@@ -123,7 +123,6 @@ public class AlexsCaves {
     private void registerPayloads(RegisterPayloadHandlersEvent event) {
         final PayloadRegistrar registrar = event.registrar(MODID).versioned(VERSION).optional();
         // Server-to-client messages
-        registrar.playToClient(com.github.alexthe666.citadel.server.message.AnimationMessage.TYPE, com.github.alexthe666.citadel.server.message.AnimationMessage.CODEC, com.github.alexthe666.citadel.server.message.AnimationMessage::handle);
         registrar.playToClient(WorldEventMessage.TYPE, WorldEventMessage.CODEC, WorldEventMessage::handle);
         registrar.playToClient(UpdateCaveBiomeMapTagMessage.TYPE, UpdateCaveBiomeMapTagMessage.CODEC,
                 UpdateCaveBiomeMapTagMessage::handle);

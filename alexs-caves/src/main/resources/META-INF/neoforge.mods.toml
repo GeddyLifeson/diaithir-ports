@@ -25,3 +25,10 @@ issueTrackerURL="https://github.com/AlexModGuy/AlexsCaves/issues"
     versionRange="${neo_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="citadel"
+    type="required"
+    versionRange="[2.7,)"
+    ordering="AFTER"
+    side="BOTH"

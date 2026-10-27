@@ -33,6 +33,10 @@ processResources {
 }
 
 repositories { mavenCentral() }
+def citadelJar = file(project.findProperty('citadelJar') ?: '../../citadel/citadel/build/libs/citadel-neoforge-26.1.2-2.7.1-diaithir.1.jar')
+dependencies {
+    implementation files(citadelJar)
+}
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.compilerArgs += ['-Xmaxerrs','100000'] }
 
 jar {
