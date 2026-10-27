@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirfurnishings"
+version = "${version}"
+displayName = "Diaithir Furnishings"
+description = "Small furnishings for a lived-in world: a climbable rope that hangs from any ceiling and lengthens by hand, a sack that keeps its contents when carried, and an iron wall sconce. Clean-room: written from how rope, sack and sconce mods behave, no code or art taken from them."
+
+[[dependencies.diaithirfurnishings]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
