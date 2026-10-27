@@ -249,6 +249,14 @@ public class FaunaMob extends PathfinderMob {
         super.dropCustomDeathLoot(level, source, byPlayer);
         Species s = species();
         if (s == null) return;
+        ItemStack carcass = FaunaButchery.carcass(s, this, level.getGameTime());
+        if (carcass != null) {
+            // diaithir-butchery present: one whole carcass, cut on a meat hook by the species' class (hide, feathers, bone, organs, meat by mass)
+            spawnAtLocation(level, carcass);
+            return;
+        }
+        // fallback without butchery: vanilla items; nothing from bodies too small to eat
+        if (s.kg < 0.5) return;
         int n = Mth.clamp((int) Math.round(Math.sqrt(s.kg) / 3 * (1 + random.nextFloat())), 1, 12);
         ItemStack meat = new ItemStack(plan.water() ? Items.COD : plan.fly() || plan.name.equals("galliform") ? Items.CHICKEN : s.diet.equals("herb") ? Items.BEEF : Items.PORKCHOP, n);
         spawnAtLocation(level, meat);

@@ -13,5 +13,8 @@ The catalogue lives in `/mnt/project-files/animals-fossils` (see SCHEMA.md there
     python3 tools/gen_fossil_assets.py                 # fossil blocks, items, worldgen
     python3 tools/era_feed.py                          # era-index feed
 
+## Butchery
+`python3 tools/gen_butchery.py` maps every species (fossils too) to a carcass class (plan archetype x mass tier) in `data/diaithirfauna/butchery/fauna.json` (read by diaithir-butchery) and `butchery_species.json`. With diaithir-butchery loaded a kill drops one carcass of that class; without it, vanilla drops.
+
 ## Ages
 Wild species spawn from Age I. Fossils are dug in Age III (Cenozoic), IV (Mesozoic), V (Paleozoic). Revival (not built yet) by DNA tier: Age VII endgame tier 1, Future tiers 2-3, Rodos tiers 4-5.

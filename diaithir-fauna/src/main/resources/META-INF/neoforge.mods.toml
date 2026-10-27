@@ -12,3 +12,10 @@ description = "Every animal species of Earth and its deep past on shared body pl
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[dependencies.diaithirfauna]]
+modId = "diaithirbutchery"
+type = "optional"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"
