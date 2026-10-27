@@ -1,0 +1,17 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0-only"
+
+[[mods]]
+modId = "diaithirperf"
+version = "${version}"
+displayName = "Diaithir Performance"
+description = "Memory, frame-rate and tick-time fixes for Minecraft and the Diaithir pack, measured against the pack's real profiles."
+
+[[mixins]]
+config = "diaithirperf.mixins.json"
+
+[[dependencies.diaithirperf]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.116,)"
