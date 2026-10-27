@@ -21,8 +21,19 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
 
     protected int speed = 0;
 
+    public static final com.mojang.serialization.MapCodec<ParadiseLostLeavesBlock> CODEC = simpleCodec(ParadiseLostLeavesBlock::new);
+
     public ParadiseLostLeavesBlock(Properties settings) {
-        super(settings);
+        super(0.0F, settings);
+    }
+
+    @Override
+    public com.mojang.serialization.MapCodec<? extends LeavesBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    protected void spawnFallingLeavesParticle(Level level, BlockPos pos, RandomSource random) {
     }
 
     public static BlockState getHanger(BlockState state) {
@@ -42,7 +53,7 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
             Direction direction = Direction.DOWN;
             BlockPos blockPos = pos.relative(direction);
             BlockState blockState = world.getBlockState(blockPos);
-            if (!(!blockState.isFaceSturdy(world, blockPos, direction.getOpposite()) && !blockState.propagatesSkylightDown(world, blockPos))) {
+            if (!(!blockState.isFaceSturdy(world, blockPos, direction.getOpposite()) && !blockState.propagatesSkylightDown())) {
 
                 if (speed == 0 || world.getGameTime() % 3000 == 0) {
                     speed = world.getRandom().nextInt(4);
@@ -76,10 +87,6 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Bonemealable
         return 0.2F;
     }
 
-    @Override
-    public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
-        return 1;
-    }
 
     @SuppressWarnings("deprecation")
     @Override

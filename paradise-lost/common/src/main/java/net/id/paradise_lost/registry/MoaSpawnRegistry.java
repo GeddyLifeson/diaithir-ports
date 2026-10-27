@@ -117,7 +117,7 @@ public final class MoaSpawnRegistry {
 
     public static Identifier getMoaRaceIdFromSpawning(Level world, ResourceKey<Biome> biome, RandomSource random) {
         Registry<SpawnEntry> tables = REGISTRY.get(world.registryAccess());
-        Holder<Biome> holder = world.registryAccess().lookupOrThrow(Registries.BIOME).getHolderOrThrow(biome);
+        Holder<Biome> holder = world.registryAccess().lookupOrThrow(Registries.BIOME).getOrThrow(biome);
 
         List<WeightedRace> pool = new ArrayList<>();
         tables.getOptional(biome.identifier()).ifPresent(table -> pool.addAll(table.races()));

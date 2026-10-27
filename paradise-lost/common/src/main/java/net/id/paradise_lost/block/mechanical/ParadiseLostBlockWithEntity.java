@@ -45,19 +45,12 @@ public abstract class ParadiseLostBlockWithEntity extends BaseEntityBlock implem
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof Container) {
-                Containers.dropContents(world, pos, (Container) blockEntity);
-                world.updateNeighbourForOutputSignal(pos, this);
-            }
-            super.onRemove(state, world, pos, newState, moved);
-        }
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel world, BlockPos pos, boolean moved) {
+        Containers.updateNeighboursAfterDestroy(state, world, pos);
     }
 
     @Override
-    public boolean canPlaceLiquid(@Nullable Player player, BlockGetter world, BlockPos pos, BlockState state, Fluid fluid) {
+    public boolean canPlaceLiquid(@Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter world, BlockPos pos, BlockState state, Fluid fluid) {
         return loggable && !(Boolean) state.getValue(BlockStateProperties.WATERLOGGED) && fluid == Fluids.WATER;
     }
 

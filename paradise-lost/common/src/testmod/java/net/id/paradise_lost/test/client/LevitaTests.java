@@ -1603,7 +1603,7 @@ public final class LevitaTests {
                         startY = cart.getY();
 
                         player.setGameMode(GameType.SURVIVAL);
-                        check(player.startRiding(cart, true), "setup: startRiding returned false");
+                        check(player.startRiding(cart, true, false), "setup: startRiding returned false");
                         ticks = 0;
                         seen = 0;
                         renderViolations.clear();
@@ -1615,7 +1615,7 @@ public final class LevitaTests {
                     ServerPlayer player = player(server);
                     AbstractMinecart cart = serverCart(server, entityId);
                     if (player.getVehicle() != cart) {
-                        check(player.startRiding(cart, true), "setup: could not remount palace minecart before button");
+                        check(player.startRiding(cart, true, false), "setup: could not remount palace minecart before button");
                     }
                     BlockState state = world(server).getBlockState(pos);
                     Direction hitFace = Direction.UP;
@@ -1642,7 +1642,7 @@ public final class LevitaTests {
                         ServerPlayer player = player(server);
                         AbstractMinecart cart = serverCart(server, entityId);
                         if (player.getVehicle() != cart && player.distanceTo(cart) < 4.0) {
-                            player.startRiding(cart, true);
+                            player.startRiding(cart, true, false);
                         }
                         check(player.getVehicle() == cart || player.distanceTo(cart) < 4.0,
                                 "player left the palace minecart" + describe(cart) + floatState(cart));

@@ -1,5 +1,6 @@
 package net.id.paradise_lost.entity.ai;
 
+import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.id.paradise_lost.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
@@ -66,7 +67,7 @@ public class EatParadiseLostGrassGoal extends Goal {
             BlockPos pos = new BlockPos(this.owner.blockPosition());
 
             if (grass.test(world.getBlockState(pos))) {
-                if (world.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+                if (ParadiseLostGameRules.get(world, GameRules.MOB_GRIEFING)) {
                     world.destroyBlock(pos, false);
                 }
 
@@ -75,7 +76,7 @@ public class EatParadiseLostGrassGoal extends Goal {
                 BlockPos downPos = pos.below();
 
                 if (this.world.getBlockState(downPos).getBlock() == BlockRegistry.HIGHLANDS_GRASS.get()) {
-                    if (this.world.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+                    if (ParadiseLostGameRules.get(this.world, GameRules.MOB_GRIEFING)) {
                         this.world.globalLevelEvent(2001, downPos, Block.getId(BlockRegistry.HIGHLANDS_GRASS.get().defaultBlockState()));
                         this.world.setBlock(downPos, BlockRegistry.DIRT.get().defaultBlockState(), Block.UPDATE_CLIENTS);
                     }

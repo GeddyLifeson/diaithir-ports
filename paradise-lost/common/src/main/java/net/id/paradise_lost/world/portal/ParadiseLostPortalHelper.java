@@ -16,7 +16,7 @@ public final class ParadiseLostPortalHelper {
         if (level.isClientSide()) {
             return false;
         }
-        if (!level.getGameRules().getBoolean(ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
+        if (!ParadiseLostGameRules.get(level, ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
             return false;
         }
         if (level.dimension() != Level.OVERWORLD && level.dimension() != ParadiseLostDimension.PARADISE_LOST_WORLD_KEY) {

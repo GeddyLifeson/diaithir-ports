@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 
 public class ParadiseLostRecipeTypes {
     private static final RegistrationProvider<RecipeSerializer<?>> RECIPE_SERIALIZERS =
@@ -23,7 +22,7 @@ public class ParadiseLostRecipeTypes {
     public static RecipeType<CraftingCalciteDecoratedPotRecipe> CALCITE_DECORATED_POT_RECIPE_TYPE;
 
     @SuppressWarnings("unchecked")
-    static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
+    static <T extends Recipe<?>> RecipeSerializer<T> registerSerializer(String id, RecipeSerializer<T> serializer) {
         RECIPE_SERIALIZERS.register(id, () -> serializer);
         return serializer;
     }
@@ -41,9 +40,9 @@ public class ParadiseLostRecipeTypes {
     }
 
     public static void init() {
-        TREE_TAP_RECIPE_SERIALIZER = registerSerializer(TREE_TAP_RECIPE_ID, new TreeTapRecipe.Serializer());
+        TREE_TAP_RECIPE_SERIALIZER = registerSerializer(TREE_TAP_RECIPE_ID, TreeTapRecipe.Serializer.create());
         TREE_TAP_RECIPE_TYPE = registerRecipeType(TREE_TAP_RECIPE_ID);
-        CALCITE_DECORATED_POT_RECIPE_SERIALIZER = registerSerializer(CALCITE_DECORATED_POT_RECIPE_ID, new SimpleCraftingRecipeSerializer<>(CraftingCalciteDecoratedPotRecipe::new));
+        CALCITE_DECORATED_POT_RECIPE_SERIALIZER = registerSerializer(CALCITE_DECORATED_POT_RECIPE_ID, new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(CraftingCalciteDecoratedPotRecipe::new), net.minecraft.network.codec.StreamCodec.unit(new CraftingCalciteDecoratedPotRecipe())));
         CALCITE_DECORATED_POT_RECIPE_TYPE = registerRecipeType(CALCITE_DECORATED_POT_RECIPE_ID);
     }
 }

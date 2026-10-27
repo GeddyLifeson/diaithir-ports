@@ -1,5 +1,6 @@
 package net.id.paradise_lost.api;
 
+import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.entity.util.PostTickEntity;
@@ -339,7 +340,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
         if (this.isRemoved()) return;
 
         this.discard();
-        if (this.dropItem && this.level().getGameRules().getBooleanOr(GameRules.RULE_DOENTITYDROPS, false)) {
+        if (this.dropItem && ParadiseLostGameRules.get(this.level(), GameRules.ENTITY_DROPS)) {
             Block.dropResources(this.blockState, this.level(), this.blockPosition());
         }
 

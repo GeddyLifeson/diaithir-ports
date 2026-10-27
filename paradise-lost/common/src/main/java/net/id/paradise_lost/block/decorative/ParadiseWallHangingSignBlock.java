@@ -19,7 +19,6 @@ public class ParadiseWallHangingSignBlock extends WallHangingSignBlock {
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         Identifier identifier = BuiltInRegistries.BLOCK.getKey(this.asBlock());
-        this.drops = ResourceKey.create(Registries.LOOT_TABLE, identifier.withPrefix("blocks/"));
         return new ParadiseHangingSignBlockEntity(pos, state);
     }
 

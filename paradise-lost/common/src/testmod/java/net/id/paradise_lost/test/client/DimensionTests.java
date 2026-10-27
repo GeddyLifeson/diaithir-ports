@@ -175,7 +175,7 @@ public final class DimensionTests {
                 Step.run(0, () -> onServer(server -> {
                     ServerPlayer player = player(server);
                     check(player.getY() > 300, "arrived at y=" + player.getY());
-                    check(player.hasEffect(MobEffects.CONFUSION), "no nausea");
+                    check(player.hasEffect(MobEffects.NAUSEA), "no nausea");
                     check(!Recorder.playerHurtBy(DamageTypes.FELL_OUT_OF_WORLD), "took void damage before the teleport");
                 })),
                 Step.until("fall damage from paradise", 600, () -> Recorder.playerHurtBy(ParadiseLostDamageTypes.FALL_FROM_PARADISE))

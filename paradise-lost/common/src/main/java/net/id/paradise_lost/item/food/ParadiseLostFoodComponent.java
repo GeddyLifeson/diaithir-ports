@@ -14,7 +14,7 @@ public class ParadiseLostFoodComponent {
             .effect(new MobEffectInstance(MobEffects.HEAL, 1, 0), 1.0F).build();
     public static final FoodProperties SWEDROOT = new FoodProperties.Builder().nutrition(2).saturationModifier(1.5F).build();
     public static final FoodProperties GENERIC_WORSE = new FoodProperties.Builder().nutrition(1).saturationModifier(0.25F)
-            .effect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0), 0.075F).build();
+            .effect(new MobEffectInstance(MobEffects.NAUSEA, 100, 0), 0.075F).build();
     public static final FoodProperties AMADRYS_NOODLES = new FoodProperties.Builder().nutrition(7).saturationModifier(0.5F).usingConvertsTo(Items.BOWL).build();
     public static final FoodProperties AMADRYS_BREAD = new FoodProperties.Builder().nutrition(5).saturationModifier(1.2F).build();
     public static final FoodProperties AMADRYS_BREAD_GLAZED = new FoodProperties.Builder().nutrition(8).saturationModifier(1.4F).build();

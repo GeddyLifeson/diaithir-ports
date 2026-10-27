@@ -26,7 +26,7 @@ public class PalaceDoorBlockEntity extends BlockEntity {
 
     private static final float DOOR_OPEN_SPEED = 66F;
     private static final float MAX_DOOR_ANGLE = (float) (Math.PI / 2.0);
-    private static final DustParticleOptions DUST_PARTICLE = new DustParticleOptions(new Vector3f(0.69F, 0.659F, 0.627F), 1.0F);
+    private static final DustParticleOptions DUST_PARTICLE = new DustParticleOptions(0xB0A8A0, 1.0F);
 
     private boolean doorOpened;
     public boolean doorFullyOpened;
@@ -126,9 +126,7 @@ public class PalaceDoorBlockEntity extends BlockEntity {
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
-        CompoundTag nbtCompound = new CompoundTag();
-        this.saveAdditional(nbtCompound, registryLookup);
-        return nbtCompound;
+        return this.saveCustomOnly(registryLookup);
     }
 
     @Nullable

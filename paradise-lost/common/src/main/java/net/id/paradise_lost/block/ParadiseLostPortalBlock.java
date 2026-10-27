@@ -33,7 +33,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -89,7 +89,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
 
     @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
-        if (!level.getGameRules().getBoolean(ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
+        if (!ParadiseLostGameRules.get(level, ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
             return;
         }
         if (entity.canUsePortal(false)) {
@@ -102,11 +102,9 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
         return entity instanceof Player player
                 ? Math.max(
                         1,
-                        level.getGameRules().getInt(
-                                player.getAbilities().invulnerable
-                                        ? GameRules.RULE_PLAYERS_NETHER_PORTAL_CREATIVE_DELAY
-                                        : GameRules.RULE_PLAYERS_NETHER_PORTAL_DEFAULT_DELAY
-                        )
+                        ParadiseLostGameRules.get(level, player.getAbilities().invulnerable
+                                        ? GameRules.PLAYERS_NETHER_PORTAL_CREATIVE_DELAY
+                                        : GameRules.PLAYERS_NETHER_PORTAL_DEFAULT_DELAY)
                 )
                 : 0;
     }
@@ -118,7 +116,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
 
     @Nullable
     @Override
-    public DimensionTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
+    public TeleportTransition getPortalDestination(ServerLevel level, Entity entity, BlockPos pos) {
         ResourceKey<Level> targetKey = level.dimension() == ParadiseLostDimension.PARADISE_LOST_WORLD_KEY
                 ? Level.OVERWORLD
                 : ParadiseLostDimension.PARADISE_LOST_WORLD_KEY;
@@ -139,7 +137,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
     }
 
     @Nullable
-    private DimensionTransition getExitPortal(
+    private TeleportTransition getExitPortal(
             ServerLevel destination,
             Entity entity,
             BlockPos enteredPos,
@@ -150,7 +148,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
         Optional<BlockPos> existing = forcer.findClosestPortalPosition(exitSearchPos, border);
 
         BlockUtil.FoundRectangle rectangle;
-        DimensionTransition.PostDimensionTransition post;
+        TeleportTransition.PostTeleportTransition post;
         if (existing.isPresent()) {
             BlockPos portalPos = existing.get();
             BlockState portalState = destination.getBlockState(portalPos);
@@ -171,18 +169,18 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
                 return null;
             }
             rectangle = created.get();
-            post = ParadiseLostPortalForcer.PLAY_PORTAL_SOUND.then(DimensionTransition.PLACE_PORTAL_TICKET);
+            post = ParadiseLostPortalForcer.PLAY_PORTAL_SOUND.then(TeleportTransition.PLACE_PORTAL_TICKET);
         }
 
         return getDimensionTransitionFromExit(entity, enteredPos, rectangle, destination, post);
     }
 
-    private static DimensionTransition getDimensionTransitionFromExit(
+    private static TeleportTransition getDimensionTransitionFromExit(
             Entity entity,
             BlockPos enteredPos,
             BlockUtil.FoundRectangle rectangle,
             ServerLevel destination,
-            DimensionTransition.PostDimensionTransition post
+            TeleportTransition.PostTeleportTransition post
     ) {
         BlockState enteredState = entity.level().getBlockState(enteredPos);
         Direction.Axis axis;
@@ -217,7 +215,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
         );
     }
 
-    private static DimensionTransition createDimensionTransition(
+    private static TeleportTransition createDimensionTransition(
             ServerLevel destination,
             BlockUtil.FoundRectangle rectangle,
             Direction.Axis entryAxis,
@@ -226,7 +224,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
             Vec3 speed,
             float yRot,
             float xRot,
-            DimensionTransition.PostDimensionTransition post
+            TeleportTransition.PostTeleportTransition post
     ) {
         BlockPos minCorner = rectangle.minCorner;
         BlockState cornerState = destination.getBlockState(minCorner);
@@ -244,7 +242,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
                 (double) minCorner.getZ() + (alongX ? d4 : d2)
         );
         Vec3 dest = ParadiseLostPortalShape.findCollisionFreePosition(raw, destination, entity, dimensions);
-        return new DimensionTransition(destination, dest, exitSpeed, yRot + (float) yawOffset, xRot, post);
+        return new TeleportTransition(destination, dest, exitSpeed, yRot + (float) yawOffset, xRot, post);
     }
 
     @Override

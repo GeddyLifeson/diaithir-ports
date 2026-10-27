@@ -16,10 +16,10 @@ import net.minecraft.world.level.block.entity.PotDecorations;
 import java.util.Optional;
 
 public class CraftingCalciteDecoratedPotRecipe extends CustomRecipe {
-    public CraftingCalciteDecoratedPotRecipe(CraftingBookCategory craftingRecipeCategory) {
-        super(craftingRecipeCategory);
+    public CraftingCalciteDecoratedPotRecipe() {
     }
 
+    @Override
     public boolean matches(CraftingInput craftingRecipeInput, Level world) {
         if (!this.canCraftInDimensions(craftingRecipeInput.width(), craftingRecipeInput.height())) {
             return false;
@@ -52,7 +52,7 @@ public class CraftingCalciteDecoratedPotRecipe extends CustomRecipe {
     }
 
     @Override
-    public ItemStack assemble(CraftingInput craftingRecipeInput, HolderLookup.Provider wrapperLookup) {
+    public ItemStack assemble(CraftingInput craftingRecipeInput) {
         PotDecorations sherds = new PotDecorations(
                 side(craftingRecipeInput.getItem(1)),
                 side(craftingRecipeInput.getItem(3)),
@@ -66,13 +66,12 @@ public class CraftingCalciteDecoratedPotRecipe extends CustomRecipe {
         return stack.is(Items.CALCITE) ? Optional.empty() : Optional.of(stack.getItem());
     }
 
-    @Override
     public boolean canCraftInDimensions(int width, int height) {
         return width == 3 && height == 3;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends CustomRecipe> getSerializer() {
         return ParadiseLostRecipeTypes.CALCITE_DECORATED_POT_RECIPE_SERIALIZER;
     }
 }

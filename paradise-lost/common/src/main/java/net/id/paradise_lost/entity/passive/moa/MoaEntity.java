@@ -1,5 +1,6 @@
 package net.id.paradise_lost.entity.passive.moa;
 
+import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.id.paradise_lost.platform.Services;
@@ -723,7 +724,7 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
             this.resetLove();
             other.resetLove();
             world.broadcastEntityEvent(this, (byte) 18);
-            if (world.getGameRules().getBooleanOr(GameRules.RULE_DOMOBLOOT, false)) {
+            if (ParadiseLostGameRules.get(world, GameRules.MOB_DROPS)) {
                 world.addFreshEntity(new ExperienceOrb(world, this.getX(), this.getY(), this.getZ(), this.getRandom().nextInt(16) + 4));
             }
 

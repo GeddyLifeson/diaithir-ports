@@ -41,7 +41,7 @@ public class ParadiseLostHangerBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
+    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

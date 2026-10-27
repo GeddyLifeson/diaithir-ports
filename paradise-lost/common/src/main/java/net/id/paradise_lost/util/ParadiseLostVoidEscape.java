@@ -1,5 +1,6 @@
 package net.id.paradise_lost.util;
 
+import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.id.paradise_lost.entity.ParadiseLostEntityExtensions;
 import net.id.paradise_lost.world.dimension.ParadiseLostDimension;
 import net.minecraft.server.level.ServerLevel;
@@ -12,7 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public final class ParadiseLostVoidEscape {
         if (level.dimension() != ParadiseLostDimension.PARADISE_LOST_WORLD_KEY) {
             return false;
         }
-        if (level.getGameRules().getBoolean(PARADISE_VOID_KILLS)) {
+        if (ParadiseLostGameRules.get(level, PARADISE_VOID_KILLS)) {
             return false;
         }
 
@@ -75,18 +76,18 @@ public final class ParadiseLostVoidEscape {
                     extensions.setParadiseLostFallen(true);
                 }
                 if (rider instanceof LivingEntity living) {
-                    living.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 160, 2, false, false, true));
+                    living.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 160, 2, false, false, true));
                     living.resetFallDistance();
                 }
             }
 
-            Entity teleported = root.changeDimension(new DimensionTransition(
+            Entity teleported = root.teleport(new TeleportTransition(
                     overworld,
                     dest,
                     root.getDeltaMovement(),
                     root.getYRot(),
                     root.getXRot(),
-                    DimensionTransition.DO_NOTHING
+                    TeleportTransition.DO_NOTHING
             ));
             if (teleported == null) {
                 return false;
@@ -127,7 +128,7 @@ public final class ParadiseLostVoidEscape {
             }
             if (passenger != null && vehicle != null && passenger.getVehicle() != vehicle) {
                 passenger.teleportTo(vehicle.getX(), vehicle.getY(), vehicle.getZ());
-                passenger.startRiding(vehicle, true);
+                passenger.startRiding(vehicle, true, false);
             }
         }
     }

@@ -79,7 +79,7 @@ public class NitraBlock extends Block {
             Item item = itemStack.getItem();
             if (!player.isCreative()) {
                 if (itemStack.is(Items.FLINT_AND_STEEL)) {
-                    itemStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                    itemStack.hurtAndBreak(1, player, hand.asEquipmentSlot());
                 } else {
                     itemStack.shrink(1);
                 }

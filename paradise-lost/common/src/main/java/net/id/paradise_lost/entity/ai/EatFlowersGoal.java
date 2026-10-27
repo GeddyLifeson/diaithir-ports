@@ -1,5 +1,6 @@
 package net.id.paradise_lost.entity.ai;
 
+import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.id.paradise_lost.entity.passive.PopomEntity;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
@@ -54,7 +55,7 @@ public class EatFlowersGoal extends MoveToBlockGoal {
         super.tick();
         if (timer > 0) this.timer = Math.max(0, this.timer - 1);
         if (this.timer == this.adjustedTickDelay(0) && this.eating) {
-            if (this.world.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+            if (ParadiseLostGameRules.get(this.world, GameRules.MOB_GRIEFING)) {
                 this.world.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, blockPos.above(), Block.getId(world.getBlockState(blockPos.above())));
                 this.world.setBlock(blockPos.above(), Blocks.AIR.defaultBlockState(), Block.UPDATE_CLIENTS);
             }

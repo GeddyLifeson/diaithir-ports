@@ -18,7 +18,6 @@ public class ParadiseWallSignBlock extends WallSignBlock {
 
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         Identifier identifier = BuiltInRegistries.BLOCK.getKey(this.asBlock());
-        this.drops = ResourceKey.create(Registries.LOOT_TABLE, identifier.withPrefix("blocks/"));
         return new ParadiseSignBlockEntity(pos, state);
     }
 }

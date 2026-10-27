@@ -85,7 +85,7 @@ public final class BoatTests {
                     entity.snapTo(at.x, at.y, at.z, 0, 0);
                     world.addFreshEntity(entity);
                 })),
-                Step.run(5, () -> onServer(server -> check(player(server).startRiding(entity, true), "startRiding returned false"))),
+                Step.run(5, () -> onServer(server -> check(player(server).startRiding(entity, true, false), "startRiding returned false"))),
                 Step.until("client player in the boat", 40, () -> {
                     Entity vehicle = client().player.getVehicle();
                     return vehicle != null && vehicle.getType() == EntityRegistry.MENTH_BOAT.get();

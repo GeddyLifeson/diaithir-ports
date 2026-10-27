@@ -33,7 +33,7 @@ public class CherineCampfireBlock extends CampfireBlock {
             ItemStack itemStack = player.getItemInHand(hand);
             Optional<RecipeHolder<CampfireCookingRecipe>> optional = campfireBlockEntity.getRecipeFor(itemStack);
             if (optional.isPresent()) {
-                if (!world.isClientSide() && campfireBlockEntity.addItem(player, player.hasInfiniteMaterials() ? itemStack.copy() : itemStack, ((CampfireCookingRecipe) ((RecipeHolder) optional.get()).value()).getCookingTime())) {
+                if (!world.isClientSide() && campfireBlockEntity.addItem(player, player.hasInfiniteMaterials() ? itemStack.copy() : itemStack, ((CampfireCookingRecipe) ((RecipeHolder) optional.get()).value()).cookingTime())) {
                     player.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
                     return InteractionResult.SUCCESS;
                 }

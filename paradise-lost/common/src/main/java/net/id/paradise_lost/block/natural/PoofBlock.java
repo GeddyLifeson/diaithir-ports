@@ -28,13 +28,13 @@ public class PoofBlock extends Block {
 
     @Override
     protected BlockState updateShape(BlockState state, LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
-        RandomSource rand = world.getRandom();
-        if (neighborState.isAir()) {
+        if (neighborState.isAir() && world instanceof Level lvl) {
+            RandomSource rand = lvl.getRandom();
             for (int i = 0; i < 4; i++) {
-                world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX(), pos.getY(), pos.getZ(), rand.nextFloat() * 0.5, rand.nextFloat() * 0.5, rand.nextFloat() * 0.5);
+                lvl.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX(), pos.getY(), pos.getZ(), rand.nextFloat() * 0.5, rand.nextFloat() * 0.5, rand.nextFloat() * 0.5);
             }
-            if (rand.nextBoolean()) world.playSound(null, pos, ParadiseLostSoundEvents.BLOCK_SURTRUM_RUSH, SoundSource.BLOCKS, 0.1F + rand.nextFloat() * 0.2F, rand.nextFloat() * 0.7F + 0.3F);
-            List<Entity> entities = world.getEntitiesOfClass(Entity.class, new AABB(pos.getX() - 5, pos.getY() - 5, pos.getZ() - 5, pos.getX() + 5, pos.getY() + 5, pos.getZ() + 5));
+            if (rand.nextBoolean()) lvl.playSound(null, pos, ParadiseLostSoundEvents.BLOCK_SURTRUM_RUSH, SoundSource.BLOCKS, 0.1F + rand.nextFloat() * 0.2F, rand.nextFloat() * 0.7F + 0.3F);
+            List<Entity> entities = lvl.getEntitiesOfClass(Entity.class, new AABB(pos.getX() - 5, pos.getY() - 5, pos.getZ() - 5, pos.getX() + 5, pos.getY() + 5, pos.getZ() + 5));
             for (Entity p : entities) {
                 if (p != null && p.isAlive() && p.blockPosition().closerThan(pos, 5)) p.setRemainingFireTicks(60);
             }

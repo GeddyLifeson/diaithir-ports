@@ -77,7 +77,7 @@ public class ParadiseLostMushroomPlantBlock extends BushBlock implements Bonemea
     }
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
+    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

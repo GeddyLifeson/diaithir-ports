@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 
 import java.util.Comparator;
 import java.util.Optional;
@@ -33,7 +33,7 @@ public class ParadiseLostPortalForcer {
     public static final int OVERWORLD_MIN_PORTAL_Y = -59;
     private static final int PARADISE_MAX_SURFACE_DROP = 32;
 
-    public static final DimensionTransition.PostDimensionTransition PLAY_PORTAL_SOUND =
+    public static final TeleportTransition.PostTeleportTransition PLAY_PORTAL_SOUND =
             ParadiseLostPortalForcer::playTravelSound;
 
     private static void playTravelSound(Entity entity) {
@@ -77,7 +77,7 @@ public class ParadiseLostPortalForcer {
     }
 
     public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos pos, Direction.Axis axis) {
-        if (!this.level.getGameRules().getBoolean(ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
+        if (!ParadiseLostGameRules.get(this.level, ParadiseLostGameRules.PARADISE_PORTAL_ENABLED)) {
             return Optional.empty();
         }
 

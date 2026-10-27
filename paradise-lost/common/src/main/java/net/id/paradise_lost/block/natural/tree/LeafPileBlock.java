@@ -28,6 +28,11 @@ public class LeafPileBlock extends FallingBlock {
     }
 
     @Override
+    public int getDustColor(BlockState state, net.minecraft.world.level.BlockGetter level, BlockPos pos) {
+        return 0x5A8F3C;
+    }
+
+    @Override
     protected MapCodec<? extends FallingBlock> codec() {
         return CODEC;
     }

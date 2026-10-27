@@ -144,10 +144,10 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
 
 		RecipeInput input = asRecipeInput();
 		BlockState tappedState = this.getTappedState();
-		Optional<RecipeHolder<TreeTapRecipe>> recipe = this.matchGetter.getRecipeFor(input, this.getLevel())
+		Optional<RecipeHolder<TreeTapRecipe>> recipe = this.matchGetter.getRecipeFor(input, (net.minecraft.server.level.ServerLevel) this.getLevel())
 				.filter(holder -> holder.value().matches(input, tappedState));
 		if (recipe.isPresent() && level.getRandom().nextInt(recipe.get().value().getChance()) == 0) {
-			ItemStack output = recipe.get().value().assemble(input, level.registryAccess());
+			ItemStack output = recipe.get().value().assemble(input);
             Block convertBlock = recipe.get().value().getOutputBlock();
             BlockPos attachedPos = this.worldPosition.relative(level.getBlockState(this.worldPosition).getValue(TreeTapBlock.FACING).getOpposite());
             BlockState attachedBlock = level.getBlockState(attachedPos);
@@ -192,24 +192,7 @@ public class TreeTapBlockEntity extends RandomizableContainerBlockEntity impleme
 
 	@Override
 	public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
-		CompoundTag nbtCompound = new CompoundTag();
-		this.saveAdditional(nbtCompound, registryLookup);
-		return nbtCompound;
-	}
-
-	@Nullable
-	@Override
-	public Packet<ClientGamePacketListener> getUpdatePacket() {
-		return ClientboundBlockEntityDataPacket.create(this);
-	}
-
-	public void updateInClientWorld() {
-		((ServerLevel) level).getChunkSource().blockChanged(worldPosition);
-	}
-
-    @Override
-    public ItemStack getItem(int slot) {
-        return inventory.get(slot);
+        return this.saveCustomOnly(registryLookup);
     }
 
     public int size() {

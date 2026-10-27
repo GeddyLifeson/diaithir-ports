@@ -71,7 +71,7 @@ public class WallClingingPlantBlock extends BushBlock implements BonemealableBlo
     }
 
     @Override
-    protected MapCodec<? extends BushBlock> codec() {
+    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

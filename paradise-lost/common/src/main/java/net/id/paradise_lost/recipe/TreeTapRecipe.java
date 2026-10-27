@@ -65,18 +65,32 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public ItemStack assemble(RecipeInput inventory, HolderLookup.Provider lookup) {
+    public ItemStack assemble(RecipeInput inventory) {
         return result.copy();
     }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
+    public ItemStack getResultItem() {
+        return result;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider registriesLookup) {
-        return result;
+    public boolean showNotification() {
+        return false;
+    }
+
+    @Override
+    public String group() {
+        return "";
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.PlacementInfo placementInfo() {
+        return net.minecraft.world.item.crafting.PlacementInfo.NOT_PLACEABLE;
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.RecipeBookCategory recipeBookCategory() {
+        return net.minecraft.world.item.crafting.RecipeBookCategories.CRAFTING_MISC;
     }
 
     public Block getOutputBlock() {
@@ -88,16 +102,16 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<RecipeInput>> getSerializer() {
         return ParadiseLostRecipeTypes.TREE_TAP_RECIPE_SERIALIZER;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<RecipeInput>> getType() {
         return ParadiseLostRecipeTypes.TREE_TAP_RECIPE_TYPE;
     }
 
-    public static class Serializer implements RecipeSerializer<TreeTapRecipe> {
+    public static class Serializer {
         private static final MapCodec<TreeTapRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 Ingredient.CODEC.fieldOf("ingredient").forGetter(recipe -> recipe.ingredient),
                 BuiltInRegistries.BLOCK.byNameCodec().fieldOf("tapped_block").forGetter(recipe -> recipe.tappedBlock),
@@ -121,14 +135,8 @@ public class TreeTapRecipe implements Recipe<RecipeInput> {
             return Optional.ofNullable(recipe.result.get(DataComponents.POTION_CONTENTS));
         }
 
-        @Override
-        public MapCodec<TreeTapRecipe> codec() {
-            return CODEC;
-        }
-
-        @Override
-        public StreamCodec<RegistryFriendlyByteBuf, TreeTapRecipe> streamCodec() {
-            return PACKET_CODEC;
+        public static RecipeSerializer<TreeTapRecipe> create() {
+            return new RecipeSerializer<>(CODEC, PACKET_CODEC);
         }
     }
 }
