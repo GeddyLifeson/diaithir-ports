@@ -61,6 +61,11 @@ public class ClientModEvents {
     }
 
     @SubscribeEvent
+    public static void registerScreens(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent event) {
+        event.register(com.github.alexmodguy.alexscaves.server.inventory.ACMenuRegistry.SPELUNKERY_TABLE_MENU.get(), com.github.alexmodguy.alexscaves.client.gui.SpelunkeryTableScreen::new);
+    }
+
+    @SubscribeEvent
     public static void registerParticleGroups(RegisterParticleGroupsEvent event) {
         event.register(LegacyParticle.TYPE, LegacyParticle.Group::new);
     }
