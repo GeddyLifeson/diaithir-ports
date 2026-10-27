@@ -58,6 +58,7 @@ final class UiAge {
     /** A form string from the Codex stamp ("III", "age_iii", "3", "rodos") as an Age, or null when it is not one. */
     static String parse(String s) {
         if (s == null) return null;
+        if (s.trim().equalsIgnoreCase("TELLING")) return "I";  // the pre-Age form
         var t = s.trim().toUpperCase(Locale.ROOT).replaceFirst("^(AGE|FORM)[_ :-]*", "");
         if (AGES.contains(t)) return t;
         if (t.length() == 1 && t.charAt(0) >= '1' && t.charAt(0) <= '7') return AGES.get(t.charAt(0) - '1');
@@ -68,7 +69,7 @@ final class UiAge {
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack stack = inv.getItem(i);
             CustomModelData cmd = stack.get(DataComponents.CUSTOM_MODEL_DATA);
-            if (stack.isEmpty() || cmd == null || !BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().contains("codex")) continue;
+            if (stack.isEmpty() || cmd == null || !BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().contains("leabhar_siubhail")) continue;
             for (String s : cmd.strings()) {
                 String age = parse(s);
                 if (age != null) return age;
