@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="LGPL-3.0-or-later"
+
+[[mods]]
+modId="diaithir_create_dragons_plus"
+version="1.11.8-diaithir.1"
+displayName="Create: Dragons Plus (Diaithir port)"
+authors="DragonsPlus (code, LGPL-3.0); Diaithir pack (NeoForge port, art)"
+description='''Library for the Diaithir ports of the DragonsPlus Create addons. NeoForge 26.1.2 port of the LGPL-3.0 Fly build.'''
+
+[[mixins]]
+config="create_dragons_plus.mixins.json"
+
+[[mixins]]
+config="create_dragons_plus.client.mixins.json"
+
+[[dependencies.diaithir_create_dragons_plus]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_dragons_plus]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_dragons_plus]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

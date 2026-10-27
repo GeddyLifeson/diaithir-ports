@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = "${minecraft_version}-${mod_version}"
+base { archivesName = 'create-enchantment-industry-neoforge' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+    maven { url = 'https://maven.createmod.net' }
+    maven { url = 'https://maven.shedaniel.me/' }
+    maven { url = 'https://maven.blamejared.com' }
+}
+neoForge {
+    version = project.neo_version
+    accessTransformers = project.files('src/main/resources/META-INF/accesstransformer.cfg')
+    mods { "diaithir_create_enchantment_industry" { sourceSet(sourceSets.main) } }
+}
+dependencies {
+    compileOnly files('../libs/create-neoforge-26.1.2-6.0.9-diaithir.8.jar')
+    compileOnly files('../cdp/build/libs/create-dragons-plus-neoforge-26.1.2-1.11.8-diaithir.1.jar')
+    compileOnly 'net.fabricmc:fabric-loader:0.19.2'
+}
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '100000']
+}
