@@ -45,8 +45,8 @@ public class MeatHookBlock extends BaseEntityBlock {
             }
             return InteractionResult.SUCCESS;
         }
-        if (!hook.isEmpty() && (held.is(Butchery.KNIFE.get()) || held.is(Butchery.CLEAVER.get()))) {
-            if (!level.isClientSide() && hook.work((net.minecraft.server.level.ServerLevel) level, pos, player)) {
+        if (!hook.isEmpty() && held.is(Butchery.TOOLS)) {
+            if (!level.isClientSide() && hook.work((net.minecraft.server.level.ServerLevel) level, pos, player, held)) {
                 held.hurtAndBreak(1, player, hand);
             }
             return InteractionResult.SUCCESS;

@@ -50,6 +50,8 @@ public final class Butchery {
     static final List<String> DRESSED = List.of("fish_fillet", "bird_breast", "drumstick", "wing", "haunch", "shoulder", "loin", "ribs", "flank", "tenderloin", "neck", "tail", "hock");
 
     public static final List<DeferredItem<Item>> ALL_ITEMS = new ArrayList<>();
+    /** Anything that can work a hung carcass: our knife and cleaver, Farmer's Delight knives and any pack knife added to the tag. */
+    public static final net.minecraft.tags.TagKey<Item> TOOLS = net.minecraft.tags.TagKey.create(Registries.ITEM, net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD, "butcher_tools"));
     public static final DeferredItem<Item> CARCASS = ITEMS.registerItem("carcass", Item::new, () -> new Item.Properties().stacksTo(1));
     public static final DeferredItem<Item> KNIFE = ITEMS.registerItem("butcher_knife", Item::new, () -> new Item.Properties().durability(250));
     public static final DeferredItem<Item> CLEAVER = ITEMS.registerItem("butcher_cleaver", Item::new, () -> new Item.Properties().durability(400));

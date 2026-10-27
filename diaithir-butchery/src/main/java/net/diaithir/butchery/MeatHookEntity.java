@@ -23,6 +23,7 @@ import java.util.List;
 public class MeatHookEntity extends BlockEntity {
     private ItemStack carcass = ItemStack.EMPTY;
     private int stage;
+    private long hungAt;
 
     public MeatHookEntity(BlockPos pos, BlockState state) {
         super(Butchery.HOOK_ENTITY.get(), pos, state);
@@ -39,6 +40,7 @@ public class MeatHookEntity extends BlockEntity {
     void hang(ItemStack one) {
         carcass = one;
         stage = 0;
+        hungAt = level != null ? level.getGameTime() : 0;
         setChanged();
     }
 
@@ -50,7 +52,7 @@ public class MeatHookEntity extends BlockEntity {
     }
 
     /** One knife stroke: yields for the current stage, skipping stages the body class has nothing for. Returns whether work was done. */
-    boolean work(ServerLevel level, BlockPos pos, Player player) {
+    boolean work(ServerLevel level, BlockPos pos, Player player, ItemStack tool) {
         String body = carcass.getOrDefault(Butchery.BODY.get(), "");
         if (!ButcheryData.known(body)) {
             player.sendOverlayMessage(Component.translatable("message.diaithirbutchery.unknown"));
@@ -65,9 +67,14 @@ public class MeatHookEntity extends BlockEntity {
         String species = carcass.getOrDefault(Butchery.SPECIES.get(), "");
         long killed = carcass.getOrDefault(Butchery.KILLED.get(), level.getGameTime());
         RandomSource rng = level.getRandom();
+        long hungFor = level.getGameTime() - hungAt;
         for (ButcheryData.Yield y : ButcheryData.yield(body, stage)) {
             Item item = BuiltInRegistries.ITEM.getValue(Identifier.parse(y.item()));
             int n = y.min() + (y.max() > y.min() ? rng.nextInt(y.max() - y.min() + 1) : 0);
+            // a carcass bleeds out while it hangs: a full flask takes a minute, a fresh one gives a fraction
+            if (y.item().endsWith(":blood_flask")) n = Math.max(n > 0 ? 1 : 0, (int) (n * Math.min(1.0, hungFor / 1200.0)));
+            // a cleaver takes a quarter more off the bone
+            if (stage == 2 && tool.is(Butchery.CLEAVER.get())) n += n / 4;
             if (n <= 0 || item == null || item == net.minecraft.world.item.Items.AIR) continue;
             ItemStack out = new ItemStack(item, n);
             if (!species.isEmpty()) {
@@ -90,6 +97,7 @@ public class MeatHookEntity extends BlockEntity {
         super.saveAdditional(output);
         output.store("carcass", ItemStack.OPTIONAL_CODEC, carcass);
         output.putInt("stage", stage);
+        output.putLong("hungAt", hungAt);
     }
 
     @Override
@@ -97,6 +105,7 @@ public class MeatHookEntity extends BlockEntity {
         super.loadAdditional(input);
         carcass = input.read("carcass", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         stage = input.getIntOr("stage", 0);
+        hungAt = input.getLongOr("hungAt", 0L);
     }
 
     List<ItemStack> contents() {

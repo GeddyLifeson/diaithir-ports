@@ -112,4 +112,5 @@ for c in CUTS:
 w(f"{D}/recipe/butcher_knife.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["I", "S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_knife"}})
 w(f"{D}/recipe/butcher_cleaver.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["II", "II", " S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_cleaver"}})
 w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["C", "I"], "key": {"C": "minecraft:iron_chain", "I": "minecraft:iron_ingot"}, "result": {"id": f"{MOD}:meat_hook"}})
+w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:butcher_knife", f"{MOD}:butcher_cleaver"] + [{"id": f"farmersdelight:{m}_knife", "required": False} for m in ("flint", "iron", "golden", "diamond", "netherite")]})
 print("ok", len(ITEMS), "items")
