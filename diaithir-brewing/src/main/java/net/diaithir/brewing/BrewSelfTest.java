@@ -17,6 +17,9 @@ import net.minecraft.core.Direction;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.transaction.Transaction;
 
@@ -119,7 +122,12 @@ final class BrewSelfTest {
         }
         if (be.base != Items.AIR) return "FAIL aborted insert was not rolled back";
         try (var tx = Transaction.openRoot()) {
-            be.automation.insert(ItemResource.of(r.base()), 1, tx);
+            if (r.base() instanceof net.minecraft.world.item.BucketItem bucket && bucketFluid(bucket) != Fluids.EMPTY) {
+                if (be.fluidIntake.insert(FluidResource.of(bucketFluid(bucket)), FluidType.BUCKET_VOLUME - 1, tx) != 0) return "FAIL a partial bucket of fluid was accepted";
+                if (be.fluidIntake.insert(FluidResource.of(bucketFluid(bucket)), FluidType.BUCKET_VOLUME, tx) != FluidType.BUCKET_VOLUME) return "FAIL fluid base not accepted";
+            } else {
+                be.automation.insert(ItemResource.of(r.base()), 1, tx);
+            }
             for (var e : r.ingredients().entrySet()) {
                 for (int i = 0; i < e.getValue(); i++) be.automation.insert(ItemResource.of(e.getKey()), 1, tx);
             }
@@ -133,6 +141,13 @@ final class BrewSelfTest {
             tx.commit();
         }
         return got == r.servings() ? null : "FAIL automation drew " + got + " of " + r.servings();
+    }
+
+    private static net.minecraft.world.level.material.Fluid bucketFluid(net.minecraft.world.item.BucketItem b) {
+        for (var f : BuiltInRegistries.FLUID) {
+            if (f.isSource(f.defaultFluidState()) && f.getBucket() == b) return f;
+        }
+        return Fluids.EMPTY;
     }
 
     private static boolean use(ServerLevel level, Player p, BlockPos pos, BlockHitResult hit, ItemStack stack) {

@@ -17,6 +17,8 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.transaction.SnapshotJournal;
 import net.neoforged.neoforge.transfer.transaction.TransactionContext;
@@ -279,4 +281,50 @@ public final class BrewVesselEntity extends BlockEntity {
     }
 
     final Automation automation = new Automation();
+
+    /** Pipes: one bucket of a recipe's base fluid (water, milk...) fills the base slot, same as pouring the bucket by hand. */
+    final class FluidIntake implements ResourceHandler<FluidResource> {
+        @Override
+        public int size() {
+            return 1;
+        }
+
+        @Override
+        public FluidResource getResource(int index) {
+            return FluidResource.EMPTY;
+        }
+
+        @Override
+        public long getAmountAsLong(int index) {
+            return 0;
+        }
+
+        @Override
+        public long getCapacityAsLong(int index, FluidResource resource) {
+            return isValid(0, resource) ? FluidType.BUCKET_VOLUME : 0;
+        }
+
+        @Override
+        public boolean isValid(int index, FluidResource resource) {
+            return index == 0 && !resource.isEmpty() && acceptsBase(resource.getFluid().getBucket());
+        }
+
+        @Override
+        public int insert(int index, FluidResource resource, int amount, TransactionContext tx) {
+            if (amount < FluidType.BUCKET_VOLUME || !isValid(index, resource)) {
+                return 0;
+            }
+            automation.updateSnapshots(tx);
+            base = resource.getFluid().getBucket();
+            tryStart();
+            return FluidType.BUCKET_VOLUME;
+        }
+
+        @Override
+        public int extract(int index, FluidResource resource, int amount, TransactionContext tx) {
+            return 0;
+        }
+    }
+
+    final FluidIntake fluidIntake = new FluidIntake();
 }

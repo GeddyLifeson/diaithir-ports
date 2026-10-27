@@ -48,7 +48,10 @@ public final class DiaithirBrewing {
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "recipes"), new BrewRecipes()));
         bus.addListener(RegisterCapabilitiesEvent.class,
-            e -> e.registerBlockEntity(Capabilities.Item.BLOCK, VESSEL_ENTITY.get(), (be, side) -> be.automation));
+            e -> {
+                e.registerBlockEntity(Capabilities.Item.BLOCK, VESSEL_ENTITY.get(), (be, side) -> be.automation);
+                e.registerBlockEntity(Capabilities.Fluid.BLOCK, VESSEL_ENTITY.get(), (be, side) -> be.fluidIntake);
+            });
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> BrewSelfTest.register(e.getDispatcher()));
     }
 }

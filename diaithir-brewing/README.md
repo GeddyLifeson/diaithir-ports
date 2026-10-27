@@ -6,7 +6,7 @@ Right-click with a base (a bucket of water, milk and so on) to pour it in; the c
 
 Cellar (an idea from Vintner's public description, written clean-room): each vessel scores 0 to 3 for being dark (block light 4 or less), cool (no flame, lava or lit furnace within 2 blocks) and sheltered (no open sky above). Fermenting runs at 0.5, 0.75, 1 or 1.5 times speed by score, and in a score-0 cellar a recipe that names a `spoiled` item can sour into it. An empty-hand click shows the percentage and the cellar score.
 
-Automation (the wine-cellar idea from Create: Winery, written from its public description only): hoppers, pipes and Create belts see an item handler with an input slot that takes one valid base or ingredient at a time and an output slot that gives the finished drinks directly, with full transaction rollback.
+Automation (the wine-cellar idea from Create: Winery, written from its public description only): hoppers, pipes and Create belts see an item handler with an input slot that takes one valid base or ingredient at a time and an output slot that gives the finished drinks directly, with full transaction rollback. A fluid handler takes one whole bucket (1000 mB) of any fluid whose bucket is a recipe's base (water, for example) from Create pipes or pumps, the same as pouring the bucket by hand (AlcoCraft+'s pipe-the-water-in idea, clean-room).
 
 Recipes are data files `data/<namespace>/diaithirbrewing/<name>.json` from any datapack (KubeJS can write them too):
 
