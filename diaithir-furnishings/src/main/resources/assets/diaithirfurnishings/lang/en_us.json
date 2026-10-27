@@ -1,5 +1,22 @@
 {
+ "block.diaithirfurnishings.acacia_signpost": "Komurra Akakia",
+ "block.diaithirfurnishings.bamboo_signpost": "Komurra Kraindchuilki",
+ "block.diaithirfurnishings.birch_signpost": "Komurra Beiti",
+ "block.diaithirfurnishings.cherry_signpost": "Komurra Sierist",
+ "block.diaithirfurnishings.clay_jar": "Krogun Krèada",
+ "block.diaithirfurnishings.crimson_signpost": "Komurra Kròderg",
+ "block.diaithirfurnishings.dark_oak_signpost": "Komurra Dauraig Dourcha",
+ "block.diaithirfurnishings.glass_jar": "Krogun Glaindech",
+ "block.diaithirfurnishings.jungle_signpost": "Komurra Dlùtchuildi",
+ "block.diaithirfurnishings.mangrove_signpost": "Komurra Kraeibesàili",
+ "block.diaithirfurnishings.oak_signpost": "Komurra Dauraig",
+ "block.diaithirfurnishings.pale_oak_signpost": "Komurra Dauraig Glasneilach",
  "block.diaithirfurnishings.rope": "Ròpu",
  "block.diaithirfurnishings.sack": "Sak",
- "block.diaithirfurnishings.sconce": "Solasbulda"
+ "block.diaithirfurnishings.sconce": "Solasbulda",
+ "block.diaithirfurnishings.spruce_signpost": "Komurra Giutais Lochlundaig",
+ "block.diaithirfurnishings.warped_signpost": "Komurra Toindti",
+ "gui.diaithirfurnishings.signpost": "Komurra",
+ "gui.diaithirfurnishings.signpost.line1": "First line",
+ "gui.diaithirfurnishings.signpost.line2": "Second line"
 }

@@ -1,6 +1,18 @@
 {
  "values": [
   "diaithirfurnishings:rope",
-  "diaithirfurnishings:sack"
+  "diaithirfurnishings:sack",
+  "diaithirfurnishings:oak_signpost",
+  "diaithirfurnishings:spruce_signpost",
+  "diaithirfurnishings:birch_signpost",
+  "diaithirfurnishings:jungle_signpost",
+  "diaithirfurnishings:acacia_signpost",
+  "diaithirfurnishings:dark_oak_signpost",
+  "diaithirfurnishings:mangrove_signpost",
+  "diaithirfurnishings:cherry_signpost",
+  "diaithirfurnishings:pale_oak_signpost",
+  "diaithirfurnishings:bamboo_signpost",
+  "diaithirfurnishings:crimson_signpost",
+  "diaithirfurnishings:warped_signpost"
  ]
 }

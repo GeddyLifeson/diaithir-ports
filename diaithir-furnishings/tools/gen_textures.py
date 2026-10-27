@@ -74,9 +74,57 @@ def sconce(rng):
     return img
 
 
+def clay_jar(rng):
+    img = Image.new("RGBA", (16, 16))
+    base = (168, 98, 62)
+    for y in range(16):
+        for x in range(16):
+            k = 1.0 + rng.uniform(-0.07, 0.07)
+            if y in (3, 4, 11):
+                k *= 0.78  # darker fired bands turned on the wheel
+            if y == 5:
+                k *= 1.12
+            if x < 2:
+                k *= 0.88  # shadow side
+            img.putpixel((x, y), shade(base, k) + (255,))
+    return img
+
+
+def clay_jar_inner(rng):
+    img = Image.new("RGBA", (16, 16))
+    for y in range(16):
+        for x in range(16):
+            img.putpixel((x, y), shade((92, 52, 34), 1.0 + rng.uniform(-0.1, 0.1)) + (255,))
+    return img
+
+
+def glass_jar(rng):
+    img = Image.new("RGBA", (16, 16))
+    for y in range(16):
+        for x in range(16):
+            edge = x in (0, 15) or y in (0, 15)
+            a = 150 if edge else 46
+            if x in (2, 3) and 2 < y < 13:
+                a = 120  # window glint
+            img.putpixel((x, y), (190 + int(rng.uniform(-6, 6)), 222, 226, a))
+    return img
+
+
+def jar_lid(rng):
+    img = Image.new("RGBA", (16, 16))
+    base = (190, 146, 94)
+    for y in range(16):
+        for x in range(16):
+            k = 1.0 + rng.uniform(-0.12, 0.12)
+            if rng.random() < 0.12:
+                k *= 0.7  # cork pores
+            img.putpixel((x, y), shade(base, k) + (255,))
+    return img
+
+
 def main():
     rng = random.Random(1)
-    for name, fn in (("block/rope", rope), ("item/rope", rope_item), ("block/sack", sack), ("block/sconce", sconce)):
+    for name, fn in (("block/rope", rope), ("item/rope", rope_item), ("block/sack", sack), ("block/sconce", sconce), ("block/clay_jar", clay_jar), ("block/clay_jar_inner", clay_jar_inner), ("block/glass_jar", glass_jar), ("block/jar_lid", jar_lid)):
         (OUT / name).parent.mkdir(parents=True, exist_ok=True)
         fn(rng).save(OUT / f"{name}.png")
 
