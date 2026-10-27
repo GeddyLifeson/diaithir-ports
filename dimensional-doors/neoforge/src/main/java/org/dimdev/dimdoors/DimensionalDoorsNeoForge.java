@@ -439,7 +439,6 @@ public class DimensionalDoorsNeoForge extends SidedImpl {
     }
 
     public void initBuiltinPacks() {
-        NeoForge.EVENT_BUS.addListener(DimensionalDoorsNeoForge::addReloaders);
 //        FMLJavaModLoadingContext.get().getModEventBus().addListener(DimensionalDoorsImpl::addPackFinders);
     }
 

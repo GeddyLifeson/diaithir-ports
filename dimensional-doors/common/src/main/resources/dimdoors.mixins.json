@@ -7,12 +7,12 @@
   "mixins": [
     "ArgumentTypesMixin",
     "BlockMixin",
+    "BlockPropertiesMixin",
     "ContextClipMixin",
     "DoorBlockMixin",
     "DoublePlantBlockMixin",
     "EnderManMixin",
     "EntityMixin",
-    "ExplosionMixin",
     "ItemMixin",
     "ItemMixin$SettingsMixin",
     "LevelChunkMixin",
@@ -37,7 +37,6 @@
     "accessor.DirectionAccessor",
     "accessor.EntityAccessor",
     "accessor.GenerationSettingsAccessor",
-    "accessor.ListTagAccessor",
     "accessor.RedstoneWireBlockAccessor"
   ],
   "client": [
@@ -46,6 +45,6 @@
     "client.ParticleEngineMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }

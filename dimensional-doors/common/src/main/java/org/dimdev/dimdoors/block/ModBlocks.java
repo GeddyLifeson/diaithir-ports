@@ -35,17 +35,17 @@ public final class ModBlocks {
 
     private static final Map<DyeColor, Block> ANCIENT_FABRIC_BLOCKS = new HashMap<DyeColor, Block>();
 
-    public static final Block STONE_PLAYER = registerWithoutTabOrItem("stone_player", new Block(ofFullCopy(STONE).strength(0.5F).noOcclusion()));
+    public static final Block STONE_PLAYER = registerWithoutTabOrItem("stone_player", () -> new Block(ofFullCopy(STONE).strength(0.5F).noOcclusion()));
 
-    public static final Block GOLD_DOOR = register("gold_door", new ModDoorBlock(BlockSetType.GOLD, ofFullCopy(GOLD_BLOCK).strength(5.0F).requiresCorrectToolForDrops()));
+    public static final Block GOLD_DOOR = register("gold_door", () -> new ModDoorBlock(BlockSetType.GOLD, ofFullCopy(GOLD_BLOCK).strength(5.0F).requiresCorrectToolForDrops()));
 
-    public static final Block STONE_DOOR = register("stone_door", new ModDoorBlock(BlockSetType.IRON, ofFullCopy(STONE).mapColor(WOOD).strength(5.0F).requiresCorrectToolForDrops()));
+    public static final Block STONE_DOOR = register("stone_door", () -> new ModDoorBlock(BlockSetType.IRON, ofFullCopy(STONE).mapColor(WOOD).strength(5.0F).requiresCorrectToolForDrops()));
 
-    public static final Block QUARTZ_DOOR = register("quartz_door", new ModDoorBlock(BlockSetType.IRON, ofFullCopy(QUARTZ_BLOCK).strength(5.0F).requiresCorrectToolForDrops()));
+    public static final Block QUARTZ_DOOR = register("quartz_door", () -> new ModDoorBlock(BlockSetType.IRON, ofFullCopy(QUARTZ_BLOCK).strength(5.0F).requiresCorrectToolForDrops()));
 
-    public static final Block DIMENSIONAL_PORTAL = registerWithoutTab("dimensional_portal", new DimensionalPortalBlock(BlockBehaviour.Properties.of().noLootTable().strength(-1.0F, 3600000.0F).noOcclusion().lightLevel(blockState -> 10)));
+    public static final Block DIMENSIONAL_PORTAL = registerWithoutTab("dimensional_portal", () -> new DimensionalPortalBlock(BlockBehaviour.Properties.of().noLootTable().strength(-1.0F, 3600000.0F).noOcclusion().lightLevel(blockState -> 10)));
 
-    public static final Block DETACHED_RIFT = registerWithoutTabOrItem("detached_rift", new DetachedRiftBlock(BlockBehaviour.Properties.of().noCollision().noLootTable().mapColor(COLOR_BLACK).strength(-1.0F, 3600000.0F)));
+    public static final Block DETACHED_RIFT = registerWithoutTabOrItem("detached_rift", () -> new DetachedRiftBlock(BlockBehaviour.Properties.of().noCollision().noLootTable().mapColor(COLOR_BLACK).strength(-1.0F, 3600000.0F)));
 
     public static final Block WHITE_FABRIC = registerFabric(DyeColor.WHITE);
 
@@ -113,63 +113,63 @@ public final class ModBlocks {
     public static final Block BLACK_ANCIENT_FABRIC = registerAncientFabric(DyeColor.BLACK);
     private static final BlockBehaviour.Properties UNRAVELLED_FABRIC_BLOCK_SETTINGS = ofFullCopy(STONE).mapColor(COLOR_BLACK).randomTicks().lightLevel(state -> 15).strength(0.3F, 0.3F);
 
-    public static final LiquidBlock ETERNAL_FLUID = registerWithoutTabOrItem("eternal_fluid", new EternalFluidBlock(ofFullCopy(LAVA).mapColor(COLOR_RED).lightLevel(state -> 15)));
+    public static final LiquidBlock ETERNAL_FLUID = registerWithoutTabOrItem("eternal_fluid", () -> new EternalFluidBlock(ofFullCopy(LAVA).mapColor(COLOR_RED).lightLevel(state -> 15)));
 
-    public static final LiquidBlock LEAK = registerWithoutTabOrItem("leak", new LeakLiquidBlock(ModFluids.LEAK, ofFullCopy(WATER)));
+    public static final LiquidBlock LEAK = registerWithoutTabOrItem("leak", () -> new LeakLiquidBlock(ModFluids.LEAK, ofFullCopy(WATER)));
 
-    public static final Block DECAYED_BLOCK = registerWithoutTabOrItem("decayed_block", new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block DECAYED_BLOCK = registerWithoutTabOrItem("decayed_block", () -> new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
 
-    public static final Block UNFOLDED_BLOCK = registerWithoutTabOrItem("unfolded_block", new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block UNFOLDED_BLOCK = registerWithoutTabOrItem("unfolded_block", () -> new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
 
-    public static final Block UNWARPED_BLOCK = registerWithoutTabOrItem("unwarped_block", new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block UNWARPED_BLOCK = registerWithoutTabOrItem("unwarped_block", () -> new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
 
-    public static final Block UNRAVELLED_BLOCK = registerWithoutTabOrItem("unravelled_block", new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block UNRAVELLED_BLOCK = registerWithoutTabOrItem("unravelled_block", () -> new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
 
-    public static final Block UNRAVELLED_FABRIC = register("unravelled_fabric", new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block UNRAVELLED_FABRIC = register("unravelled_fabric", () -> new UnravelledFabricBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
 
-    public static final Block MARKING_PLATE = registerWithoutTabOrItem("marking_plate", new Block(ofFullCopy(IRON_BLOCK).mapColor(DyeColor.BLACK).noOcclusion()));
+    public static final Block MARKING_PLATE = registerWithoutTabOrItem("marking_plate", () -> new Block(ofFullCopy(IRON_BLOCK).mapColor(DyeColor.BLACK).noOcclusion()));
 
-    public static final Block SOLID_STATIC = register("solid_static", new UnravelledFabricBlock(ofFullCopy(STONE).strength(7, 25).randomTicks().requiresCorrectToolForDrops().sound(SoundType.SAND)));
+    public static final Block SOLID_STATIC = register("solid_static", () -> new UnravelledFabricBlock(ofFullCopy(STONE).strength(7, 25).randomTicks().requiresCorrectToolForDrops().sound(SoundType.SAND)));
 
-    public static final Block TESSELATING_LOOM = register("tesselating_loom", new TesselatingLoomBlock(of(LOOM)));
+    public static final Block TESSELATING_LOOM = register("tesselating_loom", () -> new TesselatingLoomBlock(of(LOOM)));
 
-    public static final Block REALITY_SPONGE = register("reality_sponge", new RealitySpongeBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
-    public static final Block LIMBO_AIR = registerWithoutTabOrItem("limbo_air", new LimboAirBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollision().noLootTable().air()));
+    public static final Block REALITY_SPONGE = register("reality_sponge", () -> new RealitySpongeBlock(UNRAVELLED_FABRIC_BLOCK_SETTINGS));
+    public static final Block LIMBO_AIR = registerWithoutTabOrItem("limbo_air", () -> new LimboAirBlock(BlockBehaviour.Properties.of().randomTicks().replaceable().noCollision().noLootTable().air()));
 
     //Decay graph filler.
 
-    public static final Block CLOD_ORE = registerDecay("clod_ore", new Block(ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final Block CLOD_BLOCK = registerDecay("clod_block", new Block(ofFullCopy(Blocks.AMETHYST_BLOCK)));
+    public static final Block CLOD_ORE = registerDecay("clod_ore", () -> new Block(ofFullCopy(Blocks.AMETHYST_BLOCK)));
+    public static final Block CLOD_BLOCK = registerDecay("clod_block", () -> new Block(ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final Block AMALGAM_BLOCK = registerDecay("amalgam_block", new Block(ofFullCopy(IRON_BLOCK).mapColor(COLOR_LIGHT_GRAY).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
-    public static final Block AMALGAM_DOOR = registerDecay("amalgam_door", new ModDoorBlock(BlockSetType.IRON, ofFullCopy(IRON_BLOCK).mapColor(COLOR_LIGHT_GRAY).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).noOcclusion()));
-    public static final Block AMALGAM_TRAPDOOR = registerDecay("amalgam_trapdoor", new ModTrapDoorBlock(BlockSetType.IRON, ofFullCopy(IRON_BLOCK).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).isValidSpawn((state, world, pos, type) -> false)));
-    public static final Block AMALGAM_SLAB = registerDecay("amalgam_slab", new SlabBlock(of(AMALGAM_BLOCK)));
-    public static final Block AMALGAM_STAIRS = registerDecay("amalgam_stairs", new ModStairBlock(AMALGAM_BLOCK.defaultBlockState(), of(AMALGAM_BLOCK)));
-    public static final Block AMALGAM_ORE = registerDecay("amalgam_ore", new DropExperienceBlock(ConstantInt.of(1), ofFullCopy(STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
+    public static final Block AMALGAM_BLOCK = registerDecay("amalgam_block", () -> new Block(ofFullCopy(IRON_BLOCK).mapColor(COLOR_LIGHT_GRAY).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
+    public static final Block AMALGAM_DOOR = registerDecay("amalgam_door", () -> new ModDoorBlock(BlockSetType.IRON, ofFullCopy(IRON_BLOCK).mapColor(COLOR_LIGHT_GRAY).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block AMALGAM_TRAPDOOR = registerDecay("amalgam_trapdoor", () -> new ModTrapDoorBlock(BlockSetType.IRON, ofFullCopy(IRON_BLOCK).requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.METAL).isValidSpawn((state, world, pos, type) -> false)));
+    public static final Block AMALGAM_SLAB = registerDecay("amalgam_slab", () -> new SlabBlock(of(AMALGAM_BLOCK)));
+    public static final Block AMALGAM_STAIRS = registerDecay("amalgam_stairs", () -> new ModStairBlock(AMALGAM_BLOCK.defaultBlockState(), of(AMALGAM_BLOCK)));
+    public static final Block AMALGAM_ORE = registerDecay("amalgam_ore", () -> new DropExperienceBlock(ConstantInt.of(1), ofFullCopy(STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
-    public static final Block RUST = registerDecay("rust", new Block(ofFullCopy(OAK_WOOD)));
+    public static final Block RUST = registerDecay("rust", () -> new Block(ofFullCopy(OAK_WOOD)));
 
-    public static final Block DRIFTWOOD_WOOD = registerDecay("driftwood_wood", new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
-    public static final Block DRIFTWOOD_LOG = registerDecay("driftwood_log", new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
-    public static final Block DRIFTWOOD_PLANKS = registerDecay("driftwood_planks", new Block(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Block DRIFTWOOD_LEAVES = registerDecay("driftwood_leaves", new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, of(OAK_LEAVES)));
-    public static final Block DRIFTWOOD_SAPLING = registerDecay("driftwood_sapling", new DriftwoodSaplingBlock(of(OAK_SAPLING)));
-    public static final Block DRIFTWOOD_FENCE = registerDecay("driftwood_fence", new FenceBlock(of(DRIFTWOOD_PLANKS)));
-    public static final Block DRIFTWOOD_GATE = registerDecay("driftwood_gate", new FenceGateBlock(WoodType.OAK, of(DRIFTWOOD_PLANKS)));
-    public static final Block DRIFTWOOD_BUTTON = registerDecay("driftwood_button", new ModButtonBlock(BlockSetType.STONE, 20, of(DRIFTWOOD_PLANKS).noCollision().strength(0.5F)));
-    public static final Block DRIFTWOOD_SLAB = registerDecay("driftwood_slab", new SlabBlock(of(DRIFTWOOD_PLANKS)));
-    public static final Block DRIFTWOOD_STAIRS = registerDecay("driftwood_stairs", new ModStairBlock(DRIFTWOOD_PLANKS.defaultBlockState(), of(DRIFTWOOD_PLANKS)));
-    public static final Block DRIFTWOOD_DOOR = registerDecay("driftwood_door", new ModDoorBlock(BlockSetType.OAK, ofFullCopy(OAK_WOOD).mapColor(COLOR_GRAY).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
-    public static final Block DRIFTWOOD_TRAPDOOR = registerDecay("driftwood_trapdoor", new ModTrapDoorBlock(BlockSetType.OAK, ofFullCopy(OAK_WOOD).mapColor(COLOR_GRAY).strength(3.0F).sound(SoundType.WOOD).noOcclusion().isValidSpawn((state, world, pos, type) -> false)));
+    public static final Block DRIFTWOOD_WOOD = registerDecay("driftwood_wood", () -> new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
+    public static final Block DRIFTWOOD_LOG = registerDecay("driftwood_log", () -> new RotatedPillarBlock(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F).sound(SoundType.WOOD)));
+    public static final Block DRIFTWOOD_PLANKS = registerDecay("driftwood_planks", () -> new Block(ofFullCopy(OAK_WOOD).mapColor(COLOR_LIGHT_GRAY).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final Block DRIFTWOOD_LEAVES = registerDecay("driftwood_leaves", () -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, of(OAK_LEAVES)));
+    public static final Block DRIFTWOOD_SAPLING = registerDecay("driftwood_sapling", () -> new DriftwoodSaplingBlock(of(OAK_SAPLING)));
+    public static final Block DRIFTWOOD_FENCE = registerDecay("driftwood_fence", () -> new FenceBlock(of(DRIFTWOOD_PLANKS)));
+    public static final Block DRIFTWOOD_GATE = registerDecay("driftwood_gate", () -> new FenceGateBlock(WoodType.OAK, of(DRIFTWOOD_PLANKS)));
+    public static final Block DRIFTWOOD_BUTTON = registerDecay("driftwood_button", () -> new ModButtonBlock(BlockSetType.STONE, 20, of(DRIFTWOOD_PLANKS).noCollision().strength(0.5F)));
+    public static final Block DRIFTWOOD_SLAB = registerDecay("driftwood_slab", () -> new SlabBlock(of(DRIFTWOOD_PLANKS)));
+    public static final Block DRIFTWOOD_STAIRS = registerDecay("driftwood_stairs", () -> new ModStairBlock(DRIFTWOOD_PLANKS.defaultBlockState(), of(DRIFTWOOD_PLANKS)));
+    public static final Block DRIFTWOOD_DOOR = registerDecay("driftwood_door", () -> new ModDoorBlock(BlockSetType.OAK, ofFullCopy(OAK_WOOD).mapColor(COLOR_GRAY).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
+    public static final Block DRIFTWOOD_TRAPDOOR = registerDecay("driftwood_trapdoor", () -> new ModTrapDoorBlock(BlockSetType.OAK, ofFullCopy(OAK_WOOD).mapColor(COLOR_GRAY).strength(3.0F).sound(SoundType.WOOD).noOcclusion().isValidSpawn((state, world, pos, type) -> false)));
 
-    public static final Block DARK_SAND = registerDecay("dark_sand", new Block(ofFullCopy(SAND).mapColor(COLOR_BLACK).strength(0.5F).sound(SoundType.SAND)));
-    public static final Block PALE_SAND = registerDecay("pale_sand", new ColoredFallingBlock(new ColorRGBA(0xFFF2E9D1), ofFullCopy(SAND).mapColor(COLOR_LIGHT_GRAY).strength(0.5F).sound(SoundType.SAND)));
-    public static final Block DARK_SAND_LAYER = registerDecay("dark_sand_layer", new CarpetBlock(ofFullCopy(MOSS_CARPET).mapColor(COLOR_BLACK).sound(SoundType.SAND)));
-    public static final Block LINT_LAYER = registerDecay("lint_layer", new CarpetBlock(ofFullCopy(MOSS_CARPET).mapColor(COLOR_LIGHT_GRAY)));
-    public static final Block STONE_SLAB = registerDecay("stone_slab", new SlabBlock(of(STONE)));
-    public static final Block STONE_STAIRS = registerDecay("stone_stairs", new ModStairBlock(STONE.defaultBlockState(), of(STONE)));
-    public static final Block STONE_WALL = registerDecay("stone_wall", new WallBlock(of(STONE)));
+    public static final Block DARK_SAND = registerDecay("dark_sand", () -> new Block(ofFullCopy(SAND).mapColor(COLOR_BLACK).strength(0.5F).sound(SoundType.SAND)));
+    public static final Block PALE_SAND = registerDecay("pale_sand", () -> new ColoredFallingBlock(new ColorRGBA(0xFFF2E9D1), ofFullCopy(SAND).mapColor(COLOR_LIGHT_GRAY).strength(0.5F).sound(SoundType.SAND)));
+    public static final Block DARK_SAND_LAYER = registerDecay("dark_sand_layer", () -> new CarpetBlock(ofFullCopy(MOSS_CARPET).mapColor(COLOR_BLACK).sound(SoundType.SAND)));
+    public static final Block LINT_LAYER = registerDecay("lint_layer", () -> new CarpetBlock(ofFullCopy(MOSS_CARPET).mapColor(COLOR_LIGHT_GRAY)));
+    public static final Block STONE_SLAB = registerDecay("stone_slab", () -> new SlabBlock(of(STONE)));
+    public static final Block STONE_STAIRS = registerDecay("stone_stairs", () -> new ModStairBlock(STONE.defaultBlockState(), of(STONE)));
+    public static final Block STONE_WALL = registerDecay("stone_wall", () -> new WallBlock(of(STONE)));
 
     public record DecayGroupSet(
             Block fence,
@@ -183,12 +183,12 @@ public final class ModBlocks {
 
         public static DecayGroupSet create(String name, Block block, BlockBehaviour.Properties properites) {
             var set = new DecayGroupSet(
-                    registerDecay(name + "_fence", new FenceBlock(properites)),
-                    registerDecay(name + "_gate", new FenceGateBlock(WoodType.OAK, properites)),
-                    registerDecay(name + "_button", new ModButtonBlock(BlockSetType.STONE, 20, properites.noCollision().strength(0.5F))),
-                    registerDecay(name + "_slab", new SlabBlock(properites)),
-                    registerDecay(name + "_stairs", new ModStairBlock(block.defaultBlockState(), properites)),
-                    registerDecay(name + "_wall", new WallBlock(properites))
+                    registerDecay(name + "_fence", () -> new FenceBlock(properites)),
+                    registerDecay(name + "_gate", () -> new FenceGateBlock(WoodType.OAK, properites)),
+                    registerDecay(name + "_button", () -> new ModButtonBlock(BlockSetType.STONE, 20, properites.noCollision().strength(0.5F))),
+                    registerDecay(name + "_slab", () -> new SlabBlock(properites)),
+                    registerDecay(name + "_stairs", () -> new ModStairBlock(block.defaultBlockState(), properites)),
+                    registerDecay(name + "_wall", () -> new WallBlock(properites))
             );
 
             SETS.add(set);
@@ -250,8 +250,8 @@ public final class ModBlocks {
     public static final DecayGroupSet END_STONE_SET = DecayGroupSet.create("end_stone", Blocks.END_STONE);
     public static final DecayGroupSet NETHERRACK_SET = DecayGroupSet.create("netherrack", Blocks.NETHERRACK);
 
-    public static final Block UNRAVELED_SPIKE = registerDecay("unraveled_spike", new PointedDripstoneBlock(of(UNRAVELLED_FABRIC).lightLevel(state -> 0))); //TODO: make this proper class later
-    public static final Block GRITTY_STONE = registerDecay("gritty_stone", new Block(of(STONE)));
+    public static final Block UNRAVELED_SPIKE = registerDecay("unraveled_spike", () -> new PointedDripstoneBlock(of(UNRAVELLED_FABRIC).lightLevel(state -> 0))); //TODO: make this proper class later
+    public static final Block GRITTY_STONE = registerDecay("gritty_stone", () -> new Block(of(STONE)));
 
 
     public static void init() {
@@ -260,18 +260,18 @@ public final class ModBlocks {
         ModBlockEntityTypes.ENTRANCE_RIFT.addBlock(ModBlocks.DIMENSIONAL_PORTAL);
     }
 
-    private static <T extends Block> T registerWithoutTabOrItem(String name, T block) {
-        return DimensionalDoors.getSided().register(Registries.BLOCK, name, block);
+    private static <T extends Block> T registerWithoutTabOrItem(String name, java.util.function.Supplier<T> blockSupplier) {
+        return DimensionalDoors.getSided().register(Registries.BLOCK, name, BlockIdHolder.with(name, blockSupplier));
     }
 
     private static Block registerAncientFabric(DyeColor color) {
-        Block block = register(color.getSerializedName() + "_ancient_fabric", new AncientFabricBlock(color));
+        Block block = register(color.getSerializedName() + "_ancient_fabric", () -> new AncientFabricBlock(color));
         ANCIENT_FABRIC_BLOCKS.put(color, block);
         return block;
     }
 
     private static Block registerFabric(DyeColor color) {
-        Block block = register(color.getSerializedName() + "_fabric", new FabricBlock(color));
+        Block block = register(color.getSerializedName() + "_fabric", () -> new FabricBlock(color));
         FABRIC_BLOCKS.put(color, block);
         return block;
     }
@@ -284,29 +284,33 @@ public final class ModBlocks {
         return FABRIC_BLOCKS.get(color);
     }
 
-    public static <T extends Block> T register(String name, T block) {
+    public static <T extends Block> T register(String name, java.util.function.Supplier<T> blockSupplier) {
         var sided = DimensionalDoors.getSided();
-        var supplier = sided.register(Registries.BLOCK, name, block);
-        var item = sided.register(Registries.ITEM, name, new BlockItem(supplier, new Item.Properties()));
-        sided.appendStack(DIMENSIONAL_DOORS, item.getDefaultInstance());
+        var supplier = sided.register(Registries.BLOCK, name, BlockIdHolder.with(name, blockSupplier));
+        var item = sided.register(Registries.ITEM, name, new BlockItem(supplier, itemProps(name)));
+        sided.appendStack(DIMENSIONAL_DOORS, item);
 
         return supplier;
     }
 
-    public static <T extends Block> T registerDecay(String name, T block) {
+    public static <T extends Block> T registerDecay(String name, java.util.function.Supplier<T> blockSupplier) {
         var sided = DimensionalDoors.getSided();
-        var supplier = sided.register(Registries.BLOCK, name, block);
-        var item = sided.register(Registries.ITEM, name, new BlockItem(supplier, new Item.Properties()));
-        sided.appendStack(DECAY, item.getDefaultInstance());
+        var supplier = sided.register(Registries.BLOCK, name, BlockIdHolder.with(name, blockSupplier));
+        var item = sided.register(Registries.ITEM, name, new BlockItem(supplier, itemProps(name)));
+        sided.appendStack(DECAY, item);
         return supplier;
     }
 
-    public static <T extends Block> T registerWithoutTab(String name, T block) {
+    public static <T extends Block> T registerWithoutTab(String name, java.util.function.Supplier<T> blockSupplier) {
         var sided = DimensionalDoors.getSided();
-        var supplier = sided.register(Registries.BLOCK, name, block);
-        sided.register(Registries.ITEM, name, new BlockItem(supplier, new Item.Properties()));
+        var supplier = sided.register(Registries.BLOCK, name, BlockIdHolder.with(name, blockSupplier));
+        sided.register(Registries.ITEM, name, new BlockItem(supplier, itemProps(name)));
 
         return supplier;
+    }
+
+    private static Item.Properties itemProps(String name) {
+        return new Item.Properties().setId(net.minecraft.resources.ResourceKey.create(Registries.ITEM, DimensionalDoors.id(name))).useBlockDescriptionPrefix();
     }
 
     private static BlockBehaviour.Properties of(Block block) {

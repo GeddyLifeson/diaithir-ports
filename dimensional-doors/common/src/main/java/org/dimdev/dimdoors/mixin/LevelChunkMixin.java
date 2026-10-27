@@ -37,14 +37,14 @@ public abstract class LevelChunkMixin {
     }
 
     @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;onRemove(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V"))
-    public void blockEntityStore(BlockPos blockPos, BlockState blockState, boolean bl, CallbackInfoReturnable<BlockState> cir2) {
+    public void blockEntityStore(BlockPos blockPos, BlockState blockState, int bl, CallbackInfoReturnable<BlockState> cir2) {
         if(blockState.getBlock() instanceof PerservesBlockEntity b && b.isCompatible(getBlockState(blockPos))) {
             this.blockEntityToBetransfered = this.getBlockEntity(blockPos);
         }
     }
 
     @Inject(method = "setBlockState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/chunk/LevelChunk;addAndRegisterBlockEntity(Lnet/minecraft/world/level/block/entity/BlockEntity;)V"))
-    public void blockEntityRetrieve(BlockPos blockPos, BlockState newState, boolean moved, CallbackInfoReturnable<BlockState> cir, @Local BlockEntity blockEntity) {
+    public void blockEntityRetrieve(BlockPos blockPos, BlockState newState, int moved, CallbackInfoReturnable<BlockState> cir, @Local BlockEntity blockEntity) {
         if(blockEntityToBetransfered != null) {
             if(newState.getBlock() instanceof PerservesBlockEntity perservesBlockEntity) {
                 perservesBlockEntity.attemptTransfer(blockEntity, blockEntityToBetransfered);

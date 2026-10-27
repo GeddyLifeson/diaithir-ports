@@ -18,9 +18,6 @@ public abstract class EntityMixin implements LastPositionProvider {
     @Shadow
     public abstract Level level();
 
-    @Shadow
-    @Nullable
-    public abstract MinecraftServer getServer();
 
     private Vec3 lastPos;
 

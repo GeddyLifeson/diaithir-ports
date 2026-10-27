@@ -21,7 +21,7 @@ public abstract class PlayerEntityMixin extends LivingEntityMixin {
     public abstract void awardStat(Identifier stat);
 
     @Inject(method = "causeFallDamage", at = @At("HEAD"), cancellable = true)
-    public void handleLimboFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+    public void handleLimboFallDamage(double fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if (ModDimensions.isLimboDimension(level())) {
             cir.setReturnValue(false);
         }

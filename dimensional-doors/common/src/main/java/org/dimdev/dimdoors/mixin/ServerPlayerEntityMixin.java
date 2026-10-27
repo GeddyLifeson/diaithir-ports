@@ -41,9 +41,6 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntityMixin implemen
     private ServerRecipeBook recipeBook;
 
     @Shadow
-    public abstract void readAdditionalSaveData(CompoundTag nbt);
-
-    @Shadow
     public abstract void awardStat(Stat<?> arg, int i);
 
     @Shadow
@@ -152,13 +149,13 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntityMixin implemen
             }
             this.awardStat(ModStats.TIMES_SENT_TO_LIMBO);
             TeleportUtil.teleportRandom((Entity) (Object) this, ModDimensions.LIMBO_DIMENSION, 512);
-            LimboEntranceSource.ofDamageSource(source).broadcast((Player) (Object) this, this.getServer());
+            LimboEntranceSource.ofDamageSource(source).broadcast((Player) (Object) this, ((net.minecraft.server.level.ServerLevel) this.level()).getServer());
         }
     }
 
     @Inject(method = "setRespawnPosition", at = @At("TAIL"))
-    public void onSpawnPointSet(ResourceKey<Level> dimension, BlockPos pos, float angle, boolean spawnPointSet, boolean bl, CallbackInfo ci) {
-        if (ModDimensions.isPocketDimension(dimension)) {
+    public void onSpawnPointSet(ServerPlayer.RespawnConfig config, boolean bl, CallbackInfo ci) {
+        if (config != null && ModDimensions.isPocketDimension(config.respawnData().dimension())) {
             ModCriteria.POCKET_SPAWN_POINT_SET.trigger((ServerPlayer) (Object) this);
         }
     }

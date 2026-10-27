@@ -1,7 +1,7 @@
 {
-  "carvers": {
-    "air": "dimdoors:limbo"
-  },
+  "carvers": [
+    "dimdoors:limbo"
+  ],
   "downfall": 0.0,
   "effects": {
     "fog_color": 4210752,

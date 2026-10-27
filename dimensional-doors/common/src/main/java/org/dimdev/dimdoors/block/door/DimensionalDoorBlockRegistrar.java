@@ -225,7 +225,7 @@ public class DimensionalDoorBlockRegistrar {
 
     private void registerDoor(Identifier location, DoorBlock original, DoorProduction production) {
         Identifier gennedId = generatedId(location);
-        GeneratedDoorContext context = new GeneratedDoorContext(location, gennedId, createProperties(original));
+        GeneratedDoorContext context = new GeneratedDoorContext(location, gennedId, createProperties(original).setId(ResourceKey.create(Registries.BLOCK, gennedId)));
 
         var result = production.createDoor(context, original);
 
@@ -234,7 +234,7 @@ public class DimensionalDoorBlockRegistrar {
 
     private void registerTrapdoor(Identifier location, TrapDoorBlock original, DoorProduction production) {
         Identifier gennedId = generatedId(location);
-        GeneratedDoorContext context = new GeneratedDoorContext(location, gennedId, createProperties(original));
+        GeneratedDoorContext context = new GeneratedDoorContext(location, gennedId, createProperties(original).setId(ResourceKey.create(Registries.BLOCK, gennedId)));
 
         var result = production.createTrapdoor(context, original);
 

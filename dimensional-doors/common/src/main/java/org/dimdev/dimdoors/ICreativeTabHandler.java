@@ -5,7 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public interface ICreativeTabHandler {
-    void appendStack(CreativeModeTab tab, ItemStack item);
+    void appendStack(CreativeModeTab tab, net.minecraft.world.level.ItemLike item);
 
     void modify(CreativeModeTab tab, ModifyTabCallback filler);
 

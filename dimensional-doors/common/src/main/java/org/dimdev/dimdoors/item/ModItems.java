@@ -93,27 +93,35 @@ public final class ModItems {
     public static final Set<Item> DOOR_ITEMS = new HashSet<>();
 
     public static Item registerRegular(String name, Function<Item.Properties, Item> item) {
-        return register(name, item.apply(new Item.Properties()), DIMENSIONAL_DOORS);
+        return register(name, item.apply(itemProps(name)), DIMENSIONAL_DOORS);
     }
 
     public static Item registerDecay(String name, Function<Item.Properties, Item> item) {
-        return register(name, item.apply(new Item.Properties()), DECAY);
+        return register(name, item.apply(itemProps(name)), DECAY);
     }
 
     private static ArmorSet registerArmorSet(String name, ArmorMaterial material, Consumer<Item.Properties> propertiesConsumer) {
         var properties = new Item.Properties().stacksTo(1);
 
-        var helmet = register(name + "_helmet", new Item(properties.humanoidArmor(material, ArmorType.HELMET)), DIMENSIONAL_DOORS);
-        var chestplate = register(name + "_chestplate", new Item(properties.humanoidArmor(material, ArmorType.CHESTPLATE)), DIMENSIONAL_DOORS);
-        var leggings = register(name + "_leggings", new Item(properties.humanoidArmor(material, ArmorType.LEGGINGS)), DIMENSIONAL_DOORS);
-        var boots = register(name + "_boots", new Item(properties.humanoidArmor(material, ArmorType.BOOTS)), DIMENSIONAL_DOORS);
+        var helmet = register(name + "_helmet", new Item(properties.setId(itemKey(name + "_helmet")).humanoidArmor(material, ArmorType.HELMET)), DIMENSIONAL_DOORS);
+        var chestplate = register(name + "_chestplate", new Item(properties.setId(itemKey(name + "_chestplate")).humanoidArmor(material, ArmorType.CHESTPLATE)), DIMENSIONAL_DOORS);
+        var leggings = register(name + "_leggings", new Item(properties.setId(itemKey(name + "_leggings")).humanoidArmor(material, ArmorType.LEGGINGS)), DIMENSIONAL_DOORS);
+        var boots = register(name + "_boots", new Item(properties.setId(itemKey(name + "_boots")).humanoidArmor(material, ArmorType.BOOTS)), DIMENSIONAL_DOORS);
 
         return new ArmorSet(helmet, chestplate, leggings, boots);
     }
 
+    private static net.minecraft.resources.ResourceKey<Item> itemKey(String name) {
+        return net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ITEM, DimensionalDoors.id(name));
+    }
+
+    private static Item.Properties itemProps(String name) {
+        return new Item.Properties().setId(itemKey(name));
+    }
+
     public static Item register(String name, Item item, CreativeModeTab tab) {
         var itemVal = DimensionalDoors.getSided().registerItem(name, item);
-        DimensionalDoors.getSided().appendStack(tab, item.getDefaultInstance());
+        DimensionalDoors.getSided().appendStack(tab, item);
         return itemVal;
     }
 
