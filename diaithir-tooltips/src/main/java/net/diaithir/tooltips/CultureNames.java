@@ -26,9 +26,9 @@ public final class CultureNames {
         }
         String slug = player.getData(DiaithirTooltips.CULTURE);
         slug = slug.isEmpty() ? DiaithirTooltips.DEFAULT_CULTURE : slug;
-        var set = sets().get(id);
-        if (set != null && set.has(slug)) {
-            return set.get(slug).getAsString();
+        var set = sets(slug).get(id);
+        if (set != null) {
+            return set;
         }
         var table = table(slug);
         if (table.has(kind)) {
@@ -133,28 +133,46 @@ public final class CultureNames {
         return data("cultures/" + slug + ".json");
     }
 
-    private static Map<String, JsonObject> setsCache;
+    private static final Map<String, java.util.concurrent.CompletableFuture<Map<String, String>>> SETS = new HashMap<>();
 
-    /** Every every assets namespace's diaithir_names folder, merged: {id: {"en": ..., "diaithir": ..., "<culture slug>": name}}. */
-    private static Map<String, JsonObject> sets() {
+    /**
+     * Every assets namespace's diaithir_names folder, merged: {id: {"en": ..., "diaithir": ..., "<culture slug>": name}}.
+     * Parsed on a worker thread, keeping only the one culture's names; until that finishes (a second or two) the sets add no line.
+     */
+    private static Map<String, String> sets(String slug) {
         data("names/units.json"); // resets the caches when the resource manager changed
-        if (setsCache == null) {
-            var all = new HashMap<String, JsonObject>();
+        var future = SETS.computeIfAbsent(slug, s -> {
             var manager = Minecraft.getInstance().getResourceManager();
-            manager.listResources("diaithir_names", f -> f.getPath().endsWith(".json")).forEach((loc, res) -> {
-                try (var in = new InputStreamReader(res.open(), StandardCharsets.UTF_8)) {
-                    JsonParser.parseReader(in).getAsJsonObject().entrySet().forEach(e -> {
-                        if (e.getValue().isJsonObject()) {
-                            all.put(e.getKey(), e.getValue().getAsJsonObject());
+            var found = manager.listResources("diaithir_names", f -> f.getPath().endsWith(".json"));
+            return java.util.concurrent.CompletableFuture.supplyAsync(() -> {
+                var all = new HashMap<String, String>();
+                found.forEach((loc, res) -> {
+                    try (var in = new com.google.gson.stream.JsonReader(new InputStreamReader(res.open(), StandardCharsets.UTF_8))) {
+                        in.beginObject();
+                        while (in.hasNext()) {
+                            String id = in.nextName();
+                            if (in.peek() != com.google.gson.stream.JsonToken.BEGIN_OBJECT) {
+                                in.skipValue();
+                                continue;
+                            }
+                            in.beginObject();
+                            while (in.hasNext()) {
+                                if (in.nextName().equals(s) && in.peek() == com.google.gson.stream.JsonToken.STRING) {
+                                    all.put(id, in.nextString());
+                                } else {
+                                    in.skipValue();
+                                }
+                            }
+                            in.endObject();
                         }
-                    });
-                } catch (Exception e) {
-                    System.err.println("[diaithirtooltips] skipped name set " + loc + ": " + e);
-                }
+                    } catch (Exception e) {
+                        System.err.println("[diaithirtooltips] skipped name set " + loc + ": " + e);
+                    }
+                });
+                return all;
             });
-            setsCache = all;
-        }
-        return setsCache;
+        });
+        return future.isDone() ? future.join() : NONE;
     }
 
     /** A JSON resource under assets/diaithirtooltips/, parsed once per resource-manager generation; an empty object if absent. */
@@ -163,7 +181,7 @@ public final class CultureNames {
         if (manager != cacheOwner) {
             CACHE.clear();
             adjCache = null;
-            setsCache = null;
+            SETS.clear();
             cacheOwner = manager;
         }
         return CACHE.computeIfAbsent(path, s -> {
