@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "paradise_lost:mother_aurel_logs"
-    }
+    "#paradise_lost:mother_aurel_logs"
   ],
   "result": {
     "count": 4,

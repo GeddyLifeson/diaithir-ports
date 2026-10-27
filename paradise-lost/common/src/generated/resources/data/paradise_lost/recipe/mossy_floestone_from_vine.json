@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "mossy_cobbled_floestone",
   "ingredients": [
-    {
-      "item": "paradise_lost:cobbled_floestone"
-    },
-    {
-      "item": "minecraft:vine"
-    }
+    "paradise_lost:cobbled_floestone",
+    "minecraft:vine"
   ],
   "result": {
     "count": 1,

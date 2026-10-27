@@ -130,9 +130,9 @@ public abstract class LivingEntityMixin extends Entity implements ParadiseLostEn
     }
 
     @ModifyVariable(method = "calculateFallDamage", at = @At("HEAD"), argsOnly = true, ordinal = 0)
-    private float paradiseLost$floatyBootsFeatherFalling(float fallDistance) {
+    private double paradiseLost$floatyBootsFeatherFalling(double fallDistance) {
         if (FloatyBootsItem.isWearing((LivingEntity) (Object) this)) {
-            return Math.max(0.0F, fallDistance - FloatyBootsItem.FEATHER_FALLING_BLOCKS);
+            return Math.max(0.0D, fallDistance - FloatyBootsItem.FEATHER_FALLING_BLOCKS);
         }
         return fallDistance;
     }

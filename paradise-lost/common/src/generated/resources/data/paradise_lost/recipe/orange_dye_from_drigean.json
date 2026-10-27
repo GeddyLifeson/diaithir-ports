@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:drigean"
-    }
+    "paradise_lost:drigean"
   ],
   "result": {
     "count": 1,

@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "boat",
   "key": {
-    "#": {
-      "item": "paradise_lost:menth_planks"
-    }
+    "#": "paradise_lost:menth_planks"
   },
   "pattern": [
     "# #",

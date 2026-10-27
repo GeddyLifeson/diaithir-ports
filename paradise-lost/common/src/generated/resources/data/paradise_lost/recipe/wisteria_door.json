@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "paradise_lost:wisteria_planks"
-    }
+    "#": "paradise_lost:wisteria_planks"
   },
   "pattern": [
     "##",

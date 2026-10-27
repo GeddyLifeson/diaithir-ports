@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:cherine_torch"
-    },
-    "X": {
-      "item": "paradise_lost:olvite_nugget"
-    }
+    "#": "paradise_lost:cherine_torch",
+    "X": "paradise_lost:olvite_nugget"
   },
   "pattern": [
     "XXX",

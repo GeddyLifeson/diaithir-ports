@@ -1,34 +1,21 @@
 {
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "paradise_lost:large_cold_cloud",
-      "paradise_lost:cold_cloud",
-      "paradise_lost:tiny_cold_cloud",
-      "paradise_lost:large_blue_cloud",
-      "paradise_lost:blue_cloud",
-      "paradise_lost:tiny_blue_cloud",
-      "paradise_lost:large_golden_cloud",
-      "paradise_lost:golden_cloud",
-      "paradise_lost:tiny_golden_cloud"
-    ]
-  },
+  "carvers": [
+    "minecraft:cave",
+    "paradise_lost:large_cold_cloud",
+    "paradise_lost:cold_cloud",
+    "paradise_lost:tiny_cold_cloud",
+    "paradise_lost:large_blue_cloud",
+    "paradise_lost:blue_cloud",
+    "paradise_lost:tiny_blue_cloud",
+    "paradise_lost:large_golden_cloud",
+    "paradise_lost:golden_cloud",
+    "paradise_lost:tiny_golden_cloud"
+  ],
   "downfall": 0.8,
   "effects": {
-    "fog_color": 16777215,
-    "foliage_color": 16769162,
-    "grass_color": 13562594,
-    "music": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": {
-        "sound_id": "paradise_lost:music.paradise"
-      }
-    },
-    "sky_color": 12632319,
-    "water_color": 9234175,
-    "water_fog_color": 10611455
+    "foliage_color": "#ffe08a",
+    "grass_color": "#cef2e2",
+    "water_color": "#8ce6ff"
   },
   "features": [
     [
@@ -111,5 +98,18 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.25
+  "temperature": 0.25,
+  "attributes": {
+    "minecraft:visual/fog_color": "#ffffff",
+    "minecraft:visual/sky_color": "#c0c0ff",
+    "minecraft:visual/water_fog_color": "#a1eaff",
+    "minecraft:audio/background_music": {
+      "default": {
+        "sound": "paradise_lost:music.paradise",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    }
+  }
 }

@@ -17,15 +17,9 @@
   ],
   "group": "cog",
   "key": {
-    "b": {
-      "item": "paradise_lost:mother_aurel_boat"
-    },
-    "l": {
-      "item": "minecraft:lead"
-    },
-    "s": {
-      "item": "smallships:sail"
-    }
+    "b": "paradise_lost:mother_aurel_boat",
+    "l": "minecraft:lead",
+    "s": "smallships:sail"
   },
   "pattern": [
     "lsl",

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "paradise_lost:aurel_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "paradise_lost:aurel_planks"
   },
   "pattern": [
     "#W#",

@@ -6,7 +6,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.cow.Cow;
+import net.minecraft.world.entity.animal.cow.AbstractCow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Cow.class)
+@Mixin(AbstractCow.class)
 public abstract class CowEntityMixin extends Animal {
 
     protected CowEntityMixin(EntityType<? extends Animal> entityType, Level world) {

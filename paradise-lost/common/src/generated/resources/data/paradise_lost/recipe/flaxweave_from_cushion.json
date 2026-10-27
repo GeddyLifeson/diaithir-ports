@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:flaxweave_cushion"
-    }
+    "paradise_lost:flaxweave_cushion"
   ],
   "result": {
     "count": 4,

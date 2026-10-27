@@ -17,18 +17,10 @@
   ],
   "group": "galley",
   "key": {
-    "b": {
-      "item": "paradise_lost:mother_aurel_boat"
-    },
-    "c": {
-      "item": "minecraft:chest"
-    },
-    "l": {
-      "item": "minecraft:lead"
-    },
-    "s": {
-      "item": "smallships:sail"
-    }
+    "b": "paradise_lost:mother_aurel_boat",
+    "c": "minecraft:chest",
+    "l": "minecraft:lead",
+    "s": "smallships:sail"
   },
   "pattern": [
     "lll",

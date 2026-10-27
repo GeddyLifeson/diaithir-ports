@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:heliolith"
-    }
+    "#": "paradise_lost:heliolith"
   },
   "pattern": [
     "#  ",

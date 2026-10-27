@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "paradise_lost:liverwort"
-    }
+    "B": "paradise_lost:liverwort"
   },
   "pattern": [
     "BB"

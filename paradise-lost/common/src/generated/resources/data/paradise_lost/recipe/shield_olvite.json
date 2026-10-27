@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "W": {
-      "tag": "minecraft:planks"
-    },
-    "o": {
-      "item": "paradise_lost:olvite"
-    }
+    "W": "#minecraft:planks",
+    "o": "paradise_lost:olvite"
   },
   "pattern": [
     "WoW",

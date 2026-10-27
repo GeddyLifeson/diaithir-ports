@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "paradise_lost:amadrys_bushel"
-    },
-    "C": {
-      "item": "paradise_lost:blackcurrant"
-    }
+    "B": "paradise_lost:amadrys_bushel",
+    "C": "paradise_lost:blackcurrant"
   },
   "pattern": [
     "BCB"

@@ -40,23 +40,29 @@
     },
     "fluid_level_floodedness": -1.0,
     "fluid_level_spread": 0.0,
-    "initial_density_without_jaggedness": {
-      "type": "minecraft:interpolated",
-      "argument": {
-        "type": "minecraft:y_clamped_gradient",
-        "from_value": 0.0,
-        "from_y": 60,
-        "to_value": 1.0,
-        "to_y": -64
-      }
-    },
     "lava": 0.0,
     "ridges": "paradise_lost:generator/ridges",
     "temperature": "paradise_lost:generator/temperature",
     "vegetation": "paradise_lost:generator/vegetation",
     "vein_gap": 0.0,
     "vein_ridged": 0.0,
-    "vein_toggle": 0.0
+    "vein_toggle": 0.0,
+    "preliminary_surface_level": {
+      "type": "minecraft:find_top_surface",
+      "density": {
+        "type": "minecraft:interpolated",
+        "argument": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_value": 0.0,
+          "from_y": 60,
+          "to_value": 1.0,
+          "to_y": -64
+        }
+      },
+      "upper_bound": 288.0,
+      "lower_bound": -32,
+      "cell_height": 8
+    }
   },
   "ore_veins_enabled": false,
   "sea_level": -54,

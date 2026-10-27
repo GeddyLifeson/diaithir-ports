@@ -1,10 +1,7 @@
 {
   "ambient_light": 0.03,
-  "bed_works": true,
   "coordinate_scale": 1.0,
-  "effects": "minecraft:overworld",
   "has_ceiling": false,
-  "has_raids": false,
   "has_skylight": true,
   "height": 512,
   "infiniburn": "#minecraft:infiniburn_overworld",
@@ -16,8 +13,18 @@
     "max_inclusive": 3,
     "min_inclusive": 0
   },
-  "natural": true,
-  "piglin_safe": false,
-  "respawn_anchor_works": false,
-  "ultrawarm": false
+  "has_ender_dragon_fight": false,
+  "attributes": {
+    "minecraft:gameplay/bed_rule": {
+      "can_set_spawn": "always",
+      "can_sleep": "when_dark",
+      "error_message": {
+        "translate": "block.minecraft.bed.no_sleep"
+      }
+    },
+    "minecraft:gameplay/respawn_anchor_works": false,
+    "minecraft:gameplay/nether_portal_spawns_piglin": false
+  },
+  "default_clock": "minecraft:overworld",
+  "timelines": "#minecraft:in_overworld"
 }

@@ -1,9 +1,7 @@
 {
   "type": "paradise_lost:tree_tap",
   "chance": 2,
-  "ingredient": {
-    "item": "minecraft:bucket"
-  },
+  "ingredient": "minecraft:bucket",
   "result": {
     "count": 1,
     "id": "minecraft:water_bucket"

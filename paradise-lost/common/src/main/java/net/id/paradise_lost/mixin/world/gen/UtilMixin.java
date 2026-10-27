@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class UtilMixin {
 
     @Inject(
-            method = "logAndPauseIfInIde",
+            method = "logAndPauseIfInIde(Ljava/lang/String;)V",
             at = @At("HEAD"),
             cancellable = true
     )

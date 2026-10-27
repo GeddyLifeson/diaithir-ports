@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Block.class)
 public class BlockMixin {
     @Inject(method = "fallOn", at = @At("TAIL"))
-    public void onLandedUpon(Level world, BlockState state, BlockPos pos, Entity entity, float fallDistance, CallbackInfo ci) {
+    public void onLandedUpon(Level world, BlockState state, BlockPos pos, Entity entity, double fallDistance, CallbackInfo ci) {
         if (entity instanceof ParadiseLostEntityExtensions extendedEntity) {
             extendedEntity.setParadiseLostFallen(false);
         }

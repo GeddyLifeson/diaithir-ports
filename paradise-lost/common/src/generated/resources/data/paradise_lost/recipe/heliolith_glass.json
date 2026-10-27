@@ -3,9 +3,7 @@
   "category": "blocks",
   "cookingtime": 200,
   "experience": 0.2,
-  "ingredient": {
-    "item": "paradise_lost:heliolith"
-  },
+  "ingredient": "paradise_lost:heliolith",
   "result": {
     "count": 1,
     "id": "minecraft:glass"

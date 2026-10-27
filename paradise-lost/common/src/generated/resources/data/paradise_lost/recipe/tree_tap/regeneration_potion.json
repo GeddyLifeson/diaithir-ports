@@ -1,9 +1,7 @@
 {
   "type": "paradise_lost:tree_tap",
   "chance": 2,
-  "ingredient": {
-    "item": "minecraft:glass_bottle"
-  },
+  "ingredient": "minecraft:glass_bottle",
   "potion_content": {},
   "result": {
     "count": 1,

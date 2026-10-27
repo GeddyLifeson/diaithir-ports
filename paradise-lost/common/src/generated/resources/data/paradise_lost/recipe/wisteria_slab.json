@@ -3,9 +3,7 @@
   "category": "building",
   "group": "wooden_slab",
   "key": {
-    "#": {
-      "item": "paradise_lost:wisteria_planks"
-    }
+    "#": "paradise_lost:wisteria_planks"
   },
   "pattern": [
     "###"

@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "paradise_lost:olvite"
-    },
-    "O": {
-      "item": "paradise_lost:cobbled_floestone"
-    },
-    "P": {
-      "tag": "minecraft:planks"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+    "I": "paradise_lost:olvite",
+    "O": "paradise_lost:cobbled_floestone",
+    "P": "#minecraft:planks",
+    "R": "minecraft:redstone"
   },
   "pattern": [
     "PPP",

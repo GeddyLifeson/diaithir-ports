@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:ancient_flower"
-    }
+    "paradise_lost:ancient_flower"
   ],
   "result": {
     "count": 1,

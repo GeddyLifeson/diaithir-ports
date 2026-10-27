@@ -64,15 +64,12 @@ public abstract class PlayerEntityMixin extends LivingEntity implements Paradise
     @Shadow
     public float experienceProgress;
 
-    @Shadow
-    public abstract Iterable<ItemStack> getArmorSlots();
-
     @Inject(
-            method = "hurt",
+            method = "hurtServer",
             at = @At("HEAD"),
             cancellable = true
     )
-    public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+    public void damage(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (level().isClientSide() || level().dimension() != ParadiseLostDimension.PARADISE_LOST_WORLD_KEY) {
             return;
         }
@@ -191,14 +188,14 @@ public abstract class PlayerEntityMixin extends LivingEntity implements Paradise
             at = @At("HEAD"),
             cancellable = true
     )
-    public void handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
+    public void handleFallDamage(double fallDistance, float damageMultiplier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if (isParadiseLostFallen()) {
             paradise_lost$fallen = false;
             if (getAbilities().mayfly) {
                 cir.setReturnValue(false);
             } else {
                 if (fallDistance >= 2.0F) {
-                    awardStat(Stats.FALL_ONE_CM, (int) Math.round((double) fallDistance * 100.0D));
+                    awardStat(Stats.FALL_ONE_CM, (int) Math.round(fallDistance * 100.0D));
                 }
                 cir.setReturnValue(super.causeFallDamage(fallDistance, damageMultiplier, ParadiseLostDamageTypes.of(level(), ParadiseLostDamageTypes.FALL_FROM_PARADISE)));
             }
@@ -215,7 +212,8 @@ public abstract class PlayerEntityMixin extends LivingEntity implements Paradise
 
     @Inject(method = "destroyVanishingCursedItems", at = @At("TAIL"))
     public void vanishCursedItems(CallbackInfo ci) {
-        for (ItemStack stack : this.getArmorSlots()) {
+        for (net.minecraft.world.entity.EquipmentSlot paradiseLost$slot : new net.minecraft.world.entity.EquipmentSlot[] {net.minecraft.world.entity.EquipmentSlot.HEAD, net.minecraft.world.entity.EquipmentSlot.CHEST, net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET}) {
+            ItemStack stack = this.getItemBySlot(paradiseLost$slot);
             if (!stack.isEmpty() && stack.is(ItemRegistry.XP_CIRCLET.get())) {
                 XpCircletItem.chargeCirclet(stack, (Player) (Object) this);
                 if ((Object) this instanceof ServerPlayer player) {

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "planks",
   "ingredients": [
-    {
-      "tag": "paradise_lost:menth_logs"
-    }
+    "#paradise_lost:menth_logs"
   ],
   "result": {
     "count": 4,

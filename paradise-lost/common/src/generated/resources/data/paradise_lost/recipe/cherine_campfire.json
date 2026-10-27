@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "paradise_lost:cherine"
-    },
-    "L": {
-      "tag": "minecraft:logs"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "C": "paradise_lost:cherine",
+    "L": "#minecraft:logs",
+    "S": "minecraft:stick"
   },
   "pattern": [
     " S ",

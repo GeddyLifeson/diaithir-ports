@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:lavender_wisteria_leaves"
-    }
+    "#": "paradise_lost:lavender_wisteria_leaves"
   },
   "pattern": [
     "##"

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "P": {
-      "tag": "minecraft:planks"
-    }
+    "P": "#minecraft:planks"
   },
   "pattern": [
     "PPP",

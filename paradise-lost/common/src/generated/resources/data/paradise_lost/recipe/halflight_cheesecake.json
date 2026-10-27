@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "tag": "c:buckets/milk"
-    },
-    "C": {
-      "item": "paradise_lost:amadrys_bushel"
-    },
-    "P": {
-      "item": "paradise_lost:popom_jelly"
-    }
+    "A": "#c:buckets/milk",
+    "C": "paradise_lost:amadrys_bushel",
+    "P": "paradise_lost:popom_jelly"
   },
   "pattern": [
     "PPP",

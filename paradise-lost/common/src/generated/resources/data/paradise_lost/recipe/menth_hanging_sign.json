@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "paradise_lost:menth_planks"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "paradise_lost:menth_planks",
+    "X": "minecraft:chain"
   },
   "pattern": [
     "X X",

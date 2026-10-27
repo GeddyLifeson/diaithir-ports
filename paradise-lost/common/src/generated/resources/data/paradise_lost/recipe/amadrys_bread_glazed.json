@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:amadrys_bread"
-    },
-    {
-      "item": "minecraft:sugar"
-    }
+    "paradise_lost:amadrys_bread",
+    "minecraft:sugar"
   ],
   "result": {
     "count": 1,

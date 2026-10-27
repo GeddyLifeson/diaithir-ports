@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:luminar"
-    }
+    "paradise_lost:luminar"
   ],
   "result": {
     "count": 1,

@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "wooden_sign",
   "key": {
-    "#": {
-      "item": "paradise_lost:menth_planks"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    }
+    "#": "paradise_lost:menth_planks",
+    "X": "minecraft:stick"
   },
   "pattern": [
     "###",

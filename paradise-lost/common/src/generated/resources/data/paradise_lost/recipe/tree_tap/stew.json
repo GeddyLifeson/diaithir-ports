@@ -1,9 +1,7 @@
 {
   "type": "paradise_lost:tree_tap",
   "chance": 3,
-  "ingredient": {
-    "item": "minecraft:bowl"
-  },
+  "ingredient": "minecraft:bowl",
   "result": {
     "count": 1,
     "id": "minecraft:mushroom_stew"

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "bark",
   "key": {
-    "#": {
-      "item": "paradise_lost:wisteria_log"
-    }
+    "#": "paradise_lost:wisteria_log"
   },
   "pattern": [
     "##",

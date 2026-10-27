@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "X": {
-      "item": "paradise_lost:olvite"
-    }
+    "X": "paradise_lost:olvite"
   },
   "pattern": [
     "XXX",

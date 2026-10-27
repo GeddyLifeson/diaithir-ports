@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "chest_boat",
   "ingredients": [
-    {
-      "item": "paradise_lost:aurel_boat"
-    },
-    {
-      "item": "minecraft:chest"
-    }
+    "paradise_lost:aurel_boat",
+    "minecraft:chest"
   ],
   "result": {
     "count": 1,

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:levita_gem"
-    }
+    "paradise_lost:levita_gem"
   ],
   "result": {
     "count": 4,

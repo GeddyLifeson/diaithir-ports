@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "paradise_lost:olvite"
-    }
+    "#": "minecraft:stick",
+    "X": "paradise_lost:olvite"
   },
   "pattern": [
     "X",

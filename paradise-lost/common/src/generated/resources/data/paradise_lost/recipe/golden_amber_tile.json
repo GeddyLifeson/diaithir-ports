@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:golden_amber"
-    }
+    "#": "paradise_lost:golden_amber"
   },
   "pattern": [
     "##",

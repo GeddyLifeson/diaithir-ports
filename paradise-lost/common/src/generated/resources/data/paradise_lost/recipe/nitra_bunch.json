@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:nitra_bulb"
-    }
+    "#": "paradise_lost:nitra_bulb"
   },
   "pattern": [
     "##",

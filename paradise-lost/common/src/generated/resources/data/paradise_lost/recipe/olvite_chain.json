@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "paradise_lost:olvite"
-    },
-    "N": {
-      "item": "paradise_lost:olvite_nugget"
-    }
+    "I": "paradise_lost:olvite",
+    "N": "paradise_lost:olvite_nugget"
   },
   "pattern": [
     "N",

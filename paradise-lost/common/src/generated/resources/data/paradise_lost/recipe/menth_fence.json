@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "paradise_lost:menth_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "paradise_lost:menth_planks"
   },
   "pattern": [
     "W#W",

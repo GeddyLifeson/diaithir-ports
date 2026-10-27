@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:cobbled_floestone"
-    }
+    "#": "paradise_lost:cobbled_floestone"
   },
   "pattern": [
     "###",

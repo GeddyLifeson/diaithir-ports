@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "paradise_lost:amadrys_bushel"
-    }
+    "B": "paradise_lost:amadrys_bushel"
   },
   "pattern": [
     "BBB"

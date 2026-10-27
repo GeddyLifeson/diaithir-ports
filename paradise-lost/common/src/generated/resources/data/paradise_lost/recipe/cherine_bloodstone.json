@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": {
-      "item": "paradise_lost:cherine"
-    }
+    "#": "minecraft:stick",
+    "X": "paradise_lost:cherine"
   },
   "pattern": [
     " X",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "paradise_lost:paradise_planks"
-    }
+    "#": "#paradise_lost:paradise_planks"
   },
   "pattern": [
     "# #",

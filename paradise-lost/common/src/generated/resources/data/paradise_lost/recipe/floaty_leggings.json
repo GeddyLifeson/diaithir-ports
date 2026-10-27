@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "G": {
-      "item": "paradise_lost:levita_gem"
-    },
-    "X": {
-      "item": "paradise_lost:flaxweave"
-    }
+    "G": "paradise_lost:levita_gem",
+    "X": "paradise_lost:flaxweave"
   },
   "pattern": [
     "XXX",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "X": {
-      "item": "paradise_lost:flaxweave"
-    }
+    "X": "paradise_lost:flaxweave"
   },
   "pattern": [
     "X X",

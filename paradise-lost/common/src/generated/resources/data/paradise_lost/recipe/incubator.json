@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:thatch"
-    },
-    "X": {
-      "tag": "minecraft:planks"
-    }
+    "#": "paradise_lost:thatch",
+    "X": "#minecraft:planks"
   },
   "pattern": [
     " # ",

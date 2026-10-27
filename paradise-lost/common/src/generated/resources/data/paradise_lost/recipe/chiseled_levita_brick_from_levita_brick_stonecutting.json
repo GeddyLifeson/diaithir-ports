@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "paradise_lost:levita_brick"
-  },
+  "ingredient": "paradise_lost:levita_brick",
   "result": {
     "count": 1,
     "id": "paradise_lost:chiseled_levita_brick"

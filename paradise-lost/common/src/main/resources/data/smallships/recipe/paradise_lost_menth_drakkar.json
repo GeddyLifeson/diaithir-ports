@@ -17,21 +17,11 @@
   ],
   "group": "drakkar",
   "key": {
-    "b": {
-      "item": "paradise_lost:menth_boat"
-    },
-    "l": {
-      "item": "minecraft:lead"
-    },
-    "s": {
-      "item": "minecraft:string"
-    },
-    "x": {
-      "item": "minecraft:chest"
-    },
-    "y": {
-      "item": "smallships:sail"
-    }
+    "b": "paradise_lost:menth_boat",
+    "l": "minecraft:lead",
+    "s": "minecraft:string",
+    "x": "minecraft:chest",
+    "y": "smallships:sail"
   },
   "pattern": [
     "sys",

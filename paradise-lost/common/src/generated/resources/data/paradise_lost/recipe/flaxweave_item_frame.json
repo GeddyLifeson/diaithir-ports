@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "F": {
-      "item": "paradise_lost:flaxweave"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "F": "paradise_lost:flaxweave",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "SSS",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:olvite_block"
-    }
+    "paradise_lost:olvite_block"
   ],
   "result": {
     "count": 9,

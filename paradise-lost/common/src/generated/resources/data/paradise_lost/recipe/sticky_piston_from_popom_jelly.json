@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:popom_jelly"
-    },
-    "P": {
-      "item": "minecraft:piston"
-    }
+    "#": "paradise_lost:popom_jelly",
+    "P": "minecraft:piston"
   },
   "pattern": [
     "#",

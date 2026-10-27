@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "paradise_lost:amadrys_bundle"
-    }
+    "paradise_lost:amadrys_bundle"
   ],
   "result": {
     "count": 9,

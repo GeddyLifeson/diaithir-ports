@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "paradise_lost:flaxweave_cushion_slab"
-    }
+    "#": "paradise_lost:flaxweave_cushion_slab"
   },
   "pattern": [
     "#",

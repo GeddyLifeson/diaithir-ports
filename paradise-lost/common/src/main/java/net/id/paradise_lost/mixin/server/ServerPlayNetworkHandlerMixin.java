@@ -18,8 +18,8 @@ import java.util.List;
 public abstract class ServerPlayNetworkHandlerMixin {
     @Shadow public ServerPlayer player;
 
-    @Inject(method = "isPlayerCollidingWithAnythingNew", at = @At("RETURN"), cancellable = true)
-    void isPlayerNotCollidingWithBlocks(LevelReader worldView, AABB box, double newX, double newY, double newZ, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "isEntityCollidingWithAnythingNew", at = @At("RETURN"), cancellable = true)
+    void isPlayerNotCollidingWithBlocks(LevelReader worldView, Entity collidingEntity, AABB box, double newX, double newY, double newZ, CallbackInfoReturnable<Boolean> cir) {
         if (cir.getReturnValue()) {
             List<Entity> list = player.level().getEntities(player, player.getBoundingBox().inflate(0.0, 0.1, 0.0));
             for (Entity entity : list) {

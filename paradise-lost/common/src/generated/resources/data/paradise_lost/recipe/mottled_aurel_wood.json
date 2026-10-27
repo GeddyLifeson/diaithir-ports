@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "bark",
   "key": {
-    "#": {
-      "item": "paradise_lost:mottled_aurel_log"
-    }
+    "#": "paradise_lost:mottled_aurel_log"
   },
   "pattern": [
     "##",
