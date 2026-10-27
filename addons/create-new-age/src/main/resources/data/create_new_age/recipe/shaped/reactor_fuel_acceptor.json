@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "create:andesite_funnel",
+    "B": "create:brass_funnel",
+    "C": "create_new_age:reactor_casing"
+  },
+  "pattern": [
+    "CAC",
+    "CBC"
+  ],
+  "result": {
+    "id": "create_new_age:reactor_fuel_acceptor",
+    "count": 1
+  }
+}

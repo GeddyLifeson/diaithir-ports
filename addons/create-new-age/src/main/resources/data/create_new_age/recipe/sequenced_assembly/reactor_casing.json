@@ -1,0 +1,37 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": "minecraft:bricks",
+  "transitional_item": {
+    "id": "create_new_age:incomplete_reactor_casing"
+  },
+  "result": {
+    "id": "create_new_age:reactor_casing",
+    "count": 4
+  },
+  "loops": 1,
+  "sequence": [
+    {
+      "type": "create_new_age:energising",
+      "energy_needed": 500,
+      "ingredient": "$ingredient",
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "target": "$ingredient",
+      "ingredient": "#c:plates/iron",
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredient": "$ingredient",
+      "results": [
+        "$result"
+      ]
+    }
+  ]
+}

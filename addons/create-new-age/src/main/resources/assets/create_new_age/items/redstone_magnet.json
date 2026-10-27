@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "create_new_age:item/redstone_magnet"
+  }
+}

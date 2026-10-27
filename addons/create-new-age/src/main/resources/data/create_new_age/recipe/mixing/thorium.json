@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    "create_new_age:thorium",
+    "#c:stones",
+    "minecraft:clay"
+  ],
+  "fluid_ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 81000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_new_age:thorium",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "create_new_age:copper_wire_block"
+  ],
+  "result": {
+    "id": "create_new_age:copper_wire",
+    "count": 4
+  }
+}

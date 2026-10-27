@@ -1,0 +1,9 @@
+{
+  "type": "create:pressing",
+  "ingredient": "create_new_age:overcharged_gold",
+  "results": [
+    {
+      "id": "create_new_age:overcharged_golden_sheet"
+    }
+  ]
+}

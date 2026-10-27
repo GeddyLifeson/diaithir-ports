@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "create:andesite_casing",
+    "minecraft:lightning_rod"
+  ],
+  "result": {
+    "id": "create_new_age:basic_energiser",
+    "count": 1
+  }
+}

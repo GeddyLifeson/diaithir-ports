@@ -1,0 +1,37 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": "minecraft:apple",
+  "transitional_item": {
+    "id": "create_new_age:incomplete_enchanted_golden_apple"
+  },
+  "result": {
+    "id": "minecraft:enchanted_golden_apple"
+  },
+  "loops": 4,
+  "sequence": [
+    {
+      "type": "create_new_age:energising",
+      "energy_needed": 2000000,
+      "ingredient": "$ingredient",
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "target": "$ingredient",
+      "ingredient": "#c:storage_blocks/gold",
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "target": "$ingredient",
+      "ingredient": "#c:storage_blocks/gold",
+      "results": [
+        "$result"
+      ]
+    }
+  ]
+}

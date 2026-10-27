@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "create:andesite_alloy",
+    "C": "minecraft:coal",
+    "S": "create:shaft"
+  },
+  "pattern": [
+    "AAA",
+    "CSC",
+    "AAA"
+  ],
+  "result": {
+    "id": "create_new_age:carbon_brushes",
+    "count": 1
+  }
+}

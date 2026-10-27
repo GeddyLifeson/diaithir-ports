@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "#c:plates/copper",
+    "N": "#c:nuggets/zinc",
+    "T": "minecraft:terracotta"
+  },
+  "pattern": [
+    "NTN",
+    "TCT"
+  ],
+  "result": {
+    "id": "create_new_age:heat_pipe",
+    "count": 4
+  }
+}

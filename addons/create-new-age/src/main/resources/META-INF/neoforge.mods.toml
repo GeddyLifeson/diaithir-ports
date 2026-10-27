@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="BSD-3-Clause"
+
+[[mods]]
+modId="diaithir_create_new_age"
+version="${version}"
+displayName="Create: New Age (Diaithir port)"
+authors="Antarctic Gardens (original, BSD-3-Clause); Diaithir pack (NeoForge 26.1.2 port, art, integration)"
+description='''Electricity, motors, heat and a nuclear reactor for Create. Port of Create: New Age (BSD-3-Clause) to the Diaithir Create port.'''
+
+[[dependencies.diaithir_create_new_age]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_new_age]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_new_age]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

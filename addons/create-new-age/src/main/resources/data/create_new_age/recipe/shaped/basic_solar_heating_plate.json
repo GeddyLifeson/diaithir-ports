@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "#c:glass_blocks/colorless",
+    "I": "#c:ingots/iron",
+    "P": "create_new_age:heat_pipe"
+  },
+  "pattern": [
+    "GGG",
+    "IPI",
+    "IPI"
+  ],
+  "result": {
+    "id": "create_new_age:basic_solar_heating_plate",
+    "count": 1
+  }
+}

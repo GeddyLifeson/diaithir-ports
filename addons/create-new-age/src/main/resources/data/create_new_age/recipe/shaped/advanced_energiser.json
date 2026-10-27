@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "create_new_age:basic_energiser",
+    "G": "create_new_age:overcharged_gold",
+    "R": "minecraft:lightning_rod"
+  },
+  "pattern": [
+    "GEG",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "id": "create_new_age:advanced_energiser",
+    "count": 1
+  }
+}

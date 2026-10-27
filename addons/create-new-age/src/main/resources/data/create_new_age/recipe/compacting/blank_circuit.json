@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    "#c:stones",
+    "#c:dusts/redstone",
+    "#c:ingots/iron",
+    "minecraft:quartz"
+  ],
+  "heat_requirement": "superheated",
+  "results": [
+    {
+      "id": "create_new_age:blank_circuit",
+      "count": 4
+    }
+  ]
+}

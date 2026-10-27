@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "create:brass_casing",
+    "I": "create_new_age:overcharged_iron",
+    "N": "#c:nuggets/gold",
+    "S": "create:shaft"
+  },
+  "pattern": [
+    "NNN",
+    "ICS",
+    "NNN"
+  ],
+  "result": {
+    "id": "create_new_age:advanced_motor",
+    "count": 1
+  }
+}
