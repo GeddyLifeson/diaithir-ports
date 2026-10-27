@@ -1,0 +1,1 @@
+{"parent":"minecraft:block/cube_bottom_top","textures":{"top":"diaithirelevators:block/elevator_controller_top","bottom":"diaithirelevators:block/elevator_controller_bottom","side":"diaithirelevators:block/elevator_controller_side"}}
