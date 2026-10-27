@@ -183,7 +183,7 @@ public class MetalScaffoldingBlock extends Block implements BucketPickup, Liquid
     }
 
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
         return fluid == Fluids.WATER || fluid.getFluidType() == ACFluidRegistry.ACID_FLUID_TYPE.get();
     }
 

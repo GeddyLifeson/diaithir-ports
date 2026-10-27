@@ -161,7 +161,7 @@ public class TephraEntity extends Projectile {
     }
 
     private void explode() {
-        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief(level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
+        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
         TephraExplosion explosion = new TephraExplosion(level(), this, this.getX(), this.getY(0.5), this.getZ(), 1.0F + getMaxScale(), blockinteraction);
         explosion.explode();
         explosion.finalizeExplosion(true);

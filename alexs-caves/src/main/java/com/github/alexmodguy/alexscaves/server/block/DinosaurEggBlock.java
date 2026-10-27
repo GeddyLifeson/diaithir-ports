@@ -162,7 +162,7 @@ public class DinosaurEggBlock extends Block {
             if (!(trampler instanceof LivingEntity)) {
                 return false;
             } else {
-                return trampler instanceof Player || net.neoforged.neoforge.event.EventHooks.canEntityGrief(worldIn, trampler);
+                return trampler instanceof Player || net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) worldIn, trampler);
             }
         } else {
             return false;

@@ -21,7 +21,8 @@ RULES = [
  (r'method getHolder\(ResourceKey', r'\.getHolder\(', '.get('),
  (r'method registryOrThrow', r'\.registryOrThrow\(', '.lookupOrThrow('),
  (r'method registry\(', r'\.registry\((Registries\.\w+)\)\.get\(\)', r'.lookupOrThrow(\1)'),
- (r'method getUUID|method hasUUID', r'XX', 'XX'),
+ (r'Level cannot be converted to ServerLevel', r'(canEntityGrief|mayInteract)\((\w+(?:\(\))?),', r'\1((net.minecraft.server.level.ServerLevel) \2,'),
+ (r'method getRandom\(\)', r'levelAccessor\.getRandom\(\)', 'levelAccessor.getRandom()'),
 ]
 log=open(sys.argv[1]).read().split('\n')
 last=None

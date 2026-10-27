@@ -22,7 +22,7 @@ public class CavePlantBlock extends BushBlock {
     }
 
     @Override
-    protected MapCodec<BushBlock> codec() {
+    public MapCodec<BushBlock> codec() {
         return simpleCodec(props -> new CavePlantBlock(props, false));
     }
 

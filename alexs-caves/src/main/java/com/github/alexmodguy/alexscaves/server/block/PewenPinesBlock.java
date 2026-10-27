@@ -22,7 +22,7 @@ public class PewenPinesBlock extends BushBlock {
 
     @Override
     public MapCodec<BushBlock> codec() {
-        return CODEC;
+        return (MapCodec) CODEC;
     }
 
     public PewenPinesBlock() {

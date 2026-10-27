@@ -82,7 +82,7 @@ public class DepthChargeEntity extends ThrowableItemProjectile {
 
     private void explode() {
         this.remove(RemovalReason.KILLED);
-        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief(level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
+        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
         BlockState feetBlockState = level().getBlockState(blockPosition());
         boolean inWater = feetBlockState != null && feetBlockState.getFluidState().is(FluidTags.WATER);
         MineExplosion explosion = new MineExplosion(level(), this, this.getX(), this.getY(0.5), this.getZ(), 2.0F, inWater, blockinteraction);

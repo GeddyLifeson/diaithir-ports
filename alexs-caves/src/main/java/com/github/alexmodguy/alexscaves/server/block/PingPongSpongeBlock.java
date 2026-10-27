@@ -32,7 +32,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
 
     @Override
     public MapCodec<BushBlock> codec() {
-        return CODEC;
+        return (MapCodec) CODEC;
     }
     public static final VoxelShape SHAPE_TOP = Block.box(3, 0, 3, 13, 16, 13);
 
@@ -111,7 +111,7 @@ public class PingPongSpongeBlock extends BushBlock implements LiquidBlockContain
 
 
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         return false;
     }
 

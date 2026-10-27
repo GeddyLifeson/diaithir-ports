@@ -65,7 +65,7 @@ public class NuclearBombBlock extends Block {
         if (!level.isClientSide()) {
             BlockPos blockpos = blockHitResult.getBlockPos();
             Entity entity = projectile.getOwner();
-            if (projectile.isOnFire() && projectile.mayInteract(level, blockpos)) {
+            if (projectile.isOnFire() && projectile.mayInteract((net.minecraft.server.level.ServerLevel) level, blockpos)) {
                 onCaughtFire(state, level, blockpos, null, entity instanceof LivingEntity ? (LivingEntity) entity : null);
                 level.removeBlock(blockpos, false);
             }

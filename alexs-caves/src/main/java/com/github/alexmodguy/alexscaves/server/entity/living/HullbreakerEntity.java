@@ -299,7 +299,7 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
         }
         boolean flag = false;
         AABB damageBox = this.headPart.getBoundingBox().inflate(1.2F).move(this.calculateViewVector(this.getXRot(), this.getYRot()));
-        if (!level().isClientSide() && net.neoforged.neoforge.event.EventHooks.canEntityGrief(level(), this) && this.getTarget() instanceof Player) {
+        if (!level().isClientSide() && net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) && this.getTarget() instanceof Player) {
             for (int a = (int) Math.round(damageBox.minX); a <= (int) Math.round(damageBox.maxX); a++) {
                 for (int b = (int) Math.round(damageBox.minY) - 1; (b <= (int) Math.round(damageBox.maxY) + 1) && (b <= 127); b++) {
                     for (int c = (int) Math.round(damageBox.minZ); c <= (int) Math.round(damageBox.maxZ); c++) {

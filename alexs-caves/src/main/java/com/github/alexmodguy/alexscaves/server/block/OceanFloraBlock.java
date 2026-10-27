@@ -28,7 +28,7 @@ public class OceanFloraBlock extends BushBlock implements LiquidBlockContainer {
 
     @Override
     public MapCodec<BushBlock> codec() {
-        return CODEC;
+        return (MapCodec) CODEC;
     }
 
     public OceanFloraBlock() {
@@ -89,7 +89,7 @@ public class OceanFloraBlock extends BushBlock implements LiquidBlockContainer {
 
 
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter level, BlockPos pos, BlockState state, Fluid fluid) {
         return false;
     }
 

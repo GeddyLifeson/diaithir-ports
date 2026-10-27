@@ -45,7 +45,7 @@ public class CycadBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    protected MapCodec<BushBlock> codec() {
+    public MapCodec<BushBlock> codec() {
         return MapCodec.unit(this);
     }
 

@@ -115,7 +115,7 @@ public class RebarBlock extends Block implements BucketPickup, LiquidBlockContai
     }
 
     @Override
-    public boolean canPlaceLiquid(Player player, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
+    public boolean canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, BlockGetter getter, BlockPos blockPos, BlockState blockState, Fluid fluid) {
         return fluid == Fluids.WATER || fluid.getFluidType() == ACFluidRegistry.ACID_FLUID_TYPE.get();
     }
 
@@ -142,7 +142,7 @@ public class RebarBlock extends Block implements BucketPickup, LiquidBlockContai
         }
     }
 
-    public ItemStack pickupBlock(@javax.annotation.Nullable Player player, LevelAccessor levelAccessor, BlockPos blockPos, BlockState state) {
+    public ItemStack pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity player, LevelAccessor levelAccessor, BlockPos blockPos, BlockState state) {
         int liquidType = state.getValue(LIQUID_LOGGED);
         levelAccessor.setBlock(blockPos, state.setValue(LIQUID_LOGGED, 0), 3);
         if (liquidType > 0) {

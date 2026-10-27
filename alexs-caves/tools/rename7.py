@@ -14,7 +14,10 @@ R=[
  (r'pickupBlock\(Player (\w+),', r'pickupBlock(@Nullable net.minecraft.world.entity.LivingEntity \1,'),
  (r'void neighborChanged\(BlockState (\w+), Level (\w+), BlockPos (\w+), Block (\w+), BlockPos (\w+), boolean (\w+)\)',
   r'void neighborChanged(BlockState \1, Level \2, BlockPos \3, Block \4, @javax.annotation.Nullable '+BO+r' \5, boolean \6)'),
- (r'ItemUseAnimation getUseAnimation', 'ItemUseAnimation getUseAnimation'),
+ (r'canPlaceLiquid\((?:@[\w.]+ )?Player (\w+),', r'canPlaceLiquid(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity \1,'),
+ (r'pickupBlock\((?:@[\w.]+ )?Player (\w+),', r'pickupBlock(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity \1,'),
+ (r'(MapCodec<BushBlock> codec\(\) \{\s*return) CODEC;', r'\1 (MapCodec) CODEC;'),
+ (r'protected MapCodec<BushBlock> codec', 'public MapCodec<BushBlock> codec'),
 ]
 n=0
 for p in pathlib.Path(sys.argv[1]).rglob('*.java'):

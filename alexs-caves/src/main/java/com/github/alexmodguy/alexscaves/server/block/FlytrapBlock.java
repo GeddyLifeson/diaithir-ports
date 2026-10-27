@@ -30,7 +30,7 @@ class FlytrapBlock extends BushBlock implements BonemealableBlock {
 
     @Override
     public MapCodec<BushBlock> codec() {
-        return CODEC;
+        return (MapCodec) CODEC;
     }
 
     public FlytrapBlock() {
