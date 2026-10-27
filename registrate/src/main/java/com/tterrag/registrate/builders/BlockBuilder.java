@@ -386,4 +386,9 @@ public class BlockBuilder<T extends Block, P> extends AbstractBuilder<Block, T, 
     public BlockEntry<T> register() {
         return (BlockEntry<T>) super.register();
     }
+
+    // ---- diaithir shim: binary-compat overloads for 1.21.1 addons (datagen/render-layer hooks are no-ops on 26.1) ----
+    public BlockBuilder<T, P> addLayer(java.util.function.Supplier<?> layer) { return this; }
+    @SuppressWarnings("rawtypes")
+    public BlockBuilder<T, P> blockstate(com.tterrag.registrate.util.nullness.NonNullBiConsumer cons) { return this; }
 }

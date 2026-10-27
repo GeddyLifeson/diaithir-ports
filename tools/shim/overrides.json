@@ -1,2 +1,5 @@
-{"net/minecraft/resources/ResourceLocation": "net/minecraft/resources/Identifier",
- "net/minecraft/client/resources/model/ModelResourceLocation": "net/minecraft/client/resources/model/ModelResourceLocation"}
+{
+ "net/minecraft/resources/ResourceLocation": "net/minecraft/resources/Identifier",
+ "net/minecraft/client/resources/model/ModelResourceLocation": "net/minecraft/client/resources/model/ModelResourceLocation",
+ "com/tterrag/registrate/providers/RegistrateRecipeProvider": "com/tterrag/registrate/providers/generators/RegistrateRecipeProvider"
+}

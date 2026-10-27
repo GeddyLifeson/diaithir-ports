@@ -349,4 +349,9 @@ public class ItemBuilder<T extends Item, P> extends AbstractBuilder<Item, T, P, 
     public ItemEntry<T> register() {
         return (ItemEntry<T>) super.register();
     }
+
+    // ---- diaithir shim: binary-compat overloads for 1.21.1 addons ----
+    public ItemBuilder<T, P> color(NonNullSupplier<?> color) { return this; }
+    @SuppressWarnings("rawtypes")
+    public ItemBuilder<T, P> model(com.tterrag.registrate.util.nullness.NonNullBiConsumer cons) { return this; }
 }

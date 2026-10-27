@@ -1,0 +1,18 @@
+RESULT create-central-kitchen-2.6.2b FAILS
+[20:29:15] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[20:29:16] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod create_central_kitchen requires create_dragons_plus 1.11.9 or above
+[20:29:16] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create-enchantment-industry-2.5.4b FAILS
+[20:29:38] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[20:29:38] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod create_enchantment_industry requires create_dragons_plus 1.11.9 or above
+[20:29:38] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create-new-age-1.2.0 FAILS
+[20:30:05] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[20:30:05] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod esl requires minecraft 1.21.1
+[20:30:06] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create_connected-1.3.3-mc1.21.1 FAILS
+net.neoforged.fml.startup.FatalStartupException: Failed to create entrypoint object.
+Caused by: java.lang.IncompatibleClassChangeError: Expected static method 'net.neoforged.fml.loading.LoadingModList net.neoforged.fml.loading.FMLLoader.getLoadingModList()'

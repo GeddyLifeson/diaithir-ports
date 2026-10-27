@@ -2,7 +2,8 @@
 """Build the class mapping table (1.21.1 / NeoForge Create world -> 26.1.2 / diaithir port world).
 Rules first (package roots), then unique simple-name match inside the same family. Output map.json:
  {"classes": {old: new}, "unmapped": [..]}  Usage: build_map.py map.json runtime.jar... -- addon.jar..."""
-import sys, json, os, collections
+import sys, json, os, collections, re
+SIGRX = re.compile(r'L((?:com|net|dev|org|plus|mezz|vectorwing)/[A-Za-z0-9_/$]+)[;<]')
 sys.path.insert(0, os.path.dirname(__file__))
 import cf
 P = 'com/zurrtum/create/'
@@ -13,6 +14,8 @@ ROOTS = [  # (old root, [new roots to try in order])
     ('dev/engine_room/flywheel/', [P + 'client/flywheel/', P + 'flywheel/']),
     ('dev/engine_room/vanillin/', [P + 'client/vanillin/', P + 'vanillin/']),
 ]
+STUB = 'diaithir/shim/stub/'
+STUB_PREFIXES = ('net/minecraft/', 'net/neoforged/', 'com/mojang/', 'com/tterrag/')
 FAMILIES = ['net/minecraft/', 'net/neoforged/neoforge/', 'com/mojang/']
 def main():
     out = sys.argv[1]; a = sys.argv.index('--')
@@ -29,10 +32,12 @@ def main():
                 if k[:1] == 'L' and k.endswith(';'): k = k[1:-1]
                 used.add(k)
             for _, o, _, d in c['refs']: used.add(o.lstrip('['))
+            for u in c['utf']:
+                if '/' in u: used.update(SIGRX.findall(u))
     own = set()
     for ad in addons:
         for _, c in cf.jar_classes(ad): own.add(c['name'])
-    m, un = {}, []
+    m, un, stubs = {}, [], []
     ov = json.load(open(os.path.join(os.path.dirname(__file__), 'overrides.json')))
     ov = {k: v for k, v in ov.items() if v in idx and k != v}
     for k in sorted(used - own):
@@ -62,7 +67,9 @@ def main():
             if k.startswith(tuple(FAMILIES)):
                 cands = [c for c in bysimple.get(k.split('/')[-1], []) if c.startswith(tuple(FAMILIES))]
                 if len(cands) == 1: m[k] = cands[0]; done = True
-        if not done: un.append(k)
-    json.dump(dict(classes=m, unmapped=un), open(out, 'w'), indent=1)
+        if not done:
+            if k.startswith(STUB_PREFIXES) and not k.startswith(('net/neoforged/fml/', 'net/neoforged/bus/')): m[k] = STUB + k; stubs.append(k)
+            else: un.append(k)
+    json.dump(dict(classes=m, unmapped=un, stubs=stubs), open(out, 'w'), indent=1)
     print('mapped', len(m), 'unmapped', len(un))
 main()

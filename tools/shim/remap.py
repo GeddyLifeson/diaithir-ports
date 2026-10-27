@@ -29,8 +29,8 @@ def build_rx(classes):
     keys = sorted(classes, key=len, reverse=True)
     # match slash form and dotted form, only at class-name boundaries
     alt = '|'.join(re.escape(k) for k in keys)
-    rx = re.compile(r'(?<![A-Za-z0-9_$/])(?:' + alt + r')(?![A-Za-z0-9_])')
-    def sub(m): return classes[m.group(0)]
+    rx = re.compile(r'(?<![A-Za-z0-9_$/])(L?)(' + alt + r')(?![A-Za-z0-9_])')
+    def sub(m): return m.group(1) + classes[m.group(2)]
     return rx, sub
 
 def fix_toml(t):
@@ -50,12 +50,9 @@ def fix_toml(t):
     flush()
     return ''.join(out)
 
-def main(inp, outp, mp, *flags):
-    m = json.load(open(mp))['classes']
-    both = dict(m); both.update({k.replace('/', '.'): v.replace('/', '.') for k, v in m.items()})
-    rx, sub = build_rx(both)
+def remap_jar(zi, zo, rx, sub):
     n = 0
-    with zipfile.ZipFile(inp) as zi, zipfile.ZipFile(outp, 'w', zipfile.ZIP_DEFLATED) as zo:
+    if True:
         for it in zi.infolist():
             d = zi.read(it.filename)
             if it.filename.endswith('.class') and not it.filename.startswith('META-INF/versions'):
@@ -63,8 +60,19 @@ def main(inp, outp, mp, *flags):
             elif it.filename.endswith(('.sf', '.rsa', '.dsa')) and it.filename.startswith('META-INF/'): continue
             elif it.filename.endswith(('.json')) and ('mixins' in it.filename or 'mixin' in it.filename):
                 d = rx.sub(sub, d.decode('utf8', 'replace')).encode()
+            elif it.filename.startswith(('META-INF/jarjar/', 'META-INF/jars/')) and it.filename.endswith('.jar'):
+                bio = io.BytesIO()
+                with zipfile.ZipFile(io.BytesIO(d)) as zin, zipfile.ZipFile(bio, 'w', zipfile.ZIP_DEFLATED) as zout: remap_jar(zin, zout, rx, sub)
+                d = bio.getvalue()
             elif it.filename == 'META-INF/neoforge.mods.toml':
                 d = fix_toml(d.decode()).encode()
             zo.writestr(it.filename, d)
+    return n
+
+def main(inp, outp, mp, *flags):
+    m = json.load(open(mp))['classes']
+    both = dict(m); both.update({k.replace('/', '.'): v.replace('/', '.') for k, v in m.items()})
+    rx, sub = build_rx(both)
+    with zipfile.ZipFile(inp) as zi, zipfile.ZipFile(outp, 'w', zipfile.ZIP_DEFLATED) as zo: n = remap_jar(zi, zo, rx, sub)
     print(os.path.basename(inp), 'classes rewritten', n)
 if __name__ == '__main__': main(*sys.argv[1:])
