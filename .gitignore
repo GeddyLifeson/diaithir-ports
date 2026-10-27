@@ -8,3 +8,7 @@ out/
 srvtest/
 registrate-src/
 reg-classes/
+registrate/build/
+build/
+.gradle/
+reg-build.log
