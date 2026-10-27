@@ -17,7 +17,7 @@ import java.util.List;
  * follows vanilla containers: dark grey labels on the light panel, light text inside the dark gameplay displays.
  */
 public final class VanillaGui {
-    public static final Identifier PANEL = Identifier.parse("textures/gui/demo_background.png");
+    public static final Identifier PANEL = Identifier.parse("textures/gui/container/generic_54.png");
     public static final Identifier SLOTS = Identifier.parse("textures/gui/container/generic_54.png");
     public static final Identifier BUTTON = Identifier.withDefaultNamespace("widget/button");
     public static final Identifier BUTTON_DISABLED = Identifier.withDefaultNamespace("widget/button_disabled");
@@ -41,7 +41,7 @@ public final class VanillaGui {
 
     /** A vanilla container panel of any size: the standard bevelled light grey frame. */
     public static void panel(GuiGraphicsExtractor g, int x, int y, int w, int h) {
-        final int b = 4, tw = 248, th = 166;
+        final int b = 4, tw = 176, th = 222;
         int mw = w - 2 * b, mh = h - 2 * b;
         g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x, y, 0, 0, b, b, 256, 256);
         g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + w - b, y, tw - b, 0, b, b, 256, 256);
@@ -55,7 +55,7 @@ public final class VanillaGui {
             g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x, y + b, 0, b, b, mh, b, th - 2 * b, 256, 256);
             g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + w - b, y + b, tw - b, b, b, mh, b, th - 2 * b, 256, 256);
         }
-        if (mw > 0 && mh > 0) g.blit(RenderPipelines.GUI_TEXTURED, PANEL, x + b, y + b, b, b, mw, mh, tw - 2 * b, th - 2 * b, 256, 256);
+        if (mw > 0 && mh > 0) g.fill(x + b, y + b, x + b + mw, y + b + mh, 0xFFC6C6C6);
     }
 
     /** A recessed field in the colours of a vanilla slot (dark top-left edge, white bottom-right edge). */
