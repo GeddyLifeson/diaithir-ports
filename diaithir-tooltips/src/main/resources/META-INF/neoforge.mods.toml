@@ -1,0 +1,17 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirtooltips"
+version = "${version}"
+displayName = "Diaithir Tooltips"
+description = "Shows every item's name in Diaithiris, in small grey italics under its normal name. The names come from a generated table (tools/diaithiris_names) so the line looks the same in every game language. Client only."
+displayTest = "IGNORE_ALL_VERSION"
+
+[[dependencies.diaithirtooltips]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "AFTER"
+side = "CLIENT"
