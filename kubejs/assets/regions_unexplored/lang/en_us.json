@@ -1,8 +1,8 @@
 {
-  "biome.regions_unexplored.alpha_grove": "Doirekind",
-  "biome.regions_unexplored.fungal_fen": "Fèitbulguinbuochuir",
-  "biome.regions_unexplored.prismachasm": "Àibeisbogafroisi",
-  "biome.regions_unexplored.bioshroom_caves": "Uombulguinbuochuir",
-  "biome.regions_unexplored.redstone_caves": "Uomkloichedeirgi",
-  "biome.regions_unexplored.scorching_caves": "Uomloisgech"
+  "biome.regions_unexplored.alpha_grove": "Alpha Grove",
+  "biome.regions_unexplored.fungal_fen": "Fungal Fen",
+  "biome.regions_unexplored.prismachasm": "Prismachasm",
+  "biome.regions_unexplored.bioshroom_caves": "Bioshroom Caves",
+  "biome.regions_unexplored.redstone_caves": "Redstone Caves",
+  "biome.regions_unexplored.scorching_caves": "Scorching Caves"
 }

@@ -94,7 +94,7 @@ hash = "87bfd11e1db402c2381c3099c2e42b6aae97e3f229d4620acbcbc7e62845ff98"
 
 [[files]]
 file = "kubejs/assets/biomesoplenty/lang/en_us.json"
-hash = "90d46f57d65757f14bfc2a6f85874cd51c3ff3b7f4e5906e13378eeab6047a7d"
+hash = "cd70ffdbfff1a94bcb57e0ce5db871eebdffb4e42a63c381f471edaeb20ecdab"
 
 [[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
@@ -766,11 +766,11 @@ hash = "11e87e419da942dec0667b889f41eda641235f68b80dbfa05a314b2fb561babe"
 
 [[files]]
 file = "kubejs/assets/diaithir_worlds/lang/en_us.json"
-hash = "634bdb98d805ead067103aed1c51bded488178504d4ef9e860170efaf6b3bf99"
+hash = "4000473b367f86f300c4c4e50407bd17ba47e76f79e7318c811218deceb31116"
 
 [[files]]
 file = "kubejs/assets/minecraft/lang/en_us.json"
-hash = "cb0ae335c542908f99f1e1887a90ddf4f054a3da1187f90edf31aeedfe68f539"
+hash = "55d46827c236f3a1eac038e9186223d7f9bdd177faab17637822a8a544edb3ca"
 
 [[files]]
 file = "kubejs/assets/minecraft/sounds.json"
@@ -794,7 +794,7 @@ hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
 
 [[files]]
 file = "kubejs/assets/regions_unexplored/lang/en_us.json"
-hash = "9cf55aee9e30f5f1aff97c59728a9983c5c5502b264cc4e86efeb33ce933353d"
+hash = "8befae59bb9f24999fb3f035a7173bda2680f65d776f6d279eb4bc638da9ceb8"
 
 [[files]]
 file = "kubejs/assets/roulettecasino/lang/en_us.json"
@@ -11847,8 +11847,8 @@ file = "mods/diaithir-potions-neoforge-26.1.2-0.1.0.jar"
 hash = "a829082ade2b600abe1cb330c8774f30327da20c994b6cd5c4386ad12c16b3ff"
 
 [[files]]
-file = "mods/diaithir-tooltips-neoforge-26.1.2-2.3.1.jar"
-hash = "bf1866c88d1d242e34c77104c68313a8cd529494817ee224313f0d5cd3fc2f5b"
+file = "mods/diaithir-tooltips-neoforge-26.1.2-2.4.1.jar"
+hash = "65fc6a3a5a3e06243f313abbc32ab7e1bf1edc23b6dacde87c26f5e63c877132"
 
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"
