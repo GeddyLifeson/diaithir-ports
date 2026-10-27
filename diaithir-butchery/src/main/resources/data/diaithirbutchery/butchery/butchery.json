@@ -994,6 +994,53 @@
     }
    ]
   },
+  "smokehouse": {
+   "age": 4,
+   "process": [
+    {
+     "in": "diaithirbutchery:haunch",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    },
+    {
+     "in": "diaithirbutchery:shoulder",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    },
+    {
+     "in": "diaithirbutchery:loin",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    },
+    {
+     "in": "diaithirbutchery:ribs",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    },
+    {
+     "in": "diaithirbutchery:flank",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    },
+    {
+     "in": "diaithirbutchery:hock",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 800
+    }
+   ]
+  },
   "steam_cannery": {
    "age": 5,
    "process": [

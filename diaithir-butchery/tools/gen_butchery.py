@@ -10,7 +10,7 @@ A = f"{RES}/assets/{MOD}"
 D = f"{RES}/data/{MOD}"
 CUTS = ["fish_fillet", "bird_breast", "drumstick", "wing", "haunch", "shoulder", "loin", "ribs", "flank", "tenderloin", "neck", "tail", "hock", "liver", "heart", "kidney", "tripe", "tongue", "brain", "scraps"]
 PRODUCTS = ["mince", "sausage", "cured_meat", "jerky", "lard", "canned_meat", "grown_cut"]
-STATIONS = {"drying_rack": 2, "salting_barrel": 2, "meat_grinder": 3, "sausage_stuffer": 3, "rendering_cauldron": 3, "steam_cannery": 5, "cold_room": 6, "vacuum_packer": 7, "vat_grower": 8, "stasis_case": 9}
+STATIONS = {"drying_rack": 2, "salting_barrel": 2, "meat_grinder": 3, "sausage_stuffer": 3, "rendering_cauldron": 3, "smokehouse": 4, "steam_cannery": 5, "cold_room": 6, "vacuum_packer": 7, "vat_grower": 8, "stasis_case": 9}
 KNIVES = {"flint_knife": [1, 0], "copper_knife": [2, 10], "bronze_knife": [3, 15], "butcher_knife": [3, 20], "steel_knife": [4, 30], "tempered_knife": [5, 40], "ceramic_knife": [6, 45],
           "diamond_edge_knife": [7, 60], "crystal_thread_knife": [8, 75], "shard_knife": [9, 100]}  # [Age (9 = Rodos), percent added to every yield]
 
@@ -81,6 +81,7 @@ STATION_DATA = {
     "meat_grinder": {"age": 3, "process": [proc(M + c, M + "mince", 60, 2) for c in ("scraps", "flank", "neck", "tail", "hock")]},
     "sausage_stuffer": {"age": 3, "process": [proc(M + "mince", M + "sausage", 80, 3, 200)]},
     "rendering_cauldron": {"age": 3, "process": [proc(M + "tallow", M + "lard", 200, 2, 500)]},
+    "smokehouse": {"age": 4, "process": [proc(M + c, M + "cured_meat", 2400, 1, 800) for c in ("haunch", "shoulder", "loin", "ribs", "flank", "hock")]},
     "steam_cannery": {"age": 5, "process": [proc(COOKED, M + "canned_meat", 100, 1, 2400)]},
     "cold_room": {"age": 6, "process": [proc(RAW, "same", 40, 1, 400), proc(M + "mince", "same", 40, 1, 400), proc(M + "sausage", "same", 40, 1, 400)]},
     "vacuum_packer": {"age": 7, "process": [proc(RAW, "same", 40, 1, 1200), proc(COOKED, "same", 40, 1, 1200), proc(ANY, "same", 40, 1, 1200)]},
@@ -157,7 +158,7 @@ w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category"
 w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:{k}" for k in KNIVES] + [f"{MOD}:butcher_cleaver"] + [{"id": f"farmersdelight:{m}_knife", "required": False} for m in ("flint", "iron", "golden", "diamond", "netherite")]})
 # stations: one cube model per station with its own coloured top texture
 SCOL = {"drying_rack": (150, 110, 70), "salting_barrel": (130, 95, 60), "meat_grinder": (120, 125, 130), "sausage_stuffer": (140, 140, 145), "rendering_cauldron": (50, 50, 55),
-        "steam_cannery": (160, 110, 70), "cold_room": (190, 215, 230), "vacuum_packer": (200, 205, 210), "vat_grower": (110, 190, 170), "stasis_case": (170, 140, 230)}
+        "smokehouse": (90, 70, 60), "steam_cannery": (160, 110, 70), "cold_room": (190, 215, 230), "vacuum_packer": (200, 205, 210), "vat_grower": (110, 190, 170), "stasis_case": (170, 140, 230)}
 for sid, age in STATIONS.items():
     r, g, b = SCOL[sid]
     rng = random.Random(sid)
@@ -184,6 +185,7 @@ w(f"{A}/lang/en_us.json", lang)
 SR = {"drying_rack": (["SSS", "I I"], {"S": "minecraft:stick", "I": "minecraft:stick"}), "salting_barrel": (["PPP", "P P", "PPP"], {"P": "minecraft:oak_planks"}),
       "meat_grinder": (["I ", "BI"], {"I": "minecraft:iron_ingot", "B": "minecraft:bucket"}), "sausage_stuffer": (["I", "B", "I"], {"I": "minecraft:iron_ingot", "B": "minecraft:bucket"}),
       "rendering_cauldron": (["I I", "ICI", " I "], {"I": "minecraft:iron_ingot", "C": "minecraft:cauldron"}),
+      "smokehouse": (["BBB", "BFB", "BBB"], {"B": "minecraft:bricks", "F": "minecraft:campfire"}),
       "steam_cannery": (["III", "ICI", "FFF"], {"I": "minecraft:iron_ingot", "C": "minecraft:cauldron", "F": "minecraft:furnace"}),
       "cold_room": (["III", "ISI", "III"], {"I": "minecraft:iron_ingot", "S": "minecraft:snow_block"}),
       "vacuum_packer": (["GGG", "IHI", "III"], {"G": "minecraft:glass", "I": "minecraft:iron_ingot", "H": "minecraft:hopper"}),

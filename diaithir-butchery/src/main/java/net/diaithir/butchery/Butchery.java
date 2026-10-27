@@ -81,6 +81,7 @@ public final class Butchery {
         STATIONS.put("meat_grinder", 3);
         STATIONS.put("sausage_stuffer", 3);
         STATIONS.put("rendering_cauldron", 3);
+        STATIONS.put("smokehouse", 4);
         STATIONS.put("steam_cannery", 5);
         STATIONS.put("cold_room", 6);
         STATIONS.put("vacuum_packer", 7);

@@ -8,7 +8,7 @@ root = os.environ.get("DIAITHIRIS_DIR", "/mnt/project-files/diaithiris-archaic")
 modern = {k.lower() for k in json.load(open(f"{root}/archaic_map.json"))}
 old = set(open(f"{root}/tools/oldirish_known.txt").read().lower().split())
 # parts that make up the compounds, each also checked on its own
-PARTS = "feòili phrund salund tiurum staein dabach fàsu falumachd bougsa kùis ùini seòmur fuor poiti moilend bleid tunda kliad stud skian feòlad duir dubun kùl maed foil sierrag smiur knàim fèit lùtaid kas ein tork loisni giel lauma kàmul bòi balgun buochuir iask iumadat sligi seòlad".split()
+PARTS = "dietach teigi feòili phrund salund tiurum staein dabach fàsu falumachd bougsa kùis ùini seòmur fuor poiti moilend bleid tunda kliad stud skian feòlad duir dubun kùl maed foil sierrag smiur knàim fèit lùtaid kas ein tork loisni giel lauma kàmul bòi balgun buochuir iask iumadat sligi seòlad".split()
 words = {w for v in list(names.NAMES.values()) + list(names.SPECIES.values()) + [names.COOKED, names.CONCEPT] + list(names.SIZES.values()) + list(names.CLASS.values())
          for w in v.split()} | set(PARTS)
 bad = [w for w in sorted(words) if w.lower() in modern or w.lower() in old]
