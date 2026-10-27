@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public abstract class ESBlockEntityRenderer<T extends BlockEntity> implements BlockEntityRenderer<T, ESBlockEntityRenderer.State> {
 	protected SubmitNodeCollector collector;
+	protected CameraRenderState camera;
 
 	public static class State extends BlockEntityRenderState {
 		public BlockEntity blockEntity;
@@ -43,6 +44,7 @@ public abstract class ESBlockEntityRenderer<T extends BlockEntity> implements Bl
 	public void submit(State state, PoseStack poseStack, SubmitNodeCollector collector, CameraRenderState camera) {
 		T be = (T) state.blockEntity;
 		this.collector = collector;
+		this.camera = camera;
 		RecordingBufferSource.submit(collector, poseStack, source -> render(be, state.partialTicks, poseStack, source, state.lightCoords, OverlayTexture.NO_OVERLAY));
 	}
 

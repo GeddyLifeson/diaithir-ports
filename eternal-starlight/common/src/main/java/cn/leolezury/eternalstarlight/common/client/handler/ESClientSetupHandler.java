@@ -19,6 +19,7 @@ import cn.leolezury.eternalstarlight.common.client.model.entity.boarwarf.profess
 import cn.leolezury.eternalstarlight.common.client.model.item.*;
 import cn.leolezury.eternalstarlight.common.client.particle.advanced.AdvancedParticle;
 import cn.leolezury.eternalstarlight.common.client.particle.effect.*;
+import cn.leolezury.eternalstarlight.common.client.particle.effect.TrailParticle;
 import cn.leolezury.eternalstarlight.common.client.particle.environment.AshenSnowParticle;
 import cn.leolezury.eternalstarlight.common.client.particle.environment.FallingLeavesParticle;
 import cn.leolezury.eternalstarlight.common.client.particle.environment.FireflyParticle;
@@ -46,30 +47,36 @@ import cn.leolezury.eternalstarlight.common.registry.*;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.MenuAccess;
+import cn.leolezury.eternalstarlight.common.client.model.ESArmorSets;
 import net.minecraft.client.model.*;
+import net.minecraft.client.model.object.skull.SkullModelBase;
+import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.model.object.boat.RaftModel;
+import net.minecraft.client.model.object.cart.MinecartModel;
+import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import cn.leolezury.eternalstarlight.common.client.particle.effect.MudDripParticle;
+import net.minecraft.util.RandomSource;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.renderer.blockentity.*;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -109,15 +116,11 @@ import java.util.function.Supplier;
 
 public class ESClientSetupHandler {
 	public interface BlockColorRegisterStrategy {
-		void register(BlockColor blockColor, Block... blocks);
-	}
-
-	public interface ItemColorRegisterStrategy {
-		void register(ItemColor itemColor, ItemLike... itemLikes);
+		void register(List<BlockTintSource> tintSources, Block... blocks);
 	}
 
 	public interface ParticleProviderRegisterStrategy {
-		<T extends ParticleOptions> void register(ParticleType<T> particle, ParticleEngine.SpriteParticleRegistration<T> provider);
+		<T extends ParticleOptions> void register(ParticleType<T> particle, ParticleResources.SpriteParticleRegistration<T> provider);
 	}
 
 	public interface EntityRendererRegisterStrategy {
@@ -125,11 +128,11 @@ public class ESClientSetupHandler {
 	}
 
 	public interface BlockEntityRendererRegisterStrategy {
-		<T extends BlockEntity> void register(BlockEntityType<? extends T> entityType, BlockEntityRendererProvider<T> entityRendererProvider);
+		<T extends BlockEntity, S extends net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState> void register(BlockEntityType<? extends T> entityType, BlockEntityRendererProvider<T, S> entityRendererProvider);
 	}
 
 	public interface SkullRendererRegisterStrategy {
-		void register(SkullBlock.Type type, SkullModelBase model);
+		void register(SkullBlock.Type type, ModelLayerLocation layerLocation, java.util.function.Function<net.minecraft.client.model.geom.ModelPart, SkullModelBase> factory, Identifier texture);
 	}
 
 	public interface ModelLayerRegisterStrategy {
@@ -138,10 +141,6 @@ public class ESClientSetupHandler {
 
 	public interface MenuScreenRegisterStrategy {
 		<M extends AbstractContainerMenu, U extends Screen & MenuAccess<M>> void register(MenuType<? extends M> menuType, MenuScreens.ScreenConstructor<M, U> screenConstructor);
-	}
-
-	public interface ShaderRegisterStrategy {
-		void register(Identifier location, VertexFormat format, Consumer<ShaderInstance> loaded);
 	}
 
 	public static final List<Supplier<? extends Block>> BLOCKS_CUTOUT_MIPPED = List.of(
@@ -421,45 +420,9 @@ public class ESClientSetupHandler {
 		ESBlocks.STARLIGHT_PORTAL
 	);
 
-	public static final Map<ModelResourceLocation, Map<ItemDisplayContext, ModelResourceLocation>> ITEMS_WITH_SPECIAL_MODEL = new HashMap<>();
-
-	public static ModelResourceLocation getSpecialModel(ModelResourceLocation item, ItemDisplayContext context) {
-		return ITEMS_WITH_SPECIAL_MODEL.containsKey(item) && ITEMS_WITH_SPECIAL_MODEL.get(item).containsKey(context) ? new ModelResourceLocation(ITEMS_WITH_SPECIAL_MODEL.get(item).get(context).id().withPrefix("item/"), ESPlatform.INSTANCE.getLoader() == ESPlatform.Loader.FABRIC ? "fabric_resource" : "standalone") : item;
-	}
-
-	private static void registerSimpleSpecialModel(String id) {
-		ITEMS_WITH_SPECIAL_MODEL.put(ModelResourceLocation.inventory(EternalStarlight.id(id)), Map.of(
-			ItemDisplayContext.HEAD, ModelResourceLocation.inventory(EternalStarlight.id(id + "_inventory")),
-			ItemDisplayContext.GUI, ModelResourceLocation.inventory(EternalStarlight.id(id + "_inventory")),
-			ItemDisplayContext.GROUND, ModelResourceLocation.inventory(EternalStarlight.id(id + "_inventory")),
-			ItemDisplayContext.FIXED, ModelResourceLocation.inventory(EternalStarlight.id(id + "_inventory"))
-		));
-	}
-
-	public static boolean modifiedBakedModels = false;
-
 	public static final SimplexNoise COLOR_NOISE = new SimplexNoise(new WorldgenRandom(new LegacyRandomSource(1225L)));
 
 	public static void clientSetup() {
-		registerSimpleSpecialModel("thermal_springstone_scythe");
-		registerSimpleSpecialModel("thermal_springstone_hammer");
-		registerSimpleSpecialModel("glacite_scythe");
-		registerSimpleSpecialModel("malarite_spear");
-		registerSimpleSpecialModel("pungency_fruit_spear");
-		registerSimpleSpecialModel("seeds_launcher");
-		registerSimpleSpecialModel("starfire_scythe");
-		registerSimpleSpecialModel("starfire_hammer");
-		registerSimpleSpecialModel("flowglaze_scythe");
-		registerSimpleSpecialModel("glistering_greatsword");
-		registerSimpleSpecialModel("glistering_morning_star");
-		registerSimpleSpecialModel("golem_steel_greatsword");
-		registerSimpleSpecialModel("crystal_greatsword");
-		registerSimpleSpecialModel("moonring_greatsword");
-		registerSimpleSpecialModel("petal_scythe");
-		registerSimpleSpecialModel("crescent_spear");
-		registerSimpleSpecialModel("bonemore");
-		registerSimpleSpecialModel("doomeden_rapier");
-		registerSimpleSpecialModel("orb_of_prophecy");
 
 		// TODO REWORK PLAYER ANIMATION SYSTEM
 		// PlayerAnimator.register(new PlayerAnimator.UseItemAnimationTrigger(ESItems.ORB_OF_PROPHECY), ((player) -> new PlayerAnimator.PlayerAnimationState(PlayerAnimation.ORB_OF_PROPHECY_USE, PlayerAnimation.FIRST_PERSON_ORB_OF_PROPHECY_USE, List.of(new PlayerAnimator.UseItemHandAnimationTransformer(), new PlayerAnimator.CopyOuterLayerAnimationTransformer()), true, true, true, true)));
@@ -477,194 +440,64 @@ public class ESClientSetupHandler {
 		TrailManager.register(ESEntities.PERMAFROST_SPIT.get(), new SimpleTrailEmitter<>(0.3f, 8, new Vector4f(104 / 255f, 204 / 255f, 255 / 255f, 1), 0.9f, false, false, ESRenderType.entityTranslucentNoDepth(TrailManager.TRAIL_TEXTURE)));
 		TrailManager.register(ESEntities.THE_GATEKEEPER.get(), new GatekeeperTrailEmitter());
 
-		SkullBlockRenderer.SKIN_BY_TYPE.put(ESSkullType.TANGLED, TangledSkullRenderer.ENTITY_TEXTURE);
 
-		ItemProperties.register(ESItems.STARFALL_LONGBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(ESItems.STARFALL_LONGBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.GALACTIC_QUIVER.get(), EternalStarlight.id("arrows"), (stack, level, entity, i) -> GalacticQuiverItem.hasArrows(stack) ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.GLACITE_SHIELD.get(), Identifier.withDefaultNamespace("blocking"), (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.DEEPSILVER_BRUSH.get(), Identifier.withDefaultNamespace("brushing"), (stack, level, entity, i) -> entity != null && entity.getUseItem() == stack ? (float) (entity.getUseItemRemainingTicks() % 10) / 10.0F : 0.0F);
 
-		ItemProperties.register(ESItems.UNREALIUM_CROSSBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return CrossbowItem.isCharged(stack) ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float) CrossbowItem.getChargeDuration(stack, entity);
-			}
-		});
-		ItemProperties.register(ESItems.UNREALIUM_CROSSBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.UNREALIUM_CROSSBOW.get(), Identifier.withDefaultNamespace("charged"), (stack, level, entity, i) -> CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.UNREALIUM_CROSSBOW.get(), Identifier.withDefaultNamespace("firework"), (stack, level, entity, i) -> {
-			ChargedProjectiles chargedProjectiles = stack.get(DataComponents.CHARGED_PROJECTILES);
-			return chargedProjectiles != null && chargedProjectiles.contains(Items.FIREWORK_ROCKET) ? 1.0F : 0.0F;
-		});
 
-		ItemProperties.register(ESItems.MALARITE_SPEAR.get(), Identifier.withDefaultNamespace("throwing"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.PUNGENCY_FRUIT_SPEAR.get(), Identifier.withDefaultNamespace("throwing"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.STARFIRE_CROSSBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return CrossbowItem.isCharged(stack) ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float) CrossbowItem.getChargeDuration(stack, entity);
-			}
-		});
-		ItemProperties.register(ESItems.STARFIRE_CROSSBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.STARFIRE_CROSSBOW.get(), Identifier.withDefaultNamespace("charged"), (stack, level, entity, i) -> CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.STARFIRE_CROSSBOW.get(), Identifier.withDefaultNamespace("firework"), (stack, level, entity, i) -> {
-			ChargedProjectiles chargedProjectiles = stack.get(DataComponents.CHARGED_PROJECTILES);
-			return chargedProjectiles != null && chargedProjectiles.contains(Items.FIREWORK_ROCKET) ? 1.0F : 0.0F;
-		});
 
-		ItemProperties.register(ESItems.FLOWGLAZE_BOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(ESItems.FLOWGLAZE_BOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.FLOWGLAZE_SHIELD.get(), Identifier.withDefaultNamespace("blocking"), (itemStack, clientLevel, livingEntity, i) -> livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.CANDLASH.get(), EternalStarlight.id("extended"), (stack, level, entity, i) -> {
-			if (entity == null || level == null) {
-				return 0.0F;
-			} else {
-				return entity.getMainHandItem() == stack && level.getEntity(ESDataAttachments.WHIP.getData(entity)) instanceof Candlash ? 1.0F : 0.0F;
-			}
-		});
 
-		ItemProperties.register(ESItems.TENTACLE_SPIKE.get(), EternalStarlight.id("extended"), (stack, level, entity, i) -> {
-			if (entity == null || level == null) {
-				return 0.0F;
-			} else {
-				return entity.getMainHandItem() == stack && level.getEntity(ESDataAttachments.WHIP.getData(entity)) instanceof TentacleSpike ? 1.0F : 0.0F;
-			}
-		});
 
-		ItemProperties.register(ESItems.SHATTERED_SWORD.get(), EternalStarlight.id("no_blade"), (stack, level, entity, i) -> ShatteredSwordItem.hasBlade(stack) ? 0.0F : 1.0F);
 
-		ItemProperties.register(ESItems.DAGGER_OF_HUNGER.get(), EternalStarlight.id("hunger_state"), (stack, level, entity, i) -> Math.min(2f, (stack.getOrDefault(ESDataComponents.HUNGER_LEVEL.get(), 0f) + 1f) * 1.5f) / 2f);
 
-		ItemProperties.register(ESItems.GLISTERING_GREATSWORD.get(), Identifier.withDefaultNamespace("blocking"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.GLISTERING_BOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(ESItems.GLISTERING_BOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.COLDSNAP.get(), EternalStarlight.id("extended"), (stack, level, entity, i) -> {
-			if (entity == null || level == null) {
-				return 0.0F;
-			} else {
-				return entity.getMainHandItem() == stack && level.getEntity(ESDataAttachments.WHIP.getData(entity)) instanceof Coldsnap ? 1.0F : 0.0F;
-			}
-		});
 
-		ItemProperties.register(ESItems.GOLEM_STEEL_GREATSWORD.get(), Identifier.withDefaultNamespace("blocking"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.MECHANICAL_CROSSBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return CrossbowItem.isCharged(stack) ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float) CrossbowItem.getChargeDuration(stack, entity);
-			}
-		});
-		ItemProperties.register(ESItems.MECHANICAL_CROSSBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.MECHANICAL_CROSSBOW.get(), Identifier.withDefaultNamespace("charged"), (stack, level, entity, i) -> CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.MECHANICAL_CROSSBOW.get(), Identifier.withDefaultNamespace("firework"), (stack, level, entity, i) -> {
-			ChargedProjectiles chargedProjectiles = stack.get(DataComponents.CHARGED_PROJECTILES);
-			return chargedProjectiles != null && chargedProjectiles.contains(Items.FIREWORK_ROCKET) ? 1.0F : 0.0F;
-		});
 
-		ItemProperties.register(ESItems.CRYSTAL_GREATSWORD.get(), Identifier.withDefaultNamespace("blocking"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.CRYSTAL_CROSSBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return CrossbowItem.isCharged(stack) ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float) CrossbowItem.getChargeDuration(stack, entity);
-			}
-		});
-		ItemProperties.register(ESItems.CRYSTAL_CROSSBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.CRYSTAL_CROSSBOW.get(), Identifier.withDefaultNamespace("charged"), (stack, level, entity, i) -> CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.CRYSTAL_CROSSBOW.get(), Identifier.withDefaultNamespace("firework"), (stack, level, entity, i) -> {
-			ChargedProjectiles chargedProjectiles = stack.get(DataComponents.CHARGED_PROJECTILES);
-			return chargedProjectiles != null && chargedProjectiles.contains(Items.FIREWORK_ROCKET) ? 1.0F : 0.0F;
-		});
 
-		ItemProperties.register(ESItems.WILTED_CROSSBOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return CrossbowItem.isCharged(stack) ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float) CrossbowItem.getChargeDuration(stack, entity);
-			}
-		});
-		ItemProperties.register(ESItems.WILTED_CROSSBOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.WILTED_CROSSBOW.get(), Identifier.withDefaultNamespace("charged"), (stack, level, entity, i) -> CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
-		ItemProperties.register(ESItems.WILTED_CROSSBOW.get(), Identifier.withDefaultNamespace("firework"), (stack, level, entity, i) -> {
-			ChargedProjectiles chargedProjectiles = stack.get(DataComponents.CHARGED_PROJECTILES);
-			return chargedProjectiles != null && chargedProjectiles.contains(Items.FIREWORK_ROCKET) ? 1.0F : 0.0F;
-		});
 
-		ItemProperties.register(ESItems.MOONRING_BOW.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(ESItems.MOONRING_BOW.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.MOONRING_GREATSWORD.get(), Identifier.withDefaultNamespace("blocking"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 
-		ItemProperties.register(ESItems.CHAIN_OF_SOULS.get(), EternalStarlight.id("extended"), (stack, level, entity, i) -> {
-			if (entity == null || level == null) {
-				return 0.0F;
-			} else {
-				boolean mainHand = entity.getMainHandItem() == stack;
-				boolean offhand = entity.getOffhandItem() == stack;
-				if (entity.getMainHandItem().is(ESItems.CHAIN_OF_SOULS.get())) {
-					offhand = false;
-				}
 
-				return (mainHand || offhand) && level.getEntity(ESDataAttachments.GRAPPLING.getData(entity)) instanceof ChainOfSouls ? 1.0F : 0.0F;
-			}
-		});
 
-		ItemProperties.register(ESItems.CRESCENT_SPEAR.get(), Identifier.withDefaultNamespace("throwing"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
-
-		ItemProperties.register(ESItems.BONEMORE.get(), Identifier.withDefaultNamespace("blocking"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
-
-		ItemProperties.register(ESItems.BOW_OF_BLOOD.get(), Identifier.withDefaultNamespace("pull"), (stack, level, entity, i) -> {
-			if (entity == null) {
-				return 0.0F;
-			} else {
-				return entity.getUseItem() != stack ? 0.0F : (float) (stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / 20.0F;
-			}
-		});
-		ItemProperties.register(ESItems.BOW_OF_BLOOD.get(), Identifier.withDefaultNamespace("pulling"), (stack, level, entity, i) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);
 	}
 
 	public static void registerBlockColors(BlockColorRegisterStrategy strategy) {
-		BlockColor leavesColor = (state, getter, pos, i) -> getter != null && pos != null ? BiomeColors.getAverageFoliageColor(getter, pos) : ARGB.opaque(5195923);
-		BlockColor grassColor = (state, getter, pos, i) -> getter != null && pos != null ? BiomeColors.getAverageGrassColor(getter, pos) : ARGB.opaque(5195923);
-		BlockColor dyeColor = (state, getter, pos, i) -> ARGB.opaque(state.getBlock().defaultMapColor().col);
+		List<BlockTintSource> leavesColor = List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				return ARGB.opaque(5195923);
+			}
+
+			@Override
+			public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
+				return BiomeColors.getAverageFoliageColor(level, pos);
+			}
+		});
+		List<BlockTintSource> grassColor = List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				return ARGB.opaque(5195923);
+			}
+
+			@Override
+			public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
+				return BiomeColors.getAverageGrassColor(level, pos);
+			}
+		});
+		List<BlockTintSource> dyeColor = List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				return ARGB.opaque(state.getBlock().defaultMapColor().col);
+			}
+		});
 		strategy.register(grassColor, ESBlocks.NIGHTFALL_GRASS_BLOCK.get());
 		strategy.register(grassColor, ESBlocks.CAVE_MOSS.get());
 		strategy.register(grassColor, ESBlocks.CAVE_MOSS_PLANT.get());
@@ -708,110 +541,30 @@ public class ESClientSetupHandler {
 		strategy.register(dyeColor, ESBlocks.GREEN_YETI_FUR_CARPET.get());
 		strategy.register(dyeColor, ESBlocks.RED_YETI_FUR_CARPET.get());
 		strategy.register(dyeColor, ESBlocks.BLACK_YETI_FUR_CARPET.get());
-		strategy.register((state, getter, pos, i) -> {
-			float progress = state.hasProperty(AccumulatorBlock.POWER) ? state.getValue(AccumulatorBlock.POWER) / 15.0f : 0;
-			return ARGB.srgbLerp(progress, 0xffffffff, 0xff00dfff);
-		}, ESBlocks.ACCUMULATOR.get());
-		strategy.register((state, getter, pos, i) -> {
-			double progress = getter != null && pos != null ? (COLOR_NOISE.getValue(pos.getX() / 10.0, pos.getY() / 10.0, pos.getZ() / 10.0) + 1) / 2 : (Math.sin((ESClientHandler.clientTickCount + Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally())) / 30.0) + 1) / 2;
-			return ARGB.color((int) Mth.lerp(progress, 218, 255), (int) Mth.lerp(progress, 90, 255), (int) Mth.lerp(progress, 255, 116));
-		}, ESBlocks.DUSK_GLASS.get());
-	}
-
-	public static void registerItemColors(ItemColorRegisterStrategy strategy) {
-		ItemColor toBlock = (stack, packedLight) -> {
-			if (stack.getItem() instanceof BlockItem blockItem) {
-				BlockState blockstate = blockItem.getBlock().defaultBlockState();
-				return Minecraft.getInstance().getBlockColors().getColor(blockstate, null, null, packedLight);
-			} else {
-				return -1;
+		strategy.register(List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				float progress = state.hasProperty(AccumulatorBlock.POWER) ? state.getValue(AccumulatorBlock.POWER) / 15.0f : 0;
+				return ARGB.srgbLerp(progress, 0xffffffff, 0xff00dfff);
 			}
-		};
-		strategy.register(toBlock, ESBlocks.NIGHTFALL_GRASS_BLOCK.get());
-		strategy.register(toBlock, ESBlocks.CAVE_MOSS.get());
-		strategy.register(toBlock, ESBlocks.CAVE_MOSS_PLANT.get());
-		strategy.register(toBlock, ESBlocks.CAVE_MOSS_VEIN.get());
-		strategy.register(toBlock, ESBlocks.CAVE_MOSS_BLOCK.get());
-		strategy.register(toBlock, ESBlocks.CAVE_MOSS_CARPET.get());
-		strategy.register(toBlock, ESBlocks.MOONLIGHT_LILY_PAD.get());
-		strategy.register(toBlock, ESBlocks.STARLIT_LILY_PAD.get());
-		strategy.register(toBlock, ESBlocks.MOONLIGHT_DUCKWEED.get());
-		strategy.register(toBlock, ESBlocks.BANYIN_LEAVES.get());
-		strategy.register(toBlock, ESBlocks.STARFIRE_BIRD_NEST.get());
-		strategy.register(toBlock, ESBlocks.WHITE_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.ORANGE_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.MAGENTA_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.LIGHT_BLUE_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.YELLOW_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.LIME_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.PINK_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.GRAY_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.LIGHT_GRAY_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.CYAN_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.PURPLE_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.BLUE_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.BROWN_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.GREEN_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.RED_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.BLACK_YETI_FUR.get());
-		strategy.register(toBlock, ESBlocks.WHITE_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.ORANGE_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.MAGENTA_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.LIGHT_BLUE_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.YELLOW_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.LIME_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.PINK_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.GRAY_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.LIGHT_GRAY_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.CYAN_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.PURPLE_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.BLUE_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.BROWN_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.GREEN_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.RED_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.BLACK_YETI_FUR_CARPET.get());
-		strategy.register(toBlock, ESBlocks.ACCUMULATOR.get());
-		strategy.register(toBlock, ESBlocks.DUSK_GLASS.get());
-	}
-
-	public static void registerShaders(ShaderRegisterStrategy strategy) {
-		strategy.register(EternalStarlight.id("rendertype_starlight_portal"), DefaultVertexFormat.BLOCK, ESShaders::setRenderTypeStarlightPortal);
-		strategy.register(EternalStarlight.id("rendertype_eclipse"), DefaultVertexFormat.BLOCK, ESShaders::setRenderTypeEclipse);
-		strategy.register(EternalStarlight.id("aurora"), DefaultVertexFormat.POSITION_COLOR, ESShaders::setAurora);
-	}
-
-	public static void modifyBakingResult(Map<ModelResourceLocation, BakedModel> models) {
-		if (!modifiedBakedModels) {
-			for (ModelResourceLocation id : models.keySet()) {
-				String path = id.id().getPath();
-				if (id.id().getNamespace().equals(EternalStarlight.ID) && (path.startsWith("thermal_springstone_") || (path.startsWith("starfire_") && !path.startsWith("starfire_bird") && !path.startsWith("starfire_upgrade")))) {
-					models.put(id, ESClientPlatform.INSTANCE.getGlowingBakedModel(models.get(id)));
-				}
+		}), ESBlocks.ACCUMULATOR.get());
+		strategy.register(List.of(new BlockTintSource() {
+			@Override
+			public int color(BlockState state) {
+				double progress = (Math.sin((ESClientHandler.clientTickCount + Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false)) / 30.0) + 1) / 2;
+				return duskGlassColor(progress);
 			}
-			modifiedBakedModels = true;
-		}
+
+			@Override
+			public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) {
+				double progress = (COLOR_NOISE.getValue(pos.getX() / 10.0, pos.getY() / 10.0, pos.getZ() / 10.0) + 1) / 2;
+				return duskGlassColor(progress);
+			}
+		}), ESBlocks.DUSK_GLASS.get());
 	}
 
-	public static void registerExtraBakedModels(Consumer<ModelResourceLocation> registration) {
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("thermal_springstone_scythe_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("thermal_springstone_hammer_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("glacite_scythe_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("malarite_spear_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("pungency_fruit_spear_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("seeds_launcher_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("starfire_scythe_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("starfire_hammer_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("flowglaze_scythe_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("glistering_greatsword_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("glistering_morning_star_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("golem_steel_greatsword_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("crystal_greatsword_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("moonring_greatsword_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("petal_scythe_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("crescent_spear_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("bonemore_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("doomeden_rapier_inventory")));
-		registration.accept(ModelResourceLocation.inventory(EternalStarlight.id("orb_of_prophecy_inventory")));
+	private static int duskGlassColor(double progress) {
+		return ARGB.color((int) Mth.lerp(progress, 218, 255), (int) Mth.lerp(progress, 90, 255), (int) Mth.lerp(progress, 255, 116));
 	}
 
 	public static void registerParticleProviders(ParticleProviderRegisterStrategy strategy) {
@@ -849,32 +602,29 @@ public class ESClientSetupHandler {
 		strategy.register(ESParticles.EXPLOSION_SHOCK.get(), ExplosionShockParticle.Provider::new);
 		strategy.register(ESParticles.COLORED_INK.get(), spriteSet -> new ParticleProvider<>() {
 			@Override
-			public @NotNull Particle createParticle(ColorParticleOption option, ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
+			public @NotNull Particle createParticle(ColorParticleOption option, ClientLevel level, double x, double y, double z, double dx, double dy, double dz, RandomSource random) {
 				return new SquidInkParticle(level, x, y, z, dx, dy, dz, ARGB.colorFromFloat(option.getAlpha(), 1 - option.getRed(), 1 - option.getGreen(), 1 - option.getBlue()), spriteSet);
 			}
 		});
-		strategy.register(ESParticles.AMARAMBER_WAX_ON.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {
+		strategy.register(ESParticles.AMARAMBER_WAX_ON.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz, random) -> {
 			GlowParticle particle = new GlowParticle(level, x, y, z, 0.0F, 0.0F, 0.0F, spriteSet);
 			particle.setParticleSpeed(dx * 0.01 / (double) 2.0F, dy * 0.01, dz * 0.01 / (double) 2.0F);
 			particle.setLifetime(level.getRandom().nextInt(30) + 10);
 			return particle;
 		});
-		strategy.register(ESParticles.DRIPPING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {
-			DripParticle particle = new DripParticle.DripHangParticle(level, x, y, z, Fluids.EMPTY, ESParticles.FALLING_MUD.get());
+		strategy.register(ESParticles.DRIPPING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz, random) -> {
+			DripParticle particle = new MudDripParticle(level, x, y, z, MudDripParticle.Kind.HANG, ESParticles.FALLING_MUD.get(), spriteSet.first());
 			particle.setColor(50 / 255f, 28 / 255f, 22 / 255f);
-			particle.pickSprite(spriteSet);
 			return particle;
 		});
-		strategy.register(ESParticles.FALLING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {
-			DripParticle particle = new DripParticle.FallAndLandParticle(level, x, y, z, Fluids.EMPTY, ESParticles.LANDING_MUD.get());
+		strategy.register(ESParticles.FALLING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz, random) -> {
+			DripParticle particle = new MudDripParticle(level, x, y, z, MudDripParticle.Kind.FALL, ESParticles.LANDING_MUD.get(), spriteSet.first());
 			particle.setColor(68 / 255f, 45 / 255f, 27 / 255f);
-			particle.pickSprite(spriteSet);
 			return particle;
 		});
-		strategy.register(ESParticles.LANDING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz) -> {
-			DripParticle particle = new DripParticle.DripLandParticle(level, x, y, z, Fluids.EMPTY);
+		strategy.register(ESParticles.LANDING_MUD.get(), spriteSet -> (type, level, x, y, z, dx, dy, dz, random) -> {
+			DripParticle particle = new MudDripParticle(level, x, y, z, MudDripParticle.Kind.LAND, null, spriteSet.first());
 			particle.setColor(68 / 255f, 45 / 255f, 27 / 255f);
-			particle.pickSprite(spriteSet);
 			return particle;
 		});
 		strategy.register(ESParticles.ALLIED.get(), SuspendedTownParticle.HappyVillagerProvider::new);
@@ -985,7 +735,7 @@ public class ESClientSetupHandler {
 	}
 
 	public static void registerBlockEntityRenderers(BlockEntityRendererRegisterStrategy strategy) {
-		strategy.register(ESBlockEntities.SIGN.get(), SignRenderer::new);
+		strategy.register(ESBlockEntities.SIGN.get(), StandingSignRenderer::new);
 		strategy.register(ESBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
 		strategy.register(ESBlockEntities.TORREYA_CAMPFIRE.get(), CampfireRenderer::new);
 		strategy.register(ESBlockEntities.DRYING_RACK.get(), DryingRackRenderer::new);
@@ -1005,35 +755,35 @@ public class ESClientSetupHandler {
 		strategy.register(ESBlockEntities.STARLIGHT_PORTAL.get(), ESPortalRenderer::new);
 	}
 
-	public static void registerSkullModels(SkullRendererRegisterStrategy strategy, EntityModelSet modelSet) {
-		strategy.register(ESSkullType.TANGLED, new TangledHeadModel(modelSet.bakeLayer(TangledHeadModel.LAYER_LOCATION)));
+	public static void registerSkullModels(SkullRendererRegisterStrategy strategy) {
+		strategy.register(ESSkullType.TANGLED, TangledHeadModel.LAYER_LOCATION, TangledHeadModel::new, TangledSkullRenderer.ENTITY_TEXTURE);
 	}
 
 	private static final CubeDeformation INNER_ARMOR_DEFORMATION = new CubeDeformation(0.5f);
 	private static final CubeDeformation OUTER_ARMOR_DEFORMATION = new CubeDeformation(1.0f);
 
 	public static void registerLayers(ModelLayerRegisterStrategy strategy) {
-		strategy.register(ThermalSpringStoneArmorModel.INNER_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(INNER_ARMOR_DEFORMATION), 64, 32));
+		strategy.register(ThermalSpringStoneArmorModel.INNER_LOCATION, () -> LayerDefinition.create(HumanoidModel.createMesh(INNER_ARMOR_DEFORMATION, 0.0F), 64, 32));
 		strategy.register(ThermalSpringStoneArmorModel.OUTER_LOCATION, () -> ThermalSpringStoneArmorModel.createArmorLayer(OUTER_ARMOR_DEFORMATION));
 		strategy.register(AlchemistArmorModel.LAYER_LOCATION, AlchemistArmorModel::createBodyLayer);
-		strategy.register(StarlitDiamondArmorModel.INNER_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(INNER_ARMOR_DEFORMATION), 64, 32));
+		strategy.register(StarlitDiamondArmorModel.INNER_LOCATION, () -> LayerDefinition.create(HumanoidModel.createMesh(INNER_ARMOR_DEFORMATION, 0.0F), 64, 32));
 		strategy.register(StarlitDiamondArmorModel.OUTER_LOCATION, () -> StarlitDiamondArmorModel.createArmorLayer(OUTER_ARMOR_DEFORMATION));
 		strategy.register(UnrealiumArmorModel.INNER_LOCATION, UnrealiumArmorModel::createInnerArmorLayer);
 		strategy.register(UnrealiumArmorModel.OUTER_LOCATION, UnrealiumArmorModel::createOuterArmorLayer);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.LUNAR), BoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.LUNAR), ChestBoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.NORTHLAND), BoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.NORTHLAND), ChestBoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.BANYIN), BoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.BANYIN), ChestBoatModel::createBodyModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.LUNAR), BoatModel::createBoatModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.LUNAR), BoatModel::createChestBoatModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.NORTHLAND), BoatModel::createBoatModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.NORTHLAND), BoatModel::createChestBoatModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.BANYIN), BoatModel::createBoatModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.BANYIN), BoatModel::createChestBoatModel);
 		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.SCARLET), ScarletBoatModel::createBodyModel);
 		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.SCARLET), ScarletChestBoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.TORREYA), BoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.TORREYA), ChestBoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.JINGLESTEM), RaftModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.JINGLESTEM), ChestRaftModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.CRADLEWOOD), BoatModel::createBodyModel);
-		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.CRADLEWOOD), ChestBoatModel::createBodyModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.TORREYA), BoatModel::createBoatModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.TORREYA), BoatModel::createChestBoatModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.JINGLESTEM), RaftModel::createRaftModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.JINGLESTEM), RaftModel::createChestRaftModel);
+		strategy.register(ESBoatRenderer.createBoatModelName(ESBoat.Type.CRADLEWOOD), BoatModel::createBoatModel);
+		strategy.register(ESBoatRenderer.createChestBoatModelName(ESBoat.Type.CRADLEWOOD), BoatModel::createChestBoatModel);
 		strategy.register(AethersentMeteorModel.LAYER_LOCATION, AethersentMeteorModel::createBodyLayer);
 		strategy.register(SpiralArrowModel.LAYER_LOCATION, SpiralArrowModel::createBodyLayer);
 		strategy.register(BoarwarfModel.LAYER_LOCATION, BoarwarfModel::createBodyLayer);
@@ -1043,12 +793,10 @@ public class ESClientSetupHandler {
 		strategy.register(BoarwarfDyerModel.LAYER_LOCATION, BoarwarfDyerModel::createBodyLayer);
 		strategy.register(BoarwarfSilversmithModel.LAYER_LOCATION, BoarwarfSilversmithModel::createBodyLayer);
 		strategy.register(AstralGolemModel.LAYER_LOCATION, AstralGolemModel::createBodyLayer);
-		strategy.register(AstralGolemModel.INNER_ARMOR_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(INNER_ARMOR_DEFORMATION), 64, 32));
-		strategy.register(AstralGolemModel.OUTER_ARMOR_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(OUTER_ARMOR_DEFORMATION), 64, 32));
+		ESArmorSets.register(AstralGolemModel.ARMOR_LOCATIONS, strategy::register);
 		strategy.register(GleechModel.LAYER_LOCATION, GleechModel::createBodyLayer);
 		strategy.register(LonestarSkeletonRenderer.LONESTAR, LonestarSkeletonModel::createBodyLayer);
-		strategy.register(LonestarSkeletonRenderer.LONESTAR_INNER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(INNER_ARMOR_DEFORMATION), 64, 32));
-		strategy.register(LonestarSkeletonRenderer.LONESTAR_OUTER_ARMOR, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(OUTER_ARMOR_DEFORMATION), 64, 32));
+		ESArmorSets.register(LonestarSkeletonRenderer.LONESTAR_ARMOR, strategy::register);
 		strategy.register(NightfallSpiderModel.LAYER_LOCATION, NightfallSpiderModel::createBodyLayer);
 		strategy.register(SeekerModel.LAYER_LOCATION, SeekerModel::createBodyLayer);
 		strategy.register(ThirstWalkerModel.LAYER_LOCATION, ThirstWalkerModel::createBodyLayer);
@@ -1057,8 +805,7 @@ public class ESClientSetupHandler {
 		strategy.register(TinyCreteorModel.LAYER_LOCATION, () -> TinyCreteorModel.createBodyLayer(CubeDeformation.NONE));
 		strategy.register(TinyCreteorModel.ARMOR_LOCATION, () -> TinyCreteorModel.createBodyLayer(new CubeDeformation(2.0f)));
 		strategy.register(StranghoulModel.LAYER_LOCATION, StranghoulModel::createBodyLayer);
-		strategy.register(StranghoulModel.INNER_ARMOR_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(INNER_ARMOR_DEFORMATION), 64, 32));
-		strategy.register(StranghoulModel.OUTER_ARMOR_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(OUTER_ARMOR_DEFORMATION), 64, 32));
+		ESArmorSets.register(StranghoulModel.ARMOR_LOCATIONS, strategy::register);
 		strategy.register(EntModel.LAYER_LOCATION, EntModel::createBodyLayer);
 		strategy.register(RatlinModel.LAYER_LOCATION, RatlinModel::createBodyLayer);
 		strategy.register(ShadowSnailModel.LAYER_LOCATION, ShadowSnailModel::createBodyLayer);
@@ -1102,8 +849,8 @@ public class ESClientSetupHandler {
 		strategy.register(EctostoneModel.LAYER_LOCATION, EctostoneModel::createBodyLayer);
 
 		// vanilla entities
-		strategy.register(ArmorLikeAccessoryLayer.INNER_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(new CubeDeformation(1.0F)), 64, 32));
-		strategy.register(ArmorLikeAccessoryLayer.OUTER_LOCATION, () -> LayerDefinition.create(HumanoidArmorModel.createBodyLayer(new CubeDeformation(1.5F)), 64, 32));
+		strategy.register(ArmorLikeAccessoryLayer.INNER_LOCATION, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(1.0F), 0.0F), 64, 32));
+		strategy.register(ArmorLikeAccessoryLayer.OUTER_LOCATION, () -> LayerDefinition.create(HumanoidModel.createMesh(new CubeDeformation(1.5F), 0.0F), 64, 32));
 
 		// items
 		strategy.register(GlaciteShieldModel.LAYER_LOCATION, GlaciteShieldModel::createBodyLayer);
@@ -1133,16 +880,22 @@ public class ESClientSetupHandler {
 		strategy.accept(ESClientPlatform.INSTANCE.createResourceReloadListener());
 	}
 
-	@SuppressWarnings({"unchecked"})
-	public static void onRenderLayerAttachment(EntityType<?> entityType, LivingEntityRenderer<?, ?> renderer, EntityRendererProvider.Context context) {
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public static void onRenderLayerAttachment(EntityType<?> entityType, LivingEntityRenderer<?, ?, ?> renderer, EntityRendererProvider.Context context) {
 		try {
 			if (renderer.getModel() instanceof HumanoidModel<?>) {
-				renderer.addLayer((RenderLayer) new ButterflyWingsAmuletLayer((RenderLayerParent<LivingEntity, HumanoidModel<LivingEntity>>) renderer, new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.INNER_LOCATION)), new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.OUTER_LOCATION))));
-				renderer.addLayer((RenderLayer) new FungusAmuletLayer((RenderLayerParent<LivingEntity, HumanoidModel<LivingEntity>>) renderer, new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.INNER_LOCATION)), new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.OUTER_LOCATION))));
-				renderer.addLayer((RenderLayer) new PearlNecklaceLayer((RenderLayerParent<LivingEntity, HumanoidModel<LivingEntity>>) renderer, new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.INNER_LOCATION)), new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.OUTER_LOCATION))));
-				renderer.addLayer((RenderLayer) new CrescentPendantLayer((RenderLayerParent<LivingEntity, HumanoidModel<LivingEntity>>) renderer, new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.INNER_LOCATION)), new HumanoidArmorModel<>(context.bakeLayer(ArmorLikeAccessoryLayer.OUTER_LOCATION))));
+				LivingEntityRenderer raw = renderer;
+				RenderLayerParent<HumanoidRenderState, HumanoidModel<HumanoidRenderState>> parent = (RenderLayerParent<HumanoidRenderState, HumanoidModel<HumanoidRenderState>>) renderer;
+				raw.addLayer(new ButterflyWingsAmuletLayer(parent, accessoryModel(context, ArmorLikeAccessoryLayer.INNER_LOCATION), accessoryModel(context, ArmorLikeAccessoryLayer.OUTER_LOCATION)));
+				raw.addLayer(new FungusAmuletLayer(parent, accessoryModel(context, ArmorLikeAccessoryLayer.INNER_LOCATION), accessoryModel(context, ArmorLikeAccessoryLayer.OUTER_LOCATION)));
+				raw.addLayer(new PearlNecklaceLayer(parent, accessoryModel(context, ArmorLikeAccessoryLayer.INNER_LOCATION), accessoryModel(context, ArmorLikeAccessoryLayer.OUTER_LOCATION)));
+				raw.addLayer(new CrescentPendantLayer(parent, accessoryModel(context, ArmorLikeAccessoryLayer.INNER_LOCATION), accessoryModel(context, ArmorLikeAccessoryLayer.OUTER_LOCATION)));
 			}
 		} catch (ClassCastException ignored) {
 		}
+	}
+
+	private static HumanoidModel<HumanoidRenderState> accessoryModel(EntityRendererProvider.Context context, ModelLayerLocation location) {
+		return new HumanoidModel<>(context.bakeLayer(location), RenderTypes::armorCutoutNoCull);
 	}
 }

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.EnergyTransmitterBlock;
@@ -20,7 +21,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
-public class EnergyTransmitterRenderer<T extends EnergyTransmitterBlockEntity> implements BlockEntityRenderer<T> {
+public class EnergyTransmitterRenderer<T extends EnergyTransmitterBlockEntity> extends ESBlockEntityRenderer<T> {
 	public static final Identifier ENERGY_TRANSMITTER_TEXTURE = EternalStarlight.id("textures/entity/energy_transmitter.png");
 
 	public EnergyTransmitterRenderer(BlockEntityRendererProvider.Context context) {
@@ -50,7 +51,7 @@ public class EnergyTransmitterRenderer<T extends EnergyTransmitterBlockEntity> i
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(T blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

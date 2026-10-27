@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import cn.leolezury.eternalstarlight.common.block.ESPortalBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.ESPortalBlockEntity;
 import cn.leolezury.eternalstarlight.common.client.ESRenderType;
@@ -15,7 +16,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 
-public class ESPortalRenderer<T extends ESPortalBlockEntity> implements BlockEntityRenderer<T> {
+public class ESPortalRenderer<T extends ESPortalBlockEntity> extends ESBlockEntityRenderer<T> {
 	public ESPortalRenderer(BlockEntityRendererProvider.Context context) {
 
 	}
@@ -23,9 +24,9 @@ public class ESPortalRenderer<T extends ESPortalBlockEntity> implements BlockEnt
 	@Override
 	public void render(T portal, float f, PoseStack stack, MultiBufferSource bufferSource, int light, int overlay) {
 		if (ESConfig.INSTANCE.enablePortalShader && portal.getBlockState().getValue(ESPortalBlock.CENTER)) {
-			VertexConsumer vertexConsumer = ESClientHandler.AFTER_LEVEL_BUFFER_SOURCE.getBuffer(ESRenderType.portal());
+			VertexConsumer vertexConsumer = bufferSource.getBuffer(ESRenderType.portal());
 			PoseStack.Pose pose = stack.last();
-			float radius = 0.6f * portal.getBlockState().getValue(ESPortalBlock.SIZE) * (Math.min(portal.getClientSideTickCount() + Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), 60f) / 60f);
+			float radius = 0.6f * portal.getBlockState().getValue(ESPortalBlock.SIZE) * (Math.min(portal.getClientSideTickCount() + Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally()), 60f) / 60f);
 			if (portal.getBlockState().getValue(ESPortalBlock.AXIS) == Direction.Axis.X) {
 				vertexConsumer.addVertex(pose, -radius, -radius, 0.5f).setColor(1, 1, 1, 1).setUv(0, 0).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);
 				vertexConsumer.addVertex(pose, -radius, 1 + radius, 0.5f).setColor(1, 1, 1, 1).setUv(0, 1).setOverlay(OverlayTexture.NO_OVERLAY).setLight(LightCoordsUtil.FULL_BRIGHT).setNormal(pose, 0.0F, 1.0F, 0.0F);

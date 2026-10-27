@@ -1,6 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.model.entity;
 
-import cn.leolezury.eternalstarlight.common.entity.living.monster.LonestarSkeleton;
+import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
+import net.minecraft.util.RandomSource;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.monster.skeleton.SkeletonModel;
@@ -8,13 +9,14 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class LonestarSkeletonModel<T extends LonestarSkeleton> extends SkeletonModel<T> {
+public class LonestarSkeletonModel extends SkeletonModel<SkeletonRenderState> {
 	private final ModelPart innerHead;
+	private final RandomSource random = RandomSource.create();
 
 	public LonestarSkeletonModel(ModelPart root) {
 		super(root);
-		if (getHead().hasChild("inner_head")) {
-			this.innerHead = getHead().getChild("inner_head");
+		if (this.head.hasChild("inner_head")) {
+			this.innerHead = this.head.getChild("inner_head");
 		} else {
 			this.innerHead = null;
 		}
@@ -31,13 +33,13 @@ public class LonestarSkeletonModel<T extends LonestarSkeleton> extends SkeletonM
 	}
 
 	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+	public void setupAnim(SkeletonRenderState state) {
+		super.setupAnim(state);
 		if (innerHead != null) {
 			innerHead.resetPose();
-			if (entity.level().tickRateManager().runsNormally() && !Minecraft.getInstance().isPaused()) {
-				innerHead.x += (float) (entity.getRandom().nextGaussian() * 0.25);
-				innerHead.y += (float) (entity.getRandom().nextGaussian() * 0.25);
+			if (!Minecraft.getInstance().isPaused()) {
+				innerHead.x += (float) (random.nextGaussian() * 0.25);
+				innerHead.y += (float) (random.nextGaussian() * 0.25);
 			}
 		}
 	}

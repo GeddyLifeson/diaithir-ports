@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import cn.leolezury.eternalstarlight.common.block.StarfireBirdNestBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.StarfireBirdNestBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -14,13 +16,11 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
 
-public class StarfireBirdNestRenderer implements BlockEntityRenderer<StarfireBirdNestBlockEntity> {
+public class StarfireBirdNestRenderer extends ESBlockEntityRenderer<StarfireBirdNestBlockEntity> {
 	private final EntityRenderDispatcher entityRenderer;
-	private final ItemRenderer itemRenderer;
 
 	public StarfireBirdNestRenderer(BlockEntityRendererProvider.Context context) {
-		this.entityRenderer = context.getEntityRenderer();
-		this.itemRenderer = context.getItemRenderer();
+		this.entityRenderer = context.entityRenderer();
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class StarfireBirdNestRenderer implements BlockEntityRenderer<StarfireBir
 					poseStack.translate(0.5F + slightOffset, 0.025F + slightOffset, 0.5F + slightOffset);
 					poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(StarfireBirdNestBlock.FACING).toYRot()));
 					poseStack.translate(offset, 0.0F, 0.0F);
-					entityRenderer.render(entity, 0, 0, 0, 0, partialTicks, poseStack, bufferSource, packedLight);
+					ESRender.submitEntity(entityRenderer, entity, partialTicks, 0, 0, 0, poseStack, this.collector, this.camera, packedLight);
 					poseStack.popPose();
 				}
 			}
@@ -58,7 +58,7 @@ public class StarfireBirdNestRenderer implements BlockEntityRenderer<StarfireBir
 					poseStack.translate(0.5F + slightOffset, 0.125F + slightOffset, 0.5F + slightOffset);
 					poseStack.mulPose(Axis.YP.rotationDegrees(-blockEntity.getBlockState().getValue(StarfireBirdNestBlock.FACING).toYRot()));
 					poseStack.translate(offset, 0.0F, -0.125F);
-					entityRenderer.render(entity, 0, 0, 0, 0, partialTicks, poseStack, bufferSource, packedLight);
+					ESRender.submitEntity(entityRenderer, entity, partialTicks, 0, 0, 0, poseStack, this.collector, this.camera, packedLight);
 					poseStack.popPose();
 				}
 			}
@@ -77,7 +77,7 @@ public class StarfireBirdNestRenderer implements BlockEntityRenderer<StarfireBir
 				poseStack.mulPose(Axis.YP.rotationDegrees(i * 30.0F));
 				poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
 				poseStack.scale(0.375F, 0.375F, 0.375F);
-				this.itemRenderer.renderStatic(stack, ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) (i + seed));
+				ESRender.submitItem(this.collector, stack, ItemDisplayContext.FIXED, poseStack, packedLight, packedOverlay, blockEntity.getLevel(), null, (int) (i + seed));
 				poseStack.popPose();
 			}
 			slightOffset += 0.001F;

@@ -13,6 +13,7 @@ import cn.leolezury.eternalstarlight.common.client.handler.ESClientHandler;
 import cn.leolezury.eternalstarlight.common.client.particle.advanced.AdvancedParticleOptions;
 import cn.leolezury.eternalstarlight.common.client.posteffect.WorldPostEffectManager;
 import cn.leolezury.eternalstarlight.common.client.weather.ClientWeatherState;
+import cn.leolezury.eternalstarlight.common.helper.ClientHelper;
 import cn.leolezury.eternalstarlight.common.entity.living.boss.gatekeeper.TheGatekeeper;
 import cn.leolezury.eternalstarlight.common.entity.projectile.SoulitSpectator;
 import cn.leolezury.eternalstarlight.common.item.component.GuideBook;
@@ -149,14 +150,14 @@ public class ClientSideHelper extends ClientHelper {
 		}
 		changedEntries.removeAll(newEntries);
 		if (newEntries.size() > 3) {
-			Minecraft.getInstance().getToasts().addToast(new SimpleTextToast(
+			Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
 				Component.translatable("book." + EternalStarlight.ID + ".unlock"),
 				Component.translatable("book." + EternalStarlight.ID + ".unlock.multiple"),
 				ESItems.BOOK.get().getDefaultInstance()
 			));
 		} else {
 			for (IndexBookComponent.Entry entry : newEntries) {
-				Minecraft.getInstance().getToasts().addToast(new SimpleTextToast(
+				Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
 					Component.translatable("book." + EternalStarlight.ID + ".unlock"),
 					entry.getText(),
 					entry.getIcon()
@@ -164,14 +165,14 @@ public class ClientSideHelper extends ClientHelper {
 			}
 		}
 		if (changedEntries.size() > 3) {
-			Minecraft.getInstance().getToasts().addToast(new SimpleTextToast(
+			Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
 				Component.translatable("book." + EternalStarlight.ID + ".update"),
 				Component.translatable("book." + EternalStarlight.ID + ".unlock.multiple"),
 				ESItems.BOOK.get().getDefaultInstance()
 			));
 		} else {
 			for (IndexBookComponent.Entry entry : changedEntries) {
-				Minecraft.getInstance().getToasts().addToast(new SimpleTextToast(
+				Minecraft.getInstance().toastManager().addToast(new SimpleTextToast(
 					Component.translatable("book." + EternalStarlight.ID + ".update"),
 					entry.getText(),
 					entry.getIcon()
@@ -239,7 +240,7 @@ public class ClientSideHelper extends ClientHelper {
 
 	@Override
 	public float getWeatherStateRainLevel() {
-		float partialTick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
+		float partialTick = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(Minecraft.getInstance().level != null && Minecraft.getInstance().level.tickRateManager().runsNormally());
 		ClientWeatherState.levelTarget = 1;
 		return ClientWeatherState.getRainLevel(partialTick);
 	}

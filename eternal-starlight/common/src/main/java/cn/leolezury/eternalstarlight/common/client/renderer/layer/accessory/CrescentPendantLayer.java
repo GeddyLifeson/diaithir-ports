@@ -1,6 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.layer.accessory;
 
-import cn.leolezury.eternalstarlight.common.client.compat.ESRenderState;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.util.ESAccessoryUtil;
@@ -11,10 +11,10 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
-public class CrescentPendantLayer extends ArmorLikeAccessoryLayer<LivingEntity, HumanoidModel<LivingEntity>, HumanoidModel<LivingEntity>> {
+public class CrescentPendantLayer extends ArmorLikeAccessoryLayer {
 	private static final Identifier TEXTURE = EternalStarlight.id("textures/accessory/crescent_pendant.png");
 
-	public CrescentPendantLayer(RenderLayerParent<ESRenderState, HumanoidModel<LivingEntity>> renderer, HumanoidModel<LivingEntity> innerModel, HumanoidModel<LivingEntity> outerModel) {
+	public CrescentPendantLayer(RenderLayerParent<HumanoidRenderState, HumanoidModel<HumanoidRenderState>> renderer, HumanoidModel<HumanoidRenderState> innerModel, HumanoidModel<HumanoidRenderState> outerModel) {
 		super(renderer, innerModel, outerModel);
 	}
 

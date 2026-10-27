@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.util.Unit;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.AlloyFurnaceBlock;
@@ -25,7 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-public class AlloyFurnaceRenderer implements BlockEntityRenderer<AlloyFurnaceBlockEntity> {
+public class AlloyFurnaceRenderer extends ESBlockEntityRenderer<AlloyFurnaceBlockEntity> {
 	private static final Identifier FURNACE_TEXTURE = EternalStarlight.id("textures/entity/alloy_furnace/alloy_furnace.png");
 	private static final Identifier OXIDIZED_FURNACE_TEXTURE = EternalStarlight.id("textures/entity/alloy_furnace/oxidized_alloy_furnace.png");
 	private static final List<Identifier> LIT_TEXTURES = List.of(
@@ -74,13 +76,13 @@ public class AlloyFurnaceRenderer implements BlockEntityRenderer<AlloyFurnaceBlo
 		}
 	}
 
-	public static final class AlloyFurnaceModel extends Model {
+	public static final class AlloyFurnaceModel extends Model<Unit> {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("alloy_furnace"), "main");
 
 		public final ModelPart root;
 
 		public AlloyFurnaceModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 		}
 
@@ -100,14 +102,10 @@ public class AlloyFurnaceRenderer implements BlockEntityRenderer<AlloyFurnaceBlo
 			return LayerDefinition.create(meshdefinition, 192, 192);
 		}
 
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(AlloyFurnaceBlockEntity blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

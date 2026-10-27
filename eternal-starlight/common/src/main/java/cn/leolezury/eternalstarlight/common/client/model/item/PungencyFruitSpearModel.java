@@ -1,24 +1,21 @@
 package cn.leolezury.eternalstarlight.common.client.model.item;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.util.Unit;
 import net.minecraft.resources.Identifier;
 
-public class PungencyFruitSpearModel extends Model {
+public class PungencyFruitSpearModel extends Model<Unit> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("pungency_fruit_spear"), "main");
 	public static final Identifier TEXTURE = EternalStarlight.id("textures/entity/pungency_fruit_spear.png");
-	private final ModelPart root;
 
 	public PungencyFruitSpearModel(ModelPart root) {
-		super(RenderType::entityCutoutNoCull);
-		this.root = root.getChild("root");
+		super(root, RenderTypes::entityCutout);
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -34,10 +31,5 @@ public class PungencyFruitSpearModel extends Model {
 		root.addOrReplaceChild("tip2", CubeListBuilder.create().texOffs(5, 17).addBox(-3.5F, 2.0F, 0.0F, 7.0F, 8.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -28.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
-	}
-
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
 }

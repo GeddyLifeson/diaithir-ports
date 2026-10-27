@@ -1,14 +1,14 @@
 package cn.leolezury.eternalstarlight.common.client.model.armor;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import net.minecraft.client.model.HumanoidArmorModel;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.LivingEntity;
 
-public class StarlitDiamondArmorModel<T extends LivingEntity> extends HumanoidArmorModel<T> {
+public class StarlitDiamondArmorModel extends HumanoidModel<HumanoidRenderState> {
 	public static final ModelLayerLocation INNER_LOCATION = new ModelLayerLocation(EternalStarlight.id("starlit_diamond_armor"), "inner");
 	public static final ModelLayerLocation OUTER_LOCATION = new ModelLayerLocation(EternalStarlight.id("starlit_diamond_armor"), "outer");
 
@@ -17,7 +17,7 @@ public class StarlitDiamondArmorModel<T extends LivingEntity> extends HumanoidAr
 	}
 
 	public static LayerDefinition createArmorLayer(CubeDeformation deformation) {
-		MeshDefinition meshdefinition = HumanoidArmorModel.createMesh(deformation, 0f);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(deformation, 0f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(40, 48).addBox(-4.0F, -3.0F, -2.0F, 5.0F, 5.0F, 4.0F, new CubeDeformation(0.75F))

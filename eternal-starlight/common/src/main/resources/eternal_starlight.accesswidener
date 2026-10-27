@@ -155,3 +155,6 @@ accessible field net/minecraft/client/particle/Particle stoppedByCollision Z
 accessible field net/minecraft/client/particle/ParticleResources spriteSets Ljava/util/Map;
 accessible class net/minecraft/client/particle/ParticleResources$MutableSpriteSet
 accessible field net/minecraft/client/Minecraft particleResources Lnet/minecraft/client/particle/ParticleResources;
+accessible class net/minecraft/client/particle/ParticleResources$SpriteParticleRegistration
+accessible class net/minecraft/client/gui/screens/MenuScreens$ScreenConstructor
+accessible method net/minecraft/client/renderer/entity/LivingEntityRenderer addLayer (Lnet/minecraft/client/renderer/entity/layers/RenderLayer;)Z

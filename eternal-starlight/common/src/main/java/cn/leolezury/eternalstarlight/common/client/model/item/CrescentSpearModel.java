@@ -1,24 +1,21 @@
 package cn.leolezury.eternalstarlight.common.client.model.item;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.util.Unit;
 import net.minecraft.resources.Identifier;
 
-public class CrescentSpearModel extends Model {
+public class CrescentSpearModel extends Model<Unit> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("crescent_spear"), "main");
 	public static final Identifier TEXTURE = EternalStarlight.id("textures/entity/crescent_spear.png");
-	private final ModelPart root;
 
 	public CrescentSpearModel(ModelPart root) {
-		super(RenderType::entityCutoutNoCull);
-		this.root = root.getChild("root");
+		super(root, RenderTypes::entityCutout);
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -64,10 +61,5 @@ public class CrescentSpearModel extends Model {
 		handle.addOrReplaceChild("leaf7", CubeListBuilder.create().texOffs(5, 40).mirror().addBox(-1.0F, 0.0F, 0.0F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.5F, -12.0F, -0.5F, 0.0F, 0.7854F, -0.3927F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
-	}
-
-	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
 }

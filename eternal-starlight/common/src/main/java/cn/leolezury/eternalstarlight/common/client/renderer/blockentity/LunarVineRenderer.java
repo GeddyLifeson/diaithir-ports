@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.util.Unit;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.LunarVineBlock;
@@ -20,7 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 
-public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEntity> {
+public class LunarVineRenderer extends ESBlockEntityRenderer<LunarVineBlockEntity> {
 	private static final Identifier VINE_TEXTURE = EternalStarlight.id("textures/entity/lunar_vine.png");
 	private static final Identifier FLOWER_TEXTURE = EternalStarlight.id("textures/entity/lunar_vine_flower.png");
 
@@ -56,7 +58,7 @@ public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEnti
 		stack.popPose();
 	}
 
-	public static final class VineModel extends Model {
+	public static final class VineModel extends Model<Unit> {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("block_lunar_vine"), "main");
 
 		public final ModelPart root;
@@ -64,7 +66,7 @@ public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEnti
 		public final ModelPart lowerVine;
 
 		public VineModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 			this.upperVine = root.getChild("root").getChild("upper_vine");
 			this.lowerVine = root.getChild("root").getChild("lower_vine");
@@ -96,19 +98,15 @@ public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEnti
 			this.lowerVine.visible = lower;
 		}
 
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 
-	public static final class FlowerModel extends Model {
+	public static final class FlowerModel extends Model<Unit> {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("block_lunar_vine_flower"), "main");
 
 		public final ModelPart root;
 
 		public FlowerModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 		}
 
@@ -148,9 +146,5 @@ public class LunarVineRenderer implements BlockEntityRenderer<LunarVineBlockEnti
 			return LayerDefinition.create(meshdefinition, 16, 16);
 		}
 
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 }

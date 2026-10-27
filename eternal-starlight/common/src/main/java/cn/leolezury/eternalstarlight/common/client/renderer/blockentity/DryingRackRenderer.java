@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import cn.leolezury.eternalstarlight.common.block.DryingRackBlock;
 import cn.leolezury.eternalstarlight.common.block.entity.DryingRackBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -9,11 +11,8 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.world.item.ItemDisplayContext;
 
-public class DryingRackRenderer implements BlockEntityRenderer<DryingRackBlockEntity> {
-	private final ItemRenderer itemRenderer;
-
+public class DryingRackRenderer extends ESBlockEntityRenderer<DryingRackBlockEntity> {
 	public DryingRackRenderer(BlockEntityRendererProvider.Context context) {
-		this.itemRenderer = context.getItemRenderer();
 	}
 
 	@Override
@@ -23,7 +22,7 @@ public class DryingRackRenderer implements BlockEntityRenderer<DryingRackBlockEn
 		poseStack.mulPose(Axis.YP.rotationDegrees(blockEntity.getBlockState().getValue(DryingRackBlock.FACING).toYRot()));
 		poseStack.translate(0, 0, 0.01F);
 		poseStack.scale(0.6F, 0.6F, 0.6F);
-		this.itemRenderer.renderStatic(blockEntity.getItem(), ItemDisplayContext.FIXED, packedLight, packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) blockEntity.getBlockPos().asLong());
+		ESRender.submitItem(this.collector, blockEntity.getItem(), ItemDisplayContext.FIXED, poseStack, packedLight, packedOverlay, blockEntity.getLevel(), null, (int) blockEntity.getBlockPos().asLong());
 		poseStack.popPose();
 	}
 }

@@ -1,16 +1,14 @@
 package cn.leolezury.eternalstarlight.common.client.model.armor;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.HumanoidArmorModel;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.LivingEntity;
 
-public class AlchemistArmorModel<T extends LivingEntity> extends HumanoidArmorModel<T> {
+public class AlchemistArmorModel extends HumanoidModel<HumanoidRenderState> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("alchemist_armor"), "main");
 
 	public AlchemistArmorModel(ModelPart root) {
@@ -18,7 +16,7 @@ public class AlchemistArmorModel<T extends LivingEntity> extends HumanoidArmorMo
 	}
 
 	public static LayerDefinition createBodyLayer() {
-		MeshDefinition meshdefinition = HumanoidArmorModel.createMesh(new CubeDeformation(0.0F), 0f);
+		MeshDefinition meshdefinition = HumanoidModel.createMesh(new CubeDeformation(0.0F), 0f);
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
 		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.75F))
@@ -42,10 +40,9 @@ public class AlchemistArmorModel<T extends LivingEntity> extends HumanoidArmorMo
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		rightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-		leftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+	public void setupAnim(HumanoidRenderState state) {
+		super.setupAnim(state);
+		this.rightLeg.visible = false;
+		this.leftLeg.visible = false;
 	}
 }

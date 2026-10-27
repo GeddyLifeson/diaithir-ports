@@ -1,5 +1,8 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import net.minecraft.util.Unit;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.MechanicalSpawnerBlock;
@@ -26,14 +29,14 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 
-public class MechanicalSpawnerRenderer implements BlockEntityRenderer<MechanicalSpawnerBlockEntity> {
+public class MechanicalSpawnerRenderer extends ESBlockEntityRenderer<MechanicalSpawnerBlockEntity> {
 	private static final Identifier SPAWNER_TEXTURE = EternalStarlight.id("textures/entity/mechanical_spawner.png");
 
 	private final EntityRenderDispatcher entityRenderer;
 	private final MechanicalSpawnerModel spawnerModel;
 
 	public MechanicalSpawnerRenderer(BlockEntityRendererProvider.Context context) {
-		this.entityRenderer = context.getEntityRenderer();
+		this.entityRenderer = context.entityRenderer();
 		this.spawnerModel = new MechanicalSpawnerModel(context.bakeLayer(MechanicalSpawnerModel.LAYER_LOCATION));
 	}
 
@@ -55,19 +58,19 @@ public class MechanicalSpawnerRenderer implements BlockEntityRenderer<Mechanical
 		if (level != null) {
 			Entity entity = spawner.getOrCreateDisplayEntity(level, blockEntity.getBlockPos());
 			if (entity != null) {
-				SpawnerRenderer.renderEntityInSpawner(partialTick, stack, bufferSource, packedLight, entity, this.entityRenderer, spawner.getOSpin(), spawner.getSpin());
+				ESRender.renderEntityInSpawner(partialTick, stack, this.collector, this.camera, packedLight, entity, this.entityRenderer, spawner.getOSpin(), spawner.getSpin());
 			}
 		}
 		stack.popPose();
 	}
 
-	public static final class MechanicalSpawnerModel extends Model implements AnimatedModel {
+	public static final class MechanicalSpawnerModel extends Model<Unit> implements AnimatedModel {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("mechanical_spawner"), "main");
 
 		public final ModelPart root;
 
 		public MechanicalSpawnerModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 		}
 
@@ -85,19 +88,10 @@ public class MechanicalSpawnerRenderer implements BlockEntityRenderer<Mechanical
 			return LayerDefinition.create(meshdefinition, 128, 128);
 		}
 
-		@Override
-		public ModelPart root() {
-			return root;
-		}
-
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(MechanicalSpawnerBlockEntity blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

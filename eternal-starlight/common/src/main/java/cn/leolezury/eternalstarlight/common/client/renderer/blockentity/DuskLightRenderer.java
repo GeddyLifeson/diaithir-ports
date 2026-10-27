@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.entity.AbstractDuskLightBlockEntity;
@@ -19,7 +20,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class DuskLightRenderer<T extends AbstractDuskLightBlockEntity> implements BlockEntityRenderer<T> {
+public class DuskLightRenderer<T extends AbstractDuskLightBlockEntity> extends ESBlockEntityRenderer<T> {
 	public static final Identifier DUSK_BEAM_TEXTURE = EternalStarlight.id("textures/entity/dusk_beam.png");
 
 	public DuskLightRenderer(BlockEntityRendererProvider.Context context) {
@@ -48,7 +49,7 @@ public class DuskLightRenderer<T extends AbstractDuskLightBlockEntity> implement
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(T blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

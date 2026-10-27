@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.util.Unit;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.SolarEggBlock;
@@ -18,7 +20,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SolarEggRenderer implements BlockEntityRenderer<SolarEggBlockEntity> {
+public class SolarEggRenderer extends ESBlockEntityRenderer<SolarEggBlockEntity> {
 	private static final Identifier EGG_TEXTURE = EternalStarlight.id("textures/entity/solar_egg.png");
 
 	private final SolarEggModel eggModel;
@@ -39,13 +41,13 @@ public class SolarEggRenderer implements BlockEntityRenderer<SolarEggBlockEntity
 		}
 	}
 
-	public static final class SolarEggModel extends Model {
+	public static final class SolarEggModel extends Model<Unit> {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("solar_egg"), "main");
 
 		public final ModelPart root;
 
 		public SolarEggModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 		}
 
@@ -58,14 +60,10 @@ public class SolarEggRenderer implements BlockEntityRenderer<SolarEggBlockEntity
 			return LayerDefinition.create(meshdefinition, 256, 128);
 		}
 
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(SolarEggBlockEntity blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import net.minecraft.util.Unit;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
 import cn.leolezury.eternalstarlight.common.block.LootChestBlock;
@@ -24,7 +26,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 
-public class LootChestRenderer implements BlockEntityRenderer<LootChestBlockEntity> {
+public class LootChestRenderer extends ESBlockEntityRenderer<LootChestBlockEntity> {
 	private final LootChestModel chestModel;
 
 	private static final Identifier CHEST_TEXTURE = EternalStarlight.id("textures/entity/loot_chest/loot_chest.png");
@@ -82,14 +84,14 @@ public class LootChestRenderer implements BlockEntityRenderer<LootChestBlockEnti
 		}
 	}
 
-	public static final class LootChestModel extends Model implements AnimatedModel {
+	public static final class LootChestModel extends Model<Unit> implements AnimatedModel {
 		public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(EternalStarlight.id("loot_chest"), "main");
 
 		public final ModelPart root;
 		public final ModelPart lid;
 
 		public LootChestModel(ModelPart root) {
-			super(RenderType::entityCutoutNoCull);
+			super(root, RenderTypes::entityCutout);
 			this.root = root.getChild("root");
 			this.lid = this.root.getChild("lid");
 		}
@@ -109,19 +111,10 @@ public class LootChestRenderer implements BlockEntityRenderer<LootChestBlockEnti
 			return LayerDefinition.create(meshdefinition, 64, 64);
 		}
 
-		@Override
-		public ModelPart root() {
-			return root;
-		}
-
-		@Override
-		public void renderToBuffer(PoseStack stack, VertexConsumer consumer, int light, int overlay, int color) {
-			this.root.render(stack, consumer, light, overlay, color);
-		}
 	}
 
 	@Override
-	public boolean shouldRenderOffScreen(LootChestBlockEntity blockEntity) {
+	public boolean shouldRenderOffScreen() {
 		return true;
 	}
 

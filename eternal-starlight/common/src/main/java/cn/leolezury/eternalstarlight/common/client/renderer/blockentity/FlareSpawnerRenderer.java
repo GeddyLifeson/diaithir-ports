@@ -1,5 +1,7 @@
 package cn.leolezury.eternalstarlight.common.client.renderer.blockentity;
 
+import cn.leolezury.eternalstarlight.common.client.compat.ESRender;
+import cn.leolezury.eternalstarlight.common.client.compat.ESBlockEntityRenderer;
 import cn.leolezury.eternalstarlight.common.block.entity.FlareSpawner;
 import cn.leolezury.eternalstarlight.common.block.entity.FlareSpawnerBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,11 +13,11 @@ import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 
-public class FlareSpawnerRenderer implements BlockEntityRenderer<FlareSpawnerBlockEntity> {
+public class FlareSpawnerRenderer extends ESBlockEntityRenderer<FlareSpawnerBlockEntity> {
 	private final EntityRenderDispatcher entityRenderer;
 
 	public FlareSpawnerRenderer(BlockEntityRendererProvider.Context context) {
-		this.entityRenderer = context.getEntityRenderer();
+		this.entityRenderer = context.entityRenderer();
 	}
 
 	@Override
@@ -25,7 +27,7 @@ public class FlareSpawnerRenderer implements BlockEntityRenderer<FlareSpawnerBlo
 			FlareSpawner spawner = blockEntity.getSpawner();
 			Entity entity = spawner.getOrCreateDisplayEntity(level, blockEntity.getBlockPos());
 			if (entity != null) {
-				SpawnerRenderer.renderEntityInSpawner(partialTick, poseStack, bufferSource, packedLight, entity, this.entityRenderer, spawner.getOSpin(), spawner.getSpin());
+				ESRender.renderEntityInSpawner(partialTick, poseStack, this.collector, this.camera, packedLight, entity, this.entityRenderer, spawner.getOSpin(), spawner.getSpin());
 			}
 		}
 	}
