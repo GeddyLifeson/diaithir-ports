@@ -1,0 +1,30 @@
+{
+ "_doc": "Same shape as DiaithirRPG content/tech_ages.json. Items beat namespaces. Calibres follow the decided pointblank ages (.45 and .357 Age V), the rest Age VII; the musket cartridge is the Age IV baseline. Set families gate in data/diaithirgear/set_bonuses. 'families' are the Age at which each set bonus switches on (set_bonuses/*.json age 1..9); Silent Gems gems follow silentgems (III).",
+ "namespaces": {
+  "diaithirgear": "IV"
+ },
+ "items": {
+  "musketmod:cartridge": "IV",
+  "pointblank:ammo9mm": "VII",
+  "pointblank:ammo45acp": "V",
+  "pointblank:ammo357": "V",
+  "pointblank:ammo50ae": "VII",
+  "pointblank:ammo46": "VII",
+  "pointblank:ammo57": "VII",
+  "pointblank:ammo545": "VII",
+  "pointblank:ammo556": "VII",
+  "pointblank:ammo762": "VII",
+  "pointblank:ammo762x51": "VII",
+  "pointblank:ammo68": "VII",
+  "pointblank:ammo338lapua": "VII",
+  "pointblank:ammo50bmg": "VII",
+  "pointblank:ammo12gauge": "VII"
+ },
+ "families": {
+  "holy": "IV",
+  "shadow": "IV",
+  "arcane": "IV",
+  "wayfarer": "III",
+  "gemwork": "IV"
+ }
+}

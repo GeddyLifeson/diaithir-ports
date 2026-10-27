@@ -1,0 +1,28 @@
+{
+ "weights": {
+  "quality": 0.1,
+  "weight": 60
+ },
+ "bonuses": [
+  {
+   "type": "apotheosis:attribute",
+   "attribute": "minecraft:attack_damage",
+   "gem_class": {
+    "key": "light_weapon",
+    "types": [
+     "apotheosis:melee_weapon",
+     "apotheosis:trident"
+    ]
+   },
+   "operation": "add_value",
+   "values": {
+    "cracked": 1.0,
+    "chipped": 2.0,
+    "flawed": 3.0,
+    "normal": 4.0,
+    "flawless": 5.0,
+    "perfect": 6.25
+   }
+  }
+ ]
+}

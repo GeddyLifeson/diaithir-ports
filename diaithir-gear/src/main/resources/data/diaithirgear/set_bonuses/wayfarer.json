@@ -1,0 +1,48 @@
+{
+ "id": "wayfarer",
+ "tag": "diaithirgear:sets/wayfarer",
+ "age": 3,
+ "curios": true,
+ "tiers": [
+  {
+   "pieces": 2,
+   "attributes": [
+    {
+     "attribute": "minecraft:luck",
+     "operation": "add_value",
+     "amount": 1
+    }
+   ]
+  },
+  {
+   "pieces": 3,
+   "attributes": [
+    {
+     "attribute": "minecraft:step_height",
+     "operation": "add_value",
+     "amount": 0.4
+    },
+    {
+     "attribute": "minecraft:safe_fall_distance",
+     "operation": "add_value",
+     "amount": 2
+    }
+   ]
+  },
+  {
+   "pieces": 5,
+   "attributes": [
+    {
+     "attribute": "minecraft:movement_speed",
+     "operation": "add_multiplied_base",
+     "amount": 0.05
+    },
+    {
+     "attribute": "minecraft:luck",
+     "operation": "add_value",
+     "amount": 1
+    }
+   ]
+  }
+ ]
+}

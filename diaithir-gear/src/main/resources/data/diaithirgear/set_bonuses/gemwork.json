@@ -1,0 +1,43 @@
+{
+ "id": "gemwork",
+ "tag": "diaithirgear:sets/gemwork",
+ "age": 4,
+ "curios": true,
+ "tiers": [
+  {
+   "pieces": 2,
+   "attributes": [
+    {
+     "attribute": "minecraft:luck",
+     "operation": "add_value",
+     "amount": 1
+    }
+   ]
+  },
+  {
+   "pieces": 3,
+   "attributes": [
+    {
+     "attribute": "minecraft:max_health",
+     "operation": "add_value",
+     "amount": 2
+    }
+   ]
+  },
+  {
+   "pieces": 4,
+   "attributes": [
+    {
+     "attribute": "minecraft:armor_toughness",
+     "operation": "add_value",
+     "amount": 2
+    },
+    {
+     "attribute": "minecraft:max_health",
+     "operation": "add_value",
+     "amount": 2
+    }
+   ]
+  }
+ ]
+}

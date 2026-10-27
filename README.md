@@ -23,3 +23,7 @@ It follows DiaithirRPG's `diaithir_ages` engine by reflection on its `StoryEvent
 Commands: `/nemesis roster` (who hunts you), `/nemesis chronicle`; for operators `/nemesis list`, `forget <id>`, `ambush <player>`, `turn <age>`; `/nemesis selftest` (owners, on a world with no nemeses) runs promotion, rank-up, trophy, ambush, escape or fall, save round trip and succession with a fake player and reports PASS or what failed.
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis. Licence: MIT.
+
+## diaithir-gear (Gléaus)
+
+Cross-mod gear parity: Point Blank bullet damage scaled against the Musket Mod, shared gem tag with matching Apotheosis and Silent Gems affixes, and one Age-gated set bonus per armour or jewellery family. Data driven, MIT. See `diaithir-gear/README.md` and `TEST.md`.

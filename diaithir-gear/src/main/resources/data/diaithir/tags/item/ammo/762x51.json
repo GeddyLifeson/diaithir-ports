@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "pointblank:ammo762x51",
+   "required": false
+  }
+ ]
+}
