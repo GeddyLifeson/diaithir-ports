@@ -33,7 +33,6 @@ dependencies {
     compileOnly "maven.modrinth:worldedit:${worldedit_version}"
     // TODO 26.1.2: re-enable when REI publishes 26.1.2 artifacts.
     // compileOnly "me.shedaniel:RoughlyEnoughItems-api-neoforge:${rei}"
-    compileOnlyApi "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei}"
 
     api("me.shedaniel.cloth:cloth-config-neoforge:${cloth_config}")
 
@@ -42,7 +41,6 @@ dependencies {
 //            compileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-neoforge:${rei}"
 //            break
 //        case 'jei':
-            runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei}"
 //            break
 //    }
 

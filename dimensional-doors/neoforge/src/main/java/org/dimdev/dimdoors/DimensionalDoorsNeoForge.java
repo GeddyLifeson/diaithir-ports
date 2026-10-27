@@ -47,7 +47,7 @@ import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
@@ -91,8 +91,6 @@ import static org.dimdev.dimdoors.DimensionalDoors.getSided;
 
 @Mod(DimensionalDoors.MOD_ID)
 public class DimensionalDoorsNeoForge extends SidedImpl {
-    public static final EnumProxy<RecipeBookType> TESSELLATING = new EnumProxy<>(RecipeBookType.class);
-
     private final List<Consumer<BuildCreativeModeTabContentsEvent>> BUILD_CONTENTS_LISTENERS = new ArrayList<>();
     private final Map<ResourceKey<?>, Map<Identifier, Object>> toRegister = new HashMap<>();
     private final Map<ResourceKey<?>, Map<Identifier, Object>> toRegisterHolder = new HashMap<>();
@@ -227,7 +225,7 @@ public class DimensionalDoorsNeoForge extends SidedImpl {
     @Override
     public <T, V extends T> V register(ResourceKey<Registry<T>> key, Identifier id, V obj) {
         if (key.equals(activeKey)) {
-            return Registry.register((Registry<T>) BuiltInRegistries.REGISTRY.get(key.identifier()), id, obj);
+            return Registry.register((Registry<T>) BuiltInRegistries.REGISTRY.getValue(key.identifier()), id, obj);
         } else {
             Map<Identifier, Object> map = this.toRegister.computeIfAbsent(key, a -> new HashMap<>());
 
@@ -447,24 +445,16 @@ public class DimensionalDoorsNeoForge extends SidedImpl {
 
     public static void addPackFinders(AddPackFindersEvent event) {
         if (event.getPackType() == PackType.SERVER_DATA) {
-            var classicPack = createPack("classic", "Classic");
-            var defaultPack = createPack("default", "Default");
-            event.addRepositorySource((packConsumer) -> {
-                packConsumer.accept(classicPack);
-                packConsumer.accept(defaultPack);
-            });
+            event.addPackFinders(DimensionalDoors.id("resourcepacks/classic"), PackType.SERVER_DATA, Component.literal("Classic"), PackSource.BUILT_IN, false, Pack.Position.BOTTOM);
+            event.addPackFinders(DimensionalDoors.id("resourcepacks/default"), PackType.SERVER_DATA, Component.literal("Default"), PackSource.BUILT_IN, false, Pack.Position.BOTTOM);
         }
     }
 
-    public static void addReloaders(AddReloadListenerEvent event) {
-        loaders.forEach(pair -> event.addListener(new NeoforgeResourceLoader(pair.getMiddle())));
-    }
-
-    public static Pack createPack(String id, String name) {
-
-        var resourcePath = ModList.get().getModFileById(DimensionalDoors.MOD_ID).getFile().findResource("resourcepacks", id);
-        return Pack.readMetaAndCreate(new PackLocationInfo(id, Component.literal(name), PackSource.BUILT_IN, Optional.empty()),
-                new PathPackResources.PathResourcesSupplier(resourcePath), PackType.SERVER_DATA, new PackSelectionConfig(false, Pack.Position.BOTTOM, false));
+    public static void addReloaders(AddServerReloadListenersEvent event) {
+        int index = 0;
+        for (var pair : loaders) {
+            event.addListener(DimensionalDoors.id("loader_" + (index++)), new NeoforgeResourceLoader(pair.getMiddle()));
+        }
     }
 
     public void registerServerLoader(String name, BiConsumer<HolderLookup.Provider, ResourceManager> consumer, boolean loadAfterTags) {
@@ -485,11 +475,6 @@ public class DimensionalDoorsNeoForge extends SidedImpl {
     }
 
     @Override
-    public RecipeBookType getTesselatingRecipeBookType() {
-        return TESSELLATING.getValue();
-    }
-
-    @Override
     public MinecraftServer getServer() {
         return ServerLifecycleHooks.getCurrentServer();
     }
@@ -501,7 +486,7 @@ public class DimensionalDoorsNeoForge extends SidedImpl {
 
     @Override
     public boolean isClient() {
-        return FMLEnvironment.dist == Dist.CLIENT;
+        return FMLEnvironment.getDist() == Dist.CLIENT;
     }
 
     @Override

@@ -52,9 +52,6 @@ dependencies {
     // compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei}"
     // compileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:${rei}"
 
-    compileOnlyApi "mezz.jei:jei-${minecraft_version}-lib:${jei}"
-    compileOnlyApi "mezz.jei:jei-${minecraft_version}-common-api:${jei}"
-    runtimeOnly "mezz.jei:jei-${minecraft_version}-common:${jei}"
 }
 
 configurations {
