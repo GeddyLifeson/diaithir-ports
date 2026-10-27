@@ -1,6 +1,26 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "alexscaves:item/sugar_staff"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "alexscaves:item/sugar_staff_inventory"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:special",
+      "base": "alexscaves:item/sugar_staff",
+      "model": {
+        "type": "alexscaves:legacy_item"
+      }
+    }
   }
 }

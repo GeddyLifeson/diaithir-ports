@@ -1,6 +1,26 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "alexscaves:item/primitive_club"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "alexscaves:item/primitive_club_inventory"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:special",
+      "base": "alexscaves:item/primitive_club",
+      "model": {
+        "type": "alexscaves:legacy_item"
+      }
+    }
   }
 }

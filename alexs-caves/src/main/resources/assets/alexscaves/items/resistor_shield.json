@@ -1,6 +1,9 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "alexscaves:item/resistor_shield"
+    "type": "minecraft:special",
+    "base": "alexscaves:item/resistor_shield",
+    "model": {
+      "type": "alexscaves:legacy_item"
+    }
   }
 }

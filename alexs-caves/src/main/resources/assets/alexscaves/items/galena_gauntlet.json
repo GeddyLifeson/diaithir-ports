@@ -1,6 +1,9 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "alexscaves:item/galena_gauntlet"
+    "type": "minecraft:special",
+    "base": "alexscaves:item/galena_gauntlet",
+    "model": {
+      "type": "alexscaves:legacy_item"
+    }
   }
 }

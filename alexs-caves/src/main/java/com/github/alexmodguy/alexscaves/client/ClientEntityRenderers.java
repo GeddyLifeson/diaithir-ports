@@ -2,6 +2,7 @@ package com.github.alexmodguy.alexscaves.client;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.client.render.entity.*;
+import com.github.alexmodguy.alexscaves.client.render.blockentity.*;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,6 +27,18 @@ public class ClientEntityRenderers {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         REGISTERED.clear();
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.MAGNET.get(), MagnetBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.TESLA_BULB.get(), TelsaBulbBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.HOLOGRAM_PROJECTOR.get(), HologramProjectorBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.QUARRY.get(), QuarryBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.AMBERSOL.get(), AmbersolBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.AMBER_MONOLITH.get(), AmberMonolithBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.SIREN_LIGHT.get(), SirenLightBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.ABYSSAL_ALTAR.get(), AbyssalAltarBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.COPPER_VALVE.get(), CopperValveBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.BEHOLDER.get(), BeholderBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.GOBTHUMPER.get(), GobthumperBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.CONVERSION_CRUCIBLE.get(), ConversionCrucibleBlockRenderer::new);
         reg(event, ACEntityRegistry.BOAT.get(), (context) -> {
             return new AlexsCavesBoatRenderer(context, false);
         });

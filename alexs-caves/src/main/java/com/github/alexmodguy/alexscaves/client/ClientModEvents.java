@@ -6,12 +6,39 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterFluidModelsEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.client.event.RegisterParticleGroupsEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 /** Mod-bus client registrations: particles, fluid models and other 26.1 client hooks. */
 @EventBusSubscriber(modid = AlexsCaves.MODID, value = Dist.CLIENT)
 public class ClientModEvents {
+
+    private static net.minecraft.client.resources.model.sprite.Material mat(String path) {
+        return new net.minecraft.client.resources.model.sprite.Material(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, path));
+    }
+
+    @SubscribeEvent
+    public static void registerFluidModels(RegisterFluidModelsEvent event) {
+        event.register(new net.minecraft.client.renderer.block.FluidModel.Unbaked(mat("block/acid_still"), mat("block/acid_flowing"), null, null),
+                com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry.ACID_FLUID_SOURCE, com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry.ACID_FLUID_FLOWING);
+        event.register(new net.minecraft.client.renderer.block.FluidModel.Unbaked(mat("block/purple_soda_still"), mat("block/purple_soda_flowing"), null, null),
+                com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry.PURPLE_SODA_FLUID_SOURCE, com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry.PURPLE_SODA_FLUID_FLOWING);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiLayers(RegisterGuiLayersEvent event) {
+        event.registerAboveAll(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "screen_effects"),
+                (graphics, delta) -> {
+                    if (com.github.alexmodguy.alexscaves.AlexsCaves.PROXY instanceof ClientProxy cp) cp.renderScreenEffects(graphics, delta.getGameTimeDeltaPartialTick(false));
+                });
+    }
+
+    @SubscribeEvent
+    public static void registerSpecialModels(net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent event) {
+        event.register(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "legacy_item"), com.github.alexmodguy.alexscaves.client.render.item.LegacyItemSpecialRenderer.CODEC);
+    }
 
     @SubscribeEvent
     public static void registerParticleGroups(RegisterParticleGroupsEvent event) {

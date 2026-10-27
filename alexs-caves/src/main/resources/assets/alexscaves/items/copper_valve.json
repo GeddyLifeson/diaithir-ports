@@ -1,6 +1,9 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "alexscaves:item/copper_valve"
+    "type": "minecraft:special",
+    "base": "alexscaves:item/copper_valve",
+    "model": {
+      "type": "alexscaves:legacy_item"
+    }
   }
 }

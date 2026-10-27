@@ -1,14 +1,37 @@
 {
   "model": {
-    "type": "minecraft:condition",
-    "property": "minecraft:using_item",
-    "on_false": {
-      "type": "minecraft:model",
-      "model": "alexscaves:item/ortholance"
-    },
-    "on_true": {
-      "type": "minecraft:model",
-      "model": "alexscaves:item/ortholance_charging"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "alexscaves:item/ortholance_inventory"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:using_item",
+      "on_false": {
+        "type": "minecraft:special",
+        "base": "alexscaves:item/ortholance",
+        "model": {
+          "type": "alexscaves:legacy_item"
+        }
+      },
+      "on_true": {
+        "type": "minecraft:special",
+        "base": "alexscaves:item/ortholance_charging",
+        "model": {
+          "type": "alexscaves:legacy_item"
+        }
+      }
     }
   }
 }
