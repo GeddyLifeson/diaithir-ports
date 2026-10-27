@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ParadiseLostBrushBlock extends BushBlock implements BonemealableBlock {
+public class ParadiseLostBrushBlock extends net.minecraft.world.level.block.VegetationBlock implements BonemealableBlock {
 
     public static final MapCodec<ParadiseLostBrushBlock> CODEC = simpleCodec(ParadiseLostBrushBlock::new);
     private final TagKey<Block> validFloors;
@@ -28,7 +28,7 @@ public class ParadiseLostBrushBlock extends BushBlock implements BonemealableBlo
     }
 
     @Override
-    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
+    public MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

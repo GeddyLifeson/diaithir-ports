@@ -59,7 +59,7 @@ public final class ParadiseLostStructures {
                 new DimensionPadding(50),
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS));
         context.register(PALACE, new JigsawStructure(
-                new Structure.StructureSettings(biomes.getOrThrow(ParadiseLostStructureTags.PALACE_HAS_STRUCTURE), Map.ofEntries(Map.entry(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedList.of(new Weighted<>(new MobSpawnSettings.SpawnerData(EntityRegistry.ENVOY.get(), 2, 4), 10))))), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
+                new Structure.StructureSettings(biomes.getOrThrow(ParadiseLostStructureTags.PALACE_HAS_STRUCTURE), Map.ofEntries(Map.entry(MobCategory.MONSTER, new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.PIECE, WeightedList.<MobSpawnSettings.SpawnerData>builder().add(new MobSpawnSettings.SpawnerData(EntityRegistry.ENVOY.get(), 2, 4), 10).build()))), GenerationStep.Decoration.SURFACE_STRUCTURES, TerrainAdjustment.NONE),
                 pools.getOrThrow(ResourceKey.create(Registries.TEMPLATE_POOL, locate("palace/starts"))),
                 Optional.empty(),
                 6,

@@ -51,7 +51,7 @@ public class SliderEntity extends BlockLikeEntity {
     @Override
     public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("Direction")) {
+        if (compound.getString("Direction").isPresent()) {
             Direction dir;
             try {
                 dir = Direction.valueOf(compound.getStringOr("Direction", ""));

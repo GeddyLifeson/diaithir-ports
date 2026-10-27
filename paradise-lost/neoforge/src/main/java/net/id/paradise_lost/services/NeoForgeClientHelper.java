@@ -1,63 +1,37 @@
 package net.id.paradise_lost.services;
 
 import net.id.paradise_lost.platform.services.IClientHelper;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.loading.FMLEnvironment;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+/**
+ * PORT NOTE: in 26.1 block render layers come from the block model JSON ("render_type"), so the
+ * programmatic render layer calls are no-ops. Control-key polling needs client classes and is
+ * resolved reflectively so this class stays loadable on a dedicated server.
+ */
 public class NeoForgeClientHelper implements IClientHelper {
-    private static final List<Runnable> CLIENT_RENDER_LAYERS = new ArrayList<>();
-
     @Override
     public void setRenderLayerCutout(Object block) {
-        deferRenderLayer(block, RenderType.cutout());
     }
 
     @Override
     public void setRenderLayerCutoutMipped(Object block) {
-        deferRenderLayer(block, RenderType.cutoutMipped());
     }
 
     @Override
     public void setRenderLayerTranslucent(Object block) {
-        deferRenderLayer(block, RenderType.translucent());
     }
 
     @Override
     public boolean isControlKeyDown() {
-        return FMLEnvironment.dist == Dist.CLIENT && Screen.hasControlDown();
-    }
-
-    private void deferRenderLayer(Object block, RenderType type) {
-        if (!(block instanceof Block b) || FMLEnvironment.dist != Dist.CLIENT) {
-            return;
+        if (FMLEnvironment.getDist() != Dist.CLIENT) {
+            return false;
         }
-        CLIENT_RENDER_LAYERS.add(() -> {
-            ItemBlockRenderTypes.setRenderLayer(b, type);
-            putMovingBlockRenderType(b, type);
-        });
-    }
-
-    @SuppressWarnings("unchecked")
-    private static void putMovingBlockRenderType(Block block, RenderType type) {
         try {
-            var field = ItemBlockRenderTypes.class.getDeclaredField("TYPE_BY_BLOCK");
-            field.setAccessible(true);
-            ((Map<Block, RenderType>) field.get(null)).put(block, type);
+            Class<?> screen = Class.forName("net.minecraft.client.gui.screens.Screen");
+            return (boolean) screen.getMethod("hasControlDown").invoke(null);
         } catch (ReflectiveOperationException e) {
-            throw new IllegalStateException("Failed to set moving-block render type for " + block, e);
+            return false;
         }
-    }
-
-    public static void applyDeferredRenderLayers() {
-        CLIENT_RENDER_LAYERS.forEach(Runnable::run);
-        CLIENT_RENDER_LAYERS.clear();
     }
 }

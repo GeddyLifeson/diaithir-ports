@@ -23,7 +23,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class ParadiseLostHangerBlock extends BushBlock implements BonemealableBlock {
+public class ParadiseLostHangerBlock extends net.minecraft.world.level.block.VegetationBlock implements BonemealableBlock {
 
     public static final MapCodec<ParadiseLostHangerBlock> CODEC = simpleCodec(ParadiseLostHangerBlock::new);
     public static final BooleanProperty TIP = BooleanProperty.create("tip");
@@ -41,7 +41,7 @@ public class ParadiseLostHangerBlock extends BushBlock implements BonemealableBl
     }
 
     @Override
-    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
+    public MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

@@ -81,7 +81,7 @@ public class ParadiseLostPortalBlock extends Block implements Portal {
             return super.updateShape(state, level, ticks, pos, direction, neighborPos, neighborState, random);
         }
         boolean flag = blockAxis != directionAxis && directionAxis.isHorizontal();
-        if (!flag && !neighborState.is(this) && !(new ParadiseLostPortalShape(level, pos, blockAxis).isComplete())) {
+        if (!flag && !neighborState.is(this) && !(level instanceof net.minecraft.world.level.LevelAccessor accessor && new ParadiseLostPortalShape(accessor, pos, blockAxis).isComplete())) {
             return Blocks.AIR.defaultBlockState();
         }
         return super.updateShape(state, level, ticks, pos, direction, neighborPos, neighborState, random);

@@ -61,7 +61,7 @@ public class ParadiseLostBoatItem extends Item {
             return InteractionResult.PASS;
         }
 
-        Boat boat = createBoat(level, hit.getLocation());
+        net.minecraft.world.entity.vehicle.boat.AbstractBoat boat = createBoat(level, hit.getLocation());
         boat.setYRot(player.getYRot());
         if (!level.noCollision(boat, boat.getBoundingBox())) {
             return InteractionResult.FAIL;
@@ -75,7 +75,7 @@ public class ParadiseLostBoatItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    private Boat createBoat(Level level, Vec3 pos) {
+    private net.minecraft.world.entity.vehicle.boat.AbstractBoat createBoat(Level level, Vec3 pos) {
         return hasChest
                 ? new ParadiseLostChestBoatEntity(EntityRegistry.chestBoatType(wood), level, wood, pos.x, pos.y, pos.z)
                 : new ParadiseLostBoatEntity(EntityRegistry.boatType(wood), level, wood, pos.x, pos.y, pos.z);

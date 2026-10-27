@@ -22,7 +22,7 @@ public class ThrownNitraEntity extends ThrowableItemProjectile {
     }
 
     public ThrownNitraEntity(Level world, LivingEntity owner) {
-        super(EntityRegistry.THROWN_NITRA.get(), owner, world);
+        super(EntityRegistry.THROWN_NITRA.get(), owner, world, new net.minecraft.world.item.ItemStack(ItemRegistry.NITRA_BULB.get()));
     }
 
     protected void onHitEntity(EntityHitResult entityHitResult) {

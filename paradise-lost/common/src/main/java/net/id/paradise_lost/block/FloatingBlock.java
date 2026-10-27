@@ -33,7 +33,7 @@ public class FloatingBlock extends DropExperienceBlock {
 
     @Override
     protected BlockState updateShape(BlockState stateIn, LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos posIn, Direction facingIn, BlockPos facingPosIn, BlockState facingState, net.minecraft.util.RandomSource random) {
-        worldIn.scheduleTick(posIn, this, this.getFallDelay());
+        ticks.scheduleTick(posIn, this, this.getFallDelay());
         return super.updateShape(stateIn, worldIn, ticks, posIn, facingIn, facingPosIn, facingState, random);
     }
 

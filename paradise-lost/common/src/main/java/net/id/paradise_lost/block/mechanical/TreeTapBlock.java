@@ -140,7 +140,7 @@ public class TreeTapBlock extends ParadiseLostBlockWithEntity {
 	}
 
 	@Override
-	public int getAnalogOutputSignal(BlockState state, @NotNull Level world, BlockPos pos) {
+	public int getAnalogOutputSignal(BlockState state, @NotNull Level world, BlockPos pos, Direction direction) {
 		return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(world.getBlockEntity(pos));
 	}
 

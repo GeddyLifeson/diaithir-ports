@@ -22,8 +22,8 @@ public class FloatyLeggingsItem extends Item {
     private static final double DESCEND_SPEED = -0.15D;
     private static final double HORIZONTAL_FRICTION = 0.6D * 0.91D;
 
-    public FloatyLeggingsItem(Holder<ArmorMaterial> material, Properties settings) {
-        super(material, Type.LEGGINGS, settings);
+    public FloatyLeggingsItem(Properties settings) {
+        super(settings);
     }
 
     public static boolean isWearing(LivingEntity entity) {
@@ -39,7 +39,7 @@ public class FloatyLeggingsItem extends Item {
     }
 
     public static int getDefensePoints(FloatyLeggingsItem item) {
-        return item.getMaterial().value().getDefense(item.getType());
+        return ParadiseLostArmorMaterials.FLOATY.defense().getOrDefault(net.minecraft.world.item.equipment.ArmorType.LEGGINGS, 0);
     }
 
     public static boolean isSurvivalLike(Player player) {
@@ -99,7 +99,7 @@ public class FloatyLeggingsItem extends Item {
         player.setNoGravity(true);
         player.setDeltaMovement(Vec3.ZERO);
         player.resetFallDistance();
-        player.walkAnimation.update(0.0F, 0.4F);
+        player.walkAnimation.update(0.0F, 0.4F, 1.0F);
     }
 
     public static boolean hasMovementInput(float strafe, float forward) {
@@ -133,7 +133,7 @@ public class FloatyLeggingsItem extends Item {
         player.setDeltaMovement(hx, y, hz);
 
         float dist = (float) Math.hypot(player.getX() - xBefore, player.getZ() - zBefore);
-        player.walkAnimation.update(Math.min(dist * 4.0F, 1.0F), 0.4F);
+        player.walkAnimation.update(Math.min(dist * 4.0F, 1.0F), 0.4F, 1.0F);
         player.resetFallDistance();
     }
 

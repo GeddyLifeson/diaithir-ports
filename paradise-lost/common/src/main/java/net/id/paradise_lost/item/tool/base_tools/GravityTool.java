@@ -52,7 +52,7 @@ public class GravityTool {
         }
 
         if (context.getPlayer() != null && !context.getPlayer().isCreative()) {
-            context.getItemInHand().hurtAndBreak(4, context.getPlayer(), LivingEntity.getSlotForHand(context.getHand()));
+            context.getItemInHand().hurtAndBreak(4, context.getPlayer(), context.getHand().asEquipmentSlot());
         }
 
         return InteractionResult.SUCCESS;

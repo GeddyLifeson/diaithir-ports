@@ -39,7 +39,8 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
 
     public SentinelEntity(EntityType<? extends SentinelEntity> entityType, Level world) {
         super(entityType, world);
-        Arrays.fill(this.handDropChances, 0.125F);
+        this.setDropChance(net.minecraft.world.entity.EquipmentSlot.MAINHAND, 0.125F);
+        this.setDropChance(net.minecraft.world.entity.EquipmentSlot.OFFHAND, 0.125F);
         this.xpReward = 10;
     }
 
@@ -123,14 +124,15 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
         return ParadiseLostSoundEvents.ENTITY_SENTINEL_STEP;
     }
 
-    public boolean hurt(DamageSource source, float amount) {
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         if (!this.getEnlightened()) {
             if (source.isCreativePlayer()) {
-                return super.hurt(source, 1000);
+                return super.hurtServer(serverLevel, source, 1000);
             }
             return false;
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(serverLevel, source, amount);
     }
 
     public boolean isNoAi() {
@@ -176,8 +178,4 @@ public class SentinelEntity extends Zombie implements IEnlightenable {
         return false;
     }
 
-    @Override
-    protected ItemStack getSkull() {
-        return ItemStack.EMPTY;
-    }
 }

@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-public class WallClingingPlantBlock extends BushBlock implements BonemealableBlock {
+public class WallClingingPlantBlock extends net.minecraft.world.level.block.VegetationBlock implements BonemealableBlock {
 
     public static final MapCodec<WallClingingPlantBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
         return instance.group(TagKey.hashedCodec(Registries.BLOCK).fieldOf("clingable_blocks").forGetter((block) -> {
@@ -71,7 +71,7 @@ public class WallClingingPlantBlock extends BushBlock implements BonemealableBlo
     }
 
     @Override
-    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
+    public MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 

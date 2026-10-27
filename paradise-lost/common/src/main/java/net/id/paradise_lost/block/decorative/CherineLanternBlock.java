@@ -23,8 +23,4 @@ public class CherineLanternBlock extends LanternBlock {
         super(settings);
     }
 
-    @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return state.getValue(HANGING) ? HANGING_AABB : AABB;
-    }
 }

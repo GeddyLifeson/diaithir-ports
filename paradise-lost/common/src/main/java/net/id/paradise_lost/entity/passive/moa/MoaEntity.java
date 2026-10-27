@@ -871,13 +871,6 @@ public class MoaEntity extends SaddleMountEntity implements PlayerRideableJumpin
         return owner == null ? null : net.minecraft.world.entity.EntityReference.of(owner);
     }
 
-    @Nullable
-    @Override
-    public net.minecraft.world.entity.EntityReference<LivingEntity> getOwnerReference() {
-        UUID owner = getOwnerUUID();
-        return owner == null ? null : net.minecraft.world.entity.EntityReference.of(owner);
-    }
-
     @Override
     public void openCustomInventoryScreen(Player player) {
         if (!level().isClientSide() && (!isVehicle() || hasPassenger(player)) && getGenes().isTamed() && player instanceof ServerPlayer serverPlayer) {

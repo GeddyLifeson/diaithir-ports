@@ -54,7 +54,7 @@ public final class MoaBreedingRegistry {
         table(context, MoaRaceRegistry.AQUILAN,
                 pair(MoaRaceRegistry.GREYHOUND, MoaRaceRegistry.FROSTGRASS, 0.2F));
         table(context, MoaRaceRegistry.MOONSTRUCK,
-                pair(MoaRaceRegistry.REDHOOD, MoaRaceRegistry.STRAWBERRY_WISTAR, 0.25F, night()));
+                pair(MoaRaceRegistry.REDHOOD, MoaRaceRegistry.STRAWBERRY_WISTAR, 0.25F, night(context)));
     }
 
     private static void table(BootstrapContext<BreedingRecipes> context,
@@ -70,8 +70,10 @@ public final class MoaBreedingRegistry {
         return new BreedingEntry(first.identifier(), second.identifier(), chance, List.of(conditions));
     }
 
-    private static LootItemCondition night() {
-        return new TimeCheck.Builder(IntRange.range(13_000, 23_000))
+    private static LootItemCondition night(BootstrapContext<BreedingRecipes> context) {
+        return new TimeCheck.Builder(
+                context.lookup(net.minecraft.core.registries.Registries.WORLD_CLOCK).getOrThrow(net.minecraft.world.clock.WorldClocks.OVERWORLD),
+                IntRange.range(13_000, 23_000))
                 .setPeriod(24_000L)
                 .build();
     }

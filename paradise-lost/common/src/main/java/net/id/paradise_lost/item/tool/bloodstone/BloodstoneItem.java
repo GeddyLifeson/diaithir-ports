@@ -23,9 +23,9 @@ public abstract class BloodstoneItem extends Item {
     protected abstract List<Component> getDefaultText();
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag type) {
-        tooltip.addAll(getDefaultText());
-        super.appendHoverText(stack, context, tooltip, type);
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag type) {
+        getDefaultText().forEach(tooltip);
+        super.appendHoverText(stack, context, display, tooltip, type);
     }
 
     @Override
@@ -39,7 +39,7 @@ public abstract class BloodstoneItem extends Item {
         }
         stack.set(ParadiseLostDataComponentTypes.BLOODSTONE, capturedData.bloodstoneComponent);
         playPrickEffects(user.level(), entity.blockPosition());
-        return InteractionResult.sidedSuccess(user.level().isClientSide());
+        return InteractionResult.SUCCESS;
     }
 
     @Override

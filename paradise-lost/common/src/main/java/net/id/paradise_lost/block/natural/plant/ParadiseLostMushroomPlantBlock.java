@@ -22,7 +22,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Iterator;
 import java.util.Optional;
 
-public class ParadiseLostMushroomPlantBlock extends BushBlock implements BonemealableBlock {
+public class ParadiseLostMushroomPlantBlock extends net.minecraft.world.level.block.VegetationBlock implements BonemealableBlock {
 
     public static final MapCodec<ParadiseLostMushroomPlantBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
             TagKey.hashedCodec(Registries.BLOCK).fieldOf("plantable_on").forGetter((block) -> block.plantableOn),
@@ -77,13 +77,13 @@ public class ParadiseLostMushroomPlantBlock extends BushBlock implements Bonemea
     }
 
     @Override
-    protected MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
+    public MapCodec<? extends net.minecraft.world.level.block.VegetationBlock> codec() {
         return CODEC;
     }
 
     @Override
     protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
-        return floor.isSolidRender(world, pos);
+        return floor.isSolidRender();
     }
 
     @Override
@@ -111,7 +111,7 @@ public class ParadiseLostMushroomPlantBlock extends BushBlock implements Bonemea
     public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
         Optional<? extends Holder<ConfiguredFeature<?, ?>>> optional = world.registryAccess()
                 .lookupOrThrow(Registries.CONFIGURED_FEATURE)
-                .getHolder(this.featureKey);
+                .get(this.featureKey);
         if (!optional.isEmpty()) {
             world.removeBlock(pos, false);
             if (!((ConfiguredFeature) ((Holder) optional.get()).value()).place(world, world.getChunkSource().getGenerator(), random, pos)) {

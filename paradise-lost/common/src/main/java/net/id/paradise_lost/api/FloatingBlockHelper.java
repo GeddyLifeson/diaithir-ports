@@ -69,7 +69,7 @@ public interface FloatingBlockHelper {
         BlockState state = world.getBlockState(pos);
         Item heldItem = context.getItemInHand().getItem();
         return world.getBlockEntity(pos) == null && state.getDestroySpeed(world, pos) != -1.0F
-                && (!state.requiresCorrectToolForDrops() || heldItem.canAttackBlock(state, world, pos, context.getPlayer()) || (heldItem instanceof GravityWandItem && validForWand(state)))
+                && (!state.requiresCorrectToolForDrops() || context.getItemInHand().isCorrectToolForDrops(state) || (heldItem instanceof GravityWandItem && validForWand(state)))
                 && !state.is(ParadiseLostBlockTags.NON_FLOATERS);
     }
 

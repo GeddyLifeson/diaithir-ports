@@ -16,7 +16,7 @@ public class FloatingBlockCommand {
 
         dispatcher.register(
                 literal("gravitate")
-                        .requires((source) -> source.hasPermission(2))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                         .then(argument("pos", BlockPosArgument.blockPos())
                                 .executes((context -> floatBlock(context.getSource(), BlockPosArgument.getLoadedBlockPos(context, "pos"), false)))
                                 .then(literal("force")

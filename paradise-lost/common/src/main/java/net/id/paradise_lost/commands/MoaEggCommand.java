@@ -11,7 +11,7 @@ import net.id.paradise_lost.entity.passive.moa.MoaGenes;
 import net.id.paradise_lost.registry.MoaRaceRegistry;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.arguments.ResourceLocationArgument;
+import net.minecraft.commands.arguments.IdentifierArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
@@ -30,11 +30,11 @@ public class MoaEggCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
                 literal("moaegg")
-                        .requires((source) -> source.hasPermission(2))
-                        .then(argument("target", EntityArgument.players()).then((argument("race", ResourceLocationArgument.id()).suggests(RACES)
-                                .executes(context -> execute(context.getSource(), EntityArgument.getPlayers(context, "target"), ResourceLocationArgument.getId(context, "race"), false)))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                        .then(argument("target", EntityArgument.players()).then((argument("race", IdentifierArgument.id()).suggests(RACES)
+                                .executes(context -> execute(context.getSource(), EntityArgument.getPlayers(context, "target"), IdentifierArgument.getId(context, "race"), false)))
                                 .then(literal("asBaby")
-                                        .executes(context -> execute(context.getSource(), EntityArgument.getPlayers(context, "target"), ResourceLocationArgument.getId(context, "race"), true)))))
+                                        .executes(context -> execute(context.getSource(), EntityArgument.getPlayers(context, "target"), IdentifierArgument.getId(context, "race"), true)))))
         );
     }
 

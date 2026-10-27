@@ -173,3 +173,10 @@ tasks.named<DefaultTask>("publish") {
 // PORT NOTE: datagen providers are 1.21.1 API (ModelProvider/ExistingFileHelper/etc); excluded until migrated.
 // Generated resources already live in common/src/generated/resources.
 sourceSets.main { java.exclude("net/id/paradise_lost/datagen/**") }
+// PORT NOTE: the 1.21.1 client rendering stack (renderers, models, particles, screens, HUD, client mixins) uses
+// the pre-26.1 render pipeline and is excluded until ported. See net.id.paradise_lost.clientstub for the
+// minimal client entrypoint that keeps the client from crashing on missing entity renderers.
+sourceSets.main {
+    java.exclude("net/id/paradise_lost/client/**")
+    java.exclude("net/id/paradise_lost/mixin/client/**")
+}

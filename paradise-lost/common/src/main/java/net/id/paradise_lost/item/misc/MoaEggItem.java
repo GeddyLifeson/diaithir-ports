@@ -31,7 +31,7 @@ public class MoaEggItem extends Item {
         Player player = contextIn.getPlayer();
         ItemStack stack = contextIn.getItemInHand();
         if (player != null && stack.getComponents().has(ParadiseLostDataComponentTypes.MOA_GENES) && player.isCreative()) {
-            MoaEntity moa = EntityRegistry.MOA.get().create(world);
+            MoaEntity moa = EntityRegistry.MOA.get().create(world, net.minecraft.world.entity.EntitySpawnReason.SPAWN_ITEM_USE);
             ParadiseLostDataComponentTypes.MoaGeneComponent geneTag = stack.get(ParadiseLostDataComponentTypes.MOA_GENES);
             moa.getGenes().fromComponent(geneTag, world.registryAccess());
             if (geneTag.isBaby()) {
@@ -51,7 +51,7 @@ public class MoaEggItem extends Item {
     }
 
     @Override
-        public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag type) {
+        public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag type) {
         var genes = stack.getOrDefault(ParadiseLostDataComponentTypes.MOA_GENES, null);
         if (genes != null) {
             Identifier raceId = genes.race();
@@ -61,12 +61,12 @@ public class MoaEggItem extends Item {
                         .flatMap(reg -> reg.get(ResourceKey.create(MoaRaceRegistry.REGISTRY.key(), raceId)))
                         .map(Holder.Reference::value)
                         .orElse(MoaRaceRegistry.FALLBACK_VALUE);
-                tooltip.add(Component.translatable(race.translationKey(raceId)).withStyle(race.legendary() ? ChatFormatting.LIGHT_PURPLE : ChatFormatting.DARK_AQUA));
+                tooltip.accept(Component.translatable(race.translationKey(raceId)).withStyle(race.legendary() ? ChatFormatting.LIGHT_PURPLE : ChatFormatting.DARK_AQUA));
             }
             if (!genes.isBaby()) {
-                tooltip.add(Component.translatable("moa.egg.adult").withStyle(ChatFormatting.DARK_PURPLE, ChatFormatting.ITALIC));
+                tooltip.accept(Component.translatable("moa.egg.adult").withStyle(ChatFormatting.DARK_PURPLE, ChatFormatting.ITALIC));
             }
         }
-        super.appendHoverText(stack, context, tooltip, type);
+        super.appendHoverText(stack, context, display, tooltip, type);
     }
 }

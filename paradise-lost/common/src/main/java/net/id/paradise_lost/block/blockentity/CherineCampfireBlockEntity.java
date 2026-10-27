@@ -47,7 +47,8 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
         this.matchGetter = RecipeManager.createCheck(RecipeType.CAMPFIRE_COOKING);
     }
 
-    public static void litServerTick(Level world, BlockPos pos, BlockState state, CherineCampfireBlockEntity campfire) {
+    public static void litServerTick(Level level, BlockPos pos, BlockState state, CherineCampfireBlockEntity campfire) {
+        if (!(level instanceof net.minecraft.server.level.ServerLevel world)) return;
         boolean bl = false;
 
         for (int i = 0; i < campfire.itemsBeingCooked.size(); ++i) {
@@ -58,7 +59,7 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
                 if (campfire.cookingTimes[i] >= campfire.cookingTotalTimes[i]) {
                     SingleRecipeInput singleStackRecipeInput = new SingleRecipeInput(itemStack);
                     ItemStack itemStack2 = campfire.matchGetter.getRecipeFor(singleStackRecipeInput, world).map((recipe) -> {
-                        return (recipe.value()).assemble(singleStackRecipeInput, world.registryAccess());
+                        return (recipe.value()).assemble(singleStackRecipeInput);
                     }).orElse(itemStack);
                     if (itemStack2.isItemEnabled(world.enabledFeatures())) {
                         Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), itemStack2);
@@ -125,15 +126,15 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
     protected void loadAdditional(ValueInput nbt) {
         super.loadAdditional(nbt);
         this.itemsBeingCooked.clear();
-        ContainerHelper.loadAllItems(nbt, this.itemsBeingCooked, registryLookup);
+        ContainerHelper.loadAllItems(nbt, this.itemsBeingCooked);
         int[] is;
-        if (nbt.contains("CookingTimes")) {
-            is = nbt.getIntArray("CookingTimes");
+        if (nbt.getIntArray("CookingTimes").isPresent()) {
+            is = nbt.getIntArray("CookingTimes").get();
             System.arraycopy(is, 0, this.cookingTimes, 0, Math.min(this.cookingTotalTimes.length, is.length));
         }
 
-        if (nbt.contains("CookingTotalTimes")) {
-            is = nbt.getIntArray("CookingTotalTimes");
+        if (nbt.getIntArray("CookingTotalTimes").isPresent()) {
+            is = nbt.getIntArray("CookingTotalTimes").get();
             System.arraycopy(is, 0, this.cookingTotalTimes, 0, Math.min(this.cookingTotalTimes.length, is.length));
         }
 
@@ -141,7 +142,7 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
 
     protected void saveAdditional(ValueOutput nbt) {
         super.saveAdditional(nbt);
-        ContainerHelper.saveAllItems(nbt, this.itemsBeingCooked, true, registryLookup);
+        ContainerHelper.saveAllItems(nbt, this.itemsBeingCooked, true);
         nbt.putIntArray("CookingTimes", this.cookingTimes);
         nbt.putIntArray("CookingTotalTimes", this.cookingTotalTimes);
     }
@@ -151,13 +152,11 @@ public class CherineCampfireBlockEntity extends BlockEntity implements Clearable
     }
 
     public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
-        CompoundTag nbtCompound = new CompoundTag();
-        ContainerHelper.saveAllItems(nbtCompound, this.itemsBeingCooked, true, registryLookup);
-        return nbtCompound;
+        return this.saveCustomOnly(registryLookup);
     }
 
     public Optional<RecipeHolder<CampfireCookingRecipe>> getRecipeFor(ItemStack stack) {
-        return this.itemsBeingCooked.stream().noneMatch(ItemStack::isEmpty) ? Optional.empty() : this.matchGetter.getRecipeFor(new SingleRecipeInput(stack), this.level);
+        return this.itemsBeingCooked.stream().noneMatch(ItemStack::isEmpty) ? Optional.empty() : (this.level instanceof net.minecraft.server.level.ServerLevel sl ? this.matchGetter.getRecipeFor(new SingleRecipeInput(stack), sl) : Optional.<RecipeHolder<CampfireCookingRecipe>>empty());
     }
 
     public boolean addItem(@Nullable LivingEntity user, ItemStack stack, int cookTime) {

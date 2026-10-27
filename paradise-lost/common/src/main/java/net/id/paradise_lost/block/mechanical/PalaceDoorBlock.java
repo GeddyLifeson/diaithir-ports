@@ -49,7 +49,7 @@ public class PalaceDoorBlock extends BaseEntityBlock {
 
     @Override
     public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.INVISIBLE;
     }
 
     private void clearExtensionBlocks(Level world, BlockPos pos) {

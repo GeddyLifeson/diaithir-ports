@@ -19,7 +19,7 @@ public class NitraItem extends Item {
     public InteractionResult use(Level world, Player user, InteractionHand hand) {
         ItemStack itemStack = user.getItemInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), ParadiseLostSoundEvents.ENTITY_NITRA_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
-        user.getCooldowns().addCooldown(this, 10);
+        user.getCooldowns().addCooldown(itemStack, 10);
         if (!world.isClientSide()) {
             ThrownNitraEntity nitraEntity = new ThrownNitraEntity(world, user);
             nitraEntity.setItem(itemStack);

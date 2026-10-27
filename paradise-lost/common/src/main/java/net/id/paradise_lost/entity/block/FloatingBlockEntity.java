@@ -49,7 +49,7 @@ public class FloatingBlockEntity extends BlockLikeEntity {
 
         List<Entity> otherEntities = this.level().getEntities(this, getBoundingBox().minmax(getBoundingBox().move(0, 3 * (this.yo - this.getY()), 0)));
         for (Entity entity : otherEntities) {
-            if (!(entity instanceof BlockLikeEntity) && !entity.getType().is(ParadiseLostEntityTypeTags.CANNOT_LEVITATE) && !entity.noPhysics && this.collides) {
+            if (!(entity instanceof BlockLikeEntity) && !entity.typeHolder().is(ParadiseLostEntityTypeTags.CANNOT_LEVITATE) && !entity.noPhysics && this.collides) {
                 entity.move(MoverType.SHULKER_BOX, this.getDeltaMovement());
                 entity.setOnGround(true);
 
@@ -126,7 +126,7 @@ public class FloatingBlockEntity extends BlockLikeEntity {
     @Override
     public void readAdditionalSaveData(ValueInput compound) {
         super.readAdditionalSaveData(compound);
-        if (compound.contains("Dropping")) this.setDropping(compound.getBooleanOr("Dropping", false));
+        this.setDropping(compound.getBooleanOr("Dropping", false));
     }
 
     @Override

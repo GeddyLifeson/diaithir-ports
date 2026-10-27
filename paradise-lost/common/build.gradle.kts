@@ -41,6 +41,9 @@ tasks.named<JavaCompile>("compileJava") {
 }
 
 sourceSets.named("main") {
+    // PORT NOTE: pre-26.1 client rendering stack excluded until ported (see neoforge/build.gradle.kts).
+    java.exclude("net/id/paradise_lost/client/**")
+    java.exclude("net/id/paradise_lost/mixin/client/**")
     java.srcDir("src/regutils/java")
     resources.srcDir(file("src/generated/resources"))
 }

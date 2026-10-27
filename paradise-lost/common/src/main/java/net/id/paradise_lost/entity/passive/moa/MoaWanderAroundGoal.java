@@ -85,7 +85,7 @@ public class MoaWanderAroundGoal extends Goal {
 
     @Override
     public void start() {
-        this.mob.getNavigation().snapTo(this.targetX, this.targetY, this.targetZ, this.speed);
+        this.mob.getNavigation().moveTo(this.targetX, this.targetY, this.targetZ, this.speed);
     }
 
     @Override

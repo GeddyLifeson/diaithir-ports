@@ -1,5 +1,6 @@
 package net.id.paradise_lost.api;
 
+import org.jetbrains.annotations.Nullable;
 import net.id.paradise_lost.world.ParadiseLostGameRules;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -109,6 +110,11 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
             this.fallHurtAmount = this.blockState.getBlock().defaultDestroyTime() * (float) verticalSpeed;
             this.fallHurtMax = Math.max(Math.round(this.fallHurtAmount), this.fallHurtMax);
         }
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, DamageSource source, float damage) {
+        return false;
     }
 
     public abstract void postTickMovement();
@@ -399,7 +405,7 @@ public abstract class BlockLikeEntity extends Entity implements PostTickEntity {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@Nullable Entity other) {
         return collides;
     }
 

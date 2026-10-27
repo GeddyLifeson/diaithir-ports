@@ -105,7 +105,7 @@ public class PopomEntity extends Animal {
                 int i = furSize == 2 ? 1 + this.random.nextInt(2) : 2 + this.random.nextInt(3);
 
                 for (int j = 0; j < i; j++) {
-                    ItemEntity itemEntity = this.spawnAtLocation(ItemRegistry.POPOM_JELLY.get());
+                    ItemEntity itemEntity = this.spawnAtLocation((ServerLevel) this.level(), ItemRegistry.POPOM_JELLY.get());
                     if (itemEntity != null) {
                         itemEntity.setDeltaMovement(
                                 itemEntity.getDeltaMovement()
@@ -128,7 +128,7 @@ public class PopomEntity extends Animal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
-        return EntityRegistry.POPOM.get().create(world);
+        return EntityRegistry.POPOM.get().create(world, net.minecraft.world.entity.EntitySpawnReason.BREEDING);
     }
 
     @Override
@@ -188,12 +188,12 @@ public class PopomEntity extends Animal {
     }
 
     @Override
-    public ResourceKey<LootTable> getDefaultLootTable() {
-        return switch (this.getFurSize()) {
+    protected void dropFromLootTable(ServerLevel level, net.minecraft.world.damagesource.DamageSource source, boolean playerKilled) {
+        this.dropFromLootTable(level, source, playerKilled, switch (this.getFurSize()) {
             case 2 -> ParadiseLostLootTables.POPOM_JELLY_LEVEL_2;
             case 3 -> ParadiseLostLootTables.POPOM_JELLY_LEVEL_3;
             default -> ParadiseLostLootTables.POPOM_JELLY_LEVEL_0;
-        };
+        });
     }
 
     static {

@@ -30,7 +30,7 @@ public class MoaStatCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
                 literal("moastat")
-                        .requires((source) -> source.hasPermission(2))
+                        .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
                         .then(argument("target", EntityArgument.entities())
                                 .then(literal("query")
                                         .executes(context -> printStat(context.getSource(), EntityArgument.getEntities(context, "target"), null))

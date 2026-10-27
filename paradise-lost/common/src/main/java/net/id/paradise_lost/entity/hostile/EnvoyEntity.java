@@ -120,23 +120,31 @@ public class EnvoyEntity extends Skeleton implements IEnlightenable {
         return this.getEnlightened() ? ParadiseLostSoundEvents.ENTITY_ENVOY_ENLIGHTENED_AMBIENT : ParadiseLostSoundEvents.ENTITY_ENVOY_AMBIENT;
     }
 
-    public boolean hurt(DamageSource source, float amount) {
+    private boolean paradiseLost$sunBurn() {
+        float br = this.getLightLevelDependentMagicValue();
+        return br > 0.5F && this.random.nextFloat() * 30.0F < (br - 0.4F) * 2.0F && !this.isInWaterOrRain()
+                && this.level().canSeeSky(net.minecraft.core.BlockPos.containing(this.getX(), this.getEyeY(), this.getZ()));
+    }
+
+    @Override
+    public boolean hurtServer(ServerLevel serverLevel, DamageSource source, float amount) {
         float dmg = amount;
         if (this.getEnlightened()) {
             dmg /= 2;
         }
-        if (this.isSunBurnTick()) {
+        if (this.paradiseLost$sunBurn()) {
             dmg *= 3f;
         }
-        return super.hurt(source, dmg);
+        return super.hurtServer(serverLevel, source, dmg);
     }
 
-    public boolean doHurtTarget(Entity target) {
-        if (!super.doHurtTarget(target)) {
+    @Override
+    public boolean doHurtTarget(ServerLevel serverLevel, Entity target) {
+        if (!super.doHurtTarget(serverLevel, target)) {
             return false;
         } else {
             if (target instanceof LivingEntity) {
-                ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200), this);
+                ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 200), this);
             }
             return true;
         }

@@ -152,10 +152,11 @@ public class ItemRegistry {
     private static final Component GLAZED_GOLD_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Component.translatable(Util.makeDescriptionId("item", locate("smithing_template.glazed_gold_upgrade.additions_slot_description")));
 
     public static final RegistryObject<Item, Item> GLAZED_GOLD_UPGRADE = add("glazed_gold_upgrade_smithing_template", () -> new SmithingTemplateItem(
-            GLAZED_GOLD_UPGRADE_APPLIES_TO_TEXT, GLAZED_GOLD_UPGRADE_INGREDIENTS_TEXT, GLAZED_GOLD_UPGRADE_TEXT, GLAZED_GOLD_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, GLAZED_GOLD_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT,
+            GLAZED_GOLD_UPGRADE_APPLIES_TO_TEXT, GLAZED_GOLD_UPGRADE_INGREDIENTS_TEXT, GLAZED_GOLD_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, GLAZED_GOLD_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT,
             List.of(Identifier.parse("item/empty_armor_slot_helmet"), Identifier.parse("item/empty_armor_slot_chestplate"), Identifier.parse("item/empty_armor_slot_leggings"), Identifier.parse("item/empty_armor_slot_boots"),
                     Identifier.parse("item/empty_slot_hoe"), Identifier.parse("item/empty_slot_axe"), Identifier.parse("item/empty_slot_sword"), Identifier.parse("item/empty_slot_shovel"), Identifier.parse("item/empty_slot_pickaxe")),
-            List.of(Identifier.parse("item/empty_slot_ingot"))
+            List.of(Identifier.parse("item/empty_slot_ingot")),
+            new Item.Properties()
     ));
     private static Properties wearable() {
         return new Properties();

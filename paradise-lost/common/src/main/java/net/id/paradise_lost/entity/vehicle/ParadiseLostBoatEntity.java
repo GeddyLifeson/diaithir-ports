@@ -9,7 +9,7 @@ public class ParadiseLostBoatEntity extends Boat {
     private final ParadiseLostBoatType wood;
 
     public ParadiseLostBoatEntity(EntityType<? extends Boat> entityType, Level level, ParadiseLostBoatType wood) {
-        super(entityType, level);
+        super(entityType, level, () -> wood.boatItem());
         this.wood = wood;
     }
 
@@ -23,10 +23,5 @@ public class ParadiseLostBoatEntity extends Boat {
 
     public ParadiseLostBoatType getWood() {
         return wood;
-    }
-
-    @Override
-    public Item getDropItem() {
-        return wood.boatItem();
     }
 }

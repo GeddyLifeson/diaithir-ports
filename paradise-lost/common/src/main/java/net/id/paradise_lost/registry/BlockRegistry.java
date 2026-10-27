@@ -276,7 +276,7 @@ public class BlockRegistry {
                 add(logId, () -> new RotatedPillarBlock(logSettings), List.of(fuel(300)), flammableLog, stripsTo(strippedLog)),
                 add(woodId, () -> new RotatedPillarBlock(logSettings), List.of(fuel(300)), flammableLog, stripsTo(strippedWood)),
                 strippedLog, strippedWood,
-                add(leavesId, () -> new LeavesBlock(leavesSettings), List.of(compostable30), flammableLeaves, cutoutMippedRenderLayer),
+                add(leavesId, () -> new net.minecraft.world.level.block.TintedParticleLeavesBlock(0.01F, leavesSettings), List.of(compostable30), flammableLeaves, cutoutMippedRenderLayer),
                 planks,
                 add(plankStairsId, () -> new ParadiseLostStairsBlock(planks.get().defaultBlockState(), plankSettings), List.of(fuel(300)), flammablePlanks),
                 add(plankSlabId, () -> new SlabBlock(plankSettings), List.of(fuel(150)), flammablePlanks),
@@ -573,7 +573,7 @@ public class BlockRegistry {
         return ofFullCopy(OAK_LEAVES);
     }
     protected static Properties wisteriaHanger() {
-        return of().pushReaction(PushReaction.DESTROY).strength(0.2f).noCollission().instabreak().sound(SoundType.GRASS).isSuffocating(never).isViewBlocking(never);
+        return of().pushReaction(PushReaction.DESTROY).strength(0.2f).noCollision().instabreak().sound(SoundType.GRASS).isSuffocating(never).isViewBlocking(never);
     }
     protected static Properties wisteriaSapling() {
         return ofFullCopy(Blocks.OAK_SAPLING);
@@ -632,7 +632,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block, SlabBlock> FLAXWEAVE_CUSHION_SLAB = add("flaxweave_cushion_slab", () -> new FlaxweaveCushionSlabBlock(of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.WOOL).strength(0.2F).instrument(NoteBlockInstrument.GUITAR)), List.of(fuel(150)), flammable(40, 10));
 
     public static final RegistryObject<Block, BlackcurrantBushBlock> BLACKCURRANT_BUSH = addNoItem("blackcurrant_bush", () -> new BlackcurrantBushBlock(of().strength(0.2f)
-            .randomTicks().sound(SoundType.GRASS).noOcclusion().isSuffocating(never).isViewBlocking(never).noCollission().mapColor(MapColor.COLOR_PURPLE)), flammablePlant, cutoutRenderLayer);
+            .randomTicks().sound(SoundType.GRASS).noOcclusion().isSuffocating(never).isViewBlocking(never).noCollision().mapColor(MapColor.COLOR_PURPLE)), flammablePlant, cutoutRenderLayer);
 
     public static final RegistryObject<Block, FourBiteCakeBlock> CHEESECAKE = add("halflight_cheesecake", () -> new FourBiteCakeBlock(Properties.ofFullCopy(CAKE)));
 
@@ -644,7 +644,7 @@ public class BlockRegistry {
 
     public static final RegistryObject<Block, FlowerBlock> ANCIENT_FLOWER = add("ancient_flower", () -> new FlowerBlock(MobEffects.ABSORPTION, 20, flower()), List.of(compostable65), flammablePlant, cutoutRenderLayer);
     public static final RegistryObject<Block, FlowerPotBlock> POTTED_ANCIENT_FLOWER = addNoItem("potted_ancient_flower", () -> new FlowerPotBlock(ANCIENT_FLOWER.get(), flowerPot()), cutoutRenderLayer);
-    public static final RegistryObject<Block, FlowerBlock> ATARAXIA = add("ataraxia", () -> new FlowerBlock(MobEffects.HARM, 1, flower()), List.of(compostable65), flammablePlant, cutoutRenderLayer);
+    public static final RegistryObject<Block, FlowerBlock> ATARAXIA = add("ataraxia", () -> new FlowerBlock(MobEffects.INSTANT_DAMAGE, 1, flower()), List.of(compostable65), flammablePlant, cutoutRenderLayer);
     public static final RegistryObject<Block, FlowerPotBlock> POTTED_ATARAXIA = addNoItem("potted_ataraxia", () -> new FlowerPotBlock(ATARAXIA.get(), flowerPot()), cutoutRenderLayer);
     public static final RegistryObject<Block, FlowerBlock> CLOUDSBLUFF = add("cloudsbluff", () -> new FlowerBlock(MobEffects.SLOW_FALLING, 6, flower()), List.of(compostable65), flammablePlant, cutoutRenderLayer);
     public static final RegistryObject<Block, FlowerPotBlock> POTTED_CLOUDSBLUFF = addNoItem("potted_cloudsbluff", () -> new FlowerPotBlock(CLOUDSBLUFF.get(), flowerPot()), cutoutRenderLayer);
@@ -666,11 +666,11 @@ public class BlockRegistry {
     public static final RegistryObject<Block, Block> OLVITE_BLOCK = add("olvite_block", () -> new Block(of().requiresCorrectToolForDrops().strength(3f, -1f).sound(SoundType.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
     public static final RegistryObject<Block, Block> REFINED_SURTRUM_BLOCK = add("refined_surtrum_block", () -> new Block(of().requiresCorrectToolForDrops().strength(4f, -1f).sound(SoundType.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE)), new Item.Properties().fireResistant());
 
-    public static final RegistryObject<Block, ButtonBlock> FLOESTONE_BUTTON = add("floestone_button", () -> new ParadiseLostButtonBlock(BlockSetType.STONE, 20, Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block, ButtonBlock> FLOESTONE_BUTTON = add("floestone_button", () -> new ParadiseLostButtonBlock(BlockSetType.STONE, 20, Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block, PressurePlateBlock> FLOESTONE_PRESSURE_PLATE = add("floestone_pressure_plate", () -> new ParadiseLostPressurePlateBlock(BlockSetType.STONE, ofFullCopy(STONE_PRESSURE_PLATE).instrument(NoteBlockInstrument.BASEDRUM)));
-    public static final RegistryObject<Block, OlvitePressurePlateBlock> OLVITE_PRESSURE_PLATE = add("olvite_pressure_plate", () -> new OlvitePressurePlateBlock(of().mapColor(MapColor.GRASS).forceSolidOn().instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block, OlvitePressurePlateBlock> OLVITE_PRESSURE_PLATE = add("olvite_pressure_plate", () -> new OlvitePressurePlateBlock(of().mapColor(MapColor.GRASS).forceSolidOn().instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block, FloatingBlock> LEVITATOR = add("levitator", () -> new FloatingBlock(true, of().strength(3f, 3f).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM)));
-    public static final RegistryObject<Block, ChainBlock> OLVITE_CHAIN = add("olvite_chain", () -> new ChainBlock(ofFullCopy(CHAIN)), cutoutMippedRenderLayer);
+    public static final RegistryObject<Block, ChainBlock> OLVITE_CHAIN = add("olvite_chain", () -> new ChainBlock(ofFullCopy(IRON_CHAIN)), cutoutMippedRenderLayer);
     public static final RegistryObject<Block, CherineLanternBlock> CHERINE_LANTERN = add("cherine_lantern", () -> new CherineLanternBlock(ofFullCopy(LANTERN).explosionResistance(1f)), cutoutMippedRenderLayer);
     public static final RegistryObject<Block, ParadiseLostPortalBlock> BLUE_PORTAL = addNoItem("blue_portal", () -> new ParadiseLostPortalBlock(ofFullCopy(NETHER_PORTAL).noOcclusion().isViewBlocking(never).mapColor(MapColor.COLOR_BLUE)), translucentRenderLayer);
 
@@ -679,7 +679,7 @@ public class BlockRegistry {
     }
 
     public static final RegistryObject<Block, CherineTorchBlock> CHERINE_TORCH = addNoItem("cherine_torch", () -> new CherineTorchBlock(cherineTorch()), cutoutRenderLayer);
-    public static final RegistryObject<Block, CherineWallTorchBlock> CHERINE_TORCH_WALL = addNoItem("cherine_wall_torch", () -> new CherineWallTorchBlock(ofFullCopy(CHERINE_TORCH.get()).dropsLike(CHERINE_TORCH.get())), cutoutRenderLayer);
+    public static final RegistryObject<Block, CherineWallTorchBlock> CHERINE_TORCH_WALL = addNoItem("cherine_wall_torch", () -> new CherineWallTorchBlock(ofFullCopy(CHERINE_TORCH.get()).overrideLootTable(CHERINE_TORCH.get().getLootTable())), cutoutRenderLayer);
     public static final RegistryObject<Block, GoldenAmberBarsBlock> GOLDEN_AMBER_BARS = add("golden_amber_bars", () -> new GoldenAmberBarsBlock(ofFullCopy(IRON_BARS)), cutoutMippedRenderLayer);
 
     public static final RegistryObject<Block, BrushableBlock> SUSPICIOUS_DIRT = add("suspicious_dirt", () -> new BrushableBlock(DIRT.get(), SoundEvents.BRUSH_GRAVEL, SoundEvents.BRUSH_GRAVEL_COMPLETED, ofFullCopy(DIRT.get()).strength(0.25F).sound(SoundType.SUSPICIOUS_GRAVEL).pushReaction(PushReaction.DESTROY)));
@@ -688,7 +688,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block, FoodBowlBlock> FOOD_BOWL = add("food_bowl", () -> new FoodBowlBlock(of().mapColor(MapColor.CRIMSON_NYLIUM).strength(2.5f).sound(SoundType.WOOD).noOcclusion()), List.of(fuel(300)), cutoutMippedRenderLayer);
 	public static final RegistryObject<Block, Block> TREE_TAP = add("tree_tap", () -> new TreeTapBlock(of().mapColor(MapColor.PODZOL).strength(2.5f).sound(SoundType.WOOD).noOcclusion().randomTicks()), List.of(fuel(300)), cutoutRenderLayer);
     public static final RegistryObject<Block, NitraBlock> NITRA_BUNCH = add("nitra_bunch", () -> new NitraBlock(of().mapColor(MapColor.SAND).strength(0.5f).sound(SoundType.WET_GRASS)), List.of(fuel(3200)));
-    public static final RegistryObject<Block, LevitaRailBlock> LEVITA_RAIL = add("levita_rail", () -> new LevitaRailBlock(of().noCollission().strength(0.7F).sound(SoundType.METAL)), cutoutMippedRenderLayer);
+    public static final RegistryObject<Block, LevitaRailBlock> LEVITA_RAIL = add("levita_rail", () -> new LevitaRailBlock(of().noCollision().strength(0.7F).sound(SoundType.METAL)), cutoutMippedRenderLayer);
 
     public static void init() {
         PENDING_BLOCK_ITEMS.forEach(Runnable::run);

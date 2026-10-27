@@ -94,7 +94,7 @@ public class NitraBlock extends Block {
         if (!world.isClientSide()) {
             BlockPos blockPos = hit.getBlockPos();
             Entity entity = projectile.getOwner();
-            if (projectile.isOnFire() && projectile.mayInteract(world, blockPos)) {
+            if (projectile.isOnFire() && world instanceof net.minecraft.server.level.ServerLevel sl && projectile.mayInteract(sl, blockPos)) {
                 world.removeBlock(blockPos, false);
                 ignite(world, blockPos, BASE_EXPLOSIVE_POWER, entity instanceof LivingEntity ? (LivingEntity) entity : null);
             }

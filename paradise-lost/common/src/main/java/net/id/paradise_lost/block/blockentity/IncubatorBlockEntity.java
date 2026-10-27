@@ -130,9 +130,9 @@ public class IncubatorBlockEntity extends BlockEntity {
     public void saveAdditional(ValueOutput nbt) {
         super.saveAdditional(nbt);
         if (!egg.isEmpty()) {
-            nbt.put("egg", egg.save(registryLookup));
+            nbt.store("egg", ItemStack.CODEC, egg);
         } else {
-            nbt.remove("egg");
+            nbt.discard("egg");
         }
         nbt.putInt("hatchTicks", hatchTicks);
         nbt.putString("itemFacing", itemFacing.getSerializedName());
@@ -141,14 +141,10 @@ public class IncubatorBlockEntity extends BlockEntity {
     @Override
     public void loadAdditional(ValueInput nbt) {
         super.loadAdditional(nbt);
-        if (nbt.contains("egg")) {
-            egg = ItemStack.parse(registryLookup, nbt.get("egg")).get();
-        } else {
-            egg = ItemStack.EMPTY;
-        }
+        egg = nbt.read("egg", ItemStack.CODEC).orElse(ItemStack.EMPTY);
 
         hatchTicks = nbt.getIntOr("hatchTicks", 0);
-        if (nbt.contains("itemFacing")) {
+        if (nbt.getString("itemFacing").isPresent()) {
             itemFacing = Direction.byName(nbt.getStringOr("itemFacing", ""));
             if (itemFacing == null || !itemFacing.getAxis().isHorizontal()) {
                 itemFacing = Direction.SOUTH;
@@ -160,9 +156,7 @@ public class IncubatorBlockEntity extends BlockEntity {
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
-        CompoundTag nbtCompound = new CompoundTag();
-        this.saveAdditional(nbtCompound, registryLookup);
-        return nbtCompound;
+        return this.saveCustomOnly(registryLookup);
     }
 
     @Nullable
