@@ -73,7 +73,15 @@ public final class Butchery {
             () -> new BlockEntityType<>(MeatHookEntity::new, HOOK.get()));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StationEntity>> STATION_ENTITY = BLOCK_ENTITIES.register("station",
-            () -> new BlockEntityType<>(StationEntity::new, STATION_BLOCKS.stream().map(DeferredBlock::get).collect(java.util.stream.Collectors.toSet()), false));
+            () -> new BlockEntityType<>(StationEntity::new, STATION_BLOCKS.stream().filter(h -> !h.getId().getPath().equals("cold_room") && !h.getId().getPath().equals("stasis_case")).map(DeferredBlock::get).collect(java.util.stream.Collectors.toSet()), false));
+
+    /** Own types for the two cold containers so a spoilage mod can recognise them: diaithirbutchery:cold_room and diaithirbutchery:stasis_case (also in block tag diaithirbutchery:cold_containers). */
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ColdStationEntity>> COLD_ROOM_ENTITY = BLOCK_ENTITIES.register("cold_room",
+            () -> new BlockEntityType<>((p, s) -> new ColdStationEntity(Butchery.COLD_ROOM_ENTITY.get(), p, s, "cold_room", 400), BLOCKS.getEntries().stream()
+                    .filter(h -> h.getId().getPath().equals("cold_room")).map(h -> h.get()).collect(java.util.stream.Collectors.toSet()), false));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ColdStationEntity>> STASIS_ENTITY = BLOCK_ENTITIES.register("stasis_case",
+            () -> new BlockEntityType<>((p, s) -> new ColdStationEntity(Butchery.STASIS_ENTITY.get(), p, s, "stasis_case", 100000), BLOCKS.getEntries().stream()
+                    .filter(h -> h.getId().getPath().equals("stasis_case")).map(h -> h.get()).collect(java.util.stream.Collectors.toSet()), false));
 
     static {
         STATIONS.put("drying_rack", 2);

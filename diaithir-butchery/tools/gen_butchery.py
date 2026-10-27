@@ -89,6 +89,7 @@ STATION_DATA = {
     "stasis_case": {"age": 9, "process": [proc(ANY, "same", 20, 1, 100000)]},
 }
 w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES, "tools": TOOLS, "stations": STATION_DATA})
+w(f"{D}/tags/block/cold_containers.json", {"values": [M + "cold_room", M + "stasis_case"]})
 w(f"{D}/tags/item/raw_cuts.json", {"values": [M + c for c in CUTS]})
 w(f"{D}/tags/item/cooked_cuts.json", {"values": [M + "cooked_" + c for c in CUTS]})
 w(f"{D}/tags/item/meats.json", {"values": ["#" + MOD + ":raw_cuts", "#" + MOD + ":cooked_cuts"] + [M + p for p in PRODUCTS if p != "lard"]})

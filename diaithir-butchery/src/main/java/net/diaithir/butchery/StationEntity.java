@@ -12,6 +12,11 @@ import net.minecraft.world.level.storage.ValueOutput;
 
 /** Holds a stack to process and the finished stack. One item is processed at a time; the product keeps the species and kill time of its input. */
 public class StationEntity extends BlockEntity {
+    /** Shelf life percent this station gives anything it holds (the cold room and stasis case override this); 0 for stations that are not cold containers. */
+    public int containerShelf() {
+        return 0;
+    }
+
     private String station;
     private ItemStack input = ItemStack.EMPTY;
     private ItemStack output = ItemStack.EMPTY;
@@ -22,7 +27,11 @@ public class StationEntity extends BlockEntity {
     }
 
     StationEntity(BlockPos pos, BlockState state, String station) {
-        super(Butchery.STATION_ENTITY.get(), pos, state);
+        this(Butchery.STATION_ENTITY.get(), pos, state, station);
+    }
+
+    StationEntity(net.minecraft.world.level.block.entity.BlockEntityType<?> type, BlockPos pos, BlockState state, String station) {
+        super(type, pos, state);
         this.station = station;
     }
 

@@ -33,12 +33,16 @@ public class StationBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new StationEntity(pos, state, station);
+        return switch (station) {
+            case "cold_room" -> new ColdStationEntity(Butchery.COLD_ROOM_ENTITY.get(), pos, state, station, 400);
+            case "stasis_case" -> new ColdStationEntity(Butchery.STASIS_ENTITY.get(), pos, state, station, 100000);
+            default -> new StationEntity(pos, state, station);
+        };
     }
 
     @Override
     public <T extends BlockEntity> @Nullable BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return level.isClientSide() || type != Butchery.STATION_ENTITY.get() ? null : (l, p, s, be) -> ((StationEntity) be).tick(l);
+        return level.isClientSide() ? null : (l, p, s, be) -> ((StationEntity) be).tick(l);
     }
 
     @Override
