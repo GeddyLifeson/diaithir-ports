@@ -10,7 +10,7 @@
      "functions": [
       {
        "function": "minecraft:copy_components",
-       "source": "minecraft:block_entity",
+       "source": "block_entity",
        "include": [
         "createdieselgenerators:fluid_contents"
        ]

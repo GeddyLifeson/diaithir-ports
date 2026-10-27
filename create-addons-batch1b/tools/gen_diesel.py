@@ -92,7 +92,7 @@ def canister():
         "facing=east": {"model": f"{NS}:block/canister", "x": 90, "y": 90}, "facing=west": {"model": f"{NS}:block/canister", "x": 90, "y": 270}}})
     w(f"{A}/items/canister.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/canister"}})
     w(f"{D}/loot_table/blocks/canister.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:canister",
-        "functions": [{"function": "minecraft:copy_components", "source": "minecraft:block_entity", "include": [f"{NS}:fluid_contents"]}]}],
+        "functions": [{"function": "minecraft:copy_components", "source": "block_entity", "include": [f"{NS}:fluid_contents"]}]}],
         "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
     w(f"{D}/recipe/canister.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": [" I ", "ICI", " I "],
         "key": {"I": "minecraft:iron_ingot", "C": "minecraft:copper_ingot"}, "result": {"id": f"{NS}:canister", "count": 1}})
