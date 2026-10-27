@@ -24,6 +24,14 @@ public class StirlingEngineBlockEntity extends GeneratingKineticBlockEntity impl
 
     LerpedFloat visualSpeed = LerpedFloat.linear();
     float angle;
+
+    public float getAngle() {
+        return angle;
+    }
+
+    public float getVisualSpeed(float partialTicks) {
+        return visualSpeed.getValue(partialTicks);
+    }
     private float heat = 0;
 
     public StirlingEngineBlockEntity(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {
