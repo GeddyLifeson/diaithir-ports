@@ -33,4 +33,11 @@ class DataFilesTest {
             assertTrue(!lang.get("block.diaithirfurnishings." + n).getAsString().contains("—"), "no em dash");
         }
     }
+
+    @Test
+    void hangingSackRecipeKeepsTheSacksComponents() throws Exception {
+        JsonObject r = json("data/diaithirfurnishings/recipe/hanging_sack.json");
+        assertTrue(r.get("type").getAsString().equals("minecraft:crafting_transmute"), "transmute copies the input's components, including the contents");
+        assertTrue(r.get("input").getAsString().equals("diaithirfurnishings:sack"));
+    }
 }

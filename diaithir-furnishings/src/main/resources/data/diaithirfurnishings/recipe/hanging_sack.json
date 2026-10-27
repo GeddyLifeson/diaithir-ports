@@ -1,10 +1,8 @@
 {
- "type": "minecraft:crafting_shapeless",
+ "type": "minecraft:crafting_transmute",
  "category": "misc",
- "ingredients": [
-  "diaithirfurnishings:sack",
-  "diaithirfurnishings:rope"
- ],
+ "input": "diaithirfurnishings:sack",
+ "material": "diaithirfurnishings:rope",
  "result": {
   "id": "diaithirfurnishings:hanging_sack"
  }

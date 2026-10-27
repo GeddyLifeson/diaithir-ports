@@ -104,8 +104,8 @@ def main():
     dump(A / "models/block/hanging_sack.json", sack)
     block_files("hanging_sack", "hanging_sack")
     dump(D / "loot_table/blocks/hanging_sack.json", drop_self("hanging_sack", True))
-    dump(D / "recipe/hanging_sack.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
-        "ingredients": [f"{NS}:sack", f"{NS}:rope"], "result": {"id": f"{NS}:hanging_sack"}})
+    dump(D / "recipe/hanging_sack.json", {"type": "minecraft:crafting_transmute", "category": "misc",
+        "input": f"{NS}:sack", "material": f"{NS}:rope", "result": {"id": f"{NS}:hanging_sack"}})
     lang[f"block.{NS}.hanging_sack"] = "Sak Krochti"
 
     lang["gui.diaithirfurnishings.signpost"] = "Komurra"
