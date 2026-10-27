@@ -41,8 +41,9 @@ public final class BrewVesselEntity extends BlockEntity {
         return ((BrewVesselBlock) getBlockState().getBlock()).station;
     }
 
+    /** The block's size, raised so every recipe for this station fits. */
     int capacity() {
-        return ((BrewVesselBlock) getBlockState().getBlock()).capacity;
+        return Math.max(((BrewVesselBlock) getBlockState().getBlock()).capacity, BrewRecipes.largest(station()));
     }
 
     int count() {

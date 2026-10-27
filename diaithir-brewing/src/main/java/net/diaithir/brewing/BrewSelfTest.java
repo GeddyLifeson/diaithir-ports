@@ -30,11 +30,22 @@ final class BrewSelfTest {
     }
 
     private static String run(ServerLevel level, BlockPos pos) {
-        BrewRecipe r = BrewRecipes.all().stream().filter(x -> x.station().equals("keg")).findFirst().orElse(null);
-        if (r == null) {
-            return "FAIL no keg recipe loaded";
+        if (BrewRecipes.all().isEmpty()) {
+            return "FAIL no recipes loaded";
         }
-        level.setBlockAndUpdate(pos, DiaithirBrewing.KEG.get().defaultBlockState());
+        for (BrewRecipe r : BrewRecipes.all()) {
+            String fail = one(level, pos, r);
+            if (fail != null) {
+                return fail + " (recipe " + r.drink() + " on " + r.station() + ")";
+            }
+        }
+        return "PASS " + BrewRecipes.all().size() + " recipes brewed, drew, round-tripped and automated";
+    }
+
+    private static String one(ServerLevel level, BlockPos pos, BrewRecipe r) {
+        var block = r.station().equals("keg") ? DiaithirBrewing.KEG : DiaithirBrewing.FERMENTING_BARREL;
+        level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(pos, block.get().defaultBlockState());
         Player p = FakePlayerFactory.getMinecraft(level);
         BlockHitResult hit = new BlockHitResult(Vec3.atCenterOf(pos), Direction.UP, pos, false);
         if (!use(level, p, pos, hit, new ItemStack(r.base()))) return "FAIL base not accepted";
@@ -61,13 +72,13 @@ final class BrewSelfTest {
         if (be.drink.getCount() != r.servings() - 1) return "FAIL serving not drawn";
         String auto = automation(level, pos, r);
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
-        return auto != null ? auto : "PASS keg brewed " + r.servings() + " " + r.drink() + ", drew one, save round trip ok, automation ok";
+        return auto;
     }
 
     /** Feeds a fresh keg through its item handler (hopper path), checks an aborted insert rolls back, then draws the drinks out. */
     private static String automation(ServerLevel level, BlockPos pos, BrewRecipe r) {
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
-        level.setBlockAndUpdate(pos, DiaithirBrewing.KEG.get().defaultBlockState());
+        level.setBlockAndUpdate(pos, (r.station().equals("keg") ? DiaithirBrewing.KEG : DiaithirBrewing.FERMENTING_BARREL).get().defaultBlockState());
         BrewVesselEntity be = (BrewVesselEntity) level.getBlockEntity(pos);
         try (var tx = Transaction.openRoot()) {
             be.automation.insert(ItemResource.of(r.base()), 1, tx);
