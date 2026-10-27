@@ -114,8 +114,8 @@ put(f"data/minecraft/tags/block/mineable/axe.json", {"values": [f"{NS}:keg", f"{
 # Sample brew in the data format (the alcohol thread writes the real catalogue the same way); kept out of the jar.
 put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest.json", {
     "station": "keg", "base": "minecraft:water_bucket", "base_returns": "minecraft:bucket",
-    "ingredients": {"minecraft:wheat": 3}, "ticks": 100, "drink": "minecraft:honey_bottle", "servings": 4})
+    "ingredients": {"minecraft:wheat": 3}, "ticks": 100, "drink": "minecraft:honey_bottle", "servings": 4, "abv": 5.0})
 
 # Ageing sample: a cask takes finished young drinks as its ingredients and gives the aged drink (no base).
 put("../../../tools/sample/data/diaithirbrewing/diaithirbrewing/selftest_aged.json", {
-    "station": "oak_cask", "ingredients": {"minecraft:honey_bottle": 4}, "ticks": 600, "drink": "minecraft:honey_bottle", "servings": 4})
+    "station": "oak_cask", "ingredients": {"minecraft:honey_bottle": 4}, "ticks": 600, "drink": "minecraft:honey_bottle", "servings": 4, "abv": 12.5})

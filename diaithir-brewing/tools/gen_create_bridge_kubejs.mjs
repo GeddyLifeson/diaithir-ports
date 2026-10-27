@@ -30,8 +30,20 @@ const src = ['a_data.js', 'brewing.js'].map(f => fs.readFileSync(path.join(dir, 
 vm.runInContext(src, sandbox);
 if (!generate) throw new Error('brewing.js registered no generateData handler');
 
+// strength of each drink (a_data.js DRINK_ROWS), stamped on the basin's output as custom_data abv:X.Xd
+const keys = vm.runInContext('DRINK_KEYS', sandbox);
+const abvOf = {};
+for (const row of vm.runInContext('DRINK_ROWS', sandbox)) abvOf['diaithir_drinks:' + row[0]] = row[keys.indexOf('abv')];
+
 const brews = [];
 generate({ json: (id, body) => brews.push([id, body]) });
+
+const abvResult = b => {
+  const abv = b.abv ?? abvOf[b.drink];
+  const r = { id: b.drink, count: b.servings };
+  if (abv > 0) r.components = { 'minecraft:custom_data': `{abv:${Number(abv).toFixed(1)}d}` };
+  return r;
+};
 
 const dest = path.join(out, 'create', 'recipe', 'mixing');
 fs.mkdirSync(dest, { recursive: true });
@@ -47,7 +59,7 @@ for (const [id, b] of brews) {
     processing_time: Math.min(2400, Math.max(20, Math.floor(b.ticks / 20))),
     ingredients: items,
     fluid_ingredients: [{ type: 'fluid_stack', amount: BUCKET, fluid: 'minecraft:water' }],
-    results: [{ id: b.drink, count: b.servings }],
+    results: [abvResult(b)],
   };
   fs.writeFileSync(path.join(dest, `brew_${name}.json`), JSON.stringify(rec, null, 1) + '\n');
   made++;

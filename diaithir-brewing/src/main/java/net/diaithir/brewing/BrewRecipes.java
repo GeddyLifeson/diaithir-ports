@@ -65,7 +65,7 @@ public final class BrewRecipes implements ResourceManagerReloadListener {
         Item container = j.has("container") ? item(j.get("container").getAsString()) : Items.GLASS_BOTTLE;
                 return new BrewRecipe(station, j.has("base") ? item(j.get("base").getAsString()) : Items.AIR, returns, Map.copyOf(ingredients), j.get("ticks").getAsInt(),
             item(j.get("drink").getAsString()), j.has("servings") ? j.get("servings").getAsInt() : 4, container,
-            j.has("spoiled") ? item(j.get("spoiled").getAsString()) : Items.AIR, j.has("spoil_chance") ? j.get("spoil_chance").getAsFloat() : 0.25F);
+            j.has("spoiled") ? item(j.get("spoiled").getAsString()) : Items.AIR, j.has("spoil_chance") ? j.get("spoil_chance").getAsFloat() : 0.25F, j.has("abv") ? j.get("abv").getAsDouble() : 0);
     }
 
     private static Item item(String id) {

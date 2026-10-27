@@ -105,6 +105,14 @@ public final class BrewVesselEntity extends BlockEntity {
     void finish(int score) {
         Item out = level != null && Cellar.spoils(active, score, level.getRandom()) ? active.spoiled() : active.drink();
         drink = new ItemStack(out, active.servings());
+        if (active.abv() > 0 && out == active.drink()) {
+            net.minecraft.nbt.CompoundTag tag = new net.minecraft.nbt.CompoundTag();
+            tag.putDouble("abv", active.abv());
+            if (active.station().equals("oak_cask")) {
+                tag.putInt("aged", Math.max(1, active.ticks() / 24000));
+            }
+            drink.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+        }
         container = active.container();
         held.clear();
         base = Items.AIR;

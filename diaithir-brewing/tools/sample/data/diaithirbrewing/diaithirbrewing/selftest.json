@@ -7,5 +7,6 @@
  },
  "ticks": 100,
  "drink": "minecraft:honey_bottle",
- "servings": 4
+ "servings": 4,
+ "abv": 5.0
 }

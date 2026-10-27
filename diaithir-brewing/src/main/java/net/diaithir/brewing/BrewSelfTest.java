@@ -67,8 +67,8 @@ final class BrewSelfTest {
         boolean coolAfter = Cellar.cool(level, pos);
         level.setBlockAndUpdate(heat, air);
         if (!coolBefore || coolAfter) return "FAIL cellar: a lit campfire beside the vessel should make it warm (before " + coolBefore + ", after " + coolAfter + ")";
-        BrewRecipe sample = new BrewRecipe("keg", Items.WATER_BUCKET, Items.AIR, java.util.Map.of(), 1, Items.HONEY_BOTTLE, 1, Items.GLASS_BOTTLE, Items.DIRT, 1.0F);
-        BrewRecipe never = new BrewRecipe("keg", Items.WATER_BUCKET, Items.AIR, java.util.Map.of(), 1, Items.HONEY_BOTTLE, 1, Items.GLASS_BOTTLE, Items.AIR, 1.0F);
+        BrewRecipe sample = new BrewRecipe("keg", Items.WATER_BUCKET, Items.AIR, java.util.Map.of(), 1, Items.HONEY_BOTTLE, 1, Items.GLASS_BOTTLE, Items.DIRT, 1.0F, 0);
+        BrewRecipe never = new BrewRecipe("keg", Items.WATER_BUCKET, Items.AIR, java.util.Map.of(), 1, Items.HONEY_BOTTLE, 1, Items.GLASS_BOTTLE, Items.AIR, 1.0F, 0);
         var rnd = level.getRandom();
         if (!Cellar.spoils(sample, 0, rnd) || Cellar.spoils(sample, 1, rnd) || Cellar.spoils(sample, Cellar.BEST, rnd) || Cellar.spoils(never, 0, rnd)) return "FAIL cellar: spoilage rules";
         if (Cellar.rate(0) >= Cellar.rate(1) || Cellar.rate(2) >= Cellar.rate(Cellar.BEST)) return "FAIL cellar: rates should rise with score";
@@ -103,6 +103,12 @@ final class BrewSelfTest {
         reloaded.loadWithComponents(net.minecraft.world.level.storage.TagValueInput.create(
             net.minecraft.util.ProblemReporter.DISCARDING, level.registryAccess(), out.buildResult()));
         if (!reloaded.done() || reloaded.drink.getCount() != r.servings()) return "FAIL save round trip lost the drink";
+        if (r.abv() > 0) {
+            var cd = reloaded.drink.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+            java.util.regex.Matcher m = java.util.regex.Pattern.compile("abv:([0-9.]+)d").matcher(cd == null ? "" : cd.copyTag().toString());
+            if (!m.find() || Math.abs(Double.parseDouble(m.group(1)) - r.abv()) > 1e-6) return "FAIL poured drinks lost their abv (custom data " + cd + ")";
+            if (r.station().equals("oak_cask") && !cd.copyTag().toString().contains("aged:")) return "FAIL aged drink has no aged days";
+        }
         ItemStack bottle = new ItemStack(r.container());
         p.setItemInHand(InteractionHand.MAIN_HAND, bottle);
         level.getBlockState(pos).useItemOn(bottle, level, p, InteractionHand.MAIN_HAND, hit);
