@@ -11805,8 +11805,8 @@ hash = "646cff771abe8dc80a9e1d1e70a821a1e25504417ee335a511b86b61ba74f6f6"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.2.jar"
-hash = "e90b509b4dd7c39f9f2baeab1943ca35191e5246d02aa6d927713a5cc76b33e8"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar"
+hash = "5f8dbb3ded79dfe559666d34ee8dc2d7b173623044a08fc6fa491bd86a7adae1"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
@@ -11814,8 +11814,12 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "5666b062d7902d562f931eec2bcb52de67994f3254985e300a1f5955ce316362"
+hash = "b2f52da15d5a9ff547a9e524f970f380ba3e2c43b0013892b42fe49ff8195b36"
 metafile = true
+
+[[files]]
+file = "mods/diaithir-brewing-neoforge-26.1.2-0.1.0.jar"
+hash = "d6cab1bc2cf9f0aadfe1abc566d28482d999e33763a1a2015c05536fe37cdfec"
 
 [[files]]
 file = "mods/diaithir-bridges-neoforge-26.1.2-1.1.2.jar"
@@ -11827,7 +11831,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "0f1428b821990248357d77638ee5763f24f28d9f16bfee9d4ccc4d37723883ec"
+hash = "c8af48bf64166bacfa87a6cf76c556acc5dee78bd7a230ed33b2073669ef71ef"
 metafile = true
 
 [[files]]
@@ -11837,6 +11841,10 @@ hash = "070dd74217842d2c8c1e77d55ad505a23586603d875c82146a148e85cc0d2f9f"
 [[files]]
 file = "mods/diaithir-perf-neoforge-26.1.2-0.3.3.jar"
 hash = "35e6386a2edb9a69cd5dfcb144b279783233072aff82050047a53b7c72fe42e9"
+
+[[files]]
+file = "mods/diaithir-potions-neoforge-26.1.2-0.1.0.jar"
+hash = "a829082ade2b600abe1cb330c8774f30327da20c994b6cd5c4386ad12c16b3ff"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-2.3.1.jar"
@@ -12157,6 +12165,10 @@ hash = "8390608c4e31a9f4d92545f008ac6c2f33faafa9beb9a76b2ff337e3208e00db"
 file = "mods/justdirethings-1.6.11.pw.toml"
 hash = "634da4a38f6b8056af754a9231235e23a44b2a71792691a12f7650c0c523aa7d"
 metafile = true
+
+[[files]]
+file = "mods/kaleidoscope-tavern-neoforge-26.1.2-1.1.2-diaithir.1.jar"
+hash = "cb07ac88196a2916336e523ed6818b0b62f2664cf238cf3e7595b160db6729f3"
 
 [[files]]
 file = "mods/keybindbundles-2.0.0.pw.toml"
@@ -12816,10 +12828,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "2f43f687fc90272b858a84f69e95b39e69ee0ca4089eb22149191d9d35e62860"
+hash = "1baedf8771c1f8abb50f2a6ab71bf4fb4d407a37f09c6d887cbf793c11813429"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "0d637aad93bf8f1f9026204f8b6e5f01702fff85ad7991accf4c858c0a7c3a37"
+hash = "07895c78c51049773f87fb1f42023069533414e91739bb9169bc9e1dcb61b4b5"
 metafile = true
