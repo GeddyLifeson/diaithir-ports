@@ -848,5 +848,239 @@
   "farmersdelight:netherite_knife": {
    "bonus": 50
   }
+ },
+ "stations": {
+  "drying_rack": {
+   "age": 2,
+   "process": [
+    {
+     "in": "diaithirbutchery:flank",
+     "out": "diaithirbutchery:jerky",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:ribs",
+     "out": "diaithirbutchery:jerky",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:scraps",
+     "out": "diaithirbutchery:jerky",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:neck",
+     "out": "diaithirbutchery:jerky",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:tail",
+     "out": "diaithirbutchery:jerky",
+     "count": 1,
+     "ticks": 2400,
+     "shelf": 400
+    }
+   ]
+  },
+  "salting_barrel": {
+   "age": 2,
+   "process": [
+    {
+     "in": "diaithirbutchery:haunch",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 3600,
+     "shelf": 600
+    },
+    {
+     "in": "diaithirbutchery:shoulder",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 3600,
+     "shelf": 600
+    },
+    {
+     "in": "diaithirbutchery:loin",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 3600,
+     "shelf": 600
+    },
+    {
+     "in": "diaithirbutchery:hock",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 3600,
+     "shelf": 600
+    },
+    {
+     "in": "diaithirbutchery:neck",
+     "out": "diaithirbutchery:cured_meat",
+     "count": 1,
+     "ticks": 3600,
+     "shelf": 600
+    }
+   ]
+  },
+  "meat_grinder": {
+   "age": 3,
+   "process": [
+    {
+     "in": "diaithirbutchery:scraps",
+     "out": "diaithirbutchery:mince",
+     "count": 2,
+     "ticks": 60,
+     "shelf": 0
+    },
+    {
+     "in": "diaithirbutchery:flank",
+     "out": "diaithirbutchery:mince",
+     "count": 2,
+     "ticks": 60,
+     "shelf": 0
+    },
+    {
+     "in": "diaithirbutchery:neck",
+     "out": "diaithirbutchery:mince",
+     "count": 2,
+     "ticks": 60,
+     "shelf": 0
+    },
+    {
+     "in": "diaithirbutchery:tail",
+     "out": "diaithirbutchery:mince",
+     "count": 2,
+     "ticks": 60,
+     "shelf": 0
+    },
+    {
+     "in": "diaithirbutchery:hock",
+     "out": "diaithirbutchery:mince",
+     "count": 2,
+     "ticks": 60,
+     "shelf": 0
+    }
+   ]
+  },
+  "sausage_stuffer": {
+   "age": 3,
+   "process": [
+    {
+     "in": "diaithirbutchery:mince",
+     "out": "diaithirbutchery:sausage",
+     "count": 3,
+     "ticks": 80,
+     "shelf": 200
+    }
+   ]
+  },
+  "rendering_cauldron": {
+   "age": 3,
+   "process": [
+    {
+     "in": "diaithirbutchery:tallow",
+     "out": "diaithirbutchery:lard",
+     "count": 2,
+     "ticks": 200,
+     "shelf": 500
+    }
+   ]
+  },
+  "steam_cannery": {
+   "age": 5,
+   "process": [
+    {
+     "in": "#diaithirbutchery:cooked_cuts",
+     "out": "diaithirbutchery:canned_meat",
+     "count": 1,
+     "ticks": 100,
+     "shelf": 2400
+    }
+   ]
+  },
+  "cold_room": {
+   "age": 6,
+   "process": [
+    {
+     "in": "#diaithirbutchery:raw_cuts",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:mince",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 400
+    },
+    {
+     "in": "diaithirbutchery:sausage",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 400
+    }
+   ]
+  },
+  "vacuum_packer": {
+   "age": 7,
+   "process": [
+    {
+     "in": "#diaithirbutchery:raw_cuts",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 1200
+    },
+    {
+     "in": "#diaithirbutchery:cooked_cuts",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 1200
+    },
+    {
+     "in": "#diaithirbutchery:meats",
+     "out": "same",
+     "count": 1,
+     "ticks": 40,
+     "shelf": 1200
+    }
+   ]
+  },
+  "vat_grower": {
+   "age": 8,
+   "process": [
+    {
+     "in": "diaithirbutchery:marrow_bone",
+     "out": "diaithirbutchery:grown_cut",
+     "count": 3,
+     "ticks": 1200,
+     "shelf": 300
+    }
+   ]
+  },
+  "stasis_case": {
+   "age": 9,
+   "process": [
+    {
+     "in": "#diaithirbutchery:meats",
+     "out": "same",
+     "count": 1,
+     "ticks": 20,
+     "shelf": 100000
+    }
+   ]
+  }
  }
 }

@@ -8,6 +8,9 @@ MOD = "diaithirbutchery"
 RES = "src/main/resources"
 A = f"{RES}/assets/{MOD}"
 D = f"{RES}/data/{MOD}"
+CUTS = ["fish_fillet", "bird_breast", "drumstick", "wing", "haunch", "shoulder", "loin", "ribs", "flank", "tenderloin", "neck", "tail", "hock", "liver", "heart", "kidney", "tripe", "tongue", "brain", "scraps"]
+PRODUCTS = ["mince", "sausage", "cured_meat", "jerky", "lard", "canned_meat", "grown_cut"]
+STATIONS = {"drying_rack": 2, "salting_barrel": 2, "meat_grinder": 3, "sausage_stuffer": 3, "rendering_cauldron": 3, "steam_cannery": 5, "cold_room": 6, "vacuum_packer": 7, "vat_grower": 8, "stasis_case": 9}
 KNIVES = {"flint_knife": [1, 0], "copper_knife": [2, 10], "bronze_knife": [3, 15], "butcher_knife": [3, 20], "steel_knife": [4, 30], "tempered_knife": [5, 40], "ceramic_knife": [6, 45],
           "diamond_edge_knife": [7, 60], "crystal_thread_knife": [8, 75], "shard_knife": [9, 100]}  # [Age (9 = Rodos), percent added to every yield]
 
@@ -66,17 +69,37 @@ ENTITIES = {
 
 TOOLS = {f"{MOD}:{k}": {"bonus": v[1]} for k, v in KNIVES.items()}
 TOOLS.update({"farmersdelight:flint_knife": {"bonus": 0}, "farmersdelight:iron_knife": {"bonus": 15}, "farmersdelight:golden_knife": {"bonus": 10}, "farmersdelight:diamond_knife": {"bonus": 40}, "farmersdelight:netherite_knife": {"bonus": 50}})
-w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES, "tools": TOOLS})
+RAW = "#diaithirbutchery:raw_cuts"
+COOKED = "#diaithirbutchery:cooked_cuts"
+ANY = "#diaithirbutchery:meats"
+def proc(i, o, ticks, count=1, shelf=0):
+    return {"in": i, "out": o, "count": count, "ticks": ticks, "shelf": shelf}
+M = f"{MOD}:"
+STATION_DATA = {
+    "drying_rack": {"age": 2, "process": [proc(M + c, M + "jerky", 2400, 1, 400) for c in ("flank", "ribs", "scraps", "neck", "tail")]},
+    "salting_barrel": {"age": 2, "process": [proc(M + c, M + "cured_meat", 3600, 1, 600) for c in ("haunch", "shoulder", "loin", "hock", "neck")]},
+    "meat_grinder": {"age": 3, "process": [proc(M + c, M + "mince", 60, 2) for c in ("scraps", "flank", "neck", "tail", "hock")]},
+    "sausage_stuffer": {"age": 3, "process": [proc(M + "mince", M + "sausage", 80, 3, 200)]},
+    "rendering_cauldron": {"age": 3, "process": [proc(M + "tallow", M + "lard", 200, 2, 500)]},
+    "steam_cannery": {"age": 5, "process": [proc(COOKED, M + "canned_meat", 100, 1, 2400)]},
+    "cold_room": {"age": 6, "process": [proc(RAW, "same", 40, 1, 400), proc(M + "mince", "same", 40, 1, 400), proc(M + "sausage", "same", 40, 1, 400)]},
+    "vacuum_packer": {"age": 7, "process": [proc(RAW, "same", 40, 1, 1200), proc(COOKED, "same", 40, 1, 1200), proc(ANY, "same", 40, 1, 1200)]},
+    "vat_grower": {"age": 8, "process": [proc(M + "marrow_bone", M + "grown_cut", 1200, 3, 300)]},
+    "stasis_case": {"age": 9, "process": [proc(ANY, "same", 20, 1, 100000)]},
+}
+w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES, "tools": TOOLS, "stations": STATION_DATA})
+w(f"{D}/tags/item/raw_cuts.json", {"values": [M + c for c in CUTS]})
+w(f"{D}/tags/item/cooked_cuts.json", {"values": [M + "cooked_" + c for c in CUTS]})
+w(f"{D}/tags/item/meats.json", {"values": ["#" + MOD + ":raw_cuts", "#" + MOD + ":cooked_cuts"] + [M + p for p in PRODUCTS if p != "lard"]})
 # tags let modded creatures be assigned without editing this file, e.g. a pack adds #diaithirbutchery:land_huge entries; kept for datapacks
 RAW_COLORS = {  # base colour per item for the placeholder textures; real art comes from the texture pack
     "raw_hide": (150, 110, 80), "sinew": (225, 215, 195), "tallow": (240, 232, 205), "blood_flask": (140, 20, 25), "marrow_bone": (235, 225, 200),
     "scraps": (170, 60, 60), "liver": (110, 40, 45), "heart": (150, 40, 55), "kidney": (130, 55, 55), "tripe": (215, 195, 170), "tongue": (190, 90, 100), "brain": (215, 150, 160),
     "fish_fillet": (235, 150, 130), "bird_breast": (230, 170, 150), "drumstick": (225, 160, 120), "wing": (225, 185, 150), "haunch": (180, 55, 55), "shoulder": (175, 65, 60),
     "loin": (190, 70, 70), "ribs": (185, 100, 85), "flank": (170, 70, 70), "tenderloin": (200, 85, 90), "neck": (165, 70, 65), "tail": (160, 90, 80), "hock": (170, 80, 70),
-    "carcass": (170, 90, 80), "flint_knife": (110, 110, 120), "copper_knife": (190, 115, 70), "bronze_knife": (170, 130, 60), "steel_knife": (200, 205, 215), "tempered_knife": (150, 160, 190), "ceramic_knife": (235, 235, 225), "diamond_edge_knife": (120, 220, 230), "crystal_thread_knife": (170, 140, 230), "shard_knife": (230, 120, 200), "butcher_knife": (190, 190, 195), "butcher_cleaver": (170, 175, 180),
+    "carcass": (170, 90, 80), "mince": (190, 80, 85), "sausage": (170, 90, 70), "cured_meat": (150, 60, 60), "jerky": (110, 60, 40), "lard": (245, 240, 225), "canned_meat": (170, 175, 180), "grown_cut": (225, 140, 150), "flint_knife": (110, 110, 120), "copper_knife": (190, 115, 70), "bronze_knife": (170, 130, 60), "steel_knife": (200, 205, 215), "tempered_knife": (150, 160, 190), "ceramic_knife": (235, 235, 225), "diamond_edge_knife": (120, 220, 230), "crystal_thread_knife": (170, 140, 230), "shard_knife": (230, 120, 200), "butcher_knife": (190, 190, 195), "butcher_cleaver": (170, 175, 180),
 }
-CUTS = ["fish_fillet", "bird_breast", "drumstick", "wing", "haunch", "shoulder", "loin", "ribs", "flank", "tenderloin", "neck", "tail", "hock", "liver", "heart", "kidney", "tripe", "tongue", "brain", "scraps"]
-ITEMS = ["carcass", "butcher_knife", "butcher_cleaver"] + [k for k in KNIVES if k != "butcher_knife"] + ["raw_hide", "sinew", "tallow", "blood_flask", "marrow_bone"] + CUTS + ["cooked_" + c for c in CUTS]
+ITEMS = ["carcass", "butcher_knife", "butcher_cleaver"] + [k for k in KNIVES if k != "butcher_knife"] + ["raw_hide", "sinew", "tallow", "blood_flask", "marrow_bone"] + CUTS + ["cooked_" + c for c in CUTS] + PRODUCTS
 
 def texture(name):
     base = name.removeprefix("cooked_")
@@ -132,4 +155,40 @@ upgrade("shard_knife", "crystal_thread_knife", ["minecraft:echo_shard", "minecra
 w(f"{D}/recipe/butcher_cleaver.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["II", "II", " S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_cleaver"}})
 w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["C", "I"], "key": {"C": "minecraft:iron_chain", "I": "minecraft:iron_ingot"}, "result": {"id": f"{MOD}:meat_hook"}})
 w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:{k}" for k in KNIVES] + [f"{MOD}:butcher_cleaver"] + [{"id": f"farmersdelight:{m}_knife", "required": False} for m in ("flint", "iron", "golden", "diamond", "netherite")]})
+# stations: one cube model per station with its own coloured top texture
+SCOL = {"drying_rack": (150, 110, 70), "salting_barrel": (130, 95, 60), "meat_grinder": (120, 125, 130), "sausage_stuffer": (140, 140, 145), "rendering_cauldron": (50, 50, 55),
+        "steam_cannery": (160, 110, 70), "cold_room": (190, 215, 230), "vacuum_packer": (200, 205, 210), "vat_grower": (110, 190, 170), "stasis_case": (170, 140, 230)}
+for sid, age in STATIONS.items():
+    r, g, b = SCOL[sid]
+    rng = random.Random(sid)
+    for part, k in (("side", 0), ("top", 22)):
+        img = Image.new("RGBA", (16, 16))
+        for y in range(16):
+            for x in range(16):
+                n = rng.randint(-10, 10)
+                edge = 28 if x in (0, 15) or y in (0, 15) else 0
+                c = [max(0, min(255, v + n + k - edge)) for v in (r, g, b)]
+                img.putpixel((x, y), (*c, 255))
+        os.makedirs(f"{A}/textures/block", exist_ok=True)
+        img.save(f"{A}/textures/block/{sid}_{part}.png")
+    w(f"{A}/models/block/{sid}.json", {"parent": "minecraft:block/cube_column", "textures": {"end": f"{MOD}:block/{sid}_top", "side": f"{MOD}:block/{sid}_side"}})
+    w(f"{A}/blockstates/{sid}.json", {"variants": {"": {"model": f"{MOD}:block/{sid}"}}})
+    w(f"{A}/items/{sid}.json", {"model": {"type": "minecraft:model", "model": f"{MOD}:block/{sid}"}})
+    lang[f"block.{MOD}.{sid}"] = names.NAMES[sid]
+    lang[f"item.{MOD}.{sid}"] = names.NAMES[sid]
+    w(f"{D}/loot_table/blocks/{sid}.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{MOD}:{sid}"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+lang["message.diaithirbutchery.working"] = "Still working."
+lang["message.diaithirbutchery.idle"] = "Nothing to collect. Use a cut or ingredient on it."
+w(f"{A}/lang/en_us.json", lang)
+# station recipes: from hand tools and stock materials, by Age
+SR = {"drying_rack": (["SSS", "I I"], {"S": "minecraft:stick", "I": "minecraft:stick"}), "salting_barrel": (["PPP", "P P", "PPP"], {"P": "minecraft:oak_planks"}),
+      "meat_grinder": (["I ", "BI"], {"I": "minecraft:iron_ingot", "B": "minecraft:bucket"}), "sausage_stuffer": (["I", "B", "I"], {"I": "minecraft:iron_ingot", "B": "minecraft:bucket"}),
+      "rendering_cauldron": (["I I", "ICI", " I "], {"I": "minecraft:iron_ingot", "C": "minecraft:cauldron"}),
+      "steam_cannery": (["III", "ICI", "FFF"], {"I": "minecraft:iron_ingot", "C": "minecraft:cauldron", "F": "minecraft:furnace"}),
+      "cold_room": (["III", "ISI", "III"], {"I": "minecraft:iron_ingot", "S": "minecraft:snow_block"}),
+      "vacuum_packer": (["GGG", "IHI", "III"], {"G": "minecraft:glass", "I": "minecraft:iron_ingot", "H": "minecraft:hopper"}),
+      "vat_grower": (["GGG", "GEG", "III"], {"G": "minecraft:glass", "I": "minecraft:iron_ingot", "E": "minecraft:emerald"}),
+      "stasis_case": (["GGG", "GSG", "GGG"], {"G": "minecraft:glass", "S": "minecraft:echo_shard"})}
+for sid, (pat, key) in SR.items():
+    w(f"{D}/recipe/{sid}.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": pat, "key": key, "result": {"id": f"{MOD}:{sid}"}})
 print("ok", len(ITEMS), "items")

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "III",
+  "ICI",
+  "FFF"
+ ],
+ "key": {
+  "I": "minecraft:iron_ingot",
+  "C": "minecraft:cauldron",
+  "F": "minecraft:furnace"
+ },
+ "result": {
+  "id": "diaithirbutchery:steam_cannery"
+ }
+}

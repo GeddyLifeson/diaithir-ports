@@ -21,6 +21,7 @@ import net.minecraft.world.entity.animal.fish.AbstractFish;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
@@ -41,11 +42,42 @@ public final class ButcheryData {
     }
 
     private static volatile Map<String, Map<String, List<Yield>>> classes = Map.of();
+    private static volatile Map<String, List<Process>> stations = Map.of();
     private static volatile Map<String, Integer> toolBonus = Map.of();
     private static volatile Map<String, String> exact = Map.of();
     private static volatile List<Map.Entry<TagKey<EntityType<?>>, String>> tagged = List.of();
 
     private ButcheryData() {
+    }
+
+    /** One station recipe. in is an item id or #tag; out is an item id or "same" (the input itself, with a new shelf life). */
+    record Process(String in, String out, int count, int ticks, int shelf) {
+        boolean matches(ItemStack s) {
+            if (in.startsWith("#")) {
+                Identifier id = Identifier.tryParse(in.substring(1));
+                return id != null && s.is(TagKey.create(Registries.ITEM, id));
+            }
+            return BuiltInRegistries.ITEM.getKey(s.getItem()).toString().equals(in);
+        }
+
+        ItemStack make(ItemStack input) {
+            ItemStack made = "same".equals(out) ? input.copyWithCount(1) : new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse(out)), count);
+            if (!"same".equals(out)) {
+                String species = input.get(Butchery.SPECIES.get());
+                Long killed = input.get(Butchery.KILLED.get());
+                if (species != null) made.set(Butchery.SPECIES.get(), species);
+                if (killed != null) made.set(Butchery.KILLED.get(), killed);
+            }
+            if (shelf > 0) made.set(Butchery.SHELF.get(), shelf);
+            return made;
+        }
+    }
+
+    static Process recipeFor(String station, ItemStack s) {
+        for (Process p : stations.getOrDefault(station, List.of())) {
+            if (p.matches(s)) return p;
+        }
+        return null;
     }
 
     static final class Loader extends SimpleJsonResourceReloadListener<JsonElement> {
@@ -81,6 +113,20 @@ public final class ButcheryData {
                     for (var e : t.entrySet()) tools.put(e.getKey(), e.getValue().getAsJsonObject().get("bonus").getAsInt());
                 }
             }
+            Map<String, List<Process>> st = new LinkedHashMap<>();
+            for (var file : files.entrySet()) {
+                if (file.getValue() instanceof JsonObject root && root.get("stations") instanceof JsonObject m) {
+                    for (var e : m.entrySet()) {
+                        List<Process> list = st.computeIfAbsent(e.getKey(), k -> new ArrayList<>());
+                        for (JsonElement el : e.getValue().getAsJsonObject().getAsJsonArray("process")) {
+                            JsonObject o = el.getAsJsonObject();
+                            list.add(new Process(o.get("in").getAsString(), o.get("out").getAsString(), o.has("count") ? o.get("count").getAsInt() : 1,
+                                    o.get("ticks").getAsInt(), o.has("shelf") ? o.get("shelf").getAsInt() : 0));
+                        }
+                    }
+                }
+            }
+            stations = st;
             toolBonus = tools;
             classes = cls;
             exact = ex;

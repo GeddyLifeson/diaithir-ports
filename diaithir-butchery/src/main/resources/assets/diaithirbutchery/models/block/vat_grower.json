@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "diaithirbutchery:block/vat_grower_top",
+  "side": "diaithirbutchery:block/vat_grower_side"
+ }
+}

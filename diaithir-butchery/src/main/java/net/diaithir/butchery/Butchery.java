@@ -43,6 +43,10 @@ public final class Butchery {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Long>> KILLED = COMPONENTS.registerComponentType("killed",
             b -> b.persistent(Codec.LONG).networkSynchronized(ByteBufCodecs.VAR_LONG));
 
+    /** Shelf life as a percent of normal (100 = normal). Spoilage reads it; stations set it. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> SHELF = COMPONENTS.registerComponentType("shelf",
+            b -> b.persistent(Codec.INT).networkSynchronized(ByteBufCodecs.VAR_INT));
+
     /** Raw cuts: id to nutrition. Each has a cooked twin "cooked_<id>". */
     static final Map<String, Integer> CUTS = new LinkedHashMap<>();
     static final List<String> OFFAL = List.of("liver", "heart", "kidney", "tripe", "tongue", "brain");
@@ -57,13 +61,38 @@ public final class Butchery {
     static final Map<String, Integer> KNIVES = new LinkedHashMap<>();
     public static final DeferredItem<Item> KNIFE = ITEMS.registerItem("butcher_knife", Item::new, () -> new Item.Properties().durability(250));
     public static final DeferredItem<Item> CLEAVER = ITEMS.registerItem("butcher_cleaver", Item::new, () -> new Item.Properties().durability(400));
+    /** Stations by id and Age; what each makes is data. */
+    static final Map<String, Integer> STATIONS = new LinkedHashMap<>();
+    static final List<DeferredBlock<StationBlock>> STATION_BLOCKS = new ArrayList<>();
+    static final List<DeferredItem<?>> STATION_ITEMS = new ArrayList<>();
+    public static final List<String> PRODUCTS = List.of("mince", "sausage", "cured_meat", "jerky", "lard", "canned_meat", "grown_cut");
     public static final DeferredBlock<MeatHookBlock> HOOK = BLOCKS.registerBlock("meat_hook", MeatHookBlock::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.CHAIN).noOcclusion());
     public static final DeferredItem<?> HOOK_ITEM = ITEMS.registerSimpleBlockItem(HOOK);
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeatHookEntity>> HOOK_ENTITY = BLOCK_ENTITIES.register("meat_hook",
             () -> new BlockEntityType<>(MeatHookEntity::new, HOOK.get()));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StationEntity>> STATION_ENTITY = BLOCK_ENTITIES.register("station",
+            () -> new BlockEntityType<>(StationEntity::new, STATION_BLOCKS.stream().map(DeferredBlock::get).collect(java.util.stream.Collectors.toSet()), false));
+
     static {
+        STATIONS.put("drying_rack", 2);
+        STATIONS.put("salting_barrel", 2);
+        STATIONS.put("meat_grinder", 3);
+        STATIONS.put("sausage_stuffer", 3);
+        STATIONS.put("rendering_cauldron", 3);
+        STATIONS.put("steam_cannery", 5);
+        STATIONS.put("cold_room", 6);
+        STATIONS.put("vacuum_packer", 7);
+        STATIONS.put("vat_grower", 8);
+        STATIONS.put("stasis_case", 9);
+        STATIONS.keySet().forEach(id -> {
+            DeferredBlock<StationBlock> blk = BLOCKS.registerBlock(id, p -> new StationBlock(p, id),
+                    () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(3.0F).sound(SoundType.METAL).noOcclusion());
+            STATION_BLOCKS.add(blk);
+            STATION_ITEMS.add(ITEMS.registerSimpleBlockItem(blk));
+        });
+        PRODUCTS.forEach(id -> ALL_ITEMS.add(ITEMS.registerItem(id, Item::new, () -> new Item.Properties().food(new FoodProperties(4, 0.5F, false)))));
         KNIVES.put("flint_knife", 60);
         KNIVES.put("copper_knife", 150);
         KNIVES.put("bronze_knife", 220);
@@ -101,6 +130,7 @@ public final class Butchery {
                 e.accept(KNIFE.get());
                 e.accept(CLEAVER.get());
                 e.accept(HOOK_ITEM.get());
+                STATION_ITEMS.forEach(i -> e.accept(i.get()));
             }
         });
     }
