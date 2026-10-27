@@ -86,9 +86,10 @@ public abstract class ItemStackMixin {
 		}
 	}
 
-	@Inject(method = "getTooltipLines", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/Item;appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/Item$TooltipContext;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V"))
-	private void getTooltipLines(Item.TooltipContext context, Player player, TooltipFlag flag, CallbackInfoReturnable<List<Component>> cir, @Local(ordinal = 0) List<Component> list) {
-		ESCommonHandler.onItemTooltip(player, flag, (ItemStack) (Object) this, list, context);
+	@ModifyReturnValue(method = "getTooltipLines", at = @At("RETURN"))
+	private List<Component> getTooltipLines(List<Component> original, @Local(argsOnly = true) Item.TooltipContext context, @Local(argsOnly = true) Player player, @Local(argsOnly = true) TooltipFlag flag) {
+		ESCommonHandler.onItemTooltip(player, flag, (ItemStack) (Object) this, original, context);
+		return original;
 	}
 
 	@ModifyReturnValue(method = "overrideStackedOnOther", at = @At("RETURN"))

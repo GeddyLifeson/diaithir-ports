@@ -41,13 +41,12 @@
     "ServerPlayerMixin",
     "SignBlockMixin",
     "SnowAndFreezeFeatureMixin",
-    "SpawnEggItemMixin",
     "TagLoaderMixin",
     "ThrowableProjectileMixin",
     "TntBlockMixin",
     "WallHangingSignBlockMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }

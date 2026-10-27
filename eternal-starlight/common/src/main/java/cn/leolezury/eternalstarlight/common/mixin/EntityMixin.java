@@ -76,13 +76,6 @@ public abstract class EntityMixin {
 		}
 	}
 
-	@Inject(method = "checkInsideBlocks", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;entityInside(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/Entity;)V"))
-	private void checkInsideBlocks(CallbackInfo ci, @Local(ordinal = 0) BlockState state) {
-		if (state.getFluidState().is(ESTags.Fluids.ETHER)) {
-			ESDataAttachments.IN_ETHER.setData((Entity) (Object) this, true);
-		}
-	}
-
 	@Inject(method = "deflection", at = @At("RETURN"), cancellable = true)
 	private void deflection(Projectile projectile, CallbackInfoReturnable<ProjectileDeflection> cir) {
 		Entity entity = (Entity) (Object) this;

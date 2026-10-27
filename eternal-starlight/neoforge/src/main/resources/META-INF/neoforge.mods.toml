@@ -3,6 +3,9 @@ loaderVersion = "*"
 #issueTrackerURL = ""
 license = "MIT"
 
+[[accessTransformers]]
+file = "META-INF/accesstransformer.cfg"
+
 [[mixins]]
 config = "eternal_starlight.mixins.json"
 [[mixins]]

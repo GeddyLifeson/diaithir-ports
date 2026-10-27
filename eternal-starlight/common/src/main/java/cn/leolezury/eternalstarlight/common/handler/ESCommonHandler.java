@@ -716,7 +716,7 @@ public class ESCommonHandler {
 			}
 			int inEtherTicks = ESDataAttachments.IN_ETHER_TICKS.getData(entity);
 			AttributeInstance armorInstance = livingEntity.getAttributes().getInstance(Attributes.ARMOR);
-			boolean inEther = ESDataAttachments.IN_ETHER.getData(entity);
+			boolean inEther = !level.isClientSide() && ESBlockUtil.isEntityInBlock(entity, ESBlocks.ETHER.get());
 			if (!level.isClientSide()) {
 				int meteorCooldown = ESDataAttachments.METEOR_COOLDOWN.getData(entity);
 				if (meteorCooldown > 0) {
