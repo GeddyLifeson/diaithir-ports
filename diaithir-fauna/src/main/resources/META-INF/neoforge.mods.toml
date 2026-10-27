@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirfauna"
+version = "${version}"
+displayName = "Diaithir Fauna"
+description = "Every animal species of Earth and its deep past on shared body plans: one model and one entity type per plan, species are data (size, skin, range, habitat, extinction date). Natural spawns follow real range and the Era."
+
+[[dependencies.diaithirfauna]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
