@@ -111,5 +111,5 @@ for c in CUTS:
         w(f"{D}/recipe/{kind}_{c}.json", {"type": f"minecraft:{kind}", "category": "food", "ingredient": f"{MOD}:{c}", "result": {"id": f"{MOD}:cooked_{c}"}, "experience": 0.35, "cookingtime": secs})
 w(f"{D}/recipe/butcher_knife.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["I", "S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_knife"}})
 w(f"{D}/recipe/butcher_cleaver.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["II", "II", " S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_cleaver"}})
-w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["C", "I"], "key": {"C": "minecraft:chain", "I": "minecraft:iron_ingot"}, "result": {"id": f"{MOD}:meat_hook"}})
+w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["C", "I"], "key": {"C": "minecraft:iron_chain", "I": "minecraft:iron_ingot"}, "result": {"id": f"{MOD}:meat_hook"}})
 print("ok", len(ITEMS), "items")

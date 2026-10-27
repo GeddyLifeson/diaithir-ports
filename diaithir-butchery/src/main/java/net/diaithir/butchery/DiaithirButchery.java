@@ -6,13 +6,12 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
-
-import java.util.Iterator;
 
 @Mod(Butchery.MOD)
 public final class DiaithirButchery {
@@ -30,14 +29,10 @@ public final class DiaithirButchery {
         String body = ButcheryData.bodyOf(e);
         if (body == null || !ButcheryData.known(body)) return;
         boolean meat = false;
-        for (Iterator<ItemEntity> it = event.getDrops().iterator(); it.hasNext();) {
-            ItemStack s = it.next().getItem();
-            if (isRawMeat(s)) {
-                it.remove();
-                meat = true;
-            }
-        }
+        for (ItemEntity d : event.getDrops()) meat |= isRawMeat(d.getItem());
         if (!meat) return;
+        // hides come from skinning the hung carcass, not from the kill
+        event.getDrops().removeIf(d -> isRawMeat(d.getItem()) || d.getItem().is(Items.LEATHER) || d.getItem().is(Items.RABBIT_HIDE));
         String species = BuiltInRegistries.ENTITY_TYPE.getKey(e.getType()).toString();
         ItemStack carcass = new ItemStack(Butchery.CARCASS.get());
         carcass.set(Butchery.SPECIES.get(), species);
