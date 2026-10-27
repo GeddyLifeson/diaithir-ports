@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:snowy_crag_bricks"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:snowy_crag_brick_slab",
+  "count": 6
+ }
+}

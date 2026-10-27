@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "goety:grown_end_rock"
+  "goety:grown_end_rock",
+  "goety:grown_cobbled_end_stone"
  ]
 }

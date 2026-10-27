@@ -23,6 +23,10 @@
   "diaithiris": "Salchur dourcha",
   "english": "Dark Dirt"
  },
+ "grave_soil": {
+  "diaithiris": "Soili ueig",
+  "english": "Grave Soil"
+ },
  "detritus": {
   "diaithiris": "Smùar",
   "english": "Detritus"
@@ -34,6 +38,10 @@
  "soiled_spruce_planks_heavy": {
   "diaithiris": "Klàrun giutas-dourcha saulach troum",
   "english": "Heavy Soiled Spruce Planks"
+ },
+ "void_block": {
+  "diaithiris": "Blok falum",
+  "english": "Void Block"
  },
  "end_basalt": {
   "diaithiris": "Basult krìuch",
@@ -299,6 +307,14 @@
   "diaithiris": "Klàrun lobti",
   "english": "Rotten Planks"
  },
+ "rotten_log": {
+  "diaithiris": "Stok lobti",
+  "english": "Rotten Log"
+ },
+ "stripped_rotten_log": {
+  "diaithiris": "Stok lobti rùisgti",
+  "english": "Stripped Rotten Log"
+ },
  "rotten_wood": {
   "diaithiris": "Fiud lobti",
   "english": "Rotten Wood"
@@ -342,6 +358,14 @@
  "marsh_planks": {
   "diaithiris": "Klàrun bouglach",
   "english": "Marsh Planks"
+ },
+ "marsh_log": {
+  "diaithiris": "Stok bouglach",
+  "english": "Marsh Log"
+ },
+ "stripped_marsh_log": {
+  "diaithiris": "Stok bouglach rùisgti",
+  "english": "Stripped Marsh Log"
  },
  "marsh_wood": {
   "diaithiris": "Fiud bouglach",
@@ -435,6 +459,14 @@
   "diaithiris": "Liek gaetach dùmuil",
   "english": "Compacted Windswept Slab"
  },
+ "windswept_log": {
+  "diaithiris": "Stok gaetach",
+  "english": "Windswept Log"
+ },
+ "stripped_windswept_log": {
+  "diaithiris": "Stok gaetach rùisgti",
+  "english": "Stripped Windswept Log"
+ },
  "windswept_wood": {
   "diaithiris": "Fiud gaetach",
   "english": "Windswept Wood"
@@ -498,6 +530,14 @@
  "thatched_pine_planks": {
   "diaithiris": "Klàrun giutas tugaichti",
   "english": "Thatched Pine Planks"
+ },
+ "pine_log": {
+  "diaithiris": "Stok giutas",
+  "english": "Pine Log"
+ },
+ "stripped_pine_log": {
+  "diaithiris": "Stok giutas rùisgti",
+  "english": "Stripped Pine Log"
  },
  "pine_wood": {
   "diaithiris": "Fiud giutas",
@@ -755,9 +795,281 @@
   "diaithiris": "Kolb sgàili",
   "english": "Shade Pillar"
  },
+ "crypt_stone": {
+  "diaithiris": "Klach ueig",
+  "english": "Crypt Stone"
+ },
+ "crypt_stone_polished": {
+  "diaithiris": "Klach ueig lìumti",
+  "english": "Polished Crypt Stone"
+ },
+ "crypt_stone_chiseled": {
+  "diaithiris": "Klach ueig snaidti",
+  "english": "Chiseled Crypt Stone"
+ },
+ "crypt_bricks": {
+  "diaithiris": "Breigen ueig",
+  "english": "Crypt Bricks"
+ },
+ "crypt_tiles": {
+  "diaithiris": "Liekagun ueig",
+  "english": "Crypt Tiles"
+ },
+ "crypt_plinth": {
+  "diaithiris": "Plind ueig",
+  "english": "Crypt Plinth"
+ },
  "crypt_pillar": {
   "diaithiris": "Kolb ueig",
   "english": "Crypt Pillar"
+ },
+ "marble": {
+  "diaithiris": "Màrmur",
+  "english": "Marble"
+ },
+ "cracked_marble": {
+  "diaithiris": "Màrmur sgàinti",
+  "english": "Cracked Marble"
+ },
+ "gold_arch_marble": {
+  "diaithiris": "Màrmur aurched òru",
+  "english": "Gold Arched Marble"
+ },
+ "gold_banded_marble": {
+  "diaithiris": "Màrmur baund òru",
+  "english": "Gold Banded Marble"
+ },
+ "gold_holder_marble": {
+  "diaithiris": "Màrmur gleideduir òru",
+  "english": "Gold Holder Marble"
+ },
+ "gold_covered_marble": {
+  "diaithiris": "Màrmur kòmdaichti òru",
+  "english": "Gold Covered Marble"
+ },
+ "gold_plated_marble": {
+  "diaithiris": "Màrmur plàtaichti òru",
+  "english": "Gold Plated Marble"
+ },
+ "slate_marble": {
+  "diaithiris": "Màrmur leigr",
+  "english": "Slate Marble"
+ },
+ "worn_slate_marble": {
+  "diaithiris": "Màrmur leigr kaitti",
+  "english": "Worn Slate Marble"
+ },
+ "weathered_slate_marble": {
+  "diaithiris": "Màrmur leigr kaitti",
+  "english": "Weathered Slate Marble"
+ },
+ "slate_connected_marble": {
+  "diaithiris": "Màrmur kienguilti leigr",
+  "english": "Slate Connected Marble"
+ },
+ "slate_patterned_marble": {
+  "diaithiris": "Màrmur pàtrundach leigr",
+  "english": "Slate Patterned Marble"
+ },
+ "slate_cornered_marble": {
+  "diaithiris": "Màrmur keàrnach leigr",
+  "english": "Slate Cornered Marble"
+ },
+ "silt_marble_slight": {
+  "diaithiris": "Màrmur salachur aetrum",
+  "english": "Slight Silt Marble"
+ },
+ "silt_marble": {
+  "diaithiris": "Màrmur salachur",
+  "english": "Silt Marble"
+ },
+ "silt_marble_heavy": {
+  "diaithiris": "Màrmur salachur troum",
+  "english": "Heavy Silt Marble"
+ },
+ "silt_slate_marble": {
+  "diaithiris": "Màrmur leigr salachur",
+  "english": "Silt Slate Marble"
+ },
+ "indented_gold": {
+  "diaithiris": "Blok òru iegaichti",
+  "english": "Indented Gold Block"
+ },
+ "chiseled_indented_gold": {
+  "diaithiris": "Blok òru iegaichti snaidti",
+  "english": "Chiseled Indented Gold Block"
+ },
+ "carved_indented_gold": {
+  "diaithiris": "Blok òru iegaichti gierrti",
+  "english": "Carved Indented Gold Block"
+ },
+ "cragrocks": {
+  "diaithiris": "Kriegun",
+  "english": "Cragrocks"
+ },
+ "mossy_cragrocks_slight": {
+  "diaithiris": "Kriegun kaenaig aetrum",
+  "english": "Slight Mossy Cragrocks"
+ },
+ "mossy_cragrocks": {
+  "diaithiris": "Kriegun kaenaig",
+  "english": "Mossy Cragrocks"
+ },
+ "mossy_cragrocks_heavy": {
+  "diaithiris": "Kriegun kaenaig troum",
+  "english": "Heavy Mossy Cragrocks"
+ },
+ "crag_tiles": {
+  "diaithiris": "Liekagun krieg",
+  "english": "Crag Tiles"
+ },
+ "mossy_crag_tiles_slight": {
+  "diaithiris": "Liekagun krieg kaenaig aetrum",
+  "english": "Slight Mossy Crag Tiles"
+ },
+ "mossy_crag_tiles": {
+  "diaithiris": "Liekagun krieg kaenaig",
+  "english": "Mossy Crag Tiles"
+ },
+ "crag_bricks": {
+  "diaithiris": "Breigen krieg",
+  "english": "Crag Bricks"
+ },
+ "snowy_crag_bricks": {
+  "diaithiris": "Breigen krieg sniechdach",
+  "english": "Snowy Crag Bricks"
+ },
+ "crag_pavement": {
+  "diaithiris": "Keim krieg",
+  "english": "Crag Pavement"
+ },
+ "cracked_crag_pavement": {
+  "diaithiris": "Keim krieg sgàinti",
+  "english": "Cracked Crag Pavement"
+ },
+ "snowy_crag_pavement": {
+  "diaithiris": "Keim krieg sniechdach",
+  "english": "Snowy Crag Pavement"
+ },
+ "mossy_crag_pavement": {
+  "diaithiris": "Keim krieg kaenaig",
+  "english": "Mossy Crag Pavement"
+ },
+ "mossy_crag_pavement_heavy": {
+  "diaithiris": "Keim krieg kaenaig troum",
+  "english": "Heavy Mossy Crag Pavement"
+ },
+ "silt_studded_crag_tiles": {
+  "diaithiris": "Liekagun krieg takaichti salachur",
+  "english": "Silt Studded Crag Tiles"
+ },
+ "highrock": {
+  "diaithiris": "Àrdu-chrieg",
+  "english": "Highrock"
+ },
+ "polished_highrock": {
+  "diaithiris": "Àrdu-chrieg lìumti",
+  "english": "Polished Highrock"
+ },
+ "highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg",
+  "english": "Highrock Bricks"
+ },
+ "highrock_indented_bricks": {
+  "diaithiris": "Breigen iegaichti àrdu-chrieg",
+  "english": "Highrock Indented Bricks"
+ },
+ "snowy_highrock_bricks_slight": {
+  "diaithiris": "Breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Bricks"
+ },
+ "snowy_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Bricks"
+ },
+ "gold_indented_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg iegaichti òru",
+  "english": "Gold Indented Highrock Bricks"
+ },
+ "gold_chiseled_highrock_bricks": {
+  "diaithiris": "Breigen àrdu-chrieg snaidti òru",
+  "english": "Gold Chiseled Highrock Bricks"
+ },
+ "silt_highrock": {
+  "diaithiris": "Àrdu-chrieg salachur",
+  "english": "Silt Highrock"
+ },
+ "siltstone": {
+  "diaithiris": "Klach-shalachuir",
+  "english": "Siltstone"
+ },
+ "snowy_siltstone_slight": {
+  "diaithiris": "Klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone"
+ },
+ "snowy_siltstone": {
+  "diaithiris": "Klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone"
+ },
+ "dirty_siltstone": {
+  "diaithiris": "Klach-shalachuir saulach",
+  "english": "Dirty Siltstone"
+ },
+ "dirty_siltstone_heavy": {
+  "diaithiris": "Klach-shalachuir saulach troum",
+  "english": "Heavy Dirty Siltstone"
+ },
+ "cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone"
+ },
+ "snowy_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone"
+ },
+ "mossy_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti kaenaig",
+  "english": "Mossy Cobbled Siltstone"
+ },
+ "dirty_cobbled_siltstone": {
+  "diaithiris": "Klach-shalachuir kloichti saulach",
+  "english": "Dirty Cobbled Siltstone"
+ },
+ "siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir",
+  "english": "Siltstone Bricks"
+ },
+ "snowy_siltstone_bricks_slight": {
+  "diaithiris": "Breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Bricks"
+ },
+ "snowy_siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Bricks"
+ },
+ "siltstone_tiles": {
+  "diaithiris": "Liekagun klach-shalachuir",
+  "english": "Siltstone Tiles"
+ },
+ "siltstone_pavement": {
+  "diaithiris": "Keim klach-shalachuir",
+  "english": "Siltstone Pavement"
+ },
+ "chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti",
+  "english": "Chiseled Siltstone"
+ },
+ "snowy_chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti sniechdach",
+  "english": "Snowy Chiseled Siltstone"
+ },
+ "dirty_chiseled_siltstone": {
+  "diaithiris": "Klach-shalachuir snaidti saulach",
+  "english": "Dirty Chiseled Siltstone"
+ },
+ "chiseled_siltstone_bricks": {
+  "diaithiris": "Breigen klach-shalachuir snaidti",
+  "english": "Chiseled Siltstone Bricks"
  },
  "siltstone_pillar": {
   "diaithiris": "Kolb klach-shalachuir",
@@ -779,17 +1091,181 @@
   "diaithiris": "Kolb klach-shalachuir uoini",
   "english": "Green Siltstone Pillar"
  },
+ "dirty_ominous_stone_slight": {
+  "diaithiris": "Klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone"
+ },
+ "dirty_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone"
+ },
+ "cobbled_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone"
+ },
+ "polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone"
+ },
+ "polished_dark_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone"
+ },
+ "cracked_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti sgàinti",
+  "english": "Cracked Polished Ominous Stone"
+ },
+ "soiled_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti saulach",
+  "english": "Soiled Polished Ominous Stone"
+ },
+ "soiled_polished_ominous_stone_heavy": {
+  "diaithiris": "Klach mìa-fhortunach lìumti saulach troum",
+  "english": "Heavy Soiled Polished Ominous Stone"
+ },
+ "ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Bricks"
+ },
+ "cracked_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach sgàinti",
+  "english": "Cracked Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks_slight": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Bricks"
+ },
+ "dirty_ominous_stone_bricks_heavy": {
+  "diaithiris": "Breigen klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Bricks"
+ },
+ "ominous_stone_tiles": {
+  "diaithiris": "Liekagun klach mìa-fhortunach",
+  "english": "Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles_slight": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach aetrum",
+  "english": "Slight Dirty Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Tiles"
+ },
+ "dirty_ominous_stone_tiles_heavy": {
+  "diaithiris": "Liekagun klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Tiles"
+ },
+ "ominous_stone_pavement": {
+  "diaithiris": "Keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement"
+ },
+ "dirty_ominous_stone_pavement": {
+  "diaithiris": "Keim klach mìa-fhortunach saulach",
+  "english": "Dirty Ominous Stone Pavement"
+ },
+ "dirty_ominous_stone_pavement_heavy": {
+  "diaithiris": "Keim klach mìa-fhortunach saulach troum",
+  "english": "Heavy Dirty Ominous Stone Pavement"
+ },
  "ominous_stone_pillar": {
   "diaithiris": "Kolb klach mìa-fhortunach",
   "english": "Ominous Stone Pillar"
+ },
+ "chiseled_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach snaidti",
+  "english": "Chiseled Ominous Stone"
+ },
+ "chiseled_polished_ominous_stone": {
+  "diaithiris": "Klach mìa-fhortunach lìumti snaidti",
+  "english": "Chiseled Polished Ominous Stone"
+ },
+ "chiseled_ominous_stone_bricks": {
+  "diaithiris": "Breigen klach mìa-fhortunach snaidti",
+  "english": "Chiseled Ominous Stone Bricks"
+ },
+ "big_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch bieg",
+  "english": "Big End Stone Bricks"
+ },
+ "messy_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch miessy",
+  "english": "Messy End Stone Bricks"
+ },
+ "chiseled_end_stone": {
+  "diaithiris": "Klach krìuch snaidti",
+  "english": "Chiseled End Stone"
+ },
+ "chiseled_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch snaidti",
+  "english": "Chiseled End Stone Bricks"
+ },
+ "soiled_end_stone_bricks_slight": {
+  "diaithiris": "Breigen klach krìuch saulach aetrum",
+  "english": "Slight Soiled End Stone Bricks"
+ },
+ "soiled_end_stone_bricks": {
+  "diaithiris": "Breigen klach krìuch saulach",
+  "english": "Soiled End Stone Bricks"
  },
  "soiled_end_stone_bricks_heavy": {
   "diaithiris": "Breigen klach krìuch saulach troum",
   "english": "Heavy Soiled End Stone Bricks"
  },
+ "end_stone_tiles": {
+  "diaithiris": "Liekagun klach krìuch",
+  "english": "End Stone Tiles"
+ },
+ "soiled_end_stone_tiles": {
+  "diaithiris": "Liekagun klach krìuch saulach",
+  "english": "Soiled End Stone Tiles"
+ },
+ "smooth_end_stone": {
+  "diaithiris": "Klach krìuch rèid",
+  "english": "Smooth End Stone"
+ },
+ "muddy_smooth_end_stone": {
+  "diaithiris": "Klach krìuch rèid muiddy",
+  "english": "Muddy Smooth End Stone"
+ },
+ "mixed_end_stone": {
+  "diaithiris": "Klach krìuch miesgaichti",
+  "english": "Mixed End Stone"
+ },
+ "end_stone_slate_rock": {
+  "diaithiris": "Leigr klach krìuch rokked",
+  "english": "Rocked End Stone Slate"
+ },
+ "cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti",
+  "english": "Cobbled End Stone"
+ },
+ "soiled_cobbled_end_stone_slight": {
+  "diaithiris": "Klach krìuch kloichti saulach aetrum",
+  "english": "Slight Soiled Cobbled End Stone"
+ },
+ "soiled_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti saulach",
+  "english": "Soiled Cobbled End Stone"
+ },
  "soiled_cobbled_end_stone_heavy": {
   "diaithiris": "Klach krìuch kloichti saulach troum",
   "english": "Heavy Soiled Cobbled End Stone"
+ },
+ "grown_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti fàista",
+  "english": "Grown Cobbled End Stone"
+ },
+ "dirty_cobbled_end_stone": {
+  "diaithiris": "Klach krìuch kloichti saulach",
+  "english": "Dirty Cobbled End Stone"
+ },
+ "dirty_cobbled_end_stone_heavy": {
+  "diaithiris": "Klach krìuch kloichti saulach troum",
+  "english": "Heavy Dirty Cobbled End Stone"
  },
  "end_stone_pillar": {
   "diaithiris": "Kolb klach krìuch",
@@ -831,6 +1307,158 @@
   "diaithiris": "Liek liekagun sgàili",
   "english": "Shade Tiles Slab"
  },
+ "crypt_stone_slab": {
+  "diaithiris": "Liek klach ueig",
+  "english": "Crypt Stone Slab"
+ },
+ "crypt_stone_polished_slab": {
+  "diaithiris": "Liek klach ueig lìumti",
+  "english": "Polished Crypt Stone Slab"
+ },
+ "crypt_bricks_slab": {
+  "diaithiris": "Liek breigen ueig",
+  "english": "Crypt Bricks Slab"
+ },
+ "crypt_tiles_slab": {
+  "diaithiris": "Liek liekagun ueig",
+  "english": "Crypt Tiles Slab"
+ },
+ "marble_slab": {
+  "diaithiris": "Liek màrmur",
+  "english": "Marble Slab"
+ },
+ "cracked_marble_slab": {
+  "diaithiris": "Liek màrmur sgàinti",
+  "english": "Cracked Marble Slab"
+ },
+ "smooth_marble_slab": {
+  "diaithiris": "Liek màrmur rèid",
+  "english": "Smooth Marble Slab"
+ },
+ "slate_marble_slab": {
+  "diaithiris": "Liek màrmur leigr",
+  "english": "Slate Marble Slab"
+ },
+ "cragrocks_slab": {
+  "diaithiris": "Liek kriegun",
+  "english": "Cragrocks Slab"
+ },
+ "mossy_cragrocks_slight_slab": {
+  "diaithiris": "Liek kriegun kaenaig aetrum",
+  "english": "Slight Mossy Cragrocks Slab"
+ },
+ "mossy_cragrocks_slab": {
+  "diaithiris": "Liek kriegun kaenaig",
+  "english": "Mossy Cragrocks Slab"
+ },
+ "mossy_cragrocks_heavy_slab": {
+  "diaithiris": "Liek kriegun kaenaig troum",
+  "english": "Heavy Mossy Cragrocks Slab"
+ },
+ "crag_tile_slab": {
+  "diaithiris": "Liek liekag krieg",
+  "english": "Crag Tile Slab"
+ },
+ "crag_brick_slab": {
+  "diaithiris": "Liek breigen krieg",
+  "english": "Crag Brick Slab"
+ },
+ "snowy_crag_brick_slab": {
+  "diaithiris": "Liek breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Slab"
+ },
+ "crag_pavement_slab": {
+  "diaithiris": "Liek keim krieg",
+  "english": "Crag Pavement Slab"
+ },
+ "cracked_crag_pavement_slab": {
+  "diaithiris": "Liek keim krieg sgàinti",
+  "english": "Cracked Crag Pavement Slab"
+ },
+ "highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg",
+  "english": "Highrock Slab"
+ },
+ "polished_highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg lìumti",
+  "english": "Polished Highrock Slab"
+ },
+ "highrock_brick_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg",
+  "english": "Highrock Brick Slab"
+ },
+ "snowy_highrock_brick_slight_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Slab"
+ },
+ "snowy_highrock_brick_slab": {
+  "diaithiris": "Liek breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Slab"
+ },
+ "silt_highrock_slab": {
+  "diaithiris": "Liek àrdu-chrieg salachur",
+  "english": "Silt Highrock Slab"
+ },
+ "siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir",
+  "english": "Siltstone Slab"
+ },
+ "cobbled_siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Slab"
+ },
+ "snowy_cobbled_siltstone_slab": {
+  "diaithiris": "Liek klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Slab"
+ },
+ "siltstone_brick_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir",
+  "english": "Siltstone Brick Slab"
+ },
+ "snowy_siltstone_brick_slight_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Slab"
+ },
+ "snowy_siltstone_brick_slab": {
+  "diaithiris": "Liek breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Slab"
+ },
+ "siltstone_tile_slab": {
+  "diaithiris": "Liek liekag klach-shalachuir",
+  "english": "Siltstone Tile Slab"
+ },
+ "siltstone_pavement_slab": {
+  "diaithiris": "Liek keim klach-shalachuir",
+  "english": "Siltstone Pavement Slab"
+ },
+ "indented_gold_slab": {
+  "diaithiris": "Liek blok òru iegaichti",
+  "english": "Indented Gold Block Slab"
+ },
+ "cobbled_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Slab"
+ },
+ "polished_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Slab"
+ },
+ "polished_dark_ominous_stone_slab": {
+  "diaithiris": "Liek klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Slab"
+ },
+ "ominous_stone_brick_slab": {
+  "diaithiris": "Liek breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Slab"
+ },
+ "ominous_stone_tile_slab": {
+  "diaithiris": "Liek liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Slab"
+ },
+ "ominous_stone_pavement_slab": {
+  "diaithiris": "Liek keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement Slab"
+ },
  "ominous_stone_pillar_slab": {
   "diaithiris": "Liek kolb klach mìa-fhortunach",
   "english": "Ominous Stone Pillar Slab"
@@ -838,6 +1466,18 @@
  "dark_dirt_slab": {
   "diaithiris": "Liek salchur dourcha",
   "english": "Dark Dirt Slab"
+ },
+ "end_stone_tile_slab": {
+  "diaithiris": "Liek liekag klach krìuch",
+  "english": "End Stone Tile Slab"
+ },
+ "smooth_end_stone_slab": {
+  "diaithiris": "Liek klach krìuch rèid",
+  "english": "Smooth End Stone Slab"
+ },
+ "cobbled_end_stone_slab": {
+  "diaithiris": "Liek klach krìuch kloichti",
+  "english": "Cobbled End Stone Slab"
  },
  "shade_stone_stairs": {
   "diaithiris": "Staidri klach sgàili",
@@ -859,6 +1499,138 @@
   "diaithiris": "Staidri liekagun sgàili",
   "english": "Shade Tiles Stairs"
  },
+ "crypt_stone_stairs": {
+  "diaithiris": "Staidri klach ueig",
+  "english": "Crypt Stone Stairs"
+ },
+ "crypt_stone_polished_stairs": {
+  "diaithiris": "Staidri klach ueig lìumti",
+  "english": "Polished Crypt Stone Stairs"
+ },
+ "crypt_bricks_stairs": {
+  "diaithiris": "Staidri breigen ueig",
+  "english": "Crypt Bricks Stairs"
+ },
+ "crypt_tiles_stairs": {
+  "diaithiris": "Staidri liekagun ueig",
+  "english": "Crypt Tiles Stairs"
+ },
+ "marble_stairs": {
+  "diaithiris": "Staidri màrmur",
+  "english": "Marble Stairs"
+ },
+ "slate_marble_stairs": {
+  "diaithiris": "Staidri màrmur leigr",
+  "english": "Slate Marble Stairs"
+ },
+ "cragrocks_stairs": {
+  "diaithiris": "Staidri kriegun",
+  "english": "Cragrocks Stairs"
+ },
+ "crag_tile_stairs": {
+  "diaithiris": "Staidri liekag krieg",
+  "english": "Crag Tile Stairs"
+ },
+ "crag_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg",
+  "english": "Crag Brick Stairs"
+ },
+ "snowy_crag_brick_stairs": {
+  "diaithiris": "Staidri breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Stairs"
+ },
+ "highrock_stairs": {
+  "diaithiris": "Staidri àrdu-chrieg",
+  "english": "Highrock Stairs"
+ },
+ "polished_highrock_stairs": {
+  "diaithiris": "Staidri àrdu-chrieg lìumti",
+  "english": "Polished Highrock Stairs"
+ },
+ "highrock_brick_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg",
+  "english": "Highrock Brick Stairs"
+ },
+ "snowy_highrock_brick_slight_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Stairs"
+ },
+ "snowy_highrock_brick_stairs": {
+  "diaithiris": "Staidri breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Stairs"
+ },
+ "siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir",
+  "english": "Siltstone Stairs"
+ },
+ "cobbled_siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Stairs"
+ },
+ "snowy_cobbled_siltstone_stairs": {
+  "diaithiris": "Staidri klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Stairs"
+ },
+ "siltstone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach-shalachuir",
+  "english": "Siltstone Tile Stairs"
+ },
+ "siltstone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir",
+  "english": "Siltstone Brick Stairs"
+ },
+ "snowy_siltstone_brick_slight_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Stairs"
+ },
+ "snowy_siltstone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Stairs"
+ },
+ "siltstone_pavement_stairs": {
+  "diaithiris": "Staidri keim klach-shalachuir",
+  "english": "Siltstone Pavement Stairs"
+ },
+ "indented_gold_stairs": {
+  "diaithiris": "Staidri blok òru iegaichti",
+  "english": "Indented Gold Block Stairs"
+ },
+ "cobbled_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Stairs"
+ },
+ "polished_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Stairs"
+ },
+ "polished_dark_ominous_stone_stairs": {
+  "diaithiris": "Staidri klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Stairs"
+ },
+ "ominous_stone_brick_stairs": {
+  "diaithiris": "Staidri breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Stairs"
+ },
+ "ominous_stone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Stairs"
+ },
+ "ominous_stone_pavement_stairs": {
+  "diaithiris": "Staidri keim klach mìa-fhortunach",
+  "english": "Ominous Stone Pavement Stairs"
+ },
+ "end_stone_tile_stairs": {
+  "diaithiris": "Staidri liekag klach krìuch",
+  "english": "End Stone Tile Stairs"
+ },
+ "smooth_end_stone_stairs": {
+  "diaithiris": "Staidri klach krìuch rèid",
+  "english": "Smooth End Stone Stairs"
+ },
+ "cobbled_end_stone_stairs": {
+  "diaithiris": "Staidri klach krìuch kloichti",
+  "english": "Cobbled End Stone Stairs"
+ },
  "shade_bricks_wall": {
   "diaithiris": "Balda breigen sgàili",
   "english": "Shade Bricks Wall"
@@ -867,17 +1639,217 @@
   "diaithiris": "Balda breigen klach sgàili",
   "english": "Shade Stone Bricks Wall"
  },
+ "crypt_stone_polished_wall": {
+  "diaithiris": "Balda klach ueig lìumti",
+  "english": "Polished Crypt Stone Wall"
+ },
+ "crypt_bricks_wall": {
+  "diaithiris": "Balda breigen ueig",
+  "english": "Crypt Bricks Wall"
+ },
+ "crypt_tiles_wall": {
+  "diaithiris": "Balda liekagun ueig",
+  "english": "Crypt Tiles Wall"
+ },
+ "cragrocks_wall": {
+  "diaithiris": "Balda kriegun",
+  "english": "Cragrocks Wall"
+ },
+ "crag_tile_wall": {
+  "diaithiris": "Balda liekag krieg",
+  "english": "Crag Tile Wall"
+ },
+ "crag_brick_wall": {
+  "diaithiris": "Balda breigen krieg",
+  "english": "Crag Brick Wall"
+ },
+ "snowy_crag_brick_wall": {
+  "diaithiris": "Balda breigen krieg sniechdach",
+  "english": "Snowy Crag Brick Wall"
+ },
  "cragrocks_fence": {
   "diaithiris": "Kaldaid kriegun",
   "english": "Cragrocks Fence"
+ },
+ "highrock_wall": {
+  "diaithiris": "Balda àrdu-chrieg",
+  "english": "Highrock Wall"
+ },
+ "polished_highrock_wall": {
+  "diaithiris": "Balda àrdu-chrieg lìumti",
+  "english": "Polished Highrock Wall"
+ },
+ "highrock_brick_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg",
+  "english": "Highrock Brick Wall"
+ },
+ "snowy_highrock_brick_slight_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg sniechdach aetrum",
+  "english": "Slight Snowy Highrock Brick Wall"
+ },
+ "snowy_highrock_brick_wall": {
+  "diaithiris": "Balda breigen àrdu-chrieg sniechdach",
+  "english": "Snowy Highrock Brick Wall"
+ },
+ "siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir",
+  "english": "Siltstone Wall"
+ },
+ "cobbled_siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir kloichti",
+  "english": "Cobbled Siltstone Wall"
+ },
+ "snowy_cobbled_siltstone_wall": {
+  "diaithiris": "Balda klach-shalachuir kloichti sniechdach",
+  "english": "Snowy Cobbled Siltstone Wall"
+ },
+ "siltstone_brick_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir",
+  "english": "Siltstone Brick Wall"
+ },
+ "snowy_siltstone_brick_slight_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir sniechdach aetrum",
+  "english": "Slight Snowy Siltstone Brick Wall"
+ },
+ "snowy_siltstone_brick_wall": {
+  "diaithiris": "Balda breigen klach-shalachuir sniechdach",
+  "english": "Snowy Siltstone Brick Wall"
+ },
+ "siltstone_tile_wall": {
+  "diaithiris": "Balda liekag klach-shalachuir",
+  "english": "Siltstone Tile Wall"
+ },
+ "siltstone_pavement_wall": {
+  "diaithiris": "Balda keim klach-shalachuir",
+  "english": "Siltstone Pavement Wall"
+ },
+ "indented_gold_wall": {
+  "diaithiris": "Balda blok òru iegaichti",
+  "english": "Indented Gold Block Wall"
  },
  "gold_trapdoor": {
   "diaithiris": "Douras-toild òru",
   "english": "Gold Trapdoor"
  },
+ "cobbled_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach kloichti",
+  "english": "Cobbled Ominous Stone Wall"
+ },
+ "polished_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach lìumti",
+  "english": "Polished Ominous Stone Wall"
+ },
+ "polished_dark_ominous_stone_wall": {
+  "diaithiris": "Balda klach mìa-fhortunach dourcha lìumti",
+  "english": "Polished Dark Ominous Stone Wall"
+ },
+ "ominous_stone_brick_wall": {
+  "diaithiris": "Balda breigen klach mìa-fhortunach",
+  "english": "Ominous Stone Brick Wall"
+ },
+ "ominous_stone_tile_wall": {
+  "diaithiris": "Balda liekag klach mìa-fhortunach",
+  "english": "Ominous Stone Tile Wall"
+ },
+ "smooth_end_stone_wall": {
+  "diaithiris": "Balda klach krìuch rèid",
+  "english": "Smooth End Stone Wall"
+ },
+ "cobbled_end_stone_wall": {
+  "diaithiris": "Balda klach krìuch kloichti",
+  "english": "Cobbled End Stone Wall"
+ },
  "smooth_end_stone_fence": {
   "diaithiris": "Kaldaid klach krìuch rèid",
   "english": "Smooth End Stone Fence"
+ },
+ "dark_altar": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_deepslate": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_ominous_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_nether_brick": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_blackstone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_end_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_highrock": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_marble": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_prismarine": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "dark_altar_crypt_stone": {
+  "diaithiris": "Altuir dourcha",
+  "english": "Dark Altar"
+ },
+ "pedestal": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_deepslate": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_ominous_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_nether_brick": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_blackstone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_end_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_highrock": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_marble": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_prismarine": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
+ },
+ "pedestal_crypt_stone": {
+  "diaithiris": "Bunu-kolb",
+  "english": "Pedestal"
  },
  "spent_totem": {
   "diaithiris": "Anmun tòtum kaitti",

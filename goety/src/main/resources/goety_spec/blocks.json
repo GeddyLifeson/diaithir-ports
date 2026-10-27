@@ -48,6 +48,14 @@
   "shovel": true
  },
  {
+  "id": "grave_soil",
+  "kind": "cube",
+  "like": "stone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "detritus",
   "kind": "cube",
   "like": "dirt",
@@ -69,6 +77,14 @@
   "like": "oak_planks",
   "set": "",
   "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "void_block",
+  "kind": "cube",
+  "like": "stone",
+  "set": "",
+  "axe": false,
   "shovel": false
  },
  {
@@ -619,6 +635,22 @@
   "shovel": false
  },
  {
+  "id": "rotten_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "stripped_rotten_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
   "id": "rotten_wood",
   "kind": "pillar",
   "like": "oak_log",
@@ -704,6 +736,22 @@
   "id": "marsh_planks",
   "kind": "cube",
   "like": "oak_planks",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "marsh_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "stripped_marsh_log",
+  "kind": "pillar",
+  "like": "oak_log",
   "set": "",
   "axe": true,
   "shovel": false
@@ -900,6 +948,22 @@
   "shovel": false
  },
  {
+  "id": "windswept_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "stripped_windswept_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
   "id": "windswept_wood",
   "kind": "pillar",
   "like": "oak_log",
@@ -1028,6 +1092,22 @@
   "id": "thatched_pine_planks",
   "kind": "cube",
   "like": "oak_planks",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "pine_log",
+  "kind": "pillar",
+  "like": "oak_log",
+  "set": "",
+  "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "stripped_pine_log",
+  "kind": "pillar",
+  "like": "oak_log",
   "set": "",
   "axe": true,
   "shovel": false
@@ -1560,9 +1640,553 @@
   "shovel": false
  },
  {
+  "id": "crypt_stone",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_stone_polished",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_stone_chiseled",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_bricks",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_tiles",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_plinth",
+  "kind": "cube",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "crypt_pillar",
   "kind": "pillar",
   "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_arch_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_banded_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_holder_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_covered_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_plated_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "worn_slate_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "weathered_slate_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_connected_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_patterned_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_cornered_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_marble_slight",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_marble_heavy",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_slate_marble",
+  "kind": "cube",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "indented_gold",
+  "kind": "cube",
+  "like": "stone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_indented_gold",
+  "kind": "cube",
+  "like": "stone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "carved_indented_gold",
+  "kind": "cube",
+  "like": "stone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cragrocks",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks_slight",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks_heavy",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_tiles",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_crag_tiles_slight",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_crag_tiles",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_bricks",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_crag_bricks",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_pavement",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_crag_pavement",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_crag_pavement",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_crag_pavement",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_crag_pavement_heavy",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_studded_crag_tiles",
+  "kind": "cube",
+  "like": "cobblestone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_highrock",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_bricks",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_indented_bricks",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_bricks_slight",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_bricks",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_indented_highrock_bricks",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "gold_chiseled_highrock_bricks",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_highrock",
+  "kind": "cube",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_slight",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_siltstone",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_siltstone_heavy",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "cobbled_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_cobbled_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cobbled_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_cobbled_siltstone",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "siltstone_bricks",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_bricks_slight",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_bricks",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_tiles",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_pavement",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_chiseled_siltstone",
+  "kind": "cube",
+  "like": "sandstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_chiseled_siltstone",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "chiseled_siltstone_bricks",
+  "kind": "cube",
+  "like": "sandstone",
   "set": "",
   "axe": false,
   "shovel": false
@@ -1608,9 +2232,241 @@
   "shovel": false
  },
  {
+  "id": "dirty_ominous_stone_slight",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "cobbled_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_dark_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_polished_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_polished_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_polished_ominous_stone_heavy",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_bricks",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_ominous_stone_bricks",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_ominous_stone_bricks_slight",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone_bricks",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone_bricks_heavy",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "ominous_stone_tiles",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_ominous_stone_tiles_slight",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone_tiles",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone_tiles_heavy",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "ominous_stone_pavement",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_ominous_stone_pavement",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_ominous_stone_pavement_heavy",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
   "id": "ominous_stone_pillar",
   "kind": "pillar",
   "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_polished_ominous_stone",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_ominous_stone_bricks",
+  "kind": "cube",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "big_end_stone_bricks",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "messy_end_stone_bricks",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "chiseled_end_stone_bricks",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_end_stone_bricks_slight",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_end_stone_bricks",
+  "kind": "cube",
+  "like": "end_stone_bricks",
   "set": "",
   "axe": false,
   "shovel": false
@@ -1624,12 +2480,108 @@
   "shovel": false
  },
  {
+  "id": "end_stone_tiles",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_end_stone_tiles",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "smooth_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "muddy_smooth_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mixed_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "end_stone_slate_rock",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_cobbled_end_stone_slight",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "soiled_cobbled_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "soiled_cobbled_end_stone_heavy",
   "kind": "cube",
   "like": "end_stone_bricks",
   "set": "",
   "axe": false,
   "shovel": false
+ },
+ {
+  "id": "grown_cobbled_end_stone",
+  "kind": "cube",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dirty_cobbled_end_stone",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
+ },
+ {
+  "id": "dirty_cobbled_end_stone_heavy",
+  "kind": "cube",
+  "like": "dirt",
+  "set": "",
+  "axe": false,
+  "shovel": true
  },
  {
   "id": "end_stone_pillar",
@@ -1717,6 +2669,348 @@
   "shovel": false
  },
  {
+  "id": "crypt_stone_slab",
+  "kind": "slab",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_stone_polished_slab",
+  "kind": "slab",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_bricks_slab",
+  "kind": "slab",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_tiles_slab",
+  "kind": "slab",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "marble_slab",
+  "kind": "slab",
+  "like": "calcite",
+  "set": "",
+  "base": "marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_marble_slab",
+  "kind": "slab",
+  "like": "calcite",
+  "set": "",
+  "base": "cracked_marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "smooth_marble_slab",
+  "kind": "slab",
+  "like": "calcite",
+  "set": "",
+  "base": "marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_marble_slab",
+  "kind": "slab",
+  "like": "calcite",
+  "set": "",
+  "base": "slate_marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cragrocks_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "cragrocks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks_slight_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "mossy_cragrocks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "mossy_cragrocks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "mossy_cragrocks_heavy_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "mossy_cragrocks_heavy",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_tile_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_brick_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_crag_brick_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "snowy_crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_pavement_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cracked_crag_pavement_slab",
+  "kind": "slab",
+  "like": "cobblestone",
+  "set": "",
+  "base": "cracked_crag_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_highrock_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "polished_highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_brick_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_slight_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "silt_highrock_slab",
+  "kind": "slab",
+  "like": "andesite",
+  "set": "",
+  "base": "silt_highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_siltstone_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_cobbled_siltstone_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_brick_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_slight_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_tile_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_pavement_slab",
+  "kind": "slab",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "indented_gold_slab",
+  "kind": "slab",
+  "like": "stone",
+  "set": "",
+  "base": "indented_gold",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_ominous_stone_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "cobbled_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_ominous_stone_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_dark_ominous_stone_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_dark_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_brick_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_tile_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_pavement_slab",
+  "kind": "slab",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "ominous_stone_pillar_slab",
   "kind": "slab",
   "like": "blackstone",
@@ -1733,6 +3027,33 @@
   "base": "dark_dirt",
   "axe": false,
   "shovel": true
+ },
+ {
+  "id": "end_stone_tile_slab",
+  "kind": "slab",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "end_stone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "smooth_end_stone_slab",
+  "kind": "slab",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "smooth_end_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_end_stone_slab",
+  "kind": "slab",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "cobbled_end_stone",
+  "axe": false,
+  "shovel": false
  },
  {
   "id": "shade_stone_stairs",
@@ -1780,6 +3101,303 @@
   "shovel": false
  },
  {
+  "id": "crypt_stone_stairs",
+  "kind": "stairs",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_stone_polished_stairs",
+  "kind": "stairs",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone_polished",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_bricks_stairs",
+  "kind": "stairs",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_tiles_stairs",
+  "kind": "stairs",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "marble_stairs",
+  "kind": "stairs",
+  "like": "calcite",
+  "set": "",
+  "base": "marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "slate_marble_stairs",
+  "kind": "stairs",
+  "like": "calcite",
+  "set": "",
+  "base": "slate_marble",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cragrocks_stairs",
+  "kind": "stairs",
+  "like": "cobblestone",
+  "set": "",
+  "base": "cragrocks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_tile_stairs",
+  "kind": "stairs",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_brick_stairs",
+  "kind": "stairs",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_crag_brick_stairs",
+  "kind": "stairs",
+  "like": "cobblestone",
+  "set": "",
+  "base": "snowy_crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_stairs",
+  "kind": "stairs",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_highrock_stairs",
+  "kind": "stairs",
+  "like": "andesite",
+  "set": "",
+  "base": "polished_highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_brick_stairs",
+  "kind": "stairs",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_slight_stairs",
+  "kind": "stairs",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_stairs",
+  "kind": "stairs",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_siltstone_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_cobbled_siltstone_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_tile_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_brick_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_slight_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_pavement_stairs",
+  "kind": "stairs",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "indented_gold_stairs",
+  "kind": "stairs",
+  "like": "stone",
+  "set": "",
+  "base": "indented_gold",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_ominous_stone_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "cobbled_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_ominous_stone_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_dark_ominous_stone_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_dark_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_brick_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_tile_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_pavement_stairs",
+  "kind": "stairs",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "end_stone_tile_stairs",
+  "kind": "stairs",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "end_stone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "smooth_end_stone_stairs",
+  "kind": "stairs",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "smooth_end_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_end_stone_stairs",
+  "kind": "stairs",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "cobbled_end_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "shade_bricks_wall",
   "kind": "wall",
   "like": "deepslate_bricks",
@@ -1798,11 +3416,200 @@
   "shovel": false
  },
  {
+  "id": "crypt_stone_polished_wall",
+  "kind": "wall",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_stone_polished",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_bricks_wall",
+  "kind": "wall",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crypt_tiles_wall",
+  "kind": "wall",
+  "like": "stone_bricks",
+  "set": "",
+  "base": "crypt_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cragrocks_wall",
+  "kind": "wall",
+  "like": "cobblestone",
+  "set": "",
+  "base": "cragrocks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_tile_wall",
+  "kind": "wall",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "crag_brick_wall",
+  "kind": "wall",
+  "like": "cobblestone",
+  "set": "",
+  "base": "crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_crag_brick_wall",
+  "kind": "wall",
+  "like": "cobblestone",
+  "set": "",
+  "base": "snowy_crag_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "cragrocks_fence",
   "kind": "fence",
   "like": "oak_planks",
   "set": "",
   "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "highrock_wall",
+  "kind": "wall",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_highrock_wall",
+  "kind": "wall",
+  "like": "andesite",
+  "set": "",
+  "base": "polished_highrock",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "highrock_brick_wall",
+  "kind": "wall",
+  "like": "andesite",
+  "set": "",
+  "base": "highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_slight_wall",
+  "kind": "wall",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_highrock_brick_wall",
+  "kind": "wall",
+  "like": "andesite",
+  "set": "",
+  "base": "snowy_highrock_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_siltstone_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_cobbled_siltstone_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_cobbled_siltstone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_brick_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_slight_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks_slight",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "snowy_siltstone_brick_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "snowy_siltstone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_tile_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "siltstone_pavement_wall",
+  "kind": "wall",
+  "like": "sandstone",
+  "set": "",
+  "base": "siltstone_pavement",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "indented_gold_wall",
+  "kind": "wall",
+  "like": "stone",
+  "set": "",
+  "base": "indented_gold",
+  "axe": false,
   "shovel": false
  },
  {
@@ -1814,11 +3621,250 @@
   "shovel": false
  },
  {
+  "id": "cobbled_ominous_stone_wall",
+  "kind": "wall",
+  "like": "blackstone",
+  "set": "",
+  "base": "cobbled_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_ominous_stone_wall",
+  "kind": "wall",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "polished_dark_ominous_stone_wall",
+  "kind": "wall",
+  "like": "blackstone",
+  "set": "",
+  "base": "polished_dark_ominous_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_brick_wall",
+  "kind": "wall",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_bricks",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "ominous_stone_tile_wall",
+  "kind": "wall",
+  "like": "blackstone",
+  "set": "",
+  "base": "ominous_stone_tiles",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "smooth_end_stone_wall",
+  "kind": "wall",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "smooth_end_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "cobbled_end_stone_wall",
+  "kind": "wall",
+  "like": "end_stone_bricks",
+  "set": "",
+  "base": "cobbled_end_stone",
+  "axe": false,
+  "shovel": false
+ },
+ {
   "id": "smooth_end_stone_fence",
   "kind": "fence",
   "like": "oak_planks",
   "set": "",
   "axe": true,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar",
+  "kind": "altar",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_stone",
+  "kind": "altar",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_deepslate",
+  "kind": "altar",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_ominous_stone",
+  "kind": "altar",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_nether_brick",
+  "kind": "altar",
+  "like": "nether_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_blackstone",
+  "kind": "altar",
+  "like": "polished_blackstone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_end_stone",
+  "kind": "altar",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_highrock",
+  "kind": "altar",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_marble",
+  "kind": "altar",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_prismarine",
+  "kind": "altar",
+  "like": "prismarine_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "dark_altar_crypt_stone",
+  "kind": "altar",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal",
+  "kind": "pedestal",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_stone",
+  "kind": "pedestal",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_deepslate",
+  "kind": "pedestal",
+  "like": "deepslate_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_ominous_stone",
+  "kind": "pedestal",
+  "like": "blackstone",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_nether_brick",
+  "kind": "pedestal",
+  "like": "nether_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_blackstone",
+  "kind": "pedestal",
+  "like": "polished_blackstone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_end_stone",
+  "kind": "pedestal",
+  "like": "end_stone_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_highrock",
+  "kind": "pedestal",
+  "like": "andesite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_marble",
+  "kind": "pedestal",
+  "like": "calcite",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_prismarine",
+  "kind": "pedestal",
+  "like": "prismarine_bricks",
+  "set": "",
+  "axe": false,
+  "shovel": false
+ },
+ {
+  "id": "pedestal_crypt_stone",
+  "kind": "pedestal",
+  "like": "stone_bricks",
+  "set": "",
+  "axe": false,
   "shovel": false
  }
 ]

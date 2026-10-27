@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "goety:windswept_log",
   "goety:windswept_wood",
   "goety:windswept_planks",
   "goety:compacted_windswept_planks",
@@ -13,6 +14,7 @@
   "goety:windswept_trapdoor",
   "goety:windswept_button",
   "goety:windswept_pressure_plate",
+  "goety:stripped_windswept_log",
   "goety:stripped_windswept_wood"
  ]
 }

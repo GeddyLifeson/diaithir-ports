@@ -65,6 +65,8 @@ public final class GoetyBlocks {
             case "button" -> new ButtonBlock(set(s.set()), 30, p);
             case "plate" -> new PressurePlateBlock(set(s.set()), p);
             case "pillar" -> new RotatedPillarBlock(p);
+            case "altar" -> new net.diaithir.goety.rite.AltarBlock(p.noOcclusion());
+            case "pedestal" -> new net.diaithir.goety.rite.PedestalBlock(p.noOcclusion());
             case "leaves" -> new TintedParticleLeavesBlock(0.01F, p);
             default -> new Block(p);
         };

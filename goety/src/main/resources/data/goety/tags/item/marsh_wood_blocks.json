@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "goety:marsh_log",
   "goety:marsh_wood",
   "goety:marsh_planks",
   "goety:marsh_door",
@@ -11,6 +12,7 @@
   "goety:marsh_trapdoor",
   "goety:marsh_button",
   "goety:marsh_pressure_plate",
+  "goety:stripped_marsh_log",
   "goety:stripped_marsh_wood"
  ]
 }

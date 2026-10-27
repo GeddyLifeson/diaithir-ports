@@ -29,10 +29,12 @@ public final class Goety {
     public Goety(IEventBus bus) {
         GoetyBlocks.register(bus);
         GoetyComponents.register(bus);
+        GoetyBlockEntities.register(bus);
         GoetyEntities.register(bus);
         GoetyItems.register(bus);
         TABS.register(bus);
         NeoForge.EVENT_BUS.register(GoetyEvents.class);
+        NeoForge.EVENT_BUS.register(net.diaithir.goety.rite.RitualManager.class);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> SelfTest.register(e.getDispatcher()));
     }
 }

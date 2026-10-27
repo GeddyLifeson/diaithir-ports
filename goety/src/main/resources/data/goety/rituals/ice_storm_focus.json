@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "frost",
+ "activation": "goety:ice_spike_focus",
+ "offerings": [
+  "goety:wind_core",
+  "goety:jade",
+  "minecraft:powder_snow_bucket",
+  "minecraft:phantom_membrane",
+  "goety:ectoplasm"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:ice_storm_focus",
+ "count": 1
+}

@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "goety:silt_highrock"
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "id": "goety:silt_highrock_slab",
+  "count": 6
+ }
+}

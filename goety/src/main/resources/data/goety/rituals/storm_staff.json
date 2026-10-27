@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "storm",
+ "activation": "goety:dark_wand",
+ "offerings": [
+  "minecraft:lightning_rod",
+  "#c:storage_blocks/copper",
+  "#c:dusts/redstone",
+  "#c:gems/diamond",
+  "goety:cursed_ingot",
+  "goety:cursed_ingot",
+  "#c:storage_blocks/lapis",
+  "goety:magic_fabric"
+ ],
+ "soul_cost": 1,
+ "duration": 10,
+ "result": "goety:storm_staff",
+ "count": 1
+}

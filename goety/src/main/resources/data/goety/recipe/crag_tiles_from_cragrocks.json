@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": "goety:cragrocks",
+ "result": {
+  "id": "goety:crag_tiles",
+  "count": 1
+ }
+}

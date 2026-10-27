@@ -1,4 +1,8 @@
 {
  "replace": false,
- "values": []
+ "values": [
+  "goety:highrock",
+  "goety:polished_highrock",
+  "goety:highrock_bricks"
+ ]
 }

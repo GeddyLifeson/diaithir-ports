@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "m": "goety:dirty_ominous_stone_tiles_slight",
+  "l": "goety:dark_dirt"
+ },
+ "pattern": [
+  " m ",
+  "mlm",
+  " m "
+ ],
+ "result": {
+  "id": "goety:dirty_ominous_stone_tiles",
+  "count": 4
+ }
+}

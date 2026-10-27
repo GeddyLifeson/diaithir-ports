@@ -1,0 +1,19 @@
+{
+ "type": "craft",
+ "school": "magic",
+ "activation": "goety:empty_focus",
+ "offerings": [
+  "goety:soul_ruby",
+  "minecraft:sculk_shrieker",
+  "minecraft:sculk_shrieker",
+  "minecraft:sculk_shrieker",
+  "minecraft:sculk_catalyst",
+  "minecraft:sculk_shrieker",
+  "minecraft:echo_shard",
+  "minecraft:echo_shard"
+ ],
+ "soul_cost": 1,
+ "duration": 30,
+ "result": "goety:sonic_boom_focus",
+ "count": 1
+}

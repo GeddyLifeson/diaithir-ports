@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
+  "goety:pine_log",
   "goety:pine_wood",
   "goety:pine_planks",
   "goety:compacted_pine_planks",
@@ -14,6 +15,7 @@
   "goety:pine_trapdoor",
   "goety:pine_button",
   "goety:pine_pressure_plate",
+  "goety:stripped_pine_log",
   "goety:stripped_pine_wood"
  ]
 }

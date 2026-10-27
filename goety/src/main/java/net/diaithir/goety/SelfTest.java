@@ -64,11 +64,70 @@ public final class SelfTest {
             ItemStack tot = new ItemStack(GoetyItems.PLAIN.get("totem_of_souls").get());
             net.diaithir.goety.magic.Souls.set(tot, 500);
             if (net.diaithir.goety.magic.Souls.get(tot) == 500) ok++; else { bad++; log("totem souls"); }
+            // rites: every loaded rite is run at an altar with pedestals, by a fake player carrying a full totem
+            {
+                int[] rr = riteTest(level);
+                ok += rr[0]; bad += rr[1];
+            }
             int fo = ok, fb = bad;
             log("ok=" + fo + " bad=" + fb);
             c.getSource().sendSuccess(() -> Component.literal("goety selftest ok=" + fo + " bad=" + fb), false);
             return fb == 0 ? 1 : 0;
         }));
+    }
+
+    private static int[] riteTest(ServerLevel level) {
+        int ok = 0, bad = 0;
+        net.minecraft.server.level.ServerPlayer fake = net.neoforged.neoforge.common.util.FakePlayerFactory.get(level, new com.mojang.authlib.GameProfile(java.util.UUID.nameUUIDFromBytes("goety-rite".getBytes()), "[goety]"));
+        net.minecraft.core.BlockPos altar = new net.minecraft.core.BlockPos(2, 120, 2);
+        level.setChunkForced(0, 0, true);
+        level.getChunk(altar);
+        var altarBlock = GoetyBlocks.ALL.get("dark_altar").get();
+        var pedBlock = GoetyBlocks.ALL.get("pedestal").get();
+        for (var r : net.diaithir.goety.rite.RitualManager.all()) {
+            ItemStack totem = new ItemStack(GoetyItems.PLAIN.get("totem_of_souls").get());
+            net.diaithir.goety.magic.Souls.set(totem, net.diaithir.goety.magic.Souls.MAX);
+            fake.getInventory().clearContent();
+            fake.getInventory().setItem(20, totem);
+            level.setBlock(altar, altarBlock.defaultBlockState(), 3);
+            java.util.List<net.minecraft.core.BlockPos> peds = new java.util.ArrayList<>();
+            for (int i = 0; i < r.offerings().size(); i++) {
+                net.minecraft.core.BlockPos p = altar.offset((i % 4) * 2 - 3, 0, 3 + (i / 4) * 2);
+                level.setBlock(p, pedBlock.defaultBlockState(), 3);
+                ((net.diaithir.goety.rite.PedestalBlockEntity) level.getBlockEntity(p)).setHeld(stackFor(r.offerings().get(i)));
+                peds.add(p);
+            }
+            ItemStack act = stackFor(r.activation());
+            fake.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, act);
+            var be = (net.diaithir.goety.rite.AltarBlockEntity) level.getBlockEntity(altar);
+            boolean started = be.tryStart(fake, act);
+            int ticks = 0;
+            while (started && be.busy() && ticks < r.duration() * 20 + 40) {
+                net.diaithir.goety.rite.AltarBlockEntity.tick(level, altar, level.getBlockState(altar), be);
+                ticks++;
+            }
+            boolean outcome;
+            if (r.type().equals("summon")) {
+                outcome = be.lastSummoned != null;
+                if (be.lastSummoned != null) be.lastSummoned.discard();
+            } else {
+                outcome = !be.lastOutput.isEmpty() && be.lastOutput.getItem() == r.resultItem() && be.lastOutput.getCount() == r.count();
+                level.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, new net.minecraft.world.phys.AABB(altar).inflate(4)).forEach(Entity::discard);
+            }
+            if (started && !be.busy() && outcome) ok++; else { bad++; log("rite failed: " + r.result() + r.entity() + " started=" + started + " outcome=" + outcome); }
+            level.setBlock(altar, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
+            for (var p : peds) level.setBlock(p, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
+        }
+        level.setChunkForced(0, 0, false);
+        return new int[] {ok, bad};
+    }
+
+    private static ItemStack stackFor(String entry) {
+        if (entry.startsWith("#")) {
+            var tag = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM, net.minecraft.resources.Identifier.parse(entry.substring(1)));
+            return net.minecraft.core.registries.BuiltInRegistries.ITEM.get(tag).flatMap(h -> h.stream().findFirst()).map(h -> new ItemStack(h.value())).orElse(ItemStack.EMPTY);
+        }
+        return new ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.getValue(net.minecraft.resources.Identifier.parse(entry)));
     }
 
     private static void log(String s) {

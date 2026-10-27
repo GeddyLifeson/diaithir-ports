@@ -1,0 +1,16 @@
+{
+ "type": "craft",
+ "school": "adept_nether",
+ "activation": "goety:fireball_focus",
+ "offerings": [
+  "minecraft:ghast_tear",
+  "minecraft:tnt",
+  "minecraft:lava_bucket",
+  "minecraft:tnt",
+  "minecraft:lava_bucket"
+ ],
+ "soul_cost": 1,
+ "duration": 30,
+ "result": "goety:lavaball_focus",
+ "count": 1
+}

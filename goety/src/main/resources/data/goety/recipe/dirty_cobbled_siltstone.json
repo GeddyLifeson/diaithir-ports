@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "#": "minecraft:dirt",
+  "S": "goety:cobbled_siltstone"
+ },
+ "pattern": [
+  "#S",
+  "S#"
+ ],
+ "result": {
+  "id": "goety:dirty_cobbled_siltstone",
+  "count": 4
+ }
+}

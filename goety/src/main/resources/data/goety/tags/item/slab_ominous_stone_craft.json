@@ -1,4 +1,7 @@
 {
  "replace": false,
- "values": []
+ "values": [
+  "goety:polished_ominous_stone_slab",
+  "goety:ominous_stone_brick_slab"
+ ]
 }

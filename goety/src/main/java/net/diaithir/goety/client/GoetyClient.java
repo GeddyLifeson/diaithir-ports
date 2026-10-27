@@ -60,6 +60,12 @@ public final class GoetyClient {
         GoetyEntities.PROJECTILES.values().forEach(t -> e.registerEntityRenderer(t.get(), NoopRenderer::new));
     }
 
+    @SubscribeEvent
+    public static void blockEntities(EntityRenderersEvent.RegisterRenderers e) {
+        e.registerBlockEntityRenderer(net.diaithir.goety.GoetyBlockEntities.ALTAR.get(), ctx -> new HolderRenderer(ctx, 1.25F));
+        e.registerBlockEntityRenderer(net.diaithir.goety.GoetyBlockEntities.PEDESTAL.get(), ctx -> new HolderRenderer(ctx, 1.1F));
+    }
+
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> type(String id) {
         return (EntityType<T>) GoetyEntities.MOBS.get(id).get();

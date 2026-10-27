@@ -34,7 +34,9 @@ def write(path, obj):
 STAGE = int(os.environ.get("GOETY_STAGE", "1"))
 FAM = re.compile(r"")  # every plain block family; functional blocks are excluded by EXCL
 EXCL = re.compile(r'(altar|pedestal|brazier|sarcophagus|throne|chest|lamp|lantern|torch|candle|statue|urn|gravestone|ossuary|blower|glass|cage|sign|sapling|potted|bush|firewood|jug|mirror|chandelier|sconce|bars|carpet|crystal|idol|decree|vine|grass|fern|pit|shrine|tall_skull|moss_|window|plinth_door|_light$|jade_light)')
-CUBE_OK = {"ShadeStoneBlock", "CursedMetalBlock", "PaleSteelBlock", "DarkMetalBlock", "JadeStoneBlock", "StoneOreBlock"}
+CUBE_OK = {"ShadeStoneBlock", "CursedMetalBlock", "PaleSteelBlock", "DarkMetalBlock", "JadeStoneBlock", "StoneOreBlock", "OminousStoneBlock",
+           "EndStoneBlock", "SiltstoneBlock", "CragBlock", "MarbleBlock", "HighrockBlock", "CryptStoneBlock", "SlateMarbleBlock",
+           "IndentedGoldBlock", "SnowyRedMossBlock", "GraveSoilBlock", "VoidBlock"}
 
 def like_for(i):
     if re.search(r'(planks|bookshelf)', i) or re.search(r'(button|fence|gate|trapdoor|door|plate)$', i):
@@ -69,7 +71,7 @@ def block_kind(r):
         return None
     for pat, k in (("DoorBlock(", "door"), ("TrapDoorBlock(", "trapdoor"), ("FenceGateBlock(", "gate"),
                    ("PressurePlateBlock(", "plate"), ("woodenButton(", "button"), ("FenceBlock(", "fence"),
-                   ("RotatedPillarBlock(", "pillar"), ("pillar(", "pillar"), ("fireProofLog(", "pillar")):
+                   ("RotatedPillarBlock(", "pillar"), ("pillar(", "pillar"), ("fireProofLog(", "pillar"), ("log(", "pillar")):
         if pat in a:
             if k == "door" and "TrapDoor" in a: continue
             return k
@@ -77,6 +79,8 @@ def block_kind(r):
     m = re.search(r'(\w+)::new', a)
     if m:
         return "cube" if m.group(1) in CUBE_OK else None
+    m2 = re.search(r'new (GraveSoilBlock|IndentedGoldBlock)\(', a)
+    if m2: return "cube"
     if "new Block(" in a or "new BookshelfBlock(" in a: return "cube"
     return None
 
@@ -105,6 +109,16 @@ for r in blocks_up:
 ids = set(bkinds)
 bspec = [e for e in bspec if "base" not in e or e["base"] in ids]
 bkinds = {e["id"]: e for e in bspec}
+
+# altar and pedestal variants (functional blocks of the rites)
+ALTAR_LIKE = {"": "deepslate_bricks", "_stone": "stone_bricks", "_deepslate": "deepslate_bricks", "_ominous_stone": "blackstone",
+              "_nether_brick": "nether_bricks", "_blackstone": "polished_blackstone_bricks", "_end_stone": "end_stone_bricks",
+              "_highrock": "andesite", "_marble": "calcite", "_prismarine": "prismarine_bricks", "_crypt_stone": "stone_bricks"}
+for r in blocks_up:
+    m = re.match(r'^(dark_altar|pedestal)((?:_\w+)?)$', r["id"])
+    if m and r["fn"] == "register" and m.group(2) in ALTAR_LIKE:
+        e = {"id": r["id"], "kind": "altar" if m.group(1) == "dark_altar" else "pedestal", "like": ALTAR_LIKE[m.group(2)], "set": "", "axe": False, "shovel": False}
+        bspec.append(e); bkinds[r["id"]] = e
 
 PLAIN_ITEMS = []
 items_up = U.items(UP)
@@ -265,6 +279,9 @@ for eid in ENTITIES:
     lang[f"entity.goety.{eid}"] = d
     lang[f"item.goety.{eid}_spawn_egg"] = d + " " + naming.diaithiris("Summoning Egg")[0].lower()
     names[eid] = {"diaithiris": d, "english": e, "entity": True}
+for k, v in {"goety.msg.rite_souls": "Chan eil gu leòr anman airson na deas-ghnàth (%s)", "goety.msg.rite_offerings": "Chan eil na tabhartasan ceart air na pedastail",
+             "goety.msg.rite_unknown": "Cha fhreagair deas-ghnàth don rud seo", "goety.msg.rite_broken": "Bhris an deas-ghnàth"}.items():
+    lang[k] = naming.archaic.text(v)
 lang["itemGroup.goety"] = naming.diaithiris("Goety")[0]
 write(os.path.join(A, "lang/en_us.json"), lang)
 write(os.path.join(ROOT, "names_map.json"), names)
@@ -394,6 +411,41 @@ for f in glob.glob(os.path.join(UPD, "recipes/**/*.json"), recursive=True):
     if rid not in sel: continue
     write(os.path.join(D, "recipe", os.path.splitext(os.path.basename(f))[0] + ".json"), out)
     nrec += 1
+
+# ---------------------------------------------------------------- rites
+def single(x):
+    if isinstance(x, list): x = x[0] if len(x) == 1 else None
+    if not isinstance(x, dict): return None
+    if "item" in x: return x["item"]
+    if "tag" in x:
+        t = tagname(x["tag"])
+        return None if t.startswith("c:") and t[2:] not in CTAGS else "#" + t
+    return None
+def good(entry):
+    return entry and item_ok(entry)
+nrit, skipped = 0, 0
+for f in glob.glob(os.path.join(UPD, "recipes/**/*.json"), recursive=True):
+    j = json.load(open(f, encoding="utf8"))
+    if j.get("type") != "goety:ritual" or j.get("conditions"): continue
+    rt = j.get("ritual_type")
+    if rt not in ("goety:craft", "goety:summon"): skipped += 1; continue
+    act = single(j["activation_item"])
+    offs = [single(x) for x in j["ingredients"]]
+    if not good(act) or not all(good(o) for o in offs): skipped += 1; continue
+    out = {"type": "craft" if rt == "goety:craft" else "summon", "school": j.get("craftType", "magic"), "activation": act, "offerings": offs,
+           "soul_cost": j.get("soulCost", 1), "duration": j.get("duration", 30)}
+    if rt == "goety:craft":
+        res = j["result"]
+        if res["item"] not in sel: skipped += 1; continue
+        out["result"] = res["item"]; out["count"] = res.get("count", 1)
+    else:
+        ent = j.get("entity_to_summon", "")
+        if ent not in {f"{ID}:{e}" for e in ENTITIES} and not ent.startswith("minecraft:"): skipped += 1; continue
+        out["entity"] = ent
+    out = json.loads(json.dumps(out).replace("minecraft:grass\"", "minecraft:short_grass\""))
+    write(os.path.join(D, "rituals", os.path.splitext(os.path.basename(f))[0] + ".json"), out)
+    nrit += 1
+print("rites", nrit, "skipped", skipped)
 
 # ---------------------------------------------------------------- age gate + misc
 ages = {}
