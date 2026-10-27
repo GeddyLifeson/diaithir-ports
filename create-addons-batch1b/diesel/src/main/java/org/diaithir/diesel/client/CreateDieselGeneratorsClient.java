@@ -24,6 +24,9 @@ public class CreateDieselGeneratorsClient {
         var type = CDGBlockEntityTypes.DIESEL_ENGINE.get();
         AllBlockEntityRenders.visual(type, EngineShaftRenderer::new, OrientedRotatingVisual.of(AllPartialModels.SHAFT_HALF));
         AllBlockEntityBehaviours.add(type, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
+        var huge = CDGBlockEntityTypes.HUGE_DIESEL_ENGINE.get();
+        AllBlockEntityRenders.visual(huge, EngineShaftRenderer::new, OrientedRotatingVisual.of(AllPartialModels.SHAFT_HALF));
+        AllBlockEntityBehaviours.add(huge, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);
         var mod = CDGBlockEntityTypes.MODULAR_DIESEL_ENGINE.get();
         AllBlockEntityRenders.visual(mod, ModularShaftRenderer::new, com.zurrtum.create.client.content.kinetics.base.SingleAxisRotatingVisual.of(AllPartialModels.SHAFT));
         AllBlockEntityBehaviours.add(mod, KineticAudioBehaviour::new, KineticTooltipBehaviour::new);

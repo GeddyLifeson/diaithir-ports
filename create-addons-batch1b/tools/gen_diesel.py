@@ -154,6 +154,42 @@ def modular_and_upgrades():
     d = json.load(open(path)); d["values"].append(f"{NS}:modular_diesel_engine"); json.dump(d, open(path, "w"), indent=1)
     lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.modular_diesel_engine"] = "Modular Diesel Engine"; json.dump(l, open(lp, "w"), indent=1)
 
+def huge():
+    png(f"{A}/textures/block/huge_diesel_engine.png", art.machine_face("cdg_huge", art.STEEL_D, art.HAZ_Y, 5))
+    png(f"{A}/textures/block/huge_diesel_engine_end.png", art.machine_top("cdg_huge_end", art.STEEL))
+    f = lambda t: {"uv": [0, 0, 16, 16], "texture": t}
+    t = {"side": f"{NS}:block/huge_diesel_engine", "end": f"{NS}:block/huge_diesel_engine_end", "particle": f"{NS}:block/huge_diesel_engine"}
+    w(f"{A}/models/block/huge_diesel_engine.json", {"textures": t, "elements": [{"from": [0, 0, 0], "to": [16, 16, 16], "faces": {"north": f("#side"), "south": f("#side"), "east": f("#end"), "west": f("#side"), "up": f("#side"), "down": f("#side")}}]})
+    v = {}
+    for facing, rot in {"east": {}, "south": {"y": 90}, "west": {"y": 180}, "north": {"y": 270}, "up": {"z": 90}, "down": {"z": 270}}.items():
+        for lit in ("true", "false"):
+            for pw in ("true", "false"):
+                for wl in ("true", "false"):
+                    v[f"facing={facing},lit={lit},powered={pw},waterlogged={wl}"] = {"model": f"{NS}:block/huge_diesel_engine", **rot}
+    w(f"{A}/blockstates/huge_diesel_engine.json", {"variants": v})
+    w(f"{A}/items/huge_diesel_engine.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/huge_diesel_engine"}})
+    w(f"{D}/loot_table/blocks/huge_diesel_engine.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:huge_diesel_engine"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/huge_diesel_engine.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["BEB", "ESE", "BEB"],
+        "key": {"B": "create:brass_sheet", "E": f"{NS}:modular_diesel_engine", "S": "create:shaft"}, "result": {"id": f"{NS}:huge_diesel_engine", "count": 1}})
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:huge_diesel_engine"); json.dump(d, open(path, "w"), indent=1)
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.huge_diesel_engine"] = "Huge Diesel Engine"; json.dump(l, open(lp, "w"), indent=1)
+
+def tower():
+    png(f"{A}/textures/block/distillation_tower.png", art.machine_face("cdg_tower", art.STEEL, art.HAZ_K, 6))
+    png(f"{A}/textures/block/distillation_tower_top.png", art.machine_top("cdg_tower_top", art.STEEL_D))
+    f = lambda t: {"uv": [0, 0, 16, 16], "texture": t}
+    w(f"{A}/models/block/distillation_tower.json", {"textures": {"side": f"{NS}:block/distillation_tower", "top": f"{NS}:block/distillation_tower_top", "particle": f"{NS}:block/distillation_tower"},
+        "elements": [{"from": [1, 0, 1], "to": [15, 16, 15], "faces": {"north": f("#side"), "south": f("#side"), "east": f("#side"), "west": f("#side"), "up": f("#top"), "down": f("#top")}}]})
+    w(f"{A}/blockstates/distillation_tower.json", {"variants": {"": {"model": f"{NS}:block/distillation_tower"}}})
+    w(f"{A}/items/distillation_tower.json", {"model": {"type": "minecraft:model", "model": f"{NS}:block/distillation_tower"}})
+    w(f"{D}/loot_table/blocks/distillation_tower.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:distillation_tower"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
+    w(f"{D}/recipe/distillation_tower.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["BIB", "BCB", "BIB"],
+        "key": {"B": "create:brass_sheet", "I": "minecraft:iron_ingot", "C": "create:fluid_tank"}, "result": {"id": f"{NS}:distillation_tower", "count": 2}})
+    path = f"{ROOT}/data/minecraft/tags/block/mineable/pickaxe.json"
+    d = json.load(open(path)); d["values"].append(f"{NS}:distillation_tower"); json.dump(d, open(path, "w"), indent=1)
+    lp = f"{A}/lang/en_us.json"; l = json.load(open(lp)); l[f"block.{NS}.distillation_tower"] = "Distillation Tower"; json.dump(l, open(lp, "w"), indent=1)
+
 def recipes_and_worldgen():
     NSF = NS
     def ft(tag, amount): return {"type": "fluid_tag", "amount": amount, "fluid_tag": "#c:" + tag}
@@ -179,4 +215,6 @@ main()
 canister()
 burner()
 modular_and_upgrades()
+huge()
+tower()
 recipes_and_worldgen()

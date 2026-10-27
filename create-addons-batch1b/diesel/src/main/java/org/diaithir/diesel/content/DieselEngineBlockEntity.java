@@ -35,11 +35,24 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
         super(CDGBlockEntityTypes.DIESEL_ENGINE.get(), pos, state);
     }
 
+    protected DieselEngineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
+    }
+
+    /** Which row of the fuel table this engine class runs on. */
+    protected Fuels.Per select(Fuels.Fuel fuel) {
+        return fuel.normal();
+    }
+
+    protected int tankCapacity() {
+        return CAPACITY;
+    }
+
     @Override
     public void addBehaviours(List<BlockEntityBehaviour<?>> behaviours) {
         movementDirection = new ServerScrollOptionBehaviour<>(RotationDirection.class, this);
         movementDirection.withCallback(v -> reActivateSource = true);
-        tank = SmartFluidTankBehaviour.single(this, CAPACITY);
+        tank = SmartFluidTankBehaviour.single(this, tankCapacity());
         behaviours.add(movementDirection);
         behaviours.add(tank);
     }
@@ -62,7 +75,7 @@ public class DieselEngineBlockEntity extends GeneratingKineticBlockEntity {
 
     private Fuels.@Nullable Per props() {
         Fuels.Fuel fuel = fuel();
-        return fuel == null ? null : fuel.normal();
+        return fuel == null ? null : select(fuel);
     }
 
     @Override

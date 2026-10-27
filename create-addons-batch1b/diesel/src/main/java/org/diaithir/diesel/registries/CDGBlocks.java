@@ -22,4 +22,10 @@ public class CDGBlocks {
 
     public static final DeferredBlock<org.diaithir.diesel.content.modular.ModularDieselEngineBlock> MODULAR_DIESEL_ENGINE = BLOCKS.registerBlock("modular_diesel_engine",
         org.diaithir.diesel.content.modular.ModularDieselEngineBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().forceSolidOn());
+
+    public static final DeferredBlock<org.diaithir.diesel.content.huge.HugeDieselEngineBlock> HUGE_DIESEL_ENGINE = BLOCKS.registerBlock("huge_diesel_engine",
+        org.diaithir.diesel.content.huge.HugeDieselEngineBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).noOcclusion().forceSolidOn());
+
+    public static final DeferredBlock<org.diaithir.diesel.content.distillation.DistillationTowerBlock> DISTILLATION_TOWER = BLOCKS.registerBlock("distillation_tower",
+        org.diaithir.diesel.content.distillation.DistillationTowerBlock::new, () -> Properties.ofFullCopy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL));
 }

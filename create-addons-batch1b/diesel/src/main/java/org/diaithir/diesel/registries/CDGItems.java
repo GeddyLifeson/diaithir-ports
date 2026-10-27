@@ -20,6 +20,10 @@ public class CDGItems {
 
     public static final DeferredItem<BlockItem> MODULAR_DIESEL_ENGINE = ITEMS.registerSimpleBlockItem(CDGBlocks.MODULAR_DIESEL_ENGINE);
 
+    public static final DeferredItem<BlockItem> HUGE_DIESEL_ENGINE = ITEMS.registerSimpleBlockItem(CDGBlocks.HUGE_DIESEL_ENGINE);
+
+    public static final DeferredItem<BlockItem> DISTILLATION_TOWER = ITEMS.registerSimpleBlockItem(CDGBlocks.DISTILLATION_TOWER);
+
     public static Item[] all() {
         return ITEMS.getEntries().stream().map(h -> (Item) h.get()).toArray(Item[]::new);
     }

@@ -23,4 +23,10 @@ public class CDGBlockEntityTypes {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity>> MODULAR_DIESEL_ENGINE =
         TYPES.register("modular_diesel_engine", () -> new BlockEntityType<>(org.diaithir.diesel.content.modular.ModularDieselEngineBlockEntity::new, Set.of(CDGBlocks.MODULAR_DIESEL_ENGINE.get())));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.huge.HugeDieselEngineBlockEntity>> HUGE_DIESEL_ENGINE =
+        TYPES.register("huge_diesel_engine", () -> new BlockEntityType<>(org.diaithir.diesel.content.huge.HugeDieselEngineBlockEntity::new, Set.of(CDGBlocks.HUGE_DIESEL_ENGINE.get())));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<org.diaithir.diesel.content.distillation.DistillationTowerBlockEntity>> DISTILLATION_TOWER =
+        TYPES.register("distillation_tower", () -> new BlockEntityType<>(org.diaithir.diesel.content.distillation.DistillationTowerBlockEntity::new, Set.of(CDGBlocks.DISTILLATION_TOWER.get())));
 }

@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "BEB",
+  "ESE",
+  "BEB"
+ ],
+ "key": {
+  "B": "create:brass_sheet",
+  "E": "createdieselgenerators:modular_diesel_engine",
+  "S": "create:shaft"
+ },
+ "result": {
+  "id": "createdieselgenerators:huge_diesel_engine",
+  "count": 1
+ }
+}
