@@ -1,0 +1,19 @@
+{
+ "layers": {
+  "humanoid": [
+   {
+    "texture": "diaithirarms:bronze"
+   }
+  ],
+  "humanoid_leggings": [
+   {
+    "texture": "diaithirarms:bronze"
+   }
+  ],
+  "humanoid_baby": [
+   {
+    "texture": "diaithirarms:bronze"
+   }
+  ]
+ }
+}
