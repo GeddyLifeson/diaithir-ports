@@ -1,6 +1,6 @@
 # OptiGUI for NeoForge 26.1.2
 
-A NeoForge port of [OptiGUI](https://github.com/opekope2/OptiGUI) by opekope2 (MIT, see `LICENSE`).
+A NeoForge port of [OptiGUI](https://github.com/opekope2/OptiGUI) by opekope2 (LGPL-3.0-or-later, see `COPYING` and `COPYING.LESSER`; upstream's `dev` branch is LGPL-3.0-or-later, the 26.1 branch this was ported from carries the MIT text, kept as `LICENSE-MIT-upstream-26.1`).
 Resource packs retexture GUI screens (chests, furnaces, villagers, horses, books and more) by condition,
 using the OptiFine custom GUI format (`assets/minecraft/optifine/gui/container/*.properties`) or OptiGUI's own JSON format.
 

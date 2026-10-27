@@ -1,6 +1,6 @@
 modLoader = "kotlinforforge"
 loaderVersion = "[6,)"
-license = "MIT"
+license = "LGPL-3.0-or-later"
 issueTrackerURL = "https://github.com/opekope2/OptiGUI/issues"
 
 [[mods]]
@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "OptiGUI"
 logoFile = "assets/optigui/icon.png"
 authors = "opekope2"
-credits = "Port of OptiGUI by opekope2 (https://github.com/opekope2/OptiGUI, MIT). Contributors: Santiago Hernandez (TheLegendofSaram), dirtTW (yichifauzi), notlin4, Lucanoria. NeoForge 26.1.2 port for Diaithir; upstream code is unchanged apart from the loader glue."
+credits = "Port of OptiGUI by opekope2 (https://github.com/opekope2/OptiGUI, LGPL-3.0-or-later; the 26.1 branch it was ported from carries the MIT text, kept as LICENSE-MIT-upstream-26.1). Contributors: Santiago Hernandez (TheLegendofSaram), dirtTW (yichifauzi), notlin4, Lucanoria. NeoForge 26.1.2 port for Diaithir; upstream code is unchanged apart from the loader glue."
 displayURL = "https://github.com/opekope2/OptiGUI"
 description = "Custom GUI textures for resource packs, with built-in OptiFine custom GUI (assets/minecraft/optifine/gui/container) support."
 

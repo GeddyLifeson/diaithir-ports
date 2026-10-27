@@ -49,7 +49,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     compilerOptions { freeCompilerArgs = ['-Xjvm-default=all'] }
 }
 
-jar { from(file('LICENSE')) }
+jar { from(files('COPYING', 'COPYING.LESSER', 'LICENSE-MIT-upstream-26.1')) }
 
 processResources {
     inputs.property 'version', version
