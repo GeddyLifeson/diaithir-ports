@@ -480,5 +480,18 @@ def fill_missing():
         paint(s, a, 'side', t).save(os.path.join(TEX, t + '.png'))
     print('filled', sorted(miss))
 
+def patch_models():
+    M = os.path.join(ROOT, 'models', 'block')
+    for p in glob.glob(M + '/**/*.json', recursive=True):
+        j = load_model(p); ch = False
+        if j.get('parent') == 'block/cube_all' and j.get('elements'): del j['parent']; ch = True
+        if j.get('elements') and 'parent' not in j:
+            t = j.setdefault('textures', {})
+            if 'particle' not in t:
+                t['particle'] = next((v for k, v in t.items() if not v.startswith('#')), 'createaddition:block/ext/girder'); ch = True
+            if any(f.get('texture') == '#missing' for e in j['elements'] for f in e.get('faces', {}).values()):
+                t['missing'] = 'createaddition:block/connector/bulb'; ch = True
+        if ch: json.dump(j, open(p, 'w'), indent=1)
+
 if __name__ == '__main__':
-    run(); fill_missing()
+    run(); fill_missing(); patch_models()
