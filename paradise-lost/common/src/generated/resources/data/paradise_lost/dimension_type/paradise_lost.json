@@ -22,6 +22,8 @@
         "translate": "block.minecraft.bed.no_sleep"
       }
     },
+    "minecraft:visual/cloud_height": 352.0,
+    "minecraft:visual/cloud_color": "#ccffffff",
     "minecraft:gameplay/respawn_anchor_works": false,
     "minecraft:gameplay/nether_portal_spawns_piglin": false
   },
