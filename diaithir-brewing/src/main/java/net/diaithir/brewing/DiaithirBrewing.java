@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -45,6 +47,8 @@ public final class DiaithirBrewing {
         ENTITIES.register(bus);
         NeoForge.EVENT_BUS.addListener(AddServerReloadListenersEvent.class,
             e -> e.addListener(Identifier.fromNamespaceAndPath(ID, "recipes"), new BrewRecipes()));
+        bus.addListener(RegisterCapabilitiesEvent.class,
+            e -> e.registerBlockEntity(Capabilities.Item.BLOCK, VESSEL_ENTITY.get(), (be, side) -> be.automation));
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, e -> BrewSelfTest.register(e.getDispatcher()));
     }
 }

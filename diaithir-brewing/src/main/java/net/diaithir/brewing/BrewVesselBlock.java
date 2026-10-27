@@ -68,7 +68,7 @@ public final class BrewVesselBlock extends BaseEntityBlock {
             return InteractionResult.TRY_WITH_EMPTY_HAND;
         }
         Item item = stack.getItem();
-        if (be.base == Items.AIR && BrewRecipes.usesBase(station, item)) {
+        if (be.acceptsBase(item)) {
             if (!level.isClientSide()) {
                 be.base = item;
                 Item left = BrewRecipes.all().stream().filter(r -> r.base() == item).map(BrewRecipe::baseReturns).findFirst().orElse(Items.AIR);
@@ -80,7 +80,7 @@ public final class BrewVesselBlock extends BaseEntityBlock {
             }
             return InteractionResult.SUCCESS;
         }
-        if (be.count() < be.capacity() && BrewRecipes.usesIngredient(station, item)) {
+        if (be.acceptsIngredient(item)) {
             if (!level.isClientSide()) {
                 be.held.merge(item, 1, Integer::sum);
                 stack.consume(1, player);

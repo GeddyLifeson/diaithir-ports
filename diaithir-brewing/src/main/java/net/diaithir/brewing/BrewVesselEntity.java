@@ -16,6 +16,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.transaction.SnapshotJournal;
+import net.neoforged.neoforge.transfer.transaction.TransactionContext;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,6 +55,14 @@ public final class BrewVesselEntity extends BlockEntity {
 
     boolean done() {
         return !drink.isEmpty();
+    }
+
+    boolean acceptsBase(Item item) {
+        return !busy() && !done() && base == Items.AIR && BrewRecipes.usesBase(station(), item);
+    }
+
+    boolean acceptsIngredient(Item item) {
+        return !busy() && !done() && count() < capacity() && BrewRecipes.usesIngredient(station(), item);
     }
 
     /** Starts fermenting if the contents now match a recipe exactly. */
@@ -148,4 +161,87 @@ public final class BrewVesselEntity extends BlockEntity {
     private static Item itemOr(String id) {
         return id.isEmpty() ? Items.AIR : BuiltInRegistries.ITEM.getOptional(Identifier.parse(id)).orElse(Items.AIR);
     }
+
+    /** Hoppers, pipes and Create belts: slot 0 takes one base or ingredient at a time, slot 1 gives the finished drinks. */
+    final class Automation extends SnapshotJournal<Object[]> implements ResourceHandler<ItemResource> {
+        @Override
+        protected Object[] createSnapshot() {
+            return new Object[] {base, new HashMap<>(held), active, progress, drink.copy(), container};
+        }
+
+        @Override
+        @SuppressWarnings("unchecked")
+        protected void revertToSnapshot(Object[] s) {
+            base = (Item) s[0];
+            held.clear();
+            held.putAll((Map<Item, Integer>) s[1]);
+            active = (BrewRecipe) s[2];
+            progress = (Integer) s[3];
+            drink = (ItemStack) s[4];
+            container = (Item) s[5];
+        }
+
+        @Override
+        protected void onRootCommit(Object[] original) {
+            sync();
+        }
+
+        @Override
+        public int size() {
+            return 2;
+        }
+
+        @Override
+        public ItemResource getResource(int index) {
+            return index == 1 && done() ? ItemResource.of(drink) : ItemResource.EMPTY;
+        }
+
+        @Override
+        public long getAmountAsLong(int index) {
+            return index == 1 ? drink.getCount() : 0;
+        }
+
+        @Override
+        public long getCapacityAsLong(int index, ItemResource resource) {
+            return index == 1 ? drink.getCount() : acceptsBase(resource.getItem()) || acceptsIngredient(resource.getItem()) ? 1 : 0;
+        }
+
+        @Override
+        public boolean isValid(int index, ItemResource resource) {
+            return index == 0 && (acceptsBase(resource.getItem()) || acceptsIngredient(resource.getItem()));
+        }
+
+        @Override
+        public int insert(int index, ItemResource resource, int amount, TransactionContext tx) {
+            Item item = resource.getItem();
+            if (index != 0 || amount < 1 || !isValid(0, resource)) {
+                return 0;
+            }
+            updateSnapshots(tx);
+            if (acceptsBase(item)) {
+                base = item;
+            } else {
+                held.merge(item, 1, Integer::sum);
+            }
+            tryStart();
+            return 1;
+        }
+
+        @Override
+        public int extract(int index, ItemResource resource, int amount, TransactionContext tx) {
+            if (index != 1 || !done() || drink.getItem() != resource.getItem()) {
+                return 0;
+            }
+            int n = Math.min(amount, drink.getCount());
+            updateSnapshots(tx);
+            drink.shrink(n);
+            if (drink.isEmpty()) {
+                drink = ItemStack.EMPTY;
+                container = Items.AIR;
+            }
+            return n;
+        }
+    }
+
+    final Automation automation = new Automation();
 }

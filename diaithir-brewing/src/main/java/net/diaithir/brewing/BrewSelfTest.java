@@ -15,6 +15,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.core.Direction;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
+import net.neoforged.neoforge.transfer.item.ItemResource;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
 
 /** /brewing selftest: runs the first loaded keg recipe through a fake player and reports PASS or what failed. */
 final class BrewSelfTest {
@@ -57,8 +59,35 @@ final class BrewSelfTest {
         p.setItemInHand(InteractionHand.MAIN_HAND, bottle);
         level.getBlockState(pos).useItemOn(bottle, level, p, InteractionHand.MAIN_HAND, hit);
         if (be.drink.getCount() != r.servings() - 1) return "FAIL serving not drawn";
+        String auto = automation(level, pos, r);
         level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
-        return "PASS keg brewed " + r.servings() + " " + r.drink() + ", drew one, save round trip ok";
+        return auto != null ? auto : "PASS keg brewed " + r.servings() + " " + r.drink() + ", drew one, save round trip ok, automation ok";
+    }
+
+    /** Feeds a fresh keg through its item handler (hopper path), checks an aborted insert rolls back, then draws the drinks out. */
+    private static String automation(ServerLevel level, BlockPos pos, BrewRecipe r) {
+        level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(pos, DiaithirBrewing.KEG.get().defaultBlockState());
+        BrewVesselEntity be = (BrewVesselEntity) level.getBlockEntity(pos);
+        try (var tx = Transaction.openRoot()) {
+            be.automation.insert(ItemResource.of(r.base()), 1, tx);
+        }
+        if (be.base != Items.AIR) return "FAIL aborted insert was not rolled back";
+        try (var tx = Transaction.openRoot()) {
+            be.automation.insert(ItemResource.of(r.base()), 1, tx);
+            for (var e : r.ingredients().entrySet()) {
+                for (int i = 0; i < e.getValue(); i++) be.automation.insert(ItemResource.of(e.getKey()), 1, tx);
+            }
+            tx.commit();
+        }
+        if (!be.busy()) return "FAIL automation did not start fermenting: base=" + be.base + " held=" + be.held + " done=" + be.done();
+        for (int i = 0; i < r.ticks() && !be.done(); i++) BrewVesselEntity.tick(level, pos, be.getBlockState(), be);
+        int got;
+        try (var tx = Transaction.openRoot()) {
+            got = be.automation.extract(ItemResource.of(r.drink()), 64, tx);
+            tx.commit();
+        }
+        return got == r.servings() ? null : "FAIL automation drew " + got + " of " + r.servings();
     }
 
     private static boolean use(ServerLevel level, Player p, BlockPos pos, BlockHitResult hit, ItemStack stack) {
