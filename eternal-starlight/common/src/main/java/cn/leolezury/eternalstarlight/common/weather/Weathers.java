@@ -1,7 +1,11 @@
 package cn.leolezury.eternalstarlight.common.weather;
 
 import cn.leolezury.eternalstarlight.common.registry.ESWeathers;
-import net.minecraft.core.HolderLookup;
+import cn.leolezury.eternalstarlight.common.EternalStarlight;
+import com.mojang.serialization.Codec;
+import net.minecraft.world.level.saveddata.SavedDataType;
+import java.util.HashMap;
+import java.util.Map;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
@@ -12,17 +16,49 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class Weathers extends SavedData {
-	private static final String TAG_WEATHERS = "weathers";
+	public static final Codec<Weathers> CODEC = Codec.unboundedMap(Codec.STRING, CompoundTag.CODEC).xmap(Weathers::fromData, Weathers::toData);
+	// PORT: the dimension data type has no level context in the vanilla API, so the level is bound lazily via bind()
+	public static final SavedDataType<Weathers> TYPE = new SavedDataType<>(EternalStarlight.id("weathers"), Weathers::new, CODEC, null);
 
-	private final ServerLevel serverLevel;
+	private ServerLevel serverLevel;
+	private Map<String, CompoundTag> pending = new HashMap<>();
 	private final List<WeatherInstance> weathers = new ArrayList<>();
 
-	public Weathers(ServerLevel serverLevel) {
-		this.serverLevel = serverLevel;
-		ESWeathers.WEATHERS.registry().forEach(weather -> {
-			WeatherInstance instance = new WeatherInstance(serverLevel, weather);
-			weathers.add(instance);
-		});
+	public Weathers() {
+	}
+
+	public Weathers bind(ServerLevel serverLevel) {
+		if (this.serverLevel == null) {
+			this.serverLevel = serverLevel;
+			ESWeathers.WEATHERS.registry().forEach(weather -> {
+				WeatherInstance instance = new WeatherInstance(serverLevel, weather);
+				String id = Objects.requireNonNull(ESWeathers.WEATHERS.registry().getKey(weather)).toString();
+				CompoundTag saved = pending.get(id);
+				if (saved != null) {
+					instance.load(saved);
+				}
+				weathers.add(instance);
+			});
+			pending = new HashMap<>();
+		}
+		return this;
+	}
+
+	private static Weathers fromData(Map<String, CompoundTag> data) {
+		Weathers weathers = new Weathers();
+		weathers.pending = new HashMap<>(data);
+		return weathers;
+	}
+
+	private Map<String, CompoundTag> toData() {
+		Map<String, CompoundTag> data = new HashMap<>(pending);
+		for (WeatherInstance instance : weathers) {
+			String id = Objects.requireNonNull(ESWeathers.WEATHERS.registry().getKey(instance.getWeather())).toString();
+			CompoundTag weatherTag = new CompoundTag();
+			instance.save(weatherTag);
+			data.put(id, weatherTag);
+		}
+		return data;
 	}
 
 	public List<WeatherInstance> getWeathers() {
@@ -59,10 +95,6 @@ public class Weathers extends SavedData {
 		setDirty();
 	}
 
-	public static SavedData.Factory<Weathers> factory(ServerLevel serverLevel) {
-		return new SavedData.Factory<>(() -> new Weathers(serverLevel), (compoundTag, lookup) -> load(serverLevel, compoundTag), null);
-	}
-
 	public void tick() {
 		List<WeatherInstance> canStartWeathers = new ArrayList<>();
 		boolean hasActive = false;
@@ -76,34 +108,5 @@ public class Weathers extends SavedData {
 			canStartWeathers.get(serverLevel.getRandom().nextInt(canStartWeathers.size())).start();
 		}
 		setDirty();
-	}
-
-	public static Weathers load(ServerLevel serverLevel, CompoundTag compoundTag) {
-		Weathers weathersData = new Weathers(serverLevel);
-		if (compoundTag.contains(TAG_WEATHERS)) {
-			CompoundTag weathersTag = compoundTag.getCompound(TAG_WEATHERS);
-			ESWeathers.WEATHERS.registry().forEach(weather -> {
-				WeatherInstance instance = new WeatherInstance(serverLevel, weather);
-				String id = Objects.requireNonNull(ESWeathers.WEATHERS.registry().getKey(weather)).toString();
-				if (weathersTag.contains(id)) {
-					instance.load(weathersTag.getCompound(id));
-				}
-				weathersData.weathers.add(instance);
-			});
-		}
-		return weathersData;
-	}
-
-	@Override
-	public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
-		CompoundTag weathersTag = new CompoundTag();
-		for (WeatherInstance instance : weathers) {
-			String id = Objects.requireNonNull(ESWeathers.WEATHERS.registry().getKey(instance.getWeather())).toString();
-			CompoundTag weatherTag = new CompoundTag();
-			instance.save(weatherTag);
-			weathersTag.put(id, weatherTag);
-		}
-		compoundTag.put(TAG_WEATHERS, weathersTag);
-		return compoundTag;
 	}
 }

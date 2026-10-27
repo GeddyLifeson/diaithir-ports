@@ -98,7 +98,6 @@ public class Permafrost extends ESBoss {
 		};
 		navigation.setCanOpenDoors(true);
 		navigation.setCanFloat(true);
-		navigation.setCanPassDoors(true);
 		return navigation;
 	}
 

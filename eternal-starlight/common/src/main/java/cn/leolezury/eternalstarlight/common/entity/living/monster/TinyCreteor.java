@@ -132,7 +132,6 @@ public class TinyCreteor extends Monster implements PowerableMob {
 		};
 		navigation.setCanOpenDoors(true);
 		navigation.setCanFloat(true);
-		navigation.setCanPassDoors(true);
 		return navigation;
 	}
 

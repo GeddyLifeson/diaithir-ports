@@ -97,7 +97,6 @@ public class ShimmerLacewing extends Animal implements FlyingAnimal {
 		};
 		pathNavigation.setCanOpenDoors(false);
 		pathNavigation.setCanFloat(true);
-		pathNavigation.setCanPassDoors(true);
 		return pathNavigation;
 	}
 

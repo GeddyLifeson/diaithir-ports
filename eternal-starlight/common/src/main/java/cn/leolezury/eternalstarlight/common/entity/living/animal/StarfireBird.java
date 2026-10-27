@@ -172,7 +172,6 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		};
 		pathNavigation.setCanOpenDoors(false);
 		pathNavigation.setCanFloat(true);
-		pathNavigation.setCanPassDoors(true);
 		return pathNavigation;
 	}
 
@@ -653,18 +652,11 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
 		setSpecialVariant(compoundTag.getBooleanOr(TAG_SPECIAL_VARIANT, false));
-		NbtUtils.readBlockPos(compoundTag, TAG_NEST_POS).ifPresent(pos -> nestPos = pos);
+		compoundTag.read(TAG_NEST_POS, BlockPos.CODEC).ifPresent(pos -> nestPos = pos);
 		stayOutOfNestTicks = compoundTag.getIntOr(TAG_STAY_OUT_OF_NEST_TICKS, 0);
 		hasEgg = compoundTag.getBooleanOr(TAG_HAS_EGG, false);
 		this.trustedPlayers.clear();
-		if (ESPortCompat.has(compoundTag, TAG_TRUSTED_PLAYERS)) {
-			ListTag listTag = compoundTag.getList(TAG_TRUSTED_PLAYERS, CompoundTag.TAG_INT_ARRAY);
-			for (Tag tag : listTag) {
-				if (tag != null && tag.getType() == IntArrayTag.TYPE && ((IntArrayTag) tag).getAsIntArray().length == 4) {
-					this.trustedPlayers.add(NbtUtils.loadUUID(tag));
-				}
-			}
-		}
+		compoundTag.read(TAG_TRUSTED_PLAYERS, net.minecraft.core.UUIDUtil.CODEC_SET).ifPresent(this.trustedPlayers::addAll);
 		this.giftAllowances.clear();
 		if (ESPortCompat.has(compoundTag, TAG_GIFT_ALLOWANCES)) {
 			compoundTag.read(TAG_GIFT_ALLOWANCES, GIFT_ALLOWANCES_CODEC).ifPresent(parsed -> parsed.forEach((uuid, count) -> this.giftAllowances.put(uuid, Math.min(count, MAX_GIFT_ALLOWANCE))));
@@ -677,17 +669,11 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 		super.addAdditionalSaveData(compoundTag);
 		compoundTag.putBoolean(TAG_SPECIAL_VARIANT, isSpecialVariant());
 		if (hasNest()) {
-			compoundTag.put(TAG_NEST_POS, NbtUtils.writeBlockPos(nestPos));
+			compoundTag.store(TAG_NEST_POS, BlockPos.CODEC, nestPos);
 		}
 		compoundTag.putInt(TAG_STAY_OUT_OF_NEST_TICKS, stayOutOfNestTicks);
 		compoundTag.putBoolean(TAG_HAS_EGG, hasEgg);
-		ListTag listTag = new ListTag();
-		for (UUID uuid : this.trustedPlayers) {
-			if (uuid != null) {
-				listTag.add(NbtUtils.createUUID(uuid));
-			}
-		}
-		compoundTag.put(TAG_TRUSTED_PLAYERS, listTag);
+		compoundTag.store(TAG_TRUSTED_PLAYERS, net.minecraft.core.UUIDUtil.CODEC_SET, new java.util.HashSet<>(this.trustedPlayers));
 		compoundTag.store(TAG_GIFT_ALLOWANCES, GIFT_ALLOWANCES_CODEC, this.giftAllowances);
 		compoundTag.putInt(TAG_GIFT_COOLDOWN, giftCooldown);
 	}

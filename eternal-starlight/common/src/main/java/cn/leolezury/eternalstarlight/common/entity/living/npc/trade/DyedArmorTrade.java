@@ -15,7 +15,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 
 import java.util.List;
 
-public class DyedArmorTrade implements VillagerTrades.ItemListing {
+public class DyedArmorTrade implements cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing {
 	private final Item item;
 	private final ItemStack currency;
 	private final int maxUses;
@@ -33,8 +33,8 @@ public class DyedArmorTrade implements VillagerTrades.ItemListing {
 	@Override
 	public MerchantOffer getOffer(Entity entity, RandomSource randomSource) {
 		ItemStack stack = new ItemStack(this.item);
-		if (stack.is(ItemTags.DYEABLE)) {
-			List<DyeItem> list = Lists.newArrayList();
+		if (stack.has(net.minecraft.core.component.DataComponents.DYED_COLOR)) {
+			List<DyeColor> list = Lists.newArrayList();
 			list.add(getRandomDye(randomSource));
 			if (randomSource.nextFloat() > 0.7F) {
 				list.add(getRandomDye(randomSource));
@@ -50,7 +50,7 @@ public class DyedArmorTrade implements VillagerTrades.ItemListing {
 		return new MerchantOffer(new ItemCost(currency.getItem(), currency.getCount()), stack, this.maxUses, 0, 0);
 	}
 
-	private static DyeItem getRandomDye(RandomSource randomSource) {
-		return DyeItem.byColor(DyeColor.byId(randomSource.nextInt(16)));
+	private static DyeColor getRandomDye(RandomSource randomSource) {
+		return DyeColor.byId(randomSource.nextInt(16));
 	}
 }

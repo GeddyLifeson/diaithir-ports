@@ -96,7 +96,6 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 		};
 		pathNavigation.setCanOpenDoors(false);
 		pathNavigation.setCanFloat(true);
-		pathNavigation.setCanPassDoors(true);
 		return pathNavigation;
 	}
 

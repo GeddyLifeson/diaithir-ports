@@ -165,7 +165,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 		super.addAdditionalSaveData(compound);
 		compound.putInt(TAG_LIFE, this.life);
 		compound.putInt(TAG_LIFETIME, this.lifetime);
-		compound.put(TAG_ITEM, this.getItem().save(this.registryAccess()));
+		compound.store(TAG_ITEM, ItemStack.CODEC, this.getItem());
 		compound.putBoolean(TAG_SHOT_AT_ANGLE, this.entityData.get(SHOT_AT_ANGLE));
 	}
 
@@ -175,7 +175,7 @@ public class AetherstrikeRocketEntity extends Projectile implements ItemSupplier
 		this.life = compound.getIntOr(TAG_LIFE, 0);
 		this.lifetime = compound.getIntOr(TAG_LIFETIME, 0);
 		if (ESPortCompat.has(compound, TAG_ITEM)) {
-			this.entityData.set(ITEM, ItemStack.parse(this.registryAccess(), compound.childOrEmpty(TAG_ITEM)).orElseGet(AetherstrikeRocketEntity::getDefaultItem));
+			this.entityData.set(ITEM, compound.read(TAG_ITEM, ItemStack.CODEC).orElseGet(AetherstrikeRocketEntity::getDefaultItem));
 		} else {
 			this.entityData.set(ITEM, getDefaultItem());
 		}

@@ -8,8 +8,8 @@ import net.minecraft.world.item.trading.VillagerTrades;
 
 public class BoarwarfSilversmithProfession extends AbstractBoarwarfProfession {
 	@Override
-	public VillagerTrades.ItemListing[] getTrades(Boarwarf boarwarf) {
-		return new VillagerTrades.ItemListing[]{
+	public cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[] getTrades(Boarwarf boarwarf) {
+		return new cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[]{
 			ESEntityUtil.simpleTrade(ESItems.AETHERSENT_INGOT.get(), 1, ESItems.STARLIGHT_SILVER_COIN.get(), 2, 10),
 			ESEntityUtil.simpleTrade(ESItems.DEEPSILVER_INGOT.get(), 1, ESItems.STARLIGHT_SILVER_COIN.get(), 3, 10),
 			ESEntityUtil.simpleTrade(ESItems.THERMAL_SPRINGSTONE_INGOT.get(), 1, ESItems.STARLIGHT_SILVER_COIN.get(), 3, 10),

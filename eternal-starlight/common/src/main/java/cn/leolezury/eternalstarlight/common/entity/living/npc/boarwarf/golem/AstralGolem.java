@@ -307,7 +307,6 @@ public class AstralGolem extends AbstractGolem implements NeutralMob {
 		FlyingPathNavigation navigation = new FlyingPathNavigation(this, level);
 		navigation.setCanOpenDoors(true);
 		navigation.setCanFloat(true);
-		navigation.setCanPassDoors(true);
 		return navigation;
 	}
 

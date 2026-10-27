@@ -80,7 +80,6 @@ public class Freeze extends Monster implements RangedAttackMob {
 		};
 		navigation.setCanOpenDoors(true);
 		navigation.setCanFloat(true);
-		navigation.setCanPassDoors(true);
 		return navigation;
 	}
 

@@ -24,26 +24,12 @@ public class BookProgressions extends SavedData {
 		return progressions;
 	}
 
-	public static SavedData.Factory<BookProgressions> factory(ServerLevel serverLevel) {
-		return new SavedData.Factory<>(BookProgressions::new, (compoundTag, lookup) -> load(serverLevel, compoundTag), null);
-	}
-
-	public static BookProgressions load(ServerLevel serverLevel, CompoundTag compoundTag) {
+	public static final Codec<BookProgressions> CODEC = ProgressionInstance.LIST_CODEC.xmap(list -> {
 		BookProgressions progression = new BookProgressions();
-		if (compoundTag.contains(TAG_PROGRESSIONS)) {
-			ProgressionInstance.LIST_CODEC.parse(NbtOps.INSTANCE, compoundTag.get(TAG_PROGRESSIONS))
-				.resultOrPartial(s -> EternalStarlight.LOGGER.warn("Failed to parse Book Progressions: {}", s))
-				.ifPresent(list -> list.forEach(instance -> progression.getProgressions().put(instance.id(), Sets.newHashSet(instance.unlocked()))));
-		}
+		list.forEach(instance -> progression.getProgressions().put(instance.id(), Sets.newHashSet(instance.unlocked())));
 		return progression;
-	}
-
-	@Override
-	public CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider) {
-		List<ProgressionInstance> progressions = getProgressions().entrySet().stream().map(entry -> new ProgressionInstance(entry.getKey(), Lists.newArrayList(entry.getValue()))).toList();
-		compoundTag.store(TAG_PROGRESSIONS, ProgressionInstance.LIST_CODEC, progressions);
-		return compoundTag;
-	}
+	}, progression -> progression.getProgressions().entrySet().stream().map(entry -> new ProgressionInstance(entry.getKey(), Lists.newArrayList(entry.getValue()))).toList());
+	public static final net.minecraft.world.level.saveddata.SavedDataType<BookProgressions> TYPE = new net.minecraft.world.level.saveddata.SavedDataType<>(EternalStarlight.id("book_progressions"), BookProgressions::new, CODEC, null);
 
 	private record ProgressionInstance(UUID id, List<Identifier> unlocked) {
 		public static final Codec<ProgressionInstance> CODEC = RecordCodecBuilder.create((instance) -> instance.group(

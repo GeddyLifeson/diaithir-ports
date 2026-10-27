@@ -93,7 +93,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	}
 
 	public BoarwarfType getBoarwarfType() {
-		return level().registryAccess().lookupOrThrow(ESRegistries.BOARWARF_TYPE).get(getTypeId());
+		return level().registryAccess().lookupOrThrow(ESRegistries.BOARWARF_TYPE).getValue(getTypeId());
 	}
 
 	public void setTypeId(Identifier typeId) {
@@ -114,7 +114,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	}
 
 	public AbstractBoarwarfProfession getProfession() {
-		return ESBoarwarfProfessions.PROFESSIONS.registry().get(getProfessionId());
+		return ESBoarwarfProfessions.PROFESSIONS.registry().getValue(getProfessionId());
 	}
 
 	public void setProfessionId(Identifier professionId) {
@@ -138,10 +138,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (ESPortCompat.has(compoundTag, TAG_OFFERS)) {
-			DataResult<MerchantOffers> parsed = MerchantOffers.CODEC.parse(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_OFFERS));
-			parsed.resultOrPartial(Util.prefix("Failed to load offers: ", EternalStarlight.LOGGER::warn)).ifPresent((merchantOffers) -> this.offers = merchantOffers);
-		}
+		compoundTag.read(TAG_OFFERS, MerchantOffers.CODEC).ifPresent(merchantOffers -> this.offers = merchantOffers);
 		setTypeId(Identifier.read(compoundTag.getStringOr(TAG_TYPE, "")).getOrThrow());
 		setProfessionId(Identifier.read(compoundTag.getStringOr(TAG_PROFESSION, "")).getOrThrow());
 		restockCooldown = compoundTag.getIntOr(TAG_RESTOCK_COOLDOWN, 0);
@@ -415,7 +412,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		}
 	}
 
-	protected void addTrades(MerchantOffers original, VillagerTrades.ItemListing[] newTrades, int maxNumbers) {
+	protected void addTrades(MerchantOffers original, cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[] newTrades, int maxNumbers) {
 		Set<Integer> set = Sets.newHashSet();
 		if (newTrades.length > maxNumbers) {
 			while (set.size() < maxNumbers) {
@@ -428,7 +425,7 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 		}
 
 		for (Integer integer : set) {
-			VillagerTrades.ItemListing villagertrades$itrade = newTrades[integer];
+			cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing villagertrades$itrade = newTrades[integer];
 			MerchantOffer merchantoffer = villagertrades$itrade.getOffer(this, this.random);
 			if (merchantoffer != null) {
 				original.add(merchantoffer);
@@ -495,5 +492,10 @@ public class Boarwarf extends PathfinderMob implements Npc, Merchant {
 
 	public static boolean checkBoarwarfSpawnRules(EntityType<? extends Boarwarf> type, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random) {
 		return checkMobSpawnRules(type, level, spawnType, pos, random) && ESConfig.INSTANCE.mobsConfig.boarwarf.canSpawn();
+	}
+
+	@Override
+	public boolean stillValid(net.minecraft.world.entity.player.Player player) {
+		return this.isAlive() && this.getTradingPlayer() == player && player.distanceToSqr(this) <= 64.0;
 	}
 }

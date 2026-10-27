@@ -273,7 +273,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 			ESPortCompat.putUUID(compoundTag, TAG_TARGET, target.getUUID());
 		}
 		if (this.firedFromWeapon != null && !this.firedFromWeapon.isEmpty()) {
-			compoundTag.put(TAG_WEAPON, firedFromWeapon.save(registryAccess(), new CompoundTag()));
+			compoundTag.store(TAG_WEAPON, ItemStack.CODEC, firedFromWeapon);
 		}
 	}
 
@@ -287,7 +287,7 @@ public class ChainOfSouls extends Projectile implements Grappling {
 			targetId = ESPortCompat.getUUID(compoundTag, TAG_TARGET);
 		}
 		if (ESPortCompat.has(compoundTag, TAG_WEAPON)) {
-			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.childOrEmpty(TAG_WEAPON)).orElse(null);
+			firedFromWeapon = compoundTag.read(TAG_WEAPON, ItemStack.CODEC).orElse(null);
 		} else {
 			firedFromWeapon = null;
 		}

@@ -6,7 +6,7 @@ import net.minecraft.world.item.trading.VillagerTrades;
 import net.minecraft.world.item.Items;
 
 public class GatekeeperTrades {
-	public static final VillagerTrades.ItemListing[] TRADES = new VillagerTrades.ItemListing[]{
+	public static final cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[] TRADES = new cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[]{
 		ESEntityUtil.simpleTrade(Items.IRON_INGOT, 2, ESItems.STARLIGHT_SILVER_COIN.get(), 1, 20),
 		ESEntityUtil.simpleTrade(Items.EMERALD, 1, ESItems.STARLIGHT_SILVER_COIN.get(), 1, 20),
 		ESEntityUtil.simpleTrade(ESItems.STARLIGHT_SILVER_COIN.get(), 1, ESItems.SEEKING_EYE.get(), 5, 20),

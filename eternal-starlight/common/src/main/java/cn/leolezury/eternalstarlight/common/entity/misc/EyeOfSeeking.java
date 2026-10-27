@@ -192,7 +192,7 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 
 	@Override
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
-		compoundTag.put(TAG_ITEM, this.getItem().save(this.registryAccess()));
+		compoundTag.store(TAG_ITEM, ItemStack.CODEC, this.getItem());
 		getTarget().ifPresent(pos -> compoundTag.putLong(TAG_TARGET, pos.asLong()));
 		if (ownerId != null) {
 			ESPortCompat.putUUID(compoundTag, TAG_OWNER, ownerId);
@@ -202,7 +202,7 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		if (ESPortCompat.has(compoundTag, TAG_ITEM)) {
-			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.childOrEmpty(TAG_ITEM)).orElse(this.getDefaultItem()));
+			this.setItem(compoundTag.read(TAG_ITEM, ItemStack.CODEC).orElse(this.getDefaultItem()));
 		} else {
 			this.setItem(this.getDefaultItem());
 		}

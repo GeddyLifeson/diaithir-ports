@@ -221,10 +221,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		if (ESPortCompat.has(compoundTag, TAG_OFFERS)) {
-			DataResult<MerchantOffers> parsed = MerchantOffers.CODEC.parse(this.registryAccess().createSerializationContext(NbtOps.INSTANCE), compoundTag.get(TAG_OFFERS));
-			parsed.resultOrPartial(Util.prefix("Failed to load offers: ", EternalStarlight.LOGGER::warn)).ifPresent((merchantOffers) -> this.offers = merchantOffers);
-		}
+		compoundTag.read(TAG_OFFERS, MerchantOffers.CODEC).ifPresent(merchantOffers -> this.offers = merchantOffers);
 		gatekeeperName = compoundTag.getStringOr(TAG_GATEKEEPER_NAME, "");
 		fightTarget = compoundTag.getStringOr(TAG_FIGHT_TARGET, "");
 		if (ESPortCompat.has(compoundTag, TAG_STANDARD_FIGHT)) {
@@ -830,7 +827,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	protected void addTrades() {
 		MerchantOffers merchantoffers = this.getOffers();
 		this.addTrades(merchantoffers, GatekeeperTrades.TRADES, 50);
-		this.addTrades(merchantoffers, new VillagerTrades.ItemListing[]{
+		this.addTrades(merchantoffers, new cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[]{
 			ESEntityUtil.simpleTrade(
 				new ItemStack(ESItems.STARLIGHT_SILVER_COIN.get(), 10),
 				Util.make(() -> {
@@ -843,7 +840,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 		}, 50);
 	}
 
-	protected void addTrades(MerchantOffers original, VillagerTrades.ItemListing[] newTrades, int maxNumbers) {
+	protected void addTrades(MerchantOffers original, cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[] newTrades, int maxNumbers) {
 		Set<Integer> set = new HashSet<>();
 		if (newTrades.length > maxNumbers) {
 			while (set.size() < maxNumbers) {
@@ -856,7 +853,7 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 		}
 
 		for (Integer integer : set) {
-			VillagerTrades.ItemListing trade = newTrades[integer];
+			cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing trade = newTrades[integer];
 			MerchantOffer merchantoffer = trade.getOffer(this, this.random);
 			if (merchantoffer != null) {
 				original.add(merchantoffer);
@@ -913,5 +910,10 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	@Override
 	public boolean isClientSide() {
 		return this.level().isClientSide();
+	}
+
+	@Override
+	public boolean stillValid(net.minecraft.world.entity.player.Player player) {
+		return this.isAlive() && this.getTradingPlayer() == player && player.distanceToSqr(this) <= 64.0;
 	}
 }

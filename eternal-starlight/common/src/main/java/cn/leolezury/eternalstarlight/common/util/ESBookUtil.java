@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class ESBookUtil {
 	public static BookProgressions getOrCreateBookProgressions(ServerLevel serverLevel) {
-		return serverLevel.getDataStorage().computeIfAbsent(BookProgressions.factory(serverLevel), "book_progressions");
+		return serverLevel.getDataStorage().computeIfAbsent(BookProgressions.TYPE);
 	}
 
 	public static Set<Identifier> getUnlockedParts(ServerPlayer player) {

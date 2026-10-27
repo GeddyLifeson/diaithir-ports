@@ -14,8 +14,8 @@ import net.minecraft.world.item.alchemy.Potions;
 
 public class BoarwarfDruidProfession extends AbstractBoarwarfProfession {
 	@Override
-	public VillagerTrades.ItemListing[] getTrades(Boarwarf boarwarf) {
-		return new VillagerTrades.ItemListing[]{
+	public cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[] getTrades(Boarwarf boarwarf) {
+		return new cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing[]{
 			ESEntityUtil.simpleTrade(Items.GLISTERING_MELON_SLICE, 2, ESItems.STARLIGHT_SILVER_COIN.get(), 1, 20),
 			ESEntityUtil.simpleTrade(Items.FERMENTED_SPIDER_EYE, 2, ESItems.STARLIGHT_SILVER_COIN.get(), 1, 20),
 			ESEntityUtil.simpleTrade(Items.BLAZE_POWDER, 2, ESItems.STARLIGHT_SILVER_COIN.get(), 1, 20),

@@ -59,7 +59,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Optional;
 
-public class Ectostone extends Monster implements MultiBehaviorUser, VariantHolder<Holder<EctostoneVariant>> {
+public class Ectostone extends Monster implements MultiBehaviorUser {
 	private static final String TAG_VARIANT = "variant";
 	private static final String TAG_DORMANT = "dormant";
 	private static final String TAG_FLIGHT_ALTITUDE = "flight_altitude";
@@ -111,7 +111,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
-		builder.define(VARIANT, ESEctostoneVariants.GRIMSTONE.location().toString());
+		builder.define(VARIANT, ESEctostoneVariants.GRIMSTONE.identifier().toString());
 		builder.define(DORMANT, false);
 		builder.define(BEHAVIOR_STATE, 0);
 		builder.define(BEHAVIOR_TICKS, 0);
@@ -127,7 +127,6 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 		};
 		navigation.setCanOpenDoors(true);
 		navigation.setCanFloat(true);
-		navigation.setCanPassDoors(true);
 		return navigation;
 	}
 
@@ -177,7 +176,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 
 	public Holder<EctostoneVariant> getVariant() {
 		Registry<EctostoneVariant> variants = level().registryAccess().lookupOrThrow(ESRegistries.ECTOSTONE_VARIANT);
-		Optional<Holder.Reference<EctostoneVariant>> optional = variants.getHolder(getVariantId());
+		Optional<Holder.Reference<EctostoneVariant>> optional = variants.get(getVariantId());
 		return optional.isPresent() ? optional.get() : EctostoneVariant.getDefault(level().registryAccess());
 	}
 
@@ -325,7 +324,7 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 	}
 
 	@Override
-	public boolean hurt(@NotNull DamageSource source, float amount) {
+	public boolean hurtServer(ServerLevel hurtServerLevel, @NotNull DamageSource source, float amount) {
 		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
 			return super.hurtServer(hurtServerLevel, source, amount);
 		}

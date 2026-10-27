@@ -240,7 +240,7 @@ public abstract class Whip extends Entity implements TraceableEntity {
 			ESPortCompat.putUUID(compoundTag, TAG_OWNER, ownerId);
 		}
 		if (this.firedFromWeapon != null && !this.firedFromWeapon.isEmpty()) {
-			compoundTag.put(TAG_WEAPON, firedFromWeapon.save(registryAccess(), new CompoundTag()));
+			compoundTag.store(TAG_WEAPON, ItemStack.CODEC, firedFromWeapon);
 		}
 		compoundTag.putFloat(TAG_DAMAGE_SCALE, damageScale);
 	}
@@ -252,7 +252,7 @@ public abstract class Whip extends Entity implements TraceableEntity {
 			ownerId = ESPortCompat.getUUID(compoundTag, TAG_OWNER);
 		}
 		if (ESPortCompat.has(compoundTag, TAG_WEAPON)) {
-			firedFromWeapon = ItemStack.parse(registryAccess(), compoundTag.childOrEmpty(TAG_WEAPON)).orElse(null);
+			firedFromWeapon = compoundTag.read(TAG_WEAPON, ItemStack.CODEC).orElse(null);
 			if (firedFromWeapon != null) {
 				this.entityData.set(FOIL, firedFromWeapon.hasFoil());
 			}

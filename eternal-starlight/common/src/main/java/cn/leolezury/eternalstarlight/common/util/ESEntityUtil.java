@@ -77,11 +77,11 @@ public class ESEntityUtil {
 		entity.yHeadRotO = entity.getYRot();
 	}
 
-	public static VillagerTrades.ItemListing simpleTrade(Item cost, int costCount, Item result, int resultCount, int maxUses) {
+	public static cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing simpleTrade(Item cost, int costCount, Item result, int resultCount, int maxUses) {
 		return simpleTrade(new ItemStack(cost, costCount), new ItemStack(result, resultCount), maxUses);
 	}
 
-	public static VillagerTrades.ItemListing simpleTrade(ItemStack cost, ItemStack result, int maxUses) {
+	public static cn.leolezury.eternalstarlight.common.entity.living.npc.trade.ESTradeListing simpleTrade(ItemStack cost, ItemStack result, int maxUses) {
 		return (entity, random) -> new MerchantOffer(new ItemCost(cost.getItem(), cost.getCount()), result, maxUses, 0, 0);
 	}
 
