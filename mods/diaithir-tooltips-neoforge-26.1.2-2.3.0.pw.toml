@@ -1,8 +1,0 @@
-name = "diaithir-tooltips-neoforge"
-filename = "diaithir-tooltips-neoforge-26.1.2-2.3.0.jar"
-side = "both"
-
-[download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/project-thread-ysjkxr/client/diaithir-tooltips-neoforge-26.1.2-2.3.0.jar"
-hash-format = "sha256"
-hash = "f04e381c50127050cb4c42d5ac61d977909bcd505a74c70eab4fdf5b1ca33eac"
