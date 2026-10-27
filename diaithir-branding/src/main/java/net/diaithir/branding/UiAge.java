@@ -22,12 +22,13 @@ import net.neoforged.neoforge.event.AddPackFindersEvent;
  * The Age whose screen look the shared screens (vanilla, tooltips and Jade, FTB Quests, Sophisticated Core) wear.
  * <p>
  * diaithir/ui_ages/{i..vii,rodos}.zip hold each Age's look of those screens (docs/ui/UI_SCHEMA.md section 6). The config
- * {@code uiAge} is a fixed Age ("I" to "VII", "RODOS") or "auto", which follows the player's Codex: the Codex stamps every
+ * {@code uiAge} is a fixed Age ("I" to "VIII", "RODOS") or "auto", which follows the era the server sent from the tech tree
+ * (diaithir_ages ClientStory.era) and falls back to the player's Codex: the Codex stamps every
  * copy with its form in custom_model_data (a string), and the carried copy's form is the player's Age. A change selects the
  * matching zip on top of the other resource packs and reloads the resources, which is once per Age.
  */
 final class UiAge {
-    static final List<String> AGES = List.of("I", "II", "III", "IV", "V", "VI", "VII", "RODOS");
+    static final List<String> AGES = List.of("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "RODOS");
     private static final Set<String> IDS = Set.copyOf(AGES.stream().map(UiAge::packId).toList());
     static final ModConfigSpec SPEC;
     private static final ModConfigSpec.ConfigValue<String> CONFIG;
@@ -63,8 +64,20 @@ final class UiAge {
         if (s.trim().equalsIgnoreCase("TELLING")) return "I";  // the pre-Age form
         var t = s.trim().toUpperCase(Locale.ROOT).replaceFirst("^(AGE|FORM)[_ :-]*", "");
         if (AGES.contains(t)) return t;
-        if (t.length() == 1 && t.charAt(0) >= '1' && t.charAt(0) <= '7') return AGES.get(t.charAt(0) - '1');
+        if (t.length() == 1 && t.charAt(0) >= '1' && t.charAt(0) <= '8') return AGES.get(t.charAt(0) - '1');
         return null;
+    }
+
+    private static java.lang.reflect.Field eraField;
+
+    /** The era the server sent (diaithir_ages ClientStory.era, from the tech tree), read by reflection so the mods stay independent. */
+    private static String earnedAge() {
+        try {
+            if (eraField == null) eraField = Class.forName("net.diaithir.ages.client.ClientStory", false, UiAge.class.getClassLoader()).getField("era");
+            return parse((String) eraField.get(null));
+        } catch (ReflectiveOperationException | RuntimeException | LinkageError e) {
+            return null;
+        }
     }
 
     private static String carriedAge(Inventory inv) {
@@ -85,6 +98,7 @@ final class UiAge {
         if (!firstCheck && ++tick % 40 != 0) return;
         if (mc.getOverlay() != null) return;  // wait for the first resource load
         String want = parse(CONFIG.get());
+        if (want == null) want = earnedAge();
         if (want == null && mc.player != null) want = carriedAge(mc.player.getInventory());
         if (want == null) want = firstCheck ? applied : null;
         firstCheck = false;
@@ -97,6 +111,7 @@ final class UiAge {
         repo.setSelected(ids);
         mc.options.updateResourcePacks(repo);
         applied = want;
+        org.slf4j.LoggerFactory.getLogger("diaithirbranding").info("Shared screens now wear the Age {} look", want);
         mc.reloadResourcePacks();
     }
 }
