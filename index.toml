@@ -2,11 +2,15 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/DistantHorizons.toml"
-hash = "1c08872c2a50723d299a755a2bc7201a550ad96fdfc6edc7cc50dba567f313fe"
+hash = "0816bc78d59db401dd3c18ab03b3a39728fbab9b2a982efabf11b5736da6e348"
 
 [[files]]
 file = "config/actuallyadditions-common.toml"
 hash = "c1b91664337503158c7b64da0741ab500fea1bd082554c67f5372fc5f0933f5a"
+
+[[files]]
+file = "config/c2me.toml"
+hash = "af2809c5392664e5452d12c55e75fc98bf7d49da08d027ae340553da99fef169"
 
 [[files]]
 file = "config/entityculling.json"
@@ -79,6 +83,10 @@ hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
 [[files]]
 file = "kubejs/assets/betterf3/lang/en_us.json"
 hash = "87bfd11e1db402c2381c3099c2e42b6aae97e3f229d4620acbcbc7e62845ff98"
+
+[[files]]
+file = "kubejs/assets/biomesoplenty/lang/en_us.json"
+hash = "90d46f57d65757f14bfc2a6f85874cd51c3ff3b7f4e5906e13378eeab6047a7d"
 
 [[files]]
 file = "kubejs/assets/deepworlds/textures/block/charter_stone.png"
@@ -753,6 +761,10 @@ file = "kubejs/assets/diaithir_worlds/lang/en_us.json"
 hash = "634bdb98d805ead067103aed1c51bded488178504d4ef9e860170efaf6b3bf99"
 
 [[files]]
+file = "kubejs/assets/minecraft/lang/en_us.json"
+hash = "cb0ae335c542908f99f1e1887a90ddf4f054a3da1187f90edf31aeedfe68f539"
+
+[[files]]
 file = "kubejs/assets/minecraft/sounds.json"
 hash = "0b00d4e6403ff18d2114722b5b86915a7a4bf075f8695077d85a95d614013e20"
 
@@ -767,6 +779,10 @@ hash = "d9f1a089a0d21a9fe8d20f56b41722ca9370d9b0c550739f7146aa8fff1af384"
 [[files]]
 file = "kubejs/assets/pointblank/lang/en_us.json"
 hash = "9804a6d29af85a90d3220c97522ccc512edcaffa92448b1a0e3cc16526c152e1"
+
+[[files]]
+file = "kubejs/assets/regions_unexplored/lang/en_us.json"
+hash = "9cf55aee9e30f5f1aff97c59728a9983c5c5502b264cc4e86efeb33ce933353d"
 
 [[files]]
 file = "kubejs/assets/roulettecasino/lang/en_us.json"
@@ -4122,19 +4138,19 @@ hash = "a66cfaee7ac409a4546bfd83bc95c5cf0429e8bd9250099fe578a4b502fa2020"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/arrow_cross.json"
-hash = "06a9dbe24a6120f88b4085179dba71a57eb1b22526e10c000a65ca20594adcaf"
+hash = "c17097ab2411fe9307a17571daec40c319c1291b741b3b8c0d5fec9364bac181"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/arrow_diagonal.json"
-hash = "a01ae091191de61dee38c5ff2732249e70c02eec15dbc74f7fa7fa6e38c4f5e7"
+hash = "4ae4a18052996aaaadc1f05fea205c31939a5e8493650f663642326c99f69d29"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/arrow_left.json"
-hash = "4bf810ec8c94d2b7d7b1a2635bc9b8a6be49b11de24d8c7a3f2d8eeb2b39b973"
+hash = "23aa7fce325bc7c277537e4f7ee5a30fb730943027add064b0780b81733711ab"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/arrow_right.json"
-hash = "cb727887d610035e290d7841f0629173683f9ac19e617841145622482456a13d"
+hash = "4903d25cf243a8799af05992fc2d5307be2a33b9491d07ed870b92956a491ba4"
 
 [[files]]
 file = "kubejs/data/diaithir_integration/recipe/bridge/herb_dust/aechor_cutting_mekanism_crushing.json"
@@ -10774,7 +10790,7 @@ hash = "079b89f1b95b95b5e065eb3cd0dd9024f07cfb7dff103fc1f136f29812692a47"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_feast.js"
-hash = "eb8279f80bc256a4cc93370e145cd72051a91ad1b60adc98ac8031bea83cd3ce"
+hash = "a0a98b4996d1f40e339ab2ae101b6be13bf95ae313f2c647cf9ab13683e1c0a0"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_unify.js"
@@ -10790,7 +10806,7 @@ hash = "1706472bcf603c87b5b23896733d3918f6b65c9fc2f65d42f0aa11188422dfa3"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup.js"
-hash = "6ff1bcc29e21b4e3a9354ae86adde5f5d389fdd87a9f40be0f54d27261e24977"
+hash = "2b40749dfcad6a7ea49287db018390b543dae2a67dc82da6808126c42c5c1846"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/catchup_core.js"
@@ -10806,7 +10822,7 @@ hash = "426895198081cbbb073d7d43c88ba15ebeff57a94a5cac2b561d1cb02bdcc451"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/flood.js"
-hash = "16534af7400c3026696029e1fd80ef8929a3559bff3380eb48cfa0573cbbf8c2"
+hash = "6bfc56434372da0ce8a2882f910110f0eb50cc082694550ee5abb67394ce9424"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/flood_core.js"
@@ -10814,11 +10830,15 @@ hash = "0f63e9cc13c6b396341e01103daa70c0c8afb03558a9e39b0aa4b2911fc66127"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/melt.js"
-hash = "175238f049f8966874eaa3a349317ff6e70fbc9c999a28de9272e031545b839b"
+hash = "de7de17c25bb9ed9eccfd98428989c839ee7a91141a941018f79b095f5c83c49"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/melt_core.js"
 hash = "02164e4f56698d62e83891ccb176899e9607da4e33ac2e968c682638b6ec7428"
+
+[[files]]
+file = "kubejs/server_scripts/earth_timeline/queue_core.js"
+hash = "fd9de06a48a449464b50e256b80d980dd05fb63b773ae6282dc6fb70844f05ba"
 
 [[files]]
 file = "kubejs/server_scripts/speuran/age_gate.js"
@@ -10830,7 +10850,7 @@ hash = "c6a4785311f85767de828687fcb21a0f6e1929325ed32bc4eb5b04f43845a8c0"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/bridge_items.js"
-hash = "d6c9082b8076dae76dabfe1cc902d4499c0a865700a67181adce2154b7c53b36"
+hash = "20147440d1c0fddbe6032739d39986a5e4476acb3bbce28ec26722b23d21f4ee"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/coals.js"
@@ -10838,7 +10858,7 @@ hash = "c289e80c63dc8ae31bec523017ecefc52a8087c982d52f2d05a5e31877263688"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/lorgchraoibhe_staves.js"
-hash = "8481bd6e46c08ff41336617ce922324145c52b8026008c2e2b2c40bfa2a23ed2"
+hash = "49d729ec0f92185200ebe23447e49eec4d860254f139db942cadacd84a94f4aa"
 
 [[files]]
 file = "kubejs/startup_scripts/diaithir/mekanism_processing.js"
@@ -11660,8 +11680,8 @@ hash = "5ae188ee00c257bde7330af03a137034b3dd96bc7e25ddf89a59c93a4be8e0e4"
 metafile = true
 
 [[files]]
-file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.6.jar"
-hash = "01c4fd97fc83f5e1e9fa99eed3caae8d24e6de4a7d326617e0764a9b5b4fbc39"
+file = "mods/create-neoforge-26.1.2-6.0.9-diaithir.8.jar"
+hash = "9b1528b264c946a89a41a2a363def8f821cdc196d7e3435c04ebd9f6c0e3f457"
 
 [[files]]
 file = "mods/cristellib-neoforge-26.1.2-3.1.13.pw.toml"
@@ -11723,8 +11743,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.2.jar"
 hash = "e90b509b4dd7c39f9f2baeab1943ca35191e5246d02aa6d927713a5cc76b33e8"
 
 [[files]]
-file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.1.jar"
-hash = "9a2c80371966952ec9db317547b3b8fbd3f4e6c24f01808b476c4de94969a5b3"
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
+hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
@@ -11732,8 +11752,8 @@ hash = "4d3dd3836893f1454d887389bf2b31a6cab70bfeefb469cac52e7d6c6a22eefd"
 metafile = true
 
 [[files]]
-file = "mods/diaithir-bridges-neoforge-26.1.2-1.1.0.jar"
-hash = "85f6b727014d997515eb27f91e8235138fe316141836c69b0284f81bf7c90466"
+file = "mods/diaithir-bridges-neoforge-26.1.2-1.1.2.jar"
+hash = "0f888867f425e4164ee86329115dd6da1dc26ccb7845a3c8ef4b39590526a94b"
 
 [[files]]
 file = "mods/diaithir-compat-neoforge-26.1.2-1.0.0.jar"
@@ -11749,8 +11769,8 @@ file = "mods/diaithir-nemesis-neoforge-26.1.2-1.0.0.jar"
 hash = "070dd74217842d2c8c1e77d55ad505a23586603d875c82146a148e85cc0d2f9f"
 
 [[files]]
-file = "mods/diaithir-perf-neoforge-26.1.2-0.3.0.jar"
-hash = "1f92060ccb86e5a8b9406f9e75502fb0fff9e964e6fa1125325bab4f235e80e5"
+file = "mods/diaithir-perf-neoforge-26.1.2-0.3.1.jar"
+hash = "06a6e19a9f535a30eb006da3b8664f969d08007c09bdc25d7b732c52ee3311ec"
 
 [[files]]
 file = "mods/domum_ornamentum-1.0.0-diaithir.jar"

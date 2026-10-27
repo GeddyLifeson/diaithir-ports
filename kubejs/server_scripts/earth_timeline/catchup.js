@@ -9,11 +9,12 @@
 (function () {
   const FLAGS = ['vegetation_catchup', 'farmland']
   const PER_TICK = 1
-  const RETRIES = 40
+  const BUDGET_MS = 6 // work stops for the tick once this much time is spent (queue_core.js)
+  const RETRIES = 100
   const NEAR = 6
+  const WORK_RADIUS = 8 // a queued chunk further than this from every player is dropped
   const SCALE = 5.0
-  const QUEUE = []
-  const QUEUED = {}
+  let Q = null
   const POS = Java.loadClass('net.minecraft.core.BlockPos')
   const HEIGHTMAP = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types').WORLD_SURFACE
   const BLOCKS = Java.loadClass('net.minecraft.world.level.block.Blocks')
@@ -41,11 +42,9 @@
     } catch (e) { console.warn('[earth_timeline] no config file: catch-up flags stay off') }
   })
 
-  function queue(cx, cz) {
-    let k = cx + ',' + cz
-    if (QUEUED[k]) return
-    QUEUED[k] = true
-    QUEUE.push([cx, cz, 0])
+  function queue() {
+    if (!Q && global.etNS.etMakeQueue) Q = global.etNS.etMakeQueue({ max: 128, retries: RETRIES, scan: 32 })
+    return Q
   }
 
   function anyOn(server) { return FLAGS.some(f => flag(server, f)) }
@@ -58,12 +57,7 @@
     let key = String(era.yearKey())
     if (key === String(server.persistentData.getString(YEAR_KEY))) return
     server.persistentData.putString(YEAR_KEY, key)
-    server.players.forEach(p => {
-      if (!global.etNS.etIsOverworld(p.level)) return
-      let cx = Math.floor(p.x) >> 4, cz = Math.floor(p.z) >> 4
-      for (let x = cx - NEAR; x <= cx + NEAR; x++)
-        for (let z = cz - NEAR; z <= cz + NEAR; z++) queue(x, z)
-    })
+    global.etNS.etQueueLoadedAround(server, queue(), NEAR)
   }
 
   try {
@@ -73,7 +67,8 @@
       if (level.isClientSide() || !s || !global.etNS.etIsOverworld(level) || !global.etNS.etEra) return
       if (!anyOn(s) || s.persistentData.getIntOr(global.etNS.etYearKey, -1) < 0) return
       let c = e.getChunk().getPos()
-      queue(c.x, c.z)
+      let q = queue()
+      if (q && global.etNS.etNearPlayer(s, c.x, c.z, WORK_RADIUS)) q.add(c.x, c.z)
     })
   } catch (e) { console.warn('[earth_timeline] chunk load event unavailable: catch-up only round players') }
 
@@ -84,7 +79,7 @@
         .then(Commands.argument('name', Arguments.STRING.create(event))
           .then(Commands.argument('on', Arguments.BOOLEAN.create(event)).executes(ctx => {
             let name = Arguments.STRING.getResult(ctx, 'name')
-            let on = Arguments.BOOLEAN.getResult(ctx, 'on')
+            let on = String(Arguments.BOOLEAN.getResult(ctx, 'on')) === 'true'
             if (FLAGS.indexOf(name) < 0) { ctx.source.sendSystemMessage(Component.of('flags: ' + FLAGS.join(', '))); return 0 }
             ctx.source.server.persistentData.putBoolean('earth_timeline_flag_' + name, on)
             ctx.source.sendSystemMessage(Component.of(`earth_timeline ${name} ${on ? 'on' : 'off'}`))
@@ -95,18 +90,27 @@
 
   ServerEvents.tick(event => {
     let era = global.etNS.etEra
-    if (!QUEUE.length || !era) return
+    let q = queue()
+    if (!q || !q.size() || !era) return
     let s = event.server
     let L = s.overworld()
-    for (let n = 0; n < PER_TICK && QUEUE.length; n++) {
-      let [cx, cz, tries] = QUEUE.shift()
-      if (!L.hasChunk(cx, cz) && tries < RETRIES) { QUEUE.push([cx, cz, tries + 1]); continue }
-      delete QUEUED[cx + ',' + cz]
-      if (!L.hasChunk(cx, cz) || global.etNS.etClaimed(s, cx, cz)) continue
-      let trees = flag(s, 'vegetation_catchup'), fields = flag(s, 'farmland')
-      if (!trees && !fields) continue
-      try { processChunk(L, era, cx, cz, trees, fields) } catch (e) { console.warn('[earth_timeline] catch-up failed in chunk ' + cx + ',' + cz + ': ' + e) }
-    }
+    let trees = flag(s, 'vegetation_catchup'), fields = flag(s, 'farmland')
+    if (!trees && !fields) { q.clear(); return }
+    q.run({
+      now: () => Date.now(),
+      // the rules read a block or two over the chunk edge (tree crowns, furrow neighbours): work only once all eight
+      // neighbours are loaded too, so a read can never pull a chunk in
+      loaded: (cx, cz) => {
+        for (let dx = -1; dx <= 1; dx++)
+          for (let dz = -1; dz <= 1; dz++) if (!L.hasChunk(cx + dx, cz + dz)) return false
+        return true
+      },
+      near: (cx, cz) => global.etNS.etNearPlayer(s, cx, cz, WORK_RADIUS),
+      work: (cx, cz) => {
+        if (global.etNS.etClaimed(s, cx, cz)) return
+        try { processChunk(L, era, cx, cz, trees, fields) } catch (e) { console.warn('[earth_timeline] catch-up failed in chunk ' + cx + ',' + cz + ': ' + e) }
+      }
+    }, PER_TICK, BUDGET_MS)
   })
 
   function processChunk(L, era, cx, cz, trees, fields) {

@@ -1,23 +1,26 @@
 // The sea follows the calendar. The year from the engine goes to Tellus (/diaithir_era), which floods any chunk generated
 // from then on. Chunks made earlier are caught up here as they load, and for the chunks round each player when the sea
 // rises: new water is placed only into air, down from the new surface (flood_core.js), so player blocks are never replaced.
-// Claimed chunks (FTB Chunks) are left as they are. Queue-driven, a few chunks a tick.
+// Claimed chunks (FTB Chunks) are left as they are. Queue-driven and throttled (queue_core.js): a few chunks and a few ms a
+// tick, only chunks that are already loaded and near a player; nothing here ever loads a chunk.
 // KubeJS 8: everything is wrapped, files share only `global`, and the server comes from ServerEvents.loaded (no Utils.server).
 // /et_year <lc> (op) does what the engine's year event does, for testing.
 (function () {
   const YEAR_KEY = 'earth_timeline_lc'
   const FLOOD_KEY = 'earth_timeline_flood'
   const VERTICAL_SCALE = 5.0 // metres per block of the Age I preset (world_scale 5)
-  const CHUNKS_PER_TICK = 4
-  const RETRIES = 200 // ticks a queued chunk may wait to finish loading (10 s: a chunk read from disk can be slow to become full)
-  const SWEEP_TICKS = 200 // every so often the chunks round each player are checked again, so a chunk reloaded later is caught up too
+  const CHUNKS_PER_TICK = 2
+  const BUDGET_MS = 4 // work stops for the tick once this much time is spent
+  const QUEUE_MAX = 256 // a longer queue drops its oldest chunks; they come back through the load event
+  const RETRIES = 200 // scans a queued chunk may wait to finish loading (a chunk read from disk can be slow to become full)
+  const SWEEP_TICKS = 1200 // every so often the chunks round each player are checked again, so a chunk reloaded later is caught up too
   const NEAR_CHUNKS = 10 // radius round a player caught up when the sea rises
+  const WORK_RADIUS = 12 // a queued chunk further than this from every player is dropped
 
   const ERA = (() => { try { return Java.loadClass('com.yucareux.tellus.era.EraRuntime') } catch (e) { return null } })()
   const POS = Java.loadClass('net.minecraft.core.BlockPos')
   const WATER = Java.loadClass('net.minecraft.world.level.block.Blocks').WATER.defaultBlockState()
-  const QUEUE = [] // [cx, cz] pairs waiting to be caught up
-  const QUEUED = {}
+  let Q = null // the throttled queue (queue_core.js shares etMakeQueue through global; made on first use, file order is not fixed)
   let sweepClock = 0
 
   global.etNS.etYearKey = YEAR_KEY
@@ -40,21 +43,36 @@
   }
   global.etNS.etClaimed = claimed
 
-  function queue(cx, cz) {
-    let k = cx + ',' + cz
-    if (QUEUED[k]) return
-    QUEUED[k] = true
-    QUEUE.push([cx, cz, 0])
+  function queue() {
+    if (!Q && global.etNS.etMakeQueue) Q = global.etNS.etMakeQueue({ max: QUEUE_MAX, retries: RETRIES, scan: 32 })
+    return Q
   }
 
-  function queueAroundPlayers(server) {
+  // True when (cx, cz) lies within `radius` chunks of a player in the overworld. Shared with melt.js and catchup.js.
+  function nearPlayer(server, cx, cz, radius) {
+    let near = false
+    server.players.forEach(p => {
+      if (near || !isOverworld(p.level)) return
+      if (Math.abs((Math.floor(p.x) >> 4) - cx) <= radius && Math.abs((Math.floor(p.z) >> 4) - cz) <= radius) near = true
+    })
+    return near
+  }
+  global.etNS.etNearPlayer = nearPlayer
+
+  // Queues the chunks round each player that are loaded right now; one that loads later arrives through the load event.
+  function queueLoadedAround(server, q, radius) {
+    if (!q) return
+    let L = server.overworld()
     server.players.forEach(p => {
       if (!isOverworld(p.level)) return
       let cx = Math.floor(p.x) >> 4, cz = Math.floor(p.z) >> 4
-      for (let x = cx - NEAR_CHUNKS; x <= cx + NEAR_CHUNKS; x++)
-        for (let z = cz - NEAR_CHUNKS; z <= cz + NEAR_CHUNKS; z++) queue(x, z)
+      for (let x = cx - radius; x <= cx + radius; x++)
+        for (let z = cz - radius; z <= cz + radius; z++) if (L.hasChunk(x, z)) q.add(x, z)
     })
   }
+  global.etNS.etQueueLoadedAround = queueLoadedAround
+
+  function queueAroundPlayers(server) { queueLoadedAround(server, queue(), NEAR_CHUNKS) }
 
   function setYear(server, lc) {
     server.persistentData.putInt(YEAR_KEY, lc)
@@ -89,7 +107,8 @@
       if (level.isClientSide() || !isOverworld(level) || !global.etNS.etServer) return
       if (global.etNS.etServer.persistentData.getIntOr(FLOOD_KEY, 0) > 0) {
         let c = e.getChunk().getPos()
-        queue(c.x, c.z)
+        let q = queue()
+        if (q && nearPlayer(global.etNS.etServer, c.x, c.z, WORK_RADIUS)) q.add(c.x, c.z)
       }
     })
   } catch (e) { console.warn('[earth_timeline] chunk load event unavailable: only chunks round players are caught up') }
@@ -101,7 +120,7 @@
         .then(Commands.argument('lc', Arguments.INTEGER.create(event)).executes(ctx => {
           let lc = Arguments.INTEGER.getResult(ctx, 'lc')
           setYear(ctx.source.server, lc)
-          ctx.source.sendSystemMessage(Component.of(`earth_timeline year ${lc}, flood ${ERA ? ERA.floodBlocks(VERTICAL_SCALE) : '?'} blocks, ${QUEUE.length} chunks queued`))
+          ctx.source.sendSystemMessage(Component.of(`earth_timeline year ${lc}, flood ${ERA ? ERA.floodBlocks(VERTICAL_SCALE) : '?'} blocks, ${queue() ? queue().size() : 0} chunks queued`))
           return 1
         })))
     })
@@ -110,22 +129,23 @@
   ServerEvents.tick(event => {
     let s = event.server
     if (!global.etNS.etServer) global.etNS.etServer = s
-    if (!QUEUE.length) return
+    let q = queue()
+    if (!q || !q.size()) return
     let flood = s.persistentData.getIntOr(FLOOD_KEY, 0)
+    if (flood <= 0) { q.clear(); return }
     let L = s.overworld()
-    for (let n = 0; n < CHUNKS_PER_TICK && QUEUE.length; n++) {
-      let [cx, cz, tries] = QUEUE.shift()
-      if (flood > 0 && !L.hasChunk(cx, cz) && tries < RETRIES) { // a chunk just read from disk is not in the level yet
-        QUEUE.push([cx, cz, tries + 1])
-        continue
+    q.run({
+      now: () => Date.now(),
+      loaded: (cx, cz) => L.hasChunk(cx, cz),
+      near: (cx, cz) => nearPlayer(s, cx, cz, WORK_RADIUS),
+      work: (cx, cz) => {
+        if (claimed(s, cx, cz)) return
+        let isAir = (x, y, z) => L.getBlockState(new POS(x, y, z)).isAir()
+        let setWater = (x, y, z) => L.setBlock(new POS(x, y, z), WATER, 18) // 2 sync + 16 no neighbour updates
+        for (let x = cx << 4; x < (cx << 4) + 16; x++)
+          for (let z = cz << 4; z < (cz << 4) + 16; z++) global.etNS.etFloodColumn(isAir, setWater, x, z, flood)
       }
-      delete QUEUED[cx + ',' + cz]
-      if (flood <= 0 || !L.hasChunk(cx, cz) || claimed(s, cx, cz)) continue
-      let isAir = (x, y, z) => L.getBlockState(new POS(x, y, z)).isAir()
-      let setWater = (x, y, z) => L.setBlock(new POS(x, y, z), WATER, 18) // 2 sync + 16 no neighbour updates
-      for (let x = cx << 4; x < (cx << 4) + 16; x++)
-        for (let z = cz << 4; z < (cz << 4) + 16; z++) global.etNS.etFloodColumn(isAir, setWater, x, z, flood)
-    }
+    }, CHUNKS_PER_TICK, BUDGET_MS)
   })
 
   // Idempotent: a column already at the new level is left alone (its top block is no longer air). A chunk that was
@@ -134,7 +154,8 @@
     if (++sweepClock < SWEEP_TICKS) return
     sweepClock = 0
     let s = event.server
-    if (QUEUE.length || s.persistentData.getIntOr(FLOOD_KEY, 0) <= 0) return
+    let q = queue()
+    if (!q || q.size() || s.persistentData.getIntOr(FLOOD_KEY, 0) <= 0) return
     queueAroundPlayers(s)
   })
 })()
