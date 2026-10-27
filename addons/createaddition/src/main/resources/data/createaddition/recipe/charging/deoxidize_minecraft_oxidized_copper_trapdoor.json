@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:oxidized_copper_trapdoor",
+ "result": {
+  "id": "minecraft:weathered_copper_trapdoor"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

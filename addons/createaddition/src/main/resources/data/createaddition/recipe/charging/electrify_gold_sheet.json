@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "create:golden_sheet",
+ "result": {
+  "id": "createaddition:electrum_sheet"
+ },
+ "energy": 36000,
+ "max_charge_rate": 360
+}

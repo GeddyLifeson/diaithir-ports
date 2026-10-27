@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "create:oxidized_copper_shingle_slab",
+ "result": {
+  "id": "create:weathered_copper_shingle_slab"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

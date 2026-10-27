@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:book",
+ "result": {
+  "id": "minecraft:enchanted_book"
+ },
+ "energy": 1000000,
+ "max_charge_rate": 360
+}

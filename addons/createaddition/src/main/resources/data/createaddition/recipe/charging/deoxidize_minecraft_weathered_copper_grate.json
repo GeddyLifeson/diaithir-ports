@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:weathered_copper_grate",
+ "result": {
+  "id": "minecraft:exposed_copper_grate"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:exposed_chiseled_copper",
+ "result": {
+  "id": "minecraft:chiseled_copper"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

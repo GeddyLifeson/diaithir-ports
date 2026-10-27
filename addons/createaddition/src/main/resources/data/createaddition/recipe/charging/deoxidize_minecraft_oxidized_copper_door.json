@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:oxidized_copper_door",
+ "result": {
+  "id": "minecraft:weathered_copper_door"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "create:weathered_copper_shingle_stairs",
+ "result": {
+  "id": "create:exposed_copper_shingle_stairs"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

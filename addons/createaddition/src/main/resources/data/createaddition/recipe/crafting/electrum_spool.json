@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "S": "createaddition:spool",
+  "W": "#c:wires/electrum"
+ },
+ "pattern": [
+  " W ",
+  "WSW",
+  " W "
+ ],
+ "result": {
+  "id": "createaddition:electrum_spool"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "tconstruct"
+  }
+ ],
+ "type": "create:mixing",
+ "ingredients": [
+  "#c:obsidians",
+  "#c:ingots/cobalt",
+  "#c:ingots/copper",
+  "#c:ingots/copper"
+ ],
+ "results": [
+  {
+   "id": "tconstruct:hepatizon_ingot",
+   "count": 2
+  }
+ ]
+}

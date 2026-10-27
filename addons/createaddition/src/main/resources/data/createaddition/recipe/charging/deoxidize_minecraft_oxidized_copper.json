@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:oxidized_copper",
+ "result": {
+  "id": "minecraft:weathered_copper"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createaddition:copper_spool",
+  "#c:dusts/redstone",
+  "createaddition:biomass"
+ ],
+ "result": {
+  "id": "createaddition:festive_spool"
+ }
+}

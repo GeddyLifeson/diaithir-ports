@@ -1,0 +1,10 @@
+{
+ "type": "createaddition:rolling",
+ "ingredient": "#c:plates/iron",
+ "results": [
+  {
+   "id": "createaddition:iron_wire",
+   "count": 2
+  }
+ ]
+}

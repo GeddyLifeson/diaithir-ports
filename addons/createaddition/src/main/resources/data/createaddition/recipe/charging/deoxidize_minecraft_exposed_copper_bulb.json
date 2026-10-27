@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:exposed_copper_bulb",
+ "result": {
+  "id": "minecraft:copper_bulb"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

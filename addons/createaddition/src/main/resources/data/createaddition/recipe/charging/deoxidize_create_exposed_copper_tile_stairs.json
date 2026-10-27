@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "create:exposed_copper_tile_stairs",
+ "result": {
+  "id": "create:copper_tile_stairs"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

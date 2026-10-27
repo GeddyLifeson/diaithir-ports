@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "tconstruct"
+  }
+ ],
+ "type": "create:mixing",
+ "ingredients": [
+  "#c:ingots/cobalt",
+  "#c:ingots/cobalt",
+  "#c:ingots/cobalt",
+  "#c:ingots/netherite_scrap"
+ ],
+ "results": [
+  {
+   "id": "tconstruct:manyullyn_ingot",
+   "count": 4
+  }
+ ]
+}

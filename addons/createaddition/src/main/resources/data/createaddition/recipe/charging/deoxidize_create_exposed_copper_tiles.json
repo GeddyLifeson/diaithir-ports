@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "create:exposed_copper_tiles",
+ "result": {
+  "id": "create:copper_tiles"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

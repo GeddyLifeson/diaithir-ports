@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "S": "createaddition:spool",
+  "W": "#c:wires/copper"
+ },
+ "pattern": [
+  " W ",
+  "WSW",
+  " W "
+ ],
+ "result": {
+  "id": "createaddition:copper_spool"
+ }
+}

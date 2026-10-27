@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:exposed_cut_copper",
+ "result": {
+  "id": "minecraft:cut_copper"
+ },
+ "energy": 4000,
+ "max_charge_rate": 200
+}

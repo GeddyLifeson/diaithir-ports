@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT (code, from Create Crafts & Additions by mrh0); art original to the Diaithir pack"
+
+[[mods]]
+modId="diaithir_createaddition"
+version="${version}"
+displayName="Create Crafts & Additions (Diaithir port)"
+authors="mrh0 (original), Diaithir port"
+description='''Electricity for Create: wires, connectors, motors, alternators, rolling mill, tesla coil. Port to NeoForge 26.1 for the Diaithir Create port.'''
+
+[[dependencies.diaithir_createaddition]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_createaddition]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_createaddition]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"

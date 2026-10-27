@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "createaddition:gold_wire",
+ "result": {
+  "id": "createaddition:electrum_wire"
+ },
+ "energy": 18000,
+ "max_charge_rate": 360
+}

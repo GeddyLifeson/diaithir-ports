@@ -1,0 +1,10 @@
+{
+ "type": "createaddition:rolling",
+ "ingredient": "#c:ingots/copper",
+ "results": [
+  {
+   "id": "createaddition:copper_rod",
+   "count": 2
+  }
+ ]
+}

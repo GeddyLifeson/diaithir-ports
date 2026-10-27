@@ -1,0 +1,10 @@
+{
+ "type": "createaddition:rolling",
+ "ingredient": "#c:ingots/gold",
+ "results": [
+  {
+   "id": "createaddition:gold_rod",
+   "count": 2
+  }
+ ]
+}

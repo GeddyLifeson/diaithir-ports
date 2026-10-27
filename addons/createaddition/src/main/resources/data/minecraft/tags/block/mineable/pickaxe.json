@@ -1,0 +1,16 @@
+{
+ "values": [
+  "createaddition:alternator",
+  "createaddition:electric_motor",
+  "createaddition:rolling_mill",
+  "createaddition:creative_energy",
+  "createaddition:connector",
+  "createaddition:small_light_connector",
+  "createaddition:large_connector",
+  "createaddition:redstone_relay",
+  "createaddition:tesla_coil",
+  "createaddition:barbed_wire",
+  "createaddition:modular_accumulator",
+  "createaddition:electrum_block"
+ ]
+}

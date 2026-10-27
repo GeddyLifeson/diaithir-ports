@@ -1,0 +1,9 @@
+{
+ "type": "createaddition:charging",
+ "ingredient": "minecraft:gold_block",
+ "result": {
+  "id": "createaddition:electrum_block"
+ },
+ "energy": 324000,
+ "max_charge_rate": 360
+}
