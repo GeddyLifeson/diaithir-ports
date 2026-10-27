@@ -11752,7 +11752,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "4d3dd3836893f1454d887389bf2b31a6cab70bfeefb469cac52e7d6c6a22eefd"
+hash = "08f8502d341ce92dd9df03066cad0d5b85c5ae485d5fb3fb32487707927f75b6"
 metafile = true
 
 [[files]]
@@ -11765,7 +11765,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "8ff7ce86e2e0bc333ae90e464bcf7124a6abb3ab4f4c7afb17ad64e763d06ab1"
+hash = "d3628cee9e3c2b28161d03a7068a1e02fc1253965c758a8fdbf249235a4ccd3c"
 metafile = true
 
 [[files]]
@@ -11778,7 +11778,7 @@ hash = "949692709e5661d0b1c2b23e093264d6a222ac57e6ab5694aded1f6bae3c91b4"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "f94b40f69f7fd1ef08ece65c8a764a1fc40cf6afe7df856d46225f2514fb26ab"
+hash = "fe7bf6b6d8490cba919aba279f1014b3dc7d6253b169abf8e0b3ff5e1643f7cd"
 metafile = true
 
 [[files]]
@@ -12755,10 +12755,10 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "8c3d4b9a6b51416e51d9249f3f15e768acbfc04e0f73d55f08538b44c21672b9"
+hash = "4d1fc2313d231e1e329bb525842e63aaf65fc33e027123bff06364a698236c38"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "89a8bd8e0674f2b7a8f1f6421cdc59627fac4a8c864a10047438d6f5476bc6ca"
+hash = "c01589cad10364693efc7fc4cad510094ce3489305025c79bfb8f745be97d450"
 metafile = true
