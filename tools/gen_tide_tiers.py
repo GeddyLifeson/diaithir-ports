@@ -5,7 +5,7 @@ from PIL import Image
 
 R = "src/main/resources"
 A, D = f"{R}/assets/create", f"{R}/data/create"
-TIERS = [("brass", "Koibleseòlmurauma", 38, .85, 1.0), ("gold", "Koibleseòlmuraòir", 47, 1.0, 1.12), ("silver", "Koibleseòlmuraairgid", 0, .12, 1.22)]
+TIERS = [("brass", "Koibleseòlmurauima", 38, .85, 1.0), ("gold", "Koibleseòlmuraòiri", 47, 1.0, 1.12), ("silver", "Koibleseòlmuraairgidi", 0, .12, 1.22)]
 
 
 def recolour(src, dst, hue, sat, val):
