@@ -1,0 +1,12 @@
+{
+ "itemGroup.create_connected.main": "Create: Connected",
+ "block.create_connected.parallel_gearbox": "Parallel Gearbox",
+ "item.create_connected.vertical_parallel_gearbox": "Vertical Parallel Gearbox",
+ "block.create_connected.six_way_gearbox": "6-way Gearbox",
+ "item.create_connected.vertical_six_way_gearbox": "Vertical 6-way Gearbox",
+ "block.create_connected.brass_gearbox": "Brass Gearbox",
+ "item.create_connected.vertical_brass_gearbox": "Vertical Brass Gearbox",
+ "block.create_connected.inverted_clutch": "Inverted Clutch",
+ "block.create_connected.inverted_gearshift": "Inverted Gearshift",
+ "block.create_connected.brake": "Brake"
+}

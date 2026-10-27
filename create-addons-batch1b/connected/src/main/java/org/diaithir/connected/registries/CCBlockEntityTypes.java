@@ -1,0 +1,32 @@
+package org.diaithir.connected.registries;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import org.diaithir.connected.CreateConnected;
+import org.diaithir.connected.content.brake.BrakeBlockEntity;
+import org.diaithir.connected.content.brassgearbox.BrassGearboxBlockEntity;
+import org.diaithir.connected.content.invertedclutch.InvertedClutchBlockEntity;
+import org.diaithir.connected.content.invertedgearshift.InvertedGearshiftBlockEntity;
+import org.diaithir.connected.content.parallelgearbox.ParallelGearboxBlockEntity;
+import org.diaithir.connected.content.sixwaygearbox.SixWayGearboxBlockEntity;
+
+import java.util.Set;
+
+public class CCBlockEntityTypes {
+    public static final DeferredRegister<BlockEntityType<?>> TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, CreateConnected.MODID);
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ParallelGearboxBlockEntity>> PARALLEL_GEARBOX =
+        TYPES.register("parallel_gearbox", () -> new BlockEntityType<>((pos, state) -> new ParallelGearboxBlockEntity(CCBlockEntityTypes.PARALLEL_GEARBOX.get(), pos, state), Set.of(CCBlocks.PARALLEL_GEARBOX.get())));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SixWayGearboxBlockEntity>> SIX_WAY_GEARBOX =
+        TYPES.register("six_way_gearbox", () -> new BlockEntityType<>((pos, state) -> new SixWayGearboxBlockEntity(CCBlockEntityTypes.SIX_WAY_GEARBOX.get(), pos, state), Set.of(CCBlocks.SIX_WAY_GEARBOX.get())));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrassGearboxBlockEntity>> BRASS_GEARBOX =
+        TYPES.register("brass_gearbox", () -> new BlockEntityType<>((pos, state) -> new BrassGearboxBlockEntity(CCBlockEntityTypes.BRASS_GEARBOX.get(), pos, state), Set.of(CCBlocks.BRASS_GEARBOX.get())));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<InvertedClutchBlockEntity>> INVERTED_CLUTCH =
+        TYPES.register("inverted_clutch", () -> new BlockEntityType<>((pos, state) -> new InvertedClutchBlockEntity(CCBlockEntityTypes.INVERTED_CLUTCH.get(), pos, state), Set.of(CCBlocks.INVERTED_CLUTCH.get())));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<InvertedGearshiftBlockEntity>> INVERTED_GEARSHIFT =
+        TYPES.register("inverted_gearshift", () -> new BlockEntityType<>((pos, state) -> new InvertedGearshiftBlockEntity(CCBlockEntityTypes.INVERTED_GEARSHIFT.get(), pos, state), Set.of(CCBlocks.INVERTED_GEARSHIFT.get())));
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<BrakeBlockEntity>> BRAKE =
+        TYPES.register("brake", () -> new BlockEntityType<>((pos, state) -> new BrakeBlockEntity(CCBlockEntityTypes.BRAKE.get(), pos, state), Set.of(CCBlocks.BRAKE.get())));
+}

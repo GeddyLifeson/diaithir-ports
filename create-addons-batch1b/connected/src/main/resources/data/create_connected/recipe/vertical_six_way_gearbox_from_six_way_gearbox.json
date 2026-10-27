@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create_connected:six_way_gearbox"
+ ],
+ "result": {
+  "id": "create_connected:vertical_six_way_gearbox",
+  "count": 1
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "create:gearbox",
+  "create:cogwheel",
+  "create:cogwheel"
+ ],
+ "result": {
+  "id": "create_connected:parallel_gearbox",
+  "count": 1
+ }
+}

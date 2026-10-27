@@ -1,0 +1,10 @@
+{
+ "values": [
+  "create_connected:parallel_gearbox",
+  "create_connected:six_way_gearbox",
+  "create_connected:brass_gearbox",
+  "create_connected:inverted_clutch",
+  "create_connected:inverted_gearshift",
+  "create_connected:brake"
+ ]
+}
