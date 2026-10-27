@@ -568,6 +568,75 @@ def make_parts(rng):
     save(a, "item/star_lattice.png")
 
 
+def library_gear(items):
+    """Library entries (name, kind, age, locale, summary) for every tier: an overview, the armour set, each weapon, each part."""
+    ING = {t[0]: t[4] for t in TOOLS}
+    ING.update({t[0]: t[4] for t in ARMOR if t[0] not in ING})
+    PRETTY = {"diaithirarms:bone_plate": "bone plates", "#c:ingots/copper": "copper ingots", "#c:ingots/bronze": "bronze ingots",
+              "#c:ingots/iron": "iron ingots", "#c:ingots/steel": "steel ingots", "diaithirarms:ballistic_weave": "ballistic weave",
+              "diaithirarms:ceramic_plate": "ceramic plates", "diaithirarms:tempered_ingot": "tempered ingots",
+              "diaithirarms:rodos_alloy_ingot": "Rodos alloy ingots", "diaithirarms:star_lattice": "star lattice"}
+    GATE_NAME = {"I": "Age I", "II": "Age II", "III": "Age III", "IV": "Age IV", "V": "Age V", "VI": "Age VI", "VII": "Age VII", "RODOS": "Age Rodos"}
+    LORE = {
+        "bone": "Hide cut and stitched over bone plates, the dress of the first hunters and the Telling singers' guards.",
+        "copper": "Beaten copper over hide, the first metal of the herders and the cairn builders.",
+        "bronze": "Bronze with red and blue enamel studs in the curving style of the island smiths.",
+        "mail": "Rings of iron linked by hand, the road-warden's coat in the age of kings.",
+        "steel": "Plate and blade of true steel, the first gear of the mills, the rails and the early cities.",
+        "ballistic": "Layers of woven fibre under a painted steel pot, made for the wars of the power grid.",
+        "tempered": "Steel drawn and tempered in a second fire, the edge of the Kingdom's workshops.",
+        "composite": "Ceramic tiles in a carbon twill: light, hard and cold, the armour of the digital age.",
+        "rodos": "An alloy of teal and gold, worked only since the Delivered Collection landed at Rodos.",
+        "future": "A pale lattice of star-metal with cold light in the seams, made after Rodos and by no maker the record names.",
+    }
+    out = []
+    trows = {t[0]: t for t in TOOLS}
+
+    def ent(name, kind, age, text):
+        out.append([name, kind, age, "arms", text])
+
+    for t in ARMOR:
+        key, gate, lib, adj, ing, dur, b, l, c, hm, ench, tough, kb, snd = t
+        ing_t = PRETTY[ing]
+        pts = b + l + c + hm
+        extra = {"steel": " Sword, axe and spear start here.", "ballistic": " Its weapon tier is tempered steel."}.get(key, "")
+        ent(f"Aurmachd {adj}", "concept", lib, f"Arms and armour of {GATE_NAME[gate]}. {LORE[key]}{extra}")
+        kbtxt = f", knockback resistance {int(kb*100)}%" if kb else ""
+        ent(f"Lùirech {adj}", "item", lib,
+            f"Four-piece armour set: {SLOT_NAME['helmet']}, {SLOT_NAME['chestplate']}, {SLOT_NAME['leggings']}, {SLOT_NAME['boots']} {adj}. {pts} armour points in all (helmet {hm}, chest {c}, legs {l}, boots {b}), toughness {tough:g}{kbtxt}, durability x{dur}. Made from {ing_t}" + (" and leather" if key == "bone" else "") + f"; {GATE_NAME[gate]}.")
+    for it in items:
+        if it["kind"] == "armor":
+            continue
+        key, kind = it["mat"], it["kind"]
+        tr = trows[key]
+        adj, lib = tr[3], tr[2]
+        name = f"{KIND_NAME[kind]} {adj}"
+        ing_t = PRETTY[ING[key]]
+        if kind == "sword":
+            ent(name, "item", lib, f"Steady sword: {1 + it['damage'] + tr[7]:g} attack damage, {4 + it['speed']:.1f} swings a second, sweeps nearby foes, {tr[5]} uses. Crafted from {ing_t} x2 and a rod; {GATE_NAME[tr[1]]}.")
+        elif kind == "axe":
+            ent(name, "item", lib, f"Heavy axe: {1 + it['damage'] + tr[7]:g} attack damage, {4 + it['speed']:.1f} swings a second, chops wood and can knock a raised shield down. {tr[5]} uses. Crafted from {ing_t} x3 and rods x2; {GATE_NAME[tr[1]]}.")
+        elif kind == "spear":
+            sp = it["spear"]
+            ent(name, "item", lib, f"Long spear for lunging while moving: {1 + tr[7]:g} base damage, charge damage x{sp[1]:g}. {tr[5]} uses. Crafted from {ing_t} x1 and rods x2; {GATE_NAME[tr[1]]}.")
+        elif kind == "bow":
+            ent(name, "item", lib, f"Bow of {GATE_NAME[tr[1]]}: arrows hit x{tr[11]:g} of a plain bow's damage, {tr[10]} uses. Crafted from {ing_t} x3 and string x3.")
+        elif kind == "crossbow":
+            ent(name, "item", lib, f"Crossbow of {GATE_NAME[tr[1]]}: bolts hit x{tr[13]:g} of a plain bow's damage, {tr[12]} uses. Crafted from rods x3, {ing_t} x1, string x2 and a tripwire hook.")
+        elif kind == "shield":
+            ent(name, "item", lib, f"Off-hand shield of {GATE_NAME[tr[1]]}: blocks {int(tr[15]*100)}% of a blow from the front, {tr[14]} uses. Crafted from {ing_t} x3 and planks x4.")
+    for pid, (dn, en) in PARTS.items():
+        age = {"bone_plate": 1, "ballistic_weave": 6, "ceramic_plate": 7, "tempered_ingot": 6, "rodos_alloy_ingot": 7, "star_lattice": 7}[pid]
+        how = {"bone_plate": "2 bones and 1 leather make 2 plates.",
+               "ballistic_weave": "4 string and 1 steel ingot make 2 lengths.",
+               "ceramic_plate": "2 bricks, a quartz and a length of ballistic weave make 2 plates.",
+               "tempered_ingot": "2 steel ingots and blaze powder make 2 ingots.",
+               "rodos_alloy_ingot": "A netherite ingot, a tempered ingot, an amethyst shard and an echo shard.",
+               "star_lattice": "A Rodos alloy ingot, a ceramic plate and a nether star."}[pid]
+        ent(dn, "item", age, f"Crafting part for the arms of its Age. {how}")
+    return out
+
+
 # ---------------------------------------------------------------- build all
 def main():
     rng = np.random.default_rng(26)
@@ -793,6 +862,21 @@ def main():
     recipe("star_lattice", {"type": "minecraft:crafting_shapeless", "category": "misc",
                             "ingredients": [f"{NS}:rodos_alloy_ingot", f"{NS}:ceramic_plate", "minecraft:nether_star"],
                             "result": {"id": f"{NS}:star_lattice", "count": 1}})
+    gear = library_gear(items)
+    W(os.path.join(ROOT, "library", "gear.json"), gear)
+    # Handbooks codex hook: one chapter per tier, each item with its Library text
+    by_name = {g[0]: g for g in gear}
+    chapters = []
+    for t in ARMOR:
+        key, gate, lib, adj = t[0], t[1], t[2], t[3]
+        ch = {"tier": key, "name": f"Aurmachd {adj}", "age": gate, "text": by_name[f"Aurmachd {adj}"][4], "items": []}
+        for it in items:
+            tkey = "tempered" if (key == "ballistic" and it["kind"] != "armor") else key
+            if it["mat"] == tkey and (it["kind"] == "armor") == (it["mat"] == key and it["kind"] == "armor") or (key == "ballistic" and it["mat"] == "tempered" and it["kind"] != "armor"):
+                nm = lang[f"item.{NS}.{it['id']}"]
+                ch["items"].append({"id": f"{NS}:{it['id']}", "name": nm, "age": gate, "text": by_name.get(nm, [0, 0, 0, 0, ""])[4]})
+        chapters.append(ch)
+    W(os.path.join(ROOT, "codex", "arms_handbook.json"), {"id": "diaithirarms:handbook", "title": "Aurmachd", "chapters": chapters})
     print("items", len(items), "parts", len(PARTS))
 
 
