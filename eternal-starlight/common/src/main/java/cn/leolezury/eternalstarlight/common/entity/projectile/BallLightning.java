@@ -1,0 +1,229 @@
+package cn.leolezury.eternalstarlight.common.entity.projectile;
+
+import net.minecraft.world.level.storage.ValueOutput;
+
+import net.minecraft.world.level.storage.ValueInput;
+
+import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
+import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
+import cn.leolezury.eternalstarlight.common.particle.ESExplosionParticleOptions;
+import cn.leolezury.eternalstarlight.common.particle.ExplosionShockParticleOptions;
+import cn.leolezury.eternalstarlight.common.platform.ESPlatform;
+import cn.leolezury.eternalstarlight.common.registry.ESEntities;
+import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+
+import java.util.UUID;
+
+public class BallLightning extends ThrowableProjectile {
+	private static final String TAG_TARGET = "target";
+	private static final String TAG_SPAWNED_TICKS = "spawned_ticks";
+
+	protected static final EntityDataAccessor<Integer> SPAWNED_TICKS = SynchedEntityData.defineId(BallLightning.class, EntityDataSerializers.INT);
+
+	public int getSpawnedTicks() {
+		return this.getEntityData().get(SPAWNED_TICKS);
+	}
+
+	public void setSpawnedTicks(int spawnedTicks) {
+		this.getEntityData().set(SPAWNED_TICKS, spawnedTicks);
+	}
+
+	protected static final EntityDataAccessor<Integer> TARGET_ID = SynchedEntityData.defineId(BallLightning.class, EntityDataSerializers.INT);
+
+	public void setTargetId(int targetId) {
+		this.getEntityData().set(TARGET_ID, targetId);
+	}
+
+	public int getTargetId() {
+		return this.getEntityData().get(TARGET_ID);
+	}
+
+	public BallLightning(EntityType<? extends BallLightning> entityType, Level level) {
+		super(entityType, level);
+	}
+
+	public BallLightning(Level level, LivingEntity livingEntity) {
+		super(ESEntities.BALL_LIGHTNING.get(), livingEntity, level);
+	}
+
+	public BallLightning(Level level, double x, double y, double z) {
+		super(ESEntities.BALL_LIGHTNING.get(), x, y, z, level);
+	}
+
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		builder.define(SPAWNED_TICKS, 0)
+			.define(TARGET_ID, -1);
+	}
+
+	private Entity target;
+	private UUID targetId;
+
+	public Entity getTarget() {
+		return target;
+	}
+
+	public void setTarget(Entity target) {
+		this.targetId = target.getUUID();
+		this.target = target;
+		if (!level().isClientSide()) {
+			setTargetId(target.getId());
+		}
+	}
+
+	@Override
+	public void tick() {
+		Vec3 movement = getDeltaMovement();
+		pushOutOfBlocks();
+		super.tick();
+		Vec3 currentMovement = getDeltaMovement();
+		if (movement.lengthSqr() > 1e-8 && currentMovement.lengthSqr() > 1e-8) {
+			setDeltaMovement(currentMovement.normalize().scale(movement.length()));
+		}
+		pushOutOfBlocks();
+		if (!level().isClientSide()) {
+			Entity owner = getOwner();
+			if (owner != null && owner.distanceTo(this) > 32) {
+				explodeAndDiscard();
+				discard();
+			}
+			if (target != null && target.distanceTo(this) > 16) {
+				target = null;
+				targetId = null;
+			}
+			if (target == null && targetId != null && level() instanceof ServerLevel serverLevel) {
+				Entity entity = serverLevel.getEntity(targetId);
+				if (entity != null) {
+					target = entity;
+				}
+				if (target == null) {
+					targetId = null;
+				}
+			}
+			if (target != null) {
+				setTargetId(target.getId());
+				ESEntityUtil.RaytraceResult result = ESEntityUtil.raytrace(level(), CollisionContext.of(this), position().add(0, getBbHeight() / 2, 0), target.position().add(0, target.getBbHeight() / 2, 0));
+				for (Entity entity : result.entities()) {
+					if (entity instanceof LivingEntity && ESEntityUtil.shouldHarm(getOwner(), entity) && entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ELECTRIC_SHOCK, this, getOwner()), 8)) {
+						entity.igniteForSeconds(2);
+					}
+				}
+			}
+			if (getSpawnedTicks() > 600) {
+				explodeAndDiscard();
+				discard();
+			}
+			setSpawnedTicks(getSpawnedTicks() + 1);
+		} else {
+			this.noCulling = true;
+		}
+	}
+
+	@Override
+	public boolean shouldRender(double x, double y, double z) {
+		return this.shouldRenderAtSqrDistance(distanceToSqr(x, y, z) / 16);
+	}
+
+	@Override
+	protected void applyGravity() {
+
+	}
+
+	@Override
+	public boolean isOnFire() {
+		return false;
+	}
+
+	@Override
+	protected void onHitBlock(BlockHitResult hitResult) {
+		super.onHitBlock(hitResult);
+		switch (hitResult.getDirection().getAxis()) {
+			case X -> setDeltaMovement(getDeltaMovement().multiply(-1, 1, 1));
+			case Y -> setDeltaMovement(getDeltaMovement().multiply(1, -1, 1));
+			case Z -> setDeltaMovement(getDeltaMovement().multiply(1, 1, -1));
+		}
+	}
+
+	// moves the ball out of overlapping blocks and reflects its movement if it still points into them
+	private void pushOutOfBlocks() {
+		AABB box = getBoundingBox();
+		if (level().noBlockCollision(this, box)) {
+			return;
+		}
+		Vec3 pos = position();
+		for (double distance = 1.0 / 16.0; distance <= 2.0; distance += 1.0 / 16.0) {
+			for (Direction direction : Direction.values()) {
+				Vec3 offset = Vec3.atLowerCornerOf(direction.getNormal()).scale(distance);
+				if (level().noBlockCollision(this, box.move(offset))) {
+					setPos(pos.add(offset));
+					Vec3 delta = getDeltaMovement();
+					if (delta.dot(offset) < 0) {
+						setDeltaMovement(new Vec3(
+							direction.getStepX() != 0 ? -delta.x : delta.x,
+							direction.getStepY() != 0 ? -delta.y : delta.y,
+							direction.getStepZ() != 0 ? -delta.z : delta.z
+						));
+					}
+					return;
+				}
+			}
+		}
+		// completely buried, stopping beats tunneling on
+		setDeltaMovement(Vec3.ZERO);
+	}
+
+	private void explodeAndDiscard() {
+		playSound(SoundEvents.GENERIC_EXPLODE.value());
+		if (level() instanceof ServerLevel serverLevel) {
+			serverLevel.sendParticles(ESExplosionParticleOptions.ENERGY, getX(), getY() + getBbHeight() / 2, getZ(), 20, getBbWidth() / 2, getBbHeight() / 2, getBbWidth() / 2, 0);
+			for (int i = 0; i < 20; i++) {
+				Vec3 speed = new Vec3((this.random.nextFloat() - this.random.nextFloat()) * 0.1F, this.random.nextFloat() * 0.05F, (this.random.nextFloat() - this.random.nextFloat()) * 0.1F).normalize();
+				ESPlatform.INSTANCE.sendToAllClients(serverLevel, new ParticlePacket(ExplosionShockParticleOptions.ENERGY, position().x + speed.x * 1.2, position().y + speed.y * 1.2, position().z + speed.z * 1.2, speed.x, speed.y, speed.z));
+			}
+		}
+		for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(2))) {
+			if (ESEntityUtil.shouldHarm(getOwner(), entity)) {
+				if (getOwner() instanceof Player) {
+					entity.invulnerableTime = 0;
+				}
+				entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.ENERGIZED_FLAME, this, getOwner()), 8);
+			}
+		}
+		discard();
+	}
+
+	@Override
+	public void readAdditionalSaveData(ValueInput compoundTag) {
+		super.readAdditionalSaveData(compoundTag);
+		if (compoundTag.hasUUID(TAG_TARGET)) {
+			targetId = compoundTag.getUUID(TAG_TARGET);
+		}
+		setSpawnedTicks(compoundTag.getIntOr(TAG_SPAWNED_TICKS, 0));
+	}
+
+	@Override
+	public void addAdditionalSaveData(ValueOutput compoundTag) {
+		super.addAdditionalSaveData(compoundTag);
+		if (target != null) {
+			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+		}
+		compoundTag.putInt(TAG_SPAWNED_TICKS, getSpawnedTicks());
+	}
+}

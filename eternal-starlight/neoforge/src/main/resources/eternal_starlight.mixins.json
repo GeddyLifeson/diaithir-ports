@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "package": "cn.leolezury.eternalstarlight.neoforge.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "mixins": [
+    "AttachmentHolderMixin",
+    "AxeItemMixin",
+    "ExtendedBlockMixin",
+    "ProjectileWeaponItemMixin",
+    "client.IBlockEntityRendererExtensionMixin"
+  ],
+  "client": [
+    "client.GuiMixin",
+    "client.HumanoidArmorLayerMixin",
+    "client.ParticleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "feature": "eternal_starlight:solaris_island",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 0,
+            "weight": 10
+          },
+          {
+            "data": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 2,
+              "min_inclusive": 1
+            },
+            "weight": 3
+          },
+          {
+            "data": {
+              "type": "minecraft:uniform",
+              "max_inclusive": 5,
+              "min_inclusive": 4
+            },
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "eternal_starlight:vertical_offset",
+      "offset": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 150,
+        "min_inclusive": 80
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

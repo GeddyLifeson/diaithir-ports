@@ -1,0 +1,88 @@
+package cn.leolezury.eternalstarlight.common.entity.living.goal;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.EnumSet;
+import java.util.function.DoubleSupplier;
+
+public class RandomFlyGoal extends Goal {
+	public static final int ALTITUDE_RANGE = 8;
+
+	private final PathfinderMob mob;
+	private final DoubleSupplier altitude;
+
+	public RandomFlyGoal(PathfinderMob mob) {
+		this(mob, () -> Double.NaN);
+	}
+
+	public RandomFlyGoal(PathfinderMob mob, DoubleSupplier altitude) {
+		this.mob = mob;
+		this.altitude = altitude;
+		setFlags(EnumSet.of(Flag.MOVE));
+	}
+
+	@Override
+	public boolean canUse() {
+		if (this.mob.hasControllingPassenger()) {
+			return false;
+		}
+		if (mob.getNavigation().isDone()) {
+			return true;
+		}
+		return mob.getRandom().nextInt(10) == 0;
+	}
+
+	@Override
+	public boolean canContinueToUse() {
+		return !this.mob.getNavigation().isDone() && !this.mob.hasControllingPassenger() && mob.getRandom().nextInt(40) != 0;
+	}
+
+	@Override
+	public void start() {
+		Vec3 target = this.getRandomPos();
+		mob.getNavigation().moveTo(target.x, target.y, target.z, 1);
+	}
+
+	private Vec3 getRandomPos() {
+		Vec3 target = mob.position().add((mob.getRandom().nextFloat() - 0.5f) * 2 * 15, 0, (mob.getRandom().nextFloat() - 0.5f) * 2 * 15);
+
+		double altitude = this.altitude.getAsDouble();
+		if (!Double.isNaN(altitude)) {
+			// mobs living above the ground stay around their altitude instead of descending to the terrain below
+			target = new Vec3(target.x, altitude + (mob.getRandom().nextDouble() * 2 - 1) * ALTITUDE_RANGE, target.z);
+		} else {
+			BlockPos position = mob.blockPosition();
+			int blockY = position.getY();
+			if (!mob.level().getBlockState(position).isAir()) {
+				for (int i = position.getY(); !mob.level().getBlockState(new BlockPos(position.getX(), i, position.getZ())).isAir(); i++) {
+					if (i > mob.level().getMaxBuildHeight()) {
+						break;
+					}
+					blockY = i;
+				}
+			} else {
+				for (int i = position.getY(); mob.level().getBlockState(new BlockPos(position.getX(), i, position.getZ())).isAir(); i--) {
+					if (i < mob.level().getMinBuildHeight()) {
+						break;
+					}
+					blockY = i + 1;
+				}
+			}
+
+			target = new Vec3(target.x, blockY + 5 + mob.getRandom().nextInt(3), target.z);
+		}
+
+		BlockHitResult result = mob.level().clip(new ClipContext(mob.position(), target, ClipContext.Block.COLLIDER, ClipContext.Fluid.ANY, mob));
+		if (result.getType() != HitResult.Type.MISS) {
+			target = result.getLocation();
+		}
+
+		return target;
+	}
+}

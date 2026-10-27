@@ -1,0 +1,12 @@
+{
+  "placement": {
+    "type": "eternal_starlight:landmark",
+    "landmark": "eternal_starlight:golem_forge"
+  },
+  "structures": [
+    {
+      "structure": "eternal_starlight:golem_forge",
+      "weight": 1
+    }
+  ]
+}

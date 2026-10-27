@@ -1,0 +1,60 @@
+{
+  "variants": {
+    "facing=down,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "x": 180,
+      "y": 90
+    },
+    "facing=down,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "x": 90
+    },
+    "facing=north,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "x": 90
+    },
+    "facing=south,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "y": 90
+    },
+    "facing=up,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "y": 90
+    },
+    "facing=west,open=false": {
+      "model": "eternal_starlight:block/golem_steel_crate",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,open=true": {
+      "model": "eternal_starlight:block/golem_steel_crate_open",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

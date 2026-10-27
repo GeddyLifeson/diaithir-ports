@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "eternal_starlight:fantabud"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:green_fantabud"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:fantafern"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:green_fantafern"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:fantagrass"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:green_fantagrass"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:vividstalk"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:pungency_fruit_vines",
+                  "Properties": {
+                    "age": "7"
+                  }
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:swamp_rose"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:nightfan"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:whisperbloom"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:starlight_flower"
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 48,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

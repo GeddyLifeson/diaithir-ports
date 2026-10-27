@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "age=0,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage0"
+    },
+    "age=0,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=0,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage0_forgotten"
+    },
+    "age=0,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=1,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage0"
+    },
+    "age=1,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=1,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage0_forgotten"
+    },
+    "age=1,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=2,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage1"
+    },
+    "age=2,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=2,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage1_forgotten"
+    },
+    "age=2,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=3,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage1"
+    },
+    "age=3,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=3,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage1_forgotten"
+    },
+    "age=3,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=4,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2"
+    },
+    "age=4,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=4,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2_forgotten"
+    },
+    "age=4,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=5,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2"
+    },
+    "age=5,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=5,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2_forgotten"
+    },
+    "age=5,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=6,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2"
+    },
+    "age=6,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=6,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage2_forgotten"
+    },
+    "age=6,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=7,forgotten=false,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3"
+    },
+    "age=7,forgotten=false,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_withered"
+    },
+    "age=7,forgotten=true,withered=false": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    },
+    "age=7,forgotten=true,withered=true": {
+      "model": "eternal_starlight:block/nocturnal_millet_stalk_stage3_forgotten"
+    }
+  }
+}

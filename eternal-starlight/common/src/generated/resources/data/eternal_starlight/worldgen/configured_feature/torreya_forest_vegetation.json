@@ -1,0 +1,59 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "eternal_starlight:withered_starlight_flower"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:mauve_fern"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:amaramber_grass"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:amaramber_grass_bush"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "eternal_starlight:gloomcandle_root"
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 48,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

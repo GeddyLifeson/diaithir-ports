@@ -1,0 +1,107 @@
+package cn.leolezury.eternalstarlight.common.client.particle.effect;
+
+import cn.leolezury.eternalstarlight.common.client.trail.Trail;
+import cn.leolezury.eternalstarlight.common.client.trail.TrailPoint;
+import cn.leolezury.eternalstarlight.common.client.trail.TrailRenderer;
+import cn.leolezury.eternalstarlight.common.client.trail.TrailStyles;
+import cn.leolezury.eternalstarlight.common.particle.GatheringTrailParticleOptions;
+import cn.leolezury.eternalstarlight.common.util.ESMathUtil;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Camera;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.Mth;
+import net.minecraft.world.phys.Vec3;
+import org.joml.Vector4f;
+
+import java.util.function.Function;
+
+public class GatheringTrailParticle extends TextureSheetParticle {
+	private final Trail trail;
+	private final Vec3 destPos;
+	private final float pitchSpeed, yawSpeed, radiusSpeed;
+	private float pitch, yaw, radius;
+
+	protected GatheringTrailParticle(ClientLevel level, double x, double y, double z, double dx, double dy, double dz, float trailWidth, float trailLength, float speedScale, float rotSpeedScale, SpriteSet spriteSet, Function<Float, Vector4f> colorProfile) {
+		super(level, x, y, z);
+		this.lifetime = 200;
+		this.trail = new Trail(trailWidth, trailLength);
+		this.trail.setColorProfile(colorProfile);
+		this.trail.setWidthProfile(TrailStyles.TAPER);
+		this.destPos = new Vec3(x + dx, y + dy, z + dz);
+		this.pitch = ESMathUtil.positionToPitch(-dx, -dy, -dz);
+		this.yaw = ESMathUtil.positionToYaw(-dx, -dz);
+		this.radius = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
+		this.pitchSpeed = (random.nextBoolean() ? 1 : -1) * (2 + random.nextFloat() * 3) * rotSpeedScale;
+		this.yawSpeed = (random.nextBoolean() ? 1 : -1) * (2 + random.nextFloat() * 3) * rotSpeedScale;
+		this.radiusSpeed = radius / 20 * (0.8f + random.nextFloat() * 0.4f) * speedScale;
+		this.pickSprite(spriteSet);
+	}
+
+	@Override
+	public void tick() {
+		this.pitch += pitchSpeed;
+		this.yaw += yawSpeed;
+		this.radius -= radiusSpeed;
+		if (this.radius < 0) {
+			this.radius = 0;
+		}
+		this.xo = this.x;
+		this.yo = this.y;
+		this.zo = this.z;
+		Vec3 pos = ESMathUtil.rotationToPosition(destPos, radius, pitch, yaw);
+		this.x = pos.x();
+		this.y = pos.y();
+		this.z = pos.z();
+		if (this.age > 0) {
+			this.trail.update(new Vec3(xo, yo, zo));
+		}
+		if (this.age++ >= this.lifetime) {
+			this.remove();
+		}
+		if (radius <= 0) {
+			trail.setLength(Math.max(trail.getLength() - 0.75f, 0));
+			if (trail.getLength() <= 0) {
+				remove();
+			}
+		}
+	}
+
+	@Override
+	public void render(VertexConsumer consumer, Camera camera, float partialTicks) {
+		PoseStack stack = new PoseStack();
+		float x = (float) Mth.lerp(partialTicks, this.xo, this.x);
+		float y = (float) Mth.lerp(partialTicks, this.yo, this.y);
+		float z = (float) Mth.lerp(partialTicks, this.zo, this.z);
+		stack.pushPose();
+		stack.translate(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z);
+		this.trail.setSpriteUv(this.sprite);
+		this.trail.prepareRender(TrailPoint.cameraFacing(new Vec3(x, y, z)), partialTicks);
+		RenderSystem.disableCull();
+		TrailRenderer.render(this.trail, consumer, stack, true, true, LightTexture.FULL_BRIGHT);
+		stack.popPose();
+	}
+
+	@Override
+	public ParticleRenderType getRenderType() {
+		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+	}
+
+	public static class Provider implements ParticleProvider<GatheringTrailParticleOptions> {
+		private final SpriteSet sprites;
+		private final Function<Float, Vector4f> colorProfile;
+
+		public Provider(SpriteSet spriteSet, Function<Float, Vector4f> colorProfile) {
+			this.sprites = spriteSet;
+			this.colorProfile = colorProfile;
+		}
+
+		@Override
+		public Particle createParticle(GatheringTrailParticleOptions options, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+			return new GatheringTrailParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, options.trailWidth(), options.trailLength(), options.speedScale(), options.rotSpeedScale(), sprites, colorProfile);
+		}
+	}
+}

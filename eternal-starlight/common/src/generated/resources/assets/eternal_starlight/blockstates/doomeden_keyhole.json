@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "axis=x,lit=false": {
+      "model": "eternal_starlight:block/doomeden_keyhole",
+      "y": 90
+    },
+    "axis=x,lit=true": {
+      "model": "eternal_starlight:block/doomeden_keyhole_lit",
+      "y": 90
+    },
+    "axis=z,lit=false": {
+      "model": "eternal_starlight:block/doomeden_keyhole"
+    },
+    "axis=z,lit=true": {
+      "model": "eternal_starlight:block/doomeden_keyhole_lit"
+    }
+  }
+}

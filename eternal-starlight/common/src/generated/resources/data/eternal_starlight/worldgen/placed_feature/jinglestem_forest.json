@@ -1,0 +1,40 @@
+{
+  "feature": "eternal_starlight:jinglestem_forest",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 5,
+            "weight": 4
+          },
+          {
+            "data": 6,
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "eternal_starlight:height_range_filter",
+      "max_inclusive": {
+        "below_top": 150
+      },
+      "min_inclusive": {
+        "above_bottom": 0
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

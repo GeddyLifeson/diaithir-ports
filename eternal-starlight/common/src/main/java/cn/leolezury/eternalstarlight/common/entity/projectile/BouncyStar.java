@@ -1,0 +1,123 @@
+package cn.leolezury.eternalstarlight.common.entity.projectile;
+
+import net.minecraft.world.level.storage.ValueOutput;
+
+import net.minecraft.world.level.storage.ValueInput;
+
+import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
+import cn.leolezury.eternalstarlight.common.particle.RippleParticleOptions;
+import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.UUID;
+
+public class BouncyStar extends ThrowableProjectile {
+	private static final String TAG_TARGET = "target";
+
+	public BouncyStar(EntityType<? extends BouncyStar> entityType, Level level) {
+		super(entityType, level);
+	}
+
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+	}
+
+	private Entity target;
+	private UUID targetId;
+
+	public Entity getTarget() {
+		return target;
+	}
+
+	public void setTarget(Entity target) {
+		this.targetId = target.getUUID();
+		this.target = target;
+	}
+
+	@Override
+	public void tick() {
+		super.tick();
+		if (!level().isClientSide()) {
+			if (target == null && targetId != null && level() instanceof ServerLevel serverLevel) {
+				Entity entity = serverLevel.getEntity(targetId);
+				if (entity != null) {
+					target = entity;
+				}
+				if (target == null) {
+					targetId = null;
+				}
+			}
+			if (tickCount > 300) {
+				explode();
+			}
+		}
+	}
+
+	@Override
+	protected void onHitBlock(BlockHitResult hitResult) {
+		super.onHitBlock(hitResult);
+		switch (hitResult.getDirection().getAxis()) {
+			case X -> setDeltaMovement(getDeltaMovement().multiply(-1, 1, 1));
+			case Y -> setDeltaMovement(getDeltaMovement().multiply(1, -1, 1));
+			case Z -> setDeltaMovement(getDeltaMovement().multiply(1, 1, -1));
+		}
+		if (target != null && target.isAlive()) {
+			Vec3 toTarget = target.position().add(0, target.getBbHeight() / 2, 0).subtract(position()).normalize().scale(0.05);
+			setDeltaMovement(getDeltaMovement().add(toTarget));
+		}
+	}
+
+	@Override
+	protected void onHit(HitResult hitResult) {
+		if (!level().isClientSide() && hitResult.getType() == HitResult.Type.ENTITY) {
+			explode();
+		} else {
+			super.onHit(hitResult);
+		}
+	}
+
+	private void explode() {
+		if (!level().isClientSide()) {
+			for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(3))) {
+				if (ESEntityUtil.shouldHarm(getOwner() != null ? getOwner() : this, entity)) {
+					entity.hurt(ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.METEOR, this, getOwner()), 5);
+				}
+			}
+			if (level() instanceof ServerLevel serverLevel) {
+				RippleParticleOptions.addFlareExplosionRippleParticles(serverLevel, getX(), getY() + getBbHeight() / 2, getZ(), random);
+			}
+		}
+		discard();
+	}
+
+	@Override
+	public boolean isOnFire() {
+		return false;
+	}
+
+	@Override
+	public void readAdditionalSaveData(ValueInput compoundTag) {
+		super.readAdditionalSaveData(compoundTag);
+		if (compoundTag.hasUUID(TAG_TARGET)) {
+			targetId = compoundTag.getUUID(TAG_TARGET);
+		}
+	}
+
+	@Override
+	public void addAdditionalSaveData(ValueOutput compoundTag) {
+		super.addAdditionalSaveData(compoundTag);
+		if (target != null) {
+			compoundTag.putUUID(TAG_TARGET, target.getUUID());
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "eternal_starlight:block/tinted_cube_all",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "eternal_starlight:block/dusk_glass"
+  }
+}

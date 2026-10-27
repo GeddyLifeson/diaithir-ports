@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "eternal_starlight:block/doomeden_tiles",
+    "east": "eternal_starlight:block/doomeden_keyhole_off_side",
+    "north": "eternal_starlight:block/doomeden_keyhole_off_front",
+    "particle": "eternal_starlight:block/doomeden_tiles",
+    "south": "eternal_starlight:block/doomeden_keyhole_off_front",
+    "up": "eternal_starlight:block/doomeden_tiles",
+    "west": "eternal_starlight:block/doomeden_keyhole_off_side"
+  }
+}

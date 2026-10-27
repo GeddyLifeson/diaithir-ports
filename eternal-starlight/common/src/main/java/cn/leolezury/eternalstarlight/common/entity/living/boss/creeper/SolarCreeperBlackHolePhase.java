@@ -1,0 +1,122 @@
+package cn.leolezury.eternalstarlight.common.entity.living.boss.creeper;
+
+import cn.leolezury.eternalstarlight.common.data.ESDamageTypes;
+import cn.leolezury.eternalstarlight.common.entity.living.phase.BehaviorPhase;
+import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
+import cn.leolezury.eternalstarlight.common.particle.OrbitalTrailParticleOptions;
+import cn.leolezury.eternalstarlight.common.particle.RippleParticleOptions;
+import cn.leolezury.eternalstarlight.common.platform.ESPlatform;
+import cn.leolezury.eternalstarlight.common.registry.ESParticles;
+import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
+import cn.leolezury.eternalstarlight.common.util.Easing;
+import cn.leolezury.eternalstarlight.common.util.EasingCurve;
+import cn.leolezury.eternalstarlight.common.vfx.ScreenShakeVfx;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.joml.Vector3f;
+
+public class SolarCreeperBlackHolePhase extends BehaviorPhase<SolarCreeper> {
+	public static final int ID = 12;
+	public static final int DURATION = 200;
+
+	public static final Vec3 BLACK_HOLE_RAY_NORMAL = new Vec3(1, 4, 1).normalize();
+
+	public static final EasingCurve SUN_SCALE = EasingCurve
+		.of(Easing.OUT_BOUNCE, 0, 3, 90)
+		.add(Easing.IN_OUT_SINE, 3, 0, 10);
+
+	public static final EasingCurve SUN_REDNESS = EasingCurve
+		.of(Easing.IN_OUT_CIRC, 0, 1, 80);
+
+	public static final EasingCurve JITTER_FREQ = EasingCurve
+		.of(Easing.IDENTITY, 0, 0, 60)
+		.add(Easing.IN_CUBIC, 0, 5, 40)
+		.add(Easing.IDENTITY, 0.8f, 0.5f, 100);
+
+	public static final EasingCurve BLACK_HOLE_SCALE = EasingCurve
+		.of(Easing.IDENTITY, 0, 0, 100)
+		.add(Easing.OUT_BOUNCE, 0, 3, 10)
+		.add(Easing.IDENTITY, 3, 3, 85)
+		.add(Easing.IN_OUT_SINE, 3, 0, 5);
+
+	public static final EasingCurve SHINE_SCALE = EasingCurve
+		.of(Easing.IDENTITY, 0, 0, 100)
+		.add(Easing.OUT_BOUNCE, 0, 0.5f, 10)
+		.add(Easing.IDENTITY, 0.5f, 0.5f, 85)
+		.add(Easing.IN_OUT_SINE, 0.5f, 0, 5);
+
+	public SolarCreeperBlackHolePhase() {
+		super(ID, 1, DURATION, 600);
+	}
+
+	@Override
+	public boolean canStart(SolarCreeper entity, boolean cooldownOver) {
+		return cooldownOver && !canReachTargetXZ(entity, 10) && entity.getTarget() != null;
+	}
+
+	@Override
+	public void tick(SolarCreeper entity) {
+		int ticks = entity.getBehaviorTicks();
+		RandomSource random = entity.getRandom();
+		if (entity.level() instanceof ServerLevel serverLevel) {
+			Vec3 blackHolePos = entity.getSunAbovePos(1);
+			if (ticks <= 72) {
+				int interval = Mth.lerpInt(ticks / 72f, 8, 2);
+				if (ticks % interval == 0) {
+					RippleParticleOptions shrinkingRipple = new RippleParticleOptions(ESParticles.RIPPLE.get(),
+						EasingCurve.of(Easing.IN_OUT_QUAD, 5f, 0, 1),
+						EasingCurve.of(Easing.OUT_QUART, 0, 0.4f, 1),
+						random.nextFloat() < 0.2F ? RippleParticleOptions.PURPLE : RippleParticleOptions.GOLD, interval * 3);
+					ESPlatform.INSTANCE.sendToTrackingClients(serverLevel, entity, new ParticlePacket(shrinkingRipple, blackHolePos.x + (random.nextFloat() - random.nextFloat()) * 0.15F, blackHolePos.y + (random.nextFloat() - random.nextFloat()) * 0.15F, blackHolePos.z + (random.nextFloat() - random.nextFloat()) * 0.15F, 0, 0, 0));
+				}
+			}
+			if (ticks == 100) {
+				ScreenShakeVfx.createInstance(entity.level().dimension(), entity.position(), 60, 20, 0.5f, 0.5f, 4.5f, 5.5f).send(serverLevel);
+			}
+			if (ticks > 100) {
+				AABB aabb = AABB.ofSize(blackHolePos, 14, 14, 14);
+				for (Entity e : entity.level().getEntities(entity, aabb, e -> e instanceof LivingEntity living && ESEntityUtil.shouldHarm(entity, living))) {
+					if (e instanceof LivingEntity living) {
+						Vec3 pull = blackHolePos.subtract(living.position()).normalize().scale(0.08);
+						living.setDeltaMovement(living.getDeltaMovement().add(pull));
+						living.hurtMarked = true;
+						if (ticks % 10 == 0) {
+							living.hurt(ESDamageTypes.getIndirectEntityDamageSource(entity.level(), ESDamageTypes.LASER, entity, entity), 2);
+						}
+					}
+				}
+				if (ticks % 8 == 0 && ticks <= 160) {
+					for (int i = 0; i < 5; i++) {
+						float speed1 = 1.75f + random.nextFloat() * 1.25f;
+						float speed2 = speed1 + 1.75f + random.nextFloat() * 2.75f;
+						float speed3 = speed2 + 1.25f + random.nextFloat() * 1.25f;
+						float length1 = 4.5f + random.nextFloat() * 3;
+						float length2 = length1 + 1 + random.nextFloat();
+						ESPlatform.INSTANCE.sendToTrackingClients(serverLevel, entity, new ParticlePacket(new OrbitalTrailParticleOptions(
+							ESParticles.ORBITAL_SPACE_MATTER.get(),
+							BLACK_HOLE_RAY_NORMAL.toVector3f(),
+							EasingCurve
+								.of(Easing.IN_OUT_SINE, 6 + random.nextFloat() * 1.5f, 0, 1),
+							EasingCurve
+								.of(Easing.OUT_CIRC, speed1, speed2, 0.2f)
+								.add(Easing.OUT_ELASTIC, speed2, speed3, 0.6f)
+								.add(Easing.IN_OUT_SINE, speed3, speed1, 0.2f),
+							0.12f,
+							EasingCurve
+								.of(Easing.OUT_QUART, 0, length1, 0.4f)
+								.add(Easing.IN_OUT_QUAD, length1, length2, 0.2f)
+								.add(Easing.IN_OUT_SINE, length2, 0, 0.4f),
+							new Vector3f(1 - random.nextFloat() * 0.05f, 1 - random.nextFloat() * 0.05f, 1 - random.nextFloat() * 0.05f),
+							random.nextInt(31, 42)
+						), blackHolePos.x, blackHolePos.y, blackHolePos.z, 0, 0, 0));
+					}
+				}
+			}
+		}
+	}
+}

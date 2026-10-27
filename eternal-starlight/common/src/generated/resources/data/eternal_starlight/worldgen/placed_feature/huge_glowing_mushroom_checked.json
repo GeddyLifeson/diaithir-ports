@@ -1,0 +1,23 @@
+{
+  "feature": "eternal_starlight:huge_glowing_mushroom",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "eternal_starlight:glowing_mushroom"
+        }
+      }
+    },
+    {
+      "type": "eternal_starlight:height_range_filter",
+      "max_inclusive": {
+        "below_top": 150
+      },
+      "min_inclusive": {
+        "above_bottom": 0
+      }
+    }
+  ]
+}

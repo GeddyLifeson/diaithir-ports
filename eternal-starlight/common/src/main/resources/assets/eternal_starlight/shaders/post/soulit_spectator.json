@@ -1,0 +1,106 @@
+{
+  "targets": [
+    "eternal_starlight_soulit_spectator_swap",
+    "eternal_starlight_soulit_spectator_blurred"
+  ],
+  "passes": [
+    {
+      "name": "bits",
+      "intarget": "minecraft:main",
+      "outtarget": "eternal_starlight_soulit_spectator_swap",
+      "uniforms": [
+        {
+          "name": "Resolution",
+          "values": [
+            16.0
+          ]
+        },
+        {
+          "name": "MosaicSize",
+          "values": [
+            4.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "box_blur",
+      "intarget": "eternal_starlight_soulit_spectator_swap",
+      "outtarget": "eternal_starlight_soulit_spectator_blurred",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [
+            1.0,
+            1.0
+          ],
+          "RadiusMultiplier": 2.0
+        }
+      ]
+    },
+    {
+      "name": "eternal_starlight_distance_blend",
+      "intarget": "minecraft:main",
+      "outtarget": "eternal_starlight_soulit_spectator_swap",
+      "auxtargets": [
+        {
+          "name": "BlendSampler",
+          "id": "eternal_starlight_soulit_spectator_blurred"
+        }
+      ]
+    },
+    {
+      "name": "box_blur",
+      "intarget": "eternal_starlight_soulit_spectator_swap",
+      "outtarget": "eternal_starlight_soulit_spectator_blurred",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [
+            0.5,
+            0.5
+          ],
+          "RadiusMultiplier": 0.125
+        }
+      ]
+    },
+    {
+      "name": "color_convolve",
+      "intarget": "eternal_starlight_soulit_spectator_blurred",
+      "outtarget": "eternal_starlight_soulit_spectator_swap",
+      "uniforms": [
+        {
+          "name": "RedMatrix",
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "GreenMatrix",
+          "values": [
+            0.3,
+            0.3,
+            0.4
+          ]
+        },
+        {
+          "name": "BlueMatrix",
+          "values": [
+            0.5,
+            0.5,
+            0.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "eternal_starlight_soulit_spectator_swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

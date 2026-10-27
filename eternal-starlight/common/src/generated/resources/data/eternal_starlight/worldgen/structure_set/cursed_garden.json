@@ -1,0 +1,12 @@
+{
+  "placement": {
+    "type": "eternal_starlight:landmark",
+    "landmark": "eternal_starlight:cursed_garden"
+  },
+  "structures": [
+    {
+      "structure": "eternal_starlight:cursed_garden",
+      "weight": 1
+    }
+  ]
+}

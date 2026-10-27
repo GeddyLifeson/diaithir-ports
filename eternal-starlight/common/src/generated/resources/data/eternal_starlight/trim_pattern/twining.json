@@ -1,0 +1,8 @@
+{
+  "asset_id": "eternal_starlight:twining",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.eternal_starlight.twining"
+  },
+  "template_item": "eternal_starlight:twining_armor_trim_smithing_template"
+}

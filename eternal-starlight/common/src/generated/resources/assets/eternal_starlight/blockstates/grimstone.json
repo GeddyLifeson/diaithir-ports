@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "eternal_starlight:block/grimstone"
+      },
+      {
+        "model": "eternal_starlight:block/grimstone_mirrored"
+      }
+    ]
+  }
+}

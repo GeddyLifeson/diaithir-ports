@@ -1,0 +1,60 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "x": 180,
+      "y": 90
+    },
+    "facing=down,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "x": 90
+    },
+    "facing=north,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "x": 90
+    },
+    "facing=south,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "y": 90
+    },
+    "facing=up,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "y": 90
+    },
+    "facing=west,powered=false": {
+      "model": "eternal_starlight:block/energy_transmitter",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "eternal_starlight:block/energy_transmitter_on",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

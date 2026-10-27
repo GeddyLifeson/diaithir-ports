@@ -1,0 +1,130 @@
+{
+  "variants": {
+    "axis=x,size=0": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=1": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=10": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=11": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=12": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=13": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=14": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=15": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=16": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=17": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=18": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=19": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=2": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=20": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=3": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=4": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=5": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=6": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=7": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=8": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=x,size=9": {
+      "model": "eternal_starlight:block/starlight_portal_ns"
+    },
+    "axis=z,size=0": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=1": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=10": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=11": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=12": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=13": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=14": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=15": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=16": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=17": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=18": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=19": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=2": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=20": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=3": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=4": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=5": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=6": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=7": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=8": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    },
+    "axis=z,size=9": {
+      "model": "eternal_starlight:block/starlight_portal_ew"
+    }
+  }
+}

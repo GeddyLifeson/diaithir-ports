@@ -1,0 +1,8 @@
+{
+  "asset_id": "eternal_starlight:blooming",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.eternal_starlight.blooming"
+  },
+  "template_item": "eternal_starlight:blooming_armor_trim_smithing_template"
+}

@@ -1,0 +1,44 @@
+{
+  "feature": "eternal_starlight:permafrost_forest",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 4,
+            "weight": 4
+          },
+          {
+            "data": 6,
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "eternal_starlight:height_range_filter",
+      "max_inclusive": {
+        "below_top": 150
+      },
+      "min_inclusive": {
+        "above_bottom": 0
+      }
+    }
+  ]
+}

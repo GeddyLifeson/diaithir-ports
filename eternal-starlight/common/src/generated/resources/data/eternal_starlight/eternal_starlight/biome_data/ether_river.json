@@ -1,0 +1,8 @@
+{
+  "biome": "eternal_starlight:ether_river",
+  "fluid": "eternal_starlight:ether",
+  "has_rivers": true,
+  "height": 35,
+  "is_ocean": false,
+  "variance": 3
+}

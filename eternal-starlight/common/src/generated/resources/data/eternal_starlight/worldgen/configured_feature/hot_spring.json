@@ -1,0 +1,31 @@
+{
+  "type": "eternal_starlight:lake",
+  "config": {
+    "barrier": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "eternal_starlight:springstone"
+          },
+          "weight": 10
+        },
+        {
+          "data": {
+            "Name": "eternal_starlight:thermal_springstone"
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "fluid": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "eternal_starlight:block/template_doomeden_torch_wall",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "torch": "eternal_starlight:block/doomed_redstone_torch_off"
+  }
+}
