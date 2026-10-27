@@ -1,6 +1,5 @@
 package org.dimdev.dimdoors.rift.targets;
 
-import dev.eriksonn.aeronautics.index.AeroTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Rotations;
 import net.minecraft.network.chat.Component;

@@ -152,7 +152,7 @@ public class DimensionalDoorItemRegistrar {
 
     @Override
     public @NotNull MutableComponent getName(@NotNull ItemStack stack) {
-        return Component.translatable("dimdoors.autogen_item_prefix").append(originalItem.getDescription());
+        return Component.translatable("dimdoors.autogen_item_prefix").append(originalItem.getName(originalItem.getDefaultInstance()));
     }
 
     @Override

@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item.door;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;

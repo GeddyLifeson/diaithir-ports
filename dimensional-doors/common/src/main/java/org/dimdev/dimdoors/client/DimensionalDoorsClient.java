@@ -1,9 +1,7 @@
 package org.dimdev.dimdoors.client;
 
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -14,10 +12,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.dimdev.dimdoors.DimensionalDoors;
-import org.dimdev.dimdoors.api.client.DimensionalPortalRenderer;
 import org.dimdev.dimdoors.block.entity.ModBlockEntityTypes;
-import org.dimdev.dimdoors.client.effect.sky.EnvironmentAddonClient;
-import org.dimdev.dimdoors.compat.iris.IrisCompat;
 import org.dimdev.dimdoors.entity.MaskEntity;
 import org.dimdev.dimdoors.entity.ModEntityTypes;
 import org.dimdev.dimdoors.network.client.ClientPacketListener;
@@ -34,33 +29,25 @@ import static org.dimdev.dimdoors.particle.ModParticleTypes.*;
 public class DimensionalDoorsClient {
     public static final Identifier childItem = DimensionalDoors.id("item/child_item");
 
-    public static ShaderPackDetector detector = consumer -> consumer.accept(DimensionalPortalRenderer.RENDER_LAYER);
     private static IClientSided sided;
 
     public static void init(IClientSided sided) {
         DimensionalDoorsClient.sided = sided;
         sided.onClientPlayerJoin(() -> ClientPacketListener.sendPacket(new NetworkHandlerInitializedC2SPacket()));
-        registerCompats();
 
 //    ModFluids.initClient();
-
-        EnvironmentAddonClient.init();
 
         registerListeners();
 
 //    ModRecipeBookGroups.init();
     }
 
-    private static void registerCompats() {
-        if (DimensionalDoors.getSided().isModLoaded("iris") || DimensionalDoors.getSided().isModLoaded("oculus")) detector = new IrisCompat();
-    }
-
     public static void initEntitiesClient(BiConsumer<EntityType, EntityRendererProvider> consumer, BiConsumer<BlockEntityType, BlockEntityRendererProvider> blockConsumer) {
         consumer.accept(ModEntityTypes.MONOLITH, MonolithRenderer::new);
-        consumer.accept(ModEntityTypes.MASK, context -> new EntityRenderer() {
+        consumer.accept(ModEntityTypes.MASK, context -> new EntityRenderer<MaskEntity, EntityRenderState>(context) {
             @Override
             public EntityRenderState createRenderState() {
-                return null;
+                return new EntityRenderState();
             }
         });
 
@@ -69,9 +56,6 @@ public class DimensionalDoorsClient {
     }
 
     private static void registerListeners() {
-
-
-        sided.registerCoreShader(DimensionalDoors.id("dimensional_portal"), DefaultVertexFormat.POSITION, ModShaders::setDimensionalPortal);
     }
 
     public static void initParticles(BiConsumer<ParticleType<? extends ParticleOptions>, ParticleProvider<?>> specialProvider, BiConsumer<ParticleType<?>, Function<SpriteSet, ? extends ParticleProvider<? extends ParticleOptions>>> spriteProivder) {

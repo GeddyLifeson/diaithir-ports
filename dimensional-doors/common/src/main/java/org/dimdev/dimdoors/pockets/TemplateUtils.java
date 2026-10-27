@@ -38,11 +38,17 @@ public class TemplateUtils {
 
             CompoundTag newTag;
             if ("monolith".equals(entityTag.getStringOr("placeholder", ""))) {
-                MonolithEntity monolith = Objects.requireNonNull(ModEntityTypes.MONOLITH.create(null));
-                monolith.setPos(x, y, z);
-                monolith.setYRot(yaw);
-                monolith.setXRot(pitch);
-                newTag = monolith.saveWithoutId(new CompoundTag());
+                newTag = new CompoundTag();
+                newTag.putString("id", net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.getKey(ModEntityTypes.MONOLITH).toString());
+                var pos = new net.minecraft.nbt.ListTag();
+                pos.add(net.minecraft.nbt.DoubleTag.valueOf(x));
+                pos.add(net.minecraft.nbt.DoubleTag.valueOf(y));
+                pos.add(net.minecraft.nbt.DoubleTag.valueOf(z));
+                newTag.put("Pos", pos);
+                var rotation = new net.minecraft.nbt.ListTag();
+                rotation.add(net.minecraft.nbt.FloatTag.valueOf(yaw));
+                rotation.add(net.minecraft.nbt.FloatTag.valueOf(pitch));
+                newTag.put("Rotation", rotation);
             } else {
                 throw new RuntimeException("Unknown entity placeholder: " + entityTag.getStringOr("placeholder", ""));
             }

@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -39,7 +41,7 @@ public class RiftRemoverItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext level, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> list, TooltipFlag tooltipFlag) {
-        ToolTipHelper.processTranslation(list, this.getDescription() + ".info");
+        ToolTipHelper.processTranslation(list, this.getDescriptionId() + ".info");
     }
 
     @Override
@@ -49,7 +51,7 @@ public class RiftRemoverItem extends Item {
 
         if (world.isClientSide()) {
             if (!RaycastHelper.hitsDetachedRift(hit, world)) {
-                player.displayClientMessage(Component.translatable("tools.rift_miss"), true);
+                player.sendOverlayMessage(Component.translatable("tools.rift_miss"));
                 RiftBlockEntity.showRiftCoreUntil = System.currentTimeMillis() + DimensionalDoors.getConfig().getGraphicsConfig().highlightRiftCoreFor;
             }
             return InteractionResult.FAIL;
@@ -78,10 +80,10 @@ public class RiftRemoverItem extends Item {
                     Containers.dropItemStack(world, ((BlockHitResult) hit).getBlockPos().getX(), ((BlockHitResult) hit).getBlockPos().getY(), ((BlockHitResult) hit).getBlockPos().getZ(), stack1);
                 });
 
-                player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".closing"), true);
+                player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".closing"));
                 return InteractionResult.SUCCESS;
             } else {
-                player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".already_closing"), true);
+                player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".already_closing"));
             }
         }
         return InteractionResult.FAIL;

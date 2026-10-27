@@ -78,7 +78,7 @@ public class DetachedRiftBlock extends WaterLoggableBlockWithEntity implements R
 
     @Override
     public RenderShape getRenderShape(BlockState blockState) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
     @Override

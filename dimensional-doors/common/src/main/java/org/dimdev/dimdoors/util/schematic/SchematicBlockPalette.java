@@ -34,7 +34,7 @@ public class SchematicBlockPalette {
             BlockStateParser.BlockResult parser;
 
             try {
-                parser = BlockStateParser.parseForBlock(BuiltInRegistries.BLOCK.asLookup(), reader, true);
+                parser = BlockStateParser.parseForBlock(BuiltInRegistries.BLOCK, reader, true);
             } catch (CommandSyntaxException e) {
                 return DataResult.error(e::getMessage);
             }

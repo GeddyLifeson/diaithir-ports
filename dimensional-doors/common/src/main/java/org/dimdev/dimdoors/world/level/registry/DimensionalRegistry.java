@@ -45,7 +45,7 @@ public class DimensionalRegistry {
         writeToNbt(tag, null);
         return tag;
     });
-    private static final SavedDataType<DummyData> TYPE = new SavedDataType<>(Identifier.fromNamespaceAndPath("dimdoors", "dimensional_registry"), () -> INSTANCE, CODEC);
+    private static final SavedDataType<DummyData> TYPE = new SavedDataType<>(Identifier.fromNamespaceAndPath("dimdoors", "dimensional_registry"), () -> INSTANCE, CODEC, (net.minecraft.util.datafix.DataFixTypes) null);
     }
 
     public static void setDirty() {

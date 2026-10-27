@@ -1,7 +1,7 @@
 package org.dimdev.dimdoors.client;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.Util;
+import net.minecraft.util.Util;
 import org.dimdev.dimdoors.DimensionalDoors;
 import org.joml.Matrix4f;
 

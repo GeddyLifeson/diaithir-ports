@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
@@ -38,7 +40,7 @@ public class RiftStabilizerItem extends Item {
         // TODO: not necessarily success, fix this and all other similar cases to make arm swing correct
         return InteractionResult.SUCCESS;
         } else {
-        player.displayClientMessage(Component.translatable("tools.rift_miss"), true);
+        player.sendOverlayMessage(Component.translatable("tools.rift_miss"));
         RiftBlockEntity.showRiftCoreUntil = System.currentTimeMillis() + DimensionalDoors.getConfig().getGraphicsConfig().highlightRiftCoreFor;
         return InteractionResult.FAIL;
         }
@@ -53,10 +55,10 @@ public class RiftStabilizerItem extends Item {
         var serverPlayer = (ServerPlayer) player;
 
         stack.hurtAndBreak(1, serverPlayer.level(), serverPlayer, a -> {});
-        player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".stabilized"), true);
+        player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".stabilized"));
         return InteractionResult.SUCCESS;
         } else {
-        player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".already_stabilized"), true);
+        player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".already_stabilized"));
         }
     }
     return InteractionResult.FAIL;

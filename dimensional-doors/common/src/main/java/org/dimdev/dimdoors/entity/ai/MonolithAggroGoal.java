@@ -36,11 +36,14 @@ public class MonolithAggroGoal extends Goal {
         this.mob = mobEntity;
         this.range = f;
         this.setFlags(EnumSet.of(Flag.LOOK));
-        this.targetPredicate = (TargetingConditions.forCombat()).range(this.range).selector(EntitySelector.NO_CREATIVE_OR_SPECTATOR::test);
+        this.targetPredicate = (TargetingConditions.forCombat()).range(this.range).selector((e, l) -> EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(e));
     }
 
     private Player getTarget() {
-        Player playerEntity = this.mob.level().getNearestPlayer(this.targetPredicate, this.mob, this.mob.getX(), this.mob.getEyeY(), this.mob.getZ());
+        if (!(this.mob.level() instanceof net.minecraft.server.level.ServerLevel serverLevel)) {
+            return null;
+        }
+        Player playerEntity = serverLevel.getNearestPlayer(this.mob.getX(), this.mob.getEyeY(), this.mob.getZ(), -1.0, e -> e instanceof net.minecraft.world.entity.LivingEntity living && this.targetPredicate.test(serverLevel, this.mob, living));
         return playerEntity != null && this.mob.hasLineOfSight(playerEntity) && playerEntity.distanceTo(this.mob) < 50 ? playerEntity : null;
     }
 

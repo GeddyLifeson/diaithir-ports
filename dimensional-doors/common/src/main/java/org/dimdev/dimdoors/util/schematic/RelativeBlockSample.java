@@ -109,7 +109,7 @@ public class RelativeBlockSample {
             doubles.set(2, NbtOps.INSTANCE.createDouble(vec.z));
             nbt.put("Pos", doubles);
             nbt.remove("UUID");
-            EntityType.create(nbt, world.getLevel()).ifPresent(world::addFreshEntity);
+            EntityType.create(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, world.registryAccess(), nbt), world.getLevel(), net.minecraft.world.entity.EntitySpawnReason.LOAD).ifPresent(world::addFreshEntity);
         }
     }
 }

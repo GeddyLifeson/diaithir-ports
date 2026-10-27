@@ -19,7 +19,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -72,7 +71,6 @@ public interface ISided extends IRegister, ICreativeTabHandler, INetworking {
         registerServerLoader(pocketLoader, consumer, false);
     }
 
-    public RecipeBookType getTesselatingRecipeBookType();
 
     boolean isModLoaded(String id);
 

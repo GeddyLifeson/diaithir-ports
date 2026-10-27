@@ -92,7 +92,7 @@ public class FluidDecayCondition extends GenericDecayCondition<Fluid> {
 
     @Override
     public Holder<Fluid> getHolder(Decay.DecayContext context) {
-        return context.targetFluidState().holder();
+        return context.targetFluidState().typeHolder();
     }
 
     @Override

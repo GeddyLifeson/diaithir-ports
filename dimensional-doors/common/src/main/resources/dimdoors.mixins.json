@@ -41,15 +41,9 @@
     "accessor.RedstoneWireBlockAccessor"
   ],
   "client": [
-    "client.BackgroundRendererMixin",
-    "client.BuiltinModelItemRendererMixin",
     "client.ClientPlayerInteractionManagerMixin",
     "client.InGameHudMixin",
-    "client.LevelRendererMixin",
-    "client.ParticleEngineMixin",
-    "client.PlaceRecipeMixin",
-    "client.PostProcessShaderMixin",
-    "client.accessor.DimensionSpecialEffectsMixin"
+    "client.ParticleEngineMixin"
   ],
   "injectors": {
     "defaultRequire": 1

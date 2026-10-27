@@ -1,7 +1,7 @@
 package org.dimdev.dimdoors.client.tesseract;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.util.LightCoordsUtil;
 import org.dimdev.dimdoors.api.util.RGBA;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
@@ -28,7 +28,7 @@ public class Plane {
                 .setColor(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha())
                 .setUv(u, v)
                 .setOverlay(0)
-                .setLight(LightTexture.FULL_BRIGHT)
+                .setLight(LightCoordsUtil.FULL_BRIGHT)
                 .setNormal(0,0, 0);
     }
 

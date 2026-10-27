@@ -1,15 +1,17 @@
 package org.dimdev.dimdoors.particle.client;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.SingleQuadParticle;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.util.RandomSource;
 
-public class RiftParticle extends TextureSheetParticle {
+public class RiftParticle extends SingleQuadParticle {
     private final SpriteSet sprites;
 
     public RiftParticle(ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, float color, int ageSpread, SpriteSet spriteProvider) {
-        super(world, x, y, z, 160, 8, 0);
+        super(world, x, y, z, 0, 0, 0, spriteProvider.first());
         this.gravity = 0f;
         this.friction = 0.91F;
         this.sprites = spriteProvider;
@@ -25,17 +27,21 @@ public class RiftParticle extends TextureSheetParticle {
     }
 
     @Override
-    public void render(VertexConsumer buffer, Camera renderInfo, float partialTicks) {
-        this.setSpriteFromAge(this.sprites);
-        setAlpha(1 - (float) age / lifetime);
-        super.render(buffer, renderInfo, partialTicks);
+    public void tick() {
+        super.tick();
+        if (!this.removed) {
+            this.setSpriteFromAge(this.sprites);
+            this.setAlpha(1 - (float) age / lifetime);
+        }
     }
 
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    @Override
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.TRANSLUCENT;
     }
 
-    public int getLightColor(float partialTick) {
+    @Override
+    protected int getLightCoords(float partialTick) {
         return 15728880;
     }
 
@@ -46,7 +52,8 @@ public class RiftParticle extends TextureSheetParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(RiftParticleOptions riftParticleOptions, ClientLevel clientWorld, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
+        @Override
+        public Particle createParticle(RiftParticleOptions riftParticleOptions, ClientLevel clientWorld, double x, double y, double z, double velocityX, double velocityY, double velocityZ, RandomSource random) {
             return new RiftParticle(clientWorld, x, y, z, velocityX, velocityY, velocityZ, riftParticleOptions.color(), riftParticleOptions.averageAge(), this.spriteProvider);
         }
     }

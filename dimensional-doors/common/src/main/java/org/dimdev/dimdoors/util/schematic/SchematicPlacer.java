@@ -103,10 +103,10 @@ public final class SchematicPlacer {
             SchematicPlacer.processPos(nbtList, origin, schematic.getOffset(), nbt);
 
             EntityType<?> entityType = EntityType.by(TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, world.registryAccess(), fixEntityId(nbt))).orElseThrow(AssertionError::new);
-            Entity e = entityType.create(world.getLevel());
+            Entity e = entityType.create(world.getLevel(), net.minecraft.world.entity.EntitySpawnReason.LOAD);
             // TODO: fail with an exception
             if (e != null) {
-                e.load(nbt);
+                e.load(TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, world.registryAccess(), nbt));
 
                 e.getSelfAndPassengers().forEach(e1 -> System.out.println("Blep: " + e.getDisplayName().getString() + " " + world.addFreshEntity(e1)));
 

@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -56,7 +58,7 @@ public class RiftSignatureItem extends Item {
         Player player = itemUsageContext.getPlayer();
 
         if (ModDimensions.isPrivatePocketDimension(world) && !DimensionalDoors.getConfig().getPocketsConfig().canUseRiftSignatureInPrivatePockets) {
-            player.displayClientMessage(Component.translatable("tools.signature_blocked").withStyle(ChatFormatting.BLACK), true);
+            player.sendOverlayMessage(Component.translatable("tools.signature_blocked").withStyle(ChatFormatting.BLACK));
             return InteractionResult.FAIL;
         }
 
@@ -82,7 +84,7 @@ public class RiftSignatureItem extends Item {
         if (target == null) {
             // The link signature has not been used. Store its current target as the first location.
             setSource(stack, new RotatedLocation(world.dimension(), pos, player.getYRot(), 0));
-            player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".stored"), true);
+            player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".stored"));
             world.playSound(null, player.blockPosition(), ModSoundEvents.RIFT_START, SoundSource.BLOCKS, 0.6f, 1);
         } else {
             var source = new RotatedLocation(world.dimension(), pos, player.getYRot(), 0);
@@ -97,7 +99,7 @@ public class RiftSignatureItem extends Item {
             if (shouldclear) {
                 clearSource(stack);
             }
-            player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".created"), true);
+            player.sendOverlayMessage(Component.translatable(this.getDescriptionId() + ".created"));
             // null = send sound to the player too, we have to do this because this code is not run client-side
             world.playSound(null, player.blockPosition(), ModSoundEvents.RIFT_END, SoundSource.BLOCKS, 0.6f, 1);
         }

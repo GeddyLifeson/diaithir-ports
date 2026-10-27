@@ -17,6 +17,7 @@ import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.PlaySoundEffect;
 import net.minecraft.world.level.storage.loot.providers.number.EnchantmentLevelProvider;
+import java.util.List;
 import org.dimdev.dimdoors.DimensionalDoors;
 import org.dimdev.dimdoors.enchantment.effect.TranscendentProjectileEffect;
 import org.dimdev.dimdoors.item.loot.EntityNearBy;
@@ -48,13 +49,13 @@ public class ModEnchants {
                 .withEffect(
                         EnchantmentEffectComponents.TICK,
                         new PlaySoundEffect(
-                                Holder.direct(SoundEvents.WARDEN_HEARTBEAT),
+                                List.of(Holder.direct(SoundEvents.WARDEN_HEARTBEAT)),
                                 ConstantFloat.of(0.8F),
                                 ConstantFloat.of(1.0F)
                         ),
                         EntityNearBy.nearby(
                                 EnchantmentLevelProvider.forEnchantmentLevel(LevelBasedValue.perLevel(5.0F, 5.0F)),
-                                EntityPredicate.Builder.entity().of(ModEntityTypeTags.TREPIDATION_DETECTED).build(),
+                                EntityPredicate.Builder.entity().of(context.lookup(Registries.ENTITY_TYPE), ModEntityTypeTags.TREPIDATION_DETECTED).build(),
                                 40
                         )
                 ));

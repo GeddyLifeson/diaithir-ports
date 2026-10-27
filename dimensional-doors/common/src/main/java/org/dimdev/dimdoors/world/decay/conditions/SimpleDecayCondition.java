@@ -63,7 +63,7 @@ public class SimpleDecayCondition extends GenericDecayCondition<Block> {
 
     @Override
     public Holder<Block> getHolder(Decay.DecayContext context) {
-        return context.targetBlockState().getBlockHolder();
+        return context.targetBlockState().typeHolder();
     }
 
     @Override

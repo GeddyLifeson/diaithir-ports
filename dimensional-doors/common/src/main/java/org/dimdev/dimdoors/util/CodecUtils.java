@@ -156,7 +156,7 @@ public class CodecUtils {
         }
 
         public static <T> TagOrElementLocation<T> of(TagKey<T> tag, ResourceKey<Registry<T>> registry) {
-            return new TagOrElementLocation<>(tag.identifier(), true, registry);
+            return new TagOrElementLocation<>(tag.location(), true, registry);
         }
 
         public static <T> TagOrElementLocation<T> of(ResourceKey<T> tag, ResourceKey<Registry<T>> registry) {
@@ -174,7 +174,7 @@ public class CodecUtils {
         }
 
         private String decoratedId() {
-            return this.tag != null ? "#" + tag.identifier() : this.key.identifier().toString();
+            return this.tag != null ? "#" + tag.location() : this.key.identifier().toString();
         }
 
         public boolean test(Holder<T> holder) {

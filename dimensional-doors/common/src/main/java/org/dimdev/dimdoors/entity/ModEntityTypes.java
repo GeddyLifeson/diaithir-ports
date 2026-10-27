@@ -27,6 +27,6 @@ public class ModEntityTypes {
     }
 
     private static <E extends Entity> EntityType<E> register(String id, EntityType.EntityFactory<E> factory, float width, float height, boolean fixed) {
-        return DimensionalDoors.getSided().registerEntityType(id, EntityType.Builder.of(factory, MobCategory.MONSTER).sized(width, height).canSpawnFarFromPlayer().fireImmune().build(id));
+        return DimensionalDoors.getSided().registerEntityType(id, EntityType.Builder.of(factory, MobCategory.MONSTER).sized(width, height).canSpawnFarFromPlayer().fireImmune().build(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, DimensionalDoors.id(id))));
     }
 }

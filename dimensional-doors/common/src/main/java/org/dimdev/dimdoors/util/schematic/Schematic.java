@@ -40,7 +40,7 @@ public class Schematic {
 
     public static final Codec<Schematic> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
             Codec.INT.fieldOf("Version").forGetter(Schematic::getVersion),
-            Codec.INT.optionalFieldOf("Data Version", SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA)).forGetter(Schematic::getDataVersion),
+            Codec.INT.optionalFieldOf("Data Version", SharedConstants.getCurrentVersion().dataVersion().version()).forGetter(Schematic::getDataVersion),
             SchematicMetadata.CODEC.optionalFieldOf("Metadata", SchematicMetadata.EMPTY).forGetter(Schematic::getMetadata),
             Codec.SHORT.fieldOf("Width").forGetter(Schematic::getWidth),
             Codec.SHORT.fieldOf("Height").forGetter(Schematic::getHeight),
@@ -146,9 +146,9 @@ public class Schematic {
 
     public void setEntities(Collection<? extends Entity> entities) {
         this.setEntities(entities.stream().map((e) -> {
-            CompoundTag nbt = new CompoundTag();
-            e.saveAsPassenger(nbt);
-            return nbt;
+            var out = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, e.registryAccess());
+            e.saveAsPassenger(out);
+            return out.buildResult();
         }).collect(Collectors.toList()));
     }
 

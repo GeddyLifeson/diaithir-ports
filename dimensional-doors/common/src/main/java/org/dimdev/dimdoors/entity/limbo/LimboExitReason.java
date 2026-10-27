@@ -16,6 +16,6 @@ public enum LimboExitReason implements StringRepresentable {
 
     public void broadcast(Player player) {
     //noinspection ConstantConditions
-    player.getServer().getPlayerList().broadcastSystemMessage(Component.translatable(getSerializedName(), player.getGameProfile().getName()), false);
+    player.level().getServer().getPlayerList().broadcastSystemMessage(Component.translatable(getSerializedName(), player.getGameProfile().name()), false);
     }
 }

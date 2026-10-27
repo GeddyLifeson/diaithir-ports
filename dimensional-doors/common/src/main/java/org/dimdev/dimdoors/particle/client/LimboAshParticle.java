@@ -30,8 +30,7 @@ public class LimboAshParticle extends BaseAshSmokeParticle {
 
         @Nullable
         @Override
-        public Particle createParticle(SimpleParticleType particleOptions, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i) {
-            RandomSource random = clientLevel.random;
+        public Particle createParticle(SimpleParticleType particleOptions, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i, RandomSource random) {
             double j = (double) random.nextFloat() * 0.4D * (double) random.nextFloat() * 0.1D;
             double k = (double) random.nextFloat() * 0.8D * (double) random.nextFloat() * 0.1D;// * 5.0D;
             double l = (double) random.nextFloat() * 0.4D * (double) random.nextFloat() * 0.1D;

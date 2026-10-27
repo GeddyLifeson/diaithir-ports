@@ -1,6 +1,5 @@
 package org.dimdev.dimdoors.block.door;
 
-import dev.ryanhcode.sable.companion.SableCompanion;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -231,7 +230,7 @@ public class DimensionalTrapDoorBlock extends TrapDoorBlock implements RiftProvi
 
     @Override
     protected @NotNull RenderShape getRenderShape(BlockState blockState) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
     @Override

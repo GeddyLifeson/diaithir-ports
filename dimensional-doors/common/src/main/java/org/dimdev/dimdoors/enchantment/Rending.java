@@ -9,7 +9,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,7 +26,7 @@ public final class Rending {
 
     public static List<ItemStack> replaceBlockDrops(ServerLevel level, BlockPos pos, ItemStack tool, List<ItemStack> drops) {
         int enchantmentLevel = getLevel(tool);
-        if (enchantmentLevel <= 0 || drops.isEmpty() || level.random.nextFloat() >= dropChance(enchantmentLevel)) {
+        if (enchantmentLevel <= 0 || drops.isEmpty() || level.getRandom().nextFloat() >= dropChance(enchantmentLevel)) {
             return drops;
         }
 
@@ -53,7 +52,7 @@ public final class Rending {
     }
 
     public static boolean raisesMiningTier(ItemStack stack, BlockState state) {
-        if (getLevel(stack) < 2 || !(stack.getItem() instanceof TieredItem tieredItem)) {
+        if (getLevel(stack) < 2) {
             return false;
         }
 
@@ -62,7 +61,21 @@ public final class Rending {
             return false;
         }
 
-        TagKey<Block> nextIncorrectTag = nextIncorrectTag(tieredItem.getTier().getIncorrectBlocksForDrops());
+        TagKey<Block> incorrectTag = null;
+        for (Tool.Rule rule : tool.rules()) {
+            if (rule.correctForDrops().isPresent() && !rule.correctForDrops().get()) {
+                var key = rule.blocks().unwrapKey();
+                if (key.isPresent()) {
+                    incorrectTag = key.get();
+                    break;
+                }
+            }
+        }
+        if (incorrectTag == null) {
+            return false;
+        }
+
+        TagKey<Block> nextIncorrectTag = nextIncorrectTag(incorrectTag);
         return nextIncorrectTag != null && !state.is(nextIncorrectTag);
     }
 

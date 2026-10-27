@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item.door;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -66,7 +68,7 @@ public class DimensionalDoorBlockItem extends BlockItem {
         // without sending custom packets.
 
         if (context.getLevel().isClientSide()) {
-        context.getPlayer().displayClientMessage(Component.translatable("rifts.entrances.rift_too_close"), true);
+        context.getPlayer().sendOverlayMessage(Component.translatable("rifts.entrances.rift_too_close"));
         RiftBlockEntity.showRiftCoreUntil = System.currentTimeMillis() + DimensionalDoors.getConfig().getGraphicsConfig().highlightRiftCoreFor;
         }
 

@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.block.door;
 
+import net.minecraft.world.InteractionResult;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;

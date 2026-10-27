@@ -1,5 +1,7 @@
 package org.dimdev.dimdoors.item;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

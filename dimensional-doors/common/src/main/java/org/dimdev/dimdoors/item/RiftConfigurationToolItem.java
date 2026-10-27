@@ -1,5 +1,9 @@
 package org.dimdev.dimdoors.item;
 
+import net.minecraft.world.item.Item.TooltipContext;
+
+import net.minecraft.world.InteractionResult;
+
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

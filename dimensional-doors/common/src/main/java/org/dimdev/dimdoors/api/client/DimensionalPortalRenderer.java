@@ -1,73 +1,40 @@
 package org.dimdev.dimdoors.api.client;
 
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderStateShard;
-import net.minecraft.client.renderer.RenderType;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
-import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
-import org.dimdev.dimdoors.DimensionalDoors;
-import org.dimdev.dimdoors.client.DimensionalDoorsClient;
-import org.dimdev.dimdoors.client.ModShaders;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+/**
+ * Draws the shimmering surface of a dimensional door/trapdoor.
+ *
+ * <p>TODO 26.1: the old renderer used a custom core shader (dimensional_portal) mixing the end sky and a
+ * warp texture. Custom core shaders are gone, so for now this uses the vanilla end portal render type.</p>
+ */
 public final class DimensionalPortalRenderer {
-    public static final Identifier WARP_PATH;
-    private static final RenderStateShard.ShaderStateShard DIMENSIONAL_PORTAL_SHADER;
-    public static final RenderType RENDER_LAYER;
-    private static final ModelPart MODEL;
-    private static final ModelPart TALL_MODEL;
+    private static final float MIN = 0.2F / 16F;
+    private static final float Z = -0.1F / 16F;
 
-    public static void renderDimensionalPortal(SubmitNodeCollector submitNodeCollector, PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, Transformer transformer, float tickDelta, int light, int overlay) {
-        renderDimensionalPortal(submitNodeCollector, matrixStack, vertexConsumerProvider, transformer, tickDelta, light, overlay, true);
+    private DimensionalPortalRenderer() {
     }
 
-    public static void renderDimensionalPortal(SubmitNodeCollector submitNodeCollector, PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, Transformer transformer, float tickDelta, int light, int overlay, boolean tall) {
-        ModelPart model = tall ? TALL_MODEL : MODEL;
-        renderModelWithPortalShader(submitNodeCollector, model, matrixStack, vertexConsumerProvider, transformer, tickDelta, light, overlay);
+    public static void renderDimensionalPortal(SubmitNodeCollector collector, PoseStack poseStack, Transformer transformer, boolean tall) {
+        poseStack.pushPose();
+        transformer.transform(poseStack);
+        final float height = tall ? 2.0F : 1.0F;
+        collector.submitCustomGeometry(poseStack, RenderTypes.endPortal(), (pose, buffer) -> {
+            quad(pose, buffer, height, Z);
+            quad(pose, buffer, height, Z + 0.0006F);
+        });
+        poseStack.popPose();
     }
 
-    public static void renderModelWithPortalShader(SubmitNodeCollector submitNodeCollector, ModelPart model, PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, Transformer transformer, float tickDelta, int light, int overlay) {
-        transformer.transform(matrixStack);
-
-        submitNodeCollector.submitModelPart();
-
-        DimensionalDoorsClient.detector.wrap(type -> model.render(matrixStack, vertexConsumerProvider.getBuffer(type), light, overlay));
-    }
-
-    static {
-        WARP_PATH = DimensionalDoors.id("textures/other/warp.png");
-        DIMENSIONAL_PORTAL_SHADER = new RenderStateShard.ShaderStateShard(ModShaders::getDimensionalPortal);
-        RENDER_LAYER = RenderLayerFactory.create(
-                "dimensional_portal",
-                DefaultVertexFormat.POSITION,
-                VertexFormat.Mode.QUADS,
-                256,
-                false,
-                false,
-                RenderType.CompositeState.builder()
-                        .setShaderState(DIMENSIONAL_PORTAL_SHADER)
-                        .setTextureState(
-                                RenderStateShard.MultiTextureStateShard.builder()
-                                        .add(TheEndPortalRenderer.END_SKY_LOCATION, false, false)
-                                        .add(WARP_PATH, false, false)
-                                        .build()
-                        )
-                        .createCompositeState(false)
-        );
-        Set<Direction> directions = new HashSet<>(List.of(Direction.values()));
-        ModelPart.Cube small = new ModelPart.Cube(0, 0, 0.2f, 0.2f, -0.1f, 15.8f, 15.8f, 0.01F, 0, 0, 0, false, 1024, 1024, directions);
-        MODEL = new ModelPart(Collections.singletonList(small), Collections.emptyMap());
-        ModelPart.Cube big = new ModelPart.Cube(0, 0, 0.2f, 0.2f, -0.1f, 15.8f, 31.8f, 0.01F, 0, 0, 0, false, 1024, 1024, directions);
-        TALL_MODEL = new ModelPart(Collections.singletonList(big), Collections.emptyMap());
+    private static void quad(PoseStack.Pose pose, VertexConsumer buffer, float height, float z) {
+        float x1 = 1.0F - MIN;
+        float y1 = height - MIN;
+        buffer.addVertex(pose, MIN, MIN, z);
+        buffer.addVertex(pose, x1, MIN, z);
+        buffer.addVertex(pose, x1, y1, z);
+        buffer.addVertex(pose, MIN, y1, z);
     }
 }

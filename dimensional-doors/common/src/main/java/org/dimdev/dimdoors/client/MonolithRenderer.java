@@ -56,18 +56,12 @@ public class MonolithRenderer extends MobRenderer<MonolithEntity, MonolithRender
             DimensionalDoors.id("textures/mob/monolith/solid/monolith_18.png")
     ).collect(Collectors.toList());
 
-    private static MonolithModel INSTANCE;
-
     public MonolithRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx, INSTANCE = new MonolithModel(ctx), 0);
-    }
-
-    public static MonolithModel getInstance() {
-        return INSTANCE;
+        super(ctx, new MonolithModel(ctx), 0);
     }
 
     @Override
-    protected boolean shouldShowName(@NonNull MonolithEntity entity, double distanceToCameraSq) {
+    protected boolean shouldShowName(MonolithEntity entity, double distanceToCameraSq) {
         return false;
     }
 

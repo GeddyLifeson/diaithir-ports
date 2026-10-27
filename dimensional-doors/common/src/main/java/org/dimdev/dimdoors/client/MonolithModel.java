@@ -13,7 +13,7 @@ import org.jspecify.annotations.NonNull;
 public class MonolithModel extends EntityModel<MonolithRenderState> {
 
     public MonolithModel(EntityRendererProvider.Context context) {
-        super(context.bakeLayer(ModEntityModelLayers.MONOLITH), MyRenderLayer::getMonolith);
+        super(context.bakeLayer(ModEntityModelLayers.MONOLITH), net.minecraft.client.renderer.rendertype.RenderTypes::entitySolid);
     }
 
     public static LayerDefinition getTexturedModelData() {
