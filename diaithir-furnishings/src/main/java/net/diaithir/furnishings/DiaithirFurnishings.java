@@ -30,6 +30,10 @@ public final class DiaithirFurnishings {
     public static final DeferredBlock<SackBlock> SACK = BLOCKS.registerBlock("sack", SackBlock::new,
         () -> BlockBehaviour.Properties.of().mapColor(MapColor.SAND).sound(SoundType.WOOL).strength(0.8F)
             .noOcclusion().pushReaction(PushReaction.DESTROY).ignitedByLava());
+    public static final DeferredBlock<HangingSackBlock> HANGING_SACK = BLOCKS.registerBlock("hanging_sack", HangingSackBlock::new,
+        () -> BlockBehaviour.Properties.of().mapColor(MapColor.SAND).sound(SoundType.WOOL).strength(0.8F)
+            .noOcclusion().pushReaction(PushReaction.DESTROY).ignitedByLava());
+    public static final DeferredItem<BlockItem> HANGING_SACK_ITEM = ITEMS.registerSimpleBlockItem(HANGING_SACK);
     public static final DeferredBlock<SconceBlock> SCONCE = BLOCKS.registerBlock("sconce", SconceBlock::new,
         () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).sound(SoundType.LANTERN).strength(1.0F)
             .noCollision().noOcclusion().lightLevel(s -> 14).pushReaction(PushReaction.DESTROY));
@@ -39,7 +43,7 @@ public final class DiaithirFurnishings {
     public static final DeferredItem<BlockItem> SCONCE_ITEM = ITEMS.registerSimpleBlockItem(SCONCE);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SackEntity>> SACK_ENTITY = ENTITIES.register("sack",
-        () -> new BlockEntityType<>(SackEntity::new, SACK.get()));
+        () -> new BlockEntityType<>(SackEntity::new, SACK.get(), HANGING_SACK.get()));
 
     public static final DeferredBlock<JarBlock> CLAY_JAR = BLOCKS.registerBlock("clay_jar", JarBlock::new,
         () -> BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).sound(SoundType.DECORATED_POT).strength(0.6F)

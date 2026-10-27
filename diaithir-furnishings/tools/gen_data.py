@@ -50,7 +50,7 @@ def block_files(name, model_ref):
 
 def main():
     lang = json.loads((A / "lang/en_us.json").read_text())
-    axe = ["diaithirfurnishings:rope", "diaithirfurnishings:sack"]
+    axe = ["diaithirfurnishings:rope", "diaithirfurnishings:sack", "diaithirfurnishings:hanging_sack"]
     for wid, stripped, planks, label in WOODS:
         name = f"{wid}_signpost"
         block_files(name, name)
@@ -93,6 +93,20 @@ def main():
     dump(D / "recipe/glass_jar.json", {"type": "minecraft:crafting_shaped", "category": "misc",
         "key": {"P": "minecraft:glass_pane", "W": "#minecraft:planks"}, "pattern": [" W ", "P P", "PPP"],
         "result": {"id": f"{NS}:glass_jar", "count": 2}})
+
+    # hanging sack: the sack model lifted 4 px with a cord to the top of the block
+    sack = json.loads((A / "models/block/sack.json").read_text())
+    for el in sack["elements"]:
+        el["from"][1] += 4
+        el["to"][1] += 4
+    sack["textures"]["rope"] = f"{NS}:block/rope"
+    sack["elements"].append({"from": [7.5, 15, 7.5], "to": [8.5, 16, 8.5], "faces": {f: {"uv": [0, 0, 1, 1], "texture": "#rope"} for f in ("north", "south", "east", "west", "up", "down")}})
+    dump(A / "models/block/hanging_sack.json", sack)
+    block_files("hanging_sack", "hanging_sack")
+    dump(D / "loot_table/blocks/hanging_sack.json", drop_self("hanging_sack", True))
+    dump(D / "recipe/hanging_sack.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+        "ingredients": [f"{NS}:sack", f"{NS}:rope"], "result": {"id": f"{NS}:hanging_sack"}})
+    lang[f"block.{NS}.hanging_sack"] = "Sak Krochti"
 
     lang["gui.diaithirfurnishings.signpost"] = "Komurra"
     lang["gui.diaithirfurnishings.signpost.line1"] = "First line"

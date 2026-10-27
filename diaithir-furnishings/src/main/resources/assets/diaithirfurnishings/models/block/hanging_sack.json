@@ -1,0 +1,349 @@
+{
+ "textures": {
+  "sack": "diaithirfurnishings:block/sack",
+  "particle": "diaithirfurnishings:block/sack",
+  "rope": "diaithirfurnishings:block/rope"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    4,
+    3
+   ],
+   "to": [
+    13,
+    12,
+    13
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      3,
+      3,
+      13,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "south": {
+     "uv": [
+      3,
+      3,
+      13,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "east": {
+     "uv": [
+      3,
+      3,
+      13,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "west": {
+     "uv": [
+      3,
+      3,
+      13,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "up": {
+     "uv": [
+      3,
+      3,
+      13,
+      13
+     ],
+     "texture": "#sack"
+    },
+    "down": {
+     "uv": [
+      3,
+      3,
+      13,
+      13
+     ],
+     "texture": "#sack"
+    }
+   }
+  },
+  {
+   "from": [
+    4,
+    12,
+    4
+   ],
+   "to": [
+    12,
+    14,
+    12
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      4,
+      9,
+      12,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "south": {
+     "uv": [
+      4,
+      9,
+      12,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "east": {
+     "uv": [
+      4,
+      9,
+      12,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "west": {
+     "uv": [
+      4,
+      9,
+      12,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "up": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#sack"
+    },
+    "down": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#sack"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    14,
+    5
+   ],
+   "to": [
+    11,
+    15,
+    11
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5,
+      9,
+      11,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "south": {
+     "uv": [
+      5,
+      9,
+      11,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "east": {
+     "uv": [
+      5,
+      9,
+      11,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "west": {
+     "uv": [
+      5,
+      9,
+      11,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "up": {
+     "uv": [
+      5,
+      5,
+      11,
+      11
+     ],
+     "texture": "#sack"
+    },
+    "down": {
+     "uv": [
+      5,
+      5,
+      11,
+      11
+     ],
+     "texture": "#sack"
+    }
+   }
+  },
+  {
+   "from": [
+    4,
+    10,
+    4
+   ],
+   "to": [
+    12,
+    11,
+    12
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      9,
+      16,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "south": {
+     "uv": [
+      0,
+      9,
+      16,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "east": {
+     "uv": [
+      0,
+      9,
+      16,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "west": {
+     "uv": [
+      0,
+      9,
+      16,
+      10
+     ],
+     "texture": "#sack"
+    },
+    "up": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#sack"
+    },
+    "down": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#sack"
+    }
+   }
+  },
+  {
+   "from": [
+    7.5,
+    15,
+    7.5
+   ],
+   "to": [
+    8.5,
+    16,
+    8.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "texture": "#rope"
+    }
+   }
+  }
+ ]
+}

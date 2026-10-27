@@ -20,7 +20,7 @@ class DataFilesTest {
 
     @Test
     void everyBlockHasItsFiles() throws Exception {
-        List<String> names = new ArrayList<>(List.of("clay_jar", "glass_jar"));
+        List<String> names = new ArrayList<>(List.of("clay_jar", "glass_jar", "hanging_sack"));
         Woods.ALL.forEach(w -> names.add(w.id() + "_signpost"));
         JsonObject lang = json("assets/diaithirfurnishings/lang/en_us.json");
         for (String n : names) {
