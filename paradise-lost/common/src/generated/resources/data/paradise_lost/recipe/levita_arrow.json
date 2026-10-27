@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "paradise_lost:levita_shard"
+    },
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "A",
+    "I",
+    "F"
+  ],
+  "result": {
+    "count": 4,
+    "id": "paradise_lost:levita_arrow"
+  }
+}
