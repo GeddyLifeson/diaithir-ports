@@ -22,7 +22,7 @@ public record WoodDef(String id, String mod, String name, String gen, String pla
         Set<String> seen = new HashSet<>();
         for (JsonElement e : rows) {
             JsonObject o = e.getAsJsonObject();
-            WoodDef w = new WoodDef(str(o, "id"), str(o, "mod"), str(o, "name"), str(o, "gen"), str(o, "planks"), str(o, "log"),
+            WoodDef w = new WoodDef(str(o, "id"), str(o, "mod"), str(o, "name"), o.has("gen") ? o.get("gen").getAsString() : "", str(o, "planks"), str(o, "log"),
                 str(o, "planks_texture"), str(o, "log_texture"), str(o, "log_top_texture"));
             if (!w.id.matches("[a-z0-9_]+")) {
                 throw new IllegalArgumentException("bad wood id " + w.id);

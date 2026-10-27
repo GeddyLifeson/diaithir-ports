@@ -8,7 +8,6 @@ import gzip, json, os, re, sys, zipfile, tomllib
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = f"{HERE}/src/main/resources/data/diaithirwoodvariants/woods.json"
-NAMES = f"{HERE}/tools/names_dia.json"      # wood id -> genitive in Diaithiris (hand or job made)
 SKIP_NS = {"minecraft", "chisel", "securitycraft", "bblcore"}
 SKIP_WORDS = ("painted", "fireproof", "reinforced", "_base_", "_top_", "base_planks", "top_planks", "beam", "floorboard")
 PREFIX = {"aether_ii": "aii", "biomesoplenty": "bop", "productivetrees": "pt", "regions_unexplored": "ru",
@@ -112,7 +111,6 @@ def pick(t, *keys):
 def main():
     dump = json.load(gzip.open(sys.argv[1]))
     files, mods = load_jars(sys.argv[2:])
-    names = json.load(open(NAMES, encoding="utf-8")) if os.path.exists(NAMES) else {}
     old = {w["id"]: w for w in json.load(open(OUT, encoding="utf-8"))["woods"]} if os.path.exists(OUT) else {}
     rows, skipped = [], []
     for item in sorted(set(dump["items"])):
@@ -133,7 +131,6 @@ def main():
                 break
         wid = f"{PREFIX.get(ns, ns[:3])}_{base}"
         row = dict(id=wid, mod=owner(files, ns, f"blockstates/{n}.json"), name=" ".join(w.capitalize() for w in base.split("_")),
-                   gen=names.get(wid) or old.get(wid, {}).get("gen") or " ".join(w.capitalize() for w in base.split("_")),
                    planks=item, log=logid or item, planks_texture=pt,
                    log_texture=lt or pt, log_top_texture=ltop or pt)
         rows.append(row)

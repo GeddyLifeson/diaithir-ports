@@ -14,7 +14,8 @@ public final class SeatClient {
     @SubscribeEvent
     public static void tooltip(net.neoforged.neoforge.event.entity.player.ItemTooltipEvent event) {
         var id = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem());
-        if (DiaithirWoodVariants.ID.equals(id.getNamespace())) {
+        String key = "native." + id.getNamespace() + "." + id.getPath();
+        if (DiaithirWoodVariants.ID.equals(id.getNamespace()) && net.minecraft.locale.Language.getInstance().has(key)) {
             event.getToolTip().add(1, net.minecraft.network.chat.Component.translatable("native." + id.getNamespace() + "." + id.getPath())
                 .withStyle(net.minecraft.ChatFormatting.GRAY));
         }

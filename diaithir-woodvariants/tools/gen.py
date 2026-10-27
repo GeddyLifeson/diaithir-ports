@@ -79,6 +79,8 @@ def rec(result, count, pattern=None, key=None, shapeless=None, w=None):
 
 lang = {}
 native = {}
+np = os.path.join(HERE, "tools/names_native.json")
+natives = json.load(open(np, encoding="utf-8")) if os.path.exists(np) else {}
 walls, axe, doors, trapdoors = [], [], [], []
 for w in woods:
     P, S = w["planks"], "#c:rods/wooden"
@@ -86,8 +88,10 @@ for w in woods:
         name = f"{w['id']}_{suffix}"
         axe.append(f"{ID}:{name}")
         lang[f"block.{ID}.{name}"] = f"{w['name']} {eng}"
-        lang[f"native.{ID}.{name}"] = f"{dia} {w['gen']}"
-        native[f"{w['name']} {eng}"] = f"{dia} {w['gen']}"
+        nat = natives.get(name)
+        if nat:  # native line only when the names thread has supplied it; otherwise no tooltip line
+            lang[f"native.{ID}.{name}"] = nat
+            native[f"{w['name']} {eng}"] = nat
         conds = [{"condition": "minecraft:survives_explosion"}]
         if suffix == "plank_door":
             conds.insert(0, {"condition": "minecraft:block_state_property", "block": f"{ID}:{name}", "properties": {"half": "lower"}})
@@ -193,6 +197,8 @@ for w in woods:
     put(f"data/{ID}/recipe/{w['id']}_framed_planks.json", rec(f"{w['id']}_framed_planks", 4, ["PS", "SP"], {"S": S, "P": P}, w=w))
 
 put(f"assets/{ID}/lang/en_us.json", lang)
+if os.environ.get("IDS_OUT"):
+    json.dump([{"id": w["id"], "english": w["name"]} for w in woods], open(os.environ["IDS_OUT"], "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 if os.environ.get("NATIVE_OUT"):
     json.dump(native, open(os.environ["NATIVE_OUT"], "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 put("data/minecraft/tags/block/mineable/axe.json", {"values": optional(axe)})
