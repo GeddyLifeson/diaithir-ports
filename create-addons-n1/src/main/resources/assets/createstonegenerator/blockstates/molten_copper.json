@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "createstonegenerator:block/molten_copper"
+    }
+  }
+}

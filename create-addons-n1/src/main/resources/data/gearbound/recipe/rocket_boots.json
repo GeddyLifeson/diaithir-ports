@@ -1,0 +1,15 @@
+{
+ "type": "create:mechanical_crafting",
+ "pattern": [
+  "s s",
+  "d d"
+ ],
+ "key": {
+  "s": "create:brass_sheet",
+  "d": "gearbound:fuel_canister"
+ },
+ "result": {
+  "id": "gearbound:rocket_boots"
+ },
+ "acceptMirrored": true
+}

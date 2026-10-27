@@ -1,0 +1,17 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create_more_farmables:shulker_compound",
+  "create_more_farmables:shulker_compound",
+  "create_more_farmables:shulker_compound",
+  "create_more_farmables:shulker_compound",
+  "minecraft:end_stone"
+ ],
+ "results": [
+  {
+   "id": "create_more_farmables:shulker_shell_fragment",
+   "count": 2
+  }
+ ],
+ "heat_requirement": "heated"
+}

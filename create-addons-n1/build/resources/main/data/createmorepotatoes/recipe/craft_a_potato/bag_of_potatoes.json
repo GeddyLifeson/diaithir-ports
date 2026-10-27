@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:potato",
+  "minecraft:leather"
+ ],
+ "results": [
+  {
+   "id": "createmorepotatoes:bag_of_potatoes"
+  }
+ ]
+}

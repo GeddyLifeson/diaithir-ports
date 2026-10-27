@@ -1,0 +1,1 @@
+{"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "create_more_farmables:pink_dyed_water_block"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]}

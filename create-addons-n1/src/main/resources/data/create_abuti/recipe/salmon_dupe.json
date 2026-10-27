@@ -1,0 +1,14 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create_abuti:truth_of_abuti"
+ ],
+ "results": [
+  {
+   "id": "create_abuti:truth_of_abuti"
+  },
+  {
+   "id": "create_abuti:salmon_sushi"
+  }
+ ]
+}

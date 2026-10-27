@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:precision_circuit",
+ "ingredient": "minecraft:ender_pearl",
+ "results": [
+  {
+   "id": "createloveandwar:quantum_circuit"
+  }
+ ]
+}

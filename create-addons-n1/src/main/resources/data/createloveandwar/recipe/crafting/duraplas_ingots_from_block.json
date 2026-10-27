@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:block_of_duraplas"
+ ],
+ "result": {
+  "id": "createloveandwar:duraplas_ingot",
+  "count": 9
+ }
+}

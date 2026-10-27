@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "misc",
+ "ingredients": [
+  "createloveandwar:tungsten"
+ ],
+ "result": {
+  "id": "createloveandwar:tungsten_nugget",
+  "count": 9
+ }
+}

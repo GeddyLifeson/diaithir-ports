@@ -1,0 +1,15 @@
+{
+ "type": "create:crushing",
+ "ingredient": "minecraft:ender_eye",
+ "results": [
+  {
+   "id": "minecraft:ender_pearl",
+   "chance": 0.7
+  },
+  {
+   "id": "minecraft:blaze_powder",
+   "chance": 0.2
+  }
+ ],
+ "processing_time": 200
+}

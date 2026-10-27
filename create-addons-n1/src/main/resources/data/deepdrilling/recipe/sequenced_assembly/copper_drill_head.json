@@ -1,0 +1,37 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create:industrial_iron_block",
+ "transitional_item": {
+  "id": "deepdrilling:incomplete_copper_drill_head"
+ },
+ "result": {
+  "id": "deepdrilling:copper_drill_head",
+  "chance": 100.0
+ },
+ "loops": 3,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "create:copper_sheet",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 50
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

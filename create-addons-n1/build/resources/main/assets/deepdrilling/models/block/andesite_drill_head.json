@@ -1,0 +1,6 @@
+{
+  "parent": "deepdrilling:block/base_drill_head",
+  "textures": {
+    "0": "minecraft:block/andesite"
+  }
+}

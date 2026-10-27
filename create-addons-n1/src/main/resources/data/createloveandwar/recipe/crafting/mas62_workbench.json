@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "createloveandwar:mas62blueprint",
+  "P": "createloveandwar:polymer_ingot",
+  "W": "createloveandwar:law_workbench"
+ },
+ "pattern": [
+  "BBB",
+  "PWP",
+  "P P"
+ ],
+ "result": {
+  "id": "createloveandwar:mas62_workbench"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,1 @@
+{"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "alchemind:creative_arcana_generator"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]}

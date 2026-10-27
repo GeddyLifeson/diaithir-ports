@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "deepdrilling:block/drill_overclock/block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "deepdrilling:block/drill_overclock/block"
+    },
+    "axis=z": {
+      "model": "deepdrilling:block/drill_overclock/block",
+      "x": 90
+    }
+  }
+}

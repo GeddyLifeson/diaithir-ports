@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  "aba",
+  "cdc",
+  "cbc"
+ ],
+ "key": {
+  "a": "#minecraft:planks",
+  "b": "minecraft:cobblestone",
+  "c": "#minecraft:logs",
+  "d": "minecraft:glass"
+ },
+ "result": {
+  "id": "automatemat:village_core"
+ }
+}

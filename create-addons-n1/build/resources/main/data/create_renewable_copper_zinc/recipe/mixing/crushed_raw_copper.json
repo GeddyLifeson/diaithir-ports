@@ -1,0 +1,18 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:granite",
+  "minecraft:clay_ball",
+  "create:cinder_flour"
+ ],
+ "results": [
+  {
+   "id": "create:crushed_raw_copper"
+  },
+  {
+   "id": "create:crushed_raw_copper",
+   "chance": 0.25
+  }
+ ],
+ "heat_requirement": "heated"
+}

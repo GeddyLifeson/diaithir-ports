@@ -1,0 +1,26 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block",
+  "minecraft:coal_block"
+ ],
+ "results": [
+  {
+   "id": "minecraft:diamond"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 8100
+  }
+ ]
+}

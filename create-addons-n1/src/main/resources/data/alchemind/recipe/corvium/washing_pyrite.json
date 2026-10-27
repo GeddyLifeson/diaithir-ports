@@ -1,0 +1,14 @@
+{
+ "type": "create:splashing",
+ "ingredient": "alchemind:pyrite",
+ "results": [
+  {
+   "id": "minecraft:coal",
+   "chance": 0.5
+  },
+  {
+   "id": "minecraft:gunpowder",
+   "chance": 0.5
+  }
+ ]
+}

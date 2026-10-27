@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "I": "minecraft:diamond",
+  "V": "create_bs:crystal_item_vault"
+ },
+ "pattern": [
+  "III",
+  "IVI",
+  "III"
+ ],
+ "result": {
+  "id": "create_bs:diamond_item_vault"
+ },
+ "show_notification": true
+}

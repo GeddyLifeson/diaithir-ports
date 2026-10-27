@@ -1,0 +1,10 @@
+{
+ "type": "create:deploying",
+ "target": "createloveandwar:filled_heavy_rifle_casing",
+ "ingredient": "#c:nuggets/iron",
+ "results": [
+  {
+   "id": "createloveandwar:heavy_rifle_bullet"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "type": "create:mechanical_crafting",
+ "pattern": [
+  "LRCSSSL",
+  " RB    "
+ ],
+ "key": {
+  "L": "create:andesite_alloy",
+  "R": "create:precision_mechanism",
+  "S": "#minecraft:logs_that_burn",
+  "C": "create:andesite_casing",
+  "B": "create:mechanical_bearing"
+ },
+ "result": {
+  "id": "createmorepotatoes:potato_turret"
+ },
+ "acceptMirrored": true
+}

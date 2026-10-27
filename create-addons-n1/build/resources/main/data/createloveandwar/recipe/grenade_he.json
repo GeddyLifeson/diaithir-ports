@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "G": "#createloveandwar:propellant",
+  "I": "minecraft:iron_nugget",
+  "R": "minecraft:redstone"
+ },
+ "pattern": [
+  "IRI",
+  "IGI",
+  "III"
+ ],
+ "result": {
+  "id": "createloveandwar:grenade_he"
+ },
+ "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+ "type": "create:mechanical_crafting",
+ "acceptMirrored": true,
+ "key": {
+  "E": "create_unbreakable:philolite",
+  "B": "create:brass_sheet",
+  "P": "create:precision_mechanism",
+  "S": "create_unbreakable:luminarchy"
+ },
+ "pattern": [
+  " EBE ",
+  "EPBPE",
+  "BBSBB",
+  "EPBPE",
+  " EBE "
+ ],
+ "result": {
+  "id": "create_unbreakable:irromolding"
+ }
+}

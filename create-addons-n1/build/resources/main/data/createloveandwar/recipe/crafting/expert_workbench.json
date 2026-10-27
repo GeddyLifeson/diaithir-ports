@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "B": "createloveandwar:forgotten_gunsmith_parts",
+  "P": "createloveandwar:polymer_ingot",
+  "N": "minecraft:netherite_ingot",
+  "W": "createloveandwar:law_workbench"
+ },
+ "pattern": [
+  "BBB",
+  "BWB",
+  "PNP"
+ ],
+ "result": {
+  "id": "createloveandwar:expert_workbench"
+ },
+ "show_notification": true
+}

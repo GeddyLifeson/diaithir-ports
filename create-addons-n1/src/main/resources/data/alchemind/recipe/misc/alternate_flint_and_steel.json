@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "i  ",
+  " f ",
+  "   "
+ ],
+ "key": {
+  "i": "alchemind:pyrite",
+  "f": "minecraft:iron_nugget"
+ },
+ "result": {
+  "id": "minecraft:flint_and_steel"
+ }
+}

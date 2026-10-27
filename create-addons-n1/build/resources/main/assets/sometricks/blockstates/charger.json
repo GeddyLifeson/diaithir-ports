@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "sometricks:block/charger"
+    },
+    "facing=east": {
+      "model": "sometricks:block/charger",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "sometricks:block/charger",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sometricks:block/charger",
+      "y": 270
+    }
+  }
+}

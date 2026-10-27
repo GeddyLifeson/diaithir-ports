@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "C": "strontium:yellowcake"
+ },
+ "pattern": [
+  "CCC",
+  "CCC",
+  "CCC"
+ ],
+ "result": {
+  "id": "strontium:yellowcake_block"
+ },
+ "show_notification": true
+}

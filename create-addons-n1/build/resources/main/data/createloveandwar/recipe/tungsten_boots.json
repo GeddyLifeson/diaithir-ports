@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "T": "createloveandwar:tungsten"
+ },
+ "pattern": [
+  "   ",
+  "T T",
+  "T T"
+ ],
+ "result": {
+  "id": "createloveandwar:tungsten_boots"
+ },
+ "show_notification": true
+}

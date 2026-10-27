@@ -1,0 +1,18 @@
+{
+ "type": "create:compacting",
+ "ingredients": [
+  "minecraft:cobblestone"
+ ],
+ "results": [
+  {
+   "id": "minecraft:cobbled_deepslate"
+  }
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "fluid": "minecraft:lava",
+   "amount": 8100
+  }
+ ]
+}
