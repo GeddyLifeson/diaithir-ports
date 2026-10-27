@@ -1,0 +1,119 @@
+package com.diaithir.addons.oreexcavation.block;
+
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition.Builder;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import com.mojang.serialization.MapCodec;
+import com.zurrtum.create.foundation.block.IBE;
+
+import com.diaithir.addons.oreexcavation.Registration;
+import com.diaithir.addons.oreexcavation.block.MultiblockPart.MultiblockGhostPart;
+import com.diaithir.addons.oreexcavation.block.entity.IOBlockEntity;
+import com.diaithir.addons.oreexcavation.util.IOBlockType;
+
+public class IOBlock extends BaseEntityBlock implements MultiblockGhostPart, IBE<IOBlockEntity> {
+	public static final EnumProperty<IOBlockType> TYPE = EnumProperty.create("type", IOBlockType.class);
+	public static final MapCodec<IOBlock> CODEC = simpleCodec(IOBlock::new);
+
+	public IOBlock(Properties pr) {
+		super(pr);
+	}
+
+	@Override
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+		builder.add(new Property[]{FACING, TYPE});
+		super.createBlockStateDefinition(builder);
+	}
+
+	@Override
+	protected VoxelShape getVisualShape(BlockState pState, BlockGetter pReader, BlockPos pPos, CollisionContext pContext) {
+		return Shapes.empty();
+	}
+
+	@Override
+	protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+		return 1.0F;
+	}
+
+	@Override
+	protected boolean propagatesSkylightDown(BlockState pState) {
+		return true;
+	}
+
+	@Override
+	public Direction getParentDir(BlockState state) {
+		return state.getValue(FACING);
+	}
+
+	@Override
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		return hasParent(state, level, pos);
+	}
+
+	@Override
+	protected BlockState updateShape(BlockState pState, LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource random) {
+		return !canSurvive(pState, pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : pState;
+	}
+
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player pPlayer) {
+		var st = super.playerWillDestroy(level, pos, state, pPlayer);
+		destroyParent(level, pos, state, pPlayer);
+		return st;
+	}
+
+	@Override
+	public Class<IOBlockEntity> getBlockEntityClass() {
+		return IOBlockEntity.class;
+	}
+
+	@Override
+	public BlockEntityType<? extends IOBlockEntity> getBlockEntityType() {
+		return Registration.IO_TILE.get();
+	}
+
+	@Override
+	protected InteractionResult useItemOn(ItemStack item, BlockState state, Level level,
+			BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+		return onActivate(state, level, pos, player, hand, hit);
+	}
+
+	@Override
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hit) {
+		return onActivate(state, level, pos, player, hit);
+	}
+
+	@Override
+	protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
+		return pickBlock(level, pos, state);
+	}
+
+	@Override
+	protected MapCodec<? extends BaseEntityBlock> codec() {
+		return CODEC;
+	}
+}
