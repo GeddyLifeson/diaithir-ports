@@ -1,7 +1,17 @@
 package net.diaithir.woodvariants;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.item.DoubleHighBlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.PushReaction;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -37,7 +47,12 @@ public final class DiaithirWoodVariants {
 
     private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ID);
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ID);
-    private static final List<DeferredItem<BlockItem>> ALL_ITEMS = new ArrayList<>();
+    private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, ID);
+    private static final List<DeferredItem<? extends Item>> ALL_ITEMS = new ArrayList<>();
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT = ENTITIES.register("seat",
+        id -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).sized(0.01F, 0.01F).noSave().noSummon()
+            .clientTrackingRange(8).updateInterval(20).build(ResourceKey.create(Registries.ENTITY_TYPE, id)));
 
     public DiaithirWoodVariants(IEventBus bus) {
         int woods = 0;
@@ -47,32 +62,40 @@ public final class DiaithirWoodVariants {
             }
             woods++;
             add(wood, Piece.CHAIR, FurnitureBlock.Chair::new, true);
-            add(wood, Piece.STOOL, FixedBlock.Stool::new, true);
+            add(wood, Piece.STOOL, FixedBlock::new, true);
             add(wood, Piece.BENCH, FurnitureBlock.Bench::new, true);
-            add(wood, Piece.TABLE, FixedBlock.Table::new, true);
+            add(wood, Piece.TABLE, TableBlock::new, true);
             add(wood, Piece.WALL, WallBlock::new, false);
             add(wood, Piece.VERTICAL, Block::new, false);
             add(wood, Piece.FRAMED, Block::new, false);
+            DeferredBlock<DoorBlock> door = BLOCKS.registerBlock(wood.id() + "_" + Piece.DOOR.suffix,
+                p -> new DoorBlock(BlockSetType.OAK, p), () -> props().noOcclusion().strength(3.0F).pushReaction(PushReaction.DESTROY));
+            ALL_ITEMS.add(ITEMS.registerItem(wood.id() + "_" + Piece.DOOR.suffix,
+                p -> new DoubleHighBlockItem(door.get(), p.useBlockDescriptionPrefix())));
+            DeferredBlock<TrapDoorBlock> trap = BLOCKS.registerBlock(wood.id() + "_" + Piece.TRAPDOOR.suffix,
+                p -> new TrapDoorBlock(BlockSetType.OAK, p), () -> props().noOcclusion().strength(3.0F));
+            ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(trap));
         }
         LOG.info("Wood variants added for {} woods", woods);
         BLOCKS.register(bus);
         ITEMS.register(bus);
+        ENTITIES.register(bus);
         bus.addListener(DiaithirWoodVariants::tabs);
+    }
+
+    private static BlockBehaviour.Properties props() {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).ignitedByLava();
     }
 
     private static <B extends Block> void add(WoodDef wood, Piece piece, Function<BlockBehaviour.Properties, B> factory, boolean open) {
         String name = wood.id() + "_" + piece.suffix;
-        DeferredBlock<B> block = BLOCKS.registerBlock(name, factory, () -> {
-            BlockBehaviour.Properties p = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).sound(SoundType.WOOD)
-                .strength(2.0F, 3.0F).ignitedByLava();
-            return open ? p.noOcclusion() : p;
-        });
+        DeferredBlock<B> block = BLOCKS.registerBlock(name, factory, () -> open ? props().noOcclusion() : props());
         ALL_ITEMS.add(ITEMS.registerSimpleBlockItem(block));
     }
 
     private static void tabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS || event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            for (DeferredItem<BlockItem> item : ALL_ITEMS) {
+            for (DeferredItem<? extends Item> item : ALL_ITEMS) {
                 event.accept(item);
             }
         }

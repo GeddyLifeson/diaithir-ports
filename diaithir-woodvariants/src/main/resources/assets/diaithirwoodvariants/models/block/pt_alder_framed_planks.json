@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "productivetrees:block/planks/alder",
-  "end": "productivetrees:block/log_top/alder",
-  "particle": "productivetrees:block/planks/alder"
- }
-}

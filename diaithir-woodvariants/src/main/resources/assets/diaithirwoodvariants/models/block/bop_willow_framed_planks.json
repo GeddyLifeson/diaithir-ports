@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "biomesoplenty:block/willow_planks",
-  "end": "biomesoplenty:block/willow_log_top",
-  "particle": "biomesoplenty:block/willow_planks"
- }
-}

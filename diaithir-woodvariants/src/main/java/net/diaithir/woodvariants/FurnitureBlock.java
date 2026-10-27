@@ -3,6 +3,10 @@ package net.diaithir.woodvariants;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +21,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Map;
 
 /** A piece of furniture that faces the person who placed it (chair, bench). */
-public abstract class FurnitureBlock extends HorizontalDirectionalBlock {
+public abstract class FurnitureBlock extends HorizontalDirectionalBlock implements Seat {
+    public static final double SEAT_Y = Seat.SEAT_TOP;
     private final Map<Direction, VoxelShape> shapes;
 
     protected FurnitureBlock(Properties properties, int[][] boxes) {
@@ -29,6 +34,16 @@ public abstract class FurnitureBlock extends HorizontalDirectionalBlock {
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return shapes.get(state.getValue(FACING));
+    }
+
+    @Override
+    public double seatHeight() {
+        return SEAT_Y;
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        return Seats.sit(level, pos, player, seatHeight(), state.getValue(FACING).toYRot());
     }
 
     @Override

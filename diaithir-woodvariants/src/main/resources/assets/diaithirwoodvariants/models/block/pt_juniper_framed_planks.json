@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "productivetrees:block/planks/juniper",
-  "end": "productivetrees:block/log_top/juniper",
-  "particle": "productivetrees:block/planks/juniper"
- }
-}

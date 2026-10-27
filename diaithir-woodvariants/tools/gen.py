@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
 """Writes blockstates, models, item models, lang, recipes, loot tables and tags for every row of
-src/main/resources/data/diaithirwoodvariants/woods.json. Run from the module folder:  python3 -I tools/gen.py
+src/main/resources/data/diaithirwoodvariants/woods.json. Gradle runs it before processResources (output build/generated/resources); by hand: python3 -I tools/gen.py [OUTDIR]
 Adding a wood = adding a row to woods.json and running this. Own code, MIT."""
-import json, os, shutil
+import json, os, shutil, sys
 
 ID = "diaithirwoodvariants"
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RES = os.path.join(HERE, "src/main/resources")
-woods = json.load(open(f"{RES}/data/{ID}/woods.json", encoding="utf-8"))["woods"]
+SRC = os.path.join(HERE, "src/main/resources")
+RES = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(HERE, "build/generated/resources")
+woods = json.load(open(f"{SRC}/data/{ID}/woods.json", encoding="utf-8"))["woods"]
 
-PIECES = [("chair", "Sèiter"), ("stool", "Kriepun"), ("bench", "Beingi"), ("table", "Bòird"), ("wall", "Balda"),
-          ("vertical_planks", "Klàr dìrech"), ("framed_planks", "Klàr kèisi")]
+PIECES = [("chair", "Sèiter", "Chair"), ("stool", "Kriepun", "Stool"), ("bench", "Beingi", "Bench"), ("table", "Bòird", "Table"),
+          ("wall", "Balda", "Wall"), ("vertical_planks", "Klàr dìrech", "Vertical Planks"),
+          ("framed_planks", "Klàr kèisi", "Framed Planks"), ("plank_door", "Douras", "Plank Door"),
+          ("plank_trapdoor", "Muldach", "Plank Trapdoor")]
 
-for sub in ("assets", "data/" + ID + "/recipe", "data/" + ID + "/loot_table", "data/minecraft"):
-    shutil.rmtree(os.path.join(RES, sub), ignore_errors=True)
+shutil.rmtree(RES, ignore_errors=True)
+
+
+def optional(ids):
+    """tag entries that are skipped when the block is missing (its wood mod is not installed)"""
+    return [{"id": i, "required": False} for i in ids]
 
 
 def put(path, obj):
@@ -71,29 +78,88 @@ def rec(result, count, pattern=None, key=None, shapeless=None, w=None):
 
 
 lang = {}
-walls, axe = [], []
+native = {}
+walls, axe, doors, trapdoors = [], [], [], []
 for w in woods:
     P, S = w["planks"], "#c:rods/wooden"
-    for suffix, dia in PIECES:
+    for suffix, dia, eng in PIECES:
         name = f"{w['id']}_{suffix}"
         axe.append(f"{ID}:{name}")
-        lang[f"block.{ID}.{name}"] = f"{dia} {w['gen']}"
+        lang[f"block.{ID}.{name}"] = f"{w['name']} {eng}"
+        lang[f"native.{ID}.{name}"] = f"{dia} {w['gen']}"
+        native[f"{w['name']} {eng}"] = f"{dia} {w['gen']}"
+        conds = [{"condition": "minecraft:survives_explosion"}]
+        if suffix == "plank_door":
+            conds.insert(0, {"condition": "minecraft:block_state_property", "block": f"{ID}:{name}", "properties": {"half": "lower"}})
         put(f"data/{ID}/loot_table/blocks/{name}.json", {
+            "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": w["mod"]}],
             "type": "minecraft:block", "random_sequence": f"{ID}:blocks/{name}",
-            "pools": [{"rolls": 1, "bonus_rolls": 0, "conditions": [{"condition": "minecraft:survives_explosion"}],
+            "pools": [{"rolls": 1, "bonus_rolls": 0, "conditions": conds,
                        "entries": [{"type": "minecraft:item", "name": f"{ID}:{name}"}]}]})
         put(f"assets/{ID}/items/{name}.json", {"model": {"type": "minecraft:model", "model": f"{ID}:item/{name}"
-                                                          if suffix == "wall" else f"{ID}:block/{name}"}})
+                                                          if suffix in ("wall", "plank_door") else (f"{ID}:block/{name}_bottom" if suffix == "plank_trapdoor" else f"{ID}:block/{name}")}})
         mdl = f"{ID}:block/{name}"
         if suffix in ("chair", "bench"):
             spec = CHAIR if suffix == "chair" else BENCH
             put(f"assets/{ID}/models/block/{name}.json", {"textures": textures(w), "elements": elements(spec)})
             put(f"assets/{ID}/blockstates/{name}.json", {"variants": {
                 f"facing={d}": {"model": mdl, "y": y} for d, y in (("north", 0), ("east", 90), ("south", 180), ("west", 270))}})
-        elif suffix in ("stool", "table"):
-            spec = STOOL if suffix == "stool" else TABLE
-            put(f"assets/{ID}/models/block/{name}.json", {"textures": textures(w), "elements": elements(spec)})
+        elif suffix == "stool":
+            put(f"assets/{ID}/models/block/{name}.json", {"textures": textures(w), "elements": elements(STOOL)})
             put(f"assets/{ID}/blockstates/{name}.json", {"variants": {"": {"model": mdl}}})
+        elif suffix == "table":
+            put(f"assets/{ID}/models/block/{name}.json", {"textures": textures(w), "elements": elements(TABLE)})
+            put(f"assets/{ID}/models/block/{name}_top.json", {"textures": textures(w), "elements": elements(TABLE[:1])})
+            put(f"assets/{ID}/models/block/{name}_leg.json", {"textures": textures(w), "elements": elements(TABLE[1:2])})
+            ms = [{"apply": {"model": f"{mdl}_top"}}]
+            # leg model sits in the north-west corner; turn it for the others
+            for a, b, y in (("north", "west", 0), ("north", "east", 90), ("south", "east", 180), ("south", "west", 270)):
+                ms.append({"when": {a: "false", b: "false"}, "apply": {"model": f"{mdl}_leg", "y": y}})
+            put(f"assets/{ID}/blockstates/{name}.json", {"multipart": ms})
+        elif suffix == "plank_door":
+            doors.append(f"{ID}:{name}")
+            t = {"top": w["planks_texture"], "bottom": w["planks_texture"], "particle": w["planks_texture"]}
+            for half in ("bottom", "top"):
+                for hinge in ("left", "right"):
+                    for op in ("", "_open"):
+                        put(f"assets/{ID}/models/block/{name}_{half}_{hinge}{op}.json",
+                            {"parent": f"minecraft:block/door_{half}_{hinge}{op}", "textures": t})
+            put(f"assets/{ID}/models/item/{name}.json", {"parent": "minecraft:block/block", "textures": {"all": w["planks_texture"], "particle": w["planks_texture"]},
+                "elements": [box([3, 0, 7], [13, 16, 9], "#all")]})
+            v = {}
+            for fd, base in (("east", 0), ("south", 90), ("west", 180), ("north", 270)):
+                for half in ("lower", "upper"):
+                    hn = "bottom" if half == "lower" else "top"
+                    for hinge in ("left", "right"):
+                        for op in (False, True):
+                            y = (base + (0 if not op else (90 if hinge == "left" else 270))) % 360
+                            m = f"{mdl}_{hn}_{hinge}" + ("_open" if op else "")
+                            e = {"model": m}
+                            if y:
+                                e["y"] = y
+                            v[f"facing={fd},half={half},hinge={hinge},open={str(op).lower()}"] = e
+            put(f"assets/{ID}/blockstates/{name}.json", {"variants": v})
+        elif suffix == "plank_trapdoor":
+            trapdoors.append(f"{ID}:{name}")
+            t = {"texture": w["planks_texture"], "particle": w["planks_texture"]}
+            for part in ("bottom", "top", "open"):
+                put(f"assets/{ID}/models/block/{name}_{part}.json", {"parent": f"minecraft:block/template_trapdoor_{part}", "textures": t})
+            v = {}
+            for fd, y in (("north", 0), ("south", 180), ("east", 90), ("west", 270)):
+                for half in ("bottom", "top"):
+                    for op in (False, True):
+                        if not op:
+                            e = {"model": f"{mdl}_{half}"}
+                            if y:
+                                e["y"] = y
+                        elif half == "bottom":
+                            e = {"model": f"{mdl}_open"}
+                            if y:
+                                e["y"] = y
+                        else:
+                            e = {"model": f"{mdl}_open", "x": 180, "y": (y + 180) % 360}
+                        v[f"facing={fd},half={half},open={str(op).lower()}"] = e
+            put(f"assets/{ID}/blockstates/{name}.json", {"variants": v})
         elif suffix == "wall":
             walls.append(f"{ID}:{name}")
             t = {"wall": w["planks_texture"]}
@@ -122,10 +188,17 @@ for w in woods:
     put(f"data/{ID}/recipe/{w['id']}_table.json", rec(f"{w['id']}_table", 1, ["PPP", "S S", "S S"], {"S": S, "P": P}, w=w))
     put(f"data/{ID}/recipe/{w['id']}_wall.json", rec(f"{w['id']}_wall", 6, ["PPP", "PPP"], {"P": P}, w=w))
     put(f"data/{ID}/recipe/{w['id']}_vertical_planks.json", rec(f"{w['id']}_vertical_planks", 3, shapeless=[P, P, P], w=w))
+    put(f"data/{ID}/recipe/{w['id']}_plank_door.json", rec(f"{w['id']}_plank_door", 3, ["PP", "PS", "PP"], {"S": S, "P": P}, w=w))
+    put(f"data/{ID}/recipe/{w['id']}_plank_trapdoor.json", rec(f"{w['id']}_plank_trapdoor", 2, ["SPS", "SPS"], {"S": S, "P": P}, w=w))
     put(f"data/{ID}/recipe/{w['id']}_framed_planks.json", rec(f"{w['id']}_framed_planks", 4, ["PS", "SP"], {"S": S, "P": P}, w=w))
 
 put(f"assets/{ID}/lang/en_us.json", lang)
-put("data/minecraft/tags/block/mineable/axe.json", {"values": axe})
-put("data/minecraft/tags/block/walls.json", {"values": walls})
-put("data/minecraft/tags/item/walls.json", {"values": walls})
+if os.environ.get("NATIVE_OUT"):
+    json.dump(native, open(os.environ["NATIVE_OUT"], "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+put("data/minecraft/tags/block/mineable/axe.json", {"values": optional(axe)})
+put("data/minecraft/tags/block/walls.json", {"values": optional(walls)})
+put("data/minecraft/tags/item/walls.json", {"values": optional(walls)})
+for kind, vals in (("doors", doors), ("wooden_doors", doors), ("trapdoors", trapdoors), ("wooden_trapdoors", trapdoors)):
+    put(f"data/minecraft/tags/block/{kind}.json", {"values": optional(vals)})
+    put(f"data/minecraft/tags/item/{kind}.json", {"values": optional(vals)})
 print(len(woods), "woods,", len(axe), "blocks")

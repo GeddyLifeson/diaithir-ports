@@ -12,6 +12,11 @@ import java.util.Map;
 public final class Box {
     private Box() {}
 
+    /** Which table corner legs exist (NW, NE, SE, SW): a leg is there when neither side of its corner is joined to a table. */
+    public static boolean[] legs(boolean n, boolean e, boolean s, boolean w) {
+        return new boolean[] {!n && !w, !n && !e, !s && !e, !s && !w};
+    }
+
     /** x1,y1,z1,x2,y2,z2 */
     public static int[] b(int x1, int y1, int z1, int x2, int y2, int z2) {
         return new int[] {x1, y1, z1, x2, y2, z2};

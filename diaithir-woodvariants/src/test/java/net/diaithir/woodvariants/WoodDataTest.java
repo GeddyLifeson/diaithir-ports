@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WoodDataTest {
-    private static final String[] SUFFIXES = {"chair", "stool", "bench", "table", "wall", "vertical_planks", "framed_planks"};
+    private static final String[] SUFFIXES = {"chair", "stool", "bench", "table", "wall", "vertical_planks", "framed_planks", "plank_door", "plank_trapdoor"};
 
     private static boolean exists(String path) {
         return WoodDataTest.class.getResource(path) != null;
@@ -23,7 +23,7 @@ class WoodDataTest {
         try (InputStream in = WoodDataTest.class.getResourceAsStream("/data/diaithirwoodvariants/woods.json")) {
             woods = WoodDef.parse(new InputStreamReader(in, StandardCharsets.UTF_8));
         }
-        assertTrue(woods.size() >= 18);
+        assertTrue(woods.size() >= 200);
         String lang;
         try (InputStream in = WoodDataTest.class.getResourceAsStream("/assets/diaithirwoodvariants/lang/en_us.json")) {
             lang = new String(in.readAllBytes(), StandardCharsets.UTF_8);
@@ -39,6 +39,27 @@ class WoodDataTest {
             }
             assertTrue(w.planks().startsWith(w.mod() + ":"), w.id());
         }
+    }
+
+    @Test
+    void tableLegsDisappearWhereTablesJoin() {
+        assertArrayEquals(new boolean[] {true, true, true, true}, Box.legs(false, false, false, false));
+        assertArrayEquals(new boolean[] {false, false, true, true}, Box.legs(true, false, false, false));
+        assertArrayEquals(new boolean[] {false, true, true, false}, Box.legs(false, false, false, true));
+        assertArrayEquals(new boolean[] {false, false, false, false}, Box.legs(true, true, true, true));
+    }
+
+    @Test
+    void doorAndTrapdoorBlockstatesCoverEveryState() throws Exception {
+        String door, trap;
+        try (InputStream in = WoodDataTest.class.getResourceAsStream("/assets/diaithirwoodvariants/blockstates/aii_skyroot_plank_door.json")) {
+            door = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        }
+        try (InputStream in = WoodDataTest.class.getResourceAsStream("/assets/diaithirwoodvariants/blockstates/aii_skyroot_plank_trapdoor.json")) {
+            trap = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        }
+        assertEquals(32, door.split("\"facing=", -1).length - 1);
+        assertEquals(16, trap.split("\"facing=", -1).length - 1);
     }
 
     @Test

@@ -2,19 +2,34 @@ package net.diaithir.woodvariants;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-/** A piece with no facing (stool, table). */
-public abstract class FixedBlock extends Block {
-    private final VoxelShape shape;
+/** The stool: no facing, and you can sit on it. */
+public final class FixedBlock extends Block implements Seat {
+    public static final MapCodec<FixedBlock> CODEC = simpleCodec(FixedBlock::new);
+    private final VoxelShape shape = Box.shape(Piece.STOOL_BOXES, Direction.NORTH);
 
-    protected FixedBlock(Properties properties, int[][] boxes) {
+    public FixedBlock(Properties properties) {
         super(properties);
-        this.shape = Box.shape(boxes, net.minecraft.core.Direction.NORTH);
+    }
+
+    @Override
+    protected MapCodec<? extends Block> codec() {
+        return CODEC;
+    }
+
+    @Override
+    public double seatHeight() {
+        return SEAT_TOP;
     }
 
     @Override
@@ -22,29 +37,8 @@ public abstract class FixedBlock extends Block {
         return shape;
     }
 
-    public static final class Stool extends FixedBlock {
-        public static final MapCodec<Stool> CODEC = simpleCodec(Stool::new);
-
-        public Stool(Properties p) {
-            super(p, Piece.STOOL_BOXES);
-        }
-
-        @Override
-        protected MapCodec<? extends Block> codec() {
-            return CODEC;
-        }
-    }
-
-    public static final class Table extends FixedBlock {
-        public static final MapCodec<Table> CODEC = simpleCodec(Table::new);
-
-        public Table(Properties p) {
-            super(p, Piece.TABLE_BOXES);
-        }
-
-        @Override
-        protected MapCodec<? extends Block> codec() {
-            return CODEC;
-        }
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        return Seats.sit(level, pos, player, seatHeight(), player.getYRot());
     }
 }

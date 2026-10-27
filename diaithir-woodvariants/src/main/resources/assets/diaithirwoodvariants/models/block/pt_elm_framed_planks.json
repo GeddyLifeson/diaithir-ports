@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "productivetrees:block/planks/elm",
-  "end": "productivetrees:block/log_top/elm",
-  "particle": "productivetrees:block/planks/elm"
- }
-}

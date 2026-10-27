@@ -1,6 +1,6 @@
 package net.diaithir.woodvariants;
 
-/** The seven pieces made for every wood. Boxes face north; the chair back and bench stand on the south side. */
+/** The nine pieces made for every wood. Boxes face north; the chair back and bench stand on the south side. */
 public enum Piece {
     CHAIR("chair", "Sèiter"),
     STOOL("stool", "Kriepun"),
@@ -8,7 +8,9 @@ public enum Piece {
     TABLE("table", "Bòird"),
     WALL("wall", "Balda"),
     VERTICAL("vertical_planks", "Klàr dìrech"),
-    FRAMED("framed_planks", "Klàr kèisi");
+    FRAMED("framed_planks", "Klàr kèisi"),
+    DOOR("plank_door", "Douras"),
+    TRAPDOOR("plank_trapdoor", "Muldach");
 
     public final String suffix;
     public final String dia;

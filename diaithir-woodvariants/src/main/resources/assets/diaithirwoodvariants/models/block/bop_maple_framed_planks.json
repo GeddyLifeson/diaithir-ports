@@ -1,8 +1,0 @@
-{
- "parent": "minecraft:block/cube_column",
- "textures": {
-  "side": "biomesoplenty:block/maple_planks",
-  "end": "biomesoplenty:block/maple_log_top",
-  "particle": "biomesoplenty:block/maple_planks"
- }
-}
