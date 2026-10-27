@@ -68,7 +68,7 @@ public class GumWormDestroyGobthumperGoal extends Goal {
                 if(entity.level().getBlockState(this.entity.blockPosition()).isAir()){
                     entity.setDeltaMovement(entity.getDeltaMovement().add(0, -0.3F, 0));
                 }
-                entity.getNavigation().moveTo(leapFromPos.getX() + 0.5F, leapFromPos.getY() + 0.5F, leapFromPos.getZ() + 0.5F, 1.0D);
+                entity.getNavigation().snapTo(leapFromPos.getX() + 0.5F, leapFromPos.getY() + 0.5F, leapFromPos.getZ() + 0.5F, 1.0D);
             }
             if(entity.isLeaping() && distance < 20.0F){
                 entity.attemptPlayAttackNoise();

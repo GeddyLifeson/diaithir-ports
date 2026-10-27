@@ -229,9 +229,9 @@ public class AbyssalAltarBlockEntity extends BaseContainerBlockEntity implements
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput compound) {
         super.loadAdditional(compound);
         this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(compound, this.stacks, registries);
+        ContainerHelper.loadAllItems(compound, this.stacks);
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "PopStack")) {
-            this.popStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("PopStack"));
+            this.popStack = compound.read("PopStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "PlayerUUID")) {
             placingPlayer = compound.read("PlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
@@ -245,9 +245,9 @@ public class AbyssalAltarBlockEntity extends BaseContainerBlockEntity implements
     @Override
     protected void saveAdditional(net.minecraft.world.level.storage.ValueOutput compound) {
         super.saveAdditional(compound);
-        ContainerHelper.saveAllItems(compound, this.stacks, registries);
+        ContainerHelper.saveAllItems(compound, this.stacks);
         if (this.popStack != null && !this.popStack.isEmpty()) {
-            compound.put("PopStack", this.popStack.saveOptional(registries));
+            compound.store("PopStack", ItemStack.OPTIONAL_CODEC, this.popStack);
         }
         if (this.placingPlayer != null) {
             compound.store("PlayerUUID", net.minecraft.core.UUIDUtil.CODEC, this.placingPlayer);
@@ -310,14 +310,6 @@ public class AbyssalAltarBlockEntity extends BaseContainerBlockEntity implements
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider registries) {
-        if (packet != null && packet.getTag() != null) {
-            this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-            ContainerHelper.loadAllItems(packet.getTag(), this.stacks, registries);
-            this.itemAngle = packet.getTag().getFloatOr("Angle", 0F);
-        }
-    }
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {

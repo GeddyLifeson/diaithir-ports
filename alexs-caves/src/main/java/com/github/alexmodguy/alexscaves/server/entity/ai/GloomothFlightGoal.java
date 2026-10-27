@@ -63,7 +63,7 @@ public class GloomothFlightGoal extends Goal {
             entity.setFlying(false);
             speed = 1F;
         }
-        entity.getNavigation().moveTo(this.x, this.y, this.z, speed);
+        entity.getNavigation().snapTo(this.x, this.y, this.z, speed);
     }
 
     @javax.annotation.Nullable
@@ -133,7 +133,7 @@ public class GloomothFlightGoal extends Goal {
 
     public void start() {
         entity.setFlying(true);
-        entity.getNavigation().moveTo(x, y, z, 1F);
+        entity.getNavigation().snapTo(x, y, z, 1F);
     }
 
     public void stop() {

@@ -64,7 +64,7 @@ public class GloomothFleeMothBallsGoal extends Goal {
                 }
             }
         }else{
-            gloomoth.getNavigation().moveTo(retreatTo.x, retreatTo.y, retreatTo.z, 1F);
+            gloomoth.getNavigation().snapTo(retreatTo.x, retreatTo.y, retreatTo.z, 1F);
         }
     }
 }

@@ -348,7 +348,7 @@ public class TripodfishEntity extends WaterAnimal implements Bucketable {
                 fleeTarget = DefaultRandomPos.getPosAway(TripodfishEntity.this, 16, 7, Vec3.atCenterOf(TripodfishEntity.this.hurtPos));
             }
             if (fleeTarget != null) {
-                TripodfishEntity.this.getNavigation().moveTo(fleeTarget.x, fleeTarget.y, fleeTarget.z, 1.6F);
+                TripodfishEntity.this.getNavigation().snapTo(fleeTarget.x, fleeTarget.y, fleeTarget.z, 1.6F);
             }
         }
     }
@@ -391,7 +391,7 @@ public class TripodfishEntity extends WaterAnimal implements Bucketable {
 
         public void start() {
             TripodfishEntity.this.setStanding(false);
-            TripodfishEntity.this.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+            TripodfishEntity.this.getNavigation().snapTo(this.x, this.y, this.z, 1F);
         }
 
         public void stop() {

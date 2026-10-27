@@ -164,7 +164,7 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
             this.setCarrying(!this.getPassengers().isEmpty());
             if (this.isBuried() && buriedProgress >= 20.0F) {
                 if (reemergeTime-- < 0) {
-                    this.moveTo(remergePos.getX() + 0.5F, remergePos.getY(), remergePos.getZ() + 0.5F);
+                    this.snapTo(remergePos.getX() + 0.5F, remergePos.getY(), remergePos.getZ() + 0.5F);
                     idleBuryIn = 400 + random.nextInt(800);
                     reemergeTime = 0;
                     this.setBuried(false);

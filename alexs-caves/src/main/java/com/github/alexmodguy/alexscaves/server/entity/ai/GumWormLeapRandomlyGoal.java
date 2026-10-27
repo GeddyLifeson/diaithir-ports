@@ -84,7 +84,7 @@ public class GumWormLeapRandomlyGoal extends Goal {
                 leapFor--;
             }
         } else {
-            entity.getNavigation().moveTo(this.x, this.y, this.z, 1.3F);
+            entity.getNavigation().snapTo(this.x, this.y, this.z, 1.3F);
             if (entity.distanceToSqr(this.x, this.y, this.z) < 18.0F) {
                 hasLept = true;
                 leapFor = maxLeapTime;

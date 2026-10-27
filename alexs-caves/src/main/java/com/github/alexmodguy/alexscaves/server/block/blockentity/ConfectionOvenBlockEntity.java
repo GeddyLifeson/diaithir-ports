@@ -234,10 +234,4 @@ public class ConfectionOvenBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-        this.cooldown = tag.getIntOr("Cooldown", 0);
-        this.gingerbreadTeamColor = tag.getIntOr("TeamColor", 0);
-        this.gingerbreadSpawns = tag.getIntOr("GingerbreadSpawns", 0);
-    }
 }

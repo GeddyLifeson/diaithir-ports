@@ -44,7 +44,7 @@ public class GumWormDigRandomlyGoal extends Goal {
     }
 
     public void start() {
-        entity.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+        entity.getNavigation().snapTo(this.x, this.y, this.z, 1F);
     }
 
     public boolean canContinueToUse() {

@@ -64,7 +64,7 @@ public class WatcherAttackGoal extends Goal {
                     watcher.setShadeMode(false);
                 }
                 if (dist > target.getBbWidth() + watcher.getBbWidth() + 0.5F) {
-                    watcher.getNavigation().moveTo(target, (watcher.isRunning() ? 1.3F : 1F) + Math.min(Math.log(possessions + 1), 1F) * 0.6F);
+                    watcher.getNavigation().snapTo(target, (watcher.isRunning() ? 1.3F : 1F) + Math.min(Math.log(possessions + 1), 1F) * 0.6F);
                 } else {
                     if (watcher.hasLineOfSight(target)) {
                         if (watcher.getAnimation() == IAnimatedEntity.NO_ANIMATION) {

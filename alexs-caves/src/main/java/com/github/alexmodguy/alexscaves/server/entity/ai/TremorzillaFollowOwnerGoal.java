@@ -124,7 +124,7 @@ public class TremorzillaFollowOwnerGoal extends Goal {
         } else if (!this.canTeleportTo(new BlockPos(x, y, z))) {
             return false;
         } else {
-            this.tremorzilla.moveTo((double)x + 0.5D, (double)y, (double)z + 0.5D, this.tremorzilla.getYRot(), this.tremorzilla.getXRot());
+            this.tremorzilla.snapTo((double)x + 0.5D, (double)y, (double)z + 0.5D, this.tremorzilla.getYRot(), this.tremorzilla.getXRot());
             this.tremorzilla.getNavigation().stop();
             return true;
         }

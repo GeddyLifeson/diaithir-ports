@@ -333,7 +333,7 @@ public class SeaPigEntity extends WaterAnimal implements Bucketable {
         }
 
         public void tick() {
-            SeaPigEntity.this.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+            SeaPigEntity.this.getNavigation().snapTo(this.x, this.y, this.z, 1F);
         }
 
         public BlockPos findWaterBlock() {

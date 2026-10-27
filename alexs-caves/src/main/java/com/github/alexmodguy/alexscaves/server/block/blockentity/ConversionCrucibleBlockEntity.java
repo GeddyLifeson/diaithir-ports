@@ -426,10 +426,10 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
     public void loadAdditional(net.minecraft.world.level.storage.ValueInput compound) {
         super.loadAdditional(compound);
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "WantStack")) {
-            this.wantStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("WantStack"));
+            this.wantStack = compound.read("WantStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "DisplayStack")) {
-            this.displayStack = ItemStack.parseOptional(registries, compound.getCompoundOrEmpty("DisplayStack"));
+            this.displayStack = compound.read("DisplayStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY);
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(compound, "ConvertingToBiome")) {
             convertingToBiome = ResourceKey.create(Registries.BIOME, Identifier.parse(compound.getStringOr("ConvertingToBiome", "")));
@@ -445,10 +445,10 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
     public void saveAdditional(net.minecraft.world.level.storage.ValueOutput compound) {
         super.saveAdditional(compound);
         if (this.wantStack != null && !this.wantStack.isEmpty()) {
-            compound.put("WantStack", this.wantStack.saveOptional(registries));
+            compound.store("WantStack", ItemStack.OPTIONAL_CODEC, this.wantStack);
         }
         if (this.displayStack != null && !this.displayStack.isEmpty()) {
-            compound.put("DisplayStack", this.displayStack.saveOptional(registries));
+            compound.store("DisplayStack", ItemStack.OPTIONAL_CODEC, this.displayStack);
         }
         if (convertingToBiome != null) {
             compound.putString("ConvertingToBiome", convertingToBiome.identifier().toString());
@@ -475,12 +475,6 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-        displayStack = ItemStack.EMPTY;
-        wantStack = ItemStack.EMPTY;
-        loadAdditional(tag, registries);
-    }
 
     public void markUpdated() {
         this.setChanged();

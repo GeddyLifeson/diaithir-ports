@@ -359,7 +359,7 @@ public class NuclearFurnaceBlockEntity extends BaseContainerBlockEntity implemen
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput compoundTag) {
         super.loadAdditional(compoundTag);
         this.items.clear();
-        ContainerHelper.loadAllItems(compoundTag, this.items, registries);
+        ContainerHelper.loadAllItems(compoundTag, this.items);
         currentWaste = compoundTag.getIntOr("Waste", 0);
         cookTime = compoundTag.getIntOr("CookTime", 0);
         maxCookTime = compoundTag.getIntOr("MaxCookTime", 0);
@@ -374,7 +374,7 @@ public class NuclearFurnaceBlockEntity extends BaseContainerBlockEntity implemen
     @Override
     protected void saveAdditional(net.minecraft.world.level.storage.ValueOutput compoundTag) {
         super.saveAdditional(compoundTag);
-        ContainerHelper.saveAllItems(compoundTag, this.items, true, registries);
+        ContainerHelper.saveAllItems(compoundTag, this.items, true);
         compoundTag.putInt("Waste", currentWaste);
         compoundTag.putInt("CookTime", cookTime);
         compoundTag.putInt("MaxCookTime", maxCookTime);
@@ -396,10 +396,6 @@ public class NuclearFurnaceBlockEntity extends BaseContainerBlockEntity implemen
         return this.saveWithoutMetadata(registries);
     }
 
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-        this.loadAdditional(tag, registries);
-    }
 
     public int getContainerSize() {
         return this.items.size();

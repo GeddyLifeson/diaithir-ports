@@ -128,7 +128,7 @@ public class AmberMonolithBlockEntity extends BlockEntity {
                         continue;
                     }
 
-                    entity.moveTo(d0, (double) blockpos.getY(), d1, level.getRandom().nextFloat() * 360.0F, 0.0F);
+                    entity.snapTo(d0, (double) blockpos.getY(), d1, level.getRandom().nextFloat() * 360.0F, 0.0F);
                     if (entity instanceof Mob) {
                         Mob mob = (Mob) entity;
                         if (net.neoforged.neoforge.event.EventHooks.checkSpawnPosition(mob, (ServerLevelAccessor) level, EntitySpawnReason.CHUNK_GENERATION)) {
@@ -249,18 +249,6 @@ public class AmberMonolithBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider registries) {
-        if (packet != null && packet.getTag() != null) {
-            if (packet.getTag().contains("EntityType")) {
-                String str = packet.getTag().getStringOr("EntityType", "");
-                this.spawnType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
-            }
-            this.spawnCount = packet.getTag().getIntOr("SpawnCount", 0);
-            this.spawnsMobIn = packet.getTag().getIntOr("SpawnMobsIn", 0);
-            this.hasDonePostBossSpawn = packet.getTag().getBooleanOr("PostBossSpawn", false);
-        }
-    }
 
     @Override
     protected void loadAdditional(net.minecraft.world.level.storage.ValueInput tag) {

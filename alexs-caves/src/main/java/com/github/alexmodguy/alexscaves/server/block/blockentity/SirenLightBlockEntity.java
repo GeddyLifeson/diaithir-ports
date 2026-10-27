@@ -69,16 +69,7 @@ public class SirenLightBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet, HolderLookup.Provider registries) {
-        if (packet != null && packet.getTag() != null) {
-            handleUpdateTag(packet.getTag(), registries);
-        }
-    }
-
-
-    public boolean setColor(int setTo) {
-        if (this.color == setTo) return false;
+is.color == setTo) return false;
         this.color = setTo;
         this.setChanged();
         level.sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 2);

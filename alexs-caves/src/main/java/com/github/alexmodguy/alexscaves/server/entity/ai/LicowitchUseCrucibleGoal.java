@@ -159,7 +159,7 @@ public class LicowitchUseCrucibleGoal extends Goal {
             mob.getLookControl().setLookAt(center.x, center.y + 1.0F - Math.sin(cookTime * 0.2F) * 0.2F, center.z, 10.0F, (float) this.mob.getMaxHeadXRot());
         }
         if (distance > 2.5D) {
-            mob.getNavigation().moveTo(cruciblePos.getX() + 0.5F, cruciblePos.getY(), cruciblePos.getZ() + 0.5F, 1);
+            mob.getNavigation().snapTo(cruciblePos.getX() + 0.5F, cruciblePos.getY(), cruciblePos.getZ() + 0.5F, 1);
         } else {
             if (distance < 1.25D) {
                 mob.getMoveControl().strafe(0.1F, 0F);

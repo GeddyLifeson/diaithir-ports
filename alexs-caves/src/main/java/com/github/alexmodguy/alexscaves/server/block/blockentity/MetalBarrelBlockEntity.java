@@ -59,7 +59,7 @@ public class MetalBarrelBlockEntity extends RandomizableContainerBlockEntity {
             p_187459_.putString("CustomName", Component.Serializer.toJson(this.customName, registries));
         }
         if (!this.trySaveLootTable(p_187459_)) {
-            ContainerHelper.saveAllItems(p_187459_, this.items, registries);
+            ContainerHelper.saveAllItems(p_187459_, this.items);
         }
 
     }
@@ -71,7 +71,7 @@ public class MetalBarrelBlockEntity extends RandomizableContainerBlockEntity {
         }
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(p_155055_)) {
-            ContainerHelper.loadAllItems(p_155055_, this.items, registries);
+            ContainerHelper.loadAllItems(p_155055_, this.items);
         }
 
     }
@@ -112,7 +112,7 @@ public class MetalBarrelBlockEntity extends RandomizableContainerBlockEntity {
 
     public void startOpen(Player p_58616_) {
         if (!this.remove && !p_58616_.isSpectator()) {
-            this.openersCounter.incrementOpeners(p_58616_, this.getLevel(), this.getBlockPos(), this.getBlockState());
+            this.openersCounter.incrementOpeners(p_58616_, this.getLevel(), this.getBlockPos(), this.getBlockState(), p_58616_.blockInteractionRange());
         }
 
     }

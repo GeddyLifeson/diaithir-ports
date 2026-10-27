@@ -371,7 +371,7 @@ public class GossamerWormEntity extends WaterAnimal implements Bucketable {
                 fleeTarget = DefaultRandomPos.getPosAway(GossamerWormEntity.this, 16, 7, Vec3.atCenterOf(GossamerWormEntity.this.hurtPos));
             }
             if (fleeTarget != null) {
-                GossamerWormEntity.this.getNavigation().moveTo(fleeTarget.x, fleeTarget.y, fleeTarget.z, 1.6F);
+                GossamerWormEntity.this.getNavigation().snapTo(fleeTarget.x, fleeTarget.y, fleeTarget.z, 1.6F);
             }
         }
     }

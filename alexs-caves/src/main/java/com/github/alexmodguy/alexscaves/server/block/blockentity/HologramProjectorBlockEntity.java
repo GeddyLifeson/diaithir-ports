@@ -125,18 +125,6 @@ public class HologramProjectorBlockEntity extends BlockEntity {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-        if (tag.contains("EntityType")) {
-            String str = tag.getStringOr("EntityType", "");
-            this.entityType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(str));
-        }
-        this.entityTag = tag.getCompoundOrEmpty("EntityTag");
-        this.rotation = tag.getFloatOr("Rotation", 0F);
-        if (tag.contains("LastPlayerUUID")) {
-            this.lastPlayerUUID = tag.read("LastPlayerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null);
-        }
-    }
 
     public CompoundTag getUpdateTag() {
         CompoundTag compoundtag = new CompoundTag();

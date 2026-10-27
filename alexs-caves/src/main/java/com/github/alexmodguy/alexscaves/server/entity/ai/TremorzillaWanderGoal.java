@@ -49,7 +49,7 @@ public class TremorzillaWanderGoal extends Goal {
     }
 
     public void start() {
-        tremorzilla.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+        tremorzilla.getNavigation().snapTo(this.x, this.y, this.z, 1F);
     }
 
     public BlockPos findWaterBlock(int range) {

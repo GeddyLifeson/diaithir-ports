@@ -318,7 +318,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
                     return InteractionResult.SUCCESS;
                 } else if (canOwnerMount(player)) {
                     if (this.getType() == ACEntityRegistry.SUBTERRANODON.get() && this.canAddPassenger(player)) {
-                        this.moveTo(this.getX(), this.getY() + player.getBbHeight() + 0.5F, this.getZ());
+                        this.snapTo(this.getX(), this.getY() + player.getBbHeight() + 0.5F, this.getZ());
                     }
                     if (!level().isClientSide() && player.startRiding(this)) {
                         return InteractionResult.CONSUME;

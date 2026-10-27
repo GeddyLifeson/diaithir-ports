@@ -63,7 +63,7 @@ public class AnimalLootChestsGoal extends MoveToBlockGoal {
 
     protected void moveMobToBlock() {
         BlockPos pos = getMoveToTarget();
-        this.mob.getNavigation().moveTo((double) ((float) pos.getX()) + 0.5D, (double) (pos.getY() + 1), (double) ((float) pos.getZ()) + 0.5D, this.speedModifier);
+        this.mob.getNavigation().snapTo((double) ((float) pos.getX()) + 0.5D, (double) (pos.getY() + 1), (double) ((float) pos.getZ()) + 0.5D, this.speedModifier);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class AnimalLootChestsGoal extends MoveToBlockGoal {
         if (te instanceof Container) {
             Container feeder = (Container) te;
             double distance = this.entity.distanceToSqr(this.blockPos.getX() + 0.5F, this.blockPos.getY() + 0.5F, this.blockPos.getZ() + 0.5F);
-            entity.getNavigation().moveTo(this.blockPos.getX() + 0.5F, this.blockPos.getY() - 1, this.blockPos.getZ() + 0.5F, 1.0F);
+            entity.getNavigation().snapTo(this.blockPos.getX() + 0.5F, this.blockPos.getY() - 1, this.blockPos.getZ() + 0.5F, 1.0F);
             if (hasLineOfSightChest()) {
                 entity.lookAt(EntityAnchorArgument.Anchor.EYES, Vec3.atCenterOf(blockPos));
                 if (distance <= acceptedDistance()) {

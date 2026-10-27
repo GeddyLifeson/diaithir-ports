@@ -118,7 +118,7 @@ public class GingerbreadManStoreStolenItemsGoal extends Goal {
             mob.getLookControl().setLookAt(center.x, center.y, center.z, 10.0F, (float) this.mob.getMaxHeadXRot());
         }
         if (distance > 1.5D && hasLineOfSightBarrel()) {
-            mob.getNavigation().moveTo(barrelPos.getX() + 0.5F, barrelPos.getY(), barrelPos.getZ() + 0.5F, 1);
+            mob.getNavigation().snapTo(barrelPos.getX() + 0.5F, barrelPos.getY(), barrelPos.getZ() + 0.5F, 1);
         } else {
             if(openBarrelTicks < 5 && (mob.getAnimation() == IAnimatedEntity.NO_ANIMATION || mob.getAnimation() == null)){
                 mob.setAnimation(mob.getAnimationForHand(true));

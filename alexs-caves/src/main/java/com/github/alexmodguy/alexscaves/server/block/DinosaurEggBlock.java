@@ -129,7 +129,7 @@ public class DinosaurEggBlock extends Block {
             if (fromType instanceof Animal animal) {
                 animal.setAge(-24000);
             }
-            fromType.moveTo((double) pos.getX() + 0.3D + (double) j * 0.2D, pos.getY(), (double) pos.getZ() + 0.3D, 0.0F, 0.0F);
+            fromType.snapTo((double) pos.getX() + 0.3D + (double) j * 0.2D, pos.getY(), (double) pos.getZ() + 0.3D, 0.0F, 0.0F);
             if (!level.isClientSide()) {
                 Player closest = level.getNearestPlayer(pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, 10, EntitySelector.NO_SPECTATORS);
                 if (closest != null) {

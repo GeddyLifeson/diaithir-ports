@@ -318,7 +318,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
                     slime.setNoAi(flag);
                     slime.setInvulnerable(this.isInvulnerable());
                     slime.setSlimeSize(j, true);
-                    slime.moveTo(this.getX() + (double) f1, this.getY() + 0.5D, this.getZ() + (double) f2, this.random.nextFloat() * 360.0F, 0.0F);
+                    slime.snapTo(this.getX() + (double) f1, this.getY() + 0.5D, this.getZ() + (double) f2, this.random.nextFloat() * 360.0F, 0.0F);
                     this.level().addFreshEntity(slime);
                 }
             }

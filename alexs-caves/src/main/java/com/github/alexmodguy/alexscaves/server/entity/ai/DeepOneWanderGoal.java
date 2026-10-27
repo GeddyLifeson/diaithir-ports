@@ -44,7 +44,7 @@ public class DeepOneWanderGoal extends Goal {
     }
 
     public void tick() {
-        mob.getNavigation().moveTo(goal.getX(), goal.getY(), goal.getZ(), speed);
+        mob.getNavigation().snapTo(goal.getX(), goal.getY(), goal.getZ(), speed);
         if (groundTarget) {
             if (mob.onGround()) {
                 mob.setDeepOneSwimming(false);

@@ -334,7 +334,7 @@ public class RadgillEntity extends WaterAnimal implements Bucketable {
         @Override
         public void tick() {
             timeout++;
-            RadgillEntity.this.getNavigation().moveTo(target.getX() + 0.5F, target.getY() + 0.25F, target.getZ() + 0.5F, 1.0D);
+            RadgillEntity.this.getNavigation().snapTo(target.getX() + 0.5F, target.getY() + 0.25F, target.getZ() + 0.5F, 1.0D);
             double horizDistance = RadgillEntity.this.distanceToSqr(target.getX() + 0.5F, RadgillEntity.this.getY(), target.getZ() + 0.5F);
             if (horizDistance < 16 && isJump && !hasJumped) {
                 Vec3 targetVec = Vec3.atCenterOf(target);

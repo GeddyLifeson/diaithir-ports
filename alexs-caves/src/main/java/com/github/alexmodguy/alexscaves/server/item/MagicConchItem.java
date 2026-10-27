@@ -131,7 +131,7 @@ public class MagicConchItem extends Item {
         Entity created = type.create(summoner.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         if (created instanceof DeepOneBaseEntity deepOne) {
             float f = random.nextFloat() * 360;
-            deepOne.moveTo(at.x, at.y, at.z, f, -60);
+            deepOne.snapTo(at.x, at.y, at.z, f, -60);
             deepOne.yBodyRot = f;
             deepOne.setYHeadRot(f);
             deepOne.setSummonedBy(summoner, time);

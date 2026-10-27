@@ -276,7 +276,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
                     if (mob.getNavigation().isDone()) {
                         Vec3 vec = LandRandomPos.getPosAway(mob, 15, 7, this.position());
                         if (vec != null) {
-                            mob.getNavigation().moveTo(vec.x, vec.y, vec.z, 2D);
+                            mob.getNavigation().snapTo(vec.x, vec.y, vec.z, 2D);
                         }
                     }
                 }

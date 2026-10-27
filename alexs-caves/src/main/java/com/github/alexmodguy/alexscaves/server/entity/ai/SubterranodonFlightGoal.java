@@ -76,7 +76,7 @@ public class SubterranodonFlightGoal extends Goal {
             if (entity.isFlying() || ((SubterranodonEntity) entity.getPackLeader()).landingFlag) {
                 entity.landingFlag = true;
             }
-            entity.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+            entity.getNavigation().snapTo(this.x, this.y, this.z, 1F);
         }
         if (!isFlying && entity.isFlying() && entity.onGround()) {
             entity.setFlying(false);
@@ -212,7 +212,7 @@ public class SubterranodonFlightGoal extends Goal {
             entity.setFlying(true);
             entity.getMoveControl().setWantedPosition(x, y, z, entity.isPackFollower() ? 2 : 1F);
         } else {
-            entity.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+            entity.getNavigation().snapTo(this.x, this.y, this.z, 1F);
         }
     }
 

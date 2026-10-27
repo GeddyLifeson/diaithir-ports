@@ -132,7 +132,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
         Vec3 vec3 = hitResult.getLocation();
         if (controlledEntity instanceof Mob mob) {
             PathNavigation pathNavigation = mob.getNavigation();
-            pathNavigation.moveTo(vec3.x, vec3.y, vec3.z, time * speed);
+            pathNavigation.snapTo(vec3.x, vec3.y, vec3.z, time * speed);
             if (ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SIGHTLESS, stack) > 0) {
                 controlledEntity.setGlowingTag(true);
             }

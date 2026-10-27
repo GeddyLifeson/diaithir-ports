@@ -111,10 +111,6 @@ public class BeholderBlockEntity extends BlockEntity  {
         return this.saveWithoutMetadata(registries);
     }
 
-    @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
-        this.currentlyUsingEntityId = tag.getIntOr("UsingEntityID", 0);
-    }
 
     public boolean isFirstPersonView(Entity cameraEntity) {
         return cameraEntity != null && cameraEntity instanceof BeholderEyeEntity && cameraEntity.blockPosition().equals(this.getBlockPos());

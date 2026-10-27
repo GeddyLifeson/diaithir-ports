@@ -373,7 +373,7 @@ public class SweetishFishEntity extends WaterAnimal implements Bucketable, HasGu
 
         public void start() {
             timeout = 0;
-            SweetishFishEntity.this.getNavigation().moveTo(target.getX() + 0.5F, target.getY() + 0.25F, target.getZ() + 0.5F, 1.0D);
+            SweetishFishEntity.this.getNavigation().snapTo(target.getX() + 0.5F, target.getY() + 0.25F, target.getZ() + 0.5F, 1.0D);
         }
 
         @Override

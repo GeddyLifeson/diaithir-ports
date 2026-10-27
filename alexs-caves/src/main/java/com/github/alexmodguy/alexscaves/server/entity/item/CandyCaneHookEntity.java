@@ -82,7 +82,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
         double d0 = player.getX() - (double) f3 * 0.7D;
         double d1 = player.getEyeY();
         double d2 = player.getZ() - (double) f2 * 0.7D;
-        this.moveTo(d0 + armOffset.x, d1, d2 + armOffset.z, f1, f);
+        this.snapTo(d0 + armOffset.x, d1, d2 + armOffset.z, f1, f);
         Vec3 vec3 = new Vec3(-f3, Mth.clamp(-(f5 / f4), -5.0F, 5.0F), -f2);
         double d3 = vec3.length();
         double launchDist = 0.5D + ACEnchantmentRegistry.getEnchantmentLevel(level, itemstack, ACEnchantmentRegistry.FAR_FLUNG) * 0.2D;

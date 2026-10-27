@@ -391,7 +391,7 @@ public class BoundroidWinchEntity extends Monster {
 
         public void start() {
             this.stillTicks = 0;
-            this.mob.getNavigation().moveTo(this.wantedX, this.wantedY, this.wantedZ, this.speedModifier);
+            this.mob.getNavigation().snapTo(this.wantedX, this.wantedY, this.wantedZ, this.speedModifier);
         }
     }
 
@@ -429,7 +429,7 @@ public class BoundroidWinchEntity extends Monster {
         }
 
         public void start() {
-            BoundroidWinchEntity.this.getNavigation().moveTo(this.wantedX, this.wantedY, this.wantedZ, 1F);
+            BoundroidWinchEntity.this.getNavigation().snapTo(this.wantedX, this.wantedY, this.wantedZ, 1F);
         }
 
         @Nullable
@@ -509,12 +509,12 @@ public class BoundroidWinchEntity extends Monster {
                     if (BoundroidWinchEntity.this.isLatched()) {
                         boundroid.setScared(false);
                         BlockPos lowestPos = BoundroidWinchEntity.this.getCeilingOf(target.blockPosition());
-                        BoundroidWinchEntity.this.getNavigation().moveTo(lowestPos.getX(), lowestPos.getY(), lowestPos.getZ(), 1D);
+                        BoundroidWinchEntity.this.getNavigation().snapTo(lowestPos.getX(), lowestPos.getY(), lowestPos.getZ(), 1D);
                     } else {
                         if (BoundroidWinchEntity.this.getNavigation().isDone()) {
                             Vec3 vec = LandRandomPos.getPosAway(BoundroidWinchEntity.this, 15, 7, target.position());
                             if (vec != null) {
-                                BoundroidWinchEntity.this.getNavigation().moveTo(vec.x, vec.y, vec.z, 1.3);
+                                BoundroidWinchEntity.this.getNavigation().snapTo(vec.x, vec.y, vec.z, 1.3);
                             }
                         }
                         boundroid.setScared(true);
