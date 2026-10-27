@@ -13,6 +13,7 @@ import snownee.jade.api.EntityAccessor;
 import snownee.jade.api.IComponentProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.IWailaClientRegistration;
+import snownee.jade.api.IWailaCommonRegistration;
 import snownee.jade.api.IWailaPlugin;
 import snownee.jade.api.WailaPlugin;
 import snownee.jade.api.config.IPluginConfig;
@@ -24,9 +25,16 @@ public final class JadePlugin implements IWailaPlugin {
     private static final Identifier ENTITY = Identifier.fromNamespaceAndPath(DiaithirTooltips.ID, "entity");
 
     @Override
+    public void register(IWailaCommonRegistration reg) {
+        reg.registerBlockDataProvider(new RoomLine(), Block.class);
+    }
+
+    @Override
     public void registerClient(IWailaClientRegistration reg) {
         reg.addConfig(BLOCK, true);
         reg.addConfig(ENTITY, true);
+        reg.addConfig(RoomLine.UID, true);
+        reg.registerBlockComponent(new RoomLine.Client(), Block.class);
         reg.registerBlockComponent(new IComponentProvider<BlockAccessor>() {
             @Override
             public void appendTooltip(ITooltip tooltip, BlockAccessor a, IPluginConfig config) {

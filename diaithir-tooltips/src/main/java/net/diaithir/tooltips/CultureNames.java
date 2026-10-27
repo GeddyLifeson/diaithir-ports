@@ -36,6 +36,16 @@ public final class CultureNames {
         return composed(slug, kind, id);
     }
 
+    /** The native name of a plain concept phrase such as "kiln" in the local player's culture (non-Diaithir cultures only), or null. */
+    public static String phrase(String concepts) {
+        var player = Minecraft.getInstance().player;
+        if (player == null) {
+            return null;
+        }
+        String slug = player.getData(DiaithirTooltips.CULTURE);
+        return compose(slug.isEmpty() ? DiaithirTooltips.DEFAULT_CULTURE : slug, concepts.toLowerCase().split(" "));
+    }
+
     /** Other cultures: the concept phrase of the id composed in the culture's language (DiaithirRPG content/names, tools/names/README.md). */
     private static String composed(String slug, String kind, String id) {
         var units = data("names/units.json");
@@ -46,12 +56,19 @@ public final class CultureNames {
         var items = data("names/items.json");
         var ids = items.getAsJsonObject("ids");
         var idx = ids.get(kind.equals("item") || kind.equals("block") ? id : kind + ":" + id);
-        if (idx == null && kind.equals("block")) {
-            return null;
-        }
         if (idx == null) {
             return null;
         }
+        return compose(slug, items.getAsJsonArray("phrases").get(idx.getAsInt()).getAsString().split(" "));
+    }
+
+    private static String compose(String slug, String[] toks) {
+        var units = data("names/units.json");
+        var unit = units.has(slug) ? units.getAsJsonObject(slug) : null;
+        if (unit == null || unit.get("lang").getAsString().equals("diaithiris")) {
+            return null;
+        }
+        var items = data("names/items.json");
         var lang = data("names/langs/" + unit.get("lang").getAsString() + ".json");
         if (!lang.has("w")) {
             return null;
@@ -61,7 +78,6 @@ public final class CultureNames {
         String link = lang.has("link") ? lang.get("link").getAsString() : "";
         boolean headFirst = lang.get("order").getAsString().equals("hf");
         boolean han = lang.has("script") && lang.get("script").getAsString().equals("han");
-        String[] toks = items.getAsJsonArray("phrases").get(idx.getAsInt()).getAsString().split(" ");
         var parts = new java.util.ArrayList<String>();
         String head = toks[toks.length - 1];
         if (headFirst) {
