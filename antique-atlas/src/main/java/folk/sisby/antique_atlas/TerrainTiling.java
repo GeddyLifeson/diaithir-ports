@@ -51,7 +51,13 @@ public class TerrainTiling {
 	public static final int NETHER_SCAN_HEIGHT = 50;
 	public static final Map<Biome, Integer> priorityCache = new Reference2IntArrayMap<>();
 	public static final Map<Biome, Boolean> swampCache = new Reference2BooleanArrayMap<>();
-	private static final int SEA_LEVEL = 63;
+	private static final int DEFAULT_SEA_LEVEL = 63;
+
+	/** The dimension's real sea level (world presets such as Tellus move it), else the vanilla 63. */
+	public static int seaLevel(net.minecraft.resources.ResourceKey<Level> dimension) {
+		net.minecraft.client.multiplayer.ClientLevel level = net.minecraft.client.Minecraft.getInstance().level;
+		return level != null && level.dimension().equals(dimension) ? level.getSeaLevel() : DEFAULT_SEA_LEVEL;
+	}
 
 	public static int priorityForBiome(Registry<Biome> biomeRegistry, Biome biome) {
 		return priorityCache.computeIfAbsent(biome, b -> {
@@ -97,6 +103,7 @@ public class TerrainTiling {
 		boolean checkRavines = summary.dimension() == Level.OVERWORLD;
 
 		int topY = 999;
+		int seaLevel = seaLevel(summary.dimension());
 
 		WorldTerrain terrain = summary.terrain();
 		if (terrain == null) return null;
@@ -123,7 +130,7 @@ public class TerrainTiling {
 			Block block = blockPalette.byId(lithograph.blocks()[i]);
 			Biome biome = biomePalette.byId(lithograph.biomes()[i]);
 
-			if (checkRavines && height - SEA_LEVEL < -7) {
+			if (checkRavines && height - seaLevel < -7) {
 				possibleTiles[elevationSize][biomeCount + CUSTOM_TILES.indexOf(FeatureTiles.TILE_RAVINE)] += RAVINE_PRIORITY;
 			} else if (lithograph.waterDepths()[i] > 0) {
 				possibleTiles[elevationSize][biomeCount + CUSTOM_TILES.indexOf(isSwamp(biomeRegistry, biome) ? FeatureTiles.SWAMP_WATER : FeatureTiles.WATER)] += WATER_PRIORITY;
@@ -132,7 +139,7 @@ public class TerrainTiling {
 			} else if (block == Blocks.LAVA) {
 				possibleTiles[elevationSize][biomeCount + CUSTOM_TILES.indexOf(FeatureTiles.TILE_LAVA)] += LAVA_PRIORITY;
 			}
-			possibleTiles[TileElevation.fromBlocksAboveSea(height - SEA_LEVEL).ordinal()][lithograph.biomes()[i]] += priorityForBiome(biomeRegistry, biome);
+			possibleTiles[TileElevation.fromBlocksAboveSea(height - seaLevel).ordinal()][lithograph.biomes()[i]] += priorityForBiome(biomeRegistry, biome);
 		}
 
 		return frequencyToTexture(possibleTiles, biomeRegistry, biomePalette);

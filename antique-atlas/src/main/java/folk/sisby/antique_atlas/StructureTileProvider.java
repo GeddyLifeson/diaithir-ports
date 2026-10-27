@@ -23,7 +23,6 @@ import java.util.function.Function;
 
 public record StructureTileProvider(Identifier id, int priority, Map<ChunkMatcher, List<TileTexture>> matchers) {
 	public static final BiMap<Identifier, ChunkMatcher> CHUNK_MATCHERS = HashBiMap.create();
-	private static final int SEA_LEVEL = 63;
 
 	public static ChunkMatcher getChunkMatcher(Identifier id) {
 		return CHUNK_MATCHERS.get(id);
@@ -75,7 +74,7 @@ public record StructureTileProvider(Identifier id, int priority, Map<ChunkMatche
 		}
 
 		static Collection<ChunkPos> topAboveGround(WorldSummary summary, BoundingBox box) {
-			if (SEA_LEVEL <= box.maxY()) {
+			if (TerrainTiling.seaLevel(summary.dimension()) <= box.maxY()) {
 				return Collections.singleton(ChunkPos.containing(box.getCenter()));
 			}
 
@@ -84,7 +83,7 @@ public record StructureTileProvider(Identifier id, int priority, Map<ChunkMatche
 
 		static Collection<ChunkPos> aboveGround(WorldSummary summary, BoundingBox box) {
 			BlockPos center = new BlockPos(box.getCenter());
-			if (SEA_LEVEL - 4 <= center.getY()) {
+			if (TerrainTiling.seaLevel(summary.dimension()) - 4 <= center.getY()) {
 				return Collections.singleton(ChunkPos.containing(center));
 			}
 
