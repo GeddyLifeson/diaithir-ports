@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="LGPL-3.0-or-later"
+
+[[mods]]
+modId="diaithir_create_central_kitchen"
+version="2.6.2-diaithir.1"
+displayName="Create: Central Kitchen (Diaithir port)"
+authors="DragonsPlus (code, LGPL-3.0); Diaithir pack (NeoForge port, art, text)"
+description='''Mechanical arms and heat for Farmer's Delight cookware. NeoForge 26.1.2 port of the LGPL-3.0 source, Farmer's Delight integration only.'''
+
+[[mixins]]
+config="create_central_kitchen.mixins.json"
+
+[[dependencies.diaithir_create_central_kitchen]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.30-beta,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_central_kitchen]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.diaithir_create_central_kitchen]]
+modId="diaithir_create"
+type="required"
+versionRange="[6.0.9,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.diaithir_create_central_kitchen]]
+modId="farmersdelight"
+type="required"
+versionRange="[1.3.0,)"
+ordering="AFTER"
+side="BOTH"

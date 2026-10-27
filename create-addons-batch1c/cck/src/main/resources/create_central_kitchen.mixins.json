@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "priority": 1100,
+  "package": "plus.dragons.createcentralkitchen.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AddonRegistrationMixin",
+    "farmersdelight.BlockHelperMixin",
+    "farmersdelight.CookingPotBlockEntityMixin",
+    "farmersdelight.HeatableBlockEntityMixin",
+    "farmersdelight.SkilletBlockEntityMixin"
+  ],
+  "injectors": { "defaultRequire": 1 },
+  "minVersion": "0.8"
+}
