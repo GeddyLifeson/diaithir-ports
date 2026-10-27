@@ -1,0 +1,7043 @@
+{
+ "create-central-kitchen-2.6.2b.jar": {
+  "missing_classes": {
+   "plus/dragons/createdragonsplus/common/CDPRegistrate": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "net/minecraft/client/renderer/LightTexture": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/SpriteShiftEntry": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SpriteShiftEntry"
+    ]
+   },
+   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/SharedTextRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/SharedTextRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/catnip/render/SpriteShifter": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SpriteShifter"
+    ]
+   },
+   "plus/dragons/createdragonsplus/data/runtime/RuntimePackResources": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/common/data/ExistingFileHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 22,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/minecraft/gametest/framework/GameTestRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/event/AddReloadListenerEvent": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase": {
+    "n": 14,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigBool": {
+    "n": 13,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigBool"
+    ]
+   },
+   "net/minecraft/Util": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/util/Util",
+     "org/objectweb/asm/tree/Util",
+     "org/slf4j/helpers/Util"
+    ]
+   },
+   "net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/ItemTagsProvider": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/common/data/ItemTagsProvider"
+    ]
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "net/createmod/catnip/lang/LangNumberFormat": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangNumberFormat"
+    ]
+   },
+   "org/jetbrains/annotations/ApiStatus$Internal": {
+    "n": 2,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/util/ErrorMessages": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeType": {
+    "n": 3,
+    "candidates": [
+     "net/minecraft/world/item/crafting/RecipeType"
+    ]
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "me/fallenbreath/conditionalmixin/api/mixin/RestrictiveMixinConfigPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visual/AbstractBlockEntityVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/AbstractBlockEntityVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/InstanceTypes": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/InstanceTypes"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "vectorwing/farmersdelight/common/registry/ModBlockEntityTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/registry/ModRecipeTypes": {
+    "n": 7,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/recipe/RecipeConverter": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/world/item/component/Unbreakable": {
+    "n": 1,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/registry/ModBlocks": {
+    "n": 2,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/entity/CookingPotBlockEntity": {
+    "n": 4,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/registry/ModItems": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 7,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/tag/ModTags$Blocks": {
+    "n": 10,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/tag/ModTags": {
+    "n": 10,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/entity/HeatableBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/entity/CuttingBoardBlockEntity": {
+    "n": 3,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/crafting/CuttingBoardRecipe": {
+    "n": 2,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/FeastBlock": {
+    "n": 4,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/PieBlock": {
+    "n": 4,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/registry/ModSounds": {
+    "n": 3,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/entity/AbstractStoveBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/AbstractStoveBlock": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "plus/dragons/createdragonsplus/client/ponder/PonderTagGroups": {
+    "n": 5,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/client/ponder/PonderTagGroups$MemberRegistration": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/Selection": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/Selection"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/WorldInstructions": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/WorldInstructions"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/foundation/instruction/FadeOutOfSceneInstruction": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/instruction/FadeOutOfSceneInstruction"
+    ]
+   },
+   "net/createmod/ponder/foundation/instruction/DisplayWorldSectionInstruction": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/instruction/DisplayWorldSectionInstruction"
+    ]
+   },
+   "vectorwing/farmersdelight/common/block/entity/SkilletBlockEntity": {
+    "n": 1,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/block/entity/StoveBlockEntity": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/element/ElementLink": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ElementLink"
+    ]
+   },
+   "net/createmod/ponder/foundation/PonderScene": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderScene"
+    ]
+   },
+   "vectorwing/farmersdelight/common/crafting/CuttingBoardRecipeInput": {
+    "n": 2,
+    "candidates": []
+   },
+   "vectorwing/farmersdelight/common/crafting/ingredient/ChanceResult": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeRegistration": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/codecs/CatnipCodecUtils": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/codecs/CatnipCodecUtils"
+    ]
+   },
+   "vectorwing/farmersdelight/common/block/entity/SyncedBlockEntity": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/foundation/blockEntity/SyncedBlockEntity"
+    ]
+   },
+   "vectorwing/farmersdelight/common/block/SkilletBlock": {
+    "n": 1,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/registry/BnCBlocks": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/processing/freeze/BlockFreezer": {
+    "n": 2,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/tag/BnCTags$Blocks": {
+    "n": 2,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/tag/BnCTags": {
+    "n": 2,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/registry/BnCRecipeTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/block/entity/KegBlockEntity": {
+    "n": 1,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/registry/BnCItems": {
+    "n": 1,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/registry/BnCFluids": {
+    "n": 1,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/crafting/KegPouringRecipe": {
+    "n": 2,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/utility/AbstractedFluidStack": {
+    "n": 2,
+    "candidates": []
+   },
+   "umpaz/brewinandchewin/common/crafting/CreatePotionPouringRecipe": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/registry/RegisteredObjectsHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/registry/RegisteredObjectsHelper"
+    ]
+   },
+   "net/createmod/catnip/data/Pair": {
+    "n": 1,
+    "candidates": [
+     "org/apache/commons/lang3/tuple/Pair",
+     "it/unimi/dsi/fastutil/Pair",
+     "com/mojang/datafixers/util/Pair"
+    ]
+   },
+   "com/llamalad7/mixinextras/sugar/ref/LocalIntRef": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/soytutta/mynethersdelight/common/block/entity/BlazierBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/soytutta/mynethersdelight/common/block/BlazierBlock": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/soytutta/mynethersdelight/common/block/BlazierBlock$HeatLevel": {
+    "n": 1,
+    "candidates": []
+   },
+   "cn/foggyhillside/ends_delight/block/DragonLegBlock": {
+    "n": 3,
+    "candidates": []
+   },
+   "cn/foggyhillside/ends_delight/registry/ModItems": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/ExtraDelightBlockEntities": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/ExtraDelightRecipes": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/ExtraDelightBlocks": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/oven/OvenBlockEntity": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/chiller/ChillerBlockEntity": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/ExtraDelightTags": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/dryingrack/DryingRackBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/evaporator/EvaporatorBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/ExtraDelightItems": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/recipe/ToolOnBlockRecipe": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/meltingpot/MeltingPotRecipe": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/juicer/JuicerRecipe": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/lance5057/extradelight/workstations/mortar/recipes/MortarRecipe": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/sammy/minersdelight/setup/MDBlockEntities": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/sammy/minersdelight/content/block/copper_pot/CopperPotBlockEntity": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/core/registry/DDBlockEntities": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/core/registry/DDParticles": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/core/init/DDTags$BlockT": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/core/init/DDTags": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/core/registry/DDRecipeRegistries": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/yirmiri/dungeonsdelight/common/block/monster_pot/MonsterPotBlockEntity": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/baisylia/culturaldelights/block/ModBlocks": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/baisylia/culturaldelights/block/custom/EggplantFeastBlock": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/baisylia/culturaldelights/item/ModItems": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/phantomwing/rusticdelight/block/custom/PancakeBlock": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/phantomwing/rusticdelight/block/ModBlocks": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/toopa/festivedelight/init/FestiveDelightModBlocks": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/toopa/festivedelight/init/FestiveDelightModItems": {
+    "n": 3,
+    "candidates": []
+   },
+   "alabaster/hearthandharvest/common/block/entity/CaskBlockEntity": {
+    "n": 5,
+    "candidates": []
+   },
+   "alabaster/hearthandharvest/common/registry/HHModItems": {
+    "n": 2,
+    "candidates": []
+   },
+   "alabaster/hearthandharvest/common/registry/HHModBlocks": {
+    "n": 2,
+    "candidates": []
+   },
+   "alabaster/hearthandharvest/common/crafting/CaskRecipe": {
+    "n": 3,
+    "candidates": []
+   },
+   "alabaster/hearthandharvest/common/registry/HHModRecipeTypes": {
+    "n": 2,
+    "candidates": []
+   }
+  },
+  "missing_members": []
+ },
+ "create-enchantment-industry-2.5.4b.jar": {
+  "missing_classes": {
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 20,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 41,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 14,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 45,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 7,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/config/FeaturesConfig$ConfigFeature": {
+    "n": 10,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/config/FeaturesConfig": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/TagBuilder": {
+    "n": 3,
+    "candidates": [
+     "net/minecraft/tags/TagBuilder",
+     "com/zurrtum/create/client/ponder/api/registration/TagBuilder"
+    ]
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 40,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "plus/dragons/createdragonsplus/client/ponder/PonderTagGroups": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/client/ponder/PonderTagGroups$MemberRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPBlockEntities": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/Selection": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/Selection"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlock": {
+    "n": 9,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/FluidEntry": {
+    "n": 23,
+    "candidates": [
+     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/minecraft/world/entity/animal/Sheep": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/world/entity/animal/sheep/Sheep"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPItems": {
+    "n": 6,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/CDPRegistrate": {
+    "n": 26,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 4,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/tank/FluidTankBehaviour": {
+    "n": 9,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/tank/ConfigurableFluidTank": {
+    "n": 6,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/tank/FluidTankBehaviour$TankFactory": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/advancements/CDPAdvancement": {
+    "n": 12,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/pipe/ConsumingOpenPipeEffectHandler": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/SolidRenderFluidType": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/theme/Color": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/theme/Color"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigFloat": {
+    "n": 35,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigFloat"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigBool": {
+    "n": 32,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigBool"
+    ]
+   },
+   "com/tterrag/registrate/builders/FluidBuilder$FluidTypeFactory": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/FluidBuilder": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase": {
+    "n": 70,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase"
+    ]
+   },
+   "net/createmod/catnip/data/Pair": {
+    "n": 1,
+    "candidates": [
+     "org/apache/commons/lang3/tuple/Pair",
+     "it/unimi/dsi/fastutil/Pair",
+     "com/mojang/datafixers/util/Pair"
+    ]
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VoxelShaper": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VoxelShaper"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 18,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigInt": {
+    "n": 39,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigInt"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/fluids/tank/FluidTankBehaviour$TankSegment": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 10,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/advancements/AdvancementBehaviour": {
+    "n": 15,
+    "candidates": [
+     "com/zurrtum/create/foundation/advancement/AdvancementBehaviour"
+    ]
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 17,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "net/createmod/catnip/animation/LerpedFloat": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat"
+    ]
+   },
+   "net/createmod/catnip/platform/NeoForgeCatnipServices": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/FluidRenderHelper": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/FluidRenderHelper"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 20,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 12,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 13,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 15,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 15,
+    "candidates": []
+   },
+   "net/createmod/catnip/codecs/stream/CatnipStreamCodecBuilders": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/codecs/stream/CatnipStreamCodecBuilders"
+    ]
+   },
+   "org/jetbrains/annotations/ApiStatus$Internal": {
+    "n": 4,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus": {
+    "n": 4,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/recipe/RecipeTypeInfo": {
+    "n": 15,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/createmod/catnip/data/Iterate": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Iterate"
+    ]
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/ItemRenderer": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/model/BakedModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/transform/TransformStack": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/TransformStack"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/PoseTransformStack": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/PoseTransformStack"
+    ]
+   },
+   "net/createmod/catnip/math/AngleHelper": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/AngleHelper"
+    ]
+   },
+   "net/minecraft/client/resources/model/Material": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/material/Material"
+    ]
+   },
+   "net/minecraft/client/model/BookModel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LightTexture": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/texture/OverlayTexture": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelLayers": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/EntityModelSet": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexConsumer": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlockRenderer": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationManager": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationManager"
+    ]
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "net/minecraft/client/renderer/texture/TextureAtlas": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visual/AbstractBlockEntityVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/AbstractBlockEntityVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/InstanceTypes": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/InstanceTypes"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/Translate": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/Translate"
+    ]
+   },
+   "net/createmod/catnip/render/SpriteShiftEntry": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SpriteShiftEntry"
+    ]
+   },
+   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual$Context": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleDynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleDynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleTickableVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleTickableVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/TickableVisual$Context": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/TickableVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/TickableVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/TickableVisual"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/advancements/criterion/BuiltinTrigger": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/advancements/CDPAdvancement$Builder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/MinMaxBounds$Ints": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/MinMaxBounds$Ints"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/advancements/CDPAdvancement$TaskType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/MinMaxBounds": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/MinMaxBounds"
+    ]
+   },
+   "plus/dragons/createdragonsplus/common/registrate/builder/ArmInteractionPointBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/processing/blaze/BlazeBlockVisual": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 4,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/processing/blaze/BlazeMovementBehaviour": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/ProviderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/util/Pairs": {
+    "n": 8,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateDataMapProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPFluids": {
+    "n": 6,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPFluids$CommonTags": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/tag/TagRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/TagsProvider$TagAppender": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/StandardDispenserBehaviour": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registrate/builder/CustomStatBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ui/ConfigAnnotations$RequiresRestart": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ui/ConfigAnnotations$RequiresRestart"
+    ]
+   },
+   "net/createmod/catnip/config/ui/ConfigAnnotations": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ui/ConfigAnnotations"
+    ]
+   },
+   "net/minecraft/Util": {
+    "n": 6,
+    "candidates": [
+     "net/minecraft/util/Util",
+     "org/objectweb/asm/tree/Util",
+     "org/slf4j/helpers/Util"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigGroup": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigGroup"
+    ]
+   },
+   "plus/dragons/createdragonsplus/config/StressConfig": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/recipe/VanillaRecipeBuilders": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/recipe/ShapedRecipeBuilder": {
+    "n": 3,
+    "candidates": [
+     "net/minecraft/data/recipes/ShapedRecipeBuilder"
+    ]
+   },
+   "plus/dragons/createdragonsplus/data/recipe/CreateRecipeBuilders": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPBlocks": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/recipe/ShapelessRecipeBuilder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/data/recipes/ShapelessRecipeBuilder"
+    ]
+   },
+   "plus/dragons/createdragonsplus/data/recipe/integration/IntegrationIngredient": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/tag/ItemTagRegistry": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPItems$CommonTags": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/data/tag/IntrinsicTagRegistry": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
+    "n": 3,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/dragonBreath/DragonsBreathOpenPipeEffect": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/dragonBreath/DragonBreathFluidType": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/dragonBreath/DragondBreathLiquidBlock": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 5,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeRegistration": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeType": {
+    "n": 4,
+    "candidates": [
+     "net/minecraft/world/item/crafting/RecipeType"
+    ]
+   },
+   "mezz/jei/api/registration/IRecipeCatalystRegistration": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/util/ErrorMessages": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 5,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 7,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeIngredientRole": {
+    "n": 7,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
+    "n": 4,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
+    "n": 12,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "mezz/jei/api/recipe/IFocusGroup": {
+    "n": 4,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/ingredient/IRecipeSlotDrawable": {
+    "n": 6,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IIngredientConsumer": {
+    "n": 5,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IIngredientAcceptor": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/ILightingSettings": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/ILightingSettings"
+    ]
+   },
+   "net/createmod/catnip/gui/UIRenderHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/UIRenderHelper"
+    ]
+   },
+   "com/mojang/blaze3d/platform/Lighting": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/neoforge/NeoForgeTypes": {
+    "n": 5,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/ITooltipBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/world/item/EnchantedBookItem": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/ingredient/IRecipeSlotsView": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/ingredient/IRecipeSlotView": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/helpers/ICodecHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
+    "n": 8,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/dye/DyeFluidType": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/fluids/dye/DyeVariant": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/LangNumberFormat": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangNumberFormat"
+    ]
+   },
+   "net/minecraft/world/entity/animal/Panda": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/entity/animal/panda/Panda"
+    ]
+   },
+   "net/createmod/catnip/data/IntAttached": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/IntAttached"
+    ]
+   },
+   "net/createmod/catnip/nbt/NBTHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/nbt/NBTHelper"
+    ]
+   },
+   "net/createmod/ponder/api/element/ElementLink": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ElementLink"
+    ]
+   },
+   "com/mojang/blaze3d/systems/RenderSystem": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/item/ItemProperties": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/event/AddReloadListenerEvent": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/level/block/entity/BlockEntity$DataComponentInput": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LevelRenderer": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   },
+   "dev/shadowsoffire/apothic_enchanting/api/EnchantmentStatBlock": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/table/infusion/InfusionRecipe": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/table/EnchantingStatRegistry$Stats": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/table/EnchantingStatRegistry": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/util/MiscUtil": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/Ench$Items": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/Ench$Blocks": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/Ench": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/asm/EnchHooks": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/Ench$RecipeTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/util/TooltipUtil": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apothic_enchanting/ApothicEnchanting": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/Apoth$Items": {
+    "n": 7,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/Apoth$Components": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/loot/RarityRegistry": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AffixRegistry": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/Apoth": {
+    "n": 11,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/gem/GemRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/gem/Gem": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/gem/GemItem": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/gem/Purity": {
+    "n": 8,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/Apoth$RecipeTypes": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AffixType": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/placebo/util/EnchantmentUtils": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/AdventureConfig": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AffixInstance": {
+    "n": 11,
+    "candidates": []
+   },
+   "dev/shadowsoffire/placebo/reload/DynamicHolder": {
+    "n": 14,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/Affix": {
+    "n": 6,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AffixDefinition": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AffixHelper": {
+    "n": 5,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/loot/LootCategory": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/ItemAffixes": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/ItemAffixes$Builder": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/loot/LootRarity": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/affix/AttributeProvidingAffix": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/SocketHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/SocketedGems": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/shadowsoffire/apotheosis/socket/gem/GemInstance": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/Sable": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/ActiveSableCompanion": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/SubLevelAssemblyHelper$AssemblyTransform": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/SubLevelAssemblyHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/integration/simulated/api/fluids/tank/FragileFluidTankImpactContext": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/integration/simulated/api/fluids/tank/FragileFluidTankBreakEffectHandler": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/github/tartaricacid/touhoulittlemaid/entity/passive/EntityMaid": {
+    "n": 1,
+    "candidates": []
+   }
+  },
+  "missing_members": []
+ },
+ "create-new-age-1.2.0+neoforge-mc1.21.1.jar": {
+  "missing_classes": {
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 19,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/VertexFormat$Mode": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexFormat": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeState": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$ShaderStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$TextureStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$CullStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$LightmapStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeRenderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/DefaultVertexFormat": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/Util": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/util/Util",
+     "org/objectweb/asm/tree/Util",
+     "org/slf4j/helpers/Util"
+    ]
+   },
+   "net/createmod/catnip/placement/PlacementHelpers": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementHelpers"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 17,
+    "candidates": []
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "net/createmod/catnip/config/ui/BaseConfigScreen": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 23,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/ESLNeoForge": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/ESL": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/energy/BlockEnergyStorageManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/neoforge/energy/E2FEnergyStorageAdapter": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "net/minecraft/client/gui/Font": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/energy/SimpleEnergyStorage": {
+    "n": 6,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 4,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeIngredientRole": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/nbt/NBTHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/nbt/NBTHelper"
+    ]
+   },
+   "org/antarcticgardens/esl/energy/EnergyStorage": {
+    "n": 9,
+    "candidates": [
+     "net/neoforged/neoforge/energy/EnergyStorage"
+    ]
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 22,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/client/player/LocalPlayer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Options": {
+    "n": 1,
+    "candidates": [
+     "org/joml/Options"
+    ]
+   },
+   "net/minecraft/client/CameraType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/GameRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Camera": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexConsumer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LightTexture": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/transaction/TransactionStack": {
+    "n": 3,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/energy/EnergyHelper": {
+    "n": 2,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/transaction/Transaction": {
+    "n": 3,
+    "candidates": [
+     "net/neoforged/neoforge/transfer/transaction/Transaction",
+     "com/zurrtum/create/client/flywheel/impl/visualization/storage/Transaction"
+    ]
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/placement/IPlacementHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/IPlacementHelper"
+    ]
+   },
+   "net/createmod/catnip/placement/PlacementOffset": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementOffset"
+    ]
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "org/antarcticgardens/esl/transaction/TransactionContext": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/transfer/transaction/TransactionContext"
+    ]
+   },
+   "org/antarcticgardens/esl/transaction/SnapshotParticipant": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/antarcticgardens/esl/util/ItemStackHolder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VoxelShaper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VoxelShaper"
+    ]
+   },
+   "F": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/LerpedFloat$Chaser": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat$Chaser"
+    ]
+   },
+   "net/createmod/catnip/animation/LerpedFloat": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationManager": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationManager"
+    ]
+   },
+   "net/createmod/catnip/math/AngleHelper": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/AngleHelper"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleDynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleDynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual$Context": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/TransformStack": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/TransformStack"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/PoseTransformStack": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/PoseTransformStack"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/TagBuilder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/tags/TagBuilder",
+     "com/zurrtum/create/client/ponder/api/registration/TagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/WorldInstructions": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/WorldInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/scene/EffectInstructions": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/EffectInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/ElementLink": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ElementLink"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder$PartialBlockstate": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/ProviderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateItemTagsProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateLangProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate$Builder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate$Builder"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger$TriggerInstance": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger$TriggerInstance"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateRecipeProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/registry/RegisteredObjectsHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/registry/RegisteredObjectsHelper"
+    ]
+   },
+   "dan200/computercraft/api/peripheral/PeripheralCapability": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 1,
+    "candidates": []
+   }
+  },
+  "missing_members": []
+ },
+ "create_connected-1.3.3-mc1.21.1.jar": {
+  "missing_classes": {
+   "com/firemerald/additionalplacements/generation/RegistrationInitializer": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/firemerald/additionalplacements/generation/Registration": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/registry/RegisteredObjectsHelper": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/catnip/registry/RegisteredObjectsHelper"
+    ]
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 35,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 53,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 18,
+    "candidates": []
+   },
+   "com/copycatsplus/copycats/config/FeatureToggle": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigBool": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigBool"
+    ]
+   },
+   "com/copycatsplus/copycats/CCBlocks": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/copycatsplus/copycats/CCItems": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase": {
+    "n": 13,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase"
+    ]
+   },
+   "mezz/jei/api/runtime/IJeiRuntime": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 6,
+    "candidates": []
+   },
+   "mezz/jei/api/constants/VanillaTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/runtime/IIngredientManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 8,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/simulated_team/simulated/index/SimBlocks": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 5,
+    "candidates": []
+   },
+   "dev/simulated_team/simulated/Simulated": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverVisual": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 19,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 13,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 13,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus$Internal": {
+    "n": 2,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigFloat": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigFloat"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigInt": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigInt"
+    ]
+   },
+   "com/tterrag/registrate/AbstractRegistrate": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/CatnipServices": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/services/PlatformHelper": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/Builder": {
+    "n": 1,
+    "candidates": [
+     "org/apache/logging/log4j/core/util/Builder",
+     "org/apache/commons/lang3/builder/Builder",
+     "com/zurrtum/create/catnip/config/Builder"
+    ]
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "net/createmod/catnip/lang/LangNumberFormat": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangNumberFormat"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 36,
+    "candidates": []
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 13,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 6,
+    "candidates": []
+   },
+   "Z": {
+    "n": 7,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationManager": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationManager"
+    ]
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "net/createmod/catnip/data/Iterate": {
+    "n": 35,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Iterate"
+    ]
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 8,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 11,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 10,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationContext": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationContext"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/AbstractInstance": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/AbstractInstance"
+    ]
+   },
+   "net/createmod/catnip/math/AngleHelper": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/AngleHelper"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/TransformStack": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/TransformStack"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/PoseTransformStack": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/PoseTransformStack"
+    ]
+   },
+   "net/createmod/catnip/data/Pair": {
+    "n": 4,
+    "candidates": [
+     "org/apache/commons/lang3/tuple/Pair",
+     "it/unimi/dsi/fastutil/Pair",
+     "com/mojang/datafixers/util/Pair"
+    ]
+   },
+   "net/minecraft/client/resources/sounds/SoundInstance": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/sounds/SoundManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/Gui": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/SoundInstance$Attenuation": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LevelRenderer": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/levelWrappers/WrappedLevel": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/levelWrappers/WrappedLevel"
+    ]
+   },
+   "net/createmod/catnip/net/base/ClientboundPacketPayload": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/BasePacketPayload$PacketTypeProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/BasePacketPayload": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/placement/PlacementHelpers": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementHelpers"
+    ]
+   },
+   "net/createmod/catnip/placement/IPlacementHelper": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/IPlacementHelper"
+    ]
+   },
+   "net/createmod/catnip/placement/PlacementOffset": {
+    "n": 14,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementOffset"
+    ]
+   },
+   "net/minecraft/world/level/BlockAndTintGetter": {
+    "n": 8,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VoxelShaper": {
+    "n": 10,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VoxelShaper"
+    ]
+   },
+   "net/minecraft/client/resources/model/BakedModel": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/block/model/BakedQuad": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/data/ModelData": {
+    "n": 10,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelData"
+    ]
+   },
+   "net/minecraft/world/level/block/state/properties/DirectionProperty": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/InstanceTypes": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/InstanceTypes"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual$Context": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleDynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleDynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstanceType": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstanceType"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual"
+    ]
+   },
+   "net/minecraft/client/renderer/blockentity/SignRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/Font": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/Font$DisplayMode": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Options": {
+    "n": 1,
+    "candidates": [
+     "org/joml/Options"
+    ]
+   },
+   "net/minecraft/client/CameraType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/player/LocalPlayer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/SkullBlockRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/SkullModelBase": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/texture/OverlayTexture": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelPart": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/EntityModelSet": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/SkullModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/dragon/DragonHeadModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelLayers": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/LerpedFloat": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat"
+    ]
+   },
+   "net/createmod/catnip/animation/LerpedFloat$Chaser": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat$Chaser"
+    ]
+   },
+   "F": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/nbt/NBTHelper": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/nbt/NBTHelper"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/data/ModelData$Builder": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelData$Builder"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/data/ModelProperty": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelProperty"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/NeoForgeCatnipServices": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/FluidRenderHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/FluidRenderHelper"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/VertexConsumer": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/BlockFace": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/BlockFace"
+    ]
+   },
+   "net/createmod/catnip/data/Couple": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Couple"
+    ]
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/world/level/block/entity/BlockEntity$DataComponentInput": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/codecs/CatnipCodecUtils": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/codecs/CatnipCodecUtils"
+    ]
+   },
+   "net/minecraft/client/renderer/item/ItemProperties": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder$OverrideBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 10,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "I": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/outliner/Outliner": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outliner"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline$OutlineParams": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline$OutlineParams"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline"
+    ]
+   },
+   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverBlock": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverBlockEntity": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/ItemUsedOnLocationTrigger": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemUsedOnLocationTrigger"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/createmod/catnip/levelWrappers/WorldHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/levelWrappers/WorldHelper"
+    ]
+   },
+   "dev/ryanhcode/sable/companion/SableCompanion": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/SubLevelAccess": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/math/Pose3dc": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/language/I18n": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/ScreenOpener": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/ScreenOpener"
+    ]
+   },
+   "net/createmod/catnip/gui/AbstractSimiScreen": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/AbstractSimiScreen"
+    ]
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/minecraft/client/gui/screens/Screen": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemUsedOnLocationTrigger$TriggerInstance": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemUsedOnLocationTrigger$TriggerInstance"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger$TriggerInstance": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger$TriggerInstance"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate": {
+    "n": 3,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate$Builder": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate$Builder"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger"
+    ]
+   },
+   "net/minecraft/advancements/critereon/SimpleCriterionTrigger$SimpleInstance": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/SimpleCriterionTrigger$SimpleInstance"
+    ]
+   },
+   "net/minecraft/advancements/critereon/SimpleCriterionTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/SimpleCriterionTrigger"
+    ]
+   },
+   "net/minecraft/advancements/critereon/EntityPredicate": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/EntityPredicate"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullFunction": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/ProviderType": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/LangRegistryAccess": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/LangRegistryAccess"
+    ]
+   },
+   "net/neoforged/neoforge/common/data/ExistingFileHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateLangProvider": {
+    "n": 2,
+    "candidates": []
+   },
+   "plus/dragons/createdragonsplus/common/registry/CDPDataMaps": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateDataMapProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/TagsProvider$TagAppender": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider$IntrinsicImpl": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateTagsProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/common/conditions/FalseCondition": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/FluidEntry": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
+    ]
+   },
+   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
+    "n": 8,
+    "candidates": []
+   },
+   "com/llamalad7/mixinextras/sugar/ref/LocalRef": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ui/ConfigScreen": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/llamalad7/mixinextras/MixinExtrasBootstrap": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/Selection": {
+    "n": 10,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/Selection"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/createmod/ponder/api/element/ParrotPose$FaceCursorPose": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ParrotPose$FaceCursorPose"
+    ]
+   },
+   "net/createmod/ponder/api/element/ParrotPose": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ParrotPose"
+    ]
+   },
+   "net/createmod/ponder/api/element/ElementLink": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ElementLink"
+    ]
+   },
+   "net/createmod/ponder/api/scene/WorldInstructions": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/WorldInstructions"
+    ]
+   },
+   "net/minecraft/advancements/critereon/StatePropertiesPredicate$Builder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/StatePropertiesPredicate$Builder"
+    ]
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/StatePropertiesPredicate": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/StatePropertiesPredicate"
+    ]
+   },
+   "net/minecraft/client/renderer/BiomeColors": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/systems/RenderSystem": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/UIRenderHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/UIRenderHelper"
+    ]
+   },
+   "net/createmod/catnip/gui/element/ScreenElement": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/ScreenElement"
+    ]
+   },
+   "net/createmod/catnip/net/base/CatnipPacketRegistry$PacketType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/CatnipPacketRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   }
+  },
+  "missing_members": []
+ },
+ "createaddition-1.7.2.jar": {
+  "missing_classes": {
+   "net/createmod/catnip/platform/CatnipServices": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/services/PlatformHelper": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 10,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 25,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/ItemBlockRenderTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/network/handling/DirectionalPayloadHandler": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 33,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/createmod/catnip/math/VoxelShaper": {
+    "n": 11,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VoxelShaper"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 31,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
+    "n": 18,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationManager": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationManager"
+    ]
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 12,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 12,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 9,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/minecraft/world/level/block/state/properties/DirectionProperty": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/createmod/catnip/outliner/Outliner": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outliner"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline$OutlineParams": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline$OutlineParams"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline"
+    ]
+   },
+   "F": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LevelRenderer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 10,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexConsumer": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visual/AbstractBlockEntityVisual": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/AbstractBlockEntityVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/InstanceTypes": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/InstanceTypes"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual$Context": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleDynamicVisual": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleDynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationContext": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationContext"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 16,
+    "candidates": []
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/LerpedFloat": {
+    "n": 10,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat"
+    ]
+   },
+   "net/createmod/catnip/math/AngleHelper": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/AngleHelper"
+    ]
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/player/LocalPlayer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/LerpedFloat$Chaser": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat$Chaser"
+    ]
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "net/minecraft/client/renderer/LightTexture": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/SpriteShiftEntry": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SpriteShiftEntry"
+    ]
+   },
+   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/Translate": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/Translate"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleTickableVisual": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleTickableVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstanceType": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstanceType"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/TickableVisual$Context": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/TickableVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/TickableVisual": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/TickableVisual"
+    ]
+   },
+   "net/createmod/catnip/data/Iterate": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Iterate"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/TransformStack": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/TransformStack"
+    ]
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/instance/OrientedInstance": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/OrientedInstance"
+    ]
+   },
+   "I": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigInt": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigInt"
+    ]
+   },
+   "net/createmod/catnip/data/IntAttached": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/IntAttached"
+    ]
+   },
+   "net/createmod/catnip/data/Couple": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Couple"
+    ]
+   },
+   "dan200/computercraft/api/peripheral/IPeripheral": {
+    "n": 6,
+    "candidates": []
+   },
+   "dan200/computercraft/api/lua/LuaException": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase"
+    ]
+   },
+   "dan200/computercraft/api/peripheral/PeripheralCapability": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "mezz/jei/api/recipe/RecipeIngredientRole": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCatalystRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/helpers/IJeiHelpers": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeType": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/item/crafting/RecipeType"
+    ]
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/drawable/IDrawable": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/sublevel/ServerSubLevelContainer": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/SubLevel": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/ServerSubLevel": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/plot/ServerLevelPlot": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/plot/PlotChunkHolder": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/neoforge/event/ForgeSablePostPhysicsTickEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/system/SubLevelPhysicsSystem": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/sublevel/SubLevelContainer": {
+    "n": 1,
+    "candidates": []
+   },
+   "J": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/ByteBufferBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/SableCompanion": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/ClientSubLevelAccess": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/math/Pose3dc": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/plot/LevelPlot": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/sublevel/plot/EmbeddedPlotLevelAccessor": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/SubLevelAccess": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/fml/common/EventBusSubscriber$Bus": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelBuilder$RootTransformsBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/FluidEntry": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
+    ]
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/TagsProvider$TagAppender": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/data/tags/ItemTagsProvider": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/common/data/ItemTagsProvider"
+    ]
+   },
+   "net/minecraft/client/gui/components/DebugScreenOverlay": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/saveddata/SavedData$Factory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/storage/DimensionDataStorage": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/chunk/PalettedContainer$Strategy": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/event/RegisterClientReloadListenersEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/FluidBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/FluidBuilder$FluidTypeFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/TagBuilder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/tags/TagBuilder",
+     "com/zurrtum/create/client/ponder/api/registration/TagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/world/level/GameRules": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/level/gamerules/GameRules"
+    ]
+   },
+   "net/minecraft/world/level/GameRules$Key": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/Selection": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/Selection"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "com/mojang/blaze3d/vertex/DefaultVertexFormat": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexFormat$Mode": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeState": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexFormat": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$ShaderStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$CullStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderStateShard$LightmapStateShard": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType$CompositeRenderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack$Pose": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/theme/Color": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/theme/Color"
+    ]
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/SoundInstance": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigFloat": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigFloat"
+    ]
+   },
+   "net/minecraft/client/sounds/SoundManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigBool": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigBool"
+    ]
+   },
+   "net/createmod/catnip/data/Pair": {
+    "n": 2,
+    "candidates": [
+     "org/apache/commons/lang3/tuple/Pair",
+     "it/unimi/dsi/fastutil/Pair",
+     "com/mojang/datafixers/util/Pair"
+    ]
+   }
+  },
+  "missing_members": []
+ },
+ "createdeco-2.1.3.jar": {
+  "missing_classes": {
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 15,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateRecipeProvider": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 17,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 7,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 18,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate": {
+    "n": 12,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate$Builder": {
+    "n": 12,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate$Builder"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger$TriggerInstance": {
+    "n": 16,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger$TriggerInstance"
+    ]
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 12,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger": {
+    "n": 16,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/StatePropertiesPredicate$Builder": {
+    "n": 4,
+    "candidates": [
+     "net/minecraft/advancements/criterion/StatePropertiesPredicate$Builder"
+    ]
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/StatePropertiesPredicate": {
+    "n": 4,
+    "candidates": [
+     "net/minecraft/advancements/criterion/StatePropertiesPredicate"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/DataIngredient": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/level/block/state/properties/DirectionProperty": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "C": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullFunction": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/data/Couple": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Couple"
+    ]
+   },
+   "net/createmod/catnip/platform/CatnipServices": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/services/PlatformHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/Env": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/BlockAndTintGetter": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/placement/PlacementHelpers": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementHelpers"
+    ]
+   },
+   "net/createmod/catnip/placement/IPlacementHelper": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/IPlacementHelper"
+    ]
+   },
+   "net/createmod/catnip/placement/PlacementOffset": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementOffset"
+    ]
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "org/jetbrains/annotations/ApiStatus$Internal": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus": {
+    "n": 1,
+    "candidates": []
+   }
+  },
+  "missing_members": []
+ },
+ "createdieselgenerators-1.21.1-1.3.15.jar": {
+  "missing_classes": {
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 23,
+    "candidates": []
+   },
+   "net/mehvahdjukaar/moonlight/api/set/wood/WoodType": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/level/block/state/properties/WoodType"
+    ]
+   },
+   "net/mehvahdjukaar/moonlight/api/set/wood/WoodType$Finder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/mehvahdjukaar/moonlight/api/set/BlockSetAPI": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/mehvahdjukaar/moonlight/api/set/BlockType$SetFinder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/mehvahdjukaar/moonlight/api/set/BlockType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 10,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 21,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 32,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeIngredientRole": {
+    "n": 7,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
+    "n": 7,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
+    "n": 7,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/drawable/IDrawable": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 39,
+    "candidates": []
+   },
+   "mezz/jei/api/ingredients/subtypes/ISubtypeInterpreter": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/data/Pair": {
+    "n": 8,
+    "candidates": [
+     "org/apache/commons/lang3/tuple/Pair",
+     "it/unimi/dsi/fastutil/Pair",
+     "com/mojang/datafixers/util/Pair"
+    ]
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 20,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/IFocusGroup": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/ingredient/IRecipeSlotsView": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/AnimationTickHolder": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/animation/AnimationTickHolder"
+    ]
+   },
+   "net/createmod/catnip/gui/ILightingSettings": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/ILightingSettings"
+    ]
+   },
+   "net/createmod/catnip/gui/UIRenderHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/UIRenderHelper"
+    ]
+   },
+   "net/createmod/catnip/platform/NeoForgeCatnipServices": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/LightTexture": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/FluidRenderHelper": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/FluidRenderHelper"
+    ]
+   },
+   "com/mojang/blaze3d/platform/Lighting": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource$BufferSource": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 19,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/ISubtypeRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IGuiHandlerRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/baked/PartialModel": {
+    "n": 11,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel"
+    ]
+   },
+   "mezz/jei/api/recipe/RecipeType": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/item/crafting/RecipeType"
+    ]
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 8,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/cake/struts/content/StrutModelType": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/cake/struts/content/block/StrutBlockEntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/cake/struts/compat/flywheel/StrutFlywheelVisual": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 18,
+    "candidates": []
+   },
+   "com/cake/struts/content/block/StrutBlockItem": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/cake/struts/content/block/StrutBlockEntity": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 5,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 14,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 14,
+    "candidates": []
+   },
+   "com/cake/struts/content/block/StrutBlock": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 29,
+    "candidates": []
+   },
+   "dan200/computercraft/api/peripheral/IPeripheral": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/KubeEvent": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/EventGroupRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/plugin/ClassFilter": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/EventHandler": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/EventResult": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/client/LangKubeEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/generator/KubeAssetGenerator": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/EventGroup": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/plugin/KubeJSPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/event/KubeStartupEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/nbt/NBTHelper": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/catnip/nbt/NBTHelper"
+    ]
+   },
+   "net/minecraft/world/level/saveddata/SavedData$Factory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/storage/DimensionDataStorage": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/SubLevelAssemblyHelper$AssemblyTransform": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/api/SubLevelAssemblyHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelPart$Cube": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelPart": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 17,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/FluidEntry": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/infrastructure/fluids/FluidEntry"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/CatnipServices": {
+    "n": 11,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/services/PlatformHelper": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "com/tterrag/registrate/builders/FluidBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/Tiers": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/ServerboundPacketPayload": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/BasePacketPayload$PacketTypeProvider": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/BasePacketPayload": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/CatnipPacketRegistry$PacketType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/net/base/CatnipPacketRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/codecs/stream/CatnipStreamCodecBuilders": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/codecs/stream/CatnipStreamCodecBuilders"
+    ]
+   },
+   "org/jetbrains/annotations/ApiStatus$Internal": {
+    "n": 1,
+    "candidates": []
+   },
+   "org/jetbrains/annotations/ApiStatus": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/VecHelper": {
+    "n": 15,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VecHelper",
+     "com/zurrtum/create/client/catnip/math/VecHelper"
+    ]
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 15,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/createmod/catnip/render/SuperByteBuffer": {
+    "n": 15,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/SuperByteBuffer"
+    ]
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 6,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "net/minecraft/client/resources/sounds/AbstractTickableSoundInstance": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/sounds/SoundManager": {
+    "n": 7,
+    "candidates": []
+   },
+   "net/createmod/catnip/math/AngleHelper": {
+    "n": 13,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/AngleHelper"
+    ]
+   },
+   "F": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visual/AbstractBlockEntityVisual": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/AbstractBlockEntityVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/InstanceTypes": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/InstanceTypes"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/OrientedInstance": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/OrientedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual$Context": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual$Context"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visual/SimpleDynamicVisual": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visual/SimpleDynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationContext": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationContext"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visual/DynamicVisual": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visual/DynamicVisual"
+    ]
+   },
+   "dev/engine_room/flywheel/api/visualization/VisualizationManager": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/visualization/VisualizationManager"
+    ]
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/SoundInstance$Attenuation": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/sounds/SoundInstance": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/instance/TransformedInstance": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/TransformedInstance"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/TransformStack": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/TransformStack"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/transform/PoseTransformStack": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/transform/PoseTransformStack"
+    ]
+   },
+   "net/minecraft/world/level/block/state/properties/DirectionProperty": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/placement/PlacementHelpers": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementHelpers"
+    ]
+   },
+   "net/createmod/catnip/placement/IPlacementHelper": {
+    "n": 9,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/IPlacementHelper"
+    ]
+   },
+   "net/createmod/catnip/placement/PlacementOffset": {
+    "n": 8,
+    "candidates": [
+     "com/zurrtum/create/catnip/placement/PlacementOffset"
+    ]
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 10,
+    "candidates": []
+   },
+   "net/minecraft/network/protocol/game/DebugPackets": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/data/Iterate": {
+    "n": 12,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Iterate"
+    ]
+   },
+   "net/createmod/catnip/codecs/CatnipCodecUtils": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/codecs/CatnipCodecUtils"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigInt": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigInt"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase": {
+    "n": 5,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase"
+    ]
+   },
+   "Z": {
+    "n": 3,
+    "candidates": []
+   },
+   "I": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/VertexConsumer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/platform/services/NetworkHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/MenuEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/player/LocalPlayer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/outliner/Outliner": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outliner"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline$OutlineParams": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline$OutlineParams"
+    ]
+   },
+   "net/createmod/catnip/render/BindableTexture": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/BindableTexture"
+    ]
+   },
+   "net/createmod/catnip/outliner/Outline": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/outliner/Outline"
+    ]
+   },
+   "net/createmod/catnip/theme/Color": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/theme/Color"
+    ]
+   },
+   "net/createmod/catnip/data/Couple": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/catnip/data/Couple"
+    ]
+   },
+   "net/minecraft/client/Options": {
+    "n": 1,
+    "candidates": [
+     "org/joml/Options"
+    ]
+   },
+   "net/minecraft/client/KeyMapping": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/animation/LerpedFloat$Chaser": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat$Chaser"
+    ]
+   },
+   "net/createmod/catnip/animation/LerpedFloat": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/animation/LerpedFloat"
+    ]
+   },
+   "D": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ItemModelBuilder$OverrideBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$UncheckedModelFile": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/item/ItemProperties": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/level/BlockAndTintGetter": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/data/ModelData$Builder": {
+    "n": 2,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelData$Builder"
+    ]
+   },
+   "net/neoforged/neoforge/client/model/data/ModelData": {
+    "n": 2,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelData"
+    ]
+   },
+   "net/minecraft/client/renderer/block/model/BakedQuad": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/data/ModelProperty": {
+    "n": 2,
+    "candidates": [
+     "net/neoforged/neoforge/model/data/ModelProperty"
+    ]
+   },
+   "net/createmod/catnip/math/VoxelShaper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/VoxelShaper"
+    ]
+   },
+   "dan200/computercraft/api/peripheral/PeripheralCapability": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/layers/RenderLayer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/Sheets": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/AgeableListModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/HierarchicalModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRenderDispatcher": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRenderer": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/LivingEntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/EntityModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/ryanhcode/sable/companion/SableCompanion": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/UseAnim": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/player/AbstractClientPlayer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/HumanoidModel$ArmPose": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/HumanoidModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/entity/projectile/AbstractHurtingProjectile": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/entity/projectile/hurtingprojectile/AbstractHurtingProjectile"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/EntityEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/common/EffectCures": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/ItemRenderer": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/ItemUsedOnLocationTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemUsedOnLocationTrigger"
+    ]
+   },
+   "net/minecraft/client/resources/model/ModelResourceLocation": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/event/ModelEvent$RegisterAdditional": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/model/BakedModel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRendererProvider$Context": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRendererProvider": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/MilkBucketItem": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder$ForgeMenuFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder$ScreenFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 7,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/element/ParrotPose$FacePointOfInterestPose": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ParrotPose$FacePointOfInterestPose"
+    ]
+   },
+   "net/createmod/ponder/api/element/ParrotPose": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ParrotPose"
+    ]
+   },
+   "net/createmod/ponder/api/PonderPalette": {
+    "n": 4,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/PonderPalette"
+    ]
+   },
+   "net/createmod/ponder/foundation/instruction/TickingInstruction": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/instruction/TickingInstruction"
+    ]
+   },
+   "net/createmod/ponder/foundation/PonderScene": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderScene"
+    ]
+   },
+   "net/createmod/ponder/api/element/WorldSectionElement": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/WorldSectionElement"
+    ]
+   },
+   "net/createmod/ponder/api/level/PonderLevel": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/level/PonderLevel"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/Selection": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/Selection"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/element/EntityElement": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/EntityElement"
+    ]
+   },
+   "net/createmod/ponder/api/element/ElementLink": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/ElementLink"
+    ]
+   },
+   "com/tterrag/registrate/builders/EntityBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/event/village/VillagerTradesEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/entity/npc/VillagerProfession": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/entity/npc/villager/VillagerProfession"
+    ]
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigBool": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigBool"
+    ]
+   },
+   "net/minecraft/client/gui/screens/Screen": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/config/ConfigBase$ConfigFloat": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/config/ConfigBase$ConfigFloat"
+    ]
+   },
+   "net/minecraft/world/entity/npc/VillagerTrades$ItemListing": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/entity/npc/VillagerTrades": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/item/trading/VillagerTrades"
+    ]
+   },
+   "com/tterrag/registrate/providers/ProviderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/ItemBlockRenderTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateLangProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/LangRegistryAccess": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/LangRegistryAccess"
+    ]
+   }
+  },
+  "missing_members": []
+ },
+ "creategoggles-1.21.1-6.1.1-[NEOFORGE].jar": {
+  "missing_classes": {
+   "net/minecraft/world/level/GameRules$Category": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/GameRules": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/level/gamerules/GameRules"
+    ]
+   },
+   "net/minecraft/world/level/GameRules$BooleanValue": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/GameRules$Type": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/GameRules$Key": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 8,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/ItemModelShaper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/model/ModelResourceLocation": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/model/ModelManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 4,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/registry/registries/RegistrySupplier": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/RecipeUnlockedTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/RecipeUnlockedTrigger"
+    ]
+   },
+   "net/minecraft/client/color/item/ItemColor": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/ArmorMaterial$Layer": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/world/item/ArmorMaterial": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/world/item/equipment/ArmorMaterial"
+    ]
+   },
+   "net/minecraft/world/item/ArmorItem$Type": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/world/item/ArmorItem": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/layers/RenderLayer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/HumanoidModel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/model/EntityModel": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelPart": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/texture/OverlayTexture": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/ItemRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/armortrim/ArmorTrim": {
+    "n": 3,
+    "candidates": [
+     "net/minecraft/world/item/equipment/trim/ArmorTrim"
+    ]
+   },
+   "net/minecraft/Util": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/util/Util",
+     "org/objectweb/asm/tree/Util",
+     "org/slf4j/helpers/Util"
+    ]
+   },
+   "net/neoforged/neoforge/client/event/ModelEvent$RegisterAdditional": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/event/RegisterColorHandlersEvent$Item": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/fml/common/EventBusSubscriber$Bus": {
+    "n": 2,
+    "candidates": []
+   },
+   "mekanism/api/MekanismIMC": {
+    "n": 1,
+    "candidates": []
+   },
+   "mekanism/common/content/gear/ModuleHelper": {
+    "n": 2,
+    "candidates": []
+   },
+   "mekanism/common/registration/impl/ModuleRegistryObject": {
+    "n": 1,
+    "candidates": []
+   },
+   "mekanism/common/registries/MekanismItems": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRenderDispatcher": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/EntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/entity/LivingEntityRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "mekanism/api/gear/ICustomModule": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "mekanism/api/gear/ModuleData$ModuleDataBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "mekanism/api/gear/ModuleData": {
+    "n": 1,
+    "candidates": []
+   },
+   "mekanism/common/registration/impl/ModuleDeferredRegister": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/networking/simple/SimpleNetworkManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/networking/simple/BaseS2CMessage": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/networking/NetworkManager$PacketContext": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/networking/NetworkManager": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/loot/RegistrateBlockLootTables": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/item/ArmorMaterials": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/item/equipment/ArmorMaterials"
+    ]
+   },
+   "dev/architectury/registry/registries/DeferredRegister": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/neoforge/registries/DeferredRegister"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/architectury/platform/Platform": {
+    "n": 1,
+    "candidates": [
+     "com/sun/jna/Platform",
+     "org/spongepowered/include/com/google/common/base/Platform",
+     "org/spongepowered/include/com/google/common/collect/Platform"
+    ]
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   }
+  },
+  "missing_members": []
+ },
+ "createoreexcavation-1.21-1.6.8.jar": {
+  "missing_classes": {
+   "com/tterrag/registrate/util/entry/BlockEntityEntry": {
+    "n": 7,
+    "candidates": []
+   },
+   "net/minecraft/world/ItemInteractionResult": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/resources/language/I18n": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper$Palette": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper$Palette"
+    ]
+   },
+   "net/minecraft/resources/ResourceLocation": {
+    "n": 40,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/ItemEntry": {
+    "n": 14,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/FontHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/FontHelper"
+    ]
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/model/Models": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/Models"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/InstancerProvider": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/InstancerProvider"
+    ]
+   },
+   "dev/engine_room/flywheel/api/instance/Instancer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/api/instance/Instancer"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/instance/FlatLit": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/instance/FlatLit"
+    ]
+   },
+   "net/minecraft/world/level/block/state/properties/DirectionProperty": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/BlockEntry": {
+    "n": 6,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/nullness/NonNullUnaryOperator": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/ITurtleUpgrade": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/shared/ModRegistry$DataComponents": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/shared/platform/RegistryEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/upgrades/UpgradeData": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/world/level/chunk/UpgradeData"
+    ]
+   },
+   "dan200/computercraft/shared/util/DataComponentUtil": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/RegistryEntry": {
+    "n": 3,
+    "candidates": []
+   },
+   "dan200/computercraft/shared/ModRegistry$Items": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/shared/turtle/items/TurtleItem": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/CreativeModeTabModifier": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/upgrades/UpgradeType": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/NoConfigBuilder": {
+    "n": 2,
+    "candidates": []
+   },
+   "dan200/computercraft/shared/ModRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/ITurtleAccess": {
+    "n": 3,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/TurtleCommandResult": {
+    "n": 2,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/TurtleCommand": {
+    "n": 2,
+    "candidates": []
+   },
+   "dan200/computercraft/api/peripheral/IPeripheral": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/lua/LuaException": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/TurtleUpgradeType": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/turtle/AbstractTurtleUpgrade": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/client/turtle/TurtleUpgradeModeller": {
+    "n": 1,
+    "candidates": []
+   },
+   "dan200/computercraft/api/client/turtle/RegisterTurtleModellersEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/Minecraft": {
+    "n": 13,
+    "candidates": []
+   },
+   "net/createmod/catnip/lang/LangBuilder": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/LangBuilder"
+    ]
+   },
+   "net/createmod/catnip/lang/Lang": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/lang/Lang"
+    ]
+   },
+   "net/createmod/ponder/foundation/PonderIndex": {
+    "n": 2,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/foundation/PonderIndex"
+    ]
+   },
+   "net/minecraft/client/gui/Font": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/PonderSceneRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderSceneRegistrationHelper"
+    ]
+   },
+   "com/tterrag/registrate/util/entry/ItemProviderEntry": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/MultiSceneBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiSceneBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderTagRegistrationHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderTagRegistrationHelper"
+    ]
+   },
+   "net/createmod/ponder/api/registration/TagBuilder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/tags/TagBuilder",
+     "com/zurrtum/create/client/ponder/api/registration/TagBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder$Tag": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder$Tag"
+    ]
+   },
+   "net/createmod/ponder/api/registration/PonderPlugin": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/PonderPlugin"
+    ]
+   },
+   "net/createmod/ponder/api/registration/MultiTagBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/MultiTagBuilder"
+    ]
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelPart": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/builders/MeshDefinition": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/builders/CubeListBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/PartPose": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/builders/PartDefinition": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/builders/CubeDeformation": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/builders/LayerDefinition": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/vertex/PoseStack": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/RenderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/MultiBufferSource": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/level/PonderLevel": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/level/PonderLevel"
+    ]
+   },
+   "net/minecraft/client/renderer/texture/TextureAtlasSprite": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/model/geom/ModelLayerLocation": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/createmod/catnip/render/CachedBuffers": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/render/CachedBuffers"
+    ]
+   },
+   "net/minecraft/client/renderer/block/BlockRenderDispatcher": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/renderer/block/BlockModelShaper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/scene/SceneBuildingUtil": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SceneBuildingUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/SelectionUtil": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/SelectionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/PositionUtil": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/PositionUtil"
+    ]
+   },
+   "net/createmod/ponder/api/scene/OverlayInstructions": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/OverlayInstructions"
+    ]
+   },
+   "net/createmod/ponder/api/element/TextElementBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/TextElementBuilder"
+    ]
+   },
+   "net/createmod/ponder/api/scene/VectorUtil": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/scene/VectorUtil"
+    ]
+   },
+   "net/createmod/catnip/math/Pointing": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/catnip/math/Pointing"
+    ]
+   },
+   "net/createmod/ponder/api/element/InputElementBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/element/InputElementBuilder"
+    ]
+   },
+   "net/minecraft/commands/arguments/ResourceLocationArgument": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientSuggestionProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientPacketListener": {
+    "n": 6,
+    "candidates": []
+   },
+   "net/minecraft/Util": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/util/Util",
+     "org/objectweb/asm/tree/Util",
+     "org/slf4j/helpers/Util"
+    ]
+   },
+   "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate"
+    ]
+   },
+   "net/minecraft/advancements/critereon/ItemPredicate$Builder": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/ItemPredicate$Builder"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger$TriggerInstance": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger$TriggerInstance"
+    ]
+   },
+   "net/minecraft/advancements/critereon/InventoryChangeTrigger": {
+    "n": 1,
+    "candidates": [
+     "net/minecraft/advancements/criterion/InventoryChangeTrigger"
+    ]
+   },
+   "com/tterrag/registrate/providers/ProviderType": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/createmod/ponder/api/registration/LangRegistryAccess": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/ponder/api/registration/LangRegistryAccess"
+    ]
+   },
+   "com/tterrag/registrate/providers/RegistrateLangProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/world/InteractionResultHolder": {
+    "n": 2,
+    "candidates": []
+   },
+   "com/tterrag/registrate/util/entry/MenuEntry": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/GuiGraphics": {
+    "n": 9,
+    "candidates": []
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement$GuiRenderBuilder": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder"
+    ]
+   },
+   "net/createmod/catnip/gui/element/GuiGameElement": {
+    "n": 3,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/gui/element/GuiGameElement"
+    ]
+   },
+   "net/createmod/catnip/layout/LayoutHelper": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/catnip/layout/LayoutHelper"
+    ]
+   },
+   "mezz/jei/api/recipe/RecipeIngredientRole": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
+    "n": 3,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/builder/ITooltipBuilder": {
+    "n": 4,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/category/IRecipeCategory": {
+    "n": 3,
+    "candidates": []
+   },
+   "com/mojang/blaze3d/systems/RenderSystem": {
+    "n": 5,
+    "candidates": []
+   },
+   "mezz/jei/api/gui/drawable/IDrawable": {
+    "n": 2,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IRecipeRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/recipe/RecipeType": {
+    "n": 2,
+    "candidates": [
+     "net/minecraft/world/item/crafting/RecipeType"
+    ]
+   },
+   "mezz/jei/api/registration/IRecipeCatalystRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/IModPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/neoforge/NeoForgeTypes": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/registration/IModIngredientRegistration": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/ingredients/IIngredientHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "mezz/jei/api/ingredients/IIngredientRenderer": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/common/event/ClientEventRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/common/event/impl/Event": {
+    "n": 1,
+    "candidates": [
+     "net/neoforged/bus/api/Event",
+     "com/microsoft/aad/msal4j/Event"
+    ]
+   },
+   "journeymap/api/v2/common/event/FullscreenEventRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/event/FullscreenDisplayEvent$AddonButtonDisplayEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/fullscreen/ThemeButtonDisplay": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/event/MappingEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/event/MappingEvent$Stage": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/IClientPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/event/FullscreenDisplayEvent": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/fullscreen/IThemeButton$Action": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/fullscreen/IThemeButton": {
+    "n": 2,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/model/MapPolygon": {
+    "n": 2,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/model/ShapeProperties": {
+    "n": 3,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/model/TextProperties": {
+    "n": 3,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/display/PolygonOverlay": {
+    "n": 4,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/display/Overlay": {
+    "n": 3,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/util/PolygonHelper": {
+    "n": 1,
+    "candidates": []
+   },
+   "journeymap/api/v2/client/IClientAPI": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/multiplayer/ClientLevel": {
+    "n": 2,
+    "candidates": []
+   },
+   "net/minecraft/client/player/LocalPlayer": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/rhino/type/TypeInfo": {
+    "n": 4,
+    "candidates": [
+     "com/sun/jna/platform/win32/COM/TypeInfo"
+    ]
+   },
+   "dev/latvian/mods/kubejs/recipe/component/RecipeComponentType": {
+    "n": 7,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/RecipeComponent": {
+    "n": 5,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/RecipeComponentType$Unit": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/KubeRecipeFactory": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/ListRecipeComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/RecipeSchema": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/RecipeKey": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/KubeRecipe": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/function/RecipeFunctionInstance": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/IngredientComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/NumberComponent": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/NumberComponent$IntRange": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/TimeComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/StringComponent": {
+    "n": 2,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/FluidStackComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/fluid/FluidWrapper": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/fluids/crafting/TagFluidIngredient": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/RecipeFactoryRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/RecipeSchemaRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/RecipeComponentTypeRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/script/TypeWrapperRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/script/BindingRegistry": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/plugin/KubeJSPlugin": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/script/TypeWrapperRegistry$ContextFromFunction": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/RecipeScriptContext": {
+    "n": 4,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/schema/function/ResolvedRecipeSchemaFunction": {
+    "n": 3,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/plugin/builtin/wrapper/ItemWrapper": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/create/recipe/ProcessingOutputRecipeComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/ItemStackComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/EnumComponent": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/latvian/mods/kubejs/recipe/component/NumberComponent$FloatRange": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/components/Button": {
+    "n": 5,
+    "candidates": [
+     "net/neoforged/fml/earlydisplay/error/Button"
+    ]
+   },
+   "net/minecraft/client/gui/components/WidgetSprites": {
+    "n": 4,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/components/Button$CreateNarration": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/components/Button$OnPress": {
+    "n": 5,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/components/Tooltip": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/screens/inventory/PageButton": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/components/AbstractWidget": {
+    "n": 3,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/screens/inventory/AbstractContainerScreen": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/common/util/INBTSerializable": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/DataGenContext": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateItemModelProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/ItemBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
+    ]
+   },
+   "com/tterrag/registrate/util/nullness/NonNullSupplier": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder$ScreenFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/neoforged/neoforge/client/model/generators/ModelFile": {
+    "n": 1,
+    "candidates": []
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer$Factory"
+    ]
+   },
+   "dev/engine_room/flywheel/lib/visualization/SimpleBlockEntityVisualizer": {
+    "n": 1,
+    "candidates": [
+     "com/zurrtum/create/client/flywheel/lib/visualization/SimpleBlockEntityVisualizer"
+    ]
+   },
+   "com/tterrag/registrate/builders/BlockEntityBuilder$BlockEntityFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "com/tterrag/registrate/builders/MenuBuilder$MenuFactory": {
+    "n": 1,
+    "candidates": []
+   },
+   "net/minecraft/client/gui/screens/Screen": {
+    "n": 1,
+    "candidates": []
+   }
+  },
+  "missing_members": []
+ }
+}

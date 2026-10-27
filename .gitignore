@@ -3,3 +3,6 @@ run/
 .gradle/
 *.log
 .idea/
+addons-cache/
+out/
+srvtest/

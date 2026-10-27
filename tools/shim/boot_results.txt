@@ -1,0 +1,28 @@
+RESULT create-central-kitchen-2.6.2b FAILS
+[19:20:44] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[19:20:44] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod create_central_kitchen requires create_dragons_plus 1.11.9 or above
+[19:20:44] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create-enchantment-industry-2.5.4b FAILS
+[19:21:07] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[19:21:07] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod create_enchantment_industry requires create_dragons_plus 1.11.9 or above
+[19:21:07] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create-new-age-1.2.0 FAILS
+[19:21:33] [main/ERROR] [ne.ne.fm.lo.ModSorter/LOADING]: Missing or unsupported mandatory dependencies:
+[19:21:33] [main/ERROR] [ne.ne.fm.lo.FMLLoader/]: Mod esl requires minecraft 1.21.1
+[19:21:33] [main/ERROR] [ne.ne.fm.lo.mo.BackgroundScanHandler/SCAN]: An error occurred scanning file jar(~libraries/net/neoforged/minecraft-server-patched/26.1.2.109/minecraft-server-patched-26.1.2.109.jar)
+java.util.concurrent.CancellationException: null
+RESULT create_connected-1.3.3-mc1.21.1 FAILS
+net.neoforged.fml.startup.FatalStartupException: Failed to create entrypoint object.
+Caused by: java.lang.IncompatibleClassChangeError: Expected static method 'net.neoforged.fml.loading.LoadingModList net.neoforged.fml.loading.FMLLoader.getLoadingModList()'
+RESULT createaddition-1.7.2 FAILS
+[19:24:48] [main/WARN] [mixin/]: Error loading class: com/simibubi/create/api/contraption/BlockMovementChecks (java.lang.ClassNotFoundException: com.simibubi.create.api.contraption.BlockMovementChecks)
+[19:24:48] [main/WARN] [mixin/]: Error loading class: com/simibubi/create/content/contraptions/Contraption (java.lang.ClassNotFoundException: com.simibubi.create.content.contraptions.Contraption)
+[19:24:48] [main/WARN] [mixin/]: Error loading class: dev/simulated_team/simulated/content/blocks/docking_connector/DockingConnectorBlockEntity (java.lang.ClassNotFoundException: dev.simulated_team.simulated.content.blocks.docking_connector.DockingConnectorBlo
+[19:24:48] [main/WARN] [mixin/]: Error loading class: dev/ryanhcode/sable/mixinhelpers/sublevel_render/vanilla/VanillaSubLevelBlockEntityRenderer (java.lang.ClassNotFoundException: dev.ryanhcode.sable.mixinhelpers.sublevel_render.vanilla.VanillaSubLevelBlockEn
+RESULT createdeco-2.1.3 FAILS
+[19:27:48] [modloading-worker-0/ERROR] [ne.ne.fm.ja.FMLModContainer/LOADING]: Failed to create mod instance. ModID: createdeco, class com.github.talrey.createdeco.forge.CreateDecoModForge
+Caused by: java.lang.ClassNotFoundException: com.simibubi.create.foundation.data.CreateRegistrate
+2026-10-27T19:27:48.428359322Z modloading-worker-0 ERROR An exception occurred processing Appender File
+org.apache.logging.log4j.core.appender.AppenderLoggingException: java.lang.NoClassDefFoundError: Could not initialize class com.github.talrey.createdeco.CreateDecoMod
