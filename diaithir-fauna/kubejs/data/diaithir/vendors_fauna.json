@@ -6,7 +6,7 @@
    "id": "antiquarian",
    "items": {
     "diaithirfauna:cleaned_fossil": {
-     "price": 252,
+     "price": 212,
      "stock": 4
     },
     "diaithirfauna:fossil_amber": {
@@ -26,7 +26,7 @@
      "stock": 4
     },
     "diaithirfauna:fossil_fragment": {
-     "price": 63,
+     "price": 53,
      "stock": 4
     },
     "diaithirfauna:fossil_limestone": {
