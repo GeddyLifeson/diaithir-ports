@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "R": "diaithircarts:steel_rail",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "RRR",
+    "RDR",
+    "RRR"
+  ],
+  "result": {
+    "id": "diaithircarts:fast_rail",
+    "count": 8
+  },
+  "category": "misc"
+}

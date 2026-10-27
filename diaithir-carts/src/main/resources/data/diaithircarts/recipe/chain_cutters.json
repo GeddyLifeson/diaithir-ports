@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "I I",
+    " S ",
+    "C C"
+  ],
+  "result": {
+    "id": "diaithircarts:chain_cutters",
+    "count": 1
+  },
+  "category": "misc"
+}
