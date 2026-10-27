@@ -42,7 +42,8 @@ public final class FaunaMod {
         }
     }
 
-    public FaunaMod(IEventBus bus) {
+    public FaunaMod(IEventBus bus, net.neoforged.fml.ModContainer container) {
+        container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, Revival.SPEC);
         ENTITIES.register(bus);
         Fossils.register(bus);
     }
@@ -56,19 +57,26 @@ public final class FaunaMod {
     static void placements(RegisterSpawnPlacementsEvent e) {
         for (var en : TYPES.entrySet()) {
             Plan p = Plan.ALL.get(en.getKey());
-            e.register(en.getValue().get(), p.water() ? SpawnPlacementTypes.IN_WATER : SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            e.register(en.getValue().get(), p.water() ? SpawnPlacementTypes.IN_WATER : SpawnPlacementTypes.ON_GROUND,
+                    p.water() ? Heightmap.Types.OCEAN_FLOOR : Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     (type, level, reason, pos, random) -> canSpawn(p, level, reason, pos, random), RegisterSpawnPlacementsEvent.Operation.REPLACE);
         }
     }
 
+    /** Natural spawn attempts per outcome, shown by /fauna census: ok, wrongBlock, noSpecies. */
+    static final int[] TRIES = new int[3];
+
     private static boolean canSpawn(Plan p, net.minecraft.world.level.ServerLevelAccessor level, EntitySpawnReason reason, BlockPos pos, net.minecraft.util.RandomSource random) {
         if (reason != EntitySpawnReason.NATURAL && reason != EntitySpawnReason.CHUNK_GENERATION) return true;
         if (p.water()) {
-            if (!level.getFluidState(pos).is(net.minecraft.tags.FluidTags.WATER)) return false;
+            if (!level.getFluidState(pos).is(net.minecraft.tags.FluidTags.WATER)) { TRIES[1]++; return false; }
+            for (int i = 1; i < Math.ceil(p.height); i++) if (!level.getFluidState(pos.above(i)).is(net.minecraft.tags.FluidTags.WATER)) { TRIES[1]++; return false; }
         } else {
-            if (!level.getBlockState(pos.below()).isValidSpawn(level, pos.below(), TYPES.get(p.name).get())) return false;
+            if (!level.getBlockState(pos.below()).isValidSpawn(level, pos.below(), TYPES.get(p.name).get())) { TRIES[1]++; return false; }
         }
-        return Habitat.candidates(p.name, level, pos).size() > 0;
+        boolean ok = Habitat.candidates(p.name, level, pos).size() > 0;
+        TRIES[ok ? 0 : 2]++;
+        return ok;
     }
 
     @SubscribeEvent
@@ -85,6 +93,26 @@ public final class FaunaMod {
                             c.getSource().sendSuccess(() -> Component.literal(s.id + " (" + s.per + ", " + s.form + ")"), false);
                             return 1;
                         })))
+                .then(Commands.literal("census").executes(c -> {
+                    String r = Census.run(c.getSource().getLevel());
+                    c.getSource().sendSuccess(() -> Component.literal(r), false);
+                    return 1;
+                }))
+                .then(Commands.literal("study").then(Commands.argument("species", StringArgumentType.word())
+                        .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().filter(s -> s.fossil).map(s -> s.id), b))
+                        .executes(c -> {
+                            Species s = Species.byId(StringArgumentType.getString(c, "species"));
+                            if (s == null || !s.fossil) return 0;
+                            var sp = c.getSource().getPlayerOrException();
+                            var done = new java.util.ArrayList<>(sp.getData(Fossils.STUDIED.get()));
+                            if (!done.contains(s.id)) done.add(s.id);
+                            sp.setData(Fossils.STUDIED.get(), done);
+                            return 1;
+                        })))
+                .then(Commands.literal("revive").executes(c -> {
+                    var sp = c.getSource().getPlayerOrException();
+                    return Revival.revive(sp, c.getSource().getLevel(), sp.blockPosition()) ? 1 : 0;
+                }))
                 .then(Commands.literal("summon").then(Commands.argument("species", StringArgumentType.word())
                         .suggests((c, b) -> SharedSuggestionProvider.suggest(Species.ALL.stream().map(s -> s.id), b))
                         .executes(c -> {

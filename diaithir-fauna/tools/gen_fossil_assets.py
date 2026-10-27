@@ -83,7 +83,47 @@ w(os.path.join(A, 'blockstates/preparation_bench.json'), {'variants': {'': {'mod
 w(os.path.join(A, 'models/block/preparation_bench.json'), {'parent': 'minecraft:block/cube_column', 'textures': {'end': 'diaithirfauna:block/preparation_bench_top', 'side': 'diaithirfauna:block/preparation_bench_side'}})
 w(os.path.join(A, 'items/preparation_bench.json'), {'model': {'type': 'minecraft:model', 'model': 'diaithirfauna:block/preparation_bench'}})
 w(os.path.join(D, 'loot_table/blocks/preparation_bench.json'), {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': 'diaithirfauna:preparation_bench'}]}]})
-w(os.path.join(RES, 'data/minecraft/tags/block/mineable/pickaxe.json'), {'values': [f'diaithirfauna:fossil_{r}' for r in ROCKS]})
+w(os.path.join(RES, 'data/minecraft/tags/block/mineable/pickaxe.json'), {'values': [f'diaithirfauna:fossil_{r}' for r in ROCKS] + ['diaithirfauna:revival_chamber']})
+# revival: the matrix item and the chamber block
+def matrix_tex():
+    im = Image.new('RGBA', (16, 16), (0, 0, 0, 0)); px = im.load()
+    for y in range(16):
+        for x in range(16):
+            d = abs(x - 7.5) + abs(y - 7.5)
+            if d < 7: px[x, y] = (60 + int(130 * (1 - d / 7)), 120 + int(110 * (1 - d / 7)), 230, 255)
+            elif d < 8: px[x, y] = (30, 40, 90, 255)
+    for (x, y) in ((7, 7), (8, 7), (7, 8), (8, 8)): px[x, y] = (250, 250, 255, 255)
+    return im
+
+def chamber_tex(kind):
+    n = np.random.default_rng(20 + kind); im = np.ones((16, 16, 3)) * np.array([58, 64, 74]); im += n.normal(0, 4, (16, 16, 1))
+    if kind == 0:   # side: glass window on a steel frame
+        im[3:13, 3:13] = np.array([90, 170, 200]); im[3:13, 3:13] += n.normal(0, 6, (10, 10, 1)); im[6:10, 6:10] = BONE
+    elif kind == 1: # top: a ring of glow
+        im[2:14, 2:14] = np.array([40, 46, 56]); im[5:11, 5:11] = np.array([120, 210, 240])
+    return Image.fromarray(np.clip(im, 0, 255).astype('uint8'), 'RGB').convert('RGBA')
+
+matrix_tex().save(os.path.join(A, 'textures/item/revival_matrix.png'))
+w(os.path.join(A, 'models/item/revival_matrix.json'), {'parent': 'minecraft:item/generated', 'textures': {'layer0': 'diaithirfauna:item/revival_matrix'}})
+w(os.path.join(A, 'items/revival_matrix.json'), {'model': {'type': 'minecraft:model', 'model': 'diaithirfauna:item/revival_matrix'}})
+chamber_tex(0).save(os.path.join(A, 'textures/block/revival_chamber_side.png')); chamber_tex(1).save(os.path.join(A, 'textures/block/revival_chamber_top.png'))
+w(os.path.join(A, 'blockstates/revival_chamber.json'), {'variants': {'': {'model': 'diaithirfauna:block/revival_chamber'}}})
+w(os.path.join(A, 'models/block/revival_chamber.json'), {'parent': 'minecraft:block/cube_column', 'textures': {'end': 'diaithirfauna:block/revival_chamber_top', 'side': 'diaithirfauna:block/revival_chamber_side'}})
+w(os.path.join(A, 'items/revival_chamber.json'), {'model': {'type': 'minecraft:model', 'model': 'diaithirfauna:block/revival_chamber'}})
+w(os.path.join(D, 'loot_table/blocks/revival_chamber.json'), {'type': 'minecraft:block', 'pools': [{'rolls': 1, 'entries': [{'type': 'minecraft:item', 'name': 'diaithirfauna:revival_chamber'}]}]})
+w(os.path.join(D, 'recipe/revival_chamber.json'), {'type': 'minecraft:crafting_shaped', 'pattern': ['IGI', 'GNG', 'III'], 'key': {
+    'I': 'minecraft:iron_block', 'G': 'minecraft:glass', 'N': 'minecraft:nether_star'}, 'result': {'id': 'diaithirfauna:revival_chamber'}})
+w(os.path.join(D, 'recipe/revival_matrix.json'), {'type': 'minecraft:crafting_shaped', 'pattern': ['ADA', 'DED', 'ADA'], 'key': {
+    'A': 'minecraft:amethyst_shard', 'D': 'minecraft:diamond', 'E': 'minecraft:ender_eye'}, 'result': {'id': 'diaithirfauna:revival_matrix'}})
+lang.update({'block.diaithirfauna.revival_chamber': 'Revival chamber', 'item.diaithirfauna.revival_matrix': 'Revival matrix',
+             'item.diaithirfauna.revival_matrix.hint': 'Hold it in your off hand and use a studied, cleaned fossil on a revival chamber.',
+             'message.diaithirfauna.revive.ok': 'The %s breathes again.',
+             'message.diaithirfauna.revive.no_fossil': 'Hold a cleaned fossil.',
+             'message.diaithirfauna.revive.not_studied': 'You have not studied the %s yet.',
+             'message.diaithirfauna.revive.too_early': 'The %s cannot be revived yet (needs Age %s).',
+             'message.diaithirfauna.revive.no_matrix': 'Hold a revival matrix in your other hand.',
+             'message.diaithirfauna.revive.no_cost': 'You need %s x%s.',
+             'message.diaithirfauna.revive.no_water': 'The %s needs water.'})
 w(os.path.join(RES, 'data/minecraft/tags/block/mineable/axe.json'), {'values': ['diaithirfauna:preparation_bench']})
 w(os.path.join(RES, 'data/minecraft/tags/block/needs_stone_tool.json'), {'values': [f'diaithirfauna:fossil_{r}' for r in ROCKS]})
 w(os.path.join(D, 'recipe/preparation_bench.json'), {'type': 'minecraft:crafting_shaped', 'pattern': ['BIB', 'PPP', 'P P'], 'key': {

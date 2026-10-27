@@ -53,8 +53,8 @@ public final class Habitat {
         if (p.contains("shore") || p.contains("beach")) m |= bits("coast", "island");
         if (p.contains("peak") || p.contains("slope") || p.contains("hill") || p.contains("jagged") || p.contains("stony")) m |= bits("mountain");
         if (m == 0) m = bits("plains", "grassland", "forest");
-        int surface = level.getHeight(Heightmap.Types.WORLD_SURFACE_WG, pos.getX(), pos.getZ());
-        if (pos.getY() < surface - 8) m = bit("cave");
+        net.minecraft.world.level.chunk.ChunkAccess chunk = level.getChunk(pos);
+        if (!level.getFluidState(pos).is(net.minecraft.tags.FluidTags.WATER) && chunk.hasPrimedHeightmap(Heightmap.Types.WORLD_SURFACE_WG) && pos.getY() < chunk.getHeight(Heightmap.Types.WORLD_SURFACE_WG, pos.getX(), pos.getZ()) - 8) m = bit("cave");
         return m;
     }
 
