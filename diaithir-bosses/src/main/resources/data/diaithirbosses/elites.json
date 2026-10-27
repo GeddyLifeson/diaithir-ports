@@ -1,5 +1,5 @@
 {
- "_doc": "Champion elites: a monster that rolls an elite spawn gets 'Kuraid' (champion) plus 1-3 affixes from its base entry; the roll chance and affix count rise with the world Age. Affix mechanics are in Elites.java by id; numbers are here.",
+ "_doc": "Champion elites: a monster that rolls an elite spawn gets the champion prefix plus 1-3 affixes from its base entry; the roll chance and affix count rise with the world Age. Affix mechanics are in Elites.java by id; numbers are here.",
  "chance_by_age": [
   0.03,
   0.04,

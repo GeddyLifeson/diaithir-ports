@@ -10,7 +10,7 @@
    "items": [
     {
      "id": "diaithirbosses:tribal_chief_trophy",
-     "name": "Kiendfedna",
+     "name": "Kiendfini",
      "age": "I",
      "text": ""
     }
@@ -24,7 +24,7 @@
    "items": [
     {
      "id": "diaithirbosses:stone_colossus_trophy",
-     "name": "Famuirklach",
+     "name": "Famuirchlach",
      "age": "II",
      "text": ""
     }
@@ -38,13 +38,13 @@
    "items": [
     {
      "id": "diaithirbosses:bronze_warking_trophy",
-     "name": "Rìgkogad",
+     "name": "Rìgchogaid",
      "age": "III",
      "text": ""
     },
     {
      "id": "diaithirbosses:rot_swarm_lord_trophy",
-     "name": "Tigernaskaed",
+     "name": "Tigernaschaed",
      "age": "III",
      "text": ""
     },
@@ -100,13 +100,7 @@
    "items": [
     {
      "id": "diaithirbosses:iron_walker_trophy",
-     "name": "Koisichiiarund",
-     "age": "IV",
-     "text": ""
-    },
-    {
-     "id": "diaithirbosses:raider_admiral_trophy",
-     "name": "Kiendkablaig",
+     "name": "Koisechiaruind",
      "age": "IV",
      "text": ""
     },
@@ -159,12 +153,6 @@
      "name": "Maraskul",
      "age": "V",
      "text": ""
-    },
-    {
-     "id": "diaithirbosses:storm_elemental_trophy",
-     "name": "Tàirnenachneili",
-     "age": "V",
-     "text": ""
     }
    ]
   },
@@ -174,12 +162,6 @@
    "age": "VI",
    "text": "Bosses that wake at Age VI.",
    "items": [
-    {
-     "id": "diaithirbosses:forge_hulk_trophy",
-     "name": "Famuirtieldach",
-     "age": "VI",
-     "text": ""
-    },
     {
      "id": "diaithirbosses:toisechmarb_trophy",
      "name": "Toisechmarb",
@@ -196,7 +178,7 @@
    "items": [
     {
      "id": "diaithirbosses:ceramic_warlord_trophy",
-     "name": "Tigernakogad",
+     "name": "Tigernachogaid",
      "age": "VII",
      "text": ""
     },

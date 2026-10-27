@@ -46,12 +46,25 @@ KINDS = {
     "hoglin": ("hoglin/hoglin.png", 1.3965, 1.4),
 }
 
+import importlib.util
+_sp = importlib.util.spec_from_file_location("archaic", "/mnt/project-files/diaithiris-archaic/tools/archaic.py")
+ARCH = importlib.util.module_from_spec(_sp); _sp.loader.exec_module(ARCH)
+_here = "/mnt/project-files/diaithiris-archaic/"
+ARCH.MEMO.update(json.load(open(_here + "archaic_map.json")))
+ARCH.OVERRIDES.update(json.load(open(_here + "tools/overrides.json")))
+# modern Goidelic source words -> Diaithiris, by the tool (never by hand)
+SRC = {"tribal_chief": "ceannfine", "stone_colossus": "famhairchlach", "bronze_warking": "rìghchogaidh",
+       "iron_walker": "coiseachiarainn", "steel_marshal": "marascal", "ceramic_warlord": "tighearnachogaidh",
+       "rot_swarm_lord": "tighearnaschaoth",
+       "champion": "curaidh", "hulking": "mòr", "swift": "luath", "thorned": "dealg", "venomous": "nimh", "frostbitten": "reothadh",
+       "vampiric": "fuil", "ablaze": "teine", "warbanded": "comhlan", "volatile": "spreadhadh", "shielded": "sgiath", "keen": "garg",
+       "token": "comhartha", "altar": "altoir", "boss": "ceannard"}
+D = {k: ARCH.text(v).capitalize() for k, v in SRC.items()}
+
 # ---------------------------------------------------------------- Diaithiris names (built from the archaic lexicon, checked
 # against it: no word equals a modern or Old Gaelic/Irish/Manx form)
-CHAMPION = "Kuraid"
-AFFIX_NAMES = {"hulking": "Mòru", "swift": "Luod", "thorned": "Dielg", "venomous": "Nim", "frostbitten": "Reotad",
-               "vampiric": "Foil", "ablaze": "Teini", "warbanded": "Kòmlun", "volatile": "Spriedad", "shielded": "Skiad",
-               "keen": "Gaurg"}
+CHAMPION = D["champion"]
+AFFIX_NAMES = {k: D[v] for k, v in {"hulking": "hulking", "swift": "swift", "thorned": "thorned", "venomous": "venomous", "frostbitten": "frostbitten", "vampiric": "vampiric", "ablaze": "ablaze", "warbanded": "warbanded", "volatile": "volatile", "shielded": "shielded", "keen": "keen"}.items()}
 
 # ---------------------------------------------------------------- attack builders
 def A(type_, **kw):
@@ -132,7 +145,8 @@ def tiered_loot(age, scale=1):
     return out
 
 
-BOSSES = []   # filled below; each is a full profile dict
+BOSSES = []   # filled below
+OWN_NAMES = {k: D[k] for k in ("tribal_chief","stone_colossus","bronze_warking","iron_walker","steel_marshal","ceramic_warlord","rot_swarm_lord")}
 
 
 def add(id_, name, name_en, kind, scale, age, **kw):
@@ -198,15 +212,6 @@ add("steel_marshal", "Maraskul", "Steel Marshal", "illager", 1.55, 5, bar="blue"
                   (0.3, 1.3, 1.3, 0.7, ["strike", "volley", "advance", "levy", "fortify"], {"invuln": 40})),
     loot=tiered_loot(5, 2) + arms_set("steel", 5, 0.4) + [L("diaithirarms:steel_sword", 1, 1, 5, 0.3), L("minecraft:diamond", 1, 3, 5, 0.6, 1)],
     structure={"style": 5, "biomes": "#minecraft:is_taiga", "spacing": 48, "separation": 20})
-add("forge_hulk", "Famuirtieldach", "Forge Giant", "golem", 2.7, 6, bar="red", radius=28,
-    tint=("golem", (0.12, 0.04, 0.02), (0.55, 0.20, 0.10), (1.0, 0.62, 0.20)),
-    fire_immune=True,
-    attacks={"hammer": slam(6, 7, 1.0, 36, 90), "slag": cloud(6, "minecraft:wither", 6, 28, 150, 100, 0), "embers": bolt(6, 5, 0.8, 30, 90, True, rng=34),
-             "bellows": wave(6, 13, 0.9, 40, 150), "pour": lightning(6, 4, 0.8, 40, 160)},
-    phases=phases((1.0, 0.85, 1.0, 1.0, ["hammer", "embers"]), (0.65, 1.0, 1.15, 0.85, ["hammer", "embers", "slag"], {"invuln": 40}),
-                  (0.3, 1.2, 1.3, 0.7, ["hammer", "embers", "slag", "bellows", "pour"], {"invuln": 40})),
-    loot=tiered_loot(6, 2) + arms_set("tempered", 6, 0.0) + [L("diaithirarms:tempered_ingot", 2, 5, 6, 1.0, 1), L("minecraft:netherite_scrap", 1, 2, 7, 0.6, 1)],
-    structure={"style": 6, "biomes": "#minecraft:is_mountain", "spacing": 48, "separation": 20})
 add("ceramic_warlord", "Tigernakogad", "Ceramic Warlord", "zombie", 1.6, 7, bar="white", radius=26,
     tint=("zombie", (0.55, 0.57, 0.62), (0.88, 0.88, 0.90), (1.0, 1.0, 1.0)),
     equipment={"mainhand": "minecraft:netherite_sword", "head": "minecraft:netherite_helmet", "chest": "minecraft:netherite_chestplate"},
@@ -216,16 +221,6 @@ add("ceramic_warlord", "Tigernakogad", "Ceramic Warlord", "zombie", 1.6, 7, bar=
                   (0.3, 1.4, 1.3, 0.7, ["cut", "volley", "dash", "legion", "fury", "bombard"], {"invuln": 40})),
     loot=tiered_loot(7, 3) + arms_set("composite", 7, 0.45) + [L("diaithirarms:ceramic_plate", 2, 5, 7, 1.0, 1), L("diaithirarms:composite_sword", 1, 1, 7, 0.3)],
     structure={"style": 7, "biomes": "#minecraft:is_overworld", "spacing": 52, "separation": 22})
-add("raider_admiral", "Kiendkablaig", "Raider Admiral", "illager", 1.5, 4, bar="blue", radius=24,
-    tint=("illager", (0.03, 0.06, 0.12), (0.18, 0.30, 0.48), (0.70, 0.82, 0.92)),
-    equipment={"mainhand": "minecraft:iron_axe"},
-    attacks={"boarding": slam(4, 4, 1.0, 26, 80), "cannon": bolt(4, 3, 1.0, 34, 110, rng=40), "swell": wave(4, 12, 0.8, 32, 140),
-             "crew": summon(4, "minecraft:drowned", 4, 8, 40, 220), "gale": roar(4, 14, "minecraft:slowness", 100, 2)},
-    phases=phases((1.0, 1.0, 1.0, 1.0, ["boarding", "cannon"]), (0.6, 1.1, 1.15, 0.85, ["boarding", "cannon", "swell", "crew"], {"invuln": 40}),
-                  (0.3, 1.25, 1.3, 0.7, ["boarding", "cannon", "swell", "crew", "gale"], {"invuln": 40})),
-    loot=tiered_loot(4) + [L("minecraft:heart_of_the_sea", 1, 1, 4, 0.5), L("minecraft:prismarine_shard", 6, 14, 4, 1.0, 2), L("minecraft:iron_ingot", 4, 8, 4, 1.0, 2)]
-         + arms_set("mail", 4, 0.25),
-    structure={"style": 4, "biomes": "#minecraft:is_beach", "spacing": 44, "separation": 18})
 add("rot_swarm_lord", "Tigernaskaed", "Plague Swarm Lord", "spider", 2.8, 3, bar="green", radius=22,
     tint=("spider", (0.05, 0.07, 0.02), (0.30, 0.42, 0.12), (0.72, 0.80, 0.30)),
     attacks={"bite": leap(3, 5, 1.0, 26, 100), "spores": cloud(3, "minecraft:poison", 6, 24, 120, 120, 1), "brood": summon(3, "minecraft:silverfish", 5, 12, 36, 180, 7),
@@ -234,14 +229,6 @@ add("rot_swarm_lord", "Tigernaskaed", "Plague Swarm Lord", "spider", 2.8, 3, bar
                   (0.3, 1.25, 1.3, 0.7, ["bite", "spores", "brood", "blight", "fester"], {"invuln": 40})),
     loot=tiered_loot(3) + [L("minecraft:spider_eye", 6, 12, 3, 1.0, 2), L("minecraft:fermented_spider_eye", 2, 4, 3, 0.6, 1), L("minecraft:rotten_flesh", 8, 16, 3)],
     structure={"style": 3, "biomes": "minecraft:swamp,minecraft:mangrove_swamp", "spacing": 42, "separation": 18})
-add("storm_elemental", "Tàirnenachneili", "Storm Elemental", "blaze", 2.4, 5, bar="white", radius=26, fire_immune=True,
-    tint=("blaze", (0.10, 0.14, 0.30), (0.45, 0.60, 0.90), (1.0, 1.0, 1.0)),
-    attacks={"strike": lightning(5, 3, 1.0, 36, 100), "gust": wave(5, 12, 0.7, 30, 120), "bolt": bolt(5, 4, 0.8, 26, 90, rng=36),
-             "tempest": lightning(5, 6, 0.9, 44, 170), "squall": roar(5, 16, "minecraft:blindness", 80, 0)},
-    phases=phases((1.0, 1.0, 1.0, 1.0, ["strike", "bolt"]), (0.65, 1.1, 1.15, 0.85, ["strike", "bolt", "gust"], {"invuln": 40}),
-                  (0.3, 1.25, 1.3, 0.7, ["strike", "bolt", "gust", "tempest", "squall"], {"invuln": 40})),
-    loot=tiered_loot(5) + [L("minecraft:lightning_rod", 1, 3, 5), L("minecraft:copper_ingot", 6, 12, 5, 1.0, 2), L("minecraft:amethyst_shard", 4, 9, 5, 1.0, 1)],
-    structure={"style": 5, "biomes": "#minecraft:is_mountain", "spacing": 50, "separation": 20})
 
 # ---- mythic kits: the 19 avatar creatures of the dead courts
 MYTH_MOD = {"toimsechunleomund", "natuirkriegach", "natuirmoir", "tarbiumachuoirtach"}  # entities diaithir_myth already spawns
@@ -348,6 +335,8 @@ for r in MYTH_ROWS:
     p["arena"]["radius"] = 28
 
 for p in BOSSES:
+    if p["id"] in OWN_NAMES:
+        p["name"] = OWN_NAMES[p["id"]]
     p.setdefault("mythic", False)
     p.setdefault("entity", f"{NS}:{p['id']}")
     p.setdefault("creature_id", None)
@@ -358,7 +347,7 @@ for p in BOSSES:
 
 # ---------------------------------------------------------------- champion elites
 ELITES = {
-    "_doc": "Champion elites: a monster that rolls an elite spawn gets 'Kuraid' (champion) plus 1-3 affixes from its base entry; "
+    "_doc": "Champion elites: a monster that rolls an elite spawn gets the champion prefix plus 1-3 affixes from its base entry; "
             "the roll chance and affix count rise with the world Age. Affix mechanics are in Elites.java by id; numbers are here.",
     "chance_by_age": [0.03, 0.04, 0.06, 0.08, 0.10, 0.12, 0.15, 0.18],
     "affixes_by_age": [1, 1, 1, 2, 2, 2, 3, 3],
@@ -545,6 +534,9 @@ def arena_nbt(boss_id, style, radius, path):
 
 # ---------------------------------------------------------------- emit
 def main():
+    import shutil
+    for d in (AS, DA):
+        shutil.rmtree(d, ignore_errors=True)
     names = {}
     lang = {}
     index = []
@@ -606,9 +598,9 @@ def main():
         lang[f"elite.{NS}.affix.{k}"] = v
     lang[f"elite.{NS}.name"] = f"{CHAMPION} %s %s"
     lang[f"elite.{NS}.name1"] = f"{CHAMPION} %s"
-    lang["item.diaithirbosses.champion_token"] = "Komurra kuraid"
-    lang["block.diaithirbosses.boss_altar"] = "Altuir kiendurd"
-    lang["itemGroup.diaithirbosses"] = "Kiendurd"
+    lang["item.diaithirbosses.champion_token"] = "Komurra " + CHAMPION.lower()
+    lang["block.diaithirbosses.boss_altar"] = D["altar"] + " " + D["boss"].lower()
+    lang["itemGroup.diaithirbosses"] = D["boss"]
     lang["boss.diaithirbosses.phase"] = "%s · %s"
     lang["boss.diaithirbosses.dormant"] = "The altar sleeps until Age %s."
     lang["boss.diaithirbosses.cooldown"] = "The altar is cold. It wakes again in %s minutes."
@@ -616,9 +608,9 @@ def main():
     lang["boss.diaithirbosses.present"] = "The challenger is already here."
     lang["boss.diaithirbosses.peaceful"] = "Nothing answers in peaceful lands."
     lang["boss.diaithirbosses.woken"] = "The altar wakes."
-    names["Kuraid"] = "Champion"
-    names["Komurra kuraid"] = "Champion token"
-    names["Altuir kiendurd"] = "Boss altar"
+    names[CHAMPION] = "Champion"
+    names["Komurra " + CHAMPION.lower()] = "Champion token"
+    names[D["altar"] + " " + D["boss"].lower()] = "Boss altar"
     for k, v in AFFIX_NAMES.items():
         names[v] = k
     W(os.path.join(AS, "lang/en_us.json"), lang)
@@ -645,10 +637,10 @@ def main():
     # codex chapters
     ch = []
     for age in sorted(chapters):
-        ch.append({"tier": f"age{age}", "name": "Kiendurd " + ROM[age], "age": ROM[age],
+        ch.append({"tier": f"age{age}", "name": D["boss"] + " " + ROM[age], "age": ROM[age],
                    "text": "Bosses that wake at Age " + ROM[age] + ".",
                    "items": [{"id": f"{NS}:{p['id']}_trophy", "name": p["name"], "age": ROM[p["age"]], "text": ""} for p in chapters[age]]})
-    W(os.path.join(ROOT, "codex/bosses_handbook.json"), {"id": f"{NS}:handbook", "title": "Kiendurd", "chapters": ch})
+    W(os.path.join(ROOT, "codex/bosses_handbook.json"), {"id": f"{NS}:handbook", "title": D["boss"], "chapters": ch})
 
 
 main()
