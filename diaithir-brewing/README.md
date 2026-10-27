@@ -25,3 +25,5 @@ Source: https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brew
 ## Create bridge (data only)
 
 `python3 tools/gen_create_bridge.py <dir with data/*/diaithirbrewing> <out data dir>` writes heated-basin `create:mixing` recipes for every brew recipe whose base is water or milk and that has at most 9 ingredient items. Each is gated on `diaithir_create` being loaded, so it is inert without our Create port. One basin batch is one bucket of base and yields the recipe's servings. Not yet tested against the Create jar in game.
+
+For the drinks KubeJS catalogue (no recipe JSON on disk), `python3 tools/gen_create_bridge_kubejs.py <a_data.js> <out data dir> [--namespaces minecraft,diaithir_drinks,...]` re-derives the age I/II vat brews (126) as heated-basin mixing recipes, each ingredient group as an any-of list. Unlisted namespaces are dropped from the lists.
