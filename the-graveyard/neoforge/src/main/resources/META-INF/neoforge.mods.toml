@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "graveyard"
+version = "${version}"
+displayName = "The Graveyard"
+authors = "Lion"
+displayURL = "https://modrinth.com/mod/the-graveyard-forge"
+issueTrackerURL = "https://github.com/finallion/The-Graveyard-FABRIC/issues"
+description = '''
+Adds new bosses, structures, mobs and blocks themed around the graveyard.
+
+Support: https://www.patreon.com/cw/LithiumPlus
+'''
+logoFile = "graveyard_logo.png"
+
+[[mixins]]
+config = "graveyard-common.mixins.json"
+
+[[mixins]]
+config = "graveyard-neoforge.mixins.json"
+
+[[dependencies.graveyard]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.graveyard]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.1.2,26.2)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.graveyard]]
+modId="geckolib"
+type="required"
+versionRange="[5.5.2,6)"
+ordering="NONE"
+side="BOTH"
+

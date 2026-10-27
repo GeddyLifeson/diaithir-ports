@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": "minecraft:blue_glazed_terracotta"
+  },
+  "result": {
+    "id": "graveyard:blue_urn"
+  }
+}

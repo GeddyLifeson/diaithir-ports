@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": "graveyard:scorched_log",
+    "C": "minecraft:charcoal"
+  },
+  "result": {
+    "id": "graveyard:charred_log",
+    "count": 8
+  }
+}

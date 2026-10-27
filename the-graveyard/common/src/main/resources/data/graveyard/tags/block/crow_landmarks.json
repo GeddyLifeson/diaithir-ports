@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "graveyard:gravestone",
+    "graveyard:blackstone_gravestone",
+    "graveyard:bricks_gravestone",
+    "graveyard:cobblestone_gravestone",
+    "graveyard:cracked_blackstone_gravestone",
+    "graveyard:deepslate_gravestone",
+    "graveyard:gilded_blackstone_gravestone",
+    "graveyard:mossy_cobblestone_gravestone",
+    "graveyard:mossy_stone_bricks_gravestone",
+    "graveyard:quartz_bricks_gravestone",
+    "graveyard:red_sandstone_gravestone",
+    "graveyard:sandstone_gravestone",
+    "graveyard:stone_bricks_gravestone",
+    "#graveyard:corvid_bones"
+  ]
+}

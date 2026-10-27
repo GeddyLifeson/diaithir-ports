@@ -1,0 +1,93 @@
+apply plugin: "com.gradleup.shadow"
+
+base.archivesName = "graveyard-FABRIC"
+
+architectury {
+	platformSetupLoomIde()
+	fabric()
+}
+
+configurations {
+	common
+	shadowCommon
+	compileClasspath.extendsFrom common
+	runtimeClasspath.extendsFrom common
+	developmentFabric.extendsFrom common
+}
+
+loom {
+	accessWidenerPath = project(":common").loom.accessWidenerPath
+	injectAccessWidener(tasks.named("jar"))
+}
+
+dependencies {
+	api "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+	api "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+
+	implementation "com.geckolib:geckolib-fabric-${rootProject.minecraft_version}:${rootProject.geckolib_version_fabric}"
+
+	common(project(path: ":common")) { transitive false }
+	shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
+
+}
+
+configurations.all {
+	resolutionStrategy.cacheChangingModulesFor 0, "seconds"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+jar {
+	archiveClassifier.set("raw")
+}
+
+shadowJar {
+	exclude "architectury.common.json"
+
+	dependsOn jar
+	mainSpec.sourcePaths.clear()
+	from(zipTree(jar.archiveFile))
+	configurations = [project.configurations.shadowCommon]
+	archiveClassifier.set(null)
+	zip64 = true
+}
+
+assemble.dependsOn shadowJar
+
+shadow.addShadowVariantIntoJavaComponent = false
+
+configurations {
+	apiElements {
+		outgoing.artifacts.clear()
+		outgoing.artifact(shadowJar)
+	}
+	runtimeElements {
+		outgoing.artifacts.clear()
+		outgoing.artifact(shadowJar)
+	}
+}
+
+sourcesJar {
+	def commonSources = project(":common").sourcesJar
+	dependsOn commonSources
+	from commonSources.archiveFile.map { zipTree(it) }
+	duplicatesStrategy 'exclude'
+}
+
+publishing {
+	publications {
+		mavenFabric(MavenPublication) {
+			artifactId = rootProject.archives_base_name + "-" + project.name
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}

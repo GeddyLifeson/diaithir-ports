@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "graveyard:item/nameless_hanged_spawn_egg"
+  }
+}

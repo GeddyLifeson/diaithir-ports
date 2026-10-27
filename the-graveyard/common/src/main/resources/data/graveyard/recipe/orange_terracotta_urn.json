@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": "graveyard:small_orange_urn"
+  },
+  "result": {
+    "id": "graveyard:orange_terracotta_urn"
+  }
+}

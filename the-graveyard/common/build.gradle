@@ -1,0 +1,40 @@
+dependencies {
+	implementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+
+	compileOnly "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+
+	implementation "com.geckolib:geckolib-fabric-${rootProject.minecraft_version}:${rootProject.geckolib_version_fabric}"
+
+}
+
+configurations.all {
+	resolutionStrategy.cacheChangingModulesFor 0, "seconds"
+}
+
+architectury {
+	common(rootProject.enabled_platforms.split(","))
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/graveyard.accesswidener")
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation platform("org.junit:junit-bom:5.10.2")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+	testImplementation "com.google.code.gson:gson:2.10.1"
+}
+
+test {
+	useJUnitPlatform()
+	systemProperty "graveyard.rootDir", (findProperty("graveyardRoot") ?: rootProject.projectDir.absolutePath).toString()
+	testLogging {
+		events "failed", "skipped"
+		exceptionFormat "short"
+	}
+}

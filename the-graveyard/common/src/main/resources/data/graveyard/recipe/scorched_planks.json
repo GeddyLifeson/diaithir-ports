@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": "#minecraft:planks",
+    "C": "minecraft:charcoal"
+  },
+  "result": {
+    "id": "graveyard:scorched_planks",
+    "count": 8
+  }
+}

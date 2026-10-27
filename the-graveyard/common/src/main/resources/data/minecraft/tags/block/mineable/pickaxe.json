@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "graveyard:tg_deepslate",
+    "graveyard:tg_stone",
+    "graveyard:tg_andesite",
+    "graveyard:tg_granite",
+    "graveyard:tg_diorite",
+    "graveyard:tg_tuff",
+    "graveyard:dark_iron_trapdoor",
+    "graveyard:dark_iron_door",
+    "graveyard:dark_iron_block",
+    "graveyard:ossuary"
+  ]
+}

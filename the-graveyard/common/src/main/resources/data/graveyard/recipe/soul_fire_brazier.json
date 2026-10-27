@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "#Y#",
+    "###"
+  ],
+  "key": {
+    "#": "graveyard:dark_iron_ingot",
+    "Y": "minecraft:soul_soil"
+  },
+  "result": {
+    "id": "graveyard:soul_fire_brazier",
+    "count": 1
+  }
+}

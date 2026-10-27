@@ -1,0 +1,51 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+logs/
+
+# build and crash artefacts the IDE otherwise auto-stages
+
+.architectury-transformer/
+hs_err_pid*.log
+replay_pid*.log
+
+# claude and local docs - kept on disk, never in the repo
+
+CLAUDE.md
+.claude/
+docs/
+*.md
+!README.md
+
+# Git Bash turns "> nul" into a real file on Windows.
+nul

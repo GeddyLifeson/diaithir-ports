@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "com.lion.graveyard.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "minVersion": "0.8",
+  "mixins": [
+    "CreeperEntityMixin",
+    "LevelStorageMixin",
+    "ServerPlayNetworkHandlerMixin",
+    "TreeFeatureMixin",
+    "MobEntityAccessor",
+    "BellBlockEntityMixin",
+    "SinglePoolElementMixin",
+    "MobEntitySpawnMixin",
+    "InventoryChangedCriterionMixin",
+    "PotionEntityMixin",
+    "CraftingScreenHandlerMixin",
+    "CraftingResultSlotMixin",
+    "CrafterBlockMixin",
+    "BlockEntityTypeMixin"
+  ],
+  "client": [
+    "ClientPlayNetworkHandlerMixin",
+    "client.HandledScreenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
