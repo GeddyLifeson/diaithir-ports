@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "#minecraft:logs",
+  "#minecraft:logs",
+  "#minecraft:logs",
+  "#minecraft:logs",
+  "#minecraft:planks",
+  "#minecraft:planks",
+  "#minecraft:planks",
+  "#minecraft:planks",
+  "minecraft:dirt"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:wood_crate"
+  }
+ ]
+}

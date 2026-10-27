@@ -1,0 +1,19 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "minecraft:stone",
+  "minecraft:stone",
+  "minecraft:stone",
+  "minecraft:stone",
+  "minecraft:gold_nugget",
+  "minecraft:gold_nugget",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "create_ss_crate:andesite_crate_shell"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:create_stone_crate"
+  }
+ ]
+}

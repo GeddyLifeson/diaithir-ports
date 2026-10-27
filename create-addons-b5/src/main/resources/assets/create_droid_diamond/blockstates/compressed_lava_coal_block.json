@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "create_droid_diamond:block/compressed_lava_coal_block"
+    }
+  }
+}

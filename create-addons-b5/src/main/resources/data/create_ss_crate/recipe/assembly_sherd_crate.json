@@ -1,0 +1,68 @@
+{
+ "type": "create:sequenced_assembly",
+ "ingredient": "create_ss_crate:brass_crate_shell",
+ "transitional_item": {
+  "id": "create_ss_crate:incomplete_sherd_crate"
+ },
+ "result": {
+  "id": "create_ss_crate:sherd_crate"
+ },
+ "loops": 2,
+ "sequence": [
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:bone_block",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "#minecraft:terracotta",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:gravel",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:clay",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:deploying",
+   "target": "$ingredient",
+   "ingredient": "minecraft:brush",
+   "results": [
+    "$result"
+   ]
+  },
+  {
+   "type": "create:cutting",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ],
+   "processing_time": 20
+  },
+  {
+   "type": "create:pressing",
+   "ingredient": "$ingredient",
+   "results": [
+    "$result"
+   ]
+  }
+ ]
+}

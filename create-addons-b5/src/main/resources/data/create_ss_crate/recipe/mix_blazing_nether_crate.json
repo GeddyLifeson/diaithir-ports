@@ -1,0 +1,20 @@
+{
+ "type": "create:mixing",
+ "ingredients": [
+  "create_ss_crate:andesite_crate_shell",
+  "minecraft:magma_block",
+  "minecraft:magma_block",
+  "minecraft:magma_block",
+  "minecraft:magma_block",
+  "minecraft:iron_ingot",
+  "minecraft:iron_ingot",
+  "minecraft:gold_ingot",
+  "create:empty_blaze_burner"
+ ],
+ "results": [
+  {
+   "id": "create_ss_crate:blazing_nether_crate"
+  }
+ ],
+ "heat_requirement": "heated"
+}

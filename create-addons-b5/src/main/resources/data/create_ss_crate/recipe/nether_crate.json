@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "ILI",
+  "LOL",
+  "ASA"
+ ],
+ "key": {
+  "L": "#minecraft:logs",
+  "I": "minecraft:iron_ingot",
+  "O": "minecraft:obsidian",
+  "A": "minecraft:lava_bucket",
+  "S": "create_ss_crate:andesite_crate_shell"
+ },
+ "result": {
+  "id": "create_ss_crate:nether_crate"
+ }
+}

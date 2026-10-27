@@ -1,0 +1,38 @@
+{
+ "parent": "create_ss_crate:base/ore_crate",
+ "display": {
+  "icon": {
+   "id": "create_ss_crate:andesite_crate_shell",
+   "count": 1
+  },
+  "title": {
+   "translate": "create_ss_crate.advancement.base.andesite_crate_shell.title"
+  },
+  "description": {
+   "translate": "create_ss_crate.advancement.base.andesite_crate_shell.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "have_andesite_crate_shell": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": [
+       "create_ss_crate:andesite_crate_shell"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "rewards": {
+  "loot": [
+   "create_ss_crate:advancement_loot/workshop_crate"
+  ]
+ }
+}
