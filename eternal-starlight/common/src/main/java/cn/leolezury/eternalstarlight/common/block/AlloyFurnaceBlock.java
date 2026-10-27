@@ -332,7 +332,7 @@ public class AlloyFurnaceBlock extends BaseEntityBlock implements WorldlyContain
 
 	@Override
 	public RenderShape getRenderShape(BlockState blockState) {
-		return blockState.getValue(X_OFFSET) == 0 && blockState.getValue(Y_OFFSET) == 0 && blockState.getValue(Z_OFFSET) == 1 ? RenderShape.ENTITYBLOCK_ANIMATED : RenderShape.INVISIBLE;
+		return blockState.getValue(X_OFFSET) == 0 && blockState.getValue(Y_OFFSET) == 0 && blockState.getValue(Z_OFFSET) == 1 ? RenderShape.MODEL : RenderShape.INVISIBLE;
 	}
 
 	@Nullable

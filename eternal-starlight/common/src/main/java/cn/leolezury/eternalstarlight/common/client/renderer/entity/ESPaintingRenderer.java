@@ -473,7 +473,7 @@ public class ESPaintingRenderer extends EntityRenderer<ESPainting> {
 	private boolean isCameraBehind(ESPainting painting) {
 		Direction facing = painting.getDirection();
 		Vec3 toCamera = this.entityRenderDispatcher.camera.getPosition().subtract(painting.position());
-		return toCamera.dot(Vec3.atLowerCornerOf(facing.getNormal())) < 0.0;
+		return toCamera.dot(Vec3.atLowerCornerOf(facing.getUnitVec3i())) < 0.0;
 	}
 
 	// [Vanilla copy] net.minecraft.client.renderer.entity.PaintingRenderer#renderPainting light lookup

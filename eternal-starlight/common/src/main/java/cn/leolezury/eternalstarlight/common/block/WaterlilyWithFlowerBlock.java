@@ -8,13 +8,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.WaterlilyBlock;
+import net.minecraft.world.level.block.LilyPadBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
-public class WaterlilyWithFlowerBlock extends WaterlilyBlock implements BonemealableBlock {
+public class WaterlilyWithFlowerBlock extends LilyPadBlock implements BonemealableBlock {
 	public static final MapCodec<WaterlilyWithFlowerBlock> CODEC = simpleCodec(WaterlilyWithFlowerBlock::new);
 
 	public static final BooleanProperty LIT = BlockStateProperties.LIT;

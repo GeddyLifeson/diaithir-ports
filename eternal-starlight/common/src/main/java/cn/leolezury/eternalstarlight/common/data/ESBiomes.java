@@ -564,7 +564,7 @@ public class ESBiomes {
 
 	public static Optional<BlockPos> findRandomUndergroundCreatureSpawnPos(ServerLevelAccessor level, EntityType<?> type, int startY, int x, int z, EntitySpawnReason spawnType) {
 		List<Integer> validYs = new ArrayList<>();
-		for (int y = startY; y > level.getMinBuildHeight(); y--) {
+		for (int y = startY; y > level.getMinY(); y--) {
 			BlockPos pos = new BlockPos(x, y, z);
 			if (isValidSpawnRulePosition(level, type, pos, spawnType)) {
 				validYs.add(y);

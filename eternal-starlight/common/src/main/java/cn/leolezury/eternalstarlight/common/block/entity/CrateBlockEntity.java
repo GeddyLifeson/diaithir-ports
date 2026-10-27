@@ -131,7 +131,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 	}
 
 	void playSound(BlockState state, SoundEvent sound) {
-		Vec3i vec3i = state.getValue(CrateBlock.FACING).getNormal();
+		Vec3i vec3i = state.getValue(CrateBlock.FACING).getUnitVec3i();
 		double x = this.worldPosition.getX() + 0.5 + vec3i.getX() / 2.0;
 		double y = this.worldPosition.getY() + 0.5 + vec3i.getY() / 2.0;
 		double z = this.worldPosition.getZ() + 0.5 + vec3i.getZ() / 2.0;

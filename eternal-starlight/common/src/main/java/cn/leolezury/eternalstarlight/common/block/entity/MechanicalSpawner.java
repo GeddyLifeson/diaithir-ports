@@ -151,7 +151,7 @@ public abstract class MechanicalSpawner {
 						}
 
 						Entity entity = EntityType.loadEntityRecursive(entityToSpawn, serverLevel, e -> {
-							e.moveTo(x, y, z, e.getYRot(), e.getXRot());
+							e.snapTo(x, y, z, e.getYRot(), e.getXRot());
 							return e;
 						});
 						if (entity == null) {
@@ -165,13 +165,13 @@ public abstract class MechanicalSpawner {
 							return;
 						}
 
-						entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), random.nextFloat() * 360.0F, 0.0F);
+						entity.snapTo(entity.getX(), entity.getY(), entity.getZ(), random.nextFloat() * 360.0F, 0.0F);
 						if (entity instanceof Mob mob) {
 							if (!mob.checkSpawnObstruction(serverLevel)) {
 								continue;
 							}
 
-							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id", CompoundTag.TAG_STRING);
+							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id");
 							if (shouldFinalize) {
 								mob.finalizeSpawn(serverLevel, serverLevel.getCurrentDifficultyAt(entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
 							}
@@ -219,7 +219,7 @@ public abstract class MechanicalSpawner {
 
 	public void load(@Nullable Level level, BlockPos pos, CompoundTag tag) {
 		this.spawnDelay = tag.getShortOr(TAG_SPAWN_DELAY, (short) 0);
-		boolean hasSpawnData = tag.contains(TAG_SPAWN_DATA, CompoundTag.TAG_COMPOUND);
+		boolean hasSpawnData = tag.contains(TAG_SPAWN_DATA);
 		if (hasSpawnData) {
 			SpawnData data = SpawnData.CODEC
 				.parse(NbtOps.INSTANCE, tag.getCompound(TAG_SPAWN_DATA))
@@ -228,7 +228,7 @@ public abstract class MechanicalSpawner {
 			this.setNextSpawnData(level, pos, data);
 		}
 
-		boolean hasSpawnPotentials = tag.contains(TAG_SPAWN_POTENTIALS, CompoundTag.TAG_LIST);
+		boolean hasSpawnPotentials = tag.contains(TAG_SPAWN_POTENTIALS);
 		if (hasSpawnPotentials) {
 			ListTag list = tag.getList(TAG_SPAWN_POTENTIALS, CompoundTag.TAG_COMPOUND);
 			this.spawnPotentials = SpawnData.LIST_CODEC
@@ -239,27 +239,27 @@ public abstract class MechanicalSpawner {
 			this.spawnPotentials = WeightedList.single(this.nextSpawnData != null ? this.nextSpawnData : new SpawnData());
 		}
 
-		if (tag.contains(TAG_MIN_SPAWN_DELAY, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_MIN_SPAWN_DELAY)) {
 			this.minSpawnDelay = tag.getShortOr(TAG_MIN_SPAWN_DELAY, (short) 0);
 		}
 
-		if (tag.contains(TAG_MAX_SPAWN_DELAY, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_MAX_SPAWN_DELAY)) {
 			this.maxSpawnDelay = tag.getShortOr(TAG_MAX_SPAWN_DELAY, (short) 0);
 		}
 
-		if (tag.contains(TAG_SPAWN_COUNT, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_SPAWN_COUNT)) {
 			this.spawnCount = tag.getShortOr(TAG_SPAWN_COUNT, (short) 0);
 		}
 
-		if (tag.contains(TAG_MAX_NEARBY_ENTITIES, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_MAX_NEARBY_ENTITIES)) {
 			this.maxNearbyEntities = tag.getShortOr(TAG_MAX_NEARBY_ENTITIES, (short) 0);
 		}
 
-		if (tag.contains(TAG_REQUIRED_PLAYER_RANGE, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_REQUIRED_PLAYER_RANGE)) {
 			this.requiredPlayerRange = tag.getShortOr(TAG_REQUIRED_PLAYER_RANGE, (short) 0);
 		}
 
-		if (tag.contains(TAG_SPAWN_RANGE, CompoundTag.TAG_ANY_NUMERIC)) {
+		if (tag.contains(TAG_SPAWN_RANGE)) {
 			this.spawnRange = tag.getShortOr(TAG_SPAWN_RANGE, (short) 0);
 		}
 
@@ -290,7 +290,7 @@ public abstract class MechanicalSpawner {
 	public Entity getOrCreateDisplayEntity(Level level, BlockPos pos) {
 		if (this.displayEntity == null) {
 			CompoundTag tag = this.getOrCreateNextSpawnData(level, level.getRandom(), pos).getEntityToSpawn();
-			if (!tag.contains("id", CompoundTag.TAG_STRING)) {
+			if (!tag.contains("id")) {
 				return null;
 			}
 			this.displayEntity = EntityType.loadEntityRecursive(tag, level, Function.identity());

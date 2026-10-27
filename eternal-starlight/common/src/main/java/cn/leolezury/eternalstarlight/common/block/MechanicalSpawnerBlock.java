@@ -82,7 +82,7 @@ public class MechanicalSpawnerBlock extends BaseEntityBlock {
 		BlockPos pos = context.getClickedPos();
 		Level level = context.getLevel();
 		int signal = Math.max(level.getBestNeighborSignal(pos), level.getBestNeighborSignal(pos.above()));
-		return pos.getY() < level.getMaxBuildHeight() - 1 && level.getBlockState(pos.above()).canBeReplaced(context)
+		return pos.getY() < level.getMaxY() - 1 && level.getBlockState(pos.above()).canBeReplaced(context)
 			? this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(POWER, signal)
 			: null;
 	}
@@ -155,7 +155,7 @@ public class MechanicalSpawnerBlock extends BaseEntityBlock {
 
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
-		return RenderShape.ENTITYBLOCK_ANIMATED;
+		return RenderShape.MODEL;
 	}
 
 	@Override

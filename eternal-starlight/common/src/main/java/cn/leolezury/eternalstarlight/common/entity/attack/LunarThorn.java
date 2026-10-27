@@ -103,8 +103,8 @@ public class LunarThorn extends Entity implements TraceableEntity {
 			if (getSpawnedTicks() > 40 && getOwner() != null) {
 				for (LivingEntity livingEntity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(0.5))) {
 					if (ESEntityUtil.shouldHarm(getOwner(), livingEntity)) {
-						if (getAttackMode() == 1 && !livingEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-							livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10));
+						if (getAttackMode() == 1 && !livingEntity.hasEffect(MobEffects.SLOWNESS)) {
+							livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 10));
 						}
 						ESPortCompat.hurt(livingEntity, ESDamageTypes.getIndirectEntityDamageSource(level(), ESDamageTypes.POISON, this, getOwner()), getAttackMode() == 0 ? 4 : 3);
 					}

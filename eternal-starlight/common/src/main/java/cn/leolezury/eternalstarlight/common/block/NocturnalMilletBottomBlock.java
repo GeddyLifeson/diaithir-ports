@@ -20,7 +20,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.FarmlandBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -100,7 +100,7 @@ public class NocturnalMilletBottomBlock extends Block implements BonemealableBlo
 				BlockState state = level.getBlockState(belowPos.offset(x, 0, z));
 				if (state.is(Blocks.FARMLAND)) {
 					speedAddition = 1.0F;
-					if (state.getValue(FarmBlock.MOISTURE) > 0) {
+					if (state.getValue(FarmlandBlock.MOISTURE) > 0) {
 						speedAddition = 3.0F;
 					}
 				}

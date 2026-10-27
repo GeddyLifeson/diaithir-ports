@@ -336,7 +336,7 @@ public abstract class ESBoss extends Monster implements MultiBehaviorUser {
 
 	protected Optional<BlockPos> getLootChestPos() {
 		BlockPos chestPos = blockPosition();
-		while (canBossLootChestReplace(chestPos, level().getBlockState(chestPos)) && chestPos.getY() > level().getMinBuildHeight()) {
+		while (canBossLootChestReplace(chestPos, level().getBlockState(chestPos)) && chestPos.getY() > level().getMinY()) {
 			chestPos = chestPos.below();
 		}
 		chestPos = chestPos.above();

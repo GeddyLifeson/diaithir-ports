@@ -172,7 +172,7 @@ public class BallLightning extends ThrowableProjectile {
 		Vec3 pos = position();
 		for (double distance = 1.0 / 16.0; distance <= 2.0; distance += 1.0 / 16.0) {
 			for (Direction direction : Direction.values()) {
-				Vec3 offset = Vec3.atLowerCornerOf(direction.getNormal()).scale(distance);
+				Vec3 offset = Vec3.atLowerCornerOf(direction.getUnitVec3i()).scale(distance);
 				if (level().noBlockCollision(this, box.move(offset))) {
 					setPos(pos.add(offset));
 					Vec3 delta = getDeltaMovement();

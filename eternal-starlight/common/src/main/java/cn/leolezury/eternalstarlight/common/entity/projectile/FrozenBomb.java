@@ -54,7 +54,7 @@ public class FrozenBomb extends ThrowableItemProjectile {
 					if (entity.canFreeze()) {
 						entity.setTicksFrozen(Math.min(entity.getTicksFrozen() + 100, 300));
 					}
-					entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60));
+					entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 60));
 				}
 			}
 			ScreenShakeVfx.createInstance(level().dimension(), position(), 30, 20, 0.2f, 0.24f, 4, 5).send(serverLevel);

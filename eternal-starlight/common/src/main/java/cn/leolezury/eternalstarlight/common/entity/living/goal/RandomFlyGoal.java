@@ -61,14 +61,14 @@ public class RandomFlyGoal extends Goal {
 			int blockY = position.getY();
 			if (!mob.level().getBlockState(position).isAir()) {
 				for (int i = position.getY(); !mob.level().getBlockState(new BlockPos(position.getX(), i, position.getZ())).isAir(); i++) {
-					if (i > mob.level().getMaxBuildHeight()) {
+					if (i > mob.level().getMaxY()) {
 						break;
 					}
 					blockY = i;
 				}
 			} else {
 				for (int i = position.getY(); mob.level().getBlockState(new BlockPos(position.getX(), i, position.getZ())).isAir(); i--) {
-					if (i < mob.level().getMinBuildHeight()) {
+					if (i < mob.level().getMinY()) {
 						break;
 					}
 					blockY = i + 1;

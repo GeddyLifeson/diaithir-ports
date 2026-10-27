@@ -27,7 +27,7 @@ public class ESLakeFeature extends Feature<ESLakeFeature.Configuration> {
 		WorldGenLevel level = context.level();
 		RandomSource randomsource = context.random();
 		Configuration config = context.config();
-		if (blockpos.getY() <= level.getMinBuildHeight() + 4) {
+		if (blockpos.getY() <= level.getMinY() + 4) {
 			return false;
 		} else {
 			blockpos = blockpos.below(4);

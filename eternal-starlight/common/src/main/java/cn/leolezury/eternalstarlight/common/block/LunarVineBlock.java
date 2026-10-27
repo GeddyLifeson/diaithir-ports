@@ -75,7 +75,7 @@ public class LunarVineBlock extends HorizontalDirectionalBlock implements Entity
 
 	@Override
 	protected RenderShape getRenderShape(BlockState blockState) {
-		return RenderShape.ENTITYBLOCK_ANIMATED;
+		return RenderShape.MODEL;
 	}
 
 	@Nullable

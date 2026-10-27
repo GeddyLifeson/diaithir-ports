@@ -7,10 +7,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.TintedParticleLeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ScarletLeavesBlock extends LeavesBlock {
+public class ScarletLeavesBlock extends TintedParticleLeavesBlock {
 	public static final MapCodec<ScarletLeavesBlock> CODEC = simpleCodec(ScarletLeavesBlock::new);
 
 	public ScarletLeavesBlock(Properties properties) {

@@ -104,7 +104,7 @@ public class CarvedLunarisCactusFruitBlock extends HorizontalDirectionalBlock {
 
 	private static void spawnGolemInWorld(Level level, BlockPattern.BlockPatternMatch blockPatternMatch, Entity entity, BlockPos blockPos) {
 		clearPatternBlocks(level, blockPatternMatch);
-		entity.moveTo((double) blockPos.getX() + 0.5, (double) blockPos.getY() + 0.05, (double) blockPos.getZ() + 0.5, 0.0F, 0.0F);
+		entity.snapTo((double) blockPos.getX() + 0.5, (double) blockPos.getY() + 0.05, (double) blockPos.getZ() + 0.5, 0.0F, 0.0F);
 		level.addFreshEntity(entity);
 
 		for (ServerPlayer serverPlayer : level.getEntitiesOfClass(ServerPlayer.class, entity.getBoundingBox().inflate(5.0))) {

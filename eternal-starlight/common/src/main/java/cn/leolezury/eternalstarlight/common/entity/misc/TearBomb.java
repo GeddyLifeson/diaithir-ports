@@ -41,7 +41,7 @@ public class TearBomb extends PrimedTnt {
 		cloud.setWaitTime(10);
 		cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
 		cloud.addEffect(new MobEffectInstance(new MobEffectInstance(MobEffects.POISON, 120)));
-		cloud.addEffect(new MobEffectInstance(new MobEffectInstance(MobEffects.CONFUSION, 120)));
+		cloud.addEffect(new MobEffectInstance(new MobEffectInstance(MobEffects.NAUSEA, 120)));
 		cloud.addEffect(new MobEffectInstance(new MobEffectInstance(ESMobEffects.TEARY.asHolder(), 120)));
 		this.level().addFreshEntity(cloud);
 	}

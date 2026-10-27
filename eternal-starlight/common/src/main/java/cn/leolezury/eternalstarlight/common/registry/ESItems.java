@@ -102,7 +102,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> DEAD_LUNAR_LOG = ITEMS.register("dead_lunar_log", () -> new BlockItem(ESBlocks.DEAD_LUNAR_LOG.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> RED_CRYSTALLIZED_LUNAR_LOG = ITEMS.register("red_crystallized_lunar_log", () -> new BlockItem(ESBlocks.RED_CRYSTALLIZED_LUNAR_LOG.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> BLUE_CRYSTALLIZED_LUNAR_LOG = ITEMS.register("blue_crystallized_lunar_log", () -> new BlockItem(ESBlocks.BLUE_CRYSTALLIZED_LUNAR_LOG.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> LUNAR_SIGN = ITEMS.register("lunar_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.LUNAR_SIGN.get(), ESBlocks.LUNAR_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> LUNAR_SIGN = ITEMS.register("lunar_sign", () -> new SignItem(ESBlocks.LUNAR_SIGN.get(), ESBlocks.LUNAR_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> LUNAR_HANGING_SIGN = ITEMS.register("lunar_hanging_sign", () -> new HangingSignItem(ESBlocks.LUNAR_HANGING_SIGN.get(), ESBlocks.LUNAR_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> LUNAR_BOAT = ITEMS.register("lunar_boat", () -> new ESBoatItem(false, ESBoat.Type.LUNAR, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> LUNAR_CHEST_BOAT = ITEMS.register("lunar_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.LUNAR, new Item.Properties().stacksTo(1)));
@@ -123,7 +123,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> NORTHLAND_FENCE_GATE = ITEMS.register("northland_fence_gate", () -> new BlockItem(ESBlocks.NORTHLAND_FENCE_GATE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> NORTHLAND_SLAB = ITEMS.register("northland_slab", () -> new BlockItem(ESBlocks.NORTHLAND_SLAB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> NORTHLAND_STAIRS = ITEMS.register("northland_stairs", () -> new BlockItem(ESBlocks.NORTHLAND_STAIRS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> NORTHLAND_SIGN = ITEMS.register("northland_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.NORTHLAND_SIGN.get(), ESBlocks.NORTHLAND_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> NORTHLAND_SIGN = ITEMS.register("northland_sign", () -> new SignItem(ESBlocks.NORTHLAND_SIGN.get(), ESBlocks.NORTHLAND_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> NORTHLAND_HANGING_SIGN = ITEMS.register("northland_hanging_sign", () -> new HangingSignItem(ESBlocks.NORTHLAND_HANGING_SIGN.get(), ESBlocks.NORTHLAND_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> NORTHLAND_BOAT = ITEMS.register("northland_boat", () -> new ESBoatItem(false, ESBoat.Type.NORTHLAND, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> NORTHLAND_CHEST_BOAT = ITEMS.register("northland_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.NORTHLAND, new Item.Properties().stacksTo(1)));
@@ -146,7 +146,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> BANYIN_STAIRS = ITEMS.register("banyin_stairs", () -> new BlockItem(ESBlocks.BANYIN_STAIRS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> BANYIN_ROOTS = ITEMS.register("banyin_roots", () -> new BlockItem(ESBlocks.BANYIN_ROOTS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> MUDDY_BANYIN_ROOTS = ITEMS.register("muddy_banyin_roots", () -> new BlockItem(ESBlocks.MUDDY_BANYIN_ROOTS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> BANYIN_SIGN = ITEMS.register("banyin_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.BANYIN_SIGN.get(), ESBlocks.BANYIN_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> BANYIN_SIGN = ITEMS.register("banyin_sign", () -> new SignItem(ESBlocks.BANYIN_SIGN.get(), ESBlocks.BANYIN_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> BANYIN_HANGING_SIGN = ITEMS.register("banyin_hanging_sign", () -> new HangingSignItem(ESBlocks.BANYIN_HANGING_SIGN.get(), ESBlocks.BANYIN_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> BANYIN_BOAT = ITEMS.register("banyin_boat", () -> new ESBoatItem(false, ESBoat.Type.BANYIN, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> BANYIN_CHEST_BOAT = ITEMS.register("banyin_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.BANYIN, new Item.Properties().stacksTo(1)));
@@ -168,7 +168,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> SCARLET_FENCE_GATE = ITEMS.register("scarlet_fence_gate", () -> new BlockItem(ESBlocks.SCARLET_FENCE_GATE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SCARLET_SLAB = ITEMS.register("scarlet_slab", () -> new BlockItem(ESBlocks.SCARLET_SLAB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SCARLET_STAIRS = ITEMS.register("scarlet_stairs", () -> new BlockItem(ESBlocks.SCARLET_STAIRS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> SCARLET_SIGN = ITEMS.register("scarlet_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.SCARLET_SIGN.get(), ESBlocks.SCARLET_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> SCARLET_SIGN = ITEMS.register("scarlet_sign", () -> new SignItem(ESBlocks.SCARLET_SIGN.get(), ESBlocks.SCARLET_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> SCARLET_HANGING_SIGN = ITEMS.register("scarlet_hanging_sign", () -> new HangingSignItem(ESBlocks.SCARLET_HANGING_SIGN.get(), ESBlocks.SCARLET_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> SCARLET_BOAT = ITEMS.register("scarlet_boat", () -> new ESBoatItem(false, ESBoat.Type.SCARLET, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> SCARLET_CHEST_BOAT = ITEMS.register("scarlet_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.SCARLET, new Item.Properties().stacksTo(1)));
@@ -189,7 +189,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> TORREYA_FENCE_GATE = ITEMS.register("torreya_fence_gate", () -> new BlockItem(ESBlocks.TORREYA_FENCE_GATE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> TORREYA_SLAB = ITEMS.register("torreya_slab", () -> new BlockItem(ESBlocks.TORREYA_SLAB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> TORREYA_STAIRS = ITEMS.register("torreya_stairs", () -> new BlockItem(ESBlocks.TORREYA_STAIRS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> TORREYA_SIGN = ITEMS.register("torreya_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.TORREYA_SIGN.get(), ESBlocks.TORREYA_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> TORREYA_SIGN = ITEMS.register("torreya_sign", () -> new SignItem(ESBlocks.TORREYA_SIGN.get(), ESBlocks.TORREYA_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> TORREYA_HANGING_SIGN = ITEMS.register("torreya_hanging_sign", () -> new HangingSignItem(ESBlocks.TORREYA_HANGING_SIGN.get(), ESBlocks.TORREYA_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> TORREYA_BOAT = ITEMS.register("torreya_boat", () -> new ESBoatItem(false, ESBoat.Type.TORREYA, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> TORREYA_CHEST_BOAT = ITEMS.register("torreya_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.TORREYA, new Item.Properties().stacksTo(1)));
@@ -213,7 +213,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> JINGLESTEM_FENCE_GATE = ITEMS.register("jinglestem_fence_gate", () -> new BlockItem(ESBlocks.JINGLESTEM_FENCE_GATE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> JINGLESTEM_SLAB = ITEMS.register("jinglestem_slab", () -> new BlockItem(ESBlocks.JINGLESTEM_SLAB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> JINGLESTEM_STAIRS = ITEMS.register("jinglestem_stairs", () -> new BlockItem(ESBlocks.JINGLESTEM_STAIRS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> JINGLESTEM_SIGN = ITEMS.register("jinglestem_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.JINGLESTEM_SIGN.get(), ESBlocks.JINGLESTEM_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> JINGLESTEM_SIGN = ITEMS.register("jinglestem_sign", () -> new SignItem(ESBlocks.JINGLESTEM_SIGN.get(), ESBlocks.JINGLESTEM_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> JINGLESTEM_HANGING_SIGN = ITEMS.register("jinglestem_hanging_sign", () -> new HangingSignItem(ESBlocks.JINGLESTEM_HANGING_SIGN.get(), ESBlocks.JINGLESTEM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> JINGLESTEM_RAFT = ITEMS.register("jinglestem_raft", () -> new ESBoatItem(false, ESBoat.Type.JINGLESTEM, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> JINGLESTEM_CHEST_RAFT = ITEMS.register("jinglestem_chest_raft", () -> new ESBoatItem(true, ESBoat.Type.JINGLESTEM, new Item.Properties().stacksTo(1)));
@@ -236,7 +236,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> CRADLEWOOD_FENCE_GATE = ITEMS.register("cradlewood_fence_gate", () -> new BlockItem(ESBlocks.CRADLEWOOD_FENCE_GATE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRADLEWOOD_SLAB = ITEMS.register("cradlewood_slab", () -> new BlockItem(ESBlocks.CRADLEWOOD_SLAB.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRADLEWOOD_STAIRS = ITEMS.register("cradlewood_stairs", () -> new BlockItem(ESBlocks.CRADLEWOOD_STAIRS.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> CRADLEWOOD_SIGN = ITEMS.register("cradlewood_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ESBlocks.CRADLEWOOD_SIGN.get(), ESBlocks.CRADLEWOOD_WALL_SIGN.get()));
+	public static final RegistryObject<Item, Item> CRADLEWOOD_SIGN = ITEMS.register("cradlewood_sign", () -> new SignItem(ESBlocks.CRADLEWOOD_SIGN.get(), ESBlocks.CRADLEWOOD_WALL_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> CRADLEWOOD_HANGING_SIGN = ITEMS.register("cradlewood_hanging_sign", () -> new HangingSignItem(ESBlocks.CRADLEWOOD_HANGING_SIGN.get(), ESBlocks.CRADLEWOOD_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 	public static final RegistryObject<Item, Item> CRADLEWOOD_BOAT = ITEMS.register("cradlewood_boat", () -> new ESBoatItem(false, ESBoat.Type.CRADLEWOOD, new Item.Properties().stacksTo(1)));
 	public static final RegistryObject<Item, Item> CRADLEWOOD_CHEST_BOAT = ITEMS.register("cradlewood_chest_boat", () -> new ESBoatItem(true, ESBoat.Type.CRADLEWOOD, new Item.Properties().stacksTo(1)));
@@ -498,7 +498,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM = ITEMS.register("shining_mushroom", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM_BLOCK = ITEMS.register("shining_mushroom_block", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SHINING_MUSHROOM_STEM = ITEMS.register("shining_mushroom_stem", () -> new BlockItem(ESBlocks.SHINING_MUSHROOM_STEM.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> LUNAR_BERRIES = ITEMS.register("lunar_berries", () -> new ItemNameBlockItem(ESBlocks.BERRIES_VINES.get(), new Item.Properties().food(ESFoods.LUNAR_BERRIES.get())));
+	public static final RegistryObject<Item, Item> LUNAR_BERRIES = ITEMS.register("lunar_berries", () -> new BlockItem(ESBlocks.BERRIES_VINES.get(), new Item.Properties().food(ESFoods.LUNAR_BERRIES.get())));
 	public static final RegistryObject<Item, Item> CAVE_MOSS = ITEMS.register("cave_moss", () -> new BlockItem(ESBlocks.CAVE_MOSS.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CAVE_MOSS_BLOCK = ITEMS.register("cave_moss_block", () -> new BlockItem(ESBlocks.CAVE_MOSS_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CAVE_MOSS_CARPET = ITEMS.register("cave_moss_carpet", () -> new BlockItem(ESBlocks.CAVE_MOSS_CARPET.get(), new Item.Properties()));
@@ -572,7 +572,7 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> MOONLIGHT_DUCKWEED = ITEMS.register("moonlight_duckweed", () -> new PlaceOnWaterBlockItem(ESBlocks.MOONLIGHT_DUCKWEED.get(), new Item.Properties()));
 
 	// sea stuff
-	public static final RegistryObject<Item, Item> ABYSSAL_FRUIT = ITEMS.register("abyssal_fruit", () -> new ItemNameBlockItem(ESBlocks.ABYSSAL_KELP.get(), new Item.Properties().food(ESFoods.ABYSSAL_FRUIT.get())));
+	public static final RegistryObject<Item, Item> ABYSSAL_FRUIT = ITEMS.register("abyssal_fruit", () -> new BlockItem(ESBlocks.ABYSSAL_KELP.get(), new Item.Properties().food(ESFoods.ABYSSAL_FRUIT.get())));
 	public static final RegistryObject<Item, Item> ORBFLORA = ITEMS.register("orbflora", () -> new BlockItem(ESBlocks.ORBFLORA.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> ORBFLORA_LIGHT = ITEMS.register("orbflora_light", () -> new BlockItem(ESBlocks.ORBFLORA_LIGHT.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> SPIRAL_KELP = ITEMS.register("spiral_kelp", () -> new BlockItem(ESBlocks.SPIRAL_KELP.get(), new Item.Properties()));
@@ -591,20 +591,20 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> JINGLING_PICKLE = ITEMS.register("jingling_pickle", () -> new BlockItem(ESBlocks.JINGLING_PICKLE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_TENTACLES_CORAL = ITEMS.register("dead_tentacles_coral", () -> new BlockItem(ESBlocks.DEAD_TENTACLES_CORAL.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> TENTACLES_CORAL = ITEMS.register("tentacles_coral", () -> new BlockItem(ESBlocks.TENTACLES_CORAL.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> DEAD_TENTACLES_CORAL_FAN = ITEMS.register("dead_tentacles_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_TENTACLES_CORAL_FAN.get(), ESBlocks.DEAD_TENTACLES_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-	public static final RegistryObject<Item, Item> TENTACLES_CORAL_FAN = ITEMS.register("tentacles_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.TENTACLES_CORAL_FAN.get(), ESBlocks.TENTACLES_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+	public static final RegistryObject<Item, Item> DEAD_TENTACLES_CORAL_FAN = ITEMS.register("dead_tentacles_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_TENTACLES_CORAL_FAN.get(), ESBlocks.DEAD_TENTACLES_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
+	public static final RegistryObject<Item, Item> TENTACLES_CORAL_FAN = ITEMS.register("tentacles_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.TENTACLES_CORAL_FAN.get(), ESBlocks.TENTACLES_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_TENTACLES_CORAL_BLOCK = ITEMS.register("dead_tentacles_coral_block", () -> new BlockItem(ESBlocks.DEAD_TENTACLES_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> TENTACLES_CORAL_BLOCK = ITEMS.register("tentacles_coral_block", () -> new BlockItem(ESBlocks.TENTACLES_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_GOLDEN_CORAL = ITEMS.register("dead_golden_coral", () -> new BlockItem(ESBlocks.DEAD_GOLDEN_CORAL.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> GOLDEN_CORAL = ITEMS.register("golden_coral", () -> new BlockItem(ESBlocks.GOLDEN_CORAL.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> DEAD_GOLDEN_CORAL_FAN = ITEMS.register("dead_golden_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_GOLDEN_CORAL_FAN.get(), ESBlocks.DEAD_GOLDEN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-	public static final RegistryObject<Item, Item> GOLDEN_CORAL_FAN = ITEMS.register("golden_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.GOLDEN_CORAL_FAN.get(), ESBlocks.GOLDEN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+	public static final RegistryObject<Item, Item> DEAD_GOLDEN_CORAL_FAN = ITEMS.register("dead_golden_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_GOLDEN_CORAL_FAN.get(), ESBlocks.DEAD_GOLDEN_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
+	public static final RegistryObject<Item, Item> GOLDEN_CORAL_FAN = ITEMS.register("golden_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.GOLDEN_CORAL_FAN.get(), ESBlocks.GOLDEN_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_GOLDEN_CORAL_BLOCK = ITEMS.register("dead_golden_coral_block", () -> new BlockItem(ESBlocks.DEAD_GOLDEN_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> GOLDEN_CORAL_BLOCK = ITEMS.register("golden_coral_block", () -> new BlockItem(ESBlocks.GOLDEN_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_CRYSTALLUM_CORAL = ITEMS.register("dead_crystallum_coral", () -> new BlockItem(ESBlocks.DEAD_CRYSTALLUM_CORAL.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRYSTALLUM_CORAL = ITEMS.register("crystallum_coral", () -> new BlockItem(ESBlocks.CRYSTALLUM_CORAL.get(), new Item.Properties()));
-	public static final RegistryObject<Item, Item> DEAD_CRYSTALLUM_CORAL_FAN = ITEMS.register("dead_crystallum_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_CRYSTALLUM_CORAL_FAN.get(), ESBlocks.DEAD_CRYSTALLUM_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-	public static final RegistryObject<Item, Item> CRYSTALLUM_CORAL_FAN = ITEMS.register("crystallum_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.CRYSTALLUM_CORAL_FAN.get(), ESBlocks.CRYSTALLUM_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+	public static final RegistryObject<Item, Item> DEAD_CRYSTALLUM_CORAL_FAN = ITEMS.register("dead_crystallum_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.DEAD_CRYSTALLUM_CORAL_FAN.get(), ESBlocks.DEAD_CRYSTALLUM_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
+	public static final RegistryObject<Item, Item> CRYSTALLUM_CORAL_FAN = ITEMS.register("crystallum_coral_fan", () -> new StandingAndWallBlockItem(ESBlocks.CRYSTALLUM_CORAL_FAN.get(), ESBlocks.CRYSTALLUM_CORAL_WALL_FAN.get(), Direction.DOWN, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DEAD_CRYSTALLUM_CORAL_BLOCK = ITEMS.register("dead_crystallum_coral_block", () -> new BlockItem(ESBlocks.DEAD_CRYSTALLUM_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRYSTALLUM_CORAL_BLOCK = ITEMS.register("crystallum_coral_block", () -> new BlockItem(ESBlocks.CRYSTALLUM_CORAL_BLOCK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> VELVETUMOSS = ITEMS.register("velvetumoss", () -> new BlockItem(ESBlocks.VELVETUMOSS.get(), new Item.Properties()));
@@ -641,12 +641,12 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> GOLDEN_GRASS_BLOCK = ITEMS.register("golden_grass_block", () -> new BlockItem(ESBlocks.GOLDEN_GRASS_BLOCK.get(), new Item.Properties()));
 
 	// crops
-	public static final RegistryObject<Item, Item> CRINOA_SEEDS = ITEMS.register("crinoa_seeds", () -> new ItemNameBlockItem(ESBlocks.CRINOA.get(), new Item.Properties()));
+	public static final RegistryObject<Item, Item> CRINOA_SEEDS = ITEMS.register("crinoa_seeds", () -> new BlockItem(ESBlocks.CRINOA.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRINOA = ITEMS.register("crinoa", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRINOA_BALE = ITEMS.register("crinoa_bale", () -> new BlockItem(ESBlocks.CRINOA_BALE.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> CRINOA_BALL = ITEMS.register("crinoa_ball", () -> new Item(new Item.Properties().food(ESFoods.CRINOA_BALL.get())));
 	public static final RegistryObject<Item, Item> CRINOA_PORRIDGE = ITEMS.register("crinoa_porridge", () -> new Item(new Item.Properties().stacksTo(1).food(ESFoods.CRINOA_PORRIDGE.get())));
-	public static final RegistryObject<Item, Item> NOCTURNAL_MILLET_SEEDS = ITEMS.register("nocturnal_millet_seeds", () -> new ItemNameBlockItem(ESBlocks.NOCTURNAL_MILLET_STALK.get(), new Item.Properties()));
+	public static final RegistryObject<Item, Item> NOCTURNAL_MILLET_SEEDS = ITEMS.register("nocturnal_millet_seeds", () -> new BlockItem(ESBlocks.NOCTURNAL_MILLET_STALK.get(), new Item.Properties()));
 	public static final RegistryObject<Item, Item> NOCTURNAL_MILLET = ITEMS.register("nocturnal_millet", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> FORGOTTEN_NOCTURNAL_MILLET = ITEMS.register("forgotten_nocturnal_millet", () -> new Item(new Item.Properties()));
 	public static final RegistryObject<Item, Item> POPPED_NOCTURNAL_MILLET_BUCKET = ITEMS.register("popped_nocturnal_millet_bucket", () -> new Item(new Item.Properties().durability(10).food(ESFoods.POPPED_NOCTURNAL_MILLET_BUCKET.get())));
@@ -1353,8 +1353,8 @@ public class ESItems {
 	public static final RegistryObject<Item, Item> BONEMORE = ITEMS.register("bonemore", () -> new GreatswordItem(ESItemTiers.DOOMEDEN, new Item.Properties().rarity(Rarity.EPIC).attributes(GreatswordItem.createAttributes(ESItemTiers.DOOMEDEN, 6, -2.8F, 0.5F))));
 	public static final RegistryObject<Item, Item> BOW_OF_BLOOD = ITEMS.register("bow_of_blood", () -> new BloodBowItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)));
 	public static final RegistryObject<Item, Item> LIVING_ARM = ITEMS.register("living_arm", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item, Item> DOOMED_TORCH = ITEMS.register("doomed_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_TORCH.get(), ESBlocks.WALL_DOOMED_TORCH.get(), new Item.Properties(), Direction.DOWN));
-	public static final RegistryObject<Item, Item> DOOMED_REDSTONE_TORCH = ITEMS.register("doomed_redstone_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_REDSTONE_TORCH.get(), ESBlocks.WALL_DOOMED_REDSTONE_TORCH.get(), new Item.Properties(), Direction.DOWN));
+	public static final RegistryObject<Item, Item> DOOMED_TORCH = ITEMS.register("doomed_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_TORCH.get(), ESBlocks.WALL_DOOMED_TORCH.get(), Direction.DOWN, new Item.Properties()));
+	public static final RegistryObject<Item, Item> DOOMED_REDSTONE_TORCH = ITEMS.register("doomed_redstone_torch", () -> new StandingAndWallBlockItem(ESBlocks.DOOMED_REDSTONE_TORCH.get(), ESBlocks.WALL_DOOMED_REDSTONE_TORCH.get(), Direction.DOWN, new Item.Properties()));
 	public static final RegistryObject<Item, Item> DOOMEDEN_CARRION = ITEMS.register("doomeden_carrion", () -> new Item(new Item.Properties().food(ESFoods.DOOMEDEN_CARRION.get())));
 	public static final RegistryObject<Item, Item> ROTTEN_HAM = ITEMS.register("rotten_ham", () -> new Item(new Item.Properties().food(ESFoods.ROTTEN_HAM.get())));
 	public static final RegistryObject<Item, Item> EYE_OF_DOOM = ITEMS.register("eye_of_doom", () -> new Item(new Item.Properties()));

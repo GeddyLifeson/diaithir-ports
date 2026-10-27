@@ -21,9 +21,9 @@ public class ESMobEffectTagsProvider extends MobEffectTagsProvider {
 			.add(
 				MobEffects.POISON.value(),
 				MobEffects.WITHER.value(),
-				MobEffects.CONFUSION.value(),
+				MobEffects.NAUSEA.value(),
 				MobEffects.HUNGER.value(),
-				MobEffects.MOVEMENT_SLOWDOWN.value(),
+				MobEffects.SLOWNESS.value(),
 				MobEffects.INFESTED.value(),
 				MobEffects.BLINDNESS.value()
 			);

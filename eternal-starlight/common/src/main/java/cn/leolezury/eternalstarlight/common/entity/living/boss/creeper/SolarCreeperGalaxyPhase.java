@@ -54,7 +54,7 @@ public class SolarCreeperGalaxyPhase extends BehaviorPhase<SolarCreeper> {
 
 			for (int i = 0; i < 6; i++) {
 				OrbitalPlanet planet = new OrbitalPlanet(ESEntities.ORBITAL_PLANET.get(), entity.level());
-				planet.moveTo(entity.position().add(0, entity.getBbHeight() / 2, 0));
+				planet.snapTo(entity.position().add(0, entity.getBbHeight() / 2, 0));
 				planet.setOwner(entity);
 				planet.setTarget(target);
 				float initialAngle = entity.getRandom().nextFloat() * 360;

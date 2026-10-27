@@ -39,7 +39,7 @@ public class HugeShiningMushroomFeature extends Feature<HugeMushroomFeatureConfi
 		}
 
 		int baseY = origin.getY();
-		if (baseY < level.getMinBuildHeight() + 1 || baseY + trunkHeight + 2 >= level.getMaxBuildHeight()) {
+		if (baseY < level.getMinY() + 1 || baseY + trunkHeight + 2 >= level.getMaxY()) {
 			return false;
 		}
 

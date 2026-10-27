@@ -73,7 +73,7 @@ public abstract class BossSpawnerBlockEntity<T extends Mob> extends BlockEntity 
 			return false;
 		}
 		BlockPos spawnPos = getBlockPos();
-		mob.moveTo(spawnPos, level.getRandom().nextFloat() * 360.0F, 0.0F);
+		mob.snapTo(spawnPos, level.getRandom().nextFloat() * 360.0F, 0.0F);
 		mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), EntitySpawnReason.SPAWNER, null);
 		initializeBoss(mob);
 		return level.addFreshEntity(mob);

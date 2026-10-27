@@ -28,7 +28,7 @@ public class ThrownPungencyFruitSpear extends ThrownSpear {
 	@Override
 	protected void doPostHurtEffects(LivingEntity living) {
 		living.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 1));
-		living.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 120));
+		living.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 120));
 	}
 
 	@Override

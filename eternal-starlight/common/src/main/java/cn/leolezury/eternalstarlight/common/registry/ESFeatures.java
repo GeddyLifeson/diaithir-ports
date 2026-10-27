@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 
 public class ESFeatures {
 	public static final RegistrationProvider<Feature<?>> FEATURES = RegistrationProvider.get(Registries.FEATURE, EternalStarlight.ID);
+	public static final RegistryObject<Feature<?>, Feature<ESRandomPatchFeature.Configuration>> RANDOM_PATCH = FEATURES.register("random_patch", () -> new ESRandomPatchFeature(ESRandomPatchFeature.Configuration.CODEC));
 	public static final RegistryObject<Feature<?>, Feature<NoneFeatureConfiguration>> FINAL_MODIFICATION = FEATURES.register("final_modification", () -> new FinalModificationFeature(NoneFeatureConfiguration.CODEC));
 	public static final RegistryObject<Feature<?>, Feature<ESLakeFeature.Configuration>> LAKE = FEATURES.register("lake", () -> new ESLakeFeature(ESLakeFeature.Configuration.CODEC));
 	public static final RegistryObject<Feature<?>, Feature<NoneFeatureConfiguration>> GLACITE = FEATURES.register("glacite", () -> new GlaciteFeature(NoneFeatureConfiguration.CODEC));

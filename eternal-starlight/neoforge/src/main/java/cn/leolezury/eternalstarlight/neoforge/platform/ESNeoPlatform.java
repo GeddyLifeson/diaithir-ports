@@ -133,14 +133,14 @@ public class ESNeoPlatform implements ESPlatform {
 
 		@Override
 		public Registry<T> registry() {
-			return registry == null ? (Registry<T>) BuiltInRegistries.REGISTRY.get(key.location()) : registry;
+			return registry == null ? (Registry<T>) BuiltInRegistries.REGISTRY.get(key.identifier()) : registry;
 		}
 
 		@Override
 		public <I extends T> RegistryObject<T, I> register(String id, Supplier<? extends I> supplier) {
 			Identifier location = Identifier.fromNamespaceAndPath(namespace, id);
 			ResourceKey<I> resourceKey = (ResourceKey<I>) ResourceKey.create(key, location);
-			DeferredHolder<T, I> holder = deferredRegister.register(id, supplier);
+			DeferredHolder<T, I> holder = deferredRegister.register(id, cn.leolezury.eternalstarlight.common.util.ESRegistering.wrap(resourceKey, supplier));
 			return new RegistryObject<>() {
 				@Override
 				public Holder<T> asHolder() {
@@ -167,7 +167,7 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public <T> void registerDatapackRegistry(ResourceKey<Registry<T>> key, Codec<T> codec, Codec<T> networkCodec) {
-		Optional<? extends ModContainer> optional = ModList.get().getModContainerById(key.location().getNamespace());
+		Optional<? extends ModContainer> optional = ModList.get().getModContainerById(key.identifier().getNamespace());
 		if (optional.isPresent()) {
 			IEventBus bus = optional.get().getEventBus();
 			if (bus != null) {

@@ -9,12 +9,12 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowLayerBlock;
-import net.minecraft.world.level.block.SnowyDirtBlock;
+import net.minecraft.world.level.block.SnowyBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LightEngine;
 
-public abstract class ESSpreadingSnowyDirtBlock extends SnowyDirtBlock {
+public abstract class ESSpreadingSnowyDirtBlock extends SnowyBlock {
 	protected final Block spreadsOn;
 
 	protected ESSpreadingSnowyDirtBlock(Block spreadsOn, BlockBehaviour.Properties properties) {
@@ -30,8 +30,8 @@ public abstract class ESSpreadingSnowyDirtBlock extends SnowyDirtBlock {
 		} else if (blockstate.getFluidState().getAmount() == 8) {
 			return false;
 		} else {
-			int i = LightEngine.getLightBlockInto(levelReader, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(levelReader, blockpos));
-			return i < levelReader.getMaxLightLevel();
+			int i = LightEngine.getLightBlockInto(state, blockstate, Direction.UP, blockstate.getLightDampening());
+			return i < 15;
 		}
 	}
 
@@ -41,7 +41,7 @@ public abstract class ESSpreadingSnowyDirtBlock extends SnowyDirtBlock {
 	}
 
 	@Override
-	public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource randomSource) {
+	protected void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource randomSource) {
 		if (!canBeGrass(state, serverLevel, pos)) {
 			serverLevel.setBlockAndUpdate(pos, spreadsOn.defaultBlockState());
 		} else {

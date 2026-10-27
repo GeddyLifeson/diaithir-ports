@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Block;
 
 public class TangledSkullItem extends StandingAndWallBlockItem {
 	public TangledSkullItem(Block block, Block wallBlock, Properties properties, Direction direction) {
-		super(block, wallBlock, properties, direction);
+		super(block, wallBlock, direction, properties);
 	}
 
 	@Override

@@ -253,7 +253,7 @@ public class TangledSkull extends Monster {
 				if (isShotFromMonstrosity() && result.getType() == HitResult.Type.ENTITY && ((EntityHitResult) result).getEntity() instanceof LivingEntity living && !isAlliedTo(living)) {
 					living.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 60));
 					living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60));
-					living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60));
+					living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 60));
 					living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60));
 				}
 				boolean ally = isShotFromMonstrosity() && result.getType() == HitResult.Type.ENTITY && isAlliedTo(((EntityHitResult) result).getEntity());

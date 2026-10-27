@@ -46,7 +46,7 @@ public class AshenSnowball extends ThrowableItemProjectile {
 			}
 			for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(3))) {
 				if (ESEntityUtil.shouldHarm(getOwner(), entity)) {
-					entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60));
+					entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 60));
 				}
 			}
 			discard();

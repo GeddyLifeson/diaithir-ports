@@ -142,7 +142,7 @@ public class SolarEggBlock extends BaseEntityBlock {
 
 	@Override
 	protected RenderShape getRenderShape(BlockState state) {
-		return state.getValue(X_OFFSET) == 1 && state.getValue(Y_OFFSET) == 0 && state.getValue(Z_OFFSET) == 1 ? RenderShape.ENTITYBLOCK_ANIMATED : RenderShape.INVISIBLE;
+		return state.getValue(X_OFFSET) == 1 && state.getValue(Y_OFFSET) == 0 && state.getValue(Z_OFFSET) == 1 ? RenderShape.MODEL : RenderShape.INVISIBLE;
 	}
 
 	@Nullable

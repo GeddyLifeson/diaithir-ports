@@ -36,7 +36,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.border.WorldBorder;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -77,7 +77,7 @@ public class ESPortalBlock extends BaseEntityBlock implements Portal {
 
 	@Override
 	public RenderShape getRenderShape(BlockState blockState) {
-		return ESConfig.INSTANCE.enablePortalShader ? RenderShape.ENTITYBLOCK_ANIMATED : RenderShape.MODEL;
+		return ESConfig.INSTANCE.enablePortalShader ? RenderShape.MODEL : RenderShape.MODEL;
 	}
 
 	@Override
@@ -198,7 +198,7 @@ public class ESPortalBlock extends BaseEntityBlock implements Portal {
 
 	@Nullable
 	@Override
-	public DimensionTransition getPortalDestination(ServerLevel serverLevel, Entity entity, BlockPos blockPos) {
+	public TeleportTransition getPortalDestination(ServerLevel serverLevel, Entity entity, BlockPos blockPos) {
 		Level entityLevel = entity.level();
 		MinecraftServer server = entityLevel.getServer();
 		ResourceKey<Level> destination = entity.level().dimension() == ESDimensions.STARLIGHT_KEY

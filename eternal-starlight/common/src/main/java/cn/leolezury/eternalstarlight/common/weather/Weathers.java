@@ -80,12 +80,12 @@ public class Weathers extends SavedData {
 
 	public static Weathers load(ServerLevel serverLevel, CompoundTag compoundTag) {
 		Weathers weathersData = new Weathers(serverLevel);
-		if (compoundTag.contains(TAG_WEATHERS, CompoundTag.TAG_COMPOUND)) {
+		if (compoundTag.contains(TAG_WEATHERS)) {
 			CompoundTag weathersTag = compoundTag.getCompound(TAG_WEATHERS);
 			ESWeathers.WEATHERS.registry().forEach(weather -> {
 				WeatherInstance instance = new WeatherInstance(serverLevel, weather);
 				String id = Objects.requireNonNull(ESWeathers.WEATHERS.registry().getKey(weather)).toString();
-				if (weathersTag.contains(id, CompoundTag.TAG_COMPOUND)) {
+				if (weathersTag.contains(id)) {
 					instance.load(weathersTag.getCompound(id));
 				}
 				weathersData.weathers.add(instance);

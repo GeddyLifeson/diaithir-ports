@@ -197,7 +197,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 						double x = blockPos.getX() + 0.5 + xzOffset * facing.getStepX();
 						double y = blockPos.getY() + 0.5 - (entity.getBbHeight() / 2.0);
 						double z = blockPos.getZ() + 0.5 + xzOffset * facing.getStepZ();
-						entity.moveTo(x, y, z, entity.getYRot(), entity.getXRot());
+						entity.snapTo(x, y, z, entity.getYRot(), entity.getXRot());
 						if (level.getBlockState(blockPos).is(ESTags.Blocks.STARFIRE_BIRD_NESTS) && !emergency
 							&& !bird.isBaby() && bird.canFallInLove() && bird.getAge() == 0
 							&& blockEntity.removeSeeds()) {
@@ -241,7 +241,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 			if (!blockEntity.isFullForBabies() && blockEntity.hatchTicks > 6000) {
 				StarfireBird baby = new StarfireBird(ESEntities.STARFIRE_BIRD.get(), level);
 				baby.setBaby(true);
-				baby.moveTo(pos.getCenter());
+				baby.snapTo(pos.getCenter());
 				if (level instanceof ServerLevel serverLevel) {
 					baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(pos), EntitySpawnReason.BREEDING, null);
 				}

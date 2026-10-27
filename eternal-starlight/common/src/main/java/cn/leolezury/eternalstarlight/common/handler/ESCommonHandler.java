@@ -378,7 +378,7 @@ public class ESCommonHandler {
 
 		if (source.getDirectEntity() instanceof LivingEntity attacker && attacker.getWeaponItem().is(ESTags.Items.PUNGENCY_FRUIT_WEAPONS)) {
 			entity.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 1));
-			entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 120));
+			entity.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 120));
 		}
 
 		if (source.getDirectEntity() instanceof LivingEntity attacker && attacker.getWeaponItem().is(ESTags.Items.STARFIRE_WEAPONS)) {
@@ -602,7 +602,7 @@ public class ESCommonHandler {
 					List<LivingEntity> affected = level.getEntitiesOfClass(LivingEntity.class, entity.getBoundingBox().inflate(5));
 					affected.removeIf(e -> !ESEntityUtil.shouldHarm(arrow.getOwner(), e));
 					for (LivingEntity living : affected) {
-						living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80));
+						living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 80));
 						living.addEffect(new MobEffectInstance(MobEffects.WITHER, entity.isInWater() ? 300 : 160));
 					}
 					if (arrow.tickCount % 4 == 0) {
@@ -797,8 +797,8 @@ public class ESCommonHandler {
 
 	public static float onBlockBreakSpeed(Player player, BlockState state, float speed) {
 		if (player.getMainHandItem().is(ESItems.UNDERMINER.get())) {
-			int min = player.level().getMinBuildHeight();
-			int max = player.level().getMaxBuildHeight();
+			int min = player.level().getMinY();
+			int max = player.level().getMaxY();
 			double y = Mth.clamp(player.getY(), min, max);
 			float modifier = (float) (2 - 1.75 * (y - min) / (max - min));
 			return speed * modifier;

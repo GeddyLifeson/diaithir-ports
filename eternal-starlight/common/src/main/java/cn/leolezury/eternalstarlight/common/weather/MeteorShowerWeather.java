@@ -58,7 +58,7 @@ public class MeteorShowerWeather extends AbstractWeather {
 						for (int i = 0; i < 2; i++) {
 							TinyCreteor tinyCreteor = ESEntities.TINY_CRETEOR.get().create(level);
 							if (tinyCreteor != null) {
-								tinyCreteor.moveTo(randomPos, 0.0F, 0.0F);
+								tinyCreteor.snapTo(randomPos, 0.0F, 0.0F);
 								groupData = tinyCreteor.finalizeSpawn(level, difficulty, EntitySpawnReason.NATURAL, groupData);
 								level.addFreshEntityWithPassengers(tinyCreteor);
 								LAST_SUCCESSFUL_SPAWN.put(level.dimension(), ticks);

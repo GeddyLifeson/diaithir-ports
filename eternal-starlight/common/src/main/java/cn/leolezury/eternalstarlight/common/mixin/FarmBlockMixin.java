@@ -6,7 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.FarmlandBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,11 +15,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(FarmBlock.class)
+@Mixin(FarmlandBlock.class)
 public abstract class FarmBlockMixin {
 	@Inject(method = "getStateForPlacement", at = @At("RETURN"), cancellable = true)
 	private void getStateForPlacement(BlockPlaceContext blockPlaceContext, CallbackInfoReturnable<BlockState> cir) {
-		if (((FarmBlock) (Object) this).defaultBlockState().is(ESBlocks.NIGHTFALL_FARMLAND.get()) && !((FarmBlock) (Object) this).defaultBlockState().canSurvive(blockPlaceContext.getLevel(), blockPlaceContext.getClickedPos())) {
+		if (((FarmlandBlock) (Object) this).defaultBlockState().is(ESBlocks.NIGHTFALL_FARMLAND.get()) && !((FarmlandBlock) (Object) this).defaultBlockState().canSurvive(blockPlaceContext.getLevel(), blockPlaceContext.getClickedPos())) {
 			cir.setReturnValue(ESBlocks.NIGHTFALL_DIRT.get().defaultBlockState());
 		}
 	}

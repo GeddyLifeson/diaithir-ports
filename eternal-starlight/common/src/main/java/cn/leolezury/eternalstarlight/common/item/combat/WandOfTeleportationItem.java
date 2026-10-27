@@ -38,7 +38,7 @@ public class WandOfTeleportationItem extends Item {
 		createThornCircle(level, player, player.position());
 		TangledHusk husk = ESEntities.TANGLED_HUSK.get().create(level);
 		if (husk != null) {
-			husk.moveTo(player.position());
+			husk.snapTo(player.position());
 			husk.setYRot(player.getYRot());
 			husk.yRotO = husk.getYRot();
 			husk.setOwner(player);

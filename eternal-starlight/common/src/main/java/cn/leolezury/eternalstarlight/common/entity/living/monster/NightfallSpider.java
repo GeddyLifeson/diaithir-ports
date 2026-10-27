@@ -42,7 +42,7 @@ public class NightfallSpider extends Spider {
 				s.discard();
 				LonestarSkeleton skeleton = ESEntities.LONESTAR_SKELETON.get().create(this.level());
 				if (skeleton != null) {
-					skeleton.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0.0F);
+					skeleton.snapTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0.0F);
 					skeleton.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, null);
 					skeleton.startRiding(this);
 				}

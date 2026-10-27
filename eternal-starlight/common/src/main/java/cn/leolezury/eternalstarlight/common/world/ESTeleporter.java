@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,8 +29,8 @@ public class ESTeleporter {
 	}
 
 	public static Optional<BlockPos> getExistingPortal(ServerLevel level, BlockPos pos) {
-		int maxHeight = level.getMaxBuildHeight();
-		int minHeight = level.getMinBuildHeight();
+		int maxHeight = level.getMaxY();
+		int minHeight = level.getMinY();
 		WorldBorder border = level.getWorldBorder();
 		BlockPos.MutableBlockPos blockPos = new BlockPos.MutableBlockPos();
 		for (int x = pos.getX() - 16; x <= pos.getX() + 16; x++) {
@@ -48,8 +48,8 @@ public class ESTeleporter {
 	}
 
 	public static Optional<BlockPos> makePortal(ServerLevel level, BlockPos blockPos, Direction.Axis axis) {
-		int maxHeight = level.getMaxBuildHeight();
-		int minHeight = level.getMinBuildHeight();
+		int maxHeight = level.getMaxY();
+		int minHeight = level.getMinY();
 		WorldBorder border = level.getWorldBorder();
 		for (BlockPos.MutableBlockPos pos : BlockPos.spiralAround(blockPos, 32, Direction.EAST, Direction.SOUTH)) {
 			// search near world surface
@@ -85,14 +85,14 @@ public class ESTeleporter {
 	}
 
 	@Nullable
-	public static DimensionTransition getPortalInfo(Entity entity, BlockPos entrancePos, ServerLevel dest) {
+	public static TeleportTransition getPortalInfo(Entity entity, BlockPos entrancePos, ServerLevel dest) {
 		if (entity.level().dimension() != ESDimensions.STARLIGHT_KEY && dest.dimension() != ESDimensions.STARLIGHT_KEY) {
 			return null;
 		} else {
 			WorldBorder border = dest.getWorldBorder();
 			double coordinateDifference = DimensionType.getTeleportationScale(entity.level().dimensionType(), dest.dimensionType());
 			BlockPos pos = border.clampToBounds(entity.getX() * coordinateDifference, entity.getY(), entity.getZ() * coordinateDifference);
-			return getOrMakePortal(dest, entity, entrancePos, pos).map((result) -> new DimensionTransition(dest, Vec3.atCenterOf(result), Vec3.ZERO, entity.getYRot(), entity.getXRot(), DimensionTransition.PLACE_PORTAL_TICKET)).orElse(null);
+			return getOrMakePortal(dest, entity, entrancePos, pos).map((result) -> new TeleportTransition(dest, Vec3.atCenterOf(result), Vec3.ZERO, entity.getYRot(), entity.getXRot(), TeleportTransition.PLACE_PORTAL_TICKET)).orElse(null);
 		}
 	}
 }

@@ -537,7 +537,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 				if (this.loveTime >= this.adjustedTickDelay(60) && this.stranghoul.distanceToSqr(this.partner) < 9) {
 					Stranghoul baby = new Stranghoul(ESEntities.STRANGHOUL.get(), level);
 					baby.setBaby(true);
-					baby.moveTo(stranghoul.getX(), stranghoul.getY(), stranghoul.getZ(), 0.0F, 0.0F);
+					baby.snapTo(stranghoul.getX(), stranghoul.getY(), stranghoul.getZ(), 0.0F, 0.0F);
 					if (level instanceof ServerLevel serverLevel) {
 						baby.finalizeSpawn(serverLevel, level.getCurrentDifficultyAt(baby.blockPosition()), EntitySpawnReason.BREEDING, null);
 					}
@@ -1100,7 +1100,7 @@ public class Stranghoul extends Monster implements NeutralMob, OwnableEntity, Ra
 		if (!this.canTeleportTo(new BlockPos(i, j, k))) {
 			return false;
 		} else {
-			this.moveTo(i + 0.5F, j, k + 0.5F, this.getYRot(), this.getXRot());
+			this.snapTo(i + 0.5F, j, k + 0.5F, this.getYRot(), this.getXRot());
 			this.navigation.stop();
 			return true;
 		}

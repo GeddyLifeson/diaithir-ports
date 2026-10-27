@@ -100,7 +100,7 @@ public class StranghoulDenMainPiece extends StructurePiece {
 								if (x == 0 && z == 0) {
 									placeBlock(level, Blocks.WATER.defaultBlockState(), x + 7, -3, z + 7, box);
 								} else {
-									placeBlock(level, ESBlocks.NIGHTFALL_FARMLAND.get().defaultBlockState().setValue(FarmBlock.MOISTURE, 7), x + 7, -3, z + 7, box);
+									placeBlock(level, ESBlocks.NIGHTFALL_FARMLAND.get().defaultBlockState().setValue(FarmlandBlock.MOISTURE, 7), x + 7, -3, z + 7, box);
 								}
 							} else {
 								if (cannotSupport(getBlock(level, x + 7, -3, z + 7, box))) {
