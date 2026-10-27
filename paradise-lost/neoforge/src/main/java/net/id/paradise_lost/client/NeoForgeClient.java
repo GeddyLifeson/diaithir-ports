@@ -49,6 +49,7 @@ public class NeoForgeClient {
     private static void registerClientExtensions(RegisterClientExtensionsEvent event) {
         event.registerItem(new OrnateOlviteArmorClientExtensions(), ItemRegistry.OLVITE_HELMET_ORNATE.get());
         event.registerItem(new OlviteSpyglassClientExtensions(), ItemRegistry.OLVITE_SPYGLASS.get());
+        event.registerItem(new FloatyLeggingsClientExtensions(), ItemRegistry.FLOATY_LEGGINGS.get());
     }
 
     private static void registerGuiLayers(RegisterGuiLayersEvent event) {

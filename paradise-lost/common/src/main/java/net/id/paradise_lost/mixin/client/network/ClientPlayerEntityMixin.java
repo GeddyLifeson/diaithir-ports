@@ -1,12 +1,9 @@
 package net.id.paradise_lost.mixin.client.network;
 
-import net.id.paradise_lost.block.blockentity.ParadiseHangingSignBlockEntity;
 import net.id.paradise_lost.item.armor.FloatyLeggingsItem;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.inventory.HangingSignEditScreen;
-import net.minecraft.world.entity.player.Input;
+import net.minecraft.client.player.ClientInput;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.world.level.block.entity.SignBlockEntity;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,21 +20,13 @@ public abstract class ClientPlayerEntityMixin {
     protected Minecraft minecraft;
 
     @Shadow
-    public Input input;
+    public ClientInput input;
 
     @Unique
     private int paradiseLost$floatyJumpToggleTimer = 0;
 
     @Unique
     private boolean paradiseLost$floatyWasJumping = false;
-
-    @Inject(method = "openTextEdit", at = @At("HEAD"), cancellable = true)
-    public void openEditSignScreen(SignBlockEntity sign, boolean front, CallbackInfo ci) {
-        if (sign instanceof ParadiseHangingSignBlockEntity hangingSignBlockEntity) {
-            this.minecraft.setScreen(new HangingSignEditScreen(hangingSignBlockEntity, front, this.minecraft.isTextFilteringEnabled()));
-            ci.cancel();
-        }
-    }
 
     @Inject(method = "aiStep", at = @At("HEAD"))
     private void paradiseLost$floatyDoubleJumpToggle(CallbackInfo ci) {
@@ -46,7 +35,7 @@ public abstract class ClientPlayerEntityMixin {
             this.paradiseLost$floatyJumpToggleTimer--;
         }
 
-        boolean jumping = this.input != null && this.input.jumping;
+        boolean jumping = this.input != null && this.input.keyPresses.jump();
         boolean wearing = FloatyLeggingsItem.isWearing(player);
         boolean canToggleAnchor = FloatyLeggingsItem.isSurvivalLike(player);
 

@@ -37,6 +37,21 @@
     "world.gen.UtilMixin",
     "world.gen.structure.JigsawStructureMixin"
   ],
+  "client": [
+    "client.ClientWorldMixin",
+    "client.network.ClientPlayNetworkHandlerMixin",
+    "client.network.ClientPlayerEntityMixin",
+    "client.render.FluidRendererMixin",
+    "client.render.GuiMixin",
+    "client.render.HumanoidArmorLayerMixin",
+    "client.render.InGameOverlayRendererMixin",
+    "client.render.LevelEventHandlerMixin",
+    "client.render.LivingEntityRendererMixin",
+    "client.render.MinecartRendererMixin",
+    "client.sound.LocalPlayerPortalSoundMixin",
+    "client.sound.MinecartInsideSoundInstanceMixin",
+    "client.sound.MovingMinecartSoundInstanceMixin"
+  ],
   "injectors": {
     "defaultRequire": 0,
     "maxShiftBy": 5

@@ -26,7 +26,7 @@ public abstract class MovingMinecartSoundInstanceMixin extends AbstractTickableS
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
-    public void tick(CallbackInfo ci) {
+    private void paradiseLost$silenceOffRail(CallbackInfo ci) {
         if (!this.minecart.isRemoved()) {
             if (MinecartFloatingHelper.isFloating(this.minecart) && !MinecartFloatingHelper.isCartOnRail(this.minecart)) {
                 this.volume = 0.0F;

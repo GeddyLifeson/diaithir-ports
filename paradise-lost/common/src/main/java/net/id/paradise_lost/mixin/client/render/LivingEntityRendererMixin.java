@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityRendererMixin {
 
     @Inject(method = "isEntityUpsideDown", at = @At("HEAD"), cancellable = true)
-    private static void paradiseLost$wandFlip(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
+    private void paradiseLost$wandFlip(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
         if (((ParadiseLostEntityExtensions) entity).getFlipped() && !(entity instanceof Player)) {
             cir.setReturnValue(true);
         }

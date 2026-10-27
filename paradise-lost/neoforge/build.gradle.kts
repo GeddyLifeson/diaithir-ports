@@ -177,5 +177,4 @@ sourceSets.main { java.exclude("net/id/paradise_lost/datagen/**") }
 // the pre-26.1 render pipeline and is excluded until ported. See net.id.paradise_lost.clientstub for the
 // minimal client entrypoint that keeps the client from crashing on missing entity renderers.
 sourceSets.main {
-    java.exclude("net/id/paradise_lost/mixin/client/**")
 }

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class LocalPlayerPortalSoundMixin {
 
     @WrapOperation(
-            method = "handleConfusionTransitionEffect",
+            method = "handlePortalTransitionEffect",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/resources/sounds/SimpleSoundInstance;"

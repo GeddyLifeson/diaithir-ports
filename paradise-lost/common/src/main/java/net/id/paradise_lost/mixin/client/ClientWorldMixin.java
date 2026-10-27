@@ -18,7 +18,7 @@ public abstract class ClientWorldMixin {
     @Final
     EntityTickList tickingEntities;
 
-    @Inject(method = "tickEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ClientLevel;tickBlockEntities()V"))
+    @Inject(method = "tickEntities", at = @At("TAIL"))
     void postEntityTick(CallbackInfo ci) {
         tickingEntities.forEach(entity -> {
             if (entity instanceof PostTickEntity postTickEntity) {

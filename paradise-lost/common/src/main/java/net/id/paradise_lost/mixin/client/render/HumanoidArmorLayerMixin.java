@@ -1,54 +1,36 @@
 package net.id.paradise_lost.mixin.client.render;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.id.paradise_lost.ModConstants;
 import net.id.paradise_lost.entity.ParadiseLostEntityExtensions;
 import net.id.paradise_lost.item.armor.FloatyLeggingsItem;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.client.renderer.item.ItemModelResolver;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.component.CustomData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(HumanoidArmorLayer.class)
+/**
+ * Marks the (copied) render-state leggings stack of an anchored floaty wearer so the client item extension can swap
+ * in the "anchored" armor texture. Replaces the pre-26.1 ArmorMaterial.Layer texture wrap.
+ */
+@Mixin(HumanoidMobRenderer.class)
 public class HumanoidArmorLayerMixin {
-    private static final Identifier FLOATY_LEGGINGS_ANCHORED =
-            ModConstants.locate("textures/models/armor/floaty_layer_2_on.png");
+    public static final String ANCHORED_TAG = "paradise_lost_floaty_anchored";
 
-    @WrapOperation(
-            method = "renderArmorPiece",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/item/ArmorMaterial$Layer;texture(Z)Lnet/minecraft/resources/Identifier;"
-            ),
-            require = 0
-    )
-    private Identifier paradiseLost$floatyAnchoredTexture(
-            ArmorMaterial.Layer layer,
-            boolean secondLayer,
-            Operation<Identifier> original,
-            PoseStack poseStack,
-            MultiBufferSource buffer,
-            LivingEntity entity,
-            EquipmentSlot slot,
-            int light,
-            HumanoidModel<?> model
-    ) {
-        Identifier texture = original.call(layer, secondLayer);
-        if (secondLayer
-                && slot == EquipmentSlot.LEGS
-                && entity.getItemBySlot(slot).getItem() instanceof FloatyLeggingsItem
-                && FloatyLeggingsItem.isFloatyEnabled(entity.getItemBySlot(slot))
+    @Inject(method = "extractHumanoidRenderState", at = @At("TAIL"), require = 0)
+    private static void paradiseLost$markAnchoredFloaty(LivingEntity entity, HumanoidRenderState state, float partialTicks, ItemModelResolver resolver, CallbackInfo ci) {
+        if (state.legsEquipment.getItem() instanceof FloatyLeggingsItem
+                && FloatyLeggingsItem.isFloatyEnabled(state.legsEquipment)
                 && entity instanceof ParadiseLostEntityExtensions extensions
                 && extensions.isFloatyAnchored()) {
-            return FLOATY_LEGGINGS_ANCHORED;
+            CompoundTag tag = new CompoundTag();
+            tag.putBoolean(ANCHORED_TAG, true);
+            state.legsEquipment.set(DataComponents.CUSTOM_DATA, CustomData.of(tag));
         }
-        return texture;
     }
 }
