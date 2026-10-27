@@ -6,7 +6,7 @@ license = "MIT"
 modId = "diaithirbridges"
 version = "${version}"
 displayName = "Diaithir Bridges"
-description = "Two machines that join magic and power in Diaithir: Tobardealain turns magic reagents into Forge Energy (Age VI), Lòchrandraoidheachd turns Forge Energy into a magic reagent (Age VII)."
+description = "Two machines that join magic and power in Diaithir: Toburdeluin turns magic reagents into Forge Energy (Age VI), Lòchrundraeidechd turns Forge Energy into a magic reagent (Age VII)."
 
 [[dependencies.diaithirbridges]]
 modId = "neoforge"

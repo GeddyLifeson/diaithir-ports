@@ -10,8 +10,8 @@ D = f"{RES}/data/diaithirbridges"
 SPEC = re.compile(r'new Spec\(Kind\.(\w+), (\d), "(\w+)", "(\w+)", ([\d_]+), ([\d_]+), ([\d_]+), ([\d_]+), ([\d_]+), ([\d_]+), ([\d_]+)\)')
 rows = [m.groups() for m in SPEC.finditer(open("src/main/java/net/diaithir/bridges/Spec.java").read())]
 specs = [r[:4] for r in rows]
-NAMES = {"tobardealain": "Tobardealain", "lochrandraoidheachd": "Lòchrandraoidheachd", "aibhnedealain": "Aibhnedealain"}
-SUFFIX = {"umha": "umha", "oir": "òir"}
+NAMES = {"tobardealain": "Toburdeluin", "lochrandraoidheachd": "Lòchrundraeidechd", "aibhnedealain": "Aibnedeluin"}
+SUFFIX = {"umha": "uma", "oir": "òir"}
 TRIM = {1: None, 2: (196, 158, 58), 3: (236, 200, 70)}          # stripe metal: copper (kept), brass, gold
 SCREEN = {"SOURCE": None, "CHARGER": None, "RELAY": (70, 170, 200)}  # relay screen is cyan; the other two keep their art
 

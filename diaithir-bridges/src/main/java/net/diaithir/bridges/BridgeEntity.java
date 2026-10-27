@@ -27,7 +27,7 @@ import java.util.OptionalInt;
 
 /**
  * One block entity for every machine and tier (see {@link Spec}). SOURCE burns a magic reagent from the tag diaithir_integration:magic_fuel and pushes
- * Forge Energy to its neighbours; CHARGER takes Forge Energy and makes Duslachluibhe at its tier's cost; RELAY carries Forge Energy between tech mods
+ * Forge Energy to its neighbours; CHARGER takes Forge Energy and makes Duslachloibi at its tier's cost; RELAY carries Forge Energy between tech mods
  * at its tier's throughput, losing a share on the way.
  */
 public final class BridgeEntity extends BlockEntity implements WorldlyContainer {
@@ -112,7 +112,7 @@ public final class BridgeEntity extends BlockEntity implements WorldlyContainer 
     Component status() {
         String what = switch (spec.kind()) {
             case SOURCE -> "tier " + spec.tier() + ", " + spec.rate() + " FE/t, " + (burnLeft > 0 ? "burning, " + burnLeft / 20 + " s left" : "idle");
-            case CHARGER -> "tier " + spec.tier() + ", takes " + spec.inPerTick() + " FE/t, makes Duslachluibhe at " + spec.cost() + " FE";
+            case CHARGER -> "tier " + spec.tier() + ", takes " + spec.inPerTick() + " FE/t, makes Duslachloibi at " + spec.cost() + " FE";
             case RELAY -> "tier " + spec.tier() + ", carries " + spec.outPerTick() + " FE/t, loses " + spec.lossPct() + "%";
         };
         return Component.literal(energy.getAmountAsInt() + " / " + energy.getCapacityAsInt() + " FE, " + what);

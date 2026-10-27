@@ -22,7 +22,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.List;
 import java.util.function.Supplier;
 
-/** Tobardealain (magic reagents to Forge Energy), Lòchrandraoidheachd (Forge Energy to a magic reagent) and Aibhnedealain (Forge Energy between tech mods), each in tiers; see {@link Spec}. */
+/** Toburdeluin (magic reagents to Forge Energy), Lòchrundraeidechd (Forge Energy to a magic reagent) and Aibnedeluin (Forge Energy between tech mods), each in tiers; see {@link Spec}. */
 @Mod(DiaithirBridges.MOD)
 public final class DiaithirBridges {
     public static final String MOD = "diaithirbridges";
