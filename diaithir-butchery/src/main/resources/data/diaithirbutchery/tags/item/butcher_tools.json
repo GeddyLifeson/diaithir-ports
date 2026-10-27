@@ -1,6 +1,15 @@
 {
  "values": [
+  "diaithirbutchery:flint_knife",
+  "diaithirbutchery:copper_knife",
+  "diaithirbutchery:bronze_knife",
   "diaithirbutchery:butcher_knife",
+  "diaithirbutchery:steel_knife",
+  "diaithirbutchery:tempered_knife",
+  "diaithirbutchery:ceramic_knife",
+  "diaithirbutchery:diamond_edge_knife",
+  "diaithirbutchery:crystal_thread_knife",
+  "diaithirbutchery:shard_knife",
   "diaithirbutchery:butcher_cleaver",
   {
    "id": "farmersdelight:flint_knife",

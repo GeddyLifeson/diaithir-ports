@@ -8,6 +8,8 @@ MOD = "diaithirbutchery"
 RES = "src/main/resources"
 A = f"{RES}/assets/{MOD}"
 D = f"{RES}/data/{MOD}"
+KNIVES = {"flint_knife": [1, 0], "copper_knife": [2, 10], "bronze_knife": [3, 15], "butcher_knife": [3, 20], "steel_knife": [4, 30], "tempered_knife": [5, 40], "ceramic_knife": [6, 45],
+          "diamond_edge_knife": [7, 60], "crystal_thread_knife": [8, 75], "shard_knife": [9, 100]}  # [Age (9 = Rodos), percent added to every yield]
 
 def w(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -60,18 +62,21 @@ ENTITIES = {
     "minecraft:dolphin": "fish_large", "minecraft:villager": "none", "minecraft:wandering_trader": "none",
 }
 
-w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES})
 
+
+TOOLS = {f"{MOD}:{k}": {"bonus": v[1]} for k, v in KNIVES.items()}
+TOOLS.update({"farmersdelight:flint_knife": {"bonus": 0}, "farmersdelight:iron_knife": {"bonus": 15}, "farmersdelight:golden_knife": {"bonus": 10}, "farmersdelight:diamond_knife": {"bonus": 40}, "farmersdelight:netherite_knife": {"bonus": 50}})
+w(f"{D}/butchery/butchery.json", {"classes": CLASSES, "entities": ENTITIES, "tools": TOOLS})
 # tags let modded creatures be assigned without editing this file, e.g. a pack adds #diaithirbutchery:land_huge entries; kept for datapacks
 RAW_COLORS = {  # base colour per item for the placeholder textures; real art comes from the texture pack
     "raw_hide": (150, 110, 80), "sinew": (225, 215, 195), "tallow": (240, 232, 205), "blood_flask": (140, 20, 25), "marrow_bone": (235, 225, 200),
     "scraps": (170, 60, 60), "liver": (110, 40, 45), "heart": (150, 40, 55), "kidney": (130, 55, 55), "tripe": (215, 195, 170), "tongue": (190, 90, 100), "brain": (215, 150, 160),
     "fish_fillet": (235, 150, 130), "bird_breast": (230, 170, 150), "drumstick": (225, 160, 120), "wing": (225, 185, 150), "haunch": (180, 55, 55), "shoulder": (175, 65, 60),
     "loin": (190, 70, 70), "ribs": (185, 100, 85), "flank": (170, 70, 70), "tenderloin": (200, 85, 90), "neck": (165, 70, 65), "tail": (160, 90, 80), "hock": (170, 80, 70),
-    "carcass": (170, 90, 80), "butcher_knife": (190, 190, 195), "butcher_cleaver": (170, 175, 180),
+    "carcass": (170, 90, 80), "flint_knife": (110, 110, 120), "copper_knife": (190, 115, 70), "bronze_knife": (170, 130, 60), "steel_knife": (200, 205, 215), "tempered_knife": (150, 160, 190), "ceramic_knife": (235, 235, 225), "diamond_edge_knife": (120, 220, 230), "crystal_thread_knife": (170, 140, 230), "shard_knife": (230, 120, 200), "butcher_knife": (190, 190, 195), "butcher_cleaver": (170, 175, 180),
 }
 CUTS = ["fish_fillet", "bird_breast", "drumstick", "wing", "haunch", "shoulder", "loin", "ribs", "flank", "tenderloin", "neck", "tail", "hock", "liver", "heart", "kidney", "tripe", "tongue", "brain", "scraps"]
-ITEMS = ["carcass", "butcher_knife", "butcher_cleaver", "raw_hide", "sinew", "tallow", "blood_flask", "marrow_bone"] + CUTS + ["cooked_" + c for c in CUTS]
+ITEMS = ["carcass", "butcher_knife", "butcher_cleaver"] + [k for k in KNIVES if k != "butcher_knife"] + ["raw_hide", "sinew", "tallow", "blood_flask", "marrow_bone"] + CUTS + ["cooked_" + c for c in CUTS]
 
 def texture(name):
     base = name.removeprefix("cooked_")
@@ -109,12 +114,22 @@ w(f"{A}/models/block/meat_hook.json", {"textures": {"0": "minecraft:block/iron_b
 w(f"{A}/items/meat_hook.json", {"model": {"type": "minecraft:model", "model": f"{MOD}:block/meat_hook"}})
 w(f"{D}/loot_table/blocks/meat_hook.json", {"type": "minecraft:block", "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{MOD}:meat_hook"}], "conditions": [{"condition": "minecraft:survives_explosion"}]}]})
 
+for m in ("bronze", "steel"):  # empty here, filled by whatever mod supplies the metal in the pack; the common tag is optional
+    w(f"{D}/tags/item/{m}_ingots.json", {"values": [{"id": f"#c:ingots/{m}", "required": False}]})
 # recipes: cook every raw cut in furnace, smoker and campfire; knife, cleaver, hook
 for c in CUTS:
     for kind, secs, folder in (("smelting", 200, "furnace"), ("smoking", 100, "smoker"), ("campfire_cooking", 600, "campfire")):
         w(f"{D}/recipe/{kind}_{c}.json", {"type": f"minecraft:{kind}", "category": "food", "ingredient": f"{MOD}:{c}", "result": {"id": f"{MOD}:cooked_{c}"}, "experience": 0.35, "cookingtime": secs})
 w(f"{D}/recipe/butcher_knife.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["I", "S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_knife"}})
+def shaped(name, ing):
+    w(f"{D}/recipe/{name}.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["I", "S"], "key": {"I": ing, "S": "minecraft:stick"}, "result": {"id": f"{MOD}:{name}"}})
+def upgrade(name, base, extra):
+    w(f"{D}/recipe/{name}.json", {"type": "minecraft:crafting_shapeless", "category": "equipment", "ingredients": [f"{MOD}:{base}"] + extra, "result": {"id": f"{MOD}:{name}"}})
+shaped("flint_knife", "minecraft:flint"); shaped("copper_knife", "minecraft:copper_ingot"); shaped("bronze_knife", f"#{MOD}:bronze_ingots"); shaped("steel_knife", f"#{MOD}:steel_ingots")
+upgrade("tempered_knife", "steel_knife", [f"#{MOD}:steel_ingots", "minecraft:blaze_powder"]); upgrade("ceramic_knife", "tempered_knife", ["minecraft:brick", "minecraft:brick"])
+upgrade("diamond_edge_knife", "ceramic_knife", ["minecraft:diamond"]); upgrade("crystal_thread_knife", "diamond_edge_knife", ["minecraft:amethyst_shard", "minecraft:amethyst_shard"])
+upgrade("shard_knife", "crystal_thread_knife", ["minecraft:echo_shard", "minecraft:echo_shard", "minecraft:echo_shard"])
 w(f"{D}/recipe/butcher_cleaver.json", {"type": "minecraft:crafting_shaped", "category": "equipment", "pattern": ["II", "II", " S"], "key": {"I": "minecraft:iron_ingot", "S": "minecraft:stick"}, "result": {"id": f"{MOD}:butcher_cleaver"}})
 w(f"{D}/recipe/meat_hook.json", {"type": "minecraft:crafting_shaped", "category": "misc", "pattern": ["C", "I"], "key": {"C": "minecraft:iron_chain", "I": "minecraft:iron_ingot"}, "result": {"id": f"{MOD}:meat_hook"}})
-w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:butcher_knife", f"{MOD}:butcher_cleaver"] + [{"id": f"farmersdelight:{m}_knife", "required": False} for m in ("flint", "iron", "golden", "diamond", "netherite")]})
+w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:{k}" for k in KNIVES] + [f"{MOD}:butcher_cleaver"] + [{"id": f"farmersdelight:{m}_knife", "required": False} for m in ("flint", "iron", "golden", "diamond", "netherite")]})
 print("ok", len(ITEMS), "items")

@@ -801,5 +801,52 @@
   "minecraft:dolphin": "fish_large",
   "minecraft:villager": "none",
   "minecraft:wandering_trader": "none"
+ },
+ "tools": {
+  "diaithirbutchery:flint_knife": {
+   "bonus": 0
+  },
+  "diaithirbutchery:copper_knife": {
+   "bonus": 10
+  },
+  "diaithirbutchery:bronze_knife": {
+   "bonus": 15
+  },
+  "diaithirbutchery:butcher_knife": {
+   "bonus": 20
+  },
+  "diaithirbutchery:steel_knife": {
+   "bonus": 30
+  },
+  "diaithirbutchery:tempered_knife": {
+   "bonus": 40
+  },
+  "diaithirbutchery:ceramic_knife": {
+   "bonus": 45
+  },
+  "diaithirbutchery:diamond_edge_knife": {
+   "bonus": 60
+  },
+  "diaithirbutchery:crystal_thread_knife": {
+   "bonus": 75
+  },
+  "diaithirbutchery:shard_knife": {
+   "bonus": 100
+  },
+  "farmersdelight:flint_knife": {
+   "bonus": 0
+  },
+  "farmersdelight:iron_knife": {
+   "bonus": 15
+  },
+  "farmersdelight:golden_knife": {
+   "bonus": 10
+  },
+  "farmersdelight:diamond_knife": {
+   "bonus": 40
+  },
+  "farmersdelight:netherite_knife": {
+   "bonus": 50
+  }
  }
 }

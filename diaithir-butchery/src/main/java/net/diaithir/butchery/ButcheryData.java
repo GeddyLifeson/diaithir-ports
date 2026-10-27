@@ -41,6 +41,7 @@ public final class ButcheryData {
     }
 
     private static volatile Map<String, Map<String, List<Yield>>> classes = Map.of();
+    private static volatile Map<String, Integer> toolBonus = Map.of();
     private static volatile Map<String, String> exact = Map.of();
     private static volatile List<Map.Entry<TagKey<EntityType<?>>, String>> tagged = List.of();
 
@@ -74,6 +75,13 @@ public final class ButcheryData {
                     }
                 }
             }
+            Map<String, Integer> tools = new LinkedHashMap<>();
+            for (var file : files.entrySet()) {
+                if (file.getValue() instanceof JsonObject root && root.get("tools") instanceof JsonObject t) {
+                    for (var e : t.entrySet()) tools.put(e.getKey(), e.getValue().getAsJsonObject().get("bonus").getAsInt());
+                }
+            }
+            toolBonus = tools;
             classes = cls;
             exact = ex;
             tagged = tags;
@@ -119,6 +127,11 @@ public final class ButcheryData {
     static List<Yield> yield(String body, int stage) {
         Map<String, List<Yield>> c = classes.get(body);
         return c == null ? List.of() : c.getOrDefault(STAGES[stage], List.of());
+    }
+
+    /** Percent added to every yield by the tool's tier; 0 for a tool with no entry. */
+    static int bonusOf(String toolId) {
+        return toolBonus.getOrDefault(toolId, 0);
     }
 
     static boolean known(String body) {

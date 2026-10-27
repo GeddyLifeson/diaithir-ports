@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirbutchery:tempered_knife",
+  "minecraft:brick",
+  "minecraft:brick"
+ ],
+ "result": {
+  "id": "diaithirbutchery:ceramic_knife"
+ }
+}

@@ -53,6 +53,8 @@ public final class Butchery {
     /** Anything that can work a hung carcass: our knife and cleaver, Farmer's Delight knives and any pack knife added to the tag. */
     public static final net.minecraft.tags.TagKey<Item> TOOLS = net.minecraft.tags.TagKey.create(Registries.ITEM, net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD, "butcher_tools"));
     public static final DeferredItem<Item> CARCASS = ITEMS.registerItem("carcass", Item::new, () -> new Item.Properties().stacksTo(1));
+    /** Knives by Age: id, durability. The yield bonus of each is data (butchery.json "tools"). The iron butcher_knife is the Age III iron tier. */
+    static final Map<String, Integer> KNIVES = new LinkedHashMap<>();
     public static final DeferredItem<Item> KNIFE = ITEMS.registerItem("butcher_knife", Item::new, () -> new Item.Properties().durability(250));
     public static final DeferredItem<Item> CLEAVER = ITEMS.registerItem("butcher_cleaver", Item::new, () -> new Item.Properties().durability(400));
     public static final DeferredBlock<MeatHookBlock> HOOK = BLOCKS.registerBlock("meat_hook", MeatHookBlock::new,
@@ -62,6 +64,16 @@ public final class Butchery {
             () -> new BlockEntityType<>(MeatHookEntity::new, HOOK.get()));
 
     static {
+        KNIVES.put("flint_knife", 60);
+        KNIVES.put("copper_knife", 150);
+        KNIVES.put("bronze_knife", 220);
+        KNIVES.put("steel_knife", 500);
+        KNIVES.put("tempered_knife", 800);
+        KNIVES.put("ceramic_knife", 1500);
+        KNIVES.put("diamond_edge_knife", 3000);
+        KNIVES.put("crystal_thread_knife", 6000);
+        KNIVES.put("shard_knife", 10000);
+        KNIVES.forEach((id, uses) -> ALL_ITEMS.add(ITEMS.registerItem(id, Item::new, () -> new Item.Properties().durability(uses))));
         for (String id : DRESSED) CUTS.put(id, id.equals("fish_fillet") || id.equals("wing") ? 3 : 5);
         for (String id : OFFAL) CUTS.put(id, 3);
         CUTS.put("scraps", 2);

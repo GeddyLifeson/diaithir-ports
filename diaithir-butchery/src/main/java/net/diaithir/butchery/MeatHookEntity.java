@@ -67,12 +67,15 @@ public class MeatHookEntity extends BlockEntity {
         String species = carcass.getOrDefault(Butchery.SPECIES.get(), "");
         long killed = carcass.getOrDefault(Butchery.KILLED.get(), level.getGameTime());
         RandomSource rng = level.getRandom();
+        int bonus = ButcheryData.bonusOf(BuiltInRegistries.ITEM.getKey(tool.getItem()).toString());
         long hungFor = level.getGameTime() - hungAt;
         for (ButcheryData.Yield y : ButcheryData.yield(body, stage)) {
             Item item = BuiltInRegistries.ITEM.getValue(Identifier.parse(y.item()));
             int n = y.min() + (y.max() > y.min() ? rng.nextInt(y.max() - y.min() + 1) : 0);
             // a carcass bleeds out while it hangs: a full flask takes a minute, a fresh one gives a fraction
             if (y.item().endsWith(":blood_flask")) n = Math.max(n > 0 ? 1 : 0, (int) (n * Math.min(1.0, hungFor / 1200.0)));
+            // a better tool takes more off the carcass; the fraction is a chance, so a +15% knife adds one in about seven pieces
+            n += n * bonus / 100 + (rng.nextInt(100) < n * bonus % 100 ? 1 : 0);
             // a cleaver takes a quarter more off the bone
             if (stage == 2 && tool.is(Butchery.CLEAVER.get())) n += n / 4;
             if (n <= 0 || item == null || item == net.minecraft.world.item.Items.AIR) continue;
