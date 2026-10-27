@@ -32,7 +32,7 @@ Latency, honestly: TCP delivers in order and resends lost packets, so a lost pac
 
 Settings: `config/diaithirvoice-common.toml` (range, nearDistance, maxFramesPerSecond) and `config/diaithirvoice-client.toml` (volume, jitterFrames, microphone). The test tone `-Ddiaithir.voice.testtone=440` replaces the microphone. If `diaithirvoiceinteraction` is installed, the server reports each frame's loudness to it. No HUD indicator yet. Licence: MIT. Clean-room: written from how proximity voice behaves, no code from any voice mod.
 
-# Diaithir Èistechd (diaithir-voice-interaction)
+# Diaithir Voice Interaction (diaithir-voice-interaction)
 
 Creatures of the wild notice speech. A player's voice makes a vibration (a game event of its own, frequency 7) that sculk sensors and wardens hear, and creatures within `noticeRadius` (16 blocks for loud speech, less for quiet) react by rule: wolves, cats, villagers, golems, horses and parrots turn to look, foxes, ocelots, rabbits, chickens and bats take a few steps away. Speaking while sneaking is not noticed. Whispers and private groups are optional. Quiet speech under `thresholdDb` (-45 dB) is ignored, and one speaker is noticed at most every `intervalTicks` (10).
 
