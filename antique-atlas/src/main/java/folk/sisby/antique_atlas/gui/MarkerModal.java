@@ -202,7 +202,7 @@ public class MarkerModal extends GuiComponent {
 
 	@Override
 	public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float partialTick) {
-		this.extractBackground(context, mouseX, mouseY, partialTick);
+		this.extractTransparentBackground(context);
 		drawCentered(context, Component.translatable("gui.antique_atlas.marker.label"), this.height / 2 - 80, 0xDDDDDD, true);
 		btnCancel.extractRenderState(context, mouseX, mouseY, partialTick);
 		btnDone.extractRenderState(context, mouseX, mouseY, partialTick);

@@ -69,7 +69,7 @@ public final class BiomeFallbacks {
 		if (snows || temperature < 0.15F) return downfall > 0.6F ? "minecraft:snowy_taiga" : "minecraft:snowy_plains";
 		if (temperature >= 1.5F) return downfall < 0.25F ? "minecraft:desert" : "minecraft:savanna";
 		if (temperature >= 1.0F) return downfall < 0.25F ? "minecraft:badlands" : downfall > 0.7F ? "minecraft:jungle" : "minecraft:savanna";
-		if (downfall >= 0.85F) return temperature >= 0.8F ? "minecraft:swamp" : "minecraft:dark_forest";
+		if (downfall >= 0.85F) return temperature >= 0.9F ? "minecraft:jungle" : temperature >= 0.75F ? "minecraft:swamp" : "minecraft:dark_forest";
 		if (downfall >= 0.6F) return temperature < 0.4F ? "minecraft:taiga" : "minecraft:forest";
 		if (temperature < 0.4F) return "minecraft:taiga";
 		return "minecraft:plains";

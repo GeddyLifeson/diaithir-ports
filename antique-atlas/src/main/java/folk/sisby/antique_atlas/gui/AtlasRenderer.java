@@ -37,6 +37,7 @@ import java.util.Set;
 import java.util.function.BiFunction;
 
 public interface AtlasRenderer {
+	int[] DBGC = new int[1];
 	Map<Identifier, AtlasOverlay> overlays = new HashMap<>();
 
 	static void registerOverlay(Identifier id, AtlasOverlay overlay) {
@@ -258,6 +259,7 @@ public interface AtlasRenderer {
 			}
 		}
 		int subTilePixels = tilePixels() / 2;
+		if (DBGC[0]++ % 120 == 0) AntiqueAtlas.LOGGER.info("[Antique Atlas] DBGrender textures={} subTilePixels={} scale={} scope={} {} {} {} start={},{}", tileTextures.size(), subTilePixels, effectiveScale, mapStartChunkX, mapStartChunkZ, mapEndChunkX, mapEndChunkZ, mapStartScreenX, mapStartScreenY);
 		tileTextures.forEach((texture, subtiles) -> {
 			{
 				for (SubTile subtile : subtiles) {

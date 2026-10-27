@@ -1,0 +1,6 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"category": "equipment",
+	"ingredients": ["minecraft:book", "minecraft:compass", "antique_atlas:parchment", "antique_atlas:parchment", "antique_atlas:parchment"],
+	"result": {"id": "antique_atlas:atlas", "count": 1}
+}

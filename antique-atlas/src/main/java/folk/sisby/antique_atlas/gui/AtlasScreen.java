@@ -632,7 +632,6 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			mouseX = -100;
 			mouseY = -100;
 		}
-		super.extractBackground(context, mouseX, mouseY, partialTick);
 		mapScale = calculateMapScale();
 		Gfx.tint(1, 1, 1, 1);
 

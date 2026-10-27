@@ -94,6 +94,7 @@ public class AntiqueAtlas {
 			e.addListener(MarkerTextures.ID, MarkerTextures.getInstance());
 			e.addDependency(TileTextures.ID, StructureTileProviders.ID);
 			e.addDependency(TileTextures.ID, BiomeTileProviders.ID);
+			e.addDependency(MarkerTextures.ID, StructureTileProviders.ID);
 		});
 		NeoForge.EVENT_BUS.addListener(AntiqueAtlasKeybindings::onClientTick);
 
@@ -110,7 +111,9 @@ public class AntiqueAtlas {
 		});
 		NeoForge.EVENT_BUS.addListener((TagsUpdatedEvent e) -> {
 			if (e.getUpdateCause() == TagsUpdatedEvent.UpdateCause.CLIENT_PACKET_RECEIVED) {
-				BiomeTileProviders.getInstance().registerFallbacks(Minecraft.getInstance().getConnection().registryAccess().lookupOrThrow(Registries.BIOME));
+				if (e.getLookupProvider() instanceof net.minecraft.core.RegistryAccess access) {
+					BiomeTileProviders.getInstance().registerFallbacks(access.lookupOrThrow(Registries.BIOME));
+				}
 			}
 		});
 		NeoForge.EVENT_BUS.addListener((ClientPlayerNetworkEvent.LoggingOut e) -> {
