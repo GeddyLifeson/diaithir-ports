@@ -1,0 +1,32 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:thornlash",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:dewdrop",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:briar_snare",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:oakskin",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:grove_mending",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:stag_leap",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:mistletoe_spear",
+   "required": false
+  }
+ ]
+}

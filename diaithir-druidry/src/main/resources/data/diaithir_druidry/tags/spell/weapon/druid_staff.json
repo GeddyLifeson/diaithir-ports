@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:thornlash",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:dewdrop",
+   "required": false
+  }
+ ]
+}

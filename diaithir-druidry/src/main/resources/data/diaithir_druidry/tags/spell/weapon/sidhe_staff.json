@@ -1,0 +1,12 @@
+{
+ "values": [
+  {
+   "id": "diaithir_druidry:fairy_mist",
+   "required": false
+  },
+  {
+   "id": "diaithir_druidry:glamour_veil",
+   "required": false
+  }
+ ]
+}
