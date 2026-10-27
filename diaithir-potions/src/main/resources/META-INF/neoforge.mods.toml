@@ -1,0 +1,14 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirpotions"
+version = "${version}"
+displayName = "Diaithir Potions"
+description = "Potion reforms: potions stack to 8 and drink faster behind a short cooldown, stews stack to 16, coal fuels the brewing stand, lingering potions cost a glow ink sac."
+
+[[dependencies.diaithirpotions]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
