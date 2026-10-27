@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:enter/enter701_800 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:enter/enter701_800 20t
 execute at @e[tag=level700enter] as @e[type=#backrooms:canexit,tag=!level700enter,distance=..2] run effect give @e[distance=..2] minecraft:slow_falling 100 0 true
 execute at @e[tag=level700enter] as @e[type=#backrooms:canexit,tag=!level700enter,distance=..2] run execute in backrooms:level630 run tp ~ 319 ~
 execute at @e[tag=level701enter] as @e[type=#backrooms:canexit,tag=!level701enter,distance=..2] run effect give @e[distance=..2] minecraft:slow_falling 100 0 true

@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:entity/entitycommands3 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:entity/entitycommands3 20t
 execute as @a if score @s luckycranes matches 18 run attribute @s minecraft:luck base set -36
 execute as @a if score @s luckycranes matches 19 run attribute @s minecraft:luck base set -38
 execute as @a if score @s luckycranes matches 20 run attribute @s minecraft:luck base set -40

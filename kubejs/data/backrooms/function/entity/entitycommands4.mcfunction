@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:entity/entitycommands4 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:entity/entitycommands4 20t
 execute as @e[tag=thenucleus] at @e[tag=thenucleus] unless block ~ ~ ~ minecraft:oak_planks run kill @s
 execute as @e[tag=light] at @e[tag=light] unless block ~ ~ ~ minecraft:torch run kill @s
 execute as @a if score @s diseasetimer matches 10..24000 run scoreboard players set @s diseasestage 1

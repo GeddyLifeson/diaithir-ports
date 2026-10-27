@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:entity/entitycommands2 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:entity/entitycommands2 20t
 execute at @e[tag=fallenangel] run advancement grant @a[distance=..10] only backrooms:entities fallenangel
 execute at @e[tag=fallenangel] run advancement grant @a[distance=..10] only backrooms:true_explorer fallenangel
 execute as @e[tag=radiodemon] at @e[tag=radiodemon] unless block ~ ~1 ~ minecraft:black_concrete run kill @s

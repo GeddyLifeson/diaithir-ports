@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:periodic30t 30t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:periodic30t 30t
 execute at @e[type=!minecraft:player,predicate=backrooms:level3_5lightning,tag=!window] run summon minecraft:lightning_bolt
 schedule function backrooms:periodic30t 30t
 execute as @a at @a if biome ~ ~ ~ backrooms:level139_5 unless score @s neardenizen matches 1 run playsound minecraft:block.wood.step master @p

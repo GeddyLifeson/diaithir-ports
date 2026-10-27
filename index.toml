@@ -778,103 +778,107 @@ hash = "8ad6c915b7e4ea0a88e73098ce6376d5b947472ce9b228ba7ae3aa59855f294a"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter0_100.mcfunction"
-hash = "9881bc22d28263476091e0d8c50ee723dbf9fed32c507763232613887fb64c2e"
+hash = "e6460c5dcfa40b1afeeae025d95fe46479905b1e5ba25174dc97fe0551deb14d"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter101_200.mcfunction"
-hash = "dbc03c2cbc9f4c42f5c53cbe4b835dff92d27487a465024898de00015e4ea4c4"
+hash = "a911cedd4ae6c4391f9c0d509f30305e3c030044d7f4ea1d302dae67e82acef3"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter201_300.mcfunction"
-hash = "8956261edb957c7ffd08ea3c80a49b9fd2c9af94ba34f57e50f20abe7bf16207"
+hash = "de9f427d25566b27b6a70d53081d9a025742158fd184895cf8bec687e1506549"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter301_400.mcfunction"
-hash = "4ffbc9195fd95395e4153d33e1f06d6b5a2010f17c052b6b883ce911e726c405"
+hash = "83756542c5d3885e2bdf4a41d3abb440201abc2496f4b5abbffc93fc99643e8d"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter401_500.mcfunction"
-hash = "73999b3c3494772e6ea811c6442af7ffd155f8150b326c5357fb6265df6a8650"
+hash = "ff244f4edca570d74371c74edbdf3b239b4b5677e377844b31c280aa03bb443a"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter501_600.mcfunction"
-hash = "a09fb1077471034e85e1a6dc38e28fd800f96de3e43489f58c001c85ddd18803"
+hash = "6b4fb8708d2f08d0420238cca6b53de336ae75c4fceebfe493f9c18b463c42c7"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter601_700.mcfunction"
-hash = "a75b3670892ebade6659c9c7a022d6e166ccc1ebc45cd36e4f622cd5e4196f25"
+hash = "7c47f96c8d323f6f3274f97f4c00c4114883f5cbaa6c5d45c6289aaf7b6d959c"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter701_800.mcfunction"
-hash = "8077c3febe5af354e331e4af0a72ff3879c1f8c02d4d4c83fecb2a32343dbf2a"
+hash = "5142aaf32961ade208c7b9ea85167925d390da1494a27982e53c841b3ba0c023"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter801_900.mcfunction"
-hash = "37a1b9b6dc2520da6520685f6db708b45da203eaf9585dae3596ad1eff136354"
+hash = "5821a6b5a6a4cabdd71f29dd08b001f9eb720a322982d289939d870f0b6b0536"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enter901_1000.mcfunction"
-hash = "5fc1e980dcf2727669cbc03323ceab0d5eef9d6dcc47486bfe16a47ce1f54235"
+hash = "d6b1fd84f7b2872e19254daa0a9045398f9fccd4148f431fedd23663effaef11"
 
 [[files]]
 file = "kubejs/data/backrooms/function/enter/enterunnumbered.mcfunction"
-hash = "45baaf333238f5ce0e62521295caaff7d6fdcb2ba736d4fcc70b596613210f0d"
+hash = "b96b4dde6d5518f6ccee22faf419a34334939e8f43472fd245c050251001b47c"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entity/entitycommands1.mcfunction"
-hash = "caae5659a8395b6ac514c90586dd5d1ec7bd3408e9499a74366164f5e69c4868"
+hash = "4c977421f26f4e81c4a8fa410eeb6d7fb5d506bb9b4774f8c0356763f27ede15"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entity/entitycommands2.mcfunction"
-hash = "45da00acb756dbecad76b1edf8578f77fede42fb7a7fe87869e435976f456fa3"
+hash = "581f9f5c758c33613009536b92be443fb2824e42401984018fd9c0c36dc3221b"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entity/entitycommands3.mcfunction"
-hash = "718a89d594bb7cad3f79506435e905514506c3a35889029e5eca4c6821bfbde7"
+hash = "f896cde07aa7388185b729af8c6fc17c3be6ec2003153b689b548d510f8a38e7"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entity/entitycommands4.mcfunction"
-hash = "0c8b54ffcf5443dc695047efb54d9b1938a23a958974d634f793ee2cb3208779"
+hash = "84d14e939ea542a665b5d82c31c4cbb475b9ddefe82a95bde776f5a7ad58c8f5"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entityspawn/spawncall.mcfunction"
-hash = "24e1ee64f854e9975f3108bf7f9ee65ec8d076b69ec6c1b9d7246d2df9f043eb"
+hash = "300f071e29cdb53bf23db922f9c60798b75d5aec48fe50b8303dad96e7ea44d1"
 
 [[files]]
 file = "kubejs/data/backrooms/function/entityvariantfix.mcfunction"
-hash = "5d5ff647265d0ff7c7b734f32f13a900028b51d4606867edd7b730eb5144c4eb"
+hash = "b0d2d8c79ede7d8048cf7bb419601ffe9a8c95ce3159a1c673be73f9979fc397"
 
 [[files]]
 file = "kubejs/data/backrooms/function/extratick.mcfunction"
-hash = "eec936e3cc3c809adab8e8f9c8e83e4c091a03930703f8b6e025f4548679a329"
+hash = "e40411b8333c5411a5120f432f11d22ed5ee7ee84313553d8ae83b370099160d"
 
 [[files]]
 file = "kubejs/data/backrooms/function/periodic10s.mcfunction"
-hash = "f40f01880e8dc984f2c761bc00bd12284966afef47b84bae9fc72651d48248f4"
+hash = "76025052976ac13ec1174dc739198cb472971f12ccc645b5b9f41e2662215bb4"
 
 [[files]]
 file = "kubejs/data/backrooms/function/periodic30t.mcfunction"
-hash = "4872010c0d379b42e2cc9f5d4b04c7a9368cfb300179ad43fdde9daec60981cb"
+hash = "70c39be1d536c2c7a63d9e9cd76b6ffc9b63390eef2ddc25aed3541cd91d8b05"
 
 [[files]]
 file = "kubejs/data/backrooms/function/periodic5s.mcfunction"
-hash = "35dea3398d7319a5ffb9b7d239f44114b23251f8d8e487d38916200cf4d612df"
+hash = "4ffac958b05eeef37a0822ee248e35e4e4b483cb19345d2a7cbf82f738a7a2d3"
 
 [[files]]
 file = "kubejs/data/backrooms/function/periodicentitycommands.mcfunction"
-hash = "33ea0d5c6217281ce7bae3a032a7b3373a7bbc4e2f3bc5ebd79e6b759fff0ea5"
+hash = "4f63fea765b3f90c2424c98be62d39aab82a2043ca1b9bc4a5062b229dfdc66a"
 
 [[files]]
 file = "kubejs/data/backrooms/function/pheno.mcfunction"
-hash = "7ad4800319c6b9c9dfd433712a777d1e5a45cd086d80410f5e8085e81d8b0c5a"
+hash = "c2190123d67438c75e6463134cf501bba2ecb3e2dbf609c4b74d233614e6c7eb"
 
 [[files]]
 file = "kubejs/data/backrooms/function/pitcreator.mcfunction"
-hash = "fd221a69ee27a08d5d54e21721e3cb94e5cccddf2d8c9d413865642b8dd677dd"
+hash = "8c0b644aaec174744816ae0910cf21446bb6347f443318e63e38b85cfd4c24d8"
 
 [[files]]
 file = "kubejs/data/backrooms/predicate/in_backrooms.json"
 hash = "52b6e434c519f0bbc61523d62afd224c7cce9c613187341628ae972dbc0ebbdd"
+
+[[files]]
+file = "kubejs/data/backrooms/predicate/loop_needed.json"
+hash = "e9c317b43a0c64cd2d7e97b7f4aa022d923f5ce617fba7cb9f8596e495b4b478"
 
 [[files]]
 file = "kubejs/data/bettercaves/worldgen/configured_carver/better_cave.json"
@@ -10794,15 +10798,15 @@ hash = "a0a790c18e6c93202da5c33a14821204e8f5c4d4a851c11a0e04d49c7896120f"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/extinctions.js"
-hash = "e789c09c36460db9f7aad536cbf0801acd68f76b80eaac7c4407be61dc18a7bd"
+hash = "7d94fc9d48d7daa1c92b48ddcceac97a93132867a1aca3306527fcee5c252cc4"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/extinctions_data.js"
-hash = "376050788f76201995122cb93671a1f827edbd4e773d7f5eea92b4afd1dd4fc1"
+hash = "426895198081cbbb073d7d43c88ba15ebeff57a94a5cac2b561d1cb02bdcc451"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/flood.js"
-hash = "6555ab290415f3d165538162caca448fa0c14f262f901b5c606686cc47dc11be"
+hash = "16534af7400c3026696029e1fd80ef8929a3559bff3380eb48cfa0573cbbf8c2"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/flood_core.js"
@@ -11302,8 +11306,8 @@ hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true
 
 [[files]]
-file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.6.jar"
-hash = "c39e1437e82b80226924a823084b00151f364505dfdcafe71cb858908476b394"
+file = "mods/Tellus-neoforge-26.1.2-0.8.3-diaithir.16-fantasy.7.jar"
+hash = "ff6acca1dd310dc72ffc716c59f3c7ad985fcb723639c10516851b62e6572edb"
 
 [[files]]
 file = "mods/TerraBlender-neoforge-26.1.2-26.1.2.0.3.pw.toml"
@@ -11719,8 +11723,8 @@ file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.2.jar"
 hash = "e90b509b4dd7c39f9f2baeab1943ca35191e5246d02aa6d927713a5cc76b33e8"
 
 [[files]]
-file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.0.jar"
-hash = "9f897755a409da07c27e55ee4dc6b1daad0a6e54d02d361a5da10e8f15e30e5a"
+file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.1.jar"
+hash = "9a2c80371966952ec9db317547b3b8fbd3f4e6c24f01808b476c4de94969a5b3"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"

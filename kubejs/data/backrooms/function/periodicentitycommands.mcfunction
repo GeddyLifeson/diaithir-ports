@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:periodicentitycommands 3s
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:periodicentitycommands 3s
 execute at @e[tag=window] run damage @p[distance=..5] 5 minecraft:player_attack by @p from @n
 execute at @e[tag=reflection] run damage @p[distance=..7] 3 minecraft:player_attack by @p from @n
 execute at @e[tag=ravenousceiling] run damage @p[distance=..8] 5 minecraft:player_attack by @p from @n

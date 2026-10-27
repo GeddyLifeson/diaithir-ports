@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return 0
+execute unless entity @a[predicate=backrooms:loop_needed] run return 0
 execute as @e[tag=frowner] run data modify entity @s Type set value snow
 execute as @e[tag=maledeathmoth] run data modify entity @s Variant set value 4
 execute as @e[tag=catbird] run data modify entity @s Variant set value 4

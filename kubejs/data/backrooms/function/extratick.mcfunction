@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return 0
+execute unless entity @a[predicate=backrooms:loop_needed] run return 0
 execute store result score #server backroomsrandomnumber run random value 1..100
 execute store result score #server backroomsrandomnumber2 run random value 1..1000
 execute store result score #server backroomsrandomnumber3 run random value 1..10000

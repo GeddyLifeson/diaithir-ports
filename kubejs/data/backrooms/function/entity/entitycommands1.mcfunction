@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:entity/entitycommands1 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:entity/entitycommands1 20t
 execute at @e[tag=thedisease] run effect give @a[distance=..50] minecraft:nausea 10 0 true
 execute at @e[tag=thedisease] as @a[distance=..50] if score @s health matches ..10 run scoreboard players set @s hasdisease 1
 execute as @a if score @s diseasestage matches 1 run effect give @s minecraft:slowness 2 0 true

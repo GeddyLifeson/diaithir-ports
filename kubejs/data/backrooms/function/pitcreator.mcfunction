@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return 0
+execute unless entity @a[predicate=backrooms:loop_needed] run return 0
 #pitcreator
 execute unless score #server devmode matches 1 at @e[tag=1pitcreator] run fill ~ ~-1 ~ ~ ~-1 ~ air
 execute unless score #server devmode matches 1 as @e[tag=1pitcreator] at @e[tag=1pitcreator] run tp @s ~ ~-1 ~

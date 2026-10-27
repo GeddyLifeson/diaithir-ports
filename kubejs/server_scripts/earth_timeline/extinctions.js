@@ -10,7 +10,17 @@
     if (byEntity) return byEntity
     byEntity = {}
     ;(global.etNS.EXTINCTIONS || []).forEach(x => x[2].forEach(id => { byEntity[id] = x }))
+    warnMissing()
     return byEntity
+  }
+
+  // An id that is not an entity type in this pack would silently do nothing; say so once in the log.
+  function warnMissing() {
+    try {
+      let have = {}
+      Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').ENTITY_TYPE.keySet().forEach(k => { have[String(k)] = true })
+      Object.keys(byEntity).forEach(id => { if (!have[id]) console.warn('[earth_timeline] extinction entity not in this pack: ' + id) })
+    } catch (e) { console.warn('[earth_timeline] could not check extinction entity ids: ' + e) }
   }
 
   function survival(row, lc) {

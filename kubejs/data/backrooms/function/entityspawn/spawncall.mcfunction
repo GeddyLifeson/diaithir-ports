@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return 0
+execute unless entity @a[predicate=backrooms:loop_needed] run return 0
 execute at @e[type=minecraft:zombie] as @n[type=zombie] if biome ~ ~ ~ #backrooms:backrooms unless predicate backrooms:hasfireresistance run tag @s add backroomsentityspawn
 execute at @e[type=minecraft:drowned] as @n[type=drowned] if biome ~ ~ ~ #backrooms:backrooms unless predicate backrooms:hasfireresistance run tag @s add backroomsentityspawn
 execute at @a as @p store result score @s backroomsentitycount if entity @e[tag=backroomsentity,distance=..128]

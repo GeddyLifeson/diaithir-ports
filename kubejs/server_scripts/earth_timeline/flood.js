@@ -9,7 +9,8 @@
   const FLOOD_KEY = 'earth_timeline_flood'
   const VERTICAL_SCALE = 5.0 // metres per block of the Age I preset (world_scale 5)
   const CHUNKS_PER_TICK = 4
-  const RETRIES = 40 // ticks a queued chunk may wait to finish loading
+  const RETRIES = 200 // ticks a queued chunk may wait to finish loading (10 s: a chunk read from disk can be slow to become full)
+  const SWEEP_TICKS = 200 // every so often the chunks round each player are checked again, so a chunk reloaded later is caught up too
   const NEAR_CHUNKS = 10 // radius round a player caught up when the sea rises
 
   const ERA = (() => { try { return Java.loadClass('com.yucareux.tellus.era.EraRuntime') } catch (e) { return null } })()
@@ -17,6 +18,7 @@
   const WATER = Java.loadClass('net.minecraft.world.level.block.Blocks').WATER.defaultBlockState()
   const QUEUE = [] // [cx, cz] pairs waiting to be caught up
   const QUEUED = {}
+  let sweepClock = 0
 
   global.etNS.etYearKey = YEAR_KEY
   global.etNS.etEra = ERA
@@ -124,5 +126,15 @@
       for (let x = cx << 4; x < (cx << 4) + 16; x++)
         for (let z = cz << 4; z < (cz << 4) + 16; z++) global.etNS.etFloodColumn(isAir, setWater, x, z, flood)
     }
+  })
+
+  // Idempotent: a column already at the new level is left alone (its top block is no longer air). A chunk that was
+  // unloaded when the year changed and comes back later is caught by the load event, and by this sweep if that event is missed.
+  ServerEvents.tick(event => {
+    if (++sweepClock < SWEEP_TICKS) return
+    sweepClock = 0
+    let s = event.server
+    if (QUEUE.length || s.persistentData.getIntOr(FLOOD_KEY, 0) <= 0) return
+    queueAroundPlayers(s)
   })
 })()

@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return 0
+execute unless entity @a[predicate=backrooms:loop_needed] run return 0
 execute at @a as @p if biome ~ ~ ~ #backrooms:p15 run effect give @p minecraft:invisibility 2 0 true
 execute as @a if score @s rothstage matches 1.. run advancement grant @s only backrooms:pheno/rothsyndrome
 execute as @a if score @s rothstage matches 1.. run advancement grant @s only backrooms:pheno rothsyndrome

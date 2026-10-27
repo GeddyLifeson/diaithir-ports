@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:periodic5s 5s
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:periodic5s 5s
 schedule function backrooms:periodic5s 5s
 kill @e[type=falling_block,predicate=backrooms:inlevel0]
 kill @e[type=tnt,predicate=backrooms:inlevel0]

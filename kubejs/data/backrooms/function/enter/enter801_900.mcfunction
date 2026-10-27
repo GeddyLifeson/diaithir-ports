@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:enter/enter801_900 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:enter/enter801_900 20t
 execute at @e[tag=level801enter] as @e[type=#backrooms:canexit,tag=!level801enter,distance=..2] run execute in backrooms:level790 run tp ~ 16 ~
 execute at @e[tag=level802enter] as @e[type=#backrooms:canexit,tag=!level802enter,distance=..2] run execute in backrooms:level790 run tp ~ 16 ~
 execute at @e[tag=level803enter] as @e[type=#backrooms:canexit,tag=!level803enter,distance=..2] run execute in backrooms:level790 run tp ~ 16 ~

@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:periodic10s 10s
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:periodic10s 10s
 schedule function backrooms:periodic10s 10s
 execute at @a run execute at @n[type=#backrooms:canspawnobject] unless entity @e[tag=object,distance=..25] if biome ~ ~ ~ #backrooms:backrooms unless entity @n[tag=vendingmachine,distance=..128] run place template backrooms:vendingmachine
 execute at @a run execute at @n[type=#backrooms:canspawnobject] unless entity @e[tag=object,distance=..25] if biome ~ ~ ~ backrooms:level46 unless entity @n[tag=scaraback,distance=..128] run place template backrooms:scaraback

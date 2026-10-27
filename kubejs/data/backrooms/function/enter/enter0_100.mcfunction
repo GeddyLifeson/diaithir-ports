@@ -1,4 +1,4 @@
-execute unless entity @a[predicate=backrooms:in_backrooms] run return run schedule function backrooms:enter/enter0_100 20t
+execute unless entity @a[predicate=backrooms:loop_needed] run return run schedule function backrooms:enter/enter0_100 20t
 execute as @e[predicate=backrooms:invoid,type=!zombie] unless dimension backrooms:level4 run effect give @s slow_falling 5 0 true
 execute as @a[predicate=backrooms:invoid] unless dimension backrooms:level4 unless score #server backroomsrandomnumber matches 0..20 run schedule function backrooms:locatesublevels/mainspawns/level0 10t
 execute as @e[predicate=backrooms:invoid,type=!zombie] unless dimension backrooms:level4 unless score #server backroomsrandomnumber matches 0..20 run execute in backrooms:level0 run tp 0 16 0
