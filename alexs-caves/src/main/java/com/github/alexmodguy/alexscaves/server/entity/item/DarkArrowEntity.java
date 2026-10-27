@@ -49,7 +49,7 @@ public class DarkArrowEntity extends AbstractArrow {
     }
 
     public void startFalling() {
-        this.inGround = false;
+        this.setInGround(false);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class DarkArrowEntity extends AbstractArrow {
         super.tick();
         this.prevArrowR = this.arrowR;
         this.prevFadeOut = this.fadeOut;
-        if (this.inGround) {
+        if (this.isInGround()) {
             this.startFading = true;
         }
         if (this.startFading) {

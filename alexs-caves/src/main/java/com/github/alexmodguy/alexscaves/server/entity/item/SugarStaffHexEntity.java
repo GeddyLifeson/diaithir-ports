@@ -161,4 +161,9 @@ public class SugarStaffHexEntity extends Entity {
     public float getYRenderOffset() {
         return yRenderOffset;
     }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 }

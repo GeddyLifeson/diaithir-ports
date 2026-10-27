@@ -221,9 +221,9 @@ public class QuarrySmasherEntity extends Entity {
     @Override
     protected void addPassenger(Entity passenger) {
         super.addPassenger(passenger);
-        if (this.isControlledByLocalInstance() && this.lSteps > 0) {
+        if (this.isLocalInstanceAuthoritative() && this.lSteps > 0) {
             this.lSteps = 0;
-            this.absMoveTo(this.lx, this.ly, this.lz, (float) this.lyr, (float) this.lxr);
+            this.snapTo(this.lx, this.ly, this.lz, (float) this.lyr, (float) this.lxr);
         }
     }
 
@@ -405,7 +405,7 @@ public class QuarrySmasherEntity extends Entity {
 
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, float damageValue) {
-        if (this.isInvulnerableTo(damageSource)) {
+        if (this.isInvulnerableToBase(damageSource)) {
             return false;
         } else {
             damageSustained += damageValue;

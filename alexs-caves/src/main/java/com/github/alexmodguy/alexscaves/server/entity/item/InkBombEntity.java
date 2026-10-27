@@ -30,11 +30,11 @@ public class InkBombEntity extends ThrowableItemProjectile {
     }
 
     public InkBombEntity(Level level, LivingEntity thrower) {
-        super(ACEntityRegistry.INK_BOMB.get(), thrower, level);
+        super(ACEntityRegistry.INK_BOMB.get(), thrower, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.INK_BOMB.get()));
     }
 
     public InkBombEntity(Level level, double x, double y, double z) {
-        super(ACEntityRegistry.INK_BOMB.get(), x, y, z, level);
+        super(ACEntityRegistry.INK_BOMB.get(), x, y, z, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.INK_BOMB.get()));
     }
 
     @Override
@@ -94,8 +94,8 @@ public class InkBombEntity extends ThrowableItemProjectile {
             this.level().broadcastEntityEvent(this, (byte) 3);
             this.discard();
             AreaEffectCloud areaeffectcloud = new AreaEffectCloud(this.level(), this.getX(), this.getY() + 0.2F, this.getZ());
-            areaeffectcloud.setParticle(isGlowingBomb() ? ParticleTypes.GLOW_SQUID_INK : ParticleTypes.SQUID_INK);
-            areaeffectcloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0), java.util.List.of()));
+            areaeffectcloud.setCustomParticle(isGlowingBomb() ? ParticleTypes.GLOW_SQUID_INK : ParticleTypes.SQUID_INK);
+            areaeffectcloud.setPotionContents(new PotionContents(java.util.Optional.empty(), java.util.Optional.of(0), java.util.List.of(), java.util.Optional.empty()));
             areaeffectcloud.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100));
             if (isGlowingBomb()) {
                 areaeffectcloud.addEffect(new MobEffectInstance(MobEffects.GLOWING, 300));

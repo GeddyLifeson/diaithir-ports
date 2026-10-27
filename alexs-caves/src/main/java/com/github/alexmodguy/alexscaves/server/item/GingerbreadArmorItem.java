@@ -30,7 +30,6 @@ public class GingerbreadArmorItem extends Item {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().humanoidArmor(armorMaterial.material(), slot));
         this.acMaterial = armorMaterial;
         this.armorType = slot;
-        this.armorType = slot;
         this.defaultItemAttributes = createGingerbreadAttributes(armorMaterial, slot, MIN_SPEED_BOOST);
     }
 

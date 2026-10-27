@@ -5,7 +5,6 @@ import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry;
 import com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry;
 import com.github.alexmodguy.alexscaves.server.enchantment.ACEnchantmentRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry;
-import com.github.alexmodguy.alexscaves.server.entity.ACFrogRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.item.SeekingArrowEntity;
 import com.github.alexmodguy.alexscaves.server.entity.item.SubmarineEntity;
 import com.github.alexmodguy.alexscaves.server.entity.living.*;
@@ -118,7 +117,7 @@ public class CommonEvents {
     public void livingDie(LivingDeathEvent event) {
         if (event.getEntity().getType() == EntityType.MAGMA_CUBE && event.getSource() != null && event.getSource().getEntity() instanceof Frog frog) {
             // In 1.21, getVariant() returns Holder<FrogVariant>, use is() to compare
-            if (frog.getVariant().is(ACFrogRegistry.PRIMORDIAL)) {
+            if (frog.getVariant().unwrapKey().map(k -> k.identifier().getPath().equals("primordial") && k.identifier().getNamespace().equals(AlexsCaves.MODID)).orElse(false)) {
                 event.getEntity().spawnAtLocation((net.minecraft.server.level.ServerLevel) event.getEntity().level(), new ItemStack(ACBlockRegistry.CARMINE_FROGLIGHT.get()));
             }
         }

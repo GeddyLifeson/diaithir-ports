@@ -72,7 +72,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     public GumWormSegmentEntity(EntityType entityType, Level level) {
         super(entityType, level);
         if(ACLoadedMods.isEntityCullingLoaded()){
-            this.noCulling = true;
+            
         }
     }
 
@@ -241,12 +241,11 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
         return false;
     }
 
-    @Override
-    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         if(damageSource.getEntity() != null && this.getHeadEntity() instanceof GumWormEntity gumWorm && gumWorm.isRidingPlayer(damageSource.getEntity())){
             return true;
         }
-        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.FALL);
+        return this.isInvulnerableToBase(damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.FALL);
     }
 
     @Override
@@ -356,7 +355,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
         } else {
             List<Entity> list = this.level().getEntities(this, this.getBoundingBox(), EntitySelector.pushableBy(this));
             if (!list.isEmpty()) {
-                int i = this.level().getGameRules().getInt(GameRules.RULE_MAX_ENTITY_CRAMMING);
+                int i = (this.level() instanceof net.minecraft.server.level.ServerLevel __sl ? __sl.getGameRules().get(net.minecraft.world.level.gamerules.GameRules.MAX_ENTITY_CRAMMING) : 24);
                 if (i > 0 && list.size() > i - 1 && this.random.nextInt(4) == 0) {
                     int j = 0;
 
@@ -434,8 +433,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
         return GumWormEntity.canDigBlock(blockstate) && super.isColliding(pos, blockstate);
     }
 
-    @Override
-    public Vec3 collide(Vec3 vec3) {
+        public Vec3 collide(Vec3 vec3) {
         return ICustomCollisions.getAllowedMovementForEntity(this, vec3);
     }
 
@@ -481,8 +479,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
         return f > 0.1F;
     }
 
-    @Override
-    public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
+        public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
         this.lx = x;
         this.ly = y;
         this.lz = z;
@@ -505,7 +502,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     }
 
     public AABB getBoundingBoxForCulling() {
-        return super.getBoundingBoxForCulling().inflate(8.0F);
+        return this.getBoundingBox().inflate(8.0F);
     }
 
     public float getBodyZRot(float partialTicks) {
@@ -594,10 +591,6 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
         return new ItemStack(ACItemRegistry.getSpawnEggFor(ACEntityRegistry.GUM_WORM.get()));
     }
 
-    @Override
-    public boolean isControlledByLocalInstance() {
-        return this.isEffectiveAi();
-    }
 
     @Override
     public void onPlayerJump(int i) {

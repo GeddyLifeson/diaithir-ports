@@ -72,8 +72,7 @@ public class NuclearBombEntity extends Entity {
             }
         } else {
             this.setTime(i);
-            this.updateInWaterStateAndDoFluidPushing();
-            if (this.level().isClientSide() && MAX_TIME - i > 10 && random.nextFloat() < 0.3F && this.onGround()) {
+                if (this.level().isClientSide() && MAX_TIME - i > 10 && random.nextFloat() < 0.3F && this.onGround()) {
                 Vec3 center = this.getEyePosition();
                 level().addParticle(ACParticleRegistry.PROTON.get(), center.x, center.y, center.z, center.x, center.y, center.z);
             }
@@ -187,6 +186,11 @@ public class NuclearBombEntity extends Entity {
     }
 
     public boolean causeFallDamage(float f, float f1, DamageSource damageSource) {
+        return false;
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
         return false;
     }
 }

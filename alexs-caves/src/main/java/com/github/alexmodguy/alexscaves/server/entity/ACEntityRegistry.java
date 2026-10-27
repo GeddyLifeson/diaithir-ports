@@ -17,7 +17,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-@EventBusSubscriber(modid = AlexsCaves.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AlexsCaves.MODID)
 public class ACEntityRegistry {
 
 

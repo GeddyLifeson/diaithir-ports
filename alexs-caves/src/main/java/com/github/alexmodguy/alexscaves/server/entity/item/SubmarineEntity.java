@@ -175,7 +175,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
         }
         
         // Movement logic runs on both sides when controlled by local instance, or server-side only otherwise
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             // Handle player control input (steering and acceleration)
             if (this.getControllingPassenger() instanceof Player player) {
                 this.tickController(player);
@@ -272,9 +272,9 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
     @Override
     protected void addPassenger(Entity passenger) {
         super.addPassenger(passenger);
-        if (this.isControlledByLocalInstance() && this.lSteps > 0) {
+        if (this.isLocalInstanceAuthoritative() && this.lSteps > 0) {
             this.lSteps = 0;
-            this.absMoveTo(this.lx, this.ly, this.lz, (float) this.lyr, (float) this.lxr);
+            this.snapTo(this.lx, this.ly, this.lz, (float) this.lyr, (float) this.lxr);
         }
     }
 
@@ -289,7 +289,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
     }
 
     private void tickLerp() {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.lSteps = 0;
             this.syncPacketPositionCodec(this.getX(), this.getY(), this.getZ());
         }
@@ -601,27 +601,27 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
     }
 
     @Override
-    public void onAboveBubbleCol(boolean b) {
+    public void onAboveBubbleColumn(boolean b, net.minecraft.core.BlockPos bubblePos) {
         if (!isVehicle()) {
-            super.onAboveBubbleCol(b);
+            super.onAboveBubbleColumn(b, bubblePos);
         }
     }
 
     @Override
     public void onInsideBubbleColumn(boolean b) {
         if (!isVehicle()) {
-            super.onAboveBubbleCol(b);
+            super.onInsideBubbleColumn(b);
         }
         this.resetFallDistance();
     }
 
     public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
-        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.DRY_OUT) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.HOT_FLOOR) || damageSource.is(DamageTypes.IN_FIRE) || damageSource.is(DamageTypes.ON_FIRE) || damageSource.is(DamageTypes.FALL);
+        return this.isInvulnerableToBase(damageSource) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.DRY_OUT) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.HOT_FLOOR) || damageSource.is(DamageTypes.IN_FIRE) || damageSource.is(DamageTypes.ON_FIRE) || damageSource.is(DamageTypes.FALL);
     }
 
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, float damageValue) {
-        if (this.isInvulnerableTo(damageSource)) {
+        if (this.isInvulnerableTo(serverLevel, damageSource)) {
             return false;
         } else {
             damageSustained += damageValue;

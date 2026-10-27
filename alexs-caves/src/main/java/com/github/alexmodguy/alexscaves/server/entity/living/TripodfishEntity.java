@@ -267,8 +267,9 @@ public class TripodfishEntity extends WaterAnimal implements Bucketable {
         if (this.hasCustomName()) {
             bucket.set(DataComponents.CUSTOM_NAME, this.getCustomName());
         }
-        CompoundTag platTag = new CompoundTag();
-        this.addAdditionalSaveData(platTag);
+        net.minecraft.world.level.storage.TagValueOutput platOut = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess());
+        this.addAdditionalSaveData(platOut);
+        CompoundTag platTag = platOut.buildResult();
         bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(platTag));
     }
 
@@ -297,7 +298,7 @@ public class TripodfishEntity extends WaterAnimal implements Bucketable {
 
     @Override
     public void loadFromBucketTag(@Nonnull CompoundTag compound) {
-        this.readAdditionalSaveData(compound);
+        this.readAdditionalSaveData(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess(), compound));
         this.setAirSupply(2000);
     }
 

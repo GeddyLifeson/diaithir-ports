@@ -63,7 +63,7 @@ public class BurrowingArrowEntity extends AbstractArrow {
         if (!this.isDigging() && diggingProgress > 0F) {
             diggingProgress--;
         }
-        if (inGround && hitPos != null && canMine(hitPos)) {
+        if (isInGround() && hitPos != null && canMine(hitPos)) {
             this.setDigging(true);
             BlockState state = level().getBlockState(hitPos);
             int hardness = (int) (Math.max(state.getDestroySpeed(level(), hitPos), 0.2F) * 15F);
@@ -109,7 +109,7 @@ public class BurrowingArrowEntity extends AbstractArrow {
     }
 
     public void startFalling() {
-        this.inGround = false;
+        this.setInGround(false);
     }
 
     @Override

@@ -22,11 +22,11 @@ public class CinderBrickEntity extends ThrowableItemProjectile {
     }
 
     public CinderBrickEntity(Level level, LivingEntity thrower) {
-        super(ACEntityRegistry.CINDER_BRICK.get(), thrower, level);
+        super(ACEntityRegistry.CINDER_BRICK.get(), thrower, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.CINDER_BRICK.get()));
     }
 
     public CinderBrickEntity(Level level, double x, double y, double z) {
-        super(ACEntityRegistry.CINDER_BRICK.get(), x, y, z, level);
+        super(ACEntityRegistry.CINDER_BRICK.get(), x, y, z, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.CINDER_BRICK.get()));
     }
 
     public void handleEntityEvent(byte message) {

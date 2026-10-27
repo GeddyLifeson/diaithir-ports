@@ -73,7 +73,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
         this.goalSelector.addGoal(2, new AttackGoal());
         this.goalSelector.addGoal(3, new RandomDirectionGoal());
         this.goalSelector.addGoal(4, new KeepOnJumpingGoal());
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (y) -> {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, (y, __l) -> {
             return Math.abs(y.getY() - this.getY()) <= 4.0D;
         }));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Husk.class, true));

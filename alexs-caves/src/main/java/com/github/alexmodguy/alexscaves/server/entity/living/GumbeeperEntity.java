@@ -46,7 +46,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
-public class GumbeeperEntity extends Monster implements PowerableMob, PossessedByLicowitch {
+public class GumbeeperEntity extends Monster implements PossessedByLicowitch {
 
     private float explodeProgress;
     private float prevExplodeProgress;
@@ -353,8 +353,7 @@ public class GumbeeperEntity extends Monster implements PowerableMob, PossessedB
         }
     }
 
-    @Override
-    public boolean isPowered() {
+        public boolean isPowered() {
         return this.isCharged();
     }
 

@@ -108,10 +108,10 @@ public class GingerbreadManStealGoal extends Goal {
         if(!canStealFromEntityType(entity)){
             return false;
         }
-        IItemHandler handler = entity.getCapability(Capabilities.ItemHandler.ENTITY);
+        net.minecraft.world.Container handler = entity instanceof Player __p ? __p.getInventory() : entity instanceof net.minecraft.world.Container __c ? __c : null;
         if (handler != null) {
-            for (int i = 0; i < handler.getSlots(); i++) {
-                if (handler.getStackInSlot(i).is(ACTagRegistry.GINGERBREAD_MAN_STEALS)) {
+            for (int i = 0; i < handler.getContainerSize(); i++) {
+                if (handler.getItem(i).is(ACTagRegistry.GINGERBREAD_MAN_STEALS)) {
                     return true;
                 }
             }
@@ -127,17 +127,17 @@ public class GingerbreadManStealGoal extends Goal {
     }
 
     public ItemStack stealOneFrom(Entity entity) {
-        IItemHandler handler = entity.getCapability(Capabilities.ItemHandler.ENTITY);
+        net.minecraft.world.Container handler = entity instanceof Player __p ? __p.getInventory() : entity instanceof net.minecraft.world.Container __c ? __c : null;
         if (handler != null) {
             List<Integer> validSlots = new ArrayList<>();
-            for (int i = 0; i < handler.getSlots(); i++) {
-                if (handler.getStackInSlot(i).is(ACTagRegistry.GINGERBREAD_MAN_STEALS)) {
+            for (int i = 0; i < handler.getContainerSize(); i++) {
+                if (handler.getItem(i).is(ACTagRegistry.GINGERBREAD_MAN_STEALS)) {
                     validSlots.add(i);
                 }
             }
             if (!validSlots.isEmpty()) {
                 int slotId = Util.getRandom(validSlots, gingerbreadMan.getRandom());
-                ItemStack stack = handler.getStackInSlot(slotId);
+                ItemStack stack = handler.getItem(slotId);
                 ItemStack copy = stack.copy();
                 copy.setCount(1);
                 if (stack.is(ACTagRegistry.GINGERBREAD_MAN_STEALS)) {

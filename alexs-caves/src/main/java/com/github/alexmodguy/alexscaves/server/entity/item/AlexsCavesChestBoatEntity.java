@@ -24,7 +24,27 @@ public class AlexsCavesChestBoatEntity extends ChestBoat implements AlexsCavesBo
     private double lastYd;
 
     public AlexsCavesChestBoatEntity(EntityType type, Level level) {
-        super(type, level);
+        this(type, level, new DropRef(true));
+    }
+
+    private static class DropRef implements java.util.function.Supplier<Item> {
+        private final boolean chest;
+        private AlexsCavesBoat boat;
+
+        private DropRef(boolean chest) {
+            this.chest = chest;
+        }
+
+        @Override
+        public Item get() {
+            AlexsCavesBoat.Type type = boat == null ? AlexsCavesBoat.Type.PEWEN : boat.getACBoatType();
+            return chest ? type.getChestDropSupplier().get() : type.getDropSupplier().get();
+        }
+    }
+
+    private AlexsCavesChestBoatEntity(EntityType type, Level level, DropRef ref) {
+        super(type, level, ref);
+        ref.boat = this;
         this.blocksBuilding = true;
     }
 
@@ -74,8 +94,8 @@ public class AlexsCavesChestBoatEntity extends ChestBoat implements AlexsCavesBo
 
                     this.causeFallDamage(this.fallDistance, 1.0F, this.damageSources().fall());
                     if (!this.level().isClientSide() && !this.isRemoved()) {
-                        this.kill();
-                        if (this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
+                        this.kill((net.minecraft.server.level.ServerLevel) this.level());
+                        if (com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(this.level(), net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                             for (int i = 0; i < 3; ++i) {
                                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getACBoatType().getPlankSupplier().get());
                             }
@@ -100,20 +120,6 @@ public class AlexsCavesChestBoatEntity extends ChestBoat implements AlexsCavesBo
 
     public AlexsCavesBoat.Type getACBoatType() {
         return AlexsCavesBoat.Type.byId(this.entityData.get(DATA_ID_AC_BOAT_TYPE));
-    }
-
-    @Override
-    public void setVariant(Boat.Type vanillaType) {
-    }
-
-    @Override
-    public Item getDropItem() {
-        return getACBoatType().getChestDropSupplier().get();
-    }
-
-    @Override
-    public Boat.Type getVariant() {
-        return Boat.Type.OAK;
     }
 
 }

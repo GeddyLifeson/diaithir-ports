@@ -96,4 +96,9 @@ public class ThrownWasteDrumEntity extends Entity {
     protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput compoundTag) {
 
     }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 }

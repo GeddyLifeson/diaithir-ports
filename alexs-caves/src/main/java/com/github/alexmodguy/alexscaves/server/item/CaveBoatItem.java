@@ -55,7 +55,7 @@ public class CaveBoatItem extends Item {
             }
 
             if (hitresult.getType() == HitResult.Type.BLOCK) {
-                Boat boat = this.hasChest ? (Boat) new AlexsCavesChestBoatEntity(level, hitresult.getLocation(), type) : (Boat) new AlexsCavesBoatEntity(level, hitresult.getLocation(), type);
+                net.minecraft.world.entity.vehicle.boat.AbstractBoat boat = this.hasChest ? (net.minecraft.world.entity.vehicle.boat.AbstractBoat) new AlexsCavesChestBoatEntity(level, hitresult.getLocation(), type) : (net.minecraft.world.entity.vehicle.boat.AbstractBoat) new AlexsCavesBoatEntity(level, hitresult.getLocation(), type);
                 boat.setYRot(player.getYRot());
 
                 if (!level.noCollision(boat, boat.getBoundingBox())) {

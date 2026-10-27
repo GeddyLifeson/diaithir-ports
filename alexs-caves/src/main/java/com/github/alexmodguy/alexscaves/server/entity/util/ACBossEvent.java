@@ -12,7 +12,7 @@ public class ACBossEvent extends ServerBossEvent {
     private final int renderType;
 
     public ACBossEvent(Component component, int renderType) {
-        super(component, BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS);
+        super(java.util.UUID.randomUUID(), component, BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS);
         this.renderType = renderType;
     }
 

@@ -43,7 +43,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.EnumSet;
 import java.util.stream.Stream;
 
-public class NucleeperEntity extends Monster implements ActivatesSirens, PowerableMob {
+public class NucleeperEntity extends Monster implements ActivatesSirens {
 
     private float closeProgress;
     private float prevCloseProgress;
@@ -289,8 +289,7 @@ public class NucleeperEntity extends Monster implements ActivatesSirens, Powerab
         return !this.isTriggered() && !this.isExploding() || this.isRemoved();
     }
 
-    @Override
-    public boolean isPowered() {
+        public boolean isPowered() {
         return this.isCharged();
     }
 

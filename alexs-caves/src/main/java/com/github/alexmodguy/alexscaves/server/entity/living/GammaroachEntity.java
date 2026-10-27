@@ -330,7 +330,7 @@ public class GammaroachEntity extends PathfinderMob implements IAnimatedEntity {
                     GammaroachEntity.this.getNavigation().moveTo(pickupMonster, 1.0D);
                     GammaroachEntity.this.lookAt(pickupMonster, 180, 30);
                     if (GammaroachEntity.this.distanceTo(pickupMonster) < 1.5F + pickupMonster.getBbWidth()) {
-                        pickupMonster.startRiding(GammaroachEntity.this, true);
+                        pickupMonster.startRiding(GammaroachEntity.this, true, true);
                         pickupMonster.hurtServer((net.minecraft.server.level.ServerLevel) pickupMonster.level(), damageSources().cactus(), 1);
                     }
                 } else {

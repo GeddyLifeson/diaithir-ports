@@ -59,7 +59,7 @@ public class GingerbreadManOpenDoorGoal extends Goal {
         } else {
             if (this.gingerbreadMan.getNavigation() instanceof GroundPathNavigation groundpathnavigation) {
                 Path path = groundpathnavigation.getPath();
-                if (path != null && !path.isDone() && groundpathnavigation.canOpenDoors()) {
+                if (path != null && !path.isDone() && true) {
                     for (int i = 0; i < Math.min(path.getNextNodeIndex() + 2, path.getNodeCount()); ++i) {
                         Node node = path.getNode(i);
                         this.doorPos = new BlockPos(node.x, node.y, node.z);

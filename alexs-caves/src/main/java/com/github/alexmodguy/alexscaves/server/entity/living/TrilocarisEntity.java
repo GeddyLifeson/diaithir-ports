@@ -368,7 +368,7 @@ public class TrilocarisEntity extends WaterAnimal implements Bucketable {
                     TrilocarisEntity.this.getNavigation().moveTo(target, 1F);
                 }
                 if (TrilocarisEntity.this.distanceTo(target) < 1.2F && cooldown == 0) {
-                    TrilocarisEntity.this.doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), target);
+                    TrilocarisEntity.this.doHurtTarget((net.minecraft.server.level.ServerLevel) TrilocarisEntity.this.level(), target);
                     cooldown = 30;
                 }
             }

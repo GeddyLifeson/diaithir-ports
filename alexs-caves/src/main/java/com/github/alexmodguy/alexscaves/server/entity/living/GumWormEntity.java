@@ -1,5 +1,6 @@
 package com.github.alexmodguy.alexscaves.server.entity.living;
 
+import net.minecraft.world.level.gamerules.GameRules;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.client.particle.ACParticleRegistry;
 import com.github.alexmodguy.alexscaves.server.entity.ai.*;
@@ -663,8 +664,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         }
     }
 
-    @Override
-    public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
+        public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
         this.lx = x;
         this.ly = y;
         this.lz = z;
@@ -889,8 +889,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         return (!this.isDigging() || canDigBlock(blockstate)) && super.isColliding(pos, blockstate);
     }
 
-    @Override
-    public Vec3 collide(Vec3 vec3) {
+        public Vec3 collide(Vec3 vec3) {
         return ICustomCollisions.getAllowedMovementForEntity(this, vec3);
     }
 

@@ -15,7 +15,7 @@ public class MagneticEntityData {
     
     public static final MagneticEntityData DEFAULT = new MagneticEntityData(0f, 0f, 0f, Direction.DOWN);
     
-    public static final Codec<MagneticEntityData> CODEC = RecordCodecBuilder.create(instance ->
+    public static final com.mojang.serialization.MapCodec<MagneticEntityData> MAP_CODEC = RecordCodecBuilder.mapCodec(instance ->
         instance.group(
             Codec.FLOAT.fieldOf("deltaX").forGetter(MagneticEntityData::getDeltaX),
             Codec.FLOAT.fieldOf("deltaY").forGetter(MagneticEntityData::getDeltaY),
@@ -23,6 +23,7 @@ public class MagneticEntityData {
             Direction.CODEC.fieldOf("attachmentDirection").forGetter(MagneticEntityData::getAttachmentDirection)
         ).apply(instance, MagneticEntityData::new)
     );
+    public static final Codec<MagneticEntityData> CODEC = MAP_CODEC.codec();
     
     public static final StreamCodec<RegistryFriendlyByteBuf, MagneticEntityData> STREAM_CODEC = StreamCodec.composite(
         ByteBufCodecs.FLOAT, MagneticEntityData::getDeltaX,

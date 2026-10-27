@@ -161,7 +161,7 @@ public class GloomothEntity extends PathfinderMob implements UnderzealotSacrific
                     underzealot.triggerIdleDigging();
                 }
                 this.stopRiding();
-                WatcherEntity watcherEntity = this.convertTo(ACEntityRegistry.WATCHER.get(), true);
+                WatcherEntity watcherEntity = this.convertTo(ACEntityRegistry.WATCHER.get(), net.minecraft.world.entity.ConversionParams.single(this, true, true), net.minecraft.world.entity.EntitySpawnReason.CONVERSION, __c -> {});
                 this.playSound(ACSoundRegistry.WATCHER_SPAWN.get(), 8.0F, 1.0F);
                 if (watcherEntity != null) {
                     net.neoforged.neoforge.event.EventHooks.onLivingConvert(this, watcherEntity);

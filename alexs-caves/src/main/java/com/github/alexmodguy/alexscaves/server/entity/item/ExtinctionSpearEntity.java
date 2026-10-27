@@ -67,7 +67,7 @@ public class ExtinctionSpearEntity extends AbstractArrow {
     public void tick(){
         super.tick();
         Entity entity = this.getOwner();
-        if ((this.inGround || this.isNoPhysics()) && entity != null) {
+        if ((this.isInGround() || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (!this.level().isClientSide() && this.pickup == AbstractArrow.Pickup.ALLOWED) {
                     this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), this.getDefaultPickupItem(), 0.1F);
@@ -92,7 +92,7 @@ public class ExtinctionSpearEntity extends AbstractArrow {
                 this.setDeltaMovement(this.getDeltaMovement().scale(0.95D).add(vec3.normalize().scale(d0)));
             }
         }
-        if (this.level().isClientSide() && !this.inGround) {
+        if (this.level().isClientSide() && !this.isInGround()) {
             Vec3 center = this.position().add(0, 0.25F, 0);
             Vec3 vec3 = this.getDeltaMovement().scale(-0.2F);
             this.level().addAlwaysVisibleParticle(ACParticleRegistry.TEPHRA_FLAME.get(), true, center.x, center.y, center.z, vec3.x, vec3.y, vec3.z);

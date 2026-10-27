@@ -78,7 +78,7 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
 
     public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         SauropodBaseEntity parent = this.getParent();
-        return super.isInvulnerableTo(serverLevel, damageSource) || parent != null && parent.isInvulnerableTo(serverLevel, damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
+        return this.isInvulnerableToBase(damageSource) || parent != null && parent.isInvulnerableTo(serverLevel, damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
     }
 
     public boolean is(Entity entityIn) {

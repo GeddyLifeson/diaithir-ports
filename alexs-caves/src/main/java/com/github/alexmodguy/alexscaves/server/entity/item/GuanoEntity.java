@@ -19,11 +19,11 @@ public class GuanoEntity extends ThrowableItemProjectile {
     }
 
     public GuanoEntity(Level level, LivingEntity thrower) {
-        super(ACEntityRegistry.GUANO.get(), thrower, level);
+        super(ACEntityRegistry.GUANO.get(), thrower, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.GUANO.get()));
     }
 
     public GuanoEntity(Level level, double x, double y, double z) {
-        super(ACEntityRegistry.GUANO.get(), x, y, z, level);
+        super(ACEntityRegistry.GUANO.get(), x, y, z, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.GUANO.get()));
     }
 
     public void handleEntityEvent(byte message) {

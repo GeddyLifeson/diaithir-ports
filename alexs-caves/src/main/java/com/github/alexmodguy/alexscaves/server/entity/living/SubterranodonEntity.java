@@ -590,8 +590,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
         this.walkAnimation.update(f2, 0.4F, 1.0F);
     }
 
-    @Override
-    public Vec3 collide(Vec3 movement) {
+        public Vec3 collide(Vec3 movement) {
         if (this.flightCollisionBox != null && !touchingUnloadedChunk() && this.isVehicle()) {
             AABB aabb = this.flightCollisionBox;
             List<VoxelShape> list = this.level().getEntityCollisions(this, aabb.expandTowards(movement));

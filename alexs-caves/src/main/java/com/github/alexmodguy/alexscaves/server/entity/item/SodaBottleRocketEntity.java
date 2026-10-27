@@ -195,7 +195,7 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
     @Override
     protected void onHitBlock(BlockHitResult result) {
         BlockPos blockpos = new BlockPos(result.getBlockPos());
-        this.level().getBlockState(blockpos).entityInside(this.level(), blockpos, this);
+        this.level().getBlockState(blockpos).entityInside(this.level(), blockpos, this, net.minecraft.world.entity.InsideBlockEffectApplier.NOOP, true);
         if (!this.level().isClientSide() && this.hasExplosion()) {
             this.explode();
         }

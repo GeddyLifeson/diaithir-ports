@@ -218,7 +218,7 @@ public class VesperEntity extends Monster implements IAnimatedEntity, Underzealo
                     underzealot.triggerIdleDigging();
                 }
                 this.stopRiding();
-                ForsakenEntity forsakenEntity = this.convertTo(ACEntityRegistry.FORSAKEN.get(), true);
+                ForsakenEntity forsakenEntity = this.convertTo(ACEntityRegistry.FORSAKEN.get(), net.minecraft.world.entity.ConversionParams.single(this, true, true), net.minecraft.world.entity.EntitySpawnReason.CONVERSION, __c -> {});
                 if (forsakenEntity != null) {
                     this.playSound(ACSoundRegistry.FORSAKEN_SPAWN.get(), 8.0F, 1.0F);
                     forsakenEntity.setAnimation(ForsakenEntity.ANIMATION_SUMMON);

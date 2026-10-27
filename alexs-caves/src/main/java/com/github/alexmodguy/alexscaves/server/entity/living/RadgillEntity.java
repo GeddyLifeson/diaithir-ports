@@ -230,8 +230,9 @@ public class RadgillEntity extends WaterAnimal implements Bucketable {
         if (this.hasCustomName()) {
             bucket.set(DataComponents.CUSTOM_NAME, this.getCustomName());
         }
-        CompoundTag platTag = new CompoundTag();
-        this.addAdditionalSaveData(platTag);
+        net.minecraft.world.level.storage.TagValueOutput platOut = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess());
+        this.addAdditionalSaveData(platOut);
+        CompoundTag platTag = platOut.buildResult();
         CompoundTag compound = bucket.getOrDefault(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY).copyTag();
         compound.put("FishBucketTag", platTag);
         bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(compound));
@@ -240,7 +241,7 @@ public class RadgillEntity extends WaterAnimal implements Bucketable {
     @Override
     public void loadFromBucketTag(@Nonnull CompoundTag compound) {
         if (compound.contains("FishBucketTag")) {
-            this.readAdditionalSaveData(compound.getCompoundOrEmpty("FishBucketTag"));
+            this.readAdditionalSaveData(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess(), compound.getCompoundOrEmpty("FishBucketTag")));
         }
         this.setAirSupply(2000);
     }

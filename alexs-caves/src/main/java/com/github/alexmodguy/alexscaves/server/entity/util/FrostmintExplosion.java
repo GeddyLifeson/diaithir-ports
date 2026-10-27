@@ -203,7 +203,7 @@ public class FrostmintExplosion {
                         }
                         if (entity instanceof LivingEntity living) {
                             boolean flag = false;
-                            for (ItemStack itemstack : living.getArmorSlots()) {
+                            for (ItemStack itemstack : java.util.List.of(living.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD), living.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.CHEST), living.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.LEGS), living.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.FEET))) {
                                 if (itemstack.is(net.minecraft.tags.ItemTags.FREEZE_IMMUNE_WEARABLES)) {
                                     flag = true;
                                     break;

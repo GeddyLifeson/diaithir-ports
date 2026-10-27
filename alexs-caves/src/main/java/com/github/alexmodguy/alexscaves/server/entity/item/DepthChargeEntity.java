@@ -28,11 +28,11 @@ public class DepthChargeEntity extends ThrowableItemProjectile {
     }
 
     public DepthChargeEntity(Level level, LivingEntity thrower) {
-        super(ACEntityRegistry.DEPTH_CHARGE.get(), thrower, level);
+        super(ACEntityRegistry.DEPTH_CHARGE.get(), thrower, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.DEPTH_CHARGE.get()));
     }
 
     public DepthChargeEntity(Level level, double x, double y, double z) {
-        super(ACEntityRegistry.DEPTH_CHARGE.get(), x, y, z, level);
+        super(ACEntityRegistry.DEPTH_CHARGE.get(), x, y, z, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.DEPTH_CHARGE.get()));
     }
 
     public void handleEntityEvent(byte message) {
@@ -56,7 +56,7 @@ public class DepthChargeEntity extends ThrowableItemProjectile {
 
     public void tick(){
         this.baseTick();
-        this.checkInsideBlocks();
+        this.applyEffectsFromBlocks();
         if(!this.isNoGravity()){
             this.setDeltaMovement(this.getDeltaMovement().add(0, -0.05F, 0));
         }

@@ -227,10 +227,10 @@ public class BeholderEyeEntity extends Entity implements PossessesCamera {
     private void loadChunksAround(boolean load) {
         if (this.level() instanceof ServerLevel serverLevel) {
             if(this.getUsingPlayer() instanceof ServerPlayer serverPlayer){
-                ChunkPos playerChunkPos = new ChunkPos(serverPlayer.blockPosition());
+                ChunkPos playerChunkPos = ChunkPos.containing(serverPlayer.blockPosition());
                 TICKET_CONTROLLER.forceChunk(serverLevel, this, playerChunkPos.x(), playerChunkPos.z(), load, load);
             }
-            ChunkPos chunkPos = new ChunkPos(this.blockPosition());
+            ChunkPos chunkPos = ChunkPos.containing(this.blockPosition());
             int dist = Math.max(LOAD_CHUNK_DISTANCE, serverLevel.getServer().getPlayerList().getViewDistance() / 2);
             for (int i = -dist; i <= dist; i++) {
                 for (int j = -dist; j <= dist; j++) {
@@ -267,5 +267,10 @@ public class BeholderEyeEntity extends Entity implements PossessesCamera {
     public void setOldRots() {
         prevEyeYRot = getYRot();
         prevEyeXRot = getXRot();
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
     }
 }

@@ -563,8 +563,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
         return !(blockState.getBlock() instanceof DoorBlock && blockState.getValue(DoorBlock.OPEN)) && super.isColliding(pos, blockState);
     }
 
-    @Override
-    public Vec3 collide(Vec3 vec3) {
+        public Vec3 collide(Vec3 vec3) {
         return ICustomCollisions.getAllowedMovementForEntity(this, vec3);
     }
 

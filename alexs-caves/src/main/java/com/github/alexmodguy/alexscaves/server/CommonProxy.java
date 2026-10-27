@@ -3,7 +3,6 @@ package com.github.alexmodguy.alexscaves.server;
 import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.github.alexmodguy.alexscaves.server.level.storage.ACWorldData;
 import com.github.alexmodguy.alexscaves.server.misc.ACLoadedMods;
-import com.github.alexthe666.citadel.server.entity.pathfinding.raycoms.PathfindingConstants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.entity.Entity;
@@ -133,10 +132,11 @@ public class CommonProxy {
         }
     }
 
+    public void handleAnimationPacket(int entityId, int index) {
+    }
+
     public void initPathfinding() {
         // PathfindingConstants.isDebugMode = true;
-        PathfindingConstants.pathfindingThreads = Math.max(PathfindingConstants.pathfindingThreads,
-                AlexsCaves.COMMON_CONFIG.pathfindingThreads.get());
     }
 
     public void removeBossBarRender(UUID bossBar) {

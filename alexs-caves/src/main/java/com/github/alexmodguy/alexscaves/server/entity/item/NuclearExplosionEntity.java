@@ -145,7 +145,7 @@ public class NuclearExplosionEntity extends Entity {
 
     private void loadChunksAround(boolean load) {
         if (this.level() instanceof ServerLevel serverLevel) {
-            ChunkPos chunkPos = new ChunkPos(this.blockPosition());
+            ChunkPos chunkPos = ChunkPos.containing(this.blockPosition());
             int dist = Math.max(getChunksAffected(), serverLevel.getServer().getPlayerList().getViewDistance() / 2);
             for (int i = -dist; i <= dist; i++) {
                 for (int j = -dist; j <= dist; j++) {
@@ -190,7 +190,7 @@ public class NuclearExplosionEntity extends Entity {
                             }else if (AlexsCaves.COMMON_CONFIG.nukesSpawnItemDrops.get() && random.nextFloat() < itemDropModifier && state.getFluidState().isEmpty()) {
                                 level().destroyBlock(carve, true);
                             } else {
-                                state.onBlockExploded(level(), carve, dummyExplosion);
+                                level().setBlock(carve, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(), 3);
                             }
                         }
                     }
@@ -266,5 +266,10 @@ public class NuclearExplosionEntity extends Entity {
     protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput compoundTag) {
         compoundTag.putBoolean("WasLoadingChunks", loadingChunks);
 
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
     }
 }

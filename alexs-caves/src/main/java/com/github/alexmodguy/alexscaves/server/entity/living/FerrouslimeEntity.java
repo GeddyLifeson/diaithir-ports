@@ -379,7 +379,7 @@ public class FerrouslimeEntity extends Monster {
                 FerrouslimeEntity.this.getNavigation().moveTo(target, 1F);
                 FerrouslimeEntity.this.lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition());
                 if (FerrouslimeEntity.this.distanceTo(target) < 1 + FerrouslimeEntity.this.getSlimeSize(1.0F) && FerrouslimeEntity.this.hasLineOfSight(target) && cooldown == 0) {
-                    FerrouslimeEntity.this.doHurtTarget((net.minecraft.server.level.ServerLevel) this.level(), target);
+                    FerrouslimeEntity.this.doHurtTarget((net.minecraft.server.level.ServerLevel) FerrouslimeEntity.this.level(), target);
                     cooldown = 10;
                 }
             }

@@ -61,7 +61,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.Shapes;
 import org.jetbrains.annotations.Nullable;
 
-public class CandicornEntity extends TamableAnimal implements KeybindUsingMount, IAnimatedEntity, PlayerRideableJumping, Saddleable, RidingMeterMount, PossessedByLicowitch {
+public class CandicornEntity extends TamableAnimal implements KeybindUsingMount, IAnimatedEntity, PlayerRideableJumping, RidingMeterMount, PossessedByLicowitch {
 
     public static final Animation ANIMATION_BUCK = Animation.create(25);
     public static final Animation ANIMATION_TAIL_FLICK_1 = Animation.create(12);
@@ -234,16 +234,14 @@ public class CandicornEntity extends TamableAnimal implements KeybindUsingMount,
         this.entityData.set(CHARGING, bool);
     }
 
-    @Override
     public boolean isSaddleable() {
         return this.isAlive() && !this.isBaby() && this.isTame() ;
     }
 
-    @Override
     public void equipSaddle(ItemStack saddle, @Nullable SoundSource soundSource) {
         this.setSaddled(true);
         if (soundSource != null) {
-            this.level().playSound((Player)null, this, SoundEvents.PIG_SADDLE, soundSource, 0.5F, 1.0F);
+            this.level().playSound((Player)null, this, SoundEvents.PIG_SADDLE.value(), soundSource, 0.5F, 1.0F);
         }
     }
 

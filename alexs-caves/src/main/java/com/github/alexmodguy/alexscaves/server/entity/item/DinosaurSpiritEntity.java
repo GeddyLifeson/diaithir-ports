@@ -312,4 +312,9 @@ public class DinosaurSpiritEntity extends Entity {
         TREMORSAURUS;
     }
 
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 }

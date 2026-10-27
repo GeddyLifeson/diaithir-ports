@@ -23,7 +23,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.ThrownPotion;
+import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrownSplashPotion;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.BlockHitResult;
@@ -151,8 +151,7 @@ public class LicowitchAttackGoal extends Goal {
         double d2 = target.getZ() + vec3.z - licowitch.getZ();
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
 
-        ThrownPotion thrownpotion = new ThrownPotion(licowitch.level(), licowitch);
-        thrownpotion.setItem(LicowitchEntity.hungerPotion);
+        ThrownSplashPotion thrownpotion = new ThrownSplashPotion(licowitch.level(), licowitch, LicowitchEntity.hungerPotion);
         thrownpotion.setXRot(thrownpotion.getXRot() - -20.0F);
         thrownpotion.shoot(d0, d1 + d3 * 0.2D, d2, 0.75F, 8.0F);
         if (!licowitch.isSilent()) {

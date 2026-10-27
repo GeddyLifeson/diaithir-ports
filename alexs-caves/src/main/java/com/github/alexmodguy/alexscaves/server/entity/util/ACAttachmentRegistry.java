@@ -29,7 +29,7 @@ public class ACAttachmentRegistry {
     public static final Supplier<AttachmentType<MagneticEntityData>> MAGNETIC_DATA = DEF_REG.register(
         "magnetic_data",
         () -> AttachmentType.builder(() -> new MagneticEntityData(0f, 0f, 0f, Direction.DOWN))
-            .serialize(MagneticEntityData.CODEC)
+            .serialize(MagneticEntityData.MAP_CODEC)
             .copyOnDeath()
             .build()
     );

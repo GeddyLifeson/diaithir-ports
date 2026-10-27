@@ -111,7 +111,7 @@ public class VesperAttackGoal extends Goal {
     }
 
     protected void damageShieldFor(Player holder, float damage) {
-        if (holder.getUseItem().canPerformAction(ItemAbilities.SHIELD_BLOCK)) {
+        if (holder.getUseItem().has(net.minecraft.core.component.DataComponents.BLOCKS_ATTACKS)) {
             if (!entity.level().isClientSide()) {
                 holder.awardStat(Stats.ITEM_USED.get(holder.getUseItem().getItem()));
             }

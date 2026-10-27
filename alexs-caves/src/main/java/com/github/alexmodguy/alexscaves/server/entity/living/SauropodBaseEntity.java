@@ -546,8 +546,8 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
         DamageSource damageSource = this.damageSources().mobAttack(this);
         for(LivingEntity living : level().getEntitiesOfClass(LivingEntity.class, aabb, EntitySelector.NO_CREATIVE_OR_SPECTATOR)){
             if(!living.is(this) && !living.isAlliedTo(this) && living.getType() != this.getType() && living.distanceToSqr(center.x, center.y, center.z) <= radius * radius){
-                if(living.isDamageSourceBlocked(damageSource) && disablesShields && living instanceof Player player){
-                    player.disableShield();
+                if(living.isBlocking() && disablesShields && living instanceof Player player){
+                    player.getCooldowns().addCooldown(player.getUseItem(), 100); player.stopUsingItem();
                 }
                 if(living.hurtServer((net.minecraft.server.level.ServerLevel) living.level(), damageSource, damageAmount)){
                     flag = true;

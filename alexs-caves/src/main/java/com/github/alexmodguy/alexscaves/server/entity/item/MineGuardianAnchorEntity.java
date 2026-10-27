@@ -148,4 +148,9 @@ public class MineGuardianAnchorEntity extends Entity {
     public boolean isAttackable() {
         return !this.isRemoved();
     }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 }

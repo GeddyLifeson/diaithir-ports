@@ -315,7 +315,7 @@ public class MagneticWeaponEntity extends Entity {
             // Check for aqua affinity on player's helmet
             var enchRegistry = level().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
             Holder<Enchantment> aquaAffinity = enchRegistry.getOrThrow(Enchantments.AQUA_AFFINITY);
-            ItemStack helmet = player.getInventory().armor.get(3);
+            ItemStack helmet = player.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD);
             if (EnchantmentHelper.getItemEnchantmentLevel(aquaAffinity, helmet) <= 0) {
                 f /= 5.0F;
             }
@@ -359,7 +359,7 @@ public class MagneticWeaponEntity extends Entity {
         }
         if (holder instanceof Player player && target instanceof LivingEntity living) {
             itemStack.hurtEnemy(living, player);
-            living.setLastHurtByPlayer(player);
+            living.setLastHurtByPlayer(player, 100);
             if(living.getHealth() <= 0.0F && player.distanceTo(target) >= 19.5F){
                 ACAdvancementTriggerRegistry.KILL_MOB_WITH_GALENA_GAUNTLET.get().triggerForEntity(player);
             }
@@ -390,7 +390,7 @@ public class MagneticWeaponEntity extends Entity {
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "WeaponStack")) {
-            this.setItemStack(ItemStack.parseOptional(this.registryAccess(), tag.getCompoundOrEmpty("WeaponStack")));
+            this.setItemStack(tag.read("WeaponStack", ItemStack.OPTIONAL_CODEC).orElse(ItemStack.EMPTY));
         }
         if (com.github.alexmodguy.alexscaves.server.misc.ACProps.has(tag, "ControllerUUID")) {
             this.setControllerUUID(tag.read("ControllerUUID", net.minecraft.core.UUIDUtil.CODEC).orElse(null));
@@ -415,7 +415,7 @@ public class MagneticWeaponEntity extends Entity {
     @Override
     protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput tag) {
         if (!this.getItemStack().isEmpty()) {
-            tag.put("WeaponStack", this.getItemStack().save(this.registryAccess()));
+            tag.store("WeaponStack", ItemStack.OPTIONAL_CODEC, this.getItemStack());
         }
         if (this.getControllerUUID() != null) {
             tag.store("ControllerUUID", net.minecraft.core.UUIDUtil.CODEC, this.getControllerUUID());
@@ -472,5 +472,10 @@ public class MagneticWeaponEntity extends Entity {
         Vec3 offset = new Vec3(controller.getBbWidth()  * (mainHand ? -0.75F : 0.75F), controller.getBbHeight() * 0.68F, controller.getBbWidth() * -0.1F).yRot((float) Math.toRadians(-yBodyRot));
         Vec3 armViewExtra = controller.getViewVector(partialTicks).normalize().scale(0.75F);
         return controller.getPosition(partialTicks).add(offset).add(armViewExtra);
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
     }
 }

@@ -20,6 +20,7 @@ import org.slf4j.Logger;
 
 @Mod(AlexsCaves.MODID)
 public class AlexsCaves {
+    public static final String VERSION = "1";
     public static final String MODID = "alexscaves";
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -43,6 +44,7 @@ public class AlexsCaves {
     private void registerPayloads(RegisterPayloadHandlersEvent event) {
         final PayloadRegistrar registrar = event.registrar(MODID).versioned(VERSION).optional();
         // Server-to-client messages
+        registrar.playToClient(com.github.alexthe666.citadel.server.message.AnimationMessage.TYPE, com.github.alexthe666.citadel.server.message.AnimationMessage.CODEC, com.github.alexthe666.citadel.server.message.AnimationMessage::handle);
         registrar.playToClient(WorldEventMessage.TYPE, WorldEventMessage.CODEC, WorldEventMessage::handle);
         registrar.playToClient(UpdateCaveBiomeMapTagMessage.TYPE, UpdateCaveBiomeMapTagMessage.CODEC,
                 UpdateCaveBiomeMapTagMessage::handle);
@@ -73,7 +75,7 @@ public class AlexsCaves {
     }
 
     public static <MSG extends CustomPacketPayload> void sendMSGToServer(MSG message) {
-        PacketDistributor.sendToServer(message);
+        net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(message);
     }
 
     public static <MSG extends CustomPacketPayload> void sendMSGToAll(MSG message) {

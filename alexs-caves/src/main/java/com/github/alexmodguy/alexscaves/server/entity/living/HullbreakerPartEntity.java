@@ -79,7 +79,7 @@ public class HullbreakerPartEntity extends PartEntity<HullbreakerEntity> {
         if(source.is(DamageTypeTags.IS_PROJECTILE)){
             amount *= 0.35F;
         }
-        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
+        if (!this.isInvulnerableToBase(source) && parent != null) {
             Entity player = source.getEntity();
             if (player != null && player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 1));

@@ -109,4 +109,9 @@ public class FloaterEntity extends Entity {
     public boolean causeFallDamage(float f, float f1, DamageSource damageSource) {
         return false;
     }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
+    }
 }

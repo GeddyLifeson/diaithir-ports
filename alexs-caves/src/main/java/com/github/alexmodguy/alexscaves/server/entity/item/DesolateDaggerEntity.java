@@ -132,8 +132,7 @@ public class DesolateDaggerEntity extends Entity {
         this.entityData.set(ITEMSTACK, item);
     }
 
-    @Override
-    public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
+        public void lerpTo(double x, double y, double z, float yr, float xr, int steps) {
         this.lx = x;
         this.ly = y;
         this.lz = z;
@@ -205,5 +204,10 @@ public class DesolateDaggerEntity extends Entity {
     private Entity getPlayer() {
         int id = getPlayerId();
         return id == -1 ? null : level().getEntity(id);
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return false;
     }
 }

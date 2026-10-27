@@ -91,7 +91,7 @@ public class MagnetronPartEntity extends PartEntity<MagnetronEntity> {
     @Override
     public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, float amount) {
         MagnetronEntity parent = this.getParent();
-        if (!this.isInvulnerableTo(serverLevel, source) && parent != null) {
+        if (!this.isInvulnerableToBase(source) && parent != null) {
             Entity player = source.getEntity();
             if (player != null && player.level().isClientSide()) {
                 AlexsCaves.sendMSGToServer(new MultipartEntityMessage(parent.getId(), player.getId(), 1));

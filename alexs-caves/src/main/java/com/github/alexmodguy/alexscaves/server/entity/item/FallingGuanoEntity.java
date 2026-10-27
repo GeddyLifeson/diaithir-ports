@@ -66,7 +66,7 @@ public class FallingGuanoEntity extends FallingBlockEntity {
                 BlockPos blockpos = this.blockPosition();
                 if (!this.onGround()) {
                     if (!this.level().isClientSide() && (this.time > 100 && (blockpos.getY() <= this.level().getMinY() || blockpos.getY() > this.level().getMaxY()) || this.time > 600)) {
-                        if (this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
+                        if (this.dropItem && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(this.level(), net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                             this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                         }
 
@@ -116,14 +116,14 @@ public class FallingGuanoEntity extends FallingBlockEntity {
                                 this.discard();
                                 flag5 = true;
                             }
-                            if (!flag5 && this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
+                            if (!flag5 && this.dropItem && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(this.level(), net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                                 this.discard();
                                 this.callOnBrokenAfterFall(block, blockpos);
                                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                             }
                         } else {
                             this.discard();
-                            if (this.dropItem && this.level().getGameRules().get(net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
+                            if (this.dropItem && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(this.level(), net.minecraft.world.level.gamerules.GameRules.ENTITY_DROPS)) {
                                 this.callOnBrokenAfterFall(block, blockpos);
                                 this.spawnAtLocation((net.minecraft.server.level.ServerLevel) this.level(), block);
                             }
@@ -146,12 +146,12 @@ public class FallingGuanoEntity extends FallingBlockEntity {
 
     protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput tag) {
         super.addAdditionalSaveData(tag);
-        tag.put("BlockState", NbtUtils.writeBlockState(this.guanoState));
+        tag.store("BlockState", net.minecraft.world.level.block.state.BlockState.CODEC, this.guanoState);
     }
 
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput tag) {
         super.readAdditionalSaveData(tag);
-        this.guanoState = NbtUtils.readBlockState(this.level().holderLookup(Registries.BLOCK), tag.getCompoundOrEmpty("BlockState"));
+        this.guanoState = tag.read("BlockState", net.minecraft.world.level.block.state.BlockState.CODEC).orElse(this.guanoState);
     }
 
     public BlockState getBlockState() {

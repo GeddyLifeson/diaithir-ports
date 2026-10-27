@@ -270,7 +270,7 @@ public class TeletorEntity extends Monster {
         Entity weapon = this.getWeapon();
         if (weapon instanceof MagneticWeaponEntity magneticWeapon) {
             ItemStack itemstack = magneticWeapon.getItemStack();
-            float f = this.getEquipmentDropChance(EquipmentSlot.MAINHAND);
+            float f = 0.085F;
             if (!itemstack.isEmpty() && !EnchantmentHelper.has(itemstack, EnchantmentEffectComponents.PREVENT_EQUIPMENT_DROP) && this.random.nextFloat() < f) {
                 if (itemstack.isDamageableItem()) {
                     itemstack.setDamageValue(itemstack.getMaxDamage() - this.random.nextInt(1 + this.random.nextInt(Math.max(itemstack.getMaxDamage() - 3, 1))));

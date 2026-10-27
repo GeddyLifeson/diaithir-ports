@@ -30,11 +30,11 @@ public class ThrownIceCreamScoopEntity extends ThrowableItemProjectile {
     }
 
     public ThrownIceCreamScoopEntity(Level level, LivingEntity thrower) {
-        super(ACEntityRegistry.THROWN_ICE_CREAM_SCOOP.get(), thrower, level);
+        super(ACEntityRegistry.THROWN_ICE_CREAM_SCOOP.get(), thrower, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.VANILLA_ICE_CREAM_SCOOP.get()));
     }
 
     public ThrownIceCreamScoopEntity(Level level, double x, double y, double z) {
-        super(ACEntityRegistry.THROWN_ICE_CREAM_SCOOP.get(), x, y, z, level);
+        super(ACEntityRegistry.THROWN_ICE_CREAM_SCOOP.get(), x, y, z, level, new net.minecraft.world.item.ItemStack(ACItemRegistry.VANILLA_ICE_CREAM_SCOOP.get()));
     }
 
     public void handleEntityEvent(byte message) {

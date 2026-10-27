@@ -57,7 +57,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Explosion;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -140,7 +140,6 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
     private int timeWithoutTarget = 0;
     public int timeSwimming;
     private boolean wasPreviouslyChild;
-    private final Explosion dummyExplosion;
     private int chargeSoundCooldown = 0;
     private boolean makingBeamSoundOnClient = false;
     private Player lastFedPlayer = null;

@@ -41,7 +41,7 @@ public class SeekingArrowEntity extends AbstractArrow {
     public void tick() {
         super.tick();
         int id = this.getArcTowardsID();
-        if (!inGround && !stopSeeking) {
+        if (!isInGround() && !stopSeeking) {
             if (id == -1) {
                 if (!level().isClientSide()) {
                     Entity closest = null;
@@ -67,7 +67,7 @@ public class SeekingArrowEntity extends AbstractArrow {
                 }
             }
         }
-        if (this.level().isClientSide() && !this.inGround) {
+        if (this.level().isClientSide() && !this.isInGround()) {
             Vec3 center = this.position().add(this.getDeltaMovement());
             Vec3 vec3 = center.add(new Vec3(random.nextFloat() - 0.5F, random.nextFloat() - 0.5F, random.nextFloat() - 0.5F));
             this.level().addParticle(ACParticleRegistry.SCARLET_SHIELD_LIGHTNING.get(), center.x, center.y, center.z, vec3.x, vec3.y, vec3.z);

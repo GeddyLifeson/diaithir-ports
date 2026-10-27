@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractMovingBlockEntity extends Entity {
-    private static final EntityDataAccessor<CompoundTag> BLOCK_DATA_TAG = SynchedEntityData.defineId(AbstractMovingBlockEntity.class, EntityDataSerializers.COMPOUND_TAG);
+    private static final EntityDataAccessor<CompoundTag> BLOCK_DATA_TAG = SynchedEntityData.defineId(AbstractMovingBlockEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.COMPOUND_TAG);
     private List<MovingBlockData> data;
     private VoxelShape shape = null;
     private int placementCooldown = 40;
@@ -83,11 +83,11 @@ public abstract class AbstractMovingBlockEntity extends Entity {
                             BlockEntity blockentity = this.level().getBlockEntity(set);
                             if (blockentity != null) {
                                 CompoundTag compoundtag = blockentity.saveWithoutMetadata(level().registryAccess());
-                                for (String s : dataBlock.blockData.getAllKeys()) {
+                                for (String s : dataBlock.blockData.keySet()) {
                                     compoundtag.put(s, dataBlock.blockData.get(s).copy());
                                 }
                                 try {
-                                    blockentity.loadWithComponents(compoundtag, level().registryAccess());
+                                    blockentity.loadWithComponents(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, level().registryAccess(), compoundtag));
                                 } catch (Exception exception) {
                                 }
                                 blockentity.setChanged();
@@ -164,15 +164,13 @@ public abstract class AbstractMovingBlockEntity extends Entity {
 
     @Override
     protected void readAdditionalSaveData(net.minecraft.world.level.storage.ValueInput compound) {
-        if (compound.contains("BlockDataContainer", 10)) {
-            this.setAllBlockData(compound.getCompoundOrEmpty("BlockDataContainer"));
-        }
+        compound.read("BlockDataContainer", CompoundTag.CODEC).ifPresent(this::setAllBlockData);
     }
 
     @Override
     protected void addAdditionalSaveData(net.minecraft.world.level.storage.ValueOutput compound) {
         if (this.getAllBlockData() != null) {
-            compound.put("BlockDataContainer", this.getAllBlockData());
+            compound.store("BlockDataContainer", CompoundTag.CODEC, this.getAllBlockData());
         }
     }
 
@@ -223,9 +221,9 @@ public abstract class AbstractMovingBlockEntity extends Entity {
     }
 
     @Override
-    protected AABB makeBoundingBox() {
+    protected AABB makeBoundingBox(Vec3 position) {
         List<AABB> aabbs = getShape().toAabbs();
-        AABB minMax = new AABB(this.getX() - 0.5F, this.getY() - 0.5F, this.getZ() - 0.5F, this.getX() + 0.5F, this.getY() + 0.5F, this.getZ() + 0.5F);
+        AABB minMax = new AABB(position.x - 0.5F, position.y - 0.5F, position.z - 0.5F, position.x + 0.5F, position.y + 0.5F, position.z + 0.5F);
         for (AABB aabb : aabbs) {
             minMax = minMax.minmax(aabb);
         }
@@ -250,6 +248,11 @@ public abstract class AbstractMovingBlockEntity extends Entity {
 
     @Override
     public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
+        return false;
+    }
+
+    @Override
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel serverLevel, net.minecraft.world.damagesource.DamageSource source, float amount) {
         return false;
     }
 }

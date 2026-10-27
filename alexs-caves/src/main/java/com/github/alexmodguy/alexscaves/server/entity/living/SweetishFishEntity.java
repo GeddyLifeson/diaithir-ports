@@ -166,8 +166,9 @@ public class SweetishFishEntity extends WaterAnimal implements Bucketable, HasGu
         if (this.hasCustomName()) {
             bucket.set(DataComponents.CUSTOM_NAME, this.getCustomName());
         }
-        CompoundTag platTag = new CompoundTag();
-        this.addAdditionalSaveData(platTag);
+        net.minecraft.world.level.storage.TagValueOutput platOut = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess());
+        this.addAdditionalSaveData(platOut);
+        CompoundTag platTag = platOut.buildResult();
         CompoundTag outerTag = new CompoundTag();
         outerTag.put("FishBucketTag", platTag);
         bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(outerTag));
@@ -176,7 +177,7 @@ public class SweetishFishEntity extends WaterAnimal implements Bucketable, HasGu
     @Override
     public void loadFromBucketTag(@Nonnull CompoundTag compound) {
         if (compound.contains("FishBucketTag")) {
-            this.readAdditionalSaveData(compound.getCompoundOrEmpty("FishBucketTag"));
+            this.readAdditionalSaveData(net.minecraft.world.level.storage.TagValueInput.create(net.minecraft.util.ProblemReporter.DISCARDING, this.registryAccess(), compound.getCompoundOrEmpty("FishBucketTag")));
         }
         this.setAirSupply(400);
     }
