@@ -15,7 +15,6 @@ public class AddonRegistrationMixin {
     private static void cdp$register(CallbackInfo ci) {
         if (!cdpDone) {
             cdpDone = true;
-            System.out.println("[addon-register] " + AddonRegistrationMixin.class.getName());
             new plus.dragons.createdragonsplus.CreateDragonsPlus().onInitialize();
         }
     }

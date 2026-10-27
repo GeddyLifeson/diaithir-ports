@@ -17,6 +17,8 @@ public final class CDPNetworking {
                 .playToClient(ColoringCatalystSyncPayload.TYPE, ColoringCatalystSyncPayload.STREAM_CODEC,
                         (payload, ctx) -> ctx.enqueueWork(() -> CreateDragonsPlusClient.applySnapshot(payload))));
         NeoForge.EVENT_BUS.addListener(OnDatapackSyncEvent.class, event -> {
+            event.sendRecipes(plus.dragons.createdragonsplus.registry.CDPRecipes.COLORING.getType(), plus.dragons.createdragonsplus.registry.CDPRecipes.FREEZING.getType(),
+                    plus.dragons.createdragonsplus.registry.CDPRecipes.SANDING.getType(), plus.dragons.createdragonsplus.registry.CDPRecipes.ENDING.getType());
             var payload = CDPColoringCatalysts.snapshot().payload();
             if (event.getPlayer() != null) {
                 PacketDistributor.sendToPlayer(event.getPlayer(), payload);

@@ -15,7 +15,6 @@ public class AddonRegistrationMixin {
     private static void cei$register(CallbackInfo ci) {
         if (!ceiDone) {
             ceiDone = true;
-            System.out.println("[addon-register] " + AddonRegistrationMixin.class.getName());
             new plus.dragons.createenchantmentindustry.common.CEICommon().onInitialize();
         }
     }

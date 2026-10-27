@@ -15,7 +15,6 @@ public class AddonRegistrationMixin {
     private static void cck$register(CallbackInfo ci) {
         if (!cckDone) {
             cckDone = true;
-            System.out.println("[addon-register] " + AddonRegistrationMixin.class.getName());
             plus.dragons.createcentralkitchen.common.CCKCommon.register();
         }
     }
