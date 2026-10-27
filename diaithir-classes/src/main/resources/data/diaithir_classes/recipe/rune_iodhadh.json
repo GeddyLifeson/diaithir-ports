@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:flint",
+  "minecraft:crimson_stem",
+  "minecraft:gold_nugget"
+ ],
+ "result": {
+  "id": "diaithir_classes:rune_iodhadh",
+  "count": 2
+ }
+}

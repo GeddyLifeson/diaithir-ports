@@ -1,0 +1,92 @@
+{
+ "school": "spell_power:physical_ranged",
+ "range": 24.0,
+ "tier": 1,
+ "group": "sleagh_trap",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 0.8,
+   "animation": {
+    "id": "spell_engine:one_handed_ground_charge"
+   },
+   "sound": {
+    "id": "spell_engine:generic_soul_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:magic_rage",
+     "appearance": {
+      "color": 1856653055,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "animation": {
+   "id": "spell_engine:one_handed_area_release"
+  },
+  "sound": {
+   "id": "spell_engine:weapon_throw"
+  }
+ },
+ "target": {
+  "type": "AIM",
+  "aim": {}
+ },
+ "deliver": {
+  "type": "CLOUD",
+  "clouds": [
+   {
+    "volume": {
+     "radius": 2.5,
+     "area": {
+      "vertical_range_multiplier": 0.4
+     }
+    },
+    "time_to_live_seconds": 8.0,
+    "impact_tick_interval": 10,
+    "placement": {
+     "force_onto_ground": true
+    },
+    "spawn": {}
+   }
+  ]
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.1
+    }
+   }
+  },
+  {
+   "action": {
+    "type": "STATUS_EFFECT",
+    "status_effect": {
+     "effect_id": "minecraft:slowness",
+     "duration": 1.5,
+     "amplifier": 3,
+     "apply_mode": "SET"
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 20.0
+  }
+ }
+}

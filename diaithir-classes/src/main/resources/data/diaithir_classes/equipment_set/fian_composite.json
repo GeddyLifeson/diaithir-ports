@@ -1,0 +1,42 @@
+{
+ "name": "laech kriadach",
+ "items": [
+  "diaithir_classes:fian_helmet_composite",
+  "diaithir_classes:fian_chestplate_composite",
+  "diaithir_classes:fian_leggings_composite",
+  "diaithir_classes:fian_boots_composite"
+ ],
+ "bonuses": [
+  {
+   "required_piece_count": 2,
+   "attributes": [
+    {
+     "type": "minecraft:attack_damage",
+     "id": "diaithir_classes:set_fian_composite_2_0",
+     "amount": 3.0,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ]
+  },
+  {
+   "required_piece_count": 4,
+   "attributes": [
+    {
+     "type": "minecraft:knockback_resistance",
+     "id": "diaithir_classes:set_fian_composite_4_0",
+     "amount": 0.2,
+     "operation": "add_value",
+     "slot": "any"
+    }
+   ],
+   "spells": {
+    "access": "NONE",
+    "max_spell_count": 1,
+    "spell_ids": [
+     "diaithir_classes:fian_rage_composite"
+    ]
+   }
+  }
+ ]
+}

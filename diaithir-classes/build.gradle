@@ -1,0 +1,37 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = project.mod_version
+base.archivesName = 'diaithir-classes-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+    mods { diaithir_classes { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+repositories {
+    maven { url = 'https://maven.theillusivec4.top/' }
+}
+
+dependencies {
+    // Curios API (attribute event) is compile-only; the runtime jar comes from the pack.
+    compileOnly "top.theillusivec4.curios:curios-neoforge:15.0.0+26.1.2"
+}

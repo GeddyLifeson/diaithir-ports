@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "diaithir_classes:charm_bronze",
+  "diaithir_classes:charm_steel",
+  "diaithir_classes:charm_composite"
+ ]
+}

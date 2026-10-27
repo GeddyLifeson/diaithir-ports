@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "diaithirarms:bronze_leggings",
+  "diaithir_classes:sleagh_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_leggings_bronze",
+  "count": 1
+ }
+}

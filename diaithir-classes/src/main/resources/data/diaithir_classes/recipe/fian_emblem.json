@@ -1,0 +1,13 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:leather",
+  "minecraft:red_dye",
+  "minecraft:flint"
+ ],
+ "result": {
+  "id": "diaithir_classes:fian_emblem",
+  "count": 1
+ }
+}

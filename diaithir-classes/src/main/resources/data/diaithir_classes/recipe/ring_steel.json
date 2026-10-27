@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "pattern": [
+  " P ",
+  "P P",
+  " P "
+ ],
+ "key": {
+  "P": "#c:ingots/steel"
+ },
+ "result": {
+  "id": "diaithir_classes:ring_steel",
+  "count": 1
+ }
+}

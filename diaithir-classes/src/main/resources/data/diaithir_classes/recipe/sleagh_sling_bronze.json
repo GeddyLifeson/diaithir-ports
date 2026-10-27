@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "category": "equipment",
+ "ingredients": [
+  "minecraft:leather",
+  "minecraft:string",
+  "#c:ingots/bronze",
+  "diaithir_classes:sleagh_emblem"
+ ],
+ "result": {
+  "id": "diaithir_classes:sleagh_sling_bronze",
+  "count": 1
+ }
+}

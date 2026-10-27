@@ -1,0 +1,79 @@
+{
+ "school": "spell_power:physical_ranged",
+ "range": 48.0,
+ "tier": 1,
+ "group": "sleagh_bow",
+ "learn": {},
+ "active": {
+  "cast": {
+   "duration": 0.6,
+   "animation": {
+    "id": "spell_engine:archery_pull"
+   },
+   "animates_ranged_weapon": true,
+   "sound": {
+    "id": "spell_engine:generic_soul_casting"
+   },
+   "particles": [
+    {
+     "id": "spell_engine:magic_rage",
+     "appearance": {
+      "color": 1856653055,
+      "motion": "ASCEND"
+     },
+     "batch": {
+      "count": 2.0,
+      "shape": "PIPE",
+      "anchor": "ENTITY",
+      "min_speed": 0.03,
+      "max_speed": 0.08
+     }
+    }
+   ]
+  }
+ },
+ "release": {
+  "animation": {
+   "id": "spell_engine:archery_release"
+  },
+  "sound": {
+   "id": "spell_engine:weapon_throw"
+  }
+ },
+ "target": {
+  "type": "AIM",
+  "aim": {}
+ },
+ "deliver": {
+  "type": "SHOOT_ARROW",
+  "shoot_arrow": {
+   "consume_arrow": true,
+   "divergence": 5.0,
+   "arrow_critical_strike": false,
+   "launch_properties": {
+    "velocity": 3.0,
+    "extra_launch_count": 3,
+    "extra_launch_delay": 2
+   }
+  }
+ },
+ "impacts": [
+  {
+   "action": {
+    "type": "DAMAGE",
+    "damage": {
+     "spell_power_coefficient": 0.55
+    }
+   }
+  }
+ ],
+ "cost": {
+  "exhaust": 0.2,
+  "cooldown": {
+   "duration": 12.0
+  }
+ },
+ "arrow_perks": {
+  "damage_multiplier": 0.6
+ }
+}
