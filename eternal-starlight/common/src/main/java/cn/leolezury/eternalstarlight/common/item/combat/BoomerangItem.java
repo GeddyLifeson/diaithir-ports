@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 
 import net.minecraft.world.item.Item;
@@ -51,7 +52,7 @@ public abstract class BoomerangItem extends Item implements ProjectileItem {
 			return InteractionResult.FAIL;
 		} else {
 			if (!level.isClientSide()) {
-				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(player.getUsedItemHand()));
+				stack.hurtAndBreak(1, player, ESPortCompat.slotForHand(player.getUsedItemHand()));
 				Vec3 shootPos = player.getEyePosition();
 				ThrownBoomerang boomerang = createBoomerang(level, player, shootPos.x, shootPos.y, shootPos.z, stack);
 				boomerang.setNoGravity(true);

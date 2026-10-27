@@ -99,7 +99,7 @@ public class FallenLogFeature extends Feature<FallenLogFeature.Configuration> {
 	}
 
 	private BlockPos placeLogBlock(Configuration config, WorldGenLevel level, RandomSource random, BlockPos.MutableBlockPos blockPos, Function<BlockState, BlockState> sidewaysStateModifier) {
-		level.setBlock(blockPos, sidewaysStateModifier.apply(config.trunkProvider.getState(random, blockPos)), 3);
+		level.setBlock(blockPos, sidewaysStateModifier.apply(config.trunkProvider.getState(level, random, blockPos)), 3);
 		this.markAboveForPostProcessing(level, blockPos);
 		return blockPos.immutable();
 	}

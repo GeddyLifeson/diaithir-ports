@@ -135,18 +135,18 @@ public class SkyIslandFeature extends ESFeature<SkyIslandFeature.Configuration> 
 		}
 
 		for (BlockPos pos : inner) {
-			setBlock(level, pos, config.composition().getState(random, pos));
+			setBlock(level, pos, config.composition().getState(level, random, pos));
 		}
 		for (BlockPos pos : bottomSet) {
-			setBlock(level, pos, config.composition().getState(random, pos));
+			setBlock(level, pos, config.composition().getState(level, random, pos));
 		}
 		for (BlockPos pos : dirtSet) {
 			if (!surfaceSet.contains(pos)) {
-				setBlock(level, pos, config.dirt().getState(random, pos));
+				setBlock(level, pos, config.dirt().getState(level, random, pos));
 			}
 		}
 		for (BlockPos pos : surfaceSet) {
-			setBlock(level, pos, config.surface().getState(random, pos));
+			setBlock(level, pos, config.surface().getState(level, random, pos));
 		}
 
 		for (BlockPos pos : surfaceSet) {
@@ -198,7 +198,7 @@ public class SkyIslandFeature extends ESFeature<SkyIslandFeature.Configuration> 
 		).apply(instance, Configuration::new));
 
 		@Override
-		public Stream<ConfiguredFeature<?, ?>> getFeatures() {
+		public Stream<net.minecraft.core.Holder<ConfiguredFeature<?, ?>>> getSubFeatures() {
 			return Stream.concat(
 				decorations.stream().flatMap(entry -> entry.feature().value().getFeatures()),
 				bottomDecorations.stream().flatMap(entry -> entry.feature().value().getFeatures())

@@ -89,8 +89,8 @@ public class ESPainting extends HangingEntity {
 
 	public Holder<ESPaintingVariant> getVariant() {
 		Registry<ESPaintingVariant> registry = level().registryAccess().lookupOrThrow(ESRegistries.PAINTING_VARIANT);
-		return registry.getHolder(getVariantId())
-			.or(() -> registry.getHolder(ESPaintingVariants.GUARDIAN))
+		return registry.get(getVariantId())
+			.or(() -> registry.get(ESPaintingVariants.GUARDIAN))
 			.orElseGet(() -> registry.getAny().orElseThrow());
 	}
 
@@ -161,7 +161,7 @@ public class ESPainting extends HangingEntity {
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#getAddEntityPacket
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity) {
-		return new ClientboundAddEntityPacket(this, this.direction.get3DDataValue(), this.getPos());
+		return new ClientboundAddEntityPacket(this, this.getDirection().get3DDataValue(), this.getPos());
 	}
 
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#recreateFromPacket
@@ -173,7 +173,7 @@ public class ESPainting extends HangingEntity {
 
 	// [Vanilla copy] net.minecraft.world.entity.decoration.Painting#moveTo
 	@Override
-	public void moveTo(double x, double y, double z, float yaw, float pitch) {
+	public void snapTo(double x, double y, double z, float yaw, float pitch) {
 		this.setPos(x, y, z);
 	}
 
@@ -192,8 +192,8 @@ public class ESPainting extends HangingEntity {
 	}
 
 	@Override
-	public void dropItem(@Nullable Entity entity) {
-		if (this.ESPortCompat.gameRule(level(), GameRules.ENTITY_DROPS)) {
+	public void dropItem(net.minecraft.server.level.ServerLevel serverLevel, @Nullable Entity entity) {
+		if (ESPortCompat.gameRule(serverLevel, GameRules.ENTITY_DROPS)) {
 			this.playSound(SoundEvents.PAINTING_BREAK, 1.0F, 1.0F);
 			if (entity instanceof Player player && player.hasInfiniteMaterials()) {
 				return;
@@ -210,24 +210,20 @@ public class ESPainting extends HangingEntity {
 	@Override
 	public void addAdditionalSaveData(ValueOutput compoundTag) {
 		super.addAdditionalSaveData(compoundTag);
-		compoundTag.putByte(TAG_FACING, (byte) this.direction.get2DDataValue());
+		compoundTag.putByte(TAG_FACING, (byte) this.getDirection().get2DDataValue());
 		compoundTag.putString(TAG_VARIANT, getVariantId().toString());
-		compoundTag.put(TAG_ITEM, this.getItem().save(this.registryAccess()));
+		compoundTag.store(TAG_ITEM, ItemStack.CODEC, this.getItem());
 	}
 
 	@Override
 	public void readAdditionalSaveData(ValueInput compoundTag) {
 		super.readAdditionalSaveData(compoundTag);
-		this.direction = Direction.from2DDataValue(compoundTag.getByteOr(TAG_FACING, (byte) 0));
+		this.setDirectionRaw(Direction.from2DDataValue(compoundTag.getByteOr(TAG_FACING, (byte) 0)));
 		Identifier variantId = Identifier.tryParse(compoundTag.getStringOr(TAG_VARIANT, ""));
 		if (variantId != null) {
 			setVariantId(variantId);
 		}
-		this.setDirection(this.direction);
-		if (ESPortCompat.has(compoundTag, TAG_ITEM)) {
-			this.setItem(ItemStack.parse(this.registryAccess(), compoundTag.childOrEmpty(TAG_ITEM)).orElse(ESItems.STARLIT_PAINTING.get().getDefaultInstance()));
-		} else {
-			this.setItem(ESItems.STARLIT_PAINTING.get().getDefaultInstance());
-		}
+		this.setDirection(this.getDirection());
+		this.setItem(compoundTag.read(TAG_ITEM, ItemStack.CODEC).orElse(ESItems.STARLIT_PAINTING.get().getDefaultInstance()));
 	}
 }

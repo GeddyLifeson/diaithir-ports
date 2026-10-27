@@ -19,7 +19,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.WeightedList;
-import net.minecraft.util.random.WeightedEntry;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
@@ -53,7 +56,7 @@ public abstract class MechanicalSpawner {
 	private static final String TAG_SPAWN_RANGE = "spawn_range";
 	private static final int EVENT_SPAWN = 1;
 	private int spawnDelay = 20;
-	private WeightedList<SpawnData> spawnPotentials = WeightedList.empty();
+	private WeightedList<SpawnData> spawnPotentials = WeightedList.of();
 	@Nullable
 	private SpawnData nextSpawnData;
 	private double spin;
@@ -124,21 +127,20 @@ public abstract class MechanicalSpawner {
 
 				for (int i = 0; i < this.spawnCount; i++) {
 					CompoundTag entityToSpawn = spawnData.getEntityToSpawn();
-					Optional<EntityType<?>> type = EntityType.by(entityToSpawn);
+					ValueInput input = TagValueInput.create(ProblemReporter.DISCARDING, serverLevel.registryAccess(), entityToSpawn);
+					Optional<EntityType<?>> type = EntityType.by(input);
 					if (type.isEmpty()) {
 						this.delay(serverLevel, pos);
 						return;
 					}
 
-					ListTag posTag = entityToSpawn.getList("Pos", CompoundTag.TAG_DOUBLE);
-					int posSize = posTag.size();
-					double x = posSize >= 1
-						? posTag.getDouble(0)
-						: pos.getX() + (random.nextDouble() - random.nextDouble()) * this.spawnRange + 0.5;
-					double y = posSize >= 2 ? posTag.getDouble(1) : (pos.getY() + random.nextInt(3) - 1);
-					double z = posSize >= 3
-						? posTag.getDouble(2)
-						: pos.getZ() + (random.nextDouble() - random.nextDouble()) * this.spawnRange + 0.5;
+					Vec3 spawnVec = input.read("Pos", Vec3.CODEC).orElseGet(() -> new Vec3(
+						pos.getX() + (random.nextDouble() - random.nextDouble()) * this.spawnRange + 0.5,
+						pos.getY() + random.nextInt(3) - 1,
+						pos.getZ() + (random.nextDouble() - random.nextDouble()) * this.spawnRange + 0.5));
+					double x = spawnVec.x;
+					double y = spawnVec.y;
+					double z = spawnVec.z;
 					if (serverLevel.noCollision(type.get().getSpawnAABB(x, y, z)) && inLineOfSight(serverLevel, pos.getCenter(), new Vec3(x, y, z))) {
 						BlockPos spawnPos = BlockPos.containing(x, y, z);
 						if (spawnData.getCustomSpawnRules().isPresent()) {
@@ -150,11 +152,11 @@ public abstract class MechanicalSpawner {
 							if (!rules.isValidPosition(spawnPos, serverLevel)) {
 								continue;
 							}
-						} else if (!SpawnPlacements.checkSpawnRules(type.get(), serverLevel, EntitySpawnReason.TRIAL_SPAWNER, spawnPos, serverLevel.getRandom())) {
+						} else if (!SpawnPlacements.checkSpawnRules(type.get(), serverLevel, EntitySpawnReason.SPAWNER, spawnPos, serverLevel.getRandom())) {
 							continue;
 						}
 
-						Entity entity = EntityType.loadEntityRecursive(entityToSpawn, serverLevel, e -> {
+						Entity entity = EntityType.loadEntityRecursive(input, serverLevel, EntitySpawnReason.SPAWNER, e -> {
 							e.snapTo(x, y, z, e.getYRot(), e.getXRot());
 							return e;
 						});
@@ -175,9 +177,9 @@ public abstract class MechanicalSpawner {
 								continue;
 							}
 
-							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().contains("id");
+							boolean shouldFinalize = spawnData.getEntityToSpawn().size() == 1 && spawnData.getEntityToSpawn().getString("id").isPresent();
 							if (shouldFinalize) {
-								mob.finalizeSpawn(serverLevel, ESPortCompat.difficulty(serverLevel, entity.blockPosition()), EntitySpawnReason.TRIAL_SPAWNER, null);
+								mob.finalizeSpawn(serverLevel, ESPortCompat.difficulty(serverLevel, entity.blockPosition()), EntitySpawnReason.SPAWNER, null);
 							}
 
 							spawnData.getEquipment().ifPresent(mob::equip);
@@ -217,60 +219,25 @@ public abstract class MechanicalSpawner {
 		}
 		BlockState state = level.getBlockState(pos);
 		this.spawnDelay *= state.hasProperty(MechanicalSpawnerBlock.POWER) ? (16 - state.getValue(MechanicalSpawnerBlock.POWER)) : 1;
-		this.spawnPotentials.getRandom(random).ifPresent(wrapper -> this.setNextSpawnData(level, pos, wrapper.data()));
+		this.spawnPotentials.getRandom(random).ifPresent(entry -> this.setNextSpawnData(level, pos, entry));
 		this.broadcastEvent(level, pos, EVENT_SPAWN);
 	}
 
-	public void load(@Nullable Level level, BlockPos pos, CompoundTag tag) {
+	public void load(@Nullable Level level, BlockPos pos, ValueInput tag) {
 		this.spawnDelay = tag.getShortOr(TAG_SPAWN_DELAY, (short) 0);
-		boolean hasSpawnData = tag.contains(TAG_SPAWN_DATA);
-		if (hasSpawnData) {
-			SpawnData data = SpawnData.CODEC
-				.parse(NbtOps.INSTANCE, tag.getCompound(TAG_SPAWN_DATA))
-				.resultOrPartial(s -> EternalStarlight.LOGGER.warn("Invalid SpawnData: {}", s))
-				.orElseGet(SpawnData::new);
-			this.setNextSpawnData(level, pos, data);
-		}
-
-		boolean hasSpawnPotentials = tag.contains(TAG_SPAWN_POTENTIALS);
-		if (hasSpawnPotentials) {
-			ListTag list = tag.getList(TAG_SPAWN_POTENTIALS, CompoundTag.TAG_COMPOUND);
-			this.spawnPotentials = SpawnData.LIST_CODEC
-				.parse(NbtOps.INSTANCE, list)
-				.resultOrPartial(s -> EternalStarlight.LOGGER.warn("Invalid SpawnPotentials list: {}", s))
-				.orElseGet(WeightedList::empty);
-		} else {
-			this.spawnPotentials = WeightedList.single(this.nextSpawnData != null ? this.nextSpawnData : new SpawnData());
-		}
-
-		if (tag.contains(TAG_MIN_SPAWN_DELAY)) {
-			this.minSpawnDelay = tag.getShortOr(TAG_MIN_SPAWN_DELAY, (short) 0);
-		}
-
-		if (tag.contains(TAG_MAX_SPAWN_DELAY)) {
-			this.maxSpawnDelay = tag.getShortOr(TAG_MAX_SPAWN_DELAY, (short) 0);
-		}
-
-		if (tag.contains(TAG_SPAWN_COUNT)) {
-			this.spawnCount = tag.getShortOr(TAG_SPAWN_COUNT, (short) 0);
-		}
-
-		if (tag.contains(TAG_MAX_NEARBY_ENTITIES)) {
-			this.maxNearbyEntities = tag.getShortOr(TAG_MAX_NEARBY_ENTITIES, (short) 0);
-		}
-
-		if (tag.contains(TAG_REQUIRED_PLAYER_RANGE)) {
-			this.requiredPlayerRange = tag.getShortOr(TAG_REQUIRED_PLAYER_RANGE, (short) 0);
-		}
-
-		if (tag.contains(TAG_SPAWN_RANGE)) {
-			this.spawnRange = tag.getShortOr(TAG_SPAWN_RANGE, (short) 0);
-		}
-
+		tag.read(TAG_SPAWN_DATA, SpawnData.CODEC).ifPresent(data -> this.setNextSpawnData(level, pos, data));
+		this.spawnPotentials = tag.read(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC)
+			.orElseGet(() -> WeightedList.of(this.nextSpawnData != null ? this.nextSpawnData : new SpawnData()));
+		this.minSpawnDelay = tag.getShortOr(TAG_MIN_SPAWN_DELAY, (short) this.minSpawnDelay);
+		this.maxSpawnDelay = tag.getShortOr(TAG_MAX_SPAWN_DELAY, (short) this.maxSpawnDelay);
+		this.spawnCount = tag.getShortOr(TAG_SPAWN_COUNT, (short) this.spawnCount);
+		this.maxNearbyEntities = tag.getShortOr(TAG_MAX_NEARBY_ENTITIES, (short) this.maxNearbyEntities);
+		this.requiredPlayerRange = tag.getShortOr(TAG_REQUIRED_PLAYER_RANGE, (short) this.requiredPlayerRange);
+		this.spawnRange = tag.getShortOr(TAG_SPAWN_RANGE, (short) this.spawnRange);
 		this.displayEntity = null;
 	}
 
-	public CompoundTag save(CompoundTag tag) {
+	public void save(ValueOutput tag) {
 		tag.putShort(TAG_SPAWN_DELAY, (short) this.spawnDelay);
 		tag.putShort(TAG_MIN_SPAWN_DELAY, (short) this.minSpawnDelay);
 		tag.putShort(TAG_MAX_SPAWN_DELAY, (short) this.maxSpawnDelay);
@@ -278,26 +245,18 @@ public abstract class MechanicalSpawner {
 		tag.putShort(TAG_MAX_NEARBY_ENTITIES, (short) this.maxNearbyEntities);
 		tag.putShort(TAG_REQUIRED_PLAYER_RANGE, (short) this.requiredPlayerRange);
 		tag.putShort(TAG_SPAWN_RANGE, (short) this.spawnRange);
-		if (this.nextSpawnData != null) {
-			tag.put(
-				TAG_SPAWN_DATA,
-				SpawnData.CODEC
-					.encodeStart(NbtOps.INSTANCE, this.nextSpawnData)
-					.getOrThrow(s -> new IllegalStateException("Invalid SpawnData: " + s))
-			);
-		}
+		tag.storeNullable(TAG_SPAWN_DATA, SpawnData.CODEC, this.nextSpawnData);
 		tag.store(TAG_SPAWN_POTENTIALS, SpawnData.LIST_CODEC, this.spawnPotentials);
-		return tag;
 	}
 
 	@Nullable
 	public Entity getOrCreateDisplayEntity(Level level, BlockPos pos) {
 		if (this.displayEntity == null) {
 			CompoundTag tag = this.getOrCreateNextSpawnData(level, level.getRandom(), pos).getEntityToSpawn();
-			if (!tag.contains("id")) {
+			if (tag.getString("id").isEmpty()) {
 				return null;
 			}
-			this.displayEntity = EntityType.loadEntityRecursive(tag, level, Function.identity());
+			this.displayEntity = EntityType.loadEntityRecursive(tag, level, EntitySpawnReason.SPAWNER, EntityProcessor.NOP);
 		}
 		return this.displayEntity;
 	}
@@ -319,7 +278,7 @@ public abstract class MechanicalSpawner {
 
 	private SpawnData getOrCreateNextSpawnData(@Nullable Level level, RandomSource random, BlockPos pos) {
 		if (this.nextSpawnData == null) {
-			this.setNextSpawnData(level, pos, this.spawnPotentials.getRandom(random).map(WeightedEntry.Wrapper::data).orElseGet(SpawnData::new));
+			this.setNextSpawnData(level, pos, this.spawnPotentials.getRandom(random).orElseGet(SpawnData::new));
 		}
 		return this.nextSpawnData;
 	}

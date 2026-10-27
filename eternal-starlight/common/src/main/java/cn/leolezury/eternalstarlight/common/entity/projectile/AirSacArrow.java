@@ -46,7 +46,7 @@ public class AirSacArrow extends AbstractArrow {
 	@Override
 	public void tick() {
 		super.tick();
-		if (this.level().isClientSide() && !this.inGround && isInWater()) {
+		if (this.level().isClientSide() && !this.isInGround() && isInWater()) {
 			Vec3 pos = getBoundingBox().getBottomCenter().offsetRandom(getRandom(), getBbWidth());
 			Vec3 speed = getDeltaMovement().normalize().offsetRandom(getRandom(), 0.3f).scale(-0.2);
 			level().addParticle(ColorParticleOption.create(ESParticles.COLORED_INK.get(), ARGB.color(255, 51, 61, 58)), pos.x, pos.y, pos.z, speed.x, speed.y, speed.z);

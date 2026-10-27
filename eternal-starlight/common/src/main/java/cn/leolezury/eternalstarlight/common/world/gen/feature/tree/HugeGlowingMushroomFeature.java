@@ -28,10 +28,10 @@ public class HugeGlowingMushroomFeature extends Feature<HugeMushroomFeatureConfi
 		BlockPos pos = context.origin();
 		RandomSource random = context.random();
 		HugeMushroomFeatureConfiguration config = context.config();
-		if (!level.getBlockState(pos.below()).is(BlockTags.MUSHROOM_GROW_BLOCK) && !level.getBlockState(pos.below()).is(BlockTags.DIRT)) {
+		if (!level.getBlockState(pos.below()).is(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT) && !level.getBlockState(pos.below()).is(BlockTags.DIRT)) {
 			return false;
 		}
-		int xzRadius = config.foliageRadius;
+		int xzRadius = config.foliageRadius();
 		int capHeight = 5;
 		int trunkHeight = random.nextInt(8) + 10;
 		List<BlockPos> mushroomBlocks = new ArrayList<>();
@@ -73,7 +73,7 @@ public class HugeGlowingMushroomFeature extends Feature<HugeMushroomFeatureConfi
 			}
 		}
 		for (BlockPos blockPos : mushroomBlocks) {
-			BlockState state = config.capProvider.getState(random, blockPos);
+			BlockState state = config.capProvider().getState(level, random, blockPos);
 			for (Direction direction : Direction.values()) {
 				if (mushroomBlocks.contains(blockPos.relative(direction))) {
 					state = state.setValue(PipeBlock.PROPERTY_BY_DIRECTION.get(direction), false);
@@ -92,7 +92,7 @@ public class HugeGlowingMushroomFeature extends Feature<HugeMushroomFeatureConfi
 			setBlock(level, blockPos, state);
 		}
 		for (BlockPos blockPos : stemBlocks) {
-			setBlock(level, blockPos, config.stemProvider.getState(random, blockPos));
+			setBlock(level, blockPos, config.stemProvider().getState(level, random, blockPos));
 		}
 		return true;
 	}

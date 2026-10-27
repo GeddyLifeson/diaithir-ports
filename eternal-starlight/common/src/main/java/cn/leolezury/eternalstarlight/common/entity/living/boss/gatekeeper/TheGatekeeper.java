@@ -114,7 +114,6 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 
 	public TheGatekeeper(EntityType<? extends TheGatekeeper> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	private final ESServerBossEvent bossEvent = new ESServerBossEvent(this, ESServerBossEvent.THE_GATEKEEPER, BossEvent.BossBarColor.WHITE, false);
@@ -324,7 +323,8 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	@Override
 	protected void populateDefaultEquipmentSlots(RandomSource randomSource, DifficultyInstance difficultyInstance) {
 		super.populateDefaultEquipmentSlots(randomSource, difficultyInstance);
-		Arrays.fill(this.handDropChances, 0);
+		this.setDropChance(net.minecraft.world.entity.EquipmentSlot.MAINHAND, 0);
+		this.setDropChance(net.minecraft.world.entity.EquipmentSlot.OFFHAND, 0);
 		this.setItemSlot(EquipmentSlot.MAINHAND, ESItems.GLISTERING_SWORD.get().getDefaultInstance());
 	}
 
@@ -474,8 +474,8 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 
 	@Override
 	protected InteractionResult mobInteract(Player player, InteractionHand interactionHand) {
-		if (!level().isClientSide() && player instanceof ServerPlayer serverPlayer && serverPlayer.getServer() != null && getTradingPlayer() == null && !isActivated() && getTarget() == null && getFightTarget().isEmpty()) {
-			AdvancementHolder killDragon = serverPlayer.getServer().getAdvancements().get(Identifier.withDefaultNamespace("end/kill_dragon"));
+		if (!level().isClientSide() && player instanceof ServerPlayer serverPlayer && serverPlayer.level().getServer() != null && getTradingPlayer() == null && !isActivated() && getTarget() == null && getFightTarget().isEmpty()) {
+			AdvancementHolder killDragon = serverPlayer.level().getServer().getAdvancements().get(Identifier.withDefaultNamespace("end/kill_dragon"));
 			if (killDragon != null && serverPlayer.getAdvancements().getOrStartProgress(killDragon).isDone() && !isPlayerPermitted(serverPlayer)) {
 				permitPlayer(serverPlayer);
 				ItemStack lootBag = getBossLootBag(ESDataAttachments.BOSS_CHALLENGE_COUNTS.getData(player));
@@ -524,8 +524,8 @@ public class TheGatekeeper extends ESBoss implements Npc, Merchant {
 	}
 
 	public static boolean isPlayerPermitted(ServerPlayer player) {
-		if (player.getServer() != null) {
-			AdvancementHolder challenge = player.getServer().getAdvancements().get(EternalStarlight.id("challenge_gatekeeper"));
+		if (player.level().getServer() != null) {
+			AdvancementHolder challenge = player.level().getServer().getAdvancements().get(EternalStarlight.id("challenge_gatekeeper"));
 			boolean challenged = challenge != null && player.getAdvancements().getOrStartProgress(challenge).isDone();
 			if (challenged) {
 				return true;

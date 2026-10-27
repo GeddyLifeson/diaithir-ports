@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
 import cn.leolezury.eternalstarlight.common.registry.ESSoundEvents;
@@ -73,7 +74,7 @@ public class CrescentSpearItem extends Item {
 				float spinStrength = EnchantmentHelper.getTridentSpinAttackStrength(itemStack, player) + 1.75f;
 
 				if (!level.isClientSide()) {
-					itemStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(livingEntity.getUsedItemHand()));
+					itemStack.hurtAndBreak(1, player, ESPortCompat.slotForHand(livingEntity.getUsedItemHand()));
 				}
 
 				float yaw = player.getYRot();

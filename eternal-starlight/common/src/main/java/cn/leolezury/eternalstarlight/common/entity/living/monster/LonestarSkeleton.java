@@ -61,7 +61,8 @@ public class LonestarSkeleton extends Skeleton {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, EntitySpawnReason mobSpawnType, @Nullable SpawnGroupData spawnGroupData) {
 		SpawnGroupData data = super.finalizeSpawn(serverLevelAccessor, difficultyInstance, mobSpawnType, spawnGroupData);
-		Arrays.fill(this.handDropChances, 0.2F);
+		this.setDropChance(net.minecraft.world.entity.EquipmentSlot.MAINHAND, 0.2F);
+		this.setDropChance(net.minecraft.world.entity.EquipmentSlot.OFFHAND, 0.2F);
 		if (!getItemBySlot(EquipmentSlot.HEAD).isEmpty() || random.nextInt(5) == 0) {
 			setItemSlot(EquipmentSlot.HEAD, ESItems.AMARAMBER_MASK.get().getDefaultInstance());
 		}

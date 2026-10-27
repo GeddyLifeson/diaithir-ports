@@ -294,7 +294,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 					serverLevel.sendParticles(ESExplosionParticleOptions.LAVA, pos.getX() + level.getRandom().nextFloat(), pos.getY() + level.getRandom().nextFloat() + 1.5, pos.getZ() + level.getRandom().nextFloat(), 20, 1.5, 1.5, 1.5, 0);
 					serverLevel.sendParticles(ESParticles.SMOKE_TRAIL.get(), pos.getX() + level.getRandom().nextFloat(), pos.getY() + level.getRandom().nextFloat(), pos.getZ() + level.getRandom().nextFloat(), 20, 0, 0, 0, 0.5);
 				}
-				level.explode(null, null, null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ESConfig.INSTANCE.itemsConfig.alloyFurnace.explosionRadius(), true, Level.ExplosionInteraction.BLOCK, ESExplosionParticleOptions.LAVA, ESExplosionParticleOptions.LAVA, SoundEvents.GENERIC_EXPLODE);
+				level.explode(null, null, null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ESConfig.INSTANCE.itemsConfig.alloyFurnace.explosionRadius(), true, Level.ExplosionInteraction.BLOCK, ESExplosionParticleOptions.LAVA, ESExplosionParticleOptions.LAVA, net.minecraft.util.random.WeightedList.of(), SoundEvents.GENERIC_EXPLODE);
 			}
 		} else {
 			entity.oldClientOverheatAmplitude = entity.clientOverheatAmplitude;
@@ -380,7 +380,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 	@Override
 	public void loadAdditional(ValueInput compoundTag) {
 		super.loadAdditional(compoundTag);
-		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
+		ContainerHelper.loadAllItems(compoundTag, this.items);
 		this.litTicks = compoundTag.getShortOr(TAG_LIT_TICKS, (short) 0);
 		this.totalLitTicks = compoundTag.getShortOr(TAG_TOTAL_LIT_TICKS, (short) 0);
 		this.burnTicks = compoundTag.getShortOr(TAG_BURN_TICKS, (short) 0);
@@ -394,7 +394,7 @@ public class AlloyFurnaceBlockEntity extends BaseContainerBlockEntity implements
 	@Override
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
-		ContainerHelper.saveAllItems(compoundTag, this.items, provider);
+		ContainerHelper.saveAllItems(compoundTag, this.items);
 		compoundTag.putShort(TAG_LIT_TICKS, (short) this.litTicks);
 		compoundTag.putShort(TAG_TOTAL_LIT_TICKS, (short) this.totalLitTicks);
 		compoundTag.putShort(TAG_BURN_TICKS, (short) this.burnTicks);

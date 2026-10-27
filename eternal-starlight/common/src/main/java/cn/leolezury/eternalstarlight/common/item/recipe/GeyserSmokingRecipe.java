@@ -14,6 +14,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.PlacementInfo;
+import net.minecraft.world.item.crafting.RecipeBookCategories;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -26,27 +29,39 @@ public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) 
 	}
 
 	@Override
-	public ItemStack assemble(SingleRecipeInput container, HolderLookup.Provider provider) {
+	public ItemStack assemble(SingleRecipeInput container) {
 		return output().copy();
 	}
 
+
+
 	@Override
-	public boolean canCraftInDimensions(int i, int j) {
+	public boolean showNotification() {
 		return true;
 	}
 
 	@Override
-	public ItemStack getResultItem(HolderLookup.Provider provider) {
-		return output();
+	public String group() {
+		return "";
 	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public PlacementInfo placementInfo() {
+		return PlacementInfo.NOT_PLACEABLE;
+	}
+
+	@Override
+	public RecipeBookCategory recipeBookCategory() {
+		return RecipeBookCategories.FURNACE_MISC;
+	}
+
+	@Override
+	public RecipeSerializer<GeyserSmokingRecipe> getSerializer() {
 		return ESRecipeSerializers.GEYSER_SMOKING.get();
 	}
 
 	@Override
-	public RecipeType<?> getType() {
+	public RecipeType<GeyserSmokingRecipe> getType() {
 		return ESRecipes.GEYSER_SMOKING.get();
 	}
 
@@ -59,19 +74,21 @@ public record GeyserSmokingRecipe(Item input, int inputCount, ItemStack output) 
 		}
 	}
 
-	public static class Serializer implements RecipeSerializer<GeyserSmokingRecipe> {
+	public static class Serializer {
+		public RecipeSerializer<GeyserSmokingRecipe> build() {
+			return new RecipeSerializer<>(codec(), streamCodec());
+		}
+
 		private static final MapCodec<GeyserSmokingRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			BuiltInRegistries.ITEM.byNameCodec().fieldOf("input").forGetter(GeyserSmokingRecipe::input),
 			Codec.INT.fieldOf("input_count").forGetter(GeyserSmokingRecipe::inputCount),
 			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(GeyserSmokingRecipe::output)
 		).apply(instance, GeyserSmokingRecipe::new));
 
-		@Override
 		public MapCodec<GeyserSmokingRecipe> codec() {
 			return CODEC;
 		}
 
-		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, GeyserSmokingRecipe> streamCodec() {
 			return new StreamCodec<>() {
 				@Override

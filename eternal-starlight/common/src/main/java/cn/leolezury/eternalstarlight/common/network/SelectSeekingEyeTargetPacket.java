@@ -45,7 +45,7 @@ public record SelectSeekingEyeTargetPacket(SeekingEyeTargets.TargetType targetTy
 			if (entry == null) {
 				return;
 			}
-			ServerLevel level = serverPlayer.serverLevel();
+			ServerLevel level = serverPlayer.level();
 			if (!level.dimension().equals(ESDimensions.STARLIGHT_KEY)) {
 				serverPlayer.displayClientMessage(Component.translatable("message." + EternalStarlight.ID + ".seeking_eye.wrong_dimension"), true);
 				return;

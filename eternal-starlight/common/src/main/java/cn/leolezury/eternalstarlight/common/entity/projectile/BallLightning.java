@@ -134,7 +134,6 @@ public class BallLightning extends ThrowableProjectile {
 			}
 			setSpawnedTicks(getSpawnedTicks() + 1);
 		} else {
-			this.noCulling = true;
 		}
 	}
 

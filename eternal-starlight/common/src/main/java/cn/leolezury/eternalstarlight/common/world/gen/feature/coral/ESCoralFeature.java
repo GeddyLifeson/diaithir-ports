@@ -31,7 +31,7 @@ public abstract class ESCoralFeature extends Feature<NoneFeatureConfiguration> {
 		RandomSource randomSource = featurePlaceContext.random();
 		WorldGenLevel worldGenLevel = featurePlaceContext.level();
 		BlockPos blockPos = featurePlaceContext.origin();
-		Optional<Block> optional = BuiltInRegistries.BLOCK.getTag(ESTags.Blocks.CORAL_BLOCKS).flatMap((named) -> named.getRandomElement(randomSource)).map(Holder::value);
+		Optional<Block> optional = BuiltInRegistries.BLOCK.get(ESTags.Blocks.CORAL_BLOCKS).flatMap((named) -> named.getRandomElement(randomSource)).map(Holder::value);
 		return optional.filter(block -> this.placeFeature(worldGenLevel, randomSource, blockPos, block.defaultBlockState())).isPresent();
 	}
 
@@ -43,7 +43,7 @@ public abstract class ESCoralFeature extends Feature<NoneFeatureConfiguration> {
 		if ((blockState2.is(Blocks.WATER) || blockState2.is(ESTags.Blocks.CORALS)) && levelAccessor.getBlockState(blockPos2).is(Blocks.WATER)) {
 			levelAccessor.setBlock(blockPos, state, 3);
 			if (randomSource.nextFloat() < 0.25F) {
-				BuiltInRegistries.BLOCK.getTag(ESTags.Blocks.CORALS).flatMap((named) -> named.getRandomElement(randomSource)).map(Holder::value).ifPresent((block) -> {
+				BuiltInRegistries.BLOCK.get(ESTags.Blocks.CORALS).flatMap((named) -> named.getRandomElement(randomSource)).map(Holder::value).ifPresent((block) -> {
 					levelAccessor.setBlock(blockPos2, block.defaultBlockState(), 2);
 				});
 			} else if (randomSource.nextFloat() < 0.05F) {
@@ -54,7 +54,7 @@ public abstract class ESCoralFeature extends Feature<NoneFeatureConfiguration> {
 				if (randomSource.nextFloat() < 0.2F) {
 					BlockPos blockPos3 = blockPos.relative(direction);
 					if (levelAccessor.getBlockState(blockPos3).is(Blocks.WATER)) {
-						BuiltInRegistries.BLOCK.getTag(ESTags.Blocks.WALL_CORALS).flatMap((named) -> {
+						BuiltInRegistries.BLOCK.get(ESTags.Blocks.WALL_CORALS).flatMap((named) -> {
 							return named.getRandomElement(randomSource);
 						}).map(Holder::value).ifPresent((block) -> {
 							BlockState blockState = block.defaultBlockState();

@@ -21,9 +21,9 @@ public class ESBookUtil {
 	}
 
 	public static Set<Identifier> getUnlockedParts(ServerPlayer player) {
-		MinecraftServer server = player.getServer();
+		MinecraftServer server = player.level().getServer();
 		if (server != null) {
-			ServerLevel level = player.getServer().getLevel(Level.OVERWORLD);
+			ServerLevel level = player.level().getServer().getLevel(Level.OVERWORLD);
 			if (level != null) {
 				BookProgressions progressions = getOrCreateBookProgressions(level);
 				return progressions.getProgressions().getOrDefault(player.getUUID(), new HashSet<>());
@@ -33,9 +33,9 @@ public class ESBookUtil {
 	}
 
 	public static void unlock(ServerPlayer player, Identifier... locations) {
-		MinecraftServer server = player.getServer();
+		MinecraftServer server = player.level().getServer();
 		if (server != null) {
-			ServerLevel level = player.getServer().getLevel(Level.OVERWORLD);
+			ServerLevel level = player.level().getServer().getLevel(Level.OVERWORLD);
 			if (level != null) {
 				BookProgressions progressions = getOrCreateBookProgressions(level);
 				Set<Identifier> unlocked = getUnlockedParts(player);

@@ -48,13 +48,13 @@ public class HangingPlantDecorator extends TreeDecorator {
 				int l = length.sample(random);
 				for (int i = 1; i <= l; i++) {
 					if (context.isAir(pos.below(i))) {
-						context.setBlock(pos.below(i), plantBody.getState(random, pos.below(i)));
+						context.setBlock(pos.below(i), plantBody.getState(context.level(), random, pos.below(i)));
 						if (i == l) {
-							context.setBlock(pos.below(i), plantHead.getState(random, pos.below(i)));
+							context.setBlock(pos.below(i), plantHead.getState(context.level(), random, pos.below(i)));
 						}
 					} else {
 						if (i != 1) {
-							context.setBlock(pos.below(i - 1), plantHead.getState(random, pos.below(i - 1)));
+							context.setBlock(pos.below(i - 1), plantHead.getState(context.level(), random, pos.below(i - 1)));
 						}
 						break;
 					}

@@ -89,10 +89,6 @@ public class MechanicalSpawnerBlockEntity extends BlockEntity implements Spawner
 		return this.spawner.onEventTriggered(this.level, getBlockState(), id) || super.triggerEvent(id, type);
 	}
 
-	@Override
-	public boolean onlyOpCanSetNbt() {
-		return true;
-	}
 
 	@Override
 	public void setEntityId(EntityType<?> type, RandomSource random) {

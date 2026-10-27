@@ -199,7 +199,6 @@ public class SolarCreeper extends ESBoss {
 
 	public SolarCreeper(EntityType<? extends SolarCreeper> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	@Override

@@ -54,7 +54,7 @@ public abstract class ThrownBoomerang extends AbstractArrow {
 	@Override
 	public void tick() {
 		Entity owner = this.getOwner();
-		if (this.inGround || (owner == null && tickCount > 40) || (owner != null && distanceTo(owner) > 15 + owner.getBbWidth() / 2)) {
+		if (this.isInGround() || (owner == null && tickCount > 40) || (owner != null && distanceTo(owner) > 15 + owner.getBbWidth() / 2)) {
 			this.dealtDamage = true;
 		}
 		if (!level().isClientSide() && !this.dealtDamage) {
@@ -86,7 +86,7 @@ public abstract class ThrownBoomerang extends AbstractArrow {
 			}
 		}
 		if ((this.dealtDamage || this.isNoPhysics()) && owner != null) {
-			this.inGround = false;
+			this.setInGround(false);
 			if (!(owner instanceof Player) && !level().isClientSide()) {
 				this.discard();
 			}

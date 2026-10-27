@@ -26,19 +26,11 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 	}
 
 	@Override
-	public ItemStack assemble(SingleRecipeInput container, HolderLookup.Provider provider) {
+	public ItemStack assemble(SingleRecipeInput container) {
 		return outputs().getFirst().output().copy();
 	}
 
-	@Override
-	public boolean canCraftInDimensions(int i, int j) {
-		return true;
-	}
 
-	@Override
-	public ItemStack getResultItem(HolderLookup.Provider provider) {
-		return outputs().getFirst().output();
-	}
 
 	public ItemStack rollOutput(RandomSource random) {
 		int totalWeight = 0;
@@ -59,12 +51,32 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public boolean showNotification() {
+		return true;
+	}
+
+	@Override
+	public String group() {
+		return "";
+	}
+
+	@Override
+	public PlacementInfo placementInfo() {
+		return PlacementInfo.NOT_PLACEABLE;
+	}
+
+	@Override
+	public RecipeBookCategory recipeBookCategory() {
+		return RecipeBookCategories.FURNACE_MISC;
+	}
+
+	@Override
+	public RecipeSerializer<EtherConversionRecipe> getSerializer() {
 		return ESRecipeSerializers.ETHER_CONVERSION.get();
 	}
 
 	@Override
-	public RecipeType<?> getType() {
+	public RecipeType<EtherConversionRecipe> getType() {
 		return ESRecipes.ETHER_CONVERSION.get();
 	}
 
@@ -84,7 +96,11 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 		}
 	}
 
-	public static class Serializer implements RecipeSerializer<EtherConversionRecipe> {
+	public static class Serializer {
+		public RecipeSerializer<EtherConversionRecipe> build() {
+			return new RecipeSerializer<>(codec(), streamCodec());
+		}
+
 		private static final MapCodec<EtherConversionRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			Ingredient.CODEC.fieldOf("input").forGetter(EtherConversionRecipe::input),
 			Codec.INT.optionalFieldOf("input_count", 1).forGetter(EtherConversionRecipe::inputCount),
@@ -92,12 +108,10 @@ public record EtherConversionRecipe(Ingredient input, int inputCount, DataCompon
 			WeightedOutput.CODEC.listOf().fieldOf("outputs").forGetter(EtherConversionRecipe::outputs)
 		).apply(instance, EtherConversionRecipe::new));
 
-		@Override
 		public MapCodec<EtherConversionRecipe> codec() {
 			return CODEC;
 		}
 
-		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, EtherConversionRecipe> streamCodec() {
 			return new StreamCodec<>() {
 				@Override

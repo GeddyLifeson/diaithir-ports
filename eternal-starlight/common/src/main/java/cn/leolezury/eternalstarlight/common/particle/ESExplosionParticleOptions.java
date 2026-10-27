@@ -31,7 +31,7 @@ public record ESExplosionParticleOptions(ParticleType<ESExplosionParticleOptions
 			ExtraCodecs.VECTOR3F.fieldOf("from_color").forGetter(ESExplosionParticleOptions::fromColor),
 			ExtraCodecs.VECTOR3F.fieldOf("to_color").forGetter(ESExplosionParticleOptions::toColor),
 			Codec.FLOAT.fieldOf("life_scale").forGetter(ESExplosionParticleOptions::lifeScale)
-		).apply(instance, (from, to, lifeScale) -> new ESExplosionParticleOptions(type, from, to, lifeScale)));
+		).apply(instance, (from, to, lifeScale) -> new ESExplosionParticleOptions(type, new Vector3f(from), new Vector3f(to), lifeScale)));
 	}
 
 	public static StreamCodec<? super ByteBuf, ESExplosionParticleOptions> streamCodec(ParticleType<ESExplosionParticleOptions> type) {
@@ -39,7 +39,7 @@ public record ESExplosionParticleOptions(ParticleType<ESExplosionParticleOptions
 			ByteBufCodecs.VECTOR3F, ESExplosionParticleOptions::fromColor,
 			ByteBufCodecs.VECTOR3F, ESExplosionParticleOptions::toColor,
 			ByteBufCodecs.FLOAT, ESExplosionParticleOptions::lifeScale,
-			(from, to, lifeScale) -> new ESExplosionParticleOptions(type, from, to, lifeScale)
+			(from, to, lifeScale) -> new ESExplosionParticleOptions(type, new Vector3f(from), new Vector3f(to), lifeScale)
 		);
 	}
 

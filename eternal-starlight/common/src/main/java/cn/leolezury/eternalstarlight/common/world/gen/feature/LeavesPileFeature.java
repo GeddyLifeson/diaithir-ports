@@ -44,7 +44,7 @@ public class LeavesPileFeature extends Feature<LeavesPileFeature.Configuration> 
 				for (int z = -4; z <= 4; z++) {
 					if (x * x + z * z <= 4 * 4 && level.getBlockState(pos.offset(x, y, z)).is(BlockTags.DIRT) && level.getBlockState(pos.offset(x, y + 1, z)).isAir() && random.nextBoolean()) {
 						placePos.setWithOffset(pos, x, y + 1, z);
-						BlockState pileState = context.config().pile().getState(random, placePos);
+						BlockState pileState = context.config().pile().getState(level, random, placePos);
 						if (pileState.hasProperty(BlockStateProperties.LAYERS)) {
 							pileState = pileState.setValue(BlockStateProperties.LAYERS, random.nextInt(1, 5));
 						}

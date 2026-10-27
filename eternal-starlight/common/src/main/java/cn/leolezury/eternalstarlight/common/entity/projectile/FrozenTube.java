@@ -37,7 +37,8 @@ public class FrozenTube extends ThrowableProjectile {
 	}
 
 	public FrozenTube(Level level, LivingEntity livingEntity) {
-		super(ESEntities.FROZEN_TUBE.get(), livingEntity, level);
+		super(ESEntities.FROZEN_TUBE.get(), livingEntity.getX(), livingEntity.getEyeY() - 0.1F, livingEntity.getZ(), level);
+		this.setOwner(livingEntity);
 	}
 
 	public FrozenTube(Level level, double x, double y, double z) {

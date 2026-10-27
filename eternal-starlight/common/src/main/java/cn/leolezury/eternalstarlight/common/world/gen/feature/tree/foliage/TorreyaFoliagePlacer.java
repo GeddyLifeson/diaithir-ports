@@ -7,7 +7,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
@@ -26,7 +26,7 @@ public class TorreyaFoliagePlacer extends FoliagePlacer {
 		return ESTreePlacers.FOLIAGE_TORREYA.get();
 	}
 
-	public static void placeLineFoliage(LevelSimulatedReader level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos fromPos, BlockPos toPos) {
+	public static void placeLineFoliage(WorldGenLevel level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos fromPos, BlockPos toPos) {
 		List<int[]> leavesPositions = ESMathUtil.getBresenham3DPoints(fromPos.getX(), fromPos.getY(), fromPos.getZ(), toPos.getX(), toPos.getY(), toPos.getZ());
 		if (!leavesPositions.isEmpty()) {
 			for (int i = 0; i < leavesPositions.size(); i++) {
@@ -40,14 +40,14 @@ public class TorreyaFoliagePlacer extends FoliagePlacer {
 		}
 	}
 
-	protected static boolean checkDistanceAndPlaceLeaf(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos center, BlockPos pos) {
+	protected static boolean checkDistanceAndPlaceLeaf(WorldGenLevel level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos center, BlockPos pos) {
 		if (center.distManhattan(pos) < 7) {
 			return tryPlaceLeaf(level, setter, random, configuration, pos);
 		}
 		return false;
 	}
 
-	public static void placeTorreyaFoliage(LevelSimulatedReader level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, float xzRadius) {
+	public static void placeTorreyaFoliage(WorldGenLevel level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, float xzRadius) {
 		placeLineFoliage(level, setter, configuration, random, centerPos, centerPos.offset((int) (xzRadius), 2, 0));
 		placeLineFoliage(level, setter, configuration, random, centerPos, centerPos.offset((int) -(xzRadius), 2, 0));
 		placeLineFoliage(level, setter, configuration, random, centerPos, centerPos.offset(0, 2, (int) -(xzRadius)));
@@ -60,7 +60,7 @@ public class TorreyaFoliagePlacer extends FoliagePlacer {
 	}
 
 	@Override
-	protected void createFoliage(LevelSimulatedReader levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
+	protected void createFoliage(WorldGenLevel levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
 		BlockPos center = foliage.pos().above(offset);
 		// no radius offset because of decay distance
 		placeTorreyaFoliage(levelReader, setter, configuration, random, center, this.radius.sample(random));

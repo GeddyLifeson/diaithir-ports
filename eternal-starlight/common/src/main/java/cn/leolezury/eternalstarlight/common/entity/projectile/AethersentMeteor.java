@@ -101,7 +101,6 @@ public class AethersentMeteor extends AbstractHurtingProjectile {
 
 	public AethersentMeteor(EntityType<? extends AethersentMeteor> type, Level level) {
 		super(type, level);
-		this.noCulling = true;
 	}
 
 	public AethersentMeteor(Level level, LivingEntity entity, double x, double y, double z) {

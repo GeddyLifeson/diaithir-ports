@@ -152,7 +152,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 
 	public StarfireBird(EntityType<? extends StarfireBird> entityType, Level level) {
 		super(entityType, level);
-		this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
+		this.setPathfindingMalus(PathType.FIRE, -1.0F);
 		this.setPathfindingMalus(PathType.WATER, -1.0F);
 		this.setPathfindingMalus(PathType.WATER_BORDER, -1.0F);
 		this.switchMoveType(true);
@@ -263,7 +263,7 @@ public class StarfireBird extends Animal implements FlyingAnimal {
 			this.animal.resetLove();
 			this.partner.resetLove();
 			RandomSource random = this.animal.getRandom();
-			if (this.ESPortCompat.gameRule(level, GameRules.MOB_DROPS)) {
+			if (ESPortCompat.gameRule(level, GameRules.MOB_DROPS)) {
 				this.level.addFreshEntity(new ExperienceOrb(this.level, this.animal.getX(), this.animal.getY(), this.animal.getZ(), random.nextInt(7) + 1));
 			}
 			StarfireBird.this.stayOutOfNestTicks = 0;

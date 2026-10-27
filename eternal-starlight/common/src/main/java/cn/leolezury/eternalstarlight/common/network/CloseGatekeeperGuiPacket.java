@@ -18,7 +18,7 @@ public record CloseGatekeeperGuiPacket(int id, int operation) implements CustomP
 	);
 
 	public static void handle(CloseGatekeeperGuiPacket packet, Player player) {
-		if (player instanceof ServerPlayer serverPlayer && serverPlayer.serverLevel().getEntity(packet.id()) instanceof TheGatekeeper gatekeeper) {
+		if (player instanceof ServerPlayer serverPlayer && serverPlayer.level().getEntity(packet.id()) instanceof TheGatekeeper gatekeeper) {
 			gatekeeper.handleDialogueClose(packet.operation());
 		}
 	}

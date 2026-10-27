@@ -306,7 +306,7 @@ public class LunarMonstrosity extends ESBoss implements RayAttackUser {
 				if (!itemStack.isDamageableItem()) {
 					itemStack.consume(1, player);
 				} else {
-					itemStack.hurtAndBreak(1, player, getSlotForHand(hand));
+					itemStack.hurtAndBreak(1, player, ESPortCompat.slotForHand(hand));
 				}
 			}
 			return InteractionResult.SUCCESS;

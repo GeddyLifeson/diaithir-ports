@@ -49,7 +49,7 @@ public class GatekeeperBowComboPhase extends BehaviorPhase<TheGatekeeper> {
 				if (weapon.getItem() instanceof BowItem) {
 					ItemStack projectile = entity.getProjectile(weapon);
 					AbstractArrow arrow = ProjectileUtil.getMobArrow(entity, projectile, 1, weapon);
-					arrow.setBaseDamage(arrow.getBaseDamage() + 0.75);
+					arrow.setBaseDamage(arrow.baseDamage + 0.75);
 					double x = target.getX() - entity.getX();
 					double y = target.getY(1.0 / 3.0) - arrow.getY();
 					double z = target.getZ() - entity.getZ();

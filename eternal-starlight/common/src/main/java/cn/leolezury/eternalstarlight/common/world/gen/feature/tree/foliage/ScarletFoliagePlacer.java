@@ -8,7 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
@@ -25,7 +25,7 @@ public class ScarletFoliagePlacer extends FoliagePlacer {
 		return ESTreePlacers.FOLIAGE_SCARLET.get();
 	}
 
-	public static void placeSpikeFoliage(LevelSimulatedReader level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, int xzRadius, int height) {
+	public static void placeSpikeFoliage(WorldGenLevel level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, int xzRadius, int height) {
 		for (int y = 0; y >= -height; y--) {
 			int radius = Mth.lerpInt((float) y / height, xzRadius, 0);
 			int radiusNext = Mth.lerpInt((float) (y - 1) / height, xzRadius, 0);
@@ -48,7 +48,7 @@ public class ScarletFoliagePlacer extends FoliagePlacer {
 	}
 
 	@Override
-	protected void createFoliage(LevelSimulatedReader levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
+	protected void createFoliage(WorldGenLevel levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
 		BlockPos center = foliage.pos().above(offset);
 		int xzRadius = foliage.radiusOffset() + this.radius.sample(random);
 		int height = (int) (xzRadius * 2.4);

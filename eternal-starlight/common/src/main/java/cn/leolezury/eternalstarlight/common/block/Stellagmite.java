@@ -56,7 +56,7 @@ public interface Stellagmite {
 			if (!itemStack.isDamageableItem()) {
 				itemStack.consume(1, player);
 			} else {
-				itemStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(interactionHand));
+				itemStack.hurtAndBreak(1, player, ESPortCompat.slotForHand(interactionHand));
 			}
 			Block moltenBlock = toMolten.get(block);
 			if (moltenBlock != null) {

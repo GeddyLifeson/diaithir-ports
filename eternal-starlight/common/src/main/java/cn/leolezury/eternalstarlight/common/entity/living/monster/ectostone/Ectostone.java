@@ -351,8 +351,8 @@ public class Ectostone extends Monster implements MultiBehaviorUser, VariantHold
 					for (int i = 0; i < 2; i++) {
 						this.level().addParticle(
 							new DustColorTransitionOptions(
-								new Vector3f(255 / 255F, 71 / 255F, 180 / 255F),
-								new Vector3f(151 / 255F, 63 / 255F, 115 / 255F),
+								net.minecraft.util.ARGB.colorFromFloat(1F, 255 / 255F, 71 / 255F, 180 / 255F),
+								net.minecraft.util.ARGB.colorFromFloat(1F, 151 / 255F, 63 / 255F, 115 / 255F),
 								1.2F
 							),
 							pos.x, pos.y, pos.z,

@@ -113,4 +113,8 @@ public class ESPortCompat {
 	public static net.minecraft.core.particles.ItemParticleOption itemParticle(net.minecraft.core.particles.ParticleType<net.minecraft.core.particles.ItemParticleOption> type, net.minecraft.world.item.ItemStack stack) {
 		return new net.minecraft.core.particles.ItemParticleOption(type, net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(stack));
 	}
+
+	public static net.minecraft.world.entity.EquipmentSlot slotForHand(net.minecraft.world.InteractionHand hand) {
+		return hand == net.minecraft.world.InteractionHand.MAIN_HAND ? net.minecraft.world.entity.EquipmentSlot.MAINHAND : net.minecraft.world.entity.EquipmentSlot.OFFHAND;
+	}
 }

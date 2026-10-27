@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -41,11 +42,11 @@ public class SoulitSpectator extends ThrowableItemProjectile {
 	}
 
 	public SoulitSpectator(Level level, LivingEntity livingEntity) {
-		super(ESEntities.SOULIT_SPECTATOR.get(), livingEntity, level);
+		super(ESEntities.SOULIT_SPECTATOR.get(), livingEntity, level, new ItemStack(ESItems.SOULIT_SPECTATOR.get()));
 	}
 
 	public SoulitSpectator(Level level, double x, double y, double z) {
-		super(ESEntities.SOULIT_SPECTATOR.get(), x, y, z, level);
+		super(ESEntities.SOULIT_SPECTATOR.get(), x, y, z, level, new ItemStack(ESItems.SOULIT_SPECTATOR.get()));
 	}
 
 	@Override

@@ -21,7 +21,7 @@ public class UnderwaterSimpleBlockFeature extends Feature<SimpleBlockConfigurati
 		SimpleBlockConfiguration simpleBlockConfiguration = featurePlaceContext.config();
 		WorldGenLevel worldGenLevel = featurePlaceContext.level();
 		BlockPos blockPos = featurePlaceContext.origin();
-		BlockState blockState = simpleBlockConfiguration.toPlace().getState(featurePlaceContext.random(), blockPos);
+		BlockState blockState = simpleBlockConfiguration.toPlace().getState(worldGenLevel, featurePlaceContext.random(), blockPos);
 		if (blockState.canSurvive(worldGenLevel, blockPos)) {
 			if (blockState.getBlock() instanceof DoublePlantBlock) {
 				// ES: Allow underwater placement

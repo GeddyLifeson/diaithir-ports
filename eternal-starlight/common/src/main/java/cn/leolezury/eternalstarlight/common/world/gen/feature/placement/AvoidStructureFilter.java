@@ -51,11 +51,11 @@ public class AvoidStructureFilter extends PlacementFilter {
 				LongSet references = entry.getValue();
 
 				Optional<ResourceKey<Structure>> key = registry.getResourceKey(structure);
-				boolean shouldAvoid = key.isPresent() && structures.contains(registry.getHolderOrThrow(key.get()));
+				boolean shouldAvoid = key.isPresent() && structures.contains(registry.getOrThrow(key.get()));
 
 				if (shouldAvoid) {
 					for (long reference : references) {
-						SectionPos startSection = SectionPos.of(new ChunkPos(reference), worldGenRegion.getMinSection());
+						SectionPos startSection = SectionPos.of(ChunkPos.unpack(reference), worldGenRegion.getMinSectionY());
 						if (worldGenRegion.hasChunk(startSection.x(), startSection.z())) {
 							ChunkAccess startChunk = worldGenRegion.getChunk(startSection.x(), startSection.z(), ChunkStatus.STRUCTURE_STARTS);
 							StructureStart structureStart = structureManager.getStartForStructure(startSection, structure, startChunk);

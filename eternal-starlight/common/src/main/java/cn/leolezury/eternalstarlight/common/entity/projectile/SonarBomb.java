@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
@@ -30,11 +31,11 @@ public class SonarBomb extends ThrowableItemProjectile {
 	}
 
 	public SonarBomb(Level level, LivingEntity livingEntity) {
-		super(ESEntities.SONAR_BOMB.get(), livingEntity, level);
+		super(ESEntities.SONAR_BOMB.get(), livingEntity, level, new ItemStack(ESItems.SONAR_BOMB.get()));
 	}
 
 	public SonarBomb(Level level, double x, double y, double z) {
-		super(ESEntities.SONAR_BOMB.get(), x, y, z, level);
+		super(ESEntities.SONAR_BOMB.get(), x, y, z, level, new ItemStack(ESItems.SONAR_BOMB.get()));
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import cn.leolezury.eternalstarlight.common.registry.*;
 import cn.leolezury.eternalstarlight.common.util.ESEntityUtil;
 import net.minecraft.server.level.ServerLevel;
@@ -21,11 +22,11 @@ public class ThrownStarfire extends ThrowableItemProjectile {
 	}
 
 	public ThrownStarfire(Level level, LivingEntity livingEntity) {
-		super(ESEntities.STARFIRE.get(), livingEntity, level);
+		super(ESEntities.STARFIRE.get(), livingEntity, level, new ItemStack(ESItems.STARFIRE.get()));
 	}
 
 	public ThrownStarfire(Level level, double x, double y, double z) {
-		super(ESEntities.STARFIRE.get(), x, y, z, level);
+		super(ESEntities.STARFIRE.get(), x, y, z, level, new ItemStack(ESItems.STARFIRE.get()));
 	}
 
 	@Override

@@ -62,7 +62,6 @@ import java.util.Optional;
 public class StarlightGolem extends ESBoss implements RayAttackUser {
 	public StarlightGolem(EntityType<? extends StarlightGolem> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	private final ESServerBossEvent bossEvent = new ESServerBossEvent(this, ESServerBossEvent.STARLIGHT_GOLEM, BossEvent.BossBarColor.BLUE, false);

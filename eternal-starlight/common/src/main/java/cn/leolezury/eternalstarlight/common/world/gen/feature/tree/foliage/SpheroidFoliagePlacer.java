@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
@@ -25,7 +25,7 @@ public class SpheroidFoliagePlacer extends FoliagePlacer {
 		return ESTreePlacers.FOLIAGE_SPHEROID.get();
 	}
 
-	protected static void placeFoliage(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos pos) {
+	protected static void placeFoliage(WorldGenLevel level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos pos) {
 		if (tryPlaceLeaf(level, setter, random, configuration, pos)) {
 			for (Direction direction : Direction.values()) {
 				if (random.nextInt(5) == 0) {
@@ -35,7 +35,7 @@ public class SpheroidFoliagePlacer extends FoliagePlacer {
 		}
 	}
 
-	public static void placeSpheroidFoliage(LevelSimulatedReader level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, float xzRadius, float yRadius) {
+	public static void placeSpheroidFoliage(WorldGenLevel level, FoliageSetter setter, TreeConfiguration configuration, RandomSource random, BlockPos centerPos, float xzRadius, float yRadius) {
 		for (int x = 0; x <= xzRadius; x++) {
 			for (int z = 0; z <= xzRadius; z++) {
 				for (int y = 0; y <= yRadius; y++) {
@@ -55,7 +55,7 @@ public class SpheroidFoliagePlacer extends FoliagePlacer {
 	}
 
 	@Override
-	protected void createFoliage(LevelSimulatedReader levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
+	protected void createFoliage(WorldGenLevel levelReader, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, int trunkHeight, FoliageAttachment foliage, int foliageHeight, int radius, int offset) {
 		BlockPos center = foliage.pos().above(offset);
 		placeSpheroidFoliage(levelReader, setter, configuration, random, center, foliage.radiusOffset() + this.radius.sample(random), foliage.radiusOffset() + 1.5F + random.nextInt(2));
 	}

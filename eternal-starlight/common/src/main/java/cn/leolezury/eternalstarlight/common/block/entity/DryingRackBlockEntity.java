@@ -118,14 +118,14 @@ public class DryingRackBlockEntity extends SimpleContainerBlockEntity {
 		super.loadAdditional(compoundTag);
 		this.dryingTicks = compoundTag.getIntOr(TAG_DRYING_TICKS, 0);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
+		ContainerHelper.loadAllItems(compoundTag, this.items);
 	}
 
 	@Override
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
 		compoundTag.putInt(TAG_DRYING_TICKS, this.dryingTicks);
-		ContainerHelper.saveAllItems(compoundTag, this.items, provider);
+		ContainerHelper.saveAllItems(compoundTag, this.items);
 	}
 
 	@Override

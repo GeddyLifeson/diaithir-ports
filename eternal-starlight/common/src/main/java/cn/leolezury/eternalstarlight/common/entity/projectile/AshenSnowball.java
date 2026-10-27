@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 
 import cn.leolezury.eternalstarlight.common.registry.ESEntities;
@@ -28,11 +29,11 @@ public class AshenSnowball extends ThrowableItemProjectile {
 	}
 
 	public AshenSnowball(Level level, LivingEntity livingEntity) {
-		super(ESEntities.ASHEN_SNOWBALL.get(), livingEntity, level);
+		super(ESEntities.ASHEN_SNOWBALL.get(), livingEntity, level, new ItemStack(ESItems.ASHEN_SNOWBALL.get()));
 	}
 
 	public AshenSnowball(Level level, double x, double y, double z) {
-		super(ESEntities.ASHEN_SNOWBALL.get(), x, y, z, level);
+		super(ESEntities.ASHEN_SNOWBALL.get(), x, y, z, level, new ItemStack(ESItems.ASHEN_SNOWBALL.get()));
 	}
 
 	@Override

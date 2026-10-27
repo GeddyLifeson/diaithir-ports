@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.entity.projectile.ShotSeeds;
 import cn.leolezury.eternalstarlight.common.registry.ESParticles;
 import cn.leolezury.eternalstarlight.common.registry.ESSoundEvents;
@@ -56,7 +57,7 @@ public class SeedsLauncherItem extends ProjectileWeaponItem {
 					this.shoot(serverLevel, living, living.getUsedItemHand(), stack, list, 0.75F, 7.5F, true, null);
 					Vec3 particlePos = ESMathUtil.rotationToPosition(living.position().add(0, 3 * living.getBbHeight() / 4, 0), 1f, -living.getXRot(), living.getYHeadRot() + 90);
 					serverLevel.sendParticles(ESParticles.PUNGENCY_FRUIT_SMOKE.get(), particlePos.x(), particlePos.y(), particlePos.z(), 20, 0.1, 0.1, 0.1, 0.025);
-					stack.hurtAndBreak(1, living, LivingEntity.getSlotForHand(living.getUsedItemHand()));
+					stack.hurtAndBreak(1, living, ESPortCompat.slotForHand(living.getUsedItemHand()));
 				}
 				return true;
 			}

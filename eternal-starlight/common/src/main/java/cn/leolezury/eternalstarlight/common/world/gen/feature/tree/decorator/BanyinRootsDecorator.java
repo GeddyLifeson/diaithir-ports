@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.MangroveRootsBlock;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
@@ -30,7 +30,7 @@ public class BanyinRootsDecorator extends TreeDecorator {
 	@Override
 	public void place(Context context) {
 		RandomSource random = context.random();
-		LevelSimulatedReader level = context.level();
+		WorldGenLevel level = context.level();
 		Optional<BlockPos> lowest = context.logs().stream().min(Comparator.comparingInt(Vec3i::getY));
 		if (lowest.isPresent()) {
 			int lowestY = lowest.get().getY();

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.misc;
 
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -58,17 +59,18 @@ public class ESChestBoat extends ESBoat implements HasCustomInventoryScreen, Con
 
 	protected void addAdditionalSaveData(ValueOutput tag) {
 		super.addAdditionalSaveData(tag);
-		this.addChestVehicleSaveData(tag, this.registryAccess());
+		this.addChestVehicleSaveData(tag);
 	}
 
 	protected void readAdditionalSaveData(ValueInput tag) {
 		super.readAdditionalSaveData(tag);
-		this.readChestVehicleSaveData(tag, this.registryAccess());
+		this.readChestVehicleSaveData(tag);
 	}
 
-	public void destroy(DamageSource source) {
-		super.destroy(source);
-		this.chestVehicleDestroyed(source, this.level(), this);
+	@Override
+	public void destroy(net.minecraft.server.level.ServerLevel level, DamageSource source) {
+		this.destroy(level, this.getBoatDropItem());
+		this.chestVehicleDestroyed(source, level, this);
 	}
 
 	public void remove(Entity.RemovalReason reason) {
@@ -79,30 +81,35 @@ public class ESChestBoat extends ESBoat implements HasCustomInventoryScreen, Con
 		super.remove(reason);
 	}
 
-	public InteractionResult interact(Player player, InteractionHand hand) {
-		if (this.canAddPassenger(player) && !player.isSecondaryUseActive()) {
-			return super.interact(player, hand);
+	@Override
+	public InteractionResult interact(Player player, InteractionHand hand, Vec3 location) {
+		InteractionResult superInteraction = super.interact(player, hand, location);
+		if (superInteraction != InteractionResult.PASS) {
+			return superInteraction;
+		} else if (this.canAddPassenger(player) && !player.isSecondaryUseActive()) {
+			return InteractionResult.PASS;
 		} else {
-			InteractionResult interactionresult = this.interactWithContainerVehicle(player);
-			if (interactionresult.consumesAction()) {
+			InteractionResult result = this.interactWithContainerVehicle(player);
+			if (result.consumesAction() && player.level() instanceof net.minecraft.server.level.ServerLevel serverLevel) {
 				this.gameEvent(GameEvent.CONTAINER_OPEN, player);
-				PiglinAi.angerNearbyPiglins(player, true);
+				PiglinAi.angerNearbyPiglins(serverLevel, player, true);
 			}
 
-			return interactionresult;
+			return result;
 		}
 	}
 
 	public void openCustomInventoryScreen(Player player) {
 		player.openMenu(this);
-		if (!player.level().isClientSide()) {
+		if (player.level() instanceof net.minecraft.server.level.ServerLevel serverLevel) {
 			this.gameEvent(GameEvent.CONTAINER_OPEN, player);
-			PiglinAi.angerNearbyPiglins(player, true);
+			PiglinAi.angerNearbyPiglins(serverLevel, player, true);
 		}
 
 	}
 
-	public Item getDropItem() {
+	@Override
+	public Item getBoatDropItem() {
 		return switch (this.getESBoatType()) {
 			case LUNAR -> ESItems.LUNAR_CHEST_BOAT.get();
 			case NORTHLAND -> ESItems.NORTHLAND_CHEST_BOAT.get();
@@ -175,22 +182,22 @@ public class ESChestBoat extends ESBoat implements HasCustomInventoryScreen, Con
 
 	@Nullable
 	@Override
-	public ResourceKey<LootTable> getLootTable() {
+	public ResourceKey<LootTable> getContainerLootTable() {
 		return this.lootTable;
 	}
 
 	@Override
-	public void setLootTable(@Nullable ResourceKey<LootTable> resourceKey) {
+	public void setContainerLootTable(@Nullable ResourceKey<LootTable> resourceKey) {
 		this.lootTable = resourceKey;
 	}
 
 	@Override
-	public long getLootTableSeed() {
+	public long getContainerLootTableSeed() {
 		return this.lootTableSeed;
 	}
 
 	@Override
-	public void setLootTableSeed(long seed) {
+	public void setContainerLootTableSeed(long seed) {
 		this.lootTableSeed = seed;
 	}
 
@@ -202,5 +209,10 @@ public class ESChestBoat extends ESBoat implements HasCustomInventoryScreen, Con
 	@Override
 	public void clearItemStacks() {
 		this.itemStacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+	}
+
+	@Override
+	public void stopOpen(net.minecraft.world.entity.ContainerUser containerUser) {
+		this.level().gameEvent(GameEvent.CONTAINER_CLOSE, this.position(), GameEvent.Context.of(containerUser.getLivingEntity()));
 	}
 }

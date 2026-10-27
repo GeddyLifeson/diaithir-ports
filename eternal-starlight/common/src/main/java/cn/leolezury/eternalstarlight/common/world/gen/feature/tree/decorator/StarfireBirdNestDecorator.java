@@ -9,7 +9,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
@@ -47,7 +47,7 @@ public class StarfireBirdNestDecorator extends TreeDecorator {
 		});
 	}
 
-	public static void placeNest(LevelSimulatedReader level, RandomSource random, BlockPos nestPos, BiConsumer<BlockPos, BlockState> setBlock) {
+	public static void placeNest(WorldGenLevel level, RandomSource random, BlockPos nestPos, BiConsumer<BlockPos, BlockState> setBlock) {
 		if (!level.isStateAtPosition(nestPos, BlockState::isAir)) {
 			return;
 		}

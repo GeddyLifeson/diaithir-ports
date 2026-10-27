@@ -93,7 +93,8 @@ public class GrimstoneGolem extends AbstractGolem {
 	protected InteractionResult mobInteract(Player player, InteractionHand interactionHand) {
 		if (getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && !player.getItemInHand(interactionHand).isEmpty()) {
 			setItemInHand(InteractionHand.MAIN_HAND, player.getItemInHand(interactionHand).copy());
-			Arrays.fill(handDropChances, 0);
+			this.setDropChance(net.minecraft.world.entity.EquipmentSlot.MAINHAND, 0);
+		this.setDropChance(net.minecraft.world.entity.EquipmentSlot.OFFHAND, 0);
 			if (!player.hasInfiniteMaterials()) {
 				player.setItemInHand(interactionHand, ItemStack.EMPTY);
 			}
@@ -115,7 +116,7 @@ public class GrimstoneGolem extends AbstractGolem {
 	@Override
 	protected void dropCustomDeathLoot(ServerLevel serverLevel, DamageSource damageSource, boolean bl) {
 		super.dropCustomDeathLoot(serverLevel, damageSource, bl);
-		if (!getMainHandItem().isEmpty() && handDropChances[0] == 0 && handDropChances[1] == 0) {
+		if (!getMainHandItem().isEmpty() && getDropChances().byEquipment(net.minecraft.world.entity.EquipmentSlot.MAINHAND) == 0 && getDropChances().byEquipment(net.minecraft.world.entity.EquipmentSlot.OFFHAND) == 0) {
 			ESPortCompat.spawnAtLocation(this, getMainHandItem().copy());
 		}
 	}

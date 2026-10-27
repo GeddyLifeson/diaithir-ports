@@ -23,7 +23,7 @@ public class WitnessWeatherTrigger extends SimpleCriterionTrigger<WitnessWeather
 	}
 
 	public void trigger(ServerPlayer serverPlayer) {
-		this.trigger(serverPlayer, (triggerInstance) -> triggerInstance.matches(serverPlayer.serverLevel()));
+		this.trigger(serverPlayer, (triggerInstance) -> triggerInstance.matches(serverPlayer.level()));
 	}
 
 	public record TriggerInstance(Optional<ContextAwarePredicate> player, Holder<AbstractWeather> weather) implements SimpleCriterionTrigger.SimpleInstance {

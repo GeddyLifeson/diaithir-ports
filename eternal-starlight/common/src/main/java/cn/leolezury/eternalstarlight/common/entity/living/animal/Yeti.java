@@ -133,11 +133,11 @@ public class Yeti extends Animal {
 
 	@Override
 	protected void customServerAiStep(net.minecraft.server.level.ServerLevel esLevel) {
-		this.level().getProfiler().push("YetiBrain");
+		net.minecraft.util.profiling.Profiler.get().push("YetiBrain");
 		this.getBrain().tick((ServerLevel) this.level(), this);
-		this.level().getProfiler().popPush("YetiActivityUpdate");
+		net.minecraft.util.profiling.Profiler.get().popPush("YetiActivityUpdate");
 		YetiAi.updateActivity(this);
-		this.level().getProfiler().pop();
+		net.minecraft.util.profiling.Profiler.get().pop();
 		super.customServerAiStep(esLevel);
 	}
 
@@ -198,7 +198,7 @@ public class Yeti extends Animal {
 			if (!level().isClientSide()) {
 				this.level().playSound(null, this, SoundEvents.SHEEP_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
 				this.gameEvent(GameEvent.SHEAR, player);
-				itemStack.hurtAndBreak(1, player, getSlotForHand(hand));
+				itemStack.hurtAndBreak(1, player, ESPortCompat.slotForHand(hand));
 
 				int i = 1 + getRandom().nextInt(3);
 				for (int j = 0; j < i; ++j) {

@@ -16,7 +16,6 @@ import java.util.List;
 
 public class AccessoryCombinationRecipe extends CustomRecipe {
 	public AccessoryCombinationRecipe(CraftingBookCategory category) {
-		super(category);
 	}
 
 	@Override
@@ -41,7 +40,7 @@ public class AccessoryCombinationRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(CraftingInput recipeInput, HolderLookup.Provider provider) {
+	public ItemStack assemble(CraftingInput recipeInput) {
 		List<ItemStack> accessory = recipeInput.items().stream().filter(stack -> stack.has(ESDataComponents.ACCESSORY.get())).toList();
 		List<ItemStack> equipment = recipeInput.items().stream().filter(stack -> {
 			Accessory data = accessory.getFirst().get(ESDataComponents.ACCESSORY.get());
@@ -61,13 +60,9 @@ public class AccessoryCombinationRecipe extends CustomRecipe {
 		}
 	}
 
-	@Override
-	public boolean canCraftInDimensions(int i, int j) {
-		return true;
-	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public RecipeSerializer<AccessoryCombinationRecipe> getSerializer() {
 		return ESRecipeSerializers.ACCESSORY_COMBINATION.get();
 	}
 }

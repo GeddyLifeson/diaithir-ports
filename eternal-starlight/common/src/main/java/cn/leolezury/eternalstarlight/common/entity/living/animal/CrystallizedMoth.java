@@ -78,7 +78,7 @@ public class CrystallizedMoth extends TamableAnimal implements FlyingAnimal, Neu
 	public CrystallizedMoth(EntityType<? extends CrystallizedMoth> entityType, Level level) {
 		super(entityType, level);
 		this.moveControl = new MothMoveControl();
-		this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
+		this.setPathfindingMalus(PathType.FIRE, -1.0F);
 		this.setPathfindingMalus(PathType.WATER, -1.0F);
 		this.setPathfindingMalus(PathType.WATER_BORDER, -1.0F);
 		this.setNoGravity(true);

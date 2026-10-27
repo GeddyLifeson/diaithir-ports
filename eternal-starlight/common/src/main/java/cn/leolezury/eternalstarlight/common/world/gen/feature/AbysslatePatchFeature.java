@@ -37,12 +37,12 @@ public class AbysslatePatchFeature extends Feature<AbysslatePatchFeature.Configu
 							if (level.getBlockState(placePos.above()).isAir() || !level.getBlockState(placePos.above()).getFluidState().isEmpty()) {
 								if (random.nextInt(8) == 0) {
 									if (random.nextBoolean()) {
-										setBlock(level, placePos, config.magma().getState(random, placePos));
+										setBlock(level, placePos, config.magma().getState(level, random, placePos));
 										if (random.nextInt(5) == 0) {
 											setBlock(level, placePos.above(), ESBlocks.ABYSSAL_FIRE.get().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, true));
 										}
 									} else {
-										setBlock(level, placePos, config.geyser().getState(random, placePos));
+										setBlock(level, placePos, config.geyser().getState(level, random, placePos));
 									}
 								}
 							}

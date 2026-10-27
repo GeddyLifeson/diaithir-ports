@@ -17,9 +17,9 @@ public record GatekeeperTalkPacket(int id) implements CustomPacketPayload {
 	);
 
 	public static void handle(GatekeeperTalkPacket packet, Player player) {
-		if (player instanceof ServerPlayer serverPlayer && serverPlayer.serverLevel().getEntity(packet.id()) instanceof TheGatekeeper gatekeeper
+		if (player instanceof ServerPlayer serverPlayer && serverPlayer.level().getEntity(packet.id()) instanceof TheGatekeeper gatekeeper
 			&& gatekeeper.distanceToSqr(serverPlayer) <= 4096) {
-			serverPlayer.serverLevel().broadcastEntityEvent(gatekeeper, TheGatekeeper.EVENT_TALK);
+			serverPlayer.level().broadcastEntityEvent(gatekeeper, TheGatekeeper.EVENT_TALK);
 		}
 	}
 

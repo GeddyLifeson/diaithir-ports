@@ -101,7 +101,6 @@ public abstract class Whip extends Entity implements TraceableEntity {
 
 	public Whip(EntityType<? extends Whip> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	public Whip(EntityType<? extends Whip> entityType, Level level, Player player, @Nullable ItemStack weapon, float damageScale) {

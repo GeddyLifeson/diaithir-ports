@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.EntitySpawnReason;
 
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
@@ -25,11 +26,11 @@ public class GleechEgg extends ThrowableItemProjectile {
 	}
 
 	public GleechEgg(Level level, LivingEntity livingEntity) {
-		super(ESEntities.GLEECH_EGG.get(), livingEntity, level);
+		super(ESEntities.GLEECH_EGG.get(), livingEntity, level, new ItemStack(ESItems.GLEECH_EGG.get()));
 	}
 
 	public GleechEgg(Level level, double x, double y, double z) {
-		super(ESEntities.GLEECH_EGG.get(), x, y, z, level);
+		super(ESEntities.GLEECH_EGG.get(), x, y, z, level, new ItemStack(ESItems.GLEECH_EGG.get()));
 	}
 
 	@Override

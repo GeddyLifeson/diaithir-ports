@@ -282,7 +282,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 			compoundTag.read(TAG_BIRDS, Occupant.LIST_CODEC).ifPresent((list) -> list.forEach(this::storeBird));
 		}
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compoundTag, this.items, compoundTag.lookup());
+		ContainerHelper.loadAllItems(compoundTag, this.items);
 		if (ESPortCompat.has(compoundTag, TAG_LAST_SEED_PLAYER)) {
 			lastSeedPlayer = ESPortCompat.getUUID(compoundTag, TAG_LAST_SEED_PLAYER);
 		}
@@ -294,7 +294,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 	protected void saveAdditional(ValueOutput compoundTag) {
 		super.saveAdditional(compoundTag);
 		compoundTag.store(TAG_BIRDS, Occupant.LIST_CODEC, this.getBirds());
-		ContainerHelper.saveAllItems(compoundTag, this.items, provider);
+		ContainerHelper.saveAllItems(compoundTag, this.items);
 		if (lastSeedPlayer != null) {
 			ESPortCompat.putUUID(compoundTag, TAG_LAST_SEED_PLAYER, lastSeedPlayer);
 		}
@@ -421,7 +421,7 @@ public class StarfireBirdNestBlockEntity extends SimpleContainerBlockEntity {
 		public Entity createEntity(Level level, BlockPos blockPos, boolean setData) {
 			CompoundTag compoundTag = this.entityData.copyTag();
 			IGNORED_BIRD_TAGS.forEach(compoundTag::remove);
-			Entity entity = EntityType.loadEntityRecursive(compoundTag, level, e -> e);
+			Entity entity = EntityType.loadEntityRecursive(compoundTag, level, EntitySpawnReason.LOAD, e -> e);
 			if (entity != null) {
 				entity.setNoGravity(true);
 				if (entity instanceof StarfireBird bird) {

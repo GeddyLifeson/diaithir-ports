@@ -18,7 +18,6 @@ public class ToolModificationRecipe extends CustomRecipe {
 	private final ItemStack output;
 
 	public ToolModificationRecipe(CraftingBookCategory category, Item tool, Item input, ItemStack output) {
-		super(category);
 		this.tool = tool;
 		this.input = input;
 		this.output = output;
@@ -36,7 +35,7 @@ public class ToolModificationRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(CraftingInput recipeInput, HolderLookup.Provider provider) {
+	public ItemStack assemble(CraftingInput recipeInput) {
 		return output.copy();
 	}
 
@@ -57,17 +56,17 @@ public class ToolModificationRecipe extends CustomRecipe {
 		return items;
 	}
 
-	@Override
-	public boolean canCraftInDimensions(int i, int j) {
-		return true;
-	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public RecipeSerializer<ToolModificationRecipe> getSerializer() {
 		return ESRecipeSerializers.TOOL_MODIFICATION.get();
 	}
 
-	public static class Serializer implements RecipeSerializer<ToolModificationRecipe> {
+	public static class Serializer {
+		public RecipeSerializer<ToolModificationRecipe> build() {
+			return new RecipeSerializer<>(codec(), streamCodec());
+		}
+
 		private static final MapCodec<ToolModificationRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			CraftingBookCategory.CODEC.fieldOf("category").orElse(CraftingBookCategory.MISC).forGetter(CraftingRecipe::category),
 			BuiltInRegistries.ITEM.byNameCodec().fieldOf("tool").forGetter(o -> o.tool),
@@ -75,12 +74,10 @@ public class ToolModificationRecipe extends CustomRecipe {
 			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(o -> o.output)
 		).apply(instance, ToolModificationRecipe::new));
 
-		@Override
 		public MapCodec<ToolModificationRecipe> codec() {
 			return CODEC;
 		}
 
-		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, ToolModificationRecipe> streamCodec() {
 			return new StreamCodec<>() {
 				@Override

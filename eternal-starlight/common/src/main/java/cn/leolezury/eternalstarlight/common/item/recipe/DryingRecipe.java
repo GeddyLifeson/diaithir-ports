@@ -13,6 +13,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.PlacementInfo;
+import net.minecraft.world.item.crafting.RecipeBookCategories;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
@@ -24,27 +27,39 @@ public record DryingRecipe(Ingredient input, ItemStack output, int durationTicks
 	}
 
 	@Override
-	public ItemStack assemble(DryingRecipeInput container, HolderLookup.Provider provider) {
+	public ItemStack assemble(DryingRecipeInput container) {
 		return output().copy();
 	}
 
+
+
 	@Override
-	public boolean canCraftInDimensions(int i, int j) {
+	public boolean showNotification() {
 		return true;
 	}
 
 	@Override
-	public ItemStack getResultItem(HolderLookup.Provider provider) {
-		return output();
+	public String group() {
+		return "";
 	}
 
 	@Override
-	public RecipeSerializer<?> getSerializer() {
+	public PlacementInfo placementInfo() {
+		return PlacementInfo.NOT_PLACEABLE;
+	}
+
+	@Override
+	public RecipeBookCategory recipeBookCategory() {
+		return RecipeBookCategories.FURNACE_MISC;
+	}
+
+	@Override
+	public RecipeSerializer<DryingRecipe> getSerializer() {
 		return ESRecipeSerializers.DRYING.get();
 	}
 
 	@Override
-	public RecipeType<?> getType() {
+	public RecipeType<DryingRecipe> getType() {
 		return ESRecipes.DRYING.get();
 	}
 
@@ -57,7 +72,11 @@ public record DryingRecipe(Ingredient input, ItemStack output, int durationTicks
 		}
 	}
 
-	public static class Serializer implements RecipeSerializer<DryingRecipe> {
+	public static class Serializer {
+		public RecipeSerializer<DryingRecipe> build() {
+			return new RecipeSerializer<>(codec(), streamCodec());
+		}
+
 		private static final MapCodec<DryingRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
 			Ingredient.CODEC.fieldOf("input").forGetter(DryingRecipe::input),
 			ItemStack.OPTIONAL_CODEC.fieldOf("output").forGetter(DryingRecipe::output),
@@ -65,12 +84,10 @@ public record DryingRecipe(Ingredient input, ItemStack output, int durationTicks
 			Codec.BOOL.fieldOf("fire_below").forGetter(DryingRecipe::fireBelow)
 		).apply(instance, DryingRecipe::new));
 
-		@Override
 		public MapCodec<DryingRecipe> codec() {
 			return CODEC;
 		}
 
-		@Override
 		public StreamCodec<RegistryFriendlyByteBuf, DryingRecipe> streamCodec() {
 			return new StreamCodec<>() {
 				@Override

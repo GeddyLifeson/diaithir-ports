@@ -117,7 +117,7 @@ public class SpeleothemFeature extends Feature<SpeleothemFeature.Configuration> 
 			} else {
 				thickness = SpeleothemThickness.TIP;
 			}
-			BlockState spikeState = config.speleothem.getState(random, pos)
+			BlockState spikeState = config.speleothem.getState(level, random, pos)
 				.setValue(SpeleothemBlock.TIP_DIRECTION, tipDirection)
 				.setValue(SpeleothemBlock.THICKNESS, thickness);
 			level.setBlock(pos, spikeState, Block.UPDATE_ALL);

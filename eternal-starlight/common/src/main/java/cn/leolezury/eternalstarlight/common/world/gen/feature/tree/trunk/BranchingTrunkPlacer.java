@@ -13,7 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -63,7 +63,7 @@ public class BranchingTrunkPlacer extends TrunkPlacer {
 	}
 
 	@Override
-	public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader reader, BiConsumer<BlockPos, BlockState> placer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
+	public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel reader, BiConsumer<BlockPos, BlockState> placer, RandomSource random, int height, BlockPos startPos, TreeConfiguration config) {
 		int numBranchesLayer = branchLayerNum.sample(random);
 		int numBranches = branchNum.sample(random);
 		int lenBranches = branchLen.sample(random);
@@ -73,7 +73,7 @@ public class BranchingTrunkPlacer extends TrunkPlacer {
 			for (int z = 0; z <= 1; z++) {
 				BlockPos pos = startPos.offset(x, 0, z);
 				if (reader.isStateAtPosition(pos, state -> state.isAir() || state.is(BlockTags.SAPLINGS))) {
-					placer.accept(pos, config.trunkProvider.getState(random, pos));
+					placer.accept(pos, config.trunkProvider.getState(reader, random, pos));
 					placer.accept(pos, Blocks.AIR.defaultBlockState());
 				}
 			}
@@ -81,7 +81,7 @@ public class BranchingTrunkPlacer extends TrunkPlacer {
 		return placeBranchingTrunk(reader, placer, startPos, random, height, numBranchesLayer, numBranches, lenBranches, config);
 	}
 
-	private List<FoliagePlacer.FoliageAttachment> placeBranchingTrunk(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> placer, BlockPos origin, RandomSource random, int height, int numBranchesLayer, int numBranches, int lenBranches, TreeConfiguration config) {
+	private List<FoliagePlacer.FoliageAttachment> placeBranchingTrunk(WorldGenLevel level, BiConsumer<BlockPos, BlockState> placer, BlockPos origin, RandomSource random, int height, int numBranchesLayer, int numBranches, int lenBranches, TreeConfiguration config) {
 		List<FoliagePlacer.FoliageAttachment> leafAttachments = Lists.newArrayList();
 
 		int distBetweenLayers = height / (2 * numBranchesLayer);
@@ -134,13 +134,13 @@ public class BranchingTrunkPlacer extends TrunkPlacer {
 		return leafAttachments;
 	}
 
-	protected static void safeSetDirt(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> placer, RandomSource random, BlockPos pos, TreeConfiguration config) {
-		if ((level.isStateAtPosition(pos, BlockBehaviour.BlockStateBase::isAir) || level.isStateAtPosition(pos, BlockBehaviour.BlockStateBase::canBeReplaced) || level.isStateAtPosition(pos, state -> state.getBlock() instanceof LiquidBlock)) && (config.forceDirt || !isDirt(level, pos))) {
-			placer.accept(pos, config.dirtProvider.getState(random, pos));
+	protected static void safeSetDirt(WorldGenLevel level, BiConsumer<BlockPos, BlockState> placer, RandomSource random, BlockPos pos, TreeConfiguration config) {
+		if ((level.isStateAtPosition(pos, BlockBehaviour.BlockStateBase::isAir) || level.isStateAtPosition(pos, BlockBehaviour.BlockStateBase::canBeReplaced) || level.isStateAtPosition(pos, state -> state.getBlock() instanceof LiquidBlock)) && !isDirt(level, pos)) {
+			placer.accept(pos, config.belowTrunkProvider.getState(level, random, pos));
 		}
 	}
 
-	private static boolean isDirt(LevelSimulatedReader level, BlockPos blockPos) {
-		return level.isStateAtPosition(blockPos, (blockState) -> Feature.isDirt(blockState) && !blockState.is(Blocks.GRASS_BLOCK) && !blockState.is(Blocks.MYCELIUM));
+	private static boolean isDirt(WorldGenLevel level, BlockPos blockPos) {
+		return level.isStateAtPosition(blockPos, (blockState) -> blockState.is(net.minecraft.tags.BlockTags.DIRT) && !blockState.is(Blocks.GRASS_BLOCK) && !blockState.is(Blocks.MYCELIUM));
 	}
 }

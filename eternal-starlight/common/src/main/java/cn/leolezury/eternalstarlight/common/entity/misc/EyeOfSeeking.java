@@ -49,7 +49,6 @@ public class EyeOfSeeking extends Entity implements ItemSupplier {
 
 	public EyeOfSeeking(EntityType<? extends EyeOfSeeking> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	public EyeOfSeeking(Level level, double x, double y, double z) {

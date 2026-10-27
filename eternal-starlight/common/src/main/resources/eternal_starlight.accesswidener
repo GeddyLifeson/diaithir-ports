@@ -141,3 +141,6 @@ accessible method net/minecraft/world/entity/player/Player getEnchantedDamage (L
 # layer attachment
 
 # model utils
+accessible field net/minecraft/world/entity/projectile/arrow/AbstractArrow baseDamage D
+accessible method net/minecraft/world/entity/projectile/arrow/AbstractArrow isInGround ()Z
+accessible method net/minecraft/world/entity/projectile/arrow/AbstractArrow setInGround (Z)V

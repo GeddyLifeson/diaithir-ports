@@ -32,7 +32,7 @@ public class ShotSeeds extends ThrowableItemProjectile {
 	}
 
 	public ShotSeeds(Level level, LivingEntity livingEntity, ItemStack stack, ItemStack weapon) {
-		super(ESEntities.SHOT_SEEDS.get(), livingEntity, level);
+		super(ESEntities.SHOT_SEEDS.get(), livingEntity, level, new ItemStack(Items.WHEAT_SEEDS));
 		setItem(stack);
 		if (weapon != null) {
 			firedFromWeapon = weapon.copy();
@@ -43,7 +43,7 @@ public class ShotSeeds extends ThrowableItemProjectile {
 	}
 
 	public ShotSeeds(Level level, double x, double y, double z) {
-		super(ESEntities.SHOT_SEEDS.get(), x, y, z, level);
+		super(ESEntities.SHOT_SEEDS.get(), x, y, z, level, new ItemStack(Items.WHEAT_SEEDS));
 	}
 
 	// copied from EnchantmentHelper

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.projectile;
 
+import net.minecraft.world.item.ItemStack;
 import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.network.ParticlePacket;
 import cn.leolezury.eternalstarlight.common.particle.ESExplosionParticleOptions;
@@ -30,11 +31,11 @@ public class FrozenBomb extends ThrowableItemProjectile {
 	}
 
 	public FrozenBomb(Level level, LivingEntity livingEntity) {
-		super(ESEntities.FROZEN_BOMB.get(), livingEntity, level);
+		super(ESEntities.FROZEN_BOMB.get(), livingEntity, level, new ItemStack(ESItems.FROZEN_BOMB.get()));
 	}
 
 	public FrozenBomb(Level level, double x, double y, double z) {
-		super(ESEntities.FROZEN_BOMB.get(), x, y, z, level);
+		super(ESEntities.FROZEN_BOMB.get(), x, y, z, level, new ItemStack(ESItems.FROZEN_BOMB.get()));
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class FrozenBomb extends ThrowableItemProjectile {
 			}
 			serverLevel.sendParticles(ESExplosionParticleOptions.FROZEN, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 10, 1.5, 1.5, 1.5, 0);
 			serverLevel.sendParticles(ESExplosionParticleOptions.FROZEN_BLAST, this.getX() + (this.random.nextFloat() - 0.5) * getBbWidth(), this.getY() + random.nextFloat() * getBbHeight(), this.getZ() + (this.random.nextFloat() - 0.5) * getBbWidth(), 3, 0.2, 0.2, 0.2, 0.0);
-			level().explode(this, null, null, this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.TNT, ESExplosionParticleOptions.FROZEN, ESExplosionParticleOptions.FROZEN, SoundEvents.GENERIC_EXPLODE);
+			level().explode(this, null, null, this.getX(), this.getY(), this.getZ(), 3, false, Level.ExplosionInteraction.TNT, ESExplosionParticleOptions.FROZEN, ESExplosionParticleOptions.FROZEN, net.minecraft.util.random.WeightedList.of(), SoundEvents.GENERIC_EXPLODE);
 			for (LivingEntity entity : level().getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(3))) {
 				if (ESEntityUtil.shouldHarm(getOwner(), entity)) {
 					if (entity.canFreeze()) {

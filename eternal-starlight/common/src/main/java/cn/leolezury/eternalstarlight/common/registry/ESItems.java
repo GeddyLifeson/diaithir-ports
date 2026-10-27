@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.registry;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import cn.leolezury.eternalstarlight.common.EternalStarlight;
@@ -870,7 +871,8 @@ public class ESItems {
 				Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.base_slot_description"))),
 		Component.translatable(Util.makeDescriptionId("item", EternalStarlight.id("smithing_template.pungency_fruit_upgrade.additions_slot_description"))),
 		List.of(Identifier.withDefaultNamespace("item/empty_slot_axe")),
-		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond"))
+		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond")),
+		new Item.Properties()
 	));
 	public static final RegistryObject<Item, Item> PUNGENCY_FRUIT_AXE = ITEMS.register("pungency_fruit_axe",
 		() -> new Item(new Item.Properties().axe(ESItemTiers.PUNGENCY_FRUIT.material(), 6, -3)));
@@ -915,7 +917,8 @@ public class ESItems {
 			Identifier.withDefaultNamespace("item/empty_slot_hoe"),
 			Identifier.withDefaultNamespace("item/empty_slot_shovel")
 		),
-		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond"))
+		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond")),
+		new Item.Properties()
 	));
 	public static final RegistryObject<Item, Item> STARFIRE_SWORD = ITEMS.register("starfire_sword",
 		() -> new Item(new Item.Properties().sword(ESItemTiers.STARFIRE.material(), 3, -2.4F)));
@@ -952,7 +955,8 @@ public class ESItems {
 			Identifier.withDefaultNamespace("item/empty_slot_hoe"),
 			Identifier.withDefaultNamespace("item/empty_slot_shovel")
 		),
-		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond"))
+		List.of(Identifier.withDefaultNamespace("item/empty_slot_diamond")),
+		new Item.Properties()
 	));
 	public static final RegistryObject<Item, Item> FLOWGLAZE_SWORD = ITEMS.register("flowglaze_sword",
 		() -> new Item(new Item.Properties().sword(ESItemTiers.FLOWGLAZE.material(), 3, -2.4F)));

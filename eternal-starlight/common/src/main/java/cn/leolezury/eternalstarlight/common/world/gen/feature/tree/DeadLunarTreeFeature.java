@@ -27,7 +27,7 @@ public class DeadLunarTreeFeature extends Feature<NoneFeatureConfiguration> {
 
 	private BlockState getBlockToPlace(RandomSource randomSource, BlockPos pos) {
 		WeightedStateProvider stateProvider = new WeightedStateProvider(WeightedList.<BlockState>builder().add(ESBlocks.DEAD_LUNAR_LOG.get().defaultBlockState(), 10).add(ESBlocks.RED_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).add(ESBlocks.BLUE_CRYSTALLIZED_LUNAR_LOG.get().defaultBlockState(), 1).build());
-		return stateProvider.getState(randomSource, pos);
+		return stateProvider.getState(null, randomSource, pos);
 	}
 
 	private void placeBlockLine(BlockPos from, BlockPos to, Consumer<BlockPos> placer) {

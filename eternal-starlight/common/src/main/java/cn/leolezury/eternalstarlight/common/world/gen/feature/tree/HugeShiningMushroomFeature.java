@@ -29,7 +29,7 @@ public class HugeShiningMushroomFeature extends Feature<HugeMushroomFeatureConfi
 		HugeMushroomFeatureConfiguration config = context.config();
 
 		BlockState groundBlock = level.getBlockState(origin.below());
-		if (!groundBlock.is(BlockTags.MUSHROOM_GROW_BLOCK) && !groundBlock.is(BlockTags.DIRT)) {
+		if (!groundBlock.is(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT) && !groundBlock.is(BlockTags.DIRT)) {
 			return false;
 		}
 
@@ -43,7 +43,7 @@ public class HugeShiningMushroomFeature extends Feature<HugeMushroomFeatureConfi
 			return false;
 		}
 
-		int radius = config.foliageRadius;
+		int radius = config.foliageRadius();
 		BlockPos capCenter = origin.above(trunkHeight);
 		int capY = capCenter.getY();
 		BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
@@ -86,11 +86,11 @@ public class HugeShiningMushroomFeature extends Feature<HugeMushroomFeatureConfi
 		}
 
 		for (BlockPos pos : stemPositions) {
-			setBlock(level, pos, config.stemProvider.getState(random, pos));
+			setBlock(level, pos, config.stemProvider().getState(level, random, pos));
 		}
 
 		for (BlockPos pos : capPositions) {
-			BlockState state = config.capProvider.getState(random, pos);
+			BlockState state = config.capProvider().getState(level, random, pos);
 
 			if (state.hasProperty(HugeMushroomBlock.NORTH)
 				&& state.hasProperty(HugeMushroomBlock.SOUTH)

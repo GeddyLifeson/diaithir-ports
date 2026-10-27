@@ -20,7 +20,7 @@ public class StarfireCrossbowItem extends CrossbowItem {
 		Projectile projectile = super.createProjectile(level, shooter, weapon, ammo, isCrit);
 		ESDataAttachments.ARROW_TYPE.setData(projectile, ESCommonHandler.STARFIRE_ARROW);
 		if (projectile instanceof AbstractArrow arrow) {
-			arrow.setBaseDamage(arrow.getBaseDamage() + 0.25);
+			arrow.setBaseDamage(arrow.baseDamage + 0.25);
 		}
 		return projectile;
 	}

@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.item.combat.ESItemTiers;
 
 import net.minecraft.world.item.Item;
@@ -65,7 +66,7 @@ public abstract class SpearItem extends Item implements ProjectileItem {
 			if (i >= 10) {
 				if (!isTooDamagedToUse(stack)) {
 					if (!level.isClientSide()) {
-						stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(living.getUsedItemHand()));
+						stack.hurtAndBreak(1, player, ESPortCompat.slotForHand(living.getUsedItemHand()));
 						Vec3 shootPos = player.getEyePosition();
 						ThrownSpear spear = createSpear(level, player, shootPos.x, shootPos.y, shootPos.z, stack);
 						spear.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3.0F, 1.0F);

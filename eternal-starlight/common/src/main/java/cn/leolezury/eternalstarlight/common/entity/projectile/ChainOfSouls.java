@@ -81,7 +81,6 @@ public class ChainOfSouls extends Projectile implements Grappling {
 
 	public ChainOfSouls(EntityType<? extends ChainOfSouls> entityType, Level level) {
 		super(entityType, level);
-		this.noCulling = true;
 	}
 
 	public ChainOfSouls(Level level, Player player, @Nullable ItemStack weapon) {

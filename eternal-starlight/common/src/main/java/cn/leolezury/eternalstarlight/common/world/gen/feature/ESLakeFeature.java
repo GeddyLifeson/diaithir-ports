@@ -57,7 +57,7 @@ public class ESLakeFeature extends Feature<ESLakeFeature.Configuration> {
 				}
 			}
 
-			BlockState blockstate1 = config.fluid().getState(randomsource, blockpos);
+			BlockState blockstate1 = config.fluid().getState(level, randomsource, blockpos);
 
 			for (int k1 = 0; k1 < 16; k1++) {
 				for (int k = 0; k < 16; k++) {
@@ -103,7 +103,7 @@ public class ESLakeFeature extends Feature<ESLakeFeature.Configuration> {
 				}
 			}
 
-			BlockState blockstate2 = config.barrier().getState(randomsource, blockpos);
+			BlockState blockstate2 = config.barrier().getState(level, randomsource, blockpos);
 			if (!blockstate2.isAir()) {
 				for (int j2 = 0; j2 < 16; j2++) {
 					for (int j3 = 0; j3 < 16; j3++) {
@@ -122,7 +122,7 @@ public class ESLakeFeature extends Feature<ESLakeFeature.Configuration> {
 								if (blockstate.isSolid() && !blockstate.is(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE)) {
 									BlockPos blockpos3 = blockpos.offset(j2, l3, j3);
 									// ES: Randomize it every time before placing
-									blockstate2 = config.barrier().getState(randomsource, blockpos);
+									blockstate2 = config.barrier().getState(level, randomsource, blockpos);
 									level.setBlock(blockpos3, blockstate2, 2);
 									this.markAboveForPostProcessing(level, blockpos3);
 								}

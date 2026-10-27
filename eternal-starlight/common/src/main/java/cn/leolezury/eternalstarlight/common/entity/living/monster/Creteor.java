@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.entity.living.monster;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import net.minecraft.world.level.storage.ValueOutput;
 
 import net.minecraft.world.level.storage.ValueInput;
@@ -254,7 +255,7 @@ public class Creteor extends Monster implements PowerableMob {
 				if (!itemStack.isDamageableItem()) {
 					itemStack.shrink(1);
 				} else {
-					itemStack.hurtAndBreak(1, player, getSlotForHand(interactionHand));
+					itemStack.hurtAndBreak(1, player, ESPortCompat.slotForHand(interactionHand));
 				}
 			}
 

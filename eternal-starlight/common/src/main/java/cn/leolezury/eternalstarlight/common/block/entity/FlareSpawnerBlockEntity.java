@@ -83,10 +83,6 @@ public class FlareSpawnerBlockEntity extends BlockEntity implements Spawner {
 		return this.spawner.onEventTriggered(this.level, id) || super.triggerEvent(id, type);
 	}
 
-	@Override
-	public boolean onlyOpCanSetNbt() {
-		return true;
-	}
 
 	@Override
 	public void setEntityId(EntityType<?> type, RandomSource random) {

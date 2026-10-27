@@ -100,7 +100,7 @@ public class LootChestBlockEntity extends BlockEntity {
 		this.currentRewardTarget = player.getUUID();
 		if (this.lootTable != null) {
 			itemsToEject.clear();
-			ServerLevel serverLevel = player.serverLevel();
+			ServerLevel serverLevel = player.level();
 			MinecraftServer server = serverLevel.getServer();
 			LootTable table = server.reloadableRegistries().getLootTable(lootTable);
 			LootParams.Builder paramBuilder = new LootParams.Builder(serverLevel)

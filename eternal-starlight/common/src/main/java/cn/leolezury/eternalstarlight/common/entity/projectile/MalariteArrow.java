@@ -39,8 +39,8 @@ public class MalariteArrow extends AbstractArrow {
 	@Override
 	public void tick() {
 		super.tick();
-		if (this.level().isClientSide() && !this.inGround) {
-			this.level().addParticle(new DustColorTransitionOptions(new Vector3f(170 / 255f, 81 / 255f, 158 / 255f), new Vector3f(42 / 255f, 61 / 255f, 56 / 255f), 1f), this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+		if (this.level().isClientSide() && !this.isInGround()) {
+			this.level().addParticle(new DustColorTransitionOptions(net.minecraft.util.ARGB.colorFromFloat(1F, 170 / 255F, 81 / 255F, 158 / 255F), net.minecraft.util.ARGB.colorFromFloat(1F, 42 / 255F, 61 / 255F, 56 / 255F), 1f), this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
 		}
 	}
 

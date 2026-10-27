@@ -42,8 +42,8 @@ public class VoraciousArrow extends AbstractArrow {
 	@Override
 	public void tick() {
 		super.tick();
-		if (this.level().isClientSide() && !this.inGround) {
-			this.level().addParticle(new DustColorTransitionOptions(new Vector3f(127 / 255f, 99 / 255f, 129 / 255f), new Vector3f(85 / 255f, 71 / 255f, 87 / 255f), 1f), this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+		if (this.level().isClientSide() && !this.isInGround()) {
+			this.level().addParticle(new DustColorTransitionOptions(net.minecraft.util.ARGB.colorFromFloat(1F, 127 / 255F, 99 / 255F, 129 / 255F), net.minecraft.util.ARGB.colorFromFloat(1F, 85 / 255F, 71 / 255F, 87 / 255F), 1f), this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
 		}
 	}
 

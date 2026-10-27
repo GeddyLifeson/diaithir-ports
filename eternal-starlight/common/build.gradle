@@ -26,4 +26,5 @@ sourceSets.main.java {
 	exclude "**/eternalstarlight/common/util/ESGuiUtil.java"
 	exclude "**/eternalstarlight/common/platform/ESClientPlatform.java"
 	exclude "**/eternalstarlight/common/mixin/client/**"
+	exclude "**/eternalstarlight/common/item/recipe/AlloyRecipeBuilder.java"
 }

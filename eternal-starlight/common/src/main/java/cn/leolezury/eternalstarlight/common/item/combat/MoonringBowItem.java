@@ -27,7 +27,7 @@ public class MoonringBowItem extends BowItem {
 	protected Projectile createProjectile(Level level, LivingEntity shooter, ItemStack weapon, ItemStack ammo, boolean isCrit) {
 		Projectile projectile = super.createProjectile(level, shooter, weapon, ammo, isCrit);
 		if (projectile instanceof AbstractArrow arrow) {
-			arrow.setBaseDamage(arrow.getBaseDamage() + 0.75);
+			arrow.setBaseDamage(arrow.baseDamage + 0.75);
 		}
 		return projectile;
 	}

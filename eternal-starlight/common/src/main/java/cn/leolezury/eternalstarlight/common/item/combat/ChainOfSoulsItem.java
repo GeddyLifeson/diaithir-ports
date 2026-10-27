@@ -1,5 +1,6 @@
 package cn.leolezury.eternalstarlight.common.item.combat;
 
+import cn.leolezury.eternalstarlight.common.util.ESPortCompat;
 import cn.leolezury.eternalstarlight.common.entity.projectile.ChainOfSouls;
 import cn.leolezury.eternalstarlight.common.registry.ESDataAttachments;
 import cn.leolezury.eternalstarlight.common.registry.ESItems;
@@ -29,7 +30,7 @@ public class ChainOfSoulsItem extends Item {
 			if (hook != null) {
 				retrieve(level, player, hook);
 			} else {
-				stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(interactionHand));
+				stack.hurtAndBreak(1, player, ESPortCompat.slotForHand(interactionHand));
 				this.shoot(level, player, stack);
 			}
 		}

@@ -28,7 +28,12 @@ public class ESBoat extends Boat {
 	private static final EntityDataAccessor<Integer> BOAT_TYPE = SynchedEntityData.defineId(ESBoat.class, EntityDataSerializers.INT);
 
 	public ESBoat(EntityType<? extends ESBoat> type, Level level) {
-		super(type, level);
+		this(type, level, new java.util.concurrent.atomic.AtomicReference<>());
+	}
+
+	private ESBoat(EntityType<? extends ESBoat> type, Level level, java.util.concurrent.atomic.AtomicReference<ESBoat> self) {
+		super(type, level, () -> self.get().getBoatDropItem());
+		self.set(this);
 		this.blocksBuilding = true;
 	}
 
@@ -44,8 +49,7 @@ public class ESBoat extends Boat {
 		return ESBoat.Type.byId(this.getEntityData().get(BOAT_TYPE));
 	}
 
-	@Override
-	public Item getDropItem() {
+	public Item getBoatDropItem() {
 		return switch (this.getESBoatType()) {
 			case LUNAR -> ESItems.LUNAR_BOAT.get();
 			case NORTHLAND -> ESItems.NORTHLAND_BOAT.get();

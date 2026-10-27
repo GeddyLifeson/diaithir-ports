@@ -31,8 +31,8 @@ public class WaterPlantFeature extends Feature<WaterPlantFeature.Configuration> 
 			int k = 1 + randomSource.nextInt(10);
 
 			for (int l = 0; l <= k; ++l) {
-				BlockState headState = context.config().plantHead().getState(randomSource, blockPos2);
-				BlockState bodyState = context.config().plantBody().getState(randomSource, blockPos2);
+				BlockState headState = context.config().plantHead().getState(worldGenLevel, randomSource, blockPos2);
+				BlockState bodyState = context.config().plantBody().getState(worldGenLevel, randomSource, blockPos2);
 				if (worldGenLevel.getBlockState(blockPos2).is(Blocks.WATER) && worldGenLevel.getBlockState(blockPos2.above()).is(Blocks.WATER) && bodyState.canSurvive(worldGenLevel, blockPos2)) {
 					if (l == k) {
 						worldGenLevel.setBlock(blockPos2, headState.setValue(KelpBlock.AGE, randomSource.nextInt(4) + 20), 2);
@@ -42,7 +42,7 @@ public class WaterPlantFeature extends Feature<WaterPlantFeature.Configuration> 
 					}
 				} else if (l > 0) {
 					BlockPos blockPos3 = blockPos2.below();
-					headState = context.config().plantHead().getState(randomSource, blockPos3);
+					headState = context.config().plantHead().getState(worldGenLevel, randomSource, blockPos3);
 					if (headState.canSurvive(worldGenLevel, blockPos3) && !worldGenLevel.getBlockState(blockPos3.below()).is(headState.getBlock())) {
 						worldGenLevel.setBlock(blockPos3, headState.setValue(KelpBlock.AGE, randomSource.nextInt(4) + 20), 2);
 						++i;

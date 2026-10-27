@@ -42,7 +42,7 @@ public class NoiseBooleanSelectorFeature extends Feature<NoiseBooleanSelectorFea
 		).apply(instance, Configuration::new));
 
 		@Override
-		public Stream<ConfiguredFeature<?, ?>> getFeatures() {
+		public Stream<net.minecraft.core.Holder<ConfiguredFeature<?, ?>>> getSubFeatures() {
 			return Stream.concat(this.featureTrue.value().getFeatures(), this.featureFalse.value().getFeatures());
 		}
 	}

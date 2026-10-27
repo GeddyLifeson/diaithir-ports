@@ -590,11 +590,11 @@ public class ESCommonHandler {
 			if (weaponItem != null && weaponItem.is(ESItems.UNREALIUM_CROSSBOW.get())) {
 				arrow.setPierceLevel(Byte.MAX_VALUE);
 			}
-			if (!arrow.inGround) {
+			if (!arrow.isInGround()) {
 				if (ESDataAttachments.ARROW_TYPE.getData(arrow).equals(FLOWGLAZE_ARROW)) {
 					float previousExtra = ESDataAttachments.FLOWGLAZE_ARROW_EXTRA_BASE_DAMAGE.getData(arrow);
 					if (previousExtra < 3) {
-						arrow.setBaseDamage(arrow.getBaseDamage() + 0.1);
+						arrow.setBaseDamage(arrow.baseDamage + 0.1);
 						ESDataAttachments.FLOWGLAZE_ARROW_EXTRA_BASE_DAMAGE.setData(arrow, previousExtra + 0.1f);
 					}
 				}
@@ -670,7 +670,7 @@ public class ESCommonHandler {
 				}
 				if (player instanceof ServerPlayer serverPlayer) {
 					ServerPlayerGameMode gameMode = serverPlayer.gameMode;
-					ServerLevel serverLevel = serverPlayer.serverLevel();
+					ServerLevel serverLevel = serverPlayer.level();
 					if (gameMode.isDestroyingBlock && serverPlayer.getMainHandItem().is(ESTags.Items.FLOWGLAZE_WEAPONS)) {
 						BlockPos oldTarget = ESDataAttachments.FLOWGLAZE_DESTROY_BLOCK_TARGET.getData(serverPlayer);
 						if (oldTarget != null && !oldTarget.equals(gameMode.destroyPos)) {

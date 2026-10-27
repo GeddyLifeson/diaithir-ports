@@ -68,7 +68,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 	protected void saveAdditional(ValueOutput tag) {
 		super.saveAdditional(tag);
 		if (!this.trySaveLootTable(tag)) {
-			ContainerHelper.saveAllItems(tag, this.items, registries);
+			ContainerHelper.saveAllItems(tag, this.items);
 		}
 	}
 
@@ -77,7 +77,7 @@ public class CrateBlockEntity extends RandomizableContainerBlockEntity {
 		super.loadAdditional(tag);
 		this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		if (!this.tryLoadLootTable(tag)) {
-			ContainerHelper.loadAllItems(tag, this.items, tag.lookup());
+			ContainerHelper.loadAllItems(tag, this.items);
 		}
 	}
 

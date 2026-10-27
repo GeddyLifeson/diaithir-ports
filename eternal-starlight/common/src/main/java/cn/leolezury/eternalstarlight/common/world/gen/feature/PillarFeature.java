@@ -39,11 +39,11 @@ public class PillarFeature extends ESFeature<PillarFeature.Configuration> {
 		ChunkGenerator chunkGenerator = context.chunkGenerator();
 		List<BlockPos> positions = new ArrayList<>();
 		ValueMapGenerator.place(new RotatedProvider(new CylinderProvider(config.radius().sample(random), config.height().sample(random)), config.rotation().sample(random), random.nextFloat() * 360), (pos, value) -> {
-			setBlockIfEmpty(level, pos.offset(origin), config.pillar().getState(random, pos.offset(origin)));
+			setBlockIfEmpty(level, pos.offset(origin), config.pillar().getState(level, random, pos.offset(origin)));
 			positions.add(pos.offset(origin));
 			for (Direction direction : Direction.values()) {
 				if (random.nextFloat() < 0.05) {
-					setBlockIfEmpty(level, pos.offset(origin).relative(direction), config.pillar().getState(random, pos.offset(origin).relative(direction)));
+					setBlockIfEmpty(level, pos.offset(origin).relative(direction), config.pillar().getState(level, random, pos.offset(origin).relative(direction)));
 					positions.add(pos.offset(origin).relative(direction));
 				}
 			}
@@ -73,7 +73,7 @@ public class PillarFeature extends ESFeature<PillarFeature.Configuration> {
 		).apply(instance, PillarFeature.Configuration::new));
 
 		@Override
-		public Stream<ConfiguredFeature<?, ?>> getFeatures() {
+		public Stream<net.minecraft.core.Holder<ConfiguredFeature<?, ?>>> getSubFeatures() {
 			return decorations.stream().flatMap(placedFeature -> placedFeature.value().getFeatures());
 		}
 	}
