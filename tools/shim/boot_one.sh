@@ -7,7 +7,7 @@ rm -rf "$SRV/mods" "$SRV/world"; mkdir -p "$SRV/mods" "$SRV/logs"
 cp "$PORT" "$SRV/mods/"; cp /home/user/work-shim/out/lib-*.jar "$SRV/mods/" 2>/dev/null; true
 cp "$PORT" "$SRV/mods/"; for j in "$@"; do cp "$j" "$SRV/mods/"; done
 cd "$SRV"; echo "eula=true" > eula.txt
-sed -i '/^server-port=/d;/^online-mode=/d' server.properties; printf 'server-port=25791\nonline-mode=false\nlevel-type=flat\nview-distance=4\n' >> server.properties
+sed -i '/^server-port=/d;/^online-mode=/d' server.properties; printf 'server-port=25791\nonline-mode=false\nview-distance=4\n' >> server.properties
 LOG=$SRV/logs/boot_$NAME.log
 setsid bash -c "(sleep 170; echo stop) | timeout 200 '$JDK/bin/java' @user_jvm_args.txt @libraries/net/neoforged/neoforge/26.1.2.109/unix_args.txt nogui > '$LOG' 2>&1" &
 PG=$!

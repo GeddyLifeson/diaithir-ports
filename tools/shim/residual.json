@@ -135,10 +135,6 @@
     "n": 2,
     "candidates": []
    },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 5,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/client/ponder/PonderTagGroups": {
     "n": 5,
     "candidates": []
@@ -230,10 +226,6 @@
     "candidates": []
    },
    "umpaz/brewinandchewin/common/crafting/CreatePotionPouringRecipe": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
     "n": 1,
     "candidates": []
    },
@@ -397,59 +389,10 @@
   "missing_members": [
    [
     "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "CUTTING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "DEPLOYING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "MIXING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "PRESSING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/api/registry/CreateRegistries",
-    "ARM_INTERACTION_POINT_TYPE",
-    "Lnet/minecraft/resources/ResourceKey;",
-    1
-   ],
-   [
-    "F",
     "com/zurrtum/create/client/content/logistics/factoryBoard/FactoryPanelBehaviour",
     "count",
     "I",
     4
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/logistics/packager/PackagerBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
    ],
    [
     "M",
@@ -485,13 +428,6 @@
     "addConnection",
     "(Lcom/zurrtum/create/content/logistics/factoryBoard/FactoryPanelPosition;)V",
     4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel",
-    "get",
-    "()Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;",
-    1
    ],
    [
     "M",
@@ -984,10 +920,6 @@
     "n": 26,
     "candidates": []
    },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 6,
-    "candidates": []
-   },
    "diaithir/shim/stub/net/minecraft/world/InteractionResultHolder": {
     "n": 4,
     "candidates": []
@@ -1032,10 +964,6 @@
     "n": 5,
     "candidates": []
    },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
-    "n": 6,
-    "candidates": []
-   },
    "plus/dragons/createdragonsplus/common/fluids/tank/FluidTankBehaviour$TankSegment": {
     "n": 1,
     "candidates": []
@@ -1060,10 +988,6 @@
    },
    "plus/dragons/createdragonsplus/common/recipe/RecipeTypeInfo": {
     "n": 15,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 4,
     "candidates": []
    },
    "diaithir/shim/stub/net/minecraft/client/renderer/entity/ItemRenderer": {
@@ -1538,62 +1462,6 @@
   "missing_members": [
    [
     "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "SANDPAPER_POLISHING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    3
-   ],
-   [
-    "F",
-    "com/zurrtum/create/api/registry/CreateRegistries",
-    "FAN_PROCESSING_TYPE",
-    "Lnet/minecraft/resources/ResourceKey;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/api/registry/CreateRegistries",
-    "ITEM_ATTRIBUTE_TYPE",
-    "Lnet/minecraft/resources/ResourceKey;",
-    3
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/equipment/toolbox/ToolboxBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
-    "HORIZONTAL_FACING",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    7
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/belt/BeltBlock",
-    "PART",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/belt/BeltBlock",
-    "SLOPE",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/crusher/CrushingWheelControllerBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
     "net/minecraft/client/Minecraft",
     "cameraEntity",
     "Lnet/minecraft/world/entity/Entity;",
@@ -1618,7 +1486,7 @@
     "net/minecraft/world/InteractionResult",
     "FAIL",
     "Lnet/minecraft/world/InteractionResult;",
-    2
+    3
    ],
    [
     "F",
@@ -1626,6 +1494,13 @@
     "PASS",
     "Lnet/minecraft/world/InteractionResult;",
     9
+   ],
+   [
+    "F",
+    "net/minecraft/world/InteractionResult",
+    "PASS_TO_DEFAULT_BLOCK_INTERACTION",
+    "Lnet/minecraft/world/InteractionResult;",
+    6
    ],
    [
     "F",
@@ -1657,45 +1532,10 @@
    ],
    [
     "F",
-    "net/minecraft/world/level/block/DirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/DispenserBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/HorizontalDirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/LightningRodBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
     "net/minecraft/world/level/block/RenderShape",
     "ENTITYBLOCK_ANIMATED",
     "Lnet/minecraft/world/level/block/RenderShape;",
     1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    4
    ],
    [
     "F",
@@ -1790,13 +1630,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageType",
-    "mountedFluidStorage",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
     "com/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageWrapper",
     "fill",
     "(Lnet/neoforged/neoforge/fluids/FluidStack;Lnet/neoforged/neoforge/fluids/capability/IFluidHandler$FluidAction;)I",
@@ -1888,13 +1721,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel",
-    "get",
-    "()Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;",
-    3
-   ],
-   [
-    "M",
     "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxRenderer",
     "renderItemIntoValueBox",
     "(Lnet/minecraft/world/item/ItemStack;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
@@ -1913,13 +1739,6 @@
     "transform",
     "(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;)V",
     2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided",
-    "fromSide",
-    "(Lnet/minecraft/core/Direction;)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided;",
-    1
    ],
    [
     "M",
@@ -2028,13 +1847,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "getTankInventory",
-    "()Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    9
-   ],
-   [
-    "M",
     "com/zurrtum/create/content/fluids/transfer/EmptyingRecipe",
     "<init>",
     "(Lcom/simibubi/create/content/processing/recipe/ProcessingRecipeParams;)V",
@@ -2059,13 +1871,6 @@
     "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
     "updateEntityAfterFallOn",
     "(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/entity/Entity;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
-    "useItemOn",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
     1
    ],
    [
@@ -2127,13 +1932,6 @@
    [
     "M",
     "com/zurrtum/create/content/logistics/depot/DepotBlockEntity",
-    "getHeldItem",
-    "()Lnet/minecraft/world/item/ItemStack;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/logistics/depot/DepotBlockEntity",
     "setHeldItem",
     "(Lnet/minecraft/world/item/ItemStack;)V",
     7
@@ -2141,23 +1939,9 @@
    [
     "M",
     "com/zurrtum/create/content/logistics/filter/FilterItemStack",
-    "fluid",
-    "(Lnet/minecraft/world/level/Level;)Lnet/neoforged/neoforge/fluids/FluidStack;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/logistics/filter/FilterItemStack",
     "of",
     "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lcom/zurrtum/create/content/logistics/filter/FilterItemStack;",
     2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/processing/basin/BasinBlockEntity",
-    "getFilter",
-    "()Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/filtering/FilteringBehaviour;",
-    1
    ],
    [
     "M",
@@ -2259,20 +2043,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/foundation/blockEntity/IMultiBlockEntityContainer$Fluid",
-    "getFluid",
-    "(I)Lnet/neoforged/neoforge/fluids/FluidStack;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/IMultiBlockEntityContainer$Fluid",
-    "getTank",
-    "(I)Lnet/neoforged/neoforge/fluids/IFluidTank;",
-    1
-   ],
-   [
-    "M",
     "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
     "read",
     "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
@@ -2284,27 +2054,6 @@
     "write",
     "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
     2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/behaviour/fluid/SmartFluidTankBehaviour",
-    "getCapability",
-    "()Lnet/neoforged/neoforge/fluids/capability/IFluidHandler;",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/behaviour/fluid/SmartFluidTankBehaviour",
-    "getPrimaryHandler",
-    "()Lcom/simibubi/create/foundation/fluid/SmartFluidTank;",
-    12
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/behaviour/fluid/SmartFluidTankBehaviour$TankSegment",
-    "getRenderedFluid",
-    "()Lnet/neoforged/neoforge/fluids/FluidStack;",
-    3
    ],
    [
     "M",
@@ -2687,9 +2436,16 @@
    [
     "M",
     "net/minecraft/world/InteractionResult",
+    "result",
+    "()Lnet/minecraft/world/InteractionResult;",
+    3
+   ],
+   [
+    "M",
+    "net/minecraft/world/InteractionResult",
     "sidedSuccess",
     "(Z)Lnet/minecraft/world/InteractionResult;",
-    4
+    10
    ],
    [
     "M",
@@ -3064,10 +2820,6 @@
     "n": 1,
     "candidates": []
    },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
-    "n": 1,
-    "candidates": []
-   },
    "org/antarcticgardens/esl/ESLNeoForge": {
     "n": 1,
     "candidates": []
@@ -3141,10 +2893,6 @@
      "com/zurrtum/create/client/flywheel/impl/visualization/storage/Transaction"
     ]
    },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 1,
-    "candidates": []
-   },
    "org/antarcticgardens/esl/transaction/TransactionContext": {
     "n": 1,
     "candidates": [
@@ -3216,82 +2964,15 @@
    "dan200/computercraft/api/peripheral/PeripheralCapability": {
     "n": 1,
     "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 1,
-    "candidates": []
    }
   },
   "missing_members": [
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "COMPACTING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "CRUSHING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "CUTTING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "MIXING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "PRESSING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "OMNIDIRECTIONAL",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "RECTANGLE",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
    [
     "F",
     "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
     "value",
     "I",
     1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/DirectionalKineticBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/motor/CreativeMotorBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
    ],
    [
     "F",
@@ -3331,6 +3012,13 @@
    [
     "F",
     "net/minecraft/world/InteractionResult",
+    "PASS_TO_DEFAULT_BLOCK_INTERACTION",
+    "Lnet/minecraft/world/InteractionResult;",
+    1
+   ],
+   [
+    "F",
+    "net/minecraft/world/InteractionResult",
     "SUCCESS",
     "Lnet/minecraft/world/InteractionResult;",
     6
@@ -3355,13 +3043,6 @@
     "ENTITYBLOCK_ANIMATED",
     "Lnet/minecraft/world/level/block/RenderShape;",
     1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    9
    ],
    [
     "M",
@@ -3437,7 +3118,7 @@
     "M",
     "com/zurrtum/create/catnip/placement/PlacementOffset",
     "placeInWorld",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
+    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;",
     1
    ],
    [
@@ -3494,13 +3175,6 @@
     "com/zurrtum/create/client/content/kinetics/base/ShaftRenderer",
     "renderSafe",
     "(Lcom/zurrtum/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel",
-    "get",
-    "()Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;",
     2
    ],
    [
@@ -4065,3548 +3739,8 @@
    ]
   ]
  },
- "create_connected-1.3.3-mc1.21.1.jar": {
-  "missing_classes": {
-   "com/firemerald/additionalplacements/generation/RegistrationInitializer": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/firemerald/additionalplacements/generation/Registration": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/copycatsplus/copycats/config/FeatureToggle": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/copycatsplus/copycats/CCBlocks": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/copycatsplus/copycats/CCItems": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/runtime/IJeiRuntime": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/constants/VanillaTypes": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/runtime/IIngredientManager": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/IModPlugin": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/index/SimBlocks": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/Simulated": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverVisual": {
-    "n": 1,
-    "candidates": []
-   },
-   "org/jetbrains/annotations/ApiStatus$Internal": {
-    "n": 2,
-    "candidates": []
-   },
-   "org/jetbrains/annotations/ApiStatus": {
-    "n": 2,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/CatnipServices": {
-    "n": 5,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/services/PlatformHelper": {
-    "n": 5,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 13,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 6,
-    "candidates": []
-   },
-   "Z": {
-    "n": 7,
-    "candidates": []
-   },
-   "net/createmod/catnip/net/base/ClientboundPacketPayload": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/net/base/BasePacketPayload$PacketTypeProvider": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/createmod/catnip/net/base/BasePacketPayload": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/resources/model/BakedModel": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/blockentity/SignRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "F": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/zurrtum/create/content/fluids/tank/CreativeFluidTankBlockEntity$CreativeSmartFluidTank": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
-    "n": 6,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
-    "n": 6,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
-    "n": 5,
-    "candidates": [
-     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
-    ]
-   },
-   "net/createmod/catnip/platform/NeoForgeCatnipServices": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/InteractionResultHolder": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/block/entity/BlockEntity$DataComponentInput": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/item/ItemProperties": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/com/tterrag/registrate/providers/RegistrateItemModelProvider": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ItemModelBuilder$OverrideBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "I": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueSettingsBehaviour$ValueSettings": {
-    "n": 3,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverBlock": {
-    "n": 2,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverBlockEntity": {
-    "n": 2,
-    "candidates": []
-   },
-   "dev/simulated_team/simulated/content/blocks/throttle_lever/ThrottleLeverRenderer": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/SableCompanion": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/SubLevelAccess": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/math/Pose3dc": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/gui/GuiGraphics": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelFile": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper": {
-    "n": 1,
-    "candidates": []
-   },
-   "plus/dragons/createdragonsplus/common/registry/CDPDataMaps": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/data/tags/TagsProvider$TagAppender": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/common/conditions/FalseCondition": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/zurrtum/create/content/kinetics/deployer/ItemApplicationRecipe$Builder": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/zurrtum/create/content/kinetics/deployer/ItemApplicationRecipe$Factory": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
-    "n": 8,
-    "candidates": []
-   },
-   "com/llamalad7/mixinextras/sugar/ref/LocalRef": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/config/ui/ConfigScreen": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/llamalad7/mixinextras/MixinExtrasBootstrap": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/net/base/CatnipPacketRegistry$PacketType": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/net/base/CatnipPacketRegistry": {
-    "n": 1,
-    "candidates": []
-   }
-  },
-  "missing_members": [
-   [
-    "F",
-    "com/zurrtum/create/AllAdvancements",
-    "PIPE_ORGAN",
-    "Lcom/simibubi/create/foundation/advancement/CreateAdvancement;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllAdvancements",
-    "STEAM_ENGINE_MAXED",
-    "Lcom/simibubi/create/foundation/advancement/CreateAdvancement;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllCreativeModeTabs",
-    "PALETTES_CREATIVE_TAB",
-    "Lnet/neoforged/neoforge/registries/DeferredHolder;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllFluids",
-    "CHOCOLATE",
-    "Lcom/tterrag/registrate/util/entry/FluidEntry;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllFluids",
-    "HONEY",
-    "Lcom/tterrag/registrate/util/entry/FluidEntry;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/catnip/config/ConfigBase",
-    "specification",
-    "Lnet/neoforged/neoforge/common/ModConfigSpec;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/AllSpriteShifts",
-    "VAULT_BOTTOM",
-    "Lcom/zurrtum/create/catnip/data/Couple;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/AllSpriteShifts",
-    "VAULT_FRONT",
-    "Lcom/zurrtum/create/catnip/data/Couple;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/AllSpriteShifts",
-    "VAULT_TOP",
-    "Lcom/zurrtum/create/catnip/data/Couple;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/content/redstone/link/LinkBehaviour",
-    "newPosition",
-    "Z",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "value",
-    "I",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/DirectionalKineticBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
-    "HORIZONTAL_FACING",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/belt/BeltBlock",
-    "PART",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/crank/HandCrankBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/saw/SawBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/logistics/packager/PackagerBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/redstone/displayLink/DisplayLinkBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/redstone/thresholdSwitch/ThresholdSwitchBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/impl/unpacking/CrafterUnpackingHandler",
-    "INSTANCE",
-    "Lcom/zurrtum/create/impl/unpacking/CrafterUnpackingHandler;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "CONSUME",
-    "Lnet/minecraft/world/InteractionResult;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "FAIL",
-    "Lnet/minecraft/world/InteractionResult;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "PASS",
-    "Lnet/minecraft/world/InteractionResult;",
-    12
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "SUCCESS",
-    "Lnet/minecraft/world/InteractionResult;",
-    13
-   ],
-   [
-    "F",
-    "net/minecraft/world/item/crafting/RecipeSerializer",
-    "BLASTING_RECIPE",
-    "Lnet/minecraft/world/item/crafting/RecipeSerializer;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/item/crafting/RecipeSerializer",
-    "CAMPFIRE_COOKING_RECIPE",
-    "Lnet/minecraft/world/item/crafting/RecipeSerializer;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/item/crafting/RecipeSerializer",
-    "SMELTING_RECIPE",
-    "Lnet/minecraft/world/item/crafting/RecipeSerializer;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/item/crafting/RecipeSerializer",
-    "SMOKING_RECIPE",
-    "Lnet/minecraft/world/item/crafting/RecipeSerializer;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/FaceAttachedHorizontalDirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/FenceGateBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/HorizontalDirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/LeverBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/StairBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/WallBlock",
-    "EAST_WALL",
-    "Lnet/minecraft/world/level/block/state/properties/EnumProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/WallBlock",
-    "NORTH_WALL",
-    "Lnet/minecraft/world/level/block/state/properties/EnumProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/WallBlock",
-    "SOUTH_WALL",
-    "Lnet/minecraft/world/level/block/state/properties/EnumProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/WallBlock",
-    "WEST_WALL",
-    "Lnet/minecraft/world/level/block/state/properties/EnumProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    5
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/storage/loot/parameters/LootContextParams",
-    "BLOCK_ENTITY",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/storage/loot/parameters/LootContextParam;",
-    1
-   ],
-   [
-    "F",
-    "net/neoforged/fml/loading/FMLEnvironment",
-    "dist",
-    "Lnet/neoforged/api/distmarker/Dist;",
-    1
-   ],
-   [
-    "M",
-    "com/google/gson/JsonObject",
-    "addProperty",
-    "(Ljava/lang/String;Ljava/lang/Number;)V",
-    2
-   ],
-   [
-    "M",
-    "com/google/gson/JsonObject",
-    "addProperty",
-    "(Ljava/lang/String;Ljava/lang/String;)V",
-    2
-   ],
-   [
-    "M",
-    "com/google/gson/JsonObject",
-    "entrySet",
-    "()Ljava/util/Set;",
-    1
-   ],
-   [
-    "M",
-    "com/mojang/blaze3d/systems/RenderSystem",
-    "setShaderTexture",
-    "(ILnet/minecraft/resources/ResourceLocation;)V",
-    1
-   ],
-   [
-    "M",
-    "com/mojang/blaze3d/vertex/PoseStack",
-    "mulPose",
-    "(Lorg/joml/Quaternionf;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/Create",
-    "asResource",
-    "(Ljava/lang/String;)Lnet/minecraft/resources/Identifier;",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/BlockEntityBehaviour",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/BlockEntityBehaviour",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/display/DisplaySource",
-    "displaySource",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/display/DisplayTarget",
-    "displayTarget",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/movement/MovementBehaviour",
-    "movementBehaviour",
-    "(Lcom/zurrtum/create/api/behaviour/movement/MovementBehaviour;)Lcom/tterrag/registrate/util/nullness/NonNullConsumer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageType",
-    "mountedFluidStorage",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/contraption/storage/fluid/WrapperMountedFluidStorage",
-    "<init>",
-    "(Lcom/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageType;Lnet/neoforged/neoforge/fluids/capability/IFluidHandler;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/contraption/storage/item/MountedItemStorageType",
-    "mountedItemStorage",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/contraption/storage/item/WrapperMountedItemStorage",
-    "<init>",
-    "(Lcom/zurrtum/create/api/contraption/storage/item/MountedItemStorageType;Lnet/neoforged/neoforge/items/IItemHandlerModifiable;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/stress/BlockStressValues",
-    "setGeneratorSpeed",
-    "(I)Lcom/tterrag/registrate/util/nullness/NonNullConsumer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/animation/LerpedFloat",
-    "chase",
-    "(DDLnet/createmod/catnip/animation/LerpedFloat$Chaser;)Lcom/zurrtum/create/catnip/animation/LerpedFloat;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/config/ConfigBase",
-    "onLoad",
-    "()V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/config/ConfigBase",
-    "onReload",
-    "()V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/config/ConfigBase",
-    "registerAll",
-    "(Lnet/neoforged/neoforge/common/ModConfigSpec$Builder;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/placement/PlacementOffset",
-    "placeInWorld",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
-    6
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/UIRenderHelper",
-    "drawColoredTexture",
-    "(Ldiaithir/shim/stub/net/minecraft/client/gui/GuiGraphics;Lcom/zurrtum/create/catnip/theme/Color;IIIIII)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement",
-    "of",
-    "(Lnet/minecraft/world/item/ItemStack;)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "render",
-    "(Ldiaithir/shim/stub/net/minecraft/client/gui/GuiGraphics;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "scale",
-    "(D)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/render/FluidRenderHelper",
-    "renderFluidBox",
-    "(Ljava/lang/Object;FFFFFFLnet/minecraft/client/renderer/MultiBufferSource;Lcom/mojang/blaze3d/vertex/PoseStack;IZZ)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/render/SuperByteBuffer",
-    "renderInto",
-    "(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V",
-    6
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/kinetics/base/SingleAxisRotatingVisual",
-    "<init>",
-    "(Lcom/zurrtum/create/client/flywheel/api/visualization/VisualizationContext;Lcom/zurrtum/create/content/kinetics/base/KineticBlockEntity;FLdev/engine_room/flywheel/api/model/Model;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/analogLever/AnalogLeverRenderer",
-    "renderSafe",
-    "(Lcom/zurrtum/create/content/redstone/analogLever/AnalogLeverBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/link/LinkBehaviour",
-    "isListening",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/link/LinkBehaviour",
-    "notifySignalChange",
-    "()V",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/link/LinkBehaviour",
-    "setReceivedStrength",
-    "(I)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/link/LinkBehaviour",
-    "transmitter",
-    "(Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;Lorg/apache/commons/lang3/tuple/Pair;Ljava/util/function/IntSupplier;)Lcom/zurrtum/create/client/content/redstone/link/LinkBehaviour;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/redstone/link/LinkRenderer",
-    "renderOnBlockEntity",
-    "(Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/CenteredSideValueBoxTransform",
-    "rotate",
-    "(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Dual",
-    "shouldRender",
-    "(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided",
-    "rotate",
-    "(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/filtering/FilteringBehaviour",
-    "setFilter",
-    "(Lnet/minecraft/world/item/ItemStack;)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/filtering/FilteringBehaviour",
-    "test",
-    "(Lnet/minecraft/world/item/ItemStack;)Z",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/filtering/FilteringRenderer",
-    "renderOnBlockEntity",
-    "(Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/filtering/SidedFilteringBehaviour",
-    "<init>",
-    "(Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided;Ljava/util/function/BiFunction;Ljava/util/function/Predicate;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "<init>",
-    "(Ljava/lang/Class;Lnet/minecraft/network/chat/Component;Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform;)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "get",
-    "()Ljava/lang/Enum;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "getValue",
-    "()I",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "setValue",
-    "(I)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "withCallback",
-    "(Ljava/util/function/Consumer;)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "between",
-    "(II)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "getValue",
-    "()I",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "setValue",
-    "(I)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "withCallback",
-    "(Ljava/util/function/Consumer;)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/gui/widget/IconButton",
-    "<init>",
-    "(IILnet/createmod/catnip/gui/element/ScreenElement;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/model/BakedModelHelper",
-    "cropAndMove",
-    "([ILnet/minecraft/client/renderer/texture/TextureAtlasSprite;Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/phys/Vec3;)[I",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/infrastructure/model/BracketedKineticBlockModel",
-    "<init>",
-    "(Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/infrastructure/model/CTModel",
-    "<init>",
-    "(Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;Lcom/zurrtum/create/client/foundation/block/connected/ConnectedTextureBehaviour;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/infrastructure/model/CTModel",
-    "gatherModelData",
-    "(Lnet/neoforged/neoforge/model/data/ModelData$Builder;Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/neoforged/neoforge/model/data/ModelData;)Lnet/neoforged/neoforge/model/data/ModelData$Builder;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/infrastructure/model/CTModel",
-    "getQuads",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/util/RandomSource;Lnet/neoforged/neoforge/model/data/ModelData;Lnet/minecraft/client/renderer/rendertype/RenderType;)Ljava/util/List;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/infrastructure/model/CopycatModel",
-    "<init>",
-    "(Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;)V",
-    9
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/ponder/api/registration/LangRegistryAccess",
-    "provideLang",
-    "(Ljava/lang/String;Ljava/util/function/BiConsumer;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/Contraption",
-    "getBlockEntityClientSide",
-    "(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/bearing/WindmillBearingBlockEntity$RotationDirection",
-    "ordinal",
-    "()I",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/decoration/copycat/CopycatBlock",
-    "onRemove",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/decoration/copycat/CopycatBlock",
-    "updateShape",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/decoration/copycat/WaterloggedCopycatBlock",
-    "onRemove",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/decoration/copycat/WaterloggedCopycatBlock",
-    "updateShape",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/decoration/encasing/EncasingRegistry",
-    "addVariantTo",
-    "(Ljava/util/function/Supplier;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/BoilerData",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;ZI)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/BoilerData",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;I)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/BoilerData",
-    "write",
-    "()Lnet/minecraft/nbt/CompoundTag;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "award",
-    "(Lcom/simibubi/create/foundation/advancement/CreateAdvancement;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "getTankInventory",
-    "()Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/SoundPool",
-    "<init>",
-    "(IILcom/simibubi/create/content/fluids/tank/SoundPool$Sound;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/transfer/GenericItemEmptying",
-    "emptyItem",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Z)Lcom/zurrtum/create/catnip/data/Pair;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/AbstractEncasedShaftBlock",
-    "neighborChanged",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/DirectionalKineticBlock",
-    "neighborChanged",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/DirectionalKineticBlock",
-    "onRemove",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/RotatedPillarKineticBlock",
-    "getCloneItemStack",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/HitResult;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/item/ItemStack;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/crank/HandCrankBlock",
-    "updateShape",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/crank/HandCrankBlockEntity",
-    "tickAudio",
-    "()V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/deployer/DeployerApplicationRecipe",
-    "<init>",
-    "(Lcom/simibubi/create/content/kinetics/deployer/ItemApplicationRecipeParams;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/press/PressingRecipe",
-    "<init>",
-    "(Lcom/simibubi/create/content/processing/recipe/ProcessingRecipeParams;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/transmission/SplitShaftBlockEntity",
-    "addToTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/transmission/SplitShaftBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/transmission/SplitShaftBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/transmission/sequencer/SequencerInstructions",
-    "name",
-    "()Ljava/lang/String;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/transmission/sequencer/SequencerInstructions",
-    "ordinal",
-    "()I",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/redstone/DirectedDirectionalBlock",
-    "neighborChanged",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/redstone/diodes/BrassDiodeBlock",
-    "toggle",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/redstone/displayLink/source/PercentOrProgressBarDisplaySource",
-    "initConfigurationWidgets",
-    "(Lcom/zurrtum/create/content/redstone/displayLink/DisplayLinkContext;Lcom/zurrtum/create/client/foundation/gui/ModularGuiLineBuilder;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/redstone/displayLink/target/DisplayTargetStats",
-    "<init>",
-    "(IILcom/simibubi/create/api/behaviour/display/DisplayTarget;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    7
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    7
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/fluid/FluidHelper",
-    "getEmptySound",
-    "(Lnet/neoforged/neoforge/fluids/FluidStack;)Lnet/minecraft/sounds/SoundEvent;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/fluid/FluidHelper",
-    "getFillSound",
-    "(Lnet/neoforged/neoforge/fluids/FluidStack;)Lnet/minecraft/sounds/SoundEvent;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/item/ItemHelper",
-    "dropContents",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/neoforged/neoforge/items/IItemHandler;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/infrastructure/component/ClipboardContent",
-    "setType",
-    "(Lcom/simibubi/create/content/equipment/clipboard/ClipboardOverrides$ClipboardType;)Lcom/zurrtum/create/infrastructure/component/ClipboardContent;",
-    1
-   ],
-   [
-    "M",
-    "it/unimi/dsi/fastutil/objects/ObjectSortedSet",
-    "stream",
-    "()Ljava/util/stream/Stream;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/advancements/Advancement$Builder",
-    "display",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;Lnet/minecraft/resources/Identifier;Lnet/minecraft/advancements/AdvancementType;ZZZ)Lnet/minecraft/advancements/Advancement$Builder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/advancements/criterion/ItemPredicate$Builder",
-    "of",
-    "(Lnet/minecraft/tags/TagKey;)Lnet/minecraft/advancements/criterion/ItemPredicate$Builder;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/advancements/criterion/ItemPredicate$Builder",
-    "of",
-    "([Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/advancements/criterion/ItemPredicate$Builder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/advancements/criterion/ItemUsedOnLocationTrigger",
-    "trigger",
-    "(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/gui/Font",
-    "drawInBatch",
-    "(Lnet/minecraft/util/FormattedCharSequence;FFIZLorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/gui/Font$DisplayMode;II)I",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/gui/Font",
-    "drawInBatch8xOutline",
-    "(Lnet/minecraft/util/FormattedCharSequence;FFIILorg/joml/Matrix4f;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/model/object/skull/SkullModelBase",
-    "setupAnim",
-    "(FFF)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/LevelRenderer",
-    "getLightColor",
-    "(Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/LevelRenderer",
-    "notifyNearbyEntities",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context",
-    "getFont",
-    "()Lnet/minecraft/client/gui/Font;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context",
-    "getModelSet",
-    "()Lnet/minecraft/client/model/geom/EntityModelSet;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "cutout",
-    "()Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "cutoutMipped",
-    "()Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "entityCutoutNoCullZOffset",
-    "(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "solid",
-    "()Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/client/resources/model/geometry/BakedQuad",
-    "getDirection",
-    "()Lnet/minecraft/core/Direction;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/client/resources/model/geometry/BakedQuad",
-    "getSprite",
-    "()Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/client/resources/model/geometry/BakedQuad",
-    "getVertices",
-    "()[I",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/client/sounds/SoundManager",
-    "play",
-    "(Lnet/minecraft/client/resources/sounds/SoundInstance;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/DefaultedRegistry",
-    "get",
-    "(Lnet/minecraft/resources/Identifier;)Ljava/lang/Object;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "fromDelta",
-    "(III)Lnet/minecraft/core/Direction;",
-    7
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "getNearest",
-    "(FFF)Lnet/minecraft/core/Direction;",
-    6
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "getNormal",
-    "()Lnet/minecraft/core/Vec3i;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "ordinal",
-    "()I",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction$Axis",
-    "ordinal",
-    "()I",
-    9
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction$AxisDirection",
-    "ordinal",
-    "()I",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/core/Registry",
-    "getClass",
-    "()Ljava/lang/Class;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/core/Registry",
-    "getHolder",
-    "(I)Ljava/util/Optional;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/RegistryAccess",
-    "registryOrThrow",
-    "(Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/core/Registry;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/component/DataComponentType",
-    "equals",
-    "(Ljava/lang/Object;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeOutput",
-    "accept",
-    "(Lnet/minecraft/resources/Identifier;Lnet/minecraft/world/item/crafting/Recipe;Lnet/minecraft/advancements/AdvancementHolder;[Lnet/neoforged/neoforge/common/conditions/ICondition;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapedRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapedRecipeBuilder",
-    "shaped",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/data/recipes/ShapedRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapelessRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapelessRecipeBuilder",
-    "shapeless",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/data/recipes/ShapelessRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SimpleCookingRecipeBuilder",
-    "generic",
-    "(Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;FILnet/minecraft/world/item/crafting/RecipeSerializer;Lnet/minecraft/world/item/crafting/AbstractCookingRecipe$Factory;)Lnet/minecraft/data/recipes/SimpleCookingRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SimpleCookingRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SingleItemRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SmithingTransformRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SpecialRecipeBuilder",
-    "special",
-    "(Ljava/util/function/Function;)Lnet/minecraft/data/recipes/SpecialRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getAllKeys",
-    "()Ljava/util/Set;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getBoolean",
-    "(Ljava/lang/String;)Z",
-    8
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getCompound",
-    "(Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;",
-    7
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getFloat",
-    "(Ljava/lang/String;)F",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getInt",
-    "(Ljava/lang/String;)I",
-    13
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getList",
-    "(Ljava/lang/String;I)Lnet/minecraft/nbt/ListTag;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getString",
-    "(Ljava/lang/String;)Ljava/lang/String;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getUUID",
-    "(Ljava/lang/String;)Ljava/util/UUID;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "putUUID",
-    "(Ljava/lang/String;Ljava/util/UUID;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "remove",
-    "(Ljava/lang/String;)V",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/ListTag",
-    "add",
-    "(Ljava/lang/Object;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/ListTag",
-    "forEach",
-    "(Ljava/util/function/Consumer;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/NbtUtils",
-    "writeBlockPos",
-    "(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/nbt/Tag;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/resources/ResourceKey",
-    "location",
-    "()Lnet/minecraft/resources/Identifier;",
-    6
-   ],
-   [
-    "M",
-    "net/minecraft/server/level/ServerPlayer",
-    "getServer",
-    "()Lnet/minecraft/server/MinecraftServer;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/sounds/SoundEvent",
-    "getLocation",
-    "()Lnet/minecraft/resources/Identifier;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/LivingEntity",
-    "getSlotForHand",
-    "(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/entity/EquipmentSlot;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/player/Player",
-    "displayClientMessage",
-    "(Lnet/minecraft/network/chat/Component;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/BlockItem",
-    "appendHoverText",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/Item$TooltipContext;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "getCraftingRemainingItem",
-    "()Lnet/minecraft/world/item/ItemStack;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "getItemHolder",
-    "()Lnet/minecraft/core/Holder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "hasCraftingRemainingItem",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "is",
-    "(Lnet/minecraft/world/item/Item;)Z",
-    7
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "saveOptional",
-    "(Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/Tag;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/JukeboxSong",
-    "fromStack",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/SignApplicator",
-    "canApplyToSign",
-    "(Lnet/minecraft/world/level/block/entity/SignText;Lnet/minecraft/world/entity/player/Player;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/SignApplicator",
-    "tryApplyToSign",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/level/block/entity/SignBlockEntity;ZLnet/minecraft/world/entity/player/Player;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/BlastingRecipe",
-    "<init>",
-    "(Ljava/lang/String;Lnet/minecraft/world/item/crafting/CookingBookCategory;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/ItemStack;FI)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/CampfireCookingRecipe",
-    "<init>",
-    "(Ljava/lang/String;Lnet/minecraft/world/item/crafting/CookingBookCategory;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/ItemStack;FI)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/Ingredient",
-    "of",
-    "(Lnet/minecraft/tags/TagKey;)Lnet/minecraft/world/item/crafting/Ingredient;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/SmeltingRecipe",
-    "<init>",
-    "(Ljava/lang/String;Lnet/minecraft/world/item/crafting/CookingBookCategory;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/ItemStack;FI)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/SmokingRecipe",
-    "<init>",
-    "(Ljava/lang/String;Lnet/minecraft/world/item/crafting/CookingBookCategory;Lnet/minecraft/world/item/crafting/Ingredient;Lnet/minecraft/world/item/ItemStack;FI)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/ItemLike",
-    "equals",
-    "(Ljava/lang/Object;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "addParticle",
-    "(Lnet/minecraft/core/particles/ParticleOptions;ZDDDDDD)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "levelEvent",
-    "(Lnet/minecraft/world/entity/player/Player;ILnet/minecraft/core/BlockPos;I)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "playSound",
-    "(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "playSound",
-    "(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "getCloneItemStack",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/HitResult;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/item/ItemStack;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "getDrops",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemStack;)Ljava/util/List;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "neighborChanged",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "onRemove",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/ButtonBlock",
-    "getCloneItemStack",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/HitResult;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/item/ItemStack;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/LeverBlock",
-    "getCloneItemStack",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/phys/HitResult;Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/item/ItemStack;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Mirror",
-    "ordinal",
-    "()I",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Rotation",
-    "ordinal",
-    "()I",
-    5
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/entity/BlockEntity",
-    "addEntityType",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/world/level/block/entity/BlockEntityType;)V",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/entity/JukeboxBlockEntity",
-    "loadWithComponents",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "getAnalogOutputSignal",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)I",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "getOcclusionShape",
-    "(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "handleNeighborChanged",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "is",
-    "(Lnet/minecraft/world/level/block/Block;)Z",
-    25
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "onRemove",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    5
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "propagatesSkylightDown",
-    "(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "updateShape",
-    "(Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "useItemOn",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/AttachFace",
-    "name",
-    "()Ljava/lang/String;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/AttachFace",
-    "ordinal",
-    "()I",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/SlabType",
-    "ordinal",
-    "()I",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/StairsShape",
-    "ordinal",
-    "()I",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/WallSide",
-    "ordinal",
-    "()I",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/storage/loot/LootParams$Builder",
-    "getOptionalParameter",
-    "(Ldiaithir/shim/stub/net/minecraft/world/level/storage/loot/parameters/LootContextParam;)Ljava/lang/Object;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction",
-    "copyComponents",
-    "(Ldiaithir/shim/stub/net/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Source;)Lnet/minecraft/world/level/storage/loot/functions/CopyComponentsFunction$Builder;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/client/extensions/common/IClientFluidTypeExtensions",
-    "getTintColor",
-    "(Lnet/neoforged/neoforge/fluids/FluidStack;)I",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/common/data/JsonCodecProvider",
-    "<init>",
-    "(Lnet/minecraft/data/PackOutput;Lnet/minecraft/data/PackOutput$Target;Ljava/lang/String;Lnet/minecraft/server/packs/PackType;Lcom/mojang/serialization/Codec;Ljava/util/concurrent/CompletableFuture;Ljava/lang/String;Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;)V",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/data/event/GatherDataEvent",
-    "getExistingFileHelper",
-    "()Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/data/event/GatherDataEvent",
-    "getMods",
-    "()Ljava/util/Set;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/data/event/GatherDataEvent",
-    "includeServer",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/FluidStack",
-    "getFluidHolder",
-    "()Lnet/minecraft/core/Holder;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/FluidStack",
-    "parseOptional",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/neoforged/neoforge/fluids/FluidStack;",
-    2
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/FluidStack",
-    "saveOptional",
-    "(Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/Tag;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/capability/templates/FluidTank",
-    "readFromNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/capability/templates/FluidTank",
-    "writeToNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/items/ItemStackHandler",
-    "deserializeNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)V",
-    2
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/items/ItemStackHandler",
-    "serializeNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/CompoundTag;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/network/PacketDistributor",
-    "sendToServer",
-    "(Lnet/minecraft/network/protocol/common/custom/CustomPacketPayload;[Lnet/minecraft/network/protocol/common/custom/CustomPacketPayload;)V",
-    1
-   ]
-  ]
- },
- "createaddition-1.7.2.jar": {
-  "missing_classes": {
-   "net/createmod/catnip/platform/CatnipServices": {
-    "n": 3,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/services/PlatformHelper": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/ItemBlockRenderTypes": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/network/handling/DirectionalPayloadHandler": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
-    "n": 18,
-    "candidates": []
-   },
-   "diaithir/shim/stub/com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
-    "n": 10,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/VariantBlockStateBuilder": {
-    "n": 4,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ConfiguredModel": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ConfiguredModel$Builder": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelFile$ExistingModelFile": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelFile": {
-    "n": 9,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder": {
-    "n": 5,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/MultiPartBlockStateBuilder$PartBuilder": {
-    "n": 5,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 4,
-    "candidates": []
-   },
-   "F": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/InteractionResultHolder": {
-    "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/LightTexture": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 2,
-    "candidates": []
-   },
-   "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueSettingsBehaviour$ValueSettings": {
-    "n": 1,
-    "candidates": []
-   },
-   "I": {
-    "n": 2,
-    "candidates": []
-   },
-   "dan200/computercraft/api/peripheral/IPeripheral": {
-    "n": 6,
-    "candidates": []
-   },
-   "dan200/computercraft/api/lua/LuaException": {
-    "n": 3,
-    "candidates": []
-   },
-   "dan200/computercraft/api/peripheral/PeripheralCapability": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/gui/GuiGraphics": {
-    "n": 6,
-    "candidates": []
-   },
-   "mezz/jei/api/recipe/RecipeIngredientRole": {
-    "n": 3,
-    "candidates": []
-   },
-   "mezz/jei/api/gui/builder/IRecipeLayoutBuilder": {
-    "n": 3,
-    "candidates": []
-   },
-   "mezz/jei/api/gui/builder/IRecipeSlotBuilder": {
-    "n": 3,
-    "candidates": []
-   },
-   "mezz/jei/api/registration/IRecipeRegistration": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/registration/IRecipeCatalystRegistration": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/helpers/IJeiHelpers": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/recipe/RecipeType": {
-    "n": 1,
-    "candidates": [
-     "net/minecraft/world/item/crafting/RecipeType"
-    ]
-   },
-   "mezz/jei/api/recipe/category/IRecipeCategory": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/registration/IRecipeCategoryRegistration": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/IModPlugin": {
-    "n": 1,
-    "candidates": []
-   },
-   "mezz/jei/api/gui/drawable/IDrawable": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/api/sublevel/ServerSubLevelContainer": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/SubLevel": {
-    "n": 2,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/ServerSubLevel": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/plot/ServerLevelPlot": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/plot/PlotChunkHolder": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/neoforge/event/ForgeSablePostPhysicsTickEvent": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/system/SubLevelPhysicsSystem": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/api/sublevel/SubLevelContainer": {
-    "n": 1,
-    "candidates": []
-   },
-   "J": {
-    "n": 2,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/SableCompanion": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/ClientSubLevelAccess": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/math/Pose3dc": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/plot/LevelPlot": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/sublevel/plot/EmbeddedPlotLevelAccessor": {
-    "n": 1,
-    "candidates": []
-   },
-   "dev/ryanhcode/sable/companion/SubLevelAccess": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/neoforged/fml/common/EventBusSubscriber$Bus": {
-    "n": 4,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/BlockModelBuilder": {
-    "n": 1,
-    "candidates": [
-     "com/zurrtum/create/client/flywheel/lib/model/baked/BlockModelBuilder"
-    ]
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelBuilder$RootTransformsBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ModelBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/data/tags/IntrinsicHolderTagsProvider$IntrinsicTagAppender": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/data/tags/TagsProvider$TagAppender": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/saveddata/SavedData$Factory": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/storage/DimensionDataStorage": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/chunk/PalettedContainer$Strategy": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/client/event/RegisterClientReloadListenersEvent": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/zurrtum/create/AllFluids$TintedFluidType": {
-    "n": 1,
-    "candidates": []
-   },
-   "com/llamalad7/mixinextras/injector/wrapoperation/Operation": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/GameRules$Key": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderType$CompositeState": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderType$CompositeState$CompositeStateBuilder": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderStateShard$ShaderStateShard": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderStateShard": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderStateShard$CullStateShard": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderStateShard$LightmapStateShard": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/client/renderer/RenderType$CompositeRenderType": {
-    "n": 1,
-    "candidates": []
-   }
-  },
-  "missing_members": [
-   [
-    "F",
-    "com/zurrtum/create/AllAdvancements",
-    "CONTRAPTION_ACTORS",
-    "Lcom/simibubi/create/foundation/advancement/CreateAdvancement;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllFluids",
-    "CHOCOLATE",
-    "Lcom/tterrag/registrate/util/entry/FluidEntry;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/Create",
-    "RANDOM",
-    "Ljava/util/Random;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/api/registry/CreateRegistries",
-    "POTATO_PROJECTILE_TYPE",
-    "Lnet/minecraft/resources/ResourceKey;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "OMNIDIRECTIONAL",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "RECTANGLE",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "value",
-    "I",
-    3
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/fluids/pump/PumpBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/speedController/SpeedControllerBlockEntity",
-    "targetSpeed",
-    "Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/processing/burner/BlazeBurnerBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/trains/schedule/Schedule",
-    "CONDITION_TYPES",
-    "Ljava/util/List;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/client/Minecraft",
-    "cameraEntity",
-    "Lnet/minecraft/world/entity/Entity;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "CONSUME",
-    "Lnet/minecraft/world/InteractionResult;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "PASS",
-    "Lnet/minecraft/world/InteractionResult;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/InteractionResult",
-    "SUCCESS",
-    "Lnet/minecraft/world/InteractionResult;",
-    6
-   ],
-   [
-    "F",
-    "net/minecraft/world/effect/MobEffects",
-    "MOVEMENT_SPEED",
-    "Lnet/minecraft/core/Holder;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/item/crafting/Ingredient",
-    "EMPTY",
-    "Lnet/minecraft/world/item/crafting/Ingredient;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/LeverBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    8
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/gamerules/GameRules",
-    "RULE_DOFIRETICK",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/GameRules$Key;",
-    1
-   ],
-   [
-    "F",
-    "net/neoforged/fml/loading/FMLEnvironment",
-    "production",
-    "Z",
-    1
-   ],
-   [
-    "M",
-    "com/mojang/blaze3d/vertex/PoseStack",
-    "mulPose",
-    "(Lorg/joml/Quaternionf;)V",
-    2
-   ],
-   [
-    "M",
-    "com/mojang/blaze3d/vertex/VertexConsumer",
-    "addVertex",
-    "(Lorg/joml/Matrix4f;FFF)Lcom/mojang/blaze3d/vertex/VertexConsumer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/display/DisplaySource",
-    "displaySource",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/behaviour/movement/MovementBehaviour",
-    "movementBehaviour",
-    "(Lcom/zurrtum/create/api/behaviour/movement/MovementBehaviour;)Lcom/tterrag/registrate/util/nullness/NonNullConsumer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/api/stress/BlockStressValues",
-    "setGeneratorSpeed",
-    "(IZ)Lcom/tterrag/registrate/util/nullness/NonNullConsumer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/catnip/animation/LerpedFloat",
-    "chase",
-    "(DDLnet/createmod/catnip/animation/LerpedFloat$Chaser;)Lcom/zurrtum/create/catnip/animation/LerpedFloat;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement",
-    "of",
-    "(Lnet/minecraft/world/level/block/state/BlockState;)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "atLocal",
-    "(DDD)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "render",
-    "(Ldiaithir/shim/stub/net/minecraft/client/gui/GuiGraphics;)V",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "rotateBlock",
-    "(DDD)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder",
-    "scale",
-    "(D)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/render/SuperByteBuffer",
-    "renderInto",
-    "(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V",
-    7
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/render/SuperByteBuffer",
-    "useLevelLight",
-    "(Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lorg/joml/Matrix4f;)Lcom/zurrtum/create/client/catnip/render/SuperByteBuffer;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/content/kinetics/base/KineticBlockEntityRenderer",
-    "renderSafe",
-    "(Lcom/zurrtum/create/content/kinetics/base/KineticBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "<init>",
-    "(Ljava/lang/Class;Lnet/minecraft/network/chat/Component;Lcom/zurrtum/create/foundation/blockEntity/SmartBlockEntity;Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollOptionBehaviour",
-    "getValue",
-    "()I",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "between",
-    "(II)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "getValue",
-    "()I",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "setValue",
-    "(I)V",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour",
-    "withCallback",
-    "(Ljava/util/function/Consumer;)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/scrollValue/ScrollValueBehaviour;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/gui/AllGuiTextures",
-    "render",
-    "(Ldiaithir/shim/stub/net/minecraft/client/gui/GuiGraphics;II)V",
-    5
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/IControlContraption$RotationMode",
-    "ordinal",
-    "()I",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/bearing/MechanicalBearingBlockEntity",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/bearing/MechanicalBearingBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/bearing/MechanicalBearingBlockEntity",
-    "tickAudio",
-    "()V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/contraptions/bearing/MechanicalBearingBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/pump/PumpBlock",
-    "neighborChanged",
-    "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/pump/PumpBlockEntity",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/pump/PumpBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/pump/PumpBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/pump/PumpBlockEntity",
-    "writeSafe",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "getTankInventory",
-    "()Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "tickAudio",
-    "()V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/GeneratingKineticBlockEntity",
-    "writeSafe",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
-    "updateEntityAfterFallOn",
-    "(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/entity/Entity;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlockEntity",
-    "addToGoggleTooltip",
-    "(Ljava/util/List;Z)Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlockEntity",
-    "tickAudio",
-    "()V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlockEntity",
-    "writeSafe",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/processing/burner/BlazeBurnerBlock$HeatLevel",
-    "ordinal",
-    "()I",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/processing/recipe/ProcessingOutput",
-    "getStack",
-    "()Lnet/minecraft/world/item/ItemStack;",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/processing/sequenced/SequencedAssemblyRecipe",
-    "getRecipe",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/crafting/RecipeType;Ljava/lang/Class;)Ljava/util/Optional;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/redstone/displayLink/source/PercentOrProgressBarDisplaySource",
-    "initConfigurationWidgets",
-    "(Lcom/zurrtum/create/content/redstone/displayLink/DisplayLinkContext;Lcom/zurrtum/create/client/foundation/gui/ModularGuiLineBuilder;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/trains/schedule/condition/CargoThresholdCondition",
-    "<init>",
-    "()V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/trains/schedule/condition/CargoThresholdCondition",
-    "initConfigurationWidgets",
-    "(Lcom/zurrtum/create/client/foundation/gui/ModularGuiLineBuilder;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/trains/schedule/condition/CargoThresholdCondition$Ops",
-    "name",
-    "()Ljava/lang/String;",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
-    "read",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    5
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
-    "write",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/SmartBlockEntity",
-    "writeSafe",
-    "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/item/ItemHelper",
-    "dropContents",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/neoforged/neoforge/items/IItemHandler;)V",
-    2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/infrastructure/config/AllConfigs",
-    "client",
-    "()Lcom/zurrtum/create/client/infrastructure/config/CClient;",
-    2
-   ],
-   [
-    "M",
-    "it/unimi/dsi/fastutil/ints/Int2ObjectMap",
-    "equals",
-    "(Ljava/lang/Object;)Z",
-    1
-   ],
-   [
-    "M",
-    "it/unimi/dsi/fastutil/longs/LongIterator",
-    "hasNext",
-    "()Z",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/LevelRenderer",
-    "getLightColor",
-    "(Lnet/minecraft/client/renderer/block/BlockAndTintGetter;Lnet/minecraft/core/BlockPos;)I",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher",
-    "render",
-    "(Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "<init>",
-    "(Ljava/lang/String;Lcom/mojang/blaze3d/vertex/VertexFormat;Lcom/mojang/blaze3d/vertex/VertexFormat$Mode;IZZLjava/lang/Runnable;Ljava/lang/Runnable;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "cutoutMipped",
-    "()Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/client/renderer/rendertype/RenderType",
-    "solid",
-    "()Lnet/minecraft/client/renderer/rendertype/RenderType;",
-    6
-   ],
-   [
-    "M",
-    "net/minecraft/client/sounds/SoundManager",
-    "play",
-    "(Lnet/minecraft/client/resources/sounds/SoundInstance;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/commands/CommandSourceStack",
-    "hasPermission",
-    "(I)Z",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "getNearest",
-    "(DDD)Lnet/minecraft/core/Direction;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "getNearest",
-    "(FFF)Lnet/minecraft/core/Direction;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "getNormal",
-    "()Lnet/minecraft/core/Vec3i;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction",
-    "ordinal",
-    "()I",
-    10
-   ],
-   [
-    "M",
-    "net/minecraft/core/Direction$Axis",
-    "ordinal",
-    "()I",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/core/NonNullList",
-    "getFirst",
-    "()Ljava/lang/Object;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/NonNullList",
-    "isEmpty",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/NonNullList",
-    "iterator",
-    "()Ljava/util/Iterator;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Registry",
-    "get",
-    "(Lnet/minecraft/resources/ResourceKey;)Ljava/lang/Object;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/Registry",
-    "getHolderOrThrow",
-    "(Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/core/Holder$Reference;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/RegistryAccess",
-    "registryOrThrow",
-    "(Lnet/minecraft/resources/ResourceKey;)Lnet/minecraft/core/Registry;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/core/particles/ItemParticleOption",
-    "<init>",
-    "(Lnet/minecraft/core/particles/ParticleType;Lnet/minecraft/world/item/ItemStack;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeBuilder",
-    "getDefaultRecipeId",
-    "(Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/resources/Identifier;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeBuilder",
-    "getResult",
-    "()Lnet/minecraft/world/item/Item;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeOutput",
-    "accept",
-    "(Lnet/minecraft/resources/Identifier;Lnet/minecraft/world/item/crafting/Recipe;Lnet/minecraft/advancements/AdvancementHolder;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/RecipeProvider",
-    "<init>",
-    "(Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapedRecipeBuilder",
-    "shaped",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/data/recipes/ShapedRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapedRecipeBuilder",
-    "shaped",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;I)Lnet/minecraft/data/recipes/ShapedRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapelessRecipeBuilder",
-    "shapeless",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/data/recipes/ShapelessRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/ShapelessRecipeBuilder",
-    "shapeless",
-    "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;I)Lnet/minecraft/data/recipes/ShapelessRecipeBuilder;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/recipes/SimpleCookingRecipeBuilder",
-    "save",
-    "(Lnet/minecraft/data/recipes/RecipeOutput;Lnet/minecraft/resources/Identifier;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/data/tags/FluidTagsProvider",
-    "<init>",
-    "(Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;Ljava/lang/String;Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "contains",
-    "(Ljava/lang/String;I)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getBoolean",
-    "(Ljava/lang/String;)Z",
-    7
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getByte",
-    "(Ljava/lang/String;)B",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getCompound",
-    "(Ljava/lang/String;)Lnet/minecraft/nbt/CompoundTag;",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getFloat",
-    "(Ljava/lang/String;)F",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getInt",
-    "(Ljava/lang/String;)I",
-    15
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getList",
-    "(Ljava/lang/String;I)Lnet/minecraft/nbt/ListTag;",
-    6
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getLong",
-    "(Ljava/lang/String;)J",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "getString",
-    "(Ljava/lang/String;)Ljava/lang/String;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/CompoundTag",
-    "remove",
-    "(Ljava/lang/String;)V",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/ListTag",
-    "add",
-    "(Ljava/lang/Object;)Z",
-    5
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/ListTag",
-    "forEach",
-    "(Ljava/util/function/Consumer;)V",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/NbtUtils",
-    "readBlockPos",
-    "(Lnet/minecraft/nbt/CompoundTag;Ljava/lang/String;)Ljava/util/Optional;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/nbt/NbtUtils",
-    "writeBlockPos",
-    "(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/nbt/Tag;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/network/chat/ClickEvent",
-    "<init>",
-    "(Lnet/minecraft/network/chat/ClickEvent$Action;Ljava/lang/String;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/network/chat/HoverEvent",
-    "<init>",
-    "(Lnet/minecraft/network/chat/HoverEvent$Action;Ljava/lang/Object;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/resources/ResourceKey",
-    "location",
-    "()Lnet/minecraft/resources/Identifier;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/server/level/ServerLevel",
-    "getDataStorage",
-    "()Ldiaithir/shim/stub/net/minecraft/world/level/storage/DimensionDataStorage;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/util/Mth",
-    "sin",
-    "(F)F",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/Entity",
-    "hurt",
-    "(Lnet/minecraft/world/damagesource/DamageSource;F)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/LivingEntity",
-    "getArmorSlots",
-    "()Ljava/lang/Iterable;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/LivingEntity",
-    "hurt",
-    "(Lnet/minecraft/world/damagesource/DamageSource;F)Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/player/Inventory",
-    "getSelected",
-    "()Lnet/minecraft/world/item/ItemStack;",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/entity/player/Player",
-    "displayClientMessage",
-    "(Lnet/minecraft/network/chat/Component;Z)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/Item",
-    "appendHoverText",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/Item$TooltipContext;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "getBurnTime",
-    "(Lnet/minecraft/world/item/crafting/RecipeType;)I",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "getCraftingRemainingItem",
-    "()Lnet/minecraft/world/item/ItemStack;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "hasCraftingRemainingItem",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/ItemStack",
-    "is",
-    "(Lnet/minecraft/world/item/Item;)Z",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/item/crafting/Ingredient",
-    "of",
-    "([Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/crafting/Ingredient;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/ChunkPos",
-    "<init>",
-    "(J)V",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/ChunkPos",
-    "asLong",
-    "(II)J",
-    2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/ChunkPos",
-    "toLong",
-    "()J",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "getGameRules",
-    "()Lnet/minecraft/world/level/gamerules/GameRules;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "getRecipeManager",
-    "()Lnet/minecraft/world/item/crafting/RecipeManager;",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/Level",
-    "playSound",
-    "(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V",
-    4
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "useItemOn",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/entity/BlockEntity",
-    "getPosFromTag",
-    "(Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/core/BlockPos;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/entity/BlockEntityType",
-    "getKey",
-    "(Lnet/minecraft/world/level/block/entity/BlockEntityType;)Lnet/minecraft/resources/Identifier;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockBehaviour$Properties",
-    "noCollission",
-    "()Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/BlockState",
-    "is",
-    "(Lnet/minecraft/world/level/block/Block;)Z",
-    3
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/state/properties/IntegerProperty",
-    "getPossibleValues",
-    "()Ljava/util/Collection;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/chunk/PalettedContainer",
-    "codecRW",
-    "(Lnet/minecraft/core/IdMap;Lcom/mojang/serialization/Codec;Ldiaithir/shim/stub/net/minecraft/world/level/chunk/PalettedContainer$Strategy;Ljava/lang/Object;)Lcom/mojang/serialization/Codec;",
-    1
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/gamerules/GameRules",
-    "getBoolean",
-    "(Ldiaithir/shim/stub/net/minecraft/world/level/GameRules$Key;)Z",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/common/data/BlockTagsProvider",
-    "<init>",
-    "(Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;Ljava/lang/String;Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;)V",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/common/data/ItemTagsProvider",
-    "<init>",
-    "(Lnet/minecraft/data/PackOutput;Ljava/util/concurrent/CompletableFuture;Ljava/util/concurrent/CompletableFuture;Ljava/lang/String;Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;)V",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/common/extensions/ITagAppenderExtension",
-    "addOptionalTag",
-    "(Lnet/minecraft/tags/TagKey;)Ldiaithir/shim/stub/net/minecraft/data/tags/TagsProvider$TagAppender;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/data/event/GatherDataEvent",
-    "getExistingFileHelper",
-    "()Ldiaithir/shim/stub/net/neoforged/neoforge/common/data/ExistingFileHelper;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/data/event/GatherDataEvent",
-    "includeServer",
-    "()Z",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/capability/templates/FluidTank",
-    "readFromNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/capability/templates/FluidTank",
-    "writeToNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)Lnet/minecraft/nbt/CompoundTag;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/crafting/SizedFluidIngredient",
-    "getFluids",
-    "()[Lnet/neoforged/neoforge/fluids/FluidStack;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/crafting/SizedFluidIngredient",
-    "of",
-    "(Lnet/minecraft/tags/TagKey;I)Lnet/neoforged/neoforge/fluids/crafting/SizedFluidIngredient;",
-    2
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/fluids/crafting/SizedFluidIngredient",
-    "of",
-    "(Lnet/neoforged/neoforge/fluids/FluidStack;)Lnet/neoforged/neoforge/fluids/crafting/SizedFluidIngredient;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/items/ItemStackHandler",
-    "deserializeNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/CompoundTag;)V",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/items/ItemStackHandler",
-    "serializeNBT",
-    "(Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/nbt/CompoundTag;",
-    1
-   ],
-   [
-    "M",
-    "net/neoforged/neoforge/network/PacketDistributor",
-    "sendToServer",
-    "(Lnet/minecraft/network/protocol/common/custom/CustomPacketPayload;[Lnet/minecraft/network/protocol/common/custom/CustomPacketPayload;)V",
-    1
-   ]
-  ]
- },
  "createdeco-2.1.3.jar": {
   "missing_classes": {
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 2,
-    "candidates": []
-   },
    "diaithir/shim/stub/com/tterrag/registrate/providers/RegistrateBlockstateProvider": {
     "n": 2,
     "candidates": []
@@ -7617,10 +3751,6 @@
    },
    "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/ItemModelBuilder": {
     "n": 2,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 1,
     "candidates": []
    },
    "diaithir/shim/stub/net/neoforged/neoforge/client/model/generators/BlockModelProvider": {
@@ -7665,22 +3795,6 @@
     "n": 1,
     "candidates": []
    },
-   "net/createmod/catnip/platform/CatnipServices": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/services/PlatformHelper": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/Env": {
-    "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 3,
-    "candidates": []
-   },
    "org/jetbrains/annotations/ApiStatus$Internal": {
     "n": 1,
     "candidates": []
@@ -7691,34 +3805,6 @@
    }
   },
   "missing_members": [
-   [
-    "F",
-    "com/zurrtum/create/AllMountedStorageTypes",
-    "VAULT",
-    "Lcom/tterrag/registrate/util/entry/RegistryEntry;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "OMNIDIRECTIONAL",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "RECTANGLE",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "VERTICAL",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    1
-   ],
    [
     "F",
     "net/minecraft/world/InteractionResult",
@@ -7736,30 +3822,16 @@
    [
     "F",
     "net/minecraft/world/InteractionResult",
-    "SUCCESS",
+    "PASS_TO_DEFAULT_BLOCK_INTERACTION",
     "Lnet/minecraft/world/InteractionResult;",
-    6
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/HorizontalDirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
     1
    ],
    [
     "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    4
+    "net/minecraft/world/InteractionResult",
+    "SUCCESS",
+    "Lnet/minecraft/world/InteractionResult;",
+    6
    ],
    [
     "M",
@@ -7770,31 +3842,10 @@
    ],
    [
     "M",
-    "com/zurrtum/create/api/contraption/storage/item/MountedItemStorageType",
-    "mountedItemStorage",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
     "com/zurrtum/create/catnip/placement/PlacementOffset",
     "placeInWorld",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
+    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;",
     3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/block/connected/CTSpriteShiftEntry",
-    "<init>",
-    "(Lcom/zurrtum/create/client/foundation/block/connected/CTType;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/block/connected/CTSpriteShiftEntry",
-    "set",
-    "(Lnet/minecraft/resources/Identifier;Lnet/minecraft/resources/Identifier;)V",
-    1
    ],
    [
     "M",
@@ -7861,13 +3912,6 @@
    ],
    [
     "M",
-    "net/minecraft/core/particles/DustParticleOptions",
-    "<init>",
-    "(Lorg/joml/Vector3f;F)V",
-    1
-   ],
-   [
-    "M",
     "net/minecraft/data/recipes/ShapedRecipeBuilder",
     "shaped",
     "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;)Lnet/minecraft/data/recipes/ShapedRecipeBuilder;",
@@ -7893,6 +3937,13 @@
     "shapeless",
     "(Lnet/minecraft/data/recipes/RecipeCategory;Lnet/minecraft/world/level/ItemLike;I)Lnet/minecraft/data/recipes/ShapelessRecipeBuilder;",
     1
+   ],
+   [
+    "M",
+    "net/minecraft/world/InteractionResult",
+    "result",
+    "()Lnet/minecraft/world/InteractionResult;",
+    2
    ],
    [
     "M",
@@ -7970,6 +4021,13 @@
     "ordinal",
     "()I",
     4
+   ],
+   [
+    "M",
+    "net/minecraft/world/level/block/state/properties/EnumProperty",
+    "getPossibleValues",
+    "()Ljava/util/Collection;",
+    1
    ],
    [
     "M",
@@ -8194,22 +4252,6 @@
     "n": 1,
     "candidates": []
    },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 4,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
-    "n": 17,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/CatnipServices": {
-    "n": 11,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/services/PlatformHelper": {
-    "n": 10,
-    "candidates": []
-   },
    "diaithir/shim/stub/net/minecraft/world/item/Tiers": {
     "n": 1,
     "candidates": []
@@ -8246,14 +4288,6 @@
     "n": 2,
     "candidates": []
    },
-   "diaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 10,
-    "candidates": []
-   },
    "diaithir/shim/stub/net/minecraft/network/protocol/game/DebugPackets": {
     "n": 1,
     "candidates": []
@@ -8263,10 +4297,6 @@
     "candidates": []
    },
    "I": {
-    "n": 1,
-    "candidates": []
-   },
-   "net/createmod/catnip/platform/services/NetworkHelper": {
     "n": 1,
     "candidates": []
    },
@@ -8358,20 +4388,6 @@
   "missing_members": [
    [
     "F",
-    "com/zurrtum/create/AllBlockEntityTypes",
-    "BASIN",
-    "Lcom/tterrag/registrate/util/entry/BlockEntityEntry;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllFluids",
-    "POTION",
-    "Lcom/tterrag/registrate/util/entry/FluidEntry;",
-    1
-   ],
-   [
-    "F",
     "com/zurrtum/create/api/packager/unpacking/UnpackingHandler",
     "DEFAULT",
     "Lcom/zurrtum/create/api/packager/unpacking/UnpackingHandler;",
@@ -8383,55 +4399,6 @@
     "SPOUT_TOP",
     "Lcom/zurrtum/create/client/flywheel/lib/model/baked/PartialModel;",
     1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "CROSS",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/client/foundation/block/connected/AllCTTypes",
-    "RECTANGLE",
-    "Lcom/zurrtum/create/client/foundation/block/connected/AllCTTypes;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/contraptions/bearing/BearingBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/decoration/girder/GirderEncasedShaftBlock",
-    "HORIZONTAL_AXIS",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    2
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/DirectionalKineticBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/HorizontalAxisKineticBlock",
-    "HORIZONTAL_AXIS",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/content/kinetics/base/HorizontalKineticBlock",
-    "HORIZONTAL_FACING",
-    "Lnet/minecraft/world/level/block/state/properties/Property;",
-    4
    ],
    [
     "F",
@@ -8452,7 +4419,7 @@
     "net/minecraft/world/InteractionResult",
     "FAIL",
     "Lnet/minecraft/world/InteractionResult;",
-    3
+    8
    ],
    [
     "F",
@@ -8464,9 +4431,16 @@
    [
     "F",
     "net/minecraft/world/InteractionResult",
+    "PASS_TO_DEFAULT_BLOCK_INTERACTION",
+    "Lnet/minecraft/world/InteractionResult;",
+    8
+   ],
+   [
+    "F",
+    "net/minecraft/world/InteractionResult",
     "SUCCESS",
     "Lnet/minecraft/world/InteractionResult;",
-    12
+    22
    ],
    [
     "F",
@@ -8484,38 +4458,10 @@
    ],
    [
     "F",
-    "net/minecraft/world/level/block/DispenserBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/HorizontalDirectionalBlock",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    2
-   ],
-   [
-    "F",
     "net/minecraft/world/level/block/RenderShape",
     "ENTITYBLOCK_ANIMATED",
     "Lnet/minecraft/world/level/block/RenderShape;",
     1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    7
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
    ],
    [
     "F",
@@ -8561,13 +4507,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageType",
-    "mountedFluidStorage",
-    "(Lcom/tterrag/registrate/util/entry/RegistryEntry;)Lcom/tterrag/registrate/util/nullness/NonNullUnaryOperator;",
-    1
-   ],
-   [
-    "M",
     "com/zurrtum/create/api/contraption/storage/fluid/WrapperMountedFluidStorage",
     "<init>",
     "(Lcom/zurrtum/create/api/contraption/storage/fluid/MountedFluidStorageType;Lnet/neoforged/neoforge/fluids/capability/IFluidHandler;)V",
@@ -8584,7 +4523,7 @@
     "M",
     "com/zurrtum/create/catnip/placement/PlacementOffset",
     "placeInWorld",
-    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
+    "(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/BlockItem;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;",
     5
    ],
    [
@@ -8592,20 +4531,6 @@
     "com/zurrtum/create/client/AllKeys",
     "shiftDown",
     "()Z",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement",
-    "of",
-    "(Lnet/minecraft/world/item/ItemStack;)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    3
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement",
-    "of",
-    "(Lnet/minecraft/world/level/block/state/BlockState;)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
     1
    ],
    [
@@ -8708,13 +4633,6 @@
    ],
    [
     "M",
-    "com/zurrtum/create/client/flywheel/lib/model/baked/PartialModel",
-    "get",
-    "()Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;",
-    2
-   ],
-   [
-    "M",
     "com/zurrtum/create/client/foundation/blockEntity/ValueSettingsClient",
     "showHoverTip",
     "(Ljava/util/List;)V",
@@ -8746,13 +4664,6 @@
     "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform",
     "transform",
     "(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lcom/mojang/blaze3d/vertex/PoseStack;)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided",
-    "fromSide",
-    "(Lnet/minecraft/core/Direction;)Lcom/zurrtum/create/client/foundation/blockEntity/behaviour/ValueBoxTransform$Sided;",
     1
    ],
    [
@@ -8836,7 +4747,7 @@
     "M",
     "com/zurrtum/create/client/infrastructure/model/CTModel",
     "<init>",
-    "(Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;Lcom/zurrtum/create/client/foundation/block/connected/ConnectedTextureBehaviour;)V",
+    "(Ldiaithir/shim/stub/net/minecraft/client/resources/model/BakedModel;Lcom/simibubi/create/foundation/block/connected/ConnectedTextureBehaviour;)V",
     1
    ],
    [
@@ -8901,13 +4812,6 @@
     "ordinal",
     "()I",
     2
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/fluids/tank/FluidTankBlockEntity",
-    "getTankInventory",
-    "()Lnet/neoforged/neoforge/fluids/capability/templates/FluidTank;",
-    3
    ],
    [
     "M",
@@ -8991,13 +4895,6 @@
     "com/zurrtum/create/content/kinetics/base/KineticBlock",
     "onRemove",
     "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V",
-    1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/content/kinetics/base/KineticBlock",
-    "useItemOn",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
     1
    ],
    [
@@ -9167,20 +5064,6 @@
     "write",
     "(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;Z)V",
     6
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/behaviour/fluid/SmartFluidTankBehaviour",
-    "getCapability",
-    "()Lnet/neoforged/neoforge/fluids/capability/IFluidHandler;",
-    4
-   ],
-   [
-    "M",
-    "com/zurrtum/create/foundation/blockEntity/behaviour/fluid/SmartFluidTankBehaviour",
-    "getPrimaryHandler",
-    "()Lcom/simibubi/create/foundation/fluid/SmartFluidTank;",
-    4
    ],
    [
     "M",
@@ -9565,7 +5448,7 @@
     "net/minecraft/world/InteractionResult",
     "sidedSuccess",
     "(Z)Lnet/minecraft/world/InteractionResult;",
-    1
+    2
    ],
    [
     "M",
@@ -9769,13 +5652,6 @@
     "updateShape",
     "(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;",
     2
-   ],
-   [
-    "M",
-    "net/minecraft/world/level/block/Block",
-    "useItemOn",
-    "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Ldiaithir/shim/stub/net/minecraft/world/ItemInteractionResult;",
-    1
    ],
    [
     "M",
@@ -10022,13 +5898,6 @@
    }
   },
   "missing_members": [
-   [
-    "F",
-    "com/zurrtum/create/content/equipment/armor/AllArmorMaterials",
-    "COPPER",
-    "Lnet/minecraft/core/Holder;",
-    1
-   ],
    [
     "F",
     "net/minecraft/tags/ItemTags",
@@ -10348,22 +6217,6 @@
  },
  "createoreexcavation-1.21-1.6.8.jar": {
   "missing_classes": {
-   "diaithir/shim/stub/net/minecraft/world/ItemInteractionResult": {
-    "n": 5,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": {
-    "n": 3,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": {
-    "n": 4,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty": {
-    "n": 1,
-    "candidates": []
-   },
    "dan200/computercraft/api/turtle/ITurtleUpgrade": {
     "n": 1,
     "candidates": []
@@ -10450,10 +6303,6 @@
    },
    "diaithir/shim/stub/net/minecraft/commands/arguments/ResourceLocationArgument": {
     "n": 1,
-    "candidates": []
-   },
-   "diaithir/shim/stub/net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": {
-    "n": 2,
     "candidates": []
    },
    "diaithir/shim/stub/net/minecraft/world/InteractionResultHolder": {
@@ -10767,27 +6616,6 @@
   "missing_members": [
    [
     "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "CRUSHING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "CUTTING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
-    "com/zurrtum/create/AllRecipeTypes",
-    "MILLING",
-    "Lcom/zurrtum/create/AllRecipeTypes;",
-    1
-   ],
-   [
-    "F",
     "com/zurrtum/create/content/processing/recipe/ProcessingOutput",
     "CODEC_NEW",
     "Lcom/mojang/serialization/Codec;",
@@ -10817,9 +6645,23 @@
    [
     "F",
     "net/minecraft/world/InteractionResult",
-    "SUCCESS",
+    "PASS_TO_DEFAULT_BLOCK_INTERACTION",
     "Lnet/minecraft/world/InteractionResult;",
     3
+   ],
+   [
+    "F",
+    "net/minecraft/world/InteractionResult",
+    "SKIP_DEFAULT_BLOCK_INTERACTION",
+    "Lnet/minecraft/world/InteractionResult;",
+    4
+   ],
+   [
+    "F",
+    "net/minecraft/world/InteractionResult",
+    "SUCCESS",
+    "Lnet/minecraft/world/InteractionResult;",
+    5
    ],
    [
     "F",
@@ -10827,20 +6669,6 @@
     "EMPTY",
     "Lnet/minecraft/world/item/crafting/Ingredient;",
     1
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    4
-   ],
-   [
-    "F",
-    "net/minecraft/world/level/block/state/properties/BlockStateProperties",
-    "HORIZONTAL_FACING",
-    "Ldiaithir/shim/stub/net/minecraft/world/level/block/state/properties/DirectionProperty;",
-    3
    ],
    [
     "F",
@@ -10890,13 +6718,6 @@
     "getSerializer",
     "()Lnet/minecraft/world/item/crafting/RecipeSerializer;",
     1
-   ],
-   [
-    "M",
-    "com/zurrtum/create/client/catnip/gui/element/GuiGameElement",
-    "of",
-    "(Lnet/minecraft/world/item/ItemStack;)Lcom/zurrtum/create/client/catnip/gui/element/GuiGameElement$GuiRenderBuilder;",
-    2
    ],
    [
     "M",
@@ -11351,6 +7172,13 @@
     "net/minecraft/world/level/block/state/BlockState",
     "is",
     "(Lnet/minecraft/world/level/block/Block;)Z",
+    1
+   ],
+   [
+    "M",
+    "net/minecraft/world/level/block/state/properties/EnumProperty",
+    "create",
+    "(Ljava/lang/String;)Lnet/minecraft/world/level/block/state/properties/EnumProperty;",
     1
    ],
    [

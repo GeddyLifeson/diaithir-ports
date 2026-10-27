@@ -1,6 +1,7 @@
 #!/bin/bash
 # rebuild map, remap every cached addon jar, residual table. Usage: run_all.sh  (from repo root)
 set -e
+export SHIM_PORT_JAR=${SHIM_PORT_JAR:-/mnt/project-files/create-neoforge-26.1.2-6.0.9-diaithir.8.jar}
 RT=$(cat tools/shim/runtime.txt)
 python3 -I tools/shim/build_map.py tools/shim/map.json $RT -- addons-cache/*.jar
 rm -f out/create*.jar

@@ -1,5 +1,10 @@
 {
  "net/minecraft/resources/ResourceLocation": "net/minecraft/resources/Identifier",
  "net/minecraft/client/resources/model/ModelResourceLocation": "net/minecraft/client/resources/model/ModelResourceLocation",
- "com/tterrag/registrate/providers/RegistrateRecipeProvider": "com/tterrag/registrate/providers/generators/RegistrateRecipeProvider"
+ "com/tterrag/registrate/providers/RegistrateRecipeProvider": "com/tterrag/registrate/providers/generators/RegistrateRecipeProvider",
+ "net/minecraft/world/level/block/state/properties/DirectionProperty": "net/minecraft/world/level/block/state/properties/EnumProperty",
+ "net/minecraft/world/ItemInteractionResult": "net/minecraft/world/InteractionResult",
+ "net/neoforged/neoforge/capabilities/Capabilities$ItemHandler": "net/neoforged/neoforge/capabilities/Capabilities$Item",
+ "net/neoforged/neoforge/capabilities/Capabilities$FluidHandler": "net/neoforged/neoforge/capabilities/Capabilities$Fluid",
+ "net/neoforged/neoforge/capabilities/Capabilities$EnergyStorage": "net/neoforged/neoforge/capabilities/Capabilities$Energy"
 }

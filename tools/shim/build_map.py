@@ -40,7 +40,10 @@ def main():
     m, un, stubs = {}, [], []
     ov = json.load(open(os.path.join(os.path.dirname(__file__), 'overrides.json')))
     ov = {k: v for k, v in ov.items() if v in idx and k != v}
+    force = json.load(open(os.path.join(os.path.dirname(__file__), 'force.json')))
+    force = {k: v for k, v in force.items() if v in idx}
     for k in sorted(used - own):
+        if k in force: m[k] = force[k]; continue
         if not k or k.startswith(('java/', 'javax/', 'sun/', 'jdk/')) or k in idx: continue
         if k in ov: m[k] = ov[k]; continue
         done = False
