@@ -31,6 +31,8 @@ repositories {
 
 dependencies {
     compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.6.25'
+    // diaithir-voice's SpeechEvent: build ../diaithir-voice first. Compile-time only, the mod is optional at run time.
+    compileOnly fileTree(dir: '../diaithir-voice/build/libs', include: '*.jar')
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testImplementation 'com.google.code.gson:gson:2.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'

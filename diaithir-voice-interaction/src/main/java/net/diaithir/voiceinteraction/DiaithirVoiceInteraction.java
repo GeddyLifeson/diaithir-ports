@@ -33,6 +33,7 @@ public final class DiaithirVoiceInteraction {
         container.registerConfig(ModConfig.Type.COMMON, InteractionConfig.SPEC);
         modBus.addListener(ModConfigEvent.Reloading.class, e -> Noticing.reloadRules());
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerLoggedOutEvent.class, e -> Noticing.forget(e.getEntity().getUUID()));
+        if (ModList.get().isLoaded("diaithirvoice")) net.diaithir.voiceinteraction.VoiceBridge.register();
         boolean svc = ModList.get().isLoaded("voicechat");
         boolean own = ModList.get().isLoaded("diaithirvoice");
         LOG.info("Speech is heard through: {}", svc || own ? (svc ? "Simple Voice Chat " : "") + (own ? "diaithir-voice" : "") : "nothing yet, install a voice mod");
