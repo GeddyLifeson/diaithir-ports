@@ -1,0 +1,21 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "P": "productivetrees:yew_planks"
+ },
+ "pattern": [
+  "PPP",
+  "PPP"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_yew_wall",
+  "count": 6
+ }
+}

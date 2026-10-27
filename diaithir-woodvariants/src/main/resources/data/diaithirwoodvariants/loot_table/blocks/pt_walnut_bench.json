@@ -1,0 +1,21 @@
+{
+ "type": "minecraft:block",
+ "random_sequence": "diaithirwoodvariants:blocks/pt_walnut_bench",
+ "pools": [
+  {
+   "rolls": 1,
+   "bonus_rolls": 0,
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "diaithirwoodvariants:pt_walnut_bench"
+    }
+   ]
+  }
+ ]
+}

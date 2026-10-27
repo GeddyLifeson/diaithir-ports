@@ -1,0 +1,23 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "S": "#c:rods/wooden",
+  "P": "productivetrees:rowan_planks"
+ },
+ "pattern": [
+  "PPP",
+  "S S",
+  "S S"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_rowan_table",
+  "count": 1
+ }
+}

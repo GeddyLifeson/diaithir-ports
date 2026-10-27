@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "biomesoplenty"
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "biomesoplenty:maple_planks",
+  "biomesoplenty:maple_planks",
+  "biomesoplenty:maple_planks"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:bop_maple_vertical_planks",
+  "count": 3
+ }
+}

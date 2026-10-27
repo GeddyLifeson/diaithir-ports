@@ -1,0 +1,37 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "diaithirwoodvariants"
+version = "${version}"
+displayName = "Diaithir Wood Variants"
+description = "Furnishing and building variants for the modded woods of the pack: chair, stool, bench, table, wall, vertical planks and framed planks, one set per wood. The woods are rows in data/diaithirwoodvariants/woods.json (planks, log and textures of any mod), and a set is only added when that wood's mod is loaded. Clean-room: written from how furniture and chisel-style variant mods behave, no code or art taken from them. Textures are the wood mod's own, referenced in place."
+
+[[dependencies.diaithirwoodvariants]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1.2.109,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.diaithirwoodvariants]]
+modId = "aether_ii"
+type = "optional"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithirwoodvariants]]
+modId = "biomesoplenty"
+type = "optional"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.diaithirwoodvariants]]
+modId = "productivetrees"
+type = "optional"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"

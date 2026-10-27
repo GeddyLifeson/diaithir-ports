@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "productivetrees:rowan_planks",
+  "productivetrees:rowan_planks",
+  "productivetrees:rowan_planks"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_rowan_vertical_planks",
+  "count": 3
+ }
+}

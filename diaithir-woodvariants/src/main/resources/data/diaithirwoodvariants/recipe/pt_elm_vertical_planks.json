@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "productivetrees:elm_planks",
+  "productivetrees:elm_planks",
+  "productivetrees:elm_planks"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_elm_vertical_planks",
+  "count": 3
+ }
+}

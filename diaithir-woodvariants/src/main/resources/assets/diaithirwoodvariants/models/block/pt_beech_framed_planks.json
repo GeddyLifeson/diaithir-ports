@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "side": "productivetrees:block/planks/beech",
+  "end": "productivetrees:block/log_top/beech",
+  "particle": "productivetrees:block/planks/beech"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "productivetrees:beech_planks",
+  "productivetrees:beech_planks",
+  "productivetrees:beech_planks"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_beech_vertical_planks",
+  "count": 3
+ }
+}

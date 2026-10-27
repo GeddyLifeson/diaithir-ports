@@ -1,0 +1,19 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "productivetrees"
+  }
+ ],
+ "type": "minecraft:crafting_shapeless",
+ "category": "building",
+ "ingredients": [
+  "productivetrees:aspen_planks",
+  "productivetrees:aspen_planks",
+  "productivetrees:aspen_planks"
+ ],
+ "result": {
+  "id": "diaithirwoodvariants:pt_aspen_vertical_planks",
+  "count": 3
+ }
+}

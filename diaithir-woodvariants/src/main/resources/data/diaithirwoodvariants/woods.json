@@ -1,0 +1,203 @@
+{
+ "_comment": "One row per wood. Add a row, run tools/gen.py, rebuild. A row is skipped at load when its mod is not installed.",
+ "woods": [
+  {
+   "id": "skyroot",
+   "mod": "aether_ii",
+   "name": "Skyroot",
+   "gen": "speirfreima",
+   "planks": "aether_ii:skyroot_planks",
+   "log": "aether_ii:skyroot_log",
+   "planks_texture": "aether_ii:block/skyroot_planks",
+   "log_texture": "aether_ii:block/skyroot_log",
+   "log_top_texture": "aether_ii:block/skyroot_log_top"
+  },
+  {
+   "id": "bop_fir",
+   "mod": "biomesoplenty",
+   "name": "Fir",
+   "gen": "giutais",
+   "planks": "biomesoplenty:fir_planks",
+   "log": "biomesoplenty:fir_log",
+   "planks_texture": "biomesoplenty:block/fir_planks",
+   "log_texture": "biomesoplenty:block/fir_log",
+   "log_top_texture": "biomesoplenty:block/fir_log_top"
+  },
+  {
+   "id": "bop_redwood",
+   "mod": "biomesoplenty",
+   "name": "Redwood",
+   "gen": "krainddeirg",
+   "planks": "biomesoplenty:redwood_planks",
+   "log": "biomesoplenty:redwood_log",
+   "planks_texture": "biomesoplenty:block/redwood_planks",
+   "log_texture": "biomesoplenty:block/redwood_log",
+   "log_top_texture": "biomesoplenty:block/redwood_log_top"
+  },
+  {
+   "id": "bop_mahogany",
+   "mod": "biomesoplenty",
+   "name": "Mahogany",
+   "gen": "fiuduruoid",
+   "planks": "biomesoplenty:mahogany_planks",
+   "log": "biomesoplenty:mahogany_log",
+   "planks_texture": "biomesoplenty:block/mahogany_planks",
+   "log_texture": "biomesoplenty:block/mahogany_log",
+   "log_top_texture": "biomesoplenty:block/mahogany_log_top"
+  },
+  {
+   "id": "bop_willow",
+   "mod": "biomesoplenty",
+   "name": "Willow",
+   "gen": "seilig",
+   "planks": "biomesoplenty:willow_planks",
+   "log": "biomesoplenty:willow_log",
+   "planks_texture": "biomesoplenty:block/willow_planks",
+   "log_texture": "biomesoplenty:block/willow_log",
+   "log_top_texture": "biomesoplenty:block/willow_log_top"
+  },
+  {
+   "id": "bop_maple",
+   "mod": "biomesoplenty",
+   "name": "Maple",
+   "gen": "mailpid",
+   "planks": "biomesoplenty:maple_planks",
+   "log": "biomesoplenty:maple_log",
+   "planks_texture": "biomesoplenty:block/maple_planks",
+   "log_texture": "biomesoplenty:block/maple_log",
+   "log_top_texture": "biomesoplenty:block/maple_log_top"
+  },
+  {
+   "id": "bop_magic",
+   "mod": "biomesoplenty",
+   "name": "Magic",
+   "gen": "draeidechd",
+   "planks": "biomesoplenty:magic_planks",
+   "log": "biomesoplenty:magic_log",
+   "planks_texture": "biomesoplenty:block/magic_planks",
+   "log_texture": "biomesoplenty:block/magic_log",
+   "log_top_texture": "biomesoplenty:block/magic_log_top"
+  },
+  {
+   "id": "pt_alder",
+   "mod": "productivetrees",
+   "name": "Alder",
+   "gen": "feàrnad",
+   "planks": "productivetrees:alder_planks",
+   "log": "productivetrees:alder_log",
+   "planks_texture": "productivetrees:block/planks/alder",
+   "log_texture": "productivetrees:block/log/alder",
+   "log_top_texture": "productivetrees:block/log_top/alder"
+  },
+  {
+   "id": "pt_cedar",
+   "mod": "productivetrees",
+   "name": "Cedar",
+   "gen": "seiduir",
+   "planks": "productivetrees:cedar_planks",
+   "log": "productivetrees:cedar_log",
+   "planks_texture": "productivetrees:block/planks/cedar",
+   "log_texture": "productivetrees:block/log/cedar",
+   "log_top_texture": "productivetrees:block/log_top/cedar"
+  },
+  {
+   "id": "pt_aspen",
+   "mod": "productivetrees",
+   "name": "Aspen",
+   "gen": "kritind",
+   "planks": "productivetrees:aspen_planks",
+   "log": "productivetrees:aspen_log",
+   "planks_texture": "productivetrees:block/planks/aspen",
+   "log_texture": "productivetrees:block/log/aspen",
+   "log_top_texture": "productivetrees:block/log_top/aspen"
+  },
+  {
+   "id": "pt_beech",
+   "mod": "productivetrees",
+   "name": "Beech",
+   "gen": "faidbili",
+   "planks": "productivetrees:beech_planks",
+   "log": "productivetrees:beech_log",
+   "planks_texture": "productivetrees:block/planks/beech",
+   "log_texture": "productivetrees:block/log/beech",
+   "log_top_texture": "productivetrees:block/log_top/beech"
+  },
+  {
+   "id": "pt_elm",
+   "mod": "productivetrees",
+   "name": "Elm",
+   "gen": "liemuin",
+   "planks": "productivetrees:elm_planks",
+   "log": "productivetrees:elm_log",
+   "planks_texture": "productivetrees:block/planks/elm",
+   "log_texture": "productivetrees:block/log/elm",
+   "log_top_texture": "productivetrees:block/log_top/elm"
+  },
+  {
+   "id": "pt_yew",
+   "mod": "productivetrees",
+   "name": "Yew",
+   "gen": "iubuir",
+   "planks": "productivetrees:yew_planks",
+   "log": "productivetrees:yew_log",
+   "planks_texture": "productivetrees:block/planks/yew",
+   "log_texture": "productivetrees:block/log/yew",
+   "log_top_texture": "productivetrees:block/log_top/yew"
+  },
+  {
+   "id": "pt_rowan",
+   "mod": "productivetrees",
+   "name": "Rowan",
+   "gen": "kaeruind",
+   "planks": "productivetrees:rowan_planks",
+   "log": "productivetrees:rowan_log",
+   "planks_texture": "productivetrees:block/planks/rowan",
+   "log_texture": "productivetrees:block/log/rowan",
+   "log_top_texture": "productivetrees:block/log_top/rowan"
+  },
+  {
+   "id": "pt_hazel",
+   "mod": "productivetrees",
+   "name": "Hazel",
+   "gen": "kaldtuind",
+   "planks": "productivetrees:hazel_planks",
+   "log": "productivetrees:hazel_log",
+   "planks_texture": "productivetrees:block/planks/hazel",
+   "log_texture": "productivetrees:block/log/hazel",
+   "log_top_texture": "productivetrees:block/log_top/hazel"
+  },
+  {
+   "id": "pt_holly",
+   "mod": "productivetrees",
+   "name": "Holly",
+   "gen": "koilind",
+   "planks": "productivetrees:holly_planks",
+   "log": "productivetrees:holly_log",
+   "planks_texture": "productivetrees:block/planks/holly",
+   "log_texture": "productivetrees:block/log/holly",
+   "log_top_texture": "productivetrees:block/log_top/holly"
+  },
+  {
+   "id": "pt_juniper",
+   "mod": "productivetrees",
+   "name": "Juniper",
+   "gen": "aitind",
+   "planks": "productivetrees:juniper_planks",
+   "log": "productivetrees:juniper_log",
+   "planks_texture": "productivetrees:block/planks/juniper",
+   "log_texture": "productivetrees:block/log/juniper",
+   "log_top_texture": "productivetrees:block/log_top/juniper"
+  },
+  {
+   "id": "pt_walnut",
+   "mod": "productivetrees",
+   "name": "Walnut",
+   "gen": "galdchnò",
+   "planks": "productivetrees:walnut_planks",
+   "log": "productivetrees:walnut_log",
+   "planks_texture": "productivetrees:block/planks/walnut",
+   "log_texture": "productivetrees:block/log/walnut",
+   "log_top_texture": "productivetrees:block/log_top/walnut"
+  }
+ ]
+}
