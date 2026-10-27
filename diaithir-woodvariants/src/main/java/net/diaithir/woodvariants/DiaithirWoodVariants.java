@@ -51,7 +51,7 @@ public final class DiaithirWoodVariants {
     private static final List<DeferredItem<? extends Item>> ALL_ITEMS = new ArrayList<>();
 
     public static final DeferredHolder<EntityType<?>, EntityType<SeatEntity>> SEAT = ENTITIES.register("seat",
-        id -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).sized(0.01F, 0.01F).noSave().noSummon()
+        id -> EntityType.Builder.<SeatEntity>of(SeatEntity::new, MobCategory.MISC).sized(0.01F, 0.01F).noSummon()
             .clientTrackingRange(8).updateInterval(20).build(ResourceKey.create(Registries.ENTITY_TYPE, id)));
 
     public DiaithirWoodVariants(IEventBus bus) {

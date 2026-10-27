@@ -41,6 +41,12 @@ public final class SeatEntity extends Entity {
         return false;
     }
 
+    /** Never written to disk (an EntityType with noSave() could not be ridden by players at all). */
+    @Override
+    public boolean shouldBeSaved() {
+        return false;
+    }
+
     @Override
     public void tick() {
         super.tick();
