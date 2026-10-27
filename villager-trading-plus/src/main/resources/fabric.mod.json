@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "villager_trading_plus",
+  "version": "${version}",
+  "name": "Villager Trading Plus",
+  "description": "Trade with Villagers faster - a port of Easier Villager Trading to modern versions.",
+  "authors": [
+    "cassiancc"
+  ],
+  "contributors": [
+    "Giselbaer"
+  ],
+  "contact": {
+  "homepage": "https://modrinth.com/mod/trading+",
+  "sources": "https://github.com/cassiancc/Villager-Trading-Plus",
+  "issues": "https://github.com/cassiancc/Villager-Trading-Plus/issues"
+},
+  "license": "MIT",
+  "icon": "assets/villagertradingplus/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "cc.cassian.trading.client.fabric.VillagerTradingFabric"
+    ]
+  },
+  "mixins": [
+    "villagertrading.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.7",
+    "minecraft": "${minecraft}",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config": "*",
+    "modmenu": "*"
+  }
+}

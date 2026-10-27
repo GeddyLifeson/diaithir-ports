@@ -1,0 +1,19 @@
+package cc.cassian.trading.mixins;
+
+
+import net.minecraft.client.multiplayer.ClientPacketListener;
+import org.spongepowered.asm.mixin.Mixin;
+
+@Mixin(ClientPacketListener.class)
+public class GuiActionConfirmDebug {
+/*
+    @Inject(method="onConfirmScreenAction", at=@At("RETURN"))
+    private void dumpActionConfirmInfo(ConfirmScreenActionS2CPacket packet, CallbackInfo ci) {
+        System.out.println("confirm: id="+packet.getSyncId()+", action="+packet.getActionId()+", accepted="+packet.wasAccepted());
+    }
+    @Inject(method="onInventory", at=@At("RETURN"))
+    private void dumpInventoryInfo(InventoryS2CPacket packet, CallbackInfo ci) {
+        System.out.println("inventory: guiid="+packet.getSyncId()+", slotcount="+packet.getContents().size());
+    }
+*/
+}

@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "villager_trading_plus"
+version = "${version}"
+displayName = "Villager Trading Plus"
+authors = "cassiancc"
+description = '''
+Trade with Villagers faster - a port of Easier Villager Trading to modern versions.
+'''
+logoFile = "assets/villagertradingplus/icon.png"
+issueTrackerURL = "https://github.com/cassiancc/Villager-Trading-Plus/issues"
+displayURL="https://modrinth.com/mod/trading+"
+modURL="https://modrinth.com/mod/trading+"
+
+[[dependencies.villager_trading_plus]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.villager_trading_plus]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft}"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "villagertrading.mixins.json"
