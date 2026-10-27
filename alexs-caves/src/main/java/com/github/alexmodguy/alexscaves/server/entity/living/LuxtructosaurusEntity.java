@@ -371,7 +371,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
     }
 
     @Override
-    protected void dropFromLootTable(DamageSource damageSource, boolean b) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, boolean b) {
 
     }
 
@@ -545,8 +545,8 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
         return prev;
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return damageSource.is(DamageTypes.IN_WALL) | super.isInvulnerableTo(damageSource);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return damageSource.is(DamageTypes.IN_WALL) | super.isInvulnerableTo(serverLevel, damageSource);
     }
 
     private void scareMobs() {

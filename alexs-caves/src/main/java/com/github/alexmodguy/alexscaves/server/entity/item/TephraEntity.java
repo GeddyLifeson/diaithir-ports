@@ -145,7 +145,7 @@ public class TephraEntity extends Projectile {
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;

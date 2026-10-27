@@ -59,9 +59,9 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
         }
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         TremorzillaEntity parent = this.getParent();
-        return super.isInvulnerableTo(damageSource) || damageSource.is(ACDamageTypes.ACID) || (damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity()));
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(ACDamageTypes.ACID) || (damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity()));
     }
 
     @Override
@@ -70,9 +70,9 @@ public class TremorzillaPartEntity extends PartEntity<TremorzillaEntity> {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         TremorzillaEntity parent = this.getParent();
-        return parent != null && parent.canBeCollidedWith();
+        return parent != null && parent.canBeCollidedWith(null);
     }
 
 

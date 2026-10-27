@@ -249,7 +249,7 @@ public abstract class AbstractMovingBlockEntity extends Entity {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         return false;
     }
 }

@@ -296,7 +296,7 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
     }
 
     @Override
-    protected boolean shouldDropLoot() {
+    protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
         return true;
     }
 
@@ -529,8 +529,8 @@ public abstract class DeepOneBaseEntity extends PathfinderMob implements IAnimat
     }
 
     @Override
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL);
     }
 
     @Override

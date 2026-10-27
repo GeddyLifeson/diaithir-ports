@@ -213,8 +213,8 @@ public class BoundroidEntity extends Monster {
     protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL);
     }
 
     public boolean isScared() {

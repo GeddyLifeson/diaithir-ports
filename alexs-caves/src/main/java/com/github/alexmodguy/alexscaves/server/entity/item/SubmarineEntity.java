@@ -301,7 +301,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;
@@ -556,7 +556,7 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
         this.entityData.set(ACCELERATION, f);
     }
 
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         return !this.isRemoved();
     }
 
@@ -615,8 +615,8 @@ public class SubmarineEntity extends Entity implements KeybindUsingMount {
         this.resetFallDistance();
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.DRY_OUT) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.HOT_FLOOR) || damageSource.is(DamageTypes.IN_FIRE) || damageSource.is(DamageTypes.ON_FIRE) || damageSource.is(DamageTypes.FALL);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.DRY_OUT) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.HOT_FLOOR) || damageSource.is(DamageTypes.IN_FIRE) || damageSource.is(DamageTypes.ON_FIRE) || damageSource.is(DamageTypes.FALL);
     }
 
     @Override

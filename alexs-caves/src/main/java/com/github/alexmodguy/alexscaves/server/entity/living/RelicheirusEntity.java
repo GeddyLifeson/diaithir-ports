@@ -117,8 +117,8 @@ public class RelicheirusEntity extends DinosaurEntity implements IAnimatedEntity
         InteractionResult prev = super.mobInteract(player, hand);
         ItemStack itemstack = player.getItemInHand(hand);
         if (!prev.consumesAction() && itemstack.is(ACItemRegistry.PRIMORDIAL_SOUP.get())) {
-            if (!itemstack.getCraftingRemainingItem().isEmpty()) {
-                this.spawnAtLocation(itemstack.getCraftingRemainingItem().copy());
+            if (!itemstack.getCraftingRemainder().isEmpty()) {
+                this.spawnAtLocation(itemstack.getCraftingRemainder().copy());
             }
             this.usePlayerItem(player, hand, itemstack);
             return InteractionResult.SUCCESS;

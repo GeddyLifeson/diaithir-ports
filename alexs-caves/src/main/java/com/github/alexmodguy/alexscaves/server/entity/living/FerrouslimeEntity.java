@@ -95,9 +95,9 @@ public class FerrouslimeEntity extends Monster {
     protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
     }
 
-    protected void dropFromLootTable(DamageSource source, boolean b) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, boolean b) {
         if (this.getHeadCount() <= 1) {
-            super.dropFromLootTable(source, b);
+            super.dropFromLootTable(serverLevel, source, b);
         }
     }
 

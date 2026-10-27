@@ -62,15 +62,10 @@ public class DarknessArmorItem extends Item implements CustomArmorPostRender, Ke
         return tag.getIntOr("CloakCharge", 0) / (float) AlexsCaves.COMMON_CONFIG.darknessCloakChargeTime.get();
     }
 
-    @SuppressWarnings("removal")
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getArmorProperties());
-    }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         if (stack.is(ACItemRegistry.CLOAK_OF_DARKNESS.get()) && entity instanceof LivingEntity living) {
             // Moved from onArmorTick - handle charging when worn on chest
             if (living.getItemBySlot(EquipmentSlot.CHEST) == stack && entity instanceof Player player) {
@@ -131,9 +126,4 @@ public class DarknessArmorItem extends Item implements CustomArmorPostRender, Ke
     }
 
 
-    @Override
-    @Nullable
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
-        return Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/armor/darkness_armor.png");
-    }
 }

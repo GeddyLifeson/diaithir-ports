@@ -110,7 +110,7 @@ public class RemoteDetonatorItem extends Item {
     }
 
 
-    public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean b) {
+    public void inventoryTick(ItemStack itemStack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         if (!level.isClientSide()) {
             if (isActive(itemStack)) {
                 CompoundTag compoundtag = itemStack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
@@ -177,7 +177,7 @@ public class RemoteDetonatorItem extends Item {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (tag.contains("BombPos")) {
             Optional<ResourceKey<Level>> optional = getBombDimension(tag);
@@ -188,6 +188,6 @@ public class RemoteDetonatorItem extends Item {
                 tooltip.add(untranslated);
             }
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 }

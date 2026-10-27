@@ -16,7 +16,7 @@ public class MovingMetalBlockEntity extends AbstractMovingBlockEntity {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         return true;
     }
 

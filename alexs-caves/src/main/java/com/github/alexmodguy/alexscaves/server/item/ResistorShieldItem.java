@@ -31,10 +31,6 @@ public class ResistorShieldItem extends ShieldItem {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(1000).rarity(Rarity.UNCOMMON));
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemstack = player.getItemInHand(interactionHand);
@@ -47,19 +43,11 @@ public class ResistorShieldItem extends ShieldItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         tooltip.add(Component.translatable("item.alexscaves.resistor_shield.desc").withStyle(ChatFormatting.GRAY));
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public void onUseTick(Level level, LivingEntity living, ItemStack stack, int timeUsing) {
         super.onUseTick(level, living, stack, timeUsing);
@@ -114,8 +102,8 @@ public class ResistorShieldItem extends ShieldItem {
         AlexsCaves.PROXY.clearSoundCacheFor(player);
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         if (getUseTime(stack) != 0 && entity instanceof LivingEntity living && !living.getUseItem().equals(stack)) {
             setUseTime(stack, 0);
             CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();

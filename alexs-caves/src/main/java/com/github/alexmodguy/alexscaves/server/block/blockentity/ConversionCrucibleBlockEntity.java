@@ -320,7 +320,7 @@ public class ConversionCrucibleBlockEntity extends BlockEntity {
     }
 
     public void convertBiome() {
-        Optional<Holder.Reference<Biome>> biomeHolder = level.registryAccess().lookupOrThrow(Registries.BIOME).getHolder(convertingToBiome);
+        Optional<Holder.Reference<Biome>> biomeHolder = level.registryAccess().lookupOrThrow(Registries.BIOME).get(convertingToBiome);
         if(biomeHolder.isEmpty()){
             return;
         }

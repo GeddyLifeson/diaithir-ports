@@ -38,9 +38,6 @@ public class CavePaintingBlock extends DirectionalBlock {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
-    public String getDescriptionId() {
-        return id;
-    }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());

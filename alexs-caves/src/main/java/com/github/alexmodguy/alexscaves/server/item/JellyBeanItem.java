@@ -52,15 +52,7 @@ public class JellyBeanItem extends PotionItem {
         return 16;
     }
 
-    @Override
-    public String getDescriptionId() {
-        return this.getOrCreateDescriptionId();
-    }
 
-    @Override
-    public String getDescriptionId(ItemStack itemStack) {
-        return this.getDescriptionId();
-    }
 
     public SoundEvent getDrinkingSound() {
         return SoundEvents.GENERIC_EAT;
@@ -85,7 +77,7 @@ public class JellyBeanItem extends PotionItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flags) {
+    public void appendHoverText(ItemStack itemStack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flags) {
         PotionContents potionContents = itemStack.get(DataComponents.POTION_CONTENTS);
         if (potionContents == null) {
             return;

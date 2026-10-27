@@ -675,7 +675,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;
@@ -937,8 +937,8 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         return !state.is(ACTagRegistry.GUM_WORM_BLOCKS_DIGGING) && state.getFluidState().isEmpty() && state.canOcclude();
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.FALL) || damageSource.getEntity() != null && isRidingPlayer(damageSource.getEntity());
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.CACTUS) || damageSource.is(DamageTypes.DROWN) || damageSource.is(DamageTypes.FALL) || damageSource.getEntity() != null && isRidingPlayer(damageSource.getEntity());
     }
 
     @Override

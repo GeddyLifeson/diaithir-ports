@@ -57,10 +57,6 @@ public class GingerbreadArmorItem extends Item {
         }
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getArmorProperties());
-    }
 
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
@@ -70,13 +66,4 @@ public class GingerbreadArmorItem extends Item {
         return defaultItemAttributes;
     }
 
-    @Override
-    @Nullable
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
-        if (slot == EquipmentSlot.LEGS) {
-            return Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/armor/gingerbread_armor_1.png");
-        } else {
-            return Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/armor/gingerbread_armor_0.png");
-        }
-    }
 }

@@ -54,20 +54,8 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1));
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public static boolean hasCharge(ItemStack stack) {
         return getCharge(stack) < MAX_CHARGE;
@@ -118,8 +106,8 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
         return 72000;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
         int useTime = getUseTime(stack);
         if(!level.isClientSide()){
@@ -336,7 +324,7 @@ public class RaygunItem extends Item implements UpdatesStackTags, AlwaysCombinab
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         if (getCharge(stack) != 0) {
             String chargeLeft = "" + (int) (MAX_CHARGE - getCharge(stack));
             tooltip.add(Component.translatable("item.alexscaves.raygun.charge", chargeLeft, MAX_CHARGE).withStyle(ChatFormatting.GREEN));

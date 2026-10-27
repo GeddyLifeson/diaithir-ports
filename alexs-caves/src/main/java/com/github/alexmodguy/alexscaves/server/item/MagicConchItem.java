@@ -106,15 +106,7 @@ public class MagicConchItem extends Item {
         return InteractionResult.CONSUME;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {

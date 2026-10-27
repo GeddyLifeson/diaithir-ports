@@ -46,9 +46,6 @@ public class OrtholanceItem extends Item {
         return ItemUseAnimation.BOW;
     }
 
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
     public int getUseDuration(ItemStack itemStack, LivingEntity entity) {
         return 72000;
@@ -164,8 +161,4 @@ public class OrtholanceItem extends Item {
     }
 
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 }

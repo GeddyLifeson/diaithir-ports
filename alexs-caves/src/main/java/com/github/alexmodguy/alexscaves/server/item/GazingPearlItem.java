@@ -50,11 +50,11 @@ public class GazingPearlItem extends Item {
             String key = "item.alexscaves.gazing_pearl.desc_" + reaction.name().toLowerCase(Locale.ROOT);
             tooltip.add(Component.translatable(key).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         if(!level.isClientSide()){
             CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
             long lastReputationTimestamp = tag.getLongOr("LastReputationTimestamp", 0L);

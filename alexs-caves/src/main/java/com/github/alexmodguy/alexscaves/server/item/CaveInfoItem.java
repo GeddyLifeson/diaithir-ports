@@ -122,13 +122,13 @@ public class CaveInfoItem extends Item {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         ResourceKey<Biome> biomeResourceKey = getCaveBiome(stack);
         if (biomeResourceKey != null && !this.hideCaveId) {
             String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
             tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 
     public static ResourceKey<Biome> getCaveBiome(ItemStack stack) {

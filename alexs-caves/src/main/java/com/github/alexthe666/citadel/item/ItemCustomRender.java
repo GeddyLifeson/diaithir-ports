@@ -10,9 +10,4 @@ public class ItemCustomRender extends Item {
         super(props);
     }
 
-    @SuppressWarnings("removal")
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(((IClientItemExtensions) Citadel.PROXY.getISTERProperties()));
-    }
 }

@@ -27,8 +27,8 @@ public class SweetishFishBucketItem extends ModFishBucketItem{
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, context, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
         tooltip.add(Component.translatable("item.alexscaves.sweetish_fish_bucket.desc_" + color.name().toLowerCase()).withStyle(ChatFormatting.GRAY));
     }
 

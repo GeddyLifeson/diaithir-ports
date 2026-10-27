@@ -36,7 +36,7 @@ public class CaveBookItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         tooltip.add(Component.translatable("item.alexscaves.cave_book.desc").withStyle(ChatFormatting.GRAY));
     }
 

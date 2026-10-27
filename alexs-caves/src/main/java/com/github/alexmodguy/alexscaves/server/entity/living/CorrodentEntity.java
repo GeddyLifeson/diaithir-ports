@@ -340,8 +340,8 @@ public class CorrodentEntity extends Monster implements ICustomCollisions, IAnim
         }
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL);
     }
 
     public boolean isDigging() {

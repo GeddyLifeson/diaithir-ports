@@ -28,10 +28,6 @@ public class SugarStaffItem extends Item {
         super(properties);
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
@@ -85,14 +81,6 @@ public class SugarStaffItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
 }

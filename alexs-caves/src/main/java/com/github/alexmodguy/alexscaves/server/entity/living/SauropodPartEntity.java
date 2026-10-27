@@ -64,9 +64,9 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         SauropodBaseEntity parent = this.getParent();
-        return parent != null && parent.canBeCollidedWith();
+        return parent != null && parent.canBeCollidedWith(null);
     }
 
 
@@ -76,9 +76,9 @@ public class SauropodPartEntity extends PartEntity<SauropodBaseEntity> {
         return parent != null && parent.isPickable();
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         SauropodBaseEntity parent = this.getParent();
-        return super.isInvulnerableTo(damageSource) || parent != null && parent.isInvulnerableTo(damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
+        return super.isInvulnerableTo(serverLevel, damageSource) || parent != null && parent.isInvulnerableTo(damageSource) || damageSource.getEntity() != null && parent != null && parent.isPassengerOfSameVehicle(damageSource.getEntity());
     }
 
     public boolean is(Entity entityIn) {

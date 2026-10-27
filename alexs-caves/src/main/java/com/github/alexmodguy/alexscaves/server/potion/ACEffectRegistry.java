@@ -36,9 +36,9 @@ public class ACEffectRegistry {
     public static final DeferredHolder<Potion, Potion> LONG_DEEPSIGHT_POTION = POTION_DEF_REG.register("long_deepsight", () -> new Potion(new MobEffectInstance(DEEPSIGHT, 9600)));
     public static final DeferredHolder<Potion, Potion> GLOWING_POTION = POTION_DEF_REG.register("glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 3600)));
     public static final DeferredHolder<Potion, Potion> LONG_GLOWING_POTION = POTION_DEF_REG.register("long_glowing", () -> new Potion(new MobEffectInstance(MobEffects.GLOWING, 9600)));
-    public static final DeferredHolder<Potion, Potion> HASTE_POTION = POTION_DEF_REG.register("haste", () -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 3600)));
-    public static final DeferredHolder<Potion, Potion> LONG_HASTE_POTION = POTION_DEF_REG.register("long_haste", () -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 9600)));
-    public static final DeferredHolder<Potion, Potion> STRONG_HASTE_POTION = POTION_DEF_REG.register("strong_haste", () -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 1800, 1)));
+    public static final DeferredHolder<Potion, Potion> HASTE_POTION = POTION_DEF_REG.register("haste", () -> new Potion(new MobEffectInstance(MobEffects.HASTE, 3600)));
+    public static final DeferredHolder<Potion, Potion> LONG_HASTE_POTION = POTION_DEF_REG.register("long_haste", () -> new Potion(new MobEffectInstance(MobEffects.HASTE, 9600)));
+    public static final DeferredHolder<Potion, Potion> STRONG_HASTE_POTION = POTION_DEF_REG.register("strong_haste", () -> new Potion(new MobEffectInstance(MobEffects.HASTE, 1800, 1)));
     public static final DeferredHolder<Potion, Potion> STRONG_HUNGER_POTION = POTION_DEF_REG.register("strong_hunger", () -> new Potion(new MobEffectInstance(MobEffects.HUNGER, 1800, 4)));
     public static final DeferredHolder<Potion, Potion> SUGAR_RUSH_POTION = POTION_DEF_REG.register("sugar_rush", () -> new Potion(new MobEffectInstance(SUGAR_RUSH, 1800)));
     public static final DeferredHolder<Potion, Potion> LONG_SUGAR_RUSH_POTION = POTION_DEF_REG.register("long_sugar_rush", () -> new Potion(new MobEffectInstance(SUGAR_RUSH, 3600)));

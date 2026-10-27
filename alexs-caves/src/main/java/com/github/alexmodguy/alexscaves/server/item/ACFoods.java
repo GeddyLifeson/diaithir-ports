@@ -32,11 +32,11 @@ public class ACFoods {
     public static final Food DINOSAUR_NUGGETS = make(3, 0.3F, false, null, 1.0F, false);
     public static final Food SERENE_SALAD = make(5, 0.35F, false, null, 1.0F, false);
     public static final Food SEETHING_STEW = make(6, 0.6F, false, new MobEffectInstance(ACEffectRegistry.RAGE, 2200), 1.0F, false);
-    public static final Food PRIMORDIAL_SOUP = make(6, 0.6F, false, new MobEffectInstance(MobEffects.DIG_SPEED, 800), 1.0F, false);
+    public static final Food PRIMORDIAL_SOUP = make(6, 0.6F, false, new MobEffectInstance(MobEffects.HASTE, 800), 1.0F, false);
     public static final Food RADGILL = make(2, 0.2F, false, new MobEffectInstance(ACEffectRegistry.IRRADIATED, 2000), 1.0F, false);
     public static final Food RADGILL_COOKED = make(5, 0.3F, false, new MobEffectInstance(ACEffectRegistry.IRRADIATED, 1000), 0.1F, false);
     public static final Food SPELUNKIE = make(2, 0.1F, false, null, 1.0F, false);
-    public static final Food SLAM = make(4, 0.5F, false, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 400), 1.0F, false);
+    public static final Food SLAM = make(4, 0.5F, false, new MobEffectInstance(MobEffects.STRENGTH, 400), 1.0F, false);
     public static final Food SOYLENT_GREEN = make(3, 0.35F, true, null, 1.0F, false);
     public static final Food LANTERNFISH = make(1, 0.175F, false, null, 1.0F, false);
     public static final Food LANTERNFISH_COOKED = make(2, 0.3F, false, null, 1.0F, false);
@@ -56,8 +56,8 @@ public class ACFoods {
     public static final Food COOKIE = make(2, 0.1F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
     public static final Food COOKIE_HALF = make(1, 0.05F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
     public static final Food DOUGH = make(2, 0.1F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
-    public static final Food LICOROOT = make(3, 0.1F, false, new MobEffectInstance(MobEffects.CONFUSION, 200), 0.1F, false);
-    public static final Food LICOROOT_VINE = make(1, 0.1F, false, new MobEffectInstance(MobEffects.CONFUSION, 200), 0.1F, false);
+    public static final Food LICOROOT = make(3, 0.1F, false, new MobEffectInstance(MobEffects.NAUSEA, 200), 0.1F, false);
+    public static final Food LICOROOT_VINE = make(1, 0.1F, false, new MobEffectInstance(MobEffects.NAUSEA, 200), 0.1F, false);
     public static final Food SMALL_PEPPERMINT = make(3, 0.15F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
     public static final Food LARGE_PEPPERMINT = make(5, 0.15F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
     public static final Food VANILLA_ICE_CREAM = make(4, 0.2F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.03F, false);
@@ -86,7 +86,7 @@ public class ACFoods {
     public static final Food CARAMEL = make(2, 0.3F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.04F, false);
     public static final Food CARAMEL_APPLE = make(6, 0.2F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.02F, false);
     public static final Food GUMBALL_PILE = make(3, 0.2F, false, new MobEffectInstance(ACEffectRegistry.SUGAR_RUSH, 200), 0.01F, false);
-    public static final Food ALEX_MEAL = make(40, 5.0F, false, new MobEffectInstance(MobEffects.CONFUSION, 200), 1.0F, false);
+    public static final Food ALEX_MEAL = make(40, 5.0F, false, new MobEffectInstance(MobEffects.NAUSEA, 200), 1.0F, false);
     public static final Food BIOME_TREAT = make(20, 0.1F, false, null, 1.0F, false);
     public static final Food BIOME_TREAT_DONE = make(1, 0.1F, false, null, 1.0F, false);
 }

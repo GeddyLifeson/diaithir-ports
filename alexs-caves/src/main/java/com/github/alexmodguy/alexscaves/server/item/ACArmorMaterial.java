@@ -48,7 +48,6 @@ public class ACArmorMaterial {
 
     public float getKnockbackResistance() { return knockbackResistance; }
 
-    public int getEnchantmentValue() { return material.enchantmentValue(); }
 
     public Holder<SoundEvent> getEquipSound() { return material.equipSound(); }
 }

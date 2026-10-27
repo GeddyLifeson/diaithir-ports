@@ -36,7 +36,7 @@ public class ModFishBucketItem extends MobBucketItem {
         return this.fishTypeSupplier.get();
     }
 
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         EntityType<?> fishType = getFishType();
     }
 

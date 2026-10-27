@@ -226,8 +226,8 @@ public class AtlatitanEntity extends SauropodBaseEntity implements KeybindUsingM
         InteractionResult prev = super.mobInteract(player, hand);
         ItemStack itemstack = player.getItemInHand(hand);
         if (!prev.consumesAction() && itemstack.is(ACItemRegistry.SERENE_SALAD.get()) && !this.isBaby()) {
-            if (!itemstack.getCraftingRemainingItem().isEmpty()) {
-                this.spawnAtLocation(itemstack.getCraftingRemainingItem().copy());
+            if (!itemstack.getCraftingRemainder().isEmpty()) {
+                this.spawnAtLocation(itemstack.getCraftingRemainder().copy());
             }
             this.usePlayerItem(player, hand, itemstack);
             return InteractionResult.SUCCESS;

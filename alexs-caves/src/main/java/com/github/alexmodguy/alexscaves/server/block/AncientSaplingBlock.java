@@ -47,7 +47,7 @@ public class AncientSaplingBlock extends SaplingBlock {
     private boolean tryGrowThreeByThreeMegaTree(ServerLevel level, BlockPos pos, BlockState state, RandomSource random) {
         Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess()
                 .lookupOrThrow(Registries.CONFIGURED_FEATURE)
-                .getHolder(AncientTreeGrower.GIANT_ANCIENT_TREE)
+                .get(AncientTreeGrower.GIANT_ANCIENT_TREE)
                 .orElse(null);
 
         if (holder == null) {

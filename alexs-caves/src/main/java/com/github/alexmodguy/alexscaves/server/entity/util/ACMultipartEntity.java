@@ -45,9 +45,9 @@ public abstract class ACMultipartEntity<T extends Entity> extends PartEntity<T> 
 
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         Entity parent = this.getParent();
-        return parent != null && parent.canBeCollidedWith();
+        return parent != null && parent.canBeCollidedWith(null);
     }
 
 

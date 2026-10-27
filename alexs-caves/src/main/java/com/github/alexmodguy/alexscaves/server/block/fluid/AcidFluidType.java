@@ -37,25 +37,6 @@ public class AcidFluidType extends FluidType {
         super(properties);
     }
 
-    @Override
-    public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
-        consumer.accept(new IClientFluidTypeExtensions() {
-            @Override
-            public Identifier getStillTexture() {
-                return FLUID_STILL;
-            }
-
-            @Override
-            public Identifier getFlowingTexture() {
-                return FLUID_FLOWING;
-            }
-
-            @Override
-            public Identifier getRenderOverlayTexture(Minecraft mc) {
-                return OVERLAY;
-            }
-        });
-    }
 
     public boolean move(FluidState state, LivingEntity entity, Vec3 movementVector, double gravity) {
         double d9 = entity.getY();

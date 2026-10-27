@@ -242,11 +242,11 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     }
 
     @Override
-    public boolean isInvulnerableTo(DamageSource damageSource) {
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
         if(damageSource.getEntity() != null && this.getHeadEntity() instanceof GumWormEntity gumWorm && gumWorm.isRidingPlayer(damageSource.getEntity())){
             return true;
         }
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.FALL);
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL) || damageSource.is(DamageTypes.FALL);
     }
 
     @Override
@@ -493,7 +493,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;
@@ -576,7 +576,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         return false;
     }
 

@@ -29,10 +29,6 @@ public class GalenaGauntletItem extends Item {
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1).durability(400).rarity(Rarity.UNCOMMON));
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemstack = player.getItemInHand(interactionHand);
@@ -72,15 +68,7 @@ public class GalenaGauntletItem extends Item {
         return 72000;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public void onUseTick(Level level, LivingEntity living, ItemStack stack, int timeUsing) {
         super.onUseTick(level, living, stack, timeUsing);
@@ -117,8 +105,8 @@ public class GalenaGauntletItem extends Item {
         }
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
         if (level.isClientSide()) {
             int useTime = getUseTime(stack);

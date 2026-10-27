@@ -388,8 +388,8 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
         return !isBuried();
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return damageSource.is(DamageTypes.IN_WALL) || super.isInvulnerableTo(damageSource);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return damageSource.is(DamageTypes.IN_WALL) || super.isInvulnerableTo(serverLevel, damageSource);
     }
 
     @Override

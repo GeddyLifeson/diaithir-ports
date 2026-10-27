@@ -95,15 +95,7 @@ public class ExtinctionSpearItem extends SpearItem {
         return super.hurtEnemy(stack, hurtEntity, player);
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public boolean isValidRepairItem(ItemStack item, ItemStack repairItem) {
         return repairItem.is(ACItemRegistry.TECTONIC_SHARD.get()) || super.isValidRepairItem(item, repairItem);

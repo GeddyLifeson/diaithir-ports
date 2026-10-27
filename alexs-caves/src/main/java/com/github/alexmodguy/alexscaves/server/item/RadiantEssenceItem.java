@@ -20,10 +20,10 @@ public class RadiantEssenceItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         if(this == ACItemRegistry.LICOWITCH_RADIANT_ESSENCE.get()){
             tooltip.add(Component.translatable("item.alexscaves.licowitch_radiant_essence.desc").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 }

@@ -46,12 +46,12 @@ public class BiomeTreatItem extends CaveInfoItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         ResourceKey<Biome> biomeResourceKey = getCaveBiome(stack);
         if (biomeResourceKey == null) {
             tooltip.add(Component.translatable("item.alexscaves.biome_treat.desc").withStyle(ChatFormatting.GRAY));
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 
     public static int getBiomeTreatColorOf(Level level, ItemStack stack) {
@@ -74,10 +74,6 @@ public class BiomeTreatItem extends CaveInfoItem {
         return super.finishUsingItem(stack, level, livingEntity);
     }
 
-    @Override
-    public FoodProperties getFoodProperties(ItemStack stack, @Nullable LivingEntity entity) {
-        return getCaveBiome(stack) == null ? ACFoods.BIOME_TREAT : ACFoods.BIOME_TREAT_DONE;
-    }
 
     @Override
     public SoundEvent getDrinkingSound() {

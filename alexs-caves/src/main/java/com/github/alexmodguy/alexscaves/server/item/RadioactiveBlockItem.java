@@ -23,8 +23,8 @@ public class RadioactiveBlockItem extends BlockItemWithSupplier {
         this.randomChanceOfRadiation = randomChanceOfRadiation;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         if (!level.isClientSide() && entity instanceof LivingEntity living && !(living instanceof Player player && player.isCreative())) {
             float stackChance = stack.getCount() * randomChanceOfRadiation;
             float hazmatMultiplier = 1F - HazmatArmorItem.getWornAmount(living) / 4F;

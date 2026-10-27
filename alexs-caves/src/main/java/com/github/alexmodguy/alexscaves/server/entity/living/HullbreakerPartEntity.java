@@ -61,9 +61,9 @@ public class HullbreakerPartEntity extends PartEntity<HullbreakerEntity> {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         HullbreakerEntity parent = this.getParent();
-        return parent != null && parent.canBeCollidedWith();
+        return parent != null && parent.canBeCollidedWith(null);
     }
 
 

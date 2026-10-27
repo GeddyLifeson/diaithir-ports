@@ -320,8 +320,8 @@ public class TripodfishEntity extends WaterAnimal implements Bucketable {
         return ACSoundRegistry.TRIPODFISH_HURT.get();
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return damageSource.is(DamageTypes.IN_WALL) || super.isInvulnerableTo(damageSource);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return damageSource.is(DamageTypes.IN_WALL) || super.isInvulnerableTo(serverLevel, damageSource);
     }
 
     class AvoidHurtGoal extends Goal {

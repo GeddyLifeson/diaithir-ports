@@ -60,7 +60,7 @@ public class GobthumperBlock extends BaseEntityBlock implements SimpleWaterlogge
     }
 
     public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {

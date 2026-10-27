@@ -137,7 +137,7 @@ public class MineGuardianAnchorEntity extends Entity {
         return MovementEmission.EVENTS;
     }
 
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         return !this.isRemoved();
     }
 

@@ -64,10 +64,6 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
         return null;
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     @Override
     protected void shootProjectile(LivingEntity shooter, Projectile projectile, int index, float velocity, float inaccuracy, float angle, @Nullable LivingEntity target) {
@@ -96,8 +92,8 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
         return 72000;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
         int useTime = getUseTime(stack);
         if (level.isClientSide()) {
@@ -199,15 +195,7 @@ public class DreadbowItem extends ProjectileWeaponItem implements UpdatesStackTa
         return f;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i1) {
         if (livingEntity instanceof Player player && !ACEnchantmentHelper.hasEnchantment(level, ACEnchantmentRegistry.RELENTLESS_DARKNESS, itemStack)) {

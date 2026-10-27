@@ -122,7 +122,7 @@ public class SirenLightBlock extends BaseEntityBlock {
     }
 
     public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.MODEL;
     }
 
     @javax.annotation.Nullable

@@ -87,8 +87,8 @@ public class CandyCaneHookItem extends Item {
         return false;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
 
         if (entity instanceof Player player && !level.isClientSide() && !(stack == player.getItemBySlot(EquipmentSlot.MAINHAND) || stack == player.getItemBySlot(EquipmentSlot.OFFHAND)) && isActive(stack)) {
             if (!isReelingIn(stack)) {
@@ -156,15 +156,7 @@ public class CandyCaneHookItem extends Item {
         }
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     @Override
     public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility toolAction) {

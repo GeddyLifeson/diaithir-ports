@@ -207,7 +207,7 @@ public class HullbreakerEntity extends WaterAnimal implements IAnimatedEntity, K
     }
 
     @Override
-    protected void dropFromLootTable(DamageSource damageSource, boolean b) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, boolean b) {
 
     }
 

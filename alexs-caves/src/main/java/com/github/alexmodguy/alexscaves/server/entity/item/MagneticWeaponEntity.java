@@ -291,9 +291,9 @@ public class MagneticWeaponEntity extends Entity {
             f *= 1.0F + (float) (MobEffectUtil.getDigSpeedAmplification(player) + 1) * 0.2F;
         }
 
-        if (player.hasEffect(MobEffects.DIG_SLOWDOWN)) {
+        if (player.hasEffect(MobEffects.MINING_FATIGUE)) {
             float f1;
-            switch (player.getEffect(MobEffects.DIG_SLOWDOWN).getAmplifier()) {
+            switch (player.getEffect(MobEffects.MINING_FATIGUE).getAmplifier()) {
                 case 0:
                     f1 = 0.3F;
                     break;

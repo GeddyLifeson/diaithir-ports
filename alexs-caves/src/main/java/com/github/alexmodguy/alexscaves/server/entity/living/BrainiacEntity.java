@@ -120,8 +120,8 @@ public class BrainiacEntity extends Monster implements IAnimatedEntity {
             if (this.getAnimation() == ANIMATION_DRINK_BARREL && this.getAnimationTick() >= 60) {
                 this.setHasBarrel(false);
                 this.heal(10);
-                this.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 400, 0));
-                this.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400, 0));
+                this.addEffect(new MobEffectInstance(MobEffects.STRENGTH, 400, 0));
+                this.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 400, 0));
                 this.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 4));
             }
             if (this.getAnimation() == ANIMATION_THROW_BARREL && this.getAnimationTick() >= 15) {

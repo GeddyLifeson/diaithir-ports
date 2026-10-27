@@ -53,15 +53,7 @@ public class CustomToolMaterial implements Tier {
         return harvestLevel;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return enchantability;
-    }
 
-    @Override
-    public Ingredient getRepairIngredient() {
-        return ingredient == null ? Ingredient.EMPTY : ingredient;
-    }
 
     public void setRepairMaterial(Ingredient ingredient){
         this.ingredient = ingredient;

@@ -25,15 +25,10 @@ public class HazmatArmorItem extends Item {
         this.acMaterial = armorMaterial;
     }
 
-    @SuppressWarnings("removal")
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getArmorProperties());
-    }
 
     @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        super.inventoryTick(stack, level, entity, slotId, isSelected);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         // Moved from onArmorTick - check if worn on head slot
         if (entity instanceof Player player && player.getItemBySlot(EquipmentSlot.HEAD) == stack) {
             if (stack.is(ACItemRegistry.HAZMAT_MASK.get()) && Math.cos(player.tickCount * 0.05F) >= 0.9F) {
@@ -50,15 +45,6 @@ public class HazmatArmorItem extends Item {
         }
     }
 
-    @Override
-    @Nullable
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, ArmorMaterial.Layer layer, boolean innerModel) {
-        if (slot == EquipmentSlot.LEGS) {
-            return Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/armor/hazmat_suit_1.png");
-        } else {
-            return Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/armor/hazmat_suit_0.png");
-        }
-    }
 
     public static int getWornAmount(LivingEntity entity) {
         int i = 0;

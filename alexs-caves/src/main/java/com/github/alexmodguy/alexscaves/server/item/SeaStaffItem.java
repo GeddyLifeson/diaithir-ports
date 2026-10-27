@@ -30,10 +30,6 @@ public class SeaStaffItem extends Item {
         super(properties);
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
@@ -94,18 +90,10 @@ public class SeaStaffItem extends Item {
         return closestValid;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         boolean using = entity instanceof LivingEntity living && living.getUseItem().equals(stack);
         if (!level.isClientSide()) {
             if (ACEnchantmentHelper.getEnchantmentLevel(level, ACEnchantmentRegistry.SEAPAIRING, stack) > 0 && !using) {

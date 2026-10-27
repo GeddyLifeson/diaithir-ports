@@ -36,26 +36,6 @@ public class PurpleSodaFluidType extends FluidType {
         super(properties);
     }
 
-    @Override
-    public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
-        consumer.accept(new IClientFluidTypeExtensions() {
-            @Override
-            public Identifier getStillTexture() {
-                return FLUID_STILL;
-            }
-
-            @Override
-            public Identifier getFlowingTexture() {
-                return FLUID_FLOWING;
-            }
-
-            @Override
-            public Identifier getRenderOverlayTexture(Minecraft mc) {
-                return OVERLAY;
-            }
-
-        });
-    }
 
     @Override
     public boolean isVaporizedOnPlacement(Level level, BlockPos pos, FluidStack stack) {

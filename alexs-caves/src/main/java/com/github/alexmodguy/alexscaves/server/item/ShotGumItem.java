@@ -34,20 +34,8 @@ public class ShotGumItem extends Item implements UpdatesStackTags, AlwaysCombina
         super(com.github.alexmodguy.alexscaves.server.misc.ACProps.item().stacksTo(1));
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return !oldStack.is(ACItemRegistry.SHOT_GUM.get()) || !newStack.is(ACItemRegistry.SHOT_GUM.get());
@@ -144,8 +132,8 @@ public class ShotGumItem extends Item implements UpdatesStackTags, AlwaysCombina
         return 72000;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         boolean shooting = isShooting(stack);
         int shootTime = getShootTime(stack);
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();

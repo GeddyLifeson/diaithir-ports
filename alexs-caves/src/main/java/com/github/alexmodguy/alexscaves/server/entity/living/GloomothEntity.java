@@ -256,9 +256,9 @@ public class GloomothEntity extends PathfinderMob implements UnderzealotSacrific
     }
 
     @Override
-    protected void dropFromLootTable(DamageSource damageSource, boolean idk) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, boolean idk) {
         if(!(damageSource.getEntity() instanceof ForsakenEntity || damageSource.getEntity() instanceof VesperEntity)){
-            super.dropFromLootTable(damageSource, idk);
+            super.dropFromLootTable(serverLevel, damageSource, idk);
         }
     }
 

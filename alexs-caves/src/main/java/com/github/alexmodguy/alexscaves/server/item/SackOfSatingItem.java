@@ -90,7 +90,7 @@ public class SackOfSatingItem extends Item {
                 }
                 int wholeHunger = calculateWholeStackHungerValue(foodStack, player);
                 setHunger(sackStack, getHunger(sackStack) + wholeHunger);
-                ItemStack containerItem = foodStack.getItem().getCraftingRemainingItem() != null ? new ItemStack(foodStack.getItem().getCraftingRemainingItem(), foodStack.getCount()) : ItemStack.EMPTY;
+                ItemStack containerItem = foodStack.getItem().getCraftingRemainder() != null ? new ItemStack(foodStack.getItem().getCraftingRemainder(), foodStack.getCount()) : ItemStack.EMPTY;
                 if(!containerItem.isEmpty() && containerItem.is(Items.BOWL)){
                     if(!player.addItem(containerItem)){
                         player.drop(containerItem, false);
@@ -110,8 +110,8 @@ public class SackOfSatingItem extends Item {
         }
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         int hungerValue = getHunger(stack);
         long timestamp = getFeedTimestamp(stack);
         if(!level.isClientSide() && hungerValue > 0 && entity instanceof Player player && !player.getAbilities().invulnerable && player.tickCount % 100 == 0 && player.canEat(false) && (timestamp == -1 || player.level().getGameTime() - timestamp > 40)){

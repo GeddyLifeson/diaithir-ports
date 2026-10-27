@@ -172,7 +172,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
     }
 
     @Override
-    protected boolean shouldDropLoot() {
+    protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
         return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
     }
 
@@ -327,9 +327,9 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
         super.remove(reason);
     }
 
-    protected void dropFromLootTable(DamageSource source, boolean b) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource source, boolean b) {
         if (this.getSlimeSize() == 0) {
-            super.dropFromLootTable(source, b);
+            super.dropFromLootTable(serverLevel, source, b);
         }
     }
 

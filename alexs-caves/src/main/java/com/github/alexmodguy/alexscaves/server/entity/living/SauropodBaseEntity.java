@@ -423,7 +423,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;
@@ -621,8 +621,8 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
         return super.hurtServer(serverLevel, source, amount);
     }
 
-    public boolean isInvulnerableTo(DamageSource damageSource) {
-        return super.isInvulnerableTo(damageSource) || damageSource.is(DamageTypes.IN_WALL);
+    public boolean isInvulnerableTo(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource) {
+        return super.isInvulnerableTo(serverLevel, damageSource) || damageSource.is(DamageTypes.IN_WALL);
     }
 
     public boolean shouldRenderAtSqrDistance(double distance) {

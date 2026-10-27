@@ -58,15 +58,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
             .build();
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack itemstack = player.getItemInHand(interactionHand);
@@ -223,7 +215,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
 
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         if (!tag.isEmpty()) {
             Tag entity = tag.get("BoundEntityTag");
@@ -235,7 +227,7 @@ public class TotemOfPossessionItem extends Item implements UpdatesStackTags {
                 }
             }
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 
     public static UUID getBoundEntityUUID(ItemStack stack) {

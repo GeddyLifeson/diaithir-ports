@@ -48,15 +48,7 @@ public class PrimitiveClubItem extends Item {
                 .build();
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 1;
-    }
 
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return stack.getCount() == 1;
-    }
 
     public boolean hurtEnemy(ItemStack stack, LivingEntity hurtEntity, LivingEntity player) {
         stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
@@ -122,10 +114,6 @@ public class PrimitiveClubItem extends Item {
         return createDefaultAttributes();
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
@@ -144,7 +132,7 @@ public class PrimitiveClubItem extends Item {
         return false;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
         if (entity instanceof Player player && held) {
             if (player.getAttackStrengthScale(0) < 0.95 && player.attackAnim > 0) {
                 player.swingTime--;

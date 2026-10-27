@@ -76,9 +76,9 @@ public class MagnetronPartEntity extends PartEntity<MagnetronEntity> {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@javax.annotation.Nullable Entity collidingWith) {
         MagnetronEntity parent = this.getParent();
-        return parent != null && parent.canBeCollidedWith();
+        return parent != null && parent.canBeCollidedWith(null);
     }
 
 

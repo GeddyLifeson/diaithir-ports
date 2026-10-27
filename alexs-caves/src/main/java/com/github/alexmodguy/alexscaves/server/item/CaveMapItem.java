@@ -42,10 +42,6 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
         super(properties);
     }
 
-    @Override
-    public void initializeClient(java.util.function.Consumer<IClientItemExtensions> consumer) {
-        consumer.accept((IClientItemExtensions) AlexsCaves.PROXY.getISTERProperties());
-    }
 
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
@@ -108,8 +104,8 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
         return BlockPos.ZERO;
     }
 
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int i, boolean held) {
-        super.inventoryTick(stack, level, entity, i, held);
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity, @javax.annotation.Nullable net.minecraft.world.entity.EquipmentSlot slotArg) {
+        super.inventoryTick(stack, level, entity, slotArg);
         if (!level.isClientSide() && held && !isLoading(stack) && isFilled(stack) && (entity.tickCount + entity.getId()) % CHECK_REGEN_TICKS == 0 && entity instanceof Player) {
             BlockPos biomePos = getBiomeBlockPos(stack);
             double xD = biomePos.getX() - entity.blockPosition().getX();
@@ -171,13 +167,13 @@ public class CaveMapItem extends Item implements UpdatesStackTags {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag flagIn) {
         ResourceKey<Biome> biomeResourceKey = getBiomeTarget(stack);
         if (biomeResourceKey != null) {
             String biomeName = "biome." + biomeResourceKey.identifier().toString().replace(":", ".");
             tooltip.add(Component.translatable(biomeName).withStyle(ChatFormatting.GRAY));
         }
-        super.appendHoverText(stack, context, tooltip, flagIn);
+        super.appendHoverText(stack, context, display, tooltip, flagIn);
     }
 
     public static ResourceKey<Biome> getBiomeTarget(ItemStack stack) {

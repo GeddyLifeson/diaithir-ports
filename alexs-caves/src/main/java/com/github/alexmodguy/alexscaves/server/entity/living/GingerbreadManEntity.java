@@ -413,7 +413,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     }
 
     @Override
-    public void lerpMotion(double lerpX, double lerpY, double lerpZ) {
+    public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
         this.lxd = lerpX;
         this.lyd = lerpY;
         this.lzd = lerpZ;
@@ -530,14 +530,14 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     }
 
     @Override
-    protected boolean shouldDropLoot() {
+    protected boolean shouldDropLoot(net.minecraft.server.level.ServerLevel serverLevel) {
         return super.shouldDropLoot() && getPossessedByLicowitchId() == -1;
     }
 
     @Override
-    protected void dropFromLootTable(DamageSource damageSource, boolean b) {
+    protected void dropFromLootTable(net.minecraft.server.level.ServerLevel serverLevel, DamageSource damageSource, boolean b) {
         if(!this.isOvenSpawned()){
-            super.dropFromLootTable(damageSource, b);
+            super.dropFromLootTable(serverLevel, damageSource, b);
         }
     }
 
