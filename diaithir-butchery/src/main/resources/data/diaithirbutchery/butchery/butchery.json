@@ -850,6 +850,74 @@
   }
  },
  "stations": {
+  "rotisserie": {
+   "age": 2,
+   "process": [
+    {
+     "in": "diaithirbutchery:haunch",
+     "out": "diaithirbutchery:cooked_haunch",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:shoulder",
+     "out": "diaithirbutchery:cooked_shoulder",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:loin",
+     "out": "diaithirbutchery:cooked_loin",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:ribs",
+     "out": "diaithirbutchery:cooked_ribs",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:neck",
+     "out": "diaithirbutchery:cooked_neck",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:hock",
+     "out": "diaithirbutchery:cooked_hock",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:bird_breast",
+     "out": "diaithirbutchery:cooked_bird_breast",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:drumstick",
+     "out": "diaithirbutchery:cooked_drumstick",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    },
+    {
+     "in": "diaithirbutchery:wing",
+     "out": "diaithirbutchery:cooked_wing",
+     "count": 1,
+     "ticks": 400,
+     "shelf": 150
+    }
+   ]
+  },
   "drying_rack": {
    "age": 2,
    "process": [

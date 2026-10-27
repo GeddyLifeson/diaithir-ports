@@ -102,6 +102,8 @@
  "item.diaithirbutchery.grown_cut": "Fe\u00f2ilidabaig",
  "block.diaithirbutchery.drying_rack": "Kliadtiurum",
  "item.diaithirbutchery.drying_rack": "Kliadtiurum",
+ "block.diaithirbutchery.rotisserie": "R\u00f2stadkliad",
+ "item.diaithirbutchery.rotisserie": "R\u00f2stadkliad",
  "block.diaithirbutchery.salting_barrel": "Tundasalund",
  "item.diaithirbutchery.salting_barrel": "Tundasalund",
  "block.diaithirbutchery.meat_grinder": "Moilendbleid",
@@ -122,6 +124,10 @@
  "item.diaithirbutchery.vat_grower": "Dabachf\u00e0su",
  "block.diaithirbutchery.stasis_case": "K\u00f9is\u00f9ini",
  "item.diaithirbutchery.stasis_case": "K\u00f9is\u00f9ini",
+ "message.diaithirbutchery.too_big": "Too big for the block. Hang it on a meat hook.",
+ "message.diaithirbutchery.need_knife": "Hold a knife in your other hand.",
+ "block.diaithirbutchery.butcher_block": "B\u00f2irdbloka",
+ "item.diaithirbutchery.butcher_block": "B\u00f2irdbloka",
  "message.diaithirbutchery.working": "Still working.",
  "message.diaithirbutchery.idle": "Nothing to collect. Use a cut or ingredient on it."
 }

@@ -64,11 +64,22 @@ public class MeatHookEntity extends BlockEntity {
             setChanged();
             return false;
         }
+        dropStage(level, pos, carcass, body, stage, tool, level.getGameTime() - hungAt);
+        level.playSound(null, pos, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1.0F, 0.9F);
+        stage++;
+        while (stage < 3 && ButcheryData.yield(body, stage).isEmpty()) stage++;
+        if (stage >= 3) carcass = ItemStack.EMPTY;
+        setChanged();
+        return true;
+    }
+
+
+    /** Drops one stage of a carcass at the block: yields from the body class, a bleeding scale on blood, tool bonus and the cleaver's cutting bonus. */
+    static void dropStage(ServerLevel level, BlockPos pos, ItemStack carcass, String body, int stage, ItemStack tool, long hungFor) {
         String species = carcass.getOrDefault(Butchery.SPECIES.get(), "");
         long killed = carcass.getOrDefault(Butchery.KILLED.get(), level.getGameTime());
         RandomSource rng = level.getRandom();
         int bonus = ButcheryData.bonusOf(BuiltInRegistries.ITEM.getKey(tool.getItem()).toString());
-        long hungFor = level.getGameTime() - hungAt;
         for (ButcheryData.Yield y : ButcheryData.yield(body, stage)) {
             Item item = BuiltInRegistries.ITEM.getValue(Identifier.parse(y.item()));
             int n = y.min() + (y.max() > y.min() ? rng.nextInt(y.max() - y.min() + 1) : 0);
@@ -84,15 +95,8 @@ public class MeatHookEntity extends BlockEntity {
                 out.set(Butchery.SPECIES.get(), species);
                 out.set(Butchery.KILLED.get(), killed);
             }
-            ItemEntity drop = new ItemEntity(level, pos.getX() + 0.5, pos.getY() - 0.3, pos.getZ() + 0.5, out);
-            level.addFreshEntity(drop);
+            level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, out));
         }
-        level.playSound(null, pos, SoundEvents.SLIME_SQUISH, SoundSource.BLOCKS, 1.0F, 0.9F);
-        stage++;
-        while (stage < 3 && ButcheryData.yield(body, stage).isEmpty()) stage++;
-        if (stage >= 3) carcass = ItemStack.EMPTY;
-        setChanged();
-        return true;
     }
 
     @Override

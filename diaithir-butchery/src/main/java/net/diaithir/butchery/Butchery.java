@@ -68,6 +68,9 @@ public final class Butchery {
     public static final List<String> PRODUCTS = List.of("mince", "sausage", "cured_meat", "jerky", "lard", "canned_meat", "grown_cut");
     public static final DeferredBlock<MeatHookBlock> HOOK = BLOCKS.registerBlock("meat_hook", MeatHookBlock::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.CHAIN).noOcclusion());
+    public static final DeferredBlock<ButcherBlock> BUTCHER_BLOCK = BLOCKS.registerBlock("butcher_block", ButcherBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.0F).sound(SoundType.WOOD));
+    public static final DeferredItem<?> BUTCHER_BLOCK_ITEM = ITEMS.registerSimpleBlockItem(BUTCHER_BLOCK);
     public static final DeferredItem<?> HOOK_ITEM = ITEMS.registerSimpleBlockItem(HOOK);
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MeatHookEntity>> HOOK_ENTITY = BLOCK_ENTITIES.register("meat_hook",
             () -> new BlockEntityType<>(MeatHookEntity::new, HOOK.get()));
@@ -86,6 +89,7 @@ public final class Butchery {
     static {
         STATIONS.put("drying_rack", 2);
         STATIONS.put("salting_barrel", 2);
+        STATIONS.put("rotisserie", 2);
         STATIONS.put("meat_grinder", 3);
         STATIONS.put("sausage_stuffer", 3);
         STATIONS.put("rendering_cauldron", 3);
@@ -139,6 +143,7 @@ public final class Butchery {
                 e.accept(KNIFE.get());
                 e.accept(CLEAVER.get());
                 e.accept(HOOK_ITEM.get());
+                e.accept(BUTCHER_BLOCK_ITEM.get());
                 STATION_ITEMS.forEach(i -> e.accept(i.get()));
             }
         });
