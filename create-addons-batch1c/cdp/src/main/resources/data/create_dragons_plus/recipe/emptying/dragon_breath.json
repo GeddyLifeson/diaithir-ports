@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "feature": "create_dragons_plus:fluid/dragon_breath",
+      "type": "create_dragons_plus:config_feature"
+    }
+  ],
+  "type": "create:emptying",
+  "fluid_result": {
+    "amount": 20250,
+    "id": "create_dragons_plus:dragon_breath"
+  },
+  "ingredient": "minecraft:dragon_breath",
+  "result": {
+    "id": "minecraft:glass_bottle"
+  }
+}
