@@ -12543,6 +12543,10 @@ hash = "668a4e4ae5992b60963e701349120a782b87f8e90382495be101108247f9892d"
 metafile = true
 
 [[files]]
+file = "mods/ribbits-neoforge-26.1.2-4.1.4-26.1.2.1.jar"
+hash = "d771fa2de45092679720edab5d89f2119c56bd23410796e9292462a40f401e3e"
+
+[[files]]
 file = "mods/rightclickharvest-neoforge-4.6.2_26.1.x.pw.toml"
 hash = "ecc2657ed4da50764991a11ec27cb2d208f8087d5fc5684fa73ce6a2bd4a2a08"
 metafile = true
