@@ -11,6 +11,10 @@ neoForge {
     version = project.neo_version
     accessTransformers.from('src/main/resources/META-INF/accesstransformer.cfg')
     runs {
+        client {
+            client()
+            programArguments.addAll('--username','Tester','--quickPlayMultiplayer','localhost:25891','--width','1280','--height','720')
+        }
         server {
             server()
             programArgument '--nogui'

@@ -142,10 +142,10 @@ public class AmberMonolithBlockEntity extends BlockEntity {
                             int maxDist = (int) (distance.length() * 1.5);
                             for (int i = 0; i < maxDist; i++) {
                                 Vec3 vec3 = center.add(distance.normalize().scale(distance.length() * (i / (float) maxDist))).add(level.getRandom().nextFloat() - 0.5F, level.getRandom().nextFloat() - 0.5F, level.getRandom().nextFloat() - 0.5F);
-                                ((ServerLevel) level).sendParticles(ACParticleRegistry.AMBER_MONOLITH.get(), vec3.x, vec3.y, vec3.z, 0, target.x, target.y, target.z, 1D);
+                                if (level instanceof ServerLevel sl$) sl$.sendParticles(ACParticleRegistry.AMBER_MONOLITH.get(), vec3.x, vec3.y, vec3.z, 0, target.x, target.y, target.z, 1D);
                             }
                             for (int i = 0; i < 5; i++) {
-                                ((ServerLevel) level).sendParticles(ACParticleRegistry.AMBER_EXPLOSION.get(), entity.getRandomX(1.0F), entity.getRandomY(), entity.getRandomZ(1.0F), 0, 0, 0, 0, 1D);
+                                if (level instanceof ServerLevel sl$) sl$.sendParticles(ACParticleRegistry.AMBER_EXPLOSION.get(), entity.getRandomX(1.0F), entity.getRandomY(), entity.getRandomZ(1.0F), 0, 0, 0, 0, 1D);
                             }
                         }
                     }

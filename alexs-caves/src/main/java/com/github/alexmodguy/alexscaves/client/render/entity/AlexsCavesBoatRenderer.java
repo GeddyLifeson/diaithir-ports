@@ -17,12 +17,12 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.vehicle.boat.Boat;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import org.joml.Quaternionf;
 
 import java.util.HashMap;
 
-public class AlexsCavesBoatRenderer<T extends Boat & AlexsCavesBoat> extends LegacyEntityRenderer<T> {
+public class AlexsCavesBoatRenderer<T extends AbstractBoat & AlexsCavesBoat> extends LegacyEntityRenderer<T> {
 
     private final HashMap<AlexsCavesBoat.Type, Identifier> textureMap = new HashMap<>();
     private final HashMap<AlexsCavesBoat.Type, ACBoatModel> modelMap = new HashMap<>();

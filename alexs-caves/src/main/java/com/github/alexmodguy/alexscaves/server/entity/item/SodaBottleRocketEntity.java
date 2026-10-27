@@ -33,7 +33,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import java.util.List;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 import java.util.OptionalInt;
@@ -250,7 +249,6 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void handleEntityEvent(byte id) {
         if (id == 17) {
             this.level().addParticle(ACParticleRegistry.FROSTMINT_EXPLOSION.get(), this.getX(), this.getY(), this.getZ(), this.random.nextGaussian() * 0.05D, 0.005D, this.random.nextGaussian() * 0.05D);
@@ -270,7 +268,6 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
     }
 
 
-    @OnlyIn(Dist.CLIENT)
     public ItemStack getItem() {
         return new ItemStack(ACItemRegistry.PURPLE_SODA_BOTTLE_ROCKET.get());
     }

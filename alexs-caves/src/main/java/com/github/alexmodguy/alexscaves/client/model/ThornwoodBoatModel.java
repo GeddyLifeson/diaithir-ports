@@ -3,7 +3,7 @@ package com.github.alexmodguy.alexscaves.client.model;
 import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
 import com.github.alexthe666.citadel.client.model.basic.BasicModelPart;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.world.entity.vehicle.boat.Boat;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 
 public class ThornwoodBoatModel extends ACBoatModel {
     private final AdvancedModelBox bottom;
@@ -83,7 +83,7 @@ public class ThornwoodBoatModel extends ACBoatModel {
 
 
     @Override
-    public void setupAnim(Boat entity, float partialTicks, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(AbstractBoat entity, float partialTicks, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.resetToDefaultPose();
         setupPaddleAnims(entity, paddle_left, paddle_right, partialTicks);
     }

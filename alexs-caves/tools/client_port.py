@@ -18,7 +18,7 @@ R = [
  (r'RenderType\.itemEntityTranslucentCull\(', 'RenderTypes.entityTranslucent('),
  (r'getTimer\(\)\.getGameTimeDeltaPartialTick\(([a-z]+)\)', r'getDeltaTracker().getGameTimeDeltaPartialTick(\1)'),
  (r'getTimer\(\)\.getGameTimeDeltaTicks\(\)', 'getDeltaTracker().getGameTimeDeltaTicks()'),
- (r'net\.minecraft\.world\.entity\.vehicle\.Boat\b', 'net.minecraft.world.entity.vehicle.boat.Boat'),
+ (r'net\.minecraft\.world\.entity\.vehicle\.Boat\b', 'net.minecraft.world.entity.vehicle.boat.AbstractBoat'),
  (r'import net\.minecraft\.client\.model\.ArmedModel;', 'import '+LG+'LegacyArmedModel;'),
  (r'\bimplements ArmedModel\b', 'implements LegacyArmedModel'),
  (r'\bArmedModel\b(?!;)', 'LegacyArmedModel'),

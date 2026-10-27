@@ -75,7 +75,7 @@ public class AcidBlock extends LiquidBlock {
             }
             if (level.getRandom().nextFloat() < dmgMultiplier) {
                 float golemAddition = entity.getType().builtInRegistryHolder().is(ACTagRegistry.WEAK_TO_ACID) ? 10.0F : 0.0F;
-                hurtSound = entity.hurtServer((net.minecraft.server.level.ServerLevel) entity.level(), ACDamageTypes.causeAcidDamage(level.registryAccess()), dmgMultiplier * (float) (armor ? 0.01D : 1.0D) + golemAddition);
+                hurtSound = entity.level() instanceof net.minecraft.server.level.ServerLevel serverLevel$ && entity.hurtServer(serverLevel$, ACDamageTypes.causeAcidDamage(level.registryAccess()), dmgMultiplier * (float) (armor ? 0.01D : 1.0D) + golemAddition);
             }
             if (hurtSound) {
                 entity.playSound(ACSoundRegistry.ACID_BURN.get());

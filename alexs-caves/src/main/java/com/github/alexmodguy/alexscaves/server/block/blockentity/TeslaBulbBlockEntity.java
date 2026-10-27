@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 public class TeslaBulbBlockEntity extends BlockEntity {
 
@@ -62,7 +61,7 @@ public class TeslaBulbBlockEntity extends BlockEntity {
                 BlockPos min = blockPos.offset(-5, -5, -5);
                 BlockPos max = blockPos.offset(5, 5, 5);
                 for (LivingEntity entity1 : level.getEntitiesOfClass(LivingEntity.class, new AABB(min.getX(), min.getY(), min.getZ(), max.getX(), max.getY(), max.getZ()))) {
-                    entity1.thunderHit((ServerLevel) level, entity.dummyBolt);
+                    if (level instanceof ServerLevel sl$) entity1.thunderHit(sl$, entity.dummyBolt);
                     entity1.setRemainingFireTicks(0);
                 }
             }
@@ -82,7 +81,7 @@ public class TeslaBulbBlockEntity extends BlockEntity {
                         entity.dummyBolt.setVisualOnly(true);
                     }
                     for (LivingEntity entity1 : level.getEntitiesOfClass(LivingEntity.class, aabb)) {
-                        entity1.thunderHit((ServerLevel) level, entity.dummyBolt);
+                        if (level instanceof ServerLevel sl$) entity1.thunderHit(sl$, entity.dummyBolt);
                         entity1.setRemainingFireTicks(0);
                     }
                 }
@@ -95,7 +94,7 @@ public class TeslaBulbBlockEntity extends BlockEntity {
                         entity.lightningPos = vec3;
                         Vec3 from = Vec3.atCenterOf(blockPos);
                         Vec3 to = vec3.subtract(from);
-                        ((ServerLevel) level).sendParticles(ACParticleRegistry.TESLA_BULB_LIGHTNING.get(), from.x, from.y, from.z, 0, to.x, to.y, to.z, 1D);
+                        if (level instanceof ServerLevel sl$) sl$.sendParticles(ACParticleRegistry.TESLA_BULB_LIGHTNING.get(), from.x, from.y, from.z, 0, to.x, to.y, to.z, 1D);
                     }
                 }
             }
@@ -107,7 +106,6 @@ public class TeslaBulbBlockEntity extends BlockEntity {
         return center.add(5 - this.level.getRandom().nextInt(10), 5 - this.level.getRandom().nextInt(10), 5 - this.level.getRandom().nextInt(10));
     }
 
-    @OnlyIn(Dist.CLIENT)
     public AABB getRenderBoundingBox() {
         BlockPos pos = this.getBlockPos();
         BlockPos min = pos.offset(-1, -1, -1);
