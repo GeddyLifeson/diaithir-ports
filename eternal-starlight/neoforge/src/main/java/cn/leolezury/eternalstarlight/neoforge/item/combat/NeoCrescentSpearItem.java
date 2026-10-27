@@ -11,7 +11,7 @@ public class NeoCrescentSpearItem extends CrescentSpearItem {
 	}
 
 	@Override
-	public boolean canPerformAction(ItemStack stack, ItemAbility ability) {
+	public boolean canPerformAction(net.minecraft.world.item.ItemInstance stack, ItemAbility ability) {
 		return super.canPerformAction(stack, ability) || ability == ItemAbilities.SWORD_SWEEP;
 	}
 }

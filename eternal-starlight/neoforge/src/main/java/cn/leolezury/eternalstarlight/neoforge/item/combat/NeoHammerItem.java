@@ -17,7 +17,7 @@ public class NeoHammerItem extends HammerItem {
 	}
 
 	@Override
-	public boolean canPerformAction(ItemStack stack, ItemAbility ability) {
-		return super.canPerformAction(stack, ability) || ItemAbilities.DEFAULT_PICKAXE_ACTIONS.contains(ability);
+	public boolean canPerformAction(net.minecraft.world.item.ItemInstance stack, ItemAbility ability) {
+		return super.canPerformAction(stack, ability);
 	}
 }

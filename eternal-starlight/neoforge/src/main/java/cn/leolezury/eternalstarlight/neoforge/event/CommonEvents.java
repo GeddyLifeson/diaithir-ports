@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.VanillaGameEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -77,7 +77,7 @@ public class CommonEvents {
 
 	@SubscribeEvent
 	private static void onPostLivingHurt(LivingDamageEvent.Post event) {
-		ESCommonHandler.onPostLivingHurt(event.getEntity(), event.getSource(), event.getNewDamage());
+		ESCommonHandler.onPostLivingHurt(event.getEntity(), event.getSource(), event.getInflictedDamage());
 	}
 
 	@SubscribeEvent
@@ -138,7 +138,7 @@ public class CommonEvents {
 	}
 
 	@SubscribeEvent
-	private static void onBlockBroken(BlockEvent.BreakEvent event) {
+	private static void onBlockBroken(net.neoforged.neoforge.event.level.block.BreakBlockEvent event) {
 		ESCommonHandler.onBlockBroken(event.getPlayer(), event.getPos(), event.getState());
 	}
 
@@ -175,8 +175,8 @@ public class CommonEvents {
 	}
 
 	@SubscribeEvent
-	private static void onAddReloadListener(AddReloadListenerEvent event) {
-		ESCommonSetupHandler.addReloadListeners(event::addListener);
+	private static void onAddReloadListener(AddServerReloadListenersEvent event) {
+		ESCommonSetupHandler.addReloadListeners(listener -> event.addListener(cn.leolezury.eternalstarlight.common.EternalStarlight.id("gatekeeper_names"), listener));
 	}
 
 	@SubscribeEvent

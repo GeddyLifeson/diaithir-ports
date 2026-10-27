@@ -10,8 +10,8 @@ import java.util.Optional;
 
 public class ESRegistryRemapper {
 	public static void addAliases() {
-		Optional<DeferredRegister<?>> itemsRegister = ESNeoPlatform.REGISTERS.stream().filter(register -> register.getRegistryName().equals(Registries.ITEM.location())).findFirst();
-		Optional<DeferredRegister<?>> blocksRegister = ESNeoPlatform.REGISTERS.stream().filter(register -> register.getRegistryName().equals(Registries.BLOCK.location())).findFirst();
+		Optional<DeferredRegister<?>> itemsRegister = ESNeoPlatform.REGISTERS.stream().filter(register -> register.getRegistryName().equals(Registries.ITEM.identifier())).findFirst();
+		Optional<DeferredRegister<?>> blocksRegister = ESNeoPlatform.REGISTERS.stream().filter(register -> register.getRegistryName().equals(Registries.BLOCK.identifier())).findFirst();
 		if (itemsRegister.isPresent() && blocksRegister.isPresent()) {
 			// banyin
 			addAlias("starlight_mangrove_sapling", "banyin_sapling", itemsRegister.get(), blocksRegister.get());

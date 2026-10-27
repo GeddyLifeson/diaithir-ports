@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class NeoTearBombBlock extends TearBombBlock {
 	public static final MapCodec<NeoTearBombBlock> CODEC = simpleCodec(NeoTearBombBlock::new);
@@ -24,7 +24,7 @@ public class NeoTearBombBlock extends TearBombBlock {
 	}
 
 	@Override
-	public void onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
+	public boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter) {
 		if (!level.isClientSide()) {
 			if (igniter instanceof ServerPlayer serverPlayer) {
 				ESCriteriaTriggers.IGNITE_TEAR_BOMB.get().trigger(serverPlayer);
@@ -34,5 +34,6 @@ public class NeoTearBombBlock extends TearBombBlock {
 			level.playSound(null, bomb.getX(), bomb.getY(), bomb.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
 			level.gameEvent(igniter, GameEvent.PRIME_FUSE, pos);
 		}
+		return true;
 	}
 }

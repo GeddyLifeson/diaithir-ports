@@ -13,7 +13,7 @@ public class NeoSickleItem extends SickleItem {
 
 	// NeoForge maps the vanilla shears loot conditions and interactions to this ability
 	@Override
-	public boolean canPerformAction(ItemStack stack, ItemAbility ability) {
+	public boolean canPerformAction(net.minecraft.world.item.ItemInstance stack, ItemAbility ability) {
 		return super.canPerformAction(stack, ability) || ItemAbilities.DEFAULT_SHEARS_ACTIONS.contains(ability);
 	}
 }

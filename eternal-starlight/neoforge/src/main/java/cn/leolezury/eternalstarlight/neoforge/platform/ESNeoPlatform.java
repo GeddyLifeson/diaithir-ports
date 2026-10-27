@@ -19,15 +19,10 @@ import cn.leolezury.eternalstarlight.common.platform.registry.RegistryObject;
 import cn.leolezury.eternalstarlight.common.util.ESTags;
 import cn.leolezury.eternalstarlight.neoforge.block.NeoTearBombBlock;
 import cn.leolezury.eternalstarlight.neoforge.block.fluid.NeoEtherFluid;
-import cn.leolezury.eternalstarlight.neoforge.item.armor.NeoAlchemistArmorItem;
-import cn.leolezury.eternalstarlight.neoforge.item.armor.NeoStarlitDiamondArmorItem;
-import cn.leolezury.eternalstarlight.neoforge.item.armor.NeoThermalSpringstoneArmorItem;
-import cn.leolezury.eternalstarlight.neoforge.item.armor.NeoUnrealiumArmorItem;
 import cn.leolezury.eternalstarlight.neoforge.item.combat.NeoCrescentSpearItem;
 import cn.leolezury.eternalstarlight.neoforge.item.combat.NeoHammerItem;
 import cn.leolezury.eternalstarlight.neoforge.item.combat.NeoSickleItem;
 import cn.leolezury.eternalstarlight.neoforge.network.ESNeoNetworkHandler;
-import com.google.auto.service.AutoService;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -76,7 +71,6 @@ import java.util.Optional;
 import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 
-@AutoService(ESPlatform.class)
 public class ESNeoPlatform implements ESPlatform {
 	public static final List<DeferredRegister<?>> REGISTERS = new ArrayList<>();
 	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPE_REGISTER = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, EternalStarlight.ID);
@@ -89,7 +83,7 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public boolean isPhysicalClient() {
-		return FMLLoader.getDist() == Dist.CLIENT;
+		return FMLLoader.getCurrent().getDist() == Dist.CLIENT;
 	}
 
 	@Override
@@ -134,7 +128,7 @@ public class ESNeoPlatform implements ESPlatform {
 
 		@Override
 		public Registry<T> registry() {
-			return registry == null ? (Registry<T>) BuiltInRegistries.REGISTRY.get(key.identifier()) : registry;
+			return registry == null ? (Registry<T>) BuiltInRegistries.REGISTRY.getValue(key.identifier()) : registry;
 		}
 
 		@Override
@@ -202,26 +196,6 @@ public class ESNeoPlatform implements ESPlatform {
 	}
 
 	@Override
-	public ThermalSpringstoneArmorItem createThermalSpringstoneArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
-		return new NeoThermalSpringstoneArmorItem(material, type, properties);
-	}
-
-	@Override
-	public AlchemistArmorItem createAlchemistArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
-		return new NeoAlchemistArmorItem(material, type, properties);
-	}
-
-	@Override
-	public Item createStarlitDiamondArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
-		return new NeoStarlitDiamondArmorItem(material, type, properties);
-	}
-
-	@Override
-	public UnrealiumArmorItem createUnrealiumArmor(ArmorMaterial material, ArmorType type, Item.Properties properties) {
-		return new NeoUnrealiumArmorItem(material, type, properties);
-	}
-
-	@Override
 	public CreativeModeTab.Builder getTabBuilder() {
 		return CreativeModeTab.builder();
 	}
@@ -252,7 +226,18 @@ public class ESNeoPlatform implements ESPlatform {
 	public <T> EntityDataAttachment<T> registerDataAttachment(String id, Supplier<T> defaultValue, Codec<T> codec, StreamCodec<? super RegistryFriendlyByteBuf, T> streamCodec, BiPredicate<T, T> shouldSync, boolean copyOnDeath) {
 		AttachmentType.Builder<T> builder = AttachmentType.builder(h -> defaultValue.get());
 		if (codec != null) {
-			builder = builder.serialize(codec);
+			builder = builder.serialize(new net.neoforged.neoforge.attachment.IAttachmentSerializer<T>() {
+				@Override
+				public T read(net.neoforged.neoforge.attachment.IAttachmentHolder holder, net.minecraft.world.level.storage.ValueInput input) {
+					return input.read("value", codec).orElse(null);
+				}
+
+				@Override
+				public boolean write(T attachment, net.minecraft.world.level.storage.ValueOutput output) {
+					output.store("value", codec, attachment);
+					return true;
+				}
+			});
 		}
 		// "Received synced attachments from unknown entity"
 		/*if (streamCodec != null) {
@@ -322,7 +307,10 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public boolean postTeleportEvent(Entity entity, Vec3 destPos) {
-		EntityTeleportEvent event = new EntityTeleportEvent(entity, destPos.x, destPos.y, destPos.z);
+		if (!(entity.level() instanceof net.minecraft.server.level.ServerLevel serverLevel)) {
+			return true;
+		}
+		EntityTeleportEvent event = new EntityTeleportEvent(entity, serverLevel, destPos.x, destPos.y, destPos.z);
 		NeoForge.EVENT_BUS.post(event);
 		return !event.isCanceled();
 	}
@@ -334,7 +322,7 @@ public class ESNeoPlatform implements ESPlatform {
 
 	@Override
 	public boolean isShield(ItemStack stack) {
-		return stack.canPerformAction(net.neoforged.neoforge.common.ItemAbilities.SHIELD_BLOCK);
+		return stack.has(net.minecraft.core.component.DataComponents.BLOCKS_ATTACKS);
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class ESFluidTypes {
 			.canExtinguish(true)
 			.canSwim(false)
 			.canDrown(false)
-			.pathType(PathType.DANGER_OTHER)
+			.pathType(PathType.DAMAGING_IN_NEIGHBOR)
 			.adjacentPathType(null)
 			.lightLevel(15)
 			.density(3000)

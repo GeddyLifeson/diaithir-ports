@@ -34,6 +34,6 @@ public class ESNeoNetworkHandler {
 	}
 
 	public static void sendToServer(CustomPacketPayload packet) {
-		PacketDistributor.sendToServer(packet);
+		net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(packet);
 	}
 }
