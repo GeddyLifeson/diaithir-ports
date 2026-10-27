@@ -13,7 +13,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -116,11 +120,29 @@ public class TannersRackBlockEntity extends StationBlockEntity {
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, TannersRackBlockEntity rack) {
         if (rack.mode != Mode.DRYING || rack.settled || level.getGameTime() % 10 != 0) return;
+        if (ServerConfig.get(ServerConfig.DRYING_NEEDS_AIR)) {
+            // A hide dries by sun, wind or fire: in a closed dark room the clock runs slower, so the rack belongs outside.
+            rack.dryStart += Math.round(10 * (1F - dryingRate(level, pos)));
+        }
         if (rack.dryProgress(level.getGameTime()) >= 1F) {
             rack.settled = true;
             level.playSound(null, pos, ModSounds.RACK_DRIED.get(), SoundSource.BLOCKS, 0.6F, 0.9F);
             rack.sync();
         }
+    }
+
+    /** Share of normal speed a hide dries at: full in open air or beside a fire, less in rain, slowest in a closed room. */
+    static float dryingRate(Level level, BlockPos pos) {
+        for (BlockPos p : BlockPos.betweenClosed(pos.offset(-2, -1, -2), pos.offset(2, 1, 2))) {
+            BlockState near = level.getBlockState(p);
+            if (near.is(BlockTags.FIRE) || near.getFluidState().is(FluidTags.LAVA)
+                    || (near.is(BlockTags.CAMPFIRES) && near.getValueOrElse(BlockStateProperties.LIT, false))
+                    || (near.hasProperty(BlockStateProperties.LIT) && near.is(Blocks.FURNACE) && near.getValue(BlockStateProperties.LIT))) {
+                return 1F;
+            }
+        }
+        if (!level.canSeeSky(pos.above())) return 0.35F;
+        return level.isRainingAt(pos.above()) ? 0.5F : 1F;
     }
 
     public void dropContents() {

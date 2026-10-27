@@ -28,6 +28,7 @@ public final class ServerConfig {
     public static final ModConfigSpec.IntValue VAT_MAX_TANNIN;
     public static final ModConfigSpec.IntValue BARK_PER_LOG;
     public static final ModConfigSpec.IntValue DRYING_TICKS;
+    public static final ModConfigSpec.BooleanValue DRYING_NEEDS_AIR;
 
     public static final ModConfigSpec.IntValue FLESHING_TIME_SECONDS;
     public static final ModConfigSpec.DoubleValue MAX_ASSIST_TIME_MULTIPLIER;
@@ -101,6 +102,8 @@ public final class ServerConfig {
                 .defineInRange("barkPerLog", 2, 1, 16);
         DRYING_TICKS = b.comment("Ticks a finished hide dries on the Tanner's Rack.")
                 .defineInRange("dryingTicks", 2400, 20, 72000);
+        DRYING_NEEDS_AIR = b.comment("Hides dry at full speed in open air or beside a fire, half speed in rain and about a third in a closed room.")
+                .define("dryingNeedsAir", true);
         b.pop();
 
         b.comment("Minigame timing and validation").push("minigames");
