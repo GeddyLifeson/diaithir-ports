@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "alexscaves:gingerbread"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "alexscaves:gingerbread"
+      }
+    ]
+  }
+}
