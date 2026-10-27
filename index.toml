@@ -73,6 +73,10 @@ file = "config/solonion.json"
 hash = "ca014d7c9b088d16bc3cc17739388a8678bcb51e88c8c3a99d0de13482e8348f"
 
 [[files]]
+file = "config/spoiled-common.toml"
+hash = "87eb15858ef9b6a5b02ae2fa4dbe08cf8741efacbbb4b08fde9efce946212aba"
+
+[[files]]
 file = "config/tconstruct-common.toml"
 hash = "5fda10fa79d07882203d47022faa993308a0bdb868ce864957a61ccc657d0029"
 
@@ -10857,6 +10861,14 @@ file = "kubejs/server_scripts/speuran/age_gate.js"
 hash = "1286a28174044b239a9fd41f59fc5fc7ac73a62f82da0c6de8f9bb7b9b953317"
 
 [[files]]
+file = "kubejs/server_scripts/spoilage/recipes.js"
+hash = "ca2128cd144e9c398cd32d93d650612779a7a09542ef15913e999b596fb297b4"
+
+[[files]]
+file = "kubejs/server_scripts/spoilage/spoilage.js"
+hash = "dcc17a489f4269d8fc5e36f5a53e70730b7fa6609e31ff237f92d46a92c8dab1"
+
+[[files]]
 file = "kubejs/startup_scripts/deepworlds/works.js"
 hash = "c6a4785311f85767de828687fcb21a0f6e1929325ed32bc4eb5b04f43845a8c0"
 
@@ -10895,6 +10907,18 @@ hash = "82fbaa00c3a79b9ef92033c67f852bd5e13ed19ddd230c5bba76e6a47bc2971c"
 [[files]]
 file = "kubejs/startup_scripts/speuran/age_gate_state.js"
 hash = "82a864c5da0faededc27702dda5bd8d9a3b7ca2bfd770ae172aaac6529d36294"
+
+[[files]]
+file = "kubejs/startup_scripts/spoilage/drinks_data.js"
+hash = "caa95e67d5eabf335f0ec2c6cc78259b9510fc0ab4040fe2d6747d0aad40ed5c"
+
+[[files]]
+file = "kubejs/startup_scripts/spoilage/items.js"
+hash = "e3bd93932ebfc0a95fc7c02b8442a7ee6ff924febec67eb3229103bb28b2b64f"
+
+[[files]]
+file = "kubejs/startup_scripts/spoilage/rates.js"
+hash = "ecc68ab189555b7d171a9f041185f570f636e09beefd8cfc5064566030c4c940"
 
 [[files]]
 file = "mods/AE2NetworkAnalyzer-26.1-1.0.0-neoforge.pw.toml"

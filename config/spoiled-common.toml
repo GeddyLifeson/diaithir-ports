@@ -1,0 +1,16 @@
+# Shipped by content/spoilage. Spoiled is the clock; kubejs/startup_scripts/spoilage/rates.js holds our shelf lives.
+[General]
+	# Fridges and freezers slow rot by block entity type. A stack still rots at its own pace; this thins how often it ticks.
+	# The environment (ice, cellar, springhouse, cooling coil, room temperature) is applied by server_scripts/spoilage/spoilage.js.
+	containerModifier = ["minecraft:shulker_box,0", "cookingforblockheads:fridge,0.2", "refurbished_furniture:fridge,0.2", "refurbished_furniture:freezer,0.04", "refurbished_furniture:cooler,0.2", "energizedpower:fluid_freezer,0.1", "auroral:cold_brewing_stand,0.3"]
+	itemContainerModifier = ["minecraft:shulker_box,0"]
+	spoilRate = 30
+	initializeSpoiling = true
+	mergeSpoilingFood = true
+	spoilEverything = false
+	spoilBlacklist = ["minecraft:rotten_flesh", "minecraft:enchanted_golden_apple", "minecraft:honey_bottle", "minecraft:sugar", "minecraft:golden_apple", "minecraft:golden_carrot", "minecraft:glistering_melon_slice", "minecraft:chorus_fruit", "minecraft:dried_kelp_block"]
+	# 12 percent a week half-life, for any food no rule names: about 37 days in 30-second updates
+	defaultSpoilTime = 1480
+	defaultSpoilItem = "minecraft:rotten_flesh"
+[compatibility]
+	ignoredComponents = []
