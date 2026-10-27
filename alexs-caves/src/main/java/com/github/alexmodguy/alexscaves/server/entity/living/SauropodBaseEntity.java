@@ -105,7 +105,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
         super(entityType, level);
         this.setPathfindingMalus(PathType.LAVA, 0.0F);
         this.setPathfindingMalus(PathType.FIRE, 0.0F);
-        this.setPathfindingMalus(PathType.DAMAGE_FIRE, 0.0F);
+        this.setPathfindingMalus(PathType.DAMAGING_IN_NEIGHBOR, 0.0F);
         this.moveControl = new SauropodMoveHelper();
         this.neckPart1 = new SauropodPartEntity(this, this, 3F, 3F);
         this.neckPart2 = new SauropodPartEntity(this, neckPart1, 2F, 2F);
@@ -320,7 +320,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
         }
         int feetY = this.blockPosition().getY() - (int)lowestFoot;
         BlockPos center = new BlockPos(ringStartX, feetY, ringStartZ);
-        if(net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this) || this.isVehicle() && this.getControllingPassenger() instanceof Player){
+        if(com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this) || this.isVehicle() && this.getControllingPassenger() instanceof Player){
             for (int y = 0; y <= STOMP_CRUSH_HEIGHT; y++) {
                 List<MovingBlockData> dataPerYLevel = new ArrayList<>();
                 int currentBlocksInChunk = 0;
@@ -342,7 +342,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
                                     currentBlocksInChunk++;
                                 } else {
                                     CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
-                                    crushed.moveTo(Vec3.atCenterOf(center.above(y)));
+                                    crushed.snapTo(Vec3.atCenterOf(center.above(y)));
                                     crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
                                     crushed.setPlacementCooldown(10);
                                     crushed.setDropChance(dropChance);
@@ -357,7 +357,7 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
                 }
                 if (!dataPerYLevel.isEmpty()) {
                     CrushedBlockEntity crushed = ACEntityRegistry.CRUSHED_BLOCK.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
-                    crushed.moveTo(Vec3.atCenterOf(center.above(y)));
+                    crushed.snapTo(Vec3.atCenterOf(center.above(y)));
                     crushed.setAllBlockData(FallingTreeBlockEntity.createTagFromData(dataPerYLevel));
                     crushed.setDropChance(dropChance);
                     crushed.setPlacementCooldown(1);
@@ -424,9 +424,9 @@ public abstract class SauropodBaseEntity extends DinosaurEntity implements Shake
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 

@@ -44,7 +44,7 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
     private static final EntityDataAccessor<Boolean> OFFHAND = SynchedEntityData.defineId(CandyCaneHookEntity.class, EntityDataSerializers.BOOLEAN);
     private static EntityDataAccessor<Optional<Vec3>> HOOKED_POSITION = SynchedEntityData.defineId(CandyCaneHookEntity.class, ACEntityDataRegistry.OPTIONAL_VEC_3.get());
     private static final EntityDataAccessor<Integer> HOOKED_ENTITY_ID = SynchedEntityData.defineId(CandyCaneHookEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> HOOKED_ENTITY_UUID = SynchedEntityData.defineId(CandyCaneHookEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> HOOKED_ENTITY_UUID = SynchedEntityData.defineId(CandyCaneHookEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Float> DAMAGE = SynchedEntityData.defineId(CandyCaneHookEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Boolean> RESISTS_GRAVITY = SynchedEntityData.defineId(CandyCaneHookEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -111,9 +111,9 @@ public class CandyCaneHookEntity extends ThrowableProjectile {
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 

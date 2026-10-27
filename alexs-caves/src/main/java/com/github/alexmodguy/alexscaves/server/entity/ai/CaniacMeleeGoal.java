@@ -46,7 +46,7 @@ public class CaniacMeleeGoal extends Goal {
                 caniac.setArmSpinSpeed(0.0F);
                 caniac.getNavigation().stop();
                 if(caniac.getAnimationTick() > 15){
-                    target.hasImpulse = true;
+                    target.hurtMarked = true;
                     Vec3 delta = caniac.position().subtract(target.position());
                     if(distance < 10){
                         target.setDeltaMovement(target.getDeltaMovement().scale(0.3F).add(delta.scale(0.1)));
@@ -55,7 +55,7 @@ public class CaniacMeleeGoal extends Goal {
                         }
                     }
                 }else if(caniac.getAnimationTick() > 10 && caniac.getAnimationTick() <= 13){
-                    caniac.hasImpulse = true;
+                    caniac.hurtMarked = true;
                     Vec3 delta = target.position().subtract(caniac.position()).normalize();
                     caniac.setDeltaMovement(caniac.getDeltaMovement().add(delta.scale(1.3F).add(0, 0.35, 0)));
                 }

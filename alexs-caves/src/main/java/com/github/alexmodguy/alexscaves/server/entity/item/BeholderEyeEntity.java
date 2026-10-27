@@ -33,7 +33,7 @@ public class BeholderEyeEntity extends Entity implements PossessesCamera {
     public static final TicketController TICKET_CONTROLLER = new TicketController(Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "beholder_eye"));
 
     private static final int LOAD_CHUNK_DISTANCE = 2;
-    private static final EntityDataAccessor<Optional<UUID>> USING_PLAYER_ID = SynchedEntityData.defineId(BeholderEyeEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> USING_PLAYER_ID = SynchedEntityData.defineId(BeholderEyeEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Float> Y_ROT = SynchedEntityData.defineId(BeholderEyeEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> X_ROT = SynchedEntityData.defineId(BeholderEyeEntity.class, EntityDataSerializers.FLOAT);
 

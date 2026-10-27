@@ -71,4 +71,16 @@ public final class ACProps {
         entity.save(out);
         return out.buildResult();
     }
+
+    public static boolean rule(net.minecraft.world.level.Level level, net.minecraft.world.level.gamerules.GameRule<Boolean> rule) {
+        return !(level instanceof net.minecraft.server.level.ServerLevel serverLevel) || serverLevel.getGameRules().get(rule);
+    }
+
+    public static boolean canGrief(net.minecraft.world.level.Level level, net.minecraft.world.entity.Entity entity) {
+        return level instanceof net.minecraft.server.level.ServerLevel serverLevel && net.neoforged.neoforge.event.EventHooks.canEntityGrief(serverLevel, entity);
+    }
+
+    public static void blockParticle(net.minecraft.world.level.Level level, net.minecraft.core.particles.ParticleOptions options, boolean force, double x, double y, double z, double xd, double yd, double zd) {
+        level.addParticle(options, force, false, x, y, z, xd, yd, zd);
+    }
 }

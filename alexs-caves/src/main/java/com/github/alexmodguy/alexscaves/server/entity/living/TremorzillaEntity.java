@@ -157,10 +157,10 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         this.tailPart5 = new TremorzillaPartEntity(this, tailPart4, 2F, 1F);
         this.allParts = new TremorzillaPartEntity[]{tailPart1, tailPart2, tailPart3, tailPart4, tailPart5};
         this.setPathfindingMalus(PathType.UNPASSABLE_RAIL, 0.0F);
-        this.setPathfindingMalus(PathType.DAMAGE_OTHER, 8.0F);
+        this.setPathfindingMalus(PathType.DAMAGING_IN_NEIGHBOR, 8.0F);
         this.setPathfindingMalus(PathType.POWDER_SNOW, 8.0F);
         this.setPathfindingMalus(PathType.LAVA, 0.0F);
-        this.setPathfindingMalus(PathType.DAMAGE_FIRE, 0.0F);
+        this.setPathfindingMalus(PathType.DAMAGING_IN_NEIGHBOR, 0.0F);
         this.setPathfindingMalus(PathType.FIRE, 0.0F);
         this.setPathfindingMalus(PathType.WATER, 0.0F);
         this.setPathfindingMalus(PathType.LEAVES, 0.0F);
@@ -635,7 +635,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
     public void aiStep() {
         super.aiStep();
         if (!this.level().isClientSide()) {
-            if (net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this) && blockBreakCounter <= 0) {
+            if (com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this) && blockBreakCounter <= 0) {
                 this.breakBlocksInBoundingBox(0.1F);
                 blockBreakCounter = 10;
             }
@@ -826,7 +826,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
                     BlockPos ground = BlockPos.containing(groundedVec.subtract(0, 0.5F, 0));
                     BlockState state = this.level().getBlockState(ground);
                     if (state.isSolid()) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, false, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
                     }
                 }
             }
@@ -873,7 +873,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
             strength *= 1.0D - this.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE);
         }
         if (!(strength <= 0.0D)) {
-            this.hasImpulse = true;
+            this.hurtMarked = true;
             Vec3 vec3 = this.getDeltaMovement();
             Vec3 vec31 = (new Vec3(x, 0.0D, z)).normalize().scale(strength);
             target.setDeltaMovement(vec3.x / 2.0D - vec31.x, this.onGround() ? Math.min(0.4D, vec3.y / 2.0D + strength) : vec3.y, vec3.z / 2.0D - vec31.z);
@@ -881,7 +881,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
     }
 
     public boolean breakBlocksAround(Vec3 center, float radius, boolean square, boolean triggerExplosions, float dropChance) {
-        if (this.isBaby() || !net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this) || level().isClientSide()) {
+        if (this.isBaby() || !com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this) || level().isClientSide()) {
             return false;
         }
         boolean flag = false;
@@ -909,7 +909,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
     }
 
     public boolean breakBlocksInBoundingBox(float dropChance) {
-        if (this.isBaby() || !net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this) || level().isClientSide()) {
+        if (this.isBaby() || !com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this) || level().isClientSide()) {
             return false;
         }
         boolean flag = false;
@@ -1041,9 +1041,9 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 
@@ -1416,7 +1416,7 @@ public class TremorzillaEntity extends DinosaurEntity implements KeybindUsingMou
         return 4;
     }
 
-    public float getScale() {
+    public float getAgeScale() {
         return this.isBaby() ? 0.15F : 1.0F;
     }
 

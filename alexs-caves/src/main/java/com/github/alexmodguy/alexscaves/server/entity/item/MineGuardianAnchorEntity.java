@@ -20,7 +20,7 @@ import java.util.UUID;
 
 public class MineGuardianAnchorEntity extends Entity {
 
-    private static final EntityDataAccessor<Optional<UUID>> GUARDIAN_UUID = SynchedEntityData.defineId(MineGuardianAnchorEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> GUARDIAN_UUID = SynchedEntityData.defineId(MineGuardianAnchorEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> GUARDIAN_ID = SynchedEntityData.defineId(MineGuardianAnchorEntity.class, EntityDataSerializers.INT);
 
     public MineGuardianAnchorEntity(EntityType<?> entityType, Level level) {

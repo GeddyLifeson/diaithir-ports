@@ -67,7 +67,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
     private static final EntityDataAccessor<Boolean> TEMP_SUMMON = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Optional<BlockPos>> GOBTHUMPER_POS = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
     private static final EntityDataAccessor<Integer> RIDING_SEGMENT_ID = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> RIDING_SEGMENT_UUID = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> RIDING_SEGMENT_UUID = SynchedEntityData.defineId(GumWormEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> LEFT_HOOK_ID = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> RIGHT_HOOK_ID = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> RIDER_LEAP_TIME = SynchedEntityData.defineId(GumWormEntity.class, EntityDataSerializers.INT);
@@ -592,7 +592,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
         this.captureDrops(new java.util.ArrayList<>());
 
         boolean flag = this.lastHurtByPlayerTime > 0;
-        if (this.shouldDropLoot() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
+        if (this.shouldDropLoot() && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(serverLevel, GameRules.MOB_DROPS)) {
             this.dropFromLootTable(damageSource, flag);
             this.dropCustomDeathLoot(serverLevel, damageSource, flag);
         }
@@ -658,7 +658,7 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
             BlockPos lightPos = BlockPos.containing(this.getX(), surfaceY - 1.0F, this.getZ());
             BlockState state = level().getBlockState(lightPos);
             if (!state.isAir()) {
-                level().addParticle(new BlockParticleOption(ACParticleRegistry.BIG_BLOCK_DUST.get(), state), true, this.getRandomX(0.8F), surfaceY + random.nextFloat(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
+                level().addParticle(new BlockParticleOption(ACParticleRegistry.BIG_BLOCK_DUST.get(), state), true, false, this.getRandomX(0.8F), surfaceY + random.nextFloat(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
             }
         }
     }
@@ -676,9 +676,9 @@ public class GumWormEntity extends Monster implements ICustomCollisions, KaijuMo
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
     public boolean getZRotDirection() {

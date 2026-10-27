@@ -12,7 +12,6 @@ import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
 import com.github.alexmodguy.alexscaves.server.message.MountedEntityKeyMessage;
 import com.github.alexmodguy.alexscaves.server.misc.ACSoundRegistry;
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry;
-import com.github.alexthe666.citadel.server.entity.pathfinding.raycoms.AdvancedPathNavigate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -164,7 +163,7 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
     }
 
     private PathNavigation createMultithreadedPathFinder(boolean flying){
-        return new AdvancedPathNavigateNoTeleport(this, level(), flying ? AdvancedPathNavigate.MovementType.FLYING : AdvancedPathNavigate.MovementType.WALKING);
+        return new AdvancedPathNavigateNoTeleport(this, level(), flying ? AdvancedPathNavigateNoTeleport.MovementType.FLYING : AdvancedPathNavigateNoTeleport.MovementType.WALKING);
     }
 
     @Override
@@ -324,9 +323,9 @@ public class SubterranodonEntity extends DinosaurEntity implements PackAnimal, F
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 

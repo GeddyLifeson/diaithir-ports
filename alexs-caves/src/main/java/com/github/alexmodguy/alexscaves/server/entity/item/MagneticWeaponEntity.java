@@ -46,7 +46,7 @@ import java.util.UUID;
 public class MagneticWeaponEntity extends Entity {
 
     private static final EntityDataAccessor<ItemStack> ITEMSTACK = SynchedEntityData.defineId(MagneticWeaponEntity.class, EntityDataSerializers.ITEM_STACK);
-    private static final EntityDataAccessor<Optional<UUID>> CONTROLLER_UUID = SynchedEntityData.defineId(MagneticWeaponEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> CONTROLLER_UUID = SynchedEntityData.defineId(MagneticWeaponEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> CONTROLLER_ID = SynchedEntityData.defineId(MagneticWeaponEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> TARGET_ID = SynchedEntityData.defineId(MagneticWeaponEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> IDLING = SynchedEntityData.defineId(MagneticWeaponEntity.class, EntityDataSerializers.BOOLEAN);

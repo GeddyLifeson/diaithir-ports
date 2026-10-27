@@ -109,7 +109,7 @@ public class VallumraptorEntity extends DinosaurEntity implements IAnimatedEntit
     protected PathNavigation createNavigation(Level level) {
         GroundPathNavigation navigation = new GroundPathNavigatorNoSpin(this, level);
         navigation.setCanOpenDoors(true);
-        navigation.setCanPassDoors(true);
+        navigation.setCanOpenDoors(true);
         return navigation;
     }
 

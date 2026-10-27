@@ -241,7 +241,7 @@ public abstract class DinosaurEntity extends TamableAnimal implements IDancesToJ
                 BlockState groundState = this.level().getBlockState(ground.below());
                 if (groundState.isSolid()) {
                     if (level().isClientSide()) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, this.getX() + extraX, ground.getY(), this.getZ() + extraZ, motionX, motionY, motionZ);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, false, this.getX() + extraX, ground.getY(), this.getZ() + extraZ, motionX, motionY, motionZ);
                     }
                 }
             }

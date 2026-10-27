@@ -49,7 +49,7 @@ public class NotorEntity extends PathfinderMob {
     private static final EntityDataAccessor<Boolean> SHOWING_HOLOGRAM = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Optional<BlockPos>> HOLOGRAM_POS = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
     private static final EntityDataAccessor<Integer> SCANNING_ID = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> HOLOGRAM_ENTITY_UUID = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> HOLOGRAM_ENTITY_UUID = SynchedEntityData.defineId(NotorEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> HOLOGRAM_ENTITY_ID = SynchedEntityData.defineId(NotorEntity.class, EntityDataSerializers.INT);
 
     public static final Predicate<LivingEntity> SCAN_TARGET = (mob) -> {

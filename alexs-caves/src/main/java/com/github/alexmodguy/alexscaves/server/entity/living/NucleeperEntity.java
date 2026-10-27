@@ -230,7 +230,7 @@ public class NucleeperEntity extends Monster implements ActivatesSirens, Powerab
         NuclearExplosionEntity explosion = ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
         explosion.copyPosition(this);
         explosion.setSize(isCharged() ? 1.75F : 1F);
-        if(!level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)){
+        if(!com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(level(), GameRules.MOB_GRIEFING)){
             explosion.setNoGriefing(true);
         }
         level().addFreshEntity(explosion);

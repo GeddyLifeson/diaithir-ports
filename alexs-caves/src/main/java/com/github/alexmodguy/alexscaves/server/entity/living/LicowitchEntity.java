@@ -72,9 +72,9 @@ import java.util.UUID;
 public class LicowitchEntity extends Monster implements IAnimatedEntity {
 
     private static final EntityDataAccessor<Boolean> CROSSED_ARMS = SynchedEntityData.defineId(LicowitchEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_0 = SynchedEntityData.defineId(LicowitchEntity.class, EntityDataSerializers.OPTIONAL_UUID);
-    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_1 = SynchedEntityData.defineId(LicowitchEntity.class, EntityDataSerializers.OPTIONAL_UUID);
-    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_2 = SynchedEntityData.defineId(LicowitchEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_0 = SynchedEntityData.defineId(LicowitchEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_1 = SynchedEntityData.defineId(LicowitchEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_UUID_2 = SynchedEntityData.defineId(LicowitchEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Optional<BlockPos>> CRUCIBLE_POS = SynchedEntityData.defineId(LicowitchEntity.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
     private static final EntityDataAccessor<Optional<Vec3>> TELEPORTING_TO_POS = SynchedEntityData.defineId(LicowitchEntity.class, ACEntityDataRegistry.OPTIONAL_VEC_3.get());
     public static final Animation ANIMATION_SWING_LEFT = Animation.create(20);

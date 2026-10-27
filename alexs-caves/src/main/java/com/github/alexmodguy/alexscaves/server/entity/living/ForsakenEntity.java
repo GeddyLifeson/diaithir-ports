@@ -241,7 +241,7 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
                         BlockState groundState = this.level().getBlockState(ground);
                         if (groundState.isSolid()) {
                             if (level().isClientSide()) {
-                                level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, smashPos.x + extraX, ground.getY() + extraY, smashPos.z + extraZ, motionX, motionY, motionZ);
+                                level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, false, smashPos.x + extraX, ground.getY() + extraY, smashPos.z + extraZ, motionX, motionY, motionZ);
                             }
                         }
                     }
@@ -447,7 +447,7 @@ public class ForsakenEntity extends Monster implements IAnimatedEntity, ShakesSc
         if(this.isInWall()){
             if (this.destroyBlocksTick > 0) {
                 --this.destroyBlocksTick;
-                if (this.destroyBlocksTick == 0 && net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this)) {
+                if (this.destroyBlocksTick == 0 && com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this)) {
                     int j1 = Mth.floor(this.getY());
                     int i2 = Mth.floor(this.getX());
                     int j2 = Mth.floor(this.getZ());

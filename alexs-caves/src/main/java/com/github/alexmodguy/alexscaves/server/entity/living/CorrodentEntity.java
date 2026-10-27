@@ -193,16 +193,16 @@ public class CorrodentEntity extends Monster implements ICustomCollisions, IAnim
                 BlockState onState = this.getBlockStateOn();
                 if (surfaceState.isSolid()) {
                     Vec3 head = new Vec3(0, 0, 0.7F).yRot(-this.yBodyRot * ((float) Math.PI / 180F)).add(this.getX(), surfacePosition.y, this.getZ());
-                    level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, surfaceState), true, head.x, head.y, head.z, random.nextFloat() - 0.5F, random.nextFloat() + 0.5F, random.nextFloat() - 0.5F);
+                    level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, surfaceState), true, false, head.x, head.y, head.z, random.nextFloat() - 0.5F, random.nextFloat() + 0.5F, random.nextFloat() - 0.5F);
                     for (int i = 0; i < 4 + random.nextInt(4); i++) {
                         float j = (float) Math.pow(i, 0.75F);
                         Vec3 offset = new Vec3(i % 2 == 0 ? -j * 0.2F : j * 0.2F, 0, -0.3F * i).yRot(-this.yBodyRot * ((float) Math.PI / 180F));
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, surfaceState), true, offset.x + head.x, offset.y + head.y, offset.z + head.z, (random.nextFloat() - 0.5F) * 0.2F + offset.x, (random.nextFloat() - 0.5F) * 0.2F + offset.y, (random.nextFloat() - 0.5F) * 0.2F + offset.z);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, surfaceState), true, false, offset.x + head.x, offset.y + head.y, offset.z + head.z, (random.nextFloat() - 0.5F) * 0.2F + offset.x, (random.nextFloat() - 0.5F) * 0.2F + offset.y, (random.nextFloat() - 0.5F) * 0.2F + offset.z);
                     }
                 }
                 if (onState.isSolid()) {
                     for (int i = 0; i < 2 + random.nextInt(2); i++) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, onState), true, this.getRandomX(0.8F), this.getRandomY(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, onState), true, false, this.getRandomX(0.8F), this.getRandomY(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
                     }
                 }
             }
@@ -229,7 +229,7 @@ public class CorrodentEntity extends Monster implements ICustomCollisions, IAnim
                 BlockState groundState = this.level().getBlockState(ground);
                 if (groundState.isSolid()) {
                     if (level().isClientSide()) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, this.getX() + extraX, ground.getY() + extraY, this.getZ() + extraZ, motionX, motionY, motionZ);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, groundState), true, false, this.getX() + extraX, ground.getY() + extraY, this.getZ() + extraZ, motionX, motionY, motionZ);
                     }
                 }
             }
@@ -484,7 +484,7 @@ public class CorrodentEntity extends Monster implements ICustomCollisions, IAnim
         public PathType getPathType(PathfindingContext context, int x, int y, int z) {
             BlockPos pos = new BlockPos(x, y, z);
             PathType def = super.getPathType(context, x, y, z);
-            if (def == PathType.LAVA || def == PathType.OPEN || def == PathType.WATER || def == PathType.WATER_BORDER || def == PathType.DANGER_OTHER || def == PathType.DAMAGE_FIRE || def == PathType.DANGER_POWDER_SNOW) {
+            if (def == PathType.LAVA || def == PathType.OPEN || def == PathType.WATER || def == PathType.WATER_BORDER || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.DAMAGING_IN_NEIGHBOR || def == PathType.DANGER_POWDER_SNOW) {
                 return PathType.BLOCKED;
             }
             return isSafeDig(context.level(), pos) && pos.getY() > context.level().getMinY() ? PathType.WALKABLE : PathType.BLOCKED;

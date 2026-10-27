@@ -274,7 +274,7 @@ public class MagnetronEntity extends Monster {
         if (!this.isAlive() && shouldDropBlocks()) {
             if (this.isFormed()) {
                 for (MagnetronPartEntity part : allParts) {
-                    if (part.getBlockState() != null && level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
+                    if (part.getBlockState() != null && com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(level(), GameRules.MOB_GRIEFING)) {
                         BlockPos placeAt = part.blockPosition();
                         while (!level().getBlockState(placeAt).isAir() && placeAt.getY() < level().getMaxY()) {
                             placeAt = placeAt.above();
@@ -545,7 +545,7 @@ public class MagnetronEntity extends Monster {
                 if (entity.getBlockState() == null && entity.getStartPosition() != null) {
                     BlockState state = level().getBlockState(entity.getStartPosition());
                     saved.add(state);
-                    if (level().getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) && !level().isClientSide()) {
+                    if (com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(level(), GameRules.MOB_GRIEFING) && !level().isClientSide()) {
                         level().destroyBlock(entity.getStartPosition(), false);
                     }
                 }
@@ -631,7 +631,7 @@ public class MagnetronEntity extends Monster {
                 BlockState state = this.level().getBlockState(ground);
                 if (state.isSolid()) {
                     if (level().isClientSide()) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, false, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
                     }
                 }
             }

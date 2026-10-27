@@ -212,7 +212,7 @@ public class CaniacEntity extends Monster implements IAnimatedEntity, PossessedB
         BlockPos ground = BlockPos.containing(ACMath.getGroundBelowPosition(level(), armDustPosition)).below();
         BlockState state = this.level().getBlockState(ground);
         if (state.isSolid()) {
-            level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, armDustPosition.x, ground.getY() + 1, armDustPosition.z, dustMotion.x, dustMotion.y, dustMotion.z);
+            level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, false, armDustPosition.x, ground.getY() + 1, armDustPosition.z, dustMotion.x, dustMotion.y, dustMotion.z);
         }
     }
 

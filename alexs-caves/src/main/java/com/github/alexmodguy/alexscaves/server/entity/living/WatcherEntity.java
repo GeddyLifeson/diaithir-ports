@@ -50,7 +50,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
 
     private static final EntityDataAccessor<Boolean> RUNNING = SynchedEntityData.defineId(WatcherEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> SHADE_MODE = SynchedEntityData.defineId(WatcherEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_ENTITY_UUID = SynchedEntityData.defineId(WatcherEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> POSSESSED_ENTITY_UUID = SynchedEntityData.defineId(WatcherEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> POSSESSED_ENTITY_ID = SynchedEntityData.defineId(WatcherEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Float> POSSESSION_STRENGTH = SynchedEntityData.defineId(WatcherEntity.class, EntityDataSerializers.FLOAT);
     public static final Animation ANIMATION_ATTACK_0 = Animation.create(15);
@@ -106,7 +106,7 @@ public class WatcherEntity extends Monster implements IAnimatedEntity, Possesses
         };
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(false);
-        flyingpathnavigation.setCanPassDoors(true);
+        flyingpathnavigation.setCanOpenDoors(true);
         return flyingpathnavigation;
     }
 

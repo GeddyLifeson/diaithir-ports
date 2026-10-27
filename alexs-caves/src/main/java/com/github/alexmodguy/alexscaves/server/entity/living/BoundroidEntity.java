@@ -45,7 +45,7 @@ import java.util.UUID;
 
 public class BoundroidEntity extends Monster {
 
-    private static final EntityDataAccessor<Optional<UUID>> WINCH_UUID = SynchedEntityData.defineId(BoundroidEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> WINCH_UUID = SynchedEntityData.defineId(BoundroidEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> WINCH_ID = SynchedEntityData.defineId(BoundroidEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> SLAMMING = SynchedEntityData.defineId(BoundroidEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> SCARED = SynchedEntityData.defineId(BoundroidEntity.class, EntityDataSerializers.BOOLEAN);
@@ -195,7 +195,7 @@ public class BoundroidEntity extends Monster {
                 BlockState state = this.level().getBlockState(ground);
                 if (state.isSolid()) {
                     if (level().isClientSide()) {
-                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
+                        level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, state), true, false, center.x + extraX, ground.getY() + extraY, center.z + extraZ, motionX, motionY, motionZ);
                     }
                 }
             }

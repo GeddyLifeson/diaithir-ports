@@ -92,7 +92,7 @@ public class RelicheirusPushTreesGoal extends MoveToBlockGoal {
                                     relicheirus.level().setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
                                 }
                                 FallingTreeBlockEntity fallingTree = ACEntityRegistry.FALLING_TREE_BLOCK.get().create(relicheirus.level(), net.minecraft.world.entity.EntitySpawnReason.EVENT);
-                                fallingTree.moveTo(Vec3.atCenterOf(blockPos));
+                                fallingTree.snapTo(Vec3.atCenterOf(blockPos));
                                 fallingTree.setAllBlockData(FallingTreeBlockEntity.createTagFromData(allData));
                                 fallingTree.setPlacementCooldown(1);
                                 Vec3 vec3 = Vec3.atCenterOf(blockPos).subtract(relicheirus.position());

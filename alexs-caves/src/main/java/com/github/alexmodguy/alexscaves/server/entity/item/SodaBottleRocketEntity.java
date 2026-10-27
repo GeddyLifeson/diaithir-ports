@@ -154,7 +154,7 @@ public class SodaBottleRocketEntity extends FireworkRocketEntity {
         HitResult hitresult = ProjectileUtil.getHitResultOnMoveVector(this, this::canHitEntity);
         if (!this.noPhysics) {
             this.hitTargetOrDeflectSelf(hitresult);
-            this.hasImpulse = true;
+            this.hurtMarked = true;
         }
 
         this.updateRotation();

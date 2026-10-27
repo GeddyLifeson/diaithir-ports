@@ -44,7 +44,7 @@ public class ForsakenRandomlyJumpGoal extends Goal {
             BlockPos blockpos = BlockPos.containing(vec3);
             AABB aabb = this.entity.getBoundingBox().move(vec3.add(0.5F, 1, 0.5F).subtract(this.entity.position()));
             // Check: ground below is solid, position is passable (not solid), and space is unobstructed
-            if (entity.level().getBlockState(blockpos.below()).isSolidRender(entity.level(), blockpos.below()) && !entity.level().getBlockState(blockpos).isSolid() && entity.level().isUnobstructed(this.entity, Shapes.create(aabb))) {
+            if (entity.level().getBlockState(blockpos.below()).isSolidRender() && !entity.level().getBlockState(blockpos).isSolid() && entity.level().isUnobstructed(this.entity, Shapes.create(aabb))) {
                 return blockpos;
             }
         }

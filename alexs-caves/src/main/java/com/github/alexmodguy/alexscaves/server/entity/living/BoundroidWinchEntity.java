@@ -42,7 +42,7 @@ import java.util.UUID;
 
 public class BoundroidWinchEntity extends Monster {
 
-    private static final EntityDataAccessor<Optional<UUID>> HEAD_UUID = SynchedEntityData.defineId(BoundroidWinchEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> HEAD_UUID = SynchedEntityData.defineId(BoundroidWinchEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> HEAD_ID = SynchedEntityData.defineId(BoundroidWinchEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> LATCHED = SynchedEntityData.defineId(BoundroidWinchEntity.class, EntityDataSerializers.BOOLEAN);
     private static final float MAX_DIST_TO_CEILING = 2.9F;

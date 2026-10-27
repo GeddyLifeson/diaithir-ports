@@ -52,7 +52,7 @@ import net.minecraft.core.registries.Registries;
 public class TeletorEntity extends Monster {
 
     private static ImmutableList<Item> HELD_ITEM_POSSIBILITIES = null;
-    private static final EntityDataAccessor<Optional<UUID>> WEAPON_UUID = SynchedEntityData.defineId(TeletorEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> WEAPON_UUID = SynchedEntityData.defineId(TeletorEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> WEAPON_ID = SynchedEntityData.defineId(TeletorEntity.class, EntityDataSerializers.INT);
 
     private float prevControlProgress = 0;
@@ -93,7 +93,7 @@ public class TeletorEntity extends Monster {
         };
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(false);
-        flyingpathnavigation.setCanPassDoors(true);
+        flyingpathnavigation.setCanOpenDoors(true);
         return flyingpathnavigation;
     }
 

@@ -304,7 +304,7 @@ public class RelicheirusEntity extends DinosaurEntity implements IAnimatedEntity
         return new Animation[]{ANIMATION_SPEAK_1, ANIMATION_SPEAK_2, ANIMATION_EAT_TREE, ANIMATION_EAT_TRILOCARIS, ANIMATION_PUSH_TREE, ANIMATION_SCRATCH_1, ANIMATION_SCRATCH_2, ANIMATION_SHAKE, ANIMATION_MELEE_SLASH_1, ANIMATION_MELEE_SLASH_2};
     }
 
-    public float getScale() {
+    public float getAgeScale() {
         return this.isBaby() ? 0.25F : 1.0F;
     }
 

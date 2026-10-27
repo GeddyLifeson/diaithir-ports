@@ -260,7 +260,7 @@ public class DeepOneMageEntity extends DeepOneBaseEntity {
         };
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(false);
-        flyingpathnavigation.setCanPassDoors(true);
+        flyingpathnavigation.setCanOpenDoors(true);
         return flyingpathnavigation;
     }
 

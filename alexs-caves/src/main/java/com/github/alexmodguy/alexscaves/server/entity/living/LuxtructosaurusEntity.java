@@ -391,7 +391,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
                     this.setEnraged(false);
                 }
             }
-            if ((this.horizontalCollision || this.isInWater()) || net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this)) {
+            if ((this.horizontalCollision || this.isInWater()) || com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this)) {
                 AABB aabb = this.getBoundingBox().inflate(0.2D);
                 if (this.getAnimation() == ANIMATION_JUMP && this.getAnimationTick() > 24 && this.onGround()) {
                     return;
@@ -608,7 +608,7 @@ public class LuxtructosaurusEntity extends SauropodBaseEntity implements Enemy {
         VoronoiGenerator.VoronoiInfo info = VORONOI_GENERATOR.get2(blockPos.getX() * sampleScale, blockPos.getZ() * sampleScale);
         boolean flag = false;
         if (info.distance1() - sampleScale * 4 < info.distance()) {
-            if(net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this)){
+            if(com.github.alexmodguy.alexscaves.server.misc.ACProps.canGrief(this.level(), this)){
                 int y = blockPos.getY();
                 for (int i = 0; i <= depth; i++) {
                     BlockState state = level().getBlockState(blockPos);

@@ -56,7 +56,7 @@ public class MineGuardianEntity extends Monster {
     private int maxSleepTime = 200 + random.nextInt(100);
     private int lastScanTime = 0;
     private int timeSinceHadTarget = 0;
-    private static final EntityDataAccessor<Optional<UUID>> ANCHOR_UUID = SynchedEntityData.defineId(MineGuardianEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> ANCHOR_UUID = SynchedEntityData.defineId(MineGuardianEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> ANCHOR_ID = SynchedEntityData.defineId(MineGuardianEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> MAX_CHAIN_LENGTH = SynchedEntityData.defineId(MineGuardianEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> EXPLODING = SynchedEntityData.defineId(MineGuardianEntity.class, EntityDataSerializers.BOOLEAN);
@@ -196,7 +196,7 @@ public class MineGuardianEntity extends Monster {
         if (this.isExploding()) {
             if (explodeProgress >= 10.0F) {
                 this.remove(RemovalReason.KILLED);
-                Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
+                Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(level(), GameRules.MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
                 MineExplosion explosion = new MineExplosion(level(), this, this.getX(), this.getY(0.5), this.getZ(), 5.0F, this.isInWater(), blockinteraction);
                 explosion.explode();
                 explosion.finalizeExplosion(true);
@@ -223,7 +223,7 @@ public class MineGuardianEntity extends Monster {
                 this.setYRot(this.random.nextFloat() * 360.0F);
                 this.setOnGround(false);
                 this.playSound(ACSoundRegistry.MINE_GUARDIAN_FLOP.get());
-                this.hasImpulse = true;
+                this.hurtMarked = true;
             }
             Entity target = this.getTarget();
             if (target == null || !target.isAlive()) {

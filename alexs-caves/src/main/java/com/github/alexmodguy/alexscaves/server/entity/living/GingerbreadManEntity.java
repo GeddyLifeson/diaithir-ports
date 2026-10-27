@@ -57,7 +57,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
     private static final EntityDataAccessor<Boolean> SITTING = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> CARRYING_ITEM = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Optional<UUID>> FLEEING_FROM_UUID = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> FLEEING_FROM_UUID = SynchedEntityData.defineId(GingerbreadManEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> POSSESSOR_LICOWITCH_ID = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Optional<BlockPos>> BARREL_POS = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.OPTIONAL_BLOCK_POS);
     private static final EntityDataAccessor<Integer> TEAM_COLOR = SynchedEntityData.defineId(GingerbreadManEntity.class, EntityDataSerializers.INT);
@@ -106,7 +106,7 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
         this.setGuaranteedDrop(EquipmentSlot.OFFHAND);
         if(this.getNavigation() instanceof GroundPathNavigation groundPathNavigation){
             groundPathNavigation.setCanOpenDoors(true);
-            groundPathNavigation.setCanPassDoors(true);
+            groundPathNavigation.setCanOpenDoors(true);
         }
     }
 
@@ -414,9 +414,9 @@ public class GingerbreadManEntity extends Monster implements IAnimatedEntity, ID
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 

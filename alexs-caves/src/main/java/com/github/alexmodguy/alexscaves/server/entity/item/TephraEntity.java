@@ -30,7 +30,7 @@ import java.util.UUID;
 
 public class TephraEntity extends Projectile {
 
-    private static final EntityDataAccessor<Optional<UUID>> ARC_TOWARDS_ENTITY_UUID = SynchedEntityData.defineId(TephraEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> ARC_TOWARDS_ENTITY_UUID = SynchedEntityData.defineId(TephraEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Float> MAX_SCALE = SynchedEntityData.defineId(TephraEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> SCALE = SynchedEntityData.defineId(TephraEntity.class, EntityDataSerializers.FLOAT);
     private int lSteps;
@@ -146,9 +146,9 @@ public class TephraEntity extends Projectile {
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 
@@ -161,7 +161,7 @@ public class TephraEntity extends Projectile {
     }
 
     private void explode() {
-        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? level().getGameRules().getBoolean(GameRules.RULE_MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
+        Explosion.BlockInteraction blockinteraction = net.neoforged.neoforge.event.EventHooks.canEntityGrief((net.minecraft.server.level.ServerLevel) level(), this) ? com.github.alexmodguy.alexscaves.server.misc.ACProps.rule(level(), GameRules.MOB_EXPLOSION_DROP_DECAY) ? Explosion.BlockInteraction.DESTROY_WITH_DECAY : Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP;
         TephraExplosion explosion = new TephraExplosion(level(), this, this.getX(), this.getY(0.5), this.getZ(), 1.0F + getMaxScale(), blockinteraction);
         explosion.explode();
         explosion.finalizeExplosion(true);

@@ -185,7 +185,7 @@ public class UnderzealotEntity extends Monster implements PackAnimal, IAnimatedE
             BlockState stateOn = this.getBlockStateOn();
             if (stateOn.isSolid()) {
                 for (int i = 0; i < 3; i++) {
-                    level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, stateOn), true, this.getRandomX(0.8F), this.getY(), this.getRandomZ(0.8F), random.nextFloat() - 0.5F, random.nextFloat() + 0.5F, random.nextFloat() - 0.5F);
+                    level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, stateOn), true, false, this.getRandomX(0.8F), this.getY(), this.getRandomZ(0.8F), random.nextFloat() - 0.5F, random.nextFloat() + 0.5F, random.nextFloat() - 0.5F);
                 }
             }
             if (isBuried()) {

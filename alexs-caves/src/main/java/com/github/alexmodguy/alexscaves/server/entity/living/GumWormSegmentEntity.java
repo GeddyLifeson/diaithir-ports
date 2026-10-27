@@ -41,11 +41,11 @@ import java.util.UUID;
 
 public class GumWormSegmentEntity extends Entity implements ICustomCollisions, KeybindUsingMount, PlayerRideableJumping, FlyingMount {
 
-    private static final EntityDataAccessor<Optional<UUID>> HEAD_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> HEAD_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> HEAD_ENTITY_ID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> FRONT_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> FRONT_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> FRONT_ENTITY_ID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> BACK_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> BACK_ENTITY_UUID = SynchedEntityData.defineId(GumWormSegmentEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> BACK_ENTITY_ID = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> INDEX = SynchedEntityData.defineId(GumWormSegmentEntity.class, EntityDataSerializers.INT);
     public boolean renderHurtFlag = false;
@@ -471,7 +471,7 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
             BlockPos lightPos = BlockPos.containing(this.getX(), surfaceY - 1.0F, this.getZ());
             BlockState state = level().getBlockState(lightPos);
             if(!state.isAir()){
-                level().addParticle(new BlockParticleOption(ACParticleRegistry.BIG_BLOCK_DUST.get(), state), true, this.getRandomX(0.8F), surfaceY + random.nextFloat(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
+                level().addParticle(new BlockParticleOption(ACParticleRegistry.BIG_BLOCK_DUST.get(), state), true, false, this.getRandomX(0.8F), surfaceY + random.nextFloat(), this.getRandomZ(0.8F), (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F, (random.nextFloat() - 0.5F) * 0.2F);
             }
         }
     }
@@ -494,9 +494,9 @@ public class GumWormSegmentEntity extends Entity implements ICustomCollisions, K
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 

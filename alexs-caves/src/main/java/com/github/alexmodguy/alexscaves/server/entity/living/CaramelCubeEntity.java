@@ -100,7 +100,7 @@ public class CaramelCubeEntity extends Monster implements PossessedByLicowitch {
     public void jumpFromGround() {
         Vec3 vec3 = this.getDeltaMovement();
         this.setDeltaMovement(vec3.x, this.getJumpPower(), vec3.z);
-        this.hasImpulse = true;
+        this.hurtMarked = true;
     }
 
     protected float getJumpPower() {

@@ -391,7 +391,7 @@ public class TremorsaurusEntity extends DinosaurEntity implements KeybindUsingMo
         super.travel(vec3d);
     }
 
-    public float getScale() {
+    public float getAgeScale() {
         return this.isBaby() ? 0.25F : 1.0F;
     }
 

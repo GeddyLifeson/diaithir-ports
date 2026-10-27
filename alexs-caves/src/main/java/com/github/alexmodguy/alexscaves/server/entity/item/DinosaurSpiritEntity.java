@@ -23,7 +23,7 @@ import java.util.UUID;
 
 public class DinosaurSpiritEntity extends Entity {
 
-    private static final EntityDataAccessor<Optional<UUID>> PLAYER_ID = SynchedEntityData.defineId(DinosaurSpiritEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Optional<UUID>> PLAYER_ID = SynchedEntityData.defineId(DinosaurSpiritEntity.class, com.github.alexmodguy.alexscaves.server.misc.ACDataSerializers.OPTIONAL_UUID);
     private static final EntityDataAccessor<Integer> DINOSAUR_TYPE = SynchedEntityData.defineId(DinosaurSpiritEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> ATTACKING_ENTITY_ID = SynchedEntityData.defineId(DinosaurSpiritEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DELAY_SPAWN = SynchedEntityData.defineId(DinosaurSpiritEntity.class, EntityDataSerializers.INT);
@@ -135,9 +135,9 @@ public class DinosaurSpiritEntity extends Entity {
 
     @Override
     public void lerpMotion(net.minecraft.world.phys.Vec3 lerpVec) {
-        this.lxd = lerpX;
-        this.lyd = lerpY;
-        this.lzd = lerpZ;
+        this.lxd = lerpVec.x;
+        this.lyd = lerpVec.y;
+        this.lzd = lerpVec.z;
         this.setDeltaMovement(this.lxd, this.lyd, this.lzd);
     }
 
