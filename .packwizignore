@@ -4,6 +4,7 @@ Diaithir.zip
 /source/
 /client/
 /diaithir-tooltips/
+/diaithir-perf/
 /tools/
 .gitattributes
 .pre-commit-config.yaml

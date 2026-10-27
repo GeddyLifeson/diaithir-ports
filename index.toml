@@ -10797,6 +10797,10 @@ file = "kubejs/server_scripts/diaithir/integration_unify.js"
 hash = "c1376174241c9a133a354dd01bda4f013864acc00dca56e2ea08bca054a90237"
 
 [[files]]
+file = "kubejs/server_scripts/diaithir/prewarm_spawn.js"
+hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/unify.js"
 hash = "90cf22e88574447f9d7d1b2b5b7f41de01793c68444d0b3aa3c3e18cdb874fba"
 
@@ -10814,7 +10818,7 @@ hash = "a0a790c18e6c93202da5c33a14821204e8f5c4d4a851c11a0e04d49c7896120f"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/extinctions.js"
-hash = "7d94fc9d48d7daa1c92b48ddcceac97a93132867a1aca3306527fcee5c252cc4"
+hash = "89dfc556713a6e76d07ad24bca8ebaa439137f78b49e88739c3fba8c84e620f5"
 
 [[files]]
 file = "kubejs/server_scripts/earth_timeline/extinctions_data.js"
@@ -11769,8 +11773,8 @@ file = "mods/diaithir-nemesis-neoforge-26.1.2-1.0.0.jar"
 hash = "070dd74217842d2c8c1e77d55ad505a23586603d875c82146a148e85cc0d2f9f"
 
 [[files]]
-file = "mods/diaithir-perf-neoforge-26.1.2-0.3.1.jar"
-hash = "06a6e19a9f535a30eb006da3b8664f969d08007c09bdc25d7b732c52ee3311ec"
+file = "mods/diaithir-perf-neoforge-26.1.2-0.3.2.jar"
+hash = "949692709e5661d0b1c2b23e093264d6a222ac57e6ab5694aded1f6bae3c91b4"
 
 [[files]]
 file = "mods/diaithir-tooltips-neoforge-26.1.2-1.0.1.pw.toml"
