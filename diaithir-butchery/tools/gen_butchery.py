@@ -103,21 +103,11 @@ RAW_COLORS = {  # base colour per item for the placeholder textures; real art co
 }
 ITEMS = ["carcass", "butcher_knife", "butcher_cleaver"] + [k for k in KNIVES if k != "butcher_knife"] + ["raw_hide", "sinew", "tallow", "blood_flask", "marrow_bone"] + CUTS + ["cooked_" + c for c in CUTS] + PRODUCTS
 
-def texture(name):
-    base = name.removeprefix("cooked_")
-    r, g, b = RAW_COLORS[base]
-    if name.startswith("cooked_"):
-        r, g, b = int(r * 0.6 + 40), int(g * 0.55 + 20), int(b * 0.5 + 10)
-    rng = random.Random(name)
-    img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
-    for y in range(16):
-        for x in range(16):
-            dx, dy = (x - 7.5) / 6.5, (y - 7.5) / 5.0
-            if dx * dx + dy * dy <= 1.0:
-                n = rng.randint(-14, 14) + (10 if y < 6 else -10 if y > 10 else 0)
-                img.putpixel((x, y), (max(0, min(255, r + n)), max(0, min(255, g + n)), max(0, min(255, b + n)), 255))
+import gen_textures
+
+def texture(name):  # real pixel art lives in gen_textures.py
     os.makedirs(f"{A}/textures/item", exist_ok=True)
-    img.save(f"{A}/textures/item/{name}.png")
+    gen_textures.item_cv(name).img().save(f"{A}/textures/item/{name}.png")
 
 lang = {"item.diaithirbutchery.carcass_of": names.CARCASS_OF, "block.diaithirbutchery.meat_hook": names.item("meat_hook"), "item.diaithirbutchery.meat_hook": names.item("meat_hook"),
         "message.diaithirbutchery.started": "Work has started; finish it with a knife.", "message.diaithirbutchery.unknown": "This carcass cannot be cut."}
@@ -161,18 +151,9 @@ w(f"{D}/tags/item/butcher_tools.json", {"values": [f"{MOD}:{k}" for k in KNIVES]
 SCOL = {"drying_rack": (150, 110, 70), "salting_barrel": (130, 95, 60), "meat_grinder": (120, 125, 130), "sausage_stuffer": (140, 140, 145), "rendering_cauldron": (50, 50, 55),
         "smokehouse": (90, 70, 60), "steam_cannery": (160, 110, 70), "cold_room": (190, 215, 230), "vacuum_packer": (200, 205, 210), "vat_grower": (110, 190, 170), "stasis_case": (170, 140, 230)}
 for sid, age in STATIONS.items():
-    r, g, b = SCOL[sid]
-    rng = random.Random(sid)
-    for part, k in (("side", 0), ("top", 22)):
-        img = Image.new("RGBA", (16, 16))
-        for y in range(16):
-            for x in range(16):
-                n = rng.randint(-10, 10)
-                edge = 28 if x in (0, 15) or y in (0, 15) else 0
-                c = [max(0, min(255, v + n + k - edge)) for v in (r, g, b)]
-                img.putpixel((x, y), (*c, 255))
-        os.makedirs(f"{A}/textures/block", exist_ok=True)
-        img.save(f"{A}/textures/block/{sid}_{part}.png")
+    os.makedirs(f"{A}/textures/block", exist_ok=True)
+    for part in ("side", "top"):
+        gen_textures.station_img(sid, part).save(f"{A}/textures/block/{sid}_{part}.png")
     w(f"{A}/models/block/{sid}.json", {"parent": "minecraft:block/cube_column", "textures": {"end": f"{MOD}:block/{sid}_top", "side": f"{MOD}:block/{sid}_side"}})
     w(f"{A}/blockstates/{sid}.json", {"variants": {"": {"model": f"{MOD}:block/{sid}"}}})
     w(f"{A}/items/{sid}.json", {"model": {"type": "minecraft:model", "model": f"{MOD}:block/{sid}"}})
