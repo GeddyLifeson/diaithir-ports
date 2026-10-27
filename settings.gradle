@@ -11,3 +11,4 @@ plugins {
 }
 
 include 'registrate'
+include 'shim-adapter'

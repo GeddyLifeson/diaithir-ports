@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+base { archivesName = 'create-shim-adapter' }
+version = "0.1.0"
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+neoForge { version = '26.1.2.109' }
+repositories { mavenCentral() }
+dependencies {
+    implementation project(':registrate')
+    compileOnly files('/mnt/project-files/create-neoforge-26.1.2-6.0.9-diaithir.8.jar')
+    compileOnly 'org.jetbrains:annotations:24.1.0'
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.named('jar', Jar) { manifest { attributes('FMLModType': 'GAMELIBRARY') } }

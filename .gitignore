@@ -12,3 +12,4 @@ registrate/build/
 build/
 .gradle/
 reg-build.log
+shim-adapter/build/
