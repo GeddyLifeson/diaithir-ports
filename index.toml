@@ -11330,6 +11330,11 @@ hash = "c1b874474890449772176a4ab2d8f72d4f3cd48043f348652d9f8eefa5a03384"
 metafile = true
 
 [[files]]
+file = "mods/Spoiled-neoforge-26.1.2-12.1.0.pw.toml"
+hash = "42f00adfc7a61b899c3cecb8ef9824e4d1396e89ea14fb2827bd168663a93d41"
+metafile = true
+
+[[files]]
 file = "mods/Stoneworks-v26.1.0-mc26.1.x-NeoForge.pw.toml"
 hash = "6faf9f8c366156a18ee86fec2fa61deaa3384d45cfd53627e0fb70cc87167d03"
 metafile = true

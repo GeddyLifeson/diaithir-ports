@@ -1,0 +1,12 @@
+name = "Spoiled-neoforge"
+filename = "Spoiled-neoforge-26.1.2-12.1.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FsHyEZFS/versions/96GJ19Nr/Spoiled-neoforge-26.1.2-12.1.0.jar"
+hash-format = "sha256"
+hash = "03d6a97e79f44bea50f2255e604358426cf5650a740fbe3a90040c884eeee2d0"
+
+[update.modrinth]
+mod-id = "FsHyEZFS"
+version = "96GJ19Nr"
