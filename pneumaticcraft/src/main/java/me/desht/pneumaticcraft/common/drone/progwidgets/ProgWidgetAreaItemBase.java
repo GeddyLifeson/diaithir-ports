@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.drone.progwidgets;
 
+import net.minecraft.world.item.Item;
 import com.google.common.collect.ImmutableList;
 import me.desht.pneumaticcraft.api.drone.IProgWidget;
 import me.desht.pneumaticcraft.api.drone.ProgWidgetType;

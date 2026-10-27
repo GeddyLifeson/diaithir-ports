@@ -332,7 +332,7 @@ public class SmartChestBlockEntity extends AbstractTickingBlockEntity
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         SavedData savedData = componentInput.get(ModDataComponents.SMART_CHEST_SAVED);

@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block.entity.utility;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.common.block.entity.AbstractPneumaticCraftBlockEntity;
 import me.desht.pneumaticcraft.common.block.entity.IComparatorSupport;
 import me.desht.pneumaticcraft.common.inventory.handler.BaseItemStackHandler;

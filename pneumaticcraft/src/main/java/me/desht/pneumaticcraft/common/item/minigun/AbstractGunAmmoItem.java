@@ -135,7 +135,7 @@ public abstract class AbstractGunAmmoItem extends Item {
         if (dmgMult > 0) {
             // note: can't just check for PartEntity (will get ClassNotFoundException on dedicated server)
             if (target instanceof LivingEntity || target instanceof EnderDragonPart || target instanceof EndCrystal) {
-                target.hurt(getDamageSource(minigun), (float)(ConfigHelper.common().minigun.baseDamage.get() * dmgMult * times));
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(target, getDamageSource(minigun), (float)(ConfigHelper.common().minigun.baseDamage.get() * dmgMult * times));
             } else if (target instanceof ShulkerBullet || target instanceof AbstractHurtingProjectile) {
                 target.discard();
             }

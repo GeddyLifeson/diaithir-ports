@@ -54,7 +54,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
 
     static {
         for (DyeColor c : DyeColor.values()) {
-            TintColor tc = new TintColor(ARGB.ARGB32.color(255, c.getTextureDiffuseColor()));
+            TintColor tc = new TintColor(ARGB.color(255, c.getTextureDiffuseColor()));
             COLORS_ON[c.getId()] = tc.getARGB();
             COLORS_OFF[c.getId()] = tc.darker().getARGB();
         }
@@ -101,7 +101,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level worldIn, BlockPos pos, Block blockIn, net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
         if (!worldIn.isClientSide()) {
             boolean isLit = state.getValue(LIT);
             if (isLit != shouldLight(worldIn, pos)) {
@@ -125,10 +125,10 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         return getRotation(stateIn).getOpposite() == facing && !stateIn.canSurvive(worldIn, currentPos) ?
                 Blocks.AIR.defaultBlockState() :
-                super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+                super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
     }
 
     @Override
@@ -147,7 +147,7 @@ public class WallLampBlock extends AbstractPneumaticCraftBlock implements ColorH
     }
 
     @Override
-    public int getTintColor(BlockState state, @Nullable BlockAndTintGetter world, @Nullable BlockPos pos, int tintIndex) {
+    public int getTintColor(BlockState state, @Nullable BlockGetter world, @Nullable BlockPos pos, int tintIndex) {
         if (tintIndex == 1 && state != null) {
             return state.getValue(LIT) ? COLORS_ON[color.getId()] : COLORS_OFF[color.getId()];
         }

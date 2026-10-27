@@ -163,7 +163,7 @@ public class SentryTurretBlockEntity extends AbstractTickingBlockEntity implemen
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         entityFilter = componentInput.getOrDefault(ModDataComponents.ENTITY_FILTER, "@mob");

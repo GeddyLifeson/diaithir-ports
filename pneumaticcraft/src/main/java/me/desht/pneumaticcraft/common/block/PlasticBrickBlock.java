@@ -36,7 +36,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -105,7 +105,7 @@ public class PlasticBrickBlock extends Block implements ColorHandlers.ITintableB
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         return calcParts(worldIn, currentPos, stateIn);
     }
 
@@ -113,7 +113,7 @@ public class PlasticBrickBlock extends Block implements ColorHandlers.ITintableB
         return true;
     }
 
-    private BlockState calcParts(LevelAccessor world, BlockPos pos, BlockState stateIn) {
+    private BlockState calcParts(net.minecraft.world.level.LevelReader world, BlockPos pos, BlockState stateIn) {
         Block w = world.getBlockState(pos.west()).getBlock();
         Block e = world.getBlockState(pos.east()).getBlock();
         PartType xType = PartType.NONE;
@@ -138,11 +138,11 @@ public class PlasticBrickBlock extends Block implements ColorHandlers.ITintableB
     }
 
     @Override
-    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
+    public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (hurtsToStepOn() && entityIn instanceof LivingEntity livingEntity) {
             if (!isEntitySafe(livingEntity)) {
-                entityIn.hurt(PNCDamageSource.plasticBlock(worldIn), ConfigHelper.common().general.plasticBrickDamage.get().floatValue());
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1));
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entityIn, PNCDamageSource.plasticBlock(worldIn), ConfigHelper.common().general.plasticBrickDamage.get().floatValue());
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 40, 1));
             }
         }
     }
@@ -153,7 +153,7 @@ public class PlasticBrickBlock extends Block implements ColorHandlers.ITintableB
     }
 
     @Override
-    public int getTintColor(BlockState state, @Nullable BlockAndTintGetter world, @Nullable BlockPos pos, int tintIndex) {
+    public int getTintColor(BlockState state, @Nullable BlockGetter world, @Nullable BlockPos pos, int tintIndex) {
         return tintColor;
     }
 

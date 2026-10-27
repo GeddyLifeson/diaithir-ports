@@ -330,7 +330,7 @@ public class SolarCompressorBlockEntity extends AbstractAirHandlingBlockEntity i
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         isBroken = componentInput.getOrDefault(ModDataComponents.SOLAR_BROKEN, false);

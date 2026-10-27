@@ -67,18 +67,18 @@ public class LiquidHopperBlockEntity extends AbstractHopperBlockEntity<LiquidHop
     @GuiSynced
     private final RedstoneController<LiquidHopperBlockEntity> rsController = new RedstoneController<>(this);
 
-    private final Lazy<BlockCapabilityCache<IFluidHandler,Direction>> inputCache = Lazy.of(() -> createFluidHandlerCache(inputDir));
-    private final Lazy<BlockCapabilityCache<IFluidHandler,Direction>> outputCache = Lazy.of(() -> createFluidHandlerCache(getRotation()));
+    private final Lazy<me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler>> inputCache = Lazy.of(() -> createFluidHandlerCache(inputDir));
+    private final Lazy<me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler>> outputCache = Lazy.of(() -> createFluidHandlerCache(getRotation()));
 
     public LiquidHopperBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.LIQUID_HOPPER.get(), pos, state);
     }
 
-    private BlockCapabilityCache<IFluidHandler,Direction> getInputCache() {
+    private me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler> getInputCache() {
         return inputCache.get();
     }
 
-    private BlockCapabilityCache<IFluidHandler,Direction> getOutputCache() {
+    private me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler> getOutputCache() {
         return outputCache.get();
     }
 

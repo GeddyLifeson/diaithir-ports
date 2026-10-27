@@ -231,9 +231,9 @@ public class EtchingTankBlockEntity extends AbstractTickingBlockEntity
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        itemHandler.deserializeNBT(provider, tag.getCompound("Inventory"));
-        outputHandler.deserializeNBT(provider, tag.getCompound("Output"));
-        failedHandler.deserializeNBT(provider, tag.getCompound("Failed"));
+        itemHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Inventory"));
+        outputHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Output"));
+        failedHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Failed"));
     }
 
     @Override

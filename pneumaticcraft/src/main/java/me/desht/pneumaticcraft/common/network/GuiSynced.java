@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.network;
 
+import net.minecraft.world.item.ItemStack;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

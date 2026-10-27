@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.client.ColorHandlers;
 import me.desht.pneumaticcraft.client.gui.AphorismTileScreen;
@@ -39,7 +41,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -243,7 +245,7 @@ public class AphorismTileBlock extends AbstractPneumaticCraftBlock implements Co
     }
 
     @Override
-    public int getTintColor(BlockState state, @Nullable BlockAndTintGetter world, @Nullable BlockPos pos, int tintIndex) {
+    public int getTintColor(BlockState state, @Nullable BlockGetter world, @Nullable BlockPos pos, int tintIndex) {
         if (world != null && pos != null) {
             return PneumaticCraftUtils.getBlockEntityAt(world, pos, AphorismTileBlockEntity.class).map(teAt -> switch (tintIndex) {
                 case 0 -> // border

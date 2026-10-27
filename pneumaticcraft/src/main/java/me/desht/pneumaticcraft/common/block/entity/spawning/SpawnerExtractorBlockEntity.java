@@ -234,8 +234,8 @@ public class SpawnerExtractorBlockEntity extends AbstractAirHandlingBlockEntity
         List<Holder<MobEffect>> l = new ArrayList<>();
         int n = rand.nextInt(100);
         if (n > 50) l.add(MobEffects.FIRE_RESISTANCE);
-        if (n > 75) l.add(MobEffects.MOVEMENT_SPEED);
-        if (n > 82) l.add(MobEffects.DAMAGE_BOOST);
+        if (n > 75) l.add(MobEffects.SPEED);
+        if (n > 82) l.add(MobEffects.STRENGTH);
         if (n > 92) l.add(MobEffects.REGENERATION);
         if (n > 96) l.add(MobEffects.INVISIBILITY);
         return l;

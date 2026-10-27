@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.inventory.handler;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;

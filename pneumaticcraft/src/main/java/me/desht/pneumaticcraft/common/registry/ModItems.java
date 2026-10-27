@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.registry;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.resources.Identifier;
 import me.desht.pneumaticcraft.api.crafting.recipe.AssemblyRecipe;
 import me.desht.pneumaticcraft.api.crafting.recipe.AssemblyRecipe.AssemblyProgramType;

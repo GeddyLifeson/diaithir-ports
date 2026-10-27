@@ -44,7 +44,7 @@ public class ThermalLaggingBlock extends AbstractPneumaticCraftBlock {
         if (selectionContext instanceof EntityCollisionContext ecc && ecc.getEntity() instanceof LivingEntity livingEntity) {
             ItemStack stack = livingEntity.getMainHandItem();
             return ModdedWrenchUtils.getInstance().isWrench(stack)
-                    || stack.getItem().canPerformAction(stack, ItemAbilities.PICKAXE_DIG)
+                    || stack.is(net.minecraft.tags.ItemTags.PICKAXES)
                     || livingEntity.isShiftKeyDown() ?
                     SHAPES[getRotation(state).get3DDataValue()] : Shapes.empty();
         }
@@ -64,11 +64,11 @@ public class ThermalLaggingBlock extends AbstractPneumaticCraftBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (!canSurvive(stateIn, worldIn, currentPos)) {
             return Blocks.AIR.defaultBlockState();
         }
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
     }
 
     @Override

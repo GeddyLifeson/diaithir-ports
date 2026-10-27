@@ -72,8 +72,8 @@ public class AirGrateModule extends AbstractTubeModule {
     private EntityFilter entityFilter = EntityFilter.allow();
     private final Map<BlockPos,Boolean> traceabilityCache = new HashMap<>();
 
-    private BlockCapabilityCache<IItemHandler,Direction> itemInsertionCache;
-    private BlockCapabilityCache<IFluidHandler,Direction> fluidInsertionCache;
+    private me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> itemInsertionCache;
+    private me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler> fluidInsertionCache;
 
     public AirGrateModule(Direction dir, PressureTubeBlockEntity pressureTube) {
         super(dir, pressureTube);
@@ -240,7 +240,7 @@ public class AirGrateModule extends AbstractTubeModule {
             for (Direction dir : DirectionUtil.VALUES) {
                 BlockPos neighborPos = pressureTube.getBlockPos().relative(dir);
                 if (me.desht.pneumaticcraft.compat.Caps.item(level, neighborPos, dir.getOpposite()) != null) {
-                    itemInsertionCache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, level, neighborPos, dir.getOpposite(),
+                    itemInsertionCache = me.desht.pneumaticcraft.compat.HandlerCache.item( level, neighborPos, dir.getOpposite(),
                             () -> !getTube().isRemoved(), () -> itemInsertionCache = null);
                 }
             }
@@ -253,7 +253,7 @@ public class AirGrateModule extends AbstractTubeModule {
             for (Direction dir : DirectionUtil.VALUES) {
                 BlockPos neighborPos = pressureTube.getBlockPos().relative(dir);
                 if (me.desht.pneumaticcraft.compat.Caps.fluid(level, neighborPos, dir.getOpposite()) != null) {
-                    fluidInsertionCache = BlockCapabilityCache.create(Capabilities.FluidHandler.BLOCK, level, neighborPos, dir.getOpposite(),
+                    fluidInsertionCache = me.desht.pneumaticcraft.compat.HandlerCache.fluid( level, neighborPos, dir.getOpposite(),
                             () -> !getTube().isRemoved(), () -> itemInsertionCache = null);
                 }
             }

@@ -90,19 +90,19 @@ public class KeroseneLampBlock extends AbstractPneumaticCraftBlock implements Pn
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         return stateIn.setValue(CONNECTED, getConnectedDirection(worldIn, currentPos));
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+    public void preRemove(BlockState state, Level world, BlockPos pos) {
         PneumaticCraftUtils.getBlockEntityAt(world, pos, KeroseneLampBlockEntity.class)
                 .ifPresent(KeroseneLampBlockEntity::removeLights);
 
-        super.onRemove(state, world, pos, newState, isMoving);
+        super.preRemove(state, world, pos);
     }
 
-    private Direction getConnectedDirection(LevelAccessor world, BlockPos pos) {
+    private Direction getConnectedDirection(net.minecraft.world.level.LevelReader world, BlockPos pos) {
         Direction connectedDir = Direction.DOWN;
         for (Direction d : DirectionUtil.VALUES) {
             BlockPos neighborPos = pos.relative(d);

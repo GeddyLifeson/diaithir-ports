@@ -246,7 +246,7 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         inv.loadContainerContents(componentInput.get(ModDataComponents.BLOCK_ENTITY_SAVED_INV));

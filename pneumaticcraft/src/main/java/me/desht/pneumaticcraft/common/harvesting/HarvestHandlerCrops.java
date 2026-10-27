@@ -35,7 +35,7 @@ public class HarvestHandlerCrops extends HarvestHandlerAbstractCrop {
 
     @Override
     public boolean isSeed(Level world, BlockPos pos, BlockState state, ItemStack stack) {
-        ItemStack seed = ((CropBlock) state.getBlock()).getCloneItemStack(world, pos, withMinAge(state));
+        ItemStack seed = ((CropBlock) state.getBlock()).getCloneItemStack(world, pos, withMinAge(state), false);
         return ItemStack.isSameItem(seed, stack);
     }
 

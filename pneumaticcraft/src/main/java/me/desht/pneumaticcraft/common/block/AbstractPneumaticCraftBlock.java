@@ -59,7 +59,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -209,7 +209,7 @@ public abstract class AbstractPneumaticCraftBlock extends Block
         return CONNECTION_PROPERTIES[dir.get3DDataValue()];
     }
 
-    DirectionProperty directionProperty() { return canRotateToTopOrBottom() ? FACING : HORIZONTAL_FACING; }
+    EnumProperty<Direction> directionProperty() { return canRotateToTopOrBottom() ? FACING : HORIZONTAL_FACING; }
 
     protected Direction getRotation(BlockGetter world, BlockPos pos) {
         return getRotation(world.getBlockState(pos));
@@ -336,6 +336,9 @@ public abstract class AbstractPneumaticCraftBlock extends Block
                     .ifPresent(pncBE -> pncBE.onNeighborBlockUpdate(pos));
         }
     }
+
+    /** Called on the server just before this block is removed, while the block entity (if any) still exists. */
+    public void preRemove(BlockState state, Level level, BlockPos pos) {}
 
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Component> curInfo, TooltipFlag flag) {
         int savedAir = stack.getOrDefault(ModDataComponents.AIR, 0);

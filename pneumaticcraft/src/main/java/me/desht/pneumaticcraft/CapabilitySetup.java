@@ -18,6 +18,7 @@ import net.neoforged.neoforge.items.wrapper.PlayerInvWrapper;
 import net.neoforged.neoforge.items.wrapper.PlayerMainInvWrapper;
 
 import java.util.List;
+import me.desht.pneumaticcraft.compat.transfer.LegacyAdapters;
 
 public class CapabilitySetup {
     public static void registerCaps(RegisterCapabilitiesEvent event) {
@@ -30,9 +31,9 @@ public class CapabilitySetup {
                 ModEntityTypes.AMADRONE
         ).forEach(d -> {
             event.registerEntity(PNCCapabilities.AIR_HANDLER_ENTITY, d.get(), (drone, ctx) -> drone.getAirHandler());
-            event.registerEntity(Capabilities.ItemHandler.ENTITY, d.get(), (drone, ctx) -> drone.getDroneItemHandler());
-            event.registerEntity(Capabilities.FluidHandler.ENTITY, d.get(), (drone, ctx) -> drone.getFluidTank());
-            event.registerEntity(Capabilities.EnergyStorage.ENTITY, d.get(), (drone, ctx) -> drone.getEnergyStorage());
+            event.registerEntity(Capabilities.Item.ENTITY, d.get(), (drone, ctx) -> LegacyAdapters.item(drone.getDroneItemHandler()));
+            event.registerEntity(Capabilities.Fluid.ENTITY, d.get(), (drone, ctx) -> LegacyAdapters.fluid(drone.getFluidTank()));
+            event.registerEntity(Capabilities.Energy.ENTITY, d.get(), (drone, ctx) -> LegacyAdapters.energy(drone.getEnergyStorage()));
         });
 
         event.registerEntity(PNCCapabilities.HEAT_EXCHANGER_ENTITY, ModEntityTypes.HEAT_FRAME.get(), (frame, ctx) -> frame.getHeatExchangerLogic());
@@ -53,16 +54,16 @@ public class CapabilitySetup {
         ModBlockEntityTypes.streamBlockEntities().forEach(blockEntity -> {
             if (blockEntity instanceof AbstractPneumaticCraftBlockEntity pncBE) {
                 if (pncBE.hasItemCapability()) {
-                    event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be ? be.getItemHandler(dir) : null);
+                    event.registerBlockEntity(Capabilities.Item.BLOCK, pncBE.getType(),
+                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getItemHandler(dir) != null ? LegacyAdapters.item(be.getItemHandler(dir)) : null);
                 }
                 if (pncBE.hasFluidCapability()) {
-                    event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be ? be.getFluidHandler(dir) : null);
+                    event.registerBlockEntity(Capabilities.Fluid.BLOCK, pncBE.getType(),
+                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getFluidHandler(dir) != null ? LegacyAdapters.fluid(be.getFluidHandler(dir)) : null);
                 }
                 if (pncBE.hasEnergyCapability()) {
-                    event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, pncBE.getType(),
-                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be ? be.getEnergyHandler(dir) : null);
+                    event.registerBlockEntity(Capabilities.Energy.BLOCK, pncBE.getType(),
+                            (object, dir) -> object instanceof AbstractPneumaticCraftBlockEntity be && be.getEnergyHandler(dir) != null ? LegacyAdapters.energy(be.getEnergyHandler(dir)) : null);
                 }
                 if (pncBE instanceof IHeatExchangingTE) {
                     event.registerBlockEntity(PNCCapabilities.HEAT_EXCHANGER_BLOCK, pncBE.getType(),

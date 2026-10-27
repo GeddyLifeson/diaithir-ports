@@ -153,10 +153,10 @@ public class ChargingStationBlock extends AbstractCamouflageBlock implements Pne
         }
 
         @Override
-        public String getDescriptionId(ItemStack stack) {
+        public net.minecraft.network.chat.Component getName(ItemStack stack) {
             return stack.getOrDefault(ModDataComponents.UPGRADE_ONLY, false) ?
-                    super.getDescriptionId(stack) + ".upgrade_only" :
-                    super.getDescriptionId(stack);
+                    net.minecraft.network.chat.Component.translatable(getDescriptionId() + ".upgrade_only") :
+                    super.getName(stack);
         }
     }
 }

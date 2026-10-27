@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.api;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.api.heat.IHeatExchangerLogic;
 import me.desht.pneumaticcraft.api.item.IFilteringItem;
 import me.desht.pneumaticcraft.api.tileentity.IAirHandler;

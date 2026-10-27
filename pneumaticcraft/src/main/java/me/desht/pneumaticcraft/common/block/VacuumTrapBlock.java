@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.common.block.entity.spawning.VacuumTrapBlockEntity;
 import me.desht.pneumaticcraft.common.item.SpawnerCoreItem;
@@ -121,7 +122,7 @@ public class VacuumTrapBlock extends AbstractPneumaticCraftBlock implements Simp
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
         boolean powered = world.hasNeighborSignal(pos);
         if (powered != state.getValue(POWERED)) {
             if (state.getValue(OPEN) != powered) {

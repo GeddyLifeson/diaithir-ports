@@ -88,7 +88,7 @@ public class UVLightBoxBlockEntity extends AbstractAirHandlingBlockEntity implem
     private final UVInputHandler inputHandler = new UVInputHandler();
     private final ItemStackHandler outputHandler = new BaseItemStackHandler(this, INVENTORY_SIZE);
     private final UVInvWrapper inventoryExt = new UVInvWrapper();
-    private BlockCapabilityCache<IItemHandler,Direction> ejectionCache;
+    private me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> ejectionCache;
 
     public int ticksExisted;
 
@@ -174,7 +174,7 @@ public class UVLightBoxBlockEntity extends AbstractAirHandlingBlockEntity implem
         });
     }
 
-    private BlockCapabilityCache<IItemHandler,Direction> getEjectionCache(@NotNull Direction dir) {
+    private me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> getEjectionCache(@NotNull Direction dir) {
         if (ejectionCache == null || ejectionCache.context() != dir) {
             ejectionCache = createItemHandlerCache(dir);
         }
@@ -186,7 +186,7 @@ public class UVLightBoxBlockEntity extends AbstractAirHandlingBlockEntity implem
         super.loadLegacy(tag, provider);
 
         threshold = tag.getIntOr("threshold", 0);
-        inputHandler.deserializeNBT(provider, tag.getCompound("Items"));
+        inputHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
         outputHandler.deserializeNBT(provider, tag.getCompound("Output"));
     }
 

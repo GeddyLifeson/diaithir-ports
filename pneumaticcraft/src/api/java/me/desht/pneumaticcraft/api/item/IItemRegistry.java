@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.api.item;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.api.tileentity.IAirHandlerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;

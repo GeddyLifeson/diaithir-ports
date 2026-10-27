@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.sensor.eventSensors;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.bus.api.Event;
 import net.neoforged.neoforge.event.entity.player.ItemEntityPickupEvent;

@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.hacking.entity;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.api.pneumatic_armor.hacking.IHackableEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -69,7 +70,7 @@ public class HackableItemFrame implements IHackableEntity<ItemFrame> {
     @Override
     public void onHackFinished(ItemFrame entity, Player player) {
         if (!entity.level().isClientSide()) {
-            entity.hurt(entity.damageSources().playerAttack(player), 0.1f);
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entity, entity.damageSources().playerAttack(player), 0.1f);
         }
     }
 }

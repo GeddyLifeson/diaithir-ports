@@ -80,13 +80,13 @@ public class HeatSinkBlock extends AbstractPneumaticCraftBlock implements ColorH
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (!(entity instanceof LivingEntity livingEntity)) return;
 
         PneumaticCraftUtils.getBlockEntityAt(world, pos, HeatSinkBlockEntity.class).ifPresent(te -> {
             double temp = te.getHeatExchanger().getTemperature();
             if (temp > 333) { // +60C
-                entity.hurt(entity.damageSources().hotFloor(), 1f + ((float) temp - 333) * 0.05f);
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entity, entity.damageSources().hotFloor(), 1f + ((float) temp - 333) * 0.05f);
                 if (temp > 373) { // +100C
                     entity.igniteForSeconds(3);
                 }
@@ -99,11 +99,11 @@ public class HeatSinkBlock extends AbstractPneumaticCraftBlock implements ColorH
                     entity.setTicksFrozen(Math.min(entity.getTicksFrozen() + amplifier, entity.getTicksRequiredToFreeze() + 2));
                     if (entity.getTicksFrozen() >= entity.getTicksRequiredToFreeze()) {
                         int durationTicks = (int) ((243 - temp) * 2);
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, durationTicks, amplifier));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, durationTicks, amplifier));
                         // more damage if cold-vulnerable, less damage if !canFreeze() (typically armour protection)
                         float dmg = entity.getType().builtInRegistryHolder().is(EntityTypeTags.FREEZE_HURTS_EXTRA_TYPES) ? 5 : 2;
                         if (!canFreeze) dmg /= 2f;
-                        entity.hurt(entity.damageSources().freeze(), dmg);
+                        me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entity, entity.damageSources().freeze(), dmg);
                     }
                 }
             }

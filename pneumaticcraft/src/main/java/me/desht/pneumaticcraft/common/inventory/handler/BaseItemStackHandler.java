@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.inventory.handler;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -67,5 +68,13 @@ public class BaseItemStackHandler extends ItemStackHandler {
                 stacks.set(i, ItemStack.EMPTY);
             }
         }
+    }
+
+    public net.minecraft.nbt.CompoundTag serializeNBT(net.minecraft.core.HolderLookup.Provider provider) {
+        return me.desht.pneumaticcraft.compat.NbtCompat.save(this, provider);
+    }
+
+    public void deserializeNBT(net.minecraft.core.HolderLookup.Provider provider, net.minecraft.nbt.CompoundTag tag) {
+        me.desht.pneumaticcraft.compat.NbtCompat.load(this, provider, tag);
     }
 }

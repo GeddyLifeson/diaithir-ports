@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.block.entity.utility;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import com.google.common.collect.ImmutableList;
 import com.mojang.authlib.GameProfile;
 import me.desht.pneumaticcraft.api.item.IPositionProvider;
@@ -473,7 +475,7 @@ public class AirCannonBlockEntity extends AbstractAirHandlingBlockEntity
         gpsY = tag.getIntOr("gpsY", 0);
         gpsZ = tag.getIntOr("gpsZ", 0);
         coordWithinReach = tag.getBooleanOr("targetWithinReach", false);
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
+        itemHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
         forceMult = tag.getIntOr("forceMult", 0);
 
         trackedItemIds = new HashSet<>();

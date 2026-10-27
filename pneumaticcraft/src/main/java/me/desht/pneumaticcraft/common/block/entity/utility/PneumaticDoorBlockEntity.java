@@ -126,7 +126,7 @@ public class PneumaticDoorBlockEntity extends AbstractTickingBlockEntity {
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         color = componentInput.getOrDefault(ModDataComponents.DOOR_COLOR, DyeColor.WHITE);

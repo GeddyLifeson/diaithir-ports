@@ -186,10 +186,10 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
 
         itemHandlerSideConfigurator = new SideConfigurator<>("items", this);
         itemHandlerSideConfigurator.registerHandler("droneInv", new ItemStack(ModItems.DRONE.get()),
-                Capabilities.ItemHandler.BLOCK, () -> droneItemHandler,
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> droneItemHandler,
                 SideConfigurator.RelativeFace.TOP, SideConfigurator.RelativeFace.FRONT, SideConfigurator.RelativeFace.BACK, SideConfigurator.RelativeFace.LEFT, SideConfigurator.RelativeFace.RIGHT);
         itemHandlerSideConfigurator.registerHandler("programmableInv", new ItemStack(ModItems.NETWORK_API.get()),
-                Capabilities.ItemHandler.BLOCK, () -> inventory,
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> inventory,
                 SideConfigurator.RelativeFace.BOTTOM);
         itemHandlerSideConfigurator.setNullFaceHandler("programmableInv");
     }
@@ -471,7 +471,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        inventory.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
         tank.readFromNBT(provider, tag.getCompound("tank"));
 
         ownerID = tag.contains("ownerID") ? UUID.fromString(tag.getStringOr("ownerID", "")) : FALLBACK_UUID;

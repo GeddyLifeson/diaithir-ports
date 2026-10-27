@@ -63,8 +63,8 @@ public class OmnidirectionalHopperBlockEntity extends AbstractHopperBlockEntity<
     private int rrSlot;
     @GuiSynced
     private final RedstoneController<OmnidirectionalHopperBlockEntity> rsController = new RedstoneController<>(this);
-    private final Lazy<BlockCapabilityCache<IItemHandler,Direction>> inputCache = Lazy.of(() -> createItemHandlerCache(inputDir));
-    private final Lazy<BlockCapabilityCache<IItemHandler,Direction>> outputCache = Lazy.of(() -> createItemHandlerCache(getRotation()));
+    private final Lazy<me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler>> inputCache = Lazy.of(() -> createItemHandlerCache(inputDir));
+    private final Lazy<me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler>> outputCache = Lazy.of(() -> createItemHandlerCache(getRotation()));
 
     public OmnidirectionalHopperBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntityTypes.OMNIDIRECTIONAL_HOPPER.get(), pos, state);
@@ -74,11 +74,11 @@ public class OmnidirectionalHopperBlockEntity extends AbstractHopperBlockEntity<
         return INVENTORY_SIZE;
     }
 
-    private BlockCapabilityCache<IItemHandler,Direction> getInputCache() {
+    private me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> getInputCache() {
         return inputCache.get();
     }
 
-    private BlockCapabilityCache<IItemHandler,Direction> getOutputCache() {
+    private me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> getOutputCache() {
         return outputCache.get();
     }
 

@@ -160,7 +160,7 @@ public class JetBootsHandler extends BaseArmorUpgradeHandler<JetBootsHandler.Jet
                 }
                 if (vel > 2) {
                     player.playSound(vel > 2.5 ? SoundEvents.GENERIC_BIG_FALL : SoundEvents.GENERIC_SMALL_FALL, 1.0F, 1.0F);
-                    player.hurt(player.damageSources().flyIntoWall(), (float) vel);
+                    me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(player, player.damageSources().flyIntoWall(), (float) vel);
                     ModCriterionTriggers.FLY_INTO_WALL.get().trigger((ServerPlayer) player);
                 }
             }

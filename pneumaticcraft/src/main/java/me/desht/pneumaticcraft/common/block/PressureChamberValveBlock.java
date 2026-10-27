@@ -104,17 +104,17 @@ public class PressureChamberValveBlock extends AbstractPneumaticCraftBlock imple
         } else {
             return level.getBlockEntity(pos, ModBlockEntityTypes.PRESSURE_CHAMBER_VALVE.get())
                     .filter(te -> te.multiBlockSize > 0)
-                    .map(te -> InteractionResult.SUCCESS)
+                    .<InteractionResult>map(te -> InteractionResult.SUCCESS)
                     .orElse(InteractionResult.TRY_WITH_EMPTY_HAND);
         }
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (state.getBlock() != newState.getBlock()) {
+    public void preRemove(BlockState state, Level world, BlockPos pos) {
+        if (true) {
             invalidateMultiBlock(world, pos);
         }
-        super.onRemove(state, world, pos, newState, isMoving);
+        super.preRemove(state, world, pos);
     }
 
     private void invalidateMultiBlock(Level world, BlockPos pos) {

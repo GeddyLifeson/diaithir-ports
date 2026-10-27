@@ -33,9 +33,9 @@ public class FluidEtchingAcidBlock extends LiquidBlock {
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (entity instanceof LivingEntity && entity.tickCount % 10 == 0) {
-            entity.hurt(PNCDamageSource.acid(level), 1);
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entity, PNCDamageSource.acid(level), 1);
         }
     }
 }

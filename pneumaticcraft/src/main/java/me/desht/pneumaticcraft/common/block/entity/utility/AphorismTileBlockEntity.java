@@ -93,7 +93,7 @@ public class AphorismTileBlockEntity extends AbstractPneumaticCraftBlockEntity {
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         SavedData savedData = componentInput.get(ModDataComponents.APHORISM_TILE_DATA);

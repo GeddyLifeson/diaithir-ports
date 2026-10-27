@@ -89,7 +89,7 @@ public class RefineryControllerBlockEntity extends AbstractTickingBlockEntity
     @DescSynced
     private int lastProgress; // indicates to client that refinery is running, for particle spawning
 
-    private List<BlockCapabilityCache<IFluidHandler,Direction>> outputCache;
+    private List<me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler>> outputCache;
     private TemperatureRange operatingTemp = TemperatureRange.invalid();
     private RefineryRecipe currentRecipe;
     private int workTimer = 0;
@@ -279,13 +279,13 @@ public class RefineryControllerBlockEntity extends AbstractTickingBlockEntity
         outputCache = null;
     }
 
-    private List<BlockCapabilityCache<IFluidHandler,Direction>> getOutputCache() {
+    private List<me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler>> getOutputCache() {
         if (outputCache == null) {
             outputCache = new ArrayList<>();
             RefineryOutputBlockEntity output = findAdjacentOutput();
             while (output != null) {
                 // direction DOWN is important here to get the unwrapped cap
-                outputCache.add(BlockCapabilityCache.create(Capabilities.FluidHandler.BLOCK, (ServerLevel) getLevel(),
+                outputCache.add(me.desht.pneumaticcraft.compat.HandlerCache.fluid( (ServerLevel) getLevel(),
                         output.getBlockPos(), Direction.DOWN,
                         () -> !isRemoved(), () -> outputCache = null));
                 BlockEntity te = getLevel().getBlockEntity(output.getBlockPos().above());

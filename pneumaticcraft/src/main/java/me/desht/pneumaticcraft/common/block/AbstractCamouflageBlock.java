@@ -83,18 +83,6 @@ public abstract class AbstractCamouflageBlock extends AbstractPneumaticCraftBloc
     }
 
     @Override
-    public VoxelShape getOcclusionShape(BlockState state, BlockGetter worldIn, BlockPos pos) {
-        CamouflageableBlockEntity camo = getCamoState(worldIn, pos);
-        return camo == null ? getUncamouflagedRenderShape(state, worldIn, pos) : camo.getCamouflage().getBlockSupportShape(worldIn, pos);
-    }
-
-    @Override
-    public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
-        CamouflageableBlockEntity camo = getCamoState(world, pos);
-        return camo == null ? super.getLightBlock(state, world, pos) : camo.getCamouflage().getLightBlock(world, pos);
-    }
-
-    @Override
     public boolean hasDynamicShape() {
         return true;  // prevent blockstate caching side solidity
     }

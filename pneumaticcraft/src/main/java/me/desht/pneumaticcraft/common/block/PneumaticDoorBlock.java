@@ -85,7 +85,7 @@ public class PneumaticDoorBlock extends AbstractPneumaticCraftBlock implements P
 
     @Override
     public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
+        return RenderShape.INVISIBLE;
     }
 
     public static boolean isTopDoor(BlockState state) {
@@ -257,7 +257,7 @@ public class PneumaticDoorBlock extends AbstractPneumaticCraftBlock implements P
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
         boolean powered = world.getBestNeighborSignal(pos) > 0;
         if (!powered) {
             powered = world.getBestNeighborSignal(pos.relative(isTopDoor(state) ? Direction.DOWN : Direction.UP)) > 0;

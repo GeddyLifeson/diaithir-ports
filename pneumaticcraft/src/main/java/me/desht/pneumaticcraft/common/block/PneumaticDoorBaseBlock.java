@@ -72,14 +72,14 @@ public class PneumaticDoorBaseBlock extends AbstractCamouflageBlock implements P
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
         world.getBlockEntity(pos, ModBlockEntityTypes.PNEUMATIC_DOOR_BASE.get()).ifPresent(teDoorBase -> {
             updateDoorSide(teDoorBase);
-            teDoorBase.onNeighborBlockUpdate(fromPos);
+            teDoorBase.onNeighborBlockUpdate(pos);
             BlockPos doorPos = pos.relative(teDoorBase.getRotation());
             BlockState doorState = world.getBlockState(doorPos);
             if (doorState.getBlock() instanceof PneumaticDoorBlock) {
-                doorState.handleNeighborChanged(world, doorPos, doorState.getBlock(), pos, false);
+                doorState.handleNeighborChanged(world, doorPos, doorState.getBlock(), null, false);
             }
         });
     }

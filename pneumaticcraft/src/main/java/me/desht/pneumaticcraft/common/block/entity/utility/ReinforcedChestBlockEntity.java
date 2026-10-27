@@ -122,7 +122,7 @@ public class ReinforcedChestBlockEntity extends AbstractPneumaticCraftBlockEntit
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         inventory.loadContainerContents(componentInput.getOrDefault(ModDataComponents.BLOCK_ENTITY_SAVED_INV, ItemContainerContents.EMPTY));

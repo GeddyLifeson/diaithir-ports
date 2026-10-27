@@ -295,6 +295,9 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
             // Removes bounding blocks for main block if they weren't already removed
             bb.removeBoundingBlocks(state, level, pos, null);
         }
+        if (state.getBlock() instanceof me.desht.pneumaticcraft.common.block.AbstractPneumaticCraftBlock pb) {
+            pb.preRemove(state, level, pos);
+        }
         NonNullList<ItemStack> drops = NonNullList.create();
         getContentsToDrop(drops);
         drops.forEach(stack -> PneumaticCraftUtils.dropItemOnGround(stack, level, pos));
@@ -382,7 +385,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
             customName = Component.Serializer.fromJson(tag.getString("CustomName"), provider);
         }
         if (tag.contains(NBTKeys.NBT_UPGRADE_INVENTORY) && getUpgradeHandler() != null) {
-            getUpgradeHandler().deserializeNBT(provider, tag.getCompound(NBTKeys.NBT_UPGRADE_INVENTORY));
+            getUpgradeHandler().deserializeNBT(provider, tag.getCompoundOrEmpty(NBTKeys.NBT_UPGRADE_INVENTORY));
         }
         if (this instanceof IHeatExchangingTE he) {
             IHeatExchangerLogic logic = he.getHeatExchanger();
@@ -610,15 +613,15 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
         return upgradeHandler;
     }
 
-    protected BlockCapabilityCache<IItemHandler,Direction> createItemHandlerCache(Direction dir) {
+    protected me.desht.pneumaticcraft.compat.HandlerCache<IItemHandler> createItemHandlerCache(Direction dir) {
         return getLevel() instanceof ServerLevel serverLevel ?
-                BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, serverLevel, getBlockPos().relative(dir), dir.getOpposite(), () -> !isRemoved(), () -> {}) :
+                me.desht.pneumaticcraft.compat.HandlerCache.item( serverLevel, getBlockPos().relative(dir), dir.getOpposite(), () -> !isRemoved(), () -> {}) :
                 null;
     }
 
-    protected BlockCapabilityCache<IFluidHandler,Direction> createFluidHandlerCache(Direction dir) {
+    protected me.desht.pneumaticcraft.compat.HandlerCache<IFluidHandler> createFluidHandlerCache(Direction dir) {
         return getLevel() instanceof ServerLevel serverLevel ?
-                BlockCapabilityCache.create(Capabilities.FluidHandler.BLOCK, serverLevel, getBlockPos().relative(dir), dir.getOpposite(), () -> !isRemoved(), () -> {}) :
+                me.desht.pneumaticcraft.compat.HandlerCache.fluid( serverLevel, getBlockPos().relative(dir), dir.getOpposite(), () -> !isRemoved(), () -> {}) :
                 null;
     }
 
@@ -686,7 +689,7 @@ public abstract class AbstractPneumaticCraftBlockEntity extends BlockEntity
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         if (this instanceof ISerializableTanks st) {

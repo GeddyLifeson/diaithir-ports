@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.item.minigun;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import me.desht.pneumaticcraft.common.config.ConfigHelper;
 import me.desht.pneumaticcraft.common.minigun.Minigun;
 import me.desht.pneumaticcraft.common.registry.ModDataComponents;

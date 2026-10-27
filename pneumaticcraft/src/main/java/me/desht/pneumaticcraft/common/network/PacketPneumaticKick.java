@@ -104,7 +104,7 @@ public enum PacketPneumaticKick implements CustomPacketPayload {
         Entity target = entities.getFirst();
         if (!target.skipAttackInteraction(player)) {
             if (target instanceof LivingEntity living) {
-                target.hurt(target.damageSources().playerAttack(player), 3.0f + upgrades * 0.5f);
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(target, target.damageSources().playerAttack(player), 3.0f + upgrades * 0.5f);
                 living.setJumping(true);
             }
             target.setOnGround(false);

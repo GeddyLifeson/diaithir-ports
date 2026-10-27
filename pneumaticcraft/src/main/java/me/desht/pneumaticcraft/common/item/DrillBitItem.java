@@ -17,6 +17,8 @@
 
 package me.desht.pneumaticcraft.common.item;
 
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import me.desht.pneumaticcraft.common.item.JackHammerItem.DigMode;
 import me.desht.pneumaticcraft.common.registry.ModItems;
 import net.minecraft.ChatFormatting;

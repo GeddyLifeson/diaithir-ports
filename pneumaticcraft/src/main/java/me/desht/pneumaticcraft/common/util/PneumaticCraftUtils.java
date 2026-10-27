@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.util;
 
+import net.minecraft.core.Direction;
 import com.google.common.base.Splitter;
 import com.mojang.authlib.GameProfile;
 import me.desht.pneumaticcraft.api.PNCCapabilities;
@@ -719,5 +720,9 @@ public class PneumaticCraftUtils {
             }
         }
         return false;
+    }
+
+    public static boolean hurt(net.minecraft.world.entity.Entity entity, net.minecraft.world.damagesource.DamageSource source, float amount) {
+        return entity.level() instanceof net.minecraft.server.level.ServerLevel sl && entity.hurtServer(sl, source, amount);
     }
 }

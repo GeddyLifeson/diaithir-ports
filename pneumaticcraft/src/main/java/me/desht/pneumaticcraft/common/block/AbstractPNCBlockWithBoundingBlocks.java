@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.item.ItemStack;
 import me.desht.pneumaticcraft.common.block.entity.IHasBoundingBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

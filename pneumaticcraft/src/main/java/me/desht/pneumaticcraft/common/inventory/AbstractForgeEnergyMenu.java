@@ -45,7 +45,7 @@ public abstract class AbstractForgeEnergyMenu<T extends AbstractPneumaticCraftBl
                 Log.error("EnergyStorage class is missing 'energy' field!?");
             }
         } else {
-            throw new IllegalStateException("block entity must support Capabilities.EnergyStorage.BLOCK on face null!");
+            throw new IllegalStateException("block entity must support me.desht.pneumaticcraft.compat.Caps.ENERGY on face null!");
         }
     }
 }

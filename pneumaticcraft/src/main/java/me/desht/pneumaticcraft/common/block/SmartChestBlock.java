@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block;
 
+import net.minecraft.world.item.Item;
 import me.desht.pneumaticcraft.common.item.PNCBlockItem;
 import me.desht.pneumaticcraft.api.item.IInventoryItem;
 import me.desht.pneumaticcraft.common.block.entity.utility.SmartChestBlockEntity;

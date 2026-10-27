@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.config;
 
+import net.minecraft.world.item.Item;
 import com.google.common.collect.Lists;
 import me.desht.pneumaticcraft.common.util.WildcardedRLMatcher;
 import me.desht.pneumaticcraft.common.villages.VillagerTradesRegistration;

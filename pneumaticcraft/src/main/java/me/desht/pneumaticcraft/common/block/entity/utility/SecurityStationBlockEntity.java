@@ -326,7 +326,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         super.loadLegacy(tag, provider);
 
         rebootTimer = tag.getIntOr("startupTimer", 0);
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        inventory.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
         checkForNetworkValidity();
     }
 
@@ -468,10 +468,10 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     }
 
     public void retaliate(Player hacker) {
-        hacker.hurt(PNCDamageSource.securityStation(getLevel()), hacker.getMaxHealth() - 0.5f);
-        hacker.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100));
+        me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(hacker, PNCDamageSource.securityStation(getLevel()), hacker.getMaxHealth() - 0.5f);
+        hacker.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 100));
         hacker.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200));
-        hacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 3));
+        hacker.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 300, 3));
     }
 
     @Override

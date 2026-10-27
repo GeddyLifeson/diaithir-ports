@@ -249,7 +249,7 @@ public class ChargingStationBlockEntity extends AbstractAirHandlingBlockEntity i
         super.loadLegacy(tag, provider);
 
         itemHandler = new ChargingStationHandler();
-        itemHandler.deserializeNBT(provider, tag.getCompound("Items"));
+        itemHandler.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
 
         ItemStack chargeSlot = getChargingStack();
         if (chargeSlot.getItem() instanceof IChargeableContainerProvider) {
@@ -269,7 +269,7 @@ public class ChargingStationBlockEntity extends AbstractAirHandlingBlockEntity i
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(net.minecraft.core.component.DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
 
         upgradeOnly = componentInput.getOrDefault(ModDataComponents.UPGRADE_ONLY, false);

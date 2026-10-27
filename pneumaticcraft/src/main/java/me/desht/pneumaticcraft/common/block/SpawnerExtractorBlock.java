@@ -124,13 +124,13 @@ public class SpawnerExtractorBlock extends AbstractPneumaticCraftBlock implement
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (!canSurvive(stateIn, worldIn, currentPos)) {
             return Blocks.AIR.defaultBlockState();
         } else {
             worldIn.getBlockEntity(currentPos, ModBlockEntityTypes.SPAWNER_EXTRACTOR.get())
                     .ifPresent(SpawnerExtractorBlockEntity::updateMode);
-            return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+            return super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
         }
     }
 

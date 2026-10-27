@@ -23,6 +23,9 @@ import org.jspecify.annotations.Nullable;
 public final class Caps {
     private Caps() {}
 
+    /** Markers used by SideConfigurator to identify the type of a handler. */
+    public static final Object ITEM = "item", FLUID = "fluid", ENERGY = "energy";
+
     @Nullable
     public static IItemHandler item(Level level, BlockPos pos, @Nullable Direction side) {
         ResourceHandler<ItemResource> h = level.getCapability(Capabilities.Item.BLOCK, pos, side);

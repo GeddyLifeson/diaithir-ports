@@ -120,7 +120,7 @@ public class FallProtectionHandler extends BaseArmorUpgradeHandler<IArmorExtensi
                                 e.position().toVector3f(),
                                 PneumaticCraftUtils.VEC3F_ZERO
                         ), player.level(), player.blockPosition());
-                        e.hurt(player.damageSources().explosion(player, null), Mth.clamp(origDistance / 3f, 1f, 20f));
+                        me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(e, player.damageSources().explosion(player, null), Mth.clamp(origDistance / 3f, 1f, 20f));
                     }
                     if (!stomped.isEmpty()) {
                         player.level().playSound(null, player.blockPosition(), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1f, 0.5f);

@@ -1,5 +1,6 @@
 package me.desht.pneumaticcraft.compat;
 
+import net.minecraft.world.item.ItemStack;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;

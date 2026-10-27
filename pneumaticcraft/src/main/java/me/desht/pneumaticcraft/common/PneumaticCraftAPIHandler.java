@@ -33,7 +33,6 @@ import me.desht.pneumaticcraft.api.tileentity.IAirHandlerMachineFactory;
 import me.desht.pneumaticcraft.api.universal_sensor.ISensorRegistry;
 import me.desht.pneumaticcraft.api.upgrade.IUpgradeRegistry;
 import me.desht.pneumaticcraft.api.wrench.IWrenchRegistry;
-import me.desht.pneumaticcraft.client.ClientRegistryImpl;
 import me.desht.pneumaticcraft.client.pneumatic_armor.ClientArmorRegistry;
 import me.desht.pneumaticcraft.common.drone.DroneRegistry;
 import me.desht.pneumaticcraft.common.fluid.FuelRegistry;
@@ -62,7 +61,7 @@ public enum PneumaticCraftAPIHandler implements PneumaticRegistry.IPneumaticCraf
 
     @Override
     public IClientArmorRegistry getClientArmorRegistry() {
-        return ClientArmorRegistry.getInstance();
+        return null;
     }
 
     @Override
@@ -82,7 +81,7 @@ public enum PneumaticCraftAPIHandler implements PneumaticRegistry.IPneumaticCraf
 
     @Override
     public IClientRegistry getClientRegistry() {
-        return ClientRegistryImpl.getInstance();
+        return null;
     }
 
     @Override

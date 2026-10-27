@@ -133,14 +133,14 @@ public class RefineryOutputBlock extends AbstractPneumaticCraftBlock
     }
 
     @Override
-    public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updateShape(BlockState stateIn, net.minecraft.world.level.LevelReader worldIn, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos, Direction facing, BlockPos facingPos, BlockState facingState, net.minecraft.util.RandomSource random) {
         if (!worldIn.isClientSide() && facingState.getBlock() == ModBlocks.REFINERY_OUTPUT.get()) {
             recache(worldIn, currentPos);
         }
-        return super.updateShape(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+        return super.updateShape(stateIn, worldIn, ticks, currentPos, facing, facingPos, facingState, random);
     }
 
-    private void recache(LevelAccessor world, BlockPos pos) {
+    private void recache(net.minecraft.world.level.LevelReader world, BlockPos pos) {
         PneumaticCraftUtils.getBlockEntityAt(world, pos, RefineryOutputBlockEntity.class)
                 .flatMap(RefineryOutputBlockEntity::getRefineryController)
                 .ifPresent(RefineryControllerBlockEntity::clearOutputCache);

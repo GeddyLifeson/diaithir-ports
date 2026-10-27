@@ -79,8 +79,8 @@ public class RefineryControllerBlock extends AbstractPneumaticCraftBlock
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        super.neighborChanged(state, world, pos, block, fromPos, isMoving);
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, net.minecraft.world.level.redstone.Orientation orientation, boolean isMoving) {
+        super.neighborChanged(state, world, pos, block, orientation, isMoving);
 
         world.getBlockEntity(pos, ModBlockEntityTypes.REFINERY.get())
                 .ifPresent(RefineryControllerBlockEntity::clearOutputCache);

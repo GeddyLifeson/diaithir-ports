@@ -46,7 +46,6 @@ import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.arguments.ResourceLocationArgument;
 import net.minecraft.commands.arguments.coordinates.BlockPosArgument;
 import net.minecraft.commands.arguments.item.ItemArgument;
 import net.minecraft.commands.arguments.item.ItemInput;
@@ -138,7 +137,7 @@ public class ModCommands {
                         )
                 )
                 .then(literal("armor_upgrade")
-                        .then(argument("upgrade", ResourceLocationArgument.id())
+                        .then(argument("upgrade", net.minecraft.commands.arguments.IdentifierArgument.id())
                                 .suggests((ctx, builder) -> suggestUpgradeIDs(builder))
                                 .then(argument("enabled", BoolArgumentType.bool())
                                         .executes(ctx -> setArmorUpgrade(ctx.getSource(), ResourceLocationArgument.getId(ctx, "upgrade"), BoolArgumentType.getBool(ctx, "enabled")))

@@ -377,7 +377,7 @@ public abstract class PressureChamberValveBlockEntity extends AbstractAirHandlin
             // Note: villager conversion is no longer a thing, since due to new 1.14+ villager mechanics,
             // the converted villager will just lose his progression. Instead, just place down a
             // charging station, and an unemployed villager will claim it.
-            entity.hurt(PNCDamageSource.pressure(getLevel()), (int) (getPressure() * 2D));
+            me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(entity, PNCDamageSource.pressure(getLevel()), (int) (getPressure() * 2D));
         }
     }
 

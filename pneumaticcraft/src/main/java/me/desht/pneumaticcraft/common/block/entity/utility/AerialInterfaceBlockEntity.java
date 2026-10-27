@@ -154,15 +154,15 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
 
         itemHandlerSideConfigurator = new SideConfigurator<>("items", this);
         itemHandlerSideConfigurator.registerHandler("mainInv", new ItemStack(Blocks.CHEST),
-                Capabilities.ItemHandler.BLOCK, () -> playerMainInvHandler,
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerMainInvHandler,
                 SideConfigurator.RelativeFace.FRONT, SideConfigurator.RelativeFace.BACK, SideConfigurator.RelativeFace.LEFT, SideConfigurator.RelativeFace.RIGHT);
         itemHandlerSideConfigurator.registerHandler("armorInv", new ItemStack(ModItems.PNEUMATIC_CHESTPLATE.get()),
-                Capabilities.ItemHandler.BLOCK, () -> playerArmorInvHandler,
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerArmorInvHandler,
                 SideConfigurator.RelativeFace.TOP, SideConfigurator.RelativeFace.BOTTOM);
         itemHandlerSideConfigurator.registerHandler("offhandInv", new ItemStack(Items.SHIELD),
-                Capabilities.ItemHandler.BLOCK, () -> playerOffhandInvHandler);
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerOffhandInvHandler);
         itemHandlerSideConfigurator.registerHandler("enderInv", new ItemStack(Blocks.ENDER_CHEST),
-                Capabilities.ItemHandler.BLOCK, () -> playerEnderInvHandler);
+                me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerEnderInvHandler);
 
         invHandlers.add(playerMainInvHandler);
         invHandlers.add(playerArmorInvHandler);
@@ -176,7 +176,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         if (Curios.available) {
             PlayerCuriosHandler playerCuriosHandler = new PlayerCuriosHandler();
             itemHandlerSideConfigurator.registerHandler("curiosInv", new ItemStack(Items.DIAMOND),
-                    Capabilities.ItemHandler.BLOCK, () -> playerCuriosHandler);
+                    me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerCuriosHandler);
             invHandlers.add(playerCuriosHandler);
         }
     }

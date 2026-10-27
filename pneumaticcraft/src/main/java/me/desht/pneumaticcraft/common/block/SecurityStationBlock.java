@@ -110,7 +110,7 @@ public class SecurityStationBlock extends AbstractPneumaticCraftBlock implements
                 player.sendSystemMessage(PneumaticCraftUtils.xlate("pneumaticcraft.message.securityStation.alreadyHacked").withStyle(ChatFormatting.GOLD));
             } else if (getPlayerHackLevel(player) < secStation.getSecurityLevel()) {
                 player.sendSystemMessage(PneumaticCraftUtils.xlate("pneumaticcraft.message.securityStation.cantHack").withStyle(ChatFormatting.GOLD));
-                player.hurt(player.damageSources().fellOutOfWorld(), 1f);
+                me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.hurt(player, player.damageSources().fellOutOfWorld(), 1f);
             } else {
                 if (ConfigHelper.common().machines.securityStationAllowHacking.get()) {
                     secStation.initiateHacking(sp);

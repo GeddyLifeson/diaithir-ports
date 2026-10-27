@@ -36,7 +36,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.capabilities.BaseCapability;
 import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
 import org.apache.commons.lang3.Validate;
 import org.jetbrains.annotations.NotNull;
@@ -82,13 +81,13 @@ public class SideConfigurator<T> {
         setupFacingMatrix();
     }
 
-    public int registerHandler(String id, ItemStack textureStack, BaseCapability<T,?> cap, Supplier<T> handler, RelativeFace... defaultRelativeFaces) {
+    public int registerHandler(String id, ItemStack textureStack, Object cap, Supplier<T> handler, RelativeFace... defaultRelativeFaces) {
         entries.add(new ConnectionEntry<>(id, Either.left(textureStack), cap, handler));
         idxMap.put(id, entries.size() - 1);
         return setDefaultSides(defaultRelativeFaces);
     }
 
-    public int registerHandler(String id, Identifier texture, BaseCapability<T,?> cap, Supplier<T> handler, RelativeFace... defaultRelativeFaces) {
+    public int registerHandler(String id, Identifier texture, Object cap, Supplier<T> handler, RelativeFace... defaultRelativeFaces) {
         entries.add(new ConnectionEntry<>(id, Either.right(texture), cap, handler));
         idxMap.put(id, entries.size() - 1);
         return setDefaultSides(defaultRelativeFaces);
@@ -268,7 +267,7 @@ public class SideConfigurator<T> {
         }
     }
 
-    public record ConnectionEntry<T>(String id, Either<ItemStack,Identifier> texture, BaseCapability<T, ?> cap, Supplier<T> handler) {
+    public record ConnectionEntry<T>(String id, Either<ItemStack,Identifier> texture, Object cap, Supplier<T> handler) {
     }
 
     public record Saved(Map<RelativeFace,Integer> faces) {

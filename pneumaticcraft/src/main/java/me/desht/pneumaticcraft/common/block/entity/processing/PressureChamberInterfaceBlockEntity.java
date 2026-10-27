@@ -293,7 +293,7 @@ public class PressureChamberInterfaceBlockEntity extends PressureChamberWallBloc
     protected void loadLegacy(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadLegacy(tag, provider);
 
-        inventory.deserializeNBT(provider, tag.getCompound("Items"));
+        inventory.deserializeNBT(provider, tag.getCompoundOrEmpty("Items"));
         outputProgress = tag.getFloatOr("outputProgress", 0f);
         inputProgress = tag.getFloatOr("inputProgress", 0f);
         interfaceMode = InterfaceDirection.values()[tag.getIntOr("interfaceMode", 0)];
