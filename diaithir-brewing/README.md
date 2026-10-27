@@ -21,3 +21,7 @@ Recipes are data files `data/<namespace>/diaithirbrewing/<name>.json` from any d
 `/brewing selftest` (owners) runs the first keg recipe through a fake player (pour, fill, ferment, save round trip, draw a serving, and the same through the item handler with a rolled-back insert) and prints PASS or what failed. `tools/gen_assets.py` writes the textures, models, loot, crafting and lang.
 
 Source: https://github.com/GeddyLifeson/diaithir-ports/tree/claude/diaithir-brewing/diaithir-brewing. Licence: MIT.
+
+## Create bridge (data only)
+
+`python3 tools/gen_create_bridge.py <dir with data/*/diaithirbrewing> <out data dir>` writes heated-basin `create:mixing` recipes for every brew recipe whose base is water or milk and that has at most 9 ingredient items. Each is gated on `diaithir_create` being loaded, so it is inert without our Create port. One basin batch is one bucket of base and yields the recipe's servings. Not yet tested against the Create jar in game.
