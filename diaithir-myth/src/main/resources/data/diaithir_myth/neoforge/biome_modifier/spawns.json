@@ -1,0 +1,114 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#diaithir_myth:spawns",
+  "spawners": [
+    {
+      "type": "diaithir_myth:goburdoiri",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:famuirkeid",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:maktirimatuir",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:famuirknok",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:dourasniechgleidid",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "diaithir_myth:tarbiumachuoirtach",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "diaithir_myth:griubluchuirt",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:tarbmoir",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:natuirkriegach",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "diaithir_myth:liupurdsielg",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:iuluirbeind",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:natuirmoir",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "diaithir_myth:leomundkraeb",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:leomundcheistrigchatuir",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:madadfasaigratad",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:toimsechunleomund",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "diaithir_myth:natuirkrun",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "diaithir_myth:daelaggrianu",
+      "weight": 3,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

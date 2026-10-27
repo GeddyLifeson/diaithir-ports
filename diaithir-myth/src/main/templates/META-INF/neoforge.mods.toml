@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+credits="Creature stats and behaviours adapted from Greek Fantasy by skyjay1 (GPLv3), https://github.com/skyjay1/GreekFantasy. All textures, models, names and language files in this mod are new."
+description='''${mod_description}'''
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.109,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"
