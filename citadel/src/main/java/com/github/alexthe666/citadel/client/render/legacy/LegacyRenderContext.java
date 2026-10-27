@@ -40,6 +40,14 @@ public final class LegacyRenderContext {
         context = null;
     }
 
+    public static void beginPublic(SubmitNodeCollector c) {
+        collector = c;
+    }
+
+    public static void endPublic() {
+        collector = null;
+    }
+
     public static boolean active() {
         return collector != null;
     }
@@ -63,9 +71,9 @@ public final class LegacyRenderContext {
     }
 
     public static void renderBlock(BlockState state, PoseStack poseStack, int light) {
-        if (collector == null || context == null) return;
+        if (collector == null) return;
         BlockModelRenderState bs = new BlockModelRenderState();
-        context.getBlockModelResolver().update(bs, state, BlockDisplayContext.create());
+        Minecraft.getInstance().getBlockModelResolver().update(bs, state, BlockDisplayContext.create());
         bs.submit(poseStack, collector, light, OverlayTexture.NO_OVERLAY, 0);
     }
 
@@ -77,5 +85,26 @@ public final class LegacyRenderContext {
         EntityRenderState st = dispatcher.extractEntity(entity, partialTicks);
         st.lightCoords = light;
         dispatcher.submit(st, camera, st.x - x, st.y - y, st.z - z, poseStack, collector);
+    }
+
+    public static void renderItemStack(ItemStack stack, ItemDisplayContext display, PoseStack poseStack, int light) {
+        if (collector == null || stack.isEmpty()) return;
+        ItemStackRenderState st = new ItemStackRenderState();
+        Minecraft.getInstance().getItemModelResolver().updateForTopItem(st, stack, display, Minecraft.getInstance().level, null, 0);
+        st.submit(poseStack, collector, light, OverlayTexture.NO_OVERLAY, 0);
+    }
+
+    /** Draws the 12 edges of a box as lines (1.21 LevelRenderer.renderLineBox replacement). */
+    public static void renderLineBox(PoseStack poseStack, com.mojang.blaze3d.vertex.VertexConsumer vc, net.minecraft.world.phys.AABB b, float r, float g, float bl, float a) {
+        org.joml.Matrix4f m = poseStack.last().pose();
+        float x0 = (float) b.minX, y0 = (float) b.minY, z0 = (float) b.minZ, x1 = (float) b.maxX, y1 = (float) b.maxY, z1 = (float) b.maxZ;
+        float[][] e = {{x0,y0,z0,x1,y0,z0},{x0,y1,z0,x1,y1,z0},{x0,y0,z1,x1,y0,z1},{x0,y1,z1,x1,y1,z1},
+            {x0,y0,z0,x0,y1,z0},{x1,y0,z0,x1,y1,z0},{x0,y0,z1,x0,y1,z1},{x1,y0,z1,x1,y1,z1},
+            {x0,y0,z0,x0,y0,z1},{x1,y0,z0,x1,y0,z1},{x0,y1,z0,x0,y1,z1},{x1,y1,z0,x1,y1,z1}};
+        for (float[] l : e) {
+            float nx = l[3] - l[0], ny = l[4] - l[1], nz = l[5] - l[2];
+            vc.addVertex(m, l[0], l[1], l[2]).setColor(r, g, bl, a).setNormal(nx, ny, nz).setLineWidth(1.5F);
+            vc.addVertex(m, l[3], l[4], l[5]).setColor(r, g, bl, a).setNormal(nx, ny, nz).setLineWidth(1.5F);
+        }
     }
 }
