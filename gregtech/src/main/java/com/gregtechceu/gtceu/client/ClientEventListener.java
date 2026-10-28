@@ -58,7 +58,6 @@ import java.util.stream.Collectors;
 @OnlyIn(Dist.CLIENT)
 public class ClientEventListener {
 
-    @SubscribeEvent
     public static void onRenderLevelStageEvent(RenderLevelStageEvent event) {  /* ported stub */ }
 
     private static final Map<UUID, Identifier> DEFAULT_CAPES = new Object2ObjectOpenHashMap<>();

@@ -439,7 +439,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerPackFinders(AddPackFindersEvent event) {
         if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-            // dynamic client assets are not ported
+            event.addRepositorySource(new com.gregtechceu.gtceu.data.pack.GTPackSource("gtceu:dynamic_assets", PackType.CLIENT_RESOURCES, net.minecraft.server.packs.repository.Pack.Position.TOP, com.gregtechceu.gtceu.data.pack.GTDynamicResourcePack::new));
         } else if (event.getPackType() == PackType.SERVER_DATA) {
             event.addRepositorySource(new com.gregtechceu.gtceu.data.pack.GTPackSource("gtceu:dynamic_data", PackType.SERVER_DATA, net.minecraft.server.packs.repository.Pack.Position.BOTTOM, com.gregtechceu.gtceu.data.pack.GTDynamicDataPack::new));
 

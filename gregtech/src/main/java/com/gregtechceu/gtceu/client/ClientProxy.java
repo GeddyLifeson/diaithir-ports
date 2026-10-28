@@ -51,7 +51,22 @@ import org.jetbrains.annotations.NotNull;
 
 public class ClientProxy {
 
-    public static void init(IEventBus modBus) {  /* ported stub */ }
+    public static void init(IEventBus modBus) {
+        modBus.register(ClientProxy.class);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterBlockTints(RegisterColorHandlersEvent.BlockTintSources event) {
+        for (var entry : BuiltInRegistries.BLOCK.entrySet()) {
+            if (!entry.getKey().identifier().getNamespace().equals(GTCEu.MOD_ID)) continue;
+            if (entry.getValue() instanceof com.gregtechceu.gtceu.api.block.MaterialBlock mb) {
+                var material = mb.material;
+                event.register(java.util.List.of(
+                        (net.minecraft.client.color.block.BlockTintSource) state -> material.getLayerARGB(0),
+                        (net.minecraft.client.color.block.BlockTintSource) state -> material.getLayerARGB(1)), mb);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {  /* ported stub */ }
