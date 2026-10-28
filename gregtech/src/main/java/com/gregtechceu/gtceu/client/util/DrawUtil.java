@@ -26,11 +26,7 @@ public class DrawUtil {
      * @param colorFrom  the starting color of the gradient.
      */
     public static void fillHorizontalGradient(GuiGraphics graphics, RenderType renderType, int x1, int y1, int x2,
-                                              int y2, int colorFrom, int colorTo, int z) {
-        VertexConsumer vertexconsumer = graphics.bufferSource().getBuffer(renderType);
-        fillHorizontalGradient(graphics, vertexconsumer, x1, y1, x2, y2, z, colorFrom, colorTo);
-        ((GuiGraphicsAccessor) graphics).callFlushIfUnmanaged();
-    }
+                                              int y2, int colorFrom, int colorTo, int z) {  /* ported stub */ }
 
     /**
      * The core `fillGradient` method.
@@ -48,21 +44,7 @@ public class DrawUtil {
      * @param colorTo   the ending color of the gradient.
      */
     private static void fillHorizontalGradient(GuiGraphics graphics, VertexConsumer consumer, int x1, int y1, int x2,
-                                               int y2, int z, int colorFrom, int colorTo) {
-        float a1 = ColorUtils.alpha(colorFrom);
-        float r1 = ColorUtils.red(colorFrom);
-        float g1 = ColorUtils.green(colorFrom);
-        float b1 = ColorUtils.blue(colorFrom);
-        float a2 = ColorUtils.alpha(colorTo);
-        float r2 = ColorUtils.red(colorTo);
-        float g2 = ColorUtils.green(colorTo);
-        float b2 = ColorUtils.blue(colorTo);
-        Matrix4f matrix4f = graphics.pose().last().pose();
-        consumer.addVertex(matrix4f, (float) x1, (float) y1, (float) z).setColor(r1, g1, b1, a1);
-        consumer.addVertex(matrix4f, (float) x1, (float) y2, (float) z).setColor(r1, g1, b1, a1);
-        consumer.addVertex(matrix4f, (float) x2, (float) y2, (float) z).setColor(r2, g2, b2, a2);
-        consumer.addVertex(matrix4f, (float) x2, (float) y1, (float) z).setColor(r2, g2, b2, a2);
-    }
+                                               int y2, int z, int colorFrom, int colorTo) {  /* ported stub */ }
 
     /**
      * Converts an (A)RGB integer color into an array of floats, for use in GL calls

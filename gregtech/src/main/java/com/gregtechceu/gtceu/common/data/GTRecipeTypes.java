@@ -506,11 +506,11 @@ public class GTRecipeTypes {
     public final static GTRecipeType BLAST_RECIPES = register("electric_blast_furnace", MULTIBLOCK)
             .setMaxIOSize(3, 3, 1, 1).setEUIO(IO.IN)
             .addDataInfo(data -> {
-                int temp = data.getInt("ebf_temp");
+                int temp = data.getIntOr("ebf_temp", 0);
                 return LocalizationUtils.format("gtceu.recipe.temperature", FormattingUtil.formatTemperature(temp));
             })
             .addDataInfo(data -> {
-                int temp = data.getInt("ebf_temp");
+                int temp = data.getIntOr("ebf_temp", 0);
                 ICoilType requiredCoil = ICoilType.getMinRequiredType(temp);
 
                 if (requiredCoil != null && !requiredCoil.getMaterial().isNull()) {
@@ -520,7 +520,7 @@ public class GTRecipeTypes {
                 return "";
             })
             .setUiBuilder((recipe, widgetGroup) -> {
-                int temp = recipe.data.getInt("ebf_temp");
+                int temp = recipe.data.getIntOr("ebf_temp", 0);
                 List<List<ItemStack>> items = new ArrayList<>();
                 items.add(GTCEuAPI.HEATING_COILS.entrySet().stream()
                         .filter(coil -> coil.getKey().getCoilTemperature() >= temp)
@@ -535,7 +535,7 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.CHEMICAL)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT)
             .onRecipeBuild((recipeBuilder, provider) -> {
-                if (recipeBuilder.data.getBoolean("disable_distillery")) return;
+                if (recipeBuilder.data.getBooleanOr("disable_distillery", false)) return;
                 if (recipeBuilder.output.containsKey(FluidRecipeCapability.CAP)) {
                     Content inputContent = recipeBuilder.input.get(FluidRecipeCapability.CAP).getFirst();
                     SizedFluidIngredient input = FluidRecipeCapability.CAP.of(inputContent.getContent());
@@ -677,7 +677,7 @@ public class GTRecipeTypes {
     }
 
     public @Nullable static GTRecipeType get(String name) {
-        RecipeType<?> type = BuiltInRegistries.RECIPE_TYPE.get(GTCEu.id(name));
+        RecipeType<?> type = BuiltInRegistries.RECIPE_TYPE.getValue(GTCEu.id(name));
         if (type instanceof GTRecipeType gtType) {
             return gtType;
         }

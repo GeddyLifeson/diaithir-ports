@@ -29,18 +29,7 @@ public final class ToolChargeBarRenderer {
     private static final int colorBarRightDepleted = ARGB.color(255, 255, 27, 27);
 
     public static void render(GuiGraphics graphics, int level, int xPosition, int yPosition, int offset, boolean shadow,
-                              int left, int right, boolean doDepletedColor) {
-        if (doDepletedColor && level <= BAR_W / 4) {
-            left = colorBarLeftDepleted;
-            right = colorBarRightDepleted;
-        }
-
-        int x = xPosition + 2;
-        int y = yPosition + 13 - offset;
-        graphics.fill(RenderType.gui(), x, y, x + 13, y + (shadow ? 2 : 1), 190, colorShadow);
-        DrawUtil.fillHorizontalGradient(graphics, RenderType.gui(), x, y, x + level, y + 1, left, right, 190);
-        // graphics.fill(RenderType.guiOverlay(), x + BAR_W, y, x + BAR_W - level, y - 1, colorBG);
-    }
+                              int left, int right, boolean doDepletedColor) {  /* ported stub */ }
 
     public static boolean renderBarsTool(GuiGraphics graphics, IGTTool tool, ItemStack stack,
                                          int xPosition, int yPosition) {

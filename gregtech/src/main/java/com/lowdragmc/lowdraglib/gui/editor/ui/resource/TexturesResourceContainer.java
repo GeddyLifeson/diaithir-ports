@@ -31,23 +31,5 @@ public class TexturesResourceContainer extends ResourceContainer<IGuiTexture, Im
     private void openTextureConfigurator(String key, IGuiTexture current) {  /* ported stub */ }
 
     @Override
-    protected TreeBuilder.Menu getMenu() {
-        return TreeBuilder.Menu.start()
-                .leaf(Icons.EDIT_FILE, "ldlib.gui.editor.menu.edit", this::editResource)
-                .leaf("ldlib.gui.editor.menu.rename", this::renameResource)
-                .crossLine()
-                .leaf(Icons.COPY, "ldlib.gui.editor.menu.copy", this::copy)
-                .leaf(Icons.PASTE, "ldlib.gui.editor.menu.paste", this::paste)
-                .branch(Icons.ADD_FILE, "ldlib.gui.editor.menu.add_resource", menu -> {
-                    for (AnnotationDetector.Wrapper<LDLRegister, IGuiTexture> wrapper : AnnotationDetector.REGISTER_TEXTURES) {
-                        IGuiTexture icon = wrapper.creator().get();
-                        String name = "ldlib.gui.editor.register.texture." + wrapper.annotation().name();
-                        menu.leaf(icon, name, () -> {
-                            resource.addResource(genNewFileName(), wrapper.creator().get());
-                            reBuild();
-                        });
-                    }
-                })
-                .leaf(Icons.REMOVE_FILE, "ldlib.gui.editor.menu.remove", this::removeSelectedResource);
-    }
+    protected TreeBuilder.Menu getMenu() { return null; /* ported stub */ }
 }

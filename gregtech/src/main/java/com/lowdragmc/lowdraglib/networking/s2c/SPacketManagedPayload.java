@@ -52,16 +52,16 @@ public class SPacketManagedPayload extends PacketIntLocation {
         super(BlockPos.of(tag.getLong("p")));
         blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.get(Identifier.parse(tag.getString("t")));
         changed = BitSet.valueOf(tag.getByteArray("c"));
-        ListTag list = tag.getList("l", 10);
+        ListTag list = tag.getListOrEmpty("l");
         payloads = new ITypedPayload<?>[list.size()];
         for (int i = 0; i < payloads.length; i++) {
-            CompoundTag payloadTag = list.getCompound(i);
-            byte id = payloadTag.getByte("t");
+            CompoundTag payloadTag = list.getCompoundOrEmpty(i);
+            byte id = payloadTag.getByteOr("t", (byte)0);
             var payload = TypedPayloadRegistries.create(id);
             payload.deserializeNBT(payloadTag.get("d"), provider);
             payloads[i] = payload;
         }
-        extra = tag.getCompound("e");
+        extra = tag.getCompoundOrEmpty("e");
     }
 
 
@@ -121,7 +121,7 @@ public class SPacketManagedPayload extends PacketIntLocation {
     @Override
     public void write(RegistryFriendlyByteBuf buf) {
         super.write(buf);
-        buf.writeResourceLocation(Objects.requireNonNull(BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(blockEntityType)));
+        buf.writeIdentifier(Objects.requireNonNull(BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(blockEntityType)));
         buf.writeByteArray(changed.toByteArray());
         for (ITypedPayload<?> payload : payloads) {
             buf.writeByte(payload.getType());
@@ -133,7 +133,7 @@ public class SPacketManagedPayload extends PacketIntLocation {
     public static SPacketManagedPayload decode(RegistryFriendlyByteBuf buffer) {
         BlockPos pos = buffer.readBlockPos();
 
-        BlockEntityType<?> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.get(buffer.readResourceLocation());
+        BlockEntityType<?> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getValue(buffer.readIdentifier());
         BitSet changed = BitSet.valueOf(buffer.readByteArray());
         ITypedPayload<?>[] payloads = new ITypedPayload<?>[changed.cardinality()];
         for (int i = 0; i < payloads.length; i++) {

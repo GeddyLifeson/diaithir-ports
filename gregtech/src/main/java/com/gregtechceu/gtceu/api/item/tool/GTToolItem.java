@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item.tool;
 
+import com.gregtechceu.gtceu.compat.TieredItem;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;

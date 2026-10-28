@@ -22,13 +22,13 @@ public class QuadPlaceholderRenderer implements IPlaceholderRenderer {
         VertexConsumer consumer = buffer.getBuffer(GTRenderTypes.getMonitor());
         Matrix4f pose = poseStack.last().pose();
 
-        consumer.addVertex(pose, tag.getFloat("x1"), tag.getFloat("y1"), 0).setColor(tag.getInt("color1"))
+        consumer.addVertex(pose, tag.getFloatOr("x1", 0f), tag.getFloatOr("y1", 0f), 0).setColor(tag.getIntOr("color1", 0))
                 .setLight(LightCoordsUtil.FULL_BRIGHT);
-        consumer.addVertex(pose, tag.getFloat("x2"), tag.getFloat("y2"), 0).setColor(tag.getInt("color2"))
+        consumer.addVertex(pose, tag.getFloatOr("x2", 0f), tag.getFloatOr("y2", 0f), 0).setColor(tag.getIntOr("color2", 0))
                 .setLight(LightCoordsUtil.FULL_BRIGHT);
-        consumer.addVertex(pose, tag.getFloat("x3"), tag.getFloat("y3"), 0).setColor(tag.getInt("color3"))
+        consumer.addVertex(pose, tag.getFloatOr("x3", 0f), tag.getFloatOr("y3", 0f), 0).setColor(tag.getIntOr("color3", 0))
                 .setLight(LightCoordsUtil.FULL_BRIGHT);
-        consumer.addVertex(pose, tag.getFloat("x4"), tag.getFloat("y4"), 0).setColor(tag.getInt("color4"))
+        consumer.addVertex(pose, tag.getFloatOr("x4", 0f), tag.getFloatOr("y4", 0f), 0).setColor(tag.getIntOr("color4", 0))
                 .setLight(LightCoordsUtil.FULL_BRIGHT);
         poseStack.popPose();
     }

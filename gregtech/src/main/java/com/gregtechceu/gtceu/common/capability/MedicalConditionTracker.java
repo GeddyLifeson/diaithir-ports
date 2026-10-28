@@ -215,16 +215,16 @@ public class MedicalConditionTracker implements IMedicalConditionTracker, INBTSe
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag arg) {
-        ListTag medicalConditionsTag = arg.getList("medical_conditions", Tag.TAG_COMPOUND);
+        ListTag medicalConditionsTag = arg.getListOrEmpty("medical_conditions");
         for (int i = 0; i < medicalConditionsTag.size(); ++i) {
-            CompoundTag compoundTag = medicalConditionsTag.getCompound(i);
+            CompoundTag compoundTag = medicalConditionsTag.getCompoundOrEmpty(i);
             MedicalCondition condition = MedicalCondition.CONDITIONS.get(compoundTag.getString("condition"));
-            float progression = compoundTag.getFloat("progression");
+            float progression = compoundTag.getFloatOr("progression", 0f);
 
             medicalConditions.put(condition, progression);
         }
 
-        ListTag permanentConditionsTag = arg.getList("permanent_conditions", Tag.TAG_STRING);
+        ListTag permanentConditionsTag = arg.getListOrEmpty("permanent_conditions");
         for (int i = 0; i < permanentConditionsTag.size(); ++i) {
             permanentConditions.add(MedicalCondition.CONDITIONS.get(permanentConditionsTag.getString(i)));
         }

@@ -66,7 +66,7 @@ public class DuctPipeBlock extends PipeBlock<DuctPipeType, DuctPipeProperties, L
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlock(GTCapability.CAPABILITY_HAZARD_CONTAINER, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof DuctPipeBlockEntity ductPipeBlockEntity) {
-                if (level.isClientSide)
+                if (level.isClientSide())
                     return ductPipeBlockEntity.clientCapability;
 
                 ductPipeBlockEntity.ensureHandlersInitialized();

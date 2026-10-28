@@ -70,7 +70,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
 
     private static Block getBlock(DyeColor color, String postfix) {
         Identifier id = Identifier.withDefaultNamespace(color.getSerializedName() + "_" + postfix);
-        return BuiltInRegistries.BLOCK.get(id);
+        return BuiltInRegistries.BLOCK.getValue(id);
     }
 
     static {
@@ -478,26 +478,11 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
         return parent.isConnected(direction) && child.isConnected(direction.getOpposite());
     };
 
-    private static class AE2CallWrapper {
-
-        static Set<CableBusBlockEntity> collect(BlockEntity first, int limit) {
-            return BreadthFirstBlockSearch.conditionalBlockEntitySearch(CableBusBlockEntity.class,
-                    (CableBusBlockEntity) first,
-                    AE2CallWrapper::ae2CablePredicate,
-                    limit, limit * 6);
-        }
+    private static class AE2CallWrapper {/* ported: removed */
 
         static boolean isColorable(BlockEntity be) {
             return be instanceof IColorableBlockEntity;
-        }
-
-        static boolean ae2CablePredicate(CableBusBlockEntity parent, CableBusBlockEntity child, Direction direction) {
-            if (parent == null) return true;
-            Direction childDirection = direction.getOpposite();
-            return parent.getPart(direction) == null && parent.getCableConnectionType(direction).isValid() &&
-                    child.getPart(childDirection) == null && child.getCableConnectionType(childDirection).isValid() &&
-                    parent.getColor() == child.getColor();
-        }
+        }/* ported: removed */
     }
 
     private static boolean recolorCreateSail(Level world, BlockPos pos, @Nullable DyeColor color) {

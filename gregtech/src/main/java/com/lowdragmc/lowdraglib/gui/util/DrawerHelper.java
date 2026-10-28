@@ -51,20 +51,7 @@ public class DrawerHelper {
     public static ShaderProgram FRAME_ROUND_BOX;
     public static ShaderProgram ROUND_LINE;
 
-    public static void init() {
-        ROUND = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.ROUND_F).attach(Shaders.SCREEN_V));
-        PANEL_BG = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.PANEL_BG_F).attach(Shaders.SCREEN_V));
-        ROUND_BOX = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.ROUND_BOX_F).attach(Shaders.SCREEN_V));
-        PROGRESS_ROUND_BOX = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.PROGRESS_ROUND_BOX_F).attach(Shaders.SCREEN_V));
-        FRAME_ROUND_BOX = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.FRAME_ROUND_BOX_F).attach(Shaders.SCREEN_V));
-        ROUND_LINE = Util.make(new ShaderProgram(), program
-                -> program.attach(Shaders.ROUND_LINE_F).attach(Shaders.SCREEN_V));
-    }
+    public static void init() {  /* ported stub */ }
 
     public static void drawFluidTexture(@Nonnull GuiGraphics graphics, float xCoord, float yCoord, TextureAtlasSprite textureSprite, float maskTop, float maskRight, float zLevel, int fluidColor) {  /* ported stub */ }
 

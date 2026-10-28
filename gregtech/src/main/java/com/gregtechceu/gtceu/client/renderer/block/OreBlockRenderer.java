@@ -51,80 +51,11 @@ public class OreBlockRenderer {
     }
 
     @ApiStatus.Internal
-    public static void reinitModels() {
-        // first set up all the stone types for all tag prefixes
-        for (MaterialIconSet iconSet : MaterialIconSet.ICON_SETS.values()) {
-            for (var entry : TagPrefix.ORES.entrySet()) {
-                copyOreModelWithBaseStone(entry.getKey(), entry.getValue(), MaterialIconType.ore, iconSet);
-                copyOreModelWithBaseStone(entry.getKey(), entry.getValue(), MaterialIconType.oreEmissive, iconSet);
-                // TODO uncomment if/when small ores are added
-                // copyOreModelWithBaseStone(entry.getKey(), entry.getValue(), MaterialIconType.oreSmall, iconSet);
-            }
-        }
-
-        // then create block state JSONs for all ore blocks with those models
-        for (OreBlockRenderer model : MODELS) {
-            Material material = model.block.material;
-            TagPrefix tagPrefix = model.block.tagPrefix;
-            MaterialIconSet iconSet = material.getMaterialIconSet();
-            MaterialIconType iconType = tagPrefix.getMaterialIconType(material);
-
-            Identifier blockId = BuiltInRegistries.BLOCK.getKey(model.block);
-            Identifier modelId = GTCEu.id(ORE_MODEL_NAME_FORMAT
-                    .formatted(iconSet.name, tagPrefix.name, iconType.name()));
-
-            GTDynamicResourcePack.addBlockState(blockId, BlockModelGenerators.createSimpleBlock(model.block, modelId));
-            GTDynamicResourcePack.addItemModel(BuiltInRegistries.ITEM.getKey(model.block.asItem()),
-                    new DelegatedModel(modelId));
-        }
-
-        TEMPLATE_MODEL_CACHE.getCache().clear();
-    }
+    public static void reinitModels() { return null; /* ported stub */ }
 
     /// This is called for every combination of tag prefix + icon type + icon set
     protected static void copyOreModelWithBaseStone(TagPrefix tagPrefix, TagPrefix.OreType oreType,
-                                                    MaterialIconType iconType, MaterialIconSet iconSet) {
-        // read the base ore model JSON
-        JsonObject original;
-        try {
-            original = TEMPLATE_MODEL_CACHE.apply(iconType, iconSet);
-        } catch (RuntimeException e) {
-            GTCEu.LOGGER.error("Could not load template block model for ore type {}, icon type '{}', icon set '{}'",
-                    tagPrefix.name, iconType.name(), iconSet.name, e);
-            return;
-        }
-        if (original == NULL_ELEMENT_MARKER) {
-            // if the icon set doesn't have an ore model (somehow...), skip it
-            return;
-        }
+                                                    MaterialIconType iconType, MaterialIconSet iconSet) {  /* ported stub */ }
 
-        // copy it
-        JsonObject newJson = original.deepCopy();
-        // add the base stone model.
-        newJson.getAsJsonObject("children")
-                .getAsJsonObject("base_stone")
-                .addProperty("parent", oreType.baseModelLocation().toString());
-
-        GTDynamicResourcePack.addBlockModel(
-                GTCEu.id(ORE_MODEL_NAME_FORMAT.formatted(iconSet.name, tagPrefix.name, iconType.name())), newJson);
-    }
-
-    private static JsonObject loadTemplateOreModel(MaterialIconType iconType, MaterialIconSet iconSet) {
-        Identifier baseModelPath = iconType.getBlockModelPath(iconSet, true);
-        baseModelPath = GTDynamicResourcePack.MODEL_ID_CONVERTER.idToFile(baseModelPath);
-
-        ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
-        Optional<Resource> modelResource = resourceManager.getResource(baseModelPath);
-
-        if (modelResource.isEmpty()) {
-            // if the icon set doesn't have an ore model (somehow...), skip it gracefully
-            return NULL_ELEMENT_MARKER;
-        }
-        // read & cache the base ore model JSON
-        try (BufferedReader reader = modelResource.get().openAsReader()) {
-            return GsonHelper.parse(reader, true);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private static JsonObject loadTemplateOreModel(MaterialIconType iconType, MaterialIconSet iconSet) { return null; /* ported stub */ }
 }

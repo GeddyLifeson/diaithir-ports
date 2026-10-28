@@ -39,44 +39,7 @@ public class TooltipsHandler {
     private static final String BLOCK_PREFIX = "block." + GTCEu.MOD_ID;
 
     public static void appendTooltips(ItemStack stack, TooltipFlag flag, List<Component> tooltips,
-                                      Item.TooltipContext context) {
-        // Formula
-        var materialEntry = ChemicalHelper.getMaterialEntry(stack.getItem());
-        if (!materialEntry.isEmpty()) {
-            var formula = materialEntry.material().getChemicalFormula();
-            if (formula != null && !formula.isEmpty()) {
-                tooltips.add(1, Component.literal(formula).withStyle(ChatFormatting.YELLOW));
-            }
-        }
-        if (stack.getItem() instanceof BucketItem bucket) {
-            var fluid = bucket.content;
-            if (!(fluid instanceof EmptyFluid)) {
-                appendFluidTooltips(new FluidStack(fluid, FluidType.BUCKET_VOLUME), tooltips::add, flag, context);
-            }
-        } else if (stack.getItem() instanceof MilkBucketItem) {
-            appendFluidTooltips(GTMaterials.Milk.getFluid(FluidType.BUCKET_VOLUME), tooltips::add, flag, context);
-        }
-
-        // Block/Item custom tooltips
-        String translationKey = stack.getDescriptionId();
-        if (translationKey.startsWith(ITEM_PREFIX) || translationKey.startsWith(BLOCK_PREFIX)) {
-            String tooltipKey = translationKey + ".tooltip";
-            if (Language.getInstance().has(tooltipKey)) {
-                tooltips.add(1, Component.translatable(tooltipKey));
-            } else {
-                List<MutableComponent> multiLang = LangHandler.getMultiLang(tooltipKey);
-                if (multiLang != null && !multiLang.isEmpty()) {
-                    tooltips.addAll(1, multiLang);
-                }
-            }
-        }
-
-        Material material = HazardProperty.getValidHazardMaterial(stack);
-        if (material.isNull()) {
-            return;
-        }
-        GTUtil.appendHazardTooltips(material, tooltips);
-    }
+                                      Item.TooltipContext context) {  /* ported stub */ }
 
     public static void appendFluidTooltips(FluidStack fluidStack, Consumer<Component> tooltips, TooltipFlag flag,
                                            Item.TooltipContext context) {

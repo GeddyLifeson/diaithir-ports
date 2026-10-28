@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.data.worldgen.generator.veins;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
@@ -61,7 +63,7 @@ import java.util.function.Predicate;
 public class GeodeVeinGenerator extends VeinGenerator {
 
     public static final Codec<Double> CHANCE_RANGE = Codec.doubleRange(0.0, 1.0);
-    public static final Codec<IntProvider> SIZE_PROVIDER = IntProvider.codec(1, 20);
+    public static final Codec<IntProvider> SIZE_PROVIDER = IntProviders.codec(1, 20);
     // spotless:off
     public static final MapCodec<GeodeVeinGenerator> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
                     GeodeBlockSettings.CODEC.fieldOf("blocks").forGetter((config) -> config.geodeBlockSettings),

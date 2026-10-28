@@ -45,7 +45,7 @@ public abstract class RecipeCapability<T> {
                             id -> GTRegistries.RECIPE_CAPABILITIES.getHolder(id)
                                     .map(DataResult::success)
                                     .orElseGet(() -> DataResult.error(() -> "Unknown registry key in " + GTRegistries.RECIPE_CAPABILITY_REGISTRY + ": " + id)),
-                            (Holder.Reference<RecipeCapability<?>> holder) -> holder.key().location()
+                            (Holder.Reference<RecipeCapability<?>> holder) -> holder.key().identifier()
                     )
             .flatComapMap(Holder.Reference::value, cap -> safeReference(GTRegistries.RECIPE_CAPABILITIES.wrapAsHolder(cap)));
     public static final Codec<Map<RecipeCapability<?>, List<Content>>> CODEC = new DispatchedMapCodec<>(

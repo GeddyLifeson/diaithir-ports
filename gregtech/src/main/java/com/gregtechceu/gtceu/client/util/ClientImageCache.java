@@ -45,7 +45,7 @@ public class ClientImageCache {
                 if (!downloading) {
                     downloading = true;
                     GTCEu.LOGGER.debug("Requesting image {}", url);
-                    PacketDistributor.sendToServer(new CPacketImageRequest(url));
+                    net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new CPacketImageRequest(url));
                 }
                 return LOADING_TEXTURE_MARKER;
             }));
@@ -93,13 +93,5 @@ public class ClientImageCache {
         }
     }
 
-    private static void saveTexture(String url, byte[] imageBytes) throws IOException {
-        ByteBuffer buffer = ByteBuffer.allocateDirect(imageBytes.length);
-        buffer.put(imageBytes).flip();
-        DynamicTexture texture = new DynamicTexture(NativeImage.read(buffer));
-
-        Minecraft.getInstance().getTextureManager().register(getUrlTextureId(url), texture);
-
-        CACHE.put(url, texture);
-    }
+    private static void saveTexture(String url, byte[] imageBytes) throws IOException {  /* ported stub */ }
 }

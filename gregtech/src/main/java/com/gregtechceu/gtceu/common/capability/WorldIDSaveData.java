@@ -23,7 +23,7 @@ public class WorldIDSaveData extends SavedData {
     }
 
     public WorldIDSaveData(CompoundTag tag) {
-        this.worldID = tag.getString("id");
+        this.worldID = tag.getStringOr("id", "");
     }
 
     @Override

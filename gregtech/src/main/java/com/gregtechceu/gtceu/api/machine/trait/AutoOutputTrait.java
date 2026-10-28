@@ -366,19 +366,19 @@ public class AutoOutputTrait extends MachineTrait implements IRenderingTrait, II
         if (player.isShiftKeyDown()) {
             if (getItemOutputDirection() == gridSide) {
                 setAllowItemInputFromOutputSide(!allowsItemInputFromOutputSide());
-                player.displayClientMessage(Component
+                player.sendOverlayMessage(Component
                         .translatable("gtceu.machine.basic.input_from_output_side." +
                                 (allowsItemInputFromOutputSide() ? "allow" : "disallow"))
-                        .append(Component.translatable("gtceu.creative.chest.item")), true);
+                        .append(Component.translatable("gtceu.creative.chest.item")));
                 hasChanged = true;
             }
 
             if (getFluidOutputDirection() == gridSide) {
                 setAllowFluidInputFromOutputSide(!allowsFluidInputFromOutputSide());
-                player.displayClientMessage(Component
+                player.sendOverlayMessage(Component
                         .translatable("gtceu.machine.basic.input_from_output_side." +
                                 (allowsFluidInputFromOutputSide() ? "allow" : "disallow"))
-                        .append(Component.translatable("gtceu.creative.tank.fluid")), true);
+                        .append(Component.translatable("gtceu.creative.tank.fluid")));
                 hasChanged = true;
             }
 

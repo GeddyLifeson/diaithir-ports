@@ -11,7 +11,7 @@ public class TagUtils {
         if (!compoundTag.contains(key)) {
             compoundTag.put(key, new CompoundTag());
         }
-        return compoundTag.getCompound(key);
+        return compoundTag.getCompoundOrEmpty(key);
     }
 
     /**
@@ -40,7 +40,7 @@ public class TagUtils {
                 if(!current.contains(keys[i])) {
                     return null;
                 }
-                current = current.getCompound(keys[i]);
+                current = current.getCompoundOrEmpty(keys[i]);
             }
         }
         return current.get(keys[keys.length - 1]);
@@ -90,7 +90,7 @@ public class TagUtils {
     public static <T extends Tag> T removeDuplicates(T tag, T demo) {
         if (tag.equals(demo)) return null;
         if (tag instanceof CompoundTag compoundTag1 && demo instanceof CompoundTag compoundTag2) {
-            for (var key : compoundTag2.getAllKeys()) {
+            for (var key : compoundTag2.keySet()) {
                 if (key.startsWith("_")) continue;
                 var tag2 = compoundTag2.get(key);
                 var tag1 = compoundTag1.get(key);

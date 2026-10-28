@@ -134,7 +134,7 @@ public class CableBlockEntity extends PipeBlockEntity<Insulation, WireProperties
     @Override
     public void onLoad() {
         super.onLoad();
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             setTemperature(temperature);
             if (temperature > getDefaultTemp()) {
                 subscribeHeat();
@@ -210,7 +210,7 @@ public class CableBlockEntity extends PipeBlockEntity<Insulation, WireProperties
 
     public void applyHeat(int amount) {
         heatQueue += amount;
-        if (!level.isClientSide && heatSubs == null && temperature + heatQueue > getDefaultTemp()) {
+        if (!level.isClientSide() && heatSubs == null && temperature + heatQueue > getDefaultTemp()) {
             subscribeHeat();
         }
     }
@@ -274,7 +274,7 @@ public class CableBlockEntity extends PipeBlockEntity<Insulation, WireProperties
         this.temperature = temperature;
         syncDataHolder.markClientSyncFieldDirty("temperature");
         level.getLightEngine().checkBlock(worldPosition);
-        if (!level.isClientSide && temperature >= meltTemp) {
+        if (!level.isClientSide() && temperature >= meltTemp) {
             var facing = Direction.UP;
             float xPos = facing.getStepX() * 0.76F + worldPosition.getX() + 0.25F;
             float yPos = facing.getStepY() * 0.76F + worldPosition.getY() + 0.25F;

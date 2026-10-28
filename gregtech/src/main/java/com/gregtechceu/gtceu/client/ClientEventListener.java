@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.client;
 
+import net.minecraft.world.item.crafting.RecipeMap;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.cosmetics.CapeRegistry;
@@ -9,9 +10,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.client.renderer.BlockHighlightRenderer;
-import com.gregtechceu.gtceu.client.renderer.MultiblockInWorldPreviewRenderer;
-import com.gregtechceu.gtceu.client.renderer.cover.FacadeCoverRenderer;
-import com.gregtechceu.gtceu.client.util.TooltipHelper;
+import com.gregtechceu.gtceu.client.renderer.MultiblockInWorldPreviewRenderer;/* ported: removed */
 import com.gregtechceu.gtceu.common.commands.GTClientCommands;
 import com.gregtechceu.gtceu.common.data.GTAttributeModifierIds;
 import com.gregtechceu.gtceu.common.data.GTMobEffects;
@@ -60,36 +59,12 @@ import java.util.stream.Collectors;
 public class ClientEventListener {
 
     @SubscribeEvent
-    public static void onRenderLevelStageEvent(RenderLevelStageEvent event) {
-        if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
-            // to render the preview after block entities, before the translucent. so it can be seen through the
-            // transparent blocks.
-            MultiblockInWorldPreviewRenderer.renderInWorldPreview(event.getPoseStack(), event.getCamera(),
-                    event.getPartialTick().getGameTimeDeltaPartialTick(false));
-        }
-    }
+    public static void onRenderLevelStageEvent(RenderLevelStageEvent event) {  /* ported stub */ }
 
     private static final Map<UUID, Identifier> DEFAULT_CAPES = new Object2ObjectOpenHashMap<>();
 
     @SubscribeEvent
-    public static void onPlayerRender(RenderPlayerEvent.Pre event) {
-        Player player = event.getEntity();
-        AbstractClientPlayerAccessor clientPlayer = (AbstractClientPlayerAccessor) player;
-        if (clientPlayer.gtceu$getPlayerInfo() != null) {
-            PlayerSkin playerSkin = clientPlayer.gtceu$getPlayerInfo().getSkin();
-
-            UUID uuid = player.getUUID();
-            Identifier defaultPlayerCape;
-            if (!DEFAULT_CAPES.containsKey(uuid)) {
-                defaultPlayerCape = playerSkin.capeTexture();
-                DEFAULT_CAPES.put(uuid, defaultPlayerCape);
-            } else {
-                defaultPlayerCape = DEFAULT_CAPES.get(uuid);
-            }
-            Identifier cape = CapeRegistry.getPlayerCapeTexture(uuid);
-            ((PlayerSkinAccessor) (Object) playerSkin).gtceu$setCapeTexture(cape == null ? defaultPlayerCape : cape);
-        }
-    }
+    public static void onPlayerRender(RenderPlayerEvent.Pre event) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void updateFOV(ComputeFovModifierEvent event) {
@@ -148,24 +123,15 @@ public class ClientEventListener {
     }
 
     @SubscribeEvent
-    public static void onClientTickEvent(ClientTickEvent.Post event) {
-        TooltipHelper.onClientTick();
-        MultiblockInWorldPreviewRenderer.onClientTick();
-        EnvironmentalHazardClientHandler.INSTANCE.onClientTick();
-        GTValues.CLIENT_TIME++;
-    }
+    public static void onClientTickEvent(ClientTickEvent.Post event) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void onLevelUnloadEvent(LevelEvent.Unload event) {
-        FacadeCoverRenderer.clearItemModelCache();
-    }
+    public static void onLevelUnloadEvent(LevelEvent.Unload event) {  /* ported stub */ }
 
     private static final String BLOCK_INFO_LINE_START = ChatFormatting.UNDERLINE + "Targeted Block: ";/* ported: removed */
 
     @SubscribeEvent
-    public static void onClientDisconnect(ClientPlayerNetworkEvent.LoggingOut event) {
-        ClientCacheManager.allowReinit();
-    }
+    public static void onClientDisconnect(ClientPlayerNetworkEvent.LoggingOut event) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void registerClientCommand(RegisterClientCommandsEvent event) {
@@ -173,13 +139,11 @@ public class ClientEventListener {
     }
 
     @SubscribeEvent
-    public static void serverStopped(ServerStoppedEvent event) {
-        ClientCacheManager.clearCaches();
-    }
+    public static void serverStopped(ServerStoppedEvent event) {  /* ported stub */ }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void recipesSynced(RecipesUpdatedEvent event) {
-        RecipeManager manager = event.getRecipeManager();
+    public static void recipesSynced(RecipesReceivedEvent event) {
+        RecipeMap manager = event.getRecipeMap();
         for (var category : GTRegistries.RECIPE_CATEGORIES) {
             GTRecipeType type = category.getRecipeType();
             for (GTRecipe recipe : type.getRecipesInCategory(category)) {

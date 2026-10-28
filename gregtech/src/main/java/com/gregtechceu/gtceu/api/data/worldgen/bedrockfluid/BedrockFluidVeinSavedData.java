@@ -49,10 +49,10 @@ public class BedrockFluidVeinSavedData extends SavedData {
 
     public BedrockFluidVeinSavedData(ServerLevel serverLevel, CompoundTag nbt) {
         this(serverLevel);
-        var list = nbt.getList("veinInfo", Tag.TAG_COMPOUND);
+        var list = nbt.getListOrEmpty("veinInfo");
         for (int i = 0; i < list.size(); ++i) {
-            CompoundTag compoundTag = list.getCompound(i);
-            var chunkPos = new ChunkPos(compoundTag.getLong("p"));
+            CompoundTag compoundTag = list.getCompoundOrEmpty(i);
+            var chunkPos = net.minecraft.world.level.ChunkPos.containing(compoundTag.getLong("p"));
             veinFluids.put(chunkPos, FluidVeinWorldEntry.readFromNBT(compoundTag.getCompound("d"),
                     serverLevel.registryAccess()));
         }
@@ -94,7 +94,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
             if (totalWeight > 0) {
                 int weight = Math.abs(query % totalWeight);
                 var registry = serverLevel.registryAccess()
-                        .registryOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY)
+                        .lookupOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY)
                         .asHolderIdMap();
                 for (var holder : registry) {
                     var fluidDefinition = holder.value();
@@ -115,7 +115,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
                 }
             }
 
-            var random = RandomSource.create(serverLevel.getSeed() ^ ChunkPos.asLong(chunkX, chunkZ));
+            var random = RandomSource.create(serverLevel.getSeed() ^ ChunkPos.pack(chunkX, chunkZ));
 
             int maximumYield = 0;
             if (definition != null) {
@@ -143,7 +143,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
     public int getTotalWeight(Holder<Biome> biome) {
         return biomeWeights.computeIfAbsent(biome, b -> {
             int totalWeight = 0;
-            for (var definition : serverLevel.registryAccess().registryOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY)) {
+            for (var definition : serverLevel.registryAccess().lookupOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY)) {
                 if (!definition.canGenerate()) {
                     continue;
                 }

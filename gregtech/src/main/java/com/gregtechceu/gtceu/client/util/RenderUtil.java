@@ -89,13 +89,7 @@ public class RenderUtil {
             return map(fluidTypeExtensions, FluidStack.EMPTY);
         }
 
-        public TextureAtlasSprite map(IClientFluidTypeExtensions fluidTypeExtensions, FluidStack fluidStack) {
-            Identifier texture = mapper.apply(fluidTypeExtensions, fluidStack);
-            if (texture == null) texture = STILL.mapper.apply(fluidTypeExtensions, fluidStack);
-            if (texture == null) texture = WATER_STILL;
-
-            return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(texture);
-        }
+        public TextureAtlasSprite map(IClientFluidTypeExtensions fluidTypeExtensions, FluidStack fluidStack) { return null; /* ported stub */ }
     }
 
     public static Vec3 vec3(double x, double y, double z) {
@@ -136,11 +130,7 @@ public class RenderUtil {
         return DIRECTION_NORMAL_MAP.get(direction);
     }
 
-    public static int getFluidLight(Fluid fluid, BlockPos pos) {
-        if (Minecraft.getInstance().level == null) return 0;
-        return LevelRenderer.getLightColor(Minecraft.getInstance().level, fluid.defaultFluidState().createLegacyBlock(),
-                pos);
-    }
+    public static int getFluidLight(Fluid fluid, BlockPos pos) { return (int)0; /* ported stub */ }
 
     public static void vertex(Matrix4f pose, VertexConsumer vertexConsumer,
                               float x, float y, float z,
@@ -173,41 +163,7 @@ public class RenderUtil {
         return new Vector3f(vertex).add(addX, addY, addZ);
     }
 
-    public static @Nullable Fluid getRecipeFluidToRender(GTRecipe recipe) {
-        if (recipe == null) {
-            return null;
-        }
-        var contents = new ObjectArrayList<Content>();
-        var empty = new ArrayList<Content>();
-        contents.addAll(recipe.outputs.getOrDefault(FluidRecipeCapability.CAP, empty));
-        contents.addAll(recipe.inputs.getOrDefault(FluidRecipeCapability.CAP, empty));
-        if (contents.isEmpty()) {
-            return null;
-        }
-
-        var fluidContent = contents.stream()
-                .filter(content -> content.content instanceof SizedFluidIngredient ingredient &&
-                        !ingredient.ingredient().hasNoFluids())
-                .findAny();
-        if (fluidContent.isEmpty()) {
-            return null;
-        }
-        var ingredient = (SizedFluidIngredient) fluidContent.get().content;
-
-        var stacks = ingredient.getFluids();
-        if (stacks.length == 0) {
-            return null;
-        }
-
-        Fluid fluid = null;
-        for (int i = 0; i < stacks.length && fluid == null; i++) {
-            if (!stacks[i].isEmpty()) {
-                fluid = stacks[i].getFluid();
-            }
-        }
-
-        return fluid;
-    }
+    public static @Nullable Fluid getRecipeFluidToRender(GTRecipe recipe) { return null; /* ported stub */ }
 
     public static void moveToFace(PoseStack poseStack, Vector3fc pos, Direction face) {
         moveToFace(poseStack, pos.x(), pos.y(), pos.z(), face);
@@ -220,37 +176,7 @@ public class RenderUtil {
     }
 
     public static void drawBlock(BlockAndTintGetter level, BlockPos pos, BlockState state,
-                                 MultiBufferSource bufferSource, PoseStack poseStack) {
-        int packedLight = LevelRenderer.getLightColor(level, state, pos);
-
-        RenderShape renderShape = state.getRenderShape();
-        if (renderShape == RenderShape.INVISIBLE) {
-            return;
-        } else if (renderShape == RenderShape.ENTITYBLOCK_ANIMATED) {
-            // if it's a block entity, use the BEWLR to render it instead of the empty block model
-            ItemStack stack = new ItemStack(state.getBlock());
-            IClientItemExtensions.of(stack).getCustomRenderer().renderByItem(stack, ItemDisplayContext.NONE,
-                    poseStack, bufferSource, packedLight, OverlayTexture.NO_OVERLAY);
-            return;
-        }
-
-        BlockRenderDispatcher blockRenderer = Minecraft.getInstance().getBlockRenderer();
-        BakedModel model = blockRenderer.getBlockModel(state);
-        ModelData modelData = model.getModelData(level, pos, state, ModelData.EMPTY);
-
-        int blockColor = Minecraft.getInstance().getBlockColors().getColor(state, level, pos, 0);
-        float r = (float) (blockColor >> 16 & 0xFF) / 255.0F;
-        float g = (float) (blockColor >> 8 & 0xFF) / 255.0F;
-        float b = (float) (blockColor & 0xFF) / 255.0F;
-
-        for (RenderType renderType : model.getRenderTypes(state, RandomSource.create(42), modelData)) {
-            blockRenderer.getModelRenderer().renderModel(poseStack.last(),
-                    bufferSource.getBuffer(RenderTypeHelper.getEntityRenderType(renderType, false)),
-                    state, model, r, g, b,
-                    packedLight, OverlayTexture.NO_OVERLAY,
-                    modelData, renderType);
-        }
-    }
+                                 MultiBufferSource bufferSource, PoseStack poseStack) {  /* ported stub */ }
 
     /**
      * Rotate the current coordinate system, so it is on the face of the given block side.
@@ -286,45 +212,5 @@ public class RenderUtil {
 
     public static boolean renderResearchItemContent(GuiGraphics graphics, Operation<Void> originalMethod,
                                                     @Nullable LivingEntity entity, @Nullable Level level,
-                                                    ItemStack stack, int x, int y, int z, int seed) {
-        if (!Screen.hasShiftDown()) return false;
-
-        ResearchManager.ResearchItem researchData = stack.get(GTDataComponents.RESEARCH_ITEM);
-        if (researchData == null) return false;
-
-        Collection<GTRecipe> recipes = researchData.recipeType().getDataStickEntry(researchData.researchId());
-        if (recipes == null || recipes.isEmpty()) return false;
-
-        for (var recipe : recipes) {
-            // check item outputs first
-            List<Content> outputs = recipe.getOutputContents(ItemRecipeCapability.CAP);
-            if (!outputs.isEmpty()) {
-                ItemStack[] items = ItemRecipeCapability.CAP.of(outputs.getFirst().content).getItems();
-                if (items.length > 0) {
-                    ItemStack output = items[0];
-                    if (!output.isEmpty() && !ItemStack.isSameItemSameComponents(output, stack)) {
-                        originalMethod.call(entity, level, output, x, y, seed, z);
-                        return true;
-                    }
-                }
-            }
-            // if there are no item outputs, try to find a fluid output
-            outputs = recipe.getOutputContents(FluidRecipeCapability.CAP);
-            if (!outputs.isEmpty()) {
-                FluidStack[] fluids = FluidRecipeCapability.CAP.of(outputs.getFirst().content).getFluids();
-                if (fluids.length != 0) {
-                    FluidStack output = fluids[0];
-                    if (!output.isEmpty()) {
-                        var clientExt = IClientFluidTypeExtensions.of(output.getFluid());
-                        var texture = RenderUtil.FluidTextureType.STILL.map(clientExt, output);
-                        int color = clientExt.getTintColor(output);
-
-                        DrawerHelper.drawFluidTexture(graphics, x, y, texture, 0, 0, z, color);
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+                                                    ItemStack stack, int x, int y, int z, int seed) { return false; /* ported stub */ }
 }

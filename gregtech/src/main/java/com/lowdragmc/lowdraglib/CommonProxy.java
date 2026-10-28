@@ -1,5 +1,6 @@
 package com.lowdragmc.lowdraglib;
 
+import net.minecraft.world.level.block.entity.TestBlockEntity;
 
 import com.lowdragmc.lowdraglib.gui.factory.*;
 
@@ -28,9 +29,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class CommonProxy {
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, LDLib.MOD_ID);
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, LDLib.MOD_ID);
-    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, LDLib.MOD_ID);
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TestBlockEntity>> TEST_BE_TYPE;
+    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, LDLib.MOD_ID);/* ported: removed */
 
     static {
         if (Platform.isDevEnv()) {

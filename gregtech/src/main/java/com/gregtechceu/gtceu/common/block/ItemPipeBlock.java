@@ -41,7 +41,7 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
 
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlock(Capabilities.ItemHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
-            if (level.isClientSide) return null;
+            if (level.isClientSide()) return null;
             if (blockEntity instanceof ItemPipeBlockEntity itemPipeBlockEntity) {
                 if (side != null && itemPipeBlockEntity.isConnected(side)) {
                     itemPipeBlockEntity.ensureHandlersInitialized();

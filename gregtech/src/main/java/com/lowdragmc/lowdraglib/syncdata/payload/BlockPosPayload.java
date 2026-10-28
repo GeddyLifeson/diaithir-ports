@@ -20,18 +20,10 @@ public class BlockPosPayload extends ObjectTypedPayload<BlockPos> {
     }
 
     @Override
-    public Tag serializeNBT(HolderLookup.Provider provider) {
-        return NbtUtils.writeBlockPos(payload);
-    }
+    public Tag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
-        if (tag instanceof IntArrayTag ints) {
-            payload = ints.size() == 3 ? new BlockPos(ints.get(0).getAsInt(), ints.get(1).getAsInt(), ints.get(2).getAsInt()) : null;
-        } else {
-            payload = BlockPos.ZERO;
-        }
-    }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
 
     @Override
     public Object copyForManaged(Object value) {

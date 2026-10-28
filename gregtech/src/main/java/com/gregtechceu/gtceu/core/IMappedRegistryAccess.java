@@ -55,7 +55,7 @@ public interface IMappedRegistryAccess<T> {
             return; // not present, nothing to remove
         }
 
-        this.gtceu$getByLocation().remove(key.location());
+        this.gtceu$getByLocation().remove(key.identifier());
 
         T value = ref.value();
         this.gtceu$getByValue().remove(value);

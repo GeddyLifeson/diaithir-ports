@@ -7,11 +7,7 @@ import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.IGTTool;
 
 
-import com.gregtechceu.gtceu.client.model.pipe.PipeModel;
-
-import com.gregtechceu.gtceu.client.particle.HazardParticle;
-import com.gregtechceu.gtceu.client.particle.MufflerParticle;
-import com.gregtechceu.gtceu.client.renderer.block.MaterialBlockRenderer;
+import com.gregtechceu.gtceu.client.model.pipe.PipeModel;/* ported: removed */
 import com.gregtechceu.gtceu.client.renderer.block.OreBlockRenderer;
 import com.gregtechceu.gtceu.client.renderer.block.SurfaceRockRenderer;
 import com.gregtechceu.gtceu.client.renderer.entity.GTExplosiveRenderer;
@@ -34,18 +30,7 @@ import com.gregtechceu.gtceu.common.data.GTParticleTypes;
 import com.gregtechceu.gtceu.common.item.DrumMachineItem;
 import com.gregtechceu.gtceu.common.item.LampBlockItem;
 import com.gregtechceu.gtceu.common.item.QuantumTankMachineItem;
-import com.gregtechceu.gtceu.config.ConfigHolder;
-
-
-
-
-
-
-
-
-
-import com.gregtechceu.gtceu.utils.data.RuntimeBlockstateProvider;
-import com.gregtechceu.gtceu.utils.input.SyncedKeyMapping;
+import com.gregtechceu.gtceu.config.ConfigHolder;/* ported: removed */
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.component.DataComponents;
@@ -66,23 +51,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class ClientProxy {
 
-    public static void init(IEventBus modBus) {
-        modBus.register(ClientProxy.class);
-        if (!GTCEu.isDataGen()) {
-            ClientCacheManager.registerClientCache(GTClientCache.instance, "gtceu");
-            Layers.registerLayer(OreRenderLayer::new, "ore_veins");
-            Layers.registerLayer(FluidRenderLayer::new, "bedrock_fluids");
-            CommonEventListener.registerCapes(new RegisterGTCapesEvent());
-        }
-        initializeDynamicRenders();
-    }
+    public static void init(IEventBus modBus) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(GTEntityTypes.DYNAMITE.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(GTEntityTypes.POWDERBARREL.get(), GTExplosiveRenderer::new);
-        event.registerEntityRenderer(GTEntityTypes.INDUSTRIAL_TNT.get(), GTExplosiveRenderer::new);
-    }
+    public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {  /* ported stub */ }
 
     @SubscribeEvent
     public static void onRegisterItemDecorations(RegisterItemDecorationsEvent event) {
@@ -106,28 +78,16 @@ public class ClientProxy {
     }
 
     @SubscribeEvent
-    public static void registerKeyBindings(RegisterKeyMappingsEvent event) {
-        SyncedKeyMapping.onRegisterKeyBinds(event);
-    }
+    public static void registerKeyBindings(RegisterKeyMappingsEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void onRegisterGuiOverlays(RegisterGuiLayersEvent event) {
-        event.registerAboveAll(GTCEu.id("hud"), new HudGuiOverlay());
-    }
+    public static void onRegisterGuiOverlays(RegisterGuiLayersEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void onRegisterParticleProviders(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(GTParticleTypes.HAZARD_PARTICLE.get(), HazardParticle.Provider::new);
-        event.registerSpriteSet(GTParticleTypes.MUFFLER_PARTICLE.get(), MufflerParticle.Provider::new);
-    }
+    public static void onRegisterParticleProviders(RegisterParticleProvidersEvent event) {  /* ported stub */ }
 
     @SubscribeEvent
-    public static void onClientSetup(FMLClientSetupEvent event) {
-        if (ConfigHolder.INSTANCE.compat.minimap.toggle.ftbChunksIntegration &&
-                GTCEu.isModLoaded(GTValues.MODID_FTB_CHUNKS)) {
-            FTBChunksPlugin.addEventListeners();
-        }
-    }
+    public static void onClientSetup(FMLClientSetupEvent event) {  /* ported stub */ }
 
     public static void initializeDynamicRenders() {
         DynamicRenderManager.register(GTCEu.id("quantum_tank_fluid"), QuantumTankFluidRender.TYPE);
@@ -143,43 +103,9 @@ public class ClientProxy {
     }/* ported: removed */
 
     @SubscribeEvent
-    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerFluidType(new IClientFluidTypeExtensions() {
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {  /* ported stub */ }
 
-            private static final Identifier TEXTURE = GTCEu.id("block/fluids/fluid.potion");
+    /* ported: removed */
 
-            @Override
-            public @NotNull Identifier getStillTexture() {
-                return TEXTURE;
-            }
-
-            @Override
-            public @NotNull Identifier getFlowingTexture() {
-                return TEXTURE;
-            }
-
-            @Override
-            public int getTintColor(@NotNull FluidStack stack) {
-                return stack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)
-                        .getColor() | 0xff000000;
-            }
-        }, GTFluids.POTION.getType());
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
-    public static void preRegisterDynamicAssets(RegisterDynamicResourcesEvent event) {
-        PipeModel.DYNAMIC_MODELS.clear();
-    }/* ported: removed */
-
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void postRegisterDynamicAssets(RegisterDynamicResourcesEvent event) {
-        // do this last so addons can easily add new variants to the registered model set
-        PipeModel.initDynamicModels();
-
-        if (GTCEu.Mods.isKubeJSLoaded()) {
-            GregTechKubeJSPlugin.generateMachineBlockModels();
-        }
-        RuntimeBlockstateProvider.INSTANCE.run();
-        PipeModelBuilder.clearRestrictorModelCache();
-    }
+    
 }

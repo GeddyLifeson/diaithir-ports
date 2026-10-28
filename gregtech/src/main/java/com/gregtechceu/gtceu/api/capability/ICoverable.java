@@ -210,7 +210,7 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
     }
 
     default boolean isRemote() {
-        return getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide;
+        return getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide();
     }
 
     default VoxelShape[] addCoverCollisionBoundingBox() {
@@ -320,7 +320,7 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
     private void applyCoverConfigTag(ServerPlayer player, Direction dir, CompoundTag tag) {
         if (tag.isEmpty()) return;
         var def = GTRegistries.COVERS.get(Identifier.parse(tag.getString("id")));
-        ItemStack stack = ItemStack.parseOptional(getLevel().registryAccess(), tag.getCompound("item"));
+        ItemStack stack = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(getLevel().registryAccess(), tag.getCompoundOrEmpty("item"));
         if (def == null) return;
 
         placeCoverOnSide(dir, stack, def, player);

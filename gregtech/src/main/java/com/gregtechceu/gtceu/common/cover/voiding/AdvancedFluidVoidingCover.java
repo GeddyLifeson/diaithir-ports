@@ -181,8 +181,8 @@ public class AdvancedFluidVoidingCover extends FluidVoidingCover {
 
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setVoidingMode(VoidingMode.values()[tag.getInt("voidingMode")]);
-        setTransferBucketMode(BucketMode.values()[tag.getInt("voidBucketMode")]);
+        setVoidingMode(VoidingMode.values()[tag.getIntOr("voidingMode", 0)]);
+        setTransferBucketMode(BucketMode.values()[tag.getIntOr("voidBucketMode", 0)]);
         setCurrentBucketModeTransferSize(tag.getInt("voidSize"));
         super.pasteConfig(player, tag);
     }

@@ -66,7 +66,7 @@ public class OpticalPipeBlock extends PipeBlock<OpticalPipeType, OpticalPipeProp
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlock(GTCapability.CAPABILITY_DATA_ACCESS, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof OpticalPipeBlockEntity opticalPipeBlockEntity) {
-                if (level.isClientSide) {
+                if (level.isClientSide()) {
                     return opticalPipeBlockEntity.getClientDataHandler();
                 }
                 if (opticalPipeBlockEntity.getHandlers().isEmpty()) {
@@ -80,7 +80,7 @@ public class OpticalPipeBlock extends PipeBlock<OpticalPipeType, OpticalPipeProp
         }, this);
         event.registerBlock(GTCapability.CAPABILITY_COMPUTATION_PROVIDER, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof OpticalPipeBlockEntity opticalPipeBlockEntity) {
-                if (level.isClientSide) {
+                if (level.isClientSide()) {
                     return opticalPipeBlockEntity.getClientComputationHandler();
                 }
                 if (opticalPipeBlockEntity.getHandlers().isEmpty()) {

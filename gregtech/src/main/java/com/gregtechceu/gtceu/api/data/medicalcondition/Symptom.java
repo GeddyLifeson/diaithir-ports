@@ -52,9 +52,9 @@ public class Symptom {
             (hazardEffectTracker, damageSource, configuredSymptom, baseSymptom, modifier) -> hazardEffectTracker
                     .setMaxAirSupply(300 - 10 * modifier));
     public static final Symptom BLINDNESS = new Symptom(defaultKey("blindness"), 10, 0, MobEffects.BLINDNESS);
-    public static final Symptom NAUSEA = new Symptom(defaultKey("nausea"), 10, 0, MobEffects.CONFUSION);
+    public static final Symptom NAUSEA = new Symptom(defaultKey("nausea"), 10, 0, MobEffects.NAUSEA);
     public static final Symptom MINING_FATIGUE = new Symptom(defaultKey("mining_fatigue"), 10, 1,
-            MobEffects.DIG_SLOWDOWN);
+            MobEffects.MINING_FATIGUE);
     public static final Symptom WITHER = new Symptom(defaultKey("wither"), 1, 1,
             MobEffects.WITHER);
     public static final Symptom WEAK_POISONING = new Symptom(defaultKey("weak_poisoning"), 10,

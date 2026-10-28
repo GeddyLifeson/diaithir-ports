@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item.armor;
 
+import com.gregtechceu.gtceu.compat.ArmorLayer;
+
 import net.minecraft.world.item.equipment.ArmorType;
 
 import net.minecraft.client.model.HumanoidModel;
@@ -71,7 +73,7 @@ public interface IArmorLogic {
 
     @Nullable
     Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                     EquipmentSlot slot, ArmorMaterial.Layer layer);
+                                     EquipmentSlot slot, ArmorLayer layer);
 
     @NotNull
     default HumanoidModel<?> getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlot armorSlot,

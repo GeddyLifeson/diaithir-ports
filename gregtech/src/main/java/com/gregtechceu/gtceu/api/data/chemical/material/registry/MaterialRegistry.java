@@ -73,9 +73,9 @@ public final class MaterialRegistry extends MappedRegistry<Material> implements 
         if (isRegistryClosed) {
             throw new IllegalStateException(
                     "Materials cannot be registered in the PostMaterialEvent (or after)! Must be added in the RegisterEvent. Skipping material %s..."
-                            .formatted(key.location()));
+                            .formatted(key.identifier()));
         }
-        usedNamespaces.add(key.location().getNamespace());
+        usedNamespaces.add(key.identifier().getNamespace());
         return super.register(id, key, value, registrationInfo);
     }
 

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.UnmodifiableView;
 import java.util.*;
 import java.util.function.Function;
 
-public abstract sealed class MachineOwner permits PlayerOwner, FTBOwner, ArgonautsOwner {
+public abstract sealed class MachineOwner permits PlayerOwner, FTBOwner {
 
     private static Function<UUID, MachineOwner> machineOwnerGenerator;
     public static final UUID EMPTY = new UUID(0, 0);

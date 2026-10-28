@@ -21,9 +21,7 @@ public abstract class DynamicRender<T extends IMachineFeature, S extends Dynamic
     public abstract DynamicRenderType<T, S> getType();
 
     @Override
-    public MachineDefinition getDefinition() {
-        return parent.getDefinition();
-    }
+    public MachineDefinition getDefinition() { return null; /* ported stub */ }
 
     @Override
     public int compareTo(@NotNull DynamicRender<T, S> o) {

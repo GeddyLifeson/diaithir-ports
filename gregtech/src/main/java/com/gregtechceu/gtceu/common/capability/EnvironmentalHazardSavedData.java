@@ -67,11 +67,11 @@ public class EnvironmentalHazardSavedData extends SavedData {
             return;
         }
 
-        ListTag allHazardZones = tag.getList("zones", Tag.TAG_COMPOUND);
+        ListTag allHazardZones = tag.getListOrEmpty("zones");
         for (int i = 0; i < allHazardZones.size(); ++i) {
-            CompoundTag zoneTag = allHazardZones.getCompound(i);
+            CompoundTag zoneTag = allHazardZones.getCompoundOrEmpty(i);
 
-            ChunkPos source = new ChunkPos(zoneTag.getLong("pos"));
+            ChunkPos source = net.minecraft.world.level.ChunkPos.containing(zoneTag.getLong("pos"));
             HazardZone zone = HazardZone.deserializeNBT(zoneTag);
 
             this.hazardZones.put(source, zone);
@@ -89,7 +89,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
             HazardZone zone = entry.getValue();
             Stream<ServerPlayer> playersInZone = serverLevel.players()
                     .stream()
-                    .filter(player -> new ChunkPos(BlockPos.containing(player.getEyePosition()))
+                    .filter(player -> net.minecraft.world.level.ChunkPos.containing(BlockPos.containing(player.getEyePosition()))
                             .equals(entry.getKey()));
             tickPlayerHazards(zone, playersInZone);
 
@@ -104,7 +104,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
         // remove empty zones
         for (ChunkPos pos : zonesToRemove) {
             hazardZones.remove(pos);
-            if (this.serverLevel.hasChunk(pos.x, pos.z)) {
+            if (this.serverLevel.hasChunk(pos.x(), pos.z())) {
                 PacketDistributor.sendToPlayersTrackingChunk(this.serverLevel, pos, new SPacketRemoveHazardZone(pos));
             }
         }
@@ -112,10 +112,10 @@ public class EnvironmentalHazardSavedData extends SavedData {
         for (ChunkPos pos : zonesToSpread) {
             final HazardZone zone = hazardZones.get(pos);
             ChunkPos[] relativePositions = new ChunkPos[] {
-                    new ChunkPos(pos.x, pos.z - 1),
-                    new ChunkPos(pos.x, pos.z + 1),
-                    new ChunkPos(pos.x - 1, pos.z),
-                    new ChunkPos(pos.x + 1, pos.z)
+                    new ChunkPos(pos.x(), pos.z() - 1),
+                    new ChunkPos(pos.x(), pos.z() + 1),
+                    new ChunkPos(pos.x() - 1, pos.z()),
+                    new ChunkPos(pos.x() + 1, pos.z())
             };
             float removedStrength = 0;
             for (ChunkPos relativePos : relativePositions) {
@@ -136,7 +136,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
             HazardZone newZone = zone.removeStrength(removedStrength);
             if (newZone == null) {
                 hazardZones.remove(pos);
-                if (this.serverLevel.hasChunk(pos.x, pos.z)) {
+                if (this.serverLevel.hasChunk(pos.x(), pos.z())) {
                     PacketDistributor.sendToPlayersTrackingChunk(this.serverLevel, pos,
                             new SPacketRemoveHazardZone(pos));
                 }
@@ -178,7 +178,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
      */
     @Nullable
     public HazardZone getZoneByContainedPos(BlockPos containedPos) {
-        return getZoneByPos(new ChunkPos(containedPos));
+        return getZoneByPos(net.minecraft.world.level.ChunkPos.containing(containedPos));
     }
 
     /**
@@ -189,16 +189,16 @@ public class EnvironmentalHazardSavedData extends SavedData {
      */
     @Nullable
     public HazardZone getZoneByContainedPosAndCondition(BlockPos containedPos, MedicalCondition condition) {
-        HazardZone zone = hazardZones.get(new ChunkPos(containedPos));
+        HazardZone zone = hazardZones.get(net.minecraft.world.level.ChunkPos.containing(containedPos));
         return zone != null && zone.condition == condition ? zone : null;
     }
 
     public void removeZone(BlockPos inChunkPos) {
-        this.removeZone(new ChunkPos(inChunkPos));
+        this.removeZone(net.minecraft.world.level.ChunkPos.containing(inChunkPos));
     }
 
     public void removeZone(BlockPos inChunkPos, MedicalCondition condition) {
-        ChunkPos chunkPos = new ChunkPos(inChunkPos);
+        ChunkPos chunkPos = net.minecraft.world.level.ChunkPos.containing(inChunkPos);
         if (this.hazardZones.get(chunkPos).condition() == condition) {
             removeZone(chunkPos);
         }
@@ -206,7 +206,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
 
     public void removeZone(ChunkPos chunkPos) {
         this.hazardZones.remove(chunkPos);
-        if (this.serverLevel.hasChunk(chunkPos.x, chunkPos.z)) {
+        if (this.serverLevel.hasChunk(chunkPos.x(), chunkPos.z())) {
             PacketDistributor.sendToPlayersTrackingChunk(this.serverLevel, chunkPos,
                     new SPacketRemoveHazardZone(chunkPos));
         }
@@ -230,7 +230,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
 
     public void addZone(BlockPos source, float strength, boolean canSpread,
                         HazardProperty.HazardTrigger trigger, MedicalCondition condition) {
-        addZone(new ChunkPos(source), new HazardZone(source, strength, canSpread, trigger, condition));
+        addZone(net.minecraft.world.level.ChunkPos.containing(source), new HazardZone(source, strength, canSpread, trigger, condition));
     }
 
     @NotNull
@@ -290,8 +290,8 @@ public class EnvironmentalHazardSavedData extends SavedData {
 
         public static HazardZone deserializeNBT(CompoundTag zoneTag) {
             BlockPos source = NbtUtils.readBlockPos(zoneTag, "source").orElse(null);
-            float strength = zoneTag.getFloat("strength");
-            boolean canSpread = zoneTag.getBoolean("can_spread");
+            float strength = zoneTag.getFloatOr("strength", 0f);
+            boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
             HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
                     .get(zoneTag.getString("trigger"));
             MedicalCondition condition = MedicalCondition.CONDITIONS
@@ -319,13 +319,13 @@ public class EnvironmentalHazardSavedData extends SavedData {
     }
 
     public void sendAddZonePacket(ChunkPos pos, HazardZone zone) {
-        if (this.serverLevel.hasChunk(pos.x, pos.z)) {
+        if (this.serverLevel.hasChunk(pos.x(), pos.z())) {
             PacketDistributor.sendToPlayersTrackingChunk(this.serverLevel, pos, new SPacketAddHazardZone(pos, zone));
         }
     }
 
     public void sendSyncZonePacket(ChunkPos pos, HazardZone zone) {
-        if (this.serverLevel.hasChunk(pos.x, pos.z)) {
+        if (this.serverLevel.hasChunk(pos.x(), pos.z())) {
             PacketDistributor.sendToPlayersTrackingChunk(this.serverLevel, pos,
                     new SPacketSyncHazardZoneStrength(pos, zone.strength()));
         }

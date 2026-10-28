@@ -30,7 +30,7 @@ public interface IRPCBlockEntity extends IManagedBlockEntity {
     @OnlyIn(Dist.CLIENT)
     default void rpcToServer(IManaged managed, String methodName, HolderLookup.Provider provider, Object... args) {
         var packet = generateRpcPacket(managed, methodName, provider, args);
-        PacketDistributor.sendToServer(packet);
+        net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(packet);
     }
 
 
@@ -41,7 +41,7 @@ public interface IRPCBlockEntity extends IManagedBlockEntity {
 
     default void rpcToTracking(IManaged managed, ServerPlayer player, String methodName, HolderLookup.Provider provider, Object... args) {
         var packet = generateRpcPacket(managed, methodName, provider, args);
-        PacketDistributor.sendToPlayersTrackingChunk((ServerLevel) getSelf().getLevel(), new ChunkPos(getCurrentPos()), packet);
+        PacketDistributor.sendToPlayersTrackingChunk((ServerLevel) getSelf().getLevel(), net.minecraft.world.level.ChunkPos.containing(getCurrentPos()), packet);
     }
 
 }

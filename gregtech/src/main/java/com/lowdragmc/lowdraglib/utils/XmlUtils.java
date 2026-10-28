@@ -155,24 +155,7 @@ public class XmlUtils {
         return defaultValue;
     }
 
-    public static CompoundTag getCompoundTag(Element element) {
-        NodeList nodeList = element.getChildNodes();
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
-            String text = node.getTextContent().replaceAll("\\h*\\R+\\h*", " ");
-            if (!text.isEmpty() && text.charAt(0) == ' ') {
-                text = text.substring(1);
-            }
-            builder.append(text);
-        }
-        if (!builder.isEmpty()) {
-            try {
-                return TagParser.parseTag(builder.toString());
-            } catch (CommandSyntaxException ignored) {}
-        }
-        return new CompoundTag();
-    }
+    public static CompoundTag getCompoundTag(Element element) { return null; /* ported stub */ }
 
     public static DataComponentMap getComponents(Element element) {
         NodeList nodeList = element.getChildNodes();
@@ -191,15 +174,7 @@ public class XmlUtils {
         return DataComponentMap.EMPTY;
     }
 
-    public static ItemStack getItemStack(Element element) {
-        var ingredient = getIngredient(element);
-        if (ingredient.ingredient.getItems().length > 0) {
-            var stack = ingredient.ingredient.getItems()[0];
-            stack.setCount(ingredient.count);
-            return stack;
-        }
-        return ItemStack.EMPTY;
-    }
+    public static ItemStack getItemStack(Element element) { return null; /* ported stub */ }
 
     public static Vector3f getAsVector3f(Element element, String name, Vector3f defaultValue) {
         if (element.hasAttribute(name)) {
@@ -227,7 +202,7 @@ public class XmlUtils {
         int id = getAsInt(element, "id", LDLib.RANDOM.nextInt());
         EntityType<?> entityType = null;
         if (element.hasAttribute("type")) {
-            entityType = BuiltInRegistries.ENTITY_TYPE.get(Identifier.parse(element.getAttribute("type")));
+            entityType = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(element.getAttribute("type")));
         }
         CompoundTag tag = null;
         NodeList nodeList = element.getChildNodes();
@@ -242,83 +217,11 @@ public class XmlUtils {
 
     public record SizedIngredient(Ingredient ingredient, int count) {};
 
-    public static SizedIngredient getIngredient(Element element) {
-        int count = getAsInt(element, "count", 1);
-        var ingredient = new SizedIngredient(Ingredient.EMPTY, 0);
-        if (element.hasAttribute("item")) {
-            Item item = BuiltInRegistries.ITEM.get(Identifier.parse(element.getAttribute("item")));
-            if (item != Items.AIR) {
-                ItemStack itemStack = new ItemStack(item, count);
-                NodeList nodeList = element.getChildNodes();
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    if (nodeList.item(i) instanceof Element subElement && subElement.getNodeName().equals("components")) {
-                        itemStack.applyComponents(getComponents(subElement));
-                        break;
-                    }
-                }
-                ingredient = new SizedIngredient(Ingredient.of(itemStack), count);
-            }
-        } else if (Platform.isForge() && element.hasAttribute("forge-tag")){
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("forge-tag")))), count);
-        } else if (!Platform.isForge() && element.hasAttribute("fabric-tag")) {
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("fabric-tag")))), count);
-        } else if (element.hasAttribute("tag")) {
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("tag")))), count);
-        }
-        return ingredient;
-    }
+    public static SizedIngredient getIngredient(Element element) { return null; /* ported stub */ }
 
-    public static FluidStack getFluidStack(Element element) {
-        int amount = getAsInt(element, "amount", 1) * FluidHelper.getBucket() / 1000;
-        FluidStack fluidStack = FluidStack.EMPTY;
-        if (element.hasAttribute("fluid")) {
-            var fluid = BuiltInRegistries.FLUID.get(Identifier.parse(element.getAttribute("fluid")));
-            if (fluid != Fluids.EMPTY) {
-                fluidStack = new FluidStack(fluid, amount);
-                NodeList nodeList = element.getChildNodes();
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    Node node = nodeList.item(i);
-                    String text = node.getTextContent().replaceAll("\\h*\\R+\\h*", " ");
-                    if (!text.isEmpty() && text.charAt(0) == ' ') {
-                        text = text.substring(1);
-                    }
-                    builder.append(text);
-                }
-                if (!builder.isEmpty()) {
-                    fluidStack.applyComponents(DataComponentMap.CODEC.parse(JsonOps.INSTANCE, JsonParser.parseString(builder.toString())).result().orElse(DataComponentMap.EMPTY));
-                }
-            }
-        }
-        return fluidStack;
-    }
+    public static FluidStack getFluidStack(Element element) { return null; /* ported stub */ }
 
-    public static BlockInfo getBlockInfo(Element element) {
-        BlockInfo blockInfo = BlockInfo.EMPTY;
-        if (element.hasAttribute("block")) {
-            Block block = BuiltInRegistries.BLOCK.get(Identifier.parse(element.getAttribute("block")));
-            if (block != Blocks.AIR) {
-                var blockState = block.defaultBlockState();
-                val nodeList = element.getChildNodes();
-                CompoundTag tag = new CompoundTag();
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    var node = nodeList.item(i);
-                    if (node instanceof Element subElement) {
-                        if (subElement.getNodeName().equals("properties")) {
-                            blockState = setBlockState(blockState, subElement);
-                        } else if (subElement.getNodeName().equals("nbt")) {
-                            tag = getCompoundTag(subElement);
-                        }
-                    }
-                }
-                blockInfo = BlockInfo.fromBlockState(blockState);
-                if (!tag.isEmpty()) {
-                    blockInfo.setTag(tag);
-                }
-            }
-        }
-        return blockInfo;
-    }
+    public static BlockInfo getBlockInfo(Element element) { return null; /* ported stub */ }
 
     public static BlockState setBlockState(BlockState blockState, Element element) {
         StateDefinition<Block, BlockState> stateDefinition = blockState.getBlock().getStateDefinition();
@@ -374,87 +277,5 @@ public class XmlUtils {
         return builder.toString();
     }
 
-    public static List<MutableComponent> getComponents(Element element, Style style) {
-        NodeList nodeList = element.getChildNodes();
-        List<MutableComponent> results = new ArrayList<>();
-        MutableComponent component = null;
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
-            if (node.getNodeType() == Node.TEXT_NODE) {
-                String text = node.getTextContent();
-                text = text.replaceAll("\\h*\\R+\\h*", " ");
-                if (component == null) {
-                    component = Component.literal(text).withStyle(style);
-                } else {
-                    component = component.append(Component.literal(text).withStyle(style));
-                }
-            } else if (node instanceof Element nodeElement) {
-                var nodeName = nodeElement.getNodeName();
-                switch (nodeName) {
-                    case "lang" -> {
-                        var key = XmlUtils.getAsString(nodeElement, "key", "");
-                        if (component == null) {
-                            component = Component.translatable(key).withStyle(style);
-                        } else {
-                            component = component.append(Component.translatable(key).withStyle(style));
-                        }
-                    }
-                    case "br" -> {
-                        results.add(Objects.requireNonNullElseGet(component, Component::empty));
-                        component = Component.empty();
-                    }
-                    case "style" -> {
-                        Style newStyle = style.withColor(style.getColor());
-                        if (nodeElement.hasAttribute("color")) {
-                            newStyle = newStyle.withColor(getAsColor(nodeElement, "color", 0XFFFFFFFF));
-                        }
-                        if (nodeElement.hasAttribute("bold")) {
-                            newStyle = newStyle.withBold(getAsBoolean(nodeElement, "bold", true));
-                        }
-                        if (nodeElement.hasAttribute("font")) {
-                            newStyle = newStyle.withFont(Identifier.parse(nodeElement.getAttribute("font")));
-                        }
-                        if (nodeElement.hasAttribute("italic")) {
-                            newStyle = newStyle.withItalic(getAsBoolean(nodeElement, "italic", true));
-                        }
-                        if (nodeElement.hasAttribute("underlined")) {
-                            newStyle = newStyle.withUnderlined(getAsBoolean(nodeElement, "underlined", true));
-                        }
-                        if (nodeElement.hasAttribute("strikethrough")) {
-                            newStyle = newStyle.withStrikethrough(getAsBoolean(nodeElement, "strikethrough", true));
-                        }
-                        if (nodeElement.hasAttribute("obfuscated")) {
-                            newStyle = newStyle.withObfuscated(getAsBoolean(nodeElement, "obfuscated", true));
-                        }
-                        if (nodeElement.hasAttribute("hover-info")) {
-                            newStyle = newStyle.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Component.translatable(nodeElement.getAttribute("hover-info"))));
-                        }
-                        if (nodeElement.hasAttribute("link")) {
-                            newStyle = newStyle.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@!" + nodeElement.getAttribute("link")));
-                        }
-                        if (nodeElement.hasAttribute("url-link")) {
-                            newStyle = newStyle.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@#" + nodeElement.getAttribute("url-link")));
-                        }
-                        var components = getComponents(nodeElement, newStyle);
-                        for (int j = 0; j < components.size(); j++) {
-                            if (j == 0) {
-                                if (component != null) {
-                                    component.append(components.get(j));
-                                } else {
-                                    component = components.get(j);
-                                }
-                            } else {
-                                results.add(component);
-                                component = components.get(j);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (component != null) {
-            results.add(component);
-        }
-        return results;
-    }
+    public static List<MutableComponent> getComponents(Element element, Style style) { return null; /* ported stub */ }
 }

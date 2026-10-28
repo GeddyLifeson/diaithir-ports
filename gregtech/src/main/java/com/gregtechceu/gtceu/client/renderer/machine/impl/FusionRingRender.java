@@ -63,34 +63,7 @@ public class FusionRingRender extends DynamicRender<FusionReactorMachine, Fusion
 
     @OnlyIn(Dist.CLIENT)
     private void renderLightRing(FusionReactorMachine machine, float partialTicks, PoseStack stack,
-                                 VertexConsumer buffer) {
-        var color = machine.getColor();
-        var alpha = 1f;
-        if (machine.recipeLogic.isWorking()) {
-            lastColor = color;
-            delta = FADEOUT;
-        } else {
-            alpha = delta / FADEOUT;
-            lastColor = color(Mth.floor(alpha * 255), red(lastColor), green(lastColor), blue(lastColor));
-            delta -= Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(false);
-        }
-
-        final var lerpFactor = Math.abs((Math.abs(machine.getOffsetTimer() % 50) + partialTicks) - 25) / 25;
-        var front = machine.getFrontFacing();
-        var upwards = machine.getUpwardsFacing();
-        var flipped = machine.isFlipped();
-        var back = RelativeDirection.BACK.getRelative(front, upwards, flipped);
-        var axis = RelativeDirection.UP.getRelative(front, upwards, flipped).getAxis();
-        var r = Mth.lerp(lerpFactor, red(lastColor), 255) / 255f;
-        var g = Mth.lerp(lerpFactor, green(lastColor), 255) / 255f;
-        var b = Mth.lerp(lerpFactor, blue(lastColor), 255) / 255f;
-        RenderBufferHelper.renderRing(stack, buffer,
-                back.getStepX() * 7 + 0.5F,
-                back.getStepY() * 7 + 0.5F,
-                back.getStepZ() * 7 + 0.5F,
-                6, 0.2F, 10, 20,
-                r, g, b, alpha, axis);
-    }
+                                 VertexConsumer buffer) {  /* ported stub */ }
 
     @Override
     public boolean shouldRenderOffScreen(FusionReactorMachine machine) {

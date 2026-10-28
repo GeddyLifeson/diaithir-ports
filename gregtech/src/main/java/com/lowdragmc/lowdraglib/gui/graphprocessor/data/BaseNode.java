@@ -112,17 +112,7 @@ public abstract class BaseNode implements IPersistedSerializable, ILDLRegister, 
         return tag;
     }
 
-    public static BaseNode createFromTag(HolderLookup.Provider provider, CompoundTag tag) {
-        var type = tag.getString("_type");
-        var wrapper = AnnotationDetector.REGISTER_GP_NODES.get(type);
-        if (wrapper == null) {
-            LDLib.LOGGER.error("Cannot find node type: " + type);
-            return null;
-        }
-        var node = wrapper.creator().get();
-        node.deserializeNBT(provider, tag);
-        return node;
-    }
+    public static BaseNode createFromTag(HolderLookup.Provider provider, CompoundTag tag) { return null; /* ported stub */ }
 
     public BaseNode copy() {
         var newNode = createFromTag(Platform.getFrozenRegistry(), serializeNBT(Platform.getFrozenRegistry()));

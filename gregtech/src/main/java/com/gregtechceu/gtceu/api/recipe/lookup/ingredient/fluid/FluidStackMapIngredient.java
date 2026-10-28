@@ -23,12 +23,7 @@ public class FluidStackMapIngredient extends AbstractMapIngredient {
 
     public FluidStackMapIngredient(FluidStack stack) {
         this.stack = stack;
-    }
-
-    @NotNull
-    public static List<AbstractMapIngredient> from(@NotNull SingleFluidIngredient ingredient) {
-        return Collections.singletonList(new FluidStackMapIngredient(ingredient.fluid()));
-    }
+    }/* ported: removed */
 
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull FluidStack stack) {

@@ -119,7 +119,7 @@ public class PortableScannerBehavior implements IInteractionItem, IAddInformatio
     public InteractionResult use(ItemStack item, Level level, Player player,
                                                   InteractionHand usedHand) {
         if (player.isShiftKeyDown()) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 setNextMode(item);
                 var mode = getMode(item);
                 player.sendSystemMessage(Component.translatable("behavior.portable_scanner.mode.caption",
@@ -168,7 +168,7 @@ public class PortableScannerBehavior implements IInteractionItem, IAddInformatio
                             .withStyle(ChatFormatting.AQUA),
                     Component.translatable(FormattingUtil.formatNumbers(pos.getZ()))
                             .withStyle(ChatFormatting.AQUA),
-                    Component.translatable(level.dimension().location().toString())
+                    Component.translatable(level.dimension().identifier().toString())
                             .withStyle(ChatFormatting.AQUA)));
 
             // Hardness and blast resistance

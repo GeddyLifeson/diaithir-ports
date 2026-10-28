@@ -21,15 +21,7 @@ public class TagPrefixItemRenderer {
         MODELS.add(new TagPrefixItemRenderer(item, type, iconSet));
     }
 
-    public static void reinitModels() {
-        for (TagPrefixItemRenderer model : MODELS) {
-            Identifier itemId = BuiltInRegistries.ITEM.getKey(model.item);
-            GTDynamicResourcePack.addItemModel(itemId,
-                    new DelegatedModel(model.type.getItemModelPath(model.iconSet, true)));
-            // ModelTemplates.FLAT_ITEM.create(GTDynamicResourcePack.getItemModelLocation(itemId),
-            // TextureMapping.layer0(itemId.withPrefix("item/")), GTDynamicResourcePack::addItemModel);
-        }
-    }
+    public static void reinitModels() {  /* ported stub */ }
 
     private final Item item;
     private final MaterialIconType type;

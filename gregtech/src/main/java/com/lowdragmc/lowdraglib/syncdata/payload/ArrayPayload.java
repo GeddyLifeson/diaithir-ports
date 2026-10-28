@@ -40,7 +40,7 @@ public class ArrayPayload extends ObjectTypedPayload<ITypedPayload<?>[]> {
             if (!(t instanceof CompoundTag compound)) {
                 throw new IllegalArgumentException("Tag %s is not CompoundTag".formatted(t));
             }
-            byte type = compound.getByte("t");
+            byte type = compound.getByteOr("t", (byte)0);
             Tag tag = compound.get("p");
             payload[i] = TypedPayloadRegistries.create(type);
             payload[i].deserializeNBT(tag, provider);

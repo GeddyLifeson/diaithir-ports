@@ -17,17 +17,5 @@ public final class GTComponentItemDecorator implements IItemDecorator {
 
     @Override
     public boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font,
-                          ItemStack stack, int xOffset, int yOffset) {
-        if (!(stack.getItem() instanceof IComponentItem componentItem)) {
-            return false;
-        }
-
-        boolean modified = false;
-        for (var component : componentItem.getComponents()) {
-            if (component instanceof IItemDecorator decorator) {
-                modified |= decorator.render(guiGraphics, font, stack, xOffset, yOffset);
-            }
-        }
-        return modified;
-    }
+                          ItemStack stack, int xOffset, int yOffset) { return false; /* ported stub */ }
 }

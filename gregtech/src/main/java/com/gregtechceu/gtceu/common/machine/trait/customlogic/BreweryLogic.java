@@ -50,9 +50,7 @@ public enum BreweryLogic implements GTRecipeType.ICustomRecipeLogic {
     INSTANCE;
 
     private static final Function<Fluid, TagKey<Fluid>> FLUID_TAGS = Util
-            .memoize(fluid -> TagUtil.createFluidTag(BuiltInRegistries.FLUID.getKey(fluid).getPath()));
-    private static final Function<PotionBrewing.Mix<Potion>, FluidStack> MIX_INPUTS = Util
-            .memoize(mix -> PotionFluidHelper.getFluidFromPotion(mix.from(), PotionFluidHelper.MB_PER_RECIPE));
+            .memoize(fluid -> TagUtil.createFluidTag(BuiltInRegistries.FLUID.getKey(fluid).getPath()));/* ported: removed */
     private static final Function<BrewingRecipe, SizedFluidIngredient> BREW_INGREDIENTS = Util.memoize(
             brew -> PotionFluidHelper.getPotionFluidIngredientFrom(brew.getInput(), PotionFluidHelper.MB_PER_RECIPE));
 
@@ -231,7 +229,7 @@ public enum BreweryLogic implements GTRecipeType.ICustomRecipeLogic {
         if (output != PotionContents.EMPTY) {
             name = Potion.getName(output.potion(), "");
         } else {
-            name = toFluid.getFluid().builtInRegistryHolder().key().location().getPath();
+            name = toFluid.getFluid().builtInRegistryHolder().key().identifier().getPath();
         }
 
         return GTRecipeTypes.BREWING_RECIPES.recipeBuilder("potion_forge_" + name)
@@ -241,19 +239,7 @@ public enum BreweryLogic implements GTRecipeType.ICustomRecipeLogic {
                 .duration(400)
                 .EUt(VHA[MV])
                 .build();
-    }
-
-    private static @NotNull GTRecipe vanillaPotionRecipe(PotionBrewing.Mix<Potion> mix, FluidStack fromFluid) {
-        FluidStack toFluid = PotionFluidHelper.getFluidFromPotion(mix.to(), PotionFluidHelper.MB_PER_RECIPE);
-        return GTRecipeTypes.BREWING_RECIPES
-                .recipeBuilder("potion_vanilla_" + Potion.getName(Optional.of(mix.to()), ""))
-                .inputItems(mix.ingredient())
-                .inputFluids(fromFluid)
-                .outputFluids(toFluid)
-                .duration(400)
-                .EUt(VHA[MV])
-                .build();
-    }
+    }/* ported: removed */
 
     private static boolean collect(RecipeHandlerList rhl, List<ItemStack> itemStacks, List<FluidStack> fluidStacks) {
         return collect(rhl.getCapability(ItemRecipeCapability.CAP),
@@ -315,7 +301,7 @@ public enum BreweryLogic implements GTRecipeType.ICustomRecipeLogic {
             FluidStack toFluid = PotionFluidHelper.getFluidFromPotionItem(impl.getOutput(),
                     PotionFluidHelper.MB_PER_RECIPE);
 
-            String name = toFluid.getFluid().builtInRegistryHolder().key().location().getPath();
+            String name = toFluid.getFluid().builtInRegistryHolder().key().identifier().getPath();
 
             Optional<Holder<Potion>> output = impl.getOutput()
                     .getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)

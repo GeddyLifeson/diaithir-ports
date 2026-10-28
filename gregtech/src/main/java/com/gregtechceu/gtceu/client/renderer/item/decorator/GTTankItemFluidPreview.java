@@ -77,31 +77,5 @@ public class GTTankItemFluidPreview implements IItemDecorator {
     }
 
     @Override
-    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) {
-        if (isRequireShiftKeyDown() && !Screen.hasShiftDown()) {
-            return false;
-        }
-
-        IFluidHandlerItem fluidHandler = itemStack.getCapability(Capabilities.FluidHandler.ITEM);
-        if (fluidHandler == null) {
-            return false;
-        }
-
-        if (isRenderOnTopOfItem()) {
-            RenderSystem.disableDepthTest();
-        }
-
-        for (int index = 0, renderedCount = 0; index < fluidHandler.getTanks() &&
-                renderedCount < getMaxRenderCount(); index++) {
-            FluidStack fluidInTank = fluidHandler.getFluidInTank(index);
-            if (fluidInTank.isEmpty()) {
-                continue;
-            }
-            DrawerHelper.drawFluidForGui(guiGraphics, fluidInTank,
-                    x + OFFSET[renderedCount][0], y + OFFSET[renderedCount][1], 8.0F, 8.0F);
-            renderedCount++;
-        }
-
-        return true;
-    }
+    public boolean render(GuiGraphics guiGraphics, Font font, ItemStack itemStack, int x, int y) { return false; /* ported stub */ }
 }

@@ -37,11 +37,11 @@ public class GCYMRecipeTypes {
             .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .addDataInfo(data -> {
-                int temp = data.getInt("ebf_temp");
+                int temp = data.getIntOr("ebf_temp", 0);
                 return LocalizationUtils.format("gtceu.recipe.temperature", FormattingUtil.formatTemperature(temp));
             })
             .addDataInfo(data -> {
-                int temp = data.getInt("ebf_temp");
+                int temp = data.getIntOr("ebf_temp", 0);
                 ICoilType requiredCoil = ICoilType.getMinRequiredType(temp);
 
                 if (requiredCoil != null && !requiredCoil.getMaterial().isNull()) {
@@ -51,7 +51,7 @@ public class GCYMRecipeTypes {
                 return "";
             })
             .setUiBuilder((recipe, widgetGroup) -> {
-                int temp = recipe.data.getInt("ebf_temp");
+                int temp = recipe.data.getIntOr("ebf_temp", 0);
                 List<List<ItemStack>> items = new ArrayList<>();
                 items.add(GTCEuAPI.HEATING_COILS.entrySet().stream()
                         .filter(coil -> coil.getKey().getCoilTemperature() >= temp)

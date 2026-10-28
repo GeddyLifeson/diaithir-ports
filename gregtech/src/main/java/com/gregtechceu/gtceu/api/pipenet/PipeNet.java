@@ -122,7 +122,7 @@ public abstract class PipeNet<NodeDataType> implements INBTSerializable<Compound
     }
 
     protected void checkAddedInChunk(BlockPos nodePos) {
-        ChunkPos chunkPos = new ChunkPos(nodePos);
+        ChunkPos chunkPos = net.minecraft.world.level.ChunkPos.containing(nodePos);
         int oldValue = this.ownedChunks.addTo(chunkPos, 1);
         if (oldValue == 0 && isValid()) {
             this.worldData.addPipeNetToChunk(chunkPos, this);
@@ -130,7 +130,7 @@ public abstract class PipeNet<NodeDataType> implements INBTSerializable<Compound
     }
 
     protected void ensureRemovedFromChunk(BlockPos nodePos) {
-        ChunkPos chunkPos = new ChunkPos(nodePos);
+        ChunkPos chunkPos = net.minecraft.world.level.ChunkPos.containing(nodePos);
         int oldValue = this.ownedChunks.containsKey(chunkPos) ? ownedChunks.addTo(chunkPos, -1) : 0;
         if (oldValue == 1) {
             this.ownedChunks.removeInt(chunkPos);
@@ -423,28 +423,28 @@ public abstract class PipeNet<NodeDataType> implements INBTSerializable<Compound
     }
 
     protected void deserializeAllNodeList(CompoundTag compound) {
-        ListTag allNodesList = compound.getList("NodeIndexes", Tag.TAG_COMPOUND);
-        ListTag wirePropertiesList = compound.getList("WireProperties", Tag.TAG_COMPOUND);
+        ListTag allNodesList = compound.getListOrEmpty("NodeIndexes");
+        ListTag wirePropertiesList = compound.getListOrEmpty("WireProperties");
         Int2ObjectMap<NodeDataType> readProperties = new Int2ObjectOpenHashMap<>();
 
         for (int i = 0; i < wirePropertiesList.size(); i++) {
-            CompoundTag propertiesTag = wirePropertiesList.getCompound(i);
-            int wirePropertiesIndex = propertiesTag.getInt("index");
+            CompoundTag propertiesTag = wirePropertiesList.getCompoundOrEmpty(i);
+            int wirePropertiesIndex = propertiesTag.getIntOr("index", 0);
             NodeDataType nodeData = readNodeData(propertiesTag);
             readProperties.put(wirePropertiesIndex, nodeData);
         }
 
         for (int i = 0; i < allNodesList.size(); i++) {
-            CompoundTag nodeTag = allNodesList.getCompound(i);
-            int x = nodeTag.getInt("x");
-            int y = nodeTag.getInt("y");
-            int z = nodeTag.getInt("z");
-            int wirePropertiesIndex = nodeTag.getInt("index");
+            CompoundTag nodeTag = allNodesList.getCompoundOrEmpty(i);
+            int x = nodeTag.getIntOr("x", 0);
+            int y = nodeTag.getIntOr("y", 0);
+            int z = nodeTag.getIntOr("z", 0);
+            int wirePropertiesIndex = nodeTag.getIntOr("index", 0);
             BlockPos blockPos = new BlockPos(x, y, z);
             NodeDataType nodeData = readProperties.get(wirePropertiesIndex);
-            int openConnections = nodeTag.getInt("open");
-            int mark = nodeTag.getInt("mark");
-            boolean isNodeActive = nodeTag.getBoolean("active");
+            int openConnections = nodeTag.getIntOr("open", 0);
+            int mark = nodeTag.getIntOr("mark", 0);
+            boolean isNodeActive = nodeTag.getBooleanOr("active", false);
             addNodeSilently(blockPos, new Node<>(nodeData, openConnections, mark, isNodeActive));
         }
     }

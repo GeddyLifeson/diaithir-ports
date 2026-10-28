@@ -59,7 +59,7 @@ public class WorldGeneratorUtils {
         private final Map<Holder<Biome>, List<WeightedVein>> biomeVeins = new Object2ObjectOpenHashMap<>();
 
         public WorldOreVeinCache(ServerLevel level) {
-            this.worldVeins = level.registryAccess().registryOrThrow(GTRegistries.ORE_VEIN_REGISTRY).holders()
+            this.worldVeins = level.registryAccess().lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY).holders()
                     .filter(vein -> !(vein.value().veinGenerator() instanceof NoopVeinGenerator))
                     .filter(entry -> entry.value().dimensionFilter().stream()
                             .anyMatch(dim -> WorldGeneratorUtils.isSameDimension(dim, level.dimension())))
@@ -95,7 +95,7 @@ public class WorldGeneratorUtils {
 
     public static <T> Map<ChunkPos, Map<BlockPos, T>> groupByChunks(Map<BlockPos, T> input) {
         return input.entrySet().stream().collect(Collectors.groupingBy(
-                entry -> new ChunkPos(entry.getKey()),
+                entry -> net.minecraft.world.level.ChunkPos.containing(entry.getKey()),
                 Object2ObjectOpenHashMap::new,
                 Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, Object2ObjectOpenHashMap::new)));
     }
@@ -115,17 +115,17 @@ public class WorldGeneratorUtils {
         var chunkSource = level.getChunkSource();
 
         for (ChunkPos chunkPos : chunks) {
-            var chunk = chunkSource.getChunk(chunkPos.x, chunkPos.z, false);
+            var chunk = chunkSource.getChunk(chunkPos.x(), chunkPos.z(), false);
 
             if (chunk == null) {
                 previouslyUnloadedChunks.add(chunkPos);
             }
 
-            chunkSource.getChunk(chunkPos.x, chunkPos.z, requiredStatus, true);
+            chunkSource.getChunk(chunkPos.x(), chunkPos.z(), requiredStatus, true);
         }
 
         if (level instanceof ServerLevel serverLevel) {
-            previouslyUnloadedChunks.forEach(chunk -> serverLevel.unload(serverLevel.getChunk(chunk.x, chunk.z)));
+            previouslyUnloadedChunks.forEach(chunk -> serverLevel.unload(serverLevel.getChunk(chunk.x(), chunk.z())));
         }
     }
 

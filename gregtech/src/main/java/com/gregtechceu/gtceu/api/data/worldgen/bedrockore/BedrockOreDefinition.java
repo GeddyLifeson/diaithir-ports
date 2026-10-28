@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.data.worldgen.bedrockore;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.worldgen.BiomeWeightModifier;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
@@ -35,7 +37,7 @@ public class BedrockOreDefinition {
     public static final Codec<BedrockOreDefinition> DIRECT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.INT.fieldOf("weight").forGetter(BedrockOreDefinition::weight),
             Codec.INT.fieldOf("size").forGetter(BedrockOreDefinition::size),
-            IntProvider.POSITIVE_CODEC.fieldOf("yield").forGetter(BedrockOreDefinition::yield),
+            IntProviders.POSITIVE_CODEC.fieldOf("yield").forGetter(BedrockOreDefinition::yield),
             Codec.INT.fieldOf("depletion_amount").forGetter(BedrockOreDefinition::depletionAmount),
             ExtraCodecs.intRange(0, 100).fieldOf("depletion_chance").forGetter(BedrockOreDefinition::depletionChance),
             Codec.INT.fieldOf("depleted_yield").forGetter(BedrockOreDefinition::depletedYield),

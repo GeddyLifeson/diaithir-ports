@@ -55,5 +55,5 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    options.compilerArgs += ['-Xmaxerrs', '100000', '-Xmaxwarns', '1']
+    options.compilerArgs += ['-Xmaxerrs', '100000', '-Xmaxwarns', '1', '-Xdiags:verbose', '-XDshould-stop.ifError=FLOW']
 }

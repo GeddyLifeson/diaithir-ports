@@ -218,33 +218,33 @@ public class RecipeAddition {
         VanillaRecipeHelper.addShapedRecipe(provider, "iron_bucket", new ItemStack(Items.BUCKET), "XhX", " X ", 'X',
                 new MaterialEntry(TagPrefix.plate, GTMaterials.Iron));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "chain_iron", new ItemStack(Items.CHAIN), " R ",
+        VanillaRecipeHelper.addShapedRecipe(provider, "chain_iron", new ItemStack(Items.IRON_CHAIN), " R ",
                 "wR ", " R ",
                 'R', new MaterialEntry(ring, Iron));
 
         ASSEMBLER_RECIPES.recipeBuilder("chain_iron")
                 .inputItems(ring, Iron, 3)
-                .outputItems(new ItemStack(Items.CHAIN, 2))
+                .outputItems(new ItemStack(Items.IRON_CHAIN, 2))
                 .circuitMeta(1)
                 .duration(40).EUt(10).save(provider);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "chain_wrought_iron", new ItemStack(Items.CHAIN, 2), " R ",
+        VanillaRecipeHelper.addShapedRecipe(provider, "chain_wrought_iron", new ItemStack(Items.IRON_CHAIN, 2), " R ",
                 "wR ", " R ",
                 'R', new MaterialEntry(ring, WroughtIron));
 
         ASSEMBLER_RECIPES.recipeBuilder("chain_wrought_iron")
                 .inputItems(ring, WroughtIron, 3)
-                .outputItems(new ItemStack(Items.CHAIN, 3))
+                .outputItems(new ItemStack(Items.IRON_CHAIN, 3))
                 .circuitMeta(1)
                 .duration(40).EUt(10).save(provider);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "chain_steel", new ItemStack(Items.CHAIN, 3), " R ",
+        VanillaRecipeHelper.addShapedRecipe(provider, "chain_steel", new ItemStack(Items.IRON_CHAIN, 3), " R ",
                 "wR ", " R ",
                 'R', new MaterialEntry(ring, Steel));
 
         ASSEMBLER_RECIPES.recipeBuilder("chain_steel")
                 .inputItems(ring, Steel, 3)
-                .outputItems(new ItemStack(Items.CHAIN, 6))
+                .outputItems(new ItemStack(Items.IRON_CHAIN, 6))
                 .circuitMeta(1)
                 .duration(40).EUt(10).save(provider);
     }
@@ -1320,7 +1320,7 @@ public class RecipeAddition {
     private static void addBedRecipe(RecipeOutput provider, DyeColor color) {
         String colorName = color.getName();
         VanillaRecipeHelper.addShapedRecipe(provider, colorName + "_bed",
-                new ItemStack(BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(colorName + "_bed"))),
+                new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.withDefaultNamespace(colorName + "_bed"))),
                 "WWW", "PPP", "FrF",
                 'W', BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(colorName + "_carpet")),
                 'P', ItemTags.PLANKS,
@@ -1330,7 +1330,7 @@ public class RecipeAddition {
     private static void addCarpetRecipe(RecipeOutput provider, DyeColor color) {
         String colorName = color.getName();
         VanillaRecipeHelper.addShapedRecipe(provider, colorName + "_carpet",
-                new ItemStack(BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(colorName + "_carpet"))),
+                new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.withDefaultNamespace(colorName + "_carpet"))),
                 "WW",
                 'W', BuiltInRegistries.ITEM.get(Identifier.withDefaultNamespace(colorName + "_wool")));
     }

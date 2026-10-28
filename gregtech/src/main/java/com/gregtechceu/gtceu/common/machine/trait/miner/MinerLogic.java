@@ -162,7 +162,7 @@ public class MinerLogic extends RecipeLogic implements IRecipeCapabilityHolder {
     public void onMachineLoad() {
         super.onMachineLoad();
         if (getMachine().getLevel() != null) {
-            var registry = getMachine().getLevel().registryAccess().registryOrThrow(Registries.ENCHANTMENT);
+            var registry = getMachine().getLevel().registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
             this.pickaxeTool.enchant(registry.getHolderOrThrow(Enchantments.FORTUNE), fortune);
         }
     }
@@ -538,10 +538,10 @@ public class MinerLogic extends RecipeLogic implements IRecipeCapabilityHolder {
         int calculated = 0;
 
         if (this.minBuildHeight == Integer.MAX_VALUE)
-            this.minBuildHeight = level.getMinBuildHeight();
+            this.minBuildHeight = level.getMinY();
 
         if (this.maxBuildHeight == Integer.MAX_VALUE)
-            this.maxBuildHeight = level.getMaxBuildHeight();
+            this.maxBuildHeight = level.getMaxY() + 1;
 
         // keep getting blocks until the target amount is reached
         while (calculated < calcAmount) {

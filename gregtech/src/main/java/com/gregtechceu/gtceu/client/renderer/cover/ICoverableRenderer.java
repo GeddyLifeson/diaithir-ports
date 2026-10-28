@@ -43,37 +43,7 @@ public interface ICoverableRenderer {
     @OnlyIn(Dist.CLIENT)
     default void renderCovers(List<BakedQuad> quads, @NotNull ICoverable coverable,
                               BlockPos pos, BlockAndTintGetter level, @Nullable Direction side,
-                              RandomSource rand, @NotNull ModelData modelData, @Nullable RenderType renderType) {
-        var thickness = coverable.getCoverPlateThickness();
-        for (Direction face : GTUtil.DIRECTIONS) {
-            var cover = coverable.getCoverAtSide(face);
-            if (cover != null) {
-                if (thickness > 0 && cover.shouldRenderPlate()) {
-                    double min = thickness + 0.01;
-                    double max = 0.99 - thickness;
-                    var normal = face.getNormal();
-                    var cube = new AABB(
-                            normal.getX() > 0 ? max : 0.01,
-                            normal.getY() > 0 ? max : 0.01,
-                            normal.getZ() > 0 ? max : 0.01,
-                            normal.getX() >= 0 ? 0.99 : min,
-                            normal.getY() >= 0 ? 0.99 : min,
-                            normal.getZ() >= 0 ? 0.99 : min);
-                    if (side == null) { // render back
-                        quads.add(FaceQuad.builder(face.getOpposite(), COVER_BACK_PLATE[0])
-                                .cube(cube).cubeUV().bake());
-                    } else if (side != face.getOpposite()) { // render sides
-                        quads.add(FaceQuad.builder(side, COVER_BACK_PLATE[0])
-                                .cube(cube).cubeUV().bake());
-                    }
-                }
-                // it won't ever be null on the client
-                // noinspection DataFlowIssue
-                cover.getCoverRenderer().get()
-                        .renderCover(quads, side, rand, cover, pos, level, modelData, renderType);
-            }
-        }
-    }
+                              RandomSource rand, @NotNull ModelData modelData, @Nullable RenderType renderType) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     default void renderDynamicCovers(MetaMachine machine, float partialTick, PoseStack poseStack,

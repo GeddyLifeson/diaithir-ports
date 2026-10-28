@@ -66,7 +66,7 @@ public class MultiblockDisplayText {
                 Component hover = Component.translatable("gtceu.multiblock.invalid_structure.tooltip")
                         .withStyle(ChatFormatting.GRAY);
                 textList.add(base
-                        .withStyle(style -> style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, hover))));
+                        .withStyle(style -> style.withHoverEvent(new HoverEvent.ShowText(hover))));
             }
         }
 
@@ -121,7 +121,7 @@ public class MultiblockDisplayText {
                 Component hoverText = Component.translatable("gtceu.multiblock.max_energy_per_tick_hover")
                         .withStyle(ChatFormatting.GRAY);
                 textList.add(bodyText.withStyle(
-                        style -> style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText))));
+                        style -> style.withHoverEvent(new HoverEvent.ShowText(hoverText))));
             }
             return this;
         }
@@ -145,7 +145,7 @@ public class MultiblockDisplayText {
             Component hoverText = Component.translatable("gtceu.multiblock.max_recipe_tier_hover")
                     .withStyle(ChatFormatting.GRAY);
             textList.add(bodyText
-                    .withStyle(style -> style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText))));
+                    .withStyle(style -> style.withHoverEvent(new HoverEvent.ShowText(hoverText))));
             return this;
         }
 

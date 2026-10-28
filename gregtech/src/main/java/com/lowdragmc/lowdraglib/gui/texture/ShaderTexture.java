@@ -99,15 +99,7 @@ public class ShaderTexture extends TransformTexture {
         }
     }
 
-    public void updateRawShader(String rawShader) {
-        if (LDLib.isRemote() && ShaderManager.allowedShader()) {
-            dispose();
-            shader = new Shader(Shader.ShaderType.FRAGMENT, rawShader).compileShader();
-            program = new ShaderProgram();
-            program.attach(Shaders.GUI_IMAGE_V);
-            program.attach(shader);
-        }
-    }
+    public void updateRawShader(String rawShader) {  /* ported stub */ }
 
     public String getRawShader() {
         if (LDLib.isRemote() && ShaderManager.allowedShader() && shader != null) {
@@ -126,21 +118,7 @@ public class ShaderTexture extends TransformTexture {
         program.attach(shader);
     }
 
-    public static ShaderTexture createShader(Identifier location) {
-        if (CACHE.containsKey(location) && CACHE.get(location).shader != null) {
-            return CACHE.get(location);
-        }
-        ShaderTexture texture;
-        if (LDLib.isRemote() && ShaderManager.allowedShader()) {
-            Shader shader = Shaders.load(Shader.ShaderType.FRAGMENT, location);
-            texture = new ShaderTexture(shader, false);
-            CACHE.put(location, texture);
-        } else {
-            texture = new ShaderTexture(false);
-        }
-        texture.location = location;
-        return texture;
-    }
+    public static ShaderTexture createShader(Identifier location) { return null; /* ported stub */ }
 
     public static ShaderTexture createRawShader(String rawShader) {
         if (LDLib.isRemote() && ShaderManager.allowedShader()) {

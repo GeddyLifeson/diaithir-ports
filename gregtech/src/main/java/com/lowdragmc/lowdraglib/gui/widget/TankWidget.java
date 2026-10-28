@@ -372,13 +372,9 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
      * Wrapper for methods that use JEI classes so that classloading doesn't brick itself.
      */
     public static final class JEICallWrapper {
-        public static Object getPlatformFluidTypeForJEI(FluidStack fluidStack) { return null; /* ported stub */ }
+        public static Object getPlatformFluidTypeForJEI(FluidStack fluidStack) { return null; /* ported stub */ }/* ported: removed */
 
-        private static <T> Object _getPlatformFluidTypeForJEI(IPlatformFluidHelper<T> helper, FluidStack fluidStack) { return null; /* ported stub */ }
-
-        public static Object getPlatformFluidTypeForJEIClickable(FluidStack fluidStack, Position pos, Size size) { return null; /* ported stub */ }
-
-        private static <T> Object _getPlatformFluidTypeForJEIClickable(IPlatformFluidHelper<T> helper, FluidStack fluidStack, Position pos, Size size) { return null; /* ported stub */ }
+        public static Object getPlatformFluidTypeForJEIClickable(FluidStack fluidStack, Position pos, Size size) { return null; /* ported stub */ }/* ported: removed */
 
         private static FluidStack getForgePlatformFluidTypeForIngredient(Object ingredient) {
             return (FluidStack) ingredient;

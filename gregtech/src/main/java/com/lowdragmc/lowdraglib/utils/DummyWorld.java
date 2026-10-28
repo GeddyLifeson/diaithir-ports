@@ -114,16 +114,12 @@ public class DummyWorld extends Level {
     @Override
     public void playSound(@Nullable Player pPlayer,
                           double pX, double pY, double pZ, SoundEvent pSound,
-                          SoundSource pCategory, float pVolume, float pPitch) {
-
-    }
+                          SoundSource pCategory, float pVolume, float pPitch) {  /* ported stub */ }
 
     @Override
     public void playSound(@Nullable Player pPlayer,
                           Entity pEntity, SoundEvent pEvent,
-                          SoundSource pCategory, float pVolume, float pPitch) {
-
-    }
+                          SoundSource pCategory, float pVolume, float pPitch) {  /* ported stub */ }
 
     @Override
     public String gatherChunkSourceStats() {
@@ -137,13 +133,7 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public float getShade(Direction direction, boolean b) {
-        return switch (direction) {
-            case DOWN, UP -> 0.9F;
-            case NORTH, SOUTH -> 0.8F;
-            case WEST, EAST -> 0.6F;
-        };
-    }
+    public float getShade(Direction direction, boolean b) { return (float)0; /* ported stub */ }
 
     @Override
     public LevelLightEngine getLightEngine() {
@@ -204,24 +194,16 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public void setDayTimeFraction(float v) {
-
-    }
+    public void setDayTimeFraction(float v) {  /* ported stub */ }
 
     @Override
-    public float getDayTimeFraction() {
-        return getLevel().getDayTimeFraction();
-    }
+    public float getDayTimeFraction() { return (float)0; /* ported stub */ }
 
     @Override
-    public float getDayTimePerTick() {
-        return getLevel().getDayTimePerTick();
-    }
+    public float getDayTimePerTick() { return (float)0; /* ported stub */ }
 
     @Override
-    public void setDayTimePerTick(float v) {
-
-    }
+    public void setDayTimePerTick(float v) {  /* ported stub */ }
 
     @Override
     public FeatureFlagSet enabledFeatures() {
@@ -239,14 +221,10 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public RecipeManager getRecipeManager() {
-        return getLevel().getRecipeManager();
-    }
+    public RecipeManager getRecipeManager() { return null; /* ported stub */ }
 
     @Override
-    public MapId getFreeMapId() {
-        return getLevel().getFreeMapId();
-    }
+    public MapId getFreeMapId() { return null; /* ported stub */ }
 
     @Override
     public Scoreboard getScoreboard() {
@@ -270,9 +248,7 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public void setMapData(MapId p_324009_, MapItemSavedData p_151534_) {
-
-    }
+    public void setMapData(MapId p_324009_, MapItemSavedData p_151534_) {  /* ported stub */ }
 
     @Override
     public void destroyBlockProgress(int breakerId, BlockPos pos, int progress) {
@@ -327,9 +303,7 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public void levelEvent(@Nullable Player pPlayer, int pType, BlockPos pPos, int pData) {
-
-    }
+    public void levelEvent(@Nullable Player pPlayer, int pType, BlockPos pPos, int pData) {  /* ported stub */ }
 
     @Override
     public void gameEvent(Holder<GameEvent> p_316267_, Vec3 p_220405_, GameEvent.Context p_220406_) {
@@ -347,19 +321,13 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public void playSeededSound(@Nullable Player player, double x, double y, double z, Holder<SoundEvent> sound, SoundSource source, float volume, float pitch, long seed) {
-
-    }
+    public void playSeededSound(@Nullable Player player, double x, double y, double z, Holder<SoundEvent> sound, SoundSource source, float volume, float pitch, long seed) {  /* ported stub */ }
 
     @Override
-    public void playSeededSound(@Nullable Player player, double x, double y, double z, SoundEvent soundEvent, SoundSource soundSource, float volume, float pitch, long seed) {
-
-    }
+    public void playSeededSound(@Nullable Player player, double x, double y, double z, SoundEvent soundEvent, SoundSource soundSource, float volume, float pitch, long seed) {  /* ported stub */ }
 
     @Override
-    public void playSeededSound(@Nullable Player player, Entity entity, Holder<SoundEvent> sound, SoundSource category, float volume, float pitch, long seed) {
-
-    }
+    public void playSeededSound(@Nullable Player player, Entity entity, Holder<SoundEvent> sound, SoundSource category, float volume, float pitch, long seed) {  /* ported stub */ }
 
     @Override
     public void addParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
@@ -372,9 +340,7 @@ public class DummyWorld extends Level {
     }
 
     @Override
-    public void addParticle(ParticleOptions particleData, boolean forceAlwaysRender, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-        addParticle(particleData, x, y, z, xSpeed, ySpeed, zSpeed);
-    }
+    public void addParticle(ParticleOptions particleData, boolean forceAlwaysRender, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {  /* ported stub */ }
 
     @Override
     public void addAlwaysVisibleParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
@@ -396,11 +362,5 @@ public class DummyWorld extends Level {
 
     @Nullable
     @OnlyIn(Dist.CLIENT)
-    public Particle createParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-        ParticleProvider particleProvider = ClientProxy.getProvider(particleData.getType());
-        if (particleProvider == null) {
-            return null;
-        }
-        return particleProvider.createParticle(particleData, asClientWorld.get(), x, y, z, xSpeed, ySpeed, zSpeed);
-    }
+    public Particle createParticle(ParticleOptions particleData, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) { return null; /* ported stub */ }
 }

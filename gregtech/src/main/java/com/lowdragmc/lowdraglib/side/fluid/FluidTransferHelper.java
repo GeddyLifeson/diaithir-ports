@@ -577,7 +577,7 @@ public class FluidTransferHelper {
             return false; // Non-air, solid, unreplacable block. We can't put fluid here.
         }
 
-        if (level.dimensionType().ultraWarm() && FluidHelper.doesVaporize(resource, level, pos)) {
+        if (level.dimensionType().attributes().hasAttribute(net.minecraft.world.attribute.EnvironmentAttributes.WATER_EVAPORATES) && FluidHelper.doesVaporize(resource, level, pos)) {
             FluidStack result = fluidSource.drain(resource, IFluidHandler.FluidAction.EXECUTE);
             if (!result.isEmpty()) {
 //                result.getFluid().getAttributes().vaporize(player, level, pos, result);
@@ -622,7 +622,7 @@ public class FluidTransferHelper {
      * @param pos   the location that the fluid will be placed
      */
     public static void destroyBlockOnFluidPlacement(Level level, BlockPos pos) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             level.destroyBlock(pos, true);
         }
     }

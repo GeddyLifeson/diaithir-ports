@@ -280,7 +280,7 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
     }
 
     public static void addEUToStartLabel(GTRecipe recipe, WidgetGroup group) {
-        long euToStart = recipe.data.getLong("eu_to_start");
+        long euToStart = recipe.data.getLongOr("eu_to_start", 0L);
         if (euToStart <= 0) return;
         int recipeTier = RecipeHelper.getPreOCRecipeEuTier(recipe);
         int fusionTier = findCeilingTier(euToStart);

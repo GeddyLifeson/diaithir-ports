@@ -590,26 +590,7 @@ public class GTUtil {
             default -> new Tuple<>(ToolItemHelper.getToolItem(GTToolType.CROWBAR),
                     Component.translatable("gtceu.top.maintenance.crowbar"));
         };
-    }
-
-    public static void addPotionTooltip(List<FoodProperties.PossibleEffect> effects, List<Component> list) {
-        if (!effects.isEmpty()) {
-            list.add(Component.translatable("gtceu.tooltip.potion.header"));
-        }
-        effects.forEach(eff -> {
-            var effect = eff.effect();
-            float probability = eff.probability();
-            list.add(Component.translatable("gtceu.tooltip.potion.each",
-                    Component.translatable(effect.getDescriptionId())
-                            .setStyle(Style.EMPTY.withColor(ChatFormatting.YELLOW)),
-                    Component.translatable("enchantment.level." + (effect.getAmplifier() + 1))
-                            .setStyle(Style.EMPTY.withColor(ChatFormatting.YELLOW)),
-                    Component.literal(String.valueOf(effect.getDuration()))
-                            .setStyle(Style.EMPTY.withColor(ChatFormatting.RED)),
-                    Component.literal(String.valueOf(100 * probability))
-                            .setStyle(Style.EMPTY.withColor(ChatFormatting.GREEN))));
-        });
-    }
+    }/* ported: removed */
 
     /**
      * Returns the slot type based on the slot group and the index inside that group.

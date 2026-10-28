@@ -253,7 +253,7 @@ public final class SyncedKeyMapping {
             }
         }
         if (!updatingKeyDown.isEmpty()) {
-            PacketDistributor.sendToServer(new CPacketKeyDown(updatingKeyDown));
+            net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new CPacketKeyDown(updatingKeyDown));
         }
     }
 

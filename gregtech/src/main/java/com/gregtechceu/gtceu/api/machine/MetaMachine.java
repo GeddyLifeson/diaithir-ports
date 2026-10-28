@@ -464,7 +464,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
     @Override
     public boolean triggerEvent(int id, int para) {
         if (id == 1) { // chunk re render
-            if (level != null && level.isClientSide) {
+            if (level != null && level.isClientSide()) {
                 scheduleRenderUpdate();
             }
             return true;
@@ -474,7 +474,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
 
     public void setRenderState(MachineRenderState renderState) {
         this.renderState = renderState;
-        if (level != null && !level.isClientSide) {
+        if (level != null && !level.isClientSide()) {
             syncDataHolder.markClientSyncFieldDirty("renderState");
         }
         scheduleRenderUpdate();
@@ -630,7 +630,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
             getLevel().setBlockAndUpdate(getBlockPos(), blockState.setValue(getRotationState().property, facing));
         }
 
-        if (getLevel() != null && !getLevel().isClientSide) {
+        if (getLevel() != null && !getLevel().isClientSide()) {
             notifyBlockUpdate();
         }
     }
@@ -660,7 +660,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
                 blockState.getValue(GTBlockStateProperties.UPWARDS_FACING) != upwardsFacing) {
             getLevel().setBlockAndUpdate(getBlockPos(),
                     blockState.setValue(GTBlockStateProperties.UPWARDS_FACING, upwardsFacing));
-            if (getLevel() != null && !getLevel().isClientSide) {
+            if (getLevel() != null && !getLevel().isClientSide()) {
                 notifyBlockUpdate();
             }
         }

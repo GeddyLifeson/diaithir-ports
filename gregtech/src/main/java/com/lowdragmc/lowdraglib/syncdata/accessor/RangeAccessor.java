@@ -39,15 +39,15 @@ public class RangeAccessor extends CustomObjectAccessor<Range>{
     public Range deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
         if (payload instanceof NbtTagPayload nbtTagPayload && nbtTagPayload.getPayload() instanceof CompoundTag tag) {
             Number a, b;
-            if (tag.contains("a", Tag.TAG_INT)) {
-                a = tag.getInt("a");
+            if (tag.contains("a")) {
+                a = tag.getIntOr("a", 0);
             } else {
-                a = tag.getFloat("a");
+                a = tag.getFloatOr("a", 0f);
             }
-            if (tag.contains("b", Tag.TAG_INT)) {
-                b = tag.getInt("b");
+            if (tag.contains("b")) {
+                b = tag.getIntOr("b", 0);
             } else {
-                b = tag.getFloat("b");
+                b = tag.getFloatOr("b", 0f);
             }
             return new Range(a, b);
         }

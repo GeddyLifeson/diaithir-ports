@@ -24,16 +24,7 @@ import java.util.function.Supplier;
  * @date 2022/12/6
  * @implNote IConfigurableWidget
  */
-public interface IConfigurableWidget extends IConfigurable {
-
-    Function<String, AnnotationDetector.Wrapper<LDLRegister, IConfigurableWidget>> CACHE = Util.memoize(type -> {
-        for (var wrapper : AnnotationDetector.REGISTER_WIDGETS) {
-            if (wrapper.annotation().name().equals(type)) {
-                return wrapper;
-            }
-        }
-        return null;
-    });
+public interface IConfigurableWidget extends IConfigurable {/* ported: removed */
 
     default Widget widget() {
         return (Widget) this;

@@ -20,40 +20,11 @@ public class VariantRotationHelpers {
 
     private static final Transformation[] TRANSFORMS = createTransformations();
 
-    private static Transformation[] createTransformations() {
-        var result = new Transformation[4 * 4 * 4];
-
-        for (var xRot = 0; xRot < 360; xRot += 90) {
-            for (var yRot = 0; yRot < 360; yRot += 90) {
-                // Reuse existing transform from Vanilla
-                result[indexFromAngles(xRot, yRot, 0)] = BlockModelRotation.by(xRot, yRot).getRotation();
-
-                for (var zRot = 90; zRot < 360; zRot += 90) {
-                    var idx = indexFromAngles(xRot, yRot, zRot);
-
-                    // NOTE: Mojang's block model rotation rotates in the opposite direction
-                    var quaternion = new Quaternionf().rotateYXZ(
-                            -yRot * Mth.DEG_TO_RAD,
-                            -xRot * Mth.DEG_TO_RAD,
-                            -zRot * Mth.DEG_TO_RAD);
-
-                    result[idx] = new Transformation(null, quaternion, null, null);
-                }
-            }
-        }
-
-        return result;
-    }
+    private static Transformation[] createTransformations() { return null; /* ported stub */ }
 
     private VariantRotationHelpers() {}
 
-    public static Variant rotateVariant(Variant variant, int xRot, int yRot, int zRot) {
-        return new Variant(
-                variant.getModelLocation(),
-                getRotationTransform(xRot, yRot, zRot),
-                variant.isUvLocked(),
-                variant.getWeight());
-    }
+    public static Variant rotateVariant(Variant variant, int xRot, int yRot, int zRot) { return null; /* ported stub */ }
 
     public static Transformation getRotationTransform(int xRot, int yRot, int zRot) {
         return TRANSFORMS[indexFromAngles(xRot, yRot, zRot)];

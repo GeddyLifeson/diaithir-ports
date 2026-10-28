@@ -85,18 +85,7 @@ public interface IGuiTexture extends IConfigurable {
     default IGuiTexture copy() {
         var tag = serializeWrapper(this, Platform.getFrozenRegistry());
         return tag == null ? this : deserializeWrapper(tag, Platform.getFrozenRegistry());
-    }
-
-    // ***************** EDITOR  ***************** //
-
-    Function<String, AnnotationDetector.Wrapper<LDLRegister, IGuiTexture>> CACHE = Util.memoize(type -> {
-        for (var wrapper : AnnotationDetector.REGISTER_TEXTURES) {
-            if (wrapper.annotation().name().equals(type)) {
-                return wrapper;
-            }
-        }
-        return null;
-    });
+    }/* ported: removed */
 
     default void createPreview(ConfiguratorGroup father) {
         father.addConfigurators(new WrapperConfigurator("ldlib.gui.editor.group.preview",

@@ -134,10 +134,10 @@ public class FluidFilterCover extends CoverBehavior implements IUICover {
 
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setAllowFlow(ManualIOMode.values()[tag.getInt("manualIO")]);
-        setFilterMode(FilterMode.values()[tag.getInt("filterMode")]);
+        setAllowFlow(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
+        setFilterMode(FilterMode.values()[tag.getIntOr("filterMode", 0)]);
         fluidFilter = FluidFilter.loadFilter(
-                ItemStack.parseOptional(coverHolder.getLevel().registryAccess(), tag.getCompound("filter")));
+                com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter")));
         super.pasteConfig(player, tag);
     }
 }

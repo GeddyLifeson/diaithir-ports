@@ -31,9 +31,7 @@ public class FacadeBlockAndTintGetter implements BlockAndTintGetter {
     }
 
     @Override
-    public float getShade(Direction direction, boolean shade) {
-        return parent.getShade(direction, shade);
-    }
+    public float getShade(Direction direction, boolean shade) { return (float)0; /* ported stub */ }
 
     @Override
     public LevelLightEngine getLightEngine() {
@@ -66,7 +64,7 @@ public class FacadeBlockAndTintGetter implements BlockAndTintGetter {
     }
 
     @Override
-    public int getMinBuildHeight() {
-        return parent.getMinBuildHeight();
+    public int getMinY() {
+        return parent.getMinY();
     }
 }

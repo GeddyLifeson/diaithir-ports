@@ -325,23 +325,6 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
         storage.dropInventoryInWorld(getLevel(), getMachine().getBlockPos());
     }
 
-    public static class KJSCallWrapper {
-
-        public static ItemStack applyIngredientAction(CustomItemStackHandler storage, int index,
-                                                      List<IngredientActionHolder> ingredientActions) {
-            var stack = storage.getStackInSlot(index);
-            if (stack.isEmpty()) {
-                return ItemStack.EMPTY;
-            }
-
-            DummyCraftingInput container = new DummyCraftingInput(storage);
-            for (var action : ingredientActions) {
-                if (action.filter().checkFilter(index, stack)) {
-                    return action.action().transform(stack.copy(), index, container);
-                }
-            }
-
-            return ItemStack.EMPTY;
-        }
+    public static class KJSCallWrapper {/* ported: removed */
     }
 }

@@ -15,10 +15,5 @@ public class GTToolBarRenderer implements IItemDecorator {
     public static final GTToolBarRenderer INSTANCE = new GTToolBarRenderer();
 
     @Override
-    public boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font, ItemStack stack, int x, int y) {
-        if (stack.getItem() instanceof IGTTool gtTool) {
-            return ToolChargeBarRenderer.renderBarsTool(guiGraphics, gtTool, stack, x, y);
-        }
-        return false;
-    }
+    public boolean render(@NotNull GuiGraphics guiGraphics, @NotNull Font font, ItemStack stack, int x, int y) { return false; /* ported stub */ }
 }

@@ -97,13 +97,13 @@ public final class GTRegistries {
         MappedRegistry<T> registry = (MappedRegistry<T>) new RegistryBuilder<>(key)
                 .sync(sync)
                 .create();
-        LOAD_ORDER.put(key.location(), registry);
+        LOAD_ORDER.put(key.identifier(), registry);
         return registry;
     }
 
     private static MaterialRegistry makeMaterialRegistry() {
         MaterialRegistry registry = new MaterialRegistry(MATERIAL_REGISTRY);
-        LOAD_ORDER.put(MATERIAL_REGISTRY.location(), registry);
+        LOAD_ORDER.put(MATERIAL_REGISTRY.identifier(), registry);
         return registry;
     }
 

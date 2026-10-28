@@ -1,11 +1,9 @@
 package com.gregtechceu.gtceu.client.model.machine.overlays;
 
-import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status;
-import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
-
-import com.gregtechceu.gtceu.utils.data.RuntimeExistingFileHelper;
-
 import net.minecraft.resources.Identifier;
+
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status;
+import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;/* ported: removed */
 
 
 import org.jetbrains.annotations.NotNull;
@@ -54,13 +52,7 @@ public class HPCAOverlay {/* ported: removed */
         else return Status.IDLE;
     }
 
-    public @NotNull Identifier getTexture(boolean active, boolean damaged) {
-        Identifier value = textures.get(getStatus(active, damaged));
-        return value != null ? value : GTModels.BLANK_TEXTURE;
-    }
+    public @NotNull Identifier getTexture(boolean active, boolean damaged) { return null; /* ported stub */ }
 
-    public @NotNull Identifier getEmissiveTexture(boolean active, boolean damaged) {
-        Identifier value = emissiveTextures.get(getStatus(active, damaged));
-        return value != null ? value : GTModels.BLANK_TEXTURE;
-    }
+    public @NotNull Identifier getEmissiveTexture(boolean active, boolean damaged) { return null; /* ported stub */ }
 }

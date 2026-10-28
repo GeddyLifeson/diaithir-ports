@@ -124,7 +124,7 @@ public class EnderFluidLinkCover extends AbstractEnderLinkCover<VirtualTank> {
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
         filterHandler.setFilterItem(
-                ItemStack.parseOptional(coverHolder.getLevel().registryAccess(), tag.getCompound("filter")));
+                com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter")));
         super.pasteConfig(player, tag);
     }
 

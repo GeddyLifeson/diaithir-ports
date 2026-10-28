@@ -88,7 +88,7 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
 
             if (messageKey != null) {
                 toggleTimer = 5;
-                if (!world.isClientSide) player.displayClientMessage(Component.translatable(messageKey), true);
+                if (!world.isClientSide()) player.sendOverlayMessage(Component.translatable(messageKey));
             }
         }
 
@@ -100,7 +100,7 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
 
         performFlying(player, jetpackEnabled, hoverMode, stack);
 
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             if (currentFuel.ingredient().hasNoFluids())
                 findNewRecipe(stack);
 

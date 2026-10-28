@@ -258,7 +258,7 @@ public class MixinHelpers {
 
                     TagLoader.EntryWithSource entry = makeFluidEntry(fluid);
 
-                    Identifier fluidIdTag = fluid.builtInRegistryHolder().key().location();
+                    Identifier fluidIdTag = fluid.builtInRegistryHolder().key().identifier();
                     fluidIdTag = Identifier.fromNamespaceAndPath("c", fluidIdTag.getPath());
                     tagMap.computeIfAbsent(fluidIdTag, path -> new ArrayList<>()).add(entry);
 
@@ -285,7 +285,7 @@ public class MixinHelpers {
     }
 
     public static TagLoader.EntryWithSource makeItemEntry(ItemLike item) {
-        return makeElementEntry(item.asItem().builtInRegistryHolder().key().location());
+        return makeElementEntry(item.asItem().builtInRegistryHolder().key().identifier());
     }
 
     public static TagLoader.EntryWithSource makeBlockEntry(Supplier<? extends Block> block) {
@@ -293,11 +293,11 @@ public class MixinHelpers {
     }
 
     public static TagLoader.EntryWithSource makeBlockEntry(Block block) {
-        return makeElementEntry(block.builtInRegistryHolder().key().location());
+        return makeElementEntry(block.builtInRegistryHolder().key().identifier());
     }
 
     public static TagLoader.EntryWithSource makeFluidEntry(Fluid fluid) {
-        return makeElementEntry(fluid.builtInRegistryHolder().key().location());
+        return makeElementEntry(fluid.builtInRegistryHolder().key().identifier());
     }
 
     public static TagLoader.EntryWithSource makeElementEntry(Identifier id) {
@@ -312,7 +312,7 @@ public class MixinHelpers {
                                              final RegistryAccess.Frozen access) {
         final VanillaBlockLoot blockLoot = new VanillaBlockLoot(access);
 
-        Holder<Enchantment> fortune = access.registryOrThrow(Registries.ENCHANTMENT)
+        Holder<Enchantment> fortune = access.lookupOrThrow(Registries.ENCHANTMENT)
                 .getHolderOrThrow(Enchantments.FORTUNE);
         GTMaterialBlocks.MATERIAL_BLOCKS.rowMap().forEach((prefix, map) -> {
             if (TagPrefix.ORES.containsKey(prefix)) {
@@ -410,13 +410,13 @@ public class MixinHelpers {
         }
 
         KJSCallWrapper.postEventWithRegistry(KJSCallWrapper::postOreVeinEvent,
-                registries.registryOrThrow(GTRegistries.ORE_VEIN_REGISTRY));
+                registries.lookupOrThrow(GTRegistries.ORE_VEIN_REGISTRY));
 
         KJSCallWrapper.postEventWithRegistry(KJSCallWrapper::postBedrockFluidEvent,
-                registries.registryOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY));
+                registries.lookupOrThrow(GTRegistries.BEDROCK_FLUID_REGISTRY));
 
         KJSCallWrapper.postEventWithRegistry(KJSCallWrapper::postBedrockOreEvent,
-                registries.registryOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY));
+                registries.lookupOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY));
     }
 
     public static void addFluidTexture(Material material, FluidStorage.FluidEntry value) {

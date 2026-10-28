@@ -15,12 +15,7 @@ public class ToolItemRenderer {
 
     private static final Set<ToolItemRenderer> MODELS = new HashSet<>();
 
-    public static void reinitModels() {
-        for (ToolItemRenderer model : MODELS) {
-            GTDynamicResourcePack.addItemModel(BuiltInRegistries.ITEM.getKey(model.item),
-                    new DelegatedModel(model.toolType.modelLocation));
-        }
-    }
+    public static void reinitModels() {  /* ported stub */ }
 
     private final Item item;
     private final GTToolType toolType;

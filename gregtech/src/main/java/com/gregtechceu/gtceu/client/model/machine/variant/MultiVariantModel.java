@@ -31,20 +31,9 @@ public record MultiVariantModel(List<VariantState> variants) implements UnbakedM
         }
     }
 
-    public @NotNull Collection<Identifier> getDependencies() {
-        return this.variants.stream()
-                .map(VariantState::getModel)
-                .flatMap(either -> either.map(Stream::of, model -> model.getDependencies().stream()))
-                .collect(Collectors.toSet());
-    }
+    public @NotNull Collection<Identifier> getDependencies() { return null; /* ported stub */ }
 
-    public void resolveParents(@NotNull Function<Identifier, UnbakedModel> resolver) {
-        this.variants.forEach((variant) -> {
-            UnbakedModel model = variant.getModel().map(resolver, Function.identity());
-            variant.setResolvedModel(model);
-            model.resolveParents(resolver);
-        });
-    }/* ported: removed */
+    public void resolveParents(@NotNull Function<Identifier, UnbakedModel> resolver) {  /* ported stub */ }/* ported: removed */
 
     public static class Deserializer implements JsonDeserializer<MultiVariantModel> {
 

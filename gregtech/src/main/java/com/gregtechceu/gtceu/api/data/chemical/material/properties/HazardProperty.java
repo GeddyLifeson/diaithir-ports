@@ -114,7 +114,7 @@ public class HazardProperty implements IMaterialProperty {
                 ItemStack armor = livingEntity.getItemBySlot(equipmentType.getSlot());
                 if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                         armorItem.getArmorLogic().isPPE()) ||
-                        armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                        armor.entityTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
                     correctArmorItems.add(equipmentType);
                 }
             }
@@ -131,7 +131,7 @@ public class HazardProperty implements IMaterialProperty {
                 ItemStack armor = result.stack();
                 if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                         armorItem.getArmorLogic().isPPE()) ||
-                        armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                        armor.entityTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
                     correctCurios.add(result.slotContext().identifier());
                 }
             }
@@ -145,7 +145,7 @@ public class HazardProperty implements IMaterialProperty {
                     ItemStack armor = player.getItemBySlot(type.getSlot());
                     if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                             armorItem.getArmorLogic().isPPE()) ||
-                            armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                            armor.entityTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
                         armor.hurtAndBreak(amount, player, type.getSlot());
                     }
                 }
@@ -159,7 +159,7 @@ public class HazardProperty implements IMaterialProperty {
                                     ItemStack armor = stackHandler.getStackInSlot(i);
                                     if (!armor.isEmpty() && ((armor.getItem() instanceof ArmorComponentItem armorItem &&
                                             armorItem.getArmorLogic().isPPE()) ||
-                                            armor.getTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
+                                            armor.entityTags().anyMatch(tag -> tag.equals(CustomTags.PPE_ARMOR)))) {
                                         armor.hurtAndBreak(amount, serverLevel, player, item -> {});
                                     }
                                 }

@@ -60,9 +60,9 @@ public class LocalizedHazardSavedData extends SavedData {
             return;
         }
 
-        ListTag allHazardZones = tag.getList("zones", Tag.TAG_COMPOUND);
+        ListTag allHazardZones = tag.getListOrEmpty("zones");
         for (int i = 0; i < allHazardZones.size(); ++i) {
-            CompoundTag zoneTag = allHazardZones.getCompound(i);
+            CompoundTag zoneTag = allHazardZones.getCompoundOrEmpty(i);
 
             BlockPos source = BlockPos.of(zoneTag.getLong("pos"));
             HazardZone zone = HazardZone.deserializeNBT(zoneTag);
@@ -78,7 +78,7 @@ public class LocalizedHazardSavedData extends SavedData {
 
         Object2IntMap<BlockPos> zonesToSpread = new Object2IntOpenHashMap<>();
 
-        RandomSource random = serverLevel.random;
+        RandomSource random = serverLevel.getRandom();
         for (final var entry : hazardZones.entrySet()) {
             HazardZone zone = entry.getValue();
             if (zone.strength() < MIN_STRENGTH_FOR_SPREAD / 5) {
@@ -321,14 +321,14 @@ public class LocalizedHazardSavedData extends SavedData {
         }
 
         public static HazardZone deserializeNBT(CompoundTag zoneTag) {
-            Set<BlockPos> blocks = zoneTag.getList("blocks", Tag.TAG_INT_ARRAY).stream()
+            Set<BlockPos> blocks = zoneTag.getListOrEmpty("blocks").stream()
                     .map(IntArrayTag.class::cast)
                     .map(tag -> {
                         int[] aint = tag.getAsIntArray();
                         return aint.length == 3 ? new BlockPos(aint[0], aint[1], aint[2]) : null;
                     })
                     .collect(Collectors.toSet());
-            boolean canSpread = zoneTag.getBoolean("can_spread");
+            boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
             HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
                     .get(zoneTag.getString("trigger"));
             MedicalCondition condition = MedicalCondition.CONDITIONS.get(zoneTag.getString("condition"));

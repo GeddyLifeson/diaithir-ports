@@ -50,10 +50,10 @@ public class BedrockOreVeinSavedData extends SavedData {
 
     public BedrockOreVeinSavedData(ServerLevel serverLevel, CompoundTag nbt) {
         this(serverLevel);
-        var list = nbt.getList("veinInfo", Tag.TAG_COMPOUND);
+        var list = nbt.getListOrEmpty("veinInfo");
         for (Tag tag : list) {
             if (tag instanceof CompoundTag compoundTag) {
-                var chunkPos = new ChunkPos(compoundTag.getLong("pos"));
+                var chunkPos = net.minecraft.world.level.ChunkPos.containing(compoundTag.getLong("pos"));
                 veinOres.put(chunkPos, OreVeinWorldEntry.readFromNBT(compoundTag.getCompound("data"),
                         serverLevel.registryAccess()));
             }
@@ -103,7 +103,7 @@ public class BedrockOreVeinSavedData extends SavedData {
             if (totalWeight > 0) {
                 int weight = Math.abs(query % totalWeight);
                 var registry = serverLevel.registryAccess()
-                        .registryOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY)
+                        .lookupOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY)
                         .asHolderIdMap();
                 for (var holder : registry) {
                     var oreDefinition = holder.value();
@@ -140,15 +140,15 @@ public class BedrockOreVeinSavedData extends SavedData {
         if (holder != null) {
             BedrockOreDefinition definition = holder.value();
             int radius = definition.size() / 2;
-            for (int x = pos.x - radius; x <= pos.x + radius; ++x) {
-                for (int z = pos.z - radius; z <= pos.z + radius; ++z) {
+            for (int x = pos.x() - radius; x <= pos.x() + radius; ++x) {
+                for (int z = pos.z() - radius; z <= pos.z() + radius; ++z) {
                     ChunkPos pos2 = new ChunkPos(x, z);
-                    float distanceFromOriginal = Math.abs(pos.x - x) + Math.abs(pos.z - z);
+                    float distanceFromOriginal = Math.abs(pos.x() - x) + Math.abs(pos.z() - z);
                     distanceFromOriginal = distanceFromOriginal == 0 ? 1 : distanceFromOriginal;
                     distanceFromOriginal = (float) Math.pow(distanceFromOriginal, 2);
 
                     var random = RandomSource
-                            .create(31L * 31 * pos2.x + pos2.z * 31L + Long.hashCode(serverLevel.getSeed()));
+                            .create(31L * 31 * pos2.x() + pos2.z() * 31L + Long.hashCode(serverLevel.getSeed()));
 
                     int maximumYield;
                     if ((definition.yield().getMaxValue() - definition.yield().getMinValue()) / distanceFromOriginal <=
@@ -176,7 +176,7 @@ public class BedrockOreVeinSavedData extends SavedData {
     public int getTotalWeight(Holder<Biome> biome) {
         return biomeWeights.computeIfAbsent(biome, b -> {
             int totalWeight = 0;
-            for (var definition : serverLevel.registryAccess().registryOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY)) {
+            for (var definition : serverLevel.registryAccess().lookupOrThrow(GTRegistries.BEDROCK_ORE_REGISTRY)) {
                 if (!definition.canGenerate()) {
                     continue;
                 }

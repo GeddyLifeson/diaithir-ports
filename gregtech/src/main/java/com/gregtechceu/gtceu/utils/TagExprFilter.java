@@ -294,7 +294,7 @@ public class TagExprFilter {
      * @return if any of the item's tags matches the rules
      */
     public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, ItemStack stack) {
-        Set<String> tags = stack.getTags()
+        Set<String> tags = stack.entityTags()
                 .map(TagKey::location)
                 .map(Identifier::toString)
                 .collect(Collectors.toSet());
@@ -303,7 +303,7 @@ public class TagExprFilter {
     }
 
     public static boolean tagsMatch(@Nullable TagExprParser.MatchExpr expr, FluidStack stack) {
-        Set<String> tags = stack.getFluid().defaultFluidState().getTags()
+        Set<String> tags = stack.getFluid().defaultFluidState().entityTags()
                 .map(TagKey::location)
                 .map(Identifier::toString)
                 .collect(Collectors.toSet());

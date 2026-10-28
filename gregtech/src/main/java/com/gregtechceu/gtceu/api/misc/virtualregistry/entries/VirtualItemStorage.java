@@ -45,14 +45,14 @@ public class VirtualItemStorage extends VirtualEntry {
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {
         CompoundTag tag = VirtualItemStorage.super.serializeNBT(provider);
-        tag.put(ITEM_KEY, handler.serializeNBT(provider));
+        tag.put(ITEM_KEY, com.gregtechceu.gtceu.compat.NbtCompat.save(handler, provider));
         return tag;
     }
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
         super.deserializeNBT(provider, nbt);
-        handler.deserializeNBT(provider, nbt.getCompound(ITEM_KEY));
+        com.gregtechceu.gtceu.compat.NbtCompat.load(handler, provider, nbt.getCompoundOrEmpty(ITEM_KEY));
     }
 
     @Override

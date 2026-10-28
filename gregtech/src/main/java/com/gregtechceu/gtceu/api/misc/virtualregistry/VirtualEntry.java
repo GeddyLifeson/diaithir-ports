@@ -72,10 +72,10 @@ public abstract class VirtualEntry implements INBTSerializable<CompoundTag> {
 
     @Override
     public void deserializeNBT(HolderLookup.@NotNull Provider registries, CompoundTag nbt) {
-        setColor(nbt.getString(COLOR_KEY));
+        setColor(nbt.getStringOr(COLOR_KEY, ""));
 
         if (nbt.contains(DESC_KEY))
-            this.description = nbt.getString(DESC_KEY);
+            this.description = nbt.getStringOr(DESC_KEY, "");
     }
 
     public boolean canRemove() {

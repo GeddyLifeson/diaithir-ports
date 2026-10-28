@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.data.chemical.material.properties;
 
+import com.gregtechceu.gtceu.compat.ArmorLayer;
+
 import net.minecraft.world.item.equipment.ArmorType;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -101,7 +103,7 @@ public class ArmorProperty implements IMaterialProperty {
         }
 
         if (this.layers == null) {
-            this.layers = List.of(new ArmorMaterial.Layer(this.textureName, "", this.dyeable));
+            this.layers = List.of(new ArmorLayer(this.textureName, "", this.dyeable));
         }
         if (this.armorMaterial == null) {
             GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(this.material.getModid());
@@ -231,6 +233,6 @@ public class ArmorProperty implements IMaterialProperty {
     public interface CustomTextureGetter {
 
         Identifier getCustomTexture(ItemStack stack, Entity entity, EquipmentSlot slot,
-                                          ArmorMaterial.Layer layer);
+                                          ArmorLayer layer);
     }
 }

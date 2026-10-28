@@ -68,7 +68,7 @@ public class TreeFellingBehavior implements IToolBehavior<TreeFellingBehavior> {
     public @NotNull InteractionResult onItemRightClick(@NotNull Level level,
                                                                         Player player, @NotNull InteractionHand hand) {
         ItemStack held = player.getItemInHand(hand);
-        if (level.isClientSide || !player.isShiftKeyDown()) {
+        if (level.isClientSide() || !player.isShiftKeyDown()) {
             return InteractionResult.PASS;
         }
         ToolBehaviors component = ToolHelper.getBehaviorsComponent(held);

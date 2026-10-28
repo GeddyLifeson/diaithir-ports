@@ -401,11 +401,11 @@ public class PumpCover extends CoverBehavior implements IIOCover, IUICover, ICon
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
         setTransferRate(tag.getInt("transferRate"));
-        setIo(IO.values()[tag.getInt("io")]);
-        setManualIOMode(ManualIOMode.values()[tag.getInt("manualIO")]);
-        filterHandler.setFilterItem(ItemStack.parse(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
+        setIo(IO.values()[tag.getIntOr("io", 0)]);
+        setManualIOMode(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
+        filterHandler.setFilterItem(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter"))
                 .orElse(ItemStack.EMPTY));
-        setBucketMode(BucketMode.values()[tag.getInt("bucketMode")]);
+        setBucketMode(BucketMode.values()[tag.getIntOr("bucketMode", 0)]);
         super.pasteConfig(player, tag);
     }
 }

@@ -74,7 +74,7 @@ public class SCPacketShareProspection implements CustomPacketPayload {
                 }
 
                 Component playerName = senderInfo.getTabListDisplayName() != null ? senderInfo.getTabListDisplayName() :
-                        Component.literal(senderInfo.getProfile().getName());
+                        Component.literal(senderInfo.getProfile().name());
 
                 assert Minecraft.getInstance().player != null;
                 Minecraft.getInstance().player.sendSystemMessage(Component

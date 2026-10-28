@@ -4,8 +4,10 @@ import com.gregtechceu.gtceu.common.data.GTValueProviderTypes;
 
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
+import net.minecraft.util.valueproviders.FloatProviders;
 
 import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.IntProviders;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -14,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 public class CastedFloat implements FloatProvider {
 
     public static final MapCodec<CastedFloat> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-            IntProvider.CODEC.fieldOf("source").forGetter(provider -> provider.source))
+            IntProviders.CODEC.fieldOf("source").forGetter(provider -> provider.source))
             .apply(instance, CastedFloat::new));
 
     private final IntProvider source;
@@ -33,17 +35,17 @@ public class CastedFloat implements FloatProvider {
     }
 
     @Override
-    public float getMinValue() {
-        return this.source.getMinValue();
+    public float min() {
+        return (float) this.source.minInclusive();
     }
 
     @Override
-    public float getMaxValue() {
-        return this.source.getMaxValue();
+    public float max() {
+        return (float) this.source.maxInclusive();
     }
 
     @Override
-    public @NotNull FloatProviderType<?> getType() {
+    public @NotNull MapCodec<? extends FloatProvider> codec() {
         return GTValueProviderTypes.CASTED.get();
     }
 }

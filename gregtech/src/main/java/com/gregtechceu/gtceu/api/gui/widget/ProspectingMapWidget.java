@@ -83,8 +83,8 @@ public class ProspectingMapWidget extends WidgetGroup implements SearchComponent
     @Override
     public void writeInitialData(RegistryFriendlyByteBuf buffer) {
         super.writeInitialData(buffer);
-        buffer.writeVarInt(playerChunkX = gui.entityPlayer.chunkPosition().x);
-        buffer.writeVarInt(playerChunkZ = gui.entityPlayer.chunkPosition().z);
+        buffer.writeVarInt(playerChunkX = gui.entityPlayer.chunkPosition().x());
+        buffer.writeVarInt(playerChunkZ = gui.entityPlayer.chunkPosition().z());
         buffer.writeVarInt(gui.entityPlayer.getBlockX());
         buffer.writeVarInt(gui.entityPlayer.getBlockZ());
     }
@@ -145,37 +145,7 @@ public class ProspectingMapWidget extends WidgetGroup implements SearchComponent
     }
 
     @Override
-    public void detectAndSendChanges() {
-        var player = gui.entityPlayer;
-        var world = player.level();
-        if (gui.getTickCount() % scanTick == 0 && chunkIndex < (chunkRadius * 2 - 1) * (chunkRadius * 2 - 1)) {
-
-            int row = chunkIndex / (chunkRadius * 2 - 1);
-            int column = chunkIndex % (chunkRadius * 2 - 1);
-
-            int ox = column - chunkRadius + 1;
-            int oz = row - chunkRadius + 1;
-
-            var chunk = world.getChunk(playerChunkX + ox, playerChunkZ + oz);
-            if (mode == ProspectorMode.ORE) {
-                ServerCache.instance.prospectAllInChunk(world.dimension(), chunk.getPos(), (ServerPlayer) player);
-            }
-            PacketProspecting packet = new PacketProspecting(playerChunkX + ox, playerChunkZ + oz, this.mode);
-            mode.scan(packet.data, chunk);
-            writeUpdateInfo(-1, packet::writePacketData);
-            chunkIndex++;
-        }
-        var held = player.getItemInHand(InteractionHand.MAIN_HAND);
-        if (held.getItem() instanceof IComponentItem componentItem) {
-            for (var component : componentItem.getComponents()) {
-                if (component instanceof ProspectorScannerBehavior prospector) {
-                    if (!player.isCreative() && !prospector.drainEnergy(held, false)) {
-                        player.closeContainer();
-                    }
-                }
-            }
-        }
-    }
+    public void detectAndSendChanges() {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     @Override
@@ -202,14 +172,7 @@ public class ProspectingMapWidget extends WidgetGroup implements SearchComponent
     }
 
     @OnlyIn(Dist.CLIENT)
-    private void addPacketToQueue(PacketProspecting packet) {
-        packetQueue.add(packet);
-        if (mode == ProspectorMode.FLUID && packet.data[0][0].length > 0) {
-            GTClientCache.instance.addFluid(gui.entityPlayer.level().dimension(), packet.chunkX, packet.chunkZ,
-                    (ProspectorMode.FluidInfo) packet.data[0][0][0]);
-
-        }
-    }
+    private void addPacketToQueue(PacketProspecting packet) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -259,80 +222,9 @@ public class ProspectingMapWidget extends WidgetGroup implements SearchComponent
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        var clickedItem = getClickedVein(mouseX, mouseY);
-        if (clickedItem == null) {
-            return super.mouseClicked(mouseX, mouseY, button);
-        }
-        if (!WaypointManager.isActive()) return true;
-        MutableComponent veinName = Component.literal(clickedItem.name());
-        veinName.setStyle(veinName.getStyle().withColor(clickedItem.color));
-        WaypointManager.setWaypoint(new ChunkPos(clickedItem.position).toString(),
-                clickedItem.name,
-                clickedItem.color,
-                gui.entityPlayer.level().dimension(),
-                clickedItem.position.getX(), clickedItem.position.getY(), clickedItem.position.getZ());
-        gui.entityPlayer.displayClientMessage(
-                Component.translatable("behavior.prospector.added_waypoint", veinName), false);
-        playButtonClickSound();
-        return true;
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
-    private WaypointItem getClickedVein(double mouseX, double mouseY) {
-        var position = getPosition();
-        var size = getSize();
-        var x = position.x + 3;
-        var y = position.y + (size.getHeight() - texture.getImageHeight()) / 2 - 1;
-
-        int cX = (int) (mouseX - x) / 16;
-        int cZ = (int) (mouseY - y) / 16;
-        int offsetX = Math.abs((int) (mouseX - x) % 16);
-        int offsetZ = Math.abs((int) (mouseY - y) % 16);
-        int xDiff = cX - (chunkRadius - 1);
-        int zDiff = cZ - (chunkRadius - 1);
-
-        int xPos = ((gui.entityPlayer.chunkPosition().x + xDiff) << 4) + offsetX;
-        int zPos = ((gui.entityPlayer.chunkPosition().z + zDiff) << 4) + offsetZ;
-
-        var blockPos = new BlockPos(xPos, gui.entityPlayer.level().getHeight(Heightmap.Types.WORLD_SURFACE, xPos, zPos),
-                zPos);
-        if (cX < 0 || cZ < 0 || cX >= chunkRadius * 2 - 1 || cZ >= chunkRadius * 2 - 1) {
-            return null;
-        }
-
-        // If the ores are filtered use its name
-        if (!texture.getSelected().equals(ProspectingTexture.SELECTED_ALL)) {
-            for (var item : items) {
-                if (!texture.getSelected().equals(mode.getUniqueID(item))) continue;
-                var name = mode.getDescription(item).getString();
-                var color = mode.getItemColor(item);
-                return new WaypointItem(blockPos, name, color);
-            }
-        }
-
-        // If the cursor is over an ore use its name
-        var hoveredItem = texture.data[cX * mode.cellSize + (offsetX * mode.cellSize / 16)][cZ * mode.cellSize +
-                (offsetZ * mode.cellSize / 16)];
-        if (hoveredItem != null && hoveredItem.length != 0) {
-            var name = mode.getDescription(hoveredItem[0]).getString();
-            var color = mode.getItemColor(hoveredItem[0]);
-            return new WaypointItem(blockPos, name, color);
-        }
-
-        // If all else fails see if there's a nearby vein and use the vein's name
-        var vein = GTClientCache.instance.getNearbyVeins(gui.entityPlayer.level().dimension(), blockPos, 32);
-        if (!vein.isEmpty()) {
-            vein.sort((o1, o2) -> (int) (o1.center().distToCenterSqr(xPos, o1.center().getY(), zPos) -
-                    o2.center().distToCenterSqr(xPos, o2.center().getY(), zPos)));
-            var name = OreRenderLayer.getName(vein.getFirst()).getString();
-            var materials = vein.getFirst().definition().value().veinGenerator().getAllMaterials();
-            var mostCommonItem = materials.getLast();
-            var color = mostCommonItem.getMaterialRGB();
-            return new WaypointItem(blockPos, name, color);
-        }
-
-        return new WaypointItem(blockPos, "Depleted Vein", 0x990000);
-    }
+    private WaypointItem getClickedVein(double mouseX, double mouseY) { return null; /* ported stub */ }
 
     @Override
     public String resultDisplay(Object value) {

@@ -59,7 +59,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
     @SuppressWarnings("removal")
     @Override
     public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) {
-        return (GTBlockBuilder<T, P>) super.addLayer(layer);
+        return (GTBlockBuilder<T, P>) super;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
 
     @Override
     public GTBlockBuilder<T, P> color(NonNullSupplier<Supplier<BlockColor>> colorHandler) {
-        return (GTBlockBuilder<T, P>) super.color(colorHandler);
+        return (GTBlockBuilder<T, P>) super;
     }
 
     @Override

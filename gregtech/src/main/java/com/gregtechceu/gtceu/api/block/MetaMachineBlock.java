@@ -133,7 +133,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity player,
                             ItemStack pStack) {
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             var machine = MetaMachine.getMachine(pLevel, pPos);
             if (machine != null) {
                 machine.onMachinePlaced(player, pStack);
@@ -583,7 +583,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
                                                                   BlockEntityType<T> blockEntityType) {
         if (blockEntityType == getDefinition().getBlockEntityType()) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 return (pLevel, pPos, pState, pTile) -> {
                     pTile.setChanged();
                     if (pTile instanceof MetaMachine metaMachine) {

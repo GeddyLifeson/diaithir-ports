@@ -48,7 +48,7 @@ public class DynamiteBehaviour implements IInteractionItem {
             item.shrink(1);
         }
 
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             return InteractionResult.SUCCESS.heldItemTransformedTo(item);
         }
 

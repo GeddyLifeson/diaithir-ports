@@ -72,7 +72,7 @@ public class ProspectorScannerBehavior implements IItemUIFactory, IInteractionIt
     public InteractionResult use(ItemStack item, Level level, Player player,
                                                   InteractionHand usedHand) {
         if (player.isShiftKeyDown() && modes.length > 1) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 setNextMode(item);
                 var mode = getMode(item);
                 player.sendSystemMessage(Component.translatable(mode.unlocalizedName));

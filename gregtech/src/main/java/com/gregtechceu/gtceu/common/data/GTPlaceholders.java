@@ -610,10 +610,10 @@ public class GTPlaceholders {
                 if (cur != null) codeBuilder.append(cnt).append(cur);
                 String code = codeBuilder.toString();
                 Stack<Integer> loops = new Stack<>();
-                if (!getData(ctx).getBoolean("completed")) {
-                    p = getData(ctx).getInt("pointer");
-                    start = getData(ctx).getInt("index");
-                    num = getData(ctx).getInt("num");
+                if (!getData(ctx).getBooleanOr("completed", false)) {
+                    p = getData(ctx).getIntOr("pointer", 0);
+                    start = getData(ctx).getIntOr("index", 0);
+                    num = getData(ctx).getIntOr("num", 0);
                 }
                 getData(ctx).putBoolean("completed", true);
                 for (int i = 0; i < code.length(); i++) {
@@ -1004,7 +1004,7 @@ public class GTPlaceholders {
                 if (blockEntity == null) return MultiLineComponent.empty();
                 Tag tag = blockEntity.saveWithFullMetadata(ctx.level().registryAccess());
                 if (tag instanceof CompoundTag compoundTag && compoundTag.contains("cover")) {
-                    CompoundTag coverTag = compoundTag.getCompound("cover");
+                    CompoundTag coverTag = compoundTag.getCompoundOrEmpty("cover");
                     if (coverTag.contains(ctx.side().getName())) {
                         CompoundTag cover = coverTag.getCompound(ctx.side().getName()).getCompound("payload")
                                 .getCompound("d");

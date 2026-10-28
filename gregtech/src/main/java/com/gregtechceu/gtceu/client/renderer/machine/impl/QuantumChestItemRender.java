@@ -53,26 +53,7 @@ public class QuantumChestItemRender extends DynamicRender<QuantumChestMachine, Q
 
     @Override
     public void renderByItem(ItemStack stack, ItemDisplayContext displayContext,
-                             PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
-        if (CREATIVE_CHEST_ITEM == null) CREATIVE_CHEST_ITEM = GTMachines.CREATIVE_ITEM.getItem();
-
-        LargeItemContent content = stack.get(GTDataComponents.LARGE_ITEM_CONTENT);
-        if (content != null) {
-            poseStack.pushPose();
-            poseStack.translate(-0.5f, -0.5f, -0.5f);
-
-            ItemStack itemStack = content.stored();
-            long storedAmount = content.amount();
-            float totalTick = Minecraft.getInstance().player.tickCount +
-                    Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(false);
-            // Don't need to handle locked items here since they don't get saved to the item
-            renderChestItem(poseStack, buffer, totalTick, Direction.NORTH,
-                    itemStack, storedAmount, ItemStack.EMPTY, stack.is(CREATIVE_CHEST_ITEM));
-
-            poseStack.popPose();
-        }
-        super.renderByItem(stack, displayContext, poseStack, buffer, packedLight, packedOverlay);
-    }
+                             PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {  /* ported stub */ }
 
     @Override
     public void render(QuantumChestMachine machine, float partialTick, PoseStack poseStack, MultiBufferSource buffer,
@@ -89,28 +70,7 @@ public class QuantumChestItemRender extends DynamicRender<QuantumChestMachine, Q
 
     @OnlyIn(Dist.CLIENT)
     public void renderChestItem(PoseStack poseStack, MultiBufferSource buffer, float totalTick, Direction frontFacing,
-                                ItemStack stored, long storedAmount, ItemStack locked, boolean isCreative) {
-        ItemStack itemStack = !stored.isEmpty() ? stored : locked;
-        if (itemStack.isEmpty()) return;
-        var itemRenderer = Minecraft.getInstance().getItemRenderer();
-
-        poseStack.pushPose();
-        poseStack.translate(0.5f, 0.5f, 0.5f);
-        if (frontFacing.getAxis() == Direction.Axis.Y) {
-            Quaternionf rotation = getRotation(Direction.NORTH, frontFacing);
-            poseStack.mulPose(rotation);
-        }
-        poseStack.mulPose(new Quaternionf().rotateY(totalTick * Mth.TWO_PI / 80));
-        poseStack.scale(0.6f, 0.6f, 0.6f);
-
-        itemRenderer.renderStatic(itemStack, ItemDisplayContext.FIXED,
-                LightCoordsUtil.FULL_BRIGHT, OverlayTexture.NO_OVERLAY,
-                poseStack, buffer, Minecraft.getInstance().level,
-                Item.getId(itemStack.getItem()) + itemStack.getDamageValue());
-        poseStack.popPose();
-
-        drawAmountText(poseStack, buffer, frontFacing, storedAmount, isCreative);
-    }
+                                ItemStack stored, long storedAmount, ItemStack locked, boolean isCreative) {  /* ported stub */ }
 
     public static void setupModelRotation(MetaMachine machine, PoseStack poseStack) {
         var frontFacing = machine.getFrontFacing();
@@ -124,39 +84,5 @@ public class QuantumChestItemRender extends DynamicRender<QuantumChestMachine, Q
     }
 
     public static void drawAmountText(PoseStack poseStack, MultiBufferSource buffer, Direction frontFacing,
-                                      long storedAmount, boolean isCreative) {
-        poseStack.pushPose();
-        RenderSystem.disableDepthTest();
-        poseStack.translate(frontFacing.getStepX() * -1 / 16f, frontFacing.getStepY() * -1 / 16f,
-                frontFacing.getStepZ() * -1 / 16f);
-
-        RenderUtil.moveToFace(poseStack, 0.5f, 0.5f, 0.5f, frontFacing);
-        RenderUtil.rotateToFace(poseStack, frontFacing, Direction.NORTH);
-        poseStack.scale(1f / 64, 1f / 64, 0);
-        poseStack.translate(-32, -32, 0);
-
-        String text;
-        int x = 0, y = 24;
-        int w = 64, h = 28;
-        float textX = x + w / 2.0f;
-        float textY = y + h / 2.0f;
-
-        poseStack.pushPose();
-        if (isCreative) {
-            text = "∞";
-            poseStack.translate(textX, textY, 0);
-            poseStack.scale(3.0f, 3.0f, 1.0f);
-            poseStack.translate(-textX, -textY, 0);
-        } else {
-            text = storedAmount <= 0 ? "*" : FormattingUtil.formatNumberReadable(storedAmount, false);
-        }
-
-        Font font = Minecraft.getInstance().font;
-        font.drawInBatch(text, textX - font.getSplitter().stringWidth(text) / 2.0f, textY - font.lineHeight / 2.0f,
-                0xffffffff, false,
-                poseStack.last().pose(), buffer, Font.DisplayMode.NORMAL, 0, LightCoordsUtil.FULL_BRIGHT);
-        poseStack.popPose();
-        RenderSystem.enableDepthTest();
-        poseStack.popPose();
-    }
+                                      long storedAmount, boolean isCreative) {  /* ported stub */ }
 }

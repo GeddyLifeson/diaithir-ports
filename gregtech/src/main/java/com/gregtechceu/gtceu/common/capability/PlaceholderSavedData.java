@@ -30,13 +30,13 @@ public class PlaceholderSavedData extends SavedData {
 
     public PlaceholderSavedData(ServerLevel level, CompoundTag tag, @Nullable HolderLookup.Provider provider) {
         this.level = level;
-        this.tag = tag.getCompound("data");
+        this.tag = tag.getCompoundOrEmpty("data");
     }
 
     public CompoundTag getPlaceholderData(Placeholder placeholder) {
         if (!tag.contains(placeholder.getName()))
             tag.put(placeholder.getName(), new CompoundTag());
-        return tag.getCompound(placeholder.getName());
+        return tag.getCompoundOrEmpty(placeholder.getName());
     }
 
     @Override

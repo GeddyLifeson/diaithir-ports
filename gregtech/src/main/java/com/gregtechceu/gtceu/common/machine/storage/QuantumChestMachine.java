@@ -180,7 +180,7 @@ public class QuantumChestMachine extends TieredMachine implements IControllable,
                 player.setItemInHand(InteractionHand.MAIN_HAND, remaining);
                 return InteractionResult.SUCCESS;
             } else if (isDoubleHit(player.getUUID())) {
-                for (var stack : player.getInventory().items) {
+                for (var stack : player.getInventory().getNonEquipmentItems()) {
                     if (!stack.isEmpty() && cache.canInsert(stack)) {
                         stack.setCount(cache.insertItem(0, stack, false).getCount());
                     }

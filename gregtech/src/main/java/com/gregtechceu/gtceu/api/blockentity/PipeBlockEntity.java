@@ -222,7 +222,7 @@ public abstract class PipeBlockEntity<PipeType extends Enum<PipeType> & IPipeTyp
         if (getLevel() == null) {
             return;
         }
-        if (!getLevel().isClientSide) {
+        if (!getLevel().isClientSide()) {
             if (isConnected(side) == connected) {
                 return;
             }
@@ -286,7 +286,7 @@ public abstract class PipeBlockEntity<PipeType extends Enum<PipeType> & IPipeTyp
     @Override
     public boolean triggerEvent(int id, int para) {
         if (id == 1) { // chunk re render
-            if (level != null && level.isClientSide) {
+            if (level != null && level.isClientSide()) {
                 scheduleRenderUpdate();
             }
             return true;
@@ -393,7 +393,7 @@ public abstract class PipeBlockEntity<PipeType extends Enum<PipeType> & IPipeTyp
 
     public void doExplosion(float explosionPower) {
         getLevel().removeBlock(this.getBlockPos(), false);
-        if (!getLevel().isClientSide) {
+        if (!getLevel().isClientSide()) {
             ((ServerLevel) getLevel()).sendParticles(ParticleTypes.LARGE_SMOKE, this.getBlockPos().getX() + 0.5,
                     this.getBlockPos().getY() + 0.5, this.getBlockPos().getZ() + 0.5,
                     10, 0.2, 0.2, 0.2, 0.0);

@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item;
 
+import com.gregtechceu.gtceu.compat.Tier;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -288,7 +290,7 @@ public interface IGTTool extends HeldItemUIFactory.IHeldItemUIHolder, ItemLike {
 
     default void definition$mineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos,
                                       LivingEntity entity) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             return;
         }
         getToolStats().getBehaviors()

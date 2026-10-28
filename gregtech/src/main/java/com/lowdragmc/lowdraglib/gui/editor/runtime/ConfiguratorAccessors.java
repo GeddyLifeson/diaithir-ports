@@ -22,15 +22,6 @@ public class ConfiguratorAccessors {
 
     public static IConfiguratorAccessor<?> findByType(Type clazz) { return null; /* ported stub */ }
 
-    public static IConfiguratorAccessor<?> findByClass(Class<?> clazz) {
-        return ACCESSOR_MAP.computeIfAbsent(clazz, c -> {
-            for (IConfiguratorAccessor<?> accessor : AnnotationDetector.CONFIGURATOR_ACCESSORS) {
-                if (accessor.test(c)) {
-                    return accessor;
-                }
-            }
-            return IConfiguratorAccessor.DEFAULT;
-        });
-    }
+    public static IConfiguratorAccessor<?> findByClass(Class<?> clazz) { return null; /* ported stub */ }
 
 }

@@ -669,7 +669,7 @@ public class RecipeLogic extends MachineTrait implements IWorkable, IFancyToolti
                                                            TransformerContext<ChanceCacheMap> context) {
                 CompoundTag chanceCache = ValueTransformer.assertTagType(CompoundTag.class, tag, context);
                 if (context.currentValue() != null) {
-                    for (String key : chanceCache.getAllKeys()) {
+                    for (String key : chanceCache.keySet()) {
                         RecipeCapability<?> cap = GTRegistries.RECIPE_CAPABILITIES.get(Identifier.parse(key));
                         // Necessary since a RecipeCapability was removed when removing Create support, and for future
                         // removals
@@ -678,11 +678,11 @@ public class RecipeLogic extends MachineTrait implements IWorkable, IFancyToolti
                         Object2IntMap map = context.currentValue().computeIfAbsent(cap,
                                 RecipeCapability::makeChanceCache);
 
-                        ListTag chanceTag = chanceCache.getList(key, Tag.TAG_COMPOUND);
+                        ListTag chanceTag = chanceCache.getListOrEmpty(key);
                         for (int i = 0; i < chanceTag.size(); ++i) {
-                            CompoundTag chanceKey = chanceTag.getCompound(i);
+                            CompoundTag chanceKey = chanceTag.getCompoundOrEmpty(i);
                             var entry = cap.fromNbt(chanceKey.get("entry"), GTRegistries.builtinRegistry());
-                            int value = chanceKey.getInt("cached_chance");
+                            int value = chanceKey.getIntOr("cached_chance", 0);
                             // noinspection unchecked
                             map.put(entry, value);
                         }

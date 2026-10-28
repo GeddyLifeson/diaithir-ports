@@ -24,7 +24,7 @@ public class FertilizerBehavior implements IInteractionItem {
         BlockPos blockPos = context.getClickedPos();
         BlockPos blockPos2 = blockPos.relative(context.getClickedFace());
         if (BoneMealItem.growCrop(context.getItemInHand(), level, blockPos)) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 level.levelEvent(1505, blockPos, 0);
             }
             return InteractionResult.SUCCESS;
@@ -33,7 +33,7 @@ public class FertilizerBehavior implements IInteractionItem {
             boolean bl = blockState.isFaceSturdy(level, blockPos, context.getClickedFace());
             if (bl &&
                     BoneMealItem.growWaterPlant(context.getItemInHand(), level, blockPos2, context.getClickedFace())) {
-                if (!level.isClientSide) {
+                if (!level.isClientSide()) {
                     level.levelEvent(1505, blockPos2, 0);
                 }
 
@@ -57,7 +57,7 @@ public class FertilizerBehavior implements IInteractionItem {
                 if (!BoneMealItem.growCrop(stack, level, blockpos) &&
                         !BoneMealItem.growWaterPlant(stack, level, blockpos, null)) {
                     this.setSuccess(false);
-                } else if (!level.isClientSide) {
+                } else if (!level.isClientSide()) {
                     level.levelEvent(1505, blockpos, 0);
                 }
                 return stack;

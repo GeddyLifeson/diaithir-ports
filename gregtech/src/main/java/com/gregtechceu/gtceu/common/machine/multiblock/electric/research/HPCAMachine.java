@@ -261,7 +261,7 @@ public class HPCAMachine extends WorkableElectricMultiblockMachine
         int startY = 59;
 
         // we need to know what components we have on the client
-        if (getLevel().isClientSide) {
+        if (getLevel().isClientSide()) {
             if (isFormed) {
                 hpcaHandler.tryGatherClientComponents(this.getLevel(), this.getBlockPos(), this.getFrontFacing(),
                         this.getUpwardsFacing(), this.isFlipped);

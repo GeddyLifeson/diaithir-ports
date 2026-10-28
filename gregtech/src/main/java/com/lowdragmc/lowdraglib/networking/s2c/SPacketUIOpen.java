@@ -34,7 +34,7 @@ public class SPacketUIOpen implements CustomPacketPayload {
         buf.writeVarInt(serializedHolder.readableBytes());
         buf.writeBytes(serializedHolder);
 
-        buf.writeResourceLocation(uiFactoryId);
+        buf.writeIdentifier(uiFactoryId);
         buf.writeVarInt(windowId);
 
         serializedHolder.readerIndex(0);
@@ -46,7 +46,7 @@ public class SPacketUIOpen implements CustomPacketPayload {
         directSliceBuffer.release();
         RegistryFriendlyByteBuf serializedHolder = new RegistryFriendlyByteBuf(copiedDataBuffer, buf.registryAccess());
 
-        Identifier uiFactoryId = buf.readResourceLocation();
+        Identifier uiFactoryId = buf.readIdentifier();
         int windowId = buf.readVarInt();
         return new SPacketUIOpen(uiFactoryId, serializedHolder, windowId);
     }

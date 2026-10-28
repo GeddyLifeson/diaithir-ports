@@ -34,7 +34,7 @@ public class ImageModuleBehaviour implements IMonitorModuleItem {
             if (!click.isRemote) return;
 
             stack.set(GTDataComponents.IMAGE_MODULE_URL, textField.getCurrentString());
-            PacketDistributor.sendToServer(new SCPacketMonitorGroupNBTChange(stack, group, machine));
+            net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new SCPacketMonitorGroupNBTChange(stack, group, machine));
         });
         saveButton.setButtonTexture(GuiTextures.BUTTON_CHECK);
         builder.addWidget(textField);

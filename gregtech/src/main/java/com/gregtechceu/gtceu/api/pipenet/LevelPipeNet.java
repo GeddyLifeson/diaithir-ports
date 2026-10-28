@@ -27,9 +27,9 @@ public abstract class LevelPipeNet<NodeDataType, T extends PipeNet<NodeDataType>
     public LevelPipeNet(ServerLevel serverLevel, CompoundTag tag, HolderLookup.Provider provider) {
         this(serverLevel);
         this.pipeNets = new ArrayList<>();
-        ListTag allEnergyNets = tag.getList("PipeNets", Tag.TAG_COMPOUND);
+        ListTag allEnergyNets = tag.getListOrEmpty("PipeNets");
         for (int i = 0; i < allEnergyNets.size(); i++) {
-            CompoundTag pNetTag = allEnergyNets.getCompound(i);
+            CompoundTag pNetTag = allEnergyNets.getCompoundOrEmpty(i);
             T pipeNet = createNetInstance();
             pipeNet.deserializeNBT(provider, pNetTag);
             addPipeNetSilently(pipeNet);
@@ -111,7 +111,7 @@ public abstract class LevelPipeNet<NodeDataType, T extends PipeNet<NodeDataType>
     }
 
     public T getNetFromPos(BlockPos blockPos) {
-        List<T> pipeNetsInChunk = pipeNetsByChunk.getOrDefault(new ChunkPos(blockPos), Collections.emptyList());
+        List<T> pipeNetsInChunk = pipeNetsByChunk.getOrDefault(net.minecraft.world.level.ChunkPos.containing(blockPos), Collections.emptyList());
         for (T pipeNet : pipeNetsInChunk) {
             if (pipeNet.containsNode(blockPos))
                 return pipeNet;

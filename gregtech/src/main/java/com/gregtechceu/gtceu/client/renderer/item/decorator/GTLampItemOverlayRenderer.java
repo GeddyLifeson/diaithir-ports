@@ -23,22 +23,5 @@ public class GTLampItemOverlayRenderer implements IItemDecorator {
 
     @Override
     public boolean render(@NotNull GuiGraphics graphics, @NotNull Font font,
-                          ItemStack stack, int xPosition, int yPosition) {
-        LampBlockItem.LampData lampData = stack.get(GTDataComponents.LAMP_DATA);
-        if (lampData == null) {
-            return false;
-        }
-        if (lampData.lit() && lampData.bloom()) {
-            return false;
-        }
-
-        RenderSystem.disableDepthTest();
-        if (!lampData.bloom()) {
-            GuiTextures.LAMP_NO_BLOOM.draw(graphics, 0, 0, xPosition, yPosition, 16, 16);
-        }
-        if (!lampData.lit()) {
-            GuiTextures.LAMP_NO_LIGHT.draw(graphics, 0, 0, xPosition, yPosition, 16, 16);
-        }
-        return true;
-    }
+                          ItemStack stack, int xPosition, int yPosition) { return false; /* ported stub */ }
 }

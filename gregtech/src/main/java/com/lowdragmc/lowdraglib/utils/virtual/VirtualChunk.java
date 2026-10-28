@@ -68,9 +68,7 @@ public class VirtualChunk extends LevelChunk {
 
 	@Nullable
 	@Override
-	public BlockState setBlockState(BlockPos p_177436_1_, BlockState p_177436_2_, boolean p_177436_3_) {
-		return null;
-	}
+	public BlockState setBlockState(BlockPos p_177436_1_, BlockState p_177436_2_, boolean p_177436_3_) { return null; /* ported stub */ }
 
 	@Override
 	public void setBlockEntity(BlockEntity p_177426_2_) {}
@@ -98,7 +96,7 @@ public class VirtualChunk extends LevelChunk {
 	}
 
 	@Override
-	public void setUnsaved(boolean p_177427_1_) {}
+	public void setUnsaved(boolean p_177427_1_) {  /* ported stub */ }
 
 	@Override
 	public boolean isUnsaved() {
@@ -198,17 +196,14 @@ public class VirtualChunk extends LevelChunk {
 	}
 
 	@Override
-	public int getMinBuildHeight() {
-		return world.getMinBuildHeight();
+	public int getMinY() {
+		return world.getMinY();
 	}
 
 	@Override
 	public TickContainerAccess<Fluid> getFluidTicks() {
 		return BlackholeTickAccess.emptyContainer();
-	}
-
-	@Override
-	public TicksToSave getTicksForSerialization() { return null; /* ported stub */ }
+	}/* ported: removed */
 
 	@Override
 	public TickContainerAccess<Block> getBlockTicks() {

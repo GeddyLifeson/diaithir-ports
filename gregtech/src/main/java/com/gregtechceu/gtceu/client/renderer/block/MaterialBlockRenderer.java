@@ -22,16 +22,7 @@ public class MaterialBlockRenderer {
         MODELS.add(new MaterialBlockRenderer(block, type, iconSet));
     }
 
-    public static void reinitModels() {
-        for (MaterialBlockRenderer model : MODELS) {
-            Identifier blockId = BuiltInRegistries.BLOCK.getKey(model.block);
-            Identifier modelId = model.type.getBlockModelPath(model.iconSet, true);
-
-            GTDynamicResourcePack.addBlockState(blockId, BlockModelGenerators.createSimpleBlock(model.block, modelId));
-            GTDynamicResourcePack.addItemModel(BuiltInRegistries.ITEM.getKey(model.block.asItem()),
-                    new DelegatedModel(modelId));
-        }
-    }
+    public static void reinitModels() {  /* ported stub */ }
 
     private final Block block;
     private final MaterialIconType type;

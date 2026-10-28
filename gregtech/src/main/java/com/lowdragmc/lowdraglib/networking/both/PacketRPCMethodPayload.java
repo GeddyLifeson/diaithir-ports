@@ -87,7 +87,7 @@ public class PacketRPCMethodPayload extends PacketIntLocation implements CustomP
     public void write(RegistryFriendlyByteBuf buf) {
         super.write(buf);
         buf.writeVarInt(this.managedId);
-        buf.writeResourceLocation(Objects.requireNonNull(BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(blockEntityType)));
+        buf.writeIdentifier(Objects.requireNonNull(BuiltInRegistries.BLOCK_ENTITY_TYPE.getKey(blockEntityType)));
         buf.writeUtf(methodName);
         buf.writeVarInt(payloads.length);
         for (ITypedPayload<?> payload : payloads) {
@@ -100,7 +100,7 @@ public class PacketRPCMethodPayload extends PacketIntLocation implements CustomP
         BlockPos pos = buffer.readBlockPos();
         int managedId = buffer.readVarInt();
 
-        BlockEntityType<?> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.get(buffer.readResourceLocation());
+        BlockEntityType<?> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.getValue(buffer.readIdentifier());
         String methodName = buffer.readUtf();
         ITypedPayload<?>[] payloads = new ITypedPayload<?>[buffer.readVarInt()];
         for (int i = 0; i < payloads.length; i++) {

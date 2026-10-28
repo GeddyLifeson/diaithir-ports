@@ -129,7 +129,7 @@ public class CentralMonitorMachine extends WorkableElectricMultiblockMachine
                     continue;
                 }
                 module.tick(stack, this, group);
-                PacketDistributor.sendToPlayersTrackingChunk(serverLevel, new ChunkPos(getBlockPos()),
+                PacketDistributor.sendToPlayersTrackingChunk(serverLevel, net.minecraft.world.level.ChunkPos.containing(getBlockPos()),
                         new SCPacketMonitorGroupNBTChange(stack, group, this));
             }
         }

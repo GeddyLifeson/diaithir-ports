@@ -33,7 +33,7 @@ public class SimpleIGuiTextureJsonUtils {
     public static IGuiTexture fromJson(JsonObject jsonObject) {
         return switch (jsonObject.get("type").getAsString()) {
             case "resource" -> new ResourceTexture(jsonObject.get("res").getAsString());
-            case "item" -> new ItemStackTexture(BuiltInRegistries.ITEM.get(Identifier.parse(jsonObject.get("res").getAsString())));
+            case "item" -> new ItemStackTexture(BuiltInRegistries.ITEM.getValue(Identifier.parse(jsonObject.get("res").getAsString())));
             case "shader" -> ShaderTexture.createShader(Identifier.parse(jsonObject.get("res").getAsString()));
             default -> IGuiTexture.EMPTY;
         };

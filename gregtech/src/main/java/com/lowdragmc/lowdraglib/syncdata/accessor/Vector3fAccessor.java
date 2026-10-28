@@ -31,7 +31,7 @@ public class Vector3fAccessor extends CustomObjectAccessor<Vector3f>{
     public Vector3f deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
         if (payload instanceof NbtTagPayload nbtTagPayload) {
             var tag = (CompoundTag)nbtTagPayload.getPayload();
-            return new Vector3f(tag.getFloat("x"), tag.getFloat("y"), tag.getFloat("z"));
+            return new Vector3f(tag.getFloatOr("x", 0f), tag.getFloatOr("y", 0f), tag.getFloatOr("z", 0f));
         }
         return null;
     }

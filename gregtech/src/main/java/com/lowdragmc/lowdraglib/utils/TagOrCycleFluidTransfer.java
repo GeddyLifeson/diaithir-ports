@@ -32,27 +32,7 @@ public class TagOrCycleFluidTransfer implements IFluidHandlerModifiable {
         this.unwrapped = null;
     }
 
-    public List<List<FluidStack>> getUnwrapped() {
-        if (unwrapped == null) {
-            unwrapped = stacks.stream()
-                    .map(tagOrFluid -> {
-                        if (tagOrFluid == null) {
-                            return null;
-                        }
-                        return tagOrFluid.map(
-                                tagList -> tagList
-                                        .stream()
-                                        .flatMap(pair -> BuiltInRegistries.FLUID.getTag(pair.getFirst())
-                                                .map(holderSet -> holderSet.stream()
-                                                        .map(holder -> new FluidStack(holder.value(), pair.getSecond())))
-                                                .orElseGet(Stream::empty))
-                                        .toList(),
-                                Function.identity());
-                    })
-                    .collect(Collectors.toList());
-        }
-        return unwrapped;
-    }
+    public List<List<FluidStack>> getUnwrapped() { return null; /* ported stub */ }
 
     @Override
     public int getTanks() {

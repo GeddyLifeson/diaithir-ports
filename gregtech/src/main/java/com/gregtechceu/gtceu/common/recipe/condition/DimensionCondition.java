@@ -65,7 +65,7 @@ public class DimensionCondition extends RecipeCondition<DimensionCondition> {
     }
 
     public SlotWidget setupDimensionMarkers(int xOffset, int yOffset) {
-        DimensionMarker dimMarker = GTRegistries.DIMENSION_MARKERS.getOptional(this.dimension.location())
+        DimensionMarker dimMarker = GTRegistries.DIMENSION_MARKERS.getOptional(this.dimension.identifier())
                 .orElse(new DimensionMarker(DimensionMarker.MAX_TIER,
                         () -> Blocks.BARRIER, getDimensionName(this.dimension)));
         ItemStack icon = dimMarker.getIcon();
@@ -93,7 +93,7 @@ public class DimensionCondition extends RecipeCondition<DimensionCondition> {
     }
 
     public static Component getDimensionName(ResourceKey<Level> dimension) {
-        return getDimensionName(dimension.location());
+        return getDimensionName(dimension.identifier());
     }
 
     public static Component getDimensionName(Identifier dimension) {

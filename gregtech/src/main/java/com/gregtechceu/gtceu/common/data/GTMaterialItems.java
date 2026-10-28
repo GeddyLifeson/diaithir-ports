@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.data;
 
+import com.gregtechceu.gtceu.compat.ArmorLayer;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 
 import com.gregtechceu.gtceu.compat.ArmorItem;
@@ -110,7 +112,7 @@ public class GTMaterialItems {
                 .setData(ProviderType.LANG, NonNullBiConsumer.noop())
                 .transform(GTItems.unificationItem(tagPrefix, material))
                 .properties(p -> p.stacksTo(tagPrefix.maxStackSize()))
-                .model(NonNullBiConsumer.noop())
+                
                 .color(() -> () -> TagPrefixItem.tintColor(material))
                 .onRegister(GTItems::cauldronInteraction)
                 .register());
@@ -213,7 +215,7 @@ public class GTMaterialItems {
                     return p;
                 })
                 .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .model(NonNullBiConsumer.noop())
+                
                 .color(() -> () -> IGTTool::tintColor)
                 .register());
         // spotless:on
@@ -241,12 +243,12 @@ public class GTMaterialItems {
                 .item(id, p -> new GTArmorItem(type, p, material, property))
                 .properties(p -> p.durability(type.getDurability(property.getDurabilityMultiplier())))
                 .setData(ProviderType.LANG, NonNullBiConsumer.noop())
-                .model(NonNullBiConsumer.noop())
+                
                 .clientExtension(() -> () -> new IClientItemExtensions() {
 
                     @Override
                     public int getArmorLayerTintColor(ItemStack stack, LivingEntity entity,
-                                                      ArmorMaterial.Layer layer, int layerIdx, int fallbackColor) {
+                                                      ArmorLayer layer, int layerIdx, int fallbackColor) {
                         int maxColors = material.getMaterialInfo().getColors().size();
                         if (layerIdx >= 0 && layerIdx < maxColors) {
                             return material.getLayerARGB(layerIdx);

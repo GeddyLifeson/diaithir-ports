@@ -62,10 +62,10 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
         super(energyPerUse, capacity, tier, slot);
         potionRemovalCost.put(MobEffects.POISON, 10000);
         potionRemovalCost.put(MobEffects.WITHER, 25000);
-        potionRemovalCost.put(MobEffects.CONFUSION, 8000);
-        potionRemovalCost.put(MobEffects.DIG_SLOWDOWN, 12500);
+        potionRemovalCost.put(MobEffects.NAUSEA, 8000);
+        potionRemovalCost.put(MobEffects.MINING_FATIGUE, 12500);
         // potionRemovalCost.put(MobEffects.BAD_OMEN, 30000);
-        potionRemovalCost.put(MobEffects.MOVEMENT_SLOWDOWN, 9000);
+        potionRemovalCost.put(MobEffects.SLOWNESS, 9000);
         potionRemovalCost.put(MobEffects.UNLUCK, 5000);
         if (GTCEu.isClientSide() && this.shouldDrawHUD()) {
             HUD = new ArmorUtils.ModularHUD();
@@ -86,13 +86,13 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
 
         if (!player.getItemBySlot(EquipmentSlot.CHEST).is(GTItems.QUANTUM_CHESTPLATE.get()) &&
                 !player.getItemBySlot(EquipmentSlot.CHEST).is(GTItems.QUANTUM_CHESTPLATE_ADVANCED.get())) {
-            if (!level.isClientSide) ((IFireImmuneEntity) player).gtceu$setFireImmune(false);
+            if (!level.isClientSide()) ((IFireImmuneEntity) player).gtceu$setFireImmune(false);
         }
 
         boolean ret = false;
         if (type == ArmorType.HELMET) {
 
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 ret = supplyAir(item, player) || supplyFood(item, player);
                 removeNegativeEffects(item, player);
             }
@@ -103,10 +103,10 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
                 toggleTimer = 5;
                 if (item.getCharge() < ArmorUtils.MIN_NIGHTVISION_CHARGE) {
                     nightVision = false;
-                    player.displayClientMessage(Component.translatable("metaarmor.qts.nightvision.error"), true);
+                    player.sendOverlayMessage(Component.translatable("metaarmor.qts.nightvision.error"));
                 } else {
-                    player.displayClientMessage(Component
-                            .translatable("metaarmor.qts.nightvision." + (nightVision ? "enabled" : "disabled")), true);
+                    player.sendOverlayMessage(Component
+                            .translatable("metaarmor.qts.nightvision." + (nightVision ? "enabled" : "disabled")));
                 }
             }
 
@@ -171,11 +171,11 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
             if (boostedJumpTimer == 0 && SyncedKeyMappings.BOOTS_ENABLE.isKeyDown(player)) {
                 boostedJump = !boostedJump;
                 boostedJumpTimer = JUMPING_TIMER;
-                player.displayClientMessage(Component
-                        .translatable("metaarmor.qts.boosted_jump." + (boostedJump ? "enabled" : "disabled")), true);
+                player.sendOverlayMessage(Component
+                        .translatable("metaarmor.qts.boosted_jump." + (boostedJump ? "enabled" : "disabled")));
             }
             if (boostedJump) {
-                if (!level.isClientSide) {
+                if (!level.isClientSide()) {
                     boolean onGround = data.onGround();
                     if (onGround && !player.onGround() && jumping) {
                         item.discharge(energyPerUse / 100, item.getTier(), true, false, false);
@@ -209,9 +209,8 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
             if (data.boostedJumpTimer() == 0 && SyncedKeyMappings.STEP_ASSIST_ENABLE.isKeyDown(player)) {
                 data.stepAssist(!data.stepAssist());
                 data.boostedJumpTimer((byte) 5);
-                if (level.isClientSide()) player.displayClientMessage(Component
-                        .translatable("metaarmor.qts.step_assist." + (data.stepAssist() ? "enabled" : "disabled")),
-                        true);
+                if (level.isClientSide()) player.sendOverlayMessage(Component
+                        .translatable("metaarmor.qts.step_assist." + (data.stepAssist() ? "enabled" : "disabled")));
             }
 
             data.boostedJump(boostedJump);

@@ -17,15 +17,5 @@ public class ModulePlaceholderRenderer implements IPlaceholderRenderer {
 
     @Override
     public void render(CentralMonitorMachine machine, MonitorGroup group, float partialTick, PoseStack poseStack,
-                       MultiBufferSource buffer, int packedLight, int packedOverlay, CompoundTag tag) {
-        ItemStack stack = ItemStack.parse(machine.getLevel().registryAccess(), tag).orElse(ItemStack.EMPTY);
-        if (stack.getItem() instanceof IComponentItem componentItem) {
-            for (IItemComponent component : componentItem.getComponents()) {
-                if (component instanceof IMonitorModuleItem module) {
-                    module.getRenderer(stack).render(machine, group, partialTick, poseStack, buffer, packedLight,
-                            packedOverlay);
-                }
-            }
-        }
-    }
+                       MultiBufferSource buffer, int packedLight, int packedOverlay, CompoundTag tag) {  /* ported stub */ }
 }

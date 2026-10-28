@@ -95,49 +95,5 @@ public class QuantumTankFluidRender extends DynamicRender<QuantumTankMachine, Qu
     @OnlyIn(Dist.CLIENT)
     public void renderTank(PoseStack poseStack, MultiBufferSource buffer, Direction frontFacing,
                            FluidStack stored, long storedAmount, long maxAmount, FluidStack locked,
-                           boolean isCreative) {
-        FluidStack fluid = !stored.isEmpty() ? stored : locked;
-        if (fluid.isEmpty()) return;
-
-        var ext = IClientFluidTypeExtensions.of(fluid.getFluid());
-        var fluidSprite = RenderUtil.FluidTextureType.STILL.map(ext, fluid);
-
-        EnumSet<Direction> sidesToRender = EnumSet.of(frontFacing);
-        VertexConsumer builder = buffer.getBuffer(Sheets.translucentCullBlockSheet());
-
-        var gas = fluid.getFluid().getFluidType().isLighterThanAir();
-        var percentFull = isCreative || maxAmount <= storedAmount ? 1f : (float) storedAmount / maxAmount;
-
-        var maxTop = gas ? MAX : MIN + percentFull * (MAX - MIN);
-        var minBot = gas ? MIN + (1 - percentFull) * (MAX - MIN) : MIN;
-        float minY, maxY, minZ, maxZ;
-        if (frontFacing.getAxis() == Direction.Axis.Y) {
-            minY = MIN;
-            maxY = MAX;
-            if (frontFacing == Direction.UP) {
-                minZ = minBot;
-                maxZ = maxTop;
-                // the output is already rotated in the pose stack, so we don't need to rotate it again here
-                sidesToRender.add(gas ? Direction.SOUTH : Direction.NORTH);
-            } else {
-                // -z is top
-                minZ = 1 - maxTop;
-                maxZ = 1 - minBot;
-                // the output is already rotated in the pose stack, so we don't need to rotate it again here
-                sidesToRender.add(gas ? Direction.NORTH : Direction.SOUTH);
-            }
-        } else {
-            minY = minBot;
-            maxY = maxTop;
-            minZ = MIN;
-            maxZ = MAX;
-
-            sidesToRender.add(gas ? Direction.DOWN : Direction.UP);
-        }
-        RenderBufferHelper.renderCube(builder, poseStack.last(), sidesToRender,
-                ext.getTintColor(fluid) | 0xff000000, LightCoordsUtil.FULL_BRIGHT, fluidSprite,
-                MIN, minY, minZ, MAX, maxY, maxZ);
-
-        drawAmountText(poseStack, buffer, frontFacing, storedAmount, isCreative);
-    }
+                           boolean isCreative) {  /* ported stub */ }
 }

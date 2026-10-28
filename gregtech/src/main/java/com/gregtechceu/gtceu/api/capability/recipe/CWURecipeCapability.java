@@ -41,7 +41,7 @@ public class CWURecipeCapability extends RecipeCapability<Integer> {
             group.addWidget(new LabelWidget(3 - xOffset, yOffset.addAndGet(10),
                     LocalizationUtils.format("gtceu.recipe.computation_per_tick", FormattingUtil.formatNumbers(cwu))));
         }
-        if (recipe.data.getBoolean("duration_is_total_cwu")) {
+        if (recipe.data.getBooleanOr("duration_is_total_cwu", false)) {
             group.addWidget(new LabelWidget(3 - xOffset, yOffset.addAndGet(10),
                     LocalizationUtils.format("gtceu.recipe.total_computation",
                             FormattingUtil.formatNumbers(recipe.duration))));

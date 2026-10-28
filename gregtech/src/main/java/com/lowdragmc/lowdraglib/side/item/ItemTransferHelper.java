@@ -201,11 +201,11 @@ public class ItemTransferHelper {
         // play sound if something got picked up
         if (remainder.isEmpty() || remainder.getCount() != stack.getCount()) {
             level.playSound(null, player.getX(), player.getY() + 0.5, player.getZ(),
-                    SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((level.random.nextFloat() - level.random.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                    SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS, 0.2F, ((level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.7F + 1.0F) * 2.0F);
         }
 
         // drop remaining itemstack into the level
-        if (!remainder.isEmpty() && !level.isClientSide) {
+        if (!remainder.isEmpty() && !level.isClientSide()) {
             ItemEntity entityitem = new ItemEntity(level, player.getX(), player.getY() + 0.5, player.getZ(), remainder);
             entityitem.setPickUpDelay(40);
             entityitem.setDeltaMovement(entityitem.getDeltaMovement().multiply(0, 1, 0));

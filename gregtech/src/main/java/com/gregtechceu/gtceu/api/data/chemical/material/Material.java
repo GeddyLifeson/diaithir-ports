@@ -582,8 +582,7 @@ public class Material {
         /*
          * The temporary list of components for this Material.
          */
-        private List<MaterialStack> composition = new ArrayList<>();
-        private List<MaterialStackWrapper> compositionSupplier;
+        private List<MaterialStack> composition = new ArrayList<>();/* ported: removed */
 
         /*
          * Temporary value to use to determine how to calculate default RGB.
@@ -1199,19 +1198,7 @@ public class Material {
         public Builder componentStacks(ImmutableList<MaterialStack> components) {
             composition = components;
             return this;
-        }
-
-        /** @see #componentStacks(MaterialStack...) */
-        public Builder kjs$components(MaterialStackWrapper... components) {
-            compositionSupplier = Arrays.asList(components);
-            return this;
-        }
-
-        /** @see #componentStacks(ImmutableList) componentStacks(ImmutableList&lt;MaterialStack&gt;) */
-        public Builder kjs$components(ImmutableList<MaterialStackWrapper> components) {
-            compositionSupplier = components;
-            return this;
-        }
+        }/* ported: removed *//* ported: removed */
 
         /**
          * Add {@link MaterialFlags} to this Material.<br>

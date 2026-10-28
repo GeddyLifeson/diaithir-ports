@@ -36,59 +36,11 @@ public class BlockEntityWithBERModelRenderer<T extends BlockEntity>  {/* ported:
     @Override
     public void render(T blockEntity, float partialTick,
                        PoseStack poseStack, MultiBufferSource buffer,
-                       int packedLight, int packedOverlay) {
-        BlockState blockState = blockEntity.getBlockState();
-        BakedModel model = blockRenderDispatcher.getBlockModel(blockState);
-
-        if (model instanceof IBlockEntityRendererBakedModel<?> berModel) {
-            if (berModel.getBlockEntityType() != null && berModel.getBlockEntityType() != blockEntity.getType()) return;
-
-            ((IBlockEntityRendererBakedModel<T>) berModel).render(blockEntity, partialTick,
-                    poseStack, buffer, packedLight, packedOverlay);
-        } else {
-            Level level = blockEntity.getLevel();
-            BlockPos pos = blockEntity.getBlockPos();
-
-            @SuppressWarnings("DataFlowIssue")
-            ModelData modelData = level.getModelData(pos);
-
-            long randomSeed = blockState.getSeed(pos);
-            RandomSource random = RandomSource.create();
-            random.setSeed(randomSeed);
-
-            for (RenderType renderType : model.getRenderTypes(blockState, random, modelData)) {
-                VertexConsumer consumer = buffer.getBuffer(renderType);
-                blockRenderDispatcher.getModelRenderer()
-                        .tesselateBlock(level, model, blockState, pos,
-                                poseStack, consumer, true, random, randomSeed,
-                                OverlayTexture.NO_OVERLAY, modelData, renderType);
-            }
-        }
-    }
+                       int packedLight, int packedOverlay) {  /* ported stub */ }
 
     @Override
-    public boolean shouldRenderOffScreen(T blockEntity) {
-        BlockState blockState = blockEntity.getBlockState();
-        BakedModel model = blockRenderDispatcher.getBlockModel(blockState);
-
-        if (model instanceof IBlockEntityRendererBakedModel<?> berModel) {
-            if (berModel.getBlockEntityType() != null && berModel.getBlockEntityType() == blockEntity.getType()) {
-                return ((IBlockEntityRendererBakedModel<T>) berModel).shouldRenderOffScreen(blockEntity);
-            }
-        }
-        return BlockEntityRenderer.super.shouldRenderOffScreen(blockEntity);
-    }
+    public boolean shouldRenderOffScreen(T blockEntity) { return false; /* ported stub */ }
 
     @Override
-    public boolean shouldRender(T blockEntity, Vec3 cameraPos) {
-        BlockState blockState = blockEntity.getBlockState();
-        BakedModel model = blockRenderDispatcher.getBlockModel(blockState);
-
-        if (model instanceof IBlockEntityRendererBakedModel<?> berModel) {
-            if (berModel.getBlockEntityType() != null && berModel.getBlockEntityType() == blockEntity.getType()) {
-                return ((IBlockEntityRendererBakedModel<T>) berModel).shouldRender(blockEntity, cameraPos);
-            }
-        }
-        return BlockEntityRenderer.super.shouldRender(blockEntity, cameraPos);
-    }
+    public boolean shouldRender(T blockEntity, Vec3 cameraPos) { return false; /* ported stub */ }
 }

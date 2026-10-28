@@ -212,8 +212,7 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IDi
 
             var throttleText = Component.translatable("gtceu.multiblock.large_boiler.throttle",
                     ChatFormatting.AQUA.toString() + getThrottle() + "%")
-                    .withStyle(Style.EMPTY.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-                            Component.translatable("gtceu.multiblock.large_boiler.throttle.tooltip"))));
+                    .withStyle(Style.EMPTY.withHoverEvent(new HoverEvent.ShowText(Component.translatable("gtceu.multiblock.large_boiler.throttle.tooltip"))));
             textList.add(throttleText);
 
             var buttonText = Component.translatable("gtceu.multiblock.large_boiler.throttle_modify");

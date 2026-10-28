@@ -1705,9 +1705,9 @@ public class GTRecipeBuilder {
 
     public int getSolderMultiplier() {
         if (data.contains("solderMultiplier")) {
-            return Math.max(1, data.getInt("solderMultiplier"));
+            return Math.max(1, data.getIntOr("solderMultiplier", 0));
         }
-        return Math.max(1, data.getInt("solder_multiplier"));
+        return Math.max(1, data.getIntOr("solder_multiplier", 0));
     }
 
     /**

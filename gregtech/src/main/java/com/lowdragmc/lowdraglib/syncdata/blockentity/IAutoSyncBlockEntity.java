@@ -33,7 +33,7 @@ public interface IAutoSyncBlockEntity extends IManagedBlockEntity {
             field.update();
         }
         var packet = SPacketManagedPayload.of(this, force);
-        PacketDistributor.sendToPlayersTrackingChunk(serverLevel, new ChunkPos(this.getCurrentPos()), packet);
+        PacketDistributor.sendToPlayersTrackingChunk(serverLevel, net.minecraft.world.level.ChunkPos.containing(this.getCurrentPos()), packet);
     }
 
 
@@ -44,7 +44,7 @@ public interface IAutoSyncBlockEntity extends IManagedBlockEntity {
         }
         if (getRootStorage().hasDirtySyncFields()) {
             var packet = SPacketManagedPayload.of(this, false);
-            PacketDistributor.sendToPlayersTrackingChunk(serverLevel, new ChunkPos(this.getCurrentPos()), packet);
+            PacketDistributor.sendToPlayersTrackingChunk(serverLevel, net.minecraft.world.level.ChunkPos.containing(this.getCurrentPos()), packet);
         }
     }
 

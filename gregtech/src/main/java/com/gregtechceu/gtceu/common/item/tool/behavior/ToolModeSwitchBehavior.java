@@ -99,9 +99,7 @@ public class ToolModeSwitchBehavior implements IToolBehavior<ToolModeSwitchBehav
                 var newMode = itemStack.getOrDefault(GTDataComponents.TOOL_MODE, ModeType.BOTH).nextMode();
                 itemStack.set(GTDataComponents.TOOL_MODE, newMode);
 
-                player.displayClientMessage(
-                        Component.translatable("metaitem.machine_configuration.mode", newMode.getName()),
-                        true);
+                player.sendOverlayMessage(Component.translatable("metaitem.machine_configuration.mode", newMode.getName()));
             }
             return InteractionResult.SUCCESS.heldItemTransformedTo(itemStack);
         }

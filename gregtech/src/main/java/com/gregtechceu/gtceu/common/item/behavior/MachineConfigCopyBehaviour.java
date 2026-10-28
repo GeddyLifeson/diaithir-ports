@@ -99,22 +99,21 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
                 configTag.put(ITEMS_TO_PASTE, itemsTag);
             } else {
                 stack.remove(GTDataComponents.DATA_COPY_TAG);
-                player.displayClientMessage(Component.translatable("behaviour.memory_card.client_msg.cleared"), true);
+                player.sendOverlayMessage(Component.translatable("behaviour.memory_card.client_msg.cleared"));
                 return InteractionResult.SUCCESS;
             }
 
-            player.displayClientMessage(Component.translatable("behaviour.memory_card.client_msg.copied"), true);
+            player.sendOverlayMessage(Component.translatable("behaviour.memory_card.client_msg.copied"));
 
         } else {
             List<ItemStack> items = new ArrayList<>();
-            configTag.getList(ITEMS_TO_PASTE, CompoundTag.TAG_COMPOUND).forEach(t -> {
+            configTag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(ItemStack.parse(context.getLevel().registryAccess(), c).orElse(ItemStack.EMPTY));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.getLevel().registryAccess(), c).orElse(ItemStack.EMPTY));
             });
 
             if (!player.isCreative() && !GTTransferUtils.extractItemsFromPlayerInv(player, items, true)) {
-                player.displayClientMessage(Component.translatable("behaviour.memory_card.client_msg.missing_items"),
-                        true);
+                player.sendOverlayMessage(Component.translatable("behaviour.memory_card.client_msg.missing_items"));
                 return InteractionResult.FAIL;
             }
             if (!player.isCreative()) GTTransferUtils.extractItemsFromPlayerInv(player, items, false);
@@ -124,7 +123,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             if (blockEntity instanceof PipeBlockEntity<?, ?> pipeBE)
                 pastePipeConfig((ServerPlayer) player, pipeBE, configTag);
 
-            player.displayClientMessage(Component.translatable("behaviour.memory_card.client_msg.pasted"), true);
+            player.sendOverlayMessage(Component.translatable("behaviour.memory_card.client_msg.pasted"));
 
         }
 
@@ -270,9 +269,9 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             Component outputMode;
             if (tag.getBoolean(ITEM_AUTO_OUTPUT) && tag.getBoolean(ALLOW_ITEM_IN_FROM_OUT))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output_allow_input");
-            else if (tag.getBoolean(ITEM_AUTO_OUTPUT))
+            else if (tag.getBooleanOr(ITEM_AUTO_OUTPUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output");
-            else if (tag.getBoolean(ALLOW_ITEM_IN_FROM_OUT))
+            else if (tag.getBooleanOr(ALLOW_ITEM_IN_FROM_OUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.allow_input");
             else outputMode = Component.empty();
 
@@ -288,9 +287,9 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             Component outputMode;
             if (tag.getBoolean(FLUID_AUTO_OUTPUT) && tag.getBoolean(ALLOW_FLUID_IN_FROM_OUT))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output_allow_input");
-            else if (tag.getBoolean(FLUID_AUTO_OUTPUT))
+            else if (tag.getBooleanOr(FLUID_AUTO_OUTPUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output");
-            else if (tag.getBoolean(ALLOW_FLUID_IN_FROM_OUT))
+            else if (tag.getBooleanOr(ALLOW_FLUID_IN_FROM_OUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.allow_input");
             else outputMode = Component.empty();
 
@@ -302,15 +301,15 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
         }
 
         if (tag.contains(MUFFLED)) tooltip.add(Component.translatable("behaviour.setting.tooltip.muffled",
-                tag.getBoolean(MUFFLED) ? ENABLED : DISABLED));
+                tag.getBooleanOr(MUFFLED, false) ? ENABLED : DISABLED));
         if (tag.contains(CIRCUIT)) tooltip.add(Component.translatable("behaviour.setting.tooltip.circuit_config")
-                .append(Component.literal(Integer.toString(tag.getInt(CIRCUIT))).withStyle(ChatFormatting.YELLOW)));
+                .append(Component.literal(Integer.toString(tag.getIntOr(CIRCUIT, 0))).withStyle(ChatFormatting.YELLOW)));
 
         if (tag.contains(ITEMS_TO_PASTE)) {
             List<ItemStack> items = new ArrayList<>();
-            tag.getList(ITEMS_TO_PASTE, CompoundTag.TAG_COMPOUND).forEach(t -> {
+            tag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(ItemStack.parse(context.level().registryAccess(), c).orElse(ItemStack.EMPTY));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.level().registryAccess(), c).orElse(ItemStack.EMPTY));
             });
 
             if (items.isEmpty()) return;

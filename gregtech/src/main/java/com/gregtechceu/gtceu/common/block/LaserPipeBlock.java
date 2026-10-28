@@ -49,7 +49,7 @@ public class LaserPipeBlock extends PipeBlock<LaserPipeType, LaserPipeProperties
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlock(GTCapability.CAPABILITY_LASER, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof LaserPipeBlockEntity laserPipeBlockEntity) {
-                if (level.isClientSide) {
+                if (level.isClientSide()) {
                     return laserPipeBlockEntity.clientCapability;
                 }
                 if (laserPipeBlockEntity.getHandlers().isEmpty()) {

@@ -45,22 +45,14 @@ public class GTDimensionMarkers {
         }
 
         DimensionMarker marker = new DimensionMarker(tier, supplier, overrideName);
-        GTRegistries.register(GTRegistries.DIMENSION_MARKERS, dimension.location(), marker);
+        GTRegistries.register(GTRegistries.DIMENSION_MARKERS, dimension.identifier(), marker);
         return marker;
     }
 
     private static BlockEntry<Block> createMarker(String name) {
         return REGISTRATE.block("%s_marker".formatted(name), Block::new)
                 .lang(FormattingUtil.toEnglishName(name))
-                .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cube(ctx.getName(),
-                        prov.modLoc("block/dim_markers/%s/down".formatted(name)),
-                        prov.modLoc("block/dim_markers/%s/up".formatted(name)),
-                        prov.modLoc("block/dim_markers/%s/north".formatted(name)),
-                        prov.modLoc("block/dim_markers/%s/south".formatted(name)),
-                        prov.modLoc("block/dim_markers/%s/east".formatted(name)),
-                        prov.modLoc("block/dim_markers/%s/west".formatted(name)))
-                        .texture("particle", "#north")
-                        .guiLight(BlockModel.GuiLight.FRONT)))
+                
                 .simpleItem()
                 .register();
     }

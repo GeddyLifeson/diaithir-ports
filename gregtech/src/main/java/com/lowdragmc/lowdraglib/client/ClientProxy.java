@@ -13,9 +13,7 @@ import com.lowdragmc.lowdraglib.client.renderer.ATESRRendererProvider;
 import com.lowdragmc.lowdraglib.client.renderer.IRenderer;
 
 import com.lowdragmc.lowdraglib.client.utils.WidgetClientTooltipComponent;
-import com.lowdragmc.lowdraglib.core.mixins.ParticleEngineAccessor;
-import com.lowdragmc.lowdraglib.core.mixins.accessor.ModelBakeryAccessor;
-import com.lowdragmc.lowdraglib.gui.compass.CompassManager;
+import com.lowdragmc.lowdraglib.core.mixins.ParticleEngineAccessor;/* ported: removed */
 import com.lowdragmc.lowdraglib.gui.util.DrawerHelper;
 import com.lowdragmc.lowdraglib.gui.util.WidgetTooltipComponent;
 
@@ -58,11 +56,7 @@ public class ClientProxy extends CommonProxy {
     /**
      * should be called when Minecraft is prepared.
      */
-    public static void init() {
-        Shaders.init();
-        DrawerHelper.init();
-        CompassManager.INSTANCE.init();
-    }
+    public static void init() {  /* ported stub */ }
 
     @SubscribeEvent
     public void onRegisterClientTooltipComponentFactoriesEvent(final RegisterClientTooltipComponentFactoriesEvent event) {

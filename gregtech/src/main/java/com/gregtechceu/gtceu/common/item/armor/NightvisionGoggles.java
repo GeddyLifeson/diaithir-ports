@@ -53,10 +53,10 @@ public class NightvisionGoggles extends ArmorLogicSuite {
                 toggleTimer = 5;
                 if (item.getCharge() < ArmorUtils.MIN_NIGHTVISION_CHARGE) {
                     nightVision = false;
-                    player.displayClientMessage(Component.translatable("metaarmor.nms.nightvision.error"), true);
+                    player.sendOverlayMessage(Component.translatable("metaarmor.nms.nightvision.error"));
                 } else {
-                    player.displayClientMessage(Component
-                            .translatable("metaarmor.nms.nightvision." + (nightVision ? "enabled" : "disabled")), true);
+                    player.sendOverlayMessage(Component
+                            .translatable("metaarmor.nms.nightvision." + (nightVision ? "enabled" : "disabled")));
                 }
             }
 
@@ -86,10 +86,10 @@ public class NightvisionGoggles extends ArmorLogicSuite {
     }
 
     public static void disableNightVision(@NotNull Level world, Player player, boolean sendMsg) {
-        if (!world.isClientSide) {
+        if (!world.isClientSide()) {
             player.removeEffect(MobEffects.NIGHT_VISION);
             if (sendMsg)
-                player.displayClientMessage(Component.translatable("metaarmor.message.nightvision.disabled"), true);
+                player.sendOverlayMessage(Component.translatable("metaarmor.message.nightvision.disabled"));
         }
     }/* ported: removed */
 

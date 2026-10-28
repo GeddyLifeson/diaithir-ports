@@ -120,7 +120,7 @@ public class CommonEventListener {
 
     @SubscribeEvent
     public static void tickPlayerInventoryHazards(PlayerTickEvent.Post event) {
-        if (event.getEntity().level().isClientSide) {
+        if (event.getEntity().level().isClientSide()) {
             return;
         }
 
@@ -375,7 +375,7 @@ public class CommonEventListener {
             return;
         }
 
-        ServerLevel newLevel = event.getEntity().getServer().getLevel(event.getTo());
+        ServerLevel newLevel = event.getEntity().level().getServer().getLevel(event.getTo());
         var data = EnvironmentalHazardSavedData.getOrCreate(newLevel);
         PacketDistributor.sendToPlayer((ServerPlayer) event.getEntity(),
                 new SPacketSyncLevelHazards(data.getHazardZones()));
@@ -429,7 +429,7 @@ public class CommonEventListener {
                     Component.literal("" + pos.getZ()).withStyle(ChatFormatting.GOLD),
                     Component.translatable("gtceu.direction.tooltip." + target.side().getName())
                             .withStyle(ChatFormatting.DARK_PURPLE),
-                    Component.translatable(target.dimension().location().toLanguageKey(Level.TRANSLATION_PREFIX))
+                    Component.translatable(target.dimension().identifier().toLanguageKey(Level.TRANSLATION_PREFIX))
                             .withStyle(ChatFormatting.DARK_PURPLE)));
         }
         if (!stack.has(GTDataComponents.RESEARCH_ITEM) && stack.has(GTDataComponents.DATA_COPY_POS)) {
@@ -465,7 +465,7 @@ public class CommonEventListener {
     @SubscribeEvent
     public static void playerTickEvent(PlayerTickEvent.Pre event) {
         Player player = event.getEntity();
-        if (!player.level().isClientSide) {
+        if (!player.level().isClientSide()) {
             var speedAttrib = player.getAttribute(Attributes.MOVEMENT_SPEED);
             if (speedAttrib == null) return;
             var speedMod = speedAttrib.getModifier(GTAttributeModifierIds.BLOCK_SPEED_BOOST);

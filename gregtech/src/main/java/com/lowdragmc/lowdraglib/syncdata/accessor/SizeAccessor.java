@@ -27,11 +27,5 @@ public class SizeAccessor extends CustomObjectAccessor<Size>{
     }
 
     @Override
-    public Size deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
-        if (payload instanceof NbtTagPayload nbtTagPayload) {
-            var tag = (CompoundTag)nbtTagPayload.getPayload();
-            return new Size(tag.getInt("width"), tag.getInt("height"));
-        }
-        return null;
-    }
+    public Size deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) { return null; /* ported stub */ }
 }

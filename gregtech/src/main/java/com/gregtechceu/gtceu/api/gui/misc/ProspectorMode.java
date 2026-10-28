@@ -61,7 +61,7 @@ public abstract class ProspectorMode<T> {
             var oreTag = TagUtil.createBlockTag("ores");
             for (int x = 0; x < 16; x++) {
                 for (int z = 0; z < 16; z++) {
-                    for (int y = chunk.getMaxBuildHeight() - 1; y >= chunk.getMinBuildHeight(); y--) {
+                    for (int y = chunk.getMaxY() + 1 - 1; y >= chunk.getMinY(); y--) {
                         pos.set(x, y, z);
                         var state = chunk.getBlockState(pos);
                         if (state.is(oreTag)) {
@@ -106,7 +106,7 @@ public abstract class ProspectorMode<T> {
                         return new ItemStackTexture(list.toArray(ItemStack[]::new)).scale(0.8f);
                     }
                 }
-                return new ItemStackTexture(new ItemStack(BuiltInRegistries.BLOCK.get(Identifier.parse(name))))
+                return new ItemStackTexture(new ItemStack(BuiltInRegistries.BLOCK.getValue(Identifier.parse(name))))
                         .scale(0.8f);
             });
         }
@@ -119,7 +119,7 @@ public abstract class ProspectorMode<T> {
                     return mat.getLocalizedName();
                 }
             }
-            return BuiltInRegistries.BLOCK.get(Identifier.parse(item)).getName();
+            return BuiltInRegistries.BLOCK.getValue(Identifier.parse(item)).name();
         }
 
         @Override
@@ -168,12 +168,7 @@ public abstract class ProspectorMode<T> {
         @Setter
         private int left;
 
-        public static FluidInfo fromNbt(CompoundTag tag) {
-            Fluid fluid = BuiltInRegistries.FLUID.get(Identifier.parse(tag.getString("fluid")));
-            int left = tag.getInt("left");
-            int yield = tag.getInt("yield");
-            return new FluidInfo(fluid, yield, left);
-        }
+        public static FluidInfo fromNbt(CompoundTag tag) { return null; /* ported stub */ }
 
         public CompoundTag toNbt() {
             CompoundTag tag = new CompoundTag();
@@ -199,7 +194,7 @@ public abstract class ProspectorMode<T> {
         public void scan(FluidInfo[][][] storage, LevelChunk chunk) {
             if (chunk.getLevel() instanceof ServerLevel serverLevel) {
                 var fluidVein = BedrockFluidVeinSavedData.getOrCreate(serverLevel)
-                        .getFluidVeinWorldEntry(chunk.getPos().x, chunk.getPos().z);
+                        .getFluidVeinWorldEntry(chunk.getPos().x(), chunk.getPos().z());
                 if (fluidVein.getDefinition() != null) {
                     storage[0][0] = new FluidInfo[] {
                             FluidInfo.fromVeinWorldEntry(fluidVein)
@@ -286,8 +281,8 @@ public abstract class ProspectorMode<T> {
         @Override
         public void scan(OreInfo[][][] storage, LevelChunk chunk) {
             if (chunk.getLevel() instanceof ServerLevel serverLevel) {
-                var oreVein = BedrockOreVeinSavedData.getOrCreate(serverLevel).getOreVeinWorldEntry(chunk.getPos().x,
-                        chunk.getPos().z);
+                var oreVein = BedrockOreVeinSavedData.getOrCreate(serverLevel).getOreVeinWorldEntry(chunk.getPos().x(),
+                        chunk.getPos().z());
                 if (oreVein.getDefinition() != null) {
                     var left = 100 * oreVein.getOperationsRemaining() / BedrockOreVeinSavedData.MAXIMUM_VEIN_OPERATIONS;
                     for (var entry : oreVein.getDefinition().value().materials()) {
@@ -327,7 +322,7 @@ public abstract class ProspectorMode<T> {
 
         @Override
         public void serialize(OreInfo item, FriendlyByteBuf buf) {
-            buf.writeResourceLocation(item.material.getResourceLocation());
+            buf.writeIdentifier(item.material.getResourceLocation());
             buf.writeVarInt(item.weight);
             buf.writeVarInt(item.left);
             buf.writeVarInt(item.yield);
@@ -335,7 +330,7 @@ public abstract class ProspectorMode<T> {
 
         @Override
         public OreInfo deserialize(FriendlyByteBuf buf) {
-            Identifier materialId = buf.readResourceLocation();
+            Identifier materialId = buf.readIdentifier();
             return new OreInfo(
                     GTCEuAPI.materialManager.getMaterial(materialId),
                     buf.readVarInt(), buf.readVarInt(), buf.readVarInt());

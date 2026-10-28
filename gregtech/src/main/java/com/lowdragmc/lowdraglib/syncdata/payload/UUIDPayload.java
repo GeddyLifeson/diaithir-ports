@@ -21,12 +21,8 @@ public class UUIDPayload extends ObjectTypedPayload<UUID> {
     }
 
     @Override
-    public @Nullable Tag serializeNBT(HolderLookup.Provider provider) {
-        return NbtUtils.createUUID(payload);
-    }
+    public @Nullable Tag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
-        payload = NbtUtils.loadUUID(tag);
-    }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
 }

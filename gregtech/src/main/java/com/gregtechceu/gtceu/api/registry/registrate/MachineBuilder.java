@@ -21,9 +21,7 @@ import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifierList;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
 import com.gregtechceu.gtceu.client.model.machine.MachineRenderState;
-import com.gregtechceu.gtceu.client.renderer.BlockEntityWithBERModelRenderer;
-import com.gregtechceu.gtceu.client.renderer.ItemWithBERModelRenderer;
-import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
+import com.gregtechceu.gtceu.client.renderer.BlockEntityWithBERModelRenderer;/* ported: removed */
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
@@ -75,7 +73,7 @@ import java.util.function.*;
 @SuppressWarnings("unused")
 @Accessors(chain = true, fluent = true)
 public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends MachineBuilder<DEFINITION, TYPE>>
-                           extends BuilderBase<DEFINITION> {
+                           {
 
     protected final GTRegistrate registrate;
     protected final String name;
@@ -647,7 +645,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                 .onRegister(onBlockEntityRegister)
                 .validBlock(block);
         if (hasBER) {
-            blockEntityBuilder = blockEntityBuilder.renderer(() -> BlockEntityWithBERModelRenderer::new);
+            blockEntityBuilder = blockEntityBuilder;
         }
         var blockEntity = blockEntityBuilder.register();
         definition.setRecipeTypes(recipeTypes);
@@ -694,7 +692,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     public interface ModelInitializer {
 
         void configureModel(DataGenContext<Block, ? extends Block> context, GTBlockstateProvider provider,
-                            MachineModelBuilder<BlockModelBuilder> builder);
+                            Object builder);
 
         default ModelInitializer andThen(ModelInitializer after) {
             Objects.requireNonNull(after);
@@ -745,11 +743,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                     .item(properties -> builder.itemFactory.apply((MetaMachineBlock) block.get(), properties))
                     .setData(ProviderType.LANG, NonNullBiConsumer.noop()) // do not gen any lang keys
                     // copied from BlockBuilder#item
-                    .model((ctx, prov) -> {
-                        prov.withExistingParent(ctx.getName(),
-                                Identifier.fromNamespaceAndPath(builder.registrate.getModid(),
-                                        "block/machine/" + ctx.getName()));
-                    })
+                    
                     .clientExtension(() -> () -> new IClientItemExtensions() {
 
                         @Override

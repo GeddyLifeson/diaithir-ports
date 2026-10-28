@@ -62,9 +62,7 @@ public class FacadeBlockWorld extends DummyWorld {
     }
 
     @Override
-    public int getBlockTint(@Nonnull BlockPos blockPos, @Nonnull ColorResolver colorResolver) {
-        return getLevel().getBlockTint(blockPos, colorResolver);
-    }
+    public int getBlockTint(@Nonnull BlockPos blockPos, @Nonnull ColorResolver colorResolver) { return (int)0; /* ported stub */ }
 
     @Override
     public boolean canSeeSky(@Nonnull BlockPos pos) {

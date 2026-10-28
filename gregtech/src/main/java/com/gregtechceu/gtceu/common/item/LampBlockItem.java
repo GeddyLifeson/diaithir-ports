@@ -1,9 +1,8 @@
 package com.gregtechceu.gtceu.common.item;
 
-import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.client.renderer.block.LampItemRenderer;
-
 import com.gregtechceu.gtceu.common.block.LampBlock;
+
+import com.gregtechceu.gtceu.GTCEu;/* ported: removed */
 import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 
 

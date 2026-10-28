@@ -28,17 +28,7 @@ public interface ISerializableRenderer extends IConfigurable, IRenderer, IAutoPe
     }
 
     @Nullable
-    static ISerializableRenderer deserializeWrapper(HolderLookup.Provider provider, CompoundTag tag) {
-        var type = tag.getString("_type");
-        var wrapper = AnnotationDetector.REGISTER_RENDERERS.get(type);
-        if (wrapper != null) {
-            var renderer = wrapper.creator().get();
-            renderer.deserializeNBT(provider, tag);
-            renderer.initRenderer();
-            return renderer;
-        }
-        return null;
-    }
+    static ISerializableRenderer deserializeWrapper(HolderLookup.Provider provider, CompoundTag tag) { return null; /* ported stub */ }
 
     // should be called after deserialization and only once.
     default void initRenderer() {

@@ -128,7 +128,7 @@ public interface IPipeNode<PipeType extends Enum<PipeType> & IPipeType<NodeDataT
         var level = getLevel();
         if (level != null) {
             var state = level.getBlockState(pos);
-            if (level.isClientSide) {
+            if (level.isClientSide()) {
                 // simplified from requestModelDataUpdate
                 ModelDataManager manager = level.getModelDataManager();
                 if (manager != null) {

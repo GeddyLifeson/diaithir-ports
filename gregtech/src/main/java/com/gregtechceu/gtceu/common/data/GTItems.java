@@ -369,7 +369,7 @@ public class GTItems {
     public static ItemEntry<ComponentItem> FLUID_CELL = REGISTRATE.item("fluid_cell", ComponentItem::new)
             .lang("%s Fluid Cell")
             .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
-            .color(() -> GTItems::cellColor)
+            
             .onRegister(attach(
                     ThermalFluidStats.create(FluidType.BUCKET_VOLUME, 1800, true, false, false, false, false),
                     new ItemFluidContainer(), cellName()))
@@ -377,7 +377,7 @@ public class GTItems {
     public static ItemEntry<ComponentItem> FLUID_CELL_UNIVERSAL = REGISTRATE
             .item("universal_fluid_cell", ComponentItem::new)
             .lang("%s Universal Cell")
-            .color(() -> GTItems::cellColor)
+            
             .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
             .onRegister(attach(cellName(),
                     ThermalFluidStats.create(FluidType.BUCKET_VOLUME, 1800, true, false, false, false, true),
@@ -395,7 +395,7 @@ public class GTItems {
 
     public static ItemEntry<ComponentItem> FLUID_CELL_GLASS_VIAL = REGISTRATE.item("glass_vial", ComponentItem::new)
             .lang("%s Glass Vial")
-            .color(() -> GTItems::cellColor)
+            
             .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
             .onRegister(
                     attach(cellName(),
@@ -412,7 +412,7 @@ public class GTItems {
         return REGISTRATE
                 .item("%s_fluid_cell".formatted(mat.getName()), ComponentItem::new)
                 .lang("%s " + toEnglishName(mat.getName()) + " Cell")
-                .color(() -> GTItems::cellColor)
+                
                 .setData(ProviderType.ITEM_MODEL, NonNullBiConsumer.noop())
                 .properties(p -> p.stacksTo(stackSize))
                 .onRegister(attach(cellName(),
@@ -1952,7 +1952,7 @@ public class GTItems {
     public static ItemEntry<ComponentItem> COVER_FACADE = REGISTRATE.item("facade_cover", ComponentItem::new)
             .lang("%s Cover Facade")
             .onRegister(attach(new FacadeItemBehaviour(), new CoverPlaceBehavior(GTCovers.FACADE)))
-            .model(NonNullBiConsumer.noop())
+            
             .register();
 
     // Solar Panels: ID 331-346
@@ -2080,31 +2080,31 @@ public class GTItems {
     public static ItemEntry<ComponentItem> POWER_UNIT_LV = REGISTRATE.item("lv_power_unit", ComponentItem::new)
             .lang("LV Power Unit")
             .properties(p -> p.stacksTo(8))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/tools/power_unit_lv")))
+            
             .onRegister(attach(ElectricStats.createElectricItem(100000L, GTValues.LV)))
             .register();
     public static ItemEntry<ComponentItem> POWER_UNIT_MV = REGISTRATE.item("mv_power_unit", ComponentItem::new)
             .lang("MV Power Unit")
             .properties(p -> p.stacksTo(8))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/tools/power_unit_mv")))
+            
             .onRegister(attach(ElectricStats.createElectricItem(400000L, GTValues.MV)))
             .register();
     public static ItemEntry<ComponentItem> POWER_UNIT_HV = REGISTRATE.item("hv_power_unit", ComponentItem::new)
             .lang("HV Power Unit")
             .properties(p -> p.stacksTo(8))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/tools/power_unit_hv")))
+            
             .onRegister(attach(ElectricStats.createElectricItem(1600000L, GTValues.HV)))
             .register();
     public static ItemEntry<ComponentItem> POWER_UNIT_EV = REGISTRATE.item("ev_power_unit", ComponentItem::new)
             .lang("EV Power Unit")
             .properties(p -> p.stacksTo(8))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/tools/power_unit_ev")))
+            
             .onRegister(attach(ElectricStats.createElectricItem(6400000L, GTValues.EV)))
             .register();
     public static ItemEntry<ComponentItem> POWER_UNIT_IV = REGISTRATE.item("iv_power_unit", ComponentItem::new)
             .lang("IV Power Unit")
             .properties(p -> p.stacksTo(8))
-            .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/tools/power_unit_iv")))
+            
             .onRegister(attach(ElectricStats.createElectricItem(25600000L, GTValues.IV)))
             .register();
 
@@ -2134,16 +2134,7 @@ public class GTItems {
             .lang("Nano Saber")
             .properties(p -> p.stacksTo(1))
             .onRegister(attach(new NanoSaberBehavior(), ElectricStats.createElectricItem(4_000_000L, GTValues.HV)))
-            .model((ctx, prov) -> {
-                var rootModel = prov.generated(ctx::getEntry, prov.modLoc("item/nano_saber/normal"));
-                prov.getBuilder("item/nano_saber/active")
-                        .parent(new ModelFile.UncheckedModelFile("item/handheld"))
-                        .texture("layer0", prov.modLoc("item/nano_saber/active"));
-
-                rootModel.override().predicate(NanoSaberBehavior.OVERRIDE_KEY_LOCATION, 1.0f)
-                        .model(new ModelFile.UncheckedModelFile(prov.modLoc("item/nano_saber/active")))
-                        .end();
-            })
+            
             .onRegister(modelPredicate(NanoSaberBehavior.OVERRIDE_KEY_LOCATION,
                     () -> () -> (stack, level, entity, layer) -> NanoSaberBehavior.isItemActive(stack) ? 1.0f : 0.0f))
             .register();
@@ -2230,7 +2221,7 @@ public class GTItems {
     public static ItemEntry<ComponentItem> TURBINE_ROTOR = REGISTRATE.item("turbine_rotor", ComponentItem::new)
             .lang("%s Turbine Rotor")
             .properties(p -> p.stacksTo(1))
-            .model((ctx, prov) -> createTextureModel(ctx, prov, GTCEu.id("item/tools/turbine")))
+            
             .color(() -> IMaterialPartItem::getItemStackColor)
             .onRegister(attach(new TurbineRotorBehaviour())).register();
 
@@ -2664,17 +2655,7 @@ public class GTItems {
                 ItemProperties.register(item, predicate, (itemStack, c, l, i) -> property.apply(itemStack));
             }
         };
-    }
-
-    @SuppressWarnings("deprecation")
-    public static <T extends Item> NonNullConsumer<T> modelPredicate(Identifier predicate,
-                                                                     Supplier<Supplier<ItemPropertyFunction>> property) {
-        return item -> {
-            if (GTCEu.isClientSide()) {
-                ItemProperties.register(item, predicate, property.get().get());
-            }
-        };
-    }
+    }/* ported: removed */
 
     @SuppressWarnings("removal")
     public static <P,

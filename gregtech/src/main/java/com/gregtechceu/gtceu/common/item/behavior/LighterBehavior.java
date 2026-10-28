@@ -159,7 +159,7 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
                 if (!consumeFuel(player, stack)) return InteractionResult.PASS;
                 level.playSound(player, creeper, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,
                         1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
-                if (!level.isClientSide) {
+                if (!level.isClientSide()) {
                     creeper.ignite();
                 }
                 return InteractionResult.SUCCESS;

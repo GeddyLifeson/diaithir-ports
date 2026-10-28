@@ -1,12 +1,9 @@
 package com.gregtechceu.gtceu.client.model.machine.overlays;
 
-import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status;
-import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
-
-
-import com.gregtechceu.gtceu.utils.data.RuntimeExistingFileHelper;
-
 import net.minecraft.core.Direction;
+
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status;
+import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;/* ported: removed */
 import net.minecraft.resources.Identifier;
 
 
@@ -83,14 +80,8 @@ public class WorkableOverlays {/* ported: removed */
 
         private StatusTextures() {}
 
-        public @NotNull Identifier getTexture(@NotNull Status status) {
-            Identifier value = textures.get(status);
-            return value != null ? value : GTModels.BLANK_TEXTURE;
-        }
+        public @NotNull Identifier getTexture(@NotNull Status status) { return null; /* ported stub */ }
 
-        public @NotNull Identifier getEmissiveTexture(@NotNull Status status) {
-            Identifier value = emissiveTextures.get(status);
-            return value != null ? value : GTModels.BLANK_TEXTURE;
-        }
+        public @NotNull Identifier getEmissiveTexture(@NotNull Status status) { return null; /* ported stub */ }
     }
 }

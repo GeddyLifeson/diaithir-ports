@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.data.worldgen;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.worldgen.generator.IndicatorGenerator;
 import com.gregtechceu.gtceu.api.data.worldgen.generator.VeinGenerator;
@@ -46,7 +48,7 @@ public class GTOreDefinition {
 
     // spotless:off
     public static final Codec<GTOreDefinition> DIRECT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            IntProvider.NON_NEGATIVE_CODEC.fieldOf("cluster_size").forGetter(GTOreDefinition::clusterSize),
+            IntProviders.NON_NEGATIVE_CODEC.fieldOf("cluster_size").forGetter(GTOreDefinition::clusterSize),
             Codec.floatRange(0.0F, 1.0F).fieldOf("density").forGetter(GTOreDefinition::density),
             Codec.INT.fieldOf("weight").forGetter(GTOreDefinition::weight),
             IWorldGenLayer.CODEC.fieldOf("layer").forGetter(GTOreDefinition::layer),

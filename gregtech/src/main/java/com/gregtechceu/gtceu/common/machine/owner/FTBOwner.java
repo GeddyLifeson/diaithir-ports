@@ -82,7 +82,7 @@ public non-sealed class FTBOwner extends MachineOwner {
     @Override
     public UUID getUUID() {
         var team = getTeam();
-        return team != null ? team.getId() : EMPTY;
+        return team != null ? team.id() : EMPTY;
     }
 
     @Override

@@ -28,14 +28,14 @@ public class SPacketNotifyCapeChange implements CustomPacketPayload {
 
     public SPacketNotifyCapeChange(FriendlyByteBuf buf) {
         uuid = buf.readUUID();
-        cape = buf.readBoolean() ? buf.readResourceLocation() : null;
+        cape = buf.readBoolean() ? buf.readIdentifier() : null;
     }
 
     public void encode(FriendlyByteBuf buf) {
         buf.writeUUID(this.uuid);
         buf.writeBoolean(this.cape != null);
         if (this.cape != null) {
-            buf.writeResourceLocation(this.cape);
+            buf.writeIdentifier(this.cape);
         }
     }
 

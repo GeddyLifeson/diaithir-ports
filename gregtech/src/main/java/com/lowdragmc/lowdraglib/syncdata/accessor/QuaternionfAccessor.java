@@ -27,7 +27,7 @@ public class QuaternionfAccessor extends CustomObjectAccessor<Quaternionf>{
     public Quaternionf deserialize(AccessorOp op, ITypedPayload<?> payload, HolderLookup.Provider provider) {
         if (payload instanceof NbtTagPayload nbtTagPayload) {
             var tag = (CompoundTag)nbtTagPayload.getPayload();
-            return new Quaternionf(tag.getFloat("x"), tag.getFloat("y"), tag.getFloat("z"), tag.getFloat("w"));
+            return new Quaternionf(tag.getFloatOr("x", 0f), tag.getFloatOr("y", 0f), tag.getFloatOr("z", 0f), tag.getFloatOr("w", 0f));
         }
         return null;
     }

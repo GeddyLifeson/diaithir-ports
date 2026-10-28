@@ -75,45 +75,7 @@ public class FluidAreaRender extends DynamicRender<IFluidRenderMulti, FluidAreaR
     @Override
     public void render(IFluidRenderMulti machine, float partialTick,
                        PoseStack poseStack, MultiBufferSource buffer,
-                       int packedLight, int packedOverlay) {
-        if (!ConfigHolder.INSTANCE.client.renderer.renderFluids) return;
-        if (!machine.self().isFormed() || machine.getFluidOffsets() == null) {
-            return;
-        }
-        if (!fixedFluid) {
-            var lastRecipe = machine.getRecipeLogic().getLastRecipe();
-            if (lastRecipe == null) {
-                cachedRecipe = null;
-                cachedFluid = null;
-            } else if (machine.self().getOffsetTimer() % 20 == 0 || lastRecipe.id != cachedRecipe) {
-                cachedRecipe = lastRecipe.id;
-                if (machine.isActive()) {
-                    cachedFluid = RenderUtil.getRecipeFluidToRender(lastRecipe);
-                } else {
-                    cachedFluid = null;
-                }
-            }
-        }
-        if (cachedFluid == null) {
-            return;
-        }
-
-        var fluidRenderType = ItemBlockRenderTypes.getRenderLayer(cachedFluid.defaultFluidState());
-        var consumer = buffer.getBuffer(RenderTypeHelper.getEntityRenderType(fluidRenderType, false));
-
-        for (RelativeDirection face : this.drawFaces) {
-            poseStack.pushPose();
-            var pose = poseStack.last().pose();
-
-            var dir = face.getRelative(machine.self().getFrontFacing(), machine.self().getUpwardsFacing(),
-                    machine.self().isFlipped());
-            if (dir.getAxis() != Direction.Axis.Y) dir = dir.getOpposite();
-
-            fluidBlockRenderer.drawPlane(dir, machine.getFluidOffsets(), pose, consumer, cachedFluid,
-                    RenderUtil.FluidTextureType.STILL, packedOverlay, machine.self().getBlockPos());
-            poseStack.popPose();
-        }
-    }
+                       int packedLight, int packedOverlay) {  /* ported stub */ }
 
     private Optional<Fluid> getFixedFluid() {
         if (fixedFluid) return Optional.ofNullable(cachedFluid);

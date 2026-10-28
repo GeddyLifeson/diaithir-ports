@@ -84,7 +84,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
 
             if (messageKey != null) {
                 toggleTimer = 5;
-                if (!level.isClientSide) player.displayClientMessage(Component.translatable(messageKey), true);
+                if (!level.isClientSide()) player.sendOverlayMessage(Component.translatable(messageKey));
             }
         }
 
@@ -101,7 +101,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
         }
 
         // Charging mechanics
-        if (canShare && !level.isClientSide) {
+        if (canShare && !level.isClientSide()) {
             // Check for new things to charge every 5 seconds
             if (timer % 100 == 0)
                 inventoryIndexMap = ArmorUtils.getChargeableItem(player, cont.getTier());
@@ -179,7 +179,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
             }
 
             canShare = !canShare;
-            if (!world.isClientSide) {
+            if (!world.isClientSide()) {
                 if (canShare && cont.getCharge() == 0) {
                     player.sendSystemMessage(Component.translatable("metaarmor.energy_share.error"));
                 } else if (canShare) {

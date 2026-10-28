@@ -32,17 +32,7 @@ public class TexturesResource extends Resource<IGuiTexture> {
     }
 
     @Override
-    public void buildDefault() {
-        data.put("border background", ResourceBorderTexture.BORDERED_BACKGROUND);
-        data.put("button", ResourceBorderTexture.BUTTON_COMMON);
-        data.put("slot", SlotWidget.ITEM_SLOT_TEXTURE.copy());
-        data.put("fluid slot", TankWidget.FLUID_SLOT_TEXTURE.copy());
-        data.put("tab", TABS_LEFT.getSubTexture(0, 0, 0.5f, 1f / 3));
-        data.put("tab pressed", TABS_LEFT.getSubTexture(0.5f, 0, 0.5f, 1f / 3));
-        for (var wrapper : AnnotationDetector.REGISTER_TEXTURES) {
-            data.put("ldlib.gui.editor.register.texture." + wrapper.annotation().name(), wrapper.creator().get());
-        }
-    }
+    public void buildDefault() {  /* ported stub */ }
 
     @Override
     public String name() {

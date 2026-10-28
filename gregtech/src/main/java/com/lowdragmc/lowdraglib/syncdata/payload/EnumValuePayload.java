@@ -47,12 +47,5 @@ public class EnumValuePayload extends ObjectTypedPayload<EnumValuePayload.Payloa
     }
 
     @Override
-    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
-        // supports old formats and transform it
-        if (tag instanceof IntTag) {
-            payload.ordinal = ((IntTag) tag).getAsInt();
-            return;
-        }
-        payload.name = tag.getAsString();
-    }
+    public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {  /* ported stub */ }
 }

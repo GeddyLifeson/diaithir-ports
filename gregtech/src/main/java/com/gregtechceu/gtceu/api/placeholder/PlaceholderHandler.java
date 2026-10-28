@@ -94,7 +94,7 @@ public class PlaceholderHandler {
     }
 
     public static MultiLineComponent processPlaceholders(String s, PlaceholderContext ctx) {
-        if (ctx.level().isClientSide)
+        if (ctx.level().isClientSide())
             GTCEu.LOGGER.warn("Placeholder processing is running on client instead of server!");
         List<Exception> exceptions = new ArrayList<>();
         Object2IntOpenHashMap<String> indices = new Object2IntOpenHashMap<>();

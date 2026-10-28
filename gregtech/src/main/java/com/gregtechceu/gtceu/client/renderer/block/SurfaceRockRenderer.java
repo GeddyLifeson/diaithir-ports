@@ -26,29 +26,7 @@ public class SurfaceRockRenderer {
         MODELS.add(new SurfaceRockRenderer(block));
     }
 
-    public static void reinitModels() {
-        for (SurfaceRockRenderer model : MODELS) {
-            Identifier blockId = BuiltInRegistries.BLOCK.getKey(model.block);
-            Identifier modelId = blockId.withPrefix("block/");
-
-            GTDynamicResourcePack.addBlockModel(blockId, new DelegatedModel(GTCEu.id("block/surface_rock")));
-            GTDynamicResourcePack.addBlockState(blockId, MultiVariantGenerator
-                    .multiVariant(model.block, Variant.variant().with(VariantProperties.MODEL, modelId))
-                    .with(PropertyDispatch.property(BlockStateProperties.FACING)
-                            .select(Direction.DOWN, Variant.variant())
-                            .select(Direction.UP,
-                                    Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R180))
-                            .select(Direction.NORTH,
-                                    Variant.variant().with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
-                            .select(Direction.SOUTH,
-                                    Variant.variant().with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
-                            .select(Direction.WEST,
-                                    Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R270))
-                            .select(Direction.EAST,
-                                    Variant.variant().with(VariantProperties.X_ROT, VariantProperties.Rotation.R90))));
-            GTDynamicResourcePack.addItemModel(blockId, new DelegatedModel(modelId));
-        }
-    }
+    public static void reinitModels() {  /* ported stub */ }
 
     private final Block block;
 

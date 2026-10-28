@@ -109,93 +109,11 @@ public class GrowingPlantRender extends DynamicRender<IRecipeLogicMachine, Growi
 
     @Override
     public void render(IRecipeLogicMachine rlm, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource,
-                       int packedLight, int packedOverlay) {
-        if (!ConfigHolder.INSTANCE.client.renderer.renderGrowingPlants) return;
-        if (!rlm.isActive()) return;
-        final RecipeLogic recipeLogic = rlm.getRecipeLogic();
-
-        Optional<Block> currentBlock = this.growingBlock
-                .or(() -> Optional.ofNullable(recipeLogic.getLastRecipe()).flatMap(this::findGrowing));
-        if (currentBlock.isEmpty()) return;
-        Block growing = currentBlock.get();
-        BlockState state = growing.defaultBlockState();
-
-        double progress = recipeLogic.getProgressPercent();
-        GrowthMode mode = this.growthMode.orElseGet(() -> getGrowthModeForBlock(growing));
-
-        // a couple of special case replacements in case of small mistakes in manual configuration
-        if (this.growthMode.isPresent() && !mode.predicate().test(growing)) {
-            if (mode == GrowthMode.GROWING_PLANT && GrowthMode.DOUBLE_TRANSLATE.predicate.test(growing)) {
-                mode = GrowthMode.DOUBLE_TRANSLATE;
-            }
-            if (mode == GrowthMode.AGE_4 && GrowthMode.PICKLES.predicate().test(growing)) {
-                // special case the pickles property to work if using age_4
-                mode = GrowthMode.PICKLES;
-            } else if (mode == GrowthMode.AGE_4 && GrowthMode.FLOWER_AMOUNT.predicate().test(growing)) {
-                // special case the flower amount property to work if using age_4
-                mode = GrowthMode.FLOWER_AMOUNT;
-            } else if (mode == GrowthMode.AGE_7 && GrowthMode.STEM.predicate().test(growing)) {
-                // special case stem plants to show stems
-                mode = GrowthMode.STEM;
-            } else {
-                // generic incompatibility, use default mode
-                mode = GrowthMode.SCALE;
-            }
-        }
-
-        MetaMachine machine = rlm.self();
-        Level level = machine.getLevel();
-        assert level != null;
-        BlockPos machinePos = machine.getBlockPos();
-
-        var statesToDraw = mode.renderFunction().configureState(level, state, progress);
-
-        for (Vector3fc offset : this.getOffsets()) {
-            poseStack.pushPose();
-
-            Vector3f rotated = new Vector3f(offset);
-            rotated.rotateX(-Mth.HALF_PI);
-            machine.getFrontFacing().getRotation().transform(rotated);
-            poseStack.translate(rotated.x(), rotated.y() + EPSILON, rotated.z());
-
-            BlockPos pos = machinePos.offset(BlockPos.containing(rotated.x(), rotated.y(), rotated.z()));
-            for (StateWithOffset toDraw : statesToDraw) {
-                poseStack.pushPose();
-                Vector3fc translation = toDraw.offset;
-                poseStack.translate(translation.x(), translation.y(), translation.z());
-
-                mode.renderFunction().renderGrowingBlock(level, pos, rotated, toDraw.state,
-                        progress, bufferSource, poseStack);
-
-                poseStack.popPose();
-            }
-
-            poseStack.popPose();
-        }
-    }
+                       int packedLight, int packedOverlay) {  /* ported stub */ }
 
     public void drawBlocks(BlockAndTintGetter level, BlockPos machinePos, Direction frontFacing,
                            double progress, GrowthMode mode, BlockState state,
-                           PoseStack poseStack, MultiBufferSource bufferSource) {
-        for (final Vector3fc offset : getOffsets()) {
-            poseStack.pushPose();
-
-            Vector3f rotated = new Vector3f(offset);
-            rotated.rotateX(-Mth.HALF_PI);
-            frontFacing.getRotation().transform(rotated);
-            poseStack.translate(rotated.x(), rotated.y(), rotated.z());
-
-            poseStack.translate(0, 1 + EPSILON, 0);
-            poseStack.translate(0.0, (progress * 2) % (1 + EPSILON) - 1, 0.0);
-            if (mode == GrowthMode.GROWING_PLANT && state.getBlock() instanceof GrowingPlantBlock gp) {
-                poseStack.last().pose().rotateAround(
-                        ((GrowingPlantBlockAccessor) gp).gtceu$getGrowthDirection().getRotation(), 0.5f, 0.5f, 0.5f);
-            }
-            RenderUtil.drawBlock(level, machinePos, state, bufferSource, poseStack);
-
-            poseStack.popPose();
-        }
-    }
+                           PoseStack poseStack, MultiBufferSource bufferSource) {  /* ported stub */ }
 
     protected Optional<Block> findGrowing(GTRecipe recipe) {
         return RECIPE_BLOCK_CACHE.apply(recipe);

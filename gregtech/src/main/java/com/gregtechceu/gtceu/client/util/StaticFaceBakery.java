@@ -19,7 +19,5 @@ public class StaticFaceBakery {
     public static final AABB COVER_OVERLAY = new AABB(-.008f, -.008f, -.008f,
             1.008f, 1.008f, 1.008f);
 
-    public static BakedQuad bakeFace(AABB cube, Direction face, TextureAtlasSprite sprite) {
-        return FaceQuad.bakeFace(cube, face, sprite, BlockModelRotation.X0_Y0, -1, 0, true, true);
-    }
+    public static BakedQuad bakeFace(AABB cube, Direction face, TextureAtlasSprite sprite) { return null; /* ported stub */ }
 }

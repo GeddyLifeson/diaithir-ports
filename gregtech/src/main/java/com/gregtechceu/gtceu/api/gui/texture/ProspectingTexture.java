@@ -105,30 +105,7 @@ public class ProspectingTexture extends AbstractTexture {
         load();
     }
 
-    private NativeImage getImage() {
-        int wh = (this.radius * 2 - 1) * 16;
-        NativeImage image = new NativeImage(wh, wh, false);
-        for (int i = 0; i < wh; i++) {
-            for (int j = 0; j < wh; j++) {
-                Object[] items = this.data[i * mode.cellSize / 16][j * mode.cellSize / 16];
-                // draw bg
-                image.setPixelRGBA(i, j, (darkMode ? ColorPattern.GRAY.color : ColorPattern.WHITE.color));
-                // draw items
-                for (Object item : items) {
-                    if (!selected.equals(SELECTED_ALL) && !selected.equals(mode.getUniqueID(item))) continue;
-                    int color = mode.getItemColor(item);
-                    image.setPixelRGBA(i, j,
-                            combine(255, ColorUtils.blueI(color), ColorUtils.greenI(color), ColorUtils.redI(color)));
-                    break;
-                }
-                // draw grid
-                if ((i) % 16 == 0 || (j) % 16 == 0) {
-                    image.setPixelRGBA(i, j, ColorUtils.averageColor(image.getPixelRGBA(i, j), 0xff000000));
-                }
-            }
-        }
-        return image;
-    }
+    private NativeImage getImage() { return null; /* ported stub */ }
 
     /**
      * The resulting color of this operation is stored as least to most significant bits.
@@ -141,53 +118,12 @@ public class ProspectingTexture extends AbstractTexture {
         doLoad(getImage());
     }
 
-    private void doLoad(NativeImage image) {
-        TextureUtil.prepareImage(this.getId(), 0, image.getWidth(), image.getHeight());
-        image.upload(0, 0, 0, 0, 0, image.getWidth(), image.getHeight(), false, false, false, true);
-    }
+    private void doLoad(NativeImage image) {  /* ported stub */ }
 
-    public void draw(GuiGraphics graphics, int x, int y) {
-        if (this.getId() == -1) return;
-        Tesselator tesselator = Tesselator.getInstance();
-        RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
-        RenderSystem.setShaderTexture(0, this.getId());
-        Matrix4f matrix4f = graphics.pose().last().pose();
-
-        BufferBuilder bufferbuilder = tesselator.begin(VertexFormat.Mode.QUADS, POSITION_TEX_COLOR);
-        bufferbuilder.addVertex(matrix4f, x, y + imageHeight, 0).setUv(0, 1).setColor(-1);
-        bufferbuilder.addVertex(matrix4f, x + imageWidth, y + imageHeight, 0).setUv(1, 1).setColor(-1);
-        bufferbuilder.addVertex(matrix4f, x + imageWidth, y, 0).setUv(1, 0).setColor(-1);
-        bufferbuilder.addVertex(matrix4f, x, y, 0).setUv(0, 0).setColor(-1);
-        BufferUploader.drawWithShader(bufferbuilder.buildOrThrow());
-
-        // draw special grid (e.g. fluid)
-        for (int cx = 0; cx < radius * 2 - 1; cx++) {
-            for (int cz = 0; cz < radius * 2 - 1; cz++) {
-                if (this.data[cx][cz] != null && this.data[cx][cz].length > 0) {
-                    var items = this.data[cx][cz];
-                    mode.drawSpecialGrid(graphics, items, x + cx * 16 + 1, y + cz * 16 + 1, 16, 16);
-                }
-            }
-        }
-        TransformTexture arrow = ARROW.rotate(this.direction / 2);
-        arrow.draw(graphics, 0, 0, x + playerXGui - 20, y + playerYGui - 20, 40, 40);
-
-        // draw red vertical line
-        if (playerXGui % 16 > 7 || playerXGui % 16 == 0) {
-            DrawerHelper.drawSolidRect(graphics, x + playerXGui - 1, y, 1, imageHeight, ColorPattern.RED.color);
-        } else {
-            DrawerHelper.drawSolidRect(graphics, x + playerXGui, y, 1, imageHeight, ColorPattern.RED.color);
-        }
-        // draw red horizontal line
-        if (playerYGui % 16 > 7 || playerYGui % 16 == 0) {
-            DrawerHelper.drawSolidRect(graphics, x, y + playerYGui - 1, imageWidth, 1, ColorPattern.RED.color);
-        } else {
-            DrawerHelper.drawSolidRect(graphics, x, y + playerYGui, imageWidth, 1, ColorPattern.RED.color);
-        }
-    }
+    public void draw(GuiGraphics graphics, int x, int y) {  /* ported stub */ }
 
     @Override
-    public void load(ResourceManager resourceManager) throws IOException {}
+    public void load(ResourceManager resourceManager) throws IOException {  /* ported stub */ }
 
     public void setDarkMode(boolean darkMode) {
         if (this.darkMode != darkMode) {

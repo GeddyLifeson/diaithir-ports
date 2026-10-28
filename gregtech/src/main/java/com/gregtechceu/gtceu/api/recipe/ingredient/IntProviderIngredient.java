@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.recipe.ingredient;
 
+import net.minecraft.util.valueproviders.IntProviders;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.data.recipe.GTIngredientTypes;
@@ -38,7 +40,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
     // spotless:off
     public static final MapCodec<IntProviderIngredient> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Ingredient.CODEC.fieldOf("inner").forGetter(IntProviderIngredient::getInner),
-            IntProvider.CODEC.fieldOf("count_provider").forGetter(IntProviderIngredient::getCountProvider),
+            IntProviders.CODEC.fieldOf("count_provider").forGetter(IntProviderIngredient::getCountProvider),
             Codec.INT.optionalFieldOf("sampled_count", -1).forGetter(IRangedIngredient::getSampledCount)
     ).apply(instance, IntProviderIngredient::new));
     // spotless:on

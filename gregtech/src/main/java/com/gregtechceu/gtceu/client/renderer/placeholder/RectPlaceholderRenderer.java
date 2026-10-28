@@ -21,9 +21,9 @@ public class RectPlaceholderRenderer implements IPlaceholderRenderer {
         poseStack.pushPose();
         VertexConsumer consumer = buffer.getBuffer(GTRenderTypes.getMonitor());
         Matrix4f pose = poseStack.last().pose();
-        float minX = 0, maxX = tag.getFloat("width");
-        float minY = 0, maxY = tag.getFloat("height");
-        int color = tag.getInt("color");
+        float minX = 0, maxX = tag.getFloatOr("width", 0f);
+        float minY = 0, maxY = tag.getFloatOr("height", 0f);
+        int color = tag.getIntOr("color", 0);
 
         consumer.addVertex(pose, minX, maxY, 0).setColor(color).setLight(LightCoordsUtil.FULL_BRIGHT);
         consumer.addVertex(pose, maxX, maxY, 0).setColor(color).setLight(LightCoordsUtil.FULL_BRIGHT);
