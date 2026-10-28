@@ -1,0 +1,16 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "part1": {
+      "parent": "pneumaticcraft:block/air_cannon_base"
+    },
+    "part2": {
+      "parent": "pneumaticcraft:block/assembly_connector_edge"
+    }
+  },
+  "textures": {
+    "particle": "pneumaticcraft:block/compressed_iron_block"
+  }
+}
+
+

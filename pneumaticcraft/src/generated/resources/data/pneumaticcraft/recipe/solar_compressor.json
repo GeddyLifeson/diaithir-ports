@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:compressed_iron_block",
+    "G": "pneumaticcraft:compressed_iron_gear",
+    "P": "pneumaticcraft:printed_circuit_board",
+    "T": "pneumaticcraft:advanced_pressure_tube",
+    "W": "pneumaticcraft:solar_cell"
+  },
+  "pattern": [
+    "WWW",
+    "PGP",
+    "TBT"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:solar_compressor"
+  }
+}

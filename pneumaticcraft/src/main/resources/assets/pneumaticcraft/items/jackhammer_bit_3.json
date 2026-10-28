@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "pneumaticcraft:item/jackhammer_bit_3",
+    "tints": [
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 0
+      }
+    ]
+  }
+}

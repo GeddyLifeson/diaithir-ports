@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "pneumaticcraft:printed_circuit_board",
+    "P": "#pneumaticcraft:plastic_sheets"
+  },
+  "pattern": [
+    "PPP",
+    "PCP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "pneumaticcraft:programming_puzzle"
+  }
+}

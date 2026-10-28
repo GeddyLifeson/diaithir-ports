@@ -7,4 +7,6 @@ repos:
         name: no committed tokens
         entry: detect-secrets-hook --disable-plugin HexHighEntropyString --disable-plugin Base64HighEntropyString
         language: python
+        # PneumaticCraft lang files contain translation keys such as "gui.pastebin.password" (false positives)
+        exclude: ^pneumaticcraft/src/main/resources/assets/pneumaticcraft/lang/
         additional_dependencies: [detect-secrets==1.5.0]

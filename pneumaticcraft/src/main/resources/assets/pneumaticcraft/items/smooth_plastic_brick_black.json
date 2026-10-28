@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "pneumaticcraft:item/smooth_plastic_brick_black",
+    "tints": [
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "pneumaticcraft:fluid_mixer",
+  "fluid_output": {
+    "amount": 50,
+    "id": "pneumaticcraft:biodiesel"
+  },
+  "input1": {
+    "ingredient": "#c:plantoil",
+    "amount": 25
+  },
+  "input2": {
+    "ingredient": "#c:ethanol",
+    "amount": 25
+  },
+  "item_output": {
+    "count": 1,
+    "id": "pneumaticcraft:glycerol"
+  },
+  "pressure": 2.0,
+  "time": 300
+}

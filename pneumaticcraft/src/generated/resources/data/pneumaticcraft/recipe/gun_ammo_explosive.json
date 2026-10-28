@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": "minecraft:tnt",
+    "2": "minecraft:tnt",
+    "A": "pneumaticcraft:gun_ammo",
+    "C": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    " A ",
+    "C1C",
+    "C2C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:gun_ammo_explosive"
+  }
+}

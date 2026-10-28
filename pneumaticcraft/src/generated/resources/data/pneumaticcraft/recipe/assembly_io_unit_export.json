@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:printed_circuit_board",
+    "C": "pneumaticcraft:pneumatic_cylinder",
+    "H": "minecraft:dropper",
+    "I": "#c:ingots/compressed_iron"
+  },
+  "pattern": [
+    "HCC",
+    "  C",
+    "IBI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:assembly_io_unit_export"
+  }
+}

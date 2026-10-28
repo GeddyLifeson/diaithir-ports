@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "pneumaticcraft:cannon_barrel",
+    "I": "#c:ingots/compressed_iron",
+    "P": "#pneumaticcraft:plastic_sheets"
+  },
+  "pattern": [
+    "PIP",
+    "PIP",
+    "PBP"
+  ],
+  "result": {
+    "count": 2,
+    "id": "pneumaticcraft:pneumatic_cylinder"
+  }
+}

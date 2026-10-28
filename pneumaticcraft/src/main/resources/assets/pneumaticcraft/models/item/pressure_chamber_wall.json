@@ -1,0 +1,6 @@
+{
+  "parent": "pneumaticcraft:block/pressure_chamber_wall_none",
+  "textures":{
+    "all": "pneumaticcraft:block/pressure_chamber/pressure_chamber_wall"
+  }
+}

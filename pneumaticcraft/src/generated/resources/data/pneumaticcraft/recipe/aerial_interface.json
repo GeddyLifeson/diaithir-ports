@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:ender_pearl",
+    "H": "pneumaticcraft:omnidirectional_hopper",
+    "S": "minecraft:nether_star",
+    "T": "pneumaticcraft:advanced_pressure_tube",
+    "W": "pneumaticcraft:pressure_chamber_wall"
+  },
+  "pattern": [
+    "WHW",
+    "ESE",
+    "WTW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:aerial_interface"
+  }
+}

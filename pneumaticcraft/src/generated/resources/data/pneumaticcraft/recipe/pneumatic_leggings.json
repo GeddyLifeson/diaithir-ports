@@ -1,0 +1,19 @@
+{
+  "type": "pneumaticcraft:crafting_shaped_pressurizable",
+  "category": "misc",
+  "key": {
+    "A": "pneumaticcraft:compressed_iron_leggings",
+    "C": "pneumaticcraft:air_canister",
+    "I": "#c:ingots/compressed_iron",
+    "P": "pneumaticcraft:printed_circuit_board"
+  },
+  "pattern": [
+    "CPC",
+    "CAC",
+    "I I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:pneumatic_leggings"
+  }
+}

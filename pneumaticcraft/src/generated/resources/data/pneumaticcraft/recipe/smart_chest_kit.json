@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "pneumaticcraft:smart_chest",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    " C",
+    "S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "pneumaticcraft:smart_chest_kit"
+  }
+}
