@@ -63,8 +63,47 @@ public class AreaRenderer {
         }
 
         RenderType type = ModRenderTypes.getBlockHilightLine(disableDepthTest, disableWriteMask);
-        render(matrixStack, buffer.getBuffer(type));
+        renderEdges(matrixStack, buffer.getBuffer(type));
         RenderUtils.finishBuffer(buffer, type);
+    }
+
+    private void renderEdges(PoseStack matrixStack, VertexConsumer wr) {
+        int[] cols = RenderUtils.decomposeColor(color);
+        Level level = ClientUtils.getClientLevel();
+        for (BlockPos pos : showingPositions) {
+            matrixStack.pushPose();
+            double start = drawShapes ? 0 : (1 - size) / 2.0;
+            matrixStack.translate(pos.getX() + start, pos.getY() + start, pos.getZ() + start);
+            PoseStack.Pose pose = matrixStack.last();
+            if (drawShapes) {
+                BlockState state = level.getBlockState(pos);
+                VoxelShape shape = state.getBlock() instanceof AbstractCamouflageBlock c ?
+                        c.getUncamouflagedShape(state, level, pos, CollisionContext.empty()) :
+                        state.getShape(level, pos, CollisionContext.empty());
+                shape.forAllBoxes((x1, y1, z1, x2, y2, z2) -> box(wr, pose, (float) x1, (float) y1, (float) z1, (float) x2, (float) y2, (float) z2, cols));
+            } else {
+                box(wr, pose, 0, 0, 0, size, size, size, cols);
+            }
+            matrixStack.popPose();
+        }
+    }
+
+    private static void edge(VertexConsumer wr, PoseStack.Pose pose, float x1, float y1, float z1, float x2, float y2, float z2, int[] c) {
+        float nx = x2 - x1, ny = y2 - y1, nz = z2 - z1;
+        float d = (float) Math.sqrt(nx * nx + ny * ny + nz * nz);
+        if (d == 0) return;
+        nx /= d; ny /= d; nz /= d;
+        wr.addVertex(pose, x1, y1, z1).setColor(c[1], c[2], c[3], c[0]).setNormal(pose, nx, ny, nz).setLineWidth(2f);
+        wr.addVertex(pose, x2, y2, z2).setColor(c[1], c[2], c[3], c[0]).setNormal(pose, nx, ny, nz).setLineWidth(2f);
+    }
+
+    private static void box(VertexConsumer wr, PoseStack.Pose p, float x1, float y1, float z1, float x2, float y2, float z2, int[] c) {
+        edge(wr, p, x1, y1, z1, x2, y1, z1, c); edge(wr, p, x1, y2, z1, x2, y2, z1, c);
+        edge(wr, p, x1, y1, z2, x2, y1, z2, c); edge(wr, p, x1, y2, z2, x2, y2, z2, c);
+        edge(wr, p, x1, y1, z1, x1, y2, z1, c); edge(wr, p, x2, y1, z1, x2, y2, z1, c);
+        edge(wr, p, x1, y1, z2, x1, y2, z2, c); edge(wr, p, x2, y1, z2, x2, y2, z2, c);
+        edge(wr, p, x1, y1, z1, x1, y1, z2, c); edge(wr, p, x2, y1, z1, x2, y1, z2, c);
+        edge(wr, p, x1, y2, z1, x1, y2, z2, c); edge(wr, p, x2, y2, z1, x2, y2, z2, c);
     }
 
     private void render(PoseStack matrixStack, VertexConsumer builder) {

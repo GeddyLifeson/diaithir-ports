@@ -76,8 +76,28 @@ All client code compiles and the client boots and joins a world (screenshots in 
   `RegisterGuiLayersEvent`, 3D overlay via `RenderLevelStageEvent.AfterTranslucentFeatures`.
 - Particles (air, bullet), key mappings with registered categories, micromissile tooltip, client mod entry class.
 
-Known client gaps (not ported): area rendering (`AreaRenderManager` is a no-op), camouflage block model,
-minigun special item renderer, armor colour tint and elytra layer, jackhammer drill bit item property,
-block destroy particle handler, ProgWidget in-world renderers, AE2 branch of the logistics requester screen.
-Only the Programmer/Security station screens and the BER/entity/tube visuals were screenshot-checked; the armor
-HUD and most other screens compile but have not been exercised in play.
+## Client restoration (fourth pass)
+
+- Area rendering: `AreaRenderManager` restored on `RenderLevelStageEvent.AfterTranslucentFeatures` (block entity area
+  display, GPS tools, camo applicator highlight, drone debug, jackhammer preview, coordinate tracker). Edges are drawn
+  as real lines (26.1 line render types need normal and line width). Faces use `debugQuads` and do not honour xray.
+- Camouflage: `CamoBlockStateModel` wraps the baked model of every `AbstractCamouflageBlock` (via
+  `ModelEvent.ModifyBakingResult`) and renders the camouflage block's model parts from the block entity model data.
+  Chunk render layer follows the base block, so camouflage with translucent blocks may draw incorrectly.
+- Minigun: `MinigunSpecialRenderer` (special item model) draws the animated model when the item has an owner
+  entity id; otherwise the static item model is used (`items/minigun.json`, a `has_component` condition). The pose
+  of the animated model was not tuned.
+- Tints: item JSON uses the `pneumaticcraft:tint` item tint source (84 item definitions patched); block tint sources
+  are registered for every `ITintableBlock` (`ColorRegistration`). Worn armor primary colour uses the dyed colour via
+  the equipment asset; secondary and eyepiece colours of worn armor are NOT tinted (equipment layers only support the
+  dyed colour). Inventory icons are tinted correctly.
+- Elytra upgrade: `PneumaticElytraLayer` draws wings from the `pneumatic_wings` equipment asset when the upgrade is
+  usable. Not visually checked.
+- Jackhammer drill bit: `pneumaticcraft:drill_bit` range property and `range_dispatch` in `items/jackhammer.json`.
+- Block destroy particles (`PARTICLE_HANDLER`), moving sounds (`MovingSounds` restored), 3D text (`renderString3d`),
+  ProgWidget item renderers (crafting, item filter) registered in `PneumaticCraftRepressurizedClient`.
+
+Known remaining client gaps: worn armor secondary/eyepiece tint, AE2 branch of the logistics requester screen,
+camouflage tint, xray for area faces. Verified by screenshot this pass: tinted bricks, area highlight, first-person
+minigun and jackhammer. Not exercised: armor HUD, elytra layer, camo block model with a real camouflage, destroy
+particles, moving sounds (headless run has no audio device).

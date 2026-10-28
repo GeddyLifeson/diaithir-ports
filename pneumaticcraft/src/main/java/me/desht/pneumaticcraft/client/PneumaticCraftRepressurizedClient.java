@@ -89,6 +89,7 @@ public class PneumaticCraftRepressurizedClient {
 
         NeoForge.EVENT_BUS.register(HUDHandler.getInstance());
         NeoForge.EVENT_BUS.register(KeyHandler.getInstance());
+        NeoForge.EVENT_BUS.register(AreaRenderManager.getInstance());
     }
 
     private void onClientSetup(FMLClientSetupEvent event) {
@@ -127,7 +128,8 @@ public class PneumaticCraftRepressurizedClient {
 
     private void initLate() {
         // stuff to do on the main thread
-
+        ProgWidgetRenderer.registerItemRenderer(me.desht.pneumaticcraft.common.registry.ModProgWidgetTypes.CRAFTING.get(), ProgWidgetRenderer::renderCraftingItem);
+        ProgWidgetRenderer.registerItemRenderer(me.desht.pneumaticcraft.common.registry.ModProgWidgetTypes.ITEM_FILTER.get(), ProgWidgetRenderer::renderItemFilterItem);
 
         // freeze entity & block track handlers before registering client upgrade handlers
         EntityTrackHandler.getInstance().freeze();

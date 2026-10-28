@@ -124,4 +124,91 @@ public class PncRendererSetup {
         event.registerBlockEntityRenderer(ModBlockEntityTypes.VACUUM_PUMP.get(), me.desht.pneumaticcraft.client.render.blockentity.VacuumPumpRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntityTypes.SOLAR_COMPRESSOR.get(), me.desht.pneumaticcraft.client.render.blockentity.SolarCompressorRenderer::new);
     }
+
+    @SubscribeEvent
+    public static void wrapCamouflageModels(net.neoforged.neoforge.client.event.ModelEvent.ModifyBakingResult event) {
+        var map = event.getBakingResult().blockStateModels();
+        for (var e : new java.util.ArrayList<>(map.entrySet())) {
+            if (e.getKey().getBlock() instanceof me.desht.pneumaticcraft.common.block.AbstractCamouflageBlock) {
+                map.put(e.getKey(), new me.desht.pneumaticcraft.client.model.custom.CamoBlockStateModel(e.getValue()));
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerSpecialRenderers(net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent event) {
+        event.register(me.desht.pneumaticcraft.api.PneumaticRegistry.RL("minigun"), me.desht.pneumaticcraft.client.render.MinigunSpecialRenderer.Unbaked.MAP_CODEC);
+    }
+
+    public record DrillBitProperty() implements net.minecraft.client.renderer.item.properties.numeric.RangeSelectItemModelProperty {
+        public static final com.mojang.serialization.MapCodec<DrillBitProperty> MAP_CODEC = com.mojang.serialization.MapCodec.unit(new DrillBitProperty());
+
+        @Override
+        public float get(net.minecraft.world.item.ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.ItemOwner owner, int seed) {
+            if (me.desht.pneumaticcraft.common.item.JackHammerItem.getDrillBit(stack) == me.desht.pneumaticcraft.common.item.DrillBitItem.DrillBitType.NONE) return 0f;
+            if (level == null || !(owner != null && owner.asLivingEntity() instanceof net.minecraft.world.entity.player.Player player)) return 0.99f;
+            long l = me.desht.pneumaticcraft.client.sound.MovingSoundJackhammer.lastJackHammerTime(player);
+            if (l <= 20) return net.minecraft.util.Mth.sin((level.getGameTime() % 4 / 4f) * 3.141529f);
+            return 0.99f;
+        }
+
+        @Override
+        public com.mojang.serialization.MapCodec<DrillBitProperty> type() {
+            return MAP_CODEC;
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerItemProperties(net.neoforged.neoforge.client.event.RegisterRangeSelectItemModelPropertyEvent event) {
+        event.register(me.desht.pneumaticcraft.api.PneumaticRegistry.RL("drill_bit"), DrillBitProperty.MAP_CODEC);
+    }
+
+    public static final net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions PARTICLE_HANDLER = new net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions() {
+        @Override
+        public boolean addDestroyEffects(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, net.minecraft.client.particle.ParticleEngine manager) {
+            // like vanilla, but without forcing at least two particles per voxel axis (avoids huge clouds for thin shapes)
+            if (!(level instanceof net.minecraft.client.multiplayer.ClientLevel cl)) return false;
+            state.getShape(level, pos).forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> {
+                double xDif = Math.min(1, maxX - minX);
+                double yDif = Math.min(1, maxY - minY);
+                double zDif = Math.min(1, maxZ - minZ);
+                int xCount = net.minecraft.util.Mth.ceil(xDif / 0.25);
+                int yCount = net.minecraft.util.Mth.ceil(yDif / 0.25);
+                int zCount = net.minecraft.util.Mth.ceil(zDif / 0.25);
+                if (xCount > 0 && yCount > 0 && zCount > 0) {
+                    for (int x = 0; x < xCount; x++) {
+                        for (int y = 0; y < yCount; y++) {
+                            for (int z = 0; z < zCount; z++) {
+                                double d4 = (x + 0.5) / xCount;
+                                double d5 = (y + 0.5) / yCount;
+                                double d6 = (z + 0.5) / zCount;
+                                manager.add(new net.minecraft.client.particle.TerrainParticle(cl, pos.getX() + d4 * xDif + minX,
+                                        pos.getY() + d5 * yDif + minY, pos.getZ() + d6 * zDif + minZ, d4 - 0.5, d5 - 0.5, d6 - 0.5, state, pos));
+                            }
+                        }
+                    }
+                }
+            });
+            return true;
+        }
+    };
+
+    @SubscribeEvent
+    public static void registerClientExtensions(net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent event) {
+        net.minecraft.world.level.block.Block[] toAdd = me.desht.pneumaticcraft.common.registry.ModBlocks.BLOCKS.getEntries().stream()
+                .filter(h -> h.get() instanceof me.desht.pneumaticcraft.common.block.AbstractPneumaticCraftBlock)
+                .map(h -> (net.minecraft.world.level.block.Block) h.get())
+                .toArray(net.minecraft.world.level.block.Block[]::new);
+        event.registerBlock(PARTICLE_HANDLER, toAdd);
+    }
+
+    @SubscribeEvent
+    public static void addPlayerLayers(EntityRenderersEvent.AddLayers event) {
+        for (var skin : event.getSkins()) {
+            net.minecraft.client.renderer.entity.player.AvatarRenderer<net.minecraft.client.player.AbstractClientPlayer> r = event.getPlayerRenderer(skin);
+            if (r != null) {
+                r.addLayer(new me.desht.pneumaticcraft.client.render.pneumatic_armor.PneumaticElytraLayer(r, event.getEntityModels(), event.getContext().getEquipmentRenderer()));
+            }
+        }
+    }
 }

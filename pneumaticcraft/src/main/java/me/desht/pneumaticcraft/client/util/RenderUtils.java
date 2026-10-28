@@ -284,11 +284,13 @@ public class RenderUtils {
     }
 
     public static void renderString3d(Component str, float x, float y, int color, PoseStack matrixStack, MultiBufferSource buffer, boolean dropShadow, boolean disableDepthTest) {
-        // TODO 26.1: 3D text needs the submit API
+        net.minecraft.client.gui.Font fr = net.minecraft.client.Minecraft.getInstance().font;
+        fr.drawInBatch(str, x, y, color, dropShadow, matrixStack.last().pose(), buffer, disableDepthTest ? net.minecraft.client.gui.Font.DisplayMode.SEE_THROUGH : net.minecraft.client.gui.Font.DisplayMode.NORMAL, 0, net.minecraft.util.LightCoordsUtil.FULL_BRIGHT);
     }
 
     public static void renderString3d(FormattedCharSequence str, float x, float y, int color, PoseStack matrixStack, MultiBufferSource buffer, boolean dropShadow, boolean disableDepthTest) {
-        // TODO 26.1: 3D text needs the submit API
+        net.minecraft.client.gui.Font fr = net.minecraft.client.Minecraft.getInstance().font;
+        fr.drawInBatch(str, x, y, color, dropShadow, matrixStack.last().pose(), buffer, disableDepthTest ? net.minecraft.client.gui.Font.DisplayMode.SEE_THROUGH : net.minecraft.client.gui.Font.DisplayMode.NORMAL, 0, net.minecraft.util.LightCoordsUtil.FULL_BRIGHT);
     }
 
     public static void normalLine(VertexConsumer builder, PoseStack poseStack, float x1, float y1, float z1, float x2, float y2, float z2, float a, float r, float g, float b, boolean isStrip) {

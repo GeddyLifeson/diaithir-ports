@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "pneumaticcraft:item/creative_compressed_iron_block"
+    "model": "pneumaticcraft:item/creative_compressed_iron_block",
+    "tints": [
+      {
+        "type": "pneumaticcraft:tint",
+        "index": 0
+      }
+    ]
   }
 }

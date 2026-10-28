@@ -1,6 +1,55 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "pneumaticcraft:item/jackhammer"
+    "type": "minecraft:range_dispatch",
+    "property": "pneumaticcraft:drill_bit",
+    "scale": 1.0,
+    "entries": [
+      {
+        "threshold": 0.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_0"
+        }
+      },
+      {
+        "threshold": 0.1666,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_1"
+        }
+      },
+      {
+        "threshold": 0.3333,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_2"
+        }
+      },
+      {
+        "threshold": 0.5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_3"
+        }
+      },
+      {
+        "threshold": 0.6666,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_4"
+        }
+      },
+      {
+        "threshold": 0.8333,
+        "model": {
+          "type": "minecraft:model",
+          "model": "pneumaticcraft:item/jackhammer_bit_5"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "pneumaticcraft:item/jackhammer_bit_0"
+    }
   }
 }
