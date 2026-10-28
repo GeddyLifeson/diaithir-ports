@@ -62,5 +62,8 @@
 	"item.antique_atlas.compass_map": "Compass Map",
 	"item.antique_atlas.compass_map.native": "Ruindimek",
 	"item.antique_atlas.compass_map.lore": "Carry it to show a small map of your surroundings on screen.",
-	"key.antique_atlas.minimap": "Show or hide the minimap"
+	"key.antique_atlas.minimap": "Show or hide the minimap",
+	"gui.antique_atlas.claims.manage": "Manage claims",
+	"gui.antique_atlas.claims.counts": "Claimed %s/%s, loaded %s/%s",
+	"gui.antique_atlas.claims.hint": "Click claim, right-click unclaim, Shift for force-load"
 }

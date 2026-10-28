@@ -21,6 +21,8 @@ import java.util.List;
 public class ClaimsOverlay implements AtlasOverlay {
 	public static final Identifier ID = AntiqueAtlas.id("opac_claims");
 	public static boolean visible = true;
+	/** Claim manager mode: clicks on the map claim, unclaim, load or unload chunks. */
+	public static boolean managing = false;
 	private static final int MAX_CHUNKS = 30_000;
 
 	@Override
@@ -71,6 +73,19 @@ public class ClaimsOverlay implements AtlasOverlay {
 					g.setTooltipForNextFrame(Minecraft.getInstance().font, List.of(hover.name(), Component.translatable("gui.antique_atlas.claim").withStyle(ChatFormatting.GRAY)), java.util.Optional.empty(), mx, my);
 				}
 			}
+		}
+
+		if (managing) {
+			FtbChunksCompat.Counts n = FtbChunksCompat.counts();
+			Component head = n == null ? Component.translatable("gui.antique_atlas.claims.manage") : Component.translatable("gui.antique_atlas.claims.counts", n.claimed(), n.maxClaimed(), n.loaded(), n.maxLoaded());
+			var font = Minecraft.getInstance().font;
+			int hx = AtlasRenderer.MAP_BORDER_WIDTH + 4;
+			int hy = AtlasRenderer.MAP_BORDER_HEIGHT + 3;
+			Gfx.fill(g, hx - 2, hy - 2, hx + font.width(head) + 2, hy + 10, 0xA0000000);
+			g.text(font, head, hx, hy, 0xFFFFFFFF, true);
+			Component hint = Component.translatable("gui.antique_atlas.claims.hint");
+			Gfx.fill(g, hx - 2, hy + 11, hx + font.width(hint) + 2, hy + 23, 0xA0000000);
+			g.text(font, hint, hx, hy + 13, 0xFFCCCCCC, true);
 		}
 
 		for (FtbChunksCompat.Member m : FtbChunksCompat.teamMembers()) {

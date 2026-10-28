@@ -76,6 +76,7 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 	public final BookmarkButton addMarkerBookmark; // Button for placing a marker at current position, local to this Atlas instance.
 	public final BookmarkButton deleteMarkerBookmark; // Button for deleting local markers.
 	public final BookmarkButton markerVisibilityBookmark; // Button for showing/hiding all markers.
+	public BookmarkButton claimManageBookmark; // Button for claim manager mode (FTB Chunks).
 	public BookmarkButton claimsBookmark; // Button for showing/hiding the FTB Chunks claim overlay (only when that mod is present).
 	public final TextBookmarkButton resetScaleBookmark; // Button for displaying the scale, and setting the scale to 1 chunk / 1 tile / 16px.
 	public final BookmarkButton playerBookmark; // Button for restoring player's position at the center of the Atlas.
@@ -191,6 +192,16 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			claimsBookmark.setSelected(ClaimsOverlay.visible);
 			claimsBookmark.addListener(button -> {
 				ClaimsOverlay.visible = !ClaimsOverlay.visible;
+				claimsBookmark.setSelected(ClaimsOverlay.visible);
+			});
+			claimManageBookmark = new BookmarkButton(Component.translatable("gui.antique_atlas.claims.manage"), AntiqueAtlas.id("textures/gui/icons/claims_manage.png"), DyeColor.ORANGE.getTextureDiffuseColor(), null, 16, 16, false, false);
+			addChild(claimManageBookmark);
+			offsetSideButton(claimManageBookmark);
+			claimManageBookmark.setSelected(ClaimsOverlay.managing);
+			claimManageBookmark.addListener(button -> {
+				ClaimsOverlay.managing = !ClaimsOverlay.managing;
+				if (ClaimsOverlay.managing) ClaimsOverlay.visible = true;
+				claimManageBookmark.setSelected(ClaimsOverlay.managing);
 				claimsBookmark.setSelected(ClaimsOverlay.visible);
 			});
 		}
@@ -366,6 +377,16 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			return markerModal.mouseClicked(mouseX, mouseY, mouseState);
 		}
 		if (super.mouseClicked(mouseX, mouseY, mouseState)) return true;
+
+		if (ClaimsOverlay.managing && isMouseOverMap && state.is(NORMAL) && (mouseState == GLFW.GLFW_MOUSE_BUTTON_1 || mouseState == GLFW.GLFW_MOUSE_BUTTON_2)) {
+			int cx = screenXToWorldX(mouseX) >> 4;
+			int cz = screenYToWorldZ(mouseY) >> 4;
+			boolean left = mouseState == GLFW.GLFW_MOUSE_BUTTON_1;
+			folk.sisby.antique_atlas.compat.FtbChunksCompat.Op op = shiftDown()
+				? (left ? folk.sisby.antique_atlas.compat.FtbChunksCompat.Op.LOAD : folk.sisby.antique_atlas.compat.FtbChunksCompat.Op.UNLOAD)
+				: (left ? folk.sisby.antique_atlas.compat.FtbChunksCompat.Op.CLAIM : folk.sisby.antique_atlas.compat.FtbChunksCompat.Op.UNCLAIM);
+			if (folk.sisby.antique_atlas.compat.FtbChunksCompat.requestChange(op, cx, cz)) return true;
+		}
 
 		// If clicked on the map, start dragging
 		if (state.is(NORMAL) && hoveredLandmark != null && hoveredLandmark.contains(LandmarkComponentTypes.POS) && !hoveredLandmark.owner().equals(WorldLandmarks.GLOBAL) && SurveyorClient.canModify(hoveredLandmark.owner()) && mouseState == GLFW.GLFW_MOUSE_BUTTON_2) {

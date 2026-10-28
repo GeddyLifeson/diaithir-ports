@@ -109,6 +109,65 @@ public final class FtbChunksCompat {
 		}
 	}
 
+	public enum Op { CLAIM, UNCLAIM, LOAD, UNLOAD }
+
+	public record Counts(int claimed, int maxClaimed, int loaded, int maxLoaded) {
+	}
+
+	private static Method send, xzOf, genData;
+	private static java.lang.reflect.Constructor<?> packetCtor;
+	private static Class<?> opClass;
+	private static Object ftbClientInstance;
+	private static boolean mgmtResolved, mgmtOk;
+
+	private static boolean resolveManagement() {
+		if (!mgmtResolved) {
+			mgmtResolved = true;
+			try {
+				opClass = Class.forName("dev.ftb.mods.ftbchunks.api.event.ChunkChangeEvent$Operation");
+				Class<?> xz = Class.forName("dev.ftb.mods.ftblibrary.math.XZ");
+				xzOf = xz.getMethod("of", int.class, int.class);
+				packetCtor = Class.forName("dev.ftb.mods.ftbchunks.net.RequestChunkChangePacket").getConstructor(opClass, Set.class, boolean.class, Optional.class);
+				send = Class.forName("dev.ftb.mods.ftblibrary.platform.network.Play2ServerNetworking").getMethod("send", net.minecraft.network.protocol.common.custom.CustomPacketPayload.class);
+				Class<?> client = Class.forName("dev.ftb.mods.ftbchunks.client.FTBChunksClient");
+				ftbClientInstance = client.getField("INSTANCE").get(null);
+				genData = client.getMethod("getGeneralChunkData");
+				mgmtOk = true;
+			} catch (ReflectiveOperationException | LinkageError e) {
+				AntiqueAtlas.LOGGER.warn("[Antique Atlas] FTB Chunks claim management unavailable", e);
+			}
+		}
+		return mgmtOk;
+	}
+
+	/** Asks the server to claim, unclaim, force-load or unload one chunk. The server applies FTB Chunks' own permission and limit checks. */
+	public static boolean requestChange(Op op, int chunkX, int chunkZ) {
+		if (!available() || !resolveManagement()) return false;
+		try {
+			Object operation = opClass.getField(op.name()).get(null);
+			Object packet = packetCtor.newInstance(operation, Set.of(xzOf.invoke(null, chunkX, chunkZ)), false, Optional.empty());
+			send.invoke(null, packet);
+			return true;
+		} catch (ReflectiveOperationException | RuntimeException e) {
+			return false;
+		}
+	}
+
+	/** Claimed and force-loaded counts with their limits, as last sent by the server, or null when unknown. */
+	public static @Nullable Counts counts() {
+		if (!available() || !resolveManagement()) return null;
+		try {
+			Object d = genData.invoke(ftbClientInstance);
+			if (d == null) return null;
+			Class<?> c = d.getClass();
+			int maxClaim = (Integer) c.getMethod("maxClaimChunks").invoke(d);
+			if (maxClaim <= 0) return null;
+			return new Counts((Integer) c.getMethod("claimed").invoke(d), maxClaim, (Integer) c.getMethod("loaded").invoke(d), (Integer) c.getMethod("maxForceLoadChunks").invoke(d));
+		} catch (ReflectiveOperationException | RuntimeException e) {
+			return null;
+		}
+	}
+
 	/** Other members of the local player's FTB team that the client currently has loaded, with their positions. */
 	@SuppressWarnings("unchecked")
 	public static List<Member> teamMembers() {
