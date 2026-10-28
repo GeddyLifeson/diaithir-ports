@@ -23,7 +23,9 @@ neoForge {
         }
         client {
             client()
-            jvmArgument '-Xmx4G'
+            jvmArgument '-Xmx6G'
+            programArguments.addAll('--username', 'Dev')
+            if (project.hasProperty('quickplay')) programArguments.addAll('--quickPlaySingleplayer', project.property('quickplay'))
         }
     }
     mods { pneumaticcraft { sourceSet(sourceSets.main) } }
