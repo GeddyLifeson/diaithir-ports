@@ -36,6 +36,16 @@ public class ClientModEvents {
     }
 
     @SubscribeEvent
+    public static void registerTooltipComponents(net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent event) {
+        event.register(com.github.alexmodguy.alexscaves.server.item.tooltip.SackOfSatingTooltip.class, com.github.alexmodguy.alexscaves.client.render.item.tooltip.ClientSackOfSatingTooltip::new);
+    }
+
+    @SubscribeEvent
+    public static void registerPipelines(net.neoforged.neoforge.client.event.RegisterRenderPipelinesEvent event) {
+        com.github.alexmodguy.alexscaves.client.render.ACRenderPipelines.register(event);
+    }
+
+    @SubscribeEvent
     public static void registerSpecialModels(net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent event) {
         event.register(Identifier.fromNamespaceAndPath(com.github.alexmodguy.alexscaves.AlexsCaves.MODID, "legacy_item"), com.github.alexmodguy.alexscaves.client.render.item.LegacyItemSpecialRenderer.CODEC);
     }

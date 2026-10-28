@@ -2,7 +2,8 @@ package com.github.alexmodguy.alexscaves.client.render.item.tooltip;
 
 import com.github.alexmodguy.alexscaves.server.item.tooltip.SackOfSatingTooltip;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
@@ -19,7 +20,7 @@ public class ClientSackOfSatingTooltip implements ClientTooltipComponent {
     }
 
     @Override
-    public int getHeight() {
+    public int getHeight(Font font) {
         return tooltipComponent.getHungerValue() == 0 ? 0 : 11;
     }
 
@@ -28,19 +29,19 @@ public class ClientSackOfSatingTooltip implements ClientTooltipComponent {
         return isTruncated() ? font.width(getHungerValueMultiplierText()) + 9 : Mth.ceil(tooltipComponent.getHungerValue() / 2.0D) * 9;
     }
 
-    public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics) {
+    public void extractImage(Font font, int x, int y, int w, int h, GuiGraphicsExtractor guiGraphics) {
         int hungerValue = tooltipComponent.getHungerValue();
         int shanks = (int) Math.ceil(hungerValue / 2.0D);
         if (isTruncated()) {
-            guiGraphics.blitSprite(FOOD_EMPTY_SPRITE, x, y, 9, 9);
-            guiGraphics.blitSprite(FOOD_FULL_SPRITE, x, y, 9, 9);
-            font.drawInBatch(getHungerValueMultiplierText(), (float)x + 10, (float)y + 1, 0XA8A8A8, true, guiGraphics.pose().last().pose(), guiGraphics.bufferSource(), Font.DisplayMode.NORMAL, 0, 15728880);
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, FOOD_EMPTY_SPRITE, x, y, 9, 9);
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, FOOD_FULL_SPRITE, x, y, 9, 9);
+            guiGraphics.text(font, getHungerValueMultiplierText(), x + 10, y + 1, 0xFFA8A8A8, true);
         } else {
             for (int i = 0; i < shanks; i++) {
                 boolean halfShank = i == 0 && hungerValue % 2 == 1;
                 //background outline
-                guiGraphics.blitSprite(FOOD_EMPTY_SPRITE, x + i * 9, y, 9, 9);
-                guiGraphics.blitSprite(halfShank ? FOOD_HALF_SPRITE : FOOD_FULL_SPRITE, x + i * 9, y, 9, 9);
+                guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, FOOD_EMPTY_SPRITE, x + i * 9, y, 9, 9);
+                guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, halfShank ? FOOD_HALF_SPRITE : FOOD_FULL_SPRITE, x + i * 9, y, 9, 9);
             }
         }
     }

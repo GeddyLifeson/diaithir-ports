@@ -86,7 +86,7 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
         if (d.irradiated > 0 && texture != null) {
             int level = d.irradiated;
             float alpha = level >= IrradiatedEffect.BLUE_LEVEL ? 0.9F : Math.min(level * 0.33F, 1F);
-            collector.submitModel(model, state, poseStack, level >= IrradiatedEffect.BLUE_LEVEL ? ACRenderTypes.getBlueRadiationGlow(texture) : ACRenderTypes.getRadiationGlow(texture), light, overlay, ARGB.colorFromFloat(alpha, 1F, 1F, 1F), null, state.outlineColor, null);
+            collector.order(1).submitModel(model, state, poseStack, level >= IrradiatedEffect.BLUE_LEVEL ? ACRenderTypes.getBlueRadiationGlow(texture) : ACRenderTypes.getRadiationGlow(texture), light, overlay, ARGB.colorFromFloat(alpha, 1F, 1F, 1F), null, state.outlineColor, null);
         }
         if (d.bubbled) {
             float size = (float) Math.ceil(Math.max(d.height, d.width));
@@ -102,10 +102,10 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
             rec.flush(collector);
         }
         if (d.darkness > 0 && texture != null) {
-            collector.submitModel(model, state, poseStack, RenderTypes.entityTranslucent(texture), 0, overlay, ARGB.colorFromFloat(d.darkness, 0F, 0F, 0F), null, state.outlineColor, null);
+            collector.order(2).submitModel(model, state, poseStack, RenderTypes.entityTranslucent(texture), 0, overlay, ARGB.colorFromFloat(d.darkness, 0F, 0F, 0F), null, state.outlineColor, null);
         }
         if (d.sugarRush && model instanceof HumanoidModel<?>) {
-            collector.submitModel(model, state, poseStack, RenderTypes.entityCutout(TEXTURE_SUGAR_RUSH), light, overlay, -1, null, state.outlineColor, null);
+            collector.order(1).submitModel(model, state, poseStack, RenderTypes.entityCutout(TEXTURE_SUGAR_RUSH), light, overlay, -1, null, state.outlineColor, null);
         }
     }
 
