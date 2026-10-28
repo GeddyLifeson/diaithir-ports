@@ -480,12 +480,22 @@ ServerEvents.recipes(event => {
   // koji: a mould culture on steamed rice
   event.shapeless('2x ' + DRK_ITEM + 'koji', ['croptopia:rice', 'croptopia:rice', 'minecraft:brown_mushroom', DRK_ITEM + 'barm'])
   // each harvest crafts back into seeds
-  DRINK_CROPS.forEach(c => event.shapeless('2x ' + DRK_ITEM + c[0] + '_seeds', [DRK_ITEM + c[2]]))
+  // the crop block's seed item id depends on the KubeJS crop builder; use whichever id is registered, skip otherwise
+  DRINK_CROPS.forEach(c => {
+    let seed = [c[0] + '_seeds', c[0] + '_seeds_seeds', c[0] + '_seed'].map(n => DRK_ITEM + n).find(id => Item.exists(id))
+    if (seed && Item.exists(DRK_ITEM + c[2])) event.shapeless('2x ' + seed, [DRK_ITEM + c[2]])
+  })
   event.shapeless('2x ' + DRK_ITEM + 'barm', ['minecraft:wheat', 'minecraft:honey_bottle'])
   // pressing: Create's mechanical press when present, a plain crafting grid otherwise
   ;[['croptopia:grape', 'grape_must'], ['minecraft:apple', 'apple_must']].forEach(([fruit, must]) => {
     event.shapeless('2x ' + DRK_ITEM + must, [fruit, fruit, fruit])
-    try { if (Item.exists('create:mechanical_press')) event.recipes.create.pressing(DRK_ITEM + must, fruit) } catch (e) { console.warn('[drinks] Create pressing for ' + must + ' skipped: ' + e) }
+    // Create 6 data format; applies only when Create (diaithir_create) is loaded
+    try {
+      event.custom({
+        'neoforge:conditions': [{ type: 'neoforge:mod_loaded', modid: 'diaithir_create' }],
+        type: 'create:pressing', ingredient: fruit, results: [{ id: DRK_ITEM + must, count: 1 }]
+      }).id('diaithir_drinks:pressing/' + must)
+    } catch (e) { console.warn('[drinks] Create pressing for ' + must + ' skipped: ' + e) }
   })
   ;['croptopia:barley', 'biomesoplenty:barley', 'minecraft:wheat'].filter(id => Item.exists(id)).forEach(id => {
     event.smoking(DRK_ITEM + 'malted_barley', id)

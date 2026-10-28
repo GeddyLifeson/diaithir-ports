@@ -1,0 +1,921 @@
+{
+ "starts": [
+  {
+   "slug": "diaithir",
+   "name": "Diaithir",
+   "region": "Creag Ruadh",
+   "x": -251201,
+   "z": -1541408
+  },
+  {
+   "slug": "sahul_pleistocene_core_tool_and_scraper_tradition",
+   "name": "Sahul Pleistocene core-tool and scraper tradition",
+   "region": "Australia",
+   "x": 3170379,
+   "z": 768466
+  },
+  {
+   "slug": "sundaland_and_wallacea_pleistocene_holocene_foragers",
+   "name": "Sundaland and Wallacea Pleistocene-Holocene foragers",
+   "region": "Island SE Asia",
+   "x": 2532890,
+   "z": -84962
+  },
+  {
+   "slug": "balangoda_culture",
+   "name": "Balangoda culture",
+   "region": "Sri Lanka",
+   "x": 1794470,
+   "z": -149509
+  },
+  {
+   "slug": "tasmanian_late_pleistocene_foragers_kutikina_warreen",
+   "name": "Tasmanian late Pleistocene foragers (Kutikina, Warreen)",
+   "region": "Tasmania",
+   "x": 3248675,
+   "z": 1034693
+  },
+  {
+   "slug": "dyuktai_culture",
+   "name": "Dyuktai culture",
+   "region": "Yakutia and Siberian Arctic",
+   "x": 3008521,
+   "z": -1703286
+  },
+  {
+   "slug": "iberomaurusian",
+   "name": "Iberomaurusian",
+   "region": "N Africa coast (Oranian in Libya)",
+   "x": -21892,
+   "z": -817427
+  },
+  {
+   "slug": "robberg_industry",
+   "name": "Robberg industry",
+   "region": "S Africa",
+   "x": 580353,
+   "z": 669205
+  },
+  {
+   "slug": "magdalenian",
+   "name": "Magdalenian",
+   "region": "W and C Europe",
+   "x": 24490,
+   "z": -1074611
+  },
+  {
+   "slug": "yenisei_upper_palaeolithic_afontova_gora_kokorevo",
+   "name": "Yenisei Upper Palaeolithic (Afontova Gora, Kokorevo)",
+   "region": "Upper Yenisei",
+   "x": 2066462,
+   "z": -1511018
+  },
+  {
+   "slug": "north_china_late_palaeolithic_microblade_groups_shuidonggou_xiachuan",
+   "name": "North China late Palaeolithic microblade groups (Shuidonggou, Xiachuan)",
+   "region": "N China",
+   "x": 2380011,
+   "z": -918712
+  },
+  {
+   "slug": "zarzian",
+   "name": "Zarzian",
+   "region": "Zagros",
+   "x": 1034158,
+   "z": -842765
+  },
+  {
+   "slug": "early_pottery_foragers_of_s_china_and_the_yangtze_yuchanyan_xianrendong",
+   "name": "Early pottery foragers of S China and the Yangtze (Yuchanyan, Xianrendong)",
+   "region": "S and C China",
+   "x": 2455708,
+   "z": -570240
+  },
+  {
+   "slug": "transbaikal_and_mongolian_late_palaeolithic_microblade_groups",
+   "name": "Transbaikal and Mongolian late Palaeolithic microblade groups",
+   "region": "Transbaikal and Mongolia",
+   "x": 2359973,
+   "z": -1324259
+  },
+  {
+   "slug": "geometric_kebaran",
+   "name": "Geometric Kebaran",
+   "region": "Levant",
+   "x": 790368,
+   "z": -768466
+  },
+  {
+   "slug": "epipalaeolithic_egypt_isnan_afian_qarunian",
+   "name": "Epipalaeolithic Egypt (Isnan, Afian, Qarunian)",
+   "region": "Nile Valley and Fayum",
+   "x": 687954,
+   "z": -675129
+  },
+  {
+   "slug": "incipient_jomon",
+   "name": "Incipient Jomon",
+   "region": "Japan",
+   "x": 2947718,
+   "z": -1097458
+  },
+  {
+   "slug": "hamburgian",
+   "name": "Hamburgian",
+   "region": "N European Plain and Scotland (Howburn)",
+   "x": -84603,
+   "z": -1495839
+  },
+  {
+   "slug": "eburran",
+   "name": "Eburran",
+   "region": "Kenya Rift Valley",
+   "x": 831681,
+   "z": 68325
+  },
+  {
+   "slug": "qadan",
+   "name": "Qadan",
+   "region": "Nubia",
+   "x": 676823,
+   "z": -445141
+  },
+  {
+   "slug": "sebilian",
+   "name": "Sebilian",
+   "region": "Nubia",
+   "x": 732482,
+   "z": -553120
+  },
+  {
+   "slug": "abriense_tequendamense_and_el_jobo",
+   "name": "Abriense, Tequendamense and El Jobo",
+   "region": "Colombian Andes and Venezuela",
+   "x": -1625265,
+   "z": -129352
+  },
+  {
+   "slug": "monte_verde_ii",
+   "name": "Monte Verde II",
+   "region": "S Chile",
+   "x": -1631944,
+   "z": 1017275
+  },
+  {
+   "slug": "natufian",
+   "name": "Natufian",
+   "region": "Levant",
+   "x": 789033,
+   "z": -749252
+  },
+  {
+   "slug": "federmesser_group_tjongerian_havelte",
+   "name": "Federmesser group (Tjongerian, Havelte)",
+   "region": "NW and C Europe lowlands",
+   "x": 139595,
+   "z": -1281308
+  },
+  {
+   "slug": "final_epigravettian",
+   "name": "Final Epigravettian",
+   "region": "Italy and the Balkans",
+   "x": 756973,
+   "z": -1114883
+  },
+  {
+   "slug": "russian_plain_volga_and_urals_final_palaeolithic_and_early_mesolithic_foragers",
+   "name": "Russian Plain, Volga and Urals Final Palaeolithic and Early Mesolithic foragers",
+   "region": "E Europe and Urals",
+   "x": 1257910,
+   "z": -1396600
+  },
+  {
+   "slug": "west_african_late_stone_age_and_early_pottery_foragers_iwo_eleru_ounjougou",
+   "name": "West African Late Stone Age and early pottery foragers (Iwo Eleru, Ounjougou)",
+   "region": "W Africa",
+   "x": 115031,
+   "z": -167833
+  },
+  {
+   "slug": "nenana_complex",
+   "name": "Nenana complex",
+   "region": "Interior Alaska",
+   "x": -3319394,
+   "z": -1898668
+  },
+  {
+   "slug": "bromme_lyngby_culture",
+   "name": "Bromme (Lyngby) culture",
+   "region": "Denmark, S Sweden, Schleswig-Holstein",
+   "x": 250097,
+   "z": -1490595
+  },
+  {
+   "slug": "clovis",
+   "name": "Clovis",
+   "region": "N America south of the ice",
+   "x": -2148466,
+   "z": -1108629
+  },
+  {
+   "slug": "creswellian",
+   "name": "Creswellian",
+   "region": "Britain",
+   "x": -24490,
+   "z": -1404016
+  },
+  {
+   "slug": "eastern_paleoindian_fluted_point_groups_gainey_barnes_cumberland_debert",
+   "name": "Eastern Paleoindian fluted-point groups (Gainey, Barnes, Cumberland, Debert)",
+   "region": "Eastern Woodlands",
+   "x": -1413758,
+   "z": -1137473
+  },
+  {
+   "slug": "fishtail_point_tradition",
+   "name": "Fishtail point tradition",
+   "region": "South America",
+   "x": -1467191,
+   "z": 632201
+  },
+  {
+   "slug": "late_paleoindian_and_early_archaic_of_mesoamerica_lerma_santa_marta",
+   "name": "Late Paleoindian and Early Archaic of Mesoamerica (Lerma, Santa Marta)",
+   "region": "Mexico and Central America",
+   "x": -1795387,
+   "z": -182902
+  },
+  {
+   "slug": "paijan_culture",
+   "name": "Paijan culture",
+   "region": "N Peruvian coast",
+   "x": -1762559,
+   "z": 171575
+  },
+  {
+   "slug": "paleocoastal_pacific_channel_islands_pacific_northwest",
+   "name": "Paleocoastal Pacific (Channel Islands, Pacific Northwest)",
+   "region": "Pacific coast of N America",
+   "x": -2679905,
+   "z": -806566
+  },
+  {
+   "slug": "pedra_pintada_lower_amazon",
+   "name": "Pedra Pintada (Lower Amazon)",
+   "region": "Lower Amazon",
+   "x": -1203858,
+   "z": 44495
+  },
+  {
+   "slug": "swiderian",
+   "name": "Swiderian",
+   "region": "Poland, Belarus, Baltic",
+   "x": 427467,
+   "z": -1310168
+  },
+  {
+   "slug": "trialetian",
+   "name": "Trialetian",
+   "region": "South Caucasus",
+   "x": 998026,
+   "z": -1023680
+  },
+  {
+   "slug": "ushki_lake_kamchatka",
+   "name": "Ushki Lake (Kamchatka)",
+   "region": "Kamchatka",
+   "x": 3564450,
+   "z": -1515670
+  },
+  {
+   "slug": "western_stemmed_tradition",
+   "name": "Western Stemmed Tradition",
+   "region": "Great Basin and Columbia Plateau",
+   "x": -2558122,
+   "z": -1089996
+  },
+  {
+   "slug": "ahrensburgian",
+   "name": "Ahrensburgian",
+   "region": "N European Plain and S Scandinavia",
+   "x": 227982,
+   "z": -1421581
+  },
+  {
+   "slug": "folsom",
+   "name": "Folsom",
+   "region": "Great Plains",
+   "x": -2313756,
+   "z": -878434
+  },
+  {
+   "slug": "las_vegas_culture",
+   "name": "Las Vegas culture",
+   "region": "Santa Elena Peninsula, Ecuador",
+   "x": -1800230,
+   "z": 49605
+  },
+  {
+   "slug": "dalton_tradition",
+   "name": "Dalton tradition",
+   "region": "SE United States and Midwest",
+   "x": -2009985,
+   "z": -851062
+  },
+  {
+   "slug": "nanzhuangtou",
+   "name": "Nanzhuangtou",
+   "region": "N China plain",
+   "x": 2560348,
+   "z": -950072
+  },
+  {
+   "slug": "azilian",
+   "name": "Azilian",
+   "region": "Franco-Cantabria",
+   "x": 28943,
+   "z": -1062394
+  },
+  {
+   "slug": "central_brazilian_highland_hunter_gatherers_lagoa_santa_itaparica",
+   "name": "Central Brazilian highland hunter-gatherers (Lagoa Santa, Itaparica)",
+   "region": "Central Brazil",
+   "x": -979612,
+   "z": 445928
+  },
+  {
+   "slug": "harifian",
+   "name": "Harifian",
+   "region": "Negev and Sinai",
+   "x": 774784,
+   "z": -716182
+  },
+  {
+   "slug": "upper_tigris_epipalaeolithic_protoneolithic_hallan_cemi_kortik_tepe",
+   "name": "Upper Tigris Epipalaeolithic-Protoneolithic (Hallan Cemi, Kortik Tepe)",
+   "region": "Upper Tigris, SE Anatolia",
+   "x": 917273,
+   "z": -915885
+  },
+  {
+   "slug": "mureybetian",
+   "name": "Mureybetian",
+   "region": "Middle Euphrates",
+   "x": 850481,
+   "z": -862878
+  },
+  {
+   "slug": "indian_mesolithic_microlithic_foragers_bhimbetka_sarai_nahar_rai",
+   "name": "Indian Mesolithic microlithic foragers (Bhimbetka, Sarai Nahar Rai)",
+   "region": "India",
+   "x": 1727950,
+   "z": -524921
+  },
+  {
+   "slug": "oakhurst_industry",
+   "name": "Oakhurst industry",
+   "region": "S Africa",
+   "x": 409656,
+   "z": 803076
+  },
+  {
+   "slug": "plano_complex_agate_basin_hell_gap_cody",
+   "name": "Plano complex (Agate Basin, Hell Gap, Cody)",
+   "region": "Great Plains",
+   "x": -2328804,
+   "z": -973188
+  },
+  {
+   "slug": "hoabinhian",
+   "name": "Hoabinhian",
+   "region": "Mainland and W Island SE Asia",
+   "x": 2345130,
+   "z": -474007
+  },
+  {
+   "slug": "komsa_culture",
+   "name": "Komsa culture",
+   "region": "N Norway",
+   "x": 592747,
+   "z": -2274593
+  },
+  {
+   "slug": "magosian_obsolete_term",
+   "name": "Magosian (obsolete term)",
+   "region": "Uganda and Kenya",
+   "x": 838977,
+   "z": 74999
+  },
+  {
+   "slug": "pre_pottery_neolithic_a",
+   "name": "Pre-Pottery Neolithic A",
+   "region": "Levant and Upper Mesopotamia",
+   "x": 789255,
+   "z": -749165
+  },
+  {
+   "slug": "zengpiyan",
+   "name": "Zengpiyan",
+   "region": "S China (Guangxi)",
+   "x": 2424205,
+   "z": -519904
+  },
+  {
+   "slug": "early_holocene_sahara_foragers_early_acacus",
+   "name": "Early Holocene Sahara foragers (Early Acacus)",
+   "region": "Sahara and Sahel",
+   "x": 288763,
+   "z": -506630
+  },
+  {
+   "slug": "andean_puna_hunters_lauricocha_junin",
+   "name": "Andean puna hunters (Lauricocha, Junin)",
+   "region": "Central Andes",
+   "x": -1703188,
+   "z": 223778
+  },
+  {
+   "slug": "khiamian",
+   "name": "Khiamian",
+   "region": "Levant",
+   "x": 792595,
+   "z": -781717
+  },
+  {
+   "slug": "paleo_arctic_tradition",
+   "name": "Paleo-Arctic tradition",
+   "region": "Alaska and Yukon",
+   "x": -3139951,
+   "z": -1865729
+  },
+  {
+   "slug": "early_mesolithic_britain_star_carr",
+   "name": "Early Mesolithic Britain (Star Carr)",
+   "region": "Britain",
+   "x": -11132,
+   "z": -1441625
+  },
+  {
+   "slug": "amotape_complex",
+   "name": "Amotape complex",
+   "region": "N Peru and S Ecuador",
+   "x": -1809387,
+   "z": 102077
+  },
+  {
+   "slug": "capsian",
+   "name": "Capsian",
+   "region": "Algeria and Tunisia",
+   "x": 178111,
+   "z": -857374
+  },
+  {
+   "slug": "maglemosian",
+   "name": "Maglemosian",
+   "region": "S Scandinavia, N Germany, Doggerland",
+   "x": 126014,
+   "z": -1360025
+  },
+  {
+   "slug": "pre_pottery_neolithic_b",
+   "name": "Pre-Pottery Neolithic B",
+   "region": "Levant, Anatolia and Upper Mesopotamia",
+   "x": 866560,
+   "z": -894050
+  },
+  {
+   "slug": "sumnagin_culture",
+   "name": "Sumnagin culture",
+   "region": "Yakutia",
+   "x": 1536209,
+   "z": -1725165
+  },
+  {
+   "slug": "kunda_culture",
+   "name": "Kunda culture",
+   "region": "Baltic forest zone and N Russia",
+   "x": 569288,
+   "z": -1657850
+  },
+  {
+   "slug": "fosna_hensbacka_culture",
+   "name": "Fosna-Hensbacka culture",
+   "region": "Norwegian and Swedish W coast",
+   "x": 298336,
+   "z": -1491903
+  },
+  {
+   "slug": "central_african_late_stone_age_tshitolian",
+   "name": "Central African Late Stone Age (Tshitolian)",
+   "region": "Congo basin and Angola",
+   "x": 659383,
+   "z": 104385
+  },
+  {
+   "slug": "new_guinea_highlands_foragers_and_early_kuk_agriculture",
+   "name": "New Guinea Highlands foragers and early Kuk agriculture",
+   "region": "New Guinea Highlands",
+   "x": 3214907,
+   "z": 122640
+  },
+  {
+   "slug": "early_archaic_eastern_north_america",
+   "name": "Early Archaic Eastern North America",
+   "region": "Eastern Woodlands",
+   "x": -1994845,
+   "z": -910242
+  },
+  {
+   "slug": "the_island_court_home_pantheon",
+   "name": "The Island Court (home pantheon)",
+   "region": "Diaithir isles, Ireland, Britain",
+   "x": -144170,
+   "z": -1422509
+  },
+  {
+   "slug": "the_river_court",
+   "name": "The River Court",
+   "region": "Nile valley",
+   "x": 727079,
+   "z": -592859
+  },
+  {
+   "slug": "the_two_river_court",
+   "name": "The Two-River Court",
+   "region": "Tigris and Euphrates",
+   "x": 1026366,
+   "z": -725511
+  },
+  {
+   "slug": "the_thousand_god_court",
+   "name": "The Thousand-God Court",
+   "region": "Anatolia",
+   "x": 770554,
+   "z": -973770
+  },
+  {
+   "slug": "the_sea_coast_court",
+   "name": "The Sea-Coast Court",
+   "region": "Levant and Phoenicia",
+   "x": 793730,
+   "z": -808985
+  },
+  {
+   "slug": "the_palace_court",
+   "name": "The Palace Court",
+   "region": "Crete and the Aegean",
+   "x": 560226,
+   "z": -840890
+  },
+  {
+   "slug": "the_mountain_court",
+   "name": "The Mountain Court",
+   "region": "Greece, Aegean, Anatolian coast",
+   "x": 500960,
+   "z": -929560
+  },
+  {
+   "slug": "the_seven_hills_court",
+   "name": "The Seven-Hills Court",
+   "region": "Italy, Etruria, Latium",
+   "x": 277971,
+   "z": -1028978
+  },
+  {
+   "slug": "the_ash_tree_court",
+   "name": "The Ash-Tree Court",
+   "region": "Scandinavia, Germania",
+   "x": 392673,
+   "z": -1675391
+  },
+  {
+   "slug": "the_birch_grove_court",
+   "name": "The Birch-Grove Court",
+   "region": "Eastern Europe",
+   "x": 679338,
+   "z": -1304859
+  },
+  {
+   "slug": "the_amber_court",
+   "name": "The Amber Court",
+   "region": "Baltic coast",
+   "x": 466874,
+   "z": -1484062
+  },
+  {
+   "slug": "the_marsh_and_bear_court",
+   "name": "The Marsh-and-Bear Court",
+   "region": "Finland, Karelia, Estonia",
+   "x": 687954,
+   "z": -1743651
+  },
+  {
+   "slug": "the_wide_sky_court",
+   "name": "The Wide-Sky Court",
+   "region": "Scythian, Thracian, Dacian lands",
+   "x": 565381,
+   "z": -1050820
+  },
+  {
+   "slug": "the_light_and_flame_court",
+   "name": "The Light-and-Flame Court",
+   "region": "Iran, Persia",
+   "x": 1177569,
+   "z": -699019
+  },
+  {
+   "slug": "the_many_armed_court",
+   "name": "The Many-Armed Court",
+   "region": "South Asia",
+   "x": 1847322,
+   "z": -582961
+  },
+  {
+   "slug": "the_heaven_and_earth_court",
+   "name": "The Heaven-and-Earth Court",
+   "region": "China",
+   "x": 2591665,
+   "z": -969768
+  },
+  {
+   "slug": "the_kami_court",
+   "name": "The Kami Court",
+   "region": "Japan",
+   "x": 3044054,
+   "z": -818012
+  },
+  {
+   "slug": "the_crossroads_court",
+   "name": "The Crossroads Court",
+   "region": "West Africa",
+   "x": 101673,
+   "z": -166710
+  },
+  {
+   "slug": "the_corn_and_star_court",
+   "name": "The Corn-and-Star Court",
+   "region": "Mesoamerica, Yucatan",
+   "x": -1971864,
+   "z": -470855
+  },
+  {
+   "slug": "the_fifth_sun_court",
+   "name": "The Fifth-Sun Court",
+   "region": "Central Mexico",
+   "x": -2207089,
+   "z": -441251
+  },
+  {
+   "slug": "the_mountain_and_mother_court",
+   "name": "The Mountain-and-Mother Court",
+   "region": "Andes",
+   "x": -1602595,
+   "z": 303580
+  },
+  {
+   "slug": "the_ocean_and_voyage_court",
+   "name": "The Ocean-and-Voyage Court",
+   "region": "Pacific islands",
+   "x": -3370754,
+   "z": 380209
+  },
+  {
+   "slug": "the_eternal_blue_sky_court",
+   "name": "The Eternal-Blue-Sky Court",
+   "region": "Mongolia, Central Asia",
+   "x": 2288729,
+   "z": -1194956
+  },
+  {
+   "slug": "the_rift_and_cattle_court",
+   "name": "The Rift-and-Cattle Court",
+   "region": "East and southern Africa",
+   "x": 819799,
+   "z": 28770
+  },
+  {
+   "slug": "the_cliff_and_mask_court",
+   "name": "The Cliff-and-Mask Court",
+   "region": "Sahel, Sahara, central African forests",
+   "x": 356222,
+   "z": -44537
+  },
+  {
+   "slug": "the_lotus_and_peak_court",
+   "name": "The Lotus-and-Peak Court",
+   "region": "Tibet, Burma, Cambodia, Sri Lanka, Korea",
+   "x": 2312484,
+   "z": -301380
+  },
+  {
+   "slug": "the_rice_and_volcano_court",
+   "name": "The Rice-and-Volcano Court",
+   "region": "Java, Bali, Vietnam, Indonesia",
+   "x": 2453566,
+   "z": 169881
+  },
+  {
+   "slug": "the_fire_and_peak_court",
+   "name": "The Fire-and-Peak Court",
+   "region": "Caucasus, Armenia, Georgia, Commagene",
+   "x": 862526,
+   "z": -915320
+  },
+  {
+   "slug": "the_river_and_forest_court",
+   "name": "The River-and-Forest Court",
+   "region": "Amazon, Caribbean, northern South America",
+   "x": -1218013,
+   "z": 54407
+  },
+  {
+   "slug": "kuonrig",
+   "name": "Kuonrìg",
+   "region": "Atlantic Europe",
+   "x": -205184,
+   "z": -935530
+  },
+  {
+   "slug": "lasuirrig",
+   "name": "Lasuirrìg",
+   "region": "Anatolia to North India",
+   "x": 1150331,
+   "z": -769909
+  },
+  {
+   "slug": "kuonspiusach",
+   "name": "Kuonspìusach",
+   "region": "Indian Ocean coasts",
+   "x": 1687167,
+   "z": -252294
+  },
+  {
+   "slug": "talumnuod",
+   "name": "Talumnuod",
+   "region": "Atlantic Americas",
+   "x": -1833802,
+   "z": -529152
+  },
+  {
+   "slug": "dunbuldach",
+   "name": "Dùnbuldach",
+   "region": "China, Korea, Japan",
+   "x": 2591455,
+   "z": -970757
+  },
+  {
+   "slug": "gainemrig",
+   "name": "Gainemrìg",
+   "region": "Sahel and West Africa",
+   "x": -66956,
+   "z": -378895
+  },
+  {
+   "slug": "guoltintech",
+   "name": "Guoltintech",
+   "region": "Europe",
+   "x": 52369,
+   "z": -1250113
+  },
+  {
+   "slug": "saertulmach",
+   "name": "Saertulmach",
+   "region": "The Americas",
+   "x": -1673132,
+   "z": -971704
+  },
+  {
+   "slug": "iarnbotrach",
+   "name": "Iarnbòtrach",
+   "region": "Russia, Central Asia, India",
+   "x": 837508,
+   "z": -1501991
+  },
+  {
+   "slug": "oilen_nuod",
+   "name": "Oilen-nuod",
+   "region": "Japan, Siam, treaty ports",
+   "x": 2891477,
+   "z": -772314
+  },
+  {
+   "slug": "deiskertfurraigi",
+   "name": "Deiskertfurraigi",
+   "region": "Australia, New Zealand, southern Africa",
+   "x": 3366546,
+   "z": 802352
+  },
+  {
+   "slug": "solasstaid",
+   "name": "Solasstàid",
+   "region": "Europe, North America",
+   "x": -171,
+   "z": -1341422
+  },
+  {
+   "slug": "katuirliunach",
+   "name": "Katuirlìunach",
+   "region": "East and Southeast Asia",
+   "x": 2312108,
+   "z": -28716
+  },
+  {
+   "slug": "olumaein",
+   "name": "Olumaein",
+   "region": "Gulf, North Africa, Central Asia",
+   "x": 695969,
+   "z": -701479
+  },
+  {
+   "slug": "eolaskumlacht",
+   "name": "Eolaskumlacht",
+   "region": "Worldwide networks",
+   "x": -16493,
+   "z": -1359794
+  },
+  {
+   "slug": "skielbaili",
+   "name": "Skielbàili",
+   "region": "Worldwide ruins",
+   "x": 669124,
+   "z": -1338632
+  },
+  {
+   "slug": "realtsiulach",
+   "name": "Riondagsiublach",
+   "region": "Beyond Earth",
+   "x": -1795561,
+   "z": -664282
+  },
+  {
+   "slug": "roudosach",
+   "name": "Roudòsach",
+   "region": "Rodos",
+   "x": -2554493,
+   "z": -860565
+  },
+  {
+   "slug": "glasdumuin",
+   "name": "Glasdumuin",
+   "region": "Beyond Earth",
+   "x": -2467953,
+   "z": -767938
+  },
+  {
+   "slug": "sinsermeisin",
+   "name": "Sinsermeisin",
+   "region": "Beyond Earth",
+   "x": 134808,
+   "z": -1163586
+  },
+  {
+   "slug": "longkodlata",
+   "name": "Longkodlata",
+   "region": "Between stars",
+   "x": 1409416,
+   "z": -1154948
+  },
+  {
+   "slug": "soulasfada",
+   "name": "Soulasfada",
+   "region": "Other worlds",
+   "x": -3461368,
+   "z": -450344
+  },
+  {
+   "slug": "fairechrotlach",
+   "name": "Fairechrotlach",
+   "region": "Near orbit",
+   "x": -1174977,
+   "z": -116647
+  },
+  {
+   "slug": "liekdeirendach",
+   "name": "Liekdeirendach",
+   "region": "Rodos",
+   "x": -1714431,
+   "z": -941128
+  },
+  {
+   "slug": "kloichchruind",
+   "name": "Kloichchruind",
+   "region": "Rodos",
+   "x": -2290042,
+   "z": -1036455
+  },
+  {
+   "slug": "kiedtra",
+   "name": "Kiedtra",
+   "region": "Rodos",
+   "x": -1573212,
+   "z": -1030938
+  },
+  {
+   "slug": "teinedeired",
+   "name": "Teinedeired",
+   "region": "Rodos",
+   "x": -2370549,
+   "z": -797103
+  }
+ ]
+}

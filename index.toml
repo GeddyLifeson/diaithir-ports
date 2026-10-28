@@ -157,6 +157,10 @@ file = "config/walkers.json5"
 hash = "0aaa598b80b3d009e31c802466af7a607cb35667b9320489baf9b93f90ecde19"
 
 [[files]]
+file = "keybinds.txt"
+hash = "673710c867d7799fa311d286b28df274eaf21cbfeaa9bb41aa1dcd482e5d9364"
+
+[[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
 hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
 
@@ -20705,6 +20709,10 @@ file = "kubejs/data/diaithir/culture_names.json"
 hash = "9db53f607d9167c24b68a09c0ffbca17898decc421daf6a84d73c4103ed4820f"
 
 [[files]]
+file = "kubejs/data/diaithir/culture_spawns.json"
+hash = "89e9811a3d74a650a29566b7af2c5b09fa84d5a2643e563f6bfb887bb36406c7"
+
+[[files]]
 file = "kubejs/data/diaithir/currencies.json"
 hash = "a6b86f76eed80462e303fb8b2f74d7e1aeaa7af98559a0b04e4288dff15a238f"
 
@@ -20895,6 +20903,10 @@ hash = "aab0b3c763069e472de32c734792d076e071d4cb600d4ef6c2859460ab5ef5fd"
 [[files]]
 file = "kubejs/data/diaithir/vendors_age9.json"
 hash = "8c853bd145d99a19948f9084d1cc4ea143f3f21227ae1a5f37535932f0568342"
+
+[[files]]
+file = "kubejs/data/diaithir_ages/ages/_global/culture_starts.json"
+hash = "99d605e19c01b5ab4399b7c224cdc6214777fdfa9ca7d2a543f1c9cf19e75af2"
 
 [[files]]
 file = "kubejs/data/diaithir_dedupe/neoforge/biome_modifier/ecologics_squirrel.json"
@@ -33633,8 +33645,12 @@ file = "kubejs/data/twilightforest/loot_table/blocks/blueberry_bush_berries.json
 hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
+file = "kubejs/server_scripts/culture_start/culture_start.js"
+hash = "bc6e52d413eb19fa141e4c613f567aef6772bb403880052fa6630ecd32f43adf"
+
+[[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
-hash = "3fa87ef99660827826a355be82e5e36b19196d4b34b145dae015c6635b09c88c"
+hash = "49baecac7a9675466af17fddec3cd323ab8f1a32935d85d3c76a06655e794a45"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_feast.js"
@@ -33650,7 +33666,7 @@ hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/safe_landing.js"
-hash = "3569eacd1e2cf9ec3b48e346a674b00b4e4b691aa47d54bf801d9ba1c301cf78"
+hash = "174a6193925d0750655731f308601a0116644eb0319dedc3fd7bdd6ed2ef5cbb"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
@@ -33674,7 +33690,7 @@ hash = "c06f24d0c57bf7ead1c5668e9749c430168742d127d54fea09226924fc49a54b"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/brewing.js"
-hash = "9f3af00e9a29d161d3784d9343fb845686a450c4af5d21aa4befbf9fd2f3ad59"
+hash = "43bb2f2294195d4ddd822c68f3bef2643b98c94e1505ccbca7e365283298d108"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/effects.js"
@@ -34906,8 +34922,8 @@ file = "mods/diaithir-activity-neoforge-26.1.2-1.0.0.jar"
 hash = "e9ac289e36afa6b1860da5ac0d867dbc92d54c68b6a972128920629c69262445"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar"
-hash = "5f8dbb3ded79dfe559666d34ee8dc2d7b173623044a08fc6fa491bd86a7adae1"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.4.jar"
+hash = "91bc07f43f0d7055a1574891ecd44dffa20b089332b167287263c2531b5647bc"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
@@ -34915,7 +34931,7 @@ hash = "1beee3c7987eb9e0b78deb5023dd34c39b52c909bbe6c18b54b45bf59f0dff12"
 
 [[files]]
 file = "mods/diaithir-branding-neoforge-26.1.2-1.0.4.pw.toml"
-hash = "04d40b59ee7439e2ad5c1f793f43eab53aec40c9b9c100d7fdb4a43d230bb30a"
+hash = "c654d982312a1b0d14ea74e4e708ce851c92a887ed3cc060751ffd291103ca78"
 metafile = true
 
 [[files]]
@@ -34936,7 +34952,7 @@ hash = "01083cbd7083436dcd13e151c21d1ac39238a31302f703343ba079ddb3e3e414"
 
 [[files]]
 file = "mods/diaithir-earlywindow-neoforge-26.1.2-1.0.1.pw.toml"
-hash = "07e73826c306af34bbd2b1ae4ee0b1cd7536f2dfdddfc2375433feeacf0d468d"
+hash = "87cdc97a018c26bec1fc306376f97605b7d5d0f78796f9f09b435a2e1b22ebbe"
 metafile = true
 
 [[files]]
@@ -35117,10 +35133,6 @@ metafile = true
 file = "mods/epitaphs-2.4.0_26.1.2.pw.toml"
 hash = "3a817dba7383f7eb545a8f437eab75727a765c52d7eb2f040776622a64b81971"
 metafile = true
-
-[[files]]
-file = "mods/eternalstarlight-0.9.1+mc26.1.2.jar"
-hash = "d28804de6ae46792c3419c399f80e0d57da64d80c457092318850ccb22e48c4f"
 
 [[files]]
 file = "mods/evilcraft-26.1.2-neoforge-1.2.107.pw.toml"
@@ -35656,7 +35668,7 @@ metafile = true
 
 [[files]]
 file = "mods/optigui-neoforge-26.1.2.pw.toml"
-hash = "f3ac3e41e5141117acebd322515cc5eb0d7fe687de911f0765366b06f40109dd"
+hash = "d28fe3ede209119d3d9dd2bfffaf91736a9d9a43f07a10701a5946cf67047808"
 metafile = true
 
 [[files]]
@@ -35673,10 +35685,6 @@ metafile = true
 file = "mods/paladins-neoforge-3.1.3.002_26.1.2.pw.toml"
 hash = "0719deb29d1098f59bf24902c4fb8f6605c4cd41ad945bdb11fb544d989185b2"
 metafile = true
-
-[[files]]
-file = "mods/paradise_lost-neoforge-26.1.2-2.5.0.jar"
-hash = "b9b765642afe6c4493ba483a9daae0e089dfc1439864ba0594a814b273cb4ac8"
 
 [[files]]
 file = "mods/pipe_connector-neoforge-0.6.8.pw.toml"
@@ -36057,7 +36065,7 @@ metafile = true
 
 [[files]]
 file = "mods/villager-trading-plus-neoforge-26.1.2-1.3.0.pw.toml"
-hash = "c397a659ad73959c23afbce0f5df30b827d4b676be6f75c4e028f3dcb3458564"
+hash = "98a5b208e17d29b846780c362a8311bfab21d1ced7f9eb5e68c578dbdc626361"
 metafile = true
 
 [[files]]
@@ -36120,11 +36128,16 @@ hash = "f6ba90cc1346f8df8d123eedb06385e96885d10b353d2a39a835dc37fa6956f7"
 metafile = true
 
 [[files]]
+file = "options.txt"
+hash = "b31d9182e71cdffaa0eff42cf26cebd4deb334d80a99a905b2bccbd7a18c6a21"
+preserve = true
+
+[[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
-hash = "bc002ac5292712c2435939da26b7f2c4412626ccd1281867c3af4650d6cc9bc1"
+hash = "f13498d5f531e9fcb34b105494472e28e57974ab332c9b4ffed4978976c5d5d1"
 metafile = true
 
 [[files]]
 file = "resourcepacks/diaithir-ui.pw.toml"
-hash = "e0e322c4f813b2858d4ac5413a0362d4a6226013cc589dce305111ef22905789"
+hash = "dc20ded3a7d6e42f9c98b9fe5121d78323fce30d773c031ea7eceb4c50684cf6"
 metafile = true
