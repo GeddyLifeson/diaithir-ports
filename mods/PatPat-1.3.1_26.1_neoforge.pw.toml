@@ -1,0 +1,8 @@
+name = "PatPat"
+filename = "PatPat-1.3.1+26.1+neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/dw7LChq9/versions/IIqMBj5o/PatPat-1.3.1%2B26.1%2Bneoforge.jar"
+hash-format = "sha256"
+hash = "5d53c2b30abe1271151d07684f920613045bd8191398377df3fb361f0f20c78b"

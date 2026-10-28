@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "diaithir_end:crystal_spires",
+  "diaithir_end:rime_reach",
+  "diaithir_end:sporewood",
+  "diaithir_end:ashen_dunes",
+  "diaithir_end:hollow_barrens",
+  "diaithir_end:glimmer_isles"
+ ]
+}

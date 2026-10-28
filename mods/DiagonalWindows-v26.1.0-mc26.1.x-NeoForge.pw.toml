@@ -1,0 +1,8 @@
+name = "DiagonalWindows"
+filename = "DiagonalWindows-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/oOi0CKes/versions/VbwbzTrn/DiagonalWindows-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "8cce92c0f7c195ba1f87b880b03bcb1c8a360324491b4ebbea561c179f47bc13"

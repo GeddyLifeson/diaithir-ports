@@ -1,0 +1,8 @@
+name = "Controlling-neoforge"
+filename = "Controlling-neoforge-26.1.2-26.1.2.7.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/xv94TkTM/versions/sgKdyug3/Controlling-neoforge-26.1.2-26.1.2.7.jar"
+hash-format = "sha256"
+hash = "0aa2d24a863fca61f99aab6736297fbd30b49abee369dacc27c1a68be69164ac"

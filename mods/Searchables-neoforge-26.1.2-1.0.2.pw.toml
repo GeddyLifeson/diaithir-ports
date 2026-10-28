@@ -6,7 +6,3 @@ side = "client"
 url = "https://cdn.modrinth.com/data/fuuu3xnx/versions/OGi2qTkh/Searchables-neoforge-26.1.2-1.0.2.jar"
 hash-format = "sha256"
 hash = "85466d9b55239f5a13afcd41ec7eef816074427c5cd1080e740205ab8d7825b3"
-
-[update.modrinth]
-mod-id = "fuuu3xnx"
-version = "OGi2qTkh"

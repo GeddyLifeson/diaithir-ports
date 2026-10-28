@@ -1,0 +1,8 @@
+name = "TalkBalloons-neoforge"
+filename = "TalkBalloons-neoforge-1.6.6+26.1.2.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/l3tS9WUS/versions/CNgnNXJT/TalkBalloons-neoforge-1.6.6%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "eee41c60e6207884e725e83676d95d805a368de163ccd51259c4e37af43217b4"

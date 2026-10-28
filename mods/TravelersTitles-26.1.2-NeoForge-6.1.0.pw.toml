@@ -1,0 +1,8 @@
+name = "TravelersTitles"
+filename = "TravelersTitles-26.1.2-NeoForge-6.1.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/JtifUr64/versions/B2suTpMt/TravelersTitles-26.1.2-NeoForge-6.1.0.jar"
+hash-format = "sha256"
+hash = "e46e29ee4d767d975571b1b0bf7d3efc4a8d5c7c4191bf90d980e1515b9c9f67"

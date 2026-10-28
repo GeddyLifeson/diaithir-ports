@@ -1,0 +1,8 @@
+name = "Ping-Wheel"
+filename = "Ping-Wheel-1.12.1-neoforge-26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QQXAdCzh/versions/8m8a3CmD/Ping-Wheel-1.12.1-neoforge-26.1.2.jar"
+hash-format = "sha256"
+hash = "c292499589cc7590a7c5af13d9d49da1959d46026c5f28fc95beaac741e56751"

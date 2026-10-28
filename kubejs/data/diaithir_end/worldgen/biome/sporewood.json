@@ -1,0 +1,46 @@
+{
+ "carvers": [],
+ "downfall": 0.5,
+ "effects": {
+  "water_color": "#3fd0a0"
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:end_gateway_return"
+  ],
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:chorus_plant",
+   "diaithir_end:sporewood_0",
+   "diaithir_end:sporewood_1"
+  ],
+  []
+ ],
+ "has_precipitation": false,
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [],
+  "misc": [],
+  "underground_water_creature": [],
+  "water_ambient": [],
+  "water_creature": [],
+  "monster": [
+   {
+    "type": "minecraft:enderman",
+    "maxCount": 4,
+    "minCount": 4,
+    "weight": 10
+   }
+  ]
+ },
+ "temperature": 0.5
+}

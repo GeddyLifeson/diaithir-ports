@@ -1,0 +1,8 @@
+name = "PickUpNotifier"
+filename = "PickUpNotifier-v26.1.1-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ZX66K16c/versions/OT6grywj/PickUpNotifier-v26.1.1-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "af12747d4a15a285f2356686f4a82af156dec54d1d839dd0d68d5bf64e851637"

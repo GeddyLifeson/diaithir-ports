@@ -1,0 +1,8 @@
+name = "emotecraft-for-MC"
+filename = "emotecraft-for-MC26.1.2-3.3.0-b.build.164.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/pZ2wrerK/versions/N3M6FTa2/emotecraft-for-MC26.1.2-3.3.0-b.build.164.jar"
+hash-format = "sha256"
+hash = "4353d4f39e64e9bfd3787c1db92cb7749e4c767213a769b0fdbec9c709d93750"

@@ -1,0 +1,8 @@
+name = "ArmorStatues"
+filename = "ArmorStatues-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/bbGCtEvb/versions/IP75msWr/ArmorStatues-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "d87f2c4016d4952b3d6c33774caf5b50847597b747cfe0c1a65cab4e6dd50775"

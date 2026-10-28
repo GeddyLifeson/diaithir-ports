@@ -1,0 +1,8 @@
+name = "immersive_melodies-neoforge"
+filename = "immersive_melodies-neoforge-0.8.2+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/TaSmHw8V/versions/maDFRNhR/immersive_melodies-neoforge-0.8.2%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "ffdecf93be7bd1c39f86143254899f6c91fe503ba83e297edb97a922c408c842"

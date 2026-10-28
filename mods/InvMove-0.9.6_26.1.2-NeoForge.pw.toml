@@ -1,0 +1,8 @@
+name = "InvMove"
+filename = "InvMove-0.9.6+26.1.2-NeoForge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/REfW2AEX/versions/PFXabMOy/InvMove-0.9.6%2B26.1.2-NeoForge.jar"
+hash-format = "sha256"
+hash = "3d1e973de67cd2a7206dedbb6cfb2eba31503ba0fbbcd37bf0a8998ae0f52ee1"

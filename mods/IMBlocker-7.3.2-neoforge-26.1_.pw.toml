@@ -1,0 +1,8 @@
+name = "IMBlocker"
+filename = "IMBlocker-7.3.2-neoforge-26.1+.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/WMDesFsZ/versions/VyswcG4w/IMBlocker-7.3.2-neoforge-26.1%2B.jar"
+hash-format = "sha256"
+hash = "4d0764235876e220b41399b322d1881d45406cf1e16f1ade068b5e1ade4dbad4"

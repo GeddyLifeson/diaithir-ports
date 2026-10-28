@@ -1,0 +1,8 @@
+name = "ModernNetworking-neoforge"
+filename = "ModernNetworking-neoforge-2.0.1+26.1.2.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/yMou0v20/versions/beLMIG1b/ModernNetworking-neoforge-2.0.1%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "1ee9bc2a6ec53b910b7c46490118b347c109bb75be24205d6f0b3637756f3697"

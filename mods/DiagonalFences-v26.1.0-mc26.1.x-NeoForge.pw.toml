@@ -1,0 +1,8 @@
+name = "DiagonalFences"
+filename = "DiagonalFences-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/IKARgflD/versions/LeJEFOb1/DiagonalFences-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "bbe0e7b04a264cc1f1d14bede98ec14786a918ce20fc44921f6b8449c781376f"

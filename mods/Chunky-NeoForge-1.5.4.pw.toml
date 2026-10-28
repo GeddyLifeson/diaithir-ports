@@ -1,0 +1,8 @@
+name = "Chunky-NeoForge"
+filename = "Chunky-NeoForge-1.5.4.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/fALzjamp/versions/EyCqftOK/Chunky-NeoForge-1.5.4.jar"
+hash-format = "sha256"
+hash = "6ed601bd2c2942cd537f1732805bc786e70b57d988039c416c3bc27ba97162b9"

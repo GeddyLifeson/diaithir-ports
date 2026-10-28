@@ -1,0 +1,8 @@
+name = "InventoryProfilesNext-neoforge"
+filename = "InventoryProfilesNext-neoforge-26.1.2-2.3.8.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/O7RBXm3n/versions/vNg0KMkb/InventoryProfilesNext-neoforge-26.1.2-2.3.8.jar"
+hash-format = "sha256"
+hash = "5dbf392f70a42d2bf6ece71177dd946fcafabd8be88ecc99caf4025e611e913d"

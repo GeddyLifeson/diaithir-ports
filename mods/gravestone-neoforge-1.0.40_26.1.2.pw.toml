@@ -1,0 +1,8 @@
+name = "gravestone-neoforge"
+filename = "gravestone-neoforge-1.0.40+26.1.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RYtXKJPr/versions/2zbKnZWr/gravestone-neoforge-1.0.40%2B26.1.2.jar"
+hash-format = "sha256"
+hash = "f599bc2997db272e9a94ea5b31dff91a439f7c2599d4acdea4796e4707a4254f"

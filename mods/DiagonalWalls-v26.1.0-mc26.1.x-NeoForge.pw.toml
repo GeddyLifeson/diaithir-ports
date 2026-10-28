@@ -1,0 +1,8 @@
+name = "DiagonalWalls"
+filename = "DiagonalWalls-v26.1.0-mc26.1.x-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FQgc8dib/versions/Z0E1ude9/DiagonalWalls-v26.1.0-mc26.1.x-NeoForge.jar"
+hash-format = "sha256"
+hash = "6c118f2a53814144ce9fcde98f5ea7e48aca227dc4197f3f9fd457840c11c149"

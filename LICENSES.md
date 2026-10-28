@@ -29,6 +29,19 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | diaithir-forcefield-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-forcefield/diaithir-forcefield) |
 | diaithir-storagenet-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-storagenet/diaithir-storagenet) |
 | diaithir-forgeworks-neoforge-26.1.2-1.0.0.jar | MIT (clean-room mod written from public descriptions only, no code, textures or names of the original; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-forgeworks/diaithir-forgeworks) |
+| diaithir-wiretech-neoforge-26.1.2-1.0.0.jar | MIT (clean-room, general gameplay knowledge only, no code or assets of any other mod; built from the PR head) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/cleanroom-wiretech/diaithir-wiretech) |
+| antique-atlas-3.1.2+neoforge-26.1.2.jar | LGPL-3.0-or-later (code), CC BY-NC-SA 4.0 (textures, non-commercial); our port for 26.1.2 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/atlas) |
+| surveyor-1.2.4+neoforge-26.1.2.jar | LGPL-3.0-or-later; our port for 26.1.2 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/atlas) |
+| optigui-neoforge-26.1.2.jar | LGPL-3.0-or-later; our port for 26.1.2 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/optigui) |
+| diaithir-activity-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/activity) |
+| diaithir-footsteps-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/utility-ui-deco) |
+| diaithir-furnishings-signposts-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/furnishings-signposts) |
+| diaithir-voice-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/voice-tcp) |
+| diaithir-voice-interaction-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/voice-interaction) |
+| diaithir-woodvariants-neoforge-26.1.2-1.0.0.jar | MIT (clean-room) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/woodvariants) |
+| dimdoors-neoforge-26.1.2-6.2.2.jar | GPL-3.0 (Dimensional Doors; the jar declares MIT but upstream is GPL-3; our port to NeoForge 26.1.2, source on the branch) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-dimdoors/dimensional-doors) |
+| eternalstarlight-0.9.1+mc26.1.2.jar | MIT (Eternal Starlight; our port to NeoForge 26.1.2) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-eternal-starlight/eternal-starlight) |
+| paradise_lost-neoforge-26.1.2-2.5.0.jar | MIT (Paradise Lost, ImmortalDevs; our port to NeoForge 26.1.2) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-paradise-lost/paradise-lost) |
 | graveyard-neoforge-26.1.2-4.0.0.jar | GPL-3.0-only (The Graveyard by YUNG, as declared in the jar; our port to NeoForge 26.1.2, Villager Trading Plus dependency removed; the jar is the unmodified branch build renamed from graveyard-NEOFORGE-4.0.0+mc26.1.2.jar; modified source stays GPL-3) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-graveyard/the-graveyard) |
 | villager-trading-plus-neoforge-26.1.2-1.3.0.jar | MIT (Villager Trading Plus, as declared in the jar; our port to NeoForge 26.1.2, client-only; renamed from villager-trading-plus-1.3.0+26.1.2-neoforge.jar) | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/claude/port-vtp/villager-trading-plus) |
 | diaithir-perf-neoforge-26.1.2-0.3.3.jar | LGPL-3.0-only | [source](diaithir-perf/) in this branch (0.3.3 adds a client mixin that skips Occultism's JEI recipe sync when JEI is absent; 0.3.2 starts C2ME storage threads on first use) |
@@ -148,3 +161,6 @@ Each downloads from the author's Modrinth CDN with the sha256 in its `.pw.toml`.
 | toms-storage | toms_storage-26.1-2.10.3.jar | MIT (jar says MIT License https://github.com/tom5454/Toms-Storage/blob/master/LICENSE) | https://modrinth.com/mod/toms-storage |
 | xnet | xnet-26.1.2-8.0.0.jar | MIT (jar says MIT License https://github.com/McJtyMods/XNet/blob/1.21_neo/LICENCE) | https://modrinth.com/mod/xnet |
 | yori3os-grappling-hooks | yo_hooks-5.2.0-neoforge_beta.jar | MIT | https://modrinth.com/mod/yori3os-grappling-hooks |
+
+The Diaithir End biomes (kubejs/data/diaithir_end and the c:is_end tags, clean-room, MIT) are plain data in the kubejs data folder, which the pack loads as a global datapack.
+The 35 utility, UI and decoration mods added with the atlas and voice jars (Iris, Entity Model Features, Mouse Tweaks, Chunky, Voice Chat and so on) are third-party links, never hosted here; their licences are listed in DiaithirRPG PR #180 (claude/pack-utility-ui-deco).

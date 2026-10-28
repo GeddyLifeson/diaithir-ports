@@ -1,0 +1,8 @@
+name = "visuality"
+filename = "visuality-3.0.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/z13R7Et1/versions/WX1OIBr6/visuality-3.0.0.jar"
+hash-format = "sha256"
+hash = "d80b0ec581bf434f1d1ad2d738fb9bab012aff8411e514bb3724d2649aded18e"

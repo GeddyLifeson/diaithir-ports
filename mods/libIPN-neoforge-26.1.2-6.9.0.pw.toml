@@ -1,0 +1,8 @@
+name = "libIPN-neoforge"
+filename = "libIPN-neoforge-26.1.2-6.9.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/onSQdWhM/versions/bm1OYABy/libIPN-neoforge-26.1.2-6.9.0.jar"
+hash-format = "sha256"
+hash = "0b84636a1447f143e10c56574ea7f7ab54a844dbb2869d8dce80373abaa3eda3"
