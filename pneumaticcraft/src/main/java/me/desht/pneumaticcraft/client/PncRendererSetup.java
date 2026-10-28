@@ -3,6 +3,7 @@ package me.desht.pneumaticcraft.client;
 import me.desht.pneumaticcraft.api.lib.Names;
 import me.desht.pneumaticcraft.client.model.PNCModelLayers;
 import me.desht.pneumaticcraft.common.registry.ModBlockEntityTypes;
+import me.desht.pneumaticcraft.common.registry.ModEntityTypes;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -31,7 +32,39 @@ public class PncRendererSetup {
     }
 
     @SubscribeEvent
+    public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(PNCModelLayers.HEAT_FRAME, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelHeatFrame::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.LOGISTICS_FRAME, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelLogisticsFrame::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.SPAWNER_AGITATOR, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelSpawnerAgitator::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.TRANSFER_GADGET, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelTransferGadget::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.CROP_SUPPORT, me.desht.pneumaticcraft.client.model.entity.semiblocks.ModelCropSupport::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.DRONE, me.desht.pneumaticcraft.client.model.entity.drone.ModelDrone::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.DRONE_CORE, me.desht.pneumaticcraft.client.model.entity.drone.ModelDroneCore::createBodyLayer);
+        event.registerLayerDefinition(PNCModelLayers.MINIGUN, me.desht.pneumaticcraft.client.model.ModelMinigun::createBodyLayer);
+    }
+
+    @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntityTypes.DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::standard);
+        event.registerEntityRenderer(ModEntityTypes.AMADRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::amadrone);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::logistics);
+        event.registerEntityRenderer(ModEntityTypes.HARVESTING_DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::harvesting);
+        event.registerEntityRenderer(ModEntityTypes.GUARD_DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::guard);
+        event.registerEntityRenderer(ModEntityTypes.COLLECTOR_DRONE.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::collector);
+        event.registerEntityRenderer(ModEntityTypes.PROGRAMMABLE_CONTROLLER.get(), me.desht.pneumaticcraft.client.render.entity.drone.RenderDrone::programmableController);
+        event.registerEntityRenderer(ModEntityTypes.CROP_SUPPORT.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderCropSupport::new);
+        event.registerEntityRenderer(ModEntityTypes.SPAWNER_AGITATOR.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderSpawnerAgitator::new);
+        event.registerEntityRenderer(ModEntityTypes.HEAT_FRAME.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderHeatFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.TRANSFER_GADGET.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderTransferGadget::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_FRAME_ACTIVE_PROVIDER.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderLogisticsFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_FRAME_PASSIVE_PROVIDER.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderLogisticsFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_FRAME_STORAGE.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderLogisticsFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_FRAME_DEFAULT_STORAGE.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderLogisticsFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.LOGISTICS_FRAME_REQUESTER.get(), me.desht.pneumaticcraft.client.render.entity.semiblock.RenderLogisticsFrame::new);
+        event.registerEntityRenderer(ModEntityTypes.VORTEX.get(), me.desht.pneumaticcraft.client.render.entity.RenderEntityVortex::new);
+        event.registerEntityRenderer(ModEntityTypes.RING.get(), me.desht.pneumaticcraft.client.render.entity.RenderEntityRing::new);
+        event.registerEntityRenderer(ModEntityTypes.MICROMISSILE.get(), me.desht.pneumaticcraft.client.render.entity.RenderMicromissile::new);
+        event.registerEntityRenderer(ModEntityTypes.TUMBLING_BLOCK.get(), me.desht.pneumaticcraft.client.render.entity.RenderTumblingBlock::new);
         event.registerBlockEntityRenderer(ModBlockEntityTypes.ADVANCED_LIQUID_COMPRESSOR.get(), me.desht.pneumaticcraft.client.render.fluid.RenderAdvancedLiquidCompressor::new);
         event.registerBlockEntityRenderer(ModBlockEntityTypes.AIR_CANNON.get(), me.desht.pneumaticcraft.client.render.blockentity.AirCannonRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntityTypes.APHORISM_TILE.get(), me.desht.pneumaticcraft.client.render.blockentity.AphorismTileRenderer::new);
