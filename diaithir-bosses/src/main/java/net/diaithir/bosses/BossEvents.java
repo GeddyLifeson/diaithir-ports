@@ -26,6 +26,17 @@ public final class BossEvents {
     private static final Set<EntitySpawnReason> ELITE_SPAWNS = Set.of(EntitySpawnReason.NATURAL, EntitySpawnReason.CHUNK_GENERATION,
         EntitySpawnReason.STRUCTURE, EntitySpawnReason.PATROL, EntitySpawnReason.EVENT, EntitySpawnReason.REINFORCEMENT);
 
+    /**
+     * Dwarfs and Giants rolls a random size stage for every mob that joins a level, and the stage changes its max health and damage.
+     * That would put a random few percent on top of a boss's Age scaling, so bosses are marked as already rolled before it looks.
+     * (The Remnants mod levels mobs the same way; the boss entity types are listed in its never_leveled and never_ranked tags.)
+     */
+    @SubscribeEvent(priority = net.neoforged.bus.api.EventPriority.HIGHEST)
+    public static void keepSize(EntityJoinLevelEvent e) {
+        if (e.getLevel().isClientSide() || !(e.getEntity() instanceof Mob m)) return;
+        if (Data.byEntity(BuiltInRegistries.ENTITY_TYPE.getKey(m.getType()).toString()) != null) m.addTag("dwarfsandgiants:spawn_size_rolled");
+    }
+
     @SubscribeEvent
     public static void join(EntityJoinLevelEvent e) {
         if (!(e.getLevel() instanceof ServerLevel sl) || !(e.getEntity() instanceof Mob m)) return;
