@@ -5,4 +5,4 @@ side = "client"
 [download]
 url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-latest/client/resourcepacks/diaithir-ui.zip"
 hash-format = "sha256"
-hash = "a91d3c0a9c507aa5aae87bc1909a01df7e2388e548e12080dc2ad298007b3956"
+hash = "6308ca4d5479ee2b22badd8cf8882f5dc75b4357aa747e66a1e7e586abf82d93"
