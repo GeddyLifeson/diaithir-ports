@@ -10,7 +10,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     version = project.neo_version
-    runs { server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
+    runs { client { client(); gameDirectory = file('run-client'); programArguments.addAll('--username','Dev','--quickPlayMultiplayer','127.0.0.1:25565') ; jvmArguments.add('-Dmixin.debug.verify=true') }; server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dvs.selftest=true','-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
     mods { valkyrienskies { sourceSet(sourceSets.main) } }
 }
 

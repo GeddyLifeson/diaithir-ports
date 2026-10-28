@@ -71,11 +71,11 @@ public abstract class MixinLocalPlayer extends LivingEntity implements LocalPlay
     }
 
     @WrapMethod(
-        method = "startRiding(Lnet/minecraft/world/entity/Entity;Z)Z"
+        method = "startRiding(Lnet/minecraft/world/entity/Entity;ZZ)Z"
     )
-    private boolean adjustLookOnMount(Entity entity, boolean bl, Operation<Boolean> original) {
+    private boolean adjustLookOnMount(Entity entity, boolean bl, boolean bl2, Operation<Boolean> original) {
         Vector3d lookVector = VectorConversionsMCKt.toJOML(this.getLookAngle());
-        if(original.call(entity, bl)) {
+        if(original.call(entity, bl, bl2)) {
             Ship ship = VSGameUtilsKt.getShipMountedTo(Entity.class.cast(this));
             if (ship != null) {
                 final Vector3d transformedLook = ship.getTransform().getWorldToShip().transformDirection(lookVector);

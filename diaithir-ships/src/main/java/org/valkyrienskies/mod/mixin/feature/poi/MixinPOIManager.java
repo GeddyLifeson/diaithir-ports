@@ -1,8 +1,5 @@
 package org.valkyrienskies.mod.mixin.feature.poi;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import net.minecraft.core.BlockPos;
@@ -22,6 +19,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.valkyrienskies.core.api.ships.LoadedServerShip;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
@@ -68,10 +67,15 @@ public abstract class MixinPOIManager implements OfLevel {
         });
     }
 
-    @WrapOperation(method = "getInRange", at = @At(value = "INVOKE", target = "Ljava/util/stream/Stream;filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;"))
-    private Stream<PoiRecord> onGetInRange(Stream<PoiRecord> instance, Predicate<PoiRecord> predicate, Operation<Stream<PoiRecord>> original, @Local(argsOnly = true) BlockPos arg, @Local(argsOnly = true) int i) {
+    /**
+     * Head-inject instead of wrapping the stream filter: Lithium's ai.poi mixin overwrites getInRange, which
+     * removes the filter call a WrapOperation would need and crashes the world load.
+     */
+    @Inject(method = "getInRange", at = @At("HEAD"), cancellable = true)
+    private void valkyrienskies$onGetInRange(Predicate<Holder<PoiType>> predicate, BlockPos arg, int i, Occupancy occupancy, CallbackInfoReturnable<Stream<PoiRecord>> cir) {
         final int k = i * i;
-        return instance.filter(poiRecord -> POIChunkSearcher.INSTANCE.getWorldPos(poiRecord, this.valkyrienskies$sLevel).distanceToSqr(Vec3.atLowerCornerOf(arg)) <= (double)k);
+        cir.setReturnValue(((PoiManager) (Object) this).getInSquare(predicate, arg, i, occupancy)
+            .filter(poiRecord -> POIChunkSearcher.INSTANCE.getWorldPos(poiRecord, this.valkyrienskies$sLevel).distanceToSqr(Vec3.atLowerCornerOf(arg)) <= (double) k));
     }
 
     @Override
