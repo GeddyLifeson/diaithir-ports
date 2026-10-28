@@ -4,7 +4,8 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
-import net.minecraft.client.renderer.LevelRenderer;
+import net.minecraft.client.renderer.WeatherEffectRenderer;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockGetter;
@@ -20,18 +21,18 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.valkyrienskies.core.api.ships.Ship;
 import org.valkyrienskies.mod.common.CompatUtil;
 
-@Mixin(LevelRenderer.class)
+@Mixin(WeatherEffectRenderer.class)
 public class MixinLevelRenderer {
 
     @WrapOperation(
-        method = "tickRain(Lnet/minecraft/client/Camera;)V",
+        method = "tickRainParticles(Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/Camera;ILnet/minecraft/server/level/ParticleStatus;I)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/LevelReader;getHeightmapPos(Lnet/minecraft/world/level/levelgen/Heightmap$Types;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/BlockPos;"
+            target = "Lnet/minecraft/client/multiplayer/ClientLevel;getHeightmapPos(Lnet/minecraft/world/level/levelgen/Heightmap$Types;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/BlockPos;"
         )
     )
     private BlockPos includeShipsInWeatherTickOcclusion(
-        final LevelReader levelReader, final Types types, final BlockPos pos, final Operation<BlockPos> original,
+        final ClientLevel levelReader, final Types types, final BlockPos pos, final Operation<BlockPos> original,
         @Share("weatherSurfaceLookupPos") final LocalRef<BlockPos> weatherSurfaceLookupPos
     ) {
         weatherSurfaceLookupPos.set(null);
@@ -51,14 +52,14 @@ public class MixinLevelRenderer {
     }
 
     @WrapOperation(
-        method = "tickRain(Lnet/minecraft/client/Camera;)V",
+        method = "tickRainParticles(Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/Camera;ILnet/minecraft/server/level/ParticleStatus;I)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/LevelReader;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
+            target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
         )
     )
     private BlockState includeShipsInWeatherTickSurfaceState(
-        final LevelReader levelReader,
+        final ClientLevel levelReader,
         final BlockPos pos,
         final Operation<BlockState> original,
         @Share("weatherSurfaceLookupPos") final LocalRef<BlockPos> weatherSurfaceLookupPos
@@ -68,14 +69,14 @@ public class MixinLevelRenderer {
     }
 
     @WrapOperation(
-        method = "tickRain(Lnet/minecraft/client/Camera;)V",
+        method = "tickRainParticles(Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/Camera;ILnet/minecraft/server/level/ParticleStatus;I)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/LevelReader;getFluidState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/material/FluidState;"
+            target = "Lnet/minecraft/client/multiplayer/ClientLevel;getFluidState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/material/FluidState;"
         )
     )
     private FluidState includeShipsInWeatherTickSurfaceFluid(
-        final LevelReader levelReader,
+        final ClientLevel levelReader,
         final BlockPos pos,
         final Operation<FluidState> original,
         @Share("weatherSurfaceLookupPos") final LocalRef<BlockPos> weatherSurfaceLookupPos
@@ -85,7 +86,7 @@ public class MixinLevelRenderer {
     }
 
     @WrapOperation(
-        method = "tickRain(Lnet/minecraft/client/Camera;)V",
+        method = "tickRainParticles(Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/client/Camera;ILnet/minecraft/server/level/ParticleStatus;I)V",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/block/state/BlockState;getCollisionShape(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/shapes/VoxelShape;"
@@ -104,7 +105,7 @@ public class MixinLevelRenderer {
     }
 
     @WrapOperation(
-        method = "renderSnowAndRain(Lnet/minecraft/client/renderer/LightTexture;FDDD)V",
+        method = "extractRenderState(Lnet/minecraft/world/level/Level;IFLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/state/level/WeatherRenderState;)V",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/Level;getHeight(Lnet/minecraft/world/level/levelgen/Heightmap$Types;II)I"

@@ -38,7 +38,7 @@ public abstract class MixinEntitySectionStorage implements OfLevel {
     @Override
     public void setLevel(final Level level) {
         this.level = level;
-        if(level.isClientSide) ShipLoadEventClient.Companion.on(this::handleShipLoad);
+        if(level.isClientSide()) ShipLoadEventClient.Companion.on(this::handleShipLoad);
     }
 
     @Unique

@@ -20,10 +20,11 @@ import org.valkyrienskies.mod.common.config.VSGameConfig;
 @Mixin(FlowingFluid.class)
 public class MixinFlowingFluid {
 
-    @Inject(at = @At("HEAD"), method = "canSpreadTo", cancellable = true)
-    private void beforeCanSpreadTo(final BlockGetter level, final BlockPos fromPos, final BlockState fromBlockState,
-        final Direction direction, final BlockPos toPos, final BlockState toBlockState, final FluidState toFluidState,
-        final Fluid fluid, final CallbackInfoReturnable<Boolean> cir) {
+    @Inject(at = @At("HEAD"), method = "canPassThrough", cancellable = true)
+    private void beforeCanSpreadTo(final BlockGetter level, final Fluid fluid, final BlockPos fromPos,
+        final BlockState fromBlockState, final Direction direction, final BlockPos toPos,
+        final BlockState toBlockState, final FluidState toFluidState,
+        final CallbackInfoReturnable<Boolean> cir) {
 
         if (VSGameConfig.SERVER.getPreventFluidEscapingShip() && level instanceof Level) {
             final Ship ship = VSGameUtilsKt.getShipManagingPos((Level) level, toPos);

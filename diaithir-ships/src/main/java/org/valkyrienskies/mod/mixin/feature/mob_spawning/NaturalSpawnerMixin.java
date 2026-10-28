@@ -18,7 +18,7 @@ public class NaturalSpawnerMixin {
     private static void determineSpawningOnShips(final ServerLevel level, final LevelChunk chunk,
         final SpawnState spawnState,
         final boolean spawnFriendlies, final boolean spawnMonsters, final boolean bl, final CallbackInfo ci) {
-        if (VSGameUtilsKt.isChunkInShipyard(level, chunk.getPos().x, chunk.getPos().z)) {
+        if (VSGameUtilsKt.isChunkInShipyard(level, chunk.getPos().x(), chunk.getPos().z())) {
             if (!VSGameConfig.SERVER.getAllowMobSpawns()) {
                 ci.cancel();
             }

@@ -3,7 +3,8 @@ package org.valkyrienskies.mod.mixin.feature.entity_movement_packets;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import java.util.List;
-import java.util.function.Consumer;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundMoveEntityPacket;
 import net.minecraft.network.protocol.game.ClientboundRotateHeadPacket;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
@@ -16,6 +17,7 @@ import org.joml.Vector3d;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.valkyrienskies.core.api.ships.ServerShip;
 import org.valkyrienskies.core.impl.networking.simple.SimplePacket;
@@ -41,16 +43,12 @@ public class MixinServerEntity {
     private ServerLevel level;
 
     /**
-     * @author Tomato
-     * @reason Intercept entity motion packets to send our own data, then cancel the original packet.
+     * Intercept entity motion packets to send our own data.
+     *
+     * @return true if the original packet should be cancelled
      */
-    @WrapOperation(
-        method = "sendChanges",
-        at = @At(
-            value = "INVOKE",
-            target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V")
-    )
-    private void wrapBroadcastAccept(Consumer instance, Object t, Operation<Void> original) {
+    @Unique
+    private boolean vs$interceptPacket(final Packet<?> t) {
         if (t instanceof ClientboundSetEntityMotionPacket || t instanceof ClientboundTeleportEntityPacket || t instanceof ClientboundMoveEntityPacket || t instanceof ClientboundRotateHeadPacket) {
             if (EntityDragger.isDraggable(entity)) {
                 IEntityDraggingInformationProvider draggedEntity = (IEntityDraggingInformationProvider) entity;
@@ -87,12 +85,44 @@ public class MixinServerEntity {
                             player -> ValkyrienSkiesMod.getVsCore().getSimplePacketNetworking().sendToClients(vsPacket, ((PlayerDuck)player).vs_getPlayer())
                         );
 
-                        return;
+                        return true;
                     }
 
 
                 }
             }
+        }
+        return false;
+    }
+
+    /**
+     * @author Tomato
+     * @reason Intercept entity motion packets to send our own data, then cancel the original packet.
+     */
+    @WrapOperation(
+        method = "sendChanges",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/server/level/ServerEntity$Synchronizer;sendToTrackingPlayers(Lnet/minecraft/network/protocol/Packet;)V")
+    )
+    private void wrapBroadcastAccept(final ServerEntity.Synchronizer instance, final Packet<? super ClientGamePacketListener> t,
+        final Operation<Void> original) {
+        if (vs$interceptPacket(t)) {
+            return;
+        }
+        original.call(instance, t);
+    }
+
+    @WrapOperation(
+        method = "sendChanges",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/server/level/ServerEntity$Synchronizer;sendToTrackingPlayersAndSelf(Lnet/minecraft/network/protocol/Packet;)V")
+    )
+    private void wrapBroadcastAndSendAccept(final ServerEntity.Synchronizer instance,
+        final Packet<? super ClientGamePacketListener> t, final Operation<Void> original) {
+        if (vs$interceptPacket(t)) {
+            return;
         }
         original.call(instance, t);
     }

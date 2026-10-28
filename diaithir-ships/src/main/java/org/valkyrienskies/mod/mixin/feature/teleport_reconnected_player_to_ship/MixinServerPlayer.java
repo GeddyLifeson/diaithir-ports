@@ -3,7 +3,8 @@ package org.valkyrienskies.mod.mixin.feature.teleport_reconnected_player_to_ship
 import com.mojang.authlib.GameProfile;
 import javax.annotation.Nullable;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -23,34 +24,31 @@ import org.valkyrienskies.mod.common.util.IEntityDraggingInformationProvider;
 @Mixin(ServerPlayer.class)
 public abstract class MixinServerPlayer extends Player {
 
-    @Shadow
-    public abstract ServerLevel serverLevel();
-
-    public MixinServerPlayer(final Level level, final BlockPos blockPos, final float f,
-        final GameProfile gameProfile) {
-        super(level, blockPos, f, gameProfile);
+    public MixinServerPlayer(final Level level, final GameProfile gameProfile) {
+        super(level, gameProfile);
         throw new IllegalStateException("Unreachable");
     }
 
     @Inject(method = "readAdditionalSaveData", at = @At("RETURN"))
-    void teleportToShip(final CompoundTag compoundTag, final CallbackInfo ci) {
+    void teleportToShip(final ValueInput compoundTag, final CallbackInfo ci) {
         if (!VSGameConfig.SERVER.getTeleportReconnectedPlayers())
             return;
 
-        if (!compoundTag.contains("LastShipId"))
+        final java.util.Optional<Long> lastShipIdOpt = compoundTag.getLong("LastShipId");
+        if (lastShipIdOpt.isEmpty())
             return; // Player did not disconnect off of any ship
 
-        final long lastShipId = compoundTag.getLong("LastShipId");
+        final long lastShipId = lastShipIdOpt.get();
 
-        final Ship ship = VSGameUtilsKt.getShipObjectWorld(serverLevel()).getAllShips().getById(lastShipId);
+        final Ship ship = VSGameUtilsKt.getShipObjectWorld(((ServerLevel) level())).getAllShips().getById(lastShipId);
         // Don't teleport if the ship doesn't exist anymore
         if (ship == null)
             return;
 
         // Translate ship coords to world coords
-        final double x = compoundTag.getDouble("RelativeShipX");
-        final double y = compoundTag.getDouble("RelativeShipY");
-        final double z = compoundTag.getDouble("RelativeShipZ");
+        final double x = compoundTag.getDoubleOr("RelativeShipX", 0.0);
+        final double y = compoundTag.getDoubleOr("RelativeShipY", 0.0);
+        final double z = compoundTag.getDoubleOr("RelativeShipZ", 0.0);
 
         final Vector3d playerShipPosition = new Vector3d(x, y, z);
         final Vector3d playerWorldPosition = ship.getShipToWorld().transformPosition(playerShipPosition);
@@ -59,7 +57,7 @@ public abstract class MixinServerPlayer extends Player {
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("RETURN"))
-    void rememberLastShip(final CompoundTag compoundTag, final CallbackInfo ci) {
+    void rememberLastShip(final ValueOutput compoundTag, final CallbackInfo ci) {
         final EntityDraggingInformation draggingInformation = ((IEntityDraggingInformationProvider) this).getDraggingInformation();
 
         if (!draggingInformation.isEntityBeingDraggedByAShip())
@@ -69,7 +67,7 @@ public abstract class MixinServerPlayer extends Player {
         if (lastShipId == null)
             return;
 
-        final Ship ship = VSGameUtilsKt.getShipObjectWorld(serverLevel()).getAllShips().getById(lastShipId);
+        final Ship ship = VSGameUtilsKt.getShipObjectWorld(((ServerLevel) level())).getAllShips().getById(lastShipId);
         if (ship == null)
             return;
 

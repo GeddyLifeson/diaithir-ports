@@ -2,12 +2,9 @@ package org.valkyrienskies.mod.mixin.client.renderer;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.Camera;
-import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.SectionOcclusionGraph;
-import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -33,7 +30,7 @@ public abstract class MixinLevelRenderer {
      * @reason This mixin forces the game to always render block damage.
      */
     @ModifyExpressionValue(
-        method = "renderLevel",
+        method = "extractBlockDestroyAnimation",
         at = @At(value = "CONSTANT", args = "doubleValue=1024", ordinal = 0)
     )
     private double disableBlockDamageDistanceCheck(final double originalBlockDamageDistanceConstant) {
@@ -41,8 +38,8 @@ public abstract class MixinLevelRenderer {
     }
 
     @Inject(method = "renderLevel", at = @At("HEAD"))
-    private void preRenderLevel(DeltaTracker deltaTracker, boolean bl, Camera camera, GameRenderer gameRenderer,
-        LightTexture lightTexture, Matrix4f matrix4f, Matrix4f matrix4f2, CallbackInfo ci) {
+    private void preRenderLevel(CallbackInfo ci) {
+        final Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
         final ShipTransform shipMountedRenderTransform = ((IVSCamera) camera).getShipMountedRenderTransform();
         if (valkyrienskies$prevShipMountedToTransform != shipMountedRenderTransform) {
             if (valkyrienskies$prevShipMountedToTransform != null && shipMountedRenderTransform != null) {

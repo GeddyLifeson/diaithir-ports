@@ -3,7 +3,10 @@ package org.valkyrienskies.mod.mixin.feature.shipyard_entities;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Camera;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -20,48 +23,45 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.valkyrienskies.core.api.ships.ClientShip;
 import org.valkyrienskies.core.api.ships.properties.ShipTransform;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.entity.ShipMountedToData;
 import org.valkyrienskies.mod.common.entity.handling.VSEntityManager;
 import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
+import org.valkyrienskies.mod.mixinducks.client.render.EntityRenderStateDuck;
 
 @Mixin(value = EntityRenderDispatcher.class, priority = 500)
-public class MixinEntityRenderDispatcher {
+public abstract class MixinEntityRenderDispatcher {
 
     @Shadow
     public Camera camera;
 
+    @Shadow
+    public abstract <S extends EntityRenderState> EntityRenderer<?, ? super S> getRenderer(S renderState);
+
     @Inject(method = "distanceToSqr(Lnet/minecraft/world/entity/Entity;)D", at = @At("HEAD"), cancellable = true)
     private void preDistanceToSqr(final Entity entity, final CallbackInfoReturnable<Double> cir) {
-        final Vec3 pos = entity.position();
         // entity seems to be null sometimes when the "real camera" mod is used
         if (entity == null) return;
+        final Vec3 pos = camera.position();
         cir.setReturnValue(VSGameUtilsKt.squaredDistanceToInclShips(entity, pos.x, pos.y, pos.z));
     }
 
-    @Inject(method = "distanceToSqr(DDD)D", at = @At("HEAD"), cancellable = true)
-    private void preDistanceToSqr(final double x, final double y, final double z,
-        final CallbackInfoReturnable<Double> cir) {
-        // entity seems to be null sometimes when the "real camera" mod is used
-        if (camera.getEntity() == null) return;
-        cir.setReturnValue(VSGameUtilsKt.squaredDistanceToInclShips(camera.getEntity(), x, y, z));
-    }
-
-    @Inject(method = "render",
+    @Inject(method = "submit",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/renderer/entity/EntityRenderer;render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
-            shift = At.Shift.BEFORE),
-        locals = LocalCapture.CAPTURE_FAILHARD)
-    <T extends Entity> void render(
-        final T entity, final double x, final double y, final double z, final float rotationYaw,
-        final float partialTicks, final PoseStack matrixStack,
-        final MultiBufferSource buffer, final int packedLight, final CallbackInfo ci,
-        final EntityRenderer<T> entityRenderer
+            target = "Lnet/minecraft/client/renderer/entity/EntityRenderer;submit(Lnet/minecraft/client/renderer/entity/state/EntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V",
+            shift = At.Shift.BEFORE))
+    <S extends EntityRenderState> void vs$applyShipTransform(
+        final S renderState, final CameraRenderState cameraState, final double x, final double y, final double z,
+        final PoseStack matrixStack, final SubmitNodeCollector collector, final CallbackInfo ci
     ) {
+        final Entity entity = ((EntityRenderStateDuck) renderState).vs$getEntity();
+        if (entity == null) {
+            return;
+        }
+        final float partialTicks = renderState.partialTick;
         final ShipMountedToData shipMountedToData = VSGameUtilsKt.getShipMountedToData(entity, partialTicks);
 
         if (shipMountedToData != null) {
@@ -71,14 +71,14 @@ public class MixinEntityRenderDispatcher {
 
             final ShipTransform renderTransform = ((ClientShip) shipMountedToData.getShipMountedTo()).getRenderTransform();
 
-            final Vec3 entityPosition = entity.getPosition(partialTicks);
             final Vector3dc transformed = renderTransform.getShipToWorld().transformPosition(shipMountedToData.getMountPosInShip(), new Vector3d());
 
-            final double camX = x - entityPosition.x;
-            final double camY = y - entityPosition.y;
-            final double camZ = z - entityPosition.z;
+            // The position of the camera, as the render state is relative to it
+            final double camX = -cameraState.pos.x;
+            final double camY = -cameraState.pos.y;
+            final double camZ = -cameraState.pos.z;
 
-            final Vec3 offset = entityRenderer.getRenderOffset(entity, partialTicks);
+            final Vec3 offset = this.getRenderer(renderState).getRenderOffset(renderState);
             final Vector3dc scale = renderTransform.getShipToWorldScaling();
 
             matrixStack.translate(transformed.x() + camX, transformed.y() + camY, transformed.z() + camZ);
@@ -93,10 +93,11 @@ public class MixinEntityRenderDispatcher {
                 matrixStack.popPose();
                 matrixStack.pushPose();
 
+                final Vec3 offset = this.getRenderer(renderState).getRenderOffset(renderState);
                 VSEntityManager.INSTANCE.getHandler(entity)
-                    .applyRenderTransform(ship, entity, entityRenderer, x, y, z,
-                        rotationYaw, partialTicks, matrixStack,
-                        buffer, packedLight);
+                    .applyRenderTransform(ship, entity, offset, x, y, z,
+                        0.0f, partialTicks, matrixStack,
+                        Minecraft.getInstance().renderBuffers().bufferSource(), renderState.lightCoords);
             } else if (entity.isPassenger()) {
                 final ClientShip vehicleShip =
                     (ClientShip) VSGameUtilsKt.getLoadedShipManagingPos(entity.level(),
@@ -122,7 +123,7 @@ public class MixinEntityRenderDispatcher {
             final ClientShip ship =
                 (ClientShip) VSGameUtilsKt.getLoadedShipManagingPos(entity.level(), entity.blockPosition());
             if (ship != null) {
-                AABB aABB = entity.getBoundingBoxForCulling().inflate(0.5);
+                AABB aABB = entity.getBoundingBox().inflate(0.5);
                 if (aABB.hasNaN() || aABB.getSize() == 0.0) {
                     aABB = new AABB(entity.getX() - 2.0, entity.getY() - 2.0,
                         entity.getZ() - 2.0, entity.getX() + 2.0,

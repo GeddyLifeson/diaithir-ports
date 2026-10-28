@@ -11,19 +11,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.valkyrienskies.core.api.ships.ClientShip;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
-@Mixin(LevelRenderer.class)
+@Mixin(ClientLevel.class)
 public abstract class MixinLevelRenderer {
 
     @Shadow
-    private ClientLevel level;
-
-    @Shadow
-    @Nullable
-    protected abstract Particle addParticleInternal(ParticleOptions parameters, boolean alwaysSpawn,
+    protected abstract void doAddParticle(ParticleOptions parameters, boolean alwaysSpawn,
         boolean canSpawnOnMinimal,
         double x, double y, double z, double velocityX, double velocityY, double velocityZ);
 
@@ -32,7 +28,7 @@ public abstract class MixinLevelRenderer {
      * check, but this mixin is also not sufficient because not every particle is spawned using this method.
      */
     @Inject(
-        method = "addParticleInternal(Lnet/minecraft/core/particles/ParticleOptions;ZZDDDDDD)Lnet/minecraft/client/particle/Particle;",
+        method = "doAddParticle(Lnet/minecraft/core/particles/ParticleOptions;ZZDDDDDD)V",
         at = @At("HEAD"),
         cancellable = true
     )
@@ -40,9 +36,9 @@ public abstract class MixinLevelRenderer {
         final boolean canSpawnOnMinimal,
         final double x, final double y, final double z, final double velocityX, final double velocityY,
         final double velocityZ,
-        final CallbackInfoReturnable<Particle> cir
+        final CallbackInfo ci
     ) {
-        final ClientShip ship = VSGameUtilsKt.getLoadedShipManagingPos(level, (int) x >> 4, (int) z >> 4);
+        final ClientShip ship = VSGameUtilsKt.getLoadedShipManagingPos((ClientLevel) (Object) this, (int) x >> 4, (int) z >> 4);
 
         if (ship == null) {
             // vanilla behaviour
@@ -61,8 +57,8 @@ public abstract class MixinLevelRenderer {
             .fma(0.05, ship.getVelocity());
 
         // Return and re-call this method with new coords
-        cir.setReturnValue(
-            addParticleInternal(parameters, alwaysSpawn, canSpawnOnMinimal, p.x, p.y, p.z, v.x, v.y, v.z));
+        ci.cancel();
+        doAddParticle(parameters, alwaysSpawn, canSpawnOnMinimal, p.x, p.y, p.z, v.x, v.y, v.z);
     }
 
 }

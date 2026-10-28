@@ -1,6 +1,8 @@
 package org.valkyrienskies.mod.mixin.client;
 
 import net.minecraft.client.Camera;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
@@ -23,6 +25,12 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.joml.primitives.AABBdc;
+import org.valkyrienskies.mod.common.VSGameUtilsKt;
+import org.valkyrienskies.mod.common.entity.ShipMountedToData;
 import org.valkyrienskies.core.api.ships.ClientShip;
 import org.valkyrienskies.core.api.ships.properties.ShipTransform;
 import org.valkyrienskies.mod.client.IVSCamera;
@@ -34,7 +42,7 @@ public abstract class MixinCamera implements IVSCamera {
     @Shadow
     private boolean initialized;
     @Shadow
-    private BlockGetter level;
+    private Level level;
     @Shadow
     private Entity entity;
     @Shadow
@@ -61,6 +69,16 @@ public abstract class MixinCamera implements IVSCamera {
     private float eyeHeightOld;
     @Shadow
     private Vec3 position;
+    @Shadow
+    private int matrixPropertiesDirty;
+    @Shadow
+    private float depthFar;
+    @Shadow
+    @Final
+    private Minecraft minecraft;
+
+    @Shadow
+    public abstract float getCameraEntityPartialTicks(DeltaTracker deltaTracker);
 
     @Shadow
     private float getMaxZoom(float startingDistance) {
@@ -90,7 +108,6 @@ public abstract class MixinCamera implements IVSCamera {
             .add(playerBasePos);
 
         this.initialized = true;
-        this.level = level;
         this.entity = renderViewEntity;
         this.detached = thirdPerson;
         this.valkyrienskies$setRotationWithShipTransform(renderViewEntity.getViewYRot(partialTicks),
@@ -107,13 +124,66 @@ public abstract class MixinCamera implements IVSCamera {
 
             dist = dist > 4 ? dist : 4;
 
-            if (this.level instanceof Level) {
-                this.move((float) -this.valkyrienskies$getMaxZoomIgnoringMountedShip((Level) this.level, 4.0 * (dist / 4.0), shipMountedTo),
+            if (this.level != null) {
+                this.move((float) -this.valkyrienskies$getMaxZoomIgnoringMountedShip(this.level, 4.0 * (dist / 4.0), shipMountedTo),
                     0.0f, 0.0f);
             } else {
                 this.move(-this.getMaxZoom((float) (4.0 * (dist / 4.0))), 0.0f, 0.0f);
             }
         }
+        this.matrixPropertiesDirty |= 3;
+    }
+
+    /**
+     * Mount the player's camera to the ship they are mounted on, and extend the far plane to include ships.
+     */
+    @Inject(
+        method = "update",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;alignWithEntity(F)V", shift = At.Shift.AFTER)
+    )
+    private void vs$setupCameraWithMountedShip(final DeltaTracker deltaTracker, final CallbackInfo ci) {
+        valkyrienskies$shipMountedToTransform = null;
+
+        final float partialTicks = this.getCameraEntityPartialTicks(deltaTracker);
+
+        // Extend the far plane so that ships far away are still rendered
+        float maxDistance = this.depthFar;
+        for (final ClientShip ship : VSGameUtilsKt.getShipObjectWorld(this.minecraft).getLoadedShips()) {
+            final Vec3 cameraPos = this.position;
+            final AABBdc shipAABB = ship.getRenderAABB();
+            final double dMinX = shipAABB.minX() - cameraPos.x();
+            final double dMaxX = shipAABB.maxX() - cameraPos.x();
+            final double dMinY = shipAABB.minY() - cameraPos.y();
+            final double dMaxY = shipAABB.maxY() - cameraPos.y();
+            final double dMinZ = shipAABB.minZ() - cameraPos.z();
+            final double dMaxZ = shipAABB.maxZ() - cameraPos.z();
+            final double furthestDist = Math.sqrt(Math.max(dMinX * dMinX, dMaxX * dMaxX)
+                + Math.max(dMinY * dMinY, dMaxY * dMaxY) + Math.max(dMinZ * dMinZ, dMaxZ * dMaxZ));
+            maxDistance = Math.max(maxDistance, (float) furthestDist);
+        }
+        this.depthFar = maxDistance;
+
+        final Entity player = this.minecraft.player;
+        if (this.level == null || player == null) {
+            return;
+        }
+
+        final ShipMountedToData shipMountedToData = VSGameUtilsKt.getShipMountedToData(player, partialTicks);
+        if (shipMountedToData == null || player.getVehicle() == null) {
+            return;
+        }
+
+        final ClientShip clientShip = (ClientShip) shipMountedToData.getShipMountedTo();
+
+        this.setupWithShipMounted(
+            this.level,
+            this.minecraft.getCameraEntity() == null ? this.minecraft.player : this.minecraft.getCameraEntity(),
+            !this.minecraft.options.getCameraType().isFirstPerson(),
+            this.minecraft.options.getCameraType().isMirrored(),
+            partialTicks,
+            clientShip,
+            shipMountedToData.getMountPosInShip()
+        );
     }
 
     @Override

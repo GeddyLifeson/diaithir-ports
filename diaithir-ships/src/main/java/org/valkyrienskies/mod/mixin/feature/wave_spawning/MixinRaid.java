@@ -19,33 +19,29 @@ public abstract class MixinRaid {
     @Shadow
     protected abstract void setCenter(BlockPos blockPos);
 
-    @Shadow
-    @Final
-    private ServerLevel level;
-
-    @WrapOperation(method = "getValidSpawnPos", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/raid/Raid;findRandomSpawnPos(II)Lnet/minecraft/core/BlockPos;"))
-    private BlockPos onFindRandomSpawnPos(Raid instance, int i, int j, Operation<BlockPos> original) {
+    @WrapOperation(method = "getValidSpawnPos(Lnet/minecraft/server/level/ServerLevel;)Ljava/util/Optional;", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/raid/Raid;findRandomSpawnPos(Lnet/minecraft/server/level/ServerLevel;I)Lnet/minecraft/core/BlockPos;"))
+    private BlockPos onFindRandomSpawnPos(Raid instance, ServerLevel level, int i, Operation<BlockPos> original) {
         BlockPos originalCenter = this.getCenter();
-        this.setCenter(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(this.level, originalCenter)));
-        BlockPos result = original.call(instance, i, j);
+        this.setCenter(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, originalCenter)));
+        BlockPos result = original.call(instance, level, i);
         this.setCenter(originalCenter);
         if (result != null) {
             return result;
         } else {
-            return original.call(instance, i, j);
+            return original.call(instance, level, i);
         }
     }
 
-    @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/raid/Raid;findRandomSpawnPos(II)Lnet/minecraft/core/BlockPos;"))
-    private BlockPos onFindRandomSpawnPos2(Raid instance, int i, int j, Operation<BlockPos> original) {
+    @WrapOperation(method = "lambda$tick$0", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/raid/Raid;findRandomSpawnPos(Lnet/minecraft/server/level/ServerLevel;I)Lnet/minecraft/core/BlockPos;"))
+    private BlockPos onFindRandomSpawnPos2(Raid instance, ServerLevel level, int i, Operation<BlockPos> original) {
         BlockPos originalCenter = this.getCenter();
-        this.setCenter(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(this.level, originalCenter)));
-        BlockPos result = original.call(instance, i, j);
+        this.setCenter(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, originalCenter)));
+        BlockPos result = original.call(instance, level, i);
         this.setCenter(originalCenter);
         if (result != null) {
             return result;
         } else {
-            return original.call(instance, i, j);
+            return original.call(instance, level, i);
         }
     }
 }

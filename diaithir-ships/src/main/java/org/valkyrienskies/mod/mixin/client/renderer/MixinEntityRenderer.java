@@ -23,13 +23,13 @@ public class MixinEntityRenderer {
      * <p>
      * Presumably, it is caused by the culling AABB only being updated on a subsequent tick, so we bypass that.
      */
-    @WrapOperation(method = "shouldRender", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;getBoundingBoxForCulling()Lnet/minecraft/world/phys/AABB;"))
-    private AABB redirectAABBConstructor(Entity instance, Operation<AABB> original) {
+    @WrapOperation(method = "shouldRender", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/EntityRenderer;getBoundingBoxForCulling(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/phys/AABB;"))
+    private AABB redirectAABBConstructor(EntityRenderer<?, ?> renderer, Entity instance, Operation<AABB> original) {
         if (instance instanceof IEntityDraggingInformationProvider dragProvider && dragProvider.getDraggingInformation().isEntityBeingDraggedByAShip() && dragProvider.getDraggingInformation().getLastShipStoodOn() != null) {
             EntityDraggingInformation dragInfo = dragProvider.getDraggingInformation();
             ClientShip ship = VSGameUtilsKt.getShipObjectWorld((ClientLevel) instance.level()).getAllShips().getById(dragInfo.getLastShipStoodOn());
             if (ship == null) {
-                return original.call(instance);
+                return original.call(renderer, instance);
             }
             if (dragInfo.getLastShipStoodOn() != null && (dragInfo.getRelativePositionOnShip() != null || dragInfo.getServerRelativePlayerPosition() != null)) {
                 Vector3dc positionToTransform = dragInfo.bestRelativeEntityPosition();
@@ -40,6 +40,6 @@ public class MixinEntityRenderer {
                 }
             }
         }
-        return original.call(instance);
+        return original.call(renderer, instance);
     }
 }

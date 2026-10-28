@@ -30,7 +30,7 @@ public abstract class MixinPlayer extends LivingEntity implements PlayerKnownShi
     }
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void populateLoadedShips(Level level, BlockPos blockPos, float f, GameProfile gameProfile, CallbackInfo ci) {
+    private void populateLoadedShips(Level level, GameProfile gameProfile, CallbackInfo ci) {
         if (level != null && level.isClientSide()) { // Serverside we repopulate it from the previous ServerPlayer in ServerPlayer::restoreFrom.
             VSGameUtilsKt.getShipObjectWorld(level).getLoadedShips().forEach(ship -> vs_knownShips.add(ship.getId()));
         }
@@ -39,7 +39,7 @@ public abstract class MixinPlayer extends LivingEntity implements PlayerKnownShi
     @Override
     public void vs_addKnownShip(long shipId) {
         vs_knownShips.add(shipId);
-        if (level().isClientSide) {
+        if (level().isClientSide()) {
             var packet = new PacketChangeKnownShips(true, shipId);
             ValkyrienSkiesMod.getVsCore().getSimplePacketNetworking().sendToServer(packet);
         }
@@ -48,7 +48,7 @@ public abstract class MixinPlayer extends LivingEntity implements PlayerKnownShi
     @Override
     public void vs_removeKnownShip(long shipId) {
         vs_knownShips.remove(shipId);
-        if (level().isClientSide) {
+        if (level().isClientSide()) {
             var packet = new PacketChangeKnownShips(false, shipId);
             ValkyrienSkiesMod.getVsCore().getSimplePacketNetworking().sendToServer(packet);
         }

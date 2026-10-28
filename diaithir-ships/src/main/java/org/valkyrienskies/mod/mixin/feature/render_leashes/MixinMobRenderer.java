@@ -16,7 +16,7 @@ import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
 public class MixinMobRenderer {
 
     // For leashes rendering
-    @WrapOperation(method = "renderLeash", at = @At(value = "INVOKE",
+    @WrapOperation(method = "extractRenderState", at = @At(value = "INVOKE",
         target = "Lnet/minecraft/world/entity/Entity;getRopeHoldPosition(F)Lnet/minecraft/world/phys/Vec3;"))
     public Vec3 getRopeHoldPosition(final Entity instance, final float partialTicks,
         final Operation<Vec3> getRopeHoldPosition) {

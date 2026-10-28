@@ -17,14 +17,21 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
 public class MixinBiome {
     // We mixin specifically the temperature check, as checks for valid position, free space and others should happen in ship chunk.
     @WrapOperation(
-        method = {
-            "shouldFreeze(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Z)Z",
-            "shouldSnow"
-        }, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/Biome;warmEnoughToRain(Lnet/minecraft/core/BlockPos;)Z")
+        method = "shouldFreeze(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;Z)Z",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/Biome;warmEnoughToRain(Lnet/minecraft/core/BlockPos;I)Z")
     )
-    boolean useTemperatureAtWorldPos(Biome instance, BlockPos blockPos, Operation<Boolean> original, @Local(argsOnly = true) LevelReader levelReader) {
-        if (levelReader instanceof Level level) return original.call(instance, BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, blockPos)));
-        return original.call(instance, blockPos);
+    boolean useTemperatureAtWorldPos(Biome instance, BlockPos blockPos, int seaLevel, Operation<Boolean> original, @Local(argsOnly = true) LevelReader levelReader) {
+        if (levelReader instanceof Level level) return original.call(instance, BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, blockPos)), seaLevel);
+        return original.call(instance, blockPos, seaLevel);
+    }
+
+    @WrapOperation(
+        method = "shouldSnow",
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;I)Lnet/minecraft/world/level/biome/Biome$Precipitation;")
+    )
+    Biome.Precipitation useTemperatureAtWorldPosForSnow(Biome instance, BlockPos blockPos, int seaLevel, Operation<Biome.Precipitation> original, @Local(argsOnly = true) LevelReader levelReader) {
+        if (levelReader instanceof Level level) return original.call(instance, BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, blockPos)), seaLevel);
+        return original.call(instance, blockPos, seaLevel);
     }
 
     // Lighting from world blocks can prevent snow / ice formation on ships.

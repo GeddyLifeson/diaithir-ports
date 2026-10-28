@@ -29,7 +29,7 @@ public class MixinEntity {
         @Local(argsOnly = true) final AABB entityBoundingBox,
         @Local(argsOnly = true) final Level level
     ) {
-        if (entity != null || !level.isClientSide) {
+        if (entity != null || !level.isClientSide()) {
             return movement;
         }
         return EntityShipCollisionUtils.INSTANCE.adjustEntityMovementForShipCollisions(null, movement, entityBoundingBox, level);

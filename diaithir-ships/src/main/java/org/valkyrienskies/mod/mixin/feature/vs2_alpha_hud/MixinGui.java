@@ -7,7 +7,7 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.server.IntegratedServer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,8 +30,8 @@ public class MixinGui {
     /**
      * Render the "VS 2 Alpha" text
      */
-    @Inject(method = "renderEffects", at = @At("HEAD"))
-    private void preRenderStatusEffectOverlay(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    @Inject(method = "extractEffects", at = @At("HEAD"))
+    private void preRenderStatusEffectOverlay(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         // Read directly from the ModConfigSpec ConfigValue instead of the Kotlin-var
         // mirror. ConfigValue.get() returns the live, auto-synced cache that NeoForge
         // writes through on UI edits, so toggling "Render Debug Text" in the mods-menu
@@ -80,7 +80,7 @@ public class MixinGui {
                 final int posX = 1;
 
                 guiGraphics.fill(posX, posY - 1, 2 + textLength + posX, posY + textHeight - 1, -1873784752);
-                guiGraphics.drawString(fontRenderer, string, 2, posY, 14737632);
+                guiGraphics.text(fontRenderer, string, 2, posY, 14737632);
             }
         }
     }

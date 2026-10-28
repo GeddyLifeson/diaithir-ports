@@ -8,7 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.ServerExplosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.valkyrienskies.core.api.ships.LoadedServerShip;
 import org.valkyrienskies.core.api.ships.ServerShip;
 import org.valkyrienskies.core.impl.config.VSCoreConfig;
@@ -34,25 +34,16 @@ import org.valkyrienskies.mod.common.config.VSGameConfig;
 import org.valkyrienskies.mod.common.util.GameToPhysicsAdapter;
 import org.valkyrienskies.mod.common.util.VectorConversionsMCKt;
 
-@Mixin(Explosion.class)
+@Mixin(ServerExplosion.class)
 public abstract class MixinExplosion {
 
     @Shadow
     @Final
-    private Level level;
+    private ServerLevel level;
     @Shadow
     @Final
     @Mutable
-    private double x;
-
-    @Shadow
-    @Final
-    @Mutable
-    private double y;
-    @Shadow
-    @Final
-    @Mutable
-    private double z;
+    private Vec3 center;
     @Shadow
     @Final
     @Mutable
@@ -61,15 +52,12 @@ public abstract class MixinExplosion {
     private boolean isModifyingExplosion = false;
 
     @Shadow
-    public abstract void explode();
+    public abstract int explode();
 
     @Unique
     private void doExplodeForce() {
-        if (this.level.isClientSide) {
-            return;
-        }
         // Custom forces
-        final Vector3d originPos = new Vector3d(this.x, this.y, this.z);
+        final Vector3d originPos = new Vector3d(this.center.x, this.center.y, this.center.z);
         final BlockPos explodePos = BlockPos.containing(originPos.x(), originPos.y(), originPos.z());
         final int radius = (int) Math.ceil(this.radius);
         for (int x = radius; x >= -radius; x--) {
@@ -121,7 +109,7 @@ public abstract class MixinExplosion {
     }
 
     @Inject(at = @At("TAIL"), method = "explode")
-    private void afterExplode(final CallbackInfo ci) {
+    private void afterExplode(final CallbackInfoReturnable<Integer> ci) {
         if (isModifyingExplosion) {
             doExplodeForce();
             return;
@@ -129,20 +117,14 @@ public abstract class MixinExplosion {
 
         isModifyingExplosion = true;
 
-        final double origX = this.x;
-        final double origY = this.y;
-        final double origZ = this.z;
+        final Vec3 origCenter = this.center;
 
-        VSGameUtilsKt.transformToNearbyShipsAndWorld(this.level, this.x, this.y, this.z, this.radius, (x, y, z) -> {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+        VSGameUtilsKt.transformToNearbyShipsAndWorld(this.level, origCenter.x, origCenter.y, origCenter.z, this.radius, (x, y, z) -> {
+            this.center = new Vec3(x, y, z);
             this.explode();
         });
 
-        this.x = origX;
-        this.y = origY;
-        this.z = origZ;
+        this.center = origCenter;
 
         isModifyingExplosion = false;
     }
@@ -173,13 +155,13 @@ public abstract class MixinExplosion {
     // Don't raytrace the shipyard
     // getEntities already gives shipyard entities
     @WrapOperation(
-        method = "explode",
+        method = "hurtEntities(Ljava/util/List;)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/world/level/Level;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;"
+            target = "Lnet/minecraft/server/level/ServerLevel;getEntities(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/phys/AABB;)Ljava/util/List;"
         )
     )
-    private List<Entity> noRayTrace(final Level instance, final Entity entity, final AABB aabb,
+    private List<Entity> noRayTrace(final ServerLevel instance, final Entity entity, final AABB aabb,
         final Operation<List<Entity>> getEntities) {
         if (isModifyingExplosion) {
             return Collections.emptyList();

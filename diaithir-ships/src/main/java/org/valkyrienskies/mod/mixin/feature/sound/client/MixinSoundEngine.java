@@ -41,7 +41,7 @@ public abstract class MixinSoundEngine {
             target = "Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;",
             ordinal = 0
         ),
-        method = "tickNonPaused"
+        method = "tickInGameSound"
     )
     private Object redirectGet(final Map<?, ?> instance, final Object obj, final Operation<Object> get) {
         if (obj instanceof final VelocityTickableSoundInstance soundInstance) {
@@ -69,7 +69,7 @@ public abstract class MixinSoundEngine {
             value = "INVOKE",
             target = "Lcom/mojang/blaze3d/audio/Listener;setTransform(Lcom/mojang/blaze3d/audio/ListenerTransform;)V"
         ),
-        method = "*"
+        method = "lambda$updateSource$0"
     )
     private void injectListenerVelocity(final Listener listener, ListenerTransform listenerTransform,
         final Operation<Void> setTransform) {

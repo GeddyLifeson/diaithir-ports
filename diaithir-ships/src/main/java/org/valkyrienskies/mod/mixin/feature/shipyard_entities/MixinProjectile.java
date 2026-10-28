@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.valkyrienskies.core.api.ships.Ship;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
@@ -34,17 +35,22 @@ public abstract class MixinProjectile extends Entity implements TraceableEntity 
      * If the projectile hit the ship, sends it to the shipyard.
      * This makes arrows/tridents/fishing hooks stuck on a ship render at correct position.
      */
-    @Inject(
+    @ModifyVariable(
         method = "onHitBlock",
-        at = @At("HEAD")
+        at = @At("HEAD"),
+        argsOnly = true
     )
-    private void sendToShipyard(BlockHitResult blockHitResult, CallbackInfo ci) {
+    private BlockHitResult sendToShipyard(BlockHitResult blockHitResult) {
         Ship ship;
         if ((ship = VSGameUtilsKt.getShipManagingPos(level(), blockHitResult.getBlockPos())) != null) {
-            Vector3d hitLocation = ship.getWorldToShip().transformPosition(VectorConversionsMCKt.toJOML(blockHitResult.location));
-            blockHitResult.location = VectorConversionsMCKt.toMinecraft(hitLocation);
+            Vector3d hitLocation = ship.getWorldToShip().transformPosition(VectorConversionsMCKt.toJOML(blockHitResult.getLocation()));
+            final BlockHitResult shipHit = new BlockHitResult(VectorConversionsMCKt.toMinecraft(hitLocation),
+                blockHitResult.getDirection(), blockHitResult.getBlockPos(), blockHitResult.isInside(),
+                blockHitResult.isWorldBorderHit());
             DefaultShipyardEntityHandler.INSTANCE.moveEntityFromWorldToShipyard(this, ship);
+            return shipHit;
         }
+        return blockHitResult;
     }
 
     /**

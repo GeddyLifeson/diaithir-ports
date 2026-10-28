@@ -2,6 +2,7 @@ package org.valkyrienskies.mod.mixin.feature.entity_collision;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -26,7 +27,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.valkyrienskies.core.api.ships.Ship;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.util.EntityDraggingInformation;
@@ -37,6 +37,9 @@ import org.valkyrienskies.mod.common.util.IEntityDraggingInformationProvider;
 public abstract class MixinEntity implements IEntityDraggingInformationProvider {
 
     // region collision
+
+    @Unique
+    private Vec3 vs$lastCollisionResult = null;
 
     /**
      * Cancel movement of entities that are colliding with unloaded ships
@@ -67,6 +70,7 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
         movement = EntityShipCollisionUtils.INSTANCE
             .adjustEntityMovementForShipCollisions(entity, movement, box, this.level);
         final Vec3 collisionResultWithWorld = collide.call(entity, movement);
+        vs$lastCollisionResult = collisionResultWithWorld;
 
         if (collisionResultWithWorld.distanceToSqr(movement) > 1e-12) {
             // We collided with the world? Set the dragging ship to null.
@@ -88,13 +92,17 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
      *
      * <p>This code makes accurate collision with non axis-aligned surfaces impossible, so this mixin replaces it. </p>
      */
-    @Inject(method = "move", at = @At(
+    @WrapOperation(method = "move", at = @At(
         value = "INVOKE",
-        target = "Lnet/minecraft/world/entity/Entity;setDeltaMovement(DDD)V"),
-        locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true
+        target = "Lnet/minecraft/world/entity/Entity;setDeltaMovement(DDD)V")
     )
-    private void redirectSetVelocity(final MoverType moverType, final Vec3 movement, final CallbackInfo callbackInfo,
-        final Vec3 movementAdjustedForCollisions) {
+    private void redirectSetVelocity(final Entity instance, final double x, final double y, final double z,
+        final Operation<Void> original, @Local(argsOnly = true) final Vec3 movement) {
+        final Vec3 movementAdjustedForCollisions = vs$lastCollisionResult;
+        if (movementAdjustedForCollisions == null) {
+            original.call(instance, x, y, z);
+            return;
+        }
 
         // Compute the collision response horizontal
         final Vector3dc collisionResponseHorizontal =
@@ -118,10 +126,7 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
                     - collisionResponseHorizontalNormal.z() * parallelHorizontalVelocityComponent
             );
         }
-        // The rest of the move function (including tryCheckInsideBlocks) is skipped, so calling it here
-        tryCheckInsideBlocks();
-        // Cancel the original invocation of Entity.setVelocity(DDD)V to remove vanilla behavior
-        callbackInfo.cancel();
+        // The vanilla velocity change is skipped
     }
 
     // endregion
@@ -227,9 +232,6 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
 
     @Shadow
     public abstract void setDeltaMovement(double x, double y, double z);
-
-    @Shadow
-    protected abstract void tryCheckInsideBlocks();
 
     @Shadow
     protected abstract Vec3 collide(Vec3 vec3d);

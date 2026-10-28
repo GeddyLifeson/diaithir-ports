@@ -17,25 +17,26 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
 @Mixin(Camera.class)
 public abstract class MixinCamera {
     @Shadow
-    public abstract Vec3 getPosition();
+    public abstract Vec3 position();
 
     @Unique
     private boolean isShipWater = false;
 
     @WrapOperation(
         at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/world/level/BlockGetter;getFluidState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/material/FluidState;"),
+            target = "Lnet/minecraft/world/level/Level;getFluidState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/material/FluidState;"),
         method = "getFluidInCamera"
     )
-    private FluidState getFluidInCamera(final BlockGetter instance, final BlockPos blockPos,
+    private FluidState getFluidInCamera(final Level instance, final BlockPos blockPos,
         final Operation<FluidState> getFluidState) {
         final FluidState[] fluidState = {getFluidState.call(instance, blockPos)};
         isShipWater = false;
-        if (fluidState[0].isEmpty() && instance instanceof final Level level) {
+        if (fluidState[0].isEmpty()) {
+            final Level level = instance;
 
-            final double origX = this.getPosition().x;
-            final double origY = this.getPosition().y;
-            final double origZ = this.getPosition().z;
+            final double origX = this.position().x;
+            final double origY = this.position().y;
+            final double origZ = this.position().z;
 
             VSGameUtilsKt.transformToNearbyShipsAndWorld(level, origX, origY, origZ, 1,
                 (x, y, z) -> {

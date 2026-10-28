@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.Holder;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
 import net.minecraft.world.entity.ai.village.poi.PoiManager.Occupancy;
 import net.minecraft.world.entity.ai.village.poi.PoiRecord;
@@ -38,17 +39,17 @@ public abstract class MixinPOIManager implements OfLevel {
     private Level valkyrienskies$sLevel;
 
     @Shadow
-    public abstract Stream<PoiRecord> getInChunk(Predicate<PoiType> predicate, ChunkPos chunkPos, Occupancy occupancy);
+    public abstract Stream<PoiRecord> getInChunk(Predicate<Holder<PoiType>> predicate, ChunkPos chunkPos, Occupancy occupancy);
 
     /**
      * @author Tomato
      * @reason Allows for ships to be considered as a valid POI, also this method sucks anyway.
      */
     @Overwrite
-    public Stream<PoiRecord> getInSquare(Predicate<PoiType> predicate, BlockPos blockPos, int i, Occupancy occupancy) {
+    public Stream<PoiRecord> getInSquare(Predicate<Holder<PoiType>> predicate, BlockPos blockPos, int i, Occupancy occupancy) {
         int j = Math.floorDiv(i, 16) + 1;
         final AABB aABB = new AABB(blockPos).inflate((double) i + 1);
-        Stream<ChunkPos> chunkRange = ChunkPos.rangeClosed(new ChunkPos(blockPos), j);
+        Stream<ChunkPos> chunkRange = ChunkPos.rangeClosed(ChunkPos.containing(blockPos), j);
         if (this.valkyrienskies$sLevel instanceof ServerLevel sLevel) {
             for (LoadedServerShip ship : VSGameUtilsKt.getShipObjectWorld(sLevel).getLoadedShips().getIntersecting(
                 VectorConversionsMCKt.toJOML(aABB), VSGameUtilsKt.getDimensionId(sLevel))) {
@@ -68,7 +69,7 @@ public abstract class MixinPOIManager implements OfLevel {
     }
 
     @WrapOperation(method = "getInRange", at = @At(value = "INVOKE", target = "Ljava/util/stream/Stream;filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;"))
-    private Stream<PoiRecord> onGetInRange(Stream<PoiRecord> instance, Predicate<PoiType> predicate, Operation<Stream<PoiRecord>> original, @Local(argsOnly = true) BlockPos arg, @Local(argsOnly = true) int i) {
+    private Stream<PoiRecord> onGetInRange(Stream<PoiRecord> instance, Predicate<PoiRecord> predicate, Operation<Stream<PoiRecord>> original, @Local(argsOnly = true) BlockPos arg, @Local(argsOnly = true) int i) {
         final int k = i * i;
         return instance.filter(poiRecord -> POIChunkSearcher.INSTANCE.getWorldPos(poiRecord, this.valkyrienskies$sLevel).distanceToSqr(Vec3.atLowerCornerOf(arg)) <= (double)k);
     }

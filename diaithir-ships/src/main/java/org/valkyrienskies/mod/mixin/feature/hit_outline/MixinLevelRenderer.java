@@ -7,15 +7,11 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import javax.annotation.Nullable;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.client.renderer.ShapeRenderer;
+import net.minecraft.client.renderer.state.level.BlockOutlineRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.At.Shift;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.valkyrienskies.core.api.ships.ClientShip;
@@ -28,37 +24,26 @@ public class MixinLevelRenderer {
     @Nullable
     private ClientLevel level;
 
-    @Shadow
-    private static void renderShape(final PoseStack matrixStack, final VertexConsumer vertexConsumer,
-        final VoxelShape voxelShape, final double d, final double e, final double f, final float red, final float green,
-        final float blue, final float alpha) {
-        throw new AssertionError();
-    }
-
     /**
-     * @reason mojank developers who wrote this don't quite understand what a matrixstack is apparently
+     * @reason The outline of a block on a ship has to be rendered with the ship render transform.
      */
     @Inject(
         method = "renderHitOutline",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/client/renderer/LevelRenderer;renderShape(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/phys/shapes/VoxelShape;DDDFFFF)V",
-            shift = Shift.BEFORE
-        ),
+        at = @At("HEAD"),
         cancellable = true
     )
-    private void preRenderShape(PoseStack matrixStack, VertexConsumer vertexConsumer, Entity entity,
-        double camX, double camY, double camZ,
-        BlockPos pos, BlockState state,
-        CallbackInfo ci
+    private void preRenderHitOutline(final PoseStack matrixStack, final VertexConsumer vertexConsumer,
+        final double camX, final double camY, final double camZ, final BlockOutlineRenderState state,
+        final int color, final float width, final CallbackInfo ci
     ) {
-        final ClientShip ship = VSGameUtilsKt.getLoadedShipManagingPos(this.level, pos);
+        if (this.level == null) {
+            return;
+        }
+        final ClientShip ship = VSGameUtilsKt.getLoadedShipManagingPos(this.level, state.pos());
         if (ship != null) {
             matrixStack.pushPose();
-            transformRenderWithShip(ship.getRenderTransform(), matrixStack, pos, camX, camY, camZ);
-            renderShape(matrixStack, vertexConsumer,
-                state.getShape(this.level, pos, CollisionContext.of(entity)),
-                0d, 0d, 0d, 0.0F, 0.0F, 0.0F, 0.4F);
+            transformRenderWithShip(ship.getRenderTransform(), matrixStack, state.pos(), camX, camY, camZ);
+            ShapeRenderer.renderShape(matrixStack, vertexConsumer, state.shape(), 0d, 0d, 0d, color, width);
             matrixStack.popPose();
             ci.cancel();
         }

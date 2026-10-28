@@ -1,56 +1,26 @@
 package org.valkyrienskies.mod.mixin.feature.fix_render_chunk_sorting;
 
-import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.phys.AABB;
-import org.joml.Vector3d;
-import org.joml.Vector3dc;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.valkyrienskies.core.api.ships.ClientShip;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
 @Mixin(SectionRenderDispatcher.RenderSection.class)
 public class MixinRenderChunk {
 
     @Shadow
-    private AABB bb;
-    @Shadow
     @Final
-    BlockPos.MutableBlockPos origin;
+    private BlockPos.MutableBlockPos renderOrigin;
 
-    /**
-     * This mixin fixes chunk render sorting. Vanilla MC behavior is to render the chunks closest to the player first,
-     * however ship chunks are extremely far away, so they always get rendered last.
-     *
-     * <p>By injecting here we fix the calculation that determines the distance between the player and a chunk, which
-     * makes the ship chunks render in the correct order.
-     */
-    @Inject(method = "getDistToPlayerSqr", at = @At("HEAD"), cancellable = true)
-    private void preGetSquaredCameraDistance(final CallbackInfoReturnable<Double> cir) {
-        final ClientLevel world = Minecraft.getInstance().level;
-        if (world == null) {
-            return;
-        }
-
-        final ClientShip shipObject = VSGameUtilsKt.getLoadedShipManagingPos(world, origin);
-        if (shipObject != null) {
-            final Camera camera = Minecraft.getInstance().gameRenderer.getMainCamera();
-            final Vector3dc chunkPosInWorld = shipObject.getRenderTransform().getShipToWorldMatrix().transformPosition(
-                new Vector3d(bb.minX + 8.0, bb.minY + 8.0, bb.minZ + 8.0)
-            );
-            final double relDistanceSq =
-                chunkPosInWorld.distanceSquared(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z);
-            cir.setReturnValue(relDistanceSq);
-        }
-    }
+    // The vanilla chunk sorting by distance to the player that this mixin used to fix (getDistToPlayerSqr) no longer
+    // exists in 26.1.
 
     // This fixes ship blocks not rendering for some reason...
     @Inject(method = "hasAllNeighbors", at = @At("HEAD"), cancellable = true)
@@ -60,7 +30,7 @@ public class MixinRenderChunk {
             return;
         }
 
-        if (VSGameUtilsKt.isBlockInShipyard(world, origin)) {
+        if (VSGameUtilsKt.isBlockInShipyard(world, renderOrigin)) {
             cir.setReturnValue(true);
         }
     }

@@ -92,8 +92,8 @@ public abstract class MixinClientLevel implements IShipObjectWorldClientProvider
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void postInit(ClientPacketListener clientPacketListener, ClientLevelData clientLevelData,
-        ResourceKey resourceKey, Holder holder, int i, int j, Supplier supplier, LevelRenderer levelRenderer,
-        boolean bl, long l, CallbackInfo ci) {
+        ResourceKey resourceKey, Holder holder, int i, int j, LevelRenderer levelRenderer,
+        boolean bl, long l, int m, CallbackInfo ci) {
         if (getShipObjectWorld() != null) {
             DimensionParametersResolver.Parameters params = DimensionParametersResolver.INSTANCE.getDimensionMap().get(
                 VSGameUtilsKt.getDimensionId((ClientLevel) (Object) this)
@@ -133,7 +133,7 @@ public abstract class MixinClientLevel implements IShipObjectWorldClientProvider
     private void afterAnimatedTick(final int posX, final int posY, final int posZ, final CallbackInfo ci) {
         boolean holdingBarrierItem = false;
         if (this.minecraft.gameMode.getPlayerMode() == GameType.CREATIVE) {
-            for (final ItemStack itemStack : this.minecraft.player.getHandSlots()) {
+            for (final ItemStack itemStack : java.util.List.of(this.minecraft.player.getMainHandItem(), this.minecraft.player.getOffhandItem())) {
                 if (itemStack.getItem() == Blocks.BARRIER.asItem()) {
                     holdingBarrierItem = true;
                     break;
@@ -143,7 +143,7 @@ public abstract class MixinClientLevel implements IShipObjectWorldClientProvider
         Player player = this.minecraft.player;
         assert player != null;
 
-        final double playerScale = player.getBbWidth() / Player.STANDING_DIMENSIONS.width();
+        final double playerScale = player.getBbWidth() / net.minecraft.world.entity.EntityType.PLAYER.getDimensions().width();
 
 
         // use more precise player position, since ship blocks aren't locked to the grid of integer coordinates in world space

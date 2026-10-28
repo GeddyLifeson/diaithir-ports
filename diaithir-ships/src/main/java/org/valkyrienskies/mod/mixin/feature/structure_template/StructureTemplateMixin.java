@@ -69,7 +69,7 @@ public abstract class StructureTemplateMixin implements StructureTemplateFillFro
             if (customTag != null) {
                 blockInfo = new StructureTemplate.StructureBlockInfo(relativePos, blockState, customTag);
             } else if (blockEntity != null) {
-                blockInfo = new StructureTemplate.StructureBlockInfo(relativePos, blockState, blockEntity.saveWithId(level.registryAccess()));
+                blockInfo = new StructureTemplate.StructureBlockInfo(relativePos, blockState, vs$saveBlockEntity(blockEntity, level));
             } else {
                 blockInfo = new StructureTemplate.StructureBlockInfo(relativePos, blockState, null);
             }
@@ -87,5 +87,14 @@ public abstract class StructureTemplateMixin implements StructureTemplateFillFro
         this.entityInfoList.clear();
         this.palettes.clear();
         this.palettes.add(PaletteInvoker.invokeInit(finalBlockList));
+    }
+
+    @org.spongepowered.asm.mixin.Unique
+    private static CompoundTag vs$saveBlockEntity(final BlockEntity blockEntity, final Level level) {
+        final net.minecraft.world.level.storage.TagValueOutput output =
+            net.minecraft.world.level.storage.TagValueOutput.createWithContext(
+                net.minecraft.util.ProblemReporter.DISCARDING, level.registryAccess());
+        blockEntity.saveWithId(output);
+        return output.buildResult();
     }
 }

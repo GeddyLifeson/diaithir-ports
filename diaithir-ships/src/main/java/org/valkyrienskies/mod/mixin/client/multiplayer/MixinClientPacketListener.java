@@ -8,6 +8,8 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.protocol.game.ClientboundLoginPacket;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +29,7 @@ public class MixinClientPacketListener {
     @Inject(
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/util/thread/BlockableEventLoop;)V",
+            target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/network/PacketProcessor;)V",
             shift = Shift.AFTER
         ),
         method = "handleLogin"
@@ -41,22 +43,16 @@ public class MixinClientPacketListener {
      */
     @Inject(method = "handleAddEntity",
         at = @At(value = "INVOKE", shift = At.Shift.AFTER,
-            target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/util/thread/BlockableEventLoop;)V"),
+            target = "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/network/PacketProcessor;)V"),
         cancellable = true)
     private void handleShipMountingEntity(final ClientboundAddEntityPacket packet, final CallbackInfo ci) {
         if (packet.getType().equals(ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE)) {
             ci.cancel();
-            final double d = packet.getX();
-            final double e = packet.getY();
-            final double f = packet.getZ();
-            final Entity entity = ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE.create(level);
-            final int i = packet.getId();
-            entity.syncPacketPositionCodec(d, e, f);
-            entity.moveTo(d, e, f);
-            entity.setXRot((float) (packet.getXRot() * 360) / 256.0f);
-            entity.setYRot((float) (packet.getYRot() * 360) / 256.0f);
-            entity.setId(i);
-            entity.setUUID(packet.getUUID());
+            final Entity entity = ValkyrienSkiesMod.SHIP_MOUNTING_ENTITY_TYPE.create(level, EntitySpawnReason.LOAD);
+            if (entity == null) {
+                return;
+            }
+            entity.recreateFromPacket(packet);
             this.level.addEntity(entity);
         }
     }
@@ -65,18 +61,15 @@ public class MixinClientPacketListener {
      * When mc receives a tp packet it lerps it between 2 positions in 3 steps, this is bad for ships it gets stuck in a
      * unloaded chunk clientside and stays there until rejoining the server.
      */
-    @WrapOperation(method = "handleTeleportEntity", at = @At(value = "INVOKE",
-        target = "Lnet/minecraft/world/entity/Entity;lerpTo(DDDFFI)V"))
-    private void teleportingWithNoStep(final Entity instance,
-        final double x, final double y, final double z,
-        final float yRot, final float xRot,
-        final int lerpSteps, final Operation<Void> lerpTo) {
+    @WrapOperation(method = "setValuesFromPositionPacket", at = @At(value = "INVOKE",
+        target = "Lnet/minecraft/world/entity/Entity;moveOrInterpolateTo(Lnet/minecraft/world/phys/Vec3;FF)V"))
+    private static void teleportingWithNoStep(final Entity instance,
+        final Vec3 pos, final float yRot, final float xRot,
+        final Operation<Void> moveOrInterpolateTo) {
         if (VSGameUtilsKt.getShipObjectManagingPos(instance.level(), instance.getX(), instance.getY(), instance.getZ()) !=
             null) {
-            instance.setPos(x, y, z);
-            lerpTo.call(instance, x, y, z, yRot, xRot, 1);
-        } else {
-            lerpTo.call(instance, x, y, z, yRot, xRot, lerpSteps);
+            instance.setPos(pos);
         }
+        moveOrInterpolateTo.call(instance, pos, yRot, xRot);
     }
 }

@@ -2,6 +2,7 @@ package org.valkyrienskies.mod.mixin.feature.fire_between_ship_and_world;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.FluidState;
@@ -19,7 +20,7 @@ public abstract class LavaFluidMixin extends FlowingFluid {
     private boolean isModifyingFireTick = false;
 
     @Inject(method = "randomTick", at = @At("TAIL"))
-    public void fireTickMixin(final Level level, final BlockPos pos, final FluidState state, final RandomSource random,
+    public void fireTickMixin(final ServerLevel level, final BlockPos pos, final FluidState state, final RandomSource random,
         final CallbackInfo ci) {
         if (isModifyingFireTick) {
             return;

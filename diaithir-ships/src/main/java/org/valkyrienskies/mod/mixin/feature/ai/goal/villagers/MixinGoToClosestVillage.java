@@ -7,7 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.world.entity.ai.behavior.GoToClosestVillage;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
-import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,7 +15,7 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
 @Mixin(GoToClosestVillage.class)
 public class MixinGoToClosestVillage {
-    @WrapOperation(method = "method_46937", at = @At(
+    @WrapOperation(method = "lambda$create$2", at = @At(
         value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/village/poi/PoiManager;sectionsToVillage(Lnet/minecraft/core/SectionPos;)I", ordinal = 0))
     private static int onSectionsToVillageInitial(PoiManager poiManager, SectionPos sectionPos, Operation<Integer> original, @Local Villager villager) {
         int[] currentLevels = {original.call(poiManager, sectionPos)};
@@ -25,7 +25,7 @@ public class MixinGoToClosestVillage {
         return currentLevels[0];
     }
 
-    @WrapOperation(method = "method_46937", at = @At(
+    @WrapOperation(method = "lambda$create$2", at = @At(
         value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/village/poi/PoiManager;sectionsToVillage(Lnet/minecraft/core/SectionPos;)I", ordinal = 1))
     private static int onSectionsToVillageVec3(PoiManager poiManager, SectionPos sectionPos, Operation<Integer> original, @Local Villager villager, @Local(ordinal = 1) Vec3 vec32) {
         int[] currentLevels = {original.call(poiManager, sectionPos)};

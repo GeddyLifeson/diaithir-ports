@@ -13,7 +13,7 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
 
 @Mixin(SetClosestHomeAsWalkTarget.class)
 public class MixinSetClosestHomeAsWalkTarget {
-    @WrapOperation(method = "method_47054", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;distSqr(Lnet/minecraft/core/Vec3i;)D"))
+    @WrapOperation(method = "lambda$create$2", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;distSqr(Lnet/minecraft/core/Vec3i;)D"))
     private static double onDistSqr(BlockPos instance, Vec3i vec3i, Operation<Double> original,
         @Local(argsOnly = true) PathfinderMob livingEntity) {
         return original.call(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(livingEntity.level(), instance)), vec3i);

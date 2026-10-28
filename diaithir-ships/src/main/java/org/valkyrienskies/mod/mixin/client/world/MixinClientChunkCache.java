@@ -7,6 +7,7 @@ import static org.valkyrienskies.mod.common.ValkyrienSkiesMod.getVsCore;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientChunkCache;
@@ -14,12 +15,12 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.chunk.SectionRenderDispatcher;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.game.ClientboundLevelChunkPacketData.BlockEntityTagOutput;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.chunk.LevelChunk;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.lighting.LevelLightEngine;
@@ -56,8 +57,11 @@ import org.valkyrienskies.mod.util.ClientConnectivityUpdateQueue;
 @Mixin(ClientChunkCache.class)
 public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
-    @Shadow
-    volatile ClientChunkCache.Storage storage;
+    // ClientChunkCache.Storage is a private class, so access the field through a coerced accessor
+    @Unique
+    private Object vs$getStorage() {
+        return ((ClientChunkCacheAccessor) (Object) this).vs$getStorage();
+    }
     @Shadow
     @Final
     ClientLevel level;
@@ -85,16 +89,16 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
     @Inject(method = "replaceWithPacketData", at = @At("HEAD"), cancellable = true)
     private void preLoadChunkFromPacket(final int x, final int z,
         final FriendlyByteBuf buf,
-        final CompoundTag tag,
+        final Map<Heightmap.Types, long[]> tag,
         final Consumer<BlockEntityTagOutput> consumer, final CallbackInfoReturnable<LevelChunk> cir) {
         final ClientChunkCacheStorageAccessor clientChunkMapAccessor =
-            ClientChunkCacheStorageAccessor.class.cast(storage);
+            ClientChunkCacheStorageAccessor.class.cast(vs$getStorage());
         if (!clientChunkMapAccessor.callInRange(x, z)) {
             if (VSGameUtilsKt.isChunkInShipyard(level, x, z)) {
                 if (Minecraft.getInstance().levelRenderer instanceof final LevelRendererDuck levelRenderer) {
                     levelRenderer.vs$setNeedsFrustumUpdate();
                 }
-                final long chunkPosLong = ChunkPos.asLong(x, z);
+                final long chunkPosLong = ChunkPos.pack(x, z);
                 final ChunkPos pos = new ChunkPos(x, z);
                 final LevelChunk oldChunk = vs$shipChunks.get(chunkPosLong);
                 final LevelChunk oldEmptyChunk = this.emptyShipChunks.remove(chunkPosLong);
@@ -127,8 +131,8 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
                             final int sectionY = worldChunk.getSectionYFromSectionIndex(i);
                             voxelShapeUpdates.add(
                                 chunkSection != null && !chunkSection.hasOnlyAir()
-                                    ? VSGameUtilsKt.toDenseVoxelUpdate(chunkSection, new Vector3i(pos.x, sectionY, pos.z))
-                                    : getVsCore().newEmptyVoxelShapeUpdate(pos.x, sectionY, pos.z, true)
+                                    ? VSGameUtilsKt.toDenseVoxelUpdate(chunkSection, new Vector3i(pos.x(), sectionY, pos.z()))
+                                    : getVsCore().newEmptyVoxelShapeUpdate(pos.x(), sectionY, pos.z(), true)
                             );
                         }
                         final String dimensionId = getApi().getDimensionId(level);
@@ -158,7 +162,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
                         ((LevelRendererAccessor) ((ClientLevelAccessor) level).getLevelRenderer()).getViewArea();
                     for (int dx = -1; dx <= 1; dx++) {
                         for (int dz = -1; dz <= 1; dz++) {
-                            for (int sy = level.getMinSection(); sy < level.getMaxSection(); sy++) {
+                            for (int sy = level.getMinSectionY(); sy < level.getMaxSectionY(); sy++) {
                                 final SectionRenderDispatcher.RenderSection renderSection =
                                     viewArea.vs$getShipRenderSection(x + dx, sy, z + dz);
                                 if (renderSection != null) {
@@ -180,10 +184,10 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
     @Inject(method = "drop", at = @At("HEAD"), cancellable = true)
     public void preUnload(final ChunkPos chunkPos, final CallbackInfo ci) {
-        final int chunkX = chunkPos.x;
-        final int chunkZ = chunkPos.z;
+        final int chunkX = chunkPos.x();
+        final int chunkZ = chunkPos.z();
         if (VSGameUtilsKt.isChunkInShipyard(level, chunkX, chunkZ)) {
-            vs$shipChunks.remove(ChunkPos.asLong(chunkX, chunkZ));
+            vs$shipChunks.remove(ChunkPos.pack(chunkX, chunkZ));
             if (ValkyrienCommonMixinConfigPlugin.getVSRenderer() != VSRenderer.SODIUM) {
                 ((IVSViewAreaMethods) ((LevelRendererAccessor) ((ClientLevelAccessor) level).getLevelRenderer()).getViewArea())
                     .valkyrienskies$unloadChunk(chunkX, chunkZ);
@@ -201,7 +205,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
         if (!VSGameUtilsKt.isChunkInShipyard(level, chunkX, chunkZ)) {
             return;
         }
-        final LevelChunk shipChunk = vs$shipChunks.get(ChunkPos.asLong(chunkX, chunkZ));
+        final LevelChunk shipChunk = vs$shipChunks.get(ChunkPos.pack(chunkX, chunkZ));
         if (shipChunk != null) {
             cir.setReturnValue(shipChunk);
             return;
@@ -211,12 +215,12 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
     @Unique
     private void removeShipChunk(final int chunkX, final int chunkZ) {
-        final LevelChunk chunk = vs$shipChunks.remove(ChunkPos.asLong(chunkX, chunkZ));
-        emptyShipChunks.remove(ChunkPos.asLong(chunkX, chunkZ));
+        final LevelChunk chunk = vs$shipChunks.remove(ChunkPos.pack(chunkX, chunkZ));
+        emptyShipChunks.remove(ChunkPos.pack(chunkX, chunkZ));
         if (chunk == null) {
             return;
         }
-        final ClientChunkCacheStorageAccessor clientChunkMapAccessor = ClientChunkCacheStorageAccessor.class.cast(storage);
+        final ClientChunkCacheStorageAccessor clientChunkMapAccessor = ClientChunkCacheStorageAccessor.class.cast(vs$getStorage());
         clientChunkMapAccessor.setChunkCount(clientChunkMapAccessor.getChunkCount() - 1);
         level.unload(chunk);
         if (ValkyrienCommonMixinConfigPlugin.getVSRenderer() != VSRenderer.SODIUM) {
@@ -239,13 +243,13 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
                 final LevelChunkSection section = sections[sIdx];
                 if (section != null && !section.hasOnlyAir()) {
                     final int sectionY = chunk.getSectionYFromSectionIndex(sIdx);
-                    lightEngine.updateSectionStatus(SectionPos.of(cp.x, sectionY, cp.z), false);
+                    lightEngine.updateSectionStatus(SectionPos.of(cp.x(), sectionY, cp.z()), false);
                 }
             }
 
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dz = -1; dz <= 1; dz++) {
-                    lightEngine.propagateLightSources(new ChunkPos(cp.x + dx, cp.z + dz));
+                    lightEngine.propagateLightSources(new ChunkPos(cp.x() + dx, cp.z() + dz));
                 }
             }
 
@@ -273,7 +277,7 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
 
     @Unique
     private LevelChunk getOrCreateEmptyChunk(final int x, final int z) {
-        final long posLong = ChunkPos.asLong(x, z);
+        final long posLong = ChunkPos.pack(x, z);
         final LevelChunk cached = this.emptyShipChunks.get(posLong);
         if (cached != null) {
             return cached;

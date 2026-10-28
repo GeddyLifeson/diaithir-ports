@@ -2,6 +2,12 @@ package org.valkyrienskies.mod.mixin.client.player;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.HitResult;
+import org.valkyrienskies.mod.common.world.RaycastUtilsKt;
+import org.valkyrienskies.mod.mixinducks.client.MinecraftDuck;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -87,5 +93,54 @@ public abstract class MixinLocalPlayer extends LivingEntity implements LocalPlay
             return true;
         }
         return false;
+    }
+
+    /**
+     * {@link Entity#pick(double, float, boolean)} except the hit pos is not transformed
+     */
+    @Unique
+    private static HitResult vs$entityRaycastNoTransform(
+        final Entity entity, final double maxDistance, final float tickDelta, final boolean includeFluids) {
+        final Vec3 vec3d = entity.getEyePosition(tickDelta);
+        final Vec3 vec3d2 = entity.getViewVector(tickDelta);
+        final Vec3 vec3d3 = vec3d.add(vec3d2.x * maxDistance, vec3d2.y * maxDistance, vec3d2.z * maxDistance);
+        return RaycastUtilsKt.clipIncludeShips(
+            entity.level(),
+            new ClipContext(
+                vec3d,
+                vec3d3,
+                ClipContext.Block.OUTLINE,
+                includeFluids ? ClipContext.Fluid.ANY : ClipContext.Fluid.NONE,
+                entity
+            ),
+            false
+        );
+    }
+
+    @WrapOperation(
+        method = "pick",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/entity/Entity;pick(DFZ)Lnet/minecraft/world/phys/HitResult;"
+        )
+    )
+    private static HitResult modifyCrosshairTargetBlocks(final Entity receiver, final double maxDistance,
+        final float tickDelta, final boolean includeFluids, final Operation<HitResult> pick) {
+
+        final HitResult original = vs$entityRaycastNoTransform(receiver, maxDistance, tickDelta, includeFluids);
+        ((MinecraftDuck) Minecraft.getInstance()).vs$setOriginalCrosshairTarget(original);
+
+        return pick.call(receiver, maxDistance, tickDelta, includeFluids);
+    }
+
+    @WrapOperation(
+        method = "pick",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/phys/Vec3;distanceToSqr(Lnet/minecraft/world/phys/Vec3;)D"
+        )
+    )
+    private static double correctDistanceChecks(final Vec3 instance, final Vec3 vec3, final Operation<Double> original) {
+        return VSGameUtilsKt.squaredDistanceBetweenInclShips(Minecraft.getInstance().level, instance, vec3, original);
     }
 }
