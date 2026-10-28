@@ -85,7 +85,11 @@ public class SizedIngredientExtensions {
     }
 
     public static boolean hasNoItems(Ingredient self) {
-        return self.items().findAny().isEmpty();
+        try {
+            return self.items().findAny().isEmpty();
+        } catch (IllegalStateException unboundTag) {
+            return false;
+        }
     }
 
     public static boolean hasNoItems(SizedIngredient self) {
@@ -102,7 +106,11 @@ public class SizedIngredientExtensions {
     }
 
     public static boolean hasNoFluids(FluidIngredient self) {
-        return self.fluids().isEmpty();
+        try {
+            return self.fluids().isEmpty();
+        } catch (IllegalStateException unboundTag) {
+            return false;
+        }
     }
 
     public static boolean hasNoFluids(SizedFluidIngredient self) {

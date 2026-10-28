@@ -8,12 +8,7 @@
                     "condition": "minecraft:survives_explosion"
                 }
             ],
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "minecraft:air"
-                }
-            ],
+            "entries": [],
             "rolls": 1.0
         }
     ],

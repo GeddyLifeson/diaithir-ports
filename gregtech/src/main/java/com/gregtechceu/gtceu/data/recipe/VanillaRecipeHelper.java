@@ -388,7 +388,7 @@ public class VanillaRecipeHelper {
                             builder.define(sign, tag);
                         } else builder.define(sign, ChemicalHelper.get(tagPrefix, material));
                     }
-                    default -> {}
+                    case null, default -> {}
                 }
             }
         }
@@ -396,7 +396,11 @@ public class VanillaRecipeHelper {
             char c = it.nextChar();
             builder.define(c, ToolHelper.getToolFromSymbol(c).craftingTags.get(0));
         }
-        builder.save(provider);
+        try {
+            builder.save(provider);
+        } catch (Exception e) {
+            GTCEu.LOGGER.warn("Could not save recipe {}: {}", regName, e.toString());
+        }
 
         if (setMaterialInfoData) {
             ItemMaterialData.registerMaterialInfo(result.getItem(), getRecyclingIngredients(result.getCount(), recipe));
@@ -496,7 +500,7 @@ public class VanillaRecipeHelper {
                             builder.define(sign, tag);
                         } else builder.define(sign, ChemicalHelper.get(tagPrefix, material));
                     }
-                    default -> {}
+                    case null, default -> {}
                 }
             }
         }
@@ -504,7 +508,11 @@ public class VanillaRecipeHelper {
             char c = it.nextChar();
             builder.define(c, ToolHelper.getToolFromSymbol(c).craftingTags.get(0));
         }
-        builder.save(provider);
+        try {
+            builder.save(provider);
+        } catch (Exception e) {
+            GTCEu.LOGGER.warn("Could not save recipe {}: {}", regName, e.toString());
+        }
 
         if (setMaterialInfoData) {
             ItemMaterialData.registerMaterialInfo(result.getItem(), getRecyclingIngredients(result.getCount(), recipe));
@@ -567,7 +575,7 @@ public class VanillaRecipeHelper {
                             builder.define(sign, tag);
                         } else builder.define(sign, ChemicalHelper.get(tagPrefix, material));
                     }
-                    default -> {}
+                    case null, default -> {}
                 }
             }
         }
@@ -576,7 +584,11 @@ public class VanillaRecipeHelper {
             builder.define(c, ToolHelper.getToolFromSymbol(c).craftingTags.get(0));
         }
 
-        builder.save(provider);
+        try {
+            builder.save(provider);
+        } catch (Exception e) {
+            GTCEu.LOGGER.warn("Could not save recipe {}: {}", regName, e.toString());
+        }
 
         if (setMaterialInfoData) {
             ItemMaterialData.registerMaterialInfo(result.getItem(), getRecyclingIngredients(result.getCount(), recipe));
@@ -643,7 +655,11 @@ public class VanillaRecipeHelper {
                 builder.requires(ToolHelper.getToolFromSymbol(c).craftingTags.get(0));
             }
         }
-        builder.save(provider);
+        try {
+            builder.save(provider);
+        } catch (Exception e) {
+            GTCEu.LOGGER.warn("Could not save recipe {}: {}", regName, e.toString());
+        }
     }
 
     public static void addSmithingTransformRecipe(RecipeOutput provider, @NotNull Identifier regName,
