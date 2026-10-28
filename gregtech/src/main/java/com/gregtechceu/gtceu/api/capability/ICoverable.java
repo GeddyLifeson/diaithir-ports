@@ -319,15 +319,15 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
 
     private void applyCoverConfigTag(ServerPlayer player, Direction dir, CompoundTag tag) {
         if (tag.isEmpty()) return;
-        var def = GTRegistries.COVERS.get(Identifier.parse(tag.getString("id")));
-        ItemStack stack = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(getLevel().registryAccess(), tag.getCompound("item"));
+        var def = GTRegistries.COVERS.get(Identifier.parse(tag.getStringOr("id", "")));
+        ItemStack stack = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(getLevel().registryAccess(), tag.getCompoundOrEmpty("item"));
         if (def == null) return;
 
         placeCoverOnSide(dir, stack, def, player);
 
         CoverBehavior placedCover = getCoverAtSide(dir);
         if (placedCover != null && tag.contains("data") && !tag.getCompound("data").isEmpty())
-            placedCover.pasteConfig(player, tag.getCompound("data"));
+            placedCover.pasteConfig(player, tag.getCompoundOrEmpty("data"));
     }
 
     @Override
@@ -346,7 +346,7 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
         }
 
         for (Direction dir : GTUtil.DIRECTIONS) {
-            applyCoverConfigTag(player, dir, tag.getCompound(dir.getName()));
+            applyCoverConfigTag(player, dir, tag.getCompoundOrEmpty(dir.getName()));
         }
     }
 

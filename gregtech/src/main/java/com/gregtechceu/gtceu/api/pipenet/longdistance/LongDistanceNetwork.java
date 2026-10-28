@@ -331,9 +331,7 @@ public class LongDistanceNetwork {
 
         public static WorldData get(LevelAccessor level) {
             if (level instanceof ServerLevel serverLevel) {
-                return serverLevel.getDataStorage()
-                        .computeIfAbsent(new SavedData.Factory<>(() -> WorldData.create(serverLevel),
-                                (tag, provider) -> WorldData.load(tag, serverLevel)), "gtceu_long_dist_pipe");
+                return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_long_dist_pipe", () -> WorldData.create(serverLevel), (tag, provider) -> WorldData.load(tag, serverLevel));
             }
             return null;
         }
@@ -398,7 +396,7 @@ public class LongDistanceNetwork {
             ListTag list = nbtTagCompound.getListOrEmpty("nets");
             for (Tag nbt : list) {
                 CompoundTag tag = (CompoundTag) nbt;
-                LongDistancePipeType pipeType = LongDistancePipeType.getPipeType(tag.getString("class"));
+                LongDistancePipeType pipeType = LongDistancePipeType.getPipeType(tag.getStringOr("class", ""));
                 LongDistanceNetwork ld = pipeType.createNetwork(data);
                 ld.activeInputIndex = tag.getIntOr("in", 0);
                 ld.activeOutputIndex = tag.getIntOr("out", 0);

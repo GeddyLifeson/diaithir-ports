@@ -33,8 +33,7 @@ public class VirtualEnderRegistry extends SavedData {
         if (data == null) {
             var server = GTCEu.getMinecraftServer();
             if (server != null) {
-                data = server.overworld().getDataStorage().computeIfAbsent(
-                        new SavedData.Factory<>(VirtualEnderRegistry::new, VirtualEnderRegistry::new), DATA_ID);
+                data = com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(server.overworld(), DATA_ID, VirtualEnderRegistry::new, VirtualEnderRegistry::new);
             }
         }
 

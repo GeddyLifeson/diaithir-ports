@@ -148,7 +148,7 @@ public class ItemFilterCover extends CoverBehavior implements IUICover {
         setAllowFlow(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
         setFilterMode(FilterMode.values()[tag.getIntOr("filterMode", 0)]);
         itemFilter = ItemFilter.loadFilter(ItemStack
-                .parse(coverHolder.getLevel().registryAccess(), tag.getCompound("filter")).orElse(ItemStack.EMPTY));
+                .parse(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter")).orElse(ItemStack.EMPTY));
         super.pasteConfig(player, tag);
     }
 }

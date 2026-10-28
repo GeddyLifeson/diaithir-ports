@@ -51,10 +51,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
     private final Map<ChunkPos, HazardZone> hazardZones = new HashMap<>();
 
     public static EnvironmentalHazardSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new EnvironmentalHazardSavedData(serverLevel),
-                        (tag, provider) -> new EnvironmentalHazardSavedData(serverLevel, tag)),
-                        "gtceu_environmental_hazard_tracker");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_environmental_hazard_tracker", () -> new EnvironmentalHazardSavedData(serverLevel), (tag, provider) -> new EnvironmentalHazardSavedData(serverLevel, tag));
     }
 
     public EnvironmentalHazardSavedData(ServerLevel serverLevel) {
@@ -71,7 +68,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
         for (int i = 0; i < allHazardZones.size(); ++i) {
             CompoundTag zoneTag = allHazardZones.getCompoundOrEmpty(i);
 
-            ChunkPos source = net.minecraft.world.level.ChunkPos.containing(zoneTag.getLong("pos"));
+            ChunkPos source = net.minecraft.world.level.ChunkPos.unpack(zoneTag.getLongOr("pos", 0L));
             HazardZone zone = HazardZone.deserializeNBT(zoneTag);
 
             this.hazardZones.put(source, zone);
@@ -240,7 +237,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
         for (var entry : hazardZones.entrySet()) {
             CompoundTag zoneTag = new CompoundTag();
 
-            zoneTag.putLong("pos", entry.getKey().toLong());
+            zoneTag.putLong("pos", entry.getKey().pack());
             entry.getValue().serializeNBT(zoneTag);
 
             hazardZonesTag.add(zoneTag);
@@ -279,7 +276,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
         }
 
         public CompoundTag serializeNBT(CompoundTag zoneTag) {
-            zoneTag.put("source", NbtUtils.writeBlockPos(source));
+            zoneTag.put("source", com.gregtechceu.gtceu.compat.NbtCompat.writeBlockPos(source));
             zoneTag.putFloat("strength", strength);
             zoneTag.putBoolean("can_spread", canSpread);
             zoneTag.putString("trigger", trigger.name());
@@ -289,7 +286,7 @@ public class EnvironmentalHazardSavedData extends SavedData {
         }
 
         public static HazardZone deserializeNBT(CompoundTag zoneTag) {
-            BlockPos source = NbtUtils.readBlockPos(zoneTag, "source").orElse(null);
+            BlockPos source = com.gregtechceu.gtceu.compat.NbtCompat.readBlockPos(zoneTag, "source").orElse(null);
             float strength = zoneTag.getFloatOr("strength", 0f);
             boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
             HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS

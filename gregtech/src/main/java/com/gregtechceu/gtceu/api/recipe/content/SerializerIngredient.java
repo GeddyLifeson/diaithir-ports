@@ -32,11 +32,11 @@ public class SerializerIngredient implements IContentSerializer<SizedIngredient>
         if (o instanceof SizedIngredient ingredient) {
             return ingredient;
         } else if (o instanceof ItemStack itemStack) {
-            return new SizedIngredient(Ingredient.of(itemStack), itemStack.getCount());
+            return new SizedIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack), itemStack.getCount());
         } else if (o instanceof ItemLike itemLike) {
             return SizedIngredient.of(itemLike, 1);
         } else if (o instanceof TagKey tag) {
-            return SizedIngredient.of(tag, 1);
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedOf(tag, 1);
         }
         return EMPTY;
     }

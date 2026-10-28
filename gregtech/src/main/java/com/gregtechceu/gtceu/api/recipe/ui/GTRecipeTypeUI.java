@@ -194,7 +194,7 @@ public class GTRecipeTypeUI {
                 CompoundTag nbt = getCustomUI();
                 WidgetGroup group = new WidgetGroup();
                 IConfigurableWidget.deserializeNBT(group, nbt.getCompound("root"),
-                        Resources.fromNBT(nbt.getCompound("resources")), false,
+                        Resources.fromNBT(nbt.getCompoundOrEmpty("resources")), false,
                         GTRegistries.builtinRegistry());
                 group.setSelfPosition(new Position(0, 0));
                 return group;

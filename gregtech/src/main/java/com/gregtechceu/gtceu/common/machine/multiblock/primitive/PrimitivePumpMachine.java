@@ -88,7 +88,7 @@ public class PrimitivePumpMachine extends MultiblockControllerMachine {
                 if (fluidTank == null) initializeTank();
                 if (fluidTank != null) {
                     fluidTank.handleRecipe(IO.OUT, null,
-                            List.of(SizedFluidIngredient.of(GTMaterials.Water.getFluid(getFluidProduction()))), false);
+                            List.of(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Water.getFluid(getFluidProduction()))), false);
                 }
             }
         }

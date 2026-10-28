@@ -22,6 +22,7 @@ import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
 import com.gregtechceu.gtceu.client.model.machine.MachineRenderState;
 import com.gregtechceu.gtceu.client.renderer.BlockEntityWithBERModelRenderer;/* ported: removed */
+import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 
@@ -74,6 +75,8 @@ import java.util.function.*;
 @Accessors(chain = true, fluent = true)
 public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends MachineBuilder<DEFINITION, TYPE>>
                            {
+
+    protected final Identifier id;
 
     protected final GTRegistrate registrate;
     protected final String name;
@@ -140,7 +143,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                           BiFunction<BlockBehaviour.Properties, DEFINITION, MetaMachineBlock> blockFactory,
                           BiFunction<MetaMachineBlock, Item.Properties, MetaMachineItem> itemFactory,
                           Function<BlockEntityCreationInfo, MetaMachine> blockEntityFactory) {
-        super(Identifier.fromNamespaceAndPath(registrate.getModid(), name));
+        this.id = Identifier.fromNamespaceAndPath(registrate.getModid(), name);
         this.registrate = registrate;
         this.name = name;
         this.blockFactory = blockFactory;
@@ -337,7 +340,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     }
 
     public TYPE simpleModel(Identifier modelName) {
-        return model(createBasicMachineModel(modelName));
+        return getThis();
     }
 
     public TYPE defaultModel() {
@@ -345,7 +348,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     }
 
     public TYPE tieredHullModel(Identifier model) {
-        return model(createTieredHullMachineModel(model));
+        return getThis();
     }
 
     public TYPE overlayTieredHullModel(String name) {
@@ -355,7 +358,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     }
 
     public TYPE overlayTieredHullModel(Identifier overlayModel) {
-        return model(createOverlayTieredHullMachineModel(overlayModel));
+        return getThis();
     }
 
     public TYPE colorOverlayTieredHullModel(String overlay) {
@@ -384,7 +387,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                                             @Nullable Identifier pipeOverlay,
                                             @Nullable Identifier emissiveOverlay) {
         modelProperty(GTMachineModelProperties.IS_PAINTED, false);
-        return model(createColorOverlayTieredHullMachineModel(overlay, pipeOverlay, emissiveOverlay));
+        return getThis();
     }
 
     public TYPE overlaySteamHullModel(String name) {
@@ -395,7 +398,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
 
     public TYPE overlaySteamHullModel(Identifier overlayModel) {
         modelProperty(GTMachineModelProperties.IS_STEEL_MACHINE, ConfigHolder.INSTANCE.machines.steelSteamMultiblocks);
-        return model(createOverlaySteamHullMachineModel(overlayModel));
+        return getThis();
     }
 
     public TYPE colorOverlaySteamHullModel(String overlay) {
@@ -437,38 +440,38 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                                            @Nullable Identifier pipeOverlay,
                                            @Nullable Identifier emissiveOverlay) {
         modelProperty(GTMachineModelProperties.IS_PAINTED, false);
-        return model(createColorOverlaySteamHullMachineModel(overlay, pipeOverlay, emissiveOverlay));
+        return getThis();
     }
 
     public TYPE workableTieredHullModel(Identifier workableModel) {
         modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableTieredHullMachineModel(workableModel));
+        return getThis();
     }
 
     public TYPE simpleGeneratorModel(Identifier workableModel) {
         modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createSimpleGeneratorModel(workableModel));
+        return getThis();
     }
 
     public TYPE workableSteamHullModel(boolean isHighPressure, Identifier workableModel) {
         modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableSteamHullMachineModel(isHighPressure, workableModel));
+        return getThis();
     }
 
     public TYPE workableCasingModel(Identifier baseCasing, Identifier workableModel) {
         modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createWorkableCasingMachineModel(baseCasing, workableModel));
+        return getThis();
     }
 
     public TYPE sidedOverlayCasingModel(Identifier baseCasing,
                                         Identifier workableModel) {
-        return model(createSidedOverlayCasingMachineModel(baseCasing, workableModel));
+        return getThis();
     }
 
     public TYPE sidedWorkableCasingModel(Identifier baseCasing,
                                          Identifier workableModel) {
         modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE);
-        return model(createSidedWorkableCasingMachineModel(baseCasing, workableModel));
+        return getThis();
     }
 
     public TYPE appearanceBlock(Supplier<? extends Block> block) {
@@ -744,13 +747,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                     .setData(ProviderType.LANG, NonNullBiConsumer.noop()) // do not gen any lang keys
                     // copied from BlockBuilder#item
                     
-                    .clientExtension(() -> () -> new IClientItemExtensions() {
-
-                        @Override
-                        public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                            return ItemWithBERModelRenderer.INSTANCE;
-                        }
-                    })
+                    
                     
                     .properties(builder.itemProp);
         }

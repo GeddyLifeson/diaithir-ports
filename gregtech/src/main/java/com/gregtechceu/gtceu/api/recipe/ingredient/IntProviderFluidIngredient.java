@@ -156,7 +156,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
     public @NotNull FluidStack getMaxSizeStack() {
         FluidStack[] in = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(inner);
         if (in.length == 0) return FluidStack.EMPTY;
-        return in[0].copyWithAmount(countProvider.getMaxValue());
+        return in[0].copyWithAmount(countProvider.maxInclusive());
     }
 
     /**
@@ -192,7 +192,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
     public static boolean intProviderEqual(IntProvider o1, IntProvider o2) {
         if (o1 == o2) return true;
         if (o1.getType() != o2.getType()) return false;
-        return o1.getMinValue() == o2.getMinValue() && o1.getMaxValue() == o2.getMaxValue();
+        return o1.minInclusive() == o2.minInclusive() && o1.maxInclusive() == o2.maxInclusive();
     }
 
     /**

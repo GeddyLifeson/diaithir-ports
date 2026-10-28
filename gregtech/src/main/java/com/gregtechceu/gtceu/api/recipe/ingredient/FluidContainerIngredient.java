@@ -37,7 +37,7 @@ public class FluidContainerIngredient implements ICustomIngredient {
     }
 
     public FluidContainerIngredient(TagKey<Fluid> tag, int amount) {
-        this(SizedFluidIngredient.of(tag, amount));
+        this(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(tag, amount));
     }
 
     private Stream<ItemStack> cachedStacks;

@@ -274,7 +274,7 @@ public class Material {
     }
 
     public SizedFluidIngredient asFluidIngredient(int amount) {
-        return SizedFluidIngredient.of(getFluidTag(), amount);
+        return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(getFluidTag(), amount);
     }
 
     public SizedFluidIngredient asSingleFluidIngredient(int amount) {

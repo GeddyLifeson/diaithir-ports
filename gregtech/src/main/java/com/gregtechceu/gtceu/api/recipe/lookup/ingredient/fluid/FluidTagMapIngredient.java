@@ -24,8 +24,9 @@ public class FluidTagMapIngredient extends AbstractMapIngredient {
 
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull FluidIngredient ingredient) {
-        if (ingredient instanceof TagFluidIngredient tagIngredient) {
-            return Collections.singletonList(new FluidTagMapIngredient(tagIngredient.tag()));
+        if (ingredient instanceof net.neoforged.neoforge.fluids.crafting.SimpleFluidIngredient simple &&
+                simple.fluidSet() instanceof net.minecraft.core.HolderSet.Named<Fluid> named) {
+            return Collections.singletonList(new FluidTagMapIngredient(named.key()));
         } else {
             return Collections.emptyList();
         }
@@ -35,7 +36,7 @@ public class FluidTagMapIngredient extends AbstractMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull FluidStack stack) {
         List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        stack.getFluid().builtInRegistryHolder().tags()
+        stack.typeHolder().tags()
                 .forEach(tag -> ingredients.add(new FluidTagMapIngredient(tag)));
         return ingredients;
     }

@@ -309,7 +309,7 @@ public class GTRecipeBuilder {
             case TagKey<?> tag -> inputItems((TagKey<Item>) tag);
             case MachineDefinition machine -> inputItems(machine);
             case IntProviderIngredient ingredient -> inputItems(
-                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().getMaxValue()));
+                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().maxInclusive()));
             default -> {
                 GTCEu.LOGGER.error(
                         """
@@ -333,7 +333,7 @@ public class GTRecipeBuilder {
             case TagKey<?> tag -> inputItems((TagKey<Item>) tag, count);
             case MachineDefinition machine -> inputItems(machine, count);
             case IntProviderIngredient ingredient -> inputItems(
-                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().getMaxValue()));
+                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().maxInclusive()));
             default -> {
                 GTCEu.LOGGER.error(
                         """
@@ -416,7 +416,7 @@ public class GTRecipeBuilder {
     }
 
     public GTRecipeBuilder inputItems(TagKey<Item> tag, int amount) {
-        return inputItems(SizedIngredient.of(tag, amount));
+        return inputItems(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedOf(tag, amount));
     }
 
     public GTRecipeBuilder inputItems(TagKey<Item> tag) {
@@ -529,7 +529,7 @@ public class GTRecipeBuilder {
             case MaterialEntry entry -> outputItems(entry);
             case MachineDefinition machine -> outputItems(machine);
             case IntProviderIngredient ingredient -> outputItems(
-                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().getMaxValue()));
+                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().maxInclusive()));
             default -> {
                 GTCEu.LOGGER.error("""
                         Output item is not one of:
@@ -549,7 +549,7 @@ public class GTRecipeBuilder {
             case MaterialEntry entry -> outputItems(entry, count);
             case MachineDefinition machine -> outputItems(machine, count);
             case IntProviderIngredient ingredient -> outputItems(
-                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().getMaxValue()));
+                    new SizedIngredient(ingredient.toVanilla(), ingredient.getCountProvider().maxInclusive()));
             default -> {
                 GTCEu.LOGGER.error("""
                         Output item is not one of:
@@ -830,7 +830,7 @@ public class GTRecipeBuilder {
     }
 
     public GTRecipeBuilder chancedInput(FluidStack stack, int chance, int tierChanceBoost) {
-        return chancedInput(SizedFluidIngredient.of(stack), chance, tierChanceBoost);
+        return chancedInput(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(stack), chance, tierChanceBoost);
     }
 
     public GTRecipeBuilder chancedOutput(ItemStack stack, int chance, int tierChanceBoost) {
@@ -838,7 +838,7 @@ public class GTRecipeBuilder {
     }
 
     public GTRecipeBuilder chancedOutput(FluidStack stack, int chance, int tierChanceBoost) {
-        return chancedOutput(SizedFluidIngredient.of(stack), chance, tierChanceBoost);
+        return chancedOutput(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(stack), chance, tierChanceBoost);
     }
 
     public GTRecipeBuilder chancedOutput(TagPrefix tag, Material mat, int chance, int tierChanceBoost) {
@@ -1084,12 +1084,12 @@ public class GTRecipeBuilder {
     }
 
     public GTRecipeBuilder outputFluids(FluidStack output) {
-        return output(FluidRecipeCapability.CAP, SizedFluidIngredient.of(output));
+        return output(FluidRecipeCapability.CAP, com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(output));
     }
 
     public GTRecipeBuilder outputFluids(FluidStack... outputs) {
         return output(FluidRecipeCapability.CAP,
-                Arrays.stream(outputs).map(SizedFluidIngredient::of).toArray(SizedFluidIngredient[]::new));
+                Arrays.stream(outputs).map(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions::sizedFluidOf).toArray(SizedFluidIngredient[]::new));
     }
 
     public GTRecipeBuilder outputFluids(SizedFluidIngredient... outputs) {
@@ -1098,7 +1098,7 @@ public class GTRecipeBuilder {
 
     public GTRecipeBuilder outputFluids(IntProviderFluidIngredient... outputs) {
         return output(FluidRecipeCapability.CAP,
-                Arrays.stream(outputs).map(SizedFluidIngredient::of).toArray(SizedFluidIngredient[]::new));
+                Arrays.stream(outputs).map(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions::sizedFluidOf).toArray(SizedFluidIngredient[]::new));
     }
 
     public GTRecipeBuilder outputFluidsRanged(IntProviderFluidIngredient provider) {
@@ -1583,7 +1583,7 @@ public class GTRecipeBuilder {
                 if (items.length > 0) {
                     out = items[0].getItem();
                     // use the max amount of items for decomp info so dupes can't happen
-                    outputCount = intProvider.getCountProvider().getMaxValue();
+                    outputCount = intProvider.getCountProvider().maxInclusive();
                 }
             } else if (!com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoItems(currOutput.ingredient())) {
                 ItemStack[] items = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(currOutput);
@@ -1634,7 +1634,7 @@ public class GTRecipeBuilder {
                 if (items.length > 0) {
                     out = items[0].getItem();
                     // use the max amount of items for decomp info so dupes can't happen
-                    outputCount = intProvider.getCountProvider().getMaxValue();
+                    outputCount = intProvider.getCountProvider().maxInclusive();
                 }
             } else if (!com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoItems(currOutput.ingredient())) {
                 ItemStack[] items = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(currOutput);

@@ -36,11 +36,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
     private final ServerLevel serverLevel;
 
     public static BedrockFluidVeinSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<>(() -> new BedrockFluidVeinSavedData(serverLevel),
-                                (tag, provider) -> new BedrockFluidVeinSavedData(serverLevel, tag)),
-                        "gtceu_bedrock_fluid");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_bedrock_fluid", () -> new BedrockFluidVeinSavedData(serverLevel), (tag, provider) -> new BedrockFluidVeinSavedData(serverLevel, tag));
     }
 
     public BedrockFluidVeinSavedData(ServerLevel serverLevel) {
@@ -52,8 +48,8 @@ public class BedrockFluidVeinSavedData extends SavedData {
         var list = nbt.getListOrEmpty("veinInfo");
         for (int i = 0; i < list.size(); ++i) {
             CompoundTag compoundTag = list.getCompoundOrEmpty(i);
-            var chunkPos = net.minecraft.world.level.ChunkPos.containing(compoundTag.getLong("p"));
-            veinFluids.put(chunkPos, FluidVeinWorldEntry.readFromNBT(compoundTag.getCompound("d"),
+            var chunkPos = net.minecraft.world.level.ChunkPos.unpack(compoundTag.getLongOr("p", 0L));
+            veinFluids.put(chunkPos, FluidVeinWorldEntry.readFromNBT(compoundTag.getCompoundOrEmpty("d"),
                     serverLevel.registryAccess()));
         }
     }
@@ -63,7 +59,7 @@ public class BedrockFluidVeinSavedData extends SavedData {
         var oilList = new ListTag();
         for (var entry : veinFluids.entrySet()) {
             var tag = new CompoundTag();
-            tag.putLong("p", entry.getKey().toLong());
+            tag.putLong("p", entry.getKey().pack());
             tag.put("d", entry.getValue().writeToNBT());
             oilList.add(tag);
         }

@@ -638,8 +638,8 @@ public class VanillaStandardRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_wool")
                 .inputItems(IntersectionIngredient.of(
-                        Ingredient.of(ItemTags.WOOL),
-                        Ingredient.of(Tags.Items.DYED)))
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ItemTags.WOOL),
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.DYED)))
                 .inputFluids(Chlorine.getFluid(50))
                 .outputItems(new ItemStack(Blocks.WHITE_WOOL))
                 .category(GTRecipeCategories.CHEM_DYES)
@@ -647,8 +647,8 @@ public class VanillaStandardRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_carpet")
                 .inputItems(IntersectionIngredient.of(
-                        Ingredient.of(ItemTags.WOOL_CARPETS),
-                        Ingredient.of(Tags.Items.DYED)))
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ItemTags.WOOL_CARPETS),
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.DYED)))
                 .inputFluids(Chlorine.getFluid(25))
                 .outputItems(new ItemStack(Blocks.WHITE_CARPET))
                 .category(GTRecipeCategories.CHEM_DYES)
@@ -656,8 +656,8 @@ public class VanillaStandardRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_terracotta")
                 .inputItems(IntersectionIngredient.of(
-                        Ingredient.of(ItemTags.TERRACOTTA),
-                        Ingredient.of(Tags.Items.DYED)))
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ItemTags.TERRACOTTA),
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.DYED)))
                 .inputFluids(Chlorine.getFluid(50))
                 .outputItems(Items.TERRACOTTA)
                 .category(GTRecipeCategories.CHEM_DYES)
@@ -665,8 +665,8 @@ public class VanillaStandardRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_stained_glass")
                 .inputItems(IntersectionIngredient.of(
-                        Ingredient.of(Tags.Items.GLASS_BLOCKS),
-                        Ingredient.of(Tags.Items.DYED)))
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.GLASS_BLOCKS),
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.DYED)))
                 .inputFluids(Chlorine.getFluid(50))
                 .outputItems(Items.GLASS)
                 .category(GTRecipeCategories.CHEM_DYES)
@@ -674,8 +674,8 @@ public class VanillaStandardRecipes {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("decolor_stained_glass_pane")
                 .inputItems(IntersectionIngredient.of(
-                        Ingredient.of(Tags.Items.GLASS_PANES),
-                        Ingredient.of(Tags.Items.DYED)))
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.GLASS_PANES),
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(Tags.Items.DYED)))
                 .inputFluids(Chlorine.getFluid(20))
                 .outputItems(Items.GLASS_PANE)
                 .category(GTRecipeCategories.CHEM_DYES)

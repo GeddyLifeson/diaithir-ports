@@ -170,12 +170,12 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
         }
         if (RecipeHelper.getRecipeEUtTier(recipe) > fusionReactorMachine.getTier() ||
                 !recipe.data.contains("eu_to_start") ||
-                recipe.data.getLong("eu_to_start") > fusionReactorMachine.energyContainer.getEnergyCapacity()) {
+                recipe.data.getLongOr("eu_to_start", 0L) > fusionReactorMachine.energyContainer.getEnergyCapacity()) {
             return ModifierFunction
                     .cancel(Component.translatable("gtceu.recipe_modifier.insufficient_eu_to_start_fusion"));
         }
 
-        long heatDiff = recipe.data.getLong("eu_to_start") - fusionReactorMachine.heat;
+        long heatDiff = recipe.data.getLongOr("eu_to_start", 0L) - fusionReactorMachine.heat;
 
         // if the stored heat is >= required energy, recipe is okay to run
         if (heatDiff <= 0) {
@@ -199,7 +199,7 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
         GTRecipe recipe = recipeLogic.getLastRecipe();
         assert recipe != null;
         if (recipe.data.contains("eu_to_start")) {
-            long heatDiff = recipe.data.getLong("eu_to_start") - this.heat;
+            long heatDiff = recipe.data.getLongOr("eu_to_start", 0L) - this.heat;
             // if the remaining energy needed is more than stored, do not run
             if (heatDiff > 0) {
                 recipeLogic.setWaiting(Component.translatable("gtceu.recipe_logic.insufficient_fuel"));

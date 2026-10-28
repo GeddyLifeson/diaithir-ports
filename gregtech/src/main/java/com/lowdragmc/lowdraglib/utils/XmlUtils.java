@@ -256,14 +256,14 @@ public class XmlUtils {
                         break;
                     }
                 }
-                ingredient = new SizedIngredient(Ingredient.of(itemStack), count);
+                ingredient = new SizedIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack), count);
             }
         } else if (Platform.isForge() && element.hasAttribute("forge-tag")){
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("forge-tag")))), count);
+            ingredient = new SizedIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("forge-tag")))), count);
         } else if (!Platform.isForge() && element.hasAttribute("fabric-tag")) {
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("fabric-tag")))), count);
+            ingredient = new SizedIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("fabric-tag")))), count);
         } else if (element.hasAttribute("tag")) {
-            ingredient = new SizedIngredient(Ingredient.of(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("tag")))), count);
+            ingredient = new SizedIngredient(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(TagKey.create(Registries.ITEM, Identifier.parse(element.getAttribute("tag")))), count);
         }
         return ingredient;
     }

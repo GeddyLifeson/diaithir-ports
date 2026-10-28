@@ -11,11 +11,7 @@ import net.minecraft.world.level.saveddata.SavedData;
 public class LevelItemPipeNet extends LevelPipeNet<ItemPipeProperties, ItemPipeNet> {
 
     public static LevelItemPipeNet getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<>(() -> new LevelItemPipeNet(serverLevel),
-                                (tag, provider) -> new LevelItemPipeNet(serverLevel, tag, provider)),
-                        "gtceu_item_pipe_net");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_item_pipe_net", () -> new LevelItemPipeNet(serverLevel), (tag, provider) -> new LevelItemPipeNet(serverLevel, tag, provider));
     }
 
     public LevelItemPipeNet(ServerLevel serverLevel) {

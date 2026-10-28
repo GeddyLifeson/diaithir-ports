@@ -143,7 +143,7 @@ public class LargeBoilerMachine extends WorkableMultiblockMachine implements IDi
 
                 if (drained > 0) {
                     // fill steam
-                    var fillSteam = List.of(SizedFluidIngredient.of(GTMaterials.Steam.getFluid(steamGenerated)));
+                    var fillSteam = List.of(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Steam.getFluid(steamGenerated)));
                     List<IRecipeHandler<?>> outputTanks = new ArrayList<>();
                     outputTanks.addAll(getCapabilitiesFlat(IO.OUT, FluidRecipeCapability.CAP));
                     outputTanks.addAll(getCapabilitiesFlat(IO.BOTH, FluidRecipeCapability.CAP));

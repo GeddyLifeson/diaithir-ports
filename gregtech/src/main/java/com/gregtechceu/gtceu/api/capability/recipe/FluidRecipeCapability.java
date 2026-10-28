@@ -208,7 +208,7 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
 
             int amount;
             if (ing.ingredient() instanceof IntProviderFluidIngredient provider) {
-                amount = provider.getCountProvider().getMaxValue();
+                amount = provider.getCountProvider().maxInclusive();
             } else {
                 amount = ing.amount();
             }
@@ -408,7 +408,7 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
                     if (ingredient.ingredient() instanceof IntProviderFluidIngredient provider) {
                         IntProvider countProvider = provider.getCountProvider();
                         tooltips.add(Component.translatable("gtceu.gui.content.fluid_range",
-                                countProvider.getMinValue(), countProvider.getMaxValue())
+                                countProvider.minInclusive(), countProvider.maxInclusive())
                                 .withStyle(ChatFormatting.GOLD));
                     }
                     GTRecipeWidget.setConsumedChance(content,

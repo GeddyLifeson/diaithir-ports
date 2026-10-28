@@ -17,7 +17,7 @@ public class FluidDataComponentMapIngredient extends FluidStackMapIngredient {
     protected DataComponentFluidIngredient componentIngredient;
 
     public FluidDataComponentMapIngredient(FluidStack s, DataComponentFluidIngredient componentIngredient) {
-        super(s.getFluidHolder());
+        super(s.typeHolder());
         this.componentIngredient = componentIngredient;
     }
 

@@ -44,10 +44,7 @@ public class LocalizedHazardSavedData extends SavedData {
     private final Map<BlockPos, HazardZone> hazardZones = new HashMap<>();
 
     public static LocalizedHazardSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new LocalizedHazardSavedData(serverLevel),
-                        (tag, provider) -> new LocalizedHazardSavedData(serverLevel, tag)),
-                        "gtceu_localized_hazard_tracker");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_localized_hazard_tracker", () -> new LocalizedHazardSavedData(serverLevel), (tag, provider) -> new LocalizedHazardSavedData(serverLevel, tag));
     }
 
     public LocalizedHazardSavedData(ServerLevel serverLevel) {
@@ -64,7 +61,7 @@ public class LocalizedHazardSavedData extends SavedData {
         for (int i = 0; i < allHazardZones.size(); ++i) {
             CompoundTag zoneTag = allHazardZones.getCompoundOrEmpty(i);
 
-            BlockPos source = BlockPos.of(zoneTag.getLong("pos"));
+            BlockPos source = BlockPos.of(zoneTag.getLongOr("pos", 0L));
             HazardZone zone = HazardZone.deserializeNBT(zoneTag);
 
             this.hazardZones.put(source, zone);
@@ -301,5 +298,41 @@ public class LocalizedHazardSavedData extends SavedData {
     }
 
     public record HazardZone(Set<BlockPos> blocks, boolean canSpread,
-                             HazardProperty.HazardTrigger trigger, MedicalCondition condition) { return null; /* ported stub */ }
+                             HazardProperty.HazardTrigger trigger, MedicalCondition condition) {
+
+        public int strength() {
+            return blocks.size();
+        }
+
+        public CompoundTag serializeNBT(CompoundTag zoneTag) {
+            ListTag blocksTag = new ListTag();
+            blocks.stream()
+                    .map(pos -> (net.minecraft.nbt.Tag) new IntArrayTag(new int[] { pos.getX(), pos.getY(), pos.getZ() }))
+                    .forEach(blocksTag::add);
+            zoneTag.put("blocks", blocksTag);
+            zoneTag.putBoolean("can_spread", canSpread);
+            zoneTag.putString("trigger", trigger.name());
+            zoneTag.putString("condition", condition.name);
+
+            return zoneTag;
+        }
+
+        public static HazardZone deserializeNBT(CompoundTag zoneTag) {
+            Set<BlockPos> blocks = zoneTag.getListOrEmpty("blocks").stream()
+                    .filter(IntArrayTag.class::isInstance)
+                    .map(IntArrayTag.class::cast)
+                    .map(tag -> {
+                        int[] aint = tag.getAsIntArray();
+                        return aint.length == 3 ? new BlockPos(aint[0], aint[1], aint[2]) : null;
+                    })
+                    .filter(java.util.Objects::nonNull)
+                    .collect(Collectors.toSet());
+            boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
+            HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
+                    .get(zoneTag.getStringOr("trigger", ""));
+            MedicalCondition condition = MedicalCondition.CONDITIONS.get(zoneTag.getStringOr("condition", ""));
+
+            return new HazardZone(blocks, canSpread, trigger, condition);
+        }
+    }
 }

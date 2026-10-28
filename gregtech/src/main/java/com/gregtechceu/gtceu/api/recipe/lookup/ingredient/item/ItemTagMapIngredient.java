@@ -23,10 +23,8 @@ public class ItemTagMapIngredient extends AbstractMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(Ingredient ingredient) {
         List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        for (Ingredient.Value value : ingredient.getValues()) {
-            if (value instanceof Ingredient.TagValue(TagKey<Item> tag)) {
-                ingredients.add(new ItemTagMapIngredient(tag));
-            }
+        if (ingredient.getValues() instanceof net.minecraft.core.HolderSet.Named<Item> named) {
+            ingredients.add(new ItemTagMapIngredient(named.key()));
         }
         return ingredients;
     }
@@ -34,7 +32,7 @@ public class ItemTagMapIngredient extends AbstractMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(ItemStack stack) {
         List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        stack.entityTags().forEach(tag -> ingredients.add(new ItemTagMapIngredient(tag)));
+        stack.typeHolder().tags().forEach(tag -> ingredients.add(new ItemTagMapIngredient(tag)));
         return ingredients;
     }
 

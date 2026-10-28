@@ -59,7 +59,7 @@ public class ShapedEnergyTransferRecipeBuilder {
     }
 
     public ShapedEnergyTransferRecipeBuilder define(char cha, TagKey<Item> itemStack) {
-        key.put(cha, Ingredient.of(itemStack));
+        key.put(cha, com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack));
         return this;
     }
 
@@ -67,7 +67,7 @@ public class ShapedEnergyTransferRecipeBuilder {
         if (!itemStack.isComponentsPatchEmpty()) {
             key.put(cha, DataComponentIngredient.of(true, itemStack));
         } else {
-            key.put(cha, Ingredient.of(itemStack));
+            key.put(cha, com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack));
         }
         return this;
     }

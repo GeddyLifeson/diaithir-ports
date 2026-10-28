@@ -63,7 +63,7 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
     }
 
     public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag) {
-        return input(Ingredient.of(tag));
+        return input(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(tag));
     }
 
     public SimpleCookingRecipeBuilder<T> input(TagKey<Item> tag, DataComponentPredicate components, boolean strict) {
@@ -74,7 +74,7 @@ public class SimpleCookingRecipeBuilder<T extends AbstractCookingRecipe> {
         if (!itemStack.getComponentsPatch().isEmpty()) {
             input = DataComponentIngredient.of(true, itemStack);
         } else {
-            input = Ingredient.of(itemStack);
+            input = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack);
         }
         return this;
     }

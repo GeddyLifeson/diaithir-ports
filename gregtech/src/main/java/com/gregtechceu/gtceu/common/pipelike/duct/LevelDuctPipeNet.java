@@ -12,9 +12,7 @@ public class LevelDuctPipeNet extends LevelPipeNet<DuctPipeProperties, DuctPipeN
     private static final String DATA_ID = "gtceu_duct_pipe_net";
 
     public static LevelDuctPipeNet getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new LevelDuctPipeNet(serverLevel),
-                        (tag, provider) -> new LevelDuctPipeNet(serverLevel, tag, provider)), DATA_ID);
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, DATA_ID, () -> new LevelDuctPipeNet(serverLevel), (tag, provider) -> new LevelDuctPipeNet(serverLevel, tag, provider));
     }
 
     public LevelDuctPipeNet(ServerLevel serverLevel) {

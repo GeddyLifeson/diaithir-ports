@@ -113,14 +113,14 @@ public class GTOreVeins {
         // map to average of min & max values.
         GTOreVeins.largestVeinSize = registry.stream()
                 .map(GTOreDefinition::clusterSize)
-                .mapToInt(intProvider -> (intProvider.getMinValue() + intProvider.getMaxValue()) / 2)
+                .mapToInt(intProvider -> (intProvider.minInclusive() + intProvider.maxInclusive()) / 2)
                 .max()
                 .orElse(0);
 
         GTOreVeins.largestIndicatorOffset = registry.stream()
                 .flatMapToInt(definition -> definition.indicatorGenerators().stream()
                         .mapToInt(indicatorGenerator -> indicatorGenerator.getSearchRadiusModifier(
-                                (int) Math.ceil(definition.clusterSize().getMinValue() / 2.0))))
+                                (int) Math.ceil(definition.clusterSize().minInclusive() / 2.0))))
                 .max()
                 .orElse(0);
     }

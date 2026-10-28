@@ -34,7 +34,7 @@ public final class TagCompatibilityFixer {
             return tag.getCompoundOrEmpty("p");
         }
         if (tag.contains("t")) {
-            return tag.getCompound("t").getCompound("p");
+            return tag.getCompoundOrEmpty("t").getCompoundOrEmpty("p");
         }
         return tag;
     }

@@ -173,7 +173,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
 
             int count;
             if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ing) instanceof IntProviderIngredient provider) {
-                count = provider.getCountProvider().getMaxValue();
+                count = provider.getCountProvider().maxInclusive();
             } else {
                 count = ing.count();
             }
@@ -228,7 +228,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
 
             int count;
             if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ing) instanceof IntProviderIngredient provider)
-                count = provider.getCountProvider().getMaxValue();
+                count = provider.getCountProvider().maxInclusive();
             else count = ing.count();
 
             if (content.chance == 0) {
@@ -485,13 +485,13 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                     if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(this.of(content.content)) instanceof IntProviderIngredient ingredient) {
                         IntProvider countProvider = ingredient.getCountProvider();
                         tooltips.add(Component.translatable("gtceu.gui.content.count_range",
-                                        countProvider.getMinValue(), countProvider.getMaxValue())
+                                        countProvider.minInclusive(), countProvider.maxInclusive())
                                 .withStyle(ChatFormatting.GOLD));
                     } else if (this.of(content.content) instanceof SizedIngredient sizedIngredient &&
                             com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(sizedIngredient) instanceof IntProviderIngredient ingredient) {
                         IntProvider countProvider = ingredient.getCountProvider();
                         tooltips.add(Component.translatable("gtceu.gui.content.count_range",
-                                        countProvider.getMinValue(), countProvider.getMaxValue())
+                                        countProvider.minInclusive(), countProvider.maxInclusive())
                                 .withStyle(ChatFormatting.GOLD));
                     }
                     // spotless:on

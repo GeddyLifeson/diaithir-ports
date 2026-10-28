@@ -46,7 +46,7 @@ public class SimpleClassTransformers {
 
         @Override
         public Tag serializeNBT(BlockPos value, TransformerContext<BlockPos> context) {
-            return NbtUtils.writeBlockPos(value);
+            return com.gregtechceu.gtceu.compat.NbtCompat.writeBlockPos(value);
         }
 
         @Override

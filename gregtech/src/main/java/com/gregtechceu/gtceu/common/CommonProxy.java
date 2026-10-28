@@ -140,7 +140,7 @@ public class CommonProxy {
         if (GTCEu.Mods.isKubeJSLoaded()) {
             // initialize this before the class's static listeners
             // so KubeJS materials are registered before the material registry is closed.
-            modBus.addListener(EventPriority.LOW, GregTechKubeJSPlugin::registerWrappers);
+            /* ported: removed */
         }
         modBus.register(CommonProxy.class);
 
@@ -149,7 +149,7 @@ public class CommonProxy {
         UIFactory.register(GTUIEditorFactory.INSTANCE);
 
         // Initialize the model generator before any content is loaded so machine models can use the generated data
-        GregTechDatagen.initPre();
+        /* ported: removed */
 
         GTRegistries.init(modBus);
         REGISTRATE.registerEventListeners(modBus);
@@ -197,7 +197,7 @@ public class CommonProxy {
         GTToolTiers.init();
         GTToolBehaviors.init();
         GTDataComponents.DATA_COMPONENTS.register(modBus);
-        GTArmorMaterials.ARMOR_MATERIALS.register(modBus);
+        /* ported: removed */
         GTItems.init();
 
         GTMachineUtils.init();
@@ -213,18 +213,18 @@ public class CommonProxy {
         GTMobEffects.MOB_EFFECTS.register(modBus);
         GTParticleTypes.PARTICLE_TYPES.register(modBus);
 
-        GregTechDatagen.initPost();
+        /* ported: removed */
         GTValueProviderTypes.init(modBus);
         GTFeatures.register(modBus);
         WorldGenLayers.registerAll();
         VeinGenerators.registerAddonGenerators();
         IndicatorGenerators.registerAddonGenerators();
-        WaypointManager.init();
+        /* ported: removed */
 
         CustomBlockRotations.init();
         SyncedKeyMappings.init();
         MachineOwner.init();
-        ChestGenHooks.init();
+        /* ported: removed */
     }
 
     @ApiStatus.Internal
@@ -280,13 +280,7 @@ public class CommonProxy {
         GTCEuAPI.materialManager.getUsedNamespaces().forEach(namespace -> {
             // Force the material lang generator to be at index 0, so that addons' lang generators can override it.
             GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(namespace);
-            AbstractRegistrateAccessor accessor = (AbstractRegistrateAccessor) registrate;
-            if (accessor.getDoDatagen().get()) {
-                List<NonNullConsumer<? extends RegistrateProvider>> providers = Multimaps.asMap(accessor.getDatagens())
-                        .get(ProviderType.LANG);
-                providers.addFirst(
-                        (provider) -> MaterialLangGenerator.generate((RegistrateLangProvider) provider, namespace));
-            }
+            /* ported: removed */
 
             ModList.get().getModContainerById(namespace)
                     .map(ModContainer::getEventBus)
@@ -337,8 +331,8 @@ public class CommonProxy {
             });
 
             MapIngredientTypeManager.registerMapIngredient(DataComponentFluidIngredient.class, FluidDataComponentMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(FluidIngredient.class, FluidTagMapIngredient::from);
-            MapIngredientTypeManager.registerMapIngredient(SingleFluidIngredient.class, FluidStackMapIngredient::from);
+            MapIngredientTypeManager.registerMapIngredient(SimpleFluidIngredient.class, FluidTagMapIngredient::from);
+            MapIngredientTypeManager.registerMapIngredient(SimpleFluidIngredient.class, FluidStackMapIngredient::from);
             MapIngredientTypeManager.registerMapIngredient(IntersectionFluidIngredient.class, IntersectionMapIngredient::from);
 
             MapIngredientTypeManager.registerMapIngredient(FluidStack.class, FluidTagMapIngredient::from);
@@ -380,7 +374,7 @@ public class CommonProxy {
 
             if (GTCEu.Mods.isCCTweakedLoaded()) {
                 GTCEu.LOGGER.info("CC: Tweaked found. Enabling integration...");
-                CCTweakedPlugin.init();
+                /* ported: removed */
             }
         });
     }
@@ -445,23 +439,13 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerPackFinders(AddPackFindersEvent event) {
         if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-            // Clear old data
-            GTDynamicResourcePack.clearClient();
-
-            event.addRepositorySource(new GTPackSource("gtceu:dynamic_assets",
-                    event.getPackType(),
-                    Pack.Position.BOTTOM,
-                    GTDynamicResourcePack::new));
+            // dynamic client assets are not ported
         } else if (event.getPackType() == PackType.SERVER_DATA) {
-            // Clear old data
-            GTDynamicDataPack.clearServer();
+            // dynamic data pack is not ported
 
             // LOADING MOVED TO ReloadableServerResourcesMixin
 
-            event.addRepositorySource(new GTPackSource("gtceu:dynamic_data",
-                    event.getPackType(),
-                    Pack.Position.BOTTOM,
-                    GTDynamicDataPack::new));
+            /* ported: removed */
         }
     }
 
@@ -482,7 +466,7 @@ public class CommonProxy {
     public static final class KJSEventWrapper {
 
         public static void materialModification() {
-            GTCEuStartupEvents.MATERIAL_MODIFICATION.post(new MaterialModificationEventJS());
+            /* ported: removed */
         }
     }
 }

@@ -112,7 +112,7 @@ public final class CustomToolRecipes {
                             BuiltInRegistries.ITEM.getKey(batteryItem.get()).getPath());
 
                     VanillaRecipeHelper.addShapedEnergyTransferRecipe(provider, true, false, true, recipeName,
-                            Ingredient.of(batteryStack), powerUnitStack,
+                            com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(batteryStack), powerUnitStack,
                             "S d", "GMG", "PBP",
                             'M', motorItems.get(tier).asStack(),
                             'S', new MaterialEntry(screw, baseMaterials.get(tier)),

@@ -33,10 +33,7 @@ public class WorldIDSaveData extends SavedData {
     }
 
     public static void init(ServerLevel level) {
-        instance = level.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new WorldIDSaveData(level),
-                        (tag, provider) -> new WorldIDSaveData(tag)),
-                        DATA_NAME);
+        instance = com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(level, DATA_NAME, () -> new WorldIDSaveData(level), (tag, provider) -> new WorldIDSaveData(tag));
     }
 
     public static String getWorldID() {

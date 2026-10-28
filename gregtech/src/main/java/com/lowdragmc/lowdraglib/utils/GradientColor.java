@@ -120,7 +120,7 @@ public class GradientColor implements INBTSerializable<CompoundTag> {
     private void loadFromTag(List<Vec2> data, ListTag list) {
         data.clear();
         for (int i = 0; i < list.size(); i += 2) {
-            data.add(new Vec2(list.getFloat(i), list.getFloat(i + 1)));
+            data.add(new Vec2(list.getFloatOr(i, 0f), list.getFloatOr(i + 1, 0f)));
         }
     }
 

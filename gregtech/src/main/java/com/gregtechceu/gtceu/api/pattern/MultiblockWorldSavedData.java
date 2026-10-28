@@ -21,9 +21,7 @@ import java.util.concurrent.*;
 public class MultiblockWorldSavedData extends SavedData {
 
     public static MultiblockWorldSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage().computeIfAbsent(
-                new SavedData.Factory<>(MultiblockWorldSavedData::new, MultiblockWorldSavedData::new),
-                "gtceu_multiblock");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_multiblock", MultiblockWorldSavedData::new, MultiblockWorldSavedData::new);
     }
 
     /**

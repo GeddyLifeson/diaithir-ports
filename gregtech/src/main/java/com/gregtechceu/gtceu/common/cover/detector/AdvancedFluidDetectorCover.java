@@ -156,10 +156,10 @@ public class AdvancedFluidDetectorCover extends FluidDetectorCover implements IU
 
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
-        setMinValue(tag.getInt("min"));
-        setMaxValue(tag.getInt("max"));
-        setLatched(tag.getBoolean("latched"));
-        filterHandler.setFilterItem(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
+        setMinValue(tag.getIntOr("min", 0));
+        setMaxValue(tag.getIntOr("max", 0));
+        setLatched(tag.getBooleanOr("latched", false));
+        filterHandler.setFilterItem(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompoundOrEmpty("filter"))
                 .orElse(ItemStack.EMPTY));
         super.pasteConfig(player, tag);
     }

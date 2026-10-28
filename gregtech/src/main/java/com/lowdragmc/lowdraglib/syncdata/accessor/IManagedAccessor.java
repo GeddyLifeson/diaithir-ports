@@ -99,7 +99,7 @@ public class IManagedAccessor extends ReadonlyAccessor {
             var storage = managed.getSyncStorage();
             var syncedFields = storage.getSyncFields();
 
-            var changed = BitSet.valueOf(tag.getByteArray("c"));
+            var changed = BitSet.valueOf(tag.getByteArray("c").orElse(new byte[0]));
             var list = tag.getListOrEmpty("l");
             var payloads = new ITypedPayload<?>[list.size()];
 

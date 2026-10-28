@@ -11,6 +11,15 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 import org.jetbrains.annotations.Nullable;
 
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluid;
+import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
+import net.neoforged.neoforge.fluids.crafting.DataComponentFluidIngredient;
+
 import java.util.stream.Stream;
 
 public class SizedIngredientExtensions {
@@ -102,5 +111,95 @@ public class SizedIngredientExtensions {
 
     public static boolean isEmpty(FluidIngredient self) {
         return hasNoFluids(self);
+    }
+
+    // ---- factory replacements ----
+
+    public static Ingredient ingredientOf(TagKey<Item> tag) {
+        return Ingredient.of(BuiltInRegistries.ITEM.getOrThrow(tag));
+    }
+
+    public static Ingredient ingredientOf(ItemStack stack) {
+        if (stack.getComponentsPatch().isEmpty()) return Ingredient.of(stack.getItem());
+        return DataComponentIngredient.of(false, stack);
+    }
+
+    public static Ingredient ingredientOf(ItemStack... stacks) {
+        if (stacks.length == 1) return ingredientOf(stacks[0]);
+        return Ingredient.of(Stream.of(stacks).map(ItemStack::getItem));
+    }
+
+    public static Ingredient ingredientOf(ItemLike... items) {
+        return Ingredient.of(items);
+    }
+
+    public static Ingredient ingredientOf(ItemLike item) {
+        return Ingredient.of(item);
+    }
+
+    public static Ingredient ingredientOf(Stream<? extends ItemLike> items) {
+        return Ingredient.of(items);
+    }
+
+    public static Ingredient ingredientOf(HolderSet<Item> items) {
+        return Ingredient.of(items);
+    }
+
+    public static SizedIngredient sizedOf(ItemStack stack) {
+        return new SizedIngredient(ingredientOf(stack), stack.getCount());
+    }
+
+    public static SizedIngredient sizedOf(TagKey<Item> tag, int count) {
+        return new SizedIngredient(ingredientOf(tag), count);
+    }
+
+    public static SizedIngredient sizedOf(ItemLike item, int count) {
+        return new SizedIngredient(Ingredient.of(item), count);
+    }
+
+    public static SizedIngredient sizedOf(Ingredient ingredient, int count) {
+        return new SizedIngredient(ingredient, count);
+    }
+
+    public static FluidIngredient fluidIngredientOf(FluidStack stack) {
+        if (stack.getComponentsPatch().isEmpty()) return FluidIngredient.of(stack.getFluid());
+        return DataComponentFluidIngredient.of(false, stack);
+    }
+
+    public static FluidIngredient fluidIngredientOf(FluidStack... stacks) {
+        if (stacks.length == 1) return fluidIngredientOf(stacks[0]);
+        return FluidIngredient.of(Stream.of(stacks).map(FluidStack::getFluid));
+    }
+
+    public static FluidIngredient fluidIngredientOf(Fluid... fluids) {
+        return FluidIngredient.of(fluids);
+    }
+
+    public static FluidIngredient fluidIngredientOf(Stream<Fluid> fluids) {
+        return FluidIngredient.of(fluids);
+    }
+
+    public static FluidIngredient fluidIngredientOf(HolderSet<Fluid> fluids) {
+        return FluidIngredient.of(fluids);
+    }
+
+    public static FluidIngredient fluidTag(TagKey<Fluid> tag) {
+        return FluidIngredient.of(BuiltInRegistries.FLUID.getOrThrow(tag));
+    }
+
+    public static SizedFluidIngredient sizedFluidOf(FluidStack stack) {
+        return new SizedFluidIngredient(fluidIngredientOf(stack), stack.getAmount());
+    }
+
+    public static SizedFluidIngredient sizedFluidOf(TagKey<Fluid> tag, int amount) {
+        return new SizedFluidIngredient(fluidTag(tag), amount);
+    }
+
+    public static SizedFluidIngredient sizedFluidOf(Fluid fluid, int amount) {
+        return new SizedFluidIngredient(FluidIngredient.of(fluid), amount);
+    }
+
+    public static SizedFluidIngredient sizedFluidOf(FluidIngredient ingredient, int amount) {
+        return new SizedFluidIngredient(ingredient, amount);
     }
 }

@@ -82,9 +82,9 @@ public class FacadeCoverRecipe extends CustomRecipe {
     
     public @NotNull NonNullList<Ingredient> getIngredients() {
         return NonNullList.of(Ingredient.EMPTY,
-                Ingredient.of(IRON_PLATE_TAG),
-                Ingredient.of(IRON_PLATE_TAG),
-                Ingredient.of(IRON_PLATE_TAG),
+                com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(IRON_PLATE_TAG),
+                com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(IRON_PLATE_TAG),
+                com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(IRON_PLATE_TAG),
                 Ingredient.of(Items.STONE));
     }
 

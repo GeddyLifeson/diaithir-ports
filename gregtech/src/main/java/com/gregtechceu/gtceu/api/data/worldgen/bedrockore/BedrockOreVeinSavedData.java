@@ -38,10 +38,7 @@ public class BedrockOreVeinSavedData extends SavedData {
     private final ServerLevel serverLevel;
 
     public static BedrockOreVeinSavedData getOrCreate(ServerLevel serverLevel) {
-        return serverLevel.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(() -> new BedrockOreVeinSavedData(serverLevel),
-                        (tag, provider) -> new BedrockOreVeinSavedData(serverLevel, tag)),
-                        "gtceu_bedrock_ore");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(serverLevel, "gtceu_bedrock_ore", () -> new BedrockOreVeinSavedData(serverLevel), (tag, provider) -> new BedrockOreVeinSavedData(serverLevel, tag));
     }
 
     public BedrockOreVeinSavedData(ServerLevel serverLevel) {
@@ -53,8 +50,8 @@ public class BedrockOreVeinSavedData extends SavedData {
         var list = nbt.getListOrEmpty("veinInfo");
         for (Tag tag : list) {
             if (tag instanceof CompoundTag compoundTag) {
-                var chunkPos = net.minecraft.world.level.ChunkPos.containing(compoundTag.getLong("pos"));
-                veinOres.put(chunkPos, OreVeinWorldEntry.readFromNBT(compoundTag.getCompound("data"),
+                var chunkPos = net.minecraft.world.level.ChunkPos.unpack(compoundTag.getLongOr("pos", 0L));
+                veinOres.put(chunkPos, OreVeinWorldEntry.readFromNBT(compoundTag.getCompoundOrEmpty("data"),
                         serverLevel.registryAccess()));
             }
         }
@@ -65,7 +62,7 @@ public class BedrockOreVeinSavedData extends SavedData {
         var oreList = new ListTag();
         for (var entry : veinOres.entrySet()) {
             var tag = new CompoundTag();
-            tag.putLong("pos", entry.getKey().toLong());
+            tag.putLong("pos", entry.getKey().pack());
             tag.put("data", entry.getValue().writeToNBT());
             oreList.add(tag);
         }
@@ -151,15 +148,15 @@ public class BedrockOreVeinSavedData extends SavedData {
                             .create(31L * 31 * pos2.x() + pos2.z() * 31L + Long.hashCode(serverLevel.getSeed()));
 
                     int maximumYield;
-                    if ((definition.yield().getMaxValue() - definition.yield().getMinValue()) / distanceFromOriginal <=
+                    if ((definition.yield().maxInclusive() - definition.yield().minInclusive()) / distanceFromOriginal <=
                             0) {
-                        maximumYield = definition.yield().getMinValue();
+                        maximumYield = definition.yield().minInclusive();
                     } else {
-                        maximumYield = (int) ((definition.yield().sample(random) + definition.yield().getMinValue()) /
+                        maximumYield = (int) ((definition.yield().sample(random) + definition.yield().minInclusive()) /
                                 distanceFromOriginal);
-                        maximumYield = Math.max(maximumYield, definition.yield().getMinValue());
+                        maximumYield = Math.max(maximumYield, definition.yield().minInclusive());
                     }
-                    maximumYield = Math.min(maximumYield, definition.yield().getMaxValue());
+                    maximumYield = Math.min(maximumYield, definition.yield().maxInclusive());
 
                     veinOres.put(pos2, new OreVeinWorldEntry(holder, maximumYield, MAXIMUM_VEIN_OPERATIONS));
                 }

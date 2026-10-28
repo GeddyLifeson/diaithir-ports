@@ -416,7 +416,7 @@ public class RecipeHelper {
     public static FluidIngredient makeFluidIngredient(FluidStack stack) {
         var tagKey = TagUtil.createFluidTag(BuiltInRegistries.FLUID.getKey(stack.getFluid()).getPath());
         if (stack.isComponentsPatchEmpty()) {
-            return FluidIngredient.tag(tagKey);
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.fluidTag(tagKey);
         } else {
             return ExDataComponentFluidIngredient.of(true, stack.getComponents(), tagKey);
         }
@@ -428,7 +428,7 @@ public class RecipeHelper {
 
     public static Ingredient makeItemIngredient(ItemStack stack) {
         if (stack.isComponentsPatchEmpty()) {
-            return Ingredient.of(stack);
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(stack);
         } else {
             return DataComponentIngredient.of(true, stack);
         }

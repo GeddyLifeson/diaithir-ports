@@ -123,13 +123,13 @@ public class BlastProperty implements IMaterialProperty {
     public enum GasTier {
 
         // Tiers used by GTCEu
-        LOW(() -> SizedFluidIngredient.of(GTMaterials.Nitrogen.getFluidTag(), 1000)),
-        MID(() -> SizedFluidIngredient.of(GTMaterials.Helium.getFluidTag(), 100)),
-        HIGH(() -> SizedFluidIngredient.of(GTMaterials.Argon.getFluidTag(), 50)),
+        LOW(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Nitrogen.getFluidTag(), 1000)),
+        MID(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Helium.getFluidTag(), 100)),
+        HIGH(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Argon.getFluidTag(), 50)),
 
         // Tiers reserved for addons
-        HIGHER(() -> SizedFluidIngredient.of(GTMaterials.Neon.getFluidTag(), 25)),
-        HIGHEST(() -> SizedFluidIngredient.of(GTMaterials.Krypton.getFluidTag(), 10));
+        HIGHER(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Neon.getFluidTag(), 25)),
+        HIGHEST(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(GTMaterials.Krypton.getFluidTag(), 10));
 
         public static final GasTier[] VALUES = values();
         private Supplier<SizedFluidIngredient> fluid;

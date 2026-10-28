@@ -177,7 +177,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
 
         }
 
-        pipe.getCoverContainer().pasteConfig(player, tag.getCompound(COVER));
+        pipe.getCoverContainer().pasteConfig(player, tag.getCompoundOrEmpty(COVER));
     }
 
     private static CompoundTag gatherMachineConfig(MetaMachine machine) {
@@ -223,31 +223,31 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
         var outputTrait = machine.getTraitHolder().getTrait(AutoOutputTrait.TYPE);
         if (outputTrait != null) {
             if (tag.contains(ITEM_OUTPUT_SIDE))
-                outputTrait.setItemOutputDirection(stringToDirection(tag.getString(ITEM_OUTPUT_SIDE)));
-            if (tag.contains(ITEM_AUTO_OUTPUT)) outputTrait.setAllowAutoOutputItems(tag.getBoolean(ITEM_AUTO_OUTPUT));
+                outputTrait.setItemOutputDirection(stringToDirection(tag.getStringOr(ITEM_OUTPUT_SIDE, "")));
+            if (tag.contains(ITEM_AUTO_OUTPUT)) outputTrait.setAllowAutoOutputItems(tag.getBooleanOr(ITEM_AUTO_OUTPUT, false));
             if (tag.contains(ALLOW_ITEM_IN_FROM_OUT))
-                outputTrait.setAllowItemInputFromOutputSide(tag.getBoolean(ALLOW_ITEM_IN_FROM_OUT));
+                outputTrait.setAllowItemInputFromOutputSide(tag.getBooleanOr(ALLOW_ITEM_IN_FROM_OUT, false));
             if (tag.contains(FLUID_OUTPUT_SIDE))
-                outputTrait.setFluidOutputDirection(stringToDirection(tag.getString(FLUID_OUTPUT_SIDE)));
+                outputTrait.setFluidOutputDirection(stringToDirection(tag.getStringOr(FLUID_OUTPUT_SIDE, "")));
             if (tag.contains(FLUID_AUTO_OUTPUT))
-                outputTrait.setAllowAutoOutputFluids(tag.getBoolean(FLUID_AUTO_OUTPUT));
+                outputTrait.setAllowAutoOutputFluids(tag.getBooleanOr(FLUID_AUTO_OUTPUT, false));
             if (tag.contains(ALLOW_FLUID_IN_FROM_OUT))
-                outputTrait.setAllowFluidInputFromOutputSide(tag.getBoolean(ALLOW_FLUID_IN_FROM_OUT));
+                outputTrait.setAllowFluidInputFromOutputSide(tag.getBooleanOr(ALLOW_FLUID_IN_FROM_OUT, false));
         }
 
-        Direction facingDir = Direction.byName(tag.getString(FACING_DIR));
+        Direction facingDir = Direction.byName(tag.getStringOr(FACING_DIR, ""));
         if (facingDir != null) machine.setFrontFacing(facingDir);
 
         if (machine instanceof IMufflableMachine mufflableMachine) {
-            if (tag.contains(MUFFLED)) mufflableMachine.setMuffled(tag.getBoolean(MUFFLED));
+            if (tag.contains(MUFFLED)) mufflableMachine.setMuffled(tag.getBooleanOr(MUFFLED, false));
         }
 
         if (machine instanceof IHasCircuitSlot circuitMachine) {
             if (tag.contains(CIRCUIT))
-                circuitMachine.getCircuitInventory().setStackInSlot(0, IntCircuitBehaviour.stack(tag.getInt(CIRCUIT)));
+                circuitMachine.getCircuitInventory().setStackInSlot(0, IntCircuitBehaviour.stack(tag.getIntOr(CIRCUIT, 0)));
         }
 
-        machine.getCoverContainer().pasteConfig(player, tag.getCompound(COVER));
+        machine.getCoverContainer().pasteConfig(player, tag.getCompoundOrEmpty(COVER));
 
         machine.pasteConfig(player, tag);
     }
@@ -258,16 +258,16 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
         tooltip.add(Component.translatable("behaviour.memory_card.copy_target", tag.getString(COPY_SOURCE)));
         tooltip.add(Component.empty());
 
-        if (tag.contains(PIPE_CONNECTIONS) && tag.getInt(PIPE_CONNECTIONS) != 0)
+        if (tag.contains(PIPE_CONNECTIONS) && tag.getIntOr(PIPE_CONNECTIONS, 0) != 0)
             tooltip.add(Component.translatable("behaviour.setting.tooltip.pipe_connections",
-                    directionListComponent(tag.getInt(PIPE_CONNECTIONS))));
-        if (tag.contains(PIPE_BLOCKED_CONNECTIONS) && tag.getInt(PIPE_BLOCKED_CONNECTIONS) != 0)
+                    directionListComponent(tag.getIntOr(PIPE_CONNECTIONS, 0))));
+        if (tag.contains(PIPE_BLOCKED_CONNECTIONS) && tag.getIntOr(PIPE_BLOCKED_CONNECTIONS, 0) != 0)
             tooltip.add(Component.translatable("behaviour.setting.tooltip.pipe_blocked_connections",
-                    directionListComponent(tag.getInt(PIPE_BLOCKED_CONNECTIONS))));
+                    directionListComponent(tag.getIntOr(PIPE_BLOCKED_CONNECTIONS, 0))));
 
         if (tag.contains(ITEM_OUTPUT_SIDE) && tag.contains(ITEM_AUTO_OUTPUT) && tag.contains(ALLOW_ITEM_IN_FROM_OUT)) {
             Component outputMode;
-            if (tag.getBoolean(ITEM_AUTO_OUTPUT) && tag.getBoolean(ALLOW_ITEM_IN_FROM_OUT))
+            if (tag.getBooleanOr(ITEM_AUTO_OUTPUT, false) && tag.getBooleanOr(ALLOW_ITEM_IN_FROM_OUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output_allow_input");
             else if (tag.getBooleanOr(ITEM_AUTO_OUTPUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output");
@@ -275,7 +275,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
                 outputMode = Component.translatable("behaviour.setting.tooltip.allow_input");
             else outputMode = Component.empty();
 
-            Direction dir = stringToDirection(tag.getString(ITEM_OUTPUT_SIDE));
+            Direction dir = stringToDirection(tag.getStringOr(ITEM_OUTPUT_SIDE, ""));
             if (dir == null) return;
 
             tooltip.add(Component.translatable("behaviour.setting.tooltip.item_io",
@@ -285,7 +285,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
         if (tag.contains(FLUID_OUTPUT_SIDE) && tag.contains(FLUID_AUTO_OUTPUT) &&
                 tag.contains(ALLOW_FLUID_IN_FROM_OUT)) {
             Component outputMode;
-            if (tag.getBoolean(FLUID_AUTO_OUTPUT) && tag.getBoolean(ALLOW_FLUID_IN_FROM_OUT))
+            if (tag.getBooleanOr(FLUID_AUTO_OUTPUT, false) && tag.getBooleanOr(ALLOW_FLUID_IN_FROM_OUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output_allow_input");
             else if (tag.getBooleanOr(FLUID_AUTO_OUTPUT, false))
                 outputMode = Component.translatable("behaviour.setting.tooltip.auto_output");
@@ -293,7 +293,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
                 outputMode = Component.translatable("behaviour.setting.tooltip.allow_input");
             else outputMode = Component.empty();
 
-            Direction dir = stringToDirection(tag.getString(FLUID_OUTPUT_SIDE));
+            Direction dir = stringToDirection(tag.getStringOr(FLUID_OUTPUT_SIDE, ""));
             if (dir == null) return;
 
             tooltip.add(Component.translatable("behaviour.setting.tooltip.fluid_io",

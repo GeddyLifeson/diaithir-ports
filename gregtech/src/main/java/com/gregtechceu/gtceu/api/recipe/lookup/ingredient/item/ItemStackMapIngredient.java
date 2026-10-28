@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.api.recipe.lookup.ingredient.item;
 
+import net.minecraft.world.item.Item;
 import com.gregtechceu.gtceu.api.recipe.lookup.ingredient.AbstractMapIngredient;
 
 import net.minecraft.world.item.ItemStack;
@@ -28,10 +29,9 @@ public class ItemStackMapIngredient extends AbstractMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(Ingredient ingredient) {
         List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        for (Ingredient.Value value : ingredient.getValues()) {
-            if (value instanceof Ingredient.ItemValue(ItemStack item)) {
-                ingredients.add(new ItemStackMapIngredient(item, ingredient));
-            }
+        if (!(ingredient.getValues() instanceof net.minecraft.core.HolderSet.Named<Item>)) {
+            ingredient.getValues().forEach(holder ->
+                    ingredients.add(new ItemStackMapIngredient(new ItemStack(holder), ingredient)));
         }
         return ingredients;
     }

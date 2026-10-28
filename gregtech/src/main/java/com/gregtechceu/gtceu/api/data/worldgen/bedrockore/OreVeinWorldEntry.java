@@ -60,7 +60,7 @@ public class OreVeinWorldEntry {
         info.operationsRemaining = tag.getIntOr("operationsRemaining", 0);
 
         if (tag.contains("vein")) {
-            Identifier id = Identifier.parse(tag.getString("vein"));
+            Identifier id = Identifier.parse(tag.getStringOr("vein", ""));
             var maybeDef = provider.lookup(GTRegistries.BEDROCK_ORE_REGISTRY).get()
                     .get(ResourceKey.create(GTRegistries.BEDROCK_ORE_REGISTRY, id));
             maybeDef.ifPresent(info::setDefinition);

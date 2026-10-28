@@ -1006,7 +1006,7 @@ public class GTPlaceholders {
                 if (tag instanceof CompoundTag compoundTag && compoundTag.contains("cover")) {
                     CompoundTag coverTag = compoundTag.getCompoundOrEmpty("cover");
                     if (coverTag.contains(ctx.side().getName())) {
-                        CompoundTag cover = coverTag.getCompound(ctx.side().getName()).getCompound("payload")
+                        CompoundTag cover = coverTag.getCompoundOrEmpty(ctx.side().getName()).getCompoundOrEmpty("payload")
                                 .getCompound("d");
                         cover.putString("text", "[REMOVED]");
                     }

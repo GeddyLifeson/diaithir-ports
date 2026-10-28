@@ -35,7 +35,7 @@ public class SerializerFluidIngredient implements IContentSerializer<SizedFluidI
             return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(ingredient);
         }
         if (o instanceof FluidStack stack) {
-            return SizedFluidIngredient.of(stack.copy());
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.sizedFluidOf(stack.copy());
         }
         return EMPTY;
     }

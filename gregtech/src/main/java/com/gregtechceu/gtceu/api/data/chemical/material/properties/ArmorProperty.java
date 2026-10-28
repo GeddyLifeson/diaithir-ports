@@ -99,7 +99,7 @@ public class ArmorProperty implements IMaterialProperty {
             this.repairIngredient = () -> null;
         } else if (this.repairIngredient == null) {
             this.repairIngredient = GTMemoizer
-                    .memoize(() -> Ingredient.of(ChemicalHelper.getTag(TagPrefix.plate, material)));
+                    .memoize(() -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(ChemicalHelper.getTag(TagPrefix.plate, material)));
         }
 
         if (this.layers == null) {

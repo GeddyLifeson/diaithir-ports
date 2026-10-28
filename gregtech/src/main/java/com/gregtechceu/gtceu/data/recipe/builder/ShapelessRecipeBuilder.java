@@ -37,14 +37,14 @@ public class ShapelessRecipeBuilder {
     }
 
     public ShapelessRecipeBuilder requires(TagKey<Item> itemStack) {
-        return requires(Ingredient.of(itemStack));
+        return requires(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack));
     }
 
     public ShapelessRecipeBuilder requires(ItemStack itemStack) {
         if (!itemStack.getComponentsPatch().isEmpty()) {
             requires(DataComponentIngredient.of(true, itemStack));
         } else {
-            requires(Ingredient.of(itemStack));
+            requires(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(itemStack));
         }
         return this;
     }

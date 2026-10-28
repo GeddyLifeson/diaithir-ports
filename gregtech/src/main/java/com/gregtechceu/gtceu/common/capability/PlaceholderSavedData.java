@@ -17,11 +17,7 @@ public class PlaceholderSavedData extends SavedData {
     private final CompoundTag tag;
 
     public static PlaceholderSavedData getOrCreate(ServerLevel level) {
-        return level.getDataStorage()
-                .computeIfAbsent(
-                        new SavedData.Factory<PlaceholderSavedData>(() -> new PlaceholderSavedData(level),
-                                (tag, provider) -> new PlaceholderSavedData(level, tag, provider)),
-                        "gtceu_placeholder_data");
+        return com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(level, "gtceu_placeholder_data", () -> new PlaceholderSavedData(level), (tag, provider) -> new PlaceholderSavedData(level, tag, provider));
     }
 
     public PlaceholderSavedData(ServerLevel level) {

@@ -444,8 +444,8 @@ public class MultiblockDisplayText {
                         rounded = true;
                         stack = provider.getMaxSizeStack();
                         displaycount = Component.translatable("gtceu.gui.content.range",
-                                provider.getCountProvider().getMinValue(),
-                                provider.getCountProvider().getMaxValue());
+                                provider.getCountProvider().minInclusive(),
+                                provider.getCountProvider().maxInclusive());
                         if (item.chance < item.maxChance) {
                             countD = countD * runs * function.getBoostedChance(item, recipeTier, chanceTier) /
                                     item.maxChance;
@@ -488,8 +488,8 @@ public class MultiblockDisplayText {
                         rounded = true;
                         stack = provider.getMaxSizeStack();
                         displaycount = Component.translatable("gtceu.gui.content.range",
-                                provider.getCountProvider().getMinValue(),
-                                provider.getCountProvider().getMaxValue());
+                                provider.getCountProvider().minInclusive(),
+                                provider.getCountProvider().maxInclusive());
                         if (fluid.chance < fluid.maxChance) {
                             amountD = amountD * runs * function.getBoostedChance(fluid, recipeTier, chanceTier) /
                                     fluid.maxChance;

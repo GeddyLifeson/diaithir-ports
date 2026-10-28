@@ -155,7 +155,7 @@ public class FluidHandlerList implements IFluidHandlerModifiable, INBTSerializab
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        var list = nbt.getList("tanks", nbt.getByte("type"));
+        var list = nbt.getList("tanks", nbt.getByteOr("type", (byte) 0));
         for (int i = 0; i < list.size(); i++) {
             if (handlers[i] instanceof INBTSerializable serializable) {
                 serializable.deserializeNBT(provider, list.get(i));

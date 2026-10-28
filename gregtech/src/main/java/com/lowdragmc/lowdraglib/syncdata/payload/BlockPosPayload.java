@@ -21,7 +21,7 @@ public class BlockPosPayload extends ObjectTypedPayload<BlockPos> {
 
     @Override
     public Tag serializeNBT(HolderLookup.Provider provider) {
-        return NbtUtils.writeBlockPos(payload);
+        return com.gregtechceu.gtceu.compat.NbtCompat.writeBlockPos(payload);
     }
 
     @Override

@@ -55,9 +55,7 @@ public class CapeRegistry extends SavedData {
     }
 
     public static void registerToServer(ServerLevel level) {
-        level.getDataStorage()
-                .computeIfAbsent(new SavedData.Factory<>(CapeRegistry.INSTANCE::init, CapeRegistry.INSTANCE::load),
-                        "gtceu_capes");
+        com.gregtechceu.gtceu.compat.SavedDataCompat.computeIfAbsent(level, "gtceu_capes", CapeRegistry.INSTANCE::init, CapeRegistry.INSTANCE::load);
     }
 
     private CapeRegistry init() {

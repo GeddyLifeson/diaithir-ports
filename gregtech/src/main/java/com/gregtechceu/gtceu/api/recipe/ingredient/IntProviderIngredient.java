@@ -79,7 +79,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * @param countProvider usually as {@link net.minecraft.util.valueproviders.UniformInt#of(int, int)}
      */
     public static IntProviderIngredient of(Ingredient inner, IntProvider countProvider) {
-        Preconditions.checkArgument(countProvider.getMinValue() >= 0,
+        Preconditions.checkArgument(countProvider.minInclusive() >= 0,
                 "IntProviderIngredient must have a min value of at least 0.");
         return new IntProviderIngredient(inner, countProvider);
     }
@@ -89,7 +89,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * @param countProvider usually as {@link net.minecraft.util.valueproviders.UniformInt#of(int, int)}
      */
     public static IntProviderIngredient of(ItemStack stack, IntProvider countProvider) {
-        Ingredient inner = Ingredient.of(stack);
+        Ingredient inner = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(stack);
         return of(inner, countProvider);
     }
 
@@ -158,7 +158,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      */
     public @NotNull ItemStack getMaxSizeStack() {
         if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner).length == 0) return ItemStack.EMPTY;
-        else return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner)[0].copyWithCount(countProvider.getMaxValue());
+        else return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner)[0].copyWithCount(countProvider.maxInclusive());
     }
 
     /**

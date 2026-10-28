@@ -23,7 +23,17 @@ public class FluidStackMapIngredient extends AbstractMapIngredient {
 
     public FluidStackMapIngredient(FluidStack stack) {
         this.stack = stack;
-    }/* ported: removed */
+    }
+
+    @NotNull
+    public static List<AbstractMapIngredient> from(@NotNull net.neoforged.neoforge.fluids.crafting.SimpleFluidIngredient ingredient) {
+        if (ingredient.fluidSet() instanceof net.minecraft.core.HolderSet.Named<Fluid>) {
+            return Collections.emptyList();
+        }
+        List<AbstractMapIngredient> list = new java.util.ArrayList<>();
+        ingredient.fluidSet().forEach(holder -> list.add(new FluidStackMapIngredient(holder)));
+        return list;
+    }
 
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull FluidStack stack) {

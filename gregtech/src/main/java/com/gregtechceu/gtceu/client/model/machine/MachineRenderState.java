@@ -14,11 +14,10 @@ import it.unimi.dsi.fastutil.objects.Reference2ObjectArrayMap;
 public class MachineRenderState extends StateHolder<MachineDefinition, MachineRenderState> {
 
     public static final Codec<MachineRenderState> CODEC = codec(GTRegistries.MACHINES.byNameCodec(),
-            MachineDefinition::defaultRenderState).stable();
+            MachineDefinition::defaultRenderState, MachineDefinition::getStateDefinition).stable();
 
-    public MachineRenderState(MachineDefinition owner, Reference2ObjectArrayMap<Property<?>, Comparable<?>> values,
-                              MapCodec<MachineRenderState> propertiesCodec) {
-        super(owner, values, propertiesCodec);
+    public MachineRenderState(MachineDefinition owner, Property<?>[] properties, Comparable<?>[] values) {
+        super(owner, properties, values);
     }
 
     public MachineDefinition getDefinition() {

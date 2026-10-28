@@ -17,9 +17,9 @@ public class MonitorGroupTransformer implements ValueTransformer<MonitorGroup> {
         CompoundTag tag = new CompoundTag();
         tag.putString("name", value.getName());
         ListTag list = new ListTag();
-        value.getMonitorPositions().forEach(pos -> list.add(NbtUtils.writeBlockPos(pos)));
+        value.getMonitorPositions().forEach(pos -> list.add(com.gregtechceu.gtceu.compat.NbtCompat.writeBlockPos(pos)));
         if (value.getTargetRaw() != null) {
-            tag.put("targetPos", NbtUtils.writeBlockPos(value.getTargetRaw()));
+            tag.put("targetPos", com.gregtechceu.gtceu.compat.NbtCompat.writeBlockPos(value.getTargetRaw()));
             if (value.getTargetCoverSide() != null) {
                 tag.putString("targetSide", value.getTargetCoverSide().getSerializedName());
             }
@@ -41,17 +41,17 @@ public class MonitorGroupTransformer implements ValueTransformer<MonitorGroup> {
         var group = new MonitorGroup(compoundTag.getStringOr("name", ""), handler, placeholderSlotsHandler);
         ListTag list = compoundTag.getListOrEmpty("positions");
         for (int i = 0; i < list.size(); i++) {
-            int[] aint = list.getIntArray(i);
+            int[] aint = list.getIntArray(i).orElse(new int[0]);
             if (aint.length != 3) continue;
             group.add(new BlockPos(aint[0], aint[1], aint[2]));
         }
         if (compoundTag.contains("targetPos")) {
-            group.setTarget(NbtUtils.readBlockPos(compoundTag, "targetPos").orElse(BlockPos.ZERO));
+            group.setTarget(com.gregtechceu.gtceu.compat.NbtCompat.readBlockPos(compoundTag, "targetPos").orElse(BlockPos.ZERO));
             if (compoundTag.contains("targetSide")) {
-                group.setTargetCoverSide(Direction.byName(compoundTag.getString("targetSide")));
+                group.setTargetCoverSide(Direction.byName(compoundTag.getStringOr("targetSide", "")));
             }
             if (compoundTag.contains("dataSlot")) {
-                group.setDataSlot(compoundTag.getInt("dataSlot"));
+                group.setDataSlot(compoundTag.getIntOr("dataSlot", 0));
             }
         }
         return group;

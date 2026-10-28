@@ -35,7 +35,7 @@ public class GTRecipeTransformer implements ValueTransformer<GTRecipe> {
                     .decode(NbtOps.INSTANCE, NbtOps.INSTANCE.getMap(Objects.requireNonNull(recipeTag)).getOrThrow())
                     .result().orElse(null);
             if (result != null) {
-                result.id = Identifier.parse(compoundTag.getString("id"));
+                result.id = Identifier.parse(compoundTag.getStringOr("id", ""));
                 result.parallels = compoundTag.contains("parallels") ? compoundTag.getIntOr("parallels", 0) : 1;
                 result.ocLevel = compoundTag.getIntOr("ocLevel", 0);
             }

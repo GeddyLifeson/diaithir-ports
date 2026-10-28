@@ -69,4 +69,20 @@ public final class NbtCompat {
     public static net.neoforged.neoforge.fluids.FluidStack parseFluid(HolderLookup.Provider p, net.minecraft.nbt.Tag tag) {
         return net.neoforged.neoforge.fluids.FluidStack.OPTIONAL_CODEC.parse(prov(p).createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), tag).result().orElse(net.neoforged.neoforge.fluids.FluidStack.EMPTY);
     }
+
+    public static net.minecraft.nbt.IntArrayTag writeBlockPos(net.minecraft.core.BlockPos pos) {
+        return new net.minecraft.nbt.IntArrayTag(new int[] { pos.getX(), pos.getY(), pos.getZ() });
+    }
+
+    public static java.util.Optional<net.minecraft.core.BlockPos> readBlockPos(CompoundTag tag, String key) {
+        return tag.getIntArray(key).filter(a -> a.length == 3).map(a -> new net.minecraft.core.BlockPos(a[0], a[1], a[2]));
+    }
+
+    public static java.util.Optional<net.minecraft.core.BlockPos> readBlockPos(net.minecraft.nbt.Tag tag) {
+        if (tag instanceof net.minecraft.nbt.IntArrayTag ia && ia.getAsIntArray().length == 3) {
+            int[] a = ia.getAsIntArray();
+            return java.util.Optional.of(new net.minecraft.core.BlockPos(a[0], a[1], a[2]));
+        }
+        return java.util.Optional.empty();
+    }
 }

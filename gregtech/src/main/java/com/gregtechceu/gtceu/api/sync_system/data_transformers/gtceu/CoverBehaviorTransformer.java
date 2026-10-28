@@ -64,7 +64,7 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
             holder.setCoverAtSide(null, side);
             return null;
         }
-        Identifier coverType = Identifier.tryParse(tag.getString("coverType"));
+        Identifier coverType = Identifier.tryParse(tag.getStringOr("coverType", ""));
         if (cover == null || cover.coverDefinition.getId() != coverType) {
             var coverReg = GTRegistries.COVERS.get(coverType);
             if (coverReg == null) {
@@ -77,7 +77,7 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
 
         CoverBehavior newCover = holder.getCoverAtSide(side);
         if (newCover == null) return null;
-        newCover.getSyncDataHolder().deserializeNBT(lookup, tag.getCompound("data"),
+        newCover.getSyncDataHolder().deserializeNBT(lookup, tag.getCompoundOrEmpty("data"),
                 isSync);
 
         if (!isSync && newCover.getAttachItem() == ItemStack.EMPTY) {

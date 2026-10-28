@@ -339,7 +339,7 @@ public final class ToolRecipeHandler {
             VanillaRecipeHelper.addShapedEnergyTransferRecipe(provider,
                     true, true, true,
                     String.format("%s_%s", material.getName(), toolType.name),
-                    Ingredient.of(powerUnitStack),
+                    com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.ingredientOf(powerUnitStack),
                     tool,
                     "wHd", " U ",
                     'H', new MaterialEntry(toolHead, material),
