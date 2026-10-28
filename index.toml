@@ -36112,6 +36112,11 @@ hash = "f6ba90cc1346f8df8d123eedb06385e96885d10b353d2a39a835dc37fa6956f7"
 metafile = true
 
 [[files]]
+file = "options.txt"
+hash = "b31d9182e71cdffaa0eff42cf26cebd4deb334d80a99a905b2bccbd7a18c6a21"
+preserve = true
+
+[[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
 hash = "f13498d5f531e9fcb34b105494472e28e57974ab332c9b4ffed4978976c5d5d1"
 metafile = true
