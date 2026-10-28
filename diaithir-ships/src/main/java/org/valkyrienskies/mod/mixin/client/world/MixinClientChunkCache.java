@@ -40,7 +40,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.valkyrienskies.mod.common.VS2ChunkAllocator;
 import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.config.VSGameConfig;
-import org.valkyrienskies.mod.compat.SodiumCompat;
 import org.valkyrienskies.mod.compat.VSRenderer;
 import org.valkyrienskies.mod.mixin.ValkyrienCommonMixinConfigPlugin;
 import org.valkyrienskies.mod.mixin.accessors.client.multiplayer.ClientLevelAccessor;
@@ -174,9 +173,6 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
                 }
 
                 this.level.onChunkLoaded(pos);
-                if (ValkyrienCommonMixinConfigPlugin.getVSRenderer() == VSRenderer.SODIUM) {
-                    SodiumCompat.onChunkAdded(this.level, x, z);
-                }
                 cir.setReturnValue(worldChunk);
             }
         }
@@ -192,7 +188,6 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
                 ((IVSViewAreaMethods) ((LevelRendererAccessor) ((ClientLevelAccessor) level).getLevelRenderer()).getViewArea())
                     .valkyrienskies$unloadChunk(chunkX, chunkZ);
             }
-            SodiumCompat.onChunkRemoved(this.level, chunkX, chunkZ);
             ci.cancel();
         }
     }
@@ -227,7 +222,6 @@ public abstract class MixinClientChunkCache implements ClientChunkCacheDuck {
             ((IVSViewAreaMethods) ((LevelRendererAccessor) ((ClientLevelAccessor) level).getLevelRenderer()).getViewArea())
                 .valkyrienskies$unloadChunk(chunkX, chunkZ);
         }
-        SodiumCompat.onChunkRemoved(level, chunkX, chunkZ);
     }
 
     @Unique
