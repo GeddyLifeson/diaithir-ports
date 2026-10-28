@@ -1,7 +1,6 @@
 package folk.sisby.antique_atlas.gui;
 
 import folk.sisby.antique_atlas.AntiqueAtlas;
-import folk.sisby.antique_atlas.AntiqueAtlasMod;
 import folk.sisby.antique_atlas.AntiqueAtlasServerConfig;
 import folk.sisby.antique_atlas.MarkerTexture;
 import folk.sisby.antique_atlas.WorldAtlasData;
@@ -16,8 +15,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.gui.GuiLayer;
 
 import java.util.Map;
@@ -25,7 +22,7 @@ import java.util.Map;
 /**
  * Small circular map in a corner of the HUD, centred on the player.
  * Drawn only while no screen is open (so it never covers inventories or menus), the GUI is not hidden,
- * the server allows it, and the player carries a Compass Map in hand or inventory.
+ * the server allows it and the client config has it on.
  */
 public class MinimapHud implements GuiLayer {
 	public static final Identifier ID = AntiqueAtlas.id("minimap");
@@ -37,20 +34,10 @@ public class MinimapHud implements GuiLayer {
 	private static final int FRAME = 0xFF3B2A1A;
 	private static final int FRAME_LIGHT = 0xFFC9A66B;
 
-	public static boolean hasCompassMap(Player player) {
-		if (isCompassMap(player.getOffhandItem()) || isCompassMap(player.getMainHandItem())) return true;
-		for (ItemStack s : player.getInventory().getNonEquipmentItems()) if (isCompassMap(s)) return true;
-		return false;
-	}
-
-	private static boolean isCompassMap(ItemStack s) {
-		return s.is(AntiqueAtlasMod.COMPASS_MAP.get());
-	}
-
 	/** The single place that decides whether the minimap may draw this frame. */
 	public static boolean shouldDraw(Minecraft mc) {
 		return mc.screen == null && mc.player != null && mc.level != null && !mc.options.hideGui && !hidden
-			&& AntiqueAtlasServerConfig.minimapAllowed() && hasCompassMap(mc.player);
+			&& AntiqueAtlas.CONFIG.minimap && AntiqueAtlasServerConfig.minimapAllowed();
 	}
 
 	@Override

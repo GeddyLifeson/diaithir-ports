@@ -41,7 +41,10 @@ public class AntiqueAtlasConfig extends WrappedConfig {
 	@Comment("The background is slightly less stylish, but more tiles are shown at once")
 	public boolean fullscreen = true;
 
-	@Comment("Minimap (needs a Compass Map item): corner of the screen. 0 = top right, 1 = top left, 2 = bottom right, 3 = bottom left")
+	@Comment("Whether to show the minimap on the HUD (hidden while any screen is open or the GUI is hidden)")
+	public boolean minimap = true;
+
+	@Comment("Minimap corner of the screen. 0 = top right, 1 = top left, 2 = bottom right, 3 = bottom left")
 	@IntegerRange(min = 0, max = 3)
 	public int minimapCorner = 0;
 

@@ -1,6 +1,0 @@
-{
-	"type": "minecraft:crafting_shapeless",
-	"category": "equipment",
-	"ingredients": ["minecraft:compass", "minecraft:glass_pane", "antique_atlas:parchment", "antique_atlas:parchment", "antique_atlas:parchment"],
-	"result": {"id": "antique_atlas:compass_map", "count": 1}
-}

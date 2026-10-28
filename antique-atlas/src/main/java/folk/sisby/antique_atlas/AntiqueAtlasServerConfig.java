@@ -11,7 +11,7 @@ public final class AntiqueAtlasServerConfig {
 
 	static {
 		ModConfigSpec.Builder b = new ModConfigSpec.Builder();
-		MINIMAP_ENABLED = b.comment("Whether the Compass Map item draws its minimap on the HUD. Set to false to keep the item but turn the minimap off for everyone.")
+		MINIMAP_ENABLED = b.comment("Whether clients may draw the Atlas minimap on the HUD. Set to false to turn the minimap off for everyone.")
 			.define("minimapEnabled", true);
 		SPEC = b.build();
 	}
