@@ -33646,7 +33646,7 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/culture_start/culture_start.js"
-hash = "bc6e52d413eb19fa141e4c613f567aef6772bb403880052fa6630ecd32f43adf"
+hash = "ff66ededcccfd5415f1b22c1527a144bc77d6b41454a9f5822334154e20e5df7"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
@@ -34926,8 +34926,8 @@ file = "mods/diaithir-activity-neoforge-26.1.2-1.0.0.jar"
 hash = "e9ac289e36afa6b1860da5ac0d867dbc92d54c68b6a972128920629c69262445"
 
 [[files]]
-file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.5.jar"
-hash = "82d1580dc3642aba7179f262628d00ba6c4951ead8383e42e9482c7d92ee6d07"
+file = "mods/diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.6.jar"
+hash = "040e7725313ccf05766ee1bcaaa1d2cafba09331c7aba76f9bedfea6be6b9498"
 
 [[files]]
 file = "mods/diaithir-bestiary-neoforge-26.1.2-0.3.2.jar"
