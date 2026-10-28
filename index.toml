@@ -25601,8 +25601,40 @@ file = "kubejs/data/rodos/worldgen/structure/aperture_plaza.json"
 hash = "4b5bdf16444cfd9623fb6700f157045cf9d8edba02ee3c1b990e279e884743d6"
 
 [[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_black.json"
+hash = "16796de263b6672c82da7f8d0516b0e367d39370bba5fa0be87a90eb9eff5da0"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_power.json"
+hash = "906bee48797d6d5e7cd1af51f50bb1cc8f7feef9e5dedcf5bb77623c1d240b52"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_red.json"
+hash = "7c944eb4c9e5fc3004756c5e2d96429590f8a4b16ca91d789aa4d57a044b54d4"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_tall.json"
+hash = "a8edfcae52fba2958d52dd2a3388e5696865140ad4bc5fed540e5b4b831a5756"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_wheel.json"
+hash = "dbc545616c456c302fce11370ddefed88b92eda62f1bcae4b1c87e0d528790d0"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/mere_lighthouse.json"
+hash = "434fc21314d2fa648b38a398becfba45a8e553288e3aad2040b2a5e93041c63d"
+
+[[files]]
 file = "kubejs/data/rodos/worldgen/structure/ring_gate.json"
 hash = "ffee5c57fe97c2ecd67d878c3532388143af37cbf062036618d154e4b1cbd27a"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/ring_stones.json"
+hash = "eaf7ef1354185172df0e8c360f4606565b9ff1df7b2573141353bb4ab47affd4"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/ring_windmill.json"
+hash = "2d51023ef405a97e75ebf592e264e41ae6ceb74cb8652bfabae69b3c709c94ff"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure/seat_steps.json"
@@ -25625,8 +25657,40 @@ file = "kubejs/data/rodos/worldgen/structure_set/aperture_plaza.json"
 hash = "5a2681938a16ddfd82d120330185cc184a3d96dbfe7cb8cd5f605c5014044f72"
 
 [[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_black.json"
+hash = "4e0c00c65edb88f6470c6ecee0bf009d3df7d3f6d5dfb0f39d9a58a3a0c7ab72"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_power.json"
+hash = "d35444b264b84a76ca3cf4b560cbbb48dc4cc11846c766d5f474be05266230b2"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_red.json"
+hash = "b0ee18b50af9811e13c9dd9f90a33050b590d25f335a3199fc6eb4ef72572099"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_tall.json"
+hash = "f83266cdf58c71e5825eda29c42211553faf96231e3d421f466c2b0511804877"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_wheel.json"
+hash = "92849be3c99c3e0109a3451ddb9bad4036fcc68896c9fabd82ab71735a11feb1"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/mere_lighthouse.json"
+hash = "afcee83bef29ed29030452e99623133a493cdeb8df104732d898b169871897a2"
+
+[[files]]
 file = "kubejs/data/rodos/worldgen/structure_set/ring_gate.json"
 hash = "df46b929ccb59e1048a70c30b71247900762d93fd059e6c0fbb6c34425197613"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/ring_stones.json"
+hash = "8fbbcb9b7160880919d7f5ffec25b466939fd24e27d34e3a28a8aa7d95c04560"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/ring_windmill.json"
+hash = "15ea105f5359eae80d598fad0ed8ef61e80cc4b7390049a20fd584e56d464cdd"
 
 [[files]]
 file = "kubejs/data/rodos/worldgen/structure_set/seat_steps.json"
@@ -26770,6 +26834,11 @@ metafile = true
 [[files]]
 file = "mods/bibliocraft-26.1.2-1.7.1.pw.toml"
 hash = "cc8ac46841ace7a0ab99712be9cf50e38090194713846cbf4b1bb0adf5b69fa7"
+metafile = true
+
+[[files]]
+file = "mods/big_lost_city-1.0.1_Neoforge_26.1.2.pw.toml"
+hash = "01273208bb7144f4676861d7746984583f61d8b621b06524a783826d61a0364e"
 metafile = true
 
 [[files]]
@@ -28059,6 +28128,11 @@ metafile = true
 [[files]]
 file = "mods/theurgy-26.1.2-neoforge-1.116.0.pw.toml"
 hash = "de90d5896e4231a1e7e32df155d8a079ad2ee2d23944822290115e67961391cb"
+metafile = true
+
+[[files]]
+file = "mods/thuns-structures-1.3.2.pw.toml"
+hash = "80b86261c5d7363e9673012dd81831adbbe5b50ff5b3fd9da318dee6a6a35c8a"
 metafile = true
 
 [[files]]

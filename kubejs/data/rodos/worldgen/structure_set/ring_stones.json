@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 60,
+  "separation": 20,
+  "salt": 71100108
+ },
+ "structures": [
+  {
+   "structure": "rodos:ring_stones",
+   "weight": 1
+  }
+ ]
+}

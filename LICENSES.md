@@ -17,6 +17,8 @@ These are our builds of open-source mods, hosted under each mod's licence with i
 | actuallyadditions-1.3.26+mc26.1.2.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/actuallyadditions) |
 | blockui-1.0.0-diaithir.jar | GPL3 | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/blockui) |
 | diaithir-ages-neoforge-26.1.2-0.1.0-diaithir.3.jar | Diaithir engine, ours; free to play with the pack (built from DiaithirRPG PR #182, branch claude/project-thread-golhx6, engine/) | not published |
+| big_lost_city-1.0.1 Neoforge 26.1.2.jar | All Rights Reserved (Modrinth lMtLn3EL); download link only, never bundled | link to the Modrinth file |
+| thuns-structures-1.3.2.jar | MIT (Modrinth ZLL4Dkxb); download link | link to the Modrinth file |
 | resourcepacks/diaithir-ui.zip (item/dish textures + DISH_PHOTO_CREDITS.md) | 1,365 64 px dish icons made from Wikimedia Commons photo cutouts under CC BY 2.0/2.5/3.0/4.0, CC BY-SA 2.0-4.0, CC0 and public domain (no NC, no all-rights-reserved); per-image author and licence in DISH_PHOTO_CREDITS.md inside the zip; CC BY-SA cutouts stay share-alike | credits file shipped in the pack |
 | diaithir-compat-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat) |
 | diaithir-nemesis-neoforge-26.1.2-1.0.0.jar | MIT | [source](https://github.com/GeddyLifeson/diaithir-ports/tree/diaithircompat/diaithir-nemesis) |

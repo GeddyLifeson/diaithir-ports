@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 7,
+  "separation": 2,
+  "salt": 71100103
+ },
+ "structures": [
+  {
+   "structure": "rodos:city_red",
+   "weight": 1
+  }
+ ]
+}

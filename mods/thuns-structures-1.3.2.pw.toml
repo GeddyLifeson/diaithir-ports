@@ -1,0 +1,12 @@
+name = "thuns-structures"
+filename = "thuns-structures-1.3.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ZLL4Dkxb/versions/9O7Gqu4j/thuns-structures-1.3.2.jar"
+hash-format = "sha256"
+hash = "a839035622c500055a5ffb40398ca494131341783205d2398ca90286ba261163"
+
+[update.modrinth]
+mod-id = "ZLL4Dkxb"
+version = "9O7Gqu4j"
