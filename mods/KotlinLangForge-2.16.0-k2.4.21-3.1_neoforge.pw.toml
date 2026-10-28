@@ -1,6 +1,6 @@
 name = "KotlinLangForge"
 filename = "KotlinLangForge-2.16.0-k2.4.21-3.1+neoforge.jar"
-side = "client"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/1vrSzlao/versions/azqUEIcZ/KotlinLangForge-2.16.0-k2.4.21-3.1%2Bneoforge.jar"
