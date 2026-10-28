@@ -1,0 +1,33 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:milk_bucket",
+  "minecraft:sugar",
+  "diaithir_drinks:barm",
+  "minecraft:honey_bottle"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:kefir",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:1.2d}"
+   }
+  }
+ ]
+}

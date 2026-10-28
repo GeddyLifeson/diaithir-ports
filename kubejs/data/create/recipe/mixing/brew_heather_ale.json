@@ -1,0 +1,35 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "diaithircompat:calluna_vulgaris",
+  "diaithircompat:calluna_vulgaris",
+  "diaithircompat:calluna_vulgaris",
+  "diaithir_drinks:malted_barley",
+  "diaithir_drinks:barm",
+  "productivefarming:hops"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:heather_ale",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:5.0d}"
+   }
+  }
+ ]
+}

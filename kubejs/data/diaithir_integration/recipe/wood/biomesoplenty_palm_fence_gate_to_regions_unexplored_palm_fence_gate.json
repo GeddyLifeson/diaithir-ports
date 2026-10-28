@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:palm_fence_gate","result":{"id":"regions_unexplored:palm_fence_gate","count":1}}

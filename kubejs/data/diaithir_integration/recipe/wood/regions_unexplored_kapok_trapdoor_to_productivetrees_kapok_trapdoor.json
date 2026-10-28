@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"productivetrees"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"minecraft:stonecutting","ingredient":"regions_unexplored:kapok_trapdoor","result":{"id":"productivetrees:kapok_trapdoor","count":1}}

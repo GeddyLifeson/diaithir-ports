@@ -1,0 +1,20 @@
+{
+  "name": "Grìugag",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} grìugag",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_griugag_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_griugag_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_griugag_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

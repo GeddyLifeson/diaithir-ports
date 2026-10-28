@@ -1,0 +1,23 @@
+#Diaithir overrides only; Lightman's fills every other option with its default. Coin enters only through the stores (docs/design/economy.md).
+#The default "main" chain (copper to netherite coins) stays defined because the mod's own defaults refer to it, but nothing hands those coins out:
+#no mint, no loot, no trade replacement, no piglin barter, no starting rewards. The currencies in use are the generated chains beside it.
+[crafting]
+	[crafting.coin_mint]
+		canMint=false
+		canMelt=false
+[events]
+	startingRewards=false
+	lootReplacements=false
+[villagers]
+	piglinsBarterCoins=false
+	[villagers.modification]
+		#Villagers that still take the mod's coin in place of emeralds (outside every culture's trade screens) are paid in salt twists, the free-market barter good.
+		defaultEmeraldReplacementItem="diaithir:salt_twist"
+[loot]
+	[loot.entities]
+		enabled=false
+	[loot.chests]
+		enabled=false
+[structures]
+	villageHouses=false
+	ancientCity=false

@@ -12,7 +12,8 @@ const INTEGRATION_FAMILIES = {
  "c:dusts/charcoal": {
   "canonical": "energizedpower:charcoal_dust",
   "aliases": [
-   "mekanism:dust_charcoal"
+   "mekanism:dust_charcoal",
+   "railcraft:charcoal_dust"
   ]
  },
  "c:dusts/coal": {
@@ -22,7 +23,8 @@ const INTEGRATION_FAMILIES = {
    "enderio:powdered_coal",
    "mekanism:dust_coal",
    "neovitae:coal_dust",
-   "oritech:coal_dust"
+   "oritech:coal_dust",
+   "railcraft:coal_dust"
   ]
  },
  "c:dusts/copper": {
@@ -57,10 +59,17 @@ const INTEGRATION_FAMILIES = {
    "modern_industrialization:emerald_dust"
   ]
  },
+ "c:dusts/ender": {
+  "canonical": "railcraft:ender_dust",
+  "aliases": [
+   "ae2:ender_dust"
+  ]
+ },
  "c:dusts/ender_pearl": {
   "canonical": "enderio:powdered_ender_pearl",
   "aliases": [
-   "ae2:ender_dust"
+   "ae2:ender_dust",
+   "railcraft:ender_dust"
   ]
  },
  "c:dusts/gold": {
@@ -125,7 +134,8 @@ const INTEGRATION_FAMILIES = {
   "aliases": [
    "create:powdered_obsidian",
    "enderio:powdered_obsidian",
-   "mekanism:dust_obsidian"
+   "mekanism:dust_obsidian",
+   "railcraft:obsidian_dust"
   ]
  },
  "c:dusts/platinum": {
@@ -155,6 +165,12 @@ const INTEGRATION_FAMILIES = {
    "mekanism:salt"
   ]
  },
+ "c:dusts/saltpeter": {
+  "canonical": "neovitae:saltpeter",
+  "aliases": [
+   "railcraft:saltpeter_dust"
+  ]
+ },
  "c:dusts/silver": {
   "canonical": "occultism:silver_dust",
   "aliases": [
@@ -172,7 +188,8 @@ const INTEGRATION_FAMILIES = {
   "canonical": "modern_industrialization:sulfur_dust",
   "aliases": [
    "mekanism:dust_sulfur",
-   "neovitae:sulfur"
+   "neovitae:sulfur",
+   "railcraft:sulfur_dust"
   ]
  },
  "c:dusts/tin": {
@@ -200,7 +217,8 @@ const INTEGRATION_FAMILIES = {
  "c:gears/bronze": {
   "canonical": "modern_industrialization:bronze_gear",
   "aliases": [
-   "forestry:bronze_gear"
+   "forestry:bronze_gear",
+   "railcraft:bronze_gear"
   ]
  },
  "c:gears/cast": {
@@ -212,7 +230,8 @@ const INTEGRATION_FAMILIES = {
  "c:gears/copper": {
   "canonical": "modern_industrialization:copper_gear",
   "aliases": [
-   "forestry:copper_gear"
+   "forestry:copper_gear",
+   "railcraft:copper_gear"
   ]
  },
  "c:gears/diamond": {
@@ -225,7 +244,14 @@ const INTEGRATION_FAMILIES = {
   "canonical": "modern_industrialization:gold_gear",
   "aliases": [
    "industrialforegoing:gold_gear",
+   "railcraft:gold_gear",
    "titanium:gold_gear"
+  ]
+ },
+ "c:gears/invar": {
+  "canonical": "modern_industrialization:invar_gear",
+  "aliases": [
+   "railcraft:invar_gear"
   ]
  },
  "c:gears/iron": {
@@ -235,19 +261,28 @@ const INTEGRATION_FAMILIES = {
    "energizedpower:iron_gear",
    "forestry:iron_gear",
    "industrialforegoing:iron_gear",
+   "railcraft:iron_gear",
    "titanium:iron_gear"
   ]
  },
  "c:gears/steel": {
   "canonical": "modern_industrialization:steel_gear",
   "aliases": [
-   "energizedpower:steel_gear"
+   "energizedpower:steel_gear",
+   "railcraft:steel_gear"
   ]
  },
  "c:gears/tin": {
   "canonical": "modern_industrialization:tin_gear",
   "aliases": [
-   "forestry:tin_gear"
+   "forestry:tin_gear",
+   "railcraft:tin_gear"
+  ]
+ },
+ "c:ingots/brass": {
+  "canonical": "create:brass_ingot",
+  "aliases": [
+   "railcraft:brass_ingot"
   ]
  },
  "c:ingots/bronze": {
@@ -255,6 +290,7 @@ const INTEGRATION_FAMILIES = {
   "aliases": [
    "forestry:bronze_ingot",
    "modern_industrialization:bronze_ingot",
+   "railcraft:bronze_ingot",
    "silentgear:bronze_ingot"
   ]
  },
@@ -276,16 +312,30 @@ const INTEGRATION_FAMILIES = {
    "oritech:electrum_ingot"
   ]
  },
+ "c:ingots/invar": {
+  "canonical": "modern_industrialization:invar_ingot",
+  "aliases": [
+   "railcraft:invar_ingot"
+  ]
+ },
+ "c:ingots/knightmetal": {
+  "canonical": "tconstruct:knightmetal_ingot",
+  "aliases": [
+   "twilightforest:knightmetal_ingot"
+  ]
+ },
  "c:ingots/lead": {
   "canonical": "mekanism:ingot_lead",
   "aliases": [
-   "modern_industrialization:lead_ingot"
+   "modern_industrialization:lead_ingot",
+   "railcraft:lead_ingot"
   ]
  },
  "c:ingots/nickel": {
   "canonical": "modern_industrialization:nickel_ingot",
   "aliases": [
-   "oritech:nickel_ingot"
+   "oritech:nickel_ingot",
+   "railcraft:nickel_ingot"
   ]
  },
  "c:ingots/platinum": {
@@ -303,7 +353,14 @@ const INTEGRATION_FAMILIES = {
  "c:ingots/redstone_alloy": {
   "canonical": "energizedpower:redstone_alloy_ingot",
   "aliases": [
-   "enderio:redstone_alloy_ingot"
+   "enderio:redstone_alloy_ingot",
+   "morered:red_alloy_ingot"
+  ]
+ },
+ "c:ingots/rose_gold": {
+  "canonical": "tconstruct:rose_gold_ingot",
+  "aliases": [
+   "mca:rose_gold_ingot"
   ]
  },
  "c:ingots/silver": {
@@ -312,6 +369,7 @@ const INTEGRATION_FAMILIES = {
    "iceandfire:silver_ingot",
    "occultism:silver_ingot",
    "projectred_exploration:silver_ingot",
+   "railcraft:silver_ingot",
    "silentgems:silver_ingot"
   ]
  },
@@ -322,6 +380,7 @@ const INTEGRATION_FAMILIES = {
    "modern_industrialization:steel_ingot",
    "oritech:biosteel_ingot",
    "oritech:steel_ingot",
+   "railcraft:steel_ingot",
    "tconstruct:steel_ingot"
   ]
  },
@@ -331,7 +390,8 @@ const INTEGRATION_FAMILIES = {
    "energizedpower:tin_ingot",
    "forestry:tin_ingot",
    "modern_industrialization:tin_ingot",
-   "projectred_exploration:tin_ingot"
+   "projectred_exploration:tin_ingot",
+   "railcraft:tin_ingot"
   ]
  },
  "c:ingots/titanium": {
@@ -346,10 +406,23 @@ const INTEGRATION_FAMILIES = {
    "modern_industrialization:uranium_ingot"
   ]
  },
+ "c:ingots/zinc": {
+  "canonical": "create:zinc_ingot",
+  "aliases": [
+   "railcraft:zinc_ingot"
+  ]
+ },
+ "c:nuggets/brass": {
+  "canonical": "create:brass_nugget",
+  "aliases": [
+   "railcraft:brass_nugget"
+  ]
+ },
  "c:nuggets/bronze": {
   "canonical": "mekanism:nugget_bronze",
   "aliases": [
-   "modern_industrialization:bronze_nugget"
+   "modern_industrialization:bronze_nugget",
+   "railcraft:bronze_nugget"
   ]
  },
  "c:nuggets/cast": {
@@ -364,19 +437,28 @@ const INTEGRATION_FAMILIES = {
    "modern_industrialization:copper_nugget",
    "oritech:copper_nugget",
    "pneumaticcraft:copper_nugget",
-   "tconstruct:copper_nugget"
+   "tconstruct:copper_nugget",
+   "twilightforest:copper_nugget"
+  ]
+ },
+ "c:nuggets/invar": {
+  "canonical": "modern_industrialization:invar_nugget",
+  "aliases": [
+   "railcraft:invar_nugget"
   ]
  },
  "c:nuggets/lead": {
   "canonical": "mekanism:nugget_lead",
   "aliases": [
-   "modern_industrialization:lead_nugget"
+   "modern_industrialization:lead_nugget",
+   "railcraft:lead_nugget"
   ]
  },
  "c:nuggets/nickel": {
   "canonical": "modern_industrialization:nickel_nugget",
   "aliases": [
-   "oritech:nickel_nugget"
+   "oritech:nickel_nugget",
+   "railcraft:nickel_nugget"
   ]
  },
  "c:nuggets/platinum": {
@@ -390,6 +472,7 @@ const INTEGRATION_FAMILIES = {
   "aliases": [
    "iceandfire:silver_nugget",
    "modern_industrialization:silver_nugget",
+   "railcraft:silver_nugget",
    "silentgems:silver_nugget"
   ]
  },
@@ -398,6 +481,7 @@ const INTEGRATION_FAMILIES = {
   "aliases": [
    "energizedpower:steel_nugget",
    "modern_industrialization:steel_nugget",
+   "railcraft:steel_nugget",
    "tconstruct:steel_nugget"
   ]
  },
@@ -406,7 +490,8 @@ const INTEGRATION_FAMILIES = {
   "aliases": [
    "energizedpower:tin_nugget",
    "forestry:tin_nugget",
-   "modern_industrialization:tin_nugget"
+   "modern_industrialization:tin_nugget",
+   "railcraft:tin_nugget"
   ]
  },
  "c:nuggets/titanium": {
@@ -421,6 +506,24 @@ const INTEGRATION_FAMILIES = {
    "modern_industrialization:uranium_nugget"
   ]
  },
+ "c:nuggets/zinc": {
+  "canonical": "create:zinc_nugget",
+  "aliases": [
+   "railcraft:zinc_nugget"
+  ]
+ },
+ "c:plates/brass": {
+  "canonical": "create:brass_sheet",
+  "aliases": [
+   "railcraft:brass_plate"
+  ]
+ },
+ "c:plates/bronze": {
+  "canonical": "modern_industrialization:bronze_plate",
+  "aliases": [
+   "railcraft:bronze_plate"
+  ]
+ },
  "c:plates/cast": {
   "canonical": "tconstruct:plate_cast",
   "aliases": [
@@ -431,21 +534,48 @@ const INTEGRATION_FAMILIES = {
   "canonical": "modern_industrialization:copper_plate",
   "aliases": [
    "create:copper_sheet",
-   "energizedpower:copper_plate"
+   "energizedpower:copper_plate",
+   "railcraft:copper_plate"
   ]
  },
  "c:plates/gold": {
   "canonical": "modern_industrialization:gold_plate",
   "aliases": [
    "create:golden_sheet",
-   "energizedpower:gold_plate"
+   "energizedpower:gold_plate",
+   "railcraft:gold_plate"
+  ]
+ },
+ "c:plates/invar": {
+  "canonical": "modern_industrialization:invar_plate",
+  "aliases": [
+   "railcraft:invar_plate"
   ]
  },
  "c:plates/iron": {
   "canonical": "modern_industrialization:iron_plate",
   "aliases": [
    "create:iron_sheet",
-   "energizedpower:iron_plate"
+   "energizedpower:iron_plate",
+   "railcraft:iron_plate"
+  ]
+ },
+ "c:plates/lead": {
+  "canonical": "modern_industrialization:lead_plate",
+  "aliases": [
+   "railcraft:lead_plate"
+  ]
+ },
+ "c:plates/nickel": {
+  "canonical": "modern_industrialization:nickel_plate",
+  "aliases": [
+   "railcraft:nickel_plate"
+  ]
+ },
+ "c:plates/obsidian": {
+  "canonical": "create:sturdy_sheet",
+  "aliases": [
+   "chisel:obsidian_plate"
   ]
  },
  "c:plates/shield": {
@@ -454,28 +584,44 @@ const INTEGRATION_FAMILIES = {
    "silentgear:shield_plate"
   ]
  },
+ "c:plates/silver": {
+  "canonical": "modern_industrialization:silver_plate",
+  "aliases": [
+   "railcraft:silver_plate"
+  ]
+ },
  "c:plates/steel": {
   "canonical": "modern_industrialization:steel_plate",
   "aliases": [
-   "energizedpower:steel_plate"
+   "energizedpower:steel_plate",
+   "railcraft:steel_plate"
+  ]
+ },
+ "c:plates/stone": {
+  "canonical": "morered:stone_plate",
+  "aliases": [
+   "chisel:stone_plate"
   ]
  },
  "c:plates/tin": {
   "canonical": "modern_industrialization:tin_plate",
   "aliases": [
-   "energizedpower:tin_plate"
+   "energizedpower:tin_plate",
+   "railcraft:tin_plate"
   ]
  },
  "c:raw_materials/lead": {
   "canonical": "mekanism:raw_lead",
   "aliases": [
-   "modern_industrialization:raw_lead"
+   "modern_industrialization:raw_lead",
+   "railcraft:lead_raw"
   ]
  },
  "c:raw_materials/nickel": {
   "canonical": "modern_industrialization:raw_nickel",
   "aliases": [
-   "oritech:raw_nickel"
+   "oritech:raw_nickel",
+   "railcraft:nickel_raw"
   ]
  },
  "c:raw_materials/nickel_block": {
@@ -502,6 +648,7 @@ const INTEGRATION_FAMILIES = {
    "iceandfire:raw_silver",
    "occultism:raw_silver",
    "projectred_exploration:raw_silver",
+   "railcraft:silver_raw",
    "silentgems:raw_silver"
   ]
  },
@@ -519,7 +666,8 @@ const INTEGRATION_FAMILIES = {
    "energizedpower:raw_tin",
    "forestry:raw_tin",
    "modern_industrialization:raw_tin",
-   "projectred_exploration:raw_tin"
+   "projectred_exploration:raw_tin",
+   "railcraft:tin_raw"
   ]
  },
  "c:raw_materials/tin_block": {
@@ -553,6 +701,12 @@ const INTEGRATION_FAMILIES = {
   "canonical": "modern_industrialization:raw_uranium_block",
   "aliases": [
    "oritech:raw_uranium_block"
+  ]
+ },
+ "c:raw_materials/zinc": {
+  "canonical": "create:raw_zinc",
+  "aliases": [
+   "railcraft:zinc_raw"
   ]
  },
  "c:rods/cast": {

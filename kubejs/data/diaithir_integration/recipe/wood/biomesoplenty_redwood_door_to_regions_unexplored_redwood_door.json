@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:redwood_door","result":{"id":"regions_unexplored:redwood_door","count":1}}

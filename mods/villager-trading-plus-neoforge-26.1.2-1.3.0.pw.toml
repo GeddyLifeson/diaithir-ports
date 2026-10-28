@@ -3,6 +3,6 @@ filename = "villager-trading-plus-neoforge-26.1.2-1.3.0.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-latest/client/villager-trading-plus-neoforge-26.1.2-1.3.0.jar"
+url = "https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-v1/client/villager-trading-plus-neoforge-26.1.2-1.3.0.jar"
 hash-format = "sha256"
 hash = "1ea926856df56b190d6492b459bb1c7a1dc06f99bfffc325c7a40a40500a734e"

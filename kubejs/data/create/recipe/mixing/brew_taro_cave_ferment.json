@@ -1,0 +1,33 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:sugar",
+  "minecraft:sugar",
+  "minecraft:cocoa_beans",
+  "diaithir_drinks:barm"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:taro_cave_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:2.0d}"
+   }
+  }
+ ]
+}

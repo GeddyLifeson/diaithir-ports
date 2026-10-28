@@ -1,1 +1,1 @@
-{"replace":false,"values":[{"id":"create:raw_zinc","required":false}]}
+{"replace":false,"values":[{"id":"create:raw_zinc","required":false},{"id":"railcraft:zinc_raw","required":false}]}

@@ -1,0 +1,34 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:sweet_berries",
+  "minecraft:sweet_berries",
+  "minecraft:sweet_berries",
+  "minecraft:sweet_berries",
+  "croptopia:blueberry"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:crowberry_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:3.0d}"
+   }
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Uma",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} uma",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_uma_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_uma_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_uma_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

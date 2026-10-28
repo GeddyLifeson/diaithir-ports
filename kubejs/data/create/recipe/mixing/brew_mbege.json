@@ -1,0 +1,36 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "diaithir_drinks:barm",
+  "croptopia:banana",
+  "productivefarming:sorghum",
+  "croptopia:chile_pepper",
+  "croptopia:tomato",
+  "croptopia:peanut",
+  "diaithir_drinks:millet"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:mbege",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:6.0d}"
+   }
+  }
+ ]
+}

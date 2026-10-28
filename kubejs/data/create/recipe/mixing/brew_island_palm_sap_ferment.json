@@ -1,0 +1,36 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:sugar",
+  "minecraft:sugar",
+  "minecraft:sugar",
+  "minecraft:sugar",
+  "productivetrees:date_palm_juice",
+  "croptopia:banana",
+  "croptopia:coconut"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:island_palm_sap_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:3.0d}"
+   }
+  }
+ ]
+}

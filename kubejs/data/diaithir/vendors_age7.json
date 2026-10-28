@@ -1,0 +1,998 @@
+{
+ "age": "VII",
+ "vendors": [
+  {
+   "id": "network_architect",
+   "name": "Ailtirelìni",
+   "role": "Network Architect",
+   "spawn": [
+    "every settlement",
+    "data hall"
+   ],
+   "items": {
+    "extendedae:infinity_cobblestone_cell": {
+     "price": 317,
+     "stock": 4
+    },
+    "advanced_ae:quantum_alloy_slab": {
+     "price": 447,
+     "stock": 4
+    },
+    "ae2:smooth_sky_stone_stairs": {
+     "price": 447,
+     "stock": 4
+    },
+    "advanced_ae:hp_buffer_card": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:quantum_multi_threader": {
+     "price": 631,
+     "stock": 4
+    },
+    "advanced_ae:sprint_speed_card": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:black_lumen_paint_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:brown_paint_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:cell_workbench": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:cyan_smart_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:fluid_cell_housing": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:glass_cable_base": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:guide": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:light_blue_covered_dense_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:lime_covered_dense_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:matter_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:orange_covered_dense_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:pink_lumen_paint_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:printed_logic_processor": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:red_lumen_paint_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:spatial_cell_component_128": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:white_covered_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:yellow_paint_ball": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:entro_cluster": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:ex_pattern_provider": {
+     "price": 631,
+     "stock": 4
+    },
+    "extendedae:pattern_provider_upgrade": {
+     "price": 631,
+     "stock": 4
+    },
+    "extradisks:1024k_item_storage_disk": {
+     "price": 631,
+     "stock": 4
+    },
+    "extradisks:262144b_fluid_storage_disk": {
+     "price": 631,
+     "stock": 4
+    },
+    "extradisks:infinite_chemical_storage_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:cell_component_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:fluid_storage_cell_1m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:mega_emc_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_experience_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:portable_mana_cell_16m": {
+     "price": 631,
+     "stock": 4
+    },
+    "megacells:soul_storage_cell_4m": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:4096b_fluid_storage_part": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:black_creative_controller": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:blue_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:blue_wireless_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:brown_pattern_grid": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:cable/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:constructor/cyan": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:cyan_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:cyan_wireless_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:destructor/red": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:detector/purple": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:exporter/lime": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:external_storage/green": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:gray_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:green_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:grid": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:importer/red": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:light_gray_creative_controller": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:lime_cable": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:lime_security_manager": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:magenta_network_transmitter": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:orange_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:pattern/smithing_table": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:pink_network_receiver": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:purple_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:red_controller": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:relay": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:white_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:wireless_grid": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:wireless_transmitter/purple": {
+     "price": 631,
+     "stock": 4
+    },
+    "refinedstorage:yellow_grid": {
+     "price": 631,
+     "stock": 4
+    },
+    "ae2:64k_crafting_storage": {
+     "price": 795,
+     "stock": 4
+    },
+    "extendedae:entro_ingot": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:brown_crafting_grid": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage:orange_crafting_grid": {
+     "price": 795,
+     "stock": 4
+    },
+    "refinedstorage_quartz_arsenal:wireless_crafting_grid/active": {
+     "price": 795,
+     "stock": 4
+    },
+    "ae2:quartz_wall": {
+     "price": 892,
+     "stock": 4
+    },
+    "ae2:certus_quartz_wrench": {
+     "price": 1259,
+     "stock": 4
+    },
+    "ae2:quartz_fixture": {
+     "price": 1259,
+     "stock": 4
+    },
+    "extendedae:silicon_block": {
+     "price": 1259,
+     "stock": 4
+    },
+    "extradisks:advanced_machine_casing": {
+     "price": 1259,
+     "stock": 4
+    },
+    "ae2:certus_quartz_cutting_knife": {
+     "price": 1585,
+     "stock": 4
+    },
+    "ae2:nether_quartz_hoe": {
+     "price": 1996,
+     "stock": 4
+    },
+    "ae2:debug_eraser": {
+     "price": 6310,
+     "stock": 4
+    },
+    "refinedstorage:creative_storage_block": {
+     "price": 12590,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "grid_engineer",
+   "name": "Indleduirklèiti",
+   "role": "Grid Engineer",
+   "spawn": [
+    "every settlement",
+    "grid hub"
+   ],
+   "items": {
+    "dimstorage:dim_core": {
+     "price": 399,
+     "stock": 4
+    },
+    "cabletiers:black_elite_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:black_mega_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:blue_creative_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:blue_elite_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:blue_ultra_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:brown_creative_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:brown_mega_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:brown_ultra_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:cyan_elite_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:cyan_mega_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_constructor/light_gray": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_destructor/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_exporter/black": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_exporter/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_importer/blue": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:elite_importer/orange": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:gray_elite_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:green_creative_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:green_mega_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:green_ultra_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:light_blue_elite_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:light_blue_ultra_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:light_gray_elite_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:light_gray_mega_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:lime_creative_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:lime_elite_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:lime_ultra_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:magenta_elite_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:magenta_mega_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_constructor/light_gray": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_destructor/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_exporter/black": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_exporter/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_importer/blue": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:mega_importer/orange": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:orange_creative_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:orange_mega_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:orange_ultra_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:pink_elite_autocrafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:pink_mega_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:purple_creative_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:purple_elite_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:purple_ultra_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:red_creative_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:red_mega_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:red_ultra_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_constructor/light_blue": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_constructor/yellow": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_destructor/light_gray": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_disk_interface": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_exporter/light_gray": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_importer/black": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:ultra_importer/magenta": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:white_creative_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:white_elite_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:white_ultra_constructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:yellow_creative_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:yellow_mega_destructor": {
+     "price": 631,
+     "stock": 4
+    },
+    "cabletiers:yellow_ultra_importer": {
+     "price": 631,
+     "stock": 4
+    },
+    "energizedpower:energizing_speed_upgrade_module_8": {
+     "price": 631,
+     "stock": 4
+    },
+    "energizedpower:item_pulling_upgrade_module_7": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanism:mekasuit_pants": {
+     "price": 631,
+     "stock": 4
+    },
+    "mekanism:qio_exporter": {
+     "price": 631,
+     "stock": 4
+    },
+    "pneumaticcraft:collector_drone": {
+     "price": 631,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_circuit_board": {
+     "price": 795,
+     "stock": 4
+    },
+    "dimstorage:dimensional_tank": {
+     "price": 1259,
+     "stock": 4
+    },
+    "modern_industrialization:quantum_machine_hull": {
+     "price": 1259,
+     "stock": 4
+    },
+    "cabletiers:creative_constructor/gray": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_constructor/red": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_destructor/green": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_destructor/white": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_exporter/green": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_exporter/yellow": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_importer/light_gray": {
+     "price": 6310,
+     "stock": 4
+    },
+    "cabletiers:creative_interface": {
+     "price": 6310,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "fabricator",
+   "name": "Dèanaduirstutun",
+   "role": "Fabricator",
+   "spawn": [
+    "every settlement",
+    "fabrication hall"
+   ],
+   "items": {
+    "justdirethings:raw_celestigem_ore": {
+     "price": 317,
+     "stock": 4
+    },
+    "justdirethings:raw_coal_t3_ore": {
+     "price": 317,
+     "stock": 4
+    },
+    "justdirethings:raw_eclipsealloy_ore": {
+     "price": 317,
+     "stock": 4
+    },
+    "mysticalagradditions:end_prosperity_ore": {
+     "price": 317,
+     "stock": 4
+    },
+    "mysticalagradditions:nether_prosperity_ore": {
+     "price": 317,
+     "stock": 4
+    },
+    "mysticalagradditions:insanium_nugget": {
+     "price": 399,
+     "stock": 4
+    },
+    "forbidden_arcanus:black_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:cyan_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:light_blue_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:magenta_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:purple_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:quantum_injector": {
+     "price": 631,
+     "stock": 4
+    },
+    "forbidden_arcanus:yellow_quantum_catcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "forestry:bee_drone_default": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:data_center": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:data_model_anchor": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:end_prediction": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:nether_prediction": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:prediction": {
+     "price": 631,
+     "stock": 4
+    },
+    "hostilenetworks:twilight_prediction": {
+     "price": 631,
+     "stock": 4
+    },
+    "ironjetpacks:strap": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:blockbreakert1": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:blockplacert2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:celestigem_axe_active": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:celestigem_paxel_active": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:coal_t1": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:coal_t3": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:coalblock_t2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:creaturecatcher": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:droppert2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:eclipsegateblock": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:ferricore_hoe_active": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:fuel_canister": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:gooblock_tier3": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:goosoil_tier2": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:itemcollector": {
+     "price": 631,
+     "stock": 4
+    },
+    "justdirethings:sensort2": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:awakened_supremium_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:imperium_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:inferium_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:insanium_farmland": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_awakened_supremium_bucket": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_inferium": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_insanium_bucket": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_prudentium": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_soulium_bucket": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:molten_supremium_bucket": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:neutronium_crux": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:supremium_coal": {
+     "price": 631,
+     "stock": 4
+    },
+    "mysticalagradditions:tertium_paxel": {
+     "price": 631,
+     "stock": 4
+    },
+    "stepcrafter:step_crafter": {
+     "price": 631,
+     "stock": 4
+    },
+    "ironjetpacks:advanced_coil": {
+     "price": 795,
+     "stock": 4
+    },
+    "ironjetpacks:elite_coil": {
+     "price": 795,
+     "stock": 4
+    },
+    "justdirethings:celestigem": {
+     "price": 795,
+     "stock": 4
+    },
+    "mysticalagradditions:insanium_ingot": {
+     "price": 795,
+     "stock": 4
+    },
+    "justdirethings:blazegold_hoe_active": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:celestigem_pickaxe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:celestigem_shovel_active": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_axe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_pickaxe_active": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:eclipsealloy_sword": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_axe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_hoe": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_shovel": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:ferricore_sword_active": {
+     "price": 1000,
+     "stock": 4
+    },
+    "justdirethings:generatort1": {
+     "price": 1259,
+     "stock": 4
+    },
+    "justdirethings:blazegold_axe": {
+     "price": 1585,
+     "stock": 4
+    },
+    "justdirethings:blazegold_pickaxe_active": {
+     "price": 1585,
+     "stock": 4
+    },
+    "justdirethings:blazegold_shovel_active": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mysticalagradditions:imperium_apple": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mysticalagradditions:nether_star_shard": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mysticalagradditions:tertium_apple": {
+     "price": 1585,
+     "stock": 4
+    },
+    "mysticalagradditions:dragon_scale": {
+     "price": 2512,
+     "stock": 4
+    },
+    "mysticalagradditions:imperium_coal_block": {
+     "price": 5679,
+     "stock": 4
+    },
+    "mysticalagradditions:insanium_gemstone_block": {
+     "price": 5679,
+     "stock": 4
+    },
+    "mysticalagradditions:supremium_coal_block": {
+     "price": 5679,
+     "stock": 4
+    },
+    "mysticalagradditions:dragon_egg_crux": {
+     "price": 6310,
+     "stock": 4
+    },
+    "justdirethings:ferricore_block": {
+     "price": 7155,
+     "stock": 4
+    },
+    "justdirethings:blazegold_block": {
+     "price": 11331,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

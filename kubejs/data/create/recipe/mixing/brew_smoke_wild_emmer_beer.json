@@ -1,0 +1,34 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "diaithir_drinks:malted_barley",
+  "diaithir_drinks:barm",
+  "croptopia:hops",
+  "minecraft:sugar",
+  "productivefarming:oats"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:smoke_wild_emmer_beer",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:4.0d}"
+   }
+  }
+ ]
+}

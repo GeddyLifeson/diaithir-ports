@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:palm_stairs","result":{"id":"regions_unexplored:palm_stairs","count":1}}

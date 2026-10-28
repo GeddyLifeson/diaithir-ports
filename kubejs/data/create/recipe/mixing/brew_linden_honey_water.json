@@ -1,0 +1,38 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:sweet_berries",
+  "minecraft:sugar",
+  "minecraft:apple",
+  "minecraft:glow_berries",
+  "croptopia:lemon",
+  "croptopia:lime"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:linden_honey_water",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:3.5d}"
+   }
+  }
+ ]
+}

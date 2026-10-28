@@ -1,0 +1,33 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "productivetrees:date_palm_juice",
+  "minecraft:sugar_cane",
+  "productivetrees:maple_syrup",
+  "minecraft:honey_bottle"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:rain_raffia_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:4.0d}"
+   }
+  }
+ ]
+}

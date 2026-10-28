@@ -1,0 +1,20 @@
+{
+  "name": "Meidi",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} meidi",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_meidi_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_meidi_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_meidi_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

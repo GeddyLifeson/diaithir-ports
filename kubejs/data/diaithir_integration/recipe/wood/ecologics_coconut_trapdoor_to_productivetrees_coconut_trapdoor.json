@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"ecologics"},{"type":"neoforge:mod_loaded","modid":"productivetrees"}],"type":"minecraft:stonecutting","ingredient":"ecologics:coconut_trapdoor","result":{"id":"productivetrees:coconut_trapdoor","count":1}}

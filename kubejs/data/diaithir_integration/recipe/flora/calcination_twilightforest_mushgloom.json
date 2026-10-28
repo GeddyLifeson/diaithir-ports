@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"theurgy"},{"type":"neoforge:mod_loaded","modid":"twilightforest"}],"type":"theurgy:calcination","category":"misc","ingredient":{"count":1,"ingredient":"twilightforest:mushgloom"},"result":{"id":"theurgy:alchemical_salt_plant"},"time":100}

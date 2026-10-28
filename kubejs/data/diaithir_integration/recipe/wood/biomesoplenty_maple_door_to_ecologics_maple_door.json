@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"ecologics"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:maple_door","result":{"id":"ecologics:maple_door","count":1}}

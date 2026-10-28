@@ -1,0 +1,33 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "croptopia:cherry",
+  "productivetrees:sour_cherry",
+  "minecraft:sugar",
+  "minecraft:apple"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:wild_cherry_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:4.0d}"
+   }
+  }
+ ]
+}

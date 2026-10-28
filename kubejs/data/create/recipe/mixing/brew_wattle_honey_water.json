@@ -1,0 +1,33 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "minecraft:honey_bottle",
+  "productivefarming:wintergreen",
+  "productivefarming:lemongrass",
+  "productivetrees:juniper_berry"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:wattle_honey_water",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:2.0d}"
+   }
+  }
+ ]
+}

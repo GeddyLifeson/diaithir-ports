@@ -1,0 +1,10 @@
+{
+  "name": "Salt",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} salt",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    { "Coin": "diaithir:salt_twist", "baseUnit": true },
+    { "Coin": "diaithir:salt_cake", "exchangeRate": 12 }
+  ]
+}

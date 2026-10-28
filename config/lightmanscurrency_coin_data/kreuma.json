@@ -1,0 +1,20 @@
+{
+  "name": "Krèuma",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} krèuma",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_kreuma_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_kreuma_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_kreuma_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Fàindi",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} fàindi",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_faindi_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_faindi_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_faindi_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

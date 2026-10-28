@@ -1,0 +1,20 @@
+{
+  "name": "Bandlàimi",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} bandlàimi",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_bandlaimi_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_bandlaimi_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_bandlaimi_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

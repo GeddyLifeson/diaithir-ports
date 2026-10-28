@@ -1,0 +1,36 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "diaithir_drinks:millet",
+  "diaithir_drinks:millet",
+  "diaithir_drinks:millet",
+  "diaithir_drinks:barm",
+  "diaithir_drinks:malted_barley",
+  "minecraft:sugar",
+  "minecraft:beetroot_seeds"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:millet_beer",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:5.0d}"
+   }
+  }
+ ]
+}

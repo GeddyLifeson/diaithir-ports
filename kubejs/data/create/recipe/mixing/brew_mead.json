@@ -1,0 +1,35 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 2400,
+ "ingredients": [
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:honey_bottle",
+  "minecraft:dandelion"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:mead",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:13.0d}"
+   }
+  }
+ ]
+}

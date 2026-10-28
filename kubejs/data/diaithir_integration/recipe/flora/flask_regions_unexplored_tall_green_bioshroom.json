@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"neovitae"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"neovitae:flask_effect","baseDuration":3600,"effect":"minecraft:resistance","input":["neovitae:simple_catalyst","regions_unexplored:tall_green_bioshroom"],"syphon":1000,"ticks":200,"upgradeLevel":2}

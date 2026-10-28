@@ -1,0 +1,20 @@
+{
+  "name": "Iarund",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} iarund",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_iarund_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_iarund_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_iarund_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

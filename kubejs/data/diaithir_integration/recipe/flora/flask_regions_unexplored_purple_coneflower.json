@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"neovitae"},{"type":"neoforge:mod_loaded","modid":"regions_unexplored"}],"type":"neovitae:flask_effect","baseDuration":3600,"effect":"minecraft:slow_falling","input":["neovitae:simple_catalyst","regions_unexplored:purple_coneflower"],"syphon":1000,"ticks":200,"upgradeLevel":2}

@@ -1,0 +1,36 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "croptopia:rice",
+  "croptopia:rice",
+  "croptopia:rice",
+  "diaithir_drinks:barm",
+  "farmersdelight:wild_rice",
+  "diaithir_drinks:malted_barley",
+  "minecraft:sugar_cane"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:clay_pot_rice_ferment",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:3.5d}"
+   }
+  }
+ ]
+}

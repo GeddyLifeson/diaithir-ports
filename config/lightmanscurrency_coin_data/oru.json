@@ -1,0 +1,20 @@
+{
+  "name": "Òru",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} òru",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_oru_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_oru_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_oru_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

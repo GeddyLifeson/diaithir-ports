@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"ecologics"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:maple_planks","result":{"id":"ecologics:maple_planks","count":1}}

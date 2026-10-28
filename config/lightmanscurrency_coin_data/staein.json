@@ -1,0 +1,20 @@
+{
+  "name": "Staein",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} staein",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_staein_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_staein_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_staein_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

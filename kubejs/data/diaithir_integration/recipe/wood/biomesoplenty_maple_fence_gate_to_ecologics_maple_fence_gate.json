@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"biomesoplenty"},{"type":"neoforge:mod_loaded","modid":"ecologics"}],"type":"minecraft:stonecutting","ingredient":"biomesoplenty:maple_fence_gate","result":{"id":"ecologics:maple_fence_gate","count":1}}

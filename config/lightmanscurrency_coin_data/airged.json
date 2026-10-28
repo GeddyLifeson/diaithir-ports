@@ -1,0 +1,20 @@
+{
+  "name": "Airged",
+  "displayType": "lightmanscurrency:number",
+  "displayFormat": "{value} airged",
+  "InputType": "DEFAULT",
+  "CoreChain": [
+    {
+      "Coin": "diaithir:coin_airged_bound",
+      "baseUnit": true
+    },
+    {
+      "Coin": "diaithir:coin_airged_sporun",
+      "exchangeRate": 12
+    },
+    {
+      "Coin": "diaithir:coin_airged_krand",
+      "exchangeRate": 20
+    }
+  ]
+}

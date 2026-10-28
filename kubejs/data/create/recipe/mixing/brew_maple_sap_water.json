@@ -1,0 +1,36 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "productivetrees:maple_sap_bucket",
+  "productivetrees:maple_sap_bucket",
+  "productivetrees:maple_sap_bucket",
+  "productivetrees:maple_sap_bucket",
+  "productivetrees:maple_syrup",
+  "minecraft:sugar",
+  "minecraft:sweet_berries"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:maple_sap_water",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:2.0d}"
+   }
+  }
+ ]
+}

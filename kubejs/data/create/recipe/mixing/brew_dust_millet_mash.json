@@ -1,0 +1,35 @@
+{
+ "neoforge:conditions": [
+  {
+   "type": "neoforge:mod_loaded",
+   "modid": "diaithir_create"
+  }
+ ],
+ "type": "create:mixing",
+ "heat_requirement": "heated",
+ "processing_time": 1200,
+ "ingredients": [
+  "diaithir_drinks:barm",
+  "diaithir_drinks:malted_barley",
+  "croptopia:oat",
+  "croptopia:rice",
+  "productivefarming:hops",
+  "diaithir_drinks:millet"
+ ],
+ "fluid_ingredients": [
+  {
+   "type": "fluid_stack",
+   "amount": 81000,
+   "fluid": "minecraft:water"
+  }
+ ],
+ "results": [
+  {
+   "id": "diaithir_drinks:dust_millet_mash",
+   "count": 3,
+   "components": {
+    "minecraft:custom_data": "{abv:2.0d}"
+   }
+  }
+ ]
+}

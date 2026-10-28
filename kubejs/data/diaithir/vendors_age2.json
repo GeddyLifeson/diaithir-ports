@@ -1,0 +1,420 @@
+{
+ "age": "II",
+ "vendors": [
+  {
+   "id": "potter",
+   "name": "Krèadaduir",
+   "role": "Potter",
+   "spawn": [
+    "every settlement",
+    "clay bank"
+   ],
+   "items": {
+    "minecraft:clay_ball": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:clay": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:brick": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:bricks": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:white_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:red_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:brown_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:orange_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:yellow_terracotta": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:flower_pot": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:decorated_pot": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:mud_bricks": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:packed_mud": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:mud": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:sand": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:red_sand": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:gravel": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bowl": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:charcoal": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:furnace": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:smoker": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "farmer",
+   "name": "Tuotunach",
+   "role": "Farmer",
+   "spawn": [
+    "every settlement",
+    "field"
+   ],
+   "items": {
+    "minecraft:wheat": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:wheat_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:hay_block": {
+     "price": 6,
+     "stock": 5
+    },
+    "minecraft:beetroot_seeds": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:melon_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:pumpkin_seeds": {
+     "price": 4,
+     "stock": 8
+    },
+    "minecraft:carrot": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:potato": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:beetroot": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:pumpkin": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:melon_slice": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:apple": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:sugar_cane": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:bone_meal": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:stone_hoe": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:composter": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:egg": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:leather": {
+     "price": 8,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "baker",
+   "name": "Foineduir",
+   "role": "Baker",
+   "spawn": [
+    "every settlement",
+    "mill"
+   ],
+   "items": {
+    "minecraft:bread": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecraft:cookie": {
+     "price": 7,
+     "stock": 5
+    },
+    "minecraft:pumpkin_pie": {
+     "price": 6,
+     "stock": 5
+    },
+    "minecraft:baked_potato": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:sugar": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:egg": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:wheat": {
+     "price": 2,
+     "stock": 16
+    },
+    "minecraft:honeycomb": {
+     "price": 10,
+     "stock": 4
+    },
+    "minecraft:cocoa_beans": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:sweet_berries": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:apple": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:mushroom_stew": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:rabbit_stew": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:beetroot_soup": {
+     "price": 3,
+     "stock": 11
+    },
+    "minecraft:bowl": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:campfire": {
+     "price": 1,
+     "stock": 32
+    },
+    "minecraft:smoker": {
+     "price": 1,
+     "stock": 32
+    }
+   }
+  },
+  {
+   "id": "brewer",
+   "name": "Dèanaduirgrùid",
+   "role": "Brewer",
+   "spawn": [
+    "every settlement",
+    "brewhouse"
+   ],
+   "items": {
+    "diaithir_drinks:kvass": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:mild_ale": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:small_beer": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:kykeon": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:braga": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:celtic_cervesia": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:chhaang": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:corma": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:heather_ale": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:kveik_farmhouse_ale": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:makgeolli": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:millet_beer": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:sonti": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:mbege": {
+     "price": 11,
+     "stock": 4
+    },
+    "diaithir_drinks:tapuy": {
+     "price": 11,
+     "stock": 4
+    },
+    "diaithir_drinks:doburoku": {
+     "price": 13,
+     "stock": 4
+    },
+    "diaithir_drinks:sahti": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:dortmunder_export": {
+     "price": 16,
+     "stock": 4
+    }
+   }
+  },
+  {
+   "id": "vintner",
+   "name": "Dèanaduirfìuna",
+   "role": "Vintner",
+   "spawn": [
+    "every settlement",
+    "vineyard"
+   ],
+   "items": {
+    "diaithir_drinks:kefir": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:kumis": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:posca": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:sima": {
+     "price": 6,
+     "stock": 5
+    },
+    "diaithir_drinks:perry": {
+     "price": 7,
+     "stock": 5
+    },
+    "diaithir_drinks:sagardoa_basque_cider": {
+     "price": 7,
+     "stock": 5
+    },
+    "diaithir_drinks:umqombothi_sorghum_beer": {
+     "price": 8,
+     "stock": 4
+    },
+    "diaithir_drinks:boza": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:cassava_ferments_kasiri_and_parakari": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:cider": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:cidre_french_cider": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:new_england_cider": {
+     "price": 9,
+     "stock": 4
+    },
+    "diaithir_drinks:pyment": {
+     "price": 12,
+     "stock": 4
+    },
+    "diaithir_drinks:braggot": {
+     "price": 14,
+     "stock": 4
+    },
+    "diaithir_drinks:ice_cider": {
+     "price": 14,
+     "stock": 4
+    }
+   }
+  }
+ ]
+}

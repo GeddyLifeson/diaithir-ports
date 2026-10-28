@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"regions_unexplored"},{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:liquefaction","category":"misc","ingredient":"regions_unexplored:brown_snowbelle","result":{"type":"theurgy:item","id":"theurgy:alchemical_sulfur_azalea"},"solvent":{"amount":10,"ingredient":"theurgy:sal_ammoniac"},"time":100}

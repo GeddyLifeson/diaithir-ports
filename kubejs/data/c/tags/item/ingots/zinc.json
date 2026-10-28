@@ -1,1 +1,1 @@
-{"replace":false,"values":[{"id":"create:zinc_ingot","required":false}]}
+{"replace":false,"values":[{"id":"create:zinc_ingot","required":false},{"id":"railcraft:zinc_ingot","required":false}]}

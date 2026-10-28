@@ -1,0 +1,1 @@
+{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"regions_unexplored"},{"type":"neoforge:mod_loaded","modid":"theurgy"}],"type":"theurgy:distillation","category":"misc","ingredient":{"count":2,"ingredient":"regions_unexplored:tall_pink_bioshroom"},"result":{"id":"theurgy:mercury_shard"},"time":100}

@@ -1,0 +1,574 @@
+{
+ "salund": {
+  "name": "Salund",
+  "age": "I",
+  "commodity": {
+   "good": "diaithir:salt_twist",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:salt_cake",
+     12
+    ],
+    [
+     "diaithir:salt_twist",
+     1
+    ]
+   ]
+  }
+ },
+ "granu": {
+  "name": "Grànu",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:wheat",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:hay_block",
+     9
+    ],
+    [
+     "minecraft:wheat",
+     1
+    ]
+   ]
+  }
+ },
+ "lietur": {
+  "name": "Lietur",
+  "age": "I",
+  "commodity": {
+   "good": "minecraft:leather",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:leather",
+     1
+    ]
+   ]
+  }
+ },
+ "mili": {
+  "name": "Mili",
+  "age": "I",
+  "commodity": {
+   "good": "minecraft:honeycomb",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:honeycomb_block",
+     4
+    ],
+    [
+     "minecraft:honeycomb",
+     1
+    ]
+   ]
+  }
+ },
+ "uma": {
+  "name": "Uma",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:copper_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:copper_ingot",
+     9
+    ],
+    [
+     "minecraft:copper_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:copper_ingot",
+   "content": 0.083333,
+   "denoms": [
+    [
+     "diaithir:coin_uma_krand",
+     240
+    ],
+    [
+     "diaithir:coin_uma_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_uma_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "oru": {
+  "name": "Òru",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:gold_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:gold_ingot",
+     9
+    ],
+    [
+     "minecraft:gold_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:gold_ingot",
+   "content": 0.016667,
+   "denoms": [
+    [
+     "diaithir:coin_oru_krand",
+     240
+    ],
+    [
+     "diaithir:coin_oru_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_oru_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "iarund": {
+  "name": "Iarund",
+  "age": "III",
+  "commodity": {
+   "good": "minecraft:iron_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:currency_bar",
+     9
+    ],
+    [
+     "minecraft:iron_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:iron_ingot",
+   "content": 0.033333,
+   "denoms": [
+    [
+     "diaithir:coin_iarund_krand",
+     240
+    ],
+    [
+     "diaithir:coin_iarund_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_iarund_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "airged": {
+  "name": "Airged",
+  "age": "III",
+  "commodity": {
+   "good": "occultism:silver_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "occultism:silver_ingot",
+     9
+    ],
+    [
+     "occultism:silver_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "occultism:silver_ingot",
+   "content": 0.026316,
+   "denoms": [
+    [
+     "diaithir:coin_airged_krand",
+     240
+    ],
+    [
+     "diaithir:coin_airged_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_airged_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "kreuma": {
+  "name": "Krèuma",
+  "age": "III",
+  "commodity": {
+   "good": "mekanism:nugget_bronze",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "mekanism:ingot_bronze",
+     9
+    ],
+    [
+     "mekanism:nugget_bronze",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "silentgear:bronze_ingot",
+   "content": 0.041667,
+   "denoms": [
+    [
+     "diaithir:coin_kreuma_krand",
+     240
+    ],
+    [
+     "diaithir:coin_kreuma_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_kreuma_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "staein": {
+  "name": "Staein",
+  "age": "III",
+  "commodity": {
+   "good": "forestry:tin_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:tin_animal",
+     9
+    ],
+    [
+     "forestry:tin_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "forestry:tin_ingot",
+   "content": 0.05,
+   "denoms": [
+    [
+     "diaithir:coin_staein_krand",
+     240
+    ],
+    [
+     "diaithir:coin_staein_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_staein_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "bogaduir": {
+  "name": "Bogaduir",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:gold_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "minecraft:gold_ingot",
+     9
+    ],
+    [
+     "minecraft:gold_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:gold_ingot",
+   "content": 0.016667,
+   "denoms": [
+    [
+     "diaithir:coin_bogaduir_krand",
+     240
+    ],
+    [
+     "diaithir:coin_bogaduir_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_bogaduir_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "meidi": {
+  "name": "Meidi",
+  "age": "III",
+  "commodity": {
+   "good": "occultism:silver_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "occultism:silver_ingot",
+     9
+    ],
+    [
+     "occultism:silver_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "occultism:silver_ingot",
+   "content": 0.026316,
+   "denoms": [
+    [
+     "diaithir:coin_meidi_krand",
+     240
+    ],
+    [
+     "diaithir:coin_meidi_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_meidi_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "kierkuld": {
+  "name": "Kierkuld",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:copper_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:deben_ring",
+     9
+    ],
+    [
+     "minecraft:copper_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:copper_ingot",
+   "content": 0.083333,
+   "denoms": [
+    [
+     "diaithir:coin_kierkuld_krand",
+     240
+    ],
+    [
+     "diaithir:coin_kierkuld_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_kierkuld_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "faindi": {
+  "name": "Fàindi",
+  "age": "III",
+  "commodity": {
+   "good": "occultism:silver_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:arm_ring",
+     9
+    ],
+    [
+     "occultism:silver_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "occultism:silver_ingot",
+   "content": 0.026316,
+   "denoms": [
+    [
+     "diaithir:coin_faindi_krand",
+     240
+    ],
+    [
+     "diaithir:coin_faindi_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_faindi_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "bandlaimi": {
+  "name": "Bandlàimi",
+  "age": "III",
+  "commodity": {
+   "good": "mekanism:nugget_bronze",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:manilla",
+     9
+    ],
+    [
+     "mekanism:nugget_bronze",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "silentgear:bronze_ingot",
+   "content": 0.041667,
+   "denoms": [
+    [
+     "diaithir:coin_bandlaimi_krand",
+     240
+    ],
+    [
+     "diaithir:coin_bandlaimi_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_bandlaimi_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "griugag": {
+  "name": "Grìugag",
+  "age": "I",
+  "commodity": {
+   "good": "diaithir:wampum_bead",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:wampum_belt",
+     12
+    ],
+    [
+     "diaithir:wampum_bead",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:amethyst_shard",
+   "content": 0.05,
+   "denoms": [
+    [
+     "diaithir:coin_griugag_krand",
+     240
+    ],
+    [
+     "diaithir:coin_griugag_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_griugag_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "tuog": {
+  "name": "Tuog",
+  "age": "II",
+  "commodity": {
+   "good": "minecraft:copper_nugget",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:axe_blade",
+     9
+    ],
+    [
+     "minecraft:copper_nugget",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:copper_ingot",
+   "content": 0.083333,
+   "denoms": [
+    [
+     "diaithir:coin_tuog_krand",
+     240
+    ],
+    [
+     "diaithir:coin_tuog_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_tuog_bound",
+     1
+    ]
+   ]
+  }
+ },
+ "sliegi": {
+  "name": "Sliegi",
+  "age": "I",
+  "commodity": {
+   "good": "diaithir:cowrie_shell",
+   "perUnit": 1,
+   "denoms": [
+    [
+     "diaithir:cowrie_string",
+     12
+    ],
+    [
+     "diaithir:cowrie_shell",
+     1
+    ]
+   ]
+  },
+  "coin": {
+   "metal": "minecraft:nautilus_shell",
+   "content": 1.0,
+   "denoms": [
+    [
+     "diaithir:coin_sliegi_krand",
+     240
+    ],
+    [
+     "diaithir:coin_sliegi_sporun",
+     12
+    ],
+    [
+     "diaithir:coin_sliegi_bound",
+     1
+    ]
+   ]
+  }
+ }
+}
