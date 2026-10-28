@@ -38,10 +38,6 @@ public abstract class MixinChunkMap {
     @Final
     ServerLevel level;
 
-    @Shadow
-    @Final
-    private Supplier<SavedDataStorage> overworldDataStorage;
-
     /**
      * Force the game to generate empty chunks in the shipyard.
      *
@@ -114,7 +110,7 @@ public abstract class MixinChunkMap {
 
     @WrapOperation(method = "anyPlayerCloseEnoughForSpawning", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/level/ChunkMap$DistanceManager;hasPlayersNearby(J)Lnet/minecraft/util/TriState;"))
     private TriState onHasPlayersNearby(
-        DistanceManager instance, long l, Operation<TriState> original, @Local(argsOnly = true) ChunkPos arg) {
+        @org.spongepowered.asm.mixin.injection.Coerce Object instance, long l, Operation<TriState> original, @Local(argsOnly = true) ChunkPos arg) {
         return original.call(instance, ChunkPos.containing(BlockPos.containing(VSGameUtilsKt.toWorldCoordinates(level, arg.getMiddleBlockPosition(63)))).pack());
     }
 

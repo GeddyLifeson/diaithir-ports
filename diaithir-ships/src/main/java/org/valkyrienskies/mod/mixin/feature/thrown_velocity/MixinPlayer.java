@@ -16,9 +16,9 @@ import org.valkyrienskies.mod.common.VSGameUtilsKt;
 import org.valkyrienskies.mod.common.util.EntityDraggingInformation;
 import org.valkyrienskies.mod.common.util.IEntityDraggingInformationProvider;
 
-@Mixin(Player.class)
-public abstract class MixinPlayer extends LivingEntity {
-    protected MixinPlayer(EntityType<? extends LivingEntity> entityType,
+@Mixin(LivingEntity.class)
+public abstract class MixinPlayer extends net.minecraft.world.entity.Entity {
+    protected MixinPlayer(EntityType<?> entityType,
         Level level) {
         super(entityType, level);
     }

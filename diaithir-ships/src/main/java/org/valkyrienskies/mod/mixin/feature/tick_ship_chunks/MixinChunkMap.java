@@ -23,17 +23,16 @@ public abstract class MixinChunkMap {
     @Final
     ServerLevel level;
 
-    @Inject(method = "euclideanDistanceSquared", at = @At("HEAD"), cancellable = true)
-    private static void preDistanceToSqr(final ChunkPos chunkPos, final Entity entity,
-        final CallbackInfoReturnable<Double> cir) {
+    @com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation(
+        method = "playerIsCloseEnoughForSpawning",
+        at = @At(value = "INVOKE",
+            target = "Lnet/minecraft/server/level/ChunkMap;euclideanDistanceSquared(Lnet/minecraft/world/level/ChunkPos;Lnet/minecraft/world/phys/Vec3;)D")
+    )
+    private double vs$distanceInclShips(final ChunkPos chunkPos, final net.minecraft.world.phys.Vec3 pos,
+        final com.llamalad7.mixinextras.injector.wrapoperation.Operation<Double> original) {
         final double d = chunkPos.x() * 16 + 8;
         final double e = chunkPos.z() * 16 + 8;
-        final double retValue =
-            VSGameUtilsKt.squaredDistanceBetweenInclShips(entity.level(), entity.getX(), 0, entity.getZ(), d,
-                0,
-                e);
-
-        cir.setReturnValue(retValue);
+        return VSGameUtilsKt.squaredDistanceBetweenInclShips(level, pos.x, 0, pos.z, d, 0, e);
     }
 
     @Inject(method = "anyPlayerCloseEnoughForSpawning", at = @At("RETURN"), cancellable = true)

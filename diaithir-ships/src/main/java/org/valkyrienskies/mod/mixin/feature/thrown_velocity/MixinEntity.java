@@ -24,10 +24,10 @@ public class MixinEntity {
      * Items dropped by entities mounted/dragged on a ship gets dragged too.
      */
     @Inject(
-        method = "spawnAtLocation(Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/item/ItemEntity;",
+        method = "spawnAtLocation(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/item/ItemEntity;",
         at = @At("RETURN")
     )
-    private void setItemDragged(ItemStack itemStack, float f, CallbackInfoReturnable<ItemEntity> cir) {
+    private void setItemDragged(net.minecraft.server.level.ServerLevel serverLevel, ItemStack itemStack, float f, CallbackInfoReturnable<ItemEntity> cir) {
         ItemEntity result = cir.getReturnValue();
         if(result == null) return;
         Ship ship = VSGameUtilsKt.getShipMountedTo(Entity.class.cast(this));

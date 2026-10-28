@@ -10,7 +10,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
 neoForge {
     version = project.neo_version
-    runs { server { server(); programArgument '--nogui' } }
+    runs { server { server(); programArgument '--nogui'; jvmArguments.addAll('-Dmixin.debug.verify=true','-Dmixin.debug.export=false') } }
     mods { valkyrienskies { sourceSet(sourceSets.main) } }
 }
 
@@ -27,3 +27,8 @@ dependencies {
 
 kotlin { compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25 } }
 tasks.withType(JavaCompile).configureEach { options.release = 25 }
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') { expand 'version': project.version }
+}

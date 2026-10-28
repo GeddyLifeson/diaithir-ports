@@ -151,7 +151,10 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
 
     @Inject(
         method = "tickServer",
-        at = @At("HEAD")
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/server/MinecraftServer;tickChildren(Ljava/util/function/BooleanSupplier;)V"
+        )
     )
     private void preTick(final CallbackInfo ci) {
         final Set<VsiPlayer> vsPlayers = playerList.getPlayers().stream()
@@ -193,7 +196,7 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
         method = "tickChildren",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/server/network/ServerConnectionListener;tick()V",
+            target = "Lnet/minecraft/server/MinecraftServer;tickConnection()V",
             shift = Shift.AFTER
         )
     )
@@ -206,7 +209,11 @@ public abstract class MixinMinecraftServer implements IShipObjectWorldServerProv
 
     @Inject(
         method = "tickServer",
-        at = @At("TAIL")
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/server/MinecraftServer;tickChildren(Ljava/util/function/BooleanSupplier;)V",
+            shift = Shift.AFTER
+        )
     )
     private void postTick(final CallbackInfo ci) {
         vsPipeline.postTickGame();

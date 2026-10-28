@@ -38,7 +38,6 @@
     "feature.block_placement.MixinBlockPlaceContext",
     "feature.clip_replace.MixinBlockGetter",
     "feature.clip_replace.MixinClipContext",
-    "feature.commands.MixinArgumentTypeInfos",
     "feature.conduit_fix.ConduitMixin",
     "feature.dismount_dead_entities.MixinLivingEntity",
     "feature.distance_replace.MixinEntity",

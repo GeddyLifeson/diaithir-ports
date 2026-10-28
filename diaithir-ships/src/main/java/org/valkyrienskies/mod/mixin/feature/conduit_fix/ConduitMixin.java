@@ -48,9 +48,8 @@ public class ConduitMixin extends BlockEntity {
         require = 0
     )
     private static boolean closerThan2(final BlockPos instance, final Vec3i vec3i, final double distance,
-        final Level level,
-        final BlockPos blockPos, final BlockState blockState, final List<BlockPos> list,
-        final ConduitBlockEntity conduitBlockEntity) {
-        return closerThan(instance, vec3i, distance, level, blockPos, list);
+        final net.minecraft.world.entity.EntityReference<?> target, final net.minecraft.server.level.ServerLevel level,
+        final BlockPos blockPos, final boolean isActive) {
+        return closerThan(instance, vec3i, distance, level, blockPos, null);
     }
 }
