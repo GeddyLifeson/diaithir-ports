@@ -28,7 +28,7 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 import java.util.List;
 
-public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipeProperties, LevelItemPipeNet> {
+public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipeProperties, LevelItemPipeNet> implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     public ItemPipeBlock(Properties properties, ItemPipeType itemPipeType, Material material) {
         super(properties, itemPipeType, material);
@@ -80,9 +80,9 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         ItemPipeProperties properties = createProperties(defaultBlockState(), stack);
 
         if (properties.getTransferRate() % 1 != 0) {

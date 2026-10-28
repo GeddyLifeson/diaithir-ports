@@ -187,8 +187,7 @@ public class ToolHelper {
                     if (user != null) {
                         user.breakItem(stack);
                         user.onEquippedItemBroken(stack.getItem(),
-                                LivingEntity.getSlotForHand(
-                                        user.isUsingItem() ? user.getUsedItemHand() : InteractionHand.MAIN_HAND));
+                                (user.isUsingItem() ? user.getUsedItemHand() : InteractionHand.MAIN_HAND).asEquipmentSlot());
                     }
                     stack.shrink(1);
                 }
@@ -212,11 +211,11 @@ public class ToolHelper {
 
         Tool tool = toolType.toolDefinition.getTool();
         List<Tool.Rule> rules = new ArrayList<>(tool.rules());
-        rules.add(Tool.Rule.deniesDrops(CustomTags.INCORRECT_TOOL_TIERS[harvestLevel]));
+        rules.add(Tool.Rule.deniesDrops(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.BLOCK, CustomTags.INCORRECT_TOOL_TIERS[harvestLevel])));
         for (TagKey<Block> tag : toolType.harvestTags) {
-            rules.add(Tool.Rule.minesAndDrops(tag, toolSpeed));
+            rules.add(Tool.Rule.minesAndDrops(com.gregtechceu.gtceu.compat.TagCompat.tag(net.minecraft.core.registries.BuiltInRegistries.BLOCK, tag), toolSpeed));
         }
-        stack.set(DataComponents.TOOL, new Tool(rules, tool.defaultMiningSpeed(), tool.damagePerBlock()));
+        stack.set(DataComponents.TOOL, new Tool(rules, tool.defaultMiningSpeed(), tool.damagePerBlock(), tool.canDestroyBlocksInCreative()));
         if (!stack.has(GTDataComponents.TOOL_BEHAVIORS)) {
             stack.set(GTDataComponents.TOOL_BEHAVIORS, new ToolBehaviors(toolType.toolDefinition.getBehaviors()));
         }
@@ -230,10 +229,11 @@ public class ToolHelper {
                         new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, toolType.toolDefinition.getAttackSpeed(),
                                 AttributeModifier.Operation.ADD_VALUE),
                         EquipmentSlotGroup.MAINHAND)
-                .build()
-                // don't show the normal vanilla damage and attack speed tooltips, we handle those ourselves
-                .withTooltip(false);
+                .build();
         stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers);
+        // don't show the normal vanilla damage and attack speed tooltips, we handle those ourselves
+        stack.set(DataComponents.TOOLTIP_DISPLAY, net.minecraft.world.item.component.TooltipDisplay.DEFAULT
+                .withHidden(DataComponents.ATTRIBUTE_MODIFIERS, true));
 
         return stack;
     }
@@ -449,7 +449,7 @@ public class ToolHelper {
 
     public static boolean removeBlock(Level level, ServerPlayer player, BlockPos pos, BlockState state,
                                       boolean canDropLoot) {
-        boolean removed = state.onDestroyedByPlayer(level, pos, player, canDropLoot, level.getFluidState(pos));
+        boolean removed = state.onDestroyedByPlayer(level, pos, player, player.getMainHandItem(), canDropLoot, level.getFluidState(pos));
         if (removed) {
             state.getBlock().destroy(level, pos, state);
         }
@@ -577,7 +577,7 @@ public class ToolHelper {
         if (stack.getItem() instanceof IGTTool) {
             damage = ((IGTTool) stack.getItem()).getToolStats().getToolDamagePerCraft(stack);
         } else {
-            if (stack.getTags().anyMatch(s -> s.location().getPath().startsWith("tool") ||
+            if (stack.tags().anyMatch(s -> s.location().getPath().startsWith("tool") ||
                     s.location().getPath().startsWith("crafting_tool"))) {
                 damage = 1;
             }

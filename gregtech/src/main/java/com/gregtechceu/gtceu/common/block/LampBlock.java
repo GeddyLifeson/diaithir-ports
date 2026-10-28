@@ -98,7 +98,8 @@ public class LampBlock extends Block {
     }
 
     
-    public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
+    @Override
+    public BlockState getAppearance(BlockState state, net.minecraft.world.level.BlockAndLightGetter level, BlockPos pos, Direction side,
                                     @Nullable BlockState queryState, @Nullable BlockPos queryPos) {
         return state.getBlock().defaultBlockState();
     }
@@ -115,7 +116,9 @@ public class LampBlock extends Block {
     }
 
     
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock,
+                                @Nullable net.minecraft.world.level.redstone.Orientation orientation,
                                 boolean movedByPiston) {
         if (!level.isClientSide()) {
             boolean powered = state.getValue(POWERED);
@@ -133,14 +136,16 @@ public class LampBlock extends Block {
     }
 
     
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos,
+    @Override
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData,
                                        Player player) {
-        ItemStack stack = super.getCloneItemStack(state, target, level, pos, player);
+        ItemStack stack = super.getCloneItemStack(level, pos, state, includeData, player);
         stack.set(GTDataComponents.LAMP_DATA, getDataFromState(state));
         return stack;
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext pContext, List<Component> tooltip,
                                 TooltipFlag flag) {
         LampBlockItem.LampData data = stack.getOrDefault(GTDataComponents.LAMP_DATA, LampBlockItem.LampData.EMPTY);

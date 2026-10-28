@@ -26,7 +26,7 @@ public class GTBucketItem extends BucketItem {
     public static int color(ItemStack itemStack, int index) {
         if (itemStack.getItem() instanceof GTBucketItem item) {
             if (index == 1) {
-                return IClientFluidTypeExtensions.of(item.content).getTintColor();
+                return item.material.getMaterialARGB();
             }
         }
         return -1;
@@ -47,7 +47,8 @@ public class GTBucketItem extends BucketItem {
     }
 
     
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    @Override
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, net.minecraft.world.level.block.entity.FuelValues fuelValues) {
         if (this.content instanceof GTFluid gtFluid) {
             return gtFluid.getBurnTime();
         }

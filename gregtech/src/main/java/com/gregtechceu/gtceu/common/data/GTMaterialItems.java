@@ -247,6 +247,7 @@ public class GTMaterialItems {
                 .clientExtension(() -> () -> new IClientItemExtensions() {
 
                     
+                    @Override
                     public int getArmorLayerTintColor(ItemStack stack, LivingEntity entity,
                                                       ArmorMaterial.Layer layer, int layerIdx, int fallbackColor) {
                         int maxColors = material.getMaterialInfo().getColors().size();

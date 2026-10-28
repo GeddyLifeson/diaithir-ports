@@ -104,9 +104,7 @@ public class ElectricStats implements IInteractionItem, ISubItemHandler, IAddInf
             long transferLimit = electricItem.getTransferLimit();
 
             if (GTCEu.Mods.isCuriosLoaded()) {
-                IItemHandler curios = CuriosApi.getCuriosInventory(player)
-                        .<IItemHandler>map(ICuriosItemHandler::getEquippedCurios)
-                        .orElse(EmptyItemHandler.INSTANCE);
+                IItemHandler curios = EmptyItemHandler.INSTANCE; // PORT: Curios is not ported
                 for (int i = 0; i < curios.getSlots(); i++) {
                     var itemInSlot = curios.getStackInSlot(i);
                     long chargedAmount = chargeItemStack(transferLimit, electricItem, itemInSlot);

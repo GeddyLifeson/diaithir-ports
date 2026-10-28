@@ -41,7 +41,7 @@ public class AdvancedNanoMuscleSuite extends NanoMuscleSuite implements IJetpack
 
     // A replacement for checking the current world time, to get around the gamerule that stops it
     private long timer = 0L;
-    private List<Pair<NonNullList<ItemStack>, IntList>> inventoryIndexMap;
+    private List<Pair<net.minecraft.world.Container, IntList>> inventoryIndexMap;
 
     public AdvancedNanoMuscleSuite(int energyPerUse, long capacity, int tier) {
         super(ArmorType.CHESTPLATE, energyPerUse, capacity, tier);
@@ -103,11 +103,11 @@ public class AdvancedNanoMuscleSuite extends NanoMuscleSuite implements IJetpack
             if (inventoryIndexMap != null && !inventoryIndexMap.isEmpty()) {
                 // Charge all inventory slots
                 for (int i = 0; i < inventoryIndexMap.size(); i++) {
-                    Pair<NonNullList<ItemStack>, IntList> inventoryMap = inventoryIndexMap.get(i);
+                    Pair<net.minecraft.world.Container, IntList> inventoryMap = inventoryIndexMap.get(i);
                     var inventoryIterator = inventoryMap.getSecond().iterator();
                     while (inventoryIterator.hasNext()) {
                         int slot = inventoryIterator.nextInt();
-                        IElectricItem chargable = GTCapabilityHelper.getElectricItem(inventoryMap.getFirst().get(slot));
+                        IElectricItem chargable = GTCapabilityHelper.getElectricItem(inventoryMap.getFirst().getItem(slot));
 
                         // Safety check the null, it should not actually happen. Also don't try and charge itself
                         if (chargable == null || chargable == cont) {

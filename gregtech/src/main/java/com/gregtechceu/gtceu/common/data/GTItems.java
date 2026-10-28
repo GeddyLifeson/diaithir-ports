@@ -2058,13 +2058,15 @@ public class GTItems {
 
     public static ItemEntry<ComponentItem> BOTTLE_PURPLE_DRINK = REGISTRATE.item("purple_drink", ComponentItem::new)
             .lang("Purple Drink")
-            .onRegister(attach(new FoodStats(GTFoods.DRINK, true, Items.GLASS_BOTTLE::getDefaultInstance)))
+            .properties(p -> p.food(com.gregtechceu.gtceu.common.data.materials.GTFoods.DRINK,
+                    new net.minecraft.world.item.component.Consumable(1.6f,
+                            net.minecraft.world.item.ItemUseAnimation.DRINK,
+                            net.minecraft.sounds.SoundEvents.GENERIC_DRINK, true, java.util.List.of()))
+                    .craftRemainder(Items.GLASS_BOTTLE))
             .register();
     public static ItemEntry<ComponentItem> DOUGH = REGISTRATE.item("dough", ComponentItem::new)
             .lang("Dough")
-            .onRegister(attach(new FoodStats(
-                    new FoodProperties.Builder().nutrition(1)
-                            .build())))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(1).build()))
             .tag(CustomTags.WHEAT_DOUGHS)
             .register();
     public static ItemEntry<ComponentItem> PLANT_BALL = REGISTRATE.item("plant_ball", ComponentItem::new)

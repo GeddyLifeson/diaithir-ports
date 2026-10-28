@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DuctPipeBlock extends PipeBlock<DuctPipeType, DuctPipeProperties, LevelDuctPipeNet> {
+public class DuctPipeBlock extends PipeBlock<DuctPipeType, DuctPipeProperties, LevelDuctPipeNet> implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     private final DuctPipeProperties properties;
 
@@ -111,9 +111,9 @@ public class DuctPipeBlock extends PipeBlock<DuctPipeType, DuctPipeProperties, L
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         tooltip.add(Component.translatable("gtceu.duct_pipe.transfer_rate",
                 this.pipeType.modifyProperties(this.properties).getTransferRate()));
     }

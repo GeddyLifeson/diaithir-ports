@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common.block;
 
+import com.gregtechceu.gtceu.integration.map.cache.server.ServerCache;
 import com.gregtechceu.gtceu.compat.client.ItemColor;
 
 import com.gregtechceu.gtceu.compat.client.BlockColor;
@@ -67,8 +68,9 @@ public class SurfaceRockBlock extends Block {
     }
 
     
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest,
-                                       FluidState fluid) {
+    @Override
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, net.minecraft.world.item.ItemStack tool,
+                                       boolean willHarvest, FluidState fluid) {
         if (!level.isClientSide()) {
             ServerCache.instance.prospectSurfaceRockMaterial(
                     level.dimension(),
@@ -76,7 +78,7 @@ public class SurfaceRockBlock extends Block {
                     pos,
                     (ServerPlayer) player);
         }
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+        return super.onDestroyedByPlayer(state, level, pos, player, tool, willHarvest, fluid);
     }
 
     @Override
@@ -113,6 +115,7 @@ public class SurfaceRockBlock extends Block {
     }
 
     
+    @Override
     public boolean isOcclusionShapeFullBlock(BlockState state, BlockGetter view, BlockPos pos) {
         return false;
     }
@@ -126,9 +129,11 @@ public class SurfaceRockBlock extends Block {
     }
 
     
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock,
+                                @Nullable net.minecraft.world.level.redstone.Orientation orientation,
                                 boolean movedByPiston) {
-        super.neighborChanged(state, level, pos, neighborBlock, neighborPos, movedByPiston);
+        super.neighborChanged(state, level, pos, neighborBlock, orientation, movedByPiston);
 
         if (!canSurvive(state, level, pos)) {
             Block.updateOrDestroy(state, Blocks.AIR.defaultBlockState(), level, pos, Block.UPDATE_ALL);

@@ -754,6 +754,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
     // spotless:on
 
     
+    @Override
     public DEFINITION createObject() {
         return register();
     }

@@ -66,8 +66,8 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
         List<ItemAttributeModifiers.Entry> list = new ArrayList<>();
         IArmorLogic armorLogic = getArmorLogic();
         list.addAll(super.getDefaultAttributeModifiers(stack).modifiers());
-        list.addAll(armorLogic.getDefaultAttributeModifiers(Equipable.get(stack).getEquipmentSlot(), stack));
-        return new ItemAttributeModifiers(list, true);
+        list.addAll(armorLogic.getDefaultAttributeModifiers(getEquipmentSlot(), stack));
+        return new ItemAttributeModifiers(list);
     }
 
     @Override
@@ -81,30 +81,17 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+    @Override
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity,
+                              EquipmentSlot slot) {
         for (IItemComponent component : components) {
             if (component instanceof IItemLifeCycle lifeCycle) {
-                lifeCycle.inventoryTick(stack, level, entity, slotId, isSelected);
+                lifeCycle.inventoryTick(stack, level, entity, slot.getIndex(), slot == EquipmentSlot.MAINHAND);
             }
         }
-        if (slotId >= 36 && slotId <= 39 && entity instanceof Player player) {
+        if (slot.isArmor() && entity instanceof Player player) {
             this.armorLogic.onArmorTick(level, player, stack);
         }
-    }
-
-    
-    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-        return false;
-    }
-
-    
-    public boolean isEnchantable(ItemStack stack) {
-        return true;
-    }
-
-    
-    public int getEnchantmentValue() {
-        return 50;
     }
 
     public int getArmorDisplay(Player player, @NotNull ItemStack armor, EquipmentSlot slot) {
@@ -147,13 +134,17 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context,
+                                net.minecraft.world.item.component.TooltipDisplay display,
+                                Consumer<Component> consumer, TooltipFlag isAdvanced) {
+        List<Component> tooltipComponents = new ArrayList<>();
         for (IItemComponent component : components) {
             if (component instanceof IAddInformation addInformation) {
                 addInformation.appendHoverText(stack, context, tooltipComponents, isAdvanced);
             }
         }
+        tooltipComponents.forEach(consumer);
     }
 
     @Override
@@ -187,13 +178,15 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     
-    public boolean canPerformAction(ItemStack stack, ItemAbility action) {
+    @Override
+    public boolean canPerformAction(net.minecraft.world.item.ItemInstance instance, ItemAbility action) {
+        if (!(instance instanceof ItemStack stack)) return super.canPerformAction(instance, action);
         for (IItemComponent component : components) {
             if (component instanceof IAbilityItem abilityItem && abilityItem.canPerformAction(stack, action)) {
                 return true;
             }
         }
-        return super.canPerformAction(stack, action);
+        return super.canPerformAction(instance, action);
     }
 
     @Override
@@ -214,7 +207,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
         for (IItemComponent component : components) {
             if (component instanceof IInteractionItem interactionItem) {
                 var result = interactionItem.use(player.getItemInHand(usedHand), level, player, usedHand);
-                if (result.getResult() != InteractionResult.PASS) {
+                if (result != InteractionResult.PASS) {
                     return result;
                 }
             }
@@ -267,42 +260,27 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
                 if (name != null) {
                     return name;
                 }
+                String langId = customDescriptionId.getItemDescriptionId(stack);
+                if (langId != null) {
+                    return Component.translatable(langId);
+                }
             }
         }
         return super.getName(stack);
     }
 
-    
-    public String getDescriptionId(ItemStack stack) {
-        for (IItemComponent component : components) {
-            if (component instanceof ICustomDescriptionId customDescriptionId) {
-                String langId = customDescriptionId.getItemDescriptionId(stack);
-                if (langId != null) {
-                    return langId;
+    @Override
+    public net.minecraft.world.item.ItemStackTemplate getCraftingRemainder(net.minecraft.world.item.ItemInstance instance) {
+        if (instance instanceof ItemStack itemStack) {
+            for (IItemComponent component : components) {
+                if (component instanceof IRecipeRemainder recipeRemainder) {
+                    ItemStack remainder = recipeRemainder.getRecipeRemained(itemStack);
+                    return remainder == null || remainder.isEmpty() ? null :
+                            net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(remainder);
                 }
             }
         }
-        return super.getDescriptionId(stack);
-    }
-
-    
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        for (IItemComponent component : components) {
-            if (component instanceof IRecipeRemainder recipeRemainder) {
-                return recipeRemainder.getRecipeRemained(itemStack);
-            }
-        }
-        return super.getCraftingRemainingItem(itemStack);
-    }
-
-    
-    public boolean hasCraftingRemainingItem(ItemStack stack) {
-        for (IItemComponent component : components) {
-            if (component instanceof IRecipeRemainder recipeRemainder) {
-                return recipeRemainder.getRecipeRemained(stack) != ItemStack.EMPTY;
-            }
-        }
-        return super.hasCraftingRemainingItem(stack);
+        return super.getCraftingRemainder(instance);
     }
 
     @Override

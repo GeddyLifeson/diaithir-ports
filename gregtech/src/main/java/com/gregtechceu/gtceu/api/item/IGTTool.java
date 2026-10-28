@@ -516,8 +516,9 @@ public interface IGTTool extends HeldItemUIFactory.IHeldItemUIHolder, ItemLike {
         ItemStack stack = player.getItemInHand(hand);
         // TODO: relocate to keybind action when keybind PR happens
         for (IToolBehavior<?> behavior : getBehaviorsComponent(stack).behaviors().values()) {
-            if (behavior.onItemRightClick(world, player, hand).getResult() == InteractionResult.SUCCESS) {
-                return InteractionResult.SUCCESS.heldItemTransformedTo(stack);
+            var result = behavior.onItemRightClick(world, player, hand);
+            if (result instanceof InteractionResult.Success) {
+                return result;
             }
         }
         return InteractionResult.PASS;
@@ -628,7 +629,7 @@ public interface IGTTool extends HeldItemUIFactory.IHeldItemUIHolder, ItemLike {
             tooltip.add(CommonComponents.EMPTY);
 
             tooltip.add(Component.translatable("item.gtceu.tool.tooltip.innate_enchantments"));
-            stack.addToTooltip(GTDataComponents.INNATE_ENCHANTMENTS, context, tooltip::add, flag);
+            stack.addToTooltip(GTDataComponents.INNATE_ENCHANTMENTS, context, net.minecraft.world.item.component.TooltipDisplay.DEFAULT, tooltip::add, flag);
         }
 
         tooltip.add(CommonComponents.EMPTY);

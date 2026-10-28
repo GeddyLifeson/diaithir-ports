@@ -207,24 +207,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
         if (player == null) {
             return false;
         }
-        if (GTCEu.Mods.isAE2Loaded() && AE2CallWrapper.isColorable(first)) {
-            Set<? extends IColorableBlockEntity> collected;
-            if (first instanceof CableBusBlockEntity) {
-                collected = AE2CallWrapper.collect(first, limit);
-            } else {
-                collected = Set.of((IColorableBlockEntity) first);
-            }
-            var ae2Color = color == null ? AEColor.TRANSPARENT : AEColor.values()[color.ordinal()];
-            for (var c : collected) {
-                if (c.getColor() == ae2Color) {
-                    continue;
-                }
-                c.recolourBlock(context.getClickedFace(), ae2Color, player);
-                if (!useItemDurability(player, context.getHand(), context.getItemInHand(), ItemStack.EMPTY)) {
-                    break;
-                }
-            }
-        } else if (first instanceof IPipeNode pipe) {
+        if (first instanceof IPipeNode pipe) {
             var collected = BreadthFirstBlockSearch.conditionalSearch(IPipeNode.class, pipe,
                     first.getLevel(), IPipeNode::getBlockPos,
                     gtPipePredicate, limit, limit * 6);
@@ -240,7 +223,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
             BlockPos pos = first.getBlockPos();
             recolorBlockNoState(SHULKER_BOX_MAP, color, level, pos, Blocks.SHULKER_BOX);
             if (level.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity newShulker) {
-                newShulker.loadFromTag(tag, level.registryAccess());
+                newShulker.loadWithComponents(com.gregtechceu.gtceu.compat.NbtCompat.input(level.registryAccess(), tag));
             }
         } else {
             return false;
@@ -344,7 +327,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
                 return true;
             }
         }
-        if (GTCEu.Mods.isCreateLoaded() && block.defaultBlockState().is(AllTags.AllBlockTags.WINDMILL_SAILS.tag)) {
+        if (false) {
             return recolorCreateSail(world, pos, color);
         }
         return false;
@@ -408,7 +391,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
             recolorBlockNoState(CANDLE_MAP, DyeColor.WHITE, world, pos);
             return true;
         }
-        if (GTCEu.Mods.isCreateLoaded() && block.defaultBlockState().is(AllTags.AllBlockTags.WINDMILL_SAILS.tag)) {
+        if (false) {
             return recolorCreateSail(world, pos, DyeColor.WHITE);
         }
 
@@ -478,23 +461,7 @@ public class ColorSprayBehaviour implements IDurabilityBar, IInteractionItem, IA
         return parent.isConnected(direction) && child.isConnected(direction.getOpposite());
     };
 
-    private static class AE2CallWrapper {/* ported: removed */
-
-        static boolean isColorable(BlockEntity be) {
-            return be instanceof IColorableBlockEntity;
-        }/* ported: removed */
-    }
-
     private static boolean recolorCreateSail(Level world, BlockPos pos, @Nullable DyeColor color) {
-        // logic copied from Create (SailBlock#applyDye).
-        // skip null color, because we're not shears.
-        if (color == null) return false;
-        BlockState oldState = world.getBlockState(pos);
-        BlockState newState = BlockHelper.copyProperties(oldState, AllBlocks.DYED_SAILS.get(color).getDefaultState());
-        if (oldState != newState) {
-            world.setBlockAndUpdate(pos, newState);
-            return true;
-        }
-        return false;
+        return false; // PORT: Create is not ported
     }
 }

@@ -144,9 +144,30 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
     //////////////////////////////////////
 
     @Override
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+    protected void loadSyncTag(CompoundTag tag, HolderLookup.Provider registries) {
         TagCompatibilityFixer.fixMachineAutoOutputTag(tag);
-        super.loadAdditional(tag, registries);
+        super.loadSyncTag(tag, registries);
+    }
+
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        super.preRemoveSideEffects(pos, state);
+        onMachineDestroyed();
+    }
+
+    @Override
+    public void setBlockState(BlockState newState) {
+        BlockState oldState = getBlockState();
+        super.setBlockState(newState);
+        if (newState.getBlock() instanceof MetaMachineBlock machineBlock && oldState.getBlock() == newState.getBlock() &&
+                machineBlock.getRotationState() != com.gregtechceu.gtceu.api.data.RotationState.NONE) {
+            var property = machineBlock.getRotationState().property;
+            if (oldState.hasProperty(property) && newState.hasProperty(property)) {
+                Direction oldFacing = oldState.getValue(property);
+                Direction newFacing = newState.getValue(property);
+                if (oldFacing != newFacing) onRotated(oldFacing, newFacing);
+            }
+        }
     }
 
     @MustBeInvokedByOverriders
@@ -557,9 +578,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
 
         // add render state info
         MachineRenderState renderState = this.getRenderState();
-        for (var property : renderState.getValues().entrySet()) {
-            lines.accept(ModelUtils.getPropertyValueString(property));
-        }
+        lines.accept(String.valueOf(renderState));
     }
 
     public MachineDefinition getDefinition() {
@@ -687,7 +706,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
 
     public void animateTick(RandomSource random) {}
 
-    public BlockState getBlockAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
+    public BlockState getBlockAppearance(BlockState state, net.minecraft.world.level.BlockAndLightGetter level, BlockPos pos, Direction side,
                                          @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
         var appearance = getCoverContainer().getBlockAppearance(state, level, pos, side, sourceState, sourcePos);
         if (appearance != null) return appearance;

@@ -109,7 +109,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             List<ItemStack> items = new ArrayList<>();
             configTag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.getLevel().registryAccess(), c).orElse(ItemStack.EMPTY));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.getLevel().registryAccess(), c)));
             });
 
             if (!player.isCreative() && !GTTransferUtils.extractItemsFromPlayerInv(player, items, true)) {
@@ -161,7 +161,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
 
     private static void pastePipeConfig(ServerPlayer player, PipeBlockEntity<?, ?> pipe, CompoundTag tag) {
         if (tag.contains(PIPE_CONNECTIONS)) {
-            var connections = tag.getInt(PIPE_CONNECTIONS);
+            var connections = tag.getIntOr(PIPE_CONNECTIONS, 0);
 
             for (var dir : GTUtil.DIRECTIONS) {
                 if (PipeBlockEntity.isConnected(connections, dir)) pipe.setConnection(dir, true, false);
@@ -169,7 +169,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
 
         }
         if (tag.contains(PIPE_BLOCKED_CONNECTIONS)) {
-            var blockedConnections = tag.getInt(PIPE_BLOCKED_CONNECTIONS);
+            var blockedConnections = tag.getIntOr(PIPE_BLOCKED_CONNECTIONS, 0);
 
             for (var dir : GTUtil.DIRECTIONS) {
                 if (PipeBlockEntity.isFaceBlocked(blockedConnections, dir)) pipe.setBlocked(dir, true);
@@ -309,7 +309,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
             List<ItemStack> items = new ArrayList<>();
             tag.getListOrEmpty(ITEMS_TO_PASTE).forEach(t -> {
                 if (t instanceof CompoundTag c)
-                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.level().registryAccess(), c).orElse(ItemStack.EMPTY));
+                    items.add(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(context.level().registryAccess(), c)));
             });
 
             if (items.isEmpty()) return;
@@ -331,7 +331,7 @@ public class MachineConfigCopyBehaviour implements IInteractionItem, IAddInforma
         tooltipComponents.add(Component.translatable("behaviour.memory_card.tooltip.paste"));
         CustomData data = stack.get(GTDataComponents.DATA_COPY_TAG);
         if (data == null) return;
-        if (Screen.hasShiftDown()) {
+        if (com.gregtechceu.gtceu.utils.GTUtil.isShiftDown()) {
             tooltipComponents.add(CommonComponents.EMPTY);
             addConfigTooltips(tooltipComponents, data.copyTag(), context);
         } else {

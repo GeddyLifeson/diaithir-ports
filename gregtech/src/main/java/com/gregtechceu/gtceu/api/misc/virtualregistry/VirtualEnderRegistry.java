@@ -113,6 +113,7 @@ public class VirtualEnderRegistry extends SavedData {
 
     @NotNull
     
+    @Override
     public final CompoundTag save(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
         var privateTag = new CompoundTag();
         for (var owner : VIRTUAL_REGISTRIES.keySet()) {

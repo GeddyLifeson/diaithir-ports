@@ -283,6 +283,7 @@ public class LocalizedHazardSavedData extends SavedData {
 
     @NotNull
     
+    @Override
     public CompoundTag save(@NotNull CompoundTag compoundTag, HolderLookup.Provider provider) {
         ListTag hazardZonesTag = new ListTag();
         for (var entry : hazardZones.entrySet()) {

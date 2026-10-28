@@ -44,7 +44,8 @@ public class TagPrefixItem extends Item {
     }
 
     
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    @Override
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, net.minecraft.world.level.block.entity.FuelValues fuelValues) {
         return getItemBurnTime();
     }
 
@@ -54,11 +55,15 @@ public class TagPrefixItem extends Item {
     }
 
     
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {
-        super.appendHoverText(stack, context, tooltipComponents, isAdvanced);
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context,
+                                net.minecraft.world.item.component.TooltipDisplay display,
+                                java.util.function.Consumer<Component> consumer, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, context, display, consumer, isAdvanced);
         if (this.tagPrefix.tooltip() != null) {
+            List<Component> tooltipComponents = new java.util.ArrayList<>();
             this.tagPrefix.tooltip().accept(material, tooltipComponents);
+            tooltipComponents.forEach(consumer);
         }
     }
 
@@ -76,8 +81,10 @@ public class TagPrefixItem extends Item {
     }
 
     
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        super.inventoryTick(stack, level, entity, slotId, isSelected);
+    @Override
+    public void inventoryTick(ItemStack stack, net.minecraft.server.level.ServerLevel level, Entity entity,
+                              EquipmentSlot slot) {
+        super.inventoryTick(stack, level, entity, slot);
         if (entity instanceof LivingEntity livingEntity) {
             if (livingEntity.tickCount % 20 == 0) {
                 if (tagPrefix != TagPrefix.ingotHot || !material.hasProperty(PropertyKey.BLAST))
@@ -89,9 +96,9 @@ public class TagPrefixItem extends Item {
                     heatDamage *= armorItem.getArmorLogic().getHeatResistance();
                 }
                 if (heatDamage > 0.0) {
-                    livingEntity.hurt(level.damageSources().source(GTDamageTypes.HEAT), heatDamage);
+                    livingEntity.hurtServer(level, level.damageSources().source(GTDamageTypes.HEAT), heatDamage);
                 } else if (heatDamage < 0.0) {
-                    livingEntity.hurt(livingEntity.damageSources().freeze(), -heatDamage);
+                    livingEntity.hurtServer(level, livingEntity.damageSources().freeze(), -heatDamage);
                 }
             }
         }

@@ -37,7 +37,8 @@ public class MaterialBlockItem extends BlockItem implements IItemRendererProvide
     }
 
     
-    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+    @Override
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, net.minecraft.world.level.block.entity.FuelValues fuelValues) {
         return getItemBurnTime();
     }
 

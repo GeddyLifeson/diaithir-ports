@@ -300,7 +300,7 @@ public interface ICoverable extends ITickSubscription, ISyncManaged, ICopyable {
     }
 
     @Nullable
-    default BlockState getBlockAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
+    default BlockState getBlockAppearance(BlockState state, net.minecraft.world.level.BlockAndLightGetter level, BlockPos pos, Direction side,
                                           BlockState sourceState, BlockPos sourcePos) {
         if (hasCover(side)) {
             return getCoverAtSide(side).getAppearance(sourceState, sourcePos);

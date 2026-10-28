@@ -40,7 +40,7 @@ import net.neoforged.neoforge.fluids.FluidUtil;
 
 import java.util.List;
 
-public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipeProperties, LevelFluidPipeNet> {
+public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipeProperties, LevelFluidPipeNet> implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     public FluidPipeBlock(Properties properties, FluidPipeType fluidPipeType, Material material) {
         super(properties, fluidPipeType, material);
@@ -101,9 +101,9 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         FluidPipeProperties properties = createProperties(defaultBlockState(), stack);
 
         tooltip.add(Component.translatable("gtceu.universal.tooltip.fluid_transfer_rate", properties.getThroughput()));
@@ -130,7 +130,8 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity,
+                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
         // dont apply damage if there is a frame box
         var pipeNode = getPipeTile(level, pos);
         if (pipeNode == null) {
@@ -140,7 +141,7 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
         if (!pipeNode.getFrameMaterial().isNull()) {
             BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
                     .getDefaultState();
-            ((MaterialBlock) frameState.getBlock()).entityInside(frameState, level, pos, entity);
+            ((MaterialBlock) frameState.getBlock()).entityInside(frameState, level, pos, entity, effectApplier, flag);
             return;
         }
         if (level.isClientSide()) return;

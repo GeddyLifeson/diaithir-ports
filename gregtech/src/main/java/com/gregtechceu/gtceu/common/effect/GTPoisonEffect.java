@@ -12,6 +12,7 @@ public class GTPoisonEffect extends MobEffect {
     }
 
     
+    @Override
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (livingEntity.getHealth() > 1.0F) {
             livingEntity.hurt(livingEntity.damageSources().source(NeoForgeMod.POISON_DAMAGE), amplifier / 10.0F);

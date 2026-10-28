@@ -44,7 +44,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, LevelEnergyNet> {
+public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, LevelEnergyNet> implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     public CableBlock(Properties properties, Insulation insulation, Material material) {
         super(properties, insulation, material);
@@ -111,9 +111,9 @@ public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, Le
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         WireProperties wireProperties = createProperties(defaultBlockState(), stack);
         int tier = GTUtil.getTierByVoltage(wireProperties.getVoltage());
         if (wireProperties.isSuperconductor())
@@ -127,7 +127,8 @@ public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, Le
     }
 
     @Override
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity,
+                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
         // dont apply damage if there is a frame box
         var pipeNode = getPipeTile(level, pos);
         if (pipeNode == null) {
@@ -137,7 +138,7 @@ public class CableBlock extends MaterialPipeBlock<Insulation, WireProperties, Le
         if (!pipeNode.getFrameMaterial().isNull()) {
             BlockState frameState = GTMaterialBlocks.MATERIAL_BLOCKS.get(TagPrefix.frameGt, pipeNode.getFrameMaterial())
                     .getDefaultState();
-            frameState.entityInside(level, pos, entity);
+            frameState.entityInside(level, pos, entity, effectApplier, flag);
             return;
         }
         if (level.isClientSide()) return;

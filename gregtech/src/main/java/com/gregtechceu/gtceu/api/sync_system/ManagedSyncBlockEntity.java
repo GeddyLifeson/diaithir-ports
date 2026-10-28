@@ -45,23 +45,42 @@ public abstract class ManagedSyncBlockEntity extends BlockEntity implements ISyn
     /**
      * Saves BE data to world save.
      */
-    
-    protected final void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        tag.merge(getSyncDataHolder().serializeNBT(registries, false));
+    @Override
+    protected final void saveAdditional(net.minecraft.world.level.storage.ValueOutput output) {
+        super.saveAdditional(output);
+        com.gregtechceu.gtceu.compat.NbtCompat.merge(output,
+                getSyncDataHolder().serializeNBT(com.gregtechceu.gtceu.compat.NbtCompat.registries(getLevel()), false));
     }
 
     /**
      * Loads BE data from world save or from a client update packet.
-     * Override this to add logic for modifying saved data before it is loaded (e.g. for cross-version compatibility).
-     * When overriding, {@code super.loadAdditional(tag)} must be called AFTER any custom logic.
      */
-    
+    @Override
+    protected void loadAdditional(net.minecraft.world.level.storage.ValueInput input) {
+        super.loadAdditional(input);
+        loadSyncTag(com.gregtechceu.gtceu.compat.NbtCompat.toTag(input), input.lookup());
+    }
+
+    /**
+     * Override this to add logic for modifying saved data before it is loaded (e.g. for cross-version
+     * compatibility). When overriding, {@code super.loadSyncTag(tag, registries)} must be called AFTER any custom
+     * logic.
+     */
     @MustBeInvokedByOverriders
-    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
+    protected void loadSyncTag(CompoundTag tag, HolderLookup.Provider registries) {
         getSyncDataHolder().deserializeNBT(registries, tag,
                 (getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide()));
+    }
+
+    /**
+     * Saves this BE's data onto an item stack (replacement for the removed vanilla {@code saveToItem}).
+     */
+    public void saveToItem(net.minecraft.world.item.ItemStack stack, HolderLookup.Provider registries) {
+        var out = com.gregtechceu.gtceu.compat.NbtCompat.output(registries);
+        this.saveCustomOnly(out);
+        this.removeComponentsFromTag(out);
+        net.minecraft.world.item.BlockItem.setBlockEntityData(stack, this.getType(), out);
+        stack.applyComponents(this.collectComponents());
     }
 
     /**

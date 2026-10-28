@@ -50,6 +50,7 @@ public class GTRecipes {
             }
 
             
+            @Override
             public void accept(@NotNull Identifier id, @NotNull Recipe<?> recipe,
                                @Nullable AdvancementHolder advancement, ICondition @NotNull... conditions) {
                 if (!RECIPE_FILTERS.contains(id)) {

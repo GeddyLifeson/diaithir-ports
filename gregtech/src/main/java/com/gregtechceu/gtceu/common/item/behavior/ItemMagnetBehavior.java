@@ -223,7 +223,7 @@ public class ItemMagnetBehavior implements IInteractionItem, IItemLifeCycle, IAd
                         world.playSound(null, entity, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.PLAYERS,
                                 0.1F, 0.5F * ((world.getRandom().nextFloat() - world.getRandom().nextFloat()) * 0.7F + 1.8F));
                         player.take(orb, 1);
-                        player.giveExperiencePoints(orb.value);
+                        player.giveExperiencePoints(orb.getValue());
                         orb.discard();
                         didMoveEntity = true;
                     }
@@ -288,9 +288,7 @@ public class ItemMagnetBehavior implements IInteractionItem, IItemLifeCycle, IAd
     private static class CuriosUtils {
 
         public static boolean hasMagnetCurios(Player player) {
-            return CuriosApi.getCuriosInventory(player)
-                    .map(curios -> curios.findFirstCurio(i -> isMagnet(i) && isActive(i)).isPresent())
-                    .orElse(false);
+            return false; // PORT: Curios is not ported
         }
     }
 

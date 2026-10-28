@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class CoilBlock extends ActiveBlock {
+public class CoilBlock extends ActiveBlock implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     public ICoilType coilType;
 
@@ -29,9 +29,9 @@ public class CoilBlock extends ActiveBlock {
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         if (GTUtil.isShiftDown()) {
             int coilTier = coilType.getTier();
             tooltip.add(Component.translatable("block.gtceu.wire_coil.tooltip_heat", coilType.getCoilTemperature()));

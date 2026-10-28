@@ -54,6 +54,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
 
     @SuppressWarnings("removal")
     
+    @Override
     public GTBlockBuilder<T, P> addLayer(Supplier<Supplier<RenderType>> layer) { return this; }
 
     @Override
@@ -109,6 +110,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
     }
 
     
+    @Override
     public  <D extends RegistrateProvider> GTBlockBuilder<T, P> setData(ProviderType<? extends D> type, NonNullBiConsumer<DataGenContext<Block, T>, D> cons) {
         return (GTBlockBuilder<T, P>) super.setData(type, cons);
     }

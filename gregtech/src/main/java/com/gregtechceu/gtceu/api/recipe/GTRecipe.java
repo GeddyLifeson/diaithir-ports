@@ -203,6 +203,7 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     
+    @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
         return false;
     }

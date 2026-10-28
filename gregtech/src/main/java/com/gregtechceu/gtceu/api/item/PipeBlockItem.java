@@ -34,14 +34,16 @@ public class PipeBlockItem extends BlockItem {
     }
 
     
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
-                                TooltipFlag isAdvanced) {
-        super.appendHoverText(stack, context, tooltip, isAdvanced);
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context,
+                                net.minecraft.world.item.component.TooltipDisplay display,
+                                java.util.function.Consumer<Component> tooltip, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, context, display, tooltip, isAdvanced);
         if (GTUtil.isShiftDown()) {
             var tool = getBlock().getPipeTuneTool();
-            tooltip.add(Component.translatable("gtceu.tool_action." + tool.name + ".connect"));
+            tooltip.accept(Component.translatable("gtceu.tool_action." + tool.name + ".connect"));
         } else {
-            tooltip.add(Component.translatable("gtceu.tool_action.show_tooltips"));
+            tooltip.accept(Component.translatable("gtceu.tool_action.show_tooltips"));
         }
     }
 

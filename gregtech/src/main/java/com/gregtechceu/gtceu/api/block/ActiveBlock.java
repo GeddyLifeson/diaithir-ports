@@ -51,7 +51,8 @@ public class ActiveBlock extends Block {
     }
 
     
-    public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
+    @Override
+    public BlockState getAppearance(BlockState state, net.minecraft.world.level.BlockAndLightGetter level, BlockPos pos, Direction side,
                                     @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
         return defaultBlockState();
     }

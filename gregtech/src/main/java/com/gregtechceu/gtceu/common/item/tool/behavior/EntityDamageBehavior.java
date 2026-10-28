@@ -117,7 +117,7 @@ public class EntityDamageBehavior implements IToolBehavior<EntityDamageBehavior>
             tagBonusesLoaded = true;
             if (tempTagBonusList == null || tempTagBonusList.isEmpty()) return bonusList;
             for (var entry : Reference2FloatMaps.fastIterable(tempTagBonusList)) {
-                HolderSet.Named<EntityType<?>> tag = BuiltInRegistries.ENTITY_TYPE.getOrCreateTag(entry.getKey());
+                HolderSet.Named<EntityType<?>> tag = com.gregtechceu.gtceu.compat.TagCompat.tag(BuiltInRegistries.ENTITY_TYPE, entry.getKey());
                 bonusList.put(tag, entry.getFloatValue());
             }
         }
@@ -140,13 +140,13 @@ public class EntityDamageBehavior implements IToolBehavior<EntityDamageBehavior>
         if (damageBonus != 0f) {
             DamageSource source = attacker instanceof Player player ?
                     attacker.damageSources().playerAttack(player) : attacker.damageSources().mobAttack(attacker);
-            target.hurt(source, damageBonus);
+            if (target.level() instanceof net.minecraft.server.level.ServerLevel sl) target.hurtServer(sl, source, damageBonus);
         }
     }
 
     private float getDamageBonus(@NotNull LivingEntity target) {
         for (var entry : Object2FloatMaps.fastIterable(getBonusList())) {
-            if (target.getType().is(entry.getKey())) {
+            if (entry.getKey().contains(target.getType().builtInRegistryHolder())) {
                 float f = entry.getFloatValue();
                 if (f > 0) return f;
             }

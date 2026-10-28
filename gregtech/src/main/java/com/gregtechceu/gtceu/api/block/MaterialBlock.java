@@ -105,13 +105,16 @@ public class MaterialBlock extends Block {
     }
 
     
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level,
-                                  BlockPos currentPos, BlockPos neighborPos) {
+    @Override
+    public BlockState updateShape(BlockState state, net.minecraft.world.level.LevelReader level,
+                                  net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos currentPos,
+                                  Direction direction, BlockPos neighborPos, BlockState neighborState,
+                                  RandomSource random) {
         if (TagPrefix.ORES.containsKey(this.tagPrefix) && TagPrefix.ORES.get(tagPrefix).isSand() &&
                 ConfigHolder.INSTANCE.worldgen.sandOresFall) {
-            level.scheduleTick(currentPos, this, this.getDelayAfterPlace());
+            ticks.scheduleTick(currentPos, this, this.getDelayAfterPlace());
         }
-        return super.updateShape(state, direction, neighborState, level, currentPos, neighborPos);
+        return super.updateShape(state, level, ticks, currentPos, direction, neighborPos, neighborState, random);
     }
 
     @Override
@@ -269,7 +272,9 @@ public class MaterialBlock extends Block {
     }
 
     
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    @Override
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity,
+                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
         if (this.tagPrefix == TagPrefix.frameGt && entity instanceof LivingEntity livingEntity) {
             double currentAccel = 0.15D * (livingEntity.getDeltaMovement().y < 0.3D ? 2.5D : 1.0D);
             double currentSpeedVertical = 0.9D * (livingEntity.isInWater() ? 0.4D : 1.0D);

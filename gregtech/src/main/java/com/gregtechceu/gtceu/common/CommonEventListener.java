@@ -1,5 +1,6 @@
 package com.gregtechceu.gtceu.common;
 
+import com.gregtechceu.gtceu.integration.map.cache.server.ServerCache;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 
 import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
@@ -408,6 +409,10 @@ public class CommonEventListener {
     @SubscribeEvent
     public static void onTooltipEvent(ItemTooltipEvent event) {
         TooltipsHandler.appendTooltips(event.getItemStack(), event.getFlags(), event.getToolTip(), event.getContext());
+        if (event.getItemStack().getItem() instanceof net.minecraft.world.item.BlockItem blockItem &&
+                blockItem.getBlock() instanceof com.gregtechceu.gtceu.api.block.IBlockTooltip tooltip) {
+            tooltip.appendHoverText(event.getItemStack(), event.getContext(), event.getToolTip(), event.getFlags());
+        }
     }
 
     @SubscribeEvent

@@ -94,7 +94,7 @@ public class ToolEventHandlers {
         }
         ItemStack brokenStack = gtTool.getToolStats().getBrokenStack();
         if (!brokenStack.isEmpty()) {
-            itemFrame.interact(event.getEntity(), event.getHand());
+            itemFrame.interact(event.getEntity(), event.getHand(), event.getLocalPos());
 
             event.setCanceled(true);
             event.setCancellationResult(InteractionResult.SUCCESS);

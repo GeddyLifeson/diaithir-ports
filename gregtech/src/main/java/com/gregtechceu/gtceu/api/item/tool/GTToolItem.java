@@ -62,8 +62,9 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     
-    public boolean canPerformAction(ItemStack stack, ItemAbility action) {
-        return definition$canPerformAction(stack, action);
+    @Override
+    public boolean canPerformAction(ItemInstance stack, ItemAbility action) {
+        return stack instanceof ItemStack is ? definition$canPerformAction(is, action) : super.canPerformAction(stack, action);
     }
 
     @Override
@@ -112,25 +113,23 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     
+    @Override
     public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return definition$hurtEnemy(stack, target, attacker);
+        definition$hurtEnemy(stack, target, attacker);
     }
 
     
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents,
-                                TooltipFlag isAdvanced) {
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display,
+                                java.util.function.Consumer<Component> consumer, TooltipFlag isAdvanced) {
+        List<Component> tooltipComponents = new java.util.ArrayList<>();
         definition$appendHoverText(stack, context, tooltipComponents, isAdvanced);
+        tooltipComponents.forEach(consumer);
     }
 
     
-    public int getEnchantmentValue(ItemStack stack) {
-        return getTotalEnchantability(stack);
-    }
 
     
-    public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {
-        return definition$isValidRepairItem(stack, repairCandidate);
-    }
 
     @Override
     public ItemEnchantments getAllEnchantments(ItemStack stack, HolderLookup.RegistryLookup<Enchantment> lookup) {
@@ -138,14 +137,12 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     
-    public int getEnchantmentLevel(ItemStack stack, Holder<Enchantment> enchantment) {
-        return definition$getEnchantmentLevel(stack, enchantment);
+    @Override
+    public int getEnchantmentLevel(ItemInstance stack, Holder<Enchantment> enchantment) {
+        return stack instanceof ItemStack is ? definition$getEnchantmentLevel(is, enchantment) : super.getEnchantmentLevel(stack, enchantment);
     }
 
     
-    public boolean canDisableShield(ItemStack stack, ItemStack shield, LivingEntity entity, LivingEntity attacker) {
-        return definition$canDisableShield(shield, shield, entity, attacker);
-    }
 
     @Override
     public boolean doesSneakBypassUse(ItemStack stack, LevelReader level, BlockPos pos, Player player) {
@@ -158,13 +155,14 @@ public class GTToolItem extends TieredItem implements IGTTool {
     }
 
     
-    public boolean hasCraftingRemainingItem(ItemStack stack) {
-        return definition$hasCraftingRemainingItem(stack);
-    }
-
-    
-    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        return definition$getCraftingRemainingItem(itemStack);
+    @Override
+    public ItemStackTemplate getCraftingRemainder(ItemInstance instance) {
+        if (instance instanceof ItemStack stack && definition$hasCraftingRemainingItem(stack)) {
+            ItemStack remainder = definition$getCraftingRemainingItem(stack);
+            if (remainder != null && !remainder.isEmpty()) return ItemStackTemplate.fromNonEmptyStack(remainder);
+            return null;
+        }
+        return super.getCraftingRemainder(instance);
     }
 
     @Override

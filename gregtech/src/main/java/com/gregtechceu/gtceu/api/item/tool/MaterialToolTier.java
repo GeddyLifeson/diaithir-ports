@@ -56,6 +56,6 @@ public class MaterialToolTier implements Tier {
     @Override
     @NotNull
     public Ingredient getRepairIngredient() {
-        return Ingredient.EMPTY;
+        return Ingredient.of(net.minecraft.core.HolderSet.empty());
     }
 }

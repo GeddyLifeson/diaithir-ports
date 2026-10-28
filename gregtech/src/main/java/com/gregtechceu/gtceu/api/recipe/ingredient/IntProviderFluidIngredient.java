@@ -95,6 +95,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      * @return a {@link FluidStack FluidStack[]} with amount {@link IntProviderFluidIngredient#sampledCount}
      */
     
+    @Override
     public Stream<FluidStack> generateStacks() {
         if (fluidStacks == null) {
             int cachedAmount = rollSampledCount(GTValues.RNG);

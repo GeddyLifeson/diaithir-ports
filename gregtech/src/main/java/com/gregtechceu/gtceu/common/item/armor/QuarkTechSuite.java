@@ -253,11 +253,11 @@ public class QuarkTechSuite extends ArmorLogicSuite implements IStepAssist {
                 if (slotId > -1) {
                     ItemStack stack = items.getStackInSlot(slotId);
                     InteractionResult result = ArmorUtils.eat(player, stack);
-                    stack = result.getObject();
+                    if (result instanceof InteractionResult.Success success && success.heldItemTransformedTo() != null) stack = success.heldItemTransformedTo();
                     if (stack.isEmpty())
                         items.setStackInSlot(slotId, ItemStack.EMPTY);
 
-                    if (result.getResult() == InteractionResult.SUCCESS)
+                    if (result instanceof InteractionResult.Success)
                         item.discharge(energyPerUse / 10, item.getTier(), true, false, false);
 
                     return true;

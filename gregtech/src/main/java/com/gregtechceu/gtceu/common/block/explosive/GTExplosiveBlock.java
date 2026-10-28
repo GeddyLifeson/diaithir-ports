@@ -35,7 +35,7 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public abstract class GTExplosiveBlock extends Block {
+public abstract class GTExplosiveBlock extends Block implements com.gregtechceu.gtceu.api.block.IBlockTooltip {
 
     private final boolean canRedstoneActivate;
     private final boolean explodeOnMine;
@@ -68,9 +68,11 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
+    @Override
     public boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @Nullable Direction face,
                              @Nullable LivingEntity igniter) {
         explode(level, pos, igniter);
+        return true;
     }
 
     public void explode(Level level, BlockPos pos, @Nullable LivingEntity exploder) {
@@ -84,6 +86,7 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
+    @Override
     public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
         if (!level.isClientSide()) {
             GTExplosiveEntity entity = createEntity(level, pos, explosion.getIndirectSourceEntity());
@@ -99,7 +102,7 @@ public abstract class GTExplosiveBlock extends Block {
             this.explode(level, pos, player);
             level.removeBlock(pos, false);
             if (stack.isDamageableItem()) {
-                stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                stack.hurtAndBreak(1, player, hand.asEquipmentSlot());
             } else if (!player.isCreative()) {
                 stack.shrink(1);
             }
@@ -117,8 +120,10 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
-    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        super.entityInside(state, level, pos, entity);
+    @Override
+    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity,
+                             net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean flag) {
+        super.entityInside(state, level, pos, entity, effectApplier, flag);
         if (!level.isClientSide() && entity instanceof Arrow arrow) {
             if (arrow.isOnFire()) {
                 this.explode(level, pos, arrow.getOwner() instanceof LivingEntity living ? living : null);
@@ -151,7 +156,9 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock,
+                                @Nullable net.minecraft.world.level.redstone.Orientation orientation,
                                 boolean movedByPiston) {
         if (canRedstoneActivate) {
             if (level.hasNeighborSignal(pos)) {
@@ -162,9 +169,9 @@ public abstract class GTExplosiveBlock extends Block {
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip,
                                 TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
         if (explodeOnMine) {
             tooltip.add(Component.translatable("block.gtceu.explosive.breaking_tooltip"));
         }

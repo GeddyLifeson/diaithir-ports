@@ -75,7 +75,7 @@ import java.util.List;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class MetaMachineBlock extends Block implements EntityBlock {
+public class MetaMachineBlock extends Block implements com.gregtechceu.gtceu.api.block.IBlockTooltip, EntityBlock {
 
     @Getter
     public final MachineDefinition definition;
@@ -185,6 +185,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     
+    @Override
     public void appendHoverText(ItemStack stack, @Nullable Item.TooltipContext level, List<Component> tooltip,
                                 TooltipFlag flag) {
         definition.getTooltipBuilder().accept(stack, tooltip);
@@ -243,27 +244,11 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (pState.hasBlockEntity()) {
-            if (!pState.is(pNewState.getBlock())) { // new block
-                MetaMachine machine = MetaMachine.getMachine(pLevel, pPos);
-                if (machine != null) {
-                    machine.onMachineDestroyed();
-                }
-
-                pLevel.updateNeighbourForOutputSignal(pPos, this);
-                pLevel.removeBlockEntity(pPos);
-            } else if (getRotationState() != RotationState.NONE) { // old block different facing
-                var oldFacing = pState.getValue(getRotationState().property);
-                var newFacing = pNewState.getValue(getRotationState().property);
-                if (newFacing != oldFacing) {
-                    var machine = MetaMachine.getMachine(pLevel, pPos);
-                    if (machine != null) {
-                        machine.onRotated(oldFacing, newFacing);
-                    }
-                }
-            }
-        }
+    @Override
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level,
+                                               BlockPos pos, boolean movedByPiston) {
+        super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
+        level.updateNeighbourForOutputSignal(pos, this);
     }
 
     @Override
@@ -288,7 +273,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
         if (machineInteractResult != InteractionResult.PASS) return getFromInteractionResult(machineInteractResult);
 
         if (stack.is(GTItems.PORTABLE_SCANNER.get())) {
-            return getFromInteractionResult(stack.getItem().use(level, player, hand).getResult());
+            return getFromInteractionResult(stack.getItem().use(level, player, hand));
         }
 
         if (stack.getItem() instanceof IGTTool gtToolItem) {
@@ -309,7 +294,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
         if (machine == null) return InteractionResult.PASS;
         if (machine instanceof IUIMachine uiMachine &&
                 MachineOwner.canOpenOwnerMachine(player, machine)) {
-            uiMachine.tryToOpenUI(player, InteractionHand.MAIN_HAND, hit).result();
+            return uiMachine.tryToOpenUI(player, InteractionHand.MAIN_HAND, hit);
         }
         return machine.onUse(new ExtendedUseOnContext(player, InteractionHand.MAIN_HAND, hit));
     }
@@ -339,6 +324,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     
+    @Override
     public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
         var machine = MetaMachine.getMachine(level, pos);
         if (machine == null) return 0;
@@ -348,13 +334,17 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     /////////
 
     
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos,
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block,
+                                @Nullable net.minecraft.world.level.redstone.Orientation orientation,
                                 boolean isMoving) {
         var machine = MetaMachine.getMachine(level, pos);
         if (machine != null) {
-            machine.onNeighborChanged(block, fromPos, isMoving);
+            for (BlockPos fromPos : GTUtil.neighborSources(pos, orientation)) {
+                machine.onNeighborChanged(block, fromPos, isMoving);
+            }
         }
-        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+        super.neighborChanged(state, level, pos, block, orientation, isMoving);
     }
 
     public static int colorTinted(BlockState blockState, @Nullable BlockAndTintGetter level, @Nullable BlockPos pos,
@@ -369,7 +359,8 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     
-    public BlockState getAppearance(BlockState state, BlockAndTintGetter level, BlockPos pos, Direction side,
+    @Override
+    public BlockState getAppearance(BlockState state, net.minecraft.world.level.BlockAndLightGetter level, BlockPos pos, Direction side,
                                     @Nullable BlockState sourceState, @Nullable BlockPos sourcePos) {
         var machine = MetaMachine.getMachine(level, pos);
         if (machine != null) {
@@ -379,13 +370,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
     }
 
     public static InteractionResult getFromInteractionResult(InteractionResult result) {
-        return switch (result) {
-            case SUCCESS, SUCCESS_NO_ITEM_USED -> InteractionResult.SUCCESS;
-            case CONSUME -> InteractionResult.CONSUME;
-            case CONSUME_PARTIAL -> InteractionResult.CONSUME;
-            case PASS -> InteractionResult.TRY_WITH_EMPTY_HAND;
-            case FAIL -> InteractionResult.FAIL;
-        };
+        return result == InteractionResult.PASS ? InteractionResult.TRY_WITH_EMPTY_HAND : result;
     }
 
     public RotationState getRotationState() {
@@ -544,22 +529,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
             }
             return null;
         }, this);
-        if (GTCEu.Mods.isAE2Loaded()) {
-            event.registerBlock(AECapabilities.IN_WORLD_GRID_NODE_HOST, (level, pos, state, blockEntity, side) -> {
-                if (blockEntity instanceof MetaMachine machine) {
-                    if (machine instanceof IInWorldGridNodeHost nodeHost) {
-                        return nodeHost;
-                    }
-                    var list = getCapabilitiesFromTraits(machine.getTraitHolder().getAllTraits(), null,
-                            IInWorldGridNodeHost.class);
-                    if (!list.isEmpty()) {
-                        // TODO wrap list in the future (or not.)
-                        return list.getFirst();
-                    }
-                }
-                return null;
-            }, this);
-        }
+        // PORT: AE2 is not ported, so the grid node host capability is not registered.
     }
 
     static <T> List<T> getCapabilitiesFromTraits(List<MachineTrait> traits, @Nullable Direction accessSide,

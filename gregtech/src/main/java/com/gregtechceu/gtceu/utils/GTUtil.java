@@ -517,8 +517,8 @@ public class GTUtil {
 
         Identifier javdVoidBiome = Identifier.fromNamespaceAndPath(GTValues.MODID_JAVD, "void");
         if (GTCEu.isModLoaded(GTValues.MODID_JAVD) && biome.is(javdVoidBiome)) {
-            return !world.isDay();
-        } else return world.isDay();
+            return !world.isBrightOutside();
+        } else return world.isBrightOutside();
     }
 
     /**
@@ -630,5 +630,19 @@ public class GTUtil {
                 }
             }
         }
+    }
+
+    /**
+     * Positions of the blocks that may have caused a neighbor update. 26.1 only passes an (often null) redstone
+     * {@code Orientation} instead of the source position, so fall back to all six neighbours.
+     */
+    public static java.util.List<BlockPos> neighborSources(BlockPos pos,
+                                                           @Nullable net.minecraft.world.level.redstone.Orientation orientation) {
+        if (orientation != null) {
+            return java.util.List.of(pos.relative(orientation.getFront().getOpposite()));
+        }
+        java.util.List<BlockPos> list = new java.util.ArrayList<>(6);
+        for (Direction d : DIRECTIONS) list.add(pos.relative(d));
+        return list;
     }
 }

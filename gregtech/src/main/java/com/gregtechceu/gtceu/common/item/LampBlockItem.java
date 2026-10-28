@@ -36,10 +36,6 @@ public class LampBlockItem extends BlockItem {
 
     public LampBlockItem(LampBlock block, Properties properties) {
         super(block, properties);
-
-        if (GTCEu.isClientSide()) {
-            ClientCallWrapper.registerEventListener(this);
-        }
     }
 
     @NotNull
@@ -70,40 +66,6 @@ public class LampBlockItem extends BlockItem {
     }
 
     
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-
-            
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return LampItemRenderer.getInstance();
-            }
-        });
-    }
-
-    private static class ClientCallWrapper {
-
-        private static void registerEventListener(LampBlockItem item) {
-            ModelUtils.registerBakeEventListener(false, event -> {
-                Identifier model = BuiltInRegistries.ITEM.getKey(item).withPrefix("item/");
-                BakedModel original = event.getModels().get(model);
-                ModelResourceLocation modelLoc;
-                if (original == null) {
-                    modelLoc = ModelResourceLocation.inventory(model);
-                    original = event.getModels().get(model);
-                } else {
-                    modelLoc = ModelResourceLocation.inventory(model);
-                }
-                event.getModels().put(modelLoc, new BakedModelWrapper<>(original) {
-
-                    
-                    public boolean isCustomRenderer() {
-                        return true;
-                    }
-                });
-            });
-        }
-    }
-
     public record LampData(boolean inverted, boolean bloom, boolean lit) {
 
         public static final LampData EMPTY = new LampData(false, false, false);

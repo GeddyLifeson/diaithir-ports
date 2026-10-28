@@ -60,51 +60,24 @@ public class ArmorUtils {
      * @param tier of charger
      * @return Map of the inventory and a list of the index of a chargable item
      */
-    public static List<Pair<NonNullList<ItemStack>, IntList>> getChargeableItem(Player player, int tier) {
-        List<Pair<NonNullList<ItemStack>, IntList>> inventorySlotMap = new ArrayList<>();
+    public static List<Pair<net.minecraft.world.Container, IntList>> getChargeableItem(Player player, int tier) {
+        List<Pair<net.minecraft.world.Container, IntList>> inventorySlotMap = new ArrayList<>();
+        var inventory = player.getInventory();
 
-        IntList openMainSlots = new IntArrayList();
-        for (int i = 0; i < player.getInventory().items.size(); i++) {
-            ItemStack current = player.getInventory().items.get(i);
+        IntList openSlots = new IntArrayList();
+        for (int i = 0; i < inventory.getContainerSize(); i++) {
+            ItemStack current = inventory.getItem(i);
             IElectricItem item = GTCapabilityHelper.getElectricItem(current);
             if (item == null) continue;
 
             if (isPossibleToCharge(current) && item.getTier() <= tier) {
-                openMainSlots.add(i);
+                openSlots.add(i);
             }
         }
 
-        if (!openMainSlots.isEmpty()) {
-            inventorySlotMap.add(Pair.of(player.getInventory().items, openMainSlots));
+        if (!openSlots.isEmpty()) {
+            inventorySlotMap.add(Pair.of(inventory, openSlots));
         }
-
-        IntList openArmorSlots = new IntArrayList();
-        for (int i = 0; i < player.getInventory().armor.size(); i++) {
-            ItemStack current = player.getInventory().armor.get(i);
-            IElectricItem item = GTCapabilityHelper.getElectricItem(current);
-            if (item == null) {
-                continue;
-            }
-
-            if (isPossibleToCharge(current) && item.getTier() <= tier) {
-                openArmorSlots.add(i);
-            }
-        }
-
-        if (!openArmorSlots.isEmpty()) {
-            inventorySlotMap.add(Pair.of(player.getInventory().armor, openArmorSlots));
-        }
-
-        ItemStack offHand = player.getInventory().offhand.get(0);
-        IElectricItem offHandItem = GTCapabilityHelper.getElectricItem(offHand);
-        if (offHandItem == null) {
-            return inventorySlotMap;
-        }
-
-        if (isPossibleToCharge(offHand) && offHandItem.getTier() <= tier) {
-            inventorySlotMap.add(Pair.of(player.getInventory().offhand, new IntArrayList(new int[] { 0 })));
-        }
-
         return inventorySlotMap;
     }
 
@@ -141,7 +114,7 @@ public class ArmorUtils {
      */
     public static void resetPlayerFloatingTime(Player player) {
         if (player instanceof ServerPlayer serverPlayer) {
-            ((ServerGamePacketListenerImplAccessor) serverPlayer.connection).setAboveGroundTickCount(0);
+            serverPlayer.connection.aboveGroundTickCount = 0;
         }
     }
 

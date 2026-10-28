@@ -138,7 +138,7 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
                 if (level instanceof ServerLevel serverLevel) {
                     itemStack.hurtAndBreak(1, serverLevel, player, item -> {
                         if (player != null) {
-                            player.onEquippedItemBroken(item, LivingEntity.getSlotForHand(context.getHand()));
+                            player.onEquippedItemBroken(item, context.getHand().asEquipmentSlot());
                         }
                     });
                 }

@@ -40,6 +40,12 @@ public final class NbtCompat {
         return in.read(MapCodec.assumeMapUnsafe(CompoundTag.CODEC)).orElseGet(CompoundTag::new);
     }
 
+    /** Writes all entries of {@code tag} into {@code out} at its root. */
+    public static void merge(net.minecraft.world.level.storage.ValueOutput out, CompoundTag tag) {
+        if (tag == null || tag.isEmpty()) return;
+        out.store(MapCodec.assumeMapUnsafe(CompoundTag.CODEC), tag);
+    }
+
     public static HolderLookup.Provider registries(net.minecraft.world.level.Level level) {
         return level == null ? RegistryAccess.EMPTY : level.registryAccess();
     }
