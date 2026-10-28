@@ -1,0 +1,2 @@
+Upstream: https://github.com/CyberDay1/NeoOrigins at commit 9b78272d ("Bump mod_version to 2.2.30"), MIT.
+Build: the two patched files (event/CombatPowerEvents.java, compat/action/BuiltinActions.java) recompiled with javac 25 against the stock 2.2.30 jar and the NeoForge 26.1.2.116 server libraries; the rest of the jar is byte-identical to the Modrinth 2.2.30+26.1 release (sha256 e4975bd8c52228da6a8a0d5fe6389630aad9689adf6ccd712e5e4f6faeab3b49).

@@ -35632,9 +35632,8 @@ file = "mods/musketmod-neoforge-26.1.2-1.5.4-diaithir.1.jar"
 hash = "55926657f392a8d62b2b1a2ef417aa3d390bed487f3f862c6d53db9943c22e41"
 
 [[files]]
-file = "mods/neoorigins-2.2.30_26.1.pw.toml"
-hash = "fe6c9d5b271819c4c1a28f4d863c21540b33f430c30050dbfe2dcb0af00d212e"
-metafile = true
+file = "mods/neoorigins-2.2.30+26.1-diaithir.1.jar"
+hash = "fb86060a547ec775908e2d8c4d39c5b5d96b64558a2501b96fa5c56c36c296b3"
 
 [[files]]
 file = "mods/neovitae-26.1.2-1.1.38.pw.toml"

@@ -1,0 +1,46 @@
+diff --git a/src/main/java/com/cyberday1/neoorigins/compat/action/BuiltinActions.java b/src/main/java/com/cyberday1/neoorigins/compat/action/BuiltinActions.java
+index a74ee8e2..d01fb002 100644
+--- a/src/main/java/com/cyberday1/neoorigins/compat/action/BuiltinActions.java
++++ b/src/main/java/com/cyberday1/neoorigins/compat/action/BuiltinActions.java
+@@ -1351,7 +1351,7 @@ public final class BuiltinActions {
+                     };
+                     float dmg = useRatio ? Math.max(0.5f, htc.amount() * ratio) : amount;
+                     if (!Float.isFinite(dmg)) dmg = Float.MAX_VALUE;
+-                    le.hurt(ds, dmg);
++                    com.cyberday1.neoorigins.event.CombatPowerEvents.hurtNextTick(player, le, ds, dmg);
+                 };
+             },
+             List.of(
+diff --git a/src/main/java/com/cyberday1/neoorigins/event/CombatPowerEvents.java b/src/main/java/com/cyberday1/neoorigins/event/CombatPowerEvents.java
+index f707f7aa..4fc31df1 100644
+--- a/src/main/java/com/cyberday1/neoorigins/event/CombatPowerEvents.java
++++ b/src/main/java/com/cyberday1/neoorigins/event/CombatPowerEvents.java
+@@ -321,13 +321,27 @@ public class CombatPowerEvents {
+             if (event.getSource().getEntity() instanceof LivingEntity attacker
+                     && attacker != sp) {
+                 ActiveOriginService.forEachOfType(sp, ThornsOnHitPower.class, cfg -> {
+-                    attacker.hurt(sp.damageSources().thorns(sp), cfg.damage());
++                    hurtNextTick(sp, attacker, sp.damageSources().thorns(sp), cfg.damage());
+                     if (cfg.fireTicks() > 0) attacker.setRemainingFireTicks(cfg.fireTicks());
+                 });
+             }
+         }
+     }
+ 
++    /**
++     * Diaithir patch: reflect damage must not kill an entity while this handler runs, because the attacker can itself be
++     * inside its own LivingDamageEvent.Pre (a wrapped spell hit); NeoForge then throws "It is invalid to have killed an
++     * entity during LivingDamageEvent.Pre". The hurt is applied on the owner's next tick instead.
++     */
++    public static void hurtNextTick(net.minecraft.server.level.ServerPlayer owner, LivingEntity target,
++                                    net.minecraft.world.damagesource.DamageSource src, float amount) {
++        var server = owner.level().getServer();
++        if (server == null) { target.hurt(src, amount); return; }
++        com.cyberday1.neoorigins.compat.CompatTickScheduler.schedule(server.getTickCount() + 1, owner, p -> {
++            if (target.isAlive()) target.hurt(src, amount);
++        });
++    }
++
+     /**
+      * Matches a DamageSource against a damage-type filter string. Supports both
+      * the vanilla msgId string ({@code "onFire"}, {@code "lava"}) for backwards
