@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-food-6/pack.toml
+https://raw.githubusercontent.com/GeddyLifeson/diaithir-ports/refs/heads/claude/pack-latest/pack.toml
