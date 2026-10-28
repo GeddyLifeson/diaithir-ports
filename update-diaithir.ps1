@@ -129,6 +129,58 @@ try {
     }
     if ($code -ne 0) { throw "The pack installer stopped with code $code. See the lines above." }
 
+    # 7. Map keybinds: M opens the Atlas, so unbind the FTB Chunks map keys.
+    $opt = Join-Path $mc 'options.txt'
+    $want = [ordered]@{
+        'key_key.ftbchunks.keys.map'              = 'key.keyboard.unknown'
+        'key_key.ftbchunks.keys.claim_manager'    = 'key.keyboard.unknown'
+        'key_key.ftbchunks.keys.add_waypoint'     = 'key.keyboard.unknown'
+        'key_key.ftbchunks.keys.waypoint_manager' = 'key.keyboard.unknown'
+    }
+    $optLines = @()
+    if (Test-Path $opt) { $optLines = @(Get-Content $opt) }
+    $kept = @($optLines | Where-Object {
+        $line = $_
+        -not ($want.Keys | Where-Object { $line.StartsWith($_ + ':') })
+    })
+    foreach ($k in $want.Keys) { $kept += ($k + ':' + $want[$k]) }
+    [IO.File]::WriteAllLines($opt, $kept, (New-Object Text.UTF8Encoding($false)))
+    Write-Host 'Keybinds set (FTB Chunks map keys unbound).'
+
+    # 8. Bring the server mods folder in line with the pack (removes JourneyMap and MapFrontiers).
+    $srv = 'C:\DiaithirServer'
+    if (Test-Path (Join-Path $srv 'mods')) {
+        $srvRunning = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
+            $_.Name -match '^java' -and $_.CommandLine -and $_.CommandLine -like '*DiaithirServer*'
+        })
+        if ($srvRunning.Count -gt 0) {
+            Write-Host 'The Diaithir server is running, so its mods were NOT changed. Stop the server and run this again.'
+        } else {
+            Write-Host ''
+            Write-Host 'Syncing the server mods to the pack...'
+            Copy-Item -Path $boot -Destination (Join-Path $srv 'packwiz-installer-bootstrap.jar') -Force
+            Push-Location $srv
+            try {
+                & $java -jar 'packwiz-installer-bootstrap.jar' -g -s server $packUrl
+                $scode = $LASTEXITCODE
+            } finally {
+                Pop-Location
+            }
+            if ($scode -ne 0) { throw "The server sync stopped with code $scode. See the lines above." }
+            $old = Join-Path $srv 'mods\_removed'
+            $left = @(Get-ChildItem -Path (Join-Path $srv 'mods') -Filter '*.jar' -ErrorAction SilentlyContinue |
+                Where-Object { $_.Name -match '(?i)journeymap|mapfrontiers' })
+            if ($left.Count -gt 0) {
+                New-Item -ItemType Directory -Path $old -Force | Out-Null
+                foreach ($f in $left) { Move-Item -Path $f.FullName -Destination $old -Force }
+                Write-Host "Moved $($left.Count) map mod jar(s) to mods\_removed."
+            }
+            Write-Host 'Server mods are in line with the pack.'
+        }
+    } else {
+        Write-Host 'No C:\DiaithirServer\mods here, server sync skipped.'
+    }
+
     $mods = @(Get-ChildItem -Path (Join-Path $mc 'mods') -Filter '*.jar' -ErrorAction SilentlyContinue).Count
     Write-Host ''
     Write-Host "Done. $mods mods installed. Start Diaithir from Prism."
