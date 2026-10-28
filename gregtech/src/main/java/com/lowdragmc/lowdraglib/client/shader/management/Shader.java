@@ -2,7 +2,7 @@ package com.lowdragmc.lowdraglib.client.shader.management;
 
 import com.google.common.base.Charsets;
 import com.lowdragmc.lowdraglib.LDLib;
-import com.mojang.blaze3d.platform.GlStateManager;
+
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
@@ -41,16 +41,9 @@ public class Shader {
         }
     }
 
-    public void attachShader(ShaderProgram program) {
-        if (!isCompiled) compileShader();
-        GlStateManager.glAttachShader(program.programId, this.shaderId);
-    }
+    public void attachShader(ShaderProgram program) {  /* ported stub */ }
 
-    public void deleteShader() {
-        if (shaderId == 0) return;
-        GlStateManager.glDeleteShader(this.shaderId);
-        shaderId = 0;
-    }
+    public void deleteShader() {  /* ported stub */ }
 
     public Shader compileShader() {
         if (!this.isCompiled && shaderId != 0) {

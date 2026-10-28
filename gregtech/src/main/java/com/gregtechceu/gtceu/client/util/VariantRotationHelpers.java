@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.client.util;
 
 import net.minecraft.world.entity.animal.equine.Variant;
-import net.minecraft.client.renderer.block.dispatch.Variant;
+
 import net.minecraft.client.renderer.block.dispatch.BlockModelRotation;
 import net.minecraft.util.Mth;
 

@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.item.behavior;
 
+import net.minecraft.world.InteractionResult;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
@@ -58,7 +60,7 @@ import io.netty.buffer.ByteBuf;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.jetbrains.annotations.NotNull;
 import oshi.util.tuples.Triplet;
-import top.theillusivec4.curios.api.CuriosApi;
+
 
 import java.util.*;
 

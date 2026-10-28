@@ -1,5 +1,11 @@
 package com.gregtechceu.gtceu.api.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorMaterial;
+
+import net.minecraft.world.InteractionResult;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
 import com.gregtechceu.gtceu.api.item.component.ElectricStats;
@@ -32,9 +38,9 @@ public abstract class ArmorLogicSuite implements IArmorLogic, IItemHUDProvider {
     protected final int energyPerUse;
     protected final int tier;
     protected final long maxCapacity;
-    protected final ArmorItem.Type type;
+    protected final ArmorType type;
 
-    protected ArmorLogicSuite(int energyPerUse, long maxCapacity, int tier, ArmorItem.Type type) {
+    protected ArmorLogicSuite(int energyPerUse, long maxCapacity, int tier, ArmorType type) {
         this.energyPerUse = energyPerUse;
         this.maxCapacity = maxCapacity;
         this.tier = tier;
@@ -108,16 +114,9 @@ public abstract class ArmorLogicSuite implements IArmorLogic, IItemHUDProvider {
     }
 
     @Override
-    public ArmorItem.Type getArmorType() {
+    public ArmorType getArmorType() {
         return type;
-    }
-
-    @Nullable
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                            EquipmentSlot slot, ArmorMaterial.Layer layer) {
-        return null;
-    }
+    }/* ported: removed */
 
     public double getDamageAbsorption() {
         return 0;
@@ -136,7 +135,7 @@ public abstract class ArmorLogicSuite implements IArmorLogic, IItemHUDProvider {
     @OnlyIn(Dist.CLIENT)
     @Override
     public boolean shouldDrawHUD() {
-        return this.type == ArmorItem.Type.CHESTPLATE;
+        return this.type == ArmorType.CHESTPLATE;
     }
 
     public int getEnergyPerUse() {

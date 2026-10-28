@@ -3,9 +3,9 @@ package com.gregtechceu.gtceu.client.renderer.cover;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
-import com.gregtechceu.gtceu.client.model.BaseBakedModel;
-import com.gregtechceu.gtceu.client.model.ItemBakedModel;
-import com.gregtechceu.gtceu.client.model.TextureOverrideModel;
+
+
+
 import com.gregtechceu.gtceu.client.util.FacadeBlockAndTintGetter;
 import com.gregtechceu.gtceu.client.util.GTQuadTransformers;
 import com.gregtechceu.gtceu.client.util.StaticFaceBakery;
@@ -13,24 +13,24 @@ import com.gregtechceu.gtceu.common.cover.FacadeCover;
 import com.gregtechceu.gtceu.common.item.behavior.FacadeItemBehaviour;
 import com.gregtechceu.gtceu.utils.GTUtil;
 
-import com.lowdragmc.lowdraglib.client.bakedpipeline.FaceQuad;
+
 
 import net.minecraft.util.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.resources.model.geometry.BakedQuad;
-import net.minecraft.client.renderer.block.model.ItemOverrides;
+
 import net.minecraft.client.resources.model.cuboid.ItemTransforms;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.BakedModel;
+
 import net.minecraft.client.renderer.block.dispatch.BlockModelRotation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -65,18 +65,9 @@ public class FacadeCoverRenderer extends BaseBakedModel implements ICoverRendere
         }
     });
 
-    public static final FacadeCoverRenderer INSTANCE = new FacadeCoverRenderer();
-    private static final Int2ObjectMap<ItemBakedModel> CACHE = new Int2ObjectArrayMap<>();
+    public static final FacadeCoverRenderer INSTANCE = new FacadeCoverRenderer();/* ported: removed *//* ported: removed */
 
-    @OnlyIn(Dist.CLIENT)
-    private @Nullable BakedModel defaultItemModel;
-
-    private FacadeCoverRenderer() {}
-
-    @OnlyIn(Dist.CLIENT)
-    public FacadeCoverRenderer(@Nullable BakedModel defaultItemModel) {
-        this.defaultItemModel = defaultItemModel;
-    }
+    private FacadeCoverRenderer() {}/* ported: removed */
 
     public static void clearItemModelCache() {
         CACHE.clear();
@@ -91,44 +82,7 @@ public class FacadeCoverRenderer extends BaseBakedModel implements ICoverRendere
             return defaultItemModel.getQuads(state, side, rand, extraData, renderType);
         }
         return Collections.emptyList();
-    }
-
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public @NotNull List<BakedModel> getRenderPasses(ItemStack stack, boolean fabulous) {
-        if (!(stack.getItem() instanceof ComponentItem)) {
-            return Collections.singletonList(this);
-        }
-        var mc = Minecraft.getInstance();
-        if (mc.level == null) {
-            return Collections.singletonList(this);
-        }
-        BlockState facadeState = FacadeItemBehaviour.getFacadeStateNullable(stack);
-        if (facadeState == null) {
-            return Collections.singletonList(this);
-        }
-
-        int hash = facadeState.hashCode();
-        ItemBakedModel model = CACHE.computeIfAbsent(hash, $ -> new ItemBakedModel() {
-
-            private final FacadeBlockAndTintGetter level = new FacadeBlockAndTintGetter(mc.level,
-                    BlockPos.ZERO, facadeState, null);
-
-            @Override
-            public @NotNull List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side,
-                                                     @NotNull RandomSource rand) {
-                return getQuads(state, side, rand, ModelData.EMPTY, null);
-            }
-
-            @Override
-            public @NotNull List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side,
-                                                     @NotNull RandomSource rand, @NotNull ModelData extraData,
-                                                     @Nullable RenderType renderType) {
-                return getFacadeQuads(facadeState, level, rand, extraData, renderType);
-            }
-        });
-        return Collections.singletonList(model);
-    }
+    }/* ported: removed */
 
     @OnlyIn(Dist.CLIENT)
     public List<BakedQuad> getFacadeQuads(BlockState state, BlockAndTintGetter level, @NotNull RandomSource rand,
@@ -236,16 +190,7 @@ public class FacadeCoverRenderer extends BaseBakedModel implements ICoverRendere
             return defaultItemModel.getParticleIcon(modelData);
         }
         return super.getParticleIcon();
-    }
-
-    @Override
-    public @NotNull BakedModel applyTransform(@NotNull ItemDisplayContext transformType,
-                                              @NotNull PoseStack poseStack, boolean leftHand) {
-        if (defaultItemModel != null) {
-            defaultItemModel.applyTransform(transformType, poseStack, leftHand);
-        }
-        return this;
-    }
+    }/* ported: removed */
 
     @SuppressWarnings("deprecation")
     @Override
@@ -254,13 +199,5 @@ public class FacadeCoverRenderer extends BaseBakedModel implements ICoverRendere
             return defaultItemModel.getTransforms();
         }
         return super.getTransforms();
-    }
-
-    @Override
-    public @NotNull ItemOverrides getOverrides() {
-        if (defaultItemModel != null) {
-            return defaultItemModel.getOverrides();
-        }
-        return super.getOverrides();
-    }
+    }/* ported: removed */
 }

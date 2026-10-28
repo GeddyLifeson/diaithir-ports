@@ -6,10 +6,10 @@ import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 import com.gregtechceu.gtceu.api.gui.texture.ProspectingTexture;
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.common.item.behavior.ProspectorScannerBehavior;
-import com.gregtechceu.gtceu.integration.map.WaypointManager;
-import com.gregtechceu.gtceu.integration.map.cache.client.GTClientCache;
-import com.gregtechceu.gtceu.integration.map.cache.server.ServerCache;
-import com.gregtechceu.gtceu.integration.map.layer.builtin.OreRenderLayer;
+
+
+
+
 
 import com.lowdragmc.lowdraglib.gui.editor.ColorPattern;
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;

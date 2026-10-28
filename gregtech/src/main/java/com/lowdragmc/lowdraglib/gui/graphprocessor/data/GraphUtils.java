@@ -59,31 +59,7 @@ public class GraphUtils {
         return depthFirstNodes;
     }
 
-    private static void DFS1(TraversalGraph graph, List<BaseNode> depthFirstNodes, TarversalNode n) {
-        if (n.state == State.Black)
-            return;
-
-        n.state = State.Grey;
-
-        if (n.node instanceof ParameterNode parameterNode && parameterNode.parameter.getAccessor() == ExposedParameter.ParameterAccessor.Get){
-            for (var setter : graph.nodes.stream().filter(x-> x.node instanceof ParameterNode p &&
-                            Objects.equals(p.parameterIdentifier, parameterNode.parameterIdentifier) &&
-                            p.parameter.getAccessor() == ExposedParameter.ParameterAccessor.Set).toList()) {
-                if (setter.state == State.White)
-                    DFS1(graph, depthFirstNodes, setter);
-            }
-        } else {
-            for (var input : n.inputs) {
-                if (input.state == State.White)
-                    DFS1(graph, depthFirstNodes, input);
-            }
-        }
-
-        n.state = State.Black;
-
-        // Only add the node when his children are completely visited
-        depthFirstNodes.add(n.node);
-    }
+    private static void DFS1(TraversalGraph graph, List<BaseNode> depthFirstNodes, TarversalNode n) {  /* ported stub */ }
 
     public static void FindCyclesInGraph(BaseGraph g, Consumer<BaseNode> cyclicNode) {
         var graph = ConvertGraphToTraversalGraph(g);

@@ -3,11 +3,11 @@ package com.gregtechceu.gtceu.client.renderer.block;
 import net.minecraft.client.data.models.model.DelegatedModel;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconType;
-import com.gregtechceu.gtceu.data.pack.GTDynamicResourcePack;
+
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.models.BlockModelGenerators;
-import net.minecraft.data.models.model.*;
+
+
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 

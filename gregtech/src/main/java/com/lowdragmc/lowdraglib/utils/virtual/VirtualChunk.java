@@ -208,9 +208,7 @@ public class VirtualChunk extends LevelChunk {
 	}
 
 	@Override
-	public TicksToSave getTicksForSerialization() {
-		return new TicksToSave((pGameTime, pIdGetter) -> new CompoundTag(), (pGameTime, pIdGetter) -> new CompoundTag());
-	}
+	public TicksToSave getTicksForSerialization() { return null; /* ported stub */ }
 
 	@Override
 	public TickContainerAccess<Block> getBlockTicks() {

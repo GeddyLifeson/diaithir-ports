@@ -1,8 +1,10 @@
 package com.gregtechceu.gtceu.api.transfer.fluid;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 

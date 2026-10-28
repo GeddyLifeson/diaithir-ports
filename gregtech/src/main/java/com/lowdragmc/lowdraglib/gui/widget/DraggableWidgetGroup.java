@@ -82,12 +82,7 @@ public class DraggableWidgetGroup extends WidgetGroup implements DraggableScroll
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        if (isSelected && selectedTexture != null) {
-            selectedTexture.draw(graphics, mouseX, mouseY, getPosition().x, getPosition().y, getSize().width, getSize().height);
-        }
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     public boolean allowSelected(double mouseX, double mouseY, int button) {

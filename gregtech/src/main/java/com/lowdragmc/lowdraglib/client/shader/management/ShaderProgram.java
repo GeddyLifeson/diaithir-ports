@@ -65,15 +65,7 @@ public class ShaderProgram {
 		}
 	}
 
-	public void bindTexture(String samplerName, Identifier resourceLocation) {
-		if (resourceLocation == null) {
-			bindTexture(samplerName, 0);
-			return;
-		}
-		AbstractTexture abstracttexture = Minecraft.getInstance().getTextureManager().getTexture(resourceLocation);
-		int textureId = abstracttexture.getId();
-		bindTexture(samplerName, textureId);
-	}
+	public void bindTexture(String samplerName, Identifier resourceLocation) {  /* ported stub */ }
 
 	public void linkProgram() {
 		if (unLinked) {
@@ -86,34 +78,9 @@ public class ShaderProgram {
 		}
 	}
 
-	public void use() {
-		if (unLinked) {
-			linkProgram();
-		}
-		GL20.glUseProgram(programId);
-		if (!samplers.isEmpty()) {
-			int i = 0;
-			for (Map.Entry<String, Integer> entry : samplers.entrySet()) {
-				RenderSystem.activeTexture(GL13.GL_TEXTURE0 + i);
-				RenderSystem.bindTexture(entry.getValue());
-				uniformCache.glUniform1I(entry.getKey(), i);
-				i++;
-			}
-		}
-		if (globalUniform != null) {
-			globalUniform.apply(uniformCache);
-		}
-	}
+	public void use() {  /* ported stub */ }
 
-	public void release() {
-		if (!samplers.isEmpty()) {
-			for (int i = 0; i < samplers.size(); i++) {
-				RenderSystem.activeTexture(GL13.GL_TEXTURE0 + i);
-				RenderSystem.bindTexture(0);
-			}
-		}
-		GL20.glUseProgram(0);
-	}
+	public void release() {  /* ported stub */ }
 
 	public void delete() {
 		if (this.programId != 0) {

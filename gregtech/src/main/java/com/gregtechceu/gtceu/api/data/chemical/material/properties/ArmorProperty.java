@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.data.chemical.material.properties;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -15,7 +17,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -32,12 +34,12 @@ import java.util.function.Supplier;
 // TODO document
 public class ArmorProperty implements IMaterialProperty {
 
-    private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(
-            new EnumMap<>(ArmorItem.Type.class), (map) -> {
-                map.put(ArmorItem.Type.BOOTS, 13);
-                map.put(ArmorItem.Type.LEGGINGS, 15);
-                map.put(ArmorItem.Type.CHESTPLATE, 16);
-                map.put(ArmorItem.Type.HELMET, 11);
+    private static final EnumMap<ArmorType, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(
+            new EnumMap<>(ArmorType.class), (map) -> {
+                map.put(ArmorType.BOOTS, 13);
+                map.put(ArmorType.LEGGINGS, 15);
+                map.put(ArmorType.CHESTPLATE, 16);
+                map.put(ArmorType.HELMET, 11);
             });
 
     @Getter
@@ -45,7 +47,7 @@ public class ArmorProperty implements IMaterialProperty {
     @Range(from = 0, to = Integer.MAX_VALUE)
     private int durabilityMultiplier;
     @Setter
-    private Map<ArmorItem.Type, Integer> protectionValues;
+    private Map<ArmorType, Integer> protectionValues;
     @Setter
     private int enchantability;
     @Setter
@@ -67,11 +69,7 @@ public class ArmorProperty implements IMaterialProperty {
 
     @Getter
     @Setter
-    private boolean dyeable;
-
-    @Getter
-    @Setter
-    private List<ArmorMaterial.Layer> layers = null;
+    private boolean dyeable;/* ported: removed */
 
     @Getter
     private Holder<ArmorMaterial> armorMaterial;
@@ -79,9 +77,9 @@ public class ArmorProperty implements IMaterialProperty {
 
     public ArmorProperty(int durabilityMultiplier, int[] protectionValues) {
         this.durabilityMultiplier = durabilityMultiplier;
-        this.protectionValues = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        this.protectionValues = Util.make(new EnumMap<>(ArmorType.class), map -> {
             for (int i = 0; i < 4; i++) {
-                map.put(ArmorItem.Type.values()[i], protectionValues[i]);
+                map.put(ArmorType.values()[i], protectionValues[i]);
             }
         });
         this.sound = SoundEvents.ARMOR_EQUIP_IRON;
@@ -158,7 +156,7 @@ public class ArmorProperty implements IMaterialProperty {
         /**
          * Set the protection value for a specific piece of armor made from this Material.
          */
-        public ArmorProperty.Builder protectionValue(ArmorItem.Type type, int value) {
+        public ArmorProperty.Builder protectionValue(ArmorType type, int value) {
             armorProperty.protectionValues.put(type, value);
             return this;
         }
@@ -168,7 +166,7 @@ public class ArmorProperty implements IMaterialProperty {
          *
          * @throws IllegalArgumentException If the provided map does not have a value for all 4 armor pieces.
          */
-        public ArmorProperty.Builder protectionValues(Map<ArmorItem.Type, Integer> protectionValues) {
+        public ArmorProperty.Builder protectionValues(Map<ArmorType, Integer> protectionValues) {
             Preconditions.checkArgument(protectionValues != null && protectionValues.size() == 4,
                     "protectionValues must have 4 entries!");
             armorProperty.protectionValues = protectionValues;
@@ -214,16 +212,7 @@ public class ArmorProperty implements IMaterialProperty {
         public ArmorProperty.Builder dyeable(boolean dyeable) {
             armorProperty.dyeable = dyeable;
             return this;
-        }
-
-        public ArmorProperty.Builder layers(ArmorMaterial.Layer... layers) {
-            return layers(Arrays.asList(layers));
-        }
-
-        public ArmorProperty.Builder layers(List<ArmorMaterial.Layer> layers) {
-            armorProperty.layers = layers;
-            return this;
-        }
+        }/* ported: removed *//* ported: removed */
 
         /**
          * Set a custom worn armor texture for armor made of this Material.

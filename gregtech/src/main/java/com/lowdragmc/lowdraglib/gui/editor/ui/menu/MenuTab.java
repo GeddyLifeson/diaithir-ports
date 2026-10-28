@@ -46,23 +46,7 @@ public abstract class MenuTab implements ILDLRegister {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public Widget createTabWidget() {
-        int width = Minecraft.getInstance().font.width(LocalizationUtils.format(getTranslateKey()));
-        var button = new ButtonWidget(0, 0, width + 6, 16, new TextTexture(getTranslateKey()), null)
-                .setHoverTexture(ColorPattern.T_WHITE.rectTexture(), new TextTexture(getTranslateKey()));
-        button.setOnPressCallback(cd -> {
-            var pos = button.getPosition();
-            var view = createMenu();
-            if (view != null) {
-                var currentProject = editor.getCurrentProject();
-                if (currentProject != null) {
-                    currentProject.attachMenu(editor, this.name(), view);
-                }
-                editor.openMenu(pos.x, pos.y + 14, appendMenu(view));
-            }
-        });
-        return button.setClientSideWidget();
-    }
+    public Widget createTabWidget() { return null; /* ported stub */ }
 
     public CompoundTag serializeNBT() {
         return new CompoundTag();

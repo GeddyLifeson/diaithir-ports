@@ -22,7 +22,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import dev.latvian.mods.kubejs.recipe.ingredientaction.IngredientActionHolder;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.DecoderException;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +33,7 @@ import java.util.function.Function;
 import static com.gregtechceu.gtceu.utils.codec.GTCodecUtils.quietExceptionCodec;
 
 @SuppressWarnings("DataFlowIssue")
-public class GTRecipeSerializer implements RecipeSerializer<GTRecipe> {
+public class GTRecipeSerializer {
 
     // spotless:off
     public static final Codec<GTRecipeType> GT_RECIPE_TYPE_CODEC = BuiltInRegistries.RECIPE_TYPE.byNameCodec()

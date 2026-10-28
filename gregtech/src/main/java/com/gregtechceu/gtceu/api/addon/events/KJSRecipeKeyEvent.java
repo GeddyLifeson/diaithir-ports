@@ -1,8 +1,8 @@
 package com.gregtechceu.gtceu.api.addon.events;
 
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
-import com.gregtechceu.gtceu.integration.kjs.recipe.components.ContentJS;
-import com.gregtechceu.gtceu.integration.kjs.recipe.components.GTRecipeComponents;
+
+
 
 import lombok.Getter;
 

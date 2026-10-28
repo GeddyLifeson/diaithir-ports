@@ -7,7 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;

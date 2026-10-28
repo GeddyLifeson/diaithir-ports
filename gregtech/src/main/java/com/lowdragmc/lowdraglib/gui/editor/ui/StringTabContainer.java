@@ -101,63 +101,7 @@ public class StringTabContainer extends TabContainer {
         calculateTabSize();
     }
 
-    public void addTab(@Nullable IGuiTexture icon, String name, WidgetGroup group, @Nullable Runnable onSelected, @Nullable Runnable onDeselected, @Nullable Runnable onRemoved) {
-        var nameTexture = new TextTexture(name).setType(TextTexture.TextType.ROLL);
-        var tabButton = new TabButton(0, 0, 60, TAB_HEIGHT - 2) {
-            @Override
-            @OnlyIn(Dist.CLIENT)
-            public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-                super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-                var position = getPosition();
-                var size = getSize();
-                if (icon != null) {
-                    icon.draw(graphics, mouseX, mouseY, position.x + 2, position.y + 2, 12, 12);
-                }
-                var textWidth = size.width - (icon == null ? 0 : 16) - (onRemoved == null ? 0 : 16);
-                if (textWidth != nameTexture.width) {
-                    nameTexture.setWidth(textWidth);
-                }
-                nameTexture.draw(graphics, mouseX, mouseY, position.x + (icon == null ? 0 : 16), position.y, textWidth, size.height);
-                if (onRemoved != null) {
-                    if (isMouseOver(position.x + size.width - 16, position.y, 12, 12, mouseX, mouseY)) {
-                        Icons.REMOVE.copy().setColor(ColorPattern.GREEN.color).draw(graphics, mouseX, mouseY, position.x + size.width - 16, position.y, 12, 12);
-                    } else {
-                        Icons.REMOVE.draw(graphics, mouseX, mouseY, position.x + size.width - 16, position.y, 12, 12);
-                    }
-                }
-            }
-
-            @Override
-            @OnlyIn(Dist.CLIENT)
-            public boolean mouseClicked(double mouseX, double mouseY, int button) {
-                if (onRemoved != null) {
-                    var position = getPosition();
-                    var size = getSize();
-                    if (isMouseOver(position.x + size.width - 16, position.y, 12, 12, mouseX, mouseY)) {
-                        onRemoved.run();
-                        removeTab(this);
-                        calculateTabSize();
-                        return true;
-                    }
-                }
-                return super.mouseClicked(mouseX, mouseY, button);
-            }
-        };
-        tabButton.setTexture(
-                new GuiTextureGroup(ColorPattern.T_GRAY.rectTexture()),
-                new GuiTextureGroup(ColorPattern.T_RED.rectTexture()));
-        if (onSelected != null) {
-            this.onSelected.put(group, onSelected);
-        }
-        if (onDeselected != null) {
-            this.onDeselected.put(group, onDeselected);
-        }
-        addTab(tabButton, group);
-        if (this.focus == group && onSelected != null) {
-            onSelected.run();
-        }
-        calculateTabSize();
-    }
+    public void addTab(@Nullable IGuiTexture icon, String name, WidgetGroup group, @Nullable Runnable onSelected, @Nullable Runnable onDeselected, @Nullable Runnable onRemoved) {  /* ported stub */ }
 
     public void addTab(String name, WidgetGroup group, @Nullable Runnable onSelected, @Nullable Runnable onDeselected) {
         this.addTab(null, name, group, onSelected, onDeselected, null);
@@ -171,14 +115,5 @@ public class StringTabContainer extends TabContainer {
         this.addTab(name, group, null, null);
     }
 
-    public void calculateTabSize() {
-        int tabWidth = (getSize().getWidth() - 1 - tabs.size()) / this.tabs.size();
-        int x = 1;
-        int y = editor.getMenuPanel().getSize().height + 1;
-        for (var tabButton : this.tabs.keySet()) {
-            tabButton.setSelfPosition(new Position(x, y));
-            tabButton.setSize(new Size(tabWidth, TAB_HEIGHT - 2));
-            x += tabWidth + 1;
-        }
-    }
+    public void calculateTabSize() {  /* ported stub */ }
 }

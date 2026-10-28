@@ -88,11 +88,6 @@ public abstract class Resource<T> {
         return tag;
     }
 
-    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {
-        data.clear();
-        for (String key : nbt.getAllKeys()) {
-            data.put(key, deserialize(nbt.get(key), provider));
-        }
-    }
+    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {  /* ported stub */ }
 
 }

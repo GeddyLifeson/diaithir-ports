@@ -1,17 +1,17 @@
 package com.lowdragmc.lowdraglib;
 
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import com.lowdragmc.lowdraglib.gui.factory.*;
-import com.lowdragmc.lowdraglib.kjs.ui.BlockUIJSFactory;
-import com.lowdragmc.lowdraglib.kjs.ui.ItemUIJSFactory;
+
+
 import com.lowdragmc.lowdraglib.networking.LDLNetworking;
-import com.lowdragmc.lowdraglib.plugin.ILDLibPlugin;
-import com.lowdragmc.lowdraglib.plugin.LDLibPlugin;
+
+
 import com.lowdragmc.lowdraglib.syncdata.TypedPayloadRegistries;
-import com.lowdragmc.lowdraglib.test.NoRendererTestBlock;
-import com.lowdragmc.lowdraglib.test.TestBlock;
-import com.lowdragmc.lowdraglib.test.TestBlockEntity;
-import com.lowdragmc.lowdraglib.test.TestItem;
+
+
+
+
 import com.lowdragmc.lowdraglib.utils.ReflectionUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BlockItem;

@@ -7,8 +7,8 @@ import com.gregtechceu.gtceu.common.valueprovider.FlooredInt;
 import com.gregtechceu.gtceu.common.valueprovider.MultipliedFloat;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.util.valueproviders.FloatProviderType;
-import net.minecraft.util.valueproviders.IntProviderType;
+
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;

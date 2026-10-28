@@ -167,26 +167,7 @@ public class RenderUtils {
         GL11.glDisable(GL11.GL_STENCIL_TEST);
     }
 
-    public static void renderBlockOverLay(@Nonnull PoseStack poseStack, BlockPos pos, float r, float g, float b, float scale) {
-        if (pos == null) return;
-        RenderSystem.enableBlend();
-        RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
-
-        poseStack.pushPose();
-        poseStack.translate((pos.getX() + 0.5), (pos.getY() + 0.5), (pos.getZ() + 0.5));
-        poseStack.scale(scale, scale, scale);
-
-        Tesselator tessellator = Tesselator.getInstance();
-        BufferBuilder buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        RenderSystem.setShader(GameRenderer::getPositionColorShader);
-        RenderUtils.renderCubeFace(poseStack, buffer, -0.5f, -0.5f, -0.5f, 0.5f, 0.5f, 0.5f, r, g, b, 1);
-        BufferUploader.drawWithShader(buffer.buildOrThrow());
-
-        poseStack.popPose();
-
-        RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
-    }
+    public static void renderBlockOverLay(@Nonnull PoseStack poseStack, BlockPos pos, float r, float g, float b, float scale) {  /* ported stub */ }
 
     public static void renderCubeFace(PoseStack poseStack, BufferBuilder buffer, float minX, float minY, float minZ, float maxX, float maxY, float maxZ, float r, float g, float b, float a) {
         Matrix4f mat = poseStack.last().pose();

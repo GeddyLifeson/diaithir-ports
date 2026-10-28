@@ -26,9 +26,9 @@ import com.gregtechceu.gtceu.client.renderer.ItemWithBERModelRenderer;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.data.model.builder.MachineModelBuilder;
 
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+
+
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -45,7 +45,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+
 
 import com.tterrag.registrate.AbstractRegistrate;
 import com.tterrag.registrate.builders.BlockBuilder;
@@ -56,9 +56,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
-import dev.latvian.mods.kubejs.registry.BuilderBase;
-import dev.latvian.mods.rhino.util.HideFromJS;
-import dev.latvian.mods.rhino.util.RemapPrefixForJS;
+
 import it.unimi.dsi.fastutil.objects.Reference2IntMap;
 import it.unimi.dsi.fastutil.objects.Reference2IntOpenHashMap;
 import lombok.Getter;
@@ -72,10 +70,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.*;
 
-import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
+
 
 @SuppressWarnings("unused")
-@RemapPrefixForJS("kjs$")
 @Accessors(chain = true, fluent = true)
 public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends MachineBuilder<DEFINITION, TYPE>>
                            extends BuilderBase<DEFINITION> {
@@ -619,8 +616,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
         definition.registerDefaultState(defaultState);
     }
 
-    @HideFromJS
-    public DEFINITION register() {
+        public DEFINITION register() {
         this.registrate.object(name);
         var definition = createDefinition();
 
@@ -706,15 +702,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                 this.configureModel(ctx, prov, builder);
                 after.configureModel(ctx, prov, builder);
             };
-        }
-
-        default ModelInitializer andThen(Consumer<MachineModelBuilder<BlockModelBuilder>> after) {
-            Objects.requireNonNull(after);
-            return (ctx, prov, builder) -> {
-                this.configureModel(ctx, prov, builder);
-                after.accept(builder);
-            };
-        }
+        }/* ported: removed */
 
         default ModelInitializer compose(ModelInitializer before) {
             Objects.requireNonNull(before);
@@ -722,12 +710,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                 before.configureModel(ctx, prov, builder);
                 this.configureModel(ctx, prov, builder);
             };
-        }
-
-        default ModelInitializer compose(UnaryOperator<MachineModelBuilder<BlockModelBuilder>> before) {
-            Objects.requireNonNull(before);
-            return (ctx, prov, builder) -> this.configureModel(ctx, prov, before.apply(builder));
-        }
+        }/* ported: removed */
     }
 
     // spotless:off

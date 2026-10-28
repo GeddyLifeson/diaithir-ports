@@ -6,16 +6,16 @@ import com.lowdragmc.lowdraglib.client.utils.RenderUtils;
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
 import com.lowdragmc.lowdraglib.gui.util.DrawerHelper;
-import com.lowdragmc.lowdraglib.jei.JEIPlugin;
+
 import com.lowdragmc.lowdraglib.utils.BlockPosFace;
 import com.lowdragmc.lowdraglib.utils.TrackedDummyWorld;
 import com.lowdragmc.lowdraglib.utils.interpolate.Eases;
 import com.lowdragmc.lowdraglib.utils.interpolate.Interpolator;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
-import dev.emi.emi.api.stack.EmiStack;
+
 import lombok.Getter;
-import me.shedaniel.rei.api.common.util.EntryStacks;
+
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -171,16 +171,7 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @Override
-    public void setGui(ModularUI gui) {
-        super.setGui(gui);
-        if (gui == null) {
-            if (isInitialized()) {
-                releaseCacheBuffer();
-            }
-        } else {
-            gui.registerCloseListener(this::releaseCacheBuffer);
-        }
-    }
+    public void setGui(ModularUI gui) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -215,35 +206,7 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public final void createScene(Level world, boolean useFBOSceneRenderer) {
-        if (world == null) return;
-        core = new HashSet<>();
-        dummyWorld = new TrackedDummyWorld(world);
-        dummyWorld.setRenderFilter(pos -> renderer.renderedBlocksMap.keySet().stream().anyMatch(c -> c.contains(pos)));
-        if (renderer != null) {
-            renderer.deleteCacheBuffer();
-        }
-        if (useFBOSceneRenderer) {
-            renderer = new FBOWorldSceneRenderer(dummyWorld,1080, 1080);
-        } else {
-            renderer = new ImmediateWorldSceneRenderer(dummyWorld);
-        }
-        center = new Vector3f(0, 0, 0);
-        renderer.useOrtho(useOrtho);
-        renderer.setOnLookingAt(ray -> {});
-        renderer.setBeforeBatchEnd(this::renderBeforeBatchEnd);
-        renderer.setAfterWorldRender(this::renderBlockOverLay);
-        if (this.beforeWorldRender != null) {
-            renderer.setBeforeWorldRender(s -> beforeWorldRender.accept(this));
-        }
-        renderer.setCameraLookAt(center, camZoom(), Math.toRadians(rotationPitch), Math.toRadians(rotationYaw));
-        renderer.useCacheBuffer(useCache);
-        renderer.setParticleManager(createParticleManager());
-        clickPosFace = null;
-        hoverPosFace = null;
-        hoverItem = null;
-        selectedPosFace = null;
-    }
+    public final void createScene(Level world, boolean useFBOSceneRenderer) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public WorldSceneRenderer getRenderer() {
@@ -342,60 +305,7 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void renderBlockOverLay(WorldSceneRenderer renderer) {
-        PoseStack poseStack = new PoseStack();
-        hoverPosFace = null;
-        hoverItem = null;
-        if (isMouseOverElement(currentMouseX, currentMouseY)) {
-            BlockHitResult hit = renderer.getLastTraceResult();
-            if (hit != null) {
-                if (core.contains(hit.getBlockPos())) {
-                    hoverPosFace = new BlockPosFace(hit.getBlockPos(), hit.getDirection());
-                } else if (!useOrtho) {
-                    Vector3f hitPos = hit.getLocation().toVector3f();
-                    Level world = renderer.world;
-                    Vec3 eyePos = new Vec3(renderer.getEyePos());
-                    hitPos.mul(2); // Double view range to ensure pos can be seen.
-                    Vec3 endPos = new Vec3((hitPos.x - eyePos.x), (hitPos.y - eyePos.y), (hitPos.z - eyePos.z));
-                    double min = Float.MAX_VALUE;
-                    for (BlockPos pos : core) {
-                        BlockState blockState = world.getBlockState(pos);
-                        if (blockState.getBlock() == Blocks.AIR) {
-                            continue;
-                        }
-                        hit = world.clipWithInteractionOverride(eyePos, endPos, pos, blockState.getShape(world, pos), blockState);
-                        if (hit != null && hit.getType() != HitResult.Type.MISS) {
-                            double dist = eyePos.distanceToSqr(hit.getLocation());
-                            if (dist < min) {
-                                min = dist;
-                                hoverPosFace = new BlockPosFace(hit.getBlockPos(), hit.getDirection());
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (hoverPosFace != null) {
-            var state = getDummyWorld().getBlockState(hoverPosFace.pos());
-            hoverItem = state.getBlock().getCloneItemStack(getDummyWorld(), hoverPosFace.pos(), state);
-        }
-        BlockPosFace tmp = dragging ? clickPosFace : hoverPosFace;
-        if (selectedPosFace != null || tmp != null) {
-            if (selectedPosFace != null && renderFacing) {
-                drawFacingBorder(poseStack, selectedPosFace, 0xff00ff00);
-            }
-            if (tmp != null && !tmp.equals(selectedPosFace) && renderFacing) {
-                drawFacingBorder(poseStack, tmp, 0xffffffff);
-            }
-        }
-        if (selectedPosFace != null && renderSelect) {
-            RenderUtils.renderBlockOverLay(poseStack, selectedPosFace.pos(), 0.6f, 0, 0, 1.01f);
-        }
-
-        if (this.afterWorldRender != null) {
-            this.afterWorldRender.accept(this);
-        }
-    }
+    public void renderBlockOverLay(WorldSceneRenderer renderer) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public void drawFacingBorder(PoseStack poseStack, BlockPosFace posFace, int color) {
@@ -403,17 +313,7 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawFacingBorder(PoseStack poseStack, BlockPosFace posFace, int color, int inner) {
-        poseStack.pushPose();
-        RenderSystem.disableDepthTest();
-        RenderUtils.moveToFace(poseStack, posFace.pos().getX(), posFace.pos().getY(), posFace.pos().getZ(), posFace.facing());
-        RenderUtils.rotateToFace(poseStack, posFace.facing(), null);
-        poseStack.scale(1f / 16, 1f / 16, 0);
-        poseStack.translate(-8, -8, 0);
-        drawBorder(poseStack, 1 + inner * 2, 1 + inner * 2, 14 - 4 * inner, 14 - 4 * inner, color, 1);
-        RenderSystem.enableDepthTest();
-        poseStack.popPose();
-    }
+    public void drawFacingBorder(PoseStack poseStack, BlockPosFace posFace, int color, int inner) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     private static void drawBorder(PoseStack poseStack, int x, int y, int width, int height, int color, int border) {
@@ -424,59 +324,13 @@ public class SceneWidget extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    private static void drawSolidRect(PoseStack poseStack, int x, int y, int width, int height, int color) {
-        fill(poseStack, x, y, x + width, y + height, 0, color);
-        RenderSystem.enableBlend();
-    }
+    private static void drawSolidRect(PoseStack poseStack, int x, int y, int width, int height, int color) {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
-    private static void fill(PoseStack matrices, int x1, int y1, int x2, int y2, int z, int color) {
-        Matrix4f matrix4f = matrices.last().pose();
-        int i;
-        if (x1 < x2) {
-            i = x1;
-            x1 = x2;
-            x2 = i;
-        }
-
-        if (y1 < y2) {
-            i = y1;
-            y1 = y2;
-            y2 = i;
-        }
-
-        float f = (float) ARGB.alpha(color) / 255.0F;
-        float g = (float) ARGB.red(color) / 255.0F;
-        float h = (float) ARGB.green(color) / 255.0F;
-        float j = (float) ARGB.blue(color) / 255.0F;
-        BufferBuilder bufferBuilder = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        RenderSystem.enableBlend();
-        RenderSystem.setShader(GameRenderer::getPositionColorShader);
-        bufferBuilder.addVertex(matrix4f, (float)x1, (float)y1, (float)z).setColor(g, h, j, f);
-        bufferBuilder.addVertex(matrix4f, (float)x1, (float)y2, (float)z).setColor(g, h, j, f);
-        bufferBuilder.addVertex(matrix4f, (float)x2, (float)y2, (float)z).setColor(g, h, j, f);
-        bufferBuilder.addVertex(matrix4f, (float)x2, (float)y1, (float)z).setColor(g, h, j, f);
-        BufferUploader.drawWithShader(bufferBuilder.buildOrThrow());
-        RenderSystem.disableBlend();
-    }
+    private static void fill(PoseStack matrices, int x1, int y1, int x2, int y2, int z, int color) {  /* ported stub */ }
 
     @Override
-    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) {
-        Object result = super.getXEIIngredientOverMouse(mouseX, mouseY);
-        if (result == null && hoverItem != null && !hoverItem.isEmpty()) {
-            if (LDLib.isJeiLoaded()) {
-                return JEIPlugin.getItemIngredient(hoverItem, (int) mouseX, (int) mouseY, 1, 1);
-            }
-            if (LDLib.isReiLoaded()) {
-                return EntryStacks.of(hoverItem);
-            }
-            if (LDLib.isEmiLoaded()) {
-                return EmiStack.of(hoverItem);
-            }
-            return hoverItem;
-        }
-        return result;
-    }
+    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
 
     @Override
     public void handleClientAction(int id, RegistryFriendlyByteBuf buffer) {
@@ -573,35 +427,7 @@ public class SceneWidget extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        // draw background
-        drawBackgroundTexture(graphics, mouseX, mouseY);
-
-        int x = getPosition().x;
-        int y = getPosition().y;
-        int width = getSize().width;
-        int height = getSize().height;
-        if (interpolator != null) {
-            interpolator.update(gui.getTickCount() + partialTicks);
-        }
-        if (renderer != null) {
-            renderer.render(graphics.pose(), x, y, width, height, mouseX, mouseY);
-            if (renderer.isCompiling()) {
-                double progress = renderer.getCompileProgress();
-                if (progress > 0) {
-                    new TextTexture("Renderer is compiling! " + String.format("%.1f", progress * 100) + "%%").setWidth(width).draw(graphics, mouseX, mouseY, x, y, width, height);
-                }
-            }
-        }
-
-        // draw widgets
-        RenderSystem.disableDepthTest();
-        RenderSystem.depthMask(false);
-        drawWidgetsBackground(graphics, mouseX, mouseY, partialTicks);
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-        currentMouseX = mouseX;
-        currentMouseY = mouseY;
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     public SceneWidget setCenter(Vector3f center) {
         this.center = center;
@@ -640,18 +466,6 @@ public class SceneWidget extends WidgetGroup {
     protected Interpolator interpolator;
     protected long startTick;
 
-    public void setCameraYawAndPitchAnima(float rotationYaw, float rotationPitch, int dur) {
-        if (interpolator != null) return ;
-        final float oRotationYaw = this.rotationYaw;
-        final float oRotationPitch = this.rotationPitch;
-        startTick = gui.getTickCount();
-        interpolator = new Interpolator(0, 1, dur, Eases.EaseQuadOut, value -> {
-            this.rotationYaw = (rotationYaw - oRotationYaw) * value.floatValue() + oRotationYaw;
-            this.rotationPitch = (rotationPitch - oRotationPitch) * value.floatValue() + oRotationPitch;
-            if (renderer != null) {
-                renderer.setCameraLookAt(this.center, camZoom(), Math.toRadians(this.rotationPitch), Math.toRadians(this.rotationYaw));
-            }
-        }, x -> interpolator = null);
-    }
+    public void setCameraYawAndPitchAnima(float rotationYaw, float rotationPitch, int dur) {  /* ported stub */ }
 
 }

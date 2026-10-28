@@ -2,13 +2,13 @@ package com.gregtechceu.gtceu.client.model.machine.overlays;
 
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status;
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
-import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
-import com.gregtechceu.gtceu.common.data.models.GTModels;
+
+
 import com.gregtechceu.gtceu.utils.data.RuntimeExistingFileHelper;
 
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
 
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
@@ -19,56 +19,7 @@ import java.util.*;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class WorkableOverlays {
-
-    public static WorkableOverlays get(Identifier textureDir, ExistingFileHelper fileHelper) {
-        if (fileHelper instanceof RuntimeExistingFileHelper runtimeFileHelper) {
-            // if fileHelper is an instance of RuntimeExistingFileHelper, we have to enable its existence checking.
-            // the AutoCloseable warning is suppressed here because there's no clean way to
-            // use a try-with-resources statement in this.
-            // noinspection resource
-            fileHelper = runtimeFileHelper.activeHelper();
-        }
-
-        WorkableOverlays model = new WorkableOverlays(textureDir);
-
-        for (OverlayFace overlayFace : OverlayFace.VALUES) {
-            final String overlayPath = "/" + GTMachineModels.OVERLAY_PREFIX + overlayFace.getName();
-
-            // normal
-            var normalSprite = textureDir.withSuffix(overlayPath);
-            if (!fileHelper.exists(normalSprite, GTBlockstateProvider.TEXTURE)) {
-                model.textures.put(overlayFace, StatusTextures.EMPTY);
-                continue;
-            }
-            Identifier activeSprite = normalSprite.withSuffix("_active");
-            if (!fileHelper.exists(activeSprite, GTBlockstateProvider.TEXTURE)) activeSprite = normalSprite;
-
-            Identifier pausedSprite = normalSprite.withSuffix("_paused");
-            if (!fileHelper.exists(pausedSprite, GTBlockstateProvider.TEXTURE)) pausedSprite = normalSprite;
-
-            // emissive
-            Identifier normalSpriteEmissive = normalSprite.withSuffix("_emissive");
-            if (!fileHelper.exists(normalSpriteEmissive, GTBlockstateProvider.TEXTURE)) normalSpriteEmissive = null;
-
-            Identifier activeSpriteEmissive = activeSprite.withSuffix("_emissive");
-            if (!fileHelper.exists(activeSpriteEmissive, GTBlockstateProvider.TEXTURE)) activeSpriteEmissive = null;
-
-            Identifier pausedSpriteEmissive = pausedSprite.withSuffix("_emissive");
-            if (!fileHelper.exists(pausedSpriteEmissive, GTBlockstateProvider.TEXTURE)) pausedSpriteEmissive = null;
-
-            model.textures.put(overlayFace, new StatusTextures(normalSprite, activeSprite, pausedSprite,
-                    normalSpriteEmissive, activeSpriteEmissive, pausedSpriteEmissive));
-        }
-
-        if (fileHelper instanceof RuntimeExistingFileHelper.Active activeHelper) {
-            // close the active helper, just for good measure.
-            // Also in case we ever make it do anything, this won't be forgotten.
-            activeHelper.close();
-        }
-
-        return model;
-    }
+public class WorkableOverlays {/* ported: removed */
 
     @Getter
     private final Identifier location;

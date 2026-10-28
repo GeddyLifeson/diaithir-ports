@@ -1,8 +1,10 @@
 package com.gregtechceu.gtceu.api.item;
 
+import com.gregtechceu.gtceu.compat.client.ItemColor;
+
 import com.gregtechceu.gtceu.api.block.MaterialPipeBlock;
 
-import net.minecraft.client.color.item.ItemColor;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;

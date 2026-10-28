@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.item.tool.behavior;
 
+import net.minecraft.world.InteractionResult;
+
 import com.gregtechceu.gtceu.api.item.IGTTool;
 import com.gregtechceu.gtceu.api.item.datacomponents.ToolBehaviors;
 import com.gregtechceu.gtceu.api.item.tool.ToolHelper;

@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
@@ -17,7 +19,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -35,7 +37,7 @@ public class Jetpack extends ArmorLogicSuite implements IJetpack {
     protected ArmorUtils.ModularHUD HUD;
 
     public Jetpack(int energyPerUse, long capacity, int tier) {
-        super(energyPerUse, capacity, tier, ArmorItem.Type.CHESTPLATE);
+        super(energyPerUse, capacity, tier, ArmorType.CHESTPLATE);
         if (GTCEu.isClientSide() && this.shouldDrawHUD()) {
             // noinspection NewExpressionSideOnly
             HUD = new ArmorUtils.ModularHUD();
@@ -101,18 +103,12 @@ public class Jetpack extends ArmorLogicSuite implements IJetpack {
     @Nullable
     private static IElectricItem getIElectricItem(@NotNull ItemStack stack) {
         return GTCapabilityHelper.getElectricItem(stack);
-    }
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                            EquipmentSlot slot, ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/jetpack.png");
-    }
+    }/* ported: removed */
 
     /*
      * @Override
      * public ArmorProperties getProperties(EntityLivingBase player, @NotNull ItemStack armor, DamageSource source,
-     * double damage, ArmorItem.Type equipmentSlot) {
+     * double damage, ArmorType equipmentSlot) {
      * return new ArmorProperties(0, 0, 0);
      * }
      */

@@ -15,7 +15,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+
 import net.minecraft.client.renderer.block.ModelBlockRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -23,7 +23,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -76,8 +76,7 @@ public abstract class WorldSceneRenderer {
     }
 
     public final Level world;
-    public final Map<Collection<BlockPos>, ISceneBlockRenderHook> renderedBlocksMap;
-    protected VertexBuffer[] vertexBuffers;
+    public final Map<Collection<BlockPos>, ISceneBlockRenderHook> renderedBlocksMap;/* ported: removed */
     protected Set<BlockPos> tileEntities;
     protected boolean useCache;
     @Getter @Setter
@@ -116,69 +115,20 @@ public abstract class WorldSceneRenderer {
         cacheState = new AtomicReference<>(CacheState.UNUSED);
     }
 
-    public WorldSceneRenderer setParticleManager(ParticleManager particleManager) {
-        if (particleManager == null) {
-            this.particleManager = null;
-            this.camera = null;
-            this.cameraEntity = null;
-            return this;
-        }
-        this.particleManager = particleManager;
-        if (this.world instanceof DummyWorld dummyWorld) {
-            dummyWorld.setParticleManager(particleManager);
-        }
-        this.particleManager.setLevel(world);
-        this.camera = new Camera();
-        this.cameraEntity = new CameraEntity(world);
-        setCameraLookAt(eyePos, lookAt, worldUp);
-        return this;
-    }
+    public WorldSceneRenderer setParticleManager(ParticleManager particleManager) { return null; /* ported stub */ }
 
     public ParticleManager getParticleManager() {
         return particleManager;
     }
 
-    public WorldSceneRenderer useCacheBuffer(boolean useCache) {
-        if (this.useCache || !Minecraft.getInstance().isSameThread()) return this;
-        deleteCacheBuffer();
-        if (useCache) {
-            List<RenderType> layers = RenderType.chunkBufferLayers();
-            this.vertexBuffers = new VertexBuffer[layers.size()];
-            for (int j = 0; j < layers.size(); ++j) {
-                this.vertexBuffers[j] = new VertexBuffer(VertexBuffer.Usage.STATIC);
-            }
-            if (cacheState.get() == CacheState.COMPILING && thread != null) {
-                thread.interrupt();
-                thread = null;
-            }
-            cacheState.set(CacheState.NEED);
-        }
-        this.useCache = useCache;
-        return this;
-    }
+    public WorldSceneRenderer useCacheBuffer(boolean useCache) { return null; /* ported stub */ }
 
     public WorldSceneRenderer useOrtho(boolean ortho) {
         this.ortho = ortho;
         return this;
     }
 
-    public WorldSceneRenderer deleteCacheBuffer() {
-        if (useCache) {
-            for (int i = 0; i < RenderType.chunkBufferLayers().size(); ++i) {
-                if (this.vertexBuffers[i] != null) {
-                    this.vertexBuffers[i].close();
-                }
-            }
-            if (cacheState.get() == CacheState.COMPILING && thread != null) {
-                thread.interrupt();
-                thread = null;
-            }
-        }
-        this.tileEntities = null;
-        useCache = false;
-        cacheState.set(CacheState.UNUSED);
-        return this;
-    }
+    public WorldSceneRenderer deleteCacheBuffer() { return null; /* ported stub */ }
 
     public WorldSceneRenderer needCompileCache() {
         if (cacheState.get() == CacheState.COMPILING && thread != null) {
@@ -334,156 +284,13 @@ public abstract class WorldSceneRenderer {
         return new PositionedRect(new Position(windowX, windowY), new Size(windowWidth, windowHeight));
     }
 
-    protected void setupCamera(PositionedRect viewport) {
-        int x = viewport.getPosition().x;
-        int y = viewport.getPosition().y;
-        int width = viewport.getSize().width;
-        int height = viewport.getSize().height;
+    protected void setupCamera(PositionedRect viewport) {  /* ported stub */ }
 
-        RenderSystem.enableDepthTest();
-        RenderSystem.enableBlend();
+    protected void clearView(int x, int y, int width, int height) {  /* ported stub */ }
 
-        //setup viewport and clear GL buffers
-        RenderSystem.viewport(x, y, width, height);
+    protected void resetCamera() {  /* ported stub */ }
 
-        RenderSystem.depthMask(true);
-        clearView(x, y, width, height);
-
-        //setup projection matrix to perspective
-        RenderSystem.backupProjectionMatrix();
-
-        float aspectRatio = width / (height * 1.0f);
-        if (ortho) {
-            RenderSystem.setProjectionMatrix(new Matrix4f().setOrtho(minX, maxX, minY / aspectRatio, maxY / aspectRatio, minZ, maxZ), VertexSorting.byDistance(camera.getPosition().toVector3f()));
-        } else {
-            RenderSystem.setProjectionMatrix(new Matrix4f().setPerspective(fov * 0.01745329238474369F, aspectRatio, 0.1f, 10000.0f), VertexSorting.byDistance(camera.getPosition().toVector3f()));
-        }
-
-        //setup modelview matrix
-        Matrix4fStack posesStack = RenderSystem.getModelViewStack();
-        posesStack.pushMatrix();
-        posesStack.identity();
-        Project.gluLookAt(posesStack, eyePos.x(), eyePos.y(), eyePos.z(), lookAt.x(), lookAt.y(), lookAt.z(), worldUp.x(), worldUp.y(), worldUp.z());
-        RenderSystem.applyModelViewMatrix();
-
-        RenderSystem.activeTexture(org.lwjgl.opengl.GL13.GL_TEXTURE0);
-
-        Minecraft mc = Minecraft.getInstance();
-        RenderSystem.enableCull();
-
-        if (camera != null) {
-            camera.setup(world, cameraEntity, false, false, mc.getTimer().getGameTimeDeltaPartialTick(false));
-        }
-        ShaderManager.getInstance().setViewPort(viewport);
-
-    }
-
-    protected void clearView(int x, int y, int width, int height) {
-        int i = (clearColor & 0xFF0000) >> 16;
-        int j = (clearColor & 0xFF00) >> 8;
-        int k = (clearColor & 0xFF);
-        RenderSystem.clearColor(i / 255.0f, j / 255.0f, k / 255.0f, (clearColor >> 24) / 255.0f);
-        RenderSystem.clear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT, Minecraft.ON_OSX);
-    }
-
-    protected void resetCamera() {
-        RenderSystem.clear(GL11.GL_DEPTH_BUFFER_BIT, Minecraft.ON_OSX);
-
-        //reset viewport
-        Minecraft minecraft = Minecraft.getInstance();
-        RenderSystem.viewport(0, 0, minecraft.getWindow().getWidth(), minecraft.getWindow().getHeight());
-
-        //reset projection matrix
-        RenderSystem.restoreProjectionMatrix();
-
-        //reset modelview matrix
-        Matrix4fStack posesStack = RenderSystem.getModelViewStack();
-        posesStack.popMatrix();
-        RenderSystem.applyModelViewMatrix();
-
-        RenderSystem.depthMask(false);
-        RenderSystem.disableDepthTest();
-        RenderSystem.enableBlend();
-        ShaderManager.getInstance().clearViewPort();
-
-    }
-
-    protected void drawWorld() {
-        if (beforeRender != null) {
-            beforeRender.accept(this);
-        }
-
-        Minecraft mc = Minecraft.getInstance();
-
-        float particleTicks = mc.getTimer().getGameTimeDeltaPartialTick(false);
-        var buffers = mc.renderBuffers().bufferSource();
-        if (useCache) {
-            renderCacheBuffer(mc, buffers, particleTicks);
-        } else {
-            BlockRenderDispatcher blockrendererdispatcher = mc.getBlockRenderer();
-            try { // render the blocks in each layer
-                renderedBlocksMap.forEach((renderedBlocks, hook) -> {
-                    for (RenderType layer : RenderType.chunkBufferLayers()) {
-                        layer.setupRenderState();
-                        Random random = new Random();
-                        PoseStack poseStack = new PoseStack();
-
-                        if (layer == RenderType.translucent()) { // render tesr before translucent
-                            if (hook != null) {
-                                hook.apply(true, layer);
-                            } else {
-                                setDefaultRenderLayerState(null);
-                            }
-
-                            renderTESR(renderedBlocks, poseStack, buffers, hook, particleTicks);
-
-                            if (hook != null || !endBatchLast) {
-                                buffers.endBatch();
-                            }
-                        }
-
-                        if (hook != null) {
-                            hook.apply(false, layer);
-                        } else {
-                            setDefaultRenderLayerState(layer);
-                        }
-
-                        var buffer = buffers.getBuffer(layer);
-
-                        renderBlocks(poseStack, blockrendererdispatcher, layer, new VertexConsumerWrapper(buffer), renderedBlocks, hook, particleTicks);
-
-                        if (!endBatchLast) {
-                            buffers.endBatch();
-                        }
-                        layer.clearRenderState();
-                    }
-                });
-            } finally {
-            }
-        }
-
-        if (world instanceof TrackedDummyWorld level) {
-            PoseStack poseStack = new PoseStack();
-            renderEntities(level, poseStack, buffers, sceneEntityRenderHook, particleTicks);
-        }
-
-        if (beforeBatchEnd != null) {
-            beforeBatchEnd.accept(buffers, particleTicks);
-        }
-
-        buffers.endBatch();
-
-        if (particleManager != null) {
-            @Nonnull PoseStack poseStack = new PoseStack();
-            poseStack.setIdentity();
-            poseStack.translate(cameraEntity.getX(), cameraEntity.getY(), cameraEntity.getZ());
-            particleManager.render(poseStack, camera, particleTicks);
-        }
-
-        if (afterRender != null) {
-            afterRender.accept(this);
-        }
-    }
+    protected void drawWorld() {  /* ported stub */ }
 
     public boolean isCompiling() {
         return cacheState.get() == CacheState.COMPILING;
@@ -496,252 +303,16 @@ public abstract class WorldSceneRenderer {
         return 0;
     }
 
-    private void renderCacheBuffer(Minecraft mc, MultiBufferSource.BufferSource buffers, float particleTicks) {
-        List<RenderType> layers = RenderType.chunkBufferLayers();
-        if (cacheState.get() == CacheState.NEED) {
-            progress = 0;
-            maxProgress = renderedBlocksMap.keySet().stream().map(Collection::size).reduce(0, Integer::sum) * (layers.size() + 1);
-            thread = new Thread(() -> {
-                cacheState.set(CacheState.COMPILING);
-                BlockRenderDispatcher blockrendererdispatcher = mc.getBlockRenderer();
-                try { // render the blocks in each layer
-                    ModelBlockRenderer.enableCaching();
-                    PoseStack matrixstack = new PoseStack();
-                    for (int i = 0; i < layers.size(); i++) {
-                        if (Thread.interrupted())
-                            return;
-                        RenderType layer = layers.get(i);
-                        BufferBuilder buffer = new BufferBuilder(new ByteBufferBuilder(layer.bufferSize()), VertexFormat.Mode.QUADS, DefaultVertexFormat.BLOCK);
-                        renderedBlocksMap.forEach((renderedBlocks, hook) -> {
-                            renderBlocks(matrixstack, blockrendererdispatcher, layer, new VertexConsumerWrapper(buffer), renderedBlocks, hook, 0);
-                        });
-                        MeshData data = buffer.build();
-                        if (data == null) {
-                            continue;
-                        }
+    private void renderCacheBuffer(Minecraft mc, MultiBufferSource.BufferSource buffers, float particleTicks) {  /* ported stub */ }/* ported: removed */
 
-                        var vertexBuffer = vertexBuffers[i];
-                        Runnable toUpload = () -> {
-                            if (!vertexBuffer.isInvalid()) {
-                                vertexBuffer.bind();
-                                vertexBuffer.upload(data);
-                                VertexBuffer.unbind();
-                            }
-                        };
-                        CompletableFuture.runAsync(toUpload, runnable -> {
-                            RenderSystem.recordRenderCall(runnable::run);
-                        });
-                    }
-                    ModelBlockRenderer.clearCache();
-                } finally {
-                }
-                Set<BlockPos> poses = new HashSet<>();
-                renderedBlocksMap.forEach((renderedBlocks, hook) -> {
-                    for (BlockPos pos : renderedBlocks) {
-                        progress++;
-                        if (Thread.interrupted())
-                            return;
-                        BlockEntity tile = world.getBlockEntity(pos);
-                        if (tile != null) {
-                            if (mc.getBlockEntityRenderDispatcher().getRenderer(tile) != null) {
-                                poses.add(pos);
-                            }
-                        }
-                    }
-                });
-                if (Thread.interrupted())
-                    return;
-                tileEntities = poses;
-                cacheState.set(CacheState.COMPILED);
-                thread = null;
-                maxProgress = -1;
-            });
-            thread.start();
-        } else {
-            PoseStack matrixstack = new PoseStack();
-            for (int i = 0; i < layers.size(); i++) {
-                VertexBuffer vertexbuffer = vertexBuffers[i];
-                if (vertexbuffer.isInvalid() || vertexbuffer.getFormat() == null) continue;
+    public static boolean canRenderInLayer(BlockState state, RenderType renderType) { return false; /* ported stub */ }/* ported: removed */
 
-                RenderType layer = layers.get(i);
-                if (layer == RenderType.translucent() && tileEntities != null) { // render tesr before translucent
-                    if (world instanceof TrackedDummyWorld level) {
-                        renderEntities(level, matrixstack, buffers, sceneEntityRenderHook, particleTicks);
-                    }
-                    renderTESR(tileEntities, matrixstack, mc.renderBuffers().bufferSource(), null, particleTicks);
-                    if (!endBatchLast) {
-                        buffers.endBatch();
-                    }
-                }
+    private void renderTESR(Collection<BlockPos> poses, PoseStack poseStack, MultiBufferSource.BufferSource buffers, @Nullable ISceneBlockRenderHook hook, float partialTicks) {  /* ported stub */ }
 
-                layer.setupRenderState();
-
-                matrixstack.pushPose();
-
-                ShaderInstance shaderInstance = RenderSystem.getShader();
-
-                for (int j = 0; j < 12; ++j) {
-                    int k = RenderSystem.getShaderTexture(j);
-                    shaderInstance.setSampler("Sampler" + j, k);
-                }
-
-                // setup shader uniform
-                if (shaderInstance.MODEL_VIEW_MATRIX != null) {
-                    shaderInstance.MODEL_VIEW_MATRIX.set(RenderSystem.getModelViewMatrix());
-                }
-
-                if (shaderInstance.PROJECTION_MATRIX != null) {
-                    shaderInstance.PROJECTION_MATRIX.set(RenderSystem.getProjectionMatrix());
-                }
-
-                if (shaderInstance.COLOR_MODULATOR != null) {
-                    shaderInstance.COLOR_MODULATOR.set(RenderSystem.getShaderColor());
-                }
-
-                if (shaderInstance.FOG_START != null) {
-                    shaderInstance.FOG_START.set(RenderSystem.getShaderFogStart());
-                }
-
-                if (shaderInstance.FOG_END != null) {
-                    shaderInstance.FOG_END.set(RenderSystem.getShaderFogEnd());
-                }
-
-                if (shaderInstance.FOG_COLOR != null) {
-                    shaderInstance.FOG_COLOR.set(RenderSystem.getShaderFogColor());
-                }
-
-                if (shaderInstance.FOG_SHAPE != null) {
-                    shaderInstance.FOG_SHAPE.set(RenderSystem.getShaderFogShape().getIndex());
-                }
-
-                if (shaderInstance.TEXTURE_MATRIX != null) {
-                    shaderInstance.TEXTURE_MATRIX.set(RenderSystem.getTextureMatrix());
-                }
-
-                if (shaderInstance.GAME_TIME != null) {
-                    shaderInstance.GAME_TIME.set(RenderSystem.getShaderGameTime());
-                }
-
-                RenderSystem.setupShaderLights(shaderInstance);
-                shaderInstance.apply();
-
-                setDefaultRenderLayerState(layer);
-
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-
-                vertexbuffer.bind();
-                vertexbuffer.draw();
-
-                matrixstack.popPose();
-
-                shaderInstance.clear();
-                VertexBuffer.unbind();
-                layer.clearRenderState();
-            }
-        }
-    }
-
-    private void renderBlocks(PoseStack poseStack, BlockRenderDispatcher blockrendererdispatcher, RenderType layer, VertexConsumerWrapper wrapperBuffer, Collection<BlockPos> renderedBlocks, @Nullable ISceneBlockRenderHook hook, float partialTicks) {
-        for (BlockPos pos : renderedBlocks) {
-            if (blocked != null && blocked.contains(pos)) {
-                continue;
-            }
-            BlockState state = world.getBlockState(pos);
-            FluidState fluidState = state.getFluidState();
-            Block block = state.getBlock();
-            BlockEntity te = world.getBlockEntity(pos);
-
-            if (hook != null) {
-                hook.applyVertexConsumerWrapper(world, pos, state, wrapperBuffer, layer, partialTicks);
-            }
-
-            if (block == Blocks.AIR) continue;
-            if (state.getRenderShape() != INVISIBLE && canRenderInLayer(state, layer)) {
-                poseStack.pushPose();
-                poseStack.translate(pos.getX(), pos.getY(), pos.getZ());
-                renderBlocksForge(blockrendererdispatcher, state, pos, world, poseStack, wrapperBuffer, world.random, layer);
-                poseStack.popPose();
-            }
-            if (!fluidState.isEmpty() && ItemBlockRenderTypes.getRenderLayer(fluidState) == layer) { // I dont want to do this fxxk wrapper
-                wrapperBuffer.addOffset((pos.getX() - (pos.getX() & 15)), (pos.getY() - (pos.getY() & 15)), (pos.getZ() - (pos.getZ() & 15)));
-                blockrendererdispatcher.renderLiquid(pos, world, wrapperBuffer, state, fluidState);
-            }
-            wrapperBuffer.clearOffset();
-            wrapperBuffer.clearColor();
-            if (maxProgress > 0) {
-                progress++;
-            }
-        }
-    }
-
-    public static boolean canRenderInLayer(BlockState state, RenderType renderType) {
-        return ItemBlockRenderTypes.getRenderLayers(state).contains(renderType);
-    }
-
-    public static void renderBlocksForge(BlockRenderDispatcher blockRenderDispatcher, BlockState state, BlockPos pos, BlockAndTintGetter level, @Nonnull PoseStack poseStack, VertexConsumer consumer, RandomSource random, RenderType renderType) {
-        var te = level.getBlockEntity(pos);
-        ModelData modelData = blockRenderDispatcher.getBlockModel(state).getModelData(level, pos, state, te == null ? ModelData.EMPTY : te.getModelData());
-        blockRenderDispatcher.renderBatched(state, pos, level, poseStack, consumer, false, random, modelData, renderType);
-    }
-
-    private void renderTESR(Collection<BlockPos> poses, PoseStack poseStack, MultiBufferSource.BufferSource buffers, @Nullable ISceneBlockRenderHook hook, float partialTicks) {
-        for (BlockPos pos : poses) {
-            BlockEntity tile = world.getBlockEntity(pos);
-            if (tile != null) {
-                poseStack.pushPose();
-                poseStack.translate(pos.getX(), pos.getY(), pos.getZ());
-                BlockEntityRenderer<BlockEntity> tileentityrenderer = Minecraft.getInstance().getBlockEntityRenderDispatcher().getRenderer(tile);
-                if (tileentityrenderer != null) {
-                    if (tile.hasLevel() && tile.getType().isValid(tile.getBlockState())) {
-                        Level world = tile.getLevel();
-
-                        if (hook != null) {
-                            hook.applyBESR(world, pos, tile, poseStack, partialTicks);
-                        }
-
-                        tileentityrenderer.render(tile, partialTicks, poseStack, buffers, 0xF000F0, OverlayTexture.NO_OVERLAY);
-                    }
-                }
-                poseStack.popPose();
-            }
-        }
-    }
-
-    private void renderEntities(TrackedDummyWorld level, PoseStack poseStack, MultiBufferSource buffer, @Nullable ISceneEntityRenderHook hook, float partialTicks) {
-        for (Entity entity : level.getAllEntities()) {
-            poseStack.pushPose();
-            if (entity.tickCount == 0) {
-                entity.xOld = entity.getX();
-                entity.yOld = entity.getY();
-                entity.zOld = entity.getZ();
-            }
-            double d0 = Mth.lerp((double) partialTicks, entity.xOld, entity.getX());
-            double d1 = Mth.lerp((double) partialTicks, entity.yOld, entity.getY());
-            double d2 = Mth.lerp((double) partialTicks, entity.zOld, entity.getZ());
-            float f = Mth.lerp(partialTicks, entity.yRotO, entity.getYRot());
-            var renderManager = Minecraft.getInstance().getEntityRenderDispatcher();
-            int light = renderManager.getRenderer(entity).getPackedLightCoords(entity, partialTicks);
-            if (hook != null) {
-                hook.applyEntity(world, entity, poseStack, partialTicks);
-            }
-            renderManager.render(entity, d0, d1, d2, f, partialTicks, poseStack, buffer, light);
-            poseStack.popPose();
-        }
-    }
+    private void renderEntities(TrackedDummyWorld level, PoseStack poseStack, MultiBufferSource buffer, @Nullable ISceneEntityRenderHook hook, float partialTicks) {  /* ported stub */ }
 
 
-    public static void setDefaultRenderLayerState(RenderType layer) {
-        RenderSystem.setShaderColor(1, 1, 1, 1);
-        if (layer == RenderType.translucent()) { // TRANSLUCENT
-            RenderSystem.enableBlend();
-            RenderSystem.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-            RenderSystem.depthMask(false);
-        } else { // SOLID
-            RenderSystem.enableDepthTest();
-            RenderSystem.disableBlend();
-            RenderSystem.depthMask(true);
-        }
-    }
+    public static void setDefaultRenderLayerState(RenderType layer) {  /* ported stub */ }
 
     public BlockHitResult rayTrace(Vector3f hitPos) {
         Vec3 startPos = new Vec3(this.eyePos.x(), this.eyePos.y(), this.eyePos.z());
@@ -757,90 +328,13 @@ public abstract class WorldSceneRenderer {
         }
     }
 
-    public Vector3f project(Vector3f pos) {
-        //read current rendering parameters
-        RenderSystem.getModelViewMatrix().get(MODELVIEW_MATRIX_BUFFER);
-        RenderSystem.getProjectionMatrix().get(PROJECTION_MATRIX_BUFFER);
-        GL11.glGetIntegerv(GL11.GL_VIEWPORT, VIEWPORT_BUFFER);
-
-        //rewind buffers after write by OpenGL glGet calls
-        MODELVIEW_MATRIX_BUFFER.rewind();
-        PROJECTION_MATRIX_BUFFER.rewind();
-        VIEWPORT_BUFFER.rewind();
-
-        //call gluProject with retrieved parameters
-        Project.gluProject(pos.x(), pos.y(), pos.z(), MODELVIEW_MATRIX_BUFFER, PROJECTION_MATRIX_BUFFER, VIEWPORT_BUFFER, OBJECT_POS_BUFFER);
-
-        //rewind buffers after read by gluProject
-        VIEWPORT_BUFFER.rewind();
-        PROJECTION_MATRIX_BUFFER.rewind();
-        MODELVIEW_MATRIX_BUFFER.rewind();
-
-        //rewind buffer after write by gluProject
-        OBJECT_POS_BUFFER.rewind();
-
-        //obtain position in Screen
-        float winX = OBJECT_POS_BUFFER.get();
-        float winY = OBJECT_POS_BUFFER.get();
-        float winZ = OBJECT_POS_BUFFER.get();
-
-        //rewind buffer after read
-        OBJECT_POS_BUFFER.rewind();
-
-        return new Vector3f(winX, winY, winZ);
-    }
+    public Vector3f project(Vector3f pos) { return null; /* ported stub */ }
 
     public Vector3f unProject(int mouseX, int mouseY) {
         return unProject(mouseX, mouseY, true);
     }
 
-    public Vector3f unProject(int mouseX, int mouseY, boolean checkDepth) {
-        var pixelDepth = 0.999f;
-        if (checkDepth) {
-            //read depth of pixel under mouse
-            GL11.glReadPixels(mouseX, mouseY, 1, 1, GL11.GL_DEPTH_COMPONENT, GL11.GL_FLOAT, PIXEL_DEPTH_BUFFER);
-
-            //rewind buffer after write by glReadPixels
-            PIXEL_DEPTH_BUFFER.rewind();
-
-            //retrieve depth from buffer (0.0-1.0f)
-            pixelDepth = PIXEL_DEPTH_BUFFER.get();
-        }
-
-        //rewind buffer after read
-        PIXEL_DEPTH_BUFFER.rewind();
-
-        //read current rendering parameters
-        RenderSystem.getModelViewMatrix().get(MODELVIEW_MATRIX_BUFFER);
-        RenderSystem.getProjectionMatrix().get(PROJECTION_MATRIX_BUFFER);
-        GL11.glGetIntegerv(GL11.GL_VIEWPORT, VIEWPORT_BUFFER);
-
-        //rewind buffers after write by OpenGL glGet calls
-        MODELVIEW_MATRIX_BUFFER.rewind();
-        PROJECTION_MATRIX_BUFFER.rewind();
-        VIEWPORT_BUFFER.rewind();
-
-        //call gluUnProject with retrieved parameters
-        Project.gluUnProject(mouseX, mouseY, pixelDepth, MODELVIEW_MATRIX_BUFFER, PROJECTION_MATRIX_BUFFER, VIEWPORT_BUFFER, OBJECT_POS_BUFFER);
-
-        //rewind buffers after read by gluUnProject
-        VIEWPORT_BUFFER.rewind();
-        PROJECTION_MATRIX_BUFFER.rewind();
-        MODELVIEW_MATRIX_BUFFER.rewind();
-
-        //rewind buffer after write by gluUnProject
-        OBJECT_POS_BUFFER.rewind();
-
-        //obtain absolute position in world
-        float posX = OBJECT_POS_BUFFER.get();
-        float posY = OBJECT_POS_BUFFER.get();
-        float posZ = OBJECT_POS_BUFFER.get();
-
-        //rewind buffer after read
-        OBJECT_POS_BUFFER.rewind();
-
-        return new Vector3f(posX, posY, posZ);
-    }
+    public Vector3f unProject(int mouseX, int mouseY, boolean checkDepth) { return null; /* ported stub */ }
 
     /***
      * For better performance, You'd better handle the event {@link #setOnLookingAt(Consumer)} or {@link #getLastTraceResult()}
@@ -848,20 +342,7 @@ public abstract class WorldSceneRenderer {
      * @param mouseY yPos in Texture
      * @return RayTraceResult Hit
      */
-    protected BlockHitResult screenPos2BlockPosFace(int mouseX, int mouseY, int x, int y, int width, int height) {
-        // render a frame
-        RenderSystem.enableDepthTest();
-        setupCamera(getPositionedRect(x, y, width, height));
-
-        drawWorld();
-
-        Vector3f hitPos = this.lastHit == null ? unProject(mouseX, mouseY) : this.lastHit;
-        BlockHitResult result = rayTrace(hitPos);
-
-        resetCamera();
-
-        return result;
-    }
+    protected BlockHitResult screenPos2BlockPosFace(int mouseX, int mouseY, int x, int y, int width, int height) { return null; /* ported stub */ }
 
     /***
      * For better performance, You'd better do project in {@link #setAfterWorldRender(Consumer)}
@@ -869,18 +350,7 @@ public abstract class WorldSceneRenderer {
      * @param depth should pass Depth Test
      * @return x, y, z
      */
-    protected Vector3f blockPos2ScreenPos(BlockPos pos, boolean depth, int x, int y, int width, int height) {
-        // render a frame
-        RenderSystem.enableDepthTest();
-        setupCamera(getPositionedRect(x, y, width, height));
-
-        drawWorld();
-        Vector3f winPos = project(new Vector3f(pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f));
-
-        resetCamera();
-
-        return winPos;
-    }
+    protected Vector3f blockPos2ScreenPos(BlockPos pos, boolean depth, int x, int y, int width, int height) { return null; /* ported stub */ }
 
     public static class VertexConsumerWrapper implements VertexConsumer {
 

@@ -47,28 +47,5 @@ public class IngredientComponent extends AbstractComponent {
     }
 
     @Override
-    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) {
-        if (ingredients.isEmpty()) return currentPage;
-        WidgetGroup group = new WidgetGroup(0, 0, ingredients.size() * 20, 20);
-        int x = 1;
-        for (Object ingredient : ingredients) {
-            if (ingredient instanceof XmlUtils.SizedIngredient item) {
-                var items = Arrays.stream(item.ingredient().getItems()).map(i -> {
-                    var copied = i.copy();
-                    copied.setCount(item.count());
-                    return copied;
-                }).toList();
-                CycleItemStackHandler itemStackHandler = new CycleItemStackHandler(List.of(items));
-                group.addWidget(new SlotWidget(itemStackHandler, 0, x, 1, false, false)
-                        .setBackground(new ResourceTexture("ldlib:textures/gui/slot.png")));
-            } else if (ingredient instanceof FluidStack fluidStack) {
-                FluidTank tank = new FluidTank(fluidStack.getAmount());
-                tank.setFluid(fluidStack);
-                group.addWidget(new TankWidget(tank, x, 1, false, false)
-                        .setBackground(new ResourceTexture("ldlib:textures/gui/fluid_slot.png")));
-            }
-            x += 20;
-        }
-        return currentPage.addStreamWidget(wrapper(group));
-    }
+    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) { return null; /* ported stub */ }
 }

@@ -54,23 +54,7 @@ public class PlayerInventoryWidget extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {
-        super.initWidget();
-        for (int i = 0; i < widgets.size(); i++) {
-            if (widgets.get(i) instanceof SlotWidget slotWidget) {
-                slotWidget.setContainerSlot(gui.entityPlayer.getInventory(), i);
-                slotWidget.setLocationInfo(true, i < 9);
-                slotWidget.setBackground(slotBackground);
-                if (LDLib.isClient() && Editor.INSTANCE != null) {
-                    slotWidget.setCanPutItems(false);
-                    slotWidget.setCanTakeItems(false);
-                } else {
-                    slotWidget.setCanPutItems(true);
-                    slotWidget.setCanTakeItems(true);
-                }
-            }
-        }
-    }
+    public void initWidget() {  /* ported stub */ }
 
     @Deprecated
     public void setPlayer(Player entityPlayer) {

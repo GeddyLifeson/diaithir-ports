@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.commands;
 
 import com.gregtechceu.gtceu.common.network.packets.SCPacketShareProspection;
-import com.gregtechceu.gtceu.integration.map.ClientCacheManager;
+
 
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;

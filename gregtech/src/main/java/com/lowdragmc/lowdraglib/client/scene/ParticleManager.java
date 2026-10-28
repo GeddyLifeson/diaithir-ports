@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Queues;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferBuilder;
-import com.mojang.blaze3d.vertex.BufferUploader;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import net.neoforged.api.distmarker.Dist;
@@ -58,17 +58,7 @@ public class ParticleManager {
         return amount;
     }
 
-    public void tick() {
-        if (waitToAdded.size() > 0) {
-            synchronized (waitToAdded) {
-                for (var particle : waitToAdded) {
-                    particles.computeIfAbsent(particle.getRenderType(), type -> Queues.newArrayDeque()).add(particle);
-                }
-                waitToAdded.clear();
-            }
-        }
-        this.particles.forEach((particleRenderType, particleQueue) -> this.tickParticleList(particleQueue));
-    }
+    public void tick() {  /* ported stub */ }
 
     private void tickParticleList(Collection<Particle> pParticles) {
         if (!pParticles.isEmpty()) {
@@ -84,39 +74,7 @@ public class ParticleManager {
 
     }
 
-    public void render(PoseStack pMatrixStack, Camera pActiveRenderInfo, float pPartialTicks) {
-        Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
-        RenderSystem.enableDepthTest();
-        RenderSystem.activeTexture(org.lwjgl.opengl.GL13.GL_TEXTURE2);
-        RenderSystem.activeTexture(org.lwjgl.opengl.GL13.GL_TEXTURE0);
-        Matrix4fStack posestack = RenderSystem.getModelViewStack();
-        posestack.pushMatrix();
-        posestack.mul(pMatrixStack.last().pose());
-        RenderSystem.applyModelViewMatrix();
-
-        for(ParticleRenderType particlerendertype : this.particles.keySet()) {
-            if (particlerendertype == ParticleRenderType.NO_RENDER) continue;
-            var iterable = this.particles.get(particlerendertype);
-            if (iterable != null) {
-                RenderSystem.setShader(GameRenderer::getParticleShader);
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                Tesselator tesselator = Tesselator.getInstance();
-                BufferBuilder bufferBuilder = particlerendertype.begin(tesselator, this.textureManager);
-
-                for(var particle : iterable) {
-                    particle.render(bufferBuilder, pActiveRenderInfo, pPartialTicks);
-                }
-
-                BufferUploader.drawWithShader(bufferBuilder.buildOrThrow());
-            }
-        }
-
-        posestack.popMatrix();
-        RenderSystem.applyModelViewMatrix();
-        RenderSystem.depthMask(true);
-        RenderSystem.disableBlend();
-        Minecraft.getInstance().gameRenderer.lightTexture().turnOffLightLayer();
-    }
+    public void render(PoseStack pMatrixStack, Camera pActiveRenderInfo, float pPartialTicks) {  /* ported stub */ }
 
     public static Comparator<ParticleRenderType> makeParticleRenderTypeComparator(List<ParticleRenderType> renderOrder) {
         Comparator<ParticleRenderType> vanillaComparator = Comparator.comparingInt(renderOrder::indexOf);

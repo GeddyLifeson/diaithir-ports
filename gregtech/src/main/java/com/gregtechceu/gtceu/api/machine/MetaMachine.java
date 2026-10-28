@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.api.machine;
 
+import net.minecraft.core.component.DataComponentGetter;
+
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
@@ -36,7 +40,7 @@ import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
 import com.gregtechceu.gtceu.api.transfer.fluid.IFluidHandlerModifiable;
 import com.gregtechceu.gtceu.client.model.machine.MachineRenderState;
-import com.gregtechceu.gtceu.client.util.ModelUtils;
+
 import com.gregtechceu.gtceu.common.cover.FluidFilterCover;
 import com.gregtechceu.gtceu.common.cover.ItemFilterCover;
 import com.gregtechceu.gtceu.common.cover.data.ManualIOMode;
@@ -66,7 +70,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -199,7 +203,7 @@ public class MetaMachine extends ManagedSyncBlockEntity implements IGregtechBloc
      * 
      * @param componentInput Component Input
      */
-    protected void applyImplicitComponents(DataComponentInput componentInput) {}
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {}
 
     /**
      * Saves this machine's data to item stack components.

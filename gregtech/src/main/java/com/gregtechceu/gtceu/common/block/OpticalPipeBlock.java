@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.block;
 
+import com.gregtechceu.gtceu.compat.client.BlockColor;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.PipeBlock;
 import com.gregtechceu.gtceu.api.block.property.GTBlockStateProperties;
@@ -16,7 +18,7 @@ import com.gregtechceu.gtceu.common.pipelike.optical.LevelOpticalPipeNet;
 import com.gregtechceu.gtceu.common.pipelike.optical.OpticalPipeProperties;
 import com.gregtechceu.gtceu.common.pipelike.optical.OpticalPipeType;
 
-import net.minecraft.client.color.block.BlockColor;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

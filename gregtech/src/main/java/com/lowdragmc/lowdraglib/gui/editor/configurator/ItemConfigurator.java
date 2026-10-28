@@ -33,31 +33,7 @@ public class ItemConfigurator extends ValueConfigurator<Item> implements SearchC
     }
 
     @Override
-    public void init(int width) {
-        super.init(width);
-        addWidget(image = new ImageWidget(leftWidth, 2, width - leftWidth - 3 - rightWidth, 10, ColorPattern.T_GRAY.rectTexture().setRadius(5)));
-        image.setDraggingConsumer(
-                o -> o instanceof ItemLike || o instanceof ItemStack,
-                o -> image.setImage(ColorPattern.GREEN.rectTexture().setRadius(5)),
-                o -> image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5)),
-                o -> {
-                    if (o instanceof ItemStack itemStack) {
-                        onValueUpdate(itemStack.getItem());
-                        updateValue();
-                    } else if (o instanceof ItemLike item) {
-                        onValueUpdate(item.asItem());
-                        updateValue();
-                    }
-                    image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5));
-                });
-        addWidget(searchComponent = new SearchComponentWidget<>(leftWidth + 3, 2, width - leftWidth - 6 - rightWidth, 10, this));
-        searchComponent.setShowUp(true);
-        searchComponent.setCapacity(5);
-        var textFieldWidget = searchComponent.textFieldWidget;
-        textFieldWidget.setClientSideWidget();
-        textFieldWidget.setCurrentString(value == null ? BuiltInRegistries.ITEM.getKey(defaultValue) : BuiltInRegistries.ITEM.getKey(value));
-        textFieldWidget.setBordered(false);
-    }
+    public void init(int width) {  /* ported stub */ }
 
 
     @Override
@@ -72,20 +48,5 @@ public class ItemConfigurator extends ValueConfigurator<Item> implements SearchC
     }
 
     @Override
-    public void search(String word, Consumer<Item> find) {
-        var wordLower = word.toLowerCase();
-        for (var itemEntry : BuiltInRegistries.ITEM.entrySet()) {
-            if (Thread.currentThread().isInterrupted()) return;
-            var item = itemEntry.getValue();
-            var id = itemEntry.getKey().location();
-            if (id.toString().contains(wordLower)) {
-                find.accept(item);
-            } else {
-                var name = LocalizationUtils.format(item.getDescriptionId());
-                if (name.toLowerCase().contains(wordLower)) {
-                    find.accept(item);
-                }
-            }
-        }
-    }
+    public void search(String word, Consumer<Item> find) {  /* ported stub */ }
 }

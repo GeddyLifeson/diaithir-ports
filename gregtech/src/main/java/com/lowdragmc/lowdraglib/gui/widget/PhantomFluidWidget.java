@@ -13,9 +13,9 @@ import com.lowdragmc.lowdraglib.side.fluid.FluidTransferHelper;
 import com.lowdragmc.lowdraglib.utils.Position;
 import com.lowdragmc.lowdraglib.utils.Size;
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.emi.emi.api.stack.EmiStack;
+
 import lombok.Getter;
-import mezz.jei.api.ingredients.ITypedIngredient;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
@@ -80,90 +80,11 @@ public class PhantomFluidWidget extends TankWidget implements IGhostIngredientTa
         }
     }
 
-    public static FluidStack drainFrom(Object ingredient) {
-         if (ingredient instanceof Ingredient ing) {
-            var items = ing.getItems();
-            if (items.length > 0) {
-                ingredient = items[0];
-            }
-        }
-        if (ingredient instanceof ItemStack itemStack) {
-            var handler = FluidTransferHelper.getFluidTransfer(new ItemStackHandler(NonNullList.of(ItemStack.EMPTY, itemStack)), 0);
-            if (handler != null) {
-                return handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
-            }
-        }
-        return FluidStack.EMPTY;
-    }
+    public static FluidStack drainFrom(Object ingredient) { return null; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public List<Target> getPhantomTargets(Object ingredient) {
-        if (LDLib.isReiLoaded() && ingredient instanceof dev.architectury.fluid.FluidStack fluidStack) {
-            ingredient = new FluidStack(fluidStack.getFluid().builtInRegistryHolder(), (int) fluidStack.getAmount(), fluidStack.getPatch());
-        }
-        if (LDLib.isEmiLoaded() && ingredient instanceof EmiStack fluidEmiStack) {
-            var fluid = fluidEmiStack.getKeyOfType(Fluid.class);
-            if (fluid == null) {
-                Item item = fluidEmiStack.getKeyOfType(Item.class);
-                ingredient = item == null ? null : new ItemStack(item, (int) fluidEmiStack.getAmount());
-                if (ingredient instanceof ItemStack itemStack && !itemStack.isEmpty()) {
-                    ((PatchedDataComponentMap) itemStack.getComponents()).applyPatch(fluidEmiStack.getComponentChanges());
-                }
-            } else {
-                ingredient = new FluidStack(fluid.builtInRegistryHolder(), fluidEmiStack.getAmount() == 0L ? 1000 : (int) fluidEmiStack.getAmount(), fluidEmiStack.getComponentChanges());
-            }
-        }
-        if (LDLib.isJeiLoaded() && ingredient instanceof ITypedIngredient<?> typedIngredient) {
-            ingredient = typedIngredient.getIngredient();
-        }
-        if (!(ingredient instanceof FluidStack) && drainFrom(ingredient).isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        Rect2i rectangle = toRectangleBox();
-        return Lists.newArrayList(new Target() {
-            @Nonnull
-            @Override
-            public Rect2i getArea() {
-                return rectangle;
-            }
-
-            @Override
-            public void accept(@Nonnull Object ingredient) {
-                FluidStack ingredientStack;
-                if (LDLib.isReiLoaded() && ingredient instanceof dev.architectury.fluid.FluidStack fluidStack) {
-                    ingredient = new FluidStack(fluidStack.getFluid().builtInRegistryHolder(), (int) fluidStack.getAmount(), fluidStack.getPatch());
-                }
-                if (LDLib.isEmiLoaded() && ingredient instanceof EmiStack fluidEmiStack) {
-                    var fluid = fluidEmiStack.getKeyOfType(Fluid.class);
-                    if (fluid == null) {
-                        Item item = fluidEmiStack.getKeyOfType(Item.class);
-                        ingredient = item == null ? null : new ItemStack(item, (int) fluidEmiStack.getAmount());
-                        if (ingredient instanceof ItemStack itemStack && !itemStack.isEmpty()) {
-                            ((PatchedDataComponentMap) itemStack.getComponents()).applyPatch(fluidEmiStack.getComponentChanges());
-                        }
-                    } else {
-                        ingredient = new FluidStack(fluid.builtInRegistryHolder(), fluidEmiStack.getAmount() == 0L ? 1000 : (int) fluidEmiStack.getAmount(), fluidEmiStack.getComponentChanges());
-                    }
-                }
-                if (ingredient instanceof FluidStack fluidStack)
-                    ingredientStack = fluidStack;
-                else
-                    ingredientStack = drainFrom(ingredient);
-
-                if (ingredientStack != FluidStack.EMPTY) {
-                    writeClientAction(2, (buf) -> FluidStack.OPTIONAL_STREAM_CODEC.encode(buf, ingredientStack));
-                }
-
-                if (isClientSideWidget) {
-                    if (phantomFluidSetter != null) {
-                        phantomFluidSetter.accept(ingredientStack);
-                    }
-                }
-            }
-        });
-    }
+    public List<Target> getPhantomTargets(Object ingredient) { return null; /* ported stub */ }
 
     @Override
     public void handleClientAction(int id, RegistryFriendlyByteBuf buffer) {
@@ -228,39 +149,5 @@ public class PhantomFluidWidget extends TankWidget implements IGhostIngredientTa
     }
 
     @Override
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        if (this.lastFluidInTank != null) {
-            super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-            return;
-        }
-        Position pos = getPosition();
-        Size size = getSize();
-        FluidStack stack = phantomFluidGetter.get();
-        if (stack != null && !stack.isEmpty()) {
-            RenderSystem.disableBlend();
-
-            double progress = stack.getAmount() * 1.0 / Math.max(Math.max(stack.getAmount(), lastTankCapacity), 1);
-            float drawnU = (float) fillDirection.getDrawnU(progress);
-            float drawnV = (float) fillDirection.getDrawnV(progress);
-            float drawnWidth = (float) fillDirection.getDrawnWidth(progress);
-            float drawnHeight = (float) fillDirection.getDrawnHeight(progress);
-            int width = size.width - 2;
-            int height = size.height - 2;
-            int x = pos.x + 1;
-            int y = pos.y + 1;
-            DrawerHelper.drawFluidForGui(graphics, stack, x + drawnU * width, y + drawnV * height, width * drawnWidth, height * drawnHeight);
-            if (showAmount) {
-                graphics.pose().pushPose();
-                graphics.pose().scale(0.5F, 0.5F, 1);
-                String s = TextFormattingUtil.formatLongToCompactStringBuckets(stack.getAmount(), 3) + "B";
-                Font fontRenderer = Minecraft.getInstance().font;
-                graphics.drawString(fontRenderer, s, (int) ((pos.x + (size.width / 3f)) * 2 - fontRenderer.width(s) + 21), (int) ((pos.y + (size.height / 3f) + 6) * 2), 0xFFFFFF, true);
-                graphics.pose().popPose();
-            }
-
-            RenderSystem.enableBlend();
-            RenderSystem.setShaderColor(1, 1, 1, 1);
-        }
-
-    }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 }

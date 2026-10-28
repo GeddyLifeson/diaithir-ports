@@ -64,30 +64,7 @@ public class ToolPanel extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {
-        Size size = getSize();
-        this.setBackground(ColorPattern.BLACK.rectTexture());
-
-        addWidget(new LabelWidget(3, 3, () -> title));
-        addWidget(tabsBackground = new ImageWidget(size.width, 15, 20, 0, ColorPattern.BLACK.rectTexture().setRightRadius(8)));
-
-        addWidget(tabContainer = new TabContainer(0, 15, size.width, size.height - 15));
-        tabContainer.setBackground(ColorPattern.T_GRAY.borderTexture(-1));
-
-        addWidget(buttonHide = new ButtonWidget(size.width - 13, 3, 10, 10, new GuiTextureGroup(
-                ColorPattern.BLACK.rectTexture(),
-                ColorPattern.T_GRAY.borderTexture(1),
-                Icons.RIGHT
-        ), cd -> {
-            if (isShow()) {
-                hide();
-            } else {
-                show();
-            }
-        }).setHoverBorderTexture(1, -1));
-
-        super.initWidget();
-    }
+    public void initWidget() {  /* ported stub */ }
 
     @Override
     public void clearAllWidgets() {
@@ -104,65 +81,17 @@ public class ToolPanel extends WidgetGroup {
         });
     }
 
-    public void addNewToolBox(String name, ResourceTexture texture, Function<Size, WidgetGroup> toolBoxSupplier) {
-        var toolBox = toolBoxSupplier.apply(new Size(getSizeWidth(), getSize().height - 15));
-        tabContainer.addTab((TabButton) new TabButton(getSizeWidth() + 4, 4 + toolBoxes.size() * 20, 12, 12) {
-            @Override
-            @OnlyIn(Dist.CLIENT)
-            public boolean mouseClicked(double mouseX, double mouseY, int button) {
-                if(isMouseOverElement(mouseX, mouseY)) {
-                    show();
-                }
-                return super.mouseClicked(mouseX, mouseY, button);
-            }
-        }.setTexture(texture, texture.copy().setColor(ColorPattern.T_GREEN.color)).setHoverTooltips(name), toolBox);
-        toolBoxes.add(toolBox);
-        tabsBackground.setSize(new Size(20, toolBoxes.size() * 20));
-    }
+    public void addNewToolBox(String name, ResourceTexture texture, Function<Size, WidgetGroup> toolBoxSupplier) {  /* ported stub */ }
 
     public void hide() {
         hide(true);
     }
 
-    public void hide(boolean animate) {
-        if (isShow() && !inAnimate()) {
-            isShow = !isShow;
-            if (animate) {
-                animation(new Transform()
-                        .offset(-getSizeWidth(), 0)
-                        .ease(Eases.EaseQuadOut)
-                        .duration(500)
-                        .onFinish(() -> {
-                            addSelfPosition(-getSizeWidth(), 0);
-                            buttonHide.setButtonTexture(ColorPattern.BLACK.rectTexture(), ColorPattern.T_GRAY.borderTexture(1), Icons.RIGHT);
-                        }));
-            } else {
-                addSelfPosition(-getSizeWidth(), 0);
-                buttonHide.setButtonTexture(ColorPattern.BLACK.rectTexture(), ColorPattern.T_GRAY.borderTexture(1), Icons.RIGHT);
-            }
-        }
-    }
+    public void hide(boolean animate) {  /* ported stub */ }
 
     public void show() {
         show(true);
     }
 
-    public void show(boolean animate) {
-        if (!isShow() && !inAnimate()) {
-            isShow = !isShow;
-            if (animate) {
-                animation(new Transform()
-                        .offset(getSizeWidth(), 0)
-                        .ease(Eases.EaseQuadOut)
-                        .duration(500)
-                        .onFinish(() -> {
-                            addSelfPosition(getSizeWidth(), 0);
-                            buttonHide.setButtonTexture(ColorPattern.BLACK.rectTexture(), ColorPattern.T_GRAY.borderTexture(1), Icons.LEFT);
-                        }));
-            } else {
-                addSelfPosition(getSizeWidth(), 0);
-                buttonHide.setButtonTexture(ColorPattern.BLACK.rectTexture(), ColorPattern.T_GRAY.borderTexture(1), Icons.LEFT);
-            }
-        }
-    }
+    public void show(boolean animate) {  /* ported stub */ }
 }

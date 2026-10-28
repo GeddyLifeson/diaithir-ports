@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.core;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -23,12 +25,12 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTClientFluidTypeExtensions
 import com.gregtechceu.gtceu.common.data.GTMaterialBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterialItems;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.core.mixins.BlockBehaviourAccessor;
+
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
-import com.gregtechceu.gtceu.integration.kjs.GTCEuServerEvents;
-import com.gregtechceu.gtceu.integration.kjs.events.GTBedrockFluidVeinEventJS;
-import com.gregtechceu.gtceu.integration.kjs.events.GTBedrockOreVeinEventJS;
-import com.gregtechceu.gtceu.integration.kjs.events.GTOreVeinEventJS;
+
+
+
+
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.*;
@@ -39,7 +41,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.*;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -139,7 +141,7 @@ public class MixinHelpers {
 
             GTMaterialItems.ARMOR_ITEMS.rowMap().forEach((material, map) -> {
                 map.forEach((type, item) -> {
-                    if (type == null || type == ArmorItem.Type.BODY) {
+                    if (type == null || type == ArmorType.BODY) {
                         return;
                     }
                     if (item != null) {

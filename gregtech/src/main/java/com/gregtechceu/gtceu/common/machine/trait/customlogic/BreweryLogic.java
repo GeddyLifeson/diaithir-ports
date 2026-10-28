@@ -11,7 +11,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.fluid.potion.PotionFluidHelper;
-import com.gregtechceu.gtceu.core.mixins.PotionBrewingAccessor;
+
 import com.gregtechceu.gtceu.utils.TagUtil;
 
 import net.minecraft.util.Util;

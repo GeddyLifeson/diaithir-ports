@@ -35,9 +35,7 @@ public class BaseGraph implements IPersistedSerializable {
         usedGUIDs.add(guid);
     }
 
-    public int getDepth() {
-        return nodes.stream().mapToInt(BaseNode::getComputeOrder).max().orElse(0);
-    }
+    public int getDepth() { return (int)0; /* ported stub */ }
 
     public void resetNodes() {
         nodes.forEach(BaseNode::resetNode);
@@ -126,61 +124,19 @@ public class BaseGraph implements IPersistedSerializable {
     }
 
 
-    private void initializeGraphElements() {
-        // Sanitize the element lists (it's possible that nodes are null if their full class name have changed)
-        // If you rename / change the assembly of a node or parameter, please use the MovedFrom() attribute to avoid breaking the graph.
-        nodes.removeIf(Objects::isNull);
-
-        nodesPerGUID.clear();
-        edgesPerGUID.clear();
-        for (var node : nodes) {
-            node.initialize(this);
-            nodesPerGUID.put(node.getGUID(), node);
-        }
-
-        for (var edge : edges) {
-            edge.initialize(this);
-            edgesPerGUID.put(edge.GUID, edge);
-
-            // Sanity check for the edge:
-            if (edge.inputPort == null || edge.outputPort == null) {
-                disconnect(edge.GUID);
-                continue;
-            }
-
-            // Add the edge to the non-serialized port data
-            edge.inputPort.owner.onEdgeConnected(edge);
-            edge.outputPort.owner.onEdgeConnected(edge);
-        }
-    }
+    private void initializeGraphElements() {  /* ported stub */ }
 
     public void onAssetDeleted() {}
 
     /**
      * Adds a node to the graph
      */
-    public BaseNode addNode(BaseNode node) {
-        nodes.add(node);
-        node.initialize(this);
-        nodesPerGUID.put(node.getGUID(), node);
-        if (onGraphChanges != null) {
-            onGraphChanges.accept(new GraphChanges().addedNode(node));
-        }
-        return node;
-    }
+    public BaseNode addNode(BaseNode node) { return null; /* ported stub */ }
 
     /**
      * Removes a node from the graph
      */
-    public void removeNode(BaseNode node) {
-        node.disableInternal();
-        node.destroyInternal();
-        nodesPerGUID.remove(node.getGUID());
-        nodes.remove(node);
-        if (onGraphChanges != null) {
-            onGraphChanges.accept(new GraphChanges().removedNode(node));
-        }
-    }
+    public void removeNode(BaseNode node) {  /* ported stub */ }
 
     public PortEdge connect(NodePort inputPort, NodePort outputPort) {
         return connect(inputPort, outputPort, true);
@@ -189,62 +145,12 @@ public class BaseGraph implements IPersistedSerializable {
     /**
      * Connect two ports with an edge
      */
-    public PortEdge connect(NodePort inputPort, NodePort outputPort, boolean autoDisconnectInputs) {
-        var edge = PortEdge.createNewEdge(this, inputPort, outputPort);
-        var hasExistingEdge = edges.stream().anyMatch(e -> e.inputPort == edge.inputPort && e.outputPort == edge.outputPort);
-        if (hasExistingEdge) return null;
-
-        //If the input port does not support multi-connection, we remove them
-        if (autoDisconnectInputs && !inputPort.portData.acceptMultipleEdges) {
-            var copiedEdges = new ArrayList<>(inputPort.getEdges());
-            for (var e : copiedEdges) {
-                // TODO: do not disconnect them if the connected port is the same than the old connected
-                disconnect(e);
-            }
-        }
-        // same for the output port:
-        if (autoDisconnectInputs && !outputPort.portData.acceptMultipleEdges) {
-            var copiedEdges = new ArrayList<>(outputPort.getEdges());
-            for (var e : copiedEdges) {
-                // TODO: do not disconnect them if the connected port is the same than the old connected
-                disconnect(e);
-            }
-        }
-
-        edges.add(edge);
-        edgesPerGUID.put(edge.GUID, edge);
-
-        // Add the edge to the list of connected edges in the nodes
-        inputPort.owner.onEdgeConnected(edge);
-        outputPort.owner.onEdgeConnected(edge);
-        if (onGraphChanges != null) {
-            onGraphChanges.accept(new GraphChanges().addedEdge(edge));
-        }
-        return edge;
-    }
+    public PortEdge connect(NodePort inputPort, NodePort outputPort, boolean autoDisconnectInputs) { return null; /* ported stub */ }
 
     /**
      * Disconnect two ports
      */
-    public void disconnect(BaseNode inputNode, String inputFieldName, BaseNode outputNode, String outputFieldName) {
-        edges.removeIf(r -> {
-            var remove = r.inputNode == inputNode
-            && r.outputNode == outputNode
-            && Objects.equals(r.outputFieldName, outputFieldName)
-            && Objects.equals(r.inputFieldName, inputFieldName);
-
-            if (remove) {
-                if (r.inputNode != null)
-                    r.inputNode.onEdgeDisconnected(r);
-                if (r.outputNode != null)
-                    r.outputNode.onEdgeDisconnected(r);
-                if (onGraphChanges != null)
-                    onGraphChanges.accept(new GraphChanges().removedEdge(r));
-            }
-
-            return remove;
-        });
-    }
+    public void disconnect(BaseNode inputNode, String inputFieldName, BaseNode outputNode, String outputFieldName) {  /* ported stub */ }
 
     /**
      * Disconnect an edge
@@ -256,27 +162,7 @@ public class BaseGraph implements IPersistedSerializable {
     /**
      * Disconnect an edge
      */
-    public void disconnect(String edgeGUID) {
-        var disconnectEvents = new ArrayList<Pair<BaseNode, PortEdge>>();
-
-        edges.removeIf(r -> {
-            if (Objects.equals(r.GUID, edgeGUID)) {
-                disconnectEvents.add(new Pair<>(r.inputNode, r));
-                disconnectEvents.add(new Pair<>(r.outputNode, r));
-                if (onGraphChanges != null) {
-                    onGraphChanges.accept(new GraphChanges().removedEdge(r));
-                }
-            }
-            return Objects.equals(r.GUID, edgeGUID);
-        });
-
-        // Delay the edge disconnect event to avoid recursion
-        for (var tuple : disconnectEvents) {
-            if (tuple.getA() != null) {
-                tuple.getA().onEdgeDisconnected(tuple.getB());
-            }
-        }
-    }
+    public void disconnect(String edgeGUID) {  /* ported stub */ }
 
     public ExposedParameter<?> getExposedParameterFromIdentifier(String parameterIdentifier) {
         return exposedParameters.get(parameterIdentifier);
@@ -295,11 +181,7 @@ public class BaseGraph implements IPersistedSerializable {
     /**
      * Invoke the onGraphChanges event, can be used as trigger to execute the graph when the content of a node is changed
      */
-    public void notifyNodeChanged(BaseNode node) {
-        if (onGraphChanges != null) {
-            onGraphChanges.accept(new GraphChanges().nodeChanged(node));
-        }
-    }
+    public void notifyNodeChanged(BaseNode node) {  /* ported stub */ }
 
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {
@@ -330,37 +212,7 @@ public class BaseGraph implements IPersistedSerializable {
      * We can deserialize data here and load objects references
      */
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {
-        nodes.removeIf(Objects::isNull);
-        if (!nodes.isEmpty()) {
-            for (var node : nodes)
-                node.disableInternal();
-        }
-        nodes.clear();
-        edges.clear();
-        // load nodes
-        IPersistedSerializable.super.deserializeNBT(provider, tag);
-        var nodes = tag.getList("nodes", Tag.TAG_COMPOUND);
-        for (int i = 0; i < nodes.size(); i++) {
-            this.nodes.add(BaseNode.createFromTag(provider, nodes.getCompound(i)));
-        }
-        // load edges
-        var edges = tag.getList("edges", Tag.TAG_COMPOUND);
-        for (int i = 0; i < edges.size(); i++) {
-            var edge = new PortEdge();
-            edge.deserializeNBT(provider, edges.getCompound(i));
-            this.edges.add(edge);
-        }
-        // load parameters
-        var parameters = tag.getCompound("parameters");
-        for (var parameter : exposedParameters.values()) {
-            var identifier = parameter.identifier;
-            if (parameters.contains(identifier)) {
-                parameter.deserializeNBT(provider, parameters.getCompound(identifier));
-            }
-        }
-        initialize();
-    }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {  /* ported stub */ }
 
     /**
      * Update the compute order of the nodes in the graph

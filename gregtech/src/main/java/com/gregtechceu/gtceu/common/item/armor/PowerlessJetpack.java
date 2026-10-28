@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.common.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorMaterial;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.item.armor.ArmorComponentItem;
 import com.gregtechceu.gtceu.api.item.armor.ArmorUtils;
@@ -106,8 +110,8 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
     }
 
     @Override
-    public ArmorItem.Type getArmorType() {
-        return ArmorItem.Type.CHESTPLATE;
+    public ArmorType getArmorType() {
+        return ArmorType.CHESTPLATE;
     }
 
     @Override
@@ -118,13 +122,7 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
     @Override
     public void addToolComponents(@NotNull ArmorComponentItem item) {
         item.attachComponents(new Behaviour(tankCapacity));
-    }
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot,
-                                            ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/liquid_fuel_jetpack.png");
-    }
+    }/* ported: removed */
 
     @OnlyIn(Dist.CLIENT)
     @Override

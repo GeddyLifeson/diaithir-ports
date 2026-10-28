@@ -18,7 +18,7 @@ import com.gregtechceu.gtceu.api.item.tool.MaterialToolTier;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.common.data.GTMedicalConditions;
-import com.gregtechceu.gtceu.integration.kjs.helpers.MaterialStackWrapper;
+
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.gregtechceu.gtceu.utils.GTMath;
 import com.gregtechceu.gtceu.utils.TagUtil;
@@ -36,7 +36,6 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import dev.latvian.mods.rhino.util.RemapPrefixForJS;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
@@ -565,8 +564,7 @@ public class Material {
     }
 
     @SuppressWarnings("UnusedReturnValue")
-    @RemapPrefixForJS("kjs$")
-    public static class Builder {
+        public static class Builder {
 
         private final MaterialInfo materialInfo;
         private final MaterialProperties properties;

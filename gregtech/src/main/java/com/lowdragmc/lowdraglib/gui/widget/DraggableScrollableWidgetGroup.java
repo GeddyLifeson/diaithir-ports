@@ -126,14 +126,7 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
     }
 
     @Override
-    public WidgetGroup addWidget(int index, Widget widget) {
-        maxHeight = Math.max(maxHeight - xBarHeight, widget.getSize().height + widget.getSelfPosition().y);
-        maxWidth = Math.max(maxWidth - yBarWidth, widget.getSize().width + widget.getSelfPosition().x);
-        Position newPos = widget.addSelfPosition(- scrollXOffset, - scrollYOffset);
-        widget.setVisible(newPos.x < getSize().width - yBarWidth && newPos.x + widget.getSize().width > 0);
-        widget.setVisible(newPos.y < getSize().height - xBarHeight && newPos.y + widget.getSize().height > 0);
-        return super.addWidget(index, widget);
-    }
+    public WidgetGroup addWidget(int index, Widget widget) { return null; /* ported stub */ }
 
     @Override
     public void removeWidget(Widget widget) {
@@ -144,15 +137,7 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
     }
 
     @Override
-    public void clearAllWidgets() {
-        super.clearAllWidgets();
-        maxHeight = getSize().height - xBarHeight;
-        maxWidth = getSize().width - yBarWidth;
-        scrollXOffset = 0;
-        scrollYOffset = 0;
-        draggedWidget = null;
-        selectedWidget = null;
-    }
+    public void clearAllWidgets() {  /* ported stub */ }
 
     @Override
     @ConfigSetter(field = "size")
@@ -169,75 +154,12 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
     }
 
     @Override
-    protected void onChildSelfPositionUpdate(Widget child) {
-        super.onChildSelfPositionUpdate(child);
-        if (!isComputingMax && isInitialized()) {
-            computeMax();
-        }
-    }
+    protected void onChildSelfPositionUpdate(Widget child) {  /* ported stub */ }
 
     @Override
-    protected void onChildSizeUpdate(Widget child) {
-        super.onChildSizeUpdate(child);
-        if (!isComputingMax && isInitialized()) {
-            computeMax();
-        }
-    }
+    protected void onChildSizeUpdate(Widget child) {  /* ported stub */ }
 
-    public void computeMax() {
-        if (isComputingMax) return;
-        isComputingMax = true;
-        var lastScrollXOffset = scrollXOffset;
-        var lastScrollYOffset = scrollYOffset;
-        int mh = 0;
-        int mw = 0;
-        for (Widget widget : widgets) {
-            mh = Math.max(mh, widget.getSize().height + widget.getSelfPosition().y + scrollYOffset);
-            mw = Math.max(mw, widget.getSize().width + widget.getSelfPosition().x + scrollXOffset);
-        }
-        int offsetY = 0;
-        int offsetX = 0;
-        if (mh > getSize().height - xBarHeight) {
-            offsetY = maxHeight - mh;
-            maxHeight = mh;
-            if (scrollYOffset - offsetY < 0) {
-                offsetY = scrollYOffset;
-            }
-            scrollYOffset -= offsetY;
-        } else if (mh < getSize().height - xBarHeight) {
-            offsetY = maxHeight - (getSize().height - xBarHeight);
-            maxHeight = getSize().height - xBarHeight;
-            if (scrollYOffset - offsetY < 0) {
-                offsetY = scrollYOffset;
-            }
-            scrollYOffset -= offsetY;
-        }
-        if (mw > getSize().width - yBarWidth) {
-            offsetX = maxWidth - mw;
-            maxWidth = mw;
-            if (scrollXOffset - offsetX < 0) {
-                offsetX = scrollXOffset;
-            }
-            scrollXOffset -= offsetX;
-        }else if (mw < getSize().width - yBarWidth) {
-            offsetX = maxWidth - (getSize().width - yBarWidth);
-            maxWidth = getSize().width - yBarWidth;
-            if (scrollXOffset - offsetX < 0) {
-                offsetX = scrollXOffset;
-            }
-            scrollXOffset -= offsetX;
-        }
-        offsetX += scrollXOffset - Math.min(scrollXOffset, lastScrollXOffset);
-        offsetY += scrollYOffset - Math.min(scrollYOffset, lastScrollYOffset);
-        scrollXOffset = Math.min(scrollXOffset, lastScrollXOffset);
-        scrollYOffset = Math.min(scrollYOffset, lastScrollYOffset);
-        for (Widget widget : widgets) {
-            Position newPos = widget.addSelfPosition(offsetX, offsetY);
-            widget.setVisible(newPos.x < getSize().width - yBarWidth && newPos.x + widget.getSize().width > 0);
-            widget.setVisible(newPos.y < getSize().height - xBarHeight && newPos.y + widget.getSize().height > 0);
-        }
-        isComputingMax = false;
-    }
+    public void computeMax() {  /* ported stub */ }
 
     protected int getMaxHeight() {
         return maxHeight + xBarHeight;
@@ -247,57 +169,15 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
         return maxWidth + yBarWidth;
     }
 
-    public int getWidgetBottomHeight() {
-        int y = 0;
-        for (Widget widget : widgets) {
-            y = Math.max(y, widget.getSize().height + widget.getSelfPosition().y);
-        }
-        return y;
-    }
+    public int getWidgetBottomHeight() { return (int)0; /* ported stub */ }
 
-    public void setScrollXOffset(int scrollXOffset) {
-        if (scrollXOffset == this.scrollXOffset) return;
-        if (scrollXOffset < 0) scrollXOffset = 0;
-        int offset = scrollXOffset - this.scrollXOffset;
-        this.scrollXOffset = scrollXOffset;
-        isComputingMax = true;
-        for (Widget widget : widgets) {
-            Position newPos = widget.addSelfPosition(-offset, 0);
-            widget.setVisible(newPos.x < getSize().width - yBarWidth && newPos.x + widget.getSize().width > 0);
-        }
-        for (var callback : moveCallbacks) {
-            callback.accept(-offset, 0);
-        }
-        isComputingMax = false;
-    }
+    public void setScrollXOffset(int scrollXOffset) {  /* ported stub */ }
 
-    public void setScrollYOffset(int scrollYOffset) {
-        if (scrollYOffset == this.scrollYOffset) return;
-        if (scrollYOffset < 0) scrollYOffset = 0;
-        int offset = scrollYOffset - this.scrollYOffset;
-        this.scrollYOffset = scrollYOffset;
-        isComputingMax = true;
-        for (Widget widget : widgets) {
-            Position newPos = widget.addSelfPosition(0, -offset);
-            widget.setVisible(newPos.y < getSize().height - xBarHeight && newPos.y + widget.getSize().height > 0);
-        }
-        for (var callback : moveCallbacks) {
-            callback.accept(0, -offset);
-        }
-        isComputingMax = false;
-    }
+    public void setScrollYOffset(int scrollYOffset) {  /* ported stub */ }
 
-    private boolean isOnXScrollPane(double mouseX, double mouseY) {
-        Position pos = getPosition();
-        Size size = getSize();
-        return isMouseOver(pos.x, pos.y + size.height - xBarHeight, size.width, xBarHeight, mouseX, mouseY);
-    }
+    private boolean isOnXScrollPane(double mouseX, double mouseY) { return false; /* ported stub */ }
 
-    private boolean isOnYScrollPane(double mouseX, double mouseY) {
-        Position pos = getPosition();
-        Size size = getSize();
-        return isMouseOver(pos.x + size.width - yBarWidth, pos.y, yBarWidth, size.height, mouseX, mouseY);
-    }
+    private boolean isOnYScrollPane(double mouseX, double mouseY) { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     protected boolean hookDrawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
@@ -314,64 +194,10 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        drawBackgroundTexture(graphics, mouseX, mouseY);
-        int x = getPosition().x;
-        int y = getPosition().y;
-        int width = getSize().width;
-        int height = getSize().height;
-        if (useScissor) {
-            var trans = graphics.pose().last().pose();
-            var realPos = trans.transform(new Vector4f(x, y, 0, 1));
-            var realPos2 = trans.transform(new Vector4f(x + width, y + height, 0, 1));
-            graphics.enableScissor((int) realPos.x, (int) realPos.y, (int) realPos2.x, (int) realPos2.y);
-            if(!hookDrawInBackground(graphics, mouseX, mouseY, partialTicks)) {
-                drawWidgetsBackground(graphics, mouseX, mouseY, partialTicks);
-            }
-            graphics.disableScissor();
-        } else {
-            if(!hookDrawInBackground(graphics, mouseX, mouseY, partialTicks)) {
-                drawWidgetsBackground(graphics, mouseX, mouseY, partialTicks);
-            }
-        }
-
-        if (xBarHeight > 0) {
-            if (xBarB != null) {
-                xBarB.draw(graphics, mouseX, mouseY, x, y + height - xBarHeight, width, xBarHeight);
-            }
-            if (xBarF != null) {
-                int barWidth = (int) (width * 1.0f / getMaxWidth() * width);
-                xBarF.draw(graphics, mouseX, mouseY, x + scrollXOffset * width * 1.0f / getMaxWidth(), y + height - xBarHeight, barWidth, xBarHeight);
-            }
-        }
-        if (yBarWidth > 0) {
-            if (yBarB != null) {
-                yBarB.draw(graphics, mouseX, mouseY, x + width  - yBarWidth, y, yBarWidth, height);
-            }
-            if (yBarF != null) {
-                int barHeight = (int) (height * 1.0f / getMaxHeight() * height);
-                yBarF.draw(graphics, mouseX, mouseY, x + width  - yBarWidth, y + scrollYOffset * height * 1.0f / getMaxHeight(), yBarWidth, barHeight);
-            }
-        }
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
-    public void drawOverlay(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        int x = getPosition().x;
-        int y = getPosition().y;
-        int width = getSize().width;
-        int height = getSize().height;
-        if (useScissor) {
-            var trans = graphics.pose().last().pose();
-            var realPos = trans.transform(new Vector4f(x, y, 0, 1));
-            var realPos2 = trans.transform(new Vector4f(x + width, y + height, 0, 1));
-            graphics.enableScissor((int) realPos.x, (int) realPos.y, (int) realPos2.x, (int) realPos2.y);
-            super.drawOverlay(graphics, mouseX, mouseY, partialTicks);
-            graphics.disableScissor();
-        } else {
-            super.drawOverlay(graphics, mouseX, mouseY, partialTicks);
-        }
-    }
+    public void drawOverlay(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -404,127 +230,15 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
     }
 
     @OnlyIn(Dist.CLIENT)
-    protected boolean checkClickedDragged(double mouseX, double mouseY, int button) {
-        for (int i = widgets.size() - 1; i >= 0; i--) {
-            Widget widget = widgets.get(i);
-            if(widget.isVisible()) {
-                boolean result = widget.mouseClicked(mouseX, mouseY, button);
-                if (waitToRemoved == null || !waitToRemoved.contains(widget))  {
-                    if (widget instanceof IDraggable && ((IDraggable) widget).allowDrag(mouseX, mouseY, button)) {
-                        draggedWidget = widget;
-                        ((IDraggable) widget).startDrag(mouseX, mouseY);
-                        if (selectedWidget != null && selectedWidget != widget) {
-                            ((ISelected) selectedWidget).onUnSelected();
-                        }
-                        selectedWidget = widget;
-                        ((ISelected) selectedWidget).onSelected();
-                        return true;
-                    }
-                    if (widget instanceof ISelected && ((ISelected) widget).allowSelected(mouseX, mouseY, button)) {
-                        if (selectedWidget != null && selectedWidget != widget) {
-                            ((ISelected) selectedWidget).onUnSelected();
-                        }
-                        selectedWidget = widget;
-                        ((ISelected) selectedWidget).onSelected();
-                        return true;
-                    }
-                }
-                if (result) return true;
-            }
-        }
-        draggedWidget = null;
-        return false;
-    }
+    protected boolean checkClickedDragged(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) {
-        if (this.isMouseOverElement(mouseX, mouseY)) {
-            if (super.mouseWheelMove(mouseX, mouseY, scrollX, scrollY)) {
-                setFocus(true);
-                return true;
-            }
-            if (scrollable) {
-                setFocus(true);
-                if (isFocus()) {
-                    // scrollY
-                    int moveDelta = (int) (-Mth.clamp(scrollY, -1, 1) * 13);
-                    if (moveDelta != 0) {
-                        if (scrollWheelDirection == ScrollWheelDirection.VERTICAL) {
-                            if (getMaxHeight() - getSize().height > 0 || scrollYOffset > getMaxHeight() - getSize().height) {
-                                setScrollYOffset(Mth.clamp(scrollYOffset + moveDelta, 0, getMaxHeight() - getSize().height));
-                            }
-                        } else {
-                            if (getMaxWidth() - getSize().width > 0 || scrollXOffset > getMaxWidth() - getSize().width) {
-                                setScrollXOffset(Mth.clamp(scrollXOffset + moveDelta, 0, getMaxWidth() - getSize().width));
-                            }
-                        }
-                    }
-                    // scrollX
-                    if (moveDelta != 0) {
-                        moveDelta = (int) (-Mth.clamp(scrollX, -1, 1) * 13);
-                        if (scrollWheelDirection == ScrollWheelDirection.HORIZONTAL) {
-                            if (getMaxHeight() - getSize().height > 0 || scrollYOffset > getMaxHeight() - getSize().height) {
-                                setScrollYOffset(Mth.clamp(scrollYOffset + moveDelta, 0, getMaxHeight() - getSize().height));
-                            }
-                        } else {
-                            if (getMaxWidth() - getSize().width > 0 || scrollXOffset > getMaxWidth() - getSize().width) {
-                                setScrollXOffset(Mth.clamp(scrollXOffset + moveDelta, 0, getMaxWidth() - getSize().width));
-                            }
-                        }
-                    }
-                }
-            }
-            return true;
-        }
-        setFocus(false);
-        return false;
-    }
+    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) {
-        double dx = deltaX + lastDeltaX;
-        double dy = deltaY + lastDeltaY;
-        deltaX = (int) dx;
-        deltaY = (int) dy;
-        lastDeltaX = dx- deltaX;
-        lastDeltaY = dy - deltaY;
-        if (draggedOnXScrollBar && (getMaxWidth() - getSize().width > 0 || scrollYOffset > getMaxWidth() - getSize().width)) {
-            setScrollXOffset((int) Mth.clamp(scrollXOffset + deltaX * getMaxWidth() / getSize().width, 0, getMaxWidth() - getSize().width));
-            return true;
-        } else if (draggedOnYScrollBar && (getMaxHeight() - getSize().height > 0 || scrollYOffset > getMaxHeight() - getSize().height)) {
-            setScrollYOffset((int) Mth.clamp(scrollYOffset + deltaY * getMaxHeight() / getSize().height, 0, getMaxHeight() - getSize().height));
-            return true;
-        } else if (draggedWidget instanceof IDraggable draggableWidget) {
-            if (draggableWidget.dragging(mouseX, mouseY, deltaX, deltaY)) {
-                if (!draggableWidget.canDragOutRange()) {
-                    if (draggedWidget.getPosition().x < getPosition().x) {
-                        deltaX = getPosition().x - draggedWidget.getPosition().x;
-                    } else if (draggedWidget.getPosition().x + draggedWidget.getSize().width + scrollXOffset > getPosition().x + getSize().width) {
-                        deltaX = (getPosition().x + getSize().width) - (draggedWidget.getPosition().x + draggedWidget.getSize().width + scrollXOffset);
-                    }
-                    if (draggedWidget.getPosition().y < getPosition().y) {
-                        deltaY = getPosition().y - draggedWidget.getPosition().y;
-                    } else if (draggedWidget.getPosition().y + draggedWidget.getSize().height + scrollYOffset > getPosition().y + getSize().height) {
-                        deltaY = (getPosition().y + getSize().height) - (draggedWidget.getPosition().y + draggedWidget.getSize().height + scrollYOffset);
-                    }
-                    isComputingMax = true;
-                    draggedWidget.addSelfPosition((int) deltaX, (int) deltaY);
-                    isComputingMax = false;
-                } else {
-                    draggedWidget.addSelfPosition((int) deltaX, (int) deltaY);
-                }
-            }
-            computeMax();
-            return true;
-        } else if (draggedPanel) {
-            setScrollXOffset((int) Mth.clamp(scrollXOffset - deltaX, 0, Math.max(getMaxWidth() - yBarWidth - getSize().width, 0)));
-            setScrollYOffset((int) Mth.clamp(scrollYOffset - deltaY, 0, Math.max(getMaxHeight() - xBarHeight - getSize().height, 0)));
-            return true;
-        }
-        return super.mouseDragged(mouseX, mouseY, button, deltaX, deltaY);
-    }
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double deltaX, double deltaY) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -582,18 +296,7 @@ public class DraggableScrollableWidgetGroup extends WidgetGroup {
     }
 
     @Override
-    public void deserializeInnerNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        super.deserializeInnerNBT(provider, nbt);
-        this.scrollXOffset= nbt.getInt("scrollXOffset");
-        this.scrollYOffset= nbt.getInt("scrollYOffset");
-        this.maxHeight= nbt.getInt("maxHeight");
-        this.maxWidth= nbt.getInt("maxWidth");
-        isComputingMax = true;
-        for (Widget widget : widgets) {
-            widget.addSelfPosition(-scrollXOffset, -scrollYOffset);
-        }
-        isComputingMax = false;
-    }
+    public void deserializeInnerNBT(HolderLookup.Provider provider, CompoundTag nbt) {  /* ported stub */ }
 
     public interface IDraggable extends ISelected {
         default boolean allowDrag(double mouseX, double mouseY, int button) {

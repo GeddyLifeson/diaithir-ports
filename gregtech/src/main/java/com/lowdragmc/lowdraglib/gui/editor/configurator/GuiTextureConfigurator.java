@@ -47,36 +47,11 @@ public class GuiTextureConfigurator extends ValueConfigurator<IGuiTexture>{
     }
 
     @Override
-    public void computeHeight() {
-        super.computeHeight();
-        setSize(new Size(getSize().width, 15 + preview.getSize().height + 4));
-    }
+    public void computeHeight() {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (button == 1 && Editor.INSTANCE != null && preview.isMouseOverElement(mouseX, mouseY)) {
-            var menu = TreeBuilder.Menu.start()
-                    .leaf(Icons.DELETE, "ldlib.gui.editor.menu.remove", () -> {
-                        onValueUpdate(IGuiTexture.EMPTY);
-                        updateValue();
-                    })
-                    .leaf(Icons.COPY, "ldlib.gui.editor.menu.copy", () -> Editor.INSTANCE.setCopy("texture", value));
-            if ("texture".equals(Editor.INSTANCE.getCopyType())) {
-                menu.leaf(Icons.PASTE, "ldlib.gui.editor.menu.paste", () -> {
-                    Editor.INSTANCE.ifCopiedPresent("texture", c -> {
-                        if (c instanceof IGuiTexture texture) {
-                            onValueUpdate(texture);
-                            updateValue();
-                        }
-                    });
-                });
-            }
-            Editor.INSTANCE.openMenu(mouseX, mouseY, menu);
-            return true;
-        }
-        return super.mouseClicked(mouseX, mouseY, button);
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     @Override
     public void init(int width) {

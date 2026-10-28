@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.common.item.armor;
 
+import net.minecraft.world.InteractionResult;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
@@ -19,7 +23,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -40,7 +44,7 @@ public class AdvancedNanoMuscleSuite extends NanoMuscleSuite implements IJetpack
     private List<Pair<NonNullList<ItemStack>, IntList>> inventoryIndexMap;
 
     public AdvancedNanoMuscleSuite(int energyPerUse, long capacity, int tier) {
-        super(ArmorItem.Type.CHESTPLATE, energyPerUse, capacity, tier);
+        super(ArmorType.CHESTPLATE, energyPerUse, capacity, tier);
     }
 
     @Override
@@ -216,13 +220,7 @@ public class AdvancedNanoMuscleSuite extends NanoMuscleSuite implements IJetpack
         }
         this.HUD.draw(guiGraphics);
         this.HUD.reset();
-    }
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                            EquipmentSlot slot, ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/advanced_nano_muscle_suite_1.png");
-    }
+    }/* ported: removed */
 
     @Override
     public boolean canUseEnergy(@NotNull ItemStack stack, int amount) {

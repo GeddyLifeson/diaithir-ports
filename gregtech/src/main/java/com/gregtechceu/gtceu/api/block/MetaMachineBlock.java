@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.block;
 
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.property.GTBlockStateProperties;
 import com.gregtechceu.gtceu.api.capability.*;
@@ -39,7 +41,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -61,8 +63,8 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
-import appeng.api.AECapabilities;
-import appeng.api.networking.IInWorldGridNodeHost;
+
+
 import lombok.Getter;
 import org.jetbrains.annotations.Nullable;
 

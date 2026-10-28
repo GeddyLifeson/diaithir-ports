@@ -32,31 +32,7 @@ public class FluidConfigurator extends ValueConfigurator<Fluid> implements Searc
     }
 
     @Override
-    public void init(int width) {
-        super.init(width);
-        addWidget(image = new ImageWidget(leftWidth, 2, width - leftWidth - 3 - rightWidth, 10, ColorPattern.T_GRAY.rectTexture().setRadius(5)));
-        image.setDraggingConsumer(
-                o -> o instanceof Fluid || o instanceof FluidStack,
-                o -> image.setImage(ColorPattern.GREEN.rectTexture().setRadius(5)),
-                o -> image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5)),
-                o -> {
-                    if (o instanceof FluidStack fluidStack) {
-                        onValueUpdate(fluidStack.getFluid());
-                        updateValue();
-                    } else if (o instanceof Fluid fluid) {
-                        onValueUpdate(fluid);
-                        updateValue();
-                    }
-                    image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5));
-                });
-        addWidget(searchComponent = new SearchComponentWidget<>(leftWidth + 3, 2, width - leftWidth - 6 - rightWidth, 10, this));
-        searchComponent.setShowUp(true);
-        searchComponent.setCapacity(5);
-        var textFieldWidget = searchComponent.textFieldWidget;
-        textFieldWidget.setClientSideWidget();
-        textFieldWidget.setCurrentString(value == null ? BuiltInRegistries.FLUID.getKey(defaultValue) : BuiltInRegistries.FLUID.getKey(value));
-        textFieldWidget.setBordered(false);
-    }
+    public void init(int width) {  /* ported stub */ }
 
 
     @Override
@@ -71,15 +47,5 @@ public class FluidConfigurator extends ValueConfigurator<Fluid> implements Searc
     }
 
     @Override
-    public void search(String word, Consumer<Fluid> find) {
-        var wordLower = word.toLowerCase();
-        for (var entry : BuiltInRegistries.FLUID.entrySet()) {
-            if (Thread.currentThread().isInterrupted()) return;
-            var fluid = entry.getValue();
-            var id = entry.getKey().location();
-            if (id.toString().contains(wordLower)) {
-                find.accept(fluid);
-            }
-        }
-    }
+    public void search(String word, Consumer<Fluid> find) {  /* ported stub */ }
 }

@@ -22,19 +22,7 @@ public class LanguageDefinition implements ILanguageDefinition {
         this.indentations = indentations;
     }
 
-    public LanguageDefinition compileTokenPattern() {
-        var patternBuilder = new StringBuilder();
-        for (TokenType tokenType : typesInOrder) {
-            if (tokenType.hasPattern()) {
-                patternBuilder.append("|(?<").append(tokenType.name).append(">").append(tokenType.getPattern()).append(")");
-            }
-        }
-        if (!patternBuilder.isEmpty()) {
-            patternBuilder.deleteCharAt(0);
-        }
-        tokenPattern = Pattern.compile(patternBuilder.toString());
-        return this;
-    }
+    public LanguageDefinition compileTokenPattern() { return null; /* ported stub */ }
 
     public Pattern getTokenPattern() {
         if (tokenPattern == null) {

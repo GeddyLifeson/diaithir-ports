@@ -36,37 +36,7 @@ public class ArrayConfiguratorAccessor implements IConfiguratorAccessor<Object> 
     }
 
     @Override
-    public Configurator create(String name, Supplier supplier, Consumer consumer, boolean forceUpdate, Field field) {
-        boolean isCollapse = true;
-        boolean canCollapse = true;
-        if (field.isAnnotationPresent(Configurable.class)) {
-            isCollapse = field.getAnnotation(Configurable.class).collapse();
-            canCollapse = field.getAnnotation(Configurable.class).canCollapse();
-        }
-
-        var arrayGroup = new ArrayConfiguratorGroup<>(name, isCollapse, () -> {
-            Object array = supplier.get();
-            if (array == null) {
-                array = defaultValue(field, Object.class);
-            }
-            int length = Array.getLength(array);
-
-            List<Object> objectList = new ArrayList<>();
-
-            for (int i = 0; i < length; i++) {
-                objectList.add(Array.get(array, i));
-            }
-
-            return objectList;
-        }, (getter, setter) -> childAccessor.create("", getter, setter, forceUpdate, field), forceUpdate);
-
-        arrayGroup.setAddDefault(() -> childAccessor.defaultValue(field, childType));
-
-        arrayGroup.setOnUpdate(list -> consumer.accept(toArray(list)));
-        arrayGroup.setCanCollapse(canCollapse);
-        arrayGroup.setOnReorder((index, widget) -> arrayGroup.notifyListUpdate());
-        return arrayGroup;
-    }
+    public Configurator create(String name, Supplier supplier, Consumer consumer, boolean forceUpdate, Field field) { return null; /* ported stub */ }
 
     private Configurator createConfigurator(String name, Consumer consumer, boolean forceUpdate, Field field, List<Object> objectList, Object2IntMap<Configurator> indexMap, int index) {
         AtomicReference<Configurator> reference = new AtomicReference<>();

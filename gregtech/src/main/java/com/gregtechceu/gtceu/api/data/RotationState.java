@@ -1,10 +1,12 @@
 package com.gregtechceu.gtceu.api.data;
 
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+
 import com.gregtechceu.gtceu.api.block.property.GTBlockStateProperties;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+
 
 import java.util.function.Predicate;
 
@@ -17,9 +19,9 @@ public enum RotationState implements Predicate<Direction> {
 
     final Predicate<Direction> predicate;
     public final Direction defaultDirection;
-    public final DirectionProperty property;
+    public final EnumProperty<Direction> property;
 
-    RotationState(Predicate<Direction> predicate, Direction defaultDirection, DirectionProperty property) {
+    RotationState(Predicate<Direction> predicate, Direction defaultDirection, EnumProperty<Direction> property) {
         this.predicate = predicate;
         this.defaultDirection = defaultDirection;
         this.property = property;

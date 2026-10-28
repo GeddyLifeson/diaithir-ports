@@ -1,12 +1,14 @@
 package com.lowdragmc.lowdraglib.gui.editor.data;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import com.lowdragmc.lowdraglib.Platform;
 import com.lowdragmc.lowdraglib.gui.editor.ILDLRegister;
 import com.lowdragmc.lowdraglib.gui.editor.ui.Editor;
 import com.lowdragmc.lowdraglib.gui.util.TreeBuilder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtIo;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+
 
 import javax.annotation.Nullable;
 
@@ -26,36 +28,20 @@ public interface IProject extends ILDLRegister, INBTSerializable<CompoundTag> {
     /**
      * Save project
      */
-    default void saveProject(Path file) {
-        try {
-            NbtIo.write(serializeNBT(Platform.getFrozenRegistry()), file);
-        } catch (IOException ignored) {
-            // TODO
-        }
-    }
+    default void saveProject(Path file) {  /* ported stub */ }
 
     /**
      * Load project from file. return null if loading failed
      */
     @Nullable
-    default IProject loadProject(Path file) {
-        try {
-            var tag = NbtIo.read(file);
-            if (tag != null) {
-                deserializeNBT(Platform.getFrozenRegistry(), tag);
-            }
-        } catch (IOException ignored) {}
-        return this;
-    }
+    default IProject loadProject(Path file) { return null; /* ported stub */ }
 
     IProject newEmptyProject();
 
     /**
      * Get project work space
      */
-    default File getProjectWorkSpace(Editor editor) {
-        return new File(editor.getWorkSpace(), "projects/" + name());
-    }
+    default File getProjectWorkSpace(Editor editor) { return null; /* ported stub */ }
 
     /**
      * Suffix name of this project
@@ -73,9 +59,7 @@ public interface IProject extends ILDLRegister, INBTSerializable<CompoundTag> {
     /**
      * Fired when project is opened
      */
-    default void onLoad(Editor editor) {
-        editor.getResourcePanel().loadResource(getResources(), false);
-    }
+    default void onLoad(Editor editor) {  /* ported stub */ }
 
     /**
      * Attach menu

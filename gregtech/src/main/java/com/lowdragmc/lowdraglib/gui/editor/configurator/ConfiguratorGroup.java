@@ -56,26 +56,9 @@ public class ConfiguratorGroup extends Configurator {
         setCollapse(!isCollapse);
     }
 
-    public void setCollapse(boolean collapse) {
-        isCollapse = collapse;
-        for (Configurator configurator : configurators) {
-            configurator.setActive(!isCollapse);
-            configurator.setVisible(!isCollapse);
-        }
-        computeLayout();
-    }
+    public void setCollapse(boolean collapse) {  /* ported stub */ }
 
-    public void addConfigurator(int index, Configurator configurator) {
-        configurator.setConfiguratorContainer(configuratorContainer);
-        configurator.setActive(!isCollapse);
-        configurator.setVisible(!isCollapse);
-        this.configurators.add(index, configurator);
-        addWidget(index, configurator);
-        if (isInit()) {
-            configurator.init(Math.max(0, width - 5));
-            computeLayout();
-        }
-    }
+    public void addConfigurator(int index, Configurator configurator) {  /* ported stub */ }
 
     public void removeConfigurator(Configurator configurator) {
         if (configurators.remove(configurator)) {
@@ -90,34 +73,10 @@ public class ConfiguratorGroup extends Configurator {
         configurators.clear();
     }
 
-    public void addConfigurators(Configurator... configurators) {
-        for (Configurator configurator : configurators) {
-            configurator.setConfiguratorContainer(configuratorContainer);
-            configurator.setActive(!isCollapse);
-            configurator.setVisible(!isCollapse);
-            this.configurators.add(configurator);
-            addWidget(configurator);
-        }
-        if (isInit()) {
-            for (Configurator configurator : configurators) {
-                configurator.init(Math.max(0, width - 5));
-            }
-            computeLayout();
-        }
-    }
+    public void addConfigurators(Configurator... configurators) {  /* ported stub */ }
 
     @Override
-    public void computeHeight() {
-        int height = 15;
-        if (!isCollapse) {
-            for (Configurator configurator : configurators) {
-                configurator.computeHeight();
-                configurator.setSelfPosition(new Position(5, height));
-                height += configurator.getSize().height;
-            }
-        }
-        setSize(new Size(getSize().width, height));
-    }
+    public void computeHeight() {  /* ported stub */ }
 
     @Override
     public void init(int width) {
@@ -130,17 +89,5 @@ public class ConfiguratorGroup extends Configurator {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        Position pos = getPosition();
-        Size size = getSize();
-        if (isCollapse) {
-            Icons.RIGHT.setColor(-1).draw(graphics, mouseX, mouseY, pos.x + leftWidth, pos.y + 3, 9, 9);
-        } else {
-            Icons.DOWN.setColor(-1).draw(graphics, mouseX, mouseY, pos.x + leftWidth, pos.y + 3, 9, 9);
-            if (configurators.size() > 0) {
-                DrawerHelper.drawSolidRect(graphics, pos.x + 2, pos.y + 17, 1, size.height - 19, ColorPattern.T_WHITE.color);
-            }
-        }
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 }

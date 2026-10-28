@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.client.renderer.entity;
 import com.gregtechceu.gtceu.common.entity.GTExplosiveEntity;
 
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.TntMinecartRenderer;
@@ -18,9 +18,7 @@ import com.mojang.math.Axis;
 import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
-public class GTExplosiveRenderer<T extends GTExplosiveEntity> extends EntityRenderer<T> {
-
-    private final BlockRenderDispatcher blockRenderer;
+public class GTExplosiveRenderer<T extends GTExplosiveEntity>  {/* ported: removed */
 
     public GTExplosiveRenderer(EntityRendererProvider.Context context) {
         super(context);

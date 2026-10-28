@@ -29,7 +29,7 @@ import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.registries.IdMappingEvent;
+
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.registries.RegistryBuilder;
 
@@ -132,11 +132,7 @@ public final class GTRegistries {
 
     private static void onUnfreeze(RegisterEvent event) {
         isFrozen = false;
-    }
-
-    private static void onFreeze(IdMappingEvent event) {
-        isFrozen = event.isFrozen();
-    }
+    }/* ported: removed */
 
     public static void init(IEventBus eventBus) {
         eventBus.addListener(EventPriority.HIGHEST, GTRegistries::onUnfreeze);

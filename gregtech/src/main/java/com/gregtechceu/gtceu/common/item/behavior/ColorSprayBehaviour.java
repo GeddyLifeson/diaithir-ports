@@ -40,13 +40,13 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.util.TriPredicate;
 
-import appeng.api.implementations.blockentities.IColorableBlockEntity;
-import appeng.api.util.AEColor;
-import appeng.blockentity.networking.CableBusBlockEntity;
+
+
+
 import com.google.common.collect.ImmutableMap;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.AllTags;
-import com.simibubi.create.foundation.utility.BlockHelper;
+
+
+
 import it.unimi.dsi.fastutil.ints.IntIntPair;
 import org.jetbrains.annotations.Nullable;
 

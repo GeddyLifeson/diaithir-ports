@@ -50,15 +50,5 @@ public class ImmediateWorldSceneRenderer extends WorldSceneRenderer {
     }
 
     @Override
-    protected void clearView(int x, int y, int width, int height) {
-        int a = (clearColor & 0xFF000000) >> 24;
-        if (a == 0) {
-            RenderSystem.clear(GL11.GL_DEPTH_BUFFER_BIT, Minecraft.ON_OSX);
-            return;
-        }
-        GL11.glEnable(GL11.GL_SCISSOR_TEST);
-        GL11.glScissor(x, y, width, height);
-        super.clearView(x, y, width, height);
-        GL11.glDisable(GL11.GL_SCISSOR_TEST);
-    }
+    protected void clearView(int x, int y, int width, int height) {  /* ported stub */ }
 }

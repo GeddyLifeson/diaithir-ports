@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.common.item.armor;
 
+import net.minecraft.world.InteractionResult;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
@@ -20,7 +24,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -41,7 +45,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
     private @Nullable List<Pair<NonNullList<ItemStack>, IntList>> inventoryIndexMap;
 
     public AdvancedQuarkTechSuite(int energyPerUse, long capacity, int tier) {
-        super(ArmorItem.Type.CHESTPLATE, energyPerUse, capacity, tier);
+        super(ArmorType.CHESTPLATE, energyPerUse, capacity, tier);
     }
 
     @Override
@@ -91,7 +95,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
 
         performFlying(player, jetpackEnabled, hoverMode, stack);
 
-        if (type == ArmorItem.Type.CHESTPLATE && !player.fireImmune()) {
+        if (type == ArmorType.CHESTPLATE && !player.fireImmune()) {
             ((IFireImmuneEntity) player).gtceu$setFireImmune(true);
             if (player.isOnFire()) player.extinguishFire();
         }
@@ -222,35 +226,7 @@ public class AdvancedQuarkTechSuite extends QuarkTechSuite implements IJetpack {
         }
         this.HUD.draw(guiGraphics);
         this.HUD.reset();
-    }
-
-    /*
-     * @Override
-     * public ArmorProperties getProperties(EntityLivingBase player, @NotNull ItemStack armor, DamageSource source,
-     * double damage, EntityEquipmentSlot equipmentSlot) {
-     * int damageLimit = Integer.MAX_VALUE;
-     * IElectricItem item = armor.getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null);
-     * if (item == null) {
-     * return new ArmorProperties(0, 0, damageLimit);
-     * }
-     * if (energyPerUse > 0) {
-     * damageLimit = (int) Math.min(damageLimit, 25.0D * item.getCharge() / (energyPerUse * 250.0D));
-     * }
-     * return new ArmorProperties(8, getDamageAbsorption() * getAbsorption(armor), damageLimit);
-     * }
-     *
-     * @Override
-     * public boolean handleUnblockableDamage(EntityLivingBase entity, @NotNull ItemStack armor, DamageSource source,
-     * double damage, EntityEquipmentSlot equipmentSlot) {
-     * return source != DamageSource.FALL && source != DamageSource.DROWN && source != DamageSource.STARVE;
-     * }
-     */
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity,
-                                            EquipmentSlot slot, ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/advanced_quark_tech_suite_1.png");
-    }
+    }/* ported: removed */
 
     @Override
     public double getDamageAbsorption() {

@@ -8,8 +8,8 @@ import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.networking.s2c.SPacketUIWidgetUpdate;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import dev.emi.emi.runtime.EmiDrawContext;
-import dev.emi.emi.screen.EmiScreenManager;
+
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.minecraft.ChatFormatting;
@@ -85,17 +85,10 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     }
 
     @Override
-    public void init() {
-        this.imageWidth = modularUI.getWidth();
-        this.imageHeight = modularUI.getHeight();
-        super.init();
-        this.modularUI.updateScreenSize(width, height);
-    }
+    public void init() {  /* ported stub */ }
 
     @Override
-    protected void renderBg(GuiGraphics graphics, float delta, int mouseX, int mouseY) {
-
-    }
+    protected void renderBg(GuiGraphics graphics, float delta, int mouseX, int mouseY) {  /* ported stub */ }
 
     @Override
     public void removed() {
@@ -120,84 +113,9 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     }
 
     @Override
-    public void render(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        this.hoveredSlot = null;
-        
-        RenderSystem.disableDepthTest();
-        RenderSystem.depthMask(false);
+    public void render(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
-        tooltipTexts = null;
-        tooltipComponent = null;
-
-        this.renderBackground(graphics, mouseX, mouseY, partialTicks);
-
-        RenderSystem.depthMask(true);
-        NeoForge.EVENT_BUS.post(new ScreenEvent.BackgroundRendered(this, graphics));
-        RenderSystem.depthMask(false);
-
-        modularUI.mainGroup.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-
-        RenderSystem.depthMask(true);
-        NeoForge.EVENT_BUS.post(new ContainerScreenEvent.Render.Background(this, graphics, mouseX, mouseY));
-        RenderSystem.depthMask(false);
-
-        if (LDLib.isEmiLoaded()) {
-            RenderSystem.enableDepthTest();
-            RenderSystem.depthMask(true);
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            EmiScreenManager.render(EmiDrawContext.wrap(graphics), mouseX, mouseY, partialTicks);
-            RenderSystem.disableDepthTest();
-            RenderSystem.depthMask(false);
-        }
-
-        modularUI.mainGroup.drawInForeground(graphics, mouseX, mouseY, partialTicks);
-
-        if (draggingElement != null) {
-            draggingElement.getB().draw(graphics, mouseX, mouseY, mouseX - 20, mouseY - 20, 40, 40);
-        }
-
-        graphics.bufferSource().endBatch();
-
-        RenderSystem.enableDepthTest();
-        RenderSystem.depthMask(true);
-
-        PoseStack posestack = graphics.pose();
-        posestack.pushPose();
-        posestack.translate(leftPos, topPos, 232);
-
-        NeoForge.EVENT_BUS.post(new ContainerScreenEvent.Render.Foreground(this, graphics, mouseX, mouseY));
-
-        renderItemStackOnMouse(graphics, mouseX, mouseY);
-        renderReturningItemStack(graphics);
-
-        graphics.bufferSource().endBatch();
-        posestack.popPose();
-        RenderSystem.enableDepthTest();
-        RenderSystem.depthMask(true);
-
-        if (LDLib.isEmiLoaded()) {
-            posestack.pushPose();
-            posestack.translate(0, 0, 200);
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            EmiScreenManager.drawForeground(EmiDrawContext.wrap(graphics), mouseX, mouseY, partialTicks);
-            posestack.popPose();
-        }
-
-        if (draggingElement == null && tooltipTexts != null && !tooltipTexts.isEmpty()) {
-            graphics.pose().pushPose();
-            graphics.pose().translate(0, 0, 200);
-            DrawerHelper.drawTooltip(graphics, mouseX, mouseY, tooltipTexts, tooltipStack, tooltipComponent, tooltipFont == null ? Minecraft.getInstance().font : tooltipFont);
-            graphics.pose().popPose();
-        }
-    }
-
-    public void setHoveredSlot(Slot hoveredSlot) {
-        // to make sure the widget won't trigger xei slot lookup
-        if (modularUI.mainGroup.isClientSideWidget() && !modularUI.mainGroup.isAllowXEIIngredientOverMouse()) {
-            return;
-        }
-        this.hoveredSlot = hoveredSlot;
-    }
+    public void setHoveredSlot(Slot hoveredSlot) {  /* ported stub */ }
 
     private void renderItemStackOnMouse(GuiGraphics graphics, int mouseX, int mouseY) {
         if (minecraft == null || minecraft.player == null) return;
@@ -264,50 +182,16 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int pButton) {
-        pressedButton = pButton;
-        focused = false;
-        if (modularUI.mainGroup.mouseClicked(mouseX, mouseY, pButton)) return true;
-        for (GuiEventListener guiEventListener : this.children()) {
-            if (!guiEventListener.mouseClicked(mouseX, mouseY, pButton)) continue;
-            this.setFocused(guiEventListener);
-            if (pButton == 0) {
-                this.setDragging(true);
-            }
-            return true;
-        }
-        return false;
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
 
     @Override
-    public boolean mouseDragged(double mouseX, double mouseY, int pButton, double pDragX, double pDragY) {
-        focused = false;
-        if (modularUI.mainGroup.mouseDragged(mouseX, mouseY, pButton, pDragX, pDragY)) return true;
-        if (this.getFocused() != null && this.isDragging() && pButton == 0) {
-            return this.getFocused().mouseDragged(mouseX, mouseY, pButton, pDragX, pDragY);
-        }
-        return false;
-    }
+    public boolean mouseDragged(double mouseX, double mouseY, int pButton, double pDragX, double pDragY) { return false; /* ported stub */ }
 
     @Override
-    public boolean mouseReleased(double mouseX, double mouseY, int pButton) {
-        pressedButton = -1;
-        focused = false;
-        var result = modularUI.mainGroup.mouseReleased(mouseX, mouseY, pButton);
-        draggingElement = null;
-        if (result) return true;
-        this.setDragging(false);
-        return this.getChildAt(mouseX, mouseY).filter(guiEventListener -> guiEventListener.mouseReleased(mouseX, mouseY, pButton)).isPresent();
-    }
+    public boolean mouseReleased(double mouseX, double mouseY, int pButton) { return false; /* ported stub */ }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        focused = false;
-        if (modularUI.mainGroup.keyPressed(keyCode, scanCode, modifiers)) {
-            return false;
-        }
-        return super.keyPressed(keyCode, scanCode, modifiers);
-    }
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double pScrollX, double pScrollY) {
@@ -317,18 +201,10 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
     }
 
     @Override
-    public boolean keyReleased(int keyCode, int scanCode, int modifiers) {
-        focused = false;
-        if (modularUI.mainGroup.keyReleased(keyCode, scanCode, modifiers)) return true;
-        return this.getFocused() != null && this.getFocused().keyReleased(keyCode, scanCode, modifiers);
-    }
+    public boolean keyReleased(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
     @Override
-    public boolean charTyped(char codePoint, int modifiers) {
-        focused = false;
-        if (modularUI.mainGroup.charTyped(codePoint, modifiers)) return true;
-        return this.getFocused() != null && this.getFocused().charTyped(codePoint, modifiers);
-    }
+    public boolean charTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
 
     @Override
     public void mouseMoved(double mouseX, double mouseY) {
@@ -340,35 +216,21 @@ public class ModularUIGuiContainer extends AbstractContainerScreen<ModularUICont
         return pressedButton == button;
     }
 
-    public void superMouseClicked(double mouseX, double mouseY, int mouseButton) {
-        try {
-            super.mouseClicked(mouseX, mouseY, mouseButton);
-        } catch (Exception ignored) { }
-    }
+    public void superMouseClicked(double mouseX, double mouseY, int mouseButton) {  /* ported stub */ }
 
-    public void superMouseDragged(double pMouseX, double pMouseY, int pButton, double pDragX, double pDragY) {
-        super.mouseDragged(pMouseX, pMouseY, pButton, pDragX, pDragY);
-    }
+    public void superMouseDragged(double pMouseX, double pMouseY, int pButton, double pDragX, double pDragY) {  /* ported stub */ }
 
-    public void superMouseReleased(double mouseX, double mouseY, int state) {
-        super.mouseReleased(mouseX, mouseY, state);
-    }
+    public void superMouseReleased(double mouseX, double mouseY, int state) {  /* ported stub */ }
 
-    public boolean superKeyPressed(int keyCode, int scanCode, int modifiers) {
-        return super.keyPressed(keyCode, scanCode, modifiers);
-    }
+    public boolean superKeyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
     public boolean superMouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
         return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
     }
 
-    public boolean superKeyReleased(int keyCode, int scanCode, int modifiers) {
-        return super.keyReleased(keyCode, scanCode, modifiers);
-    }
+    public boolean superKeyReleased(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
-    public boolean superCharTyped(char codePoint, int modifiers) {
-        return super.charTyped(codePoint, modifiers);
-    }
+    public boolean superCharTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
 
     public void superMouseMoved(double mouseX, double mouseY) {
         super.mouseMoved(mouseX, mouseY);

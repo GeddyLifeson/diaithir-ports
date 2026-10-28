@@ -1,5 +1,7 @@
 package com.lowdragmc.lowdraglib.gui.modular;
 
+import net.minecraft.world.inventory.ContainerInput;
+
 import com.lowdragmc.lowdraglib.Platform;
 import com.lowdragmc.lowdraglib.core.mixins.accessor.AbstractContainerMenuAccessor;
 import com.lowdragmc.lowdraglib.gui.util.PerTickIntCounter;
@@ -99,31 +101,11 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
     }
 
     @Override
-    public void clicked(int slotId, int dragType, @Nonnull ClickType clickTypeIn, @Nonnull Player player) {
-        if (slotId >= 0 && slotId < slots.size()) {
-            Slot slot = getSlot(slotId);
-            ItemStack result = modularUI.getSlotMap().get(slot).slotClick(dragType, clickTypeIn, player);
-            if (result == null) {
-//                return super.clicked(slotId, dragType, clickTypeIn, player);
-                super.clicked(slotId, dragType, clickTypeIn, player);
-            }
-//            return result;
-        }
-        if (slotId == -999) {
-            super.clicked(slotId, dragType, clickTypeIn, player);
-        }
-//        return ItemStack.EMPTY;
-    }
+    public void clicked(int slotId, int dragType, @Nonnull ContainerInput clickTypeIn, @Nonnull Player player) {  /* ported stub */ }
 
     private final PerTickIntCounter transferredPerTick = new PerTickIntCounter(0);
 
-    private List<SlotWidget> getShiftClickSlots(ItemStack itemStack, boolean fromContainer) {
-        return modularUI.getSlotMap().values().stream()
-                .filter(it -> it.canMergeSlot(itemStack))
-                .filter(it -> it.isPlayerContainer == fromContainer)
-                .sorted(Comparator.comparing(s -> (fromContainer ? -1 : 1) * s.getHandler().index))
-                .collect(Collectors.toList());
-    }
+    private List<SlotWidget> getShiftClickSlots(ItemStack itemStack, boolean fromContainer) { return null; /* ported stub */ }
 
     @Override
     public boolean attemptMergeStack(ItemStack itemStack, boolean fromContainer, boolean simulate) {
@@ -186,59 +168,10 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
 
     @Nonnull
     @Override
-    public ItemStack quickMoveStack(@Nonnull Player player, int index) {
-        Slot slot = slots.get(index);
-        if (!slot.mayPickup(player)) {
-            return ItemStack.EMPTY;
-        }
-        if (!slot.hasItem()) {
-            //return empty if we can't transfer it
-            return ItemStack.EMPTY;
-        }
-        ItemStack stackInSlot = slot.getItem();
-//        ItemStack stackToMerge = modularUI.getSlotMap().get(slot).onItemTake(player, stackInSlot.copy(), true);
-        ItemStack stackToMerge = stackInSlot.copy();
-        boolean fromContainer = !modularUI.getSlotMap().get(slot).isPlayerContainer;
-        if (!attemptMergeStack(stackToMerge, fromContainer, true)) {
-            return ItemStack.EMPTY;
-        }
-        int itemsMerged;
-        if (stackToMerge.isEmpty() || modularUI.getSlotMap().get(slot).canMergeSlot(stackToMerge)) {
-            itemsMerged = stackInSlot.getCount() - stackToMerge.getCount();
-        } else {
-            //if we can't have partial stack merge, we have to use all the stack
-            itemsMerged = stackInSlot.getCount();
-        }
-        int itemsToExtract = itemsMerged;
-        itemsMerged += transferredPerTick.get(player.level());
-        if (itemsMerged > stackInSlot.getMaxStackSize()) {
-            //we can merge at most one stack at a time
-            return ItemStack.EMPTY;
-        }
-        transferredPerTick.increment(player.level(), itemsToExtract);
-        //otherwise, perform extraction and merge
-        ItemStack extractedStack = stackInSlot.split(itemsToExtract);
-        if (stackInSlot.isEmpty()) {
-            slot.set(ItemStack.EMPTY);
-        } else {
-            slot.setChanged();
-        }
-//        extractedStack = modularUI.getSlotMap().get(slot).onItemTake(player, extractedStack, false);
-        ItemStack resultStack = extractedStack.copy();
-        if (!attemptMergeStack(extractedStack, fromContainer, false)) {
-            resultStack = ItemStack.EMPTY;
-        }
-        if (!extractedStack.isEmpty()) {
-            player.drop(extractedStack, false, false);
-            resultStack = ItemStack.EMPTY;
-        }
-        return resultStack;
-    }
+    public ItemStack quickMoveStack(@Nonnull Player player, int index) { return null; /* ported stub */ }
 
     @Override
-    public boolean canTakeItemForPickAll(@Nonnull ItemStack stack, @Nonnull Slot slotIn) {
-        return modularUI.getSlotMap().get(slotIn).canMergeSlot(stack);
-    }
+    public boolean canTakeItemForPickAll(@Nonnull ItemStack stack, @Nonnull Slot slotIn) { return false; /* ported stub */ }
 
     @Override
     public boolean stillValid(@Nonnull Player playerIn) {
@@ -246,14 +179,7 @@ public class ModularUIContainer extends AbstractContainerMenu implements WidgetU
     }
 
     @Override
-    public void writeClientAction(Widget widget, int updateId, Consumer<RegistryFriendlyByteBuf> payloadWriter) {
-        RegistryFriendlyByteBuf packetBuffer = new RegistryFriendlyByteBuf(Unpooled.buffer(), Platform.getFrozenRegistry());
-        packetBuffer.writeVarInt(updateId);
-        payloadWriter.accept(packetBuffer);
-        if (modularUI.entityPlayer instanceof AbstractClientPlayer) {
-            PacketDistributor.sendToServer(new CPacketUIClientAction(containerId, packetBuffer));
-        }
-    }
+    public void writeClientAction(Widget widget, int updateId, Consumer<RegistryFriendlyByteBuf> payloadWriter) {  /* ported stub */ }
 
     @Override
     public void writeUpdateInfo(Widget widget, int updateId, Consumer<RegistryFriendlyByteBuf> payloadWriter) {

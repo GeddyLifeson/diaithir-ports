@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.common;
 
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
+
+import net.neoforged.neoforge.event.level.block.BreakBlockEvent;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
@@ -52,9 +56,9 @@ import com.gregtechceu.gtceu.config.ConfigHolder;
 import com.gregtechceu.gtceu.data.loader.PostRegistryListener;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.misc.alloyblast.CustomAlloyBlastRecipeProducer;
-import com.gregtechceu.gtceu.integration.map.ClientCacheManager;
-import com.gregtechceu.gtceu.integration.map.WaypointManager;
-import com.gregtechceu.gtceu.integration.map.cache.server.ServerCache;
+
+
+
 import com.gregtechceu.gtceu.utils.GTStringUtils;
 import com.gregtechceu.gtceu.utils.GlobalPosWithRot;
 import com.gregtechceu.gtceu.utils.TaskHandler;
@@ -83,7 +87,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.event.AddAttributeTooltipsEvent;
-import net.neoforged.neoforge.event.AddReloadListenerEvent;
+
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
@@ -172,7 +176,7 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void onBlockStartBreak(BlockEvent.BreakEvent event) {
+    public static void onBlockStartBreak(BreakBlockEvent event) {
         if (ToolHelper.IS_AOE_BREAKING_BLOCKS.get()) {
             return;
         }
@@ -192,7 +196,7 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void onBreakEvent(BlockEvent.BreakEvent event) {
+    public static void onBreakEvent(BreakBlockEvent event) {
         var machine = MetaMachine.getMachine(event.getLevel(), event.getPos());
         if (machine != null) {
             if (!MachineOwner.canBreakOwnerMachine(event.getPlayer(), machine)) {
@@ -209,7 +213,7 @@ public class CommonEventListener {
     }
 
     @SubscribeEvent
-    public static void registerReloadListeners(AddReloadListenerEvent event) {
+    public static void registerReloadListeners(AddServerReloadListenersEvent event) {
         GTRegistries.updateFrozenRegistry(event.getRegistryAccess());
         event.addListener(PostRegistryListener.INSTANCE);
     }

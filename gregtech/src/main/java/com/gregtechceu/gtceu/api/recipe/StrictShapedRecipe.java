@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.api.recipe;
 
 import com.gregtechceu.gtceu.common.data.GTRecipeSerializers;
-import com.gregtechceu.gtceu.core.mixins.ShapedRecipeAccessor;
+
 
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -58,7 +58,7 @@ public class StrictShapedRecipe extends ShapedRecipe {
         return GTRecipeSerializers.CRAFTING_SHAPED_STRICT.get();
     }
 
-    public static class Serializer implements RecipeSerializer<StrictShapedRecipe> {
+    public static class Serializer {
 
         public static final MapCodec<StrictShapedRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 Codec.STRING.optionalFieldOf("group", "").forGetter(ShapedRecipe::getGroup),

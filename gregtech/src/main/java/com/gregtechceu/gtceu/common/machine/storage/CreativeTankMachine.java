@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
+import net.minecraft.core.component.DataComponentGetter;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
@@ -151,7 +153,7 @@ public class CreativeTankMachine extends QuantumTankMachine {
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
         CreativeMachineInfo info = componentInput.get(GTDataComponents.CREATIVE_MACHINE_INFO);
         if (info != null) {

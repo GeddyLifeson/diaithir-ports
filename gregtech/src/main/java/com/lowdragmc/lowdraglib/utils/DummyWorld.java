@@ -5,7 +5,7 @@ import com.lowdragmc.lowdraglib.LDLib;
 import com.lowdragmc.lowdraglib.Platform;
 import com.lowdragmc.lowdraglib.client.ClientProxy;
 import com.lowdragmc.lowdraglib.client.scene.ParticleManager;
-import com.lowdragmc.lowdraglib.utils.virtual.WrappedClientWorld;
+
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.client.particle.Particle;

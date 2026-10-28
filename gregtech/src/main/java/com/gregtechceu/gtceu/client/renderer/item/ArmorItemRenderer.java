@@ -1,12 +1,12 @@
 package com.gregtechceu.gtceu.client.renderer.item;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.data.pack.GTDynamicResourcePack;
+
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.Item;
 
 import com.google.gson.JsonObject;
@@ -35,15 +35,5 @@ public class ArmorItemRenderer {
         }
     }
 
-    private final Item item;
-    private final ArmorItem.Type armorType;
-
-    protected ArmorItemRenderer(Item item, ArmorItem.Type armorType) {
-        this.item = item;
-        this.armorType = armorType;
-    }
-
-    public static void create(Item item, ArmorItem.Type armorType) {
-        MODELS.add(new ArmorItemRenderer(item, armorType));
-    }
+    private final Item item;/* ported: removed *//* ported: removed *//* ported: removed */
 }

@@ -1,6 +1,6 @@
 package com.lowdragmc.lowdraglib.client.shader.management;
 
-import com.lowdragmc.lowdraglib.client.shader.Shaders;
+
 import com.lowdragmc.lowdraglib.client.shader.uniform.IUniformCallback;
 import com.lowdragmc.lowdraglib.utils.PositionedRect;
 import com.mojang.blaze3d.pipeline.RenderTarget;
@@ -35,14 +35,7 @@ public class ShaderManager {
 	}
 
 	private static TextureTarget TEMP_TARGET;
-	public static TextureTarget getTempTarget() {
-		if (TEMP_TARGET == null) {
-			TEMP_TARGET = new TextureTarget(1024, 1024, false, Minecraft.ON_OSX);
-			TEMP_TARGET.setFilterMode(9729);
-			TEMP_TARGET.setClearColor(0, 0, 0, 0);
-		}
-		return TEMP_TARGET;
-	}
+	public static TextureTarget getTempTarget() { return null; /* ported stub */ }
 
 	public void reload() {
 		programs.forEach((shader, shaderProgram) -> {
@@ -66,50 +59,6 @@ public class ShaderManager {
 		this.viewPort = null;
 	}
 
-	public RenderTarget renderFullImageInFramebuffer(RenderTarget fbo, Shader frag, IUniformCallback consumeCache, Consumer<ShaderProgram> programCreated) {
-		if (fbo == null || frag == null || !allowedShader() || frag.shaderType != Shader.ShaderType.FRAGMENT) {
-			return fbo;
-		}
-
-		fbo.bindWrite(true);
-		ShaderProgram program = programs.get(frag);
-		if (program == null) {
-			programs.put(frag, program = new ShaderProgram());
-			program.attach(Shaders.IMAGE_V).attach(frag);
-			if (programCreated != null) {
-				programCreated.accept(program);
-			}
-		}
-
-		program.use(cache -> {
-			Minecraft mc = Minecraft.getInstance();
-			float time;
-			if (mc.player != null) {
-				time = (mc.player.tickCount + mc.getTimer().getGameTimeDeltaTicks()) / 20;
-			} else {
-				time = System.currentTimeMillis() / 1000f;
-			}
-			cache.glUniform1F("iTime", time);
-			cache.glUniform2F("iResolution", fbo.width, fbo.height);
-			if (consumeCache != null) {
-				consumeCache.apply(cache);
-			}
-		});
-
-		Tesselator tessellator = Tesselator.getInstance();
-		BufferBuilder buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
-		buffer.addVertex(-1, 1, 0);
-		buffer.addVertex(-1, -1, 0);
-		buffer.addVertex(1, -1, 0);
-		buffer.addVertex(1, 1, 0);
-		BufferUploader.draw(buffer.buildOrThrow());
-
-		program.release();
-
-		if (viewPort != null) {
-			RenderSystem.viewport(viewPort.position.x, viewPort.position.y, viewPort.size.width, viewPort.size.height);
-		}
-		return fbo;
-	}
+	public RenderTarget renderFullImageInFramebuffer(RenderTarget fbo, Shader frag, IUniformCallback consumeCache, Consumer<ShaderProgram> programCreated) { return null; /* ported stub */ }
 
 }

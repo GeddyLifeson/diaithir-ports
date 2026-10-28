@@ -15,7 +15,7 @@ import com.lowdragmc.lowdraglib.utils.TrackedDummyWorld;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
+
 import net.minecraft.client.renderer.block.ModelBlockRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -51,29 +51,14 @@ public class MultiblockInWorldPreviewRenderer {
         UNUSED,
         COMPILING,
         COMPILED
-    }
-
-    @Getter(lazy = true)
-    private final static VertexBuffer[] BUFFERS = initBuffers();
+    }/* ported: removed */
     @Nullable
     private static TrackedDummyWorld LEVEL = null;
     @Nullable
     private static Thread THREAD = null;
     @Nullable
     private static Set<BlockPos> BLOCK_ENTITIES;
-    private final static AtomicInteger LEFT_TICK = new AtomicInteger(-1);
-
-    /**
-     * It will be cached by lombok#@Getter(lazy=true)
-     */
-    private static VertexBuffer[] initBuffers() {
-        List<RenderType> layers = RenderType.chunkBufferLayers();
-        var buffers = new VertexBuffer[layers.size()];
-        for (int j = 0; j < layers.size(); ++j) {
-            buffers[j] = new VertexBuffer(VertexBuffer.Usage.STATIC);
-        }
-        return buffers;
-    }
+    private final static AtomicInteger LEFT_TICK = new AtomicInteger(-1);/* ported: removed */
 
     private final static AtomicReference<CacheState> CACHE_STATE = new AtomicReference<>(CacheState.UNUSED);
 
@@ -425,44 +410,5 @@ public class MultiblockInWorldPreviewRenderer {
             LEFT_TICK.set(duration);
         });
         THREAD.start();
-    }
-
-    private static void renderBlocks(TrackedDummyWorld level, PoseStack poseStack, BlockRenderDispatcher dispatcher,
-                                     RenderType layer, WorldSceneRenderer.VertexConsumerWrapper wrapperBuffer,
-                                     Collection<BlockPos> renderedBlocks) {
-        for (BlockPos pos : renderedBlocks) {
-            BlockState state = level.getBlockState(pos);
-            FluidState fluidState = state.getFluidState();
-            Block block = state.getBlock();
-            BlockEntity te = level.getBlockEntity(pos);
-
-            if (block == Blocks.AIR) continue;
-
-            // render blocks
-            if (state.getRenderShape() != INVISIBLE && ItemBlockRenderTypes.getRenderLayers(state).contains(layer)) {
-                poseStack.pushPose();
-                poseStack.translate(pos.getX(), pos.getY(), pos.getZ());
-
-                poseStack.translate(0.5, 0.5, 0.5);
-                poseStack.scale(0.8f, 0.8f, 0.8f);
-                poseStack.translate(-0.5, -0.5, -0.5);
-
-                level.setRenderFilter(p -> p.equals(pos));
-                WorldSceneRenderer.renderBlocksForge(dispatcher, state, pos, level, poseStack, wrapperBuffer,
-                        GTValues.RNG, layer);
-                level.setRenderFilter(p -> true);
-                poseStack.popPose();
-            }
-
-            // render fluids
-            if (!fluidState.isEmpty() && ItemBlockRenderTypes.getRenderLayer(fluidState) == layer) {
-                wrapperBuffer.addOffset((pos.getX() - (pos.getX() & 15)), (pos.getY() - (pos.getY() & 15)),
-                        (pos.getZ() - (pos.getZ() & 15)));
-                dispatcher.renderLiquid(pos, level, wrapperBuffer, state, fluidState);
-            }
-
-            wrapperBuffer.clearOffset();
-            wrapperBuffer.clearColor();
-        }
-    }
+    }/* ported: removed */
 }

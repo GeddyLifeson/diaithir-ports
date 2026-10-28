@@ -1,8 +1,10 @@
 package com.gregtechceu.gtceu.api.misc.virtualregistry;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

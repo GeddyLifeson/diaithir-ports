@@ -3,7 +3,7 @@ package com.lowdragmc.lowdraglib.client.scene;
 import com.lowdragmc.lowdraglib.LDLib;
 import com.mojang.blaze3d.pipeline.MainTarget;
 import com.mojang.blaze3d.pipeline.RenderTarget;
-import com.mojang.blaze3d.platform.GlStateManager;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import net.neoforged.api.distmarker.Dist;
@@ -83,54 +83,15 @@ public class FBOWorldSceneRenderer extends WorldSceneRenderer {
         return winPos;
     }
 
-    public void render(@Nonnull PoseStack poseStack, float x, float y, float width, float height, float mouseX, float mouseY) {
-        // bind to FBO
-        int lastID = bindFBO();
-        super.render(new PoseStack(), 0, 0, this.resolutionWidth, this.resolutionHeight, (int) (this.resolutionWidth * (mouseX - x) / width), (int) (this.resolutionHeight * (1 - (mouseY - y) / height)));
-        // unbind FBO
-        unbindFBO(lastID);
-
-        // bind FBO as texture
-//        RenderSystem.enableTexture();
-//        RenderSystem.disableLighting();
-//        lastID = GL11.glGetInteger(GL11.GL_TEXTURE_2D);
-//        fbo.bindRead();
-//        RenderSystem.setShaderColor(1,1,1,1);
-
-        // render rect with FBO texture
-        Tesselator tessellator = Tesselator.getInstance();
-        BufferBuilder bufferbuilder = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderTexture(0, fbo.getColorTextureId());
-
-        var pose = poseStack.last().pose();
-        bufferbuilder.addVertex(pose, x + width, y + height, 0).setUv(1, 0);
-        bufferbuilder.addVertex(pose, x + width, y, 0).setUv(1, 1);
-        bufferbuilder.addVertex(pose, x, y, 0).setUv(0, 1);
-        bufferbuilder.addVertex(pose, x, y + height, 0).setUv(0, 0);
-        BufferUploader.drawWithShader(bufferbuilder.buildOrThrow());
-
-//        RenderSystem.bindTexture(lastID);
-    }
+    public void render(@Nonnull PoseStack poseStack, float x, float y, float width, float height, float mouseX, float mouseY) {  /* ported stub */ }
 
     public void render(@Nonnull PoseStack poseStack, float x, float y, float width, float height, int mouseX, int mouseY) {
         render(poseStack, x, y, width, height, (float) mouseX, (float) mouseY);
     }
 
-    private int bindFBO(){
-        int lastID = GL11.glGetInteger(EXTFramebufferObject.GL_FRAMEBUFFER_BINDING_EXT);
-        fbo.setClearColor(0.0F, 0.0F, 0.0F, 0.0F);
-        fbo.clear(Minecraft.ON_OSX);
-        fbo.bindWrite(true);
-//        RenderSystem.pushMatrix();
-        return lastID;
-    }
+    private int bindFBO(){ return (int)0; /* ported stub */ }
 
-    private void unbindFBO(int lastID){
-//        RenderSystem.popMatrix();
-        fbo.unbindRead();
-        GlStateManager._glBindFramebuffer(36160, lastID);
-    }
+    private void unbindFBO(int lastID){  /* ported stub */ }
 
     public void releaseFBO() {
         if (fbo != null) {

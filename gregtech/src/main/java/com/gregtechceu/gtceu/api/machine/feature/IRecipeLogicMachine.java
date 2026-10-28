@@ -7,7 +7,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.integration.jade.provider.RecipeLogicProvider;
+
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

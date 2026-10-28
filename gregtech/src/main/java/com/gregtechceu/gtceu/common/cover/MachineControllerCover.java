@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.cover;
 
+import net.minecraft.world.inventory.ContainerInput;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.ICoverable;
@@ -27,7 +29,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.inventory.ClickType;
+
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -227,7 +229,7 @@ public class MachineControllerCover extends CoverBehavior implements IUICover {
         group.addWidget(new PhantomSlotWidget(sideCoverSlot, 0, 147, 46) {
 
             @Override
-            public ItemStack slotClickPhantom(Slot slot, int mouseButton, ClickType clickTypeIn, ItemStack stackHeld) {
+            public ItemStack slotClickPhantom(Slot slot, int mouseButton, ContainerInput clickTypeIn, ItemStack stackHeld) {
                 return sideCoverSlot.getStackInSlot(0);
             }
         });

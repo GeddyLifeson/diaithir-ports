@@ -9,18 +9,18 @@ import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.client.model.machine.IControllerModelRenderer;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRender;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderType;
-import com.gregtechceu.gtceu.client.util.ModelUtils;
+
 import com.gregtechceu.gtceu.common.block.BoilerFireboxType;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.resources.model.geometry.BakedQuad;
-import net.minecraft.client.resources.model.BakedModel;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -53,10 +53,7 @@ public class BoilerMultiPartRender extends DynamicRender<MultiblockControllerMac
     @Getter
     private final BlockState fireboxIdle, fireboxActive;
     @Getter
-    private final BlockState casing;
-
-    private BakedModel fireboxIdleModel, fireboxActiveModel;
-    private BakedModel casingModel;
+    private final BlockState casing;/* ported: removed *//* ported: removed */
 
     public BoilerMultiPartRender(BoilerFireboxType fireboxType, Supplier<? extends Block> casingBlock) {
         this(GTBlocks.ALL_FIREBOXES.get(fireboxType).getDefaultState(),
@@ -130,14 +127,5 @@ public class BoilerMultiPartRender extends DynamicRender<MultiblockControllerMac
             emitQuads(quads, casingModel, controller.getLevel(), partPos, casing,
                     side, rand, modelData, renderType);
         }
-    }
-
-    private static void emitQuads(List<BakedQuad> quads, @Nullable BakedModel model,
-                                  BlockAndTintGetter level, BlockPos pos, BlockState state,
-                                  @Nullable Direction side, RandomSource rand,
-                                  ModelData modelData, @Nullable RenderType renderType) {
-        if (model == null) return;
-        modelData = model.getModelData(level, pos, state, modelData);
-        quads.addAll(model.getQuads(state, side, rand, modelData, renderType));
-    }
+    }/* ported: removed */
 }

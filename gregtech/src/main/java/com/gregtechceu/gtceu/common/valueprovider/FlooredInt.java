@@ -5,13 +5,13 @@ import com.gregtechceu.gtceu.common.data.GTValueProviderTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.util.valueproviders.IntProviderType;
+
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import org.jetbrains.annotations.NotNull;
 
-public class FlooredInt extends IntProvider {
+public class FlooredInt implements IntProvider {
 
     public static final MapCodec<FlooredInt> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             FloatProvider.CODEC.fieldOf("source").forGetter(provider -> provider.source))

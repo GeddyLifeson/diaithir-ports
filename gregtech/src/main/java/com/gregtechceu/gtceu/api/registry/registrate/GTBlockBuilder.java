@@ -1,8 +1,10 @@
 package com.gregtechceu.gtceu.api.registry.registrate;
 
+import com.gregtechceu.gtceu.compat.client.BlockColor;
+
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
 
-import net.minecraft.client.color.block.BlockColor;
+
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -83,12 +85,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
     @Override
     public GTBlockBuilder<T, P> defaultBlockstate() {
         return (GTBlockBuilder<T, P>) super.defaultBlockstate();
-    }
-
-    @Override
-    public GTBlockBuilder<T, P> blockstate(NonNullBiConsumer<DataGenContext<Block, T>, RegistrateBlockstateProvider> cons) {
-        return (GTBlockBuilder<T, P>) setData(ProviderType.BLOCKSTATE, cons);
-    }
+    }/* ported: removed */
 
     @Override
     public GTBlockBuilder<T, P> defaultLang() {
@@ -108,12 +105,7 @@ public class GTBlockBuilder<T extends Block, P> extends BlockBuilder<T, P> {
     @Override
     public GTBlockBuilder<T, P> loot(NonNullBiConsumer<RegistrateBlockLootTables, T> cons) {
         return (GTBlockBuilder<T, P>) super.loot(cons);
-    }
-
-    @Override
-    public GTBlockBuilder<T, P> recipe(NonNullBiConsumer<DataGenContext<Block, T>, RegistrateRecipeProvider> cons) {
-        return (GTBlockBuilder<T, P>) super.recipe(cons);
-    }
+    }/* ported: removed */
 
     // why is it final >:(
     // @SafeVarargs

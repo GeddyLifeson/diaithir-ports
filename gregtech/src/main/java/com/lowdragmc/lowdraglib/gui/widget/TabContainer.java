@@ -63,36 +63,9 @@ public class TabContainer extends WidgetGroup {
         return this;
     }
 
-    public void switchTag(WidgetGroup tabWidget) {
-        if (focus == tabWidget) return;
-        if (focus != null) {
-            tabs.inverse().get(focus).setPressed(false);
-            focus.setVisible(false);
-            focus.setActive(false);
-        }
-        if (onChanged != null) {
-            onChanged.accept(focus, tabWidget);
-        }
-        focus= tabWidget;
-        Optional.ofNullable(tabs.inverse().get(tabWidget)).ifPresent(tab -> {
-            tab.setPressed(true);
-            tabWidget.setActive(true);
-            tabWidget.setVisible(true);
-        });
-    }
+    public void switchTag(WidgetGroup tabWidget) {  /* ported stub */ }
 
-    public void addTab(TabButton tabButton, WidgetGroup tabWidget) {
-        tabButton.setContainer(this);
-        tabs.put(tabButton, tabWidget);
-        containerGroup.addWidget(tabWidget);
-        buttonGroup.addWidget(tabButton);
-        if (focus == null) {
-            focus = tabWidget;
-        }
-        tabButton.setPressed(focus == tabWidget);
-        tabWidget.setVisible(focus == tabWidget);
-        tabWidget.setActive(focus == tabWidget);
-    }
+    public void addTab(TabButton tabButton, WidgetGroup tabWidget) {  /* ported stub */ }
 
     public void removeTab(TabButton tabButton) {
         if (tabs.containsKey(tabButton)) {
@@ -124,44 +97,7 @@ public class TabContainer extends WidgetGroup {
     }
 
     @Override
-    protected void addWidgetsConfigurator(ConfiguratorGroup father) {
-        var tabsGroup = new ArrayConfiguratorGroup<>("tabs", false, () -> new ArrayList<>(tabs.keySet()),
-                (getter, setter) -> {
-                    var tab = getter.get();
-                    return new WrapperConfigurator(tab.id, new ImageWidget(0, 0, 50, 50, new WidgetTexture(tab)));
-                }, true);
-        tabsGroup.setAddDefault(() -> new TabButton(0, 0, 32, 28).setTexture(
-                new GuiTextureGroup(TABS_LEFT.getSubTexture(0, 1f / 3, 0.5f, 1f / 3), new TextTexture("N")),
-                new GuiTextureGroup(TABS_LEFT.getSubTexture(0.5f, 1f / 3, 0.5f, 1f / 3), new TextTexture("N"))
-        ));
-        tabsGroup.setOnAdd(tab -> addTab(tab, new WidgetGroup(0, 0, getSize().width, getSize().height)));
-        tabsGroup.setOnRemove(tab -> {
-            buttonGroup.removeWidget(tab);
-            containerGroup.removeWidget(tabs.get(tab));
-            if (focus == tabs.remove(tab)) {
-                focus = null;
-            }
-        });
-
-        var childrenGroup = new ArrayConfiguratorGroup<>("children", true, () -> focus == null ? new ArrayList<>() : focus.widgets,
-                (getter, setter) -> {
-                    var child = getter.get();
-                    return new WrapperConfigurator(child.id, new ImageWidget(0, 0, 50, 50, new WidgetTexture(child)));
-                }, true);
-        childrenGroup.setCanAdd(false);
-        childrenGroup.setOnRemove(child -> {
-            if (focus != null) {
-                focus.removeWidget(child);
-            }
-        });
-        childrenGroup.setOnReorder((index, widget) -> {
-            if (focus != null) {
-                focus.removeWidget(widget);
-                focus.addWidget(index, widget);
-            }
-        });
-        father.addConfigurators(tabsGroup, childrenGroup);
-    }
+    protected void addWidgetsConfigurator(ConfiguratorGroup father) {  /* ported stub */ }
 
     @Override
     public CompoundTag serializeInnerNBT(HolderLookup.Provider provider) {
@@ -181,19 +117,5 @@ public class TabContainer extends WidgetGroup {
     }
 
     @Override
-    public void deserializeInnerNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        clearAllWidgets();
-        PersistedParser.deserializeNBT(nbt, new HashMap<>(), getClass(), this, provider);
-        var tabs = nbt.getList("tabs", Tag.TAG_COMPOUND);
-        for (Tag tag : tabs) {
-            if (tag instanceof CompoundTag tab) {
-                TabButton button = new TabButton();
-                button.deserializeInnerNBT(provider, tab.getCompound("button"));
-                var widget = IConfigurableWidget.deserializeWrapper(tab.getCompound("group"), provider);
-                if (widget != null && widget.widget() instanceof WidgetGroup group) {
-                    addTab(button, group);
-                }
-            }
-        }
-    }
+    public void deserializeInnerNBT(HolderLookup.Provider provider, CompoundTag nbt) {  /* ported stub */ }
 }

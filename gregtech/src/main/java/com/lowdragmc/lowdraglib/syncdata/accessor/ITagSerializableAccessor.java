@@ -1,11 +1,13 @@
 package com.lowdragmc.lowdraglib.syncdata.accessor;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import com.lowdragmc.lowdraglib.syncdata.AccessorOp;
 import com.lowdragmc.lowdraglib.syncdata.payload.ITypedPayload;
 import com.lowdragmc.lowdraglib.syncdata.payload.NbtTagPayload;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.Tag;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+
 
 public class ITagSerializableAccessor extends ReadonlyAccessor {
     @Override

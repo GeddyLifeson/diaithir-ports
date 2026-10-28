@@ -57,7 +57,7 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import com.google.gson.JsonObject;
 import com.mojang.serialization.JsonOps;
-import dev.ftb.mods.ftbquests.quest.QuestObjectBase;
+
 import it.unimi.dsi.fastutil.objects.Reference2LongOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;

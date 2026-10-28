@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
@@ -17,7 +19,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -28,7 +30,7 @@ import java.util.List;
 
 public class NightvisionGoggles extends ArmorLogicSuite {
 
-    public NightvisionGoggles(int energyPerUse, long capacity, int voltageTier, ArmorItem.Type slot) {
+    public NightvisionGoggles(int energyPerUse, long capacity, int voltageTier, ArmorType slot) {
         super(energyPerUse, capacity, voltageTier, slot);
     }
 
@@ -44,7 +46,7 @@ public class NightvisionGoggles extends ArmorLogicSuite {
         if (!player.getItemBySlot(EquipmentSlot.HEAD).is(stack.getItem())) {
             disableNightVision(level, player, false);
         }
-        if (type == ArmorItem.Type.HELMET) {
+        if (type == ArmorType.HELMET) {
             boolean nightVision = data.nightVision();
             if (toggleTimer == 0 && SyncedKeyMappings.ARMOR_MODE_SWITCH.isKeyDown(player)) {
                 nightVision = !nightVision;
@@ -89,18 +91,12 @@ public class NightvisionGoggles extends ArmorLogicSuite {
             if (sendMsg)
                 player.displayClientMessage(Component.translatable("metaarmor.message.nightvision.disabled"), true);
         }
-    }
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot,
-                                            ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/nightvision_goggles.png");
-    }
+    }/* ported: removed */
 
     @Override
     public void addInfo(ItemStack itemStack, List<Component> lines) {
         super.addInfo(itemStack, lines);
-        if (type == ArmorItem.Type.HELMET) {
+        if (type == ArmorType.HELMET) {
             GTArmor data = itemStack.getOrDefault(GTDataComponents.ARMOR_DATA, GTArmor.EMPTY);
             boolean nv = data.nightVision();
             if (nv) {

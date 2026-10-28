@@ -50,7 +50,7 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.NaquadahAlloy;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerTieredMachines;
-import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
+
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 
 public class GCYMMachines {

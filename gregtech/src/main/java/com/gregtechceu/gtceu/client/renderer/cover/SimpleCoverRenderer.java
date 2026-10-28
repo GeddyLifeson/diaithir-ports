@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.client.renderer.cover;
 
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import com.gregtechceu.gtceu.api.cover.CoverBehavior;
-import com.gregtechceu.gtceu.client.util.ModelUtils;
+
 import com.gregtechceu.gtceu.client.util.StaticFaceBakery;
 
 import net.minecraft.client.renderer.rendertype.RenderType;
@@ -13,7 +13,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.model.data.ModelData;

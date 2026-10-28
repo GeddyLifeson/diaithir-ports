@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.block;
 
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.blockentity.PipeBlockEntity;
 import com.gregtechceu.gtceu.api.capability.ICoverable;

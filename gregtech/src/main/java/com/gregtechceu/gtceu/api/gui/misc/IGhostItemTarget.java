@@ -12,8 +12,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
 import com.google.common.collect.Lists;
-import dev.emi.emi.api.stack.EmiStack;
-import mezz.jei.api.ingredients.ITypedIngredient;
+
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

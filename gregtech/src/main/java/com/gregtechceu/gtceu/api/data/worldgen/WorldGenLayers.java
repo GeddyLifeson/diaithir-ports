@@ -3,8 +3,8 @@ package com.gregtechceu.gtceu.api.data.worldgen;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.addon.AddonFinder;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
-import com.gregtechceu.gtceu.integration.kjs.GTCEuStartupEvents;
-import com.gregtechceu.gtceu.integration.kjs.events.WorldGenLayerEventJS;
+
+
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;

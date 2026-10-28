@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.block;
 
+import com.gregtechceu.gtceu.compat.client.BlockColor;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.PipeBlock;
 import com.gregtechceu.gtceu.api.block.property.GTBlockStateProperties;
@@ -17,7 +19,7 @@ import com.gregtechceu.gtceu.common.pipelike.laser.LaserPipeProperties;
 import com.gregtechceu.gtceu.common.pipelike.laser.LaserPipeType;
 import com.gregtechceu.gtceu.common.pipelike.laser.LevelLaserPipeNet;
 
-import net.minecraft.client.color.block.BlockColor;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

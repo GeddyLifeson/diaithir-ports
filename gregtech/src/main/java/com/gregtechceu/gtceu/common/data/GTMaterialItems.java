@@ -1,5 +1,11 @@
 package com.gregtechceu.gtceu.common.data;
 
+import net.minecraft.world.item.equipment.ArmorMaterial;
+
+import com.gregtechceu.gtceu.compat.ArmorItem;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags;
@@ -30,7 +36,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
-import net.minecraft.world.item.component.Unbreakable;
+
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
@@ -73,9 +79,9 @@ public class GTMaterialItems {
             GTCEuAPI.materialManager.stream().filter(mat -> mat.hasProperty(PropertyKey.TOOL)).toList(),
             GTToolType.getTypes().values().stream().toList());
 
-    public static final Table<Material, ArmorItem.Type, ItemEntry<? extends ArmorItem>> ARMOR_ITEMS = ArrayTable.create(
+    public static final Table<Material, ArmorType, ItemEntry<? extends ArmorItem>> ARMOR_ITEMS = ArrayTable.create(
             GTCEuAPI.materialManager.stream().filter(mat -> mat.hasProperty(PropertyKey.ARMOR)).toList(),
-            Arrays.asList(ArmorItem.Type.values()));
+            Arrays.asList(ArmorType.values()));
 
     // spotless:on
 
@@ -216,7 +222,7 @@ public class GTMaterialItems {
     // Material Armors
     public static void generateArmors() {
         REGISTRATE.creativeModeTab(TOOL);
-        for (ArmorItem.Type type : ArmorItem.Type.values()) {
+        for (ArmorType type : ArmorType.values()) {
             if (type.getSlot().getType() != EquipmentSlot.Type.HUMANOID_ARMOR) continue;
 
             for (Material material : GTCEuAPI.materialManager) {
@@ -228,7 +234,7 @@ public class GTMaterialItems {
         }
     }
 
-    private static void generateArmor(final Material material, final ArmorItem.Type type, GTRegistrate registrate) {
+    private static void generateArmor(final Material material, final ArmorType type, GTRegistrate registrate) {
         final ArmorProperty property = material.getProperty(PropertyKey.ARMOR);
         String id = "%s_%s".formatted(material.getName(), type.getName());
         ARMOR_ITEMS.put(material, type, registrate

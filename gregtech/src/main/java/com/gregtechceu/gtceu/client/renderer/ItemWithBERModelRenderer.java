@@ -1,12 +1,12 @@
 package com.gregtechceu.gtceu.client.renderer;
 
-import com.gregtechceu.gtceu.client.model.IBlockEntityRendererBakedModel;
+
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.resources.model.BakedModel;
+
+
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -22,9 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ItemWithBERModelRenderer extends BlockEntityWithoutLevelRenderer {
 
-    public static final ItemWithBERModelRenderer INSTANCE = new ItemWithBERModelRenderer();
-
-    protected final ItemRenderer itemRenderer;
+    public static final ItemWithBERModelRenderer INSTANCE = new ItemWithBERModelRenderer();/* ported: removed */
 
     protected ItemWithBERModelRenderer() {
         super(Minecraft.getInstance().getBlockEntityRenderDispatcher(),

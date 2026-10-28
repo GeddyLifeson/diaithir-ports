@@ -37,31 +37,7 @@ public class CollectionConfiguratorAccessor implements IConfiguratorAccessor<Col
     }
 
     @Override
-    public Configurator create(String name, Supplier<Collection> supplier, Consumer<Collection> consumer, boolean forceUpdate, Field field) {
-        boolean isCollapse = true;
-        boolean canCollapse = true;
-
-        if (field.isAnnotationPresent(Configurable.class)) {
-            isCollapse = field.getAnnotation(Configurable.class).collapse();
-            canCollapse = field.getAnnotation(Configurable.class).canCollapse();
-        }
-
-        var arrayGroup = new ArrayConfiguratorGroup<>(name, isCollapse, () -> {
-            var collection = supplier.get();
-            if (collection == null) {
-                collection = defaultValue(field, baseType);
-            }
-            ArrayList<Object> objectList = new ArrayList<>(collection);
-            return objectList;
-        }, (getter, setter) -> childAccessor.create("", getter, setter, forceUpdate, field), forceUpdate);
-
-        arrayGroup.setAddDefault(() -> childAccessor.defaultValue(field, childType));
-
-        arrayGroup.setOnUpdate(list -> consumer.accept(updateCollection(supplier.get(), list)));
-        arrayGroup.setCanCollapse(canCollapse);
-        arrayGroup.setOnReorder((index, widget) -> arrayGroup.notifyListUpdate());
-        return arrayGroup;
-    }
+    public Configurator create(String name, Supplier<Collection> supplier, Consumer<Collection> consumer, boolean forceUpdate, Field field) { return null; /* ported stub */ }
 
     public Collection updateCollection(Collection base, List<Object> objectList) {
         base.clear();

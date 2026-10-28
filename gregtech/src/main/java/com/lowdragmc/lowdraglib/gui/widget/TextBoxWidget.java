@@ -115,48 +115,11 @@ public class TextBoxWidget extends Widget implements IConfigurableWidget {
         return content.stream().mapToInt(Minecraft.getInstance().font::width).max().orElse(0);
     }
 
-    protected void calculate() {
-        if (isRemote()) {
-            this.textLines = new ArrayList<>();
-            Font font = Minecraft.getInstance().font;
-            this.space = Math.max(space, 0);
-            this.fontSize = Math.max(fontSize, 1);
-            int wrapWidth = getSize().width * font.lineHeight / fontSize;
-            for (String textLine : content) {
-                this.textLines.addAll(font.getSplitter()
-                        .splitLines(LocalizationUtils.format(textLine), wrapWidth, Style.EMPTY)
-                        .stream().map(FormattedText::getString).toList());
-            }
-            this.setSize(new Size(this.getSize().width, this.textLines.size() * (fontSize + space)));
-        }
-    }
+    protected void calculate() {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        if (!textLines.isEmpty()) {
-            Position position = getPosition();
-            Size size = getSize();
-            Font font = Minecraft.getInstance().font;
-            float scale = fontSize * 1.0f / font.lineHeight;
-            graphics.pose().pushPose();
-            graphics.pose().scale(scale, scale, 1);
-            graphics.pose().translate(position.x / scale, position.y / scale, 0);
-            float x = 0;
-            float y = 0;
-            float ySpace = font.lineHeight + space / scale;
-            for (String textLine : textLines) {
-                if (isCenter) {
-                    x = (size.width / scale - font.width(textLine)) / 2;
-                }
-                graphics.drawString(font, textLine, (int) x, (int) y, fontColor, isShadow);
-                y += ySpace;
-            }
-            graphics.pose().popPose();
-        }
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     public boolean handleDragging(Object dragging) {

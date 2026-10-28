@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.common.data;
 
+import com.gregtechceu.gtceu.compat.client.ItemColor;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -30,17 +34,17 @@ import com.gregtechceu.gtceu.common.item.datacomponents.DataItem;
 import com.gregtechceu.gtceu.common.item.modules.ImageModuleBehaviour;
 import com.gregtechceu.gtceu.common.item.modules.TextModuleBehaviour;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.data.lang.LangHandler;
+
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.gregtechceu.gtceu.utils.GTUtil;
 import com.gregtechceu.gtceu.utils.TagUtil;
 import com.gregtechceu.gtceu.utils.memoization.GTMemoizer;
 
-import net.minecraft.client.color.item.ItemColor;
+
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.client.renderer.item.ItemPropertyFunction;
+
+
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -59,7 +63,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -81,8 +85,8 @@ import java.util.function.Supplier;
 
 import static com.gregtechceu.gtceu.common.data.GTCreativeModeTabs.ITEM;
 import static com.gregtechceu.gtceu.common.data.GTCreativeModeTabs.TOOL;
-import static com.gregtechceu.gtceu.common.data.models.GTModels.createTextureModel;
-import static com.gregtechceu.gtceu.common.data.models.GTModels.overrideModel;
+
+
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
 
@@ -2287,11 +2291,11 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> NIGHTVISION_GOGGLES = REGISTRATE
             .item("nightvision_goggles",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOGGLES, ArmorItem.Type.HELMET, p)
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOGGLES, ArmorType.HELMET, p)
                             .setArmorLogic(new NightvisionGoggles(2,
                                     80_000L * (long) Math.max(1,
                                             Math.pow(1, ConfigHolder.INSTANCE.tools.voltageTierNightVision - 1)),
-                                    ConfigHolder.INSTANCE.tools.voltageTierNightVision, ArmorItem.Type.HELMET)))
+                                    ConfigHolder.INSTANCE.tools.voltageTierNightVision, ArmorType.HELMET)))
             .lang("Nightvision Goggles")
             .transform(addArmorClientExtensions())
             .tag(ItemTags.HEAD_ARMOR)
@@ -2299,8 +2303,8 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> NANO_CHESTPLATE = REGISTRATE
             .item("nanomuscle_chestplate",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.CHESTPLATE, p)
-                            .setArmorLogic(new NanoMuscleSuite(ArmorItem.Type.CHESTPLATE,
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.CHESTPLATE, p)
+                            .setArmorLogic(new NanoMuscleSuite(ArmorType.CHESTPLATE,
                                     512,
                                     6_400_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierNanoSuit - 3)),
@@ -2312,8 +2316,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> NANO_LEGGINGS = REGISTRATE
             .item("nanomuscle_leggings",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.LEGGINGS, p)
-                            .setArmorLogic(new NanoMuscleSuite(ArmorItem.Type.LEGGINGS,
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.LEGGINGS, p)
+                            .setArmorLogic(new NanoMuscleSuite(ArmorType.LEGGINGS,
                                     512,
                                     6_400_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierNanoSuit - 3)),
@@ -2324,8 +2328,8 @@ public class GTItems {
             .tag(ItemTags.LEG_ARMOR)
             .register();
     public static ItemEntry<ArmorComponentItem> NANO_BOOTS = REGISTRATE
-            .item("nanomuscle_boots", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.BOOTS, p)
-                    .setArmorLogic(new NanoMuscleSuite(ArmorItem.Type.BOOTS,
+            .item("nanomuscle_boots", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.BOOTS, p)
+                    .setArmorLogic(new NanoMuscleSuite(ArmorType.BOOTS,
                             512,
                             6_400_000L * (long) Math.max(1,
                                     Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierNanoSuit - 3)),
@@ -2336,8 +2340,8 @@ public class GTItems {
             .tag(CustomTags.STEP_BOOTS)
             .register();
     public static ItemEntry<ArmorComponentItem> NANO_HELMET = REGISTRATE
-            .item("nanomuscle_helmet", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.HELMET, p)
-                    .setArmorLogic(new NanoMuscleSuite(ArmorItem.Type.HELMET,
+            .item("nanomuscle_helmet", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.HELMET, p)
+                    .setArmorLogic(new NanoMuscleSuite(ArmorType.HELMET,
                             512,
                             6_400_000L * (long) Math.max(1,
                                     Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierNanoSuit - 3)),
@@ -2350,8 +2354,8 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> FACE_MASK = REGISTRATE
             .item("face_mask",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.BAD_PPE_EQUIPMENT, ArmorItem.Type.HELMET, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.HELMET, "bad_hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.BAD_PPE_EQUIPMENT, ArmorType.HELMET, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.HELMET, "bad_hazmat")))
             .lang("Face Mask")
             .transform(addArmorClientExtensions())
             .tag(ItemTags.HEAD_ARMOR)
@@ -2363,8 +2367,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> RUBBER_GLOVES = REGISTRATE
             .item("rubber_gloves",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.BAD_PPE_EQUIPMENT, ArmorItem.Type.HELMET, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.CHESTPLATE, "bad_hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.BAD_PPE_EQUIPMENT, ArmorType.HELMET, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.CHESTPLATE, "bad_hazmat")))
             .lang("Rubber Gloves")
             .transform(addArmorClientExtensions())
             .tag(ItemTags.CHEST_ARMOR)
@@ -2376,8 +2380,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> HAZMAT_CHESTPLATE = REGISTRATE
             .item("hazmat_chestpiece",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorItem.Type.CHESTPLATE, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.CHESTPLATE, "hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorType.CHESTPLATE, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.CHESTPLATE, "hazmat")))
             .lang("Hazardous Materials Suit Chestpiece")
             .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(addArmorClientExtensions())
@@ -2386,8 +2390,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> HAZMAT_LEGGINGS = REGISTRATE
             .item("hazmat_leggings",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorItem.Type.LEGGINGS, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.LEGGINGS, "hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorType.LEGGINGS, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.LEGGINGS, "hazmat")))
             .lang("Hazardous Materials Suit Leggings")
             .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(addArmorClientExtensions())
@@ -2396,8 +2400,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> HAZMAT_BOOTS = REGISTRATE
             .item("hazmat_boots",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorItem.Type.BOOTS, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.BOOTS, "hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorType.BOOTS, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.BOOTS, "hazmat")))
             .lang("Hazardous Materials Suit Boots")
             .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(addArmorClientExtensions())
@@ -2406,8 +2410,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> HAZMAT_HELMET = REGISTRATE
             .item("hazmat_headpiece",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorItem.Type.HELMET, p)
-                            .setArmorLogic(new HazmatSuit(ArmorItem.Type.HELMET, "hazmat")))
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.GOOD_PPE_EQUIPMENT, ArmorType.HELMET, p)
+                            .setArmorLogic(new HazmatSuit(ArmorType.HELMET, "hazmat")))
             .lang("Hazardous Materials Suit Headpiece")
             .properties(p -> p.rarity(Rarity.UNCOMMON))
             .transform(addArmorClientExtensions())
@@ -2417,8 +2421,8 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> QUANTUM_CHESTPLATE = REGISTRATE
             .item("quarktech_chestplate",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.CHESTPLATE, p)
-                            .setArmorLogic(new QuarkTechSuite(ArmorItem.Type.CHESTPLATE,
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.CHESTPLATE, p)
+                            .setArmorLogic(new QuarkTechSuite(ArmorType.CHESTPLATE,
                                     8192,
                                     100_000_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierQuarkTech - 5)),
@@ -2432,8 +2436,8 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> QUANTUM_LEGGINGS = REGISTRATE
             .item("quarktech_leggings",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.LEGGINGS, p)
-                            .setArmorLogic(new QuarkTechSuite(ArmorItem.Type.LEGGINGS,
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.LEGGINGS, p)
+                            .setArmorLogic(new QuarkTechSuite(ArmorType.LEGGINGS,
                                     8192,
                                     100_000_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierQuarkTech - 5)),
@@ -2445,8 +2449,8 @@ public class GTItems {
             .tag(CustomTags.PPE_ARMOR)
             .register();
     public static ItemEntry<ArmorComponentItem> QUANTUM_BOOTS = REGISTRATE
-            .item("quarktech_boots", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.BOOTS, p)
-                    .setArmorLogic(new QuarkTechSuite(ArmorItem.Type.BOOTS,
+            .item("quarktech_boots", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.BOOTS, p)
+                    .setArmorLogic(new QuarkTechSuite(ArmorType.BOOTS,
                             8192,
                             100_000_000L * (long) Math.max(1,
                                     Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierQuarkTech - 5)),
@@ -2459,8 +2463,8 @@ public class GTItems {
             .tag(CustomTags.STEP_BOOTS)
             .register();
     public static ItemEntry<ArmorComponentItem> QUANTUM_HELMET = REGISTRATE
-            .item("quarktech_helmet", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.HELMET, p)
-                    .setArmorLogic(new QuarkTechSuite(ArmorItem.Type.HELMET,
+            .item("quarktech_helmet", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.HELMET, p)
+                    .setArmorLogic(new QuarkTechSuite(ArmorType.HELMET,
                             8192,
                             100_000_000L * (long) Math.max(1,
                                     Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierQuarkTech - 5)),
@@ -2474,7 +2478,7 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> LIQUID_FUEL_JETPACK = REGISTRATE
             .item("liquid_fuel_jetpack",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorItem.Type.CHESTPLATE, p)
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorType.CHESTPLATE, p)
                             .setArmorLogic(new PowerlessJetpack()))
             .lang("Liquid Fuel Jetpack")
             .transform(addArmorClientExtensions())
@@ -2483,7 +2487,7 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> ELECTRIC_JETPACK = REGISTRATE
             .item("electric_jetpack",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorItem.Type.CHESTPLATE, p)
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorType.CHESTPLATE, p)
                             .setArmorLogic(new Jetpack(15,
                                     1_000_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierImpeller - 2)),
@@ -2498,7 +2502,7 @@ public class GTItems {
 
     public static ItemEntry<ArmorComponentItem> ELECTRIC_JETPACK_ADVANCED = REGISTRATE
             .item("advanced_electric_jetpack",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorItem.Type.CHESTPLATE, p)
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.JETPACK, ArmorType.CHESTPLATE, p)
                             .setArmorLogic(new AdvancedJetpack(256,
                                     6_400_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierAdvImpeller - 4)),
@@ -2510,7 +2514,7 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> NANO_CHESTPLATE_ADVANCED = REGISTRATE
             .item("advanced_nanomuscle_chestplate",
-                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorItem.Type.CHESTPLATE, p)
+                    (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR, ArmorType.CHESTPLATE, p)
                             .setArmorLogic(new AdvancedNanoMuscleSuite(512,
                                     12_800_000L * (long) Math.max(1,
                                             Math.pow(4, ConfigHolder.INSTANCE.tools.voltageTierAdvNanoSuit - 3)),
@@ -2523,7 +2527,7 @@ public class GTItems {
             .register();
     public static ItemEntry<ArmorComponentItem> QUANTUM_CHESTPLATE_ADVANCED = REGISTRATE
             .item("advanced_quarktech_chestplate", (p) -> new ArmorComponentItem(GTArmorMaterials.ARMOR,
-                    ArmorItem.Type.CHESTPLATE, p)
+                    ArmorType.CHESTPLATE, p)
                     .setArmorLogic(new AdvancedQuarkTechSuite(8192,
                             1_000_000_000L *
                                     (long) Math.max(1,

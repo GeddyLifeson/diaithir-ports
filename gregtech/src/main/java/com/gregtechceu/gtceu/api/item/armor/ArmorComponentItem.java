@@ -1,5 +1,9 @@
 package com.gregtechceu.gtceu.api.item.armor;
 
+import com.gregtechceu.gtceu.compat.ArmorItem;
+
+import net.minecraft.world.item.equipment.ArmorType;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.component.*;
@@ -37,7 +41,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     @Getter
     protected List<IItemComponent> components;
 
-    public ArmorComponentItem(Holder<ArmorMaterial> material, ArmorItem.Type type, Properties properties) {
+    public ArmorComponentItem(Holder<ArmorMaterial> material, ArmorType type, Properties properties) {
         // Some trickery to always receive damage events without ever actually breaking the armor
         super(material, type, properties.durability(Integer.MAX_VALUE));
         components = new ArrayList<>();
@@ -67,7 +71,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     }
 
     @Override
-    public ArmorItem.Type getType() {
+    public ArmorType getType() {
         return armorLogic.getArmorType();
     }
 
@@ -124,13 +128,7 @@ public class ArmorComponentItem extends ArmorItem implements IComponentItem {
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, @Nullable T entity,
                                                    Consumer<Item> onBroken) {
         return armorLogic.damageArmor(entity, stack, amount, this.getEquipmentSlot());
-    }
-
-    @Override
-    public @Nullable Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot,
-                                                      ArmorMaterial.Layer layer, boolean innerModel) {
-        return armorLogic.getArmorTexture(stack, entity, slot, layer);
-    }
+    }/* ported: removed */
 
     ///////////////////////////////////////////
     ///// ALL component item things ///////

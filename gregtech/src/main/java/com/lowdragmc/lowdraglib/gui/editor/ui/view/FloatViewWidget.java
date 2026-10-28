@@ -40,36 +40,9 @@ public class FloatViewWidget extends WidgetGroup implements ILDLRegister {
     }
 
     @Override
-    public void initWidget() {
-        if (!isFixedView) {
-            addWidget(title = new WidgetGroup(0, 0, getSize().width, 15));
-            title.setBackground(new GuiTextureGroup(ColorPattern.T_RED.rectTexture().setTopRadius(5f), ColorPattern.GRAY.borderTexture(-1).setTopRadius(5f)));
-            title.addWidget(new ButtonWidget(2, 2, 11, 11, getIcon(), this::collapse)
-                    .setHoverTexture(getHoverIcon()).setDrawBackgroundWhenHover(false));
-            title.addWidget(new ImageWidget(12, 2, title.getSize().width - 12, 11,
-                    new TextTexture().setSupplier(() -> isCollapse ? "" : getTitle())
-                            .setWidth(title.getSize().width - 12)
-                            .setType(TextTexture.TextType.ROLL)));
-            addWidget(content = new WidgetGroup(0, 15, getSize().width, getSize().height - 15));
-            content.setBackground(new GuiTextureGroup(ColorPattern.BLACK.rectTexture().setBottomRadius(5f), ColorPattern.GRAY.borderTexture(-1).setBottomRadius(5f)));
-        }
-        super.initWidget();
-    }
+    public void initWidget() {  /* ported stub */ }
 
-    protected void collapse(ClickData clickData) {
-        isCollapse = !isCollapse;
-        if (isCollapse) {
-            title.setSize(new Size(15, 15));
-            title.setBackground(new GuiTextureGroup(ColorPattern.T_RED.rectTexture().setRadius(5f), ColorPattern.GRAY.borderTexture(-1).setRadius(5f)));
-            content.setVisible(false);
-            content.setActive(false);
-        } else {
-            title.setSize(new Size(getSize().width, 15));
-            title.setBackground(new GuiTextureGroup(ColorPattern.T_RED.rectTexture().setTopRadius(5f), ColorPattern.GRAY.borderTexture(-1).setTopRadius(5f)));
-            content.setVisible(true);
-            content.setActive(true);
-        }
-    }
+    protected void collapse(ClickData clickData) {  /* ported stub */ }
 
     public IGuiTexture getIcon() {
         return IGuiTexture.EMPTY;

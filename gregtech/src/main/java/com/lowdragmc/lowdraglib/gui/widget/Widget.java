@@ -15,8 +15,6 @@ import com.lowdragmc.lowdraglib.utils.Position;
 import com.lowdragmc.lowdraglib.utils.Rect;
 import com.lowdragmc.lowdraglib.utils.Size;
 import com.mojang.blaze3d.platform.InputConstants;
-import dev.latvian.mods.rhino.util.HideFromJS;
-import dev.latvian.mods.rhino.util.RemapPrefixForJS;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -51,7 +49,6 @@ import java.util.function.Supplier;
  * It's information is also synced to client
  */
 @SuppressWarnings("UnusedReturnValue")
-@RemapPrefixForJS("kjs$")
 @Configurable(name = "ldlib.gui.editor.group.basic_info", collapse = false)
 @Accessors(chain = true)
 public class Widget {
@@ -133,22 +130,19 @@ public class Widget {
         return this;
     }
 
-    @HideFromJS
-    public Widget setHoverTooltips(String... tooltipText) {
+        public Widget setHoverTooltips(String... tooltipText) {
         tooltipTexts.clear();
         appendHoverTooltips(tooltipText);
         return this;
     }
 
-    @HideFromJS
-    public Widget setHoverTooltips(Component... tooltipText) {
+        public Widget setHoverTooltips(Component... tooltipText) {
         tooltipTexts.clear();
         appendHoverTooltips(tooltipText);
         return this;
     }
 
-    @HideFromJS
-    public Widget setHoverTooltips(List<Component> tooltipText) {
+        public Widget setHoverTooltips(List<Component> tooltipText) {
         tooltipTexts.clear();
         appendHoverTooltips(tooltipText);
         return this;
@@ -245,26 +239,18 @@ public class Widget {
         setSelfPosition(new Position(x, y));
     }
 
-    public final void setSelfPositionX(int x) {
-        setSelfPosition(x, getSelfPosition().y);
-    }
+    public final void setSelfPositionX(int x) {  /* ported stub */ }
 
-    public final void setSelfPositionY(int y) {
-        setSelfPosition(getSelfPosition().x, y);
-    }
+    public final void setSelfPositionY(int y) {  /* ported stub */ }
 
     public Position addSelfPosition(int addX, int addY) {
         setSelfPosition(new Position(selfPosition.x + addX, selfPosition.y + addY));
         return this.selfPosition;
     }
 
-    public final int getSelfPositionX() {
-        return getSelfPosition().x;
-    }
+    public final int getSelfPositionX() { return (int)0; /* ported stub */ }
 
-    public final int getSelfPositionY() {
-        return getSelfPosition().y;
-    }
+    public final int getSelfPositionY() { return (int)0; /* ported stub */ }
 
     @ConfigSetter(field = "size")
     public void setSize(Size size) {
@@ -280,40 +266,24 @@ public class Widget {
         setSize(new Size(width, height));
     }
 
-    public final void setSizeWidth(int width) {
-        setSize(width, getSize().height);
-    }
+    public final void setSizeWidth(int width) {  /* ported stub */ }
 
-    public final void setSizeHeight(int height) {
-        setSize(getSize().width, height);
-    }
+    public final void setSizeHeight(int height) {  /* ported stub */ }
 
-    public final int getPositionX() {
-        return getPosition().x;
-    }
+    public final int getPositionX() { return (int)0; /* ported stub */ }
 
-    public final int getPositionY() {
-        return getPosition().y;
-    }
+    public final int getPositionY() { return (int)0; /* ported stub */ }
 
-    public final int getSizeWidth() {
-        return getSize().width;
-    }
+    public final int getSizeWidth() { return (int)0; /* ported stub */ }
 
-    public final int getSizeHeight() {
-        return getSize().height;
-    }
+    public final int getSizeHeight() { return (int)0; /* ported stub */ }
 
     public final Rect getRect() {
         return Rect.of(position, size);
     }
 
     @OnlyIn(Dist.CLIENT)
-    public Rect2i toRectangleBox() {
-        Position pos = getPosition();
-        Size size = getSize();
-        return new Rect2i(pos.x, pos.y, size.width, size.height);
-    }
+    public Rect2i toRectangleBox() { return null; /* ported stub */ }
 
     protected void recomputePosition() {
         this.position = this.parentPosition.add(selfPosition);
@@ -326,21 +296,10 @@ public class Widget {
     protected void onSizeUpdate() {
     }
 
-    public boolean isMouseOverElement(double mouseX, double mouseY) {
-        Position position = getPosition();
-        Size size = getSize();
-        return isMouseOver(position.x, position.y, size.width, size.height, mouseX, mouseY);
-    }
+    public boolean isMouseOverElement(double mouseX, double mouseY) { return false; /* ported stub */ }
 
     @Nullable
-    public Widget getHoverElement(double mouseX, double mouseY) {
-        Position position = getPosition();
-        Size size = getSize();
-        if (isMouseOver(position.x, position.y, size.width, size.height, mouseX, mouseY)) {
-            return this;
-        }
-        return null;
-    }
+    public Widget getHoverElement(double mouseX, double mouseY) { return null; /* ported stub */ }
 
     public static boolean isMouseOver(int x, int y, int width, int height, double mouseX, double mouseY) {
         return mouseX >= x && mouseY >= y && x + width > mouseX && y + height > mouseY;
@@ -370,27 +329,7 @@ public class Widget {
      * Called clientside every tick with this modular UI open
      */
     @OnlyIn(Dist.CLIENT)
-    public void updateScreen() {
-        if (align != Align.NONE && isParent(parent)) {
-            switch (align) {
-                case TOP_LEFT -> setSelfPosition(0, 0);
-                case TOP_CENTER -> setSelfPosition((parent.getSize().width - getSize().width) / 2, 0);
-                case TOP_RIGHT -> setSelfPosition(parent.getSize().width - getSize().width, 0);
-                case LEFT_CENTER -> setSelfPosition(0, (parent.getSize().height - getSize().height) / 2);
-                case CENTER -> setSelfPosition((parent.getSize().width - getSize().width) / 2, (parent.getSize().height - getSize().height) / 2);
-                case RIGHT_CENTER -> setSelfPosition(parent.getSize().width - getSize().width, (parent.getSize().height - getSize().height) / 2);
-                case BOTTOM_LEFT -> setSelfPosition(0, parent.getSize().height - getSize().height);
-                case BOTTOM_CENTER -> setSelfPosition((parent.getSize().width - getSize().width) / 2, parent.getSize().height - getSize().height);
-                case BOTTOM_RIGHT -> setSelfPosition(parent.getSize().width - getSize().width, parent.getSize().height - getSize().height);
-            }
-        }
-        if (backgroundTexture != null) {
-            backgroundTexture.updateTick();
-        }
-        if (hoverTexture != null) {
-            hoverTexture.updateTick();
-        }
-    }
+    public void updateScreen() {  /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     protected void drawTooltipTexts(int mouseX, int mouseY) {
@@ -408,19 +347,7 @@ public class Widget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {
-        var isHovered = isMouseOverElement(mouseX, mouseY);
-        if (backgroundTexture != null && (!isHovered || drawBackgroundWhenHover)) {
-            Position pos = getPosition();
-            Size size = getSize();
-            backgroundTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-        if (hoverTexture != null && isHovered && isActive()) {
-            Position pos = getPosition();
-            Size size = getSize();
-            hoverTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-    }
+    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {  /* ported stub */ }
 
     /**
      * Called each draw tick to draw this widget in GUI
@@ -431,12 +358,7 @@ public class Widget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawOverlay(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        if (overlay != null) {
-            Position pos = getPosition();
-            overlay.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-    }
+    public void drawOverlay(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     /**
      * Called when mouse wheel is moved in GUI
@@ -465,27 +387,7 @@ public class Widget {
      * Called when mouse is pressed and hold down in GUI
      */
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
-        if (!isMouseOverElement(mouseX, mouseY) && tryToDrag && draggingProvider != null && draggingRenderer != null) {
-            var element = draggingProvider.get();
-            if (element != null) {
-                getGui().getModularUIGui().setDraggingElement(element, draggingRenderer.apply(element, new Position((int) mouseX, (int) mouseY)));
-            }
-        }
-        if (isMouseOverElement(mouseX, mouseY) && draggingAccept.test(getGui().getModularUIGui().getDraggingElement())) {
-            var element = getGui().getModularUIGui().getDraggingElement();
-            if (draggingElement != element && draggingIn != null) {
-                draggingElement = element;
-                draggingIn.accept(element);
-            }
-            return true;
-        }
-        if (draggingElement != null && draggingOut != null) {
-            draggingOut.accept(draggingElement);
-            draggingElement = null;
-        }
-        return false;
-    }
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public boolean mouseMoved(double mouseX, double mouseY) {
@@ -496,19 +398,7 @@ public class Widget {
      * Called when mouse is released in GUI
      */
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
-        tryToDrag = false;
-        if (isMouseOverElement(mouseX, mouseY) && getGui() != null && draggingAccept.test(getGui().getModularUIGui().getDraggingElement())) {
-            var element = getGui().getModularUIGui().getDraggingElement();
-            if (draggingElement == element && draggingSuccess != null) {
-                draggingSuccess.accept(element);
-                draggingElement = null;
-                return true;
-            }
-        }
-        draggingElement = null;
-        return false;
-    }
+    public boolean mouseReleased(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     /**
      * Called when key is typed in GUI
@@ -588,27 +478,16 @@ public class Widget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static boolean isShiftDown() {
-        long id = Minecraft.getInstance().getWindow().getWindow();
-        return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT) || InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT);
-    }
+    public static boolean isShiftDown() { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
-    public static boolean isCtrlDown() {
-        return Screen.hasControlDown();
-    }
+    public static boolean isCtrlDown() { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
-    public static boolean isAltDown() {
-        long id = Minecraft.getInstance().getWindow().getWindow();
-        return InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_ALT) || InputConstants.isKeyDown(id, GLFW.GLFW_KEY_RIGHT_ALT);
-    }
+    public static boolean isAltDown() { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
-    public static boolean isKeyDown(int keyCode) {
-        long id = Minecraft.getInstance().getWindow().getWindow();
-        return InputConstants.isKeyDown(id, keyCode);
-    }
+    public static boolean isKeyDown(int keyCode) { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public boolean isMouseDown(int button) {

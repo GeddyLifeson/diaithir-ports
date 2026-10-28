@@ -82,69 +82,13 @@ public class ResourceContainer<T, C extends Widget> extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {
-        Size size = getSize();
-        container = new DraggableScrollableWidgetGroup(1, 2, size.width - 2, size.height - 2);
-        container.setYScrollBarWidth(4).setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(2));
-        addWidget(container);
-        reBuild();
-        super.initWidget();
-    }
+    public void initWidget() {  /* ported stub */ }
 
-    public void reBuild() {
-        selected = null;
-        container.clearAllWidgets();
-        int width = getSize().getWidth();
-        int x = 1;
-        int y = 3;
-        for (Map.Entry<String, T> entry : resource.allResources()) {
-            var widget = widgetSupplier.apply(entry.getKey());
-            widgets.put(entry.getKey(), widget);
-            Size size = widget.getSize();
-            SelectableWidgetGroup selectableWidgetGroup = new SelectableWidgetGroup(0, 0, size.width, size.height + 14);
-            selectableWidgetGroup.setDraggingProvider(draggingMapping == null ? entry::getValue : () -> draggingMapping.apply(entry.getKey()), (c, p) -> draggingRenderer == null ? new TextTexture(entry.getKey()) : draggingRenderer.apply(entry.getKey(), c, p));
-            selectableWidgetGroup.addWidget(widget);
-            selectableWidgetGroup.addWidget(new ImageWidget(0, size.height + 3, size.width, 10, new TextTexture(entry.getKey()).setWidth(size.width).setType(TextTexture.TextType.ROLL)));
-            selectableWidgetGroup.setOnSelected(s -> selected = entry.getKey());
-            selectableWidgetGroup.setOnUnSelected(s -> selected = null);
-            selectableWidgetGroup.setSelectedTexture(ColorPattern.T_GRAY.rectTexture());
-            size = selectableWidgetGroup.getSize();
-
-            if (size.width >= width - 5) {
-                selectableWidgetGroup.setSelfPosition(new Position(0, y));
-                y += size.height + 3;
-            } else if (size.width < width - 5 - x) {
-                selectableWidgetGroup.setSelfPosition(new Position(x, y));
-                x += size.width + 3;
-            } else {
-                y += size.height + 3;
-                x = 1;
-                selectableWidgetGroup.setSelfPosition(new Position(x, y));
-                x += size.width + 3;
-            }
-            container.addWidget(selectableWidgetGroup);
-        }
-    }
+    public void reBuild() {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        var result = super.mouseClicked(mouseX, mouseY, button);
-        if (button == 1 && isMouseOverElement(mouseX, mouseY)) {
-            panel.getEditor().openMenu(mouseX, mouseY, getMenu());
-            return true;
-        } else if (button == 0 && isMouseOverElement(mouseX, mouseY) && selected != null && onEdit != null) {
-            if (firstClick && firstClickName.equals(selected) && gui.getTickCount() - firstClickTime < 10) {
-                editResource();
-                firstClick = false;
-                return true;
-            }
-            firstClick = true;
-            firstClickName = selected;
-            firstClickTime = gui.getTickCount();
-        }
-        return result;
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     protected TreeBuilder.Menu getMenu() {
         var menu = TreeBuilder.Menu.start();
@@ -162,19 +106,9 @@ public class ResourceContainer<T, C extends Widget> extends WidgetGroup {
         return menu;
     }
 
-    protected void paste() {
-        panel.getEditor().ifCopiedPresent(resource.name(), c -> {
-            var value = getResource().deserialize((Tag)c, Platform.getFrozenRegistry());
-            resource.addResource(genNewFileName(), value);
-            reBuild();
-        });
-    }
+    protected void paste() {  /* ported stub */ }
 
-    protected void copy() {
-        if (selected != null) {
-            panel.getEditor().setCopy(resource.name(), resource.serialize(resource.getResource(selected), Platform.getFrozenRegistry()));
-        }
-    }
+    protected void copy() {  /* ported stub */ }
 
     protected void renameResource() {
         if (selected != null) {

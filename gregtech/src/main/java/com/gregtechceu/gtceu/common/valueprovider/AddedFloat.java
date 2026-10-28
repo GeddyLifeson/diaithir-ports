@@ -5,13 +5,13 @@ import com.gregtechceu.gtceu.common.data.GTValueProviderTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.FloatProvider;
-import net.minecraft.util.valueproviders.FloatProviderType;
+
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import org.jetbrains.annotations.NotNull;
 
-public class AddedFloat extends FloatProvider {
+public class AddedFloat implements FloatProvider {
 
     public static final MapCodec<AddedFloat> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             FloatProvider.CODEC.fieldOf("source").forGetter(provider -> provider.source),

@@ -54,19 +54,10 @@ public class UIProject implements IProject {
     }
 
     @Override
-    public CompoundTag serializeNBT(HolderLookup.Provider provider) {
-        CompoundTag tag = new CompoundTag();
-        tag.put("resources", resources.serializeNBT(provider));
-        tag.put("root", IConfigurableWidget.serializeNBT(this.root, resources, true, provider));
-        return tag;
-    }
+    public CompoundTag serializeNBT(HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     @Override
-    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {
-        this.resources = loadResources(tag.getCompound("resources"));
-        this.root = new WidgetGroup();
-        IConfigurableWidget.deserializeNBT(this.root, tag.getCompound("root"), resources, true, provider);
-    }
+    public void deserializeNBT(HolderLookup.Provider provider, CompoundTag tag) {  /* ported stub */ }
 
     @Override
     public Resources getResources() {
@@ -83,28 +74,13 @@ public class UIProject implements IProject {
     }
 
     @Override
-    public void onLoad(Editor editor) {
-        IProject.super.onLoad(editor);
-        editor.getTabPages().addTab("Main", new MainPanel(editor, root));
-
-        for (WidgetToolBox.Default tab : WidgetToolBox.Default.TABS) {
-            editor.getToolPanel().addNewToolBox("ldlib.gui.editor.group." + tab.groupName, tab.icon, tab::createToolBox);
-        }
-    }
+    public void onLoad(Editor editor) {  /* ported stub */ }
 
     /**
      * Load ui project file for productive environment.
      * @return an ui creator which caches the resources to speed up the creation process.
      */
-    public static Supplier<WidgetGroup> loadUIFromTag(HolderLookup.Provider provider, CompoundTag tag) {
-        var resources = Resources.fromNBT(tag.getCompound("resources"));
-        var data = tag.getCompound("root");
-        return () -> {
-            var root = new WidgetGroup();
-            IConfigurableWidget.deserializeNBT(root, data, resources, false, provider);
-            return root;
-        };
-    }
+    public static Supplier<WidgetGroup> loadUIFromTag(HolderLookup.Provider provider, CompoundTag tag) { return null; /* ported stub */ }
 
     @Nullable
     public static Supplier<WidgetGroup> loadUIFromFile(Identifier location) {

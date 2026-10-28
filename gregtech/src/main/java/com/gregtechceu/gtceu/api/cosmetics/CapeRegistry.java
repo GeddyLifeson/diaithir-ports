@@ -3,8 +3,8 @@ package com.gregtechceu.gtceu.api.cosmetics;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.cosmetics.event.RegisterGTCapesEvent;
 import com.gregtechceu.gtceu.common.network.packets.SPacketNotifyCapeChange;
-import com.gregtechceu.gtceu.integration.kjs.GTCEuServerEvents;
-import com.gregtechceu.gtceu.integration.kjs.events.RegisterCapesEventJS;
+
+
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.*;
@@ -16,7 +16,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import dev.latvian.mods.kubejs.script.ScriptType;
+
 import lombok.SneakyThrows;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;

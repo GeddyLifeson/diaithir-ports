@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.item.behavior;
 
+import net.minecraft.world.InteractionResult;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
 import com.gregtechceu.gtceu.api.item.component.IAddInformation;

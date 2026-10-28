@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.trait.miner;
 
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.IMiner;
 import com.gregtechceu.gtceu.api.capability.recipe.*;

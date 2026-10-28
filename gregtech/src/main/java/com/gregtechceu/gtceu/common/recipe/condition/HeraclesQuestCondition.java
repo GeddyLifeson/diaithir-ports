@@ -13,9 +13,9 @@ import net.minecraft.network.chat.Component;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import earth.terrarium.heracles.common.handlers.progress.QuestProgressHandler;
-import earth.terrarium.heracles.common.handlers.progress.QuestsProgress;
-import earth.terrarium.heracles.common.handlers.quests.QuestHandler;
+
+
+
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 

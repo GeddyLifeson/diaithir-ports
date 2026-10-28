@@ -46,20 +46,9 @@ public abstract class AbstractComponent implements ILayoutComponent {
         return currentPage;
     }
 
-    protected int width(LayoutPageWidget currentPage) {
-        return currentPage.getPageWidth() - leftMargin - rightMargin;
-    }
+    protected int width(LayoutPageWidget currentPage) { return (int)0; /* ported stub */ }
 
-    protected Widget wrapper(Widget widget) {
-        if (leftMargin != 0 || rightMargin != 0) {
-            var group = new WidgetGroup();
-            group.addWidget(widget);
-            widget.setSelfPosition(new Position(leftMargin, 0));
-            group.setSize(new Size(widget.getSize().width + leftMargin + rightMargin, widget.getSize().height));
-            return group;
-        }
-        return widget;
-    }
+    protected Widget wrapper(Widget widget) { return null; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     protected abstract LayoutPageWidget addWidgets(LayoutPageWidget currentPage);

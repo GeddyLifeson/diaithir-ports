@@ -5,44 +5,10 @@ import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 import net.minecraft.util.Mth;
-import net.neoforged.neoforge.client.model.IQuadTransformer;
-import net.neoforged.neoforge.client.model.QuadTransformers;
 
-public final class GTQuadTransformers {
 
-    public static IQuadTransformer offset(float by) {
-        return offset(by, by, by);
-    }
 
-    public static IQuadTransformer offset(float xOffset, float yOffset, float zOffset) {
-        if (xOffset == 0.0f && yOffset == 0.0f && zOffset == 0.0f) return QuadTransformers.empty();
-
-        return quad -> {
-            int[] vertices = quad.getVertices();
-            Direction direction = quad.getDirection();
-            FaceInfo faceInfo = FaceInfo.fromFacing(direction);
-
-            for (int i = 0; i < 4; i++) {
-                FaceInfo.VertexInfo normal = faceInfo.getVertexInfo(i);
-                int xNormal = Direction.from3DDataValue(normal.xFace).getStepX();
-                int yNormal = Direction.from3DDataValue(normal.yFace).getStepY();
-                int zNormal = Direction.from3DDataValue(normal.zFace).getStepZ();
-
-                int offset = i * IQuadTransformer.STRIDE + IQuadTransformer.POSITION;
-                float x = Float.intBitsToFloat(vertices[offset]);
-                float y = Float.intBitsToFloat(vertices[offset + 1]);
-                float z = Float.intBitsToFloat(vertices[offset + 2]);
-
-                x += xOffset * xNormal;
-                y += yOffset * yNormal;
-                z += zOffset * zNormal;
-
-                vertices[offset] = Float.floatToRawIntBits(x);
-                vertices[offset + 1] = Float.floatToRawIntBits(y);
-                vertices[offset + 2] = Float.floatToRawIntBits(z);
-            }
-        };
-    }
+public final class GTQuadTransformers {/* ported: removed *//* ported: removed */
 
     public static BakedQuad setSprite(BakedQuad quad, TextureAtlasSprite sprite) {
         TextureAtlasSprite oldSprite = quad.getSprite();

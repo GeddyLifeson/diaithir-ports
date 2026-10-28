@@ -1,13 +1,19 @@
 package com.gregtechceu.gtceu.common.block;
 
+import com.gregtechceu.gtceu.compat.client.ItemColor;
+
+import com.gregtechceu.gtceu.compat.client.BlockColor;
+
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.item.SurfaceRockBlockItem;
 import com.gregtechceu.gtceu.client.renderer.block.SurfaceRockRenderer;
-import com.gregtechceu.gtceu.integration.map.cache.server.ServerCache;
 
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.item.ItemColor;
+
+
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -24,7 +30,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -37,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class SurfaceRockBlock extends Block {
 
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     private static final VoxelShape AABB_NORTH = Block.box(2, 2, 0, 14, 14, 3);
     private static final VoxelShape AABB_SOUTH = Block.box(2, 2, 13, 14, 14, 16);

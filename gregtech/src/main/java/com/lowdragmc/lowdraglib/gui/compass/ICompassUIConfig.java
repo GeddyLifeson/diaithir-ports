@@ -13,22 +13,7 @@ import javax.annotation.Nonnull;
  */
 public interface ICompassUIConfig {
 
-    static ICompassUIConfig getDefault() {
-        return new ICompassUIConfig() {
-            @Getter
-            public IGuiTexture sectionBackground = IGuiTexture.EMPTY;
-            @Getter
-            public IGuiTexture listViewBackground = ResourceBorderTexture.BORDERED_BACKGROUND_INVERSE;
-            @Getter
-            public IGuiTexture listItemBackground = ResourceBorderTexture.BUTTON_COMMON;
-            @Getter
-            public IGuiTexture listItemSelectedBackground = ResourceBorderTexture.BUTTON_COMMON.copy().setColor(0xff337f7f);
-            @Getter
-            public IGuiTexture nodeBackground = ResourceBorderTexture.BUTTON_COMMON;
-            @Getter
-            public IGuiTexture nodeHoverBackground = ResourceBorderTexture.BUTTON_COMMON.copy().setColor(0xff337f7f);
-        };
-    }
+    static ICompassUIConfig getDefault() { return null; /* ported stub */ }
 
     @Nonnull
     IGuiTexture getSectionBackground();

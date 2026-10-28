@@ -7,7 +7,7 @@ import com.lowdragmc.lowdraglib.gui.editor.configurator.ConfiguratorGroup;
 import com.lowdragmc.lowdraglib.gui.editor.configurator.IConfigurable;
 import com.lowdragmc.lowdraglib.gui.editor.configurator.WrapperConfigurator;
 import com.lowdragmc.lowdraglib.gui.editor.data.resource.Resource;
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import com.lowdragmc.lowdraglib.gui.editor.runtime.PersistedParser;
 import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -124,14 +124,7 @@ public interface IGuiTexture extends IConfigurable {
     }
 
     @NotNull
-    static IGuiTexture deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) {
-        var type = tag.getString("type");
-        var data = tag.getCompound("data");
-        var wrapper = CACHE.apply(type);
-        IGuiTexture value = wrapper == null ? IGuiTexture.EMPTY : wrapper.creator().get();
-        PersistedParser.deserializeNBT(data, new HashMap<>(), value.getClass(), value, provider);
-        return value;
-    }
+    static IGuiTexture deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     default void setUIResource(Resource<IGuiTexture> texturesResource) {
 

@@ -7,7 +7,7 @@ import com.gregtechceu.gtceu.api.item.MetaMachineItem;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
-import com.gregtechceu.gtceu.core.mixins.registrate.AbstractRegistrateAccessor;
+
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;

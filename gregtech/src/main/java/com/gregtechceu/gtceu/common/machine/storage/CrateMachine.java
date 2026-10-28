@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
+import net.minecraft.core.component.DataComponentGetter;
+
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -95,7 +97,7 @@ public class CrateMachine extends MetaMachine implements IUIMachine {
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
         if (componentInput.get(GTDataComponents.TAPED) != null &&
                 componentInput.get(DataComponents.CONTAINER) != null) {

@@ -1,5 +1,7 @@
 package com.lowdragmc.lowdraglib.utils;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import lombok.Getter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -7,7 +9,7 @@ import net.minecraft.nbt.FloatTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.world.phys.Vec2;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+
 import org.jetbrains.annotations.UnknownNullability;
 
 import java.util.ArrayList;

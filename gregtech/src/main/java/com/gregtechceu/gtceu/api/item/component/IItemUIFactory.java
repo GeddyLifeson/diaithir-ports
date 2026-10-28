@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item.component;
 
+import net.minecraft.world.InteractionResult;
+
 import com.lowdragmc.lowdraglib.gui.factory.HeldItemUIFactory;
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 

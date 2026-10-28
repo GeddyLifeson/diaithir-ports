@@ -5,10 +5,10 @@ import com.google.gson.GsonBuilder;
 import com.lowdragmc.lowdraglib.client.ClientProxy;
 import com.lowdragmc.lowdraglib.json.factory.FluidStackTypeAdapter;
 import com.lowdragmc.lowdraglib.core.mixins.MixinPluginShared;
-import com.lowdragmc.lowdraglib.emi.EMIPlugin;
+
 import com.lowdragmc.lowdraglib.json.IGuiTextureTypeAdapter;
 import com.lowdragmc.lowdraglib.json.ItemStackTypeAdapter;
-import com.lowdragmc.lowdraglib.rei.REIPlugin;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;

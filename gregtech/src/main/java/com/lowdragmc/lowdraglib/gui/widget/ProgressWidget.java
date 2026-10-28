@@ -105,24 +105,7 @@ public class ProgressWidget extends Widget implements IConfigurableWidget {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        if (progressSupplier == JEIProgress || isClientSideWidget) {
-            lastProgressValue = progressSupplier.getAsDouble();
-        }
-        if (progressTexture instanceof ProgressTexture texture) {
-            texture.setProgress(lastProgressValue);
-        }
-        Position pos = getPosition();
-        Size size = getSize();
-        if (progressTexture != null) {
-            progressTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-        if (overlayTexture != null) {
-            overlayTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     public void initWidget() {
@@ -159,20 +142,7 @@ public class ProgressWidget extends Widget implements IConfigurableWidget {
     }
 
     @Override
-    public void buildConfigurator(ConfiguratorGroup father) {
-        IConfigurableWidget.super.buildConfigurator(father);
-        for (Configurator configurator : father.getConfigurators()) {
-            if (configurator instanceof GuiTextureConfigurator guiConfigurator && configurator.getName().equals("progressTexture")) {
-                guiConfigurator.setOnUpdate(t -> {
-                    if (t instanceof ProgressTexture || (t instanceof UIResourceTexture uiResourceTexture && uiResourceTexture.getTexture() instanceof ProgressTexture)) {
-                        this.progressTexture = t;
-                    }
-                });
-                guiConfigurator.setAvailable(t -> t instanceof ProgressTexture || (t instanceof UIResourceTexture uiResourceTexture && uiResourceTexture.getTexture() instanceof ProgressTexture));
-                guiConfigurator.setTips("ldlib.gui.editor.tips.progress_texture");
-            }
-        }
-    }
+    public void buildConfigurator(ConfiguratorGroup father) {  /* ported stub */ }
 
     @Override
     public boolean canDragIn(Object dragging) {

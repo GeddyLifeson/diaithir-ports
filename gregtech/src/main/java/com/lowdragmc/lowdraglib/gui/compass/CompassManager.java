@@ -110,59 +110,7 @@ public final class CompassManager implements ResourceManagerReloadListener {
     }
 
     @Override
-    public void onResourceManagerReload(@Nonnull ResourceManager resourceManager) {
-        sections.clear();
-        nodes.clear();
-        nodePages.clear();
-
-        for (var entry : resourceManager.listResources("compass/sections", rl -> rl.getPath().endsWith(".json")).entrySet()) {
-            var key = entry.getKey();
-            var resource = entry.getValue();
-            try (var reader = new InputStreamReader(resource.open(), StandardCharsets.UTF_8)) {
-                var path = key.getPath().replace("compass/sections/", "");
-                path = path.substring(0, path.length() - 5);
-                var section = new CompassSection(Identifier.fromNamespaceAndPath(key.getNamespace(), path), JsonParser.parseReader(reader).getAsJsonObject());
-                sections.computeIfAbsent(key.getNamespace(), k -> new HashMap<>()).put(section.sectionName, section);
-            } catch (Exception e) {
-                LDLib.LOGGER.error("loading compass section {} failed", entry.getKey(), e);
-            }
-        }
-
-        for (var entry : resourceManager.listResources("compass/nodes", rl -> rl.getPath().endsWith(".json")).entrySet()) {
-            var key = entry.getKey();
-            var resource = entry.getValue();
-            try (var reader = new InputStreamReader(resource.open(), StandardCharsets.UTF_8)) {
-                var path = key.getPath().replace("compass/nodes/", "");
-                path = path.substring(0, path.length() - 5);
-                var node = new CompassNode(Identifier.fromNamespaceAndPath(key.getNamespace(), path), JsonParser.parseReader(reader).getAsJsonObject());
-                nodes.computeIfAbsent(key.getNamespace(), k -> new HashMap<>()).put(node.nodeName, node);
-            } catch (Exception e) {
-                LDLib.LOGGER.error("loading compass node {} failed", entry.getKey(), e);
-            }
-        }
-
-        // init nodes' section
-        for (var entry : nodes.entrySet()) {
-            val iterator = entry.getValue().entrySet().iterator();
-            while (iterator.hasNext()) {
-                val node = iterator.next().getValue();
-                var sectionName = Identifier.parse(JsonUtils.getStringOr("section", node.getConfig(), "default"));
-                var section = sections.getOrDefault(entry.getKey(), Collections.emptyMap()).get(sectionName);
-                if (section != null) {
-                    node.setSection(section);
-                    node.getItems().forEach(item -> itemLookup.computeIfAbsent(item, k -> new HashSet<>()).add(node.nodeName));
-                } else {
-                    LDLib.LOGGER.error("node {}'s section {} not found", node.getNodeName(), sectionName);
-                    iterator.remove();
-                }
-            }
-        }
-
-        // init relation
-        for (Map<Identifier, CompassNode> nodes : nodes.values()) {
-            nodes.values().forEach(CompassNode::initRelation);
-        }
-    }
+    public void onResourceManagerReload(@Nonnull ResourceManager resourceManager) {  /* ported stub */ }
 
     public static void onComponentClick(String link, ClickData cd) {
         if (LDLib.isValidResourceLocation(link)) {

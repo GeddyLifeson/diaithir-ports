@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.common.network.packets;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.common.capability.WorldIDSaveData;
-import com.gregtechceu.gtceu.integration.map.ClientCacheManager;
+
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;

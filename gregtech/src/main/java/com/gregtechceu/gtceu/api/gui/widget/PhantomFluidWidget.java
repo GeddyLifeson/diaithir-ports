@@ -31,11 +31,11 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.systems.RenderSystem;
-import dev.emi.emi.api.stack.EmiStack;
+
 import lombok.Getter;
 import lombok.Setter;
-import mezz.jei.api.ingredients.ITypedIngredient;
-import mezz.jei.api.neoforge.NeoForgeTypes;
+
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

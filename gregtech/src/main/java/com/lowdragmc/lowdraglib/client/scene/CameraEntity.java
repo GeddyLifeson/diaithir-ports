@@ -29,14 +29,10 @@ public class CameraEntity extends Entity {
     }
 
     @Override
-    protected void readAdditionalSaveData(@Nonnull CompoundTag pCompound) {
-
-    }
+    protected void readAdditionalSaveData(@Nonnull CompoundTag pCompound) {  /* ported stub */ }
 
     @Override
-    protected void addAdditionalSaveData(@Nonnull CompoundTag pCompound) {
-
-    }
+    protected void addAdditionalSaveData(@Nonnull CompoundTag pCompound) {  /* ported stub */ }
 
     @Override
     @Nonnull

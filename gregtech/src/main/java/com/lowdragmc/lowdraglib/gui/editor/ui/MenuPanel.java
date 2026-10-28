@@ -3,7 +3,7 @@ package com.lowdragmc.lowdraglib.gui.editor.ui;
 import com.lowdragmc.lowdraglib.LDLib;
 import com.lowdragmc.lowdraglib.gui.editor.ColorPattern;
 import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import com.lowdragmc.lowdraglib.gui.editor.ui.menu.MenuTab;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceTexture;
 import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
@@ -37,58 +37,14 @@ public class MenuPanel extends WidgetGroup {
     }
 
     @Override
-    public void initWidget() {
-        this.setBackground(ColorPattern.T_RED.rectTexture());
-        this.addWidget(new ImageWidget(2, 2, 12, 12, new ResourceTexture()));
-        if (isRemote()) {
-            initTabs();
-        }
-        super.initWidget();
-    }
+    public void initWidget() {  /* ported stub */ }
 
     public <T extends MenuTab> T getTab(String name) {
         return (T) tabs.get(name);
     }
 
-    protected void initTabs() {
-        int x = 20;
-        var tag = new CompoundTag();
-        try {
-            tag = NbtIo.read(editor.getWorkSpace().toPath().resolve("settings/menu.cfg"));
-            if (tag == null) {
-                tag = new CompoundTag();
-            }
-        } catch (IOException e) {
-            LDLib.LOGGER.error(e.getMessage());
-        }
-        for (AnnotationDetector.Wrapper<LDLRegister, MenuTab> wrapper : AnnotationDetector.REGISTER_MENU_TABS) {
-            if (editor.name().startsWith(wrapper.annotation().group())) {
-                var tab = wrapper.creator().get();
-                tabs.put(wrapper.annotation().name(), tab);
-                var button = tab.createTabWidget();
-                button.addSelfPosition(x, 0);
-                x += button.getSize().getWidth();
-                addWidget(button);
-                if (tag.contains(tab.name())) {
-                    tab.deserializeNBT(tag.getCompound(tab.name()));
-                }
-            }
-        }
-    }
+    protected void initTabs() {  /* ported stub */ }
 
-    public void saveMenuData() {
-        var tag = new CompoundTag();
-        for (MenuTab tab : tabs.values()) {
-            var nbt = tab.serializeNBT();
-            if (!nbt.isEmpty()) {
-                tag.put(tab.name(), nbt);
-            }
-        }
-        try {
-            NbtIo.write(tag, editor.getWorkSpace().toPath().resolve("settings/menu.cfg"));
-        } catch (IOException e) {
-            LDLib.LOGGER.error(e.getMessage());
-        }
-    }
+    public void saveMenuData() {  /* ported stub */ }
 
 }

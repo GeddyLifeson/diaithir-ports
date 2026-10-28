@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item.component;
 
+import net.minecraft.world.item.ItemUseAnimation;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -8,7 +10,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -42,8 +44,8 @@ public interface IInteractionItem extends IItemComponent {
         return stack.getFoodProperties(livingEntity) != null ? livingEntity.eat(level, stack) : stack;
     }
 
-    default UseAnim getUseAnimation(ItemStack stack) {
-        return stack.getFoodProperties(null) != null ? UseAnim.EAT : UseAnim.NONE;
+    default ItemUseAnimation getUseAnimation(ItemStack stack) {
+        return stack.getFoodProperties(null) != null ? ItemUseAnimation.EAT : ItemUseAnimation.NONE;
     }
 
     default boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {

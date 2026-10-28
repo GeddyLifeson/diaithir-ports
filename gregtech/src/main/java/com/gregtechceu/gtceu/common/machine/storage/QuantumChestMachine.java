@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
+import net.minecraft.core.component.DataComponentGetter;
+
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.IControllable;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
@@ -108,7 +110,7 @@ public class QuantumChestMachine extends TieredMachine implements IControllable,
     }
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
         LargeItemContent storage = componentInput.getOrDefault(GTDataComponents.LARGE_ITEM_CONTENT,
                 LargeItemContent.EMPTY);

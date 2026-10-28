@@ -1,7 +1,7 @@
 package com.lowdragmc.lowdraglib.core.mixins.accessor;
 
 import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.Mixin;

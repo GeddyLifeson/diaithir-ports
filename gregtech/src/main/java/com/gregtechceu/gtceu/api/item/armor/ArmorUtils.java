@@ -1,10 +1,12 @@
 package com.gregtechceu.gtceu.api.item.armor;
 
+import net.minecraft.world.InteractionResult;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.core.mixins.ServerGamePacketListenerImplAccessor;
+
 
 import net.minecraft.client.Minecraft;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;

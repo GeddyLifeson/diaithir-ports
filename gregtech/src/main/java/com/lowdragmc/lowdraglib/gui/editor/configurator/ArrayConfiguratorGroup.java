@@ -187,12 +187,7 @@ public class ArrayConfiguratorGroup<T> extends ConfiguratorGroup {
         }
 
         @Override
-        public void computeHeight() {
-            inner.computeHeight();
-            inner.setSelfPosition(new Position(13, 0));
-            int height = inner.getSize().height;
-            setSize(new Size(getSize().width, height));
-        }
+        public void computeHeight() {  /* ported stub */ }
 
         @Override
         public void init(int width) {
@@ -209,36 +204,11 @@ public class ArrayConfiguratorGroup<T> extends ConfiguratorGroup {
 
         @Override
         @OnlyIn(Dist.CLIENT)
-        public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-            super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-            if (isMouseOverElement(mouseX, mouseY) && onReorder != null) {
-                var object = getGui().getModularUIGui().getDraggingElement();
-                Position pos = getPosition();
-                Size size = getSize();
-                if (object != null && object.getClass() == this.getClass() && object != this) {
-                    if (mouseY > pos.y + size.height / 2) { // down
-                        ColorPattern.T_GREEN.rectTexture().draw(graphics, 0, 0, pos.x, pos.y + size.height, size.width, 2);
-                    } else { // up
-                        ColorPattern.T_GREEN.rectTexture().draw(graphics, 0, 0, pos.x, pos.y - 1, size.width, 2);
-                    }
-                }
-            }
-        }
+        public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
         @Override
         @OnlyIn(Dist.CLIENT)
-        public boolean mouseReleased(double mouseX, double mouseY, int button) {
-            if (isMouseOverElement(mouseX, mouseY) && onReorder != null) {
-                var object = getGui().getModularUIGui().getDraggingElement();
-                Position pos = getPosition();
-                Size size = getSize();
-                if (object != null && object.getClass() == this.getClass() && object != this) {
-                    updateOrder((ItemConfigurator)object, this, mouseY < pos.y + size.height / 2f);
-                    return true;
-                }
-            }
-            return super.mouseReleased(mouseX, mouseY, button);
-        }
+        public boolean mouseReleased(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
     }
 
 }

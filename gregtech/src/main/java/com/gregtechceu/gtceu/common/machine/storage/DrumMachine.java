@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.common.machine.storage;
 
+import net.minecraft.core.component.DataComponentGetter;
+
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -100,7 +102,7 @@ public class DrumMachine extends MetaMachine {
     //////////////////////////////////////
 
     @Override
-    protected void applyImplicitComponents(DataComponentInput componentInput) {
+    protected void applyImplicitComponents(DataComponentGetter componentInput) {
         super.applyImplicitComponents(componentInput);
         stored = componentInput.getOrDefault(GTDataComponents.FLUID_CONTENT, SimpleFluidContent.EMPTY).copy();
         // "stored" may not be same as cache (due to item's fluid cap). we should update it.

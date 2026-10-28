@@ -6,7 +6,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Tier;
+
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 

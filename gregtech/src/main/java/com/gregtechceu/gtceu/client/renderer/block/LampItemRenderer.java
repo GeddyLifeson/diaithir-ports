@@ -5,11 +5,11 @@ import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 import com.gregtechceu.gtceu.common.item.LampBlockItem;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.resources.model.BakedModel;
+
+
+
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,10 +31,7 @@ public class LampItemRenderer extends BlockEntityWithoutLevelRenderer {
             INSTANCE = new LampItemRenderer();
         }
         return INSTANCE;
-    }
-
-    protected final ItemRenderer itemRenderer;
-    protected final BlockRenderDispatcher blockRenderer;
+    }/* ported: removed *//* ported: removed */
 
     protected LampItemRenderer() {
         super(Minecraft.getInstance().getBlockEntityRenderDispatcher(),

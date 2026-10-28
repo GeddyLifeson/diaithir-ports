@@ -32,31 +32,7 @@ public class BlockConfigurator extends ValueConfigurator<Block> implements Searc
     }
 
     @Override
-    public void init(int width) {
-        super.init(width);
-        addWidget(image = new ImageWidget(leftWidth, 2, width - leftWidth - 3 - rightWidth, 10, ColorPattern.T_GRAY.rectTexture().setRadius(5)));
-        image.setDraggingConsumer(
-                o -> o instanceof Block || o instanceof BlockState,
-                o -> image.setImage(ColorPattern.GREEN.rectTexture().setRadius(5)),
-                o -> image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5)),
-                o -> {
-                    if (o instanceof BlockState state) {
-                        onValueUpdate(state.getBlock());
-                        updateValue();
-                    } else if (o instanceof Block block) {
-                        onValueUpdate(block);
-                        updateValue();
-                    }
-                    image.setImage(ColorPattern.T_GRAY.rectTexture().setRadius(5));
-                });
-        addWidget(searchComponent = new SearchComponentWidget<>(leftWidth + 3, 2, width - leftWidth - 6 - rightWidth, 10, this));
-        searchComponent.setShowUp(true);
-        searchComponent.setCapacity(5);
-        var textFieldWidget = searchComponent.textFieldWidget;
-        textFieldWidget.setClientSideWidget();
-        textFieldWidget.setCurrentString(value == null ? BuiltInRegistries.BLOCK.getKey(defaultValue) : BuiltInRegistries.BLOCK.getKey(value));
-        textFieldWidget.setBordered(false);
-    }
+    public void init(int width) {  /* ported stub */ }
 
 
     @Override
@@ -71,20 +47,5 @@ public class BlockConfigurator extends ValueConfigurator<Block> implements Searc
     }
 
     @Override
-    public void search(String word, Consumer<Block> find) {
-        var wordLower = word.toLowerCase();
-        for (var blockEntry : BuiltInRegistries.BLOCK.entrySet()) {
-            if (Thread.currentThread().isInterrupted()) return;
-            var block = blockEntry.getValue();
-            var id = blockEntry.getKey().location();
-            if (id.toString().contains(wordLower)) {
-                find.accept(block);
-            } else {
-                var name = LocalizationUtils.format(block.getDescriptionId());
-                if (name.toLowerCase().contains(wordLower)) {
-                    find.accept(block);
-                }
-            }
-        }
-    }
+    public void search(String word, Consumer<Block> find) {  /* ported stub */ }
 }

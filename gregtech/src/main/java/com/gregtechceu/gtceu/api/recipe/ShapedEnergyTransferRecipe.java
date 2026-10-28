@@ -5,7 +5,7 @@ import com.gregtechceu.gtceu.api.capability.IElectricItem;
 import com.gregtechceu.gtceu.api.item.datacomponents.SimpleEnergyContent;
 import com.gregtechceu.gtceu.common.data.GTRecipeSerializers;
 import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
-import com.gregtechceu.gtceu.core.mixins.ShapedRecipeAccessor;
+
 import com.gregtechceu.gtceu.utils.codec.StreamCodecUtils;
 
 import net.minecraft.core.HolderLookup;
@@ -84,7 +84,7 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
         return GTRecipeSerializers.CRAFTING_SHAPED_ENERGY_TRANSFER.get();
     }
 
-    public static class Serializer implements RecipeSerializer<ShapedEnergyTransferRecipe> {
+    public static class Serializer {
 
         public static final MapCodec<ShapedEnergyTransferRecipe> CODEC = RecordCodecBuilder
                 .mapCodec(instance -> instance.group(

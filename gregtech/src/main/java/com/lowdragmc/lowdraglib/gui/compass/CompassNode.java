@@ -63,39 +63,7 @@ public class CompassNode {
         this.size = GsonHelper.getAsInt(config, "size", 24);
     }
 
-    public JsonObject updateJson() {
-        var pos = new JsonArray();
-        pos.add(position.x);
-        pos.add(position.y);
-        config.add("position", pos);
-        config.addProperty("section", section.sectionName.toString());
-        if (size != 24) {
-            config.addProperty("size", size);
-        } else {
-            config.remove("size");
-        }
-        if (background != null) {
-            config.add("background", SimpleIGuiTextureJsonUtils.toJson(background));
-        } else {
-            config.remove("background");
-        }
-        if (hoverBackground != null) {
-            config.add("hover_background", SimpleIGuiTextureJsonUtils.toJson(hoverBackground));
-        } else {
-            config.remove("hover_background");
-        }
-        config.add("button_texture", SimpleIGuiTextureJsonUtils.toJson(buttonTexture));
-        if (preNodes.isEmpty()) {
-            config.remove("pre_nodes");
-        } else {
-            var pre = new JsonArray();
-            for (CompassNode node : preNodes) {
-                pre.add(node.getNodeName().toString());
-            }
-            config.add("pre_nodes", pre);
-        }
-        return config;
-    }
+    public JsonObject updateJson() { return null; /* ported stub */ }
 
     public void setSection(CompassSection section) {
         this.section = section;
@@ -125,26 +93,7 @@ public class CompassNode {
         return Identifier.parse(GsonHelper.getAsString(config, "page", "ldlib:missing"));
     }
 
-    public List<Item> getItems() {
-        if (items == null) {
-            items = new ArrayList<>();
-            JsonArray items = GsonHelper.getAsJsonArray(config, "items", new JsonArray());
-            for (JsonElement element : items) {
-                var data = element.getAsString();
-                if (LDLib.isValidResourceLocation(data)) {
-                    Item item = BuiltInRegistries.ITEM.get(Identifier.parse(data));
-                    if (item != Items.AIR) {
-                        this.items.add(item);
-                    }
-                } else if (data.startsWith("#") && LDLib.isValidResourceLocation(data.substring(1))) {
-                    var tag = TagKey.create(Registries.ITEM, Identifier.parse(data.substring(1)));
-                    var tagCollection = BuiltInRegistries.ITEM.getTag(tag);
-                    tagCollection.ifPresent(named -> named.forEach(holder -> this.items.add(holder.value())));
-                }
-            }
-        }
-        return items;
-    }
+    public List<Item> getItems() { return null; /* ported stub */ }
 
     public Component getChatComponent() {
         return Component.translatable(nodeName.toLanguageKey("compass.node"));

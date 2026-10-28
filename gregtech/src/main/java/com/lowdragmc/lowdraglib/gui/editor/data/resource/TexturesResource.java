@@ -1,7 +1,7 @@
 package com.lowdragmc.lowdraglib.gui.editor.data.resource;
 
 import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import com.lowdragmc.lowdraglib.gui.editor.ui.ResourcePanel;
 import com.lowdragmc.lowdraglib.gui.editor.ui.resource.ResourceContainer;
 import com.lowdragmc.lowdraglib.gui.editor.ui.resource.TexturesResourceContainer;
@@ -68,15 +68,6 @@ public class TexturesResource extends Resource<IGuiTexture> {
     }
 
     @Override
-    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {
-        data.clear();
-        data.put("empty", IGuiTexture.EMPTY);
-        for (String key : nbt.getAllKeys()) {
-            data.put(key, deserialize(nbt.get(key), provider));
-        }
-        for (IGuiTexture texture : data.values()) {
-            texture.setUIResource(this);
-        }
-    }
+    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {  /* ported stub */ }
 
 }

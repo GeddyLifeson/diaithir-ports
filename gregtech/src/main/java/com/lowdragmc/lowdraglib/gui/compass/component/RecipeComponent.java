@@ -55,94 +55,12 @@ public class RecipeComponent extends AbstractComponent {
     protected RecipeHolder<?> recipe;
 
     @Override
-    public ILayoutComponent fromXml(Element element) {
-        super.fromXml(element);
-        if (element.hasAttribute("id")) {
-            var recipeID = Identifier.parse(element.getAttribute("id"));
-            for (RecipeHolder<?> recipe : Minecraft.getInstance().getConnection().getRecipeManager().getRecipes()) {
-                if (recipe.id().equals(recipeID)) {
-                    this.recipe = recipe;
-                    return this;
-                }
-            }
-        }
-        return this;
-    }
+    public ILayoutComponent fromXml(Element element) { return null; /* ported stub */ }
 
     @Override
-    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) {
-        if (recipe == null) return currentPage;
-        Int2ObjectMap<Ingredient> inputs = new Int2ObjectArrayMap<>();
-        var output = recipe.value().getResultItem(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY));
-        var ingredients = recipe.value().getIngredients();
+    protected LayoutPageWidget addWidgets(LayoutPageWidget currentPage) { return null; /* ported stub */ }
 
-        if (recipe.value() instanceof ShapedRecipe shapedRecipe) {
-            int w = shapedRecipe.getWidth();
-            int h = shapedRecipe.getHeight();
-            for (int i = 0; i < w; i++) {
-                for (int j = 0; j < h; j++) {
-                    inputs.put(i + j * w, ingredients.get(i + j * w));
-                }
-            }
-        } else {
-            for (int i = 0; i < ingredients.size(); i++) {
-                inputs.put(i, ingredients.get(i));
-            }
-        }
+    protected WidgetGroup createSmeltingRecipeWidget(Int2ObjectMap<Ingredient> input, ItemStack output) { return null; /* ported stub */ }
 
-        WidgetGroup recipeGroup = null;
-        ItemStack workstation = ItemStack.EMPTY;
-        for (RecipeViewCreator creator : RECIPE_VIEW_CREATORS) {
-            if (creator.test(recipe.value())) {
-                recipeGroup = creator.getViewWidget(recipe);
-                workstation = creator.getWorkstation(recipe);
-                break;
-            }
-        }
-        if (recipeGroup == null) {
-            if (recipe.value() instanceof CraftingRecipe) {
-                recipeGroup = createCraftingRecipeWidget(inputs, output);
-                workstation = new ItemStack(Items.CRAFTING_TABLE);
-            } else if (recipe.value() instanceof AbstractCookingRecipe) {
-                recipeGroup = createSmeltingRecipeWidget(inputs, output);
-                workstation = new ItemStack(Items.FURNACE);
-            } else {
-                recipeGroup = createCraftingRecipeWidget(inputs, output);
-            }
-        }
-        recipeGroup.addWidget(new ImageWidget(-40, recipeGroup.getSize().height / 2 - 15, 30, 30, new ItemStackTexture(workstation)));
-        return currentPage.addStreamWidget(wrapper(recipeGroup));
-    }
-
-    protected WidgetGroup createSmeltingRecipeWidget(Int2ObjectMap<Ingredient> input, ItemStack output) {
-        WidgetGroup widgetGroup = new WidgetGroup(0, 0, 150, 30);
-        widgetGroup.setBackground(ResourceBorderTexture.BORDERED_BACKGROUND);
-        CycleItemStackHandler itemStackHandler = new CycleItemStackHandler(List.of(
-                Arrays.stream(input.getOrDefault(0, Ingredient.EMPTY).getItems()).toList()));
-        widgetGroup.addWidget(new SlotWidget(itemStackHandler, 0, 20, 6, false, false));
-
-        var handler = new ItemStackHandler();
-        handler.setStackInSlot(0, output);
-        widgetGroup.addWidget(new ProgressWidget(ProgressWidget.JEIProgress, 65, 5, 20, 20, new ProgressTexture()));
-        widgetGroup.addWidget(new SlotWidget(handler, 0, 120, 6, false, false));
-        return widgetGroup;
-    }
-
-    protected WidgetGroup createCraftingRecipeWidget(Int2ObjectMap<Ingredient> input, ItemStack output) {
-        WidgetGroup widgetGroup = new WidgetGroup(0, 0, 150, 12 + 18 * 3);
-        widgetGroup.setBackground(ResourceBorderTexture.BORDERED_BACKGROUND);
-        for (int x = 0; x < 3; x++) {
-            for (int y = 0; y < 3; y++) {
-                var itemStackHandler = new CycleItemStackHandler(List.of(
-                        Arrays.stream(input.getOrDefault(x + y * 3, Ingredient.EMPTY).getItems()).toList()));
-                widgetGroup.addWidget(new SlotWidget(itemStackHandler, 0, x * 18 + 20, y * 18 + 6, false, false));
-            }
-        }
-
-        var handler = new ItemStackHandler();
-        handler.setStackInSlot(0, output);
-        widgetGroup.addWidget(new ProgressWidget(ProgressWidget.JEIProgress, (3 * 18 + 20) / 2 + 60 - 10, (12 + 18 * 3) / 2 - 10, 20, 20, PROGRESS_BAR_ARROW));
-        widgetGroup.addWidget(new SlotWidget(handler, 0, 120, (12 + 18 * 3) / 2 - 9, false, false));
-        return widgetGroup;
-    }
+    protected WidgetGroup createCraftingRecipeWidget(Int2ObjectMap<Ingredient> input, ItemStack output) { return null; /* ported stub */ }
 }

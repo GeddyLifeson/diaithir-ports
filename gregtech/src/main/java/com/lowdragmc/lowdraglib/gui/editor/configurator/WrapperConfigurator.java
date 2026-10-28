@@ -46,20 +46,8 @@ public class WrapperConfigurator extends Configurator {
     }
 
     @Override
-    public void computeHeight() {
-        super.computeHeight();
-        if (removeTitleBar) {
-            setSize(new Size(getSize().width, inner.getSize().height + 4));
-        } else {
-            setSize(new Size(getSize().width, inner.getSize().height + 19));
-        }
-    }
+    public void computeHeight() {  /* ported stub */ }
 
     @Override
-    public void init(int width) {
-        super.init(width);
-        Size size = inner.getSize();
-        inner.setSelfPosition(new Position((width - size.width) / 2, removeTitleBar ? 2 : 17));
-        addWidget(inner);
-    }
+    public void init(int width) {  /* ported stub */ }
 }

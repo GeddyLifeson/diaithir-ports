@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item;
 
+import net.minecraft.world.item.ItemUseAnimation;
+
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.capability.IElectricItem;
 import com.gregtechceu.gtceu.api.item.capability.ElectricItem;
@@ -26,7 +28,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
+
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -220,7 +222,7 @@ public class ComponentItem extends Item
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
+    public ItemUseAnimation getUseAnimation(ItemStack stack) {
         for (IItemComponent component : components) {
             if (component instanceof IInteractionItem interactionItem) {
                 return interactionItem.getUseAnimation(stack);

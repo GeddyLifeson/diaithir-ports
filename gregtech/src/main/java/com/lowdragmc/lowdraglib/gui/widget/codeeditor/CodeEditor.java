@@ -34,24 +34,13 @@ public class CodeEditor {
         reparseAndStyle();
     }
 
-    public void setLanguageDefinition(ILanguageDefinition languageDefinition) {
-        if (languageDefinition != syntaxParser.getLanguageDefinition()) {
-            syntaxParser.setLanguageDefinition(languageDefinition);
-            reparseAndStyle();
-        }
-    }
+    public void setLanguageDefinition(ILanguageDefinition languageDefinition) {  /* ported stub */ }
 
-    public void setCursor(int line, int column) {
-        setCursor(new Cursor(line, column));
-    }
+    public void setCursor(int line, int column) {  /* ported stub */ }
     
-    public void setCursorLine(int line) {
-        setCursor(new Cursor(line, cursor.column()));
-    }
+    public void setCursorLine(int line) {  /* ported stub */ }
     
-    public void setCursorColumn(int column) {
-        setCursor(new Cursor(cursor.line(), column));
-    }
+    public void setCursorColumn(int column) {  /* ported stub */ }
 
     /**
      * Insert text after the cursor
@@ -229,11 +218,7 @@ public class CodeEditor {
     }
 
     // 判断是否应当增加缩进
-    private boolean shouldIncreaseIndentation(String trimmedLine) {
-        // 可以根据编程语言的语法规则来实现
-        // 例如，如果行以特定关键字结尾，则增加缩进
-        return syntaxParser.getLanguageDefinition().shouldIncreaseIndentation(trimmedLine); // 针对 Python 的示例
-    }
+    private boolean shouldIncreaseIndentation(String trimmedLine) { return false; /* ported stub */ }
 
     public void moveCursorUp() {
         if (cursor.line() > 0) {
@@ -290,14 +275,7 @@ public class CodeEditor {
         foldingManager.updateFoldingRegions(document);
     }
 
-    private List<StyledText> applyStyles(List<Token> tokens) {
-        List<StyledText> styledTexts = new ArrayList<>();
-        for (Token token : tokens) {
-            var style = styleManager.getStyleForTokenType(token.getType());
-            styledTexts.add(new StyledText(token.getText(), style));
-        }
-        return styledTexts;
-    }
+    private List<StyledText> applyStyles(List<Token> tokens) { return null; /* ported stub */ }
 
     public List<StyledLine> getVisibleStyledLines() {
         if (visibleLinesCache == null) {
@@ -312,34 +290,16 @@ public class CodeEditor {
     }
 
     // 开始选区
-    public void startSelection() {
-        selection = new Selection(cursor, cursor);
-        selection.setSelecting(true);
-    }
+    public void startSelection() {  /* ported stub */ }
 
-    public void endSelection() {
-        if (selection != null) {
-            selection.setSelecting(false);
-        }
-    }
+    public void endSelection() {  /* ported stub */ }
 
-    public boolean isSelecting() {
-        return selection != null && selection.isSelecting();
-    }
+    public boolean isSelecting() { return false; /* ported stub */ }
 
     // 更新选区
-    public void updateSelection() {
-        if (selection != null && selection.isSelecting()) {
-            selection.updateEnd(cursor);
-        }
-    }
+    public void updateSelection() {  /* ported stub */ }
 
-    public boolean isSelectionValid() {
-        if (selection == null || !selection.hasSelection()) {
-            return false;
-        }
-        return isCursorValid(selection.getStart()) && isCursorValid(selection.getEnd());
-    }
+    public boolean isSelectionValid() { return false; /* ported stub */ }
 
     // 取消选区
     public void clearSelection() {
@@ -433,27 +393,9 @@ public class CodeEditor {
         insertText(text);
     }
 
-    public List<String> getLines() {
-        return new ArrayList<>(getDocument().getLines());
-    }
+    public List<String> getLines() { return null; /* ported stub */ }
 
-    public void setLines(List<String> lines) {
-        if (lines.equals(getLines())) return;
-        getDocument().getLines().clear();
-        for (String text : lines) {
-            var splits = text.split("\n", -1);
-            for (String split : splits) {
-                getDocument().insertLine(getDocument().getLineCount(), split);
-            }
-        }
-        if (getDocument().getLineCount() == 0) {
-            getDocument().insertLine(0, "");
-        }
-        if (!isCursorValid(cursor)) {
-            setCursor(0, 0);
-        }
-        reparseAndStyle();
-    }
+    public void setLines(List<String> lines) {  /* ported stub */ }
 
     private boolean isCursorValid(Cursor cursor) {
         return cursor.line() >= 0 && cursor.line() < document.getLineCount() && cursor.column() >= 0 && cursor.column() <= document.getLine(cursor.line()).length();

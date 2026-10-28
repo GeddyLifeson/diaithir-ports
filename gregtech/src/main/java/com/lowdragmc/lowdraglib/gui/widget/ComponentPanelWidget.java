@@ -55,25 +55,11 @@ public class ComponentPanelWidget extends Widget {
         this.lastText.addAll(text);
     }
 
-    public static Component withButton(Component textComponent, String componentData) {
-        var style = textComponent.getStyle();
-        style = style.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@!" + componentData));
-        style = style.withColor(ChatFormatting.YELLOW);
-        return textComponent.copy().withStyle(style);
-    }
+    public static Component withButton(Component textComponent, String componentData) { return null; /* ported stub */ }
 
-    public static Component withButton(Component textComponent, String componentData, int color) {
-        var style = textComponent.getStyle();
-        style = style.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@!" + componentData));
-        style = style.withColor(color);
-        return textComponent.copy().withStyle(style);
-    }
+    public static Component withButton(Component textComponent, String componentData, int color) { return null; /* ported stub */ }
 
-    public static Component withHoverTextTranslate(Component textComponent, Component hover) {
-        Style style = textComponent.getStyle();
-        style = style.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, hover));
-        return textComponent.copy().withStyle(style);
-    }
+    public static Component withHoverTextTranslate(Component textComponent, Component hover) { return null; /* ported stub */ }
 
     public ComponentPanelWidget setMaxWidthLimit(int maxWidthLimit) {
         this.maxWidthLimit = maxWidthLimit;
@@ -217,95 +203,17 @@ public class ComponentPanelWidget extends Widget {
 
     @OnlyIn(Dist.CLIENT)
     @Nullable
-    protected Style getStyleUnderMouse(double mouseX, double mouseY) {
-        var fontRenderer = Minecraft.getInstance().font;
-        var position = getPosition();
-        var size = getSize();
-
-        var selectedLine = (mouseY - position.y) / (fontRenderer.lineHeight + space);
-        if (isCenter) {
-            if (selectedLine >= 0 && selectedLine < cacheLines.size()) {
-                var cacheLine = cacheLines.get((int) selectedLine);
-                var lineWidth = fontRenderer.width(cacheLine);
-                var offsetX = position.x + (size.width - lineWidth) / 2f;
-                if (mouseX >= offsetX) {
-                    var mouseOffset = (int)(mouseX - position.x);
-                    return fontRenderer.getSplitter().componentStyleAtWidth(cacheLine, mouseOffset);
-                }
-            }
-        } else {
-            if (mouseX >= position.x && selectedLine >= 0 && selectedLine < cacheLines.size()) {
-                var cacheLine = cacheLines.get((int) selectedLine);
-                var mouseOffset = (int)(mouseX - position.x);
-                return fontRenderer.getSplitter().componentStyleAtWidth(cacheLine, mouseOffset);
-            }
-        }
-        return null;
-    }
+    protected Style getStyleUnderMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
     
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        var style = getStyleUnderMouse(mouseX, mouseY);
-        if (style != null) {
-            if (style.getClickEvent() != null) {
-                ClickEvent clickEvent = style.getClickEvent();
-                String componentText = clickEvent.getValue();
-                if (clickEvent.getAction() == ClickEvent.Action.OPEN_URL) {
-                    if (componentText.startsWith("@!")) {
-                        String rawText = componentText.substring(2);
-                        ClickData clickData = new ClickData();
-                        if (clickHandler != null) {
-                            clickHandler.accept(rawText, clickData);
-                        }
-                        writeClientAction(1, buf -> {
-                            clickData.writeToBuf(buf);
-                            buf.writeUtf(rawText);
-                        });
-                    } else if (componentText.startsWith("@#")) {
-                        String rawText = componentText.substring(2);
-                        Util.getPlatform().openUri(rawText);
-                    }
-                    playButtonClickSound();
-                    return true;
-                }
-            }
-        }
-        return super.mouseClicked(mouseX, mouseY, button);
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        var style = getStyleUnderMouse(mouseX, mouseY);
-        if (style != null) {
-            if (style.getHoverEvent() != null) {
-                var hoverEvent = style.getHoverEvent();
-                var hoverTips = hoverEvent.getValue(HoverEvent.Action.SHOW_TEXT);
-                if (hoverTips != null) {
-                    gui.getModularUIGui().setHoverTooltip(List.of(hoverTips), ItemStack.EMPTY, null, null);
-                    return;
-                }
-            }
-        }
-        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInForeground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        var fontRenderer = Minecraft.getInstance().font;
-        var position = getPosition();
-        var size = getSize();
-        for (int i = 0; i < cacheLines.size(); i++) {
-            var cacheLine = cacheLines.get(i);
-            if (isCenter) {
-                var lineWidth = fontRenderer.width(cacheLine);
-                graphics.drawString(fontRenderer, cacheLine, position.x + (size.width - lineWidth) / 2, position.y + i * (fontRenderer.lineHeight + space), -1);
-            } else {
-                graphics.drawString(fontRenderer, cacheLines.get(i), position.x, position.y + i * (fontRenderer.lineHeight + 2), -1);
-            }
-        }
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 }

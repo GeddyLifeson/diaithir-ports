@@ -4,9 +4,9 @@ import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
-import net.minecraft.world.item.Tier;
+
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.SimpleTier;
+
 
 @SuppressWarnings({ "unused", "FieldCanBeLocal" })
 public class GTToolTiers {

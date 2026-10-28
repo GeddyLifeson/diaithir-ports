@@ -5,10 +5,10 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.cosmetics.event.RegisterGTCapesEvent;
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.IGTTool;
-import com.gregtechceu.gtceu.client.model.item.FacadeUnbakedModel;
-import com.gregtechceu.gtceu.client.model.machine.MachineModelLoader;
+
+
 import com.gregtechceu.gtceu.client.model.pipe.PipeModel;
-import com.gregtechceu.gtceu.client.model.pipe.PipeModelLoader;
+
 import com.gregtechceu.gtceu.client.particle.HazardParticle;
 import com.gregtechceu.gtceu.client.particle.MufflerParticle;
 import com.gregtechceu.gtceu.client.renderer.block.MaterialBlockRenderer;
@@ -30,20 +30,20 @@ import com.gregtechceu.gtceu.common.data.GTEntityTypes;
 import com.gregtechceu.gtceu.common.data.GTFluids;
 import com.gregtechceu.gtceu.common.data.GTMaterialBlocks;
 import com.gregtechceu.gtceu.common.data.GTParticleTypes;
-import com.gregtechceu.gtceu.common.data.models.GTModels;
+
 import com.gregtechceu.gtceu.common.item.DrumMachineItem;
 import com.gregtechceu.gtceu.common.item.LampBlockItem;
 import com.gregtechceu.gtceu.common.item.QuantumTankMachineItem;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.data.model.builder.PipeModelBuilder;
-import com.gregtechceu.gtceu.data.pack.event.RegisterDynamicResourcesEvent;
-import com.gregtechceu.gtceu.integration.kjs.GregTechKubeJSPlugin;
-import com.gregtechceu.gtceu.integration.map.ClientCacheManager;
-import com.gregtechceu.gtceu.integration.map.cache.client.GTClientCache;
-import com.gregtechceu.gtceu.integration.map.ftbchunks.FTBChunksPlugin;
-import com.gregtechceu.gtceu.integration.map.layer.Layers;
-import com.gregtechceu.gtceu.integration.map.layer.builtin.FluidRenderLayer;
-import com.gregtechceu.gtceu.integration.map.layer.builtin.OreRenderLayer;
+
+
+
+
+
+
+
+
+
 import com.gregtechceu.gtceu.utils.data.RuntimeBlockstateProvider;
 import com.gregtechceu.gtceu.utils.input.SyncedKeyMapping;
 
@@ -140,14 +140,7 @@ public class ClientProxy {
         DynamicRenderManager.register(GTCEu.id("growing_plant"), GrowingPlantRender.TYPE);
 
         DynamicRenderManager.register(GTCEu.id("central_monitor"), CentralMonitorRender.TYPE);
-    }
-
-    @SubscribeEvent
-    public static void registerModelLoaders(ModelEvent.RegisterGeometryLoaders event) {
-        event.register(MachineModelLoader.ID, MachineModelLoader.INSTANCE);
-        event.register(PipeModelLoader.ID, PipeModelLoader.INSTANCE);
-        event.register(GTCEu.id("facade"), FacadeUnbakedModel.Loader.INSTANCE);
-    }
+    }/* ported: removed */
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
@@ -176,33 +169,7 @@ public class ClientProxy {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void preRegisterDynamicAssets(RegisterDynamicResourcesEvent event) {
         PipeModel.DYNAMIC_MODELS.clear();
-    }
-
-    @SubscribeEvent
-    public static void registerDynamicAssets(RegisterDynamicResourcesEvent event) {
-        // regenerate all pipe models in case their textures changed
-        // cables may do this, others too if something's removed
-        for (var block : GTMaterialBlocks.CABLE_BLOCKS.values()) {
-            if (block == null) continue;
-            block.get().createPipeModel(RuntimeBlockstateProvider.INSTANCE).dynamicModel();
-        }
-        for (var block : GTMaterialBlocks.FLUID_PIPE_BLOCKS.values()) {
-            if (block == null) continue;
-            block.get().createPipeModel(RuntimeBlockstateProvider.INSTANCE).dynamicModel();
-        }
-        for (var block : GTMaterialBlocks.ITEM_PIPE_BLOCKS.values()) {
-            if (block == null) continue;
-            block.get().createPipeModel(RuntimeBlockstateProvider.INSTANCE).dynamicModel();
-        }
-
-        MaterialBlockRenderer.reinitModels();
-        TagPrefixItemRenderer.reinitModels();
-        OreBlockRenderer.reinitModels();
-        ToolItemRenderer.reinitModels();
-        ArmorItemRenderer.reinitModels();
-        SurfaceRockRenderer.reinitModels();
-        GTModels.registerMaterialFluidModels();
-    }
+    }/* ported: removed */
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void postRegisterDynamicAssets(RegisterDynamicResourcesEvent event) {

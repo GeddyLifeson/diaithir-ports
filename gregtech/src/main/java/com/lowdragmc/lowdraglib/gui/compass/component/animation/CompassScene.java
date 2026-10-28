@@ -148,118 +148,22 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         }
     }
 
-    private void zoom(int value) {
-        if (!useScene) return;
-        var zoom = (float) Mth.clamp(sceneWidget.getZoom() + value, 0.1, 999);
-        sceneWidget.setZoom(zoom);
-    }
+    private void zoom(int value) {  /* ported stub */ }
 
-    private void renderBeforeWorld(SceneWidget sceneWidget) {
-        var graphics = new GuiGraphics(Minecraft.getInstance(), MultiBufferSource.immediate(new ByteBufferBuilder(RenderType.TRANSIENT_BUFFER_SIZE)));
-        graphics.pose().pushPose();
-        RenderUtils.moveToFace(graphics.pose(), (minX + maxX) / 2f, minY, (minZ + maxZ) / 2f, Direction.DOWN);
-        RenderUtils.rotateToFace(graphics.pose(), Direction.UP, null);
-        int w = (maxX - minX) + 3;
-        int h = (maxZ - minZ) + 3;
-        new ResourceTexture("ldlib:textures/gui/darkened_slot.png").draw(graphics, 0, 0, w / -2f, h / -2f, w, h);
-        graphics.pose().popPose();
-    }
+    private void renderBeforeWorld(SceneWidget sceneWidget) {  /* ported stub */ }
 
-    private void renderAfterWorld(SceneWidget sceneWidget) {
-        PoseStack matrixStack = new PoseStack();
-        var tick = Math.abs((Minecraft.getInstance().getTimer().getGameTimeDeltaTicks() + gui.getTickCount() % 40) - 20) / 20;
-        for (Map.Entry<BlockPosFace, Integer> entry : highlightBlocks.entrySet()) {
-            if (entry.getValue() <= 0) continue;
-            if (entry.getKey().facing() == null) {
-                RenderUtils.renderBlockOverLay(matrixStack, entry.getKey().pos(), 0.6f * tick, 0, 0, 1.01f);
-            } else {
-                sceneWidget.drawFacingBorder(matrixStack, entry.getKey(), ColorUtils.color(1 * tick, 0, 0.6f, 0));
-            }
-        }
-        var window = Minecraft.getInstance().getWindow();
-        for (var pos : tooltipBlocks.keySet()) {
-            var result = sceneWidget.getRenderer().project(new Vector3f((float) pos.x, (float) pos.y, (float) pos.z));
-            //translate gui coordinates to window's ones (y is inverted)
-            var x = result.x() * window.getGuiScaledWidth() / window.getWidth();
-            var y = (window.getHeight() - result.y()) * window.getGuiScaledHeight() / window.getHeight();
-            tooltipPos.put(pos, new Vec2(x, y));
-        }
-    }
+    private void renderAfterWorld(SceneWidget sceneWidget) {  /* ported stub */ }
 
     @Override
-    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
-        var position = getPosition();
-        var size = getSize();
-        for (var entry : tooltipBlocks.entrySet()) {
-            var screenPos = tooltipPos.get(entry.getKey());
-            if (screenPos == null) continue;
-            var tuple = entry.getValue().getLeft();
-            var ingredient = tuple.getA();
-            var items = Arrays.stream(ingredient.ingredient().getItems()).map(i -> {
-                var copied = i.copy();
-                copied.setCount(ingredient.count());
-                return copied;
-            }).toArray(ItemStack[]::new);
-            var tooltips = tuple.getB();
-            mouseX = (int)(position.x + size.width * entry.getValue().getMiddle().x);
-            mouseY = (int)(position.y + size.height * entry.getValue().getMiddle().y);
-            DrawerHelper.drawLines(graphics, List.of(screenPos, new Vec2(mouseX, mouseY)), -1, -1, 0.75f);
-            var componentPanelWidget = new ComponentPanelWidget(0, 0, tooltips).clickHandler(CompassManager::onComponentClick);
-            componentPanelWidget.setBackground(TooltipBGTexture.INSTANCE);
-            var maxWidth = 200;
-            while (maxWidth < size.width && (componentPanelWidget.getSize().height == 0 || componentPanelWidget.getSize().height + mouseY < size.height * (1 - entry.getValue().getMiddle().y))) {
-                componentPanelWidget.setMaxWidthLimit(maxWidth);
-                maxWidth += 50;
-            }
-            componentPanelWidget.addSelfPosition(mouseX, mouseY);
-            // check width
-            maxWidth = componentPanelWidget.getSize().width;
-            var maxHeight = componentPanelWidget.getSize().height;
-            int rightSpace = getGui().getScreenWidth() - mouseX;
-            int bottomSpace = getGui().getScreenHeight() - mouseY;
-            if (rightSpace < maxWidth) { // move to Left
-                componentPanelWidget.addSelfPosition(rightSpace - maxWidth, 0);
-            }
-            // check height
-            if (bottomSpace < maxHeight) {
-                componentPanelWidget.addSelfPosition(0, bottomSpace - maxHeight);
-            }
-            graphics.pose().pushPose();
-            graphics.pose().translate(0, 0, 200);
-            componentPanelWidget.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-            if (items.length > 0) {
-                new ItemStackTexture(items).draw(graphics, mouseX, mouseY,
-                        componentPanelWidget.getPosition().x + 2,
-                        componentPanelWidget.getPosition().y - 20,
-                        16, 16);
-            }
-            graphics.pose().popPose();
-        }
-    }
+    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     private void playPause(ClickData clickData, boolean isPressed) {
         isPause = isPressed;
     }
 
-    private void rotation(ClickData clickData) {
-        if (!useScene) return;
-        float current = sceneWidget.getRotationPitch();
-        sceneWidget.setCameraYawAndPitchAnima(sceneWidget.getRotationYaw(), current + 90, 20);
-    }
+    private void rotation(ClickData clickData) {  /* ported stub */ }
 
-    private void resetScene() {
-        world.clear();
-        sceneWidget.setCameraYawAndPitch(sceneWidget.getRotationYaw(), -135);
-        sceneWidget.getCore().clear();
-        sceneWidget.getCore().add(BlockPos.ZERO);
-        headerGroup.clearAllWidgets();
-        addedBlocks.clear();
-        removedBlocks.clear();
-        highlightBlocks.clear();
-        tooltipBlocks.clear();
-        currentFrame = -1;
-    }
+    private void resetScene() {  /* ported stub */ }
 
     private void jumpFrame(AnimationFrame frame) {
         resetScene();
@@ -281,57 +185,9 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
     }
 
     @Override
-    public void updateScreen() {
-        super.updateScreen();
-        if (frames.isEmpty()) return;
-        // update frames
-        if (!isPause) {
-            addedBlocks.forEach((p, v) -> v.setB(v.getB() - 1));
-            removedBlocks.forEach((p, v) -> v.setB(v.getB() - 1));
-            highlightBlocks.replaceAll((p, v) -> v - 1);
-            tooltipBlocks.forEach((p, v) -> v.setRight(v.getRight() - 1));
+    public void updateScreen() {  /* ported stub */ }
 
-            addedBlocks.entrySet().removeIf(e -> e.getValue().getB() <= 0);
-            highlightBlocks.entrySet().removeIf(e -> e.getValue() <= 0);
-            tooltipBlocks.entrySet().removeIf(e -> e.getValue().getRight() <= 0);
-            final var iterator = removedBlocks.entrySet().iterator();
-            while (iterator.hasNext()) {
-                final var entry = iterator.next();
-                if (entry.getValue().getB() <= 0) {
-                    world.removeBlock(entry.getKey());
-                    sceneWidget.getCore().remove(entry.getKey());
-                    iterator.remove();
-                }
-            }
-            if (currentFrame < 0) {
-                nextFrame();
-            }
-            if (currentFrame >= 0 && currentFrame < frames.size()) {
-                if (frames.get(currentFrame).onFrameTick(this, frameTick++)) {
-                    nextFrame();
-                }
-            }
-
-            if (tickScene && useScene) {
-                world.tickWorld();
-            }
-        }
-    }
-
-    protected void nextFrame() {
-        if (currentFrame < 0) {
-            currentFrame = 0;
-        } else {
-            currentFrame++;
-            if (currentFrame >= frames.size()) {
-                currentFrame = -1;
-                frameTick = 0;
-                isPause = true;
-                return;
-            }
-        }
-        frameTick = -frames.get(currentFrame).delay();
-    }
+    protected void nextFrame() {  /* ported stub */ }
 
     @Override
     public void applyEntity(Level world, Entity entity, PoseStack poseStack, float partialTicks) {
@@ -380,94 +236,25 @@ public class CompassScene extends WidgetGroup implements ISceneBlockRenderHook, 
         }
     }
 
-    public void addBlock(BlockPos pos, BlockInfo blockInfo, @Nullable BlockAnima anima) {
-        if (!useScene) return;
-        if (blockInfo.getBlockState().getBlock() == Blocks.AIR) {
-            removeBlock(pos, null);
-            return;
-        }
-        world.addBlock(pos, blockInfo);
-        sceneWidget.getCore().add(pos);
-        if (anima != null) {
-            addedBlocks.put(pos, new Tuple<>(anima, anima.duration()));
-        }
-    }
+    public void addBlock(BlockPos pos, BlockInfo blockInfo, @Nullable BlockAnima anima) {  /* ported stub */ }
 
-    public void removeBlock(BlockPos pos, @Nullable BlockAnima anima) {
-        if (!useScene) return;
-        if (anima != null) {
-            removedBlocks.put(pos, new Tuple<>(anima, anima.duration()));
-        } else {
-            world.removeBlock(pos);
-            sceneWidget.getCore().remove(pos);
-        }
-    }
+    public void removeBlock(BlockPos pos, @Nullable BlockAnima anima) {  /* ported stub */ }
 
     public void highlightBlock(BlockPosFace key, int duration) {
         if (!useScene) return;
         highlightBlocks.put(key, duration);
     }
 
-    public void addEntity(EntityInfo entityInfo, @Nullable Vector3f pos, boolean update) {
-        Entity entity = null;
-        if (update) {
-            entity = world.entities.get(entityInfo.getId());
-        }
-        entity = (entity == null && entityInfo.getEntityType() != null) ? entityInfo.getEntityType().create(world) : entity;
-        if (entity == null && entityInfo.getEntityType() == EntityType.PLAYER) {
-            entity = new RemotePlayer(world.getAsClientWorld().get(), Minecraft.getInstance().player.getGameProfile());
-        }
-        if (entity != null) {
-            entity.setId(entityInfo.getId());
-            if (pos != null) {
-                entity.setPos(pos.x, pos.y, pos.z);
-            }
-            if (entityInfo.getTag() != null) {
-                entity.load(entity.saveWithoutId(new CompoundTag()).copy().merge(entityInfo.getTag()));
-            }
-            world.addFreshEntity(entity);
-        }
-    }
+    public void addEntity(EntityInfo entityInfo, @Nullable Vector3f pos, boolean update) {  /* ported stub */ }
 
-    public void removeEntity(EntityInfo entityInfo, boolean force) {
-        if (force) {
-            world.entities.remove(entityInfo.getId());
-        } else {
-            Optional.ofNullable(world.entities.get(entityInfo.getId())).ifPresent(Entity::discard);
-        }
-    }
+    public void removeEntity(EntityInfo entityInfo, boolean force) {  /* ported stub */ }
 
 
     public void addTooltip(Vector3f pos, Tuple<XmlUtils.SizedIngredient, List<Component>> tuple, Vec2 middle, Integer time) {
         tooltipBlocks.put(pos, MutableTriple.of(tuple, middle, time));
     }
 
-    public void rotate(float rotation, boolean anima) {
-        if (!useScene) return;
-        var current = sceneWidget.getRotationPitch();
-        current += (rotation - 135 - current) % 360;
-        if (anima) {
-            sceneWidget.setCameraYawAndPitchAnima(sceneWidget.getRotationYaw(), current, 20);
-        } else {
-            sceneWidget.setCameraYawAndPitch(sceneWidget.getRotationYaw(), current);
-        }
-    }
+    public void rotate(float rotation, boolean anima) {  /* ported stub */ }
 
-    public void addInformation(Widget widget, boolean anima) {
-        if (anima) {
-            for (Widget child : headerGroup.widgets) {
-                headerGroup.removeWidgetAnima(child, new Transform().duration(500).offset(-child.getSelfPosition().x - child.getSize().width, 0));
-            }
-        } else {
-            headerGroup.clearAllWidgets();
-        }
-
-        var size = headerGroup.getSize();
-        widget.setSelfPosition(new Position((size.width - widget.getSize().width) / 2, (size.height - widget.getSize().height) / 2));
-        if (anima) {
-            headerGroup.addWidgetAnima(widget, new Transform().ease(Eases.EaseQuadOut).duration(500).offset(size.width - widget.getSelfPosition().x, 0));
-        } else {
-            headerGroup.addWidget(widget);
-        }
-    }
+    public void addInformation(Widget widget, boolean anima) {  /* ported stub */ }
 }

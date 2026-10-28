@@ -5,7 +5,6 @@ import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.modular.ModularUIContainer;
 import com.lowdragmc.lowdraglib.gui.modular.ModularUIGuiContainer;
 import com.lowdragmc.lowdraglib.networking.s2c.SPacketUIOpen;
-import dev.latvian.mods.rhino.util.HideFromJS;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -34,33 +33,7 @@ public abstract class UIFactory<T> {
         FACTORIES.put(factory.uiFactoryId, factory);
     }
 
-    @HideFromJS
-    public final boolean openUI(T holder, ServerPlayer player) {
-        ModularUI uiTemplate = createUITemplate(holder, player);
-        if (uiTemplate == null) return false;
-        uiTemplate.initWidgets();
-
-        if (player.containerMenu != player.inventoryMenu) {
-            player.closeContainer();
-        }
-        ((ServerPlayerAccessor)player).callNextContainerCounter();
-        int currentWindowId = ((ServerPlayerAccessor)player).getContainerCounter();
-
-        RegistryFriendlyByteBuf serializedHolder = new RegistryFriendlyByteBuf(Unpooled.buffer(), player.server.registryAccess());
-        writeHolderToSyncData(serializedHolder, holder);
-        ModularUIContainer container = new ModularUIContainer(uiTemplate, currentWindowId);
-
-        //accumulate all initial updates of widgets in open packet
-        uiTemplate.mainGroup.writeInitialData(serializedHolder);
-
-        PacketDistributor.sendToPlayer(player, new SPacketUIOpen(uiFactoryId, serializedHolder, currentWindowId));
-
-        ((ServerPlayerAccessor)player).callInitMenu(container);
-        player.containerMenu = container;
-
-        NeoForge.EVENT_BUS.post(new PlayerContainerEvent.Open(player, container));
-        return true;
-    }
+        public final boolean openUI(T holder, ServerPlayer player) { return false; /* ported stub */ }
 
     @OnlyIn(Dist.CLIENT)
     public final void initClientUI(RegistryFriendlyByteBuf serializedHolder, int windowId) {

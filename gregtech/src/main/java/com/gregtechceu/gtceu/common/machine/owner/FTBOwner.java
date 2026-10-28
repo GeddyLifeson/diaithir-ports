@@ -4,9 +4,9 @@ import net.minecraft.world.scores.Team;
 import net.minecraft.world.scores.PlayerTeam;
 import net.minecraft.network.chat.Component;
 
-import dev.ftb.mods.ftbteams.api.FTBTeamsAPI;
-import dev.ftb.mods.ftbteams.api.Team;
-import dev.ftb.mods.ftbteams.data.PlayerTeam;
+
+
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.UnmodifiableView;

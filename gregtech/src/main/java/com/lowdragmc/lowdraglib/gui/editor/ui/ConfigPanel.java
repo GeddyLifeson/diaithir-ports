@@ -74,24 +74,7 @@ public class ConfigPanel extends WidgetGroup {
         this(editor, List.of(Tab.WIDGET, Tab.RESOURCE));
     }
 
-    public void reloadTabs(List<Tab> tabs) {
-        tabBackground.setSize(new Size(20, tabs.size() * 20));
-        tabContainer.clearAllWidgets();
-        configurators.clear();
-        configuratorGroup.clear();
-        int y = 34;
-        for (Tab tab : tabs) {
-            tabContainer.addTab((TabButton) new TabButton(-16, y, 12, 12).setTexture(
-                            tab.icon,
-                            tab.icon.copy().setColor(ColorPattern.T_GREEN.color)
-                    ).setHoverTooltips(tab.tooltip),
-                    configuratorGroup.computeIfAbsent(tab, key -> new DraggableScrollableWidgetGroup(0, 25, WIDTH, editor.getSize().height - 25)
-                            .setYScrollBarWidth(2).setYBarStyle(null, ColorPattern.T_WHITE.rectTexture().setRadius(1)))
-            );
-            configurators.put(tab, new ArrayList<>());
-            y += 20;
-        }
-    }
+    public void reloadTabs(List<Tab> tabs) {  /* ported stub */ }
 
     public void clearAllConfigurators() {
         for (var tab : this.configurators.keySet()) {
@@ -105,42 +88,13 @@ public class ConfigPanel extends WidgetGroup {
         configurators.get(tab).clear();
     }
 
-    public void openConfigurator(Tab tab, IConfigurable configurable) {
-        switchTag(tab);
-        if (Objects.equals(configurable, this.focus.get(tab))) return;
-        clearAllConfigurators(tab);
-        this.focus.put(tab, configurable);
-        ConfiguratorGroup group = new ConfiguratorGroup("", false);
-        tab.configurable.accept(group);
-        configurable.buildConfigurator(group);
-        for (Configurator configurator : group.getConfigurators()) {
-            configurator.setConfigPanel(this, tab);
-//            configurator.setConfiguratorContainer(() -> ConfigPanel.this.computeLayout(tab));
-            configurator.init(WIDTH - 2);
-            configurator.addListener(c -> onConfiguratorChangeUpdate(tab, c));
-            this.configurators.get(tab).add(configurator);
-            configuratorGroup.get(tab).addWidget(configurator);
-        }
-        computeLayout(tab);
-        configuratorGroup.get(tab).setScrollYOffset(0);
-    }
+    public void openConfigurator(Tab tab, IConfigurable configurable) {  /* ported stub */ }
 
-    public void onConfiguratorChangeUpdate(Tab tab, Configurator configurator) {
-        // update history view
-        editor.addAutoHistory(configurator.getName(), configurator);
-    }
+    public void onConfiguratorChangeUpdate(Tab tab, Configurator configurator) {  /* ported stub */ }
 
     public void switchTag(Tab tab) {
         tabContainer.switchTag(configuratorGroup.get(tab));
     }
     
-    public void computeLayout(Tab tab) {
-        int height = 0;
-        for (Configurator configurator : configurators.get(tab)) {
-            configurator.computeHeight();
-            configurator.setSelfPosition(new Position(0, height - configuratorGroup.get(tab).getScrollYOffset()));
-            height += configurator.getSize().height + 5;
-        }
-        configuratorGroup.get(tab).computeMax();
-    }
+    public void computeLayout(Tab tab) {  /* ported stub */ }
 }

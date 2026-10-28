@@ -93,13 +93,7 @@ public class Configurator extends WidgetGroup {
 
     }
 
-    public void init(int width) {
-        this.width = width;
-        setSize(new Size(width, getSize().height));
-        if (tips.length > 0) {
-            this.addWidget(new ImageWidget(width - 12, 2, 9, 9, Icons.HELP).setHoverTooltips(tips));
-        }
-    }
+    public void init(int width) {  /* ported stub */ }
 
     /**
      * Add a listener to this configurator

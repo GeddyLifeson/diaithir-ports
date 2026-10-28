@@ -69,53 +69,7 @@ public class MainPanel extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (hoverUI == null) {
-            selectedUIs.clear();
-        } else {
-            if (isCtrlDown()) {
-                if (selectedUIs.contains(hoverUI)) {
-                    selectedUIs.remove(hoverUI);
-                } else {
-                    selectedUIs.add(hoverUI);
-                }
-            } else if (!selectedUIs.contains(hoverUI)){
-                selectedUIs.clear();
-                selectedUIs.add(hoverUI);
-            }
-        }
-
-        lastDeltaX = 0;
-        lastDeltaY = 0;
-        isDragPosition = false;
-        isDragSize = false;
-
-        if (!selectedUIs.isEmpty()) {
-            if (button == 0 && hoverUI != null) {
-                editor.configPanel.openConfigurator(ConfigPanel.Tab.WIDGET, hoverUI);
-            }
-            if (isAltDown()) { // start dragging pos and size
-                if (button == 0) {
-                    isDragPosition = true;
-                } else if (button == 1) {
-                    isDragSize = true;
-                }
-                return true;
-            }
-            if (isShiftDown()) { // dragging itself
-                var uiWrappers = selectedUIs.toArray(UIWrapper[]::new);
-                getGui().getModularUIGui().setDraggingElement(uiWrappers, new GuiTextureGroup(selectedUIs.stream().map(w -> w.toDraggingTexture((int) mouseX, (int) mouseY)).toArray(IGuiTexture[]::new)));
-                return true;
-            }
-        }
-
-        if (button == 1) {
-            editor.openMenu(mouseX, mouseY, createMenu());
-            return true;
-        }
-
-        return super.mouseClicked(mouseX, mouseY, button);
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     protected void removeSelected() {
         for (UIWrapper selectedUI : selectedUIs) {
@@ -147,54 +101,13 @@ public class MainPanel extends WidgetGroup {
                 });
     }
 
-    private void cut() {
-        copy();
-        if (!selectedUIs.isEmpty()) {
-            for (UIWrapper selectedUI : selectedUIs) {
-                selectedUI.inner().widget().getParent().onWidgetRemoved(selectedUI.inner());
-            }
-            editor.addAutoHistory("ldlib.gui.editor.menu.cut", Arrays.hashCode(selectedUIs.toArray()));
-            selectedUIs.clear();
-        }
-    }
+    private void cut() {  /* ported stub */ }
 
     @SuppressWarnings("unchecked")
-    protected void copy() {
-        if (editor.getResourcePanel().resources != null) {
-            UIResourceTexture.setCurrentResource((Resource<IGuiTexture>) editor.getResourcePanel().resources.resources.get(TexturesResource.RESOURCE_NAME), true);
-        }
-        List<CompoundTag> list = new ArrayList<>();
-        if (!selectedUIs.isEmpty()) {
-            for (UIWrapper selectedUI : selectedUIs) {
-                list.add(selectedUI.inner().serializeWrapper(Platform.getFrozenRegistry()));
-            }
-        }
-        UIResourceTexture.clearCurrentResource();
-        getEditor().setCopy("widgets", list);
-    }
+    protected void copy() {  /* ported stub */ }
 
     @SuppressWarnings("unchecked")
-    protected void paste() {
-        if (hoverUI != null) {
-            getEditor().ifCopiedPresent(COPY_TYPE, c -> {
-                if (editor.getResourcePanel().resources != null) {
-                    UIResourceTexture.setCurrentResource((Resource<IGuiTexture>) editor.getResourcePanel().resources.resources.get(TexturesResource.RESOURCE_NAME), true);
-                }
-                List<CompoundTag> list = (List<CompoundTag>) c;
-                for (var tag : list) {
-                    var widget = IConfigurableWidget.deserializeWrapper(tag, Platform.getFrozenRegistry());
-                    if (widget != null && hoverUI.inner() instanceof IConfigurableWidgetGroup group) {
-                        widget.widget().addSelfPosition(5,5);
-                        if (group.canWidgetAccepted(widget)) {
-                            group.acceptWidget(widget);
-                        }
-                    }
-                }
-                editor.addAutoHistory("ldlib.gui.editor.menu.paste", Arrays.hashCode(list.toArray()));
-                UIResourceTexture.clearCurrentResource();
-            });
-        }
-    }
+    protected void paste() {  /* ported stub */ }
 
     protected void alignVB() {
         if (selectedUIs.size() > 0) {
@@ -306,45 +219,7 @@ public class MainPanel extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-
-        int minX = Integer.MAX_VALUE;
-        int minY = Integer.MAX_VALUE;
-        int maxX = Integer.MIN_VALUE;
-        int maxY = Integer.MIN_VALUE;
-
-        for (UIWrapper selectedUI : selectedUIs) {
-            selectedUI.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-            var pos = selectedUI.inner().widget().getPosition();
-            var size = selectedUI.inner().widget().getSize();
-            minX = Math.min(minX, pos.x);
-            minY = Math.min(minY, pos.y);
-            maxX = Math.max(maxX, pos.x + size.width);
-            maxY = Math.max(maxY, pos.y + size.height);
-        }
-
-        if (hoverUI != null) {
-            hoverUI.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        }
-
-        if (!selectedUIs.isEmpty() && Widget.isAltDown()) {
-            Position pos = new Position(minX, minY);
-            Size size = new Size(maxX - minX, maxY - minY);
-
-
-            float middleX = pos.x + (size.width - 16) / 2f;
-            float middleY = pos.y + (size.height - 16) / 2f;
-            if (isDragPosition) {
-                Icons.UP.copy().setColor(-1).draw(graphics, mouseX, mouseY, middleX, pos.y - 10 - 16, 16, 16);
-                Icons.LEFT.copy().setColor(-1).draw(graphics, mouseX, mouseY, pos.x - 10 - 16, middleY, 16, 16);
-            }
-            if (isDragPosition || isDragSize) {
-                Icons.DOWN.copy().setColor(-1).draw(graphics, mouseX, mouseY, middleX, pos.y + size.height + 10, 16, 16);
-                Icons.RIGHT.copy().setColor(-1).draw(graphics, mouseX, mouseY, pos.x + size.width + 10, middleY, 16, 16);
-            }
-        }
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)

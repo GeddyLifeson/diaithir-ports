@@ -1,5 +1,7 @@
 package com.gregtechceu.gtceu.api.item;
 
+import com.gregtechceu.gtceu.compat.client.ItemColor;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.block.MaterialBlock;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
@@ -11,7 +13,7 @@ import com.lowdragmc.lowdraglib.client.renderer.IBlockRendererProvider;
 import com.lowdragmc.lowdraglib.client.renderer.IItemRendererProvider;
 import com.lowdragmc.lowdraglib.client.renderer.IRenderer;
 
-import net.minecraft.client.color.item.ItemColor;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;

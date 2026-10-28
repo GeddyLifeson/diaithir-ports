@@ -135,21 +135,7 @@ public class SwitchWidget extends Widget implements IConfigurableWidget {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        Position position = getPosition();
-        Size size = getSize();
-        if (baseTexture != null && !isPressed) {
-            baseTexture.draw(graphics, mouseX, mouseY, position.x, position.y, size.width, size.height);
-
-        } else if (pressedTexture != null && isPressed) {
-            pressedTexture.draw(graphics, mouseX, mouseY, position.x, position.y, size.width, size.height);
-
-        }
-        if (isMouseOverElement(mouseX, mouseY) && hoverTexture != null) {
-            hoverTexture.draw(graphics, mouseX, mouseY, position.x, position.y, size.width, size.height);
-        }
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)

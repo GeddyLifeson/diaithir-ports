@@ -1,7 +1,7 @@
 package com.lowdragmc.lowdraglib.gui.texture;
 
 import com.lowdragmc.lowdraglib.LDLib;
-import com.lowdragmc.lowdraglib.client.shader.Shaders;
+
 import com.lowdragmc.lowdraglib.client.shader.management.Shader;
 import com.lowdragmc.lowdraglib.client.shader.management.ShaderManager;
 import com.lowdragmc.lowdraglib.client.shader.management.ShaderProgram;
@@ -183,47 +183,5 @@ public class ShaderTexture extends TransformTexture {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    protected void drawInternal(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {
-        if (program != null) {
-            try {
-                program.use(cache->{
-                    Minecraft mc = Minecraft.getInstance();
-                    float time;
-                    if (mc.player != null) {
-                        time = (mc.player.tickCount + mc.getTimer().getGameTimeDeltaTicks()) / 20;
-                    } else {
-                        time = System.currentTimeMillis() / 1000f;
-                    }
-                    float mX = Mth.clamp((mouseX - x), 0, width);
-                    float mY = Mth.clamp((mouseY - y), 0, height);
-                    cache.glUniformMatrix4F("ModelViewMat", RenderSystem.getModelViewMatrix());
-                    cache.glUniformMatrix4F("ProjMat", RenderSystem.getProjectionMatrix());
-                    cache.glUniform2F("iResolution", width * resolution, height * resolution);
-                    cache.glUniform2F("iMouse", mX * resolution, mY * resolution);
-                    cache.glUniform1F("iTime", time);
-                    if (uniformCache != null) {
-                        uniformCache.accept(cache);
-                    }
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-                dispose();
-                return;
-            }
-
-            RenderSystem.enableBlend();
-            Tesselator tessellator = Tesselator.getInstance();
-            var mat = graphics.pose().last().pose();
-            BufferBuilder buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
-            buffer.addVertex(mat, x, y + height, 0).setUv(0, 0).setColor(color);
-            buffer.addVertex(mat, x + width, y + height, 0).setUv(1, 0).setColor(color);
-            buffer.addVertex(mat, x + width, y, 0).setUv(1, 1).setColor(color);
-            buffer.addVertex(mat, x, y, 0).setUv(0, 1).setColor(color);
-            BufferUploader.draw(buffer.buildOrThrow());
-
-            program.release();
-        } else {
-            DrawerHelper.drawText(graphics, "Error compiling shader", x + 2, y + 2, 1, 0xffff0000);
-        }
-    }
+    protected void drawInternal(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {  /* ported stub */ }
 }

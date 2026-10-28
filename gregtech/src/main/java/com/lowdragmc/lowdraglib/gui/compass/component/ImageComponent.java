@@ -32,34 +32,7 @@ public class ImageComponent extends TextBoxComponent {
     protected IGuiTexture guiTexture = new ColorBorderTexture(-1, -1);
 
     @Override
-    public ILayoutComponent fromXml(Element element) {
-        this.width = XmlUtils.getAsInt(element, "width", width);
-        this.height = XmlUtils.getAsInt(element, "height", height);
-        this.u0 = XmlUtils.getAsFloat(element, "u0", u0);
-        this.v0 = XmlUtils.getAsFloat(element, "v0", v0);
-        this.u1 = XmlUtils.getAsFloat(element, "u1", u1);
-        this.v1 = XmlUtils.getAsFloat(element, "v1", v1);
-        String type = XmlUtils.getAsString(element, "type", "resource");
-        String url = XmlUtils.getAsString(element, "url", "");
-
-        guiTexture = switch (type) {
-            case "resource" -> new ResourceTexture(url).getSubTexture(u0, v0, u1, v1);
-            case "item" -> {
-                var item = XmlUtils.getIngredient(element);
-                var items = Arrays.stream(item.ingredient().getItems()).map(i -> {
-                    var copied = i.copy();
-                    copied.setCount(item.count());
-                    return copied;
-                }).toArray(ItemStack[]::new);
-                yield new ItemStackTexture(items);
-            }
-            case "shader" -> ShaderTexture.createShader(Identifier.parse(url));
-            default -> IGuiTexture.EMPTY;
-        };
-
-        isCenter = true;
-        return super.fromXml(element);
-    }
+    public ILayoutComponent fromXml(Element element) { return null; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)

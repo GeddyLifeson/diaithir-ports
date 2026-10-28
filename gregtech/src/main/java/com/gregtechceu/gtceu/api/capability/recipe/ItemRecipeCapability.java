@@ -22,11 +22,11 @@ import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 import com.gregtechceu.gtceu.common.recipe.condition.ResearchCondition;
 import com.gregtechceu.gtceu.common.valueprovider.*;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.integration.xei.entry.item.ItemEntryList;
-import com.gregtechceu.gtceu.integration.xei.entry.item.ItemStackList;
-import com.gregtechceu.gtceu.integration.xei.entry.item.ItemTagList;
-import com.gregtechceu.gtceu.integration.xei.handlers.item.CycleItemEntryHandler;
-import com.gregtechceu.gtceu.integration.xei.widgets.GTRecipeWidget;
+
+
+
+
+
 import com.gregtechceu.gtceu.utils.*;
 
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
@@ -505,78 +505,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                 }
             }
         }
-    }
-
-    // Maps ingredients to an ItemEntryList for XEI: either an ItemTagList or an ItemStackList
-    private static ItemEntryList mapItem(final SizedIngredient ingredient) {
-        if (ingredient.getContainedCustom() instanceof IntProviderIngredient intProvider) {
-            var mapped = tryMapInner(intProvider.getInner(), 1);
-            if (mapped != null) return mapped;
-        } else if (ingredient.getContainedCustom() instanceof IntersectionIngredient intersection) {
-            return mapIntersection(intersection, ingredient.count());
-        } else if (!ingredient.ingredient().isCustom()) {
-            var tagList = tryMapTag(ingredient.ingredient(), ingredient.count());
-            if (tagList != null) return tagList;
-        }
-        ItemStackList stackList = new ItemStackList();
-        boolean isIntProvider = ingredient.getContainedCustom() instanceof IntProviderIngredient;
-
-        UnaryOperator<ItemStack> setCount = stack -> isIntProvider ? stack.copyWithCount(1) : stack;
-        Arrays.stream(ingredient.getItems())
-                .map(setCount)
-                .forEach(stackList::add);
-        return stackList;
-    }
-
-    @SuppressWarnings("SameParameterValue")
-    private static @Nullable ItemEntryList tryMapInner(final Ingredient inner, int count) {
-        if (inner.getCustomIngredient() instanceof IntProviderIngredient intProvider) {
-            var mapped = tryMapInner(intProvider.getInner(), 1);
-            if (mapped != null) return mapped;
-        } else if (inner.getCustomIngredient() instanceof IntersectionIngredient intersection) {
-            return mapIntersection(intersection, count);
-        } else if (!inner.isCustom()) {
-            var tagList = tryMapTag(inner, count);
-            if (tagList != null) return tagList;
-        }
-        ItemStackList stackList = new ItemStackList();
-        boolean isIntProvider = inner.getCustomIngredient() instanceof IntProviderIngredient;
-
-        UnaryOperator<ItemStack> setCount = (stack) -> isIntProvider ? stack.copyWithCount(1) : stack;
-        Arrays.stream(inner.getItems())
-                .map(setCount)
-                .forEach(stackList::add);
-        return stackList;
-    }
-
-    // Map intersection ingredients to the items inside, as recipe viewers don't support them.
-    private static ItemEntryList mapIntersection(final IntersectionIngredient intersection, int amount) {
-        List<Ingredient> children = intersection.children();
-        if (children.isEmpty()) return new ItemStackList();
-
-        var childList = mapItem(new SizedIngredient(children.getFirst(), amount));
-        ItemStackList stackList = new ItemStackList();
-        for (var stack : childList.getStacks()) {
-            if (children.stream().skip(1).allMatch(child -> child.test(stack))) {
-                if (amount > 0) stackList.add(stack.copyWithCount(amount));
-                else stackList.add(stack.copy());
-            }
-        }
-        return stackList;
-    }
-
-    private static @Nullable ItemTagList tryMapTag(final Ingredient ingredient, int amount) {
-        if (ingredient.isCustom()) {
-            GTCEu.LOGGER.error("tried to map unexpected ingredient type {}", ingredient.getCustomIngredient());
-            return null;
-        }
-
-        var values = ingredient.getValues();
-        if (values.length > 0 && values[0] instanceof Ingredient.TagValue(TagKey<Item> tag)) {
-            return ItemTagList.of(tag, amount, DataComponentPatch.EMPTY);
-        }
-        return null;
-    }
+    }/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

@@ -51,36 +51,6 @@ public class WidgetTexture extends TransformTexture{
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    protected void drawInternal(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {
-        int xOffset;
-        int yOffset;
-        float scale  = 1;
-        if (!fixedCenter) {
-            this.centerX = widget.getPosition().x + widget.getSize().width / 2;
-            this.centerY = widget.getPosition().y + widget.getSize().height / 2;
-        }
-        if (isDragging) {
-            xOffset = mouseX - this.centerX;
-            yOffset = mouseY - this.centerY;
-        } else {
-            xOffset = (int) (x + width / 2 - this.centerX);
-            yOffset = (int) (y + height / 2 - this.centerY);
-            float scaleW = width * 1f / widget.getSize().width;
-            float scaleH = height * 1f / widget.getSize().height;
-            scale = Math.min(scaleW, scaleH);
-        }
-        float particleTick = Minecraft.getInstance().getTimer().getGameTimeDeltaTicks();
-        graphics.pose().pushPose();
-
-        graphics.pose().translate(x + width / 2f, y + height / 2f, 0);
-        graphics.pose().scale(scale, scale, 1);
-        graphics.pose().translate(-x + -width / 2f, -y + -height / 2f, 0);
-
-        graphics.pose().translate(xOffset, yOffset, 0 );
-        widget.drawInBackground(graphics, this.mouseX, this.mouseY, particleTick);
-        widget.drawInForeground(graphics, this.mouseX, this.mouseY, particleTick);
-        graphics.pose().popPose();
-
-    }
+    protected void drawInternal(GuiGraphics graphics, int mouseX, int mouseY, float x, float y, int width, int height) {  /* ported stub */ }
 
 }

@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.common.entity;
 
-import com.gregtechceu.gtceu.core.mixins.PrimedTntAccessor;
+
 
 import net.minecraft.network.protocol.game.ClientboundExplodePacket;
 import net.minecraft.server.level.ServerLevel;

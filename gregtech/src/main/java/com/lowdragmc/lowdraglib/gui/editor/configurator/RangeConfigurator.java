@@ -47,31 +47,6 @@ public class RangeConfigurator extends ValueConfigurator<Range> {
     }
 
     @Override
-    public void init(int width) {
-        super.init(width);
-        assert value != null;
-        var w = (width - leftWidth - rightWidth) / 2;
-        var x = new NumberConfigurator("", () -> this.value.getA(), number -> {
-            this.value.setA(number);
-            updateValue();
-        }, defaultValue.getA(), forceUpdate);
-        x.setRange(min, max);
-        x.setWheel(wheel);
-        x.setConfiguratorContainer(configuratorContainer);
-        x.init(w);
-        x.addSelfPosition(leftWidth, 0);
-        addWidget(x);
-
-        var y = new NumberConfigurator("", () -> this.value.getB(), number -> {
-            this.value.setB(number);
-            updateValue();
-        }, defaultValue.getB(), forceUpdate);
-        y.setRange(min, max);
-        y.setWheel(wheel);
-        y.setConfiguratorContainer(configuratorContainer);
-        y.init(w);
-        y.addSelfPosition(leftWidth + w, 0);
-        addWidget(y);
-    }
+    public void init(int width) {  /* ported stub */ }
 
 }

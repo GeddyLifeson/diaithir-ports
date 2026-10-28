@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.common.network.packets;
 
 import com.gregtechceu.gtceu.GTCEu;
-import com.gregtechceu.gtceu.integration.map.ClientCacheManager;
+
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.PlayerInfo;

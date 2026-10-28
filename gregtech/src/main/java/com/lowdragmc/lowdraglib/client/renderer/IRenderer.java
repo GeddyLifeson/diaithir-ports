@@ -3,7 +3,7 @@ package com.lowdragmc.lowdraglib.client.renderer;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.minecraft.client.Minecraft;
@@ -12,14 +12,14 @@ import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.BakedModel;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -36,19 +36,7 @@ import java.util.function.Consumer;
 
 public interface IRenderer {
     Set<IRenderer> EVENT_REGISTERS = new HashSet<>();
-    IRenderer EMPTY = new IRenderer() {};
-
-    /**
-     * Render itemstack.
-     */
-    @OnlyIn(Dist.CLIENT)
-    default void renderItem(ItemStack stack,
-                    ItemDisplayContext transformType,
-                    boolean leftHand, PoseStack poseStack,
-                    MultiBufferSource buffer, int combinedLight,
-                    int combinedOverlay, BakedModel model) {
-
-    }
+    IRenderer EMPTY = new IRenderer() {};/* ported: removed */
 
     /**
      * Render static block model.
@@ -64,15 +52,7 @@ public interface IRenderer {
     @OnlyIn(Dist.CLIENT)
     default void onPrepareTextureAtlas(Identifier atlasName, Consumer<Identifier> register) {
 
-    }
-
-    /**
-     * Register additional model here.
-     */
-    @OnlyIn(Dist.CLIENT)
-    default void onAdditionalModel(Consumer<ModelResourceLocation> registry) {
-
-    }
+    }/* ported: removed */
 
     /**
      * If the renderer requires event registration either {@link #onPrepareTextureAtlas} or {@link #onAdditionalModel}, call this method in the constructor.
@@ -136,9 +116,7 @@ public interface IRenderer {
      */
     @OnlyIn(Dist.CLIENT)
     @Nonnull
-    default TextureAtlasSprite getParticleTexture() {
-        return Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(MissingTextureAtlasSprite.getLocation());
-    }
+    default TextureAtlasSprite getParticleTexture() { return null; /* ported stub */ }
 
     /**
      * Whether to apply AO for the model.

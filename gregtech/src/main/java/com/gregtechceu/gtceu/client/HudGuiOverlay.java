@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.api.item.component.IItemHUDProvider;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
-import net.minecraft.client.gui.LayeredDraw;
+
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;

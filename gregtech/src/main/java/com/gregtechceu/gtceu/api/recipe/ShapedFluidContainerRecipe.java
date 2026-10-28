@@ -2,7 +2,7 @@ package com.gregtechceu.gtceu.api.recipe;
 
 import com.gregtechceu.gtceu.api.recipe.ingredient.FluidContainerIngredient;
 import com.gregtechceu.gtceu.common.data.GTRecipeSerializers;
-import com.gregtechceu.gtceu.core.mixins.ShapedRecipeAccessor;
+
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -102,7 +102,7 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
         return GTRecipeSerializers.CRAFTING_SHAPED_FLUID_CONTAINER.get();
     }
 
-    public static class Serializer implements RecipeSerializer<ShapedFluidContainerRecipe> {
+    public static class Serializer {
 
         // spotless:off
         public static final MapCodec<ShapedFluidContainerRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(

@@ -3,10 +3,10 @@ package com.gregtechceu.gtceu.client.renderer.item;
 import net.minecraft.client.data.models.model.DelegatedModel;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet;
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconType;
-import com.gregtechceu.gtceu.data.pack.GTDynamicResourcePack;
+
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.models.model.DelegatedModel;
+
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 

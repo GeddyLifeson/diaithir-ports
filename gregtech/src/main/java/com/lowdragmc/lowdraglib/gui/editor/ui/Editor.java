@@ -75,21 +75,7 @@ public abstract class Editor extends WidgetGroup implements ILDLRegister {
     }
 
     @Override
-    public void setGui(ModularUI gui) {
-        if (gui != null) {
-            gui.mainGroup.setClientSideWidget();
-            gui.mainGroup.setAllowXEIIngredientOverMouse(false);
-        }
-        super.setGui(gui);
-        if (isRemote()) {
-            if (gui == null) {
-                INSTANCE = null;
-            } else {
-                INSTANCE = this;
-                getGui().registerCloseListener(() -> INSTANCE = null);
-            }
-        }
-    }
+    public void setGui(ModularUI gui) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -105,57 +91,13 @@ public abstract class Editor extends WidgetGroup implements ILDLRegister {
         }
     }
 
-    public void initEditorViews() {
-        this.toolPanel = new ToolPanel(this);
-        this.configPanel = new ConfigPanel(this);
-        this.tabPages = new StringTabContainer(this);
-        this.resourcePanel = new ResourcePanel(this);
-        this.menuPanel = new MenuPanel(this);
-        this.floatView = new WidgetGroup(0, 0, this.getSize().width, this.getSize().height);
+    public void initEditorViews() {  /* ported stub */ }
 
-        this.addWidget(this.tabPages);
-        this.addWidget(this.toolPanel);
-        this.addWidget(this.configPanel);
-        this.addWidget(this.resourcePanel);
-        this.addWidget(this.menuPanel);
-        this.addWidget(this.floatView);
-    }
+    public DialogWidget openDialog(DialogWidget dialog) { return null; /* ported stub */ }
 
-    public DialogWidget openDialog(DialogWidget dialog) {
-        this.addWidget(dialog);
-        Position pos = dialog.getPosition();
-        Size size = dialog.getSize();
-        if (pos.x + size.width > getGui().getScreenWidth()) {
-            dialog.addSelfPosition(pos.x + size.width - getGui().getScreenWidth(), 0);
-        } else if (pos.x < 0) {
-            dialog.addSelfPosition(-pos.x, 0);
-        }
-        if (pos.y + size.height > getGui().getScreenHeight()) {
-            dialog.addSelfPosition(0, pos.y + size.height - getGui().getScreenHeight());
-        } else if (pos.y < 0) {
-            dialog.addSelfPosition(0, -pos.y);
-        }
-        return dialog;
-    }
+    public <T, C> MenuWidget<T, C> openMenu(double posX, double posY, TreeNode<T, C> menuNode) { return null; /* ported stub */ }
 
-    public <T, C> MenuWidget<T, C> openMenu(double posX, double posY, TreeNode<T, C> menuNode) {
-        var menu = new MenuWidget<>((int) posX, (int) posY, 14, menuNode)
-                .setNodeTexture(MenuWidget.NODE_TEXTURE)
-                .setLeafTexture(MenuWidget.LEAF_TEXTURE)
-                .setNodeHoverTexture(MenuWidget.NODE_HOVER_TEXTURE);
-        waitToAdded(menu.setBackground(MenuWidget.BACKGROUND));
-
-        return menu;
-    }
-
-    public void openMenu(double posX, double posY, TreeBuilder.Menu menuBuilder) {
-        if (menuBuilder == null) return;
-        openMenu(posX, posY, menuBuilder.build())
-                .setCrossLinePredicate(TreeBuilder.Menu::isCrossLine)
-                .setKeyIconSupplier(TreeBuilder.Menu::getIcon)
-                .setKeyNameSupplier(TreeBuilder.Menu::getName)
-                .setOnNodeClicked(TreeBuilder.Menu::handle);
-    }
+    public void openMenu(double posX, double posY, TreeBuilder.Menu menuBuilder) {  /* ported stub */ }
 
     public void addRawHistory(String name, CompoundTag date) {
         addRawHistory(name, date, null);
@@ -183,36 +125,9 @@ public abstract class Editor extends WidgetGroup implements ILDLRegister {
         }
     }
 
-    public void addAutoHistory(String name, @Nullable Object source) {
-        if (this.currentProject != null) {
-            // update history view
-            var historyName = LocalizationUtils.format(name);
-            var data = this.currentProject.serializeNBT(Platform.getFrozenRegistry());
-            if (!this.getHistory().isEmpty()) {
-                var latestHistory = this.getHistory().get(this.getHistory().size() - 1);
-                // if the data is the same as the latest history, do not add a new history
-                if (!data.equals(latestHistory.date())) {
-                    // if new history is the same as the latest history, update the latest history
-                    if (latestHistory.name().equals(historyName) && Objects.equals(latestHistory.source(), source)) {
-                        this.getHistory().remove(latestHistory);
-                    }
-                    this.addRawHistory(historyName, data, source);
-                }
-            } else {
-                this.addRawHistory(historyName, data, source);
-            }
-        }
-    }
+    public void addAutoHistory(String name, @Nullable Object source) {  /* ported stub */ }
 
-    public void jumpToHistory(HistoryItem historyItem) {
-        if (currentProject != null && history.contains(historyItem)) {
-            var lastPageIndex = tabPages.getTabIndex();
-            currentProject.deserializeNBT(Platform.getFrozenRegistry(), historyItem.date());
-            loadProject(currentProject);
-            tabPages.switchTabIndex(lastPageIndex);
-            currentHistory = historyItem;
-        }
-    }
+    public void jumpToHistory(HistoryItem historyItem) {  /* ported stub */ }
 
     public void loadProject(IProject project) {
         if (currentProject != null && currentProject != project) {
@@ -287,34 +202,10 @@ public abstract class Editor extends WidgetGroup implements ILDLRegister {
         }
     }
 
-    public boolean isCurrentProjectSaved() {
-        if (currentProject == null) return true;
-        if (currentProjectFile == null) return false;
-        try {
-            var tag = NbtIo.read(currentProjectFile.toPath());
-            return tag != null && tag.equals(currentProject.serializeNBT(Platform.getFrozenRegistry()));
-        } catch (IOException ignored) {}
-        return false;
-    }
+    public boolean isCurrentProjectSaved() { return false; /* ported stub */ }
 
     private boolean isWaitingForSave = false;
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
-            if (isWaitingForSave) {
-                getGui().getModularUIGui().onClose();
-                return true;
-            }
-            // esc
-            if (!isCurrentProjectSaved()) {
-                isWaitingForSave = true;
-                askToSaveProject(result -> getGui().getModularUIGui().onClose());
-                return true;
-            }
-            return false;
-        }
-        super.keyPressed(keyCode, scanCode, modifiers);
-        return true;
-    }
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 }

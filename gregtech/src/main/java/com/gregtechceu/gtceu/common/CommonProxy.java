@@ -60,20 +60,20 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMac
 import com.gregtechceu.gtceu.common.machine.owner.MachineOwner;
 import com.gregtechceu.gtceu.common.machine.storage.QuantumTankMachine;
 import com.gregtechceu.gtceu.config.ConfigHolder;
-import com.gregtechceu.gtceu.core.mixins.registrate.AbstractRegistrateAccessor;
-import com.gregtechceu.gtceu.data.GregTechDatagen;
-import com.gregtechceu.gtceu.data.lang.MaterialLangGenerator;
-import com.gregtechceu.gtceu.data.loot.ChestGenHooks;
-import com.gregtechceu.gtceu.data.pack.GTDynamicDataPack;
-import com.gregtechceu.gtceu.data.pack.GTDynamicResourcePack;
-import com.gregtechceu.gtceu.data.pack.GTPackSource;
+
+
+
+
+
+
+
 import com.gregtechceu.gtceu.data.placeholder.GTPlaceholders;
 import com.gregtechceu.gtceu.data.recipe.*;
-import com.gregtechceu.gtceu.integration.cctweaked.CCTweakedPlugin;
-import com.gregtechceu.gtceu.integration.kjs.GTCEuStartupEvents;
-import com.gregtechceu.gtceu.integration.kjs.GregTechKubeJSPlugin;
-import com.gregtechceu.gtceu.integration.kjs.events.MaterialModificationEventJS;
-import com.gregtechceu.gtceu.integration.map.WaypointManager;
+
+
+
+
+
 import com.gregtechceu.gtceu.utils.input.SyncedKeyMappings;
 
 import com.lowdragmc.lowdraglib.gui.factory.UIFactory;
@@ -99,7 +99,7 @@ import net.neoforged.fml.ModLoader;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.capabilities.Capabilities.FluidHandler;
+
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
 import net.neoforged.neoforge.common.crafting.IntersectionIngredient;

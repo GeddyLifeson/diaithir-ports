@@ -59,11 +59,5 @@ public class AdvancedJetpack extends Jetpack {
     @Override
     public float getFallDamageReduction() {
         return 2.0f;
-    }
-
-    @Override
-    public Identifier getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot,
-                                            ArmorMaterial.Layer layer) {
-        return GTCEu.id("textures/armor/advanced_jetpack.png");
-    }
+    }/* ported: removed */
 }

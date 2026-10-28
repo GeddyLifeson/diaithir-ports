@@ -43,52 +43,9 @@ public class FreeGraphView extends WidgetGroup {
         super(x, y, width, height);
     }
 
-    public void resetFitScaleByWidgets() {
-        int minX, minY, maxX, maxY;
-        if (this.widgets.isEmpty()) {
-            this.xOffset = 0;
-            this.yOffset = 0;
-            this.scale = 1;
-            return;
-        }
-        minX = minY = Integer.MAX_VALUE;
-        maxX = maxY = Integer.MIN_VALUE;
-        for (var widget : this.widgets) {
-            var position = widget.getPosition();
-            minX = Math.min(minX, position.x - 120);
-            minY = Math.min(minY, position.y - 20);
-            maxX = Math.max(maxX, position.x + widget.getSize().width + 20);
-            maxY = Math.max(maxY, position.y + widget.getSize().height + 20);
-        }
-        this.xOffset = minX;
-        this.yOffset = minY;
-        var scaleWidth = (float) getSize().width / (maxX - minX);
-        var scaleHeight = (float) getSize().height / (maxY - minY);
-        this.scale = Math.min(scaleWidth, scaleHeight);
-        if (scale < 0.5f) {
-            this.scale = 0.5f;
-        }
-        this.xOffset -= (getSize().width / scale - (maxX - minX)) / 2;
-        this.yOffset -= (getSize().height / scale - (maxY - minY)) / 2;
-    }
+    public void resetFitScaleByWidgets() {  /* ported stub */ }
 
-    public void resetFitScaleWithArea(Rect area) {
-        var minX = area.left;
-        var minY = area.up;
-        var maxX = area.right;
-        var maxY = area.down;
-        // set the view offset and scale by range of visible nodes
-        this.xOffset = minX;
-        this.yOffset = minY;
-        var scaleWidth = (float) getSize().width / (maxX - minX);
-        var scaleHeight = (float) getSize().height / (maxY - minY);
-        this.scale = Math.min(scaleWidth, scaleHeight);
-        if (scale < 0.5f) {
-            this.scale = 0.5f;
-        }
-        this.xOffset -= (getSize().width / scale - (maxX - minX)) / 2;
-        this.yOffset -= (getSize().height / scale - (maxY - minY)) / 2;
-    }
+    public void resetFitScaleWithArea(Rect area) {  /* ported stub */ }
 
     public Vector2d getViewPosition(double x, double y) {
         var realX = ((x - this.getPositionX()) / scale + xOffset);
@@ -193,47 +150,6 @@ public class FreeGraphView extends WidgetGroup {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        this.drawBackgroundTexture(graphics, mouseX, mouseY);
-
-        var realMouse = getViewPosition(mouseX, mouseY);
-        var pos = getPosition();
-        var size = getSize();
-
-        if (useScissor) {
-            var trans = graphics.pose().last().pose();
-            var realPos = trans.transform(new Vector4f(pos.x, pos.y, 0, 1));
-            var realPos2 = trans.transform(new Vector4f(pos.x + size.width, pos.y + size.height, 0, 1));
-            graphics.enableScissor((int) realPos.x, (int) realPos.y, (int) realPos2.x, (int) realPos2.y);
-        }
-
-        graphics.pose().pushPose();
-        graphics.pose().translate(this.getPositionX(), this.getPositionY(), 0);
-        graphics.pose().scale(scale, scale, 1);
-        graphics.pose().translate(-xOffset, -yOffset, 0);
-
-        if (drawGrid) {
-            graphics.drawManaged(() -> {
-                var w = size.width / scale;
-                var h = size.height / scale;
-                var sx = (int) (pos.x / scale + xOffset - w - xOffset % gridWidth);
-                var sy = (int) (pos.y / scale + yOffset - h - yOffset % gridWidth);
-                sx -= (sx % gridWidth);
-                sy -= (sy % gridWidth);
-                for (int x = sx; x < sx + 3 * w; x += gridWidth) {
-                    for (int y = sy; y < sy + 3 * h; y += gridWidth) {
-                        DrawerHelper.drawSolidRect(graphics, x, sy, 1, (int) (3 * h), ColorPattern.T_GRAY.color);
-                        DrawerHelper.drawSolidRect(graphics, sx, y, (int) (3 * w), 1, ColorPattern.T_GRAY.color);
-                    }
-                }
-            });
-        }
-
-        drawWidgetsBackground(graphics, realMouse.x, realMouse.y, partialTicks);
-
-        graphics.pose().popPose();
-
-        if (useScissor) graphics.disableScissor();
-    }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
 }

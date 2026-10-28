@@ -74,10 +74,7 @@ public final class ModularUI {
         fullScreen = true;
     }
 
-    public void setFullScreen() {
-        this.fullScreen = true;
-        setSize(getScreenWidth(), getScreenHeight());
-    }
+    public void setFullScreen() {  /* ported stub */ }
 
     @Nullable
     public Widget getFirstWidgetById(String regex) {
@@ -141,19 +138,7 @@ public final class ModularUI {
         this.guiContainer = modularUIGuiContainer;
     }
 
-    public List<Widget> getFlatVisibleWidgetCollection() {
-        List<Widget> widgetList = new ArrayList<>();
-
-        for (Widget widget : mainGroup.widgets) {
-            if (!widget.isVisible()) continue;
-            widgetList.add(widget);
-
-            if (widget instanceof WidgetGroup)
-                widgetList.addAll(((WidgetGroup) widget).getContainedWidgets(false));
-        }
-
-        return widgetList;
-    }
+    public List<Widget> getFlatVisibleWidgetCollection() { return null; /* ported stub */ }
 
 
     void addTick() {
@@ -205,13 +190,9 @@ public final class ModularUI {
         mainGroup.initWidget();
     }
 
-    public int getGuiLeft() {
-        return (getScreenWidth() - getWidth()) / 2;
-    }
+    public int getGuiLeft() { return (int)0; /* ported stub */ }
 
-    public int getGuiTop() {
-        return (getScreenHeight() - getHeight()) / 2;
-    }
+    public int getGuiTop() { return (int)0; /* ported stub */ }
 
     public Rectangle toScreenCoords(Rectangle widgetRect) {
         return new Rectangle(getGuiLeft() + widgetRect.x, getGuiTop() + widgetRect.y, widgetRect.width, widgetRect.height);

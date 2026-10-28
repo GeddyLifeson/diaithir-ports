@@ -1,6 +1,6 @@
 package com.lowdragmc.lowdraglib.gui.widget;
 
-import com.lowdragmc.lowdraglib.client.shader.Shaders;
+
 import com.lowdragmc.lowdraglib.gui.editor.ColorPattern;
 import com.lowdragmc.lowdraglib.gui.editor.annotation.Configurable;
 import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
@@ -133,76 +133,13 @@ public class HsbColorWidget extends Widget implements IConfigurableWidget {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void drawInBackground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-		super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-		var pose = graphics.pose().last().pose();
-		int x = getPosition().x;
-		int y = getPosition().y;
-		int width = getSize().width;
-		int height = getSize().height;
-
-		if (showRGB) {
-			BufferBuilder builder = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, Shaders.HSB_VERTEX_FORMAT);
-			drawHsbContext(pose, builder, x, y, width - barWidth - gap, height - barWidth - gap);
-		}
-
-		if (showAlpha) {
-			// alpha bar
-			DrawerHelper.drawGradientRect(graphics, x, y + height - barWidth, width - barWidth - gap, barWidth, argb & 0x00ffffff, argb | 0xff000000, true);
-		}
-
-		// preview
-		DrawerHelper.drawSolidRect(graphics, x + width - barWidth, y + height - barWidth, barWidth, barWidth, argb);
-
-		float color = 0;
-		float mainX = 0, mainY = 0;
-		switch (mode) {
-			case H -> {
-				mainX = s;
-				mainY = 1 - b;
-				color = (1 - h / 360f);
-			}
-			case S -> {
-				mainX = h / 360f;
-				mainY = 1 - b;
-				color = (1 - s);
-			}
-			case B -> {
-				mainX = h / 360f;
-				mainY = 1- s;
-				color = (1 - b);
-			}
-		}
-
-		if (showRGB) {
-			// main indicator
-			DrawerHelper.drawSolidRect(graphics, (int) (x + mainX * (width - barWidth - gap)) - 1, (int) (y + mainY * (height - barWidth - gap)) - 1, 3, 3, 0xffff0000);
-			// color indicator
-			DrawerHelper.drawSolidRect(graphics, x + width - barWidth - 2, (int) (y + color * (height - barWidth - gap)), barWidth + 4, 1, 0xffff0000);
-			// color info
-			renderInfo(graphics, x, y, width - barWidth - gap, height - barWidth - gap);
-			// border
-			DrawerHelper.drawBorder(graphics, x, y, width - barWidth - gap, height - barWidth - gap, ColorPattern.WHITE.color, 2);
-		}
-		if (showAlpha) {
-			// alpha indicator
-			DrawerHelper.drawSolidRect(graphics, (int) (x + alpha * (width - barWidth - gap)), y + height - barWidth - 2, 1, barWidth + 4, 0xffff0000);
-		}
-
-	}
+	public void drawInBackground(@NotNull @Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
 	/**
 	 * have context for render hsb content
 	 */
 	@OnlyIn(Dist.CLIENT)
-	private void drawHsbContext(Matrix4f pose, BufferBuilder builder, int x, int y, int width, int height) {
-		RenderSystem.setShader(Shaders::getHsbShader);
-
-		renderMain(pose, builder, x, y, width, height);
-		renderColorSlide(pose, builder, x, y, width, height);
-
-		BufferUploader.drawWithShader(builder.buildOrThrow());
-	}
+	private void drawHsbContext(Matrix4f pose, BufferBuilder builder, int x, int y, int width, int height) {  /* ported stub */ }
 
 	@OnlyIn(Dist.CLIENT)
 	private void renderMain(Matrix4f pose, BufferBuilder builder, int x, int y, int width, int height) {
@@ -396,27 +333,11 @@ public class HsbColorWidget extends Widget implements IConfigurableWidget {
 		return builder;
 	}
 
-	public boolean isMouseOverMain(double mouseX, double mouseY) {
-		int x = getPosition().x;
-		int y = getPosition().y;
-		int width = getSize().width - gap - barWidth;
-		int height = getSize().height - gap - barWidth;
-		return isMouseOver(x, y, width, height, mouseX, mouseY);
-	}
+	public boolean isMouseOverMain(double mouseX, double mouseY) { return false; /* ported stub */ }
 
-	public boolean isMouseOverColorSlider(double mouseX, double mouseY) {
-		int x = getPosition().x + getSize().width - barWidth;
-		int y = getPosition().y;
-		int height = getSize().height - gap - barWidth;
-		return isMouseOver(x, y, barWidth, height, mouseX, mouseY);
-	}
+	public boolean isMouseOverColorSlider(double mouseX, double mouseY) { return false; /* ported stub */ }
 
-	public boolean isMouseOverAlphaSlider(double mouseX, double mouseY) {
-		int x = getPosition().x;
-		int y = getPosition().y + getSize().width - barWidth;
-		int width = getSize().width - gap - barWidth;
-		return isMouseOver(x, y, width, barWidth, mouseX, mouseY);
-	}
+	public boolean isMouseOverAlphaSlider(double mouseX, double mouseY) { return false; /* ported stub */ }
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
@@ -492,46 +413,7 @@ public class HsbColorWidget extends Widget implements IConfigurableWidget {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
-		int x = getPosition().x;
-		int y = getPosition().y;
-		int width = getSize().width;
-		int height = getSize().height;
-		if (isDraggingMain) {
-			float normalizedX = normalizeMouse(mouseX, x, width - gap - barWidth);
-			float normalizedY = normalizeMouse(mouseY, y, height - gap - barWidth);
-			switch (mode) {
-				case H -> {
-					s = normalizedX;
-					b = 1.0f - normalizedY;
-				}
-				case S -> {
-					h = normalizedX * 360f;
-					b = 1.0f - normalizedY;
-				}
-				case B -> {
-					h = normalizedX * 360f;
-					s = 1.0f - normalizedY;
-				}
-			}
-			refreshRGB();
-			return true;
-		} else if (isDraggingColorSlider) {
-			float normalizedY = normalizeMouse(mouseY, y, height - gap - barWidth);
-			switch (mode) {
-				case H -> h = (1.0f - normalizedY) * 360f;
-				case S -> s = 1.0f - normalizedY;
-				case B -> b = 1.0f - normalizedY;
-			}
-			refreshRGB();
-			return true;
-		} else if (isDraggingAlphaSlider) {
-			this.alpha = normalizeMouse(mouseX, x, width - gap - barWidth);
-
-			refreshRGB();
-		}
-		return false;
-	}
+	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
 
 	@Override
 	@OnlyIn(Dist.CLIENT)

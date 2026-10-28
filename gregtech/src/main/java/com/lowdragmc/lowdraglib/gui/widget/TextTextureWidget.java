@@ -6,7 +6,6 @@ import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
 import com.lowdragmc.lowdraglib.gui.editor.configurator.IConfigurableWidget;
 import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
 import com.lowdragmc.lowdraglib.utils.Size;
-import dev.latvian.mods.rhino.util.RemapForJS;
 import lombok.Getter;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
 import net.minecraft.network.FriendlyByteBuf;
@@ -72,8 +71,7 @@ public class TextTextureWidget extends Widget implements IConfigurableWidget {
         return this;
     }
 
-    @RemapForJS("setComponent")
-    public TextTextureWidget setText(Component text) {
+        public TextTextureWidget setText(Component text) {
         textSupplier = () -> text;
         return this;
     }
@@ -136,12 +134,6 @@ public class TextTextureWidget extends Widget implements IConfigurableWidget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        var position = getPosition();
-        var size = getSize();
-        textTexture.draw(graphics, mouseX, mouseY, position.x, position.y, size.width, size.height);
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 }
 

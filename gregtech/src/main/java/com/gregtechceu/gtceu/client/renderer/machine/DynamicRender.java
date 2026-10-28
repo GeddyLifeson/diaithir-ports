@@ -3,7 +3,7 @@ package com.gregtechceu.gtceu.client.renderer.machine;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.feature.IMachineFeature;
 import com.gregtechceu.gtceu.client.model.machine.IMachineRendererModel;
-import com.gregtechceu.gtceu.client.model.machine.MachineModel;
+
 
 import com.mojang.serialization.Codec;
 import lombok.Getter;
@@ -14,11 +14,7 @@ public abstract class DynamicRender<T extends IMachineFeature, S extends Dynamic
                                    implements Comparable<DynamicRender<T, S>>, IMachineRendererModel<T> {
 
     public static final Codec<DynamicRender<?, ?>> CODEC = DynamicRenderManager.TYPE_CODEC
-            .dispatchStable(DynamicRender::getType, DynamicRenderType::codec);
-
-    @Getter
-    @Setter
-    protected MachineModel parent;
+            .dispatchStable(DynamicRender::getType, DynamicRenderType::codec);/* ported: removed */
 
     public DynamicRender() {}
 

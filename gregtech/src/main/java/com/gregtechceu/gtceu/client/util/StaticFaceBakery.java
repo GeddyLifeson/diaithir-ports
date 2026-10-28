@@ -1,6 +1,6 @@
 package com.gregtechceu.gtceu.client.util;
 
-import com.lowdragmc.lowdraglib.client.bakedpipeline.FaceQuad;
+
 
 import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;

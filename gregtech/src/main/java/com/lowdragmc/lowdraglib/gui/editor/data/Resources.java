@@ -2,7 +2,7 @@ package com.lowdragmc.lowdraglib.gui.editor.data;
 
 import com.lowdragmc.lowdraglib.Platform;
 import com.lowdragmc.lowdraglib.gui.editor.data.resource.Resource;
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 
@@ -70,9 +70,7 @@ public class Resources {
         return tag;
     }
 
-    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {
-        resources.forEach((k, v) -> v.deserializeNBT(nbt.getCompound(k), provider));
-    }
+    public void deserializeNBT(CompoundTag nbt, HolderLookup.Provider provider) {  /* ported stub */ }
 
 
 }

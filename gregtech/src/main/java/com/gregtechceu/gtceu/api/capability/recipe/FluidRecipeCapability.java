@@ -18,11 +18,11 @@ import com.gregtechceu.gtceu.api.recipe.ui.GTRecipeTypeUI;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.client.TooltipsHandler;
 import com.gregtechceu.gtceu.common.valueprovider.*;
-import com.gregtechceu.gtceu.integration.xei.entry.fluid.FluidEntryList;
-import com.gregtechceu.gtceu.integration.xei.entry.fluid.FluidStackList;
-import com.gregtechceu.gtceu.integration.xei.entry.fluid.FluidTagList;
-import com.gregtechceu.gtceu.integration.xei.handlers.fluid.CycleFluidEntryHandler;
-import com.gregtechceu.gtceu.integration.xei.widgets.GTRecipeWidget;
+
+
+
+
+
 import com.gregtechceu.gtceu.utils.GTMath;
 
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
@@ -423,45 +423,7 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
                 }
             }
         }
-    }
-
-    // Maps ingredients to an FluidEntryList for XEI: either an FluidTagList or a FluidStackList
-    private static FluidEntryList mapFluid(final SizedFluidIngredient ingredient) {
-        int amount;
-        if (ingredient.ingredient() instanceof IntProviderFluidIngredient) {
-            amount = 1;
-        } else {
-            amount = ingredient.amount();
-        }
-
-        if (ingredient.ingredient() instanceof IntersectionFluidIngredient intersection) {
-            return mapIntersection(intersection, amount);
-        } else if (ingredient.ingredient() instanceof TagFluidIngredient tag) {
-            return FluidTagList.of(tag.tag(), amount, DataComponentPatch.EMPTY);
-        } else if (ingredient.ingredient() instanceof DataComponentFluidIngredient component) {
-            var key = component.fluids().unwrapKey();
-            if (key.isPresent()) {
-                return FluidTagList.of(key.get(), amount, component.components().asPatch());
-            }
-        }
-        return FluidStackList.of(Arrays.asList(ingredient.getFluids()));
-    }
-
-    // Map intersection ingredients to the items inside, as recipe viewers don't support them.
-    private static FluidEntryList mapIntersection(final IntersectionFluidIngredient intersection, int amount) {
-        List<FluidIngredient> children = intersection.children();
-        if (children.isEmpty()) return new FluidStackList();
-
-        var childList = mapFluid(new SizedFluidIngredient(children.getFirst(), amount));
-        FluidStackList stackList = new FluidStackList();
-        for (var stack : childList.getStacks()) {
-            if (children.stream().skip(1).allMatch(child -> child.test(stack))) {
-                if (amount > 0) stackList.add(stack.copyWithAmount(amount));
-                else stackList.add(stack.copy());
-            }
-        }
-        return stackList;
-    }
+    }/* ported: removed *//* ported: removed */
 
     public interface ICustomParallel {
 

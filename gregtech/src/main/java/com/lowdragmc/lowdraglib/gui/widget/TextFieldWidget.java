@@ -6,7 +6,7 @@ import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
 import com.lowdragmc.lowdraglib.utils.Position;
 import com.lowdragmc.lowdraglib.utils.Size;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.ResourceLocationException;
+
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -113,52 +113,21 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
     }
 
     @Override
-    public void onFocusChanged(@Nullable Widget lastFocus, Widget focus) {
-        this.textField.setFocused(isFocus());
-    }
+    public void onFocusChanged(@Nullable Widget lastFocus, Widget focus) {  /* ported stub */ }
 
     @Override
-    protected void onPositionUpdate() {
-        if (isRemote() && textField != null) {
-            Position position = getPosition();
-            Size size = getSize();
-            this.textField.setX(isBordered ? position.x : position.x + 2);
-            this.textField.setY(isBordered ? position.y : position.y + (size.height - Minecraft.getInstance().font.lineHeight) / 2 + 1);
-        }
-    }
+    protected void onPositionUpdate() {  /* ported stub */ }
 
     @Override
-    protected void onSizeUpdate() {
-        if (isRemote() && textField != null) {
-            Position position = getPosition();
-            Size size = getSize();
-            this.textField.setWidth(isBordered ? size.width : size.width - 2);
-//            this.textField.setHeight( size.height);
-            this.textField.setY(isBordered ? position.y : position.y + (getSize().height -  Minecraft.getInstance().font.lineHeight) / 2 + 1);
-        }
-    }
+    protected void onSizeUpdate() {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        this.textField.render(graphics, mouseX, mouseY, partialTicks);
-        RenderSystem.depthMask(false);
-        RenderSystem.enableBlend();
-        RenderSystem.setShaderColor(1,1,1,1);
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-    }
+    public void drawInBackground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (isMouseOverElement(mouseX, mouseY)) {
-            isDragging = true;
-        }
-        setFocus(isMouseOverElement(mouseX, mouseY));
-        this.textField.setFocused(isMouseOverElement(mouseX, mouseY));
-        return this.textField.mouseClicked(mouseX, mouseY, button);
-    }
+    public boolean mouseClicked(double mouseX, double mouseY, int button) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -168,21 +137,13 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        return keyCode != 256 && (this.textField.keyPressed(keyCode, scanCode, modifiers) || isFocus());
-    }
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) { return false; /* ported stub */ }
 
     @Override
-    public boolean charTyped(char codePoint, int modifiers) {
-        return this.textField.charTyped(codePoint, modifiers);
-    }
+    public boolean charTyped(char codePoint, int modifiers) { return false; /* ported stub */ }
 
     @Override
-    public void updateScreen() {
-        if (this.isVisible() && this.isActive() && textSupplier != null && isClientSideWidget&& !textSupplier.get().equals(getCurrentString())) {
-            setCurrentString(textSupplier.get());
-        }
-    }
+    public void updateScreen() {  /* ported stub */ }
 
     @Override
     public void writeInitialData(RegistryFriendlyByteBuf buffer) {
@@ -281,31 +242,9 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
         return this;
     }
 
-    public TextFieldWidget setCompoundTagOnly() {
-        setValidator(s -> {
-            try {
-                TagParser.parseTag(s);
-                return s;
-            } catch (Exception ignored) { }
-            return this.currentString;
-        });
-        hover = Component.translatable("ldlib.gui.text_field.compound_tag");
-        return this;
-    }
+    public TextFieldWidget setCompoundTagOnly() { return null; /* ported stub */ }
 
-    public TextFieldWidget setResourceLocationOnly() {
-        setValidator(s -> {
-            try {
-                s = s.toLowerCase();
-                s = s.replace(' ', '_');
-                Identifier.parse(s);
-                return s;
-            } catch (NumberFormatException | ResourceLocationException ignored) { }
-            return this.currentString;
-        });
-        hover = Component.translatable("ldlib.gui.text_field.resourcelocation");
-        return this;
-    }
+    public TextFieldWidget setResourceLocationOnly() { return null; /* ported stub */ }
 
     public TextFieldWidget setNumbersOnly(long minValue, long maxValue) {
         setValidator(s -> {
@@ -392,49 +331,13 @@ public class TextFieldWidget extends Widget implements IConfigurableWidget {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) {
-        if (wheelDur > 0 && numberInstance != null && isMouseOverElement(mouseX, mouseY) && isFocus()) {
-            try {
-                onTextChanged(numberInstance.format(Float.parseFloat(getCurrentString()) + (scrollY > 0 ? 1 : -1) * wheelDur));
-            } catch (Exception ignored) {
-            }
-            setFocus(true);
-            return true;
-        }
-        return false;
-    }
+    public boolean mouseWheelMove(double mouseX, double mouseY, double scrollX, double scrollY) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
-        if (isDragging && numberInstance != null && isFocus()) {
-            try {
-                onTextChanged(numberInstance.format(Float.parseFloat(getCurrentString()) + dragX * wheelDur));
-            } catch (Exception ignored) {
-            }
-            setFocus(true);
-            return true;
-        }
-        return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
-    }
+    public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) { return false; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        if (isMouseOverElement(mouseX, mouseY) && gui != null &&  gui.getModularUIGui() != null) {
-            List<Component> tips = new ArrayList<>();
-            if (tooltipTexts != null) {
-                tips.addAll(tooltipTexts);
-            }
-            if (hover != null) {
-                tips.add(hover);
-            }
-            if (wheelDur > 0 && numberInstance != null && isFocus()) {
-                tips.add(Component.translatable("ldlib.gui.text_field.number.wheel", numberInstance.format(wheelDur)));
-            }
-            if (!tips.isEmpty()) {
-                gui.getModularUIGui().setHoverTooltip(tips, ItemStack.EMPTY, null, null);
-            }
-        }
-    }
+    public void drawInForeground(@Nonnull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 }

@@ -12,9 +12,9 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 import com.google.common.collect.Lists;
-import dev.emi.emi.api.stack.EmiStack;
-import mezz.jei.api.ingredients.ITypedIngredient;
-import mezz.jei.api.neoforge.NeoForgeTypes;
+
+
+
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

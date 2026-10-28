@@ -1,5 +1,7 @@
 package com.lowdragmc.lowdraglib.syncdata.accessor;
 
+import com.gregtechceu.gtceu.compat.INBTSerializable;
+
 import com.lowdragmc.lowdraglib.syncdata.AccessorOp;
 import com.lowdragmc.lowdraglib.syncdata.IManaged;
 import com.lowdragmc.lowdraglib.syncdata.IManagedStorage;

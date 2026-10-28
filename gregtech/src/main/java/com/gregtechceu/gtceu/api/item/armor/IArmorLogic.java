@@ -1,12 +1,14 @@
 package com.gregtechceu.gtceu.api.item.armor;
 
+import net.minecraft.world.item.equipment.ArmorType;
+
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
+
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -24,7 +26,7 @@ public interface IArmorLogic {
 
     default void addToolComponents(ArmorComponentItem item) {}
 
-    ArmorItem.Type getArmorType();
+    ArmorType getArmorType();
 
     /**
      * Get the displayed effective armor.

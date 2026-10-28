@@ -4,7 +4,7 @@ import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegister;
 import com.lowdragmc.lowdraglib.gui.editor.data.Resources;
 import com.lowdragmc.lowdraglib.gui.editor.data.resource.Resource;
 import com.lowdragmc.lowdraglib.gui.editor.data.resource.TexturesResource;
-import com.lowdragmc.lowdraglib.gui.editor.runtime.AnnotationDetector;
+
 import com.lowdragmc.lowdraglib.gui.editor.runtime.PersistedParser;
 import com.lowdragmc.lowdraglib.gui.texture.ColorRectTexture;
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
@@ -56,22 +56,7 @@ public interface IConfigurableWidget extends IConfigurable {
         return false;
     }
 
-    default boolean handleDragging(Object dragging) {
-        if (dragging instanceof IGuiTexture guiTexture) {
-            widget().setBackground(guiTexture);
-            return true;
-        } else if (dragging instanceof String string) {
-            widget().setHoverTooltips(string);
-            return true;
-        } else if (dragging instanceof IIdProvider idProvider) {
-            widget().setId(idProvider.get());
-            return true;
-        } else if (dragging instanceof Integer color) {
-            widget().setBackground(new ColorRectTexture(color));
-            return true;
-        }
-        return false;
-    }
+    default boolean handleDragging(Object dragging) { return false; /* ported stub */ }
 
     @SuppressWarnings("unchecked")
     static CompoundTag serializeNBT(IConfigurableWidget widget, Resources resources, boolean isProject, HolderLookup.Provider provider) {
@@ -114,16 +99,7 @@ public interface IConfigurableWidget extends IConfigurable {
     }
 
     @Nullable
-    static IConfigurableWidget deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) {
-        String type = tag.getString("type");
-        var wrapper = CACHE.apply(type);
-        if (wrapper != null) {
-            var child = wrapper.creator().get();
-            child.deserializeInnerNBT(provider, tag.getCompound("data"));
-            return child;
-        }
-        return null;
-    }
+    static IConfigurableWidget deserializeWrapper(CompoundTag tag, HolderLookup.Provider provider) { return null; /* ported stub */ }
 
     // ******* setter ********//
 

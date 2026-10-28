@@ -39,9 +39,7 @@ public interface IUIHolder {
         }
 
         @Override
-        default boolean isRemote() {
-            return self().getLevel().isClientSide;
-        }
+        default boolean isRemote() { return false; /* ported stub */ }
 
         @Override
         default void markAsDirty() {

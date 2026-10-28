@@ -1,7 +1,7 @@
 package com.gregtechceu.gtceu.client.model.machine.variant;
 
 import com.gregtechceu.gtceu.api.registry.registrate.provider.GTBlockstateProvider;
-import com.gregtechceu.gtceu.client.model.machine.MachineModelLoader;
+
 import com.gregtechceu.gtceu.client.util.VariantRotationHelpers;
 
 import net.minecraft.client.renderer.block.dispatch.ModelState;

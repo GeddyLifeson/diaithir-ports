@@ -5,7 +5,7 @@ import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.*;
 import net.minecraft.resources.Identifier;
-import net.neoforged.neoforge.client.model.SimpleModelState;
+
 
 import com.google.gson.*;
 import org.jetbrains.annotations.NotNull;
@@ -44,27 +44,7 @@ public record MultiVariantModel(List<VariantState> variants) implements UnbakedM
             variant.setResolvedModel(model);
             model.resolveParents(resolver);
         });
-    }
-
-    public @Nullable BakedModel bake(@NotNull ModelBaker baker,
-                                     @NotNull Function<Material, TextureAtlasSprite> spriteGetter,
-                                     @NotNull ModelState state) {
-        if (this.variants.isEmpty()) {
-            return null;
-        } else {
-            WeightedBakedModel.Builder weightedBuilder = new WeightedBakedModel.Builder();
-
-            for (VariantState variant : this.variants) {
-                // rotate the transform by both the variant and the original blockstate rotation
-                var actualRotation = state.getRotation().compose(variant.getRotation());
-                var actualState = new SimpleModelState(actualRotation, variant.isUvLocked());
-
-                BakedModel baked = variant.getResolvedModel().bake(baker, spriteGetter, actualState);
-                weightedBuilder.add(baked, variant.getWeight());
-            }
-            return weightedBuilder.build();
-        }
-    }
+    }/* ported: removed */
 
     public static class Deserializer implements JsonDeserializer<MultiVariantModel> {
 

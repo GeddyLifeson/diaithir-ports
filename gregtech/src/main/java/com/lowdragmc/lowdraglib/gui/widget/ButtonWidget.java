@@ -10,8 +10,6 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import com.lowdragmc.lowdraglib.utils.Position;
 import com.lowdragmc.lowdraglib.utils.Size;
-import dev.latvian.mods.rhino.util.HideFromJS;
-import dev.latvian.mods.rhino.util.RemapPrefixForJS;
 import lombok.Getter;
 import com.lowdragmc.lowdraglib.gui.compat.GuiGraphics;
 
@@ -19,7 +17,6 @@ import javax.annotation.Nonnull;
 import java.util.function.Consumer;
 
 @LDLRegister(name = "button", group = "widget.basic")
-@RemapPrefixForJS("kjs$")
 public class ButtonWidget extends Widget implements IConfigurableWidget {
 
     @Configurable(name = "ldlib.gui.editor.name.clicked_texture")
@@ -59,8 +56,7 @@ public class ButtonWidget extends Widget implements IConfigurableWidget {
         return this;
     }
 
-    @HideFromJS
-    public ButtonWidget setHoverTexture(IGuiTexture... hoverTexture) {
+        public ButtonWidget setHoverTexture(IGuiTexture... hoverTexture) {
         super.setHoverTexture(hoverTexture);
         return this;
     }
@@ -115,23 +111,5 @@ public class ButtonWidget extends Widget implements IConfigurableWidget {
     }
 
     @OnlyIn(Dist.CLIENT)
-    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {
-        var isHovered = isMouseOverElement(mouseX, mouseY);
-        if (!isHovered || drawBackgroundWhenHover) {
-            if (isClicked && clickedTexture != null) {
-                Position pos = getPosition();
-                Size size = getSize();
-                clickedTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-            } else if (backgroundTexture != null) {
-                Position pos = getPosition();
-                Size size = getSize();
-                backgroundTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-            }
-        }
-        if (hoverTexture != null && isHovered && isActive()) {
-            Position pos = getPosition();
-            Size size = getSize();
-            hoverTexture.draw(graphics, mouseX, mouseY, pos.x, pos.y, size.width, size.height);
-        }
-    }
+    protected void drawBackgroundTexture(@Nonnull GuiGraphics graphics, int mouseX, int mouseY) {  /* ported stub */ }
 }

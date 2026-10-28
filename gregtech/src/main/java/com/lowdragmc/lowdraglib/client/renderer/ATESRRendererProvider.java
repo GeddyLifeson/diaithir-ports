@@ -22,7 +22,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @OnlyIn(Dist.CLIENT)
 @ParametersAreNonnullByDefault
-public class ATESRRendererProvider<T extends BlockEntity> implements BlockEntityRenderer<T> {
+public class ATESRRendererProvider<T extends BlockEntity>  {
 
     public ATESRRendererProvider() {
     }
@@ -31,26 +31,13 @@ public class ATESRRendererProvider<T extends BlockEntity> implements BlockEntity
     }
 
     @Override
-    public int getViewDistance() {
-        return BlockEntityRenderer.super.getViewDistance();
-    }
+    public int getViewDistance() { return (int)0; /* ported stub */ }
 
     @Override
-    public boolean shouldRender(T pBlockEntity, Vec3 pCameraPos) {
-        IRenderer renderer = getRenderer(pBlockEntity);
-        if (renderer != null) {
-            return renderer.shouldRender(pBlockEntity, pCameraPos);
-        }
-        return BlockEntityRenderer.super.shouldRender(pBlockEntity, pCameraPos);
-    }
+    public boolean shouldRender(T pBlockEntity, Vec3 pCameraPos) { return false; /* ported stub */ }
 
     @Override
-    public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
-        IRenderer renderer = getRenderer(pBlockEntity);
-        if (renderer != null && !renderer.isRaw()) {
-            renderer.render(pBlockEntity, pPartialTick, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay);
-        }
-    }
+    public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {  /* ported stub */ }
 
     @Nullable
     public IRenderer getRenderer(@Nonnull T tileEntity) {
@@ -70,13 +57,7 @@ public class ATESRRendererProvider<T extends BlockEntity> implements BlockEntity
     }
 
     @Override
-    public boolean shouldRenderOffScreen(@Nonnull T tileEntity) {
-        IRenderer renderer = getRenderer(tileEntity);
-        if (renderer != null) {
-            return renderer.isGlobalRenderer(tileEntity);
-        }
-        return false;
-    }
+    public boolean shouldRenderOffScreen(@Nonnull T tileEntity) { return false; /* ported stub */ }
     
 }
 

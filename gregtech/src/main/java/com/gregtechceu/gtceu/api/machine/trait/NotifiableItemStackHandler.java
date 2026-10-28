@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
-import dev.latvian.mods.kubejs.recipe.ingredientaction.IngredientActionHolder;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

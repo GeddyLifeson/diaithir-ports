@@ -10,15 +10,15 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockAndTintGetter;
+
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -64,13 +64,7 @@ public class UIResourceRenderer implements IRenderer {
 
     public IRenderer getRenderer() {
         return resource == null ? IRenderer.EMPTY : resource.getResourceOrDefault(key, IRenderer.EMPTY);
-    }
-
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public void renderItem(ItemStack stack, ItemDisplayContext transformType, boolean leftHand, PoseStack poseStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay, BakedModel model) {
-        getRenderer().renderItem(stack, transformType, leftHand, poseStack, buffer, combinedLight, combinedOverlay, model);
-    }
+    }/* ported: removed */
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -82,13 +76,7 @@ public class UIResourceRenderer implements IRenderer {
     @OnlyIn(Dist.CLIENT)
     public void onPrepareTextureAtlas(Identifier atlasName, Consumer<Identifier> register) {
         getRenderer().onPrepareTextureAtlas(atlasName, register);
-    }
-
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public void onAdditionalModel(Consumer<ModelResourceLocation> registry) {
-        getRenderer().onAdditionalModel(registry);
-    }
+    }/* ported: removed */
 
     @Override
     @OnlyIn(Dist.CLIENT)
