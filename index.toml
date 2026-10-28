@@ -157,6 +157,10 @@ file = "config/walkers.json5"
 hash = "0aaa598b80b3d009e31c802466af7a607cb35667b9320489baf9b93f90ecde19"
 
 [[files]]
+file = "keybinds.txt"
+hash = "673710c867d7799fa311d286b28df274eaf21cbfeaa9bb41aa1dcd482e5d9364"
+
+[[files]]
 file = "kubejs/assets/backrooms/lang/en_us.json"
 hash = "8bbe92b17dd2bd0b5ccac450382a79749d1af81ad2dc79ca2f01b1ff3a8a77b1"
 
@@ -36122,6 +36126,11 @@ metafile = true
 file = "mods/zoomify-2.17.0_mc26.1.2-universal.pw.toml"
 hash = "f6ba90cc1346f8df8d123eedb06385e96885d10b353d2a39a835dc37fa6956f7"
 metafile = true
+
+[[files]]
+file = "options.txt"
+hash = "b31d9182e71cdffaa0eff42cf26cebd4deb334d80a99a905b2bccbd7a18c6a21"
+preserve = true
 
 [[files]]
 file = "resourcepacks/diaithir-sounds.pw.toml"
