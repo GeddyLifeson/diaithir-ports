@@ -23,10 +23,13 @@ public class ClaimsOverlay implements AtlasOverlay {
 	public static boolean visible = true;
 	/** Claim manager mode: clicks on the map claim, unclaim, load or unload chunks. */
 	public static boolean managing = false;
+	/** Lines describing the claim under the mouse this frame, for the atlas to merge into its single tooltip. */
+	public static java.util.List<Component> hover = java.util.List.of();
 	private static final int MAX_CHUNKS = 30_000;
 
 	@Override
 	public void onScreenRender(AtlasScreenRenderContext ctx) {
+		hover = java.util.List.of();
 		if (!visible || !FtbChunksCompat.available()) return;
 		AtlasScreen screen = ctx.screen();
 		Identifier dim = screen.dim().identifier();
@@ -68,10 +71,8 @@ public class ClaimsOverlay implements AtlasOverlay {
 			int mx = ctx.mouseX();
 			int my = ctx.mouseY();
 			if (screen.isMouseOverMap) {
-				FtbChunksCompat.Claim hover = claims == null ? null : claims.at(screen.screenXToWorldX(mx) >> 4, screen.screenYToWorldZ(my) >> 4);
-				if (hover != null && screen.hoveredLandmark == null) {
-					g.setTooltipForNextFrame(Minecraft.getInstance().font, List.of(hover.name(), Component.translatable("gui.antique_atlas.claim").withStyle(ChatFormatting.GRAY)), java.util.Optional.empty(), mx, my);
-				}
+				FtbChunksCompat.Claim hoverClaim = claims == null ? null : claims.at(screen.screenXToWorldX(mx) >> 4, screen.screenYToWorldZ(my) >> 4);
+				if (hoverClaim != null) hover = List.of(hoverClaim.name(), Component.translatable("gui.antique_atlas.claim").withStyle(ChatFormatting.GRAY));
 			}
 		}
 

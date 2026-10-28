@@ -118,6 +118,10 @@ public class WorldAtlasData {
 		return structureTiles.getOrDefault(pos, biomeTiles.get(pos));
 	}
 
+	public boolean hasStructureAt(ChunkPos pos) {
+		return structureTiles.containsKey(pos);
+	}
+
 	public Identifier getProvider(ChunkPos pos) {
 		if (structureTiles.containsKey(pos)) {
 			return debugStructures.get(pos).id();

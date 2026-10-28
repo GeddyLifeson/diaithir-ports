@@ -53,6 +53,13 @@ public class AntiqueAtlasConfig extends WrappedConfig {
 	@IntegerRange(min = 4, max = 16)
 	public int minimapChunkPixels = 8;
 
+	@Comment("Whether to show the biome (or structure) name when hovering the map")
+	public boolean biomeHover = true;
+
+	@Comment("Whether the minimap shows a short title when you enter a new biome or dimension")
+	@Comment("Off by default: Traveller's Titles already does this in the pack")
+	public boolean minimapEntryTitle = false;
+
 	@Comment("Whether to require an item to display the map")
 	public boolean requireItem = false;
 

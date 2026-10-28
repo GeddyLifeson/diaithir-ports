@@ -851,6 +851,16 @@ public class AtlasScreen extends GuiComponent implements AtlasRenderer {
 			if (name != null && !name.getString().isEmpty()) {
 				context.setTooltipForNextFrame(font, Stream.concat(Stream.of(name), hoveredLandmark.getOrDefault(LandmarkComponentTypes.LORE, new ArrayList<Component>()).stream().map(t -> t.copy().withStyle(ChatFormatting.GRAY))).toList(), java.util.Optional.empty(), (int) getMouseX(), (int) getMouseY());
 			}
+		} else if (hoveredFriend == null && AntiqueAtlas.CONFIG.biomeHover && isMouseOverMap && !isDragging && markerModal.getParent() == null && !state.is(HIDING_MARKERS)) {
+			ChunkPos cp = ChunkPos.containing(new BlockPos(screenXToWorldX((int) getMouseX()), 0, screenYToWorldZ((int) getMouseY())));
+			Identifier pid = worldAtlasData.getProvider(cp);
+			java.util.List<Component> lines = new ArrayList<>();
+			if (pid != null) {
+				boolean structure = worldAtlasData.hasStructureAt(cp);
+				lines.add(Component.literal(folk.sisby.antique_atlas.util.BiomeNames.name(structure ? "structure" : "biome", pid.getNamespace(), pid.getPath(), net.minecraft.locale.Language.getInstance()::has, k -> net.minecraft.locale.Language.getInstance().getOrDefault(k))));
+			}
+			lines.addAll(ClaimsOverlay.hover);
+			if (!lines.isEmpty()) context.setTooltipForNextFrame(font, lines, java.util.Optional.empty(), (int) getMouseX(), (int) getMouseY());
 		} else if (hoveredFriend != null) {
 			boolean self = hoveredFriend.username().equals(Minecraft.getInstance().player.getGameProfile().name());
 			boolean inDim = hoveredFriend.dimension().equals(dim);

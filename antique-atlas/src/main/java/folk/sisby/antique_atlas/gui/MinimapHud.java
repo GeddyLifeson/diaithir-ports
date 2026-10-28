@@ -13,6 +13,7 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.player.Player;
@@ -30,6 +31,9 @@ public class MinimapHud implements GuiLayer {
 	public static final Identifier ID = AntiqueAtlas.id("minimap");
 	public static boolean hidden = false;
 	private static final int BANDS = 14;
+	private static String lastPlace = null;
+	private static long placeShownAt = 0;
+	private static Component placeTitle = Component.empty();
 	private static final int FRAME = 0xFF3B2A1A;
 	private static final int FRAME_LIGHT = 0xFFC9A66B;
 
@@ -97,6 +101,8 @@ public class MinimapHud implements GuiLayer {
 			Gfx.fill(g, x + rightStart, y + row, x + span[1] + 1, y + row + 1, FRAME);
 		}
 
+		if (AntiqueAtlas.CONFIG.minimapEntryTitle) drawEntryTitle(g, mc, x, y, size);
+
 		// player arrow and north marker
 		float yaw = mc.player.getYRot() + 180f;
 		Gfx.drawCenteredWithRotation(g, AtlasRenderer.PLAYER, x + size / 2.0, y + size / 2.0, 1.0f, AtlasRenderer.PLAYER_ICON_WIDTH, AtlasRenderer.PLAYER_ICON_HEIGHT, yaw, 0xFFFFFFFF);
@@ -125,5 +131,27 @@ public class MinimapHud implements GuiLayer {
 			Gfx.fill(g, px - 2, py - 2, px + 3, py + 3, FRAME);
 			Gfx.fill(g, px - 1, py - 1, px + 2, py + 2, ARGB.color(255, rgb >> 16 & 0xFF, rgb >> 8 & 0xFF, rgb & 0xFF));
 		}
+	}
+
+	private void drawEntryTitle(GuiGraphicsExtractor g, Minecraft mc, int x, int y, int size) {
+		var biome = mc.level.getBiome(mc.player.blockPosition()).unwrapKey();
+		if (biome.isEmpty()) return;
+		Identifier id = biome.get().identifier();
+		String place = mc.level.dimension().identifier() + "|" + id;
+		long now = System.currentTimeMillis();
+		if (!place.equals(lastPlace)) {
+			boolean first = lastPlace == null;
+			boolean newDim = !first && !lastPlace.substring(0, lastPlace.indexOf('|')).equals(mc.level.dimension().identifier().toString());
+			lastPlace = place;
+			String name = folk.sisby.antique_atlas.util.BiomeNames.name("biome", id.getNamespace(), id.getPath(), net.minecraft.locale.Language.getInstance()::has, k -> net.minecraft.locale.Language.getInstance().getOrDefault(k));
+			String dim = folk.sisby.antique_atlas.util.BiomeNames.prettify(mc.level.dimension().identifier().getPath());
+			placeTitle = Component.literal(newDim ? dim + ": " + name : name);
+			placeShownAt = first ? 0 : now;
+		}
+		long age = now - placeShownAt;
+		if (placeShownAt == 0 || age > 3500) return;
+		int alpha = (int) (255 * Math.min(1.0, (3500 - age) / 700.0));
+		if (alpha < 8) return;
+		g.text(mc.font, placeTitle, x + size / 2 - mc.font.width(placeTitle) / 2, y - 12, ARGB.color(alpha, 255, 255, 255), true);
 	}
 }
