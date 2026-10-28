@@ -44,7 +44,7 @@ StartupEvents.registry('block', event => {
 // Growable herbs no pack mod has: seed block (also the seed item), four stages, harvest item registered from DRINK_EXTRAS
 StartupEvents.registry('block', event => {
   DRINK_CROPS.forEach(c => {
-    event.create('diaithir_drinks:' + c[0] + '_seeds', 'crop').displayName(c[1]).age(3, b => b.carrot())
+    event.create('diaithir_drinks:' + c[0], 'crop').displayName(c[1].replace(' Seeds', '')).age(3, b => b.carrot())
       .crop('diaithir_drinks:' + c[2])
   })
 })
