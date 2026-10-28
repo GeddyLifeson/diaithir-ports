@@ -138,6 +138,7 @@ public class ClientEvents {
         Entity cameraEntity = mc.getCameraEntity();
         float partialTicks = AlexsCaves.PROXY.getPartialTicks();
         ClientProxy.tickBubbledEffects();
+        ACPostEffects.tick(mc);
         if (ClientProxy.shaderLoadAttemptCooldown > 0) ClientProxy.shaderLoadAttemptCooldown--;
         ClientProxy.prevPrimordialBossActiveAmount = ClientProxy.primordialBossActiveAmount;
         ClientProxy.prevNukeFlashAmount = ClientProxy.nukeFlashAmount;
