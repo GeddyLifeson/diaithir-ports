@@ -37,6 +37,14 @@ public class ACAdvancementTab extends AdvancementTab {
         graphics.disableScissor();
     }
 
+    private boolean unlocked(AdvancementWidget w) {
+        if (ACAdvancementTabs.Type.isTreeNodeUnlocked(w)) return true;
+        var rootNode = ACAdvancementTabs.Type.typeRootNode(w.advancementNode);
+        if (rootNode == null) return true;
+        AdvancementWidget rw = widgets.get(rootNode.holder());
+        return rw != null && rw.progress != null && rw.progress.isDone();
+    }
+
     @Override
     public void extractTooltips(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int xo, int yo) {
         int i = Mth.floor(scrollX);
@@ -44,12 +52,12 @@ public class ACAdvancementTab extends AdvancementTab {
         ACAdvancementTabs.Type hoverType = null;
         if (mouseX > 0 && mouseX < 234 && mouseY > 0 && mouseY < 113) {
             for (AdvancementWidget w : widgets.values()) {
-                if (w.isMouseOver(i, j, mouseX, mouseY) && ACAdvancementTabs.Type.isTreeNodeUnlocked(w)) {
+                if (w.isMouseOver(i, j, mouseX, mouseY) && unlocked(w)) {
                     hoverType = ACAdvancementTabs.Type.forNode(w.advancementNode);
                 }
             }
         }
-        if (hoverType != null) ACAdvancementTabs.setHoverType(hoverType);
+        if (hoverType != null) { ACAdvancementTabs.setHoverType(hoverType); }
         super.extractTooltips(graphics, mouseX, mouseY, xo, yo);
     }
 }

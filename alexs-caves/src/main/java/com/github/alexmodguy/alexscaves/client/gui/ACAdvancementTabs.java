@@ -180,6 +180,14 @@ public class ACAdvancementTabs {
             return DEFAULT;
         }
 
+        public static net.minecraft.advancements.AdvancementNode typeRootNode(net.minecraft.advancements.AdvancementNode node) {
+            while (node != null) {
+                if (getDirectType(node.holder()) != DEFAULT) return node;
+                node = node.parent();
+            }
+            return null;
+        }
+
         public static boolean isTreeNodeUnlocked(AdvancementWidget widget) {
             AdvancementProgress progress = widget.progress;
             if (progress != null && progress.isDone()) return true;
