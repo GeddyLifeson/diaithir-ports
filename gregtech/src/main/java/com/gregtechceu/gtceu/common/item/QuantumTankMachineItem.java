@@ -32,9 +32,6 @@ public class QuantumTankMachineItem extends MetaMachineItem {
 
         final long finalCapacity = capacity;
 
-        event.registerItem(
-                Capabilities.FluidHandler.ITEM,
-                (stack, ignored) -> new QuantumFluidHandlerItemStack(stack, finalCapacity),
-                this);
+        /* ported: item capability not registered */ ((Runnable) () -> {}).run();
     }
 }

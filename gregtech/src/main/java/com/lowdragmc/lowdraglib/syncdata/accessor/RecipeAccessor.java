@@ -37,7 +37,7 @@ public class RecipeAccessor extends CustomObjectAccessor<RecipeHolder> {
             if (type != null) {
                 RecipeManager recipeManager;
                 if (LDLib.isRemote()) {
-                    recipeManager = Minecraft.getInstance().getConnection().getRecipeManager();
+                    recipeManager = com.gregtechceu.gtceu.compat.GtCompat.recipeManager(Minecraft.getInstance().getConnection());
                 } else {
                     recipeManager = Platform.getMinecraftServer().getRecipeManager();
                 }

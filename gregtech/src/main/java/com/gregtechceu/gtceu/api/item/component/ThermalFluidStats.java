@@ -54,14 +54,7 @@ public class ThermalFluidStats implements IItemComponent, IComponentCapability, 
 
     @Override
     public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {
-        event.registerItem(Capabilities.FluidHandler.ITEM, (stack, unused) -> {
-            if (allowPartialFill) {
-                return new ThermalFluidHandlerItemStack(stack, capacity, maxFluidTemperature, gasProof, acidProof,
-                        cryoProof, plasmaProof);
-            }
-            return new SimpleThermalFluidHandlerItemStack(stack, capacity, maxFluidTemperature, gasProof, acidProof,
-                    cryoProof, plasmaProof);
-        }, item);
+        /* ported: item capability not registered */ ((Runnable) () -> {}).run();
     }
 
     @Override

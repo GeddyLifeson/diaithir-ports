@@ -79,7 +79,7 @@ public class SmartItemFilter implements ItemFilter {
             return 0;
         }
         for (Content content : recipe.getInputContents(ItemRecipeCapability.CAP)) {
-            var stacks = ItemRecipeCapability.CAP.of(content.getContent()).getItems();
+            var stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP.of(content.getContent()));
             for (var stack : stacks) {
                 if (ItemStack.isSameItem(stack, itemStack)) return stack.getCount();
             }

@@ -540,9 +540,8 @@ public class GTRecipeTypes {
                     Content inputContent = recipeBuilder.input.get(FluidRecipeCapability.CAP).getFirst();
                     SizedFluidIngredient input = FluidRecipeCapability.CAP.of(inputContent.getContent());
                     ItemStack[] outputs = recipeBuilder.output.containsKey(ItemRecipeCapability.CAP) ?
-                            ItemRecipeCapability.CAP
-                                    .of(recipeBuilder.output.get(ItemRecipeCapability.CAP).getFirst().getContent())
-                                    .getItems() :
+                            com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP
+                                    .of(recipeBuilder.output.get(ItemRecipeCapability.CAP).getFirst().getContent())) :
                             null;
                     ItemStack outputItem = outputs == null || outputs.length == 0 ? ItemStack.EMPTY : outputs[0];
                     if (input.ingredient().isEmpty()) return;
@@ -550,10 +549,10 @@ public class GTRecipeTypes {
                     for (int i = 0; i < contents.size(); ++i) {
                         Content outputContent = contents.get(i);
                         SizedFluidIngredient output = FluidRecipeCapability.CAP.of(outputContent.getContent());
-                        if (output.ingredient().hasNoFluids()) continue;
+                        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(output.ingredient())) continue;
                         GTRecipeBuilder builder = DISTILLERY_RECIPES
                                 .recipeBuilder(recipeBuilder.id.getPath() + "_to_" +
-                                        BuiltInRegistries.FLUID.getKey(output.getFluids()[0].getFluid()).getPath())
+                                        BuiltInRegistries.FLUID.getKey(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(output)[0].getFluid()).getPath())
                                 .EUt(Math.max(1, recipeBuilder.EUt().voltage() / 4), recipeBuilder.EUt().amperage())
                                 .circuitMeta(i + 1);
 
@@ -564,10 +563,8 @@ public class GTRecipeTypes {
                         boolean fluidsDivisible = RecipeHelper.isFluidStackDivisibleForDistillery(input, ratio) &&
                                 RecipeHelper.isFluidStackDivisibleForDistillery(output, ratio);
 
-                        SizedFluidIngredient dividedInputFluid = input
-                                .copyWithAmount(Math.max(1, input.amount() / ratio));
-                        SizedFluidIngredient dividedOutputFluid = output
-                                .copyWithAmount(Math.max(1, output.amount() / ratio));
+                        SizedFluidIngredient dividedInputFluid = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(input, Math.max(1, input.amount() / ratio));
+                        SizedFluidIngredient dividedOutputFluid = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(output, Math.max(1, output.amount() / ratio));
 
                         if (shouldDivide && fluidsDivisible) {
                             builder.chance(inputContent.chance)

@@ -211,8 +211,7 @@ public class PortableScannerBehavior implements IInteractionItem, IAddInformatio
                 }
 
                 // Fluid tanks
-                IFluidHandler fluidHandler = tileEntity.getLevel().getCapability(Capabilities.FluidHandler.BLOCK,
-                        tileEntity.getBlockPos(), null);
+                IFluidHandler fluidHandler = com.gregtechceu.gtceu.compat.Caps.fluid(tileEntity.getLevel(), tileEntity.getBlockPos(), null);
                 if (fluidHandler != null) {
                     list.add(Component.translatable("behavior.portable_scanner.divider"));
                     boolean allTanksEmpty = true;

@@ -314,7 +314,7 @@ public class BlockPattern {
                             IItemHandler handler = null;
                             if (!player.isCreative()) {
                                 var foundHandler = getMatchStackWithHandler(candidates,
-                                        player.getCapability(Capabilities.ItemHandler.ENTITY));
+                                        com.gregtechceu.gtceu.compat.Caps.itemEntity(player));
                                 if (foundHandler != null) {
                                     foundSlot = foundHandler.firstInt();
                                     handler = foundHandler.second();
@@ -636,7 +636,7 @@ public class BlockPattern {
             if (stack.isEmpty()) continue;
 
             @Nullable
-            IItemHandler stackCap = stack.getCapability(Capabilities.ItemHandler.ITEM);
+            IItemHandler stackCap = com.gregtechceu.gtceu.compat.Caps.itemItem(stack);
             // spotless:off
             if (stackCap != null) {
                 var rt = getMatchStackWithHandler(candidates, stackCap);

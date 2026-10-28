@@ -46,7 +46,7 @@ public class FluidContainerIngredient implements ICustomIngredient {
     
     public Stream<ItemStack> getItems() {
         if (cachedStacks == null)
-            cachedStacks = Arrays.stream(this.fluid.getFluids())
+            cachedStacks = Arrays.stream(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(this.fluid))
                     .map(stack -> stack.getFluid().getBucket().getDefaultInstance())
                     .filter(s -> !s.isEmpty());
         return this.cachedStacks;

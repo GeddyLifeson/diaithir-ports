@@ -61,7 +61,7 @@ public abstract class ManagedSyncBlockEntity extends BlockEntity implements ISyn
     public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         getSyncDataHolder().deserializeNBT(registries, tag,
-                (getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide));
+                (getLevel() == null ? GTCEu.isClientThread() : getLevel().isClientSide()));
     }
 
     /**

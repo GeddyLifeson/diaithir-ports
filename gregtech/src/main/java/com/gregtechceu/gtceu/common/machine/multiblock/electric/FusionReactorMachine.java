@@ -217,8 +217,8 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
 
         if (color == -1) {
             if (!recipe.getOutputContents(FluidRecipeCapability.CAP).isEmpty()) {
-                var stack = FluidRecipeCapability.CAP
-                        .of(recipe.getOutputContents(FluidRecipeCapability.CAP).getFirst().getContent()).getFluids()[0];
+                var stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(FluidRecipeCapability.CAP
+                        .of(recipe.getOutputContents(FluidRecipeCapability.CAP).getFirst().getContent()))[0];
                 int newColor = 0xFF000000 | GTUtil.getFluidColor(stack);
                 if (!Objects.equals(color, newColor)) {
                     color = newColor;

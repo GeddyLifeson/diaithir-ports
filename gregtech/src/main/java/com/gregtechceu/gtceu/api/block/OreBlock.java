@@ -32,7 +32,7 @@ public class OreBlock extends MaterialBlock {
     @Override
     protected @NotNull InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
                                                         Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             ServerCache.instance.prospectByOreMaterial(
                     level.dimension(),
                     this.material,

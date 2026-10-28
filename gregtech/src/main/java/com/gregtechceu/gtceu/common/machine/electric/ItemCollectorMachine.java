@@ -235,7 +235,7 @@ public class ItemCollectorMachine extends TieredEnergyMachine
 
                 ItemStack remainder = fillOutput(stack);
                 if (remainder.isEmpty())
-                    itemEntity.kill();
+                    com.gregtechceu.gtceu.compat.GtCompat.kill(itemEntity);
                 else if (stack.getCount() > remainder.getCount())
                     itemEntity.setItem(remainder);
             }

@@ -720,8 +720,8 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                     .color(() -> () -> MetaMachineBlock::colorTinted)
                     .initialProperties(() -> Blocks.DISPENSER)
                     .properties(BlockBehaviour.Properties::noLootTable)
-                    .addLayer(() -> RenderType::cutout)
-                    .exBlockstate(builder.blockModel != null ? builder.blockModel : createMachineModel(builder.model))
+                    .addLayer(() -> (() -> null))
+                    
                     .properties(builder.blockProp)
                     .onRegister(b -> Arrays.stream(builder.abilities).forEach(a -> a.register(builder.tier, b)));
         }
@@ -743,11 +743,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                     .item(properties -> builder.itemFactory.apply((MetaMachineBlock) block.get(), properties))
                     .setData(ProviderType.LANG, NonNullBiConsumer.noop()) // do not gen any lang keys
                     // copied from BlockBuilder#item
-                    .model((ctx, prov) -> {
-                        prov.withExistingParent(ctx.getName(),
-                                Identifier.fromNamespaceAndPath(builder.registrate.getModid(),
-                                        "block/machine/" + ctx.getName()));
-                    })
+                    
                     .clientExtension(() -> () -> new IClientItemExtensions() {
 
                         @Override
@@ -755,7 +751,7 @@ public class MachineBuilder<DEFINITION extends MachineDefinition, TYPE extends M
                             return ItemWithBERModelRenderer.INSTANCE;
                         }
                     })
-                    .color(() -> () -> builder.itemColor::apply)
+                    
                     .properties(builder.itemProp);
         }
     }

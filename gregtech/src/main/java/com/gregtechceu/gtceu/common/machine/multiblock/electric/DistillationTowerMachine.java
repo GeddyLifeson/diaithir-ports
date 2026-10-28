@@ -130,7 +130,7 @@ public class DistillationTowerMachine extends WorkableElectricMultiblockMachine
         int maxAmount = contents.stream()
                 .map(Content::getContent)
                 .map(FluidRecipeCapability.CAP::of)
-                .filter(i -> !i.ingredient().hasNoFluids())
+                .filter(i -> !com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(i.ingredient()))
                 .mapToInt(SizedFluidIngredient::amount)
                 .max()
                 .orElse(0);
@@ -273,7 +273,7 @@ public class DistillationTowerMachine extends WorkableElectricMultiblockMachine
 
             // Distillery recipes should output to the first non-void handler
             if (recipe.recipeType == GTRecipeTypes.DISTILLERY_RECIPES) {
-                var fluid = fluids.getFirst().getFluids()[0];
+                var fluid = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(fluids.getFirst())[0];
                 var handler = getMachine().getFirstValid();
                 if (handler == null) return false;
                 int filled = (handler instanceof NotifiableFluidTank nft) ?
@@ -286,7 +286,7 @@ public class DistillationTowerMachine extends WorkableElectricMultiblockMachine
             var outputs = getMachine().getFluidOutputs();
             for (int i = 0; i < Math.min(fluids.size(), outputs.size()); ++i) {
                 var handler = outputs.get(i);
-                var fluid = fluids.get(i).getFluids()[0];
+                var fluid = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(fluids.get(i))[0];
                 int filled = (handler instanceof NotifiableFluidTank nft) ?
                         nft.fillInternal(fluid, action) :
                         handler.fill(fluid, action);

@@ -47,13 +47,13 @@ import java.util.function.Predicate;
  */
 public class FluidTransferHelper {
     public static IFluidHandler getFluidTransfer(Level level, BlockPos pos, @Nullable Direction direction) {
-        return level.getCapability(Capabilities.FluidHandler.BLOCK, pos, direction);
+        return com.gregtechceu.gtceu.compat.Caps.fluid(level, pos, direction);
     }
 
     public static IFluidHandler getFluidTransfer(IItemHandler itemTransfer, int slot) {
         var itemStack = itemTransfer.getStackInSlot(slot);
         if (!itemStack.isEmpty()) {
-            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+            return com.gregtechceu.gtceu.compat.Caps.fluidItem(itemStack);
         }
         return null;
     }
@@ -61,7 +61,7 @@ public class FluidTransferHelper {
     public static IFluidHandler getFluidTransfer(Player player, AbstractContainerMenu screenHandler) {
         var itemStack = screenHandler.getCarried();
         if (!itemStack.isEmpty()) {
-            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+            return com.gregtechceu.gtceu.compat.Caps.fluidItem(itemStack);
         }
         return null;
     }
@@ -69,7 +69,7 @@ public class FluidTransferHelper {
     public static IFluidHandler getFluidTransfer(Player player, InteractionHand hand) {
         var itemStack = player.getItemInHand(hand);
         if (!itemStack.isEmpty()) {
-            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+            return com.gregtechceu.gtceu.compat.Caps.fluidItem(itemStack);
         }
         return null;
     }
@@ -77,7 +77,7 @@ public class FluidTransferHelper {
     public static IFluidHandler getFluidTransfer(Player player, int slot) {
         var itemStack = player.getInventory().getItem(slot);
         if (!itemStack.isEmpty()) {
-            return itemStack.getCapability(Capabilities.FluidHandler.ITEM);
+            return com.gregtechceu.gtceu.compat.Caps.fluidItem(itemStack);
         }
         return null;
     }
@@ -87,7 +87,7 @@ public class FluidTransferHelper {
         if (state.hasBlockEntity()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity != null) {
-                var cap = Capabilities.FluidHandler.BLOCK.getCapability(level, pos, blockEntity.getBlockState(), blockEntity, direction);
+                var cap = com.gregtechceu.gtceu.compat.Caps.fluid(level, pos, blockEntity.getBlockState(), blockEntity, direction);
                 if (cap != null) {
                     for (int srcIndex = 0; srcIndex < source.getTanks(); srcIndex++) {
                         var currentFluid = source.getFluidInTank(srcIndex);
@@ -117,7 +117,7 @@ public class FluidTransferHelper {
         if (state.hasBlockEntity()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity != null) {
-                var handler = Capabilities.FluidHandler.BLOCK.getCapability(level, pos, blockEntity.getBlockState(), blockEntity, direction);
+                var handler = com.gregtechceu.gtceu.compat.Caps.fluid(level, pos, blockEntity.getBlockState(), blockEntity, direction);
                 if (handler != null) {
                     for (int srcIndex = 0; srcIndex < handler.getTanks(); srcIndex++) {
                         var currentFluid = handler.getFluidInTank(srcIndex);
@@ -577,7 +577,7 @@ public class FluidTransferHelper {
             return false; // Non-air, solid, unreplacable block. We can't put fluid here.
         }
 
-        if (level.dimensionType().ultraWarm() && FluidHelper.doesVaporize(resource, level, pos)) {
+        if (level.dimensionType().attributes().hasAttribute(net.minecraft.world.attribute.EnvironmentAttributes.WATER_EVAPORATES) && FluidHelper.doesVaporize(resource, level, pos)) {
             FluidStack result = fluidSource.drain(resource, IFluidHandler.FluidAction.EXECUTE);
             if (!result.isEmpty()) {
 //                result.getFluid().getAttributes().vaporize(player, level, pos, result);

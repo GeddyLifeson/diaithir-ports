@@ -142,9 +142,8 @@ public final class ResearchManager {
             Collection<ItemStack> added = new ObjectOpenHashSet<>();
             outer:
             for (GTRecipe recipe : recipes) {
-                ItemStack output = ItemRecipeCapability.CAP
-                        .of(recipe.getOutputContents(ItemRecipeCapability.CAP).getFirst().content)
-                        .getItems()[0];
+                ItemStack output = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP
+                        .of(recipe.getOutputContents(ItemRecipeCapability.CAP).getFirst().content))[0];
                 for (var item : added) {
                     if (output.is(item.getItem())) continue outer;
                 }

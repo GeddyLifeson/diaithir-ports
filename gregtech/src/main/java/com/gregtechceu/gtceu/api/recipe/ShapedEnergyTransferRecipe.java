@@ -45,7 +45,7 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
         long maxCharge = 0L;
         long charge = 0L;
         ItemStack resultStack = super.assemble(craftingContainer, provider);
-        for (ItemStack chargeStack : chargeIngredient.getItems()) {
+        for (ItemStack chargeStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(chargeIngredient)) {
             for (int i = 0; i < craftingContainer.size(); i++) {
                 if (ItemStack.isSameItem(craftingContainer.getItem(i), chargeStack)) {
                     ItemStack stack = craftingContainer.getItem(i);
@@ -67,7 +67,7 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
         long maxCharge = 0L;
         long charge = 0L;
         ItemStack resultStack = super.getResultItem(provider);
-        for (ItemStack chargeStack : chargeIngredient.getItems()) {
+        for (ItemStack chargeStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(chargeIngredient)) {
             IElectricItem electricItem = GTCapabilityHelper.getElectricItem(chargeStack);
             if (electricItem != null) {
                 maxCharge += electricItem.getMaxCharge();
@@ -80,7 +80,7 @@ public class ShapedEnergyTransferRecipe extends ShapedRecipe {
     }
 
     
-    public RecipeSerializer<? getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
         return GTRecipeSerializers.CRAFTING_SHAPED_ENERGY_TRANSFER.get();
     }
 

@@ -58,7 +58,7 @@ public class GTTransferUtils {
      * @return LazyOpt of ItemHandler of given block
      */
     public static Optional<IItemHandler> getItemHandler(Level level, BlockPos pos, @Nullable Direction side) {
-        return Optional.ofNullable(level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side));
+        return Optional.ofNullable(com.gregtechceu.gtceu.compat.Caps.item(level, pos, side));
     }
 
     // Same as getAdjacentFluidHandler, but for ItemHandler

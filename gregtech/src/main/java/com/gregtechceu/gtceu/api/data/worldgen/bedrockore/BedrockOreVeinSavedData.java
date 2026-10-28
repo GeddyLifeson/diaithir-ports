@@ -140,15 +140,15 @@ public class BedrockOreVeinSavedData extends SavedData {
         if (holder != null) {
             BedrockOreDefinition definition = holder.value();
             int radius = definition.size() / 2;
-            for (int x = pos.x - radius; x <= pos.x + radius; ++x) {
-                for (int z = pos.z - radius; z <= pos.z + radius; ++z) {
+            for (int x = pos.x() - radius; x <= pos.x() + radius; ++x) {
+                for (int z = pos.z() - radius; z <= pos.z() + radius; ++z) {
                     ChunkPos pos2 = new ChunkPos(x, z);
-                    float distanceFromOriginal = Math.abs(pos.x - x) + Math.abs(pos.z - z);
+                    float distanceFromOriginal = Math.abs(pos.x() - x) + Math.abs(pos.z() - z);
                     distanceFromOriginal = distanceFromOriginal == 0 ? 1 : distanceFromOriginal;
                     distanceFromOriginal = (float) Math.pow(distanceFromOriginal, 2);
 
                     var random = RandomSource
-                            .create(31L * 31 * pos2.x + pos2.z * 31L + Long.hashCode(serverLevel.getSeed()));
+                            .create(31L * 31 * pos2.x() + pos2.z() * 31L + Long.hashCode(serverLevel.getSeed()));
 
                     int maximumYield;
                     if ((definition.yield().getMaxValue() - definition.yield().getMinValue()) / distanceFromOriginal <=

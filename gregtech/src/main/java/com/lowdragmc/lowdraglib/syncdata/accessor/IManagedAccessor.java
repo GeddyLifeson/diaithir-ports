@@ -100,12 +100,12 @@ public class IManagedAccessor extends ReadonlyAccessor {
             var syncedFields = storage.getSyncFields();
 
             var changed = BitSet.valueOf(tag.getByteArray("c"));
-            var list = tag.getList("l", 10);
+            var list = tag.getListOrEmpty("l");
             var payloads = new ITypedPayload<?>[list.size()];
 
             for (int i = 0; i < payloads.length; i++) {
-                CompoundTag payloadTag = list.getCompound(i);
-                byte id = payloadTag.getByte("t");
+                CompoundTag payloadTag = list.getCompoundOrEmpty(i);
+                byte id = payloadTag.getByteOr("t", (byte)0);
                 var p = TypedPayloadRegistries.create(id);
                 p.deserializeNBT(payloadTag.get("d"), provider);
                 payloads[i] = p;

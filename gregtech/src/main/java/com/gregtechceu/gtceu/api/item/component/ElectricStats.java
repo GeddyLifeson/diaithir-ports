@@ -98,7 +98,7 @@ public class ElectricStats implements IInteractionItem, ISubItemHandler, IAddInf
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         var electricItem = GTCapabilityHelper.getElectricItem(stack);
-        if (!level.isClientSide && entity instanceof Player player && electricItem != null &&
+        if (!level.isClientSide() && entity instanceof Player player && electricItem != null &&
                 electricItem.canProvideChargeExternally() &&
                 isInDischargeMode(stack) && electricItem.getCharge() > 0L) {
             long transferLimit = electricItem.getTransferLimit();

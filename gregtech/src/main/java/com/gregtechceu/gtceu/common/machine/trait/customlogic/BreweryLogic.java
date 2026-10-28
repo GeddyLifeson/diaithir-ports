@@ -229,7 +229,7 @@ public enum BreweryLogic implements GTRecipeType.ICustomRecipeLogic {
         if (output != PotionContents.EMPTY) {
             name = Potion.getName(output.potion(), "");
         } else {
-            name = toFluid.getFluid().builtInRegistryHolder().key().location().getPath();
+            name = toFluid.getFluid().builtInRegistryHolder().key().identifier().getPath();
         }
 
         return GTRecipeTypes.BREWING_RECIPES.recipeBuilder("potion_forge_" + name)

@@ -115,7 +115,7 @@ public class NotifiableFluidTank extends NotifiableRecipeHandlerTrait<SizedFluid
         for (var it = left.listIterator(); it.hasNext();) {
             var ingredient = it.next();
             if (!(ingredient.ingredient() instanceof IntProviderFluidIngredient) &&
-                    ingredient.ingredient().hasNoFluids()) {
+                    com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(ingredient.ingredient())) {
                 it.remove();
                 continue;
             }
@@ -132,7 +132,7 @@ public class NotifiableFluidTank extends NotifiableRecipeHandlerTrait<SizedFluid
                     fluids = provider.getFluidStacks();
                 }
             } else {
-                fluids = ingredient.getFluids();
+                fluids = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient);
             }
             if (fluids.length == 0 || fluids[0].isEmpty()) {
                 it.remove();
@@ -162,7 +162,7 @@ public class NotifiableFluidTank extends NotifiableRecipeHandlerTrait<SizedFluid
                     }
                     amount -= filled;
 
-                    if (amount > 0) it.set(ingredient.copyWithAmount(amount));
+                    if (amount > 0) it.set(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(ingredient, amount));
                     else it.remove();
                     // Continue to next ingredient regardless of if we filled this ingredient completely
                     continue;
@@ -209,7 +209,7 @@ public class NotifiableFluidTank extends NotifiableRecipeHandlerTrait<SizedFluid
             }
             // Modify ingredient if we didn't finish it off
             if (amount > 0) {
-                it.set(ingredient.copyWithAmount(amount));
+                it.set(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(ingredient, amount));
             }
         }
 

@@ -71,7 +71,7 @@ public class TorchPlaceBehavior implements IToolBehavior<TorchPlaceBehavior> {
             if (cachedTorchSlot < 0) {
                 slotStack = player.getInventory().offhand.getFirst();
             } else {
-                slotStack = player.getInventory().items.get(cachedTorchSlot);
+                slotStack = player.getInventory().getNonEquipmentItems().get(cachedTorchSlot);
             }
             if (checkAndPlaceTorch(context, slotStack)) {
                 return InteractionResult.SUCCESS;
@@ -86,8 +86,8 @@ public class TorchPlaceBehavior implements IToolBehavior<TorchPlaceBehavior> {
                 return InteractionResult.SUCCESS;
             }
         }
-        for (int i = 0; i < player.getInventory().items.size(); i++) {
-            slotStack = player.getInventory().items.get(i);
+        for (int i = 0; i < player.getInventory().getNonEquipmentItems().size(); i++) {
+            slotStack = player.getInventory().getNonEquipmentItems().get(i);
             if (checkAndPlaceTorch(context, slotStack)) {
                 final int finalI = i;
                 stack.update(GTDataComponents.TOOL_BEHAVIORS, ToolBehaviors.EMPTY,

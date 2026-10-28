@@ -78,7 +78,7 @@ public class LocalizedHazardSavedData extends SavedData {
 
         Object2IntMap<BlockPos> zonesToSpread = new Object2IntOpenHashMap<>();
 
-        RandomSource random = serverLevel.random;
+        RandomSource random = serverLevel.getRandom();
         for (final var entry : hazardZones.entrySet()) {
             HazardZone zone = entry.getValue();
             if (zone.strength() < MIN_STRENGTH_FOR_SPREAD / 5) {

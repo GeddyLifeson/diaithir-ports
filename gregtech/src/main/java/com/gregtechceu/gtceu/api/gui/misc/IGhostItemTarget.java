@@ -52,17 +52,5 @@ public interface IGhostItemTarget extends IGhostIngredientTarget {
         }
     }
 
-    default Object convertIngredient(Object ingredient) {
-        if (GTCEu.Mods.isEMILoaded() && ingredient instanceof EmiStack itemEmiStack) {
-            Item item = itemEmiStack.getKeyOfType(Item.class);
-            ItemStack itemStack = item == null ? ItemStack.EMPTY : new ItemStack(item, (int) itemEmiStack.getAmount());
-            if (!itemStack.isEmpty()) {
-                itemStack.applyComponents(itemEmiStack.getComponentChanges());
-            }
-            ingredient = itemStack;
-        } else if (GTCEu.Mods.isJEILoaded() && ingredient instanceof ITypedIngredient<?> itemJeiStack) {
-            return itemJeiStack.getItemStack().orElse(ItemStack.EMPTY);
-        }
-        return ingredient;
-    }
+    default Object convertIngredient(Object ingredient) { return null; /* ported stub */ }
 }

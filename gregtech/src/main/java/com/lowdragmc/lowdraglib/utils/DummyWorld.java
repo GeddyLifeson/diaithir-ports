@@ -240,7 +240,7 @@ public class DummyWorld extends Level {
 
     
     public RecipeManager getRecipeManager() {
-        return getLevel().getRecipeManager();
+        return com.gregtechceu.gtceu.compat.GtCompat.recipeManager(getLevel());
     }
 
     

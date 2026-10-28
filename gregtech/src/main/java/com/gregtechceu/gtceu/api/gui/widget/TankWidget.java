@@ -225,29 +225,10 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
 
     @Nullable
     @Override
-    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) {
-        if (self().isMouseOverElement(mouseX, mouseY)) {
-            if (lastFluidInTank == null || lastFluidInTank.isEmpty()) return null;
-
-            if (fluidTank instanceof CycleFluidEntryHandler entryHandler) {
-                return getXEIIngredientsClickable(entryHandler, tank).getFirst();
-            }
-
-            return convertIngredient(lastFluidInTank);
-        }
-        return null;
-    }
+    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
 
     @Override
-    public List<Object> getXEIIngredients() {
-        if (lastFluidInTank == null || lastFluidInTank.isEmpty()) return Collections.emptyList();
-
-        if (fluidTank instanceof CycleFluidEntryHandler entryHandler) {
-            return getXEIIngredientsClickable(entryHandler, tank);
-        }
-
-        return List.of(convertIngredient(lastFluidInTank));
-    }/* ported: removed */
+    public List<Object> getXEIIngredients() { return null; /* ported stub */ }/* ported: removed */
 
     @Override
     public List<Component> getTooltipTexts() {
@@ -300,76 +281,11 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        super.drawInBackground(graphics, mouseX, mouseY, partialTicks);
-        if (isClientSideWidget && fluidTank != null) {
-            FluidStack fluidStack = fluidTank.getFluidInTank(tank);
-            int capacity = fluidTank.getTankCapacity(tank);
-            if (capacity != lastTankCapacity) {
-                this.lastTankCapacity = capacity;
-            }
-            if (!FluidStack.isSameFluidSameComponents(fluidStack, lastFluidInTank)) {
-                this.lastFluidInTank = fluidStack.copy();
-            } else if (fluidStack.getAmount() != lastFluidInTank.getAmount()) {
-                this.lastFluidInTank.setAmount(fluidStack.getAmount());
-            }
-        }
-        Position pos = getPosition();
-        Size size = getSize();
-        var renderedFluid = lastFluidInTank;
-        if (renderedFluid != null) {
-            RenderSystem.disableBlend();
-            if (!renderedFluid.isEmpty()) {
-                double progress = renderedFluid.getAmount() * 1.0 /
-                        Math.max(Math.max(renderedFluid.getAmount(), lastTankCapacity), 1);
-                float drawnU = (float) fillDirection.getDrawnU(progress);
-                float drawnV = (float) fillDirection.getDrawnV(progress);
-                float drawnWidth = (float) fillDirection.getDrawnWidth(progress);
-                float drawnHeight = (float) fillDirection.getDrawnHeight(progress);
-                int width = size.width - 2;
-                int height = size.height - 2;
-                int x = pos.x + 1;
-                int y = pos.y + 1;
-                DrawerHelper.drawFluidForGui(graphics, renderedFluid,
-                        (int) (x + drawnU * width), (int) (y + drawnV * height),
-                        ((int) (width * drawnWidth)), ((int) (height * drawnHeight)));
-            }
-
-            if (showAmount && showAmountOverlay && !renderedFluid.isEmpty()) {
-                graphics.pose().pushPose();
-                graphics.pose().scale(0.5F, 0.5F, 1);
-                String s = TextFormattingUtil.formatLongToCompactStringBuckets(renderedFluid.getAmount(), 3) + "B";
-                Font fontRenderer = Minecraft.getInstance().font;
-                graphics.drawString(fontRenderer, s,
-                        (int) ((pos.x + (size.width / 3f)) * 2 - fontRenderer.width(s) + 21),
-                        (int) ((pos.y + (size.height / 3f) + 6) * 2), 0xFFFFFF, true);
-                graphics.pose().popPose();
-            }
-
-            RenderSystem.enableBlend();
-            RenderSystem.setShaderColor(1, 1, 1, 1);
-        }
-        drawOverlay(graphics, mouseX, mouseY, partialTicks);
-        if (drawHoverOverlay && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
-            RenderSystem.colorMask(true, true, true, false);
-            DrawerHelper.drawSolidRect(graphics, getPosition().x + 1, getPosition().y + 1, getSize().width - 2,
-                    getSize().height - 2, 0x80FFFFFF);
-            RenderSystem.colorMask(true, true, true, true);
-        }
-    }
+    public void drawInBackground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
-        if (drawHoverTips && isMouseOverElement(mouseX, mouseY) && getHoverElement(mouseX, mouseY) == this) {
-            if (gui != null) {
-                gui.getModularUIGui().setHoverTooltip(getFullTooltipTexts(), ItemStack.EMPTY, null, null);
-            }
-            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1f);
-        } else {
-            super.drawInForeground(graphics, mouseX, mouseY, partialTicks);
-        }
-    }
+    public void drawInForeground(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {  /* ported stub */ }
 
     @Override
     public void detectAndSendChanges() {
@@ -594,23 +510,16 @@ public class TankWidget extends Widget implements IRecipeIngredientSlot, IConfig
      */
     public static final class JEICallWrapper {/* ported: removed */
 
-        public static Object getJEIFluidClickable(FluidStack fluidStack, Position pos, Size size) {
-            return _getJEIFluidClickable(JEIPlugin.jeiHelpers.getPlatformFluidHelper(), fluidStack, pos,
-                    size);
-        }/* ported: removed */
+        public static Object getJEIFluidClickable(FluidStack fluidStack, Position pos, Size size) { return null; /* ported stub */ }/* ported: removed */
     }
 
     public static final class REICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
-        public static Object getREIIngredient(FluidStack fluidStack) {
-            return EntryStacks.of(REICallWrapper.toREIStack(fluidStack));
-        }
+        public static Object getREIIngredient(FluidStack fluidStack) { return null; /* ported stub */ }
     }
 
     public static final class EMICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
-        public static Object getEMIIngredient(FluidStack fluidStack, float xeiChance) {
-            return NeoForgeEmiStack.of(fluidStack).setChance(xeiChance);
-        }
+        public static Object getEMIIngredient(FluidStack fluidStack, float xeiChance) { return null; /* ported stub */ }
     }
 }

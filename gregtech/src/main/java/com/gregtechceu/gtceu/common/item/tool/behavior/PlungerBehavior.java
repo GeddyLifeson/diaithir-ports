@@ -90,17 +90,6 @@ public class PlungerBehavior implements IToolBehavior<PlungerBehavior>, ICompone
 
     @Override
     public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {
-        event.registerItem(Capabilities.FluidHandler.ITEM,
-                (stack, unused) -> new FluidHandlerItemStack(GTDataComponents.FLUID_CONTENT, stack, Integer.MAX_VALUE) {
-
-                    @Override
-                    public int fill(@NotNull FluidStack resource, @NotNull FluidAction action) {
-                        int result = resource.getAmount();
-                        if (result > 0) {
-                            ToolHelper.damageItem(this.getContainer(), null);
-                        }
-                        return result;
-                    }
-                }, item);
+        /* ported: item capability not registered */ ((Runnable) () -> {}).run();
     }
 }

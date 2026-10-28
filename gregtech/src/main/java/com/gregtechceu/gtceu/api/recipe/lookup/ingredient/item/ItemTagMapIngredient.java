@@ -34,7 +34,7 @@ public class ItemTagMapIngredient extends AbstractMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(ItemStack stack) {
         List<AbstractMapIngredient> ingredients = new ObjectArrayList<>();
-        stack.getTags().forEach(tag -> ingredients.add(new ItemTagMapIngredient(tag)));
+        stack.entityTags().forEach(tag -> ingredients.add(new ItemTagMapIngredient(tag)));
         return ingredients;
     }
 

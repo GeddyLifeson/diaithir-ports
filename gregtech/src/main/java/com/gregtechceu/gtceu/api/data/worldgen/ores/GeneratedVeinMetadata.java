@@ -55,7 +55,7 @@ public final class GeneratedVeinMetadata {
     }
 
     public static GeneratedVeinMetadata readFromPacket(RegistryFriendlyByteBuf buf) {
-        ChunkPos origin = new ChunkPos(buf.readVarLong());
+        ChunkPos origin = net.minecraft.world.level.ChunkPos.containing(buf.readVarLong());
         BlockPos center = BlockPos.of(buf.readVarLong());
         Holder<GTOreDefinition> def = GTOreDefinition.STREAM_CODEC.decode(buf);
         return new GeneratedVeinMetadata(origin, center, def, false);

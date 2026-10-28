@@ -467,19 +467,19 @@ public class MetaMachineBlock extends Block implements EntityBlock {
             }
             return null;
         }, this);
-        event.registerBlock(Capabilities.ItemHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+        event.registerBlock(Capabilities.Item.BLOCK, com.gregtechceu.gtceu.compat.Caps.wrapItem((level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof MetaMachine machine) {
                 return machine.getItemHandlerCap(side, true);
             }
             return null;
-        }, this);
-        event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+        }), this);
+        event.registerBlock(Capabilities.Fluid.BLOCK, com.gregtechceu.gtceu.compat.Caps.wrapFluid((level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof MetaMachine machine) {
                 return machine.getFluidHandlerCap(side, true);
             }
             return null;
-        }, this);
-        event.registerBlock(Capabilities.EnergyStorage.BLOCK, (level, pos, state, blockEntity, side) -> {
+        }), this);
+        event.registerBlock(Capabilities.Energy.BLOCK, com.gregtechceu.gtceu.compat.Caps.wrapEnergy((level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof MetaMachine machine) {
                 if (machine instanceof IEnergyStorage energyStorage) {
                     return energyStorage;
@@ -491,7 +491,7 @@ public class MetaMachineBlock extends Block implements EntityBlock {
                 }
             }
             return null;
-        }, this);
+        }), this);
         event.registerBlock(GTCapability.CAPABILITY_LASER, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof MetaMachine machine) {
                 if (machine instanceof ILaserContainer laserContainer) {

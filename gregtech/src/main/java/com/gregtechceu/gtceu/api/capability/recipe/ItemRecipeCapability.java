@@ -72,11 +72,11 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
 
     @Override
     public SizedIngredient copyWithModifier(SizedIngredient content, ContentModifier modifier) {
-        if (content.getContainedCustom() instanceof IntProviderIngredient provider) {
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(content) instanceof IntProviderIngredient provider) {
             return new SizedIngredient(IntProviderIngredient.of(provider.getInner(),
                     ModifiedIntProvider.of(provider.getCountProvider(), modifier)).toVanilla(), content.count());
         }
-        return content.copyWithCount(modifier.apply(content.count()));
+        return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithCount(content, modifier.apply(content.count()));
     }
 
     public IntProviderIngredient copyWithModifier(IntProviderIngredient content, ContentModifier modifier) {
@@ -105,9 +105,9 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                 }
                 if (isEqual) continue;
                 // spotless:off
-                if (ingredient.getContainedCustom() instanceof IntCircuitIngredient) {
+                if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ingredient) instanceof IntCircuitIngredient) {
                     list.addFirst(ingredient);
-                } else if (ingredient.getContainedCustom() instanceof IntProviderIngredient intProvider &&
+                } else if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ingredient) instanceof IntProviderIngredient intProvider &&
                         intProvider.getInner().getCustomIngredient() instanceof IntCircuitIngredient) {
                     list.addFirst(ingredient);
                 } else {
@@ -172,7 +172,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
             var ing = of(content.content);
 
             int count;
-            if (ing.getContainedCustom() instanceof IntProviderIngredient provider) {
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ing) instanceof IntProviderIngredient provider) {
                 count = provider.getCountProvider().getMaxValue();
             } else {
                 count = ing.count();
@@ -224,10 +224,10 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
         var consumables = new Object2LongOpenHashMap<SizedIngredient>();
         for (Content content : inputs) {
             SizedIngredient ing = of(content.content);
-            if (ing.getContainedCustom() instanceof IntCircuitIngredient) continue;
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ing) instanceof IntCircuitIngredient) continue;
 
             int count;
-            if (ing.getContainedCustom() instanceof IntProviderIngredient provider)
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ing) instanceof IntProviderIngredient provider)
                 count = provider.getCountProvider().getMaxValue();
             else count = ing.count();
 
@@ -236,7 +236,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
             } else {
                 boolean has = false;
                 for (var recipeIng : consumables.object2LongEntrySet()) {
-                    var stack = ing.getItems()[0];
+                    var stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ing)[0];
                     if (recipeIng.getKey().test(stack)) {
                         recipeIng.setValue(recipeIng.getLongValue() + stack.getCount());
                         has = true;
@@ -376,7 +376,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
             // Scanner Output replacing, used for cycling research outputs
             ResearchManager.ResearchItem researchData = null;
             for (Content stack : recipe.getOutputContents(this)) {
-                ItemStack[] stacks = this.of(stack.content).getItems();
+                ItemStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.of(stack.content));
                 if (stacks.length == 0 || stacks[0].isEmpty()) continue;
 
                 researchData = stacks[0].get(GTDataComponents.RESEARCH_ITEM);
@@ -392,7 +392,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                         if (outputs.isEmpty()) continue;
 
                         Content outputContent = outputs.get(0);
-                        ItemStack[] stacks = this.of(outputContent.content).getItems();
+                        ItemStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.of(outputContent.content));
                         if (stacks.length == 0) continue;
 
                         ItemStack researchStack = stacks[0];
@@ -482,13 +482,13 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                             recipe.getChanceLogicForCapability(this, io, isTickSlot(index, io, recipe)),
                             tooltips, recipeTier, chanceTier, recipeType.getChanceFunction());
                     // spotless:off
-                    if (this.of(content.content).getContainedCustom() instanceof IntProviderIngredient ingredient) {
+                    if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(this.of(content.content)) instanceof IntProviderIngredient ingredient) {
                         IntProvider countProvider = ingredient.getCountProvider();
                         tooltips.add(Component.translatable("gtceu.gui.content.count_range",
                                         countProvider.getMinValue(), countProvider.getMaxValue())
                                 .withStyle(ChatFormatting.GOLD));
                     } else if (this.of(content.content) instanceof SizedIngredient sizedIngredient &&
-                            sizedIngredient.getContainedCustom() instanceof IntProviderIngredient ingredient) {
+                            com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(sizedIngredient) instanceof IntProviderIngredient ingredient) {
                         IntProvider countProvider = ingredient.getCountProvider();
                         tooltips.add(Component.translatable("gtceu.gui.content.count_range",
                                         countProvider.getMinValue(), countProvider.getMaxValue())
@@ -500,7 +500,7 @@ public class ItemRecipeCapability extends RecipeCapability<SizedIngredient> {
                     }
                 });
                 if (io == IO.IN && (content.chance == 0 ||
-                        this.of(content.content).getContainedCustom() instanceof IntCircuitIngredient)) {
+                        com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(this.of(content.content)) instanceof IntCircuitIngredient)) {
                     slot.setIngredientIO(IngredientIO.CATALYST);
                 }
             }

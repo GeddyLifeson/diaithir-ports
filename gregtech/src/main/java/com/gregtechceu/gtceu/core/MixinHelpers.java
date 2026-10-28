@@ -312,7 +312,7 @@ public class MixinHelpers {
                                              final RegistryAccess.Frozen access) {
         final VanillaBlockLoot blockLoot = new VanillaBlockLoot(access);
 
-        Holder<Enchantment> fortune = access.registryOrThrow(Registries.ENCHANTMENT)
+        Holder<Enchantment> fortune = access.lookupOrThrow(Registries.ENCHANTMENT)
                 .getHolderOrThrow(Enchantments.FORTUNE);
         GTMaterialBlocks.MATERIAL_BLOCKS.rowMap().forEach((prefix, map) -> {
             if (TagPrefix.ORES.containsKey(prefix)) {

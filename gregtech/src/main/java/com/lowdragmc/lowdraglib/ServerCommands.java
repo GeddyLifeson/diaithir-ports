@@ -50,8 +50,7 @@ public class ServerCommands {
 												context.getSource().sendSuccess(() -> Component
 														.literal("[Copy to clipboard]")
 														.withStyle(Style.EMPTY.withColor(ChatFormatting.YELLOW)
-																.withClickEvent(new ClickEvent(
-																		ClickEvent.Action.COPY_TO_CLIPBOARD, value)))
+																.withClickEvent(new ClickEvent.CopyToClipboard(value)))
 														.append(NbtUtils.toPrettyComponent(tag)), true);
 											} else {
 												context.getSource().sendSuccess(
@@ -70,8 +69,7 @@ public class ServerCommands {
 											context.getSource().sendSuccess(() -> Component
 													.literal("[Copy to clipboard]")
 													.withStyle(Style.EMPTY.withColor(ChatFormatting.YELLOW)
-															.withClickEvent(new ClickEvent(
-																	ClickEvent.Action.COPY_TO_CLIPBOARD, value)))
+															.withClickEvent(new ClickEvent.CopyToClipboard(value)))
 													.append(NbtUtils.toPrettyComponent(tag)), true);
 											return 1;
 										}))),
@@ -147,9 +145,7 @@ public class ServerCommands {
 		context.getSource().sendSuccess(() -> Component
 				.literal("[Copy XML to clipboard]")
 				.withStyle(Style.EMPTY.withColor(ChatFormatting.YELLOW)
-						.withClickEvent(new ClickEvent(
-								ClickEvent.Action.COPY_TO_CLIPBOARD,
-								text))),
+						.withClickEvent(new ClickEvent.CopyToClipboard(text))),
 				true);
 
 		return 1;

@@ -32,7 +32,7 @@ public class SerializerFluidIngredient implements IContentSerializer<SizedFluidI
     @Override
     public SizedFluidIngredient of(Object o) {
         if (o instanceof SizedFluidIngredient ingredient) {
-            return ingredient.copy();
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(ingredient);
         }
         if (o instanceof FluidStack stack) {
             return SizedFluidIngredient.of(stack.copy());

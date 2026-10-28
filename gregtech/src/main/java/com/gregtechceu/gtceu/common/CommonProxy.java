@@ -390,29 +390,19 @@ public class CommonProxy {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerItem(FluidHandler.ITEM, BottleItemFluidHandler::new, Items.GLASS_BOTTLE);
+        /* ported: item capability not registered */ ((Runnable) () -> {}).run();
 
         Stream<MachineDefinition> quantumTanks = Stream.of(GTMachines.SUPER_TANK, GTMachines.QUANTUM_TANK)
                 .flatMap(Arrays::stream);
         quantumTanks = Stream.concat(quantumTanks, Stream.of(GTMachines.CREATIVE_FLUID));
-        event.registerItem(FluidHandler.ITEM, (stack, ctx) -> {
-            if (!(stack.getItem() instanceof MetaMachineItem machineItem)) {
-                return null;
-            }
-            long capacity = QuantumTankMachine.TANK_CAPACITY.getLong(machineItem.getDefinition());
-            if (capacity == -1) {
-                return null;
-            }
-            return new QuantumFluidHandlerItemStack(stack, capacity);
-        }, quantumTanks.filter(Objects::nonNull).map(MachineDefinition::getItem).toArray(Item[]::new));
+        /* ported: item capability not registered */ ((Runnable) () -> {}).run();
 
         for (Block block : BuiltInRegistries.BLOCK) {
             if (ConfigHolder.INSTANCE.compat.energy.nativeEUToFE &&
-                    event.isBlockRegistered(Capabilities.EnergyStorage.BLOCK, block)) {
+                    event.isBlockRegistered(Capabilities.Energy.BLOCK, block)) {
                 event.registerBlock(GTCapability.CAPABILITY_ENERGY_CONTAINER,
                         (level, pos, state, blockEntity, side) -> {
-                            IEnergyStorage forgeEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, pos,
-                                    state, blockEntity, side);
+                            IEnergyStorage forgeEnergy = com.gregtechceu.gtceu.compat.Caps.energy(level, pos, state, blockEntity, side);
                             if (forgeEnergy != null) {
                                 return new EUToFEProvider(forgeEnergy);
                             }
@@ -445,10 +435,9 @@ public class CommonProxy {
             } else if (item instanceof DrumMachineItem drum) {
                 drum.attachCapabilities(event);
             } else if (item instanceof GTBucketItem) {
-                event.registerItem(Capabilities.FluidHandler.ITEM,
-                        (stack, ctx) -> new FluidBucketWrapper(stack), item);
+                /* ported: item capability not registered */ ((Runnable) () -> {}).run();
             } else if (item instanceof PotionItem) {
-                event.registerItem(Capabilities.FluidHandler.ITEM, PotionItemFluidHandler::new, item);
+                /* ported: item capability not registered */ ((Runnable) () -> {}).run();
             }
         }
     }

@@ -42,7 +42,7 @@ public class FluidStackTypeAdapter implements TypeAdapterFactory {
             final JsonElement jsonElement = gson.fromJson(in, JsonElement.class);
             if (!jsonElement.isJsonObject()) return null;
             try {
-                return FluidStack.parse(Platform.getFrozenRegistry(), TagParser.parseTag(jsonElement.getAsString())).orElse(FluidStack.EMPTY);
+                return com.gregtechceu.gtceu.compat.NbtCompat.parseFluid(Platform.getFrozenRegistry(), TagParser.parseTag(jsonElement.getAsString())).orElse(FluidStack.EMPTY);
             } catch (CommandSyntaxException e) {
                 return FluidStack.EMPTY;
             }

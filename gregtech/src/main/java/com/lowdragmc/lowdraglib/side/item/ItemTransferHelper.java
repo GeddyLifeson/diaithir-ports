@@ -23,14 +23,14 @@ import java.util.function.Predicate;
  */
 public class ItemTransferHelper {
     public static IItemHandler getItemTransfer(Level level, BlockPos pos, @Nullable Direction direction) {
-        return level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
+        return com.gregtechceu.gtceu.compat.Caps.item(level, pos, direction);
     }
 
     public static void exportToTarget(IItemHandler source, int maxAmount, Predicate<ItemStack> predicate, Level level, BlockPos pos, @Nullable Direction direction) {
         if (level.getBlockState(pos).hasBlockEntity()) {
             var blockEntity = level.getBlockEntity(pos);
             if (blockEntity != null) {
-                var cap = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
+                var cap = com.gregtechceu.gtceu.compat.Caps.item(level, pos, direction);
                 if (cap != null) {
                     for (int srcIndex = 0; srcIndex < source.getSlots(); srcIndex++) {
                         ItemStack sourceStack = source.extractItem(srcIndex, Integer.MAX_VALUE, true);
@@ -55,7 +55,7 @@ public class ItemTransferHelper {
         if (level.getBlockState(pos).hasBlockEntity()) {
             var blockEntity = level.getBlockEntity(pos);
             if (blockEntity != null) {
-                var cap = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, direction);
+                var cap = com.gregtechceu.gtceu.compat.Caps.item(level, pos, direction);
                 if (cap != null) {
                     for (int srcIndex = 0; srcIndex < cap.getSlots(); srcIndex++) {
                         ItemStack sourceStack = cap.extractItem(srcIndex, Integer.MAX_VALUE, true);

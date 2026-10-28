@@ -222,7 +222,7 @@ public abstract class PipeBlockEntity<PipeType extends Enum<PipeType> & IPipeTyp
         if (getLevel() == null) {
             return;
         }
-        if (!getLevel().isClientSide) {
+        if (!getLevel().isClientSide()) {
             if (isConnected(side) == connected) {
                 return;
             }

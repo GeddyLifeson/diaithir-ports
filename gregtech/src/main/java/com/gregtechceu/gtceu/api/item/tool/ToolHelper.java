@@ -379,13 +379,13 @@ public class ToolHelper {
                     if (prefix.isEmpty()) {
                         for (Content output : hammerRecipe.getOutputContents(ItemRecipeCapability.CAP)) {
                             if (dropChance >= 1.0F || random.nextFloat() <= dropChance) {
-                                drops.add(ItemRecipeCapability.CAP.of(output.content).copy().getItems()[0]);
+                                drops.add(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(ItemRecipeCapability.CAP.of(output.content)).getItems()[0]);
                             }
                         }
                     } else if (TagPrefix.ORES.containsKey(prefix)) {
                         for (Content content : hammerRecipe.getOutputContents(ItemRecipeCapability.CAP)) {
                             if (dropChance >= 1.0F || random.nextFloat() <= dropChance) {
-                                ItemStack output = ItemRecipeCapability.CAP.of(content.content).getItems()[0];
+                                ItemStack output = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP.of(content.content))[0];
                                 // Only apply fortune on ore -> crushed forge hammer recipes
                                 if (ChemicalHelper.getPrefix(output.getItem()) == TagPrefix.crushed) {
                                     output = output.copy();
@@ -578,7 +578,7 @@ public class ToolHelper {
         if (stack.getItem() instanceof IGTTool) {
             damage = ((IGTTool) stack.getItem()).getToolStats().getToolDamagePerCraft(stack);
         } else {
-            if (stack.getTags().anyMatch(s -> s.location().getPath().startsWith("tool") ||
+            if (stack.entityTags().anyMatch(s -> s.location().getPath().startsWith("tool") ||
                     s.location().getPath().startsWith("crafting_tool"))) {
                 damage = 1;
             }

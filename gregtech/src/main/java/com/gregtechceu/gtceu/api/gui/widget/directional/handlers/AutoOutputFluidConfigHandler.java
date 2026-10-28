@@ -43,41 +43,7 @@ public class AutoOutputFluidConfigHandler implements IDirectionalConfigHandler {
     }
 
     @Override
-    public Widget getSideSelectorWidget(SceneWidget scene, FancyMachineUIWidget machineUI) {
-        WidgetGroup group = new WidgetGroup(0, 0, (18 * 2) + 1, 18);
-
-        group.addWidget(ioModeButton = new ButtonWidget(0, 0, 18, 18, this::onIOModePressed) {
-
-            @Override
-            public void updateScreen() {
-                super.updateScreen();
-                if (side == null) {
-                    setButtonTexture(TEXTURE_OFF);
-                    setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.fluid_auto_output.unselected")
-                            .toArray(Component[]::new));
-                } else if (trait.getFluidOutputDirection() == side) {
-                    if (trait.isAutoOutputFluids()) {
-                        setButtonTexture(TEXTURE_AUTO);
-                        setHoverTooltips("gtceu.gui.fluid_auto_output.enabled");
-                    } else {
-                        setButtonTexture(TEXTURE_OUTPUT);
-                        setHoverTooltips("gtceu.gui.fluid_auto_output.disabled");
-                    }
-                } else {
-                    setButtonTexture(TEXTURE_OFF);
-                    setHoverTooltips(LangHandler.getMultiLang("gtceu.gui.fluid_auto_output.other_direction")
-                            .toArray(Component[]::new));
-                }
-            }
-        });
-
-        group.addWidget(new ToggleButtonWidget(
-                19, 0, 18, 18, GuiTextures.BUTTON_FLUID_OUTPUT,
-                trait::allowsFluidInputFromOutputSide, trait::setAllowFluidInputFromOutputSide)
-                .setShouldUseBaseBackground().setTooltipText("gtceu.gui.fluid_auto_output.allow_input"));
-
-        return group;
-    }
+    public Widget getSideSelectorWidget(SceneWidget scene, FancyMachineUIWidget machineUI) { return null; /* ported stub */ }
 
     private void onIOModePressed(ClickData cd) {
         if (this.side == null)

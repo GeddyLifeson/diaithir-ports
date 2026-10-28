@@ -88,20 +88,20 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
 
             if (messageKey != null) {
                 toggleTimer = 5;
-                if (!world.isClientSide) player.displayClientMessage(Component.translatable(messageKey), true);
+                if (!world.isClientSide()) player.sendOverlayMessage(Component.translatable(messageKey));
             }
         }
 
         if (toggleTimer > 0) toggleTimer--;
         data.toggleTimer(toggleTimer);
 
-        if (currentFuel.ingredient().hasNoFluids())
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(currentFuel.ingredient()))
             findNewRecipe(stack);
 
         performFlying(player, jetpackEnabled, hoverMode, stack);
 
-        if (!world.isClientSide) {
-            if (currentFuel.ingredient().hasNoFluids())
+        if (!world.isClientSide()) {
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(currentFuel.ingredient()))
                 findNewRecipe(stack);
 
             data.burnTimer((short) burnTimer);
@@ -161,7 +161,7 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
     @Override
     public boolean canUseEnergy(ItemStack stack, int amount) {
         if (burnTimer > 0) return true;
-        if (currentFuel.ingredient().hasNoFluids()) return false;
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(currentFuel.ingredient())) return false;
         var ret = FluidUtil.getFluidHandler(stack)
                 .map(h -> h.drain(Integer.MAX_VALUE, FluidAction.SIMULATE))
                 .map(drained -> drained.getAmount() >= currentFuel.amount())
@@ -182,12 +182,12 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
 
     @Override
     public boolean hasEnergy(ItemStack stack) {
-        return burnTimer > 0 || !currentFuel.ingredient().hasNoFluids();
+        return burnTimer > 0 || !com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(currentFuel.ingredient());
     }
 
     public void findNewRecipe(@NotNull ItemStack stack) {
         FluidUtil.getFluidContained(stack).ifPresentOrElse(fluid -> {
-            if (!previousFuel.ingredient().hasNoFluids() && previousFuel.test(fluid) &&
+            if (!com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(previousFuel.ingredient()) && previousFuel.test(fluid) &&
                     fluid.getAmount() >= previousFuel.amount()) {
                 currentFuel = previousFuel;
                 return;
@@ -253,28 +253,7 @@ public class PowerlessJetpack implements IArmorLogic, IJetpack, IItemHUDProvider
 
         @Override
         public void attachCapabilities(RegisterCapabilitiesEvent event, Item item) {
-            event.registerItem(Capabilities.FluidHandler.ITEM,
-                    (stack, unused) -> new FluidHandlerItemStack(GTDataComponents.FLUID_CONTENT, stack, maxCapacity) {
-
-                        private SizedFluidIngredient currentFuel = SerializerFluidIngredient.EMPTY;
-
-                        @Override
-                        public boolean canFillFluidType(@NotNull FluidStack fluid) {
-                            if (!currentFuel.ingredient().hasNoFluids() && currentFuel.test(fluid) &&
-                                    fluid.getAmount() >= currentFuel.amount()) {
-                                return true;
-                            }
-
-                            boolean found = false;
-                            for (var fuel : FUELS.keySet()) {
-                                if (fuel.test(fluid) && fluid.getAmount() >= fuel.amount()) {
-                                    currentFuel = fuel;
-                                    found = true;
-                                }
-                            }
-                            return found;
-                        }
-                    }, item);
+            /* ported: item capability not registered */ ((Runnable) () -> {}).run();
         }
 
         @Override

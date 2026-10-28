@@ -40,8 +40,8 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
     }
 
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlock(Capabilities.ItemHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
-            if (level.isClientSide) return null;
+        event.registerBlock(Capabilities.Item.BLOCK, com.gregtechceu.gtceu.compat.Caps.wrapItem((level, pos, state, blockEntity, side) -> {
+            if (level.isClientSide()) return null;
             if (blockEntity instanceof ItemPipeBlockEntity itemPipeBlockEntity) {
                 if (side != null && itemPipeBlockEntity.isConnected(side)) {
                     itemPipeBlockEntity.ensureHandlersInitialized();
@@ -50,7 +50,7 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
                 }
             }
             return null;
-        }, this);
+        }), this);
         event.registerBlock(GTCapability.CAPABILITY_COVERABLE, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof PipeBlockEntity<?, ?> fluidPipeBlockEntity) {
                 return fluidPipeBlockEntity.getCoverContainer();
@@ -105,6 +105,6 @@ public class ItemPipeBlock extends MaterialPipeBlock<ItemPipeType, ItemPipePrope
     @Override
     public boolean canPipeConnectToBlock(IPipeNode<ItemPipeType, ItemPipeProperties> selfTile, Direction side,
                                          Level level, BlockPos pos) {
-        return level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side.getOpposite()) != null;
+        return com.gregtechceu.gtceu.compat.Caps.item(level, pos, side.getOpposite()) != null;
     }
 }

@@ -193,8 +193,8 @@ public class XmlUtils {
 
     public static ItemStack getItemStack(Element element) {
         var ingredient = getIngredient(element);
-        if (ingredient.ingredient.getItems().length > 0) {
-            var stack = ingredient.ingredient.getItems()[0];
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient.ingredient).length > 0) {
+            var stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient.ingredient)[0];
             stack.setCount(ingredient.count);
             return stack;
         }
@@ -246,7 +246,7 @@ public class XmlUtils {
         int count = getAsInt(element, "count", 1);
         var ingredient = new SizedIngredient(Ingredient.EMPTY, 0);
         if (element.hasAttribute("item")) {
-            Item item = BuiltInRegistries.ITEM.get(Identifier.parse(element.getAttribute("item")));
+            Item item = BuiltInRegistries.ITEM.getValue(Identifier.parse(element.getAttribute("item")));
             if (item != Items.AIR) {
                 ItemStack itemStack = new ItemStack(item, count);
                 NodeList nodeList = element.getChildNodes();
@@ -296,7 +296,7 @@ public class XmlUtils {
     public static BlockInfo getBlockInfo(Element element) {
         BlockInfo blockInfo = BlockInfo.EMPTY;
         if (element.hasAttribute("block")) {
-            Block block = BuiltInRegistries.BLOCK.get(Identifier.parse(element.getAttribute("block")));
+            Block block = BuiltInRegistries.BLOCK.getValue(Identifier.parse(element.getAttribute("block")));
             if (block != Blocks.AIR) {
                 var blockState = block.defaultBlockState();
                 val nodeList = element.getChildNodes();
@@ -427,13 +427,13 @@ public class XmlUtils {
                             newStyle = newStyle.withObfuscated(getAsBoolean(nodeElement, "obfuscated", true));
                         }
                         if (nodeElement.hasAttribute("hover-info")) {
-                            newStyle = newStyle.withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Component.translatable(nodeElement.getAttribute("hover-info"))));
+                            newStyle = newStyle.withHoverEvent(new HoverEvent.ShowText(Component.translatable(nodeElement.getAttribute("hover-info"))));
                         }
                         if (nodeElement.hasAttribute("link")) {
-                            newStyle = newStyle.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@!" + nodeElement.getAttribute("link")));
+                            newStyle = newStyle.withClickEvent(new ClickEvent.OpenUrl(java.net.URI.create("@!" + nodeElement.getAttribute("link"))));
                         }
                         if (nodeElement.hasAttribute("url-link")) {
-                            newStyle = newStyle.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "@#" + nodeElement.getAttribute("url-link")));
+                            newStyle = newStyle.withClickEvent(new ClickEvent.OpenUrl(java.net.URI.create("@#" + nodeElement.getAttribute("url-link"))));
                         }
                         var components = getComponents(nodeElement, newStyle);
                         for (int j = 0; j < components.size(); j++) {

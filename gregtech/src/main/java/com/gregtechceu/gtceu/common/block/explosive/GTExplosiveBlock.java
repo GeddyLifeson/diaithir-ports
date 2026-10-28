@@ -85,9 +85,9 @@ public abstract class GTExplosiveBlock extends Block {
 
     
     public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             GTExplosiveEntity entity = createEntity(level, pos, explosion.getIndirectSourceEntity());
-            entity.setFuse(level.random.nextInt(fuseLength / 4) + fuseLength / 8);
+            entity.setFuse(level.getRandom().nextInt(fuseLength / 4) + fuseLength / 8);
             level.addFreshEntity(entity);
         }
     }
@@ -119,7 +119,7 @@ public abstract class GTExplosiveBlock extends Block {
     
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         super.entityInside(state, level, pos, entity);
-        if (!level.isClientSide && entity instanceof Arrow arrow) {
+        if (!level.isClientSide() && entity instanceof Arrow arrow) {
             if (arrow.isOnFire()) {
                 this.explode(level, pos, arrow.getOwner() instanceof LivingEntity living ? living : null);
                 level.removeBlock(pos, false);

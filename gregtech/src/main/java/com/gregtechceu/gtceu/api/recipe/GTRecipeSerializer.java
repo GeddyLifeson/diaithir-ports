@@ -83,14 +83,14 @@ public class GTRecipeSerializer {
     }
 
     public static Tuple<RecipeCapability<?>, List<Content>> entryReader(RegistryFriendlyByteBuf buf) {
-        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readResourceLocation());
+        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readIdentifier());
         List<Content> contents = readCollection(buf, capability.serializer::fromNetworkContent);
         return new Tuple<>(capability, contents);
     }
 
     public static Tuple<RecipeCapability<?>, ChanceLogic> changeLogicEntryReader(RegistryFriendlyByteBuf buf) {
-        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readResourceLocation());
-        ChanceLogic logic = GTRegistries.CHANCE_LOGICS.get(buf.readResourceLocation());
+        RecipeCapability<?> capability = GTRegistries.RECIPE_CAPABILITIES.get(buf.readIdentifier());
+        ChanceLogic logic = GTRegistries.CHANCE_LOGICS.get(buf.readIdentifier());
         return new Tuple<>(capability, logic);
     }
 
@@ -124,8 +124,8 @@ public class GTRecipeSerializer {
 
     @NotNull
     public static GTRecipe fromNetwork(@NotNull RegistryFriendlyByteBuf buf) {
-        Identifier recipeType = buf.readResourceLocation();
-        Identifier id = buf.readResourceLocation();
+        Identifier recipeType = buf.readIdentifier();
+        Identifier id = buf.readIdentifier();
         int duration = buf.readVarInt();
         Map<RecipeCapability<?>, List<Content>> inputs = tuplesToMap(
                 readCollection(buf, GTRecipeSerializer::entryReader));
@@ -156,9 +156,9 @@ public class GTRecipeSerializer {
             data = new CompoundTag();
         }
         int groupColor = buf.readInt();
-        Identifier categoryLoc = buf.readResourceLocation();
+        Identifier categoryLoc = buf.readIdentifier();
 
-        GTRecipeType type = (GTRecipeType) BuiltInRegistries.RECIPE_TYPE.get(recipeType);
+        GTRecipeType type = (GTRecipeType) BuiltInRegistries.RECIPE_TYPE.getValue(recipeType);
         GTRecipeCategory category = GTRegistries.RECIPE_CATEGORIES.get(categoryLoc);
 
         GTRecipe recipe = new GTRecipe(type, id,

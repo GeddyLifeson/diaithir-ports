@@ -52,14 +52,14 @@ public class FluidPipeBlock extends MaterialPipeBlock<FluidPipeType, FluidPipePr
     }
 
     public void attachCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, state, blockEntity, side) -> {
+        event.registerBlock(Capabilities.Fluid.BLOCK, com.gregtechceu.gtceu.compat.Caps.wrapFluid((level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof FluidPipeBlockEntity fluidPipeBlockEntity) {
                 if (side != null && fluidPipeBlockEntity.isConnected(side)) {
                     return fluidPipeBlockEntity.getTankList(side);
                 }
             }
             return null;
-        }, this);
+        }), this);
         event.registerBlock(GTCapability.CAPABILITY_COVERABLE, (level, pos, state, blockEntity, side) -> {
             if (blockEntity instanceof PipeBlockEntity<?, ?> pipe) {
                 return pipe.getCoverContainer();

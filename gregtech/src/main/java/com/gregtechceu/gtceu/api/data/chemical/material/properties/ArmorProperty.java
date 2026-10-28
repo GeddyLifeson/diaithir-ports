@@ -103,7 +103,7 @@ public class ArmorProperty implements IMaterialProperty {
         }
 
         if (this.layers == null) {
-            this.layers = List.of(new ArmorMaterial.Layer(this.textureName, "", this.dyeable));
+            this.layers = List.of(new ArmorLayer(this.textureName, "", this.dyeable));
         }
         if (this.armorMaterial == null) {
             GTRegistrate registrate = GTRegistrate.createIgnoringListenerErrors(this.material.getModid());

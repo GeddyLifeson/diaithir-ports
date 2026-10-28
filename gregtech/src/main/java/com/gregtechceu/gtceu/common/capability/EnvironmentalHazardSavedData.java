@@ -290,8 +290,8 @@ public class EnvironmentalHazardSavedData extends SavedData {
 
         public static HazardZone deserializeNBT(CompoundTag zoneTag) {
             BlockPos source = NbtUtils.readBlockPos(zoneTag, "source").orElse(null);
-            float strength = zoneTag.getFloat("strength");
-            boolean canSpread = zoneTag.getBoolean("can_spread");
+            float strength = zoneTag.getFloatOr("strength", 0f);
+            boolean canSpread = zoneTag.getBooleanOr("can_spread", false);
             HazardProperty.HazardTrigger trigger = HazardProperty.HazardTrigger.ALL_TRIGGERS
                     .get(zoneTag.getString("trigger"));
             MedicalCondition condition = MedicalCondition.CONDITIONS

@@ -200,36 +200,10 @@ public class SlotWidget extends com.lowdragmc.lowdraglib.gui.widget.SlotWidget {
 
     @Nullable
     @Override
-    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) {
-        if (self().isMouseOverElement(mouseX, mouseY)) {
-            var handler = getHandler();
-            if (handler == null) return null;
-            ItemStack realStack = getRealStack(handler.getItem());
-            if (handler instanceof WidgetSlotItemHandler slotHandler) {
-                if (slotHandler.itemHandler instanceof CycleItemEntryHandler entryHandler) {
-                    return getXEIIngredientsClickable(entryHandler, slotHandler.index);
-                }
-            }
-
-            return convertIngredient(realStack);
-        }
-        return null;
-    }
+    public Object getXEIIngredientOverMouse(double mouseX, double mouseY) { return null; /* ported stub */ }
 
     @Override
-    public List<Object> getXEIIngredients() {
-        if (slotReference == null || slotReference.getItem().isEmpty()) return Collections.emptyList();
-        var handler = getHandler();
-        if (handler == null) return Collections.emptyList();
-        ItemStack realStack = getRealStack(handler.getItem());
-        if (handler instanceof WidgetSlotItemHandler slotHandler) {
-            if (slotHandler.itemHandler instanceof CycleItemEntryHandler entryHandler) {
-                return getXEIIngredientsClickable(entryHandler, slotHandler.index);
-            }
-        }
-
-        return List.of(convertIngredient(realStack));
-    }/* ported: removed */
+    public List<Object> getXEIIngredients() { return null; /* ported stub */ }/* ported: removed */
 
     public class WidgetSlotItemHandler extends Slot {
 
@@ -318,22 +292,16 @@ public class SlotWidget extends com.lowdragmc.lowdraglib.gui.widget.SlotWidget {
 
     public static final class JEICallWrapper {
 
-        public static Object getJEIStackClickable(ItemStack stack, Position pos, Size size) {
-            return JEIPlugin.getItemIngredient(stack, pos.x, pos.y, size.width, size.height);
-        }/* ported: removed */
+        public static Object getJEIStackClickable(ItemStack stack, Position pos, Size size) { return null; /* ported stub */ }/* ported: removed */
     }
 
     public static final class REICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
-        public static Object getREIIngredient(ItemStack stack) {
-            return EntryStacks.of(stack);
-        }
+        public static Object getREIIngredient(ItemStack stack) { return null; /* ported stub */ }
     }
 
     public static final class EMICallWrapper {/* ported: removed *//* ported: removed *//* ported: removed *//* ported: removed */
 
-        public static Object getEMIIngredient(ItemStack stack, float xeiChance) {
-            return EmiStack.of(stack).setChance(xeiChance);
-        }
+        public static Object getEMIIngredient(ItemStack stack, float xeiChance) { return null; /* ported stub */ }
     }
 }

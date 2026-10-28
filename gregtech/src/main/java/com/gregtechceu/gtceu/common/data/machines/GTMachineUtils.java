@@ -299,7 +299,7 @@ public class GTMachineUtils {
                             default -> -1;
                         })
                         .modelProperty(GTMachineModelProperties.IS_TRANSFORM_UP, false)
-                        .model(createTransformerModel(baseAmp))
+                        
                         .langValue("%s %sTransformer".formatted(VCF[tier] + VOLTAGE_NAMES[tier] + ChatFormatting.RESET,
                                 langName.isEmpty() ? "" : langName + " "))
                         .tooltips(Component.translatable("gtceu.machine.transformer.description"),
@@ -377,7 +377,7 @@ public class GTMachineUtils {
                 (holder, tier) -> new BatteryBufferMachine(holder, tier, batterySlotSize),
                 (tier, builder) -> builder
                         .rotationState(RotationState.ALL)
-                        .model(GTMachineModels.createBatteryBufferModel(batterySlotSize))
+                        
                         .langValue("%s %sx Battery Buffer".formatted(
                                 VCF[tier] + VOLTAGE_NAMES[tier] + ChatFormatting.RESET,
                                 batterySlotSize))
@@ -404,7 +404,7 @@ public class GTMachineUtils {
                 (tier, builder) -> builder
                         .rotationState(RotationState.ALL)
                         .modelProperty(GTMachineModelProperties.CHARGER_STATE, ChargerMachine.State.IDLE)
-                        .model(GTMachineModels.createChargerModel())
+                        
                         .langValue("%s %sx Turbo Charger".formatted(
                                 VCF[tier] + VOLTAGE_NAMES[tier] + ChatFormatting.RESET,
                                 itemSlotSize))
@@ -437,7 +437,7 @@ public class GTMachineUtils {
                         .langValue("%s %s§eA§r Energy Converter".formatted(VCF[tier] + VN[tier] + ChatFormatting.RESET,
                                 amperage))
                         .modelProperty(GTMachineModelProperties.IS_FE_TO_EU, false)
-                        .model(GTMachineModels.createConverterModel(amperage))
+                        
                         .tooltips(Component.translatable("gtceu.machine.energy_converter.description"),
                                 Component.translatable("gtceu.machine.energy_converter.tooltip_tool_usage"),
                                 Component.translatable("gtceu.machine.energy_converter.tooltip_conversion_native",
@@ -500,7 +500,7 @@ public class GTMachineUtils {
                 .rotationState(RotationState.NONE)
                 .tooltips(Component.translatable("gtceu.universal.tooltip.item_storage_capacity", capacity))
                 .modelProperty(GTMachineModelProperties.IS_TAPED, false)
-                .model(GTMachineModels.createCrateModel(wooden))
+                
                 .paintingColor(wooden ? 0xFFFFFF : material.getMaterialRGB())
                 .itemColor((s, t) -> wooden ? 0xFFFFFF : material.getMaterialRGB())
                 .register();
@@ -555,8 +555,7 @@ public class GTMachineUtils {
                     .blockProp(Block.Properties::dynamicShape)
                     .rotationState(RotationState.ALL)
                     .allowExtendedFacing(true)
-                    .model(createTieredHullMachineModel(GTCEu.id("block/machine/template/quantum/quantum_tank"))
-                            .andThen(b -> b.addDynamicRenderer(DynamicRenderHelper::createQuantumTankRender)))
+                    
                     .hasBER(true)
                     .tooltipBuilder(TANK_TOOLTIPS)
                     .tooltips(Component.translatable("gtceu.machine.quantum_tank.tooltip"),
@@ -582,9 +581,7 @@ public class GTMachineUtils {
                         .blockProp(Block.Properties::dynamicShape)
                         .rotationState(RotationState.ALL)
                         .allowExtendedFacing(true)
-                        .model(createTieredHullMachineModel(GTCEu.id("block/machine/template/quantum/quantum_chest"))
-                                .andThen(
-                                        b -> b.addDynamicRenderer(DynamicRenderHelper::createQuantumChestRender)))
+                        
                         .hasBER(true)
                         .tooltipBuilder(CHEST_TOOLTIPS)
                         .tooltips(Component.translatable("gtceu.machine.quantum_chest.tooltip"),
@@ -743,9 +740,7 @@ public class GTMachineUtils {
                         () -> new ItemLike[] {
                                 GTMaterialItems.MATERIAL_ITEMS.get(TagPrefix.dustTiny, GTMaterials.Ash).get() })
                 .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
-                .model(createWorkableCasingMachineModel(texture,
-                        GTCEu.id("block/multiblock/generator/large_%s_boiler".formatted(name)))
-                        .andThen(b -> b.addDynamicRenderer(() -> DynamicRenderHelper.makeBoilerPartRender(firebox, casing))))
+                
                 .tooltips(
                         Component.translatable("gtceu.multiblock.large_boiler.max_temperature", maxTemperature + 274,
                                 maxTemperature),

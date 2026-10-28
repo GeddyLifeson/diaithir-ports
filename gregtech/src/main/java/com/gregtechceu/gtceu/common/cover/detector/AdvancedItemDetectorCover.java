@@ -156,7 +156,7 @@ public class AdvancedItemDetectorCover extends ItemDetectorCover implements IUIC
         setMinValue(tag.getInt("min"));
         setMaxValue(tag.getInt("max"));
         setLatched(tag.getBoolean("latched"));
-        filterHandler.setFilterItem(ItemStack.parse(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
+        filterHandler.setFilterItem(com.gregtechceu.gtceu.compat.NbtCompat.parseItem(coverHolder.getLevel().registryAccess(), tag.getCompound("filter"))
                 .orElse(ItemStack.EMPTY));
         super.pasteConfig(player, tag);
     }

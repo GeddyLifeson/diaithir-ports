@@ -27,7 +27,7 @@ public class CustomItemMapIngredient extends AbstractMapIngredient {
 
     public static List<AbstractMapIngredient> from(Ingredient ingredient) {
         List<AbstractMapIngredient> ingredients = new ArrayList<>();
-        ItemStack[] stacks = ingredient.getItems();
+        ItemStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient);
         for (ItemStack stack : stacks) {
             ingredients.add(new CustomItemMapIngredient(stack, ingredient));
         }
@@ -48,10 +48,10 @@ public class CustomItemMapIngredient extends AbstractMapIngredient {
             }
             if (this.ingredient != null) {
                 if (other.ingredient != null) {
-                    for (ItemStack stack : other.ingredient.getItems()) {
+                    for (ItemStack stack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(other.ingredient)) {
                         if (!this.ingredient.test(stack)) return false;
                     }
-                    for (ItemStack stack : this.ingredient.getItems()) {
+                    for (ItemStack stack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.ingredient)) {
                         if (!other.ingredient.test(stack)) return false;
                     }
                     return true;

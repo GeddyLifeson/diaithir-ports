@@ -74,7 +74,7 @@ public abstract class ReadonlyAccessor implements IAccessor {
                     readOnlyField.set(obj);
                 }
                 var payloadTag = tag.getCompound("payload");
-                byte id = payloadTag.getByte("t");
+                byte id = payloadTag.getByteOr("t", (byte)0);
                 var p = TypedPayloadRegistries.create(id);
                 p.deserializeNBT(payloadTag.get("d"), provider);
                 writeToReadonlyField(op, obj, p, provider);

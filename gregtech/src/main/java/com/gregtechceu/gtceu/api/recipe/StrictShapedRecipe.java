@@ -54,7 +54,7 @@ public class StrictShapedRecipe extends ShapedRecipe {
     }
 
     
-    public @NotNull RecipeSerializer<? getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return GTRecipeSerializers.CRAFTING_SHAPED_STRICT.get();
     }
 

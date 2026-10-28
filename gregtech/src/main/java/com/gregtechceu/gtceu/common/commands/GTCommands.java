@@ -272,13 +272,13 @@ public class GTCommands {
                                  BlockPos sourcePos) throws CommandSyntaxException {
         Holder.Reference<GTOreDefinition> vein = ResourceKeyArgumentAccessor.callResolveKey(context, "vein",
                 GTRegistries.ORE_VEIN_REGISTRY, ERROR_INVALID_VEIN);
-        Identifier id = vein.key().location();
+        Identifier id = vein.key().identifier();
 
-        ChunkPos chunkPos = new ChunkPos(sourcePos);
+        ChunkPos chunkPos = net.minecraft.world.level.ChunkPos.containing(sourcePos);
         ServerLevel level = context.getSource().getLevel();
 
         GeneratedVeinMetadata metadata = new GeneratedVeinMetadata(chunkPos, sourcePos, vein);
-        RandomSource random = level.random;
+        RandomSource random = level.getRandom();
 
         OrePlacer placer = new OrePlacer();
         OreGenerator generator = placer.getOreGenCache().getOreGenerator();
@@ -291,7 +291,7 @@ public class GTCommands {
             }
             for (ChunkPos pos : generated.get().getGeneratedChunks()) {
                 placer.placeVein(pos, random, access, generated.get(), AlwaysTrueTest.INSTANCE);
-                level.getChunk(pos.x, pos.z).setUnsaved(true);
+                level.getChunk(pos.x(), pos.z()).setUnsaved(true);
             }
             context.getSource().sendSuccess(() -> Component.translatable("command.gtceu.place_vein.success",
                     id.toString(), sourcePos.toString()), true);

@@ -62,7 +62,7 @@ public class ChemicalHelper {
                     }
                 }
             }
-            for (var stack : ing.getItems()) {
+            for (var stack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ing)) {
                 var ms = ItemMaterialData.getMaterialInfo(stack.getItem());
                 if (ms != null) return ms;
             }

@@ -101,7 +101,7 @@ public class FacadeCoverRecipe extends CustomRecipe {
     }
 
     
-    public @NotNull RecipeSerializer<? getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return GTRecipeSerializers.CRAFTING_FACADE_COVER.get();
     }
 }

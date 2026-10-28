@@ -137,7 +137,7 @@ public class AlloyBlastRecipeProducer {
         if (property.getGasTier() != null) {
             GTRecipeBuilder builderGas = builder.copy(builder.id.getPath() + "_gas");
             SizedFluidIngredient gas = property.getGasTier().getFluid();
-            gas = gas.copyWithAmount(gas.amount() * outputAmount);
+            gas = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(gas, gas.amount() * outputAmount);
             builderGas.circuitMeta(getGasCircuitNum(componentAmount))
                     .inputFluids(gas)
                     .duration((int) (duration * 0.67))

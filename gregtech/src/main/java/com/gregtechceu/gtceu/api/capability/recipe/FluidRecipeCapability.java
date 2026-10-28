@@ -62,22 +62,22 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
 
     @Override
     public SizedFluidIngredient copyInner(SizedFluidIngredient content) {
-        return content.copy();
+        return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(content);
     }
 
     @Override
     public SizedFluidIngredient copyWithModifier(SizedFluidIngredient content, ContentModifier modifier) {
-        if (content.ingredient().hasNoFluids()) return content.copy();
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(content.ingredient())) return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(content);
         if (content.ingredient() instanceof IntProviderFluidIngredient provider) {
             IntProviderFluidIngredient copy = IntProviderFluidIngredient.of(provider.getInner(),
                     ModifiedIntProvider.of(provider.getCountProvider(), modifier));
             return new SizedFluidIngredient(copy, 1);
         }
-        return content.copyWithAmount(modifier.apply(content.amount()));
+        return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithAmount(content, modifier.apply(content.amount()));
     }
 
     public IntProviderFluidIngredient copyWithModifier(IntProviderFluidIngredient content, ContentModifier modifier) {
-        if (content.hasNoFluids()) return content.copy();
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoFluids(content)) return content.copy();
         return IntProviderFluidIngredient.of(content.getInner(),
                 ModifiedIntProvider.of(content.getCountProvider(), modifier));
     }
@@ -218,7 +218,7 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
             } else {
                 boolean has = false;
                 for (var recipeIng : consumables.object2LongEntrySet()) {
-                    var stack = ing.getFluids()[0];
+                    var stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ing)[0];
                     if (recipeIng.getKey().ingredient().test(stack)) {
                         recipeIng.setValue(recipeIng.getLongValue() + stack.getAmount());
                         has = true;
@@ -400,8 +400,8 @@ public class FluidRecipeCapability extends RecipeCapability<SizedFluidIngredient
                 tank.setXEIChance(chance);
                 tank.setOnAddedTooltips((w, tooltips) -> {
                     SizedFluidIngredient ingredient = FluidRecipeCapability.CAP.of(content.content);
-                    if (!isXEI && ingredient.getFluids().length > 0) {
-                        FluidStack stack = ingredient.getFluids()[0];
+                    if (!isXEI && com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient).length > 0) {
+                        FluidStack stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient)[0];
                         TooltipsHandler.appendFluidTooltips(stack, tooltips::add,
                                 TooltipFlag.NORMAL, Item.TooltipContext.of(GTRegistries.builtinRegistry()));
                     }

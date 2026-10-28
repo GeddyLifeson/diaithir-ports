@@ -110,14 +110,14 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
         ItemStack[] visited = new ItemStack[storage.getSlots()];
         for (var it = left.listIterator(); it.hasNext();) {
             var ingredient = it.next();
-            if (ingredient.ingredient().hasNoItems()) {
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoItems(ingredient.ingredient())) {
                 it.remove();
                 continue;
             }
 
             ItemStack[] items;
             int amount;
-            if (ingredient.getContainedCustom() instanceof IntProviderIngredient provider) {
+            if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getContainedCustom(ingredient) instanceof IntProviderIngredient provider) {
                 provider.setItemStacks(null);
                 provider.setSampledCount(-1);
 
@@ -135,7 +135,7 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
                 }
                 amount = output.getCount();
             } else {
-                items = ingredient.getItems();
+                items = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient);
                 if (items.length == 0 || items[0].isEmpty()) {
                     it.remove();
                     continue;
@@ -181,7 +181,7 @@ public class NotifiableItemStackHandler extends NotifiableRecipeHandlerTrait<Siz
             }
             // Modify ingredient if we didn't finish it off
             if (amount > 0) {
-                it.set(ingredient.copyWithCount(amount));
+                it.set(com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copyWithCount(ingredient, amount));
             }
         }
 

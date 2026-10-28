@@ -183,7 +183,7 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
 
     private int getUsesLeft(ItemStack stack) {
         if (usesFluid) {
-            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            IFluidHandlerItem handler = com.gregtechceu.gtceu.compat.Caps.fluidItem(stack);
             if (handler == null) return 0;
 
             FluidStack fluid = handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
@@ -197,7 +197,7 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
 
     private void setUsesLeft(Player player, @NotNull ItemStack stack, final int usesLeft) {
         if (usesFluid) {
-            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            IFluidHandlerItem handler = com.gregtechceu.gtceu.compat.Caps.fluidItem(stack);
             if (handler != null) {
                 FluidStack fluid = handler.drain(Integer.MAX_VALUE, IFluidHandler.FluidAction.SIMULATE);
                 if (!fluid.isEmpty()) {
@@ -222,7 +222,7 @@ public class LighterBehavior implements IDurabilityBar, IInteractionItem, IAddIn
     @Override
     public float getDurabilityForDisplay(ItemStack stack) {
         if (usesFluid) {
-            IFluidHandlerItem handler = stack.getCapability(Capabilities.FluidHandler.ITEM, null);
+            IFluidHandlerItem handler = com.gregtechceu.gtceu.compat.Caps.fluidItem(stack);
             if (handler == null) return 0.0f;
 
             FluidStack fluid = handler.getFluidInTank(0);

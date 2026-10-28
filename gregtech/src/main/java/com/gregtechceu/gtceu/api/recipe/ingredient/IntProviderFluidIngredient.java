@@ -101,7 +101,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
             if (cachedAmount == 0) {
                 return Stream.of(EMPTY_STACK_ARRAY);
             }
-            var innerStacks = inner.getStacks();
+            var innerStacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(inner);
             this.fluidStacks = new FluidStack[innerStacks.length];
             for (int i = 0; i < fluidStacks.length; i++) {
                 fluidStacks[i] = innerStacks[i].copyWithAmount(cachedAmount);
@@ -122,7 +122,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
             if (cachedAmount == 0) {
                 return EMPTY_STACK_ARRAY;
             }
-            var innerStacks = inner.getStacks();
+            var innerStacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(inner);
             this.fluidStacks = new FluidStack[innerStacks.length];
             for (int i = 0; i < fluidStacks.length; i++) {
                 fluidStacks[i] = innerStacks[i].copyWithAmount(cachedAmount);
@@ -154,7 +154,7 @@ public class IntProviderFluidIngredient extends FluidIngredient implements IRang
      * @return a {@link FluidStack} with amount {@link IntProvider#getMaxValue()}
      */
     public @NotNull FluidStack getMaxSizeStack() {
-        FluidStack[] in = inner.getStacks();
+        FluidStack[] in = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(inner);
         if (in.length == 0) return FluidStack.EMPTY;
         return in[0].copyWithAmount(countProvider.getMaxValue());
     }

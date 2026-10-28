@@ -170,8 +170,7 @@ public class FluidPipeBlockEntity extends PipeBlockEntity<FluidPipeType, FluidPi
                 continue;
             }
 
-            IFluidHandler fluidHandler = getLevel().getCapability(Capabilities.FluidHandler.BLOCK,
-                    getBlockPos().relative(facing), facing.getOpposite());
+            IFluidHandler fluidHandler = com.gregtechceu.gtceu.compat.Caps.fluid(getLevel(), getBlockPos().relative(facing), facing.getOpposite());
             if (fluidHandler == null) continue;
 
             IFluidHandlerModifiable pipeTank = tank;

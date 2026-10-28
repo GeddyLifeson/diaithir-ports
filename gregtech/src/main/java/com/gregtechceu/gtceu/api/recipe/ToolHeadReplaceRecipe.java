@@ -130,7 +130,7 @@ public class ToolHeadReplaceRecipe extends CustomRecipe {
     }
 
     
-    public @NotNull RecipeSerializer<? getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return GTRecipeSerializers.CRAFTING_TOOL_HEAD_REPLACE.get();
     }
 }

@@ -56,8 +56,8 @@ public class OreVeinWorldEntry {
     @NotNull
     public static OreVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
         OreVeinWorldEntry info = new OreVeinWorldEntry();
-        info.oreYield = tag.getInt("oreYield");
-        info.operationsRemaining = tag.getInt("operationsRemaining");
+        info.oreYield = tag.getIntOr("oreYield", 0);
+        info.operationsRemaining = tag.getIntOr("operationsRemaining", 0);
 
         if (tag.contains("vein")) {
             Identifier id = Identifier.parse(tag.getString("vein"));

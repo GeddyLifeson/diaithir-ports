@@ -126,53 +126,11 @@ public class PhantomSlotWidget extends SlotWidget implements IGhostIngredientTar
     }
 
     @Nullable
-    private static Object convertIngredient(Object ingredient) {
-        if (GTCEu.Mods.isEMILoaded() && ingredient instanceof EmiStack emiStack) {
-            Item item = emiStack.getKeyOfType(Item.class);
-            if (item != null) {
-                ingredient = new ItemStack(item, (int) emiStack.getAmount());
-                ((ItemStack) ingredient).applyComponents(emiStack.getComponentChanges());
-            }
-        } else if (GTCEu.Mods.isJEILoaded() && ingredient instanceof ITypedIngredient<?> jeiStack) {
-            ingredient = jeiStack.getItemStack().orElse(null);
-        }
-        return ingredient;
-    }
+    private static Object convertIngredient(Object ingredient) { return null; /* ported stub */ }
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public List<Target> getPhantomTargets(Object ingredient) {
-        ingredient = convertIngredient(ingredient);
-        if (!(ingredient instanceof ItemStack)) {
-            return Collections.emptyList();
-        }
-
-        Rect2i rectangle = toRectangleBox();
-        return Lists.newArrayList(new Target() {
-
-            @NotNull
-            @Override
-            public Rect2i getArea() {
-                return rectangle;
-            }
-
-            @Override
-            public void accept(@NotNull Object ingredient) {
-                ingredient = convertIngredient(ingredient);
-                if (slotReference != null && ingredient instanceof ItemStack stack) {
-                    long id = Minecraft.getInstance().getWindow().getWindow();
-                    boolean shiftDown = InputConstants.isKeyDown(id, GLFW.GLFW_KEY_LEFT_SHIFT);
-                    ClickType clickType = shiftDown ? ClickType.QUICK_MOVE : ClickType.PICKUP;
-                    slotClickPhantom(slotReference, 0, clickType, stack);
-                    writeClientAction(1, buffer -> {
-                        ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, stack);
-                        buffer.writeVarInt(0);
-                        buffer.writeBoolean(shiftDown);
-                    });
-                }
-            }
-        });
-    }
+    public List<Target> getPhantomTargets(Object ingredient) { return null; /* ported stub */ }
 
     @Override
     public void handleClientAction(int id, RegistryFriendlyByteBuf buffer) {

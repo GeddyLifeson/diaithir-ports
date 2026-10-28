@@ -65,8 +65,8 @@ public class FluidVeinWorldEntry {
     @NotNull
     public static FluidVeinWorldEntry readFromNBT(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
         FluidVeinWorldEntry info = new FluidVeinWorldEntry();
-        info.fluidYield = tag.getInt("fluidYield");
-        info.operationsRemaining = tag.getInt("operationsRemaining");
+        info.fluidYield = tag.getIntOr("fluidYield", 0);
+        info.operationsRemaining = tag.getIntOr("operationsRemaining", 0);
 
         if (tag.contains("vein")) {
             Identifier id = Identifier.parse(tag.getString("vein"));

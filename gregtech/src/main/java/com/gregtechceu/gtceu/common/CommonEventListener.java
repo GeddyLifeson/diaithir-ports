@@ -120,7 +120,7 @@ public class CommonEventListener {
 
     @SubscribeEvent
     public static void tickPlayerInventoryHazards(PlayerTickEvent.Post event) {
-        if (event.getEntity().level().isClientSide) {
+        if (event.getEntity().level().isClientSide()) {
             return;
         }
 
@@ -133,7 +133,7 @@ public class CommonEventListener {
             return;
         }
 
-        IItemHandler inventory = player.getCapability(Capabilities.ItemHandler.ENTITY, null);
+        IItemHandler inventory = com.gregtechceu.gtceu.compat.Caps.itemEntityAutomation(player, null);
         if (inventory == null) {
             return;
         }
@@ -429,7 +429,7 @@ public class CommonEventListener {
                     Component.literal("" + pos.getZ()).withStyle(ChatFormatting.GOLD),
                     Component.translatable("gtceu.direction.tooltip." + target.side().getName())
                             .withStyle(ChatFormatting.DARK_PURPLE),
-                    Component.translatable(target.dimension().location().toLanguageKey(Level.TRANSLATION_PREFIX))
+                    Component.translatable(target.dimension().identifier().toLanguageKey(Level.TRANSLATION_PREFIX))
                             .withStyle(ChatFormatting.DARK_PURPLE)));
         }
         if (!stack.has(GTDataComponents.RESEARCH_ITEM) && stack.has(GTDataComponents.DATA_COPY_POS)) {

@@ -145,9 +145,6 @@ public class MaterialBlock extends Block {
     /** End falling ore stuff */
 
     @Override
-
-
-    @Override
     public MutableComponent getName() {
         return tagPrefix.getLocalizedName(material);
     }

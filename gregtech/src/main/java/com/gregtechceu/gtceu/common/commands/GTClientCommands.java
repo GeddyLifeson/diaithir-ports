@@ -45,7 +45,7 @@ public class GTClientCommands {
         public void run() {
             boolean first = true;
             for (ClientCacheManager.ProspectionInfo info : prospectionData) {
-                PacketDistributor.sendToServer(new SCPacketShareProspection(sender, receiver, info.cacheName, info.key,
+                net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new SCPacketShareProspection(sender, receiver, info.cacheName, info.key,
                         info.isDimCache, info.dim, info.data, first));
                 first = false;
 

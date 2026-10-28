@@ -69,7 +69,7 @@ public class SurfaceRockBlock extends Block {
     
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest,
                                        FluidState fluid) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             ServerCache.instance.prospectSurfaceRockMaterial(
                     level.dimension(),
                     this.material,
@@ -82,7 +82,7 @@ public class SurfaceRockBlock extends Block {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
                                                Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             ServerCache.instance.prospectSurfaceRockMaterial(
                     level.dimension(),
                     this.material,
@@ -170,9 +170,6 @@ public class SurfaceRockBlock extends Block {
         super.createBlockStateDefinition(builder);
         builder.add(FACING);
     }
-
-    @Override
-
 
     @Override
     public MutableComponent getName() {

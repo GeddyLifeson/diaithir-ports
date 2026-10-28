@@ -53,12 +53,12 @@ public class CoverBehaviorTransformer implements ValueTransformer<CoverBehavior>
                                                boolean isSync, HolderLookup.Provider lookup) {
         /// Ldlib backwards compat
         if (tag.contains("payload") && tag.contains("uid")) {
-            tag.putInt("side", tag.getCompound("uid").getInt("side"));
-            tag.putString("coverType", tag.getCompound("uid").getString("id"));
-            tag.put("data", tag.getCompound("payload").getCompound("d"));
+            tag.putInt("side", tag.getCompoundOrEmpty("uid").getIntOr("side", 0));
+            tag.putString("coverType", tag.getCompoundOrEmpty("uid").getStringOr("id", ""));
+            tag.put("data", tag.getCompoundOrEmpty("payload").getCompoundOrEmpty("d"));
         }
 
-        Direction side = Direction.values()[tag.getInt("side")];
+        Direction side = Direction.values()[tag.getIntOr("side", 0)];
 
         if (tag.isEmpty() || tag.getString("coverType").isEmpty()) {
             holder.setCoverAtSide(null, side);

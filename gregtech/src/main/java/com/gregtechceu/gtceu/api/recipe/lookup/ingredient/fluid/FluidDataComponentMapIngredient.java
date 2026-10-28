@@ -24,7 +24,7 @@ public class FluidDataComponentMapIngredient extends FluidStackMapIngredient {
     @NotNull
     public static List<AbstractMapIngredient> from(@NotNull DataComponentFluidIngredient r) {
         ObjectArrayList<AbstractMapIngredient> list = new ObjectArrayList<>();
-        for (FluidStack s : r.getStacks()) {
+        for (FluidStack s : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(r)) {
             list.add(new FluidDataComponentMapIngredient(s, r));
         }
         return list;
@@ -66,8 +66,8 @@ public class FluidDataComponentMapIngredient extends FluidStackMapIngredient {
                     }
 
                     if (this.componentIngredient.isStrict()) {
-                        for (FluidStack tStack : this.componentIngredient.getStacks()) {
-                            for (FluidStack oStack : other.componentIngredient.getStacks()) {
+                        for (FluidStack tStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(this.componentIngredient)) {
+                            for (FluidStack oStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(other.componentIngredient)) {
                                 if (FluidStack.isSameFluidSameComponents(tStack, oStack)) return true;
                             }
                         }

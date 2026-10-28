@@ -162,7 +162,7 @@ public class GTRecipe implements Recipe<RecipeInput> {
     }
 
     
-    public @NotNull RecipeSerializer<? getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return recipeType.getSerializer();
     }
 

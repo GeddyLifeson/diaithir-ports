@@ -143,7 +143,7 @@ public class BlastProperty implements IMaterialProperty {
         }
 
         public SizedFluidIngredient getFluid() {
-            return fluid.get().copy();
+            return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.copy(fluid.get());
         }
     }
 

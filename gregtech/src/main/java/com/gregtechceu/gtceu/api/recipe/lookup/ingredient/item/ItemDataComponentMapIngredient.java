@@ -28,7 +28,7 @@ public class ItemDataComponentMapIngredient extends ItemStackMapIngredient {
     public static List<AbstractMapIngredient> from(@NotNull DataComponentIngredient ingredient) {
         Ingredient vanilla = ingredient.toVanilla();
         ObjectArrayList<AbstractMapIngredient> list = new ObjectArrayList<>();
-        for (ItemStack s : vanilla.getItems()) {
+        for (ItemStack s : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(vanilla)) {
             list.add(new ItemDataComponentMapIngredient(s, ingredient, vanilla));
         }
         return list;
@@ -72,8 +72,8 @@ public class ItemDataComponentMapIngredient extends ItemStackMapIngredient {
                     }
 
                     if (this.componentIngredient.isStrict()) {
-                        for (ItemStack tStack : this.ingredient.getItems()) {
-                            for (ItemStack oStack : other.ingredient.getItems()) {
+                        for (ItemStack tStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(this.ingredient)) {
+                            for (ItemStack oStack : com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(other.ingredient)) {
                                 if (ItemStack.isSameItemSameComponents(tStack, oStack)) return true;
                             }
                         }

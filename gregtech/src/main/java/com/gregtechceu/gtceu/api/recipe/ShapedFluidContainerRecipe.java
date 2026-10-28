@@ -57,8 +57,8 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
                 continue;
             }
             ItemStack item = inv.getItem(i);
-            if (item.hasCraftingRemainingItem()) {
-                items.set(i, item.getCraftingRemainingItem());
+            if (item.hasCraftingRemainder()) {
+                items.set(i, item.getCraftingRemainder());
             }
         }
 
@@ -98,7 +98,7 @@ public class ShapedFluidContainerRecipe extends ShapedRecipe {
     }
 
     
-    public RecipeSerializer<? getSerializer() {
+    public RecipeSerializer<?> getSerializer() {
         return GTRecipeSerializers.CRAFTING_SHAPED_FLUID_CONTAINER.get();
     }
 

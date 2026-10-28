@@ -454,9 +454,7 @@ public class GTResearchMachines {
                 .modelProperty(GTMachineModelProperties.IS_FORMED, false)
                 .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
                 .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
-                .model(createHPCAPartModel(isAdvanced,
-                        GTCEu.id("block/overlay/machine/hpca/" + texture),
-                        GTCEu.id("block/overlay/machine/hpca/damaged" + (isAdvanced ? "_advanced" : ""))));
+                ;
     }
 
     public static void init() {}

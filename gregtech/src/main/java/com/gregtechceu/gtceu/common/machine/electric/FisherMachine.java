@@ -212,7 +212,7 @@ public class FisherMachine extends TieredEnergyMachine
 
         drainEnergy(false);
         if (progress >= maxProgress) {
-            var lootTableRegistry = getLevel().registryAccess().registryOrThrow(Registries.LOOT_TABLE);
+            var lootTableRegistry = getLevel().registryAccess().lookupOrThrow(Registries.LOOT_TABLE);
             LootTable lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING);
             if (!this.junkEnabled) {
                 lootTable = lootTableRegistry.get(BuiltInLootTables.FISHING_FISH);

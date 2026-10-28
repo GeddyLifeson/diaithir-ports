@@ -115,7 +115,7 @@ public class RecipeHelper {
     public static List<ItemStack> getInputItems(GTRecipe recipe) {
         return recipe.getInputContents(ItemRecipeCapability.CAP).stream()
                 .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getItems()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient)[0])
                 .collect(Collectors.toList());
     }
 
@@ -128,7 +128,7 @@ public class RecipeHelper {
     public static List<FluidStack> getInputFluids(GTRecipe recipe) {
         return recipe.getInputContents(FluidRecipeCapability.CAP).stream()
                 .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getFluids()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient)[0])
                 .collect(Collectors.toList());
     }
 
@@ -141,7 +141,7 @@ public class RecipeHelper {
     public static List<ItemStack> getOutputItems(GTRecipe recipe) {
         return recipe.getOutputContents(ItemRecipeCapability.CAP).stream()
                 .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getItems()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient)[0])
                 .collect(Collectors.toList());
     }
 
@@ -154,7 +154,7 @@ public class RecipeHelper {
     public static List<ItemStack> getOutputItems(GTRecipeBuilder builder) {
         return builder.output.getOrDefault(ItemRecipeCapability.CAP, Collections.emptyList()).stream()
                 .map(content -> ItemRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getItems()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingredient)[0])
                 .collect(Collectors.toList());
     }
 
@@ -167,7 +167,7 @@ public class RecipeHelper {
     public static List<FluidStack> getOutputFluids(GTRecipe recipe) {
         return recipe.getOutputContents(FluidRecipeCapability.CAP).stream()
                 .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getFluids()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient)[0])
                 .collect(Collectors.toList());
     }
 
@@ -180,7 +180,7 @@ public class RecipeHelper {
     public static List<FluidStack> getOutputFluids(GTRecipeBuilder builder) {
         return builder.output.getOrDefault(FluidRecipeCapability.CAP, Collections.emptyList()).stream()
                 .map(content -> FluidRecipeCapability.CAP.of(content.getContent()))
-                .map(ingredient -> ingredient.getFluids()[0])
+                .map(ingredient -> com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(ingredient)[0])
                 .collect(Collectors.toList());
     }
 

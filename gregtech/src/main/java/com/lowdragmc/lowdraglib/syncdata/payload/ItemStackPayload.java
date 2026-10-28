@@ -25,7 +25,7 @@ public class ItemStackPayload extends ObjectTypedPayload<ItemStack> {
 
     @Override
     public void deserializeNBT(Tag tag, HolderLookup.Provider provider) {
-        payload = ItemStack.parse(provider, tag).orElse(ItemStack.EMPTY);
+        payload = com.gregtechceu.gtceu.compat.NbtCompat.parseItem(provider, tag).orElse(ItemStack.EMPTY);
     }
 
     @Override

@@ -254,7 +254,7 @@ public abstract class PipeBlock<PipeType extends Enum<PipeType> & IPipeType<Node
     
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos,
                                 boolean isMoving) {
-        if (level.isClientSide) return;
+        if (level.isClientSide()) return;
         IPipeNode<PipeType, NodeDataType> pipeTile = getPipeTile(level, pos);
         if (pipeTile != null) {
             Direction facing = GTUtil.getFacingToNeighbor(pos, fromPos);

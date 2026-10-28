@@ -452,7 +452,7 @@ public class MultiblockDisplayText {
                         }
                         countD = countD * provider.getMidRoll();
                     } else {
-                        var stacks = ItemRecipeCapability.CAP.of(item.content).getItems();
+                        var stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ItemRecipeCapability.CAP.of(item.content));
                         if (stacks.length == 0) continue;
                         stack = stacks[0];
                         count = stack.getCount();
@@ -496,7 +496,7 @@ public class MultiblockDisplayText {
                         }
                         amountD = amountD * provider.getMidRoll();
                     } else {
-                        var stacks = FluidRecipeCapability.CAP.of(fluid.content).getFluids();
+                        var stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getFluids(FluidRecipeCapability.CAP.of(fluid.content));
                         if (stacks.length == 0) continue;
                         stack = stacks[0];
                         amount = stack.getAmount();

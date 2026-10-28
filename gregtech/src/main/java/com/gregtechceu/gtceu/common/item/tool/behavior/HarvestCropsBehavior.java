@@ -93,7 +93,7 @@ public class HarvestCropsBehavior implements IToolBehavior<HarvestCropsBehavior>
 
         ItemStack seed = blockState.getCloneItemStack(context.getHitResult().withPosition(pos), level, pos, player);
         if (cropBlock.isMaxAge(blockState)) {
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 var drops = Block.getDrops(blockState, (ServerLevel) level, pos, null);
                 boolean removedSeed = false;
                 for (ItemStack drop : drops) {

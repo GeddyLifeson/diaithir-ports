@@ -27,7 +27,7 @@ public class CustomFluidMapIngredient extends AbstractMapIngredient {
 
     public static List<AbstractMapIngredient> from(FluidIngredient ingredient) {
         List<AbstractMapIngredient> ingredients = new ArrayList<>();
-        FluidStack[] stacks = ingredient.getStacks();
+        FluidStack[] stacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getStacks(ingredient);
         for (FluidStack stack : stacks) {
             ingredients.add(new CustomFluidMapIngredient(stack, ingredient));
         }

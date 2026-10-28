@@ -45,7 +45,7 @@ public interface IInteractionItem extends IItemComponent {
     }
 
     default ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return stack.getFoodProperties(null) != null ? UseAnim.EAT : UseAnim.NONE;
+        return stack.getFoodProperties(null) != null ? ItemUseAnimation.EAT : ItemUseAnimation.NONE;
     }
 
     default boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {

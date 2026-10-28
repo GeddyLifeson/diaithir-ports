@@ -254,9 +254,9 @@ public abstract class AbstractEnderLinkCover<T extends VirtualEntry> extends Cov
     @Override
     public void pasteConfig(ServerPlayer player, CompoundTag tag) {
         setChannelName(tag.getString("colorStr"));
-        setPermission(Permissions.values()[tag.getInt("permission")]);
-        setIo(IO.values()[tag.getInt("io")]);
-        setManualIOMode(ManualIOMode.values()[tag.getInt("manualIO")]);
+        setPermission(Permissions.values()[tag.getIntOr("permission", 0)]);
+        setIo(IO.values()[tag.getIntOr("io", 0)]);
+        setManualIOMode(ManualIOMode.values()[tag.getIntOr("manualIO", 0)]);
         super.pasteConfig(player, tag);
     }
 

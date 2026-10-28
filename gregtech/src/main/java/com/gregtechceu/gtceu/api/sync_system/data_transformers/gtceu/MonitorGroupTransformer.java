@@ -26,8 +26,8 @@ public class MonitorGroupTransformer implements ValueTransformer<MonitorGroup> {
         }
         tag.put("positions", list);
         tag.putInt("dataSlot", value.getDataSlot());
-        tag.put("items", value.getItemStackHandler().serializeNBT(context.lookup()));
-        tag.put("placeholderSlots", value.getPlaceholderSlotsHandler().serializeNBT(context.lookup()));
+        tag.put("items", com.gregtechceu.gtceu.compat.NbtCompat.save(value.getItemStackHandler(), context.lookup()));
+        tag.put("placeholderSlots", com.gregtechceu.gtceu.compat.NbtCompat.save(value.getPlaceholderSlotsHandler(), context.lookup()));
         return tag;
     }
 
@@ -36,21 +36,21 @@ public class MonitorGroupTransformer implements ValueTransformer<MonitorGroup> {
         var compoundTag = ValueTransformer.assertTagType(CompoundTag.class, tag, context);
         CustomItemStackHandler handler = new CustomItemStackHandler(),
                 placeholderSlotsHandler = new CustomItemStackHandler();
-        handler.deserializeNBT(context.lookup(), compoundTag.getCompound("items"));
-        placeholderSlotsHandler.deserializeNBT(context.lookup(), compoundTag.getCompound("placeholderSlots"));
-        var group = new MonitorGroup(compoundTag.getString("name"), handler, placeholderSlotsHandler);
-        ListTag list = compoundTag.getList("positions", Tag.TAG_COMPOUND);
+        com.gregtechceu.gtceu.compat.NbtCompat.load(handler, context.lookup(), compoundTag.getCompoundOrEmpty("items"));
+        com.gregtechceu.gtceu.compat.NbtCompat.load(placeholderSlotsHandler, context.lookup(), compoundTag.getCompoundOrEmpty("placeholderSlots"));
+        var group = new MonitorGroup(compoundTag.getStringOr("name", ""), handler, placeholderSlotsHandler);
+        ListTag list = compoundTag.getListOrEmpty("positions");
         for (int i = 0; i < list.size(); i++) {
             int[] aint = list.getIntArray(i);
             if (aint.length != 3) continue;
             group.add(new BlockPos(aint[0], aint[1], aint[2]));
         }
-        if (compoundTag.contains("targetPos", Tag.TAG_COMPOUND)) {
+        if (compoundTag.contains("targetPos")) {
             group.setTarget(NbtUtils.readBlockPos(compoundTag, "targetPos").orElse(BlockPos.ZERO));
-            if (compoundTag.contains("targetSide", Tag.TAG_STRING)) {
+            if (compoundTag.contains("targetSide")) {
                 group.setTargetCoverSide(Direction.byName(compoundTag.getString("targetSide")));
             }
-            if (compoundTag.contains("dataSlot", Tag.TAG_INT)) {
+            if (compoundTag.contains("dataSlot")) {
                 group.setDataSlot(compoundTag.getInt("dataSlot"));
             }
         }

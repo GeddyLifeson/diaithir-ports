@@ -110,7 +110,7 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
             if (cachedCount == 0) {
                 return EMPTY_STACK_ARRAY;
             }
-            var innerStacks = inner.getItems();
+            var innerStacks = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner);
             this.itemStacks = new ItemStack[innerStacks.length];
             for (int i = 0; i < itemStacks.length; i++) {
                 itemStacks[i] = innerStacks[i].copyWithCount(cachedCount);
@@ -157,8 +157,8 @@ public class IntProviderIngredient implements ICustomIngredient, IRangedIngredie
      * @return a {@link ItemStack} with count {@link IntProvider#getMaxValue()}
      */
     public @NotNull ItemStack getMaxSizeStack() {
-        if (inner.getItems().length == 0) return ItemStack.EMPTY;
-        else return inner.getItems()[0].copyWithCount(countProvider.getMaxValue());
+        if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner).length == 0) return ItemStack.EMPTY;
+        else return com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(inner)[0].copyWithCount(countProvider.getMaxValue());
     }
 
     /**

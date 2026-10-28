@@ -717,15 +717,15 @@ public class VanillaRecipeHelper {
             ItemLike itemLike;
             switch (ingredient) {
                 case Ingredient ingr -> {
-                    if (ingr.hasNoItems()) continue;
-                    ItemStack stack = ingr.getItems()[0];
+                    if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoItems(ingr)) continue;
+                    ItemStack stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingr)[0];
                     if (stack.isEmpty()) continue;
                     itemLike = stack.getItem();
                 }
                 case ICustomIngredient custom -> {
                     Ingredient ingr = custom.toVanilla();
-                    if (ingr.hasNoItems()) continue;
-                    ItemStack stack = ingr.getItems()[0];
+                    if (com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.hasNoItems(ingr)) continue;
+                    ItemStack stack = com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredientExtensions.getItems(ingr)[0];
                     if (stack.isEmpty()) continue;
                     itemLike = stack.getItem();
                 }

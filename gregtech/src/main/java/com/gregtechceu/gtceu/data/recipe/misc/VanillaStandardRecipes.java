@@ -839,25 +839,25 @@ public class VanillaStandardRecipes {
                 'L', new ItemStack(Items.DIAMOND_LEGGINGS),
                 'S', new MaterialEntry(bolt, Diamond));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_helmet", new ItemStack(Items.CHAINMAIL_HELMET),
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_helmet", new ItemStack(Items.IRON_CHAINMAIL_HELMET),
                 "PPP",
                 "PhP",
-                'P', Items.CHAIN);
+                'P', Items.IRON_CHAIN);
 
         VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_chestplate",
-                new ItemStack(Items.CHAINMAIL_CHESTPLATE),
+                new ItemStack(Items.IRON_CHAINMAIL_CHESTPLATE),
                 "PhP", "PPP", "PPP",
-                'P', Items.CHAIN);
+                'P', Items.IRON_CHAIN);
 
         VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_leggings",
-                new ItemStack(Items.CHAINMAIL_LEGGINGS),
+                new ItemStack(Items.IRON_CHAINMAIL_LEGGINGS),
                 "PPP", "PhP", "P P",
-                'P', Items.CHAIN);
+                'P', Items.IRON_CHAIN);
 
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_boots", new ItemStack(Items.CHAINMAIL_BOOTS),
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "chainmail_boots", new ItemStack(Items.IRON_CHAINMAIL_BOOTS),
                 "P P",
                 "PhP",
-                'P', Items.CHAIN);
+                'P', Items.IRON_CHAIN);
 
         ASSEMBLER_RECIPES.recipeBuilder("cauldron")
                 .inputItems(plate, Iron, 7)

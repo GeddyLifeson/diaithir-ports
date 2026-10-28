@@ -97,4 +97,30 @@ public final class Caps {
         ResourceHandler<FluidResource> h = entity.getCapability(Capabilities.Fluid.ENTITY, side);
         return h == null ? null : IFluidHandler.of(h);
     }
+
+    // ---- wrappers used when registering capabilities that are implemented against the legacy handler interfaces ----
+
+    public static net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<ResourceHandler<ItemResource>, @Nullable Direction> wrapItem(
+            net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<IItemHandler, @Nullable Direction> p) {
+        return (level, pos, state, be, side) -> {
+            IItemHandler h = p.getCapability(level, pos, state, be, side);
+            return h == null ? null : com.gregtechceu.gtceu.compat.transfer.LegacyAdapters.item(h);
+        };
+    }
+
+    public static net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<ResourceHandler<FluidResource>, @Nullable Direction> wrapFluid(
+            net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<IFluidHandler, @Nullable Direction> p) {
+        return (level, pos, state, be, side) -> {
+            IFluidHandler h = p.getCapability(level, pos, state, be, side);
+            return h == null ? null : com.gregtechceu.gtceu.compat.transfer.LegacyAdapters.fluid(h);
+        };
+    }
+
+    public static net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<EnergyHandler, @Nullable Direction> wrapEnergy(
+            net.neoforged.neoforge.capabilities.IBlockCapabilityProvider<IEnergyStorage, @Nullable Direction> p) {
+        return (level, pos, state, be, side) -> {
+            IEnergyStorage h = p.getCapability(level, pos, state, be, side);
+            return h == null ? null : com.gregtechceu.gtceu.compat.transfer.LegacyAdapters.energy(h);
+        };
+    }
 }
