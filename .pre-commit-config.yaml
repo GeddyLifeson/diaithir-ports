@@ -7,4 +7,6 @@ repos:
         name: no committed tokens
         entry: detect-secrets-hook --disable-plugin HexHighEntropyString --disable-plugin Base64HighEntropyString
         language: python
+        # Vendored GregTech CEu sources: false positives such as a PRIVATE_KEY name in VirtualEnderRegistry
+        exclude: ^gregtech/src/main/java/
         additional_dependencies: [detect-secrets==1.5.0]
