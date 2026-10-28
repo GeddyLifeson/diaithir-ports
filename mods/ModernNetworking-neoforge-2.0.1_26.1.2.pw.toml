@@ -1,6 +1,6 @@
 name = "ModernNetworking-neoforge"
 filename = "ModernNetworking-neoforge-2.0.1+26.1.2.jar"
-side = "client"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/yMou0v20/versions/beLMIG1b/ModernNetworking-neoforge-2.0.1%2B26.1.2.jar"
