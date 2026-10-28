@@ -63,7 +63,7 @@ public final class BossCommands {
                 Elites.make(best, Ages.current(l.getServer()), RandomSource.create(), null);
                 return 1;
             })));
-        d.register(Commands.literal("bossesselftest").requires(BossCommands::gm).executes(c -> SelfTest.run(c.getSource())));
+        d.register(Commands.literal("bossesselftest").requires(BossCommands::gm).executes(c -> SelfTest.start(c.getSource())));
     }
 
     private BossCommands() {}

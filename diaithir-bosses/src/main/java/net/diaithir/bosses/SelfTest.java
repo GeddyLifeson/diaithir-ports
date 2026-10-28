@@ -42,6 +42,36 @@ public final class SelfTest {
         }
     }
 
+    private static CommandSourceStack pending;
+    private static int wait;
+    private static boolean listening;
+
+    /**
+     * Entry point of the command. Entities only join a chunk once it is entity-ticking, which needs a few ticks after loading when no
+     * player is nearby (as on a console or rcon run), so the arena chunks are forced first and the run follows two seconds later.
+     */
+    static int start(CommandSourceStack src) {
+        ServerLevel level = src.getServer().overworld();
+        for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) { level.getChunk(cx, cz); level.setChunkForced(cx, cz, true); }
+        if (!listening) {
+            listening = true;
+            net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.tick.ServerTickEvent.Post.class, e -> {
+                if (pending != null && --wait <= 0) {
+                    CommandSourceStack s = pending;
+                    pending = null;
+                    try { run(s); } finally {
+                        ServerLevel lv = s.getServer().overworld();
+                        for (int cx = -3; cx <= 2; cx++) for (int cz = -3; cz <= 2; cz++) lv.setChunkForced(cx, cz, false);
+                    }
+                }
+            });
+        }
+        pending = src;
+        wait = 60;
+        src.sendSuccess(() -> Component.literal("bosses self test starts in 3 seconds; the total goes to the log"), false);
+        return 1;
+    }
+
     static int run(CommandSourceStack src) {
         FAILS.clear();
         ok = 0;
@@ -164,7 +194,7 @@ public final class SelfTest {
         Mob b = spawnAt(level, p, c0);
         if (a != null && b != null) {
             float ea = a.getMaxHealth() * BossController.ALL.get(a.getUUID()).damageDivisor, eb = b.getMaxHealth() * BossController.ALL.get(b.getUUID()).damageDivisor;
-            check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + ")");
+            check(eb > ea, n + ": effective health scales with the Age (" + ea + " -> " + eb + "; hp " + a.getMaxHealth() + "/" + b.getMaxHealth() + " div " + BossController.ALL.get(a.getUUID()).damageDivisor + "/" + BossController.ALL.get(b.getUUID()).damageDivisor + " near " + BossController.ALL.get(a.getUUID()).participants().size() + ")");
         }
         if (a != null) a.discard();
         if (b != null) b.discard();
