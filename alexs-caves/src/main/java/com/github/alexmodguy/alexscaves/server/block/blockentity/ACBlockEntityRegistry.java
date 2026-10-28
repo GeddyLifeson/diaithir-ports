@@ -37,6 +37,8 @@ public class ACBlockEntityRegistry {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<GingerbarrelBlockEntity>> GINGERBARREL = DEF_REG.register("gingerbarrel", () -> new BlockEntityType<>(GingerbarrelBlockEntity::new, ACBlockRegistry.GINGERBARREL.get()));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ConfectionOvenBlockEntity>> CONFECTION_OVEN = DEF_REG.register("confection_oven", () -> new BlockEntityType<>(ConfectionOvenBlockEntity::new, ACBlockRegistry.CONFECTION_OVEN.get()));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<NuclearFurnaceBlockEntity>> NUCLEAR_FURNACE = DEF_REG.register("nuclear_furnace", () -> new BlockEntityType<>(NuclearFurnaceBlockEntity::new, ACBlockRegistry.NUCLEAR_FURNACE.get()));
+
     // Custom sign blocks are added to vanilla BlockEntityType.SIGN and BlockEntityType.HANGING_SIGN
     // using access transformers to make validBlocks accessible (public-f in accesstransformer.cfg)
     public static void expandVanillaDefinitions(net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent event) {

@@ -9,14 +9,15 @@ import com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceB
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import com.github.alexthe666.citadel.client.render.legacy.LegacyBlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class NuclearFurnaceBlockRenderer<T extends NuclearFurnaceBlockEntity> implements BlockEntityRenderer<T> {
+public class NuclearFurnaceBlockRenderer<T extends NuclearFurnaceBlockEntity> extends LegacyBlockEntityRenderer<T> {
 
     private static final NuclearFurnaceModel MODEL = new NuclearFurnaceModel();
     private static final Identifier OFF_TEXTURE = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/entity/nuclear_furnace/nuclear_furnace_off.png");
@@ -32,6 +33,7 @@ public class NuclearFurnaceBlockRenderer<T extends NuclearFurnaceBlockEntity> im
     private static final Identifier SUPERCRITICAL_TEXTURE_GLOW = Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/entity/nuclear_furnace/nuclear_furnace_supercritical_glow.png");
 
     public NuclearFurnaceBlockRenderer(BlockEntityRendererProvider.Context rendererDispatcherIn) {
+        super(rendererDispatcherIn);
     }
 
     @Override
@@ -47,18 +49,22 @@ public class NuclearFurnaceBlockRenderer<T extends NuclearFurnaceBlockEntity> im
         poseStack.popPose();
     }
 
+    public int getViewDistance() {
+        return 128;
+    }
+
     private RenderType getRenderTypeFor(T furnace, boolean glow) {
         if (!furnace.isUndergoingFission() && furnace.getCriticality() <= 0) {
-            return glow ? ACRenderTypes.getEyesAlphaEnabled(OFF_TEXTURE_GLOW) : RenderType.entityCutoutNoCull(OFF_TEXTURE);
+            return glow ? ACRenderTypes.getEyesAlphaEnabled(OFF_TEXTURE_GLOW) : RenderTypes.entityCutout(OFF_TEXTURE);
         } else {
             if (furnace.getCriticality() == 1) {
-                return glow ? ACRenderTypes.getEyesAlphaEnabled(SUBCRITICAL_TEXTURE_GLOW) : RenderType.entityCutoutNoCull(SUBCRITICAL_TEXTURE);
+                return glow ? ACRenderTypes.getEyesAlphaEnabled(SUBCRITICAL_TEXTURE_GLOW) : RenderTypes.entityCutout(SUBCRITICAL_TEXTURE);
             } else if (furnace.getCriticality() == 2) {
-                return glow ? ACRenderTypes.getEyesAlphaEnabled(CRITICAL_TEXTURE_GLOW) : RenderType.entityCutoutNoCull(CRITICAL_TEXTURE);
+                return glow ? ACRenderTypes.getEyesAlphaEnabled(CRITICAL_TEXTURE_GLOW) : RenderTypes.entityCutout(CRITICAL_TEXTURE);
             } else if (furnace.getCriticality() >= 3) {
-                return glow ? ACRenderTypes.getEyesAlphaEnabled(SUPERCRITICAL_TEXTURE_GLOW) : RenderType.entityCutoutNoCull(SUPERCRITICAL_TEXTURE);
+                return glow ? ACRenderTypes.getEyesAlphaEnabled(SUPERCRITICAL_TEXTURE_GLOW) : RenderTypes.entityCutout(SUPERCRITICAL_TEXTURE);
             }
-            return glow ? ACRenderTypes.getEyesAlphaEnabled(ON_TEXTURE_GLOW) : RenderType.entityCutoutNoCull(ON_TEXTURE);
+            return glow ? ACRenderTypes.getEyesAlphaEnabled(ON_TEXTURE_GLOW) : RenderTypes.entityCutout(ON_TEXTURE);
         }
     }
 }

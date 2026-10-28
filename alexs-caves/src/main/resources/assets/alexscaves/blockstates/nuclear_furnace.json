@@ -1,9 +1,16 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "alexscaves:block/active_nuclear_furnace"
-      }
-    ]
+    "facing=north": {
+      "model": "alexscaves:block/active_nuclear_furnace"
+    },
+    "facing=south": {
+      "model": "alexscaves:block/active_nuclear_furnace"
+    },
+    "facing=east": {
+      "model": "alexscaves:block/active_nuclear_furnace"
+    },
+    "facing=west": {
+      "model": "alexscaves:block/active_nuclear_furnace"
+    }
   }
 }

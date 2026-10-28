@@ -104,7 +104,7 @@ public class NuclearFurnaceMenu extends AbstractContainerMenu {
     }
 
     private boolean canSmelt(ItemStack stack) {
-        return this.level.getRecipeManager().getRecipeFor(NuclearFurnaceBlockEntity.getRecipeType(), new SingleRecipeInput(stack), this.level).isPresent();
+        return this.level instanceof net.minecraft.server.level.ServerLevel sl && sl.recipeAccess().getRecipeFor(NuclearFurnaceBlockEntity.getRecipeType(), new SingleRecipeInput(stack), sl).isPresent();
     }
 
     private boolean isFuel(ItemStack stack) {

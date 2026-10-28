@@ -71,6 +71,7 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void registerScreens(net.neoforged.neoforge.client.event.RegisterMenuScreensEvent event) {
         event.register(com.github.alexmodguy.alexscaves.server.inventory.ACMenuRegistry.SPELUNKERY_TABLE_MENU.get(), com.github.alexmodguy.alexscaves.client.gui.SpelunkeryTableScreen::new);
+        event.register(com.github.alexmodguy.alexscaves.server.inventory.ACMenuRegistry.NUCLEAR_FURNACE_MENU.get(), com.github.alexmodguy.alexscaves.client.gui.NuclearFurnaceScreen::new);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

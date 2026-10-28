@@ -8,6 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -101,15 +102,9 @@ public class NuclearFurnaceBlock extends BaseEntityBlock {
         }
     }
 
-    public void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState1, boolean idk) {
-        if (!blockState.is(blockState1.getBlock())) {
-            BlockEntity blockentity = level.getBlockEntity(blockPos);
-            if (blockentity instanceof Container) {
-                Containers.dropContents(level, blockPos, (Container)blockentity);
-                level.updateNeighbourForOutputSignal(blockPos, this);
-            }
-            super.onRemove(blockState, level, blockPos, blockState1, idk);
-        }
+    @Override
+    protected void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, boolean movedByPiston) {
+        Containers.updateNeighboursAfterDestroy(state, level, pos);
     }
 
 }

@@ -100,6 +100,8 @@ public class AlexsCaves {
         ACEffectRegistry.DEF_REG.register(modEventBus);
         ACEffectRegistry.POTION_DEF_REG.register(modEventBus);
         ACMenuRegistry.DEF_REG.register(modEventBus);
+        com.github.alexmodguy.alexscaves.server.recipe.ACRecipeRegistry.TYPE_DEF_REG.register(modEventBus);
+        com.github.alexmodguy.alexscaves.server.recipe.ACRecipeRegistry.DEF_REG.register(modEventBus);
         ACAdvancementTriggerRegistry.DEF_REG.register(modEventBus);
         ACFluidRegistry.FLUID_TYPE_DEF_REG.register(modEventBus);
         ACFluidRegistry.FLUID_DEF_REG.register(modEventBus);

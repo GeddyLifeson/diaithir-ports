@@ -436,6 +436,22 @@ public class ClientProxy extends CommonProxy {
                     }
                 }
                 break;
+            case 7:
+                if (soundEmitter instanceof com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity nuclearFurnace) {
+                    com.github.alexmodguy.alexscaves.client.sound.NuclearFurnaceSound sound;
+                    AbstractTickableSoundInstance old = BLOCK_ENTITY_SOUND_INSTANCE_MAP.get(nuclearFurnace);
+                    if (old == null || !(old instanceof com.github.alexmodguy.alexscaves.client.sound.NuclearFurnaceSound furnaceSound
+                            && furnaceSound.isSameBlockEntity(nuclearFurnace)) || old.isStopped()) {
+                        sound = new com.github.alexmodguy.alexscaves.client.sound.NuclearFurnaceSound(nuclearFurnace);
+                        BLOCK_ENTITY_SOUND_INSTANCE_MAP.put(nuclearFurnace, sound);
+                    } else {
+                        sound = (com.github.alexmodguy.alexscaves.client.sound.NuclearFurnaceSound) old;
+                    }
+                    if (!isSoundPlaying(sound) && sound.canPlaySound()) {
+                        Minecraft.getInstance().getSoundManager().queueTickingSound(sound);
+                    }
+                }
+                break;
             case 8:
                 if (soundEmitter instanceof LivingEntity livingEntity) {
                     RaygunSound sound;

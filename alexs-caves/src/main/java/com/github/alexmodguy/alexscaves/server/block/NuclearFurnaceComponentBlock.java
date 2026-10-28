@@ -84,7 +84,7 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
     public void entityInside(BlockState state, Level level, BlockPos blockPos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
         if (state.getValue(ACTIVE)) {
             BlockPos corner = getCornerForFurnace(level, blockPos, true);
-            if (corner != null && corner.getY() == blockPos.getY() - 1 && false) { //top
+            if (corner != null && corner.getY() == blockPos.getY() - 1 && level.getBlockEntity(corner) instanceof com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity furnace && furnace.isUndergoingFission()) { //top
                 if(entity instanceof LivingEntity living && !entity.getType().builtInRegistryHolder().is(ACTagRegistry.RESISTS_RADIATION)){
                     living.addEffect(new MobEffectInstance(ACEffectRegistry.IRRADIATED, 2000, 3));
                 }
@@ -211,7 +211,8 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
         BlockState state = level.getBlockState(pos);
         if (state.is(this) && state.getValue(ACTIVE)) {
             BlockPos corner = getCornerForFurnace(level, pos, true);
-            if (corner != null && false) {
+            if (corner != null && level.getBlockEntity(corner) instanceof com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity && nuclearFurnaceBlockEntity.getCriticality() >= 2F) {
+                nuclearFurnaceBlockEntity.destroyWhileCritical(false);
             }
         }
     }
@@ -219,10 +220,12 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos blockPos, Player player, BlockHitResult result) {
         if(state.getValue(ACTIVE) && !player.isShiftKeyDown()){
             BlockPos corner = getCornerForFurnace(level, blockPos, true);
-            if(corner != null && level.getBlockState(corner).is(ACBlockRegistry.NUCLEAR_FURNACE.get()) && isCornerForFurnace(level, corner, false, true) && false){
+            if(corner != null && level.getBlockState(corner).is(ACBlockRegistry.NUCLEAR_FURNACE.get()) && isCornerForFurnace(level, corner, false, true) && level.getBlockEntity(corner) instanceof com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity){
                 if (level.isClientSide()) {
                     return InteractionResult.SUCCESS;
                 } else if(canSurvive(state, level, blockPos)){
+                    player.openMenu(nuclearFurnaceBlockEntity);
+                    nuclearFurnaceBlockEntity.onPlayerUse(player);
                     player.awardStat(Stats.INTERACT_WITH_FURNACE);
                     return InteractionResult.CONSUME;
                 }
@@ -235,6 +238,9 @@ public class NuclearFurnaceComponentBlock extends Block implements WorldlyContai
     public WorldlyContainer getContainer(BlockState state, LevelAccessor levelAccessor, BlockPos blockPos) {
         if(state.getValue(ACTIVE)){
             BlockPos corner = getCornerForFurnace(levelAccessor, blockPos, true);
+            if (corner != null && levelAccessor.getBlockEntity(corner) instanceof com.github.alexmodguy.alexscaves.server.block.blockentity.NuclearFurnaceBlockEntity nuclearFurnaceBlockEntity) {
+                return nuclearFurnaceBlockEntity.getContainerFor(blockPos.subtract(corner));
+            }
         }
         return null;
     }

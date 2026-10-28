@@ -218,7 +218,7 @@ public class ACBlockRegistry {
     public static final DeferredHolder<Block, Block> NUCLEAR_BOMB = registerBlockAndItem("nuclear_bomb", () -> new NuclearBombBlock());
     public static final DeferredHolder<Block, Block> UNREFINED_WASTE = registerBlockAndItem("unrefined_waste", () -> new UnrefinedWasteBlock(), 4);
     public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE_COMPONENT = registerBlockAndItem("nuclear_furnace_component", () -> new NuclearFurnaceComponentBlock());
-    public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE = reg("nuclear_furnace", () -> new Block(com.github.alexmodguy.alexscaves.server.misc.ACProps.block().strength(50.0F, 1200.0F).lightLevel(state -> 7)));
+    public static final DeferredHolder<Block, Block> NUCLEAR_FURNACE = reg("nuclear_furnace", () -> new NuclearFurnaceBlock());
     public static final DeferredHolder<Block, Block> SULFUR = registerBlockAndItem("sulfur", () -> new SulfurBlock());
     public static final DeferredHolder<Block, Block> SULFUR_BUD_SMALL = registerBlockAndItem("sulfur_bud_small", () -> new SulfurBudBlock(6, 4));
     public static final DeferredHolder<Block, Block> SULFUR_BUD_MEDIUM = registerBlockAndItem("sulfur_bud_medium", () -> new SulfurBudBlock(6, 8));

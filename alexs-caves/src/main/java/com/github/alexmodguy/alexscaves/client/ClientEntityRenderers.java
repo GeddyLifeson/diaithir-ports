@@ -31,6 +31,7 @@ public class ClientEntityRenderers {
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.TESLA_BULB.get(), TelsaBulbBlockRenderer::new);
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.HOLOGRAM_PROJECTOR.get(), HologramProjectorBlockRenderer::new);
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.QUARRY.get(), QuarryBlockRenderer::new);
+        event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.NUCLEAR_FURNACE.get(), com.github.alexmodguy.alexscaves.client.render.blockentity.NuclearFurnaceBlockRenderer::new);
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.AMBERSOL.get(), AmbersolBlockRenderer::new);
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.AMBER_MONOLITH.get(), AmberMonolithBlockRenderer::new);
         event.registerBlockEntityRenderer(com.github.alexmodguy.alexscaves.server.block.blockentity.ACBlockEntityRegistry.SIREN_LIGHT.get(), SirenLightBlockRenderer::new);
