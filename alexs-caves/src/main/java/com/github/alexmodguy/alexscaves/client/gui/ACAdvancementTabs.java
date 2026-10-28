@@ -1,16 +1,16 @@
 package com.github.alexmodguy.alexscaves.client.gui;
 
 import com.github.alexmodguy.alexscaves.AlexsCaves;
-import com.github.alexmodguy.alexscaves.mixin.client.AdvancementWidgetAccessor;
 import com.github.alexmodguy.alexscaves.server.misc.ACMath;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
 import net.minecraft.resources.Identifier;
-import net.minecraft.util.FastColor;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 
 import java.util.Locale;
@@ -33,31 +33,29 @@ public class ACAdvancementTabs {
         return holder.id().getNamespace().equals(AlexsCaves.MODID);
     }
 
-    public static void renderTabBackground(GuiGraphics guiGraphics, int topX, int topY, DisplayInfo displayInfo,
+    public static void renderTabBackground(GuiGraphicsExtractor guiGraphics, int topX, int topY, DisplayInfo displayInfo,
             double scrollX, double scrollY) {
-        float partialTick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(false);
+        float partialTick = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false);
         float hoverProgress = getHoverChangeAmount(partialTick);
         float priorHoverProgress = 1F - hoverProgress;
-        int fastColor = net.minecraft.util.ARGB.lerp(hoverProgress, previousHoverType.backgroundColor,
-                hoverType.backgroundColor);
-        guiGraphics.fill(0, 0, windowWidth + 100, windowHeight, fastColor | -16777216);
+        int fastColor = ARGB.srgbLerp(hoverProgress, previousHoverType.backgroundColor | 0xFF000000,
+                hoverType.backgroundColor | 0xFF000000);
+        guiGraphics.fill(0, 0, windowWidth + 100, windowHeight, fastColor);
         renderTabBackgroundForType(guiGraphics, topX, topY, partialTick, scrollX, scrollY, previousHoverType,
                 priorHoverProgress);
         renderTabBackgroundForType(guiGraphics, topX, topY, partialTick, scrollX, scrollY, hoverType, hoverProgress);
     }
 
-    private static void renderTabBackgroundForType(GuiGraphics guiGraphics, int topX, int topY, float partialTick,
+    private static void renderTabBackgroundForType(GuiGraphicsExtractor guiGraphics, int topX, int topY, float partialTick,
             double scrollX, double scrollY, Type type, float alpha) {
-        guiGraphics.pose().pushPose();
+        guiGraphics.pose().pushMatrix();
         if (type != Type.DEFAULT) {
             int i = (int) Math.round(scrollX);
             int j = (int) Math.round(scrollY);
             for (int parallaxX = -1; parallaxX <= (windowWidth + 128) / 128; parallaxX++) {
                 for (int parallaxY = -1; parallaxY <= (windowWidth + 128) / 128; parallaxY++) {
-                    ColorBlitHelper.blitWithColor(guiGraphics, type.background, parallaxX * 128 + i / 4,
-                            parallaxY * 128 + j / 4, 0.0F, 0.0F, 128, 128, 128, 128, 1F, 1F, 1F, alpha);
-                    ColorBlitHelper.blitWithColor(guiGraphics, type.midground, parallaxX * 128 + i / 2 - 1,
-                            parallaxY * 128 + j / 2, 0.0F, 0.0F, 128, 128, 128, 128, 1F, 1F, 1F, alpha);
+                    tint(guiGraphics, type.background, parallaxX * 128 + i / 4, parallaxY * 128 + j / 4, 128, alpha);
+                    tint(guiGraphics, type.midground, parallaxX * 128 + i / 2 - 1, parallaxY * 128 + j / 2, 128, alpha);
                 }
             }
         }
@@ -76,12 +74,15 @@ public class ACAdvancementTabs {
                 if (type != Type.DEFAULT && isBlockCarvedOut(blockX, blockY, type)) {
                     continue;
                 }
-                ColorBlitHelper.blitWithColor(guiGraphics, type.baseStone, 16 * relativeBlockX + scrollPixelOffsetX,
-                        16 * relativeBlockY + scrollPixelOffsetY, 0.0F, 0.0F, 16, 16, 16, 16, 1F, 1F, 1F, alpha);
+                tint(guiGraphics, type.baseStone, 16 * relativeBlockX + scrollPixelOffsetX, 16 * relativeBlockY + scrollPixelOffsetY, 16, alpha);
             }
         }
 
-        guiGraphics.pose().popPose();
+        guiGraphics.pose().popMatrix();
+    }
+
+    private static void tint(GuiGraphicsExtractor g, Identifier tex, int x, int y, int size, float alpha) {
+        g.blit(RenderPipelines.GUI_TEXTURED, tex, x, y, 0.0F, 0.0F, size, size, size, size, ARGB.white(Mth.clamp(alpha, 0F, 1F)));
     }
 
     private static boolean isBlockCarvedOut(int blockX, int blockY, Type type) {
@@ -170,29 +171,19 @@ public class ACAdvancementTabs {
             return DEFAULT;
         }
 
-        public static Type forAdvancementHolder(AdvancementHolder holder) {
-            if (holder == null)
-                return DEFAULT;
-            Type direct = getDirectType(holder);
-            // In 1.21, Advancement.parent() returns Optional<Identifier>, not
-            // Optional<Advancement>
-            // We would need to look up the parent from the advancement manager, which is
-            // complex
-            // For now, just return the direct type
-            return direct;
+        public static Type forNode(net.minecraft.advancements.AdvancementNode node) {
+            while (node != null) {
+                Type direct = getDirectType(node.holder());
+                if (direct != DEFAULT) return direct;
+                node = node.parent();
+            }
+            return DEFAULT;
         }
 
-        public static boolean isTreeNodeUnlocked(AdvancementWidget advancementWidget) {
-            AdvancementWidgetAccessor accessor = (AdvancementWidgetAccessor) advancementWidget;
-            AdvancementProgress progress = accessor.getProgress();
-            if (progress != null && progress.isDone()) {
-                return true;
-            }
-            // In 1.21, we need to use accessors for private fields
-            AdvancementHolder holder = accessor.getAdvancementNode().holder();
-            Type direct = getDirectType(holder);
-            // Simplified logic - just check current widget's progress
-            return direct == DEFAULT || (progress != null && progress.isDone());
+        public static boolean isTreeNodeUnlocked(AdvancementWidget widget) {
+            AdvancementProgress progress = widget.progress;
+            if (progress != null && progress.isDone()) return true;
+            return getDirectType(widget.advancementNode.holder()) != DEFAULT || widget.advancementNode.parent() == null;
         }
     }
 }

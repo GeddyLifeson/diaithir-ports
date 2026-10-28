@@ -53,6 +53,78 @@
         "class": "com/github/alexmodguy/alexscaves/server/entity/ACMobCategoryEnumParams",
         "method": "getDeepSeaCreatureParameter"
       }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_RAYGUN",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "raygun"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_GAUNTLET",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "gauntlet"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_SHIELD",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "shield"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_SHOTGUM",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "shotgum"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_HOOK",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "hook"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_SUBTERRANODON",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "subterranodon"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_BOMB",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "bomb"
+      }
+    },
+    {
+      "enum": "net/minecraft/client/model/HumanoidModel$ArmPose",
+      "name": "ALEXSCAVES_SUGAR",
+      "constructor": "(ZZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
+      "parameters": {
+        "class": "com/github/alexmodguy/alexscaves/client/render/misc/ACArmPoses",
+        "method": "sugar"
+      }
     }
   ]
 }

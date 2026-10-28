@@ -60,6 +60,7 @@ public class ACPotionEffectLayer<S extends LivingEntityRenderState, M extends En
 
     /** Fills the per-entity data used by the layer. Registered through RegisterRenderStateModifiersEvent. */
     public static void extract(LivingEntity living, LivingEntityRenderState state) {
+        com.github.alexmodguy.alexscaves.client.render.misc.ACArmPoses.extract(living, state);
         Data d = null;
         boolean irradiated = living.hasEffect(ACEffectRegistry.IRRADIATED) && AlexsCaves.CLIENT_CONFIG.radiationGlowEffect.get();
         boolean bubbled = (living.hasEffect(ACEffectRegistry.BUBBLED) || AlexsCaves.PROXY.hasBubbledEffectVisual(living.getId())) && living.isAlive();

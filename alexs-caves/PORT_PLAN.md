@@ -66,3 +66,12 @@ The small cave chambers stay as a second source of cave biomes.
 Names: Diaithiris display names for 626 item, block, entity and biome keys (tools/apply_names.py, built by the archaic names tool).
 Age gate: age_gates.json, namespace `alexscaves`, Age IV and up. Library text for creatures, caves and sites: compute jobs
 `caves_mobs`, `caves_biomes`, `caves_structures` (tools/gen_jobs.py), merge writes library-sync/alexs-caves.json.
+
+## Round 3 status (paused, code written but NOT compiled or tested)
+Written and committed uncompiled, because the VM was reserved for another worker's full-pack test (/home/user/FULLPACK_TEST_RUNNING) and no gradle build was allowed:
+- Advancement tabs without mixins: `client/gui/ACAdvancementsScreen`, `ACAdvancementTab`, `ACAdvancementTabs`, AT entries in accesstransformer.cfg, swap via `ScreenEvent.Opening` in `ClientEvents`.
+- Boss-bar overlay and crosshair/xp/selected-item suppression while possessed or riding (`ClientEvents.onPreRenderGuiLayer`, `renderBossOverlay`).
+- Hold poses: `client/render/misc/ACArmPoses` (HumanoidModel.ArmPose enum extensions in enumextensions.json, set from the render state modifier in `ACPotionEffectLayer.extract`) and first-person cave map hand poses (`CaveMapHand`, via `RenderHandEvent`).
+- Biome sky, sun/moon/star/cloud hiding, ambient light and light tint as data attributes in the six biome JSONs (the biomeSkyOverrides/ambient configs no longer apply).
+- Glow bloom: `client/render/GlowBloom` (own render targets through `OutputTarget`, post chains post_effect/glow_irradiated.json and glow_witch.json, shader post/glow_composite.fsh).
+TODO next session: run `./gradlew compileJava` and fix errors (likely spots: AT field names, enum extension descriptor, `HumanoidModel.ArmPose.valueOf` names, PostChain external targets), then verify in game: tabs screen, boss bar, poses (raygun, gauntlet, shield, shotgum, hook, sugar rush), held cave map, biome sky/light in a cave biome, irradiated glow bloom, fog scaling, emissive blocks at night, Dreadbow/Gauntlet/Shield animations, structure interior (loot chests, submarine spawn via /place). Hologram bloom and the raygun second-pass glow are still not ported. Then rebuild jars, recopy to builds/mod-ports, update TEST.md.

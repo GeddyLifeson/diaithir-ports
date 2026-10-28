@@ -16,18 +16,25 @@ import java.util.function.Function;
 public class ACRenderTypes {
 
     private static Function<Identifier, RenderType> entityType(String name, RenderPipeline pipeline, boolean lit) {
+        return entityType(name, pipeline, lit, null);
+    }
+
+    private static Function<Identifier, RenderType> entityType(String name, RenderPipeline pipeline, boolean lit, net.minecraft.client.renderer.rendertype.OutputTarget output) {
         return Util.memoize(texture -> {
             RenderSetup.RenderSetupBuilder b = RenderSetup.builder(pipeline).withTexture("Sampler0", texture);
             if (lit) {
                 b.useLightmap().useOverlay();
             }
+            if (output != null) {
+                b.setOutputTarget(output);
+            }
             return RenderType.create(name, b.sortOnUpload().createRenderSetup());
         });
     }
 
-    private static final Function<Identifier, RenderType> IRRADIATED = entityType("alexscaves_irradiated", ACRenderPipelines.IRRADIATED, false);
-    private static final Function<Identifier, RenderType> BLUE_IRRADIATED = entityType("alexscaves_blue_irradiated", ACRenderPipelines.BLUE_IRRADIATED, false);
-    private static final Function<Identifier, RenderType> PURPLE_WITCH = entityType("alexscaves_purple_witch", ACRenderPipelines.PURPLE_WITCH, false);
+    private static final Function<Identifier, RenderType> IRRADIATED = entityType("alexscaves_irradiated", ACRenderPipelines.IRRADIATED, false, GlowBloom.IRRADIATED.output);
+    private static final Function<Identifier, RenderType> BLUE_IRRADIATED = entityType("alexscaves_blue_irradiated", ACRenderPipelines.BLUE_IRRADIATED, false, GlowBloom.IRRADIATED.output);
+    private static final Function<Identifier, RenderType> PURPLE_WITCH = entityType("alexscaves_purple_witch", ACRenderPipelines.PURPLE_WITCH, false, GlowBloom.WITCH.output);
     private static final Function<Identifier, RenderType> RED_GHOST = entityType("alexscaves_red_ghost", ACRenderPipelines.RED_GHOST, true);
     private static final Function<Identifier, RenderType> BUBBLED = entityType("alexscaves_bubbled", ACRenderPipelines.BUBBLED, true);
     private static final Function<Identifier, RenderType> BUBBLED_NO_CULL = entityType("alexscaves_bubbled_no_cull", ACRenderPipelines.BUBBLED_NO_CULL, true);
@@ -75,10 +82,12 @@ public class ACRenderTypes {
     }
 
     public static RenderType getRadiationGlow(Identifier locationIn) {
+        GlowBloom.IRRADIATED.request();
         return IRRADIATED.apply(locationIn);
     }
 
     public static RenderType getBlueRadiationGlow(Identifier locationIn) {
+        GlowBloom.IRRADIATED.request();
         return BLUE_IRRADIATED.apply(locationIn);
     }
 
@@ -135,6 +144,7 @@ public class ACRenderTypes {
     }
 
     public static RenderType getPurpleWitch(Identifier locationIn) {
+        GlowBloom.WITCH.request();
         return PURPLE_WITCH.apply(locationIn);
     }
 

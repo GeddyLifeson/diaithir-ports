@@ -78,7 +78,60 @@ public class ClientEvents {
     }
 
     @SubscribeEvent
+    public static void onPreRenderGuiLayer(net.neoforged.neoforge.client.event.RenderGuiLayerEvent.Pre event) {
+        var cam = Minecraft.getInstance().getCameraEntity();
+        var name = event.getName();
+        if (cam instanceof PossessesCamera && (name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.CROSSHAIR)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.CONTEXTUAL_INFO_BAR)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.CONTEXTUAL_INFO_BAR_BACKGROUND)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.EXPERIENCE_LEVEL)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.SELECTED_ITEM_NAME))) {
+            event.setCanceled(true);
+        }
+        if (cam != null && cam.getVehicle() instanceof com.github.alexmodguy.alexscaves.server.entity.util.RidingMeterMount mount && mount.hasRidingMeter()
+                && (name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.CONTEXTUAL_INFO_BAR)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.CONTEXTUAL_INFO_BAR_BACKGROUND)
+                || name.equals(net.neoforged.neoforge.client.gui.VanillaGuiLayers.EXPERIENCE_LEVEL))) {
+            event.setCanceled(true);
+        }
+    }
+
+    private static final net.minecraft.resources.Identifier BOSS_BAR_HUD_OVERLAYS = net.minecraft.resources.Identifier.fromNamespaceAndPath(AlexsCaves.MODID, "textures/misc/boss_bar_hud_overlays.png");
+
+    @SubscribeEvent(priority = net.neoforged.bus.api.EventPriority.LOWEST)
+    public static void renderBossOverlay(net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent.BossEventProgress event) {
+        Integer type = ClientProxy.bossBarRenderTypes.get(event.getBossEvent().getId());
+        if (type == null || type != 0) return;
+        event.setCanceled(true);
+        var g = event.getGuiGraphics();
+        int x = event.getX();
+        int y = event.getY();
+        g.blit(net.minecraft.client.renderer.RenderPipelines.GUI_TEXTURED, BOSS_BAR_HUD_OVERLAYS, x, y, 0, 0, 182, 15, 256, 256);
+        int progressScaled = (int) (event.getBossEvent().getProgress() * 183.0F);
+        g.blit(net.minecraft.client.renderer.RenderPipelines.GUI_TEXTURED, BOSS_BAR_HUD_OVERLAYS, x, y, 0, 15, progressScaled, 15, 256, 256);
+        var font = Minecraft.getInstance().font;
+        net.minecraft.network.chat.Component name = event.getBossEvent().getName();
+        int tx = g.guiWidth() / 2 - font.width(name) / 2;
+        int ty = y - 9;
+        for (int dx = -1; dx <= 1; dx++) for (int dy = -1; dy <= 1; dy++) {
+            if (dx != 0 || dy != 0) g.text(font, name, tx + dx, ty + dy, 0xFF361515, false);
+        }
+        g.text(font, name, tx, ty, 0xFFFF5100, false);
+        event.setIncrement(event.getIncrement() + 7);
+    }
+
+    @SubscribeEvent
+    public static void onScreenOpening(net.neoforged.neoforge.client.event.ScreenEvent.Opening event) {
+        if (event.getNewScreen() != null && event.getNewScreen().getClass() == net.minecraft.client.gui.screens.advancements.AdvancementsScreen.class) {
+            var old = (net.minecraft.client.gui.screens.advancements.AdvancementsScreen) event.getNewScreen();
+            event.setNewScreen(new com.github.alexmodguy.alexscaves.client.gui.ACAdvancementsScreen(old.advancements, old.lastScreen));
+        }
+    }
+
+    @SubscribeEvent
     public static void onRenderHand(RenderHandEvent event) {
+        com.github.alexmodguy.alexscaves.client.render.misc.CaveMapHand.onRenderHand(event);
+        if (event.isCanceled()) return;
         Minecraft mc = Minecraft.getInstance();
         if (mc.getCameraEntity() instanceof PossessesCamera) {
             event.setCanceled(true);

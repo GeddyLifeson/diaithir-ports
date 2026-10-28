@@ -44,6 +44,17 @@ public class RecipeCaveMap extends CustomRecipe {
         return key == null ? ItemStack.EMPTY : CaveMapItem.createMap(key);
     }
 
+    // StreamCodec.unit compares the instance with equals; the data codec makes fresh instances.
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof RecipeCaveMap;
+    }
+
+    @Override
+    public int hashCode() {
+        return RecipeCaveMap.class.hashCode();
+    }
+
     @Override
     public RecipeSerializer<RecipeCaveMap> getSerializer() {
         return SERIALIZER;

@@ -176,6 +176,13 @@
         },
         "probability": 0.005
       }
-    ]
+    ],
+    "minecraft:visual/sun_angle": 180.0,
+    "minecraft:visual/moon_angle": 180.0,
+    "minecraft:visual/star_brightness": 0.0,
+    "minecraft:visual/sunrise_sunset_color": "#00000000",
+    "minecraft:visual/cloud_color": "#00ffffff",
+    "minecraft:visual/block_light_tint": "#595250",
+    "minecraft:visual/sky_light_color": "#595250"
   }
 }
