@@ -49,6 +49,14 @@ public final class GuiGraphics {
     public void fillGradient(int x0, int y0, int x1, int y1, int c1, int c2) { g.fillGradient(x0, y0, x1, y1, c1, c2); }
     public void hLine(int x0, int x1, int y, int color) { g.horizontalLine(x0, x1, y, color); }
     public void vLine(int x, int y0, int y1, int color) { g.verticalLine(x, y0, y1, color); }
+    /** Draw a 1px line between two points (pixel stepping), like the old GL line primitives. */
+    public void line(float x1, float y1, float x2, float y2, int color) {
+        int steps = (int) Math.max(1, Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1)));
+        for (int i = 0; i <= steps; i++) {
+            int px = Math.round(x1 + (x2 - x1) * i / steps), py = Math.round(y1 + (y2 - y1) * i / steps);
+            g.fill(px, py, px + 1, py + 1, color);
+        }
+    }
     public void renderOutline(int x, int y, int w, int h, int color) { g.outline(x, y, w, h, color); }
     public void enableScissor(int x0, int y0, int x1, int y1) { g.enableScissor(x0, y0, x1, y1); }
     public void disableScissor() { g.disableScissor(); }
@@ -56,6 +64,8 @@ public final class GuiGraphics {
     public int drawString(Font font, String s, int x, int y, int color) { g.text(font, s, x, y, color); return x + font.width(s); }
     public int drawString(Font font, String s, int x, int y, int color, boolean shadow) { g.text(font, s, x, y, color, shadow); return x + font.width(s); }
     public int drawString(Font font, String s, float x, float y, int color, boolean shadow) { return drawString(font, s, (int) x, (int) y, color, shadow); }
+    public int drawString(Font font, FormattedCharSequence s, float x, float y, int color, boolean shadow) { return drawString(font, s, (int) x, (int) y, color, shadow); }
+    public int drawString(Font font, Component s, float x, float y, int color, boolean shadow) { return drawString(font, s, (int) x, (int) y, color, shadow); }
     public int drawString(Font font, Component s, int x, int y, int color) { g.text(font, s, x, y, color); return x + font.width(s); }
     public int drawString(Font font, Component s, int x, int y, int color, boolean shadow) { g.text(font, s, x, y, color, shadow); return x + font.width(s); }
     public int drawString(Font font, FormattedCharSequence s, int x, int y, int color) { g.text(font, s, x, y, color); return x + font.width(s); }

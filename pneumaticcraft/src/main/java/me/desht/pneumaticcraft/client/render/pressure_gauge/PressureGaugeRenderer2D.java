@@ -106,8 +106,8 @@ public class PressureGaugeRenderer2D {
                 int i = (int) (t / (2f * PI_F) * CIRCLE_POINTS);
                 if (i >= GAUGE_POINTS) continue;  // gap at the bottom of the dial
                 int color = RED;
-                if (i >= explodeBoundary) color = vacuumWorking ? YELLOW : GREEN;
-                if (i >= workingBoundary) color = vacuumWorking ? GREEN : YELLOW;
+                if (explodeBoundary >= 0 && explodeBoundary < GAUGE_POINTS && i >= explodeBoundary) color = vacuumWorking ? YELLOW : GREEN;
+                if (workingBoundary >= 0 && workingBoundary < GAUGE_POINTS && i >= workingBoundary) color = vacuumWorking ? GREEN : YELLOW;
                 graphics.fill(xPos + dx, yPos + dy, xPos + dx + 1, yPos + dy + 1, color);
             }
         }

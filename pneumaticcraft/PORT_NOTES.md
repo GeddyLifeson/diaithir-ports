@@ -41,3 +41,23 @@ Each of these compiles and boots but does not do its job yet.
 - `ItemSearcherScreen` is a stub holding only its inventory, so the item searcher menu opens without a usable GUI.
 - Third-party integrations: removed, as listed above. `thirdparty/computer_common` (CC/Lua) compiles but nothing registers it.
 - Datagen is stashed. The generated data was edited by hand/script and must not be regenerated with the old datagen.
+
+
+## Client restoration (second pass)
+
+Restored and verified by joining a world under Xvfb (client run, `-Xmx6G`, no server) with screenshots in
+`/mnt/project-files/tech-transport/pnc-shots/`:
+
+- Item model definitions (`assets/pneumaticcraft/items/*.json`), custom model loaders replaced by plain models
+  (fluid_container, rendered_item, pressure_tube static core), UVs clamped (26.1 rejects out-of-range UVs).
+- Armor equipment assets (`assets/pneumaticcraft/equipment`, textures moved to `textures/entity/equipment`).
+- Fluid models via `RegisterFluidModelsEvent` (`PncFluidClient`).
+- Item fluid capabilities (tanks, liquid hopper, buckets, memory stick) on the transfer API (`ItemAccessFluidHandler`).
+- GUI layer: `client/gui/compat/GuiGraphics` is a thin wrapper that keeps the old drawing API on top of
+  `GuiGraphicsExtractor`; widgets, `AbstractPneumaticCraftContainerScreen`, pressure gauge, and about 45 machine
+  screens are ported and registered (`PncClientSetup`). An access transformer makes the container screen size fields non-final.
+- All bidirectional payloads now register a client handler (required by 26.1).
+
+Still stubbed: block entity renderers (tanks fluid, pressure gauge, assembly arms, etc.), entity renderers,
+pneumatic armor client and HUD, programmer, Amadron, remote, logistics frame screens, tube module screens,
+particles, moving sounds, tinting through item model JSON, custom pressure tube model.

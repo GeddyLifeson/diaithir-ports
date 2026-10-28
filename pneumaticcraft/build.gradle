@@ -15,6 +15,7 @@ sourceSets {
 }
 
 neoForge {
+    accessTransformers.from("src/main/resources/META-INF/accesstransformer.cfg")
     version = project.neo_version
     runs {
         server {
@@ -24,7 +25,7 @@ neoForge {
         client {
             client()
             jvmArgument '-Xmx6G'
-            programArguments.addAll('--username', 'Dev')
+            programArguments.addAll('--username', 'Dev', '--width', '1280', '--height', '720')
             if (project.hasProperty('quickplay')) programArguments.addAll('--quickPlaySingleplayer', project.property('quickplay'))
         }
     }
