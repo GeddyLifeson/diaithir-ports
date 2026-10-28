@@ -42,7 +42,7 @@ public class ParadiseLostRecipeTypes {
     public static void init() {
         TREE_TAP_RECIPE_SERIALIZER = registerSerializer(TREE_TAP_RECIPE_ID, TreeTapRecipe.Serializer.create());
         TREE_TAP_RECIPE_TYPE = registerRecipeType(TREE_TAP_RECIPE_ID);
-        CALCITE_DECORATED_POT_RECIPE_SERIALIZER = registerSerializer(CALCITE_DECORATED_POT_RECIPE_ID, new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(CraftingCalciteDecoratedPotRecipe::new), net.minecraft.network.codec.StreamCodec.unit(new CraftingCalciteDecoratedPotRecipe())));
+        CALCITE_DECORATED_POT_RECIPE_SERIALIZER = registerSerializer(CALCITE_DECORATED_POT_RECIPE_ID, new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(CraftingCalciteDecoratedPotRecipe::new), net.minecraft.network.codec.StreamCodec.of((buf, recipe) -> { }, buf -> new CraftingCalciteDecoratedPotRecipe())));
         CALCITE_DECORATED_POT_RECIPE_TYPE = registerRecipeType(CALCITE_DECORATED_POT_RECIPE_ID);
     }
 }
