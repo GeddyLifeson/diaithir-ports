@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": {
-      "item": "pneumaticcraft:copper_nugget"
-    }
+    "N": "pneumaticcraft:copper_nugget"
   },
   "pattern": [
     "NNN",

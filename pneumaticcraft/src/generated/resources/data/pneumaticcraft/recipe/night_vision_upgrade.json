@@ -2,21 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "item": "pneumaticcraft:pressure_chamber_glass"
-    },
-    "L": {
-      "tag": "pneumaticcraft:upgrade_components"
-    },
-    "N": {
-      "type": "neoforge:components",
-      "components": {
-        "minecraft:potion_contents": {
-          "potion": "minecraft:night_vision"
-        }
-      },
-      "items": "minecraft:potion"
-    }
+    "G": "pneumaticcraft:pressure_chamber_glass",
+    "L": "#pneumaticcraft:upgrade_components",
+    "N": "minecraft:potion"
   },
   "pattern": [
     "LNL",

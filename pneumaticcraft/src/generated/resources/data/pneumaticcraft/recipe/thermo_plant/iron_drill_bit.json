@@ -3,12 +3,10 @@
   "air_use_multiplier": 2.0,
   "inputs": {
     "fluid": {
-      "amount": 2000,
-      "tag": "c:lubricant"
+      "ingredient": "#c:lubricant",
+      "amount": 2000
     },
-    "item": {
-      "tag": "c:ingots/iron"
-    }
+    "item": "#c:ingots/iron"
   },
   "outputs": {
     "item_output": {

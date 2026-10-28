@@ -2,12 +2,10 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 50,
-      "tag": "pneumaticcraft:plastic"
+      "ingredient": "#pneumaticcraft:plastic",
+      "amount": 50
     },
-    "item": {
-      "item": "pneumaticcraft:pressure_tube"
-    }
+    "item": "pneumaticcraft:pressure_tube"
   },
   "outputs": {
     "item_output": {

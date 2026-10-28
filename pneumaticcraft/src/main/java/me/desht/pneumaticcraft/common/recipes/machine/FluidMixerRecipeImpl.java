@@ -36,16 +36,26 @@ import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 public class FluidMixerRecipeImpl extends FluidMixerRecipe {
     private final SizedFluidIngredient input1;
     private final SizedFluidIngredient input2;
-    private final FluidStack outputFluid;
-    private final ItemStack outputItem;
+    private final java.util.function.Supplier<FluidStack> outputFluid;
+    private final java.util.function.Supplier<ItemStack> outputItem;
     private final float pressure;
     private final int processingTime;
 
     public FluidMixerRecipeImpl(SizedFluidIngredient input1, SizedFluidIngredient input2, FluidStack outputFluid, ItemStack outputItem, float pressure, int processingTime) {
         this.input1 = input1;
         this.input2 = input2;
-        this.outputFluid = outputFluid;
-        this.outputItem = outputItem;
+        this.outputFluid = () -> outputFluid;
+        this.outputItem = () -> outputItem;
+        this.pressure = pressure;
+        this.processingTime = processingTime;
+    }
+
+    // data-driven recipes are parsed before item components are bound, so the stacks must be created lazily
+    public FluidMixerRecipeImpl(SizedFluidIngredient input1, SizedFluidIngredient input2, java.util.Optional<net.neoforged.neoforge.fluids.FluidStackTemplate> outputFluid, java.util.Optional<net.minecraft.world.item.ItemStackTemplate> outputItem, float pressure, int processingTime) {
+        this.input1 = input1;
+        this.input2 = input2;
+        this.outputFluid = com.google.common.base.Suppliers.memoize(() -> outputFluid.map(net.neoforged.neoforge.fluids.FluidStackTemplate::create).orElse(FluidStack.EMPTY));
+        this.outputItem = com.google.common.base.Suppliers.memoize(() -> outputItem.map(net.minecraft.world.item.ItemStackTemplate::create).orElse(ItemStack.EMPTY));
         this.pressure = pressure;
         this.processingTime = processingTime;
     }
@@ -71,12 +81,12 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
 
     @Override
     public FluidStack getOutputFluid() {
-        return outputFluid;
+        return outputFluid.get();
     }
 
     @Override
     public ItemStack getOutputItem() {
-        return outputItem;
+        return outputItem.get();
     }
 
     @Override
@@ -100,6 +110,11 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
     }
 
 
+    public interface ITemplateFactory<T extends FluidMixerRecipe> {
+        T create(SizedFluidIngredient input1, SizedFluidIngredient input2,
+                 java.util.Optional<net.neoforged.neoforge.fluids.FluidStackTemplate> outputFluid, java.util.Optional<net.minecraft.world.item.ItemStackTemplate> outputItem, float pressure, int processingTime);
+    }
+
     public interface IFactory<T extends FluidMixerRecipe> {
         T create(SizedFluidIngredient input1, SizedFluidIngredient input2,
                  FluidStack outputFluid, ItemStack outputItem, float pressure, int processingTime);
@@ -109,15 +124,15 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
-        public Serializer(IFactory<T> factory) {
+        public Serializer(IFactory<T> factory, ITemplateFactory<T> templateFactory) {
             codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
                     SizedFluidIngredient.CODEC.fieldOf("input1").forGetter(FluidMixerRecipe::getInput1),
                     SizedFluidIngredient.CODEC.fieldOf("input2").forGetter(FluidMixerRecipe::getInput2),
-                    FluidStack.OPTIONAL_CODEC.fieldOf("fluid_output").forGetter(FluidMixerRecipe::getOutputFluid),
-                    ItemStack.OPTIONAL_CODEC.fieldOf("item_output").forGetter(FluidMixerRecipe::getOutputItem),
+                    net.minecraft.util.ExtraCodecs.optionalEmptyMap(net.neoforged.neoforge.fluids.FluidStackTemplate.CODEC).fieldOf("fluid_output").forGetter(r -> r.getOutputFluid().isEmpty() ? java.util.Optional.empty() : java.util.Optional.of(net.neoforged.neoforge.fluids.FluidStackTemplate.fromNonEmptyStack(r.getOutputFluid()))),
+                    net.minecraft.util.ExtraCodecs.optionalEmptyMap(net.minecraft.world.item.ItemStackTemplate.CODEC).fieldOf("item_output").forGetter(r -> r.getOutputItem().isEmpty() ? java.util.Optional.empty() : java.util.Optional.of(net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(r.getOutputItem()))),
                     Codec.FLOAT.fieldOf("pressure").forGetter(FluidMixerRecipe::getRequiredPressure),
                     Codec.INT.fieldOf("time").forGetter(FluidMixerRecipe::getProcessingTime)
-            ).apply(builder, factory::create));
+            ).apply(builder, templateFactory::create));
             streamCodec = StreamCodec.composite(
                     SizedFluidIngredient.STREAM_CODEC, FluidMixerRecipe::getInput1,
                     SizedFluidIngredient.STREAM_CODEC, FluidMixerRecipe::getInput2,

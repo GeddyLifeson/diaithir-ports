@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:plastic_brick_light_blue"
-    }
+    "pneumaticcraft:plastic_brick_light_blue"
   ],
   "result": {
     "count": 1,

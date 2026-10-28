@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "pneumaticcraft:turbine_blade"
-    },
-    "T": {
-      "item": "pneumaticcraft:pressure_tube"
-    }
+    "B": "pneumaticcraft:turbine_blade",
+    "T": "pneumaticcraft:pressure_tube"
   },
   "pattern": [
     "B B",

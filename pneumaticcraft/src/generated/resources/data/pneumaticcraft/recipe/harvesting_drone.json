@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "R": {
-      "item": "pneumaticcraft:turbine_rotor"
-    },
-    "S": {
-      "tag": "c:crops"
-    }
+    "R": "pneumaticcraft:turbine_rotor",
+    "S": "#c:crops"
   },
   "pattern": [
     " R ",

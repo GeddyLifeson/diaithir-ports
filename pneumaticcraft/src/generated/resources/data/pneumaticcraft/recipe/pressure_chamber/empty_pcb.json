@@ -2,16 +2,16 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 2,
-      "item": "minecraft:redstone_torch"
+      "ingredient": "minecraft:redstone_torch",
+      "count": 2
     },
     {
-      "count": 3,
-      "tag": "pneumaticcraft:wiring"
+      "ingredient": "#pneumaticcraft:wiring",
+      "count": 3
     },
     {
-      "count": 1,
-      "item": "pneumaticcraft:plastic"
+      "ingredient": "pneumaticcraft:plastic",
+      "count": 1
     }
   ],
   "pressure": 1.5,

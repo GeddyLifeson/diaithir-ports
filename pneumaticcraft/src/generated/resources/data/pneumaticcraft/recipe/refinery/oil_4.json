@@ -1,8 +1,8 @@
 {
   "type": "pneumaticcraft:refinery",
   "input": {
-    "amount": 10,
-    "tag": "c:crude_oil"
+    "ingredient": "#c:crude_oil",
+    "amount": 10
   },
   "outputs": [
     {

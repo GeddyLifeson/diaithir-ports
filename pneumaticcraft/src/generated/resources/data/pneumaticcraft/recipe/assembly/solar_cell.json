@@ -1,8 +1,8 @@
 {
   "type": "pneumaticcraft:assembly_drill",
   "input": {
-    "count": 1,
-    "item": "pneumaticcraft:solar_wafer"
+    "ingredient": "pneumaticcraft:solar_wafer",
+    "count": 1
   },
   "program": "drill",
   "result": {

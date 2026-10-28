@@ -2,32 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "tag": "c:gems/diamond"
-    },
-    "M": {
-      "type": "neoforge:components",
-      "components": {
-        "minecraft:attribute_modifiers": {
-          "modifiers": []
-        },
-        "minecraft:enchantments": {
-          "levels": {}
-        },
-        "minecraft:lore": [],
-        "minecraft:max_stack_size": 64,
-        "minecraft:rarity": "common",
-        "minecraft:repair_cost": 0
-      },
-      "items": "pneumaticcraft:medium_tank",
-      "strict": true
-    },
-    "P": {
-      "tag": "pneumaticcraft:plastic_sheets"
-    },
-    "T": {
-      "item": "pneumaticcraft:advanced_pressure_tube"
-    }
+    "D": "#c:gems/diamond",
+    "M": "pneumaticcraft:medium_tank",
+    "P": "#pneumaticcraft:plastic_sheets",
+    "T": "pneumaticcraft:advanced_pressure_tube"
   },
   "pattern": [
     "PMP",

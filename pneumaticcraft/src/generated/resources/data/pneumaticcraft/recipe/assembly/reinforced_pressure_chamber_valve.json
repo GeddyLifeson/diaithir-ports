@@ -1,8 +1,8 @@
 {
   "type": "pneumaticcraft:assembly_laser",
   "input": {
-    "count": 1,
-    "item": "pneumaticcraft:unassembled_reinforced_pressure_chamber_valve"
+    "ingredient": "pneumaticcraft:unassembled_reinforced_pressure_chamber_valve",
+    "count": 1
   },
   "program": "laser",
   "result": {

@@ -8,15 +8,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "tag": "c:ingots/compressed_iron"
-    },
-    "L": {
-      "tag": "pneumaticcraft:upgrade_components"
-    },
-    "R": {
-      "item": "mekanism:module_radiation_shielding_unit"
-    }
+    "I": "#c:ingots/compressed_iron",
+    "L": "#pneumaticcraft:upgrade_components",
+    "R": "mekanism:module_radiation_shielding_unit"
   },
   "pattern": [
     "LIL",

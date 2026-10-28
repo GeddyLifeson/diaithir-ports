@@ -2,8 +2,8 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 1,
-      "tag": "c:storage_blocks/iron"
+      "ingredient": "#c:storage_blocks/iron",
+      "count": 1
     }
   ],
   "pressure": 2.0,

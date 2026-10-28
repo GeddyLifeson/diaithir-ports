@@ -43,12 +43,20 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
     private static final NonNullList<ItemStack> EMPTY_RESULT = NonNullList.create();
 
     private final SizedIngredient input;
-    private final List<ItemStack> outputs;
+    private final java.util.function.Supplier<List<ItemStack>> outputs;
     private final int lossRate;
 
     public ExplosionCraftingRecipeImpl(SizedIngredient input, int lossRate, List<ItemStack> outputs) {
         this.input = input;
-        this.outputs = outputs;
+        this.outputs = () -> outputs;
+        this.lossRate = lossRate;
+    }
+
+    // data-driven recipes are parsed before item components are bound, so the stacks must be created lazily
+    public ExplosionCraftingRecipeImpl(SizedIngredient input, int lossRate, List<net.minecraft.world.item.ItemStackTemplate> outputs, boolean lazy) {
+        this.input = input;
+        List<net.minecraft.world.item.ItemStackTemplate> templates = List.copyOf(outputs);
+        this.outputs = com.google.common.base.Suppliers.memoize(() -> templates.stream().map(net.minecraft.world.item.ItemStackTemplate::create).toList());
         this.lossRate = lossRate;
     }
 
@@ -59,7 +67,7 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
 
     @Override
     public List<ItemStack> getOutputs() {
-        return outputs;
+        return outputs.get();
     }
 
     @Override
@@ -117,6 +125,10 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
 
 
 
+    public interface ITemplateFactory<T extends ExplosionCraftingRecipe> {
+        T create(SizedIngredient input, int lossRate, List<net.minecraft.world.item.ItemStackTemplate> result);
+    }
+
     public interface IFactory<T extends ExplosionCraftingRecipe> {
         T create(SizedIngredient input, int lossRate, List<ItemStack> result);
     }
@@ -125,12 +137,12 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
 
-        public Serializer(IFactory<T> factory) {
+        public Serializer(IFactory<T> factory, ITemplateFactory<T> templateFactory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
                     SizedIngredient.NESTED_CODEC.fieldOf("input").forGetter(ExplosionCraftingRecipe::getInput),
                     ExtraCodecs.intRange(0, 99).fieldOf("loss_rate").forGetter(ExplosionCraftingRecipe::getLossRate),
-                    ItemStack.CODEC.listOf().fieldOf("results").forGetter(ExplosionCraftingRecipe::getOutputs)
-            ).apply(builder, factory::create));
+                    net.minecraft.world.item.ItemStackTemplate.CODEC.listOf().fieldOf("results").forGetter(r -> r.getOutputs().stream().map(net.minecraft.world.item.ItemStackTemplate::fromNonEmptyStack).toList())
+            ).apply(builder, templateFactory::create));
             this.streamCodec = StreamCodec.composite(
                     SizedIngredient.STREAM_CODEC, ExplosionCraftingRecipe::getInput,
                     ByteBufCodecs.VAR_INT, ExplosionCraftingRecipe::getLossRate,

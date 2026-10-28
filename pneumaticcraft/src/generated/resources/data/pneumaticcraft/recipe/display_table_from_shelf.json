@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:display_shelf"
-    }
+    "pneumaticcraft:display_shelf"
   ],
   "result": {
     "count": 1,

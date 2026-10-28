@@ -41,7 +41,7 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
 
     public final Either<Ingredient,FluidContainerIngredient> input;
     private final int temperature;
-    public final ItemStack output;
+    private final java.util.function.Supplier<ItemStack> output;
     private final float bonusMultiplier;
     private final float bonusLimit;
 
@@ -52,7 +52,16 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
     public HeatFrameCoolingRecipeImpl(Either<Ingredient,FluidContainerIngredient> input, int temperature, ItemStack output, float bonusMultiplier, float bonusLimit) {
         this.input = input;
         this.temperature = temperature;
-        this.output = output;
+        this.output = () -> output;
+        this.bonusMultiplier = bonusMultiplier;
+        this.bonusLimit = bonusLimit;
+    }
+
+    // data-driven recipes are parsed before item components are bound, so the stack must be created lazily
+    public HeatFrameCoolingRecipeImpl(Either<Ingredient,FluidContainerIngredient> input, int temperature, net.minecraft.world.item.ItemStackTemplate output, float bonusMultiplier, float bonusLimit) {
+        this.input = input;
+        this.temperature = temperature;
+        this.output = com.google.common.base.Suppliers.memoize(output::create);
         this.bonusMultiplier = bonusMultiplier;
         this.bonusLimit = bonusLimit;
     }
@@ -64,7 +73,7 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
 
     @Override
     public ItemStack getOutput() {
-        return output;
+        return output.get();
     }
 
     @Override
@@ -118,6 +127,10 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
         return maxThresholdTemp;
     }
 
+    public interface ITemplateFactory<T extends HeatFrameCoolingRecipe> {
+        T create(Either<Ingredient,FluidContainerIngredient> input, int temperature, net.minecraft.world.item.ItemStackTemplate out, float bonusMultiplier, float bonusLimit);
+    }
+
     public interface IFactory<T extends HeatFrameCoolingRecipe> {
         T create(Either<Ingredient,FluidContainerIngredient> input, int temperature, ItemStack out, float bonusMultiplier, float bonusLimit);
     }
@@ -126,19 +139,19 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
-        public Serializer(IFactory<T> factory) {
+        public Serializer(IFactory<T> factory, ITemplateFactory<T> templateFactory) {
             codec = RecordCodecBuilder.mapCodec(inst -> inst.group(
                     Codec.either(Ingredient.CODEC, FluidContainerIngredient.CODEC).fieldOf("input")
                             .forGetter(HeatFrameCoolingRecipe::getInput),
                     ExtraCodecs.NON_NEGATIVE_INT.fieldOf("temperature")
                             .forGetter(HeatFrameCoolingRecipe::getThresholdTemperature),
-                    ItemStack.CODEC.fieldOf("output")
-                            .forGetter(HeatFrameCoolingRecipe::getOutput),
+                    net.minecraft.world.item.ItemStackTemplate.CODEC.fieldOf("output")
+                            .forGetter(r -> net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(r.getOutput())),
                     Codec.floatRange(0f, Float.MAX_VALUE).optionalFieldOf("bonusMultiplier", 0f)
                             .forGetter(HeatFrameCoolingRecipe::getBonusMultiplier),
                     Codec.floatRange(0f, Float.MAX_VALUE).optionalFieldOf("bonusLimit", 0f)
                             .forGetter(HeatFrameCoolingRecipe::getBonusLimit)
-            ).apply(inst, factory::create));
+            ).apply(inst, templateFactory::create));
             streamCodec = StreamCodec.composite(
                     ByteBufCodecs.either(Ingredient.CONTENTS_STREAM_CODEC, FluidContainerIngredient.STREAM_CODEC), HeatFrameCoolingRecipe::getInput,
                     ByteBufCodecs.INT, HeatFrameCoolingRecipe::getThresholdTemperature,

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "S": {
-      "tag": "c:stones"
-    },
-    "T": {
-      "item": "pneumaticcraft:pressure_tube"
-    }
+    "S": "#c:stones",
+    "T": "pneumaticcraft:pressure_tube"
   },
   "pattern": [
     "S S",

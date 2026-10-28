@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:assembly_io_unit_export"
-    }
+    "pneumaticcraft:assembly_io_unit_export"
   ],
   "result": {
     "count": 1,

@@ -2,15 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "F": {
-      "tag": "c:dusts/flour"
-    },
+    "F": "#c:dusts/flour",
     "Y": {
-      "type": "pneumaticcraft:fluid_container",
       "fluid": {
         "amount": 1000,
         "id": "pneumaticcraft:yeast_culture"
-      }
+      },
+      "neoforge:ingredient_type": "pneumaticcraft:fluid_container"
     }
   },
   "pattern": [

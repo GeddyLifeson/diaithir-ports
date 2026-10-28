@@ -42,7 +42,7 @@ import java.util.List;
 
 public class RefineryRecipeImpl extends RefineryRecipe {
 	public final SizedFluidIngredient input;
-	public final List<FluidStack> outputs;
+	private final java.util.function.Supplier<List<FluidStack>> outputs;
 	private final TemperatureRange operatingTemp;
 
 	public RefineryRecipeImpl(SizedFluidIngredient input, TemperatureRange operatingTemp, List<FluidStack> outputs) {
@@ -52,7 +52,19 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 		Validate.isTrue(outputs.size() >= 2 && outputs.size() <= MAX_OUTPUTS,
 				"Recipe must have between 2 and " + MAX_OUTPUTS + " (inclusive) outputs");
 		this.input = input;
-		this.outputs = ImmutableList.copyOf(outputs);
+		List<FluidStack> copy = ImmutableList.copyOf(outputs);
+		this.outputs = () -> copy;
+	}
+
+	// data-driven recipes are parsed before components are bound, so the stacks must be created lazily
+	public RefineryRecipeImpl(SizedFluidIngredient input, TemperatureRange operatingTemp, List<net.neoforged.neoforge.fluids.FluidStackTemplate> outputs, boolean lazy) {
+		super();
+		this.operatingTemp = operatingTemp;
+		Validate.isTrue(outputs.size() >= 2 && outputs.size() <= MAX_OUTPUTS,
+				"Recipe must have between 2 and " + MAX_OUTPUTS + " (inclusive) outputs");
+		this.input = input;
+		List<net.neoforged.neoforge.fluids.FluidStackTemplate> templates = ImmutableList.copyOf(outputs);
+		this.outputs = com.google.common.base.Suppliers.memoize(() -> templates.stream().map(net.neoforged.neoforge.fluids.FluidStackTemplate::create).toList());
 	}
 
 	@Override
@@ -62,7 +74,7 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 
 	@Override
 	public List<FluidStack> getOutputs() {
-		return outputs;
+		return outputs.get();
 	}
 
 	@Override
@@ -82,6 +94,10 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 
 
 
+	public interface ITemplateFactory<T extends RefineryRecipe> {
+		T create(SizedFluidIngredient input, TemperatureRange operatingTemp, List<net.neoforged.neoforge.fluids.FluidStackTemplate> outputs);
+	}
+
 	public interface IFactory<T extends RefineryRecipe> {
 		T create(SizedFluidIngredient input, TemperatureRange operatingTemp, List<FluidStack> outputs);
 	}
@@ -90,7 +106,7 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 		private final MapCodec<T> codec;
 		private final StreamCodec<RegistryFriendlyByteBuf,T> streamCodec;
 
-        public Serializer(IFactory<T> factory) {
+        public Serializer(IFactory<T> factory, ITemplateFactory<T> templateFactory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
 					SizedFluidIngredient.CODEC
 							.fieldOf("input")
@@ -98,10 +114,10 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 					TemperatureRange.CODEC
 							.optionalFieldOf("temperature", TemperatureRange.min(373))
 							.forGetter(RefineryRecipe::getOperatingTemp),
-					FluidStack.CODEC.listOf(2, RefineryRecipe.MAX_OUTPUTS)
+					net.neoforged.neoforge.fluids.FluidStackTemplate.CODEC.listOf(2, RefineryRecipe.MAX_OUTPUTS)
 							.fieldOf("outputs")
-							.forGetter(RefineryRecipe::getOutputs)
-			).apply(builder, factory::create));
+							.forGetter(r -> r.getOutputs().stream().map(net.neoforged.neoforge.fluids.FluidStackTemplate::fromNonEmptyStack).toList())
+			).apply(builder, templateFactory::create));
 			this.streamCodec = StreamCodec.composite(
 					SizedFluidIngredient.STREAM_CODEC, RefineryRecipe::getInput,
 					TemperatureRange.STREAM_CODEC, RefineryRecipe::getOperatingTemp,

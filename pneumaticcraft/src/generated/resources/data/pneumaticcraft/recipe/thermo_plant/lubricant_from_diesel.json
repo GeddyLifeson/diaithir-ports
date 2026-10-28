@@ -2,12 +2,10 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 1000,
-      "tag": "c:diesel"
+      "ingredient": "#c:diesel",
+      "amount": 1000
     },
-    "item": {
-      "tag": "c:dusts/redstone"
-    }
+    "item": "#c:dusts/redstone"
   },
   "outputs": {
     "fluid_output": {

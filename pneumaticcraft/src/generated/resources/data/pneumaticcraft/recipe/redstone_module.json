@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "item": "minecraft:repeater"
-    },
-    "R": {
-      "tag": "c:dusts/redstone"
-    },
-    "T": {
-      "item": "pneumaticcraft:pressure_tube"
-    }
+    "D": "minecraft:repeater",
+    "R": "#c:dusts/redstone",
+    "T": "pneumaticcraft:pressure_tube"
   },
   "pattern": [
     " R ",

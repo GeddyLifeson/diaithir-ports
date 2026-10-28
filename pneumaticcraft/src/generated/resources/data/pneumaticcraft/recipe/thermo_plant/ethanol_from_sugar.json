@@ -3,12 +3,10 @@
   "exothermic": true,
   "inputs": {
     "fluid": {
-      "amount": 100,
-      "tag": "pneumaticcraft:yeast_culture"
+      "ingredient": "#pneumaticcraft:yeast_culture",
+      "amount": 100
     },
-    "item": {
-      "item": "minecraft:sugar"
-    }
+    "item": "minecraft:sugar"
   },
   "outputs": {
     "fluid_output": {

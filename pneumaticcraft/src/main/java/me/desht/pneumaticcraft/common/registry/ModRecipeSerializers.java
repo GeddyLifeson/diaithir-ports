@@ -41,14 +41,14 @@ public class ModRecipeSerializers {
 
     public static final Supplier<RecipeSerializer<AssemblyRecipe>> ASSEMBLY_LASER
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.ASSEMBLY_LASER,
-            () -> new AssemblyRecipeImpl.Serializer<AssemblyRecipe>(AssemblyRecipeImpl::new).toSerializer());
+            () -> new AssemblyRecipeImpl.Serializer<AssemblyRecipe>(AssemblyRecipeImpl::new, AssemblyRecipeImpl::new).toSerializer());
     public static final Supplier<RecipeSerializer<AssemblyRecipe>> ASSEMBLY_DRILL
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.ASSEMBLY_DRILL,
-            () -> new AssemblyRecipeImpl.Serializer<AssemblyRecipe>(AssemblyRecipeImpl::new).toSerializer());
+            () -> new AssemblyRecipeImpl.Serializer<AssemblyRecipe>(AssemblyRecipeImpl::new, AssemblyRecipeImpl::new).toSerializer());
 
     public static final Supplier<RecipeSerializer<PressureChamberRecipe>> PRESSURE_CHAMBER
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.PRESSURE_CHAMBER,
-            () -> new PressureChamberRecipeImpl.Serializer<PressureChamberRecipe>(PressureChamberRecipeImpl::new).toSerializer());
+            () -> new PressureChamberRecipeImpl.Serializer<PressureChamberRecipe>(PressureChamberRecipeImpl::new, (a, b, c) -> new PressureChamberRecipeImpl(a, b, c, true)).toSerializer());
 
     public static final Supplier<RecipeSerializer<PressureEnchantingRecipe>> PRESSURE_CHAMBER_ENCHANTING
             = RECIPE_SERIALIZERS.register(PressureEnchantingRecipe.ID.getPath(),
@@ -59,15 +59,15 @@ public class ModRecipeSerializers {
 
     public static final Supplier<RecipeSerializer<ExplosionCraftingRecipe>> EXPLOSION_CRAFTING
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.EXPLOSION_CRAFTING,
-            () -> new ExplosionCraftingRecipeImpl.Serializer<ExplosionCraftingRecipe>(ExplosionCraftingRecipeImpl::new).toSerializer());
+            () -> new ExplosionCraftingRecipeImpl.Serializer<ExplosionCraftingRecipe>(ExplosionCraftingRecipeImpl::new, (a, b, c) -> new ExplosionCraftingRecipeImpl(a, b, c, true)).toSerializer());
 
     public static final Supplier<RecipeSerializer<HeatFrameCoolingRecipe>> HEAT_FRAME_COOLING
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.HEAT_FRAME_COOLING,
-            () -> new HeatFrameCoolingRecipeImpl.Serializer<HeatFrameCoolingRecipe>(HeatFrameCoolingRecipeImpl::new).toSerializer());
+            () -> new HeatFrameCoolingRecipeImpl.Serializer<HeatFrameCoolingRecipe>(HeatFrameCoolingRecipeImpl::new, HeatFrameCoolingRecipeImpl::new).toSerializer());
 
     public static final Supplier<RecipeSerializer<RefineryRecipe>> REFINERY
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.REFINERY,
-            () -> new RefineryRecipeImpl.Serializer<RefineryRecipe>(RefineryRecipeImpl::new).toSerializer());
+            () -> new RefineryRecipeImpl.Serializer<RefineryRecipe>(RefineryRecipeImpl::new, (a, b, c) -> new RefineryRecipeImpl(a, b, c, true)).toSerializer());
 
     public static final Supplier<RecipeSerializer<ThermoPlantRecipe>> THERMO_PLANT
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.THERMO_PLANT,
@@ -75,7 +75,7 @@ public class ModRecipeSerializers {
 
     public static final Supplier<RecipeSerializer<FluidMixerRecipe>> FLUID_MIXER
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.FLUID_MIXER,
-            () -> new FluidMixerRecipeImpl.Serializer<FluidMixerRecipe>(FluidMixerRecipeImpl::new).toSerializer());
+            () -> new FluidMixerRecipeImpl.Serializer<FluidMixerRecipe>(FluidMixerRecipeImpl::new, FluidMixerRecipeImpl::new).toSerializer());
 
     public static final Supplier<RecipeSerializer<FuelQualityRecipe>> FUEL_QUALITY
             = RECIPE_SERIALIZERS.register(PneumaticCraftRecipeTypes.FUEL_QUALITY,

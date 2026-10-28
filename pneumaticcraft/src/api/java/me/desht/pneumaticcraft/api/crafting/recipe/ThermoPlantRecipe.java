@@ -154,18 +154,59 @@ public abstract class ThermoPlantRecipe extends PneumaticCraftRecipe {
         }
     }
 
-    public record Outputs(FluidStack outputFluid, ItemStack outputItem) {
+    /**
+     * Item and fluid outputs. Stacks are created lazily because data-driven recipes are parsed before item and
+     * fluid components are bound.
+     */
+    public static final class Outputs {
         public static final Codec<Outputs> CODEC = RecordCodecBuilder.create(builder -> builder.group(
-                FluidStack.CODEC.optionalFieldOf("fluid_output", FluidStack.EMPTY)
-                        .forGetter(Outputs::outputFluid),
-                ItemStack.CODEC.optionalFieldOf("item_output", ItemStack.EMPTY)
-                        .forGetter(Outputs::outputItem)
-        ).apply(builder, Outputs::new));
+                net.neoforged.neoforge.fluids.FluidStackTemplate.CODEC.optionalFieldOf("fluid_output")
+                        .forGetter(o -> o.outputFluid().isEmpty() ? Optional.empty() : Optional.of(net.neoforged.neoforge.fluids.FluidStackTemplate.fromNonEmptyStack(o.outputFluid()))),
+                net.minecraft.world.item.ItemStackTemplate.CODEC.optionalFieldOf("item_output")
+                        .forGetter(o -> o.outputItem().isEmpty() ? Optional.empty() : Optional.of(net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(o.outputItem())))
+        ).apply(builder, Outputs::lazy));
         public static StreamCodec<RegistryFriendlyByteBuf, Outputs> STREAM_CODEC = StreamCodec.composite(
                 FluidStack.OPTIONAL_STREAM_CODEC, Outputs::outputFluid,
                 ItemStack.OPTIONAL_STREAM_CODEC, Outputs::outputItem,
                 Outputs::new
         );
+
+        private final java.util.function.Supplier<FluidStack> outputFluid;
+        private final java.util.function.Supplier<ItemStack> outputItem;
+
+        public Outputs(FluidStack outputFluid, ItemStack outputItem) {
+            this.outputFluid = () -> outputFluid;
+            this.outputItem = () -> outputItem;
+        }
+
+        private static Outputs lazy(Optional<net.neoforged.neoforge.fluids.FluidStackTemplate> fluid, Optional<net.minecraft.world.item.ItemStackTemplate> item) {
+            return new Outputs(
+                    com.google.common.base.Suppliers.memoize(() -> fluid.map(net.neoforged.neoforge.fluids.FluidStackTemplate::create).orElse(FluidStack.EMPTY)),
+                    com.google.common.base.Suppliers.memoize(() -> item.map(net.minecraft.world.item.ItemStackTemplate::create).orElse(ItemStack.EMPTY)));
+        }
+
+        private Outputs(java.util.function.Supplier<FluidStack> outputFluid, java.util.function.Supplier<ItemStack> outputItem) {
+            this.outputFluid = outputFluid;
+            this.outputItem = outputItem;
+        }
+
+        public FluidStack outputFluid() {
+            return outputFluid.get();
+        }
+
+        public ItemStack outputItem() {
+            return outputItem.get();
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return o instanceof Outputs other && java.util.Objects.equals(outputFluid(), other.outputFluid()) && java.util.Objects.equals(outputItem(), other.outputItem());
+        }
+
+        @Override
+        public int hashCode() {
+            return java.util.Objects.hash(outputFluid(), outputItem());
+        }
     }
 
 }

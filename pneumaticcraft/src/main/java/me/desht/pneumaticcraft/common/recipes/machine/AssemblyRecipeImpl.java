@@ -43,12 +43,19 @@ import static me.desht.pneumaticcraft.api.PneumaticRegistry.RL;
 
 public class AssemblyRecipeImpl extends AssemblyRecipe {
     private final SizedIngredient input;
-    private final ItemStack output;
+    private final java.util.function.Supplier<ItemStack> output;
     private final AssemblyProgramType program;
 
     public AssemblyRecipeImpl(@Nonnull SizedIngredient input, @Nonnull ItemStack output, AssemblyProgramType program) {
         this.input = input;
-        this.output = output;
+        this.output = () -> output;
+        this.program = program;
+    }
+
+    // data-driven recipes are parsed before item components are bound, so the stack must be created lazily
+    public AssemblyRecipeImpl(@Nonnull SizedIngredient input, @Nonnull net.minecraft.world.item.ItemStackTemplate output, AssemblyProgramType program) {
+        this.input = input;
+        this.output = com.google.common.base.Suppliers.memoize(output::create);
         this.program = program;
     }
 
@@ -59,7 +66,7 @@ public class AssemblyRecipeImpl extends AssemblyRecipe {
 
     @Override
     public ItemStack getOutput() {
-        return output;
+        return output.get();
     }
 
     @Override
@@ -125,17 +132,21 @@ public class AssemblyRecipeImpl extends AssemblyRecipe {
         T create(@Nonnull SizedIngredient input, @Nonnull ItemStack output, AssemblyProgramType program);
     }
 
+    public interface ITemplateFactory<T extends AssemblyRecipe> {
+        T create(@Nonnull SizedIngredient input, @Nonnull net.minecraft.world.item.ItemStackTemplate output, AssemblyProgramType program);
+    }
+
     public static class Serializer<T extends AssemblyRecipe> {
         private final MapCodec<T> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, T> streamCodec;
 
-        public Serializer(IFactory<T> factory) {
+        public Serializer(IFactory<T> factory, ITemplateFactory<T> templateFactory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
                     SizedIngredient.NESTED_CODEC.fieldOf("input").forGetter(AssemblyRecipe::getInput),
-                    ItemStack.CODEC.fieldOf("result").forGetter(AssemblyRecipe::getOutput),
+                    net.minecraft.world.item.ItemStackTemplate.CODEC.fieldOf("result").forGetter(r -> net.minecraft.world.item.ItemStackTemplate.fromNonEmptyStack(r.getOutput())),
                     AssemblyProgramType.CODEC.validate(Serializer::checkNotDrillAndLaser)
                             .fieldOf("program").forGetter(AssemblyRecipe::getProgramType)
-            ).apply(builder, factory::create));
+            ).apply(builder, templateFactory::create));
             this.streamCodec = StreamCodec.composite(
                     SizedIngredient.STREAM_CODEC, AssemblyRecipe::getInput,
                     ItemStack.STREAM_CODEC, AssemblyRecipe::getOutput,

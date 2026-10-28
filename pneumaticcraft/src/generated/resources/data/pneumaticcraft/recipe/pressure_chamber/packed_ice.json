@@ -2,8 +2,8 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 4,
-      "item": "minecraft:ice"
+      "ingredient": "minecraft:ice",
+      "count": 4
     }
   ],
   "pressure": 2.0,

@@ -2,12 +2,10 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 100,
-      "tag": "c:lpg"
+      "ingredient": "#c:lpg",
+      "amount": 100
     },
-    "item": {
-      "item": "minecraft:coal"
-    }
+    "item": "minecraft:coal"
   },
   "outputs": {
     "fluid_output": {

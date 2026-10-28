@@ -5,12 +5,12 @@
     "id": "pneumaticcraft:biodiesel"
   },
   "input1": {
-    "amount": 25,
-    "tag": "c:plantoil"
+    "ingredient": "#c:plantoil",
+    "amount": 25
   },
   "input2": {
-    "amount": 25,
-    "tag": "c:ethanol"
+    "ingredient": "#c:ethanol",
+    "amount": 25
   },
   "item_output": {
     "count": 1,

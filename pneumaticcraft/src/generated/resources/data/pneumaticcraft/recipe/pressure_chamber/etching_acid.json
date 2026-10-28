@@ -2,20 +2,20 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 1,
-      "item": "pneumaticcraft:plastic_bucket"
+      "ingredient": "pneumaticcraft:plastic_bucket",
+      "count": 1
     },
     {
-      "count": 2,
-      "item": "minecraft:rotten_flesh"
+      "ingredient": "minecraft:rotten_flesh",
+      "count": 2
     },
     {
-      "count": 2,
-      "item": "minecraft:spider_eye"
+      "ingredient": "minecraft:spider_eye",
+      "count": 2
     },
     {
-      "count": 2,
-      "tag": "c:gunpowders"
+      "ingredient": "#c:gunpowders",
+      "count": 2
     }
   ],
   "pressure": 1.0,

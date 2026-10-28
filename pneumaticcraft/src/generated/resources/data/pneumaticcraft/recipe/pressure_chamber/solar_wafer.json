@@ -2,12 +2,12 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 1,
-      "item": "pneumaticcraft:upgrade_matrix"
+      "ingredient": "pneumaticcraft:upgrade_matrix",
+      "count": 1
     },
     {
-      "count": 1,
-      "item": "minecraft:amethyst_shard"
+      "ingredient": "minecraft:amethyst_shard",
+      "count": 1
     }
   ],
   "pressure": 2.5,

@@ -41,10 +41,30 @@ import java.util.stream.IntStream;
 /**
  * Represents an Amadron trade resource. The input and output may be either an item or a fluid.
  */
-public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
+public final class AmadronTradeResource {
+    private final java.util.function.Supplier<Either<ItemStack,FluidStack>> resource;
+    private final boolean lazy;
+
+    public AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
+        this.resource = () -> resource;
+        this.lazy = false;
+    }
+
+    // data-driven offers are parsed before item/fluid components are bound, so stacks are created lazily
+    private AmadronTradeResource(Either<net.minecraft.world.item.ItemStackTemplate, net.neoforged.neoforge.fluids.FluidStackTemplate> templates, boolean lazy) {
+        this.lazy = lazy;
+        this.resource = com.google.common.base.Suppliers.memoize(() -> templates.mapBoth(
+                net.minecraft.world.item.ItemStackTemplate::create, net.neoforged.neoforge.fluids.FluidStackTemplate::create));
+    }
+
+    public Either<ItemStack,FluidStack> resource() {
+        return resource.get();
+    }
+
     public static final Codec<AmadronTradeResource> CODEC = RecordCodecBuilder.create(inst -> inst.group(
-            Codec.either(ItemStack.CODEC, FluidStack.CODEC).fieldOf("resource").forGetter(AmadronTradeResource::resource)
-    ).apply(inst, AmadronTradeResource::new));
+            Codec.either(net.minecraft.world.item.ItemStackTemplate.CODEC, net.neoforged.neoforge.fluids.FluidStackTemplate.CODEC).fieldOf("resource")
+                    .forGetter(r -> r.resource().mapBoth(net.minecraft.world.item.ItemStackTemplate::fromNonEmptyStack, net.neoforged.neoforge.fluids.FluidStackTemplate::fromNonEmptyStack))
+    ).apply(inst, t -> new AmadronTradeResource(t, true)));
 
     public static StreamCodec<RegistryFriendlyByteBuf, AmadronTradeResource> STREAM_CODEC = StreamCodec.composite(
             ByteBufCodecs.either(ItemStack.STREAM_CODEC, FluidStack.STREAM_CODEC), AmadronTradeResource::resource,
@@ -52,7 +72,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
     );
 
     public boolean isEmpty() {
-        return resource.map(ItemStack::isEmpty, FluidStack::isEmpty);
+        return resource().map(ItemStack::isEmpty, FluidStack::isEmpty);
     }
 
     /**
@@ -61,7 +81,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @return true if the two are equivalent, false if not
      */
     public boolean equivalentTo(AmadronTradeResource other) {
-        return resource.map(
+        return resource().map(
                 itemStack -> itemStack.getItem() == other.getItem().getItem(),
                 fluidStack -> fluidStack.getFluid() == other.getFluid().getFluid()
         );
@@ -80,7 +100,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @return the itemstack, or ItemStack.EMPTY if the resource is a fluid
      */
     public ItemStack getItem() {
-        return resource.left().orElse(ItemStack.EMPTY);
+        return resource().left().orElse(ItemStack.EMPTY);
     }
 
     /**
@@ -88,7 +108,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @return the fluidstack, or FluidStack.EMPTY if the resource is an item
      */
     public FluidStack getFluid() {
-        return resource.right().orElse(FluidStack.EMPTY);
+        return resource().right().orElse(FluidStack.EMPTY);
     }
 
     /**
@@ -97,7 +117,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @param cFluidStack consumer which is called when the resource is a fluid
      */
     public void accept(Consumer<ItemStack> cItemStack, Consumer<FluidStack> cFluidStack) {
-        resource.ifLeft(cItemStack).ifRight(cFluidStack);
+        resource().ifLeft(cItemStack).ifRight(cFluidStack);
     }
 
     /**
@@ -106,7 +126,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @param fFluidStack function which is called when the resource is a fluid
      */
     public <T> T apply(Function<ItemStack,T> fItemStack, Function<FluidStack,T> fFluidStack) {
-        return resource.map(fItemStack, fFluidStack);
+        return resource().map(fItemStack, fFluidStack);
     }
 
     /**
@@ -115,22 +135,22 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
      * @return total space required
      */
     public int totalSpaceRequired(int units) {
-        return resource.map(
+        return resource().map(
                 itemStack -> (((itemStack.getCount() * units) - 1) / itemStack.getMaxStackSize()) + 1,
                 fluidStack -> fluidStack.getAmount() * units
         );
     }
 
     public int countTradesInInventory(IItemHandler inv) {
-        return resource.left().map(item -> countItemsInHandler(item, inv) / item.getCount()).orElse(0);
+        return resource().left().map(item -> countItemsInHandler(item, inv) / item.getCount()).orElse(0);
     }
 
     public int findSpaceInItemOutput(IItemHandler inv, int wantedTradeCount) {
-        return resource.left().map(item -> Math.min(wantedTradeCount, findSpaceInHandler(item, wantedTradeCount, inv))).orElse(0);
+        return resource().left().map(item -> Math.min(wantedTradeCount, findSpaceInHandler(item, wantedTradeCount, inv))).orElse(0);
     }
 
     public int countTradesInTank(IFluidHandler fluidHandler) {
-        return resource.right().map(fluid -> {
+        return resource().right().map(fluid -> {
             FluidStack searchingFluid = fluid.copy();
             searchingFluid.setAmount(Integer.MAX_VALUE);
             FluidStack extracted = fluidHandler.drain(searchingFluid, IFluidHandler.FluidAction.SIMULATE);
@@ -139,7 +159,7 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
     }
 
     public int findSpaceInFluidOutput(IFluidHandler fluidHandler, int wantedTradeCount) {
-        return resource.right().map(fluid -> {
+        return resource().right().map(fluid -> {
             FluidStack providingFluid = fluid.copy();
             providingFluid.setAmount(providingFluid.getAmount() * wantedTradeCount);
             int amountFilled = fluidHandler.fill(providingFluid, IFluidHandler.FluidAction.SIMULATE);
@@ -148,34 +168,35 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
     }
 
     public AmadronTradeResource validate() {
-        resource.ifLeft(stack -> Validate.isTrue(!stack.isEmpty()))
+        if (lazy) return this; // templates are never empty; stacks can't be created until components are bound
+        resource().ifLeft(stack -> Validate.isTrue(!stack.isEmpty()))
                 .ifRight(fluidStack -> Validate.isTrue(!fluidStack.isEmpty()));
         return this;
     }
 
     public String getName() {
-        return resource.map(
+        return resource().map(
                 itemStack -> itemStack.getHoverName().getString(),
                 fluidStack -> fluidStack.getHoverName().getString()
         );
     }
 
     public Identifier getId() {
-        return resource.map(
+        return resource().map(
                 itemStack -> BuiltInRegistries.ITEM.getKey(itemStack.getItem()),
                 fluidStack -> BuiltInRegistries.FLUID.getKey(fluidStack.getFluid())
         );
     }
 
     public int getAmount() {
-        return resource.map(ItemStack::getCount, FluidStack::getAmount);
+        return resource().map(ItemStack::getCount, FluidStack::getAmount);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof AmadronTradeResource that)) return false;
-        return resource.map(
+        return resource().map(
                 itemStack -> ItemStack.matches(itemStack, that.getItem()),
                 fluidStack -> FluidStack.matches(fluidStack, that.getFluid())
         );
@@ -183,12 +204,12 @@ public record AmadronTradeResource(Either<ItemStack,FluidStack> resource) {
 
     @Override
     public int hashCode() {
-        return resource.map(Objects::hash, Objects::hash);
+        return resource().map(Objects::hash, Objects::hash);
     }
 
     @Override
     public String toString() {
-        return resource.map(
+        return resource().map(
                 itemStack -> itemStack.getCount() + " x " + itemStack.getHoverName().getString(),
                 fluidStack -> fluidStack.getAmount() + "mB " + fluidStack.getHoverName().getString()
         );

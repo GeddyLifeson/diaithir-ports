@@ -2,12 +2,10 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 100,
-      "tag": "c:plantoil"
+      "ingredient": "#c:plantoil",
+      "amount": 100
     },
-    "item": {
-      "item": "pneumaticcraft:raw_salmon_tempura"
-    }
+    "item": "pneumaticcraft:raw_salmon_tempura"
   },
   "outputs": {
     "item_output": {

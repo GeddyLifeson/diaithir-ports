@@ -8,12 +8,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:ingot_iron_compressed"
-    },
-    {
-      "item": "minecraft:book"
-    }
+    "pneumaticcraft:ingot_iron_compressed",
+    "minecraft:book"
   ],
   "result": {
     "components": {

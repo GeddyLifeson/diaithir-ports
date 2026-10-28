@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:aphorism_tile"
-    }
+    "pneumaticcraft:aphorism_tile"
   ],
   "result": {
     "count": 1,

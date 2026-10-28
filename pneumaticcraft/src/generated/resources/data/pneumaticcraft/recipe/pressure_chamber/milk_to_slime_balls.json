@@ -2,12 +2,12 @@
   "type": "pneumaticcraft:pressure_chamber",
   "inputs": [
     {
-      "count": 1,
-      "item": "minecraft:milk_bucket"
+      "ingredient": "minecraft:milk_bucket",
+      "count": 1
     },
     {
-      "count": 4,
-      "tag": "c:dyes/green"
+      "ingredient": "#c:dyes/green",
+      "count": 4
     }
   ],
   "pressure": 1.0,

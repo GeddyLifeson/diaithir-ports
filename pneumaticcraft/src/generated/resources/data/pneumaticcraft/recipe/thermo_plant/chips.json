@@ -2,12 +2,10 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 100,
-      "tag": "c:plantoil"
+      "ingredient": "#c:plantoil",
+      "amount": 100
     },
-    "item": {
-      "tag": "c:crops/potato"
-    }
+    "item": "#c:crops/potato"
   },
   "outputs": {
     "item_output": {

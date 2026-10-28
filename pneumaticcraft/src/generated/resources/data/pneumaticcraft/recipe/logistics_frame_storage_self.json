@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "pneumaticcraft:logistics_frame_storage"
-    }
+    "pneumaticcraft:logistics_frame_storage"
   ],
   "result": {
     "count": 1,

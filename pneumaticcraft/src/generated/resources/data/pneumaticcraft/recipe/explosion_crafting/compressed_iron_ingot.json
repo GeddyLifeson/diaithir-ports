@@ -1,8 +1,8 @@
 {
   "type": "pneumaticcraft:explosion_crafting",
   "input": {
-    "count": 1,
-    "tag": "c:ingots/iron"
+    "ingredient": "#c:ingots/iron",
+    "count": 1
   },
   "loss_rate": 20,
   "results": [

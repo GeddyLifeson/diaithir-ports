@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "item": "pneumaticcraft:pressure_gauge"
-    },
-    "L": {
-      "item": "minecraft:lever"
-    },
-    "T": {
-      "item": "pneumaticcraft:pressure_tube"
-    }
+    "G": "pneumaticcraft:pressure_gauge",
+    "L": "minecraft:lever",
+    "T": "pneumaticcraft:pressure_tube"
   },
   "pattern": [
     " G ",

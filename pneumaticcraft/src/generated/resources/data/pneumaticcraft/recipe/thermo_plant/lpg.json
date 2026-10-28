@@ -2,10 +2,9 @@
   "type": "pneumaticcraft:thermo_plant",
   "inputs": {
     "fluid": {
-      "amount": 100,
-      "tag": "c:gasoline"
-    },
-    "item": []
+      "ingredient": "#c:gasoline",
+      "amount": 100
+    }
   },
   "outputs": {
     "fluid_output": {
