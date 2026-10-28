@@ -33634,7 +33634,7 @@ hash = "2222315153ffcea34bf202827c8186ac7c27a748ea94d40b0bc2f019b10a7b6d"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/dedupe.js"
-hash = "3fa87ef99660827826a355be82e5e36b19196d4b34b145dae015c6635b09c88c"
+hash = "49baecac7a9675466af17fddec3cd323ab8f1a32935d85d3c76a06655e794a45"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/integration_feast.js"
@@ -33674,7 +33674,7 @@ hash = "c06f24d0c57bf7ead1c5668e9749c430168742d127d54fea09226924fc49a54b"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/brewing.js"
-hash = "9f3af00e9a29d161d3784d9343fb845686a450c4af5d21aa4befbf9fd2f3ad59"
+hash = "d42926e561fbd388bc467169a80aff692a5b170b90c1aa40c5f1dca971a81937"
 
 [[files]]
 file = "kubejs/server_scripts/drinks/effects.js"

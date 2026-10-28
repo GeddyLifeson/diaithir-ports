@@ -19,11 +19,15 @@ let dedupeChecked = false
 ServerEvents.tick(event => {
   if (dedupeChecked) return
   dedupeChecked = true
+  try {
   let names = new Set(DEDUPE.map(p => p[0])), left = 0
-  for (let h of event.server.getRecipeManager().getRecipes()) {
+  let all = event.server.getRecipeManager().getRecipes()
+  all = all.values ? all.values() : all
+  for (let h of all) {
     if (String(h.id()).indexOf('diaithir_dedupe:convert/') >= 0) continue
     let m = String(h.value().display()).match(/item [/] ([a-z0-9_.-]+:[a-z0-9_/.-]+)\]/g) || []
     for (let x of m) if (names.has(x.slice(7, -1))) { left++; console.warn('[dedupe] alias still in ' + h.id() + ': ' + x.slice(7, -1)); break }
   }
   console.info('[dedupe] recipes still naming an alias: ' + left)
+  } catch (e) { console.warn('[dedupe] live check skipped: ' + e) }
 })
