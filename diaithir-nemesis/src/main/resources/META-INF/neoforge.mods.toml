@@ -12,3 +12,6 @@ description = "A monster that kills a player is named, ranked and remembered. It
 modId = "neoforge"
 type = "required"
 versionRange = "[26.1.2.109,)"
+
+[[mixins]]
+config = "diaithirnemesis.mixins.json"
