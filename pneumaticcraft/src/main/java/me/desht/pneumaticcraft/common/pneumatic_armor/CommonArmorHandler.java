@@ -143,8 +143,8 @@ public class CommonArmorHandler implements ICommonArmorHandler {
                 CommonArmorHandler handler = getManagerInstance(player).playerHandlers.get(player.getUUID());
                 if (handler != null) handler.player = player;
                 if (player.level().isClientSide()) {
-                    ClientArmorRegistry.getInstance().getClientHandler(BuiltinArmorUpgrades.ENTITY_TRACKER).reset();
-                    ClientArmorRegistry.getInstance().getClientHandler(BuiltinArmorUpgrades.BLOCK_TRACKER).reset();
+                    var h1 = ClientArmorRegistry.getInstance().getClientHandler(BuiltinArmorUpgrades.ENTITY_TRACKER); if (h1 != null) h1.reset();
+                    var h2 = ClientArmorRegistry.getInstance().getClientHandler(BuiltinArmorUpgrades.BLOCK_TRACKER); if (h2 != null) h2.reset();
                 }
             }
         }
