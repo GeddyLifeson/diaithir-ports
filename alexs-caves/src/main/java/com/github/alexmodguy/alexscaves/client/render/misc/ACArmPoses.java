@@ -53,7 +53,8 @@ public class ACArmPoses {
 
     /** Parameter providers referenced by enumextensions.json: (twoHanded, affectsOffhandPose, transformer). */
     private static Object param(Kind kind, boolean twoHanded, boolean affectsOffhand, int idx, Class<?> type) {
-        return type.cast(switch (idx) {
+        // no type.cast: the requested type is boolean.class for the first two, and Class.cast rejects the boxed Boolean for a primitive
+        return (Object) (switch (idx) {
             case 0 -> twoHanded;
             case 1 -> affectsOffhand;
             case 2 -> (IArmPoseTransformer) (model, state, arm) -> transform(kind, model, state, arm);
