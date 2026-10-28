@@ -1,0 +1,58 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+    id 'io.freefair.lombok' version '8.13'
+}
+
+version = project.mod_version
+base.archivesName = 'gregtech-neoforge-26.1.2'
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+sourceSets {
+    main {
+        resources.srcDir 'src/generated/resources'
+    }
+}
+
+lombok { version = '1.18.42' }
+
+neoForge {
+    accessTransformers.from("src/main/resources/META-INF/accesstransformer.cfg")
+    version = project.neo_version
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        client {
+            client()
+            jvmArgument '-Xmx6G'
+            programArguments.addAll('--username', 'Dev', '--width', '1280', '--height', '720')
+            if (project.hasProperty('quickplay')) programArguments.addAll('--quickPlaySingleplayer', project.property('quickplay'))
+        }
+    }
+    mods { gtceu { sourceSet(sourceSets.main) } }
+}
+
+processResources {
+    inputs.property 'version', version
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version: version) }
+}
+
+repositories {
+    mavenCentral()
+    exclusiveContent {
+        forRepository { maven { url = 'https://api.modrinth.com/maven' } }
+        filter { includeGroup 'maven.modrinth' }
+    }
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:26.0.2'
+    implementation 'maven.modrinth:configuration:4.1.2+26.1.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '100000', '-Xmaxwarns', '1']
+}

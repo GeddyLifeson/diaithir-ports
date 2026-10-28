@@ -1,0 +1,282 @@
+package com.lowdragmc.lowdraglib.client.renderer.impl;
+
+import net.minecraft.client.renderer.block.dispatch.ModelState;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.client.resources.model.sprite.Material;
+import com.lowdragmc.lowdraglib.LDLib;
+import com.lowdragmc.lowdraglib.client.model.ModelFactory;
+import com.lowdragmc.lowdraglib.client.renderer.IBlockRendererProvider;
+import com.lowdragmc.lowdraglib.client.renderer.IItemRendererProvider;
+import com.lowdragmc.lowdraglib.client.renderer.ISerializableRenderer;
+import com.lowdragmc.lowdraglib.gui.editor.ColorPattern;
+import com.lowdragmc.lowdraglib.gui.editor.annotation.ConfigSetter;
+import com.lowdragmc.lowdraglib.gui.editor.annotation.Configurable;
+import com.lowdragmc.lowdraglib.gui.editor.annotation.LDLRegisterClient;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.ConfiguratorGroup;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.StringConfigurator;
+import com.lowdragmc.lowdraglib.gui.editor.configurator.WrapperConfigurator;
+import com.lowdragmc.lowdraglib.gui.editor.ui.Editor;
+import com.lowdragmc.lowdraglib.gui.texture.GuiTextureGroup;
+import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
+import com.lowdragmc.lowdraglib.gui.widget.ButtonWidget;
+import com.lowdragmc.lowdraglib.gui.widget.DialogWidget;
+import com.mojang.blaze3d.vertex.PoseStack;
+import lombok.Getter;
+import net.minecraft.client.renderer.rendertype.RenderType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.renderer.block.model.BlockModel;
+import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.resources.model.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.model.data.ModelData;
+import net.minecraft.util.TriState;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.File;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
+
+@LDLRegisterClient(name = "json_model", group = "renderer")
+public class IModelRenderer implements ISerializableRenderer {
+    @Getter
+    @Configurable(forceUpdate = false)
+    protected Identifier modelLocation;
+
+    @OnlyIn(Dist.CLIENT)
+    protected BakedModel itemModel;
+
+    @OnlyIn(Dist.CLIENT)
+    @Deprecated(forRemoval = true, since = "1.21")
+    protected Map<Direction, BakedModel> blockModels;
+
+    @OnlyIn(Dist.CLIENT)
+    protected Map<ModelState, BakedModel> modelCaches;
+
+    protected IModelRenderer() {
+        modelLocation = Identifier.withDefaultNamespace("block/furnace");
+    }
+
+    public IModelRenderer(Identifier modelLocation) {
+        this.modelLocation = modelLocation;
+        initRenderer();
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    @Nonnull
+    public TextureAtlasSprite getParticleTexture() {
+        BakedModel model = getItemBakedModel();
+        if (model == null) {
+            return ISerializableRenderer.super.getParticleTexture();
+        }
+        return model.getParticleIcon();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    protected UnbakedModel getModel() {
+        return ModelFactory.getUnBakedModel(modelLocation);
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void renderItem(ItemStack stack,
+                           ItemDisplayContext transformType,
+                           boolean leftHand, PoseStack poseStack,
+                           MultiBufferSource buffer, int combinedLight,
+                           int combinedOverlay, BakedModel model) {
+        IItemRendererProvider.disabled.set(true);
+        model = getItemBakedModel(stack);
+        if (model != null) {
+            Minecraft.getInstance().getItemRenderer().render(stack, transformType, leftHand, poseStack, buffer, combinedLight, combinedOverlay, model);
+        }
+        IItemRendererProvider.disabled.set(false);
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public boolean useBlockLight(ItemStack stack) {
+        var model = getItemBakedModel(stack);
+        if (model != null) {
+            return model.usesBlockLight();
+        }
+        return false;
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public TriState useAO() {
+        var model = getItemBakedModel();
+        if (model != null) {
+            return model.useAmbientOcclusion() ? TriState.DEFAULT : TriState.FALSE;
+        }
+        return TriState.FALSE;
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public List<BakedQuad> renderModel(@Nullable BlockAndTintGetter level, @Nullable BlockPos pos, @Nullable BlockState state, @Nullable Direction side, RandomSource rand, ModelData data, @Nullable RenderType renderType) {
+        var ibakedmodel = getBlockBakedModel(level, pos, state);
+        if (ibakedmodel == null) return Collections.emptyList();
+        return ibakedmodel.getQuads(state, side, rand, data, renderType);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Nullable
+    protected BakedModel getItemBakedModel() {
+        if (itemModel == null) {
+            var model = getModel();
+            if (model instanceof BlockModel blockModel && blockModel.getRootModel() == ModelBakery.GENERATION_MARKER) {
+                // fabric doesn't help us to fix vanilla bakery, so we have to do it ourselves
+                model = ModelFactory.ITEM_MODEL_GENERATOR.generateBlockModel(this::materialMapping, blockModel);
+            }
+            itemModel = model.bake(
+                    ModelFactory.getModelBaker(),
+                    this::materialMapping,
+                    BlockModelRotation.X0_Y0);
+        }
+        return itemModel;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Nullable
+    protected BakedModel getItemBakedModel(ItemStack itemStack) {
+        return getItemBakedModel();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Nullable
+    @Deprecated(forRemoval = true, since = "1.21")
+    protected BakedModel getBlockBakedModel(@Nullable BlockPos pos, @Nullable BlockAndTintGetter level) {
+        return getRotatedModel(Direction.NORTH);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Nullable
+    protected BakedModel getBlockBakedModel(@Nullable BlockAndTintGetter level, @Nullable BlockPos pos, @Nullable BlockState state) {
+        // TODO make it a standard api since 1.21
+        if (level != null && pos != null && state != null && state.getBlock() instanceof IBlockRendererProvider provider) {
+            var modelState = provider.getModelState(level, pos, state);
+            if (modelState != null) {
+                return modelCaches.computeIfAbsent(modelState, facing -> getModel().bake(
+                        ModelFactory.getModelBaker(),
+                        this::materialMapping,
+                        modelState));
+            }
+        }
+        return getBlockBakedModel(pos, level);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Deprecated(forRemoval = true, since = "1.21")
+    public BakedModel getRotatedModel(Direction frontFacing) {
+        return blockModels.computeIfAbsent(frontFacing, facing -> getModel().bake(
+                ModelFactory.getModelBaker(),
+                this::materialMapping,
+                ModelFactory.getRotation(facing)));
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    protected TextureAtlasSprite materialMapping(Material material) {
+        return material.sprite();
+    }
+    
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void onPrepareTextureAtlas(Identifier atlasName, Consumer<Identifier> register) {
+        if (atlasName.equals(TextureAtlas.LOCATION_BLOCKS)) {
+            itemModel = null;
+            blockModels.clear();
+            modelCaches.clear();
+        }
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void onAdditionalModel(Consumer<ModelResourceLocation> registry) {
+        registry.accept(ModelResourceLocation.standalone(modelLocation));
+    }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public boolean isGui3d() {
+        var model = getItemBakedModel();
+        if (model == null) {
+            return ISerializableRenderer.super.isGui3d();
+        }
+        return model.isGui3d();
+    }
+
+    // ISerializableRenderer
+    public void initRenderer() {
+        if (this.modelLocation != null) {
+            if (LDLib.isClient()) {
+                blockModels = new ConcurrentHashMap<>();
+                modelCaches = new ConcurrentHashMap<>();
+                registerEvent();
+            }
+        }
+    }
+
+    @ConfigSetter(field = "modelLocation")
+    @SuppressWarnings("unused")
+    public void updateModelWithoutReloadingResource(Identifier modelLocation) {
+        this.modelLocation = modelLocation;
+        if (LDLib.isClient()) {
+            itemModel = null;
+            if (blockModels != null) blockModels.clear();
+            if (modelCaches != null) modelCaches.clear();
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public void updateModelWithReloadingResource(Identifier modelLocation) {
+        updateModelWithoutReloadingResource(modelLocation);
+        var unBakedModel = getModel();
+        if (unBakedModel == ModelFactory.getUnBakedModel(ModelBakery.MISSING_MODEL_LOCATION)) {
+            Minecraft.getInstance().reloadResourcePacks();
+        }
+    }
+
+    @Override
+    public void buildConfigurator(ConfiguratorGroup father) {
+        ISerializableRenderer.super.buildConfigurator(father);
+        var locationConfigurator = father.getConfigurators().stream()
+                .filter(configurator -> configurator instanceof StringConfigurator stringConfigurator && stringConfigurator.getName().equals("modelLocation"))
+                .map(configurator -> (StringConfigurator) configurator)
+                .findFirst();
+        father.addConfigurators(new WrapperConfigurator(wrapper -> new ButtonWidget(0, 0, 90, 10,
+                new GuiTextureGroup(ColorPattern.T_GRAY.rectTexture().setRadius(5), new TextTexture("ldlib.gui.editor.tips.select_model")), cd -> {
+            if (Editor.INSTANCE == null) return;
+            File path = new File(Editor.INSTANCE.getWorkSpace(), "models");
+            DialogWidget.showFileDialog(Editor.INSTANCE, "ldlib.gui.editor.tips.select_model", path, true,
+                    DialogWidget.suffixFilter(".json"), r -> {
+                        if (r != null && r.isFile()) {
+                            var newModel = getModelFromFile(path, r);
+                            if (newModel.equals(modelLocation)) return;
+                            locationConfigurator.ifPresent(stringConfigurator -> stringConfigurator.setValue(newModel.toString()));
+                            updateModelWithReloadingResource(newModel);
+                            wrapper.notifyChanges();
+                        }
+                    });
+        })).setRemoveTitleBar(true));
+    }
+
+    private static Identifier getModelFromFile(File path, File r){
+        var id = path.getPath().replace('\\', '/').split("assets/")[1].split("/")[0];
+        return Identifier.fromNamespaceAndPath(id, r.getPath().replace(path.getPath(), "").replace(".json", "").replace('\\', '/').substring(1));
+    }
+}
