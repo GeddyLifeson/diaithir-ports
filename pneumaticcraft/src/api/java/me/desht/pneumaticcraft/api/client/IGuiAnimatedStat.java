@@ -224,7 +224,7 @@ public interface IGuiAnimatedStat extends ITickableWidget, GuiEventListener {
      * @param buffer the render buffer
      * @param partialTicks partial ticks since last client tick
      */
-    void renderStat(PoseStack matrixStack, MultiBufferSource buffer, float partialTicks);
+    default void renderStat(PoseStack matrixStack, MultiBufferSource buffer, float partialTicks) {}
 
     /**
      * Forces the stat to close.

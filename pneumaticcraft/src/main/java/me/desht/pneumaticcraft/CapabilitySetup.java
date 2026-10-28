@@ -72,7 +72,9 @@ public class CapabilitySetup {
             if (entry.get() instanceof IPressurizableItem) {
                 event.registerItem(PNCCapabilities.AIR_HANDLER_ITEM, (stack, ctx) -> new AirHandlerItemStack(stack), entry.get());
             }
-            // 26.1 port: item fluid capabilities (IFluidCapProvider) are not ported yet, see PORT_NOTES.md
+            if (entry.get() instanceof IFluidCapProvider p) {
+                event.registerItem(Capabilities.Fluid.ITEM, (stack, access) -> p.provideFluidCapability(access), entry.get());
+            }
         });
     }
 }

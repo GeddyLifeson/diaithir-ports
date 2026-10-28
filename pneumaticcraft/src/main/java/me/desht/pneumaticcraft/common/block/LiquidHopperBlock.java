@@ -71,8 +71,8 @@ public class LiquidHopperBlock extends OmnidirectionalHopperBlock implements Pne
         }
 
         @Override
-        public IFluidHandlerItem provideFluidCapability(ItemStack stack) {
-            return new FluidHandlerItemStack(ModDataComponents.MAIN_TANK, stack, PneumaticValues.NORMAL_TANK_CAPACITY);
+        public net.neoforged.neoforge.transfer.ResourceHandler<net.neoforged.neoforge.transfer.fluid.FluidResource> provideFluidCapability(net.neoforged.neoforge.transfer.access.ItemAccess access) {
+            return new net.neoforged.neoforge.transfer.fluid.ItemAccessFluidHandler(access, ModDataComponents.MAIN_TANK.get(), PneumaticValues.NORMAL_TANK_CAPACITY);
         }
     }
 }

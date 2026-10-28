@@ -213,8 +213,13 @@ public class MemoryStickItem extends Item implements ColorHandlers.ITintableItem
     }
 
     @Override
-    public IFluidHandlerItem provideFluidCapability(ItemStack stack) {
-        return new PNCFluidHandlerItemStack(ModDataComponents.STORED_FLUID, stack, XP_FLUID_CAPACITY, fluid -> fluid == ModFluids.MEMORY_ESSENCE.get());
+    public net.neoforged.neoforge.transfer.ResourceHandler<net.neoforged.neoforge.transfer.fluid.FluidResource> provideFluidCapability(net.neoforged.neoforge.transfer.access.ItemAccess access) {
+        return new net.neoforged.neoforge.transfer.fluid.ItemAccessFluidHandler(access, ModDataComponents.STORED_FLUID.get(), XP_FLUID_CAPACITY) {
+            @Override
+            public boolean isValid(int index, net.neoforged.neoforge.transfer.fluid.FluidResource resource) {
+                return super.isValid(index, resource) && resource.getFluid() == ModFluids.MEMORY_ESSENCE.get();
+            }
+        };
     }
 
     @EventBusSubscriber(modid = Names.MOD_ID)

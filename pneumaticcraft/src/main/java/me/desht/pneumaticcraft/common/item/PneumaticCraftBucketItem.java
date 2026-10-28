@@ -13,7 +13,7 @@ public class PneumaticCraftBucketItem extends BucketItem implements IFluidCapPro
     }
 
     @Override
-    public IFluidHandlerItem provideFluidCapability(ItemStack stack) {
-        return new FluidBucketWrapper(stack);
+    public net.neoforged.neoforge.transfer.ResourceHandler<net.neoforged.neoforge.transfer.fluid.FluidResource> provideFluidCapability(net.neoforged.neoforge.transfer.access.ItemAccess access) {
+        return new net.neoforged.neoforge.transfer.fluid.BucketResourceHandler(access);
     }
 }
