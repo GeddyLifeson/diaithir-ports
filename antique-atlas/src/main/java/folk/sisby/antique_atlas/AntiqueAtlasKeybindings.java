@@ -8,7 +8,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class AntiqueAtlasKeybindings {
 	public static final KeyMapping.Category CATEGORY = new KeyMapping.Category(AntiqueAtlas.id("atlas"));
-	public static final KeyMapping ATLAS_KEYMAPPING = new KeyMapping("key.antique_atlas.open", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_M, CATEGORY);
+	public static final KeyMapping ATLAS_KEYMAPPING = new KeyMapping("key.antique_atlas.open", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_J, CATEGORY);
 
 	public static final KeyMapping MINIMAP_KEYMAPPING = new KeyMapping("key.antique_atlas.minimap", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, CATEGORY);
 
