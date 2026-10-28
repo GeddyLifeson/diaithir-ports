@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 90,
+  "separation": 40,
+  "salt": 71100001
+ },
+ "structures": [
+  {
+   "structure": "rodos:waymark",
+   "weight": 1
+  }
+ ]
+}

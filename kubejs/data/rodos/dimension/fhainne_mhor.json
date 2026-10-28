@@ -1,0 +1,417 @@
+{
+ "type": "rodos:fhainne_mhor",
+ "generator": {
+  "type": "minecraft:noise",
+  "settings": "rodos:fhainne_mhor",
+  "biome_source": {
+   "type": "minecraft:multi_noise",
+   "biomes": [
+    {
+     "biome": "rodos:loch_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -1.0,
+       -0.3
+      ],
+      "erosion": [
+       -1.0,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:traigh_an_locha",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -0.3,
+       -0.2
+      ],
+      "erosion": [
+       -1.0,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:abhainn_fhada",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -1.0,
+       1.0
+      ],
+      "weirdness": [
+       -0.05,
+       0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:bruach_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -1.0,
+       -0.25
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:machair_mhor",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       -0.15
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:raon_blathan",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -0.15,
+       0.1
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:coille_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.1,
+       0.2
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:coille_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.2,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       -0.1
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:boglach_fhada",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.2,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.1,
+       1.0
+      ],
+      "weirdness": [
+       -1.0,
+       -0.05
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:bruach_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -1.0,
+       -0.25
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:machair_mhor",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -1.0,
+       -0.15
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:raon_blathan",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       -0.15,
+       0.1
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:coille_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.1,
+       0.2
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       1.0
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:coille_na_fainne",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.2,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.25,
+       -0.1
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    },
+    {
+     "biome": "rodos:boglach_fhada",
+     "parameters": {
+      "temperature": [
+       -1.0,
+       1.0
+      ],
+      "humidity": [
+       0.2,
+       1.0
+      ],
+      "continentalness": [
+       -0.2,
+       1.0
+      ],
+      "erosion": [
+       -0.1,
+       1.0
+      ],
+      "weirdness": [
+       0.05,
+       1.0
+      ],
+      "depth": 0.0,
+      "offset": 0.0
+     }
+    }
+   ]
+  }
+ }
+}

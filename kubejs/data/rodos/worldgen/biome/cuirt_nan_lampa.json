@@ -1,0 +1,55 @@
+{
+ "attributes": {
+  "minecraft:visual/sky_color": "#8fa6c8",
+  "minecraft:visual/fog_color": "#c4cfe2"
+ },
+ "carvers": [],
+ "downfall": 0.0,
+ "effects": {
+  "water_color": "#5fb0e0"
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:spring_water"
+  ],
+  [
+   "rodos:court_garden",
+   "rodos:court_lamps"
+  ],
+  []
+ ],
+ "has_precipitation": false,
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [
+   {
+    "type": "stellaris:alien",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 3
+   },
+   {
+    "type": "minecraft:rabbit",
+    "weight": 4,
+    "minCount": 1,
+    "maxCount": 2
+   }
+  ],
+  "misc": [],
+  "monster": [],
+  "underground_water_creature": [],
+  "water_ambient": [],
+  "water_creature": []
+ },
+ "temperature": 0.6
+}

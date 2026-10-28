@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 64,
+  "separation": 24,
+  "salt": 71100005
+ },
+ "structures": [
+  {
+   "structure": "rodos:seat_steps",
+   "weight": 1
+  }
+ ]
+}

@@ -23557,6 +23557,14 @@ file = "kubejs/data/energizedpower/loot_table/blocks/tin_ore.json"
 hash = "5638b69e49db38457f8fad1d44a10e2d2492d3923f0a1d8a94b948a166675997"
 
 [[files]]
+file = "kubejs/data/energizedpower/tags/worldgen/biome/has_structure/factory_1.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/energizedpower/tags/worldgen/biome/has_structure/small_solar_farm.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
 file = "kubejs/data/extendedae/loot_table/blocks/machine_frame.json"
 hash = "8efc7949d6722355ecc2ca0196d6658ca050095384d29e057fe3ff4fea7e5b3b"
 
@@ -24905,6 +24913,10 @@ file = "kubejs/data/mekanismgenerators/loot_table/blocks/solar_generator.json"
 hash = "99e80a1e968527ae74a78ff4c524b0c468466be2095af82e7c4344b437ed197f"
 
 [[files]]
+file = "kubejs/data/millager/tags/worldgen/biome/has_structure/trading_hall.json"
+hash = "c62f3c187563839b1f1a27eceb1c99e71b1669be2cd6a2518693175fd2898e7a"
+
+[[files]]
 file = "kubejs/data/minecraft/enchantment/sharpness.json"
 hash = "168579f9ec168e6a0033d52cc9eb21bee995b1efc084c8b7e23b75e23e51b6ea"
 
@@ -24926,7 +24938,7 @@ hash = "554ea45e8b272f6d39f87376d528b0e71f810bf5bbd8ef2702cad7e2f9ddcc77"
 
 [[files]]
 file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_plains.json"
-hash = "f3954dcd477fc40f1d94a9c8c69c09e5c9fc625ba94792e13d40f2cbe9925d7f"
+hash = "9e8ebffbf25734692e6a6c8fb5be1e32a5bdcb4765121db53171393f0e5c78b2"
 
 [[files]]
 file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_savanna.json"
@@ -25357,6 +25369,370 @@ file = "kubejs/data/regions_unexplored/loot_table/blocks/barley.json"
 hash = "46786cdf144a519dff9c2fc9122350db382ca904aa3ec3be91123f1638c16634"
 
 [[files]]
+file = "kubejs/data/rodos/dimension/ard_bhaile.json"
+hash = "19baf340c8f53805faf7384554436ae1316e24ed89e33179161caed6d51ae69a"
+
+[[files]]
+file = "kubejs/data/rodos/dimension/fhainne_mhor.json"
+hash = "bb4d8741960f8d563c8bb6986e8c000660801f063475a44ca3911a6590cf041b"
+
+[[files]]
+file = "kubejs/data/rodos/dimension_type/ard_bhaile.json"
+hash = "a452c5eceb3f7e2a8bfdf79defd84f3de5fc4db248cb030876441101a97e772a"
+
+[[files]]
+file = "kubejs/data/rodos/dimension_type/fhainne_mhor.json"
+hash = "ccfeb0999bd51deba1f14f0a7430ec01f6bba4eff0278381afd06c6be3d8b7a2"
+
+[[files]]
+file = "kubejs/data/rodos/function/anchors.mcfunction"
+hash = "d3343e592449093829f3e4e8c4564462775b6d7bc0024dfa222f4d87ba07b6d6"
+
+[[files]]
+file = "kubejs/data/rodos/function/borders.mcfunction"
+hash = "474f905dd906940da16201a73a5423ef46f792c2e313ef56172e51acfb1a9cc0"
+
+[[files]]
+file = "kubejs/data/rodos/planets/ard_bhaile.json"
+hash = "9f6daddb3399dc46aa7b36e71f2087571bc5b7e5238ae449983287ce24bc6034"
+
+[[files]]
+file = "kubejs/data/rodos/planets/fhainne_mhor.json"
+hash = "424fd4e8c59451b82954506e5486ba90eb6dfacd9726eb7df005fc573db0129b"
+
+[[files]]
+file = "kubejs/data/rodos/structure/aperture_plaza.nbt"
+hash = "e139dae438724a8be0801f2cf1bfbaec3a55d488090d9bd3a3dd3b0992ce4c37"
+
+[[files]]
+file = "kubejs/data/rodos/structure/ring_gate.nbt"
+hash = "609b34536fa2271cc20dc2988a5bc8d090909048d21c43349ea3090dd18343bc"
+
+[[files]]
+file = "kubejs/data/rodos/structure/seat_steps.nbt"
+hash = "7d5b2db8366c1f4b77970f71a762242a37bca37716b05e4ddf376d2b29221897"
+
+[[files]]
+file = "kubejs/data/rodos/structure/stall_row.nbt"
+hash = "1861568774f63eeef3ed3699778ace738e14bb62ac46785db54f486e38f5184f"
+
+[[files]]
+file = "kubejs/data/rodos/structure/wayfarers_well.nbt"
+hash = "b2601c7272f78154a62f79b6e00d8f142fb807511c272d92a1e2b0f69135feed"
+
+[[files]]
+file = "kubejs/data/rodos/structure/waymark.nbt"
+hash = "740a21769468b868bdd3248268e7d22a68441278d92d18b583c58ac4ebdc8e9a"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/aperture_plaza.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/city_black.json"
+hash = "29a0bea63adfbe46ced93f1621ceef1f2e4f60f1811f92b5fa541ada2d599642"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/city_power.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/city_red.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/city_tall.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/city_wheel.json"
+hash = "655e6fae2f48b5d7801406b00641f537dffe06938358d1dba18c48ae4732c21f"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/mere_lighthouse.json"
+hash = "0eecd20d1b0cdec70400ea797d080111f495b4f6143e6c6f71ddd8e4654b5cd0"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/ring_gate.json"
+hash = "735fe135a00f0f0d7375e5478348e5c2b9bf47bc0287209555473b83bb53bab1"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/ring_stones.json"
+hash = "0e4817dc3cb235944db4debcc6b5d469119ecd50b730d36531dc9d1c8f404871"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/ring_windmill.json"
+hash = "c62f3c187563839b1f1a27eceb1c99e71b1669be2cd6a2518693175fd2898e7a"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/seat_steps.json"
+hash = "e06cf6b84f65fa51e31772571b8d5624ad65d124324bd69e9d3a4ff9483d1ffc"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/stall_row.json"
+hash = "0aa32935c0119b8f49d7fcceadff1488f44e7b13611f6754d9610c9381257b26"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/wayfarers_well.json"
+hash = "2b29331f5568f6fe00ba83817d475c04e64652b4ea683c42bc7a49d1e5a0f282"
+
+[[files]]
+file = "kubejs/data/rodos/tags/worldgen/biome/has_structure/waymark.json"
+hash = "97a319cda6df4eb5b33f1c18a9037c773eff2c656d57981e0862d1e1cb7a7075"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/abhainn_fhada.json"
+hash = "d74ea3f3f96c1cdad4f87f98678c91ae98b3624719e1d3717ee89005f3d70381"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/an_cearn_dubh.json"
+hash = "0ce02387e69c8fb07555a7df5c437ea42edd271c450d46ab11c583d8105b4d3f"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/boglach_fhada.json"
+hash = "f432fda66fb26ecd9844f1479d27f85e28d8886a41382a18a44999b3fcb5555e"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/bruach_na_fainne.json"
+hash = "c3b22a5dbd1c189704b20bc786ca9a780ac23903edae42e6a405db854f8c3451"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/coille_na_fainne.json"
+hash = "8ae6a2c16700cbbbb56c9d7b27d66cef1c1f25e43a2e74338c219d9563e46045"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/cuirt_nan_lampa.json"
+hash = "db2c4f4f454804c7c932546898b0d0e14e27d23cba466b256ca843022c541992"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/loch_na_fainne.json"
+hash = "c9feee341366e8654a6b238ff91852071acb04ce20ff2aa7b57e86f64508ae16"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/machair_mhor.json"
+hash = "49e205076683aee4d69ce1360e2904cdd8f64196c009a5f3a7fafd2298c381df"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/raon_blathan.json"
+hash = "7cfeea38fcade2cf76ecb491f52b2c47236990007cb6e5e0946be81d3b5d29ff"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/traigh_an_locha.json"
+hash = "31645ef09b686583a43cc53f09276eb918250cdaffd465d2a11ec40c77cd9f25"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/biome/urlar_nan_leacan.json"
+hash = "499a9f063f90955ed7bbe67c87d44ff980de9ce55570e06e7ffe0ccc5b483c3c"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/court_garden.json"
+hash = "09223684dec6113bb4670cc4e3ed92abc6fc1cdd3b1493385be6c2dbf2b2ad02"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/court_lamps.json"
+hash = "1c918adf231507fbca64cbb8f7af7e95b135ea952414db89da24d413a890ef56"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/fen_reeds.json"
+hash = "ebdb28bb701f674b9ce3a802c6bedb225debecd4974dc4bf2a820ed7192e694e"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/lea_blooms.json"
+hash = "d425c0d1d711a44f0348b3c71f14f12a2c9e271bed790537e07821a0d1dfee86"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/machair_blooms.json"
+hash = "cf03dc57d89718a814f16a65d047d036965dc1bfdc9ee5fdbb4e626bc90bc4bf"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/rim_scrub.json"
+hash = "347080cba22c5340617cb8f514667ce62e7db6c96659078aaa84f48939503a96"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/strand_grass.json"
+hash = "48733412a0f6b6b0e43ee3db6b9dd22cca7b136447d1554e31fc33fa2ed63a67"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/configured_feature/wood_floor.json"
+hash = "1a94d407b5812359186c68546b616805754828c0eb69ea49f2d2a62b9c3ff199"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/noise_settings/ard_bhaile.json"
+hash = "dbd1979b7ddf54683355b6ed2fe61974aebaac7345f50bdb3febbfd22400c9a2"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/noise_settings/fhainne_mhor.json"
+hash = "a52e0017664c14524aa37c69430a8ae1ea7d54cd8a5568ee260a8c39c985f622"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/court_garden.json"
+hash = "78c1062c703e587594ff476bbf1ffb5c2fd2d34afe629ad46588f39721b58a8f"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/court_lamps.json"
+hash = "eb0646eb3850778eca7c10af364b45f71c11b0cf239df421eee44a7e0148bc0f"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/fen_reeds.json"
+hash = "a8fcfdce44b0ac1e43cd85039ba2088be0c2550cd93a2ec857121a2d0d8f7103"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/lea_blooms.json"
+hash = "996a03273881320198e79bd43b6160f7c423c1b1aab6973af698a34599db0785"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/machair_blooms.json"
+hash = "39bbdda34648b1411e1d0a06955f917d2dbdfe4eac4e6931d3a0e6aa7a221d2a"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/rim_scrub.json"
+hash = "a734002e3703c60c5bf361aa0d1814595e9633a959b65d391527754a31a5da89"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/strand_grass.json"
+hash = "19998ba12443e7860713c02ae2c4e695dbb7ac092805a426a6984e777c81cb40"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/placed_feature/wood_floor.json"
+hash = "c453c2b113471e7778f407d7e25c055e6ed11684a7121aa55ba7432b9155a7ec"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/aperture_plaza.json"
+hash = "4b5bdf16444cfd9623fb6700f157045cf9d8edba02ee3c1b990e279e884743d6"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_black.json"
+hash = "16796de263b6672c82da7f8d0516b0e367d39370bba5fa0be87a90eb9eff5da0"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_power.json"
+hash = "906bee48797d6d5e7cd1af51f50bb1cc8f7feef9e5dedcf5bb77623c1d240b52"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_red.json"
+hash = "7c944eb4c9e5fc3004756c5e2d96429590f8a4b16ca91d789aa4d57a044b54d4"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_tall.json"
+hash = "a8edfcae52fba2958d52dd2a3388e5696865140ad4bc5fed540e5b4b831a5756"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/city_wheel.json"
+hash = "dbc545616c456c302fce11370ddefed88b92eda62f1bcae4b1c87e0d528790d0"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/mere_lighthouse.json"
+hash = "434fc21314d2fa648b38a398becfba45a8e553288e3aad2040b2a5e93041c63d"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/ring_gate.json"
+hash = "ffee5c57fe97c2ecd67d878c3532388143af37cbf062036618d154e4b1cbd27a"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/ring_stones.json"
+hash = "eaf7ef1354185172df0e8c360f4606565b9ff1df7b2573141353bb4ab47affd4"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/ring_windmill.json"
+hash = "2d51023ef405a97e75ebf592e264e41ae6ceb74cb8652bfabae69b3c709c94ff"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/seat_steps.json"
+hash = "8d5833786c6df0ee16b5098edf784924fd6ae05b790c713a51d1c0b18cc00700"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/stall_row.json"
+hash = "b77ea747246d85da57c18bc12ed208a6f21a2a07d7a5114b84452f707497c504"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/wayfarers_well.json"
+hash = "3b06e7bc809d996e654c06711d6be13bdbe97494f01f898381bccab268cd924f"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure/waymark.json"
+hash = "03cbcf087ac570ea10d7e8429ea3a5ab313f1b1ab5c56b6c4be933a00b22db26"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/aperture_plaza.json"
+hash = "5a2681938a16ddfd82d120330185cc184a3d96dbfe7cb8cd5f605c5014044f72"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_black.json"
+hash = "4e0c00c65edb88f6470c6ecee0bf009d3df7d3f6d5dfb0f39d9a58a3a0c7ab72"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_power.json"
+hash = "d35444b264b84a76ca3cf4b560cbbb48dc4cc11846c766d5f474be05266230b2"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_red.json"
+hash = "b0ee18b50af9811e13c9dd9f90a33050b590d25f335a3199fc6eb4ef72572099"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_tall.json"
+hash = "f83266cdf58c71e5825eda29c42211553faf96231e3d421f466c2b0511804877"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/city_wheel.json"
+hash = "92849be3c99c3e0109a3451ddb9bad4036fcc68896c9fabd82ab71735a11feb1"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/mere_lighthouse.json"
+hash = "afcee83bef29ed29030452e99623133a493cdeb8df104732d898b169871897a2"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/ring_gate.json"
+hash = "df46b929ccb59e1048a70c30b71247900762d93fd059e6c0fbb6c34425197613"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/ring_stones.json"
+hash = "8fbbcb9b7160880919d7f5ffec25b466939fd24e27d34e3a28a8aa7d95c04560"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/ring_windmill.json"
+hash = "15ea105f5359eae80d598fad0ed8ef61e80cc4b7390049a20fd584e56d464cdd"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/seat_steps.json"
+hash = "7ff369aafc664d800b0683eba3539b982c042f101280c332e24413d479dae839"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/stall_row.json"
+hash = "cfcc000bd33dbdf1cb5e99186f17d6568b60d212493fb41e6a853cffe2e7acd6"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/wayfarers_well.json"
+hash = "21c6cd075ce75233368bfbcb0b91f33a7e42f3e528d75027a6ca55c4bd7022db"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/structure_set/waymark.json"
+hash = "c484d6601fe1335262044ecaf3111c3e3acae44cf2181cd9fc8e193abe7eb6ce"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/aperture_plaza.json"
+hash = "5920c3b582838473a3c29e20325689c395b29988921f47bb4bc04892c0b2c77c"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/ring_gate.json"
+hash = "db15066cd91f6bcc29d8138a0030dd4d44dc93e08ddf08ca7c5300efb9bd2e86"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/seat_steps.json"
+hash = "3ae6f5b5372602626f4241624ca6f17566748d2c9dcb096cfbdbbf8d3b5efa33"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/stall_row.json"
+hash = "929d2856a478027d6d8e52ff14243fd885268f6a8fb54e550ac661040ad3e8d0"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/wayfarers_well.json"
+hash = "481eb9894b95d1d42a04c7a488780dadb5630593bbe0b65a201fd59effba18a4"
+
+[[files]]
+file = "kubejs/data/rodos/worldgen/template_pool/waymark.json"
+hash = "d1f4ed5b0a8f6138141ae6d95bd5078ced8555594a7971bbfa61dd323df5c169"
+
+[[files]]
 file = "kubejs/data/sfm/loot_table/blocks/buffer.json"
 hash = "8aa5d90090e9e52dfdaf176514d3f3a75a15807c348427df34a603af01666725"
 
@@ -25453,6 +25829,10 @@ file = "kubejs/data/stellaris/loot_table/chests/moon_village.json"
 hash = "73d122b2d6d2c234b65f3fa8739bd7d5055708fa92c6f54a24d7dbf0f6ff138a"
 
 [[files]]
+file = "kubejs/data/tbirds/tags/worldgen/biome/has_structure/village_cherry.json"
+hash = "e74a28286accbdffb80191b2362a7160a18302dbbe08f30577fb2b7262ec97df"
+
+[[files]]
 file = "kubejs/data/tconstruct/loot_table/blocks/knightmetal_block.json"
 hash = "95ccf68e41b5c84408ee836db5ecbaaae1bd1d6e1fc82736310ac0d10a579e83"
 
@@ -25514,7 +25894,7 @@ hash = "e6f906a21cd00e9c6375dbfebde466cec26079979931854dd3514e53846cfb99"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/tech_ages_data.js"
-hash = "1dd2353544e785fb03e9a41d987ab5cd0dbb75f6be4d2240f6b2caf07dfca16a"
+hash = "a5003c91f1ea33e8eddc1a72f20c6a6d9c0c4d75b8f23d78f1c0b7d67a9dbb0f"
 
 [[files]]
 file = "kubejs/server_scripts/diaithir/unify.js"

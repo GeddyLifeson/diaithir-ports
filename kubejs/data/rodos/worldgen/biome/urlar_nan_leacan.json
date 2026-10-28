@@ -1,0 +1,46 @@
+{
+ "attributes": {
+  "minecraft:visual/sky_color": "#7f8fb5",
+  "minecraft:visual/fog_color": "#b7c0d6"
+ },
+ "carvers": [],
+ "downfall": 0.0,
+ "effects": {
+  "water_color": "#5fa8d8"
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:spring_water"
+  ],
+  [],
+  []
+ ],
+ "has_precipitation": false,
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [
+   {
+    "type": "stellaris:alien",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 3
+   }
+  ],
+  "misc": [],
+  "monster": [],
+  "underground_water_creature": [],
+  "water_ambient": [],
+  "water_creature": []
+ },
+ "temperature": 0.5
+}

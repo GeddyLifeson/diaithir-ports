@@ -1,0 +1,84 @@
+{
+ "attributes": {
+  "minecraft:visual/sky_color": "#8fc3ff",
+  "minecraft:visual/fog_color": "#d6e6ff"
+ },
+ "carvers": [
+  "minecraft:cave",
+  "minecraft:cave_extra_underground"
+ ],
+ "downfall": 0.4,
+ "effects": {
+  "water_color": "#3a8fe0"
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:ore_dirt",
+   "minecraft:ore_gravel",
+   "minecraft:ore_granite_upper",
+   "minecraft:ore_granite_lower",
+   "minecraft:ore_diorite_upper",
+   "minecraft:ore_diorite_lower",
+   "minecraft:ore_andesite_upper",
+   "minecraft:ore_andesite_lower",
+   "minecraft:ore_tuff",
+   "minecraft:ore_coal_upper",
+   "minecraft:ore_coal_lower",
+   "minecraft:ore_iron_upper",
+   "minecraft:ore_iron_middle",
+   "minecraft:ore_iron_small",
+   "minecraft:ore_gold",
+   "minecraft:ore_gold_lower",
+   "minecraft:ore_redstone",
+   "minecraft:ore_redstone_lower",
+   "minecraft:ore_diamond",
+   "minecraft:ore_diamond_medium",
+   "minecraft:ore_diamond_large",
+   "minecraft:ore_diamond_buried",
+   "minecraft:ore_lapis",
+   "minecraft:ore_lapis_buried",
+   "minecraft:ore_copper",
+   "minecraft:disk_sand",
+   "minecraft:disk_clay",
+   "minecraft:disk_gravel"
+  ],
+  [],
+  [],
+  [
+   "minecraft:seagrass_river"
+  ],
+  []
+ ],
+ "has_precipitation": false,
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [],
+  "misc": [],
+  "monster": [],
+  "underground_water_creature": [],
+  "water_ambient": [
+   {
+    "type": "minecraft:salmon",
+    "weight": 6,
+    "minCount": 1,
+    "maxCount": 3
+   },
+   {
+    "type": "minecraft:cod",
+    "weight": 10,
+    "minCount": 2,
+    "maxCount": 4
+   }
+  ],
+  "water_creature": []
+ },
+ "temperature": 0.7
+}

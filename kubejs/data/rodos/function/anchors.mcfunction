@@ -1,0 +1,22 @@
+# fixed landmarks (run once after borders; forceload keeps the chunks while placing)
+execute in rodos:fhainne_mhor run forceload add -48 -48 48 48
+execute in rodos:fhainne_mhor run place structure rodos:waymark 0 70 0
+execute in rodos:fhainne_mhor run forceload remove -48 -48 48 48
+execute in rodos:fhainne_mhor run forceload add 19884 -16 19916 16
+execute in rodos:fhainne_mhor run place structure rodos:ring_gate 19900 70 0
+execute in rodos:fhainne_mhor run forceload remove 19884 -16 19916 16
+execute in rodos:fhainne_mhor run forceload add -19916 -16 -19884 16
+execute in rodos:fhainne_mhor run place structure rodos:ring_gate -19900 70 0
+execute in rodos:fhainne_mhor run forceload remove -19916 -16 -19884 16
+execute in rodos:fhainne_mhor run forceload add -16 19884 16 19916
+execute in rodos:fhainne_mhor run place structure rodos:ring_gate 0 70 19900
+execute in rodos:fhainne_mhor run forceload remove -16 19884 16 19916
+execute in rodos:fhainne_mhor run forceload add -16 -19916 16 -19884
+execute in rodos:fhainne_mhor run place structure rodos:ring_gate 0 70 -19900
+execute in rodos:fhainne_mhor run forceload remove -16 -19916 16 -19884
+execute in rodos:ard_bhaile run forceload add -64 -64 64 64
+execute in rodos:ard_bhaile run place structure rodos:aperture_plaza 0 64 0
+execute in rodos:ard_bhaile run place structure rodos:seat_steps 0 64 60
+execute in rodos:ard_bhaile run place structure rodos:stall_row -40 64 -30
+execute in rodos:ard_bhaile run place structure rodos:stall_row 25 64 -30
+execute in rodos:ard_bhaile run forceload remove -64 -64 64 64

@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 48,
+  "separation": 20,
+  "salt": 71100004
+ },
+ "structures": [
+  {
+   "structure": "rodos:aperture_plaza",
+   "weight": 1
+  }
+ ]
+}

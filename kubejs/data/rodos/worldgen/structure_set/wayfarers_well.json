@@ -1,0 +1,14 @@
+{
+ "placement": {
+  "type": "minecraft:random_spread",
+  "spacing": 40,
+  "separation": 15,
+  "salt": 71100002
+ },
+ "structures": [
+  {
+   "structure": "rodos:wayfarers_well",
+   "weight": 1
+  }
+ ]
+}
