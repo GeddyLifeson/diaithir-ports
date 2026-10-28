@@ -1,7 +1,7 @@
 package folk.sisby.antique_atlas.gui;
 
 import folk.sisby.antique_atlas.AntiqueAtlas;
-import folk.sisby.antique_atlas.compat.OpacCompat;
+import folk.sisby.antique_atlas.compat.FtbChunksCompat;
 import folk.sisby.antique_atlas.util.Gfx;
 import folk.sisby.surveyor.client.SurveyorClient;
 import net.minecraft.ChatFormatting;
@@ -14,20 +14,21 @@ import net.minecraft.util.Mth;
 import java.util.List;
 
 /**
- * Draws Open Parties and Claims chunk claims and party members on the atlas.
+ * Draws FTB Chunks chunk claims and party members on the atlas.
  * Claims are tinted with the owner's claim colour, with a stronger edge where the owner changes.
  * Hovering a claim shows its owner. Toggled with the Claims bookmark.
  */
 public class ClaimsOverlay implements AtlasOverlay {
 	public static final Identifier ID = AntiqueAtlas.id("opac_claims");
 	public static boolean visible = true;
-	private static final int MAX_CHUNKS = 90_000;
+	private static final int MAX_CHUNKS = 30_000;
 
 	@Override
 	public void onScreenRender(AtlasScreenRenderContext ctx) {
-		if (!visible || !OpacCompat.available()) return;
+		if (!visible || !FtbChunksCompat.available()) return;
 		AtlasScreen screen = ctx.screen();
 		Identifier dim = screen.dim().identifier();
+		FtbChunksCompat.View claims = FtbChunksCompat.view(screen.dim());
 		var g = ctx.context();
 
 		int minCx = screen.screenXToWorldX(screen.bookX()) >> 4;
@@ -39,12 +40,12 @@ public class ClaimsOverlay implements AtlasOverlay {
 		float effectiveScale = (float) (screen.mapScale() / screen.guiScale());
 		int size = screen.tilePixels() / screen.tileChunks();
 		if (w > 0 && h > 0 && (long) w * h <= MAX_CHUNKS && size > 0) {
-			OpacCompat.Claim[][] grid = new OpacCompat.Claim[w + 2][h + 2];
-			for (int x = -1; x <= w; x++) for (int z = -1; z <= h; z++) grid[x + 1][z + 1] = OpacCompat.claimAt(dim, minCx + x, minCz + z);
+			FtbChunksCompat.Claim[][] grid = new FtbChunksCompat.Claim[w + 2][h + 2];
+			for (int x = -1; x <= w; x++) for (int z = -1; z <= h; z++) grid[x + 1][z + 1] = claims == null ? null : claims.at(minCx + x, minCz + z);
 			int line = Math.max(1, size / 8);
 			for (int x = 0; x < w; x++) {
 				for (int z = 0; z < h; z++) {
-					OpacCompat.Claim c = grid[x + 1][z + 1];
+					FtbChunksCompat.Claim c = grid[x + 1][z + 1];
 					if (c == null) continue;
 					double sx = screen.worldXToScreenX((minCx + x) << 4) - screen.bookX();
 					double sy = screen.worldZToScreenY((minCz + z) << 4) - screen.bookY();
@@ -65,15 +66,14 @@ public class ClaimsOverlay implements AtlasOverlay {
 			int mx = ctx.mouseX();
 			int my = ctx.mouseY();
 			if (screen.isMouseOverMap) {
-				OpacCompat.Claim hover = OpacCompat.claimAt(dim, screen.screenXToWorldX(mx) >> 4, screen.screenYToWorldZ(my) >> 4);
+				FtbChunksCompat.Claim hover = claims == null ? null : claims.at(screen.screenXToWorldX(mx) >> 4, screen.screenYToWorldZ(my) >> 4);
 				if (hover != null && screen.hoveredLandmark == null) {
 					g.setTooltipForNextFrame(Minecraft.getInstance().font, List.of(hover.name(), Component.translatable("gui.antique_atlas.claim").withStyle(ChatFormatting.GRAY)), java.util.Optional.empty(), mx, my);
 				}
 			}
 		}
 
-		for (OpacCompat.Member m : OpacCompat.partyMembers()) {
-			if (m.id().equals(SurveyorClient.getClientUuid()) || m.dimension() == null || !m.dimension().equals(dim)) continue;
+		for (FtbChunksCompat.Member m : FtbChunksCompat.teamMembers()) {
 			double px = Mth.clamp(screen.worldXToScreenX(m.x()) - screen.bookX(), AtlasRenderer.MAP_BORDER_WIDTH, screen.mapWidth() + AtlasRenderer.MAP_BORDER_WIDTH);
 			double py = Mth.clamp(screen.worldZToScreenY(m.z()) - screen.bookY(), AtlasRenderer.MAP_BORDER_HEIGHT, screen.mapHeight() + AtlasRenderer.MAP_BORDER_HEIGHT);
 			Gfx.drawCenteredWithRotation(g, AtlasRenderer.PLAYER, px, py, screen.getEffectiveScale(), AtlasRenderer.PLAYER_ICON_WIDTH, AtlasRenderer.PLAYER_ICON_HEIGHT, 0, ARGB.color(255, 120, 220, 255));
@@ -85,7 +85,7 @@ public class ClaimsOverlay implements AtlasOverlay {
 		}
 	}
 
-	private static boolean same(OpacCompat.Claim a, OpacCompat.Claim b) {
-		return b != null && a.owner().equals(b.owner());
+	private static boolean same(FtbChunksCompat.Claim a, FtbChunksCompat.Claim b) {
+		return b != null && a.team().equals(b.team());
 	}
 }
