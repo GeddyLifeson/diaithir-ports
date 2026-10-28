@@ -23,6 +23,8 @@ import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.client.event.AddClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
+import folk.sisby.antique_atlas.waypoint.WaypointCommands;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.TagsUpdatedEvent;
 import org.apache.logging.log4j.LogManager;
@@ -97,6 +99,7 @@ public class AntiqueAtlas {
 			e.addDependency(MarkerTextures.ID, StructureTileProviders.ID);
 		});
 		NeoForge.EVENT_BUS.addListener(AntiqueAtlasKeybindings::onClientTick);
+		NeoForge.EVENT_BUS.addListener((RegisterClientCommandsEvent e) -> WaypointCommands.register(e.getDispatcher()));
 
 		SurveyorClientEvents.Register.terrainUpdated(id("world_data"), (s, k) -> WorldAtlasData.getOrCreate(s.dimension()).onTerrainUpdated(s, k));
 		SurveyorClientEvents.Register.structuresAdded(id("world_data"), (s, k) -> WorldAtlasData.getOrCreate(s.dimension()).onStructuresAdded(s, k));

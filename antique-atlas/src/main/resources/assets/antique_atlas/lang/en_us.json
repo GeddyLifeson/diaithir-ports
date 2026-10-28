@@ -45,5 +45,15 @@
 	"item.antique_atlas.atlas.lore": "Displays your surroundings when held.",
 	"item.antique_atlas.parchment": "Parchment",
 	"item.antique_atlas.atlas.native": "Lieburkruindi",
-	"item.antique_atlas.parchment.native": "Miemrum"
+	"item.antique_atlas.parchment.native": "Miemrum",
+	"command.antique_atlas.waypoint.none": "You have no waypoints in this dimension.",
+	"command.antique_atlas.waypoint.list": "%s waypoints:",
+	"command.antique_atlas.waypoint.disabled": "Waypoints are disabled on this server.",
+	"command.antique_atlas.waypoint.badcolor": "Unknown colour '%s'. Use a dye name such as red or light_blue, or a hex code such as #3366ff.",
+	"command.antique_atlas.waypoint.added": "Added waypoint %s at %s.",
+	"command.antique_atlas.waypoint.removed": "Removed waypoint '%s'.",
+	"command.antique_atlas.waypoint.notfound": "No waypoint named '%s'.",
+	"command.antique_atlas.waypoint.import.none": "No JourneyMap waypoint folder found in journeymap/data.",
+	"command.antique_atlas.waypoint.import.choose": "Several JourneyMap worlds found. Run /waypoint import <folder> with one of:",
+	"command.antique_atlas.waypoint.import.done": "Imported %s waypoints from JourneyMap."
 }
