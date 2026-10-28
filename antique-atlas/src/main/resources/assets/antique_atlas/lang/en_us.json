@@ -58,5 +58,9 @@
 	"command.antique_atlas.waypoint.import.done": "Imported %s waypoints from JourneyMap.",
 	"gui.antique_atlas.claims": "Show or hide claims",
 	"gui.antique_atlas.claim": "Claimed land",
-	"gui.antique_atlas.waystone": "Waystone"
+	"gui.antique_atlas.waystone": "Waystone",
+	"item.antique_atlas.compass_map": "Compass Map",
+	"item.antique_atlas.compass_map.native": "Ruindimek",
+	"item.antique_atlas.compass_map.lore": "Carry it to show a small map of your surroundings on screen.",
+	"key.antique_atlas.minimap": "Show or hide the minimap"
 }

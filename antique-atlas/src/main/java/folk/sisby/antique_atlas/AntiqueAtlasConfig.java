@@ -41,6 +41,18 @@ public class AntiqueAtlasConfig extends WrappedConfig {
 	@Comment("The background is slightly less stylish, but more tiles are shown at once")
 	public boolean fullscreen = true;
 
+	@Comment("Minimap (needs a Compass Map item): corner of the screen. 0 = top right, 1 = top left, 2 = bottom right, 3 = bottom left")
+	@IntegerRange(min = 0, max = 3)
+	public int minimapCorner = 0;
+
+	@Comment("Minimap diameter in GUI pixels")
+	@IntegerRange(min = 48, max = 160)
+	public int minimapSize = 96;
+
+	@Comment("Minimap zoom: pixels per chunk before GUI scaling. 4 shows the most land, 16 the least")
+	@IntegerRange(min = 4, max = 16)
+	public int minimapChunkPixels = 8;
+
 	@Comment("Whether to require an item to display the map")
 	public boolean requireItem = false;
 

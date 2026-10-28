@@ -32,17 +32,21 @@ public final class AntiqueAtlasMod {
 	public static final DeferredItem<AtlasItem> ATLAS = ITEMS.registerItem("atlas", AtlasItem::new, p -> p.stacksTo(1).component(DataComponents.LORE, nativeName("atlas")));
 	public static final DeferredItem<Item> PARCHMENT = ITEMS.registerSimpleItem("parchment", p -> p.component(DataComponents.LORE, nativeName("parchment")));
 
+	public static final DeferredItem<Item> COMPASS_MAP = ITEMS.registerSimpleItem("compass_map", p -> p.stacksTo(1).component(DataComponents.LORE, nativeName("compass_map")));
+
 	/** The Diaithiris name as a grey second line under the English name. */
 	private static ItemLore nativeName(String item) {
 		return new ItemLore(List.of(Component.translatable("item.antique_atlas." + item + ".native").withStyle(ChatFormatting.GRAY)));
 	}
 
-	public AntiqueAtlasMod(IEventBus modBus) {
+	public AntiqueAtlasMod(IEventBus modBus, net.neoforged.fml.ModContainer container) {
+		container.registerConfig(net.neoforged.fml.config.ModConfig.Type.SERVER, AntiqueAtlasServerConfig.SPEC);
 		ITEMS.register(modBus);
 		WaystonesCompat.init();
 		modBus.addListener((BuildCreativeModeTabContentsEvent e) -> {
 			if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 				e.accept(ATLAS.get());
+				e.accept(COMPASS_MAP.get());
 			} else if (e.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 				e.accept(PARCHMENT.get());
 			}

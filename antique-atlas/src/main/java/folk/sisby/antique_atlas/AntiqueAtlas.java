@@ -90,6 +90,7 @@ public class AntiqueAtlas {
 		AtlasItem.OPENER = AntiqueAtlas::openAtlasScreen;
 		folk.sisby.antique_atlas.gui.AtlasRenderer.registerOverlay(folk.sisby.antique_atlas.gui.ClaimsOverlay.ID, new folk.sisby.antique_atlas.gui.ClaimsOverlay());
 		modBus.addListener(AntiqueAtlasKeybindings::register);
+		modBus.addListener((net.neoforged.neoforge.client.event.RegisterGuiLayersEvent e) -> e.registerAboveAll(folk.sisby.antique_atlas.gui.MinimapHud.ID, new folk.sisby.antique_atlas.gui.MinimapHud()));
 		modBus.addListener((AddClientReloadListenersEvent e) -> {
 			e.addListener(TileTextures.ID, TileTextures.getInstance());
 			e.addListener(StructureTileProviders.ID, StructureTileProviders.getInstance());
