@@ -45,9 +45,12 @@ import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -64,6 +67,11 @@ public final class SitePeople {
     public static final String TAG = "diaithir_site";
     private static final String RUINED_FILE = "diaithircompat_ruined_sites.txt";
     private static final Set<String> RUINED = ConcurrentHashMap.newKeySet();
+    private static final String GEN_FILE = "diaithircompat_site_generations.txt";
+    private static final String GEN_TAG = "sitegen_";
+    /** The current generation of each re-raised site; people of an older generation are dropped when their chunk loads. */
+    private static final Map<String, Integer> GEN = new ConcurrentHashMap<>();
+    private static volatile boolean genReadable = true;
     private static JsonObject data;
     private static MinecraftServer server;
 
@@ -85,6 +93,24 @@ public final class SitePeople {
     public static void onServerStarting(ServerStartingEvent event) {
         server = event.getServer();
         RUINED.clear();
+        GEN.clear();
+        genReadable = true;
+        try {
+            Path gens = genFile();
+            if (Files.exists(gens)) for (String line : Files.readAllLines(gens)) {
+                int eq = line.indexOf('=');
+                if (eq > 0) {
+                    try {
+                        GEN.put(line.substring(0, eq).strip(), Integer.parseInt(line.substring(eq + 1).strip()));
+                    } catch (NumberFormatException ignored) {
+                        // skip a damaged line
+                    }
+                }
+            }
+        } catch (IOException e) {
+            LOG.warn("Could not read {}; not overwriting it until the next start", GEN_FILE, e);
+            genReadable = false;
+        }
         try {
             Path file = ruinedFile();
             if (Files.exists(file)) Files.readAllLines(file).stream().map(String::strip).filter(s -> !s.isEmpty()).forEach(RUINED::add);
@@ -95,6 +121,25 @@ public final class SitePeople {
 
     private static Path ruinedFile() {
         return server.getWorldPath(LevelResource.DATA).resolve(RUINED_FILE);
+    }
+
+    private static Path genFile() {
+        return server.getWorldPath(LevelResource.DATA).resolve(GEN_FILE);
+    }
+
+    private static boolean saveGens() {
+        if (!genReadable) return false; // GEN is incomplete after a failed read; keep the file on disk
+        try {
+            Path file = genFile();
+            Files.createDirectories(file.getParent());
+            Path tmp = file.resolveSibling(GEN_FILE + ".tmp");
+            Files.write(tmp, new TreeMap<>(GEN).entrySet().stream().map(e -> e.getKey() + "=" + e.getValue()).toList());
+            Files.move(tmp, file, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+            return true;
+        } catch (IOException e) {
+            LOG.warn("Could not write {}", GEN_FILE, e);
+            return false;
+        }
     }
 
     private static void saveRuined() {
@@ -110,9 +155,22 @@ public final class SitePeople {
     /** A ruined site's people still in unloaded chunks are dropped when their chunk loads. */
     public static void onEntityJoin(EntityJoinLevelEvent event) {
         Entity entity = event.getEntity();
-        if (RUINED.isEmpty() || event.getLevel().isClientSide() || !entity.entityTags().contains(TAG)) return;
+        if ((RUINED.isEmpty() && GEN.isEmpty()) || event.getLevel().isClientSide() || !entity.entityTags().contains(TAG)) return;
+        int gen = 0;
         for (String tag : entity.entityTags()) {
-            if (tag.startsWith("site_") && RUINED.contains(tag.substring(5))) {
+            if (tag.startsWith(GEN_TAG)) {
+                try {
+                    gen = Integer.parseInt(tag.substring(GEN_TAG.length()));
+                } catch (NumberFormatException ignored) {
+                    // untagged generation counts as 0
+                }
+            }
+        }
+        for (String tag : entity.entityTags()) {
+            if (!tag.startsWith("site_")) continue;
+            String site = tag.substring(5);
+            // ruined, or left over from before the site was re-raised (its people carry an older generation)
+            if (RUINED.contains(site) || (genReadable && gen != GEN.getOrDefault(site, 0))) {
                 event.setCanceled(true);
                 return;
             }
@@ -166,7 +224,13 @@ public final class SitePeople {
         JsonObject cultures = d.getAsJsonObject("cultures"), counts = d.getAsJsonObject("counts"), kits = d.getAsJsonObject("kits");
         if (cultures == null || !cultures.has(culture) || counts == null || !counts.has(type)) return out;
         JsonObject people = cultures.getAsJsonObject(culture);
-        JsonObject kit = kits.getAsJsonObject(people.get("kit").getAsString());
+        JsonObject kit = kits == null ? null : kits.getAsJsonObject(people.get("kit").getAsString());
+        if (kit == null) return out;
+        int generation = GEN.merge(site, 1, Integer::sum); // people still in unloaded chunks now carry an older generation
+        if (!saveGens()) {
+            GEN.merge(site, -1, Integer::sum); // unpersisted generation: keep the old one and spawn nobody
+            return out;
+        }
         if (RUINED.remove(site)) saveRuined();
         removeLoaded(level.getServer(), site);
 
@@ -187,6 +251,7 @@ public final class SitePeople {
             dress(level, mob, people, kit, female, i == 0 && count >= 3 ? "warrior" : null, random); // a camp of three or more keeps a hunter in paint
             mob.addTag(TAG);
             mob.addTag("site_" + site);
+            mob.addTag(GEN_TAG + generation);
             mob.setPersistenceRequired();
             if (level.addFreshEntity(mob)) out.add(mob);
         }
