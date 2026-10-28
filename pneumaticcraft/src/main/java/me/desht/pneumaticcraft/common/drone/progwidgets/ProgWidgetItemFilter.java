@@ -62,7 +62,7 @@ public class ProgWidgetItemFilter extends ProgWidget implements IVariableWidget 
                             Codec.STRING.optionalFieldOf("var", "").forGetter(ProgWidgetItemFilter::getVariable)
                     )
             ).apply(builder, ProgWidgetItemFilter::new));
-    public static final StreamCodec<RegistryFriendlyByteBuf, ProgWidgetItemFilter> STREAM_CODEC = NeoForgeStreamCodecs.composite(
+    public static final StreamCodec<RegistryFriendlyByteBuf, ProgWidgetItemFilter> STREAM_CODEC = StreamCodec.composite(
             PositionFields.STREAM_CODEC, ProgWidget::getPosition,
             ItemStack.OPTIONAL_STREAM_CODEC, ProgWidgetItemFilter::getFilter,
             ByteBufCodecs.BOOL, ProgWidgetItemFilter::isCheckDurability,

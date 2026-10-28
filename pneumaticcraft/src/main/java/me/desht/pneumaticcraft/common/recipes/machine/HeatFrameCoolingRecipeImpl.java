@@ -128,7 +128,7 @@ public class HeatFrameCoolingRecipeImpl extends HeatFrameCoolingRecipe {
 
         public Serializer(IFactory<T> factory) {
             codec = RecordCodecBuilder.mapCodec(inst -> inst.group(
-                    Codec.either(Ingredient.CODEC_NONEMPTY, FluidContainerIngredient.CODEC).fieldOf("input")
+                    Codec.either(Ingredient.CODEC, FluidContainerIngredient.CODEC).fieldOf("input")
                             .forGetter(HeatFrameCoolingRecipe::getInput),
                     ExtraCodecs.NON_NEGATIVE_INT.fieldOf("temperature")
                             .forGetter(HeatFrameCoolingRecipe::getThresholdTemperature),

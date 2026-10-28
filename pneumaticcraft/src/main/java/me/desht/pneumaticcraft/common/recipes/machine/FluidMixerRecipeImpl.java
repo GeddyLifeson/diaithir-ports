@@ -111,8 +111,8 @@ public class FluidMixerRecipeImpl extends FluidMixerRecipe {
 
         public Serializer(IFactory<T> factory) {
             codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-                    SizedFluidIngredient.FLAT_CODEC.fieldOf("input1").forGetter(FluidMixerRecipe::getInput1),
-                    SizedFluidIngredient.FLAT_CODEC.fieldOf("input2").forGetter(FluidMixerRecipe::getInput2),
+                    SizedFluidIngredient.CODEC.fieldOf("input1").forGetter(FluidMixerRecipe::getInput1),
+                    SizedFluidIngredient.CODEC.fieldOf("input2").forGetter(FluidMixerRecipe::getInput2),
                     FluidStack.OPTIONAL_CODEC.fieldOf("fluid_output").forGetter(FluidMixerRecipe::getOutputFluid),
                     ItemStack.OPTIONAL_CODEC.fieldOf("item_output").forGetter(FluidMixerRecipe::getOutputItem),
                     Codec.FLOAT.fieldOf("pressure").forGetter(FluidMixerRecipe::getRequiredPressure),

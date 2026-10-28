@@ -753,4 +753,21 @@ public class PneumaticCraftUtils {
     public static void displayMessage(net.minecraft.world.entity.player.Player player, net.minecraft.network.chat.Component message, boolean actionBar) {
         if (actionBar) player.sendOverlayMessage(message); else player.sendSystemMessage(message);
     }
+
+    public static net.minecraft.world.item.ItemStack craftingRemainder(net.minecraft.world.item.ItemStack stack) {
+        var t = stack.getCraftingRemainder();
+        return t == null ? net.minecraft.world.item.ItemStack.EMPTY : t.create();
+    }
+
+    public static net.minecraft.world.item.ItemStack[] itemStacks(net.neoforged.neoforge.common.crafting.SizedIngredient ingredient) {
+        return ingredient.ingredient().items().map(h -> new net.minecraft.world.item.ItemStack(h, ingredient.count())).toArray(net.minecraft.world.item.ItemStack[]::new);
+    }
+
+    public static net.minecraft.world.item.ItemStack[] itemStacks(net.minecraft.world.item.crafting.Ingredient ingredient) {
+        return ingredient.items().map(net.minecraft.world.item.ItemStack::new).toArray(net.minecraft.world.item.ItemStack[]::new);
+    }
+
+    public static net.neoforged.neoforge.fluids.FluidStack[] fluidStacks(net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient ingredient) {
+        return ingredient.ingredient().fluids().stream().map(h -> new net.neoforged.neoforge.fluids.FluidStack(h, ingredient.amount())).toArray(net.neoforged.neoforge.fluids.FluidStack[]::new);
+    }
 }

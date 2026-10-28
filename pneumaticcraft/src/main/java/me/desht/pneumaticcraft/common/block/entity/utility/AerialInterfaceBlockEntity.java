@@ -37,8 +37,6 @@ import me.desht.pneumaticcraft.common.registry.ModBlockEntityTypes;
 import me.desht.pneumaticcraft.common.registry.ModBlocks;
 import me.desht.pneumaticcraft.common.registry.ModItems;
 import me.desht.pneumaticcraft.common.registry.ModSounds;
-import me.desht.pneumaticcraft.common.thirdparty.curios.Curios;
-import me.desht.pneumaticcraft.common.thirdparty.curios.CuriosUtils;
 import me.desht.pneumaticcraft.common.upgrades.ModUpgrades;
 import me.desht.pneumaticcraft.common.util.*;
 import me.desht.pneumaticcraft.lib.Log;
@@ -173,12 +171,6 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         // 1) reports of item duplication (which I can't reproduce)
         // 2) curios item handlers don't prevent non curio items being inserted (looks like checking only done at the slot level)
 
-        if (Curios.available) {
-            PlayerCuriosHandler playerCuriosHandler = new PlayerCuriosHandler();
-            itemHandlerSideConfigurator.registerHandler("curiosInv", new ItemStack(Items.DIAMOND),
-                    me.desht.pneumaticcraft.compat.Caps.ITEM, () -> playerCuriosHandler);
-            invHandlers.add(playerCuriosHandler);
-        }
     }
 
     public String getPlayerName() {
@@ -243,8 +235,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         if (playerName.isEmpty()) {
             gameProfileClient = null;
         } else {
-            SkullBlockEntity.fetchGameProfile(playerName)
-                    .thenAcceptAsync(optProfile -> gameProfileClient = optProfile.orElse(null));
+            gameProfileClient = new com.mojang.authlib.GameProfile(playerUUID != null ? playerUUID : java.util.UUID.nameUUIDFromBytes(playerName.getBytes()), playerName);
         }
     }
 
@@ -271,7 +262,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         if (getLevel() instanceof ServerLevel serverLevel && (validatePlayerNow || (getLevel().getGameTime() & 0xf) == 0)) {
             ServerPlayer player = serverLevel.getServer().getPlayerList().getPlayer(playerUUID);
             setPlayer(player);
-            if (player != null && player.getTags().contains(NO_AERIAL_INTERFACE)) {
+            if (player != null && player.entityTags().contains(NO_AERIAL_INTERFACE)) {
                 operatingProblem = OperatingProblem.PLAYER_BARRED;
             } else if (isDimensionBlacklisted(serverLevel, player)) {
                 operatingProblem = OperatingProblem.BAD_DIMENSION;
@@ -367,7 +358,7 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
 
         playerUUID = UUID.fromString(tag.getStringOr("playerUUID", ""));
         feedMode = FeedMode.valueOf(tag.getStringOr("feedMode", ""));
-        curXpFluid = tag.contains("curXpFluid") ? BuiltInRegistries.FLUID.get(Identifier.parse(tag.getStringOr("curXpFluid", ""))) : Fluids.EMPTY;
+        curXpFluid = tag.contains("curXpFluid") ? BuiltInRegistries.FLUID.getValue(Identifier.parse(tag.getStringOr("curXpFluid", ""))) : Fluids.EMPTY;
         curXpRatio = XPFluidManager.getInstance().getXPRatio(curXpFluid);
         energyStorage.readFromNBT(tag);
 
@@ -421,9 +412,6 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
                 if (energyLeft == 0) break;
             }
 
-            if (Curios.available && energyStorage.getEnergyStored() > 0) {
-                CuriosUtils.chargeItems(player, energyStorage, RF_PER_TICK);
-            }
         }
     }
 
@@ -569,13 +557,6 @@ public class AerialInterfaceBlockEntity extends AbstractAirHandlingBlockEntity
         @Override
         protected IItemHandler getInvWrapper(Player player) {
             return getCachedHandler(player, p -> new InvWrapper(p.player.getEnderChestInventory()));
-        }
-    }
-
-    private class PlayerCuriosHandler extends PlayerInvHandler {
-        @Override
-        protected IItemHandler getInvWrapper(Player player) {
-            return getCachedHandler(player, p -> CuriosUtils.makeCombinedInvWrapper(p.player));
         }
     }
 

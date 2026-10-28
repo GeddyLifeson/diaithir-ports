@@ -3,14 +3,12 @@ package me.desht.pneumaticcraft.common.recipes.special;
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.MapCodec;
 import me.desht.pneumaticcraft.common.registry.ModRecipeSerializers;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
@@ -38,15 +36,16 @@ public class CompressorUpgradeCrafting extends WrappedShapedRecipe {
         return BuiltInRegistries.ITEM.getValue(RL(id));
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
-        return ModRecipeSerializers.COMPRESSOR_UPGRADE_CRAFTING.get();
+    public RecipeSerializer<ShapedRecipe> getSerializer() {
+        return (RecipeSerializer<ShapedRecipe>) (RecipeSerializer<?>) ModRecipeSerializers.COMPRESSOR_UPGRADE_CRAFTING.get();
     }
 
     @NotNull
     @Override
-    public ItemStack assemble(CraftingInput inv, HolderLookup.Provider registryAccess) {
-        ItemStack result = wrapped.assemble(inv, registryAccess);
+    public ItemStack assemble(CraftingInput inv) {
+        ItemStack result = wrapped.assemble(inv);
 
         int index = getMainItem(inv);
         if (index == -1) {
@@ -55,8 +54,8 @@ public class CompressorUpgradeCrafting extends WrappedShapedRecipe {
         }
         ItemStack input = inv.getItem(index);
 
-        CustomData data = input.get(DataComponents.BLOCK_ENTITY_DATA);
-        if (data != null && !data.isEmpty()) {
+        var data = input.get(DataComponents.BLOCK_ENTITY_DATA);
+        if (data != null) {
             result.set(DataComponents.BLOCK_ENTITY_DATA, data);
         }
         return result;
@@ -81,9 +80,9 @@ public class CompressorUpgradeCrafting extends WrappedShapedRecipe {
 
     public static class Serializer {
         public static final MapCodec<CompressorUpgradeCrafting> CODEC
-                = ShapedRecipe.Serializer.CODEC.xmap(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
+                = ShapedRecipe.MAP_CODEC.xmap(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
         public static final StreamCodec<RegistryFriendlyByteBuf, CompressorUpgradeCrafting> STREAM_CODEC
-                = ShapedRecipe.Serializer.STREAM_CODEC.map(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
+                = ShapedRecipe.STREAM_CODEC.map(CompressorUpgradeCrafting::new, CompressorUpgradeCrafting::wrapped);
         public MapCodec<CompressorUpgradeCrafting> codec() {
             return CODEC;
         }

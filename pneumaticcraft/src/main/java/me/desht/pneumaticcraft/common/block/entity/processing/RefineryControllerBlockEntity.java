@@ -170,7 +170,7 @@ public class RefineryControllerBlockEntity extends AbstractTickingBlockEntity
         if (searchForRecipe) {
             RecipeCaches.REFINERY.getCachedRecipe(this::findApplicableRecipe, this::genIngredientHash).ifPresentOrElse(holder -> {
                 currentRecipe = holder.value();
-                currentRecipeIdSynced = holder.id().toString();
+                currentRecipeIdSynced = holder.id().identifier().toString();
                 operatingTemp = currentRecipe.getOperatingTemp();
             }, () -> {
                 currentRecipe = null;

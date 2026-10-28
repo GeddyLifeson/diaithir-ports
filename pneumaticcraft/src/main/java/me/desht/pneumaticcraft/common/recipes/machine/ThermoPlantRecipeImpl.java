@@ -139,15 +139,7 @@ public class ThermoPlantRecipeImpl extends ThermoPlantRecipe {
         return ModRecipeTypes.THERMO_PLANT.get();
     }
 
-    @Override
-    public String getGroup() {
-        return Names.MOD_ID + ":thermo_plant";
-    }
 
-    @Override
-    public ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.THERMOPNEUMATIC_PROCESSING_PLANT.get());
-    }
 
     public interface IFactory <T extends ThermoPlantRecipe> {
         T create(Inputs inputs, Outputs outputs, TemperatureRange operatingTemperature,
@@ -180,7 +172,7 @@ public class ThermoPlantRecipeImpl extends ThermoPlantRecipe {
                             DataResult.error(() -> "at least one of item_input or fluid_input must be present!", recipe)
                     );
 
-            this.streamCodec = NeoForgeStreamCodecs.composite(
+            this.streamCodec = StreamCodec.composite(
                     Inputs.STREAM_CODEC, ThermoPlantRecipe::inputs,
                     Outputs.STREAM_CODEC, ThermoPlantRecipe::outputs,
                     TemperatureRange.STREAM_CODEC, ThermoPlantRecipe::getOperatingTemperature,

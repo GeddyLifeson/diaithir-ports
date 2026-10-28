@@ -115,15 +115,7 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
         return ModRecipeTypes.EXPLOSION_CRAFTING.get();
     }
 
-    @Override
-    public String getGroup() {
-        return PneumaticCraftRecipeTypes.EXPLOSION_CRAFTING;
-    }
 
-    @Override
-    public ItemStack getToastSymbol() {
-        return new ItemStack(Blocks.TNT);
-    }
 
     public interface IFactory<T extends ExplosionCraftingRecipe> {
         T create(SizedIngredient input, int lossRate, List<ItemStack> result);
@@ -135,7 +127,7 @@ public class ExplosionCraftingRecipeImpl extends ExplosionCraftingRecipe {
 
         public Serializer(IFactory<T> factory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-                    SizedIngredient.FLAT_CODEC.fieldOf("input").forGetter(ExplosionCraftingRecipe::getInput),
+                    SizedIngredient.NESTED_CODEC.fieldOf("input").forGetter(ExplosionCraftingRecipe::getInput),
                     ExtraCodecs.intRange(0, 99).fieldOf("loss_rate").forGetter(ExplosionCraftingRecipe::getLossRate),
                     ItemStack.CODEC.listOf().fieldOf("results").forGetter(ExplosionCraftingRecipe::getOutputs)
             ).apply(builder, factory::create));

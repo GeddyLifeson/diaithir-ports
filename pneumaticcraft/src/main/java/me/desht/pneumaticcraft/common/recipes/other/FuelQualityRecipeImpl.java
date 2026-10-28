@@ -85,7 +85,7 @@ public class FuelQualityRecipeImpl extends FuelQualityRecipe {
 
         public Serializer(IFactory<T> factory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-                    FluidIngredient.CODEC_NON_EMPTY.fieldOf("fluid").forGetter(FuelQualityRecipe::getFuel),
+                    FluidIngredient.CODEC.fieldOf("fluid").forGetter(FuelQualityRecipe::getFuel),
                     ExtraCodecs.POSITIVE_INT.fieldOf("air_per_bucket").forGetter(FuelQualityRecipe::getAirPerBucket),
                     ExtraCodecs.POSITIVE_FLOAT.optionalFieldOf("burn_rate", 1f).forGetter(FuelQualityRecipe::getBurnRate)
             ).apply(builder, factory::create));

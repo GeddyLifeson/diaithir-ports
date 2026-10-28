@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.block.entity.processing;
 
+import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import me.desht.pneumaticcraft.api.crafting.recipe.FluidMixerRecipe;
 import me.desht.pneumaticcraft.api.pressure.PressureTier;
 import me.desht.pneumaticcraft.client.util.ClientUtils;
@@ -137,7 +138,7 @@ public class FluidMixerBlockEntity extends AbstractAirHandlingBlockEntity implem
         if (searchRecipes) {
             RecipeCaches.FLUID_MIXER.getCachedRecipe(this::findApplicableRecipe, this::genIngredientHash).ifPresentOrElse(holder -> {
                 currentRecipe = holder.value();
-                currentRecipeIdSynced = holder.id().toString();
+                currentRecipeIdSynced = holder.id().identifier().toString();
                 requiredPressure = currentRecipe.getRequiredPressure();
                 maxProgress = currentRecipe.getProcessingTime() * 100;
             }, () -> {
@@ -244,8 +245,8 @@ public class FluidMixerBlockEntity extends AbstractAirHandlingBlockEntity implem
 
     public static void cacheRecipeFluids(List<FluidMixerRecipe> values) {
         for (FluidMixerRecipe recipe : values) {
-            for (FluidStack input1 : recipe.getInput1().getFluids()) {
-                for (FluidStack input2 : recipe.getInput2().getFluids()) {
+            for (FluidStack input1 : PneumaticCraftUtils.fluidStacks(recipe.getInput1())) {
+                for (FluidStack input2 : PneumaticCraftUtils.fluidStacks(recipe.getInput2())) {
                     Set<Fluid> fluidSet1 = FLUID_MATCHES.computeIfAbsent(input1.getFluid(), k -> new HashSet<>());
                     Set<Fluid> fluidSet2 = FLUID_MATCHES.computeIfAbsent(input2.getFluid(), k -> new HashSet<>());
                     fluidSet1.add(input2.getFluid());

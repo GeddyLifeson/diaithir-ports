@@ -22,7 +22,6 @@ import me.desht.pneumaticcraft.api.PNCCapabilities;
 import me.desht.pneumaticcraft.api.tileentity.IAirHandler;
 import me.desht.pneumaticcraft.common.registry.ModRecipeSerializers;
 import me.desht.pneumaticcraft.common.util.IOHelper;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
@@ -39,8 +38,8 @@ public class ShapedPressurizableRecipe extends WrappedShapedRecipe {
     }
 
     @Override
-    public ItemStack assemble(CraftingInput inv, HolderLookup.Provider registryAccess) {
-        ItemStack newOutput = this.getResultItem(registryAccess).copy();
+    public ItemStack assemble(CraftingInput inv) {
+        ItemStack newOutput = wrapped.assemble(inv);
 
         IOHelper.getCap(newOutput, PNCCapabilities.AIR_HANDLER_ITEM).ifPresent(outputHandler -> {
             int totalAir = 0;
@@ -55,16 +54,17 @@ public class ShapedPressurizableRecipe extends WrappedShapedRecipe {
         return newOutput;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public RecipeSerializer<? extends net.minecraft.world.item.crafting.Recipe<net.minecraft.world.item.crafting.CraftingInput>> getSerializer() {
-        return ModRecipeSerializers.CRAFTING_SHAPED_PRESSURIZABLE.get();
+    public RecipeSerializer<ShapedRecipe> getSerializer() {
+        return (RecipeSerializer<ShapedRecipe>) (RecipeSerializer<?>) ModRecipeSerializers.CRAFTING_SHAPED_PRESSURIZABLE.get();
     }
 
     public static class Serializer {
         public static final MapCodec<ShapedPressurizableRecipe> CODEC
-                = ShapedRecipe.Serializer.CODEC.xmap(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
+                = ShapedRecipe.MAP_CODEC.xmap(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
         public static final StreamCodec<RegistryFriendlyByteBuf, ShapedPressurizableRecipe> STREAM_CODEC
-                = ShapedRecipe.Serializer.STREAM_CODEC.map(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
+                = ShapedRecipe.STREAM_CODEC.map(ShapedPressurizableRecipe::new, ShapedPressurizableRecipe::wrapped);
         public MapCodec<ShapedPressurizableRecipe> codec() {
             return CODEC;
         }

@@ -308,8 +308,8 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     }
 
     private boolean gameProfileEquals(GameProfile profile1, GameProfile profile2) {
-        return profile1.getId() != null && profile2.getId() != null ?
-                profile1.getId().equals(profile2.getId()) :
+        return profile1.id() != null && profile2.id() != null ?
+                profile1.id().equals(profile2.id()) :
                 profile1.name().equals(profile2.name());
     }
 
@@ -361,7 +361,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         for (GameProfile profile : profiles) {
             res.add(Util.make(new CompoundTag(), t -> {
                 t.putString("name", profile.name());
-                t.putString("uuid", profile.getId().toString());
+                t.putString("uuid", profile.id().toString());
             }));
         }
         return res;
@@ -391,11 +391,11 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     }
 
     private boolean isPlayerOnWhiteList(UUID playerID) {
-        return sharedUsers.stream().anyMatch(p -> p.getId().equals(playerID));
+        return sharedUsers.stream().anyMatch(p -> p.id().equals(playerID));
     }
 
     private boolean hasPlayerHacked(UUID playerID) {
-        return hackedUsers.stream().anyMatch(p -> p.getId().equals(playerID));
+        return hackedUsers.stream().anyMatch(p -> p.id().equals(playerID));
     }
 
     public boolean isPlayerOnWhiteList(Player player) {
@@ -632,7 +632,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
     private static boolean isPlayerExempt(Player player) {
         // can player ignore security stations entirely? server ops and possibly creative mode players
         return player.isCreative() && ConfigHelper.common().machines.securityStationCreativePlayersExempt.get()
-                || player.hasPermissions(2);
+                || player.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER);
     }
 
     private class SecurityStationHandler extends BaseItemStackHandler {
@@ -724,7 +724,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         }
 
         @SubscribeEvent(priority = EventPriority.HIGHEST)
-        public static void onBlockBreak(BlockEvent.BreakEvent event) {
+        public static void onBlockBreak(net.neoforged.neoforge.event.level.block.BreakBlockEvent event) {
             // Note: the PlayerInteractEvent handler will handle real player (or even drone) interaction, but direct
             // block breaking by fake players from other mods will need to go through here to be safely caught
             Player player = event.getPlayer();
@@ -735,10 +735,10 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
         }
 
         @SubscribeEvent(priority = EventPriority.HIGHEST)
-        public static void onBlockExplode(ExplosionEvent.Start event) {
+        public static void onBlockExplode(ExplosionEvent.Detonate event) {
             final Player player = getPlayerForExplosion(event);
             if (player != null && !isPlayerExempt(player) && !event.getLevel().isClientSide()) {
-                event.getExplosion().getToBlow().removeIf(pos -> isProtectedFromPlayer(player, pos, false));
+                event.getAffectedBlocks().removeIf(pos -> isProtectedFromPlayer(player, pos, false));
             }
         }
 
@@ -769,7 +769,7 @@ public class SecurityStationBlockEntity extends AbstractTickingBlockEntity imple
                     MinecraftServer server = player.level().getServer();
                     if (server != null) {
                         // deferring is important to avoid infinite close/open loop
-                        server.tell(new TickTask(server.getTickCount(), () -> player.openMenu(teSS, teSS.getBlockPos())));
+                        server.schedule(new TickTask(server.getTickCount(), () -> player.openMenu(teSS, teSS.getBlockPos())));
                     }
                 }
             }

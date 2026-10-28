@@ -78,8 +78,8 @@ public abstract class AbstractAirHandlingBlockEntity extends AbstractTickingBloc
     }
 
     @Override
-    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider provider) {
-        super.handleUpdateTag(tag, provider);
+    public void handleUpdateTag(net.minecraft.world.level.storage.ValueInput input) {
+        super.handleUpdateTag(input);
 
         initializeHullAirHandlers();
     }

@@ -54,7 +54,7 @@ public class LiquidHopperBlock extends OmnidirectionalHopperBlock implements Pne
         }
 
         @Override
-        public @org.jspecify.annotations.Nullable net.minecraft.world.item.ItemStackTemplate getCraftingRemainder(net.minecraft.world.item.ItemInstance instance) {
+        public net.minecraft.world.item.@org.jspecify.annotations.Nullable ItemStackTemplate getCraftingRemainder(net.minecraft.world.item.ItemInstance instance) {
             if (!(instance instanceof ItemStack itemStack)) return null;
             boolean creative = UpgradableItemUtils.hasCreativeUpgrade(itemStack);
             return FluidUtil.getFluidHandler(itemStack.copy()).map(handler -> {

@@ -80,15 +80,7 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 		return ModRecipeTypes.REFINERY.get();
 	}
 
-	@Override
-	public String getGroup() {
-		return Names.MOD_ID + ":refinery";
-	}
 
-	@Override
-	public ItemStack getToastSymbol() {
-		return new ItemStack(ModBlocks.REFINERY.get());
-	}
 
 	public interface IFactory<T extends RefineryRecipe> {
 		T create(SizedFluidIngredient input, TemperatureRange operatingTemp, List<FluidStack> outputs);
@@ -100,7 +92,7 @@ public class RefineryRecipeImpl extends RefineryRecipe {
 
         public Serializer(IFactory<T> factory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-					SizedFluidIngredient.FLAT_CODEC
+					SizedFluidIngredient.CODEC
 							.fieldOf("input")
 							.forGetter(RefineryRecipe::getInput),
 					TemperatureRange.CODEC

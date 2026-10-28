@@ -475,7 +475,7 @@ public class ProgrammableControllerBlockEntity extends AbstractAirHandlingBlockE
         me.desht.pneumaticcraft.compat.NbtCompat.load(tank, provider, tag.getCompoundOrEmpty("tank"));
 
         ownerID = tag.contains("ownerID") ? UUID.fromString(tag.getStringOr("ownerID", "")) : FALLBACK_UUID;
-        ownerName = Component.literal(tag.contains("ownerName") ? tag.getString("ownerName") : FALLBACK_NAME);
+        ownerName = Component.literal(tag.contains("ownerName") ? tag.getStringOr("ownerName", "") : FALLBACK_NAME);
         ownerNameClient = ownerName.getString();
 
         ItemStackHandler tmpInv = new ItemStackHandler();

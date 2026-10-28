@@ -179,7 +179,7 @@ public class SpawnerExtractorBlockEntity extends AbstractAirHandlingBlockEntity
         int maxNearbyEntities = 16;
 
         CompoundTag nbt = ((BaseSpawnerAccess) spawner).getNextSpawnData().getEntityToSpawn();
-        Optional<EntityType<?>> optional = EntityType.by(nbt);
+        Optional<EntityType<?>> optional = EntityType.by(me.desht.pneumaticcraft.compat.NbtCompat.input(nonNullLevel().registryAccess(), nbt));
         if (optional.isEmpty()) {
             return false;
         }
@@ -187,13 +187,13 @@ public class SpawnerExtractorBlockEntity extends AbstractAirHandlingBlockEntity
         ListTag listnbt = nbt.getListOrEmpty("Pos");
         int size = listnbt.size();
         Level level = nonNullLevel();
-        double x = size >= 1 ? listnbt.getDouble(0) : (double)pos.getX() + (level.getRandom().nextDouble() - level.getRandom().nextDouble()) * (double)spawnRange + 0.5D;
-        double y = size >= 2 ? listnbt.getDouble(1) : (double)(pos.getY() + level.getRandom().nextInt(3) - 1);
-        double z = size >= 3 ? listnbt.getDouble(2) : (double)pos.getZ() + (level.getRandom().nextDouble() - level.getRandom().nextDouble()) * (double)spawnRange + 0.5D;
+        double x = size >= 1 ? listnbt.getDoubleOr(0, 0d) : (double)pos.getX() + (level.getRandom().nextDouble() - level.getRandom().nextDouble()) * (double)spawnRange + 0.5D;
+        double y = size >= 2 ? listnbt.getDoubleOr(1, 0d) : (double)(pos.getY() + level.getRandom().nextInt(3) - 1);
+        double z = size >= 3 ? listnbt.getDoubleOr(2, 0d) : (double)pos.getZ() + (level.getRandom().nextDouble() - level.getRandom().nextDouble()) * (double)spawnRange + 0.5D;
         if (level.noCollision(optional.get().getSpawnAABB(x, y, z))) {
             ServerLevel serverworld = (ServerLevel) level;
-            Entity entity = EntityType.loadEntityRecursive(nbt, level, (e1) -> {
-                e1.moveTo(x, y, z, e1.getYRot(), e1.getXRot());
+            Entity entity = EntityType.loadEntityRecursive(nbt, level, net.minecraft.world.entity.EntitySpawnReason.SPAWNER, (e1) -> {
+                e1.snapTo(x, y, z, e1.getYRot(), e1.getXRot());
                 return e1;
             });
             if (entity == null) {
@@ -280,7 +280,7 @@ public class SpawnerExtractorBlockEntity extends AbstractAirHandlingBlockEntity
 
     public Entity getCachedEntity(SpawnerBlockEntity spawner) {
         if (this.cachedEntity == null) {
-            this.cachedEntity = EntityType.loadEntityRecursive(((BaseSpawnerAccess)spawner.getSpawner()).getNextSpawnData().getEntityToSpawn(), this.nonNullLevel(), Function.identity());
+            this.cachedEntity = EntityType.loadEntityRecursive(((BaseSpawnerAccess)spawner.getSpawner()).getNextSpawnData().getEntityToSpawn(), this.nonNullLevel(), net.minecraft.world.entity.EntitySpawnReason.SPAWNER, e -> e);
         }
         return this.cachedEntity;
     }

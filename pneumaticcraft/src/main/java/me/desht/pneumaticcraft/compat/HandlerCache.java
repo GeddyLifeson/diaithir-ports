@@ -20,9 +20,15 @@ import java.util.function.Supplier;
  */
 public final class HandlerCache<T> {
     private final Supplier<@Nullable T> getter;
+    private final @Nullable Direction context;
 
-    private HandlerCache(Supplier<@Nullable T> getter) {
+    private HandlerCache(Supplier<@Nullable T> getter, @Nullable Direction context) {
         this.getter = getter;
+        this.context = context;
+    }
+
+    public @Nullable Direction context() {
+        return context;
     }
 
     @Nullable
@@ -35,7 +41,7 @@ public final class HandlerCache<T> {
         return new HandlerCache<>(() -> {
             ResourceHandler<ItemResource> h = c.getCapability();
             return h == null ? null : IItemHandler.of(h);
-        });
+        }, side);
     }
 
     public static HandlerCache<IFluidHandler> fluid(ServerLevel level, BlockPos pos, @Nullable Direction side, BooleanSupplier valid, Runnable invalidate) {
@@ -43,6 +49,6 @@ public final class HandlerCache<T> {
         return new HandlerCache<>(() -> {
             ResourceHandler<FluidResource> h = c.getCapability();
             return h == null ? null : IFluidHandler.of(h);
-        });
+        }, side);
     }
 }

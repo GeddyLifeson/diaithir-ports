@@ -113,7 +113,7 @@ public class DisplayTableBlock extends AbstractPneumaticCraftBlock implements Pn
         return false;
     }
 
-    private boolean[] getConnections(LevelAccessor world, BlockPos pos, BlockState state) {
+    private boolean[] getConnections(net.minecraft.world.level.LevelReader world, BlockPos pos, BlockState state) {
         BlockPos below = pos.below();
         if (shelfLegs() && !world.getBlockState(below).isFaceSturdy(world, below, Direction.UP)) {
             // no ground below; hide all legs
@@ -133,7 +133,7 @@ public class DisplayTableBlock extends AbstractPneumaticCraftBlock implements Pn
         return res;
     }
 
-    private boolean isMatch(LevelAccessor world, BlockPos pos, BlockState state, Direction dir) {
+    private boolean isMatch(net.minecraft.world.level.LevelReader world, BlockPos pos, BlockState state, Direction dir) {
         BlockState state2 = world.getBlockState(pos.relative(dir));
         return state2.getBlock() == this && getRotation(state) == getRotation(state2);
     }

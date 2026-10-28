@@ -83,13 +83,13 @@ public class PneumaticCraftRecipeType<T extends PneumaticCraftRecipe> implements
 
         if (cachedRecipes.isEmpty()) {
             RecipeManager recipeManager = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level);
-            List<RecipeHolder<T>> recipes = recipeManager.getRecipesFor(this, CraftingInput.EMPTY, level);
-            recipes.forEach(recipe -> cachedRecipes.put(recipe.id(), recipe));
+            Collection<RecipeHolder<T>> recipes = recipeManager.recipeMap().byType(this);
+            recipes.forEach(recipe -> cachedRecipes.put(recipe.id().identifier(), recipe));
 
             if (this == ModRecipeTypes.ASSEMBLY_DRILL_LASER.get()) {
 
-                var drillRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getAllRecipesFor(ModRecipeTypes.ASSEMBLY_DRILL.get());
-                var laserRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).getAllRecipesFor(ModRecipeTypes.ASSEMBLY_LASER.get());
+                var drillRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).recipeMap().byType(ModRecipeTypes.ASSEMBLY_DRILL.get());
+                var laserRecipes = me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.recipeManager(level).recipeMap().byType(ModRecipeTypes.ASSEMBLY_LASER.get());
                 //noinspection unchecked
                 AssemblyRecipeImpl.calculateAssemblyChain(drillRecipes, laserRecipes)
                         .forEach((id, recipe) -> cachedRecipes.put(id, (RecipeHolder<T>) recipe));
@@ -155,7 +155,7 @@ public class PneumaticCraftRecipeType<T extends PneumaticCraftRecipe> implements
 
     public static class CacheReloadListener implements PreparableReloadListener {
         @Override
-        public CompletableFuture<Void> reload(PreparationBarrier stage, ResourceManager resourceManager, ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler, Executor backgroundExecutor, Executor gameExecutor) {
+        public CompletableFuture<Void> reload(SharedState currentReload, Executor backgroundExecutor, PreparationBarrier stage, Executor gameExecutor) {
             return CompletableFuture.runAsync(() -> {
                 clearCachedRecipes();
                 if (ServerLifecycleHooks.getCurrentServer() != null) {

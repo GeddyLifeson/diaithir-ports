@@ -86,11 +86,11 @@ public class ModRecipeSerializers {
             () -> new HeatPropertiesRecipeImpl.Serializer<>(HeatPropertiesRecipeImpl::new).toSerializer());
 
     public static final Supplier<RecipeSerializer<GunAmmoPotionCrafting>> GUN_AMMO_POTION_CRAFTING
-            = RECIPE_SERIALIZERS.register("gun_ammo_potion_crafting", () -> new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(GunAmmoPotionCrafting::new), net.minecraft.network.codec.StreamCodec.unit(new GunAmmoPotionCrafting())));
+            = RECIPE_SERIALIZERS.register("gun_ammo_potion_crafting", GunAmmoPotionCrafting::serializer);
     public static final Supplier<RecipeSerializer<DroneUpgradeCrafting>> DRONE_UPGRADE_CRAFTING
-            = RECIPE_SERIALIZERS.register("drone_upgrade_crafting", () -> new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(DroneUpgradeCrafting::new), net.minecraft.network.codec.StreamCodec.unit(new DroneUpgradeCrafting())));
+            = RECIPE_SERIALIZERS.register("drone_upgrade_crafting", DroneUpgradeCrafting::serializer);
     public static final Supplier<RecipeSerializer<DroneColorCrafting>> DRONE_COLOR_CRAFTING
-            = RECIPE_SERIALIZERS.register("drone_color_crafting", () -> new RecipeSerializer<>(com.mojang.serialization.MapCodec.unit(DroneColorCrafting::new), net.minecraft.network.codec.StreamCodec.unit(new DroneColorCrafting())));
+            = RECIPE_SERIALIZERS.register("drone_color_crafting", DroneColorCrafting::serializer);
 
     public static final Supplier<RecipeSerializer<ShapedPressurizableRecipe>> CRAFTING_SHAPED_PRESSURIZABLE
             = RECIPE_SERIALIZERS.register("crafting_shaped_pressurizable", () -> new ShapedPressurizableRecipe.Serializer().toSerializer());

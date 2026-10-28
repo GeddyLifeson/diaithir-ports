@@ -195,7 +195,7 @@ public class FluidTankBlock extends AbstractPneumaticCraftBlock
         }
 
         @Override
-        public @org.jspecify.annotations.Nullable net.minecraft.world.item.ItemStackTemplate getCraftingRemainder(net.minecraft.world.item.ItemInstance instance) {
+        public net.minecraft.world.item.@org.jspecify.annotations.Nullable ItemStackTemplate getCraftingRemainder(net.minecraft.world.item.ItemInstance instance) {
             // the tank is a container item if it's being used in fluid crafting
             // but an empty tank used in crafting is not a container item
             if (!(instance instanceof ItemStack itemStack)) return null;

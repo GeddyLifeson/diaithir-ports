@@ -100,8 +100,8 @@ public class AssemblyRecipeImpl extends AssemblyRecipe {
      * @return a map (recipeId -> recipe) of all synthetic laser/drill recipes
      */
     public static Map<Identifier, RecipeHolder<AssemblyRecipe>> calculateAssemblyChain(
-            List<RecipeHolder<AssemblyRecipe>> drillRecipes,
-            List<RecipeHolder<AssemblyRecipe>> laserRecipes
+            java.util.Collection<RecipeHolder<AssemblyRecipe>> drillRecipes,
+            java.util.Collection<RecipeHolder<AssemblyRecipe>> laserRecipes
     ) {
         Map<Identifier, RecipeHolder<AssemblyRecipe>> drillLaser = new HashMap<>();
         for (RecipeHolder<AssemblyRecipe> h1 : drillRecipes) {
@@ -113,8 +113,8 @@ public class AssemblyRecipeImpl extends AssemblyRecipe {
                         && r2.getOutput().getMaxStackSize() >= r2.getOutput().getCount() * (r1.getOutput().getCount() / r2.getInputAmount())) {
                     ItemStack output = r2.getOutput().copy();
                     output.setCount(output.getCount() * (r1.getOutput().getCount() / r2.getInputAmount()));
-                    Identifier id = RL(h1.id().getPath() + "_" + h2.id().getPath());
-                    drillLaser.put(id, new RecipeHolder<>(id, new AssemblyRecipeImpl(r1.getInput(), output, AssemblyProgramType.DRILL_LASER)));
+                    Identifier id = RL(h1.id().identifier().getPath() + "_" + h2.id().identifier().getPath());
+                    drillLaser.put(id, new RecipeHolder<>(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.RECIPE, id), new AssemblyRecipeImpl(r1.getInput(), output, AssemblyProgramType.DRILL_LASER)));
                 }
             }
         }
@@ -131,7 +131,7 @@ public class AssemblyRecipeImpl extends AssemblyRecipe {
 
         public Serializer(IFactory<T> factory) {
             this.codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-                    SizedIngredient.FLAT_CODEC.fieldOf("input").forGetter(AssemblyRecipe::getInput),
+                    SizedIngredient.NESTED_CODEC.fieldOf("input").forGetter(AssemblyRecipe::getInput),
                     ItemStack.CODEC.fieldOf("result").forGetter(AssemblyRecipe::getOutput),
                     AssemblyProgramType.CODEC.validate(Serializer::checkNotDrillAndLaser)
                             .fieldOf("program").forGetter(AssemblyRecipe::getProgramType)

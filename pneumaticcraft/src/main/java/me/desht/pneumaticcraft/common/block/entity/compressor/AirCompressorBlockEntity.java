@@ -104,8 +104,8 @@ public class AirCompressorBlockEntity extends AbstractAirHandlingBlockEntity imp
             if (itemBurnTime > 0) {
                 burnTime += itemBurnTime;
                 maxBurnTime = burnTime;
-                if (fuelStack.hasCraftingRemainingItem()) {
-                    itemHandler.setStackInSlot(FUEL_SLOT, fuelStack.getCraftingRemainingItem());
+                if (!me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.craftingRemainder(fuelStack).isEmpty()) {
+                    itemHandler.setStackInSlot(FUEL_SLOT, me.desht.pneumaticcraft.common.util.PneumaticCraftUtils.craftingRemainder(fuelStack));
                 } else {
                     itemHandler.extractItem(FUEL_SLOT, 1, false);
                 }

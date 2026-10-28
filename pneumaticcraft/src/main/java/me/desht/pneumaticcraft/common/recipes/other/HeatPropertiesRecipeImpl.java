@@ -85,7 +85,7 @@ public class HeatPropertiesRecipeImpl extends HeatPropertiesRecipe {
             try {
                 String regName = PneumaticCraftUtils.getRegistryName(block).orElseThrow().toString();
                 String str = regName + "[" + String.join(",", l) + "]";
-                BlockStateParser.BlockResult res = BlockStateParser.parseForBlock(BuiltInRegistries.BLOCK.asLookup(), str, false);
+                BlockStateParser.BlockResult res = BlockStateParser.parseForBlock(BuiltInRegistries.BLOCK, str, false);
                 return res.blockState();
             } catch (CommandSyntaxException e) {
                 return block.defaultBlockState();
@@ -209,7 +209,7 @@ public class HeatPropertiesRecipeImpl extends HeatPropertiesRecipe {
                     PREDICATES_CODEC.optionalFieldOf("predicates", Map.of()).forGetter(HeatPropertiesRecipe::getBlockStatePredicates),
                     Codec.STRING.optionalFieldOf("description", "").forGetter(HeatPropertiesRecipe::getDescriptionKey)
             ).apply(builder, factory::create));
-            this.streamCodec = NeoForgeStreamCodecs.composite(
+            this.streamCodec = StreamCodec.composite(
                     ByteBufCodecs.fromCodec(BuiltInRegistries.BLOCK.byNameCodec()), HeatPropertiesRecipe::getBlock,
                     Transforms.STREAM_CODEC, HeatPropertiesRecipe::getTransforms,
                     ByteBufCodecs.optional(ByteBufCodecs.INT), HeatPropertiesRecipe::getHeatCapacity,

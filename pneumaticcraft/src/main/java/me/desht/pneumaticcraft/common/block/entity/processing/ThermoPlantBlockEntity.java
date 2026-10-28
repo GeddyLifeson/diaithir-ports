@@ -159,7 +159,7 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
         if (searchForRecipe) {
             RecipeCaches.THERMO_PLANT.getCachedRecipe(this::findApplicableRecipe, this::genIngredientHash).ifPresentOrElse(holder -> {
                 currentRecipe = holder.value();
-                currentRecipeIdSynced = holder.id().toString();
+                currentRecipeIdSynced = holder.id().identifier().toString();
             }, () -> {
                 currentRecipe = null;
                 currentRecipeIdSynced = "";
@@ -223,8 +223,8 @@ public class ThermoPlantBlockEntity extends AbstractAirHandlingBlockEntity imple
 
     private int getInputItemCount() {
         if (currentRecipe != null) {
-            ItemStack[] stacks = currentRecipe.getInputItem().map(Ingredient::getItems).orElse(new ItemStack[0]);
-            return stacks.length > 0 ? stacks[0].getCount() : 0;
+            // plain ingredients always have a count of 1
+            return currentRecipe.getInputItem().isPresent() ? 1 : 0;
         }
         return 0;
     }

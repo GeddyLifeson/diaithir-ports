@@ -139,8 +139,8 @@ public class SolarCompressorBlockEntity extends AbstractAirHandlingBlockEntity i
             }
 
             // Plays sounds for the compressor breaking
-            level.playSound(null, mainPos, SoundEvents.GENERIC_BURN, SoundSource.BLOCKS, 1 ,1);
-            level.playSound(null, mainPos, SoundEvents.ITEM_BREAK, SoundSource.BLOCKS, 1 ,1);
+            level.playSound(null, mainPos, SoundEvents.GENERIC_BURN, SoundSource.BLOCKS, 1f, 1f);
+            level.playSound(null, mainPos, SoundEvents.ITEM_BREAK.value(), SoundSource.BLOCKS, 1f, 1f);
         }
     }
 
@@ -186,7 +186,7 @@ public class SolarCompressorBlockEntity extends AbstractAirHandlingBlockEntity i
         final Level level = nonNullLevel();
 
         // Sets false for bounding blocks, during the night, and during rain
-        if (isBounding(this) || level.isNight() || level.isRaining())
+        if (isBounding(this) || level.isDarkOutside() || level.isRaining())
         {
             canSeeSunlight = false;
         }

@@ -87,7 +87,7 @@ public class HeatPipeBlock extends AbstractCamouflageBlock implements SimpleWate
         return recalculateState(worldIn, currentPos, stateIn);
     }
 
-    private static BlockState recalculateState(LevelAccessor worldIn, BlockPos currentPos, BlockState stateIn) {
+    private static BlockState recalculateState(net.minecraft.world.level.LevelReader worldIn, BlockPos currentPos, BlockState stateIn) {
         if (stateIn == null) return null;
 
         if (worldIn instanceof Level level) {

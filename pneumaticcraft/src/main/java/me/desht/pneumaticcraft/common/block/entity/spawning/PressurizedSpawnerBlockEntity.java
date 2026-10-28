@@ -133,7 +133,7 @@ public class PressurizedSpawnerBlockEntity extends AbstractAirHandlingBlockEntit
             double y = worldPosition.getY() + serverLevel.getRandom().nextInt(3) - 1;
             double z = (double)worldPosition.getZ() + (serverLevel.getRandom().nextDouble() - level.getRandom().nextDouble()) * (double)spawnRange + 0.5D;
             if (serverLevel.noCollision(type.getSpawnAABB(x, y, z))) {
-                Entity entity = type.create(serverLevel);
+                Entity entity = type.create(serverLevel, net.minecraft.world.entity.EntitySpawnReason.SPAWNER);
                 if (!(entity instanceof Mob mobentity)) return false;
                 int entityCount = serverLevel.getEntitiesOfClass(Mob.class, rangeManager.getExtentsAsAABB()).size();
                 if (entityCount >= MAX_NEARBY_ENTITIES) return false;

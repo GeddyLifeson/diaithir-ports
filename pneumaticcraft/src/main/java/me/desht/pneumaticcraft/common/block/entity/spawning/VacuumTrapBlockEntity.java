@@ -132,7 +132,7 @@ public class VacuumTrapBlockEntity extends AbstractAirHandlingBlockEntity implem
             Vec3 trapVec = Vec3.atCenterOf(worldPosition);
             double min = nonNullLevel().getFluidState(worldPosition).getType() == Fluids.WATER ? 2.5 : 1.75;
             for (Mob e : targetEntities) {
-                if (!e.isAlive() || e.getTags().contains(DEFENDER_TAG)) continue;
+                if (!e.isAlive() || e.entityTags().contains(DEFENDER_TAG)) continue;
                 // kludge: mobs in water seem a bit flaky about getting close enough so increase the absorb dist a bit
                 if (e.distanceToSqr(trapVec) <= min) {
                     absorbEntity(e);

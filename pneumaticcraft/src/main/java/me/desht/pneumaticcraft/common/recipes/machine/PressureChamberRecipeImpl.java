@@ -17,6 +17,7 @@
 
 package me.desht.pneumaticcraft.common.recipes.machine;
 
+import me.desht.pneumaticcraft.common.util.PneumaticCraftUtils;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -110,7 +111,7 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
     @Override
     public List<List<ItemStack>> getInputsForDisplay(HolderLookup.Provider provider) {
         if (displayStacks == null) {
-            displayStacks = inputs.stream().map(ingredient -> Arrays.asList(ingredient.getItems())).toList();
+            displayStacks = inputs.stream().map(ingredient -> Arrays.asList(PneumaticCraftUtils.itemStacks(ingredient))).toList();
         }
         return displayStacks;
     }
@@ -130,15 +131,7 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
         return ModRecipeSerializers.PRESSURE_CHAMBER.get();
     }
 
-    @Override
-    public String getGroup() {
-        return "pneumaticcraft:pressure_chamber";
-    }
 
-    @Override
-    public ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.PRESSURE_CHAMBER_WALL.get());
-    }
 
     @Override
     public boolean isValidInputItem(ItemStack stack) {
@@ -152,7 +145,7 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
         // remove the recipe's input items from the chamber
         for (SizedIngredient ingredient : inputs) {
 //            if (ingredient.isEmpty()) return NonNullList.create(); // sanity check
-            int nItems = ingredient.getItems()[0].getCount();
+            int nItems = ingredient.count();
             for (int i = 0; i < ingredientSlots.size() && nItems > 0; i++) {
                 int slot = ingredientSlots.getInt(i);
                 if (ingredient.test(chamberHandler.getStackInSlot(slot))) {
@@ -176,7 +169,7 @@ public class PressureChamberRecipeImpl extends PressureChamberRecipe {
 
         public Serializer(IFactory<T> factory) {
             codec = RecordCodecBuilder.mapCodec(builder -> builder.group(
-                    SizedIngredient.FLAT_CODEC.listOf().fieldOf("inputs").forGetter(PressureChamberRecipe::getInputs),
+                    SizedIngredient.NESTED_CODEC.listOf().fieldOf("inputs").forGetter(PressureChamberRecipe::getInputs),
                     Codec.floatRange(-1f, 20f).fieldOf("pressure").forGetter(PressureChamberRecipe::getPressure),
                     ItemStack.CODEC.listOf().fieldOf("results").forGetter(PressureChamberRecipe::getOutputs)
             ).apply(builder, factory::create));
