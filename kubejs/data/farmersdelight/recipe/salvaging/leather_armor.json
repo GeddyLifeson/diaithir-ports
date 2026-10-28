@@ -1,13 +1,8 @@
 {
  "type": "farmersdelight:cutting",
- "ingredients": [],
- "result": [
+ "neoforge:conditions": [
   {
-   "item": {
-    "count": 1,
-    "id": "minecraft:leather"
-   }
+   "type": "neoforge:never"
   }
- ],
- "tool": "#c:tools/shear"
+ ]
 }

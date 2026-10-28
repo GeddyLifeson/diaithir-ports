@@ -1,0 +1,549 @@
+{
+ "type": "minecraft:fishing",
+ "pools": [
+  {
+   "rolls": 1,
+   "conditions": [
+    {
+     "condition": "minecraft:random_chance",
+     "chance": 0.3
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/haddock",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/herring",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/mackerel",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/mackerel",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/halibut",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sardine",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sardine",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/smoked_haddock",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:cold_ocean",
+         "minecraft:deep_cold_ocean",
+         "minecraft:frozen_ocean",
+         "minecraft:deep_frozen_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sea_bass",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sea_bream",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/swordfish",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/swordfish",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/octopus",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/octopus",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/scallop",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/mussel",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/lobster",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:ocean",
+         "minecraft:deep_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/lobster",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/snapper",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/shark_fin",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sea_urchin",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/sea_cucumber",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/paua",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/butterfish",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:warm_ocean",
+         "minecraft:lukewarm_ocean",
+         "minecraft:deep_lukewarm_ocean"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/trout",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/pike",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/perch",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/carp",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/catfish",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/eel",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/tilapia",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "diaithir:food/crayfish",
+     "weight": 6,
+     "conditions": [
+      {
+       "condition": "minecraft:location_check",
+       "predicate": {
+        "biomes": [
+         "minecraft:river",
+         "minecraft:frozen_river"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

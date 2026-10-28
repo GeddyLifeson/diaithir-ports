@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "modern_industrialization:lv_diesel_generator"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:copy_components",
+          "include": [
+            "actuallyadditions:energy"
+          ],
+          "source": "block_entity"
+        },
+        {
+          "function": "minecraft:copy_components",
+          "include": [
+            "actuallyadditions:fluid"
+          ],
+          "source": "block_entity"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "actuallyadditions:blocks/oil_generator"
+}

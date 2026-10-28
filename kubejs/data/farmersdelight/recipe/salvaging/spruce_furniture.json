@@ -1,14 +1,8 @@
 {
  "type": "farmersdelight:cutting",
- "ingredients": [],
- "result": [
+ "neoforge:conditions": [
   {
-   "chance": 0.75,
-   "item": {
-    "count": 1,
-    "id": "minecraft:spruce_planks"
-   }
+   "type": "neoforge:never"
   }
- ],
- "tool": "#minecraft:axes"
+ ]
 }

@@ -80,6 +80,7 @@ function cuisineTick(event) {
       if (s.id != k && (alias[String(s.id)] || []).indexOf(k) < 0) continue
       let take = Math.min(left, s.getCount())
       left -= take
+      if (take > 0 && String(k).endsWith('_bucket')) block.popItem(Item.of('minecraft:bucket', take)) // a milk bucket gives its bucket back
       inv.setStackInSlot(i, take >= s.getCount() ? Item.empty : Item.of(String(s.id), s.getCount() - take))
     }
   }
