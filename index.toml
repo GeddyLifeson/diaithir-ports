@@ -26286,11 +26286,6 @@ hash = "701c703e83d135d0997d7abe1ab15ea30ae365a6a3c77071410fdfef47315a92"
 metafile = true
 
 [[files]]
-file = "mods/chunkcarts-0.1.0_26.1.2-neoforge.pw.toml"
-hash = "59f67c3cd715be20ae6064eaa1f06fadd300adf83fed929a2b1af9874b0ebd41"
-metafile = true
-
-[[files]]
 file = "mods/classicpipes-neoforge-26.1.2-1.1.7.pw.toml"
 hash = "c3dd6a1fabd7ad7e057a1dc39704b71adc8408cbe7c2a9136404eedbcb7f5139"
 metafile = true
@@ -26708,11 +26703,6 @@ hash = "bdbc5341938dc0ca4a94972f7ddd1d94124421e8ce7a2568d7eae150f6bc0a2e"
 metafile = true
 
 [[files]]
-file = "mods/highspeed-rail-neoforge-0.23.0_26.1.2.pw.toml"
-hash = "7e8ed2f4139ba7eaad747e8d9829b13b5c9eab9c003683545df5601f3b7ce678"
-metafile = true
-
-[[files]]
 file = "mods/hoppergadgetry-v26.1.1-mc26.1.x_neoforge.pw.toml"
 hash = "6432e3b67df85d18a2f034b091cfbff2e0875f166829af6439d0877828b2061d"
 metafile = true
@@ -26932,9 +26922,8 @@ hash = "685c73b841bac227ddf39272dcc163377265557d98910ac8d5272112e7101d7e"
 metafile = true
 
 [[files]]
-file = "mods/mcjtylib-26.1.2-10.0.0.pw.toml"
-hash = "7f4ae7870ef9ed9adc687ed36bd740cb1f1b5ae2f968eef7a1696d7c9f1c335d"
-metafile = true
+file = "mods/mcjtylib-1.21-9.0.21.jar"
+hash = "935d79279f9b9a4664743b12f72490b71ad8aac645350de42aa34b8707efd9d1"
 
 [[files]]
 file = "mods/mcw-bridges-3.1.2-mc26.1neoforge.pw.toml"
@@ -27201,18 +27190,16 @@ file = "mods/remorphed-neoforge-8.0-diaithir.2.jar"
 hash = "8daa1e3e8ca1d64f3c6d858ed57f8d000821943905627411e52610a1d4bbcd39"
 
 [[files]]
-file = "mods/rftoolsbase-26.1.2-7.0.0.pw.toml"
-hash = "612e1a21a5676e7ef1519dcc016c6f480513314b7698c7aa57ac29992164a98f"
-metafile = true
+file = "mods/rftoolsbase-1.21-6.0.11.jar"
+hash = "a133203d8b4f9e1adf7ed68c970b874205c56b89b11f1386f432911a07cb1802"
 
 [[files]]
 file = "mods/rftoolsbuilder-1.21-7.0.7.jar"
 hash = "62108f95a0901c4ba4d16e460f9b673f6cf4d65246aefea5dac015029e62e3e9"
 
 [[files]]
-file = "mods/rftoolspower-26.1.2-8.0.0.pw.toml"
-hash = "de531581ed7a658d0ee8a5a0a7831cf4237a503e6519de8f1181cf51a2a91a69"
-metafile = true
+file = "mods/rftoolspower-1.21-7.0.6.jar"
+hash = "9c7f99deee1a83adfc60691ff966fb854ae235dfa963c8030db48863d42b9bdd"
 
 [[files]]
 file = "mods/rftoolsutility-1.21-7.0.13.jar"
@@ -27492,11 +27479,6 @@ hash = "cd025bb3da05fa6d50b2a6f9f6e3ef46d9892618ebf25496be549d5cb20d6002"
 metafile = true
 
 [[files]]
-file = "mods/xnet-26.1.2-8.0.0.pw.toml"
-hash = "ade282d3109e733536ece74c7052477c379f99f09944650716acbe5fd67899d2"
-metafile = true
-
-[[files]]
 file = "mods/yamlconfig-neoforge-20.1.2.pw.toml"
 hash = "ac6323f30094b8c68c18cc5261e8f65c931ace845f330bd95b389aabe770b5ea"
 metafile = true
@@ -27508,7 +27490,7 @@ metafile = true
 
 [[files]]
 file = "mods/yet_another_config_lib_v3-3.9.7_26.1-neoforge.pw.toml"
-hash = "eae63565770b3bb3eddaf967829f5adae22bbe7a1b76749c3b8a5ce6bf704323"
+hash = "97dbe61e58ddadd88691e5faed0f993d82dd36383265e2fc30d1eaae2b705258"
 metafile = true
 
 [[files]]

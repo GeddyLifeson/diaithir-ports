@@ -1,6 +1,6 @@
 name = "yet_another_config_lib"
 filename = "yet_another_config_lib_v3-3.9.7+26.1-neoforge.jar"
-side = "client"
+side = "both"
 
 [download]
 url = "https://cdn.modrinth.com/data/1eAoo2KR/versions/B1mfgQmD/yet_another_config_lib_v3-3.9.7%2B26.1-neoforge.jar"
